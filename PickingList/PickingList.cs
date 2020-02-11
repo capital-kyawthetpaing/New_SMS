@@ -47,7 +47,7 @@ namespace PickingList
             txtDateFrom2.Enabled = false;
             txtDateTo2.Enabled = false;
 
-            Btn_F9.Text = string.Empty;
+            Btn_F9.Text = string.Empty;  
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = string.Empty;
         }
