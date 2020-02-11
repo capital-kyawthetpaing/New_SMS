@@ -15,13 +15,13 @@ namespace PickingList
 {
     public partial class FrmPickingList : FrmMainForm
     {
-        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");
+        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");  
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4;
         PickingList_BL plbl;
         public FrmPickingList() 
         {
             InitializeComponent();
-        }
+        }   
 
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
