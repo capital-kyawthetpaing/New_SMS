@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DT_SaikenKanriHyou" targetNamespace="http://tempuri.org/DT_SaikenKanriHyou.xsd" xmlns:mstns="http://tempuri.org/DT_SaikenKanriHyou.xsd" xmlns="http://tempuri.org/DT_SaikenKanriHyou.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DT_SaikenKanriHyou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DT_SaikenKanriHyou" msprop:Generator_UserDSName="DT_SaikenKanriHyou">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SaikenKanriHyou" msprop:Generator_TableClassName="SaikenKanriHyouDataTable" msprop:Generator_TableVarName="tableSaikenKanriHyou" msprop:Generator_TablePropName="SaikenKanriHyou" msprop:Generator_RowDeletingName="SaikenKanriHyouRowDeleting" msprop:Generator_RowChangingName="SaikenKanriHyouRowChanging" msprop:Generator_RowEvHandlerName="SaikenKanriHyouRowChangeEventHandler" msprop:Generator_RowDeletedName="SaikenKanriHyouRowDeleted" msprop:Generator_UserTableName="SaikenKanriHyou" msprop:Generator_RowChangedName="SaikenKanriHyouRowChanged" msprop:Generator_RowEvArgName="SaikenKanriHyouRowChangeEvent" msprop:Generator_RowClassName="SaikenKanriHyouRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="店舗CD" msprop:Generator_ColumnVarNameInTable="column店舗CD" msprop:Generator_ColumnPropNameInRow="店舗CD" msprop:Generator_ColumnPropNameInTable="店舗CDColumn" msprop:Generator_UserColumnName="店舗CD" type="xs:string" minOccurs="0" />
+              <xs:element name="店舗名" msprop:Generator_ColumnVarNameInTable="column店舗名" msprop:Generator_ColumnPropNameInRow="店舗名" msprop:Generator_ColumnPropNameInTable="店舗名Column" msprop:Generator_UserColumnName="店舗名" type="xs:string" minOccurs="0" />
+              <xs:element name="顧客CD" msprop:Generator_ColumnVarNameInTable="column顧客CD" msprop:Generator_ColumnPropNameInRow="顧客CD" msprop:Generator_ColumnPropNameInTable="顧客CDColumn" msprop:Generator_UserColumnName="顧客CD" type="xs:string" minOccurs="0" />
+              <xs:element name="顧客名" msprop:Generator_ColumnVarNameInTable="column顧客名" msprop:Generator_ColumnPropNameInRow="顧客名" msprop:Generator_ColumnPropNameInTable="顧客名Column" msprop:Generator_UserColumnName="顧客名" type="xs:string" minOccurs="0" />
+              <xs:element name="前月債権残額" msprop:Generator_ColumnVarNameInTable="column前月債権残額" msprop:Generator_ColumnPropNameInRow="前月債権残額" msprop:Generator_ColumnPropNameInTable="前月債権残額Column" msprop:Generator_UserColumnName="前月債権残額" type="xs:string" minOccurs="0" />
+              <xs:element name="売上額" msprop:Generator_ColumnVarNameInTable="column売上額" msprop:Generator_ColumnPropNameInRow="売上額" msprop:Generator_ColumnPropNameInTable="売上額Column" msprop:Generator_UserColumnName="売上額" type="xs:string" minOccurs="0" />
+              <xs:element name="消費税額" msprop:Generator_ColumnVarNameInTable="column消費税額" msprop:Generator_ColumnPropNameInRow="消費税額" msprop:Generator_ColumnPropNameInTable="消費税額Column" msprop:Generator_UserColumnName="消費税額" type="xs:string" minOccurs="0" />
+              <xs:element name="当月入金額" msprop:Generator_ColumnVarNameInTable="column当月入金額" msprop:Generator_ColumnPropNameInRow="当月入金額" msprop:Generator_ColumnPropNameInTable="当月入金額Column" msprop:Generator_UserColumnName="当月入金額" type="xs:string" minOccurs="0" />
+              <xs:element name="うち相殺額" msprop:Generator_ColumnVarNameInTable="columnうち相殺額" msprop:Generator_ColumnPropNameInRow="うち相殺額" msprop:Generator_ColumnPropNameInTable="うち相殺額Column" msprop:Generator_UserColumnName="うち相殺額" type="xs:string" minOccurs="0" />
+              <xs:element name="当月債権額" msprop:Generator_ColumnVarNameInTable="column当月債権額" msprop:Generator_ColumnPropNameInRow="当月債権額" msprop:Generator_ColumnPropNameInTable="当月債権額Column" msprop:Generator_UserColumnName="当月債権額" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerCD" msprop:Generator_ColumnVarNameInTable="columnCustomerCD" msprop:Generator_ColumnPropNameInRow="CustomerCD" msprop:Generator_ColumnPropNameInTable="CustomerCDColumn" msprop:Generator_UserColumnName="CustomerCD" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

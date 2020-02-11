@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_SaimuKanriHyou" targetNamespace="http://tempuri.org/DS_SaimuKanriHyou.xsd" xmlns:mstns="http://tempuri.org/DS_SaimuKanriHyou.xsd" xmlns="http://tempuri.org/DS_SaimuKanriHyou.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_SaimuKanriHyou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_SaimuKanriHyou" msprop:Generator_UserDSName="DS_SaimuKanriHyou">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_SaimuKanriHyou" msprop:Generator_TableClassName="DT_SaimuKanriHyouDataTable" msprop:Generator_TableVarName="tableDT_SaimuKanriHyou" msprop:Generator_TablePropName="DT_SaimuKanriHyou" msprop:Generator_RowDeletingName="DT_SaimuKanriHyouRowDeleting" msprop:Generator_RowChangingName="DT_SaimuKanriHyouRowChanging" msprop:Generator_RowEvHandlerName="DT_SaimuKanriHyouRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_SaimuKanriHyouRowDeleted" msprop:Generator_UserTableName="DT_SaimuKanriHyou" msprop:Generator_RowChangedName="DT_SaimuKanriHyouRowChanged" msprop:Generator_RowEvArgName="DT_SaimuKanriHyouRowChangeEvent" msprop:Generator_RowClassName="DT_SaimuKanriHyouRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Today" msprop:Generator_ColumnVarNameInTable="columnToday" msprop:Generator_ColumnPropNameInRow="Today" msprop:Generator_ColumnPropNameInTable="TodayColumn" msprop:Generator_UserColumnName="Today" type="xs:string" minOccurs="0" />
+              <xs:element name="Now" msprop:Generator_ColumnVarNameInTable="columnNow" msprop:Generator_ColumnPropNameInRow="Now" msprop:Generator_ColumnPropNameInTable="NowColumn" msprop:Generator_UserColumnName="Now" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="StoreCD" msprop:Generator_ColumnVarNameInTable="columnStoreCD" msprop:Generator_ColumnPropNameInRow="StoreCD" msprop:Generator_ColumnPropNameInTable="StoreCDColumn" msprop:Generator_UserColumnName="StoreCD" type="xs:string" minOccurs="0" />
+              <xs:element name="StoreName" msprop:Generator_ColumnVarNameInTable="columnStoreName" msprop:Generator_ColumnPropNameInRow="StoreName" msprop:Generator_ColumnPropNameInTable="StoreNameColumn" msprop:Generator_UserColumnName="StoreName" type="xs:string" minOccurs="0" />
+              <xs:element name="PayeeCD" msprop:Generator_ColumnVarNameInTable="columnPayeeCD" msprop:Generator_ColumnPropNameInRow="PayeeCD" msprop:Generator_ColumnPropNameInTable="PayeeCDColumn" msprop:Generator_UserColumnName="PayeeCD" type="xs:string" minOccurs="0" />
+              <xs:element name="VendorName" msprop:Generator_ColumnVarNameInTable="columnVendorName" msprop:Generator_ColumnPropNameInRow="VendorName" msprop:Generator_ColumnPropNameInTable="VendorNameColumn" msprop:Generator_UserColumnName="VendorName" type="xs:string" minOccurs="0" />
+              <xs:element name="LastBalanceGaku" msprop:Generator_ColumnVarNameInTable="columnLastBalanceGaku" msprop:Generator_ColumnPropNameInRow="LastBalanceGaku" msprop:Generator_ColumnPropNameInTable="LastBalanceGakuColumn" msprop:Generator_UserColumnName="LastBalanceGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="HontaiGaku" msprop:Generator_ColumnVarNameInTable="columnHontaiGaku" msprop:Generator_ColumnPropNameInRow="HontaiGaku" msprop:Generator_ColumnPropNameInTable="HontaiGakuColumn" msprop:Generator_UserColumnName="HontaiGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TaxGaku" msprop:Generator_ColumnVarNameInTable="columnTaxGaku" msprop:Generator_ColumnPropNameInRow="TaxGaku" msprop:Generator_ColumnPropNameInTable="TaxGakuColumn" msprop:Generator_UserColumnName="TaxGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="PayGaku" msprop:Generator_ColumnVarNameInTable="columnPayGaku" msprop:Generator_ColumnPropNameInRow="PayGaku" msprop:Generator_ColumnPropNameInTable="PayGakuColumn" msprop:Generator_UserColumnName="PayGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="OffsetGaku" msprop:Generator_ColumnVarNameInTable="columnOffsetGaku" msprop:Generator_ColumnPropNameInRow="OffsetGaku" msprop:Generator_ColumnPropNameInTable="OffsetGakuColumn" msprop:Generator_UserColumnName="OffsetGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="BalanceGaku" msprop:Generator_ColumnVarNameInTable="columnBalanceGaku" msprop:Generator_ColumnPropNameInRow="BalanceGaku" msprop:Generator_ColumnPropNameInTable="BalanceGakuColumn" msprop:Generator_UserColumnName="BalanceGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalLastBalanceGaku" msprop:Generator_ColumnVarNameInTable="columnTotalLastBalanceGaku" msprop:Generator_ColumnPropNameInRow="TotalLastBalanceGaku" msprop:Generator_ColumnPropNameInTable="TotalLastBalanceGakuColumn" msprop:Generator_UserColumnName="TotalLastBalanceGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalHontaiGaku" msprop:Generator_ColumnVarNameInTable="columnTotalHontaiGaku" msprop:Generator_ColumnPropNameInRow="TotalHontaiGaku" msprop:Generator_ColumnPropNameInTable="TotalHontaiGakuColumn" msprop:Generator_UserColumnName="TotalHontaiGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalTaxGaku" msprop:Generator_ColumnVarNameInTable="columnTotalTaxGaku" msprop:Generator_ColumnPropNameInRow="TotalTaxGaku" msprop:Generator_ColumnPropNameInTable="TotalTaxGakuColumn" msprop:Generator_UserColumnName="TotalTaxGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalPayGaku" msprop:Generator_ColumnVarNameInTable="columnTotalPayGaku" msprop:Generator_ColumnPropNameInRow="TotalPayGaku" msprop:Generator_ColumnPropNameInTable="TotalPayGakuColumn" msprop:Generator_UserColumnName="TotalPayGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalOffsetGaku" msprop:Generator_ColumnVarNameInTable="columnTotalOffsetGaku" msprop:Generator_ColumnPropNameInRow="TotalOffsetGaku" msprop:Generator_ColumnPropNameInTable="TotalOffsetGakuColumn" msprop:Generator_UserColumnName="TotalOffsetGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="TotalBalanceGaku" msprop:Generator_ColumnVarNameInTable="columnTotalBalanceGaku" msprop:Generator_ColumnPropNameInRow="TotalBalanceGaku" msprop:Generator_ColumnPropNameInTable="TotalBalanceGakuColumn" msprop:Generator_UserColumnName="TotalBalanceGaku" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

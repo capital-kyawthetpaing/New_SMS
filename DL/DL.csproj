@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A22D9A9-E851-4765-8842-93FD4CB77300}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DL</RootNamespace>
+    <AssemblyName>DL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Trictionary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Menu\RequireDLL\Trictionary.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Brand_DL.cs" />
+    <Compile Include="D_ArrivalPlan_DL.cs" />
+    <Compile Include="D_Arrival_DL.cs" />
+    <Compile Include="D_BillingProcessing_DL.cs" />
+    <Compile Include="D_Billing_DL.cs" />
+    <Compile Include="D_CollectPlan_DL.cs" />
+    <Compile Include="D_Collect_DL.cs" />
+    <Compile Include="D_CostDetails_DL.cs" />
+    <Compile Include="D_Cost_DL.cs" />
+    <Compile Include="D_DeliveryPlan_DL.cs" />
+    <Compile Include="D_EdiHacchuu_DL.cs" />
+    <Compile Include="D_Edi_DL.cs" />
+    <Compile Include="D_Exclusive_DL.cs" />
+    <Compile Include="D_FTP_DL.cs" />
+    <Compile Include="D_Hacchu_DL.cs" />
+    <Compile Include="D_Instruction_DL.cs" />
+    <Compile Include="D_JuChuu_DL.cs" />
+    <Compile Include="D_Mitsumori_DL.cs" />
+    <Compile Include="D_MonthlyClaims_DL.cs" />
+    <Compile Include="D_MonthlyDebt_DL.cs" />
+    <Compile Include="D_Move_DL.cs" />
+    <Compile Include="D_Order_DL.cs" />
+    <Compile Include="D_PayCloseHistory_DL.cs" />
+    <Compile Include="D_PayDetail_DL.cs" />
+    <Compile Include="D_PaymentConfirm_DL.cs" />
+    <Compile Include="D_PayPlan_DL.cs" />
+    <Compile Include="D_Pay_DL.cs" />
+    <Compile Include="D_Picking_DL.cs" />
+    <Compile Include="D_Purchase_Details_DL.cs" />
+    <Compile Include="D_Purchase_DL.cs" />
+    <Compile Include="D_RakutenJuchuu_DL.cs" />
+    <Compile Include="D_RakutenRequest_DL.cs" />
+    <Compile Include="D_Sales_DL.cs" />
+    <Compile Include="D_Shipping_DL.cs" />
+    <Compile Include="D_SKENDelivery_DL.cs" />
+    <Compile Include="D_Stock_DL.cs" />
+    <Compile Include="D_StoreCalculation_DL.cs" />
+    <Compile Include="D_StorePayment_DL.cs" />
+    <Compile Include="D_Warehousing_DL.cs" />
+    <Compile Include="D_WowmaJuchuu_DL.cs" />
+    <Compile Include="D_YahooAPI_DL.cs" />
+    <Compile Include="D_YahooCount_DL.cs" />
+    <Compile Include="Function_DL.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="IniFile_DL.cs" />
+    <Compile Include="L_Log_DL.cs" />
+    <Compile Include="Menu_DL.cs" />
+    <Compile Include="M_API_DL.cs" />
+    <Compile Include="M_Authorizations_DL.cs" />
+    <Compile Include="M_BankShiten_DL.cs" />
+    <Compile Include="M_Bank_DL.cs" />
+    <Compile Include="M_Calendar_DL.cs" />
+    <Compile Include="M_Carrier_DL.cs" />
+    <Compile Include="M_Control_DL.cs" />
+    <Compile Include="M_DenominationKBN_DL.cs" />
+    <Compile Include="M_FiscalYear_DL.cs" />
+    <Compile Include="M_Hanyou_DL.cs" />
+    <Compile Include="M_ItemOrderPrice_DL.cs" />
+    <Compile Include="M_ItemPrice_DL.cs" />
+    <Compile Include="M_JANOrderPrice_DL.cs" />
+    <Compile Include="M_Kouza_DL.cs" />
+    <Compile Include="M_Location_DL.cs" />
+    <Compile Include="M_MakerBrand_DL.cs" />
+    <Compile Include="M_Message_DL.cs" />
+    <Compile Include="Base_DL.cs" />
+    <Compile Include="M_MovePurpose_DL.cs" />
+    <Compile Include="M_MultiPorpose_DL.cs" />
+    <Compile Include="M_Payee_DL.cs" />
+    <Compile Include="M_PrefixNumber_DL.cs" />
+    <Compile Include="M_Prefix_DL.cs" />
+    <Compile Include="M_Program_DL.cs" />
+    <Compile Include="M_Renban_DL.cs" />
+    <Compile Include="M_SalesTax_DL.cs" />
+    <Compile Include="M_Settlement_DL.cs" />
+    <Compile Include="M_Site_DL.cs" />
+    <Compile Include="M_SKULastCost_DL.cs" />
+    <Compile Include="M_SKUPrice_DL.cs" />
+    <Compile Include="M_SKU_DL.cs" />
+    <Compile Include="M_Souko_DL.cs" />
+    <Compile Include="M_Staff_DL.cs" />
+    <Compile Include="M_StoreAuthorizations_DL.cs" />
+    <Compile Include="M_StoreBottunGroup_DL.cs" />
+    <Compile Include="M_StoreButtonDetails_DL.cs" />
+    <Compile Include="M_StoreClose_DL.cs" />
+    <Compile Include="M_StorePoint_DL.cs" />
+    <Compile Include="M_Store_DL.cs" />
+    <Compile Include="M_TankaCD_DL.cs" />
+    <Compile Include="M_VendorFTP_DL.cs" />
+    <Compile Include="M_Vendor_DL.cs" />
+    <Compile Include="M_ZipCode_DL.cs" />
+    <Compile Include="JuchuuTorikomiAPI_DL.cs" />
+    <Compile Include="Nyuukin_Ichihanyou_DL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="D_DepositHistory_DL.cs" />
+    <Compile Include="M_Customer_DL.cs" />
+    <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
+    <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
+    <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
+    <Compile Include="M_UnsouGaisya_DL.cs" />
+    <Compile Include="ZaikoKanriHyou_DL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

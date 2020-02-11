@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB2217AB-EE9B-4996-A8F1-321320CBC791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BL</RootNamespace>
+    <AssemblyName>BL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Trictionary">
+      <HintPath>..\Menu\RequireDLL\Trictionary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Carrier_BL.cs" />
+    <Compile Include="Customer_BL.cs" />
+    <Compile Include="DenominationKBN_BL.cs" />
+    <Compile Include="Denomination_BL.cs" />
+    <Compile Include="D_Purchase_BL.cs" />
+    <Compile Include="EDIHacchuu_BL.cs" />
+    <Compile Include="EDIKaitouNoukiBatch_BL.cs" />
+    <Compile Include="EDIKaitouNoukiTouroku_BL.cs" />
+    <Compile Include="EDINouhinJouhon_Batch_BL.cs" />
+    <Compile Include="Exclusive_BL.cs" />
+    <Compile Include="FileTransferProtocol_BL.cs" />
+    <Compile Include="GetsujiSaikenKeisanSyori_BL.cs" />
+    <Compile Include="HacchuuNyuuryoku_BL.cs" />
+    <Compile Include="HacchuuShoukai_BL.cs" />
+    <Compile Include="HacchuuShouninNyuuryoku_BL.cs" />
+    <Compile Include="HenpinNyuuryoku_BL.cs" />
+    <Compile Include="ItemOrderPrice_BL.cs" />
+    <Compile Include="ItemPrice_BL.cs" />
+    <Compile Include="JANOrderPrice_BL.cs" />
+    <Compile Include="KaitouNoukiTouroku_BL.cs" />
+    <Compile Include="KeihiltiranHyou_BL.cs" />
+    <Compile Include="KeihiNyuuryoku_BL.cs" />
+    <Compile Include="Kouza_BL.cs" />
+    <Compile Include="Login_BL.cs" />
+    <Compile Include="MakerBrand_BL.cs" />
+    <Compile Include="MasterToroku_Ginkou_BL.cs" />
+    <Compile Include="MasterTouroku_Brand_BL.cs" />
+    <Compile Include="MasterTouroku_Calendar_BL.cs" />
+    <Compile Include="MasterTouroku_GinkouKouza_BL.cs" />
+    <Compile Include="MasterTouroku_GinkouShiten_BL.cs" />
+    <Compile Include="MasterTouroku_Hanyou_BL.cs" />
+    <Compile Include="MasterTouroku_Renban_BL.cs" />
+    <Compile Include="MasterTouroku_Settouchi_BL.cs" />
+    <Compile Include="MasterTouroku_Shiiresaki_BL.cs" />
+    <Compile Include="MasterTouroku_Souko_BL.cs" />
+    <Compile Include="MasterTouroku_Staff_BL.cs" />
+    <Compile Include="MasterTouroku_UnsouGaisya_BL.cs" />
+    <Compile Include="MasterTouroku_YuubinBangou_BL.cs" />
+    <Compile Include="Menu_BL.cs" />
+    <Compile Include="Base_BL.cs" />
+    <Compile Include="MiNyuukinKakuninShoukai_BL.cs" />
+    <Compile Include="MitsumoriNyuuryoku_BL.cs" />
+    <Compile Include="MultiPorpose_BL.cs" />
+    <Compile Include="JuchuuTorikomiAPI_BL.cs" />
+    <Compile Include="NyuukaNyuuryoku_BL.cs" />
+    <Compile Include="NyuukaShoukai_BL.cs" />
+    <Compile Include="NyuukinNyuuryoku_BL.cs" />
+    <Compile Include="NyuukinYoteiHyou_BL.cs" />
+    <Compile Include="Nyuukin_Ichihanyou_BL.cs" />
+    <Compile Include="NyuusyukkinYoteiList_BL.cs" />
+    <Compile Include="PickingList_BL.cs" />
+    <Compile Include="PickingNyuuryoku_BL.cs" />
+    <Compile Include="RakutenAPI_BL.cs" />
+    <Compile Include="SaikenKanriHyou_BL.cs" />
+    <Compile Include="SaimuKanriHyou_BL.cs" />
+    <Compile Include="SalesTax_BL.cs" />
+    <Compile Include="Search_BL.cs" />
+    <Compile Include="Search_Carrier_BL.cs" />
+    <Compile Include="Search_Customer_BL.cs" />
+    <Compile Include="Search_GinkouShiten_BL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search_Ginkou_BL.cs" />
+    <Compile Include="Search_Hanyou_BL.cs" />
+    <Compile Include="Search_KeihiNO_BL.cs" />
+    <Compile Include="Search_Location_BL.cs" />
+    <Compile Include="Search_SiharaiNO_BL.cs" />
+    <Compile Include="Search_SiharaiShoriNO_BL.cs" />
+    <Compile Include="Search_Souko_BL.cs" />
+    <Compile Include="Search_Supplier_BL.cs" />
+    <Compile Include="Search_TempoUriageNO_BL .cs" />
+    <Compile Include="SeikyuuShimeShori_BL.cs" />
+    <Compile Include="SeikyuuShoukai_BL.cs" />
+    <Compile Include="SeikyuuSho_BL.cs" />
+    <Compile Include="Settlement_BL.cs" />
+    <Compile Include="Shiharai_ItiranHyou_BL.cs" />
+    <Compile Include="Shiharai_Shimeshori_BL.cs" />
+    <Compile Include="ShiireNyuuryokuFromNyuuka_BL.cs" />
+    <Compile Include="ShiireNyuuryoku_BL.cs" />
+    <Compile Include="ShiireShoukaiDetails_BL.cs" />
+    <Compile Include="ShiireShoukaiShiiresaki_BL.cs" />
+    <Compile Include="ShiireTankaTeiseiIraisho_BL.cs" />
+    <Compile Include="ShukkaShijiTouroku_BL.cs" />
+    <Compile Include="ShukkaShoukai_BL.cs" />
+    <Compile Include="ShukkaUriageUpdate_BL.cs" />
+    <Compile Include="SiharaiNyuuryoku_BL.cs" />
+    <Compile Include="SiharaiYoteiHyou_BL.cs" />
+    <Compile Include="Site_BL.cs" />
+    <Compile Include="SKUPrice_BL.cs" />
+    <Compile Include="SKU_BL.cs" />
+    <Compile Include="Staff_BL.cs" />
+    <Compile Include="StoreBottunGroup_BL.cs" />
+    <Compile Include="StoreButtonDetails_BL.cs" />
+    <Compile Include="Store_BL.cs" />
+    <Compile Include="TairyuZaikoHyou_BL.cs" />
+    <Compile Include="TanabanNyuuryoku_BL.cs" />
+    <Compile Include="TanaireList_BL.cs" />
+    <Compile Include="TankaCD_BL.cs" />
+    <Compile Include="TempoJuchuuNyuuryoku_BL.cs" />
+    <Compile Include="TempoJuchuuShoukai_BL.cs" />
+    <Compile Include="TempoNouhinsyo_BL.cs" />
+    <Compile Include="TempoRegiFurikomiYoushi_BL.cs" />
+    <Compile Include="TempoRegiGenkaKakunin_BL.cs" />
+    <Compile Include="TempoRegiHanbaiRireki_BL.cs" />
+    <Compile Include="TempoRegiHanbaiTouroku_BL.cs" />
+    <Compile Include="TempoRegiJissekiSyoukai_BL.cs" />
+    <Compile Include="TempoRegiKaiinKensaku_BL.cs" />
+    <Compile Include="TempoRegiKaiinTouroku_BL.cs" />
+    <Compile Include="TempoRegiMasterNyuuryoku_BL.cs" />
+    <Compile Include="TempoRegiNyuukinNyuuryoku_BL.cs" />
+    <Compile Include="TempoRegiNyuukinTouroku_BL.cs" />
+    <Compile Include="TempoRegiRyougaeNyuuryoku_BL.cs" />
+    <Compile Include="TempoRegiSeisanTouroku_BL.cs" />
+    <Compile Include="TempoRegiShiharaiNyuuryoku_BL.cs" />
+    <Compile Include="TempoRegiTsurisenJyunbi_BL.cs" />
+    <Compile Include="TempoRegiZaikoKakunin_BL.cs" />
+    <Compile Include="TempoRejiPointSettei_BL.cs" />
+    <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
+    <Compile Include="UriageMotochou_BL.cs" />
+    <Compile Include="Vendor_BL.cs" />
+    <Compile Include="WowmaAPI_BL.cs" />
+    <Compile Include="YahooAPI_BL.cs" />
+    <Compile Include="ZaikoIdouNyuuryoku_BL.cs" />
+    <Compile Include="ZaikoKanriHyou_BL.cs" />
+    <Compile Include="ZaikoMotochouInsatsu_BL.cs" />
+    <Compile Include="ZaikoYoteiHyou_BL.cs" />
+    <Compile Include="ZipCode_BL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="KaitounoukiKakuninsho" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="KaitounoukiKakuninsho">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ArrivalPlanNO" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderNO" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderRows" type="xs:int" minOccurs="0" />
+              <xs:element name="DisplayRows" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderDate" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderCD" type="xs:string" minOccurs="0" />
+              <xs:element name="VendorName" type="xs:string" minOccurs="0" />
+              <xs:element name="JuchuuNO" type="xs:string" minOccurs="0" />
+              <xs:element name="JuchuuRows" type="xs:int" minOccurs="0" />
+              <xs:element name="ROWNUM" type="xs:long" minOccurs="0" />
+              <xs:element name="ColorName" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeName" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUName" type="xs:string" minOccurs="0" />
+              <xs:element name="ITemCD" type="xs:string" minOccurs="0" />
+              <xs:element name="AdminNO" type="xs:int" minOccurs="0" />
+              <xs:element name="SKUCD" type="xs:string" minOccurs="0" />
+              <xs:element name="JANCD" type="xs:string" minOccurs="0" />
+              <xs:element name="MakerItem" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentOutStore" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentInStore" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderSu" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderUnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OrderHontaiGaku" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ArrivalPlanMonth" type="xs:int" minOccurs="0" />
+              <xs:element name="ArrivalPlanCD" type="xs:string" minOccurs="0" />
+              <xs:element name="ArrivalPlanSu" type="xs:int" minOccurs="0" />
+              <xs:element name="ArrivalPlanDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TaniName" type="xs:string" minOccurs="0" />
+              <xs:element name="Print1" type="xs:string" minOccurs="0" />
+              <xs:element name="Print2" type="xs:string" minOccurs="0" />
+              <xs:element name="Print3" type="xs:string" minOccurs="0" />
+              <xs:element name="Print4" type="xs:string" minOccurs="0" />
+              <xs:element name="Print5" type="xs:string" minOccurs="0" />
+              <xs:element name="Print6" type="xs:string" minOccurs="0" />
+              <xs:element name="DelFlg" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

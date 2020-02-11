@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entity;
+using DL;
+using System.Data;
+
+namespace BL
+{
+    public class Customer_BL : Base_BL
+    {
+        M_Customer_DL mmdl;
+        public Customer_BL()
+        {
+            mmdl = new M_Customer_DL();
+        }
+
+        public bool M_Customer_Select(M_Customer_Entity mce)
+        {
+            DataTable dt = mmdl.M_Customer_Select(mce);
+            if (dt.Rows.Count > 0)
+            {
+                mce.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
+                mce.VariousFLG = dt.Rows[0]["VariousFLG"].ToString();
+                mce.CustomerName = dt.Rows[0]["CustomerName"].ToString();
+                mce.LastName = dt.Rows[0]["LastName"].ToString();
+                mce.FirstName = dt.Rows[0]["FirstName"].ToString();
+                mce.LongName1 = dt.Rows[0]["LongName1"].ToString();
+                mce.LongName2 = dt.Rows[0]["LongName2"].ToString();
+                mce.KanaName = dt.Rows[0]["KanaName"].ToString();
+                mce.StoreKBN = dt.Rows[0]["StoreKBN"].ToString();
+                mce.CustomerKBN = dt.Rows[0]["CustomerKBN"].ToString();
+                mce.AliasKBN = dt.Rows[0]["AliasKBN"].ToString();
+                mce.BillingType = dt.Rows[0]["BillingType"].ToString();
+                mce.GroupName = dt.Rows[0]["GroupName"].ToString();
+                mce.BillingFLG = dt.Rows[0]["BillingFLG"].ToString();
+                mce.CollectFLG = dt.Rows[0]["CollectFLG"].ToString();
+                mce.BillingCD = dt.Rows[0]["BillingCD"].ToString();
+                mce.CollectCD = dt.Rows[0]["CollectCD"].ToString();
+                mce.Birthdate = dt.Rows[0]["Birthdate"].ToString();
+                mce.Sex = dt.Rows[0]["Sex"].ToString();
+                mce.Tel11 = dt.Rows[0]["Tel11"].ToString();
+                mce.Tel12 = dt.Rows[0]["Tel12"].ToString();
+                mce.Tel13 = dt.Rows[0]["Tel13"].ToString();
+                mce.Tel21 = dt.Rows[0]["Tel21"].ToString();
+                mce.Tel22 = dt.Rows[0]["Tel22"].ToString();
+                mce.Tel23 = dt.Rows[0]["Tel23"].ToString();
+                mce.ZipCD1 = dt.Rows[0]["ZipCD1"].ToString();
+                mce.ZipCD2 = dt.Rows[0]["ZipCD2"].ToString();
+                mce.Address1 = dt.Rows[0]["Address1"].ToString();
+                mce.Address2 = dt.Rows[0]["Address2"].ToString();
+                mce.MailAddress = dt.Rows[0]["MailAddress"].ToString();
+                mce.TankaCD = dt.Rows[0]["TankaCD"].ToString();
+                mce.PointFLG = dt.Rows[0]["PointFLG"].ToString();
+                mce.LastPoint = dt.Rows[0]["LastPoint"].ToString();
+                mce.WaitingPoint = dt.Rows[0]["WaitingPoint"].ToString();
+                mce.TotalPoint = dt.Rows[0]["TotalPoint"].ToString();
+                mce.TotalPurchase = dt.Rows[0]["TotalPurchase"].ToString();
+                mce.UnpaidAmount = dt.Rows[0]["UnpaidAmount"].ToString();
+                mce.UnpaidCount = dt.Rows[0]["UnpaidCount"].ToString();
+                mce.LastSalesDate = dt.Rows[0]["LastSalesDate"].ToString();
+                mce.LastSalesStoreCD = dt.Rows[0]["LastSalesStoreCD"].ToString();
+                mce.MainStoreCD = dt.Rows[0]["MainStoreCD"].ToString();
+                mce.StaffCD = dt.Rows[0]["StaffCD"].ToString();
+                mce.AttentionFLG = dt.Rows[0]["AttentionFLG"].ToString();
+                mce.ConfirmFLG = dt.Rows[0]["ConfirmFLG"].ToString();
+                mce.BillingCloseDate = dt.Rows[0]["BillingCloseDate"].ToString();
+                mce.CollectPlanMonth = dt.Rows[0]["CollectPlanMonth"].ToString();
+                mce.CollectPlanDate = dt.Rows[0]["CollectPlanDate"].ToString();
+                mce.HolidayKBN = dt.Rows[0]["HolidayKBN"].ToString();
+                mce.TaxFractionKBN = dt.Rows[0]["TaxFractionKBN"].ToString();
+                mce.AmountFractionKBN = dt.Rows[0]["AmountFractionKBN"].ToString();
+                mce.CreditLevel = dt.Rows[0]["CreditLevel"].ToString();
+                mce.CreditAmount = dt.Rows[0]["CreditAmount"].ToString();
+                mce.PaymentMethodCD = dt.Rows[0]["PaymentMethodCD"].ToString();
+                mce.KouzaCD = dt.Rows[0]["KouzaCD"].ToString();
+                mce.DisplayOrder = dt.Rows[0]["DisplayOrder"].ToString();
+                mce.PaymentUnit = dt.Rows[0]["PaymentUnit"].ToString();
+                mce.NoInvoiceFlg = dt.Rows[0]["NoInvoiceFlg"].ToString();
+                mce.CountryKBN = dt.Rows[0]["CountryKBN"].ToString();
+                mce.CountryName = dt.Rows[0]["CountryName"].ToString();
+                mce.RegisteredNumber = dt.Rows[0]["RegisteredNumber"].ToString();
+                mce.RemarksOutStore = dt.Rows[0]["RemarksOutStore"].ToString();
+                mce.RemarksInStore = dt.Rows[0]["RemarksInStore"].ToString();
+                mce.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
+                mce.UsedFlg = dt.Rows[0]["UsedFlg"].ToString();
+                mce.InsertOperator = dt.Rows[0]["InsertOperator"].ToString();
+                mce.InsertDateTime = dt.Rows[0]["InsertDateTime"].ToString();
+                mce.UpdateOperator = dt.Rows[0]["UpdateOperator"].ToString();
+                mce.UpdateDateTime = dt.Rows[0]["UpdateDateTime"].ToString();
+
+                return true;
+            }
+            else
+                return false;
+
+        }
+
+        //public DataTable M_Customer_SelectAll(M_Customer_Entity mse)
+        //{
+        //    return mmdl.M_Customer_SelectAll(mse);
+        //}
+
+    }
+}

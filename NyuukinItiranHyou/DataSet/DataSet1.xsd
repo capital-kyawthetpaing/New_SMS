@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="NyuuKin_Ichihanyou" msprop:Generator_TableClassName="NyuuKin_IchihanyouDataTable" msprop:Generator_TableVarName="tableNyuuKin_Ichihanyou" msprop:Generator_TablePropName="NyuuKin_Ichihanyou" msprop:Generator_RowDeletingName="NyuuKin_IchihanyouRowDeleting" msprop:Generator_RowChangingName="NyuuKin_IchihanyouRowChanging" msprop:Generator_RowEvHandlerName="NyuuKin_IchihanyouRowChangeEventHandler" msprop:Generator_RowDeletedName="NyuuKin_IchihanyouRowDeleted" msprop:Generator_UserTableName="NyuuKin_Ichihanyou" msprop:Generator_RowChangedName="NyuuKin_IchihanyouRowChanged" msprop:Generator_RowEvArgName="NyuuKin_IchihanyouRowChangeEvent" msprop:Generator_RowClassName="NyuuKin_IchihanyouRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CollectDate" msprop:Generator_ColumnVarNameInTable="columnCollectDate" msprop:Generator_ColumnPropNameInRow="CollectDate" msprop:Generator_ColumnPropNameInTable="CollectDateColumn" msprop:Generator_UserColumnName="CollectDate" type="xs:string" minOccurs="0" />
+              <xs:element name="InputDateTime" msprop:Generator_ColumnVarNameInTable="columnInputDateTime" msprop:Generator_ColumnPropNameInRow="InputDateTime" msprop:Generator_ColumnPropNameInTable="InputDateTimeColumn" msprop:Generator_UserColumnName="InputDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectNo" msprop:Generator_ColumnVarNameInTable="columnCollectNo" msprop:Generator_ColumnPropNameInRow="CollectNo" msprop:Generator_ColumnPropNameInTable="CollectNoColumn" msprop:Generator_UserColumnName="CollectNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Vendor" msprop:Generator_ColumnVarNameInTable="columnVendor" msprop:Generator_ColumnPropNameInRow="Vendor" msprop:Generator_ColumnPropNameInTable="VendorColumn" msprop:Generator_UserColumnName="Vendor" type="xs:string" minOccurs="0" />
+              <xs:element name="DenominationName" msprop:Generator_ColumnVarNameInTable="columnDenominationName" msprop:Generator_ColumnPropNameInRow="DenominationName" msprop:Generator_ColumnPropNameInTable="DenominationNameColumn" msprop:Generator_UserColumnName="DenominationName" type="xs:string" minOccurs="0" />
+              <xs:element name="ConfirmSource" msprop:Generator_ColumnVarNameInTable="columnConfirmSource" msprop:Generator_ColumnPropNameInRow="ConfirmSource" msprop:Generator_ColumnPropNameInTable="ConfirmSourceColumn" msprop:Generator_UserColumnName="ConfirmSource" type="xs:string" minOccurs="0" />
+              <xs:element name="ConfirmAmount" msprop:Generator_ColumnVarNameInTable="columnConfirmAmount" msprop:Generator_ColumnPropNameInRow="ConfirmAmount" msprop:Generator_ColumnPropNameInTable="ConfirmAmountColumn" msprop:Generator_UserColumnName="ConfirmAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="Confirmbalance" msprop:Generator_ColumnVarNameInTable="columnConfirmbalance" msprop:Generator_ColumnPropNameInRow="Confirmbalance" msprop:Generator_ColumnPropNameInTable="ConfirmbalanceColumn" msprop:Generator_UserColumnName="Confirmbalance" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

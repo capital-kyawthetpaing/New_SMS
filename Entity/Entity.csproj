@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9DD6C82A-1899-478F-BC18-524AD0B0DCC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Entity</RootNamespace>
+    <AssemblyName>Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base_Entity.cs" />
+    <Compile Include="D_APIControl_Entity.cs" />
+    <Compile Include="D_ArrivalPlan_Entity.cs" />
+    <Compile Include="D_Arrival_Entity.cs" />
+    <Compile Include="D_BillingProcessing_Entity.cs" />
+    <Compile Include="D_Billing_Entity.cs" />
+    <Compile Include="D_CollectPlan_Entity.cs" />
+    <Compile Include="D_Collect_Entity.cs" />
+    <Compile Include="D_CostDetails_Entity.cs" />
+    <Compile Include="D_Cost_Entity.cs" />
+    <Compile Include="D_DeliveryPlan_Entity.cs" />
+    <Compile Include="D_EDIDetail_Entity.cs" />
+    <Compile Include="D_EDIOrder_Entity.cs" />
+    <Compile Include="D_EDI_Entity.cs" />
+    <Compile Include="D_Exclusive_Entity.cs" />
+    <Compile Include="D_FTP_Entity.cs" />
+    <Compile Include="D_Instruction_Entity.cs" />
+    <Compile Include="D_JuChuu_Entity.cs" />
+    <Compile Include="D_Mitsumori_Entity.cs" />
+    <Compile Include="D_MonthlyClaims_Entity.cs" />
+    <Compile Include="D_MonthlyDebt_Entity.cs" />
+    <Compile Include="D_MonthlyStock_Entity.cs" />
+    <Compile Include="D_Move_Entity.cs" />
+    <Compile Include="D_Order_Entity.cs" />
+    <Compile Include="D_PayCloseHistory_Entity.cs" />
+    <Compile Include="D_PaymentConfirm_Entity.cs" />
+    <Compile Include="D_PayPlan_Entity.cs" />
+    <Compile Include="D_Pay_Entity.cs" />
+    <Compile Include="D_Picking_Entity.cs" />
+    <Compile Include="D_Purchase_Details_Entity.cs" />
+    <Compile Include="D_Purchase_Entity.cs" />
+    <Compile Include="D_RakutenRequest_Entity.cs" />
+    <Compile Include="D_Sales_Entity.cs" />
+    <Compile Include="D_Shipping_Entity.cs" />
+    <Compile Include="D_SKENDeliveryDetails_Entity.cs" />
+    <Compile Include="D_SKENDelivery_Entity.cs" />
+    <Compile Include="D_Stock_Entity.cs" />
+    <Compile Include="D_StoreCalculation_Entity.cs" />
+    <Compile Include="D_StorePayment_Entity.cs" />
+    <Compile Include="D_WowmaRequest_Entity.cs" />
+    <Compile Include="D_YahooCount_Entity.cs" />
+    <Compile Include="D_YahooList_Entity.cs" />
+    <Compile Include="Fnc_PlanDate_Entity.cs" />
+    <Compile Include="Fnc_Present_Entity.cs" />
+    <Compile Include="Fnc_Reserve_Entity.cs" />
+    <Compile Include="Fnc_UnitPrice_Entity.cs" />
+    <Compile Include="L_Log_Entity.cs" />
+    <Compile Include="M_API_Entity.cs" />
+    <Compile Include="M_AuthorizationsDetails_Entity.cs" />
+    <Compile Include="M_Authorizations_Entity.cs" />
+    <Compile Include="M_BankShiten_Entity.cs" />
+    <Compile Include="M_Bank_Entity.cs" />
+    <Compile Include="M_Brand_Entity.cs" />
+    <Compile Include="M_Calendar_Entity.cs" />
+    <Compile Include="M_Carrier_Entity.cs" />
+    <Compile Include="M_Control_Entity.cs" />
+    <Compile Include="M_Conversion_Entity.cs" />
+    <Compile Include="M_Customer_Entity.cs" />
+    <Compile Include="M_DenominationKBN_Entity.cs" />
+    <Compile Include="M_FiscalYear_Entity.cs" />
+    <Compile Include="M_Ginkou_Entity.cs" />
+    <Compile Include="M_Hanyou_Entity.cs" />
+    <Compile Include="M_ItemOrderPrice_Entity.cs" />
+    <Compile Include="M_ItemPrice_Entity.cs" />
+    <Compile Include="M_JANOrderPrice_Entity.cs" />
+    <Compile Include="M_Kouza_Entity.cs" />
+    <Compile Include="M_Location_Entity.cs" />
+    <Compile Include="M_MakerBrand_Entity.cs" />
+    <Compile Include="M_Message_Entity.cs" />
+    <Compile Include="M_MovePurpose_Entity.cs" />
+    <Compile Include="M_MultiPorpose_Entity.cs" />
+    <Compile Include="M_PrefixNumber_Entity.cs" />
+    <Compile Include="M_Prefix_Entity.cs" />
+    <Compile Include="M_ProcessNumber_Entity.cs" />
+    <Compile Include="M_Program_Entity.cs" />
+    <Compile Include="M_Renban_Entity.cs" />
+    <Compile Include="M_SalesTax_Entity.cs" />
+    <Compile Include="M_Settlement_Entity.cs" />
+    <Compile Include="D_ShippingDetails_Entity.cs" />
+    <Compile Include="M_Shipping_Entity.cs" />
+    <Compile Include="M_Site_Entity.cs" />
+    <Compile Include="M_SKU.cs" />
+    <Compile Include="M_SKUInfo_Entity.cs" />
+    <Compile Include="M_SKULastCost_Entity.cs" />
+    <Compile Include="M_SKUPrice_Entity.cs" />
+    <Compile Include="M_SKUTag_Entity.cs" />
+    <Compile Include="M_SKU_Entity.cs" />
+    <Compile Include="M_Souko_Entity.cs" />
+    <Compile Include="M_Staff_Entity.cs" />
+    <Compile Include="M_StoreAuthorizations_Entity.cs" />
+    <Compile Include="M_StoreBottunDetails_Entity.cs" />
+    <Compile Include="M_StoreBottunGroup_Entity.cs" />
+    <Compile Include="M_StoreClose_Entity.cs" />
+    <Compile Include="M_StorePoint_Entity.cs" />
+    <Compile Include="M_Store_Entity.cs" />
+    <Compile Include="M_TankaCD_Entity.cs" />
+    <Compile Include="M_VendorFTP_Entity.cs" />
+    <Compile Include="M_Vendor_Entity.cs" />
+    <Compile Include="M_ZipCode_Entity.cs" />
+    <Compile Include="D_APIRireki_Entity.cs" />
+    <Compile Include="Nyuukin_Ichihanyou_Entity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="D_DepositHistory_Entity.cs" />
+    <Compile Include="TempoRegiZaikoKakunin_Entity.cs" />
+    <Compile Include="UriageMotochou_Entity.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

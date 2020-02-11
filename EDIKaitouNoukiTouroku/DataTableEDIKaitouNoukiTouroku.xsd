@@ -1,0 +1,55 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="EDIKaitouNoukiTouroku" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDIKaitouNoukiTouroku">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EDIOrderNO" type="xs:string" minOccurs="0" />
+              <xs:element name="EDIOrderRows" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderNO" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderRows" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderLines" type="xs:int" minOccurs="0" />
+              <xs:element name="ArriveDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OrderKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="MakerItemKBN" type="xs:string" minOccurs="0" />
+              <xs:element name="MakerItem" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUCD" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeName" type="xs:string" minOccurs="0" />
+              <xs:element name="ColorName" type="xs:string" minOccurs="0" />
+              <xs:element name="TaniCD" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderUnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="OrderPriceWithoutTax" type="xs:decimal" minOccurs="0" />
+              <xs:element name="BrandName" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUName" type="xs:string" minOccurs="0" />
+              <xs:element name="AdminNO" type="xs:int" minOccurs="0" />
+              <xs:element name="JanCD" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderSu" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderGroupNO" type="xs:string" minOccurs="0" />
+              <xs:element name="AnswerSu" type="xs:int" minOccurs="0" />
+              <xs:element name="NextDate" type="xs:string" minOccurs="0" />
+              <xs:element name="OrderGroupRows" type="xs:int" minOccurs="0" />
+              <xs:element name="ErrorMessage" type="xs:string" minOccurs="0" />
+              <xs:element name="InsertOperator" type="xs:string" minOccurs="0" />
+              <xs:element name="InsertDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="UpdateOperator" type="xs:string" minOccurs="0" />
+              <xs:element name="UpdateDateTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ArrivalPlanDate" type="xs:string" minOccurs="0" />
+              <xs:element name="ArrivalPlanSu" type="xs:int" minOccurs="0" />
+              <xs:element name="ErrorKBN" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="ErrorText" type="xs:string" minOccurs="0" />
+              <xs:element name="EDIImportNO" type="xs:int" minOccurs="0" />
+              <xs:element name="OrderDate" type="xs:string" minOccurs="0" />
+              <xs:element name="JuchuuNO" type="xs:string" minOccurs="0" />
+              <xs:element name="VendorCD" type="xs:string" minOccurs="0" />
+              <xs:element name="VendorName" type="xs:string" minOccurs="0" />
+              <xs:element name="ImportDateTime" type="xs:string" minOccurs="0" />
+              <xs:element name="DelFlg" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

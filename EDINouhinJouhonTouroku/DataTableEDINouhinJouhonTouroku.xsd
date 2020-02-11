@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EDINouhinJouhonTouroku" targetNamespace="http://tempuri.org/EDINouhinJouhonTouroku.xsd" xmlns:mstns="http://tempuri.org/EDINouhinJouhonTouroku.xsd" xmlns="http://tempuri.org/EDINouhinJouhonTouroku.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EDINouhinJouhonTouroku" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EDINouhinJouhonTouroku" msprop:Generator_UserDSName="EDINouhinJouhonTouroku">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EDINouhinJouhonTouroku" msprop:Generator_TableClassName="EDINouhinJouhonTourokuDataTable" msprop:Generator_TableVarName="tableEDINouhinJouhonTouroku" msprop:Generator_TablePropName="_EDINouhinJouhonTouroku" msprop:Generator_RowDeletingName="EDINouhinJouhonTourokuRowDeleting" msprop:Generator_RowChangingName="EDINouhinJouhonTourokuRowChanging" msprop:Generator_RowEvHandlerName="EDINouhinJouhonTourokuRowChangeEventHandler" msprop:Generator_RowDeletedName="EDINouhinJouhonTourokuRowDeleted" msprop:Generator_UserTableName="EDINouhinJouhonTouroku" msprop:Generator_RowChangedName="EDINouhinJouhonTourokuRowChanged" msprop:Generator_RowEvArgName="EDINouhinJouhonTourokuRowChangeEvent" msprop:Generator_RowClassName="EDINouhinJouhonTourokuRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SKENNouhinshoNO" msprop:Generator_ColumnVarNameInTable="columnSKENNouhinshoNO" msprop:Generator_ColumnPropNameInRow="SKENNouhinshoNO" msprop:Generator_ColumnPropNameInTable="SKENNouhinshoNOColumn" msprop:Generator_UserColumnName="SKENNouhinshoNO" type="xs:string" minOccurs="0" />
+              <xs:element name="SKENHacchuu" msprop:Generator_ColumnVarNameInTable="columnSKENHacchuu" msprop:Generator_ColumnPropNameInRow="SKENHacchuu" msprop:Generator_ColumnPropNameInTable="SKENHacchuuColumn" msprop:Generator_UserColumnName="SKENHacchuu" type="xs:string" minOccurs="0" />
+              <xs:element name="SKENNouhinHinban" msprop:Generator_ColumnVarNameInTable="columnSKENNouhinHinban" msprop:Generator_ColumnPropNameInRow="SKENNouhinHinban" msprop:Generator_ColumnPropNameInTable="SKENNouhinHinbanColumn" msprop:Generator_UserColumnName="SKENNouhinHinban" type="xs:string" minOccurs="0" />
+              <xs:element name="SKENJanCD" msprop:Generator_ColumnVarNameInTable="columnSKENJanCD" msprop:Generator_ColumnPropNameInRow="SKENJanCD" msprop:Generator_ColumnPropNameInTable="SKENJanCDColumn" msprop:Generator_UserColumnName="SKENJanCD" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUName" msprop:Generator_ColumnVarNameInTable="columnSKUName" msprop:Generator_ColumnPropNameInRow="SKUName" msprop:Generator_ColumnPropNameInTable="SKUNameColumn" msprop:Generator_UserColumnName="SKUName" type="xs:string" minOccurs="0" />
+              <xs:element name="ColorName" msprop:Generator_ColumnVarNameInTable="columnColorName" msprop:Generator_ColumnPropNameInRow="ColorName" msprop:Generator_ColumnPropNameInTable="ColorNameColumn" msprop:Generator_UserColumnName="ColorName" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeName" msprop:Generator_ColumnVarNameInTable="columnSizeName" msprop:Generator_ColumnPropNameInRow="SizeName" msprop:Generator_ColumnPropNameInTable="SizeNameColumn" msprop:Generator_UserColumnName="SizeName" type="xs:string" minOccurs="0" />
+              <xs:element name="SKENNouhinSuu" msprop:Generator_ColumnVarNameInTable="columnSKENNouhinSuu" msprop:Generator_ColumnPropNameInRow="SKENNouhinSuu" msprop:Generator_ColumnPropNameInTable="SKENNouhinSuuColumn" msprop:Generator_UserColumnName="SKENNouhinSuu" type="xs:string" minOccurs="0" />
+              <xs:element name="ErrorText" msprop:Generator_ColumnVarNameInTable="columnErrorText" msprop:Generator_ColumnPropNameInRow="ErrorText" msprop:Generator_ColumnPropNameInTable="ErrorTextColumn" msprop:Generator_UserColumnName="ErrorText" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

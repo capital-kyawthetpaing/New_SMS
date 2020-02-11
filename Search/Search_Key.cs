@@ -1,0 +1,113 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Base.Client;
+using BL;
+using Entity;
+
+namespace Search
+{
+    public partial class Search_Key : FrmSubForm
+    {
+        M_Hanyou_Entity mhe;
+        Search_Hanyou_BL shbl;
+
+        public string KeyCode = string.Empty;
+        public string ID = string.Empty;
+        public string IDName = string.Empty;
+
+        public Search_Key(string ID,string IDName)
+        {          
+            InitializeComponent();
+
+            F9Visible = false;
+            shbl = new Search_Hanyou_BL();
+
+            lblID.Text = ID;
+            lblName.Text = IDName;
+        }
+        
+        private void txtKey2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
+            {
+                F11();
+            }
+        }
+
+        private void F11Show_Click(object sender, EventArgs e)
+        {
+            F11();
+        }
+
+        private void F11()
+        {
+            if (ErrorCheck())
+            {
+                mhe = GetData();
+                DataTable dtHanyou = new DataTable();
+                dtHanyou = shbl.M_Hanyou_KeySearch(mhe);
+                GvKey.DataSource = dtHanyou;
+            }
+        }
+
+        private bool ErrorCheck()
+        {
+            if (!string.IsNullOrWhiteSpace(txtKey2.Text))
+            {
+                int result = txtKey1.Text.CompareTo(txtKey2.Text);
+                if (result > 0)  
+                {
+                    shbl.ShowMessage("E106");
+                    txtKey2.Focus();
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private M_Hanyou_Entity GetData()
+        {
+            mhe = new M_Hanyou_Entity
+            {
+                ID = lblID.Text,
+                KeyFrom = txtKey1.Text,
+                KeyTo = txtKey2.Text,
+            };
+            return mhe;
+        }
+
+        private void GvKey_DoubleClick(object sender, EventArgs e)
+        {
+            SendData();
+        }
+
+        private void SendData()
+        {
+            if (GvKey .CurrentRow != null && GvKey.CurrentRow.Index >= 0)
+            {
+                KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();             
+                this.Close();
+            }
+        }
+
+        public override void FunctionProcess(int Index)
+        {
+            if (Index + 1 == 12)
+            {
+                SendData();
+            }
+        }
+
+        private void Search_Key_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+    }
+}

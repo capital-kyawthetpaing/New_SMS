@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CKM_Controls</RootNamespace>
+    <AssemblyName>CKM_Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKM_Controls">
+      <HintPath>obj\Debug\CKM_Controls.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CKMShop_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKMShop_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKMShop_ComboBox.Designer.cs">
+      <DependentUpon>CKMShop_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CKMShop_GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKMShop_GridView.Designer.cs">
+      <DependentUpon>CKMShop_GridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CKMShop_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKMShop_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_CheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_Label.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_Button.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_ComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_ComboBox.Designer.cs">
+      <DependentUpon>CKM_ComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CKM_MultiLineTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_RadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CKM_TextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewDecimalCell.cs" />
+    <Compile Include="DataGridViewDecimalColumn.cs" />
+    <Compile Include="DataGridViewDecimalControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataGridViewMaskedTextCell.cs" />
+    <Compile Include="DataGridViewMaskedTextColumn.cs" />
+    <Compile Include="DataGridViewMaskedTextControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="dgvInventoryCell.cs" />
+    <Compile Include="dgvInventoryColumn.cs" />
+    <Compile Include="dgvInventoryControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CKM_GridView.resx">
+      <DependentUpon>CKM_GridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CKM_MultiLineTextBox.resx">
+      <DependentUpon>CKM_MultiLineTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BL\BL.csproj">
+      <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

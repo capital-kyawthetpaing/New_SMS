@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Entity;
+using System.Data;
+
+namespace DL
+{
+    public class D_PayPlan_DL : Base_DL
+    {
+        /// <summary>
+        /// 締処理済チェック　D_PayPlanに、支払締番号がセットされていれば、エラー（下記のSelectができたらエラー）
+        /// </summary>
+        /// <param name="No"></param>
+        /// <returns></returns>
+        public DataTable CheckPayPlanData(string No)
+        {
+            string sp = "CheckPayPlanData";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@PurchaseNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = No } },
+            };
+
+            return SelectData(dic, sp);
+        }
+        /// <summary>
+        /// 入金予定表よりデータ抽出時に使用
+        /// </summary>
+        /// <param name="dce"></param>
+        /// <returns></returns>
+        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe)
+        {
+            string sp = "D_PayPlan_SelectforPrint";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@PaymentDueDateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymentDueDateFrom } },
+                { "@PaymentDueDateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymenetDueDateTo } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
+                { "@PaymentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.PayeeCD } },
+                { "@ClosedStatusSumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.CloseStatusSumi } },
+                { "@PaymentStatusUnpaid", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.PaymentStatusUnpaid } },
+                { "@Purchase", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Purchase } },
+                { "@Expense", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Expense } },
+            };
+
+            return SelectData(dic, sp);
+        }
+        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe,M_Vendor_Entity mve)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@PayPlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
+                {"@PayPlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
+                {"@ChangeDate",new ValuePair{value1 = SqlDbType.Date,value2 = mve.ChangeDate } },
+                {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
+            };
+            return SelectData(dic, "D_PayPlan_Select");
+        }
+    }
+}
