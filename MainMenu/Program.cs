@@ -29,26 +29,17 @@ namespace MainMenu
             Form pgname =null;
             if (lbl.ReadConfig())
             {
-                if (Base_DL.iniEntity.Login_Type == "CapitalMainMenuLogin")       // Capital MainMenu
+                if (Base_DL.iniEntity.Login_Type == "MainMenuLogin")
                 {
                     pgname = new MainmenuLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "HaspoMainMenuLogin")   // Haspo MainMenu
+                else if (Base_DL.iniEntity.Login_Type == "HaspoMenuLogin")
                 {
                     pgname = new HaspoLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "CapitalStoreMenuLogin")   // Capital StoreMenu
+                else if (Base_DL.iniEntity.Login_Type == "CapitalMenuLogin")
                 {
                     pgname = new CapitalsportsLogin();
-                }
-                else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")   // Haspo StoreMenu
-                {
-                 
-
-                }
-                else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")   // Tennic MainMenu
-                {
-                    pgname = new TennicLogin();
                 }
                 else
                 {

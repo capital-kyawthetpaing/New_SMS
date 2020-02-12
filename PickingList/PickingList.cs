@@ -15,13 +15,13 @@ namespace PickingList
 {
     public partial class FrmPickingList : FrmMainForm
     {
-        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");    
+        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4;
         PickingList_BL plbl;
         public FrmPickingList() 
         {
             InitializeComponent();
-        }   
+        }
 
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace PickingList
         }
 
         public void PageloadBind()
-        {  
+        {
             chkUnissued1.Focus();
             DisablePanel(panel1);
             DisablePanel(panel2);
@@ -47,7 +47,7 @@ namespace PickingList
             txtDateFrom2.Enabled = false;
             txtDateTo2.Enabled = false;
 
-            Btn_F9.Text = string.Empty;  
+            Btn_F9.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = string.Empty;
         }
@@ -121,7 +121,7 @@ namespace PickingList
                     dtPrintData1 = plbl.PickingList_InsertUpdateSelect_Check1(dpe1);
                 }
 
-                if (chkReissued1.Checked == true)
+                if (chkUnissued2.Checked == true)
                 {
                     dpe2 = new D_Picking_Entity
                     {
@@ -133,7 +133,7 @@ namespace PickingList
                     dtPrintData2 = plbl.PickingList_InsertUpdateSelect_Check2(dpe2);
                 }
 
-                if (chkUnissued2.Checked == true)
+                if (chkReissued1.Checked == true)
                 {
                     dpe3 = new D_Picking_Entity
                     {
@@ -247,7 +247,7 @@ namespace PickingList
 
                     }
 
-                    if (chkReissued1.Checked == true && dtPrintData2.Rows.Count > 0)
+                    if (chkUnissued2.Checked == true && dtPrintData2.Rows.Count > 0)
                     {
 
                         DialogResult ret;
@@ -324,7 +324,7 @@ namespace PickingList
                         plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), InOperatorCD);
                     }
 
-                    if (chkUnissued2.Checked == true && dtPrintData3.Rows.Count > 0)
+                    if (chkReissued1.Checked == true && dtPrintData3.Rows.Count > 0)
                     {
 
                         DialogResult ret;
@@ -526,7 +526,7 @@ namespace PickingList
                     return false;
                 }
             }
-            if (chkReissued1.Checked==true)
+            if (chkUnissued2.Checked==true)
                 if (!ScPickingNo1.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
@@ -535,13 +535,11 @@ namespace PickingList
             if(string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
             {
                 bbl.ShowMessage("E202", "出荷予定日(To)", "出荷予定日");
-                txtShipmentDate.Focus();
                 return false;
             }
             if ((!string.IsNullOrWhiteSpace(txtDateFrom1.Text) || !string.IsNullOrWhiteSpace(txtDateTo1.Text)) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
             {
                 bbl.ShowMessage("E188", "出荷予定日(To)", "出荷予定日");
-                txtShipmentDate.Focus();
                 return false;
             }
 
@@ -551,7 +549,7 @@ namespace PickingList
                     bbl.ShowMessage("E128");
                     return false;
                 }
-            if (chkUnissued2.Checked == true)
+            if (chkReissued1.Checked == true)
             {
                 int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
                 if (result >= 0)
@@ -580,23 +578,13 @@ namespace PickingList
             {
                 txtDateFrom1.Enabled = false;
                 txtDateTo1.Enabled = false;
-                //txtDateTo1.Text = string.Empty;
+                txtDateTo1.Text = string.Empty;
             }
         }
 
         private void FrmPickingList_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
-        }
-
-        private void ScPickingNo1_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
-        }
-
-        private void ScPickingNo2_Enter(object sender, EventArgs e)
-        {
-            ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
         }
 
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)
@@ -624,7 +612,7 @@ namespace PickingList
             {
                 txtDateFrom2.Enabled = false;
                 txtDateTo2.Enabled = false;
-                //txtDateTo2.Text = string.Empty;
+                txtDateTo2.Text = string.Empty;
             }
         }
 

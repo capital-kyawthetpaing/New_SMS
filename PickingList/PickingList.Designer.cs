@@ -273,7 +273,6 @@
             this.ScPickingNo1.Value1 = null;
             this.ScPickingNo1.Value2 = null;
             this.ScPickingNo1.Value3 = null;
-            this.ScPickingNo1.Enter += new System.EventHandler(this.ScPickingNo1_Enter);
             // 
             // ckM_Label6
             // 
@@ -317,7 +316,6 @@
             this.ScPickingNo2.Value1 = null;
             this.ScPickingNo2.Value2 = null;
             this.ScPickingNo2.Value3 = null;
-            this.ScPickingNo2.Enter += new System.EventHandler(this.ScPickingNo2_Enter);
             // 
             // ckM_Label7
             // 
