@@ -42,8 +42,8 @@ namespace MainMenu
         private void SetDesignerFunction()
         {
             this.KeyPreview = true;
-            //Event_Designer(panelLeft);
-            //Event_Designer(panel_right);
+            Event_Designer(panelLeft);
+            Event_Designer(panel_right);
             this.Load += Main_Menu_Load;
         }
         private void Main_Menu_Load(object sender, EventArgs e)

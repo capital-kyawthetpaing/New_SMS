@@ -90,7 +90,7 @@ namespace MainMenu
                         if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
                         {
                             var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
-                            Main_Menu menuForm = new Main_Menu(GetInfo().StaffCD, mseinfo);
+                            Tennic_MainMenu menuForm = new Tennic_MainMenu(GetInfo().StaffCD, mseinfo);
                             this.Hide();
                             menuForm.ShowDialog();
                             this.Close();
