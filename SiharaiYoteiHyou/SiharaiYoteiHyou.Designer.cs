@@ -184,7 +184,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(67, 43);
+            this.ckM_Label4.Location = new System.Drawing.Point(67, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 6;
@@ -201,14 +201,15 @@
             this.scPaymentDestinaion.CodeWidth = 130;
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
+            this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.scPaymentDestinaion.IsCopy = false;
             this.scPaymentDestinaion.LabelText = "";
             this.scPaymentDestinaion.LabelVisible = true;
-            this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 34);
+            this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
             this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
             this.scPaymentDestinaion.Name = "scPaymentDestinaion";
             this.scPaymentDestinaion.SearchEnable = true;
-            this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 28);
+            this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scPaymentDestinaion.TabIndex = 7;
             this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
