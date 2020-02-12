@@ -482,6 +482,7 @@ namespace ShiireShoukaiShiiresaki
         private void scSupplier_Enter(object sender, EventArgs e)
         {
             scSupplier.Value1 = "1";//仕入先区分：1
+            scSupplier.ChangeDate = txtPurchaseDateTo.Text;
         }
     }
 }

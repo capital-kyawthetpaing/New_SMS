@@ -463,6 +463,7 @@ namespace ShiireShoukaiDetails
         private void scMakerCD_Enter(object sender, EventArgs e)
         {
             scMakerCD.Value1 = "1";//仕入先区分：1
+            scMakerCD.ChangeDate = txtPurchaseDate2.Text;
         }
     }
 }
