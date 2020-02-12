@@ -63,13 +63,11 @@
     <StartupObject>PickingNyuuryoku.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\New SMS\New SMS\bin\Debug\GridBase.dll</HintPath>
+    <Reference Include="GridBase">
+      <HintPath>..\Search\RequiredDLL\GridBase.dll</HintPath>
     </Reference>
-    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+    <Reference Include="GridControl">
+      <HintPath>..\Search\RequiredDLL\GridControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
