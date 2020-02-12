@@ -15,13 +15,13 @@ namespace PickingList
 {
     public partial class FrmPickingList : FrmMainForm
     {
-        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");
+        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");    
         D_Picking_Entity dpe1,dpe2,dpe3,dpe4;
         PickingList_BL plbl;
         public FrmPickingList() 
         {
             InitializeComponent();
-        }
+        }   
 
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace PickingList
         }
 
         public void PageloadBind()
-        {
+        {  
             chkUnissued1.Focus();
             DisablePanel(panel1);
             DisablePanel(panel2);
@@ -47,7 +47,7 @@ namespace PickingList
             txtDateFrom2.Enabled = false;
             txtDateTo2.Enabled = false;
 
-            Btn_F9.Text = string.Empty;
+            Btn_F9.Text = string.Empty;  
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = string.Empty;
         }

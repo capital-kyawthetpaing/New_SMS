@@ -31,6 +31,8 @@ namespace Entity
 
         public string searchType { get; set; }
 
+        public string test11 { get; set; }
+
         public DataTable dt1 { get; set; }
         public DataTable dt2 { get; set; }
         public DataTable dt3 { get; set; }
