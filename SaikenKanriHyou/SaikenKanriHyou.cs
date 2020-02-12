@@ -402,6 +402,7 @@ namespace SaikenKanriHyou
             }
         }
 
+
         private void sc_Customer_Enter(object sender, EventArgs e)
         {
             if (rdo_BillAddress.Checked)
