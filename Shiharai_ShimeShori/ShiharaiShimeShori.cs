@@ -254,7 +254,7 @@ namespace Shiharai_ShimeShori
         {
             //ScPaymentCD.ChangeDate = sss_bl.GetDate();
             ScPaymentCD.Value1 = "3";//仕入先区分：3
-            ScPaymentCD.ChangeDate = txtPayCloseDate.Text;//ssa
+            ScPaymentCD.ChangeDate = txtPayCloseDate.Text;
         }
         private void txtPayCloseDate_KeyDown(object sender, KeyEventArgs e)
         {
