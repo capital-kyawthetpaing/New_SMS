@@ -188,7 +188,6 @@ namespace SaikenKanriHyou
             }
                
         }
-
         #region DataErrorCheck
         private bool ErrorCheck()
         {
@@ -338,7 +337,6 @@ namespace SaikenKanriHyou
             };
             return dmc_e;
         }
-
         #region SelectData
         private DataTable CheckData()
         {
@@ -380,7 +378,6 @@ namespace SaikenKanriHyou
 
             return lle;
         }
-
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
@@ -401,8 +398,6 @@ namespace SaikenKanriHyou
                 }
             }
         }
-
-
         private void sc_Customer_Enter(object sender, EventArgs e)
         {
             if (rdo_BillAddress.Checked)
