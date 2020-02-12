@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{220BB8D6-0973-4B8C-B86C-E13AB61930B1}</ProjectGuid>
+    <ProjectGuid>{812CA79E-C168-400C-81DC-D41D0E0CEE3E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>GetsujiSaikenKeisanSyori</RootNamespace>
     <AssemblyName>GetsujiSaikenKeisanSyori</AssemblyName>
