@@ -528,6 +528,7 @@ namespace SiharaiYoteiHyou
         private void scPaymentDestinaion_Enter(object sender, EventArgs e)
         {
             scPaymentDestinaion.Value1 = "2";
+            scPaymentDestinaion.ChangeDate = txtPaymentDueDateTo.Text;
 
         }
     }
