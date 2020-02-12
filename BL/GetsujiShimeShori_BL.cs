@@ -97,7 +97,7 @@ namespace BL
         /// </summary>
         /// <param name="de"></param>
         /// <returns></returns>
-        public bool GetsujiSaimuKeisanSyori(D_MonthlyDebt_Entity de)
+        public bool GetsujiSaimuKeisanSyori(D_MonthlyDebt_Entity de) 
         {
             D_MonthlyDebt_DL dl = new D_MonthlyDebt_DL();
             return dl.D_MonthlyDebt_Exec(de);
