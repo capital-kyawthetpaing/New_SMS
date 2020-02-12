@@ -53,7 +53,6 @@ namespace SaikenKanriHyou
             txtTargetdate.Require(true);
             rdo_BillAddress.Checked = true;
             BindStore();
-            this.rdo_BillAddress.Click += rdo_BillAddress_Click;
             this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
         }
         public override void FunctionProcess(int index)
@@ -403,16 +402,15 @@ namespace SaikenKanriHyou
             }
         }
 
-        private void rdo_BillAddress_Click(object sender, EventArgs e)
+        private void sc_Customer_Enter(object sender, EventArgs e)
         {
-            sc_Customer.Value1 = "2";
-            sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
-        }
+            if (rdo_BillAddress.Checked)
+                sc_Customer.Value1 = "2";
+            else if (rdo_Sale.Checked)
+                sc_Customer.Value1 = "1";
 
-        private void rdo_Sale_Click(object sender, EventArgs e)
-        {
-            sc_Customer.Value1 = "1";
             sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
+            sc_Customer.Value2 = cbo_Store.SelectedValue.Equals("-1") ? "" : cbo_Store.SelectedValue.ToString();
         }
 
         private void SaikenKanriHyou_KeyUp(object sender, KeyEventArgs e)
