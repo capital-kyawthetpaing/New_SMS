@@ -22,6 +22,8 @@ namespace MainMenu
             this.KeyPreview = true;
             InitializeComponent();
         }
+
+      
         private bool ErrorCheck()
         {
             if (string.IsNullOrWhiteSpace(txtOperatorCD.Text))

@@ -161,7 +161,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(137, 19);
-            this.txtPassword.TabIndex = 18;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtOperatorCD
@@ -185,7 +185,7 @@
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(137, 19);
-            this.txtOperatorCD.TabIndex = 17;
+            this.txtOperatorCD.TabIndex = 0;
             this.txtOperatorCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -201,6 +201,7 @@
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtOperatorCD);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "TennicLogin";
             this.Text = "Tennic_MainMenu";
             this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);
