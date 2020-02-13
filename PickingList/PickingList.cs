@@ -587,6 +587,16 @@ namespace PickingList
             MoveNextControl(e);
         }
 
+        private void ScPickingNo1_Enter(object sender, EventArgs e)
+        {
+            ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
+        }
+
+        private void ScPickingNo2_Enter(object sender, EventArgs e)
+        {
+            ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
+        }
+
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkReissued1.Checked == true)
