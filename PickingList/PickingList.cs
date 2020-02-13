@@ -15,13 +15,13 @@ namespace PickingList
 {
     public partial class FrmPickingList : FrmMainForm
     {
-        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");    
-        D_Picking_Entity dpe1,dpe2,dpe3,dpe4;
+        string todayDate = DateTime.Now.ToString("yyyy/MM/dd");
+        D_Picking_Entity dpe1, dpe2, dpe3, dpe4;
         PickingList_BL plbl;
-        public FrmPickingList() 
+        public FrmPickingList()
         {
             InitializeComponent();
-        }   
+        }
 
         private void FrmPickingList_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace PickingList
         }
 
         public void PageloadBind()
-        {  
+        {
             chkUnissued1.Focus();
             DisablePanel(panel1);
             DisablePanel(panel2);
@@ -47,7 +47,7 @@ namespace PickingList
             txtDateFrom2.Enabled = false;
             txtDateTo2.Enabled = false;
 
-            Btn_F9.Text = string.Empty;  
+            Btn_F9.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = string.Empty;
         }
@@ -91,8 +91,8 @@ namespace PickingList
                     }
 
                 case 11://F12:最新化
-                    //PrintSec();
-                   // chkUnissued1.Focus();
+                        //PrintSec();
+                        // chkUnissued1.Focus();
                     break;
             }
         }
@@ -138,7 +138,7 @@ namespace PickingList
                     dpe3 = new D_Picking_Entity
                     {
                         SoukoCD = cboSouko.SelectedValue.ToString(),
-                        StoreCD=StoreCD,
+                        StoreCD = StoreCD,
                         ShippingPlanDateFrom = txtDateFrom2.Text,
                         ShippingPlanDateTo = txtDateTo2.Text,
                         InsertOperator = InOperatorCD,
@@ -526,13 +526,13 @@ namespace PickingList
                     return false;
                 }
             }
-            if (chkReissued1.Checked==true)
+            if (chkReissued1.Checked == true)
                 if (!ScPickingNo1.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
                     return false;
                 }
-            if(string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
+            if (string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
             {
                 bbl.ShowMessage("E202", "出荷予定日(To)", "出荷予定日");
                 txtShipmentDate.Focus();
@@ -587,6 +587,16 @@ namespace PickingList
         private void FrmPickingList_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void ScPickingNo1_Enter(object sender, EventArgs e)
+        {
+            ScPickingNo1.Value1 = cboSouko.SelectedValue.ToString();
+        }
+
+        private void ScPickingNo2_Enter(object sender, EventArgs e)
+        {
+            ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
         }
 
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)

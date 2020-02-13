@@ -36,6 +36,28 @@ namespace DL
          return    SelectData(dic, "D_MonthlyClaims_SelectALL");
         }
 
+        /// <summary>
+        /// 月次債権計算処理
+        /// GetsujiSaikenKeisanSyoriより更新時に使用
+        /// </summary>
+        /// <param name="de"></param>
+        /// <returns></returns>
+        public bool D_MonthlyClaims_Exec(D_MonthlyClaims_Entity de)
+        {
+            string sp = "PRC_GetsujiSaikenKeisanSyori";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@FiscalYYYYMM", new ValuePair { value1 = SqlDbType.Int, value2 = de.YYYYMM} },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
+                { "@Mode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.Mode.ToString()} },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator} },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.PC} },
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+
+
         public DataTable UriageMotochou_PrintSelect(UriageMotochou_Entity  ume)
         {
             string rpc = "RPC_UriageMotochou_PrintSelect";

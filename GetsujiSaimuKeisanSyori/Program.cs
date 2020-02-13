@@ -13,11 +13,11 @@ using System.Collections;
 
 using Base.Client;
 
-namespace GetsujiSaikenKeisanSyori
+namespace GetsujiSaimuKeisanSyori
 {
     class Program
     {
-        static GetsujiSaikenKeisanSyori api = new GetsujiSaikenKeisanSyori();
+        static GetsujiSaimuKeisanSyori api = new GetsujiSaimuKeisanSyori();
         static Login_BL loginbl = new Login_BL();
 
         static GetsujiShimeShori_BL gsbl;
@@ -27,10 +27,9 @@ namespace GetsujiSaikenKeisanSyori
         static string InProcessMode;
         static string InFiscalYYYYMM;
 
-        static DataTable dtMulti;
         static void Main(string[] args)
         {
-            Console.Title = "GetsujiSaikenKeisanSyori";
+            Console.Title = "GetsujiSaimuKeisanSyori";
 
             if (loginbl.ReadConfig() == true)
             {
@@ -70,12 +69,12 @@ namespace GetsujiSaikenKeisanSyori
                 if(ret)
                 {
                     //FiscalYYYYMM＜Parameter受取	FiscalYYYYMM
-                    //またはFiscalYYYYMM＝Parameter受取	FiscalYYYYMM＆	ClosePosition1＝0＆	ClosePosition3＝0なら
+                    //またはFiscalYYYYMM＝Parameter受取	FiscalYYYYMM＆	ClosePosition2＝0＆	ClosePosition4＝0なら
                     if (gsbl.Z_Set( me.FiscalYYYYMM) <= gsbl.Z_Set(InFiscalYYYYMM) )
                     {
                         if (gsbl.Z_Set(me.FiscalYYYYMM) == gsbl.Z_Set(InFiscalYYYYMM))
                         {
-                            if(me.ClosePosition1.Equals("0") && me.ClosePosition3.Equals("0"))
+                            if(me.ClosePosition2.Equals("0") && me.ClosePosition4.Equals("0"))
                             {
                                 execFlg = true;
                             }
@@ -91,7 +90,7 @@ namespace GetsujiSaikenKeisanSyori
                 if (execFlg)
                 {
                     //【データ更新】
-                    D_MonthlyClaims_Entity de = new D_MonthlyClaims_Entity
+                    D_MonthlyDebt_Entity de = new D_MonthlyDebt_Entity
                     {
                         PC = Login_BL.GetHostName(),
                         Operator = InOperatorCD,

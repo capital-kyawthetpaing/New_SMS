@@ -13,6 +13,16 @@ namespace MainMenu
 {
     public partial class HaspoLogin : Form
     {
+
+         
+
+
+
+
+
+
+
+
         Login_BL loginbl;
         M_Staff_Entity mse;
         public HaspoLogin()

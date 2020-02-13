@@ -83,7 +83,6 @@ namespace UriageMotouchou
             if(!chkYes.Checked && !chkNo.Checked)
             {
                 bbl.ShowMessage("E111");
-                chkYes.Focus();
                 return false;
             }
 
@@ -274,10 +273,8 @@ namespace UriageMotouchou
 
         private void sc_Customer_Enter(object sender, EventArgs e)
         {
-            string day = System.DateTime.Today.Day.ToString();//本日の日付 by ssa
-            sc_Customer.ChangeDate = txtTagetFrom.Text + "/" + day;
             sc_Customer.Value1 = "0";
-            sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
+            sc_Customer.Value2 = "2001";
         }
 
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)

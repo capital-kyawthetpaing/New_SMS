@@ -67,7 +67,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(41, 27);
+            this.ckM_Label1.Location = new System.Drawing.Point(40, 9);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label1.TabIndex = 0;
@@ -91,7 +91,7 @@
             this.txtPaymentDueDateFrom.IsNumber = true;
             this.txtPaymentDueDateFrom.IsShop = false;
             this.txtPaymentDueDateFrom.Length = 10;
-            this.txtPaymentDueDateFrom.Location = new System.Drawing.Point(116, 23);
+            this.txtPaymentDueDateFrom.Location = new System.Drawing.Point(113, 6);
             this.txtPaymentDueDateFrom.MaxLength = 10;
             this.txtPaymentDueDateFrom.MoveNext = true;
             this.txtPaymentDueDateFrom.Name = "txtPaymentDueDateFrom";
@@ -109,7 +109,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(225, 27);
+            this.ckM_Label2.Location = new System.Drawing.Point(222, 10);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label2.TabIndex = 2;
@@ -133,7 +133,7 @@
             this.txtPaymentDueDateTo.IsNumber = true;
             this.txtPaymentDueDateTo.IsShop = false;
             this.txtPaymentDueDateTo.Length = 10;
-            this.txtPaymentDueDateTo.Location = new System.Drawing.Point(249, 23);
+            this.txtPaymentDueDateTo.Location = new System.Drawing.Point(246, 6);
             this.txtPaymentDueDateTo.MaxLength = 10;
             this.txtPaymentDueDateTo.MoveNext = true;
             this.txtPaymentDueDateTo.Name = "txtPaymentDueDateTo";
@@ -151,7 +151,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(1287, 24);
+            this.ckM_Label3.Location = new System.Drawing.Point(1351, 10);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label3.TabIndex = 4;
@@ -167,11 +167,11 @@
             this.comboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.comboStore.FormattingEnabled = true;
             this.comboStore.Length = 10;
-            this.comboStore.Location = new System.Drawing.Point(1322, 19);
+            this.comboStore.Location = new System.Drawing.Point(1385, 6);
             this.comboStore.MaxLength = 10;
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
-            this.comboStore.Size = new System.Drawing.Size(121, 20);
+            this.comboStore.Size = new System.Drawing.Size(170, 20);
             this.comboStore.TabIndex = 5;
             this.comboStore.SelectedIndexChanged += new System.EventHandler(this.comboStore_SelectedIndexChanged);
             // 
@@ -184,7 +184,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(67, 63);
+            this.ckM_Label4.Location = new System.Drawing.Point(67, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 6;
@@ -198,23 +198,27 @@
             this.scPaymentDestinaion.ChangeDate = "";
             this.scPaymentDestinaion.ChangeDateWidth = 100;
             this.scPaymentDestinaion.Code = "";
-            this.scPaymentDestinaion.CodeWidth = 120;
+            this.scPaymentDestinaion.CodeWidth = 130;
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
+            this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.scPaymentDestinaion.IsCopy = false;
             this.scPaymentDestinaion.LabelText = "";
             this.scPaymentDestinaion.LabelVisible = true;
-            this.scPaymentDestinaion.Location = new System.Drawing.Point(117, 51);
+            this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
+            this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
             this.scPaymentDestinaion.Name = "scPaymentDestinaion";
             this.scPaymentDestinaion.SearchEnable = true;
-            this.scPaymentDestinaion.Size = new System.Drawing.Size(435, 28);
-            this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.Supplier;
+            this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
+            this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scPaymentDestinaion.TabIndex = 7;
+            this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scPaymentDestinaion.UseChangeDate = false;
             this.scPaymentDestinaion.Value1 = null;
             this.scPaymentDestinaion.Value2 = null;
             this.scPaymentDestinaion.Value3 = null;
             this.scPaymentDestinaion.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scPaymentDestinaion_CodeKeyDownEvent);
+            this.scPaymentDestinaion.Enter += new System.EventHandler(this.scPaymentDestinaion_Enter);
             this.scPaymentDestinaion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scPaymentDestinaion_KeyDown);
             // 
             // ckM_Label5
@@ -226,7 +230,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(54, 96);
+            this.ckM_Label5.Location = new System.Drawing.Point(55, 66);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 8;
@@ -243,7 +247,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(67, 129);
+            this.ckM_Label6.Location = new System.Drawing.Point(68, 91);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label6.TabIndex = 9;
@@ -272,7 +276,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(54, 160);
+            this.ckM_Label7.Location = new System.Drawing.Point(55, 122);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label7.TabIndex = 12;
@@ -312,7 +316,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(80, 192);
+            this.ckM_Label8.Location = new System.Drawing.Point(81, 154);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label8.TabIndex = 15;
@@ -324,7 +328,7 @@
             // 
             this.chkPurchase.AutoSize = true;
             this.chkPurchase.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkPurchase.Location = new System.Drawing.Point(117, 192);
+            this.chkPurchase.Location = new System.Drawing.Point(118, 154);
             this.chkPurchase.Name = "chkPurchase";
             this.chkPurchase.Size = new System.Drawing.Size(50, 16);
             this.chkPurchase.TabIndex = 16;
@@ -336,7 +340,7 @@
             // 
             this.chkExpense.AutoSize = true;
             this.chkExpense.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkExpense.Location = new System.Drawing.Point(249, 191);
+            this.chkExpense.Location = new System.Drawing.Point(250, 153);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(50, 16);
             this.chkExpense.TabIndex = 17;
@@ -371,7 +375,7 @@
             // 
             this.panel2.Controls.Add(this.radioPaymentStatusAll);
             this.panel2.Controls.Add(this.radioPaymentStatusUnpaid);
-            this.panel2.Location = new System.Drawing.Point(114, 153);
+            this.panel2.Location = new System.Drawing.Point(115, 115);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 25);
             this.panel2.TabIndex = 19;
@@ -380,7 +384,7 @@
             // 
             this.panel1.Controls.Add(this.radioClosedStatusAll);
             this.panel1.Controls.Add(this.radioClosedStatusSumi);
-            this.panel1.Location = new System.Drawing.Point(114, 122);
+            this.panel1.Location = new System.Drawing.Point(115, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 25);
             this.panel1.TabIndex = 18;
@@ -417,6 +421,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
