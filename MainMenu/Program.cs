@@ -29,26 +29,27 @@ namespace MainMenu
             Form pgname =null;
             if (lbl.ReadConfig())
             {
-                if (Base_DL.iniEntity.Login_Type == "CapitalMainMenuLogin")       // Capital MainMenu
+                if (Base_DL.iniEntity.Login_Type == "MainMenuLogin")
                 {
                     pgname = new MainmenuLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "HaspoMainMenuLogin")   // Haspo MainMenu
+                else if (Base_DL.iniEntity.Login_Type == "HaspoMenuLogin")
                 {
                     pgname = new HaspoLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "CapitalStoreMenuLogin")   // Capital StoreMenu
+                else if (Base_DL.iniEntity.Login_Type == "CapitalMenuLogin")
                 {
                     pgname = new CapitalsportsLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")   // Haspo StoreMenu
+                else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")
                 {
-                    pgname = new Haspo.HaspoStoreMenuLogin();
+                    pgname = new CapitalsportsLogin();
                 }
-                else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")   // Tennic MainMenu
+                else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")
                 {
+                    pgname = new TennicLogin();
+                }
 
-                }
                 else
                 {
                     MessageBox.Show("The program cannot initialize with the specified server instaces  inside CKM.ini file. PLease fix ini file!!!!");

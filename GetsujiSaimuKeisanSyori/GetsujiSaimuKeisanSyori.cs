@@ -13,16 +13,16 @@ using System.Collections;
 
 using Microsoft.VisualBasic.FileIO;
 
-namespace GetsujiSaikenKeisanSyori
+namespace GetsujiSaimuKeisanSyori
 {
-    public class GetsujiSaikenKeisanSyori
+    public class GetsujiSaimuKeisanSyori
     {
         static GetsujiShimeShori_BL sbl = new GetsujiShimeShori_BL();
 
-        public  void ExecUpdate(D_MonthlyClaims_Entity de)
+        public  void ExecUpdate(D_MonthlyDebt_Entity de)
         {
             try {
-                sbl.GetsujiSaikenKeisanSyori(de);    
+                sbl.GetsujiSaimuKeisanSyori(de);    
             }
             catch (Exception ex)
             {
