@@ -47,15 +47,8 @@ namespace MainMenu
                 }
                 else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")
                 {
-                    pgname = new TennicLogin(); ; ; ;
-
-
-
+                    pgname = new TennicLogin();
                 }
-
-
-
-
                 else
                 {
                     MessageBox.Show("The program cannot initialize with the specified server instaces  inside CKM.ini file. PLease fix ini file!!!!");
