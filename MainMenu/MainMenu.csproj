@@ -125,6 +125,18 @@
     <Compile Include="Store_Message.Designer.cs">
       <DependentUpon>Store_Message.cs</DependentUpon>
     </Compile>
+    <Compile Include="TennicLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TennicLogin.Designer.cs">
+      <DependentUpon>TennicLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tennic_MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tennic_MainMenu.designer.cs">
+      <DependentUpon>Tennic_MainMenu.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CapitalsportsLogin.resx">
       <DependentUpon>CapitalsportsLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +170,12 @@
     </Compile>
     <EmbeddedResource Include="Store_Message.resx">
       <DependentUpon>Store_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TennicLogin.resx">
+      <DependentUpon>TennicLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tennic_MainMenu.resx">
+      <DependentUpon>Tennic_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
