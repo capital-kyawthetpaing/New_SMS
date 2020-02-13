@@ -154,6 +154,7 @@
             this.sc_Customer.Value2 = null;
             this.sc_Customer.Value3 = null;
             this.sc_Customer.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sc_Customer_CodeKeyDownEvent);
+            this.sc_Customer.Enter += new System.EventHandler(this.sc_Customer_Enter);
             // 
             // lblClient
             // 
