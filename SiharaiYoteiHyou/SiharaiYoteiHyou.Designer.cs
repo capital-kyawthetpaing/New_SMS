@@ -38,9 +38,9 @@
             this.scPaymentDestinaion = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.radioClosedStatusSumi = new CKM_Controls.CKM_RadioButton();
+            this.RdoCloseStsSumi = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
-            this.radioPaymentStatusUnpaid = new CKM_Controls.CKM_RadioButton();
+            this.RdoUnpaid = new CKM_Controls.CKM_RadioButton();
             this.radioPaymentStatusAll = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.chkPurchase = new CKM_Controls.CKM_CheckBox();
@@ -173,7 +173,6 @@
             this.comboStore.Name = "comboStore";
             this.comboStore.Size = new System.Drawing.Size(170, 20);
             this.comboStore.TabIndex = 5;
-            this.comboStore.SelectedIndexChanged += new System.EventHandler(this.comboStore_SelectedIndexChanged);
             // 
             // ckM_Label4
             // 
@@ -219,7 +218,6 @@
             this.scPaymentDestinaion.Value3 = null;
             this.scPaymentDestinaion.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scPaymentDestinaion_CodeKeyDownEvent);
             this.scPaymentDestinaion.Enter += new System.EventHandler(this.scPaymentDestinaion_Enter);
-            this.scPaymentDestinaion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.scPaymentDestinaion_KeyDown);
             // 
             // ckM_Label5
             // 
@@ -255,17 +253,16 @@
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioClosedStatusSumi
+            // RdoCloseStsSumi
             // 
-            this.radioClosedStatusSumi.AutoSize = true;
-            this.radioClosedStatusSumi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.radioClosedStatusSumi.Location = new System.Drawing.Point(3, 5);
-            this.radioClosedStatusSumi.Name = "radioClosedStatusSumi";
-            this.radioClosedStatusSumi.Size = new System.Drawing.Size(75, 16);
-            this.radioClosedStatusSumi.TabIndex = 10;
-            this.radioClosedStatusSumi.Text = "支払締済";
-            this.radioClosedStatusSumi.UseVisualStyleBackColor = true;
-            this.radioClosedStatusSumi.CheckedChanged += new System.EventHandler(this.radioClosedStatusSumi_CheckedChanged);
+            this.RdoCloseStsSumi.AutoSize = true;
+            this.RdoCloseStsSumi.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RdoCloseStsSumi.Location = new System.Drawing.Point(3, 5);
+            this.RdoCloseStsSumi.Name = "RdoCloseStsSumi";
+            this.RdoCloseStsSumi.Size = new System.Drawing.Size(75, 16);
+            this.RdoCloseStsSumi.TabIndex = 10;
+            this.RdoCloseStsSumi.Text = "支払締済";
+            this.RdoCloseStsSumi.UseVisualStyleBackColor = true;
             // 
             // ckM_Label7
             // 
@@ -284,17 +281,16 @@
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioPaymentStatusUnpaid
+            // RdoUnpaid
             // 
-            this.radioPaymentStatusUnpaid.AutoSize = true;
-            this.radioPaymentStatusUnpaid.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.radioPaymentStatusUnpaid.Location = new System.Drawing.Point(3, 5);
-            this.radioPaymentStatusUnpaid.Name = "radioPaymentStatusUnpaid";
-            this.radioPaymentStatusUnpaid.Size = new System.Drawing.Size(88, 16);
-            this.radioPaymentStatusUnpaid.TabIndex = 13;
-            this.radioPaymentStatusUnpaid.Text = "未支払あり";
-            this.radioPaymentStatusUnpaid.UseVisualStyleBackColor = true;
-            this.radioPaymentStatusUnpaid.CheckedChanged += new System.EventHandler(this.radioPaymentStatusUnpaid_CheckedChanged);
+            this.RdoUnpaid.AutoSize = true;
+            this.RdoUnpaid.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.RdoUnpaid.Location = new System.Drawing.Point(3, 5);
+            this.RdoUnpaid.Name = "RdoUnpaid";
+            this.RdoUnpaid.Size = new System.Drawing.Size(88, 16);
+            this.RdoUnpaid.TabIndex = 13;
+            this.RdoUnpaid.Text = "未支払あり";
+            this.RdoUnpaid.UseVisualStyleBackColor = true;
             // 
             // radioPaymentStatusAll
             // 
@@ -334,7 +330,6 @@
             this.chkPurchase.TabIndex = 16;
             this.chkPurchase.Text = "仕入";
             this.chkPurchase.UseVisualStyleBackColor = true;
-            this.chkPurchase.CheckedChanged += new System.EventHandler(this.chkPurchase_CheckedChanged);
             // 
             // chkExpense
             // 
@@ -346,7 +341,6 @@
             this.chkExpense.TabIndex = 17;
             this.chkExpense.Text = "経費";
             this.chkExpense.UseVisualStyleBackColor = true;
-            this.chkExpense.CheckedChanged += new System.EventHandler(this.chkExpense_CheckedChanged);
             // 
             // panelDetail
             // 
@@ -374,7 +368,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.radioPaymentStatusAll);
-            this.panel2.Controls.Add(this.radioPaymentStatusUnpaid);
+            this.panel2.Controls.Add(this.RdoUnpaid);
             this.panel2.Location = new System.Drawing.Point(115, 115);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 25);
@@ -383,7 +377,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.radioClosedStatusAll);
-            this.panel1.Controls.Add(this.radioClosedStatusSumi);
+            this.panel1.Controls.Add(this.RdoCloseStsSumi);
             this.panel1.Location = new System.Drawing.Point(115, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 25);
@@ -437,9 +431,9 @@
         private Search.CKM_SearchControl scPaymentDestinaion;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_Label ckM_Label6;
-        private CKM_Controls.CKM_RadioButton radioClosedStatusSumi;
+        private CKM_Controls.CKM_RadioButton RdoCloseStsSumi;
         private CKM_Controls.CKM_Label ckM_Label7;
-        private CKM_Controls.CKM_RadioButton radioPaymentStatusUnpaid;
+        private CKM_Controls.CKM_RadioButton RdoUnpaid;
         private CKM_Controls.CKM_RadioButton radioPaymentStatusAll;
         private CKM_Controls.CKM_Label ckM_Label8;
         private CKM_Controls.CKM_CheckBox chkPurchase;

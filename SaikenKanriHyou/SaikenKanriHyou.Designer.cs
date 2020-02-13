@@ -183,7 +183,6 @@
             this.rdo_Sale.TabStop = true;
             this.rdo_Sale.Text = "販売先";
             this.rdo_Sale.UseVisualStyleBackColor = true;
-            this.rdo_Sale.Click += new System.EventHandler(this.rdo_Sale_Click);
             // 
             // rdo_BillAddress
             // 
@@ -196,7 +195,6 @@
             this.rdo_BillAddress.TabStop = true;
             this.rdo_BillAddress.Text = "請求先";
             this.rdo_BillAddress.UseVisualStyleBackColor = true;
-            this.rdo_BillAddress.Click += new System.EventHandler(this.rdo_BillAddress_Click);
             // 
             // ckM_Label1
             // 
