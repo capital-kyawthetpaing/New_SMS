@@ -62,6 +62,24 @@ namespace DL
             return SelectData(dic, "M_Store_Bind_Juchu");
         }
 
+        /// <summary>
+        /// Select Store's info
+        /// StoreKBN NOT IN 2のStore情報をBind（権限のある店舗のみ）
+        /// </summary>
+        /// <param name="mse">staff info</param>
+        /// <returns></returns>
+        public DataTable M_Store_Bind_Getsuji(M_Store_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.Operator } },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.DeleteFlg } }
+            };
+            return SelectData(dic, "M_Store_Bind_Getsuji");
+        }
+
         public DataTable M_Store_Select(M_Store_Entity mbe)
         {
             string sp = "M_Store_Select";
@@ -250,5 +268,16 @@ namespace DL
         //    };	
         //    return SelectData(dic, "SelectApprovalData");	
         //}
+
+        public DataTable GetHonsha(M_Store_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } }
+            };
+
+            return SelectData(dic, "SelectHonshaStore");
+        }
+
     }
 }

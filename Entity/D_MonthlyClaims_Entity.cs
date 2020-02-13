@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-  public  class D_MonthlyClaims_Entity
+    public class D_MonthlyClaims_Entity : Base_Entity
     {
         public string TargetDate { get; set; }
         public string CustomerCD { get; set; }
@@ -16,6 +16,10 @@ namespace Entity
         public string chk_do { get; set; }
         public string YYYYMM { get; set; }
         public string PrintType { get; set; }
+
+
+        //月次債務計算処理
+        public int Mode { get; set; }
 
     }
 }

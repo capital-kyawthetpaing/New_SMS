@@ -16,5 +16,17 @@ namespace Entity
         public string ClosePosition4 { get; set; }
         public string ClosePosition5 { get; set; }
 
+        public string MonthlyClaimsFLG { get; set; }
+        public string MonthlyClaimsDateTime { get; set; }
+        public string MonthlyDebtFLG { get; set; }
+        public string MonthlyDebtDateTime { get; set; }
+        public string MonthlyStockFLG { get; set; }
+        public string MonthlyStockDateTime { get; set; }
+
+        //月次締処理
+        public int Mode { get; set; }
+        public int Kbn { get; set; }
+        public string OperateModeNm { get; set; }
+
     }
 }

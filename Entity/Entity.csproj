@@ -68,6 +68,7 @@
     <Compile Include="D_Mitsumori_Entity.cs" />
     <Compile Include="D_MonthlyClaims_Entity.cs" />
     <Compile Include="D_MonthlyDebt_Entity.cs" />
+    <Compile Include="D_MonthlyPurchase_Entity.cs" />
     <Compile Include="D_MonthlyStock_Entity.cs" />
     <Compile Include="D_Move_Entity.cs" />
     <Compile Include="D_Order_Entity.cs" />

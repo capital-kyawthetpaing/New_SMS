@@ -26,5 +26,8 @@ namespace Entity
         public string DeleteOperator { get; set; }
         public string DeleteDateTime { get; set; }
 
+        //月次債務計算処理
+        public int Mode { get; set; }
+
     }
 }
