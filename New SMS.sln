@@ -227,7 +227,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShukkaUriageUpdate", "Shukk
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShukkaUriageUpdateShoukai", "ShukkaUriageUpdateShoukai\ShukkaUriageUpdateShoukai.csproj", "{3BF41429-E6EC-453C-AB07-109DC21E41EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetsujiZaikoKeisanSyori", "GetsujiZaikoKeisanSyori\GetsujiZaikoKeisanSyori.csproj", "{C1921A22-87F3-45C1-8230-9C56B29B4DBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetsujiSaimuKeisanSyori", "GetsujiSaimuKeisanSyori\GetsujiSaimuKeisanSyori.csproj", "{5E31FF70-B668-4F73-A195-A4B2279F7AB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1131,14 +1131,14 @@ Global
 		{3BF41429-E6EC-453C-AB07-109DC21E41EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BF41429-E6EC-453C-AB07-109DC21E41EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{3BF41429-E6EC-453C-AB07-109DC21E41EB}.Release|x86.Build.0 = Release|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Debug|x86.Build.0 = Debug|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Release|x86.ActiveCfg = Release|Any CPU
-		{C1921A22-87F3-45C1-8230-9C56B29B4DBD}.Release|x86.Build.0 = Release|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Debug|x86.Build.0 = Debug|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Release|x86.ActiveCfg = Release|Any CPU
+		{5E31FF70-B668-4F73-A195-A4B2279F7AB7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
