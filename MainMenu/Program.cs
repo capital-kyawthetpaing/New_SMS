@@ -47,8 +47,11 @@ namespace MainMenu
                 }
                 else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")
                 {
-                    pgname = new TennicLogin();
+                    pgname = new TennicLogin(); ;
                 }
+
+
+
 
                 else
                 {
