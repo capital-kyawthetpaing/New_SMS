@@ -38,5 +38,7 @@ namespace Entity
         public string YYYYMMTo { get; set; }
         public string TargetDateFrom { get; set; }
         public string TargetDateTo { get; set; }
+        public string StoreCD { get; set; }
+        public string Mode { get; set; }
     }
 }
