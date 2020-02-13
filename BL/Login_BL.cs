@@ -194,6 +194,22 @@ namespace BL
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalMenuLogin";
             }
+            else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
+            {
+                Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[0];
+                Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[1];
+                Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[2];
+                Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[3];
+                Base_DL.iniEntity.Login_Type = "HaspoStoreMenuLogin";
+            }
+            else if (idl.IniReadValue("Database", "Login_Type") == "TennicMainMenuLogin")
+            {
+                Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[0];
+                Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[1];
+                Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[2];
+                Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[3];
+                Base_DL.iniEntity.Login_Type = "TennicMainMenuLogin";
+            }
             //Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "ServerName");
             //Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "DatabaseName");
             //Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "LoginID");
