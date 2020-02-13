@@ -203,7 +203,7 @@ namespace BL
                 Base_DL.iniEntity.Login_Type = "HaspoStoreMenuLogin";
 
             }
-            else if (idl.IniReadValue("Database", "Login_Type") == "TennicMainMenu")
+            else if (idl.IniReadValue("Database", "Login_Type") == "TennicMainMenuLogin")
             {
                 Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "TennicMainMenu").Split(',')[0];
                 Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "TennicMainMenu").Split(',')[1];

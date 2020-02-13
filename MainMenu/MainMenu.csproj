@@ -93,6 +93,18 @@
     <Compile Include="HaspoLogin.Designer.cs">
       <DependentUpon>HaspoLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Haspo\HapoStore_MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Haspo\HapoStore_MainMenu.Designer.cs">
+      <DependentUpon>HapoStore_MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Haspo\HaspoStoreMenuLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Haspo\HaspoStoreMenuLogin.Designer.cs">
+      <DependentUpon>HaspoStoreMenuLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Haspo_MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +139,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HaspoLogin.resx">
       <DependentUpon>HaspoLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Haspo\HapoStore_MainMenu.resx">
+      <DependentUpon>HapoStore_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Haspo\HaspoStoreMenuLogin.resx">
+      <DependentUpon>HaspoStoreMenuLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Haspo_MainMenu.resx">
       <DependentUpon>Haspo_MainMenu.cs</DependentUpon>
@@ -182,7 +200,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Haspo\" />
     <Folder Include="Logos\" />
     <Folder Include="Tennic\" />
   </ItemGroup>

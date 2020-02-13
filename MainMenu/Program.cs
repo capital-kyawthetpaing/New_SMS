@@ -43,8 +43,7 @@ namespace MainMenu
                 }
                 else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")   // Haspo StoreMenu
                 {
-                 
-
+                    pgname = new Haspo.HaspoStoreMenuLogin();
                 }
                 else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")   // Tennic MainMenu
                 {
