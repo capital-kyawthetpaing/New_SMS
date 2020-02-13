@@ -59,7 +59,6 @@
             this.btn_Proj7 = new CKM_Controls.CKM_Button();
             this.panel_left = new System.Windows.Forms.Panel();
             this.btnGym7 = new CKM_Controls.CKM_Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblOperatorName = new CKM_Controls.CKMShop_Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -67,17 +66,18 @@
             this.lblStoreName = new CKM_Controls.CKMShop_Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel_right.SuspendLayout();
             this.panel_left.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Proj8
@@ -370,6 +370,7 @@
             this.ckM_Button1.Tag = "0";
             this.ckM_Button1.Text = "ログアウト";
             this.ckM_Button1.UseVisualStyleBackColor = false;
+            this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
             // 
             // panel11
             // 
@@ -398,6 +399,7 @@
             this.btnProcess.Tag = "1";
             this.btnProcess.Text = "メッセージ";
             this.btnProcess.UseVisualStyleBackColor = false;
+            this.btnProcess.Click += new System.EventHandler(this.btnProcess_Click);
             // 
             // panel4
             // 
@@ -588,16 +590,6 @@
             this.btnGym7.Text = "ckM_Button2";
             this.btnGym7.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(377, 69);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.pictureBox1);
@@ -684,6 +676,15 @@
             this.panel5.Size = new System.Drawing.Size(1384, 75);
             this.panel5.TabIndex = 32;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(377, 69);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // HapoStore_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -693,6 +694,7 @@
             this.Controls.Add(this.panel_right);
             this.Controls.Add(this.panel_left);
             this.Controls.Add(this.panel5);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HapoStore_MainMenu";
             this.Text = "HapoStore_MainMenu";
             this.Load += new System.EventHandler(this.HapoStore_MainMenu_Load);
@@ -702,11 +704,11 @@
             this.panel4.ResumeLayout(false);
             this.panel_right.ResumeLayout(false);
             this.panel_left.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,7 +745,6 @@
         private CKM_Controls.CKM_Button btn_Proj7;
         private System.Windows.Forms.Panel panel_left;
         private CKM_Controls.CKM_Button btnGym7;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel6;
         private CKM_Controls.CKMShop_Label lblOperatorName;
         private System.Windows.Forms.Panel panel7;
@@ -751,5 +752,6 @@
         private CKM_Controls.CKMShop_Label lblStoreName;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
