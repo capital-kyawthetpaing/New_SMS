@@ -11,7 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
 using CrystalDecisions.CrystalReports.Engine;
-
+using System.IO;
+using ElencySolutions.CsvHelper;
+using System.Diagnostics;
 
 namespace SiharaiYoteiHyou
 {
@@ -49,41 +51,7 @@ namespace SiharaiYoteiHyou
             chkExpense.Checked = true;
             chkPurchase.Checked = true;
             this.comboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;
-            
-            
 
-            //if (radioClosedStatusSumi.Checked == true)
-            //{
-            //    ClosedStatus = "1";
-            //}
-            //else
-            //{
-            //    ClosedStatus = "0";
-            //}
-            //if (radioPaymentStatusUnpaid.Checked == true)
-            //{
-            //    PaymentStatus = "1";
-            //}
-            //else
-            //{
-            //    PaymentStatus = "0";
-            //}
-            //if (chkExpense.Checked == true)
-            //{
-            //    expense = "1";
-            //}
-            //else
-            //{
-            //    expense = "0";
-            //}
-            //if (chkPurchase.Checked == true)
-            //{
-            //    purchase = "1";
-            //}
-            //else
-            //{
-            //    purchase = "0";
-            //}
         }
 
         private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
@@ -225,7 +193,6 @@ namespace SiharaiYoteiHyou
         {
             dppe = new D_PayPlan_Entity
             {
-                StoreCD = "",
                 PayeeCD = scPaymentDestinaion.TxtCode.Text,
                 PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
                 PaymenetDueDateTo = txtPaymentDueDateTo.Text,
@@ -293,6 +260,7 @@ namespace SiharaiYoteiHyou
                 switch (PrintMode)
                 {
                     case EPrintMode.DIRECT:
+
                         if (StartUpKBN == "1")
                         {
                             ret = DialogResult.No;
@@ -421,26 +389,54 @@ namespace SiharaiYoteiHyou
             try
             {
                 string fileName = "ExcelExport";
+                string sFileName;
                 //if (System.IO.Path.GetExtension(filePath).ToLower() != ".xlsx")
                 //{
                 //    fileName = System.IO.Path.GetFileNameWithoutExtension(filePath) + ".xlsx";
                 //}
+                DataTable dtCSV = new DataTable();
+                dtCSV = CheckData();
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Title = "Excel File to Edit";
+                savedialog.FileName = "SiharaiYoteiHyou";
+                savedialog.Filter = "Excel File|*.xlsx;*.xls";
+
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (Path.GetExtension(savedialog.FileName).Contains("xlsx"))
+                    {
+                        CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                        fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                        fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
+
+                        // 外部ファイル出力をExcel出力として定義する
+                        CrystalDecisions.Shared.ExportOptions option;
+                        option = report.ExportOptions;
+                        option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                        option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
+                        option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
+                        option.DestinationOptions = fileOption;
+                        // excelとして外部ファイル出力を行う
+                        report.Export();
+                    }
+                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                }
 
                 // 出力先ファイル名を指定
-                CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
-                fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
-                fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
+                //CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                //fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                //fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
 
                 // 外部ファイル出力をExcel出力として定義する
-                CrystalDecisions.Shared.ExportOptions option;
-                option = report.ExportOptions;
-                option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
-                option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
-                option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
-                option.DestinationOptions = fileOption;
+                //CrystalDecisions.Shared.ExportOptions option;
+                //option = report.ExportOptions;
+                //option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                //option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
+                //option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
+                //option.DestinationOptions = fileOption;
 
                 // excelとして外部ファイル出力を行う
-                report.Export();
+                //report.Export();
             }
             catch (Exception ex)
             {

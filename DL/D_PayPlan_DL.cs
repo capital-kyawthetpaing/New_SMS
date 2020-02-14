@@ -39,7 +39,7 @@ namespace DL
             {
                 { "@PaymentDueDateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymentDueDateFrom } },
                 { "@PaymentDueDateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymenetDueDateTo } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
+                //{ "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
                 { "@PaymentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.PayeeCD } },
                 { "@ClosedStatusSumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.CloseStatusSumi } },
                 { "@PaymentStatusUnpaid", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.PaymentStatusUnpaid } },
