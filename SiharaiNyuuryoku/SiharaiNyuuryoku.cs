@@ -39,7 +39,13 @@ namespace SiharaiNyuuryoku
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
 
-            EnableDisable_Controls();
+            ScPaymentProcessNum.Enabled = false;
+            ScPaymentNum.Enabled = false;
+            ScPaymentProcessNum.SearchEnable = false;
+            ScPaymentNum.SearchEnable = false;
+
+            btnF10Show.Enabled = false;
+            txtPaymentDate.Enabled = false;
 
             mse.StaffCD = InOperatorCD;
             mse.ChangeDate = DateTime.Now.ToShortDateString();
@@ -50,26 +56,17 @@ namespace SiharaiNyuuryoku
                 ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
             }
             ScStaff.Code = InOperatorCD;
-            SetRequireField();
-            
-            txtDueDate1.Focus();
-            BindCombo();
-        }
 
-        private void EnableDisable_Controls()
-        {
-            ScPaymentProcessNum.Enabled = false;
-            ScPaymentNum.Enabled = false;
-            ScPaymentProcessNum.SearchEnable = false;
-            ScPaymentNum.SearchEnable = false;
-            txtPaymentDate.Enabled = false;
             cboPaymentSourceAcc.Enabled = false;
             cboPaymentType.Enabled = false;
             txtBillSettleDate.Enabled = false;
 
             btnReleaseAll.Enabled = false;
             btnSelectAll.Enabled = false;
+
+            txtDueDate1.Focus();
         }
+
         private void SetRequireField()
         {
             ScPaymentNum.TxtCode.Require(true);
@@ -83,6 +80,7 @@ namespace SiharaiNyuuryoku
         private void BindCombo()
         {
             cboPaymentType.Bind(string.Empty);
+            cboPaymentSourceAcc.Bind(string.Empty);
         }
 
         public override void FunctionProcess(int index)
@@ -110,8 +108,8 @@ namespace SiharaiNyuuryoku
                     else
                         PreviousCtrl.Focus();
                     break;
-                case 11:
-                    F11();
+                case 10:
+                    F10();
                     break;
                 case 12:
                     F12();
@@ -126,47 +124,71 @@ namespace SiharaiNyuuryoku
             {
                 case EOperationMode.INSERT:
                     Clear(PanelHeader);
-                    Clear(panelDetail);
+                    Clear(PanelDetail);
                     EnablePanel(PanelHeader);
-                    DisablePanel(panelDetail);
+                    DisablePanel(PanelDetail);
                     ScPaymentProcessNum.Enabled = false;
                     ScPaymentNum.Enabled = false;
                     txtDueDate1.Focus();
                     F9Visible = false;
                     F12Enable = true;
-                    btnF11Show.Enabled = false;
+                    btnF10Show.Enabled = false;
                     F11Enable = false;
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
                     Clear(PanelHeader);
-                    Clear(panelDetail);
+                    Clear(PanelDetail);
                     EnablePanel(PanelHeader);
-                    DisablePanel(panelDetail);
+                    DisablePanel(PanelDetail);
                     ScPaymentProcessNum.Enabled = false;
                     ScPaymentNum.Enabled = false;
                     ScPaymentProcessNum.SetFocus(1);
                     F12Enable = false;
-                    btnF11Show.Enabled = F11Enable = true;
+                    btnF10Show.Enabled = F11Enable = true;
                     break;
             }
             ScPaymentProcessNum.SetFocus(1);
         }
 
-        public void F11()
+        private void F10()
         {
+            type = 3;
+            if (ErrorCheck(10))
+            {
+                txtPaymentDate.Text = DateTime.Today.ToShortDateString();
+                ScStaff.TxtCode.Text = InOperatorCD;
+                mse.ChangeDate = DateTime.Now.ToShortDateString();
+                DataTable dtstaff = new DataTable();
+                dtstaff = sibl.M_Staff_Select(mse);
+                if (dtstaff.Rows.Count > 0)
+                {
+                    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
+                }
+                dppe.PayPlanDateFrom = txtDueDate1.Text;
+                dppe.PayPlanDateTo = txtDueDate2.Text;
+                dppe.PayeeCD = ScPayee.TxtCode.Text;
+                mve.ChangeDate = txtPaymentDate.Text;
+                DataTable dtpayplan = new DataTable();
+                dtpayplan = sibl.D_PayPlan_Select(dppe, mve);
+                //if(dtpayplan.Rows.Count > 0)
+                //{
 
+                //}
+
+
+            }
         }
 
-        public void F12()
+        private void F12()
         {
 
         }
 
         private bool ErrorCheck(int index)
         {
-            if (index == 11)
+            if (index == 10)
             {
                 if (type == 1)
                 {
@@ -192,7 +214,7 @@ namespace SiharaiNyuuryoku
 
                 else if (type == 2)
                 {
-                    if (!RequireCheck(new Control[] { ScPaymentProcessNum.TxtCode }))
+                    if (!RequireCheck(new Control[] { ScPaymentNum.TxtCode }))
                         return false;
 
                     DataTable dtpayno = new DataTable();
@@ -228,6 +250,10 @@ namespace SiharaiNyuuryoku
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
+                        else
+                        {
+                            DataDisplay();
+                        }
                     }
                 }
 
@@ -243,7 +269,7 @@ namespace SiharaiNyuuryoku
                         dtvendor = sibl.M_Vendor_Select(mve);
                         if (dtvendor.Rows.Count == 0)
                         {
-                            sibl.ShowMessage("101");
+                            sibl.ShowMessage("115");
                             ScPayee.SetFocus(1);
                             return false;
                         }
@@ -255,11 +281,6 @@ namespace SiharaiNyuuryoku
 
                     if (!RequireCheck(new Control[] { txtDueDate2 }))
                         return false;
-
-                    if(!RequireCheck(new Control[] { ScPayee.TxtCode}))
-                    {
-                        return false;
-                    }
                 }
 
             }
@@ -274,7 +295,7 @@ namespace SiharaiNyuuryoku
                 dtcontrol = sibl.M_Control_PaymentSelect(mfye);
                 if (dtcontrol.Rows.Count == 0)
                 {
-                    sibl.ShowMessage("101");
+                    sibl.ShowMessage("115");
                     ScPaymentNum.SetFocus(1);
                     return false;
                 }
@@ -300,9 +321,9 @@ namespace SiharaiNyuuryoku
                     mse.ChangeDate = DateTime.Now.ToShortDateString();
                     DataTable dtstaff = new DataTable();
                     dtstaff = sibl.M_Staff_Select(mse);
-                    if (dtstaff.Rows.Count == 0)
+                    if (dtstaff.Rows.Count > 0)
                     {
-                        sibl.ShowMessage("101");
+                        sibl.ShowMessage("115");
                         ScStaff.SetFocus(1);
                         return false;
                     }
@@ -393,10 +414,11 @@ namespace SiharaiNyuuryoku
 
         private void DataDisplay()
         {
-            txtDueDate1.Enabled = false;
-            txtDueDate2.Enabled = false;
-            ScPayee.Enabled = false;
-                   
+            //    txtDueDate1.Enabled = false;
+            //    txtDueDate2.Enabled = false;
+            //    ScPayee.Enabled = false;
+
+            //    btnF10Show.Enabled = false;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
             DataTable dtPay = new DataTable();
@@ -413,7 +435,7 @@ namespace SiharaiNyuuryoku
                     ScPayee.LabelText = dtPayee.Rows[0]["VendorName"].ToString();
                 }
 
-                btnF11Show.Enabled = false;
+                btnF10Show.Enabled = false;
                 txtPaymentDate.Text = dtPay.Rows[0]["PayDate"].ToString();
                 ScStaff.TxtCode.Text = dtPay.Rows[0]["StaffCD"].ToString();
 
@@ -421,15 +443,12 @@ namespace SiharaiNyuuryoku
                 mse.ChangeDate = dtPay.Rows[0]["PayDate"].ToString();
                 DataTable dtstaff = new DataTable();
                 dtstaff = sibl.M_Staff_Select(mse);
-                if(dtstaff.Rows.Count > 0)
-                {
-                    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-                }
-                
+                ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
 
                 cboPaymentType.Enabled = false;
                 cboPaymentSourceAcc.Enabled = false;
                 txtBillSettleDate.Enabled = false;
+
                 btnSelectAll.Enabled = false;
                 btnReleaseAll.Enabled = false;
 
@@ -444,13 +463,33 @@ namespace SiharaiNyuuryoku
                 lblTransferFeeGaku.Text = dtPayDetail.Rows[0]["TransferGaku"].ToString();
                 lblTransferGaku.Text = dtPayDetail.Rows[0]["TransferFeeGaku"].ToString();
             }
+        }
 
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row1 in dgvPayment.Rows)
+            {
+                if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
+                {
+                    row1.Cells["colChk"].Value = true;
+                }
+            }
+        }
 
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row1 in dgvPayment.Rows)
+            {
+                if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
+                {
+                    row1.Cells["colChk"].Value = false;
+                }
+            }
         }
 
         private void ScPaymentNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 type = 2;
                 if (ErrorCheck(11))
@@ -460,34 +499,16 @@ namespace SiharaiNyuuryoku
             }
         }
 
-        private void btnF11Show_Click(object sender, EventArgs e)
+        private void ScPaymentProcessNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            type = 3;
-            if (ErrorCheck(11))
+            if (e.KeyCode == Keys.Enter)
             {
-                //txtPaymentDate.Text = DateTime.Today.ToShortDateString();
-                //ScStaff.TxtCode.Text = InOperatorCD;
-                //mse.ChangeDate = DateTime.Now.ToShortDateString();
-                //DataTable dtstaff = new DataTable();
-                //dtstaff = sibl.M_Staff_Select(mse);
-                //if (dtstaff.Rows.Count > 0)
-                //{
-                //    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-                //}
-                //dppe.PayPlanDateFrom = txtDueDate1.Text;
-                //dppe.PayPlanDateTo = txtDueDate2.Text;
-                //dppe.PayeeCD = ScPayee.TxtCode.Text;
-                //mve.ChangeDate = txtPaymentDate.Text;
-                //DataTable dtpayplan = new DataTable();
-                //dtpayplan = sibl.D_PayPlan_Select(dppe, mve);
-                mve.ChangeDate = txtPaymentDate.Text;
-                dppe.PayPlanDateFrom = txtDueDate1.Text;
-                dppe.PayPlanDateTo = txtDueDate2.Text;
-               
+                type = 1;
+                if (ErrorCheck(10))
+                {
+                    DataDisplay();
+                }
             }
-            
-
-
         }
     }
 }

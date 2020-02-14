@@ -61,8 +61,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiZaikoKakunin", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiFurikomiYoushi", "TempoRegiFurikomiYoushi\TempoRegiFurikomiYoushi.csproj", "{FCE9632E-9BBC-4415-A704-6C3186B0D6A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiharaiNyuuryoku", "SiharaiNyuuryoku\SiharaiNyuuryoku.csproj", "{07DB6814-3F5C-47AB-91EE-974CB961DE28}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiTsurisenJyunbi", "TempoRegiTsurisenJyunbi\TempoRegiTsurisenJyunbi.csproj", "{8CD9A4D9-16DB-423D-815F-ADC4D684FC72}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeihiNyuuryoku", "KeihiNyuuryoku\KeihiNyuuryoku.csproj", "{2E05A20C-5BDD-46FA-B641-1DE757DE8877}"
@@ -228,6 +226,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetsujiSaimuKeisanSyori", "GetsujiSaimuKeisanSyori\GetsujiSaimuKeisanSyori.csproj", "{5E31FF70-B668-4F73-A195-A4B2279F7AB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiireNyuuryoku", "ShiireNyuuryoku\ShiireNyuuryoku.csproj", "{EEF9B573-CC26-486E-AE47-30089DE29D48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiharaiNyuuryoku", "SiharaiNyuuryoku\SiharaiNyuuryoku.csproj", "{07DB6814-3F5C-47AB-91EE-974CB961DE28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -469,14 +469,6 @@ Global
 		{FCE9632E-9BBC-4415-A704-6C3186B0D6A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FCE9632E-9BBC-4415-A704-6C3186B0D6A9}.Release|x86.ActiveCfg = Release|Any CPU
 		{FCE9632E-9BBC-4415-A704-6C3186B0D6A9}.Release|x86.Build.0 = Release|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|x86.Build.0 = Debug|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|x86.ActiveCfg = Release|Any CPU
-		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|x86.Build.0 = Release|Any CPU
 		{8CD9A4D9-16DB-423D-815F-ADC4D684FC72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8CD9A4D9-16DB-423D-815F-ADC4D684FC72}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CD9A4D9-16DB-423D-815F-ADC4D684FC72}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -1139,6 +1131,14 @@ Global
 		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|x86.ActiveCfg = Release|Any CPU
 		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|x86.Build.0 = Release|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Debug|x86.Build.0 = Debug|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|x86.ActiveCfg = Release|Any CPU
+		{07DB6814-3F5C-47AB-91EE-974CB961DE28}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
