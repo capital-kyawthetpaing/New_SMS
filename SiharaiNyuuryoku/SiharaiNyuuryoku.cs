@@ -318,12 +318,12 @@ namespace SiharaiNyuuryoku
                 else
                 {
                     mse.StaffCD = ScStaff.TxtCode.Text;
-                    mse.ChangeDate = DateTime.Now.ToShortDateString();
+                    mse.ChangeDate = txtPaymentDate.Text;
                     DataTable dtstaff = new DataTable();
                     dtstaff = sibl.M_Staff_Select(mse);
-                    if (dtstaff.Rows.Count > 0)
+                    if (dtstaff.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("115");
+                        sibl.ShowMessage("101");
                         ScStaff.SetFocus(1);
                         return false;
                     }
