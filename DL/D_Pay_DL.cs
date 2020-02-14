@@ -40,14 +40,14 @@ namespace DL
             return SelectData(dic, "D_Pay_ShiharaiItianHyou");
         }
 
-        public DataTable D_Pay_Select(D_Pay_Entity dpe)
+        public DataTable D_Pay_Select1(D_Pay_Entity dpe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
                 {"@LargePayNo", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.LargePayNO} },
                 {"@PayNo", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.PayNo} }
             };
-            return SelectData(dic, "D_Pay_Select");
+            return SelectData(dic, "D_Pay_Select1");
         }
 
         public DataTable D_Pay_Search(D_Pay_Entity dpe)

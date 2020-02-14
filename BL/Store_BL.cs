@@ -37,6 +37,16 @@ namespace BL
         {
             return storedl.M_Store_Bind_Juchu(mse);
         }
+        /// <summary>
+        /// StoreKBN NOT IN 2のStore情報をBind（権限のある店舗のみ）
+        /// </summary>
+        /// <param name="mse"></param>
+        /// <returns></returns>
+        public DataTable M_Store_Bind_Getsuji(M_Store_Entity mse)
+        {
+            return storedl.M_Store_Bind_Getsuji(mse);
+        }
+
         public DataTable M_Store_Select(M_Store_Entity mse)
         {
             return storedl.M_Store_Select(mse);
