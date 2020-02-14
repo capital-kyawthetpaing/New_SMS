@@ -840,11 +840,13 @@
             // 
             // colPaymentDestination
             // 
+            this.colPaymentDestination.DataPropertyName = "PayeeCD";
             this.colPaymentDestination.HeaderText = "支払先";
             this.colPaymentDestination.Name = "colPaymentDestination";
             // 
             // colPayeeName
             // 
+            this.colPayeeName.DataPropertyName = "VendorName";
             this.colPayeeName.HeaderText = "支払先名";
             this.colPayeeName.Name = "colPayeeName";
             // 
@@ -861,7 +863,7 @@
             // 
             // colScheduledPayment
             // 
-            this.colScheduledPayment.DataPropertyName = "RequiredGaku";
+            this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle4;
             this.colScheduledPayment.HeaderText = "支払予定額";
@@ -915,6 +917,7 @@
             // 
             // colOtherThanTransfer
             // 
+            this.colOtherThanTransfer.DataPropertyName = "GakuTotal";
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colOtherThanTransfer.DefaultCellStyle = dataGridViewCellStyle10;
             this.colOtherThanTransfer.HeaderText = "振込以外";
@@ -923,6 +926,7 @@
             // 
             // colUnpaidAmount
             // 
+            this.colUnpaidAmount.DataPropertyName = "PayPlan";
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle11;
             this.colUnpaidAmount.HeaderText = "未支払額";

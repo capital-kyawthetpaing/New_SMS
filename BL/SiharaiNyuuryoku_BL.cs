@@ -96,7 +96,7 @@ namespace BL
 
         public DataTable CheckClosePosition(M_StoreClose_Entity msce)
         {
-            return 
+            return mscdl.M_StoreClose_SelectAll(msce);
         }
 
     }

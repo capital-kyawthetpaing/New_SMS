@@ -305,13 +305,21 @@ namespace SiharaiNyuuryoku
                 M_StoreClose_Entity msce = new M_StoreClose_Entity();
                 msce.StoreCD = InOperatorCD;
                 msce.FiscalYYYYMM = txtPaymentDate.Text.Replace("/", "").Substring(0,6);
-                bool ret = sibl.CheckClosePosition(msce);
-                //if (!ret)
-                //{
-                //    txtPaymentDate.Focus();
-                //    return false;
-                //}
-
+                DataTable dtposition = sibl.CheckClosePosition(msce);
+                if(dtposition.Rows.Count > 0)
+                {
+                    if(dtposition.Rows[0]["ClosePosition2"].ToString() == "1")
+                    {
+                        sibl.ShowMessage("E203");
+                        return false;
+                    }
+                    else if (dtposition.Rows[0]["ClosePosition2"].ToString() == "2")
+                    {
+                        sibl.ShowMessage("E194");
+                        return false;
+                    }
+                }
+              
 
                 if (!RequireCheck(new Control[] { ScStaff.TxtCode }))
                     return false;
@@ -414,36 +422,20 @@ namespace SiharaiNyuuryoku
 
         private void DataDisplay()
         {
-            //    txtDueDate1.Enabled = false;
-            //    txtDueDate2.Enabled = false;
-            //    ScPayee.Enabled = false;
-
-            //    btnF10Show.Enabled = false;
+            txtDueDate1.Enabled = false;
+            txtDueDate2.Enabled = false;
+            ScPayee.Enabled = false;
+            btnF10Show.Enabled = false;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
             DataTable dtPay1 = new DataTable();
             dtPay1 = sibl.D_Pay_Select1(dpe);
             if (dtPay1.Rows.Count > 0)
             {
-                ScPayee.TxtCode.Text = dtPay1.Rows[0]["PayeeCD"].ToString();
-                DataTable dtPayee = new DataTable();
-                dpe.PayeeCD = ScPayee.TxtCode.Text;
-                dpe.PayDate = DateTime.Now.ToShortDateString();
-                dtPayee = sibl.M_Payee_Select(dpe);
-                if (dtPayee.Rows.Count > 0)
-                {
-                    ScPayee.LabelText = dtPayee.Rows[0]["VendorName"].ToString();
-                }
-
-                btnF10Show.Enabled = false;
+                dgvPayment.DataSource = dtPay1;
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-
-                mse.StaffCD = ScStaff.TxtCode.Text;
-                mse.ChangeDate = dtPay1.Rows[0]["PayDate"].ToString();
-                DataTable dtstaff = new DataTable();
-                dtstaff = sibl.M_Staff_Select(mse);
-                ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
+                ScPayee.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
+                ScPayee.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
 
                 cboPaymentType.Enabled = false;
                 cboPaymentSourceAcc.Enabled = false;
@@ -452,16 +444,37 @@ namespace SiharaiNyuuryoku
                 btnSelectAll.Enabled = false;
                 btnReleaseAll.Enabled = false;
 
-                dpe.PayNo = ScPaymentNum.TxtCode.Text;
-                dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-                DataTable dtPayDetail = new DataTable();
-                dtPayDetail = sibl.D_PayDetail_Select(dpe);
-                dgvPayment.DataSource = dtPayDetail;
-                lblRequiredGaku.Text = dtPayDetail.Rows[0]["RequiredGaku"].ToString();
-                lblPayConfirmGaku.Text = dtPayDetail.Rows[0]["PayConfirmGaku"].ToString();
-                lblPayGaku.Text = dtPayDetail.Rows[0]["PayGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPayDetail.Rows[0]["TransferGaku"].ToString();
-                lblTransferGaku.Text = dtPayDetail.Rows[0]["TransferFeeGaku"].ToString();
+                lblRequiredGaku.Text = dtPay1.Rows[0]["PayPlanGaku"].ToString();
+                lblPayConfirmGaku.Text = dtPay1.Rows[0]["PayConfirmGaku"].ToString();
+                lblPayGaku.Text = dtPay1.Rows[0]["PayGaku"].ToString();
+                lblTransferFeeGaku.Text = dtPay1.Rows[0]["TransferGaku"].ToString();
+                lblTransferGaku.Text = dtPay1.Rows[0]["TransferFeeGaku"].ToString();
+                lblTransferFeeGaku.Text = dtPay1.Rows[0]["GakuTotal"].ToString();
+                lblTransferGaku.Text = dtPay1.Rows[0]["PayPlan"].ToString();
+
+                //btnF10Show.Enabled = false;
+                //txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
+                //ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
+
+                //mse.StaffCD = ScStaff.TxtCode.Text;
+                //mse.ChangeDate = dtPay1.Rows[0]["PayDate"].ToString();
+                //DataTable dtstaff = new DataTable();
+                //dtstaff = sibl.M_Staff_Select(mse);
+                //ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
+
+                //cboPaymentType.Enabled = false;
+                //cboPaymentSourceAcc.Enabled = false;
+                //txtBillSettleDate.Enabled = false;
+
+                //btnSelectAll.Enabled = false;
+                //btnReleaseAll.Enabled = false;
+
+                //dpe.PayNo = ScPaymentNum.TxtCode.Text;
+                //dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
+                //DataTable dtPayDetail = new DataTable();
+                //dtPayDetail = sibl.D_PayDetail_Select(dpe);
+                //dgvPayment.DataSource = dtPayDetail;
+                //
             }
         }
 
