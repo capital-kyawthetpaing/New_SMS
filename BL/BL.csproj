@@ -62,6 +62,7 @@
     <Compile Include="EDINouhinJouhon_Batch_BL.cs" />
     <Compile Include="Exclusive_BL.cs" />
     <Compile Include="FileTransferProtocol_BL.cs" />
+    <Compile Include="GetsujiSaikenKeisanSyori_BL.cs" />
     <Compile Include="GetsujiShimeShori_BL.cs" />
     <Compile Include="HacchuuNyuuryoku_BL.cs" />
     <Compile Include="HacchuuShoukai_BL.cs" />

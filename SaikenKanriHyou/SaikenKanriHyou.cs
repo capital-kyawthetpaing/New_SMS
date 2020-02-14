@@ -36,7 +36,7 @@ namespace SaikenKanriHyou
                 vr = new Viewer();
                 dtlog = new DataTable();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -53,7 +53,6 @@ namespace SaikenKanriHyou
             txtTargetdate.Require(true);
             rdo_BillAddress.Checked = true;
             BindStore();
-            this.rdo_BillAddress.Click += rdo_BillAddress_Click;
             this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
         }
         public override void FunctionProcess(int index)
@@ -72,15 +71,15 @@ namespace SaikenKanriHyou
                     break;
             }
         }
-      
-      #region CSVファイル出力
-      private void F11()
+
+        #region CSVファイル出力
+        private void F11()
         {
             if (ErrorCheck())
             {
 
                 M_StoreCheck();//exeRun
-                
+
                 dtCSV = new DataTable();
                 dtCSV = CheckData();
                 dtCSV.Columns["CustomerCD"].ColumnName = "顧客CD";
@@ -131,25 +130,25 @@ namespace SaikenKanriHyou
             dtS_check = new DataTable();
 
             dtS_check = skh_bl.M_StoreCheck_Select(dmc_e, 1);//M_StoreClose_(StoreCD)Datacheck
-            if (dtS_check.Rows.Count>0)
+            if (dtS_check.Rows.Count > 0)
             {
                 string ProgramID = "GetsujiSaikenKeisanSyori";
-           
+
                 //残す部分
-                                  //NoFilePathcase
-                                 OpenForm(ProgramID,dmc_e.YYYYMM);                                 
-                                  //月次処理（債権集計処理）を起動する                    
+                //NoFilePathcase
+                OpenForm(ProgramID, dmc_e.YYYYMM);
+                //月次処理（債権集計処理）を起動する                    
             }
 
         }
         #endregion
-        private void OpenForm(string programID,string YYYYMM)
+        private void OpenForm(string programID, string YYYYMM)
         {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD+" "+Login_BL.GetHostName()+" " +StoreCD+" " + " " + Mode + " " + YYYYMM;//parameter
-           try
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
@@ -157,7 +156,7 @@ namespace SaikenKanriHyou
             {
                 //skh_bl.ShowMessage("E138");
             }
-            
+
         }
 
         #region 店舗にとってデータを取る
@@ -187,9 +186,8 @@ namespace SaikenKanriHyou
                 skh_bl.ShowMessage("E102");
                 cbo_Store.Focus();
             }
-               
-        }
 
+        }
         #region DataErrorCheck
         private bool ErrorCheck()
         {
@@ -197,7 +195,7 @@ namespace SaikenKanriHyou
             {
                 return false;
             }
-           
+
             //店舗権限のチェック、引数で処理可能店舗の配列をセットしたい
             if (!base.CheckAvailableStores(cbo_Store.SelectedValue.ToString()))
             {
@@ -257,7 +255,7 @@ namespace SaikenKanriHyou
                             skh_Report.Refresh();
                             skh_Report.SetParameterValue("YYYYMM", txtTargetdate.Text);
                             skh_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
-                           
+
 
                             crvr = vr.CrystalReportViewer1;
                             //out log before print
@@ -331,7 +329,7 @@ namespace SaikenKanriHyou
             {
                 TargetDate = skh_bl.GetDate(txtTargetdate.Text),
                 CustomerCD = sc_Customer.TxtCode.Text,
-                PrintType=rdo_BillAddress.Checked?"1":"2",
+                PrintType = rdo_BillAddress.Checked ? "1" : "2",
                 StoreCD = cbo_Store.SelectedValue.ToString(),
                 chk_do = chk_Check.Checked ? "1" : "0",
                 YYYYMM = txtTargetdate.Text.Replace("/", "")
@@ -339,7 +337,6 @@ namespace SaikenKanriHyou
             };
             return dmc_e;
         }
-
         #region SelectData
         private DataTable CheckData()
         {
@@ -381,10 +378,9 @@ namespace SaikenKanriHyou
 
             return lle;
         }
-
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 sc_Customer.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(sc_Customer.TxtCode.Text))
@@ -402,17 +398,15 @@ namespace SaikenKanriHyou
                 }
             }
         }
-
-        private void rdo_BillAddress_Click(object sender, EventArgs e)
+        private void sc_Customer_Enter(object sender, EventArgs e)
         {
-            sc_Customer.Value1 = "2";
-            sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
-        }
+            if (rdo_BillAddress.Checked)
+                sc_Customer.Value1 = "2";
+            else if (rdo_Sale.Checked)
+                sc_Customer.Value1 = "1";
 
-        private void rdo_Sale_Click(object sender, EventArgs e)
-        {
-            sc_Customer.Value1 = "1";
             sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
+            sc_Customer.Value2 = cbo_Store.SelectedValue.Equals("-1") ? "" : cbo_Store.SelectedValue.ToString();
         }
 
         private void SaikenKanriHyou_KeyUp(object sender, KeyEventArgs e)

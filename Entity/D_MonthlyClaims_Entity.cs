@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-  public  class D_MonthlyClaims_Entity : Base_Entity
+    public class D_MonthlyClaims_Entity : Base_Entity
     {
         public string TargetDate { get; set; }
         public string CustomerCD { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace MainMenu
 {
-    partial class Main_Menu
+    partial class Tennic_MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tennic_MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblLoginDate = new System.Windows.Forms.Label();
             this.lblOperatorName = new System.Windows.Forms.Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.btnGym20 = new CKM_Controls.CKM_Button();
             this.btnGym16 = new CKM_Controls.CKM_Button();
@@ -55,10 +57,6 @@
             this.btnGym3 = new CKM_Controls.CKM_Button();
             this.btnGym2 = new CKM_Controls.CKM_Button();
             this.btnGym1 = new CKM_Controls.CKM_Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txt_Mesaage = new CKM_Controls.CKM_MultiLineTextBox();
-            this.btnLogin = new CKM_Controls.CKM_Button();
-            this.btnClose = new CKM_Controls.CKM_Button();
             this.panel_right = new System.Windows.Forms.Panel();
             this.btnProj15 = new CKM_Controls.CKM_Button();
             this.btnProj5 = new CKM_Controls.CKM_Button();
@@ -80,13 +78,17 @@
             this.btnProj10 = new CKM_Controls.CKM_Button();
             this.btnProj14 = new CKM_Controls.CKM_Button();
             this.btnProj4 = new CKM_Controls.CKM_Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txt_Mesaage = new CKM_Controls.CKM_MultiLineTextBox();
+            this.btnLogin = new CKM_Controls.CKM_Button();
+            this.btnClose = new CKM_Controls.CKM_Button();
             this.panel1.SuspendLayout();
-            this.panelRight.SuspendLayout();
-            this.panelLeft.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel_right.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelRight.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panelLeft.SuspendLayout();
+            this.panel_right.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,7 +102,17 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(832, 80);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 8;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(11, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(306, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 63;
+            this.pictureBox1.TabStop = false;
             // 
             // lblLoginDate
             // 
@@ -146,14 +158,25 @@
             // panelRight
             // 
             this.panelRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.panelRight.Controls.Add(this.panelLeft);
+            this.panelRight.Controls.Add(this.panel2);
             this.panelRight.Controls.Add(this.panel3);
-            this.panelRight.Controls.Add(this.panel_right);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRight.Location = new System.Drawing.Point(0, 80);
+            this.panelRight.Location = new System.Drawing.Point(0, 0);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(832, 634);
-            this.panelRight.TabIndex = 7;
+            this.panelRight.Size = new System.Drawing.Size(832, 714);
+            this.panelRight.TabIndex = 9;
+            this.panelRight.Click += new System.EventHandler(this.panelRight_Click);
+            this.panelRight.MouseEnter += new System.EventHandler(this.panelRight_MouseEnter);
+            this.panelRight.MouseLeave += new System.EventHandler(this.panelRight_MouseLeave);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panelLeft);
+            this.panel2.Controls.Add(this.panel_right);
+            this.panel2.Location = new System.Drawing.Point(0, 80);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(832, 360);
+            this.panel2.TabIndex = 9;
             // 
             // panelLeft
             // 
@@ -183,7 +206,7 @@
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
             this.panelLeft.Size = new System.Drawing.Size(209, 360);
-            this.panelLeft.TabIndex = 9;
+            this.panelLeft.TabIndex = 10;
             // 
             // btnGym20
             // 
@@ -525,76 +548,6 @@
             this.btnGym1.TabIndex = 0;
             this.btnGym1.UseVisualStyleBackColor = false;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.panel3.Controls.Add(this.txt_Mesaage);
-            this.panel3.Controls.Add(this.btnLogin);
-            this.panel3.Controls.Add(this.btnClose);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 360);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(832, 274);
-            this.panel3.TabIndex = 8;
-            // 
-            // txt_Mesaage
-            // 
-            this.txt_Mesaage.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
-            this.txt_Mesaage.BackColor = System.Drawing.Color.White;
-            this.txt_Mesaage.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
-            this.txt_Mesaage.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txt_Mesaage.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txt_Mesaage.Length = 2000;
-            this.txt_Mesaage.Location = new System.Drawing.Point(11, 6);
-            this.txt_Mesaage.MaxLength = 2000;
-            this.txt_Mesaage.Mdea = false;
-            this.txt_Mesaage.Mfocus = false;
-            this.txt_Mesaage.MoveNext = false;
-            this.txt_Mesaage.Multiline = true;
-            this.txt_Mesaage.Name = "txt_Mesaage";
-            this.txt_Mesaage.RowCount = 10;
-            this.txt_Mesaage.Size = new System.Drawing.Size(786, 190);
-            this.txt_Mesaage.TabIndex = 2;
-            this.txt_Mesaage.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnLogin.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.DefaultBtnSize = false;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLogin.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnLogin.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnLogin.Location = new System.Drawing.Point(642, 222);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(1);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(155, 30);
-            this.btnLogin.TabIndex = 1;
-            this.btnLogin.Text = "ログイン(F12)";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnClose.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.DefaultBtnSize = false;
-            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnClose.Location = new System.Drawing.Point(12, 222);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(1);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(150, 30);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "終了(F1)";
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // panel_right
             // 
             this.panel_right.Controls.Add(this.btnProj15);
@@ -617,10 +570,11 @@
             this.panel_right.Controls.Add(this.btnProj10);
             this.panel_right.Controls.Add(this.btnProj14);
             this.panel_right.Controls.Add(this.btnProj4);
-            this.panel_right.Location = new System.Drawing.Point(215, 6);
+            this.panel_right.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_right.Location = new System.Drawing.Point(215, 0);
             this.panel_right.Name = "panel_right";
-            this.panel_right.Size = new System.Drawing.Size(575, 377);
-            this.panel_right.TabIndex = 7;
+            this.panel_right.Size = new System.Drawing.Size(617, 360);
+            this.panel_right.TabIndex = 8;
             // 
             // btnProj15
             // 
@@ -962,49 +916,112 @@
             this.btnProj4.TabIndex = 36;
             this.btnProj4.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // panel3
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(306, 71);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 64;
-            this.pictureBox1.TabStop = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.panel3.Controls.Add(this.txt_Mesaage);
+            this.panel3.Controls.Add(this.btnLogin);
+            this.panel3.Controls.Add(this.btnClose);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 440);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(832, 274);
+            this.panel3.TabIndex = 8;
             // 
-            // Main_Menu
+            // txt_Mesaage
+            // 
+            this.txt_Mesaage.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.txt_Mesaage.BackColor = System.Drawing.Color.White;
+            this.txt_Mesaage.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txt_Mesaage.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txt_Mesaage.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txt_Mesaage.Length = 2000;
+            this.txt_Mesaage.Location = new System.Drawing.Point(11, 6);
+            this.txt_Mesaage.MaxLength = 2000;
+            this.txt_Mesaage.Mdea = false;
+            this.txt_Mesaage.Mfocus = false;
+            this.txt_Mesaage.MoveNext = false;
+            this.txt_Mesaage.Multiline = true;
+            this.txt_Mesaage.Name = "txt_Mesaage";
+            this.txt_Mesaage.RowCount = 10;
+            this.txt_Mesaage.Size = new System.Drawing.Size(786, 190);
+            this.txt_Mesaage.TabIndex = 2;
+            this.txt_Mesaage.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnLogin.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.DefaultBtnSize = false;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnLogin.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnLogin.Location = new System.Drawing.Point(642, 222);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(1);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(155, 30);
+            this.btnLogin.TabIndex = 1;
+            this.btnLogin.Text = "ログイン(F12)";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnClose.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DefaultBtnSize = false;
+            this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnClose.Location = new System.Drawing.Point(12, 222);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(1);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(150, 30);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.Text = "終了(F1)";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // Tennic_MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(832, 714);
-            this.Controls.Add(this.panelRight);
             this.Controls.Add(this.panel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "Main_Menu";
-            this.Text = "Main_Menu";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_Menu_FormClosing);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_Menu_KeyDown);
+            this.Controls.Add(this.panelRight);
+            this.Name = "Tennic_MainMenu";
+            this.Text = "Tennic_MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tennic_MainMenu_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tennic_MainMenu_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelRight.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.panelLeft.ResumeLayout(false);
+            this.panel_right.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel_right.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLoginDate;
         private System.Windows.Forms.Label lblOperatorName;
         private CKM_Controls.CKM_Label ckM_Label1;
         private System.Windows.Forms.Panel panelRight;
+        private System.Windows.Forms.Panel panel3;
+        private CKM_Controls.CKM_MultiLineTextBox txt_Mesaage;
+        private CKM_Controls.CKM_Button btnLogin;
+        private CKM_Controls.CKM_Button btnClose;
+        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel_right;
         private CKM_Controls.CKM_Button btnProj15;
         private CKM_Controls.CKM_Button btnProj5;
@@ -1026,9 +1043,6 @@
         private CKM_Controls.CKM_Button btnProj10;
         private CKM_Controls.CKM_Button btnProj14;
         private CKM_Controls.CKM_Button btnProj4;
-        private System.Windows.Forms.Panel panel3;
-        private CKM_Controls.CKM_Button btnLogin;
-        private CKM_Controls.CKM_Button btnClose;
         private System.Windows.Forms.Panel panelLeft;
         private CKM_Controls.CKM_Button btnGym20;
         private CKM_Controls.CKM_Button btnGym16;
@@ -1050,7 +1064,5 @@
         private CKM_Controls.CKM_Button btnGym3;
         private CKM_Controls.CKM_Button btnGym2;
         private CKM_Controls.CKM_Button btnGym1;
-        private CKM_Controls.CKM_MultiLineTextBox txt_Mesaage;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

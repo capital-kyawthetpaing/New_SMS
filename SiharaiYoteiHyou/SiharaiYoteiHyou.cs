@@ -11,19 +11,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
 using CrystalDecisions.CrystalReports.Engine;
-
+using System.IO;
+using ElencySolutions.CsvHelper;
+using System.Diagnostics;
 
 namespace SiharaiYoteiHyou
 {
     public partial class SiharaiYoteiHyou : FrmMainForm
     {
-        string StoreAuthen_CD = "";
-        string StoreAuthen_ChangeDate = "";
-        string StoreCD = "";
-        string ClosedStatus = "";
-        string PaymentStatus = "";
-        string expense = "";
-        string purchase = "";
+        //string StoreAuthen_CD = "";
+        //string StoreAuthen_ChangeDate = "";
+        //string StoreCD = "";
+        //string ClosedStatus = "";
+        //string PaymentStatus = "";
+        //string expense = "";
+        //string purchase = "";
         //string ymd;
         Base_BL bbl = new Base_BL();
         SiharaiYoteiHyou_BL shyhbl;
@@ -44,45 +46,24 @@ namespace SiharaiYoteiHyou
             base.Btn_F11.Text = "Excel(F11)";
             base.Btn_F10.Text = "";
             BindCombo();
+            RdoCloseStsSumi.Checked = true;
+            RdoUnpaid.Checked = true;
             chkExpense.Checked = true;
             chkPurchase.Checked = true;
-            radioClosedStatusSumi.Checked = true;
-            radioPaymentStatusUnpaid.Checked = true;
-            if (radioClosedStatusSumi.Checked == true)
+            this.comboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;
+
+        }
+
+        private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!comboStore.SelectedValue.Equals("-1"))
             {
-                ClosedStatus = "1";
+                if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
+                {
+                    shyhbl.ShowMessage("E139");
+                    comboStore.Focus();
+                }
             }
-            else
-            {
-                ClosedStatus = "0";
-            }
-            if (radioPaymentStatusUnpaid.Checked == true)
-            {
-                PaymentStatus = "1";
-            }
-            else
-            {
-                PaymentStatus = "0";
-            }
-            if (chkExpense.Checked == true)
-            {
-                expense = "1";
-            }
-            else
-            {
-                expense = "0";
-            }
-            if (chkPurchase.Checked == true)
-            {
-                purchase = "1";
-            }
-            else
-            {
-                purchase = "0";
-            }
-            //ymd = bbl.GetDate();
-            //txtPaymentDueDateFrom.Text = ymd;
-            //txtPaymentDueDateTo.Text = ymd;
         }
 
         /// <summary>
@@ -96,23 +77,18 @@ namespace SiharaiYoteiHyou
         /// エラーチェック処理
         /// </summary>
         private bool ErrorCheck()
-        {
-            if (!RequireCheck(new Control[] { comboStore}))   // go that focus
-                return false;
-            if (string.IsNullOrWhiteSpace(scPaymentDestinaion.TxtCode.Text))
-            {
-                shyhbl.ShowMessage("E102");
-                scPaymentDestinaion.Focus();
+        {          
+            if (!RequireCheck(new Control[] { scPaymentDestinaion.TxtCode }))
                 return false;
 
-            }
             /// <remarks>店舗名を選択した場合、権限があるかとかをチェックする処理</remarks>
-            if (!comboStore.IsExists(StoreAuthen_CD, "StoreAuthorization", StoreAuthen_ChangeDate, InProgramID, StoreCD) && StoreCD != "-1")
+            if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
             {
                 shyhbl.ShowMessage("E139");
                 comboStore.Focus();
                 return false;
             }
+
             /// <remarks>支払予定日(from)は支払予定日(To)より大きいの場合、エラーになる処理</remarks>
             if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))
             {
@@ -127,12 +103,16 @@ namespace SiharaiYoteiHyou
                 }
 
             }
+
             /// <remarks>両方チェックが入っていない場合、エラーになる処理</remarks>
-            if ((chkExpense.Checked==false && chkPurchase.Checked == false) || (chkExpense.Checked==true && chkPurchase.Checked==false) || (chkExpense.Checked == false && chkPurchase.Checked == true))
+            if(chkExpense.Checked==false && chkPurchase.Checked==false)
             {
                 shyhbl.ShowMessage("E111");
                 return false;
             }
+
+            if (!RequireCheck(new Control[] { comboStore }))   // go that focus
+                return false;
 
             return true;
         }
@@ -184,13 +164,6 @@ namespace SiharaiYoteiHyou
             this.Close();
         }
 
-        private void comboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            StoreAuthen_CD = StoreAuthorizationsCD;
-            StoreAuthen_ChangeDate = StoreAuthorizationsChangeDate;
-            StoreCD = comboStore.SelectedValue.ToString();
-        }
-
 
         /// <summary>
         /// 支払先検索にEenterする場合、選択出来ないかとかをチェックする処理///
@@ -220,16 +193,13 @@ namespace SiharaiYoteiHyou
         {
             dppe = new D_PayPlan_Entity
             {
-                StoreCD = "",
-                PayeeCD=scPaymentDestinaion.TxtCode.Text,
-                PaymentDueDateFrom=txtPaymentDueDateFrom.Text,
-                PaymenetDueDateTo=txtPaymentDueDateTo.Text,
-                CloseStatusSumi=ClosedStatus,
-                PaymentStatusUnpaid=PaymentStatus,
-                Purchase=purchase,
-                Expense=expense
-               
-                
+                PayeeCD = scPaymentDestinaion.TxtCode.Text,
+                PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
+                PaymenetDueDateTo = txtPaymentDueDateTo.Text,
+                CloseStatusSumi = RdoCloseStsSumi.Checked ?  "1" : "0",
+                PaymentStatusUnpaid = RdoUnpaid.Checked ?  "1" : "0",
+                Purchase = chkPurchase.Checked ? "1" : "0",
+                Expense = chkExpense.Checked ? "1" : "0"
             };
 
             return dppe;
@@ -290,6 +260,7 @@ namespace SiharaiYoteiHyou
                 switch (PrintMode)
                 {
                     case EPrintMode.DIRECT:
+
                         if (StartUpKBN == "1")
                         {
                             ret = DialogResult.No;
@@ -418,26 +389,54 @@ namespace SiharaiYoteiHyou
             try
             {
                 string fileName = "ExcelExport";
+                string sFileName;
                 //if (System.IO.Path.GetExtension(filePath).ToLower() != ".xlsx")
                 //{
                 //    fileName = System.IO.Path.GetFileNameWithoutExtension(filePath) + ".xlsx";
                 //}
+                DataTable dtCSV = new DataTable();
+                dtCSV = CheckData();
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Title = "Excel File to Edit";
+                savedialog.FileName = "SiharaiYoteiHyou";
+                savedialog.Filter = "Excel File|*.xlsx;*.xls";
+
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (Path.GetExtension(savedialog.FileName).Contains("xlsx"))
+                    {
+                        CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                        fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                        fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
+
+                        // 外部ファイル出力をExcel出力として定義する
+                        CrystalDecisions.Shared.ExportOptions option;
+                        option = report.ExportOptions;
+                        option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                        option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
+                        option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
+                        option.DestinationOptions = fileOption;
+                        // excelとして外部ファイル出力を行う
+                        report.Export();
+                    }
+                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                }
 
                 // 出力先ファイル名を指定
-                CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
-                fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
-                fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
+                //CrystalDecisions.Shared.DiskFileDestinationOptions fileOption;
+                //fileOption = new CrystalDecisions.Shared.DiskFileDestinationOptions();
+                //fileOption.DiskFileName = System.IO.Path.GetDirectoryName(filePath) + "\\" + fileName + ".xlsx";
 
                 // 外部ファイル出力をExcel出力として定義する
-                CrystalDecisions.Shared.ExportOptions option;
-                option = report.ExportOptions;
-                option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
-                option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
-                option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
-                option.DestinationOptions = fileOption;
+                //CrystalDecisions.Shared.ExportOptions option;
+                //option = report.ExportOptions;
+                //option.ExportDestinationType = CrystalDecisions.Shared.ExportDestinationType.DiskFile;
+                //option.ExportFormatType = CrystalDecisions.Shared.ExportFormatType.Excel;
+                //option.FormatOptions = new CrystalDecisions.Shared.ExcelFormatOptions();
+                //option.DestinationOptions = fileOption;
 
                 // excelとして外部ファイル出力を行う
-                report.Export();
+                //report.Export();
             }
             catch (Exception ex)
             {
@@ -447,85 +446,13 @@ namespace SiharaiYoteiHyou
             return true;
         }
 
-        private void radioClosedStatusSumi_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioClosedStatusSumi.Checked == true)
-            {
-                ClosedStatus = "1";
-            }
-            else
-            {
-                ClosedStatus = "0";
-            }
-
-        }
-
-        private void radioPaymentStatusUnpaid_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radioPaymentStatusUnpaid.Checked == true)
-            {
-                PaymentStatus = "1";
-            }
-            else
-            {
-                PaymentStatus = "0";
-            }
-        }
-
-        private void chkPurchase_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkPurchase.Checked == true)
-            {
-                purchase = "1";
-            }
-            else
-            {
-                purchase = "0";
-            }
-
-        }
-
-        private void chkExpense_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkExpense.Checked == true)
-            {
-                expense = "1";
-            }
-            else
-            {
-                expense = "0";
-            }
-        }
-
         private void SiharaiYoteiHyou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
-        private void scPaymentDestinaion_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scPaymentDestinaion.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scPaymentDestinaion.TxtCode.Text))
-                {
-                    if (scPaymentDestinaion.SelectData())
-                    {
-                        scPaymentDestinaion.Value1 = scPaymentDestinaion.TxtCode.Text;
-                        scPaymentDestinaion.Value2 = scPaymentDestinaion.LabelText;
-                    }
-                    else
-                    {
-                        bbl.ShowMessage("E101");
-                        scPaymentDestinaion.SetFocus(1);
-                    }
-                }
-
-            }
-
-        }
         /// <summary>
-        /// <Remark>Parameter Field</Remark>
+        /// <Remark>Parameter Field in Search_Vendor</Remark>
         /// </summary>
         private void scPaymentDestinaion_Enter(object sender, EventArgs e)
         {
