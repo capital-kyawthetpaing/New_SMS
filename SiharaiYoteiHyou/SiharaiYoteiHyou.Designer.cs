@@ -141,6 +141,7 @@
             this.txtPaymentDueDateTo.TabIndex = 3;
             this.txtPaymentDueDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDueDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDueDateTo_KeyDown);
             // 
             // ckM_Label3
             // 
@@ -151,10 +152,10 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(1351, 10);
+            this.ckM_Label3.Location = new System.Drawing.Point(1491, 10);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label3.TabIndex = 4;
+            this.ckM_Label3.TabIndex = 6;
             this.ckM_Label3.Text = "店舗";
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -167,12 +168,12 @@
             this.comboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.comboStore.FormattingEnabled = true;
             this.comboStore.Length = 10;
-            this.comboStore.Location = new System.Drawing.Point(1385, 6);
+            this.comboStore.Location = new System.Drawing.Point(1525, 6);
             this.comboStore.MaxLength = 10;
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
             this.comboStore.Size = new System.Drawing.Size(170, 20);
-            this.comboStore.TabIndex = 5;
+            this.comboStore.TabIndex = 7;
             // 
             // ckM_Label4
             // 
@@ -186,7 +187,7 @@
             this.ckM_Label4.Location = new System.Drawing.Point(67, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label4.TabIndex = 6;
+            this.ckM_Label4.TabIndex = 4;
             this.ckM_Label4.Text = "支払先";
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,7 +211,7 @@
             this.scPaymentDestinaion.SearchEnable = true;
             this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scPaymentDestinaion.TabIndex = 7;
+            this.scPaymentDestinaion.TabIndex = 5;
             this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scPaymentDestinaion.UseChangeDate = false;
             this.scPaymentDestinaion.Value1 = null;
