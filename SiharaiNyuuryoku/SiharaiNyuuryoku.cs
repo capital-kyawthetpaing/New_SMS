@@ -39,11 +39,7 @@ namespace SiharaiNyuuryoku
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
 
-            ScPaymentProcessNum.Enabled = false;
-            ScPaymentNum.Enabled = false;
-            ScPaymentProcessNum.SearchEnable = false;
-            ScPaymentNum.SearchEnable = false;
-            txtPaymentDate.Enabled = false;
+            EnableDisable_Controls();
 
             mse.StaffCD = InOperatorCD;
             mse.ChangeDate = DateTime.Now.ToShortDateString();
@@ -55,17 +51,25 @@ namespace SiharaiNyuuryoku
             }
             ScStaff.Code = InOperatorCD;
             SetRequireField();
+            
+            txtDueDate1.Focus();
+            BindCombo();
+        }
+
+        private void EnableDisable_Controls()
+        {
+            ScPaymentProcessNum.Enabled = false;
+            ScPaymentNum.Enabled = false;
+            ScPaymentProcessNum.SearchEnable = false;
+            ScPaymentNum.SearchEnable = false;
+            txtPaymentDate.Enabled = false;
             cboPaymentSourceAcc.Enabled = false;
             cboPaymentType.Enabled = false;
             txtBillSettleDate.Enabled = false;
 
             btnReleaseAll.Enabled = false;
             btnSelectAll.Enabled = false;
-
-            txtDueDate1.Focus();
-            BindCombo();
         }
-
         private void SetRequireField()
         {
             ScPaymentNum.TxtCode.Require(true);
