@@ -303,9 +303,9 @@ namespace SiharaiNyuuryoku
                 //店舗の締日チェック
                 //店舗締マスターで判断
                 M_StoreClose_Entity msce = new M_StoreClose_Entity();
-                //mse.StoreCD = mStoreCD;
-                //mse.FiscalYYYYMM = txtPaymentDate.Text.Replace("/", "").Substring(0, 6);
-                //bool ret = tprg_Shukka_Bl.CheckStoreClose(mse);
+                msce.StoreCD = InOperatorCD;
+                msce.FiscalYYYYMM = txtPaymentDate.Text.Replace("/", "").Substring(0,6);
+                bool ret = sibl.CheckClosePosition(msce);
                 //if (!ret)
                 //{
                 //    txtPaymentDate.Focus();
@@ -421,11 +421,11 @@ namespace SiharaiNyuuryoku
             //    btnF10Show.Enabled = false;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-            DataTable dtPay = new DataTable();
-            dtPay = sibl.D_Pay_Select(dpe);
-            if (dtPay.Rows.Count > 0)
+            DataTable dtPay1 = new DataTable();
+            dtPay1 = sibl.D_Pay_Select1(dpe);
+            if (dtPay1.Rows.Count > 0)
             {
-                ScPayee.TxtCode.Text = dtPay.Rows[0]["PayeeCD"].ToString();
+                ScPayee.TxtCode.Text = dtPay1.Rows[0]["PayeeCD"].ToString();
                 DataTable dtPayee = new DataTable();
                 dpe.PayeeCD = ScPayee.TxtCode.Text;
                 dpe.PayDate = DateTime.Now.ToShortDateString();
@@ -436,11 +436,11 @@ namespace SiharaiNyuuryoku
                 }
 
                 btnF10Show.Enabled = false;
-                txtPaymentDate.Text = dtPay.Rows[0]["PayDate"].ToString();
-                ScStaff.TxtCode.Text = dtPay.Rows[0]["StaffCD"].ToString();
+                txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
+                ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
 
                 mse.StaffCD = ScStaff.TxtCode.Text;
-                mse.ChangeDate = dtPay.Rows[0]["PayDate"].ToString();
+                mse.ChangeDate = dtPay1.Rows[0]["PayDate"].ToString();
                 DataTable dtstaff = new DataTable();
                 dtstaff = sibl.M_Staff_Select(mse);
                 ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
