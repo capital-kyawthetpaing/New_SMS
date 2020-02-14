@@ -181,8 +181,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HenpinNyuuryoku", "HenpinNy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaitounoukiKakuninsho", "KaitounoukiKakuninsho\KaitounoukiKakuninsho.csproj", "{D9CFC5EC-20EE-4176-9D70-957DDCB4E3BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiireNyuuryoku", "ShiireNyuuryoku\ShiireNyuuryoku.csproj", "{EEF9B573-CC26-486E-AE47-30089DE29D48}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiireTankaTeiseiIraisho", "ShiireTankaTeiseiIraisho\ShiireTankaTeiseiIraisho.csproj", "{A2BA3C6E-119C-4C92-AA05-18066F8B8FAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KaitouNoukiTouroku", "KaitouNoukiTouroku\KaitouNoukiTouroku.csproj", "{930E0E5F-233A-42E3-B246-F5C16053730B}"
@@ -949,14 +947,6 @@ Global
 		{D9CFC5EC-20EE-4176-9D70-957DDCB4E3BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D9CFC5EC-20EE-4176-9D70-957DDCB4E3BB}.Release|x86.ActiveCfg = Release|Any CPU
 		{D9CFC5EC-20EE-4176-9D70-957DDCB4E3BB}.Release|x86.Build.0 = Release|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Debug|x86.Build.0 = Debug|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|x86.ActiveCfg = Release|Any CPU
-		{EEF9B573-CC26-486E-AE47-30089DE29D48}.Release|x86.Build.0 = Release|Any CPU
 		{A2BA3C6E-119C-4C92-AA05-18066F8B8FAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A2BA3C6E-119C-4C92-AA05-18066F8B8FAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2BA3C6E-119C-4C92-AA05-18066F8B8FAC}.Debug|x86.ActiveCfg = Debug|Any CPU
