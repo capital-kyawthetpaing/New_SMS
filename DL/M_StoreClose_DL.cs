@@ -43,7 +43,8 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
-                 { "@StoreCD",new ValuePair {value1=SqlDbType.VarChar,value2=mse.StoreCD} }
+                 { "@StoreCD",new ValuePair {value1=SqlDbType.VarChar,value2=mse.StoreCD} },
+                 { "@FiscalYYYYMM",new ValuePair {value1=SqlDbType.Int,value2=mse.FiscalYYYYMM} }
             };
             return SelectData(dic, "M_StoreClose_SelectAll");
         }
