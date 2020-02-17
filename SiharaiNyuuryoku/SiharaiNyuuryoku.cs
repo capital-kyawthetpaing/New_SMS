@@ -143,8 +143,8 @@ namespace SiharaiNyuuryoku
                     Clear(PanelDetail);
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
-                    ScPaymentProcessNum.Enabled = false;
-                    ScPaymentNum.Enabled = false;
+                    ScPaymentProcessNum.Enabled = true;
+                    ScPaymentNum.Enabled = true;
                     ScPaymentProcessNum.SetFocus(1);
                     F12Enable = false;
                     btnF10Show.Enabled = F11Enable = true;
@@ -485,6 +485,8 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
+                    Search.Search_Payment sp = new Search.Search_Payment();
+                    sp.ShowDialog();
                 }
             }
         }
@@ -496,9 +498,7 @@ namespace SiharaiNyuuryoku
                 type = 1;
                 if (ErrorCheck(10))
                 {
-                    DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment();
-                    sp.ShowDialog();
+                    DataDisplay();                 
                 }
             }
         }
