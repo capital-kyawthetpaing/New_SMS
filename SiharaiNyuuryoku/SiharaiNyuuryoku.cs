@@ -196,6 +196,11 @@ namespace SiharaiNyuuryoku
 
         }
 
+        /// <summary>
+        /// Error Check for the whole form
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private bool ErrorCheck(int index)
         {
             if (index == 10)
@@ -430,6 +435,9 @@ namespace SiharaiNyuuryoku
             return true;
         }
 
+        /// <summary>
+        /// Show Data in DataArea
+        /// </summary>
         private void DataDisplay()
         {
             txtDueDate1.Enabled = false;
@@ -489,6 +497,12 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        #region KeyEvent
+        private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
         private void ScPaymentNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -516,5 +530,7 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        
+        #endregion
     }
 }
