@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using CKM_Controls;
 
 namespace SiharaiNyuuryoku
 {
@@ -434,8 +435,8 @@ namespace SiharaiNyuuryoku
             {
                 dgvPayment.DataSource = dtPay1;
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                ScPayee.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-                ScPayee.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
+                ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
+                ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
 
                 cboPaymentType.Enabled = false;
                 cboPaymentSourceAcc.Enabled = false;
@@ -444,37 +445,13 @@ namespace SiharaiNyuuryoku
                 btnSelectAll.Enabled = false;
                 btnReleaseAll.Enabled = false;
 
-                lblRequiredGaku.Text = dtPay1.Rows[0]["PayPlanGaku"].ToString();
+                lblPayPlanGaku.Text = dtPay1.Rows[0]["PayPlanGaku"].ToString();
                 lblPayConfirmGaku.Text = dtPay1.Rows[0]["PayConfirmGaku"].ToString();
                 lblPayGaku.Text = dtPay1.Rows[0]["PayGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPay1.Rows[0]["TransferGaku"].ToString();
-                lblTransferGaku.Text = dtPay1.Rows[0]["TransferFeeGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPay1.Rows[0]["GakuTotal"].ToString();
-                lblTransferGaku.Text = dtPay1.Rows[0]["PayPlan"].ToString();
-
-                //btnF10Show.Enabled = false;
-                //txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                //ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-
-                //mse.StaffCD = ScStaff.TxtCode.Text;
-                //mse.ChangeDate = dtPay1.Rows[0]["PayDate"].ToString();
-                //DataTable dtstaff = new DataTable();
-                //dtstaff = sibl.M_Staff_Select(mse);
-                //ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-
-                //cboPaymentType.Enabled = false;
-                //cboPaymentSourceAcc.Enabled = false;
-                //txtBillSettleDate.Enabled = false;
-
-                //btnSelectAll.Enabled = false;
-                //btnReleaseAll.Enabled = false;
-
-                //dpe.PayNo = ScPaymentNum.TxtCode.Text;
-                //dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-                //DataTable dtPayDetail = new DataTable();
-                //dtPayDetail = sibl.D_PayDetail_Select(dpe);
-                //dgvPayment.DataSource = dtPayDetail;
-                //
+                lblTransferGaku.Text = dtPay1.Rows[0]["TransferGaku"].ToString();
+                lblTransferFeeGaku.Text = dtPay1.Rows[0]["TransferFeeGaku"].ToString();
+                lblGakuTotal.Text = dtPay1.Rows[0]["GakuTotal"].ToString();
+                lblPayPlan.Text = dtPay1.Rows[0]["PayPlan"].ToString();
             }
         }
 
@@ -520,6 +497,8 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(10))
                 {
                     DataDisplay();
+                    Search.Search_Payment sp = new Search.Search_Payment();
+                    sp.ShowDialog();
                 }
             }
         }
