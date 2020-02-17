@@ -90,6 +90,7 @@ namespace ShiireShoukaiShiiresaki
         public void BindCombo()
         {
             ComboStore.Bind(string.Empty,"2");
+            ComboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// エラーチェック処理
@@ -186,7 +187,6 @@ namespace ShiireShoukaiShiiresaki
             }
             if (index + 1 == 10)
             {
-                if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                     ExportCSV();
                     //dgvPurchaseSearch.CurrentCell = dgvPurchaseSearch.Rows[0].Cells[1];
             }
@@ -223,7 +223,11 @@ namespace ShiireShoukaiShiiresaki
             {
                 return;
             }
-            if (dgvPurchaseSearch.DataSource != null)
+            if (bbl.ShowMessage("Q203") == DialogResult.No)
+            {
+                return;
+            }
+                if (dgvPurchaseSearch.DataSource != null)
             {
                 //Build the CSV file data as a Comma separated string.
                 string csv = string.Empty;
