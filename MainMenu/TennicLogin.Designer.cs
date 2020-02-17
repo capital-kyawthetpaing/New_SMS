@@ -204,6 +204,7 @@
             this.Controls.Add(this.txtOperatorCD);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "TennicLogin";
             this.Text = "Tennic_MainMenu";
             this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);
