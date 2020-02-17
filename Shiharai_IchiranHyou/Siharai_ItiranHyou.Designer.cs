@@ -191,6 +191,7 @@
             this.SC_Payment.Value2 = null;
             this.SC_Payment.Value3 = null;
             this.SC_Payment.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_Payment_CodeKeyDownEvent);
+            this.SC_Payment.Enter += new System.EventHandler(this.SC_Payment_Enter);
             // 
             // SC_Staff
             // 
