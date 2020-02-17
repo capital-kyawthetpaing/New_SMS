@@ -39,8 +39,8 @@
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPaymentDueDate = new CKM_Controls.CKM_TextBox();
             this.txtPaymentDestination = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.lblPaymentDestination = new CKM_Controls.CKM_Label();
+            this.dgvSearchPayment = new CKM_Controls.CKM_GridView();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
@@ -53,7 +53,7 @@
             this.SC_Account10 = new Search.CKM_SearchControl();
             this.txtSettlementDate2 = new CKM_Controls.CKM_TextBox();
             this.txtElectronicRecordNo = new CKM_Controls.CKM_TextBox();
-            this.txtSettlementDate1 = new CKM_Controls.CKM_TextBox();
+            this.txtBillDate = new CKM_Controls.CKM_TextBox();
             this.txtBillNo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label23 = new CKM_Controls.CKM_Label();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
@@ -65,7 +65,7 @@
             this.txtOther1 = new CKM_Controls.CKM_TextBox();
             this.txtElectronicBone = new CKM_Controls.CKM_TextBox();
             this.txtBill = new CKM_Controls.CKM_TextBox();
-            this.txtAccountReceivable = new CKM_Controls.CKM_TextBox();
+            this.txtOffsetGaku = new CKM_Controls.CKM_TextBox();
             this.txtCash = new CKM_Controls.CKM_TextBox();
             this.ckM_Label22 = new CKM_Controls.CKM_Label();
             this.ckM_Label21 = new CKM_Controls.CKM_Label();
@@ -74,8 +74,8 @@
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
             this.txtAmount = new CKM_Controls.CKM_TextBox();
-            this.txtBurden = new CKM_Controls.CKM_TextBox();
-            this.txtNominee = new CKM_Controls.CKM_TextBox();
+            this.txtFeeKBN = new CKM_Controls.CKM_TextBox();
+            this.txtMeigi = new CKM_Controls.CKM_TextBox();
             this.txtAccNo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label16 = new CKM_Controls.CKM_Label();
             this.ckM_Label15 = new CKM_Controls.CKM_Label();
@@ -83,7 +83,7 @@
             this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
-            this.aa = new CKM_Controls.CKM_TextBox();
+            this.txtKouzaKBN = new CKM_Controls.CKM_TextBox();
             this.SC_Payee1 = new Search.CKM_SearchControl();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
             this.txtTransferAmount = new CKM_Controls.CKM_TextBox();
@@ -98,13 +98,13 @@
             this.colUnpaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalPay = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_Label3);
+            this.PanelHeader.Controls.Add(this.lblPaymentDestination);
             this.PanelHeader.Controls.Add(this.txtPaymentDestination);
             this.PanelHeader.Controls.Add(this.txtPaymentDueDate);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
@@ -115,7 +115,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtPaymentDueDate, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtPaymentDestination, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.lblPaymentDestination, 0);
             // 
             // ckM_Label1
             // 
@@ -206,32 +206,32 @@
             this.txtPaymentDestination.TabIndex = 5;
             this.txtPaymentDestination.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_Label3
+            // lblPaymentDestination
             // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(276, 59);
-            this.ckM_Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(349, 15);
-            this.ckM_Label3.TabIndex = 6;
-            this.ckM_Label3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPaymentDestination.AutoSize = true;
+            this.lblPaymentDestination.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblPaymentDestination.BackColor = System.Drawing.Color.Transparent;
+            this.lblPaymentDestination.DefaultlabelSize = true;
+            this.lblPaymentDestination.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lblPaymentDestination.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblPaymentDestination.ForeColor = System.Drawing.Color.Black;
+            this.lblPaymentDestination.Location = new System.Drawing.Point(276, 59);
+            this.lblPaymentDestination.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPaymentDestination.Name = "lblPaymentDestination";
+            this.lblPaymentDestination.Size = new System.Drawing.Size(349, 15);
+            this.lblPaymentDestination.TabIndex = 6;
+            this.lblPaymentDestination.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.lblPaymentDestination.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblPaymentDestination.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_GridView1
+            // dgvSearchPayment
             // 
-            this.ckM_GridView1.AllowUserToAddRows = false;
-            this.ckM_GridView1.AllowUserToDeleteRows = false;
-            this.ckM_GridView1.AllowUserToResizeRows = false;
+            this.dgvSearchPayment.AllowUserToAddRows = false;
+            this.dgvSearchPayment.AllowUserToDeleteRows = false;
+            this.dgvSearchPayment.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,9 +239,9 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ckM_GridView1.ColumnHeadersHeight = 25;
-            this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSearchPayment.ColumnHeadersHeight = 25;
+            this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
             this.colPurchaseNum,
             this.colPurchaseDate,
@@ -249,15 +249,15 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
-            this.ckM_GridView1.EnableHeadersVisualStyles = false;
-            this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(32, 23);
-            this.ckM_GridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.Size = new System.Drawing.Size(750, 350);
-            this.ckM_GridView1.TabIndex = 5;
-            this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = true;
+            this.dgvSearchPayment.EnableHeadersVisualStyles = false;
+            this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.dgvSearchPayment.Location = new System.Drawing.Point(32, 23);
+            this.dgvSearchPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSearchPayment.Name = "dgvSearchPayment";
+            this.dgvSearchPayment.Size = new System.Drawing.Size(750, 350);
+            this.dgvSearchPayment.TabIndex = 5;
+            this.dgvSearchPayment.UseRowNo = true;
+            this.dgvSearchPayment.UseSetting = true;
             // 
             // ckM_Label4
             // 
@@ -341,7 +341,7 @@
             this.panelDetail.Controls.Add(this.SC_Account10);
             this.panelDetail.Controls.Add(this.txtSettlementDate2);
             this.panelDetail.Controls.Add(this.txtElectronicRecordNo);
-            this.panelDetail.Controls.Add(this.txtSettlementDate1);
+            this.panelDetail.Controls.Add(this.txtBillDate);
             this.panelDetail.Controls.Add(this.txtBillNo);
             this.panelDetail.Controls.Add(this.ckM_Label23);
             this.panelDetail.Controls.Add(this.ckM_Label24);
@@ -353,7 +353,7 @@
             this.panelDetail.Controls.Add(this.txtOther1);
             this.panelDetail.Controls.Add(this.txtElectronicBone);
             this.panelDetail.Controls.Add(this.txtBill);
-            this.panelDetail.Controls.Add(this.txtAccountReceivable);
+            this.panelDetail.Controls.Add(this.txtOffsetGaku);
             this.panelDetail.Controls.Add(this.txtCash);
             this.panelDetail.Controls.Add(this.ckM_Label22);
             this.panelDetail.Controls.Add(this.ckM_Label21);
@@ -362,8 +362,8 @@
             this.panelDetail.Controls.Add(this.ckM_Label18);
             this.panelDetail.Controls.Add(this.ckM_Label17);
             this.panelDetail.Controls.Add(this.txtAmount);
-            this.panelDetail.Controls.Add(this.txtBurden);
-            this.panelDetail.Controls.Add(this.txtNominee);
+            this.panelDetail.Controls.Add(this.txtFeeKBN);
+            this.panelDetail.Controls.Add(this.txtMeigi);
             this.panelDetail.Controls.Add(this.txtAccNo);
             this.panelDetail.Controls.Add(this.ckM_Label16);
             this.panelDetail.Controls.Add(this.ckM_Label15);
@@ -371,13 +371,13 @@
             this.panelDetail.Controls.Add(this.ckM_Label13);
             this.panelDetail.Controls.Add(this.ckM_Label12);
             this.panelDetail.Controls.Add(this.ckM_Label11);
-            this.panelDetail.Controls.Add(this.aa);
+            this.panelDetail.Controls.Add(this.txtKouzaKBN);
             this.panelDetail.Controls.Add(this.SC_Payee1);
             this.panelDetail.Controls.Add(this.ckM_Label10);
             this.panelDetail.Controls.Add(this.txtTransferAmount);
             this.panelDetail.Controls.Add(this.ckM_Label9);
             this.panelDetail.Controls.Add(this.ckM_Label8);
-            this.panelDetail.Controls.Add(this.ckM_GridView1);
+            this.panelDetail.Controls.Add(this.dgvSearchPayment);
             this.panelDetail.Controls.Add(this.ckM_Label4);
             this.panelDetail.Controls.Add(this.ckM_Label5);
             this.panelDetail.Controls.Add(this.ckM_Label6);
@@ -564,31 +564,31 @@
             this.txtElectronicRecordNo.TabIndex = 90;
             this.txtElectronicRecordNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // txtSettlementDate1
+            // txtBillDate
             // 
-            this.txtSettlementDate1.AllowMinus = false;
-            this.txtSettlementDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtSettlementDate1.BackColor = System.Drawing.Color.White;
-            this.txtSettlementDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSettlementDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtSettlementDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.txtSettlementDate1.DecimalPlace = 0;
-            this.txtSettlementDate1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtSettlementDate1.IntegerPart = 0;
-            this.txtSettlementDate1.IsCorrectDate = true;
-            this.txtSettlementDate1.isEnterKeyDown = false;
-            this.txtSettlementDate1.IsNumber = true;
-            this.txtSettlementDate1.IsShop = false;
-            this.txtSettlementDate1.Length = 10;
-            this.txtSettlementDate1.Location = new System.Drawing.Point(446, 682);
-            this.txtSettlementDate1.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSettlementDate1.MaxLength = 10;
-            this.txtSettlementDate1.MoveNext = true;
-            this.txtSettlementDate1.Name = "txtSettlementDate1";
-            this.txtSettlementDate1.Size = new System.Drawing.Size(133, 22);
-            this.txtSettlementDate1.TabIndex = 89;
-            this.txtSettlementDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtSettlementDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBillDate.AllowMinus = false;
+            this.txtBillDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtBillDate.BackColor = System.Drawing.Color.White;
+            this.txtBillDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBillDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtBillDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtBillDate.DecimalPlace = 0;
+            this.txtBillDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtBillDate.IntegerPart = 0;
+            this.txtBillDate.IsCorrectDate = true;
+            this.txtBillDate.isEnterKeyDown = false;
+            this.txtBillDate.IsNumber = true;
+            this.txtBillDate.IsShop = false;
+            this.txtBillDate.Length = 10;
+            this.txtBillDate.Location = new System.Drawing.Point(446, 682);
+            this.txtBillDate.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBillDate.MaxLength = 10;
+            this.txtBillDate.MoveNext = true;
+            this.txtBillDate.Name = "txtBillDate";
+            this.txtBillDate.Size = new System.Drawing.Size(133, 22);
+            this.txtBillDate.TabIndex = 89;
+            this.txtBillDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtBillDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtBillNo
             // 
@@ -827,31 +827,31 @@
             this.txtBill.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtBill.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // txtAccountReceivable
+            // txtOffsetGaku
             // 
-            this.txtAccountReceivable.AllowMinus = false;
-            this.txtAccountReceivable.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtAccountReceivable.BackColor = System.Drawing.Color.White;
-            this.txtAccountReceivable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAccountReceivable.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtAccountReceivable.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.txtAccountReceivable.DecimalPlace = 0;
-            this.txtAccountReceivable.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtAccountReceivable.IntegerPart = 0;
-            this.txtAccountReceivable.IsCorrectDate = true;
-            this.txtAccountReceivable.isEnterKeyDown = false;
-            this.txtAccountReceivable.IsNumber = true;
-            this.txtAccountReceivable.IsShop = false;
-            this.txtAccountReceivable.Length = 10;
-            this.txtAccountReceivable.Location = new System.Drawing.Point(166, 626);
-            this.txtAccountReceivable.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAccountReceivable.MaxLength = 10;
-            this.txtAccountReceivable.MoveNext = true;
-            this.txtAccountReceivable.Name = "txtAccountReceivable";
-            this.txtAccountReceivable.Size = new System.Drawing.Size(133, 22);
-            this.txtAccountReceivable.TabIndex = 77;
-            this.txtAccountReceivable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtAccountReceivable.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtOffsetGaku.AllowMinus = false;
+            this.txtOffsetGaku.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtOffsetGaku.BackColor = System.Drawing.Color.White;
+            this.txtOffsetGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOffsetGaku.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtOffsetGaku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOffsetGaku.DecimalPlace = 0;
+            this.txtOffsetGaku.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtOffsetGaku.IntegerPart = 0;
+            this.txtOffsetGaku.IsCorrectDate = true;
+            this.txtOffsetGaku.isEnterKeyDown = false;
+            this.txtOffsetGaku.IsNumber = true;
+            this.txtOffsetGaku.IsShop = false;
+            this.txtOffsetGaku.Length = 10;
+            this.txtOffsetGaku.Location = new System.Drawing.Point(166, 626);
+            this.txtOffsetGaku.Margin = new System.Windows.Forms.Padding(4);
+            this.txtOffsetGaku.MaxLength = 10;
+            this.txtOffsetGaku.MoveNext = true;
+            this.txtOffsetGaku.Name = "txtOffsetGaku";
+            this.txtOffsetGaku.Size = new System.Drawing.Size(133, 22);
+            this.txtOffsetGaku.TabIndex = 77;
+            this.txtOffsetGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOffsetGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtCash
             // 
@@ -1012,55 +1012,55 @@
             this.txtAmount.TabIndex = 69;
             this.txtAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // txtBurden
+            // txtFeeKBN
             // 
-            this.txtBurden.AllowMinus = false;
-            this.txtBurden.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtBurden.BackColor = System.Drawing.Color.White;
-            this.txtBurden.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBurden.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtBurden.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtBurden.DecimalPlace = 0;
-            this.txtBurden.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtBurden.IntegerPart = 0;
-            this.txtBurden.IsCorrectDate = true;
-            this.txtBurden.isEnterKeyDown = false;
-            this.txtBurden.IsNumber = true;
-            this.txtBurden.IsShop = false;
-            this.txtBurden.Length = 10;
-            this.txtBurden.Location = new System.Drawing.Point(446, 544);
-            this.txtBurden.Margin = new System.Windows.Forms.Padding(4);
-            this.txtBurden.MaxLength = 10;
-            this.txtBurden.MoveNext = true;
-            this.txtBurden.Name = "txtBurden";
-            this.txtBurden.Size = new System.Drawing.Size(26, 22);
-            this.txtBurden.TabIndex = 68;
-            this.txtBurden.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFeeKBN.AllowMinus = false;
+            this.txtFeeKBN.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtFeeKBN.BackColor = System.Drawing.Color.White;
+            this.txtFeeKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFeeKBN.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtFeeKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtFeeKBN.DecimalPlace = 0;
+            this.txtFeeKBN.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtFeeKBN.IntegerPart = 0;
+            this.txtFeeKBN.IsCorrectDate = true;
+            this.txtFeeKBN.isEnterKeyDown = false;
+            this.txtFeeKBN.IsNumber = true;
+            this.txtFeeKBN.IsShop = false;
+            this.txtFeeKBN.Length = 10;
+            this.txtFeeKBN.Location = new System.Drawing.Point(446, 544);
+            this.txtFeeKBN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeeKBN.MaxLength = 10;
+            this.txtFeeKBN.MoveNext = true;
+            this.txtFeeKBN.Name = "txtFeeKBN";
+            this.txtFeeKBN.Size = new System.Drawing.Size(26, 22);
+            this.txtFeeKBN.TabIndex = 68;
+            this.txtFeeKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // txtNominee
+            // txtMeigi
             // 
-            this.txtNominee.AllowMinus = false;
-            this.txtNominee.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtNominee.BackColor = System.Drawing.Color.White;
-            this.txtNominee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNominee.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.txtNominee.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtNominee.DecimalPlace = 0;
-            this.txtNominee.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtNominee.IntegerPart = 0;
-            this.txtNominee.IsCorrectDate = true;
-            this.txtNominee.isEnterKeyDown = false;
-            this.txtNominee.IsNumber = true;
-            this.txtNominee.IsShop = false;
-            this.txtNominee.Length = 40;
-            this.txtNominee.Location = new System.Drawing.Point(446, 522);
-            this.txtNominee.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNominee.MaxLength = 20;
-            this.txtNominee.MoveNext = true;
-            this.txtNominee.Name = "txtNominee";
-            this.txtNominee.Size = new System.Drawing.Size(346, 22);
-            this.txtNominee.TabIndex = 67;
-            this.txtNominee.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtMeigi.AllowMinus = false;
+            this.txtMeigi.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtMeigi.BackColor = System.Drawing.Color.White;
+            this.txtMeigi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMeigi.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtMeigi.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtMeigi.DecimalPlace = 0;
+            this.txtMeigi.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtMeigi.IntegerPart = 0;
+            this.txtMeigi.IsCorrectDate = true;
+            this.txtMeigi.isEnterKeyDown = false;
+            this.txtMeigi.IsNumber = true;
+            this.txtMeigi.IsShop = false;
+            this.txtMeigi.Length = 40;
+            this.txtMeigi.Location = new System.Drawing.Point(446, 522);
+            this.txtMeigi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMeigi.MaxLength = 20;
+            this.txtMeigi.MoveNext = true;
+            this.txtMeigi.Name = "txtMeigi";
+            this.txtMeigi.Size = new System.Drawing.Size(346, 22);
+            this.txtMeigi.TabIndex = 67;
+            this.txtMeigi.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAccNo
             // 
@@ -1196,31 +1196,31 @@
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // aa
+            // txtKouzaKBN
             // 
-            this.aa.AllowMinus = false;
-            this.aa.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.aa.BackColor = System.Drawing.Color.White;
-            this.aa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.aa.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.aa.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.aa.DecimalPlace = 0;
-            this.aa.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.aa.IntegerPart = 0;
-            this.aa.IsCorrectDate = true;
-            this.aa.isEnterKeyDown = false;
-            this.aa.IsNumber = true;
-            this.aa.IsShop = false;
-            this.aa.Length = 10;
-            this.aa.Location = new System.Drawing.Point(446, 478);
-            this.aa.Margin = new System.Windows.Forms.Padding(4);
-            this.aa.MaxLength = 10;
-            this.aa.MoveNext = true;
-            this.aa.Name = "aa";
-            this.aa.Size = new System.Drawing.Size(26, 22);
-            this.aa.TabIndex = 59;
-            this.aa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.aa.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtKouzaKBN.AllowMinus = false;
+            this.txtKouzaKBN.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtKouzaKBN.BackColor = System.Drawing.Color.White;
+            this.txtKouzaKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKouzaKBN.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtKouzaKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtKouzaKBN.DecimalPlace = 0;
+            this.txtKouzaKBN.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtKouzaKBN.IntegerPart = 0;
+            this.txtKouzaKBN.IsCorrectDate = true;
+            this.txtKouzaKBN.isEnterKeyDown = false;
+            this.txtKouzaKBN.IsNumber = true;
+            this.txtKouzaKBN.IsShop = false;
+            this.txtKouzaKBN.Length = 10;
+            this.txtKouzaKBN.Location = new System.Drawing.Point(446, 478);
+            this.txtKouzaKBN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKouzaKBN.MaxLength = 10;
+            this.txtKouzaKBN.MoveNext = true;
+            this.txtKouzaKBN.Name = "txtKouzaKBN";
+            this.txtKouzaKBN.Size = new System.Drawing.Size(26, 22);
+            this.txtKouzaKBN.TabIndex = 59;
+            this.txtKouzaKBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtKouzaKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // SC_Payee1
             // 
@@ -1417,7 +1417,7 @@
             this.Controls.SetChildIndex(this.panelDetail, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).EndInit();
             this.panelDetail.ResumeLayout(false);
             this.panelDetail.PerformLayout();
             this.ResumeLayout(false);
@@ -1427,11 +1427,11 @@
         #endregion
 
         private CKM_Controls.CKM_Label ckM_Label1;
-        private CKM_Controls.CKM_Label ckM_Label3;
+        private CKM_Controls.CKM_Label lblPaymentDestination;
         private CKM_Controls.CKM_TextBox txtPaymentDestination;
         private CKM_Controls.CKM_TextBox txtPaymentDueDate;
         private CKM_Controls.CKM_Label ckM_Label2;
-        private CKM_Controls.CKM_GridView ckM_GridView1;
+        private CKM_Controls.CKM_GridView dgvSearchPayment;
         private CKM_Controls.CKM_Label ckM_Label4;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_Label ckM_Label6;
@@ -1444,7 +1444,7 @@
         private CKM_SearchControl SC_Account10;
         private CKM_Controls.CKM_TextBox txtSettlementDate2;
         private CKM_Controls.CKM_TextBox txtElectronicRecordNo;
-        private CKM_Controls.CKM_TextBox txtSettlementDate1;
+        private CKM_Controls.CKM_TextBox txtBillDate;
         private CKM_Controls.CKM_TextBox txtBillNo;
         private CKM_Controls.CKM_Label ckM_Label23;
         private CKM_Controls.CKM_Label ckM_Label24;
@@ -1456,7 +1456,7 @@
         private CKM_Controls.CKM_TextBox txtOther1;
         private CKM_Controls.CKM_TextBox txtElectronicBone;
         private CKM_Controls.CKM_TextBox txtBill;
-        private CKM_Controls.CKM_TextBox txtAccountReceivable;
+        private CKM_Controls.CKM_TextBox txtOffsetGaku;
         private CKM_Controls.CKM_TextBox txtCash;
         private CKM_Controls.CKM_Label ckM_Label22;
         private CKM_Controls.CKM_Label ckM_Label21;
@@ -1465,8 +1465,8 @@
         private CKM_Controls.CKM_Label ckM_Label18;
         private CKM_Controls.CKM_Label ckM_Label17;
         private CKM_Controls.CKM_TextBox txtAmount;
-        private CKM_Controls.CKM_TextBox txtBurden;
-        private CKM_Controls.CKM_TextBox txtNominee;
+        private CKM_Controls.CKM_TextBox txtFeeKBN;
+        private CKM_Controls.CKM_TextBox txtMeigi;
         private CKM_Controls.CKM_TextBox txtAccNo;
         private CKM_Controls.CKM_Label ckM_Label16;
         private CKM_Controls.CKM_Label ckM_Label15;
@@ -1474,7 +1474,7 @@
         private CKM_Controls.CKM_Label ckM_Label13;
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_Label ckM_Label11;
-        private CKM_Controls.CKM_TextBox aa;
+        private CKM_Controls.CKM_TextBox txtKouzaKBN;
         private CKM_SearchControl SC_Payee1;
         private CKM_Controls.CKM_Label ckM_Label10;
         private CKM_Controls.CKM_TextBox txtTransferAmount;

@@ -75,6 +75,16 @@ namespace BL
             return dpdl.D_Pay_Select1(dpe);
         }
 
+        public DataTable D_Pay_Select2(D_Pay_Entity dpe)
+        {
+            return dpdl.D_Pay_Select2(dpe);
+        }
+
+        public DataTable D_Pay_Select3(D_Pay_Entity dpe)
+        {
+            return dpdl.D_Pay_Select3(dpe);
+        }
+
         public DataTable D_PayDetail_Select(D_Pay_Entity dpe)
         {
             return dpddl.D_PayDetail_Select(dpe);

@@ -485,7 +485,7 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment();
+                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, dpe.PayeeCD, dpe.PayPlanDate);
                     sp.ShowDialog();
                 }
             }
