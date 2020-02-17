@@ -107,5 +107,21 @@ namespace Search
         {
             MoveNextControl(e);
         }
+
+        private void txtBranchCDTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtBranchCDFrom.Text) && !string.IsNullOrWhiteSpace(txtBranchCDTo.Text))
+                {
+                    if (string.Compare(txtBranchCDFrom.Text, txtBranchCDTo.Text) == 1)
+                    {
+                        sgsbl.ShowMessage("E106");
+                        txtBranchCDFrom.Focus();
+                    }
+
+                }
+            }
+        }
     }
 }
