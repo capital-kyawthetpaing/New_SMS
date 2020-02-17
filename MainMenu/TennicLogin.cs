@@ -117,5 +117,10 @@ namespace MainMenu
                 }
             }
         }
+
+        private void ckM_Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

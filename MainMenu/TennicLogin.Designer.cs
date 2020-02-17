@@ -94,6 +94,7 @@
             this.ckM_Button2.TabIndex = 1;
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
+            this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
             // 
             // pictureBox1
             // 
