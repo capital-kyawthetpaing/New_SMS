@@ -67,6 +67,23 @@ namespace Search
             DataTable dt3 = new DataTable();
             dt3 = shnbl.D_Pay_Select3(dpe);
             dgvSearchPayment.DataSource = dt3;
+            int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0;
+            for (int i = 0; i < dgvSearchPayment.Rows.Count; ++i)
+            {
+                sum1 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[3].Value);
+                sum2 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[4].Value);
+                sum3 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[5].Value);
+                sum4 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[6].Value);               
+            }
+            //lblPayPlanGaku.Text = sum1.ToString();
+            //lblPayComfirmGaku.Text = sum2.ToString();
+            //lblPayGaku.Text = sum3.ToString();
+            //lblUnpaidAmount.Text = sum4.ToString();
+            txtPayPlanGaku.Text = sum1.ToString();
+            txtPayComfirmGaku.Text = sum2.ToString();
+            txtPayGaku.Text = sum3.ToString();
+            txtUnpaidAmount.Text = sum4.ToString();
+
         }
     }
 }

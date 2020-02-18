@@ -44,7 +44,14 @@ namespace SiharaiNyuuryoku
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-
+            txtPayPlanGaku.BackColor = Color.FromArgb(169, 208, 142);
+            txtPayConfirmGaku.BackColor = Color.FromArgb(169, 208, 142);
+            txtPayGaku.BackColor = Color.FromArgb(169, 208, 142);
+            txtTransferGaku.BackColor = Color.FromArgb(169, 208, 142);
+            txtTransferFeeGaku.BackColor = Color.FromArgb(169, 208, 142);
+            txtGakuTotal.BackColor = Color.FromArgb(169, 208, 142);
+            txtPayPlan.BackColor = Color.FromArgb(169, 208, 142);
+            txtPayPlanGaku.ForeColor = Color.Black;
             ScPaymentProcessNum.Enabled = false;
             ScPaymentNum.Enabled = false;
             ScPaymentProcessNum.SearchEnable = false;
@@ -461,16 +468,33 @@ namespace SiharaiNyuuryoku
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
                 ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
                 ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
+                int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
+                for (int i = 0; i < dgvPayment.Rows.Count; ++i)
+                {
+                    sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
+                    sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
+                    sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
+                    sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
+                    sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
+                    sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
+                    sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
 
-               
+                }
+                //lblPayPlanGaku.Text = sum1.ToString();
+                //lblPayConfirmGaku.Text = sum2.ToString();
+                //lblPayGaku.Text = sum3.ToString();
+                //lblTransferGaku.Text = sum4.ToString();
+                //lblTransferFeeGaku.Text = sum5.ToString();
+                //lblGakuTotal.Text = sum6.ToString();
+                //lblPayPlan.Text = sum7.ToString();
+                txtPayPlanGaku.Text = sum1.ToString();
+                txtPayConfirmGaku.Text = sum2.ToString();
+                txtPayGaku.Text = sum3.ToString();
+                txtTransferGaku.Text = sum4.ToString();
+                txtTransferFeeGaku.Text = sum5.ToString();
+                txtGakuTotal.Text = sum6.ToString();
+                txtPayPlan.Text = sum7.ToString();
 
-                lblPayPlanGaku.Text = dtPay1.Rows[0]["PayPlanGaku"].ToString();
-                lblPayConfirmGaku.Text = dtPay1.Rows[0]["PayConfirmGaku"].ToString();
-                lblPayGaku.Text = dtPay1.Rows[0]["PayGaku"].ToString();
-                lblTransferGaku.Text = dtPay1.Rows[0]["TransferGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPay1.Rows[0]["TransferFeeGaku"].ToString();
-                lblGakuTotal.Text = dtPay1.Rows[0]["GakuTotal"].ToString();
-                lblPayPlan.Text = dtPay1.Rows[0]["PayPlan"].ToString();
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
         }
@@ -511,8 +535,7 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-
-                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text);
+                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text);
                     sp.ShowDialog();
                 }
             }
@@ -525,7 +548,7 @@ namespace SiharaiNyuuryoku
                 type = 1;
                 if (ErrorCheck(10))
                 {
-                    //DataDisplay();                 
+                    DataDisplay();
                 }
             }
         }
