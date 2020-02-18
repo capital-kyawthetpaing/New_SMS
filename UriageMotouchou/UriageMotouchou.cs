@@ -188,7 +188,6 @@ namespace UriageMotouchou
                             vr.CrystalReportViewer1.ShowPrintButton = true;
                             vr.CrystalReportViewer1.ReportSource = umtc_Report;
                             vr.ShowDialog();
-
                         }
                         else
                         {
@@ -279,9 +278,30 @@ namespace UriageMotouchou
                 CustomerCD = sc_Customer.TxtCode.Text,
                 StoreCD = cboStore.SelectedValue.ToString(),
                 TargetDateFrom = txtTagetFrom.Text + "/01",
-                TargetDateTo = Todate
+                TargetDateTo = Todate,
+                ChkValue=CheckValue()
             };
             return ume;
+        }
+
+        public string CheckValue()
+        {
+            string chk = string.Empty;
+
+             if(chkYes.Checked && !chkNo.Checked)
+            {
+                chk ="1";
+                return chk;
+            }
+            else if (chkNo.Checked && !chkYes.Checked)
+            {
+                chk = "2";
+                return chk;
+            }
+            else
+            {
+                return string.Empty;
+            }
         }
         protected override void EndSec()
         {
