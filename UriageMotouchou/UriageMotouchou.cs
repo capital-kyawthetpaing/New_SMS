@@ -117,10 +117,15 @@ namespace UriageMotouchou
                     if (umbl.CheckData(1, StoreCD, YYYYMM))
                     {
                         //月次処理（債権集計処理）を起動 Exe Console Run
+                        string ProgramID = "GetsujiSaikenKeisanSyori";
+                        OpenForm(ProgramID, txtTagetFrom.Text);
+
+                        //印刷処理
                         PrintDataSelect();
                     }
                     else if (umbl.CheckData(2, StoreCD, YYYYMM))
                     {
+                        //印刷処理
                         PrintDataSelect();
                     }
                 }
@@ -132,6 +137,23 @@ namespace UriageMotouchou
                
             }
            
+        }
+
+        private void OpenForm(string programID, string YYYYMM)
+        {
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "1";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            try
+            {
+                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            }
+            catch
+            {
+                //skh_bl.ShowMessage("E138");
+            }
+
         }
 
         private void PrintDataSelect()
@@ -212,7 +234,7 @@ namespace UriageMotouchou
 
                 //プログラム実行履歴
                 InsertLog(Get_L_Log_Entity());
-
+               
 
             }
             finally
@@ -265,7 +287,6 @@ namespace UriageMotouchou
         {
             this.Close();
         }
-
         private void UriageMotouchou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -273,10 +294,10 @@ namespace UriageMotouchou
 
         private void sc_Customer_Enter(object sender, EventArgs e)
         {
-            sc_Customer.Value1 = "0";
-            sc_Customer.Value2 = "2001";
+            sc_Customer.Value1 = "1";
+            sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
+            sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
         }
-
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
