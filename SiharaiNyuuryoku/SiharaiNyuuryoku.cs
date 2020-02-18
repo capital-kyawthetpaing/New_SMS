@@ -44,14 +44,7 @@ namespace SiharaiNyuuryoku
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            txtPayPlanGaku.BackColor = Color.FromArgb(169, 208, 142);
-            txtPayConfirmGaku.BackColor = Color.FromArgb(169, 208, 142);
-            txtPayGaku.BackColor = Color.FromArgb(169, 208, 142);
-            txtTransferGaku.BackColor = Color.FromArgb(169, 208, 142);
-            txtTransferFeeGaku.BackColor = Color.FromArgb(169, 208, 142);
-            txtGakuTotal.BackColor = Color.FromArgb(169, 208, 142);
-            txtPayPlan.BackColor = Color.FromArgb(169, 208, 142);
-            txtPayPlanGaku.ForeColor = Color.Black;
+           
             ScPaymentProcessNum.Enabled = false;
             ScPaymentNum.Enabled = false;
             ScPaymentProcessNum.SearchEnable = false;
@@ -480,21 +473,14 @@ namespace SiharaiNyuuryoku
                     sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
 
                 }
-                //lblPayPlanGaku.Text = sum1.ToString();
-                //lblPayConfirmGaku.Text = sum2.ToString();
-                //lblPayGaku.Text = sum3.ToString();
-                //lblTransferGaku.Text = sum4.ToString();
-                //lblTransferFeeGaku.Text = sum5.ToString();
-                //lblGakuTotal.Text = sum6.ToString();
-                //lblPayPlan.Text = sum7.ToString();
-                txtPayPlanGaku.Text = sum1.ToString();
-                txtPayConfirmGaku.Text = sum2.ToString();
-                txtPayGaku.Text = sum3.ToString();
-                txtTransferGaku.Text = sum4.ToString();
-                txtTransferFeeGaku.Text = sum5.ToString();
-                txtGakuTotal.Text = sum6.ToString();
-                txtPayPlan.Text = sum7.ToString();
-
+                lblPayPlanGaku.Text = sum1.ToString();
+                lblPayConfirmGaku.Text = sum2.ToString();
+                lblPayGaku.Text = sum3.ToString();
+                lblTransferGaku.Text = sum4.ToString();
+                lblTransferFeeGaku.Text = sum5.ToString();
+                lblGakuTotal.Text = sum6.ToString();
+                lblPayPlan.Text = sum7.ToString();
+                
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
         }

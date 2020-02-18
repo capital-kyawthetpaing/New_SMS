@@ -75,15 +75,10 @@ namespace Search
                 sum3 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[5].Value);
                 sum4 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[6].Value);               
             }
-            //lblPayPlanGaku.Text = sum1.ToString();
-            //lblPayComfirmGaku.Text = sum2.ToString();
-            //lblPayGaku.Text = sum3.ToString();
-            //lblUnpaidAmount.Text = sum4.ToString();
-            txtPayPlanGaku.Text = sum1.ToString();
-            txtPayComfirmGaku.Text = sum2.ToString();
-            txtPayGaku.Text = sum3.ToString();
-            txtUnpaidAmount.Text = sum4.ToString();
-
+            lblPayPlanGaku.Text = sum1.ToString();
+            lblPayComfirmGaku.Text = sum2.ToString();
+            lblPayGaku.Text = sum3.ToString();
+            lblUnpaidAmount.Text = sum4.ToString();
         }
     }
 }
