@@ -66,7 +66,7 @@ namespace ShiireShoukaiShiiresaki
         {
             if (!ComboStore.SelectedValue.Equals("-1"))
             {
-                if (!CboStore_ErrorCheck())
+                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
                 {
                     dpurchase_bl.ShowMessage("E141");
                     ComboStore.Focus();
@@ -328,21 +328,6 @@ namespace ShiireShoukaiShiiresaki
         private void ShiireShoukaiShiiresaki_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
-        }
-
-        private bool CboStore_ErrorCheck()
-        {
-            string StoreAuthen_CD = StoreAuthorizationsCD;
-            string StoreAuthen_ChangeDate = StoreAuthorizationsChangeDate;
-            string StoreCD = ComboStore.SelectedValue.ToString();
-
-            /// <remarks>情報のチェックが　無い時、エラーになること</remarks>
-            if (!ComboStore.IsExists(StoreAuthen_CD, "StoreAuthorization", StoreAuthen_ChangeDate, InProgramID, StoreCD))
-            {
-                return false;
-            }
-
-            return true;
         }
 
         private bool ErrorCheck()
