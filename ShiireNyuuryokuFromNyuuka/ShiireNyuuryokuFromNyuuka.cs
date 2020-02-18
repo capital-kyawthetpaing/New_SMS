@@ -60,7 +60,7 @@ namespace ShiireNyuuryokuFromNyuuka
         private Control[] detailControls;
         private Control[] detailLabels;
         private Control[] searchButtons;
-        
+
         private ShiireNyuuryokuFromNyuuka_BL snbl;
         private D_Purchase_Entity dpe;
         private D_Arrival_Entity dae;
@@ -244,7 +244,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.MakerItem, 0].CellCtl = IMT_JUONO_0;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalDate, 0].CellCtl = IMT_ARIDT_0;     //入荷予定日
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.Space, 0].CellCtl = IMT_PAYDT_0;    //支払予定日
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.DirectFLG,0].CellCtl = IMT_TYOKU_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.DirectFLG, 0].CellCtl = IMT_TYOKU_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalNO, 0].CellCtl = IMT_NYKNO_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.CalculationGaku, 0].CellCtl = IMN_CALGK_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseGaku, 0].CellCtl = IMN_SIRGK_0;
@@ -268,7 +268,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.CommentOutStore, 1].CellCtl = IMN_WEBPR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.DeliveryNo, 1].CellCtl = IMN_WEBPR2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.CommentInStore, 1].CellCtl = IMT_REMAK_1;
-            
+
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.MakerItem, 1].CellCtl = IMT_JUONO_1;      //メーカー商品CD
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalDate, 1].CellCtl = IMT_ARIDT_1;     //入荷予定日
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.Space, 1].CellCtl = IMT_PAYDT_1;    //支払予定日
@@ -544,7 +544,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     if (w_Row <= m_EnableCnt - 1)
                     {
                         // 固定色の列はその色を設定
-                        ChangeBackColor(w_Row);                        
+                        ChangeBackColor(w_Row);
                     }
 
                     // 使用不可行は固定色を設定
@@ -769,7 +769,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                                 SetFuncKeyAll(this, "111111001000");
                             }
-                                                    }
+                        }
                         CboStoreCD.SelectedValue = InStoreCD;
 
                         break;
@@ -1025,7 +1025,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                 //起動時共通処理
                 base.StartProgram();
-                
+
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
                 Btn_F10.Text = "納品データ(F10)";
@@ -1037,7 +1037,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 CboStoreCD.Bind(ymd);
 
                 //検索用のパラメータ設定
-                string stores= GetAllAvailableStores();
+                string stores = GetAllAvailableStores();
                 ScOrderNO.Value1 = InOperatorCD;
                 ScOrderNO.Value2 = stores;
                 ScCalledVendorCD.Value1 = "1";
@@ -1073,13 +1073,13 @@ namespace ShiireNyuuryokuFromNyuuka
 
         private void InitialControlArray()
         {
-            keyControls = new Control[] {  ScOrderNO.TxtCode,  CboStoreCD };
-            keyLabels = new Control[] {  };
+            keyControls = new Control[] { ScOrderNO.TxtCode, CboStoreCD };
+            keyLabels = new Control[] { };
             detailControls = new Control[] { ScCalledVendorCD.TxtCode, ScVendorCD.TxtCode, ckM_TextBox1, ckM_TextBox2, ScStaff.TxtCode
-                         ,ckM_TextBox4, ckM_TextBox3,ckM_CheckBox3, ckM_CheckBox4, panel1,ScMaker.TxtCode, ckM_TextBox18                          
+                         ,ckM_TextBox4, ckM_TextBox3,ckM_CheckBox3, ckM_CheckBox4, panel1,ScMaker.TxtCode, ckM_TextBox18
                          ,TxtRemark1, ckM_TextBox8, ckM_TextBox5 };
             detailLabels = new Control[] { ScCalledVendorCD, ScVendorCD, ScStaff };
-            searchButtons = new Control[] { ScCalledVendorCD.BtnSearch,ScVendorCD.BtnSearch, ScStaff.BtnSearch};
+            searchButtons = new Control[] { ScCalledVendorCD.BtnSearch, ScVendorCD.BtnSearch, ScStaff.BtnSearch };
 
             //イベント付与
             foreach (Control ctl in keyControls)
@@ -1096,14 +1096,14 @@ namespace ShiireNyuuryokuFromNyuuka
             radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
         }
-        
+
         /// <summary>
         /// PrimaryKeyのコードチェック
         /// </summary>
         /// <param name="index"></param>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckKey(int index, bool set=true)
+        private bool CheckKey(int index, bool set = true)
         {
 
             switch (index)
@@ -1150,7 +1150,7 @@ namespace ShiireNyuuryokuFromNyuuka
         {
             if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
                 return true;
-            
+
             DeleteExclusive();
 
             if (string.IsNullOrWhiteSpace(keyControls[(int)EIndex.PurchaseNO].Text))
@@ -1172,7 +1172,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
             if (dt.Rows.Count > 0)
             {
-                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(),dt.Rows[0]["Operator"].ToString());
+                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
                 keyControls[(int)EIndex.PurchaseNO].Focus();
                 return false;
             }
@@ -1186,7 +1186,7 @@ namespace ShiireNyuuryokuFromNyuuka
         /// <summary>
         /// 排他処理データを削除する
         /// </summary>
-       private void DeleteExclusive()
+        private void DeleteExclusive()
         {
             if (mOldPurchaseNO == "")
                 return;
@@ -1202,13 +1202,13 @@ namespace ShiireNyuuryokuFromNyuuka
 
             mOldPurchaseNO = "";
         }
-        
+
         /// <summary>
         /// 仕入データ取得処理
         /// </summary>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckData(bool set, int index= (int)EIndex.PurchaseNO)
+        private bool CheckData(bool set, int index = (int)EIndex.PurchaseNO)
         {
             //[D_Purchase_SelectDataF]
             dpe = new D_Purchase_Entity();
@@ -1342,7 +1342,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   // 
 
                     if (row["DifferenceFlg"].ToString() == "1")
-                        mGrid.g_DArray[i].DifferenceFlg = true;          
+                        mGrid.g_DArray[i].DifferenceFlg = true;
 
                     //税額(Hidden)
                     mGrid.g_DArray[i].PurchaseTax = bbl.Z_Set(row["PurchaseTax"]);
@@ -1350,7 +1350,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     mGrid.g_DArray[i].PurchaseRows = Convert.ToInt16(row["PurchaseRows"]);
                     mGrid.g_DArray[i].OrderNO = row["OrderNO"].ToString();
                     mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
-                    
+
                     if (m_MaxPurchaseGyoNo < mGrid.g_DArray[i].PurchaseRows)
                         m_MaxPurchaseGyoNo = mGrid.g_DArray[i].PurchaseRows;
 
@@ -1366,7 +1366,7 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             CalcKin();
 
-            if (OperationMode == EOperationMode.UPDATE )
+            if (OperationMode == EOperationMode.UPDATE)
             {
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
@@ -1421,7 +1421,7 @@ namespace ShiireNyuuryokuFromNyuuka
             }
             else
             {//納品
-                dt = snbl.D_Arrival_SelectAllForShiire(dae);
+                dt = snbl.D_Delivery_SelectAll(dae);
             }
 
             if (dt.Rows.Count == 0)
@@ -1514,7 +1514,7 @@ namespace ShiireNyuuryokuFromNyuuka
         /// <param name="index"></param>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckDetail(int index, bool set=true)
+        private bool CheckDetail(int index, bool set = true)
         {
             switch (index)
             {
@@ -1566,7 +1566,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         StoreCD = CboStoreCD.SelectedValue.ToString(),
                         FiscalYYYYMM = detailControls[index].Text.Replace("/", "").Substring(0, 6)
                     };
-                    ret = bbl.CheckStoreClose(mste,false,true,false,false,false);
+                    ret = bbl.CheckStoreClose(mste, false, true, false, false, false);
                     if (!ret)
                     {
                         return false;
@@ -1671,7 +1671,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         return false;
                     }
                     //(From) ≧ (To)である場合Error
-                    if (index==(int)EIndex.ArrivalDateTo && !string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (index == (int)EIndex.ArrivalDateTo && !string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
                         if (result < 0)
@@ -1709,7 +1709,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         ChangeDate = ymd
                     };
                     SKU_BL mbl = new SKU_BL();
-                    ret  = mbl.M_SKU_SelectByMaker(mse);
+                    ret = mbl.M_SKU_SelectByMaker(mse);
                     if (ret)
                     {
                         ScMaker.LabelText = mse.SKUName;
@@ -1740,7 +1740,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
+            w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -1871,7 +1871,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
             return true;
         }
-        private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
+        private bool CheckGrid(int col, int row, bool chkAll = false, bool changeYmd = false)
         {
             //bool ret = false;
 
@@ -1943,7 +1943,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         //０を許す。
                         mGrid.g_DArray[row].AdjustmentGaku = "0";
-                    }                    
+                    }
                     break;
             }
 
@@ -1956,11 +1956,11 @@ namespace ShiireNyuuryokuFromNyuuka
                     //計算仕入額←	form.仕入数	×	form.仕入単価
                     mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaserUnitPrice));
                     //計算仕入額＋調整額＝仕入額
-                    mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
-                     //消費税額(Hidden)←Function_消費税計算.out金額１	
-                     decimal zei;
+                    mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku));
+                    //消費税額(Hidden)←Function_消費税計算.out金額１	
+                    decimal zei;
                     decimal zeiritsu;
-                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG,out zei,out zeiritsu, ymd);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG, out zei, out zeiritsu, ymd);
                     mGrid.g_DArray[row].PurchaseTax = zei;
                     mGrid.g_DArray[row].PurchaseGaku10 = 0;
                     mGrid.g_DArray[row].PurchaseGaku8 = 0;
@@ -1969,7 +1969,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
                     if (mGrid.g_DArray[row].TaxRateFLG.Equals(1))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku10 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
                     }
                     //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
                     else if (mGrid.g_DArray[row].TaxRateFLG.Equals(2))
@@ -1981,7 +1981,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     if (chkAll == false)
                         CalcKin();
 
-                        break;
+                    break;
 
             }
 
@@ -2004,9 +2004,9 @@ namespace ShiireNyuuryokuFromNyuuka
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
-                if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT) 
+                if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
                 {
-                        kin1 += bbl.Z_Set(mGrid.g_DArray[RW].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[RW].PurchaseSu);
+                    kin1 += bbl.Z_Set(mGrid.g_DArray[RW].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[RW].PurchaseSu);
                     kin2 += bbl.Z_Set(mGrid.g_DArray[RW].CalculationGaku);
                     kin3 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku);
                     //zei10 += bbl.Z_Set(mGrid.g_DArray[RW].HacchuTax);
@@ -2015,10 +2015,10 @@ namespace ShiireNyuuryokuFromNyuuka
             }
 
             //Footer部
-            lblKin1.Text=string.Format("{0:#,##0}", kin1);
+            lblKin1.Text = string.Format("{0:#,##0}", kin1);
             lblKin2.Text = string.Format("{0:#,##0}", kin2);
             lblKin3.Text = string.Format("{0:#,##0}", kin3);
-         
+
             //mZei10 =  zei10;
             //mZei8 = zei8;
 
@@ -2112,7 +2112,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
             int rowNo = 1;
 
-            if(OperationMode== EOperationMode.UPDATE)
+            if (OperationMode == EOperationMode.UPDATE)
             {
                 rowNo = m_MaxPurchaseGyoNo + 1;
             }
@@ -2123,8 +2123,8 @@ namespace ShiireNyuuryokuFromNyuuka
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ArrivalNO))
                     break;
 
-                if (mGrid.g_DArray[RW].Chk || OperationMode !=  EOperationMode.INSERT) 
-                    {
+                if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                {
                     int DifferenceFlg = 0;
                     if (mGrid.g_DArray[RW].DifferenceFlg)
                         DifferenceFlg = 1;
@@ -2155,10 +2155,10 @@ namespace ShiireNyuuryokuFromNyuuka
                         , bbl.Z_Set(mGrid.g_DArray[RW].OrderRows)
                         , DifferenceFlg
                         , mGrid.g_DArray[RW].DeliveryNo == "" ? null : mGrid.g_DArray[RW].DeliveryNo
-                        , mGrid.g_DArray[RW].PurchaseRows > 0 ? 1:0
+                        , mGrid.g_DArray[RW].PurchaseRows > 0 ? 1 : 0
                         );
 
-                    if(mGrid.g_DArray[RW].PurchaseRows == 0)
+                    if (mGrid.g_DArray[RW].PurchaseRows == 0)
                         rowNo++;
                 }
             }
@@ -2240,7 +2240,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 }
             }
             //「はい」押下時のみ、以下の処理へ
-            if(bbl.Z_Set(detailControls[(int)EIndex.AdjustmentGaku].Text) != sumKin)
+            if (bbl.Z_Set(detailControls[(int)EIndex.AdjustmentGaku].Text) != sumKin)
             {
                 //Ｑ３１４
                 if (bbl.ShowMessage("Q314") != DialogResult.Yes)
@@ -2277,7 +2277,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
             //更新処理
             dpe = GetEntity();
-            snbl.Purchase_Exec(dpe,dt, (short)OperationMode);
+            snbl.Purchase_Exec(dpe, dt, (short)OperationMode);
 
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
@@ -2359,7 +2359,7 @@ namespace ShiireNyuuryokuFromNyuuka
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
                 {
-                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex=-1;
+                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex = -1;
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_Button)) || ctl.GetType().Equals(typeof(Button)))
                 {
@@ -2449,13 +2449,13 @@ namespace ShiireNyuuryokuFromNyuuka
                             }
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
-     
+
                             Pnl_Body.Enabled = Kbn == 0 ? true : false;
 
                             //抽出条件エリア	※新規時のみ、入力可能
                             if (OperationMode != EOperationMode.INSERT)
                             {
-                                for(int index = (int)EIndex.ArrivalDateFrom; index<= (int)EIndex.VendorDeliveryNo; index++)
+                                for (int index = (int)EIndex.ArrivalDateFrom; index <= (int)EIndex.VendorDeliveryNo; index++)
                                 {
                                     detailControls[index].Enabled = false;
                                 }
@@ -2553,7 +2553,7 @@ namespace ShiireNyuuryokuFromNyuuka
             {
                 DeleteExclusive();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //例外は無視する
                 System.Diagnostics.Debug.WriteLine(ex.Message);
@@ -2606,7 +2606,7 @@ namespace ShiireNyuuryokuFromNyuuka
         //            }
         //            break;
 
-              
+
 
         //    }
 
@@ -2614,7 +2614,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
         #region "内部イベント"
         private void KeyControl_KeyDown(object sender, KeyEventArgs e)
-    {
+        {
             try
             {
                 //Enterキー押下時処理
@@ -2632,11 +2632,11 @@ namespace ShiireNyuuryokuFromNyuuka
                         {
                             detailControls[(int)EIndex.PurchaseDate].Focus();
                         }
-                        else if(index == (int)EIndex.PurchaseNO)
-                            if(OperationMode == EOperationMode.UPDATE)
+                        else if (index == (int)EIndex.PurchaseNO)
+                            if (OperationMode == EOperationMode.UPDATE)
                                 detailControls[(int)EIndex.PurchaseDate].Focus();
-                        else
-                            keyControls[index + 1].Focus();
+                            else
+                                keyControls[index + 1].Focus();
 
                     }
                     else
@@ -2671,7 +2671,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         if (index == (int)EIndex.VendorDeliveryNo)
                             btnSubF10.Focus();
-                        else if (OperationMode != EOperationMode.INSERT &&  index == (int)EIndex.StaffCD)
+                        else if (OperationMode != EOperationMode.INSERT && index == (int)EIndex.StaffCD)
                             //明細の先頭項目へ
                             mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridShiire.ColNO.PurchaseSu);
                         else if (index == (int)EIndex.CheckBox4)
@@ -2688,7 +2688,7 @@ namespace ShiireNyuuryokuFromNyuuka
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
-                                ProcessTabKey(!e.Shift);                          
+                                ProcessTabKey(!e.Shift);
                         }
                     }
                     else
@@ -2951,7 +2951,7 @@ namespace ShiireNyuuryokuFromNyuuka
                                     //(B)Function_消費税計算.out金額１
                                     decimal zei2;
                                     decimal kin2 = bbl.GetZeikomiKingaku(sumKin8, mGrid.g_DArray[w_Row].TaxRateFLG, out zei2, detailControls[(int)EIndex.PurchaseDate].Text);
-                                    detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei+zei2);
+                                    detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei + zei2);
                                 }
                                 break;
 
@@ -3006,9 +3006,9 @@ namespace ShiireNyuuryokuFromNyuuka
         //            //商品検索
         //            kbn = EsearchKbn.Product;
         //        }
-                
+
         //            setCtl = previousCtrl;
-                
+
 
         //        if (kbn != EsearchKbn.Null)
         //            SearchData(kbn, setCtl);
@@ -3035,7 +3035,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                 w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-               
+
                 //画面より配列セット 
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
@@ -3063,7 +3063,7 @@ namespace ShiireNyuuryokuFromNyuuka
             try
             {
                 //SetEnabled(EIndex.CheckBox3, ckM_CheckBox3.Checked);
-            } 
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
@@ -3120,7 +3120,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
         private void ChangeCheck(bool check, int w_Row)
         {
-             //Onの時、行の背景色を黄色にする 新規登録時のみ、使用可
+            //Onの時、行の背景色を黄色にする 新規登録時のみ、使用可
             if (check)
             {
                 ChangeBackColor(w_Row, 1);
