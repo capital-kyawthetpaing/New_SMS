@@ -115,7 +115,7 @@ namespace CKM_Controls
         {
             White,
             Green,
-            DarkGreen
+            DarkGreen,
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -138,6 +138,7 @@ namespace CKM_Controls
                     case CKM_Color.DarkGreen:
                         this.BackColor = Color.FromArgb(84, 130, 53);
                         break;
+                 
                 }
             }
         }

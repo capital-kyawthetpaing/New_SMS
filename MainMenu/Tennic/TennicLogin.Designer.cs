@@ -1,6 +1,6 @@
-﻿namespace MainMenu.Haspo
+﻿namespace MainMenu
 {
-    partial class HaspoStoreMenuLogin
+    partial class TennicLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HaspoStoreMenuLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TennicLogin));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -51,12 +51,12 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button1, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button2, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 313);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 312);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 36);
-            this.tableLayoutPanel1.TabIndex = 9;
+            this.tableLayoutPanel1.TabIndex = 21;
             // 
             // ckM_Button1
             // 
@@ -75,7 +75,7 @@
             this.ckM_Button1.TabIndex = 0;
             this.ckM_Button1.Text = "ログイン(F12)";
             this.ckM_Button1.UseVisualStyleBackColor = false;
-            this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click_1);
+            this.ckM_Button1.Click += new System.EventHandler(this.ckM_Button1_Click);
             // 
             // ckM_Button2
             // 
@@ -94,7 +94,16 @@
             this.ckM_Button2.TabIndex = 1;
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
-            this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 22;
+            this.pictureBox1.TabStop = false;
             // 
             // ckM_Label2
             // 
@@ -105,10 +114,10 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(240, 172);
+            this.ckM_Label2.Location = new System.Drawing.Point(236, 159);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label2.TabIndex = 7;
+            this.ckM_Label2.TabIndex = 19;
             this.ckM_Label2.Text = "パスワード";
             this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -122,10 +131,10 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(290, 135);
+            this.ckM_Label1.Location = new System.Drawing.Point(287, 122);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(19, 12);
-            this.ckM_Label1.TabIndex = 8;
+            this.ckM_Label1.TabIndex = 20;
             this.ckM_Label1.Text = "ID";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,13 +155,13 @@
             this.txtPassword.IsNumber = true;
             this.txtPassword.IsShop = false;
             this.txtPassword.Length = 10;
-            this.txtPassword.Location = new System.Drawing.Point(324, 169);
+            this.txtPassword.Location = new System.Drawing.Point(320, 156);
             this.txtPassword.MaxLength = 10;
             this.txtPassword.MoveNext = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(137, 19);
-            this.txtPassword.TabIndex = 6;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtOperatorCD
@@ -171,41 +180,33 @@
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
             this.txtOperatorCD.Length = 4;
-            this.txtOperatorCD.Location = new System.Drawing.Point(324, 131);
+            this.txtOperatorCD.Location = new System.Drawing.Point(320, 118);
             this.txtOperatorCD.MaxLength = 4;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(137, 19);
-            this.txtOperatorCD.TabIndex = 4;
+            this.txtOperatorCD.TabIndex = 0;
             this.txtOperatorCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(19, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 73);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // HaspoStoreMenuLogin
+            // TennicLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(717, 355);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtOperatorCD);
-            this.Controls.Add(this.pictureBox1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "HaspoStoreMenuLogin";
-            this.Text = "HaspoStoreMenuLogin";
-            this.Load += new System.EventHandler(this.HaspoStoreMenuLogin_Load);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HaspoStoreMenuLogin_KeyDown);
+            this.Name = "TennicLogin";
+            this.Text = "Tennic_MainMenu";
+            this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tennic_MainMenu_KeyDown);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -218,10 +219,10 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CKM_Controls.CKM_Button ckM_Button1;
         private CKM_Controls.CKM_Button ckM_Button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox txtPassword;
         private CKM_Controls.CKM_TextBox txtOperatorCD;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

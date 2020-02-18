@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using CKM_Controls;
 
 namespace SiharaiNyuuryoku
 {
@@ -26,10 +27,15 @@ namespace SiharaiNyuuryoku
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
         int type = 0;
+        string vendorCD = string.Empty;
 
         public FrmSiharaiNyuuryoku()
         {
             InitializeComponent();
+        }
+        protected override void EndSec()
+        {
+            this.Close();
         }
 
         private void FrmSiharaiNyuuryoku_Load(object sender, EventArgs e)
@@ -38,7 +44,7 @@ namespace SiharaiNyuuryoku
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-
+           
             ScPaymentProcessNum.Enabled = false;
             ScPaymentNum.Enabled = false;
             ScPaymentProcessNum.SearchEnable = false;
@@ -142,11 +148,15 @@ namespace SiharaiNyuuryoku
                     Clear(PanelDetail);
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
-                    ScPaymentProcessNum.Enabled = false;
-                    ScPaymentNum.Enabled = false;
+                    ScPaymentProcessNum.Enabled = true;
+                    ScPaymentNum.Enabled = true;
                     ScPaymentProcessNum.SetFocus(1);
+                    txtDueDate1.Enabled = false;
+                    txtDueDate2.Enabled = false;
+                    ScPayee.Enabled = false;
+                    ScPayee.SearchEnable = false;
                     F12Enable = false;
-                    btnF10Show.Enabled = F11Enable = true;
+                    btnF10Show.Enabled = F11Enable = false;
                     break;
             }
             ScPaymentProcessNum.SetFocus(1);
@@ -186,6 +196,11 @@ namespace SiharaiNyuuryoku
 
         }
 
+        /// <summary>
+        /// Error Check for the whole form
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns></returns>
         private bool ErrorCheck(int index)
         {
             if (index == 10)
@@ -420,12 +435,22 @@ namespace SiharaiNyuuryoku
             return true;
         }
 
+        /// <summary>
+        /// Show Data in DataArea
+        /// </summary>
         private void DataDisplay()
         {
             txtDueDate1.Enabled = false;
             txtDueDate2.Enabled = false;
             ScPayee.Enabled = false;
             btnF10Show.Enabled = false;
+
+            cboPaymentType.Enabled = false;
+            cboPaymentSourceAcc.Enabled = false;
+            txtBillSettleDate.Enabled = false;
+
+            btnSelectAll.Enabled = false;
+            btnReleaseAll.Enabled = false;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
             DataTable dtPay1 = new DataTable();
@@ -434,47 +459,29 @@ namespace SiharaiNyuuryoku
             {
                 dgvPayment.DataSource = dtPay1;
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                ScPayee.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-                ScPayee.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
+                ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
+                ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
+                int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
+                for (int i = 0; i < dgvPayment.Rows.Count; ++i)
+                {
+                    sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
+                    sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
+                    sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
+                    sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
+                    sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
+                    sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
+                    sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
 
-                cboPaymentType.Enabled = false;
-                cboPaymentSourceAcc.Enabled = false;
-                txtBillSettleDate.Enabled = false;
-
-                btnSelectAll.Enabled = false;
-                btnReleaseAll.Enabled = false;
-
-                lblRequiredGaku.Text = dtPay1.Rows[0]["PayPlanGaku"].ToString();
-                lblPayConfirmGaku.Text = dtPay1.Rows[0]["PayConfirmGaku"].ToString();
-                lblPayGaku.Text = dtPay1.Rows[0]["PayGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPay1.Rows[0]["TransferGaku"].ToString();
-                lblTransferGaku.Text = dtPay1.Rows[0]["TransferFeeGaku"].ToString();
-                lblTransferFeeGaku.Text = dtPay1.Rows[0]["GakuTotal"].ToString();
-                lblTransferGaku.Text = dtPay1.Rows[0]["PayPlan"].ToString();
-
-                //btnF10Show.Enabled = false;
-                //txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                //ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-
-                //mse.StaffCD = ScStaff.TxtCode.Text;
-                //mse.ChangeDate = dtPay1.Rows[0]["PayDate"].ToString();
-                //DataTable dtstaff = new DataTable();
-                //dtstaff = sibl.M_Staff_Select(mse);
-                //ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-
-                //cboPaymentType.Enabled = false;
-                //cboPaymentSourceAcc.Enabled = false;
-                //txtBillSettleDate.Enabled = false;
-
-                //btnSelectAll.Enabled = false;
-                //btnReleaseAll.Enabled = false;
-
-                //dpe.PayNo = ScPaymentNum.TxtCode.Text;
-                //dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-                //DataTable dtPayDetail = new DataTable();
-                //dtPayDetail = sibl.D_PayDetail_Select(dpe);
-                //dgvPayment.DataSource = dtPayDetail;
-                //
+                }
+                lblPayPlanGaku.Text = sum1.ToString();
+                lblPayConfirmGaku.Text = sum2.ToString();
+                lblPayGaku.Text = sum3.ToString();
+                lblTransferGaku.Text = sum4.ToString();
+                lblTransferFeeGaku.Text = sum5.ToString();
+                lblGakuTotal.Text = sum6.ToString();
+                lblPayPlan.Text = sum7.ToString();
+                
+                vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
         }
 
@@ -500,6 +507,12 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        #region KeyEvent
+        private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
         private void ScPaymentNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -508,6 +521,8 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
+                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text);
+                    sp.ShowDialog();
                 }
             }
         }
@@ -523,5 +538,8 @@ namespace SiharaiNyuuryoku
                 }
             }
         }
+
+        
+        #endregion
     }
 }

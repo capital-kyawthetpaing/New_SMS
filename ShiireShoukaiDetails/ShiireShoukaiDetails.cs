@@ -57,7 +57,6 @@ namespace ShiireShoukaiDetails
                     cboStore.Focus();
                 }
             }
-          
         }
         private void RequiredField()
         {

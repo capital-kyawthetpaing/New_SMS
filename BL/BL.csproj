@@ -117,6 +117,7 @@
     <Compile Include="Search_Hanyou_BL.cs" />
     <Compile Include="Search_KeihiNO_BL.cs" />
     <Compile Include="Search_Location_BL.cs" />
+    <Compile Include="Search_Payment_BL.cs" />
     <Compile Include="Search_SiharaiNO_BL.cs" />
     <Compile Include="Search_SiharaiShoriNO_BL.cs" />
     <Compile Include="Search_Souko_BL.cs" />

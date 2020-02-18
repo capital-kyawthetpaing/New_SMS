@@ -167,6 +167,7 @@
             this.scVendor.Value2 = null;
             this.scVendor.Value3 = null;
             this.scVendor.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scVendor_CodeKeyDownEvent);
+            this.scVendor.Enter += new System.EventHandler(this.scVendor_Enter);
             // 
             // txtTargetYear
             // 

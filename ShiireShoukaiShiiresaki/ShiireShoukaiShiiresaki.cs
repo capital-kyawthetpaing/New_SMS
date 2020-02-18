@@ -66,7 +66,7 @@ namespace ShiireShoukaiShiiresaki
         {
             if (!ComboStore.SelectedValue.Equals("-1"))
             {
-                if (!CboStore_ErrorCheck())
+                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
                 {
                     dpurchase_bl.ShowMessage("E141");
                     ComboStore.Focus();
@@ -90,6 +90,7 @@ namespace ShiireShoukaiShiiresaki
         public void BindCombo()
         {
             ComboStore.Bind(string.Empty,"2");
+            ComboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// エラーチェック処理
@@ -186,7 +187,6 @@ namespace ShiireShoukaiShiiresaki
             }
             if (index + 1 == 10)
             {
-                if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                     ExportCSV();
                     //dgvPurchaseSearch.CurrentCell = dgvPurchaseSearch.Rows[0].Cells[1];
             }
@@ -223,7 +223,11 @@ namespace ShiireShoukaiShiiresaki
             {
                 return;
             }
-            if (dgvPurchaseSearch.DataSource != null)
+            if (bbl.ShowMessage("Q203") == DialogResult.No)
+            {
+                return;
+            }
+                if (dgvPurchaseSearch.DataSource != null)
             {
                 //Build the CSV file data as a Comma separated string.
                 string csv = string.Empty;
@@ -324,21 +328,6 @@ namespace ShiireShoukaiShiiresaki
         private void ShiireShoukaiShiiresaki_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
-        }
-
-        private bool CboStore_ErrorCheck()
-        {
-            string StoreAuthen_CD = StoreAuthorizationsCD;
-            string StoreAuthen_ChangeDate = StoreAuthorizationsChangeDate;
-            string StoreCD = ComboStore.SelectedValue.ToString();
-
-            /// <remarks>情報のチェックが　無い時、エラーになること</remarks>
-            if (!ComboStore.IsExists(StoreAuthen_CD, "StoreAuthorization", StoreAuthen_ChangeDate, InProgramID, StoreCD))
-            {
-                return false;
-            }
-
-            return true;
         }
 
         private bool ErrorCheck()
