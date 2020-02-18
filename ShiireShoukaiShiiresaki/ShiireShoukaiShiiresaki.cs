@@ -265,7 +265,8 @@ namespace ShiireShoukaiShiiresaki
                 }
 
                 //Exporting to CSV.            
-                File.WriteAllText(folderPath + "ShiireShoukaiShiiresaki_ExportCSV " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                File.WriteAllText(folderPath + "仕入照会(仕入先) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                dpurchase_bl.ShowMessage("I203");
                 //MessageBox.Show("CSV 出力が完了します。", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
