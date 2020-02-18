@@ -429,6 +429,19 @@ namespace SaimuKanriHyou
             dt.Columns.Add("当月債務額");
             return dt;
         }
+
+        private void scVendor_Enter(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtTargetYear.Text))
+            {
+                int year = Convert.ToInt32(txtTargetYear.Text.Substring(0, 4));
+                int month = Convert.ToInt32(txtTargetYear.Text.Substring(5, 2));
+                string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
+                scVendor.ChangeDate = txtTargetYear.Text + lastday;
+                scVendor.Value1 = "2";
+            }
+                    
+        }
     }
     
 }

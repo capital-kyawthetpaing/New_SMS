@@ -94,7 +94,6 @@
             this.ckM_Button2.TabIndex = 1;
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
-            this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
             // 
             // pictureBox1
             // 
@@ -204,7 +203,6 @@
             this.Controls.Add(this.txtOperatorCD);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "TennicLogin";
             this.Text = "Tennic_MainMenu";
             this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);

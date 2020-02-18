@@ -57,7 +57,6 @@ namespace ShiireShoukaiDetails
                     cboStore.Focus();
                 }
             }
-          
         }
         private void RequiredField()
         {
@@ -77,7 +76,6 @@ namespace ShiireShoukaiDetails
         private void BindCombo()
         {
             cboStore.Bind(string.Empty, "2");
-            cboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// 仕入先の履歴を表示されること
@@ -152,8 +150,11 @@ namespace ShiireShoukaiDetails
                     }
                     break;
                 case 10:
-                    ExportCSV();
-
+                    if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                    {
+                        ExportCSV();
+                    }
+                       
                     break;
                 case 11:                    
                     F11();
@@ -281,11 +282,6 @@ namespace ShiireShoukaiDetails
         private void ExportCSV()
         {
             if (!ErrorCheck())
-            {
-                return;
-            }
-
-            if (bbl.ShowMessage("Q203") == DialogResult.No)
             {
                 return;
             }
