@@ -227,7 +227,21 @@ namespace DL
             return SelectData(dic, "M_Souko_SelectData");
         }
 
-
+        /// <summary>
+        /// Select Souko's info
+        /// 指定したStoreCDの倉庫情報をSelect
+        /// </summary>
+        /// <param name="mse">Souko info</param>
+        /// <returns></returns>
+        public DataTable M_Souko_BindForTanaoroshi(M_Souko_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } }
+            };
+            return SelectData(dic, "M_Souko_BindForTanaoroshi");
+        }
 
     }
 }
