@@ -65,13 +65,10 @@ namespace TempoRegiTsurisenJyunbi
             BindCombo();
             storeCD = StoreCD;
         }
-
         public void BindCombo()
         {
             DenominationCD.Bind(string.Empty);
         }
-        
-        
         private void SetRequireField()
         {
             DepositGaku.Require(true);
@@ -88,7 +85,6 @@ namespace TempoRegiTsurisenJyunbi
 
             }
         }
-
         private D_DepositHistory_Entity DepositHistoryEnity()
         {
             mre = new D_DepositHistory_Entity
@@ -127,13 +123,12 @@ namespace TempoRegiTsurisenJyunbi
             };
             return mre;
         }
-
         /// <summary>
         /// 登録ボタンを押下時データベースにInsertする
         /// </summary>
         public void Save()
         {
-
+            //RunConsole();
             if (ErrorCheck())
             {
                 if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
@@ -166,7 +161,6 @@ namespace TempoRegiTsurisenJyunbi
         {
             this.Close();
         }
-
         private bool ErrorCheck()
         {
             if (!RequireCheck(new Control[] { DepositGaku, DenominationCD }))   // go that focus
@@ -181,7 +175,22 @@ namespace TempoRegiTsurisenJyunbi
 
             return true;
         }
+        private void RunConsole()
+        {
+            string programID = "TempoRegiTorihikiReceipt";
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "5";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode;//parameter
+            try
+            {
+                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            }
+            catch
+            {
 
+            }
+        }
         private void frmTempoRegiTsurisenJyunbi_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
