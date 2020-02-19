@@ -161,11 +161,11 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(169, 143);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(119, 143);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
-            this.ckmShop_Label1.Size = new System.Drawing.Size(85, 24);
+            this.ckmShop_Label1.Size = new System.Drawing.Size(135, 24);
             this.ckmShop_Label1.TabIndex = 0;
-            this.ckmShop_Label1.Text = "入金額";
+            this.ckmShop_Label1.Text = "釣銭準備額\t\t\t\t\t\t\t";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
