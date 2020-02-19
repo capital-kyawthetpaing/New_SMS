@@ -9,7 +9,7 @@ using System.Data;
 
 namespace BL
 {
-    public class GetsujiShimeShori_BL : Base_BL
+    public class GetsujiShimeShori_BL : Base_BL 
     {
         M_StoreClose_DL mdl;
         public GetsujiShimeShori_BL()
