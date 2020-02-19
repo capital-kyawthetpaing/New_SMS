@@ -24,7 +24,6 @@ namespace Entity
         public string PayDateTo { get; set;}
         public string InputDateTimeFrom { get; set; }
         public string InputDateTimeTo { get; set; }
-        public string PayPlanDate { get; set; }
 
     }
 }

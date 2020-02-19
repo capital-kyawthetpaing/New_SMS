@@ -31,7 +31,7 @@ namespace DL
         /// </summary>
         /// <param name="dce"></param>
         /// <returns></returns>
-        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe,int type)
+        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe)
         {
             string sp = "D_PayPlan_SelectforPrint";
 
@@ -39,13 +39,12 @@ namespace DL
             {
                 { "@PaymentDueDateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymentDueDateFrom } },
                 { "@PaymentDueDateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymenetDueDateTo } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
                 { "@PaymentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.PayeeCD } },
                 { "@ClosedStatusSumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.CloseStatusSumi } },
                 { "@PaymentStatusUnpaid", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.PaymentStatusUnpaid } },
                 { "@Purchase", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Purchase } },
                 { "@Expense", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Expense } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
-                {"@Type",new ValuePair{value1=SqlDbType.TinyInt,value2=type.ToString()} }
             };
 
             return SelectData(dic, sp);

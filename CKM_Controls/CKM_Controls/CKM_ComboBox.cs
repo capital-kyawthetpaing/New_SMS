@@ -42,10 +42,6 @@ namespace CKM_Controls
             /// StoreKBN IN (1)
             /// </summary>
             店舗ストア_受注,
-            /// <summary>
-            /// StoreKBN NOT IN (2)
-            /// </summary>
-            店舗ストア_月次,
             倉庫種別,
             部門,
             メニュー,
@@ -233,19 +229,7 @@ namespace CKM_Controls
                     //StoreKBN IN 1のStore情報をBind
                     DataTable dtStore3 = sblj.M_Store_Bind_Juchu(mse3);
                     BindCombo("StoreCD", "StoreName", dtStore3);
-                    break;
-                case CboType.店舗ストア_月次:
-                    Store_BL sblg = new Store_BL();
-                    M_Store_Entity mse4 = new M_Store_Entity
-                    {
-                        ChangeDate = changeDate.Replace("/", "-"),
-                        Operator = type,
-                        DeleteFlg = "0"
-                    };
-                    //StoreKBN NOT IN 2のStore情報をBind（権限のある店舗のみ）
-                    DataTable dtStore4 = sblg.M_Store_Bind_Getsuji(mse4);
-                    BindCombo("StoreCD", "StoreName", dtStore4);
-                    break;
+                    break; 
                 case CboType.倉庫種別:
                     MultiPorpose_BL mpbl = new MultiPorpose_BL();
                     M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity();

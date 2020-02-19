@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon__BL.cs" />
     <Compile Include="Carrier_BL.cs" />
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
@@ -117,7 +118,6 @@
     <Compile Include="Search_Hanyou_BL.cs" />
     <Compile Include="Search_KeihiNO_BL.cs" />
     <Compile Include="Search_Location_BL.cs" />
-    <Compile Include="Search_Payment_BL.cs" />
     <Compile Include="Search_SiharaiNO_BL.cs" />
     <Compile Include="Search_SiharaiShoriNO_BL.cs" />
     <Compile Include="Search_Souko_BL.cs" />
@@ -149,7 +149,6 @@
     <Compile Include="TairyuZaikoHyou_BL.cs" />
     <Compile Include="TanabanNyuuryoku_BL.cs" />
     <Compile Include="TanaireList_BL.cs" />
-    <Compile Include="Tanaoroshi_BL.cs" />
     <Compile Include="TankaCD_BL.cs" />
     <Compile Include="TempoJuchuuNyuuryoku_BL.cs" />
     <Compile Include="TempoJuchuuShoukai_BL.cs" />

@@ -40,36 +40,14 @@ namespace DL
             return SelectData(dic, "D_Pay_ShiharaiItianHyou");
         }
 
-        public DataTable D_Pay_Select1(D_Pay_Entity dpe)
+        public DataTable D_Pay_Select(D_Pay_Entity dpe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
-                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
-                {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} }
+                {"@LargePayNo", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.LargePayNO} },
+                {"@PayNo", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.PayNo} }
             };
-            return SelectData(dic, "D_Pay_Select1");
-        }
-
-        public DataTable D_Pay_Select2(D_Pay_Entity dpe)
-        {
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
-            {
-                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
-                {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} },
-                {"@VendorCD", new ValuePair {value1 = SqlDbType.VarChar, value2= dpe.PayeeCD } },
-                {"@PayeeDate", new ValuePair {value1 = SqlDbType.Date, value2= dpe.PayPlanDate} }
-            };
-            return SelectData(dic, "D_Pay_Select2");
-        }
-
-        public DataTable D_Pay_Select3(D_Pay_Entity dpe)
-        {
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
-            {
-                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
-                {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} }
-            };
-            return SelectData(dic, "D_Pay_Select3");
+            return SelectData(dic, "D_Pay_Select");
         }
 
         public DataTable D_Pay_Search(D_Pay_Entity dpe)
