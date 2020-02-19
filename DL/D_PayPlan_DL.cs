@@ -31,7 +31,7 @@ namespace DL
         /// </summary>
         /// <param name="dce"></param>
         /// <returns></returns>
-        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe)
+        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe, int type)
         {
             string sp = "D_PayPlan_SelectforPrint";
 
@@ -39,26 +39,27 @@ namespace DL
             {
                 { "@PaymentDueDateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymentDueDateFrom } },
                 { "@PaymentDueDateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dppe.PaymenetDueDateTo } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
                 { "@PaymentCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.PayeeCD } },
                 { "@ClosedStatusSumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.CloseStatusSumi } },
                 { "@PaymentStatusUnpaid", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.PaymentStatusUnpaid } },
                 { "@Purchase", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Purchase } },
                 { "@Expense", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dppe.Expense } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dppe.StoreCD } },
+                {"@Type",new ValuePair{value1=SqlDbType.TinyInt,value2=type.ToString()} }
             };
 
             return SelectData(dic, sp);
         }
-        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe,M_Vendor_Entity mve)
+        public DataTable D_Pay_SelectForPayPlanDate1(D_PayPlan_Entity dppe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@PayPlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
                 {"@PayPlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
-                {"@ChangeDate",new ValuePair{value1 = SqlDbType.Date,value2 = mve.ChangeDate } },
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.InsertOperator } },
                 {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
             };
-            return SelectData(dic, "D_PayPlan_Select");
+            return SelectData(dic, "D_Pay_SelectForPayPlanDate1");
         }
     }
 }
