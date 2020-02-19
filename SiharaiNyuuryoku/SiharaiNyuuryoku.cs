@@ -167,27 +167,32 @@ namespace SiharaiNyuuryoku
             type = 3;
             if (ErrorCheck(10))
             {
-                txtPaymentDate.Text = DateTime.Today.ToShortDateString();
-                ScStaff.TxtCode.Text = InOperatorCD;
-                mse.ChangeDate = DateTime.Now.ToShortDateString();
-                DataTable dtstaff = new DataTable();
-                dtstaff = sibl.M_Staff_Select(mse);
-                if (dtstaff.Rows.Count > 0)
-                {
-                    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-                }
+                //txtPaymentDate.Text = DateTime.Today.ToShortDateString();
+                //ScStaff.TxtCode.Text = InOperatorCD;
+                //mse.ChangeDate = DateTime.Now.ToShortDateString();
+                //DataTable dtstaff = new DataTable();
+                //dtstaff = sibl.M_Staff_Select(mse);
+                //if (dtstaff.Rows.Count > 0)
+                //{
+                //    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
+                //}
                 dppe.PayPlanDateFrom = txtDueDate1.Text;
                 dppe.PayPlanDateTo = txtDueDate2.Text;
                 dppe.PayeeCD = ScPayee.TxtCode.Text;
-                mve.ChangeDate = txtPaymentDate.Text;
                 DataTable dtpayplan = new DataTable();
-                dtpayplan = sibl.D_PayPlan_Select(dppe, mve);
-                //if(dtpayplan.Rows.Count > 0)
-                //{
+                dtpayplan = sibl.D_Pay_SelectForPayPlanDate1(dppe);
+                if (dtpayplan.Rows.Count > 0)
+                {
+                    txtPaymentDate.Text = DateTime.Today.ToShortDateString();
+                    ScStaff.TxtCode.Text = InOperatorCD;
+                    ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
 
-                //}
+                    dgvPayment.DataSource = dtpayplan;
+                    LabelDataBind();
+                }
 
-
+                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text,"2");
+                sp.ShowDialog();
             }
         }
 
@@ -274,6 +279,9 @@ namespace SiharaiNyuuryoku
 
                 if (type == 3)
                 {
+                    if (!RequireCheck(new Control[] { txtDueDate2 }))
+                        return false;
+
                     if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
                         return false;
                     else
@@ -294,8 +302,7 @@ namespace SiharaiNyuuryoku
                         }
                     }
 
-                    if (!RequireCheck(new Control[] { txtDueDate2 }))
-                        return false;
+                   
                 }
 
             }
@@ -461,28 +468,36 @@ namespace SiharaiNyuuryoku
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
                 ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
                 ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
-                int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
-                for (int i = 0; i < dgvPayment.Rows.Count; ++i)
-                {
-                    sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
-                    sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
-                    sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
-                    sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
-                    sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
-                    sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
-                    sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
 
-                }
-                lblPayPlanGaku.Text = sum1.ToString();
-                lblPayConfirmGaku.Text = sum2.ToString();
-                lblPayGaku.Text = sum3.ToString();
-                lblTransferGaku.Text = sum4.ToString();
-                lblTransferFeeGaku.Text = sum5.ToString();
-                lblGakuTotal.Text = sum6.ToString();
-                lblPayPlan.Text = sum7.ToString();
-                
+                LabelDataBind();
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
+        }
+
+        /// <summary>
+        /// to show total data with Label below gridview
+        /// </summary>
+        private void LabelDataBind()
+        {
+            int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
+            for (int i = 0; i < dgvPayment.Rows.Count; ++i)
+            {
+                sum1 += Convert.ToInt32(dgvPayment.Rows[i].Cells[4].Value);
+                sum2 += Convert.ToInt32(dgvPayment.Rows[i].Cells[5].Value);
+                sum3 += Convert.ToInt32(dgvPayment.Rows[i].Cells[6].Value);
+                sum4 += Convert.ToInt32(dgvPayment.Rows[i].Cells[7].Value);
+                sum5 += Convert.ToInt32(dgvPayment.Rows[i].Cells[8].Value);
+                sum6 += Convert.ToInt32(dgvPayment.Rows[i].Cells[10].Value);
+                sum7 += Convert.ToInt32(dgvPayment.Rows[i].Cells[11].Value);
+
+            }
+            lblPayPlanGaku.Text = sum1.ToString("#,##0");
+            lblPayConfirmGaku.Text = sum2.ToString("#,##0");
+            lblPayGaku.Text = sum3.ToString("#,##0");
+            lblTransferGaku.Text = sum4.ToString("#,##0");
+            lblTransferFeeGaku.Text = sum5.ToString("#,##0");
+            lblGakuTotal.Text = sum6.ToString("#,##0");
+            lblPayPlan.Text = sum7.ToString("#,##0");
         }
 
         private void btnSelectAll_Click(object sender, EventArgs e)
@@ -521,7 +536,7 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text);
+                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text,"1");
                     sp.ShowDialog();
                 }
             }
@@ -532,10 +547,11 @@ namespace SiharaiNyuuryoku
             if (e.KeyCode == Keys.Enter)
             {
                 type = 1;
-                if (ErrorCheck(10))
-                {
-                    DataDisplay();
-                }
+                //if (ErrorCheck(10))
+                //{
+                //DataDisplay();
+                //}
+                ErrorCheck(10);
             }
         }
 

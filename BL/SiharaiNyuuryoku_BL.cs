@@ -90,9 +90,9 @@ namespace BL
             return dpddl.D_PayDetail_Select(dpe);
         }
 
-        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe,M_Vendor_Entity mve)
+        public DataTable D_Pay_SelectForPayPlanDate1(D_PayPlan_Entity dppe)
         {
-            return dppdl.D_PayPlan_Select(dppe,mve);
+            return dppdl.D_Pay_SelectForPayPlanDate1(dppe);
         }
 
         public DataTable M_MultiPurpose_AccountSelect(M_MultiPorpose_Entity mme)

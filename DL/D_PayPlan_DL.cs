@@ -50,16 +50,16 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe,M_Vendor_Entity mve)
+        public DataTable D_Pay_SelectForPayPlanDate1(D_PayPlan_Entity dppe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@PayPlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
                 {"@PayPlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
-                {"@ChangeDate",new ValuePair{value1 = SqlDbType.Date,value2 = mve.ChangeDate } },
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.InsertOperator } },
                 {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
             };
-            return SelectData(dic, "D_PayPlan_Select");
+            return SelectData(dic, "D_Pay_SelectForPayPlanDate1");
         }
     }
 }
