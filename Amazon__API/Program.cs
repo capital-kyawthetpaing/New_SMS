@@ -42,7 +42,7 @@ namespace Amazon__API
 
            
             CommonAPI api = new CommonAPI();
-            
+            api.GetOrderList();
 
         }
 

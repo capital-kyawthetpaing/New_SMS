@@ -24,7 +24,7 @@ namespace Amazon__API
 
 
 
-        public static void GetOrderList()
+        public  void GetOrderList()
         {
             dt = new DataTable();
             dt.Columns.Add("OrderId");
