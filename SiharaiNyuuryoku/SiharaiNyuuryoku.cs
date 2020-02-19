@@ -44,7 +44,7 @@ namespace SiharaiNyuuryoku
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-           
+
             ScPaymentProcessNum.Enabled = false;
             ScPaymentNum.Enabled = false;
             ScPaymentProcessNum.SearchEnable = false;
@@ -191,7 +191,7 @@ namespace SiharaiNyuuryoku
                     LabelDataBind();
                 }
 
-                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text,"2");
+                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
                 sp.ShowDialog();
             }
         }
@@ -302,7 +302,7 @@ namespace SiharaiNyuuryoku
                         }
                     }
 
-                   
+
                 }
 
             }
@@ -326,11 +326,11 @@ namespace SiharaiNyuuryoku
                 //店舗締マスターで判断
                 M_StoreClose_Entity msce = new M_StoreClose_Entity();
                 msce.StoreCD = InOperatorCD;
-                msce.FiscalYYYYMM = txtPaymentDate.Text.Replace("/", "").Substring(0,6);
+                msce.FiscalYYYYMM = txtPaymentDate.Text.Replace("/", "").Substring(0, 6);
                 DataTable dtposition = sibl.CheckClosePosition(msce);
-                if(dtposition.Rows.Count > 0)
+                if (dtposition.Rows.Count > 0)
                 {
-                    if(dtposition.Rows[0]["ClosePosition2"].ToString() == "1")
+                    if (dtposition.Rows[0]["ClosePosition2"].ToString() == "1")
                     {
                         sibl.ShowMessage("E203");
                         return false;
@@ -341,7 +341,7 @@ namespace SiharaiNyuuryoku
                         return false;
                     }
                 }
-              
+
 
                 if (!RequireCheck(new Control[] { ScStaff.TxtCode }))
                     return false;
@@ -536,7 +536,7 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo,vendorCD,txtPaymentDate.Text,"1");
+                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
                     sp.ShowDialog();
                 }
             }
@@ -555,7 +555,7 @@ namespace SiharaiNyuuryoku
             }
         }
 
-        
+
         #endregion
     }
 }
