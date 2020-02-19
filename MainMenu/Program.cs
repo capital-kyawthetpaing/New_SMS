@@ -43,12 +43,11 @@ namespace MainMenu
                 }
                 else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")
                 {
-                    pgname = new Haspo.HaspoStoreMenuLogin();
-                   
+                    pgname = new HaspoLogin();
                 }
                 else if (Base_DL.iniEntity.Login_Type == "TennicMainMenuLogin")
                 {
-                    pgname = new TennicLogin(); ; ; ;
+                    pgname = new TennicLogin();
                 }
                 else
                 {

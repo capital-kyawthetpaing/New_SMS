@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon__Entity.cs" />
     <Compile Include="Base_Entity.cs" />
     <Compile Include="D_APIControl_Entity.cs" />
     <Compile Include="D_ArrivalPlan_Entity.cs" />

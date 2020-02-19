@@ -120,7 +120,7 @@ namespace SiharaiYoteiHyou
             }
 
             /// <remarks>両方チェックが入っていない場合、エラーになる処理</remarks>
-            if (chkExpense.Checked==false && chkPurchase.Checked==false)
+            if (chkExpense.Checked == false && chkPurchase.Checked == false)
             {
                 shyhbl.ShowMessage("E111");
                 return false;
@@ -146,22 +146,22 @@ namespace SiharaiYoteiHyou
 
         {
             base.FunctionProcess(index);
-            switch (index+1)
+            switch (index + 1)
             {
-               
+
                 case 6: //F6:キャンセル		
-                        if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                         ClearDetail();
-                        break;
+                    break;
                 //case 10:
                 //             F10();
                 //    break;
-            
+
                 case 11://Excel出力
                     break;
-                //case 12://印刷
-                //    break;
-            }   
+                    //case 12://印刷
+                    //    break;
+            }
 
         }
         /// <summary>
@@ -221,11 +221,11 @@ namespace SiharaiYoteiHyou
                 PayeeCD = scPaymentDestinaion.TxtCode.Text,
                 PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
                 PaymenetDueDateTo = txtPaymentDueDateTo.Text,
-                CloseStatusSumi = RdoCloseStsSumi.Checked ?  "1" : "0",
-                PaymentStatusUnpaid = RdoUnpaid.Checked ?  "1" : "0",
+                CloseStatusSumi = RdoCloseStsSumi.Checked ? "1" : "0",
+                PaymentStatusUnpaid = RdoUnpaid.Checked ? "1" : "0",
                 Purchase = chkPurchase.Checked ? "1" : "0",
                 Expense = chkExpense.Checked ? "1" : "0",
-                StoreCD=comboStore.SelectedValue.ToString()
+                StoreCD = comboStore.SelectedValue.ToString()
             };
 
             return dppe;
@@ -242,7 +242,7 @@ namespace SiharaiYoteiHyou
             if (ErrorCheck())
             {
                 dppe = GetSearchInfo();
-                 dt= shyhbl.D_PayPlan_SelectForPrint(dppe,type);
+                dt = shyhbl.D_PayPlan_SelectForPrint(dppe, type);
                 //以下の条件でデータが存在しなければエラー (Error if record does not exist)Ｅ１３３
                 if (dt.Rows.Count == 0)
                 {
@@ -250,7 +250,7 @@ namespace SiharaiYoteiHyou
                     return null;
                 }
             }
-            
+
             return dt;
         }
 
@@ -267,48 +267,48 @@ namespace SiharaiYoteiHyou
                 if (table == null)
                 {
                     return;
-                }                
+                }
                 DialogResult ret;
                 SiharaiYoteiHyou_Report Report = new SiharaiYoteiHyou_Report();
 
                 switch (PrintMode)
-                {                   
+                {
 
-                    case EPrintMode.DIRECT:          
-                                if (StartUpKBN == "1")
-                                {
-                                    ret = DialogResult.No;
-                                }
-                                else
-                                {
-                                    //Q202 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                                    ret = bbl.ShowMessage("Q201");
-                                    if (ret == DialogResult.Cancel)
-                                    {
-                                        return;
-                                    }
-                                }
-                                Report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
-                                Report.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
+                    case EPrintMode.DIRECT:
+                        if (StartUpKBN == "1")
+                        {
+                            ret = DialogResult.No;
+                        }
+                        else
+                        {
+                            //Q202 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                            ret = bbl.ShowMessage("Q201");
+                            if (ret == DialogResult.Cancel)
+                            {
+                                return;
+                            }
+                        }
+                        Report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                        Report.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
 
-                                // 印字データをセット
-                                Report.SetDataSource(table);
-                                Report.Refresh();
-                                Report.SetParameterValue("StoreCD", comboStore.SelectedValue.ToString() + "  " + comboStore.Text);
-                                Report.SetParameterValue("DateFrom", txtPaymentDueDateFrom.Text);
-                                Report.SetParameterValue("DateTo", txtPaymentDueDateTo.Text);
-                                Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                        // 印字データをセット
+                        Report.SetDataSource(table);
+                        Report.Refresh();
+                        Report.SetParameterValue("StoreCD", comboStore.SelectedValue.ToString() + "  " + comboStore.Text);
+                        Report.SetParameterValue("DateFrom", txtPaymentDueDateFrom.Text);
+                        Report.SetParameterValue("DateTo", txtPaymentDueDateTo.Text);
+                        Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
 
-                                if (ret == DialogResult.Yes)
-                                {
-                                    //プレビュー
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Report;
-                                    previewForm.ShowDialog();
-                                }
-                                else
-                                {
+                        if (ret == DialogResult.Yes)
+                        {
+                            //プレビュー
+                            var previewForm = new Viewer();
+                            previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                            previewForm.CrystalReportViewer1.ReportSource = Report;
+                            previewForm.ShowDialog();
+                        }
+                        else
+                        {
                             //int marginLeft = 360;
                             CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
                             margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
@@ -345,46 +345,46 @@ namespace SiharaiYoteiHyou
 
                             }
                         }
-                               
+
                         break;
                     case EPrintMode.CSV:
-                                dtCSV = CheckData(2);
+                        dtCSV = CheckData(2);
 
-                                if (dtCSV == null) return;
-                                try
+                        if (dtCSV == null) return;
+                        try
+                        {
+                            DialogResult DResult;
+                            DResult = bbl.ShowMessage("Q203");
+                            if (DResult == DialogResult.Yes)
+                            {
+                                ////LoacalDirectory
+                                string folderPath = "C:\\CSV\\";
+                                if (!Directory.Exists(folderPath))
                                 {
-                                    DialogResult DResult;
-                                    DResult = bbl.ShowMessage("Q203");
-                                    if (DResult == DialogResult.Yes)
+                                    Directory.CreateDirectory(folderPath);
+                                }
+                                SaveFileDialog savedialog = new SaveFileDialog();
+                                savedialog.Filter = "CSV|*.csv";
+                                savedialog.Title = "Save";
+                                savedialog.FileName = "支払予定表";
+                                savedialog.InitialDirectory = folderPath;
+                                savedialog.RestoreDirectory = true;
+                                if (savedialog.ShowDialog() == DialogResult.OK)
+                                {
+                                    if (Path.GetExtension(savedialog.FileName).Contains("csv"))
                                     {
-                                        ////LoacalDirectory
-                                        string folderPath = "C:\\CSV\\";
-                                        if (!Directory.Exists(folderPath))
-                                        {
-                                            Directory.CreateDirectory(folderPath);
-                                        }
-                                        SaveFileDialog savedialog = new SaveFileDialog();
-                                        savedialog.Filter = "CSV|*.csv";
-                                        savedialog.Title = "Save";
-                                        savedialog.FileName = "支払予定表";
-                                        savedialog.InitialDirectory = folderPath;
-                                        savedialog.RestoreDirectory = true;
-                                        if (savedialog.ShowDialog() == DialogResult.OK)
-                                        {
-                                            if (Path.GetExtension(savedialog.FileName).Contains("csv"))
-                                            {
-                                                CsvWriter csvwriter = new CsvWriter();
-                                                csvwriter.WriteCsv(dtCSV, savedialog.FileName, Encoding.GetEncoding(932));
-                                            }
-                                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                                            shyhbl.ShowMessage("I203");
-                                        }
+                                        CsvWriter csvwriter = new CsvWriter();
+                                        csvwriter.WriteCsv(dtCSV, savedialog.FileName, Encoding.GetEncoding(932));
                                     }
+                                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                                    shyhbl.ShowMessage("I203");
                                 }
-                                catch (Exception e)
-                                {
-                                    MessageBox.Show(e.Message);
-                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show(e.Message);
+                        }
                         break;
                     case EPrintMode.PDF:
                         if (bbl.ShowMessage("Q204") != DialogResult.Yes)
@@ -420,7 +420,7 @@ namespace SiharaiYoteiHyou
             finally
             {
 
-            }            
+            }
         }
 
         /// <summary>
@@ -465,7 +465,7 @@ namespace SiharaiYoteiHyou
 
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 /// <remarks>支払予定日(from)は支払予定日(To)より大きいの場合、エラーになる処理</remarks>
                 if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))

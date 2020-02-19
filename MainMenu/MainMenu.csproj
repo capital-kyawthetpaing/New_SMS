@@ -31,10 +31,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -61,18 +60,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo_mark_l5k_icon.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>D74E95985071C634AB96109CDE54A1F6E85621E6</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>MainMenu_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <GenerateManifests>true</GenerateManifests>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -124,6 +111,12 @@
     <Compile Include="Haspo_MainMenu.Designer.cs">
       <DependentUpon>Haspo_MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainmenuLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +167,9 @@
     <EmbeddedResource Include="Haspo_MainMenu.resx">
       <DependentUpon>Haspo_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainmenuLogin.resx">
       <DependentUpon>MainmenuLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,7 +195,6 @@
     <EmbeddedResource Include="Tennic_MainMenu.resx">
       <DependentUpon>Tennic_MainMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="MainMenu_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

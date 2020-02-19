@@ -16,9 +16,9 @@ namespace BL
         {
             dpp_dl = new D_PayPlan_DL();
         }
-        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe,int type)
+        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe, int type)
         {
-            return dpp_dl.D_PayPlan_SelectForPrint(dppe,type);
+            return dpp_dl.D_PayPlan_SelectForPrint(dppe, type);
         }
     }
 }

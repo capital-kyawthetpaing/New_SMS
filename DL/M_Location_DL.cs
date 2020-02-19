@@ -62,7 +62,7 @@ namespace DL
             return SelectData(dic, "M_Location_Search");
         }
 
-        public bool M_Location_InsertUpdate(D_Stock_Entity dse,M_Location_Entity mle)
+        public bool M_Location_InsertUpdate(D_Stock_Entity dse, M_Location_Entity mle)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
