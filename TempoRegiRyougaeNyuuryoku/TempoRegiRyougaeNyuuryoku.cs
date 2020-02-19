@@ -22,6 +22,7 @@ namespace TempoRegiRyougaeNyuuryoku
         bool valid = false;
         TempoRegiRyougaeNyuuryoku_BL trrnbl;
         D_DepositHistory_Entity mre;
+        DataTable dtS_check;
         string storeCD;
         public frmTempoRegiRyougaeNyuuryoku()
         {
@@ -94,6 +95,9 @@ namespace TempoRegiRyougaeNyuuryoku
                 TotalGaku = "0",
                 SalesTaxRate = "0",
                 Refund = "0",
+                ProperGaku="0",
+                DiscountGaku="0",
+                CustomerCD="",
                 IsIssued = "0",
                 ExchangeMoney = ExchangeMoney.Text,
                 ExchangeDenomination = ExchangeDenomination.SelectedValue.ToString(),
@@ -118,6 +122,7 @@ namespace TempoRegiRyougaeNyuuryoku
            
             if (ErrorCheck())
             {
+                //RunConsole();
                 if (ExchangeLabel.Text != ExchangeMoney.Text)
                 {
                     trrnbl.ShowMessage("E181");
@@ -139,6 +144,7 @@ namespace TempoRegiRyougaeNyuuryoku
                             trrnbl.ShowMessage("I101");
                             ExchangeMoney.Focus();
 
+
                         }
                         else
                         {
@@ -154,7 +160,24 @@ namespace TempoRegiRyougaeNyuuryoku
             }
 
         }
+        
+        private void RunConsole()
+        {
+            string programID = "TempoRegiTorihikiReceipt";
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "5";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode ;//parameter
+            try
+            {
+                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            }
+            catch
+            {
 
+            }
+
+        }
         /// <summary>
         /// 入力必須エラーをチェックする
         /// </summary>
@@ -179,6 +202,7 @@ namespace TempoRegiRyougaeNyuuryoku
             return true;
         }
 
+        
         /// <summary>
         /// 戻るボタンを押下時formを閉じる
         /// </summary>
