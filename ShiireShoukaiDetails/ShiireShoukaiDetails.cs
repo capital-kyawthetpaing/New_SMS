@@ -57,7 +57,6 @@ namespace ShiireShoukaiDetails
                     cboStore.Focus();
                 }
             }
-          
         }
         private void RequiredField()
         {
@@ -77,7 +76,6 @@ namespace ShiireShoukaiDetails
         private void BindCombo()
         {
             cboStore.Bind(string.Empty, "2");
-            cboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// 仕入先の履歴を表示されること
@@ -152,8 +150,11 @@ namespace ShiireShoukaiDetails
                     }
                     break;
                 case 10:
-                    ExportCSV();
-
+                    if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                    {
+                        ExportCSV();
+                    }
+                       
                     break;
                 case 11:                    
                     F11();
@@ -285,11 +286,6 @@ namespace ShiireShoukaiDetails
                 return;
             }
 
-            if (bbl.ShowMessage("Q203") == DialogResult.No)
-            {
-                return;
-            }
-
             if (dgv_PurchaseDetails.DataSource != null)
             {
                 //Build the CSV file data as a Comma separated string.
@@ -328,7 +324,8 @@ namespace ShiireShoukaiDetails
                 }
                 dgv_PurchaseDetails.CurrentCell = dgv_PurchaseDetails.Rows[0].Cells[1];
                 //Exporting to CSV.            
-                File.WriteAllText(folderPath + "ShiireShoukaiDetails_ExportCSV " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                File.WriteAllText(folderPath + "仕入照会 (仕入明細) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                ssdbl.ShowMessage("I203");
             }
             else
             {

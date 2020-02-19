@@ -368,6 +368,13 @@ namespace Shiharai_IchiranHyou
             dtcol.Columns.Add("処理番号その他②");
             return dtcol;
         }
+
+        private void SC_Payment_Enter(object sender, EventArgs e)
+        {
+            SC_Payment.Value1 = "0";
+            SC_Payment.ChangeDate = txtPurChaseDateTo.Text;
+        }
+
         private void ToCSV(DataTable dtDataTable, string folderPath)
         {
             //Build the CSV file data as a Comma separated string.
