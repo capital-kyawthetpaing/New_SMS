@@ -15,7 +15,7 @@ using GridBase;
 namespace ShiireNyuuryoku
 {
     /// <summary>
-    /// ShiireNyuuryoku 仕入入力（発注・入荷なし）
+    /// ShiireNyuuryoku 仕入入力（発注・入荷なし）  
     /// </summary>
     internal partial class ShiireNyuuryoku : FrmMainForm
     {
