@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-   public class D_Pay_Entity:Base_Entity
+    public class D_Pay_Entity : Base_Entity
     {
         public string PayNo { get; set; }
         public string LargePayNO { get; set; }
@@ -21,9 +21,10 @@ namespace Entity
 
         // Search-SiharaiShoriNO (pnz)
         public string PayDateFrom { get; set; }
-        public string PayDateTo { get; set;}
+        public string PayDateTo { get; set; }
         public string InputDateTimeFrom { get; set; }
         public string InputDateTimeTo { get; set; }
+        public string PayPlanDate { get; set; }
 
     }
 }
