@@ -9,7 +9,7 @@ using Entity;
 
 namespace BL
 {
-   public class SiharaiNyuuryoku_BL:Base_BL
+    public class SiharaiNyuuryoku_BL : Base_BL
     {
         D_Pay_DL dpdl = new D_Pay_DL();
         M_Control_DL mcdl = new M_Control_DL();
@@ -22,12 +22,12 @@ namespace BL
         D_PayDetail_DL dpddl = new D_PayDetail_DL();
         D_PayPlan_DL dppdl = new D_PayPlan_DL();
         M_StoreClose_DL mscdl = new M_StoreClose_DL();
-       
-       
+
+
 
         public DataTable D_Pay_LargePayNoSelect(D_Pay_Entity dpe)
         {
-            return dpdl.D_Pay_LargePayNoSelect(dpe);          
+            return dpdl.D_Pay_LargePayNoSelect(dpe);
         }
 
         public DataTable D_Pay_PayNoSelect(D_Pay_Entity dpe)
@@ -70,7 +70,7 @@ namespace BL
             return mpdl.D_Payee_PayeeNameSelect(dpe);
         }
 
-        public DataTable D_Pay_Select1 (D_Pay_Entity dpe)
+        public DataTable D_Pay_Select1(D_Pay_Entity dpe)
         {
             return dpdl.D_Pay_Select1(dpe);
         }
@@ -90,9 +90,9 @@ namespace BL
             return dpddl.D_PayDetail_Select(dpe);
         }
 
-        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe,M_Vendor_Entity mve)
+        public DataTable D_Pay_SelectForPayPlanDate1(D_PayPlan_Entity dppe)
         {
-            return dppdl.D_PayPlan_Select(dppe,mve);
+            return dppdl.D_Pay_SelectForPayPlanDate1(dppe);
         }
 
         public DataTable M_MultiPurpose_AccountSelect(M_MultiPorpose_Entity mme)

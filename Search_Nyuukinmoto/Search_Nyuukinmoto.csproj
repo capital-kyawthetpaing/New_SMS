@@ -65,7 +65,7 @@
   <ItemGroup>
     <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Search\RequiredDLL\GridBase.dll</HintPath>
+      <HintPath>..\..\..\..\New SMS\New SMS\bin\Debug\GridBase.dll</HintPath>
     </Reference>
     <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

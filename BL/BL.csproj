@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon__BL.cs" />
     <Compile Include="Carrier_BL.cs" />
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
@@ -108,6 +109,7 @@
     <Compile Include="SaikenKanriHyou_BL.cs" />
     <Compile Include="SaimuKanriHyou_BL.cs" />
     <Compile Include="SalesTax_BL.cs" />
+    <Compile Include="SearchVendor_BL.cs" />
     <Compile Include="Search_BL.cs" />
     <Compile Include="Search_Carrier_BL.cs" />
     <Compile Include="Search_Customer_BL.cs" />

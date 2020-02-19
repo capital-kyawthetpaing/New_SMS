@@ -89,7 +89,7 @@ namespace CKM_Controls
             /// <summary>
             /// SoukoType IN (1,2,3,4)
             /// </summary>
-            SoukoAll ,//Added by ETZ for PickingList
+            SoukoAll,//Added by ETZ for PickingList
 
             /// <summary>	
             /// SoukoType=1～4	
@@ -507,7 +507,7 @@ namespace CKM_Controls
 
             //StoreAthuorizationCD = lblStoreAuthoCD.Text;
             //StoreAuthorizationChangeDate = lblStoreChangeDate.Text;
-            if(lblStoreCD != null)
+            if (lblStoreCD != null)
                 StoreCD = lblStoreCD.Text;
             //ProgramID = lblProgramID.Text;
         }

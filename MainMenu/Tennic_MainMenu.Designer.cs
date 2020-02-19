@@ -993,8 +993,6 @@
             this.ClientSize = new System.Drawing.Size(832, 714);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelRight);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "Tennic_MainMenu";
             this.Text = "Tennic_MainMenu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tennic_MainMenu_FormClosing);

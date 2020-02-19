@@ -57,7 +57,7 @@ namespace DL
             return SelectData(dic, "M_Souko_SelectForMitsumori");
         }
 
-       
+
         /// <summary>
         /// Select Souko's info
         /// SoukoType 3のSouko情報をSelect
@@ -127,7 +127,7 @@ namespace DL
             return SelectData(dic, "M_Souko_IsExists");
         }
 
-        public bool M_Souko_Insert_Update(M_Souko_Entity mse,int mode)
+        public bool M_Souko_Insert_Update(M_Souko_Entity mse, int mode)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -189,7 +189,7 @@ namespace DL
         public DataTable M_SoukoName_Select(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>();
-            
+
             dic.Add("@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SoukoCD });
             dic.Add("@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate });
 
