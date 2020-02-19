@@ -50,18 +50,6 @@
             this.lblPayPlanGaku = new System.Windows.Forms.Label();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.dgvPayment = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPaymentDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymentdueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAmountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPaymenttime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransferAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTransferFee = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFeeBurden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOtherThanTransfer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colUnpaidAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ScStaff = new Search.CKM_SearchControl();
             this.txtPaymentDate = new CKM_Controls.CKM_TextBox();
             this.cboPaymentType = new CKM_Controls.CKM_ComboBox();
@@ -87,7 +75,13 @@
             this.ScPaymentNum = new Search.CKM_SearchControl();
             this.ScPaymentProcessNum = new Search.CKM_SearchControl();
             this.ScPayee = new Search.CKM_SearchControl();
-            this.ckM_Label13 = new CKM_Controls.CKM_Label();
+            this.lblPayPlanGaku = new System.Windows.Forms.Label();
+            this.lblPayConfirmGaku = new System.Windows.Forms.Label();
+            this.lblPayGaku = new System.Windows.Forms.Label();
+            this.lblTransferGaku = new System.Windows.Forms.Label();
+            this.lblTransferFeeGaku = new System.Windows.Forms.Label();
+            this.lblGakuTotal = new System.Windows.Forms.Label();
+            this.lblPayPlan = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.PanelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
@@ -313,8 +307,8 @@
             // colPaymentdueDate
             // 
             this.colPaymentdueDate.DataPropertyName = "PayPlanDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPaymentdueDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPaymentdueDate.DefaultCellStyle = dataGridViewCellStyle47;
             this.colPaymentdueDate.HeaderText = "支払予定日";
             this.colPaymentdueDate.MaxInputLength = 10;
             this.colPaymentdueDate.Name = "colPaymentdueDate";
@@ -324,8 +318,8 @@
             // colScheduledPayment
             // 
             this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle48;
             this.colScheduledPayment.HeaderText = "支払予定額";
             this.colScheduledPayment.MaxInputLength = 6;
             this.colScheduledPayment.Name = "colScheduledPayment";
@@ -333,8 +327,8 @@
             // colAmountPaid
             // 
             this.colAmountPaid.DataPropertyName = "PayConfirmGaku";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle49;
             this.colAmountPaid.HeaderText = "支払済額";
             this.colAmountPaid.MaxInputLength = 6;
             this.colAmountPaid.Name = "colAmountPaid";
@@ -342,8 +336,8 @@
             // colPaymenttime
             // 
             this.colPaymenttime.DataPropertyName = "PayGaku";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPaymenttime.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPaymenttime.DefaultCellStyle = dataGridViewCellStyle50;
             this.colPaymenttime.HeaderText = "今回支払額";
             this.colPaymenttime.MaxInputLength = 6;
             this.colPaymenttime.Name = "colPaymenttime";
@@ -351,8 +345,8 @@
             // colTransferAmount
             // 
             this.colTransferAmount.DataPropertyName = "TransferGaku";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colTransferAmount.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colTransferAmount.DefaultCellStyle = dataGridViewCellStyle51;
             this.colTransferAmount.HeaderText = "振込額";
             this.colTransferAmount.MaxInputLength = 6;
             this.colTransferAmount.Name = "colTransferAmount";
@@ -360,8 +354,8 @@
             // colTransferFee
             // 
             this.colTransferFee.DataPropertyName = "TransferFeeGaku";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colTransferFee.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colTransferFee.DefaultCellStyle = dataGridViewCellStyle52;
             this.colTransferFee.HeaderText = "振込手数料";
             this.colTransferFee.MaxInputLength = 6;
             this.colTransferFee.Name = "colTransferFee";
@@ -369,8 +363,8 @@
             // colFeeBurden
             // 
             this.colFeeBurden.DataPropertyName = "FeeKBN";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colFeeBurden.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colFeeBurden.DefaultCellStyle = dataGridViewCellStyle53;
             this.colFeeBurden.HeaderText = "手数料負担";
             this.colFeeBurden.MaxInputLength = 4;
             this.colFeeBurden.Name = "colFeeBurden";
@@ -378,8 +372,8 @@
             // colOtherThanTransfer
             // 
             this.colOtherThanTransfer.DataPropertyName = "Gaku";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colOtherThanTransfer.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colOtherThanTransfer.DefaultCellStyle = dataGridViewCellStyle54;
             this.colOtherThanTransfer.HeaderText = "振込以外";
             this.colOtherThanTransfer.MaxInputLength = 6;
             this.colOtherThanTransfer.Name = "colOtherThanTransfer";
@@ -387,8 +381,8 @@
             // colUnpaidAmount
             // 
             this.colUnpaidAmount.DataPropertyName = "PayPlan";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle55;
             this.colUnpaidAmount.HeaderText = "未支払額";
             this.colUnpaidAmount.MaxInputLength = 6;
             this.colUnpaidAmount.Name = "colUnpaidAmount";
@@ -896,21 +890,68 @@
             this.ScPayee.Value2 = null;
             this.ScPayee.Value3 = null;
             // 
-            // ckM_Label13
+            // lblPayPlanGaku
             // 
-            this.ckM_Label13.AutoSize = true;
-            this.ckM_Label13.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label13.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label13.DefaultlabelSize = true;
-            this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label13.Location = new System.Drawing.Point(692, 256);
-            this.ckM_Label13.Name = "ckM_Label13";
-            this.ckM_Label13.Size = new System.Drawing.Size(82, 12);
-            this.ckM_Label13.TabIndex = 108;
-            this.ckM_Label13.Text = "ckM_Label13";
-            this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPayPlanGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblPayPlanGaku.Location = new System.Drawing.Point(523, 452);
+            this.lblPayPlanGaku.Name = "lblPayPlanGaku";
+            this.lblPayPlanGaku.Size = new System.Drawing.Size(100, 19);
+            this.lblPayPlanGaku.TabIndex = 101;
+            this.lblPayPlanGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblPayConfirmGaku
+            // 
+            this.lblPayConfirmGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblPayConfirmGaku.Location = new System.Drawing.Point(624, 452);
+            this.lblPayConfirmGaku.Name = "lblPayConfirmGaku";
+            this.lblPayConfirmGaku.Size = new System.Drawing.Size(100, 19);
+            this.lblPayConfirmGaku.TabIndex = 102;
+            this.lblPayConfirmGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblPayGaku
+            // 
+            this.lblPayGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblPayGaku.Location = new System.Drawing.Point(725, 452);
+            this.lblPayGaku.Name = "lblPayGaku";
+            this.lblPayGaku.Size = new System.Drawing.Size(100, 19);
+            this.lblPayGaku.TabIndex = 103;
+            this.lblPayGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTransferGaku
+            // 
+            this.lblTransferGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblTransferGaku.Location = new System.Drawing.Point(826, 452);
+            this.lblTransferGaku.Name = "lblTransferGaku";
+            this.lblTransferGaku.Size = new System.Drawing.Size(100, 19);
+            this.lblTransferGaku.TabIndex = 104;
+            this.lblTransferGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblTransferFeeGaku
+            // 
+            this.lblTransferFeeGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblTransferFeeGaku.Location = new System.Drawing.Point(927, 452);
+            this.lblTransferFeeGaku.Name = "lblTransferFeeGaku";
+            this.lblTransferFeeGaku.Size = new System.Drawing.Size(100, 19);
+            this.lblTransferFeeGaku.TabIndex = 105;
+            this.lblTransferFeeGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblGakuTotal
+            // 
+            this.lblGakuTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblGakuTotal.Location = new System.Drawing.Point(1131, 452);
+            this.lblGakuTotal.Name = "lblGakuTotal";
+            this.lblGakuTotal.Size = new System.Drawing.Size(100, 19);
+            this.lblGakuTotal.TabIndex = 106;
+            this.lblGakuTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblPayPlan
+            // 
+            this.lblPayPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblPayPlan.Location = new System.Drawing.Point(1232, 452);
+            this.lblPayPlan.Name = "lblPayPlan";
+            this.lblPayPlan.Size = new System.Drawing.Size(100, 19);
+            this.lblPayPlan.TabIndex = 107;
+            this.lblPayPlan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmSiharaiNyuuryoku
             // 
@@ -967,18 +1008,6 @@
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_GridView dgvPayment;
         private CKM_Controls.CKM_Button btnF10Show;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentDestination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPayeeName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentdueDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colScheduledPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAmountPaid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPaymenttime;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransferAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTransferFee;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFeeBurden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOtherThanTransfer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colUnpaidAmount;
         private System.Windows.Forms.Label lblPayPlan;
         private System.Windows.Forms.Label lblGakuTotal;
         private System.Windows.Forms.Label lblTransferFeeGaku;
@@ -986,6 +1015,5 @@
         private System.Windows.Forms.Label lblPayGaku;
         private System.Windows.Forms.Label lblPayConfirmGaku;
         private System.Windows.Forms.Label lblPayPlanGaku;
-        private CKM_Controls.CKM_Label ckM_Label13;
     }
 }
