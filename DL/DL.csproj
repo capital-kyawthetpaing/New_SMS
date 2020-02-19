@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon__DL.cs" />
     <Compile Include="Brand_DL.cs" />
     <Compile Include="D_ArrivalPlan_DL.cs" />
     <Compile Include="D_Arrival_DL.cs" />

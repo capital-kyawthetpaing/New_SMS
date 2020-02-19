@@ -36,7 +36,7 @@ namespace Amazon__API
         static string strbuff = string.Empty;
         public static void Main(string[] args)
         {
-            /// if ()
+            
             GetOrderList();
         }
 
