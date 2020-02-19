@@ -42,6 +42,10 @@ namespace CKM_Controls
             /// StoreKBN IN (1)
             /// </summary>
             店舗ストア_受注,
+            /// <summary>
+            /// StoreKBN NOT IN (2)
+            /// </summary>
+            店舗ストア_月次,
             倉庫種別,
             部門,
             メニュー,
@@ -85,13 +89,12 @@ namespace CKM_Controls
             /// <summary>
             /// SoukoType IN (1,2,3,4)
             /// </summary>
-            SoukoAll ,//Added by ETZ for PickingList
+            SoukoAll,//Added by ETZ for PickingList
 
             /// <summary>	
             /// SoukoType=1～4	
             /// </summary>	
             出荷指示倉庫,
-            棚卸倉庫,
             移動区分,
             移動依頼区分,
             運送会社,
@@ -229,7 +232,19 @@ namespace CKM_Controls
                     //StoreKBN IN 1のStore情報をBind
                     DataTable dtStore3 = sblj.M_Store_Bind_Juchu(mse3);
                     BindCombo("StoreCD", "StoreName", dtStore3);
-                    break; 
+                    break;
+                case CboType.店舗ストア_月次:
+                    Store_BL sblg = new Store_BL();
+                    M_Store_Entity mse4 = new M_Store_Entity
+                    {
+                        ChangeDate = changeDate.Replace("/", "-"),
+                        Operator = type,
+                        DeleteFlg = "0"
+                    };
+                    //StoreKBN NOT IN 2のStore情報をBind（権限のある店舗のみ）
+                    DataTable dtStore4 = sblg.M_Store_Bind_Getsuji(mse4);
+                    BindCombo("StoreCD", "StoreName", dtStore4);
+                    break;
                 case CboType.倉庫種別:
                     MultiPorpose_BL mpbl = new MultiPorpose_BL();
                     M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity();
@@ -427,15 +442,6 @@ namespace CKM_Controls
                     DataTable dtSSoukoH = sjbl.M_Souko_BindForShukka(msoe3);
                     BindCombo("SoukoCD", "SoukoName", dtSSoukoH);
                     break;
-                case CboType.棚卸倉庫:
-                    Tanaoroshi_BL tabl = new Tanaoroshi_BL();
-                    M_Souko_Entity msoe4 = new M_Souko_Entity();
-                    msoe4.StoreCD = mse.StoreCD;
-                    msoe4.ChangeDate = changeDate;
-                    msoe4.DeleteFlg = "0";
-                    DataTable dtSSoukoT = tabl.M_Souko_BindForTanaoroshi(msoe4);
-                    BindCombo("SoukoCD", "SoukoName", dtSSoukoT);
-                    break;
                 case CboType.移動区分:
                     ZaikoIdouNyuuryoku_BL zibl2 = new ZaikoIdouNyuuryoku_BL();
                     M_MovePurpose_Entity mmpe = new M_MovePurpose_Entity();
@@ -491,7 +497,7 @@ namespace CKM_Controls
 
             //StoreAthuorizationCD = lblStoreAuthoCD.Text;
             //StoreAuthorizationChangeDate = lblStoreChangeDate.Text;
-            if(lblStoreCD != null)
+            if (lblStoreCD != null)
                 StoreCD = lblStoreCD.Text;
             //ProgramID = lblProgramID.Text;
         }
