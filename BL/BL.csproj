@@ -149,6 +149,7 @@
     <Compile Include="TairyuZaikoHyou_BL.cs" />
     <Compile Include="TanabanNyuuryoku_BL.cs" />
     <Compile Include="TanaireList_BL.cs" />
+    <Compile Include="Tanaoroshi_BL.cs" />
     <Compile Include="TankaCD_BL.cs" />
     <Compile Include="TempoJuchuuNyuuryoku_BL.cs" />
     <Compile Include="TempoJuchuuShoukai_BL.cs" />
