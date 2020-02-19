@@ -109,6 +109,9 @@ namespace DL
                 { "@Rows", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mre.Rows } },
                 { "@SalesTaxRate", new ValuePair { value1 = SqlDbType.Int, value2 = mre.SalesTaxRate } },
                 { "@AdminNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mre.AdminNO } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mre.CustomerCD } },
+                { "@DiscountGaku", new ValuePair { value1 = SqlDbType.Money, value2 = mre.DiscountGaku } },
+                { "@ProperGaku", new ValuePair { value1 = SqlDbType.Money, value2 = mre.ProperGaku } },
                 };
             return InsertUpdateDeleteData(dic, "D_DepositHistory_InsertUpdate");
         }

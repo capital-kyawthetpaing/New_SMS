@@ -34,5 +34,8 @@ namespace Entity
         public string Rows { get; set; }
         public string SalesTaxRate { get; set; }
 
+        public string CustomerCD { get; set; }
+        public string DiscountGaku { get; set; }
+        public string ProperGaku { get; set; }
     }
 }
