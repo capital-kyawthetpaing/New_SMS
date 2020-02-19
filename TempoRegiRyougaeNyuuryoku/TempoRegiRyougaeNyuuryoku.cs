@@ -95,9 +95,9 @@ namespace TempoRegiRyougaeNyuuryoku
                 TotalGaku = "0",
                 SalesTaxRate = "0",
                 Refund = "0",
-                ProperGaku="0",
-                DiscountGaku="0",
-                CustomerCD="",
+                ProperGaku="0",//update
+                DiscountGaku="0",//update
+                CustomerCD="",//update
                 IsIssued = "0",
                 ExchangeMoney = ExchangeMoney.Text,
                 ExchangeDenomination = ExchangeDenomination.SelectedValue.ToString(),
