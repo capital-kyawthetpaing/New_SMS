@@ -15,11 +15,11 @@ namespace BL
 
         }
 
-        public DataTable Allow_Check()
-        {
+        //public DataTable Allow_Check()
+        //{
 
 
-        }
+        //}
 
 
     }
