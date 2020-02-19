@@ -8,13 +8,13 @@ using System.Data;
 
 namespace DL
 {
-   public class D_Pay_DL:Base_DL
+    public class D_Pay_DL : Base_DL
     {
         public DataTable D_Pay_LargePayNoSelect(D_Pay_Entity dpe)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} }               
+                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} }
             };
             return SelectData(dic, "D_Pay_LargePayNoSelect");
         }

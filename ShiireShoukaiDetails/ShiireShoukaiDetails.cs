@@ -324,7 +324,8 @@ namespace ShiireShoukaiDetails
                 }
                 dgv_PurchaseDetails.CurrentCell = dgv_PurchaseDetails.Rows[0].Cells[1];
                 //Exporting to CSV.            
-                File.WriteAllText(folderPath + "ShiireShoukaiDetails_ExportCSV " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                File.WriteAllText(folderPath + "仕入照会 (仕入明細) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+                ssdbl.ShowMessage("I203");
             }
             else
             {

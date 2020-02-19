@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amazon__DL.cs" />
     <Compile Include="Brand_DL.cs" />
     <Compile Include="D_ArrivalPlan_DL.cs" />
     <Compile Include="D_Arrival_DL.cs" />
@@ -68,6 +69,9 @@
     <Compile Include="D_FTP_DL.cs" />
     <Compile Include="D_Hacchu_DL.cs" />
     <Compile Include="D_Instruction_DL.cs" />
+    <Compile Include="D_InventoryControl_DL.cs" />
+    <Compile Include="D_InventoryProcessing_DL.cs" />
+    <Compile Include="D_Inventory_DL.cs" />
     <Compile Include="D_JuChuu_DL.cs" />
     <Compile Include="D_Mitsumori_DL.cs" />
     <Compile Include="D_MonthlyClaims_DL.cs" />

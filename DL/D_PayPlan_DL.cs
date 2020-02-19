@@ -31,7 +31,7 @@ namespace DL
         /// </summary>
         /// <param name="dce"></param>
         /// <returns></returns>
-        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe,int type)
+        public DataTable D_PayPlan_SelectForPrint(D_PayPlan_Entity dppe, int type)
         {
             string sp = "D_PayPlan_SelectforPrint";
 

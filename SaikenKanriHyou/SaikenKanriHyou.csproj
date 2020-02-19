@@ -48,9 +48,8 @@
     <Reference Include="CsvHelper">
       <HintPath>..\RequiredDLL\CsvHelper.dll</HintPath>
     </Reference>
-    <Reference Include="ElencySolutions.CsvHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Search\RequiredDLL\ElencySolutions.CsvHelper.dll</HintPath>
+    <Reference Include="ElencySolutions.CsvHelper">
+      <HintPath>..\RequiredDLL\ElencySolutions.CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

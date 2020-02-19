@@ -76,7 +76,7 @@ namespace MainMenu
         protected void ButtonText(Panel p, DataTable k0, int Gym)
         {
             IOrderedEnumerable<DataRow> result;
-            result = k0.Select().OrderBy(row => row["BusinessSEQ"]);
+            result = k0.Select().OrderBy(row => row["ProgramSEQ"]);
             var k = result.CopyToDataTable();
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
 

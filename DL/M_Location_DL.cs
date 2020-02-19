@@ -62,7 +62,7 @@ namespace DL
             return SelectData(dic, "M_Location_Search");
         }
 
-        public bool M_Location_InsertUpdate(D_Stock_Entity dse,M_Location_Entity mle)
+        public bool M_Location_InsertUpdate(D_Stock_Entity dse, M_Location_Entity mle)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -87,6 +87,18 @@ namespace DL
             };
 
             return SelectData(dic, sp);
+        }
+
+        public DataTable M_Location_SelectForTanaoroshi(D_InventoryProcessing_Entity de)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+               {
+                   {"@InventoryDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.InventoryDate } },
+                   {"@SoukoCD",new ValuePair { value1=SqlDbType.VarChar,value2=de.SoukoCD} },
+                   {"@TanaCDFrom",new ValuePair { value1=SqlDbType.VarChar,value2=de.FromRackNO} },
+                   {"@TanaCDTo",new ValuePair { value1=SqlDbType.VarChar,value2=de.ToRackNO} },
+               };
+            return SelectData(dic, "M_Location_SelectForTanaoroshi");
         }
 
     }
