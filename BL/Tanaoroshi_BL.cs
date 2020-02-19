@@ -16,7 +16,7 @@ namespace BL
         {
             mdl = new D_Inventory_DL();
         }
-        public DataTable M_Souko_BindForTanaoroshi(M_Souko_Entity me)
+        public DataTable M_Souko_BindForTanaoroshi(M_Souko_Entity me) 
         {
             M_Souko_DL dl = new M_Souko_DL();
             return dl.M_Souko_BindForTanaoroshi(me);
