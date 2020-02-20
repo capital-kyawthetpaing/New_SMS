@@ -50,7 +50,7 @@ namespace SiharaiNyuuryoku
             ScPaymentProcessNum.SearchEnable = false;
             ScPaymentNum.SearchEnable = false;
 
-            btnF10Show.Enabled = false;
+            btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
 
             mse.StaffCD = InOperatorCD;
@@ -71,6 +71,7 @@ namespace SiharaiNyuuryoku
             btnSelectAll.Enabled = false;
 
             txtDueDate1.Focus();
+           
         }
 
         private void SetRequireField()
@@ -138,7 +139,7 @@ namespace SiharaiNyuuryoku
                     txtDueDate1.Focus();
                     F9Visible = false;
                     F12Enable = true;
-                    btnF10Show.Enabled = false;
+                    btnF10Show.Enabled = true;
                     F11Enable = false;
                     break;
                 case EOperationMode.UPDATE:
@@ -179,6 +180,7 @@ namespace SiharaiNyuuryoku
                 dppe.PayPlanDateFrom = txtDueDate1.Text;
                 dppe.PayPlanDateTo = txtDueDate2.Text;
                 dppe.PayeeCD = ScPayee.TxtCode.Text;
+                dppe.Operator = InOperatorCD;
                 DataTable dtpayplan = new DataTable();
                 dtpayplan = sibl.D_Pay_SelectForPayPlanDate1(dppe);
                 if (dtpayplan.Rows.Count > 0)
@@ -522,6 +524,11 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        private void btnF10Show_Click(object sender, EventArgs e)
+        {
+            F10();
+        }
+
         #region KeyEvent
         private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
@@ -557,5 +564,7 @@ namespace SiharaiNyuuryoku
 
 
         #endregion
+
+       
     }
 }

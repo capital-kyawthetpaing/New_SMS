@@ -114,8 +114,6 @@ namespace Search
                     SC_Account20.TxtCode.Text = dt4.Rows[0]["Account2"].ToString();
                     SC_Account21.TxtCode.Text = dt4.Rows[0]["SubAccount2"].ToString();
                 }
-
-
             }
             
             LabelDataBind();
@@ -136,7 +134,7 @@ namespace Search
             lblPayComfirmGaku.Text = sum2.ToString("#,##0");
             lblPayGaku.Text = sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
-            lblPayGaku1.Text = lblPayGaku.Text ;
+            //lblPayGaku1.Text = lblPayGaku.Text ;
         }
     }
 }
