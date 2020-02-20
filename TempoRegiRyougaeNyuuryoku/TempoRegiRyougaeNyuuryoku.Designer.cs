@@ -238,19 +238,19 @@
             this.ExchangeDenomination.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.ExchangeDenomination.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.ExchangeDenomination.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ExchangeDenomination.Font = new System.Drawing.Font("Meiryo UI", 18F);
+            this.ExchangeDenomination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.ExchangeDenomination.FontSize_ = 18F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ExchangeDenomination.ItemHeight = 26;
             this.ExchangeDenomination.ItemHeight_ = 26;
-            this.ExchangeDenomination.Length = 10;
+            this.ExchangeDenomination.Length = 20;
             this.ExchangeDenomination.Location = new System.Drawing.Point(254, 203);
             this.ExchangeDenomination.MaxItem = 8;
-            this.ExchangeDenomination.MaxLength = 5;
+            this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
             this.ExchangeDenomination.Name = "ExchangeDenomination";
-            this.ExchangeDenomination.Size = new System.Drawing.Size(188, 32);
+            this.ExchangeDenomination.Size = new System.Drawing.Size(140, 32);
             this.ExchangeDenomination.TabIndex = 2;
             this.ExchangeDenomination.SelectedIndexChanged += new System.EventHandler(this.ExchangeDenomination_SelectedIndexChanged);
             // 

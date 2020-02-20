@@ -2,6 +2,7 @@
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace BL
    public class TempoRegiTsurisenJyunbi_BL : Base_BL
     {
         D_DepositHistory_DL trrndl;
+        Base_BL bbl = new Base_BL();
 
         public TempoRegiTsurisenJyunbi_BL()
         {

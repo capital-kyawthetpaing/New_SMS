@@ -18,17 +18,13 @@ namespace TempoRegiTsurisenJyunbi
         TempoRegiTsurisenJyunbi_BL trtjb;
         D_DepositHistory_Entity mre;
         string storeCD;
+        DataTable dtDepositNO;
         public frmTempoRegiTsurisenJyunbi()
         {
             InitializeComponent();
-            // Form that has a button on it
-            //button1.PreviewKeyDown += new PreviewKeyDownEventHandler(button1_PreviewKeyDown);
-            //button1.KeyDown += new KeyEventHandler(button1_KeyDown);
-            //button1.ContextMenuStrip = new ContextMenuStrip();
-            //// Add items to ContextMenuStrip
-            //button1.ContextMenuStrip.Items.Add("One");
-            //button1.ContextMenuStrip.Items.Add("Two");
-            //button1.ContextMenuStrip.Items.Add("Three");
+            dtDepositNO = new DataTable();
+            trtjb = new TempoRegiTsurisenJyunbi_BL();
+            mre = new D_DepositHistory_Entity();
         }
         //void button1_KeyDown(object sender, KeyEventArgs e)
         //{
@@ -62,17 +58,11 @@ namespace TempoRegiTsurisenJyunbi
             StartProgram();
             this.Text = "釣銭準備入力";
             SetRequireField();
-            BindCombo();
             storeCD = StoreCD;
-        }
-        public void BindCombo()
-        {
-            DenominationCD.Bind(string.Empty);
         }
         private void SetRequireField()
         {
             DepositGaku.Require(true);
-            DenominationCD.Require(true);
         }
         public override void FunctionProcess(int index)
         {
@@ -119,7 +109,6 @@ namespace TempoRegiTsurisenJyunbi
                 ProgramID = InProgramID,
                 PC = InPcID,
                 Key = storeCD + " " + DepositGaku.Text
-
             };
             return mre;
         }
@@ -128,7 +117,6 @@ namespace TempoRegiTsurisenJyunbi
         /// </summary>
         public void Save()
         {
-            //RunConsole();
             if (ErrorCheck())
             {
                 if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
@@ -136,12 +124,11 @@ namespace TempoRegiTsurisenJyunbi
                     mre = DepositHistoryEnity();
                     if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                     {
-                        DepositGaku.Clear();
-                        DenominationCD.SelectedValue = "-1";
-                        Remark.Clear();
                         trtjb.ShowMessage("I101");
+                        //RunConsole();
+                        DepositGaku.Clear();
+                        Remark.Clear();
                         DepositGaku.Focus();
-
                     }
                     else
                     {
@@ -155,7 +142,6 @@ namespace TempoRegiTsurisenJyunbi
                    //Remark.Focus();
                 }
             }
-
         }
         protected override void EndSec()
         {
@@ -163,15 +149,8 @@ namespace TempoRegiTsurisenJyunbi
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { DepositGaku, DenominationCD }))   // go that focus
+            if (!RequireCheck(new Control[] { DepositGaku }))   // go that focus
                 return false;
-
-            if (string.IsNullOrWhiteSpace(DenominationCD.SelectedValue.ToString()))
-            {
-                trtjb.ShowMessage("E102");
-                DenominationCD.Focus();
-                return false;
-            }
 
             return true;
         }
@@ -180,10 +159,14 @@ namespace TempoRegiTsurisenJyunbi
             string programID = "TempoRegiTorihikiReceipt";
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-            string Mode = "5";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode;//parameter
+            string Mode = "6";            
+            dtDepositNO = bbl.SimpleSelect1("51", "", Application.ProductName, "", "");
+            string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();//テーブル転送仕様Ａで覚えた入出金番号
+
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
+
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
             catch
