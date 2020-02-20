@@ -20,7 +20,7 @@ namespace BL
         }
         public bool TempoRegiTsurisenJyunbi_Insert_Update(D_DepositHistory_Entity mre)
         {
-            return trrndl.TempoRegiTsurisenJyunbi_Insert(mre);
+            return trrndl.D_DepositＨistory_Insert_Update(mre);
         }
     }
 }

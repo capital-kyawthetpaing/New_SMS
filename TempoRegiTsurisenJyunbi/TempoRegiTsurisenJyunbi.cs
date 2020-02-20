@@ -125,7 +125,7 @@ namespace TempoRegiTsurisenJyunbi
                     if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                     {
                         trtjb.ShowMessage("I101");
-                        //RunConsole();
+                        RunConsole();
                         DepositGaku.Clear();
                         Remark.Clear();
                         DepositGaku.Focus();
@@ -138,8 +138,6 @@ namespace TempoRegiTsurisenJyunbi
                 else
                 {
                     DepositGaku.Focus();
-                   // PreviousCtrl.Focus();
-                   //Remark.Focus();
                 }
             }
         }
@@ -166,7 +164,6 @@ namespace TempoRegiTsurisenJyunbi
             string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
-
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
             catch
