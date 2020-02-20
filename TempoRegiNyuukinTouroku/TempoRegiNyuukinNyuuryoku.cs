@@ -113,6 +113,7 @@ namespace TempoRegiNyuukinTouroku
                         chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
+                //RunConsole();
             }
         }
 
@@ -232,11 +233,15 @@ namespace TempoRegiNyuukinTouroku
             }
         }
 
-
-
-
-
-
+        private void RunConsole()
+        {
+            string programID = "TempoTorihikiReceipt";
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "2";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode ;//parameter
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+        }
     }
 }
 

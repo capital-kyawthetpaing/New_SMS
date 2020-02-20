@@ -41,13 +41,11 @@
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
-
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDetail
             // 
-
             this.panelDetail.Controls.Add(this.ckmShop_Label3);
             this.panelDetail.Controls.Add(this.chkAdvanceFlg);
             this.panelDetail.Controls.Add(this.ckmShop_Label2);
@@ -140,7 +138,7 @@
             this.txtCustomerCD.IsShop = false;
             this.txtCustomerCD.Length = 13;
             this.txtCustomerCD.Location = new System.Drawing.Point(256, 225);
-            this.txtCustomerCD.MaxLength = 13;
+            this.txtCustomerCD.MaxLength = 10;
             this.txtCustomerCD.MoveNext = true;
             this.txtCustomerCD.Name = "txtCustomerCD";
             this.txtCustomerCD.Size = new System.Drawing.Size(150, 29);
@@ -152,7 +150,7 @@
             // 
             this.btnCustomerCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
             this.btnCustomerCD.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
-
+            this.btnCustomerCD.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomerCD.DefaultBtnSize = false;
             this.btnCustomerCD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCustomerCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,9 +284,6 @@
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-
-
-
             // TempoRegiNyuukinNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
