@@ -40,5 +40,6 @@ namespace Entity
         public string Expense { get; set; }
         public string PayPlanDateFrom { get; set; }
         public string PayPlanDateTo { get; set; }
+        public string PaymentTotal { get; set; }
     }
 }

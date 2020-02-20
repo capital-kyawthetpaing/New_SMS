@@ -94,6 +94,10 @@ namespace BL
         {
             return dppdl.D_Pay_SelectForPayPlanDate1(dppe);
         }
+        public DataTable D_Pay_SelectForPayPlanDate2(D_PayPlan_Entity dppe)
+        {
+            return dppdl.D_Pay_SelectForPayPlanDate2(dppe);
+        }
 
         public DataTable M_MultiPurpose_AccountSelect(M_MultiPorpose_Entity mme)
         {
