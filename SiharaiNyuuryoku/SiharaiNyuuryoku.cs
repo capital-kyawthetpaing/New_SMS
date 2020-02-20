@@ -186,7 +186,7 @@ namespace SiharaiNyuuryoku
                     txtPaymentDate.Text = DateTime.Today.ToShortDateString();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
-
+                    cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     dgvPayment.DataSource = dtpayplan;
                     LabelDataBind();
                 }

@@ -61,5 +61,17 @@ namespace DL
             };
             return SelectData(dic, "D_Pay_SelectForPayPlanDate1");
         }
+
+        public DataTable D_Pay_SelectForPayPlanDate2(D_PayPlan_Entity dppe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@PayPlanDate",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDate} },
+                {"@PaymentTotal",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PaymentTotal} },
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.InsertOperator } },
+                {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
+            };
+            return SelectData(dic, "D_Pay_SelectForPayPlanDate2");
+        }
     }
 }
