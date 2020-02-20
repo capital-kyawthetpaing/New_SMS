@@ -125,7 +125,6 @@ namespace TempoRegiRyougaeNyuuryoku
            
             if (ErrorCheck())
             {
-                //RunConsole();
                 if (ExchangeLabel.Text != ExchangeMoney.Text)
                 {
                     trrnbl.ShowMessage("E181");
@@ -138,14 +137,15 @@ namespace TempoRegiRyougaeNyuuryoku
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
-                        {
-                            ExchangeMoney.Clear();
+                        {                          
+                           
+                            trrnbl.ShowMessage("I101");
+                            // RunConsole();//exeRun
                             ExchangeDenomination.SelectedValue = "-1";
+                            ExchangeMoney.Clear();
                             ExchangeCount.Clear();
                             ExchangeLabel.Text = "";
                             Remark.Clear();
-                            trrnbl.ShowMessage("I101");
-                            //RunConsole();
                             ExchangeMoney.Focus();
                         }
                         else
@@ -177,10 +177,10 @@ namespace TempoRegiRyougaeNyuuryoku
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
             catch
+           // catch(Exception e)
             {
-
+                //MessageBox.Show(e.Message);
             }
-
         }
         /// <summary>
         /// 入力必須エラーをチェックする
