@@ -31,7 +31,6 @@ namespace TempoRegiRyougaeNyuuryoku
             trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
             mre = new D_DepositHistory_Entity();
         }
-
         private void frmTempoRegiRyougaeNyuuryoku_Load(object sender, EventArgs e)
         {
             trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
@@ -68,7 +67,6 @@ namespace TempoRegiRyougaeNyuuryoku
             ExchangeDenomination.Require(true);
             ExchangeCount.Require(true);
         }
-
         public override void FunctionProcess(int index)
         {
 
@@ -116,7 +114,7 @@ namespace TempoRegiRyougaeNyuuryoku
             };
             return mre;
         }
-
+        /// 
         /// <summary>
         /// 登録ボタンを押下時データベースにInsertする
         /// </summary>
@@ -162,7 +160,6 @@ namespace TempoRegiRyougaeNyuuryoku
             }
 
         }
-        
         private void RunConsole()
         {
             string programID = "TempoRegiTorihikiReceipt";
@@ -205,8 +202,6 @@ namespace TempoRegiRyougaeNyuuryoku
 
             return true;
         }
-
-        
         /// <summary>
         /// 戻るボタンを押下時formを閉じる
         /// </summary>
@@ -214,7 +209,6 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             this.Close();
         }
-
         private void ExchangeCount_KeyDown(object sender, KeyEventArgs e)
 
         {
@@ -283,50 +277,10 @@ namespace TempoRegiRyougaeNyuuryoku
             }
            
         }
-
         private void frmTempoRegiRyougaeNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
-
-      
-
-
-        //private void ExchangeCount_Leave(object sender, EventArgs e)
-        //{
-
-        //    if (string.IsNullOrWhiteSpace(ExchangeCount.Text))
-        //    {
-        //        trrnbl.ShowMessage("E102");
-        //        ExchangeCount.Focus();
-        //        ExchangeCount.MoveNext = false;
-
-        //    }
-        //    else
-        //    {
-        //        countmoney = Convert.ToInt32(ExchangeCount.Text);
-        //        if (ExchangeDenomination.SelectedValue.ToString() == "-1")
-        //        {
-
-        //            trrnbl.ShowMessage("E102");
-        //            // ExchangeDenomination.MoveNext = false;
-        //            ExchangeDenomination.Select();
-
-        //        }
-        //        else
-        //        {
-
-        //            combovalue = ExchangeDenomination.SelectedValue.ToString();
-        //        moneytype = Convert.ToInt32(combovalue);
-
-        //        //        }
-
-
-        //    }
-
-        //    displayData();
-
-
-        //}
+    
     }
 }
