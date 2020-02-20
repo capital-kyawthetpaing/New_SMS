@@ -22,11 +22,14 @@ namespace TempoRegiRyougaeNyuuryoku
         bool valid = false;
         TempoRegiRyougaeNyuuryoku_BL trrnbl;
         D_DepositHistory_Entity mre;
-        DataTable dtS_check;
+        DataTable dtDepositNO;
         string storeCD;
         public frmTempoRegiRyougaeNyuuryoku()
         {
             InitializeComponent();
+            dtDepositNO = new DataTable();
+            trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
+            mre = new D_DepositHistory_Entity();
         }
 
         private void frmTempoRegiRyougaeNyuuryoku_Load(object sender, EventArgs e)
@@ -142,9 +145,8 @@ namespace TempoRegiRyougaeNyuuryoku
                             ExchangeLabel.Text = "";
                             Remark.Clear();
                             trrnbl.ShowMessage("I101");
+                            //RunConsole();
                             ExchangeMoney.Focus();
-
-
                         }
                         else
                         {
@@ -167,7 +169,9 @@ namespace TempoRegiRyougaeNyuuryoku
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "5";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode ;//parameter
+            dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
+            string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");

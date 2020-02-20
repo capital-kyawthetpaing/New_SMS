@@ -76,7 +76,7 @@
             this.ExchangeMoney.IsNumber = true;
             this.ExchangeMoney.IsShop = false;
             this.ExchangeMoney.Length = 10;
-            this.ExchangeMoney.Location = new System.Drawing.Point(254, 152);
+            this.ExchangeMoney.Location = new System.Drawing.Point(251, 152);
             this.ExchangeMoney.MaxLength = 10;
             this.ExchangeMoney.MoveNext = true;
             this.ExchangeMoney.Name = "ExchangeMoney";
@@ -109,7 +109,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(166, 260);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(163, 260);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(85, 24);
             this.ckmShop_Label4.TabIndex = 5;
@@ -125,7 +125,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(168, 311);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(163, 311);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(85, 24);
             this.ckmShop_Label5.TabIndex = 6;
@@ -149,7 +149,7 @@
             this.ExchangeCount.IsNumber = true;
             this.ExchangeCount.IsShop = false;
             this.ExchangeCount.Length = 3;
-            this.ExchangeCount.Location = new System.Drawing.Point(254, 257);
+            this.ExchangeCount.Location = new System.Drawing.Point(251, 257);
             this.ExchangeCount.MaxLength = 3;
             this.ExchangeCount.MoveNext = true;
             this.ExchangeCount.Name = "ExchangeCount";
@@ -167,7 +167,7 @@
             this.Remark.Font = new System.Drawing.Font("MS Gothic", 16F);
             this.Remark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.Remark.Length = 200;
-            this.Remark.Location = new System.Drawing.Point(254, 308);
+            this.Remark.Location = new System.Drawing.Point(251, 308);
             this.Remark.MaxLength = 200;
             this.Remark.Mdea = false;
             this.Remark.Mfocus = false;
@@ -187,7 +187,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(142, 155);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(138, 155);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(110, 24);
             this.ckmShop_Label1.TabIndex = 1;
@@ -203,7 +203,7 @@
             this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(143, 207);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(138, 207);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(110, 24);
             this.ckmShop_Label6.TabIndex = 13;
@@ -245,7 +245,7 @@
             this.ExchangeDenomination.ItemHeight = 26;
             this.ExchangeDenomination.ItemHeight_ = 26;
             this.ExchangeDenomination.Length = 20;
-            this.ExchangeDenomination.Location = new System.Drawing.Point(254, 203);
+            this.ExchangeDenomination.Location = new System.Drawing.Point(251, 203);
             this.ExchangeDenomination.MaxItem = 8;
             this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
@@ -262,7 +262,7 @@
             this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ExchangeLabel.ForeColor = System.Drawing.Color.Black;
-            this.ExchangeLabel.Location = new System.Drawing.Point(367, 257);
+            this.ExchangeLabel.Location = new System.Drawing.Point(364, 257);
             this.ExchangeLabel.Name = "ExchangeLabel";
             this.ExchangeLabel.Size = new System.Drawing.Size(200, 29);
             this.ExchangeLabel.TabIndex = 14;
