@@ -36,7 +36,7 @@ namespace Search
         {
             InProgramID = "TempoRegiKaiinKensaku";
 
-            StartProgram();
+            //StartProgram();
 
             txtZipCD.Focus();
 
