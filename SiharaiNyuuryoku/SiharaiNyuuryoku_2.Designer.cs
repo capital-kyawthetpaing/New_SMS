@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPaymentDueDate = new CKM_Controls.CKM_TextBox();
@@ -44,10 +45,10 @@
             this.colAmountPaid = new SMS.CustomControls.dgvInventoryColumn();
             this.colPaymentTime = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount = new SMS.CustomControls.dgvInventoryColumn();
-            this.SC_Account21 = new Search.CKM_SearchControl();
-            this.SC_Account11 = new Search.CKM_SearchControl();
-            this.SC_Account20 = new Search.CKM_SearchControl();
-            this.SC_Account10 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyEnd2 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyEnd1 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyStart2 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyStart1 = new Search.CKM_SearchControl();
             this.SC_BranchCD = new Search.CKM_SearchControl();
             this.SC_BankCD = new Search.CKM_SearchControl();
             this.lblPayGaku1 = new System.Windows.Forms.Label();
@@ -223,10 +224,10 @@
             // panelDetail
             // 
             this.panelDetail.Controls.Add(this.dgvSearchPayment);
-            this.panelDetail.Controls.Add(this.SC_Account21);
-            this.panelDetail.Controls.Add(this.SC_Account11);
-            this.panelDetail.Controls.Add(this.SC_Account20);
-            this.panelDetail.Controls.Add(this.SC_Account10);
+            this.panelDetail.Controls.Add(this.SC_HanyouKeyEnd2);
+            this.panelDetail.Controls.Add(this.SC_HanyouKeyEnd1);
+            this.panelDetail.Controls.Add(this.SC_HanyouKeyStart2);
+            this.panelDetail.Controls.Add(this.SC_HanyouKeyStart1);
             this.panelDetail.Controls.Add(this.SC_BranchCD);
             this.panelDetail.Controls.Add(this.SC_BankCD);
             this.panelDetail.Controls.Add(this.lblPayGaku1);
@@ -283,17 +284,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -303,6 +304,14 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -372,109 +381,113 @@
             this.colUnpaidAmount.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount.UseThousandSeparator = true;
             // 
-            // SC_Account21
+            // SC_HanyouKeyEnd2
             // 
-            this.SC_Account21.AutoSize = true;
-            this.SC_Account21.ChangeDate = "";
-            this.SC_Account21.ChangeDateWidth = 100;
-            this.SC_Account21.Code = "";
-            this.SC_Account21.CodeWidth = 40;
-            this.SC_Account21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Account21.DataCheck = false;
-            this.SC_Account21.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Account21.IsCopy = false;
-            this.SC_Account21.LabelText = "";
-            this.SC_Account21.LabelVisible = true;
-            this.SC_Account21.Location = new System.Drawing.Point(793, 669);
-            this.SC_Account21.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Account21.Name = "SC_Account21";
-            this.SC_Account21.SearchEnable = true;
-            this.SC_Account21.Size = new System.Drawing.Size(374, 27);
-            this.SC_Account21.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
-            this.SC_Account21.TabIndex = 112;
-            this.SC_Account21.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Account21.UseChangeDate = false;
-            this.SC_Account21.Value1 = null;
-            this.SC_Account21.Value2 = null;
-            this.SC_Account21.Value3 = null;
+            this.SC_HanyouKeyEnd2.AutoSize = true;
+            this.SC_HanyouKeyEnd2.ChangeDate = "";
+            this.SC_HanyouKeyEnd2.ChangeDateWidth = 100;
+            this.SC_HanyouKeyEnd2.Code = "";
+            this.SC_HanyouKeyEnd2.CodeWidth = 60;
+            this.SC_HanyouKeyEnd2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyEnd2.DataCheck = false;
+            this.SC_HanyouKeyEnd2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyEnd2.IsCopy = false;
+            this.SC_HanyouKeyEnd2.LabelText = "";
+            this.SC_HanyouKeyEnd2.LabelVisible = true;
+            this.SC_HanyouKeyEnd2.Location = new System.Drawing.Point(793, 663);
+            this.SC_HanyouKeyEnd2.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyEnd2.Name = "SC_HanyouKeyEnd2";
+            this.SC_HanyouKeyEnd2.SearchEnable = true;
+            this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd2.TabIndex = 112;
+            this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyEnd2.UseChangeDate = false;
+            this.SC_HanyouKeyEnd2.Value1 = null;
+            this.SC_HanyouKeyEnd2.Value2 = null;
+            this.SC_HanyouKeyEnd2.Value3 = null;
+            this.SC_HanyouKeyEnd2.Load += new System.EventHandler(this.SC_HanyouKeyEnd2_Load);
             // 
-            // SC_Account11
+            // SC_HanyouKeyEnd1
             // 
-            this.SC_Account11.AutoSize = true;
-            this.SC_Account11.ChangeDate = "";
-            this.SC_Account11.ChangeDateWidth = 100;
-            this.SC_Account11.Code = "";
-            this.SC_Account11.CodeWidth = 40;
-            this.SC_Account11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Account11.DataCheck = false;
-            this.SC_Account11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Account11.IsCopy = false;
-            this.SC_Account11.LabelText = "";
-            this.SC_Account11.LabelVisible = true;
-            this.SC_Account11.Location = new System.Drawing.Point(793, 635);
-            this.SC_Account11.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Account11.Name = "SC_Account11";
-            this.SC_Account11.SearchEnable = true;
-            this.SC_Account11.Size = new System.Drawing.Size(374, 27);
-            this.SC_Account11.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
-            this.SC_Account11.TabIndex = 110;
-            this.SC_Account11.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Account11.UseChangeDate = false;
-            this.SC_Account11.Value1 = null;
-            this.SC_Account11.Value2 = null;
-            this.SC_Account11.Value3 = null;
+            this.SC_HanyouKeyEnd1.AutoSize = true;
+            this.SC_HanyouKeyEnd1.ChangeDate = "";
+            this.SC_HanyouKeyEnd1.ChangeDateWidth = 100;
+            this.SC_HanyouKeyEnd1.Code = "";
+            this.SC_HanyouKeyEnd1.CodeWidth = 60;
+            this.SC_HanyouKeyEnd1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyEnd1.DataCheck = false;
+            this.SC_HanyouKeyEnd1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyEnd1.IsCopy = false;
+            this.SC_HanyouKeyEnd1.LabelText = "";
+            this.SC_HanyouKeyEnd1.LabelVisible = true;
+            this.SC_HanyouKeyEnd1.Location = new System.Drawing.Point(793, 635);
+            this.SC_HanyouKeyEnd1.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyEnd1.Name = "SC_HanyouKeyEnd1";
+            this.SC_HanyouKeyEnd1.SearchEnable = true;
+            this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd1.TabIndex = 110;
+            this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyEnd1.UseChangeDate = false;
+            this.SC_HanyouKeyEnd1.Value1 = null;
+            this.SC_HanyouKeyEnd1.Value2 = null;
+            this.SC_HanyouKeyEnd1.Value3 = null;
+            this.SC_HanyouKeyEnd1.Load += new System.EventHandler(this.SC_HanyouKeyEnd1_Load);
             // 
-            // SC_Account20
+            // SC_HanyouKeyStart2
             // 
-            this.SC_Account20.AutoSize = true;
-            this.SC_Account20.ChangeDate = "";
-            this.SC_Account20.ChangeDateWidth = 100;
-            this.SC_Account20.Code = "";
-            this.SC_Account20.CodeWidth = 40;
-            this.SC_Account20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Account20.DataCheck = false;
-            this.SC_Account20.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Account20.IsCopy = false;
-            this.SC_Account20.LabelText = "";
-            this.SC_Account20.LabelVisible = true;
-            this.SC_Account20.Location = new System.Drawing.Point(328, 669);
-            this.SC_Account20.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Account20.Name = "SC_Account20";
-            this.SC_Account20.SearchEnable = true;
-            this.SC_Account20.Size = new System.Drawing.Size(374, 27);
-            this.SC_Account20.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
-            this.SC_Account20.TabIndex = 111;
-            this.SC_Account20.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Account20.UseChangeDate = false;
-            this.SC_Account20.Value1 = null;
-            this.SC_Account20.Value2 = null;
-            this.SC_Account20.Value3 = null;
+            this.SC_HanyouKeyStart2.AutoSize = true;
+            this.SC_HanyouKeyStart2.ChangeDate = "";
+            this.SC_HanyouKeyStart2.ChangeDateWidth = 100;
+            this.SC_HanyouKeyStart2.Code = "";
+            this.SC_HanyouKeyStart2.CodeWidth = 60;
+            this.SC_HanyouKeyStart2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyStart2.DataCheck = false;
+            this.SC_HanyouKeyStart2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyStart2.IsCopy = false;
+            this.SC_HanyouKeyStart2.LabelText = "";
+            this.SC_HanyouKeyStart2.LabelVisible = true;
+            this.SC_HanyouKeyStart2.Location = new System.Drawing.Point(328, 663);
+            this.SC_HanyouKeyStart2.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyStart2.Name = "SC_HanyouKeyStart2";
+            this.SC_HanyouKeyStart2.SearchEnable = true;
+            this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart2.TabIndex = 111;
+            this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyStart2.UseChangeDate = false;
+            this.SC_HanyouKeyStart2.Value1 = null;
+            this.SC_HanyouKeyStart2.Value2 = null;
+            this.SC_HanyouKeyStart2.Value3 = null;
+            this.SC_HanyouKeyStart2.Load += new System.EventHandler(this.SC_HanyouKeyStart2_Load);
             // 
-            // SC_Account10
+            // SC_HanyouKeyStart1
             // 
-            this.SC_Account10.AutoSize = true;
-            this.SC_Account10.ChangeDate = "";
-            this.SC_Account10.ChangeDateWidth = 100;
-            this.SC_Account10.Code = "";
-            this.SC_Account10.CodeWidth = 40;
-            this.SC_Account10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Account10.DataCheck = false;
-            this.SC_Account10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Account10.IsCopy = false;
-            this.SC_Account10.LabelText = "";
-            this.SC_Account10.LabelVisible = true;
-            this.SC_Account10.Location = new System.Drawing.Point(328, 635);
-            this.SC_Account10.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Account10.Name = "SC_Account10";
-            this.SC_Account10.SearchEnable = true;
-            this.SC_Account10.Size = new System.Drawing.Size(374, 27);
-            this.SC_Account10.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
-            this.SC_Account10.TabIndex = 109;
-            this.SC_Account10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Account10.UseChangeDate = false;
-            this.SC_Account10.Value1 = null;
-            this.SC_Account10.Value2 = null;
-            this.SC_Account10.Value3 = null;
+            this.SC_HanyouKeyStart1.AutoSize = true;
+            this.SC_HanyouKeyStart1.ChangeDate = "";
+            this.SC_HanyouKeyStart1.ChangeDateWidth = 100;
+            this.SC_HanyouKeyStart1.Code = "";
+            this.SC_HanyouKeyStart1.CodeWidth = 60;
+            this.SC_HanyouKeyStart1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyStart1.DataCheck = false;
+            this.SC_HanyouKeyStart1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyStart1.IsCopy = false;
+            this.SC_HanyouKeyStart1.LabelText = "";
+            this.SC_HanyouKeyStart1.LabelVisible = true;
+            this.SC_HanyouKeyStart1.Location = new System.Drawing.Point(328, 635);
+            this.SC_HanyouKeyStart1.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyStart1.Name = "SC_HanyouKeyStart1";
+            this.SC_HanyouKeyStart1.SearchEnable = true;
+            this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart1.TabIndex = 109;
+            this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyStart1.UseChangeDate = false;
+            this.SC_HanyouKeyStart1.Value1 = null;
+            this.SC_HanyouKeyStart1.Value2 = null;
+            this.SC_HanyouKeyStart1.Value3 = null;
+            this.SC_HanyouKeyStart1.Enter += new System.EventHandler(this.SC_HanyouKeyStart1_Enter);
             // 
             // SC_BranchCD
             // 
@@ -680,7 +693,7 @@
             this.ckM_Label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label23.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label23.Location = new System.Drawing.Point(270, 677);
+            this.ckM_Label23.Location = new System.Drawing.Point(270, 671);
             this.ckM_Label23.Name = "ckM_Label23";
             this.ckM_Label23.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label23.TabIndex = 87;
@@ -789,7 +802,7 @@
             this.txtOther2.IsNumber = true;
             this.txtOther2.IsShop = false;
             this.txtOther2.Length = 10;
-            this.txtOther2.Location = new System.Drawing.Point(118, 673);
+            this.txtOther2.Location = new System.Drawing.Point(118, 667);
             this.txtOther2.MaxLength = 10;
             this.txtOther2.MoveNext = true;
             this.txtOther2.Name = "txtOther2";
@@ -932,7 +945,7 @@
             this.ckM_Label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label22.Location = new System.Drawing.Point(62, 676);
+            this.ckM_Label22.Location = new System.Drawing.Point(62, 670);
             this.ckM_Label22.Name = "ckM_Label22";
             this.ckM_Label22.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label22.TabIndex = 75;
@@ -1407,10 +1420,10 @@
         private System.Windows.Forms.Label lblPayGaku1;
         private Search.CKM_SearchControl SC_BranchCD;
         private Search.CKM_SearchControl SC_BankCD;
-        private Search.CKM_SearchControl SC_Account21;
-        private Search.CKM_SearchControl SC_Account11;
-        private Search.CKM_SearchControl SC_Account20;
-        private Search.CKM_SearchControl SC_Account10;
+        private Search.CKM_SearchControl SC_HanyouKeyEnd2;
+        private Search.CKM_SearchControl SC_HanyouKeyEnd1;
+        private Search.CKM_SearchControl SC_HanyouKeyStart2;
+        private Search.CKM_SearchControl SC_HanyouKeyStart1;
         private CKM_Controls.CKM_GridView dgvSearchPayment;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPurchaseNum;

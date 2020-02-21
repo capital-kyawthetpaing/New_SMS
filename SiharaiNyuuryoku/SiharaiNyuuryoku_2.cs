@@ -67,11 +67,11 @@ namespace SiharaiNyuuryoku
                     txtElectronicRecordNo.Text = dt2.Rows[0]["ERMCNO"].ToString();
                     txtSettlementDate2.Text = dt2.Rows[0]["ERMCDate"].ToString();
                     txtOther1.Text = dt2.Rows[0]["OtherGaku1"].ToString();
-                    SC_Account10.TxtCode.Text = dt2.Rows[0]["Account1"].ToString();
-                    SC_Account11.TxtCode.Text = dt2.Rows[0]["SubAccount1"].ToString();
+                    SC_HanyouKeyStart1.TxtCode.Text = dt2.Rows[0]["Account1"].ToString();
+                    SC_HanyouKeyEnd1.TxtCode.Text = dt2.Rows[0]["SubAccount1"].ToString();
                     txtOther2.Text = dt2.Rows[0]["OtherGaku2"].ToString();
-                    SC_Account20.TxtCode.Text = dt2.Rows[0]["Account2"].ToString();
-                    SC_Account21.TxtCode.Text = dt2.Rows[0]["SubAccount2"].ToString();
+                    SC_HanyouKeyStart2.TxtCode.Text = dt2.Rows[0]["Account2"].ToString();
+                    SC_HanyouKeyEnd2.TxtCode.Text = dt2.Rows[0]["SubAccount2"].ToString();
                 }
                 DataTable dt3 = new DataTable();
                 dt3 = shnbl.D_Pay_Select3(dpe);
@@ -106,11 +106,11 @@ namespace SiharaiNyuuryoku
                     txtElectronicRecordNo.Text = dt4.Rows[0]["ERMCNO"].ToString();
                     txtSettlementDate2.Text = dt4.Rows[0]["ERMCDate"].ToString();
                     txtOther1.Text = dt4.Rows[0]["OtherGaku1"].ToString();
-                    SC_Account10.TxtCode.Text = dt4.Rows[0]["Account1"].ToString();
-                    SC_Account11.TxtCode.Text = dt4.Rows[0]["SubAccount1"].ToString();
+                    SC_HanyouKeyStart1.TxtCode.Text = dt4.Rows[0]["Account1"].ToString();
+                    SC_HanyouKeyEnd1.TxtCode.Text = dt4.Rows[0]["SubAccount1"].ToString();
                     txtOther2.Text = dt4.Rows[0]["OtherGaku2"].ToString();
-                    SC_Account20.TxtCode.Text = dt4.Rows[0]["Account2"].ToString();
-                    SC_Account21.TxtCode.Text = dt4.Rows[0]["SubAccount2"].ToString();
+                    SC_HanyouKeyStart2.TxtCode.Text = dt4.Rows[0]["Account2"].ToString();
+                    SC_HanyouKeyEnd2.TxtCode.Text = dt4.Rows[0]["SubAccount2"].ToString();
                 }
             }
 
@@ -138,6 +138,40 @@ namespace SiharaiNyuuryoku
             lblPayGaku.Text = sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
             //lblPayGaku1.Text = lblPayGaku.Text ;
+        }
+
+        private void SC_HanyouKeyStart1_Enter(object sender, EventArgs e)
+        {
+            SC_HanyouKeyStart1.Value1 = "217";
+            SC_HanyouKeyStart1.Value2 = "IDName";
+        }
+
+        private void SC_HanyouKeyStart2_Load(object sender, EventArgs e)
+        {
+            SC_HanyouKeyStart2.Value1 = "217";
+            SC_HanyouKeyStart2.Value2 = "IDName";
+        }
+
+        private void SC_HanyouKeyEnd1_Load(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd1.Value1 = "218";
+            SC_HanyouKeyEnd1.Value2 = "IDName";
+        }
+
+        private void SC_HanyouKeyEnd2_Load(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd2.Value1 = "218";
+            SC_HanyouKeyEnd2.Value2 = "IDName";
+        }
+
+       public bool ErrorCheck()
+        {
+            if (Convert.ToInt32(txtTransferAmount.Text) > 0)
+            {
+                if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
+                    return false;
+            }
+                return true;
         }
     }
 }
