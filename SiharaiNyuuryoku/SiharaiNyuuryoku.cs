@@ -26,7 +26,7 @@ namespace SiharaiNyuuryoku
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
-        int type = 0;
+        int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
         public FrmSiharaiNyuuryoku()
@@ -49,6 +49,10 @@ namespace SiharaiNyuuryoku
             ScPaymentNum.Enabled = false;
             ScPaymentProcessNum.SearchEnable = false;
             ScPaymentNum.SearchEnable = false;
+
+            Btn_F7.Enabled = true;
+            Btn_F7.Text = "編集(F7)";
+           
 
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
@@ -115,6 +119,25 @@ namespace SiharaiNyuuryoku
                     else
                         PreviousCtrl.Focus();
                     break;
+                case 7:
+                    foreach (DataGridViewRow row in dgvPayment.Rows)
+                    {
+                        bool isSelected = Convert.ToBoolean(row.Cells["colChk"].Value);
+                        if (isSelected)
+                        {
+                            if (OperationMode == EOperationMode.INSERT)
+                            {
+                                mode = "1";
+                            }
+                            else
+                            {
+                                mode = "2";
+                            }
+                           FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
+                            f2.Show();                         
+                        }
+                    }
+                    break;
                 case 10:
                     F10();
                     break;
@@ -168,15 +191,6 @@ namespace SiharaiNyuuryoku
             type = 3;
             if (ErrorCheck(10))
             {
-                //txtPaymentDate.Text = DateTime.Today.ToShortDateString();
-                //ScStaff.TxtCode.Text = InOperatorCD;
-                //mse.ChangeDate = DateTime.Now.ToShortDateString();
-                //DataTable dtstaff = new DataTable();
-                //dtstaff = sibl.M_Staff_Select(mse);
-                //if (dtstaff.Rows.Count > 0)
-                //{
-                //    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-                //}
                 dppe.PayPlanDateFrom = txtDueDate1.Text;
                 dppe.PayPlanDateTo = txtDueDate2.Text;
                 dppe.PayeeCD = ScPayee.TxtCode.Text;
@@ -188,8 +202,17 @@ namespace SiharaiNyuuryoku
                     txtPaymentDate.Text = DateTime.Today.ToShortDateString();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
+                    cboPaymentType.SelectedText = "振込";
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
+                    txtBillSettleDate.Text = string.Empty;
                     dgvPayment.DataSource = dtpayplan;
+                    foreach (DataGridViewRow row1 in dgvPayment.Rows)
+                    {
+                        if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
+                        {
+                            row1.Cells["colChk"].Value = true;
+                        }
+                    }
                     LabelDataBind();
                 }
 
@@ -563,8 +586,36 @@ namespace SiharaiNyuuryoku
         }
 
 
+
         #endregion
 
-       
+        private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                F10();
+            }
+        }
+
+        private void dgvPayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+                foreach (DataGridViewRow row in dgvPayment.Rows)           
+                {
+                 
+                    //dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Selected;                
+                    //dppe.PayeeCD = row.Cells["colPayeeCD"].Selected.ToString(); 
+                    if(OperationMode == EOperationMode.INSERT)
+                    {
+                       mode = "1";
+                    }
+                    else
+                    {
+                        mode = "2";
+                    }
+                    FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
+                    f2.Show();
+                }
+            
+        }
     }
 }
