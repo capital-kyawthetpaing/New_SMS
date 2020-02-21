@@ -610,7 +610,7 @@ namespace SiharaiNyuuryoku
                     }
                     else
                     {
-                        mode = "2";
+                        mode = "2"; 
                     }
                     FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
                     f2.Show();
