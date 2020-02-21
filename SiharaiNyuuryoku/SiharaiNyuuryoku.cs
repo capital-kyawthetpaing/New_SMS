@@ -193,8 +193,8 @@ namespace SiharaiNyuuryoku
                     LabelDataBind();
                 }
 
-                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
-                sp.ShowDialog();
+                //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
+                //sp.ShowDialog();
             }
         }
 
@@ -543,8 +543,8 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
-                    sp.ShowDialog();
+                    //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
+                    //sp.ShowDialog();
                 }
             }
         }
