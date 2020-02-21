@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPaymentDueDate = new CKM_Controls.CKM_TextBox();
@@ -38,6 +37,13 @@
             this.lblPaymentDestination = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgvSearchPayment = new CKM_Controls.CKM_GridView();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colScheduledPayment = new SMS.CustomControls.dgvInventoryColumn();
+            this.colAmountPaid = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPaymentTime = new SMS.CustomControls.dgvInventoryColumn();
+            this.colUnpaidAmount = new SMS.CustomControls.dgvInventoryColumn();
             this.SC_Account21 = new Search.CKM_SearchControl();
             this.SC_Account11 = new Search.CKM_SearchControl();
             this.SC_Account20 = new Search.CKM_SearchControl();
@@ -86,13 +92,6 @@
             this.txtTransferAmount = new CKM_Controls.CKM_TextBox();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colScheduledPayment = new SMS.CustomControls.dgvInventoryColumn();
-            this.colAmountPaid = new SMS.CustomControls.dgvInventoryColumn();
-            this.colPaymentTime = new SMS.CustomControls.dgvInventoryColumn();
-            this.colUnpaidAmount = new SMS.CustomControls.dgvInventoryColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -284,17 +283,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -304,14 +303,6 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -321,13 +312,73 @@
             this.dgvSearchPayment.UseRowNo = true;
             this.dgvSearchPayment.UseSetting = true;
             // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 30;
+            // 
+            // colPurchaseNum
+            // 
+            this.colPurchaseNum.DataPropertyName = "Number";
+            this.colPurchaseNum.HeaderText = "仕入番号";
+            this.colPurchaseNum.Name = "colPurchaseNum";
+            this.colPurchaseNum.ReadOnly = true;
+            this.colPurchaseNum.Width = 150;
+            // 
+            // colPurchaseDate
+            // 
+            this.colPurchaseDate.DataPropertyName = "RecordedDate";
+            this.colPurchaseDate.HeaderText = "仕入日";
+            this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.ReadOnly = true;
+            // 
+            // colScheduledPayment
+            // 
+            this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
+            this.colScheduledPayment.HeaderText = "支払予定額";
+            this.colScheduledPayment.MaxInputLength = 32767;
+            this.colScheduledPayment.Name = "colScheduledPayment";
+            this.colScheduledPayment.ReadOnly = true;
+            this.colScheduledPayment.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colScheduledPayment.UseThousandSeparator = true;
+            // 
+            // colAmountPaid
+            // 
+            this.colAmountPaid.DataPropertyName = "PayConfirmGaku";
+            this.colAmountPaid.HeaderText = "支払済額";
+            this.colAmountPaid.MaxInputLength = 32767;
+            this.colAmountPaid.Name = "colAmountPaid";
+            this.colAmountPaid.ReadOnly = true;
+            this.colAmountPaid.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colAmountPaid.UseThousandSeparator = true;
+            // 
+            // colPaymentTime
+            // 
+            this.colPaymentTime.DataPropertyName = "PayGaku";
+            this.colPaymentTime.HeaderText = "今回支払額";
+            this.colPaymentTime.MaxInputLength = 32767;
+            this.colPaymentTime.Name = "colPaymentTime";
+            this.colPaymentTime.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colPaymentTime.UseThousandSeparator = true;
+            // 
+            // colUnpaidAmount
+            // 
+            this.colUnpaidAmount.DataPropertyName = "UnpaidAmount";
+            this.colUnpaidAmount.HeaderText = "未支払額";
+            this.colUnpaidAmount.MaxInputLength = 32767;
+            this.colUnpaidAmount.Name = "colUnpaidAmount";
+            this.colUnpaidAmount.ReadOnly = true;
+            this.colUnpaidAmount.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colUnpaidAmount.UseThousandSeparator = true;
+            // 
             // SC_Account21
             // 
             this.SC_Account21.AutoSize = true;
             this.SC_Account21.ChangeDate = "";
             this.SC_Account21.ChangeDateWidth = 100;
             this.SC_Account21.Code = "";
-            this.SC_Account21.CodeWidth = 100;
+            this.SC_Account21.CodeWidth = 40;
             this.SC_Account21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Account21.DataCheck = false;
             this.SC_Account21.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -338,8 +389,8 @@
             this.SC_Account21.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account21.Name = "SC_Account21";
             this.SC_Account21.SearchEnable = true;
-            this.SC_Account21.Size = new System.Drawing.Size(415, 27);
-            this.SC_Account21.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.SC_Account21.Size = new System.Drawing.Size(374, 27);
+            this.SC_Account21.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
             this.SC_Account21.TabIndex = 112;
             this.SC_Account21.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Account21.UseChangeDate = false;
@@ -353,7 +404,7 @@
             this.SC_Account11.ChangeDate = "";
             this.SC_Account11.ChangeDateWidth = 100;
             this.SC_Account11.Code = "";
-            this.SC_Account11.CodeWidth = 100;
+            this.SC_Account11.CodeWidth = 40;
             this.SC_Account11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Account11.DataCheck = false;
             this.SC_Account11.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -364,8 +415,8 @@
             this.SC_Account11.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account11.Name = "SC_Account11";
             this.SC_Account11.SearchEnable = true;
-            this.SC_Account11.Size = new System.Drawing.Size(415, 27);
-            this.SC_Account11.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.SC_Account11.Size = new System.Drawing.Size(374, 27);
+            this.SC_Account11.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
             this.SC_Account11.TabIndex = 110;
             this.SC_Account11.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Account11.UseChangeDate = false;
@@ -379,7 +430,7 @@
             this.SC_Account20.ChangeDate = "";
             this.SC_Account20.ChangeDateWidth = 100;
             this.SC_Account20.Code = "";
-            this.SC_Account20.CodeWidth = 100;
+            this.SC_Account20.CodeWidth = 40;
             this.SC_Account20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Account20.DataCheck = false;
             this.SC_Account20.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -390,8 +441,8 @@
             this.SC_Account20.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account20.Name = "SC_Account20";
             this.SC_Account20.SearchEnable = true;
-            this.SC_Account20.Size = new System.Drawing.Size(415, 27);
-            this.SC_Account20.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.SC_Account20.Size = new System.Drawing.Size(374, 27);
+            this.SC_Account20.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
             this.SC_Account20.TabIndex = 111;
             this.SC_Account20.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Account20.UseChangeDate = false;
@@ -405,7 +456,7 @@
             this.SC_Account10.ChangeDate = "";
             this.SC_Account10.ChangeDateWidth = 100;
             this.SC_Account10.Code = "";
-            this.SC_Account10.CodeWidth = 350;
+            this.SC_Account10.CodeWidth = 40;
             this.SC_Account10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Account10.DataCheck = false;
             this.SC_Account10.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -416,8 +467,8 @@
             this.SC_Account10.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account10.Name = "SC_Account10";
             this.SC_Account10.SearchEnable = true;
-            this.SC_Account10.Size = new System.Drawing.Size(684, 27);
-            this.SC_Account10.Stype = Search.CKM_SearchControl.SearchType.Key;
+            this.SC_Account10.Size = new System.Drawing.Size(374, 27);
+            this.SC_Account10.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
             this.SC_Account10.TabIndex = 109;
             this.SC_Account10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Account10.UseChangeDate = false;
@@ -1273,66 +1324,6 @@
             this.ckM_Label8.Text = "支払総額";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 30;
-            // 
-            // colPurchaseNum
-            // 
-            this.colPurchaseNum.DataPropertyName = "Number";
-            this.colPurchaseNum.HeaderText = "仕入番号";
-            this.colPurchaseNum.Name = "colPurchaseNum";
-            this.colPurchaseNum.ReadOnly = true;
-            this.colPurchaseNum.Width = 150;
-            // 
-            // colPurchaseDate
-            // 
-            this.colPurchaseDate.DataPropertyName = "RecordedDate";
-            this.colPurchaseDate.HeaderText = "仕入日";
-            this.colPurchaseDate.Name = "colPurchaseDate";
-            this.colPurchaseDate.ReadOnly = true;
-            // 
-            // colScheduledPayment
-            // 
-            this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
-            this.colScheduledPayment.HeaderText = "支払予定額";
-            this.colScheduledPayment.MaxInputLength = 32767;
-            this.colScheduledPayment.Name = "colScheduledPayment";
-            this.colScheduledPayment.ReadOnly = true;
-            this.colScheduledPayment.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colScheduledPayment.UseThousandSeparator = true;
-            // 
-            // colAmountPaid
-            // 
-            this.colAmountPaid.DataPropertyName = "PayConfirmGaku";
-            this.colAmountPaid.HeaderText = "支払済額";
-            this.colAmountPaid.MaxInputLength = 32767;
-            this.colAmountPaid.Name = "colAmountPaid";
-            this.colAmountPaid.ReadOnly = true;
-            this.colAmountPaid.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colAmountPaid.UseThousandSeparator = true;
-            // 
-            // colPaymentTime
-            // 
-            this.colPaymentTime.DataPropertyName = "PayGaku";
-            this.colPaymentTime.HeaderText = "今回支払額";
-            this.colPaymentTime.MaxInputLength = 32767;
-            this.colPaymentTime.Name = "colPaymentTime";
-            this.colPaymentTime.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colPaymentTime.UseThousandSeparator = true;
-            // 
-            // colUnpaidAmount
-            // 
-            this.colUnpaidAmount.DataPropertyName = "UnpaidAmount";
-            this.colUnpaidAmount.HeaderText = "未支払額";
-            this.colUnpaidAmount.MaxInputLength = 32767;
-            this.colUnpaidAmount.Name = "colUnpaidAmount";
-            this.colUnpaidAmount.ReadOnly = true;
-            this.colUnpaidAmount.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colUnpaidAmount.UseThousandSeparator = true;
             // 
             // SiharaiNyuuryoku_2
             // 

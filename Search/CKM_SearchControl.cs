@@ -513,8 +513,8 @@ namespace Search
                 //2020.02.21 add by etz
                 case SearchType.HanyouKey:
                     txtCode.MaxLength = 50;
-                    txtCode.Width = 40;
-                    lblName.Width = 300;
+                    txtCode.Width = 60;
+                    lblName.Width = 350;
                     break;
                 //<---------------2019.6.19 add
                 case SearchType.Shipping:  // 2019.06.28
