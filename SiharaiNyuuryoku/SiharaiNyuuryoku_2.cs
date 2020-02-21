@@ -39,8 +39,6 @@ namespace SiharaiNyuuryoku
         private void SiharaiNyuuryoku_2_Load(object sender, EventArgs e)
         {
             F9Visible = false;
-            txtPaymentDueDate.Enabled = false;
-            txtPaymentDestination.Enabled = false;
             if (type == "1")
             {
                 DataTable dt2 = new DataTable();
@@ -51,10 +49,10 @@ namespace SiharaiNyuuryoku
                     txtPaymentDestination.Text = dt2.Rows[0]["PayeeCD"].ToString();
                     lblPaymentDestination.Text = dt2.Rows[0]["VendorName"].ToString();
                     txtTransferAmount.Text = dt2.Rows[0]["TransferGaku"].ToString();
-                    SC_Payee1.TxtCode.Text = dt2.Rows[0]["BankCD"].ToString();
-                    SC_Payee1.LabelText = dt2.Rows[0]["BankName"].ToString();
-                    SC_Payee2.TxtCode.Text = dt2.Rows[0]["BranchCD"].ToString();
-                    SC_Payee2.LabelText = dt2.Rows[0]["BranchName"].ToString();
+                    SC_BankCD.TxtCode.Text = dt2.Rows[0]["BankCD"].ToString();
+                    SC_BankCD.LabelText = dt2.Rows[0]["BankName"].ToString();
+                    SC_BranchCD.TxtCode.Text = dt2.Rows[0]["BranchCD"].ToString();
+                    SC_BranchCD.LabelText = dt2.Rows[0]["BranchName"].ToString();
                     txtKouzaKBN.Text = dt2.Rows[0]["KouzaKBN"].ToString();
                     txtAccNo.Text = dt2.Rows[0]["KouzaNO"].ToString();
                     txtMeigi.Text = dt2.Rows[0]["KouzaMeigi"].ToString();
@@ -90,10 +88,10 @@ namespace SiharaiNyuuryoku
                     txtPaymentDestination.Text = dt4.Rows[0]["PayeeCD"].ToString();
                     lblPaymentDestination.Text = dt4.Rows[0]["VendorName"].ToString();
                     //txtTransferAmount.Text = dt4.Rows[0]["Number"].ToString();
-                    SC_Payee1.TxtCode.Text = dt4.Rows[0]["BankCD"].ToString();
-                    SC_Payee1.LabelText = dt4.Rows[0]["BankName"].ToString();
-                    SC_Payee2.TxtCode.Text = dt4.Rows[0]["BranchCD"].ToString();
-                    SC_Payee2.LabelText = dt4.Rows[0]["BranchName"].ToString();
+                    SC_BankCD.TxtCode.Text = dt4.Rows[0]["BankCD"].ToString();
+                    SC_BankCD.LabelText = dt4.Rows[0]["BankName"].ToString();
+                    SC_BranchCD.TxtCode.Text = dt4.Rows[0]["BranchCD"].ToString();
+                    SC_BranchCD.LabelText = dt4.Rows[0]["BranchName"].ToString();
                     txtKouzaKBN.Text = dt4.Rows[0]["KouzaKBN"].ToString();
                     txtAccNo.Text = dt4.Rows[0]["KouzaNO"].ToString();
                     txtMeigi.Text = dt4.Rows[0]["KouzaMeigi"].ToString();
@@ -117,6 +115,12 @@ namespace SiharaiNyuuryoku
             }
 
             LabelDataBind();
+        }
+
+        private void SetRequireField()
+        {
+            if(Convert.ToInt32(txtTransferAmount.Text)>0)
+                SC_BankCD.TxtCode.Require(true);
         }
 
         private void LabelDataBind()

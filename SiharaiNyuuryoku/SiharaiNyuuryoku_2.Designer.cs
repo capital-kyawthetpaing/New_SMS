@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPaymentDueDate = new CKM_Controls.CKM_TextBox();
@@ -41,8 +42,8 @@
             this.SC_Account11 = new Search.CKM_SearchControl();
             this.SC_Account20 = new Search.CKM_SearchControl();
             this.SC_Account10 = new Search.CKM_SearchControl();
-            this.SC_Payee2 = new Search.CKM_SearchControl();
-            this.SC_Payee1 = new Search.CKM_SearchControl();
+            this.SC_BranchCD = new Search.CKM_SearchControl();
+            this.SC_BankCD = new Search.CKM_SearchControl();
             this.lblPayGaku1 = new System.Windows.Forms.Label();
             this.lblUnpaidAmount = new System.Windows.Forms.Label();
             this.lblPayGaku = new System.Windows.Forms.Label();
@@ -104,7 +105,7 @@
             this.PanelHeader.Controls.Add(this.txtPaymentDueDate);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
-            this.PanelHeader.Size = new System.Drawing.Size(1244, 104);
+            this.PanelHeader.Size = new System.Drawing.Size(1282, 104);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
@@ -114,7 +115,7 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(710, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(748, 0);
             // 
             // ckM_Label1
             // 
@@ -159,6 +160,7 @@
             this.txtPaymentDueDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDueDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDueDate.DecimalPlace = 0;
+            this.txtPaymentDueDate.Enabled = false;
             this.txtPaymentDueDate.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtPaymentDueDate.IntegerPart = 0;
             this.txtPaymentDueDate.IsCorrectDate = true;
@@ -185,6 +187,7 @@
             this.txtPaymentDestination.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDestination.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPaymentDestination.DecimalPlace = 0;
+            this.txtPaymentDestination.Enabled = false;
             this.txtPaymentDestination.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtPaymentDestination.IntegerPart = 0;
             this.txtPaymentDestination.IsCorrectDate = true;
@@ -225,8 +228,8 @@
             this.panelDetail.Controls.Add(this.SC_Account11);
             this.panelDetail.Controls.Add(this.SC_Account20);
             this.panelDetail.Controls.Add(this.SC_Account10);
-            this.panelDetail.Controls.Add(this.SC_Payee2);
-            this.panelDetail.Controls.Add(this.SC_Payee1);
+            this.panelDetail.Controls.Add(this.SC_BranchCD);
+            this.panelDetail.Controls.Add(this.SC_BankCD);
             this.panelDetail.Controls.Add(this.lblPayGaku1);
             this.panelDetail.Controls.Add(this.lblUnpaidAmount);
             this.panelDetail.Controls.Add(this.lblPayGaku);
@@ -273,7 +276,7 @@
             this.panelDetail.Location = new System.Drawing.Point(0, 160);
             this.panelDetail.Margin = new System.Windows.Forms.Padding(2);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1246, 769);
+            this.panelDetail.Size = new System.Drawing.Size(1284, 769);
             this.panelDetail.TabIndex = 0;
             // 
             // dgvSearchPayment
@@ -281,17 +284,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -301,11 +304,19 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvSearchPayment.Location = new System.Drawing.Point(64, 41);
+            this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
             this.dgvSearchPayment.Name = "dgvSearchPayment";
-            this.dgvSearchPayment.Size = new System.Drawing.Size(1000, 250);
+            this.dgvSearchPayment.Size = new System.Drawing.Size(750, 300);
             this.dgvSearchPayment.TabIndex = 113;
             this.dgvSearchPayment.UseRowNo = true;
             this.dgvSearchPayment.UseSetting = true;
@@ -323,7 +334,7 @@
             this.SC_Account21.IsCopy = false;
             this.SC_Account21.LabelText = "";
             this.SC_Account21.LabelVisible = true;
-            this.SC_Account21.Location = new System.Drawing.Point(799, 666);
+            this.SC_Account21.Location = new System.Drawing.Point(793, 669);
             this.SC_Account21.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account21.Name = "SC_Account21";
             this.SC_Account21.SearchEnable = true;
@@ -349,7 +360,7 @@
             this.SC_Account11.IsCopy = false;
             this.SC_Account11.LabelText = "";
             this.SC_Account11.LabelVisible = true;
-            this.SC_Account11.Location = new System.Drawing.Point(799, 632);
+            this.SC_Account11.Location = new System.Drawing.Point(793, 635);
             this.SC_Account11.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account11.Name = "SC_Account11";
             this.SC_Account11.SearchEnable = true;
@@ -375,7 +386,7 @@
             this.SC_Account20.IsCopy = false;
             this.SC_Account20.LabelText = "";
             this.SC_Account20.LabelVisible = true;
-            this.SC_Account20.Location = new System.Drawing.Point(334, 666);
+            this.SC_Account20.Location = new System.Drawing.Point(328, 669);
             this.SC_Account20.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account20.Name = "SC_Account20";
             this.SC_Account20.SearchEnable = true;
@@ -394,19 +405,19 @@
             this.SC_Account10.ChangeDate = "";
             this.SC_Account10.ChangeDateWidth = 100;
             this.SC_Account10.Code = "";
-            this.SC_Account10.CodeWidth = 100;
+            this.SC_Account10.CodeWidth = 350;
             this.SC_Account10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Account10.DataCheck = false;
             this.SC_Account10.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.SC_Account10.IsCopy = false;
             this.SC_Account10.LabelText = "";
             this.SC_Account10.LabelVisible = true;
-            this.SC_Account10.Location = new System.Drawing.Point(334, 632);
+            this.SC_Account10.Location = new System.Drawing.Point(328, 635);
             this.SC_Account10.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Account10.Name = "SC_Account10";
             this.SC_Account10.SearchEnable = true;
-            this.SC_Account10.Size = new System.Drawing.Size(415, 27);
-            this.SC_Account10.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.SC_Account10.Size = new System.Drawing.Size(684, 27);
+            this.SC_Account10.Stype = Search.CKM_SearchControl.SearchType.Key;
             this.SC_Account10.TabIndex = 109;
             this.SC_Account10.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Account10.UseChangeDate = false;
@@ -414,62 +425,62 @@
             this.SC_Account10.Value2 = null;
             this.SC_Account10.Value3 = null;
             // 
-            // SC_Payee2
+            // SC_BranchCD
             // 
-            this.SC_Payee2.AutoSize = true;
-            this.SC_Payee2.ChangeDate = "";
-            this.SC_Payee2.ChangeDateWidth = 100;
-            this.SC_Payee2.Code = "";
-            this.SC_Payee2.CodeWidth = 130;
-            this.SC_Payee2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Payee2.DataCheck = false;
-            this.SC_Payee2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Payee2.IsCopy = false;
-            this.SC_Payee2.LabelText = "";
-            this.SC_Payee2.LabelVisible = true;
-            this.SC_Payee2.Location = new System.Drawing.Point(790, 366);
-            this.SC_Payee2.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Payee2.Name = "SC_Payee2";
-            this.SC_Payee2.SearchEnable = true;
-            this.SC_Payee2.Size = new System.Drawing.Size(444, 27);
-            this.SC_Payee2.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.SC_Payee2.TabIndex = 108;
-            this.SC_Payee2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Payee2.UseChangeDate = false;
-            this.SC_Payee2.Value1 = null;
-            this.SC_Payee2.Value2 = null;
-            this.SC_Payee2.Value3 = null;
+            this.SC_BranchCD.AutoSize = true;
+            this.SC_BranchCD.ChangeDate = "";
+            this.SC_BranchCD.ChangeDateWidth = 100;
+            this.SC_BranchCD.Code = "";
+            this.SC_BranchCD.CodeWidth = 30;
+            this.SC_BranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_BranchCD.DataCheck = false;
+            this.SC_BranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_BranchCD.IsCopy = false;
+            this.SC_BranchCD.LabelText = "";
+            this.SC_BranchCD.LabelVisible = true;
+            this.SC_BranchCD.Location = new System.Drawing.Point(784, 361);
+            this.SC_BranchCD.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_BranchCD.Name = "SC_BranchCD";
+            this.SC_BranchCD.SearchEnable = true;
+            this.SC_BranchCD.Size = new System.Drawing.Size(414, 27);
+            this.SC_BranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
+            this.SC_BranchCD.TabIndex = 108;
+            this.SC_BranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_BranchCD.UseChangeDate = false;
+            this.SC_BranchCD.Value1 = null;
+            this.SC_BranchCD.Value2 = null;
+            this.SC_BranchCD.Value3 = null;
             // 
-            // SC_Payee1
+            // SC_BankCD
             // 
-            this.SC_Payee1.AutoSize = true;
-            this.SC_Payee1.ChangeDate = "";
-            this.SC_Payee1.ChangeDateWidth = 100;
-            this.SC_Payee1.Code = "";
-            this.SC_Payee1.CodeWidth = 130;
-            this.SC_Payee1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_Payee1.DataCheck = false;
-            this.SC_Payee1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_Payee1.IsCopy = false;
-            this.SC_Payee1.LabelText = "";
-            this.SC_Payee1.LabelVisible = true;
-            this.SC_Payee1.Location = new System.Drawing.Point(334, 366);
-            this.SC_Payee1.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_Payee1.Name = "SC_Payee1";
-            this.SC_Payee1.SearchEnable = true;
-            this.SC_Payee1.Size = new System.Drawing.Size(444, 27);
-            this.SC_Payee1.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.SC_Payee1.TabIndex = 107;
-            this.SC_Payee1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_Payee1.UseChangeDate = false;
-            this.SC_Payee1.Value1 = null;
-            this.SC_Payee1.Value2 = null;
-            this.SC_Payee1.Value3 = null;
+            this.SC_BankCD.AutoSize = true;
+            this.SC_BankCD.ChangeDate = "";
+            this.SC_BankCD.ChangeDateWidth = 100;
+            this.SC_BankCD.Code = "";
+            this.SC_BankCD.CodeWidth = 40;
+            this.SC_BankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_BankCD.DataCheck = false;
+            this.SC_BankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_BankCD.IsCopy = false;
+            this.SC_BankCD.LabelText = "";
+            this.SC_BankCD.LabelVisible = true;
+            this.SC_BankCD.Location = new System.Drawing.Point(328, 361);
+            this.SC_BankCD.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_BankCD.Name = "SC_BankCD";
+            this.SC_BankCD.SearchEnable = true;
+            this.SC_BankCD.Size = new System.Drawing.Size(424, 27);
+            this.SC_BankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
+            this.SC_BankCD.TabIndex = 107;
+            this.SC_BankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_BankCD.UseChangeDate = false;
+            this.SC_BankCD.Value1 = null;
+            this.SC_BankCD.Value2 = null;
+            this.SC_BankCD.Value3 = null;
             // 
             // lblPayGaku1
             // 
             this.lblPayGaku1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayGaku1.Location = new System.Drawing.Point(124, 349);
+            this.lblPayGaku1.Location = new System.Drawing.Point(118, 344);
             this.lblPayGaku1.Name = "lblPayGaku1";
             this.lblPayGaku1.Size = new System.Drawing.Size(100, 19);
             this.lblPayGaku1.TabIndex = 106;
@@ -478,7 +489,7 @@
             // lblUnpaidAmount
             // 
             this.lblUnpaidAmount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblUnpaidAmount.Location = new System.Drawing.Point(763, 302);
+            this.lblUnpaidAmount.Location = new System.Drawing.Point(659, 312);
             this.lblUnpaidAmount.Name = "lblUnpaidAmount";
             this.lblUnpaidAmount.Size = new System.Drawing.Size(100, 19);
             this.lblUnpaidAmount.TabIndex = 105;
@@ -487,7 +498,7 @@
             // lblPayGaku
             // 
             this.lblPayGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayGaku.Location = new System.Drawing.Point(662, 302);
+            this.lblPayGaku.Location = new System.Drawing.Point(558, 312);
             this.lblPayGaku.Name = "lblPayGaku";
             this.lblPayGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayGaku.TabIndex = 104;
@@ -496,7 +507,7 @@
             // lblPayComfirmGaku
             // 
             this.lblPayComfirmGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayComfirmGaku.Location = new System.Drawing.Point(561, 302);
+            this.lblPayComfirmGaku.Location = new System.Drawing.Point(457, 312);
             this.lblPayComfirmGaku.Name = "lblPayComfirmGaku";
             this.lblPayComfirmGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayComfirmGaku.TabIndex = 103;
@@ -505,7 +516,7 @@
             // lblPayPlanGaku
             // 
             this.lblPayPlanGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayPlanGaku.Location = new System.Drawing.Point(460, 302);
+            this.lblPayPlanGaku.Location = new System.Drawing.Point(356, 312);
             this.lblPayPlanGaku.Name = "lblPayPlanGaku";
             this.lblPayPlanGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayPlanGaku.TabIndex = 102;
@@ -527,7 +538,7 @@
             this.txtSettlementDate2.IsNumber = true;
             this.txtSettlementDate2.IsShop = false;
             this.txtSettlementDate2.Length = 10;
-            this.txtSettlementDate2.Location = new System.Drawing.Point(334, 605);
+            this.txtSettlementDate2.Location = new System.Drawing.Point(328, 609);
             this.txtSettlementDate2.MaxLength = 10;
             this.txtSettlementDate2.MoveNext = true;
             this.txtSettlementDate2.Name = "txtSettlementDate2";
@@ -552,7 +563,7 @@
             this.txtElectronicRecordNo.IsNumber = true;
             this.txtElectronicRecordNo.IsShop = false;
             this.txtElectronicRecordNo.Length = 10;
-            this.txtElectronicRecordNo.Location = new System.Drawing.Point(334, 587);
+            this.txtElectronicRecordNo.Location = new System.Drawing.Point(328, 590);
             this.txtElectronicRecordNo.MaxLength = 10;
             this.txtElectronicRecordNo.MoveNext = true;
             this.txtElectronicRecordNo.Name = "txtElectronicRecordNo";
@@ -576,7 +587,7 @@
             this.txtBillDate.IsNumber = true;
             this.txtBillDate.IsShop = false;
             this.txtBillDate.Length = 10;
-            this.txtBillDate.Location = new System.Drawing.Point(334, 558);
+            this.txtBillDate.Location = new System.Drawing.Point(328, 563);
             this.txtBillDate.MaxLength = 10;
             this.txtBillDate.MoveNext = true;
             this.txtBillDate.Name = "txtBillDate";
@@ -601,7 +612,7 @@
             this.txtBillNo.IsNumber = true;
             this.txtBillNo.IsShop = false;
             this.txtBillNo.Length = 10;
-            this.txtBillNo.Location = new System.Drawing.Point(334, 541);
+            this.txtBillNo.Location = new System.Drawing.Point(328, 544);
             this.txtBillNo.MaxLength = 10;
             this.txtBillNo.MoveNext = true;
             this.txtBillNo.Name = "txtBillNo";
@@ -618,7 +629,7 @@
             this.ckM_Label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label23.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label23.Location = new System.Drawing.Point(276, 674);
+            this.ckM_Label23.Location = new System.Drawing.Point(270, 677);
             this.ckM_Label23.Name = "ckM_Label23";
             this.ckM_Label23.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label23.TabIndex = 87;
@@ -635,7 +646,7 @@
             this.ckM_Label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label24.Location = new System.Drawing.Point(276, 639);
+            this.ckM_Label24.Location = new System.Drawing.Point(270, 642);
             this.ckM_Label24.Name = "ckM_Label24";
             this.ckM_Label24.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label24.TabIndex = 86;
@@ -652,7 +663,7 @@
             this.ckM_Label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label25.Location = new System.Drawing.Point(290, 607);
+            this.ckM_Label25.Location = new System.Drawing.Point(284, 611);
             this.ckM_Label25.Name = "ckM_Label25";
             this.ckM_Label25.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label25.TabIndex = 85;
@@ -669,7 +680,7 @@
             this.ckM_Label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label26.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label26.Location = new System.Drawing.Point(254, 590);
+            this.ckM_Label26.Location = new System.Drawing.Point(248, 593);
             this.ckM_Label26.Name = "ckM_Label26";
             this.ckM_Label26.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label26.TabIndex = 84;
@@ -686,7 +697,7 @@
             this.ckM_Label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label27.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label27.Location = new System.Drawing.Point(289, 561);
+            this.ckM_Label27.Location = new System.Drawing.Point(283, 566);
             this.ckM_Label27.Name = "ckM_Label27";
             this.ckM_Label27.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label27.TabIndex = 83;
@@ -703,7 +714,7 @@
             this.ckM_Label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label28.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label28.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label28.Location = new System.Drawing.Point(277, 543);
+            this.ckM_Label28.Location = new System.Drawing.Point(271, 546);
             this.ckM_Label28.Name = "ckM_Label28";
             this.ckM_Label28.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label28.TabIndex = 82;
@@ -727,7 +738,7 @@
             this.txtOther2.IsNumber = true;
             this.txtOther2.IsShop = false;
             this.txtOther2.Length = 10;
-            this.txtOther2.Location = new System.Drawing.Point(124, 670);
+            this.txtOther2.Location = new System.Drawing.Point(118, 673);
             this.txtOther2.MaxLength = 10;
             this.txtOther2.MoveNext = true;
             this.txtOther2.Name = "txtOther2";
@@ -752,7 +763,7 @@
             this.txtOther1.IsNumber = true;
             this.txtOther1.IsShop = false;
             this.txtOther1.Length = 10;
-            this.txtOther1.Location = new System.Drawing.Point(124, 635);
+            this.txtOther1.Location = new System.Drawing.Point(118, 638);
             this.txtOther1.MaxLength = 10;
             this.txtOther1.MoveNext = true;
             this.txtOther1.Name = "txtOther1";
@@ -777,7 +788,7 @@
             this.txtElectronicBone.IsNumber = true;
             this.txtElectronicBone.IsShop = false;
             this.txtElectronicBone.Length = 10;
-            this.txtElectronicBone.Location = new System.Drawing.Point(124, 587);
+            this.txtElectronicBone.Location = new System.Drawing.Point(118, 590);
             this.txtElectronicBone.MaxLength = 10;
             this.txtElectronicBone.MoveNext = true;
             this.txtElectronicBone.Name = "txtElectronicBone";
@@ -802,7 +813,7 @@
             this.txtBill.IsNumber = true;
             this.txtBill.IsShop = false;
             this.txtBill.Length = 10;
-            this.txtBill.Location = new System.Drawing.Point(124, 542);
+            this.txtBill.Location = new System.Drawing.Point(118, 545);
             this.txtBill.MaxLength = 10;
             this.txtBill.MoveNext = true;
             this.txtBill.Name = "txtBill";
@@ -827,7 +838,7 @@
             this.txtOffsetGaku.IsNumber = true;
             this.txtOffsetGaku.IsShop = false;
             this.txtOffsetGaku.Length = 10;
-            this.txtOffsetGaku.Location = new System.Drawing.Point(124, 516);
+            this.txtOffsetGaku.Location = new System.Drawing.Point(118, 519);
             this.txtOffsetGaku.MaxLength = 10;
             this.txtOffsetGaku.MoveNext = true;
             this.txtOffsetGaku.Name = "txtOffsetGaku";
@@ -852,7 +863,7 @@
             this.txtCash.IsNumber = true;
             this.txtCash.IsShop = false;
             this.txtCash.Length = 10;
-            this.txtCash.Location = new System.Drawing.Point(124, 492);
+            this.txtCash.Location = new System.Drawing.Point(118, 495);
             this.txtCash.MaxLength = 10;
             this.txtCash.MoveNext = true;
             this.txtCash.Name = "txtCash";
@@ -870,7 +881,7 @@
             this.ckM_Label22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label22.Location = new System.Drawing.Point(68, 673);
+            this.ckM_Label22.Location = new System.Drawing.Point(62, 676);
             this.ckM_Label22.Name = "ckM_Label22";
             this.ckM_Label22.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label22.TabIndex = 75;
@@ -887,7 +898,7 @@
             this.ckM_Label21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label21.Location = new System.Drawing.Point(68, 638);
+            this.ckM_Label21.Location = new System.Drawing.Point(62, 641);
             this.ckM_Label21.Name = "ckM_Label21";
             this.ckM_Label21.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label21.TabIndex = 74;
@@ -904,7 +915,7 @@
             this.ckM_Label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label20.Location = new System.Drawing.Point(92, 590);
+            this.ckM_Label20.Location = new System.Drawing.Point(86, 593);
             this.ckM_Label20.Name = "ckM_Label20";
             this.ckM_Label20.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label20.TabIndex = 73;
@@ -921,7 +932,7 @@
             this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label19.Location = new System.Drawing.Point(92, 544);
+            this.ckM_Label19.Location = new System.Drawing.Point(86, 547);
             this.ckM_Label19.Name = "ckM_Label19";
             this.ckM_Label19.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label19.TabIndex = 72;
@@ -938,7 +949,7 @@
             this.ckM_Label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label18.Location = new System.Drawing.Point(67, 518);
+            this.ckM_Label18.Location = new System.Drawing.Point(61, 521);
             this.ckM_Label18.Name = "ckM_Label18";
             this.ckM_Label18.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label18.TabIndex = 71;
@@ -955,7 +966,7 @@
             this.ckM_Label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label17.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label17.Location = new System.Drawing.Point(92, 494);
+            this.ckM_Label17.Location = new System.Drawing.Point(86, 497);
             this.ckM_Label17.Name = "ckM_Label17";
             this.ckM_Label17.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label17.TabIndex = 70;
@@ -979,7 +990,7 @@
             this.txtAmount.IsNumber = true;
             this.txtAmount.IsShop = false;
             this.txtAmount.Length = 10;
-            this.txtAmount.Location = new System.Drawing.Point(334, 472);
+            this.txtAmount.Location = new System.Drawing.Point(328, 469);
             this.txtAmount.MaxLength = 10;
             this.txtAmount.MoveNext = true;
             this.txtAmount.Name = "txtAmount";
@@ -1003,7 +1014,7 @@
             this.txtFeeKBN.IsNumber = true;
             this.txtFeeKBN.IsShop = false;
             this.txtFeeKBN.Length = 10;
-            this.txtFeeKBN.Location = new System.Drawing.Point(334, 454);
+            this.txtFeeKBN.Location = new System.Drawing.Point(328, 450);
             this.txtFeeKBN.MaxLength = 10;
             this.txtFeeKBN.MoveNext = true;
             this.txtFeeKBN.Name = "txtFeeKBN";
@@ -1027,7 +1038,7 @@
             this.txtMeigi.IsNumber = true;
             this.txtMeigi.IsShop = false;
             this.txtMeigi.Length = 40;
-            this.txtMeigi.Location = new System.Drawing.Point(334, 437);
+            this.txtMeigi.Location = new System.Drawing.Point(328, 426);
             this.txtMeigi.MaxLength = 20;
             this.txtMeigi.MoveNext = true;
             this.txtMeigi.Name = "txtMeigi";
@@ -1051,7 +1062,7 @@
             this.txtAccNo.IsNumber = true;
             this.txtAccNo.IsShop = false;
             this.txtAccNo.Length = 10;
-            this.txtAccNo.Location = new System.Drawing.Point(334, 419);
+            this.txtAccNo.Location = new System.Drawing.Point(328, 407);
             this.txtAccNo.MaxLength = 10;
             this.txtAccNo.MoveNext = true;
             this.txtAccNo.Name = "txtAccNo";
@@ -1069,7 +1080,7 @@
             this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label16.Location = new System.Drawing.Point(356, 458);
+            this.ckM_Label16.Location = new System.Drawing.Point(350, 454);
             this.ckM_Label16.Name = "ckM_Label16";
             this.ckM_Label16.Size = new System.Drawing.Size(118, 12);
             this.ckM_Label16.TabIndex = 65;
@@ -1086,7 +1097,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(276, 475);
+            this.ckM_Label15.Location = new System.Drawing.Point(270, 472);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label15.TabIndex = 64;
@@ -1103,7 +1114,7 @@
             this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label14.Location = new System.Drawing.Point(264, 458);
+            this.ckM_Label14.Location = new System.Drawing.Point(258, 454);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label14.TabIndex = 63;
@@ -1120,7 +1131,7 @@
             this.ckM_Label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label13.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label13.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label13.Location = new System.Drawing.Point(290, 439);
+            this.ckM_Label13.Location = new System.Drawing.Point(284, 428);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label13.TabIndex = 62;
@@ -1137,7 +1148,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(278, 422);
+            this.ckM_Label12.Location = new System.Drawing.Point(272, 410);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label12.TabIndex = 61;
@@ -1154,7 +1165,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(356, 404);
+            this.ckM_Label11.Location = new System.Drawing.Point(350, 390);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(118, 12);
             this.ckM_Label11.TabIndex = 60;
@@ -1178,7 +1189,7 @@
             this.txtKouzaKBN.IsNumber = true;
             this.txtKouzaKBN.IsShop = false;
             this.txtKouzaKBN.Length = 10;
-            this.txtKouzaKBN.Location = new System.Drawing.Point(334, 402);
+            this.txtKouzaKBN.Location = new System.Drawing.Point(328, 388);
             this.txtKouzaKBN.MaxLength = 10;
             this.txtKouzaKBN.MoveNext = true;
             this.txtKouzaKBN.Name = "txtKouzaKBN";
@@ -1196,7 +1207,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(289, 378);
+            this.ckM_Label10.Location = new System.Drawing.Point(283, 369);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 57;
@@ -1220,7 +1231,7 @@
             this.txtTransferAmount.IsNumber = true;
             this.txtTransferAmount.IsShop = false;
             this.txtTransferAmount.Length = 10;
-            this.txtTransferAmount.Location = new System.Drawing.Point(124, 374);
+            this.txtTransferAmount.Location = new System.Drawing.Point(118, 369);
             this.txtTransferAmount.MaxLength = 10;
             this.txtTransferAmount.MoveNext = true;
             this.txtTransferAmount.Name = "txtTransferAmount";
@@ -1238,7 +1249,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(80, 378);
+            this.ckM_Label9.Location = new System.Drawing.Point(74, 373);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label9.TabIndex = 54;
@@ -1255,7 +1266,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(68, 352);
+            this.ckM_Label8.Location = new System.Drawing.Point(62, 347);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 53;
@@ -1267,20 +1278,22 @@
             // 
             this.colChk.HeaderText = "";
             this.colChk.Name = "colChk";
-            this.colChk.Width = 50;
+            this.colChk.Width = 30;
             // 
             // colPurchaseNum
             // 
             this.colPurchaseNum.DataPropertyName = "Number";
             this.colPurchaseNum.HeaderText = "仕入番号";
             this.colPurchaseNum.Name = "colPurchaseNum";
-            this.colPurchaseNum.Width = 200;
+            this.colPurchaseNum.ReadOnly = true;
+            this.colPurchaseNum.Width = 150;
             // 
             // colPurchaseDate
             // 
             this.colPurchaseDate.DataPropertyName = "RecordedDate";
             this.colPurchaseDate.HeaderText = "仕入日";
             this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.ReadOnly = true;
             // 
             // colScheduledPayment
             // 
@@ -1288,6 +1301,7 @@
             this.colScheduledPayment.HeaderText = "支払予定額";
             this.colScheduledPayment.MaxInputLength = 32767;
             this.colScheduledPayment.Name = "colScheduledPayment";
+            this.colScheduledPayment.ReadOnly = true;
             this.colScheduledPayment.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colScheduledPayment.UseThousandSeparator = true;
             // 
@@ -1297,6 +1311,7 @@
             this.colAmountPaid.HeaderText = "支払済額";
             this.colAmountPaid.MaxInputLength = 32767;
             this.colAmountPaid.Name = "colAmountPaid";
+            this.colAmountPaid.ReadOnly = true;
             this.colAmountPaid.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colAmountPaid.UseThousandSeparator = true;
             // 
@@ -1315,6 +1330,7 @@
             this.colUnpaidAmount.HeaderText = "未支払額";
             this.colUnpaidAmount.MaxInputLength = 32767;
             this.colUnpaidAmount.Name = "colUnpaidAmount";
+            this.colUnpaidAmount.ReadOnly = true;
             this.colUnpaidAmount.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount.UseThousandSeparator = true;
             // 
@@ -1322,13 +1338,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 961);
+            this.ClientSize = new System.Drawing.Size(1284, 961);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "SiharaiNyuuryoku_2";
             this.PanelHeaderHeight = 160;
-            this.Text = "Search_Payment";
+            this.Text = "SiharaiNyuuryoku_2";
             this.Load += new System.EventHandler(this.SiharaiNyuuryoku_2_Load);
             this.Controls.SetChildIndex(this.panelDetail, 0);
             this.PanelHeader.ResumeLayout(false);
@@ -1398,8 +1414,8 @@
         private System.Windows.Forms.Label lblPayPlanGaku;
         
         private System.Windows.Forms.Label lblPayGaku1;
-        private Search.CKM_SearchControl SC_Payee2;
-        private Search.CKM_SearchControl SC_Payee1;
+        private Search.CKM_SearchControl SC_BranchCD;
+        private Search.CKM_SearchControl SC_BankCD;
         private Search.CKM_SearchControl SC_Account21;
         private Search.CKM_SearchControl SC_Account11;
         private Search.CKM_SearchControl SC_Account20;
