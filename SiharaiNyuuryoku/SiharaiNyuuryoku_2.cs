@@ -20,7 +20,7 @@ namespace SiharaiNyuuryoku
         D_Pay_Entity dpe = new D_Pay_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
         string type = string.Empty;
-        public SiharaiNyuuryoku_2(DataTable dt)
+        public SiharaiNyuuryoku_2(DataTable dt,DataTable dt1=null)
         {
             InitializeComponent();
 
