@@ -110,6 +110,7 @@ namespace SiharaiNyuuryoku
             //    }
             //}
             #endregion
+
             BindData();
 
             LabelDataBind();
