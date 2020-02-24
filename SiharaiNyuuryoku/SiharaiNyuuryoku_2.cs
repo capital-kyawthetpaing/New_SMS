@@ -25,9 +25,17 @@ namespace SiharaiNyuuryoku
         public SiharaiNyuuryoku_2(String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
         {
             InitializeComponent();
-            dtSiharai1 = dt.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
-            if(dt1!=null)
-                dtSiharai2 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
+
+            DataRow[] tblROWS = dt.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
+            if (tblROWS.Length > 0)
+                dtSiharai1 = tblROWS.CopyToDataTable();
+            if (dt1!=null)
+            {
+                DataRow[] tblROWS1 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
+                if (tblROWS1.Length > 0)
+                    dtSiharai2 = tblROWS1.CopyToDataTable();
+            }
+                //dtSiharai2 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
 
         }
 
