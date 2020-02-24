@@ -138,7 +138,7 @@ namespace SiharaiNyuuryoku
             if (dgvPayment.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = this.dgvPayment.SelectedRows[0];
-                dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
+                dppe.PayPlanDate = row.Cells["PayPlanDate"].Value.ToString();
                 dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
                 if (OperationMode == EOperationMode.INSERT)
                 {
