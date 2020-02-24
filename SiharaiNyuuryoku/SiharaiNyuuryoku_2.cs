@@ -20,19 +20,19 @@ namespace SiharaiNyuuryoku
         D_Pay_Entity dpe = new D_Pay_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
         string type = string.Empty;
-        public SiharaiNyuuryoku_2(string LargePayNO, string PayNo, string PayeeCD, string PayPlanDate, string no)
+        public SiharaiNyuuryoku_2(DataTable dt)
         {
             InitializeComponent();
 
-            dpe.LargePayNO = LargePayNO;
-            dpe.PayNo = PayNo;
-            dpe.PayeeCD = PayeeCD;
-            dpe.PayPlanDate = PayPlanDate;
+            //dpe.LargePayNO = LargePayNO;
+            //dpe.PayNo = PayNo;
+            //dpe.PayeeCD = PayeeCD;
+            //dpe.PayPlanDate = PayPlanDate;
 
-            dppe.PayPlanDate = PayPlanDate;
-            dppe.PayeeCD = PayeeCD;
-            dppe.PaymentTotal =
-            type = no;
+            //dppe.PayPlanDate = PayPlanDate;
+            //dppe.PayeeCD = PayeeCD;
+            //dppe.PaymentTotal =
+            //type = no;
 
         }
 
