@@ -185,6 +185,8 @@ namespace SiharaiNyuuryoku
                     DisablePanel(PanelDetail);
                     ScPaymentProcessNum.Enabled = false;
                     ScPaymentNum.Enabled = false;
+                    ScPayee.Enabled = true;
+                    ScPayee.SearchEnable = true;
                     txtDueDate1.Focus();
                     F9Visible = false;
                     F12Enable = true;
