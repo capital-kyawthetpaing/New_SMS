@@ -150,16 +150,24 @@ namespace SiharaiNyuuryoku
                 {
                     mode = "1";
                     dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
-                    SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD, dt4, null);
-                    f2.ShowDialog();
+                    if(dt4.Rows.Count > 0)
+                    {
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayeeCD, dppe.PayPlanDate, dt4, null);
+                        f2.ShowDialog();
+                    }
+                  
                 }
                 else
                 {
                     mode = "2";
                     dt2 = sibl.D_Pay_Select2(dpe);
                     dt3 = sibl.D_Pay_Select3(dpe);
-                    SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayPlanDate, dppe.PayeeCD, dt3,dt2);
-                    f2.ShowDialog();
+                    if(dt3.Rows.Count > 0)
+                    {
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayeeCD, dppe.PayPlanDate,  dt3, dt2);
+                        f2.ShowDialog();
+                    }
+                   
                 }             
             }
         
