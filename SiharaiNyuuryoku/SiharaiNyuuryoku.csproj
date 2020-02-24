@@ -62,6 +62,12 @@
     <Compile Include="SiharaiNyuuryoku.Designer.cs">
       <DependentUpon>SiharaiNyuuryoku.cs</DependentUpon>
     </Compile>
+    <Compile Include="SiharaiNyuuryoku_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiharaiNyuuryoku_2.Designer.cs">
+      <DependentUpon>SiharaiNyuuryoku_2.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +80,9 @@
     </Compile>
     <EmbeddedResource Include="SiharaiNyuuryoku.resx">
       <DependentUpon>SiharaiNyuuryoku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiharaiNyuuryoku_2.resx">
+      <DependentUpon>SiharaiNyuuryoku_2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

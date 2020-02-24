@@ -26,8 +26,10 @@ namespace SiharaiNyuuryoku
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
-        int type = 0;
+        int type = 0; string mode = "0";
         string vendorCD = string.Empty;
+
+       DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable(); DataTable dt4 = new DataTable();
 
         public FrmSiharaiNyuuryoku()
         {
@@ -50,7 +52,11 @@ namespace SiharaiNyuuryoku
             ScPaymentProcessNum.SearchEnable = false;
             ScPaymentNum.SearchEnable = false;
 
-            btnF10Show.Enabled = false;
+            Btn_F7.Enabled = true;
+            Btn_F7.Text = "編集(F7)";
+           
+
+            btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
 
             mse.StaffCD = InOperatorCD;
@@ -71,6 +77,7 @@ namespace SiharaiNyuuryoku
             btnSelectAll.Enabled = false;
 
             txtDueDate1.Focus();
+           
         }
 
         private void SetRequireField()
@@ -114,6 +121,9 @@ namespace SiharaiNyuuryoku
                     else
                         PreviousCtrl.Focus();
                     break;
+                case 7:
+                    F7();
+                    break;
                 case 10:
                     F10();
                     break;
@@ -121,6 +131,38 @@ namespace SiharaiNyuuryoku
                     F12();
                     break;
             }
+        }
+
+        private void F7()
+        {
+            if (dgvPayment.SelectedRows.Count != 0)
+            {
+                DataGridViewRow row = this.dgvPayment.SelectedRows[0];
+                dppe.PayPlanDate = row.Cells["PayPlanDate"].Value.ToString();
+                dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    mode = "1";
+                    //FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dt2,dt3, mode);
+                }
+                else
+                {
+                    mode = "2";
+                }
+                //FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate, dppe.PayeeCD, mode);
+                //f2.showdialog();
+                //row.Cells["ColumnName"].Value
+            }
+            //foreach (DataGridViewRow row in dgvPayment.Rows)
+            //{
+            //    bool isSelected = Convert.ToBoolean(row.Cells["colChk"].Value);
+            //    if (isSelected)
+            //    {
+            //     
+            //        //FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
+            //        //f2.Show();                         
+            //    }
+            //}
         }
 
         private void ChangeMode(EOperationMode OperationMode)
@@ -138,7 +180,7 @@ namespace SiharaiNyuuryoku
                     txtDueDate1.Focus();
                     F9Visible = false;
                     F12Enable = true;
-                    btnF10Show.Enabled = false;
+                    btnF10Show.Enabled = true;
                     F11Enable = false;
                     break;
                 case EOperationMode.UPDATE:
@@ -167,18 +209,10 @@ namespace SiharaiNyuuryoku
             type = 3;
             if (ErrorCheck(10))
             {
-                //txtPaymentDate.Text = DateTime.Today.ToShortDateString();
-                //ScStaff.TxtCode.Text = InOperatorCD;
-                //mse.ChangeDate = DateTime.Now.ToShortDateString();
-                //DataTable dtstaff = new DataTable();
-                //dtstaff = sibl.M_Staff_Select(mse);
-                //if (dtstaff.Rows.Count > 0)
-                //{
-                //    ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-                //}
                 dppe.PayPlanDateFrom = txtDueDate1.Text;
                 dppe.PayPlanDateTo = txtDueDate2.Text;
                 dppe.PayeeCD = ScPayee.TxtCode.Text;
+                dppe.Operator = InOperatorCD;
                 DataTable dtpayplan = new DataTable();
                 dtpayplan = sibl.D_Pay_SelectForPayPlanDate1(dppe);
                 if (dtpayplan.Rows.Count > 0)
@@ -186,13 +220,24 @@ namespace SiharaiNyuuryoku
                     txtPaymentDate.Text = DateTime.Today.ToShortDateString();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
+                    cboPaymentType.SelectedText = "振込";
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
+                    txtBillSettleDate.Text = string.Empty;
                     dgvPayment.DataSource = dtpayplan;
+                    foreach (DataGridViewRow row1 in dgvPayment.Rows)
+                    {
+                        if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
+                        {
+                            row1.Cells["colChk"].Value = true;
+                        }
+                    }
                     LabelDataBind();
                 }
 
-                Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
-                sp.ShowDialog();
+                dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
+                EnablePanel(PanelDetail);
+                //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
+                //sp.ShowDialog();
             }
         }
 
@@ -471,7 +516,9 @@ namespace SiharaiNyuuryoku
 
                 LabelDataBind();
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
-            }
+            }           
+            dt2 = sibl.D_Pay_Select2(dpe);                   
+            dt3 = sibl.D_Pay_Select3(dpe);
         }
 
         /// <summary>
@@ -522,6 +569,11 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        private void btnF10Show_Click(object sender, EventArgs e)
+        {
+            F10();
+        }
+
         #region KeyEvent
         private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
@@ -536,8 +588,8 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
-                    sp.ShowDialog();
+                    //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
+                    //sp.ShowDialog();
                 }
             }
         }
@@ -555,7 +607,32 @@ namespace SiharaiNyuuryoku
             }
         }
 
-
         #endregion
+        private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                F10();
+            }
+        }
+
+        private void dgvPayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {          
+            //if ( dgvPayment.CurrentRow.Cells["colChk"].Selected = true)              
+            //{
+            //    dppe.PayPlanDate = dgvPayment.CurrentRow.Cells["colPaymentdueDate"].Value.ToString();
+            //    dppe.PayeeCD = dgvPayment.CurrentRow.Cells["colPayeeCD"].Value.ToString();
+            //    if (OperationMode == EOperationMode.INSERT)
+            //    {
+            //       mode = "1";
+            //    }
+            //    else
+            //    {
+            //        mode = "2"; 
+            //    }
+                //FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
+                //f2.Show();
+            //}           
+        }
     }
 }
