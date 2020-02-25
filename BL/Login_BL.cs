@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using Entity;
 using DL;
 using System.Data;
-
+using System.Deployment;
+using System.Diagnostics;
 namespace BL
 {
     public class Login_BL : Base_BL
@@ -139,9 +140,17 @@ namespace BL
         {
             // INIﾌｧｲﾙ取得
             // 実行モジュールと同一フォルダのファイルを取得
-           // System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-            //  string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
-            string filePath = @"C:\\SMS\\AppData\\CKM.ini";
+            string filePath = "";
+            //System.Diagnostics.Debug 
+            if (Debugger.IsAttached)
+            {
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
+            }
+            else
+            {
+                filePath = @"C:\\SMS\\AppData\\CKM.ini";
+            }
             if (System.IO.File.Exists(filePath))
             {
                 this.GetInformationOfIniFile(filePath);
@@ -221,9 +230,17 @@ namespace BL
         {
             // INIﾌｧｲﾙ取得
             // 実行モジュールと同一フォルダのファイルを取得
-            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
-
+            string filePath = "";
+            //System.Diagnostics.Debug 
+            if (Debugger.IsAttached)
+            {
+                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
+            }
+            else
+            {
+                filePath = @"C:\\SMS\\AppData\\CKM.ini";
+            }
             IniFile_DL idl = new IniFile_DL(filePath);
             return idl.IniReadValue("FilePath", key);
         }
