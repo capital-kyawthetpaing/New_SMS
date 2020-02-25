@@ -37,7 +37,7 @@ namespace MailSend
                 {
                     dtMail = msbl.D_Mail_Select();
 
-                    string FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttServer = "", AttFolder = "", AttFileName = "";
+                    string SenderServer="", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttServer = "", AttFolder = "", AttFileName = "";
                     int k = 0;
 
                     if (dtMail.Rows.Count > 0)
@@ -46,7 +46,9 @@ namespace MailSend
                         MailMessage mm = new MailMessage();
                         FromMail = dtMail.Rows[0]["SenderAddress"].ToString();
                         FromPwd = dtMail.Rows[0]["Password"].ToString();
-                        SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+
+                        SenderServer = dtMail.Rows[0]["SenderServer"].ToString();
+                        SmtpClient smtpServer = new SmtpClient(SenderServer);
                         mm.From = new MailAddress(FromMail);
 
                         mm.Subject = dtMail.Rows[0]["MailSubject"].ToString();
