@@ -66,9 +66,8 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@PayPlanDate",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDate} },
-                {"@PaymentTotal",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PaymentTotal} },
-                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.InsertOperator } },
+                {"@PayPlanDate",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDate} },            
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.Operator } },
                 {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
             };
             return SelectData(dic, "D_Pay_SelectForPayPlanDate2");
