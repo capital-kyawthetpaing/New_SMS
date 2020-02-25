@@ -146,20 +146,20 @@ namespace Base.Client
         {
             NULL,
             /// <summary>
-            ///         ''' 1:切上げ
-            ///         ''' </summary>
-            ///         ''' <remarks></remarks>
-            KIRIAGE,
-            /// <summary>
-            ///         ''' 2:切捨て
+            ///         ''' 1:切捨て
             ///         ''' </summary>
             ///         ''' <remarks></remarks>
             KIRISUTE,
             /// <summary>
-            ///         ''' 3:四捨五入
+            ///         ''' 2:四捨五入
             ///         ''' </summary>
             ///         ''' <remarks></remarks>
-            SISYAGONYU
+            SISYAGONYU,
+            /// <summary>
+            ///         ''' 3:切上げ
+            ///         ''' </summary>
+            ///         ''' <remarks></remarks>
+            KIRIAGE,
         }
         #endregion
 
@@ -734,7 +734,6 @@ namespace Base.Client
                 StaffCD = InOperatorCD
             };
             mse1 = loginbl.M_Souko_InitSelect(mse1);
-            this.lblLoginDate.Text = mse.SysDate;
             this.SoukoCD = mse1.SoukoCD;
 
             //共通処理　プログラム
@@ -1814,78 +1813,6 @@ namespace Base.Client
                 }
             }
 
-        }
-
-        protected void ExecOutput(DataGridView dgv, string EXCEL_SAVE_PATH)
-        {
-            if (dgv.Rows.Count > 0)
-            {// Excelを参照設定する必要があります
-             // [参照の追加],[COM],[Microsoft Excel *.* Object Library]
-             // Imports Microsoft.Office.Interop (必要)
-             // Imports System.Runtime.InteropServices (必要)
-             //Excel出力
-             // EXCEL関連オブジェクトの定義
-                Microsoft.Office.Interop.Excel.Application objExcel = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel.Workbook objWorkBook = objExcel.Workbooks.Add();
-                Microsoft.Office.Interop.Excel.Worksheet objSheet = null/* TODO Change to default(_) if this is not a reference type */;
-                // 現在日時を取得
-                string timestanpText = bbl.GetDate();// String.Format(DateTime.Now, "yyyyMMddHHmmss");
-
-                // 実行モジュールと同一フォルダのファイルを取得
-                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + InProgramID;
-                // 保存ディレクトリとファイル名を設定
-                string saveFileName;
-                saveFileName = objExcel.GetSaveAsFilename(InitialFilename: EXCEL_SAVE_PATH + "ファイル名_" + timestanpText, FileFilter: "Excel File (*.xlsx),*.xlsx");
-                // 保存先ディレクトリの設定が有効の場合はブックを保存
-                if (saveFileName != "False")
-                    objWorkBook.SaveAs(Filename: saveFileName);
-                // シートの最大表示列項目数
-                int columnMaxNum = dgv.Columns.Count - 1;
-                // シートの最大表示行項目数
-                int rowMaxNum = dgv.Rows.Count - 1;
-                // 項目名格納用リストを宣言
-                List<string> columnList = new List<string>();
-                // 項目名を取得
-                for (int i = 0; i <= (columnMaxNum); i++)
-                    columnList.Add(dgv.Columns[i].HeaderCell.Value.ToString());
-                // セルのデータ取得用二次元配列を宣言
-                string[,] v = new string[rowMaxNum + 1, columnMaxNum + 1];
-                for (int row = 0; row <= rowMaxNum; row++)
-                {
-                    for (int col = 0; col <= columnMaxNum; col++)
-                    {
-                        if (dgv.Rows[row].Cells[col].Value == null == false)
-                            // セルに値が入っている場合、二次元配列に格納
-                            v[row, col] = dgv.Rows[row].Cells[col].Value.ToString();
-                    }
-                }
-                // EXCELに項目名を転送
-                for (int i = 1; i <= dgv.Columns.Count; i++)
-                {
-                    // シートの一行目に項目を挿入
-                    objWorkBook.Sheets[1].Cells[1, i] = columnList[i - 1];
-                    // 罫線を設定
-                    objWorkBook.Sheets[1].Cells[1, i].Borders.LineStyle = true;
-                    // 項目の表示行に背景色を設定
-                    //objWorkBook.Sheets[1].Cells(1, i).Interior.Color = Information.RGB(140, 140, 140);
-                    // 文字のフォントを設定
-                    //objWorkBook.Sheets[1].Cells(1, i).Font.Color = Information.RGB(255, 255, 255);
-                    objWorkBook.Sheets[1].Cells(1, i).Font.Bold = true;
-                }
-                // EXCELにデータを範囲指定で転送
-                string data = "A2:" + 'A' + columnMaxNum + (dgv.Rows.Count + 1).ToString();
-                objWorkBook.Sheets[1].Range[data] = v;
-                // データの表示範囲に罫線を設定
-                objWorkBook.Sheets[1].Range(data).Borders.LineStyle = true;
-                // エクセル表示
-                objExcel.Visible = true;
-                // EXCEL解放
-                Marshal.ReleaseComObject(objWorkBook);
-                Marshal.ReleaseComObject(objExcel);
-                objWorkBook = null/* TODO Change to default(_) if this is not a reference type */;
-                objExcel = null/* TODO Change to default(_) if this is not a reference type */;
-            }
         }
 
         protected void OutputExecel(DataGridView dgv, string EXCEL_SAVE_PATH)
