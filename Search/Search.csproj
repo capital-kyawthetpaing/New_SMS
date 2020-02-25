@@ -177,12 +177,6 @@
     <Compile Include="Search_Mitsumori.Designer.cs">
       <DependentUpon>Search_Mitsumori.cs</DependentUpon>
     </Compile>
-    <Compile Include="Search_Payment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Search_Payment.Designer.cs">
-      <DependentUpon>Search_Payment.cs</DependentUpon>
-    </Compile>
     <Compile Include="Search_PickingNO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -366,9 +360,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Mitsumori.resx">
       <DependentUpon>Search_Mitsumori.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Search_Payment.resx">
-      <DependentUpon>Search_Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_PickingNO.resx">
       <DependentUpon>Search_PickingNO.cs</DependentUpon>

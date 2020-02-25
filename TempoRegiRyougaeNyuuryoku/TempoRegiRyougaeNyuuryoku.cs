@@ -22,13 +22,15 @@ namespace TempoRegiRyougaeNyuuryoku
         bool valid = false;
         TempoRegiRyougaeNyuuryoku_BL trrnbl;
         D_DepositHistory_Entity mre;
-        DataTable dtS_check;
+        DataTable dtDepositNO;
         string storeCD;
         public frmTempoRegiRyougaeNyuuryoku()
         {
             InitializeComponent();
+            dtDepositNO = new DataTable();
+            trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
+            mre = new D_DepositHistory_Entity();
         }
-
         private void frmTempoRegiRyougaeNyuuryoku_Load(object sender, EventArgs e)
         {
             trrnbl = new TempoRegiRyougaeNyuuryoku_BL();
@@ -65,7 +67,6 @@ namespace TempoRegiRyougaeNyuuryoku
             ExchangeDenomination.Require(true);
             ExchangeCount.Require(true);
         }
-
         public override void FunctionProcess(int index)
         {
 
@@ -95,9 +96,9 @@ namespace TempoRegiRyougaeNyuuryoku
                 TotalGaku = "0",
                 SalesTaxRate = "0",
                 Refund = "0",
-                ProperGaku="0",
-                DiscountGaku="0",
-                CustomerCD="",
+                ProperGaku="0",//update
+                DiscountGaku="0",//update
+                CustomerCD="",//update
                 IsIssued = "0",
                 ExchangeMoney = ExchangeMoney.Text,
                 ExchangeDenomination = ExchangeDenomination.SelectedValue.ToString(),
@@ -113,7 +114,7 @@ namespace TempoRegiRyougaeNyuuryoku
             };
             return mre;
         }
-
+        /// 
         /// <summary>
         /// 登録ボタンを押下時データベースにInsertする
         /// </summary>
@@ -122,7 +123,6 @@ namespace TempoRegiRyougaeNyuuryoku
            
             if (ErrorCheck())
             {
-                //RunConsole();
                 if (ExchangeLabel.Text != ExchangeMoney.Text)
                 {
                     trrnbl.ShowMessage("E181");
@@ -135,16 +135,16 @@ namespace TempoRegiRyougaeNyuuryoku
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))
-                        {
-                            ExchangeMoney.Clear();
+                        {                          
+                           
+                            trrnbl.ShowMessage("I101");
+                            // RunConsole();//exeRun
                             ExchangeDenomination.SelectedValue = "-1";
+                            ExchangeMoney.Clear();
                             ExchangeCount.Clear();
                             ExchangeLabel.Text = "";
                             Remark.Clear();
-                            trrnbl.ShowMessage("I101");
                             ExchangeMoney.Focus();
-
-
                         }
                         else
                         {
@@ -160,23 +160,24 @@ namespace TempoRegiRyougaeNyuuryoku
             }
 
         }
-        
         private void RunConsole()
         {
             string programID = "TempoRegiTorihikiReceipt";
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "5";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode ;//parameter
+            dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
+            string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
             catch
+           // catch(Exception e)
             {
-
+                //MessageBox.Show(e.Message);
             }
-
         }
         /// <summary>
         /// 入力必須エラーをチェックする
@@ -201,8 +202,6 @@ namespace TempoRegiRyougaeNyuuryoku
 
             return true;
         }
-
-        
         /// <summary>
         /// 戻るボタンを押下時formを閉じる
         /// </summary>
@@ -210,7 +209,6 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             this.Close();
         }
-
         private void ExchangeCount_KeyDown(object sender, KeyEventArgs e)
 
         {
@@ -279,50 +277,10 @@ namespace TempoRegiRyougaeNyuuryoku
             }
            
         }
-
         private void frmTempoRegiRyougaeNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
-
-      
-
-
-        //private void ExchangeCount_Leave(object sender, EventArgs e)
-        //{
-
-        //    if (string.IsNullOrWhiteSpace(ExchangeCount.Text))
-        //    {
-        //        trrnbl.ShowMessage("E102");
-        //        ExchangeCount.Focus();
-        //        ExchangeCount.MoveNext = false;
-
-        //    }
-        //    else
-        //    {
-        //        countmoney = Convert.ToInt32(ExchangeCount.Text);
-        //        if (ExchangeDenomination.SelectedValue.ToString() == "-1")
-        //        {
-
-        //            trrnbl.ShowMessage("E102");
-        //            // ExchangeDenomination.MoveNext = false;
-        //            ExchangeDenomination.Select();
-
-        //        }
-        //        else
-        //        {
-
-        //            combovalue = ExchangeDenomination.SelectedValue.ToString();
-        //        moneytype = Convert.ToInt32(combovalue);
-
-        //        //        }
-
-
-        //    }
-
-        //    displayData();
-
-
-        //}
+    
     }
 }

@@ -76,8 +76,8 @@
             this.ScPaymentProcessNum = new Search.CKM_SearchControl();
             this.ScPayee = new Search.CKM_SearchControl();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPaymentDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayeeCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPaymentdueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colScheduledPayment = new SMS.CustomControls.dgvInventoryColumn();
             this.colAmountPaid = new SMS.CustomControls.DataGridViewDecimalColumn();
@@ -87,6 +87,12 @@
             this.colFeeBurden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOtherThanTransfer = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPayCloseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayCloseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHontaiGaku8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHontaiGaku10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTaxGaku8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTaxGaku10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayment)).BeginInit();
@@ -162,7 +168,7 @@
             // lblPayPlan
             // 
             this.lblPayPlan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayPlan.Location = new System.Drawing.Point(1232, 452);
+            this.lblPayPlan.Location = new System.Drawing.Point(1278, 452);
             this.lblPayPlan.Name = "lblPayPlan";
             this.lblPayPlan.Size = new System.Drawing.Size(100, 19);
             this.lblPayPlan.TabIndex = 107;
@@ -171,7 +177,7 @@
             // lblGakuTotal
             // 
             this.lblGakuTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblGakuTotal.Location = new System.Drawing.Point(1131, 452);
+            this.lblGakuTotal.Location = new System.Drawing.Point(1177, 452);
             this.lblGakuTotal.Name = "lblGakuTotal";
             this.lblGakuTotal.Size = new System.Drawing.Size(100, 19);
             this.lblGakuTotal.TabIndex = 106;
@@ -180,7 +186,7 @@
             // lblTransferFeeGaku
             // 
             this.lblTransferFeeGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblTransferFeeGaku.Location = new System.Drawing.Point(927, 452);
+            this.lblTransferFeeGaku.Location = new System.Drawing.Point(973, 452);
             this.lblTransferFeeGaku.Name = "lblTransferFeeGaku";
             this.lblTransferFeeGaku.Size = new System.Drawing.Size(100, 19);
             this.lblTransferFeeGaku.TabIndex = 105;
@@ -189,7 +195,7 @@
             // lblTransferGaku
             // 
             this.lblTransferGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblTransferGaku.Location = new System.Drawing.Point(826, 452);
+            this.lblTransferGaku.Location = new System.Drawing.Point(872, 452);
             this.lblTransferGaku.Name = "lblTransferGaku";
             this.lblTransferGaku.Size = new System.Drawing.Size(100, 19);
             this.lblTransferGaku.TabIndex = 104;
@@ -198,7 +204,7 @@
             // lblPayGaku
             // 
             this.lblPayGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayGaku.Location = new System.Drawing.Point(725, 452);
+            this.lblPayGaku.Location = new System.Drawing.Point(771, 452);
             this.lblPayGaku.Name = "lblPayGaku";
             this.lblPayGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayGaku.TabIndex = 103;
@@ -207,7 +213,7 @@
             // lblPayConfirmGaku
             // 
             this.lblPayConfirmGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayConfirmGaku.Location = new System.Drawing.Point(624, 452);
+            this.lblPayConfirmGaku.Location = new System.Drawing.Point(670, 452);
             this.lblPayConfirmGaku.Name = "lblPayConfirmGaku";
             this.lblPayConfirmGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayConfirmGaku.TabIndex = 102;
@@ -216,7 +222,7 @@
             // lblPayPlanGaku
             // 
             this.lblPayPlanGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblPayPlanGaku.Location = new System.Drawing.Point(523, 452);
+            this.lblPayPlanGaku.Location = new System.Drawing.Point(569, 452);
             this.lblPayPlanGaku.Name = "lblPayPlanGaku";
             this.lblPayPlanGaku.Size = new System.Drawing.Size(100, 19);
             this.lblPayPlanGaku.TabIndex = 101;
@@ -231,7 +237,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(489, 455);
+            this.ckM_Label12.Location = new System.Drawing.Point(535, 455);
             this.ckM_Label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(31, 12);
@@ -259,8 +265,8 @@
             this.dgvPayment.ColumnHeadersHeight = 25;
             this.dgvPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
-            this.colPaymentDestination,
-            this.colPayeeName,
+            this.colPayeeCD,
+            this.colVendorName,
             this.colPaymentdueDate,
             this.colScheduledPayment,
             this.colAmountPaid,
@@ -269,7 +275,13 @@
             this.colTransferFee,
             this.colFeeBurden,
             this.colOtherThanTransfer,
-            this.colUnpaidAmount});
+            this.colUnpaidAmount,
+            this.colPayCloseNO,
+            this.colPayCloseDate,
+            this.colHontaiGaku8,
+            this.colHontaiGaku10,
+            this.colTaxGaku8,
+            this.colTaxGaku10});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -287,6 +299,7 @@
             this.dgvPayment.TabIndex = 7;
             this.dgvPayment.UseRowNo = true;
             this.dgvPayment.UseSetting = true;
+            this.dgvPayment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellDoubleClick);
             // 
             // ScStaff
             // 
@@ -710,6 +723,7 @@
             this.btnF10Show.TabIndex = 6;
             this.btnF10Show.Text = "表示(F10)";
             this.btnF10Show.UseVisualStyleBackColor = false;
+            this.btnF10Show.Click += new System.EventHandler(this.btnF10Show_Click);
             // 
             // ScPaymentNum
             // 
@@ -790,6 +804,7 @@
             this.ScPayee.Value1 = null;
             this.ScPayee.Value2 = null;
             this.ScPayee.Value3 = null;
+            this.ScPayee.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScPayee_CodeKeyDownEvent);
             // 
             // colChk
             // 
@@ -797,19 +812,18 @@
             this.colChk.Name = "colChk";
             this.colChk.Width = 40;
             // 
-            // colPaymentDestination
+            // colPayeeCD
             // 
-            this.colPaymentDestination.DataPropertyName = "PayeeCD";
-            this.colPaymentDestination.HeaderText = "支払先";
-            this.colPaymentDestination.Name = "colPaymentDestination";
-            this.colPaymentDestination.Width = 110;
+            this.colPayeeCD.DataPropertyName = "PayeeCD";
+            this.colPayeeCD.HeaderText = "支払先";
+            this.colPayeeCD.Name = "colPayeeCD";
             // 
-            // colPayeeName
+            // colVendorName
             // 
-            this.colPayeeName.DataPropertyName = "VendorName";
-            this.colPayeeName.HeaderText = "支払先名";
-            this.colPayeeName.Name = "colPayeeName";
-            this.colPayeeName.Width = 200;
+            this.colVendorName.DataPropertyName = "VendorName";
+            this.colVendorName.HeaderText = "支払先名\t\t\t";
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.Width = 250;
             // 
             // colPaymentdueDate
             // 
@@ -937,6 +951,48 @@
             this.colUnpaidAmount.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount.UseThousandSeparator = true;
             // 
+            // colPayCloseNO
+            // 
+            this.colPayCloseNO.DataPropertyName = "PayCloseNO";
+            this.colPayCloseNO.HeaderText = "PayCloseNO";
+            this.colPayCloseNO.Name = "colPayCloseNO";
+            this.colPayCloseNO.Visible = false;
+            // 
+            // colPayCloseDate
+            // 
+            this.colPayCloseDate.DataPropertyName = "PayCloseDate";
+            this.colPayCloseDate.HeaderText = "PayCloseDate";
+            this.colPayCloseDate.Name = "colPayCloseDate";
+            this.colPayCloseDate.Visible = false;
+            // 
+            // colHontaiGaku8
+            // 
+            this.colHontaiGaku8.DataPropertyName = "HontaiGaku8";
+            this.colHontaiGaku8.HeaderText = "HontaiGaku8";
+            this.colHontaiGaku8.Name = "colHontaiGaku8";
+            this.colHontaiGaku8.Visible = false;
+            // 
+            // colHontaiGaku10
+            // 
+            this.colHontaiGaku10.DataPropertyName = "HontaiGaku10";
+            this.colHontaiGaku10.HeaderText = "HontaiGaku10";
+            this.colHontaiGaku10.Name = "colHontaiGaku10";
+            this.colHontaiGaku10.Visible = false;
+            // 
+            // colTaxGaku8
+            // 
+            this.colTaxGaku8.DataPropertyName = "TaxGaku8";
+            this.colTaxGaku8.HeaderText = "TaxGaku8";
+            this.colTaxGaku8.Name = "colTaxGaku8";
+            this.colTaxGaku8.Visible = false;
+            // 
+            // colTaxGaku10
+            // 
+            this.colTaxGaku10.DataPropertyName = "TaxGaku10";
+            this.colTaxGaku10.HeaderText = "TaxGaku10";
+            this.colTaxGaku10.Name = "colTaxGaku10";
+            this.colTaxGaku10.Visible = false;
+            // 
             // FrmSiharaiNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -999,9 +1055,11 @@
         private System.Windows.Forms.Label lblPayGaku;
         private System.Windows.Forms.Label lblPayConfirmGaku;
         private System.Windows.Forms.Label lblPayPlanGaku;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentDestination;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPayeeName;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayeeCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVendorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaymentdueDate;
         private SMS.CustomControls.dgvInventoryColumn colScheduledPayment;
         private SMS.CustomControls.DataGridViewDecimalColumn colAmountPaid;
@@ -1011,5 +1069,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFeeBurden;
         private SMS.CustomControls.dgvInventoryColumn colOtherThanTransfer;
         private SMS.CustomControls.dgvInventoryColumn colUnpaidAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayCloseNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayCloseDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHontaiGaku8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHontaiGaku10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTaxGaku8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTaxGaku10;
     }
 }
