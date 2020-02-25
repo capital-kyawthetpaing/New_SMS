@@ -152,6 +152,7 @@ namespace MainMenu
                     System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                     filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                 }
+
                 else
                 {
                     filePath = @"C:\\SMS\\AppData";
