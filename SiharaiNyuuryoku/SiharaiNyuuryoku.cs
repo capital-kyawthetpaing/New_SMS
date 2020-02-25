@@ -26,6 +26,7 @@ namespace SiharaiNyuuryoku
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
+
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
@@ -77,6 +78,8 @@ namespace SiharaiNyuuryoku
             btnSelectAll.Enabled = false;
 
             txtDueDate1.Focus();
+
+            BindCombo();
            
         }
 
@@ -145,6 +148,7 @@ namespace SiharaiNyuuryoku
                 dpe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
                 dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
                 dpe.PayNo = ScPaymentNum.TxtCode.Text;
+                mke.KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString();
                              
                 if (OperationMode == EOperationMode.INSERT)
                 {
@@ -152,7 +156,7 @@ namespace SiharaiNyuuryoku
                     dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
                     if(dt4.Rows.Count > 0)
                     {
-                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayeeCD, dppe.PayPlanDate, dt4, null);
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate, dt4, null);
                         f2.ShowDialog();
                     }
                   
@@ -164,7 +168,7 @@ namespace SiharaiNyuuryoku
                     dt3 = sibl.D_Pay_Select3(dpe);
                     if(dt3.Rows.Count > 0)
                     {
-                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(dppe.PayeeCD, dppe.PayPlanDate,  dt3, dt2);
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate,dt3, dt2);
                         f2.ShowDialog();
                     }
                    
