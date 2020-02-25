@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPayPlanDate = new CKM_Controls.CKM_TextBox();
@@ -288,7 +289,7 @@
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -303,6 +304,14 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -505,6 +514,7 @@
             this.SC_BranchCD.Value1 = null;
             this.SC_BranchCD.Value2 = null;
             this.SC_BranchCD.Value3 = null;
+            this.SC_BranchCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
             // 
             // SC_BankCD
             // 
@@ -531,6 +541,7 @@
             this.SC_BankCD.Value1 = null;
             this.SC_BankCD.Value2 = null;
             this.SC_BankCD.Value3 = null;
+            this.SC_BankCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
             this.SC_BankCD.Leave += new System.EventHandler(this.SC_BankCD_Leave);
             // 
             // lblPayGaku1
@@ -1295,7 +1306,7 @@
             this.txtTransferAmount.TabIndex = 0;
             this.txtTransferAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTransferAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtTransferAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTransferAmount_KeyDown);
+            this.txtTransferAmount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
             // 
             // ckM_Label9
             // 

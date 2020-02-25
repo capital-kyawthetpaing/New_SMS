@@ -228,6 +228,7 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                { "@KouzaCD", new ValuePair { value1 = SqlDbType.Date, value2 = mkze.KouzaCD } },
                 { "@BankCD", new ValuePair { value1 = SqlDbType.Date, value2 = mkze.BankCD } },
                 { "@BranchCD", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mkze.BranchCD } },
                 { "@Amount", new ValuePair { value1 = SqlDbType.Date, value2 = mkze.Amount } },

@@ -24,11 +24,11 @@ namespace SiharaiNyuuryoku
         DataTable dtSiharai2 = new DataTable();
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
-        string type = string.Empty;
-        public SiharaiNyuuryoku_2(String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
+        string type = string.Empty;string kouzaCD = string.Empty;
+        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
         {
             InitializeComponent();
-
+            kouzaCD = KouzaCD;
             DataRow[] tblROWS = dt.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
             if (tblROWS.Length > 0)
                 dtSiharai1 = tblROWS.CopyToDataTable();
@@ -330,13 +330,27 @@ namespace SiharaiNyuuryoku
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void txtTransferAmount_KeyDown(object sender, KeyEventArgs e)
+
+        #region  KeyDown event
+        private void SC_KeyDown(object sender, KeyEventArgs e)
         {
-            mkze.BankCD = SC_BankCD.TxtCode.Text;
-            mkze.BranchCD = SC_BranchCD.TxtCode.Text;
-            mkze.Amount = lblPayGaku.Text.Replace(",","");
-            DataTable dt = shnbl.M_Kouza_FeeSelect(mkze);
+            DataTable dt = Select_KouzaFee();
             txtTransferAmount.Text = dt.Rows[0]["Fee"].ToString();
         }
+        #endregion
+        public DataTable Select_KouzaFee()
+        {
+            mkze = new M_Kouza_Entity
+            {
+                KouzaCD = kouzaCD,
+                BankCD = SC_BankCD.TxtCode.Text,
+                BranchCD = SC_BranchCD.TxtCode.Text,
+                Amount = lblPayGaku.Text.Replace(",", ""),
+
+            };
+            return shnbl.M_Kouza_FeeSelect(mkze);
+        }
+
+      
     }
 }
