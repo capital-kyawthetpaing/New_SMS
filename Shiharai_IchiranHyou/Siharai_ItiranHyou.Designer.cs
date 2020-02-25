@@ -210,8 +210,8 @@
             this.SC_Staff.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Staff.Name = "SC_Staff";
             this.SC_Staff.SearchEnable = true;
-            this.SC_Staff.Size = new System.Drawing.Size(344, 27);
-            this.SC_Staff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.SC_Staff.Size = new System.Drawing.Size(734, 27);
+            this.SC_Staff.Stype = Search.CKM_SearchControl.SearchType.売上番号;
             this.SC_Staff.TabIndex = 8;
             this.SC_Staff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Staff.UseChangeDate = false;
