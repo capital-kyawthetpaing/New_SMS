@@ -195,7 +195,27 @@ namespace SiharaiNyuuryoku
         private void SetRequireField()
         {
             if(Convert.ToInt32(txtTransferAmount.Text)>0)
+            {
                 SC_BankCD.TxtCode.Require(true);
+                txtAccNo.Require(true);
+                txtMeigi.Require(true);
+                txtFeeKBN.Require(true);
+                txtAmount.Require(true);
+
+            }
+
+            if(Convert.ToInt32(txtBill.Text)>0)
+            {
+                txtBillNo.Require(true);
+                txtBillDate.Require(true);
+
+            }
+            if(Convert.ToInt32(txtElectronicBone.Text)>0)
+            {
+                txtElectronicRecordNo.Require(true);
+                txtSettlementDate2.Require(true);
+            }
+            
         }
 
         private void LabelDataBind()
