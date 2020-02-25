@@ -139,8 +139,9 @@ namespace BL
         {
             // INIﾌｧｲﾙ取得
             // 実行モジュールと同一フォルダのファイルを取得
-            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
+           // System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            //  string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
+            string filePath = @"C:\\SMS\\AppData\\CKM.ini";
             if (System.IO.File.Exists(filePath))
             {
                 this.GetInformationOfIniFile(filePath);
