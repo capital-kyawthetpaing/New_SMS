@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Entity;
 using BL;
 using CKM_Controls;
+using System.Diagnostics;
+
 namespace MainMenu
 {
     public partial class Capitalsports_MainMenu : Form
@@ -241,8 +243,19 @@ namespace MainMenu
             {
                 var programID = (sender as CKM_Button).Text;
                 var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
-                System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                string filePath = "";
+                //System.Diagnostics.Debug 
+                if (Debugger.IsAttached)
+                {
+                    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                    filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                }
+                else
+                {
+                    filePath = @"C:\\SMS\\AppData";
+                }
                 string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
 
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
