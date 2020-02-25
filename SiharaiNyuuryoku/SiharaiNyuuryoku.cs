@@ -644,22 +644,8 @@ namespace SiharaiNyuuryoku
         }
 
         private void dgvPayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {          
-            //if ( dgvPayment.CurrentRow.Cells["colChk"].Selected = true)              
-            //{
-            //    dppe.PayPlanDate = dgvPayment.CurrentRow.Cells["colPaymentdueDate"].Value.ToString();
-            //    dppe.PayeeCD = dgvPayment.CurrentRow.Cells["colPayeeCD"].Value.ToString();
-            //    if (OperationMode == EOperationMode.INSERT)
-            //    {
-            //       mode = "1";
-            //    }
-            //    else
-            //    {
-            //        mode = "2"; 
-            //    }
-                //FrmSiharaiNyuuryoku_2 f2 = new FrmSiharaiNyuuryoku_2(dppe.PayPlanDate,dppe.PayeeCD,mode);
-                //f2.Show();
-            //}           
+        {
+            F7();
         }
     }
 }
