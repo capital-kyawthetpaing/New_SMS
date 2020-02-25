@@ -734,7 +734,6 @@ namespace Base.Client
                 StaffCD = InOperatorCD
             };
             mse1 = loginbl.M_Souko_InitSelect(mse1);
-            this.lblLoginDate.Text = mse.SysDate;
             this.SoukoCD = mse1.SoukoCD;
 
             //共通処理　プログラム

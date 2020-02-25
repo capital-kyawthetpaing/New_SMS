@@ -19,8 +19,11 @@ namespace SiharaiNyuuryoku
         SiharaiNyuuryoku_BL shnbl = new SiharaiNyuuryoku_BL();
         D_Pay_Entity dpe = new D_Pay_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
+        M_Kouza_Entity mkze = new M_Kouza_Entity();
         DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
+        DataTable dtIDName1 = new DataTable();
+        DataTable dtIDName2 = new DataTable();
         string type = string.Empty;
         public SiharaiNyuuryoku_2(String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
         {
@@ -122,6 +125,8 @@ namespace SiharaiNyuuryoku
             BindData();
 
             LabelDataBind();
+
+            SelectKeyData();
         }
 
         private void BindData()
@@ -188,15 +193,21 @@ namespace SiharaiNyuuryoku
                 SC_HanyouKeyEnd2.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount2"].ToString();
 
             }
-            
-
 
         }
+
+        private void SelectKeyData()
+        {
+            dtIDName1=shnbl.M_Multipurpose_SelectIDName("217");
+            dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
+        }
+
         private void SetRequireField()
         {
             if(Convert.ToInt32(txtTransferAmount.Text)>0)
             {
                 SC_BankCD.TxtCode.Require(true);
+                SC_BranchCD.TxtCode.Require(true);
                 txtAccNo.Require(true);
                 txtMeigi.Require(true);
                 txtFeeKBN.Require(true);
@@ -215,7 +226,16 @@ namespace SiharaiNyuuryoku
                 txtElectronicRecordNo.Require(true);
                 txtSettlementDate2.Require(true);
             }
-            
+            if(Convert.ToInt32(txtOther1.Text)>0)
+            {
+                SC_HanyouKeyStart1.TxtCode.Require(true);
+                SC_HanyouKeyEnd1.TxtCode.Require(true);
+            }
+            if (Convert.ToInt32(txtOther2.Text) > 0)
+            {
+                SC_HanyouKeyStart2.TxtCode.Require(true);
+                SC_HanyouKeyEnd2.TxtCode.Require(true);
+            }
         }
 
         private void LabelDataBind()
@@ -234,38 +254,89 @@ namespace SiharaiNyuuryoku
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
         }
 
-        private void SC_HanyouKeyStart1_Enter(object sender, EventArgs e)
-        {
-            SC_HanyouKeyStart1.Value1 = "217";
-            SC_HanyouKeyStart1.Value2 = "IDName";
-        }
 
-        private void SC_HanyouKeyStart2_Load(object sender, EventArgs e)
-        {
-            SC_HanyouKeyStart2.Value1 = "217";
-            SC_HanyouKeyStart2.Value2 = "IDName";
-        }
-
-        private void SC_HanyouKeyEnd1_Load(object sender, EventArgs e)
-        {
-            SC_HanyouKeyEnd1.Value1 = "218";
-            SC_HanyouKeyEnd1.Value2 = "IDName";
-        }
-
-        private void SC_HanyouKeyEnd2_Load(object sender, EventArgs e)
-        {
-            SC_HanyouKeyEnd2.Value1 = "218";
-            SC_HanyouKeyEnd2.Value2 = "IDName";
-        }
-
+        /// <summary>
+        /// Error Check of F12
+        /// </summary>
+        /// <returns></returns>
        public bool ErrorCheck()
         {
             if (Convert.ToInt32(txtTransferAmount.Text) > 0)
             {
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
                     return false;
+
+                if (!SC_BankCD.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_BankCD.SetFocus(1);
+                    return false;
+                }
+
+                if (!RequireCheck(new Control[] { SC_BranchCD.TxtCode }))
+                    return false;
+
+                if (!SC_BranchCD.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_BranchCD.SetFocus(1);
+                    return false;
+                }
             }
                 return true;
+        }
+
+       
+        #region Enter event of Search Control
+        private void SC_HanyouKeyStart1_Enter(object sender, EventArgs e)
+        {
+            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+        }
+
+        private void SC_HanyouKeyEnd1_Enter(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+        }
+
+        private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
+        {
+            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+        }
+
+        private void SC_HanyouKeyEnd2_Enter(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+        }
+        #endregion
+
+
+        /// <summary>
+        /// Leave event of Bank Search Control
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SC_BankCD_Leave(object sender, EventArgs e)
+        {
+            SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
+            SC_BranchCD.Value2 = SC_BankCD.LabelText;
+        }
+
+        /// <summary>
+        /// Fee calculation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtTransferAmount_KeyDown(object sender, KeyEventArgs e)
+        {
+            mkze.BankCD = SC_BankCD.TxtCode.Text;
+            mkze.BranchCD = SC_BranchCD.TxtCode.Text;
+            mkze.Amount = lblPayGaku.Text.Replace(",","");
+            DataTable dt = shnbl.M_Kouza_FeeSelect(mkze);
+            txtTransferAmount.Text = dt.Rows[0]["Fee"].ToString();
         }
     }
 }

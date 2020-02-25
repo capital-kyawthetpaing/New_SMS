@@ -19,6 +19,8 @@ namespace Search
         Search_Hanyou_BL shbl;
 
         public string KeyCode = string.Empty;
+        public string Char1 = string.Empty;
+        public string Char2 = string.Empty;
         public string ID = string.Empty;
         public string IDName = string.Empty;
 
@@ -32,7 +34,19 @@ namespace Search
             lblID.Text = ID;
             lblName.Text = IDName;
         }
-        
+
+        public Search_Key(string ID, string IDName,string Char1)
+        {
+            InitializeComponent();
+
+            F9Visible = false;
+            shbl = new Search_Hanyou_BL();
+
+            lblID.Text = ID;
+            lblName.Text = IDName;
+            txtKey1.Text = Char1;
+        }
+
         private void txtKey2_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -92,7 +106,9 @@ namespace Search
         {
             if (GvKey .CurrentRow != null && GvKey.CurrentRow.Index >= 0)
             {
-                KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();             
+                KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();
+                Char1 = GvKey.CurrentRow.Cells["colChar1"].Value.ToString();
+                Char2 = GvKey.CurrentRow.Cells["colChar2"].Value.ToString();
                 this.Close();
             }
         }
