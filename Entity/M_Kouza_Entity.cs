@@ -44,5 +44,8 @@ namespace Entity
         public string DisplayKbn { get; set; }
         public string KouzaCDFrom { get; set; }
         public string KouzaCDTo { get; set; }
+
+        //SiharaiNyuuryoku
+        public string Amount { get; set; }
     }
 }
