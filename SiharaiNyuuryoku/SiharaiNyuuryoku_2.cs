@@ -282,6 +282,13 @@ namespace SiharaiNyuuryoku
                     SC_BranchCD.SetFocus(1);
                     return false;
                 }
+
+                if (txtKouzaKBN.Text != "1" && txtKouzaKBN.Text != "2")
+                {
+                    bbl.ShowMessage("E101");
+                    txtKouzaKBN.Focus();
+                    return false;
+                }
             }
                 return true;
         }
@@ -351,6 +358,11 @@ namespace SiharaiNyuuryoku
             return shnbl.M_Kouza_FeeSelect(mkze);
         }
 
-      
+
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+
     }
 }
