@@ -53,10 +53,9 @@ namespace BL
                 mse.KengenCD = dtStaff.Rows[0]["AuthorizationsCD"].ToString();
                 mse.StoreAuthorizationsCD = dtStaff.Rows[0]["StoreAuthorizationsCD"].ToString();
                 mse.PositionCD = dtStaff.Rows[0]["PositionCD"].ToString();
-                return mse;
+                
             }
-            else
-                return null;
+            return mse;
         }
 
 
@@ -74,11 +73,10 @@ namespace BL
                 mse.SysDate = dt.Rows[0]["sysDate"].ToString();
                 mse.StoreCD = dt.Rows[0]["StoreCD"].ToString();
 
-                Base_DL.iniEntity.DatabaseDate = mse.SysDate;
-                return mse;
+                
             }
-            else
-                return null;
+            Base_DL.iniEntity.DatabaseDate = mse.SysDate;
+            return mse;
         }
 
         /// <summary>
@@ -93,11 +91,10 @@ namespace BL
             {
                 mse.SysDate = dt.Rows[0]["sysDate"].ToString();
                 mse.SoukoCD = dt.Rows[0]["SoukoCD"].ToString();
-                Base_DL.iniEntity.DatabaseDate = mse.SysDate;
-                return mse;
+                
             }
-            else
-                return null;
+            Base_DL.iniEntity.DatabaseDate = mse.SysDate;
+            return mse;
         }
 
         public M_Store_Entity M_Store_InitSelect(M_Staff_Entity mse,M_Store_Entity mste)
@@ -108,12 +105,9 @@ namespace BL
                 mste.StoreName = dt.Rows[0]["StoreName"].ToString();
                 mste.SysDate = dt.Rows[0]["sysDate"].ToString();
                 mste.StoreCD = dt.Rows[0]["StoreCD"].ToString();
-
-                Base_DL.iniEntity.DatabaseDate = mste.SysDate;
-                return mste;
             }
-            else
-                return null;
+            Base_DL.iniEntity.DatabaseDate = mste.SysDate;
+            return mste;
         }
 
         /// <summary>
