@@ -316,7 +316,7 @@ namespace UriageMotouchou
         {
             sc_Customer.Value1 = "1";
             sc_Customer.Value2 = cboStore.SelectedValue.Equals("-1") ? "" : cboStore.SelectedValue.ToString();
-            sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
+            sc_Customer.ChangeDate = umbl.GetDate(txtTagetFrom.Text);//月初
         }
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {

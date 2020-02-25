@@ -46,5 +46,22 @@ namespace BL
         {
             return dmcdl.UriageMotochou_PrintSelect(ume);
         }
+
+        public string GetDate(string Date)
+        {
+            string date = string.Empty;
+            date = Date;
+            if (date.Contains("/"))
+            {
+                string[] m = date.Split('/');
+                string year = m[0].ToString();
+                string month = m[1].ToString();
+                string day = DateTime.DaysInMonth(Convert.ToInt16(year), Convert.ToInt16(month)).ToString();
+                DateTime dt = Convert.ToDateTime(year + "/" + month + "/" + day);
+                date = dt.ToString("yyyy/MM/dd");
+
+            }
+            return date;
+        }
     }
 }
