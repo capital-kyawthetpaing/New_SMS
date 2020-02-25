@@ -37,20 +37,22 @@ namespace MailSend
                 {
                     dtMail = msbl.D_Mail_Select();
 
-                    string FromMail="",ToMail="", CCMail="", BCCMail="", FromPwd="",AttServer="",AttFolder="",AttFileName="";
+                    string SenderServer="", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttServer = "", AttFolder = "", AttFileName = "";
                     int k = 0;
 
                     if (dtMail.Rows.Count > 0)
                     {
 
                         MailMessage mm = new MailMessage();
-                         FromMail = dtMail.Rows[0]["SenderAddress"].ToString();
-                         FromPwd = dtMail.Rows[0]["Password"].ToString();
-                        SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+                        FromMail = dtMail.Rows[0]["SenderAddress"].ToString();
+                        FromPwd = dtMail.Rows[0]["Password"].ToString();
+
+                        SenderServer = dtMail.Rows[0]["SenderServer"].ToString();
+                        SmtpClient smtpServer = new SmtpClient(SenderServer);
                         mm.From = new MailAddress(FromMail);
 
-                         mm.Subject= dtMail.Rows[0]["MailSubject"].ToString();
-                         mm.Body = dtMail.Rows[0]["MailContent"].ToString();
+                        mm.Subject = dtMail.Rows[0]["MailSubject"].ToString();
+                        mm.Body = dtMail.Rows[0]["MailContent"].ToString();
 
                         for (int i = 0; i < dtMail.Rows.Count; i++)
                         {
@@ -76,19 +78,19 @@ namespace MailSend
                         AttServer = dtMail.Rows[0]["CreateServer"].ToString();
                         AttFolder = dtMail.Rows[0]["CreateFolder"].ToString();
                         AttFileName = dtMail.Rows[0]["FileName"].ToString();
-                        
+
                         string filepath = AttServer + "\\" + AttFolder + "\\" + AttFileName;
-                        if(File.Exists(filepath))
+                        if (File.Exists(filepath))
                         {
                             mm.Attachments.Add(new Attachment(filepath));
-                        }                       
+                        }
                         smtpServer.Port = 587;
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
                         smtpServer.EnableSsl = true;
                         try
                         {
                             smtpServer.Send(mm);
-                            if(msbl.D_MailSend_Update(k))
+                            if (msbl.D_MailSend_Update(k))
                             {
                                 Console.WriteLine("メールのご送信が完了致しました。");
                                 //Console.Read();
@@ -96,13 +98,12 @@ namespace MailSend
                         }
                         catch (Exception ex)
                         {
-                           var er= ex.Message;
-                        }
+                            var er = ex.Message;
                         }
                     }
                 }
-
             }
+
         }
     }
 }
