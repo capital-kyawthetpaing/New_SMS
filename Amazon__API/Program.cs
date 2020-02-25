@@ -20,6 +20,7 @@ namespace Amazon__API
     class Program
     {
 
+
         //static string consoleWriteLinePath = ConfigurationManager.AppSettings["ConsoleWriteLinePath"].ToString();
         //static string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         //static string accessKey = "AKIAJFRPIMOTC4CJGHLQ";
