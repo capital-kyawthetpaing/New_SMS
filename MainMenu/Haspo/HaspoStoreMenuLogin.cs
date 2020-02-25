@@ -22,30 +22,20 @@ namespace MainMenu.Haspo
         {
             loginbl = new Login_BL();
             InitializeComponent();
+            this.KeyPreview = true;
+         
         }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            //if (keyData == Keys.F1)
-            // {
-            //     this.Close();
-            //     System.Environment.Exit(0);
-
-            // }
-            //else if (keyData ==Keys.F12)
-            // {
-            //     Login_Click();
-            // }
-
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+       
         private void HaspoStoreMenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
         }
-        private void ckM_Button1_Click(object sender, EventArgs e)
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
-            Login_Click();
+            return base.ProcessCmdKey(ref msg, keyData);
         }
+
         private M_Staff_Entity GetInfo()
         {
             mse = new M_Staff_Entity
@@ -55,8 +45,16 @@ namespace MainMenu.Haspo
             };
             return mse;
         }
+       
         private void Login_Click()
         {
+            if (loginbl.ReadConfig() == false)
+            {
+                //起動時エラー    DB接続不可能
+                this.Close();
+                System.Environment.Exit(0);
+            }
+            
             if (!String.IsNullOrWhiteSpace(txtOperatorCD.Text))
             {
                 if (loginbl.ReadConfig() == false)
@@ -72,7 +70,8 @@ namespace MainMenu.Haspo
                     {
                         if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
                         {
-                            HapoStore_MainMenu hapomainmenu = new HapoStore_MainMenu(GetInfo().StaffCD);
+                            var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
+                            HapoStore_MainMenu hapomainmenu = new HapoStore_MainMenu(GetInfo().StaffCD,mseinfo);
                             this.Hide();
                             hapomainmenu.ShowDialog();
                             this.Close();
@@ -97,18 +96,11 @@ namespace MainMenu.Haspo
             }
             else
             {
-                loginbl.ShowMessage("");
+                loginbl.ShowMessage("E101");
                 txtOperatorCD.Focus();
             }
             
         }
-
-        private void ckM_Button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            System.Environment.Exit(0);
-        }
-
         private void HaspoStoreMenuLogin_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -123,6 +115,17 @@ namespace MainMenu.Haspo
             {
                 Login_Click();
             }
+        }
+
+        private void ckM_Button2_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            System.Environment.Exit(0);
+        }
+
+        private void ckM_Button1_Click_1(object sender, EventArgs e)
+        {
+            Login_Click();
         }
     }
 }

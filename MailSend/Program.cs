@@ -37,20 +37,22 @@ namespace MailSend
                 {
                     dtMail = msbl.D_Mail_Select();
 
-                    string FromMail="",ToMail="", CCMail="", BCCMail="", FromPwd="",AttServer="",AttFolder="",AttFileName="";
+                    string SenderServer="", FromMail = "", ToMail = "", CCMail = "", BCCMail = "", FromPwd = "", AttServer = "", AttFolder = "", AttFileName = "";
                     int k = 0;
 
                     if (dtMail.Rows.Count > 0)
                     {
 
                         MailMessage mm = new MailMessage();
-                         FromMail = dtMail.Rows[0]["SenderAddress"].ToString();
-                         FromPwd = dtMail.Rows[0]["Password"].ToString();
-                        SmtpClient smtpServer = new SmtpClient("smtp.gmail.com");
+                        FromMail = dtMail.Rows[0]["SenderAddress"].ToString();
+                        FromPwd = dtMail.Rows[0]["Password"].ToString();
+
+                        SenderServer = dtMail.Rows[0]["SenderServer"].ToString();
+                        SmtpClient smtpServer = new SmtpClient(SenderServer);
                         mm.From = new MailAddress(FromMail);
 
-                         mm.Subject= dtMail.Rows[0]["MailSubject"].ToString();
-                         mm.Body = dtMail.Rows[0]["MailContent"].ToString();
+                        mm.Subject = dtMail.Rows[0]["MailSubject"].ToString();
+                        mm.Body = dtMail.Rows[0]["MailContent"].ToString();
 
                         for (int i = 0; i < dtMail.Rows.Count; i++)
                         {
@@ -76,19 +78,19 @@ namespace MailSend
                         AttServer = dtMail.Rows[0]["CreateServer"].ToString();
                         AttFolder = dtMail.Rows[0]["CreateFolder"].ToString();
                         AttFileName = dtMail.Rows[0]["FileName"].ToString();
-                        
+
                         string filepath = AttServer + "\\" + AttFolder + "\\" + AttFileName;
-                        if(File.Exists(filepath))
+                        if (File.Exists(filepath))
                         {
                             mm.Attachments.Add(new Attachment(filepath));
-                        }                       
+                        }
                         smtpServer.Port = 587;
                         smtpServer.Credentials = new System.Net.NetworkCredential(mm.From.Address, FromPwd);
                         smtpServer.EnableSsl = true;
                         try
                         {
                             smtpServer.Send(mm);
-                            if(msbl.D_MailSend_Update(k))
+                            if (msbl.D_MailSend_Update(k))
                             {
                                 Console.WriteLine("メールのご送信が完了致しました。");
                                 //Console.Read();
@@ -96,81 +98,12 @@ namespace MailSend
                         }
                         catch (Exception ex)
                         {
-                           var er= ex.Message;
-                        }
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                       // var fromAddress = new MailAddress(FromMail,"Swe Swe Aung");
-                       // //var toAddress = new MailAddress(ToMail,"Swe Swe");
-                       // const string fromPassword =FromPwd;
-                       // const string subject = "Mail Test";
-                       // const string body = "body";
-
-                       //System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
-                       // {
-                       //     Host = "smtp.gmail.com",
-                       //     Port = 587,                            
-                       //     EnableSsl = true,
-                       //     DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network,
-                       //     UseDefaultCredentials = false,
-                       //     Credentials = new NetworkCredential(fromAddress.Address, FromPwd)
-                       // };
-
-                       // using (var message = new MailMessage(fromAddress, toAddress)
-                       // {
-                       //     Subject = subject,
-                       //     Body = body,
-                       //     BodyEncoding = UTF8Encoding.UTF8 ,
-                            
-                       // })
-                        {
-                            //try
-                            //{
-                            //    smtp.Send(message);
-                            //}
-                            //catch (Exception ex)
-                            //{
-
-                            //    var f = ex.Message;
-                            //    //MessageBox.Show("Message not emailed: " + ex.ToString());
-                            //}
-                            //MailMessage msg = new MailMessage();
-
-                            //msg.From = new MailAddress("swesweaung.ucsy2018@gmail.com");
-                            //msg.To.Add("pinkyangel1996@gmail.com");
-                            //msg.CC.Add("capital.swesweaung@gmail.com");
-                            //msg.Subject = "即日出荷対応商品在庫切れにつきまして";
-                            //msg.Body = "ohayougosaimasu";
-
-                            //using (SmtpClient client = new SmtpClient())
-                            //{
-                            //    client.EnableSsl = false;
-                            //    client.UseDefaultCredentials = false;
-                            //    client.Credentials = new System.Net.NetworkCredential("swesweaung", "ssa16496");
-                            //    client.Host = "mail.capitalsports.jp";
-                            //    client.Port = 587;
-                            //    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                            //    client.Send(msg);
-                            //}
+                            var er = ex.Message;
                         }
                     }
                 }
-
             }
+
         }
     }
 }
