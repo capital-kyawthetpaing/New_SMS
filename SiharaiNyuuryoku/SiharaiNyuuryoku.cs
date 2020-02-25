@@ -29,7 +29,7 @@ namespace SiharaiNyuuryoku
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
-       DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable(); DataTable dt4 = new DataTable();
+        DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable(); DataTable dt4 = new DataTable();
 
         public FrmSiharaiNyuuryoku()
         {
@@ -251,18 +251,19 @@ namespace SiharaiNyuuryoku
                     LabelDataBind();
                     
                 }
-                EnablePanel(PanelDetail);
-                //dgvPayment.CurrentCell = dgvPayment.Rows[0]["PayeeCD"]
+                EnablePanel(PanelDetail);             
                 btnSelectAll.Enabled = true;
                 btnReleaseAll.Enabled = true;
-                //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "2");
-                //sp.ShowDialog();
+                
             }
         }
 
         private void F12()
         {
+            if(ErrorCheck(12))
+            {
 
+            }
         }
 
         /// <summary>
@@ -593,7 +594,13 @@ namespace SiharaiNyuuryoku
                 {
                     row1.Cells["colChk"].Value = false;
                 }
+
+                row1.Cells["colPaymenttime"].Value = 0;
+               
+                row1.Cells["colUnpaidAmount"].Value = Convert.ToInt32( row1.Cells["colScheduledPayment"].Value) - Convert.ToInt32( row1.Cells["colAmountPaid"].Value);
+
             }
+
         }
 
         private void btnF10Show_Click(object sender, EventArgs e)
