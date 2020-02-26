@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPayPlanDate = new CKM_Controls.CKM_TextBox();
@@ -284,17 +283,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -304,14 +303,6 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -399,13 +390,14 @@
             this.SC_HanyouKeyEnd2.Name = "SC_HanyouKeyEnd2";
             this.SC_HanyouKeyEnd2.SearchEnable = true;
             this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
             this.SC_HanyouKeyEnd2.TabIndex = 112;
             this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd2.UseChangeDate = false;
             this.SC_HanyouKeyEnd2.Value1 = null;
             this.SC_HanyouKeyEnd2.Value2 = null;
             this.SC_HanyouKeyEnd2.Value3 = null;
+            this.SC_HanyouKeyEnd2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd2_CodeKeyDownEvent);
             this.SC_HanyouKeyEnd2.Enter += new System.EventHandler(this.SC_HanyouKeyEnd2_Enter);
             // 
             // SC_HanyouKeyEnd1
@@ -426,13 +418,14 @@
             this.SC_HanyouKeyEnd1.Name = "SC_HanyouKeyEnd1";
             this.SC_HanyouKeyEnd1.SearchEnable = true;
             this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
             this.SC_HanyouKeyEnd1.TabIndex = 110;
             this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd1.UseChangeDate = false;
             this.SC_HanyouKeyEnd1.Value1 = null;
             this.SC_HanyouKeyEnd1.Value2 = null;
             this.SC_HanyouKeyEnd1.Value3 = null;
+            this.SC_HanyouKeyEnd1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd1_CodeKeyDownEvent);
             this.SC_HanyouKeyEnd1.Enter += new System.EventHandler(this.SC_HanyouKeyEnd1_Enter);
             // 
             // SC_HanyouKeyStart2
@@ -453,13 +446,14 @@
             this.SC_HanyouKeyStart2.Name = "SC_HanyouKeyStart2";
             this.SC_HanyouKeyStart2.SearchEnable = true;
             this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
             this.SC_HanyouKeyStart2.TabIndex = 111;
             this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart2.UseChangeDate = false;
             this.SC_HanyouKeyStart2.Value1 = null;
             this.SC_HanyouKeyStart2.Value2 = null;
             this.SC_HanyouKeyStart2.Value3 = null;
+            this.SC_HanyouKeyStart2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart2_CodeKeyDownEvent);
             this.SC_HanyouKeyStart2.Enter += new System.EventHandler(this.SC_HanyouKeyStart2_Enter);
             // 
             // SC_HanyouKeyStart1
@@ -480,13 +474,14 @@
             this.SC_HanyouKeyStart1.Name = "SC_HanyouKeyStart1";
             this.SC_HanyouKeyStart1.SearchEnable = true;
             this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
             this.SC_HanyouKeyStart1.TabIndex = 109;
             this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart1.UseChangeDate = false;
             this.SC_HanyouKeyStart1.Value1 = null;
             this.SC_HanyouKeyStart1.Value2 = null;
             this.SC_HanyouKeyStart1.Value3 = null;
+            this.SC_HanyouKeyStart1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart1_CodeKeyDownEvent);
             this.SC_HanyouKeyStart1.Enter += new System.EventHandler(this.SC_HanyouKeyStart1_Enter);
             // 
             // SC_BranchCD
@@ -514,7 +509,7 @@
             this.SC_BranchCD.Value1 = null;
             this.SC_BranchCD.Value2 = null;
             this.SC_BranchCD.Value3 = null;
-            this.SC_BranchCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
+            this.SC_BranchCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BranchCD_CodeKeyDownEvent);
             // 
             // SC_BankCD
             // 
@@ -541,7 +536,7 @@
             this.SC_BankCD.Value1 = null;
             this.SC_BankCD.Value2 = null;
             this.SC_BankCD.Value3 = null;
-            this.SC_BankCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
+            this.SC_BankCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BankCD_CodeKeyDownEvent);
             this.SC_BankCD.Leave += new System.EventHandler(this.SC_BankCD_Leave);
             // 
             // lblPayGaku1
@@ -1088,6 +1083,7 @@
             this.txtFeeKBN.Size = new System.Drawing.Size(20, 19);
             this.txtFeeKBN.TabIndex = 6;
             this.txtFeeKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtFeeKBN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SC_KeyDown);
             // 
             // txtMeigi
             // 
@@ -1354,6 +1350,7 @@
             this.PanelHeaderHeight = 160;
             this.Text = "SiharaiNyuuryoku_2";
             this.Load += new System.EventHandler(this.SiharaiNyuuryoku_2_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.SiharaiNyuuryoku_2_KeyUp);
             this.Controls.SetChildIndex(this.panelDetail, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();

@@ -283,12 +283,39 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
 
-                if (txtKouzaKBN.Text != "1" && txtKouzaKBN.Text != "2")
+                if (txtKouzaKBN.Text.Equals("1") && txtKouzaKBN.Text.Equals("2"))
                 {
                     bbl.ShowMessage("E101");
                     txtKouzaKBN.Focus();
                     return false;
                 }
+                if (!RequireCheck(new Control[] { txtAccNo, txtMeigi, txtFeeKBN, txtAmount }))
+                    return false;
+            }
+
+            if (Convert.ToInt32(txtBill.Text) > 0)
+            {
+                if (!RequireCheck(new Control[] { txtBillNo,txtBillDate}))
+                    return false;
+
+            }
+            if (Convert.ToInt32(txtElectronicBone.Text) > 0)
+            {
+                if (!RequireCheck(new Control[] { txtElectronicRecordNo,txtSettlementDate2}))
+                    return false;
+
+            }
+            if (Convert.ToInt32(txtOther1.Text) > 0)
+            {
+                if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
+                    return false;
+
+                //if (!SC_HanyouKeyStart1.IsExists(2))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    SC_BranchCD.SetFocus(1);
+                //    return false;
+                //}
             }
                 return true;
         }
@@ -305,6 +332,7 @@ namespace SiharaiNyuuryoku
         {
             SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
             SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
         }
 
         private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
@@ -317,6 +345,7 @@ namespace SiharaiNyuuryoku
         {
             SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
             SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
         }
         #endregion
 
@@ -332,30 +361,182 @@ namespace SiharaiNyuuryoku
             SC_BranchCD.Value2 = SC_BankCD.LabelText;
         }
 
+
+        #region  KeyDown event
+
         /// <summary>
         /// Fee calculation
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-
-        #region  KeyDown event
         private void SC_KeyDown(object sender, KeyEventArgs e)
         {
-            DataTable dt = Select_KouzaFee();
-            txtTransferAmount.Text = dt.Rows[0]["Fee"].ToString();
+            Select_KouzaFee();
         }
-        #endregion
-        public DataTable Select_KouzaFee()
-        {
-            mkze = new M_Kouza_Entity
-            {
-                KouzaCD = kouzaCD,
-                BankCD = SC_BankCD.TxtCode.Text,
-                BranchCD = SC_BranchCD.TxtCode.Text,
-                Amount = lblPayGaku.Text.Replace(",", ""),
 
-            };
-            return shnbl.M_Kouza_FeeSelect(mkze);
+        private void SC_BankCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
+                {
+                    if (SC_BankCD.SelectData())
+                    {
+                        SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
+                        SC_BranchCD.Value2 = SC_BankCD.LabelText;
+
+                        Select_KouzaFee();
+
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_BankCD.SetFocus(1);
+                    }
+
+                }
+
+            }
+        }
+
+        private void SC_BranchCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text))
+                {
+                    if (!SC_BranchCD.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_BranchCD.SetFocus(1);
+                    }
+                    else
+                    {
+                        Select_KouzaFee();
+                    }
+
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    SC_BranchCD.SetFocus(1);
+                }
+
+            }
+        }
+
+        private void SC_HanyouKeyStart1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyStart1.TxtCode.Text))
+                {
+                    if (!SC_HanyouKeyStart1.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_HanyouKeyStart1.SetFocus(1);
+                    }
+                    else
+                    {
+                        SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+                        SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+                    }
+
+                }
+            }
+        }
+
+
+        private void SC_HanyouKeyStart2_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyStart2.TxtCode.Text))
+                {
+                    if (!SC_HanyouKeyStart2.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_HanyouKeyStart2.SetFocus(1);
+                    }
+                    else
+                    {
+                        SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+                        SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+                    }
+
+                }
+            }
+
+        }
+
+        private void SC_HanyouKeyEnd1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd1.TxtCode.Text))
+                {
+                    if (!SC_HanyouKeyEnd1.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_HanyouKeyEnd1.SetFocus(1);
+                    }
+                    else
+                    {
+                        SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+                        SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+                        SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
+                    }
+
+                }
+            }
+        }
+
+        private void SC_HanyouKeyEnd2_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd2.TxtCode.Text))
+                {
+                    if (!SC_HanyouKeyEnd2.SelectData())
+                    {
+                        bbl.ShowMessage("E101");
+                        SC_HanyouKeyEnd2.SetFocus(1);
+                    }
+                    else
+                    {
+                        SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+                        SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+                        SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
+                    }
+
+                }
+            }
+        }
+
+        #endregion
+
+        public void Select_KouzaFee()
+        {
+            if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
+                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && txtAmount.Text.Equals("0"))
+            {
+                mkze = new M_Kouza_Entity
+                {
+                    KouzaCD = kouzaCD,
+                    BankCD = SC_BankCD.TxtCode.Text,
+                    BranchCD = SC_BranchCD.TxtCode.Text,
+                    Amount = lblPayGaku.Text.Replace(",", ""),
+
+                };
+                DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
+                txtTransferAmount.Text = dt.Rows[0]["Fee"].ToString();
+            }
+            else
+            {
+                bbl.ShowMessage("E102");
+                txtTransferAmount.Focus();
+            }
+
         }
 
 
@@ -364,5 +545,11 @@ namespace SiharaiNyuuryoku
             this.Close();
         }
 
+        private void SiharaiNyuuryoku_2_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+       
     }
 }

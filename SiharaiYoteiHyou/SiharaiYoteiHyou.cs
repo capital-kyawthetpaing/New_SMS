@@ -44,7 +44,7 @@ namespace SiharaiYoteiHyou
         {
             shyhbl = new SiharaiYoteiHyou_BL();
             InProgramID = "SiharaiYoteiHyou";
-            SetFunctionLabel(EProMode.PRINT);//PrintSec
+            SetFunctionLabel(EProMode.PRINT);//PrintSec 
             StartProgram();
             base.Btn_F10.Text = "CSV(F10)";
             base.Btn_F11.Text = "PDF(F11)";
@@ -415,7 +415,7 @@ namespace SiharaiYoteiHyou
                 //プログラム実行履歴
                 InsertLog(Get_L_Log_Entity());
 
-                ClearDetail();
+                //ClearDetail();
             }
             finally
             {

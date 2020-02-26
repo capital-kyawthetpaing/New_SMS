@@ -210,7 +210,8 @@ namespace Search
             Key,
 
             //2020.02.21 add by etz
-            HanyouKey,
+            HanyouKeyStart,
+            HanyouKeyEnd,
             //<------------2019.6.19 add
             Shipping,// 2019.06.28
             Supplier, // 2019.07.04
@@ -511,7 +512,12 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 //2020.02.21 add by etz
-                case SearchType.HanyouKey:
+                case SearchType.HanyouKeyStart:
+                    txtCode.MaxLength = 50;
+                    txtCode.Width = 60;
+                    lblName.Width = 350;
+                    break;
+                case SearchType.HanyouKeyEnd:
                     txtCode.MaxLength = 50;
                     txtCode.Width = 60;
                     lblName.Width = 350;
@@ -1170,21 +1176,29 @@ namespace Search
                     }
                     break;
                 //2020.02.21 add by etz
-                case SearchType.HanyouKey:
+                case SearchType.HanyouKeyStart:
                     using (Search_Key frmKey = new Search_Key(Value1, Value2))
                     {
                         frmKey.ShowDialog();
                         if (!frmKey.flgCancel)
                         {
                             TxtCode.Text = frmKey.KeyCode;
-                            if (Value1.Equals("217"))
-                             lblName.Text = frmKey.Char1;
-                            else if (Value1.Equals("218"))
-                                lblName.Text = frmKey.Char2;
+                            lblName.Text = frmKey.Char1;
+
                         }
                     }
                     break;
-
+                case SearchType.HanyouKeyEnd:
+                    using (Search_Key frmKey = new Search_Key(Value1, Value2, Value3))
+                    {
+                        frmKey.ShowDialog();
+                        if (!frmKey.flgCancel)
+                        {
+                            TxtCode.Text = frmKey.KeyCode;
+                            lblName.Text = frmKey.Char2;
+                        }
+                    }
+                    break;
                 //case SearchType.Shipping: // 2019.06.28 add
                 //    using (Search_Shipping frmshipping = new Search_Shipping())
                 //    {
@@ -1478,6 +1492,13 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("46", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
 
+                    case SearchType.HanyouKeyStart:
+                        dtResult = bbl.SimpleSelect1("53", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1);
+                        break;
+
+                    case SearchType.HanyouKeyEnd:
+                        dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
+                        break;
                 }
 
             }
@@ -1549,6 +1570,10 @@ namespace Search
                     break;
                 case SearchType.得意先:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 8, txtCode.Text);
+                    break;
+
+                case SearchType.HanyouKeyStart:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
             }
             if (dtResult.Rows.Count > 0)
