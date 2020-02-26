@@ -20,6 +20,7 @@ namespace Amazon__API
     class Program
     {
 
+
         //static string consoleWriteLinePath = ConfigurationManager.AppSettings["ConsoleWriteLinePath"].ToString();
         //static string connectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
         //static string accessKey = "AKIAJFRPIMOTC4CJGHLQ";
@@ -31,18 +32,30 @@ namespace Amazon__API
         //static string merchantId = "A3U1G59YKB47LS";
         //static string marketplaceId = "A1VC38T7YXB528";
         //static string responseXml;
-
-       
+        static Login_BL loginbl = new Login_BL();
         static DataTable dt;
         static string strbuff = string.Empty;
         public static void Main(string[] args)
         {
-            
+
             //GetOrderList();
 
-           
-            CommonAPI api = new CommonAPI();
-            api.GetOrderList();
+            Console.Title = "Amazon API Console. . . ";
+            Console.WriteLine("Started " + "Amazon__API Startedddddd" + " . . . ");
+            if (loginbl.ReadConfig() == true)
+            {
+                CommonAPI api = new CommonAPI();
+                Amazon__BL abl = new Amazon__BL();
+                if (abl.Allow_Check())
+                {
+                    api.GetOrderList();
+                }
+                else
+                {
+                    Environment.Exit(0);
+                }
+            }
+
 
 
         }

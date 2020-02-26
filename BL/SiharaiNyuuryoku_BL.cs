@@ -11,18 +11,34 @@ namespace BL
 {
     public class SiharaiNyuuryoku_BL : Base_BL
     {
-        D_Pay_DL dpdl = new D_Pay_DL();
-        M_Control_DL mcdl = new M_Control_DL();
-        M_Calendar_DL mcaldl = new M_Calendar_DL();
-        M_Staff_DL msdl = new M_Staff_DL();
-        M_MultiPorpose_DL mmdl = new M_MultiPorpose_DL();
-        M_Kouza_DL mkdl = new M_Kouza_DL();
-        M_Vendor_DL mvdl = new M_Vendor_DL();
-        M_Payee_DL mpdl = new M_Payee_DL();
-        D_PayDetail_DL dpddl = new D_PayDetail_DL();
-        D_PayPlan_DL dppdl = new D_PayPlan_DL();
-        M_StoreClose_DL mscdl = new M_StoreClose_DL();
+        D_Pay_DL dpdl ;
+        M_Control_DL mcdl;
+        M_Calendar_DL mcaldl;
+        M_Staff_DL msdl;
+        M_MultiPorpose_DL mmdl;
+        M_Kouza_DL mkdl;
+        M_Vendor_DL mvdl ;
+        M_Payee_DL mpdl;
+        D_PayDetail_DL dpddl;
+        D_PayPlan_DL dppdl;
+        M_StoreClose_DL mscdl;
+        M_Kouza_DL mkzdl;
 
+        public SiharaiNyuuryoku_BL()
+        {
+            dpdl = new D_Pay_DL();
+            mcdl = new M_Control_DL();
+            mcaldl = new M_Calendar_DL();
+            msdl = new M_Staff_DL();
+            mmdl = new M_MultiPorpose_DL();
+            mkdl = new M_Kouza_DL();
+            mvdl = new M_Vendor_DL();
+            mpdl = new M_Payee_DL();
+            dpddl = new D_PayDetail_DL();
+            dppdl = new D_PayPlan_DL();
+            mscdl = new M_StoreClose_DL();
+            mkzdl = new M_Kouza_DL();
+        }
 
 
         public DataTable D_Pay_LargePayNoSelect(D_Pay_Entity dpe)
@@ -94,6 +110,10 @@ namespace BL
         {
             return dppdl.D_Pay_SelectForPayPlanDate1(dppe);
         }
+        public DataTable D_Pay_SelectForPayPlanDate2(D_PayPlan_Entity dppe)
+        {
+            return dppdl.D_Pay_SelectForPayPlanDate2(dppe);
+        }
 
         public DataTable M_MultiPurpose_AccountSelect(M_MultiPorpose_Entity mme)
         {
@@ -107,6 +127,16 @@ namespace BL
         public DataTable CheckClosePosition(M_StoreClose_Entity msce)
         {
             return mscdl.M_StoreClose_SelectAll(msce);
+        }
+
+        public DataTable M_Multipurpose_SelectIDName(string ID)
+        {
+            return mmdl.M_Multipurpose_SelectIDName(ID);
+        }
+
+        public DataTable M_Kouza_FeeSelect(M_Kouza_Entity mkze)
+        {
+            return mkzdl.M_Kouza_FeeSelect(mkze);
         }
 
     }

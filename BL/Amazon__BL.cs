@@ -10,16 +10,16 @@ namespace BL
 {
   public  class Amazon__BL : Base_BL
     {
+        Amazon__DL adl = new Amazon__DL();
         public Amazon__BL()
         {
 
         }
 
-        //public DataTable Allow_Check()
-        //{
-
-
-        //}
+        public bool Allow_Check()
+        {
+            return Convert.ToInt32(adl.Allow_Check().Rows[0]["Status"].ToString()) == 1 ? true : false;
+        }
 
 
     }

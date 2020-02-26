@@ -208,6 +208,9 @@ namespace Search
             //2019.6.19 add-------------->		
             ID,
             Key,
+
+            //2020.02.21 add by etz
+            HanyouKey,
             //<------------2019.6.19 add
             Shipping,// 2019.06.28
             Supplier, // 2019.07.04
@@ -506,6 +509,12 @@ namespace Search
                     txtCode.MaxLength = 50;
                     txtCode.Width = 350;
                     lblName.Width = 300;
+                    break;
+                //2020.02.21 add by etz
+                case SearchType.HanyouKey:
+                    txtCode.MaxLength = 50;
+                    txtCode.Width = 60;
+                    lblName.Width = 350;
                     break;
                 //<---------------2019.6.19 add
                 case SearchType.Shipping:  // 2019.06.28
@@ -1160,6 +1169,22 @@ namespace Search
                         }
                     }
                     break;
+                //2020.02.21 add by etz
+                case SearchType.HanyouKey:
+                    using (Search_Key frmKey = new Search_Key(Value1, Value2))
+                    {
+                        frmKey.ShowDialog();
+                        if (!frmKey.flgCancel)
+                        {
+                            TxtCode.Text = frmKey.KeyCode;
+                            if (Value1.Equals("217"))
+                             lblName.Text = frmKey.Char1;
+                            else if (Value1.Equals("218"))
+                                lblName.Text = frmKey.Char2;
+                        }
+                    }
+                    break;
+
                 //case SearchType.Shipping: // 2019.06.28 add
                 //    using (Search_Shipping frmshipping = new Search_Shipping())
                 //    {
@@ -1253,7 +1278,7 @@ namespace Search
                         }
                     }
                     break;
-
+                    
                 case SearchType.SKUMulti:
                     using (Search_Product frmSKUCD = new Search_Product(changedate))
                     {

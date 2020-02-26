@@ -27,7 +27,7 @@ namespace TempoRegiNyuukinTouroku
 
         private void TempoRegiNyuukinTouroku_Load(object sender, EventArgs e)
         {
-            InProgramID = "TempoRegiNyuukinTouroku";
+            InProgramID = "TempoRegiNyuukinNyuuryoku";
             string data = InOperatorCD;
             StartProgram();
             this.Text = "入金入力";
@@ -94,39 +94,26 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    if (string.IsNullOrWhiteSpace(txtCustomerCD.Text))
+                    ddpe = GetDepositEntity();
+                    if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
                     {
-                        ddpe = GetDepositEntity();
-                        if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
+                        if (!string.IsNullOrWhiteSpace(txtCustomerCD.Text))
                         {
-                            trntBL.ShowMessage("I101");
-                            txtPayment.Clear();
-                            txtPayment.Focus();
-                            cboDenominationName.SelectedValue = "-1";
-                            txtCustomerCD.Clear();
-                            lblCustomerName.Text = string.Empty;
-                            txtRemarks.Clear();
-                            DisplayData();
-                            chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
+                            dce = GetDCollectData();
+                            trntBL.TempoNyuukinTouroku_D_Collect_Insert(dce);
                         }
-                    }
-                    else
-                    {
-                        dce = GetDCollectData();
-                        if (trntBL.TempoNyuukinTouroku_D_Collect_Insert(dce))
-                        {
-                            trntBL.ShowMessage("I101");
-                            txtPayment.Clear();
-                            txtPayment.Focus();
-                            cboDenominationName.SelectedValue = "-1";
-                            txtCustomerCD.Clear();
-                            lblCustomerName.Text = string.Empty;
-                            txtRemarks.Clear();
-                            DisplayData();
-                            chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
-                        }
+                        trntBL.ShowMessage("I101");
+                        txtPayment.Clear();
+                        txtPayment.Focus();
+                        cboDenominationName.SelectedValue = "-1";
+                        txtCustomerCD.Clear();
+                        lblCustomerName.Text = string.Empty;
+                        txtRemarks.Clear();
+                        DisplayData();
+                        chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
+                //RunConsole();
             }
         }
 
@@ -154,6 +141,9 @@ namespace TempoRegiNyuukinTouroku
                 SalesTaxRate = "0",
                 TotalGaku = "0",
                 Refund = "0",
+                ProperGaku = "0",
+                DiscountGaku = "0",
+                CustomerCD = string.Empty,
                 AdminNO = string.Empty,
                 IsIssued = "0",
                 Operator = InOperatorCD,
@@ -243,11 +233,15 @@ namespace TempoRegiNyuukinTouroku
             }
         }
 
-
-
-
-
-
+        private void RunConsole()
+        {
+            string programID = "TempoTorihikiReceipt";
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "2";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode ;//parameter
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+        }
     }
 }
 
