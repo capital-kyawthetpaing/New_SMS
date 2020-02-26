@@ -399,7 +399,7 @@
             this.SC_HanyouKeyEnd2.Name = "SC_HanyouKeyEnd2";
             this.SC_HanyouKeyEnd2.SearchEnable = true;
             this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
             this.SC_HanyouKeyEnd2.TabIndex = 112;
             this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd2.UseChangeDate = false;
@@ -426,7 +426,7 @@
             this.SC_HanyouKeyEnd1.Name = "SC_HanyouKeyEnd1";
             this.SC_HanyouKeyEnd1.SearchEnable = true;
             this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
             this.SC_HanyouKeyEnd1.TabIndex = 110;
             this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd1.UseChangeDate = false;
@@ -453,7 +453,7 @@
             this.SC_HanyouKeyStart2.Name = "SC_HanyouKeyStart2";
             this.SC_HanyouKeyStart2.SearchEnable = true;
             this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
             this.SC_HanyouKeyStart2.TabIndex = 111;
             this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart2.UseChangeDate = false;
@@ -480,7 +480,7 @@
             this.SC_HanyouKeyStart1.Name = "SC_HanyouKeyStart1";
             this.SC_HanyouKeyStart1.SearchEnable = true;
             this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKey;
+            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
             this.SC_HanyouKeyStart1.TabIndex = 109;
             this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart1.UseChangeDate = false;
