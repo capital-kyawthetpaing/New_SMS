@@ -141,7 +141,7 @@ namespace MainMenu
                 Login_Click();
 
             }
-            else if (e.KeyData == Keys.F12)
+            else if (e.KeyData == Keys.F11)
             {
                 F11();
 

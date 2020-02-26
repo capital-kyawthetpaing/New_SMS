@@ -251,6 +251,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "HaspoStoreMenuLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HaspoStoreMenuLogin";
             this.Load += new System.EventHandler(this.HaspoStoreMenuLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HaspoStoreMenuLogin_KeyDown);
