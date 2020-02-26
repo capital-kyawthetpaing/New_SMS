@@ -69,6 +69,7 @@
     <Compile Include="D_InventoryProcessing_Entity.cs" />
     <Compile Include="D_Inventory_Entity.cs" />
     <Compile Include="D_JuChuu_Entity.cs" />
+    <Compile Include="D_Mail_Entity.cs" />
     <Compile Include="D_Mitsumori_Entity.cs" />
     <Compile Include="D_MonthlyClaims_Entity.cs" />
     <Compile Include="D_MonthlyDebt_Entity.cs" />
