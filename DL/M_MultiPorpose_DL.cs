@@ -15,7 +15,7 @@ namespace DL
         public DataTable M_MultiPorpose_Select(M_MultiPorpose_Entity mme)
         {
             string sp = "M_MultiPorpose_Select";
-            //KTP 2019-0529 全部のFunctionでをしなくてもいいように共通のFunctionでやり方を更新しました。
+            //KTP 2019-0529 全部のFunctionでをしなくてもいいように共通のFunctionでやり方を更新しました。 
             //command = new SqlCommand(sp, GetConnection());
             //command.CommandType = CommandType.StoredProcedure;
             //command.CommandTimeout = 0;
@@ -130,6 +130,16 @@ namespace DL
         //    return InsertUpdateDeleteData(dic, sp);
         //}
 
-       
+        public DataTable M_Multipurpose_SelectIDName(string ID)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ID", new ValuePair { value1 = SqlDbType.Int, value2 = ID } }
+            };
+
+            return SelectData(dic, "M_Multipurpose_SelectIDName");
+        }
+
+
     }
 }

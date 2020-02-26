@@ -1177,6 +1177,10 @@ namespace Search
                         if (!frmKey.flgCancel)
                         {
                             TxtCode.Text = frmKey.KeyCode;
+                            if (Value1.Equals("217"))
+                             lblName.Text = frmKey.Char1;
+                            else if (Value1.Equals("218"))
+                                lblName.Text = frmKey.Char2;
                         }
                     }
                     break;
@@ -1274,7 +1278,7 @@ namespace Search
                         }
                     }
                     break;
-
+                    
                 case SearchType.SKUMulti:
                     using (Search_Product frmSKUCD = new Search_Product(changedate))
                     {

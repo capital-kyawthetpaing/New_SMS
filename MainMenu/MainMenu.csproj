@@ -24,14 +24,15 @@
     <PublishUrl>D:\Global3\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <UpdateUrl>http://202.223.48.145/SMS/SMS-GLOBE/</UpdateUrl>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -100,6 +101,7 @@
     <Compile Include="Capitalsports_MainMenu.Designer.cs">
       <DependentUpon>Capitalsports_MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTPData.cs" />
     <Compile Include="HaspoLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +164,12 @@
     <Compile Include="Tennic_MainMenu.designer.cs">
       <DependentUpon>Tennic_MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Update_Sync.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Update_Sync.Designer.cs">
+      <DependentUpon>Update_Sync.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CapitalsportsLogin.resx">
       <DependentUpon>CapitalsportsLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tennic_MainMenu.resx">
       <DependentUpon>Tennic_MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Update_Sync.resx">
+      <DependentUpon>Update_Sync.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MainMenu_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
