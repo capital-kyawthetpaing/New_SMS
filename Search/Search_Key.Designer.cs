@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -42,8 +41,6 @@
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.F11Show = new CKM_Controls.CKM_Button();
             this.GvKey = new CKM_Controls.CKM_GridView();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.colKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChar1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChar2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +49,8 @@
             this.colDigital2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDigital3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDailyPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvKey)).BeginInit();
             this.SuspendLayout();
@@ -205,7 +204,7 @@
             this.GvKey.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -221,14 +220,6 @@
             this.colDigital2,
             this.colDigital3,
             this.colDailyPayment});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvKey.DefaultCellStyle = dataGridViewCellStyle7;
             this.GvKey.EnableHeadersVisualStyles = false;
             this.GvKey.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvKey.Location = new System.Drawing.Point(12, 156);
@@ -238,28 +229,6 @@
             this.GvKey.UseRowNo = true;
             this.GvKey.UseSetting = true;
             this.GvKey.DoubleClick += new System.EventHandler(this.GvKey_DoubleClick);
-            // 
-            // lblID
-            // 
-            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblID.Location = new System.Drawing.Point(58, 15);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(30, 20);
-            this.lblID.TabIndex = 48;
-            this.lblID.Text = "YYYY/MM/DD";
-            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblName.Location = new System.Drawing.Point(88, 15);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(650, 20);
-            this.lblName.TabIndex = 49;
-            this.lblName.Text = "YYYY/MM/DD";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // colKey
             // 
@@ -324,6 +293,28 @@
             this.colDailyPayment.HeaderText = "日付項目1";
             this.colDailyPayment.Name = "colDailyPayment";
             this.colDailyPayment.Width = 150;
+            // 
+            // lblID
+            // 
+            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblID.Location = new System.Drawing.Point(58, 15);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(30, 20);
+            this.lblID.TabIndex = 48;
+            this.lblID.Text = "111";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblName.Location = new System.Drawing.Point(88, 15);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(650, 20);
+            this.lblName.TabIndex = 49;
+            this.lblName.Text = "YYYY/MM/DD";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Search_Key
             // 

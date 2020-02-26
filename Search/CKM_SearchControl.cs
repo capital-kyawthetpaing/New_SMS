@@ -1492,6 +1492,13 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("46", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
 
+                    case SearchType.HanyouKeyStart:
+                        dtResult = bbl.SimpleSelect1("53", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1);
+                        break;
+
+                    case SearchType.HanyouKeyEnd:
+                        dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
+                        break;
                 }
 
             }
@@ -1563,6 +1570,10 @@ namespace Search
                     break;
                 case SearchType.得意先:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 8, txtCode.Text);
+                    break;
+
+                case SearchType.HanyouKeyStart:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
             }
             if (dtResult.Rows.Count > 0)
