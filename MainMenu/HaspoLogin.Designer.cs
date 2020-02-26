@@ -35,8 +35,11 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.ckM_Button3 = new CKM_Controls.CKM_Button();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -142,6 +145,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.ckM_Button3, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button1, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.ckM_Button2, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 319);
@@ -150,6 +154,25 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 36);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // ckM_Button3
+            // 
+            this.ckM_Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.ckM_Button3.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.ckM_Button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckM_Button3.DefaultBtnSize = false;
+            this.ckM_Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ckM_Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckM_Button3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.ckM_Button3.Location = new System.Drawing.Point(430, 1);
+            this.ckM_Button3.Margin = new System.Windows.Forms.Padding(1);
+            this.ckM_Button3.Name = "ckM_Button3";
+            this.ckM_Button3.Size = new System.Drawing.Size(141, 34);
+            this.ckM_Button3.TabIndex = 24;
+            this.ckM_Button3.Text = "同期する (F11)";
+            this.ckM_Button3.UseVisualStyleBackColor = false;
+            this.ckM_Button3.Click += new System.EventHandler(this.ckM_Button3_Click);
             // 
             // ckM_Button1
             // 
@@ -189,12 +212,36 @@
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(633, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 26);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "0.0.0.0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(532, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Version - ";
+            // 
             // HaspoLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ClientSize = new System.Drawing.Size(717, 355);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.ckM_Label2);
             this.Controls.Add(this.ckM_Label1);
@@ -225,5 +272,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private CKM_Controls.CKM_Button ckM_Button1;
         private CKM_Controls.CKM_Button ckM_Button2;
+        private CKM_Controls.CKM_Button ckM_Button3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
