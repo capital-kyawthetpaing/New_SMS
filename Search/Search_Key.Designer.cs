@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -41,16 +42,16 @@
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.F11Show = new CKM_Controls.CKM_Button();
             this.GvKey = new CKM_Controls.CKM_GridView();
+            this.lblID = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.colKey = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colText1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colText2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChar1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChar2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colText3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDigital1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDigital2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDigital3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDailyPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblID = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvKey)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@
             this.ckM_Label1.DefaultlabelSize = true;
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label1.Location = new System.Drawing.Point(33, 19);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(19, 12);
@@ -99,6 +101,7 @@
             this.ckM_Label4.DefaultlabelSize = true;
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label4.Location = new System.Drawing.Point(26, 44);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(26, 12);
@@ -111,6 +114,7 @@
             // 
             this.txtKey1.AllowMinus = false;
             this.txtKey1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtKey1.BackColor = System.Drawing.Color.White;
             this.txtKey1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKey1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKey1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -134,6 +138,7 @@
             // 
             this.txtKey2.AllowMinus = false;
             this.txtKey2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtKey2.BackColor = System.Drawing.Color.White;
             this.txtKey2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKey2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKey2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -162,6 +167,7 @@
             this.ckM_Label5.DefaultlabelSize = true;
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label5.Location = new System.Drawing.Point(564, 45);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(18, 12);
@@ -199,7 +205,7 @@
             this.GvKey.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -208,13 +214,21 @@
             this.GvKey.ColumnHeadersHeight = 25;
             this.GvKey.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colKey,
-            this.colText1,
-            this.colText2,
+            this.colChar1,
+            this.colChar2,
             this.colText3,
             this.colDigital1,
             this.colDigital2,
             this.colDigital3,
             this.colDailyPayment});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvKey.DefaultCellStyle = dataGridViewCellStyle7;
             this.GvKey.EnableHeadersVisualStyles = false;
             this.GvKey.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvKey.Location = new System.Drawing.Point(12, 156);
@@ -225,6 +239,28 @@
             this.GvKey.UseSetting = true;
             this.GvKey.DoubleClick += new System.EventHandler(this.GvKey_DoubleClick);
             // 
+            // lblID
+            // 
+            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblID.Location = new System.Drawing.Point(58, 15);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(30, 20);
+            this.lblID.TabIndex = 48;
+            this.lblID.Text = "YYYY/MM/DD";
+            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblName
+            // 
+            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblName.Location = new System.Drawing.Point(88, 15);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(650, 20);
+            this.lblName.TabIndex = 49;
+            this.lblName.Text = "YYYY/MM/DD";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // colKey
             // 
             this.colKey.DataPropertyName = "Key";
@@ -232,19 +268,19 @@
             this.colKey.Name = "colKey";
             this.colKey.Width = 300;
             // 
-            // colText1
+            // colChar1
             // 
-            this.colText1.DataPropertyName = "Char1";
-            this.colText1.HeaderText = "文字項目1";
-            this.colText1.Name = "colText1";
-            this.colText1.Width = 200;
+            this.colChar1.DataPropertyName = "Char1";
+            this.colChar1.HeaderText = "文字項目1";
+            this.colChar1.Name = "colChar1";
+            this.colChar1.Width = 200;
             // 
-            // colText2
+            // colChar2
             // 
-            this.colText2.DataPropertyName = "Char2";
-            this.colText2.HeaderText = "文字項目2";
-            this.colText2.Name = "colText2";
-            this.colText2.Width = 200;
+            this.colChar2.DataPropertyName = "Char2";
+            this.colChar2.HeaderText = "文字項目2";
+            this.colChar2.Name = "colChar2";
+            this.colChar2.Width = 200;
             // 
             // colText3
             // 
@@ -289,28 +325,6 @@
             this.colDailyPayment.Name = "colDailyPayment";
             this.colDailyPayment.Width = 150;
             // 
-            // lblID
-            // 
-            this.lblID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblID.Location = new System.Drawing.Point(58, 15);
-            this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(30, 20);
-            this.lblID.TabIndex = 48;
-            this.lblID.Text = "YYYY/MM/DD";
-            this.lblID.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblName
-            // 
-            this.lblName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblName.Location = new System.Drawing.Point(88, 15);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(650, 20);
-            this.lblName.TabIndex = 49;
-            this.lblName.Text = "YYYY/MM/DD";
-            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Search_Key
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -343,8 +357,8 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colKey;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colText1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colText2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colChar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colChar2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colText3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDigital1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDigital2;
