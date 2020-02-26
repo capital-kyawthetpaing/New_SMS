@@ -33,11 +33,12 @@ namespace SiharaiYoteiHyou
         SiharaiYoteiHyou_BL shyhbl;
         D_PayPlan_Entity dppe;
         private string StartUpKBN = "";
-        DataTable dtCSV;
+        DataTable dtCSV,dtResult;
         public SiharaiYoteiHyou()
         {
             InitializeComponent();
             dtCSV = new DataTable();
+            dtResult = new DataTable();
         }
 
         private void SiharaiYoteiHyou_Load(object sender, EventArgs e)
@@ -263,11 +264,12 @@ namespace SiharaiYoteiHyou
             // レコード定義を行う   
             try
             {
-                DataTable table = CheckData(1);
-                if (table == null)
-                {
-                    return;
-                }
+               
+                //DataTable table = CheckData(1);
+                //if (table == null)
+                //{
+                //    return;
+                //}
                 DialogResult ret;
                 SiharaiYoteiHyou_Report Report = new SiharaiYoteiHyou_Report();
 
@@ -275,6 +277,9 @@ namespace SiharaiYoteiHyou
                 {
 
                     case EPrintMode.DIRECT:
+                        dtResult = CheckData(1);
+                        if (dtResult == null) return;
+
                         if (StartUpKBN == "1")
                         {
                             ret = DialogResult.No;
@@ -292,7 +297,7 @@ namespace SiharaiYoteiHyou
                         Report.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Portrait;
 
                         // 印字データをセット
-                        Report.SetDataSource(table);
+                        Report.SetDataSource(dtResult);
                         Report.Refresh();
                         Report.SetParameterValue("StoreCD", comboStore.SelectedValue.ToString() + "  " + comboStore.Text);
                         Report.SetParameterValue("DateFrom", txtPaymentDueDateFrom.Text);
@@ -349,7 +354,6 @@ namespace SiharaiYoteiHyou
                         break;
                     case EPrintMode.CSV:
                         dtCSV = CheckData(2);
-
                         if (dtCSV == null) return;
                         try
                         {
@@ -387,6 +391,10 @@ namespace SiharaiYoteiHyou
                         }
                         break;
                     case EPrintMode.PDF:
+
+                        dtResult = CheckData(1);
+                        if (dtResult == null) return;
+
                         if (bbl.ShowMessage("Q204") != DialogResult.Yes)
                         {
                             return;
@@ -398,7 +406,7 @@ namespace SiharaiYoteiHyou
                         }
 
                         // 印字データをセット
-                        Report.SetDataSource(table);
+                        Report.SetDataSource(dtResult);
                         Report.Refresh();
                         Report.SetParameterValue("StoreCD", comboStore.SelectedValue.ToString() + "  " + comboStore.Text);
                         Report.SetParameterValue("DateFrom", txtPaymentDueDateFrom.Text);
