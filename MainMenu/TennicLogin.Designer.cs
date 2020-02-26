@@ -32,12 +32,12 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
+            this.ckM_Button3 = new CKM_Controls.CKM_Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
-            this.ckM_Button3 = new CKM_Controls.CKM_Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -99,6 +99,25 @@
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
+            // 
+            // ckM_Button3
+            // 
+            this.ckM_Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.ckM_Button3.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.ckM_Button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckM_Button3.DefaultBtnSize = false;
+            this.ckM_Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ckM_Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckM_Button3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.ckM_Button3.Location = new System.Drawing.Point(430, 1);
+            this.ckM_Button3.Margin = new System.Windows.Forms.Padding(1);
+            this.ckM_Button3.Name = "ckM_Button3";
+            this.ckM_Button3.Size = new System.Drawing.Size(141, 34);
+            this.ckM_Button3.TabIndex = 23;
+            this.ckM_Button3.Text = "同期する (F11)";
+            this.ckM_Button3.UseVisualStyleBackColor = false;
+            this.ckM_Button3.Click += new System.EventHandler(this.ckM_Button3_Click);
             // 
             // pictureBox1
             // 
@@ -194,25 +213,6 @@
             this.txtOperatorCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_Button3
-            // 
-            this.ckM_Button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.ckM_Button3.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button3.DefaultBtnSize = false;
-            this.ckM_Button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button3.Location = new System.Drawing.Point(430, 1);
-            this.ckM_Button3.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button3.Name = "ckM_Button3";
-            this.ckM_Button3.Size = new System.Drawing.Size(141, 34);
-            this.ckM_Button3.TabIndex = 23;
-            this.ckM_Button3.Text = "同期する (F11)";
-            this.ckM_Button3.UseVisualStyleBackColor = false;
-            this.ckM_Button3.Click += new System.EventHandler(this.ckM_Button3_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -253,6 +253,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TennicLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tennic_MainMenu";
             this.Load += new System.EventHandler(this.Tennic_MainMenu_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Tennic_MainMenu_KeyDown);
