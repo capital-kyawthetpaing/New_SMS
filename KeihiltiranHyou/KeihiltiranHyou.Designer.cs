@@ -143,7 +143,7 @@
             this.expense_timeto.IsNumber = true;
             this.expense_timeto.IsShop = false;
             this.expense_timeto.Length = 5;
-            this.expense_timeto.Location = new System.Drawing.Point(411, 73);
+            this.expense_timeto.Location = new System.Drawing.Point(420, 73);
             this.expense_timeto.MaxLength = 5;
             this.expense_timeto.MoveNext = true;
             this.expense_timeto.Name = "expense_timeto";
@@ -193,7 +193,7 @@
             this.txtExpenseTo.IsNumber = true;
             this.txtExpenseTo.IsShop = false;
             this.txtExpenseTo.Length = 10;
-            this.txtExpenseTo.Location = new System.Drawing.Point(312, 73);
+            this.txtExpenseTo.Location = new System.Drawing.Point(321, 73);
             this.txtExpenseTo.MaxLength = 10;
             this.txtExpenseTo.MoveNext = true;
             this.txtExpenseTo.Name = "txtExpenseTo";
@@ -261,7 +261,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(274, 77);
+            this.ckM_Label9.Location = new System.Drawing.Point(293, 77);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label9.TabIndex = 38;

@@ -252,6 +252,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "CapitalsportsLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CapitalsportsLogin";
             this.Load += new System.EventHandler(this.CapitalsportsLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CapitalsportsLogin_KeyDown);

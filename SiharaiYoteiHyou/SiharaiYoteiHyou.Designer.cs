@@ -154,7 +154,7 @@
             this.ckM_Label3.Location = new System.Drawing.Point(1351, 10);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label3.TabIndex = 4;
+            this.ckM_Label3.TabIndex = 12;
             this.ckM_Label3.Text = "店舗";
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -172,7 +172,7 @@
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
             this.comboStore.Size = new System.Drawing.Size(170, 20);
-            this.comboStore.TabIndex = 5;
+            this.comboStore.TabIndex = 13;
             // 
             // ckM_Label4
             // 
@@ -186,7 +186,7 @@
             this.ckM_Label4.Location = new System.Drawing.Point(67, 40);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label4.TabIndex = 6;
+            this.ckM_Label4.TabIndex = 4;
             this.ckM_Label4.Text = "支払先";
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -210,7 +210,7 @@
             this.scPaymentDestinaion.SearchEnable = true;
             this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scPaymentDestinaion.TabIndex = 7;
+            this.scPaymentDestinaion.TabIndex = 5;
             this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scPaymentDestinaion.UseChangeDate = false;
             this.scPaymentDestinaion.Value1 = null;
@@ -231,7 +231,7 @@
             this.ckM_Label5.Location = new System.Drawing.Point(55, 66);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label5.TabIndex = 8;
+            this.ckM_Label5.TabIndex = 6;
             this.ckM_Label5.Text = "印刷対象";
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,7 +248,7 @@
             this.ckM_Label6.Location = new System.Drawing.Point(68, 91);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label6.TabIndex = 9;
+            this.ckM_Label6.TabIndex = 7;
             this.ckM_Label6.Text = "締状況";
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -260,7 +260,7 @@
             this.RdoCloseStsSumi.Location = new System.Drawing.Point(3, 5);
             this.RdoCloseStsSumi.Name = "RdoCloseStsSumi";
             this.RdoCloseStsSumi.Size = new System.Drawing.Size(75, 16);
-            this.RdoCloseStsSumi.TabIndex = 10;
+            this.RdoCloseStsSumi.TabIndex = 0;
             this.RdoCloseStsSumi.Text = "支払締済";
             this.RdoCloseStsSumi.UseVisualStyleBackColor = true;
             // 
@@ -276,7 +276,7 @@
             this.ckM_Label7.Location = new System.Drawing.Point(55, 122);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label7.TabIndex = 12;
+            this.ckM_Label7.TabIndex = 8;
             this.ckM_Label7.Text = "支払状況";
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -288,7 +288,7 @@
             this.RdoUnpaid.Location = new System.Drawing.Point(3, 5);
             this.RdoUnpaid.Name = "RdoUnpaid";
             this.RdoUnpaid.Size = new System.Drawing.Size(88, 16);
-            this.RdoUnpaid.TabIndex = 13;
+            this.RdoUnpaid.TabIndex = 0;
             this.RdoUnpaid.Text = "未支払あり";
             this.RdoUnpaid.UseVisualStyleBackColor = true;
             // 
@@ -299,7 +299,7 @@
             this.radioPaymentStatusAll.Location = new System.Drawing.Point(135, 6);
             this.radioPaymentStatusAll.Name = "radioPaymentStatusAll";
             this.radioPaymentStatusAll.Size = new System.Drawing.Size(49, 16);
-            this.radioPaymentStatusAll.TabIndex = 14;
+            this.radioPaymentStatusAll.TabIndex = 1;
             this.radioPaymentStatusAll.Text = "全て";
             this.radioPaymentStatusAll.UseVisualStyleBackColor = true;
             // 
@@ -315,7 +315,7 @@
             this.ckM_Label8.Location = new System.Drawing.Point(81, 154);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label8.TabIndex = 15;
+            this.ckM_Label8.TabIndex = 9;
             this.ckM_Label8.Text = "種別";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -327,7 +327,7 @@
             this.chkPurchase.Location = new System.Drawing.Point(118, 154);
             this.chkPurchase.Name = "chkPurchase";
             this.chkPurchase.Size = new System.Drawing.Size(50, 16);
-            this.chkPurchase.TabIndex = 16;
+            this.chkPurchase.TabIndex = 10;
             this.chkPurchase.Text = "仕入";
             this.chkPurchase.UseVisualStyleBackColor = true;
             // 
@@ -338,7 +338,7 @@
             this.chkExpense.Location = new System.Drawing.Point(250, 153);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(50, 16);
-            this.chkExpense.TabIndex = 17;
+            this.chkExpense.TabIndex = 11;
             this.chkExpense.Text = "経費";
             this.chkExpense.UseVisualStyleBackColor = true;
             // 
@@ -363,7 +363,7 @@
             this.panelDetail.Location = new System.Drawing.Point(7, 100);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1700, 800);
-            this.panelDetail.TabIndex = 9;
+            this.panelDetail.TabIndex = 0;
             // 
             // panel2
             // 
@@ -390,7 +390,7 @@
             this.radioClosedStatusAll.Location = new System.Drawing.Point(135, 5);
             this.radioClosedStatusAll.Name = "radioClosedStatusAll";
             this.radioClosedStatusAll.Size = new System.Drawing.Size(49, 16);
-            this.radioClosedStatusAll.TabIndex = 11;
+            this.radioClosedStatusAll.TabIndex = 1;
             this.radioClosedStatusAll.Text = "全て";
             this.radioClosedStatusAll.UseVisualStyleBackColor = true;
             // 

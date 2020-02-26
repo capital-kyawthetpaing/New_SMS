@@ -252,6 +252,7 @@
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "HaspoLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HaspoLogin";
             this.Load += new System.EventHandler(this.HaspoLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HaspoLogin_KeyDown);

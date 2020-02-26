@@ -252,6 +252,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainmenuLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainmenuLogin";
             this.Load += new System.EventHandler(this.MainmenuLogin_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.MainmenuLogin_KeyDown);
