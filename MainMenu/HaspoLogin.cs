@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,14 @@ namespace MainMenu
         public HaspoLogin()
         {
             InitializeComponent();
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+
+            }
+            else
+                ckM_Button3.Visible = false;
+
         }
 
         private void HaspoLogin_Load(object sender, EventArgs e)
@@ -132,12 +141,39 @@ namespace MainMenu
                 Login_Click();
 
             }
-        }
+            else if (e.KeyData == Keys.F12)
+            {
+                F11();
 
+            }
+        }
+        private void F11()
+        {
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    FTPData ftp = new FTPData();
+                    ftp.UpdateSyncData();
+                    this.Cursor = Cursors.Default;
+                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // .. 
+                }
+                ckM_Button1.Focus();
+
+            }
+        }
         private void ckM_Button2_Click(object sender, EventArgs e)
         {
             this.Close();
             System.Environment.Exit(0);
+        }
+
+        private void ckM_Button3_Click(object sender, EventArgs e)
+        {
+            F11();
         }
     }
 }

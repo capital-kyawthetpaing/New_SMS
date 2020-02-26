@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Deployment.Application;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,13 @@ namespace MainMenu
         {
             this.KeyPreview = true;
             InitializeComponent();
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
+
+            }
+            else
+                ckM_Button3.Visible = false;
         }
 
         private bool ErrorCheck()
@@ -59,7 +67,11 @@ namespace MainMenu
             }
             else if (e.KeyData == Keys.F12)
             {
-                    Login_Click();
+                Login_Click();
+            }
+            else if (e.KeyData == Keys.F11)
+            {
+                F11();
             }
         }
 
@@ -74,6 +86,24 @@ namespace MainMenu
             Login_Click();
             //Base_BL bbl = new Base_BL();
             //bbl.ShowMessage("I001", "テスト", "テスト1");
+        }
+        private void F11()
+        {
+            if (ApplicationDeployment.IsNetworkDeployed)
+            {
+                var result = MessageBox.Show("Do you want to asynchronize AppData Files?", "Synchronous Update Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    FTPData ftp = new FTPData();
+                    ftp.UpdateSyncData();
+                    this.Cursor = Cursors.Default;
+                    MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // .. 
+                }
+                ckM_Button1.Focus();
+
+            }
         }
         private void Login_Click()
         {
@@ -130,6 +160,11 @@ namespace MainMenu
                     }
 
                 }
+        }
+
+        private void ckM_Button3_Click(object sender, EventArgs e)
+        {
+            F11();
         }
     }
 }
