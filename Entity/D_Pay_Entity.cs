@@ -25,6 +25,7 @@ namespace Entity
         public string InputDateTimeFrom { get; set; }
         public string InputDateTimeTo { get; set; }
         public string PayPlanDate { get; set; }
+        public string LocationXml { get; set; }
 
     }
 }

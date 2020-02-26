@@ -96,5 +96,21 @@ namespace DL
             };
             return SelectData(dic, "D_Pay_SelectForSiharaiNo");
         }
+
+        public bool D_Pay_Insert(D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StaffCD } },
+                { "@PayDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayDate } },
+                { "@LocationXml", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.LocationXml } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Key } },
+            };
+
+            return InsertUpdateDeleteData(dic, "D_Pay_Insert");
+        }
     }
 }
