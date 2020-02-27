@@ -25,7 +25,7 @@ namespace SiharaiNyuuryoku
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
         string type = string.Empty;string kouzaCD = string.Empty;
-        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
+        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1)
         {
             InitializeComponent();
             kouzaCD = KouzaCD;
@@ -38,7 +38,6 @@ namespace SiharaiNyuuryoku
                 if (tblROWS1.Length > 0)
                     dtSiharai2 = tblROWS1.CopyToDataTable();
             }
-                //dtSiharai2 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
 
         }
 
@@ -122,11 +121,18 @@ namespace SiharaiNyuuryoku
             //}
             #endregion
 
+            InProgramID = "SiharaiNyuuryoku_2";
+            Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
+
+            SetFunctionLabel(EProMode.MENTE);
+
             BindData();
 
             LabelDataBind();
 
             SelectKeyData();
+
+            SetRequireField();
         }
 
         private void BindData()
@@ -204,7 +210,7 @@ namespace SiharaiNyuuryoku
 
         private void SetRequireField()
         {
-            if(Convert.ToInt32(txtTransferAmount.Text)>0)
+            if (Convert.ToInt32(txtTransferAmount.Text)>0)
             {
                 SC_BankCD.TxtCode.Require(true);
                 SC_BranchCD.TxtCode.Require(true);
@@ -250,8 +256,9 @@ namespace SiharaiNyuuryoku
             }
             lblPayPlanGaku.Text = sum1.ToString("#,##0");
             lblPayComfirmGaku.Text = sum2.ToString("#,##0");
-            lblPayGaku.Text = sum3.ToString("#,##0");
+            lblPayGaku.Text =lblPayGaku1.Text= sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
+            txtTransferAmount.Text = sum3.ToString();
         }
 
 
@@ -378,7 +385,7 @@ namespace SiharaiNyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
+                if (Convert.ToInt32(txtTransferAmount.Text)>0 && !string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
                 {
                     if (SC_BankCD.SelectData())
                     {
@@ -395,6 +402,11 @@ namespace SiharaiNyuuryoku
                     }
 
                 }
+                //else
+                //{
+                //    bbl.ShowMessage("E101");
+                //    SC_BankCD.SetFocus(1);
+                //}
 
             }
         }
