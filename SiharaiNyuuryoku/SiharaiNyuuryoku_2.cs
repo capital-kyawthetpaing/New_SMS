@@ -25,7 +25,7 @@ namespace SiharaiNyuuryoku
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
         string type = string.Empty;string kouzaCD = string.Empty;
-        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
+        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1)
         {
             InitializeComponent();
             kouzaCD = KouzaCD;
@@ -38,7 +38,6 @@ namespace SiharaiNyuuryoku
                 if (tblROWS1.Length > 0)
                     dtSiharai2 = tblROWS1.CopyToDataTable();
             }
-                //dtSiharai2 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
 
         }
 
@@ -121,6 +120,11 @@ namespace SiharaiNyuuryoku
             //    }
             //}
             #endregion
+
+            InProgramID = "SiharaiNyuuryoku_2";
+            Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
+
+            SetFunctionLabel(EProMode.MENTE);
 
             BindData();
 
@@ -206,7 +210,7 @@ namespace SiharaiNyuuryoku
 
         private void SetRequireField()
         {
-            if(Convert.ToInt32(txtTransferAmount.Text)>0)
+            if (Convert.ToInt32(txtTransferAmount.Text)>0)
             {
                 SC_BankCD.TxtCode.Require(true);
                 SC_BranchCD.TxtCode.Require(true);
@@ -558,6 +562,28 @@ namespace SiharaiNyuuryoku
             MoveNextControl(e);
         }
 
-       
+        private void dgvSearchPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Maintained_CheckClick(sender, e);
+        }
+
+        protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
+                    {
+                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                        
+                        
+                        
+                    }
+
+                }
+
+            }
+        }
     }
 }

@@ -40,7 +40,7 @@ namespace Search
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
             chkTeiki.Checked = true;
-            //F11Visible = true;
+            F11Visible = false;
         }
         //ZCO
         //private void InitialControlArray()
@@ -179,7 +179,6 @@ namespace Search
                     ExpenseNumber = dgvCostSearch.CurrentRow.Cells["ExpenseNo"].Value.ToString();
                     this.Close();
                 }
-
             }
             catch (Exception ex)
             {
@@ -318,8 +317,6 @@ namespace Search
                 format);
                 j += 2;
             }
-           
-           
         }
         private void dgvCostSearch_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
@@ -332,17 +329,14 @@ namespace Search
                 e.PaintContent(r2);
                 e.Handled = true;
             }
-
         }
-
         private void frmSearch_KeihiNO_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
         private void SearchStaff_KeyDown(object sender, KeyEventArgs e)
-        {
-            
+        { 
         }
     
         private void scStaffCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -365,7 +359,6 @@ namespace Search
                 }
             }
         }
-
         private void searchPayment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -386,6 +379,11 @@ namespace Search
                 }
 
             }
+        }
+        private void PaymentCD_Enter(object sender, EventArgs e)
+        {
+            PaymentCD.Value1 = "2";
+            PaymentCD.ChangeDate = bbl.GetDate();
         }
     }
 }
