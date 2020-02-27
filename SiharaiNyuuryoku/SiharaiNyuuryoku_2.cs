@@ -562,6 +562,28 @@ namespace SiharaiNyuuryoku
             MoveNextControl(e);
         }
 
-       
+        private void dgvSearchPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Maintained_CheckClick(sender, e);
+        }
+
+        protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
+                    {
+                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                        
+                        
+                        
+                    }
+
+                }
+
+            }
+        }
     }
 }

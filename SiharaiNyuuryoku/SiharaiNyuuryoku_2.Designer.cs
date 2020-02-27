@@ -315,6 +315,7 @@
             this.dgvSearchPayment.TabIndex = 113;
             this.dgvSearchPayment.UseRowNo = true;
             this.dgvSearchPayment.UseSetting = true;
+            this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
             // 
             // SC_HanyouKeyEnd2
             // 
