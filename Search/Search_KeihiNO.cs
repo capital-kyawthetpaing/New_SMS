@@ -296,8 +296,9 @@ namespace Search
 
         private void dgvCostSearch_Paint(object sender, PaintEventArgs e)
         {
-            string[] monthes = { "経費番号", "計上日", "経費入力日", "定期", "支払先", "担当スタッフ", "支払予定日", "支払日", "税込支払額" };
-            for (int j = 4; j <8;)
+
+            string[] monthes = { "経費番号", "計上日", "経費入力日", "定期", "支払先","","担当スタッフ"};
+            for (int j = 4; j < 8;)
             {
                 Rectangle r1 = this.dgvCostSearch.GetCellDisplayRectangle(j, -1, true);
                 int w1 = this.dgvCostSearch.GetCellDisplayRectangle(j + 1, -1, true).Width;
@@ -306,11 +307,11 @@ namespace Search
                 r1.Y += 1;
                 r1.Width = r1.Width + w1 - 2;
                 r1.Height = r1.Height - 2;
-
+                dgvCostSearch.ColumnHeadersDefaultCellStyle.Font= new Font(dgvCostSearch.Font, FontStyle.Bold);
                 e.Graphics.FillRectangle(new SolidBrush(this.dgvCostSearch.ColumnHeadersDefaultCellStyle.BackColor), r1);
                 StringFormat format = new StringFormat();
                 format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
+                e.Graphics.DrawString(monthes[j],
                 this.dgvCostSearch.ColumnHeadersDefaultCellStyle.Font,
                 new SolidBrush(this.dgvCostSearch.ColumnHeadersDefaultCellStyle.ForeColor),
                 r1,
