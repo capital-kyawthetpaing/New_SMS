@@ -393,7 +393,7 @@ namespace Search
         private void PaymentCD_Enter(object sender, EventArgs e)
         {
             PaymentCD.Value1 = "2";
-            PaymentCD.ChangeDate = System.DateTime.Now.ToString("yyyy/MM/dd");
+            PaymentCD.ChangeDate = bbl.GetDate();
         }
     }
 }
