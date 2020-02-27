@@ -127,6 +127,8 @@ namespace SiharaiNyuuryoku
             LabelDataBind();
 
             SelectKeyData();
+
+            SetRequireField();
         }
 
         private void BindData()
@@ -250,8 +252,9 @@ namespace SiharaiNyuuryoku
             }
             lblPayPlanGaku.Text = sum1.ToString("#,##0");
             lblPayComfirmGaku.Text = sum2.ToString("#,##0");
-            lblPayGaku.Text = sum3.ToString("#,##0");
+            lblPayGaku.Text =lblPayGaku1.Text= sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
+            txtTransferAmount.Text = sum3.ToString();
         }
 
 
@@ -378,7 +381,7 @@ namespace SiharaiNyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
+                if (Convert.ToInt32(txtTransferAmount.Text)>0 && !string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
                 {
                     if (SC_BankCD.SelectData())
                     {
@@ -395,6 +398,11 @@ namespace SiharaiNyuuryoku
                     }
 
                 }
+                //else
+                //{
+                //    bbl.ShowMessage("E101");
+                //    SC_BankCD.SetFocus(1);
+                //}
 
             }
         }
