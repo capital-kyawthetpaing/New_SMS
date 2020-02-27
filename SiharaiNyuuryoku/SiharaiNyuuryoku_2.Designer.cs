@@ -316,6 +316,7 @@
             this.dgvSearchPayment.UseRowNo = true;
             this.dgvSearchPayment.UseSetting = true;
             this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
+            this.dgvSearchPayment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvSearchPayment_KeyDown);
             // 
             // SC_HanyouKeyEnd2
             // 

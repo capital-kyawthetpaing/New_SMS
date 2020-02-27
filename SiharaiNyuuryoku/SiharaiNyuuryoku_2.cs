@@ -244,7 +244,7 @@ namespace SiharaiNyuuryoku
             }
         }
 
-        private void LabelDataBind()
+        public void LabelDataBind()
         {
             int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0;
             for (int i = 0; i < dgvSearchPayment.Rows.Count; ++i)
@@ -576,13 +576,27 @@ namespace SiharaiNyuuryoku
                     if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
                     {
                         DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        
-                        
-                        
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["UnpaidAmount1"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value = "0";
+                    }
+                    else
+                    {
+                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["UnpaidAmount1"].Value = "0";
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value.ToString());
                     }
 
+                    LabelDataBind();
                 }
 
+            }
+        }
+
+        private void dgvSearchPayment_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                string str=dgvSearchPayment.CurrentCell.Value.ToString();
             }
         }
     }
