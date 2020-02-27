@@ -664,7 +664,7 @@ namespace SiharaiNyuuryoku
         /// <summary>
         /// to show total data with Label below gridview
         /// </summary>
-        private void LabelDataBind()
+        public void LabelDataBind()
         {
             int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
             for (int i = 0; i < dgvPayment.Rows.Count; ++i)
@@ -811,6 +811,8 @@ namespace SiharaiNyuuryoku
                     dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
                     dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                 }
+
+                LabelDataBind();
             }
         }
         
