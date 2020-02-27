@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtRecordDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -39,11 +45,9 @@
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.txtEntryDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.scStaffCD = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.PaymentCD = new Search.CKM_SearchControl();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.chkPaid = new CKM_Controls.CKM_CheckBox();
             this.chkUnpaid = new CKM_Controls.CKM_CheckBox();
@@ -53,6 +57,12 @@
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.dgvCostSearch = new CKM_Controls.CKM_GridView();
+            this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
+            this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label12 = new CKM_Controls.CKM_Label();
+            this.chkTeiki = new CKM_Controls.CKM_CheckBox();
+            this.PaymentCD = new Search.CKM_SearchControl();
+            this.scStaffCD = new Search.CKM_SearchControl();
             this.ExpenseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpenseEntryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,10 +74,6 @@
             this.PaymentDueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaxIncludePayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
-            this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label12 = new CKM_Controls.CKM_Label();
-            this.chkTeiki = new CKM_Controls.CKM_CheckBox();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCostSearch)).BeginInit();
             this.SuspendLayout();
@@ -314,34 +320,6 @@
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // scStaffCD
-            // 
-            this.scStaffCD.AutoSize = true;
-            this.scStaffCD.ChangeDate = "";
-            this.scStaffCD.ChangeDateWidth = 100;
-            this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 100;
-            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaffCD.DataCheck = false;
-            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.scStaffCD.IsCopy = false;
-            this.scStaffCD.LabelText = "";
-            this.scStaffCD.LabelVisible = true;
-            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
-            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaffCD.Name = "scStaffCD";
-            this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
-            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaffCD.TabIndex = 6;
-            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaffCD.UseChangeDate = false;
-            this.scStaffCD.Value1 = null;
-            this.scStaffCD.Value2 = null;
-            this.scStaffCD.Value3 = null;
-            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
-            // 
             // ckM_Label6
             // 
             this.ckM_Label6.AutoSize = true;
@@ -385,40 +363,13 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(52, 116);
+            this.ckM_Label8.Location = new System.Drawing.Point(52, 114);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 17;
             this.ckM_Label8.Text = "支払先";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PaymentCD
-            // 
-            this.PaymentCD.AutoSize = true;
-            this.PaymentCD.ChangeDate = "";
-            this.PaymentCD.ChangeDateWidth = 100;
-            this.PaymentCD.Code = "";
-            this.PaymentCD.CodeWidth = 130;
-            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.PaymentCD.DataCheck = false;
-            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.PaymentCD.IsCopy = false;
-            this.PaymentCD.LabelText = "";
-            this.PaymentCD.LabelVisible = true;
-            this.PaymentCD.Location = new System.Drawing.Point(98, 99);
-            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
-            this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.SearchEnable = true;
-            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
-            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.PaymentCD.TabIndex = 18;
-            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.PaymentCD.UseChangeDate = false;
-            this.PaymentCD.Value1 = null;
-            this.PaymentCD.Value2 = null;
-            this.PaymentCD.Value3 = null;
-            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
             // 
             // ckM_Label9
             // 
@@ -606,86 +557,6 @@
             this.dgvCostSearch.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvCostSearch_Paint);
             this.dgvCostSearch.DoubleClick += new System.EventHandler(this.dgvCostSearch_DoubleClick);
             // 
-            // ExpenseNo
-            // 
-            this.ExpenseNo.DataPropertyName = "CostNo";
-            this.ExpenseNo.HeaderText = "経費番号";
-            this.ExpenseNo.Name = "ExpenseNo";
-            this.ExpenseNo.ReadOnly = true;
-            // 
-            // RecordDate
-            // 
-            this.RecordDate.DataPropertyName = "RecordedDate";
-            this.RecordDate.HeaderText = "計上日";
-            this.RecordDate.Name = "RecordDate";
-            this.RecordDate.ReadOnly = true;
-            // 
-            // ExpenseEntryDate
-            // 
-            this.ExpenseEntryDate.DataPropertyName = "ExpenseEntryDate";
-            this.ExpenseEntryDate.HeaderText = "経費入力日";
-            this.ExpenseEntryDate.Name = "ExpenseEntryDate";
-            this.ExpenseEntryDate.ReadOnly = true;
-            // 
-            // Regular
-            // 
-            this.Regular.DataPropertyName = "RegularlyFLG";
-            this.Regular.HeaderText = "定期";
-            this.Regular.Name = "Regular";
-            this.Regular.ReadOnly = true;
-            this.Regular.Width = 70;
-            // 
-            // PaymentDestination
-            // 
-            this.PaymentDestination.DataPropertyName = "VendorCD";
-            this.PaymentDestination.HeaderText = "支払先";
-            this.PaymentDestination.Name = "PaymentDestination";
-            this.PaymentDestination.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "VendorName";
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Staff
-            // 
-            this.Staff.DataPropertyName = "StaffCD";
-            this.Staff.HeaderText = "担当スタッフ";
-            this.Staff.Name = "Staff";
-            this.Staff.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "StaffName";
-            this.Column2.HeaderText = "";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 150;
-            // 
-            // PaymentDueDate
-            // 
-            this.PaymentDueDate.DataPropertyName = "PayPlanDate";
-            this.PaymentDueDate.HeaderText = "支払予定日";
-            this.PaymentDueDate.Name = "PaymentDueDate";
-            this.PaymentDueDate.ReadOnly = true;
-            // 
-            // PaymentDate
-            // 
-            this.PaymentDate.DataPropertyName = "PayDate";
-            this.PaymentDate.HeaderText = "支払日";
-            this.PaymentDate.Name = "PaymentDate";
-            this.PaymentDate.ReadOnly = true;
-            // 
-            // TaxIncludePayment
-            // 
-            this.TaxIncludePayment.DataPropertyName = "CostGaku";
-            this.TaxIncludePayment.HeaderText = "税込支払額";
-            this.TaxIncludePayment.Name = "TaxIncludePayment";
-            this.TaxIncludePayment.ReadOnly = true;
-            // 
             // txtPaymentDueDateFrom
             // 
             this.txtPaymentDueDateFrom.AllowMinus = false;
@@ -762,6 +633,154 @@
             this.chkTeiki.Size = new System.Drawing.Size(15, 14);
             this.chkTeiki.TabIndex = 12;
             this.chkTeiki.UseVisualStyleBackColor = true;
+            // 
+            // PaymentCD
+            // 
+            this.PaymentCD.AutoSize = true;
+            this.PaymentCD.ChangeDate = "";
+            this.PaymentCD.ChangeDateWidth = 100;
+            this.PaymentCD.Code = "";
+            this.PaymentCD.CodeWidth = 130;
+            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.PaymentCD.DataCheck = false;
+            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.PaymentCD.IsCopy = false;
+            this.PaymentCD.LabelText = "";
+            this.PaymentCD.LabelVisible = true;
+            this.PaymentCD.Location = new System.Drawing.Point(98, 106);
+            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
+            this.PaymentCD.Name = "PaymentCD";
+            this.PaymentCD.SearchEnable = true;
+            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
+            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.PaymentCD.TabIndex = 18;
+            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.PaymentCD.UseChangeDate = false;
+            this.PaymentCD.Value1 = null;
+            this.PaymentCD.Value2 = null;
+            this.PaymentCD.Value3 = null;
+            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
+            this.PaymentCD.Enter += new System.EventHandler(this.PaymentCD_Enter);
+            // 
+            // scStaffCD
+            // 
+            this.scStaffCD.AutoSize = true;
+            this.scStaffCD.ChangeDate = "";
+            this.scStaffCD.ChangeDateWidth = 100;
+            this.scStaffCD.Code = "";
+            this.scStaffCD.CodeWidth = 100;
+            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaffCD.DataCheck = false;
+            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.scStaffCD.IsCopy = false;
+            this.scStaffCD.LabelText = "";
+            this.scStaffCD.LabelVisible = true;
+            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
+            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.SearchEnable = true;
+            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaffCD.TabIndex = 6;
+            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaffCD.UseChangeDate = false;
+            this.scStaffCD.Value1 = null;
+            this.scStaffCD.Value2 = null;
+            this.scStaffCD.Value3 = null;
+            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
+            // 
+            // ExpenseNo
+            // 
+            this.ExpenseNo.DataPropertyName = "CostNo";
+            this.ExpenseNo.HeaderText = "経費番号";
+            this.ExpenseNo.Name = "ExpenseNo";
+            this.ExpenseNo.ReadOnly = true;
+            // 
+            // RecordDate
+            // 
+            this.RecordDate.DataPropertyName = "RecordedDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.RecordDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.RecordDate.HeaderText = "計上日";
+            this.RecordDate.Name = "RecordDate";
+            this.RecordDate.ReadOnly = true;
+            // 
+            // ExpenseEntryDate
+            // 
+            this.ExpenseEntryDate.DataPropertyName = "ExpenseEntryDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ExpenseEntryDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ExpenseEntryDate.HeaderText = "経費入力日";
+            this.ExpenseEntryDate.Name = "ExpenseEntryDate";
+            this.ExpenseEntryDate.ReadOnly = true;
+            // 
+            // Regular
+            // 
+            this.Regular.DataPropertyName = "RegularlyFLG";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Regular.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Regular.HeaderText = "定期";
+            this.Regular.Name = "Regular";
+            this.Regular.ReadOnly = true;
+            this.Regular.Width = 70;
+            // 
+            // PaymentDestination
+            // 
+            this.PaymentDestination.DataPropertyName = "VendorCD";
+            this.PaymentDestination.HeaderText = "支払先";
+            this.PaymentDestination.Name = "PaymentDestination";
+            this.PaymentDestination.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "VendorName";
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Staff
+            // 
+            this.Staff.DataPropertyName = "StaffCD";
+            this.Staff.HeaderText = "担当スタッフ";
+            this.Staff.Name = "Staff";
+            this.Staff.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "StaffName";
+            this.Column2.HeaderText = "";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 150;
+            // 
+            // PaymentDueDate
+            // 
+            this.PaymentDueDate.DataPropertyName = "PayPlanDate";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PaymentDueDate.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PaymentDueDate.HeaderText = "支払予定日";
+            this.PaymentDueDate.Name = "PaymentDueDate";
+            this.PaymentDueDate.ReadOnly = true;
+            // 
+            // PaymentDate
+            // 
+            this.PaymentDate.DataPropertyName = "PayDate";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PaymentDate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.PaymentDate.HeaderText = "支払日";
+            this.PaymentDate.Name = "PaymentDate";
+            this.PaymentDate.ReadOnly = true;
+            // 
+            // TaxIncludePayment
+            // 
+            this.TaxIncludePayment.DataPropertyName = "CostGaku";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.TaxIncludePayment.DefaultCellStyle = dataGridViewCellStyle8;
+            this.TaxIncludePayment.HeaderText = "税込支払額";
+            this.TaxIncludePayment.Name = "TaxIncludePayment";
+            this.TaxIncludePayment.ReadOnly = true;
             // 
             // frmSearch_KeihiNO
             // 
