@@ -576,14 +576,14 @@ namespace SiharaiNyuuryoku
                     if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
                     {
                         DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["UnpaidAmount1"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value.ToString());
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value = "0";
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = "0";
                     }
                     else
                     {
                         DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["UnpaidAmount1"].Value = "0";
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["PayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
                     }
 
                     LabelDataBind();
@@ -592,12 +592,10 @@ namespace SiharaiNyuuryoku
             }
         }
 
-        private void dgvSearchPayment_KeyDown(object sender, KeyEventArgs e)
+
+        private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                string str=dgvSearchPayment.CurrentCell.Value.ToString();
-            }
+            string str = dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value.ToString();
         }
     }
 }
