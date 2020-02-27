@@ -248,13 +248,9 @@ namespace SiharaiNyuuryoku
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
                     dgvPayment.DataSource = dtpayplan;
-                    foreach (DataGridViewRow row1 in dgvPayment.Rows)
-                    {
-                       if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
-                       {
-                           row1.Cells["colChk"].Value = true;
-                       }
-                    }                 
+                    dgvPayment.Rows[0].Selected = true;
+                    Checkstate(true);
+                    
                     LabelDataBind();
                     
                 }
@@ -265,6 +261,13 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgvPayment.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
         private void F12()
         {
             if(ErrorCheck(12))
@@ -593,14 +596,8 @@ namespace SiharaiNyuuryoku
                 txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
                 ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
                 ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
-                foreach (DataGridViewRow row1 in dgvPayment.Rows)
-                {
-                    if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
-                    {
-                        row1.Cells["colChk"].Value = true;
-                    }
-                }
-                dgvPayment.Rows[0].Cells[1].Selected = true;
+                Checkstate(true);
+                dgvPayment.Rows[0].Selected = true;
 
                 LabelDataBind();
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
@@ -637,30 +634,14 @@ namespace SiharaiNyuuryoku
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row1 in dgvPayment.Rows)
-            {
-                if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == false)
-                {
-                    row1.Cells["colChk"].Value = true;
-                }
-            }
+            Checkstate(true);   
         }
 
         private void btnReleaseAll_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row1 in dgvPayment.Rows)
-            {
-                if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
-                {
-                    row1.Cells["colChk"].Value = false;
-                }
-
-                //row1.Cells["colPaymenttime"].Value = 0;
-               
-                //row1.Cells["colUnpaidAmount"].Value = Convert.ToInt32( row1.Cells["colScheduledPayment"].Value) - Convert.ToInt32( row1.Cells["colAmountPaid"].Value);
-
-            }
-
+            //row1.Cells["colPaymenttime"].Value = 0; 
+            //row1.Cells["colUnpaidAmount"].Value = Convert.ToInt32( row1.Cells["colScheduledPayment"].Value) - Convert.ToInt32( row1.Cells["colAmountPaid"].Value);
+            Checkstate(false);
         }
 
         private void btnF10Show_Click(object sender, EventArgs e)
@@ -682,8 +663,6 @@ namespace SiharaiNyuuryoku
                 if (ErrorCheck(11))
                 {
                     DataDisplay();
-                    //Search.Search_Payment sp = new Search.Search_Payment(dpe.LargePayNO, dpe.PayNo, vendorCD, txtPaymentDate.Text, "1");
-                    //sp.ShowDialog();
                 }
             }
         }
@@ -739,6 +718,11 @@ namespace SiharaiNyuuryoku
                 }
             }
            
+
+        }
+
+        private void dgvPayment_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
 
         }
     }
