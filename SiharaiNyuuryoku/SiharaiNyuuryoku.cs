@@ -781,24 +781,35 @@ namespace SiharaiNyuuryoku
             {
                 if (cboPaymentType.SelectedValue.ToString() == "1")
                 {
-                    foreach (DataGridViewRow row in dgvPayment.Rows)
-                    {
-                        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colUnpaidAmount"].Value = "0";
-                        row.Cells["colOtherThanTransfer"].Value = "0";
-                    }
+                    //foreach (DataGridViewRow row in dgvPayment.Rows)
+                    //{
+                    //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colUnpaidAmount"].Value = "0";
+                    //    row.Cells["colOtherThanTransfer"].Value = "0";
+                    //}
+                    dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = "0";
+
                 }
                 else
                 {
-                    foreach (DataGridViewRow row in dgvPayment.Rows)
-                    {
-                        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colTransferAmount"].Value = "0";
-                        row.Cells["colTransferFee"].Value = "0";
-                        row.Cells["colUnpaidAmount"].Value = "0";
-                        row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                    }
+                    //foreach (DataGridViewRow row in dgvPayment.Rows)
+                    //{
+                    //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colTransferAmount"].Value = "0";
+                    //    row.Cells["colTransferFee"].Value = "0";
+                    //    row.Cells["colUnpaidAmount"].Value = "0";
+                    //    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //}
+
+                    dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                 }
             }
         }
