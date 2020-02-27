@@ -82,6 +82,7 @@ namespace SiharaiNyuuryoku
             txtDueDate1.Focus();
 
             BindCombo();
+            SetRequireField();
            
         }
 
