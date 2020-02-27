@@ -174,12 +174,14 @@ namespace Search
         {
             try
             {
-                if (dgvCostSearch.CurrentRow != null && dgvCostSearch.CurrentRow.Index >= 0)
+                if (ErrorCheck())
                 {
-                    ExpenseNumber = dgvCostSearch.CurrentRow.Cells["ExpenseNo"].Value.ToString();
-                    this.Close();
+                    if (dgvCostSearch.CurrentRow != null && dgvCostSearch.CurrentRow.Index >= 0)
+                    {
+                        ExpenseNumber = dgvCostSearch.CurrentRow.Cells["ExpenseNo"].Value.ToString();
+                        this.Close();
+                    }
                 }
-
             }
             catch (Exception ex)
             {
@@ -386,6 +388,12 @@ namespace Search
                 }
 
             }
+        }
+
+        private void PaymentCD_Enter(object sender, EventArgs e)
+        {
+            PaymentCD.Value1 = "2";
+            PaymentCD.ChangeDate = System.DateTime.Now.ToString("yyyy/MM/dd");
         }
     }
 }

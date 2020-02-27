@@ -39,11 +39,9 @@
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.txtEntryDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.scStaffCD = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.PaymentCD = new Search.CKM_SearchControl();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.chkPaid = new CKM_Controls.CKM_CheckBox();
             this.chkUnpaid = new CKM_Controls.CKM_CheckBox();
@@ -68,6 +66,8 @@
             this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.chkTeiki = new CKM_Controls.CKM_CheckBox();
+            this.PaymentCD = new Search.CKM_SearchControl();
+            this.scStaffCD = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCostSearch)).BeginInit();
             this.SuspendLayout();
@@ -314,34 +314,6 @@
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // scStaffCD
-            // 
-            this.scStaffCD.AutoSize = true;
-            this.scStaffCD.ChangeDate = "";
-            this.scStaffCD.ChangeDateWidth = 100;
-            this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 100;
-            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaffCD.DataCheck = false;
-            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.scStaffCD.IsCopy = false;
-            this.scStaffCD.LabelText = "";
-            this.scStaffCD.LabelVisible = true;
-            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
-            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaffCD.Name = "scStaffCD";
-            this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
-            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaffCD.TabIndex = 6;
-            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaffCD.UseChangeDate = false;
-            this.scStaffCD.Value1 = null;
-            this.scStaffCD.Value2 = null;
-            this.scStaffCD.Value3 = null;
-            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
-            // 
             // ckM_Label6
             // 
             this.ckM_Label6.AutoSize = true;
@@ -385,40 +357,13 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(52, 116);
+            this.ckM_Label8.Location = new System.Drawing.Point(52, 114);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 17;
             this.ckM_Label8.Text = "支払先";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // PaymentCD
-            // 
-            this.PaymentCD.AutoSize = true;
-            this.PaymentCD.ChangeDate = "";
-            this.PaymentCD.ChangeDateWidth = 100;
-            this.PaymentCD.Code = "";
-            this.PaymentCD.CodeWidth = 130;
-            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.PaymentCD.DataCheck = false;
-            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.PaymentCD.IsCopy = false;
-            this.PaymentCD.LabelText = "";
-            this.PaymentCD.LabelVisible = true;
-            this.PaymentCD.Location = new System.Drawing.Point(98, 99);
-            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
-            this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.SearchEnable = true;
-            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
-            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.PaymentCD.TabIndex = 18;
-            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.PaymentCD.UseChangeDate = false;
-            this.PaymentCD.Value1 = null;
-            this.PaymentCD.Value2 = null;
-            this.PaymentCD.Value3 = null;
-            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
             // 
             // ckM_Label9
             // 
@@ -763,13 +708,68 @@
             this.chkTeiki.TabIndex = 12;
             this.chkTeiki.UseVisualStyleBackColor = true;
             // 
+            // PaymentCD
+            // 
+            this.PaymentCD.AutoSize = true;
+            this.PaymentCD.ChangeDate = "";
+            this.PaymentCD.ChangeDateWidth = 100;
+            this.PaymentCD.Code = "";
+            this.PaymentCD.CodeWidth = 130;
+            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.PaymentCD.DataCheck = false;
+            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.PaymentCD.IsCopy = false;
+            this.PaymentCD.LabelText = "";
+            this.PaymentCD.LabelVisible = true;
+            this.PaymentCD.Location = new System.Drawing.Point(98, 106);
+            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
+            this.PaymentCD.Name = "PaymentCD";
+            this.PaymentCD.SearchEnable = true;
+            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
+            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.PaymentCD.TabIndex = 18;
+            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.PaymentCD.UseChangeDate = false;
+            this.PaymentCD.Value1 = null;
+            this.PaymentCD.Value2 = null;
+            this.PaymentCD.Value3 = null;
+            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
+            this.PaymentCD.Enter += new System.EventHandler(this.PaymentCD_Enter);
+            // 
+            // scStaffCD
+            // 
+            this.scStaffCD.AutoSize = true;
+            this.scStaffCD.ChangeDate = "";
+            this.scStaffCD.ChangeDateWidth = 100;
+            this.scStaffCD.Code = "";
+            this.scStaffCD.CodeWidth = 100;
+            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaffCD.DataCheck = false;
+            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.scStaffCD.IsCopy = false;
+            this.scStaffCD.LabelText = "";
+            this.scStaffCD.LabelVisible = true;
+            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
+            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.SearchEnable = true;
+            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaffCD.TabIndex = 6;
+            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaffCD.UseChangeDate = false;
+            this.scStaffCD.Value1 = null;
+            this.scStaffCD.Value2 = null;
+            this.scStaffCD.Value3 = null;
+            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
+            // 
             // frmSearch_KeihiNO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 861);
             this.Controls.Add(this.dgvCostSearch);
-            this.F11Visible = true;
             this.F9Visible = true;
             this.Name = "frmSearch_KeihiNO";
             this.PanelHeaderHeight = 260;
