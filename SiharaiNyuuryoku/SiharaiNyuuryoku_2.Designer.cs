@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPayPlanDate = new CKM_Controls.CKM_TextBox();
@@ -281,24 +280,24 @@
             this.panelDetail.Margin = new System.Windows.Forms.Padding(2);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1284, 769);
-            this.panelDetail.TabIndex = 0;
+            this.panelDetail.TabIndex = 1;
             // 
             // dgvSearchPayment
             // 
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -308,14 +307,6 @@
             this.colAmountPaid,
             this.colPaymentTime,
             this.colUnpaidAmount});
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle21;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -344,7 +335,7 @@
             this.SC_HanyouKeyEnd2.SearchEnable = true;
             this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
             this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
-            this.SC_HanyouKeyEnd2.TabIndex = 112;
+            this.SC_HanyouKeyEnd2.TabIndex = 21;
             this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd2.UseChangeDate = false;
             this.SC_HanyouKeyEnd2.Value1 = null;
@@ -372,7 +363,7 @@
             this.SC_HanyouKeyEnd1.SearchEnable = true;
             this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
             this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
-            this.SC_HanyouKeyEnd1.TabIndex = 110;
+            this.SC_HanyouKeyEnd1.TabIndex = 18;
             this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyEnd1.UseChangeDate = false;
             this.SC_HanyouKeyEnd1.Value1 = null;
@@ -400,7 +391,7 @@
             this.SC_HanyouKeyStart2.SearchEnable = true;
             this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
             this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
-            this.SC_HanyouKeyStart2.TabIndex = 111;
+            this.SC_HanyouKeyStart2.TabIndex = 20;
             this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart2.UseChangeDate = false;
             this.SC_HanyouKeyStart2.Value1 = null;
@@ -428,7 +419,7 @@
             this.SC_HanyouKeyStart1.SearchEnable = true;
             this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
             this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
-            this.SC_HanyouKeyStart1.TabIndex = 109;
+            this.SC_HanyouKeyStart1.TabIndex = 17;
             this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_HanyouKeyStart1.UseChangeDate = false;
             this.SC_HanyouKeyStart1.Value1 = null;
@@ -456,7 +447,7 @@
             this.SC_BranchCD.SearchEnable = true;
             this.SC_BranchCD.Size = new System.Drawing.Size(414, 27);
             this.SC_BranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
-            this.SC_BranchCD.TabIndex = 108;
+            this.SC_BranchCD.TabIndex = 2;
             this.SC_BranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_BranchCD.UseChangeDate = false;
             this.SC_BranchCD.Value1 = null;
@@ -483,7 +474,7 @@
             this.SC_BankCD.SearchEnable = true;
             this.SC_BankCD.Size = new System.Drawing.Size(424, 27);
             this.SC_BankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
-            this.SC_BankCD.TabIndex = 107;
+            this.SC_BankCD.TabIndex = 1;
             this.SC_BankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_BankCD.UseChangeDate = false;
             this.SC_BankCD.Value1 = null;
@@ -1315,9 +1306,9 @@
             // colScheduledPayment
             // 
             this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = "false";
-            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "false";
+            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle3;
             this.colScheduledPayment.HeaderText = "支払予定額";
             this.colScheduledPayment.MaxInputLength = 32767;
             this.colScheduledPayment.Name = "colScheduledPayment";
@@ -1329,9 +1320,9 @@
             // colAmountPaid
             // 
             this.colAmountPaid.DataPropertyName = "PayConfirmGaku";
-            dataGridViewCellStyle18.Format = "N2";
-            dataGridViewCellStyle18.NullValue = "false";
-            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "false";
+            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle4;
             this.colAmountPaid.HeaderText = "支払済額";
             this.colAmountPaid.MaxInputLength = 32767;
             this.colAmountPaid.Name = "colAmountPaid";
@@ -1342,9 +1333,9 @@
             // colPaymentTime
             // 
             this.colPaymentTime.DataPropertyName = "UnpaidAmount1";
-            dataGridViewCellStyle19.Format = "N2";
-            dataGridViewCellStyle19.NullValue = "false";
-            this.colPaymentTime.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "false";
+            this.colPaymentTime.DefaultCellStyle = dataGridViewCellStyle5;
             this.colPaymentTime.HeaderText = "今回支払額";
             this.colPaymentTime.MaxInputLength = 32767;
             this.colPaymentTime.Name = "colPaymentTime";
@@ -1354,9 +1345,9 @@
             // colUnpaidAmount
             // 
             this.colUnpaidAmount.DataPropertyName = "UnpaidAmount2";
-            dataGridViewCellStyle20.Format = "N0";
-            dataGridViewCellStyle20.NullValue = "false";
-            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "false";
+            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle6;
             this.colUnpaidAmount.HeaderText = "未支払額";
             this.colUnpaidAmount.MaxInputLength = 32767;
             this.colUnpaidAmount.Name = "colUnpaidAmount";
@@ -1370,6 +1361,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 961);
             this.Controls.Add(this.panelDetail);
+            this.F10Visible = false;
+            this.F11Visible = false;
+            this.F2Visible = false;
+            this.F3Visible = false;
+            this.F4Visible = false;
+            this.F6Visible = false;
+            this.F7Visible = false;
+            this.F8Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "SiharaiNyuuryoku_2";
