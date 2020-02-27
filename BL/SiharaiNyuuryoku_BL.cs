@@ -139,5 +139,11 @@ namespace BL
             return mkzdl.M_Kouza_FeeSelect(mkze);
         }
 
+        public bool D_Pay_Insert(D_Pay_Entity dpe)
+        {
+            dpe.LocationXml = DataTableToXml(dpe.dtTemp1);
+            return dpdl.D_Pay_Insert(dpe);
+        }
+
     }
 }
