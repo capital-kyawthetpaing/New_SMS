@@ -38,7 +38,6 @@ namespace SiharaiNyuuryoku
                 if (tblROWS1.Length > 0)
                     dtSiharai2 = tblROWS1.CopyToDataTable();
             }
-
         }
 
         private void SiharaiNyuuryoku_2_Load(object sender, EventArgs e)
