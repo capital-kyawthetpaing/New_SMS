@@ -31,7 +31,7 @@ namespace SiharaiNyuuryoku
         string vendorCD = string.Empty;
 
         DataTable dtpayplan = new DataTable();
-
+        DataTable dtSiharai2 = new DataTable();
         DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable();
         DataTable dt4 = new DataTable(); DataTable dt4Detail = new DataTable();
 
@@ -304,8 +304,7 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("Account2");
                             dt4.Columns.Remove("SubAccount2");
 
-                        }
-     
+                        }     
                     }                   
                 }
 
@@ -343,7 +342,6 @@ namespace SiharaiNyuuryoku
         
         #endregion
         
-
         #region Process For F12
         private void Insert()
         {
@@ -367,7 +365,6 @@ namespace SiharaiNyuuryoku
 
         }
         #endregion
-
 
         #region btnClick
         private void btnSelectAll_Click(object sender, EventArgs e)
@@ -447,8 +444,29 @@ namespace SiharaiNyuuryoku
                     //    row.Cells["colUnpaidAmount"].Value = "0";
                     //    row.Cells["colOtherThanTransfer"].Value = "0";
                     //}
+                    dppe.PayPlanDate = dgvPayment.Rows[e.RowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                    dppe.PayeeCD = dgvPayment.Rows[e.RowIndex].Cells["colPayeeCD"].Value.ToString();
+
+                    if (dt4Detail != null)
+                    {
+                        DataRow[] tblROWS1 = dt4Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                        if (tblROWS1.Length > 0)
+                            dtSiharai2 = tblROWS1.CopyToDataTable();
+
+                        mke = new M_Kouza_Entity
+                        {
+                            KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString(),
+                            BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
+                            BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
+                            Amount = lblPayGaku.Text.Replace(",", ""),
+                        };
+                        DataTable dt = sibl.M_Kouza_FeeSelect(mke);
+                        dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
+                    }
+
                     dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                     dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    
                     dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
                     dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = "0";
 
