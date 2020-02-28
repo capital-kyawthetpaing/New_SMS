@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A5EE9849-B443-4FFB-880B-2417970E4EB6}</ProjectGuid>
+    <ProjectGuid>{D45C7782-4238-4BDE-B76F-E38ECAA19FF9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TempoJuchuuNyuuryoku</RootNamespace>
-    <AssemblyName>TempoJuchuuNyuuryoku</AssemblyName>
+    <RootNamespace>MailHistoryShoukai</RootNamespace>
+    <AssemblyName>MailHistoryShoukai</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -52,9 +52,13 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TempoJuchuuNyuuryoku.Program</StartupObject>
+    <StartupObject>MailHistoryShoukai.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Search\RequiredDLL\GridBase.dll</HintPath>
@@ -73,21 +77,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClsGridJuchuu.cs" />
-    <Compile Include="TempoJuchuuNyuuryoku.cs">
+    <Compile Include="MailHistoryShoukai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TempoJuchuuNyuuryoku.Designer.cs">
-      <DependentUpon>TempoJuchuuNyuuryoku.cs</DependentUpon>
+    <Compile Include="MailHistoryShoukai.Designer.cs">
+      <DependentUpon>MailHistoryShoukai.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FrmAddress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmAddress.Designer.cs">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,11 +95,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FrmAddress.resx">
-      <DependentUpon>FrmAddress.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TempoJuchuuNyuuryoku.resx">
-      <DependentUpon>TempoJuchuuNyuuryoku.cs</DependentUpon>
+    <EmbeddedResource Include="MailHistoryShoukai.resx">
+      <DependentUpon>MailHistoryShoukai.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +150,9 @@
       <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
       <Name>Search</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

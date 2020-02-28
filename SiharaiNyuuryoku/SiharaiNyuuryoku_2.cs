@@ -140,7 +140,7 @@ namespace SiharaiNyuuryoku
 
             txtPayPlanDate.Text = dtSiharai1.Rows[0]["PayPlanDate"].ToString();
             txtPayeeCD.Text = dtSiharai1.Rows[0]["PayeeCD"].ToString();
-            lblVendorName.Text = dtSiharai1.Rows[0]["VendorName"].ToString();
+            lblVendorName.Text = dtSiharai2.Rows[0]["VendorName"].ToString();
 
             if (dtSiharai2.Rows.Count==0 || dtSiharai2==null)
             {
@@ -595,7 +595,16 @@ namespace SiharaiNyuuryoku
 
         private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            string str = dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value.ToString();
+            if(dgvSearchPayment.CurrentRow.Index>-1)
+            {
+                DataGridViewRow row = dgvSearchPayment.CurrentRow;
+                string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
+                if (string.IsNullOrWhiteSpace(unpaidAmount1))
+                {
+                    bbl.ShowMessage("E102");
+                }
+            }
+            
         }
     }
 }
