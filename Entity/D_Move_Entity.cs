@@ -22,8 +22,17 @@ namespace Entity
         //移動入力用
         public string MovePurposeType { get; set; }
         public string FromStoreCD { get; set; }
-    public int MoveRows { get; set; }
+        public int MoveRows { get; set; }
+        public int RequestRows { get; set; }
         public int OldMoveSu { get; set; }
+        public string ArrivalPlanNO { get; set; }
+
+        public string FromRackNO { get; set; }
+        public string ToRackNO { get; set; }
+        public string JanCD { get; set; }
+        public string AdminNO { get; set; }
+        public string SKUCD { get; set; }
+
         //検索用Entity
         public string MoveDateFrom { get; set; }
         public string MoveDateTo { get; set; }

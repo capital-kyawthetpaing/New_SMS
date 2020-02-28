@@ -331,5 +331,23 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        /// <summary>
+        /// 出荷入力（JANCDチェック）
+        /// </summary>
+        /// <param name="de"></param>
+        /// <returns></returns>
+        public DataTable D_Juchuu_SelectData_ForShukka(D_Juchuu_Entity de)
+        {
+            string sp = "D_Juchuu_SelectData_ForShukka";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
+
+
     }
 }

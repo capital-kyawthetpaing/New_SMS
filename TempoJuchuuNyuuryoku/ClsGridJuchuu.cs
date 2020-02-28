@@ -44,6 +44,8 @@ namespace TempoJuchuuNyuuryoku
             internal string CommentOutStore;      //
             internal string IndividualClientName;      //  
             internal string CommentInStore;      // 
+            internal bool NotPrintFLG;
+            internal bool ChkTyokuso;
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -59,6 +61,7 @@ namespace TempoJuchuuNyuuryoku
             internal string OldJanCD;
             internal int ZaikoKBN;  //M_SKU.在庫区分
             internal string KariHikiateNO;  //仮引当番号
+            internal bool NotReCalc;//単価再計算しない場合はTrue
         }
 
         //列番号定数
@@ -68,6 +71,7 @@ namespace TempoJuchuuNyuuryoku
             JanCD,
             SKUCD,
             SKUName,
+            NotPrintFLG,
             SetKBN,             // セット区分
             ColorName,          // カラー
             SizeName,           //サイズ
@@ -86,6 +90,7 @@ namespace TempoJuchuuNyuuryoku
             JuchuuOrderNO,      //発注番号
             VendorCD,           //発注先
             VendorName,         //発注先名
+            ChkTyokuso,
             ArrivePlanDate,     //入荷予定日
             PaymentPlanDate,    //支払予定日
             CollectClearDate,   //入金日
@@ -154,6 +159,20 @@ namespace TempoJuchuuNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+
+                w_CtlCol = (int)ColNO.NotPrintFLG;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].NotPrintFLG);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
+
+                w_CtlCol = (int)ColNO.ChkTyokuso;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkTyokuso);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
 
                 // 
                 w_CtlCol = (int)ColNO.SKUCD;
@@ -464,6 +483,12 @@ namespace TempoJuchuuNyuuryoku
                 w_CtlCol = (int)ColNO.GYONO;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
 
+                //
+                w_CtlCol = (int)ColNO.ChkTyokuso;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkTyokuso);
+                //
+                w_CtlCol = (int)ColNO.NotPrintFLG;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].NotPrintFLG);
                 // 
                 w_CtlCol = (int)ColNO.SKUCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);

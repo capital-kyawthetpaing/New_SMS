@@ -20,6 +20,7 @@ namespace BL
         public static string ID_MALL = "212";
         public static string ID_JyuchuChance = "216";
         public static string ID_TagName = "219";
+        public static string ID_Identification = "220";
         public string ID_Store = "302";                 //受注API起動
         public static string ID_YearTerm = "307";       //年度(20)
         public static string ID_Season = "308";         //シーズン(10)
@@ -32,9 +33,8 @@ namespace BL
         public string ID_Money = "317";                 //金種区分
         public static string ID_EDI = "319";            //EDI受信
         public static string ID_TempoGenkin = "320";    //店舗現金会員
-        public static string ID_Identification = "220";
         public static string ID_ShukkaUriageUpdate = "321";    //出荷売上更新
-
+        public static string ID_Mail = "325";            //Mail履歴
 
 
         M_MultiPorpose_DL mmdl;
@@ -42,7 +42,15 @@ namespace BL
         {
             mmdl = new M_MultiPorpose_DL();
         }
+        public DataTable M_MultiPorpose_Select(M_MultiPorpose_Entity mse)
+        {
+            return mmdl.M_MultiPorpose_Select(mse);
+        }
 
+        public DataTable M_MultiPorpose_SelectAll(M_MultiPorpose_Entity mme)
+        {
+            return mmdl.M_MultiPorpose_SelectAll(mme);
+        }
 
         /// <summary>
         /// Select Key + '：' + Char1										
@@ -85,15 +93,7 @@ namespace BL
 
             return dt;
         }
-        public DataTable M_MultiPorpose_Select(M_MultiPorpose_Entity mse)
-        {
-            return mmdl.M_MultiPorpose_Select(mse);
-        }
-
-        public DataTable M_MultiPorpose_SelectAll(M_MultiPorpose_Entity mme)
-        {
-            return mmdl.M_MultiPorpose_SelectAll(mme);
-        }
+       
 
         public DataTable M_MultiPorpose_SoukoTypeSelect(M_MultiPorpose_Entity mme)
         {
