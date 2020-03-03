@@ -136,7 +136,6 @@ namespace SiharaiNyuuryoku
 
         private void BindData()
         {
-
             txtPayPlanDate.Text = dtSiharai1.Rows[0]["PayPlanDate"].ToString();
             txtPayeeCD.Text = dtSiharai1.Rows[0]["PayeeCD"].ToString();
             lblVendorName.Text = dtSiharai2.Rows[0]["VendorName"].ToString();
