@@ -675,7 +675,7 @@ namespace SiharaiNyuuryoku
                         ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
                     }
                 }
-                if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedText.ToString()))
+                if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
                 {
                     sibl.ShowMessage("102");
                     cboPaymentType.Focus();
@@ -695,7 +695,7 @@ namespace SiharaiNyuuryoku
                     string name = dtmulti.Rows[0]["Char1"].ToString();
 
                 }
-                if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedText.ToString()))
+                if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedValue.ToString()))
                 {
                     sibl.ShowMessage("102");
                     cboPaymentSourceAcc.Focus();
@@ -712,7 +712,7 @@ namespace SiharaiNyuuryoku
                 }
                 else
                 {
-                    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0][""].ToString();
+                    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0]["KouzaCD"].ToString();
                 }
                 if (string.IsNullOrWhiteSpace(txtBillSettleDate.Text))
                 {
@@ -734,8 +734,8 @@ namespace SiharaiNyuuryoku
                     }
                     else
                     {
-                        string payment = row1.Cells["colPaymenttime"].ToString();
-                        string unpaid = row1.Cells["colUnpaidAmount"].ToString();
+                        string payment = row1.Cells["colPaymenttime"].Value.ToString();
+                        string unpaid = row1.Cells["colUnpaidAmount"].Value.ToString();
                         int result = payment.CompareTo(unpaid);
                         if (result > 0)
                         {
