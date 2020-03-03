@@ -34,6 +34,7 @@ namespace MitsumoriNyuuryoku
             internal string CommentOutStore;      //
             internal string IndividualClientName;      //  
             internal string CommentInStore;      // 
+            internal bool NotPrintFLG;
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -55,6 +56,7 @@ namespace MitsumoriNyuuryoku
             JanCD,
             SKUCD,
             SKUName,
+            NotPrintFLG,        // 印刷なし			
             SetKBN,             // セット区分
             ColorName,          // カラー
             SizeName,           //サイズ
@@ -129,6 +131,12 @@ namespace MitsumoriNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
 
+                w_CtlCol = (int)ColNO.NotPrintFLG;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].NotPrintFLG);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
                 // 
                 w_CtlCol = (int)ColNO.SKUCD;
 
@@ -347,7 +355,9 @@ namespace MitsumoriNyuuryoku
                 // 行番号
                 w_CtlCol = (int)ColNO.GYONO;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
-
+                //
+                w_CtlCol = (int)ColNO.NotPrintFLG;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].NotPrintFLG);
                 // 
                 w_CtlCol = (int)ColNO.SKUCD;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].SKUCD);

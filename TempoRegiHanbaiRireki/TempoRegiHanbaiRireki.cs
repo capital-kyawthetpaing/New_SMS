@@ -34,7 +34,7 @@ namespace TempoRegiHanbaiRireki
                 StartProgram();
 
                 btnClose.Text = "終了";
-
+                
                 SetRequireField();
                 AddHandler();
 
@@ -115,7 +115,9 @@ namespace TempoRegiHanbaiRireki
             }
             else
             {
-                EndSec();
+                //該当データなし
+                bbl.ShowMessage("E128");
+                //EndSec();
             }
         }
 
@@ -140,10 +142,19 @@ namespace TempoRegiHanbaiRireki
                 if (bbl.Z_Set(row["ShippingPossibleSU"]) > 0)
                     foreCl = Color.Red;
 
+                //★出荷可能②（直送）＆未売上	
+                if(row["DirectFLG"].ToString().Equals("1") && !string.IsNullOrWhiteSpace( row["OrderNO"].ToString()))
+                {
+                    if(bbl.Z_Set(row["JuchuuSu"]) > bbl.Z_Set(row["SalesSU"]))
+                    {
+                        foreCl = Color.Red;
+                    }
+                }
+
                 //★売上済（売上が終わっている）
-                //D_JuchuuDetails.JuchuuSu＞Sum(SalesSU）なら、文字を青色にする
-                if (bbl.Z_Set(row["JuchuuZan"]) > 0)
-                    foreCl = Color.SteelBlue;
+                //D_JuchuuDetails.JuchuuSu≦Sum(SalesSU）なら、文字を青色にする
+                if (bbl.Z_Set(row["JuchuuZan"]) <= 0)
+                    foreCl = Color.RoyalBlue;
 
                 //lblDtGyoをさがす。子コントロールも検索する。
                 Control[] cs = this.Controls.Find("lblDtGyo" + i.ToString(), true);
@@ -284,17 +295,17 @@ namespace TempoRegiHanbaiRireki
                     bool miuri = false;
                     bool urizumi = false;
 
-                    //未売上の明細が存在するか確認
+                    //未売上の明細が存在するか確認 (ShippingPossibleSU = SUM(DR.ShippingPossibleSU) - SUM(DR.ShippingSu))
                     DataRow[] rows = dtJuchu.Select("JuchuuNO = '" + JuchuuNO + "' AND ShippingPossibleSU > 0");
                     if (rows.Length > 0)
-                        urizumi = true;
+                        miuri = true;
 
                     //売上済の明細が存在するか確認
                     int salesCnt = Convert.ToInt16(dtJuchu.Rows[index]["CNT"]);
                     string salesNo = dtJuchu.Rows[index]["SalesNO"].ToString();
 
                     if (salesCnt > 0)
-                        miuri = true;
+                        urizumi = true;
 
                     //未売上明細あり＆売上済明細ありの場合
                     if(miuri && urizumi)
@@ -346,7 +357,8 @@ namespace TempoRegiHanbaiRireki
                         {
                             FrmSelectSales frmS = new FrmSelectSales(JuchuuNO);
                             frmS.ShowDialog();
-                            ExecTempoShukkaNyuuryoku(txtCustomerNo.Text, JuchuuNO, frmS.mSalesNo);
+                            if(!frmS.flgCancel)
+                                ExecTempoShukkaNyuuryoku(txtCustomerNo.Text, JuchuuNO, frmS.mSalesNo);
                         }
 
                         //Count(D_SalesDetails.SalesNO)	＝1なら（売上が１件しかない）
@@ -534,6 +546,8 @@ namespace TempoRegiHanbaiRireki
                 //選択行のindexを保持
                 btnDown.Tag = index;
 
+                ClearBackColor(pnlDetails);
+
                 ChangeBackColor(lblsender);
             }
             catch (Exception ex)
@@ -542,26 +556,73 @@ namespace TempoRegiHanbaiRireki
                 MessageBox.Show(ex.Message);
             }
         }
+        private void ClearBackColor(Panel panel)
+        {
+            IEnumerable<Control> c = GetAllControls(panel);
+            foreach (Control ctrl in c)
+            {
+                if (ctrl is Label)
+                    ((Label)ctrl).BackColor = Color.Transparent;
+                if (ctrl is Panel)
+                    ((Panel)ctrl).BackColor = Color.Transparent;
 
+            }
+        }
         private void ChangeBackColor(Label lblsender)
         {
-            for (int i = 1; i <= GYO_CNT; i++)
+            Color backCl = Color.FromArgb(255, 242, 204);
+
+            lblsender.BackColor = backCl;
+
+            int i = Convert.ToInt16( lblsender.Name.Substring(8));
+
+            Control[] cs = this.Controls.Find("lblGyoSelect" + i.ToString(), true);
+            if (cs.Length > 0)
             {
-                //lblDtGyoをさがす。子コントロールも検索する。
-                Control[] cs = this.Controls.Find("lblDtGyo" + i.ToString(), true);
-                if (cs.Length > 0)
-                {
-                    cs[0].BackColor = Color.Transparent;
-                }
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblDtSKUName" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblDtColorSize" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblJuchuuDate" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblStoreName" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+
+            }
+            cs = this.Controls.Find("lblJANCD" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblJuchuuNO" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
             }
 
-            lblsender.BackColor = Color.FromArgb(255, 242, 204);
-        }
-
-        private void ckM_Button1_Click(object sender, EventArgs e)
-        {
-            TempoRegiKaiinKensaku form = new TempoRegiKaiinKensaku();
-            form.ShowDialog();
+            cs = this.Controls.Find("lblDtSSu" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
+            cs = this.Controls.Find("lblDtKin" + i.ToString(), true);
+            if (cs.Length > 0)
+            {
+                cs[0].BackColor = backCl;
+            }
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -569,6 +630,143 @@ namespace TempoRegiHanbaiRireki
             try
             {
                 Save(1);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCustomerNo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                TempoRegiKaiinKensaku form = new TempoRegiKaiinKensaku();
+                form.ShowDialog();
+                txtCustomerNo.Text = form.CustomerCD;
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void lblGyoSelect1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo1, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo2, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo3, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo4, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo5, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect6_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo6, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo7, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo8, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo9, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo10, new EventArgs());
             }
             catch (Exception ex)
             {

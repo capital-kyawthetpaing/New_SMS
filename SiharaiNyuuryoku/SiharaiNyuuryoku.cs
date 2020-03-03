@@ -26,24 +26,22 @@ namespace SiharaiNyuuryoku
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
-
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
-        DataTable dtpayplan = new DataTable();
-
-        DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable();
-        DataTable dt4 = new DataTable(); DataTable dt4Detail = new DataTable();
+        DataTable dtpayplan = new DataTable(); // data bind(insert mode)
+        DataTable dtPay1 = new DataTable(); // data bind(update mode)
+        DataTable dtSiharai2 = new DataTable(); // checkbox click for next form
+        DataTable dt2 = new DataTable(); // detail for  next form(update mode)
+        DataTable dt3 = new DataTable(); // Gridview bind for next form(update mode)
+        DataTable dt4 = new DataTable(); // gridview bind for next form(insert mode)
+        DataTable dt4Detail = new DataTable(); // detail for next form(insert mode)
 
         public FrmSiharaiNyuuryoku()
         {
             InitializeComponent();
         }
-        protected override void EndSec()
-        {
-            this.Close();
-        }
-
+        
         private void FrmSiharaiNyuuryoku_Load(object sender, EventArgs e)
         {
             InProgramID = "SiharaiNyuuryoku";
@@ -86,6 +84,8 @@ namespace SiharaiNyuuryoku
             SetRequireField();
            
         }
+
+        #region Funtion For FormLoad
 
         private void SetRequireField()
         {
@@ -140,6 +140,8 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        #endregion
+
         private void ChangeMode(EOperationMode OperationMode)
         {
             base.OperationMode = OperationMode;
@@ -180,14 +182,23 @@ namespace SiharaiNyuuryoku
             }
             ScPaymentProcessNum.SetFocus(1);
         }
-
+        
         #region Function Click
+
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+
         private void F7()
         {
-           
-            if (dgvPayment.SelectedRows.Count != 0)
+            if(dgvPayment.CurrentRow.Index > -1)
             {
-                DataGridViewRow row = this.dgvPayment.SelectedRows[0];
+                DataGridViewRow row = dgvPayment.CurrentRow;
+                //}
+                //if (dgvPayment.SelectedRows.Count != 0)
+                //{
+                //DataGridViewRow row = this.dgvPayment.SelectedRows[0];
                 dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
                 dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
 
@@ -200,28 +211,25 @@ namespace SiharaiNyuuryoku
                 if (OperationMode == EOperationMode.INSERT)
                 {
                     mode = "1";
-                    dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
+                    //dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
                     if(dt4.Rows.Count > 0)
                     {
-                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate, dt4, null);
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate, dt4, dt4Detail);
                         f2.ShowDialog();
-                    }
-                  
+                    }                  
                 }
                 else
                 {
                     mode = "2";
                     dt2 = sibl.D_Pay_Select2(dpe);
                     dt3 = sibl.D_Pay_Select3(dpe);
-                    if(dt3.Rows.Count > 0)
+                    if (dt3.Rows.Count > 0)
                     {
-                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate,dt3, dt2);
+                        SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD, dppe.PayeeCD, dppe.PayPlanDate, dt3, dt2);
                         f2.ShowDialog();
-                    }
-                   
+                    }                 
                 }             
-            }
-        
+            }       
         }
         
         private void F10()
@@ -272,8 +280,7 @@ namespace SiharaiNyuuryoku
                             dt4Detail.Columns.Remove("UnpaidAmount1");
                             dt4Detail.Columns.Remove("UnpaidAmount2");
 
-                            dt4.Columns.Remove("PayPlanDate");
-                            dt4.Columns.Remove("PayeeCD");
+                           
                             dt4.Columns.Remove("VendorName");
                             dt4.Columns.Remove("BankCD");
                             dt4.Columns.Remove("BankName");
@@ -299,15 +306,9 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("Account2");
                             dt4.Columns.Remove("SubAccount2");
 
-                        }
-                        
-                        
-                    }
-                        
-
+                        }     
+                    }                   
                 }
-
-               
 
                 EnablePanel(PanelDetail);             
                 btnSelectAll.Enabled = true;
@@ -340,30 +341,9 @@ namespace SiharaiNyuuryoku
                     PreviousCtrl.Focus();
             }
         }
+        
         #endregion
-
-        private void Checkstate(bool flag)
-        {
-            foreach (DataGridViewRow row1 in dgvPayment.Rows)
-            {
-                row1.Cells["colChk"].Value = flag;
-            }
-        }
-       
-        private D_Pay_Entity GetPayData()
-        {
-            dpe = new D_Pay_Entity()
-            {
-                StaffCD = ScStaff.TxtCode.Text,
-                PayDate = txtPaymentDate.Text,
-                Operator = InOperatorCD,
-                ProgramID = InProgramID,
-                PC = InPcID,
-                dtTemp1 = dtpayplan
-            };
-            return dpe;
-        }
-
+        
         #region Process For F12
         private void Insert()
         {
@@ -386,6 +366,152 @@ namespace SiharaiNyuuryoku
         {
 
         }
+        #endregion
+
+        #region btnClick
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);   
+        }
+
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            //row1.Cells["colPaymenttime"].Value = 0; 
+            //row1.Cells["colUnpaidAmount"].Value = Convert.ToInt32( row1.Cells["colScheduledPayment"].Value) - Convert.ToInt32( row1.Cells["colAmountPaid"].Value);
+            Checkstate(false);
+        }
+
+        private void btnF10Show_Click(object sender, EventArgs e)
+        {
+            F10();
+        }
+        #endregion
+
+        #region KeyEvent
+        private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void ScPaymentNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                type = 2;
+                if (ErrorCheck(11))
+                {
+                    DataDisplay();
+                }
+            }
+        }
+
+        private void ScPaymentProcessNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                type = 1;
+                //if (ErrorCheck(10))
+                //{
+                //DataDisplay();
+                //}
+                ErrorCheck(10);
+            }
+        }
+
+        private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                F10();
+            }
+        }
+        #endregion
+
+        #region GridView Cell Click
+        private void dgvPayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            F7();
+        }
+
+        private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                if (cboPaymentType.SelectedValue.ToString() == "1")
+                {
+                    //foreach (DataGridViewRow row in dgvPayment.Rows)
+                    //{
+                    //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colUnpaidAmount"].Value = "0";
+                    //    row.Cells["colOtherThanTransfer"].Value = "0";
+                    //}
+                    dppe.PayPlanDate = dgvPayment.Rows[e.RowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                    dppe.PayeeCD = dgvPayment.Rows[e.RowIndex].Cells["colPayeeCD"].Value.ToString();
+
+                    if (dt4Detail != null)
+                    {
+                        DataRow[] tblROWS1 = dt4Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                        if (tblROWS1.Length > 0)
+                            dtSiharai2 = tblROWS1.CopyToDataTable();
+
+                        mke = new M_Kouza_Entity
+                        {
+                            KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString(),
+                            BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
+                            BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
+                            Amount = lblPayGaku.Text.Replace(",", ""),
+                        };
+                        DataTable dt = sibl.M_Kouza_FeeSelect(mke);
+                        dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
+                    }
+
+                    dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    
+                    dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = "0";
+
+                    if(dt4 != null)
+                    {
+                        for (int i = 0; i < dt4.Rows.Count; i++)
+                        {
+                            dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                            dt4.Rows[i]["UnpaidAmount2"] = "0";
+                        }
+                    }
+
+                }
+                else
+                {
+                    //foreach (DataGridViewRow row in dgvPayment.Rows)
+                    //{
+                    //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //    row.Cells["colTransferAmount"].Value = "0";
+                    //    row.Cells["colTransferFee"].Value = "0";
+                    //    row.Cells["colUnpaidAmount"].Value = "0";
+                    //    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+                    //}
+                    if (dt4 != null)
+                    {
+                        for (int i = 0; i < dt4.Rows.Count; i++)
+                        {
+                            dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                            dt4.Rows[i]["UnpaidAmount2"] = "0";
+                        }
+                    }
+
+                    dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
+                    dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
+                }
+
+                LabelDataBind();
+            }
+        }
+
         #endregion
 
         /// <summary>
@@ -549,7 +675,7 @@ namespace SiharaiNyuuryoku
                         ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
                     }
                 }
-                if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedText.ToString()))
+                if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
                 {
                     sibl.ShowMessage("102");
                     cboPaymentType.Focus();
@@ -569,7 +695,7 @@ namespace SiharaiNyuuryoku
                     string name = dtmulti.Rows[0]["Char1"].ToString();
 
                 }
-                if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedText.ToString()))
+                if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedValue.ToString()))
                 {
                     sibl.ShowMessage("102");
                     cboPaymentSourceAcc.Focus();
@@ -586,7 +712,7 @@ namespace SiharaiNyuuryoku
                 }
                 else
                 {
-                    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0][""].ToString();
+                    cboPaymentSourceAcc.SelectedValue = dtkouza.Rows[0]["KouzaCD"].ToString();
                 }
                 if (string.IsNullOrWhiteSpace(txtBillSettleDate.Text))
                 {
@@ -608,8 +734,8 @@ namespace SiharaiNyuuryoku
                     }
                     else
                     {
-                        string payment = row1.Cells["colPaymenttime"].ToString();
-                        string unpaid = row1.Cells["colUnpaidAmount"].ToString();
+                        string payment = row1.Cells["colPaymenttime"].Value.ToString();
+                        string unpaid = row1.Cells["colUnpaidAmount"].Value.ToString();
                         int result = payment.CompareTo(unpaid);
                         if (result > 0)
                         {
@@ -647,7 +773,7 @@ namespace SiharaiNyuuryoku
             btnReleaseAll.Enabled = true;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-            DataTable dtPay1 = new DataTable();
+           
             dtPay1 = sibl.D_Pay_Select1(dpe);
             if (dtPay1.Rows.Count > 0)
             {
@@ -662,13 +788,13 @@ namespace SiharaiNyuuryoku
                 vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
             EnablePanel(PanelDetail);
-          
+
         }
 
         /// <summary>
         /// to show total data with Label below gridview
         /// </summary>
-        private void LabelDataBind()
+        public void LabelDataBind()
         {
             int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0, sum6 = 0, sum7 = 0;
             for (int i = 0; i < dgvPayment.Rows.Count; ++i)
@@ -691,123 +817,60 @@ namespace SiharaiNyuuryoku
             lblPayPlan.Text = sum7.ToString("#,##0");
         }
 
-        #region btnClick
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            Checkstate(true);   
-        }
-
-        private void btnReleaseAll_Click(object sender, EventArgs e)
-        {
-            //row1.Cells["colPaymenttime"].Value = 0; 
-            //row1.Cells["colUnpaidAmount"].Value = Convert.ToInt32( row1.Cells["colScheduledPayment"].Value) - Convert.ToInt32( row1.Cells["colAmountPaid"].Value);
-            Checkstate(false);
-        }
-
-        private void btnF10Show_Click(object sender, EventArgs e)
-        {
-            F10();
-        }
-        #endregion
-        #region KeyEvent
-        private void FrmSiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
-        private void ScPaymentNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                type = 2;
-                if (ErrorCheck(11))
-                {
-                    DataDisplay();
-                }
-            }
-        }
-
-        private void ScPaymentProcessNum_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                type = 1;
-                //if (ErrorCheck(10))
-                //{
-                //DataDisplay();
-                //}
-                ErrorCheck(10);
-            }
-        }
-
-        private void ScPayee_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                F10();
-            }
-        }
-        #endregion
-        
-        private void dgvPayment_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            F7();
-        }
-
         private void cboPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cboPaymentType.SelectedValue.ToString() == "1")
-            {
-                foreach(DataGridViewRow row in dgvPayment.Rows)
-                {
-                    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                    row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                    row.Cells["colUnpaidAmount"].Value = "0";
-                    row.Cells["colOtherThanTransfer"].Value = "0";
-                }
-            }
-            else 
-            {
-                foreach(DataGridViewRow row in dgvPayment.Rows)
-                {
-                    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                    row.Cells["colTransferAmount"].Value = "0";
-                    row.Cells["colTransferFee"].Value = "0";
-                    row.Cells["colUnpaidAmount"].Value = "0";
-                    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                }
-            }
-           
-
+            //if (cboPaymentType.SelectedValue.ToString() == "1")
+            //{
+            //    foreach (DataGridViewRow row in dgvPayment.Rows)
+            //    {
+            //        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+            //        row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+            //        row.Cells["colUnpaidAmount"].Value = "0";
+            //        row.Cells["colOtherThanTransfer"].Value = "0";
+            //    }
+            //}
+            //else
+            //{
+            //    foreach (DataGridViewRow row in dgvPayment.Rows)
+            //    {
+            //        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+            //        row.Cells["colTransferAmount"].Value = "0";
+            //        row.Cells["colTransferFee"].Value = "0";
+            //        row.Cells["colUnpaidAmount"].Value = "0";
+            //        row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
+            //    }
+            //}
         }
 
-        private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        /// <summary>
+        /// For Gridview CheckBox checked or not
+        /// </summary>
+        /// <param name="flag"></param>
+        private void Checkstate(bool flag)
         {
-            if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            foreach (DataGridViewRow row1 in dgvPayment.Rows)
             {
-                if (cboPaymentType.SelectedValue.ToString() == "1")
-                {
-                    foreach (DataGridViewRow row in dgvPayment.Rows)
-                    {
-                        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colUnpaidAmount"].Value = "0";
-                        row.Cells["colOtherThanTransfer"].Value = "0";
-                    }
-                }
-                else
-                {
-                    foreach (DataGridViewRow row in dgvPayment.Rows)
-                    {
-                        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        row.Cells["colTransferAmount"].Value = "0";
-                        row.Cells["colTransferFee"].Value = "0";
-                        row.Cells["colUnpaidAmount"].Value = "0";
-                        row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                    }
-                }
+                row1.Cells["colChk"].Value = flag;
             }
         }
-        
+
+        /// <summary>
+        /// Get D_Pay_Entity
+        /// </summary>
+        /// <returns></returns>
+        private D_Pay_Entity GetPayData()
+        {
+            dpe = new D_Pay_Entity()
+            {
+                StaffCD = ScStaff.TxtCode.Text,
+                PayDate = txtPaymentDate.Text,
+                Operator = InOperatorCD,
+                ProgramID = InProgramID,
+                PC = InPcID,
+                dtTemp1 = dtpayplan
+            };
+            return dpe;
+        }
+
     }
 }

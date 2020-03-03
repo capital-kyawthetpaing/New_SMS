@@ -38,26 +38,27 @@
             this.ckmShop_Label16 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label15 = new CKM_Controls.CKMShop_Label();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblDtColorSize5 = new System.Windows.Forms.Label();
             this.lblJuchuuNO5 = new System.Windows.Forms.Label();
             this.lblJANCD5 = new System.Windows.Forms.Label();
             this.lblStoreName5 = new System.Windows.Forms.Label();
             this.lblDtKin5 = new System.Windows.Forms.Label();
             this.lblDtSSu5 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate5 = new System.Windows.Forms.Label();
             this.lblDtSKUName5 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblDtGyo5 = new System.Windows.Forms.Label();
             this.lblDtColorSize4 = new System.Windows.Forms.Label();
             this.lblJuchuuNO4 = new System.Windows.Forms.Label();
             this.lblJANCD4 = new System.Windows.Forms.Label();
             this.lblStoreName4 = new System.Windows.Forms.Label();
             this.lblDtKin4 = new System.Windows.Forms.Label();
             this.lblDtSSu4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate4 = new System.Windows.Forms.Label();
             this.lblDtSKUName4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblDtGyo4 = new System.Windows.Forms.Label();
             this.lblJuchuuNO3 = new System.Windows.Forms.Label();
             this.lblJANCD3 = new System.Windows.Forms.Label();
             this.lblStoreName3 = new System.Windows.Forms.Label();
@@ -89,7 +90,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblDtGyo2 = new System.Windows.Forms.Label();
             this.lblDtGyo3 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlDetails.SuspendLayout();
@@ -257,20 +257,20 @@
             this.pnlDetails.Controls.Add(this.lblStoreName5);
             this.pnlDetails.Controls.Add(this.lblDtKin5);
             this.pnlDetails.Controls.Add(this.lblDtSSu5);
-            this.pnlDetails.Controls.Add(this.label21);
+            this.pnlDetails.Controls.Add(this.lblJuchuuDate5);
             this.pnlDetails.Controls.Add(this.lblDtSKUName5);
             this.pnlDetails.Controls.Add(this.label23);
-            this.pnlDetails.Controls.Add(this.label24);
+            this.pnlDetails.Controls.Add(this.lblDtGyo5);
             this.pnlDetails.Controls.Add(this.lblDtColorSize4);
             this.pnlDetails.Controls.Add(this.lblJuchuuNO4);
             this.pnlDetails.Controls.Add(this.lblJANCD4);
             this.pnlDetails.Controls.Add(this.lblStoreName4);
             this.pnlDetails.Controls.Add(this.lblDtKin4);
             this.pnlDetails.Controls.Add(this.lblDtSSu4);
-            this.pnlDetails.Controls.Add(this.label8);
+            this.pnlDetails.Controls.Add(this.lblJuchuuDate4);
             this.pnlDetails.Controls.Add(this.lblDtSKUName4);
             this.pnlDetails.Controls.Add(this.label10);
-            this.pnlDetails.Controls.Add(this.label13);
+            this.pnlDetails.Controls.Add(this.lblDtGyo4);
             this.pnlDetails.Controls.Add(this.lblJuchuuNO3);
             this.pnlDetails.Controls.Add(this.lblJANCD3);
             this.pnlDetails.Controls.Add(this.lblStoreName3);
@@ -306,6 +306,15 @@
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(1033, 202);
             this.pnlDetails.TabIndex = 75;
+            // 
+            // label3
+            // 
+            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label3.Location = new System.Drawing.Point(915, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1, 202);
+            this.label3.TabIndex = 98;
+            this.label3.Text = "label3";
             // 
             // lblDtColorSize5
             // 
@@ -370,16 +379,16 @@
             this.lblDtSSu5.Text = "9,999";
             this.lblDtSSu5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label21
+            // lblJuchuuDate5
             // 
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label21.Location = new System.Drawing.Point(39, 164);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(96, 14);
-            this.label21.TabIndex = 91;
-            this.label21.Text = "9999/99/99";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate5.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate5.Location = new System.Drawing.Point(39, 164);
+            this.lblJuchuuDate5.Name = "lblJuchuuDate5";
+            this.lblJuchuuDate5.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate5.TabIndex = 91;
+            this.lblJuchuuDate5.Text = "9999/99/99";
+            this.lblJuchuuDate5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblDtSKUName5
             // 
@@ -400,16 +409,16 @@
             this.label23.TabIndex = 88;
             this.label23.Text = "label23";
             // 
-            // label24
+            // lblDtGyo5
             // 
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label24.Location = new System.Drawing.Point(0, 160);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(33, 40);
-            this.label24.TabIndex = 89;
-            this.label24.Text = "5";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDtGyo5.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo5.Location = new System.Drawing.Point(0, 160);
+            this.lblDtGyo5.Name = "lblDtGyo5";
+            this.lblDtGyo5.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo5.TabIndex = 89;
+            this.lblDtGyo5.Text = "5";
+            this.lblDtGyo5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDtColorSize4
             // 
@@ -474,16 +483,16 @@
             this.lblDtSSu4.Text = "9,999";
             this.lblDtSSu4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label8
+            // lblJuchuuDate4
             // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label8.Location = new System.Drawing.Point(39, 124);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 14);
-            this.label8.TabIndex = 81;
-            this.label8.Text = "9999/99/99";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate4.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate4.Location = new System.Drawing.Point(39, 124);
+            this.lblJuchuuDate4.Name = "lblJuchuuDate4";
+            this.lblJuchuuDate4.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate4.TabIndex = 81;
+            this.lblJuchuuDate4.Text = "9999/99/99";
+            this.lblJuchuuDate4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblDtSKUName4
             // 
@@ -504,16 +513,16 @@
             this.label10.TabIndex = 78;
             this.label10.Text = "label10";
             // 
-            // label13
+            // lblDtGyo4
             // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label13.Location = new System.Drawing.Point(0, 120);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(33, 40);
-            this.label13.TabIndex = 79;
-            this.label13.Text = "4";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDtGyo4.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo4.Location = new System.Drawing.Point(0, 120);
+            this.lblDtGyo4.Name = "lblDtGyo4";
+            this.lblDtGyo4.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo4.TabIndex = 79;
+            this.lblDtGyo4.Text = "4";
+            this.lblDtGyo4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblJuchuuNO3
             // 
@@ -836,15 +845,6 @@
             this.lblDtGyo3.Text = "3";
             this.lblDtGyo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(915, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 202);
-            this.label3.TabIndex = 98;
-            this.label3.Text = "label3";
-            // 
             // FrmSelectSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -887,20 +887,20 @@
         private System.Windows.Forms.Label lblStoreName5;
         private System.Windows.Forms.Label lblDtKin5;
         private System.Windows.Forms.Label lblDtSSu5;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblJuchuuDate5;
         private System.Windows.Forms.Label lblDtSKUName5;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblDtGyo5;
         private System.Windows.Forms.Label lblDtColorSize4;
         private System.Windows.Forms.Label lblJuchuuNO4;
         private System.Windows.Forms.Label lblJANCD4;
         private System.Windows.Forms.Label lblStoreName4;
         private System.Windows.Forms.Label lblDtKin4;
         private System.Windows.Forms.Label lblDtSSu4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblJuchuuDate4;
         private System.Windows.Forms.Label lblDtSKUName4;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblDtGyo4;
         private System.Windows.Forms.Label lblJuchuuNO3;
         private System.Windows.Forms.Label lblJANCD3;
         private System.Windows.Forms.Label lblStoreName3;

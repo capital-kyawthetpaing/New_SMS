@@ -262,6 +262,13 @@
             this.ckM_Label19 = new CKM_Controls.CKM_Label();
             this.lblDay3 = new System.Windows.Forms.Label();
             this.ckM_CheckBox1 = new CKM_Controls.CKM_CheckBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CHK_PRINT_2 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_1 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_0 = new GridControl.clsGridCheckBox();
+            this.CHK_Tyokuso_2 = new GridControl.clsGridCheckBox();
+            this.CHK_Tyokuso_1 = new GridControl.clsGridCheckBox();
+            this.CHK_Tyokuso_0 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -299,6 +306,7 @@
             // 
             // PanelSearch
             // 
+            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -625,6 +633,12 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body.Controls.Add(this.CHK_Tyokuso_2);
+            this.Pnl_Body.Controls.Add(this.CHK_Tyokuso_1);
+            this.Pnl_Body.Controls.Add(this.CHK_Tyokuso_0);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_2);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_1);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_0);
             this.Pnl_Body.Controls.Add(this.IMT_HIKAT_2);
             this.Pnl_Body.Controls.Add(this.IMT_HIKAT_1);
             this.Pnl_Body.Controls.Add(this.IMT_HIKAT_0);
@@ -976,7 +990,7 @@
             this.IMT_VENNM_0.MoveNext = true;
             this.IMT_VENNM_0.Name = "IMT_VENNM_0";
             this.IMT_VENNM_0.ReadOnly = true;
-            this.IMT_VENNM_0.Size = new System.Drawing.Size(260, 19);
+            this.IMT_VENNM_0.Size = new System.Drawing.Size(208, 19);
             this.IMT_VENNM_0.TabIndex = 526;
             this.IMT_VENNM_0.Tag = "0";
             this.IMT_VENNM_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -1003,7 +1017,7 @@
             this.IMT_VENNM_1.MoveNext = true;
             this.IMT_VENNM_1.Name = "IMT_VENNM_1";
             this.IMT_VENNM_1.ReadOnly = true;
-            this.IMT_VENNM_1.Size = new System.Drawing.Size(260, 19);
+            this.IMT_VENNM_1.Size = new System.Drawing.Size(208, 19);
             this.IMT_VENNM_1.TabIndex = 527;
             this.IMT_VENNM_1.Tag = "1";
             this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -1030,7 +1044,7 @@
             this.IMT_VENNM_2.MoveNext = true;
             this.IMT_VENNM_2.Name = "IMT_VENNM_2";
             this.IMT_VENNM_2.ReadOnly = true;
-            this.IMT_VENNM_2.Size = new System.Drawing.Size(260, 19);
+            this.IMT_VENNM_2.Size = new System.Drawing.Size(208, 19);
             this.IMT_VENNM_2.TabIndex = 528;
             this.IMT_VENNM_2.Tag = "2";
             this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -1580,7 +1594,7 @@
             this.IMT_PAYDT_2.MaxLength = 10;
             this.IMT_PAYDT_2.MoveNext = true;
             this.IMT_PAYDT_2.Name = "IMT_PAYDT_2";
-            this.IMT_PAYDT_2.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_2.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_2.TabIndex = 517;
             this.IMT_PAYDT_2.Tag = "2";
             this.IMT_PAYDT_2.Text = "2019/01/01";
@@ -1608,7 +1622,7 @@
             this.IMT_ARIDT_2.MaxLength = 10;
             this.IMT_ARIDT_2.MoveNext = true;
             this.IMT_ARIDT_2.Name = "IMT_ARIDT_2";
-            this.IMT_ARIDT_2.Size = new System.Drawing.Size(88, 19);
+            this.IMT_ARIDT_2.Size = new System.Drawing.Size(81, 19);
             this.IMT_ARIDT_2.TabIndex = 516;
             this.IMT_ARIDT_2.Tag = "2";
             this.IMT_ARIDT_2.Text = "2019/01/01";
@@ -1632,11 +1646,11 @@
             this.IMT_COLDT_1.IsNumber = true;
             this.IMT_COLDT_1.IsShop = false;
             this.IMT_COLDT_1.Length = 10;
-            this.IMT_COLDT_1.Location = new System.Drawing.Point(837, 114);
+            this.IMT_COLDT_1.Location = new System.Drawing.Point(836, 114);
             this.IMT_COLDT_1.MaxLength = 10;
             this.IMT_COLDT_1.MoveNext = true;
             this.IMT_COLDT_1.Name = "IMT_COLDT_1";
-            this.IMT_COLDT_1.Size = new System.Drawing.Size(88, 19);
+            this.IMT_COLDT_1.Size = new System.Drawing.Size(89, 19);
             this.IMT_COLDT_1.TabIndex = 515;
             this.IMT_COLDT_1.Tag = "1";
             this.IMT_COLDT_1.Text = "2019/01/01";
@@ -1660,11 +1674,11 @@
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
             this.IMT_PAYDT_1.Length = 10;
-            this.IMT_PAYDT_1.Location = new System.Drawing.Point(756, 114);
+            this.IMT_PAYDT_1.Location = new System.Drawing.Point(755, 114);
             this.IMT_PAYDT_1.MaxLength = 10;
             this.IMT_PAYDT_1.MoveNext = true;
             this.IMT_PAYDT_1.Name = "IMT_PAYDT_1";
-            this.IMT_PAYDT_1.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_1.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_1.TabIndex = 514;
             this.IMT_PAYDT_1.Tag = "1";
             this.IMT_PAYDT_1.Text = "2019/01/01";
@@ -1688,11 +1702,11 @@
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
             this.IMT_ARIDT_1.Length = 10;
-            this.IMT_ARIDT_1.Location = new System.Drawing.Point(675, 114);
+            this.IMT_ARIDT_1.Location = new System.Drawing.Point(674, 114);
             this.IMT_ARIDT_1.MaxLength = 10;
             this.IMT_ARIDT_1.MoveNext = true;
             this.IMT_ARIDT_1.Name = "IMT_ARIDT_1";
-            this.IMT_ARIDT_1.Size = new System.Drawing.Size(88, 19);
+            this.IMT_ARIDT_1.Size = new System.Drawing.Size(81, 19);
             this.IMT_ARIDT_1.TabIndex = 513;
             this.IMT_ARIDT_1.Tag = "1";
             this.IMT_ARIDT_1.Text = "2019/01/01";
@@ -1748,7 +1762,7 @@
             this.IMT_PAYDT_0.MaxLength = 10;
             this.IMT_PAYDT_0.MoveNext = true;
             this.IMT_PAYDT_0.Name = "IMT_PAYDT_0";
-            this.IMT_PAYDT_0.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_0.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_0.TabIndex = 511;
             this.IMT_PAYDT_0.Tag = "0";
             this.IMT_PAYDT_0.Text = "2019/01/01";
@@ -1776,7 +1790,7 @@
             this.IMT_ARIDT_0.MaxLength = 10;
             this.IMT_ARIDT_0.MoveNext = true;
             this.IMT_ARIDT_0.Name = "IMT_ARIDT_0";
-            this.IMT_ARIDT_0.Size = new System.Drawing.Size(88, 19);
+            this.IMT_ARIDT_0.Size = new System.Drawing.Size(81, 19);
             this.IMT_ARIDT_0.TabIndex = 510;
             this.IMT_ARIDT_0.Tag = "0";
             this.IMT_ARIDT_0.Text = "2019/01/01";
@@ -1894,7 +1908,7 @@
             this.IMT_ITMNM_2.MaxLength = 100;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_2.TabIndex = 265;
             this.IMT_ITMNM_2.Tag = "2";
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1921,7 +1935,7 @@
             this.IMT_ITMNM_1.MaxLength = 100;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_1.TabIndex = 264;
             this.IMT_ITMNM_1.Tag = "1";
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1948,7 +1962,7 @@
             this.IMT_ITMNM_0.MaxLength = 100;
             this.IMT_ITMNM_0.MoveNext = true;
             this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
-            this.IMT_ITMNM_0.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_0.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_0.TabIndex = 2;
             this.IMT_ITMNM_0.Tag = "0";
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3506,6 +3520,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label23);
             this.panel4.Controls.Add(this.label15);
             this.panel4.Controls.Add(this.label16);
@@ -3940,7 +3955,7 @@
             this.lblGridSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblGridSkuCD.Location = new System.Drawing.Point(28, 2);
             this.lblGridSkuCD.Name = "lblGridSkuCD";
-            this.lblGridSkuCD.Size = new System.Drawing.Size(905, 16);
+            this.lblGridSkuCD.Size = new System.Drawing.Size(845, 16);
             this.lblGridSkuCD.TabIndex = 260;
             this.lblGridSkuCD.Text = "商品名";
             this.lblGridSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -5294,6 +5309,115 @@
             this.ckM_CheckBox1.UseVisualStyleBackColor = true;
             this.ckM_CheckBox1.CheckedChanged += new System.EventHandler(this.CkM_CheckBox1_CheckedChanged);
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Location = new System.Drawing.Point(873, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 16);
+            this.label7.TabIndex = 300;
+            this.label7.Text = "印刷なし";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CHK_PRINT_2
+            // 
+            this.CHK_PRINT_2.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_2.Location = new System.Drawing.Point(885, 153);
+            this.CHK_PRINT_2.Name = "CHK_PRINT_2";
+            this.CHK_PRINT_2.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_2.TabIndex = 641;
+            this.CHK_PRINT_2.Tag = "2";
+            this.CHK_PRINT_2.Text = "なし";
+            this.CHK_PRINT_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_1
+            // 
+            this.CHK_PRINT_1.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_1.Location = new System.Drawing.Point(885, 77);
+            this.CHK_PRINT_1.Name = "CHK_PRINT_1";
+            this.CHK_PRINT_1.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_1.TabIndex = 640;
+            this.CHK_PRINT_1.Tag = "1";
+            this.CHK_PRINT_1.Text = "なし";
+            this.CHK_PRINT_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_0
+            // 
+            this.CHK_PRINT_0.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_0.Location = new System.Drawing.Point(885, 1);
+            this.CHK_PRINT_0.Name = "CHK_PRINT_0";
+            this.CHK_PRINT_0.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_0.TabIndex = 639;
+            this.CHK_PRINT_0.Tag = "0";
+            this.CHK_PRINT_0.Text = "なし";
+            this.CHK_PRINT_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_0.UseVisualStyleBackColor = false;
+            // 
+            // CHK_Tyokuso_2
+            // 
+            this.CHK_Tyokuso_2.BackColor = System.Drawing.Color.White;
+            this.CHK_Tyokuso_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_Tyokuso_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_Tyokuso_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_Tyokuso_2.Location = new System.Drawing.Point(626, 191);
+            this.CHK_Tyokuso_2.Name = "CHK_Tyokuso_2";
+            this.CHK_Tyokuso_2.Size = new System.Drawing.Size(47, 17);
+            this.CHK_Tyokuso_2.TabIndex = 644;
+            this.CHK_Tyokuso_2.Tag = "2";
+            this.CHK_Tyokuso_2.Text = "直送";
+            this.CHK_Tyokuso_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_Tyokuso_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_Tyokuso_1
+            // 
+            this.CHK_Tyokuso_1.BackColor = System.Drawing.Color.White;
+            this.CHK_Tyokuso_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_Tyokuso_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_Tyokuso_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_Tyokuso_1.Location = new System.Drawing.Point(626, 115);
+            this.CHK_Tyokuso_1.Name = "CHK_Tyokuso_1";
+            this.CHK_Tyokuso_1.Size = new System.Drawing.Size(47, 17);
+            this.CHK_Tyokuso_1.TabIndex = 643;
+            this.CHK_Tyokuso_1.Tag = "1";
+            this.CHK_Tyokuso_1.Text = "直送";
+            this.CHK_Tyokuso_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_Tyokuso_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_Tyokuso_0
+            // 
+            this.CHK_Tyokuso_0.BackColor = System.Drawing.Color.White;
+            this.CHK_Tyokuso_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_Tyokuso_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_Tyokuso_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_Tyokuso_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_Tyokuso_0.Location = new System.Drawing.Point(626, 39);
+            this.CHK_Tyokuso_0.Name = "CHK_Tyokuso_0";
+            this.CHK_Tyokuso_0.Size = new System.Drawing.Size(47, 17);
+            this.CHK_Tyokuso_0.TabIndex = 642;
+            this.CHK_Tyokuso_0.Tag = "0";
+            this.CHK_Tyokuso_0.Text = "直送";
+            this.CHK_Tyokuso_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_Tyokuso_0.UseVisualStyleBackColor = false;
+            // 
             // TempoJuchuuNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5626,6 +5750,13 @@
         private CKM_Controls.CKM_TextBox IMT_HIKAT_2;
         private CKM_Controls.CKM_TextBox IMT_HIKAT_1;
         private CKM_Controls.CKM_TextBox IMT_HIKAT_0;
+        private System.Windows.Forms.Label label7;
+        private GridControl.clsGridCheckBox CHK_Tyokuso_2;
+        private GridControl.clsGridCheckBox CHK_Tyokuso_1;
+        private GridControl.clsGridCheckBox CHK_Tyokuso_0;
+        private GridControl.clsGridCheckBox CHK_PRINT_2;
+        private GridControl.clsGridCheckBox CHK_PRINT_1;
+        private GridControl.clsGridCheckBox CHK_PRINT_0;
     }
 }
 

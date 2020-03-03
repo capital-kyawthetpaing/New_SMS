@@ -155,6 +155,14 @@ namespace MitsumoriNyuuryoku
                             else
                                 btn.Click += new System.EventHandler(BTN_Zaiko_Click);
                         }
+                        else if (mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl.GetType().Equals(typeof(GridControl.clsGridCheckBox)))
+                        {
+                            GridControl.clsGridCheckBox check = (GridControl.clsGridCheckBox)mGrid.g_MK_Ctrl[w_CtlCol, W_CtlRow].CellCtl;
+                            check.Enter += new System.EventHandler(GridControl_Enter);
+                            check.Leave += new System.EventHandler(GridControl_Leave);
+                            check.KeyDown += new System.Windows.Forms.KeyEventHandler(GridControl_KeyDown);
+                            check.Click += new System.EventHandler(CHK_Print_Click);
+                        }
                     }
 
                     //switch (w_CtlCol)
@@ -250,6 +258,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice, 0].CellCtl = IMN_GENER2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaniCD, 0].CellCtl = IMN_MEMBR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ColorName, 0].CellCtl = IMN_CLINT_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.NotPrintFLG, 0].CellCtl = CHK_PRINT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SetKBN, 0].CellCtl = IMN_CLINT2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ProfitGaku, 0].CellCtl = IMN_SALEP_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.CostUnitPrice, 0].CellCtl = IMN_SALEP2_0;
@@ -274,6 +283,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice, 1].CellCtl = IMN_GENER2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaniCD, 1].CellCtl = IMN_MEMBR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ColorName, 1].CellCtl = IMN_CLINT_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.NotPrintFLG, 1].CellCtl = CHK_PRINT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SetKBN, 1].CellCtl = IMN_CLINT2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ProfitGaku, 1].CellCtl = IMN_SALEP_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.CostUnitPrice, 1].CellCtl = IMN_SALEP2_1;
@@ -298,6 +308,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice, 2].CellCtl = IMN_GENER2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaniCD, 2].CellCtl = IMN_MEMBR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ColorName, 2].CellCtl = IMN_CLINT_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.NotPrintFLG, 2].CellCtl = CHK_PRINT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SetKBN, 2].CellCtl = IMN_CLINT2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ProfitGaku, 2].CellCtl = IMN_SALEP_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.CostUnitPrice, 2].CellCtl = IMN_SALEP2_2;
@@ -322,6 +333,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice, 3].CellCtl = IMN_GENER2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaniCD, 3].CellCtl = IMN_MEMBR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ColorName, 3].CellCtl = IMN_CLINT_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.NotPrintFLG,3].CellCtl = CHK_PRINT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SetKBN, 3].CellCtl = IMN_CLINT2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ProfitGaku, 3].CellCtl = IMN_SALEP_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.CostUnitPrice, 3].CellCtl = IMN_SALEP2_3;
@@ -346,6 +358,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice, 4].CellCtl = IMN_GENER2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaniCD, 4].CellCtl = IMN_MEMBR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ColorName, 4].CellCtl = IMN_CLINT_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.NotPrintFLG, 4].CellCtl = CHK_PRINT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SetKBN, 4].CellCtl = IMN_CLINT2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.ProfitGaku, 4].CellCtl = IMN_SALEP_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.CostUnitPrice, 4].CellCtl = IMN_SALEP2_4;
@@ -681,6 +694,7 @@ namespace MitsumoriNyuuryoku
                                         case (int)ClsGridMitsumori.ColNO.CommentInStore:    //
                                         case (int)ClsGridMitsumori.ColNO.Site:    //
                                         case (int)ClsGridMitsumori.ColNO.Zaiko:    // 
+                                        case (int)ClsGridMitsumori.ColNO.NotPrintFLG:    // 
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
@@ -750,6 +764,7 @@ namespace MitsumoriNyuuryoku
                                         case (int)ClsGridMitsumori.ColNO.CommentInStore:    //
                                         case (int)ClsGridMitsumori.ColNO.Site:    //
                                         case (int)ClsGridMitsumori.ColNO.Zaiko:    // 
+                                        case (int)ClsGridMitsumori.ColNO.NotPrintFLG:    // 
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
@@ -914,6 +929,42 @@ namespace MitsumoriNyuuryoku
                 }
 
 
+        }
+        /// <summary>
+        /// 明細部チェックボックスクリック時処理
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CHK_Print_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int w_Row;
+                Control w_ActCtl;
+
+                w_ActCtl = (Control)sender;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+
+                //画面より配列セット 
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+                bool Check = mGrid.g_DArray[w_Row].NotPrintFLG;
+
+                if (w_Row == 0 && Check)
+                    mGrid.g_DArray[w_Row].NotPrintFLG = false;
+
+                if (string.IsNullOrWhiteSpace( mGrid.g_DArray[w_Row].JanCD))
+                    mGrid.g_DArray[w_Row].NotPrintFLG = false;
+
+                //配列の内容を画面へセット
+                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
         }
 
         // -----------------------------------------------
@@ -1425,6 +1476,8 @@ namespace MitsumoriNyuuryoku
                     //    mGrid.g_DArray[i].SetKBN = "○";
                     //else
                     //    mGrid.g_DArray[i].SetKBN = "";
+                    mGrid.g_DArray[i].NotPrintFLG = row["NotPrintFLG"].ToString() == "1" ? true : false;
+
                     mGrid.g_DArray[i].MitsumoriHontaiGaku = bbl.Z_SetStr(row["MitsumoriHontaiGaku"]);   // 
                     //mGrid.g_DArray[i].TaxRateDisp = bbl.Z_SetStr(row["MemberPriceOutTax"]);   // 
                     mGrid.g_DArray[i].MitsumoriUnitPrice = bbl.Z_SetStr(row["MitsumoriUnitPrice"]);   // 
@@ -1955,6 +2008,22 @@ namespace MitsumoriNyuuryoku
                     break;
 
                 case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
+                    if (mGrid.g_DArray[row].NotPrintFLG)
+                    {
+                        if(mGrid.g_DArray[row].MitsumoriSuu != mGrid.g_DArray[row-1].MitsumoriSuu)
+                        {
+                            //Ｅ２１７				
+                            bbl.ShowMessage("E217");
+                            return false;
+                        }
+                    }
+
+                    //各金額項目の再計算必要
+                    if (chkAll == false)
+                        CalcKin();
+
+                    break;
+
                 case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
                 case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
 
@@ -2070,6 +2139,7 @@ namespace MitsumoriNyuuryoku
             dt.Columns.Add("SKUName", typeof(string));
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
+            dt.Columns.Add("NotPrintFLG", typeof(int));
             dt.Columns.Add("SetKBN", typeof(int));
             dt.Columns.Add("MitsumoriSuu", typeof(int));
             dt.Columns.Add("MitsumoriUnitPrice", typeof(decimal));
@@ -2110,6 +2180,9 @@ namespace MitsumoriNyuuryoku
                     string setkbn = "1";
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].SetKBN))
                         setkbn = "0";
+                    int notPrintFLG = 0;
+                    if (mGrid.g_DArray[RW].NotPrintFLG)
+                        notPrintFLG = 1;
 
                     dt.Rows.Add(rowNo
                         , rowNo
@@ -2119,6 +2192,7 @@ namespace MitsumoriNyuuryoku
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
+                        , notPrintFLG
                         , setkbn
                         , bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriSuu)
                         , bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriUnitPrice)
@@ -2769,9 +2843,9 @@ namespace MitsumoriNyuuryoku
                 previousCtrl = this.ActiveControl;
 
                 int w_Row;
-                CKM_Controls.CKM_TextBox w_ActCtl;
+                Control w_ActCtl;
 
-                w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                w_ActCtl = (Control)sender;
                 w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 // 背景色
@@ -2797,10 +2871,10 @@ namespace MitsumoriNyuuryoku
             try
             {
                 int w_Row;
-                CKM_Controls.CKM_TextBox w_ActCtl;
+                Control w_ActCtl;
+                    w_ActCtl = (Control)sender;
 
-                w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                    w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                 if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
                 {
@@ -2828,9 +2902,9 @@ namespace MitsumoriNyuuryoku
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
                     int w_Row;
-                    CKM_Controls.CKM_TextBox w_ActCtl;
+                    Control w_ActCtl;
 
-                    w_ActCtl = (CKM_Controls.CKM_TextBox)sender;
+                    w_ActCtl = (Control)sender;
                     w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
 
                     //どの項目か判別
@@ -2840,6 +2914,49 @@ namespace MitsumoriNyuuryoku
                         ctlName= w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
                     else
                         ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
+
+                    bool lastCell = false;
+
+                    switch (ctlName)
+                    {
+                        case "SC_ITEM":
+                            CL = (int)ClsGridMitsumori.ColNO.JanCD;
+                            break;
+                        case "IMT_ITMNM":
+                            CL = (int)ClsGridMitsumori.ColNO.SKUName;
+                            break;
+                        case "IMN_CLINT":
+                            CL = (int)ClsGridMitsumori.ColNO.ColorName;
+                            break;
+                        case "IMT_KAIDT":
+                            CL = (int)ClsGridMitsumori.ColNO.SizeName;
+                            break;
+                        case "CHK_PRINT":
+                            CL = (int)ClsGridMitsumori.ColNO.NotPrintFLG;
+                            break;
+                        case "IMN_GENER":
+                            CL = (int)ClsGridMitsumori.ColNO.MitsumoriSuu;
+                            break;
+                        case "IMN_GENER2":
+                            CL = (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice;
+                            break;
+                        case "IMN_SALEP2":
+                            CL = (int)ClsGridMitsumori.ColNO.CostUnitPrice;
+                            break;
+                        case "IMT_REMAK":
+                            CL = (int)ClsGridMitsumori.ColNO.CommentInStore;
+                            break;
+                        case "IMN_WEBPR":
+                            CL = (int)ClsGridMitsumori.ColNO.CommentOutStore;
+                            break;
+                        case "IMN_WEBPR2":
+                            CL = (int)ClsGridMitsumori.ColNO.IndividualClientName;
+                            //if (w_Row == m_dataCnt - 1)
+                            if (w_Row == mGrid.g_MK_Max_Row - 1)
+                                lastCell = true;
+                            break;
+
+                    }
 
                     bool changeFlg = false;
                     switch (CL)
@@ -2864,46 +2981,6 @@ namespace MitsumoriNyuuryoku
                                 changeFlg = true;
                             }
                             break;
-                    }
-
-                    bool lastCell = false;
-               
-                    switch(ctlName)
-                    {
-                        case "SC_ITEM":
-                            CL = (int)ClsGridMitsumori.ColNO.JanCD;
-                            break;
-                        case "IMT_ITMNM":
-                            CL = (int)ClsGridMitsumori.ColNO.SKUName;
-                            break;
-                        case "IMN_CLINT":
-                            CL = (int)ClsGridMitsumori.ColNO.ColorName;
-                            break;
-                        case "IMT_KAIDT":
-                            CL = (int)ClsGridMitsumori.ColNO.SizeName;
-                            break;
-                        case "IMN_GENER":
-                            CL = (int)ClsGridMitsumori.ColNO.MitsumoriSuu;
-                            break;
-                        case "IMN_GENER2":
-                            CL = (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice;
-                            break;
-                        case "IMN_SALEP2":
-                            CL = (int)ClsGridMitsumori.ColNO.CostUnitPrice;
-                            break;
-                        case "IMT_REMAK":
-                            CL = (int)ClsGridMitsumori.ColNO.CommentInStore;
-                            break;
-                        case "IMN_WEBPR":
-                            CL = (int)ClsGridMitsumori.ColNO.CommentOutStore;
-                            break;
-                        case "IMN_WEBPR2":
-                            CL = (int)ClsGridMitsumori.ColNO.IndividualClientName;
-                            //if (w_Row == m_dataCnt - 1)
-                                if (w_Row == mGrid.g_MK_Max_Row - 1)
-                                    lastCell = true;
-                            break;            
-
                     }
 
                     //画面の内容を配列へセット
