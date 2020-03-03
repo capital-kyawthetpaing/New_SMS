@@ -17,9 +17,10 @@ namespace TempoRegiHanbaiRireki
         private const int GYO_CNT = 5;
 
         public string mSalesNo;
-        private string mJuchuNo;
+        private string mJuchuNo; 
         private TempoRegiHanbaiRireki_BL tbl = new TempoRegiHanbaiRireki_BL();
         private DataTable dtSales;
+        public bool flgCancel = false;
 
         public FrmSelectSales(string JuchuuNO)
         {
@@ -262,6 +263,7 @@ namespace TempoRegiHanbaiRireki
         {
             try
             {
+                flgCancel = true;
                 EndSec();
             }
             catch (Exception ex)

@@ -1214,7 +1214,7 @@ namespace Search
                         if (!frmKey.flgCancel)
                         {
                             TxtCode.Text = frmKey.KeyCode;
-                            lblName.Text = frmKey.Char2;
+                            lblName.Text = frmKey.Char3;
                         }
                     }
                     break;

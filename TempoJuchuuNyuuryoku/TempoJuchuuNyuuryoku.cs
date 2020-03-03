@@ -1759,12 +1759,16 @@ namespace TempoJuchuuNyuuryoku
                     //税額(Hidden)
                     mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku);
 
-                    //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
-                    bool ret = mibl.CheckJuchuDetailsData(dje.JuchuuNO, row["JuchuuRows"].ToString(), out string status, out string status2);
-                    if (ret)
+                    //複写時以外
+                    if (index != (int)EIndex.CopyJuchuuNO)
                     {
-                        mGrid.g_DArray[i].Nyuka = status;
-                        mGrid.g_DArray[i].Syukka = status2;
+                        //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
+                        bool ret = mibl.CheckJuchuDetailsData(dje.JuchuuNO, row["JuchuuRows"].ToString(), out string status, out string status2);
+                        if (ret)
+                        {
+                            mGrid.g_DArray[i].Nyuka = status;
+                            mGrid.g_DArray[i].Syukka = status2;
+                        }
                     }
                     mGrid.g_DArray[i].SoukoName= row["M_SoukoCD"].ToString();
                     mGrid.g_DArray[i].JuchuuOrderNO = row["JuchuuOrderNO"].ToString();
@@ -2013,8 +2017,8 @@ namespace TempoJuchuuNyuuryoku
                     //[M_SKULastCost]
                     M_SKULastCost_Entity msce = new M_SKULastCost_Entity
                     {
-                        AdminNO = mGrid.g_DArray[i].AdminNO,
-                        SoukoCD = mGrid.g_DArray[i].SoukoName    //Todo:必要か確認。たぶん必要
+                        AdminNO = mGrid.g_DArray[i].AdminNO
+                        ,SoukoCD = mGrid.g_DArray[i].SoukoName    //Todo:必要か確認。たぶん必要
                     };
                     bool ret=mibl.M_SKULastCost_Select(msce);
                     if (ret)
@@ -2088,6 +2092,9 @@ namespace TempoJuchuuNyuuryoku
             {
                 CheckHikiate(RW, ymd);
             }
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
         }
 
         /// <summary>
@@ -3153,7 +3160,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     else
                     {
-                        AddJuchuuRows = RW;
+                        AddJuchuuRows = mGrid.g_DArray[RW].juchuGyoNO > 0 ? mGrid.g_DArray[RW].juchuGyoNO : rowNo;
                     }
                     int ChkTyokuso = 0;
                     if (mGrid.g_DArray[RW].ChkTyokuso)
