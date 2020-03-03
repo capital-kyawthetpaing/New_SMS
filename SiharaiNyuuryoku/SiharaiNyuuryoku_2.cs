@@ -566,7 +566,7 @@ namespace SiharaiNyuuryoku
         }
 
         protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
-        {
+       {
             if (e.ColumnIndex > 0 && e.RowIndex >= 0)
             {
                 if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
@@ -593,16 +593,36 @@ namespace SiharaiNyuuryoku
 
         private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if(dgvSearchPayment.CurrentRow.Index>-1)
+            //if(dgvSearchPayment.CurrentRow.Index>-1)
+            //{
+            //    if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
+            //    {
+            //        DataGridViewRow row = dgvSearchPayment.CurrentRow;
+            //        string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
+            //        if (string.IsNullOrWhiteSpace(unpaidAmount1))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //        }
+            //    }
+           // }
+            
+        }
+
+        private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSearchPayment.CurrentRow.Index > -1)
             {
-                DataGridViewRow row = dgvSearchPayment.CurrentRow;
-                string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
-                if (string.IsNullOrWhiteSpace(unpaidAmount1))
+                if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
                 {
-                    bbl.ShowMessage("E102");
+                    DataGridViewRow row = dgvSearchPayment.CurrentRow;
+                    string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
+                    if (string.IsNullOrWhiteSpace(unpaidAmount1))
+                    {
+                        bbl.ShowMessage("E102");
+                        dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                    }
                 }
             }
-            
         }
     }
 }

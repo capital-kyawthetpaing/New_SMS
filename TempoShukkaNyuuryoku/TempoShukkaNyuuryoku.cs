@@ -41,6 +41,8 @@ namespace TempoShukkaNyuuryoku
                 InProgramID = "TempoShukkaNyuuryoku";
                 StartProgram();
 
+                btnClose.Text = "終了";
+
                 SetRequireField();
                 AddHandler();
 
@@ -52,8 +54,8 @@ namespace TempoShukkaNyuuryoku
                     lblCustomerNo.Text = cmds[(int)ECmdLine.PcID + 2];   //会員番号
                     mJuchuNo = cmds[(int)ECmdLine.PcID + 3];  //受注番号
 
-                    if(cmds.Length-1 >= (int)ECmdLine.PcID + 4)
-                    mUriageNo = cmds[(int)ECmdLine.PcID + 4];  //売上番号
+                    if (cmds.Length - 1 >= (int)ECmdLine.PcID + 4)
+                        mUriageNo = cmds[(int)ECmdLine.PcID + 4];  //売上番号
 
                     lblSalesNO.Text = mUriageNo;
                 }
@@ -97,8 +99,8 @@ namespace TempoShukkaNyuuryoku
                     //画面転送表03に従って、画面情報を表示
                     DispFromJuchuNO(mJuchuNo, mUriageNo);
                 }
-                
-                lblCustomerNo.Focus();
+
+                txtJanCD.Focus();
             }
             catch (Exception ex)
             {
@@ -132,7 +134,7 @@ namespace TempoShukkaNyuuryoku
                 if (ctrl is Label)
                     ((Label)ctrl).Text = string.Empty;
 
-                if(ctrl is Button)
+                if (ctrl is Button)
                     ((Button)ctrl).Text = string.Empty;
 
                 ctrl.Tag = "";
@@ -144,7 +146,7 @@ namespace TempoShukkaNyuuryoku
         }
         private void AddHandler()
         {
-            foreach(Control ctl in tableLayoutPanel2.Controls)
+            foreach (Control ctl in tableLayoutPanel2.Controls)
             {
                 ctl.Click += new System.EventHandler(this.BtnGroup_Click);
             }
@@ -162,12 +164,24 @@ namespace TempoShukkaNyuuryoku
 
             if (dtJuchu.Rows.Count > 0)
             {
-                txtSalesDate.Text = bbl.GetDate();
-                mSaleDate = txtSalesDate.Text;
+                if (OperationMode == FrmMainForm.EOperationMode.INSERT)
+                {
+                    txtSalesDate.Text = bbl.GetDate();
+                }
+                else
+                {
+                    txtSalesDate.Text = dtJuchu.Rows[0]["SalesDate"].ToString();
+                    //txtSalesDate.Enabled = false;
+                    //txtFirstCollectPlanDate.Enabled = false;
+                    txtShippingSu.Enabled = false;
+                    btnOk.Enabled = false;
+                }
+                //入金日を計算
+                Save(3);
 
                 //【Data Area】
                 CheckData_M_StoreButtonDetailes();
-               
+
 
                 M_StoreBottunGroup_Entity msg = new M_StoreBottunGroup_Entity();
                 msg.StoreCD = mStoreCD;
@@ -177,12 +191,14 @@ namespace TempoShukkaNyuuryoku
                 dtBottunGroup = sgbl.M_StoreButtonGroup_SelectAll(msg);
 
                 DispFromButtonGroupTable();
-               
+
                 //【Data Area Detail】
                 DispFromDataTable();
 
                 //【Data Area】
                 SetDataFromDataTable();
+
+                Calkkin();
             }
             else
             {
@@ -195,7 +211,7 @@ namespace TempoShukkaNyuuryoku
 
             Clear(pnlDetails);
 
-            for (int i=0; i<3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 int index = gyoNo - 1 + i;
 
@@ -207,33 +223,51 @@ namespace TempoShukkaNyuuryoku
                 switch (i)
                 {
                     case 0:
-                        lblDtGyo1.Text = (index+1).ToString();
+                        lblDtGyo1.Text = (index + 1).ToString();
                         lblDtSKUName1.Text = row["SKUName"].ToString();
                         lblDtColorSize1.Text = row["ColorSizeName"].ToString();
+                        lblDtNotPrintFLG1.Text = row["NotPrintFLG"].ToString().Equals("1") ? "※":"";
                         lblDtKSu1.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
-                        lblDtSSu1.Text = "0";
-                        lblDtKin1.Text = "\\" + bbl.Z_SetStr(row["SyukkaKanouSu"]);
+                        lblDtSSu1.Text = bbl.Z_SetStr(row["ShippingSu"]);
+                        lblDtKin1.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
 
                     case 1:
                         lblDtGyo2.Text = (index + 1).ToString();
                         lblDtSKUName2.Text = row["SKUName"].ToString();
                         lblDtColorSize2.Text = row["ColorSizeName"].ToString();
+                        lblDtNotPrintFLG2.Text = row["NotPrintFLG"].ToString().Equals("1") ? "※" : "";
                         lblDtKSu2.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
-                        lblDtSSu2.Text = "0";
-                        lblDtKin2.Text = "\\" + bbl.Z_SetStr(row["SyukkaKanouSu"]);
+                        lblDtSSu2.Text = bbl.Z_SetStr(row["ShippingSu"]);
+                        lblDtKin2.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
 
                     case 2:
                         lblDtGyo3.Text = (index + 1).ToString();
                         lblDtSKUName3.Text = row["SKUName"].ToString();
                         lblDtColorSize3.Text = row["ColorSizeName"].ToString();
+                        lblDtNotPrintFLG3.Text = row["NotPrintFLG"].ToString().Equals("1") ? "※" : "";
                         lblDtKSu3.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
-                        lblDtSSu3.Text = "0";
-                        lblDtKin3.Text = "\\" + bbl.Z_SetStr(row["SyukkaKanouSu"]);
+                        lblDtSSu3.Text = bbl.Z_SetStr(row["ShippingSu"]);
+                        lblDtKin3.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
                         break;
                 }
             }
+        }
+
+        private void Calkkin()
+        {
+            decimal kin = 0;
+            decimal zei = 0;
+
+            foreach (DataRow row in dtJuchu.Rows)
+            {
+                kin += bbl.Z_Set(row["SalesGaku"]);
+                zei += bbl.Z_Set(row["SalesTax"]);
+            }
+
+            lblSumSalesGaku.Text = "\\" + bbl.Z_SetStr(kin);
+            lblSumSalesTax.Text = "\\" + bbl.Z_SetStr(zei);
         }
 
         private void SetDataFromDataTable(int gyoNo = 1)
@@ -246,13 +280,17 @@ namespace TempoShukkaNyuuryoku
             lblSKUName.Text = row["SKUName"].ToString();
             lblColorSize.Text = row["ColorSizeName"].ToString();
             lblJuchuuSuu.Text = bbl.Z_SetStr(row["JuchuuSuu"]);
-            lblSyukkaKanouSu.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
+            //lblSyukkaKanouSu.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
+            if (bbl.Z_SetStr(row["DirectFLG"]).Equals(1))
+                lblSyukkaKanouSu.Text = bbl.Z_SetStr(bbl.Z_Set(row["JuchuuSuu"]) - bbl.Z_Set(row["DeliverySu"]));
+            else
+                lblSyukkaKanouSu.Text = bbl.Z_SetStr(bbl.Z_Set(row["HikiateSu"]) - bbl.Z_Set(row["DeliverySu"]));
             txtShippingSu.Text = bbl.Z_SetStr(row["ShippingSu"]);
 
             lblJuchuuUnitPrice.Text = "\\" + bbl.Z_SetStr(row["JuchuuUnitPrice"]);
             lblSalesGaku.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
             lblSalesTax.Text = "\\" + bbl.Z_SetStr(row["SalesTax"]);
-            lblJuchuuTaxRitsu.Text = bbl.Z_SetStr(row["JuchuuUnitPrice"]) + "%";
+            lblJuchuuTaxRitsu.Text = bbl.Z_SetStr(row["JuchuuTaxRitsu"]) + "%";
 
             lblSyohinChuijiko.Text = row["SyohinChuijiko"].ToString();
 
@@ -279,13 +317,10 @@ namespace TempoShukkaNyuuryoku
                     btnSeikyu.Text = "即請求";
                 else
                     btnSeikyu.Text = "締請求";
-
-                txtSalesDate.Text = row["SalesDate"].ToString();
-                mSaleDate = txtSalesDate.Text;
             }
         }
 
-        private void CheckData_M_StoreButtonDetailes(string GroupNO="")
+        private void CheckData_M_StoreButtonDetailes(string GroupNO = "")
         {
             M_StoreBottunDetails_Entity msb = new M_StoreBottunDetails_Entity();
             msb.StoreCD = mStoreCD;
@@ -300,26 +335,34 @@ namespace TempoShukkaNyuuryoku
 
         private void DispFromButtonDetailsTable(int stHorizontal = 1)
         {
+            DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+
+            if (rows.Length == 0)
+                return;
+
             Clear(tableLayoutPanel3);
 
-            DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal+10);
-
-            foreach(DataRow row in rows)
+            foreach (DataRow row in rows)
             {
                 string Horizontal = row["Horizontal"].ToString();
                 string Vertical = row["Vertical"].ToString();
 
-                int index = Convert.ToInt16( Horizontal) - stHorizontal +1;
+                int index = Convert.ToInt16(Horizontal) - stHorizontal + 1;
 
                 //btnSyoをさがす。子コントロールも検索する。
                 Control[] cs = this.Controls.Find("btnSyo" + index.ToString() + Vertical, true);
                 if (cs.Length > 0)
                 {
                     cs[0].Text = row["BottunName"].ToString();
-                    cs[0].Tag = row["JANCD"].ToString();
+
+                    //MasterKBN=2:顧客 の場合（パネルが得意先CDの場合は）クリックしても何も行わない
+                    if (row["MasterKBN"].ToString() == "2")
+                        cs[0].Tag = "";
+                    else
+                        cs[0].Tag = row["JANCD"].ToString();
                 }
             }
-
+            btnSyoDown.Tag = stHorizontal;
         }
         private void DispFromButtonGroupTable(int stHorizontal = 1)
         {
@@ -327,18 +370,19 @@ namespace TempoShukkaNyuuryoku
 
             DataRow[] rows = dtBottunGroup.Select(" GroupNO >=" + stHorizontal + " AND GroupNO <" + stHorizontal + 14);
 
+            btnGrp1.Tag = stHorizontal;
+
             foreach (DataRow row in rows)
             {
                 int GroupNO = Convert.ToInt16(row["GroupNO"]);
-                int index = GroupNO - stHorizontal +1;
-                
+                int index = GroupNO - stHorizontal + 1;
+
                 //btnGrpをさがす。子コントロールも検索する。
                 Control[] cs = this.Controls.Find("btnGrp" + index.ToString(), true);
                 if (cs.Length > 0)
                 {
                     cs[0].Text = row["BottunName"].ToString();
-                    cs[0].Tag = row["GroupNO"].ToString() + (row["MasterKBN"].ToString() == "2" ? "*" : "");
-                    //MasterKBN=2:顧客 の場合（パネルが得意先CDの場合は）クリックしても何も行わない
+                    cs[0].Tag = row["GroupNO"].ToString(); //
                 }
             }
 
@@ -350,7 +394,7 @@ namespace TempoShukkaNyuuryoku
         }
         private bool ErrorCheck(int kbn = 0)
         {
-            if (kbn <= 1)
+            if (kbn == 1)
             {
                 //JANCD
                 if (!RequireCheck(new Control[] { txtJanCD }))
@@ -377,19 +421,8 @@ namespace TempoShukkaNyuuryoku
                     //【Data Area Detail】に複数存在するJANCDの場合
                     //「該当する行が複数存在します。右の一覧から選択してください」
                     bbl.ShowMessage("E149");
-                    
-                    ////JANCDでSKUCDが複数存在する場合（If there is more than one）
-                    //using (Select_SKUForShukka frmSKU = new Select_SKUForShukka())
-                    //{
-                    //    frmSKU.parJANCD = txtJanCD.Text;
-                    //    frmSKU.parChangeDate = dtJuchu.Rows[0]["JuchuuDate"].ToString();
-                    //    frmSKU.ShowDialog();
-
-                    //    if (!frmSKU.flgCancel)
-                    //    {
-                    //        selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
-                    //    }
-                    //}
+                    txtJanCD.Focus();
+                    return false;
                 }
                 else
                 {
@@ -399,10 +432,10 @@ namespace TempoShukkaNyuuryoku
                     int rowindex = dtJuchu.Rows.IndexOf(rows[0]);
                     txtJanCD.Tag = rowindex;
 
-
+                    SetDataFromDataTable(rowindex + 1);
                 }
             }
-            if(kbn == 0 || kbn == 2)
+            if (kbn == 2)
             {
                 //出荷数
                 //入力無くても良い(It is not necessary to input)
@@ -411,7 +444,7 @@ namespace TempoShukkaNyuuryoku
 
                 //入力された場合
                 //出荷数＞	Form.出荷可能数の場合、Error Ｅ１５０
-                if (bbl.Z_Set(txtShippingSu.Text) > bbl.Z_Set(lblSyukkaKanouSu.Text)) 
+                if (bbl.Z_Set(txtShippingSu.Text) > bbl.Z_Set(lblSyukkaKanouSu.Text))
                 {
                     bbl.ShowMessage("E150");
                     txtShippingSu.Focus();
@@ -420,14 +453,14 @@ namespace TempoShukkaNyuuryoku
 
                 //お買上額等の計算を行う
                 //お買上額←form.単価×	出荷数
-                lblSalesGaku.Text = bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text) * bbl.Z_Set(txtShippingSu.Text));
+                lblSalesGaku.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
 
                 //うち税額 Function_消費税計算.out金額１
-                int taxRateFLG =Convert.ToInt16( dtJuchu.Rows[(int)txtJanCD.Tag]["TaxRateFLG"]);
+                int taxRateFLG = Convert.ToInt16(dtJuchu.Rows[(int)txtJanCD.Tag]["TaxRateFLG"]);
                 string ymd = dtJuchu.Rows[(int)txtJanCD.Tag]["JuchuuDate"].ToString();
 
-               decimal zeinukiKin = bbl.GetZeinukiKingaku( bbl.Z_Set(lblSalesGaku.Text), taxRateFLG, ymd);
-                lblSalesTax.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text) - zeinukiKin);
+                decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")), taxRateFLG, ymd);
+                lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")) - zeinukiKin);
             }
             if (kbn == 0 || kbn == 3)
             {
@@ -437,6 +470,7 @@ namespace TempoShukkaNyuuryoku
                 {
                     //Ｅ１０２
                     bbl.ShowMessage("E102");
+                    txtSalesDate.Focus();
                     return false;
                 }
 
@@ -447,6 +481,19 @@ namespace TempoShukkaNyuuryoku
                 {
                     //Ｅ１０３
                     bbl.ShowMessage("E103");
+                    txtSalesDate.Focus();
+                    return false;
+                }
+
+                //店舗の締日チェック
+                //店舗締マスターで判断
+                M_StoreClose_Entity mse = new M_StoreClose_Entity();
+                mse.StoreCD = mStoreCD;
+                mse.FiscalYYYYMM = txtSalesDate.Text.Replace("/", "").Substring(0, 6);
+                bool ret = tprg_Shukka_Bl.CheckStoreClose(mse,true,false,false,false,true);
+                if (!ret)
+                {
+                    txtSalesDate.Focus();
                     return false;
                 }
 
@@ -454,10 +501,10 @@ namespace TempoShukkaNyuuryoku
                 if (txtSalesDate.Text != mSaleDate)
                 {
                     Fnc_PlanDate_Entity fpe = new Fnc_PlanDate_Entity();
-                    fpe.KaisyuShiharaiKbn = "1";
-                    fpe.CustomerCD = lblCusName.Text;
+                    fpe.KaisyuShiharaiKbn = "0";    // "1";
+                    fpe.CustomerCD = lblCustomerNo.Text;
                     fpe.ChangeDate = txtSalesDate.Text;
-                    fpe.TyohaKbn = "";
+                    fpe.TyohaKbn = "0";
 
                     txtFirstCollectPlanDate.Text = bbl.Fnc_PlanDate(fpe);
 
@@ -472,6 +519,7 @@ namespace TempoShukkaNyuuryoku
                 {
                     //Ｅ１０２
                     bbl.ShowMessage("E102");
+                    txtFirstCollectPlanDate.Focus();
                     return false;
                 }
 
@@ -486,6 +534,18 @@ namespace TempoShukkaNyuuryoku
             switch (index + 1)
             {
                 case 2:
+                    if (OperationMode == FrmMainForm.EOperationMode.DELETE)
+                    { //Ｑ１０２		
+                        if (bbl.ShowMessage("Q102") != DialogResult.Yes)
+                            return;
+                    }
+                    else
+                    {
+                        //Ｑ１０１		
+                        if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+                            return;
+                    }
+
                     Save();
                     break;
             }
@@ -498,6 +558,7 @@ namespace TempoShukkaNyuuryoku
         {
             dse = new D_Sales_Entity();
             dse.JuchuuNO = mJuchuNo;
+            dse.SalesNO = mUriageNo;
             dse.StoreCD = mStoreCD;
 
             dse.SalesDate = txtSalesDate.Text;
@@ -510,8 +571,9 @@ namespace TempoShukkaNyuuryoku
                 dse.BillingType = "1";
             else
                 dse.BillingType = "2";
-            dse.SalesGaku = bbl.Z_Set(lblSumSalesGaku).ToString();
-            dse.SalesTax = bbl.Z_Set(lblSumSalesTax).ToString();
+
+            dse.SalesGaku = bbl.Z_SetStr(lblSumSalesGaku.Text.Replace("\\", ""));
+            dse.SalesTax = bbl.Z_SetStr(lblSumSalesTax.Text.Replace("\\", ""));
 
             return dse;
         }
@@ -534,14 +596,12 @@ namespace TempoShukkaNyuuryoku
             DataTable dt = new DataTable();
             Para_Add(dt);
 
-            int rowNo = 1;
-
-            foreach(DataRow row in dtJuchu.Rows)
+            foreach (DataRow row in dtJuchu.Rows)
             {
-                if(bbl.Z_Set(row["ShippingSu"]) > 0)
+                if (bbl.Z_Set(row["ShippingSu"]) > 0)
                     dt.Rows.Add(row["JuchuuRows"]
                         , bbl.Z_Set(row["ShippingSu"])
-                        , bbl.Z_Set(row["SalesSU"])
+                        , 0     //bbl.Z_Set(row["SalesSU"]) 未使用
                         , bbl.Z_Set(row["SalesGaku"])
                         , bbl.Z_Set(row["SalesTax"])
                         , bbl.Z_Set(row["ZaikoKBN"])
@@ -552,25 +612,74 @@ namespace TempoShukkaNyuuryoku
 
             return dt;
         }
-        private void Save(int kbn = 0)
+        private bool Save(int kbn = 0)
         {
-            if(ErrorCheck(kbn))
+            if (ErrorCheck(kbn))
             {
                 if (kbn == 0)
                 {
+                    //合算表記の明細に対するエラーチェックをおこなう
+                    for (int i= 0; i < dtJuchu.Rows.Count; i++)
+                    {
+                        DataRow row = dtJuchu.Rows[i];
+                        if(row["NotPrintFLG"].ToString().Equals("1"))
+                        {
+                            DataRow[] AddRow = dtJuchu.Select("JuchuuRows = " + row["AddJuchuuRows"].ToString());
+                            if(bbl.Z_Set(row["ShippingSu"]) != bbl.Z_Set(AddRow[0]["ShippingSu"]))
+                            {
+                                //Ｅ２１８				
+                                bbl.ShowMessage("E218");
+
+                                int rowindex = dtJuchu.Rows.IndexOf(row);
+                                //txtJanCD.Tag = rowindex;
+
+                                //SetDataFromDataTable(rowindex + 1);
+                                DispFromDataTable(rowindex + 1);
+                                lblDtGyo_Click(lblDtGyo1,new System.EventArgs());
+                                
+                                return false;
+                            }
+                        }
+                    }
 
                     DataTable dt = GetGridEntity();
 
+                    if (OperationMode == FrmMainForm.EOperationMode.INSERT)
+                    {
+                        if (dt.Rows.Count == 0)
+                        {
+                            //更新対象なし
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                    }
+
                     //更新処理
                     dse = GetEntity();
-                    bool ret = tprg_Shukka_Bl.PRC_TempoShukkaNyuuryoku(dse, dt,(short)OperationMode, InOperatorCD, InPcID);
+                    bool ret = tprg_Shukka_Bl.PRC_TempoShukkaNyuuryoku(dse, dt, (short)OperationMode, InOperatorCD, InPcID);
+                    if (ret)
+                    {
+                        if (OperationMode == FrmMainForm.EOperationMode.DELETE)
+                            bbl.ShowMessage("I102");
+                        else
+                            bbl.ShowMessage("I101");
+                    }
 
-                    if(OperationMode == FrmMainForm.EOperationMode.INSERT)
-                        //Form.印刷CheckBox＝onの場合、印刷Program(TempoNouhinsyo)を起動
-                        ExecPrint(mJuchuNo);
+                    if (OperationMode == FrmMainForm.EOperationMode.INSERT)
+                    {
+                        if (bbl.ShowMessage("Q202") == DialogResult.Yes)
+                        {
+                            //印刷Program(TempoNouhinsyo)を起動
+                            ExecPrint(dse.SalesNO);
+                        }
+                    }
 
+                    EndSec();
                 }
+
+                return true;
             }
+            return false;
         }
         private void ExecPrint(string no)
         {
@@ -581,7 +690,8 @@ namespace TempoShukkaNyuuryoku
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + TempoNouhinsyo;
             if (System.IO.File.Exists(filePath))
             {
-                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no;
+                //売上番号,起動区分＝１					
+                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + no + " 1";
                 System.Diagnostics.Process.Start(filePath, cmdLine);
             }
             else
@@ -598,8 +708,8 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                int w_Row = Convert.ToInt16( txtJanCD.Tag);
-                
+                int w_Row = Convert.ToInt16(txtJanCD.Tag);
+
                 string adminNo = dtJuchu.Rows[w_Row]["AdminNO"].ToString();
 
                 //在庫照会を該当商品をパラメータに起動します					
@@ -625,16 +735,10 @@ namespace TempoShukkaNyuuryoku
                 //EndSec();
             }
         }
-        private void Customer_KeyDown(object sender, KeyEventArgs e)
-        {           
-            if(Keys.Enter==e.KeyCode)
-            { 
-                Save();
-            }
-        }
-        private  bool CheckWidth(int type)
+
+        private bool CheckWidth(int type)
         {
-            switch(type)
+            switch (type)
             {
                 case 1:
                     string str = Encoding.GetEncoding(932).GetByteCount(txtJanCD.Text).ToString();
@@ -648,16 +752,16 @@ namespace TempoShukkaNyuuryoku
 
                 case 2:
                     int byteCount = Encoding.UTF8.GetByteCount(txtJanCD.Text);//FullWidth_Case
-                    int onebyteCount= System.Text.ASCIIEncoding.ASCII.GetByteCount(txtJanCD.Text);//HalfWidth_Case
-                    if (onebyteCount!=byteCount)
+                    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(txtJanCD.Text);//HalfWidth_Case
+                    if (onebyteCount != byteCount)
                     {
                         MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.Focus();
                         return false;
-                    }                  
-                  
+                    }
+
                     break;
-            }           
+            }
             return true;
         }
 
@@ -665,7 +769,19 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                Save(1);
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (Save(1))
+                    {
+                        //あたかもTabキーが押されたかのようにする
+                        //Shiftが押されている時は前のコントロールのフォーカスを移動
+                        ProcessTabKey(!e.Shift);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -678,7 +794,17 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                Save(2);
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (Save(2))
+                        //あたかもTabキーが押されたかのようにする
+                        //Shiftが押されている時は前のコントロールのフォーカスを移動
+                        ProcessTabKey(!e.Shift);
+                }
             }
             catch (Exception ex)
             {
@@ -722,7 +848,7 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                int Horizontal = Convert.ToInt16(btnSyo11.Tag);
+                int Horizontal = Convert.ToInt16(btnSyoDown.Tag);
                 if (Horizontal - 10 > 0)
                     DispFromButtonDetailsTable(Horizontal - 10);
                 else
@@ -739,9 +865,9 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                int Horizontal = Convert.ToInt16(btnSyo11.Tag);
-                if (dtBottunDetails.Rows.Count >= Horizontal + 10)
-                    DispFromButtonDetailsTable(Horizontal + 10);
+                int Horizontal = Convert.ToInt16(btnSyoDown.Tag);
+                //if (dtBottunDetails.Rows.Count >= Horizontal + 10)
+                DispFromButtonDetailsTable(Horizontal + 10);
             }
             catch (Exception ex)
             {
@@ -753,7 +879,7 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                int Horizontal = Convert.ToInt16(btnSyo11.Tag);
+                int Horizontal = Convert.ToInt16(btnGrp1.Tag);
                 if (Horizontal - 14 > 0)
                     DispFromButtonGroupTable(Horizontal - 14);
                 else
@@ -770,7 +896,7 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                int Horizontal = Convert.ToInt16(btnSyo11.Tag);
+                int Horizontal = Convert.ToInt16(btnGrp1.Tag);
                 if (dtBottunGroup.Rows.Count >= Horizontal + 14)
                     DispFromButtonGroupTable(Horizontal + 14);
             }
@@ -786,7 +912,7 @@ namespace TempoShukkaNyuuryoku
             try
             {
                 //・「即請求」の場合にClickされると「締請求」に変更
-                if(btnSeikyu.Text == "即請求")
+                if (btnSeikyu.Text == "即請求")
                 {
                     btnSeikyu.Text = "締請求";
                 }
@@ -811,21 +937,16 @@ namespace TempoShukkaNyuuryoku
                 //うち税額にADD
 
                 //入力された 出荷数,お買上額,うち税額を	【Data Area Detail】に戻す（Set)
-                int index = Convert.ToInt16( lblDtGyo1.Text)-1;
+                int index = Convert.ToInt16(txtJanCD.Tag);
                 DataRow row = dtJuchu.Rows[index];
 
-                row["JanCD"] = txtJanCD.Text;
-                row["SKUName"] = lblSKUName.Text;
-                row["ColorSizeName"] = lblColorSize.Text;
-                //lblJuchuuSuu.Text = bbl.Z_SetStr(row["JuchuuSuu"]);
-                //lblSyukkaKanouSu.Text = bbl.Z_SetStr(row["SyukkaKanouSu"]);
-                row["ShippingSu"]= txtShippingSu.Text;
+                row["ShippingSu"] = bbl.Z_Set(txtShippingSu.Text);
+                row["SalesGaku"] = bbl.Z_Set(lblSalesGaku.Text.Replace("\\", ""));
+                row["SalesTax"] = bbl.Z_Set(lblSalesTax.Text.Replace("\\", ""));
 
-                //lblJuchuuUnitPrice.Text = "\\" + bbl.Z_SetStr(row["JuchuuUnitPrice"]);
-                //lblJuchuuUnitPrice.Text = "\\" + bbl.Z_SetStr(row["JuchuuUnitPrice"]);
+                DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));
 
-                //lblSyohinChuijiko.Text = row["SyohinChuijiko"].ToString();
-
+                Calkkin();
             }
             catch (Exception ex)
             {
@@ -838,10 +959,19 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                bool upd = txtSalesDate.Modified;
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    bool upd = txtSalesDate.Modified;
 
-                Save(3);
-
+                    if (Save(3))
+                        //あたかもTabキーが押されたかのようにする
+                        //Shiftが押されている時は前のコントロールのフォーカスを移動
+                        ProcessTabKey(!e.Shift);
+                }
 
             }
             catch (Exception ex)
@@ -855,7 +985,17 @@ namespace TempoShukkaNyuuryoku
         {
             try
             {
-                Save(1);
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (Save(4))
+                        //あたかもTabキーが押されたかのようにする
+                        //Shiftが押されている時は前のコントロールのフォーカスを移動
+                        ProcessTabKey(!e.Shift);
+                }
             }
             catch (Exception ex)
             {
@@ -870,8 +1010,11 @@ namespace TempoShukkaNyuuryoku
             {
                 string GroupNO = ((Button)sender).Tag.ToString();
 
-                if(!string.IsNullOrWhiteSpace(GroupNO) && GroupNO.IndexOf('*') < 0)
-                    CheckData_M_StoreButtonDetailes(((Button)sender).Tag.ToString());
+                if (!string.IsNullOrWhiteSpace(GroupNO))
+                {
+                    Clear(tableLayoutPanel3);
+                    CheckData_M_StoreButtonDetailes(GroupNO);
+                }
             }
             catch (Exception ex)
             {
@@ -885,9 +1028,124 @@ namespace TempoShukkaNyuuryoku
             {
                 string JANCD = ((Button)sender).Tag.ToString();
 
-                txtJanCD.Text = JANCD;
-                Save(1);
+                if (!string.IsNullOrWhiteSpace(JANCD))
+                {
+                    txtJanCD.Text = JANCD;
+                    Save(1);
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        private void lblDtGyo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Label lblsender = (Label)sender;
+
+                if (string.IsNullOrWhiteSpace(lblsender.Text))
+                    return;
+
+                int index = Convert.ToInt16(lblsender.Text) - 1;
+                int kanouSu = Convert.ToInt16(dtJuchu.Rows[index]["SyukkaKanouSu"]);
+
+                //【Data Area Detail】出荷可能数≦0の場合、Message表示Ｅ１５１
+                if (kanouSu <= 0)
+                {
+                    bbl.ShowMessage("E151");
+                    return;
+                }
+                //【Data Area Detail出荷可能数＞0の場合、画面転送表02に従って、画面情報を表示
+                else
+                {
+                    SetDataFromDataTable(index + 1);
+
+                    ClearBackColor(pnlDetails);
+
+                    lblsender.BackColor = Color.FromArgb(255, 242, 204);
+
+                    if (lblsender.Name == lblDtGyo1.Name)
+                    {
+                        lblGyoSelect1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSKUName1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtColorSize1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtNotPrintFLG1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKSu1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKin1.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSSu1.BackColor = Color.FromArgb(255, 242, 204);
+                    }
+                    else if (lblsender.Name == lblDtGyo2.Name)
+                    {
+                        lblGyoSelect2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSKUName2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtColorSize2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtNotPrintFLG2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKSu2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKin2.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSSu2.BackColor = Color.FromArgb(255, 242, 204);
+
+                    }
+                    else if (lblsender.Name == lblDtGyo3.Name)
+                    {
+                        lblGyoSelect3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSKUName3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtColorSize3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtNotPrintFLG3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKSu3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtKin3.BackColor = Color.FromArgb(255, 242, 204);
+                        lblDtSSu3.BackColor = Color.FromArgb(255, 242, 204);
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void ClearBackColor(Panel panel)
+        {
+            IEnumerable<Control> c = GetAllControls(panel);
+            foreach (Control ctrl in c)
+            {
+                if (ctrl is Label)
+                    ((Label)ctrl).BackColor = Color.Transparent;
+            }
+        }
+        private void lblGyoSelect1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo1, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo2, new EventArgs());
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void lblGyoSelect3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                lblDtGyo_Click(lblDtGyo3, new EventArgs());
             }
             catch (Exception ex)
             {
