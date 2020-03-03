@@ -64,6 +64,9 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                     }
                     break;
+                case 11:
+                    F11();
+                    break;
                 case 12:
                     F12();
                     break;
@@ -103,8 +106,66 @@ namespace Shiharai_ShimeShori
                             }
                         }
                     }
-
                     break;
+            }
+        }
+
+        private void F11()
+        {
+            dpch_entity = GetDataEntity();
+            string ItemType = cboProcessType.Text;
+            //Data();
+
+            switch (ItemType)
+            {
+                case "支払締":
+                    if (ErrorCheck(1))
+                    {
+                        Data();
+                    }
+                    break;
+                case "支払締キャンセル":
+                    if (ErrorCheck(2))
+                    {
+                        Data();
+                    }
+                    break;
+            }
+        }
+        private void Data()
+        {
+            dgvPaymentClose.ClearSelection();
+            dpch_entity = GetDataEntity();
+
+            DataTable dtPayCost = sss_bl.D_PayClose_Search(dpch_entity);
+            for (int i = 0; i < dtPayCost.Rows.Count; i++)
+            {
+                string processKBN = dtPayCost.Rows[i]["ProcessingKBN"].ToString();
+                if (processKBN.Equals("1"))
+                {
+                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払締";
+                }
+                else if (processKBN.Equals("2"))
+                {
+                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払締キャンセル";
+                }
+                else
+                {
+                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払確定";
+                }
+            }
+            if (dtPayCost.Rows.Count > 0)
+            {
+                dgvPaymentClose.Refresh();
+                dgvPaymentClose.DataSource = dtPayCost;
+                dgvPaymentClose.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                dgvPaymentClose.CurrentRow.Selected = true;
+                dgvPaymentClose.Enabled = true;
+                dgvPaymentClose.Focus();
+            }
+            else
+            {
+                dgvPaymentClose.DataSource = null;
             }
         }
 
@@ -160,8 +221,6 @@ namespace Shiharai_ShimeShori
                     }
                     break;
             }
-
-
             return true;
         }
         /// <summary>
@@ -236,12 +295,14 @@ namespace Shiharai_ShimeShori
                     {
                         ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
                         ScPaymentCD.Value2 = ScPaymentCD.LabelText;
+                        //F11();
                     }
                     else
                     {
                         sss_bl.ShowMessage("E101");
                         ScPaymentCD.SetFocus(1);
                     }
+                  
                 }
                 else
                 {
@@ -272,7 +333,11 @@ namespace Shiharai_ShimeShori
 
         private void dgvPaymentClose_Paint(object sender, PaintEventArgs e)
         {
-
+            dgvPaymentClose.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPaymentClose.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPaymentClose.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPaymentClose.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvPaymentClose.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             string[] monthes = { "","支払先" };
             for (int j = 2; j < 4;)
             {
@@ -298,8 +363,7 @@ namespace Shiharai_ShimeShori
 
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            dgvPaymentClose.DataSource = null;
-            
+            F11();
         }
     }
 }
