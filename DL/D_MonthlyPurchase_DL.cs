@@ -33,5 +33,16 @@ namespace DL
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
+        public DataTable RPC_SiiresakiZaikoYoteiHyou(D_MonthlyPurchase_Entity dmpe)
+        {
+            string sp = "RPC_SiiresakiZaikoYoteiHyou";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@StoreCD",new ValuePair{value1=SqlDbType.VarChar,value2=dmpe.StoreCD} },
+                {"@TargetSDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMMS} },
+                {"@TargetEDate",new ValuePair{value1=SqlDbType.Int,value2=dmpe.YYYYMME} }
+            };
+            return SelectData(dic, sp);
+        }
     } 
 }
