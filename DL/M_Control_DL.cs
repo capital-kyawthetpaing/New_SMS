@@ -26,8 +26,8 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@InputPossibleStartDate", new ValuePair {value1 = SqlDbType.Int,value2 = mfye.InputPossibleStartDate} },
-                {"@InputPossibleEndDate", new ValuePair {value1 = SqlDbType.Int,value2 = mfye.InputPossibleEndDate} }
+                {"@InputPossibleStartDate", new ValuePair {value1 = SqlDbType.Date,value2 = mfye.InputPossibleStartDate} },
+                {"@InputPossibleEndDate", new ValuePair {value1 = SqlDbType.Date,value2 = mfye.InputPossibleEndDate} }
             };
             return SelectData(dic, "M_Control_PaymentSelect");
         }
