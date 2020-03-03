@@ -26,14 +26,16 @@ namespace SiharaiNyuuryoku
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
-
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
-        DataTable dtpayplan = new DataTable();
-        DataTable dtSiharai2 = new DataTable();
-        DataTable dt2 = new DataTable(); DataTable dt3 = new DataTable();
-        DataTable dt4 = new DataTable(); DataTable dt4Detail = new DataTable();
+        DataTable dtpayplan = new DataTable(); // data bind(insert mode)
+        DataTable dtPay1 = new DataTable(); // data bind(update mode)
+        DataTable dtSiharai2 = new DataTable(); // checkbox click for next form
+        DataTable dt2 = new DataTable(); // detail for  next form(update mode)
+        DataTable dt3 = new DataTable(); // Gridview bind for next form(update mode)
+        DataTable dt4 = new DataTable(); // gridview bind for next form(insert mode)
+        DataTable dt4Detail = new DataTable(); // detail for next form(insert mode)
 
         public FrmSiharaiNyuuryoku()
         {
@@ -470,6 +472,15 @@ namespace SiharaiNyuuryoku
                     dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
                     dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = "0";
 
+                    if(dt4 != null)
+                    {
+                        for (int i = 0; i < dt4.Rows.Count; i++)
+                        {
+                            dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                            dt4.Rows[i]["UnpaidAmount2"] = "0";
+                        }
+                    }
+
                 }
                 else
                 {
@@ -481,6 +492,14 @@ namespace SiharaiNyuuryoku
                     //    row.Cells["colUnpaidAmount"].Value = "0";
                     //    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
                     //}
+                    if (dt4 != null)
+                    {
+                        for (int i = 0; i < dt4.Rows.Count; i++)
+                        {
+                            dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                            dt4.Rows[i]["UnpaidAmount2"] = "0";
+                        }
+                    }
 
                     dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                     dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = "0";
@@ -754,7 +773,7 @@ namespace SiharaiNyuuryoku
             btnReleaseAll.Enabled = true;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-            DataTable dtPay1 = new DataTable();
+           
             dtPay1 = sibl.D_Pay_Select1(dpe);
             if (dtPay1.Rows.Count > 0)
             {
