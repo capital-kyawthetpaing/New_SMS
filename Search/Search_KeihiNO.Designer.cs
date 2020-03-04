@@ -30,13 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtRecordDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -524,7 +525,7 @@
             this.dgvCostSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -543,14 +544,14 @@
             this.PaymentDueDate,
             this.PaymentDate,
             this.TaxIncludePayment});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCostSearch.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCostSearch.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCostSearch.Enabled = false;
             this.dgvCostSearch.EnableHeadersVisualStyles = false;
             this.dgvCostSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -702,6 +703,8 @@
             // ExpenseNo
             // 
             this.ExpenseNo.DataPropertyName = "CostNo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ExpenseNo.DefaultCellStyle = dataGridViewCellStyle3;
             this.ExpenseNo.HeaderText = "経費番号";
             this.ExpenseNo.Name = "ExpenseNo";
             this.ExpenseNo.ReadOnly = true;
@@ -709,27 +712,27 @@
             // RecordDate
             // 
             this.RecordDate.DataPropertyName = "RecordedDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.RecordDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.RecordDate.HeaderText = "計上日";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.RecordDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.RecordDate.HeaderText = " 計上日";
             this.RecordDate.Name = "RecordDate";
             this.RecordDate.ReadOnly = true;
             // 
             // ExpenseEntryDate
             // 
             this.ExpenseEntryDate.DataPropertyName = "ExpenseEntryDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ExpenseEntryDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ExpenseEntryDate.HeaderText = "経費入力日";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ExpenseEntryDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ExpenseEntryDate.HeaderText = " 経費入力日";
             this.ExpenseEntryDate.Name = "ExpenseEntryDate";
             this.ExpenseEntryDate.ReadOnly = true;
             // 
             // Regular
             // 
             this.Regular.DataPropertyName = "RegularlyFLG";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Regular.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Regular.HeaderText = "定期";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Regular.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Regular.HeaderText = "  定期";
             this.Regular.Name = "Regular";
             this.Regular.ReadOnly = true;
             this.Regular.Width = 70;
@@ -767,17 +770,17 @@
             // PaymentDueDate
             // 
             this.PaymentDueDate.DataPropertyName = "PayPlanDate";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PaymentDueDate.DefaultCellStyle = dataGridViewCellStyle6;
-            this.PaymentDueDate.HeaderText = "支払予定日";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PaymentDueDate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.PaymentDueDate.HeaderText = " 支払予定日";
             this.PaymentDueDate.Name = "PaymentDueDate";
             this.PaymentDueDate.ReadOnly = true;
             // 
             // PaymentDate
             // 
             this.PaymentDate.DataPropertyName = "PayDate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PaymentDate.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PaymentDate.DefaultCellStyle = dataGridViewCellStyle8;
             this.PaymentDate.HeaderText = "支払日";
             this.PaymentDate.Name = "PaymentDate";
             this.PaymentDate.ReadOnly = true;
@@ -785,9 +788,9 @@
             // TaxIncludePayment
             // 
             this.TaxIncludePayment.DataPropertyName = "CostGaku";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.TaxIncludePayment.DefaultCellStyle = dataGridViewCellStyle8;
-            this.TaxIncludePayment.HeaderText = "税込支払額";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.TaxIncludePayment.DefaultCellStyle = dataGridViewCellStyle9;
+            this.TaxIncludePayment.HeaderText = "   税込支払額";
             this.TaxIncludePayment.Name = "TaxIncludePayment";
             this.TaxIncludePayment.ReadOnly = true;
             // 

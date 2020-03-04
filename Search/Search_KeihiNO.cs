@@ -129,6 +129,7 @@ namespace Search
                 DataTable dtCost = skhnobl.D_Cost_Search(dcoste);
                 for (int i = 0; i < dtCost.Rows.Count; i++)
                 {
+                   
                     string R_Flag = dtCost.Rows[i]["RegularlyFLG"].ToString();
                     if (R_Flag.Equals("1")) 
                     //if (dtCost.Rows[i]["RegularlyFLG"].ToString() == "1")//zco
@@ -298,6 +299,12 @@ namespace Search
         {
 
             string[] monthes = { "経費番号", "計上日", "経費入力日", "定期", "支払先","","担当スタッフ"};
+            dgvCostSearch.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             for (int j = 4; j < 8;)
             {
                 Rectangle r1 = this.dgvCostSearch.GetCellDisplayRectangle(j, -1, true);
@@ -321,6 +328,7 @@ namespace Search
         }
         private void dgvCostSearch_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+          
             if (e.RowIndex == -1 && e.ColumnIndex > -1)
             {
                 Rectangle r2 = e.CellBounds;
