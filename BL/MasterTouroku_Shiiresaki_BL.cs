@@ -46,7 +46,7 @@ namespace BL
                 mve.Address1 = dtVendor.Rows[0]["Address1"].ToString();
                 mve.Address2 = dtVendor.Rows[0]["Address2"].ToString();
                 mve.MailAddress1 = dtVendor.Rows[0]["MailAddress1"].ToString();
-                mve.TelephoneNO = dtVendor.Rows[0]["TelephoneNO"].ToString();
+                mve.TelephoneNO = dtVendor.Rows[0]["TelphoneNO"].ToString();
                 mve.FaxNO = dtVendor.Rows[0]["FaxNO"].ToString();
                 mve.PayeeCD = dtVendor.Rows[0]["PayeeCD"].ToString();
                 mve.MoneyPayeeCD = dtVendor.Rows[0]["MoneyPayeeCD"].ToString();

@@ -27,5 +27,7 @@ namespace Entity
         public string PayPlanDate { get; set; }
         public string LocationXml { get; set; }
 
+        public string StoreCD { get; set; }
+
     }
 }
