@@ -28,6 +28,7 @@ namespace Entity
         public string DatabasePassword { get; set; }
         public string TimeoutValues { get; set; }
 
+        public string StoreType { get; set; }
         /// <summary>
         /// データベースの日付　YYYY/MM/DD形式
         /// </summary>

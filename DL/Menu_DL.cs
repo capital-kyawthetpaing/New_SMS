@@ -23,12 +23,12 @@ namespace DL
             return SelectData(dic, "D_MenuMessageSelect");
         }
 
-        public DataTable getMenuNo(string Staff_CD)
+        public DataTable getMenuNo(string Staff_CD,string IsStored)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>();
 
             dic.Add("@Staff_CD", new ValuePair { value1 = SqlDbType.VarChar, value2 = Staff_CD });
-
+            dic.Add("@IsStore", new ValuePair { value1 = SqlDbType.TinyInt, value2 =  IsStored });
             UseTransaction = true;
             return SelectData(dic, "HMENU");
         }

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using DL;
+using System.Deployment;
 namespace MainMenu
 {
 
@@ -27,6 +28,13 @@ namespace MainMenu
        static Form LoginFormName()
         {
             Form pgname =null;
+            if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
+            {
+                if (!System.IO.File.Exists(@"C:\SMS\AppData\CKM.ini"))
+                {
+                    FTPData.Download("CKM.ini", "ftp://202.223.48.145/", "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
+                }
+            }
             if (lbl.ReadConfig())
             {
                 if (Base_DL.iniEntity.Login_Type == "CapitalMainMenuLogin")
