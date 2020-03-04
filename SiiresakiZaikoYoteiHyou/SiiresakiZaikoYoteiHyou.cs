@@ -19,6 +19,7 @@ namespace SiiresakiZaikoYoteiHyou
     {
         SiiresakiZaikoYoteiHyou_BL szybl;
         D_MonthlyPurchase_Entity dmpe;
+        M_StoreClose_Entity msce;
         DataTable dt;
 
         public SiiresakiZaikoYoteiHyou()
@@ -26,6 +27,7 @@ namespace SiiresakiZaikoYoteiHyou
             InitializeComponent();
             szybl = new SiiresakiZaikoYoteiHyou_BL();
             dmpe = new D_MonthlyPurchase_Entity();
+            msce = new M_StoreClose_Entity();
             dt = new DataTable();
         }
 
