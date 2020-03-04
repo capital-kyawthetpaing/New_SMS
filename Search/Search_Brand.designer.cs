@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new CKM_Controls.CKM_Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label12 = new CKM_Controls.CKM_Label();
@@ -39,14 +38,14 @@
             this.label9 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
             this.dgvDetail = new CKM_Controls.CKM_GridView();
-            this.btnSubF11 = new CKM_Controls.CKM_Button();
-            this.ckM_Label1 = new System.Windows.Forms.Label();
-            this.ScMaker = new Search.CKM_SearchControl();
             this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MakerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSubF11 = new CKM_Controls.CKM_Button();
+            this.ckM_Label1 = new System.Windows.Forms.Label();
+            this.ScMaker = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
@@ -206,7 +205,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -219,14 +218,6 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -235,7 +226,6 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
-            this.dgvDetail.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvDetail.Size = new System.Drawing.Size(885, 290);
             this.dgvDetail.TabIndex = 1;
             this.dgvDetail.UseRowNo = true;
@@ -243,6 +233,46 @@
             this.dgvDetail.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvDetail_CellPainting);
             this.dgvDetail.DoubleClick += new System.EventHandler(this.DgvDetail_DoubleClick);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
+            // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "CD";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.ReadOnly = true;
+            this.colBrandCD.Width = 70;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "ブランド名";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Width = 250;
+            // 
+            // MakerCD
+            // 
+            this.MakerCD.DataPropertyName = "MakerCD";
+            this.MakerCD.HeaderText = "仕入先";
+            this.MakerCD.Name = "MakerCD";
+            this.MakerCD.ReadOnly = true;
+            // 
+            // MakerName
+            // 
+            this.MakerName.DataPropertyName = "MakerName";
+            this.MakerName.HeaderText = "（メーカー）";
+            this.MakerName.Name = "MakerName";
+            this.MakerName.ReadOnly = true;
+            this.MakerName.Width = 300;
+            // 
+            // ColChangeDate
+            // 
+            this.ColChangeDate.DataPropertyName = "ChangeDate";
+            this.ColChangeDate.HeaderText = "改定日";
+            this.ColChangeDate.MaxInputLength = 10;
+            this.ColChangeDate.Name = "ColChangeDate";
+            this.ColChangeDate.ReadOnly = true;
+            this.ColChangeDate.Width = 90;
             // 
             // btnSubF11
             // 
@@ -300,46 +330,6 @@
             this.ScMaker.Value2 = null;
             this.ScMaker.Value3 = null;
             // 
-            // colBrandCD
-            // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "CD";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.ReadOnly = true;
-            this.colBrandCD.Width = 70;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "ブランド名";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Width = 250;
-            // 
-            // MakerCD
-            // 
-            this.MakerCD.DataPropertyName = "MakerCD";
-            this.MakerCD.HeaderText = "仕入先";
-            this.MakerCD.Name = "MakerCD";
-            this.MakerCD.ReadOnly = true;
-            // 
-            // MakerName
-            // 
-            this.MakerName.DataPropertyName = "MakerName";
-            this.MakerName.HeaderText = "（メーカー）";
-            this.MakerName.Name = "MakerName";
-            this.MakerName.ReadOnly = true;
-            this.MakerName.Width = 300;
-            // 
-            // ColChangeDate
-            // 
-            this.ColChangeDate.DataPropertyName = "ChangeDate";
-            this.ColChangeDate.HeaderText = "改定日";
-            this.ColChangeDate.MaxInputLength = 10;
-            this.ColChangeDate.Name = "ColChangeDate";
-            this.ColChangeDate.ReadOnly = true;
-            this.ColChangeDate.Width = 90;
-            // 
             // Search_Brand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -351,7 +341,7 @@
             this.Name = "Search_Brand";
             this.PanelHeaderHeight = 170;
             this.ProgramName = "ブランド検索";
-            this.Text = "Search_Staff";
+            this.Text = "Search_Brand";
             this.Load += new System.EventHandler(this.Form_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Search_Brand_KeyUp);
             this.Controls.SetChildIndex(this.dgvDetail, 0);

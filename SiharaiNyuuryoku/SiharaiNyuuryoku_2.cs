@@ -22,18 +22,30 @@ namespace SiharaiNyuuryoku
         M_Kouza_Entity mkze = new M_Kouza_Entity();
         DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
+
+        public DataTable dtGdv = new DataTable();
+        public DataTable dtDetails = new DataTable();
+
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
-        string type = string.Empty;string kouzaCD = string.Empty;
+        string type = string.Empty;string kouzaCD = string.Empty;string payeeCD = string.Empty;string payPlanDate = string.Empty;
         public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1)
         {
             InitializeComponent();
             kouzaCD = KouzaCD;
-            DataRow[] tblROWS = dt.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
-            if (tblROWS.Length > 0)
-                dtSiharai1 = tblROWS.CopyToDataTable();
+            payeeCD = PayeeCD;
+            payPlanDate = PayPlanDate;
+            if(dt!=null)
+            {
+                dtGdv = dt; 
+                DataRow[] tblROWS = dt.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
+                if (tblROWS.Length > 0)
+                    dtSiharai1 = tblROWS.CopyToDataTable();
+            }
+            
             if (dt1!=null)
             {
+                dtDetails = dt1;
                 DataRow[] tblROWS1 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
                 if (tblROWS1.Length > 0)
                     dtSiharai2 = tblROWS1.CopyToDataTable();
@@ -261,10 +273,81 @@ namespace SiharaiNyuuryoku
 
 
         /// <summary>
+        /// Handle F1 to F12 Click
+        /// </summary>
+        /// <param name="index"> button index+1, eg.if index is 0,it means F1 click </param>
+        public override void FunctionProcess(int Index)
+        {
+            if (Index + 1 == 5)
+                Clear();
+            if (Index + 1 == 12)
+            {
+                if(ErrorCheck())
+                    SendData();
+            }
+                
+
+        }
+
+
+        public void SendData()
+        {
+            if(dtGdv.Rows.Count>0)
+            {
+                DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+                foreach(DataRow row in tblROWS)
+                {
+                    dtGdv.Rows.Remove(row);
+                    dtGdv.AcceptChanges();
+                }
+                dtGdv.Merge(dtSiharai1);
+                    
+            }
+            if (dtDetails.Rows.Count > 0)
+            {
+                DataRow[] tblROWS = dtDetails.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+                foreach (DataRow row in tblROWS)
+                {
+                    dtDetails.Rows.Remove(row);
+                    dtDetails.AcceptChanges();
+                }
+                dtDetails.Merge(dtSiharai2);
+
+            }
+
+        }
+
+        public void Clear()
+        {
+            txtTransferAmount.Text = string.Empty;
+            SC_BankCD.Clear();
+            SC_BranchCD.Clear();
+            txtKouzaKBN.Text = string.Empty;
+            txtAccNo.Text = string.Empty;
+            txtMeigi.Text = string.Empty;
+            txtFeeKBN.Text = string.Empty;
+            txtAmount.Text = string.Empty;
+            txtCash.Text = string.Empty;
+            txtOffsetGaku.Text = string.Empty;
+            txtBill.Text = string.Empty;
+            txtBillNo.Text = string.Empty;
+            txtBillDate.Text = string.Empty;
+            txtElectronicBone.Text = string.Empty;
+            txtElectronicRecordNo.Text = string.Empty;
+            txtSettlementDate2.Text = string.Empty;
+            txtOther1.Text = string.Empty;
+            SC_HanyouKeyStart1.Clear();
+            SC_HanyouKeyStart2.Clear();
+            txtOther2.Text = string.Empty;
+            SC_HanyouKeyEnd1.Clear();
+            SC_HanyouKeyEnd2.Clear();
+        }
+
+        /// <summary>
         /// Error Check of F12
         /// </summary>
         /// <returns></returns>
-       public bool ErrorCheck()
+        public bool ErrorCheck()
         {
             if (Convert.ToInt32(txtTransferAmount.Text) > 0)
             {
@@ -315,12 +398,42 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
                     return false;
 
-                //if (!SC_HanyouKeyStart1.IsExists(2))
-                //{
-                //    bbl.ShowMessage("E101");
-                //    SC_BranchCD.SetFocus(1);
-                //    return false;
-                //}
+                if (!SC_HanyouKeyStart1.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_HanyouKeyStart1.SetFocus(1);
+                    return false;
+                }
+
+                if (!RequireCheck(new Control[] { SC_HanyouKeyEnd1.TxtCode }))
+                    return false;
+
+                if (!SC_HanyouKeyEnd1.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_HanyouKeyEnd1.SetFocus(1);
+                    return false;
+                }
+            }
+            if(Convert.ToInt32(txtOther2.Text)>0)
+            {
+                if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode }))
+                    return false;
+                if (!SC_HanyouKeyStart2.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_HanyouKeyStart2.SetFocus(1);
+                    return false;
+                }
+
+                if (!RequireCheck(new Control[] { SC_HanyouKeyEnd2.TxtCode }))
+                    return false;
+                if (!SC_HanyouKeyEnd2.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    SC_HanyouKeyEnd2.SetFocus(1);
+                    return false;
+                }
             }
                 return true;
         }
@@ -621,6 +734,8 @@ namespace SiharaiNyuuryoku
                         bbl.ShowMessage("E102");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
+                    else
+                        LabelDataBind();
                 }
             }
         }
