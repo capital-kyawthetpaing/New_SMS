@@ -106,8 +106,8 @@ namespace DL
                 { "@LocationXml", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.LocationXml } },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
-                //{ "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } },
-                //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Key } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Operator } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD } },
             };
 
             return InsertUpdateDeleteData(dic, "D_Pay_Insert");

@@ -11,6 +11,7 @@ using CKM_Controls;
 using BL;
 using Entity;
 using System.Diagnostics;
+using DL;
 
 namespace MainMenu
 {
@@ -53,7 +54,8 @@ namespace MainMenu
         }
         protected void BindButtonName()
         {
-            var dt = menu = mbl.getMenuNo(Staff_CD);
+            
+            var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
             var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
             ButtonText(panelLeft, _result, 1);
         }

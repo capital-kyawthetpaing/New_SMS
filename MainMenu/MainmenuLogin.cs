@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using Entity;
+using Tulpep.NotificationWindow;
+
 namespace MainMenu
 {
     public partial class MainmenuLogin : Form
@@ -53,6 +55,11 @@ namespace MainMenu
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+            loginbl = new Login_BL();
+            PopupNotifier pop = new PopupNotifier();
+            pop.TitleText = "New Updates are Available Now!";
+            pop.ContentText = "Press F11 to download new features";
+            pop.Popup();
         }
 
         private void MainmenuLogin_KeyDown(object sender, KeyEventArgs e)
