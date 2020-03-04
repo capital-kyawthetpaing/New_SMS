@@ -27,7 +27,7 @@ namespace TempoRegiNyuukinTouroku
 
         private void TempoRegiNyuukinTouroku_Load(object sender, EventArgs e)
         {
-            InProgramID = "TempoRegiNyuukinNyuuryoku";
+            InProgramID = "TempoRegiNyuukinTouroku";
             string data = InOperatorCD;
             StartProgram();
             this.Text = "入金入力";
