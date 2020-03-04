@@ -30,11 +30,11 @@
         {
             this.panalDetail = new System.Windows.Forms.Panel();
             this.cboStore = new CKM_Controls.CKM_ComboBox();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.lblStore = new CKM_Controls.CKM_Label();
             this.txtTargetDateTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtTargetDateFrom = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.lblDate = new CKM_Controls.CKM_Label();
             this.panalDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,11 +45,11 @@
             // panalDetail
             // 
             this.panalDetail.Controls.Add(this.cboStore);
-            this.panalDetail.Controls.Add(this.ckM_Label3);
+            this.panalDetail.Controls.Add(this.lblStore);
             this.panalDetail.Controls.Add(this.txtTargetDateTo);
             this.panalDetail.Controls.Add(this.ckM_Label2);
             this.panalDetail.Controls.Add(this.txtTargetDateFrom);
-            this.panalDetail.Controls.Add(this.ckM_Label1);
+            this.panalDetail.Controls.Add(this.lblDate);
             this.panalDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panalDetail.Location = new System.Drawing.Point(0, 50);
             this.panalDetail.Name = "panalDetail";
@@ -60,7 +60,7 @@
             // 
             this.cboStore.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗;
+            this.cboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Length = 10;
@@ -71,22 +71,22 @@
             this.cboStore.Size = new System.Drawing.Size(121, 20);
             this.cboStore.TabIndex = 5;
             // 
-            // ckM_Label3
+            // lblStore
             // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(58, 61);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label3.TabIndex = 4;
-            this.ckM_Label3.Text = "店舗";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStore.AutoSize = true;
+            this.lblStore.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStore.BackColor = System.Drawing.Color.Transparent;
+            this.lblStore.DefaultlabelSize = true;
+            this.lblStore.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStore.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblStore.ForeColor = System.Drawing.Color.Black;
+            this.lblStore.Location = new System.Drawing.Point(58, 61);
+            this.lblStore.Name = "lblStore";
+            this.lblStore.Size = new System.Drawing.Size(31, 12);
+            this.lblStore.TabIndex = 4;
+            this.lblStore.Text = "店舗";
+            this.lblStore.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTargetDateTo
             // 
@@ -95,7 +95,7 @@
             this.txtTargetDateTo.BackColor = System.Drawing.Color.White;
             this.txtTargetDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtTargetDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtTargetDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDateTo.DecimalPlace = 0;
             this.txtTargetDateTo.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtTargetDateTo.IntegerPart = 0;
@@ -112,6 +112,7 @@
             this.txtTargetDateTo.TabIndex = 3;
             this.txtTargetDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetDateTo_KeyDown);
             // 
             // ckM_Label2
             // 
@@ -133,11 +134,11 @@
             // txtTargetDateFrom
             // 
             this.txtTargetDateFrom.AllowMinus = false;
-            this.txtTargetDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtTargetDateFrom.BackColor = System.Drawing.Color.White;
+            this.txtTargetDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.txtTargetDateFrom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTargetDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTargetDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtTargetDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtTargetDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDateFrom.DecimalPlace = 0;
             this.txtTargetDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtTargetDateFrom.IntegerPart = 0;
@@ -156,22 +157,22 @@
             this.txtTargetDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_Label1
+            // lblDate
             // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(38, 25);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label1.TabIndex = 0;
-            this.ckM_Label1.Text = "対象年月";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDate.AutoSize = true;
+            this.lblDate.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblDate.BackColor = System.Drawing.Color.Transparent;
+            this.lblDate.DefaultlabelSize = true;
+            this.lblDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lblDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblDate.ForeColor = System.Drawing.Color.Black;
+            this.lblDate.Location = new System.Drawing.Point(38, 25);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(57, 12);
+            this.lblDate.TabIndex = 0;
+            this.lblDate.Text = "対象年月";
+            this.lblDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // SiiresakiZaikoYoteiHyou
             // 
@@ -197,9 +198,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panalDetail;
-        private CKM_Controls.CKM_Label ckM_Label1;
+        private CKM_Controls.CKM_Label lblDate;
         private CKM_Controls.CKM_ComboBox cboStore;
-        private CKM_Controls.CKM_Label ckM_Label3;
+        private CKM_Controls.CKM_Label lblStore;
         private CKM_Controls.CKM_TextBox txtTargetDateTo;
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_TextBox txtTargetDateFrom;
