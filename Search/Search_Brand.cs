@@ -31,9 +31,8 @@ namespace Search
 
         private Control[] detailControls;
 
-        MakerBrand_BL mbl;
-        M_MakerBrand_Entity mbe;
-
+        Brand_BL mbl;
+        M_Brand_Entity mbe;
         //private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
         public Search_Brand()
@@ -45,7 +44,6 @@ namespace Search
 
             HeaderTitleText = "ブランド";
             this.Text = ProNm;
-            mbl = new MakerBrand_BL();
 
         }
         private void InitialControlArray()
@@ -79,7 +77,7 @@ namespace Search
             ScMaker.LabelText = "";
             radioButton1.Checked = true;
 
-            if (!string.IsNullOrWhiteSpace(parMakerCD))
+            if(!string.IsNullOrWhiteSpace( parMakerCD))
             {
                 ScMaker.TxtCode.Text = parMakerCD;
                 CheckDetail((int)EIndex.MakerCD);
@@ -91,6 +89,7 @@ namespace Search
         {
             try
             {
+                mbl = new Brand_BL();
                 Scr_Clr();
 
                 radioButton1.Focus();
@@ -106,7 +105,7 @@ namespace Search
         private bool BindGrid()
         {
             mbe = GetEntity();
-            DataTable dt = mbl.M_MakerBrand_SelectAll(mbe);
+            DataTable dt = mbl.M_Brand_SelectAll(mbe);
 
             if (dt.Rows.Count == 0)
                 return false;
@@ -115,12 +114,12 @@ namespace Search
             return true;
         }
 
-        private M_MakerBrand_Entity GetEntity()
+        private M_Brand_Entity GetEntity()
         {
-            mbe = new M_MakerBrand_Entity();
+            mbe = new M_Brand_Entity();
             mbe.DisplayKbn = radioButton1.Checked ? "0" : "1";
             mbe.ChangeDate = ckM_Label1.Text;
-            mbe.BrandCD = detailControls[(int)EIndex.MakerCD].Text;
+            mbe.MakerCD = detailControls[(int)EIndex.MakerCD].Text;
             mbe.BrandName = detailControls[(int)EIndex.BrandName].Text;
 
             return mbe;
@@ -160,6 +159,9 @@ namespace Search
 
         protected override void ExecSec()
         {
+            if (dgvDetail.CurrentRow is null)
+                return;
+
             parBrandCD = dgvDetail.CurrentRow.Cells["colBrandCD"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
             parMakerCD = dgvDetail.CurrentRow.Cells["MakerCD"].Value.ToString();
@@ -176,7 +178,6 @@ namespace Search
                     return;
                 }
 
-            mbl = new MakerBrand_BL();
             bool ret = BindGrid();
 
             if (ret)
@@ -284,7 +285,7 @@ namespace Search
                             VendorCD = detailControls[index].Text,
                             ChangeDate = ckM_Label1.Text
                         };
-                        bool ret = mbl.M_Vendor_Select(mse);
+                        bool ret = mbl.M_Vendor_SelectTop1(mse);
                         if (ret)
                         {
                             ScMaker.LabelText = mse.VendorName;
@@ -348,13 +349,13 @@ namespace Search
                 e.Handled = true;
             }
         }
-
-        /// <summary>
-        /// handle f1 to f12 click event
-        /// implement base virtual function
-        /// </summary>
-        /// <param name="Index"></param>
-        public override void FunctionProcess(int Index)
+    
+    /// <summary>
+    /// handle f1 to f12 click event
+    /// implement base virtual function
+    /// </summary>
+    /// <param name="Index"></param>
+    public override void FunctionProcess(int Index)
         {
             base.FunctionProcess(Index);
         }
@@ -373,9 +374,5 @@ namespace Search
             }
         }
 
-        private void Search_Brand_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
     }
 }

@@ -11,10 +11,10 @@ namespace BL
 {
    public  class MasterTouroku_Brand_BL:Base_BL
     {
-        Brand_DL bdl;
+        M_Brand_DL bdl;
         public MasterTouroku_Brand_BL()
         {
-            bdl = new Brand_DL();
+            bdl = new M_Brand_DL();
         }
         public DataTable Brand_Select(M_Brand_Entity mbe)
         {

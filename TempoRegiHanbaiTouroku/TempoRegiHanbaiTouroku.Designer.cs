@@ -767,7 +767,7 @@
             this.lblStoreTankaKBN.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblStoreTankaKBN.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreTankaKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblStoreTankaKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.lblStoreTankaKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Bold);
             this.lblStoreTankaKBN.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblStoreTankaKBN.ForeColor = System.Drawing.Color.Black;
             this.lblStoreTankaKBN.Location = new System.Drawing.Point(130, 125);
@@ -935,7 +935,7 @@
             this.btnSyo12.Name = "btnSyo12";
             this.btnSyo12.Size = new System.Drawing.Size(85, 44);
             this.btnSyo12.TabIndex = 1;
-            this.btnSyo12.Text = "商品情報";
+            this.btnSyo12.Text = " ";
             this.btnSyo12.UseVisualStyleBackColor = false;
             // 
             // btnSyo42
@@ -951,7 +951,7 @@
             this.btnSyo42.Name = "btnSyo42";
             this.btnSyo42.Size = new System.Drawing.Size(85, 44);
             this.btnSyo42.TabIndex = 7;
-            this.btnSyo42.Text = "商品情報";
+            this.btnSyo42.Text = " ";
             this.btnSyo42.UseVisualStyleBackColor = false;
             // 
             // btnSyo52
@@ -967,7 +967,7 @@
             this.btnSyo52.Name = "btnSyo52";
             this.btnSyo52.Size = new System.Drawing.Size(85, 44);
             this.btnSyo52.TabIndex = 9;
-            this.btnSyo52.Text = "商品情報";
+            this.btnSyo52.Text = " ";
             this.btnSyo52.UseVisualStyleBackColor = false;
             // 
             // btnSyo22
@@ -983,7 +983,7 @@
             this.btnSyo22.Name = "btnSyo22";
             this.btnSyo22.Size = new System.Drawing.Size(85, 44);
             this.btnSyo22.TabIndex = 3;
-            this.btnSyo22.Text = "商品情報";
+            this.btnSyo22.Text = " ";
             this.btnSyo22.UseVisualStyleBackColor = false;
             // 
             // btnSyo32
@@ -999,7 +999,7 @@
             this.btnSyo32.Name = "btnSyo32";
             this.btnSyo32.Size = new System.Drawing.Size(85, 44);
             this.btnSyo32.TabIndex = 5;
-            this.btnSyo32.Text = "商品情報";
+            this.btnSyo32.Text = " ";
             this.btnSyo32.UseVisualStyleBackColor = false;
             // 
             // btnSyo62
@@ -1015,7 +1015,7 @@
             this.btnSyo62.Name = "btnSyo62";
             this.btnSyo62.Size = new System.Drawing.Size(85, 44);
             this.btnSyo62.TabIndex = 11;
-            this.btnSyo62.Text = "商品情報";
+            this.btnSyo62.Text = " ";
             this.btnSyo62.UseVisualStyleBackColor = false;
             // 
             // btnSyo92
@@ -1031,7 +1031,7 @@
             this.btnSyo92.Name = "btnSyo92";
             this.btnSyo92.Size = new System.Drawing.Size(85, 44);
             this.btnSyo92.TabIndex = 17;
-            this.btnSyo92.Text = "商品情報";
+            this.btnSyo92.Text = " ";
             this.btnSyo92.UseVisualStyleBackColor = false;
             // 
             // btnSyo102
@@ -1047,7 +1047,7 @@
             this.btnSyo102.Name = "btnSyo102";
             this.btnSyo102.Size = new System.Drawing.Size(85, 44);
             this.btnSyo102.TabIndex = 19;
-            this.btnSyo102.Text = "商品情報";
+            this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
             // 
             // btnSyo72
@@ -1063,7 +1063,7 @@
             this.btnSyo72.Name = "btnSyo72";
             this.btnSyo72.Size = new System.Drawing.Size(85, 44);
             this.btnSyo72.TabIndex = 13;
-            this.btnSyo72.Text = "商品情報";
+            this.btnSyo72.Text = " ";
             this.btnSyo72.UseVisualStyleBackColor = false;
             // 
             // btnSyo82
@@ -1079,7 +1079,7 @@
             this.btnSyo82.Name = "btnSyo82";
             this.btnSyo82.Size = new System.Drawing.Size(85, 44);
             this.btnSyo82.TabIndex = 15;
-            this.btnSyo82.Text = "商品情報";
+            this.btnSyo82.Text = " ";
             this.btnSyo82.UseVisualStyleBackColor = false;
             // 
             // btnSyo11
@@ -1095,7 +1095,7 @@
             this.btnSyo11.Name = "btnSyo11";
             this.btnSyo11.Size = new System.Drawing.Size(85, 44);
             this.btnSyo11.TabIndex = 0;
-            this.btnSyo11.Text = "ガット張り学生";
+            this.btnSyo11.Text = " ";
             this.btnSyo11.UseVisualStyleBackColor = false;
             // 
             // btnSyo21
@@ -1111,7 +1111,7 @@
             this.btnSyo21.Name = "btnSyo21";
             this.btnSyo21.Size = new System.Drawing.Size(85, 44);
             this.btnSyo21.TabIndex = 2;
-            this.btnSyo21.Text = "商品情報";
+            this.btnSyo21.Text = " ";
             this.btnSyo21.UseVisualStyleBackColor = false;
             // 
             // btnSyo31
@@ -1127,7 +1127,7 @@
             this.btnSyo31.Name = "btnSyo31";
             this.btnSyo31.Size = new System.Drawing.Size(85, 44);
             this.btnSyo31.TabIndex = 4;
-            this.btnSyo31.Text = "商品情報";
+            this.btnSyo31.Text = " ";
             this.btnSyo31.UseVisualStyleBackColor = false;
             // 
             // btnSyo41
@@ -1143,7 +1143,7 @@
             this.btnSyo41.Name = "btnSyo41";
             this.btnSyo41.Size = new System.Drawing.Size(85, 44);
             this.btnSyo41.TabIndex = 6;
-            this.btnSyo41.Text = "商品情報";
+            this.btnSyo41.Text = " ";
             this.btnSyo41.UseVisualStyleBackColor = false;
             // 
             // btnSyo51
@@ -1159,7 +1159,7 @@
             this.btnSyo51.Name = "btnSyo51";
             this.btnSyo51.Size = new System.Drawing.Size(85, 44);
             this.btnSyo51.TabIndex = 8;
-            this.btnSyo51.Text = "商品情報";
+            this.btnSyo51.Text = " ";
             this.btnSyo51.UseVisualStyleBackColor = false;
             // 
             // btnSyo61
@@ -1175,7 +1175,7 @@
             this.btnSyo61.Name = "btnSyo61";
             this.btnSyo61.Size = new System.Drawing.Size(85, 44);
             this.btnSyo61.TabIndex = 10;
-            this.btnSyo61.Text = "商品情報";
+            this.btnSyo61.Text = " ";
             this.btnSyo61.UseVisualStyleBackColor = false;
             // 
             // btnSyo71
@@ -1191,7 +1191,7 @@
             this.btnSyo71.Name = "btnSyo71";
             this.btnSyo71.Size = new System.Drawing.Size(85, 44);
             this.btnSyo71.TabIndex = 12;
-            this.btnSyo71.Text = "商品情報";
+            this.btnSyo71.Text = " ";
             this.btnSyo71.UseVisualStyleBackColor = false;
             // 
             // btnSyo81
@@ -1207,7 +1207,7 @@
             this.btnSyo81.Name = "btnSyo81";
             this.btnSyo81.Size = new System.Drawing.Size(85, 44);
             this.btnSyo81.TabIndex = 14;
-            this.btnSyo81.Text = "商品情報";
+            this.btnSyo81.Text = " ";
             this.btnSyo81.UseVisualStyleBackColor = false;
             // 
             // btnSyo91
@@ -1223,7 +1223,7 @@
             this.btnSyo91.Name = "btnSyo91";
             this.btnSyo91.Size = new System.Drawing.Size(85, 44);
             this.btnSyo91.TabIndex = 16;
-            this.btnSyo91.Text = "商品情報";
+            this.btnSyo91.Text = " ";
             this.btnSyo91.UseVisualStyleBackColor = false;
             // 
             // btnSyo101
@@ -1239,7 +1239,7 @@
             this.btnSyo101.Name = "btnSyo101";
             this.btnSyo101.Size = new System.Drawing.Size(85, 44);
             this.btnSyo101.TabIndex = 18;
-            this.btnSyo101.Text = "商品情報";
+            this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
             // 
             // btnSyoUp
@@ -1379,7 +1379,7 @@
             this.btnGrp14.Name = "btnGrp14";
             this.btnGrp14.Size = new System.Drawing.Size(87, 44);
             this.btnGrp14.TabIndex = 13;
-            this.btnGrp14.Text = "商品情報";
+            this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
             // 
             // btnGrp1
@@ -1395,7 +1395,7 @@
             this.btnGrp1.Name = "btnGrp1";
             this.btnGrp1.Size = new System.Drawing.Size(85, 44);
             this.btnGrp1.TabIndex = 0;
-            this.btnGrp1.Text = "商品情報";
+            this.btnGrp1.Text = " ";
             this.btnGrp1.UseVisualStyleBackColor = false;
             // 
             // btnGrp2
@@ -1411,7 +1411,7 @@
             this.btnGrp2.Name = "btnGrp2";
             this.btnGrp2.Size = new System.Drawing.Size(85, 44);
             this.btnGrp2.TabIndex = 1;
-            this.btnGrp2.Text = "商品情報";
+            this.btnGrp2.Text = " ";
             this.btnGrp2.UseVisualStyleBackColor = false;
             // 
             // btnGrp3
@@ -1427,7 +1427,7 @@
             this.btnGrp3.Name = "btnGrp3";
             this.btnGrp3.Size = new System.Drawing.Size(85, 44);
             this.btnGrp3.TabIndex = 2;
-            this.btnGrp3.Text = "商品情報";
+            this.btnGrp3.Text = " ";
             this.btnGrp3.UseVisualStyleBackColor = false;
             // 
             // btnGrp4
@@ -1443,7 +1443,7 @@
             this.btnGrp4.Name = "btnGrp4";
             this.btnGrp4.Size = new System.Drawing.Size(85, 44);
             this.btnGrp4.TabIndex = 3;
-            this.btnGrp4.Text = "商品情報";
+            this.btnGrp4.Text = " ";
             this.btnGrp4.UseVisualStyleBackColor = false;
             // 
             // btnGrp5
@@ -1459,7 +1459,7 @@
             this.btnGrp5.Name = "btnGrp5";
             this.btnGrp5.Size = new System.Drawing.Size(85, 44);
             this.btnGrp5.TabIndex = 4;
-            this.btnGrp5.Text = "商品情報";
+            this.btnGrp5.Text = " ";
             this.btnGrp5.UseVisualStyleBackColor = false;
             // 
             // btnGrp6
@@ -1475,7 +1475,7 @@
             this.btnGrp6.Name = "btnGrp6";
             this.btnGrp6.Size = new System.Drawing.Size(85, 44);
             this.btnGrp6.TabIndex = 5;
-            this.btnGrp6.Text = "商品情報";
+            this.btnGrp6.Text = " ";
             this.btnGrp6.UseVisualStyleBackColor = false;
             // 
             // btnGrp7
@@ -1491,7 +1491,7 @@
             this.btnGrp7.Name = "btnGrp7";
             this.btnGrp7.Size = new System.Drawing.Size(85, 44);
             this.btnGrp7.TabIndex = 6;
-            this.btnGrp7.Text = "商品情報";
+            this.btnGrp7.Text = " ";
             this.btnGrp7.UseVisualStyleBackColor = false;
             // 
             // btnGrp8
@@ -1507,7 +1507,7 @@
             this.btnGrp8.Name = "btnGrp8";
             this.btnGrp8.Size = new System.Drawing.Size(85, 44);
             this.btnGrp8.TabIndex = 7;
-            this.btnGrp8.Text = "商品情報";
+            this.btnGrp8.Text = " ";
             this.btnGrp8.UseVisualStyleBackColor = false;
             // 
             // btnGrp9
@@ -1523,7 +1523,7 @@
             this.btnGrp9.Name = "btnGrp9";
             this.btnGrp9.Size = new System.Drawing.Size(85, 44);
             this.btnGrp9.TabIndex = 8;
-            this.btnGrp9.Text = "商品情報";
+            this.btnGrp9.Text = " ";
             this.btnGrp9.UseVisualStyleBackColor = false;
             // 
             // btnGrp10
@@ -1539,7 +1539,7 @@
             this.btnGrp10.Name = "btnGrp10";
             this.btnGrp10.Size = new System.Drawing.Size(85, 44);
             this.btnGrp10.TabIndex = 9;
-            this.btnGrp10.Text = "商品情報";
+            this.btnGrp10.Text = " ";
             this.btnGrp10.UseVisualStyleBackColor = false;
             // 
             // btnGrp11
@@ -1555,7 +1555,7 @@
             this.btnGrp11.Name = "btnGrp11";
             this.btnGrp11.Size = new System.Drawing.Size(85, 44);
             this.btnGrp11.TabIndex = 10;
-            this.btnGrp11.Text = "商品情報";
+            this.btnGrp11.Text = " ";
             this.btnGrp11.UseVisualStyleBackColor = false;
             // 
             // btnGrp12
@@ -1571,7 +1571,7 @@
             this.btnGrp12.Name = "btnGrp12";
             this.btnGrp12.Size = new System.Drawing.Size(85, 44);
             this.btnGrp12.TabIndex = 11;
-            this.btnGrp12.Text = "商品情報";
+            this.btnGrp12.Text = " ";
             this.btnGrp12.UseVisualStyleBackColor = false;
             // 
             // btnGrp13
@@ -1587,7 +1587,7 @@
             this.btnGrp13.Name = "btnGrp13";
             this.btnGrp13.Size = new System.Drawing.Size(85, 44);
             this.btnGrp13.TabIndex = 12;
-            this.btnGrp13.Text = "商品情報";
+            this.btnGrp13.Text = " ";
             this.btnGrp13.UseVisualStyleBackColor = false;
             // 
             // txtJuchuuUnitPrice

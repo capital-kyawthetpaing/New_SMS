@@ -39,9 +39,10 @@ namespace TempoRegiHanbaiTouroku
 
         private Base.Client.FrmMainForm.EOperationMode OperationMode;
         private string mParStoreCD;
-        private string mParSaleRate;
+        private int mParSaleRate;
         private int mAge;
         private short mHaspoMode;
+        private short mSaleMode;
 
         private string mJuchuuHontaiGaku;
         private string mProperTanka;
@@ -87,17 +88,34 @@ namespace TempoRegiHanbaiTouroku
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     mParStoreCD = cmds[(int)ECmdLine.PcID + 1];   //
-                    if (cmds.Length - 1 > (int)ECmdLine.PcID+1)
-                    {
-                        //セール率。10％引きなら10、20％引きなら20．Haspo、1月20日の初売り対応。
-                        mParSaleRate = cmds[(int)ECmdLine.PcID + 2];
-                    }
+                    //    if (cmds.Length - 1 > (int)ECmdLine.PcID+1)
+                    //    {
+                    //        //セール率。10％引きなら10、20％引きなら20．Haspo、1月20日の初売り対応。
+                    //        mParSaleRate = cmds[(int)ECmdLine.PcID + 2];
+                    //    }
                 }
 
                 //ハスポモードか否か（0 or 1)
                 M_Control_Entity mce = new M_Control_Entity();
                 mce.MainKey = "1";
                 mHaspoMode =Convert.ToInt16( tprg_Hanbai_Bl.GetHaspoMode(mce));
+
+                //Saleモードの判断
+                mSaleMode = 0;
+                
+                //HaspoMode＝1の場合
+                if (mHaspoMode.Equals(1))
+                {
+                    //【M_MultiPorpose】
+                    M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
+                    MultiPorpose_BL bl = new MultiPorpose_BL();
+                    bool ret = bl.M_MultiPorpose_SaleModeSelect(me);
+                    if (ret)
+                    {
+                        //Select出来た場合、Saleモード＝１とする
+                        mSaleMode = 1;
+                    }
+                }
 
                 InitScr();
             }
@@ -364,14 +382,14 @@ namespace TempoRegiHanbaiTouroku
             //税抜販売額←入力された単価から税抜計算×数量	
             //Function_消費税計算.out税込単価
             mJuchuuHontaiGaku = bbl.Z_SetStr(bbl.GetZeinukiKingaku(bbl.Z_Set(txtJuchuuUnitPrice.Text), mTaxRateFLG, ymd) * bbl.Z_Set(txtSu.Text));
-            if (mSaleExcludedFlg == 1)
-            {
-            }
-            else
-            {
-                //入力された単価から税抜計算×数量×（100－Parameter.SaleRate）÷100
-                mJuchuuHontaiGaku = bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set( mJuchuuHontaiGaku) * (100- bbl.Z_Set(mParSaleRate)) /100));
-            }
+            //if (mSaleExcludedFlg == 1)
+            //{
+            //}
+            //else
+            //{
+            //    //入力された単価から税抜計算×数量×（100－Parameter.SaleRate）÷100
+            //    mJuchuuHontaiGaku = bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set( mJuchuuHontaiGaku) * (100- bbl.Z_Set(mParSaleRate)) /100));
+            //}
             //お買上額←入力された単価×数量
             lblSalesGaku.Text = string.Format("{0:#,##0}", bbl.Z_Set(txtJuchuuUnitPrice.Text) * bbl.Z_Set(txtSu.Text));
 
@@ -895,55 +913,72 @@ namespace TempoRegiHanbaiTouroku
                         txtSu.Text = "1";
                         wSuu = 1;
                     }
-
                     
-                        //Function_単価取得.
-                        Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
-                        {
-                            AdminNo = selectRow["AdminNO"].ToString(),
-                            ChangeDate = ymd,
-                            CustomerCD = txtCustomerNo.Text,
-                            StoreCD = StoreCD,
-                            SaleKbn = "0",
-                            Suryo = wSuu.ToString()
-                        };
+                    //Function_単価取得.
+                    Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
+                    {
+                        AdminNo = selectRow["AdminNO"].ToString(),
+                        ChangeDate = ymd,
+                        CustomerCD = txtCustomerNo.Text,
+                        StoreCD = StoreCD,
+                        SaleKbn = "0",
+                        Suryo = wSuu.ToString()
+                    };
 
-                        bool ret = bbl.Fnc_UnitPrice(fue);
-                        if (ret)
-                        {
+                    bool ret = bbl.Fnc_UnitPrice(fue);
+                    if (ret)
+                    {
                         if (selectRow["SaleExcludedFlg"].ToString().Equals("0"))
                         {
+                            mParSaleRate = 0;
+                            //Saleモード＝１の場合							
+                            if (mSaleMode.Equals(1))
+                            {
+                                //特別割引率選択
+                                FrmSpecialWaribiki frm = new FrmSpecialWaribiki();
+                                frm.ShowDialog();
+                                switch (frm.btnSelect)
+                                {
+                                    case 1:
+                                        mParSaleRate = 20;
+                                        break;
+                                    case 2:
+                                        mParSaleRate = 10;
+                                        break;
+                                }
+                            }
                             //Function_単価取得.out税込単価	×((100－Parameter.SaleRate)　÷100)←１円未満は四捨五入
                             //↑Haspoの初売りの時、全店一律割引セール mParSaleRate
-                            fue.ZeikomiTanka =bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set( fue.ZeikomiTanka) * ((100-bbl.Z_Set( mParSaleRate))/ 100)));
+                            fue.ZeikomiTanka = bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set(fue.ZeikomiTanka) * (100 - mParSaleRate) / 100));
                         }
                         mSaleExcludedFlg = Convert.ToInt16(selectRow["SaleExcludedFlg"]);
 
                         if (mDiscountKBN.Equals("1"))
-                            {
-                                txtJuchuuUnitPrice.Text = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeikomiTanka));
-                                mJuchuuHontaiGaku = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
-                                lblSalesGaku.Text = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
-                            }
-                            else
-                            {
-                                //販売単価=Function_単価取得.out税込単価		
-                                txtJuchuuUnitPrice.Text = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
-                                //税抜販売額＝Form.受注数≠Nullの場合	Function_単価取得.out税抜単価×Form.Detail.受注数
-                                mJuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
-                                lblSalesGaku.Text = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
-                            }
-                            mProperTanka = txtJuchuuUnitPrice.Text;
-                            mProperGaku = lblSalesGaku.Text;
-                            lblSalesTax.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text) - bbl.Z_Set(mJuchuuHontaiGaku));
-                            mZeiritsu = Convert.ToInt16(fue.Zeiritsu);
-
-                            //税率=Function_単価取得.out税率
-                            if (mZeiritsu == 0)
-                                lblJuchuuTaxRitsu.Text = "";
-                            else
-                                lblJuchuuTaxRitsu.Text = string.Format("{0:#,##0}", mZeiritsu) + "%";
+                        {
+                            txtJuchuuUnitPrice.Text = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeikomiTanka));
+                            mJuchuuHontaiGaku = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
+                            lblSalesGaku.Text = string.Format("{0:#,##0}", -1 * bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
                         }
+                        else
+                        {
+                            //販売単価=Function_単価取得.out税込単価		
+                            txtJuchuuUnitPrice.Text = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+                            //税抜販売額＝Form.受注数≠Nullの場合	Function_単価取得.out税抜単価×Form.Detail.受注数
+                            mJuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
+                            lblSalesGaku.Text = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
+                        }
+                        mProperTanka = txtJuchuuUnitPrice.Text;
+                        mProperGaku = lblSalesGaku.Text;
+                        lblSalesTax.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text) - bbl.Z_Set(mJuchuuHontaiGaku));
+                        mZeiritsu = Convert.ToInt16(fue.Zeiritsu);
+
+                        //税率=Function_単価取得.out税率
+                        if (mZeiritsu == 0)
+                            lblJuchuuTaxRitsu.Text = "";
+                        else
+                            lblJuchuuTaxRitsu.Text = string.Format("{0:#,##0}", mZeiritsu) + "%";
+                    }
+
                     //Function_プレゼント品有無判断.詳細①
                     Fnc_Present_Entity fpe = new Fnc_Present_Entity();
                     fpe.AdminNO = fue.AdminNo;
@@ -1789,6 +1824,7 @@ namespace TempoRegiHanbaiTouroku
                     frm.Teika = bbl.Z_SetStr(bbl.GetZeinukiKingaku(bbl.Z_Set(txtJuchuuUnitPrice.Text), mTaxRateFLG, bbl.GetDate()) * bbl.Z_Set(txtSu.Text));
                 }
                 frm.HaspoMode = mHaspoMode;
+                frm.SaleExcludedFlg = mSaleExcludedFlg;
 
                 frm.ShowDialog();
 

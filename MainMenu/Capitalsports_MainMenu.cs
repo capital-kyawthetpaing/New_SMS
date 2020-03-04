@@ -11,6 +11,7 @@ using Entity;
 using BL;
 using CKM_Controls;
 using System.Diagnostics;
+using DL;
 
 namespace MainMenu
 {
@@ -68,7 +69,7 @@ namespace MainMenu
         }
         protected void BindButtonName()
         {
-            var dt = menu = mbl.getMenuNo(Staff_CD);
+            var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
 
             //var _result =(from r1 in dt.AsEnumerable()  group r1 by new { Char1 = r1.Field<string>("Char1"), } into g  select new { Char1 = g.Key.Char1,   BusinessSEQ = g.Max(x => x.Field<int>("BusinessSEQ")) }).ToArray();    //Group By
             var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
