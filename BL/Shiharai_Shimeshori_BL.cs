@@ -19,6 +19,11 @@ namespace BL
             bbl = new Base_BL();
             dpch_DL = new D_PayCloseHistory_DL();
         }
+
+        public DataTable D_PayClose_Search(D_PayCloseHistory_Entity dpdpch_entity)
+        {
+            return dpch_DL.D_PayClose_Search(dpdpch_entity);
+        }
         public bool Select_PaymentClose(D_PayCloseHistory_Entity dpch_entity,int Type)
         {
             if (dpch_DL.Select_PaymentClose(dpch_entity, Type).Rows.Count > 0)

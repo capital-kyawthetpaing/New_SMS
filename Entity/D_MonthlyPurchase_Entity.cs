@@ -38,6 +38,9 @@ namespace Entity
         public string ThisMonthAmount { get; set; }
         public string ThisMonthQuantity { get; set; }
         public string ThisMonthCost { get; set; }
+
+        public string YYYYMMS { get; set; }
+        public string YYYYMME { get; set; }
         //月次仕入計算処理
         public int Mode { get; set; }
     }

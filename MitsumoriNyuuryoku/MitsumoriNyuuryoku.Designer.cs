@@ -237,6 +237,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CHK_PRINT_0 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_1 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_2 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_3 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_4 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -264,6 +270,7 @@
             // 
             // PanelSearch
             // 
+            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -633,6 +640,11 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_4);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_3);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_2);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_1);
+            this.Pnl_Body.Controls.Add(this.CHK_PRINT_0);
             this.Pnl_Body.Controls.Add(this.IMT_ITMNM_4);
             this.Pnl_Body.Controls.Add(this.IMT_ITMNM_3);
             this.Pnl_Body.Controls.Add(this.IMT_ITMNM_2);
@@ -785,7 +797,7 @@
             this.IMT_ITMNM_4.MaxLength = 80;
             this.IMT_ITMNM_4.MoveNext = true;
             this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
-            this.IMT_ITMNM_4.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_4.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_4.TabIndex = 470;
             this.IMT_ITMNM_4.Tag = "4";
             this.IMT_ITMNM_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -812,7 +824,7 @@
             this.IMT_ITMNM_3.MaxLength = 80;
             this.IMT_ITMNM_3.MoveNext = true;
             this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
-            this.IMT_ITMNM_3.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_3.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_3.TabIndex = 266;
             this.IMT_ITMNM_3.Tag = "3";
             this.IMT_ITMNM_3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -839,7 +851,7 @@
             this.IMT_ITMNM_2.MaxLength = 80;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_2.TabIndex = 265;
             this.IMT_ITMNM_2.Tag = "2";
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -866,7 +878,7 @@
             this.IMT_ITMNM_1.MaxLength = 80;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_1.TabIndex = 264;
             this.IMT_ITMNM_1.Tag = "1";
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -893,7 +905,7 @@
             this.IMT_ITMNM_0.MaxLength = 80;
             this.IMT_ITMNM_0.MoveNext = true;
             this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
-            this.IMT_ITMNM_0.Size = new System.Drawing.Size(555, 19);
+            this.IMT_ITMNM_0.Size = new System.Drawing.Size(507, 19);
             this.IMT_ITMNM_0.TabIndex = 2;
             this.IMT_ITMNM_0.Tag = "0";
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3820,6 +3832,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label28);
             this.panel4.Controls.Add(this.label19);
@@ -4128,7 +4141,7 @@
             this.lblGridSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblGridSkuCD.Location = new System.Drawing.Point(28, 2);
             this.lblGridSkuCD.Name = "lblGridSkuCD";
-            this.lblGridSkuCD.Size = new System.Drawing.Size(905, 18);
+            this.lblGridSkuCD.Size = new System.Drawing.Size(845, 18);
             this.lblGridSkuCD.TabIndex = 260;
             this.lblGridSkuCD.Text = "商品名";
             this.lblGridSkuCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4980,6 +4993,99 @@
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Location = new System.Drawing.Point(873, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 18);
+            this.label7.TabIndex = 290;
+            this.label7.Text = "印刷なし";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // CHK_PRINT_0
+            // 
+            this.CHK_PRINT_0.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_0.Location = new System.Drawing.Point(885, 1);
+            this.CHK_PRINT_0.Name = "CHK_PRINT_0";
+            this.CHK_PRINT_0.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_0.TabIndex = 636;
+            this.CHK_PRINT_0.Tag = "0";
+            this.CHK_PRINT_0.Text = "なし";
+            this.CHK_PRINT_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_0.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_1
+            // 
+            this.CHK_PRINT_1.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_1.Location = new System.Drawing.Point(885, 58);
+            this.CHK_PRINT_1.Name = "CHK_PRINT_1";
+            this.CHK_PRINT_1.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_1.TabIndex = 637;
+            this.CHK_PRINT_1.Tag = "1";
+            this.CHK_PRINT_1.Text = "なし";
+            this.CHK_PRINT_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_2
+            // 
+            this.CHK_PRINT_2.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_2.Location = new System.Drawing.Point(885, 114);
+            this.CHK_PRINT_2.Name = "CHK_PRINT_2";
+            this.CHK_PRINT_2.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_2.TabIndex = 638;
+            this.CHK_PRINT_2.Tag = "2";
+            this.CHK_PRINT_2.Text = "なし";
+            this.CHK_PRINT_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_3
+            // 
+            this.CHK_PRINT_3.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_3.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_3.Location = new System.Drawing.Point(885, 171);
+            this.CHK_PRINT_3.Name = "CHK_PRINT_3";
+            this.CHK_PRINT_3.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_3.TabIndex = 639;
+            this.CHK_PRINT_3.Tag = "3";
+            this.CHK_PRINT_3.Text = "なし";
+            this.CHK_PRINT_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_3.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_4
+            // 
+            this.CHK_PRINT_4.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_4.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_4.Location = new System.Drawing.Point(885, 229);
+            this.CHK_PRINT_4.Name = "CHK_PRINT_4";
+            this.CHK_PRINT_4.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_4.TabIndex = 640;
+            this.CHK_PRINT_4.Tag = "4";
+            this.CHK_PRINT_4.Text = "なし";
+            this.CHK_PRINT_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_4.UseVisualStyleBackColor = false;
+            // 
             // MitsumoriNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -5285,6 +5391,12 @@
         private System.Windows.Forms.Button BTN_Site_1;
         private System.Windows.Forms.Button BTN_Zaiko_0;
         private System.Windows.Forms.Button BTN_Site_0;
+        private System.Windows.Forms.Label label7;
+        private GridControl.clsGridCheckBox CHK_PRINT_0;
+        private GridControl.clsGridCheckBox CHK_PRINT_4;
+        private GridControl.clsGridCheckBox CHK_PRINT_3;
+        private GridControl.clsGridCheckBox CHK_PRINT_2;
+        private GridControl.clsGridCheckBox CHK_PRINT_1;
     }
 }
 

@@ -56,6 +56,7 @@
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
     <Compile Include="Denomination_BL.cs" />
+    <Compile Include="MailHistoryShoukai_BL.cs" />
     <Compile Include="MailSend_BL.cs" />
     <Compile Include="D_Purchase_BL.cs" />
     <Compile Include="EDIHacchuu_BL.cs" />
@@ -137,11 +138,13 @@
     <Compile Include="ShiireShoukaiDetails_BL.cs" />
     <Compile Include="ShiireShoukaiShiiresaki_BL.cs" />
     <Compile Include="ShiireTankaTeiseiIraisho_BL.cs" />
+    <Compile Include="ShukkaNyuuryoku_BL.cs" />
     <Compile Include="ShukkaShijiTouroku_BL.cs" />
     <Compile Include="ShukkaShoukai_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
     <Compile Include="SiharaiYoteiHyou_BL.cs" />
+    <Compile Include="SiiresakiZaikoYoteiHyou_BL.cs" />
     <Compile Include="Site_BL.cs" />
     <Compile Include="SKUPrice_BL.cs" />
     <Compile Include="SKU_BL.cs" />

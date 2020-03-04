@@ -32,5 +32,20 @@ namespace DL
             };
             return SelectData(dic, "M_Carrier_Bind");
         }
+
+        /// <summary>
+        /// 出荷入力　代引きチェック
+        /// </summary>
+        /// <param name="mse"></param>
+        /// <returns></returns>
+        public DataTable M_Carrier_SelectForShukka(M_Carrier_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@CarrierCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.CarrierCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } }
+            };
+            return SelectData(dic, "M_Carrier_SelectForShukka");
+        }
     }
 }

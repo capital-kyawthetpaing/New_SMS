@@ -193,6 +193,7 @@ namespace Search
             移動番号,
             移動依頼番号,
             出荷指示番号,
+            出荷番号,
             倉庫棚番,
             得意先,
 
@@ -441,6 +442,11 @@ namespace Search
                 case SearchType.出荷指示番号:
                     txtCode.MaxLength = 11;
                     txtCode.Width = 100;
+                    lblName.Width = 600;
+                    break;
+                case SearchType.出荷番号:
+                    txtCode.MaxLength = 11;
+                    txtCode.Width = 140;
                     lblName.Width = 600;
                     break;
                 case SearchType.仕入番号:
@@ -991,6 +997,19 @@ namespace Search
                         }
                     }
                     break;
+                case SearchType.出荷番号:
+                    using (Search_ShippingNO frmShukka = new Search_ShippingNO(changedate))
+                    {
+                        frmShukka.OperatorCD = Value1;
+                        frmShukka.AllAvailableStores = Value2;
+                        frmShukka.ShowDialog();
+                        if (!frmShukka.flgCancel)
+                        {
+                            txtCode.Text = frmShukka.ShippingNO;
+                            txtChangeDate.Text = frmShukka.ChangeDate;
+                        }
+                    }
+                    break;
                 case SearchType.倉庫棚番:
                     using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate)) //TOdo:倉庫棚番検索へ　変更
                     {
@@ -1195,7 +1214,7 @@ namespace Search
                         if (!frmKey.flgCancel)
                         {
                             TxtCode.Text = frmKey.KeyCode;
-                            lblName.Text = frmKey.Char2;
+                            lblName.Text = frmKey.Char3;
                         }
                     }
                     break;
@@ -1586,6 +1605,11 @@ namespace Search
                 lblName.Text = string.Empty;
                 return false;
             }
+        }
+
+        public void SetLabelWidth(int width)
+        {
+            lblName.Width = width;
         }
     }
 }

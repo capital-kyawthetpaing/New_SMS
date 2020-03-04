@@ -25,7 +25,7 @@ namespace SiharaiNyuuryoku
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
         string type = string.Empty;string kouzaCD = string.Empty;
-        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1=null)
+        public SiharaiNyuuryoku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1)
         {
             InitializeComponent();
             kouzaCD = KouzaCD;
@@ -38,8 +38,6 @@ namespace SiharaiNyuuryoku
                 if (tblROWS1.Length > 0)
                     dtSiharai2 = tblROWS1.CopyToDataTable();
             }
-                //dtSiharai2 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "And PayPlanDate = '" + PayPlanDate + "'").CopyToDataTable();
-
         }
 
         private void SiharaiNyuuryoku_2_Load(object sender, EventArgs e)
@@ -122,6 +120,11 @@ namespace SiharaiNyuuryoku
             //}
             #endregion
 
+            InProgramID = "SiharaiNyuuryoku_2";
+            Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
+
+            SetFunctionLabel(EProMode.MENTE);
+
             BindData();
 
             LabelDataBind();
@@ -133,10 +136,9 @@ namespace SiharaiNyuuryoku
 
         private void BindData()
         {
-
             txtPayPlanDate.Text = dtSiharai1.Rows[0]["PayPlanDate"].ToString();
             txtPayeeCD.Text = dtSiharai1.Rows[0]["PayeeCD"].ToString();
-            lblVendorName.Text = dtSiharai1.Rows[0]["VendorName"].ToString();
+            lblVendorName.Text = dtSiharai2.Rows[0]["VendorName"].ToString();
 
             if (dtSiharai2.Rows.Count==0 || dtSiharai2==null)
             {
@@ -206,7 +208,7 @@ namespace SiharaiNyuuryoku
 
         private void SetRequireField()
         {
-            if(Convert.ToInt32(txtTransferAmount.Text)>0)
+            if (Convert.ToInt32(txtTransferAmount.Text)>0)
             {
                 SC_BankCD.TxtCode.Require(true);
                 SC_BranchCD.TxtCode.Require(true);
@@ -240,7 +242,7 @@ namespace SiharaiNyuuryoku
             }
         }
 
-        private void LabelDataBind()
+        public void LabelDataBind()
         {
             int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0;
             for (int i = 0; i < dgvSearchPayment.Rows.Count; ++i)
@@ -558,6 +560,69 @@ namespace SiharaiNyuuryoku
             MoveNextControl(e);
         }
 
-       
+        private void dgvSearchPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Maintained_CheckClick(sender, e);
+        }
+
+        protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
+       {
+            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
+                    {
+                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = "0";
+                    }
+                    else
+                    {
+                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                    }
+
+                    LabelDataBind();
+                }
+
+            }
+        }
+
+
+        private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //if(dgvSearchPayment.CurrentRow.Index>-1)
+            //{
+            //    if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
+            //    {
+            //        DataGridViewRow row = dgvSearchPayment.CurrentRow;
+            //        string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
+            //        if (string.IsNullOrWhiteSpace(unpaidAmount1))
+            //        {
+            //            bbl.ShowMessage("E102");
+            //        }
+            //    }
+           // }
+            
+        }
+
+        private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvSearchPayment.CurrentRow.Index > -1)
+            {
+                if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
+                {
+                    DataGridViewRow row = dgvSearchPayment.CurrentRow;
+                    string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
+                    if (string.IsNullOrWhiteSpace(unpaidAmount1))
+                    {
+                        bbl.ShowMessage("E102");
+                        dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                    }
+                }
+            }
+        }
     }
 }

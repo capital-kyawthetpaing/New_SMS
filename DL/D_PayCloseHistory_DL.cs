@@ -30,6 +30,18 @@ namespace DL
             };
             return SelectData(dic, "Select_PaymentClose_ValueCheck");
         }
+        public DataTable D_PayClose_Search(D_PayCloseHistory_Entity dpch_entity)
+        {
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+
+                { "@PayeeCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.PaymentCD} },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = dpch_entity.PaymentDate} },
+
+            };
+            return SelectData(dic, "D_PayClose_Search");
+        }
 
         //public DataTable Return_Value(D_APIControl_Entity dpch_entity,int Type)
         //{

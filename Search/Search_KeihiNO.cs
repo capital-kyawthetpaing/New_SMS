@@ -40,7 +40,7 @@ namespace Search
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
             chkTeiki.Checked = true;
-            //F11Visible = true;
+            F11Visible = false;
         }
         //ZCO
         //private void InitialControlArray()
@@ -129,6 +129,7 @@ namespace Search
                 DataTable dtCost = skhnobl.D_Cost_Search(dcoste);
                 for (int i = 0; i < dtCost.Rows.Count; i++)
                 {
+                   
                     string R_Flag = dtCost.Rows[i]["RegularlyFLG"].ToString();
                     if (R_Flag.Equals("1")) 
                     //if (dtCost.Rows[i]["RegularlyFLG"].ToString() == "1")//zco
@@ -179,7 +180,6 @@ namespace Search
                     ExpenseNumber = dgvCostSearch.CurrentRow.Cells["ExpenseNo"].Value.ToString();
                     this.Close();
                 }
-
             }
             catch (Exception ex)
             {
@@ -297,8 +297,15 @@ namespace Search
 
         private void dgvCostSearch_Paint(object sender, PaintEventArgs e)
         {
-            string[] monthes = { "経費番号", "計上日", "経費入力日", "定期", "支払先", "担当スタッフ", "支払予定日", "支払日", "税込支払額" };
-            for (int j = 4; j <8;)
+
+            string[] monthes = { "経費番号", "計上日", "経費入力日", "定期", "支払先","","担当スタッフ"};
+            dgvCostSearch.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvCostSearch.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            for (int j = 4; j < 8;)
             {
                 Rectangle r1 = this.dgvCostSearch.GetCellDisplayRectangle(j, -1, true);
                 int w1 = this.dgvCostSearch.GetCellDisplayRectangle(j + 1, -1, true).Width;
@@ -307,22 +314,21 @@ namespace Search
                 r1.Y += 1;
                 r1.Width = r1.Width + w1 - 2;
                 r1.Height = r1.Height - 2;
-
+                dgvCostSearch.ColumnHeadersDefaultCellStyle.Font= new Font(dgvCostSearch.Font, FontStyle.Bold);
                 e.Graphics.FillRectangle(new SolidBrush(this.dgvCostSearch.ColumnHeadersDefaultCellStyle.BackColor), r1);
                 StringFormat format = new StringFormat();
                 format.LineAlignment = StringAlignment.Center;
-                e.Graphics.DrawString(monthes[j / 2],
+                e.Graphics.DrawString(monthes[j],
                 this.dgvCostSearch.ColumnHeadersDefaultCellStyle.Font,
                 new SolidBrush(this.dgvCostSearch.ColumnHeadersDefaultCellStyle.ForeColor),
                 r1,
                 format);
                 j += 2;
             }
-           
-           
         }
         private void dgvCostSearch_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
+          
             if (e.RowIndex == -1 && e.ColumnIndex > -1)
             {
                 Rectangle r2 = e.CellBounds;
@@ -332,17 +338,14 @@ namespace Search
                 e.PaintContent(r2);
                 e.Handled = true;
             }
-
         }
-
         private void frmSearch_KeihiNO_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
         private void SearchStaff_KeyDown(object sender, KeyEventArgs e)
-        {
-            
+        { 
         }
     
         private void scStaffCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -365,7 +368,6 @@ namespace Search
                 }
             }
         }
-
         private void searchPayment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -386,6 +388,11 @@ namespace Search
                 }
 
             }
+        }
+        private void PaymentCD_Enter(object sender, EventArgs e)
+        {
+            PaymentCD.Value1 = "2";
+            PaymentCD.ChangeDate = bbl.GetDate();
         }
     }
 }

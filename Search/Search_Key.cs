@@ -20,7 +20,7 @@ namespace Search
 
         public string KeyCode = string.Empty;
         public string Char1 = string.Empty;
-        public string Char2 = string.Empty;
+        public string Char3 = string.Empty;
         public string ID = string.Empty;
         public string IDName = string.Empty;
 
@@ -108,7 +108,7 @@ namespace Search
             {
                 KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();
                 Char1 = GvKey.CurrentRow.Cells["colChar1"].Value.ToString();
-                Char2 = GvKey.CurrentRow.Cells["colChar2"].Value.ToString();
+                Char3 = GvKey.CurrentRow.Cells["colChar3"].Value.ToString();
                 this.Close();
             }
         }

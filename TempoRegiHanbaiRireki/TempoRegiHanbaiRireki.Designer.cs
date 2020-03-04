@@ -33,6 +33,57 @@
             this.btnUp = new CKM_Controls.CKM_Button();
             this.btnDown = new CKM_Controls.CKM_Button();
             this.pnlDetails = new System.Windows.Forms.Panel();
+            this.label75 = new System.Windows.Forms.Label();
+            this.lblDtColorSize10 = new System.Windows.Forms.Label();
+            this.lblJuchuuNO10 = new System.Windows.Forms.Label();
+            this.lblJANCD10 = new System.Windows.Forms.Label();
+            this.lblStoreName10 = new System.Windows.Forms.Label();
+            this.lblDtKin10 = new System.Windows.Forms.Label();
+            this.lblDtSSu10 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate10 = new System.Windows.Forms.Label();
+            this.lblDtSKUName10 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.lblDtGyo10 = new System.Windows.Forms.Label();
+            this.lblDtColorSize9 = new System.Windows.Forms.Label();
+            this.lblJuchuuNO9 = new System.Windows.Forms.Label();
+            this.lblJANCD9 = new System.Windows.Forms.Label();
+            this.lblStoreName9 = new System.Windows.Forms.Label();
+            this.lblDtKin9 = new System.Windows.Forms.Label();
+            this.lblDtSSu9 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate9 = new System.Windows.Forms.Label();
+            this.lblDtSKUName9 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.lblDtGyo9 = new System.Windows.Forms.Label();
+            this.lblDtColorSize8 = new System.Windows.Forms.Label();
+            this.lblJuchuuNO8 = new System.Windows.Forms.Label();
+            this.lblJANCD8 = new System.Windows.Forms.Label();
+            this.lblStoreName8 = new System.Windows.Forms.Label();
+            this.lblDtKin8 = new System.Windows.Forms.Label();
+            this.lblDtSSu8 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate8 = new System.Windows.Forms.Label();
+            this.lblDtSKUName8 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.lblDtGyo8 = new System.Windows.Forms.Label();
+            this.lblDtColorSize7 = new System.Windows.Forms.Label();
+            this.lblJuchuuNO7 = new System.Windows.Forms.Label();
+            this.lblJANCD7 = new System.Windows.Forms.Label();
+            this.lblStoreName7 = new System.Windows.Forms.Label();
+            this.lblDtKin7 = new System.Windows.Forms.Label();
+            this.lblDtSSu7 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate7 = new System.Windows.Forms.Label();
+            this.lblDtSKUName7 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lblDtGyo7 = new System.Windows.Forms.Label();
+            this.lblDtColorSize6 = new System.Windows.Forms.Label();
+            this.lblJuchuuNO6 = new System.Windows.Forms.Label();
+            this.lblJANCD6 = new System.Windows.Forms.Label();
+            this.lblStoreName6 = new System.Windows.Forms.Label();
+            this.lblDtKin6 = new System.Windows.Forms.Label();
+            this.lblDtSSu6 = new System.Windows.Forms.Label();
+            this.lblJuchuuDate6 = new System.Windows.Forms.Label();
+            this.lblDtSKUName6 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.lblDtGyo6 = new System.Windows.Forms.Label();
             this.lblDtColorSize5 = new System.Windows.Forms.Label();
             this.lblJuchuuNO5 = new System.Windows.Forms.Label();
             this.lblJANCD5 = new System.Windows.Forms.Label();
@@ -84,6 +135,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblDtGyo2 = new System.Windows.Forms.Label();
             this.lblDtGyo3 = new System.Windows.Forms.Label();
+            this.lblGyoSelect1 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect3 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect2 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect10 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect9 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect8 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect7 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect6 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect5 = new System.Windows.Forms.Panel();
+            this.lblGyoSelect4 = new System.Windows.Forms.Panel();
             this.ckmShop_Label15 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label16 = new CKM_Controls.CKMShop_Label();
             this.txtCustomerNo = new CKM_Controls.CKM_TextBox();
@@ -93,57 +154,7 @@
             this.ckmShop_Label8 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new System.Windows.Forms.Label();
             this.ckmShop_Label5 = new System.Windows.Forms.Label();
-            this.lblDtColorSize6 = new System.Windows.Forms.Label();
-            this.lblJuchuuNO6 = new System.Windows.Forms.Label();
-            this.lblJANCD6 = new System.Windows.Forms.Label();
-            this.lblStoreName6 = new System.Windows.Forms.Label();
-            this.lblDtKin6 = new System.Windows.Forms.Label();
-            this.lblDtSSu6 = new System.Windows.Forms.Label();
-            this.lblJuchuuDate6 = new System.Windows.Forms.Label();
-            this.lblDtSKUName6 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.lblDtGyo6 = new System.Windows.Forms.Label();
-            this.lblDtColorSize7 = new System.Windows.Forms.Label();
-            this.lblJuchuuNO7 = new System.Windows.Forms.Label();
-            this.lblJANCD7 = new System.Windows.Forms.Label();
-            this.lblStoreName7 = new System.Windows.Forms.Label();
-            this.lblDtKin7 = new System.Windows.Forms.Label();
-            this.lblDtSSu7 = new System.Windows.Forms.Label();
-            this.lblJuchuuDate7 = new System.Windows.Forms.Label();
-            this.lblDtSKUName7 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.lblDtGyo7 = new System.Windows.Forms.Label();
-            this.lblDtColorSize8 = new System.Windows.Forms.Label();
-            this.lblJuchuuNO8 = new System.Windows.Forms.Label();
-            this.lblJANCD8 = new System.Windows.Forms.Label();
-            this.lblStoreName8 = new System.Windows.Forms.Label();
-            this.lblDtKin8 = new System.Windows.Forms.Label();
-            this.lblDtSSu8 = new System.Windows.Forms.Label();
-            this.lblJuchuuDate8 = new System.Windows.Forms.Label();
-            this.lblDtSKUName8 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.lblDtGyo8 = new System.Windows.Forms.Label();
-            this.lblDtColorSize9 = new System.Windows.Forms.Label();
-            this.lblJuchuuNO9 = new System.Windows.Forms.Label();
-            this.lblJANCD9 = new System.Windows.Forms.Label();
-            this.lblStoreName9 = new System.Windows.Forms.Label();
-            this.lblDtKin9 = new System.Windows.Forms.Label();
-            this.lblDtSSu9 = new System.Windows.Forms.Label();
-            this.lblJuchuuDate9 = new System.Windows.Forms.Label();
-            this.lblDtSKUName9 = new System.Windows.Forms.Label();
-            this.label63 = new System.Windows.Forms.Label();
-            this.lblDtGyo9 = new System.Windows.Forms.Label();
-            this.lblDtColorSize10 = new System.Windows.Forms.Label();
-            this.lblJuchuuNO10 = new System.Windows.Forms.Label();
-            this.lblJANCD10 = new System.Windows.Forms.Label();
-            this.lblStoreName10 = new System.Windows.Forms.Label();
-            this.lblDtKin10 = new System.Windows.Forms.Label();
-            this.lblDtSSu10 = new System.Windows.Forms.Label();
-            this.lblJuchuuDate10 = new System.Windows.Forms.Label();
-            this.lblDtSKUName10 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.lblDtGyo10 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
+            this.btnCustomerNo = new CKM_Controls.CKM_Button();
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,8 +163,8 @@
             this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
             this.ckmShop_Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckmShop_Label1.Location = new System.Drawing.Point(19, 96);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
@@ -161,7 +172,7 @@
             this.ckmShop_Label1.TabIndex = 3;
             this.ckmShop_Label1.Text = "会員番号";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
-            this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ckmShop_Label12
             // 
@@ -322,10 +333,589 @@
             this.pnlDetails.Controls.Add(this.label1);
             this.pnlDetails.Controls.Add(this.lblDtGyo2);
             this.pnlDetails.Controls.Add(this.lblDtGyo3);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect1);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect3);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect2);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect10);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect9);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect8);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect7);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect6);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect5);
+            this.pnlDetails.Controls.Add(this.lblGyoSelect4);
             this.pnlDetails.Location = new System.Drawing.Point(50, 173);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(1033, 402);
             this.pnlDetails.TabIndex = 46;
+            // 
+            // label75
+            // 
+            this.label75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label75.Location = new System.Drawing.Point(915, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(1, 402);
+            this.label75.TabIndex = 148;
+            this.label75.Text = "label75";
+            // 
+            // lblDtColorSize10
+            // 
+            this.lblDtColorSize10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize10.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize10.Location = new System.Drawing.Point(751, 364);
+            this.lblDtColorSize10.Name = "lblDtColorSize10";
+            this.lblDtColorSize10.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize10.TabIndex = 147;
+            this.lblDtColorSize10.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblJuchuuNO10
+            // 
+            this.lblJuchuuNO10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO10.Location = new System.Drawing.Point(210, 381);
+            this.lblJuchuuNO10.Name = "lblJuchuuNO10";
+            this.lblJuchuuNO10.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO10.TabIndex = 146;
+            this.lblJuchuuNO10.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblJANCD10
+            // 
+            this.lblJANCD10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD10.Location = new System.Drawing.Point(210, 365);
+            this.lblJANCD10.Name = "lblJANCD10";
+            this.lblJANCD10.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD10.TabIndex = 145;
+            this.lblJANCD10.Text = "49XXXXXXXXX13";
+            this.lblJANCD10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblStoreName10
+            // 
+            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName10.Location = new System.Drawing.Point(39, 381);
+            this.lblStoreName10.Name = "lblStoreName10";
+            this.lblStoreName10.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName10.TabIndex = 144;
+            this.lblStoreName10.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtKin10
+            // 
+            this.lblDtKin10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin10.Location = new System.Drawing.Point(928, 381);
+            this.lblDtKin10.Name = "lblDtKin10";
+            this.lblDtKin10.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin10.TabIndex = 143;
+            this.lblDtKin10.Text = "\\99,999,999";
+            this.lblDtKin10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtSSu10
+            // 
+            this.lblDtSSu10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu10.Location = new System.Drawing.Point(928, 364);
+            this.lblDtSSu10.Name = "lblDtSSu10";
+            this.lblDtSSu10.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu10.TabIndex = 142;
+            this.lblDtSSu10.Text = "9,999";
+            this.lblDtSSu10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblJuchuuDate10
+            // 
+            this.lblJuchuuDate10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate10.Location = new System.Drawing.Point(39, 364);
+            this.lblJuchuuDate10.Name = "lblJuchuuDate10";
+            this.lblJuchuuDate10.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate10.TabIndex = 141;
+            this.lblJuchuuDate10.Text = "9999/99/99";
+            this.lblJuchuuDate10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtSKUName10
+            // 
+            this.lblDtSKUName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName10.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName10.Location = new System.Drawing.Point(343, 364);
+            this.lblDtSKUName10.Name = "lblDtSKUName10";
+            this.lblDtSKUName10.Size = new System.Drawing.Size(411, 35);
+            this.lblDtSKUName10.TabIndex = 140;
+            this.lblDtSKUName10.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // label73
+            // 
+            this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label73.Location = new System.Drawing.Point(-1, 360);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(1033, 1);
+            this.label73.TabIndex = 138;
+            this.label73.Text = "label73";
+            // 
+            // lblDtGyo10
+            // 
+            this.lblDtGyo10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo10.Location = new System.Drawing.Point(0, 360);
+            this.lblDtGyo10.Name = "lblDtGyo10";
+            this.lblDtGyo10.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo10.TabIndex = 139;
+            this.lblDtGyo10.Text = "10";
+            this.lblDtGyo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDtColorSize9
+            // 
+            this.lblDtColorSize9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize9.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize9.Location = new System.Drawing.Point(751, 324);
+            this.lblDtColorSize9.Name = "lblDtColorSize9";
+            this.lblDtColorSize9.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize9.TabIndex = 137;
+            this.lblDtColorSize9.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJuchuuNO9
+            // 
+            this.lblJuchuuNO9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO9.Location = new System.Drawing.Point(210, 341);
+            this.lblJuchuuNO9.Name = "lblJuchuuNO9";
+            this.lblJuchuuNO9.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO9.TabIndex = 136;
+            this.lblJuchuuNO9.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJANCD9
+            // 
+            this.lblJANCD9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD9.Location = new System.Drawing.Point(210, 325);
+            this.lblJANCD9.Name = "lblJANCD9";
+            this.lblJANCD9.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD9.TabIndex = 135;
+            this.lblJANCD9.Text = "49XXXXXXXXX13";
+            this.lblJANCD9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblStoreName9
+            // 
+            this.lblStoreName9.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName9.Location = new System.Drawing.Point(39, 341);
+            this.lblStoreName9.Name = "lblStoreName9";
+            this.lblStoreName9.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName9.TabIndex = 134;
+            this.lblStoreName9.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtKin9
+            // 
+            this.lblDtKin9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin9.Location = new System.Drawing.Point(928, 341);
+            this.lblDtKin9.Name = "lblDtKin9";
+            this.lblDtKin9.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin9.TabIndex = 133;
+            this.lblDtKin9.Text = "\\99,999,999";
+            this.lblDtKin9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtSSu9
+            // 
+            this.lblDtSSu9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu9.Location = new System.Drawing.Point(928, 324);
+            this.lblDtSSu9.Name = "lblDtSSu9";
+            this.lblDtSSu9.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu9.TabIndex = 132;
+            this.lblDtSSu9.Text = "9,999";
+            this.lblDtSSu9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJuchuuDate9
+            // 
+            this.lblJuchuuDate9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate9.Location = new System.Drawing.Point(39, 324);
+            this.lblJuchuuDate9.Name = "lblJuchuuDate9";
+            this.lblJuchuuDate9.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate9.TabIndex = 131;
+            this.lblJuchuuDate9.Text = "9999/99/99";
+            this.lblJuchuuDate9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtSKUName9
+            // 
+            this.lblDtSKUName9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName9.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName9.Location = new System.Drawing.Point(343, 324);
+            this.lblDtSKUName9.Name = "lblDtSKUName9";
+            this.lblDtSKUName9.Size = new System.Drawing.Size(411, 35);
+            this.lblDtSKUName9.TabIndex = 130;
+            this.lblDtSKUName9.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // label63
+            // 
+            this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label63.Location = new System.Drawing.Point(-1, 320);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(1033, 1);
+            this.label63.TabIndex = 128;
+            this.label63.Text = "label63";
+            // 
+            // lblDtGyo9
+            // 
+            this.lblDtGyo9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo9.Location = new System.Drawing.Point(0, 320);
+            this.lblDtGyo9.Name = "lblDtGyo9";
+            this.lblDtGyo9.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo9.TabIndex = 129;
+            this.lblDtGyo9.Text = "9";
+            this.lblDtGyo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDtColorSize8
+            // 
+            this.lblDtColorSize8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize8.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize8.Location = new System.Drawing.Point(751, 284);
+            this.lblDtColorSize8.Name = "lblDtColorSize8";
+            this.lblDtColorSize8.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize8.TabIndex = 127;
+            this.lblDtColorSize8.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJuchuuNO8
+            // 
+            this.lblJuchuuNO8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO8.Location = new System.Drawing.Point(210, 301);
+            this.lblJuchuuNO8.Name = "lblJuchuuNO8";
+            this.lblJuchuuNO8.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO8.TabIndex = 126;
+            this.lblJuchuuNO8.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJANCD8
+            // 
+            this.lblJANCD8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD8.Location = new System.Drawing.Point(210, 285);
+            this.lblJANCD8.Name = "lblJANCD8";
+            this.lblJANCD8.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD8.TabIndex = 125;
+            this.lblJANCD8.Text = "49XXXXXXXXX13";
+            this.lblJANCD8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblStoreName8
+            // 
+            this.lblStoreName8.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName8.Location = new System.Drawing.Point(39, 301);
+            this.lblStoreName8.Name = "lblStoreName8";
+            this.lblStoreName8.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName8.TabIndex = 124;
+            this.lblStoreName8.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtKin8
+            // 
+            this.lblDtKin8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin8.Location = new System.Drawing.Point(928, 301);
+            this.lblDtKin8.Name = "lblDtKin8";
+            this.lblDtKin8.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin8.TabIndex = 123;
+            this.lblDtKin8.Text = "\\99,999,999";
+            this.lblDtKin8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtSSu8
+            // 
+            this.lblDtSSu8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu8.Location = new System.Drawing.Point(928, 284);
+            this.lblDtSSu8.Name = "lblDtSSu8";
+            this.lblDtSSu8.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu8.TabIndex = 122;
+            this.lblDtSSu8.Text = "9,999";
+            this.lblDtSSu8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJuchuuDate8
+            // 
+            this.lblJuchuuDate8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate8.Location = new System.Drawing.Point(39, 284);
+            this.lblJuchuuDate8.Name = "lblJuchuuDate8";
+            this.lblJuchuuDate8.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate8.TabIndex = 121;
+            this.lblJuchuuDate8.Text = "9999/99/99";
+            this.lblJuchuuDate8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtSKUName8
+            // 
+            this.lblDtSKUName8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName8.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName8.Location = new System.Drawing.Point(343, 284);
+            this.lblDtSKUName8.Name = "lblDtSKUName8";
+            this.lblDtSKUName8.Size = new System.Drawing.Size(411, 35);
+            this.lblDtSKUName8.TabIndex = 120;
+            this.lblDtSKUName8.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // label53
+            // 
+            this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label53.Location = new System.Drawing.Point(-1, 280);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(1033, 1);
+            this.label53.TabIndex = 118;
+            this.label53.Text = "label53";
+            // 
+            // lblDtGyo8
+            // 
+            this.lblDtGyo8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo8.Location = new System.Drawing.Point(0, 280);
+            this.lblDtGyo8.Name = "lblDtGyo8";
+            this.lblDtGyo8.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo8.TabIndex = 119;
+            this.lblDtGyo8.Text = "5";
+            this.lblDtGyo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDtColorSize7
+            // 
+            this.lblDtColorSize7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize7.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize7.Location = new System.Drawing.Point(751, 244);
+            this.lblDtColorSize7.Name = "lblDtColorSize7";
+            this.lblDtColorSize7.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize7.TabIndex = 117;
+            this.lblDtColorSize7.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJuchuuNO7
+            // 
+            this.lblJuchuuNO7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO7.Location = new System.Drawing.Point(210, 261);
+            this.lblJuchuuNO7.Name = "lblJuchuuNO7";
+            this.lblJuchuuNO7.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO7.TabIndex = 116;
+            this.lblJuchuuNO7.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJANCD7
+            // 
+            this.lblJANCD7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD7.Location = new System.Drawing.Point(210, 245);
+            this.lblJANCD7.Name = "lblJANCD7";
+            this.lblJANCD7.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD7.TabIndex = 115;
+            this.lblJANCD7.Text = "49XXXXXXXXX13";
+            this.lblJANCD7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblStoreName7
+            // 
+            this.lblStoreName7.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName7.Location = new System.Drawing.Point(39, 261);
+            this.lblStoreName7.Name = "lblStoreName7";
+            this.lblStoreName7.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName7.TabIndex = 114;
+            this.lblStoreName7.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtKin7
+            // 
+            this.lblDtKin7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin7.Location = new System.Drawing.Point(928, 261);
+            this.lblDtKin7.Name = "lblDtKin7";
+            this.lblDtKin7.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin7.TabIndex = 113;
+            this.lblDtKin7.Text = "\\99,999,999";
+            this.lblDtKin7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtSSu7
+            // 
+            this.lblDtSSu7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu7.Location = new System.Drawing.Point(928, 244);
+            this.lblDtSSu7.Name = "lblDtSSu7";
+            this.lblDtSSu7.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu7.TabIndex = 112;
+            this.lblDtSSu7.Text = "9,999";
+            this.lblDtSSu7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJuchuuDate7
+            // 
+            this.lblJuchuuDate7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate7.Location = new System.Drawing.Point(39, 244);
+            this.lblJuchuuDate7.Name = "lblJuchuuDate7";
+            this.lblJuchuuDate7.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate7.TabIndex = 111;
+            this.lblJuchuuDate7.Text = "9999/99/99";
+            this.lblJuchuuDate7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtSKUName7
+            // 
+            this.lblDtSKUName7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName7.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName7.Location = new System.Drawing.Point(343, 244);
+            this.lblDtSKUName7.Name = "lblDtSKUName7";
+            this.lblDtSKUName7.Size = new System.Drawing.Size(411, 35);
+            this.lblDtSKUName7.TabIndex = 110;
+            this.lblDtSKUName7.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // label43
+            // 
+            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label43.Location = new System.Drawing.Point(-1, 240);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(1033, 1);
+            this.label43.TabIndex = 108;
+            this.label43.Text = "label43";
+            // 
+            // lblDtGyo7
+            // 
+            this.lblDtGyo7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo7.Location = new System.Drawing.Point(0, 240);
+            this.lblDtGyo7.Name = "lblDtGyo7";
+            this.lblDtGyo7.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo7.TabIndex = 109;
+            this.lblDtGyo7.Text = "7";
+            this.lblDtGyo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDtColorSize6
+            // 
+            this.lblDtColorSize6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize6.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize6.Location = new System.Drawing.Point(751, 204);
+            this.lblDtColorSize6.Name = "lblDtColorSize6";
+            this.lblDtColorSize6.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize6.TabIndex = 107;
+            this.lblDtColorSize6.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJuchuuNO6
+            // 
+            this.lblJuchuuNO6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO6.Location = new System.Drawing.Point(210, 221);
+            this.lblJuchuuNO6.Name = "lblJuchuuNO6";
+            this.lblJuchuuNO6.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO6.TabIndex = 106;
+            this.lblJuchuuNO6.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJANCD6
+            // 
+            this.lblJANCD6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD6.Location = new System.Drawing.Point(210, 205);
+            this.lblJANCD6.Name = "lblJANCD6";
+            this.lblJANCD6.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD6.TabIndex = 105;
+            this.lblJANCD6.Text = "49XXXXXXXXX13";
+            this.lblJANCD6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblStoreName6
+            // 
+            this.lblStoreName6.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName6.Location = new System.Drawing.Point(39, 221);
+            this.lblStoreName6.Name = "lblStoreName6";
+            this.lblStoreName6.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName6.TabIndex = 104;
+            this.lblStoreName6.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtKin6
+            // 
+            this.lblDtKin6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin6.Location = new System.Drawing.Point(928, 221);
+            this.lblDtKin6.Name = "lblDtKin6";
+            this.lblDtKin6.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin6.TabIndex = 103;
+            this.lblDtKin6.Text = "\\99,999,999";
+            this.lblDtKin6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtSSu6
+            // 
+            this.lblDtSSu6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu6.Location = new System.Drawing.Point(928, 204);
+            this.lblDtSSu6.Name = "lblDtSSu6";
+            this.lblDtSSu6.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu6.TabIndex = 102;
+            this.lblDtSSu6.Text = "9,999";
+            this.lblDtSSu6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJuchuuDate6
+            // 
+            this.lblJuchuuDate6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate6.Location = new System.Drawing.Point(39, 204);
+            this.lblJuchuuDate6.Name = "lblJuchuuDate6";
+            this.lblJuchuuDate6.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate6.TabIndex = 101;
+            this.lblJuchuuDate6.Text = "9999/99/99";
+            this.lblJuchuuDate6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtSKUName6
+            // 
+            this.lblDtSKUName6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName6.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName6.Location = new System.Drawing.Point(343, 204);
+            this.lblDtSKUName6.Name = "lblDtSKUName6";
+            this.lblDtSKUName6.Size = new System.Drawing.Size(411, 35);
+            this.lblDtSKUName6.TabIndex = 100;
+            this.lblDtSKUName6.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // label33
+            // 
+            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label33.Location = new System.Drawing.Point(-1, 200);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(1033, 1);
+            this.label33.TabIndex = 98;
+            this.label33.Text = "label33";
+            // 
+            // lblDtGyo6
+            // 
+            this.lblDtGyo6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo6.Location = new System.Drawing.Point(0, 200);
+            this.lblDtGyo6.Name = "lblDtGyo6";
+            this.lblDtGyo6.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo6.TabIndex = 99;
+            this.lblDtGyo6.Text = "6";
+            this.lblDtGyo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDtColorSize5
             // 
@@ -336,6 +926,7 @@
             this.lblDtColorSize5.Size = new System.Drawing.Size(165, 31);
             this.lblDtColorSize5.TabIndex = 97;
             this.lblDtColorSize5.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblJuchuuNO5
             // 
@@ -346,6 +937,7 @@
             this.lblJuchuuNO5.Size = new System.Drawing.Size(102, 16);
             this.lblJuchuuNO5.TabIndex = 96;
             this.lblJuchuuNO5.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblJANCD5
             // 
@@ -356,6 +948,7 @@
             this.lblJANCD5.Size = new System.Drawing.Size(116, 14);
             this.lblJANCD5.TabIndex = 95;
             this.lblJANCD5.Text = "49XXXXXXXXX13";
+            this.lblJANCD5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblStoreName5
             // 
@@ -367,6 +960,7 @@
             this.lblStoreName5.TabIndex = 94;
             this.lblStoreName5.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblDtKin5
             // 
@@ -378,6 +972,7 @@
             this.lblDtKin5.TabIndex = 93;
             this.lblDtKin5.Text = "\\99,999,999";
             this.lblDtKin5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblDtSSu5
             // 
@@ -389,6 +984,7 @@
             this.lblDtSSu5.TabIndex = 92;
             this.lblDtSSu5.Text = "9,999";
             this.lblDtSSu5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblJuchuuDate5
             // 
@@ -400,6 +996,7 @@
             this.lblJuchuuDate5.TabIndex = 91;
             this.lblJuchuuDate5.Text = "9999/99/99";
             this.lblJuchuuDate5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // lblDtSKUName5
             // 
@@ -407,9 +1004,10 @@
             this.lblDtSKUName5.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDtSKUName5.Location = new System.Drawing.Point(343, 164);
             this.lblDtSKUName5.Name = "lblDtSKUName5";
-            this.lblDtSKUName5.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName5.Size = new System.Drawing.Size(411, 35);
             this.lblDtSKUName5.TabIndex = 90;
             this.lblDtSKUName5.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
             // 
             // label23
             // 
@@ -440,6 +1038,7 @@
             this.lblDtColorSize4.Size = new System.Drawing.Size(165, 31);
             this.lblDtColorSize4.TabIndex = 87;
             this.lblDtColorSize4.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblJuchuuNO4
             // 
@@ -450,6 +1049,7 @@
             this.lblJuchuuNO4.Size = new System.Drawing.Size(102, 16);
             this.lblJuchuuNO4.TabIndex = 86;
             this.lblJuchuuNO4.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblJANCD4
             // 
@@ -460,6 +1060,7 @@
             this.lblJANCD4.Size = new System.Drawing.Size(116, 14);
             this.lblJANCD4.TabIndex = 85;
             this.lblJANCD4.Text = "49XXXXXXXXX13";
+            this.lblJANCD4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblStoreName4
             // 
@@ -471,6 +1072,7 @@
             this.lblStoreName4.TabIndex = 84;
             this.lblStoreName4.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblDtKin4
             // 
@@ -482,6 +1084,7 @@
             this.lblDtKin4.TabIndex = 83;
             this.lblDtKin4.Text = "\\99,999,999";
             this.lblDtKin4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblDtSSu4
             // 
@@ -493,6 +1096,7 @@
             this.lblDtSSu4.TabIndex = 82;
             this.lblDtSSu4.Text = "9,999";
             this.lblDtSSu4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblJuchuuDate4
             // 
@@ -504,6 +1108,7 @@
             this.lblJuchuuDate4.TabIndex = 81;
             this.lblJuchuuDate4.Text = "9999/99/99";
             this.lblJuchuuDate4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // lblDtSKUName4
             // 
@@ -511,9 +1116,10 @@
             this.lblDtSKUName4.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDtSKUName4.Location = new System.Drawing.Point(343, 124);
             this.lblDtSKUName4.Name = "lblDtSKUName4";
-            this.lblDtSKUName4.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName4.Size = new System.Drawing.Size(411, 35);
             this.lblDtSKUName4.TabIndex = 80;
             this.lblDtSKUName4.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // label10
             // 
@@ -544,6 +1150,7 @@
             this.lblJuchuuNO3.Size = new System.Drawing.Size(102, 16);
             this.lblJuchuuNO3.TabIndex = 77;
             this.lblJuchuuNO3.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblJANCD3
             // 
@@ -554,6 +1161,7 @@
             this.lblJANCD3.Size = new System.Drawing.Size(116, 14);
             this.lblJANCD3.TabIndex = 76;
             this.lblJANCD3.Text = "49XXXXXXXXX13";
+            this.lblJANCD3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblStoreName3
             // 
@@ -565,6 +1173,7 @@
             this.lblStoreName3.TabIndex = 75;
             this.lblStoreName3.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblJuchuuNO2
             // 
@@ -575,6 +1184,7 @@
             this.lblJuchuuNO2.Size = new System.Drawing.Size(102, 16);
             this.lblJuchuuNO2.TabIndex = 74;
             this.lblJuchuuNO2.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblJANCD2
             // 
@@ -585,6 +1195,7 @@
             this.lblJANCD2.Size = new System.Drawing.Size(116, 14);
             this.lblJANCD2.TabIndex = 73;
             this.lblJANCD2.Text = "49XXXXXXXXX13";
+            this.lblJANCD2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblStoreName2
             // 
@@ -596,6 +1207,7 @@
             this.lblStoreName2.TabIndex = 72;
             this.lblStoreName2.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblJuchuuNO1
             // 
@@ -606,6 +1218,7 @@
             this.lblJuchuuNO1.Size = new System.Drawing.Size(102, 16);
             this.lblJuchuuNO1.TabIndex = 71;
             this.lblJuchuuNO1.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblJANCD1
             // 
@@ -616,6 +1229,7 @@
             this.lblJANCD1.Size = new System.Drawing.Size(116, 14);
             this.lblJANCD1.TabIndex = 70;
             this.lblJANCD1.Text = "49XXXXXXXXX13";
+            this.lblJANCD1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblStoreName1
             // 
@@ -627,6 +1241,7 @@
             this.lblStoreName1.TabIndex = 69;
             this.lblStoreName1.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
             this.lblStoreName1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblDtKin3
             // 
@@ -638,6 +1253,7 @@
             this.lblDtKin3.TabIndex = 68;
             this.lblDtKin3.Text = "\\99,999,999";
             this.lblDtKin3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblDtSSu3
             // 
@@ -649,6 +1265,7 @@
             this.lblDtSSu3.TabIndex = 67;
             this.lblDtSSu3.Text = "9,999";
             this.lblDtSSu3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblJuchuuDate3
             // 
@@ -660,6 +1277,7 @@
             this.lblJuchuuDate3.TabIndex = 66;
             this.lblJuchuuDate3.Text = "9999/99/99";
             this.lblJuchuuDate3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblDtColorSize3
             // 
@@ -670,6 +1288,7 @@
             this.lblDtColorSize3.Size = new System.Drawing.Size(165, 31);
             this.lblDtColorSize3.TabIndex = 65;
             this.lblDtColorSize3.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblDtSKUName3
             // 
@@ -677,9 +1296,10 @@
             this.lblDtSKUName3.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDtSKUName3.Location = new System.Drawing.Point(344, 84);
             this.lblDtSKUName3.Name = "lblDtSKUName3";
-            this.lblDtSKUName3.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName3.Size = new System.Drawing.Size(411, 35);
             this.lblDtSKUName3.TabIndex = 64;
             this.lblDtSKUName3.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
             // 
             // lblDtKin2
             // 
@@ -691,6 +1311,7 @@
             this.lblDtKin2.TabIndex = 63;
             this.lblDtKin2.Text = "\\99,999,999";
             this.lblDtKin2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblDtSSu2
             // 
@@ -702,6 +1323,7 @@
             this.lblDtSSu2.TabIndex = 62;
             this.lblDtSSu2.Text = "9,999";
             this.lblDtSSu2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblJuchuuDate2
             // 
@@ -713,6 +1335,7 @@
             this.lblJuchuuDate2.TabIndex = 61;
             this.lblJuchuuDate2.Text = "9999/99/99";
             this.lblJuchuuDate2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblDtColorSize2
             // 
@@ -723,6 +1346,7 @@
             this.lblDtColorSize2.Size = new System.Drawing.Size(165, 31);
             this.lblDtColorSize2.TabIndex = 60;
             this.lblDtColorSize2.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // lblDtSKUName2
             // 
@@ -730,9 +1354,10 @@
             this.lblDtSKUName2.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDtSKUName2.Location = new System.Drawing.Point(344, 44);
             this.lblDtSKUName2.Name = "lblDtSKUName2";
-            this.lblDtSKUName2.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName2.Size = new System.Drawing.Size(411, 35);
             this.lblDtSKUName2.TabIndex = 59;
             this.lblDtSKUName2.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
             // 
             // label12
             // 
@@ -773,6 +1398,7 @@
             this.lblDtKin1.TabIndex = 53;
             this.lblDtKin1.Text = "\\99,999,999";
             this.lblDtKin1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblDtSSu1
             // 
@@ -784,6 +1410,7 @@
             this.lblDtSSu1.TabIndex = 52;
             this.lblDtSSu1.Text = "9,999";
             this.lblDtSSu1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblJuchuuDate1
             // 
@@ -795,6 +1422,7 @@
             this.lblJuchuuDate1.TabIndex = 51;
             this.lblJuchuuDate1.Text = "9999/99/99";
             this.lblJuchuuDate1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblDtColorSize1
             // 
@@ -805,6 +1433,7 @@
             this.lblDtColorSize1.Size = new System.Drawing.Size(165, 31);
             this.lblDtColorSize1.TabIndex = 50;
             this.lblDtColorSize1.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblDtSKUName1
             // 
@@ -812,9 +1441,10 @@
             this.lblDtSKUName1.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDtSKUName1.Location = new System.Drawing.Point(344, 4);
             this.lblDtSKUName1.Name = "lblDtSKUName1";
-            this.lblDtSKUName1.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName1.Size = new System.Drawing.Size(411, 35);
             this.lblDtSKUName1.TabIndex = 47;
             this.lblDtSKUName1.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // label2
             // 
@@ -855,6 +1485,86 @@
             this.lblDtGyo3.TabIndex = 56;
             this.lblDtGyo3.Text = "3";
             this.lblDtGyo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblGyoSelect1
+            // 
+            this.lblGyoSelect1.Location = new System.Drawing.Point(0, 0);
+            this.lblGyoSelect1.Name = "lblGyoSelect1";
+            this.lblGyoSelect1.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect1.TabIndex = 149;
+            this.lblGyoSelect1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
+            // 
+            // lblGyoSelect3
+            // 
+            this.lblGyoSelect3.Location = new System.Drawing.Point(0, 80);
+            this.lblGyoSelect3.Name = "lblGyoSelect3";
+            this.lblGyoSelect3.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect3.TabIndex = 151;
+            this.lblGyoSelect3.Click += new System.EventHandler(this.lblGyoSelect3_Click);
+            // 
+            // lblGyoSelect2
+            // 
+            this.lblGyoSelect2.Location = new System.Drawing.Point(0, 40);
+            this.lblGyoSelect2.Name = "lblGyoSelect2";
+            this.lblGyoSelect2.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect2.TabIndex = 150;
+            this.lblGyoSelect2.Click += new System.EventHandler(this.lblGyoSelect2_Click);
+            // 
+            // lblGyoSelect10
+            // 
+            this.lblGyoSelect10.Location = new System.Drawing.Point(0, 360);
+            this.lblGyoSelect10.Name = "lblGyoSelect10";
+            this.lblGyoSelect10.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect10.TabIndex = 158;
+            this.lblGyoSelect10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblGyoSelect9
+            // 
+            this.lblGyoSelect9.Location = new System.Drawing.Point(0, 320);
+            this.lblGyoSelect9.Name = "lblGyoSelect9";
+            this.lblGyoSelect9.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect9.TabIndex = 157;
+            this.lblGyoSelect9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblGyoSelect8
+            // 
+            this.lblGyoSelect8.Location = new System.Drawing.Point(0, 280);
+            this.lblGyoSelect8.Name = "lblGyoSelect8";
+            this.lblGyoSelect8.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect8.TabIndex = 156;
+            this.lblGyoSelect8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblGyoSelect7
+            // 
+            this.lblGyoSelect7.Location = new System.Drawing.Point(0, 240);
+            this.lblGyoSelect7.Name = "lblGyoSelect7";
+            this.lblGyoSelect7.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect7.TabIndex = 155;
+            this.lblGyoSelect7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblGyoSelect6
+            // 
+            this.lblGyoSelect6.Location = new System.Drawing.Point(0, 200);
+            this.lblGyoSelect6.Name = "lblGyoSelect6";
+            this.lblGyoSelect6.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect6.TabIndex = 154;
+            this.lblGyoSelect6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblGyoSelect5
+            // 
+            this.lblGyoSelect5.Location = new System.Drawing.Point(0, 160);
+            this.lblGyoSelect5.Name = "lblGyoSelect5";
+            this.lblGyoSelect5.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect5.TabIndex = 153;
+            this.lblGyoSelect5.Click += new System.EventHandler(this.lblGyoSelect5_Click);
+            // 
+            // lblGyoSelect4
+            // 
+            this.lblGyoSelect4.Location = new System.Drawing.Point(0, 120);
+            this.lblGyoSelect4.Name = "lblGyoSelect4";
+            this.lblGyoSelect4.Size = new System.Drawing.Size(1031, 40);
+            this.lblGyoSelect4.TabIndex = 152;
+            this.lblGyoSelect4.Click += new System.EventHandler(this.lblGyoSelect4_Click);
             // 
             // ckmShop_Label15
             // 
@@ -941,10 +1651,10 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnShow.Location = new System.Drawing.Point(1110, 94);
+            this.btnShow.Location = new System.Drawing.Point(1110, 138);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(112, 32);
+            this.btnShow.Size = new System.Drawing.Size(137, 32);
             this.btnShow.TabIndex = 1;
             this.btnShow.Text = "照会";
             this.btnShow.UseVisualStyleBackColor = false;
@@ -995,542 +1705,32 @@
             this.ckmShop_Label5.AutoSize = true;
             this.ckmShop_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.ckmShop_Label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.ckmShop_Label5.ForeColor = System.Drawing.Color.RoyalBlue;
             this.ckmShop_Label5.Location = new System.Drawing.Point(317, 586);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(264, 16);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(179, 16);
             this.ckmShop_Label5.TabIndex = 76;
-            this.ckmShop_Label5.Text = "出荷可能・未出荷(引当済)の明細";
+            this.ckmShop_Label5.Text = "出荷済(売上済)の明細";
             this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblDtColorSize6
-            // 
-            this.lblDtColorSize6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize6.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize6.Location = new System.Drawing.Point(751, 204);
-            this.lblDtColorSize6.Name = "lblDtColorSize6";
-            this.lblDtColorSize6.Size = new System.Drawing.Size(165, 31);
-            this.lblDtColorSize6.TabIndex = 107;
-            this.lblDtColorSize6.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            // 
-            // lblJuchuuNO6
-            // 
-            this.lblJuchuuNO6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO6.Location = new System.Drawing.Point(210, 221);
-            this.lblJuchuuNO6.Name = "lblJuchuuNO6";
-            this.lblJuchuuNO6.Size = new System.Drawing.Size(102, 16);
-            this.lblJuchuuNO6.TabIndex = 106;
-            this.lblJuchuuNO6.Text = "XXXXXXXXXX";
-            // 
-            // lblJANCD6
-            // 
-            this.lblJANCD6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD6.Location = new System.Drawing.Point(210, 205);
-            this.lblJANCD6.Name = "lblJANCD6";
-            this.lblJANCD6.Size = new System.Drawing.Size(116, 14);
-            this.lblJANCD6.TabIndex = 105;
-            this.lblJANCD6.Text = "49XXXXXXXXX13";
-            // 
-            // lblStoreName6
-            // 
-            this.lblStoreName6.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName6.Location = new System.Drawing.Point(39, 221);
-            this.lblStoreName6.Name = "lblStoreName6";
-            this.lblStoreName6.Size = new System.Drawing.Size(151, 16);
-            this.lblStoreName6.TabIndex = 104;
-            this.lblStoreName6.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtKin6
-            // 
-            this.lblDtKin6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin6.Location = new System.Drawing.Point(928, 221);
-            this.lblDtKin6.Name = "lblDtKin6";
-            this.lblDtKin6.Size = new System.Drawing.Size(96, 14);
-            this.lblDtKin6.TabIndex = 103;
-            this.lblDtKin6.Text = "\\99,999,999";
-            this.lblDtKin6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblDtSSu6
-            // 
-            this.lblDtSSu6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu6.Location = new System.Drawing.Point(928, 204);
-            this.lblDtSSu6.Name = "lblDtSSu6";
-            this.lblDtSSu6.Size = new System.Drawing.Size(96, 14);
-            this.lblDtSSu6.TabIndex = 102;
-            this.lblDtSSu6.Text = "9,999";
-            this.lblDtSSu6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblJuchuuDate6
-            // 
-            this.lblJuchuuDate6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate6.Location = new System.Drawing.Point(39, 204);
-            this.lblJuchuuDate6.Name = "lblJuchuuDate6";
-            this.lblJuchuuDate6.Size = new System.Drawing.Size(96, 14);
-            this.lblJuchuuDate6.TabIndex = 101;
-            this.lblJuchuuDate6.Text = "9999/99/99";
-            this.lblJuchuuDate6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtSKUName6
-            // 
-            this.lblDtSKUName6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName6.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName6.Location = new System.Drawing.Point(343, 204);
-            this.lblDtSKUName6.Name = "lblDtSKUName6";
-            this.lblDtSKUName6.Size = new System.Drawing.Size(411, 36);
-            this.lblDtSKUName6.TabIndex = 100;
-            this.lblDtSKUName6.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            // 
-            // label33
-            // 
-            this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label33.Location = new System.Drawing.Point(-1, 200);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(1033, 1);
-            this.label33.TabIndex = 98;
-            this.label33.Text = "label33";
-            // 
-            // lblDtGyo6
-            // 
-            this.lblDtGyo6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo6.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo6.Location = new System.Drawing.Point(0, 200);
-            this.lblDtGyo6.Name = "lblDtGyo6";
-            this.lblDtGyo6.Size = new System.Drawing.Size(33, 40);
-            this.lblDtGyo6.TabIndex = 99;
-            this.lblDtGyo6.Text = "6";
-            this.lblDtGyo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize7
-            // 
-            this.lblDtColorSize7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize7.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize7.Location = new System.Drawing.Point(751, 244);
-            this.lblDtColorSize7.Name = "lblDtColorSize7";
-            this.lblDtColorSize7.Size = new System.Drawing.Size(165, 31);
-            this.lblDtColorSize7.TabIndex = 117;
-            this.lblDtColorSize7.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            // 
-            // lblJuchuuNO7
-            // 
-            this.lblJuchuuNO7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO7.Location = new System.Drawing.Point(210, 261);
-            this.lblJuchuuNO7.Name = "lblJuchuuNO7";
-            this.lblJuchuuNO7.Size = new System.Drawing.Size(102, 16);
-            this.lblJuchuuNO7.TabIndex = 116;
-            this.lblJuchuuNO7.Text = "XXXXXXXXXX";
-            // 
-            // lblJANCD7
-            // 
-            this.lblJANCD7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD7.Location = new System.Drawing.Point(210, 245);
-            this.lblJANCD7.Name = "lblJANCD7";
-            this.lblJANCD7.Size = new System.Drawing.Size(116, 14);
-            this.lblJANCD7.TabIndex = 115;
-            this.lblJANCD7.Text = "49XXXXXXXXX13";
-            // 
-            // lblStoreName7
-            // 
-            this.lblStoreName7.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName7.Location = new System.Drawing.Point(39, 261);
-            this.lblStoreName7.Name = "lblStoreName7";
-            this.lblStoreName7.Size = new System.Drawing.Size(151, 16);
-            this.lblStoreName7.TabIndex = 114;
-            this.lblStoreName7.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtKin7
-            // 
-            this.lblDtKin7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin7.Location = new System.Drawing.Point(928, 261);
-            this.lblDtKin7.Name = "lblDtKin7";
-            this.lblDtKin7.Size = new System.Drawing.Size(96, 14);
-            this.lblDtKin7.TabIndex = 113;
-            this.lblDtKin7.Text = "\\99,999,999";
-            this.lblDtKin7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblDtSSu7
-            // 
-            this.lblDtSSu7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu7.Location = new System.Drawing.Point(928, 244);
-            this.lblDtSSu7.Name = "lblDtSSu7";
-            this.lblDtSSu7.Size = new System.Drawing.Size(96, 14);
-            this.lblDtSSu7.TabIndex = 112;
-            this.lblDtSSu7.Text = "9,999";
-            this.lblDtSSu7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblJuchuuDate7
-            // 
-            this.lblJuchuuDate7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate7.Location = new System.Drawing.Point(39, 244);
-            this.lblJuchuuDate7.Name = "lblJuchuuDate7";
-            this.lblJuchuuDate7.Size = new System.Drawing.Size(96, 14);
-            this.lblJuchuuDate7.TabIndex = 111;
-            this.lblJuchuuDate7.Text = "9999/99/99";
-            this.lblJuchuuDate7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtSKUName7
-            // 
-            this.lblDtSKUName7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName7.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName7.Location = new System.Drawing.Point(343, 244);
-            this.lblDtSKUName7.Name = "lblDtSKUName7";
-            this.lblDtSKUName7.Size = new System.Drawing.Size(411, 36);
-            this.lblDtSKUName7.TabIndex = 110;
-            this.lblDtSKUName7.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            // 
-            // label43
-            // 
-            this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label43.Location = new System.Drawing.Point(-1, 240);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(1033, 1);
-            this.label43.TabIndex = 108;
-            this.label43.Text = "label43";
-            // 
-            // lblDtGyo7
-            // 
-            this.lblDtGyo7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo7.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo7.Location = new System.Drawing.Point(0, 240);
-            this.lblDtGyo7.Name = "lblDtGyo7";
-            this.lblDtGyo7.Size = new System.Drawing.Size(33, 40);
-            this.lblDtGyo7.TabIndex = 109;
-            this.lblDtGyo7.Text = "7";
-            this.lblDtGyo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize8
-            // 
-            this.lblDtColorSize8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize8.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize8.Location = new System.Drawing.Point(751, 284);
-            this.lblDtColorSize8.Name = "lblDtColorSize8";
-            this.lblDtColorSize8.Size = new System.Drawing.Size(165, 31);
-            this.lblDtColorSize8.TabIndex = 127;
-            this.lblDtColorSize8.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            // 
-            // lblJuchuuNO8
-            // 
-            this.lblJuchuuNO8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO8.Location = new System.Drawing.Point(210, 301);
-            this.lblJuchuuNO8.Name = "lblJuchuuNO8";
-            this.lblJuchuuNO8.Size = new System.Drawing.Size(102, 16);
-            this.lblJuchuuNO8.TabIndex = 126;
-            this.lblJuchuuNO8.Text = "XXXXXXXXXX";
-            // 
-            // lblJANCD8
-            // 
-            this.lblJANCD8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD8.Location = new System.Drawing.Point(210, 285);
-            this.lblJANCD8.Name = "lblJANCD8";
-            this.lblJANCD8.Size = new System.Drawing.Size(116, 14);
-            this.lblJANCD8.TabIndex = 125;
-            this.lblJANCD8.Text = "49XXXXXXXXX13";
-            // 
-            // lblStoreName8
-            // 
-            this.lblStoreName8.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName8.Location = new System.Drawing.Point(39, 301);
-            this.lblStoreName8.Name = "lblStoreName8";
-            this.lblStoreName8.Size = new System.Drawing.Size(151, 16);
-            this.lblStoreName8.TabIndex = 124;
-            this.lblStoreName8.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtKin8
-            // 
-            this.lblDtKin8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin8.Location = new System.Drawing.Point(928, 301);
-            this.lblDtKin8.Name = "lblDtKin8";
-            this.lblDtKin8.Size = new System.Drawing.Size(96, 14);
-            this.lblDtKin8.TabIndex = 123;
-            this.lblDtKin8.Text = "\\99,999,999";
-            this.lblDtKin8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblDtSSu8
-            // 
-            this.lblDtSSu8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu8.Location = new System.Drawing.Point(928, 284);
-            this.lblDtSSu8.Name = "lblDtSSu8";
-            this.lblDtSSu8.Size = new System.Drawing.Size(96, 14);
-            this.lblDtSSu8.TabIndex = 122;
-            this.lblDtSSu8.Text = "9,999";
-            this.lblDtSSu8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblJuchuuDate8
-            // 
-            this.lblJuchuuDate8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate8.Location = new System.Drawing.Point(39, 284);
-            this.lblJuchuuDate8.Name = "lblJuchuuDate8";
-            this.lblJuchuuDate8.Size = new System.Drawing.Size(96, 14);
-            this.lblJuchuuDate8.TabIndex = 121;
-            this.lblJuchuuDate8.Text = "9999/99/99";
-            this.lblJuchuuDate8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtSKUName8
-            // 
-            this.lblDtSKUName8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName8.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName8.Location = new System.Drawing.Point(343, 284);
-            this.lblDtSKUName8.Name = "lblDtSKUName8";
-            this.lblDtSKUName8.Size = new System.Drawing.Size(411, 36);
-            this.lblDtSKUName8.TabIndex = 120;
-            this.lblDtSKUName8.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            // 
-            // label53
-            // 
-            this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label53.Location = new System.Drawing.Point(-1, 280);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(1033, 1);
-            this.label53.TabIndex = 118;
-            this.label53.Text = "label53";
-            // 
-            // lblDtGyo8
-            // 
-            this.lblDtGyo8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo8.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo8.Location = new System.Drawing.Point(0, 280);
-            this.lblDtGyo8.Name = "lblDtGyo8";
-            this.lblDtGyo8.Size = new System.Drawing.Size(33, 40);
-            this.lblDtGyo8.TabIndex = 119;
-            this.lblDtGyo8.Text = "5";
-            this.lblDtGyo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize9
-            // 
-            this.lblDtColorSize9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize9.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize9.Location = new System.Drawing.Point(751, 324);
-            this.lblDtColorSize9.Name = "lblDtColorSize9";
-            this.lblDtColorSize9.Size = new System.Drawing.Size(165, 31);
-            this.lblDtColorSize9.TabIndex = 137;
-            this.lblDtColorSize9.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            // 
-            // lblJuchuuNO9
-            // 
-            this.lblJuchuuNO9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO9.Location = new System.Drawing.Point(210, 341);
-            this.lblJuchuuNO9.Name = "lblJuchuuNO9";
-            this.lblJuchuuNO9.Size = new System.Drawing.Size(102, 16);
-            this.lblJuchuuNO9.TabIndex = 136;
-            this.lblJuchuuNO9.Text = "XXXXXXXXXX";
-            // 
-            // lblJANCD9
-            // 
-            this.lblJANCD9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD9.Location = new System.Drawing.Point(210, 325);
-            this.lblJANCD9.Name = "lblJANCD9";
-            this.lblJANCD9.Size = new System.Drawing.Size(116, 14);
-            this.lblJANCD9.TabIndex = 135;
-            this.lblJANCD9.Text = "49XXXXXXXXX13";
-            // 
-            // lblStoreName9
-            // 
-            this.lblStoreName9.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName9.Location = new System.Drawing.Point(39, 341);
-            this.lblStoreName9.Name = "lblStoreName9";
-            this.lblStoreName9.Size = new System.Drawing.Size(151, 16);
-            this.lblStoreName9.TabIndex = 134;
-            this.lblStoreName9.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtKin9
-            // 
-            this.lblDtKin9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin9.Location = new System.Drawing.Point(928, 341);
-            this.lblDtKin9.Name = "lblDtKin9";
-            this.lblDtKin9.Size = new System.Drawing.Size(96, 14);
-            this.lblDtKin9.TabIndex = 133;
-            this.lblDtKin9.Text = "\\99,999,999";
-            this.lblDtKin9.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblDtSSu9
-            // 
-            this.lblDtSSu9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu9.Location = new System.Drawing.Point(928, 324);
-            this.lblDtSSu9.Name = "lblDtSSu9";
-            this.lblDtSSu9.Size = new System.Drawing.Size(96, 14);
-            this.lblDtSSu9.TabIndex = 132;
-            this.lblDtSSu9.Text = "9,999";
-            this.lblDtSSu9.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblJuchuuDate9
-            // 
-            this.lblJuchuuDate9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate9.Location = new System.Drawing.Point(39, 324);
-            this.lblJuchuuDate9.Name = "lblJuchuuDate9";
-            this.lblJuchuuDate9.Size = new System.Drawing.Size(96, 14);
-            this.lblJuchuuDate9.TabIndex = 131;
-            this.lblJuchuuDate9.Text = "9999/99/99";
-            this.lblJuchuuDate9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtSKUName9
-            // 
-            this.lblDtSKUName9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName9.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName9.Location = new System.Drawing.Point(343, 324);
-            this.lblDtSKUName9.Name = "lblDtSKUName9";
-            this.lblDtSKUName9.Size = new System.Drawing.Size(411, 36);
-            this.lblDtSKUName9.TabIndex = 130;
-            this.lblDtSKUName9.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            // 
-            // label63
-            // 
-            this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label63.Location = new System.Drawing.Point(-1, 320);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(1033, 1);
-            this.label63.TabIndex = 128;
-            this.label63.Text = "label63";
-            // 
-            // lblDtGyo9
-            // 
-            this.lblDtGyo9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo9.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo9.Location = new System.Drawing.Point(0, 320);
-            this.lblDtGyo9.Name = "lblDtGyo9";
-            this.lblDtGyo9.Size = new System.Drawing.Size(33, 40);
-            this.lblDtGyo9.TabIndex = 129;
-            this.lblDtGyo9.Text = "9";
-            this.lblDtGyo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize10
-            // 
-            this.lblDtColorSize10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize10.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize10.Location = new System.Drawing.Point(751, 364);
-            this.lblDtColorSize10.Name = "lblDtColorSize10";
-            this.lblDtColorSize10.Size = new System.Drawing.Size(165, 31);
-            this.lblDtColorSize10.TabIndex = 147;
-            this.lblDtColorSize10.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            // 
-            // lblJuchuuNO10
-            // 
-            this.lblJuchuuNO10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO10.Location = new System.Drawing.Point(210, 381);
-            this.lblJuchuuNO10.Name = "lblJuchuuNO10";
-            this.lblJuchuuNO10.Size = new System.Drawing.Size(102, 16);
-            this.lblJuchuuNO10.TabIndex = 146;
-            this.lblJuchuuNO10.Text = "XXXXXXXXXX";
-            // 
-            // lblJANCD10
-            // 
-            this.lblJANCD10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD10.Location = new System.Drawing.Point(210, 365);
-            this.lblJANCD10.Name = "lblJANCD10";
-            this.lblJANCD10.Size = new System.Drawing.Size(116, 14);
-            this.lblJANCD10.TabIndex = 145;
-            this.lblJANCD10.Text = "49XXXXXXXXX13";
-            // 
-            // lblStoreName10
-            // 
-            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName10.Location = new System.Drawing.Point(39, 381);
-            this.lblStoreName10.Name = "lblStoreName10";
-            this.lblStoreName10.Size = new System.Drawing.Size(151, 16);
-            this.lblStoreName10.TabIndex = 144;
-            this.lblStoreName10.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtKin10
-            // 
-            this.lblDtKin10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin10.Location = new System.Drawing.Point(928, 381);
-            this.lblDtKin10.Name = "lblDtKin10";
-            this.lblDtKin10.Size = new System.Drawing.Size(96, 14);
-            this.lblDtKin10.TabIndex = 143;
-            this.lblDtKin10.Text = "\\99,999,999";
-            this.lblDtKin10.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblDtSSu10
-            // 
-            this.lblDtSSu10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu10.Location = new System.Drawing.Point(928, 364);
-            this.lblDtSSu10.Name = "lblDtSSu10";
-            this.lblDtSSu10.Size = new System.Drawing.Size(96, 14);
-            this.lblDtSSu10.TabIndex = 142;
-            this.lblDtSSu10.Text = "9,999";
-            this.lblDtSSu10.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblJuchuuDate10
-            // 
-            this.lblJuchuuDate10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate10.Location = new System.Drawing.Point(39, 364);
-            this.lblJuchuuDate10.Name = "lblJuchuuDate10";
-            this.lblJuchuuDate10.Size = new System.Drawing.Size(96, 14);
-            this.lblJuchuuDate10.TabIndex = 141;
-            this.lblJuchuuDate10.Text = "9999/99/99";
-            this.lblJuchuuDate10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblDtSKUName10
-            // 
-            this.lblDtSKUName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName10.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName10.Location = new System.Drawing.Point(343, 364);
-            this.lblDtSKUName10.Name = "lblDtSKUName10";
-            this.lblDtSKUName10.Size = new System.Drawing.Size(411, 36);
-            this.lblDtSKUName10.TabIndex = 140;
-            this.lblDtSKUName10.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            // 
-            // label73
-            // 
-            this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label73.Location = new System.Drawing.Point(-1, 360);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(1033, 1);
-            this.label73.TabIndex = 138;
-            this.label73.Text = "label73";
-            // 
-            // lblDtGyo10
-            // 
-            this.lblDtGyo10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo10.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo10.Location = new System.Drawing.Point(0, 360);
-            this.lblDtGyo10.Name = "lblDtGyo10";
-            this.lblDtGyo10.Size = new System.Drawing.Size(33, 40);
-            this.lblDtGyo10.TabIndex = 139;
-            this.lblDtGyo10.Text = "10";
-            this.lblDtGyo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label75
-            // 
-            this.label75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label75.Location = new System.Drawing.Point(915, 0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(1, 402);
-            this.label75.TabIndex = 148;
-            this.label75.Text = "label75";
+            // btnCustomerNo
+            // 
+            this.btnCustomerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
+            this.btnCustomerNo.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
+            this.btnCustomerNo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomerNo.DefaultBtnSize = false;
+            this.btnCustomerNo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCustomerNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.btnCustomerNo.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
+            this.btnCustomerNo.Location = new System.Drawing.Point(1110, 89);
+            this.btnCustomerNo.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCustomerNo.Name = "btnCustomerNo";
+            this.btnCustomerNo.Size = new System.Drawing.Size(137, 32);
+            this.btnCustomerNo.TabIndex = 2;
+            this.btnCustomerNo.Text = "会員検索";
+            this.btnCustomerNo.UseVisualStyleBackColor = false;
+            this.btnCustomerNo.Click += new System.EventHandler(this.btnCustomerNo_Click);
             // 
             // TempoRegiHanbaiRireki
             // 
@@ -1538,6 +1738,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "出荷・売上へ";
             this.ClientSize = new System.Drawing.Size(1370, 691);
+            this.Controls.Add(this.btnCustomerNo);
             this.Controls.Add(this.ckmShop_Label5);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.ckmShop_Label8);
@@ -1569,6 +1770,7 @@
             this.Controls.SetChildIndex(this.ckmShop_Label8, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label5, 0);
+            this.Controls.SetChildIndex(this.btnCustomerNo, 0);
             this.pnlDetails.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1693,6 +1895,17 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label lblDtGyo6;
         private System.Windows.Forms.Label label75;
+        private CKM_Controls.CKM_Button btnCustomerNo;
+        private System.Windows.Forms.Panel lblGyoSelect1;
+        private System.Windows.Forms.Panel lblGyoSelect2;
+        private System.Windows.Forms.Panel lblGyoSelect3;
+        private System.Windows.Forms.Panel lblGyoSelect10;
+        private System.Windows.Forms.Panel lblGyoSelect9;
+        private System.Windows.Forms.Panel lblGyoSelect8;
+        private System.Windows.Forms.Panel lblGyoSelect7;
+        private System.Windows.Forms.Panel lblGyoSelect6;
+        private System.Windows.Forms.Panel lblGyoSelect5;
+        private System.Windows.Forms.Panel lblGyoSelect4;
     }
 }
 
