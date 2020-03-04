@@ -57,10 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmSpecialWaribiki.cs" />
-    <Compile Include="FrmSpecialWaribiki.Designer.cs">
-      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +68,12 @@
     </Compile>
     <Compile Include="FrmOther.Designer.cs">
       <DependentUpon>FrmOther.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSpecialWaribiki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSpecialWaribiki.Designer.cs">
+      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWaribikiritsu.cs">
       <SubType>Form</SubType>
@@ -99,14 +101,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmSpecialWaribiki.resx">
-      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmSelect.resx">
       <DependentUpon>FrmSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOther.resx">
       <DependentUpon>FrmOther.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSpecialWaribiki.resx">
+      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
