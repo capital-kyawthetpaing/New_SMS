@@ -139,7 +139,17 @@ namespace DL
 
             return SelectData(dic, "M_Multipurpose_SelectIDName");
         }
+        public DataTable M_MultiPorpose_SaleModeSelect(M_MultiPorpose_Entity mme)
+        {
+            string sp = "M_MultiPorpose_SaleModeSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ID", new ValuePair { value1 = SqlDbType.Int, value2 = mme.ID } },
+            };
 
+            return SelectData(dic, sp);
+
+        }
 
     }
 }

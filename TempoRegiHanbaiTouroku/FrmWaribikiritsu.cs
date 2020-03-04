@@ -24,6 +24,7 @@ namespace TempoRegiHanbaiTouroku
         public string SKUName = "";
         public string Teika = "";
         public short HaspoMode;
+        public int SaleExcludedFlg;
 
         TempoRegiHanbaiTouroku_BL tprg_Hanbai_Bl = new TempoRegiHanbaiTouroku_BL();
         DataTable dtJuchu;
@@ -146,6 +147,26 @@ namespace TempoRegiHanbaiTouroku
         {
             Save();
             btnSelect = 2;
+
+            //M_SKU.SaleExcludedFlg	＝0なら	
+            if(SaleExcludedFlg.Equals(0))
+            {
+                int SaleRate = 0;
+                //特別割引率選択
+                FrmSpecialWaribiki frm = new FrmSpecialWaribiki();
+                frm.ShowDialog();
+                switch (frm.btnSelect)
+                {
+                    case 1:
+                        SaleRate = 20;
+                        break;
+                    case 2:
+                        SaleRate = 10;
+                        break;
+                }
+                lblTanka.Text =bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set(lblTanka.Text) * (100 - SaleRate) / 100)); //	←１円未満は四捨五入
+
+            }
             //単価を元の画面に反映する
             Tanka = lblTanka.Text;
             this.Close();

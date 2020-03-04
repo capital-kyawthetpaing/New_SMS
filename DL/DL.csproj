@@ -111,6 +111,7 @@
     <Compile Include="M_Authorizations_DL.cs" />
     <Compile Include="M_BankShiten_DL.cs" />
     <Compile Include="M_Bank_DL.cs" />
+    <Compile Include="M_Brand_DL.cs" />
     <Compile Include="M_Calendar_DL.cs" />
     <Compile Include="M_Carrier_DL.cs" />
     <Compile Include="M_Control_DL.cs" />

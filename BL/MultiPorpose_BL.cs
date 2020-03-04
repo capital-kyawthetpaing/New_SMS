@@ -21,6 +21,7 @@ namespace BL
         public static string ID_JyuchuChance = "216";
         public static string ID_TagName = "219";
         public static string ID_Identification = "220";
+        public static string ID_HaspoSaleDate = "224";
         public string ID_Store = "302";                 //受注API起動
         public static string ID_YearTerm = "307";       //年度(20)
         public static string ID_Season = "308";         //シーズン(10)
@@ -142,6 +143,16 @@ namespace BL
         public DataTable M_MultiPorpose_SelectByChar1(M_MultiPorpose_Entity mse)
         {
             return mmdl.M_MultiPorpose_SelectByChar1(mse);
+        }
+
+        public bool M_MultiPorpose_SaleModeSelect(M_MultiPorpose_Entity mme)
+        {
+            mme.ID = MultiPorpose_BL.ID_HaspoSaleDate;
+            DataTable dt = mmdl.M_MultiPorpose_SaleModeSelect(mme);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
     }
 }

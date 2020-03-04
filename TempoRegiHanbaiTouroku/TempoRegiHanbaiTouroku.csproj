@@ -11,14 +11,10 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -61,6 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmSpecialWaribiki.cs" />
+    <Compile Include="FrmSpecialWaribiki.Designer.cs">
+      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmSpecialWaribiki.resx">
+      <DependentUpon>FrmSpecialWaribiki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSelect.resx">
       <DependentUpon>FrmSelect.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,7 +158,7 @@
     </ProjectReference>
     <ProjectReference Include="..\TempoRegiKaiinTouroku_ShopForm\TempoRegiKaiinTouroku_ShopForm.csproj">
       <Project>{e33c4a94-6e1a-4182-a3aa-80b1382cd290}</Project>
-      <Name>TempoRegiHanbaiTouroku_ShopForm</Name>
+      <Name>TempoRegiKaiinTouroku_ShopForm</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
