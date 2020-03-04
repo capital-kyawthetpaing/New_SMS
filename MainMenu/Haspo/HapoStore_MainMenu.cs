@@ -11,6 +11,7 @@ using Entity;
 using BL;
 using CKM_Controls;
 using System.Diagnostics;
+using DL;
 
 namespace MainMenu.Haspo
 {
@@ -69,7 +70,7 @@ namespace MainMenu.Haspo
         }
         private void BindButtonName()
         {
-            menu = mbl.getMenuNo(Staff_CD);
+            var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
             var _result = menu.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
             ButtonText(panel_left, _result, 1);
         }

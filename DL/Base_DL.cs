@@ -92,18 +92,25 @@ namespace DL
 
         public DataTable SelectData(Dictionary<string, ValuePair> dic, string sp)
         {
+           
             DataTable dt = new DataTable();
-            command = new SqlCommand(sp, GetConnection())
+            try
             {
-                CommandType = CommandType.StoredProcedure,
-            };
-            foreach (KeyValuePair<string, ValuePair> pair in dic)
-            {
-                ValuePair vp = pair.Value;
-                AddParam(command, pair.Key, vp.value1, vp.value2);
+                command = new SqlCommand(sp, GetConnection())
+                {
+                    CommandType = CommandType.StoredProcedure,
+                };
+                foreach (KeyValuePair<string, ValuePair> pair in dic)
+                {
+                    ValuePair vp = pair.Value;
+                    AddParam(command, pair.Key, vp.value1, vp.value2);
+                }
+                adapter = new SqlDataAdapter(command);
+                adapter.Fill(dt);
             }
-            adapter = new SqlDataAdapter(command);
-            adapter.Fill(dt);
+            catch(Exception ex) {
+                var msg = ex.Message;
+            }
 
             return dt;
         }

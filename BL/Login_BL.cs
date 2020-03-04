@@ -174,6 +174,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "MMLocal").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "MMLocal").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "MMLocal";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "CapitalMainMenuLogin")
             {
@@ -182,6 +183,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "CapitalMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoMainMenuLogin")
             {
@@ -190,6 +192,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "HaspoMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "HaspoMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "HaspoMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin")
             {
@@ -198,6 +201,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalStoreMenuLogin";
+                Base_DL.iniEntity.StoreType = "1";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
             {
@@ -206,6 +210,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "HaspoStoreMenuLogin";
+                Base_DL.iniEntity.StoreType = "1";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "TennicMainMenuLogin")
             {
@@ -214,6 +219,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "TennicMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             //Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "ServerName");
             //Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "DatabaseName");
@@ -225,6 +231,9 @@ namespace BL
             //暗号化されたパスワードを複合化
 
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
+
+
+
         }
         public string GetInformationOfIniFileByKey(string key)
         {
