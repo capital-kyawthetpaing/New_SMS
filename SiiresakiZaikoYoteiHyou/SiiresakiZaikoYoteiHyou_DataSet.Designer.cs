@@ -321,6 +321,8 @@ namespace SiiresakiZaikoYoteiHyou {
             
             private global::System.Data.DataColumn columnVendorName;
             
+            private global::System.Data.DataColumn columnVendorCD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public D_MonthlyPurchase_tbDataTable() {
@@ -524,6 +526,14 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VendorCDColumn {
+                get {
+                    return this.columnVendorCD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -580,7 +590,8 @@ namespace SiiresakiZaikoYoteiHyou {
                         string ThisMonthReturnsPlanA, 
                         string ThisMonthPlanQuantity, 
                         string ThisMonthPlanAmount, 
-                        string VendorName) {
+                        string VendorName, 
+                        string VendorCD) {
                 D_MonthlyPurchase_tbRow rowD_MonthlyPurchase_tbRow = ((D_MonthlyPurchase_tbRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LastMonthQuantity,
@@ -603,7 +614,8 @@ namespace SiiresakiZaikoYoteiHyou {
                         ThisMonthReturnsPlanA,
                         ThisMonthPlanQuantity,
                         ThisMonthPlanAmount,
-                        VendorName};
+                        VendorName,
+                        VendorCD};
                 rowD_MonthlyPurchase_tbRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowD_MonthlyPurchase_tbRow);
                 return rowD_MonthlyPurchase_tbRow;
@@ -647,6 +659,7 @@ namespace SiiresakiZaikoYoteiHyou {
                 this.columnThisMonthPlanQuantity = base.Columns["ThisMonthPlanQuantity"];
                 this.columnThisMonthPlanAmount = base.Columns["ThisMonthPlanAmount"];
                 this.columnVendorName = base.Columns["VendorName"];
+                this.columnVendorCD = base.Columns["VendorCD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -694,6 +707,8 @@ namespace SiiresakiZaikoYoteiHyou {
                 base.Columns.Add(this.columnThisMonthPlanAmount);
                 this.columnVendorName = new global::System.Data.DataColumn("VendorName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVendorName);
+                this.columnVendorCD = new global::System.Data.DataColumn("VendorCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVendorCD);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1192,6 +1207,22 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string VendorCD {
+                get {
+                    try {
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.VendorCDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VendorCD\' in table \'D_MonthlyPurchase_tb\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableD_MonthlyPurchase_tb.VendorCDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLastMonthQuantityNull() {
                 return this.IsNull(this.tableD_MonthlyPurchase_tb.LastMonthQuantityColumn);
             }
@@ -1440,6 +1471,18 @@ namespace SiiresakiZaikoYoteiHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetVendorNameNull() {
                 this[this.tableD_MonthlyPurchase_tb.VendorNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVendorCDNull() {
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.VendorCDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVendorCDNull() {
+                this[this.tableD_MonthlyPurchase_tb.VendorCDColumn] = global::System.Convert.DBNull;
             }
         }
         
