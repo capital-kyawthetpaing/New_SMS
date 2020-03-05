@@ -56,10 +56,12 @@ namespace MainMenu
         {
             loginbl = new Login_BL();
             loginbl = new Login_BL();
-            PopupNotifier pop = new PopupNotifier();
-            pop.TitleText = "New Updates are Available Now!";
-            pop.ContentText = "Press F11 to download new features";
-            pop.Popup();
+            //PopupNotifier pop = new PopupNotifier();
+            //pop.TitleText = "New Updates are Available Now!";
+            //pop.ContentText = "Press F11 to download new features";
+            //pop.Popup();
+          //  pop.
+
         }
 
         private void MainmenuLogin_KeyDown(object sender, KeyEventArgs e)
