@@ -45,6 +45,7 @@ namespace MainMenu
                 Login_BL.Islocalized = false;
             }
 
+
             else {
                 Login_BL.Islocalized = true;
             }
