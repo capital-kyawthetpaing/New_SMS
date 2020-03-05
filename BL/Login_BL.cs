@@ -17,10 +17,11 @@ namespace BL
         /// </summary>
         /// 
         private const string IniFileName = "CKM.ini";
-
+      //  public static bool Islocalized =false;
         M_Staff_DL msdl;
         M_Store_DL mstoredl;
-
+        public const bool isd = false;
+        public static bool Islocalized = false;
         /// <summary>
         /// constructor
         /// </summary>
@@ -142,7 +143,10 @@ namespace BL
             // 実行モジュールと同一フォルダのファイルを取得
             string filePath = "";
             //System.Diagnostics.Debug 
-            if (Debugger.IsAttached)
+
+
+
+            if (Debugger.IsAttached || Islocalized)
             {
                 System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
@@ -151,6 +155,8 @@ namespace BL
             {
                 filePath = @"C:\\SMS\\AppData\\CKM.ini";
             }
+           // var f = Islocalized;
+            //if(System.Deployment.Internal.)
             if (System.IO.File.Exists(filePath))
             {
                 this.GetInformationOfIniFile(filePath);

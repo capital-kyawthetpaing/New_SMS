@@ -149,16 +149,11 @@ namespace MainMenu
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                 string filePath = "";
                 //System.Diagnostics.Debug 
-                if (Debugger.IsAttached)
+                if (Debugger.IsAttached || Login_BL.Islocalized)
                 {
                     System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                     filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                 }
-
-
-
-
-
                 else
                 {
                     filePath = @"C:\\SMS\\AppData";
