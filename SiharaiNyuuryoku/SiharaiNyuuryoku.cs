@@ -279,6 +279,7 @@ namespace SiharaiNyuuryoku
                             dt4Detail.Columns.Remove("PayConfirmGaku");
                             dt4Detail.Columns.Remove("UnpaidAmount1");
                             dt4Detail.Columns.Remove("UnpaidAmount2");
+                            dt4Detail.Columns.Remove("PayPlanNO");
 
                            
                             dt4.Columns.Remove("VendorName");
@@ -869,7 +870,8 @@ namespace SiharaiNyuuryoku
                 ProgramID = InProgramID,
                 PC = InPcID,
                 dtTemp1 = dtpayplan,
-                dtTemp2 = dt4Detail
+                dtTemp2 = dt4Detail,
+                dtTemp3 = dt4
             };
             return dpe;
         }

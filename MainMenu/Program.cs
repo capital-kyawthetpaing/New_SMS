@@ -27,6 +27,14 @@ namespace MainMenu
 
        static Form LoginFormName()
         {
+            //if (System.Diagnostics.Debugger.IsAttached)
+            //{
+            //    MessageBox.Show("Debugged");
+            //}
+            //else
+
+            //    MessageBox.Show("exeDiresrt");
+            
             Form pgname =null;
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
@@ -34,6 +42,12 @@ namespace MainMenu
                 {
                     FTPData.Download("CKM.ini", "ftp://202.223.48.145/", "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
                 }
+                Login_BL.Islocalized = false;
+            }
+
+
+            else {
+                Login_BL.Islocalized = true;
             }
             if (lbl.ReadConfig())
             {

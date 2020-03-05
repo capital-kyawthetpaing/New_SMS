@@ -105,6 +105,7 @@ namespace DL
                 { "@PayDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayDate } },
                 { "@Xml1", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.xml1 } },
                 { "@Xml2", new ValuePair{value1 = SqlDbType.Xml, value2 = dpe.xml2 } },
+                { "@Xml3", new ValuePair{value1 = SqlDbType.Xml,value2 = dpe.xml3} },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Operator } },
