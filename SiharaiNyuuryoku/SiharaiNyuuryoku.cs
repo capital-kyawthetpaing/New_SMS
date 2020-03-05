@@ -868,7 +868,8 @@ namespace SiharaiNyuuryoku
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
                 PC = InPcID,
-                dtTemp1 = dtpayplan
+                dtTemp1 = dtpayplan,
+                dtTemp2 = dt4Detail
             };
             return dpe;
         }

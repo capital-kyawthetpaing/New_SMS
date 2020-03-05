@@ -104,7 +104,7 @@
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
             this.txtTargetDateTo.Length = 10;
-            this.txtTargetDateTo.Location = new System.Drawing.Point(298, 19);
+            this.txtTargetDateTo.Location = new System.Drawing.Point(290, 19);
             this.txtTargetDateTo.MaxLength = 10;
             this.txtTargetDateTo.MoveNext = true;
             this.txtTargetDateTo.Name = "txtTargetDateTo";
@@ -123,7 +123,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(248, 23);
+            this.ckM_Label2.Location = new System.Drawing.Point(244, 25);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label2.TabIndex = 2;

@@ -163,7 +163,6 @@ namespace SiiresakiZaikoYoteiHyou
                                 {
                                     var msg = ex.Message;
                                 }
-                                //out log before print
                                 if (DResult == DialogResult.Yes)
                                 {
                                     vr.CrystalReportViewer1.ShowPrintButton = true;

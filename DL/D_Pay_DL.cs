@@ -103,7 +103,8 @@ namespace DL
             {
                 { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StaffCD } },
                 { "@PayDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayDate } },
-                { "@LocationXml", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.LocationXml } },
+                { "@Xml1", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.xml1 } },
+                { "@Xml2", new ValuePair{value1 = SqlDbType.Xml, value2 = dpe.xml2 } },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Operator } },
