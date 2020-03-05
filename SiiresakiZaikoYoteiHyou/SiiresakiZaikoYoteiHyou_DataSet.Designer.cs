@@ -24,7 +24,7 @@ namespace SiiresakiZaikoYoteiHyou {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class SiiresakiZaikoYoteiHyou_DataSet : global::System.Data.DataSet {
         
-        private VendorNameDataTable tableVendorName;
+        private D_MonthlyPurchase_tbDataTable tableD_MonthlyPurchase_tb;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace SiiresakiZaikoYoteiHyou {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["VendorName"] != null)) {
-                    base.Tables.Add(new VendorNameDataTable(ds.Tables["VendorName"]));
+                if ((ds.Tables["D_MonthlyPurchase_tb"] != null)) {
+                    base.Tables.Add(new D_MonthlyPurchase_tbDataTable(ds.Tables["D_MonthlyPurchase_tb"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace SiiresakiZaikoYoteiHyou {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public VendorNameDataTable VendorName {
+        public D_MonthlyPurchase_tbDataTable D_MonthlyPurchase_tb {
             get {
-                return this.tableVendorName;
+                return this.tableD_MonthlyPurchase_tb;
             }
         }
         
@@ -152,8 +152,8 @@ namespace SiiresakiZaikoYoteiHyou {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["VendorName"] != null)) {
-                    base.Tables.Add(new VendorNameDataTable(ds.Tables["VendorName"]));
+                if ((ds.Tables["D_MonthlyPurchase_tb"] != null)) {
+                    base.Tables.Add(new D_MonthlyPurchase_tbDataTable(ds.Tables["D_MonthlyPurchase_tb"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace SiiresakiZaikoYoteiHyou {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableVendorName = ((VendorNameDataTable)(base.Tables["VendorName"]));
+            this.tableD_MonthlyPurchase_tb = ((D_MonthlyPurchase_tbDataTable)(base.Tables["D_MonthlyPurchase_tb"]));
             if ((initTable == true)) {
-                if ((this.tableVendorName != null)) {
-                    this.tableVendorName.InitVars();
+                if ((this.tableD_MonthlyPurchase_tb != null)) {
+                    this.tableD_MonthlyPurchase_tb.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace SiiresakiZaikoYoteiHyou {
             this.Namespace = "http://tempuri.org/SiiresakiZaikoYoteiHyou_DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableVendorName = new VendorNameDataTable();
-            base.Tables.Add(this.tableVendorName);
+            this.tableD_MonthlyPurchase_tb = new D_MonthlyPurchase_tbDataTable();
+            base.Tables.Add(this.tableD_MonthlyPurchase_tb);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeVendorName() {
+        private bool ShouldSerializeD_MonthlyPurchase_tb() {
             return false;
         }
         
@@ -270,14 +270,14 @@ namespace SiiresakiZaikoYoteiHyou {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void VendorNameRowChangeEventHandler(object sender, VendorNameRowChangeEvent e);
+        public delegate void D_MonthlyPurchase_tbRowChangeEventHandler(object sender, D_MonthlyPurchase_tbRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class VendorNameDataTable : global::System.Data.TypedTableBase<VendorNameRow> {
+        public partial class D_MonthlyPurchase_tbDataTable : global::System.Data.TypedTableBase<D_MonthlyPurchase_tbRow> {
             
             private global::System.Data.DataColumn columnLastMonthQuantity;
             
@@ -319,10 +319,12 @@ namespace SiiresakiZaikoYoteiHyou {
             
             private global::System.Data.DataColumn columnThisMonthPlanAmount;
             
+            private global::System.Data.DataColumn columnVendorName;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameDataTable() {
-                this.TableName = "VendorName";
+            public D_MonthlyPurchase_tbDataTable() {
+                this.TableName = "D_MonthlyPurchase_tb";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -330,7 +332,7 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal VendorNameDataTable(global::System.Data.DataTable table) {
+            internal D_MonthlyPurchase_tbDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -347,7 +349,7 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected VendorNameDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected D_MonthlyPurchase_tbDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -514,6 +516,14 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VendorNameColumn {
+                get {
+                    return this.columnVendorName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -523,33 +533,33 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameRow this[int index] {
+            public D_MonthlyPurchase_tbRow this[int index] {
                 get {
-                    return ((VendorNameRow)(this.Rows[index]));
+                    return ((D_MonthlyPurchase_tbRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event VendorNameRowChangeEventHandler VendorNameRowChanging;
+            public event D_MonthlyPurchase_tbRowChangeEventHandler D_MonthlyPurchase_tbRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event VendorNameRowChangeEventHandler VendorNameRowChanged;
+            public event D_MonthlyPurchase_tbRowChangeEventHandler D_MonthlyPurchase_tbRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event VendorNameRowChangeEventHandler VendorNameRowDeleting;
+            public event D_MonthlyPurchase_tbRowChangeEventHandler D_MonthlyPurchase_tbRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event VendorNameRowChangeEventHandler VendorNameRowDeleted;
+            public event D_MonthlyPurchase_tbRowChangeEventHandler D_MonthlyPurchase_tbRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddVendorNameRow(VendorNameRow row) {
+            public void AddD_MonthlyPurchase_tbRow(D_MonthlyPurchase_tbRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameRow AddVendorNameRow(
+            public D_MonthlyPurchase_tbRow AddD_MonthlyPurchase_tbRow(
                         string LastMonthQuantity, 
                         string LastMonthAmount, 
                         string ThisMonthPurchaseQ, 
@@ -569,8 +579,9 @@ namespace SiiresakiZaikoYoteiHyou {
                         string ThisMonthReturnsPlanQ, 
                         string ThisMonthReturnsPlanA, 
                         string ThisMonthPlanQuantity, 
-                        string ThisMonthPlanAmount) {
-                VendorNameRow rowVendorNameRow = ((VendorNameRow)(this.NewRow()));
+                        string ThisMonthPlanAmount, 
+                        string VendorName) {
+                D_MonthlyPurchase_tbRow rowD_MonthlyPurchase_tbRow = ((D_MonthlyPurchase_tbRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         LastMonthQuantity,
                         LastMonthAmount,
@@ -591,16 +602,17 @@ namespace SiiresakiZaikoYoteiHyou {
                         ThisMonthReturnsPlanQ,
                         ThisMonthReturnsPlanA,
                         ThisMonthPlanQuantity,
-                        ThisMonthPlanAmount};
-                rowVendorNameRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVendorNameRow);
-                return rowVendorNameRow;
+                        ThisMonthPlanAmount,
+                        VendorName};
+                rowD_MonthlyPurchase_tbRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowD_MonthlyPurchase_tbRow);
+                return rowD_MonthlyPurchase_tbRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                VendorNameDataTable cln = ((VendorNameDataTable)(base.Clone()));
+                D_MonthlyPurchase_tbDataTable cln = ((D_MonthlyPurchase_tbDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -608,7 +620,7 @@ namespace SiiresakiZaikoYoteiHyou {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new VendorNameDataTable();
+                return new D_MonthlyPurchase_tbDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -634,6 +646,7 @@ namespace SiiresakiZaikoYoteiHyou {
                 this.columnThisMonthReturnsPlanA = base.Columns["ThisMonthReturnsPlanA"];
                 this.columnThisMonthPlanQuantity = base.Columns["ThisMonthPlanQuantity"];
                 this.columnThisMonthPlanAmount = base.Columns["ThisMonthPlanAmount"];
+                this.columnVendorName = base.Columns["VendorName"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -679,32 +692,34 @@ namespace SiiresakiZaikoYoteiHyou {
                 base.Columns.Add(this.columnThisMonthPlanQuantity);
                 this.columnThisMonthPlanAmount = new global::System.Data.DataColumn("ThisMonthPlanAmount", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThisMonthPlanAmount);
+                this.columnVendorName = new global::System.Data.DataColumn("VendorName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVendorName);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameRow NewVendorNameRow() {
-                return ((VendorNameRow)(this.NewRow()));
+            public D_MonthlyPurchase_tbRow NewD_MonthlyPurchase_tbRow() {
+                return ((D_MonthlyPurchase_tbRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new VendorNameRow(builder);
+                return new D_MonthlyPurchase_tbRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(VendorNameRow);
+                return typeof(D_MonthlyPurchase_tbRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.VendorNameRowChanged != null)) {
-                    this.VendorNameRowChanged(this, new VendorNameRowChangeEvent(((VendorNameRow)(e.Row)), e.Action));
+                if ((this.D_MonthlyPurchase_tbRowChanged != null)) {
+                    this.D_MonthlyPurchase_tbRowChanged(this, new D_MonthlyPurchase_tbRowChangeEvent(((D_MonthlyPurchase_tbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -712,8 +727,8 @@ namespace SiiresakiZaikoYoteiHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.VendorNameRowChanging != null)) {
-                    this.VendorNameRowChanging(this, new VendorNameRowChangeEvent(((VendorNameRow)(e.Row)), e.Action));
+                if ((this.D_MonthlyPurchase_tbRowChanging != null)) {
+                    this.D_MonthlyPurchase_tbRowChanging(this, new D_MonthlyPurchase_tbRowChangeEvent(((D_MonthlyPurchase_tbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -721,8 +736,8 @@ namespace SiiresakiZaikoYoteiHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.VendorNameRowDeleted != null)) {
-                    this.VendorNameRowDeleted(this, new VendorNameRowChangeEvent(((VendorNameRow)(e.Row)), e.Action));
+                if ((this.D_MonthlyPurchase_tbRowDeleted != null)) {
+                    this.D_MonthlyPurchase_tbRowDeleted(this, new D_MonthlyPurchase_tbRowChangeEvent(((D_MonthlyPurchase_tbRow)(e.Row)), e.Action));
                 }
             }
             
@@ -730,14 +745,14 @@ namespace SiiresakiZaikoYoteiHyou {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.VendorNameRowDeleting != null)) {
-                    this.VendorNameRowDeleting(this, new VendorNameRowChangeEvent(((VendorNameRow)(e.Row)), e.Action));
+                if ((this.D_MonthlyPurchase_tbRowDeleting != null)) {
+                    this.D_MonthlyPurchase_tbRowDeleting(this, new D_MonthlyPurchase_tbRowChangeEvent(((D_MonthlyPurchase_tbRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveVendorNameRow(VendorNameRow row) {
+            public void RemoveD_MonthlyPurchase_tbRow(D_MonthlyPurchase_tbRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -764,7 +779,7 @@ namespace SiiresakiZaikoYoteiHyou {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "VendorNameDataTable";
+                attribute2.FixedValue = "D_MonthlyPurchase_tbDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -808,15 +823,15 @@ namespace SiiresakiZaikoYoteiHyou {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class VendorNameRow : global::System.Data.DataRow {
+        public partial class D_MonthlyPurchase_tbRow : global::System.Data.DataRow {
             
-            private VendorNameDataTable tableVendorName;
+            private D_MonthlyPurchase_tbDataTable tableD_MonthlyPurchase_tb;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal VendorNameRow(global::System.Data.DataRowBuilder rb) : 
+            internal D_MonthlyPurchase_tbRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableVendorName = ((VendorNameDataTable)(this.Table));
+                this.tableD_MonthlyPurchase_tb = ((D_MonthlyPurchase_tbDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -824,14 +839,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string LastMonthQuantity {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.LastMonthQuantityColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.LastMonthQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastMonthQuantity\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastMonthQuantity\' in table \'D_MonthlyPurchase_tb\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.LastMonthQuantityColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.LastMonthQuantityColumn] = value;
                 }
             }
             
@@ -840,14 +856,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string LastMonthAmount {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.LastMonthAmountColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.LastMonthAmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastMonthAmount\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'LastMonthAmount\' in table \'D_MonthlyPurchase_tb\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.LastMonthAmountColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.LastMonthAmountColumn] = value;
                 }
             }
             
@@ -856,14 +873,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPurchaseQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPurchaseQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchaseQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchaseQ\' in table \'D_MonthlyPurchase_tb\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPurchaseQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseQColumn] = value;
                 }
             }
             
@@ -872,14 +890,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPurchaseA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPurchaseAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchaseA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchaseA\' in table \'D_MonthlyPurchase_tb\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPurchaseAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseAColumn] = value;
                 }
             }
             
@@ -888,14 +907,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthCustPurchaseQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthCustPurchaseQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustPurchaseQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustPurchaseQ\' in table \'D_MonthlyPurchase_tb\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthCustPurchaseQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseQColumn] = value;
                 }
             }
             
@@ -904,14 +924,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthCustPurchaseA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthCustPurchaseAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustPurchaseA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustPurchaseA\' in table \'D_MonthlyPurchase_tb\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthCustPurchaseAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseAColumn] = value;
                 }
             }
             
@@ -920,14 +941,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPurchasePlanQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPurchasePlanQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchasePlanQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchasePlanQ\' in table \'D_MonthlyPurchase_tb\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPurchasePlanQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanQColumn] = value;
                 }
             }
             
@@ -936,14 +958,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPurchasePlanA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPurchasePlanAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchasePlanA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPurchasePlanA\' in table \'D_MonthlyPurchase_tb\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPurchasePlanAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanAColumn] = value;
                 }
             }
             
@@ -952,14 +975,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthSalesQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthSalesQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesQ\' in table \'D_MonthlyPurchase_tb\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthSalesQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesQColumn] = value;
                 }
             }
             
@@ -968,14 +992,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthSalesA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthSalesAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesA\' in table \'D_MonthlyPurchase_tb\' is DBNull." +
+                                "", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthSalesAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesAColumn] = value;
                 }
             }
             
@@ -984,14 +1009,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthCustSalesQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthCustSalesQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustSalesQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustSalesQ\' in table \'D_MonthlyPurchase_tb\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthCustSalesQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesQColumn] = value;
                 }
             }
             
@@ -1000,14 +1026,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthCustSalesA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthCustSalesAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustSalesA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthCustSalesA\' in table \'D_MonthlyPurchase_tb\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthCustSalesAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesAColumn] = value;
                 }
             }
             
@@ -1016,14 +1043,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthSalesPlanQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthSalesPlanQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesPlanQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesPlanQ\' in table \'D_MonthlyPurchase_tb\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthSalesPlanQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanQColumn] = value;
                 }
             }
             
@@ -1032,14 +1060,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthSalesPlanA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthSalesPlanAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesPlanA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthSalesPlanA\' in table \'D_MonthlyPurchase_tb\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthSalesPlanAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanAColumn] = value;
                 }
             }
             
@@ -1048,14 +1077,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthReturnQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthReturnQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnQ\' in table \'D_MonthlyPurchase_tb\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthReturnQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn] = value;
                 }
             }
             
@@ -1064,14 +1094,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthReturnA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthReturnAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnA\' in table \'D_MonthlyPurchase_tb\' is DBNull" +
+                                ".", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthReturnAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn] = value;
                 }
             }
             
@@ -1080,14 +1111,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthReturnsPlanQ {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthReturnsPlanQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsPlanQ\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsPlanQ\' in table \'D_MonthlyPurchase_tb\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthReturnsPlanQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanQColumn] = value;
                 }
             }
             
@@ -1096,14 +1128,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthReturnsPlanA {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthReturnsPlanAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsPlanA\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsPlanA\' in table \'D_MonthlyPurchase_tb\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthReturnsPlanAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanAColumn] = value;
                 }
             }
             
@@ -1112,14 +1145,15 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPlanQuantity {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPlanQuantityColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanQuantityColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPlanQuantity\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPlanQuantity\' in table \'D_MonthlyPurchase_tb\' is D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPlanQuantityColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanQuantityColumn] = value;
                 }
             }
             
@@ -1128,255 +1162,284 @@ namespace SiiresakiZaikoYoteiHyou {
             public string ThisMonthPlanAmount {
                 get {
                     try {
-                        return ((string)(this[this.tableVendorName.ThisMonthPlanAmountColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanAmountColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPlanAmount\' in table \'VendorName\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthPlanAmount\' in table \'D_MonthlyPurchase_tb\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableVendorName.ThisMonthPlanAmountColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string VendorName {
+                get {
+                    try {
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.VendorNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'VendorName\' in table \'D_MonthlyPurchase_tb\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableD_MonthlyPurchase_tb.VendorNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLastMonthQuantityNull() {
-                return this.IsNull(this.tableVendorName.LastMonthQuantityColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.LastMonthQuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLastMonthQuantityNull() {
-                this[this.tableVendorName.LastMonthQuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.LastMonthQuantityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLastMonthAmountNull() {
-                return this.IsNull(this.tableVendorName.LastMonthAmountColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.LastMonthAmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetLastMonthAmountNull() {
-                this[this.tableVendorName.LastMonthAmountColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.LastMonthAmountColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPurchaseQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPurchaseQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPurchaseQNull() {
-                this[this.tableVendorName.ThisMonthPurchaseQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPurchaseANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPurchaseAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPurchaseANull() {
-                this[this.tableVendorName.ThisMonthPurchaseAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchaseAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthCustPurchaseQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthCustPurchaseQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthCustPurchaseQNull() {
-                this[this.tableVendorName.ThisMonthCustPurchaseQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthCustPurchaseANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthCustPurchaseAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthCustPurchaseANull() {
-                this[this.tableVendorName.ThisMonthCustPurchaseAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthCustPurchaseAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPurchasePlanQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPurchasePlanQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPurchasePlanQNull() {
-                this[this.tableVendorName.ThisMonthPurchasePlanQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPurchasePlanANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPurchasePlanAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPurchasePlanANull() {
-                this[this.tableVendorName.ThisMonthPurchasePlanAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPurchasePlanAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthSalesQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthSalesQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthSalesQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthSalesQNull() {
-                this[this.tableVendorName.ThisMonthSalesQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthSalesANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthSalesAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthSalesAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthSalesANull() {
-                this[this.tableVendorName.ThisMonthSalesAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthCustSalesQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthCustSalesQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthCustSalesQNull() {
-                this[this.tableVendorName.ThisMonthCustSalesQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthCustSalesANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthCustSalesAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthCustSalesANull() {
-                this[this.tableVendorName.ThisMonthCustSalesAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthCustSalesAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthSalesPlanQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthSalesPlanQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthSalesPlanQNull() {
-                this[this.tableVendorName.ThisMonthSalesPlanQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthSalesPlanANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthSalesPlanAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthSalesPlanANull() {
-                this[this.tableVendorName.ThisMonthSalesPlanAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthSalesPlanAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthReturnQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthReturnQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthReturnQNull() {
-                this[this.tableVendorName.ThisMonthReturnQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthReturnANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthReturnAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthReturnANull() {
-                this[this.tableVendorName.ThisMonthReturnAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthReturnsPlanQNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthReturnsPlanQColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthReturnsPlanQNull() {
-                this[this.tableVendorName.ThisMonthReturnsPlanQColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthReturnsPlanANull() {
-                return this.IsNull(this.tableVendorName.ThisMonthReturnsPlanAColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthReturnsPlanANull() {
-                this[this.tableVendorName.ThisMonthReturnsPlanAColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsPlanAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPlanQuantityNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPlanQuantityColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPlanQuantityColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPlanQuantityNull() {
-                this[this.tableVendorName.ThisMonthPlanQuantityColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanQuantityColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsThisMonthPlanAmountNull() {
-                return this.IsNull(this.tableVendorName.ThisMonthPlanAmountColumn);
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthPlanAmountColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetThisMonthPlanAmountNull() {
-                this[this.tableVendorName.ThisMonthPlanAmountColumn] = global::System.Convert.DBNull;
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthPlanAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVendorNameNull() {
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.VendorNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVendorNameNull() {
+                this[this.tableD_MonthlyPurchase_tb.VendorNameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1384,22 +1447,22 @@ namespace SiiresakiZaikoYoteiHyou {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class VendorNameRowChangeEvent : global::System.EventArgs {
+        public class D_MonthlyPurchase_tbRowChangeEvent : global::System.EventArgs {
             
-            private VendorNameRow eventRow;
+            private D_MonthlyPurchase_tbRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameRowChangeEvent(VendorNameRow row, global::System.Data.DataRowAction action) {
+            public D_MonthlyPurchase_tbRowChangeEvent(D_MonthlyPurchase_tbRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public VendorNameRow Row {
+            public D_MonthlyPurchase_tbRow Row {
                 get {
                     return this.eventRow;
                 }
