@@ -155,7 +155,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 szy_Report.SetParameterValue("lblDateFrom", txtTargetDateFrom.Text);
                                 szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
                                 szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
-                                szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
+                                szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
                                 try
                                 {
 
