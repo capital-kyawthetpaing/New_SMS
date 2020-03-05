@@ -41,7 +41,8 @@ namespace CKM_Controls
             Orange,
             Green,
             DarkGreen,
-            White
+            White,
+            Pink
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -72,6 +73,9 @@ namespace CKM_Controls
                         break;
                     case CKM_Color.White:
                         this.BackColor = Color.FromArgb(255, 255, 255);
+                        break;
+                    case CKM_Color.Pink:
+                        this.BackColor = Color.FromArgb(255, 192, 255);
                         break;
                 }
             }
