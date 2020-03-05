@@ -307,9 +307,9 @@ namespace SiiresakiZaikoYoteiHyou {
             
             private global::System.Data.DataColumn columnThisMonthSalesPlanA;
             
-            private global::System.Data.DataColumn columnThisMonthReturnQ;
+            private global::System.Data.DataColumn columnThisMonthReturnsQ;
             
-            private global::System.Data.DataColumn columnThisMonthReturnA;
+            private global::System.Data.DataColumn columnThisMonthReturnsA;
             
             private global::System.Data.DataColumn columnThisMonthReturnsPlanQ;
             
@@ -470,17 +470,17 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ThisMonthReturnQColumn {
+            public global::System.Data.DataColumn ThisMonthReturnsQColumn {
                 get {
-                    return this.columnThisMonthReturnQ;
+                    return this.columnThisMonthReturnsQ;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ThisMonthReturnAColumn {
+            public global::System.Data.DataColumn ThisMonthReturnsAColumn {
                 get {
-                    return this.columnThisMonthReturnA;
+                    return this.columnThisMonthReturnsA;
                 }
             }
             
@@ -584,8 +584,8 @@ namespace SiiresakiZaikoYoteiHyou {
                         string ThisMonthCustSalesA, 
                         string ThisMonthSalesPlanQ, 
                         string ThisMonthSalesPlanA, 
-                        string ThisMonthReturnQ, 
-                        string ThisMonthReturnA, 
+                        string ThisMonthReturnsQ, 
+                        string ThisMonthReturnsA, 
                         string ThisMonthReturnsPlanQ, 
                         string ThisMonthReturnsPlanA, 
                         string ThisMonthPlanQuantity, 
@@ -608,8 +608,8 @@ namespace SiiresakiZaikoYoteiHyou {
                         ThisMonthCustSalesA,
                         ThisMonthSalesPlanQ,
                         ThisMonthSalesPlanA,
-                        ThisMonthReturnQ,
-                        ThisMonthReturnA,
+                        ThisMonthReturnsQ,
+                        ThisMonthReturnsA,
                         ThisMonthReturnsPlanQ,
                         ThisMonthReturnsPlanA,
                         ThisMonthPlanQuantity,
@@ -652,8 +652,8 @@ namespace SiiresakiZaikoYoteiHyou {
                 this.columnThisMonthCustSalesA = base.Columns["ThisMonthCustSalesA"];
                 this.columnThisMonthSalesPlanQ = base.Columns["ThisMonthSalesPlanQ"];
                 this.columnThisMonthSalesPlanA = base.Columns["ThisMonthSalesPlanA"];
-                this.columnThisMonthReturnQ = base.Columns["ThisMonthReturnQ"];
-                this.columnThisMonthReturnA = base.Columns["ThisMonthReturnA"];
+                this.columnThisMonthReturnsQ = base.Columns["ThisMonthReturnsQ"];
+                this.columnThisMonthReturnsA = base.Columns["ThisMonthReturnsA"];
                 this.columnThisMonthReturnsPlanQ = base.Columns["ThisMonthReturnsPlanQ"];
                 this.columnThisMonthReturnsPlanA = base.Columns["ThisMonthReturnsPlanA"];
                 this.columnThisMonthPlanQuantity = base.Columns["ThisMonthPlanQuantity"];
@@ -693,10 +693,10 @@ namespace SiiresakiZaikoYoteiHyou {
                 base.Columns.Add(this.columnThisMonthSalesPlanQ);
                 this.columnThisMonthSalesPlanA = new global::System.Data.DataColumn("ThisMonthSalesPlanA", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThisMonthSalesPlanA);
-                this.columnThisMonthReturnQ = new global::System.Data.DataColumn("ThisMonthReturnQ", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnThisMonthReturnQ);
-                this.columnThisMonthReturnA = new global::System.Data.DataColumn("ThisMonthReturnA", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnThisMonthReturnA);
+                this.columnThisMonthReturnsQ = new global::System.Data.DataColumn("ThisMonthReturnsQ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThisMonthReturnsQ);
+                this.columnThisMonthReturnsA = new global::System.Data.DataColumn("ThisMonthReturnsA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnThisMonthReturnsA);
                 this.columnThisMonthReturnsPlanQ = new global::System.Data.DataColumn("ThisMonthReturnsPlanQ", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnThisMonthReturnsPlanQ);
                 this.columnThisMonthReturnsPlanA = new global::System.Data.DataColumn("ThisMonthReturnsPlanA", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1089,35 +1089,35 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ThisMonthReturnQ {
+            public string ThisMonthReturnsQ {
                 get {
                     try {
-                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnQ\' in table \'D_MonthlyPurchase_tb\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsQ\' in table \'D_MonthlyPurchase_tb\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsQColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ThisMonthReturnA {
+            public string ThisMonthReturnsA {
                 get {
                     try {
-                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn]));
+                        return ((string)(this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnA\' in table \'D_MonthlyPurchase_tb\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthReturnsA\' in table \'D_MonthlyPurchase_tb\' is DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn] = value;
+                    this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsAColumn] = value;
                 }
             }
             
@@ -1391,26 +1391,26 @@ namespace SiiresakiZaikoYoteiHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsThisMonthReturnQNull() {
-                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn);
+            public bool IsThisMonthReturnsQNull() {
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnsQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetThisMonthReturnQNull() {
-                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnQColumn] = global::System.Convert.DBNull;
+            public void SetThisMonthReturnsQNull() {
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsThisMonthReturnANull() {
-                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn);
+            public bool IsThisMonthReturnsANull() {
+                return this.IsNull(this.tableD_MonthlyPurchase_tb.ThisMonthReturnsAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetThisMonthReturnANull() {
-                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnAColumn] = global::System.Convert.DBNull;
+            public void SetThisMonthReturnsANull() {
+                this[this.tableD_MonthlyPurchase_tb.ThisMonthReturnsAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
