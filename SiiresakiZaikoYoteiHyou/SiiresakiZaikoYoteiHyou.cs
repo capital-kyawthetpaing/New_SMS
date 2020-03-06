@@ -13,6 +13,7 @@ using Base.Client;
 using CKM_Controls;
 using System.Diagnostics;
 using System.IO;
+using ElencySolutions.CsvHelper;
 using CrystalDecisions.Shared;
 
 namespace SiiresakiZaikoYoteiHyou
@@ -24,6 +25,7 @@ namespace SiiresakiZaikoYoteiHyou
         DataTable dt;
         Viewer vr;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
+        M_StoreClose_Entity msce;
 
         public SiiresakiZaikoYoteiHyou()
         {
@@ -40,7 +42,6 @@ namespace SiiresakiZaikoYoteiHyou
             StartProgram();
             SetRequiredField();
             SetFunctionLabel(EProMode.PRINT);
-            //cboStore.Bind(string.Empty);
             cboStore.Bind(string.Empty, "2");
             cboStore.SelectedValue = StoreCD;
             F9Visible = false;
@@ -64,11 +65,7 @@ namespace SiiresakiZaikoYoteiHyou
             Clear(panalDetail);
             txtTargetDateTo.Focus();
         }
-        //private void BindStore()
-        //{
-        //    cboStore.Bind(string.Empty, "2");
-        //    cboStore.SelectedValue = StoreCD;
-        //}
+        
         public override void FunctionProcess(int Index)
         {
             base.FunctionProcess(Index);
@@ -80,6 +77,9 @@ namespace SiiresakiZaikoYoteiHyou
                             return;
                         break;
                     }
+                case 11:
+                    F11();
+                    break;
             }
         }
         private bool ErrorCheck()
@@ -97,7 +97,6 @@ namespace SiiresakiZaikoYoteiHyou
             return true;
         }
        
-
         private D_MonthlyPurchase_Entity GetData()
         {
             dmpe = new D_MonthlyPurchase_Entity()
@@ -107,6 +106,118 @@ namespace SiiresakiZaikoYoteiHyou
                 YYYYMME=txtTargetDateTo.Text.Replace("/", "")
             };
             return dmpe;
+        }
+        private M_StoreClose_Entity GetStoreClose_Data()
+        {
+            msce = new M_StoreClose_Entity()
+            {
+                StoreCD = cboStore.SelectedValue.ToString(),
+                FiscalYYYYMM = txtTargetDateFrom.Text.Replace("/", ""),
+            };
+            return msce;
+        }
+        private DataTable CreateDatatable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("仕入先CD");
+            dt.Columns.Add("仕入先名");
+            dt.Columns.Add("前月残数");
+            dt.Columns.Add("前月残額");
+            dt.Columns.Add("当月仕入数");
+            dt.Columns.Add("当月仕入額");
+            dt.Columns.Add("当月客注仕入数");
+            dt.Columns.Add("当月客注仕入額");
+            dt.Columns.Add("当月仕入予定数");
+            dt.Columns.Add("当月仕入予定額");
+            dt.Columns.Add("当月売上数");
+            dt.Columns.Add("'当月売上額");
+            dt.Columns.Add("'当月客注売上数");
+            dt.Columns.Add("当月客注売上額");
+            dt.Columns.Add("当月売上予定数");
+            dt.Columns.Add("当月売上予定額");
+            dt.Columns.Add("当月返品数");
+            dt.Columns.Add("当月返品額");
+            dt.Columns.Add("当月返品予定数");
+            dt.Columns.Add("当月返品予定額");
+            dt.Columns.Add("当月予定残数");
+            dt.Columns.Add("当月予定残額");
+            return dt;
+        }
+
+        private void F11()
+        {
+            if (ErrorCheck())
+            {
+                dmpe = GetData();
+               
+                dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
+                //CheckBeforeExport();
+
+                if (dt.Rows.Count > 0)
+                {
+                    DataTable dtCsv = new DataTable();
+                    dtCsv = CreateDatatable();
+                    for (int i = 0; dt.Rows.Count > i; i++)
+                    {
+                        dtCsv.Rows.Add();
+                        dtCsv.Rows[i]["仕入先CD"] = dt.Rows[i]["VendorCD"].ToString();
+                        dtCsv.Rows[i]["仕入先名"] = dt.Rows[i]["VendorName"].ToString();
+                        dtCsv.Rows[i]["前月残数"] = dt.Rows[i]["LastMonthQuantity"].ToString();
+                        dtCsv.Rows[i]["前月残額"] = dt.Rows[i]["LastMonthAmount"].ToString();
+                        dtCsv.Rows[i]["当月仕入数"] = dt.Rows[i]["ThisMonthPurchaseQ"].ToString();
+                        dtCsv.Rows[i]["当月仕入額"] = dt.Rows[i]["ThisMonthPurchaseA"].ToString();
+                        dtCsv.Rows[i]["当月客注仕入数"] = dt.Rows[i]["ThisMonthCustPurchaseQ"].ToString();
+                        dtCsv.Rows[i]["当月客注仕入額"] = dt.Rows[i]["ThisMonthCustPurchaseA"].ToString();
+                        dtCsv.Rows[i]["当月仕入予定数"] = dt.Rows[i]["ThisMonthPurchasePlanQ"].ToString();
+                        dtCsv.Rows[i]["当月仕入予定額"] = dt.Rows[i]["ThisMonthPurchasePlanA"].ToString();
+                        dtCsv.Rows[i]["当月売上数"] = dt.Rows[i]["ThisMonthSalesQ"].ToString();
+                        dtCsv.Rows[i]["'当月売上額"] = dt.Rows[i]["ThisMonthSalesA"].ToString();
+                        dtCsv.Rows[i]["'当月客注売上数"] = dt.Rows[i]["ThisMonthCustSalesQ"].ToString();
+                        dtCsv.Rows[i]["当月客注売上額"] = dt.Rows[i]["ThisMonthCustSalesA"].ToString();
+                        dtCsv.Rows[i]["当月売上予定数"] = dt.Rows[i]["ThisMonthSalesPlanQ"].ToString();
+                        dtCsv.Rows[i]["当月売上予定額"] = dt.Rows[i]["ThisMonthSalesPlanA"].ToString();
+                        dtCsv.Rows[i]["当月返品数"] = dt.Rows[i]["ThisMonthReturnsQ"].ToString();
+                        dtCsv.Rows[i]["当月返品額"] = dt.Rows[i]["ThisMonthReturnsA"].ToString();
+                        dtCsv.Rows[i]["当月返品予定数"] = dt.Rows[i]["ThisMonthReturnsPlanQ"].ToString();
+                        dtCsv.Rows[i]["当月返品予定額"] = dt.Rows[i]["ThisMonthReturnsPlanA"].ToString();
+                        dtCsv.Rows[i]["当月予定残数"] = dt.Rows[i]["ThisMonthPlanQuantity"].ToString();
+                        dtCsv.Rows[i]["当月予定残額"] = dt.Rows[i]["ThisMonthPlanAmount"].ToString();
+                    }
+                    try
+                    {
+                        DialogResult DResult;
+                        DResult = bbl.ShowMessage("Q201");
+                        if (DResult == DialogResult.Yes)
+                        {
+                            ////LoacalDirectory
+                            string folderPath = "C:\\CSV\\";
+                            if (!Directory.Exists(folderPath))
+                            {
+                                Directory.CreateDirectory(folderPath);
+                            }
+                            SaveFileDialog savedialog = new SaveFileDialog();
+                            savedialog.Filter = "CSV|*.csv";
+                            savedialog.Title = "Save";
+                            savedialog.FileName = "債務管理表";
+                            savedialog.InitialDirectory = folderPath;
+                            savedialog.RestoreDirectory = true;
+                            if (savedialog.ShowDialog() == DialogResult.OK)
+                            {
+                                if (Path.GetExtension(savedialog.FileName).Contains("csv"))
+                                {
+                                    CsvWriter csvwriter = new CsvWriter();
+                                    csvwriter.WriteCsv(dtCsv, savedialog.FileName, Encoding.GetEncoding(932));
+                                }
+                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
         }
 
         private L_Log_Entity Get_L_Log_Entity()
@@ -137,7 +248,7 @@ namespace SiiresakiZaikoYoteiHyou
 
                 if (dt.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                    // CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
@@ -211,15 +322,31 @@ namespace SiiresakiZaikoYoteiHyou
                 }
             }
         }
-        private void RunConsole(string FiscalYYYYMM)
+
+        private void CheckBeforeExport()
         {
-            string programID = "GetsujiZaikoKeisanSyori";
+            msce = new M_StoreClose_Entity();
+            msce = GetStoreClose_Data();
+
+            if (szybl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            {
+                string ProgramID = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
+                RunConsole(ProgramID, dmpe.YYYYMM);
+            }
+        }
+        private void RunConsole(string programID, string YYYYMM)
+        {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " +FiscalYYYYMM;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
+            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
+            //System.Diagnostics.Process.Start(filePath+@"\"+programID+".exe",cmdLine+"");
         }
+       
         private void SiiresakiZaikoYoteiHyou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -238,6 +365,6 @@ namespace SiiresakiZaikoYoteiHyou
                     }
                 }
             }
-            }
+        }
     }
 }
