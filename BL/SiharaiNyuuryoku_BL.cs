@@ -147,5 +147,21 @@ namespace BL
             return dpdl.D_Pay_Insert(dpe);
         }
 
+        public bool D_Pay_Update(D_Pay_Entity dpe)
+        {
+            dpe.xml1 = DataTableToXml(dpe.dtTemp1);
+            dpe.xml2 = DataTableToXml(dpe.dtTemp2);
+            dpe.xml3 = DataTableToXml(dpe.dtTemp3);
+            return dpdl.D_Pay_Update(dpe);
+        }
+
+        public bool D_Pay_Delete(D_Pay_Entity dpe)
+        {
+            dpe.xml1 = DataTableToXml(dpe.dtTemp1);
+            dpe.xml2 = DataTableToXml(dpe.dtTemp2);
+            dpe.xml3 = DataTableToXml(dpe.dtTemp3);
+            return dpdl.D_Pay_Delete(dpe);
+        }
+
     }
 }
