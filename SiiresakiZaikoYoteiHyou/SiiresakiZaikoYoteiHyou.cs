@@ -116,105 +116,66 @@ namespace SiiresakiZaikoYoteiHyou
             };
             return msce;
         }
-        private DataTable CreateDatatable()
-        {
-            DataTable dt = new DataTable();
-            dt.Columns.Add("仕入先CD");
-            dt.Columns.Add("仕入先名");
-            dt.Columns.Add("前月残数");
-            dt.Columns.Add("前月残額");
-            dt.Columns.Add("当月仕入数");
-            dt.Columns.Add("当月仕入額");
-            dt.Columns.Add("当月客注仕入数");
-            dt.Columns.Add("当月客注仕入額");
-            dt.Columns.Add("当月仕入予定数");
-            dt.Columns.Add("当月仕入予定額");
-            dt.Columns.Add("当月売上数");
-            dt.Columns.Add("'当月売上額");
-            dt.Columns.Add("'当月客注売上数");
-            dt.Columns.Add("当月客注売上額");
-            dt.Columns.Add("当月売上予定数");
-            dt.Columns.Add("当月売上予定額");
-            dt.Columns.Add("当月返品数");
-            dt.Columns.Add("当月返品額");
-            dt.Columns.Add("当月返品予定数");
-            dt.Columns.Add("当月返品予定額");
-            dt.Columns.Add("当月予定残数");
-            dt.Columns.Add("当月予定残額");
-            return dt;
-        }
 
-        private void F11()
+        protected DataTable ChangeDataColumnName(DataTable dtAdd)
+        {
+            dtAdd.Columns["VendorCD"].ColumnName = "仕入先CD";
+            dtAdd.Columns["VendorName"].ColumnName = "仕入先名";
+            dtAdd.Columns["LastMonthQuantity"].ColumnName = "前月残数";
+            dtAdd.Columns["LastMonthAmount"].ColumnName = "前月残額";
+            dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "当月仕入数";
+            dtAdd.Columns["ThisMonthPurchaseA"].ColumnName = "当月仕入額";
+            dtAdd.Columns["ThisMonthCustPurchaseQ"].ColumnName = "当月客注仕入数";
+            dtAdd.Columns["ThisMonthCustPurchaseA"].ColumnName = "当月客注仕入額";
+            dtAdd.Columns["ThisMonthPurchasePlanQ"].ColumnName = "当月仕入予定数";
+            dtAdd.Columns["ThisMonthPurchasePlanA"].ColumnName = "当月仕入予定額";
+            dtAdd.Columns["ThisMonthSalesQ"].ColumnName = "当月売上数";
+            dtAdd.Columns["ThisMonthSalesA"].ColumnName = "'当月売上額";
+            dtAdd.Columns["ThisMonthCustSalesQ"].ColumnName = "'当月客注売上数";
+            dtAdd.Columns["ThisMonthCustSalesA"].ColumnName = "当月客注売上額";
+            dtAdd.Columns["ThisMonthSalesPlanQ"].ColumnName = "当月売上予定数";
+            dtAdd.Columns["ThisMonthSalesPlanA"].ColumnName = "当月売上予定額";
+            dtAdd.Columns["ThisMonthReturnsQ"].ColumnName = "当月返品数";
+            dtAdd.Columns["ThisMonthReturnsA"].ColumnName = "当月返品額";
+            dtAdd.Columns["ThisMonthReturnsPlanQ"].ColumnName = "当月返品予定数";
+            dtAdd.Columns["ThisMonthReturnsPlanA"].ColumnName = "当月返品予定額";
+            dtAdd.Columns["ThisMonthPlanQuantity"].ColumnName = "当月予定残数";
+            dtAdd.Columns["ThisMonthPlanAmount"].ColumnName = "当月予定残額";
+            dtAdd.Columns.RemoveAt(2);
+            return dtAdd;
+        }
+            private void F11()
         {
             if (ErrorCheck())
             {
-                dmpe = GetData();
-               
-                dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
-                //CheckBeforeExport();
-
                 if (dt.Rows.Count > 0)
                 {
-                    DataTable dtCsv = new DataTable();
-                    dtCsv = CreateDatatable();
-                    for (int i = 0; dt.Rows.Count > i; i++)
+                    DataTable dtExport = new DataTable();
+                    dtExport = ChangeDataColumnName(dtExport);
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Filter = "Excel Files|*.xlsx;";
+                    savedialog.Title = "Save";
+                    savedialog.FileName = "ExportFile";
+                    savedialog.InitialDirectory = @"C:\";
+                    savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
                     {
-                        dtCsv.Rows.Add();
-                        dtCsv.Rows[i]["仕入先CD"] = dt.Rows[i]["VendorCD"].ToString();
-                        dtCsv.Rows[i]["仕入先名"] = dt.Rows[i]["VendorName"].ToString();
-                        dtCsv.Rows[i]["前月残数"] = dt.Rows[i]["LastMonthQuantity"].ToString();
-                        dtCsv.Rows[i]["前月残額"] = dt.Rows[i]["LastMonthAmount"].ToString();
-                        dtCsv.Rows[i]["当月仕入数"] = dt.Rows[i]["ThisMonthPurchaseQ"].ToString();
-                        dtCsv.Rows[i]["当月仕入額"] = dt.Rows[i]["ThisMonthPurchaseA"].ToString();
-                        dtCsv.Rows[i]["当月客注仕入数"] = dt.Rows[i]["ThisMonthCustPurchaseQ"].ToString();
-                        dtCsv.Rows[i]["当月客注仕入額"] = dt.Rows[i]["ThisMonthCustPurchaseA"].ToString();
-                        dtCsv.Rows[i]["当月仕入予定数"] = dt.Rows[i]["ThisMonthPurchasePlanQ"].ToString();
-                        dtCsv.Rows[i]["当月仕入予定額"] = dt.Rows[i]["ThisMonthPurchasePlanA"].ToString();
-                        dtCsv.Rows[i]["当月売上数"] = dt.Rows[i]["ThisMonthSalesQ"].ToString();
-                        dtCsv.Rows[i]["'当月売上額"] = dt.Rows[i]["ThisMonthSalesA"].ToString();
-                        dtCsv.Rows[i]["'当月客注売上数"] = dt.Rows[i]["ThisMonthCustSalesQ"].ToString();
-                        dtCsv.Rows[i]["当月客注売上額"] = dt.Rows[i]["ThisMonthCustSalesA"].ToString();
-                        dtCsv.Rows[i]["当月売上予定数"] = dt.Rows[i]["ThisMonthSalesPlanQ"].ToString();
-                        dtCsv.Rows[i]["当月売上予定額"] = dt.Rows[i]["ThisMonthSalesPlanA"].ToString();
-                        dtCsv.Rows[i]["当月返品数"] = dt.Rows[i]["ThisMonthReturnsQ"].ToString();
-                        dtCsv.Rows[i]["当月返品額"] = dt.Rows[i]["ThisMonthReturnsA"].ToString();
-                        dtCsv.Rows[i]["当月返品予定数"] = dt.Rows[i]["ThisMonthReturnsPlanQ"].ToString();
-                        dtCsv.Rows[i]["当月返品予定額"] = dt.Rows[i]["ThisMonthReturnsPlanA"].ToString();
-                        dtCsv.Rows[i]["当月予定残数"] = dt.Rows[i]["ThisMonthPlanQuantity"].ToString();
-                        dtCsv.Rows[i]["当月予定残額"] = dt.Rows[i]["ThisMonthPlanAmount"].ToString();
-                    }
-                    try
-                    {
-                        DialogResult DResult;
-                        DResult = bbl.ShowMessage("Q201");
-                        if (DResult == DialogResult.Yes)
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                         {
-                            ////LoacalDirectory
-                            string folderPath = "C:\\CSV\\";
-                            if (!Directory.Exists(folderPath))
-                            {
-                                Directory.CreateDirectory(folderPath);
-                            }
-                            SaveFileDialog savedialog = new SaveFileDialog();
-                            savedialog.Filter = "CSV|*.csv";
-                            savedialog.Title = "Save";
-                            savedialog.FileName = "債務管理表";
-                            savedialog.InitialDirectory = folderPath;
-                            savedialog.RestoreDirectory = true;
-                            if (savedialog.ShowDialog() == DialogResult.OK)
-                            {
-                                if (Path.GetExtension(savedialog.FileName).Contains("csv"))
-                                {
-                                    CsvWriter csvwriter = new CsvWriter();
-                                    csvwriter.WriteCsv(dtCsv, savedialog.FileName, Encoding.GetEncoding(932));
-                                }
-                                Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                            }
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "ExportedFromDatGrid";
+
+                            //using (XLWorkbook wb = new XLWorkbook())
+                            //{
+                            //    wb.Worksheets.Add(dtExport, "test");
+                            //    wb.SaveAs(savedialog.FileName);
+                            //    szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
+                            //}
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
                     }
                 }
             }
