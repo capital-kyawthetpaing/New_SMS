@@ -343,11 +343,9 @@ namespace Search
         {
             MoveNextControl(e);
         }
-
         private void SearchStaff_KeyDown(object sender, KeyEventArgs e)
         { 
         }
-    
         private void scStaffCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
