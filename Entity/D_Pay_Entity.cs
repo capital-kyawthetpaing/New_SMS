@@ -26,7 +26,7 @@ namespace Entity
         public string InputDateTimeTo { get; set; }
         public string PayPlanDate { get; set; }
         public string LocationXml { get; set; }
-       
+        public string PayGakuTotol { get; set; }
         public string StoreCD { get; set; }
 
     }
