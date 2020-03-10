@@ -63,6 +63,7 @@ namespace DL
                     { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.InsertOperator } },
                     { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.ProgramID } },
                     { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.PC } },
+                    { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.StoreCD } },
                     { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.ProcessMode } },
                     { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpch_entity.Key } },
                     {"@InsertType" , new ValuePair{value1=SqlDbType.Int,value2=InsertType.ToString()}  }
