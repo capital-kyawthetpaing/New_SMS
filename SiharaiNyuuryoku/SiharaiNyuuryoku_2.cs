@@ -381,7 +381,7 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
 
-                if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN }))
+                if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
                     return false;
                 if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
                 {
