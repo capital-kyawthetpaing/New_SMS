@@ -224,6 +224,7 @@ namespace SiharaiNyuuryoku
             {
                 SC_BankCD.TxtCode.Require(true);
                 SC_BranchCD.TxtCode.Require(true);
+                txtKouzaKBN.Require(true);
                 txtAccNo.Require(true);
                 txtMeigi.Require(true);
                 txtFeeKBN.Require(true);
@@ -371,14 +372,28 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
 
-                if (txtKouzaKBN.Text.Equals("1") && txtKouzaKBN.Text.Equals("2"))
+                if(!RequireCheck(new Control[] { txtKouzaKBN }))
+                    return false;
+                if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
                 {
                     bbl.ShowMessage("E101");
                     txtKouzaKBN.Focus();
                     return false;
                 }
-                if (!RequireCheck(new Control[] { txtAccNo, txtMeigi, txtFeeKBN, txtAmount }))
+
+                if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
                     return false;
+                if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
+                {
+                    bbl.ShowMessage("E101");
+                    txtFeeKBN.Focus();
+                    return false;
+                }
+
+                if (!RequireCheck(new Control[] {txtAmount }))
+                    return false;
+
+
             }
 
             if (Convert.ToInt32(txtBill.Text) > 0)
@@ -387,12 +402,14 @@ namespace SiharaiNyuuryoku
                     return false;
 
             }
+
             if (Convert.ToInt32(txtElectronicBone.Text) > 0)
             {
                 if (!RequireCheck(new Control[] { txtElectronicRecordNo,txtSettlementDate2}))
                     return false;
 
             }
+
             if (Convert.ToInt32(txtOther1.Text) > 0)
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
@@ -415,6 +432,7 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
             }
+
             if(Convert.ToInt32(txtOther2.Text)>0)
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode }))
@@ -435,7 +453,8 @@ namespace SiharaiNyuuryoku
                     return false;
                 }
             }
-                return true;
+
+           return true;
         }
 
        

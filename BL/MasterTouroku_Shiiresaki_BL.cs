@@ -103,11 +103,6 @@ namespace BL
             return mkdl.M_Vendor_Kouza_Select(mke);
         }
 
-        public DataTable BankShiten_Select(M_BankShiten_Entity mbse)
-        {
-            return mbsdl.M_Vendor_BankShiten_Select(mbse);
-        }
-
         public DataTable Staff_Select(M_Staff_Entity mse)
         {
             return msdl.M_Vendor_Staff_Select(mse);
