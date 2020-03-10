@@ -13,7 +13,7 @@ using Base.Client;
 using CKM_Controls;
 using System.Diagnostics;
 using System.IO;
-using ElencySolutions.CsvHelper;
+using ClosedXML.Excel;
 using CrystalDecisions.Shared;
 
 namespace SiiresakiZaikoYoteiHyou
@@ -119,44 +119,53 @@ namespace SiiresakiZaikoYoteiHyou
 
         protected DataTable ChangeDataColumnName(DataTable dtAdd)
         {
-            dtAdd.Columns["VendorCD"].ColumnName = "仕入先CD";
-            dtAdd.Columns["VendorName"].ColumnName = "仕入先名";
-            dtAdd.Columns["LastMonthQuantity"].ColumnName = "前月残数";
+            dtAdd.Columns["VendorCD"].ColumnName = "仕入先";
+            dtAdd.Columns["VendorName"].ColumnName= "仕入先名";
+            dtAdd.Columns["LastMonthQuantity"].ColumnName = "前月残";
             dtAdd.Columns["LastMonthAmount"].ColumnName = "前月残額";
-            dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "当月仕入数";
+            dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "仕入";
             dtAdd.Columns["ThisMonthPurchaseA"].ColumnName = "当月仕入額";
-            dtAdd.Columns["ThisMonthCustPurchaseQ"].ColumnName = "当月客注仕入数";
+            dtAdd.Columns["ThisMonthCustPurchaseQ"].ColumnName = "うち客注";
             dtAdd.Columns["ThisMonthCustPurchaseA"].ColumnName = "当月客注仕入額";
-            dtAdd.Columns["ThisMonthPurchasePlanQ"].ColumnName = "当月仕入予定数";
+            dtAdd.Columns["ThisMonthPurchasePlanQ"].ColumnName = "仕入予定";
             dtAdd.Columns["ThisMonthPurchasePlanA"].ColumnName = "当月仕入予定額";
-            dtAdd.Columns["ThisMonthSalesQ"].ColumnName = "当月売上数";
+            dtAdd.Columns["ThisMonthSalesQ"].ColumnName = "売上";
             dtAdd.Columns["ThisMonthSalesA"].ColumnName = "'当月売上額";
-            dtAdd.Columns["ThisMonthCustSalesQ"].ColumnName = "'当月客注売上数";
+            dtAdd.Columns["ThisMonthCustSalesQ"].ColumnName = "'うち客注";
             dtAdd.Columns["ThisMonthCustSalesA"].ColumnName = "当月客注売上額";
-            dtAdd.Columns["ThisMonthSalesPlanQ"].ColumnName = "当月売上予定数";
+            dtAdd.Columns["ThisMonthSalesPlanQ"].ColumnName = "売上予定";
             dtAdd.Columns["ThisMonthSalesPlanA"].ColumnName = "当月売上予定額";
-            dtAdd.Columns["ThisMonthReturnsQ"].ColumnName = "当月返品数";
+            dtAdd.Columns["ThisMonthReturnsQ"].ColumnName = "返品";
             dtAdd.Columns["ThisMonthReturnsA"].ColumnName = "当月返品額";
-            dtAdd.Columns["ThisMonthReturnsPlanQ"].ColumnName = "当月返品予定数";
+            dtAdd.Columns["ThisMonthReturnsPlanQ"].ColumnName = "返品予定";
             dtAdd.Columns["ThisMonthReturnsPlanA"].ColumnName = "当月返品予定額";
-            dtAdd.Columns["ThisMonthPlanQuantity"].ColumnName = "当月予定残数";
+            dtAdd.Columns["ThisMonthPlanQuantity"].ColumnName = "当月予定残";
             dtAdd.Columns["ThisMonthPlanAmount"].ColumnName = "当月予定残額";
-            dtAdd.Columns.RemoveAt(2);
+            //dtAdd.Columns.RemoveAt(2);
             return dtAdd;
         }
             private void F11()
-        {
+           {
             if (ErrorCheck())
             {
+                dmpe = new D_MonthlyPurchase_Entity();
+                dmpe = GetData();
+                DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
                 if (dt.Rows.Count > 0)
                 {
-                    DataTable dtExport = new DataTable();
+                    DataTable dtExport = dt;
                     dtExport = ChangeDataColumnName(dtExport);
+                    string folderPath = "C:\\SES\\";
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
                     SaveFileDialog savedialog = new SaveFileDialog();
                     savedialog.Filter = "Excel Files|*.xlsx;";
                     savedialog.Title = "Save";
-                    savedialog.FileName = "ExportFile";
-                    savedialog.InitialDirectory = @"C:\";
+                    savedialog.FileName = "仕入先在庫予定表";
+                    savedialog.InitialDirectory = folderPath;
+                    
                     savedialog.RestoreDirectory = true;
                     if (savedialog.ShowDialog() == DialogResult.OK)
                     {
@@ -167,14 +176,47 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
 
                             worksheet = workbook.ActiveSheet;
-                            worksheet.Name = "ExportedFromDatGrid";
-
-                            //using (XLWorkbook wb = new XLWorkbook())
-                            //{
-                            //    wb.Worksheets.Add(dtExport, "test");
-                            //    wb.SaveAs(savedialog.FileName);
-                            //    szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
-                            //}
+                            worksheet.Cells[1,1].Value= "年月：";
+                            ////worksheet.Cells["A1"].Value = "年月：";
+                            ////worksheet.Cells["A,1"]= "年月：";
+                            ////worksheet.Cells["A,2"]= "店舗：";
+                            ////worksheet.Cells["B1"].Value = txtTargetDateFrom.Text;
+                            ////worksheet.Cells["B2"].Value = "店舗：";
+                            ////worksheet.Cells["C1"].Value = "～";
+                            ////worksheet.Cells["D1"].Value = txtTargetDateTo.Text;
+                            ////worksheet.Cells["B2"].Value = cboStore.SelectedValue.ToString();
+                            ////worksheet.Columns["VendorCD"].Visible = true;
+                            //worksheet.Columns["VendorCD"].Hide = false;
+                            //worksheet.Columns["VendorName"].Hide=true;
+                            ////worksheet.Columns["VendorName"].Visible = false;
+                            //worksheet.Columns["LastMonthQuantity"].Visible = true;
+                            //worksheet.Columns["LastMonthAmount"].Visible = false;
+                            //worksheet.Columns["ThisMonthPurchaseQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthPurchaseA"].Visible = false;
+                            //worksheet.Columns["ThisMonthCustPurchaseQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthCustPurchaseA"].Visible = false;
+                            //worksheet.Columns["ThisMonthPurchasePlanQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthPurchasePlanA"].Visible = false;
+                            //worksheet.Columns["ThisMonthSalesQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthSalesA"].Visible = false;
+                            //worksheet.Columns["ThisMonthCustSalesQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthCustSalesA"].Visible = false;
+                            //worksheet.Columns["ThisMonthSalesPlanQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthSalesPlanA"].Visible = false;
+                            //worksheet.Columns["ThisMonthReturnsQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthReturnsA"].Visible = false;
+                            //worksheet.Columns["ThisMonthReturnsPlanQ"].Visible = true;
+                            //worksheet.Columns["ThisMonthReturnsPlanA"].Visible = false;
+                            //worksheet.Columns["ThisMonthPlanQuantity"].Visible = true;
+                            //worksheet.Columns["ThisMonthPlanAmount"].Visible = false;
+                            worksheet.Name = "Sheet1";                       
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add("test");
+                                wb.SaveAs(savedialog.FileName);
+                                szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
                         }
                     }
                 }
