@@ -747,13 +747,21 @@ namespace SiharaiNyuuryoku
                 if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
                 {
                     DataGridViewRow row = dgvSearchPayment.CurrentRow;
-                    string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
-                    if (string.IsNullOrWhiteSpace(unpaidAmount1))
+
+                    if (string.IsNullOrWhiteSpace(row.Cells["colUnpaidAmount1"].Value.ToString()))
                     {
                         bbl.ShowMessage("E102");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
+                    else if(Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) <0)
+                    {
+                        bbl.ShowMessage("E143");
+                        dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                    }
                     else
+                    {
+                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayPlanConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
+                    }
                         LabelDataBind();
                 }
             }
