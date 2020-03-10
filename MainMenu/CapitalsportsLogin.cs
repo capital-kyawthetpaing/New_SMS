@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
 using Entity;
+using Tulpep.NotificationWindow;
 namespace MainMenu
 {
     public partial class CapitalsportsLogin : Form
@@ -33,6 +34,10 @@ namespace MainMenu
         private void CapitalsportsLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
+            PopupNotifier pop = new PopupNotifier();
+            pop.TitleText = "New Updates are Available Now!";
+            pop.ContentText = "Press F11 to download new features";
+            pop.Popup();
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -143,38 +148,45 @@ namespace MainMenu
                     System.Environment.Exit(0);
                 }
 
-                var mse = loginbl.MH_Staff_LoginSelect(GetInfo());
-                if (mse.Rows.Count > 0)
+                try
                 {
-                    if (mse.Rows[0]["MessageID"].ToString() == "Allow")
+                    var mse = loginbl.MH_Staff_LoginSelect(GetInfo());
+                    if (mse.Rows.Count > 0)
                     {
-                        if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
+                        if (mse.Rows[0]["MessageID"].ToString() == "Allow")
                         {
-                            var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
-                            Capitalsports_MainMenu menuForm = new Capitalsports_MainMenu(GetInfo().StaffCD, mseinfo);
-                            this.Hide();
-                            menuForm.ShowDialog();
-                            this.Close();
+                            if (loginbl.Check_RegisteredMenu(GetInfo()).Rows.Count > 0)
+                            {
+                                var mseinfo = loginbl.M_Staff_InitSelect(GetInfo());
+                                Capitalsports_MainMenu menuForm = new Capitalsports_MainMenu(GetInfo().StaffCD, mseinfo);
+                                this.Hide();
+                                menuForm.ShowDialog();
+                                this.Close();
+                            }
+                            else
+                            {
+                                loginbl.ShowMessage("S018");
+                                txtOperatorCD.Select();
+
+                            }
+
                         }
                         else
                         {
-                            loginbl.ShowMessage("S018");
+                            loginbl.ShowMessage(mse.Rows[0]["MessageID"].ToString());
                             txtOperatorCD.Select();
-
                         }
 
                     }
                     else
                     {
-                        loginbl.ShowMessage(mse.Rows[0]["MessageID"].ToString());
+                        loginbl.ShowMessage("E101");
                         txtOperatorCD.Select();
                     }
-
                 }
-                else
+                catch(Exception ex)
                 {
-                    loginbl.ShowMessage("E101");
-                    txtOperatorCD.Select();
+                    MessageBox.Show(ex.Message);
                 }
 
             }

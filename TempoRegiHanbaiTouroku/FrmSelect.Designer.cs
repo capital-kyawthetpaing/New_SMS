@@ -147,6 +147,7 @@
             this.Controls.Add(this.ckM_Button1);
             this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "FrmSelect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "販売登録";
             this.ResumeLayout(false);
             this.PerformLayout();

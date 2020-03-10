@@ -17,10 +17,11 @@ namespace BL
         /// </summary>
         /// 
         private const string IniFileName = "CKM.ini";
-
+      //  public static bool Islocalized =false;
         M_Staff_DL msdl;
         M_Store_DL mstoredl;
-
+        public const bool isd = false;
+        public static bool Islocalized = false;
         /// <summary>
         /// constructor
         /// </summary>
@@ -142,7 +143,10 @@ namespace BL
             // 実行モジュールと同一フォルダのファイルを取得
             string filePath = "";
             //System.Diagnostics.Debug 
-            if (Debugger.IsAttached)
+
+
+
+            if (Debugger.IsAttached || Islocalized)
             {
                 System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + IniFileName;
@@ -151,6 +155,8 @@ namespace BL
             {
                 filePath = @"C:\\SMS\\AppData\\CKM.ini";
             }
+           // var f = Islocalized;
+            //if(System.Deployment.Internal.)
             if (System.IO.File.Exists(filePath))
             {
                 this.GetInformationOfIniFile(filePath);
@@ -174,6 +180,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "MMLocal").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "MMLocal").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "MMLocal";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "CapitalMainMenuLogin")
             {
@@ -182,6 +189,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "CapitalMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoMainMenuLogin")
             {
@@ -190,6 +198,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "HaspoMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "HaspoMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "HaspoMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin")
             {
@@ -198,6 +207,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalStoreMenuLogin";
+                Base_DL.iniEntity.StoreType = "1";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
             {
@@ -206,6 +216,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "HaspoStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "HaspoStoreMenuLogin";
+                Base_DL.iniEntity.StoreType = "1";
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "TennicMainMenuLogin")
             {
@@ -214,6 +225,7 @@ namespace BL
                 Base_DL.iniEntity.DatabaseLoginID = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[2];
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "TennicMainMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "TennicMainMenuLogin";
+                Base_DL.iniEntity.StoreType = "0";
             }
             //Base_DL.iniEntity.DatabaseServer = idl.IniReadValue("Database", "ServerName");
             //Base_DL.iniEntity.DatabaseName = idl.IniReadValue("Database", "DatabaseName");
@@ -225,6 +237,9 @@ namespace BL
             //暗号化されたパスワードを複合化
 
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
+
+
+
         }
         public string GetInformationOfIniFileByKey(string key)
         {

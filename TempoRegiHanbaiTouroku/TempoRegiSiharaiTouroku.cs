@@ -65,7 +65,7 @@ namespace TempoRegiHanbaiTouroku
             set { dtSales = value; }
         }
         public bool flgCancel = false;
-        public string ParSaleRate { get; set; }
+        public int ParSaleRate { get; set; }
         private string mMaeuke ;
 
         public TempoRegiSiharaiTouroku(Base.Client.FrmMainForm.EOperationMode mode, D_Sales_Entity dse1, D_StorePayment_Entity dspe1)
@@ -451,7 +451,7 @@ namespace TempoRegiHanbaiTouroku
             dspe.Denomination2Amount = bbl.Z_SetStr(txtOther2.Text);
             dspe.AdvanceAmount = bbl.Z_SetStr(txtMaeuke.Text);
             dspe.TotalAmount = bbl.Z_SetStr(lblShiharaiKei.Text);
-            dspe.SalesRate = ParSaleRate;
+            dspe.SalesRate = bbl.Z_SetStr(ParSaleRate);
 
         }
         // -----------------------------------------------------------
