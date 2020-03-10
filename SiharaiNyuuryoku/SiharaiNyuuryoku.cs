@@ -264,11 +264,11 @@ namespace SiharaiNyuuryoku
                     
                     LabelDataBind();
 
-                    if (dgvPayment.SelectedRows.Count != 0)
-                    {
-                        DataGridViewRow row = this.dgvPayment.SelectedRows[0];
-                        dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
-                        dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
+                    //if (dgvPayment.SelectedRows.Count != 0)
+                    //{
+                        //DataGridViewRow row = this.dgvPayment.SelectedRows[0];
+                        //dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
+                        //dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
                         dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
                         if(dt4.Rows.Count > 0)
                         {
@@ -279,6 +279,7 @@ namespace SiharaiNyuuryoku
                             dt4Detail.Columns.Remove("PayConfirmGaku");
                             dt4Detail.Columns.Remove("UnpaidAmount1");
                             dt4Detail.Columns.Remove("UnpaidAmount2");
+                            dt4Detail.Columns.Remove("PayPlanNO");
 
                            
                             dt4.Columns.Remove("VendorName");
@@ -306,8 +307,8 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("Account2");
                             dt4.Columns.Remove("SubAccount2");
 
-                        }     
-                    }                   
+                        }
+                    //}                   
                 }
 
                 EnablePanel(PanelDetail);             
@@ -359,12 +360,26 @@ namespace SiharaiNyuuryoku
 
         private void Update()
         {
+            if (sibl.D_Pay_Update(dpe))
+            {
+                Clear(PanelHeader);
+                Clear(PanelDetail);
+                txtDueDate1.Focus();
 
+                sibl.ShowMessage("I101");
+            }
         }
 
         private void Delete()
         {
+            if (sibl.D_Pay_Delete(dpe))
+            {
+                Clear(PanelHeader);
+                Clear(PanelDetail);
+                txtDueDate1.Focus();
 
+                sibl.ShowMessage("I101");
+            }
         }
         #endregion
 
@@ -867,9 +882,11 @@ namespace SiharaiNyuuryoku
                 PayDate = txtPaymentDate.Text,
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
+                PayGakuTotol = lblPayGaku.Text,
                 PC = InPcID,
                 dtTemp1 = dtpayplan,
-                dtTemp2 = dt4Detail
+                dtTemp2 = dt4Detail,
+                dtTemp3 = dt4
             };
             return dpe;
         }
