@@ -29,13 +29,13 @@ namespace SiharaiNyuuryoku
         int type = 0; string mode = "0";
         string vendorCD = string.Empty;
 
-        DataTable dtpayplan = new DataTable(); // data bind(insert mode)
-        DataTable dtPay1 = new DataTable(); // data bind(update mode)
-        DataTable dtSiharai2 = new DataTable(); // checkbox click for next form
-        DataTable dt2 = new DataTable(); // detail for  next form(update mode)
-        DataTable dt3 = new DataTable(); // Gridview bind for next form(update mode)
-        DataTable dt4 = new DataTable(); // gridview bind for next form(insert mode)
-        DataTable dt4Detail = new DataTable(); // detail for next form(insert mode)
+        DataTable dtpayplan = new DataTable(); // data bind(insert mode) for Form1
+        DataTable dtPay1 = new DataTable(); // data bind(update mode) for Form1
+        DataTable dtSiharai2 = new DataTable(); // checkbox click for form2
+        DataTable dt2 = new DataTable(); // detail for form2(update mode)
+        DataTable dt3 = new DataTable(); // Gridview bind for form2(update mode)
+        DataTable dt4 = new DataTable(); // gridview bind for form2(insert mode)
+        DataTable dt4Detail = new DataTable(); // detail for form2(insert mode)
 
         public FrmSiharaiNyuuryoku()
         {
@@ -61,15 +61,10 @@ namespace SiharaiNyuuryoku
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
 
-            mse.StaffCD = InOperatorCD;
-            mse.ChangeDate = DateTime.Now.ToShortDateString();
-            DataTable dtstaff = new DataTable();
-            dtstaff = sibl.M_Staff_Select(mse);
-            if (dtstaff.Rows.Count > 0)
-            {
-                ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
-            }
+            //mse.StaffCD = InOperatorCD;
+            //mse.ChangeDate = DateTime.Now.ToShortDateString();       
             ScStaff.Code = InOperatorCD;
+            ScStaff.SelectData();
 
             cboPaymentSourceAcc.Enabled = false;
             cboPaymentType.Enabled = false;

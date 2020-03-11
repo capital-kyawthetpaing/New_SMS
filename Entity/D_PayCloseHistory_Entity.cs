@@ -16,6 +16,7 @@ namespace Entity
         public string PayCloseProcessingDateTime { get; set; }
         public string StaffCD { get; set; }
 
+        public string StoreCD { get; set; }
         //ssa
         public string ProcessType { get; set; }
         public string PaymentDate { get; set; }

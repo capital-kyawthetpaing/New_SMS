@@ -92,15 +92,6 @@ namespace DL
             return SelectData(dic, "M_Souko_Search");
         }
 
-        public DataTable M_Vendor_BankShiten_Select(M_BankShiten_Entity mbse)
-        {
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            {
-                { "@BankCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbse.BankCD } },
-                { "@BranchCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbse.BranchCD } },
-                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mbse.ChangeDate } },
-            };
-            return SelectData(dic, "M_Vendor_BankShiten_Select");
-        }
+       
     }
 }
