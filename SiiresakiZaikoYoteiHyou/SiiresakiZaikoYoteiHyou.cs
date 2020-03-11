@@ -176,12 +176,7 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
                            
                             worksheet = workbook.ActiveSheet;
-                            worksheet.Cells[1, 1].Value = "年月：";
-                            worksheet.Cells[2, 1].Value = "店舗:";
-                            worksheet.Cells[1, 2].Value = txtTargetDateFrom.Text;
-                            worksheet.Cells[1, 3].Value = "～";
-                            worksheet.Cells[1, 4].Value = txtTargetDateTo.Text;
-                            worksheet.Cells[2, 3].Value = cboStore.SelectedValue.ToString();
+
                             //worksheet.Cells[3, 1].Value = "仕入先";
                             //worksheet.Cells[3, 3].Value = "前月残";
                             //worksheet.Cells[3, 5].Value = "仕入";
@@ -196,11 +191,17 @@ namespace SiiresakiZaikoYoteiHyou
                             //worksheet.Columns["VendorCD"].Hide = false;
                             //worksheet.Columns["VendorName"].Hide=true;
                             //worksheet.Cells[1,3].Value = dtExport.Rows[0]["aa"].ToString(); 
-                            worksheet.Name = "worksheet";                       
+                            worksheet.Name = "worksheet";
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 
                                 wb.Worksheets.Add(dtExport,"worksheet");
+                                worksheet.Cells[1, 1].Value = "年月：";
+                                worksheet.Cells[2, 1].Value = "店舗:";
+                                worksheet.Cells[1, 2].Value = txtTargetDateFrom.Text;
+                                worksheet.Cells[1, 3].Value = "～";
+                                worksheet.Cells[1, 4].Value = txtTargetDateTo.Text;
+                                worksheet.Cells[2, 3].Value = cboStore.SelectedValue.ToString();
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
