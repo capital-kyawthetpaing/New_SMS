@@ -670,10 +670,12 @@ namespace SiharaiNyuuryoku
                     return false;
                 else
                 {
+
                     mse.StaffCD = ScStaff.TxtCode.Text;
                     mse.ChangeDate = txtPaymentDate.Text;
                     DataTable dtstaff = new DataTable();
                     dtstaff = sibl.M_Staff_Select(mse);
+                    //if (!ScStaff.SelectData())
                     if (dtstaff.Rows.Count == 0)
                     {
                         sibl.ShowMessage("101");
@@ -685,12 +687,13 @@ namespace SiharaiNyuuryoku
                         ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
                     }
                 }
-                if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
-                {
-                    sibl.ShowMessage("102");
-                    cboPaymentType.Focus();
-                    return false;
-                }
+                if (!RequireCheck(new Control[] {cboPaymentType}))
+                //if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
+                //{
+                //    sibl.ShowMessage("102");
+                //    cboPaymentType.Focus();
+                //    return false;
+                //}
                 mmpe.ID = "314";
                 DataTable dtmulti = new DataTable();
                 dtmulti = sibl.M_MultiPorpose_Select(mmpe);
