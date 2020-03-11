@@ -120,7 +120,7 @@ namespace SiiresakiZaikoYoteiHyou
         protected DataTable ChangeDataColumnName(DataTable dtAdd)
         {
             dtAdd.Columns["VendorCD"].ColumnName = "仕入先";
-            dtAdd.Columns["VendorName"].ColumnName= "仕入先名";
+            dtAdd.Columns["VendorName"].ColumnName = "仕入先名";
             dtAdd.Columns["LastMonthQuantity"].ColumnName = "前月残";
             dtAdd.Columns["LastMonthAmount"].ColumnName = "前月残額";
             dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "仕入";
@@ -144,7 +144,7 @@ namespace SiiresakiZaikoYoteiHyou
             //dtAdd.Columns.RemoveAt(2);
             return dtAdd;
         }
-            private void F11()
+        private void F11()
            {
             if (ErrorCheck())
             {
@@ -174,45 +174,33 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                             Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
+                           
                             worksheet = workbook.ActiveSheet;
-                            worksheet.Cells[1,1].Value= "年月：";
-                            ////worksheet.Cells["A1"].Value = "年月：";
-                            ////worksheet.Cells["A,1"]= "年月：";
-                            ////worksheet.Cells["A,2"]= "店舗：";
-                            ////worksheet.Cells["B1"].Value = txtTargetDateFrom.Text;
-                            ////worksheet.Cells["B2"].Value = "店舗：";
-                            ////worksheet.Cells["C1"].Value = "～";
-                            ////worksheet.Cells["D1"].Value = txtTargetDateTo.Text;
-                            ////worksheet.Cells["B2"].Value = cboStore.SelectedValue.ToString();
-                            ////worksheet.Columns["VendorCD"].Visible = true;
+                            //worksheet.Cells[1,1].Value= "年月：";
+                            //worksheet.Cells[2,1].Value = "店舗:";
+                            //worksheet.Cells[1,2].Value = txtTargetDateFrom.Text;
+                            //worksheet.Cells[1,3].Value = "～";
+                            //worksheet.Cells[1,4].Value = txtTargetDateTo.Text;
+                            //worksheet.Cells[2, 3].Value = cboStore.SelectedValue.ToString();
+                            //worksheet.Cells[3, 1].Value = "仕入先";
+                            //worksheet.Cells[3, 3].Value = "前月残";
+                            //worksheet.Cells[3, 5].Value = "仕入";
+                            //worksheet.Cells[3, 7].Value = "うち客注";
+                            //worksheet.Cells[3, 9].Value = "仕入予定";
+                            //worksheet.Cells[3, 11].Value = "売上";
+                            //worksheet.Cells[3, 13].Value = "うち客注";
+                            //worksheet.Cells[3, 15].Value = "売上予定";
+                            //worksheet.Cells[3, 17].Value = "返品";
+                            //worksheet.Cells[3, 19].Value = "返品予定";
+                            //worksheet.Cells[3, 21].Value = "当月予定残";
                             //worksheet.Columns["VendorCD"].Hide = false;
                             //worksheet.Columns["VendorName"].Hide=true;
-                            ////worksheet.Columns["VendorName"].Visible = false;
-                            //worksheet.Columns["LastMonthQuantity"].Visible = true;
-                            //worksheet.Columns["LastMonthAmount"].Visible = false;
-                            //worksheet.Columns["ThisMonthPurchaseQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthPurchaseA"].Visible = false;
-                            //worksheet.Columns["ThisMonthCustPurchaseQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthCustPurchaseA"].Visible = false;
-                            //worksheet.Columns["ThisMonthPurchasePlanQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthPurchasePlanA"].Visible = false;
-                            //worksheet.Columns["ThisMonthSalesQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthSalesA"].Visible = false;
-                            //worksheet.Columns["ThisMonthCustSalesQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthCustSalesA"].Visible = false;
-                            //worksheet.Columns["ThisMonthSalesPlanQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthSalesPlanA"].Visible = false;
-                            //worksheet.Columns["ThisMonthReturnsQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthReturnsA"].Visible = false;
-                            //worksheet.Columns["ThisMonthReturnsPlanQ"].Visible = true;
-                            //worksheet.Columns["ThisMonthReturnsPlanA"].Visible = false;
-                            //worksheet.Columns["ThisMonthPlanQuantity"].Visible = true;
-                            //worksheet.Columns["ThisMonthPlanAmount"].Visible = false;
-                            worksheet.Name = "Sheet1";                       
+                            //worksheet.Cells[1,3].Value = dtExport.Rows[0]["aa"].ToString(); 
+                            worksheet.Name = "worksheet";                       
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                wb.Worksheets.Add("test");
+                                
+                                wb.Worksheets.Add(dtExport,"worksheet");
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
