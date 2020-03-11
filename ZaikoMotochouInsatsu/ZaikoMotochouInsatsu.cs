@@ -164,7 +164,7 @@ namespace ZaikoMotochouInsatsu
                                 zm_report.SetParameterValue("lblToday", dtReport.Rows[0]["Today"].ToString() + "  " + dtReport.Rows[0]["Now"].ToString());
                                 zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString() + " " + dtReport.Rows[0]["SKUName"].ToString());
                                 zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
-                                zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
+                               // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
 
                                 vr.CrystalReportViewer1.ReportSource = zm_report;
                                 //vr.ShowDialog();
