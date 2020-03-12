@@ -176,32 +176,20 @@ namespace SiiresakiZaikoYoteiHyou
                             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
                            
                             worksheet = workbook.ActiveSheet;
-
-                            //worksheet.Cells[3, 1].Value = "仕入先";
-                            //worksheet.Cells[3, 3].Value = "前月残";
-                            //worksheet.Cells[3, 5].Value = "仕入";
-                            //worksheet.Cells[3, 7].Value = "うち客注";
-                            //worksheet.Cells[3, 9].Value = "仕入予定";
-                            //worksheet.Cells[3, 11].Value = "売上";
-                            //worksheet.Cells[3, 13].Value = "うち客注";
-                            //worksheet.Cells[3, 15].Value = "売上予定";
-                            //worksheet.Cells[3, 17].Value = "返品";
-                            //worksheet.Cells[3, 19].Value = "返品予定";
-                            //worksheet.Cells[3, 21].Value = "当月予定残";
-                            //worksheet.Columns["VendorCD"].Hide = false;
-                            //worksheet.Columns["VendorName"].Hide=true;
-                            //worksheet.Cells[1,3].Value = dtExport.Rows[0]["aa"].ToString(); 
                             worksheet.Name = "worksheet";
+                            
                             using (XLWorkbook wb = new XLWorkbook())
                             {
-                                
                                 wb.Worksheets.Add(dtExport,"worksheet");
-                                worksheet.Cells[1, 1].Value = "年月：";
-                                worksheet.Cells[2, 1].Value = "店舗:";
-                                worksheet.Cells[1, 2].Value = txtTargetDateFrom.Text;
-                                worksheet.Cells[1, 3].Value = "～";
-                                worksheet.Cells[1, 4].Value = txtTargetDateTo.Text;
-                                worksheet.Cells[2, 3].Value = cboStore.SelectedValue.ToString();
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
+                                wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
+                                wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
+                                wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
+                                wb.Worksheet("worksheet").Cell(1, 4).Value = txtTargetDateTo.Text;
+                                wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
+                                wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
                                 wb.SaveAs(savedialog.FileName);
                                 szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
