@@ -177,7 +177,6 @@ namespace SiiresakiZaikoYoteiHyou
                            
                             worksheet = workbook.ActiveSheet;
                             worksheet.Name = "worksheet";
-                            
                             using (XLWorkbook wb = new XLWorkbook())
                             {
                                 wb.Worksheets.Add(dtExport,"worksheet");
@@ -191,7 +190,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
                                 wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
                                 wb.SaveAs(savedialog.FileName);
-                                szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
+                                szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                             }
                             Process.Start(Path.GetDirectoryName(savedialog.FileName));
                         }
