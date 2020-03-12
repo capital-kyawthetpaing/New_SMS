@@ -95,12 +95,12 @@ namespace BL
                                            dtMsg.Rows[0]["MessageButton"].ToString().Equals("5") ? MessageBoxButtons.YesNoCancel :
                                            MessageBoxButtons.AbortRetryIgnore;
 
-                MessageBoxIcon msgicon = dtMsg.Rows[0]["MessageMark"].ToString().Equals("1") ? MessageBoxIcon.Error :
+                MessageBoxIcon msgicon = dtMsg.Rows[0]["MessageMark"].ToString().Equals("1") ? MessageBoxIcon.Information :
                                          dtMsg.Rows[0]["MessageMark"].ToString().Equals("2") ? MessageBoxIcon.Asterisk :
-                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("3") ? MessageBoxIcon.Exclamation :
-                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("4") ? MessageBoxIcon.Information :
+                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("3") ? MessageBoxIcon.Question :
+                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("4") ? MessageBoxIcon.Error :
                                          dtMsg.Rows[0]["MessageMark"].ToString().Equals("5") ? MessageBoxIcon.Stop :
-                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("6") ? MessageBoxIcon.Question :
+                                         dtMsg.Rows[0]["MessageMark"].ToString().Equals("6") ? MessageBoxIcon.Exclamation :
                                          MessageBoxIcon.None;
 
                return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button1);
