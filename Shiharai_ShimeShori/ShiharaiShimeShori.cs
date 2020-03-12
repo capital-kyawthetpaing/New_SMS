@@ -39,9 +39,6 @@ namespace Shiharai_ShimeShori
             RequireFields();
             this.ModeVisible = false;
             this.ModeText = "修正";
-            Btn_F7.Text = "";
-            Btn_F8.Text = "";
-            Btn_F10.Text = "";
         }
         private void RequireFields()
         {

@@ -160,11 +160,11 @@ namespace ZaikoMotochouInsatsu
                                 zm_report.SetDataSource(dtReport);
                                 zm_report.Refresh();
                                 zm_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
-                                zm_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.AccessibilityObject.Name);
-                                zm_report.SetParameterValue("lblToday", dtReport.Rows[0]["Today"].ToString() + "  " + dtReport.Rows[0]["Now"].ToString());
-                                zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString() + " " + dtReport.Rows[0]["SKUName"].ToString());
-                                zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
-                                zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
+                                zm_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
+                                zm_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
+                               // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
+                               // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
 
                                 vr.CrystalReportViewer1.ReportSource = zm_report;
                                 //vr.ShowDialog();

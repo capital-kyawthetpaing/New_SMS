@@ -251,6 +251,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailHistoryShoukai", "MailH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiiresakiZaikoYoteiHyou", "SiiresakiZaikoYoteiHyou\SiiresakiZaikoYoteiHyou.csproj", "{3E21E03B-9A83-4EBB-8F1D-DAB56258C0DC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E133FDF5-466E-4596-ADB5-D4A65DF05EDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZaikoShoukai", "ZaikoShoukai\ZaikoShoukai.csproj", "{39E1326D-2538-4B91-B60A-ABAB1546A874}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1249,6 +1253,14 @@ Global
 		{3E21E03B-9A83-4EBB-8F1D-DAB56258C0DC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3E21E03B-9A83-4EBB-8F1D-DAB56258C0DC}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E21E03B-9A83-4EBB-8F1D-DAB56258C0DC}.Release|x86.Build.0 = Release|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Debug|x86.Build.0 = Debug|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Release|x86.ActiveCfg = Release|Any CPU
+		{39E1326D-2538-4B91-B60A-ABAB1546A874}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
