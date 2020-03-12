@@ -279,43 +279,33 @@ namespace ZaikoMotochouInsatsu {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DT_D_WarehousingDataTable : global::System.Data.TypedTableBase<DT_D_WarehousingRow> {
             
-            private global::System.Data.DataColumn columnToday;
+            private global::System.Data.DataColumn columnSEQ;
             
-            private global::System.Data.DataColumn columnNow;
+            private global::System.Data.DataColumn columnJanCD;
             
-            private global::System.Data.DataColumn columnSKUName;
+            private global::System.Data.DataColumn columnWarehousingNo;
             
-            private global::System.Data.DataColumn columnJANCD;
+            private global::System.Data.DataColumn columnAdminNO;
             
-            private global::System.Data.DataColumn columnColorName;
+            private global::System.Data.DataColumn columnSKUCD;
             
-            private global::System.Data.DataColumn columnSizeName;
+            private global::System.Data.DataColumn columnSoukoCD;
             
-            private global::System.Data.DataColumn columnBrandName;
+            private global::System.Data.DataColumn columnWarehousingDate;
             
-            private global::System.Data.DataColumn columnDetailsDate1;
+            private global::System.Data.DataColumn columnStockFlg;
             
-            private global::System.Data.DataColumn columnWarehousingKBN;
+            private global::System.Data.DataColumn columnNumber;
             
-            private global::System.Data.DataColumn columnLastMonthQuantity;
-            
-            private global::System.Data.DataColumn columnWarehouseDate;
-            
-            private global::System.Data.DataColumn columnWareHousingName;
-            
-            private global::System.Data.DataColumn columnQuantity;
+            private global::System.Data.DataColumn columnNumberRow;
             
             private global::System.Data.DataColumn columnInfo;
             
-            private global::System.Data.DataColumn columnExportQty;
-            
             private global::System.Data.DataColumn columnImportQty;
             
+            private global::System.Data.DataColumn columnExportQty;
+            
             private global::System.Data.DataColumn columnStockQty;
-            
-            private global::System.Data.DataColumn columnThisMonthQuantity;
-            
-            private global::System.Data.DataColumn columnSKUCD;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -352,105 +342,81 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TodayColumn {
+            public global::System.Data.DataColumn SEQColumn {
                 get {
-                    return this.columnToday;
+                    return this.columnSEQ;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn NowColumn {
+            public global::System.Data.DataColumn JanCDColumn {
                 get {
-                    return this.columnNow;
+                    return this.columnJanCD;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SKUNameColumn {
+            public global::System.Data.DataColumn WarehousingNoColumn {
                 get {
-                    return this.columnSKUName;
+                    return this.columnWarehousingNo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn JANCDColumn {
+            public global::System.Data.DataColumn AdminNOColumn {
                 get {
-                    return this.columnJANCD;
+                    return this.columnAdminNO;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ColorNameColumn {
+            public global::System.Data.DataColumn SKUCDColumn {
                 get {
-                    return this.columnColorName;
+                    return this.columnSKUCD;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SizeNameColumn {
+            public global::System.Data.DataColumn SoukoCDColumn {
                 get {
-                    return this.columnSizeName;
+                    return this.columnSoukoCD;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BrandNameColumn {
+            public global::System.Data.DataColumn WarehousingDateColumn {
                 get {
-                    return this.columnBrandName;
+                    return this.columnWarehousingDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DetailsDate1Column {
+            public global::System.Data.DataColumn StockFlgColumn {
                 get {
-                    return this.columnDetailsDate1;
+                    return this.columnStockFlg;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn WarehousingKBNColumn {
+            public global::System.Data.DataColumn NumberColumn {
                 get {
-                    return this.columnWarehousingKBN;
+                    return this.columnNumber;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn LastMonthQuantityColumn {
+            public global::System.Data.DataColumn NumberRowColumn {
                 get {
-                    return this.columnLastMonthQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn WarehouseDateColumn {
-                get {
-                    return this.columnWarehouseDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn WareHousingNameColumn {
-                get {
-                    return this.columnWareHousingName;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
+                    return this.columnNumberRow;
                 }
             }
             
@@ -464,14 +430,6 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ExportQtyColumn {
-                get {
-                    return this.columnExportQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ImportQtyColumn {
                 get {
                     return this.columnImportQty;
@@ -480,25 +438,17 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ExportQtyColumn {
+                get {
+                    return this.columnExportQty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn StockQtyColumn {
                 get {
                     return this.columnStockQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ThisMonthQuantityColumn {
-                get {
-                    return this.columnThisMonthQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SKUCDColumn {
-                get {
-                    return this.columnSKUCD;
                 }
             }
             
@@ -539,47 +489,23 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DT_D_WarehousingRow AddDT_D_WarehousingRow(
-                        string Today, 
-                        string Now, 
-                        string SKUName, 
-                        string JANCD, 
-                        string ColorName, 
-                        string SizeName, 
-                        string BrandName, 
-                        string DetailsDate1, 
-                        string WarehousingKBN, 
-                        string LastMonthQuantity, 
-                        string WarehouseDate, 
-                        string WareHousingName, 
-                        string Quantity, 
-                        string Info, 
-                        string ExportQty, 
-                        string ImportQty, 
-                        string StockQty, 
-                        string ThisMonthQuantity, 
-                        string SKUCD) {
+            public DT_D_WarehousingRow AddDT_D_WarehousingRow(string SEQ, string JanCD, string WarehousingNo, string AdminNO, string SKUCD, string SoukoCD, string WarehousingDate, string StockFlg, string Number, string NumberRow, string Info, string ImportQty, string ExportQty, string StockQty) {
                 DT_D_WarehousingRow rowDT_D_WarehousingRow = ((DT_D_WarehousingRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Today,
-                        Now,
-                        SKUName,
-                        JANCD,
-                        ColorName,
-                        SizeName,
-                        BrandName,
-                        DetailsDate1,
-                        WarehousingKBN,
-                        LastMonthQuantity,
-                        WarehouseDate,
-                        WareHousingName,
-                        Quantity,
+                        SEQ,
+                        JanCD,
+                        WarehousingNo,
+                        AdminNO,
+                        SKUCD,
+                        SoukoCD,
+                        WarehousingDate,
+                        StockFlg,
+                        Number,
+                        NumberRow,
                         Info,
-                        ExportQty,
                         ImportQty,
-                        StockQty,
-                        ThisMonthQuantity,
-                        SKUCD};
+                        ExportQty,
+                        StockQty};
                 rowDT_D_WarehousingRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDT_D_WarehousingRow);
                 return rowDT_D_WarehousingRow;
@@ -602,68 +528,53 @@ namespace ZaikoMotochouInsatsu {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnToday = base.Columns["Today"];
-                this.columnNow = base.Columns["Now"];
-                this.columnSKUName = base.Columns["SKUName"];
-                this.columnJANCD = base.Columns["JANCD"];
-                this.columnColorName = base.Columns["ColorName"];
-                this.columnSizeName = base.Columns["SizeName"];
-                this.columnBrandName = base.Columns["BrandName"];
-                this.columnDetailsDate1 = base.Columns["DetailsDate1"];
-                this.columnWarehousingKBN = base.Columns["WarehousingKBN"];
-                this.columnLastMonthQuantity = base.Columns["LastMonthQuantity"];
-                this.columnWarehouseDate = base.Columns["WarehouseDate"];
-                this.columnWareHousingName = base.Columns["WareHousingName"];
-                this.columnQuantity = base.Columns["Quantity"];
-                this.columnInfo = base.Columns["Info"];
-                this.columnExportQty = base.Columns["ExportQty"];
-                this.columnImportQty = base.Columns["ImportQty"];
-                this.columnStockQty = base.Columns["StockQty"];
-                this.columnThisMonthQuantity = base.Columns["ThisMonthQuantity"];
+                this.columnSEQ = base.Columns["SEQ"];
+                this.columnJanCD = base.Columns["JanCD"];
+                this.columnWarehousingNo = base.Columns["WarehousingNo"];
+                this.columnAdminNO = base.Columns["AdminNO"];
                 this.columnSKUCD = base.Columns["SKUCD"];
+                this.columnSoukoCD = base.Columns["SoukoCD"];
+                this.columnWarehousingDate = base.Columns["WarehousingDate"];
+                this.columnStockFlg = base.Columns["StockFlg"];
+                this.columnNumber = base.Columns["Number"];
+                this.columnNumberRow = base.Columns["NumberRow"];
+                this.columnInfo = base.Columns["Info"];
+                this.columnImportQty = base.Columns["ImportQty"];
+                this.columnExportQty = base.Columns["ExportQty"];
+                this.columnStockQty = base.Columns["StockQty"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnToday = new global::System.Data.DataColumn("Today", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnToday);
-                this.columnNow = new global::System.Data.DataColumn("Now", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNow);
-                this.columnSKUName = new global::System.Data.DataColumn("SKUName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSKUName);
-                this.columnJANCD = new global::System.Data.DataColumn("JANCD", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJANCD);
-                this.columnColorName = new global::System.Data.DataColumn("ColorName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnColorName);
-                this.columnSizeName = new global::System.Data.DataColumn("SizeName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSizeName);
-                this.columnBrandName = new global::System.Data.DataColumn("BrandName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBrandName);
-                this.columnDetailsDate1 = new global::System.Data.DataColumn("DetailsDate1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDetailsDate1);
-                this.columnWarehousingKBN = new global::System.Data.DataColumn("WarehousingKBN", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWarehousingKBN);
-                this.columnLastMonthQuantity = new global::System.Data.DataColumn("LastMonthQuantity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnLastMonthQuantity);
-                this.columnWarehouseDate = new global::System.Data.DataColumn("WarehouseDate", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWarehouseDate);
-                this.columnWareHousingName = new global::System.Data.DataColumn("WareHousingName", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnWareHousingName);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
-                this.columnInfo = new global::System.Data.DataColumn("Info", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnInfo);
-                this.columnExportQty = new global::System.Data.DataColumn("ExportQty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnExportQty);
-                this.columnImportQty = new global::System.Data.DataColumn("ImportQty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImportQty);
-                this.columnStockQty = new global::System.Data.DataColumn("StockQty", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStockQty);
-                this.columnThisMonthQuantity = new global::System.Data.DataColumn("ThisMonthQuantity", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnThisMonthQuantity);
+                this.columnSEQ = new global::System.Data.DataColumn("SEQ", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSEQ);
+                this.columnJanCD = new global::System.Data.DataColumn("JanCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnJanCD);
+                this.columnWarehousingNo = new global::System.Data.DataColumn("WarehousingNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWarehousingNo);
+                this.columnAdminNO = new global::System.Data.DataColumn("AdminNO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAdminNO);
                 this.columnSKUCD = new global::System.Data.DataColumn("SKUCD", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSKUCD);
+                this.columnSoukoCD = new global::System.Data.DataColumn("SoukoCD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSoukoCD);
+                this.columnWarehousingDate = new global::System.Data.DataColumn("WarehousingDate", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWarehousingDate);
+                this.columnStockFlg = new global::System.Data.DataColumn("StockFlg", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockFlg);
+                this.columnNumber = new global::System.Data.DataColumn("Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumber);
+                this.columnNumberRow = new global::System.Data.DataColumn("NumberRow", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumberRow);
+                this.columnInfo = new global::System.Data.DataColumn("Info", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnInfo);
+                this.columnImportQty = new global::System.Data.DataColumn("ImportQty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImportQty);
+                this.columnExportQty = new global::System.Data.DataColumn("ExportQty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExportQty);
+                this.columnStockQty = new global::System.Data.DataColumn("StockQty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStockQty);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -806,289 +717,65 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Today {
+            public string SEQ {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_D_Warehousing.TodayColumn]));
+                        return ((string)(this[this.tableDT_D_Warehousing.SEQColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Today\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SEQ\' in table \'DT_D_Warehousing\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_D_Warehousing.TodayColumn] = value;
+                    this[this.tableDT_D_Warehousing.SEQColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Now {
+            public string JanCD {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_D_Warehousing.NowColumn]));
+                        return ((string)(this[this.tableDT_D_Warehousing.JanCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Now\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'JanCD\' in table \'DT_D_Warehousing\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_D_Warehousing.NowColumn] = value;
+                    this[this.tableDT_D_Warehousing.JanCDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SKUName {
+            public string WarehousingNo {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_D_Warehousing.SKUNameColumn]));
+                        return ((string)(this[this.tableDT_D_Warehousing.WarehousingNoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKUName\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'WarehousingNo\' in table \'DT_D_Warehousing\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_D_Warehousing.SKUNameColumn] = value;
+                    this[this.tableDT_D_Warehousing.WarehousingNoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string JANCD {
+            public string AdminNO {
                 get {
                     try {
-                        return ((string)(this[this.tableDT_D_Warehousing.JANCDColumn]));
+                        return ((string)(this[this.tableDT_D_Warehousing.AdminNOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'JANCD\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'AdminNO\' in table \'DT_D_Warehousing\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDT_D_Warehousing.JANCDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ColorName {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.ColorNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ColorName\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.ColorNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string SizeName {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.SizeNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SizeName\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.SizeNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string BrandName {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.BrandNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BrandName\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.BrandNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string DetailsDate1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.DetailsDate1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DetailsDate1\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.DetailsDate1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string WarehousingKBN {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.WarehousingKBNColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WarehousingKBN\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.WarehousingKBNColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string LastMonthQuantity {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.LastMonthQuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'LastMonthQuantity\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.LastMonthQuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string WarehouseDate {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.WarehouseDateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WarehouseDate\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.WarehouseDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string WareHousingName {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.WareHousingNameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'WareHousingName\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.WareHousingNameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Quantity {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.QuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.QuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Info {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.InfoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Info\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.InfoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ExportQty {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.ExportQtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ExportQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.ExportQtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ImportQty {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.ImportQtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ImportQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.ImportQtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string StockQty {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.StockQtyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'StockQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.StockQtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ThisMonthQuantity {
-                get {
-                    try {
-                        return ((string)(this[this.tableDT_D_Warehousing.ThisMonthQuantityColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ThisMonthQuantity\' in table \'DT_D_Warehousing\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDT_D_Warehousing.ThisMonthQuantityColumn] = value;
+                    this[this.tableDT_D_Warehousing.AdminNOColumn] = value;
                 }
             }
             
@@ -1110,158 +797,266 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsTodayNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.TodayColumn);
+            public string SoukoCD {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.SoukoCDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SoukoCD\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.SoukoCDColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetTodayNull() {
-                this[this.tableDT_D_Warehousing.TodayColumn] = global::System.Convert.DBNull;
+            public string WarehousingDate {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.WarehousingDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'WarehousingDate\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.WarehousingDateColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNowNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.NowColumn);
+            public string StockFlg {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.StockFlgColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StockFlg\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.StockFlgColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNowNull() {
-                this[this.tableDT_D_Warehousing.NowColumn] = global::System.Convert.DBNull;
+            public string Number {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Number\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.NumberColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSKUNameNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.SKUNameColumn);
+            public string NumberRow {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.NumberRowColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NumberRow\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.NumberRowColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSKUNameNull() {
-                this[this.tableDT_D_Warehousing.SKUNameColumn] = global::System.Convert.DBNull;
+            public string Info {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.InfoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Info\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.InfoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsJANCDNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.JANCDColumn);
+            public string ImportQty {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.ImportQtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImportQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.ImportQtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetJANCDNull() {
-                this[this.tableDT_D_Warehousing.JANCDColumn] = global::System.Convert.DBNull;
+            public string ExportQty {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.ExportQtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ExportQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.ExportQtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsColorNameNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.ColorNameColumn);
+            public string StockQty {
+                get {
+                    try {
+                        return ((string)(this[this.tableDT_D_Warehousing.StockQtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'StockQty\' in table \'DT_D_Warehousing\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDT_D_Warehousing.StockQtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetColorNameNull() {
-                this[this.tableDT_D_Warehousing.ColorNameColumn] = global::System.Convert.DBNull;
+            public bool IsSEQNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.SEQColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSizeNameNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.SizeNameColumn);
+            public void SetSEQNull() {
+                this[this.tableDT_D_Warehousing.SEQColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSizeNameNull() {
-                this[this.tableDT_D_Warehousing.SizeNameColumn] = global::System.Convert.DBNull;
+            public bool IsJanCDNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.JanCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBrandNameNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.BrandNameColumn);
+            public void SetJanCDNull() {
+                this[this.tableDT_D_Warehousing.JanCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBrandNameNull() {
-                this[this.tableDT_D_Warehousing.BrandNameColumn] = global::System.Convert.DBNull;
+            public bool IsWarehousingNoNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.WarehousingNoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsDetailsDate1Null() {
-                return this.IsNull(this.tableDT_D_Warehousing.DetailsDate1Column);
+            public void SetWarehousingNoNull() {
+                this[this.tableDT_D_Warehousing.WarehousingNoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetDetailsDate1Null() {
-                this[this.tableDT_D_Warehousing.DetailsDate1Column] = global::System.Convert.DBNull;
+            public bool IsAdminNONull() {
+                return this.IsNull(this.tableDT_D_Warehousing.AdminNOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsWarehousingKBNNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.WarehousingKBNColumn);
+            public void SetAdminNONull() {
+                this[this.tableDT_D_Warehousing.AdminNOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetWarehousingKBNNull() {
-                this[this.tableDT_D_Warehousing.WarehousingKBNColumn] = global::System.Convert.DBNull;
+            public bool IsSKUCDNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.SKUCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsLastMonthQuantityNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.LastMonthQuantityColumn);
+            public void SetSKUCDNull() {
+                this[this.tableDT_D_Warehousing.SKUCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetLastMonthQuantityNull() {
-                this[this.tableDT_D_Warehousing.LastMonthQuantityColumn] = global::System.Convert.DBNull;
+            public bool IsSoukoCDNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.SoukoCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsWarehouseDateNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.WarehouseDateColumn);
+            public void SetSoukoCDNull() {
+                this[this.tableDT_D_Warehousing.SoukoCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetWarehouseDateNull() {
-                this[this.tableDT_D_Warehousing.WarehouseDateColumn] = global::System.Convert.DBNull;
+            public bool IsWarehousingDateNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.WarehousingDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsWareHousingNameNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.WareHousingNameColumn);
+            public void SetWarehousingDateNull() {
+                this[this.tableDT_D_Warehousing.WarehousingDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetWareHousingNameNull() {
-                this[this.tableDT_D_Warehousing.WareHousingNameColumn] = global::System.Convert.DBNull;
+            public bool IsStockFlgNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.StockFlgColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsQuantityNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.QuantityColumn);
+            public void SetStockFlgNull() {
+                this[this.tableDT_D_Warehousing.StockFlgColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetQuantityNull() {
-                this[this.tableDT_D_Warehousing.QuantityColumn] = global::System.Convert.DBNull;
+            public bool IsNumberNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNumberNull() {
+                this[this.tableDT_D_Warehousing.NumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsNumberRowNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.NumberRowColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetNumberRowNull() {
+                this[this.tableDT_D_Warehousing.NumberRowColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1278,18 +1073,6 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsExportQtyNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.ExportQtyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetExportQtyNull() {
-                this[this.tableDT_D_Warehousing.ExportQtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsImportQtyNull() {
                 return this.IsNull(this.tableDT_D_Warehousing.ImportQtyColumn);
             }
@@ -1302,6 +1085,18 @@ namespace ZaikoMotochouInsatsu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsExportQtyNull() {
+                return this.IsNull(this.tableDT_D_Warehousing.ExportQtyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetExportQtyNull() {
+                this[this.tableDT_D_Warehousing.ExportQtyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsStockQtyNull() {
                 return this.IsNull(this.tableDT_D_Warehousing.StockQtyColumn);
             }
@@ -1310,30 +1105,6 @@ namespace ZaikoMotochouInsatsu {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetStockQtyNull() {
                 this[this.tableDT_D_Warehousing.StockQtyColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsThisMonthQuantityNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.ThisMonthQuantityColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetThisMonthQuantityNull() {
-                this[this.tableDT_D_Warehousing.ThisMonthQuantityColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSKUCDNull() {
-                return this.IsNull(this.tableDT_D_Warehousing.SKUCDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSKUCDNull() {
-                this[this.tableDT_D_Warehousing.SKUCDColumn] = global::System.Convert.DBNull;
             }
         }
         
