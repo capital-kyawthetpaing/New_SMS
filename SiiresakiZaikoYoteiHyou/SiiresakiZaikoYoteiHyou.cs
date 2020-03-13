@@ -13,6 +13,7 @@ using Base.Client;
 using CKM_Controls;
 using System.Diagnostics;
 using System.IO;
+using ClosedXML.Excel;
 using CrystalDecisions.Shared;
 
 namespace SiiresakiZaikoYoteiHyou
@@ -24,6 +25,7 @@ namespace SiiresakiZaikoYoteiHyou
         DataTable dt;
         Viewer vr;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
+        M_StoreClose_Entity msce;
 
         public SiiresakiZaikoYoteiHyou()
         {
@@ -40,7 +42,6 @@ namespace SiiresakiZaikoYoteiHyou
             StartProgram();
             SetRequiredField();
             SetFunctionLabel(EProMode.PRINT);
-            //cboStore.Bind(string.Empty);
             cboStore.Bind(string.Empty, "2");
             cboStore.SelectedValue = StoreCD;
             F9Visible = false;
@@ -64,11 +65,7 @@ namespace SiiresakiZaikoYoteiHyou
             Clear(panalDetail);
             txtTargetDateTo.Focus();
         }
-        //private void BindStore()
-        //{
-        //    cboStore.Bind(string.Empty, "2");
-        //    cboStore.SelectedValue = StoreCD;
-        //}
+        
         public override void FunctionProcess(int Index)
         {
             base.FunctionProcess(Index);
@@ -80,6 +77,9 @@ namespace SiiresakiZaikoYoteiHyou
                             return;
                         break;
                     }
+                case 11:
+                    F11();
+                    break;
             }
         }
         private bool ErrorCheck()
@@ -97,7 +97,6 @@ namespace SiiresakiZaikoYoteiHyou
             return true;
         }
        
-
         private D_MonthlyPurchase_Entity GetData()
         {
             dmpe = new D_MonthlyPurchase_Entity()
@@ -107,6 +106,97 @@ namespace SiiresakiZaikoYoteiHyou
                 YYYYMME=txtTargetDateTo.Text.Replace("/", "")
             };
             return dmpe;
+        }
+        private M_StoreClose_Entity GetStoreClose_Data()
+        {
+            msce = new M_StoreClose_Entity()
+            {
+                StoreCD = cboStore.SelectedValue.ToString(),
+                FiscalYYYYMM = txtTargetDateFrom.Text.Replace("/", ""),
+            };
+            return msce;
+        }
+
+        protected DataTable ChangeDataColumnName(DataTable dtAdd)
+        {
+            dtAdd.Columns["VendorCD"].ColumnName = "仕入先";
+            dtAdd.Columns["VendorName"].ColumnName = "仕入先名";
+            dtAdd.Columns["LastMonthQuantity"].ColumnName = "前月残";
+            dtAdd.Columns["LastMonthAmount"].ColumnName = "前月残額";
+            dtAdd.Columns["ThisMonthPurchaseQ"].ColumnName = "仕入";
+            dtAdd.Columns["ThisMonthPurchaseA"].ColumnName = "当月仕入額";
+            dtAdd.Columns["ThisMonthCustPurchaseQ"].ColumnName = "うち客注";
+            dtAdd.Columns["ThisMonthCustPurchaseA"].ColumnName = "当月客注仕入額";
+            dtAdd.Columns["ThisMonthPurchasePlanQ"].ColumnName = "仕入予定";
+            dtAdd.Columns["ThisMonthPurchasePlanA"].ColumnName = "当月仕入予定額";
+            dtAdd.Columns["ThisMonthSalesQ"].ColumnName = "売上";
+            dtAdd.Columns["ThisMonthSalesA"].ColumnName = "'当月売上額";
+            dtAdd.Columns["ThisMonthCustSalesQ"].ColumnName = "'うち客注";
+            dtAdd.Columns["ThisMonthCustSalesA"].ColumnName = "当月客注売上額";
+            dtAdd.Columns["ThisMonthSalesPlanQ"].ColumnName = "売上予定";
+            dtAdd.Columns["ThisMonthSalesPlanA"].ColumnName = "当月売上予定額";
+            dtAdd.Columns["ThisMonthReturnsQ"].ColumnName = "返品";
+            dtAdd.Columns["ThisMonthReturnsA"].ColumnName = "当月返品額";
+            dtAdd.Columns["ThisMonthReturnsPlanQ"].ColumnName = "返品予定";
+            dtAdd.Columns["ThisMonthReturnsPlanA"].ColumnName = "当月返品予定額";
+            dtAdd.Columns["ThisMonthPlanQuantity"].ColumnName = "当月予定残";
+            dtAdd.Columns["ThisMonthPlanAmount"].ColumnName = "当月予定残額";
+            //dtAdd.Columns.RemoveAt(2);
+            return dtAdd;
+        }
+        private void F11()
+           {
+            if (ErrorCheck())
+            {
+                dmpe = new D_MonthlyPurchase_Entity();
+                dmpe = GetData();
+                DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
+                if (dt.Rows.Count > 0)
+                {
+                    DataTable dtExport = dt;
+                    dtExport = ChangeDataColumnName(dtExport);
+                    string folderPath = "C:\\SES\\";
+                    if (!Directory.Exists(folderPath))
+                    {
+                        Directory.CreateDirectory(folderPath);
+                    }
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Filter = "Excel Files|*.xlsx;";
+                    savedialog.Title = "Save";
+                    savedialog.FileName = "仕入先在庫予定表";
+                    savedialog.InitialDirectory = folderPath;
+                    
+                    savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        {
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+                           
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "worksheet";
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dtExport,"worksheet");
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
+                                wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
+                                wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
+                                wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
+                                wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
+                                wb.Worksheet("worksheet").Cell(1, 4).Value = txtTargetDateTo.Text;
+                                wb.Worksheet("worksheet").Cell(2, 2).Value = cboStore.SelectedValue.ToString();
+                                wb.Worksheet("worksheet").Cell(2, 3).Value = cboStore.Text.ToString();
+                                wb.SaveAs(savedialog.FileName);
+                                szybl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        }
+                    }
+                }
+            }
         }
 
         private L_Log_Entity Get_L_Log_Entity()
@@ -137,7 +227,7 @@ namespace SiiresakiZaikoYoteiHyou
 
                 if (dt.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                    // CheckBeforeExport();
                     try
                     {
                         SiiresakiZaikoYoteiHyou_Report szy_Report = new SiiresakiZaikoYoteiHyou_Report();
@@ -152,9 +242,10 @@ namespace SiiresakiZaikoYoteiHyou
                                 }
                                 szy_Report.SetDataSource(dt);
                                 szy_Report.Refresh();
-                                szy_Report.SetParameterValue("lblDate", txtTargetDateFrom.Text);
-                                szy_Report.SetParameterValue("lblSouko", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
-                                szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString() + "  " + dt.Rows[0]["Now"].ToString());
+                                szy_Report.SetParameterValue("lblDateFrom", txtTargetDateFrom.Text);
+                                szy_Report.SetParameterValue("lblDateTo",txtTargetDateTo.Text);
+                                szy_Report.SetParameterValue("lblStore", cboStore.SelectedValue.ToString() + "   " + cboStore.AccessibilityObject.Name);
+                                szy_Report.SetParameterValue("lblToday", dt.Rows[0]["Today"].ToString());
                                 try
                                 {
 
@@ -210,15 +301,31 @@ namespace SiiresakiZaikoYoteiHyou
                 }
             }
         }
-        private void RunConsole(string FiscalYYYYMM)
+
+        private void CheckBeforeExport()
         {
-            string programID = "GetsujiZaikoKeisanSyori";
+            msce = new M_StoreClose_Entity();
+            msce = GetStoreClose_Data();
+
+            if (szybl.M_StoreClose_Check(msce, "2").Rows.Count > 0)
+            {
+                string ProgramID = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
+                RunConsole(ProgramID, dmpe.YYYYMM);
+            }
+        }
+        private void RunConsole(string programID, string YYYYMM)
+        {
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " +FiscalYYYYMM;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string str = "GetsujiZaikoKeisanSyori,GetsujiShiireKeisanSyori";
+            //System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(0,22)+".exe",cmdLine+"");
+            System.Diagnostics.Process.Start(filePath+@"\"+str.Substring(24,23)+".exe",cmdLine+"");
+            //System.Diagnostics.Process.Start(filePath+@"\"+programID+".exe",cmdLine+"");
         }
+       
         private void SiiresakiZaikoYoteiHyou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -237,6 +344,6 @@ namespace SiiresakiZaikoYoteiHyou
                     }
                 }
             }
-            }
+        }
     }
 }

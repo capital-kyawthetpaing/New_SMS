@@ -29,6 +29,7 @@ namespace Entity
         public string OrderBy { get; set; }
         public DataTable dtTemp1 { get; set; }
         public DataTable dtTemp2 { get; set; }
+        public DataTable dtTemp3 { get; set; }
         public string searchType { get; set; }
 
         public DataTable dt1 { get; set; }

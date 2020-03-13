@@ -66,7 +66,11 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@PayPlanDate",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDate} },            
+                //{"@PayPlanDate",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDate} },            
+                //{"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.Operator } },
+                //{"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
+                {"@PayeePlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
+                {"@PayeePlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
                 {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.Operator } },
                 {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
             };

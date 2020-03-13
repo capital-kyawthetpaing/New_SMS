@@ -33,11 +33,12 @@ namespace Shiharai_ShimeShori
         private void ShiharaiShimeShori_Load(object sender, EventArgs e)
         {
             InProgramID = "Shiharai_ShimeShori";
-            SetFunctionLabel(EProMode.MENTE);
+            SetFunctionLabel(EProMode.INPUT);
             StartProgram();
             BindCombo();            
-           RequireFields();
-           // string.Format("{0} per {1}", PaymentCD, PaymentName);
+            RequireFields();
+            this.ModeVisible = false;
+            this.ModeText = "修正";
         }
         private void RequireFields()
         {
@@ -85,7 +86,7 @@ namespace Shiharai_ShimeShori
                     {
                         if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                         {
-                            if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1))
+                            if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1) )
                             {
                                 sss_bl.ShowMessage("I101");
                                 ChangeMode(EOperationMode.INSERT);
@@ -114,8 +115,6 @@ namespace Shiharai_ShimeShori
         {
             dpch_entity = GetDataEntity();
             string ItemType = cboProcessType.Text;
-            //Data();
-
             switch (ItemType)
             {
                 case "支払締":
@@ -135,25 +134,9 @@ namespace Shiharai_ShimeShori
         private void Data()
         {
             dgvPaymentClose.ClearSelection();
-            dpch_entity = GetDataEntity();
+           // dpch_entity = GetDataEntity();
 
             DataTable dtPayCost = sss_bl.D_PayClose_Search(dpch_entity);
-            for (int i = 0; i < dtPayCost.Rows.Count; i++)
-            {
-                string processKBN = dtPayCost.Rows[i]["ProcessingKBN"].ToString();
-                if (processKBN.Equals("1"))
-                {
-                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払締";
-                }
-                else if (processKBN.Equals("2"))
-                {
-                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払締キャンセル";
-                }
-                else
-                {
-                    dtPayCost.Rows[i]["ProcessingKBN"] = "支払確定";
-                }
-            }
             if (dtPayCost.Rows.Count > 0)
             {
                 dgvPaymentClose.Refresh();
@@ -262,8 +245,6 @@ namespace Shiharai_ShimeShori
                     cboProcessType.Focus();
                     break;
             }
-
-
         }
 
         protected override void EndSec()
@@ -295,14 +276,13 @@ namespace Shiharai_ShimeShori
                     {
                         ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
                         ScPaymentCD.Value2 = ScPaymentCD.LabelText;
-                        //F11();
+                        F11();
                     }
                     else
                     {
                         sss_bl.ShowMessage("E101");
                         ScPaymentCD.SetFocus(1);
                     }
-                  
                 }
                 else
                 {
@@ -360,7 +340,6 @@ namespace Shiharai_ShimeShori
                 j += 3;
             }
         }
-
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             F11();
