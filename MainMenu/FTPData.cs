@@ -73,9 +73,9 @@ namespace MainMenu
 
             }
         }
-        public void UpdateSyncData()
+        public void UpdateSyncData(string Path)
         {
-            var GetList = FTPData.GetFileList("ftp://202.223.48.145/", "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");   /// Add Network Credentials
+            var GetList = FTPData.GetFileList(Path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");   /// Add Network Credentials
             if (GetList.Count() > 0 && GetList != null)
             {
                // Cursor = Cursors.WaitCursor;
@@ -84,7 +84,7 @@ namespace MainMenu
                 foreach (string file in GetList)
                 {
 
-                    FTPData.Download(file, "ftp://202.223.48.145/", "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
+                    FTPData.Download(file, Path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
                 }
 
               //  Cursor = Cursors.Default;

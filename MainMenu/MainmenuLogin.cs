@@ -25,7 +25,6 @@ namespace MainMenu
             if (ApplicationDeployment.IsNetworkDeployed)
             {
                 label2.Text = ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString(4);
-
             }
             else
                 ckM_Button3.Visible = false;
@@ -55,7 +54,7 @@ namespace MainMenu
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();
-            loginbl = new Login_BL();
+            //loginbl = new Login_BL();
             //PopupNotifier pop = new PopupNotifier();
             //pop.TitleText = "New Updates are Available Now!";
             //pop.ContentText = "Press F11 to download new features";
@@ -105,7 +104,7 @@ namespace MainMenu
                 {
                     this.Cursor = Cursors.WaitCursor;
                     FTPData ftp = new FTPData();
-                    ftp.UpdateSyncData();
+                    ftp.UpdateSyncData(Login_BL.SyncPath);
                     this.Cursor = Cursors.Default;
                     MessageBox.Show("Now AppData Files are updated!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // .. 

@@ -138,7 +138,7 @@ namespace CKM_Controls
                     case CKM_Color.DarkGreen:
                         this.BackColor = Color.FromArgb(84, 130, 53);
                         break;
-                 
+
                 }
             }
         }
@@ -449,6 +449,20 @@ namespace CKM_Controls
             }
             return c;
         }
+
+        public static bool IsConsistFullWidth(string txt)
+        {
+            var c = txt.ToCharArray();
+            foreach (char chr in c)
+            {
+                if (Encoding.GetEncoding("shift_JIS").GetByteCount(chr.ToString()) == 2)
+                {
+                    return true;
+                }
+
+            }
+            return false;
+        }
         protected override void OnLeave(EventArgs e)
         {
             if (Ctrl_Type == Type.Normal)
@@ -456,7 +470,7 @@ namespace CKM_Controls
                 string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
                 if (Convert.ToInt32(str) > length)
                 {
-                    MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Focus();
                     return;
                 }
@@ -468,7 +482,7 @@ namespace CKM_Controls
                 int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
                 if (onebyteCount != byteCount)
                 {
-                    MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.Focus();
                 }
             }

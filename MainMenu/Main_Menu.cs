@@ -12,6 +12,7 @@ using BL;
 using Entity;
 using System.Diagnostics;
 using DL;
+using System.Runtime.InteropServices;
 
 namespace MainMenu
 {
@@ -40,6 +41,7 @@ namespace MainMenu
             {
                txt_Mesaage.Text= dt.Rows[0]["Message"].ToString();
             }
+            lblOperatorName.Text = mse.StaffName;
         }
         private void SetDesignerFunction()
         {
@@ -56,10 +58,14 @@ namespace MainMenu
         protected void BindButtonName()
         {
             var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
-
+            if (dt.Rows.Count > 0)
+            {
+                var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
+                ButtonText(panelLeft, _result, 1);
+            }
             //var _result =(from r1 in dt.AsEnumerable()  group r1 by new { Char1 = r1.Field<string>("Char1"), } into g  select new { Char1 = g.Key.Char1,   BusinessSEQ = g.Max(x => x.Field<int>("BusinessSEQ")) }).ToArray();    //Group By
-            var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
-            ButtonText(panelLeft, _result, 1);
+            //var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
+            //ButtonText(panelLeft, _result, 1);
         }
 
         protected void ButtonText(Panel p, DataTable k0, int Gym)
@@ -148,32 +154,50 @@ namespace MainMenu
         }
         private void OpenForm(object sender)
         {
+            string filePath = ""; string cmdLine = ""; string exe_name = "";
             try
             {
             var programID = (sender as CKM_Button).Text;
-            var exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+             exe_name = menu.Select("ProgramID = '"+programID+"'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-                string filePath = "";
-                //System.Diagnostics.Debug 
+
+                
                 if (Debugger.IsAttached || Login_BL.Islocalized)
                 {
                     System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                     filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+              //   filePath = @"C:\SMS\AppData";
                 }
                 else
                 {
-                    filePath = @"C:\\SMS\\AppData";
+                    filePath = @"C:\SMS\AppData";
                 }
-                string cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-           
-                (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
+
+                Process[] localByName = Process.GetProcessesByName(exe_name);
+                if (localByName.Count() > 0)
+                {
+                    IntPtr handle = localByName[0].MainWindowHandle;
+                    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    return;
+                }
+                System.Diagnostics.Process.Start(filePath + @"\\" + exe_name + ".exe", cmdLine + "");
+               //  MessageBox.Show(  Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name+ "Upper" + Base_DL.iniEntity.DatabaseServer);
+                // (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                //  MessageBox.Show(Environment.NewLine + cmdLine + Environment.NewLine + filePath + Environment.NewLine + exe_name + "Lower");
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The program cannot locate to the specified file!!!");
+                MessageBox.Show("The program cannot locate to the specified file!!!" + ex.ToString() +Environment.NewLine +cmdLine +Environment.NewLine + filePath+Environment.NewLine+ exe_name);
             }
         }
+        private const int SW_SHOWMAXIMIZED = 3;
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        
         private void panelLeft_Click(object sender, EventArgs e)
         {
             var c = GetAllControls(panel_right);
@@ -266,6 +290,11 @@ namespace MainMenu
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void btnProj6_Click(object sender, EventArgs e)
+        {
 
         }
     }

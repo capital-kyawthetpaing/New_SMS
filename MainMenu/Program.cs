@@ -27,26 +27,28 @@ namespace MainMenu
 
        static Form LoginFormName()
         {
-            //if (System.Diagnostics.Debugger.IsAttached)
-            //{
-            //    MessageBox.Show("Debugged");
-            //}
-            //else
-
-            //    MessageBox.Show("exeDiresrt");
-            
             Form pgname =null;
+            const string path= "ftp://202.223.48.145/Sync/";
+            Login_BL.SyncPath = path;
+            const string localpath = @"C:\SMS\AppData\CKM.ini";
             if (System.Deployment.Application.ApplicationDeployment.IsNetworkDeployed)
             {
-                if (!System.IO.File.Exists(@"C:\SMS\AppData\CKM.ini"))
+                FTPData ftp = new FTPData();
+                if (!System.IO.File.Exists(localpath))
                 {
-                    FTPData.Download("CKM.ini", "ftp://202.223.48.145/", "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
+                    FTPData.Download("CKM.ini", path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");
                 }
+                //else
+                //{
+                //    ftp.UpdateSyncData("ftp://202.223.48.145/NewlyModified/");
+                //    // Cursor = Cursors.WaitCursor;
+                //    // this.Cursor = Cursors.Default;
+                //}
+
                 Login_BL.Islocalized = false;
             }
-
-
-            else {
+            else
+            {
                 Login_BL.Islocalized = true;
             }
             if (lbl.ReadConfig())

@@ -22,6 +22,7 @@ namespace BL
         M_Store_DL mstoredl;
         public const bool isd = false;
         public static bool Islocalized = false;
+        public static string SyncPath = "";
         /// <summary>
         /// constructor
         /// </summary>
