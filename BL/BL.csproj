@@ -179,6 +179,7 @@
     <Compile Include="TempoRejiPointSettei_BL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_BL.cs" />
     <Compile Include="UriageMotochou_BL.cs" />
+    <Compile Include="UrikakekinTairyuuHyou_BL.cs" />
     <Compile Include="Vendor_BL.cs" />
     <Compile Include="WowmaAPI_BL.cs" />
     <Compile Include="YahooAPI_BL.cs" />
