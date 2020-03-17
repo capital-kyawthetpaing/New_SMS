@@ -12,6 +12,7 @@ using BL;
 using Entity;
 using System.Diagnostics;
 using DL;
+using System.Runtime.InteropServices;
 
 namespace MainMenu
 {
@@ -21,7 +22,10 @@ namespace MainMenu
         CKM_Button btnleftcurrent;
         CKM_Button btnrightcurrent;
 
+        private const int SW_SHOWMAXIMIZED = 3;
 
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         M_Staff_Entity mse;
         Menu_BL mbl;
         string Staff_CD = "";
@@ -40,6 +44,8 @@ namespace MainMenu
             {
                 txt_Mesaage.Text = dt.Rows[0]["Message"].ToString();
             }
+
+            lblOperatorName.Text = mse.StaffName;
         }
         private void SetDesignerFunction()
         {
@@ -56,8 +62,11 @@ namespace MainMenu
         {
             
             var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
-            var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
-            ButtonText(panelLeft, _result, 1);
+            if (dt.Rows.Count > 0)
+            {
+                var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
+                ButtonText(panelLeft, _result, 1);
+            }
         }
         protected void ButtonText(Panel p, DataTable k0, int Gym)
         {
@@ -159,7 +168,13 @@ namespace MainMenu
                     filePath = @"C:\\SMS\\AppData";
                 }
                 string cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-
+                Process[] localByName = Process.GetProcessesByName(exe_name);
+                if (localByName.Count() > 0)
+                {
+                    IntPtr handle = localByName[0].MainWindowHandle;
+                    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    return;
+                }
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
             }
             catch (Exception ex)

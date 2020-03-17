@@ -314,6 +314,13 @@ namespace Search
         /// <param name="e"></param>
         private void TxtCode_Leave(object sender, EventArgs e)
         {
+            if (IsConsistFullWidth(txtCode.Text))
+            {
+                ShowErrorMessage("E221");
+                txtCode.Focus();
+                txtCode.MoveNext = false;
+                return;
+            }
             Control ctrl = this;
             do
             {
@@ -627,7 +634,23 @@ namespace Search
         {
             Search();
         }
+        public static bool IsConsistFullWidth(string txt)
+        {
+            var c = txt.ToCharArray();
+            foreach (char chr in c)
+            {
+                if (System.Text.Encoding.GetEncoding("shift_JIS").GetByteCount(chr.ToString()) == 2)
+                {
+                    return true;
+                }
 
+            }
+            return false;
+        }
+        private void ShowErrorMessage(string messageID)
+        {
+            bbl.ShowMessage(messageID);
+        }
         /// <summary>
         /// change focus
         /// </summary>
@@ -635,8 +658,21 @@ namespace Search
         /// <param name="e"></param>
         private void TxtCode_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.F12)
+            {
+                if (IsConsistFullWidth(txtCode.Text))
+                {
+                    ShowErrorMessage("E221");
+                    txtCode.Focus();
+                    txtCode.MoveNext = false;
+                    return;
+                }
+            }
+          
             if (e.KeyCode == Keys.Enter)
             {
+               
+
                 if (string.IsNullOrWhiteSpace(txtCode.Text))
                     lblName.Text = string.Empty;
                 CodeKeyDownEvent?.Invoke(this, e);

@@ -177,7 +177,7 @@ namespace CKM_Controls
                 e.Cancel = true;
                 MoveNext = false;
                 SelectAll();
-                DialogResult ok = MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult ok = MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Mdea = true;
             }
             else
