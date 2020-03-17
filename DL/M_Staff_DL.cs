@@ -179,6 +179,7 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
                 { "@BMNCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.BMNCD } },
                 { "@MenuCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.MenuCD } },
+                { "@StoreMenuCD",new ValuePair{value1=SqlDbType.VarChar,value2=mse.StoreMenuCD } },
                 { "@AuthorizationsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.KengenCD } },
                 { "@StoreAuthorizationsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreAuthorizationsCD } },
                 { "@PositionCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.PositionCD } },
