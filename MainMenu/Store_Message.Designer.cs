@@ -36,8 +36,9 @@
             // txt_message
             // 
             this.txt_message.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.txt_message.BackColor = System.Drawing.Color.White;
             this.txt_message.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
-            this.txt_message.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txt_message.Font = new System.Drawing.Font("MS Gothic", 20F);
             this.txt_message.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txt_message.Length = 500;
             this.txt_message.Location = new System.Drawing.Point(12, 24);
@@ -48,6 +49,7 @@
             this.txt_message.Multiline = true;
             this.txt_message.Name = "txt_message";
             this.txt_message.RowCount = 10;
+            this.txt_message.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_message.Size = new System.Drawing.Size(1163, 543);
             this.txt_message.TabIndex = 0;
             this.txt_message.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Large;

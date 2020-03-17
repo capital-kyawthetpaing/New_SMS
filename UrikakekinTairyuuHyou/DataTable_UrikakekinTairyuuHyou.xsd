@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataTable_UrikakekinTairyuuHyou" targetNamespace="http://tempuri.org/DataTable_UrikakekinTairyuuHyou.xsd" xmlns:mstns="http://tempuri.org/DataTable_UrikakekinTairyuuHyou.xsd" xmlns="http://tempuri.org/DataTable_UrikakekinTairyuuHyou.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataTable_UrikakekinTairyuuHyou" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataTable_UrikakekinTairyuuHyou" msprop:Generator_UserDSName="DataTable_UrikakekinTairyuuHyou">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RPC_UrikakekinTairyuuHyou_PrintSelect" msprop:Generator_TableClassName="RPC_UrikakekinTairyuuHyou_PrintSelectDataTable" msprop:Generator_TableVarName="tableRPC_UrikakekinTairyuuHyou_PrintSelect" msprop:Generator_TablePropName="RPC_UrikakekinTairyuuHyou_PrintSelect" msprop:Generator_RowDeletingName="RPC_UrikakekinTairyuuHyou_PrintSelectRowDeleting" msprop:Generator_RowChangingName="RPC_UrikakekinTairyuuHyou_PrintSelectRowChanging" msprop:Generator_RowEvHandlerName="RPC_UrikakekinTairyuuHyou_PrintSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="RPC_UrikakekinTairyuuHyou_PrintSelectRowDeleted" msprop:Generator_UserTableName="RPC_UrikakekinTairyuuHyou_PrintSelect" msprop:Generator_RowChangedName="RPC_UrikakekinTairyuuHyou_PrintSelectRowChanged" msprop:Generator_RowEvArgName="RPC_UrikakekinTairyuuHyou_PrintSelectRowChangeEvent" msprop:Generator_RowClassName="RPC_UrikakekinTairyuuHyou_PrintSelectRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerCD" msprop:Generator_ColumnVarNameInTable="columnCustomerCD" msprop:Generator_ColumnPropNameInRow="CustomerCD" msprop:Generator_ColumnPropNameInTable="CustomerCDColumn" msprop:Generator_UserColumnName="CustomerCD" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="Sale" msprop:Generator_ColumnVarNameInTable="columnSale" msprop:Generator_ColumnPropNameInRow="Sale" msprop:Generator_ColumnPropNameInTable="SaleColumn" msprop:Generator_UserColumnName="Sale" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectGaku" msprop:Generator_ColumnVarNameInTable="columnCollectGaku" msprop:Generator_ColumnPropNameInRow="CollectGaku" msprop:Generator_ColumnPropNameInTable="CollectGakuColumn" msprop:Generator_UserColumnName="CollectGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="BalanceGaku" msprop:Generator_ColumnVarNameInTable="columnBalanceGaku" msprop:Generator_ColumnPropNameInRow="BalanceGaku" msprop:Generator_ColumnPropNameInTable="BalanceGakuColumn" msprop:Generator_UserColumnName="BalanceGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="Avg" msprop:Generator_ColumnVarNameInTable="columnAvg" msprop:Generator_ColumnPropNameInRow="Avg" msprop:Generator_ColumnPropNameInTable="AvgColumn" msprop:Generator_UserColumnName="Avg" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

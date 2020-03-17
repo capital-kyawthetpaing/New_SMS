@@ -152,6 +152,9 @@ namespace BL
             dpe.xml1 = DataTableToXml(dpe.dtTemp1);
             dpe.xml2 = DataTableToXml(dpe.dtTemp2);
             dpe.xml3 = DataTableToXml(dpe.dtTemp3);
+            dpe.xml4 = DataTableToXml(dpe.dtTemp4);
+            dpe.xml5 = DataTableToXml(dpe.dtTemp5);
+            dpe.xml6 = DataTableToXml(dpe.dtTemp6);
             return dpdl.D_Pay_Update(dpe);
         }
 

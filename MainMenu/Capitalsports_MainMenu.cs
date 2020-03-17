@@ -12,6 +12,7 @@ using BL;
 using CKM_Controls;
 using System.Diagnostics;
 using DL;
+using System.Runtime.InteropServices;
 
 namespace MainMenu
 {
@@ -25,6 +26,10 @@ namespace MainMenu
         Menu_BL mbl;
         string Staff_CD = "";
         string btnText = string.Empty;
+        private const int SW_SHOWMAXIMIZED = 3;
+
+        [DllImport("user32.dll")]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         public Capitalsports_MainMenu(String SCD, M_Staff_Entity mse)
         {
             mbl = new Menu_BL();
@@ -33,6 +38,8 @@ namespace MainMenu
             InitializeComponent();
             lblOperatorName.Text = mse.StaffName;
             SetDesignerFunction();
+
+            lblOperatorName.Text = mse.StaffName;
         }
         private void SetDesignerFunction()
         {
@@ -72,8 +79,11 @@ namespace MainMenu
             var dt = menu = mbl.getMenuNo(Staff_CD, Base_DL.iniEntity.StoreType);
 
             //var _result =(from r1 in dt.AsEnumerable()  group r1 by new { Char1 = r1.Field<string>("Char1"), } into g  select new { Char1 = g.Key.Char1,   BusinessSEQ = g.Max(x => x.Field<int>("BusinessSEQ")) }).ToArray();    //Group By
-            var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
-            ButtonText(panel_left, _result, 1);
+            if (dt.Rows.Count > 0)
+            {
+                var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
+                ButtonText(panel_left, _result, 1);
+            }
         }
 
         protected void ButtonText(Panel p, DataTable k0, int Gym)
@@ -258,7 +268,13 @@ namespace MainMenu
                     filePath = @"C:\\SMS\\AppData";
                 }
                 string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-
+                Process[] localByName = Process.GetProcessesByName(exe_name);
+                if (localByName.Count() > 0)
+                {
+                    IntPtr handle = localByName[0].MainWindowHandle;
+                    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    return;
+                }
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
             }
             catch (Exception ex)

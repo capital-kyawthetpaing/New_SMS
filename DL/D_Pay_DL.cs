@@ -124,16 +124,18 @@ namespace DL
             {
                 { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StaffCD } },
                 { "@PayDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayDate } },
-                { "@Xml1", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.xml1 } },
-                { "@Xml2", new ValuePair{value1 = SqlDbType.Xml, value2 = dpe.xml2 } },
-                { "@Xml3", new ValuePair{value1 = SqlDbType.Xml,value2 = dpe.xml3} },
+                { "@Xml1", new ValuePair { value1 = SqlDbType.Xml, value2 = dpe.xml4 } },
+                { "@Xml2", new ValuePair{value1 = SqlDbType.Xml, value2 = dpe.xml5 } },
+                { "@Xml3", new ValuePair{value1 = SqlDbType.Xml,value2 = dpe.xml6} },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Operator } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD } },
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } },
                 { "@TotalPayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dpe.PayGakuTotol } },
-                //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD +" "+ dpe.Key  } }
+                { "@PayNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayNo } },
+                {"@LargePayNO", new ValuePair{value1 = SqlDbType.VarChar, value2 = dpe.LargePayNO} }
+
             };
 
             return InsertUpdateDeleteData(dic, "D_Pay_Update");

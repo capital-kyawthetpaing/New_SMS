@@ -29,6 +29,10 @@
               <xs:element name="ImportQty" msprop:Generator_ColumnVarNameInTable="columnImportQty" msprop:Generator_ColumnPropNameInRow="ImportQty" msprop:Generator_ColumnPropNameInTable="ImportQtyColumn" msprop:Generator_UserColumnName="ImportQty" type="xs:string" minOccurs="0" />
               <xs:element name="ExportQty" msprop:Generator_ColumnVarNameInTable="columnExportQty" msprop:Generator_ColumnPropNameInRow="ExportQty" msprop:Generator_ColumnPropNameInTable="ExportQtyColumn" msprop:Generator_UserColumnName="ExportQty" type="xs:string" minOccurs="0" />
               <xs:element name="StockQty" msprop:Generator_ColumnVarNameInTable="columnStockQty" msprop:Generator_ColumnPropNameInRow="StockQty" msprop:Generator_ColumnPropNameInTable="StockQtyColumn" msprop:Generator_UserColumnName="StockQty" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUName" msprop:Generator_ColumnVarNameInTable="columnSKUName" msprop:Generator_ColumnPropNameInRow="SKUName" msprop:Generator_ColumnPropNameInTable="SKUNameColumn" msprop:Generator_UserColumnName="SKUName" type="xs:string" minOccurs="0" />
+              <xs:element name="ColorName" msprop:Generator_ColumnVarNameInTable="columnColorName" msprop:Generator_ColumnPropNameInRow="ColorName" msprop:Generator_ColumnPropNameInTable="ColorNameColumn" msprop:Generator_UserColumnName="ColorName" type="xs:string" minOccurs="0" />
+              <xs:element name="SizeName" msprop:Generator_ColumnVarNameInTable="columnSizeName" msprop:Generator_ColumnPropNameInRow="SizeName" msprop:Generator_ColumnPropNameInTable="SizeNameColumn" msprop:Generator_UserColumnName="SizeName" type="xs:string" minOccurs="0" />
+              <xs:element name="BrandName" msprop:Generator_ColumnVarNameInTable="columnBrandName" msprop:Generator_ColumnPropNameInRow="BrandName" msprop:Generator_ColumnPropNameInTable="BrandNameColumn" msprop:Generator_UserColumnName="BrandName" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

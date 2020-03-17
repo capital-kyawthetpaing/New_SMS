@@ -193,9 +193,9 @@
             this.txtOperatorCD.isEnterKeyDown = false;
             this.txtOperatorCD.IsNumber = true;
             this.txtOperatorCD.IsShop = false;
-            this.txtOperatorCD.Length = 4;
+            this.txtOperatorCD.Length = 10;
             this.txtOperatorCD.Location = new System.Drawing.Point(323, 125);
-            this.txtOperatorCD.MaxLength = 4;
+            this.txtOperatorCD.MaxLength = 10;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(137, 19);
