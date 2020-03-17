@@ -42,6 +42,7 @@ namespace Entity
         public string DisplayKbn { get; set; }
         public string StaffCDFrom { get; set; }
         public string StaffCDTo { get; set; }
+        public string StoreMenuCD { get; set; }
 
     }
 }

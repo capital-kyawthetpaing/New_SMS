@@ -30,6 +30,10 @@ namespace Entity
         public DataTable dtTemp1 { get; set; }
         public DataTable dtTemp2 { get; set; }
         public DataTable dtTemp3 { get; set; }
+
+        public DataTable dtTemp4 { get; set; }
+        public DataTable dtTemp5 { get; set; }
+        public DataTable dtTemp6 { get; set; }
         public string searchType { get; set; }
 
         public DataTable dt1 { get; set; }

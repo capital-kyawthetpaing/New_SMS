@@ -52,7 +52,7 @@ namespace Search
             {
                 if(!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
                 {                   
-                     int result = txtPaymentDateTo.Text.CompareTo(txtPaymentDateFrom.Text);
+                     int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
                      if (result > 0)
                      {
                          sssbl.ShowMessage("E104");
@@ -68,7 +68,7 @@ namespace Search
             {
                 if(!string.IsNullOrWhiteSpace(txtPaymentInputDateTo.Text))
                 {
-                    int result = txtPaymentInputDateTo.Text.CompareTo(txtPaymentInputDateFrom.Text);
+                    int result = txtPaymentInputDateFrom.Text.CompareTo(txtPaymentInputDateTo.Text);
                     if(result > 0)
                     {
                         sssbl.ShowMessage("E104");
@@ -82,7 +82,7 @@ namespace Search
         {
             if (!string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
             {
-                int result = txtPaymentDateTo.Text.CompareTo(txtPaymentDateFrom.Text);
+                int result = txtPaymentDateFrom.Text.CompareTo(txtPaymentDateTo.Text);
                 if (result > 0)
                 {
                     sssbl.ShowMessage("E104");
@@ -93,7 +93,7 @@ namespace Search
 
             if (!string.IsNullOrWhiteSpace(txtPaymentInputDateTo.Text))
             {
-                int result = txtPaymentInputDateTo.Text.CompareTo(txtPaymentInputDateFrom.Text);
+                int result = txtPaymentInputDateFrom.Text.CompareTo(txtPaymentInputDateTo.Text);
                 if (result > 0)
                 {
                     sssbl.ShowMessage("E104");

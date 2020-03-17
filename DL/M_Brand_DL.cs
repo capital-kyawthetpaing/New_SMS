@@ -53,6 +53,7 @@ namespace DL
             {
                 { "@Brand", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.BrandCD } },
                 { "@BrandName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe .BrandName } },
+                { "@BrandKana",new ValuePair{value1=SqlDbType.VarChar,value2=mbe.BrandKana} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.InsertOperator } },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.PC } },
