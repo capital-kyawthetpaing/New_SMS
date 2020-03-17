@@ -28,6 +28,7 @@ namespace Entity
         public string LocationXml { get; set; }
         public string PayGakuTotol { get; set; }
         public string StoreCD { get; set; }
+        public string PaymentNum { get; set; }
 
     }
 }

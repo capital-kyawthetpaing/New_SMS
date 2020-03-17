@@ -251,7 +251,7 @@
             this.cboProcessType.MaxLength = 10;
             this.cboProcessType.MoveNext = true;
             this.cboProcessType.Name = "cboProcessType";
-            this.cboProcessType.Size = new System.Drawing.Size(150, 20);
+            this.cboProcessType.Size = new System.Drawing.Size(90, 20);
             this.cboProcessType.TabIndex = 9;
             // 
             // lblProcessing
@@ -296,6 +296,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1434, 961);
             this.Controls.Add(this.dgvPaymentClose);
+            this.F10Visible = false;
+            this.F7Visible = false;
+            this.F8Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "Shiharai_ShimeShori";

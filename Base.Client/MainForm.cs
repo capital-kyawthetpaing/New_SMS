@@ -1418,6 +1418,17 @@ namespace Base.Client
                             if (btn.Enabled)
                             {
                                 //btn.Focus();  これがあるとF9キー押下時に検索が2重に開く
+
+                               // var val = PanelFooter.Controls.Find("btn" + e.KeyCode.ToString(), true)[0] as UserControl;
+                                if (ActiveControl is UserControl && e.KeyCode ==  Keys.F12)
+                                {
+                                    UserControl sc = ActiveControl as UserControl;
+                                    Control ctrl = sc.Controls.Find("txtCode", true)[0];
+                                    if (!(sc.ActiveControl as CKM_TextBox).MoveNext)
+                                    {
+                                        return;
+                                    }
+                                }
                                 PreviousCtrl = ActiveControl;
                                 if (!string.IsNullOrWhiteSpace(btn.Text))
                                     ButtonFunction(btn.Tag.ToString());
@@ -1726,6 +1737,30 @@ namespace Base.Client
             //    var f = (ActiveControl as CKM_TextBox);
             //    var gt = f.TabIndex;
             //}
+
+
+            if (e.KeyCode == Keys.F12)
+            {
+                if (ActiveControl is UserControl)
+                {
+                    UserControl sc = ActiveControl as UserControl;
+                    Control ctrl = sc.Controls.Find("txtChangeDate", true)[0];
+                    if ((sc.ActiveControl as CKM_TextBox).MoveNext)
+                    {
+                        if (sc.ActiveControl == ctrl)
+                            sc.SelectNextControl(sc.ActiveControl, true, true, true, true);
+                        else
+                        {
+                            if (!ctrl.Visible)
+                                this.SelectNextControl(ActiveControl, true, true, true, true);
+                            else
+                                sc.SelectNextControl(sc.ActiveControl, true, true, true, true);
+                        }
+                    }
+                    else
+                        return;
+                }
+            }
             if (e.KeyCode == Keys.Enter)
             {
                 if (ActiveControl is CKM_TextBox)
@@ -1812,6 +1847,7 @@ namespace Base.Client
 
                 }
             }
+         
 
         }
 

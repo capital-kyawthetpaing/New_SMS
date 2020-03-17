@@ -133,7 +133,7 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD } },
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } },
                 { "@TotalPayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dpe.PayGakuTotol } },
-                //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD +" "+ dpe.Key  } }
+                { "@PaymentNum", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PaymentNum } }
             };
 
             return InsertUpdateDeleteData(dic, "D_Pay_Update");
