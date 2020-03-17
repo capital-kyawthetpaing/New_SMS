@@ -124,12 +124,12 @@ namespace Search
             }
             else if (chk_Store.Checked && !chk_Web.Checked)
             {
-                chk = "1";
+                chk = "2";
                 return chk;
             }
             else 
             {
-                chk = "2";
+                chk = "1";
                 return chk;
             }
         }
