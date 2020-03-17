@@ -165,13 +165,15 @@ namespace SiharaiNyuuryoku
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
                     ScPaymentProcessNum.Enabled = true;
+                    ScPaymentProcessNum.SearchEnable = true;
                     ScPaymentNum.Enabled = true;
+                    ScPaymentNum.SearchEnable = true;
                     ScPaymentProcessNum.SetFocus(1);
                     txtDueDate1.Enabled = false;
                     txtDueDate2.Enabled = false;
                     ScPayee.Enabled = false;
                     ScPayee.SearchEnable = false;
-                    F12Enable = false;
+                    F12Enable = true;
                     btnF10Show.Enabled = F11Enable = false;
                     break;
             }
@@ -816,7 +818,7 @@ namespace SiharaiNyuuryoku
             btnReleaseAll.Enabled = true;
             dpe.PayNo = ScPaymentNum.TxtCode.Text;
             dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-           
+
             dtPay1 = sibl.D_Pay_Select1(dpe);
             if (dtPay1.Rows.Count > 0)
             {
@@ -828,8 +830,22 @@ namespace SiharaiNyuuryoku
                 dgvPayment.Rows[0].Selected = true;
 
                 LabelDataBind();
-                vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
+
+                if (dgvPayment.CurrentRow.Index > -1)
+                {
+                    DataGridViewRow row = dgvPayment.CurrentRow;
+
+                    dpe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
+                    dpe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
+
+                    dt2 = sibl.D_Pay_Select2(dpe);
+                    dt3 = sibl.D_Pay_Select3(dpe);
+
+                }
+                    //vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
+
             }
+            
             EnablePanel(PanelDetail);
 
         }
@@ -912,10 +928,14 @@ namespace SiharaiNyuuryoku
                 ProgramID = InProgramID,
                 PayGakuTotol = lblPayGaku.Text.Replace(",",""),
                 PC = InPcID,
-                PaymentNum = ScPaymentNum.Text,
+                PayNo = ScPaymentNum.TxtCode.Text,
+                LargePayNO  = ScPaymentProcessNum.TxtCode.Text,
                 dtTemp1 = dtpayplan,
                 dtTemp2 = dt4Detail,
-                dtTemp3 = dt4
+                dtTemp3 = dt4,
+                dtTemp4 = dtPay1,
+                dtTemp5 = dt2,
+                dtTemp6 = dt3
             };
             return dpe;
         }

@@ -74,5 +74,17 @@ namespace DL
             return SelectData(dic, rpc);
         }
 
+        public DataTable UrikakekinTairyuuHyou_DataToExport(M_StoreClose_Entity msce)
+        {
+            string rpc = "RPC_UrikakekinTairyuuHyou_PrintSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@FiscalYYYYMM",new ValuePair{value1=SqlDbType.Int,value2=msce.FiscalYYYYMM}},
+                {"@StoreCD",new ValuePair{value1=SqlDbType.VarChar,value2=msce.StoreCD } },
+
+            };
+            return SelectData(dic, rpc);
+        }
+
     }
 }
