@@ -1630,6 +1630,13 @@ namespace Search
                 case SearchType.HanyouKeyStart:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
+                    //20200317
+                case SearchType.ブランド:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 11, txtCode.Text, Value1);
+                    break;
+                case SearchType.競技:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
+                    break;
             }
             if (dtResult.Rows.Count > 0)
             {
