@@ -39,6 +39,10 @@ namespace Shiharai_ShimeShori
             RequireFields();
             this.ModeVisible = false;
             this.ModeText = "修正";
+            F7Visible = false;
+            F8Visible = false;
+            F10Visible = false;
+
         }
         private void RequireFields()
         {
@@ -272,6 +276,7 @@ namespace Shiharai_ShimeShori
             {
                 if (!string.IsNullOrEmpty(ScPaymentCD.TxtCode.Text))
                 {
+                    ScPaymentCD.ChangeDate = bbl.GetDate();
                     if (ScPaymentCD.SelectData())
                     {
                         ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
