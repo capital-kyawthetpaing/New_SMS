@@ -176,6 +176,8 @@ namespace Search
             スタッフ,
             銀行口座,
             モール,
+            メール文章,  //2020.03.12 add	
+            単位,
             銀行,
             銀行支店,
             //2019.6.15 add---------------->
@@ -371,6 +373,16 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.モール:
+                    txtCode.MaxLength = 3;
+                    txtCode.Width = 30;
+                    lblName.Width = 280;
+                    break;
+                case SearchType.メール文章:
+                    txtCode.MaxLength = 5;
+                    txtCode.Width = 50;
+                    lblName.Width = 280;
+                    break;
+                case SearchType.単位:
                     txtCode.MaxLength = 3;
                     txtCode.Width = 30;
                     lblName.Width = 280;
@@ -830,6 +842,30 @@ namespace Search
                         }
                     }
                     break;
+                case SearchType.メール文章:
+                    using (Search_MailPattern frmMail = new Search_MailPattern())
+                    {
+                        frmMail.ShowDialog();
+                        if (!frmMail.flgCancel)
+                        {
+                            txtCode.Text = frmMail.parMailPatternCD;
+                            lblName.Text = frmMail.parMailPatternName;
+                        }
+                    }
+                    break;
+                case SearchType.単位:
+                case SearchType.競技:
+                    using (Serach_HanyouKey frmMulti = new Serach_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))
                     {
@@ -858,16 +894,16 @@ namespace Search
                     }
                     break;
                 case SearchType.SKU_ITEM_CD:
-                    using (Search_Store frmStore = new Search_Store())
+                    using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
-                        frmStore.parChangeDate = changedate;
-                        frmStore.ShowDialog();
-
-                        if (!frmStore.flgCancel)
+                        frmItemCD.Mode = "1";
+                        frmItemCD.SKUCD = txtCode.Text;
+                        frmItemCD.ShowDialog();
+                        if (!frmItemCD.flgCancel)
                         {
-                            txtCode.Text = frmStore.parStoreCD;
-                            lblName.Text = frmStore.parStoreName;
-                            txtChangeDate.Text = frmStore.parChangeDate;
+                            txtCode.Text = frmItemCD.ITEM;
+                            if (UseChangeDate == true)
+                                txtChangeDate.Text = frmItemCD.ChangeDate;
                         }
                     }
                     break;
@@ -1097,7 +1133,7 @@ namespace Search
                             txtCode.Text = frmCustomer.CustomerCD;
                             lblName.Text = frmCustomer.CustName;
                             if (UseChangeDate == true)
-                                txtChangeDate.Text = frmCustomer.parChangeDate;
+                                txtChangeDate.Text = frmCustomer.ChangeDate;
                         }
                     }
                     break;
@@ -1146,18 +1182,18 @@ namespace Search
                     }
                     break;
 
-                case SearchType.競技:
-                    using (Search_Mall frmMal = new Search_Mall())
-                    {
-                        frmMal.parID = MultiPorpose_BL.ID_MALL;
-                        frmMal.ShowDialog();
-                        if (!frmMal.flgCancel)
-                        {
-                            txtCode.Text = frmMal.parKey;
-                            lblName.Text = frmMal.parChar1;
-                        }
-                    }
-                    break;
+                //case SearchType.競技:
+                //    using (Search_Mall frmMal = new Search_Mall())
+                //    {
+                //        frmMal.parID = MultiPorpose_BL.ID_MALL;
+                //        frmMal.ShowDialog();
+                //        if (!frmMal.flgCancel)
+                //        {
+                //            txtCode.Text = frmMal.parKey;
+                //            lblName.Text = frmMal.parChar1;
+                //        }
+                //    }
+                //    break;
                 case SearchType.大分類:
                     using (Search_Mall frmMal = new Search_Mall())
                     {
