@@ -38,6 +38,8 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtBrandName = new CKM_Controls.CKM_TextBox();
             this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelNormal.SuspendLayout();
@@ -95,6 +97,7 @@
             this.ScBrandCD.CodeWidth = 60;
             this.ScBrandCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrandCD.DataCheck = false;
+            this.ScBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ScBrandCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ScBrandCD.IsCopy = false;
             this.ScBrandCD.LabelText = "";
@@ -103,7 +106,7 @@
             this.ScBrandCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBrandCD.Name = "ScBrandCD";
             this.ScBrandCD.SearchEnable = true;
-            this.ScBrandCD.Size = new System.Drawing.Size(93, 30);
+            this.ScBrandCD.Size = new System.Drawing.Size(93, 28);
             this.ScBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrandCD.TabIndex = 1;
             this.ScBrandCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -149,6 +152,7 @@
             this.ScCopyBrand.CodeWidth = 60;
             this.ScCopyBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyBrand.DataCheck = false;
+            this.ScCopyBrand.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ScCopyBrand.IsCopy = false;
             this.ScCopyBrand.LabelText = "";
             this.ScCopyBrand.LabelVisible = false;
@@ -156,7 +160,7 @@
             this.ScCopyBrand.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBrand.Name = "ScCopyBrand";
             this.ScCopyBrand.SearchEnable = true;
-            this.ScCopyBrand.Size = new System.Drawing.Size(93, 30);
+            this.ScCopyBrand.Size = new System.Drawing.Size(93, 28);
             this.ScCopyBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScCopyBrand.TabIndex = 1;
             this.ScCopyBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -169,6 +173,8 @@
             // 
             // PanelDetail
             // 
+            this.PanelDetail.Controls.Add(this.txtKanaName);
+            this.PanelDetail.Controls.Add(this.ckM_Label2);
             this.PanelDetail.Controls.Add(this.ckM_Label1);
             this.PanelDetail.Controls.Add(this.txtBrandName);
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -238,6 +244,46 @@
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
+            // ckM_Label2
+            // 
+            this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
+            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.Location = new System.Drawing.Point(82, 59);
+            this.ckM_Label2.Name = "ckM_Label2";
+            this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label2.TabIndex = 2;
+            this.ckM_Label2.Text = "カナ名";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtKanaName
+            // 
+            this.txtKanaName.AllowMinus = false;
+            this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtKanaName.DecimalPlace = 0;
+            this.txtKanaName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.txtKanaName.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.txtKanaName.IntegerPart = 0;
+            this.txtKanaName.IsCorrectDate = true;
+            this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.IsNumber = true;
+            this.txtKanaName.IsShop = false;
+            this.txtKanaName.Length = 20;
+            this.txtKanaName.Location = new System.Drawing.Point(135, 55);
+            this.txtKanaName.MaxLength = 20;
+            this.txtKanaName.MoveNext = true;
+            this.txtKanaName.Name = "txtKanaName";
+            this.txtKanaName.Size = new System.Drawing.Size(100, 19);
+            this.txtKanaName.TabIndex = 3;
+            this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
             // FrmMasterTouroku_Brand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -249,7 +295,6 @@
             this.Name = "FrmMasterTouroku_Brand";
             this.PanelHeaderHeight = 130;
             this.Text = "MasterTouroku_Brand";
-            //this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMasterTouroku_Brand_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMasterTouroku_Brand_KeyUp);
             this.Controls.SetChildIndex(this.PanelDetail, 0);
             this.PanelHeader.ResumeLayout(false);
@@ -277,6 +322,8 @@
         private CKM_Controls.CKM_Label ブランドCD;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox txtBrandName;
+        private CKM_Controls.CKM_TextBox txtKanaName;
+        private CKM_Controls.CKM_Label ckM_Label2;
     }
 }
 

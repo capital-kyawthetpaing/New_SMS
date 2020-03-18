@@ -82,6 +82,7 @@ namespace MasterTouroku_Staff
         {
             cboBMNCD.Bind(string.Empty);
             cboMenu.Bind(string.Empty);
+            cboStoreMenu.Bind(string.Empty);
             cboAuthorizations.Bind(string.Empty);
             cboStoreAuthorizations.Bind(string.Empty);
             cboPosition.Bind(string.Empty);
@@ -224,6 +225,7 @@ namespace MasterTouroku_Staff
                 ScStore.LabelText = dtStaff.Rows[0]["StoreName"].ToString();
                 cboBMNCD.SelectedValue = dtStaff.Rows[0]["BMNCD"].ToString();
                 cboMenu.SelectedValue = dtStaff.Rows[0]["MenuCD"].ToString();
+                cboStoreMenu.SelectedValue = dtStaff.Rows[0]["StoreMenuCD"].ToString();
                 cboAuthorizations.SelectedValue = dtStaff.Rows[0]["AuthorizationsCD"].ToString();
                 cboStoreAuthorizations.SelectedValue = dtStaff.Rows[0]["StoreAuthorizationsCD"].ToString();
                 cboPosition.SelectedValue = dtStaff.Rows[0]["PositionCD"].ToString();
@@ -301,6 +303,7 @@ namespace MasterTouroku_Staff
                 StoreCD = ScStore.Code,
                 BMNCD = cboBMNCD.SelectedValue.ToString(),
                 MenuCD = cboMenu.SelectedValue.ToString(),
+                StoreMenuCD = cboStoreMenu.SelectedValue.ToString(),
                 KengenCD = cboAuthorizations.SelectedValue.ToString(),
                 StoreAuthorizationsCD = cboStoreAuthorizations.SelectedValue.ToString(),
                 PositionCD = cboPosition.SelectedValue.ToString(),

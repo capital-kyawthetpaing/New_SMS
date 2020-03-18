@@ -146,11 +146,13 @@
             this.ScBankCD.LabelText = "";
             this.ScBankCD.LabelVisible = true;
             this.ScBankCD.Location = new System.Drawing.Point(63, 1);
+            this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
             this.ScBankCD.TabIndex = 1;
+            this.ScBankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBankCD.UseChangeDate = false;
             this.ScBankCD.Value1 = null;
             this.ScBankCD.Value2 = null;
@@ -171,11 +173,13 @@
             this.ScBranchCD.LabelText = "";
             this.ScBranchCD.LabelVisible = false;
             this.ScBranchCD.Location = new System.Drawing.Point(63, 25);
+            this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(103, 52);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
             this.ScBranchCD.TabIndex = 3;
+            this.ScBranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBranchCD.UseChangeDate = true;
             this.ScBranchCD.Value1 = null;
             this.ScBranchCD.Value2 = null;
@@ -259,11 +263,13 @@
             this.ScCopyBankCD.LabelText = "";
             this.ScCopyBankCD.LabelVisible = true;
             this.ScCopyBankCD.Location = new System.Drawing.Point(83, 0);
+            this.ScCopyBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBankCD.Name = "ScCopyBankCD";
             this.ScCopyBankCD.SearchEnable = true;
             this.ScCopyBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScCopyBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
             this.ScCopyBankCD.TabIndex = 1;
+            this.ScCopyBankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyBankCD.UseChangeDate = false;
             this.ScCopyBankCD.Value1 = null;
             this.ScCopyBankCD.Value2 = null;
@@ -283,12 +289,14 @@
             this.ScCopyBranchCD.IsCopy = false;
             this.ScCopyBranchCD.LabelText = "";
             this.ScCopyBranchCD.LabelVisible = false;
-            this.ScCopyBranchCD.Location = new System.Drawing.Point(85, 25);
+            this.ScCopyBranchCD.Location = new System.Drawing.Point(83, 25);
+            this.ScCopyBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBranchCD.Name = "ScCopyBranchCD";
             this.ScCopyBranchCD.SearchEnable = true;
             this.ScCopyBranchCD.Size = new System.Drawing.Size(103, 52);
             this.ScCopyBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
             this.ScCopyBranchCD.TabIndex = 3;
+            this.ScCopyBranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyBranchCD.UseChangeDate = true;
             this.ScCopyBranchCD.Value1 = null;
             this.ScCopyBranchCD.Value2 = null;
@@ -350,8 +358,9 @@
             // 
             this.ChkDeleteFlg.AutoSize = true;
             this.ChkDeleteFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ChkDeleteFlg.Location = new System.Drawing.Point(802, 19);
+            this.ChkDeleteFlg.Location = new System.Drawing.Point(781, 19);
             this.ChkDeleteFlg.Name = "ChkDeleteFlg";
+            this.ChkDeleteFlg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ChkDeleteFlg.Size = new System.Drawing.Size(50, 16);
             this.ChkDeleteFlg.TabIndex = 5;
             this.ChkDeleteFlg.Text = "削除";
@@ -384,6 +393,8 @@
             this.TxtRemark.Length = 500;
             this.TxtRemark.Location = new System.Drawing.Point(114, 83);
             this.TxtRemark.MaxLength = 500;
+            this.TxtRemark.Mdea = false;
+            this.TxtRemark.Mfocus = false;
             this.TxtRemark.MoveNext = true;
             this.TxtRemark.Multiline = true;
             this.TxtRemark.Name = "TxtRemark";
@@ -480,6 +491,7 @@
             this.PanelDetail.ResumeLayout(false);
             this.PanelDetail.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
