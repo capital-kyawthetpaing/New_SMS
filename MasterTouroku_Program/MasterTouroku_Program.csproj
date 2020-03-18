@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{567DBECF-FC26-4F3D-B621-42D943FDFB3E}</ProjectGuid>
+    <ProjectGuid>{6ED7C49C-5C43-4119-AACC-19DAE5EBB2C5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>UrikakekinTairyuuHyou</RootNamespace>
-    <AssemblyName>UrikakekinTairyuuHyou</AssemblyName>
+    <RootNamespace>MasterTouroku_Program</RootNamespace>
+    <AssemblyName>MasterTouroku_Program</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\Debug\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,11 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,28 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataTable_UrikakekinTairyuuHyou.cs">
-      <DependentUpon>DataTable_UrikakekinTairyuuHyou.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataTable_UrikakekinTairyuuHyou.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataTable_UrikakekinTairyuuHyou.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="UrikakekinTairyuuHyou.cs">
+    <Compile Include="MasterTouroku_Program.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UrikakekinTairyuuHyou.Designer.cs">
-      <DependentUpon>UrikakekinTairyuuHyou.cs</DependentUpon>
+    <Compile Include="MasterTouroku_Program.Designer.cs">
+      <DependentUpon>MasterTouroku_Program.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UrikakekinTairyuuHyou_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UrikakekinTairyuuHyou_Report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
+    <EmbeddedResource Include="MasterTouroku_Program.resx">
+      <DependentUpon>MasterTouroku_Program.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -82,24 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UrikakekinTairyuuHyou.resx">
-      <DependentUpon>UrikakekinTairyuuHyou.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UrikakekinTairyuuHyou_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>UrikakekinTairyuuHyou_Report.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="DataTable_UrikakekinTairyuuHyou.xsc">
-      <DependentUpon>DataTable_UrikakekinTairyuuHyou.xsd</DependentUpon>
-    </None>
-    <None Include="DataTable_UrikakekinTairyuuHyou.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataTable_UrikakekinTairyuuHyou.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataTable_UrikakekinTairyuuHyou.xss">
-      <DependentUpon>DataTable_UrikakekinTairyuuHyou.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -123,16 +89,21 @@
       <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
-      <Project>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</Project>
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
+      <Name>DL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
