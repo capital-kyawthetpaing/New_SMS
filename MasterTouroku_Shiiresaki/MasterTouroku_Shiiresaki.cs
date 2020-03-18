@@ -266,14 +266,16 @@ namespace MasterTouroku_Shiiresaki
             {
                 VendorCD = ScVendor.TxtCode.Text,
                 ChangeDate = ScVendor.ChangeDate,
-                ShoguchiFlg = chkShouguchiFlg.Checked ? "1" : "0",
-                VendorName = txtVendorName.Text,
+                ShoguchiFlg = chkShouguchiFlg.Checked ? "1" : "0", 
+                VendorName = txtVendorName.Text,    //Add By SawLay
+                VendorShortName = txtVendorShortName.Text, 
                 VendorKana = txtVendorKana.Text,
                 VendorLongName1 = txtLongName1.Text,
                 VendorLongName2 = txtLongName2.Text,
                 VendorPostName = txtPostName.Text,
                 VendorPositionName = txtPositionName.Text,
                 VendorStaffName = txtVendorStaffName.Text,
+                VendorFlg = "1",    //Add By SawLay
                 ZipCD1 = txtZipCD1.Text,
                 ZipCD2 = txtZipCD2.Text,
                 Address1 = txtAddress1.Text,
@@ -292,7 +294,12 @@ namespace MasterTouroku_Shiiresaki
                 KouzaNO = txtKouzaNo.Text,
                 KouzaMeigi = txtKouzaMeigi.Text,
                 KouzaCD = ScKouzaCD.TxtCode.Text,
+                TaxTiming = cboTaxTiming.SelectedValue.ToString(),            //Add By SawLay
+                TaxFractionKBN =cboTaxFractionKBN.SelectedValue.ToString(),     //Add By SawLay
+                AmountFractionKBN = cboAmountFractionKBN.SelectedValue.ToString(),    //Add By SawLay
                 NetFlg = chkNetFlg.Checked ? "1":"0",
+                EDIFlg = chkEDIFlg.Checked ? "1" : "0",   //Add By SawLay
+                EDIVendorCD = txtEDIVendorCD.Text, //Add By SawLay
                 StaffCD = ScStaffCD.TxtCode.Text,
                 AnalyzeCD1 = txtAnalyzeCD1.Text ,
                 AnalyzeCD2 = txtAnalyzeCD2.Text,
@@ -372,8 +379,7 @@ namespace MasterTouroku_Shiiresaki
                 txtDisplayOrder.Text = mve.DisplayOrder;
                 txtDisplayNote.Text = mve.DisplayNote;
                 txtNotDisplay.Text = mve.NotDisplyNote;
-                chkDelFlg.Checked = mve.DeleteFlg.Equals("1") ? true : false;
-
+                chkDelFlg.Checked = mve.DeleteFlg.Equals("1") ? true : false;   
                 txtVendorName.Focus();
                 
                 return true;
@@ -489,7 +495,7 @@ namespace MasterTouroku_Shiiresaki
                     return false;
                 }
 
-                if(string.IsNullOrWhiteSpace(txtVendorShortName.Text))
+                if(string.IsNullOrWhiteSpace(txtVendorShortName.Text)) //Add By SawLay ErrorCheck For 略名
                 {
                     mtsbl.ShowMessage("E102");
                     txtVendorShortName.Focus();
@@ -626,31 +632,24 @@ namespace MasterTouroku_Shiiresaki
                     }
                 }
 
-                if(cboTaxTiming.SelectedValue.Equals(-1)) //Add By SawLay   ErrorCheck for 消費税計算
+                if(cboTaxTiming.SelectedValue.Equals(0)) //Add By SawLay   ErrorCheck for 消費税計算
                 {
                     mtsbl.ShowMessage("E102");
                     cboTaxTiming.Focus();
                     return false;
                 }
 
-                if (cboTaxFractionKBN.SelectedValue.Equals(-1)) //Add By SawLay   ErrorCheck for 消費税端数処理
+                if (cboTaxFractionKBN.SelectedValue.Equals(0)) //Add By SawLay   ErrorCheck for 消費税端数処理
                 {
                     mtsbl.ShowMessage("E102");
                     cboTaxFractionKBN.Focus();
                     return false;
                 }
 
-                if (cboAmountFractionKBN.SelectedValue.Equals(-1)) //Add By SawLay   ErrorCheck for 金額計算端数処理
+                if (cboAmountFractionKBN.SelectedValue.Equals(0)) //Add By SawLay   ErrorCheck for 金額計算端数処理
                 {
                     mtsbl.ShowMessage("E102");
                     cboAmountFractionKBN.Focus();
-                    return false;
-                }
-
-                if (cboTaxTiming.SelectedValue.Equals(-1))
-                {
-                    mtsbl.ShowMessage("E102");
-                    cboTaxTiming.Focus();
                     return false;
                 }
 
@@ -717,6 +716,7 @@ namespace MasterTouroku_Shiiresaki
                         {
                             mtsbl.ShowMessage("E118");
                             txtKouzaMeigi.Focus();
+                            return false;
                         }
                     }
 
@@ -726,6 +726,7 @@ namespace MasterTouroku_Shiiresaki
                         {
                             mtsbl.ShowMessage("E102");
                             txtEDIVendorCD.Focus();
+                            return false;
                         }
                     }
 
@@ -829,7 +830,7 @@ namespace MasterTouroku_Shiiresaki
                     Clear(PanelDetail);
                     EnablePanel(PanelNormal);
                     EnablePanel(PanelCopy);
-                    EnablePanel(PanelDetail);
+                    DisablePanel(PanelDetail);
                     ScVendor.SearchEnable = false;
                     ScCopyVendor.SearchEnable = true;
                     F9Visible = false;
@@ -869,11 +870,12 @@ namespace MasterTouroku_Shiiresaki
         private void BindTaxTiming()     //Add By SawLay
         {
             DataTable dtT = new DataTable();
-            dtT.Columns.Add("TaxTimeId");
-            dtT.Columns.Add("TaxTimeName");
-            dtT.Rows.Add("1", "1:売上明細単位");
-            dtT.Rows.Add("2", "2:売上伝票単位");
-            dtT.Rows.Add("3", "3:請求書単位");
+            dtT.Columns.Add("TaxTimeId", typeof(int));
+            dtT.Columns.Add("TaxTimeName", typeof(string));
+            dtT.Rows.Add(0, string.Empty);
+            dtT.Rows.Add(1, "売上明細単位");
+            dtT.Rows.Add(2, "売上伝票単位");
+            dtT.Rows.Add(3, "請求書単位");
 
             cboTaxTiming.ValueMember = "TaxTimeId";
             cboTaxTiming.DisplayMember = "TaxTimeName";
@@ -882,11 +884,12 @@ namespace MasterTouroku_Shiiresaki
         private void BindTaxFractionKBN()     //Add By SawLay
         {
             DataTable dtF = new DataTable();
-            dtF.Columns.Add("TaxFractionId");
-            dtF.Columns.Add("TaxFractionName");
-            dtF.Rows.Add("1", "1:切捨て");
-            dtF.Rows.Add("2", "2:四捨五入");
-            dtF.Rows.Add("3", "3:切上げ");
+            dtF.Columns.Add("TaxFractionId",typeof(int));
+            dtF.Columns.Add("TaxFractionName",typeof(string));
+            dtF.Rows.Add(0, string.Empty);
+            dtF.Rows.Add(1, "切捨て");
+            dtF.Rows.Add(2, "四捨五入");
+            dtF.Rows.Add(3, "切上げ");
 
             cboTaxFractionKBN.ValueMember = "TaxFractionId";
             cboTaxFractionKBN.DisplayMember = "TaxFractionName";
@@ -895,11 +898,12 @@ namespace MasterTouroku_Shiiresaki
         private void BindAmountFractionKBN()     //Add By SawLay
         {
             DataTable dtA = new DataTable();
-            dtA.Columns.Add("AmountFractionId");
-            dtA.Columns.Add("AmountFractionName");
-            dtA.Rows.Add("1", "1:切捨て");
-            dtA.Rows.Add("2", "2:四捨五入");
-            dtA.Rows.Add("3", "3:切上げ");
+            dtA.Columns.Add("AmountFractionId", typeof(int));
+            dtA.Columns.Add("AmountFractionName", typeof(string));
+            dtA.Rows.Add(0, string.Empty);
+            dtA.Rows.Add(1, "切捨て");
+            dtA.Rows.Add(2, "四捨五入");
+            dtA.Rows.Add(3, "切上げ");
 
             cboAmountFractionKBN.ValueMember = "AmountFractionId";
             cboAmountFractionKBN.DisplayMember = "AmountFractionName";
@@ -1320,6 +1324,21 @@ namespace MasterTouroku_Shiiresaki
                 {
                     mtsbl.ShowMessage("E102");
                     txtVendorShortName.Focus();
+                }
+            }
+        }
+
+        private void txtEDIVendorCD_KeyDown(object sender, KeyEventArgs e)  //Add By SawLay
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (chkEDIFlg.Checked == true)
+                {
+                    if(string.IsNullOrEmpty(txtEDIVendorCD.Text))
+                    {
+                        mtsbl.ShowMessage("E102");
+                        txtEDIVendorCD.Focus();
+                    }
                 }
             }
         }
