@@ -11,5 +11,9 @@ namespace Entity
         public string ProgramID {get;set;}
         public string ProgramName {get;set;}
         public string Type { get; set; }
+        public string ProgramEXE { get; set; }
+        public string FileDrive { get; set; }
+        public string FilePass { get; set; }
+        public string FileName { get; set; }
     }
 }
