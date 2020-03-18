@@ -38,6 +38,18 @@
             this.ScCopyVendor = new Search.CKM_SearchControl();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
+            this.txtEDIVendorCD = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label41 = new CKM_Controls.CKM_Label();
+            this.chkEDIFlg = new CKM_Controls.CKM_CheckBox();
+            this.ckM_Label40 = new CKM_Controls.CKM_Label();
+            this.cboAmountFractionKBN = new CKM_Controls.CKM_ComboBox();
+            this.cboTaxFractionKBN = new CKM_Controls.CKM_ComboBox();
+            this.cboTaxTiming = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label39 = new CKM_Controls.CKM_Label();
+            this.ckM_Label38 = new CKM_Controls.CKM_Label();
+            this.ckM_Label37 = new CKM_Controls.CKM_Label();
+            this.txtVendorShortName = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label36 = new CKM_Controls.CKM_Label();
             this.chkDelFlg = new CKM_Controls.CKM_CheckBox();
             this.txtNotDisplay = new CKM_Controls.CKM_MultiLineTextBox();
             this.txtDisplayNote = new CKM_Controls.CKM_MultiLineTextBox();
@@ -108,18 +120,6 @@
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.txtVendorShortName = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label36 = new CKM_Controls.CKM_Label();
-            this.ckM_Label37 = new CKM_Controls.CKM_Label();
-            this.ckM_Label38 = new CKM_Controls.CKM_Label();
-            this.ckM_Label39 = new CKM_Controls.CKM_Label();
-            this.cboTaxTiming = new CKM_Controls.CKM_ComboBox();
-            this.cboTaxFractionKBN = new CKM_Controls.CKM_ComboBox();
-            this.cboAmountFractionKBN = new CKM_Controls.CKM_ComboBox();
-            this.chkEDIFlg = new CKM_Controls.CKM_CheckBox();
-            this.ckM_Label40 = new CKM_Controls.CKM_Label();
-            this.txtEDIVendorCD = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label41 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelNormal.SuspendLayout();
@@ -276,7 +276,7 @@
             this.ScCopyVendor.SearchEnable = true;
             this.ScCopyVendor.Size = new System.Drawing.Size(163, 50);
             this.ScCopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScCopyVendor.TabIndex = 1;
+            this.ScCopyVendor.TabIndex = 0;
             this.ScCopyVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyVendor.UseChangeDate = true;
             this.ScCopyVendor.Value1 = null;
@@ -391,7 +391,216 @@
             this.PanelDetail.Location = new System.Drawing.Point(0, 147);
             this.PanelDetail.Name = "PanelDetail";
             this.PanelDetail.Size = new System.Drawing.Size(1776, 782);
-            this.PanelDetail.TabIndex = 1;
+            this.PanelDetail.TabIndex = 2;
+            // 
+            // txtEDIVendorCD
+            // 
+            this.txtEDIVendorCD.AllowMinus = false;
+            this.txtEDIVendorCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtEDIVendorCD.BackColor = System.Drawing.Color.White;
+            this.txtEDIVendorCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEDIVendorCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtEDIVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtEDIVendorCD.DecimalPlace = 0;
+            this.txtEDIVendorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtEDIVendorCD.IntegerPart = 0;
+            this.txtEDIVendorCD.IsCorrectDate = true;
+            this.txtEDIVendorCD.isEnterKeyDown = false;
+            this.txtEDIVendorCD.IsNumber = true;
+            this.txtEDIVendorCD.IsShop = false;
+            this.txtEDIVendorCD.Length = 11;
+            this.txtEDIVendorCD.Location = new System.Drawing.Point(237, 625);
+            this.txtEDIVendorCD.MaxLength = 11;
+            this.txtEDIVendorCD.MoveNext = true;
+            this.txtEDIVendorCD.Name = "txtEDIVendorCD";
+            this.txtEDIVendorCD.Size = new System.Drawing.Size(110, 19);
+            this.txtEDIVendorCD.TabIndex = 35;
+            this.txtEDIVendorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtEDIVendorCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEDIVendorCD_KeyDown);
+            // 
+            // ckM_Label41
+            // 
+            this.ckM_Label41.AutoSize = true;
+            this.ckM_Label41.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label41.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label41.DefaultlabelSize = true;
+            this.ckM_Label41.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label41.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label41.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label41.Location = new System.Drawing.Point(177, 629);
+            this.ckM_Label41.Name = "ckM_Label41";
+            this.ckM_Label41.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label41.TabIndex = 34;
+            this.ckM_Label41.Text = "口座番号";
+            this.ckM_Label41.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkEDIFlg
+            // 
+            this.chkEDIFlg.AutoSize = true;
+            this.chkEDIFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.chkEDIFlg.Location = new System.Drawing.Point(107, 628);
+            this.chkEDIFlg.Name = "chkEDIFlg";
+            this.chkEDIFlg.Size = new System.Drawing.Size(50, 16);
+            this.chkEDIFlg.TabIndex = 34;
+            this.chkEDIFlg.Text = "する";
+            this.chkEDIFlg.UseVisualStyleBackColor = true;
+            // 
+            // ckM_Label40
+            // 
+            this.ckM_Label40.AutoSize = true;
+            this.ckM_Label40.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label40.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label40.DefaultlabelSize = true;
+            this.ckM_Label40.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label40.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label40.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label40.Location = new System.Drawing.Point(26, 630);
+            this.ckM_Label40.Name = "ckM_Label40";
+            this.ckM_Label40.Size = new System.Drawing.Size(78, 12);
+            this.ckM_Label40.TabIndex = 79;
+            this.ckM_Label40.Text = "EDI発注対象";
+            this.ckM_Label40.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cboAmountFractionKBN
+            // 
+            this.cboAmountFractionKBN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboAmountFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboAmountFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
+            this.cboAmountFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboAmountFractionKBN.FormattingEnabled = true;
+            this.cboAmountFractionKBN.Length = 10;
+            this.cboAmountFractionKBN.Location = new System.Drawing.Point(425, 421);
+            this.cboAmountFractionKBN.MaxLength = 10;
+            this.cboAmountFractionKBN.MoveNext = true;
+            this.cboAmountFractionKBN.Name = "cboAmountFractionKBN";
+            this.cboAmountFractionKBN.Size = new System.Drawing.Size(121, 20);
+            this.cboAmountFractionKBN.TabIndex = 23;
+            // 
+            // cboTaxFractionKBN
+            // 
+            this.cboTaxFractionKBN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboTaxFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboTaxFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
+            this.cboTaxFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTaxFractionKBN.FormattingEnabled = true;
+            this.cboTaxFractionKBN.Length = 10;
+            this.cboTaxFractionKBN.Location = new System.Drawing.Point(425, 402);
+            this.cboTaxFractionKBN.MaxLength = 10;
+            this.cboTaxFractionKBN.MoveNext = true;
+            this.cboTaxFractionKBN.Name = "cboTaxFractionKBN";
+            this.cboTaxFractionKBN.Size = new System.Drawing.Size(121, 20);
+            this.cboTaxFractionKBN.TabIndex = 22;
+            // 
+            // cboTaxTiming
+            // 
+            this.cboTaxTiming.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cboTaxTiming.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboTaxTiming.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
+            this.cboTaxTiming.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTaxTiming.FormattingEnabled = true;
+            this.cboTaxTiming.Length = 10;
+            this.cboTaxTiming.Location = new System.Drawing.Point(425, 384);
+            this.cboTaxTiming.MaxLength = 10;
+            this.cboTaxTiming.MoveNext = true;
+            this.cboTaxTiming.Name = "cboTaxTiming";
+            this.cboTaxTiming.Size = new System.Drawing.Size(121, 20);
+            this.cboTaxTiming.TabIndex = 21;
+            // 
+            // ckM_Label39
+            // 
+            this.ckM_Label39.AutoSize = true;
+            this.ckM_Label39.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label39.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label39.DefaultlabelSize = true;
+            this.ckM_Label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label39.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label39.Location = new System.Drawing.Point(314, 426);
+            this.ckM_Label39.Name = "ckM_Label39";
+            this.ckM_Label39.Size = new System.Drawing.Size(109, 12);
+            this.ckM_Label39.TabIndex = 74;
+            this.ckM_Label39.Text = "金額計算端数処理";
+            this.ckM_Label39.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label38
+            // 
+            this.ckM_Label38.AutoSize = true;
+            this.ckM_Label38.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label38.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label38.DefaultlabelSize = true;
+            this.ckM_Label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label38.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label38.Location = new System.Drawing.Point(327, 406);
+            this.ckM_Label38.Name = "ckM_Label38";
+            this.ckM_Label38.Size = new System.Drawing.Size(96, 12);
+            this.ckM_Label38.TabIndex = 73;
+            this.ckM_Label38.Text = "消費税端数処理";
+            this.ckM_Label38.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label37
+            // 
+            this.ckM_Label37.AutoSize = true;
+            this.ckM_Label37.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label37.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label37.DefaultlabelSize = true;
+            this.ckM_Label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label37.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label37.Location = new System.Drawing.Point(353, 388);
+            this.ckM_Label37.Name = "ckM_Label37";
+            this.ckM_Label37.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label37.TabIndex = 72;
+            this.ckM_Label37.Text = "消費税計算";
+            this.ckM_Label37.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtVendorShortName
+            // 
+            this.txtVendorShortName.AllowMinus = false;
+            this.txtVendorShortName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtVendorShortName.BackColor = System.Drawing.Color.White;
+            this.txtVendorShortName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorShortName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtVendorShortName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtVendorShortName.DecimalPlace = 0;
+            this.txtVendorShortName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtVendorShortName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.txtVendorShortName.IntegerPart = 0;
+            this.txtVendorShortName.IsCorrectDate = true;
+            this.txtVendorShortName.isEnterKeyDown = false;
+            this.txtVendorShortName.IsNumber = true;
+            this.txtVendorShortName.IsShop = false;
+            this.txtVendorShortName.Length = 10;
+            this.txtVendorShortName.Location = new System.Drawing.Point(107, 47);
+            this.txtVendorShortName.MaxLength = 10;
+            this.txtVendorShortName.MoveNext = true;
+            this.txtVendorShortName.Name = "txtVendorShortName";
+            this.txtVendorShortName.Size = new System.Drawing.Size(110, 19);
+            this.txtVendorShortName.TabIndex = 2;
+            this.txtVendorShortName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtVendorShortName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVendorShortName_KeyDown);
+            // 
+            // ckM_Label36
+            // 
+            this.ckM_Label36.AutoSize = true;
+            this.ckM_Label36.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label36.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label36.DefaultlabelSize = true;
+            this.ckM_Label36.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label36.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label36.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label36.Location = new System.Drawing.Point(60, 50);
+            this.ckM_Label36.Name = "ckM_Label36";
+            this.ckM_Label36.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label36.TabIndex = 71;
+            this.ckM_Label36.Text = "略　名";
+            this.ckM_Label36.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkDelFlg
             // 
@@ -422,7 +631,7 @@
             this.txtNotDisplay.Name = "txtNotDisplay";
             this.txtNotDisplay.RowCount = 5;
             this.txtNotDisplay.Size = new System.Drawing.Size(500, 95);
-            this.txtNotDisplay.TabIndex = 36;
+            this.txtNotDisplay.TabIndex = 42;
             this.txtNotDisplay.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // txtDisplayNote
@@ -442,7 +651,7 @@
             this.txtDisplayNote.Name = "txtDisplayNote";
             this.txtDisplayNote.RowCount = 5;
             this.txtDisplayNote.Size = new System.Drawing.Size(500, 95);
-            this.txtDisplayNote.TabIndex = 35;
+            this.txtDisplayNote.TabIndex = 41;
             this.txtDisplayNote.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // txtDisplayOrder
@@ -466,7 +675,7 @@
             this.txtDisplayOrder.MoveNext = true;
             this.txtDisplayOrder.Name = "txtDisplayOrder";
             this.txtDisplayOrder.Size = new System.Drawing.Size(50, 19);
-            this.txtDisplayOrder.TabIndex = 34;
+            this.txtDisplayOrder.TabIndex = 40;
             this.txtDisplayOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDisplayOrder.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtDisplayOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDisplayOrder_KeyDown);
@@ -492,7 +701,7 @@
             this.txtAnalyzeCD3.MoveNext = true;
             this.txtAnalyzeCD3.Name = "txtAnalyzeCD3";
             this.txtAnalyzeCD3.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD3.TabIndex = 33;
+            this.txtAnalyzeCD3.TabIndex = 39;
             this.txtAnalyzeCD3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAnalyzeCD2
@@ -516,7 +725,7 @@
             this.txtAnalyzeCD2.MoveNext = true;
             this.txtAnalyzeCD2.Name = "txtAnalyzeCD2";
             this.txtAnalyzeCD2.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD2.TabIndex = 32;
+            this.txtAnalyzeCD2.TabIndex = 38;
             this.txtAnalyzeCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAnalyzeCD1
@@ -540,7 +749,7 @@
             this.txtAnalyzeCD1.MoveNext = true;
             this.txtAnalyzeCD1.Name = "txtAnalyzeCD1";
             this.txtAnalyzeCD1.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD1.TabIndex = 31;
+            this.txtAnalyzeCD1.TabIndex = 37;
             this.txtAnalyzeCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label35
@@ -664,7 +873,7 @@
             this.ScStaffCD.SearchEnable = true;
             this.ScStaffCD.Size = new System.Drawing.Size(344, 27);
             this.ScStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaffCD.TabIndex = 30;
+            this.ScStaffCD.TabIndex = 36;
             this.ScStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaffCD.UseChangeDate = false;
             this.ScStaffCD.Value1 = null;
@@ -679,7 +888,7 @@
             this.chkNetFlg.Location = new System.Drawing.Point(107, 609);
             this.chkNetFlg.Name = "chkNetFlg";
             this.chkNetFlg.Size = new System.Drawing.Size(50, 16);
-            this.chkNetFlg.TabIndex = 29;
+            this.chkNetFlg.TabIndex = 33;
             this.chkNetFlg.Text = "する";
             this.chkNetFlg.UseVisualStyleBackColor = true;
             // 
@@ -702,7 +911,7 @@
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(414, 27);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
-            this.ScKouzaCD.TabIndex = 28;
+            this.ScKouzaCD.TabIndex = 32;
             this.ScKouzaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScKouzaCD.UseChangeDate = false;
             this.ScKouzaCD.Value1 = null;
@@ -732,7 +941,7 @@
             this.txtKouzaMeigi.MoveNext = true;
             this.txtKouzaMeigi.Name = "txtKouzaMeigi";
             this.txtKouzaMeigi.Size = new System.Drawing.Size(260, 19);
-            this.txtKouzaMeigi.TabIndex = 27;
+            this.txtKouzaMeigi.TabIndex = 31;
             this.txtKouzaMeigi.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtKouzaMeigi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKouzaMeigi_KeyDown);
             // 
@@ -842,7 +1051,7 @@
             this.txtKouzaNo.MoveNext = true;
             this.txtKouzaNo.Name = "txtKouzaNo";
             this.txtKouzaNo.Size = new System.Drawing.Size(70, 19);
-            this.txtKouzaNo.TabIndex = 26;
+            this.txtKouzaNo.TabIndex = 30;
             this.txtKouzaNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtKouzaNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKouzaNo_KeyDown);
             // 
@@ -867,7 +1076,7 @@
             this.txtKouzaKBN.MoveNext = true;
             this.txtKouzaKBN.Name = "txtKouzaKBN";
             this.txtKouzaKBN.Size = new System.Drawing.Size(20, 19);
-            this.txtKouzaKBN.TabIndex = 25;
+            this.txtKouzaKBN.TabIndex = 29;
             this.txtKouzaKBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtKouzaKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtKouzaKBN.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtKouzaKBN_KeyDown);
@@ -891,7 +1100,7 @@
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(424, 27);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
-            this.ScBranchCD.TabIndex = 24;
+            this.ScBranchCD.TabIndex = 28;
             this.ScBranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBranchCD.UseChangeDate = false;
             this.ScBranchCD.Value1 = null;
@@ -918,7 +1127,7 @@
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 28);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
-            this.ScBankCD.TabIndex = 23;
+            this.ScBankCD.TabIndex = 27;
             this.ScBankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBankCD.UseChangeDate = false;
             this.ScBankCD.Value1 = null;
@@ -934,7 +1143,7 @@
             this.rdo3.Location = new System.Drawing.Point(246, 442);
             this.rdo3.Name = "rdo3";
             this.rdo3.Size = new System.Drawing.Size(75, 16);
-            this.rdo3.TabIndex = 22;
+            this.rdo3.TabIndex = 26;
             this.rdo3.Text = "後営業日";
             this.rdo3.UseVisualStyleBackColor = true;
             // 
@@ -945,7 +1154,7 @@
             this.rdo2.Location = new System.Drawing.Point(191, 442);
             this.rdo2.Name = "rdo2";
             this.rdo2.Size = new System.Drawing.Size(49, 16);
-            this.rdo2.TabIndex = 21;
+            this.rdo2.TabIndex = 25;
             this.rdo2.Text = "当日";
             this.rdo2.UseVisualStyleBackColor = true;
             // 
@@ -957,7 +1166,7 @@
             this.rdo1.Location = new System.Drawing.Point(110, 444);
             this.rdo1.Name = "rdo1";
             this.rdo1.Size = new System.Drawing.Size(75, 16);
-            this.rdo1.TabIndex = 20;
+            this.rdo1.TabIndex = 24;
             this.rdo1.TabStop = true;
             this.rdo1.Text = "前営業日";
             this.rdo1.UseVisualStyleBackColor = true;
@@ -981,7 +1190,7 @@
             this.ScMoneyPayeeCD.SearchEnable = true;
             this.ScMoneyPayeeCD.Size = new System.Drawing.Size(415, 27);
             this.ScMoneyPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
-            this.ScMoneyPayeeCD.TabIndex = 16;
+            this.ScMoneyPayeeCD.TabIndex = 17;
             this.ScMoneyPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScMoneyPayeeCD.UseChangeDate = false;
             this.ScMoneyPayeeCD.Value1 = null;
@@ -1008,7 +1217,7 @@
             this.ScPayeeCD.SearchEnable = true;
             this.ScPayeeCD.Size = new System.Drawing.Size(415, 28);
             this.ScPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
-            this.ScPayeeCD.TabIndex = 15;
+            this.ScPayeeCD.TabIndex = 16;
             this.ScPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScPayeeCD.UseChangeDate = false;
             this.ScPayeeCD.Value1 = null;
@@ -1037,7 +1246,7 @@
             this.txtPaymentPlanDay.MoveNext = true;
             this.txtPaymentPlanDay.Name = "txtPaymentPlanDay";
             this.txtPaymentPlanDay.Size = new System.Drawing.Size(20, 19);
-            this.txtPaymentPlanDay.TabIndex = 19;
+            this.txtPaymentPlanDay.TabIndex = 20;
             this.txtPaymentPlanDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPaymentPlanDay.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtPaymentPlanDay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentPlanDay_KeyDown);
@@ -1055,7 +1264,7 @@
             this.cboPaymentKBN.MoveNext = true;
             this.cboPaymentKBN.Name = "cboPaymentKBN";
             this.cboPaymentKBN.Size = new System.Drawing.Size(121, 20);
-            this.cboPaymentKBN.TabIndex = 18;
+            this.cboPaymentKBN.TabIndex = 19;
             // 
             // txtPaymentCloseDay
             // 
@@ -1078,7 +1287,7 @@
             this.txtPaymentCloseDay.MoveNext = true;
             this.txtPaymentCloseDay.Name = "txtPaymentCloseDay";
             this.txtPaymentCloseDay.Size = new System.Drawing.Size(20, 19);
-            this.txtPaymentCloseDay.TabIndex = 17;
+            this.txtPaymentCloseDay.TabIndex = 18;
             this.txtPaymentCloseDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPaymentCloseDay.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtPaymentCloseDay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentCloseDay_KeyDown);
@@ -1104,7 +1313,7 @@
             this.txtFaxno.MoveNext = true;
             this.txtFaxno.Name = "txtFaxno";
             this.txtFaxno.Size = new System.Drawing.Size(100, 19);
-            this.txtFaxno.TabIndex = 14;
+            this.txtFaxno.TabIndex = 15;
             this.txtFaxno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFaxno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1129,7 +1338,7 @@
             this.txtTelno.MoveNext = true;
             this.txtTelno.Name = "txtTelno";
             this.txtTelno.Size = new System.Drawing.Size(100, 19);
-            this.txtTelno.TabIndex = 13;
+            this.txtTelno.TabIndex = 14;
             this.txtTelno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTelno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1154,7 +1363,7 @@
             this.txtMailAddress.MoveNext = true;
             this.txtMailAddress.Name = "txtMailAddress";
             this.txtMailAddress.Size = new System.Drawing.Size(200, 19);
-            this.txtMailAddress.TabIndex = 12;
+            this.txtMailAddress.TabIndex = 13;
             this.txtMailAddress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAddress2
@@ -1179,7 +1388,7 @@
             this.txtAddress2.MoveNext = true;
             this.txtAddress2.Name = "txtAddress2";
             this.txtAddress2.Size = new System.Drawing.Size(400, 19);
-            this.txtAddress2.TabIndex = 11;
+            this.txtAddress2.TabIndex = 12;
             this.txtAddress2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAddress1
@@ -1204,7 +1413,7 @@
             this.txtAddress1.MoveNext = true;
             this.txtAddress1.Name = "txtAddress1";
             this.txtAddress1.Size = new System.Drawing.Size(400, 19);
-            this.txtAddress1.TabIndex = 10;
+            this.txtAddress1.TabIndex = 11;
             this.txtAddress1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtZipCD2
@@ -1228,7 +1437,7 @@
             this.txtZipCD2.MoveNext = true;
             this.txtZipCD2.Name = "txtZipCD2";
             this.txtZipCD2.Size = new System.Drawing.Size(40, 19);
-            this.txtZipCD2.TabIndex = 9;
+            this.txtZipCD2.TabIndex = 10;
             this.txtZipCD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtZipCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtZipCD2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtZipCD2_KeyDown);
@@ -1254,7 +1463,7 @@
             this.txtZipCD1.MoveNext = true;
             this.txtZipCD1.Name = "txtZipCD1";
             this.txtZipCD1.Size = new System.Drawing.Size(30, 19);
-            this.txtZipCD1.TabIndex = 8;
+            this.txtZipCD1.TabIndex = 9;
             this.txtZipCD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtZipCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1280,7 +1489,7 @@
             this.txtVendorStaffName.MoveNext = true;
             this.txtVendorStaffName.Name = "txtVendorStaffName";
             this.txtVendorStaffName.Size = new System.Drawing.Size(250, 19);
-            this.txtVendorStaffName.TabIndex = 7;
+            this.txtVendorStaffName.TabIndex = 8;
             this.txtVendorStaffName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtPositionName
@@ -1305,7 +1514,7 @@
             this.txtPositionName.MoveNext = true;
             this.txtPositionName.Name = "txtPositionName";
             this.txtPositionName.Size = new System.Drawing.Size(250, 19);
-            this.txtPositionName.TabIndex = 6;
+            this.txtPositionName.TabIndex = 7;
             this.txtPositionName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtPostName
@@ -1330,7 +1539,7 @@
             this.txtPostName.MoveNext = true;
             this.txtPostName.Name = "txtPostName";
             this.txtPostName.Size = new System.Drawing.Size(250, 19);
-            this.txtPostName.TabIndex = 5;
+            this.txtPostName.TabIndex = 6;
             this.txtPostName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtLongName2
@@ -1355,7 +1564,7 @@
             this.txtLongName2.MoveNext = true;
             this.txtLongName2.Name = "txtLongName2";
             this.txtLongName2.Size = new System.Drawing.Size(400, 19);
-            this.txtLongName2.TabIndex = 4;
+            this.txtLongName2.TabIndex = 5;
             this.txtLongName2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtLongName1
@@ -1380,7 +1589,7 @@
             this.txtLongName1.MoveNext = true;
             this.txtLongName1.Name = "txtLongName1";
             this.txtLongName1.Size = new System.Drawing.Size(400, 19);
-            this.txtLongName1.TabIndex = 3;
+            this.txtLongName1.TabIndex = 4;
             this.txtLongName1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtVendorKana
@@ -1405,7 +1614,7 @@
             this.txtVendorKana.MoveNext = true;
             this.txtVendorKana.Name = "txtVendorKana";
             this.txtVendorKana.Size = new System.Drawing.Size(250, 19);
-            this.txtVendorKana.TabIndex = 2;
+            this.txtVendorKana.TabIndex = 3;
             this.txtVendorKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtVendorName
@@ -1801,214 +2010,6 @@
             this.ckM_Label5.Text = "仕入先名";
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtVendorShortName
-            // 
-            this.txtVendorShortName.AllowMinus = false;
-            this.txtVendorShortName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtVendorShortName.BackColor = System.Drawing.Color.White;
-            this.txtVendorShortName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVendorShortName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.txtVendorShortName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtVendorShortName.DecimalPlace = 0;
-            this.txtVendorShortName.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtVendorShortName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtVendorShortName.IntegerPart = 0;
-            this.txtVendorShortName.IsCorrectDate = true;
-            this.txtVendorShortName.isEnterKeyDown = false;
-            this.txtVendorShortName.IsNumber = true;
-            this.txtVendorShortName.IsShop = false;
-            this.txtVendorShortName.Length = 10;
-            this.txtVendorShortName.Location = new System.Drawing.Point(107, 47);
-            this.txtVendorShortName.MaxLength = 10;
-            this.txtVendorShortName.MoveNext = true;
-            this.txtVendorShortName.Name = "txtVendorShortName";
-            this.txtVendorShortName.Size = new System.Drawing.Size(110, 19);
-            this.txtVendorShortName.TabIndex = 70;
-            this.txtVendorShortName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtVendorShortName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVendorShortName_KeyDown);
-            // 
-            // ckM_Label36
-            // 
-            this.ckM_Label36.AutoSize = true;
-            this.ckM_Label36.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label36.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label36.DefaultlabelSize = true;
-            this.ckM_Label36.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label36.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label36.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label36.Location = new System.Drawing.Point(60, 50);
-            this.ckM_Label36.Name = "ckM_Label36";
-            this.ckM_Label36.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label36.TabIndex = 71;
-            this.ckM_Label36.Text = "略　名";
-            this.ckM_Label36.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label37
-            // 
-            this.ckM_Label37.AutoSize = true;
-            this.ckM_Label37.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label37.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label37.DefaultlabelSize = true;
-            this.ckM_Label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label37.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label37.Location = new System.Drawing.Point(353, 388);
-            this.ckM_Label37.Name = "ckM_Label37";
-            this.ckM_Label37.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label37.TabIndex = 72;
-            this.ckM_Label37.Text = "消費税計算";
-            this.ckM_Label37.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label38
-            // 
-            this.ckM_Label38.AutoSize = true;
-            this.ckM_Label38.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label38.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label38.DefaultlabelSize = true;
-            this.ckM_Label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label38.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label38.Location = new System.Drawing.Point(327, 406);
-            this.ckM_Label38.Name = "ckM_Label38";
-            this.ckM_Label38.Size = new System.Drawing.Size(96, 12);
-            this.ckM_Label38.TabIndex = 73;
-            this.ckM_Label38.Text = "消費税端数処理";
-            this.ckM_Label38.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label38.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label39
-            // 
-            this.ckM_Label39.AutoSize = true;
-            this.ckM_Label39.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label39.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label39.DefaultlabelSize = true;
-            this.ckM_Label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label39.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label39.Location = new System.Drawing.Point(314, 426);
-            this.ckM_Label39.Name = "ckM_Label39";
-            this.ckM_Label39.Size = new System.Drawing.Size(109, 12);
-            this.ckM_Label39.TabIndex = 74;
-            this.ckM_Label39.Text = "金額計算端数処理";
-            this.ckM_Label39.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cboTaxTiming
-            // 
-            this.cboTaxTiming.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboTaxTiming.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboTaxTiming.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
-            this.cboTaxTiming.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboTaxTiming.FormattingEnabled = true;
-            this.cboTaxTiming.Length = 10;
-            this.cboTaxTiming.Location = new System.Drawing.Point(425, 384);
-            this.cboTaxTiming.MaxLength = 10;
-            this.cboTaxTiming.MoveNext = true;
-            this.cboTaxTiming.Name = "cboTaxTiming";
-            this.cboTaxTiming.Size = new System.Drawing.Size(121, 20);
-            this.cboTaxTiming.TabIndex = 75;
-            // 
-            // cboTaxFractionKBN
-            // 
-            this.cboTaxFractionKBN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboTaxFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboTaxFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
-            this.cboTaxFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboTaxFractionKBN.FormattingEnabled = true;
-            this.cboTaxFractionKBN.Length = 10;
-            this.cboTaxFractionKBN.Location = new System.Drawing.Point(425, 402);
-            this.cboTaxFractionKBN.MaxLength = 10;
-            this.cboTaxFractionKBN.MoveNext = true;
-            this.cboTaxFractionKBN.Name = "cboTaxFractionKBN";
-            this.cboTaxFractionKBN.Size = new System.Drawing.Size(121, 20);
-            this.cboTaxFractionKBN.TabIndex = 76;
-            // 
-            // cboAmountFractionKBN
-            // 
-            this.cboAmountFractionKBN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cboAmountFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboAmountFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
-            this.cboAmountFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.cboAmountFractionKBN.FormattingEnabled = true;
-            this.cboAmountFractionKBN.Length = 10;
-            this.cboAmountFractionKBN.Location = new System.Drawing.Point(425, 421);
-            this.cboAmountFractionKBN.MaxLength = 10;
-            this.cboAmountFractionKBN.MoveNext = true;
-            this.cboAmountFractionKBN.Name = "cboAmountFractionKBN";
-            this.cboAmountFractionKBN.Size = new System.Drawing.Size(121, 20);
-            this.cboAmountFractionKBN.TabIndex = 77;
-            // 
-            // chkEDIFlg
-            // 
-            this.chkEDIFlg.AutoSize = true;
-            this.chkEDIFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkEDIFlg.Location = new System.Drawing.Point(107, 628);
-            this.chkEDIFlg.Name = "chkEDIFlg";
-            this.chkEDIFlg.Size = new System.Drawing.Size(50, 16);
-            this.chkEDIFlg.TabIndex = 78;
-            this.chkEDIFlg.Text = "する";
-            this.chkEDIFlg.UseVisualStyleBackColor = true;
-            // 
-            // ckM_Label40
-            // 
-            this.ckM_Label40.AutoSize = true;
-            this.ckM_Label40.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label40.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label40.DefaultlabelSize = true;
-            this.ckM_Label40.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label40.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label40.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label40.Location = new System.Drawing.Point(26, 630);
-            this.ckM_Label40.Name = "ckM_Label40";
-            this.ckM_Label40.Size = new System.Drawing.Size(78, 12);
-            this.ckM_Label40.TabIndex = 79;
-            this.ckM_Label40.Text = "EDI発注対象";
-            this.ckM_Label40.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtEDIVendorCD
-            // 
-            this.txtEDIVendorCD.AllowMinus = false;
-            this.txtEDIVendorCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtEDIVendorCD.BackColor = System.Drawing.Color.White;
-            this.txtEDIVendorCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEDIVendorCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtEDIVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtEDIVendorCD.DecimalPlace = 0;
-            this.txtEDIVendorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtEDIVendorCD.IntegerPart = 0;
-            this.txtEDIVendorCD.IsCorrectDate = true;
-            this.txtEDIVendorCD.isEnterKeyDown = false;
-            this.txtEDIVendorCD.IsNumber = true;
-            this.txtEDIVendorCD.IsShop = false;
-            this.txtEDIVendorCD.Length = 11;
-            this.txtEDIVendorCD.Location = new System.Drawing.Point(237, 625);
-            this.txtEDIVendorCD.MaxLength = 11;
-            this.txtEDIVendorCD.MoveNext = true;
-            this.txtEDIVendorCD.Name = "txtEDIVendorCD";
-            this.txtEDIVendorCD.Size = new System.Drawing.Size(110, 19);
-            this.txtEDIVendorCD.TabIndex = 80;
-            this.txtEDIVendorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_Label41
-            // 
-            this.ckM_Label41.AutoSize = true;
-            this.ckM_Label41.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label41.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label41.DefaultlabelSize = true;
-            this.ckM_Label41.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label41.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label41.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label41.Location = new System.Drawing.Point(177, 629);
-            this.ckM_Label41.Name = "ckM_Label41";
-            this.ckM_Label41.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label41.TabIndex = 81;
-            this.ckM_Label41.Text = "口座番号";
-            this.ckM_Label41.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MasterTouroku_Shiiresaki
             // 

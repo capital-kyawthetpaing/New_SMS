@@ -122,14 +122,19 @@ namespace Search
             {
                 return string.Empty;
             }
-            else if (chk_Store.Checked && !chk_Web.Checked)
-            {
-                chk = "2";
-                return chk;
-            }
-            else 
+            //else if (chk_Store.Checked && !chk_Web.Checked)
+            //{
+            //    chk = "2";
+            //    return chk;
+            //}
+            else if (chk_Web.Checked && !chk_Store.Checked)
             {
                 chk = "1";
+                return chk;
+            }
+            else
+            {
+                chk = "2";
                 return chk;
             }
         }
