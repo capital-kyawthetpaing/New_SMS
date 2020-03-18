@@ -165,6 +165,12 @@
     <Compile Include="Search_Location.Designer.cs">
       <DependentUpon>Search_Location.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_MailPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_MailPattern.designer.cs">
+      <DependentUpon>Search_MailPattern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Mall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Location.resx">
       <DependentUpon>Search_Location.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_MailPattern.resx">
+      <DependentUpon>Search_MailPattern.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Mall.resx">
       <DependentUpon>Search_Mall.cs</DependentUpon>
