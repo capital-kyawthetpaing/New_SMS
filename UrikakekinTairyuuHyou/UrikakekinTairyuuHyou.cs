@@ -30,6 +30,7 @@ namespace UrikakekinTairyuuHyou
 
             ukkthbl = new UrikakekinTairyuuHyou_BL();
 
+
             SetFunctionLabel(EProMode.MENTE);
             SetFunctionLabel(EProMode.PRINT);
             StartProgram();
@@ -42,6 +43,7 @@ namespace UrikakekinTairyuuHyou
             Btn_F11.Text = "Excel(F11)";
 
             BindData();
+            
             SetRequireField();
         }
 
@@ -161,7 +163,15 @@ namespace UrikakekinTairyuuHyou
             {
                 msce = new M_StoreClose_Entity();
                 msce = GetStoreClose_Data();
-                
+
+                DateTime now = Convert.ToDateTime(txtDate.Text.ToString() + "/01 00:00:00");
+                string[] strmonth=new string[12];
+                for(int i=11; i>=0; i--)
+                {
+                    strmonth[i]= now.AddMonths(-i).ToString().Substring(0, 7);
+                }
+
+
                 dtPrint = ukkthbl.Select_DataToExport(msce);
                 //header = "棚入れリスト";
                
@@ -193,7 +203,18 @@ namespace UrikakekinTairyuuHyou
                             Report.SetDataSource(dtPrint);
                             Report.Refresh();
                             Report.SetParameterValue("txtStore", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);
-                           // Report.SetParameterValue("txtHeader", header);
+                            Report.SetParameterValue("txtMonth11",strmonth[11].ToString());
+                            Report.SetParameterValue("txtMonth10", strmonth[10].ToString());
+                            Report.SetParameterValue("txtMonth9", strmonth[9].ToString());
+                            Report.SetParameterValue("txtMonth8", strmonth[8].ToString());
+                            Report.SetParameterValue("txtMonth7", strmonth[7].ToString());
+                            Report.SetParameterValue("txtMonth6", strmonth[6].ToString());
+                            Report.SetParameterValue("txtMonth5", strmonth[5].ToString());
+                            Report.SetParameterValue("txtMonth4", strmonth[4].ToString());
+                            Report.SetParameterValue("txtMonth3", strmonth[3].ToString());
+                            Report.SetParameterValue("txtMonth2", strmonth[2].ToString());
+                            Report.SetParameterValue("txtMonth1", strmonth[1].ToString());
+                            Report.SetParameterValue("txtMonth0", strmonth[0].ToString());
 
                             if (ret == DialogResult.Yes)
                             {
