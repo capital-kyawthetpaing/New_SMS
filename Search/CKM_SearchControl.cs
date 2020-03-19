@@ -861,7 +861,7 @@ namespace Search
                     break;
                 case SearchType.単位:
                 case SearchType.競技:
-                    using (Serach_HanyouKey frmMulti = new Serach_HanyouKey())
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
                     {
                         frmMulti.parID = Value1;
                         frmMulti.ShowDialog();
