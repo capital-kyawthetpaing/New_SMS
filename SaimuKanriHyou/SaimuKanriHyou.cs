@@ -61,9 +61,10 @@ namespace SaimuKanriHyou
             {
                 case 6:
                     {			
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-
+                        if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                        {
+                            Clear();
+                        }
                         break;
                     }
                 case 11:
@@ -175,7 +176,7 @@ namespace SaimuKanriHyou
                     chk = 1;
                 else chk = 0;
                 dtExport = saimukanriBL.D_MonthlyDebt_CSV_Report(mde,chk);
-                //CheckBeforeExport();
+                CheckBeforeExport();
 
                 if (dtExport.Rows.Count > 0)
                 {
@@ -248,7 +249,7 @@ namespace SaimuKanriHyou
                 dtExport = saimukanriBL.D_MonthlyDebt_CSV_Report(mde, chk);
                 if(dtExport.Rows.Count > 0 )
                 {
-                    //CheckBeforeExport();
+                    CheckBeforeExport();
                     try
                     {
                         SaimuKanriKyou_Report smkh_Report = new SaimuKanriKyou_Report();
