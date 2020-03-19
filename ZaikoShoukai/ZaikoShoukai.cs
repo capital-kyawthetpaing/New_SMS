@@ -11,7 +11,7 @@ using Base.Client;
 using BL;
 using Search;
 
-namespace ZaikoShoukai
+namespace ZaikoShoukai 
 {
     public partial class ZaikoShoukai : FrmMainForm
     {
