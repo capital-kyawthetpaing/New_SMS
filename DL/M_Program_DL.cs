@@ -30,6 +30,10 @@ namespace DL
             return SelectData(dic,sp);
             
         }
+        //public DataTable M_Program_Select(M_Program_Entity mpe)
+        //{
+
+        //}
 
     //    public DataTable Store_SelectAll(M_Store_Entity mbe)
     //    {

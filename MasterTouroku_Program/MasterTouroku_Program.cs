@@ -19,12 +19,12 @@ namespace MasterTouroku_Program
     public partial class FrmMasterTouroku_Program : FrmMainForm
     {
         M_Program_Entity mpe;
-        MasterTouroku_Program_BL mpb;
+        MasterTouroku_Program_BL mpbl;
         int type = 0;
         public FrmMasterTouroku_Program()
         {
             InitializeComponent();
-            mpb = new MasterTouroku_Program_BL();
+            mpbl = new MasterTouroku_Program_BL();
             mpe = new M_Program_Entity();
         }
         private void FormLoadEvent(object sender, EventArgs e)
@@ -110,68 +110,74 @@ namespace MasterTouroku_Program
        private void F11()
         {
             //if (ErrorCheck(11))
-            {
-                switch (OperationMode)
-                {
-                    case EOperationMode.INSERT:
-                        if (type == 1)
-                        {
-                            btnDisplay.Enabled = true;
-                            F11Enable = true;
-                            DisablePanel(PanelDetail);
-                            scProgramCopy.SetFocus(1);
-                        }
+            //{
+            //    switch (OperationMode)
+            //    {
+            //        case EOperationMode.INSERT:
+            //            if (type == 1)
+            //            {
+            //                btnDisplay.Enabled = true;
+            //                F11Enable = true;
+            //                DisablePanel(PanelDetail);
+            //                scProgramCopy.SetFocus(1);
+            //            }
 
-                        else
-                        {
-                            DisablePanel(PanelNormal);
-                            DisablePanel(PanelCopy);
-                            EnablePanel(PanelDetail);
-                            btnDisplay.Enabled = false;
-                            F11Enable = false;
-                            //mbe.BrandCD = ScCopyBrand.Code;
-                            DisplayData();
-                            txtProgramName.Focus();
-                        }
-                        break;
-                    case EOperationMode.UPDATE:
-                        //mbe.BrandCD = ScBrandCD.Code;
-                        DisplayData();
-                        DisablePanel(PanelNormal);
-                        DisablePanel(PanelCopy);
-                        btnDisplay.Enabled = false;
-                        EnablePanel(PanelDetail);
-                        F12Enable = true;
-                        F11Enable = false;
-                        txtProgramName.Focus();
-                        break;
-                    case EOperationMode.DELETE:
-                        //mbe.BrandCD = ScBrandCD.Code;
-                        DisplayData();
-                        DisablePanel(PanelNormal);
-                        DisablePanel(PanelCopy);
-                        btnDisplay.Enabled = false;
-                        DisablePanel(PanelDetail);
-                        F12Enable = true;
-                        F11Enable = false;
-                        break;
-                    case EOperationMode.SHOW:
-                        //mbe.BrandCD = ScBrandCD.Code;
-                        //DisplayData();
-                        DisablePanel(PanelNormal);
-                        DisablePanel(PanelCopy);
-                        btnDisplay.Enabled = false;
-                        DisablePanel(PanelDetail);
-                        F12Enable = false;
-                        F11Enable = false;
-                        break;
-                }
-            }
+            //            else
+            //            {
+            //                DisablePanel(PanelNormal);
+            //                DisablePanel(PanelCopy);
+            //                EnablePanel(PanelDetail);
+            //                btnDisplay.Enabled = false;
+            //                F11Enable = false;
+            //                //mbe.BrandCD = ScCopyBrand.Code;
+            //                mpe.ProgramID = scProgramCopy.Code;
+            //                DisplayData();
+            //                txtProgramName.Focus();
+            //            }
+            //            break;
+            //        case EOperationMode.UPDATE:
+            //            //mbe.BrandCD = ScBrandCD.Code;
+            //            mpe.ProgramID = scProgramID.Code;
+            //            DisplayData();
+            //            DisablePanel(PanelNormal);
+            //            DisablePanel(PanelCopy);
+            //            btnDisplay.Enabled = false;
+            //            EnablePanel(PanelDetail);
+            //            F12Enable = true;
+            //            F11Enable = false;
+            //            txtProgramName.Focus();
+            //            break;
+            //        case EOperationMode.DELETE:
+            //            //mbe.BrandCD = ScBrandCD.Code;
+            //            mpe.ProgramID = scProgramID.Code;
+            //            DisplayData();
+            //            DisablePanel(PanelNormal);
+            //            DisablePanel(PanelCopy);
+            //            btnDisplay.Enabled = false;
+            //            DisablePanel(PanelDetail);
+            //            F12Enable = true;
+            //            F11Enable = false;
+            //            break;
+            //        case EOperationMode.SHOW:
+            //            //mbe.BrandCD = ScBrandCD.Code;
+            //            mpe.ProgramID = scProgramID.Code;
+            //            DisplayData();
+            //            DisablePanel(PanelNormal);
+            //            DisablePanel(PanelCopy);
+            //            btnDisplay.Enabled = false;
+            //            DisablePanel(PanelDetail);
+            //            F12Enable = false;
+            //            F11Enable = false;
+            //            break;
+            //    }
+            //}
         }
         private void DisplayData()
         {
             DataTable dt = new DataTable();
+            
             //dt = mtkbl.Brand_Select(mbe);
+            
             //if (dt.Rows.Count > 0)
             //{
             //    txtBrandName.Text = dt.Rows[0]["BrandName"].ToString();
