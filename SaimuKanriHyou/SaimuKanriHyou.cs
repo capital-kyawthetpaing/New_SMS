@@ -350,7 +350,7 @@ namespace SaimuKanriHyou
 
             if (saimukanriBL.M_StoreClose_Check(msce, "2").Rows.Count > 0)
             {
-                string ProgramID = "GetsujiSaikenKeisanSyori";
+                string ProgramID = "GetsujiSaimuKeisanSyori";
                 RunConsole(ProgramID, msce.FiscalYYYYMM);
             }
         }
