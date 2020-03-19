@@ -271,5 +271,4 @@ namespace ZaikoShoukai
             ckM_Search_Kei_waza.Value1 = "202";
         }
     }
-
 }
