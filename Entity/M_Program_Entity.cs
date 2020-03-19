@@ -15,5 +15,8 @@ namespace Entity
         public string FileDrive { get; set; }
         public string FilePass { get; set; }
         public string FileName { get; set; }
+
+        //ses--MasterTouroku_Program
+        public string Program_ID { get; set; }
     }
 }

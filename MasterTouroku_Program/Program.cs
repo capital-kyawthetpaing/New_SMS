@@ -16,7 +16,7 @@ namespace MasterTouroku_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMasterTouroku_Program());
+            Application.Run(new MasterTouroku_Program());
         }
     }
 }

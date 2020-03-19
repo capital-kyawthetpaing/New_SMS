@@ -16,30 +16,46 @@ using Search;
 
 namespace MasterTouroku_Program
 {
-    public partial class FrmMasterTouroku_Program : FrmMainForm
+    public partial class MasterTouroku_Program : FrmMainForm
     {
         M_Program_Entity mpe;
         MasterTouroku_Program_BL mpbl;
         int type = 0;
-        public FrmMasterTouroku_Program()
+        public MasterTouroku_Program()
         {
             InitializeComponent();
             mpbl = new MasterTouroku_Program_BL();
             mpe = new M_Program_Entity();
         }
-        private void FormLoadEvent(object sender, EventArgs e)
+
+        private void MasterTouroku_Program_Load(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
 
             SetFunctionLabel(EProMode.MENTE);
+
             StartProgram();
             SetRequireField();
+            
+            BindType();
             scProgramID.SetFocus(1);
         }
+        
         private void SetRequireField()
         {
             txtProgramName.Require(true);
+            cboType.Require(true);
             txtExeName.Require(true);
+        }
+
+        private void PanelNormal_Enter(object sender, EventArgs e)
+        {
+            type = 1;
+        }
+
+        private void PanelCopy_Enter(object sender, EventArgs e)
+        {
+            type = 2;
         }
         public override void FunctionProcess(int index)
         {
@@ -109,145 +125,304 @@ namespace MasterTouroku_Program
         }
        private void F11()
         {
-            //if (ErrorCheck(11))
-            //{
-            //    switch (OperationMode)
-            //    {
-            //        case EOperationMode.INSERT:
-            //            if (type == 1)
-            //            {
-            //                btnDisplay.Enabled = true;
-            //                F11Enable = true;
-            //                DisablePanel(PanelDetail);
-            //                scProgramCopy.SetFocus(1);
-            //            }
-
-            //            else
-            //            {
-            //                DisablePanel(PanelNormal);
-            //                DisablePanel(PanelCopy);
-            //                EnablePanel(PanelDetail);
-            //                btnDisplay.Enabled = false;
-            //                F11Enable = false;
-            //                //mbe.BrandCD = ScCopyBrand.Code;
-            //                mpe.ProgramID = scProgramCopy.Code;
-            //                DisplayData();
-            //                txtProgramName.Focus();
-            //            }
-            //            break;
-            //        case EOperationMode.UPDATE:
-            //            //mbe.BrandCD = ScBrandCD.Code;
-            //            mpe.ProgramID = scProgramID.Code;
-            //            DisplayData();
-            //            DisablePanel(PanelNormal);
-            //            DisablePanel(PanelCopy);
-            //            btnDisplay.Enabled = false;
-            //            EnablePanel(PanelDetail);
-            //            F12Enable = true;
-            //            F11Enable = false;
-            //            txtProgramName.Focus();
-            //            break;
-            //        case EOperationMode.DELETE:
-            //            //mbe.BrandCD = ScBrandCD.Code;
-            //            mpe.ProgramID = scProgramID.Code;
-            //            DisplayData();
-            //            DisablePanel(PanelNormal);
-            //            DisablePanel(PanelCopy);
-            //            btnDisplay.Enabled = false;
-            //            DisablePanel(PanelDetail);
-            //            F12Enable = true;
-            //            F11Enable = false;
-            //            break;
-            //        case EOperationMode.SHOW:
-            //            //mbe.BrandCD = ScBrandCD.Code;
-            //            mpe.ProgramID = scProgramID.Code;
-            //            DisplayData();
-            //            DisablePanel(PanelNormal);
-            //            DisablePanel(PanelCopy);
-            //            btnDisplay.Enabled = false;
-            //            DisablePanel(PanelDetail);
-            //            F12Enable = false;
-            //            F11Enable = false;
-            //            break;
-            //    }
-            //}
+            if (ErrorCheck(11))
+            {
+                switch (OperationMode)
+                {
+                    case EOperationMode.INSERT:
+                        if (type == 1)
+                        {
+                            //btnDisplay.Enabled = true;
+                            //F11Enable = true;
+                            //DisablePanel(PanelDetail);
+                            //scProgramCopy.SetFocus(1);
+                            scProgramCopy.SetFocus(1);
+                        }
+                        else
+                        {
+                            DisablePanel(PanelHeader);
+                            //DisablePanel(PanelCopy);
+                            EnablePanel(PanelDetail);
+                            btnDisplay.Enabled = false;
+                            F11Enable = false;
+                            SelectNextControl(PanelDetail, true, true, true, true);
+                            //mpe.ProgramID = scProgramCopy.Code;
+                            //DisplayData();
+                            //txtProgramName.Focus();
+                        }
+                        break;
+                    case EOperationMode.UPDATE:
+                        //mpe.ProgramID = scProgramID.Code;
+                        //DisplayData();
+                        DisablePanel(PanelHeader);
+                        btnDisplay.Enabled = false;
+                        EnablePanel(PanelDetail);
+                        F12Enable = true;
+                        F11Enable = false;
+                        SelectNextControl(PanelDetail, true, true, true, true);
+                        scProgramID.SetFocus(1);  //ses
+                        break;
+                    case EOperationMode.DELETE:
+                        //mpe.ProgramID = scProgramID.Code;
+                        //DisplayData();
+                        DisablePanel(PanelHeader);
+                        //DisablePanel(PanelCopy);
+                        btnDisplay.Enabled = false;
+                        DisablePanel(PanelDetail);
+                        SelectNextControl(PanelDetail, true, true, true, true);
+                        F12Enable = true;
+                        F11Enable = false;
+                        break;
+                    case EOperationMode.SHOW:
+                        mpe.ProgramID = scProgramID.Code;
+                        DisplayData();
+                        DisablePanel(PanelHeader);
+                        btnDisplay.Enabled = false;
+                        DisablePanel(PanelDetail);
+                        F12Enable = false;
+                        F11Enable = false;
+                        break;
+                }
+            }
         }
         private void DisplayData()
         {
             DataTable dt = new DataTable();
-            
-            //dt = mtkbl.Brand_Select(mbe);
-            
-            //if (dt.Rows.Count > 0)
-            //{
-            //    txtBrandName.Text = dt.Rows[0]["BrandName"].ToString();
-            //    txtKanaName.Text = dt.Rows[0]["BrandKana"].ToString();
-            //}
+            dt = mpbl.M_Program_Select(mpe);
+
+            if (dt.Rows.Count > 0)
+            {
+                txtProgramName.Text = dt.Rows[0]["ProgramName"].ToString();
+                cboType.SelectedValue = dt.Rows[0]["Type"].ToString();
+                txtExeName.Text = dt.Rows[0]["ProgramEXE"].ToString();
+                txtFileDrive.Text = dt.Rows[0]["FileDrive"].ToString();
+                txtFilePass.Text = dt.Rows[0]["FilePass"].ToString();
+                txtFileName.Text = dt.Rows[0]["FileName"].ToString();
+                scProgramID.SetFocus(1);
+            }
+            else
+            {
+                mpbl.ShowMessage("E133");
+            }
         }
         private void F12()
         {
-            //if (ErrorCheck(12))
-            //{
-            //    if (mtkbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
-            //    {
-            //        //*** Create Entity Object                  
-            //        mbe = GetBrandEntity();
-            //        switch (OperationMode)
-            //        {
-            //            case EOperationMode.INSERT:
-            //                InsertUpdate(1);
-            //                break;
-            //            case EOperationMode.UPDATE:
-            //                InsertUpdate(2);
-            //                break;
-            //            case EOperationMode.DELETE:
-            //                Delete();
-            //                break;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        PreviousCtrl.Focus();
-            //    }
-        }
+            if (ErrorCheck(12))
+            {
+                if (mpbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+                {
+                    mpe = GetProgramEntity();
+                    switch (OperationMode)
+                    {
+                        case EOperationMode.INSERT:
+                            InsertUpdate(1);
+                            break;
+                        case EOperationMode.UPDATE:
+                            InsertUpdate(2);
+                            break;
+                        case EOperationMode.DELETE:
+                            Delete();
+                            break;
+                    }
+                }
+                else
+                {
+                    PreviousCtrl.Focus();
+                }
+            }
+            }
         private void InsertUpdate(int mode)
         {
-            //if (mtkbl.M_Brand_Insert_Update(mbe, mode))
-            //{
-            //    ChangeMode(OperationMode);
-            //    ScBrandCD.SetFocus(1);
-            //    mtkbl.ShowMessage("I101");
-            //}
-            //else
-            //{
-            //    mtkbl.ShowMessage("S001");
-            //}
+            if (mpbl.M_Program_Insert_Update(mpe, mode))
+            {
+                ChangeMode(OperationMode);
+                scProgramID.SetFocus(1);
+                mpbl.ShowMessage("I101");
+            }
+            else
+            {
+                mpbl.ShowMessage("S001");
+            }
         }
         private void Delete()
         {
-            //if (mtkbl.M_Brand_Delete(mbe))
-            //{
-            //    ChangeMode(OperationMode);
-            //    ScBrandCD.SetFocus(1);
-            //    mtkbl.ShowMessage("I102");
-            //}
-            //else
-            //{
-            //    mtkbl.ShowMessage("S001");
-            //}
+            if (mpbl.M_Program_Delete(mpe))
+            {
+                ChangeMode(OperationMode);
+                scProgramID.SetFocus(1);
+                mpbl.ShowMessage("I102");
+            }
+            else
+            {
+                mpbl.ShowMessage("S001");
+            }
         }
         private M_Program_Entity GetProgramEntity()
         {
             mpe = new M_Program_Entity
             {
-
+                Program_ID=scProgramID.Code,
+                ProgramName=txtProgramName.Text,
+                Type=cboType.SelectedValue.ToString(),
+                ProgramEXE=txtExeName.Text,
+                FilePass=txtFileDrive.Text,
+                FileDrive=txtFilePass.Text,
+                FileName=txtFileName.Text,
+                ProcessMode = ModeText,
+                ProgramID=InProgramID,
+                Operator = InOperatorCD,
+                Key = scProgramID.Code + " " + scProgramID.ChangeDate,
+                PC = InPcID
             };
             return mpe;
+        }
+
+        private bool ErrorCheck(int index)
+        {
+            if (index == 11)
+            {
+                //mpe = GetProgramEntity();
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    if (type == 1)//New 
+                    {
+                        if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
+                            return false;
+                        if (scProgramID.IsExists(1))
+                        {
+                            mpbl.ShowMessage("E132");
+                            scProgramID.SetFocus(1);
+                            return false;
+                        }
+                    }
+                    else//Copy
+                    {
+                        if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
+                            return false;
+                        //DataTable dtProgram = new DataTable();
+                        //mpe.ProgramID = scProgramID.Code;
+                        //dtProgram = mpbl.M_Program_Select(mpe);
+                        //if (dtProgram.Rows.Count > 0)
+                        //{
+                        //    mpbl.ShowMessage("E132");
+                        //    scProgramID.SetFocus(1);
+                        //    return false;
+                        //}
+                        if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text) && !string.IsNullOrWhiteSpace(scProgramCopy.ChangeDate))
+                        {
+                            if (!scProgramCopy.IsExists(1))
+                            {
+                                mpbl.ShowMessage("E133");
+                                scProgramCopy.SetFocus(1);
+                                return false;
+                            }
+                        }
+                        else
+                        {
+
+                            if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
+                            {
+                                mpe.ProgramID= scProgramCopy.Code;
+                                DataTable dtcopyprogram = new DataTable();
+                                dtcopyprogram = mpbl.M_Program_Select(mpe);
+                                if (dtcopyprogram.Rows.Count > 0)
+                                {
+                                    //txtBrandName.Text = dtcopybrand.Rows[0]["BrandName"].ToString();
+                                    txtProgramName.Text = dtcopyprogram.Rows[0]["ProgramName"].ToString();
+                                }
+                                else
+                                {
+                                    mpbl.ShowMessage("E133");
+                                    scProgramCopy.SetFocus(1);
+                                    return false;
+                                }
+                            }
+
+                        }
+
+                    }
+                }
+                else
+                {
+                    DataTable dtprogram = new DataTable();
+                    mpe.ProgramID = scProgramID.Code;
+                    dtprogram = mpbl.M_Program_Select(mpe);
+                    if (dtprogram.Rows.Count == 0)
+                    {
+                        mpbl.ShowMessage("E133");
+                        scProgramID.SetFocus(1);
+                        return false;
+                    }
+                }
+            }
+            else if (index == 12)
+            {
+                if (!RequireCheck(new Control[] { scProgramID.TxtCode,txtProgramName,cboType,txtExeName }))
+                    return false;
+                if (string.IsNullOrWhiteSpace(txtProgramName.Text))
+                {
+                    mpbl.ShowMessage("E102");
+                    txtProgramName.Focus();
+                    return false;
+                }
+                if (string.IsNullOrWhiteSpace(txtExeName.Text))
+                {
+                    mpbl.ShowMessage("E102");
+                    txtExeName.Focus();
+                    return false;
+                }
+
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    DataTable dtprogram = new DataTable();
+                    mpe = GetProgramEntity();
+                    dtprogram = mpbl.M_Program_Select(mpe);
+                    if (dtprogram.Rows.Count > 0)
+                    {
+                        mpbl.ShowMessage("E132");
+                        scProgramID.SetFocus(1);
+                        return false;
+                    }
+                }
+                else if (OperationMode == EOperationMode.DELETE)
+                {
+                    DataTable dtprogram = new DataTable();
+                    mpe = GetProgramEntity();
+                    dtprogram = mpbl.M_Program_Select(mpe);
+                    if (dtprogram.Rows.Count > 0)
+                    {
+                        if (dtprogram.Rows[0]["UsedFlg"].ToString() == "1")
+                        {
+                            mpbl.ShowMessage("E154");
+                            scProgramID.SetFocus(1);
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
         }
 
         protected override void EndSec()
         {
             this.Close();
+        }
+
+        private void BindType()
+        {
+            DataTable dtAdd = new DataTable();
+            dtAdd.Columns.Add("TypeID", typeof(int));
+            dtAdd.Columns.Add("TypeName", typeof(string));
+            dtAdd.Rows.Add(0, string.Empty);
+            dtAdd.Rows.Add(1, "入力");
+            dtAdd.Rows.Add(2, "印刷");
+            dtAdd.Rows.Add(3, "印刷");
+            dtAdd.Rows.Add(4, "出力");
+            dtAdd.Rows.Add(5, "照会");
+            dtAdd.Rows.Add(6, "更新");
+            cboType.ValueMember = "TypeID";
+            cboType.DisplayMember = "TypeName";
+            cboType.DataSource = dtAdd;
         }
 
         private void scProgramID_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -268,6 +443,8 @@ namespace MasterTouroku_Program
                 F11();
             }
         }
+
+        
     }
 }
 
