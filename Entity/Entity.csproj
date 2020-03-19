@@ -120,6 +120,7 @@
     <Compile Include="M_JANOrderPrice_Entity.cs" />
     <Compile Include="M_Kouza_Entity.cs" />
     <Compile Include="M_Location_Entity.cs" />
+    <Compile Include="M_MailPattern_Entity.cs" />
     <Compile Include="M_MakerBrand_Entity.cs" />
     <Compile Include="M_Message_Entity.cs" />
     <Compile Include="M_MovePurpose_Entity.cs" />

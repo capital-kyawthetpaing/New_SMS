@@ -11,7 +11,7 @@ using Base.Client;
 using BL;
 using Search;
 
-namespace ZaikoShoukai
+namespace ZaikoShoukai 
 {
     public partial class ZaikoShoukai : FrmMainForm
     {
@@ -168,8 +168,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
-        
         private void ckM_TB_ShoninbiT_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -193,6 +191,7 @@ namespace ZaikoShoukai
                 {
                     if (ckM_Search_Shiiresaki.SelectData())
                     {
+                        
                         ckM_Search_Shiiresaki.Value1 = ckM_Search_Shiiresaki.TxtCode.Text;
                         ckM_Search_Shiiresaki.Value2 = ckM_Search_Shiiresaki.LabelText;
                     }
@@ -273,7 +272,14 @@ namespace ZaikoShoukai
             MoveNextControl(e);
         }
 
-        
+        private void ckM_TB_Bikokeyword_KeyDown(object sender, KeyEventArgs e)
+        {
+            string st = ckM_TB_Bikokeyword.Text;
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckM_TB_Bikokeyword.Text = ckM_TB_Bikokeyword.Text + ',';
+            }
+        }
     }
-    
+
 }
