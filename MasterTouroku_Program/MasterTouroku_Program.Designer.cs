@@ -410,7 +410,7 @@
             this.PanelNormal.Controls.Add(this.ckM_Label10);
             this.PanelNormal.Location = new System.Drawing.Point(43, 12);
             this.PanelNormal.Name = "PanelNormal";
-            this.PanelNormal.Size = new System.Drawing.Size(200, 35);
+            this.PanelNormal.Size = new System.Drawing.Size(250, 35);
             this.PanelNormal.TabIndex = 4;
             // 
             // ckM_Label10
@@ -435,7 +435,7 @@
             this.PanelCopy.Controls.Add(this.ckM_Label2);
             this.PanelCopy.Location = new System.Drawing.Point(573, 9);
             this.PanelCopy.Name = "PanelCopy";
-            this.PanelCopy.Size = new System.Drawing.Size(210, 35);
+            this.PanelCopy.Size = new System.Drawing.Size(260, 35);
             this.PanelCopy.TabIndex = 5;
             // 
             // scProgramCopy
@@ -444,7 +444,7 @@
             this.scProgramCopy.ChangeDate = "";
             this.scProgramCopy.ChangeDateWidth = 100;
             this.scProgramCopy.Code = "";
-            this.scProgramCopy.CodeWidth = 60;
+            this.scProgramCopy.CodeWidth = 110;
             this.scProgramCopy.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scProgramCopy.DataCheck = false;
             this.scProgramCopy.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -455,7 +455,7 @@
             this.scProgramCopy.Margin = new System.Windows.Forms.Padding(0);
             this.scProgramCopy.Name = "scProgramCopy";
             this.scProgramCopy.SearchEnable = true;
-            this.scProgramCopy.Size = new System.Drawing.Size(93, 27);
+            this.scProgramCopy.Size = new System.Drawing.Size(143, 27);
             this.scProgramCopy.Stype = Search.CKM_SearchControl.SearchType.プログラムID;
             this.scProgramCopy.TabIndex = 10;
             this.scProgramCopy.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -471,7 +471,7 @@
             this.scProgramID.ChangeDate = "";
             this.scProgramID.ChangeDateWidth = 100;
             this.scProgramID.Code = "";
-            this.scProgramID.CodeWidth = 60;
+            this.scProgramID.CodeWidth = 110;
             this.scProgramID.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scProgramID.DataCheck = false;
             this.scProgramID.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -482,7 +482,7 @@
             this.scProgramID.Margin = new System.Windows.Forms.Padding(0);
             this.scProgramID.Name = "scProgramID";
             this.scProgramID.SearchEnable = true;
-            this.scProgramID.Size = new System.Drawing.Size(93, 28);
+            this.scProgramID.Size = new System.Drawing.Size(143, 28);
             this.scProgramID.Stype = Search.CKM_SearchControl.SearchType.プログラムID;
             this.scProgramID.TabIndex = 6;
             this.scProgramID.TextSize = Search.CKM_SearchControl.FontSize.Normal;

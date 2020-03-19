@@ -19,10 +19,13 @@ namespace MasterTouroku_Program
     public partial class FrmMasterTouroku_Program : FrmMainForm
     {
         M_Program_Entity mpe;
+        MasterTouroku_Program_BL mpb;
         int type = 0;
         public FrmMasterTouroku_Program()
         {
             InitializeComponent();
+            mpb = new MasterTouroku_Program_BL();
+            mpe = new M_Program_Entity();
         }
         private void FormLoadEvent(object sender, EventArgs e)
         {
@@ -104,9 +107,9 @@ namespace MasterTouroku_Program
             }
             scProgramID.SetFocus(1);
         }
-        private void F11()
+       private void F11()
         {
-            if (ErrorCheck(11))
+            //if (ErrorCheck(11))
             {
                 switch (OperationMode)
                 {
