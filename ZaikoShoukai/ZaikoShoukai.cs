@@ -21,10 +21,9 @@ namespace ZaikoShoukai
         {
             InitializeComponent();
         }
-
         private void ZaikoShoukai_Load(object sender, EventArgs e)
         {
-            InProgramID = "ZaikoYoteiHyou";
+            InProgramID = "ZaikoShoukai";
             StartProgram();
             BindCombo();
             ckM_LB_Kijun.Text = Convert.ToDateTime(DateTime.Today).ToShortDateString();
@@ -32,12 +31,10 @@ namespace ZaikoShoukai
             ModeVisible = false;
             ckM_CB_Soko.Focus();
         }
-       
         protected override void EndSec()
         {
             this.Close();
         }
-
         private void BindCombo()
         {
             ckM_CB_Soko.Bind(String.Empty,"");
@@ -55,7 +52,6 @@ namespace ZaikoShoukai
             ckM_CB_Tagu4.Bind(string.Empty, "");
             ckM_CB_Tagu5.Bind(string.Empty, "");
         }
-
         //private bool ErrorCheck()
         //{
             
@@ -80,7 +76,6 @@ namespace ZaikoShoukai
                
             }
         }
-
         private void CanCelData()
         {
             ckM_CB_Soko.SelectedIndex = 1;
@@ -126,7 +121,6 @@ namespace ZaikoShoukai
             ckM_RB_Makashohincd.Checked = false;
             ckM_CB_Soko.Focus();
         }
-
         private void ckM_TB_TanabanTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -140,7 +134,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_TB_ShinkitorokuT_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -154,7 +147,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_TＢ_SaiShuhenkobiT_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -181,7 +173,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_Search_Shiiresaki_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -203,7 +194,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_Search_Meka_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -224,7 +214,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_Search_Brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -245,7 +234,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ckM_Search_Kei_waza_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -266,19 +254,21 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
-
         private void ckM_TB_Bikokeyword_KeyDown(object sender, KeyEventArgs e)
         {
             string st = ckM_TB_Bikokeyword.Text;
             if (e.KeyCode == Keys.Enter)
             {
-                ckM_TB_Bikokeyword.Text = ckM_TB_Bikokeyword.Text + ',';
+                
             }
+        }
+        private void ckM_Search_Kei_waza_Enter(object sender, EventArgs e)
+        {
+            ckM_Search_Kei_waza.Value1 = "202";
         }
     }
 
