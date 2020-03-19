@@ -20,20 +20,50 @@ namespace DL
             //command.CommandType = CommandType.StoredProcedure;
             //command.CommandTimeout = 0;
 
-            command.Parameters.Add("@ProgramID", SqlDbType.VarChar).Value = mpe.ProgramID;
+            //command.Parameters.Add("@ProgramID", SqlDbType.VarChar).Value = mpe.ProgramID;
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@ProgramID", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProgramID } }
+                { "@ProgramID", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.Program_ID } } 
             };
-
+            UseTransaction = true;  //ses
             //return SelectData(sp);
             return SelectData(dic,sp);
             
         }
-        //public DataTable M_Program_Select(M_Program_Entity mpe)
-        //{
-
-        //}
+        public bool M_Program_Insert_Update(M_Program_Entity mpe, int mode)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ProgramID", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.Program_ID} },
+                { "@ProgramName",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.ProgramName} },
+                { "@Type",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.Type} },
+                { "@ProgramEXE",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.ProgramEXE} },
+                { "@FileDrive",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.FileDrive} },
+                { "@FilePass",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.FilePass} },
+                { "@FileName",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.FileName} },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.InsertOperator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.PC } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProcessMode } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProgramID+" "+mpe.ChangeDate } },
+                { "@Mode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mode.ToString() } }
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, "M_Program_Insert_Update");
+        }
+        public bool M_Program_Delete(M_Program_Entity mpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@ProgramID", new ValuePair {value1 = SqlDbType.VarChar,value2 = mpe.ProgramID} },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.InsertOperator } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.PC } },
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProcessMode } },
+                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 =  mpe.ProgramID+" "+mpe.ChangeDate } }
+            };
+            return InsertUpdateDeleteData(dic, "M_Program_Delete");
+        }
 
     //    public DataTable Store_SelectAll(M_Store_Entity mbe)
     //    {

@@ -37,9 +37,9 @@ namespace Search
             skhnobl = new Search_KeihiNO_BL();
             bbl = new Base_BL();
             F9Visible = false;
-            chkPaid.Checked = true;
-            chkUnpaid.Checked = true;
-            chkTeiki.Checked = true;
+            //chkPaid.Checked = true;
+            //chkUnpaid.Checked = true;
+            //chkTeiki.Checked = true;
             F11Visible = false;
         }
         //ZCO

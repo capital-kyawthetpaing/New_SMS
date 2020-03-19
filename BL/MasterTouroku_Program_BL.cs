@@ -16,9 +16,17 @@ namespace BL
         {
             mpd = new M_Program_DL();
         }
-        //public DataTable Program_Select(M_Program_Entity mpe)
-        //{
-
-        //}
+        public DataTable M_Program_Select(M_Program_Entity mpe)
+        {
+            return mpd.M_Program_Select(mpe);
+        }
+        public bool M_Program_Insert_Update(M_Program_Entity mpe, int mode)
+        {
+            return mpd.M_Program_Insert_Update(mpe, mode);
+        }
+        public bool M_Program_Delete(M_Program_Entity mpe)
+        {
+            return mpd.M_Program_Delete(mpe);
+        }
     }
 }
