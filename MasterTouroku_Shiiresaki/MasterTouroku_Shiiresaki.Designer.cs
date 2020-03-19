@@ -408,9 +408,9 @@
             this.txtEDIVendorCD.isEnterKeyDown = false;
             this.txtEDIVendorCD.IsNumber = true;
             this.txtEDIVendorCD.IsShop = false;
-            this.txtEDIVendorCD.Length = 11;
+            this.txtEDIVendorCD.Length = 15;
             this.txtEDIVendorCD.Location = new System.Drawing.Point(237, 625);
-            this.txtEDIVendorCD.MaxLength = 11;
+            this.txtEDIVendorCD.MaxLength = 15;
             this.txtEDIVendorCD.MoveNext = true;
             this.txtEDIVendorCD.Name = "txtEDIVendorCD";
             this.txtEDIVendorCD.Size = new System.Drawing.Size(110, 19);

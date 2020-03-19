@@ -77,7 +77,6 @@ namespace Shiharai_ShimeShori
                     break;
             }
         }
-
         private void F12()
         {
             dpch_entity = GetDataEntity();
@@ -114,7 +113,6 @@ namespace Shiharai_ShimeShori
                     break;
             }
         }
-
         private void F11()
         {
             dpch_entity = GetDataEntity();
@@ -124,18 +122,18 @@ namespace Shiharai_ShimeShori
                 case "支払締":
                     if (ErrorCheck(1))
                     {
-                        Data();
+                        BindGrid();
                     }
                     break;
                 case "支払締キャンセル":
                     if (ErrorCheck(2))
                     {
-                        Data();
+                        BindGrid();
                     }
                     break;
             }
         }
-        private void Data()
+        private void BindGrid()
         {
             dgvPaymentClose.ClearSelection();
            // dpch_entity = GetDataEntity();
@@ -155,7 +153,6 @@ namespace Shiharai_ShimeShori
                 dgvPaymentClose.DataSource = null;
             }
         }
-
         private bool ErrorCheck(int Type)
         {
             if (!string.IsNullOrEmpty(ScPaymentCD.TxtCode.Text))
@@ -246,6 +243,7 @@ namespace Shiharai_ShimeShori
                     F5Visible = false;
                     F9Visible = false;
                     F11Visible = false;
+                    dgvPaymentClose.DataSource = null;
                     cboProcessType.Focus();
                     break;
             }
@@ -295,7 +293,6 @@ namespace Shiharai_ShimeShori
                 }
             }
         }
-
         private void Supplier_Enter(object sender, EventArgs e)
         {
             //ScPaymentCD.ChangeDate = sss_bl.GetDate();
@@ -315,7 +312,6 @@ namespace Shiharai_ShimeShori
                 }
             }
         }
-
         private void dgvPaymentClose_Paint(object sender, PaintEventArgs e)
         {
             dgvPaymentClose.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
