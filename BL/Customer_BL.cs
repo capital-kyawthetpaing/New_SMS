@@ -32,6 +32,7 @@ namespace BL
                 mce.KanaName = dt.Rows[0]["KanaName"].ToString();
                 mce.StoreKBN = dt.Rows[0]["StoreKBN"].ToString();
                 mce.CustomerKBN = dt.Rows[0]["CustomerKBN"].ToString();
+                mce.StoreTankaKBN = dt.Rows[0]["StoreTankaKBN"].ToString();
                 mce.AliasKBN = dt.Rows[0]["AliasKBN"].ToString();
                 mce.BillingType = dt.Rows[0]["BillingType"].ToString();
                 mce.GroupName = dt.Rows[0]["GroupName"].ToString();
@@ -66,14 +67,22 @@ namespace BL
                 mce.StaffCD = dt.Rows[0]["StaffCD"].ToString();
                 mce.AttentionFLG = dt.Rows[0]["AttentionFLG"].ToString();
                 mce.ConfirmFLG = dt.Rows[0]["ConfirmFLG"].ToString();
+                mce.ConfirmComment = dt.Rows[0]["ConfirmComment"].ToString();
                 mce.BillingCloseDate = dt.Rows[0]["BillingCloseDate"].ToString();
                 mce.CollectPlanMonth = dt.Rows[0]["CollectPlanMonth"].ToString();
                 mce.CollectPlanDate = dt.Rows[0]["CollectPlanDate"].ToString();
                 mce.HolidayKBN = dt.Rows[0]["HolidayKBN"].ToString();
+                mce.TaxTiming = dt.Rows[0]["TaxTiming"].ToString();
                 mce.TaxFractionKBN = dt.Rows[0]["TaxFractionKBN"].ToString();
                 mce.AmountFractionKBN = dt.Rows[0]["AmountFractionKBN"].ToString();
                 mce.CreditLevel = dt.Rows[0]["CreditLevel"].ToString();
+                mce.CreditCard = dt.Rows[0]["CreditCard"].ToString();
+                mce.CreditInsurance = dt.Rows[0]["CreditInsurance"].ToString();
+                mce.CreditDeposit = dt.Rows[0]["CreditDeposit"].ToString();
+                mce.CreditETC = dt.Rows[0]["CreditETC"].ToString();
                 mce.CreditAmount = dt.Rows[0]["CreditAmount"].ToString();
+                mce.CreditWarningAmount = dt.Rows[0]["CreditWarningAmount"].ToString();
+                mce.CreditAdditionAmount = dt.Rows[0]["CreditAdditionAmount"].ToString();
                 mce.PaymentMethodCD = dt.Rows[0]["PaymentMethodCD"].ToString();
                 mce.KouzaCD = dt.Rows[0]["KouzaCD"].ToString();
                 mce.DisplayOrder = dt.Rows[0]["DisplayOrder"].ToString();
@@ -82,8 +91,12 @@ namespace BL
                 mce.CountryKBN = dt.Rows[0]["CountryKBN"].ToString();
                 mce.CountryName = dt.Rows[0]["CountryName"].ToString();
                 mce.RegisteredNumber = dt.Rows[0]["RegisteredNumber"].ToString();
+                mce.DMFlg = dt.Rows[0]["DMFlg"].ToString();
                 mce.RemarksOutStore = dt.Rows[0]["RemarksOutStore"].ToString();
                 mce.RemarksInStore = dt.Rows[0]["RemarksInStore"].ToString();
+                mce.AnalyzeCD1 = dt.Rows[0]["AnalyzeCD1"].ToString();
+                mce.AnalyzeCD2 = dt.Rows[0]["AnalyzeCD2"].ToString();
+                mce.AnalyzeCD3 = dt.Rows[0]["AnalyzeCD3"].ToString();
                 mce.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
                 mce.UsedFlg = dt.Rows[0]["UsedFlg"].ToString();
                 mce.InsertOperator = dt.Rows[0]["InsertOperator"].ToString();
@@ -98,10 +111,14 @@ namespace BL
 
         }
 
-        //public DataTable M_Customer_SelectAll(M_Customer_Entity mse)
-        //{
-        //    return mmdl.M_Customer_SelectAll(mse);
-        //}
+        /// <summary>	
+        /// 得意先更新処理	
+        /// MasterTouroku_Tokuisakiより更新時に使用	
+        /// </summary>	
+        public bool Customer_Exec(M_Customer_Entity me, short operationMode)
+        {
+            return mmdl.M_Customer_Exec(me, operationMode);
+        }
 
     }
 }

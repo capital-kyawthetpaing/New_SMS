@@ -57,15 +57,23 @@ namespace Entity
         public string StaffCD { get; set; }
         public string AttentionFLG { get; set; }
         public string ConfirmFLG { get; set; }
+        public string ConfirmComment { get; set; }
         public string BillingCloseDate { get; set; }
         public string CollectPlanMonth { get; set; }
         public string CollectPlanDate { get; set; }
         public string HolidayKBN { get; set; }
         public string TaxTiming { get; set; }
+        public string TaxPrintKBN { get; set; } //追加項目
         public string TaxFractionKBN { get; set; }
         public string AmountFractionKBN { get; set; }
         public string CreditLevel { get; set; }
+        public string CreditCard { get; set; }
+        public string CreditInsurance { get; set; }
+        public string CreditDeposit { get; set; }
+        public string CreditETC { get; set; }
         public string CreditAmount { get; set; }
+        public string CreditWarningAmount { get; set; }
+        public string CreditAdditionAmount { get; set; }
         public string PaymentMethodCD { get; set; }
         public string KouzaCD { get; set; }
         public string DisplayOrder { get; set; }
@@ -74,12 +82,15 @@ namespace Entity
         public string CountryKBN { get; set; }
         public string CountryName { get; set; }
         public string RegisteredNumber { get; set; }
+        public string DMFlg { get; set; }
         public string RemarksOutStore { get; set; }
         public string RemarksInStore { get; set; }
 
-        public string DMFlg { get; set; }
+        public string AnalyzeCD1 { get; set; }
+        public string AnalyzeCD2 { get; set; }
+        public string AnalyzeCD3 { get; set; }
 
-        //Todo:コンパイルエラーのため暫定
+        //TempoRegiKaiinTouroku
         public string TelephoneNo1 { get; set; }
         public string TelephoneNo2 { get; set; }
         public string TelephoneNo3 { get; set; }
