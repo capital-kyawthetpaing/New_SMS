@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MasterTouroku_Program
+namespace NyuukinKesikomiItiranHyou
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace MasterTouroku_Program
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MasterTouroku_Program());
+            Application.Run(new NyuukinKesikomiItiranHyou());
         }
     }
 }

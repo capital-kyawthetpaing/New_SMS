@@ -21,10 +21,9 @@ namespace DL
             {
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
+                { "@Type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.Type } },
                 { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.DeleteFlg } }
-                //最新ストアドがきてから変更
-                ,
-                { "@Type", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.Type } }
+                
             };
             return SelectData(dic, "M_Store_Bind");
         }
@@ -157,37 +156,39 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-        /// <summary>
-        /// 店舗マスタ更新処理
-        /// MasterTouroku_Tempoより更新時に使用
-        /// </summary>
-        /// <param name="mbe"></param>
-        /// <param name="operationMode"></param>
-        /// <param name="operatorNm"></param>
-        /// <param name="pc"></param>
-        /// <returns></returns>
+        /// <summary>	
+        /// 店舗マスタ更新処理	
+        /// MasterTouroku_Tempoより更新時に使用	
+        /// </summary>	
+        /// <param name="mbe"></param>	
+        /// <param name="operationMode"></param>	
+        /// <param name="operatorNm"></param>	
+        /// <param name="pc"></param>	
+        /// <returns></returns>	
         public bool M_Store_Exec(M_Store_Entity mbe, short operationMode, string operatorNm, string pc)
         {
             string sp = "PRC_MasterTouroku_Tempo";
 
-            //KTP 2019-06-03 add Datatype to param
+            //KTP 2019-06-03 add Datatype to param	
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = operationMode.ToString() } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.StoreCD } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mbe.ChangeDate} },
-
                 { "@StoreName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.StoreName} },
                 { "@StoreKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.StoreKBN} },
                 { "@StorePlaceKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.StorePlaceKBN} },
                 { "@MallCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MallCD} },
+                { "@APIKey", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.APIKey} },
                 { "@ZipCD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ZipCD1} },
                 { "@ZipCD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ZipCD2} },
                 { "@Address1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Address1} },
                 { "@Address2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Address2} },
                 { "@TelphoneNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.TelphoneNO} },
                 { "@FaxNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.FaxNO} },
-                { "@MailAddress", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MailAddress} },
+                { "@MailAddress1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MailAddress1} },	
+                //{ "@MailAddress2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MailAddress2} },	
+                //{ "@MailAddress3", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MailAddress3} },	
                 { "@ApprovalStaffCD11", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ApprovalStaffCD11} },
                 { "@ApprovalStaffCD12", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ApprovalStaffCD12} },
                 { "@ApprovalStaffCD21", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ApprovalStaffCD21} },
@@ -205,13 +206,14 @@ namespace DL
                 { "@Print5", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Print5} },
                 { "@Print6", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Print6} },
                 { "@KouzaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.KouzaCD} },
+                { "@ReceiptPrint", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.ReceiptPrint} },
+                { "@MoveMailPatternCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.MoveMailPatternCD} },
                 { "@Remarks", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.Remarks} },
                 { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.DeleteFlg} },
                 { "@UsedFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mbe.UsedFlg} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
             };
-
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, sp);
         }
@@ -246,7 +248,7 @@ namespace DL
             {
                 {"@Operator", new ValuePair {value1 = SqlDbType.VarChar,value2 = ""} }
             };
-            return SelectData(dic, "SelectApprovalData");
+            return SelectData(dic, "M_Store_BindData");
         }
 
 
@@ -277,6 +279,33 @@ namespace DL
             };
 
             return SelectData(dic, "SelectHonshaStore");
+        }
+
+        /// Select Store's info	
+        /// StoreKBN,StorePlaceKBNの条件でStore情報を取得	
+        /// </summary>	
+        /// <param name="mse">store info</param>	
+        /// <returns></returns>	
+        public DataTable M_Store_SelectByKbn(M_Store_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.StoreKBN } },
+                { "@StorePlaceKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.StorePlaceKBN } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.DeleteFlg } }
+            };
+            return SelectData(dic, "M_Store_SelectByKbn");
+        }
+        public DataTable M_Store_SelectByApiKey(M_Store_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
+                { "@APIKey", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.APIKey } }
+            };
+            return SelectData(dic, "M_Store_SelectByApiKey");
         }
 
     }

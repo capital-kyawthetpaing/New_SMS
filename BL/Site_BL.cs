@@ -38,14 +38,6 @@ namespace BL
 
         }
 
-        public DataTable M_Site_SelectAll(M_Site_Entity mse)
-        {
-            return mmdl.M_Site_SelectAll(mse);
-        }
-
-        //public bool Site_Exec(M_Site_Entity mse, short operationMode, string operatorNm, string pc)
-        //{
-        //    return mmdl.M_Site_Exec(mse, operationMode, operatorNm, pc);
-        //}
+        
     }
 }

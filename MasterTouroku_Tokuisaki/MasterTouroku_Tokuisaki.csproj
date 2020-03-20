@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AED6F3F7-3CDB-4FDE-AAD3-BAA78133CC10}</ProjectGuid>
+    <ProjectGuid>{5249B3DC-F76D-48D6-87D5-700E07C81400}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MasterTouroku_Tempo</RootNamespace>
-    <AssemblyName>MasterTouroku_Tempo</AssemblyName>
+    <RootNamespace>MasterTouroku_Tokuisaki</RootNamespace>
+    <AssemblyName>MasterTouroku_Tokuisaki</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
-    <Compile Include="MasterTouroku_Tempo.cs">
+    <Compile Include="MasterTouroku_Tokuisaki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MasterTouroku_Tempo.Designer.cs">
-      <DependentUpon>MasterTouroku_Tempo.cs</DependentUpon>
+    <Compile Include="MasterTouroku_Tokuisaki.Designer.cs">
+      <DependentUpon>MasterTouroku_Tokuisaki.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -78,8 +78,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MasterTouroku_Tempo.resx">
-      <DependentUpon>MasterTouroku_Tempo.cs</DependentUpon>
+    <EmbeddedResource Include="MasterTouroku_Tokuisaki.resx">
+      <DependentUpon>MasterTouroku_Tokuisaki.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
