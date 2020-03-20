@@ -11,9 +11,6 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
-
-
-
 namespace MasterTouroku_Program
 {
     public partial class MasterTouroku_Program : FrmMainForm
@@ -43,11 +40,15 @@ namespace MasterTouroku_Program
         
         private void SetRequireField()
         {
+            scProgramID.TxtCode.Require(true);
             txtProgramName.Require(true);
             cboType.Require(true);
             txtExeName.Require(true);
         }
-
+        private void btnDisplay_Click(object sender, EventArgs e)
+        {
+            FunctionProcess(10);
+        }
         private void PanelNormal_Enter(object sender, EventArgs e)
         {
             type = 1;
@@ -132,51 +133,54 @@ namespace MasterTouroku_Program
                     case EOperationMode.INSERT:
                         if (type == 1)
                         {
-                            //btnDisplay.Enabled = true;
-                            //F11Enable = true;
-                            //DisablePanel(PanelDetail);
-                            //scProgramCopy.SetFocus(1);
+                            btnDisplay.Enabled = true;
+                            F11Enable = true;
+                            DisablePanel(PanelDetail);
                             scProgramCopy.SetFocus(1);
                         }
                         else
                         {
-                            DisablePanel(PanelHeader);
-                            //DisablePanel(PanelCopy);
+                            DisablePanel(PanelNormal);
+                            DisablePanel(PanelCopy);
                             EnablePanel(PanelDetail);
                             btnDisplay.Enabled = false;
                             F11Enable = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
                             //mpe.ProgramID = scProgramCopy.Code;
                             //DisplayData();
-                            //txtProgramName.Focus();
+                            txtProgramName.Focus();
                         }
                         break;
                     case EOperationMode.UPDATE:
-                        //mpe.ProgramID = scProgramID.Code;
-                        //DisplayData();
-                        DisablePanel(PanelHeader);
+                        mpe.Program_ID = scProgramID.Code;
+                        DisplayData();
+                        DisablePanel(PanelNormal);
+                        DisablePanel(PanelCopy);
                         btnDisplay.Enabled = false;
                         EnablePanel(PanelDetail);
                         F12Enable = true;
                         F11Enable = false;
                         SelectNextControl(PanelDetail, true, true, true, true);
-                        scProgramID.SetFocus(1);  //ses
+                        //scProgramID.SetFocus(1);  //ses
+                        txtProgramName.Focus();
                         break;
                     case EOperationMode.DELETE:
-                        //mpe.ProgramID = scProgramID.Code;
-                        //DisplayData();
-                        DisablePanel(PanelHeader);
-                        //DisablePanel(PanelCopy);
+                        mpe.Program_ID = scProgramID.Code;
+                        DisplayData();
+                        DisablePanel(PanelNormal);
+                        DisablePanel(PanelCopy);
                         btnDisplay.Enabled = false;
                         DisablePanel(PanelDetail);
                         SelectNextControl(PanelDetail, true, true, true, true);
                         F12Enable = true;
                         F11Enable = false;
+                        //scProgramID.SetFocus(1);
                         break;
                     case EOperationMode.SHOW:
                         mpe.ProgramID = scProgramID.Code;
                         DisplayData();
-                        DisablePanel(PanelHeader);
+                        DisablePanel(PanelNormal);
+                        DisablePanel(PanelCopy);
                         btnDisplay.Enabled = false;
                         DisablePanel(PanelDetail);
                         F12Enable = false;
@@ -210,6 +214,8 @@ namespace MasterTouroku_Program
             if (ErrorCheck(12))
             {
                 if (mpbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+
+
                 {
                     mpe = GetProgramEntity();
                     switch (OperationMode)
@@ -265,8 +271,8 @@ namespace MasterTouroku_Program
                 ProgramName=txtProgramName.Text,
                 Type=cboType.SelectedValue.ToString(),
                 ProgramEXE=txtExeName.Text,
-                FilePass=txtFileDrive.Text,
-                FileDrive=txtFilePass.Text,
+                FileDrive = txtFileDrive.Text,
+                FilePass =txtFilePass.Text,
                 FileName=txtFileName.Text,
                 ProcessMode = ModeText,
                 ProgramID=InProgramID,
@@ -281,14 +287,16 @@ namespace MasterTouroku_Program
         {
             if (index == 11)
             {
-                //mpe = GetProgramEntity();
                 if (OperationMode == EOperationMode.INSERT)
                 {
-                    if (type == 1)//New 
+                    if (type == 1)
                     {
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
-                        if (scProgramID.IsExists(1))
+                        DataTable dtProgram = new DataTable();
+                        mpe.Program_ID = scProgramID.Code;
+                        dtProgram = mpbl.M_Program_Select(mpe);
+                        if (dtProgram.Rows.Count > 0)
                         {
                             mpbl.ShowMessage("E132");
                             scProgramID.SetFocus(1);
@@ -299,15 +307,15 @@ namespace MasterTouroku_Program
                     {
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
-                        //DataTable dtProgram = new DataTable();
-                        //mpe.ProgramID = scProgramID.Code;
-                        //dtProgram = mpbl.M_Program_Select(mpe);
-                        //if (dtProgram.Rows.Count > 0)
-                        //{
-                        //    mpbl.ShowMessage("E132");
-                        //    scProgramID.SetFocus(1);
-                        //    return false;
-                        //}
+                        DataTable dtProgram = new DataTable();
+                        mpe.ProgramID = scProgramID.Code;
+                        dtProgram = mpbl.M_Program_Select(mpe);
+                        if (dtProgram.Rows.Count > 0)
+                        {
+                            mpbl.ShowMessage("E132");
+                            scProgramID.SetFocus(1);
+                            return false;
+                        }
                         if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text) && !string.IsNullOrWhiteSpace(scProgramCopy.ChangeDate))
                         {
                             if (!scProgramCopy.IsExists(1))
@@ -327,7 +335,6 @@ namespace MasterTouroku_Program
                                 dtcopyprogram = mpbl.M_Program_Select(mpe);
                                 if (dtcopyprogram.Rows.Count > 0)
                                 {
-                                    //txtBrandName.Text = dtcopybrand.Rows[0]["BrandName"].ToString();
                                     txtProgramName.Text = dtcopyprogram.Rows[0]["ProgramName"].ToString();
                                 }
                                 else
@@ -345,7 +352,7 @@ namespace MasterTouroku_Program
                 else
                 {
                     DataTable dtprogram = new DataTable();
-                    mpe.ProgramID = scProgramID.Code;
+                    mpe.Program_ID = scProgramID.Code;
                     dtprogram = mpbl.M_Program_Select(mpe);
                     if (dtprogram.Rows.Count == 0)
                     {
@@ -382,21 +389,6 @@ namespace MasterTouroku_Program
                         mpbl.ShowMessage("E132");
                         scProgramID.SetFocus(1);
                         return false;
-                    }
-                }
-                else if (OperationMode == EOperationMode.DELETE)
-                {
-                    DataTable dtprogram = new DataTable();
-                    mpe = GetProgramEntity();
-                    dtprogram = mpbl.M_Program_Select(mpe);
-                    if (dtprogram.Rows.Count > 0)
-                    {
-                        if (dtprogram.Rows[0]["UsedFlg"].ToString() == "1")
-                        {
-                            mpbl.ShowMessage("E154");
-                            scProgramID.SetFocus(1);
-                            return false;
-                        }
                     }
                 }
             }
@@ -444,7 +436,10 @@ namespace MasterTouroku_Program
             }
         }
 
-        
+        private void MasterTouroku_Program_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }
 

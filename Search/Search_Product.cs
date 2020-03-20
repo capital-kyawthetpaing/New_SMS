@@ -473,7 +473,7 @@ namespace Search
                             DeleteFlg = "0"
                         };
                         Vendor_BL vbl = new Vendor_BL();
-                        ret = vbl.M_Vendor_Select(mve);
+                        ret = vbl.M_Vendor_SelectTop1(mve);
                         if (ret)
                         {
                             ScMaker.LabelText = mve.VendorName;
@@ -685,15 +685,17 @@ namespace Search
 
         private void GetData()
         {
-            if(GvDetail.CurrentRow != null &&  GvDetail.CurrentRow.Index >= 0)
-            { 
+            if (GvDetail.CurrentRow != null && GvDetail.CurrentRow.Index >= 0)
+            {
                 ITEM = GvDetail.CurrentRow.Cells["ITEMCD"].Value.ToString();
                 SKUCD = GvDetail.CurrentRow.Cells["colSKUCD"].Value.ToString();
                 MakerItem = GvDetail.CurrentRow.Cells["colMakerItem"].Value.ToString();
                 JANCD = GvDetail.CurrentRow.Cells["colJANCD"].Value.ToString();
                 AdminNO = GvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
+                ChangeDate = GvDetail.CurrentRow.Cells["colChangeDate"].Value.ToString();
 
                 if (Mode == "5")   //Todo:コーディング
+                {
                     for (int i = 0; i < GvDetail.RowCount - 1; i++)
                     {
                         if (GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
@@ -701,6 +703,7 @@ namespace Search
                             list.Add(GvDetail.Rows[i].Cells["colJANCD"].Value.ToString());
                         }
                     }
+                }
             }
         }
 
