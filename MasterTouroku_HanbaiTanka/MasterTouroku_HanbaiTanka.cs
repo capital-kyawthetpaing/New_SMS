@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
-using Search; 
+using Search;
 using GridBase;
 
 namespace MasterTouroku_HanbaiTanka
@@ -961,14 +961,14 @@ namespace MasterTouroku_HanbaiTanka
                     }
                     else
                     {
-                        //[M_MakerBrand]
-                        M_MakerBrand_Entity mme = new M_MakerBrand_Entity
+                        //[M_Brand]
+                        M_Brand_Entity mme = new M_Brand_Entity
                         {
                             ChangeDate = mibl.GetDate(),
                             BrandCD = keyControls[index].Text
                         };
-                        MakerBrand_BL mbl = new MakerBrand_BL();
-                        bool ret = mbl.M_MakerBrand_Select(mme);
+                        Brand_BL mbl = new Brand_BL();
+                        bool ret = mbl.M_Brand_Select(mme);
                         if (ret)
                         {
                             ScBrand.LabelText = mme.BrandName;
@@ -1119,6 +1119,7 @@ namespace MasterTouroku_HanbaiTanka
                         mGrid.g_DArray[i].Update = 1;
                         mGrid.g_DArray[i].OldUpdate = 1;
                     }
+                    mGrid.g_DArray[i].TaxRateFLG = Convert.ToInt16(row["TaxRateFLG"]);
 
                     m_dataCnt = i + 1;
                     //Grid_NotFocus(CTII0011.ColNO.HAKKU, i)
@@ -2023,7 +2024,55 @@ namespace MasterTouroku_HanbaiTanka
                     //どの項目か判別
                     int CL=(int)ClsGridHanbaiTanka.ColNO.ChangeDate;
                     string ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
-                    
+
+                    bool lastCell = false;
+
+                    switch (ctlName)
+                    {
+                        case "IMN_TEIKA":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.PriceWithTax;
+                            break;
+                        case "IMN_TEIKA2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.PriceWithoutTax;
+                            break;
+                        case "IMN_GENER":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.GeneralPriceWithTax;
+                            break;
+                        case "IMN_GENER2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.GeneralPriceOutTax;
+                            break;
+                        case "IMN_MEMBR":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.MemberPriceWithTax;
+                            break;
+                        case "IMN_MEMBR2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.MemberPriceOutTax;
+                            break;
+                        case "IMN_CLINT":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.ClientPriceWithTax;
+                            break;
+                        case "IMN_CLINT2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.ClientPriceOutTax;
+                            break;
+                        case "IMN_SALEP":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.SalePriceWithTax;
+                            break;
+                        case "IMN_SALEP2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.SalePriceOutTax;
+                            break;
+                        case "IMN_WEBPR":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.WebPriceWithTax;
+                            break;
+                        case "IMN_WEBPR2":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.WebPriceOutTax;
+                            break;
+                        case "IMT_REMAK":
+                            CL = (int)ClsGridHanbaiTanka.ColNO.Remarks;
+                            if (w_Row == m_dataCnt - 1)
+                                lastCell = true;
+                            break;
+
+                    }
+
                     bool changeFlg = false;
                     switch (CL)
                     {
@@ -2103,53 +2152,6 @@ namespace MasterTouroku_HanbaiTanka
                             break;
                     }
 
-                    bool lastCell = false;
-               
-                    switch(ctlName)
-                    {
-                        case "IMN_TEIKA":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.PriceWithTax;
-                            break;
-                        case "IMN_TEIKA2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.PriceWithoutTax;
-                            break;
-                        case "IMN_GENER":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.GeneralPriceWithTax;
-                            break;
-                        case "IMN_GENER2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.GeneralPriceOutTax;
-                            break;
-                        case "IMN_MEMBR":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.MemberPriceWithTax;
-                            break;
-                        case "IMN_MEMBR2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.MemberPriceOutTax;
-                            break;
-                        case "IMN_CLINT":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.ClientPriceWithTax;
-                            break;
-                        case "IMN_CLINT2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.ClientPriceOutTax;
-                            break;
-                        case "IMN_SALEP":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.SalePriceWithTax;
-                            break;
-                        case "IMN_SALEP2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.SalePriceOutTax;
-                            break;
-                        case "IMN_WEBPR":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.WebPriceWithTax;
-                            break;
-                        case "IMN_WEBPR2":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.WebPriceOutTax;
-                            break;
-                        case "IMT_REMAK":
-                            CL = (int)ClsGridHanbaiTanka.ColNO.Remarks;
-                            if (w_Row == m_dataCnt - 1)
-                                lastCell = true;
-                            break;
-
-                    }
 
                     //画面の内容を配列へセット
                     mGrid.S_DispToArray(Vsb_Mei_0.Value);
@@ -2160,47 +2162,48 @@ namespace MasterTouroku_HanbaiTanka
                         decimal d;
                         decimal zei;
                         string ymd = mGrid.g_DArray[w_Row].ChangeDate;
+                        int taxRateFlg = mGrid.g_DArray[w_Row].TaxRateFLG;
                         switch (CL)
                         {
                             //(税抜)⇒(税込)
                             case (int)ClsGridHanbaiTanka.ColNO.PriceWithoutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].PriceWithoutTax, out d))
-                                    mGrid.g_DArray[w_Row].PriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1,out zei, ymd));
+                                    mGrid.g_DArray[w_Row].PriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].PriceWithTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.GeneralPriceOutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].GeneralPriceOutTax, out d))
-                                    mGrid.g_DArray[w_Row].GeneralPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1, out zei, ymd));
+                                    mGrid.g_DArray[w_Row].GeneralPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].GeneralPriceWithTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.MemberPriceOutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].MemberPriceOutTax, out d))
-                                    mGrid.g_DArray[w_Row].MemberPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1, out zei, ymd));
+                                    mGrid.g_DArray[w_Row].MemberPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].MemberPriceWithTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.ClientPriceOutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].ClientPriceOutTax, out d))
-                                    mGrid.g_DArray[w_Row].ClientPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1, out zei, ymd));
+                                    mGrid.g_DArray[w_Row].ClientPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].ClientPriceWithTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.SalePriceOutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].SalePriceOutTax, out d))
-                                    mGrid.g_DArray[w_Row].SalePriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1, out zei, ymd));
+                                    mGrid.g_DArray[w_Row].SalePriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].SalePriceWithTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.WebPriceOutTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].WebPriceOutTax, out d))
-                                    mGrid.g_DArray[w_Row].WebPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, 1, out zei, ymd));
+                                    mGrid.g_DArray[w_Row].WebPriceWithTax = string.Format("{0:#,##0}", bbl.GetZeikomiKingaku(d, taxRateFlg, out zei, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].WebPriceWithTax = "0";
                                 break;
@@ -2208,42 +2211,42 @@ namespace MasterTouroku_HanbaiTanka
                             //(税込)⇒(税抜)
                             case (int)ClsGridHanbaiTanka.ColNO.PriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].PriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].PriceWithoutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].PriceWithoutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].PriceWithoutTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.GeneralPriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].GeneralPriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].GeneralPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].GeneralPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].GeneralPriceOutTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.MemberPriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].MemberPriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].MemberPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].MemberPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].MemberPriceOutTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.ClientPriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].ClientPriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].ClientPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].ClientPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].ClientPriceOutTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.SalePriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].SalePriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].SalePriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].SalePriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].SalePriceOutTax = "0";
                                 break;
 
                             case (int)ClsGridHanbaiTanka.ColNO.WebPriceWithTax:
                                 if (Decimal.TryParse(mGrid.g_DArray[w_Row].WebPriceWithTax, out d))
-                                    mGrid.g_DArray[w_Row].WebPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, 1, ymd));
+                                    mGrid.g_DArray[w_Row].WebPriceOutTax = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(d, taxRateFlg, ymd));
                                 else
                                     mGrid.g_DArray[w_Row].WebPriceOutTax = "0";
                                 break;
@@ -2409,30 +2412,32 @@ namespace MasterTouroku_HanbaiTanka
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].ITemCD) == false)
                 {
                     int teikaWithoutTax = Convert.ToInt32(bbl.Z_Set(mGrid.g_DArray[RW].PriceWithoutTax));
+                    int taxRateFlg = mGrid.g_DArray[RW].TaxRateFLG;
+                    decimal tax = 0;
+
                     for (int CL = 0; CL <= mGrid.g_MK_Ctl_Col - 1; CL++)
                     {
-                        int result = GetResultWithHasuKbn(mTankaCDRoundKBN,  teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.GeneralRate].Text));
-                        int tax = Convert.ToInt32(Math.Round(result * 0.08, MidpointRounding.AwayFromZero));
-                        // Todo:消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                        decimal result = GetResultWithHasuKbn(mTankaCDRoundKBN,  teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.GeneralRate].Text));                        
+                        decimal zeikomi = bbl.GetZeikomiKingaku(result, mGrid.g_DArray[RW].TaxRateFLG, out tax);
+                        // 消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                      
 
-                        if(allKbn==1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceWithTax)==0)
+                        if (allKbn==1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceWithTax)==0)
                             mGrid.g_DArray[RW].GeneralPriceWithTax = (result + tax).ToString("#,##0");
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceOutTax) == 0)
                             mGrid.g_DArray[RW].GeneralPriceOutTax = result.ToString("#,##0");   // 
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.MemberRate].Text), MidpointRounding.AwayFromZero));
-                        tax = Convert.ToInt32(Math.Round(result * 0.08, MidpointRounding.AwayFromZero));
-                        // Todo:消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.MemberRate].Text));
+                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg ,out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceWithTax) == 0)
                             mGrid.g_DArray[RW].MemberPriceWithTax = (result + tax).ToString("#,##0");
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceOutTax) == 0)
                             mGrid.g_DArray[RW].MemberPriceOutTax = result.ToString("#,##0");
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.ClientRate].Text), MidpointRounding.AwayFromZero));
-                        tax = Convert.ToInt32(Math.Round(result * 0.08, MidpointRounding.AwayFromZero));
-                        // Todo:消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.ClientRate].Text));
+                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceWithTax) == 0)
                             mGrid.g_DArray[RW].ClientPriceWithTax = (result + tax).ToString("#,##0");
@@ -2440,8 +2445,7 @@ namespace MasterTouroku_HanbaiTanka
                             mGrid.g_DArray[RW].ClientPriceOutTax = result.ToString("#,##0");
 
                         result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text), MidpointRounding.AwayFromZero));
-                        tax = Convert.ToInt32(Math.Round(result * 0.08, MidpointRounding.AwayFromZero));
-                        // Todo:消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceWithTax) == 0)
                             mGrid.g_DArray[RW].SalePriceWithTax = (result + tax).ToString("#,##0");
@@ -2449,8 +2453,7 @@ namespace MasterTouroku_HanbaiTanka
                             mGrid.g_DArray[RW].SalePriceOutTax = result.ToString("#,##0");
 
                         result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text), MidpointRounding.AwayFromZero));
-                        tax = Convert.ToInt32(Math.Round(result * 0.08, MidpointRounding.AwayFromZero));
-                        // Todo:消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
+                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceWithTax) == 0)
                             mGrid.g_DArray[RW].WebPriceWithTax = (result + tax).ToString("#,##0");

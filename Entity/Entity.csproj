@@ -117,6 +117,7 @@
     <Compile Include="M_Hanyou_Entity.cs" />
     <Compile Include="M_ItemOrderPrice_Entity.cs" />
     <Compile Include="M_ItemPrice_Entity.cs" />
+    <Compile Include="M_ITEM_Entity.cs" />
     <Compile Include="M_JANOrderPrice_Entity.cs" />
     <Compile Include="M_Kouza_Entity.cs" />
     <Compile Include="M_Location_Entity.cs" />
@@ -159,6 +160,7 @@
     <Compile Include="D_DepositHistory_Entity.cs" />
     <Compile Include="TempoRegiZaikoKakunin_Entity.cs" />
     <Compile Include="UriageMotochou_Entity.cs" />
+    <Compile Include="ZaikoShoukai.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,13 +13,16 @@ namespace Entity
         public string StoreKBN { get; set; }
         public string StorePlaceKBN { get; set; }
         public string MallCD { get; set; }
+        public string APIKey { get; set; }
         public string ZipCD1 { get; set; }
         public string ZipCD2 { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string TelphoneNO { get; set; }
         public string FaxNO { get; set; }
-        public string MailAddress { get; set; }
+        public string MailAddress1 { get; set; }
+        public string MailAddress2 { get; set; }
+        public string MailAddress3 { get; set; }
         public string ApprovalStaffCD11 { get; set; }
         public string ApprovalStaffCD12 { get; set; }
         public string ApprovalStaffCD21 { get; set; }
@@ -37,6 +40,8 @@ namespace Entity
         public string Print5 { get; set; }
         public string Print6 { get; set; }
         public string KouzaCD { get; set; }
+        public string ReceiptPrint { get; set; }
+        public string MoveMailPatternCD { get; set; }
         public string Remarks { get; set; }
 
         //検索用Entity

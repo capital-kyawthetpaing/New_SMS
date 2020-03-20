@@ -39,6 +39,7 @@ namespace MasterTouroku_HanbaiTanka
             internal int OldUpdate;    //単価マスタに存在するデータは1を（UPDATEデータ）
             internal string OldChangeDate;
             internal string AdminNo;      //2019.10.16 add
+            internal int TaxRateFLG;
         }
 
         //列番号定数

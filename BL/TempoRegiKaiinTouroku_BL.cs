@@ -22,7 +22,7 @@ namespace BL
 
         public M_Customer_Entity M_Customer_Select(M_Customer_Entity m_cust)
         {
-            DataTable dtCustomer = tprg_Kaiin_DL.M_Customer_Select(m_cust);
+            DataTable dtCustomer = tprg_Kaiin_DL.M_Customer_SelectAll(m_cust);
             if(dtCustomer.Rows.Count>0)
             {
                 m_cust.CustomerCD = dtCustomer.Rows[0]["CustomerCD"].ToString();
