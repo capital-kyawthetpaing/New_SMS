@@ -615,8 +615,8 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 11;
-                    TxtCode.Width = 110;
+                    TxtCode.MaxLength = 10;
+                    TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
             }
