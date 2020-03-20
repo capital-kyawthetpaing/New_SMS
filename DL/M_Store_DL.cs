@@ -250,8 +250,6 @@ namespace DL
             };
             return SelectData(dic, "M_Store_BindData");
         }
-
-
         public DataTable GetApprovalData(string operatorNm)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -260,16 +258,6 @@ namespace DL
             };
             return SelectData(dic, "SelectApprovalData");
         }
-
-        ////エラー回避のため仮作成	
-        //public DataTable M_Store_BindData(M_Store_Entity mse)	
-        //{	
-        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>	
-        //    {	
-        //        {"@Operator", new ValuePair {value1 = SqlDbType.VarChar,value2 = ""} }	
-        //    };	
-        //    return SelectData(dic, "SelectApprovalData");	
-        //}
 
         public DataTable GetHonsha(M_Store_Entity mse)
         {
