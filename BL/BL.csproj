@@ -104,6 +104,7 @@
     <Compile Include="MasterTouroku_Program_BL.cs" />
     <Compile Include="NyuukaNyuuryoku_BL.cs" />
     <Compile Include="NyuukaShoukai_BL.cs" />
+    <Compile Include="NyuukinKesikomiItiranHyou_BL.cs" />
     <Compile Include="NyuukinNyuuryoku_BL.cs" />
     <Compile Include="NyuukinYoteiHyou_BL.cs" />
     <Compile Include="Nyuukin_Ichihanyou_BL.cs" />

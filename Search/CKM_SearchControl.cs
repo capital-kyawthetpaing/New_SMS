@@ -1529,6 +1529,9 @@ namespace Search
                     case SearchType.Carrier:
                         dtResult = bbl.SimpleSelect1("33", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.プログラムID:
+                        dtResult = bbl.SimpleSelect1("55", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
             }
             else
@@ -1596,6 +1599,7 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
+                    
                 }
 
             }
