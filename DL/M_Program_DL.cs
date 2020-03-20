@@ -55,7 +55,7 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                {"@ProgramID", new ValuePair {value1 = SqlDbType.VarChar,value2 = mpe.ProgramID} },
+                {"@ProgramID", new ValuePair {value1 = SqlDbType.VarChar,value2 = mpe.Program_ID} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.InsertOperator } },
                 { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.ProgramID } },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.PC } },
