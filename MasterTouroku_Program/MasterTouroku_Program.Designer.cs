@@ -115,7 +115,7 @@
             this.txtFileName.IsNumber = true;
             this.txtFileName.IsShop = false;
             this.txtFileName.Length = 10;
-            this.txtFileName.Location = new System.Drawing.Point(144, 171);
+            this.txtFileName.Location = new System.Drawing.Point(144, 161);
             this.txtFileName.MaxLength = 10;
             this.txtFileName.MoveNext = true;
             this.txtFileName.Name = "txtFileName";
@@ -139,7 +139,7 @@
             this.txtFilePass.IsNumber = true;
             this.txtFilePass.IsShop = false;
             this.txtFilePass.Length = 10;
-            this.txtFilePass.Location = new System.Drawing.Point(144, 144);
+            this.txtFilePass.Location = new System.Drawing.Point(144, 134);
             this.txtFilePass.MaxLength = 10;
             this.txtFilePass.MoveNext = true;
             this.txtFilePass.Name = "txtFilePass";
@@ -163,7 +163,7 @@
             this.txtFileDrive.IsNumber = true;
             this.txtFileDrive.IsShop = false;
             this.txtFileDrive.Length = 10;
-            this.txtFileDrive.Location = new System.Drawing.Point(144, 118);
+            this.txtFileDrive.Location = new System.Drawing.Point(144, 107);
             this.txtFileDrive.MaxLength = 10;
             this.txtFileDrive.MoveNext = true;
             this.txtFileDrive.Name = "txtFileDrive";
@@ -187,7 +187,7 @@
             this.txtExeName.IsNumber = true;
             this.txtExeName.IsShop = false;
             this.txtExeName.Length = 10;
-            this.txtExeName.Location = new System.Drawing.Point(144, 68);
+            this.txtExeName.Location = new System.Drawing.Point(145, 63);
             this.txtExeName.MaxLength = 10;
             this.txtExeName.MoveNext = true;
             this.txtExeName.Name = "txtExeName";
@@ -203,7 +203,7 @@
             this.cboType.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboType.FormattingEnabled = true;
             this.cboType.Length = 10;
-            this.cboType.Location = new System.Drawing.Point(144, 39);
+            this.cboType.Location = new System.Drawing.Point(144, 36);
             this.cboType.MaxLength = 10;
             this.cboType.MoveNext = true;
             this.cboType.Name = "cboType";
@@ -226,7 +226,7 @@
             this.txtProgramName.IsNumber = true;
             this.txtProgramName.IsShop = false;
             this.txtProgramName.Length = 10;
-            this.txtProgramName.Location = new System.Drawing.Point(144, 13);
+            this.txtProgramName.Location = new System.Drawing.Point(144, 11);
             this.txtProgramName.MaxLength = 10;
             this.txtProgramName.MoveNext = true;
             this.txtProgramName.Name = "txtProgramName";
@@ -243,7 +243,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(69, 175);
+            this.ckM_Label9.Location = new System.Drawing.Point(69, 165);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label9.TabIndex = 6;
@@ -260,7 +260,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(81, 122);
+            this.ckM_Label8.Location = new System.Drawing.Point(81, 112);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label8.TabIndex = 5;
@@ -277,7 +277,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(82, 149);
+            this.ckM_Label7.Location = new System.Drawing.Point(82, 138);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label7.TabIndex = 4;
@@ -294,7 +294,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(56, 97);
+            this.ckM_Label6.Location = new System.Drawing.Point(56, 91);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label6.TabIndex = 3;
@@ -311,7 +311,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(100, 72);
+            this.ckM_Label5.Location = new System.Drawing.Point(100, 67);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(39, 12);
             this.ckM_Label5.TabIndex = 2;
@@ -328,7 +328,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(95, 44);
+            this.ckM_Label4.Location = new System.Drawing.Point(95, 41);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 1;
@@ -345,7 +345,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(56, 17);
+            this.ckM_Label3.Location = new System.Drawing.Point(56, 15);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label3.TabIndex = 0;

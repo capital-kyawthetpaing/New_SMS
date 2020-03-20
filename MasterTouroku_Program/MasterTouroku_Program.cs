@@ -135,7 +135,6 @@ namespace MasterTouroku_Program
                             //btnDisplay.Enabled = true;
                             //F11Enable = true;
                             //DisablePanel(PanelDetail);
-                            //scProgramCopy.SetFocus(1);
                             scProgramCopy.SetFocus(1);
                         }
                         else
@@ -152,8 +151,8 @@ namespace MasterTouroku_Program
                         }
                         break;
                     case EOperationMode.UPDATE:
-                        //mpe.ProgramID = scProgramID.Code;
-                        //DisplayData();
+                        mpe.Program_ID = scProgramID.Code;
+                        DisplayData();
                         DisablePanel(PanelHeader);
                         btnDisplay.Enabled = false;
                         EnablePanel(PanelDetail);
@@ -163,8 +162,8 @@ namespace MasterTouroku_Program
                         scProgramID.SetFocus(1);  //ses
                         break;
                     case EOperationMode.DELETE:
-                        //mpe.ProgramID = scProgramID.Code;
-                        //DisplayData();
+                        mpe.Program_ID = scProgramID.Code;
+                        DisplayData();
                         DisablePanel(PanelHeader);
                         //DisablePanel(PanelCopy);
                         btnDisplay.Enabled = false;
@@ -210,6 +209,8 @@ namespace MasterTouroku_Program
             if (ErrorCheck(12))
             {
                 if (mpbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+
+
                 {
                     mpe = GetProgramEntity();
                     switch (OperationMode)
@@ -288,7 +289,16 @@ namespace MasterTouroku_Program
                     {
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
-                        if (scProgramID.IsExists(1))
+                        //if (scProgramID.IsExists(1))
+                        //{
+                        //    mpbl.ShowMessage("E132");
+                        //    scProgramID.SetFocus(1);
+                        //    return false;
+                        //}
+                        DataTable dtProgram = new DataTable();
+                        mpe.Program_ID = scProgramID.Code;
+                        dtProgram = mpbl.M_Program_Select(mpe);
+                        if (dtProgram.Rows.Count > 0)
                         {
                             mpbl.ShowMessage("E132");
                             scProgramID.SetFocus(1);
@@ -299,24 +309,24 @@ namespace MasterTouroku_Program
                     {
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
-                        //DataTable dtProgram = new DataTable();
-                        //mpe.ProgramID = scProgramID.Code;
-                        //dtProgram = mpbl.M_Program_Select(mpe);
-                        //if (dtProgram.Rows.Count > 0)
-                        //{
-                        //    mpbl.ShowMessage("E132");
-                        //    scProgramID.SetFocus(1);
-                        //    return false;
-                        //}
-                        if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text) && !string.IsNullOrWhiteSpace(scProgramCopy.ChangeDate))
+                        DataTable dtProgram = new DataTable();
+                        mpe.ProgramID = scProgramID.Code;
+                        dtProgram = mpbl.M_Program_Select(mpe);
+                        if (dtProgram.Rows.Count > 0)
                         {
-                            if (!scProgramCopy.IsExists(1))
-                            {
-                                mpbl.ShowMessage("E133");
-                                scProgramCopy.SetFocus(1);
-                                return false;
-                            }
+                            mpbl.ShowMessage("E132");
+                            scProgramID.SetFocus(1);
+                            return false;
                         }
+                        //if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text) && !string.IsNullOrWhiteSpace(scProgramCopy.ChangeDate))
+                        //{
+                        //    if (!scProgramCopy.IsExists(1))
+                        //    {
+                        //        mpbl.ShowMessage("E133");
+                        //        scProgramCopy.SetFocus(1);
+                        //        return false;
+                        //    }
+                        //}
                         else
                         {
 
@@ -345,7 +355,7 @@ namespace MasterTouroku_Program
                 else
                 {
                     DataTable dtprogram = new DataTable();
-                    mpe.ProgramID = scProgramID.Code;
+                    mpe.Program_ID = scProgramID.Code;
                     dtprogram = mpbl.M_Program_Select(mpe);
                     if (dtprogram.Rows.Count == 0)
                     {
@@ -391,7 +401,7 @@ namespace MasterTouroku_Program
                     dtprogram = mpbl.M_Program_Select(mpe);
                     if (dtprogram.Rows.Count > 0)
                     {
-                        if (dtprogram.Rows[0]["UsedFlg"].ToString() == "1")
+                        if (dtprogram.Rows[0]["Type"].ToString() == "1")
                         {
                             mpbl.ShowMessage("E154");
                             scProgramID.SetFocus(1);
