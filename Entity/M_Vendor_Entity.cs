@@ -10,6 +10,7 @@ namespace Entity
     {
         public string VendorCD { get; set; }
         public string VendorName { get; set; }
+        public string VendorShortName { get; set; }
         public string ShoguchiFlg { get; set; }
         public string VendorLongName1 { get; set; }
         public string VendorLongName2 { get; set; }
@@ -46,6 +47,7 @@ namespace Entity
         public string AmountFractionKBN { get; set; }
         public string NetFlg { get; set; }
         public string EDIFlg { get; set; }
+        public string EDIVendorCD { get; set; }
         public string LastOrderDate { get; set; }
         public string StaffCD { get; set; }
         public string AnalyzeCD1 { get; set; }

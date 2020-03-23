@@ -283,13 +283,31 @@ namespace UrikakekinTairyuuHyou {
             
             private global::System.Data.DataColumn columnCustomerName;
             
-            private global::System.Data.DataColumn columnSale;
+            private global::System.Data.DataColumn columnSaleA;
             
-            private global::System.Data.DataColumn columnCollectGaku;
+            private global::System.Data.DataColumn column11;
             
-            private global::System.Data.DataColumn columnBalanceGaku;
+            private global::System.Data.DataColumn column10;
             
-            private global::System.Data.DataColumn columnAvg;
+            private global::System.Data.DataColumn column9;
+            
+            private global::System.Data.DataColumn column8;
+            
+            private global::System.Data.DataColumn column7;
+            
+            private global::System.Data.DataColumn column6;
+            
+            private global::System.Data.DataColumn column5;
+            
+            private global::System.Data.DataColumn column4;
+            
+            private global::System.Data.DataColumn column3;
+            
+            private global::System.Data.DataColumn column2;
+            
+            private global::System.Data.DataColumn column1;
+            
+            private global::System.Data.DataColumn column0;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -342,33 +360,105 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn SaleColumn {
+            public global::System.Data.DataColumn SaleAColumn {
                 get {
-                    return this.columnSale;
+                    return this.columnSaleA;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CollectGakuColumn {
+            public global::System.Data.DataColumn _11Column {
                 get {
-                    return this.columnCollectGaku;
+                    return this.column11;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BalanceGakuColumn {
+            public global::System.Data.DataColumn _10Column {
                 get {
-                    return this.columnBalanceGaku;
+                    return this.column10;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn AvgColumn {
+            public global::System.Data.DataColumn _9Column {
                 get {
-                    return this.columnAvg;
+                    return this.column9;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _8Column {
+                get {
+                    return this.column8;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _7Column {
+                get {
+                    return this.column7;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _6Column {
+                get {
+                    return this.column6;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _5Column {
+                get {
+                    return this.column5;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _4Column {
+                get {
+                    return this.column4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _3Column {
+                get {
+                    return this.column3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _2Column {
+                get {
+                    return this.column2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _1Column {
+                get {
+                    return this.column1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn _0Column {
+                get {
+                    return this.column0;
                 }
             }
             
@@ -409,15 +499,24 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public RPC_UrikakekinTairyuuHyou_PrintSelectRow AddRPC_UrikakekinTairyuuHyou_PrintSelectRow(string CustomerCD, string CustomerName, string Sale, string CollectGaku, string BalanceGaku, string Avg) {
+            public RPC_UrikakekinTairyuuHyou_PrintSelectRow AddRPC_UrikakekinTairyuuHyou_PrintSelectRow(string CustomerCD, string CustomerName, string SaleA, string _11, string _10, string _9, string _8, string _7, string _6, string _5, string _4, string _3, string _2, string _1, string _0) {
                 RPC_UrikakekinTairyuuHyou_PrintSelectRow rowRPC_UrikakekinTairyuuHyou_PrintSelectRow = ((RPC_UrikakekinTairyuuHyou_PrintSelectRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CustomerCD,
                         CustomerName,
-                        Sale,
-                        CollectGaku,
-                        BalanceGaku,
-                        Avg};
+                        SaleA,
+                        _11,
+                        _10,
+                        _9,
+                        _8,
+                        _7,
+                        _6,
+                        _5,
+                        _4,
+                        _3,
+                        _2,
+                        _1,
+                        _0};
                 rowRPC_UrikakekinTairyuuHyou_PrintSelectRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRPC_UrikakekinTairyuuHyou_PrintSelectRow);
                 return rowRPC_UrikakekinTairyuuHyou_PrintSelectRow;
@@ -442,10 +541,19 @@ namespace UrikakekinTairyuuHyou {
             internal void InitVars() {
                 this.columnCustomerCD = base.Columns["CustomerCD"];
                 this.columnCustomerName = base.Columns["CustomerName"];
-                this.columnSale = base.Columns["Sale"];
-                this.columnCollectGaku = base.Columns["CollectGaku"];
-                this.columnBalanceGaku = base.Columns["BalanceGaku"];
-                this.columnAvg = base.Columns["Avg"];
+                this.columnSaleA = base.Columns["SaleA"];
+                this.column11 = base.Columns["11"];
+                this.column10 = base.Columns["10"];
+                this.column9 = base.Columns["9"];
+                this.column8 = base.Columns["8"];
+                this.column7 = base.Columns["7"];
+                this.column6 = base.Columns["6"];
+                this.column5 = base.Columns["5"];
+                this.column4 = base.Columns["4"];
+                this.column3 = base.Columns["3"];
+                this.column2 = base.Columns["2"];
+                this.column1 = base.Columns["1"];
+                this.column0 = base.Columns["0"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -455,14 +563,56 @@ namespace UrikakekinTairyuuHyou {
                 base.Columns.Add(this.columnCustomerCD);
                 this.columnCustomerName = new global::System.Data.DataColumn("CustomerName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCustomerName);
-                this.columnSale = new global::System.Data.DataColumn("Sale", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSale);
-                this.columnCollectGaku = new global::System.Data.DataColumn("CollectGaku", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCollectGaku);
-                this.columnBalanceGaku = new global::System.Data.DataColumn("BalanceGaku", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBalanceGaku);
-                this.columnAvg = new global::System.Data.DataColumn("Avg", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAvg);
+                this.columnSaleA = new global::System.Data.DataColumn("SaleA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSaleA);
+                this.column11 = new global::System.Data.DataColumn("11", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column11.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column11");
+                this.column11.ExtendedProperties.Add("Generator_UserColumnName", "11");
+                base.Columns.Add(this.column11);
+                this.column10 = new global::System.Data.DataColumn("10", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column10.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column10");
+                this.column10.ExtendedProperties.Add("Generator_UserColumnName", "10");
+                base.Columns.Add(this.column10);
+                this.column9 = new global::System.Data.DataColumn("9", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column9.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column9");
+                this.column9.ExtendedProperties.Add("Generator_UserColumnName", "9");
+                base.Columns.Add(this.column9);
+                this.column8 = new global::System.Data.DataColumn("8", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column8.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column8");
+                this.column8.ExtendedProperties.Add("Generator_UserColumnName", "8");
+                base.Columns.Add(this.column8);
+                this.column7 = new global::System.Data.DataColumn("7", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column7.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column7");
+                this.column7.ExtendedProperties.Add("Generator_UserColumnName", "7");
+                base.Columns.Add(this.column7);
+                this.column6 = new global::System.Data.DataColumn("6", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column6.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column6");
+                this.column6.ExtendedProperties.Add("Generator_UserColumnName", "6");
+                base.Columns.Add(this.column6);
+                this.column5 = new global::System.Data.DataColumn("5", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column5.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column5");
+                this.column5.ExtendedProperties.Add("Generator_UserColumnName", "5");
+                base.Columns.Add(this.column5);
+                this.column4 = new global::System.Data.DataColumn("4", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column4.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column4");
+                this.column4.ExtendedProperties.Add("Generator_UserColumnName", "4");
+                base.Columns.Add(this.column4);
+                this.column3 = new global::System.Data.DataColumn("3", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column3.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column3");
+                this.column3.ExtendedProperties.Add("Generator_UserColumnName", "3");
+                base.Columns.Add(this.column3);
+                this.column2 = new global::System.Data.DataColumn("2", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column2.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column2");
+                this.column2.ExtendedProperties.Add("Generator_UserColumnName", "2");
+                base.Columns.Add(this.column2);
+                this.column1 = new global::System.Data.DataColumn("1", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column1.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column1");
+                this.column1.ExtendedProperties.Add("Generator_UserColumnName", "1");
+                base.Columns.Add(this.column1);
+                this.column0 = new global::System.Data.DataColumn("0", typeof(string), null, global::System.Data.MappingType.Element);
+                this.column0.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "column0");
+                this.column0.ExtendedProperties.Add("Generator_UserColumnName", "0");
+                base.Columns.Add(this.column0);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -639,69 +789,222 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Sale {
+            public string SaleA {
                 get {
                     try {
-                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleColumn]));
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Sale\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SaleA\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleColumn] = value;
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string CollectGaku {
+            public string _11 {
                 get {
                     try {
-                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.CollectGakuColumn]));
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._11Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CollectGaku\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelec" +
-                                "t\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'11\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.CollectGakuColumn] = value;
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._11Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string BalanceGaku {
+            public string _10 {
                 get {
                     try {
-                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.BalanceGakuColumn]));
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._10Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BalanceGaku\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelec" +
-                                "t\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'10\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.BalanceGakuColumn] = value;
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._10Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Avg {
+            public string _9 {
                 get {
                     try {
-                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.AvgColumn]));
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._9Column]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Avg\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'9\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.AvgColumn] = value;
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._9Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _8 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._8Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'8\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._8Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _7 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._7Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'7\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._7Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _6 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._6Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'6\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._6Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _5 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._5Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'5\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._5Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'4\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'3\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'2\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'1\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string _0 {
+                get {
+                    try {
+                        return ((string)(this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._0Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'0\' in table \'RPC_UrikakekinTairyuuHyou_PrintSelect\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._0Column] = value;
                 }
             }
             
@@ -731,50 +1034,158 @@ namespace UrikakekinTairyuuHyou {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsSaleNull() {
-                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleColumn);
+            public bool IsSaleANull() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleAColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetSaleNull() {
-                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleColumn] = global::System.Convert.DBNull;
+            public void SetSaleANull() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.SaleAColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCollectGakuNull() {
-                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.CollectGakuColumn);
+            public bool Is_11Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._11Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCollectGakuNull() {
-                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.CollectGakuColumn] = global::System.Convert.DBNull;
+            public void Set_11Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._11Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBalanceGakuNull() {
-                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.BalanceGakuColumn);
+            public bool Is_10Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._10Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBalanceGakuNull() {
-                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.BalanceGakuColumn] = global::System.Convert.DBNull;
+            public void Set_10Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._10Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsAvgNull() {
-                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.AvgColumn);
+            public bool Is_9Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._9Column);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetAvgNull() {
-                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect.AvgColumn] = global::System.Convert.DBNull;
+            public void Set_9Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._9Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_8Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._8Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_8Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._8Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_7Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._7Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_7Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._7Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_6Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._6Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_6Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._6Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_5Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._5Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_5Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._5Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_4Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_4Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_3Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_3Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_2Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_2Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_1Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_1Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Is_0Null() {
+                return this.IsNull(this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._0Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Set_0Null() {
+                this[this.tableRPC_UrikakekinTairyuuHyou_PrintSelect._0Column] = global::System.Convert.DBNull;
             }
         }
         

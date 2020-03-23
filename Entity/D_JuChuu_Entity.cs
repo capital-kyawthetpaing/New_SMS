@@ -97,10 +97,10 @@ namespace Entity
         //検索用Entity
         public string JuchuDateFrom { get; set; }
         public string JuchuDateTo { get; set; }
-        public string MitsumoriInputDateFrom { get; set; }
-        public string MitsumoriInputDateTo { get; set; }
-        public string JuchuuFLG1 { get; set; }
-        public string JuchuuFLG2 { get; set; }
+        public int ValGaisho { get; set; }
+        public int ValTento { get; set; }
+        public int ValWeb { get; set; }
+        public string VendorName { get; set; }
 
         //帳票用Entity
         public string PrintFLG { get; set; }

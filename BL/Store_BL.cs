@@ -83,7 +83,23 @@ namespace BL
         {
             return storedl.M_Store_BindData(mse);
         }
+        /// <summary>	
+        /// 改定日として有効なレコードで違う店舗で同じAPIKeyがあればTrue	
+        /// </summary>	
+        /// <param name="mse"></param>	
+        /// <returns></returns>	
+        public bool Store_SelectByApiKey(M_Store_Entity mse)
+        {
+            DataTable dt = storedl.M_Store_SelectByApiKey(mse);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-      
     }
 }

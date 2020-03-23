@@ -165,7 +165,7 @@ namespace Search
             parBrandCD = dgvDetail.CurrentRow.Cells["colBrandCD"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
             parMakerCD = dgvDetail.CurrentRow.Cells["MakerCD"].Value.ToString();
-
+            ckM_TextBox3.Text = dgvDetail.CurrentRow.Cells["colBrandName"].Value.ToString();
             EndSec();
         }
 

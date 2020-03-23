@@ -176,6 +176,8 @@ namespace Search
             スタッフ,
             銀行口座,
             モール,
+            メール文章,  //2020.03.12 add	
+            単位,
             銀行,
             銀行支店,
             //2019.6.15 add---------------->
@@ -229,7 +231,8 @@ namespace Search
             //........>
             Location,//---2019.12.09
             支払処理,//---2019-12-19
-            支払番号検索 //2020-01-27
+            支払番号検索 ,//2020-01-27
+            プログラムID //SES
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -371,6 +374,16 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.モール:
+                    txtCode.MaxLength = 4;
+                    txtCode.Width = 30;
+                    lblName.Width = 280;
+                    break;
+                case SearchType.メール文章:
+                    txtCode.MaxLength = 5;
+                    txtCode.Width = 50;
+                    lblName.Width = 280;
+                    break;
+                case SearchType.単位:
                     txtCode.MaxLength = 3;
                     txtCode.Width = 30;
                     lblName.Width = 280;
@@ -599,6 +612,11 @@ namespace Search
                 case SearchType.支払番号検索:
                     TxtCode.MaxLength = 11;
                     TxtCode.Width = 110;
+                    lblName.Width = 300;
+                    break;
+                case SearchType.プログラムID:
+                    TxtCode.MaxLength = 100;
+                    TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
             }
@@ -830,6 +848,30 @@ namespace Search
                         }
                     }
                     break;
+                case SearchType.メール文章:
+                    using (Search_MailPattern frmMail = new Search_MailPattern())
+                    {
+                        frmMail.ShowDialog();
+                        if (!frmMail.flgCancel)
+                        {
+                            txtCode.Text = frmMail.parMailPatternCD;
+                            lblName.Text = frmMail.parMailPatternName;
+                        }
+                    }
+                    break;
+                case SearchType.単位:
+                case SearchType.競技:
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))
                     {
@@ -857,17 +899,29 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.SKU_ITEM_CD:
-                    using (Search_Store frmStore = new Search_Store())
-                    {
-                        frmStore.parChangeDate = changedate;
-                        frmStore.ShowDialog();
 
-                        if (!frmStore.flgCancel)
+                //2020.03.23 add by ses---
+                case SearchType.プログラムID:
+                    using (Search_Program frmProgram = new Search_Program(Value1))
+                    {
+                        frmProgram.ShowDialog();
+                        if (!frmProgram.flgCancel)
                         {
-                            txtCode.Text = frmStore.parStoreCD;
-                            lblName.Text = frmStore.parStoreName;
-                            txtChangeDate.Text = frmStore.parChangeDate;
+                            txtCode.Text = frmProgram.ProgramID;
+                        }
+                        break;
+                    }
+                case SearchType.SKU_ITEM_CD:
+                    using (Search_Product frmItemCD = new Search_Product(changedate))
+                    {
+                        frmItemCD.Mode = "1";
+                        frmItemCD.SKUCD = txtCode.Text;
+                        frmItemCD.ShowDialog();
+                        if (!frmItemCD.flgCancel)
+                        {
+                            txtCode.Text = frmItemCD.ITEM;
+                            if (UseChangeDate == true)
+                                txtChangeDate.Text = frmItemCD.ChangeDate;
                         }
                     }
                     break;
@@ -910,7 +964,6 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
-                            lblName.Text = frmJuchuu.MitsumoriName;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                         }
                     }
@@ -981,19 +1034,19 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.仕入番号:
-                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                    {
-                        frmShiire.OperatorCD = Value1;
-                        frmShiire.AllAvailableStores = Value2;
-                        frmShiire.ShowDialog();
-                        if (!frmShiire.flgCancel)
-                        {
-                            txtCode.Text = frmShiire.PurchaseNO;
-                            txtChangeDate.Text = frmShiire.ChangeDate;
-                        }
-                    }
-                    break;
+                //case SearchType.仕入番号:
+                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                //    {
+                //        frmShiire.OperatorCD = Value1;
+                //        frmShiire.AllAvailableStores = Value2;
+                //        frmShiire.ShowDialog();
+                //        if (!frmShiire.flgCancel)
+                //        {
+                //            txtCode.Text = frmShiire.PurchaseNO;
+                //            txtChangeDate.Text = frmShiire.ChangeDate;
+                //        }
+                //    }
+                //    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {
@@ -1097,7 +1150,7 @@ namespace Search
                             txtCode.Text = frmCustomer.CustomerCD;
                             lblName.Text = frmCustomer.CustName;
                             if (UseChangeDate == true)
-                                txtChangeDate.Text = frmCustomer.parChangeDate;
+                                txtChangeDate.Text = frmCustomer.ChangeDate;
                         }
                     }
                     break;
@@ -1146,18 +1199,18 @@ namespace Search
                     }
                     break;
 
-                case SearchType.競技:
-                    using (Search_Mall frmMal = new Search_Mall())
-                    {
-                        frmMal.parID = MultiPorpose_BL.ID_MALL;
-                        frmMal.ShowDialog();
-                        if (!frmMal.flgCancel)
-                        {
-                            txtCode.Text = frmMal.parKey;
-                            lblName.Text = frmMal.parChar1;
-                        }
-                    }
-                    break;
+                //case SearchType.競技:
+                //    using (Search_Mall frmMal = new Search_Mall())
+                //    {
+                //        frmMal.parID = MultiPorpose_BL.ID_MALL;
+                //        frmMal.ShowDialog();
+                //        if (!frmMal.flgCancel)
+                //        {
+                //            txtCode.Text = frmMal.parKey;
+                //            lblName.Text = frmMal.parChar1;
+                //        }
+                //    }
+                //    break;
                 case SearchType.大分類:
                     using (Search_Mall frmMal = new Search_Mall())
                     {
@@ -1487,6 +1540,9 @@ namespace Search
                     case SearchType.Carrier:
                         dtResult = bbl.SimpleSelect1("33", TxtChangeDate.Text.Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.プログラムID:
+                        dtResult = bbl.SimpleSelect1("55", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
             }
             else
@@ -1554,6 +1610,7 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
+                    
                 }
 
             }
@@ -1629,6 +1686,13 @@ namespace Search
 
                 case SearchType.HanyouKeyStart:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
+                    break;
+                    //20200317
+                case SearchType.ブランド:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 11, txtCode.Text, Value1);
+                    break;
+                case SearchType.競技:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
                     break;
             }
             if (dtResult.Rows.Count > 0)

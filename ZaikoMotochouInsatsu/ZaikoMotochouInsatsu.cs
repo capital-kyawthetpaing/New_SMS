@@ -18,11 +18,13 @@ namespace ZaikoMotochouInsatsu
     public partial class ZaikoMotochouInsatsu : FrmMainForm
     {
         ZaikoMotochouInsatsu_BL zmibl;
+        
        // CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
         Viewer vr;
         DataTable dtReport;
         M_SKU_Entity sku_data;
         D_MonthlyStock_Entity dms;
+        M_StoreClose_Entity msce;
         int chk = 0;
         public ZaikoMotochouInsatsu()
         {
@@ -79,11 +81,11 @@ namespace ZaikoMotochouInsatsu
                 case 6: //F6:キャンセル
                     {
                         //Ｑ００４				
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-
+                        if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                        {
+                            Clear();
+                        }
                         break;
-
                     }
                 //case 11:
                 //    PrintSec();
@@ -143,7 +145,7 @@ namespace ZaikoMotochouInsatsu
 
                 if (dtReport.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                    CheckBeforeExport();
                     try
                     {
                         ZaikoMotochoulnsatsu_Report zm_report = new ZaikoMotochoulnsatsu_Report();
@@ -317,6 +319,37 @@ namespace ZaikoMotochouInsatsu
             {
                 txtTargetPeriodT.Text = txtTargetPeriodF.Text;
             }
+        }
+
+        private M_StoreClose_Entity GetStoreClose_Data()
+        {
+            msce = new M_StoreClose_Entity()
+            {
+                StoreCD = StoreCD,
+                FiscalYYYYMM = txtTargetPeriodF.Text.Replace("/", ""),
+            };
+            return msce;
+        }
+
+        private void CheckBeforeExport()
+        {
+            msce = new M_StoreClose_Entity();
+            msce = GetStoreClose_Data();
+
+            if (zmibl.M_StoreClose_Check(msce, "3").Rows.Count > 0)
+            {
+                string ProgramID = "GetsujiZaikoKeisanSyori";
+                RunConsole(ProgramID, msce.FiscalYYYYMM);
+            }
+        }
+
+        private void RunConsole(string programID, string YYYYMM)
+        {
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "1";
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
     }
 }

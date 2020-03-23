@@ -123,6 +123,12 @@
     <Compile Include="Search_HacchuuNO.Designer.cs">
       <DependentUpon>Search_HacchuuNO.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_HanyouKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_HanyouKey.Designer.cs">
+      <DependentUpon>Search_HanyouKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_ID.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,12 @@
     <Compile Include="Search_Location.Designer.cs">
       <DependentUpon>Search_Location.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_MailPattern.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_MailPattern.designer.cs">
+      <DependentUpon>Search_MailPattern.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_Mall.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +200,12 @@
     </Compile>
     <Compile Include="Search_Product.designer.cs">
       <DependentUpon>Search_Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Program.Designer.cs">
+      <DependentUpon>Search_Program.cs</DependentUpon>
     </Compile>
     <Compile Include="Search_ShiireNO.cs">
       <SubType>Form</SubType>
@@ -340,6 +358,9 @@
     <EmbeddedResource Include="Search_HacchuuNO.resx">
       <DependentUpon>Search_HacchuuNO.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search_HanyouKey.resx">
+      <DependentUpon>Search_HanyouKey.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search_ID.resx">
       <DependentUpon>Search_ID.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +382,9 @@
     <EmbeddedResource Include="Search_Location.resx">
       <DependentUpon>Search_Location.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Search_MailPattern.resx">
+      <DependentUpon>Search_MailPattern.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search_Mall.resx">
       <DependentUpon>Search_Mall.cs</DependentUpon>
     </EmbeddedResource>
@@ -372,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Product.resx">
       <DependentUpon>Search_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Program.resx">
+      <DependentUpon>Search_Program.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ShiireNO.resx">
       <DependentUpon>Search_ShiireNO.cs</DependentUpon>

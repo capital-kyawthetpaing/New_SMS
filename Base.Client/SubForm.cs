@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using System.Runtime.InteropServices; //EXCEL出力(必要)	
+using Microsoft.Office.Interop;//EXCEL出力(必要)
 
 namespace Base.Client
 {
@@ -437,5 +439,130 @@ namespace Base.Client
                 }
             }
         }
+
+        #region "MainForm.csと同じ内容　EXCEL出力のためのFunciton"	
+        /// <summary>	
+        /// 「名前を付けて保存」ダイアログでファイルを保存する	
+        /// </summary>	
+        /// <param name="initFileName"></param>	
+        /// <param name="outputFileName"></param>	
+        /// <param name="kbn">0:フィルターなし,1:Excel</param>	
+        /// <returns>MainForm.csと同じ</returns>	
+        protected bool ShowSaveFileDialog(string initFileName, string InOperatorCD, out string outputFileName, int kbn = 0)
+        {
+            outputFileName = "";
+            //SaveFileDialogクラスのインスタンスを作成	
+            SaveFileDialog sfd = new SaveFileDialog();
+            initFileName = initFileName + DateTime.Now.ToString(" yyyyMMdd_HHmmss ") + InOperatorCD;
+            //はじめのファイル名を指定する	
+            //はじめに「ファイル名」で表示される文字列を指定する	
+            sfd.FileName = initFileName;
+            //はじめに表示されるフォルダを指定する	
+            //sfd.InitialDirectory = @"C:\";	
+            //[ファイルの種類]に表示される選択肢を指定する	
+            //指定しない（空の文字列）の時は、現在のディレクトリが表示される	
+            //sfd.Filter = "HTMLファイル(*.html;*.htm)|*.html;*.htm|すべてのファイル(*.*)|*.*";	
+            if (kbn == 1)
+            {
+                // 例：Excelファイルを開く場合（Office2003と2007両対応したい）	
+                sfd.Filter = "Excelファイル(*.xls;*.xlsx)|*.xls;*.xlsx";
+            }
+            //[ファイルの種類]ではじめに選択されるものを指定する	
+            //2番目の「すべてのファイル」が選択されているようにする	
+            //sfd.FilterIndex = 2;	
+            //タイトルを設定する	
+            sfd.Title = "保存先のファイルを選択してください";
+            //ダイアログを表示する	
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                //OKボタンがクリックされたとき、選択されたファイル名を表示する	
+                Console.WriteLine(sfd.FileName);
+                outputFileName = sfd.FileName;
+                return true;
+            }
+            return false;
+        }
+        protected void OutputExecel(DataGridView dgv, string EXCEL_SAVE_PATH)
+        {
+            if (dgv.Rows.Count > 0)
+            {// Excelを参照設定する必要があります	
+             // [参照の追加],[COM],[Microsoft Excel *.* Object Library]	
+             // Imports Microsoft.Office.Interop (必要)	
+             // Imports System.Runtime.InteropServices (必要)	
+             //Excel出力	
+             // EXCEL関連オブジェクトの定義	
+                Microsoft.Office.Interop.Excel.Application objExcel = new Microsoft.Office.Interop.Excel.Application();
+                Microsoft.Office.Interop.Excel.Workbook objWorkBook = objExcel.Workbooks.Add();
+                //Microsoft.Office.Interop.Excel.Worksheet objSheet = null/* TODO Change to default(_) if this is not a reference type */;	
+                try
+                {
+                    objExcel.Visible = false;
+                    // 現在日時を取得	
+                    //string timestanpText = bbl.GetDate();// String.Format(DateTime.Now, "yyyyMMddHHmmss");	
+                    //// 実行モジュールと同一フォルダのファイルを取得	
+                    //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);	
+                    //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + InProgramID;	
+                    // 保存ディレクトリとファイル名を設定	
+                    string saveFileName = EXCEL_SAVE_PATH;
+                    //saveFileName = objExcel.GetSaveAsFilename(InitialFilename: EXCEL_SAVE_PATH + "ファイル名_" + timestanpText, FileFilter: "Excel File (*.xlsx),*.xlsx");	
+                    //// 保存先ディレクトリの設定が有効の場合はブックを保存	
+                    ////if (saveFileName != "False")	
+                    //objWorkBook.SaveAs(Filename: saveFileName);	
+                    // シートの最大表示列項目数	
+                    int columnMaxNum = dgv.Columns.Count - 1;
+                    // シートの最大表示行項目数	
+                    int rowMaxNum = dgv.Rows.Count - 1;
+                    // 項目名格納用リストを宣言	
+                    List<string> columnList = new List<string>();
+                    // 項目名を取得	
+                    for (int i = 0; i <= (columnMaxNum); i++)
+                        columnList.Add(dgv.Columns[i].HeaderCell.Value.ToString());
+                    // セルのデータ取得用二次元配列を宣言	
+                    string[,] v = new string[rowMaxNum + 1, columnMaxNum + 1];
+                    for (int row = 0; row <= rowMaxNum; row++)
+                    {
+                        for (int col = 0; col <= columnMaxNum; col++)
+                        {
+                            if (dgv.Rows[row].Cells[col].Value == null == false)
+                                // セルに値が入っている場合、二次元配列に格納	
+                                v[row, col] = dgv.Rows[row].Cells[col].Value.ToString();
+                        }
+                    }
+                    // EXCELに項目名を転送	
+                    for (int i = 1; i <= dgv.Columns.Count; i++)
+                    {
+                        // シートの一行目に項目を挿入	
+                        objWorkBook.Sheets[1].Cells[1, i] = columnList[i - 1];
+                        // 罫線を設定	
+                        objWorkBook.Sheets[1].Cells[1, i].Borders.LineStyle = true;
+                        // 項目の表示行に背景色を設定	
+                        //objWorkBook.Sheets[1].Cells(1, i).Interior.Color = Information.RGB(140, 140, 140);	
+                        // 文字のフォントを設定	
+                        //objWorkBook.Sheets[1].Cells(1, i).Font.Color = Information.RGB(255, 255, 255);	
+                        objWorkBook.Sheets[1].Cells(1, i).Font.Bold = true;
+                    }
+                    // EXCELにデータを範囲指定で転送	
+                    //string data = "A2:" + 'A' + (columnMaxNum + (dgv.Rows.Count + 1)).ToString();	
+                    objWorkBook.Sheets[1].Range[objWorkBook.Sheets[1].Cells[2, 1], objWorkBook.Sheets[1].Cells[dgv.Rows.Count + 1, columnMaxNum + 1]] = v;
+                    // データの表示範囲に罫線を設定	
+                    objWorkBook.Sheets[1].Range[objWorkBook.Sheets[1].Cells[2, 1], objWorkBook.Sheets[1].Cells[dgv.Rows.Count + 1, columnMaxNum + 1]].Borders.LineStyle = true;
+                    //// エクセル表示	
+                    //objExcel.Visible = true;	
+                    objWorkBook.SaveAs(saveFileName);
+                    // クローズ	
+                    objWorkBook.Close(false);
+                    objExcel.Quit();
+                }
+                finally
+                {
+                    // EXCEL解放	
+                    Marshal.ReleaseComObject(objWorkBook);
+                    Marshal.ReleaseComObject(objExcel);
+                    objWorkBook = null/* TODO Change to default(_) if this is not a reference type */;
+                    objExcel = null/* TODO Change to default(_) if this is not a reference type */;
+                }
+            }
+        }
+        #endregion
     }
 }

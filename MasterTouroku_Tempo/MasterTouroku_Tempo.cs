@@ -31,14 +31,18 @@ namespace MasterTouroku_Tempo
             StorePlaceKBN,
             StoreName,
             MallCD,
+            APIKey,
             ZipCD1,
             ZipCD2,
             Address1,
             Address2,
-            MailAddress,
+            MailAddress1,
+            //MailAddress2,
+            //MailAddress3,
             TelphoneNO,
             FaxNO,
             KouzaCD,
+            ReceiptPrint,
             ApprovalStaffCD11,
             ApprovalStaffCD12,
             ApprovalStaffCD21,
@@ -55,6 +59,7 @@ namespace MasterTouroku_Tempo
             Print4,
             Print5,
             Print6,
+            MoveMailPatternCD,
             Remarks,
             DeleteFlg
         }
@@ -93,9 +98,6 @@ namespace MasterTouroku_Tempo
             {
                 base.InProgramID = ProID;
                 //base.InProgramNM = ProNm;
-
-
-
                 //KTP 2019-06-05 set programID and Header text on main form 524,525
                 //this.Text = base.InProgramID + " " + base.InProgramNM;
                 //this.HeaderTitleText = base.InProgramNM;
@@ -122,17 +124,17 @@ namespace MasterTouroku_Tempo
         {
             keyControls = new Control[] { ScStore.TxtCode,ScStore.TxtChangeDate };
             copyKeyControls = new Control[] { ScCopyStore.TxtCode,ScCopyStore.TxtChangeDate };
-            detailControls = new Control[] { panel1,panel2, ckM_TextBox6, ScMall.TxtCode, ckM_TextBox2, ckM_TextBox1
+            detailControls = new Control[] { panel1,panel2, ckM_TextBox6, ScMall.TxtCode, ckM_TextBox20, ckM_TextBox2, ckM_TextBox1
                                     , ckM_TextBox4, ckM_TextBox7
-                                    , ckM_TextBox21, ckM_TextBox22, ckM_TextBox23, ScKouza.TxtCode, ScStaff11.TxtCode
+                                    , ckM_TextBox21, ckM_TextBox22, ckM_TextBox23, ScKouza.TxtCode,ckM_TextBox19, ScStaff11.TxtCode
                                     , ScStaff12.TxtCode, ScStaff21.TxtCode, ScStaff22.TxtCode, ScStaff31.TxtCode, ScStaff32.TxtCode
-                                    , ckM_TextBox18, ckM_TextBox16, ckM_TextBox17, ckM_TextBox15
+                                    , ckM_TextBox18, ckM_TextBox17, ckM_TextBox16, ckM_TextBox15
                                     , ckM_TextBox8, ckM_TextBox9, ckM_TextBox11, ckM_TextBox10, ckM_TextBox13, ckM_TextBox12
-                                    , TxtRemark};
+                                    ,ScMailPatternCD.TxtCode, TxtRemark};
             detailLabels = new CKM_SearchControl[] { ScMall, ScKouza, ScStaff11, ScStaff12
-                                , ScStaff21, ScStaff22, ScStaff31, ScStaff32};
+                                , ScStaff21, ScStaff22, ScStaff31, ScStaff32, ScMailPatternCD};
             searchButtons = new Control[] { ScMall.BtnSearch,ScKouza.BtnSearch, ScStaff11.BtnSearch,ScStaff12.BtnSearch,ScStaff22.BtnSearch,
-                ScStaff21.BtnSearch,ScStaff32.BtnSearch,ScStaff31.BtnSearch,ScCopyStore.BtnSearch,ScStore.BtnSearch };
+                ScStaff21.BtnSearch,ScStaff32.BtnSearch,ScStaff31.BtnSearch,ScMailPatternCD.BtnSearch,ScCopyStore.BtnSearch,ScStore.BtnSearch };
                 //btnMalCD, btnKozCD, button3, button4, button5
                 //                , button6, button7, button8, btnCopyStoreCD, btnStoreCD};
 
@@ -240,21 +242,31 @@ namespace MasterTouroku_Tempo
                         //入力なければチェックなし
                         if (copyKeyControls[index].Text == "")
                         {
-                            ScKouza.LabelText = "";
                             return true;
                         }
                         else
                         {
                             //ストアマスタデータチェック
-
                         }
                         break;
 
                     case (int)EIndex.ChangeDate:
+                        if (!CheckKey((int)EIndex.StoreCD))
+                        {
+                            keyControls[(int)EIndex.StoreCD].Focus();
+                            return false;
+                        }
+                        if (!CheckKey(index))
+                        {
+                            keyControls[index].Focus();
+                            return false;
+                        }
+
                         //複写店舗ストアCDに入力がある場合、(When there is an input in 複写店舗ストアCD)Ｅ１０２
                         //必須入力
                         if (copyKeyControls[(int)EIndex.StoreCD].Text != "" && copyKeyControls[index].Text == "")
                         {
+                            copyKeyControls[index].Focus();
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
@@ -265,6 +277,7 @@ namespace MasterTouroku_Tempo
                         //日付として正しいこと(Be on the correct date)Ｅ１０３
                         if (!bbl.CheckDate(copyKeyControls[index].Text))
                         {
+                            copyKeyControls[index].Focus();
                             bbl.ShowMessage("E103");
                             return false;
                         }
@@ -287,6 +300,7 @@ namespace MasterTouroku_Tempo
                         bbl.ShowMessage("E132");
                         return false;
                     }
+                    return true;
                 }
                 else
                 {
@@ -353,7 +367,9 @@ namespace MasterTouroku_Tempo
                                     case "5":
                                         radioButton8.Checked = true;
                                         break;
-
+                                    case "6":
+                                        radioButton9.Checked = true;
+                                        break;
                                 }
 
                             }
@@ -379,7 +395,7 @@ namespace MasterTouroku_Tempo
                             ScStaff22.LabelText = dtStore.Rows[0]["ApprovalStaffNM22"].ToString();
                             ScStaff31.LabelText = dtStore.Rows[0]["ApprovalStaffNM31"].ToString();
                             ScStaff32.LabelText = dtStore.Rows[0]["ApprovalStaffNM32"].ToString();
-
+                            ScMailPatternCD.LabelText = dtStore.Rows[0]["MailPatternName"].ToString();
                         }                    
                     }
                 }
@@ -388,14 +404,6 @@ namespace MasterTouroku_Tempo
                 {
                     //画面へデータセット後、明細部入力可、キー部入力不可
                     Scr_Lock(3, 3, 0);
-                    SetEnabled();
-
-                    if (radioButton1.Checked)
-                        radioButton1.Focus();
-                    else if (radioButton2.Checked)
-                        radioButton2.Focus();
-                    else if (radioButton3.Checked)
-                        radioButton3.Focus();
 
                     Scr_Lock(0, 1, 1);
                     SetFuncKeyAll(this, "111111000001");
@@ -433,24 +441,23 @@ namespace MasterTouroku_Tempo
             {
                 case (int)EIndex.StoreName:
                     //店舗ストア名 入力必須(Entry required)
-                    if (detailControls[index].Text == "")
+                    //入力必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
                         return false;
                     }
                     break;
 
                 case (int)EIndex.MallCD:
                     //モールCD 入力必須(Entry required)
-                    if (detailControls[index].Enabled && detailControls[index].Text == "")
+                    if (detailControls[index].Enabled)
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        return false;
-                    }
-                    else if (detailControls[index].Text != "")
-                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                   
                         //以下の条件でM_MultiPorposeが存在しない場合、エラー
 
                         //[M_MultiPorpose]
@@ -474,18 +481,39 @@ namespace MasterTouroku_Tempo
                         }
                     }
                     break;
+                case (int)EIndex.APIKey:
+                    if (detailControls[index].Enabled)
+                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                        //既に他の店舗で入力されている値の場合、エラー（改定日として有効なレコードで違う店舗で同じAPIKeyがあればエラー）
+                        M_Store_Entity me = new M_Store_Entity();
+                        me.StoreCD = keyControls[(int)EIndex.StoreCD].Text;
+                        me.ChangeDate = keyControls[(int)EIndex.ChangeDate].Text;
+                        me.APIKey = detailControls[(int)EIndex.APIKey].Text;
+                        if (mbl.Store_SelectByApiKey(me))
+                        {
+                            //Ｅ１０５
+                            bbl.ShowMessage("E105");
+                            return false;
+                        }
+                    }
+                    break;
 
                 case (int)EIndex.ZipCD1:
                 case (int)EIndex.ZipCD2:
                     //郵便番号1、2 入力必須(Entry required)
-                    if (detailControls[index].Enabled && detailControls[index].Text == "")
+                    if (detailControls[index].Enabled )
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        return false;
-                    }
-                    else if (detailControls[index].Text != "")
-                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+
                         //以下の条件でM_ZipCodeが存在する場合、
                         //[M_ZipCode]
                         M_ZipCode_Entity mze = new M_ZipCode_Entity
@@ -494,11 +522,12 @@ namespace MasterTouroku_Tempo
                             ZipCD2 = detailControls[(int)EIndex.ZipCD2].Text
                         };
                         ZipCode_BL zbl = new ZipCode_BL();
-                        bool ret = zbl.M_ZipCode_SelectData(mze);
-                        if (ret && detailControls[(int)EIndex.Address1].Text == "")
+                        //bool ret = zbl.M_ZipCode_Select(mze);
+                        DataTable dt = zbl.M_ZipCode_Select(mze);
+                        if (dt.Rows.Count > 0 && detailControls[(int)EIndex.Address1].Text == "")
                         {
-                            detailControls[(int)EIndex.Address1].Text = mze.Address1;   //住所１
-                            detailControls[(int)EIndex.Address2].Text = mze.Address2;  //住所２
+                            detailControls[(int)EIndex.Address1].Text = dt.Rows[0]["Address1"].ToString();   //住所１
+                            detailControls[(int)EIndex.Address2].Text = dt.Rows[0]["Address2"].ToString();  //住所２
                         }
                         else
                         {
@@ -511,24 +540,26 @@ namespace MasterTouroku_Tempo
                 case (int)EIndex.TelphoneNO:
                 case (int)EIndex.FaxNO:
                     //住所 入力必須(Entry required)
-                    if (detailControls[index].Enabled && detailControls[index].Text == "")
+                    if (detailControls[index].Enabled)
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        return false;
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
                     }
                     break;
 
                 case (int)EIndex.KouzaCD:
                     //口座CD 入力必須(Entry required)
-                    if (detailControls[index].Enabled && detailControls[index].Text == "")
+                    if (detailControls[index].Enabled)
                     {
-                        //Ｅ１０２
-                        bbl.ShowMessage("E102");
-                        return false;
-                    }
-                    else if (detailControls[index].Text != "")
-                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+
                         //以下の条件でM_Kouzaが存在しない場合、エラー
 
                         //[M_Kouza]
@@ -560,7 +591,48 @@ namespace MasterTouroku_Tempo
                         }
                     }
                     break;
+                case (int)EIndex.ReceiptPrint:
+                    //入力必須(Entry required)
+                    if (detailControls[index].Enabled)
+                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                    }
+                    break;
+                case (int)EIndex.MoveMailPatternCD:
+                    //入力必須(Entry required)
+                    if (detailControls[index].Enabled )
+                    {
+                        //入力必須(Entry required)
+                        if (!RequireCheck(new Control[] { detailControls[index] }))
+                        {
+                            return false;
+                        }
+                        //以下の条件でM_MailPatternが存在しない場合、エラー
 
+                        //[M_MailPattern]
+                        M_MailPattern_Entity mme = new M_MailPattern_Entity
+                        {
+                            MailPatternCD = detailControls[index].Text
+                        };
+                        MailPattern_BL kbl = new MailPattern_BL();
+                      bool ret = kbl.M_MailPattern_Select(mme);
+                        if (ret)
+                        {
+                            ScMailPatternCD.LabelText = mme.MailPatternName;
+                        }
+                        else
+                        {
+                            //Ｅ１０１
+                            ScMailPatternCD.LabelText = "";
+                            bbl.ShowMessage("E101");
+                            return false;
+                        }
+                    }
+                    break;
                 case (int)EIndex.ApprovalStaffCD11:
                 case (int)EIndex.ApprovalStaffCD12:
                 case (int)EIndex.ApprovalStaffCD21:
@@ -698,6 +770,8 @@ namespace MasterTouroku_Tempo
                     mse.StorePlaceKBN = "4";
                 else if (radioButton8.Checked)
                     mse.StorePlaceKBN = "5";
+                else if (radioButton9.Checked)
+                    mse.StorePlaceKBN = "6";
             }
             else if (radioButton2.Checked)
             {
@@ -716,6 +790,7 @@ namespace MasterTouroku_Tempo
 
             mse.StoreName = detailControls[index + (int)EIndex.StoreName].Text;
             mse.MallCD = detailControls[index + (int)EIndex.MallCD].Text;
+            mse.APIKey = detailControls[index + (int)EIndex.APIKey].Text;
 
             mse.ZipCD1 = detailControls[index + (int)EIndex.ZipCD1].Text;
             mse.ZipCD2 = detailControls[index + (int)EIndex.ZipCD2].Text;
@@ -723,7 +798,7 @@ namespace MasterTouroku_Tempo
             mse.Address2 = detailControls[index + (int)EIndex.Address2].Text;
             mse.TelphoneNO = detailControls[index + (int)EIndex.TelphoneNO].Text;
             mse.FaxNO = detailControls[index + (int)EIndex.FaxNO].Text;
-            mse.MailAddress = detailControls[index + (int)EIndex.MailAddress].Text;
+            mse.MailAddress1 = detailControls[index + (int)EIndex.MailAddress1].Text;
             mse.ApprovalStaffCD11 = detailControls[index + (int)EIndex.ApprovalStaffCD11].Text;
             mse.ApprovalStaffCD12 = detailControls[index + (int)EIndex.ApprovalStaffCD12].Text;
             mse.ApprovalStaffCD21 = detailControls[index + (int)EIndex.ApprovalStaffCD21].Text;
@@ -741,6 +816,8 @@ namespace MasterTouroku_Tempo
             mse.Print5 = detailControls[index + (int)EIndex.Print5].Text;
             mse.Print6 = detailControls[index + (int)EIndex.Print6].Text;
             mse.KouzaCD = detailControls[index + (int)EIndex.KouzaCD].Text;
+            mse.ReceiptPrint = detailControls[index + (int)EIndex.ReceiptPrint].Text;
+            mse.MoveMailPatternCD = detailControls[index + (int)EIndex.MoveMailPatternCD].Text;
             mse.Remarks = detailControls[index + (int)EIndex.Remarks].Text;
             //チェックボックス
             if (checkDeleteFlg.Checked)
@@ -1123,7 +1200,14 @@ namespace MasterTouroku_Tempo
                             case (int)EIndex.ChangeDate:
                                 if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
                                 {
-                                    //CheckKey内で移動先を決定しフォーカスセット
+                                    SetEnabled();
+
+                                    if (radioButton1.Checked)
+                                        radioButton1.Focus();
+                                    else if (radioButton2.Checked)
+                                        radioButton2.Focus();
+                                    else if (radioButton3.Checked)
+                                        radioButton3.Focus();
                                 }
                                 else
                                 {
@@ -1186,7 +1270,7 @@ namespace MasterTouroku_Tempo
                     }
                     else
                     {
-                        ((Control)sender).Focus();
+                        //((Control)sender).Focus();
                     }
                 }
             }
@@ -1408,12 +1492,17 @@ namespace MasterTouroku_Tempo
                 {
                     //実店舗場所：店舗区分＝「実店舗」の時のみ入力可能。
                     panel2.Enabled = true;
-             
+                    detailControls[(int)EIndex.ReceiptPrint].Enabled = true;
+                    detailControls[(int)EIndex.MoveMailPatternCD].Enabled = true;
+
                     //実店舗を選択した場合(When 実店舗 is selected)、以下の項目を入力不可にする (Input is possible)
                     //モールCD
                     detailControls[(int)EIndex.MallCD].Enabled = false;
                     detailControls[(int)EIndex.MallCD].Text = "";
                     ScMall.LabelText = "";
+
+                    detailControls[(int)EIndex.APIKey].Enabled = false;
+                    detailControls[(int)EIndex.APIKey].Text = "";
 
                     //実店舗場所
                     //郵便番号
@@ -1438,9 +1527,12 @@ namespace MasterTouroku_Tempo
                 else
                 {
                     panel2.Enabled = false;
+                    detailControls[(int)EIndex.ReceiptPrint].Enabled = false;
+                    detailControls[(int)EIndex.MoveMailPatternCD].Enabled = false;
 
                     //モールCD
                     detailControls[(int)EIndex.MallCD].Enabled = true;
+                    detailControls[(int)EIndex.APIKey].Enabled = true;
 
                     //Web店舗、Webまとめ店舗を選択した場合(When Web店舗 or Webまとめ店舗 is selected)、以下の項目を入力不可にする
                     //実店舗場所
@@ -1461,6 +1553,9 @@ namespace MasterTouroku_Tempo
 
                     for (int index = 0; index < searchButtons.Length - 2; index++)
                         searchButtons[index].Enabled = false;
+
+                    for (int index = 1; index < detailLabels.Length; index++)
+                        ((CKM_SearchControl)detailLabels[index]).LabelText = "";
 
                     ScMall.SearchEnable = true;   //モール検索
                 }
