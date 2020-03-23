@@ -13,7 +13,7 @@ namespace MasterTouroku_Brand
     {
         M_Brand_Entity mbe;     
         MasterTouroku_Brand_BL mtkbl;
-        int type = 0;//1 = normal, 2 = copy (for f11)
+        int type = 0;//1 = normal, 2 = copy (for f11) 
 
         public FrmMasterTouroku_Brand()
         {
