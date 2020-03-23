@@ -11,7 +11,7 @@ namespace MasterTouroku_Brand
 {
     public partial class FrmMasterTouroku_Brand : FrmMainForm
     {
-        M_Brand_Entity mbe;     
+        M_Brand_Entity mbe;    
         MasterTouroku_Brand_BL mtkbl;
         int type = 0;//1 = normal, 2 = copy (for f11) 
 
