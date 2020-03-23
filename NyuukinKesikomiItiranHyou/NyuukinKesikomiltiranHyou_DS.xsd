@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NyuukinKesikomiltiranHyou_DS" targetNamespace="http://tempuri.org/NyuukinKesikomiltiranHyou_DS.xsd" xmlns:mstns="http://tempuri.org/NyuukinKesikomiltiranHyou_DS.xsd" xmlns="http://tempuri.org/NyuukinKesikomiltiranHyou_DS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NyuukinKesikomiltiranHyou_DS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="NyuukinKesikomiltiranHyou_DS" msprop:Generator_UserDSName="NyuukinKesikomiltiranHyou_DS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DT_D_PaymentConfirm" msprop:Generator_TableClassName="DT_D_PaymentConfirmDataTable" msprop:Generator_TableVarName="tableDT_D_PaymentConfirm" msprop:Generator_TablePropName="DT_D_PaymentConfirm" msprop:Generator_RowDeletingName="DT_D_PaymentConfirmRowDeleting" msprop:Generator_RowChangingName="DT_D_PaymentConfirmRowChanging" msprop:Generator_RowEvHandlerName="DT_D_PaymentConfirmRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_D_PaymentConfirmRowDeleted" msprop:Generator_UserTableName="DT_D_PaymentConfirm" msprop:Generator_RowChangedName="DT_D_PaymentConfirmRowChanged" msprop:Generator_RowEvArgName="DT_D_PaymentConfirmRowChangeEvent" msprop:Generator_RowClassName="DT_D_PaymentConfirmRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CollectDate" msprop:Generator_ColumnVarNameInTable="columnCollectDate" msprop:Generator_ColumnPropNameInRow="CollectDate" msprop:Generator_ColumnPropNameInTable="CollectDateColumn" msprop:Generator_UserColumnName="CollectDate" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectNO" msprop:Generator_ColumnVarNameInTable="columnCollectNO" msprop:Generator_ColumnPropNameInRow="CollectNO" msprop:Generator_ColumnPropNameInTable="CollectNOColumn" msprop:Generator_UserColumnName="CollectNO" type="xs:string" minOccurs="0" />
+              <xs:element name="DenominationName" msprop:Generator_ColumnVarNameInTable="columnDenominationName" msprop:Generator_ColumnPropNameInRow="DenominationName" msprop:Generator_ColumnPropNameInTable="DenominationNameColumn" msprop:Generator_UserColumnName="DenominationName" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectCustomerCD" msprop:Generator_ColumnVarNameInTable="columnCollectCustomerCD" msprop:Generator_ColumnPropNameInRow="CollectCustomerCD" msprop:Generator_ColumnPropNameInTable="CollectCustomerCDColumn" msprop:Generator_UserColumnName="CollectCustomerCD" type="xs:string" minOccurs="0" />
+              <xs:element name="CustomerName" msprop:Generator_ColumnVarNameInTable="columnCustomerName" msprop:Generator_ColumnPropNameInRow="CustomerName" msprop:Generator_ColumnPropNameInTable="CustomerNameColumn" msprop:Generator_UserColumnName="CustomerName" type="xs:string" minOccurs="0" />
+              <xs:element name="SalesNO" msprop:Generator_ColumnVarNameInTable="columnSalesNO" msprop:Generator_ColumnPropNameInRow="SalesNO" msprop:Generator_ColumnPropNameInTable="SalesNOColumn" msprop:Generator_UserColumnName="SalesNO" type="xs:string" minOccurs="0" />
+              <xs:element name="SKUName" msprop:Generator_ColumnVarNameInTable="columnSKUName" msprop:Generator_ColumnPropNameInRow="SKUName" msprop:Generator_ColumnPropNameInTable="SKUNameColumn" msprop:Generator_UserColumnName="SKUName" type="xs:string" minOccurs="0" />
+              <xs:element name="BillingGaku" msprop:Generator_ColumnVarNameInTable="columnBillingGaku" msprop:Generator_ColumnPropNameInRow="BillingGaku" msprop:Generator_ColumnPropNameInTable="BillingGakuColumn" msprop:Generator_UserColumnName="BillingGaku" type="xs:string" minOccurs="0" />
+              <xs:element name="CollectAmount" msprop:Generator_ColumnVarNameInTable="columnCollectAmount" msprop:Generator_ColumnPropNameInRow="CollectAmount" msprop:Generator_ColumnPropNameInTable="CollectAmountColumn" msprop:Generator_UserColumnName="CollectAmount" type="xs:string" minOccurs="0" />
+              <xs:element name="Reconciliation_Balance" msprop:Generator_ColumnVarNameInTable="columnReconciliation_Balance" msprop:Generator_ColumnPropNameInRow="Reconciliation_Balance" msprop:Generator_ColumnPropNameInTable="Reconciliation_BalanceColumn" msprop:Generator_UserColumnName="Reconciliation_Balance" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -374,7 +374,7 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.モール:
-                    txtCode.MaxLength = 3;
+                    txtCode.MaxLength = 4;
                     txtCode.Width = 30;
                     lblName.Width = 280;
                     break;
@@ -964,7 +964,6 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
-                            lblName.Text = frmJuchuu.MitsumoriName;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                         }
                     }
@@ -1035,19 +1034,19 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.仕入番号:
-                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                    {
-                        frmShiire.OperatorCD = Value1;
-                        frmShiire.AllAvailableStores = Value2;
-                        frmShiire.ShowDialog();
-                        if (!frmShiire.flgCancel)
-                        {
-                            txtCode.Text = frmShiire.PurchaseNO;
-                            txtChangeDate.Text = frmShiire.ChangeDate;
-                        }
-                    }
-                    break;
+                //case SearchType.仕入番号:
+                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                //    {
+                //        frmShiire.OperatorCD = Value1;
+                //        frmShiire.AllAvailableStores = Value2;
+                //        frmShiire.ShowDialog();
+                //        if (!frmShiire.flgCancel)
+                //        {
+                //            txtCode.Text = frmShiire.PurchaseNO;
+                //            txtChangeDate.Text = frmShiire.ChangeDate;
+                //        }
+                //    }
+                //    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {

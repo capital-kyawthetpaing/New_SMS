@@ -12,46 +12,112 @@ namespace DL
 {
     public class D_Juchuu_DL : Base_DL
     {
-        public DataTable D_Juchu_SelectAll(D_Juchuu_Entity dme)
+        /// <summary>	
+        /// 受注番号検索にて使用	
+        /// </summary>	
+        /// <param name="de"></param>	
+        /// <returns></returns>	
+        public DataTable D_Juchu_SelectAll(D_Juchuu_Entity de, M_SKU_Entity mse)
         {
             string sp = "D_Juchuu_SelectAll";
-
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.JuchuDateFrom } },
-                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.JuchuDateTo } },
-                //{ "@MitsumoriInputDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.MitsumoriInputDateFrom } },
-                //{ "@MitsumoriInputDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.MitsumoriInputDateTo } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.StoreCD } },
-                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.StaffCD } },
-                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.CustomerCD } },
-                { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.CustomerName} },
-                //{ "@MitsumoriName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.MitsumoriName } },
-                //{ "@JuchuuChanceKBN", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.JuchuuChanceKBN } },
-                //{ "@JuchuuFLG1", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dme.JuchuuFLG1 } },
-                //{ "@JuchuuFLG2", new ValuePair { value1 = SqlDbType.TinyInt, value2 = dme.JuchuuFLG2 } },
+                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
+                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateTo } },
+                { "@SalesDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SalesDateFrom } },
+                { "@SalesDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SalesDateTo } },
+                { "@BillingCloseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateFrom } },
+                { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateTo } },
+                { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateFrom } },
+                { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateTo } },
+                { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihikiate.ToString() } },
+                { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiuriage.ToString() } },
+                { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiseikyu.ToString() } },
+                { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyukin.ToString() } },
+                { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkAll.ToString() } },
+                { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkTujo.ToString() } },
+                { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHenpin.ToString() } },
+                { "@ChkGaisho", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValGaisho.ToString() } },
+                { "@ChkTento", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValTento.ToString() } },
+                { "@ChkWeb", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValWeb.ToString() } },
+                { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihachu.ToString() } },
+                { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkNokiKaito.ToString() } },
+                { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyuka.ToString() } },
+                { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMisiire.ToString() } },
+                { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHachuAll.ToString() } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
+                { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerName } },
+                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.VendorCD } },
+                { "@OrderName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.VendorName } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
+                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.KanaName } },
+                { "@Tel1", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel11 } },
+                { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel12 } },
+                { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel13 } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
+                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },	
+                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },	
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
+                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOFrom } },
+                { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOTo } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator} },	
+                //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },	
             };
-
-
-            if (!string.IsNullOrWhiteSpace(dme.CustomerName))
-            {
-                DataTable dt = SelectData(dic, sp);
-                DataRow[] drs = dt.Select(" CustomerName LIKE '%" + dme.CustomerName + "%'");
-                DataTable newdt = dt.Clone();
-
-                foreach (var dr in drs)
-                {
-                    //newdt.Rows.Add(dr)ではダメ。
-                    //drはdtに所属している行なので、別のDataTableであるnewdtにはAddできない。
-                    //よって、newdtの新しい行を作成し、その各列の値をdrと全く同じにし、それをnewdtに追加すれば良い。
-                    DataRow newrow = newdt.NewRow();
-                    newrow.ItemArray = dr.ItemArray;
-                    newdt.Rows.Add(newrow);
-                }
-                return newdt;
-            }
             return SelectData(dic, sp);
         }
+
+        /// <summary>	
+        /// 店舗受注照会にて使用	
+        /// </summary>	
+        /// <param name="de"></param>	
+        /// <param name="mse"></param>	
+        /// <returns></returns>	
+        public DataTable D_Juchu_SelectAllForShoukai(D_Juchuu_Entity de, M_SKU_Entity mse, string operatorNm, string pc)
+        {
+            string sp = "D_Juchu_SelectAllForShoukai";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
+                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateTo } },
+                { "@SalesDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SalesDateFrom } },
+                { "@SalesDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.SalesDateTo } },
+                { "@BillingCloseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateFrom } },
+                { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateTo } },
+                { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateFrom } },
+                { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateTo } },
+                { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihikiate.ToString() } },
+                { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiuriage.ToString() } },
+                { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiseikyu.ToString() } },
+                { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyukin.ToString() } },
+                { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkAll.ToString() } },
+                { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkTujo.ToString() } },
+                { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHenpin.ToString() } },
+                { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihachu.ToString() } },
+                { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkNokiKaito.ToString() } },
+                { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyuka.ToString() } },
+                { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMisiire.ToString() } },
+                { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHachuAll.ToString() } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
+                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.VendorCD } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
+                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.KanaName } },
+                { "@Tel1", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel11 } },
+                { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel12 } },
+                { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel13 } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
+                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },	
+                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },	
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
+                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOFrom } },
+                { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOTo } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
+            };
+            return SelectData(dic, sp);
+        }
+
 
         /// <summary>
         /// 受注入力更新処理
@@ -272,65 +338,7 @@ namespace DL
             return SelectData(dic, "D_Juchuu_DataSelect_ForShukkaShoukai");
         }
 
-        /// <summary>
-        /// 店舗受注照会にて使用
-        /// </summary>
-        /// <param name="doe"></param>
-        /// <param name="mse"></param>
-        /// <returns></returns>
-        public DataTable D_Juchu_SelectAllForShoukai(D_Juchuu_Entity doe, M_SKU_Entity mse, string operatorNm, string pc)
-        {
-            string sp = "D_Juchu_SelectAllForShoukai";
-
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            {
-                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuDateFrom } },
-                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuDateTo } },
-                { "@SalesDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.SalesDateFrom } },
-                { "@SalesDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.SalesDateTo } },
-                { "@BillingCloseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.BillingCloseDateFrom } },
-                { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.BillingCloseDateTo } },
-                { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.CollectClearDateFrom } },
-                { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.CollectClearDateTo } },
-
-                { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMihikiate.ToString() } },
-                { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMiuriage.ToString() } },
-                { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMiseikyu.ToString() } },
-                { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMinyukin.ToString() } },
-                { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkAll.ToString() } },
-
-                { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkTujo.ToString() } },
-                { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkHenpin.ToString() } },
-
-                { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMihachu.ToString() } },
-                { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkNokiKaito.ToString() } },
-                { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMinyuka.ToString() } },
-                { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMisiire.ToString() } },
-                { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkHachuAll.ToString() } },
-
-                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.CustomerCD } },
-                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.VendorCD } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
-                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.KanaName } },
-                { "@Tel1", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.Tel11 } },
-                { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.Tel12 } },
-                { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.Tel13 } },
-                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },
-                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
-                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },
-                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
-                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
-
-                { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuuNOFrom } },
-                { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuuNOTo } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
-                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
-
-            };
-
-            return SelectData(dic, sp);
-        }
-
+      
         /// <summary>
         /// 出荷入力（JANCDチェック）
         /// </summary>
@@ -348,6 +356,21 @@ namespace DL
             return SelectData(dic, sp);
         }
 
-
+        public DataTable D_Juchu_SelectDataForTempoUriage(D_Juchuu_Entity de, short operationMode)
+        {
+            string sp = "D_Juchu_SelectDataForTempoUriage";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
+                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
+                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateTo } },
+                { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
+                { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerName} },
+                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.KanaName} },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
+                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
+            };
+            return SelectData(dic, sp);
+        }
     }
 }
