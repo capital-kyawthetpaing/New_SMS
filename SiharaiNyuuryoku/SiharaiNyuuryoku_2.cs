@@ -312,10 +312,9 @@ namespace SiharaiNyuuryoku
                     dtDetails.Rows.Remove(row);
                     dtDetails.AcceptChanges();
                 }
-                dtDetails.Merge(dtSiharai2);
-
+                dtDetails.Merge(dtSiharai2);               
             }
-
+            this.Close();
         }
 
         public void Clear()
@@ -766,5 +765,6 @@ namespace SiharaiNyuuryoku
                 }
             }
         }
+
     }
 }

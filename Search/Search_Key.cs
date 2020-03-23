@@ -108,7 +108,7 @@ namespace Search
             {
                 KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();
                 Char1 = GvKey.CurrentRow.Cells["colChar1"].Value.ToString();
-                Char3 = GvKey.CurrentRow.Cells["colChar3"].Value.ToString();
+                Char3 = GvKey.CurrentRow.Cells["colText3"].Value.ToString();
                 this.Close();
             }
         }

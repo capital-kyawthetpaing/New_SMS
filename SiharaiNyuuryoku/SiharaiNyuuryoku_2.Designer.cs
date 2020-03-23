@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPayPlanDate = new CKM_Controls.CKM_TextBox();
@@ -47,12 +48,6 @@
             this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
-            this.SC_HanyouKeyEnd2 = new Search.CKM_SearchControl();
-            this.SC_HanyouKeyEnd1 = new Search.CKM_SearchControl();
-            this.SC_HanyouKeyStart2 = new Search.CKM_SearchControl();
-            this.SC_HanyouKeyStart1 = new Search.CKM_SearchControl();
-            this.SC_BranchCD = new Search.CKM_SearchControl();
-            this.SC_BankCD = new Search.CKM_SearchControl();
             this.lblPayGaku1 = new System.Windows.Forms.Label();
             this.lblUnpaidAmount = new System.Windows.Forms.Label();
             this.lblPayGaku = new System.Windows.Forms.Label();
@@ -96,6 +91,12 @@
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.lblVendorName = new System.Windows.Forms.Label();
+            this.SC_HanyouKeyEnd2 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyEnd1 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyStart2 = new Search.CKM_SearchControl();
+            this.SC_HanyouKeyStart1 = new Search.CKM_SearchControl();
+            this.SC_BranchCD = new Search.CKM_SearchControl();
+            this.SC_BankCD = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -270,17 +271,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -290,6 +291,14 @@
             this.colPayConfirmGaku,
             this.colUnpaidAmount1,
             this.colUnpaidAmount2});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -326,9 +335,9 @@
             // colPayPlanGaku
             // 
             this.colPayPlanGaku.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle21.Format = "N0";
-            dataGridViewCellStyle21.NullValue = "false";
-            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "false";
+            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle3;
             this.colPayPlanGaku.HeaderText = "支払予定額";
             this.colPayPlanGaku.MaxInputLength = 32767;
             this.colPayPlanGaku.Name = "colPayPlanGaku";
@@ -340,9 +349,9 @@
             // colPayConfirmGaku
             // 
             this.colPayConfirmGaku.DataPropertyName = "PayConfirmGaku";
-            dataGridViewCellStyle22.Format = "N0";
-            dataGridViewCellStyle22.NullValue = "false";
-            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "false";
+            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPayConfirmGaku.HeaderText = "支払済額";
             this.colPayConfirmGaku.MaxInputLength = 32767;
             this.colPayConfirmGaku.Name = "colPayConfirmGaku";
@@ -353,9 +362,9 @@
             // colUnpaidAmount1
             // 
             this.colUnpaidAmount1.DataPropertyName = "UnpaidAmount1";
-            dataGridViewCellStyle23.Format = "N0";
-            dataGridViewCellStyle23.NullValue = "false";
-            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "false";
+            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle5;
             this.colUnpaidAmount1.HeaderText = "今回支払額";
             this.colUnpaidAmount1.MaxInputLength = 32767;
             this.colUnpaidAmount1.Name = "colUnpaidAmount1";
@@ -365,182 +374,15 @@
             // colUnpaidAmount2
             // 
             this.colUnpaidAmount2.DataPropertyName = "UnpaidAmount2";
-            dataGridViewCellStyle24.Format = "N0";
-            dataGridViewCellStyle24.NullValue = "false";
-            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = "false";
+            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle6;
             this.colUnpaidAmount2.HeaderText = "未支払額";
             this.colUnpaidAmount2.MaxInputLength = 32767;
             this.colUnpaidAmount2.Name = "colUnpaidAmount2";
             this.colUnpaidAmount2.ReadOnly = true;
             this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount2.UseThousandSeparator = true;
-            // 
-            // SC_HanyouKeyEnd2
-            // 
-            this.SC_HanyouKeyEnd2.AutoSize = true;
-            this.SC_HanyouKeyEnd2.ChangeDate = "";
-            this.SC_HanyouKeyEnd2.ChangeDateWidth = 100;
-            this.SC_HanyouKeyEnd2.Code = "";
-            this.SC_HanyouKeyEnd2.CodeWidth = 60;
-            this.SC_HanyouKeyEnd2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_HanyouKeyEnd2.DataCheck = false;
-            this.SC_HanyouKeyEnd2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_HanyouKeyEnd2.IsCopy = false;
-            this.SC_HanyouKeyEnd2.LabelText = "";
-            this.SC_HanyouKeyEnd2.LabelVisible = true;
-            this.SC_HanyouKeyEnd2.Location = new System.Drawing.Point(793, 663);
-            this.SC_HanyouKeyEnd2.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_HanyouKeyEnd2.Name = "SC_HanyouKeyEnd2";
-            this.SC_HanyouKeyEnd2.SearchEnable = true;
-            this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
-            this.SC_HanyouKeyEnd2.TabIndex = 21;
-            this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_HanyouKeyEnd2.UseChangeDate = false;
-            this.SC_HanyouKeyEnd2.Value1 = null;
-            this.SC_HanyouKeyEnd2.Value2 = null;
-            this.SC_HanyouKeyEnd2.Value3 = null;
-            this.SC_HanyouKeyEnd2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd2_CodeKeyDownEvent);
-            this.SC_HanyouKeyEnd2.Enter += new System.EventHandler(this.SC_HanyouKeyEnd2_Enter);
-            // 
-            // SC_HanyouKeyEnd1
-            // 
-            this.SC_HanyouKeyEnd1.AutoSize = true;
-            this.SC_HanyouKeyEnd1.ChangeDate = "";
-            this.SC_HanyouKeyEnd1.ChangeDateWidth = 100;
-            this.SC_HanyouKeyEnd1.Code = "";
-            this.SC_HanyouKeyEnd1.CodeWidth = 60;
-            this.SC_HanyouKeyEnd1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_HanyouKeyEnd1.DataCheck = false;
-            this.SC_HanyouKeyEnd1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_HanyouKeyEnd1.IsCopy = false;
-            this.SC_HanyouKeyEnd1.LabelText = "";
-            this.SC_HanyouKeyEnd1.LabelVisible = true;
-            this.SC_HanyouKeyEnd1.Location = new System.Drawing.Point(793, 635);
-            this.SC_HanyouKeyEnd1.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_HanyouKeyEnd1.Name = "SC_HanyouKeyEnd1";
-            this.SC_HanyouKeyEnd1.SearchEnable = true;
-            this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
-            this.SC_HanyouKeyEnd1.TabIndex = 18;
-            this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_HanyouKeyEnd1.UseChangeDate = false;
-            this.SC_HanyouKeyEnd1.Value1 = null;
-            this.SC_HanyouKeyEnd1.Value2 = null;
-            this.SC_HanyouKeyEnd1.Value3 = null;
-            this.SC_HanyouKeyEnd1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd1_CodeKeyDownEvent);
-            this.SC_HanyouKeyEnd1.Enter += new System.EventHandler(this.SC_HanyouKeyEnd1_Enter);
-            // 
-            // SC_HanyouKeyStart2
-            // 
-            this.SC_HanyouKeyStart2.AutoSize = true;
-            this.SC_HanyouKeyStart2.ChangeDate = "";
-            this.SC_HanyouKeyStart2.ChangeDateWidth = 100;
-            this.SC_HanyouKeyStart2.Code = "";
-            this.SC_HanyouKeyStart2.CodeWidth = 60;
-            this.SC_HanyouKeyStart2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_HanyouKeyStart2.DataCheck = false;
-            this.SC_HanyouKeyStart2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_HanyouKeyStart2.IsCopy = false;
-            this.SC_HanyouKeyStart2.LabelText = "";
-            this.SC_HanyouKeyStart2.LabelVisible = true;
-            this.SC_HanyouKeyStart2.Location = new System.Drawing.Point(328, 663);
-            this.SC_HanyouKeyStart2.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_HanyouKeyStart2.Name = "SC_HanyouKeyStart2";
-            this.SC_HanyouKeyStart2.SearchEnable = true;
-            this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
-            this.SC_HanyouKeyStart2.TabIndex = 20;
-            this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_HanyouKeyStart2.UseChangeDate = false;
-            this.SC_HanyouKeyStart2.Value1 = null;
-            this.SC_HanyouKeyStart2.Value2 = null;
-            this.SC_HanyouKeyStart2.Value3 = null;
-            this.SC_HanyouKeyStart2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart2_CodeKeyDownEvent);
-            this.SC_HanyouKeyStart2.Enter += new System.EventHandler(this.SC_HanyouKeyStart2_Enter);
-            // 
-            // SC_HanyouKeyStart1
-            // 
-            this.SC_HanyouKeyStart1.AutoSize = true;
-            this.SC_HanyouKeyStart1.ChangeDate = "";
-            this.SC_HanyouKeyStart1.ChangeDateWidth = 100;
-            this.SC_HanyouKeyStart1.Code = "";
-            this.SC_HanyouKeyStart1.CodeWidth = 60;
-            this.SC_HanyouKeyStart1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_HanyouKeyStart1.DataCheck = false;
-            this.SC_HanyouKeyStart1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_HanyouKeyStart1.IsCopy = false;
-            this.SC_HanyouKeyStart1.LabelText = "";
-            this.SC_HanyouKeyStart1.LabelVisible = true;
-            this.SC_HanyouKeyStart1.Location = new System.Drawing.Point(328, 635);
-            this.SC_HanyouKeyStart1.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_HanyouKeyStart1.Name = "SC_HanyouKeyStart1";
-            this.SC_HanyouKeyStart1.SearchEnable = true;
-            this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
-            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
-            this.SC_HanyouKeyStart1.TabIndex = 17;
-            this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_HanyouKeyStart1.UseChangeDate = false;
-            this.SC_HanyouKeyStart1.Value1 = null;
-            this.SC_HanyouKeyStart1.Value2 = null;
-            this.SC_HanyouKeyStart1.Value3 = null;
-            this.SC_HanyouKeyStart1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart1_CodeKeyDownEvent);
-            this.SC_HanyouKeyStart1.Enter += new System.EventHandler(this.SC_HanyouKeyStart1_Enter);
-            // 
-            // SC_BranchCD
-            // 
-            this.SC_BranchCD.AutoSize = true;
-            this.SC_BranchCD.ChangeDate = "";
-            this.SC_BranchCD.ChangeDateWidth = 100;
-            this.SC_BranchCD.Code = "";
-            this.SC_BranchCD.CodeWidth = 30;
-            this.SC_BranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_BranchCD.DataCheck = false;
-            this.SC_BranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_BranchCD.IsCopy = false;
-            this.SC_BranchCD.LabelText = "";
-            this.SC_BranchCD.LabelVisible = true;
-            this.SC_BranchCD.Location = new System.Drawing.Point(784, 361);
-            this.SC_BranchCD.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_BranchCD.Name = "SC_BranchCD";
-            this.SC_BranchCD.SearchEnable = true;
-            this.SC_BranchCD.Size = new System.Drawing.Size(414, 27);
-            this.SC_BranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
-            this.SC_BranchCD.TabIndex = 2;
-            this.SC_BranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_BranchCD.UseChangeDate = false;
-            this.SC_BranchCD.Value1 = null;
-            this.SC_BranchCD.Value2 = null;
-            this.SC_BranchCD.Value3 = null;
-            this.SC_BranchCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BranchCD_CodeKeyDownEvent);
-            // 
-            // SC_BankCD
-            // 
-            this.SC_BankCD.AutoSize = true;
-            this.SC_BankCD.ChangeDate = "";
-            this.SC_BankCD.ChangeDateWidth = 100;
-            this.SC_BankCD.Code = "";
-            this.SC_BankCD.CodeWidth = 40;
-            this.SC_BankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.SC_BankCD.DataCheck = false;
-            this.SC_BankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.SC_BankCD.IsCopy = false;
-            this.SC_BankCD.LabelText = "";
-            this.SC_BankCD.LabelVisible = true;
-            this.SC_BankCD.Location = new System.Drawing.Point(328, 361);
-            this.SC_BankCD.Margin = new System.Windows.Forms.Padding(0);
-            this.SC_BankCD.Name = "SC_BankCD";
-            this.SC_BankCD.SearchEnable = true;
-            this.SC_BankCD.Size = new System.Drawing.Size(424, 27);
-            this.SC_BankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
-            this.SC_BankCD.TabIndex = 1;
-            this.SC_BankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.SC_BankCD.UseChangeDate = false;
-            this.SC_BankCD.Value1 = null;
-            this.SC_BankCD.Value2 = null;
-            this.SC_BankCD.Value3 = null;
-            this.SC_BankCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BankCD_CodeKeyDownEvent);
-            this.SC_BankCD.Leave += new System.EventHandler(this.SC_BankCD_Leave);
             // 
             // lblPayGaku1
             // 
@@ -1350,6 +1192,173 @@
             this.lblVendorName.TabIndex = 114;
             this.lblVendorName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
             this.lblVendorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // SC_HanyouKeyEnd2
+            // 
+            this.SC_HanyouKeyEnd2.AutoSize = true;
+            this.SC_HanyouKeyEnd2.ChangeDate = "";
+            this.SC_HanyouKeyEnd2.ChangeDateWidth = 100;
+            this.SC_HanyouKeyEnd2.Code = "";
+            this.SC_HanyouKeyEnd2.CodeWidth = 60;
+            this.SC_HanyouKeyEnd2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyEnd2.DataCheck = false;
+            this.SC_HanyouKeyEnd2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyEnd2.IsCopy = false;
+            this.SC_HanyouKeyEnd2.LabelText = "";
+            this.SC_HanyouKeyEnd2.LabelVisible = true;
+            this.SC_HanyouKeyEnd2.Location = new System.Drawing.Point(793, 663);
+            this.SC_HanyouKeyEnd2.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyEnd2.Name = "SC_HanyouKeyEnd2";
+            this.SC_HanyouKeyEnd2.SearchEnable = true;
+            this.SC_HanyouKeyEnd2.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyEnd2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
+            this.SC_HanyouKeyEnd2.TabIndex = 21;
+            this.SC_HanyouKeyEnd2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyEnd2.UseChangeDate = false;
+            this.SC_HanyouKeyEnd2.Value1 = null;
+            this.SC_HanyouKeyEnd2.Value2 = null;
+            this.SC_HanyouKeyEnd2.Value3 = null;
+            this.SC_HanyouKeyEnd2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd2_CodeKeyDownEvent);
+            this.SC_HanyouKeyEnd2.Enter += new System.EventHandler(this.SC_HanyouKeyEnd2_Enter);
+            // 
+            // SC_HanyouKeyEnd1
+            // 
+            this.SC_HanyouKeyEnd1.AutoSize = true;
+            this.SC_HanyouKeyEnd1.ChangeDate = "";
+            this.SC_HanyouKeyEnd1.ChangeDateWidth = 100;
+            this.SC_HanyouKeyEnd1.Code = "";
+            this.SC_HanyouKeyEnd1.CodeWidth = 60;
+            this.SC_HanyouKeyEnd1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyEnd1.DataCheck = false;
+            this.SC_HanyouKeyEnd1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyEnd1.IsCopy = false;
+            this.SC_HanyouKeyEnd1.LabelText = "";
+            this.SC_HanyouKeyEnd1.LabelVisible = true;
+            this.SC_HanyouKeyEnd1.Location = new System.Drawing.Point(793, 635);
+            this.SC_HanyouKeyEnd1.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyEnd1.Name = "SC_HanyouKeyEnd1";
+            this.SC_HanyouKeyEnd1.SearchEnable = true;
+            this.SC_HanyouKeyEnd1.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyEnd1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyEnd;
+            this.SC_HanyouKeyEnd1.TabIndex = 18;
+            this.SC_HanyouKeyEnd1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyEnd1.UseChangeDate = false;
+            this.SC_HanyouKeyEnd1.Value1 = null;
+            this.SC_HanyouKeyEnd1.Value2 = null;
+            this.SC_HanyouKeyEnd1.Value3 = null;
+            this.SC_HanyouKeyEnd1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyEnd1_CodeKeyDownEvent);
+            this.SC_HanyouKeyEnd1.Enter += new System.EventHandler(this.SC_HanyouKeyEnd1_Enter);
+            // 
+            // SC_HanyouKeyStart2
+            // 
+            this.SC_HanyouKeyStart2.AutoSize = true;
+            this.SC_HanyouKeyStart2.ChangeDate = "";
+            this.SC_HanyouKeyStart2.ChangeDateWidth = 100;
+            this.SC_HanyouKeyStart2.Code = "";
+            this.SC_HanyouKeyStart2.CodeWidth = 60;
+            this.SC_HanyouKeyStart2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyStart2.DataCheck = false;
+            this.SC_HanyouKeyStart2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyStart2.IsCopy = false;
+            this.SC_HanyouKeyStart2.LabelText = "";
+            this.SC_HanyouKeyStart2.LabelVisible = true;
+            this.SC_HanyouKeyStart2.Location = new System.Drawing.Point(328, 663);
+            this.SC_HanyouKeyStart2.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyStart2.Name = "SC_HanyouKeyStart2";
+            this.SC_HanyouKeyStart2.SearchEnable = true;
+            this.SC_HanyouKeyStart2.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyStart2.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
+            this.SC_HanyouKeyStart2.TabIndex = 20;
+            this.SC_HanyouKeyStart2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyStart2.UseChangeDate = false;
+            this.SC_HanyouKeyStart2.Value1 = null;
+            this.SC_HanyouKeyStart2.Value2 = null;
+            this.SC_HanyouKeyStart2.Value3 = null;
+            this.SC_HanyouKeyStart2.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart2_CodeKeyDownEvent);
+            this.SC_HanyouKeyStart2.Enter += new System.EventHandler(this.SC_HanyouKeyStart2_Enter);
+            // 
+            // SC_HanyouKeyStart1
+            // 
+            this.SC_HanyouKeyStart1.AutoSize = true;
+            this.SC_HanyouKeyStart1.ChangeDate = "";
+            this.SC_HanyouKeyStart1.ChangeDateWidth = 100;
+            this.SC_HanyouKeyStart1.Code = "";
+            this.SC_HanyouKeyStart1.CodeWidth = 60;
+            this.SC_HanyouKeyStart1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_HanyouKeyStart1.DataCheck = false;
+            this.SC_HanyouKeyStart1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_HanyouKeyStart1.IsCopy = false;
+            this.SC_HanyouKeyStart1.LabelText = "";
+            this.SC_HanyouKeyStart1.LabelVisible = true;
+            this.SC_HanyouKeyStart1.Location = new System.Drawing.Point(328, 635);
+            this.SC_HanyouKeyStart1.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_HanyouKeyStart1.Name = "SC_HanyouKeyStart1";
+            this.SC_HanyouKeyStart1.SearchEnable = true;
+            this.SC_HanyouKeyStart1.Size = new System.Drawing.Size(444, 27);
+            this.SC_HanyouKeyStart1.Stype = Search.CKM_SearchControl.SearchType.HanyouKeyStart;
+            this.SC_HanyouKeyStart1.TabIndex = 17;
+            this.SC_HanyouKeyStart1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_HanyouKeyStart1.UseChangeDate = false;
+            this.SC_HanyouKeyStart1.Value1 = null;
+            this.SC_HanyouKeyStart1.Value2 = null;
+            this.SC_HanyouKeyStart1.Value3 = null;
+            this.SC_HanyouKeyStart1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_HanyouKeyStart1_CodeKeyDownEvent);
+            this.SC_HanyouKeyStart1.Enter += new System.EventHandler(this.SC_HanyouKeyStart1_Enter);
+            // 
+            // SC_BranchCD
+            // 
+            this.SC_BranchCD.AutoSize = true;
+            this.SC_BranchCD.ChangeDate = "";
+            this.SC_BranchCD.ChangeDateWidth = 100;
+            this.SC_BranchCD.Code = "";
+            this.SC_BranchCD.CodeWidth = 30;
+            this.SC_BranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_BranchCD.DataCheck = false;
+            this.SC_BranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_BranchCD.IsCopy = false;
+            this.SC_BranchCD.LabelText = "";
+            this.SC_BranchCD.LabelVisible = true;
+            this.SC_BranchCD.Location = new System.Drawing.Point(784, 361);
+            this.SC_BranchCD.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_BranchCD.Name = "SC_BranchCD";
+            this.SC_BranchCD.SearchEnable = true;
+            this.SC_BranchCD.Size = new System.Drawing.Size(414, 27);
+            this.SC_BranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
+            this.SC_BranchCD.TabIndex = 2;
+            this.SC_BranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_BranchCD.UseChangeDate = false;
+            this.SC_BranchCD.Value1 = null;
+            this.SC_BranchCD.Value2 = null;
+            this.SC_BranchCD.Value3 = null;
+            this.SC_BranchCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BranchCD_CodeKeyDownEvent);
+            // 
+            // SC_BankCD
+            // 
+            this.SC_BankCD.AutoSize = true;
+            this.SC_BankCD.ChangeDate = "";
+            this.SC_BankCD.ChangeDateWidth = 100;
+            this.SC_BankCD.Code = "";
+            this.SC_BankCD.CodeWidth = 40;
+            this.SC_BankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_BankCD.DataCheck = false;
+            this.SC_BankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_BankCD.IsCopy = false;
+            this.SC_BankCD.LabelText = "";
+            this.SC_BankCD.LabelVisible = true;
+            this.SC_BankCD.Location = new System.Drawing.Point(328, 361);
+            this.SC_BankCD.Margin = new System.Windows.Forms.Padding(0);
+            this.SC_BankCD.Name = "SC_BankCD";
+            this.SC_BankCD.SearchEnable = true;
+            this.SC_BankCD.Size = new System.Drawing.Size(424, 27);
+            this.SC_BankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
+            this.SC_BankCD.TabIndex = 1;
+            this.SC_BankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.SC_BankCD.UseChangeDate = false;
+            this.SC_BankCD.Value1 = null;
+            this.SC_BankCD.Value2 = null;
+            this.SC_BankCD.Value3 = null;
+            this.SC_BankCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.SC_BankCD_CodeKeyDownEvent);
+            this.SC_BankCD.Leave += new System.EventHandler(this.SC_BankCD_Leave);
             // 
             // SiharaiNyuuryoku_2
             // 
