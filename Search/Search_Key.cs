@@ -107,8 +107,10 @@ namespace Search
             if (GvKey .CurrentRow != null && GvKey.CurrentRow.Index >= 0)
             {
                 KeyCode = GvKey.CurrentRow.Cells["colKey"].Value.ToString();
-                Char1 = GvKey.CurrentRow.Cells["colChar1"].Value.ToString();
-                Char3 = GvKey.CurrentRow.Cells["colText3"].Value.ToString();
+                if (lblID.Text == "217")
+                    Char1 = GvKey.CurrentRow.Cells["colChar1"].Value.ToString();
+                if (lblID.Text == "218")
+                    Char3 = GvKey.CurrentRow.Cells["colText3"].Value.ToString();
                 this.Close();
             }
         }
