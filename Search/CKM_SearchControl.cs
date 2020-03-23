@@ -374,7 +374,7 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.モール:
-                    txtCode.MaxLength = 3;
+                    txtCode.MaxLength = 4;
                     txtCode.Width = 30;
                     lblName.Width = 280;
                     break;
@@ -615,7 +615,7 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 10;
+                    TxtCode.MaxLength = 100;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
@@ -899,6 +899,18 @@ namespace Search
                         }
                     }
                     break;
+
+                //2020.03.23 add by ses---
+                case SearchType.プログラムID:
+                    using (Search_Program frmProgram = new Search_Program(Value1))
+                    {
+                        frmProgram.ShowDialog();
+                        if (!frmProgram.flgCancel)
+                        {
+                            txtCode.Text = frmProgram.ProgramID;
+                        }
+                        break;
+                    }
                 case SearchType.SKU_ITEM_CD:
                     using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
@@ -952,7 +964,6 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
-                            lblName.Text = frmJuchuu.MitsumoriName;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                         }
                     }
@@ -1023,19 +1034,19 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.仕入番号:
-                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                    {
-                        frmShiire.OperatorCD = Value1;
-                        frmShiire.AllAvailableStores = Value2;
-                        frmShiire.ShowDialog();
-                        if (!frmShiire.flgCancel)
-                        {
-                            txtCode.Text = frmShiire.PurchaseNO;
-                            txtChangeDate.Text = frmShiire.ChangeDate;
-                        }
-                    }
-                    break;
+                //case SearchType.仕入番号:
+                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                //    {
+                //        frmShiire.OperatorCD = Value1;
+                //        frmShiire.AllAvailableStores = Value2;
+                //        frmShiire.ShowDialog();
+                //        if (!frmShiire.flgCancel)
+                //        {
+                //            txtCode.Text = frmShiire.PurchaseNO;
+                //            txtChangeDate.Text = frmShiire.ChangeDate;
+                //        }
+                //    }
+                //    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {

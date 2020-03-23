@@ -16,20 +16,7 @@ namespace BL
         {
             mdl = new D_Juchuu_DL();
         }
-        /// <summary>
-        /// 受注番号検索にて使用（仕様未確定）
-        /// </summary>
-        /// <param name="de"></param>
-        /// <returns></returns>
-        public DataTable D_Juchu_SelectAll(D_Juchuu_Entity de)
-        {
-            return mdl.D_Juchu_SelectAll(de);
-        }
-
-        //public DataTable D_Juchu_SelectForPrint(D_Juchu_Entity mie)
-        //{
-        //    return mdl.D_Juchu_SelectForPrint(mie);
-        //}
+        
         public DataTable M_Souko_IsExists(M_Souko_Entity mse)
         {
             M_Souko_DL msdl = new M_Souko_DL();

@@ -36,6 +36,7 @@ namespace MasterTouroku_Program
             
             BindType();
             scProgramID.SetFocus(1);
+
         }
         
         private void SetRequireField()
@@ -277,7 +278,7 @@ namespace MasterTouroku_Program
                 ProcessMode = ModeText,
                 ProgramID=InProgramID,
                 Operator = InOperatorCD,
-                Key = scProgramID.Code + " " + scProgramID.ChangeDate,
+                Key = scProgramID.Code,
                 PC = InPcID
             };
             return mpe;
@@ -316,7 +317,7 @@ namespace MasterTouroku_Program
                             scProgramID.SetFocus(1);
                             return false;
                         }
-                        if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text) && !string.IsNullOrWhiteSpace(scProgramCopy.ChangeDate))
+                        if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
                         {
                             if (!scProgramCopy.IsExists(1))
                             {

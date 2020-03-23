@@ -30,6 +30,17 @@ namespace DL
             return SelectData(dic,sp);
             
         }
+        public DataTable M_ProgramSearch(M_Program_Entity mpe)
+        {
+            string sp = "M_ProgramSearch";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@ProgramID",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.Program_ID} },
+                {"@ProgramName",new ValuePair{value1=SqlDbType.VarChar,value2=mpe.ProgramName} }
+            };
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
         public bool M_Program_Insert_Update(M_Program_Entity mpe, int mode)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
@@ -64,6 +75,7 @@ namespace DL
             };
             return InsertUpdateDeleteData(dic, "M_Program_Delete");
         }
+
 
     //    public DataTable Store_SelectAll(M_Store_Entity mbe)
     //    {
