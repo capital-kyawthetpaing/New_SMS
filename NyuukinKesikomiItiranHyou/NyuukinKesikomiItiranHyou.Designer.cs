@@ -180,6 +180,7 @@
             this.ScCollectCustomerCD.Value1 = null;
             this.ScCollectCustomerCD.Value2 = null;
             this.ScCollectCustomerCD.Value3 = null;
+            this.ScCollectCustomerCD.Enter += new System.EventHandler(this.ScCollectCustomerCD_Enter);
             // 
             // cboWebCollectType
             // 

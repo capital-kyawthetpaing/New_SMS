@@ -98,18 +98,21 @@ namespace NyuukinKesikomiItiranHyou
             if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
             {
                 nkih_bl.ShowMessage("E103");
+                txtCollectDateF.Focus();
                 return false;
             }
 
             if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
             {
                 nkih_bl.ShowMessage("E103");
+                txtInputDateF.Focus();
                 return false;
             }
 
             if (!ScCollectCustomerCD.IsExists())
             {
                 nkih_bl.ShowMessage("E101");
+                ScCollectCustomerCD.SetFocus(1);
                 return false;
             }
             return true;
@@ -149,9 +152,9 @@ namespace NyuukinKesikomiItiranHyou
                                 // 印字データをセット
                                 Nkh_report.SetDataSource(dtReport);
                                 Nkh_report.Refresh();
-                                Nkh_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
-                                Nkh_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
-                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                //Nkh_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
+                                //Nkh_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
+                                //Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
                                 //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
                                 // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
                                 // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
@@ -217,12 +220,12 @@ namespace NyuukinKesikomiItiranHyou
 
                         }
                         //プログラム実行履歴
-                        InsertLog(Get_L_Log_Entity());
+                        //InsertLog(Get_L_Log_Entity());
                     }
                     finally
                     {
                         //画面はそのまま
-                        txtTargetPeriodF.Focus();
+                        txtCollectDateF.Focus();
                     }
                 }
 
@@ -241,6 +244,12 @@ namespace NyuukinKesikomiItiranHyou
                 CollectCustomerCD = ScCollectCustomerCD.Code
             };
             return dce;
+        }
+
+        private void ScCollectCustomerCD_Enter(object sender, EventArgs e)
+        {
+            ScCollectCustomerCD.Value1 = cboStoreAuthorizations.SelectedValue.Equals("-1") ? "" : cboStoreAuthorizations.SelectedValue.ToString();
+            ScCollectCustomerCD.Value2 = "3";
         }
     }
 }
