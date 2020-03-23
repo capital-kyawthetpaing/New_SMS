@@ -615,7 +615,7 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 10;
+                    TxtCode.MaxLength = 100;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
@@ -899,6 +899,18 @@ namespace Search
                         }
                     }
                     break;
+
+                //2020.03.23 add by ses---
+                case SearchType.プログラムID:
+                    using (Search_Program frmProgram = new Search_Program(Value1))
+                    {
+                        frmProgram.ShowDialog();
+                        if (!frmProgram.flgCancel)
+                        {
+                            txtCode.Text = frmProgram.ProgramID;
+                        }
+                        break;
+                    }
                 case SearchType.SKU_ITEM_CD:
                     using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
