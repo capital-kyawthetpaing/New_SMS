@@ -10,17 +10,21 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using CrystalDecisions.Shared;
 
 namespace NyuukinKesikomiItiranHyou
 {
     public partial class NyuukinKesikomiItiranHyou : FrmMainForm
     {
         NyuukinKesikomiItiranHyou_BL nkih_bl;
-
+        D_Collect_Entity dce;
+        DataTable dtReport;
+        Viewer vr;
         public NyuukinKesikomiItiranHyou()
         {
             InitializeComponent();
             nkih_bl = new NyuukinKesikomiItiranHyou_BL();
+            vr = new Viewer();
         }
 
         private void NyuukinKesikomiItiranHyou_Load(object sender, EventArgs e)
@@ -41,6 +45,202 @@ namespace NyuukinKesikomiItiranHyou
         private void SetRequireField()
         {
             cboStoreAuthorizations.Require(true);
+        }
+
+        private void NyuukinKesikomiItiranHyou_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+
+        /// <summary>
+        /// Clear data of Panel Detail 
+        /// </summary>
+        public void Clear()
+        {
+            Clear(panelDetail);
+            txtCollectDateF.Focus();
+        }
+
+        /// <summary>
+        /// Functions processes for F1,F6
+        /// </summary>
+        /// <param name="index"></param>
+        public override void FunctionProcess(int index)
+        {
+            base.FunctionProcess(index);
+            switch (index + 1)
+            {
+                case 6: //F6:キャンセル
+                    {
+                        //Ｑ００４				
+                        if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                        {
+                            Clear();
+                        }
+                        break;
+                    }
+            }
+        }
+
+        /// <summary>
+        /// Check Errors before Export Report
+        /// </summary>
+        private bool ErrorCheck()
+        {
+            if (!RequireCheck(new Control[] { cboStoreAuthorizations }))
+                return false;
+
+            if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+            {
+                nkih_bl.ShowMessage("E103");
+                return false;
+            }
+
+            if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+            {
+                nkih_bl.ShowMessage("E103");
+                return false;
+            }
+
+            if (!ScCollectCustomerCD.IsExists())
+            {
+                nkih_bl.ShowMessage("E101");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Print Report on F12 Click
+        /// </summary>
+        protected override void PrintSec()
+        {
+            if (PrintMode != EPrintMode.DIRECT)
+                return;
+
+            if (ErrorCheck())
+            {
+                dce = D_Collect_data();
+               
+
+               
+                dtReport = new DataTable();
+                //dtReport = nkih_bl.ZaikoMotochoulnsatsu_Report(sku_data, dms, chk);
+
+                if (dtReport.Rows.Count > 0)
+                {
+                    try
+                    {
+                        NyuukinKesikomiItiranHyou_Report Nkh_report = new NyuukinKesikomiItiranHyou_Report();
+                        DialogResult DResult;
+                        switch (PrintMode)
+                        {
+                            case EPrintMode.DIRECT:
+                                DResult = bbl.ShowMessage("Q201");
+                                if (DResult == DialogResult.Cancel)
+                                {
+                                    return;
+                                }
+                                // 印字データをセット
+                                Nkh_report.SetDataSource(dtReport);
+                                Nkh_report.Refresh();
+                                Nkh_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
+                                Nkh_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
+                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
+                                // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
+                                // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
+
+                                vr.CrystalReportViewer1.ReportSource = Nkh_report;
+                               
+                                try
+                                {
+
+                                    //  crv = vr.CrystalReportViewer1;
+                                }
+                                catch (Exception ex)
+                                {
+                                    var msg = ex.Message;
+                                }
+                                //out log before print
+                                if (DResult == DialogResult.Yes)
+                                {
+
+                                    //印刷処理プレビュー
+                                    vr.CrystalReportViewer1.ShowPrintButton = true;
+                                    vr.CrystalReportViewer1.ReportSource = Nkh_report;
+
+                                    vr.ShowDialog();
+
+                                }
+                                else
+                                {
+                                    //int marginLeft = 360;
+                                    CrystalDecisions.Shared.PageMargins margin = Nkh_report.PrintOptions.PageMargins;
+                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                    margin.topMargin = DefaultMargin.Top;
+                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                    margin.rightMargin = DefaultMargin.Right;
+                                    Nkh_report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                    // プリンタに印刷
+                                    System.Drawing.Printing.PageSettings ps;
+                                    try
+                                    {
+                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                        Nkh_report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                        Nkh_report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                        Nkh_report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                        Nkh_report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
+                                }
+                                break;
+
+                        }
+                        //プログラム実行履歴
+                        InsertLog(Get_L_Log_Entity());
+                    }
+                    finally
+                    {
+                        //画面はそのまま
+                        txtTargetPeriodF.Focus();
+                    }
+                }
+
+            }
+        }
+
+        private D_Collect_Entity D_Collect_data()
+        {
+            dce = new D_Collect_Entity
+            {
+                CollectDateFrom = txtCollectDateF.Text,
+                CollectDateTo = txtCollectDateT.Text,
+                InputDateFrom = txtInputDateF.Text,
+                InputDateTo = txtInputDateT.Text,
+                WebCollectType = cboWebCollectType.SelectedValue.ToString(),
+                CollectCustomerCD = ScCollectCustomerCD.Code
+            };
+            return dce;
         }
     }
 }

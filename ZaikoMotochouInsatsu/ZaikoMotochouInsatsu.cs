@@ -18,6 +18,7 @@ namespace ZaikoMotochouInsatsu
     public partial class ZaikoMotochouInsatsu : FrmMainForm
     {
         ZaikoMotochouInsatsu_BL zmibl;
+        
        // CrystalDecisions.Windows.Forms.CrystalReportViewer crv;
         Viewer vr;
         DataTable dtReport;
@@ -80,11 +81,11 @@ namespace ZaikoMotochouInsatsu
                 case 6: //F6:キャンセル
                     {
                         //Ｑ００４				
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-
+                        if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                        {
+                            Clear();
+                        }
                         break;
-
                     }
                 //case 11:
                 //    PrintSec();

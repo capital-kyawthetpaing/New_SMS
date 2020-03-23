@@ -201,6 +201,12 @@
     <Compile Include="Search_Product.designer.cs">
       <DependentUpon>Search_Product.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search_Program.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search_Program.Designer.cs">
+      <DependentUpon>Search_Program.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search_ShiireNO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search_Product.resx">
       <DependentUpon>Search_Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search_Program.resx">
+      <DependentUpon>Search_Program.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Search_ShiireNO.resx">
       <DependentUpon>Search_ShiireNO.cs</DependentUpon>
