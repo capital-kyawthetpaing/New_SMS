@@ -180,6 +180,7 @@
             this.ScCollectCustomerCD.Value1 = null;
             this.ScCollectCustomerCD.Value2 = null;
             this.ScCollectCustomerCD.Value3 = null;
+            this.ScCollectCustomerCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScCollectCustomerCD_CodeKeyDownEvent);
             this.ScCollectCustomerCD.Enter += new System.EventHandler(this.ScCollectCustomerCD_Enter);
             // 
             // cboWebCollectType
@@ -221,6 +222,7 @@
             this.txtInputDateT.TabIndex = 9;
             this.txtInputDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInputDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtInputDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInputDateT_KeyDown);
             // 
             // txtInputDateF
             // 
@@ -271,6 +273,7 @@
             this.txtCollectDateT.TabIndex = 7;
             this.txtCollectDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCollectDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtCollectDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCollectDateT_KeyDown);
             // 
             // txtCollectDateF
             // 
