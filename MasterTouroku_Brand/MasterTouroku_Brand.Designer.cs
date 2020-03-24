@@ -35,11 +35,11 @@
             this.複写ブランドCD = new CKM_Controls.CKM_Label();
             this.ScCopyBrand = new Search.CKM_SearchControl();
             this.PanelDetail = new System.Windows.Forms.Panel();
+            this.txtKanaName = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtBrandName = new CKM_Controls.CKM_TextBox();
             this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelNormal.SuspendLayout();
@@ -183,6 +183,48 @@
             this.PanelDetail.Size = new System.Drawing.Size(1776, 799);
             this.PanelDetail.TabIndex = 1;
             // 
+            // txtKanaName
+            // 
+            this.txtKanaName.AllowMinus = false;
+            this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtKanaName.BackColor = System.Drawing.Color.White;
+            this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtKanaName.DecimalPlace = 0;
+            this.txtKanaName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtKanaName.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
+            this.txtKanaName.IntegerPart = 0;
+            this.txtKanaName.IsCorrectDate = true;
+            this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.IsNumber = true;
+            this.txtKanaName.IsShop = false;
+            this.txtKanaName.Length = 20;
+            this.txtKanaName.Location = new System.Drawing.Point(135, 55);
+            this.txtKanaName.MaxLength = 20;
+            this.txtKanaName.MoveNext = true;
+            this.txtKanaName.Name = "txtKanaName";
+            this.txtKanaName.Size = new System.Drawing.Size(100, 19);
+            this.txtKanaName.TabIndex = 3;
+            this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_Label2
+            // 
+            this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
+            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label2.Location = new System.Drawing.Point(82, 59);
+            this.ckM_Label2.Name = "ckM_Label2";
+            this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label2.TabIndex = 2;
+            this.ckM_Label2.Text = "カナ名";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -243,46 +285,6 @@
             this.btnDisplay.Text = "表示(F11)";
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
-            // 
-            // ckM_Label2
-            // 
-            this.ckM_Label2.AutoSize = true;
-            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label2.Location = new System.Drawing.Point(82, 59);
-            this.ckM_Label2.Name = "ckM_Label2";
-            this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label2.TabIndex = 2;
-            this.ckM_Label2.Text = "カナ名";
-            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtKanaName
-            // 
-            this.txtKanaName.AllowMinus = false;
-            this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtKanaName.DecimalPlace = 0;
-            this.txtKanaName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.txtKanaName.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
-            this.txtKanaName.IntegerPart = 0;
-            this.txtKanaName.IsCorrectDate = true;
-            this.txtKanaName.isEnterKeyDown = false;
-            this.txtKanaName.IsNumber = true;
-            this.txtKanaName.IsShop = false;
-            this.txtKanaName.Length = 20;
-            this.txtKanaName.Location = new System.Drawing.Point(135, 55);
-            this.txtKanaName.MaxLength = 20;
-            this.txtKanaName.MoveNext = true;
-            this.txtKanaName.Name = "txtKanaName";
-            this.txtKanaName.Size = new System.Drawing.Size(100, 19);
-            this.txtKanaName.TabIndex = 3;
-            this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // FrmMasterTouroku_Brand
             // 

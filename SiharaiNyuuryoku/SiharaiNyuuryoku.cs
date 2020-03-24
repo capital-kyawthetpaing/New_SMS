@@ -54,16 +54,15 @@ namespace SiharaiNyuuryoku
             ScPaymentProcessNum.SearchEnable = false;
             ScPaymentNum.SearchEnable = false;
 
-            Btn_F7.Enabled = true;
+            Btn_F7.Enabled = false;
             Btn_F7.Text = "編集(F7)";
            
 
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
 
-            //mse.StaffCD = InOperatorCD;
-            //mse.ChangeDate = DateTime.Now.ToShortDateString();       
             ScStaff.Code = InOperatorCD;
+            ScStaff.ChangeDate = DateTime.Today.ToShortDateString();
             ScStaff.SelectData();
 
             cboPaymentSourceAcc.Enabled = false;
@@ -156,6 +155,7 @@ namespace SiharaiNyuuryoku
                     F12Enable = true;
                     btnF10Show.Enabled = true;
                     F11Enable = false;
+                    Clear();
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
@@ -175,6 +175,7 @@ namespace SiharaiNyuuryoku
                     ScPayee.SearchEnable = false;
                     F12Enable = true;
                     btnF10Show.Enabled = F11Enable = false;
+                    Clear();
                     break;
             }
             ScPaymentProcessNum.SetFocus(1);
@@ -213,6 +214,8 @@ namespace SiharaiNyuuryoku
                     {
                         SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD,dppe.PayeeCD, dppe.PayPlanDate, dt4, dt4Detail);
                         f2.ShowDialog();
+                        dt4 = f2.dtGdv;
+                        dt4Detail = f2.dtDetails;
                     }                  
                 }
                 else
@@ -224,6 +227,8 @@ namespace SiharaiNyuuryoku
                     {
                         SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD, dppe.PayeeCD, dppe.PayPlanDate, dt3, dt2);
                         f2.ShowDialog();
+                        dt3 = f2.dtGdv;
+                        dt2 = f2.dtDetails;
                     }                 
                 }             
             }       
@@ -249,7 +254,7 @@ namespace SiharaiNyuuryoku
                         month = 0 + DateTime.Now.Month.ToString();
                     }
                     string day = DateTime.Today.Day.ToString();
-                    txtPaymentDate.Text = year +"/"+month+"/"+day;
+                    txtPaymentDate.Text = year +"/"+ month +"/"+day;
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
                     cboPaymentType.SelectedValue = "1";
@@ -258,8 +263,11 @@ namespace SiharaiNyuuryoku
                     dgvPayment.DataSource = dtpayplan;
                     dgvPayment.Rows[0].Selected = true;
                     Checkstate(true);
-                    
                     LabelDataBind();
+                    if(dgvPayment.Rows.Count > 0)
+                    {
+                        Btn_F7.Enabled = true;
+                    }
 
                     //if (dgvPayment.SelectedRows.Count != 0)
                     //{
@@ -308,6 +316,9 @@ namespace SiharaiNyuuryoku
                     //}                   
                 }
 
+                txtPaymentDate.ReadOnly = true;
+                ScStaff.TxtCode.ReadOnly = true;
+                ScStaff.SearchEnable = false;
                 EnablePanel(PanelDetail);             
                 btnSelectAll.Enabled = true;
                 btnReleaseAll.Enabled = true;
@@ -351,6 +362,7 @@ namespace SiharaiNyuuryoku
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();
+                Clear();
 
                 sibl.ShowMessage("I101");
             }
@@ -364,6 +376,7 @@ namespace SiharaiNyuuryoku
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();
+                Clear();
 
                 sibl.ShowMessage("I101");
             }
@@ -377,6 +390,7 @@ namespace SiharaiNyuuryoku
                 Clear(PanelHeader);
                 Clear(PanelDetail);
                 txtDueDate1.Focus();
+                Clear();
 
                 sibl.ShowMessage("I101");
             }
@@ -463,6 +477,7 @@ namespace SiharaiNyuuryoku
                 }
             }
         }
+
 
         #endregion
 
@@ -693,13 +708,11 @@ namespace SiharaiNyuuryoku
                         return false;
                     }
                 }
-
-
+                
                 if (!RequireCheck(new Control[] { ScStaff.TxtCode }))
                     return false;
                 else
                 {
-
                     mse.StaffCD = ScStaff.TxtCode.Text;
                     mse.ChangeDate = txtPaymentDate.Text;
                     DataTable dtstaff = new DataTable();
@@ -716,6 +729,7 @@ namespace SiharaiNyuuryoku
                         ScStaff.LabelText = dtstaff.Rows[0]["StaffName"].ToString();
                     }
                 }
+
                 //if (!RequireCheck(new Control[] {cboPaymentType}))
                 if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
                 {
@@ -767,36 +781,7 @@ namespace SiharaiNyuuryoku
                 }
 
             }
-
-            //foreach (DataGridViewRow row1 in dgvPayment.Rows)
-            //{
-            //    if (Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
-            //    {
-            //        if (string.IsNullOrWhiteSpace(row1.Cells["colPaymenttime"].ToString()))
-            //        {
-            //            sibl.ShowMessage("E102");
-            //            return false;
-            //        }
-            //        else
-            //        {
-            //            string payment = row1.Cells["colPaymenttime"].Value.ToString();
-            //            string unpaid = row1.Cells["colUnpaidAmount"].Value.ToString();
-            //            int result = payment.CompareTo(unpaid);
-            //            if (result > 0)
-            //            {
-            //                sibl.ShowMessage("E143");
-            //                return false;
-            //            }
-
-            //            if (Convert.ToInt32(payment) < 0)
-            //            {
-            //                sibl.ShowMessage("E143");
-            //                return false;
-            //            }
-            //        }
-            //    }
-            //}
-
+            
             return true;
         }
 
@@ -828,22 +813,21 @@ namespace SiharaiNyuuryoku
                 ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
                 Checkstate(true);
                 dgvPayment.Rows[0].Selected = true;
-
                 LabelDataBind();
-
-                if (dgvPayment.CurrentRow.Index > -1)
+                if (dgvPayment.Rows.Count > 0)
                 {
-                    DataGridViewRow row = dgvPayment.CurrentRow;
+                    Btn_F7.Enabled = true;
+                    if (dgvPayment.CurrentRow.Index > -1)
+                    {
+                        DataGridViewRow row = dgvPayment.CurrentRow;
+                        dpe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
+                        dpe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
 
-                    dpe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
-                    dpe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
-
-                    dt2 = sibl.D_Pay_Select2(dpe);
-                    dt3 = sibl.D_Pay_Select3(dpe);
-
-                }
-                    //vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
-
+                        dt2 = sibl.D_Pay_Select2(dpe);
+                        dt3 = sibl.D_Pay_Select3(dpe);
+                    }
+                }    
+                //vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
             }
             
             EnablePanel(PanelDetail);
@@ -938,6 +922,17 @@ namespace SiharaiNyuuryoku
                 dtTemp6 = dt3
             };
             return dpe;
+        }
+
+        private void Clear()
+        {
+            lblPayPlan.Text = string.Empty;
+            lblGakuTotal.Text = string.Empty;
+            lblPayConfirmGaku.Text = string.Empty;
+            lblPayGaku.Text = string.Empty;
+            lblPayPlanGaku.Text = string.Empty;
+            lblTransferFeeGaku.Text = string.Empty;
+            lblTransferGaku.Text = string.Empty;
         }
 
        
