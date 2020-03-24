@@ -145,14 +145,12 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StaffCD } },
-                { "@PayDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayDate } },
-                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
-                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },
+                { "@PayNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PayNo } },
+                { "@LargePayNO", new ValuePair{value1 = SqlDbType.VarChar, value2 = dpe.LargePayNO} },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.Operator } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD } },
-                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } },
-                { "@TotalPayGaku", new ValuePair { value1 = SqlDbType.Money, value2 = dpe.PayGakuTotol } },
+                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProgramID } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.PC } },               
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.ProcessMode } }           
                 //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpe.StoreCD +" "+ dpe.Key  } }
             };
 
