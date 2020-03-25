@@ -40,7 +40,6 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtBrandName = new CKM_Controls.CKM_TextBox();
             this.btnDisplay = new CKM_Controls.CKM_Button();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelNormal.SuspendLayout();
@@ -174,7 +173,6 @@
             // 
             // PanelDetail
             // 
-            this.PanelDetail.Controls.Add(this.ckM_TextBox1);
             this.PanelDetail.Controls.Add(this.txtKanaName);
             this.PanelDetail.Controls.Add(this.ckM_Label2);
             this.PanelDetail.Controls.Add(this.ckM_Label1);
@@ -288,29 +286,6 @@
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
-            // ckM_TextBox1
-            // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(132, 96);
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 4;
-            this.ckM_TextBox1.Text = "Test";
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // FrmMasterTouroku_Brand
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -351,7 +326,6 @@
         private CKM_Controls.CKM_TextBox txtBrandName;
         private CKM_Controls.CKM_TextBox txtKanaName;
         private CKM_Controls.CKM_Label ckM_Label2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
     }
 }
 
