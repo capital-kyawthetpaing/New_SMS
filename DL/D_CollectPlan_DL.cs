@@ -138,5 +138,21 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
+        public DataTable NyuukinKesikomiItiranHyou_Report(D_Collect_Entity collect_data)
+        {
+            string sp = "NyuukinKesikomiItiranHyou_Report";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@CollectDateF", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.CollectDateFrom } },
+                 { "@CollectDateT", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.CollectDateTo } },
+                 { "@InputDateTimeF", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.InputDateFrom } },
+                 { "@InputDateTimeT", new ValuePair { value1 = SqlDbType.Date, value2 = collect_data.InputDateTo } },
+                 { "@WebCollectType", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.WebCollectType } },
+                 { "@CollectCustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = collect_data.CollectCustomerCD } }
+            };
+            return SelectData(dic, sp);
+        }
     }
 }

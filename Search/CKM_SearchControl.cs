@@ -1681,7 +1681,7 @@ namespace Search
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 7, TxtCode.Text);
                     break;
                 case SearchType.得意先:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 8, txtCode.Text);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 8, txtCode.Text);
                     break;
 
                 case SearchType.HanyouKeyStart:
