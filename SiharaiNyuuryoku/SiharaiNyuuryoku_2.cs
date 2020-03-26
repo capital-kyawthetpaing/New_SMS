@@ -143,7 +143,7 @@ namespace SiharaiNyuuryoku
 
             SelectKeyData();
 
-            SetRequireField();
+            //SetRequireField();
         }
 
         private void BindData()
@@ -392,6 +392,7 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
                     return false;
 
+                SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
                 if (!SC_BankCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
@@ -402,6 +403,7 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_BranchCD.TxtCode }))
                     return false;
 
+                SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
                 if (!SC_BranchCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");

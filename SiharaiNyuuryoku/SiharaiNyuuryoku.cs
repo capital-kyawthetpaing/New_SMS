@@ -289,7 +289,7 @@ namespace SiharaiNyuuryoku
 
 
                             dt4.Columns.Remove("TransferGaku");
-                            dt4.Columns.Remove("TransferFeeGaku");
+                            //dt4.Columns.Remove("TransferFeeGaku");
                             dt4.Columns.Remove("VendorName");
                             dt4.Columns.Remove("BankCD");
                             dt4.Columns.Remove("BankName");
