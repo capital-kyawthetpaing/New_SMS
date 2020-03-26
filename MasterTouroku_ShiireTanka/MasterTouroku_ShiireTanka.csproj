@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A30D03FF-4838-4272-B29E-A91F83341D0A}</ProjectGuid>
+    <ProjectGuid>{0E17928E-C9E2-4D8E-B9A8-CF332100EE3F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>NyuukinKesikomiItiranHyou</RootNamespace>
-    <AssemblyName>NyuukinKesikomiItiranHyou</AssemblyName>
+    <RootNamespace>MasterTouroku_ShiireTanka</RootNamespace>
+    <AssemblyName>MasterTouroku_ShiireTanka</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,22 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\CrystalDecisions.ReportSource.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\CrystalDecisions.Shared.dll</HintPath>
-    </Reference>
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -62,34 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NyuukinKesikomiItiranHyou.cs">
+    <Compile Include="MasterTouroku_ShiireTanka.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NyuukinKesikomiItiranHyou.Designer.cs">
-      <DependentUpon>NyuukinKesikomiItiranHyou.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NyuukinKesikomiItiranHyou_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NyuukinKesikomiItiranHyou_Report.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="NyuukinKesikomiltiranHyou_DS.cs">
-      <DependentUpon>NyuukinKesikomiltiranHyou_DS.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="NyuukinKesikomiltiranHyou_DS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NyuukinKesikomiltiranHyou_DS.xsd</DependentUpon>
+    <Compile Include="MasterTouroku_ShiireTanka.Designer.cs">
+      <DependentUpon>MasterTouroku_ShiireTanka.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NyuukinKesikomiItiranHyou.resx">
-      <DependentUpon>NyuukinKesikomiItiranHyou.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NyuukinKesikomiItiranHyou_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>NyuukinKesikomiItiranHyou_Report.cs</LastGenOutput>
+    <EmbeddedResource Include="MasterTouroku_ShiireTanka.resx">
+      <DependentUpon>MasterTouroku_ShiireTanka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,17 +66,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="NyuukinKesikomiltiranHyou_DS.xsc">
-      <DependentUpon>NyuukinKesikomiltiranHyou_DS.xsd</DependentUpon>
-    </None>
-    <None Include="NyuukinKesikomiltiranHyou_DS.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>NyuukinKesikomiltiranHyou_DS.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="NyuukinKesikomiltiranHyou_DS.xss">
-      <DependentUpon>NyuukinKesikomiltiranHyou_DS.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -134,20 +89,21 @@
       <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
-      <Project>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</Project>
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
+      <Name>DL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
     </ProjectReference>
     <ProjectReference Include="..\Search\Search.csproj">
-      <Project>{83D6364B-73EA-4288-BCE7-55A1119EE5A2}</Project>
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
       <Name>Search</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
