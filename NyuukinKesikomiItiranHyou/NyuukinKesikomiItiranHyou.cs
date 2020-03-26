@@ -153,11 +153,8 @@ namespace NyuukinKesikomiItiranHyou
             if (ErrorCheck())
             {
                 dce = D_Collect_data();
-               
-
-               
                 dtReport = new DataTable();
-                //dtReport = nkih_bl.ZaikoMotochoulnsatsu_Report(sku_data, dms, chk);
+                dtReport = nkih_bl.NyuukinKesikomiItiranHyou_Report(dce);
 
                 if (dtReport.Rows.Count > 0)
                 {
