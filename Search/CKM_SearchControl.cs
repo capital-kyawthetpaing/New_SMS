@@ -1688,9 +1688,12 @@ namespace Search
                     break;
 
                 case SearchType.HanyouKeyStart:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
-                    //20200317
+                case SearchType.HanyouKeyEnd:
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1);
+                    break;
+                //20200317
                 case SearchType.ブランド:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 11, txtCode.Text, Value1);
                     break;
