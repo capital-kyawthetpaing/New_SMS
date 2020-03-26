@@ -52,7 +52,7 @@
     </Reference>
     <Reference Include="ElencySolutions.CsvHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\ElencySolutions.CsvHelper.dll</HintPath>
+      <HintPath>..\Search\RequiredDLL\ElencySolutions.CsvHelper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

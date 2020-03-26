@@ -11,9 +11,9 @@ namespace MasterTouroku_Brand
 {
     public partial class FrmMasterTouroku_Brand : FrmMainForm
     {
-        M_Brand_Entity mbe;     
+        M_Brand_Entity mbe;    
         MasterTouroku_Brand_BL mtkbl;
-        int type = 0;//1 = normal, 2 = copy (for f11)
+        int type = 0;//1 = normal, 2 = copy (for f11) 
 
         public FrmMasterTouroku_Brand()
         {
@@ -42,7 +42,7 @@ namespace MasterTouroku_Brand
             //***SearchControl.TxtCode.Require(true);         
             //ScBrandCD.TxtCode.Require(true);
             txtBrandName.Require(true);
-
+            txtKanaName.Require(true);
         }
 
         /// <summary>
@@ -204,7 +204,7 @@ namespace MasterTouroku_Brand
             if(dt.Rows.Count > 0)
             {
                 txtBrandName.Text = dt.Rows[0]["BrandName"].ToString();
-
+                txtKanaName.Text = dt.Rows[0]["BrandKana"].ToString();
             }
         }
         #endregion
@@ -273,12 +273,12 @@ namespace MasterTouroku_Brand
             {
                 BrandCD = ScBrandCD.Code,
                 BrandName = txtBrandName.Text,
+                BrandKana=txtKanaName.Text,
                 ChangeDate = DateTime.Today.ToShortDateString(),
                 ProcessMode = ModeText,
                 InsertOperator = InOperatorCD,
                 ProgramID = InProgramID,
                 PC = InPcID
-
             };
             return mbe;
         }
@@ -370,6 +370,12 @@ namespace MasterTouroku_Brand
                 {
                     mtkbl.ShowMessage("E102");
                     txtBrandName.Focus();
+                    return false;
+                }
+                if(string.IsNullOrWhiteSpace(txtKanaName.Text))
+                {
+                    mtkbl.ShowMessage("E102");
+                    txtKanaName.Focus();
                     return false;
                 }
 

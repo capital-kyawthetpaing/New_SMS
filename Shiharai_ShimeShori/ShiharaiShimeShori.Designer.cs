@@ -299,6 +299,7 @@
             this.F10Visible = false;
             this.F7Visible = false;
             this.F8Visible = false;
+            this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "Shiharai_ShimeShori";

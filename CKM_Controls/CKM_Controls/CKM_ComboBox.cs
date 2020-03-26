@@ -52,7 +52,7 @@ namespace CKM_Controls
             処理権限,
             店舗権限,
             役職,
-            店舗名,
+            //店舗名,
             データ種別,
             貨幣金種名,
             支払予定月,
@@ -67,6 +67,12 @@ namespace CKM_Controls
             送料条件,
             タグ,
             発注,
+            予約,      //20200316       
+            特記,
+            送料,
+            発注フラグ,
+            タグフラグ,  //20200316
+
             /// <summary>
             /// SoukoType IN (3,4)
             /// </summary>
@@ -304,11 +310,11 @@ namespace CKM_Controls
                     DataTable dtpayment = mulbl.M_MultiPorpose_SupplierSelect(mmule);
                     BindCombo("Key", "Char1", dtpayment);
                     break;
-                case CboType.店舗名:
-                    Store_BL storebl = new Store_BL();
-                    DataTable storetb = storebl.BindData(mse);
-                    BindCombo("StoreCD", "StoreName", storetb);
-                    break;
+                //case CboType.店舗名:
+                //    Store_BL storebl = new Store_BL();
+                //    DataTable storetb = storebl.BindData(mse);
+                //    BindCombo("StoreCD", "StoreName", storetb);
+                //    break;
                 case CboType.受注確度:
                 case CboType.予定金種:
                 case CboType.年度:
@@ -320,6 +326,12 @@ namespace CKM_Controls
                 case CboType.タグ:
                 case CboType.入荷予定状況:
                 case CboType.識別:
+                case CboType.予約:   //20200316
+                case CboType.特記:
+                case CboType.送料:
+                case CboType.発注フラグ:
+                case CboType.タグフラグ:   //20200316
+               
 
                     MultiPorpose_BL mbl = new MultiPorpose_BL();
                     M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
@@ -366,6 +378,27 @@ namespace CKM_Controls
                         case CboType.識別:
                             me.ID = MultiPorpose_BL.ID_Identification;
                             kbn = 1;
+                            break;
+                                 //20200316
+                        case CboType.予約:
+                            me.ID = MultiPorpose_BL.ID_ReserveCD;
+                            kbn = 0;
+                            break;
+                        case CboType.特記:
+                            me.ID = MultiPorpose_BL.ID_NoticesCD;
+                            kbn = 0;
+                            break;
+                        case CboType.送料:
+                            me.ID = MultiPorpose_BL.ID_PostageCD;
+                            kbn = 0;
+                            break;
+                        case CboType.発注フラグ:
+                            me.ID = MultiPorpose_BL.ID_OrderAttentionCD;
+                            kbn = 0;
+                            break;
+                        case CboType.タグフラグ:
+                            me.ID = MultiPorpose_BL.ID_TagName;
+                            kbn = 0;
                             break;
                     }
                     if (kbn == 0)

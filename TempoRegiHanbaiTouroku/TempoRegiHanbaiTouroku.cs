@@ -17,7 +17,7 @@ namespace TempoRegiHanbaiTouroku
 {
     public partial class TempoRegiHanbaiTouroku : ShopBaseForm
     {
-        private const string TempoRegiRyousyuusyo = "TempoRegiRyousyuusyo.exe";
+        private const string TempoRegiRyousyuusyo = "TempoRegiRyousyuusyo.exe"; 
         private const string ZaikoSyokai = "ZaikoSyokai.exe";
 
         private enum meCol : short

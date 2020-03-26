@@ -105,14 +105,15 @@ namespace DL
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.ChangeDate } },
                 { "@ShoguchiFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 =mve.ShoguchiFlg  } },
                 { "@VendorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorName } },
+                { "@VendorShortName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorShortName } },  //Add By SawLay
                 { "@VendorLongName1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorLongName1 } },
                 { "@VendorLongName2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorLongName2 } },
                 { "@VendorPostName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorPostName } },
                 { "@VendorPositionName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorPositionName } },
                 { "@VendorStaffName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorStaffName} },
                 { "@VendorKana", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.VendorKana } },
-                { "@PayeeFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.PayeeFlg } },
-                { "@MoneyPayeeFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.MoneyPayeeFlg } },
+                { "@PayeeFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.PayeeFlg } },
+                { "@MoneyPayeeFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.MoneyPayeeFlg } },
                 { "@PayeeCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.PayeeCD } },
                 { "@MoneyPayeeCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.MoneyPayeeCD } },
                 { "@ZipCD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.ZipCD1 } },
@@ -132,12 +133,17 @@ namespace DL
                 { "@KouzaNo " , new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.KouzaNO } },
                 { "@KouzaMeigi ", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.KouzaMeigi } },
                 { "@KouzaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.KouzaCD } },
+                { "@TaxTiming", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.TaxTiming } },     //Add By SawLay
+                { "@TaxFractionKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.TaxFractionKBN } },   //Add By SawLay
+                { "@AmountFractionKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.AmountFractionKBN } },   //Add By SawLay
                 { "@NetFlg ", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.NetFlg } },
+                { "@EDIFlg ", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.EDIFlg } },    //Add By SawLay
+                { "@EDIVendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.EDIVendorCD } },   //Add By SawLay
                 { "@StaffCD ", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.StaffCD } },
                 { "@AnalyzeCD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.AnalyzeCD1 } },
-                { "@AnalyzeCD2", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.AnalyzeCD2 } },
+                { "@AnalyzeCD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.AnalyzeCD2 } },
                 { "@AnalyzeCD3 ", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.AnalyzeCD3 } },
-                { "@DisplayOrder", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.DisplayOrder } },
+                { "@DisplayOrder", new ValuePair { value1 = SqlDbType.Int, value2 = mve.DisplayOrder } },
                 { "@DisplayNote ", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.DisplayNote } },
                 { "@NotDisplayNote", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.NotDisplyNote } },
                 { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.DeleteFlg } },

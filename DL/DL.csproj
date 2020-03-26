@@ -122,6 +122,7 @@
     <Compile Include="M_JANOrderPrice_DL.cs" />
     <Compile Include="M_Kouza_DL.cs" />
     <Compile Include="M_Location_DL.cs" />
+    <Compile Include="M_MailPattern_DL.cs" />
     <Compile Include="M_MakerBrand_DL.cs" />
     <Compile Include="M_Message_DL.cs" />
     <Compile Include="Base_DL.cs" />

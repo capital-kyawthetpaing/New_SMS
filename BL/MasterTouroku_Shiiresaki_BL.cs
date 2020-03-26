@@ -35,6 +35,7 @@ namespace BL
             {
                 mve.ShoguchiFlg = dtVendor.Rows[0]["ShoguchiFlg"].ToString();
                 mve.VendorName = dtVendor.Rows[0]["VendorName"].ToString();
+                mve.VendorShortName = dtVendor.Rows[0]["VendorShortName"].ToString(); // Add By SawLay
                 mve.VendorKana = dtVendor.Rows[0]["VendorKana"].ToString();
                 mve.VendorLongName1 = dtVendor.Rows[0]["VendorLongName1"].ToString();
                 mve.VendorLongName2 = dtVendor.Rows[0]["VendorLongName2"].ToString();
@@ -46,7 +47,7 @@ namespace BL
                 mve.Address1 = dtVendor.Rows[0]["Address1"].ToString();
                 mve.Address2 = dtVendor.Rows[0]["Address2"].ToString();
                 mve.MailAddress1 = dtVendor.Rows[0]["MailAddress1"].ToString();
-                mve.TelephoneNO = dtVendor.Rows[0]["TelphoneNO"].ToString();
+                mve.TelephoneNO = dtVendor.Rows[0]["TelephoneNO"].ToString();
                 mve.FaxNO = dtVendor.Rows[0]["FaxNO"].ToString();
                 mve.PayeeCD = dtVendor.Rows[0]["PayeeCD"].ToString();
                 mve.MoneyPayeeCD = dtVendor.Rows[0]["MoneyPayeeCD"].ToString();
@@ -54,6 +55,9 @@ namespace BL
                 mve.PaymentPlanKBN = dtVendor.Rows[0]["PaymentPlanKBN"].ToString();
                 mve.PaymentPlanDay = dtVendor.Rows[0]["PaymentPlanDay"].ToString();
                 mve.HolidayKBN = dtVendor.Rows[0]["HolidayKBN"].ToString();
+                mve.TaxTiming = dtVendor.Rows[0]["TaxTiming"].ToString();
+                mve.TaxFractionKBN = dtVendor.Rows[0]["TaxFractionKBN"].ToString();
+                mve.AmountFractionKBN = dtVendor.Rows[0]["AmountFractionKBN"].ToString();
                 mve.BankCD = dtVendor.Rows[0]["BankCD"].ToString();
                 mve.BankName = dtVendor.Rows[0]["BankName"].ToString();
                 mve.BranchCD = dtVendor.Rows[0]["BranchCD"].ToString();
@@ -64,6 +68,8 @@ namespace BL
                 mve.KouzaCD = dtVendor.Rows[0]["KouzaCD"].ToString();
                 mve.KouzaName = dtVendor.Rows[0]["KouzaName"].ToString();
                 mve.NetFlg = dtVendor.Rows[0]["NetFlg"].ToString();
+                mve.EDIFlg = dtVendor.Rows[0]["EDIFlg"].ToString();
+                mve.EDIVendorCD = dtVendor.Rows[0]["EDIVendorCD"].ToString();
                 mve.StaffCD = dtVendor.Rows[0]["StaffCD"].ToString();
                 mve.StaffName = dtVendor.Rows[0]["StaffName"].ToString();
                 mve.AnalyzeCD1 = dtVendor.Rows[0]["AnalyzeCD1"].ToString();
