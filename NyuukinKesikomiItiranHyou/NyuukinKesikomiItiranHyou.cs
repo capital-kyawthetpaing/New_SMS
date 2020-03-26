@@ -87,9 +87,8 @@ namespace NyuukinKesikomiItiranHyou
             }
         }
 
-        /// <summary>
-        /// Check Errors before Export Report
-        /// </summary>
+
+        #region  Check Errors before Export Report
         private bool ErrorCheck()
         {
             if (!RequireCheck(new Control[] { cboStoreAuthorizations }))
@@ -118,6 +117,31 @@ namespace NyuukinKesikomiItiranHyou
             return true;
         }
 
+        private void txtCollectDateT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                {
+                    nkih_bl.ShowMessage("E103");
+                    txtCollectDateF.Focus();
+                }
+            }
+        }
+
+        private void txtInputDateT_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                {
+                    nkih_bl.ShowMessage("E103");
+                    txtInputDateF.Focus();
+                }
+            }
+        }
+        #endregion
+
         /// <summary>
         /// Print Report on F12 Click
         /// </summary>
@@ -129,11 +153,8 @@ namespace NyuukinKesikomiItiranHyou
             if (ErrorCheck())
             {
                 dce = D_Collect_data();
-               
-
-               
                 dtReport = new DataTable();
-                //dtReport = nkih_bl.ZaikoMotochoulnsatsu_Report(sku_data, dms, chk);
+                dtReport = nkih_bl.NyuukinKesikomiItiranHyou_Report(dce);
 
                 if (dtReport.Rows.Count > 0)
                 {
@@ -152,13 +173,9 @@ namespace NyuukinKesikomiItiranHyou
                                 // 印字データをセット
                                 Nkh_report.SetDataSource(dtReport);
                                 Nkh_report.Refresh();
-                                //Nkh_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
-                                //Nkh_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
-                                //Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
-                                //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
-                                // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
-                                // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
-
+                                Nkh_report.SetParameterValue("lblStore", cboStoreAuthorizations.SelectedValue.ToString() + " " + cboStoreAuthorizations.Text);
+                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                Nkh_report.SetParameterValue("lblWebControlType", cboStoreAuthorizations.Text);
                                 vr.CrystalReportViewer1.ReportSource = Nkh_report;
                                
                                 try
@@ -248,8 +265,23 @@ namespace NyuukinKesikomiItiranHyou
 
         private void ScCollectCustomerCD_Enter(object sender, EventArgs e)
         {
-            ScCollectCustomerCD.Value1 = cboStoreAuthorizations.SelectedValue.Equals("-1") ? "" : cboStoreAuthorizations.SelectedValue.ToString();
-            ScCollectCustomerCD.Value2 = "3";
+            ScCollectCustomerCD.Value2 = cboStoreAuthorizations.SelectedValue.Equals("-1") ? "" : cboStoreAuthorizations.SelectedValue.ToString();
+            ScCollectCustomerCD.Value1 = "3";
+        }
+
+        private void ScCollectCustomerCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScCollectCustomerCD.Code))
+                {
+                    if (!ScCollectCustomerCD.SelectData())
+                    {
+                        nkih_bl.ShowMessage("E101");
+                        ScCollectCustomerCD.SetFocus(1);
+                    }
+                }
+            }
         }
     }
 }
