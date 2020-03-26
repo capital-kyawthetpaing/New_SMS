@@ -43,6 +43,7 @@ namespace SiharaiNyuuryoku
         }
         
         private void FrmSiharaiNyuuryoku_Load(object sender, EventArgs e)
+
         {
             InProgramID = "SiharaiNyuuryoku";
 
@@ -286,7 +287,9 @@ namespace SiharaiNyuuryoku
                             dt4Detail.Columns.Remove("UnpaidAmount2");
                             dt4Detail.Columns.Remove("PayPlanNO");
 
-                           
+
+                            dt4.Columns.Remove("TransferGaku");
+                            dt4.Columns.Remove("TransferFeeGaku");
                             dt4.Columns.Remove("VendorName");
                             dt4.Columns.Remove("BankCD");
                             dt4.Columns.Remove("BankName");
@@ -443,7 +446,7 @@ namespace SiharaiNyuuryoku
                 //{
                 //DataDisplay();
                 //}
-                ErrorCheck(10);
+                ErrorCheck(11);
             }
         }
 
@@ -577,6 +580,37 @@ namespace SiharaiNyuuryoku
         {
             if (index == 10)
             {
+                if (type == 3)
+                {
+                    if (!RequireCheck(new Control[] { txtDueDate2 }))
+                        return false;
+
+                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
+                        return false;
+                    else
+                    {
+                        mve.PayeeCD = ScPayee.TxtCode.Text;
+                        mve.ChangeDate = DateTime.Now.ToShortDateString();
+                        DataTable dtvendor = new DataTable();
+                        dtvendor = sibl.M_Vendor_Select(mve);
+                        if (dtvendor.Rows.Count == 0)
+                        {
+                            sibl.ShowMessage("115");
+                            ScPayee.SetFocus(1);
+                            return false;
+                        }
+                        else
+                        {
+                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                        }
+                    }
+
+
+                }
+
+            }
+            else if(index == 11)
+            {
                 if (type == 1)
                 {
                     DataTable dtpay = new DataTable();
@@ -627,6 +661,7 @@ namespace SiharaiNyuuryoku
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
+                        txtPaymentDate.Text = dtpayno.Rows[0]["PayDate"].ToString();
                         mfye.InputPossibleStartDate = txtPaymentDate.Text;
                         mfye.InputPossibleEndDate = txtPaymentDate.Text;
                         DataTable dtcontrol = new DataTable();
@@ -637,41 +672,12 @@ namespace SiharaiNyuuryoku
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
-                        else
-                        {
-                            DataDisplay();
-                        }
+                        //else
+                        //{
+                        //    DataDisplay();
+                        //}
                     }
                 }
-
-                if (type == 3)
-                {
-                    if (!RequireCheck(new Control[] { txtDueDate2 }))
-                        return false;
-
-                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
-                        return false;
-                    else
-                    {
-                        mve.PayeeCD = ScPayee.TxtCode.Text;
-                        mve.ChangeDate = DateTime.Now.ToShortDateString();
-                        DataTable dtvendor = new DataTable();
-                        dtvendor = sibl.M_Vendor_Select(mve);
-                        if (dtvendor.Rows.Count == 0)
-                        {
-                            sibl.ShowMessage("115");
-                            ScPayee.SetFocus(1);
-                            return false;
-                        }
-                        else
-                        {
-                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
-                        }
-                    }
-
-
-                }
-
             }
             else if (index == 12)
             {
