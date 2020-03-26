@@ -116,7 +116,8 @@ namespace PickingList
                         ShippingPlanDateTo = txtDateTo1.Text,
                         ShippingDate = txtShipmentDate.Text,
                         InsertOperator = InOperatorCD,
-
+                        ProgramID=this.InProgramID,
+                        PC=InPcID,
                     };
                     dtPrintData1 = plbl.PickingList_InsertUpdateSelect_Check1(dpe1);
                 }
