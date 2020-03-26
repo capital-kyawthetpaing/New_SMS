@@ -1543,6 +1543,9 @@ namespace Search
                     case SearchType.プログラムID:
                         dtResult = bbl.SimpleSelect1("55", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.得意先://Search_Customer
+                        dtResult = bbl.SimpleSelect1("45", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
             }
             else

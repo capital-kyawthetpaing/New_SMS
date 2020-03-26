@@ -173,13 +173,9 @@ namespace NyuukinKesikomiItiranHyou
                                 // 印字データをセット
                                 Nkh_report.SetDataSource(dtReport);
                                 Nkh_report.Refresh();
-                                //Nkh_report.SetParameterValue("lblYearMonth", txtTargetPeriodF.Text + "  ～  " + txtTargetPeriodT.Text);
-                                //Nkh_report.SetParameterValue("lblSouko", cboSouko.SelectedValue.ToString() + " " + cboSouko.Text);
-                                //Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
-                                //zm_report.SetParameterValue("lblSKU", dtReport.Rows[0]["SKUCD"].ToString());
-                                // zm_report.SetParameterValue("lblJANCD", dtReport.Rows[0]["JANCD"].ToString());
-                                // zm_report.SetParameterValue("lblCSB", dtReport.Rows[0]["ColorName"].ToString() + " " + dtReport.Rows[0]["SizeName"].ToString() + " " + dtReport.Rows[0]["BrandName"].ToString());
-
+                                Nkh_report.SetParameterValue("lblStore", cboStoreAuthorizations.SelectedValue.ToString() + " " + cboStoreAuthorizations.Text);
+                                Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
+                                Nkh_report.SetParameterValue("lblWebControlType", cboStoreAuthorizations.Text);
                                 vr.CrystalReportViewer1.ReportSource = Nkh_report;
                                
                                 try
