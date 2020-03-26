@@ -211,12 +211,6 @@ namespace ShiireShoukaiDetails
                 //ChkSumi = chkOk.Checked ? "1" : "0",
                 //ChkMi = chkNotOK.Checked ? "1" : "0",
                 StaffCD = scStaffCD.TxtCode.Text,
-                
-                
-
-
-               
-
             };
             return dpd_entity;
         }
@@ -377,6 +371,7 @@ namespace ShiireShoukaiDetails
 
             if (!string.IsNullOrEmpty(scMakerCD.TxtCode.Text))
             {
+                scMakerCD.ChangeDate = DateTime.Today.ToShortDateString();
                 if (!scMakerCD.IsExists(2))
                 {
                     ssdbl.ShowMessage("E101");
