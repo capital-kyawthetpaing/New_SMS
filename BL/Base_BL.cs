@@ -86,7 +86,7 @@ namespace BL
                 message += !string.IsNullOrWhiteSpace(dtMsg.Rows[0]["MessageText3"].ToString()) ? "\n\n" + ReplaceMessage(dtMsg.Rows[0]["MessageText3"].ToString(), mme) : string.Empty;
                 message += !string.IsNullOrWhiteSpace(dtMsg.Rows[0]["MessageText4"].ToString()) ? "\n\n" + ReplaceMessage(dtMsg.Rows[0]["MessageText4"].ToString(), mme) : string.Empty;
                 MessageID = !string.IsNullOrWhiteSpace(dtMsg.Rows[0]["MessageID"].ToString()) ? "\n\n" + ReplaceMessage(dtMsg.Rows[0]["MessageID"].ToString(), mme) : string.Empty;
-               // MessageID = ReplaceMessage(dtMsg.Rows[0]["MessageID"].ToString(), mme);
+                // MessageID = ReplaceMessage(dtMsg.Rows[0]["MessageID"].ToString(), mme);
 
                 MessageBoxButtons msgbtn = dtMsg.Rows[0]["MessageButton"].ToString().Equals("1") ? MessageBoxButtons.OK :
                                            dtMsg.Rows[0]["MessageButton"].ToString().Equals("2") ? MessageBoxButtons.OKCancel :
@@ -103,11 +103,11 @@ namespace BL
                                          dtMsg.Rows[0]["MessageMark"].ToString().Equals("6") ? MessageBoxIcon.Exclamation :
                                          MessageBoxIcon.None;
 
-               return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button1);
+                return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button1);
             }
             else
             {
-                return MessageBox.Show("システムで予約されたコード（メッセージマスタ未登録）", "エラー("+mme.MessageID+")", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return MessageBox.Show("システムで予約されたコード（メッセージマスタ未登録）", "エラー(" + mme.MessageID + ")", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -122,21 +122,21 @@ namespace BL
         {
             if (!string.IsNullOrWhiteSpace(originalText))
             {
-                if(originalText.Contains("{0}"))
+                if (originalText.Contains("{0}"))
                     originalText = originalText.Replace("{0}", mme.MessageText1);
                 else if (originalText.Contains("{1}"))
-                    originalText =  originalText.Replace("{1}", mme.MessageText2);
+                    originalText = originalText.Replace("{1}", mme.MessageText2);
                 else if (originalText.Contains("{2}"))
                     originalText = originalText.Replace("{2}", mme.MessageText3);
                 else if (originalText.Contains("{3}"))
-                    originalText =  originalText.Replace("{3}", mme.MessageText4);
+                    originalText = originalText.Replace("{3}", mme.MessageText4);
                 else if (originalText.Contains("{4}"))
-                 originalText = originalText.Replace("{4}", mme.MessageText5);
+                    originalText = originalText.Replace("{4}", mme.MessageText5);
 
-                    //originalText += !string.IsNullOrWhiteSpace(mme.MessageText2) ? originalText.Replace("{2}", mme.MessageText2) : string.Empty;
-                    //originalText += !string.IsNullOrWhiteSpace(mme.MessageText3) ? originalText.Replace("{3}", mme.MessageText3) : string.Empty;
-                    //originalText += !string.IsNullOrWhiteSpace(mme.MessageText4) ? originalText.Replace("{4}", mme.MessageText4) : string.Empty;
-                    //originalText += !string.IsNullOrWhiteSpace(mme.MessageText5) ? originalText.Replace("{5}", mme.MessageText5) : string.Empty;
+                //originalText += !string.IsNullOrWhiteSpace(mme.MessageText2) ? originalText.Replace("{2}", mme.MessageText2) : string.Empty;
+                //originalText += !string.IsNullOrWhiteSpace(mme.MessageText3) ? originalText.Replace("{3}", mme.MessageText3) : string.Empty;
+                //originalText += !string.IsNullOrWhiteSpace(mme.MessageText4) ? originalText.Replace("{4}", mme.MessageText4) : string.Empty;
+                //originalText += !string.IsNullOrWhiteSpace(mme.MessageText5) ? originalText.Replace("{5}", mme.MessageText5) : string.Empty;
             }
             return originalText;
         }
@@ -150,7 +150,7 @@ namespace BL
         {
             M_Authorizations_DL madl = new M_Authorizations_DL();
             DataTable dtAuthorization = madl.M_Authorizations_AccessCheck(mae);
-            
+
             if (dtAuthorization.Rows.Count > 0)
             {
                 string messageID = dtAuthorization.Rows[0]["MessageID"].ToString();
@@ -166,7 +166,7 @@ namespace BL
                         Outputable = dtAuthorization.Rows[0]["Outputable"].ToString(),
                         Runable = dtAuthorization.Rows[0]["Runable"].ToString(),
                         StoreAuthorizationsCD = dtAuthorization.Rows[0]["StoreAuthorizationsCD"].ToString(),
-                        StoreAuthorization_ChangeDate= dtAuthorization.Rows[0]["ChangeDate"].ToString(),
+                        StoreAuthorization_ChangeDate = dtAuthorization.Rows[0]["ChangeDate"].ToString(),
 
                         //KTP 2019-05-29 select ProgramName and Type
                         ProgramID = dtAuthorization.Rows[0]["ProgramID"].ToString(),
@@ -223,12 +223,24 @@ namespace BL
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        //public bool IsInteger(string value)
+        //{
+        //    if (System.Text.RegularExpressions.Regex.IsMatch(value, "\\d+"))
+        //        return true;
+        //    else
+        //        return false;
+        //}
         public bool IsInteger(string value)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(value, "\\d+"))
+            value = value.Replace("-", "");
+            if (Int32.TryParse(value, out int Num))
+            {
                 return true;
+            }
             else
+            {
                 return false;
+            }
         }
 
         /// <summary>
@@ -693,3 +705,4 @@ namespace BL
         }
     }
 }
+

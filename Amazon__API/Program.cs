@@ -41,14 +41,14 @@ namespace Amazon__API
             //GetOrderList();
 
             Console.Title = "Amazon API Console. . . ";
-            Console.WriteLine("Started " + "Amazon__API Startedddddd" + " . . . ");
+            Console.WriteLine("Started " + "Amazon__API Started" + " . . . ");
             if (loginbl.ReadConfig() == true)
             {
                 CommonAPI api = new CommonAPI();
                 Amazon__BL abl = new Amazon__BL();
                 if (abl.Allow_Check())
                 {
-                    api.GetOrderList();
+                    api.ListOrders();
                 }
                 else
                 {
