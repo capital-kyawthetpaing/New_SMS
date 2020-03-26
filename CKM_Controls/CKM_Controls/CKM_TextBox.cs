@@ -465,6 +465,15 @@ namespace CKM_Controls
         }
         protected override void OnLeave(EventArgs e)
         {
+            if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
+            {
+
+                this.BackColor = Color.FromArgb(226, 239, 218);
+            }
+            else
+            {
+                this.BackColor = SystemColors.Window;
+            }
             if (Ctrl_Type == Type.Normal)
             {
                 string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
@@ -475,6 +484,18 @@ namespace CKM_Controls
                     return;
                 }
             }
+            //else if (Ctrl_Type == Type.Number)
+            //{
+            //    if (!String.IsNullOrEmpty(Text))
+            //    {
+            //        if (!IsInteger(Text))
+            //        {
+            //            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            this.Focus();
+            //            return;
+            //        }
+            //    }
+            //}
             else if (Ctrl_Byte == Bytes.半角)//CtrlByte.Equals("半角")
             {
                 //int byteCount = Encoding.UTF8.GetByteCount(Text);
@@ -486,14 +507,8 @@ namespace CKM_Controls
                     this.Focus();
                 }
             }
-            if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
-            {
-                this.BackColor = Color.FromArgb(226, 239, 218);
-            }
-            else
-            {
-                this.BackColor = SystemColors.Window;
-            }
+
+
             base.OnLeave(e);
         }
 
