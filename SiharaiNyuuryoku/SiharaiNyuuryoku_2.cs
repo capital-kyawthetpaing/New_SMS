@@ -182,7 +182,7 @@ namespace SiharaiNyuuryoku
             //dgvSearchPayment.DataSource = dtSiharai1;
             // }
 
-            if (dtSiharai2.Rows.Count == 0 || dtSiharai2 == null)
+            if (dtSiharai2.Rows.Count >= 0 || dtSiharai2 != null)
             {
                 dgvSearchPayment.DataSource = dtSiharai1;
                 //txtTransferAmount.Text = dtSiharai2.Rows[0]["TransferGaku"].ToString();
