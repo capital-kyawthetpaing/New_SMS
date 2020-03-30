@@ -37,12 +37,12 @@
             this.ckmShop_Label4.AutoSize = true;
             this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(73, 128);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
-            this.ckmShop_Label4.Size = new System.Drawing.Size(125, 22);
+            this.ckmShop_Label4.Size = new System.Drawing.Size(135, 24);
             this.ckmShop_Label4.TabIndex = 122;
             this.ckmShop_Label4.Text = "お買上番号";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -54,8 +54,8 @@
             this.txtprintprogress.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtprintprogress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtprintprogress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtprintprogress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.txtprintprogress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtprintprogress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtprintprogress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtprintprogress.DecimalPlace = 0;
             this.txtprintprogress.Font = new System.Drawing.Font("MS Gothic", 16F);
             this.txtprintprogress.IntegerPart = 0;
@@ -70,6 +70,7 @@
             this.txtprintprogress.Name = "txtprintprogress";
             this.txtprintprogress.Size = new System.Drawing.Size(140, 29);
             this.txtprintprogress.TabIndex = 121;
+            this.txtprintprogress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtprintprogress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtprintprogress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtprintprogress_KeyDown);
             // 

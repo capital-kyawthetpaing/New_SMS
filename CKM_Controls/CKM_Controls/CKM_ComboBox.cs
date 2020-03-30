@@ -52,7 +52,7 @@ namespace CKM_Controls
             処理権限,
             店舗権限,
             役職,
-            店舗名,
+            //店舗名,
             データ種別,
             貨幣金種名,
             支払予定月,
@@ -310,11 +310,11 @@ namespace CKM_Controls
                     DataTable dtpayment = mulbl.M_MultiPorpose_SupplierSelect(mmule);
                     BindCombo("Key", "Char1", dtpayment);
                     break;
-                case CboType.店舗名:
-                    Store_BL storebl = new Store_BL();
-                    DataTable storetb = storebl.BindData(mse);
-                    BindCombo("StoreCD", "StoreName", storetb);
-                    break;
+                //case CboType.店舗名:
+                //    Store_BL storebl = new Store_BL();
+                //    DataTable storetb = storebl.BindData(mse);
+                //    BindCombo("StoreCD", "StoreName", storetb);
+                //    break;
                 case CboType.受注確度:
                 case CboType.予定金種:
                 case CboType.年度:

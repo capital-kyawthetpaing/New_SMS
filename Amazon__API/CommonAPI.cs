@@ -19,27 +19,134 @@ namespace Amazon__API
 {
     public class CommonAPI
     {
-        static DataTable dt;
-        static string strbuff = string.Empty;
+        Amazon__BL aml;
+        Amazon__Entity ame;
+        DateTime UpdatedTimeBefore;
 
+        static string SellerId = "";
+        static string MarketplaceId = "";
+        static string AccessKeyId = "";
+        static string MWSAuthToken = "";
+        static string SecretKeyId = "";
 
-
-        public  void GetOrderList()
+        static string ApplicationVersion = "";
+        static string ApplicationName = "";
+        static int TokenNo = 0;
+        static string APIKey = "";
+        static string StoreCD = "";
+        public void ListOrders()  
         {
-            dt = new DataTable();
-            dt.Columns.Add("OrderId");
-            MarketplaceWebServiceOrdersConfig config = new MarketplaceWebServiceOrdersConfig();
-            string SellerId = "A3U1G59YKB47LS";
-            string MarketplaceId = "A1VC38T7YXB528";
-            string AccessKeyId = "AKIAJFRPIMOTC4CJGHLQ";
-            string SecretKeyId = "4KI9yuXr7Ni64iFpdjnW1dw3LNdNXIn4rgOnNrZQ";
-            string ApplicationVersion = "1.0";
-            string ApplicationName = "ラスタスポーツ";
-            string MWSAuthToken = "amzn.mws.fea748c0-bfe0-4039-0cc0-88b6ce5c0058";
-            string serviceURL = "https://mws.amazonservices.jp";
-            string strbuff = string.Empty;
 
-            config.ServiceURL = serviceURL;
+            ame = new Amazon__Entity();
+            aml = new Amazon__BL();
+
+            ame = aml.MAPI_DRequest();
+            //string SellerId = CommonValue.strMerchantId;
+            //string MarketplaceId = CommonValue.strMarketplaceId;
+            //string AccessKeyId = CommonValue.strAccessKeyId;
+            //string SecretKeyId = CommonValue.strSecretKeyId;
+            //string ApplicationVersion = CommonValue.strApplicationVersion;
+            //string ApplicationName = CommonValue.strApplicationName;
+            //string MWSAuthToken = CommonValue.strMWSAuthToken;
+            //string strbuff = string.Empty;
+             SellerId                            =ame.strMerchantId;
+             MarketplaceId                       = ame.strMarketplaceId;
+             AccessKeyId                         = ame.strAccessKeyId;
+             MWSAuthToken                        =  ame.strMWSAuthToken;
+             SecretKeyId                         = ame.strSecretKeyId;
+            APIKey                               = ame.APIKey;
+            StoreCD                              =ame.StoreCD;
+            string ApplicationVersion            = CommonValue.strApplicationVersion;
+            string ApplicationName               = CommonValue.strApplicationName;
+
+            DataTable strbuff = new DataTable();
+           
+            var LastUpdatedBefore = aml.Amazon_DRequest();
+            if (LastUpdatedBefore != null)
+            {
+                UpdatedTimeBefore = Convert.ToDateTime(LastUpdatedBefore).AddDays(-1);
+            }
+            else
+            {
+                UpdatedTimeBefore = DateTime.Now; ;
+            }
+            MarketplaceWebServiceOrdersConfig config = new MarketplaceWebServiceOrdersConfig();
+            config.ServiceURL = CommonValue.strServiceURL;
+            MarketplaceWebServiceOrders.MarketplaceWebServiceOrders client = new MarketplaceWebServiceOrdersClient(
+                                                                                    AccessKeyId,
+                                                                                    SecretKeyId,
+                                                                                    ApplicationName,
+                                                                                    ApplicationVersion,
+                                                                                    config);
+            ListOrdersRequest request = new ListOrdersRequest();
+            request.SellerId = SellerId;
+            request.LastUpdatedAfter = UpdatedTimeBefore;
+
+            List<string> lstMarketplace = new List<string>();
+            lstMarketplace.Add(MarketplaceId);
+            request.MarketplaceId = lstMarketplace;
+            request.MWSAuthToken = MWSAuthToken;
+            request.MaxResultsPerPage = 40;
+            ListOrdersResponse response = client.ListOrders(request);
+            ListOrdersResult listOrdersResult = new ListOrdersResult();
+            if (response.IsSetListOrdersResult())
+            {
+                 listOrdersResult = response.ListOrdersResult;
+                if (listOrdersResult.IsSetOrders())
+                {
+                    List<Order> orders = listOrdersResult.Orders;
+                    strbuff.Columns.Add("StoreCD");
+                    strbuff.Columns.Add("APIKey");
+                    strbuff.Columns.Add("SEQ");
+                    strbuff.Columns.Add("OrderId");
+                    int i = 0;
+                    Amazon_Juchuu = D_AmazonJuchuu();
+                    foreach (Order o in orders)
+                    {
+                        i++;
+                        strbuff.Rows.Add(StoreCD, APIKey, i, o.AmazonOrderId);
+                        GetListOrderdata(o, i);
+                    }
+                }
+               // txtListOrders.Text = strbuff;
+            }
+            Base_BL bbl = new Base_BL();
+            string OrderDetails = "";string AmazonOrderId="" ;
+
+            OrderDetails = bbl.DataTableToXml(Amazon_Juchuu);
+            AmazonOrderId = bbl.DataTableToXml(strbuff);
+            TokenNo = TokenNo + 1;
+            Insert_FirstToken(listOrdersResult, OrderDetails, AmazonOrderId);
+
+            if (listOrdersResult.NextToken != null)
+            {
+                Insert_NextToken(response.ListOrdersResult.NextToken);
+            }
+
+            Insert_Items(client);
+
+            Console.Read();
+
+
+            //
+            //else
+            //{
+            //    Console.Write("Order Inserted Successfully!!!");
+            //    Console.Read();
+            //}
+        }
+    
+        public void Insert_NextToken(string token =null)
+        {
+            Amazon_Juchuu_NextToken = D_AmazonJuchuu();
+            Base_BL bbl = new Base_BL();
+            DataTable strbuff = new DataTable();
+            strbuff.Columns.Add("StoreCD");
+            strbuff.Columns.Add("APIKey");
+            strbuff.Columns.Add("SEQ");
+            strbuff.Columns.Add("OrderId");
+            MarketplaceWebServiceOrdersConfig config = new MarketplaceWebServiceOrdersConfig();
+            config.ServiceURL = CommonValue.strServiceURL;
             MarketplaceWebServiceOrders.MarketplaceWebServiceOrders client = new MarketplaceWebServiceOrdersClient(
                                                                                     AccessKeyId,
                                                                                     SecretKeyId,
@@ -47,216 +154,475 @@ namespace Amazon__API
                                                                                     ApplicationVersion,
                                                                                     config);
 
-
-            //ListOrder
-            try
+            if (token != null)
             {
-                ListOrdersRequest request = new ListOrdersRequest();
-                request.SellerId = SellerId;
-                request.CreatedAfter = DateTime.Now.AddDays(-1);
-                List<string> lstMarketplace = new List<string>();
-                lstMarketplace.Add(MarketplaceId);
-                request.MarketplaceId = lstMarketplace;
-                request.MWSAuthToken = MWSAuthToken;
-                ListOrdersResponse response = client.ListOrders(request);
-                if (response.IsSetListOrdersResult())
+                ListOrdersByNextTokenRequest request1 = new ListOrdersByNextTokenRequest();
+                ListOrdersByNextTokenResult listOrdersByNextResult = new ListOrdersByNextTokenResult();
+                request1.SellerId = SellerId;
+                request1.MWSAuthToken = MWSAuthToken;
+                request1.NextToken = token;
+                ListOrdersByNextTokenResponse response1 = client.ListOrdersByNextToken(request1);
+                if (response1.IsSetListOrdersByNextTokenResult())
                 {
-                    ListOrdersResult listOrdersResult = response.ListOrdersResult;
-                    if (listOrdersResult.IsSetOrders())
+                    listOrdersByNextResult = response1.ListOrdersByNextTokenResult;
+                    if (listOrdersByNextResult.IsSetOrders())
                     {
-                        List<Order> orders = listOrdersResult.Orders;
-                        foreach (Order order in orders)
+                        List<Order> orders = listOrdersByNextResult.Orders;
+                        int i = 0;
+                        foreach (Order o in orders)
                         {
-                            dt.Rows.Add(order.AmazonOrderId);
+                            i++;
+                            strbuff.Rows.Add(StoreCD,APIKey, i, o.AmazonOrderId);
+                            GetListOrderdata(o, i, false);
+                        }
+                    }
+                }
+                Amazon__Entity ameDetails = new Amazon__Entity();
+                ameDetails.StoreCD = StoreCD;
+                ameDetails.APIKey = APIKey;
+                ameDetails.LastUpdatedAfter = UpdatedTimeBefore.ToString();
+                ameDetails.LastUpdatedBefore = listOrdersByNextResult.LastUpdatedBefore.ToString();
+                ameDetails.Xmldetails = bbl.DataTableToXml(Amazon_Juchuu_NextToken);
+                ameDetails.XmlOrder = bbl.DataTableToXml(strbuff);
+
+                TokenNo = TokenNo + 1;
+                if (aml.AmazonAPI_Insert_NextToken(ameDetails))
+                {
+                    Console.WriteLine("Successfully Inserted Token " + (TokenNo).ToString() + "Times");
+                }
+                else
+                {
+                    Console.WriteLine("Unfortunately Inserted Failed Token " + (TokenNo).ToString() + "Times");
+                }
+                Insert_NextToken(listOrdersByNextResult.NextToken);
+            }
+            else/// To be Continued. . . Insert  
+            {
+                Console.Write("Order inserted Successfully!!!");
+                Console.Read();
+            }
+        }
+
+        protected void Insert_Items(MarketplaceWebServiceOrders.MarketplaceWebServiceOrders client)
+        {
+            ListOrderItemsRequest request = new ListOrderItemsRequest();
+
+            request.SellerId = SellerId;
+
+            Base_BL bbl = new Base_BL();
+
+            aml = new Amazon__BL();
+            Amazon_Juchuu_Items = D_AmazonJuchuuItems();
+            var dtAmazonOrderId = aml.Select_AllOrderByLastRireki();
+            int j = 0; int i = 0;
+            foreach (DataRow dr in dtAmazonOrderId.Rows)
+            {
+                j++;
+                request.AmazonOrderId = dr["AmazonOrderId"].ToString();
+
+                ListOrderItemsResponse response = client.ListOrderItems(request);
+                if (response.IsSetListOrderItemsResult())
+                {
+                    ListOrderItemsResult listOrderItemsResult = response.ListOrderItemsResult;
+                    if (listOrderItemsResult.IsSetOrderItems())
+                    {
+                        List<OrderItem> orderItems = listOrderItemsResult.OrderItems;
+                      
+                        foreach (OrderItem orderItem in orderItems)
+                        {
+                            i++;
+                            Amazon_Juchuu_Items_Add(request.AmazonOrderId,orderItem, j,i);
+                          //  strbuff += "商品名：" + orderItem.Title + System.Environment.NewLine;
                         }
                     }
                 }
             }
-            catch (Exception ex)
+
+
+            Amazon__Entity ameDetails = new Amazon__Entity();
+            ameDetails.StoreCD = StoreCD;
+            ameDetails.APIKey =  APIKey;
+            ameDetails.XmlOrderItems = bbl.DataTableToXml(Amazon_Juchuu_Items);
+            if (aml.Amazon_InsertOrderItemDetails(ameDetails))
             {
-                var msge = ex.Message;
+                Console.Write("All Items are Imported Successffully!!!");
+                Console.ReadLine();
             }
-            //// ListOrderByNextToken
-            try
-            {
-                ListOrdersRequest request = new ListOrdersRequest();
-                request.SellerId = SellerId;
-                request.CreatedAfter = DateTime.Now.AddDays(-1);
-                List<string> lstMarketplace = new List<string>();
-                lstMarketplace.Add(MarketplaceId);
-                request.MarketplaceId = lstMarketplace;
-                request.MaxResultsPerPage = 14;
-                request.MWSAuthToken = MWSAuthToken;
-                ListOrdersResponse response = client.ListOrders(request);
-                if (response.IsSetListOrdersResult())
-                {
-                    ListOrdersResult listOrdersResult = response.ListOrdersResult;
-                    if (listOrdersResult.IsSetOrders())
-                    {
-                        if (listOrdersResult.NextToken != null)
-                        {
-                            ListOrdersByNextTokenRequest request1 = new ListOrdersByNextTokenRequest();
-
-                            request1.SellerId = SellerId;
-                            request1.MWSAuthToken = MWSAuthToken;
-                            request1.NextToken = listOrdersResult.NextToken;
-                            ListOrdersByNextTokenResponse response1 = client.ListOrdersByNextToken(request1);
-                            if (response1.IsSetListOrdersByNextTokenResult())
-                            {
-                                ListOrdersByNextTokenResult listOrdersByNextResult = response1.ListOrdersByNextTokenResult;
-                                if (listOrdersByNextResult.IsSetOrders())
-                                {
-                                    List<Order> orders = listOrdersByNextResult.Orders;
-                                    foreach (Order order in orders)
-                                    {
-                                        dt.Rows.Add(order.AmazonOrderId);
-                                        //   strbuff += order.AmazonOrderId + System.Environment.NewLine;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    var val = strbuff;
-                }
-                Environment.Exit(0);
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            // //List Order Item
-            //try
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        ListOrderItemsRequest request = new ListOrderItemsRequest();
-            //        request.SellerId = SellerId;
-            //        request.AmazonOrderId = dr["OrderId"].ToString();
-            //        request.MWSAuthToken = MWSAuthToken;
-            //        ListOrderItemsResponse response = client.ListOrderItems(request);
-            //        if (response.IsSetListOrderItemsResult())
-            //        {
-            //            ListOrderItemsResult listOrderItemsResult = response.ListOrderItemsResult;
-            //            if (listOrderItemsResult.IsSetOrderItems())
-            //            {
-            //                List<OrderItem> orderItems = listOrderItemsResult.OrderItems;
-            //                foreach (OrderItem orderItem in orderItems)
-            //                {
-            //                    strbuff += "商品名：" + orderItem.Title + System.Environment.NewLine;
-            //                }
-            //            }
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-            //// ListOrderItem_byNextToken
-            try
-            {
-                foreach (DataRow dr in dt.Rows)
-                {
-                    ListOrderItemsRequest request = new ListOrderItemsRequest();
-                    request.SellerId = SellerId;
-                    request.AmazonOrderId = dr["OrderId"].ToString();
-                    request.MWSAuthToken = MWSAuthToken;
-
-                    ListOrderItemsResponse response = client.ListOrderItems(request);
-                    if (response.IsSetListOrderItemsResult())
-                    {
-                        ListOrderItemsResult listOrderItemsResult = response.ListOrderItemsResult;
-                        if (listOrderItemsResult.NextToken != null)
-                        {
-                            ListOrderItemsByNextTokenRequest request1 = new ListOrderItemsByNextTokenRequest();
-                            request1.SellerId = SellerId;
-                            request1.MWSAuthToken = MWSAuthToken;
-                            request1.NextToken = listOrderItemsResult.NextToken;
-
-                            ListOrderItemsByNextTokenResponse response1 = client.ListOrderItemsByNextToken(request1);
-                            if (response1.IsSetListOrderItemsByNextTokenResult())
-                            {
-                                ListOrderItemsByNextTokenResult listOrderByNextItemsResult = response1.ListOrderItemsByNextTokenResult;
-                                if (listOrderByNextItemsResult.IsSetOrderItems())
-                                {
-                                    List<OrderItem> orderItems = listOrderItemsResult.OrderItems;
-                                    foreach (OrderItem orderItem in orderItems)
-                                    {
-                                        if (orderItem.IsSetOrderItemId())
-                                        {
-                                            strbuff += "商品名：" + orderItem.Title + System.Environment.NewLine;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            //// GetOrder 
-            //try
-            //{
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        GetOrderRequest request = new GetOrderRequest();
-            //        request.SellerId = SellerId;
-            //        request.MWSAuthToken = MWSAuthToken;
-            //        List<string> amazonorderId = new List<string>();
-            //        amazonorderId.Add(dr["OrderId"].ToString());
-            //        request.AmazonOrderId = amazonorderId;
-
-            //        GetOrderResponse response = client.GetOrder(request);
-            //        if (response.IsSetGetOrderResult())
-            //        {
-            //            List<Order> orders = response.GetOrderResult.Orders;
-            //            foreach (Order order in orders)
-            //            {
-            //                strbuff += "購入者：" + order.AmazonOrderId + ","+ order.OrderStatus + System.Environment.NewLine;
-            //            }
-            //        }
-            //    }
-            //}
-
-            //catch (Exception ex)
-            //{
-
-            //}
-
-            //// GetService Status
-            //try
-            //{
-            //    MarketplaceWebServiceOrdersConfig config1 = new MarketplaceWebServiceOrdersConfig();
-            //    config1.ServiceURL = serviceURL;
-            //    MarketplaceWebServiceOrders.MarketplaceWebServiceOrders client1 = new MarketplaceWebServiceOrdersClient(
-            //                                                                            AccessKeyId,
-            //                                                                            SecretKeyId,
-            //                                                                            ApplicationName,
-            //                                                                            ApplicationVersion,
-            //                                                                            config1);
-            //    MarketplaceWebServiceOrders.Model.GetServiceStatusRequest  request = new MarketplaceWebServiceOrders.Model.GetServiceStatusRequest();
-            //    request.SellerId = SellerId;
-            //    request.MWSAuthToken = MWSAuthToken;
-            //    // MarketplaceWebServiceOrders.Model.GetServiceStatusRequest
-            //    var response = client1.GetServiceStatus(request);
-            //    if (response.IsSetGetServiceStatusResult())
-            //    {
-            //        strbuff = "処理状況：" + response.GetServiceStatusResult.Status;
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
 
         }
 
+        protected DataTable Amazon_Juchuu_Items_Add(string orderId, OrderItem o, int j,int i)
+        {
+            try
+            {
+                Amazon_Juchuu_Items.Rows.Add(StoreCD, APIKey, i.ToString(), orderId, j,
+                    (o.IsSetASIN()) ? o.ASIN : null,
+                    o.IsSetOrderItemId() ? o.OrderItemId : null,
+                    o.IsSetSellerSKU() ? o.SellerSKU : null,
+                    o.IsSetBuyerCustomizedInfo() ? o.BuyerCustomizedInfo.CustomizedURL : null,
+                    o.IsSetTitle() ? o.Title : null,
+                    o.IsSetQuantityOrdered() ? (Convert.ToInt32(o.QuantityOrdered.ToString()) == 1).ToString()== "True"? "1":"0" : null,
+                    o.IsSetQuantityShipped() ? (Convert.ToInt32(o.QuantityShipped.ToString()) == 1).ToString() == "True" ? "1" : "0" : null,
+                    o.IsSetPointsGranted() ? (o.PointsGranted.IsSetPointsNumber()? Convert.ToInt32(o.PointsGranted.PointsNumber).ToString(): "0") : "0",
+                    o.IsSetPointsGranted() ? (o.PointsGranted.IsSetPointsMonetaryValue() ? o.PointsGranted.PointsMonetaryValue.IsSetCurrencyCode() ? o.PointsGranted.PointsMonetaryValue.CurrencyCode : null : null) : null,
+                    o.IsSetPointsGranted() ? (o.PointsGranted.IsSetPointsMonetaryValue() ? o.PointsGranted.PointsMonetaryValue.IsSetAmount() ? o.PointsGranted.PointsMonetaryValue.Amount : null : null) : null,
+                    "0",// o.PromotionInfos.NumberOfItems. . .,
+                    o.IsSetItemPrice() ? o.ItemPrice.IsSetCurrencyCode() ? o.ItemPrice.CurrencyCode : null : null,
+                    o.IsSetItemPrice() ? o.ItemPrice.IsSetAmount() ? o.ItemPrice.Amount : null : null,
+                    o.IsSetShippingPrice() ? o.ShippingPrice.IsSetCurrencyCode() ? o.ShippingPrice.CurrencyCode : null : null,
+                    o.IsSetShippingPrice() ? o.ShippingPrice.IsSetAmount() ? o.ShippingPrice.Amount : null : null,
+                    o.IsSetGiftWrapPrice() ? o.GiftWrapPrice.IsSetCurrencyCode() ? o.GiftWrapPrice.CurrencyCode : null : null,
+                    o.IsSetGiftWrapPrice() ? o.GiftWrapPrice.IsSetAmount() ? o.GiftWrapPrice.Amount : null : null,
+                    null,// o.IsSetTaxCollection.model. . . ,
+                    null,// o.IsSetTaxCollection.responsibleParty. . . ,
+                    o.IsSetItemTax() ? o.ItemTax.IsSetCurrencyCode() ? o.ItemTax.CurrencyCode : null : null,
+                    o.IsSetItemTax() ? o.ItemTax.IsSetAmount() ? o.ItemTax.Amount : null : null,
+                    o.IsSetShippingTax() ? o.ShippingTax.IsSetCurrencyCode() ? o.ShippingTax.CurrencyCode : null : null,
+                    o.IsSetShippingTax() ? o.ShippingTax.IsSetAmount() ? o.ShippingTax.Amount : null : null,
+                    o.IsSetGiftWrapTax() ? o.GiftWrapTax.IsSetCurrencyCode() ? o.GiftWrapTax.CurrencyCode : null : null,
+                    o.IsSetGiftWrapTax() ? o.GiftWrapTax.IsSetAmount() ? o.GiftWrapTax.Amount : null : null,
+                    o.IsSetShippingDiscount() ? o.ShippingDiscount.IsSetCurrencyCode() ? o.ShippingDiscount.CurrencyCode : null : null,
+                    o.IsSetShippingDiscount() ? o.ShippingDiscount.IsSetAmount() ? o.ShippingDiscount.Amount : null : null,
+                    o.IsSetPromotionDiscount() ? o.PromotionDiscount.IsSetCurrencyCode() ? o.PromotionDiscount.CurrencyCode : null : null,
+                    o.IsSetPromotionDiscount() ? o.PromotionDiscount.IsSetAmount() ? o.PromotionDiscount.Amount : null : null,
+                    null,//  o.PromotionIds. . .,
+                    o.IsSetCODFee() ? o.CODFee.IsSetCurrencyCode() ? o.CODFee.CurrencyCode : null : null,
+                    o.IsSetCODFee() ? o.CODFee.IsSetAmount() ? o.CODFee.Amount : null : null,
+                    o.IsSetCODFeeDiscount() ? o.CODFeeDiscount.IsSetCurrencyCode() ? o.CODFeeDiscount.CurrencyCode : null : null,
+                    o.IsSetCODFeeDiscount()? o.CODFeeDiscount.IsSetAmount()?o.CODFeeDiscount.Amount:null:null,
+                    "0",//o.IsGift()? . . .,
+                    o.IsSetGiftMessageText()? o.GiftMessageText  : null,
+                    o.IsSetGiftWrapLevel()?o.GiftWrapLevel:null,
+                    o.IsSetConditionNote()?o.ConditionNote:null,
+                    o.IsSetConditionId()?o.ConditionId:null,
+                    o.IsSetConditionSubtypeId()?o.ConditionSubtypeId:null,
+                    o.IsSetScheduledDeliveryStartDate()? o.ScheduledDeliveryStartDate:null,
+                    o.IsSetScheduledDeliveryEndDate()?o.ScheduledDeliveryEndDate:null,
+                    o.IsSetPriceDesignation()? o.PriceDesignation:null
 
+
+
+                    );
+            }
+            catch(Exception ex)
+            {
+
+
+            }
+            
+
+
+            return Amazon_Juchuu_Items;
+        }
+        protected void Insert_FirstToken(ListOrdersResult respone,string OrderDetails, string AmazonOrderId)
+        {
+           Amazon__Entity ameDetails = new Amazon__Entity();
+            ameDetails.StoreCD = StoreCD;
+            ameDetails.APIKey = APIKey;
+            ameDetails.LastUpdatedAfter = UpdatedTimeBefore.ToString();
+            ameDetails.LastUpdatedBefore = respone.LastUpdatedBefore.ToString();
+            ameDetails.Xmldetails = OrderDetails;
+            ameDetails.XmlOrder = AmazonOrderId;
+            if (aml.AmazonAPI_InsertOrderDetails(ameDetails))
+            {
+
+                Console.WriteLine("Successfully Inserted Token " + (TokenNo).ToString() + "Times");
+            }
+            else
+            {
+                Console.WriteLine("Unfortunately Inserted Failed Token " + (TokenNo).ToString() + "Times");
+            }
+        }
+        public DataTable Amazon_Juchuu_Items;
+        public DataTable Amazon_Juchuu;
+        public DataTable Amazon_Juchuu_NextToken;
+        public DataTable GetListOrderdata(Order o,int i, bool IsFirsToken = true)
+        {
+            try
+            {
+                bool IsShippingNull=false, IsorderTotoal = false;
+                if (o.ShippingAddress == null)
+                {
+                    IsShippingNull = true;
+                }
+                if (o.OrderTotal ==null)
+                {
+                    IsorderTotoal = true;
+                }
+                if (IsFirsToken)
+                {
+                    Amazon_Juchuu.Rows.Add(StoreCD, APIKey, i, o.AmazonOrderId,
+                                 null,
+                                 o.SellerOrderId, o.PurchaseDate, o.LastUpdateDate,
+                                 getOrderStatus(o.OrderStatus),   // 
+                                 o.FulfillmentChannel, o.SalesChannel, o.OrderChannel, o.ShipServiceLevel,
+                                 IsShippingNull ? null : o.ShippingAddress.Name,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine1,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine2,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine3,
+                                 IsShippingNull ? null : o.ShippingAddress.City,
+                                 IsShippingNull ? null : o.ShippingAddress.County,
+                                 IsShippingNull ? null : o.ShippingAddress.District,
+                                 IsShippingNull ? null : o.ShippingAddress.StateOrRegion,
+                                 IsShippingNull ? null : o.ShippingAddress.PostalCode,
+                                 IsShippingNull ? null : o.ShippingAddress.CountryCode,
+                                 IsShippingNull ? null : o.ShippingAddress.Phone,
+                                 IsorderTotoal ? null : o.OrderTotal.CurrencyCode,
+                                 IsorderTotoal ? null : o.OrderTotal.Amount,
+                                 o.NumberOfItemsShipped,
+                                 o.NumberOfItemsUnshipped,
+                                 o.PaymentMethod,
+
+                                 null, //o.PaymentMethodDetail,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.IsreplacementOrder,
+                                 null, //o.ReplacementOrderId,
+                                 o.MarketplaceId,
+                                 o.BuyerEmail,
+                                 o.BuyerName,
+
+                                 null,//o.CompanyLegalName,
+                                 null,//o.taxingregion,
+                                 null,//o.Name,
+                                 null,//o.values,
+                                 o.ShipmentServiceLevelCategory,
+                                getOrderType(o.OrderType),
+                                 o.EarliestShipDate,
+                                 o.LatestShipDate,
+                                 o.EarliestDeliveryDate,
+                                 o.LatestDeliveryDate,
+                                 getFlag(o.IsBusinessOrder.ToString()),
+                                 o.PurchaseOrderNumber,
+                                 getFlag(o.IsPrime.ToString()),
+                                 getFlag(o.IsPremiumOrder.ToString()),
+                                 null,                    //o.PromiseReponseDueDate,
+                                 null);                  //o.IsEstimatedShipDateSet
+                }
+                else
+                {
+                    Amazon_Juchuu_NextToken.Rows.Add(StoreCD, APIKey, i, o.AmazonOrderId,
+                                 null,
+                                 o.SellerOrderId, o.PurchaseDate, o.LastUpdateDate,
+                                 getOrderStatus(o.OrderStatus),   // 
+                                 o.FulfillmentChannel, o.SalesChannel, o.OrderChannel, o.ShipServiceLevel,
+                                 IsShippingNull ? null : o.ShippingAddress.Name,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine1,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine2,
+                                 IsShippingNull ? null : o.ShippingAddress.AddressLine3,
+                                 IsShippingNull ? null : o.ShippingAddress.City,
+                                 IsShippingNull ? null : o.ShippingAddress.County,
+                                 IsShippingNull ? null : o.ShippingAddress.District,
+                                 IsShippingNull ? null : o.ShippingAddress.StateOrRegion,
+                                 IsShippingNull ? null : o.ShippingAddress.PostalCode,
+                                 IsShippingNull ? null : o.ShippingAddress.CountryCode,
+                                 IsShippingNull ? null : o.ShippingAddress.Phone,
+                                 IsorderTotoal ? null : o.OrderTotal.CurrencyCode,
+                                 IsorderTotoal ? null : o.OrderTotal.Amount,
+                                 o.NumberOfItemsShipped,
+                                 o.NumberOfItemsUnshipped,
+                                 o.PaymentMethod,
+
+                                 null, //o.PaymentMethodDetail,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.CurrencyCode,
+                                 null, //o.Amount,
+                                 null, //o.PaymentMethod,
+
+                                 null, //o.IsreplacementOrder,
+                                 null, //o.ReplacementOrderId,
+                                 o.MarketplaceId,
+                                 o.BuyerEmail,
+                                 o.BuyerName,
+
+                                 null,//o.CompanyLegalName,
+                                 null,//o.taxingregion,
+                                 null,//o.Name,
+                                 null,//o.values,
+                                 o.ShipmentServiceLevelCategory,
+                                getOrderType(o.OrderType),
+                                 o.EarliestShipDate,
+                                 o.LatestShipDate,
+                                 o.EarliestDeliveryDate,
+                                 o.LatestDeliveryDate,
+                                 getFlag(o.IsBusinessOrder.ToString()),
+                                 o.PurchaseOrderNumber,
+                                 getFlag(o.IsPrime.ToString()),
+                                 getFlag(o.IsPremiumOrder.ToString()),
+                                 null,                    //o.PromiseReponseDueDate,
+                                 null);                  //o.IsEstimatedShipDateSet
+
+                }
+
+                //);
+            }
+            catch(Exception ex) {
+                var msge = ex.Message;
+            }
+            return Amazon_Juchuu;
+        }
+        protected string getOrderStatus(string val)
+        {
+            if (val == "PendingAvailability")
+            {
+                return "1";
+            }
+            else if (val == "Pending")
+            {
+                return "2";
+            }
+            else if (val == "Unshipped")
+            {
+                return "3";
+            }
+            else if (val == "PartiallyShipped")
+            {
+                return "4";
+            }
+            else if (val == "Shipped")
+            {
+                return "5";
+            }
+            else if (val == "Canceled")
+            {
+                return "6";
+            }
+            else if (val == "PendingAvailability")
+            {
+                return "7";
+            }
+            return "0";
+        }
+        protected string getFlag(string val)
+        {
+            if (val == "True")
+            {
+                return "1";
+            }
+            else
+            {
+                return "0";
+            }
+        }
+        protected string getOrderType(string val)
+        {
+            if (val == "StandardOrder")
+            {
+                return "1";
+            }
+            else if (val == "Preorder")
+            {
+                return "2";
+            }
+            else {
+                return "3";
+            }
+        }
+        public DataTable D_AmazonJuchuu()
+        {
+            string[] cols = new string[]{ "StoreCD", "APIKey", "InportSEQRows", "AmazonOrderId", "JuchuuNO", "SellerOrderId", "PurchaseDate", "LastUpdateDate", "OrderStatus",
+                "FulfillmentChannel", "SalesChannel", "OrderChannel", "ShipServiceLevel", "AddressName", "AddressLine1", "AddressLine2", "AddressLine3", "AddressCity", "AddressCounty",
+                "AddressDistrict", "StateOrRegion", "PostalCode", "CountryCode", "Phone", "CurrencyCode", "Amount", "NumberOfItemsShipped", "NumberOfItemsUnshipped", "PaymentMethod",
+                "PaymentMethodDetail", "PaymentCurrencyCode1", "PaymentAmount1", "PaymentMethod1", "PaymentCurrencyCode2", "PaymentAmount2", "PaymentMethod2", "PaymentCurrencyCode3",
+                "PaymentAmount3", "PaymentMethod3", "PaymentCurrencyCode4", "PaymentAmount4", "PaymentMethod4", "IsReplacementOrder", "ReplacedOrderId", "MarketplaceId",
+                "BuyerEmail", "BuyerName", "CompanyLegalName", "TaxingRegion", "TaxClassificationName", "TaxClassificationValue", "ShipmentServiceLevelCategory", "OrderType",
+                "EarliestShipDate", "LatestShipDate", "EarliestDeliveryDate", "LatestDeliveryDate", "IsBusinessOrder", "PurchaseOrderNumber", "IsPrime", "IsPremiumOrder",
+                "PromiseResponseDueDate","IsEstimatedShipDateSet"};
+            DataTable dt = new DataTable();
+            foreach (string colname in cols)
+            {
+                dt.Columns.Add(colname);
+            }
+            return dt;
+        }
+        public DataTable D_AmazonJuchuuItems()
+        {
+
+            string[] cols = new string[] {
+                   "StoreCD",
+                   "APIKey",
+                   "InportSEQRows",
+                   "AmazonOrderId",
+                   "OrderRows",
+                   "ASIN",
+                   "OrderItemId",
+                   "SellerSKU",
+                   "CustomizedURL",
+                   "Title",
+                   "QuantityOrdered",
+                   "QuantityShipped",
+                   "PointsNumber",
+                   "PointsMonetaryCurrencyCode",
+                   "PointsMonetaryValue",
+                   "NumberOfItems",
+                   "ItemPriceCurrencyCode",
+                   "ItemPriceAmount",
+                   "ShippingPriceCurrencyCode",
+                   "ShippingPriceAmount",
+                   "GiftWrapPriceCurrencyCode",
+                   "GiftWrapPriceAmount",
+                   "TaxModel",
+                   "TaxResponsibleParty",
+                   "ItemTaxCurrencyCode",
+                   "ItemTaxCurrencyAmount",
+                   "ShippingTaxCurrencyCode",
+                   "ShippingTaxAmount",
+                   "GiftWrapTaxCurrencyCode",
+                   "GiftWrapTaxAmount",
+                   "ShippingDiscountCurrencyCode",
+                   "ShippingDiscountAmount",
+                   "PromotionDiscountCurrencyCode",
+                   "PromotionDiscountAmount",
+                   "PromotionIds",
+                   "CODFeeCurrencyCode",
+                   "CODFeeAmount",
+                   "CODFeeDiscountCurrencyCode",
+                   "CODFeeDiscountAmount",
+                   "IsGift",
+                   "GiftMessageText",
+                   "GiftWrapLevel",
+                   "ConditionNote",
+                   "ConditionId",
+                   "ConditionSubtypeId",
+                   "ScheduledDeliveryStartDate",
+                   "ScheduledDeliveryEndDate",
+                   "PriceDesignation"
+            };
+            DataTable dt = new DataTable();
+            foreach (string colname in cols)
+            {
+                dt.Columns.Add(colname);
+            }
+            return dt;
+
+        }
 
     }
 }

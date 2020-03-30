@@ -28,5 +28,9 @@ namespace BL
         {
             return mpd.M_Program_Delete(mpe);
         }
+        public DataTable M_ProgramSearch(M_Program_Entity mpe)
+        {
+            return mpd.M_ProgramSearch(mpe);
+        }
     }
 }

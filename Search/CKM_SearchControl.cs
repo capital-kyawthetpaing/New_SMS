@@ -374,7 +374,7 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.モール:
-                    txtCode.MaxLength = 3;
+                    txtCode.MaxLength = 4;
                     txtCode.Width = 30;
                     lblName.Width = 280;
                     break;
@@ -615,8 +615,8 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 11;
-                    TxtCode.Width = 110;
+                    TxtCode.MaxLength = 100;
+                    TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
             }
@@ -899,6 +899,18 @@ namespace Search
                         }
                     }
                     break;
+
+                //2020.03.23 add by ses---
+                case SearchType.プログラムID:
+                    using (Search_Program frmProgram = new Search_Program(Value1))
+                    {
+                        frmProgram.ShowDialog();
+                        if (!frmProgram.flgCancel)
+                        {
+                            txtCode.Text = frmProgram.ProgramID;
+                        }
+                        break;
+                    }
                 case SearchType.SKU_ITEM_CD:
                     using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
@@ -952,7 +964,6 @@ namespace Search
                         if (!frmJuchuu.flgCancel)
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
-                            lblName.Text = frmJuchuu.MitsumoriName;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                         }
                     }
@@ -1023,19 +1034,19 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.仕入番号:
-                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                    {
-                        frmShiire.OperatorCD = Value1;
-                        frmShiire.AllAvailableStores = Value2;
-                        frmShiire.ShowDialog();
-                        if (!frmShiire.flgCancel)
-                        {
-                            txtCode.Text = frmShiire.PurchaseNO;
-                            txtChangeDate.Text = frmShiire.ChangeDate;
-                        }
-                    }
-                    break;
+                //case SearchType.仕入番号:
+                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                //    {
+                //        frmShiire.OperatorCD = Value1;
+                //        frmShiire.AllAvailableStores = Value2;
+                //        frmShiire.ShowDialog();
+                //        if (!frmShiire.flgCancel)
+                //        {
+                //            txtCode.Text = frmShiire.PurchaseNO;
+                //            txtChangeDate.Text = frmShiire.ChangeDate;
+                //        }
+                //    }
+                //    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {
@@ -1532,6 +1543,9 @@ namespace Search
                     case SearchType.プログラムID:
                         dtResult = bbl.SimpleSelect1("55", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.得意先://Search_Customer
+                        dtResult = bbl.SimpleSelect1("45", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
             }
             else
@@ -1599,12 +1613,7 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
-                    case SearchType.ブランド://Search_Brand
-                        dtResult = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
-                        break;
-                    case SearchType.競技://Search_Sport
-                        dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
-                        break;
+                    
                 }
 
             }
@@ -1675,17 +1684,20 @@ namespace Search
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 7, TxtCode.Text);
                     break;
                 case SearchType.得意先:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 8, txtCode.Text);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 8, txtCode.Text);
                     break;
 
                 case SearchType.HanyouKeyStart:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
-                    
-                case SearchType.ブランド://20200317
+                case SearchType.HanyouKeyEnd:
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1);
+                    break;
+                //20200317
+                case SearchType.ブランド:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 11, txtCode.Text, Value1);
                     break;
-                case SearchType.競技://20200317
+                case SearchType.競技:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
                     break;
             }

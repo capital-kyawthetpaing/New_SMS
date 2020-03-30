@@ -55,7 +55,7 @@
             this.txtprintprogress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtprintprogress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtprintprogress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.txtprintprogress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtprintprogress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtprintprogress.DecimalPlace = 0;
             this.txtprintprogress.Font = new System.Drawing.Font("MS Gothic", 16F);
             this.txtprintprogress.IntegerPart = 0;
@@ -70,6 +70,7 @@
             this.txtprintprogress.Name = "txtprintprogress";
             this.txtprintprogress.Size = new System.Drawing.Size(140, 29);
             this.txtprintprogress.TabIndex = 123;
+            this.txtprintprogress.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtprintprogress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
             // Furikomi
