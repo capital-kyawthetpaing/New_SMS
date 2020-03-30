@@ -413,25 +413,44 @@ namespace SiharaiNyuuryoku
 
                 if(!RequireCheck(new Control[] { txtKouzaKBN }))
                     return false;
-                if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
+                //if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    txtKouzaKBN.Focus();
+                //    return false;
+                //}
+                if(txtKouzaKBN.Text != "1" )
                 {
-                    bbl.ShowMessage("E101");
-                    txtKouzaKBN.Focus();
-                    return false;
+                    if(txtKouzaKBN.Text != "2")
+                    {
+                        bbl.ShowMessage("E101");
+                        txtKouzaKBN.Focus();
+                        return false;
+                    }
+                    
                 }
 
                 if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
                     return false;
-                if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
+                //if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    txtFeeKBN.Focus();
+                //    return false;
+                //}
+
+                if(!txtFeeKBN.Text.Equals("1"))
                 {
-                    bbl.ShowMessage("E101");
-                    txtFeeKBN.Focus();
-                    return false;
+                    if(!txtFeeKBN.Text.Equals("2"))
+                    {
+                        bbl.ShowMessage("E101");
+                        txtFeeKBN.Focus();
+                        return false;
+                    }
                 }
 
                 if (!RequireCheck(new Control[] {txtAmount }))
                     return false;
-
 
             }
 
@@ -506,15 +525,15 @@ namespace SiharaiNyuuryoku
 
         private void SC_HanyouKeyEnd1_Enter(object sender, EventArgs e)
         {
-            SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
             SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
         }
 
         private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
         {
-            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyStart2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
         }
 
         private void SC_HanyouKeyEnd2_Enter(object sender, EventArgs e)
@@ -556,6 +575,7 @@ namespace SiharaiNyuuryoku
             {
                 if (Convert.ToInt32(txtTransferAmount.Text)>0 && !string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
                 {
+                    SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
                     if (SC_BankCD.SelectData())
                     {
                         SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
@@ -584,8 +604,11 @@ namespace SiharaiNyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
+               
                 if (!string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text))
                 {
+                    SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
+                    SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
                     if (!SC_BranchCD.SelectData())
                     {
                         bbl.ShowMessage("E101");
