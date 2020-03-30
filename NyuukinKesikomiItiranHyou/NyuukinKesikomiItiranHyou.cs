@@ -85,6 +85,7 @@ namespace NyuukinKesikomiItiranHyou
                         break;
                     }
             }
+            txtCollectDateF.Focus();
         }
 
 
@@ -108,11 +109,14 @@ namespace NyuukinKesikomiItiranHyou
                 return false;
             }
 
-            if (!ScCollectCustomerCD.IsExists())
+            if (!string.IsNullOrEmpty(ScCollectCustomerCD.Code))
             {
-                nkih_bl.ShowMessage("E101");
-                ScCollectCustomerCD.SetFocus(1);
-                return false;
+                if (!ScCollectCustomerCD.IsExists())
+                {
+                    nkih_bl.ShowMessage("E101");
+                    ScCollectCustomerCD.SetFocus(1);
+                    return false;
+                }
             }
             return true;
         }
