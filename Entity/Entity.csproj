@@ -160,7 +160,6 @@
     <Compile Include="D_DepositHistory_Entity.cs" />
     <Compile Include="TempoRegiZaikoKakunin_Entity.cs" />
     <Compile Include="UriageMotochou_Entity.cs" />
-    <Compile Include="ZaikoShoukai.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

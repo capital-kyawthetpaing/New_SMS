@@ -1599,7 +1599,12 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
-                    
+                    case SearchType.ブランド://Search_Brand
+                        dtResult = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.競技://Search_Sport
+                        dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
@@ -1676,11 +1681,11 @@ namespace Search
                 case SearchType.HanyouKeyStart:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
-                    //20200317
-                case SearchType.ブランド:
+                    
+                case SearchType.ブランド://20200317
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 11, txtCode.Text, Value1);
                     break;
-                case SearchType.競技:
+                case SearchType.競技://20200317
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
                     break;
             }

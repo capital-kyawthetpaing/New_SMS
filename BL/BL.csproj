@@ -126,6 +126,7 @@
     <Compile Include="Search_KeihiNO_BL.cs" />
     <Compile Include="Search_Location_BL.cs" />
     <Compile Include="Search_Payment_BL.cs" />
+    <Compile Include="Search_PlanArrival_BL.cs" />
     <Compile Include="Search_SiharaiNO_BL.cs" />
     <Compile Include="Search_SiharaiShoriNO_BL.cs" />
     <Compile Include="Search_Souko_BL.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="ZaikoIdouNyuuryoku_BL.cs" />
     <Compile Include="ZaikoKanriHyou_BL.cs" />
     <Compile Include="ZaikoMotochouInsatsu_BL.cs" />
+    <Compile Include="ZaikoShoukai_BL.cs" />
     <Compile Include="ZaikoYoteiHyou_BL.cs" />
     <Compile Include="ZipCode_BL.cs" />
   </ItemGroup>
