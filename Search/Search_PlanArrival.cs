@@ -26,7 +26,6 @@ namespace Search
         string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd;
         string[] maindata;
         int Type = 0;
-      
         public Search_PlanArrival(String No, string sku, string shohin, string col, string si, string it, string br, string jan, string maker, string[] data)
         {
             InitializeComponent();
