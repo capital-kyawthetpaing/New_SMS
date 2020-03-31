@@ -179,7 +179,7 @@ namespace ZaikoShoukai
                 case 10:
                     if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                     {
-                        // WriteCSV();
+                        
                         Excel();
                     }
                     break;
@@ -237,103 +237,42 @@ namespace ZaikoShoukai
             {
                 return;
             }
-
-            if (dtData.Rows.Count >0)
+            if (dtData.Rows.Count > 0)
             {
-                
-                //if (dtData.Rows[0]["Admin)
-                    //DataTable dtExport = dt;
-                    //dtExport = ChangeDataColumnName(dtExport);
-                    string folderPath = "C:\\Excel\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Filter = "Excel Files|*.xlsx;";
-                savedialog.Title = "Save";
-                savedialog.FileName = "ZaikoShoukai";
-                savedialog.InitialDirectory = folderPath;
-
-                savedialog.RestoreDirectory = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                dtData.Columns.Remove("AdminNO");
+                string folderPath = "C:\\Excel\\";
+                    if (!Directory.Exists(folderPath))
                     {
-                        Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-                        Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                        Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-                        worksheet = workbook.ActiveSheet;
-                        worksheet.Name = "worksheet";
-                        using (XLWorkbook wb = new XLWorkbook())
-                        {
-
-                            wb.Worksheets.Add(dtData, "worksheet");
-                           
-                            wb.SaveAs(savedialog.FileName);
-                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
-                        }
-                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        Directory.CreateDirectory(folderPath);
                     }
-                }
+                    SaveFileDialog savedialog = new SaveFileDialog();
+                    savedialog.Filter = "Excel Files|*.xlsx;";
+                    savedialog.Title = "Save";
+                    savedialog.FileName = "ZaikoShoukai";
+                    savedialog.InitialDirectory = folderPath;
+
+                    savedialog.RestoreDirectory = true;
+                    if (savedialog.ShowDialog() == DialogResult.OK)
+                    {
+                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                        {
+                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                            worksheet = workbook.ActiveSheet;
+                            worksheet.Name = "worksheet";
+                            using (XLWorkbook wb = new XLWorkbook())
+                            {
+                                wb.Worksheets.Add(dtData, "worksheet");
+                                wb.SaveAs(savedialog.FileName);
+                                bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            }
+                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        }
+                    }
             }
         }
-        //private  void WriteCSV()
-        //{
-        //    if (!ErrorCheck())
-        //    {
-        //        return;
-        //    }
-
-        //    if (GV_Zaiko.DataSource != null)
-        //    {
-        //        //Build the CSV file data as a Comma separated string.
-        //        string csv = string.Empty;
-
-        //        //LoacalDirectory
-        //        string folderPath = "C:\\CSV\\";
-        //        FileInfo logFileInfo = new FileInfo(folderPath);
-        //        DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
-
-        //        if (!logDirInfo.Exists) logDirInfo.Create();
-
-        //        //Add the Header row for CSV file.
-        //        foreach (DataGridViewColumn column in GV_Zaiko.Columns)
-        //        {
-        //            //if(column.HeaderText!="")
-        //            csv += column.HeaderText + ',';
-        //        }
-        //        //Add new line.
-        //        csv += "\r\n";
-
-        //        //Adding the Rows
-        //        foreach (DataGridViewRow row in GV_Zaiko.Rows)
-        //        {
-        //            foreach (DataGridViewCell cell in row.Cells)
-        //            {
-        //                //Add the Data rows.
-        //                if (cell.Value == null)
-        //                    cell.Value = "";
-        //                //csv += cell.Value.ToString().Replace(",", ";")+ ',';
-        //                csv += cell.Value.ToString().Replace(",", "") + ',';
-        //            }
-
-        //            //Add new line.
-        //            csv += "\r\n";
-        //        }
-        //        GV_Zaiko.CurrentCell = GV_Zaiko.Rows[0].Cells[1];
-        //        //Exporting to CSV.            
-        //        File.WriteAllText(folderPath + "在庫照会 (仕入明細) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
-        //        bbl.ShowMessage("I203");
-        //    }
-        //    else
-        //    {
-        //        bbl.ShowMessage("E138");
-        //        //MessageBox.Show("データがありません。", "情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //}
-
 
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
