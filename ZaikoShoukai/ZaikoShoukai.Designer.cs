@@ -1522,73 +1522,63 @@
             // 
             this.SKUCD.DataPropertyName = "SKUCD";
             this.SKUCD.HeaderText = "SKUCD";
-            this.SKUCD.MaxInputLength = 30;
             this.SKUCD.Name = "SKUCD";
             // 
             // 商品名
             // 
             this.商品名.DataPropertyName = "SkuName";
             this.商品名.HeaderText = "商品名";
-            this.商品名.MaxInputLength = 80;
             this.商品名.Name = "商品名";
             this.商品名.Width = 300;
             // 
             // カラー
             // 
-            this.カラー.DataPropertyName = "ColorName";
+            this.カラー.DataPropertyName = "カラー";
             this.カラー.HeaderText = "カラー";
-            this.カラー.MaxInputLength = 20;
             this.カラー.Name = "カラー";
             this.カラー.Width = 200;
             // 
             // サイズ
             // 
-            this.サイズ.DataPropertyName = "SizeName";
+            this.サイズ.DataPropertyName = "サイズ";
             this.サイズ.HeaderText = "サイズ";
-            this.サイズ.MaxInputLength = 20;
             this.サイズ.Name = "サイズ";
             this.サイズ.Width = 200;
             // 
             // 店舗名
             // 
-            this.店舗名.DataPropertyName = "StoreName";
+            this.店舗名.DataPropertyName = "店舗名";
             this.店舗名.HeaderText = "店舗名";
             this.店舗名.Name = "店舗名";
             // 
             // SoukoName
             // 
-            this.SoukoName.DataPropertyName = "SoukoName";
+            this.SoukoName.DataPropertyName = "倉庫名";
             this.SoukoName.HeaderText = "倉庫";
-            this.SoukoName.MaxInputLength = 40;
             this.SoukoName.Name = "SoukoName";
             // 
             // 棚番
             // 
-            this.棚番.DataPropertyName = "RackNO";
+            this.棚番.DataPropertyName = "棚番";
             this.棚番.HeaderText = "棚番";
-            this.棚番.MaxInputLength = 40;
             this.棚番.Name = "棚番";
             // 
             // 現在庫
             // 
-            this.現在庫.DataPropertyName = "StockSu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.現在庫.DataPropertyName = "在庫数";
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = null;
             this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
             this.現在庫.HeaderText = "現在庫";
-            this.現在庫.MaxInputLength = 6;
             this.現在庫.Name = "現在庫";
             // 
             // 入荷予定
             // 
-            this.入荷予定.DataPropertyName = "PlanSu";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.入荷予定.DataPropertyName = "入荷予定数";
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
             this.入荷予定.HeaderText = "入荷予定";
-            this.入荷予定.MaxInputLength = 6;
             this.入荷予定.Name = "入荷予定";
             // 
             // Button
@@ -1600,88 +1590,79 @@
             // 
             // 引当可能
             // 
-            this.引当可能.DataPropertyName = "AllowableSu";
+            this.引当可能.DataPropertyName = "引当可能数";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "N0";
             dataGridViewCellStyle5.NullValue = null;
             this.引当可能.DefaultCellStyle = dataGridViewCellStyle5;
             this.引当可能.HeaderText = "引当可能";
-            this.引当可能.MaxInputLength = 6;
             this.引当可能.Name = "引当可能";
             // 
             // メーカー
             // 
-            this.メーカー.DataPropertyName = "MakerItem";
+            this.メーカー.DataPropertyName = "メーカー在庫数";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.メーカー.DefaultCellStyle = dataGridViewCellStyle6;
             this.メーカー.HeaderText = "メーカー";
-            this.メーカー.MaxInputLength = 40;
             this.メーカー.Name = "メーカー";
             // 
             // JANCD
             // 
             this.JANCD.DataPropertyName = "JanCD";
             this.JANCD.HeaderText = "JANCD";
-            this.JANCD.MaxInputLength = 13;
             this.JANCD.Name = "JANCD";
             // 
             // ブランド
             // 
-            this.ブランド.DataPropertyName = "BrandName";
+            this.ブランド.DataPropertyName = "ブランド名";
             this.ブランド.HeaderText = "ブランド";
-            this.ブランド.MaxInputLength = 40;
             this.ブランド.Name = "ブランド";
             // 
             // ITEM
             // 
-            this.ITEM.DataPropertyName = "ItemCD";
+            this.ITEM.DataPropertyName = "ITem";
             this.ITEM.HeaderText = "ITEM";
-            this.ITEM.MaxInputLength = 40;
             this.ITEM.Name = "ITEM";
             // 
             // メーカー商品CD
             // 
-            this.メーカー商品CD.DataPropertyName = "MakerItem";
+            this.メーカー商品CD.DataPropertyName = "メーカー商品CD";
             this.メーカー商品CD.HeaderText = "メーカー商品CD";
-            this.メーカー商品CD.MaxInputLength = 40;
             this.メーカー商品CD.Name = "メーカー商品CD";
             // 
             // 最速入荷日
             // 
-            this.最速入荷日.DataPropertyName = "ArrivalPlandate";
+            this.最速入荷日.DataPropertyName = "最速入荷日";
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle7.Format = "d";
             dataGridViewCellStyle7.NullValue = null;
             this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle7;
             this.最速入荷日.HeaderText = "最速入荷日";
-            this.最速入荷日.MaxInputLength = 8;
             this.最速入荷日.Name = "最速入荷日";
             // 
             // 基準在庫
             // 
-            this.基準在庫.DataPropertyName = "MinimumInventory";
+            this.基準在庫.DataPropertyName = "基準在庫";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "N0";
             dataGridViewCellStyle8.NullValue = null;
             this.基準在庫.DefaultCellStyle = dataGridViewCellStyle8;
             this.基準在庫.HeaderText = "基準在庫";
-            this.基準在庫.MaxInputLength = 6;
             this.基準在庫.Name = "基準在庫";
             // 
             // 販売定価
             // 
-            this.販売定価.DataPropertyName = "PriceWithTax";
+            this.販売定価.DataPropertyName = "販売定価";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle9.Format = "N0";
             dataGridViewCellStyle9.NullValue = null;
             this.販売定価.DefaultCellStyle = dataGridViewCellStyle9;
             this.販売定価.HeaderText = "販売定価";
-            this.販売定価.MaxInputLength = 6;
             this.販売定価.Name = "販売定価";
             // 
             // 標準原価
             // 
-            this.標準原価.DataPropertyName = "OrderPriceWithoutTax";
+            this.標準原価.DataPropertyName = "標準原価";
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle10.Format = "N0";
             dataGridViewCellStyle10.NullValue = null;

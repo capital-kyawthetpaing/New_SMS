@@ -28,19 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtPayPlanDate = new CKM_Controls.CKM_TextBox();
             this.txtPayeeCD = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgvSearchPayment = new CKM_Controls.CKM_GridView();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayPlanGaku = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
+            this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
+            this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
             this.SC_HanyouKeyEnd2 = new Search.CKM_SearchControl();
             this.SC_HanyouKeyEnd1 = new Search.CKM_SearchControl();
             this.SC_HanyouKeyStart2 = new Search.CKM_SearchControl();
@@ -90,13 +96,6 @@
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.lblVendorName = new System.Windows.Forms.Label();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayPlanGaku = new SMS.CustomControls.dgvInventoryColumn();
-            this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
-            this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
-            this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -271,17 +270,17 @@
             this.dgvSearchPayment.AllowUserToAddRows = false;
             this.dgvSearchPayment.AllowUserToDeleteRows = false;
             this.dgvSearchPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvSearchPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSearchPayment.ColumnHeadersHeight = 25;
             this.dgvSearchPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -291,14 +290,6 @@
             this.colPayConfirmGaku,
             this.colUnpaidAmount1,
             this.colUnpaidAmount2});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSearchPayment.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSearchPayment.EnableHeadersVisualStyles = false;
             this.dgvSearchPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchPayment.Location = new System.Drawing.Point(40, 9);
@@ -310,6 +301,79 @@
             this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
             this.dgvSearchPayment.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellEndEdit);
             this.dgvSearchPayment.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellLeave);
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 30;
+            // 
+            // colPurchaseNum
+            // 
+            this.colPurchaseNum.DataPropertyName = "Number";
+            this.colPurchaseNum.HeaderText = "仕入番号";
+            this.colPurchaseNum.Name = "colPurchaseNum";
+            this.colPurchaseNum.ReadOnly = true;
+            this.colPurchaseNum.Width = 150;
+            // 
+            // colPurchaseDate
+            // 
+            this.colPurchaseDate.DataPropertyName = "RecordedDate";
+            this.colPurchaseDate.HeaderText = "仕入日";
+            this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.ReadOnly = true;
+            // 
+            // colPayPlanGaku
+            // 
+            this.colPayPlanGaku.DataPropertyName = "PayPlanGaku";
+            dataGridViewCellStyle15.Format = "N0";
+            dataGridViewCellStyle15.NullValue = "false";
+            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle15;
+            this.colPayPlanGaku.HeaderText = "支払予定額";
+            this.colPayPlanGaku.MaxInputLength = 32767;
+            this.colPayPlanGaku.Name = "colPayPlanGaku";
+            this.colPayPlanGaku.ReadOnly = true;
+            this.colPayPlanGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPayPlanGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colPayPlanGaku.UseThousandSeparator = true;
+            // 
+            // colPayConfirmGaku
+            // 
+            this.colPayConfirmGaku.DataPropertyName = "PayConfirmGaku";
+            dataGridViewCellStyle16.Format = "N0";
+            dataGridViewCellStyle16.NullValue = "false";
+            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle16;
+            this.colPayConfirmGaku.HeaderText = "支払済額";
+            this.colPayConfirmGaku.MaxInputLength = 32767;
+            this.colPayConfirmGaku.Name = "colPayConfirmGaku";
+            this.colPayConfirmGaku.ReadOnly = true;
+            this.colPayConfirmGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colPayConfirmGaku.UseThousandSeparator = true;
+            // 
+            // colUnpaidAmount1
+            // 
+            this.colUnpaidAmount1.DataPropertyName = "UnpaidAmount1";
+            dataGridViewCellStyle17.Format = "N0";
+            dataGridViewCellStyle17.NullValue = "false";
+            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle17;
+            this.colUnpaidAmount1.HeaderText = "今回支払額";
+            this.colUnpaidAmount1.MaxInputLength = 32767;
+            this.colUnpaidAmount1.Name = "colUnpaidAmount1";
+            this.colUnpaidAmount1.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colUnpaidAmount1.UseThousandSeparator = true;
+            // 
+            // colUnpaidAmount2
+            // 
+            this.colUnpaidAmount2.DataPropertyName = "UnpaidAmount2";
+            dataGridViewCellStyle18.Format = "N0";
+            dataGridViewCellStyle18.NullValue = "false";
+            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle18;
+            this.colUnpaidAmount2.HeaderText = "未支払額";
+            this.colUnpaidAmount2.MaxInputLength = 32767;
+            this.colUnpaidAmount2.Name = "colUnpaidAmount2";
+            this.colUnpaidAmount2.ReadOnly = true;
+            this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
             // SC_HanyouKeyEnd2
             // 
@@ -730,17 +794,17 @@
             this.txtOther2.BackColor = System.Drawing.Color.White;
             this.txtOther2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOther2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtOther2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOther2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOther2.DecimalPlace = 0;
             this.txtOther2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtOther2.IntegerPart = 0;
+            this.txtOther2.IntegerPart = 10;
             this.txtOther2.IsCorrectDate = true;
             this.txtOther2.isEnterKeyDown = false;
             this.txtOther2.IsNumber = true;
             this.txtOther2.IsShop = false;
             this.txtOther2.Length = 10;
             this.txtOther2.Location = new System.Drawing.Point(118, 667);
-            this.txtOther2.MaxLength = 10;
+            this.txtOther2.MaxLength = 20;
             this.txtOther2.MoveNext = true;
             this.txtOther2.Name = "txtOther2";
             this.txtOther2.Size = new System.Drawing.Size(100, 19);
@@ -755,17 +819,17 @@
             this.txtOther1.BackColor = System.Drawing.Color.White;
             this.txtOther1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOther1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtOther1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOther1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOther1.DecimalPlace = 0;
             this.txtOther1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtOther1.IntegerPart = 0;
+            this.txtOther1.IntegerPart = 10;
             this.txtOther1.IsCorrectDate = true;
             this.txtOther1.isEnterKeyDown = false;
             this.txtOther1.IsNumber = true;
             this.txtOther1.IsShop = false;
             this.txtOther1.Length = 10;
             this.txtOther1.Location = new System.Drawing.Point(118, 638);
-            this.txtOther1.MaxLength = 10;
+            this.txtOther1.MaxLength = 20;
             this.txtOther1.MoveNext = true;
             this.txtOther1.Name = "txtOther1";
             this.txtOther1.Size = new System.Drawing.Size(100, 19);
@@ -780,17 +844,17 @@
             this.txtElectronicBone.BackColor = System.Drawing.Color.White;
             this.txtElectronicBone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtElectronicBone.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtElectronicBone.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtElectronicBone.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtElectronicBone.DecimalPlace = 0;
             this.txtElectronicBone.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtElectronicBone.IntegerPart = 0;
+            this.txtElectronicBone.IntegerPart = 10;
             this.txtElectronicBone.IsCorrectDate = true;
             this.txtElectronicBone.isEnterKeyDown = false;
             this.txtElectronicBone.IsNumber = true;
             this.txtElectronicBone.IsShop = false;
             this.txtElectronicBone.Length = 10;
             this.txtElectronicBone.Location = new System.Drawing.Point(118, 590);
-            this.txtElectronicBone.MaxLength = 10;
+            this.txtElectronicBone.MaxLength = 20;
             this.txtElectronicBone.MoveNext = true;
             this.txtElectronicBone.Name = "txtElectronicBone";
             this.txtElectronicBone.Size = new System.Drawing.Size(100, 19);
@@ -805,17 +869,17 @@
             this.txtBill.BackColor = System.Drawing.Color.White;
             this.txtBill.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBill.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtBill.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtBill.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtBill.DecimalPlace = 0;
             this.txtBill.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtBill.IntegerPart = 0;
+            this.txtBill.IntegerPart = 10;
             this.txtBill.IsCorrectDate = true;
             this.txtBill.isEnterKeyDown = false;
             this.txtBill.IsNumber = true;
             this.txtBill.IsShop = false;
             this.txtBill.Length = 10;
             this.txtBill.Location = new System.Drawing.Point(118, 545);
-            this.txtBill.MaxLength = 10;
+            this.txtBill.MaxLength = 20;
             this.txtBill.MoveNext = true;
             this.txtBill.Name = "txtBill";
             this.txtBill.Size = new System.Drawing.Size(100, 19);
@@ -830,17 +894,17 @@
             this.txtOffsetGaku.BackColor = System.Drawing.Color.White;
             this.txtOffsetGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOffsetGaku.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtOffsetGaku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOffsetGaku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOffsetGaku.DecimalPlace = 0;
             this.txtOffsetGaku.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtOffsetGaku.IntegerPart = 0;
+            this.txtOffsetGaku.IntegerPart = 10;
             this.txtOffsetGaku.IsCorrectDate = true;
             this.txtOffsetGaku.isEnterKeyDown = false;
             this.txtOffsetGaku.IsNumber = true;
             this.txtOffsetGaku.IsShop = false;
             this.txtOffsetGaku.Length = 10;
             this.txtOffsetGaku.Location = new System.Drawing.Point(118, 519);
-            this.txtOffsetGaku.MaxLength = 10;
+            this.txtOffsetGaku.MaxLength = 20;
             this.txtOffsetGaku.MoveNext = true;
             this.txtOffsetGaku.Name = "txtOffsetGaku";
             this.txtOffsetGaku.Size = new System.Drawing.Size(100, 19);
@@ -855,17 +919,17 @@
             this.txtCash.BackColor = System.Drawing.Color.White;
             this.txtCash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCash.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtCash.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtCash.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCash.DecimalPlace = 0;
             this.txtCash.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtCash.IntegerPart = 0;
+            this.txtCash.IntegerPart = 10;
             this.txtCash.IsCorrectDate = true;
             this.txtCash.isEnterKeyDown = false;
             this.txtCash.IsNumber = true;
             this.txtCash.IsShop = false;
             this.txtCash.Length = 10;
             this.txtCash.Location = new System.Drawing.Point(118, 495);
-            this.txtCash.MaxLength = 10;
+            this.txtCash.MaxLength = 20;
             this.txtCash.MoveNext = true;
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(100, 19);
@@ -1286,79 +1350,6 @@
             this.lblVendorName.TabIndex = 114;
             this.lblVendorName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
             this.lblVendorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 30;
-            // 
-            // colPurchaseNum
-            // 
-            this.colPurchaseNum.DataPropertyName = "Number";
-            this.colPurchaseNum.HeaderText = "仕入番号";
-            this.colPurchaseNum.Name = "colPurchaseNum";
-            this.colPurchaseNum.ReadOnly = true;
-            this.colPurchaseNum.Width = 150;
-            // 
-            // colPurchaseDate
-            // 
-            this.colPurchaseDate.DataPropertyName = "RecordedDate";
-            this.colPurchaseDate.HeaderText = "仕入日";
-            this.colPurchaseDate.Name = "colPurchaseDate";
-            this.colPurchaseDate.ReadOnly = true;
-            // 
-            // colPayPlanGaku
-            // 
-            this.colPayPlanGaku.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = "false";
-            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPayPlanGaku.HeaderText = "支払予定額";
-            this.colPayPlanGaku.MaxInputLength = 32767;
-            this.colPayPlanGaku.Name = "colPayPlanGaku";
-            this.colPayPlanGaku.ReadOnly = true;
-            this.colPayPlanGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPayPlanGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colPayPlanGaku.UseThousandSeparator = true;
-            // 
-            // colPayConfirmGaku
-            // 
-            this.colPayConfirmGaku.DataPropertyName = "PayConfirmGaku";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = "false";
-            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPayConfirmGaku.HeaderText = "支払済額";
-            this.colPayConfirmGaku.MaxInputLength = 32767;
-            this.colPayConfirmGaku.Name = "colPayConfirmGaku";
-            this.colPayConfirmGaku.ReadOnly = true;
-            this.colPayConfirmGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colPayConfirmGaku.UseThousandSeparator = true;
-            // 
-            // colUnpaidAmount1
-            // 
-            this.colUnpaidAmount1.DataPropertyName = "UnpaidAmount1";
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = "false";
-            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colUnpaidAmount1.HeaderText = "今回支払額";
-            this.colUnpaidAmount1.MaxInputLength = 32767;
-            this.colUnpaidAmount1.Name = "colUnpaidAmount1";
-            this.colUnpaidAmount1.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colUnpaidAmount1.UseThousandSeparator = true;
-            // 
-            // colUnpaidAmount2
-            // 
-            this.colUnpaidAmount2.DataPropertyName = "UnpaidAmount2";
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = "false";
-            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colUnpaidAmount2.HeaderText = "未支払額";
-            this.colUnpaidAmount2.MaxInputLength = 32767;
-            this.colUnpaidAmount2.Name = "colUnpaidAmount2";
-            this.colUnpaidAmount2.ReadOnly = true;
-            this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
             // SiharaiNyuuryoku_2
             // 
