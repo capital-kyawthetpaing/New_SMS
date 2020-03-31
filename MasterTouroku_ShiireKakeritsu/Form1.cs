@@ -12,11 +12,11 @@ using BL;
 using Entity;
 using Search;
 
-namespace MasterTouroku_ShiireTanka
+namespace MasterTouroku_ShiireKakeritsu
 {
-    public partial class MasterTouroku_ShiireTanka : FrmMainForm
+    public partial class frmMasterTouroku_ShiireKakeritsu : FrmMainForm
     {
-        public MasterTouroku_ShiireTanka()
+        public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
         }
