@@ -125,10 +125,13 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                if (!string.IsNullOrWhiteSpace(txtCollectDateF.Text) && !string.IsNullOrWhiteSpace(txtCollectDateT.Text))
                 {
-                    nkih_bl.ShowMessage("E103");
-                    txtCollectDateF.Focus();
+                    if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    {
+                        nkih_bl.ShowMessage("E103");
+                        txtCollectDateF.Focus();
+                    }
                 }
             }
         }
@@ -137,10 +140,13 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                if (!string.IsNullOrWhiteSpace(txtInputDateF.Text) && !string.IsNullOrWhiteSpace(txtInputDateT.Text))
                 {
-                    nkih_bl.ShowMessage("E103");
-                    txtInputDateF.Focus();
+                    if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    {
+                        nkih_bl.ShowMessage("E103");
+                        txtInputDateF.Focus();
+                    }
                 }
             }
         }
