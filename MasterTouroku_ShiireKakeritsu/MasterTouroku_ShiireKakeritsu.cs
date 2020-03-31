@@ -20,5 +20,19 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             InitializeComponent();
         }
+
+        private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
+        {
+            InProgramID = Application.ProductName;
+            SetFunctionLabel(EProMode.MENTE);
+            StartProgram();
+            scSupplierCD.SetFocus(1);
+        }
+        private void SetRequiredField()
+        {
+            scSupplierCD.TxtCode.Require(true);
+            txtRevisionDate.Require(true);
+            txtRate.Require(true);
+        }
     }
 }
