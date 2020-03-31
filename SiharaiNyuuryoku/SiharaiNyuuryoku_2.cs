@@ -404,6 +404,7 @@ namespace SiharaiNyuuryoku
                     return false;
 
                 SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
+                SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
                 if (!SC_BranchCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
