@@ -87,7 +87,7 @@
             this.panelDetail.Location = new System.Drawing.Point(0, 50);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1713, 879);
-            this.panelDetail.TabIndex = 13;
+            this.panelDetail.TabIndex = 0;
             // 
             // cboStoreAuthorizations
             // 
@@ -102,7 +102,7 @@
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
             this.cboStoreAuthorizations.Size = new System.Drawing.Size(121, 20);
-            this.cboStoreAuthorizations.TabIndex = 15;
+            this.cboStoreAuthorizations.TabIndex = 3;
             // 
             // ckM_Label7
             // 
@@ -174,7 +174,7 @@
             this.ScCollectCustomerCD.SearchEnable = true;
             this.ScCollectCustomerCD.Size = new System.Drawing.Size(634, 28);
             this.ScCollectCustomerCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCollectCustomerCD.TabIndex = 11;
+            this.ScCollectCustomerCD.TabIndex = 7;
             this.ScCollectCustomerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCollectCustomerCD.UseChangeDate = false;
             this.ScCollectCustomerCD.Value1 = null;
@@ -196,7 +196,7 @@
             this.cboWebCollectType.MoveNext = true;
             this.cboWebCollectType.Name = "cboWebCollectType";
             this.cboWebCollectType.Size = new System.Drawing.Size(121, 20);
-            this.cboWebCollectType.TabIndex = 10;
+            this.cboWebCollectType.TabIndex = 6;
             // 
             // txtInputDateT
             // 
@@ -219,7 +219,7 @@
             this.txtInputDateT.MoveNext = true;
             this.txtInputDateT.Name = "txtInputDateT";
             this.txtInputDateT.Size = new System.Drawing.Size(100, 19);
-            this.txtInputDateT.TabIndex = 9;
+            this.txtInputDateT.TabIndex = 5;
             this.txtInputDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInputDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtInputDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtInputDateT_KeyDown);
@@ -245,7 +245,7 @@
             this.txtInputDateF.MoveNext = true;
             this.txtInputDateF.Name = "txtInputDateF";
             this.txtInputDateF.Size = new System.Drawing.Size(100, 19);
-            this.txtInputDateF.TabIndex = 8;
+            this.txtInputDateF.TabIndex = 4;
             this.txtInputDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtInputDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -270,7 +270,7 @@
             this.txtCollectDateT.MoveNext = true;
             this.txtCollectDateT.Name = "txtCollectDateT";
             this.txtCollectDateT.Size = new System.Drawing.Size(100, 19);
-            this.txtCollectDateT.TabIndex = 7;
+            this.txtCollectDateT.TabIndex = 2;
             this.txtCollectDateT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCollectDateT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtCollectDateT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCollectDateT_KeyDown);
@@ -296,7 +296,7 @@
             this.txtCollectDateF.MoveNext = true;
             this.txtCollectDateF.Name = "txtCollectDateF";
             this.txtCollectDateF.Size = new System.Drawing.Size(100, 19);
-            this.txtCollectDateF.TabIndex = 6;
+            this.txtCollectDateF.TabIndex = 1;
             this.txtCollectDateF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCollectDateF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 

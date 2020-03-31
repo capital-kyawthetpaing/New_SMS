@@ -130,7 +130,7 @@ namespace NyuukinKesikomiItiranHyou
                     if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                     {
                         nkih_bl.ShowMessage("E103");
-                        txtCollectDateF.Focus();
+                        txtCollectDateT.Focus();
                     }
                 }
             }
@@ -145,7 +145,22 @@ namespace NyuukinKesikomiItiranHyou
                     if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
                     {
                         nkih_bl.ShowMessage("E103");
-                        txtInputDateF.Focus();
+                        txtInputDateT.Focus();
+                    }
+                }
+            }
+        }
+
+        private void ScCollectCustomerCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScCollectCustomerCD.Code))
+                {
+                    if (!ScCollectCustomerCD.SelectData())
+                    {
+                        nkih_bl.ShowMessage("E101");
+                        ScCollectCustomerCD.SetFocus(1);
                     }
                 }
             }
@@ -279,19 +294,6 @@ namespace NyuukinKesikomiItiranHyou
             ScCollectCustomerCD.Value1 = "3";
         }
 
-        private void ScCollectCustomerCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrWhiteSpace(ScCollectCustomerCD.Code))
-                {
-                    if (!ScCollectCustomerCD.SelectData())
-                    {
-                        nkih_bl.ShowMessage("E101");
-                        ScCollectCustomerCD.SetFocus(1);
-                    }
-                }
-            }
-        }
+       
     }
 }
