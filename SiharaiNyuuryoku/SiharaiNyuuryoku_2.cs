@@ -525,15 +525,15 @@ namespace SiharaiNyuuryoku
 
         private void SC_HanyouKeyEnd1_Enter(object sender, EventArgs e)
         {
-            SC_HanyouKeyEnd1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            SC_HanyouKeyEnd1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
             SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
         }
 
         private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
         {
-            SC_HanyouKeyStart2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            SC_HanyouKeyStart2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
         }
 
         private void SC_HanyouKeyEnd2_Enter(object sender, EventArgs e)
@@ -679,6 +679,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd1.TxtCode.Text))
                 {
+                    SC_HanyouKeyEnd1.Value2 = SC_HanyouKeyStart1.LabelText;
                     if (!SC_HanyouKeyEnd1.SelectData())
                     {
                         bbl.ShowMessage("E101");
@@ -701,6 +702,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd2.TxtCode.Text))
                 {
+                    SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.LabelText;
                     if (!SC_HanyouKeyEnd2.SelectData())
                     {
                         bbl.ShowMessage("E101");
