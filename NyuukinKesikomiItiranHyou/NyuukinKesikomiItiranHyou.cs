@@ -85,6 +85,7 @@ namespace NyuukinKesikomiItiranHyou
                         break;
                     }
             }
+            txtCollectDateF.Focus();
         }
 
 
@@ -108,11 +109,14 @@ namespace NyuukinKesikomiItiranHyou
                 return false;
             }
 
-            if (!ScCollectCustomerCD.IsExists())
+            if (!string.IsNullOrEmpty(ScCollectCustomerCD.Code))
             {
-                nkih_bl.ShowMessage("E101");
-                ScCollectCustomerCD.SetFocus(1);
-                return false;
+                if (!ScCollectCustomerCD.IsExists())
+                {
+                    nkih_bl.ShowMessage("E101");
+                    ScCollectCustomerCD.SetFocus(1);
+                    return false;
+                }
             }
             return true;
         }
@@ -121,10 +125,13 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                if (!string.IsNullOrWhiteSpace(txtCollectDateF.Text) && !string.IsNullOrWhiteSpace(txtCollectDateT.Text))
                 {
-                    nkih_bl.ShowMessage("E103");
-                    txtCollectDateF.Focus();
+                    if (Convert.ToInt32((txtCollectDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtCollectDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    {
+                        nkih_bl.ShowMessage("E103");
+                        txtCollectDateT.Focus();
+                    }
                 }
             }
         }
@@ -133,10 +140,28 @@ namespace NyuukinKesikomiItiranHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                if (!string.IsNullOrWhiteSpace(txtInputDateF.Text) && !string.IsNullOrWhiteSpace(txtInputDateT.Text))
                 {
-                    nkih_bl.ShowMessage("E103");
-                    txtInputDateF.Focus();
+                    if (Convert.ToInt32((txtInputDateF.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtInputDateT.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+                    {
+                        nkih_bl.ShowMessage("E103");
+                        txtInputDateT.Focus();
+                    }
+                }
+            }
+        }
+
+        private void ScCollectCustomerCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScCollectCustomerCD.Code))
+                {
+                    if (!ScCollectCustomerCD.SelectData())
+                    {
+                        nkih_bl.ShowMessage("E101");
+                        ScCollectCustomerCD.SetFocus(1);
+                    }
                 }
             }
         }
@@ -175,7 +200,7 @@ namespace NyuukinKesikomiItiranHyou
                                 Nkh_report.Refresh();
                                 Nkh_report.SetParameterValue("lblStore", cboStoreAuthorizations.SelectedValue.ToString() + " " + cboStoreAuthorizations.Text);
                                 Nkh_report.SetParameterValue("lblToday", DateTime.Now.ToString("yyyy/MM/dd") + "  " + DateTime.Now.ToString("HH:mm"));
-                                Nkh_report.SetParameterValue("lblWebControlType", cboStoreAuthorizations.Text);
+                                Nkh_report.SetParameterValue("lblWebCollectType", cboWebCollectType.Text);
                                 vr.CrystalReportViewer1.ReportSource = Nkh_report;
                                
                                 try
@@ -269,19 +294,6 @@ namespace NyuukinKesikomiItiranHyou
             ScCollectCustomerCD.Value1 = "3";
         }
 
-        private void ScCollectCustomerCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrWhiteSpace(ScCollectCustomerCD.Code))
-                {
-                    if (!ScCollectCustomerCD.SelectData())
-                    {
-                        nkih_bl.ShowMessage("E101");
-                        ScCollectCustomerCD.SetFocus(1);
-                    }
-                }
-            }
-        }
+       
     }
 }
