@@ -232,7 +232,8 @@ namespace Search
             Location,//---2019.12.09
             支払処理,//---2019-12-19
             支払番号検索 ,//2020-01-27
-            プログラムID //SES
+            プログラムID, //SES
+            商品分類//SES
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -615,6 +616,12 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
+                    TxtCode.MaxLength = 100;
+                    TxtCode.Width = 750;
+                    lblName.Width = 300;
+                    break;
+
+                case SearchType.商品分類://SES
                     TxtCode.MaxLength = 100;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
