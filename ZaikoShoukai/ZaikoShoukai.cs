@@ -9,6 +9,8 @@ using Entity;
 using Search;
 using System.Diagnostics;
 using CsvHelper;
+using System.IO;
+using ClosedXML.Excel;
 
 namespace ZaikoShoukai
 {
@@ -20,6 +22,7 @@ namespace ZaikoShoukai
         M_SKUTag_Entity msT_Entity;
         D_Stock_Entity ds_Entity;
         ZaikoShoukai_BL zaibl;
+        DataTable dtData;
         string adminno = "";
         string  shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
         int type = 0;
@@ -85,13 +88,12 @@ namespace ZaikoShoukai
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
-                DataTable dt = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
-                if (dt.Rows.Count > 0)
+                dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
+                if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();
-                    GV_Zaiko.DataSource = dt;
-                    //   adminno =dt.Select(row => row.Field<Int32>("AdminNo"));
-                    adminno = dt.Rows[0]["AdminNo"].ToString();
+                    GV_Zaiko.DataSource = dtData;
+                    adminno = dtData.Rows[0]["AdminNo"].ToString();
                 }
                 else
                 {
@@ -177,7 +179,8 @@ namespace ZaikoShoukai
                 case 10:
                     if (bbl.ShowMessage("Q203") == DialogResult.Yes)
                     {
-                        WriteCSV();
+                        // WriteCSV();
+                        Excel();
                     }
                     break;
             }
@@ -227,60 +230,111 @@ namespace ZaikoShoukai
             RB_Makashohincd.Checked = false;
             CB_Soko.Focus();
         }
-        private  void WriteCSV()
+
+        private void Excel()
         {
             if (!ErrorCheck())
             {
                 return;
             }
 
-            if (GV_Zaiko.DataSource != null)
+            if (dtData.Rows.Count >0)
             {
-                //Build the CSV file data as a Comma separated string.
-                string csv = string.Empty;
-
-                //LoacalDirectory
-                string folderPath = "C:\\CSV\\";
-                FileInfo logFileInfo = new FileInfo(folderPath);
-                DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
-
-                if (!logDirInfo.Exists) logDirInfo.Create();
-
-                //Add the Header row for CSV file.
-                foreach (DataGridViewColumn column in GV_Zaiko.Columns)
+                
+                //if (dtData.Rows[0]["Admin)
+                    //DataTable dtExport = dt;
+                    //dtExport = ChangeDataColumnName(dtExport);
+                    string folderPath = "C:\\Excel\\";
+                if (!Directory.Exists(folderPath))
                 {
-                    //if(column.HeaderText!="")
-                    csv += column.HeaderText + ',';
+                    Directory.CreateDirectory(folderPath);
                 }
-                //Add new line.
-                csv += "\r\n";
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Filter = "Excel Files|*.xlsx;";
+                savedialog.Title = "Save";
+                savedialog.FileName = "ZaikoShoukai";
+                savedialog.InitialDirectory = folderPath;
 
-                //Adding the Rows
-                foreach (DataGridViewRow row in GV_Zaiko.Rows)
+                savedialog.RestoreDirectory = true;
+                if (savedialog.ShowDialog() == DialogResult.OK)
                 {
-                    foreach (DataGridViewCell cell in row.Cells)
+                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
                     {
-                        //Add the Data rows.
-                        if (cell.Value == null)
-                            cell.Value = "";
-                        //csv += cell.Value.ToString().Replace(",", ";")+ ',';
-                        csv += cell.Value.ToString().Replace(",", "") + ',';
-                    }
+                        Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                        Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                        Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
 
-                    //Add new line.
-                    csv += "\r\n";
+                        worksheet = workbook.ActiveSheet;
+                        worksheet.Name = "worksheet";
+                        using (XLWorkbook wb = new XLWorkbook())
+                        {
+
+                            wb.Worksheets.Add(dtData, "worksheet");
+                           
+                            wb.SaveAs(savedialog.FileName);
+                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                        }
+                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                    }
                 }
-                GV_Zaiko.CurrentCell = GV_Zaiko.Rows[0].Cells[1];
-                //Exporting to CSV.            
-                File.WriteAllText(folderPath + "在庫照会 (仕入明細) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
-                bbl.ShowMessage("I203");
-            }
-            else
-            {
-                bbl.ShowMessage("E138");
-                //MessageBox.Show("データがありません。", "情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+        //private  void WriteCSV()
+        //{
+        //    if (!ErrorCheck())
+        //    {
+        //        return;
+        //    }
+
+        //    if (GV_Zaiko.DataSource != null)
+        //    {
+        //        //Build the CSV file data as a Comma separated string.
+        //        string csv = string.Empty;
+
+        //        //LoacalDirectory
+        //        string folderPath = "C:\\CSV\\";
+        //        FileInfo logFileInfo = new FileInfo(folderPath);
+        //        DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
+
+        //        if (!logDirInfo.Exists) logDirInfo.Create();
+
+        //        //Add the Header row for CSV file.
+        //        foreach (DataGridViewColumn column in GV_Zaiko.Columns)
+        //        {
+        //            //if(column.HeaderText!="")
+        //            csv += column.HeaderText + ',';
+        //        }
+        //        //Add new line.
+        //        csv += "\r\n";
+
+        //        //Adding the Rows
+        //        foreach (DataGridViewRow row in GV_Zaiko.Rows)
+        //        {
+        //            foreach (DataGridViewCell cell in row.Cells)
+        //            {
+        //                //Add the Data rows.
+        //                if (cell.Value == null)
+        //                    cell.Value = "";
+        //                //csv += cell.Value.ToString().Replace(",", ";")+ ',';
+        //                csv += cell.Value.ToString().Replace(",", "") + ',';
+        //            }
+
+        //            //Add new line.
+        //            csv += "\r\n";
+        //        }
+        //        GV_Zaiko.CurrentCell = GV_Zaiko.Rows[0].Cells[1];
+        //        //Exporting to CSV.            
+        //        File.WriteAllText(folderPath + "在庫照会 (仕入明細) " + System.DateTime.Today.ToString("MM-dd-yyyy") + "." + "csv", csv, Encoding.GetEncoding(932));
+        //        bbl.ShowMessage("I203");
+        //    }
+        //    else
+        //    {
+        //        bbl.ShowMessage("E138");
+        //        //MessageBox.Show("データがありません。", "情報", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //}
+
+
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
