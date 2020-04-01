@@ -16,9 +16,11 @@ namespace MasterTouroku_ShiireKakeritsu
 {
     public partial class frmMasterTouroku_ShiireKakeritsu : FrmMainForm
     {
+        MasterTouroku_ShiireKakeritsu_BL mskbl;
         public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
+            mskbl = new MasterTouroku_ShiireKakeritsu_BL();
         }
 
         private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
@@ -26,6 +28,7 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = Application.ProductName;
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+            SetRequiredField();
             scSupplierCD.SetFocus(1);
         }
         private void SetRequiredField()
@@ -34,5 +37,26 @@ namespace MasterTouroku_ShiireKakeritsu
             txtRevisionDate.Require(true);
             txtRate.Require(true);
         }
+        private bool ErrorCheck()
+        {
+            if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
+                return false;
+                if (!scSupplierCD.IsExists(1))
+                {
+                    mskbl.ShowMessage("E101");
+                    scSupplierCD.SetFocus(1);
+                    return false;
+                }
+                if(scSupplierCD.IsExists(1))
+                {
+                    mskbl.ShowMessage("E119");
+                    scSupplierCD.SetFocus(1);
+                    return false;
+                }
+            if (!RequireCheck(new Control[] { txtRevisionDate, txtRate }))
+                return false;
+            return true;
+        }
+
     }
 }
