@@ -95,5 +95,22 @@ namespace BL
             D_Juchuu_DL mdl = new D_Juchuu_DL();
             return mdl.D_Juchuu_SelectData_ForNyuuka(de);
         }
+
+        /// <summary>	
+        /// 入荷入力より入荷予定処理	
+        /// NyuukaNyuuryokuより在庫データ複製時に使用	
+        /// </summary>	
+        public DataTable Order_Exec(D_Order_Entity de)
+        {
+            D_Hacchu_DL dl = new D_Hacchu_DL();
+            bool ret = dl.D_Order_ExecForNyuka(de);
+            DataTable dt = new DataTable();
+            D_Arrival_DL adl = new D_Arrival_DL();
+            if (ret)
+            {
+                dt = adl.D_ArrivalPlan_SelectDataByOrderNO(de);
+            }
+            return dt;
+        }
     }
 }

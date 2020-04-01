@@ -1090,69 +1090,69 @@ namespace KaitouNoukiTouroku
             }
         }
 
-        private bool SelectAndInsertExclusive(string orderNo)
-        {
-            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
-                return true;
+        //private bool SelectAndInsertExclusive(string orderNo)
+        //{
+        //    if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
+        //        return true;
 
-            //排他Tableに該当番号が存在するとError
-            //[D_Exclusive]
-            Exclusive_BL ebl = new Exclusive_BL();
-            D_Exclusive_Entity dee = new D_Exclusive_Entity
-            {
-                DataKBN = (int)Exclusive_BL.DataKbn.Hacchu,
-                Number = orderNo,
-                Program = this.InProgramID,
-                Operator = this.InOperatorCD,
-                PC = this.InPcID
-            };
+        //    //排他Tableに該当番号が存在するとError
+        //    //[D_Exclusive]
+        //    Exclusive_BL ebl = new Exclusive_BL();
+        //    D_Exclusive_Entity dee = new D_Exclusive_Entity
+        //    {
+        //        DataKBN = (int)Exclusive_BL.DataKbn.Hacchu,
+        //        Number = orderNo,
+        //        Program = this.InProgramID,
+        //        Operator = this.InOperatorCD,
+        //        PC = this.InPcID
+        //    };
 
-            DataTable dt = ebl.D_Exclusive_Select(dee);
+        //    DataTable dt = ebl.D_Exclusive_Select(dee);
 
-            if (dt.Rows.Count > 0)
-            {
-                bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(),dt.Rows[0]["Operator"].ToString());
-                detailControls[(int)EIndex.Edi].Focus();
-                return false;
-            }
-            else
-            {
-                bool ret = ebl.D_Exclusive_Insert(dee);
-                return ret;
-            }
-        }
-        /// <summary>
-        /// 排他処理データを削除する
-        /// </summary>
-        private void DeleteExclusive(DataTable dtForUpdate = null)
-        {
-            if ( dtForUpdate == null)
-                return;
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(),dt.Rows[0]["Operator"].ToString());
+        //        detailControls[(int)EIndex.Edi].Focus();
+        //        return false;
+        //    }
+        //    else
+        //    {
+        //        bool ret = ebl.D_Exclusive_Insert(dee);
+        //        return ret;
+        //    }
+        //}
+        ///// <summary>
+        ///// 排他処理データを削除する
+        ///// </summary>
+        //private void DeleteExclusive(DataTable dtForUpdate = null)
+        //{
+        //    if ( dtForUpdate == null)
+        //        return;
 
-            Exclusive_BL ebl = new Exclusive_BL();
+        //    Exclusive_BL ebl = new Exclusive_BL();
 
-            if (dtForUpdate != null)
-            {
-                mOldOrderNo = "";
-                foreach (DataRow dr in dtForUpdate.Rows)
-                {
+        //    if (dtForUpdate != null)
+        //    {
+        //        mOldOrderNo = "";
+        //        foreach (DataRow dr in dtForUpdate.Rows)
+        //        {
 
-                    if (mOldOrderNo != dr["OrderNo"].ToString())
-                    {
-                        D_Exclusive_Entity de = new D_Exclusive_Entity
-                        {
-                            DataKBN = (int)Exclusive_BL.DataKbn.Hacchu,
-                            Number = dr["OrderNo"].ToString()
-                        };
+        //            if (mOldOrderNo != dr["OrderNo"].ToString())
+        //            {
+        //                D_Exclusive_Entity de = new D_Exclusive_Entity
+        //                {
+        //                    DataKBN = (int)Exclusive_BL.DataKbn.Hacchu,
+        //                    Number = dr["OrderNo"].ToString()
+        //                };
 
-                        ebl.D_Exclusive_Delete(de);
+        //                ebl.D_Exclusive_Delete(de);
 
-                        mOldOrderNo = dr["OrderNo"].ToString();
-                    }
-                }
-                return;
-            }
-        }
+        //                mOldOrderNo = dr["OrderNo"].ToString();
+        //            }
+        //        }
+        //        return;
+        //    }
+        //}
 
         /// <summary>
         /// データ取得処理
@@ -1245,6 +1245,7 @@ namespace KaitouNoukiTouroku
                         mGrid.g_DArray[i].ReserveNO = row["ReserveNO"].ToString();
                         mGrid.g_DArray[i].ArrivalPlanNO = row["ArrivalPlanNO"].ToString();
                         mGrid.g_DArray[i].num2 = row["Num2"].ToString();
+                        mGrid.g_DArray[i].InstructionSu = Convert.ToInt16(row["InstructionSu"]);
 
                         //変更されたかどうかを退避
                         mGrid.g_DArray[i].OldArrivalPlanDate = mGrid.g_DArray[i].ArrivalPlanDate;
@@ -1846,7 +1847,7 @@ namespace KaitouNoukiTouroku
                        , bbl.Z_Set(row["ArrivalPlanSu"].ToString())
                        , row["DestinationSoukoCD"].ToString() == "" ? null : row["DestinationSoukoCD"].ToString()
                        , bbl.Z_Set(row["AdminNO"].ToString())
-                       , row["SKUCD"].ToString() == "" ? null : row["JanCD"].ToString()
+                       , row["SKUCD"].ToString() == "" ? null : row["SKUCD"].ToString()
                        , row["JanCD"].ToString() == "" ? null : row["JanCD"].ToString()
                        , row["SKUName"].ToString() == "" ? null : row["SKUName"].ToString()
                        , bbl.Z_Set(row["num2"].ToString())

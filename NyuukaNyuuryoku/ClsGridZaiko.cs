@@ -33,6 +33,15 @@ namespace NyuukaNyuuryoku
             internal string StockNO;        //(Hidden)
             internal string ReserveNO;
             internal string ArrivalPlanKBN;
+
+            //COPY時に必要
+            internal string OrderUnitPrice;
+            internal string PriceOutTax;
+            internal string Rate;
+            internal string TaniCD;
+            internal string OrderTaxRitsu;
+            internal string OrderWayKBN;
+            internal string AliasKBN;
         }
 
         //列番号定数

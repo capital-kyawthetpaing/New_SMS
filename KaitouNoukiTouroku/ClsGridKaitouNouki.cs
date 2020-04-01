@@ -54,6 +54,7 @@ namespace KaitouNoukiTouroku
             internal string CalcuArrivalPlanDate;
             internal string ArrivalPlanSu;
             internal string SKUCD;
+            internal int InstructionSu;
         }
 
         //列番号定数
