@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,8 +38,6 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.lblJyuchuNo = new System.Windows.Forms.Label();
-            this.lblCustomer = new System.Windows.Forms.Label();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,8 @@
             this.colArrivePlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDirectFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJuchuuSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblJyuchuNo = new System.Windows.Forms.Label();
+            this.lblCustomer = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -104,10 +105,11 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -123,6 +125,14 @@
             this.colArrivePlanDate,
             this.colDirectFLG,
             this.colJuchuuSuu});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle7;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(9, 126);
@@ -134,28 +144,6 @@
             this.GvDetail.UseSetting = true;
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
-            // 
-            // lblJyuchuNo
-            // 
-            this.lblJyuchuNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblJyuchuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJyuchuNo.Location = new System.Drawing.Point(81, 11);
-            this.lblJyuchuNo.Name = "lblJyuchuNo";
-            this.lblJyuchuNo.Size = new System.Drawing.Size(100, 20);
-            this.lblJyuchuNo.TabIndex = 52;
-            this.lblJyuchuNo.Text = "XXXXXXXXX1XX3";
-            this.lblJyuchuNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCustomer
-            // 
-            this.lblCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblCustomer.Location = new System.Drawing.Point(81, 41);
-            this.lblCustomer.Name = "lblCustomer";
-            this.lblCustomer.Size = new System.Drawing.Size(270, 20);
-            this.lblCustomer.TabIndex = 53;
-            this.lblCustomer.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ10";
-            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // colSKUCD
             // 
@@ -173,7 +161,7 @@
             this.colJANCD.HeaderText = "JANCD";
             this.colJANCD.Name = "colJANCD";
             this.colJANCD.ReadOnly = true;
-            this.colJANCD.Width = 80;
+            this.colJANCD.Width = 90;
             // 
             // colSKUName
             // 
@@ -228,7 +216,29 @@
             this.colJuchuuSuu.HeaderText = "受注数";
             this.colJuchuuSuu.Name = "colJuchuuSuu";
             this.colJuchuuSuu.ReadOnly = true;
-            this.colJuchuuSuu.Width = 80;
+            this.colJuchuuSuu.Width = 70;
+            // 
+            // lblJyuchuNo
+            // 
+            this.lblJyuchuNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblJyuchuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblJyuchuNo.Location = new System.Drawing.Point(81, 11);
+            this.lblJyuchuNo.Name = "lblJyuchuNo";
+            this.lblJyuchuNo.Size = new System.Drawing.Size(100, 20);
+            this.lblJyuchuNo.TabIndex = 52;
+            this.lblJyuchuNo.Text = "XXXXXXXXX1XX3";
+            this.lblJyuchuNo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblCustomer
+            // 
+            this.lblCustomer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblCustomer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblCustomer.Location = new System.Drawing.Point(81, 41);
+            this.lblCustomer.Name = "lblCustomer";
+            this.lblCustomer.Size = new System.Drawing.Size(270, 20);
+            this.lblCustomer.TabIndex = 53;
+            this.lblCustomer.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ10";
+            this.lblCustomer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FrmJuchuu
             // 

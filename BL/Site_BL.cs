@@ -24,7 +24,7 @@ namespace BL
             {
                 mse.ItemSKUCD = dt.Rows[0]["ItemSKUCD"].ToString();
                 mse.APIKey = dt.Rows[0]["APIKey"].ToString();
-                mse.ItemSKUFLG = dt.Rows[0]["ItemSKUFLG"].ToString();
+                //mse.ItemSKUFLG = dt.Rows[0]["ItemSKUFLG"].ToString();
                 mse.SiteURL = dt.Rows[0]["SiteURL"].ToString();
                 mse.InsertOperator = dt.Rows[0]["InsertOperator"].ToString();
                 mse.InsertDateTime = dt.Rows[0]["InsertDateTime"].ToString();
@@ -37,7 +37,7 @@ namespace BL
                 return false;
 
         }
-
-        
     }
+
+
 }

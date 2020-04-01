@@ -83,6 +83,8 @@ namespace KaitouNoukiTouroku
                 if (knbl.Z_Set(row["ArrivalPlanSu"]) != 0)
                     detailControls[(int)EIndex.Suryo1 + 4 * count].Text = knbl.Z_SetStr( row["ArrivalPlanSu"]);
 
+                detailControls[(int)EIndex.Suryo1 + 4 * count].Tag = knbl.Z_SetStr(row["InstructionSu"]);
+
                 if (!string.IsNullOrWhiteSpace( row["ArrivalPlanDate"].ToString()))
                     detailControls[(int)EIndex.ArrivalPlanDate1 + 4 * count].Text =Convert.ToDateTime( row["ArrivalPlanDate"]).ToShortDateString();
 
@@ -343,6 +345,14 @@ namespace KaitouNoukiTouroku
                         detailControls[index].Focus();
                         return false;
                     }
+                    //（既に出荷指示されている数より小さくはできません）
+                    if (knbl.Z_Set(detailControls[index].Text) <  knbl.Z_Set( detailControls[index].Tag)) //InstructionSu;
+                    {
+                        knbl.ShowMessage("E225");
+                        detailControls[index].Focus();
+                        return false;
+                    }
+
                     detailControls[index].Text = knbl.Z_SetStr(detailControls[index].Text);
                     break;
 
