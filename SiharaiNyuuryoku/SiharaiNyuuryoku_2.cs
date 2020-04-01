@@ -361,6 +361,7 @@ namespace SiharaiNyuuryoku
             txtPayPlanDate.Text = string.Empty;
             txtPayeeCD.Text = string.Empty;
             lblVendorName.Text = string.Empty;
+            lblPayGaku1.Text = string.Empty;
             txtTransferAmount.Text = string.Empty;
             SC_BankCD.Clear();
             SC_BranchCD.Clear();
