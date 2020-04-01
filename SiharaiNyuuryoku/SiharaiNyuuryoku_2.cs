@@ -134,6 +134,7 @@ namespace SiharaiNyuuryoku
 
             InProgramID = "SiharaiNyuuryoku_2";
             Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
+            StartProgram();
 
             SetFunctionLabel(EProMode.MENTE);
 
@@ -357,6 +358,9 @@ namespace SiharaiNyuuryoku
         }
         public void Clear()
         {
+            txtPayPlanDate.Text = string.Empty;
+            txtPayeeCD.Text = string.Empty;
+            lblVendorName.Text = string.Empty;
             txtTransferAmount.Text = string.Empty;
             SC_BankCD.Clear();
             SC_BranchCD.Clear();
@@ -818,14 +822,15 @@ namespace SiharaiNyuuryoku
                         bbl.ShowMessage("E102");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
-                    else if(Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) <0)
+                    else if (Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
+                    //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
                     {
                         bbl.ShowMessage("E143");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
                     else
                     {
-                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayPlanConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
+                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
                     }
                         LabelDataBind();
                 }
