@@ -90,6 +90,7 @@
     <Compile Include="MasterTouroku_Hanyou_BL.cs" />
     <Compile Include="MasterTouroku_Renban_BL.cs" />
     <Compile Include="MasterTouroku_Settouchi_BL.cs" />
+    <Compile Include="MasterTouroku_ShiireKakeritsu_BL.cs" />
     <Compile Include="MasterTouroku_Shiiresaki_BL.cs" />
     <Compile Include="MasterTouroku_Souko_BL.cs" />
     <Compile Include="MasterTouroku_Staff_BL.cs" />
