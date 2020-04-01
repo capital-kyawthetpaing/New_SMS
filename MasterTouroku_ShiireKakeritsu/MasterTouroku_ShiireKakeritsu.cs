@@ -25,7 +25,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
         {
-            InProgramID = Application.ProductName;
+            InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             SetRequiredField();
@@ -58,5 +58,20 @@ namespace MasterTouroku_ShiireKakeritsu
             return true;
         }
 
+        private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
+            {
+                //F11();
+            }
+        }
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }
