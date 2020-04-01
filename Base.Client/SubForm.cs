@@ -58,6 +58,13 @@ namespace Base.Client
                 this.BtnF9.Text = value;
             }
         }
+        protected string BtnF12Text
+        {
+            set
+            {
+                this.BtnF12.Text = value;
+            }
+        }
 
         public bool flgCancel = false;
 

@@ -90,5 +90,20 @@ namespace Entity
         //EDI回答納期登録
         public string OrderRows { get; set; }
         public string OrderSu { get; set; }
+
+        //入荷入力	
+        public string AdminNO { get; set; }
+        public string SKUCD { get; set; }
+        public string SKUName { get; set; }
+        public string JANCD { get; set; }
+        public string ColorName { get; set; }
+        public string SizeName { get; set; }
+        public string OrderSuu { get; set; }
+        public string OrderUnitPrice { get; set; }
+        public string TaniCD { get; set; }
+        public string PriceOutTax { get; set; }
+        public string Rate { get; set; }
+        public string OrderTax { get; set; }
+        public string OrderTaxRitsu { get; set; }
     }
 }

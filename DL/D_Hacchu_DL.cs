@@ -45,10 +45,10 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
         public DataTable D_Order_SelectAllForShoukai(D_Order_Entity doe, M_SKU_Entity mse, string operatorNm, string pc)
         {
             string sp = "D_Order_SelectAllForShoukai";
-
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
@@ -59,11 +59,12 @@ namespace DL
                 { "@ArrivalDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalDateTo } },
                 { "@PurchaseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.PurchaseDateFrom } },
                 { "@PurchaseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.PurchaseDateTo } },
-
                 { "@ChkMikakutei", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMikakutei.ToString() } },
                 { "@ArrivalPlan", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanCD } },
                 { "@ChkKanbai", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkKanbai.ToString() } },
                 { "@ChkFuyo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFuyo.ToString() } },
+                { "@ChkNyukaZumi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkNyukaZumi.ToString() } },
+                { "@ChkMiNyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMiNyuka.ToString() } },
                 { "@ChkJuchuAri", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkJuchuAri.ToString() } },
                 { "@ChkZaiko", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkZaiko.ToString() } },
                 { "@ChkMisyonin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMisyonin.ToString() } },
@@ -73,25 +74,22 @@ namespace DL
                 { "@ChkNet", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkNet.ToString() } },
                 { "@ChkFax", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFax.ToString() } },
                 { "@ChkEdi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkEdi.ToString() } },
-
                 { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
-                //{ "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },	
+                //{ "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },	
                 { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.MakerItem } },
                 { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
-
                 { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuuNO } },
                 { "@DestinationSoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.DestinationSoukoCD } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
-
             };
-
             return SelectData(dic, sp);
         }
+
         /// <summary>
         /// 発注承認入力データ取得処理
         /// </summary>
@@ -234,24 +232,30 @@ namespace DL
             return ret;
         }
 
-
-        public DataTable D_Order_SelectAllForEDIHacchuu(D_Order_Entity doe)
+        public DataTable D_Order_SelectDataForKaitouNouki(D_Order_Entity doe)
         {
-            string sp = "D_Order_SelectAllForEDIHacchuu";
-
+            string sp = "D_Order_SelectDataForKaitouNouki";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-                {
-                    { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
-                    { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
-                    { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateTo } },
-                    { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },
-                    { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
-                    { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNO } },
-                    { "@ChkMisyonin", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ChkMisyonin.ToString() } },
-                };
-
+            {
+                { "@ArrivalPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalPlanDateFrom } },
+                { "@ArrivalPlanDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalPlanDateTo } },
+                { "@ArrivalPlanMonthFrom", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanMonthFrom } },
+                { "@ArrivalPlanMonthTo", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanMonthTo } },
+                { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
+                { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateTo } },
+                { "@OrderNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoFrom } },
+                { "@OrderNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoTo } },
+                { "@EDIDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.EDIDate } },
+                { "@ChkMikakutei", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMikakutei.ToString() } },
+                { "@ArrivalPlan", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanCD } },
+                { "@ChkKanbai", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkKanbai.ToString() } },
+                { "@ChkFuyo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFuyo.ToString() } },
+                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
+            };
             return SelectData(dic, sp);
         }
+
 
         /// <summary>
         /// 回答納期登録更新処理
@@ -293,35 +297,7 @@ namespace DL
             return ret;
         }
 
-        public DataTable D_Order_SelectDataForKaitouNouki(D_Order_Entity doe)
-        {
-            string sp = "D_Order_SelectDataForKaitouNouki";
-
-            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
-            {
-                { "@ArrivalPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalPlanDateFrom } },
-                { "@ArrivalPlanDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalPlanDateTo } },
-                { "@ArrivalPlanMonthFrom", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanMonthFrom } },
-                { "@ArrivalPlanMonthTo", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanMonthTo } },
-                { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
-                { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateTo } },
-
-                { "@OrderNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoFrom } },
-                { "@OrderNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoTo } },
-                { "@EDIDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.EDIDate } },
-
-                { "@ChkMikakutei", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMikakutei.ToString() } },
-                { "@ArrivalPlan", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanCD } },
-                { "@ChkKanbai", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkKanbai.ToString() } },
-                { "@ChkFuyo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFuyo.ToString() } },
-
-                { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
-
-            };
-
-            return SelectData(dic, sp);
-        }
+       
 
         /// <summary>
         /// 回答納期確認書よりデータ取得
@@ -353,5 +329,71 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
+        public DataTable D_Order_Select(string orderNo)
+        {
+            string sp = "D_Order_SelectForEDIHacchuu";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+                {
+                    { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderNo } },
+                };
+            return SelectData(dic, sp);
+        }
+        public DataTable D_Order_SelectAllForEDIHacchuu(D_Order_Entity doe)
+        {
+            string sp = "D_Order_SelectAllForEDIHacchuu";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+                {
+                    { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
+                    { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
+                    { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateTo } },
+                    { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },
+                    { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
+                    { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNO } },
+                    { "@ChkMisyonin", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ChkMisyonin.ToString() } },
+                };
+            return SelectData(dic, sp);
+        }
+        public bool D_Order_ExecForNyuka(D_Order_Entity de)
+        {
+            string sp = "D_Order_ExecForNyuka";
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+            AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
+            AddParam(command, "@ChangeDate", SqlDbType.Date, de.ChangeDate);    //ArrivalDate	
+            AddParam(command, "@SoukoCD", SqlDbType.VarChar, de.DestinationSoukoCD);
+            AddParam(command, "@StaffCD", SqlDbType.VarChar, de.StaffCD);
+            AddParam(command, "@OrderWayKBN", SqlDbType.TinyInt, de.OrderWayKBN);
+            AddParam(command, "@OrderCD", SqlDbType.VarChar, de.OrderCD);
+            AddParam(command, "@OrderPerson", SqlDbType.VarChar, de.OrderPerson);
+            AddParam(command, "@AliasKBN", SqlDbType.TinyInt, de.AliasKBN);
+            AddParam(command, "@AdminNO", SqlDbType.Int, de.AdminNO);
+            AddParam(command, "@SKUCD", SqlDbType.VarChar, de.SKUCD);
+            AddParam(command, "@SKUName", SqlDbType.VarChar, de.SKUName);
+            AddParam(command, "@JANCD", SqlDbType.VarChar, de.JANCD);
+            AddParam(command, "@ColorName", SqlDbType.VarChar, de.ColorName);
+            AddParam(command, "@SizeName", SqlDbType.VarChar, de.SizeName);
+            AddParam(command, "@OrderSuu", SqlDbType.Int, de.OrderSuu);
+            AddParam(command, "@OrderUnitPrice", SqlDbType.Money, de.OrderUnitPrice);
+            AddParam(command, "@TaniCD", SqlDbType.VarChar, de.TaniCD);
+            AddParam(command, "@PriceOutTax", SqlDbType.Money, de.PriceOutTax);
+            AddParam(command, "@Rate", SqlDbType.Decimal, de.Rate);
+            AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, de.OrderHontaiGaku);
+            AddParam(command, "@OrderTax", SqlDbType.Money, de.OrderTax);
+            AddParam(command, "@OrderTaxRitsu", SqlDbType.Int, de.OrderTaxRitsu);
+            AddParam(command, "@Operator", SqlDbType.VarChar, de.Operator);
+            //OUTパラメータの追加	
+            string outPutParam = "@OutOrderNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                de.OrderNO = outPutParam;
+            return ret;
+        }
+
     }
 }

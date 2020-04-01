@@ -731,7 +731,11 @@ namespace NyuukaNyuuryoku
             // TabStopを全てTrueに(KeyExitイベントが発生しなくなることを防ぐ)
             Set_GridTabStop(true);
 
-            SetFuncKey(this, 8, false);
+            //【引当】か【在庫】							
+            if (!string.IsNullOrWhiteSpace( mGrid.g_DArray[pRow].JYUNO))
+                SetFuncKey(this, 9, true);
+            else
+                SetFuncKey(this, 9, false);
         }
 
         private void Grid_NotFocus(int pCol, int pRow)
@@ -1408,7 +1412,10 @@ namespace NyuukaNyuuryoku
             // TabStopを全てTrueに(KeyExitイベントが発生しなくなることを防ぐ)
             Set_GridTabStop2(true);
 
-            SetFuncKey(this, 8, false);
+            if (mGrid2.g_DArray[pRow].ArrivalPlanKBN == "2")
+                SetFuncKey(this, 9, false);
+            else
+                SetFuncKey(this, 9, true);
         }
 
         private void Grid_NotFocus2(int pCol, int pRow)
@@ -1526,7 +1533,7 @@ namespace NyuukaNyuuryoku
                 base.StartProgram();
                 Btn_F7.Text = "";
                 Btn_F8.Text = "";
-                Btn_F10.Text = "";
+                Btn_F10.Text = "入荷予定(F10)";
                 Btn_F11.Text = "";
 
                 //コンボボックス初期化
@@ -1895,6 +1902,14 @@ namespace NyuukaNyuuryoku
                         mGrid.g_DArray[i].ReserveNO = row["ReserveNO"].ToString();
                         mGrid.g_DArray[i].ArrivalPlanKBN = row["ArrivalPlanKBN"].ToString();
 
+                        mGrid.g_DArray[i].OrderUnitPrice = row["OrderUnitPrice"].ToString();
+                        mGrid.g_DArray[i].PriceOutTax = row["PriceOutTax"].ToString();
+                        mGrid.g_DArray[i].Rate = row["Rate"].ToString();
+                        mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();
+                        mGrid.g_DArray[i].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
+                        mGrid.g_DArray[i].OrderWayKBN = row["OrderWayKBN"].ToString();
+                        mGrid.g_DArray[i].AliasKBN = row["AliasKBN"].ToString();
+
                         m_dataCnt = i + 1;
                         Grid_NotFocus((int)ClsGridHikiate.ColNO.JYUNO, i);
                         i++;
@@ -1924,6 +1939,14 @@ namespace NyuukaNyuuryoku
                         mGrid2.g_DArray[i2].StockNO = row["StockNO"].ToString();
                         mGrid2.g_DArray[i2].ReserveNO = row["ReserveNO"].ToString();
                         mGrid2.g_DArray[i2].ArrivalPlanKBN = row["ArrivalPlanKBN"].ToString();
+
+                        mGrid2.g_DArray[i2].OrderUnitPrice = row["OrderUnitPrice"].ToString();
+                        mGrid2.g_DArray[i2].PriceOutTax = row["PriceOutTax"].ToString();
+                        mGrid2.g_DArray[i2].Rate = row["Rate"].ToString();
+                        mGrid2.g_DArray[i2].TaniCD = row["TaniCD"].ToString();
+                        mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
+                        mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
+                        mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
 
                         m_dataCnt2 = i2 + 1;
                         Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
@@ -2221,6 +2244,15 @@ namespace NyuukaNyuuryoku
                                     mGrid.g_DArray[i].ReserveNO = row["ReserveNO"].ToString();
                                     mGrid.g_DArray[i].ArrivalPlanKBN = row["ArrivalPlanKBN"].ToString();
 
+                                    mGrid.g_DArray[i].OrderUnitPrice = row["OrderUnitPrice"].ToString();
+                                    mGrid.g_DArray[i].PriceOutTax = row["PriceOutTax"].ToString();
+                                    mGrid.g_DArray[i].Rate = row["Rate"].ToString();
+                                    mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();
+                                    mGrid.g_DArray[i].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
+                                    mGrid.g_DArray[i].OrderWayKBN = row["OrderWayKBN"].ToString();
+                                    mGrid.g_DArray[i].AliasKBN = row["AliasKBN"].ToString();
+
+
                                     m_dataCnt = i + 1;
                                     Grid_NotFocus((int)ClsGridHikiate.ColNO.JYUNO, i);
                                     i++;
@@ -2250,6 +2282,14 @@ namespace NyuukaNyuuryoku
                                     mGrid2.g_DArray[i2].StockNO = row["StockNO"].ToString();
                                     mGrid2.g_DArray[i2].ReserveNO = row["ReserveNO"].ToString();
                                     mGrid2.g_DArray[i2].ArrivalPlanKBN = row["ArrivalPlanKBN"].ToString();
+
+                                    mGrid2.g_DArray[i2].OrderUnitPrice = row["OrderUnitPrice"].ToString();
+                                    mGrid2.g_DArray[i2].PriceOutTax = row["PriceOutTax"].ToString();
+                                    mGrid2.g_DArray[i2].Rate = row["Rate"].ToString();
+                                    mGrid2.g_DArray[i2].TaniCD = row["TaniCD"].ToString();
+                                    mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
+                                    mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
+                                    mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
 
                                     m_dataCnt2 = i2 + 1;
                                     Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
@@ -2330,6 +2370,7 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E143", "1", "小さい");
                         return false;
                     }
+                    //【引当】
                     //入荷数＞引当数の場合、エラー
                     if (bbl.Z_Set(mGrid.g_DArray[row].SURYO) > bbl.Z_Set(mGrid.g_DArray[row].ReserveSu))
                     {
@@ -2337,6 +2378,7 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E143", "引当数", "大きい");
                         return false;
                     }
+
                     break;
             }
 
@@ -2361,13 +2403,15 @@ namespace NyuukaNyuuryoku
                         bbl.ShowMessage("E143", "1", "小さい");
                         return false;
                     }
-                    //入荷数＞引当数の場合、エラー
-                    if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) > bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
-                    {
-                        //Ｅ１４３
-                        bbl.ShowMessage("E143", "引当数", "大きい");
-                        return false;
-                    }
+                    //【在庫】
+                    //入荷数＞引当数の場合、	エラーでない
+                    ////入荷数＞引当数の場合、エラー
+                    //if (bbl.Z_Set(mGrid2.g_DArray[row].SURYO) > bbl.Z_Set(mGrid2.g_DArray[row].ReserveSu))
+                    //{
+                    //    //Ｅ１４３
+                    //    bbl.ShowMessage("E143", "引当数", "大きい");
+                    //    return false;
+                    //}
                     break;
             }
 
@@ -2621,6 +2665,163 @@ namespace NyuukaNyuuryoku
             //更新後画面クリア
             ChangeOperationMode(OperationMode);
         }
+        /// <summary>
+        ///F10:入荷予定　押下時処理 
+        /// </summary>
+        private void ExecCopy()
+        {
+            int w_Row;
+            int w_Col;
+            int w_CtlRow;
+            int kbn = 0;
+
+            if (mGrid.F_Search_Ctrl_MK(previousCtrl, out w_Col, out w_CtlRow))
+            {
+                kbn = 1;
+
+                //画面より配列セット 
+                mGrid.S_DispToArray(Vsb_Mei_0.Value);
+            }
+            else if (mGrid2.F_Search_Ctrl_MK(previousCtrl, out w_Col, out w_CtlRow))
+            {
+                kbn = 2;
+
+                //画面より配列セット 
+                mGrid2.S_DispToArray(Vsb_Mei_1.Value);
+            }
+
+            string nyukaSu = "";
+            string VendorCD = "";
+            string VendorName = "";
+            string OrderUnitPrice = "";
+            string TaniCD = "";
+            string PriceOutTax = "";
+            string Rate = "";
+            string OrderTaxRitsu = "";
+            string OrderWayKBN = "";
+            string AliasKBN = "";
+
+            CalcKin();
+
+            switch (kbn)
+            {
+                case 0:
+                    return;
+                case 1:
+                    w_Row = w_CtlRow + Vsb_Mei_0.Value;
+
+                    nyukaSu = bbl.Z_Set(lblHikiate.Text) != 0 ? lblHikiate.Text : mGrid.g_DArray[w_Row].SURYO;
+                    VendorCD = mGrid.g_DArray[w_Row].VendorCD;
+                    VendorName = mGrid.g_DArray[w_Row].VendorName;
+                    OrderUnitPrice = mGrid.g_DArray[w_Row].OrderUnitPrice;
+                    TaniCD = mGrid.g_DArray[w_Row].TaniCD;
+                    PriceOutTax = mGrid.g_DArray[w_Row].PriceOutTax;
+                    Rate = mGrid.g_DArray[w_Row].Rate;
+                    OrderTaxRitsu = mGrid.g_DArray[w_Row].OrderTaxRitsu;
+                    OrderWayKBN = mGrid.g_DArray[w_Row].OrderWayKBN;
+                    AliasKBN = mGrid.g_DArray[w_Row].AliasKBN;
+                    break;
+
+                case 2:
+                    w_Row = w_CtlRow + Vsb_Mei_1.Value;
+
+                    nyukaSu = bbl.Z_Set(lblZaiko.Text) != 0 ? lblZaiko.Text : mGrid2.g_DArray[w_Row].SURYO;
+                    VendorCD = mGrid2.g_DArray[w_Row].VendorCD;
+                    VendorName = mGrid2.g_DArray[w_Row].VendorName;
+                    OrderUnitPrice = mGrid2.g_DArray[w_Row].OrderUnitPrice;
+                    TaniCD = mGrid2.g_DArray[w_Row].TaniCD;
+                    PriceOutTax = mGrid2.g_DArray[w_Row].PriceOutTax;
+                    Rate = mGrid2.g_DArray[w_Row].Rate;
+                    OrderTaxRitsu = mGrid2.g_DArray[w_Row].OrderTaxRitsu;
+                    OrderWayKBN = mGrid2.g_DArray[w_Row].OrderWayKBN;
+                    AliasKBN = mGrid2.g_DArray[w_Row].AliasKBN;
+                    break;
+            }
+
+            decimal OrderSuu = bbl.Z_Set(detailControls[(int)EIndex.Nyukasu].Text) - bbl.Z_Set(nyukaSu);
+
+            D_Order_Entity de = new D_Order_Entity
+            {
+                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                ChangeDate = detailControls[(int)EIndex.ArrivalDate].Text,
+                DestinationSoukoCD = CboSoukoName.SelectedValue.ToString(),
+                OrderWayKBN = OrderWayKBN ,
+                OrderCD = VendorCD,
+                OrderPerson = VendorName,
+                AliasKBN = AliasKBN,
+                StaffCD = InOperatorCD,
+
+                JANCD = txtJANCD.Text,
+                AdminNO = mAdminNO,
+                SKUCD = lblSKUCD.Text,
+                SKUName = lblSKUName.Text,
+                ColorName = lblColorName.Text,
+                SizeName = lblSizeName.Text,
+            };
+            de.OrderSuu = bbl.Z_SetStr(OrderSuu);
+            de.OrderUnitPrice = bbl.Z_SetStr(OrderUnitPrice);
+            de.TaniCD = TaniCD;
+            de.PriceOutTax = PriceOutTax;
+            de.Rate = Rate;
+            de.OrderHontaiGaku = bbl.Z_SetStr(bbl.Z_Set(OrderSuu) * bbl.Z_Set(OrderUnitPrice));
+
+            int TaxFractionKBN = GetTaxFractionKBN(VendorCD, de.ChangeDate);
+            de.OrderTax = GetResultWithHasuKbn(TaxFractionKBN, bbl.Z_Set(OrderSuu) * bbl.Z_Set(OrderUnitPrice) * bbl.Z_Set(OrderTaxRitsu) / 100).ToString();
+            de.OrderTaxRitsu = OrderTaxRitsu;
+            de.Operator = InOperatorCD;
+
+            DataTable dt = nnbl.Order_Exec(de);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                //追加した行を在庫データに表示
+                int i2 = m_dataCnt2;
+                mGrid2.g_DArray[i2].Check = false;
+                mGrid2.g_DArray[i2].Number = row["JuchuuNO"].ToString();     //OrderNo
+                mGrid2.g_DArray[i2].RowNo = row["JuchuuRows"].ToString();    //OrderRows
+                mGrid2.g_DArray[i2].CustomerCD = row["CustomerCD"].ToString();
+                mGrid2.g_DArray[i2].Customer = row["CustomerName2"].ToString();
+                mGrid2.g_DArray[i2].OrderSu = bbl.Z_SetStr(row["HachuSu"]);   // 
+                mGrid2.g_DArray[i2].ReserveSu = bbl.Z_SetStr(row["ReserveSu"]);   //
+                mGrid2.g_DArray[i2].SURYO = bbl.Z_SetStr(row["DR_ArrivalSu"]);
+                mGrid2.g_DArray[i2].DirectFlg = row["DirectFlg"].ToString();
+                mGrid2.g_DArray[i2].DeliveryPlanDate = row["DeliveryPlanDate"].ToString();
+                mGrid2.g_DArray[i2].VendorCD = row["VendorCD"].ToString();
+                mGrid2.g_DArray[i2].VendorName = row["VendorName"].ToString();
+                mGrid2.g_DArray[i2].ArrivalPlanNO = row["ArrivalPlanNO"].ToString();
+                mGrid2.g_DArray[i2].StockNO = row["StockNO"].ToString();
+                mGrid2.g_DArray[i2].ReserveNO = row["ReserveNO"].ToString();
+                mGrid2.g_DArray[i2].ArrivalPlanKBN = row["ArrivalPlanKBN"].ToString();
+
+                mGrid2.g_DArray[i2].OrderUnitPrice = row["OrderUnitPrice"].ToString();
+                mGrid2.g_DArray[i2].PriceOutTax = row["PriceOutTax"].ToString();
+                mGrid2.g_DArray[i2].Rate = row["Rate"].ToString();
+                mGrid2.g_DArray[i2].TaniCD = row["TaniCD"].ToString();
+                mGrid2.g_DArray[i2].OrderTaxRitsu = row["OrderTaxRitsu"].ToString();
+                mGrid2.g_DArray[i2].OrderWayKBN = row["OrderWayKBN"].ToString();
+                mGrid2.g_DArray[i2].AliasKBN = row["AliasKBN"].ToString();
+
+                m_dataCnt2 = i2 + 1;
+                Grid_NotFocus2((int)ClsGridZaiko.ColNO.Number, i2);
+                mGrid2.S_DispFromArray(0, ref Vsb_Mei_1);
+
+            }
+        }
+
+        private int GetTaxFractionKBN(string VendorCD, string ChangeDate)
+        {
+            M_Vendor_Entity me = new M_Vendor_Entity
+            {
+                VendorCD = VendorCD,
+                ChangeDate = ChangeDate,
+                VendorFlg = "1"
+            };
+
+            Vendor_BL bl = new Vendor_BL();
+            bool retV = bl.M_Vendor_SelectTop1(me);
+
+            return Convert.ToInt16(me.TaxFractionKBN);
+        }
         private void ChangeOperationMode(EOperationMode mode)
         {
             OperationMode = mode; // (1:新規,2:修正,3;削除)
@@ -2796,15 +2997,17 @@ namespace NyuukaNyuuryoku
                     }
                 case 6://F7:行削除
                 case 7://F8:行追加
-                case 9://F10複写
                     break;
-
                 case 8: //F9:検索
                     if (previousCtrl.Name.Equals(txtJANCD.Name))
                     {
                         //商品検索
                             SearchData(EsearchKbn.Product, previousCtrl);
                     }
+                    break;
+                case 9://F10:入荷予定
+                    //その行の内容をコピーして【在庫】に明細を追加したい
+                    ExecCopy();
                     break;
 
                 case 11:    //F12:登録

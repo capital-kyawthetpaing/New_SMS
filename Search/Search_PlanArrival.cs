@@ -56,13 +56,15 @@ namespace Search
             TB_item.Text = item;
             TB_Jancd.Text = jancd;
             TB_makerCD.Text = makercd;
-            this.BtnF12Visible = true;
-            
+            BtnF12Text = "表示(F11)";
+
+
         }
         public override void FunctionProcess(int index)
         {
             switch (index)
             {
+                case 10:
                 case 11:
                     F11();
                     break;
