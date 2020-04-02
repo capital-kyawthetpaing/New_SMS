@@ -71,23 +71,20 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
             {
-                //F11();
-            }
-        }
-        public override void FunctionProcess(int index)
-        {
-            if (index + 1 == 12)
-            {
-                GetData();
-            }
-        }
-        private void GetData()
-        {
-            if (dgv_ShiireKakeritsu.CurrentRow != null && dgv_ShiireKakeritsu.CurrentRow.Index >= 0)
-            {
                 
             }
         }
+        //public override void FunctionProcess(int index)
+        //{
+        //    if (index + 1 == 12)
+        //    {
+        //        GetData();
+        //    }
+        //}
+        //private void GetData()
+        //{
+
+        //}
 
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
