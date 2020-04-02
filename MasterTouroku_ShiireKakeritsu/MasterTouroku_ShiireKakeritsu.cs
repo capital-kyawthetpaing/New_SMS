@@ -37,6 +37,15 @@ namespace MasterTouroku_ShiireKakeritsu
             txtRevisionDate.Require(true);
             txtRate.Require(true);
         }
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+        public void Clear()
+        {
+            Clear(panelDetail);
+            scSupplierCD.SetFocus(1);
+        }
         private bool ErrorCheck()
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
@@ -53,7 +62,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     scSupplierCD.SetFocus(1);
                     return false;
                 }
-            if (!RequireCheck(new Control[] { txtRevisionDate, txtRate }))
+            if (!RequireCheck(new Control[] { txtRevisionDate, txtRate,txtCopy }))
                 return false;
             return true;
         }
@@ -65,13 +74,41 @@ namespace MasterTouroku_ShiireKakeritsu
                 //F11();
             }
         }
-        protected override void EndSec()
+        public override void FunctionProcess(int index)
         {
-            this.Close();
+            if (index + 1 == 12)
+            {
+                GetData();
+            }
         }
+        private void GetData()
+        {
+            if (dgv_ShiireKakeritsu.CurrentRow != null && dgv_ShiireKakeritsu.CurrentRow.Index >= 0)
+            {
+                
+            }
+        }
+
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
