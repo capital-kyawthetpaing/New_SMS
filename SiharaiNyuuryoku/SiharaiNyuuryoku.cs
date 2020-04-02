@@ -255,6 +255,10 @@ namespace SiharaiNyuuryoku
                         month = 0 + DateTime.Now.Month.ToString();
                     }
                     string day = DateTime.Today.Day.ToString();
+                    if(day.Length == 1)
+                    {
+                        day = 0 + DateTime.Today.Day.ToString();
+                    }
                     txtPaymentDate.Text = year +"/"+ month +"/"+day;
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();

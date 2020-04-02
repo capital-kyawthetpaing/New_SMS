@@ -121,6 +121,7 @@
             // 
             this.PanelTitle.Controls.Add(this.PanelLeft);
             this.PanelTitle.Controls.Add(this.PanelRight);
+            this.PanelTitle.Controls.Add(this.lblDisp);
             this.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTitle.Location = new System.Drawing.Point(0, 0);
             this.PanelTitle.Name = "PanelTitle";

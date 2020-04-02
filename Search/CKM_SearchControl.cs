@@ -407,7 +407,7 @@ namespace Search
                 //2019.6.15 add---------------->
                 case SearchType.ブランド:
                     txtCode.MaxLength = 6;
-                    txtCode.Width = 60;
+                    txtCode.Width = 100;
                     lblName.Width = 280;
                     break;
                 case SearchType.SKU_ITEM_CD:
@@ -503,7 +503,7 @@ namespace Search
                     break;
                 case SearchType.競技:
                     TxtCode.MaxLength = 4;
-                    TxtCode.Width = 40;
+                    TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
                 case SearchType.大分類:
@@ -616,14 +616,14 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 100;
+                    TxtCode.MaxLength = 6;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
 
                 case SearchType.商品分類://SES
-                    TxtCode.MaxLength = 100;
-                    TxtCode.Width = 750;
+                    TxtCode.MaxLength = 6;
+                    TxtCode.Width = 100;
                     lblName.Width = 300;
                     break;
             }
