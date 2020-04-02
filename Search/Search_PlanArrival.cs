@@ -57,8 +57,6 @@ namespace Search
             TB_Jancd.Text = jancd;
             TB_makerCD.Text = makercd;
             BtnF12Text = "表示(F11)";
-
-
         }
         public override void FunctionProcess(int index)
         {
@@ -92,7 +90,8 @@ namespace Search
             {
                 Type = 3;
             }
-            DataTable dt = pa_bl.Search_PlanArrival(dap_Entity, msku_Entity,msT_Entity,msInfo_Entity,ds_Entity,adminNO,Type);
+            //DataTable dt = pa_bl.Search_PlanArrival(dap_Entity, msku_Entity,msT_Entity,msInfo_Entity,ds_Entity,adminNO,Type);
+            DataTable dt = pa_bl.Search_PlanArrival(dap_Entity, msku_Entity, adminNO);
             if (dt.Rows.Count > 0)
             {
                 GV_PlanArrival.Refresh();

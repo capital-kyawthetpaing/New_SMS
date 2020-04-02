@@ -39,7 +39,7 @@ namespace BL
                 m_cust.HomephoneNo2 = dtCustomer.Rows[0]["Tel22"].ToString();
                 m_cust.HomephoneNo3 = dtCustomer.Rows[0]["Tel23"].ToString();
                 m_cust.MailAddress= dtCustomer.Rows[0]["MailAddress"].ToString();
-                m_cust.MailAddress2 = dtCustomer.Rows[0]["MailAddress2"].ToString();
+                //m_cust.MailAddress2 = dtCustomer.Rows[0]["MailAddress2"].ToString();
                 m_cust.DMFlg= dtCustomer.Rows[0]["DMFlg"].ToString();
                 m_cust.DeleteFlg= dtCustomer.Rows[0]["DeleteFlg"].ToString();
                 m_cust.ZipCD1= dtCustomer.Rows[0]["ZipCD1"].ToString();
