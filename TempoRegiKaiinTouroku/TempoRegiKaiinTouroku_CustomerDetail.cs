@@ -43,6 +43,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             MoveNextControl(e);
         }
         private void TempoRegiKaiinTouroku_CustomerDetail_Load(object sender, EventArgs e)
+
         {            
             InProgramID = "TempoRegiKaiinTouroku";            
             StartProgram();
@@ -177,7 +178,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 txthomeTelNo2.Text = cust.HomephoneNo2;
                 txthomeTelNo3.Text = cust.HomephoneNo3;
                 txtMailAddress.Text = cust.MailAddress;
-                txtMailAddress2.Text = cust.MailAddress2;
+                txtMailAddress2.Text = cust.MailAddress;
                 txtZipCode1.Text = cust.ZipCD1;
                 txtZipCode2.Text = cust.ZipCD2;
                 txtAddress1.Text = cust.Address1;
@@ -220,7 +221,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 Address1=txtAddress1.Text,
                 Address2=txtAddress2.Text,
                 MailAddress = txtMailAddress.Text,
-                MailAddress2=txtMailAddress2.Text,
+             //   MailAddress2=txtMailAddress2.Text,
                 TankaCD= "0000000000000",
                 PointFLG="1",
                 MainStoreCD=StoreCD,

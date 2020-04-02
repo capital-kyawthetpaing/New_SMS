@@ -694,7 +694,7 @@ namespace BL
             string sp = "Simple_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                 {
-                    { "@ChangeDate", new ValuePair {  value1 = SqlDbType.VarChar, value2 = changeDate==null? DBNull.Value.ToString(): changeDate  } },
+                    { "@ChangeDate", new ValuePair {value1 = SqlDbType.VarChar, value2 = changeDate==null? DBNull.Value.ToString(): changeDate  } },
                     { "@CD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = param1==null? DBNull.Value.ToString(): param1 } },
                     { "@CD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = param2==null? DBNull.Value.ToString(): param2 } },
                     { "@CD3", new ValuePair { value1 = SqlDbType.VarChar, value2 =  param3==null? DBNull.Value.ToString(): param3 } },

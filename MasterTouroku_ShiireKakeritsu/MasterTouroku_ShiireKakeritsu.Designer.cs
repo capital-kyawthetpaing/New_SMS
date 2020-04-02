@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.scSupplierCD = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -150,6 +151,7 @@
             this.scSupplierCD.Value1 = null;
             this.scSupplierCD.Value2 = null;
             this.scSupplierCD.Value3 = null;
+            this.scSupplierCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplierCD_CodeKeyDownEvent);
             // 
             // ckM_Label2
             // 
@@ -242,24 +244,24 @@
             this.panel1.Controls.Add(this.ckM_Label3);
             this.panel1.Location = new System.Drawing.Point(2, 152);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1680, 1050);
+            this.panel1.Size = new System.Drawing.Size(1680, 800);
             this.panel1.TabIndex = 13;
             // 
             // ckM_GridView1
             // 
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -269,11 +271,19 @@
             this.Column5,
             this.Column6,
             this.Column7});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(197, 367);
             this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.Size = new System.Drawing.Size(1150, 600);
+            this.ckM_GridView1.Size = new System.Drawing.Size(1150, 350);
             this.ckM_GridView1.TabIndex = 44;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
@@ -557,7 +567,7 @@
             this.ckM_SearchControl7.ChangeDate = "";
             this.ckM_SearchControl7.ChangeDateWidth = 100;
             this.ckM_SearchControl7.Code = "";
-            this.ckM_SearchControl7.CodeWidth = 60;
+            this.ckM_SearchControl7.CodeWidth = 100;
             this.ckM_SearchControl7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl7.DataCheck = false;
             this.ckM_SearchControl7.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -568,7 +578,7 @@
             this.ckM_SearchControl7.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl7.Name = "ckM_SearchControl7";
             this.ckM_SearchControl7.SearchEnable = true;
-            this.ckM_SearchControl7.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl7.Size = new System.Drawing.Size(434, 30);
             this.ckM_SearchControl7.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ckM_SearchControl7.TabIndex = 19;
             this.ckM_SearchControl7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -600,7 +610,7 @@
             this.ckM_SearchControl6.ChangeDate = "";
             this.ckM_SearchControl6.ChangeDateWidth = 100;
             this.ckM_SearchControl6.Code = "";
-            this.ckM_SearchControl6.CodeWidth = 80;
+            this.ckM_SearchControl6.CodeWidth = 100;
             this.ckM_SearchControl6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl6.DataCheck = false;
             this.ckM_SearchControl6.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -611,7 +621,7 @@
             this.ckM_SearchControl6.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl6.Name = "ckM_SearchControl6";
             this.ckM_SearchControl6.SearchEnable = true;
-            this.ckM_SearchControl6.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl6.Size = new System.Drawing.Size(414, 30);
             this.ckM_SearchControl6.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.ckM_SearchControl6.TabIndex = 17;
             this.ckM_SearchControl6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -643,7 +653,7 @@
             this.ckM_SearchControl5.ChangeDate = "";
             this.ckM_SearchControl5.ChangeDateWidth = 100;
             this.ckM_SearchControl5.Code = "";
-            this.ckM_SearchControl5.CodeWidth = 80;
+            this.ckM_SearchControl5.CodeWidth = 100;
             this.ckM_SearchControl5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl5.DataCheck = false;
             this.ckM_SearchControl5.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -654,7 +664,7 @@
             this.ckM_SearchControl5.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl5.Name = "ckM_SearchControl5";
             this.ckM_SearchControl5.SearchEnable = true;
-            this.ckM_SearchControl5.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl5.Size = new System.Drawing.Size(414, 30);
             this.ckM_SearchControl5.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ckM_SearchControl5.TabIndex = 15;
             this.ckM_SearchControl5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -915,7 +925,7 @@
             this.ckM_SearchControl4.ChangeDate = "";
             this.ckM_SearchControl4.ChangeDateWidth = 100;
             this.ckM_SearchControl4.Code = "";
-            this.ckM_SearchControl4.CodeWidth = 60;
+            this.ckM_SearchControl4.CodeWidth = 100;
             this.ckM_SearchControl4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl4.DataCheck = false;
             this.ckM_SearchControl4.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -926,7 +936,7 @@
             this.ckM_SearchControl4.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl4.Name = "ckM_SearchControl4";
             this.ckM_SearchControl4.SearchEnable = true;
-            this.ckM_SearchControl4.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl4.Size = new System.Drawing.Size(434, 30);
             this.ckM_SearchControl4.Stype = Search.CKM_SearchControl.SearchType.商品分類;
             this.ckM_SearchControl4.TabIndex = 8;
             this.ckM_SearchControl4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -958,7 +968,7 @@
             this.ckM_SearchControl3.ChangeDate = "";
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
-            this.ckM_SearchControl3.CodeWidth = 80;
+            this.ckM_SearchControl3.CodeWidth = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -969,7 +979,7 @@
             this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.SearchEnable = true;
-            this.ckM_SearchControl3.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl3.Size = new System.Drawing.Size(414, 30);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.ckM_SearchControl3.TabIndex = 6;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1001,7 +1011,7 @@
             this.ckM_SearchControl2.ChangeDate = "";
             this.ckM_SearchControl2.ChangeDateWidth = 100;
             this.ckM_SearchControl2.Code = "";
-            this.ckM_SearchControl2.CodeWidth = 80;
+            this.ckM_SearchControl2.CodeWidth = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1012,7 +1022,7 @@
             this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
             this.ckM_SearchControl2.SearchEnable = true;
-            this.ckM_SearchControl2.Size = new System.Drawing.Size(394, 30);
+            this.ckM_SearchControl2.Size = new System.Drawing.Size(414, 30);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ckM_SearchControl2.TabIndex = 4;
             this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1194,13 +1204,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1684, 1261);
+            this.ClientSize = new System.Drawing.Size(1684, 1061);
             this.Controls.Add(this.panel1);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "frmMasterTouroku_ShiireKakeritsu";
             this.Text = "MasterTouroku_ShiireKakeritsu";
             this.Load += new System.EventHandler(this.frmMasterTouroku_ShiireKakeritsu_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmMasterTouroku_ShiireKakeritsu_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
