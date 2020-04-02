@@ -73,5 +73,10 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             MoveNextControl(e);
         }
+
+        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
+        {
+            ckM_SearchControl6.Value1 = "202";
+        }
     }
 }
