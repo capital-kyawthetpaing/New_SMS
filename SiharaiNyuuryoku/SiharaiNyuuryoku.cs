@@ -113,6 +113,7 @@ namespace SiharaiNyuuryoku
                     break;
                 case 5:
                     ChangeMode(EOperationMode.SHOW);
+                    F12Visible = false;
                     break;
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
@@ -155,7 +156,7 @@ namespace SiharaiNyuuryoku
                     F9Visible = false;
                     F12Enable = true;
                     btnF10Show.Enabled = true;
-                    F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
                 case EOperationMode.UPDATE:
@@ -176,6 +177,7 @@ namespace SiharaiNyuuryoku
                     ScPayee.SearchEnable = false;
                     F12Enable = true;
                     btnF10Show.Enabled = F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
             }
