@@ -226,6 +226,7 @@ namespace SiharaiNyuuryoku
                     mode = "2";
                     dt2 = sibl.D_Pay_Select2(dpe);
                     dt3 = sibl.D_Pay_Select3(dpe);
+
                     if (dt3.Rows.Count > 0)
                     {
                         SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD, dppe.PayeeCD, dppe.PayPlanDate, dt3, dt2);
@@ -316,12 +317,16 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("ERMCDate");
                             dt4.Columns.Remove("OtherGaku1");
                             dt4.Columns.Remove("Account1");
+                            dt4.Columns.Remove("start1");
                             dt4.Columns.Remove("SubAccount1");
+                            dt4.Columns.Remove("end1label");
                             dt4.Columns.Remove("OtherGaku2");
                             dt4.Columns.Remove("Account2");
+                            dt4.Columns.Remove("start2");
                             dt4.Columns.Remove("SubAccount2");
+                            dt4.Columns.Remove("end2label");
 
-                        }
+                    }
                     //}                   
                 }
 

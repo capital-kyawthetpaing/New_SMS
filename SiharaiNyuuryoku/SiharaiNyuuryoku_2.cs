@@ -352,11 +352,15 @@ namespace SiharaiNyuuryoku
 
             dtSiharai2.Rows[0]["OtherGaku1"] = txtOther1.Text.ToString();
             dtSiharai2.Rows[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["start1"] = SC_HanyouKeyStart1.LabelText;
             dtSiharai2.Rows[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
 
             dtSiharai2.Rows[0]["OtherGaku2"] = txtOther2.Text.ToString();
             dtSiharai2.Rows[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["start2"] = SC_HanyouKeyStart2.LabelText;
             dtSiharai2.Rows[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
             dtSiharai2.AcceptChanges();
             //return dtSiharai2;
         }
@@ -689,7 +693,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd1.TxtCode.Text))
                 {
-                    SC_HanyouKeyEnd1.Value2 = SC_HanyouKeyStart1.LabelText;
+                    SC_HanyouKeyEnd1.Value2 = SC_HanyouKeyStart1.TxtCode.Text;
                     if (!SC_HanyouKeyEnd1.SelectData())
                     {
                         bbl.ShowMessage("E101");
@@ -712,7 +716,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd2.TxtCode.Text))
                 {
-                    SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.LabelText;
+                    SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.TxtCode.Text;
                     if (!SC_HanyouKeyEnd2.SelectData())
                     {
                         bbl.ShowMessage("E101");
