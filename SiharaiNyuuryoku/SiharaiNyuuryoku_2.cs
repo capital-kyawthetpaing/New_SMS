@@ -206,10 +206,14 @@ namespace SiharaiNyuuryoku
                 txtSettlementDate2.Text = dtSiharai2.Rows[0]["ERMCDate"].ToString();
                 txtOther1.Text = dtSiharai2.Rows[0]["OtherGaku1"].ToString();
                 SC_HanyouKeyStart1.TxtCode.Text = dtSiharai2.Rows[0]["Account1"].ToString();
+                SC_HanyouKeyStart1.LabelText = dtSiharai2.Rows[0]["start1"].ToString();
                 SC_HanyouKeyEnd1.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount1"].ToString();
+                SC_HanyouKeyEnd1.LabelText = dtSiharai2.Rows[0]["end1label"].ToString();
                 txtOther2.Text = dtSiharai2.Rows[0]["OtherGaku2"].ToString();
                 SC_HanyouKeyStart2.TxtCode.Text = dtSiharai2.Rows[0]["Account2"].ToString();
+                SC_HanyouKeyStart2.LabelText = dtSiharai2.Rows[0]["start2"].ToString();
                 SC_HanyouKeyEnd2.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount2"].ToString();
+                SC_HanyouKeyEnd2.LabelText = dtSiharai2.Rows[0]["end2label"].ToString();
 
             }
 
