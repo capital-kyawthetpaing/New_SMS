@@ -660,7 +660,7 @@
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
             this.txtMailAddress.Length = 100;
-            this.txtMailAddress.Location = new System.Drawing.Point(265, 321);
+            this.txtMailAddress.Location = new System.Drawing.Point(265, 322);
             this.txtMailAddress.MaxLength = 100;
             this.txtMailAddress.MoveNext = true;
             this.txtMailAddress.Name = "txtMailAddress";
