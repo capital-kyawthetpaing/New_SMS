@@ -107,6 +107,14 @@ namespace MasterTouroku_ShiireKakeritsu
         {
 
         }
+        private void ckM_SearchControl3_Enter(object sender, EventArgs e)
+        {
+            ckM_SearchControl3.Value1 = "202";
+        }
+        private void ckM_SearchControl4_Enter(object sender, EventArgs e)
+        {
+            ckM_SearchControl4.Value1 = "203";
+        }
 
         private void ckM_SearchControl6_Enter(object sender, EventArgs e)
         {
@@ -117,12 +125,6 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             ckM_SearchControl7.Value1 = "203";
         }
-
-
-
-
-
-
         private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -165,5 +167,9 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
+
+        
+
+        
     }
 }
