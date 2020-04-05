@@ -118,6 +118,11 @@ namespace MasterTouroku_ShiireKakeritsu
             ckM_SearchControl7.Value1 = "203";
         }
 
+
+
+
+
+
         private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
