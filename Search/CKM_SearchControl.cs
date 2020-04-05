@@ -502,7 +502,7 @@ namespace Search
                     lblName.Width = 350;
                     break;
                 case SearchType.競技:
-                    TxtCode.MaxLength = 4;
+                    TxtCode.MaxLength = 5;
                     TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
@@ -879,6 +879,19 @@ namespace Search
                         }
                     }
                     break;
+                case SearchType.商品分類:
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
+
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))
                     {
@@ -1626,6 +1639,9 @@ namespace Search
                     case SearchType.競技://Search_Sport	add by pes
                         dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.商品分類://Search_Segment add by pes
+                        dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
 
                 }
 
@@ -1712,6 +1728,9 @@ namespace Search
                     break;
                 case SearchType.競技:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
+                    break;
+                case SearchType.商品分類:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 13, txtCode.Text, Value1);
                     break;
             }
             if (dtResult.Rows.Count > 0)
