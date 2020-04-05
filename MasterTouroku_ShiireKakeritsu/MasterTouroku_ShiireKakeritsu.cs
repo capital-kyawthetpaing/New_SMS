@@ -125,6 +125,28 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             ckM_SearchControl7.Value1 = "203";
         }
+
+        private void ckM_SearchControl3_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckM_SearchControl3.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(ckM_SearchControl3.TxtCode.Text))
+                {
+                    if (ckM_SearchControl3.SelectData())
+                    {
+                        ckM_SearchControl3.Value1 = ckM_SearchControl3.TxtCode.Text;
+                        ckM_SearchControl3.Value2 = ckM_SearchControl3.LabelText;
+                    }
+                    else
+                    {
+
+                        ckM_SearchControl3.SetFocus(1);
+                    }
+                }
+            }
+        }
+
         private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -161,15 +183,32 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                     else
                     {
-                        
                         ckM_SearchControl7.SetFocus(1);
                     }
                 }
             }
         }
 
-        
+       
 
-        
+        private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ckM_SearchControl4.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(ckM_SearchControl4.TxtCode.Text))
+                {
+                    if (ckM_SearchControl4.SelectData())
+                    {
+                        ckM_SearchControl4.Value1 = ckM_SearchControl4.TxtCode.Text;
+                        ckM_SearchControl4.Value2 = ckM_SearchControl4.LabelText;
+                    }
+                    else
+                    {
+                        ckM_SearchControl4.SetFocus(1);
+                    }
+                }
+            }
+        }
     }
 }
