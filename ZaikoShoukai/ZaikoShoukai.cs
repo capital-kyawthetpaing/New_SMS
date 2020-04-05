@@ -442,7 +442,6 @@ namespace ZaikoShoukai
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[14].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 soukocd = CB_Soko.SelectedValue.ToString();
-               // Search_PlanArrival frmVendor = new Search_PlanArrival(this);
                 Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, data);
                 frmVendor.ShowDialog();
             }
