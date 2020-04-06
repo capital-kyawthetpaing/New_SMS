@@ -116,7 +116,7 @@ namespace JANCDHenkou
                     {
                         DialogResult dr = MessageBox.Show("", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         {
-                            if(dr ==  DialogResult.No)
+                            //if(dr ==  DialogResult.No)
 
                         }
                     }
