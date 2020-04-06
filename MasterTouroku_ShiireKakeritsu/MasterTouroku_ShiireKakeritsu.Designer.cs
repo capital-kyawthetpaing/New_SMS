@@ -396,7 +396,6 @@
             this.btnSelect.TabIndex = 39;
             this.btnSelect.Text = "全選択";
             this.btnSelect.UseVisualStyleBackColor = false;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelectAll_Click_1);
             // 
             // btnChoice
             // 
