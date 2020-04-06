@@ -120,6 +120,7 @@
     <Compile Include="M_Hanyou_DL.cs" />
     <Compile Include="M_ItemOrderPrice_DL.cs" />
     <Compile Include="M_ItemPrice_DL.cs" />
+    <Compile Include="M_ITEM_DL.cs" />
     <Compile Include="M_JANOrderPrice_DL.cs" />
     <Compile Include="M_Kouza_DL.cs" />
     <Compile Include="M_Location_DL.cs" />

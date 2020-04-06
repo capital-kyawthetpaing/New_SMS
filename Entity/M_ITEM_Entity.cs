@@ -86,13 +86,18 @@ namespace Entity
         public string TaxRateFLGName { get; set; }
         public string CostingKBNName { get; set; }
 
-        ////M_ItemTag
-        //public string TagName1 { get; set; }
-        //public string TagName2 { get; set; }
-        //public string TagName3 { get; set; }
-        //public string TagName4 { get; set; }
-        //public string TagName5 { get; set; }
+        //M_ItemTag
+        public string TagName1 { get; set; }
+        public string TagName2 { get; set; }
+        public string TagName3 { get; set; }
+        public string TagName4 { get; set; }
+        public string TagName5 { get; set; }
+        public string TagName6 { get; set; }
+        public string TagName7 { get; set; }
+        public string TagName8 { get; set; }
+        public string TagName9 { get; set; }
+        public string TagName10 { get; set; }
         //public string CountOfSKUCD { get; set; }
-        
+
     }
 }

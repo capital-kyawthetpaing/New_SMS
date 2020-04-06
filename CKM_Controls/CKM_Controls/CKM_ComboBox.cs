@@ -65,6 +65,8 @@ namespace CKM_Controls
             予約フラグ,
             特記フラグ,
             送料条件,
+            要加工品区分,
+            要確認品区分,
             タグ,
             発注,
             予約,      //20200316       
@@ -187,9 +189,13 @@ namespace CKM_Controls
             base.OnKeyDown(e);
         }
 
+        public bool AcceptKey = false;
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            e.Handled = true;
+            if (!AcceptKey)
+            {
+                e.Handled = true;
+            }
             base.OnKeyPress(e);
         }
         private void Cbo_Enter(object sender, EventArgs e)
@@ -322,6 +328,8 @@ namespace CKM_Controls
                 case CboType.予約フラグ:
                 case CboType.特記フラグ:
                 case CboType.送料条件:
+                case CboType.要加工品区分:
+                case CboType.要確認品区分:
                 case CboType.発注:
                 case CboType.タグ:
                 case CboType.入荷予定状況:
@@ -361,6 +369,14 @@ namespace CKM_Controls
                             break;
                         case CboType.送料条件:
                             me.ID = MultiPorpose_BL.ID_PostageCD;
+                            kbn = 1;
+                            break;
+                        case CboType.要加工品区分:
+                            me.ID = MultiPorpose_BL.ID_ManufactCD; //	
+                            kbn = 1;
+                            break;
+                        case CboType.要確認品区分:
+                            me.ID = MultiPorpose_BL.ID_ConfirmCD;//	
                             kbn = 1;
                             break;
                         case CboType.発注:
