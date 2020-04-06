@@ -14,5 +14,6 @@ namespace Entity
         //public string ItemSKUFLG {get;set;}
         public string SiteURL { get; set; }
 
+
     }
 }
