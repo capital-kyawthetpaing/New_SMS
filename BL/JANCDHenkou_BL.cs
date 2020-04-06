@@ -11,9 +11,12 @@ namespace BL
 {
     public class JANCDHenkou_BL : Base_BL
     {
+    
         public JANCDHenkou_BL()
         {
-
+           
         }
+
+       
     }
 }

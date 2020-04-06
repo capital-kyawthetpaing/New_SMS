@@ -47,7 +47,6 @@ namespace JANCDHenkou
             base.FunctionProcess(index);
             switch (index + 1)
             {
-                
                 case 6: //F6:キャンセル
                     {
                         //Ｑ００４				
@@ -57,9 +56,12 @@ namespace JANCDHenkou
                         }
                         break;
                     }
-                    //case 11:
-                    //    PrintSec();
-                    //    break;
+                case 11:
+                  //  F11();
+                    break;
+                case 12:
+                    F12();
+                    break;
             }
         }
         protected override void EndSec()
@@ -76,6 +78,11 @@ namespace JANCDHenkou
             //txtTargetPeriodF.Focus();
         }
 
+        /// <summary>
+        /// Show select_SKU form on gridview JanCD button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvJANCDHenkou_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
@@ -88,6 +95,48 @@ namespace JANCDHenkou
                 frmSku.parChangeDate = System.DateTime.Now.ToString("yyyy-MM-dd");
                 frmSku.ShowDialog();
             }
+        }
+
+        private bool ErrorCheck()
+        {
+            foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
+            {
+                if (!(row.Cells["colGenJanCD"].Value == null))
+                {
+                    if (jhbl.SimpleSelect1("58", System.DateTime.Now.ToString("yyyy-MM-dd"),row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
+                    {
+                        jhbl.ShowMessage("E101");
+                        return false;
+                    }
+                }
+
+               if(!(row.Cells["colNewJANCD"].Value == null))
+                {
+                    if (jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
+                    {
+                        if(MessageBox.Show("", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning).Equals("1"))
+                        {
+
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        private void F11()
+        {
+            ErrorCheck();
+        }
+
+        private void F12()
+        {
+            ErrorCheck();
+        }
+
+        private void BtnF11Show_Click(object sender, EventArgs e)
+        {
+            F11();
         }
     }
 }
