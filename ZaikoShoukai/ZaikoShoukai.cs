@@ -30,6 +30,7 @@ namespace ZaikoShoukai
         {
             InitializeComponent();
             zaibl = new ZaikoShoukai_BL();
+            dtData = new DataTable();
         }
         private void ZaikoShoukai_Load(object sender, EventArgs e)
         {
@@ -41,6 +42,8 @@ namespace ZaikoShoukai
             ModeVisible = false;
             base.Btn_F10.Text = "CSV(F10)";
             CB_Soko.Focus();
+            AddCol();
+            
         }
         protected override void EndSec()
         {
@@ -87,6 +90,7 @@ namespace ZaikoShoukai
                 if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();
+                    //AddCol();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
                 }
@@ -95,6 +99,35 @@ namespace ZaikoShoukai
                     GV_Zaiko.DataSource = null;
                     dtData.Clear();
                 }
+            }
+        }
+        private void AddCol()
+        {
+            if (dtData.Columns.Count == 0)
+            {
+                dtData.Columns.Add("AdminNO");
+                dtData.Columns.Add("SKUCD");
+                dtData.Columns.Add("商品名");
+                dtData.Columns.Add("カラー");
+                dtData.Columns.Add("サイズ");
+                dtData.Columns.Add("店舗CD");
+                dtData.Columns.Add("店舗名");
+                dtData.Columns.Add("倉庫CD");
+                dtData.Columns.Add("倉庫名");
+                dtData.Columns.Add("棚番");
+                dtData.Columns.Add("在庫数");
+                dtData.Columns.Add("入荷予定数");
+                dtData.Columns.Add("引当可能数");
+                dtData.Columns.Add("メーカー在庫数");
+                dtData.Columns.Add("JANCD");
+                dtData.Columns.Add("ブランドCD");
+                dtData.Columns.Add("ブランド名");
+                dtData.Columns.Add("ITEM");
+                dtData.Columns.Add("メーカー商品CD");
+                dtData.Columns.Add("最速入荷日");
+                dtData.Columns.Add("基準在庫");
+                dtData.Columns.Add("販売定価");
+                dtData.Columns.Add("標準原価");
             }
         }
         public M_SKU_Entity GetDataEntity()
@@ -230,6 +263,7 @@ namespace ZaikoShoukai
             CB_Soko.Focus();
             GV_Zaiko.DataSource = null;
             dtData.Clear();
+           
         }
 
         private void Excel()
@@ -238,43 +272,11 @@ namespace ZaikoShoukai
             {
                 return;
             }
-            //if (dtData.Rows.Count > 0)
-            //{
-            //    dtData.Columns.Remove("AdminNO");
-            //    string folderPath = "C:\\Excel\\";
-            //        if (!Directory.Exists(folderPath))
-            //        {
-            //            Directory.CreateDirectory(folderPath);
-            //        }
-            //        SaveFileDialog savedialog = new SaveFileDialog();
-            //        savedialog.Filter = "Excel Files|*.xlsx;";
-            //        savedialog.Title = "Save";
-            //        savedialog.FileName = "ZaikoShoukai";
-            //        savedialog.InitialDirectory = folderPath;
 
-            //        savedialog.RestoreDirectory = true;
-            //        if (savedialog.ShowDialog() == DialogResult.OK)
-            //        {
-            //            if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-            //            {
-            //                Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-            //                Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-            //                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-            //                worksheet = workbook.ActiveSheet;
-            //                worksheet.Name = "worksheet";
-            //                using (XLWorkbook wb = new XLWorkbook())
-            //                {
-            //                    wb.Worksheets.Add(dtData, "worksheet");
-            //                    wb.SaveAs(savedialog.FileName);
-            //                    bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
-            //                }
-            //                Process.Start(Path.GetDirectoryName(savedialog.FileName));
-            //            }
-            //        }
-            //}
-
-            dtData.Columns.Remove("AdminNO");
+            if (dtData.Columns.Contains("AdminNO"))
+            {
+                dtData.Columns.Remove("AdminNO");
+            }
             string folderPath = "C:\\Excel\\";
             if (!Directory.Exists(folderPath))
             {
@@ -301,16 +303,14 @@ namespace ZaikoShoukai
                    
                         using (XLWorkbook wb = new XLWorkbook())
                         {
-                            wb.Worksheets.Add(dtData, "worksheet");
-                            wb.SaveAs(savedialog.FileName);
-                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                        wb.Worksheets.Add(dtData, "worksheet");
+                        wb.SaveAs(savedialog.FileName);
+                        bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                         }
                     
                         Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
-            
-
         }
 
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)

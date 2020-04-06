@@ -1523,27 +1523,28 @@
             this.SKUCD.DataPropertyName = "SKUCD";
             this.SKUCD.HeaderText = "SKUCD";
             this.SKUCD.Name = "SKUCD";
+            this.SKUCD.Width = 200;
             // 
             // 商品名
             // 
-            this.商品名.DataPropertyName = "SkuName";
+            this.商品名.DataPropertyName = "商品名";
             this.商品名.HeaderText = "商品名";
             this.商品名.Name = "商品名";
-            this.商品名.Width = 300;
+            this.商品名.Width = 400;
             // 
             // カラー
             // 
             this.カラー.DataPropertyName = "カラー";
             this.カラー.HeaderText = "カラー";
             this.カラー.Name = "カラー";
-            this.カラー.Width = 200;
+            this.カラー.Width = 100;
             // 
             // サイズ
             // 
             this.サイズ.DataPropertyName = "サイズ";
             this.サイズ.HeaderText = "サイズ";
             this.サイズ.Name = "サイズ";
-            this.サイズ.Width = 200;
+            this.サイズ.Width = 100;
             // 
             // 店舗名
             // 
@@ -1556,6 +1557,7 @@
             this.SoukoName.DataPropertyName = "倉庫名";
             this.SoukoName.HeaderText = "倉庫";
             this.SoukoName.Name = "SoukoName";
+            this.サイズ.Width = 150;
             // 
             // 棚番
             // 
@@ -1589,6 +1591,8 @@
             this.Button.Name = "Button";
             this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Button.UseColumnTextForButtonValue = true;
+            this.Button.Width = 40;
+
             // 
             // 引当可能
             // 
@@ -1610,7 +1614,7 @@
             // 
             // JANCD
             // 
-            this.JANCD.DataPropertyName = "JanCD";
+            this.JANCD.DataPropertyName = "JANCD";
             this.JANCD.HeaderText = "JANCD";
             this.JANCD.Name = "JANCD";
             // 
@@ -1619,18 +1623,21 @@
             this.ブランド.DataPropertyName = "ブランド名";
             this.ブランド.HeaderText = "ブランド";
             this.ブランド.Name = "ブランド";
+            this.ブランド.Width = 180;
             // 
             // ITEM
             // 
             this.ITEM.DataPropertyName = "ITem";
             this.ITEM.HeaderText = "ITEM";
             this.ITEM.Name = "ITEM";
+            this.ITEM.Width = 200;
             // 
             // メーカー商品CD
             // 
             this.メーカー商品CD.DataPropertyName = "メーカー商品CD";
             this.メーカー商品CD.HeaderText = "メーカー商品CD";
             this.メーカー商品CD.Name = "メーカー商品CD";
+            this.メーカー商品CD.Width = 200;
             // 
             // 最速入荷日
             // 
