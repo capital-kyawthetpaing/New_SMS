@@ -15,11 +15,9 @@ namespace DL
         public DataTable M_SKU_Select(M_SKU_Entity mse)
         {
             string sp = "M_SKU_Select";
-
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                    { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
-                    { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+                    { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = mse.AdminNO } },
                     { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
             };
             return SelectData(dic, sp);
@@ -151,6 +149,132 @@ namespace DL
                     { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
                     { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
                 };
+            return SelectData(dic, sp);
+        }
+
+        /// <summary>	
+        /// 商品マスタ更新処理	
+        /// MasterTouroku_Syohinより更新時に使用	
+        /// </summary>	
+        /// <param name="me"></param>	
+        /// <returns></returns>	
+        public bool M_SKU_Exec(M_SKU_Entity me, short operationMode)
+        {
+            string sp = "PRC_MasterTouroku_Syohin";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = operationMode.ToString() } },
+                { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = me. AdminNO} },
+                { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SKUCD} },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate} },
+                { "@VariousFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.VariousFLG } },
+                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SKUName} },
+                { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.KanaName} },
+                { "@SKUShortName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SKUShortName} },
+                { "@EnglishName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.EnglishName } },
+                { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ITemCD } },
+                { "@ColorNO", new ValuePair { value1 = SqlDbType.Int, value2 = me.ColorNO} },
+                { "@SizeNO", new ValuePair { value1 = SqlDbType.Int, value2 = me.SizeNO } },
+                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.JanCD} },
+                { "@SetKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.SetKBN } },
+                { "@PresentKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.PresentKBN } },
+                { "@SampleKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.SampleKBN} },
+                { "@DiscountKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.DiscountKBN } },
+                { "@ColorName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ColorName } },
+                { "@SizeName", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SizeName} },
+                { "@WebFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.WebFlg } },
+                { "@RealStoreFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.RealStoreFlg} },
+                { "@MainVendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.MainVendorCD} },
+                { "@MakerVendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.MakerVendorCD } },
+                { "@BrandCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.BrandCD} },
+                { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.MakerItem } },
+                { "@TaniCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.TaniCD } },
+                { "@SportsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SportsCD } },
+                { "@ZaikoKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.ZaikoKBN } },
+                { "@Rack", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.Rack } },
+                { "@VirtualFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.VirtualFlg } },
+                { "@DirectFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.DirectFlg} },
+                { "@ReserveCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ReserveCD } },
+                { "@NoticesCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.NoticesCD } },
+                { "@PostageCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.PostageCD } },
+                { "@ManufactCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ManufactCD} },
+                { "@ConfirmCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ConfirmCD } },
+                { "@WebStockFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.WebStockFlg } },
+                { "@StopFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StopFlg} },
+                { "@DiscontinueFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.DiscontinueFlg} },
+                { "@InventoryAddFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.InventoryAddFlg } },
+                { "@MakerAddFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.MakerAddFlg } },
+                { "@StoreAddFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.StoreAddFlg } },
+                { "@NoNetOrderFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.NoNetOrderFlg } },
+                { "@EDIOrderFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.EDIOrderFlg } },
+                { "@CatalogFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.CatalogFlg } },
+                { "@ParcelFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.ParcelFlg} },
+                { "@AutoOrderFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.AutoOrderFlg} },
+                { "@TaxRateFLG", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.TaxRateFLG } },
+                { "@CostingKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.CostingKBN } },
+                { "@SaleExcludedFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.SaleExcludedFlg } },
+                { "@PriceWithTax", new ValuePair { value1 = SqlDbType.Money, value2 = me. PriceWithTax} },
+                { "@PriceOutTax", new ValuePair { value1 = SqlDbType.Money, value2 = me.PriceOutTax } },
+                { "@OrderPriceWithTax", new ValuePair { value1 = SqlDbType.Money, value2 = me.OrderPriceWithTax } },
+                { "@OrderPriceWithoutTax", new ValuePair { value1 = SqlDbType.Money, value2 = me. OrderPriceWithoutTax} },
+                { "@SaleStartDate", new ValuePair { value1 = SqlDbType.Date, value2 = me. SaleStartDate } },
+                { "@WebStartDate", new ValuePair { value1 = SqlDbType.Date, value2 = me.WebStartDate} },
+                { "@OrderAttentionCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.OrderAttentionCD} },
+                { "@OrderAttentionNote", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.OrderAttentionNote} },
+                { "@CommentInStore", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.CommentInStore} },
+                { "@CommentOutStore", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.CommentOutStore } },
+                { "@LastYearTerm", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastYearTerm} },
+                { "@LastSeason", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastSeason} },
+                { "@LastCatalogNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastCatalogNO } },
+                { "@LastCatalogPage", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastCatalogPage } },
+                { "@LastCatalogText", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastCatalogText } },
+                { "@LastInstructionsNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.LastInstructionsNO} },
+                { "@LastInstructionsDate", new ValuePair { value1 = SqlDbType.Date, value2 = me.LastInstructionsDate} },
+                { "@WebAddress", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.WebAddress} },
+                { "@SetAdminCD", new ValuePair { value1 = SqlDbType.Int, value2 = me.SetAdminCD } },
+                { "@SetItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SetItemCD} },
+                { "@SetSKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.SetSKUCD } },
+                { "@SetSU", new ValuePair { value1 = SqlDbType.Int, value2 = me.SetSU} },
+                { "@ApprovalDate",  new ValuePair { value1 = SqlDbType.Date, value2 = me.ApprovalDate} },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.DeleteFlg} },
+                { "@UsedFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.UsedFlg} },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.DeleteFlg} },
+                { "@UsedFlg", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.UsedFlg} },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.UpdateOperator} },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.PC} },
+            };
+            UseTransaction = true;
+            return InsertUpdateDeleteData(dic, sp);
+        }
+        public DataTable M_SKU_SelectByItemCD(M_ITEM_Entity me)
+        {
+            string sp = "M_SKU_SelectByItemCD";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@ITemCD",new ValuePair { value1=SqlDbType.VarChar,value2=me.ITemCD} } ,
+                {"@ChangeDate",new ValuePair { value1=SqlDbType.VarChar,value2=me.ChangeDate} } ,
+            };
+            return SelectData(dic, sp);
+        }
+        public DataTable M_SKU_SelectByJANCD(M_SKU_Entity me)
+        {
+            string sp = "M_SKU_SelectByJANCD";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@ITemCD",new ValuePair { value1=SqlDbType.VarChar,value2=me.ITemCD} } ,
+                {"@JANCD",new ValuePair { value1=SqlDbType.VarChar,value2=me.JanCD} } ,
+                {"@ChangeDate",new ValuePair { value1=SqlDbType.VarChar,value2=me.ChangeDate} } ,
+            };
+            return SelectData(dic, sp);
+        }
+        public DataTable M_SKU_SelectBySKUCD(M_SKU_Entity me)
+        {
+            string sp = "M_SKU_SelectBySKUCD";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@SKUCD",new ValuePair { value1=SqlDbType.VarChar,value2=me.SKUCD} } ,
+                {"@ChangeDate",new ValuePair { value1=SqlDbType.VarChar,value2=me.ChangeDate} } ,
+            };
             return SelectData(dic, sp);
         }
     }

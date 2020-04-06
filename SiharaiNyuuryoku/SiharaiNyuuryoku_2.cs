@@ -132,17 +132,19 @@ namespace SiharaiNyuuryoku
             //}
             #endregion
 
+            //SetFunctionLabel(EProMode.MENTE);
+
             InProgramID = "SiharaiNyuuryoku_2";
             Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
             StartProgram();
-
-            SetFunctionLabel(EProMode.MENTE);
 
             BindData();
 
             LabelDataBind();
 
             SelectKeyData();
+
+            txtMeigi.Focus();
 
             //SetRequireField();
         }

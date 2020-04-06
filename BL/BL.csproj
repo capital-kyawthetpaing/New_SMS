@@ -57,6 +57,7 @@
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
     <Compile Include="Denomination_BL.cs" />
+    <Compile Include="ITEM_BL.cs" />
     <Compile Include="MailHistoryShoukai_BL.cs" />
     <Compile Include="MailPattern_BL.cs" />
     <Compile Include="MailSend_BL.cs" />
