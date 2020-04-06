@@ -114,8 +114,9 @@ namespace JANCDHenkou
                 {
                     if (jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
                     {
-                        if(MessageBox.Show("", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning).Equals("1"))
+                        DialogResult dr = MessageBox.Show("", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         {
+                            if(dr ==  DialogResult.No)
 
                         }
                     }
