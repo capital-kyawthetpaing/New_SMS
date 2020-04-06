@@ -113,8 +113,16 @@ namespace MasterTouroku_ShiireKakeritsu
             string searchCondition = string.Empty;
             if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
                 searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(txtSeason.Text))
+                searchCondition = "LastSeason= '" + txtSeason.Text+ "'";
+            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+                searchCondition = "ChangeDate= '" + txtDate.Text + "'";
 
-            if(!string.IsNullOrWhiteSpace(searchCondition))
+            if (!string.IsNullOrWhiteSpace(searchCondition))
             {               
                 DataRow[] dr= dtMain.Select(searchCondition);
                 if (dr.Count() > 0)
@@ -207,7 +215,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                     else
                     {
-
                         scSportsCD1.SetFocus(1);
                     }
                 }
@@ -280,7 +287,5 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             MoveNextControl(e);
         }
-
-        
     }
 }

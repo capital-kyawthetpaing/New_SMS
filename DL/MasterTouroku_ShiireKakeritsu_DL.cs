@@ -12,7 +12,7 @@ namespace DL
     {
         public DataTable MasterTouroku_ShiireKakeritsu_Select(M_OrderRate_Entity moe)
         {
-            string sp = "Temp_M_OrderRate";
+            string sp = "M_ShiireKakeritsu";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
