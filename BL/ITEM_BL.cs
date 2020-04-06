@@ -22,7 +22,7 @@ namespace BL
         /// </summary>
         /// <param name="me"></param>
         /// <remarks>指定した適用日のデータを取得</remarks>
-        /// <returns></returns>
+        /// <returns></returns> 
         public bool M_ITEM_Select(M_ITEM_Entity me)
         {
             DataTable dt = mdl.M_ITEM_Select(me);
