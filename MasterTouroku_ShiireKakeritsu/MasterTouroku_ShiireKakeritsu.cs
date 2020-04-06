@@ -60,48 +60,37 @@ namespace MasterTouroku_ShiireKakeritsu
                     scSupplierCD.SetFocus(1);
                     return false;
                 }
-                if(scSupplierCD.IsExists(1))
-                {
-                    mskbl.ShowMessage("E119");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-            if (!RequireCheck(new Control[] { txtRevisionDate, txtRate1,txtCopy }))
-                return false;
+                //if(scSupplierCD.IsExists(1))
+                //{
+                //    mskbl.ShowMessage("E119");
+                //    scSupplierCD.SetFocus(1);
+                //    return false;
+                //}
+            //if (!RequireCheck(new Control[] { txtRevisionDate, txtRate1,txtCopy }))
+            //    return false;
             return true;
         }
-       
-        //private M_OrderRate_Entity GetSearchInfo()
-        //{
-        //    moe = new M_OrderRate_Entity()
-        //    {
-        //        VendorCD=scSupplierCD.TxtCode.Text,
-        //        BrandCD=scBrandCD.TxtCode.Text,
-        //        SportsCD=scSportsCD.TxtCode.Text,
-        //        SegmentCD=scSegmentCD.TxtCode.Text,
-        //        LastSeason=txtLastSeason.Text,
-        //        ChangeDate=txtChangeDate.Text,
-        //        Rate=txtRate.Text
-        //    };
-        //}
+
+        private M_OrderRate_Entity GetSearchInfo()
+        {
+            moe = new M_OrderRate_Entity()
+            {
+                VendorCD = scSupplierCD.TxtCode.Text,
+                BrandCD = scBrandCD.TxtCode.Text,
+                SportsCD = scSportsCD.TxtCode.Text,
+                SegmentCD = scSegmentCD.TxtCode.Text,
+                LastSeason = txtLastSeason.Text,
+                ChangeDate = txtChangeDate.Text,
+                Rate = txtRate.Text
+            };
+            return moe;
+        }
 
         //private void btnSelectAll_Click(object sender, EventArgs e)
         //{
-        //    if (ErrorCheck())
-        //    {
-        //        moe = GetSearchInfo();
-        //        DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            dgv_ShiireKakeritsu.DataSource = dt;
-        //        }
-        //        else
-        //        {
-        //            dgv_ShiireKakeritsu.DataSource = null;
-        //        }
-        //    }
+           
         //}
-        
+
         private void ckM_SearchControl3_Enter(object sender, EventArgs e)
         {
             ckM_SearchControl3.Value1 = "202";
@@ -227,6 +216,23 @@ namespace MasterTouroku_ShiireKakeritsu
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void btnSelectAll_Click_1(object sender, EventArgs e)
+        {
+            if (ErrorCheck())
+            {
+                moe = GetSearchInfo();
+                DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+                if (dt.Rows.Count > 0)
+                {
+                    dgv_ShiireKakeritsu.DataSource = dt;
+                }
+                else
+                {
+                    dgv_ShiireKakeritsu.DataSource = null;
+                }
+            }
         }
     }
 }

@@ -57,7 +57,7 @@ namespace SiharaiNyuuryoku
 
             Btn_F7.Enabled = false;
             Btn_F7.Text = "編集(F7)";
-           
+            Btn_F10.Text = "";
 
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
