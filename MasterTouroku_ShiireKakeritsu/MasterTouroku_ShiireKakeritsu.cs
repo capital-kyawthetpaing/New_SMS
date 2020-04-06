@@ -54,18 +54,18 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
-                if (!scSupplierCD.IsExists(1))
-                {
-                    mskbl.ShowMessage("E101");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-                //if(scSupplierCD.IsExists(1))
-                //{
-                //    mskbl.ShowMessage("E119");
-                //    scSupplierCD.SetFocus(1);
-                //    return false;
-                //}
+            //if (!scSupplierCD.IsExists(1))
+            //{
+            //    mskbl.ShowMessage("E101");
+            //    scSupplierCD.SetFocus(1);
+            //    return false;
+            //}
+            if (scSupplierCD.IsExists(1))
+            {
+                mskbl.ShowMessage("E119");
+                scSupplierCD.SetFocus(1);
+                return false;
+            }
             //if (!RequireCheck(new Control[] { txtRevisionDate, txtRate1,txtCopy }))
             //    return false;
             return true;
@@ -76,28 +76,61 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = new M_OrderRate_Entity()
             {
                 VendorCD = scSupplierCD.TxtCode.Text,
-                BrandCD = scBrandCD.TxtCode.Text,
-                SportsCD = scSportsCD.TxtCode.Text,
-                SegmentCD = scSegmentCD.TxtCode.Text,
-                LastSeason = txtLastSeason.Text,
-                ChangeDate = txtChangeDate.Text,
+                BrandCD = scBrandCD1.TxtCode.Text,
+                SportsCD = scSportsCD1.TxtCode.Text,
+                SegmentCD = scSegmentCD1.TxtCode.Text,
+                LastSeason = txtSeason.Text,
+                ChangeDate = txtDate.Text,
                 Rate = txtRate.Text
             };
             return moe;
         }
-
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (ErrorCheck())
+            {
+                moe = GetSearchInfo();
+                DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+                if (dt.Rows.Count > 0)
+                {
+                    dgv_ShiireKakeritsu.DataSource = dt;
+                }
+                else
+                {
+                    mskbl.ShowMessage("E128");
+                    dgv_ShiireKakeritsu.DataSource = null;
+                }
+            }
+        }
+        //private void btnSelectAll_Click_1(object sender, EventArgs e)
+        //{
+        //    //if (ErrorCheck())
+        //    //{
+        //    //    moe = GetSearchInfo();
+        //    //    DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+        //    //    if (dt.Rows.Count > 0)
+        //    //    {
+        //    //        dgv_ShiireKakeritsu.DataSource = dt;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        mskbl.ShowMessage("E128");
+        //    //        dgv_ShiireKakeritsu.DataSource = null;
+        //    //    }
+        //    //}
+        //}
         //private void btnSelectAll_Click(object sender, EventArgs e)
         //{
-           
+
         //}
 
         private void ckM_SearchControl3_Enter(object sender, EventArgs e)
         {
-            ckM_SearchControl3.Value1 = "202";
+            scSportsCD1.Value1 = "202";
         }
         private void ckM_SearchControl4_Enter(object sender, EventArgs e)
         {
-            ckM_SearchControl4.Value1 = "203";
+            scSegmentCD1.Value1 = "203";
         }
 
         private void ckM_SearchControl6_Enter(object sender, EventArgs e)
@@ -134,18 +167,18 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ckM_SearchControl3.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(ckM_SearchControl3.TxtCode.Text))
+                scSportsCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
                 {
-                    if (ckM_SearchControl3.SelectData())
+                    if (scSportsCD1.SelectData())
                     {
-                        ckM_SearchControl3.Value1 = ckM_SearchControl3.TxtCode.Text;
-                        ckM_SearchControl3.Value2 = ckM_SearchControl3.LabelText;
+                        scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
+                        scSportsCD1.Value2 = scSportsCD1.LabelText;
                     }
                     else
                     {
 
-                        ckM_SearchControl3.SetFocus(1);
+                        scSportsCD1.SetFocus(1);
                     }
                 }
             }
@@ -198,17 +231,17 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ckM_SearchControl4.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(ckM_SearchControl4.TxtCode.Text))
+                scSegmentCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
                 {
-                    if (ckM_SearchControl4.SelectData())
+                    if (scSegmentCD1.SelectData())
                     {
-                        ckM_SearchControl4.Value1 = ckM_SearchControl4.TxtCode.Text;
-                        ckM_SearchControl4.Value2 = ckM_SearchControl4.LabelText;
+                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
                     }
                     else
                     {
-                        ckM_SearchControl4.SetFocus(1);
+                        scSegmentCD1.SetFocus(1);
                     }
                 }
             }
@@ -218,21 +251,6 @@ namespace MasterTouroku_ShiireKakeritsu
             MoveNextControl(e);
         }
 
-        private void btnSelectAll_Click_1(object sender, EventArgs e)
-        {
-            if (ErrorCheck())
-            {
-                moe = GetSearchInfo();
-                DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-                if (dt.Rows.Count > 0)
-                {
-                    dgv_ShiireKakeritsu.DataSource = dt;
-                }
-                else
-                {
-                    dgv_ShiireKakeritsu.DataSource = null;
-                }
-            }
-        }
+        
     }
 }
