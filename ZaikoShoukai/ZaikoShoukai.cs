@@ -63,11 +63,6 @@ namespace ZaikoShoukai
             CB_Tagu4.Bind(string.Empty, "");
             CB_Tagu5.Bind(string.Empty, "");
         }
-        //private bool ErrorCheck()
-        //{
-            
-        //   // return true;
-        //}
         private void F11()
         {
             if (ErrorCheck())
@@ -98,6 +93,7 @@ namespace ZaikoShoukai
                 else
                 {
                     GV_Zaiko.DataSource = null;
+                    dtData.Clear();
                 }
             }
         }
@@ -183,6 +179,9 @@ namespace ZaikoShoukai
                         Excel();
                     }
                     break;
+                case 11:
+                   F11();
+                    break;
             }
         }
         private void CanCelData()
@@ -229,6 +228,8 @@ namespace ZaikoShoukai
             RB_item.Checked = false;
             RB_Makashohincd.Checked = false;
             CB_Soko.Focus();
+            GV_Zaiko.DataSource = null;
+            dtData.Clear();
         }
 
         private void Excel()
@@ -237,41 +238,79 @@ namespace ZaikoShoukai
             {
                 return;
             }
-            if (dtData.Rows.Count > 0)
+            //if (dtData.Rows.Count > 0)
+            //{
+            //    dtData.Columns.Remove("AdminNO");
+            //    string folderPath = "C:\\Excel\\";
+            //        if (!Directory.Exists(folderPath))
+            //        {
+            //            Directory.CreateDirectory(folderPath);
+            //        }
+            //        SaveFileDialog savedialog = new SaveFileDialog();
+            //        savedialog.Filter = "Excel Files|*.xlsx;";
+            //        savedialog.Title = "Save";
+            //        savedialog.FileName = "ZaikoShoukai";
+            //        savedialog.InitialDirectory = folderPath;
+
+            //        savedialog.RestoreDirectory = true;
+            //        if (savedialog.ShowDialog() == DialogResult.OK)
+            //        {
+            //            if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+            //            {
+            //                Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            //                Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            //                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            //                worksheet = workbook.ActiveSheet;
+            //                worksheet.Name = "worksheet";
+            //                using (XLWorkbook wb = new XLWorkbook())
+            //                {
+            //                    wb.Worksheets.Add(dtData, "worksheet");
+            //                    wb.SaveAs(savedialog.FileName);
+            //                    bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+            //                }
+            //                Process.Start(Path.GetDirectoryName(savedialog.FileName));
+            //            }
+            //        }
+            //}
+
+            dtData.Columns.Remove("AdminNO");
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
             {
-                dtData.Columns.Remove("AdminNO");
-                string folderPath = "C:\\Excel\\";
-                    if (!Directory.Exists(folderPath))
-                    {
-                        Directory.CreateDirectory(folderPath);
-                    }
-                    SaveFileDialog savedialog = new SaveFileDialog();
-                    savedialog.Filter = "Excel Files|*.xlsx;";
-                    savedialog.Title = "Save";
-                    savedialog.FileName = "ZaikoShoukai";
-                    savedialog.InitialDirectory = folderPath;
-
-                    savedialog.RestoreDirectory = true;
-                    if (savedialog.ShowDialog() == DialogResult.OK)
-                    {
-                        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-                        {
-                            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
-                            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-
-                            worksheet = workbook.ActiveSheet;
-                            worksheet.Name = "worksheet";
-                            using (XLWorkbook wb = new XLWorkbook())
-                            {
-                                wb.Worksheets.Add(dtData, "worksheet");
-                                wb.SaveAs(savedialog.FileName);
-                                bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
-                            }
-                            Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                        }
-                    }
+                Directory.CreateDirectory(folderPath);
             }
+            SaveFileDialog savedialog = new SaveFileDialog();
+            savedialog.Filter = "Excel Files|*.xlsx;";
+            savedialog.Title = "Save";
+            savedialog.FileName = "ZaikoShoukai";
+            savedialog.InitialDirectory = folderPath;
+
+            savedialog.RestoreDirectory = true;
+                
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                    {
+                        Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                        Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                        Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                        worksheet = workbook.ActiveSheet;
+                        worksheet.Name = "worksheet";
+                   
+                        using (XLWorkbook wb = new XLWorkbook())
+                        {
+                            wb.Worksheets.Add(dtData, "worksheet");
+                            wb.SaveAs(savedialog.FileName);
+                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                        }
+                    
+                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                    }
+                }
+            
+
         }
 
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)

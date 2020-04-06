@@ -17,10 +17,14 @@ namespace MasterTouroku_ShiireKakeritsu
     public partial class frmMasterTouroku_ShiireKakeritsu : FrmMainForm
     {
         MasterTouroku_ShiireKakeritsu_BL mskbl;
+        M_OrderRate_Entity moe;
+        DataTable dt;
         public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
             mskbl = new MasterTouroku_ShiireKakeritsu_BL();
+            moe = new M_OrderRate_Entity();
+            dt = new DataTable();
         }
 
         private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
@@ -35,48 +39,218 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             scSupplierCD.TxtCode.Require(true);
             txtRevisionDate.Require(true);
-            txtRate.Require(true);
+            txtRate1.Require(true);
+        }
+        protected override void EndSec()
+        {
+            this.Close();
+        }
+        public void Clear()
+        {
+            Clear(panelDetail);
+            scSupplierCD.SetFocus(1);
         }
         private bool ErrorCheck()
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
-                if (!scSupplierCD.IsExists(1))
-                {
-                    mskbl.ShowMessage("E101");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-                if(scSupplierCD.IsExists(1))
-                {
-                    mskbl.ShowMessage("E119");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-            if (!RequireCheck(new Control[] { txtRevisionDate, txtRate }))
+            //if (!scSupplierCD.IsExists(1))
+            //{
+            //    mskbl.ShowMessage("E101");
+            //    scSupplierCD.SetFocus(1);
+            //    return false;
+            //}
+            if (scSupplierCD.IsExists(1))
+            {
+                mskbl.ShowMessage("E119");
+                scSupplierCD.SetFocus(1);
                 return false;
+            }
+            //if (!RequireCheck(new Control[] { txtRevisionDate, txtRate1,txtCopy }))
+            //    return false;
             return true;
         }
 
+        private M_OrderRate_Entity GetSearchInfo()
+        {
+            moe = new M_OrderRate_Entity()
+            {
+                VendorCD = scSupplierCD.TxtCode.Text,
+                BrandCD = scBrandCD1.TxtCode.Text,
+                SportsCD = scSportsCD1.TxtCode.Text,
+                SegmentCD = scSegmentCD1.TxtCode.Text,
+                LastSeason = txtSeason.Text,
+                ChangeDate = txtDate.Text,
+                Rate = txtRate.Text
+            };
+            return moe;
+        }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (ErrorCheck())
+            {
+                moe = GetSearchInfo();
+                DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+                if (dt.Rows.Count > 0)
+                {
+                    dgv_ShiireKakeritsu.DataSource = dt;
+                }
+                else
+                {
+                    mskbl.ShowMessage("E128");
+                    dgv_ShiireKakeritsu.DataSource = null;
+                }
+            }
+        }
+        //private void btnSelectAll_Click_1(object sender, EventArgs e)
+        //{
+        //    //if (ErrorCheck())
+        //    //{
+        //    //    moe = GetSearchInfo();
+        //    //    DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+        //    //    if (dt.Rows.Count > 0)
+        //    //    {
+        //    //        dgv_ShiireKakeritsu.DataSource = dt;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        mskbl.ShowMessage("E128");
+        //    //        dgv_ShiireKakeritsu.DataSource = null;
+        //    //    }
+        //    //}
+        //}
+        //private void btnSelectAll_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void ckM_SearchControl3_Enter(object sender, EventArgs e)
+        {
+            scSportsCD1.Value1 = "202";
+        }
+        private void ckM_SearchControl4_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD1.Value1 = "203";
+        }
+
+        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
+        {
+            scSportsCD.Value1 = "202";
+        }
+
+        private void ckM_SearchControl7_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD.Value1 = "203";
+        }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
             {
-                //F11();
+                scSupplierCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
+                {
+                    if (scSupplierCD.SelectData())
+                    {
+                        scSupplierCD.Value1 = scSupplierCD.TxtCode.Text;
+                        scSupplierCD.Value2 = scSupplierCD.LabelText;
+                    }
+                    else
+                    {
+
+                        scSupplierCD.SetFocus(1);
+                    }
+                }
             }
         }
-        protected override void EndSec()
+
+        private void ckM_SearchControl3_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            this.Close();
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSportsCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
+                {
+                    if (scSportsCD1.SelectData())
+                    {
+                        scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
+                        scSportsCD1.Value2 = scSportsCD1.LabelText;
+                    }
+                    else
+                    {
+
+                        scSportsCD1.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSportsCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSportsCD.TxtCode.Text))
+                {
+                    if (scSportsCD.SelectData())
+                    {
+                        scSportsCD.Value1 = scSportsCD.TxtCode.Text;
+                        scSportsCD.Value2 = scSportsCD.LabelText;
+                    }
+                    else
+                    {
+                        scSportsCD.SetFocus(1);
+                    }
+                }
+            }
+        }
+    
+
+        private void ckM_SearchControl7_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD.TxtCode.Text))
+                {
+                    if (scSegmentCD.SelectData())
+                    {
+                        scSegmentCD.Value1 = scSegmentCD.TxtCode.Text;
+                        scSegmentCD.Value2 = scSegmentCD.LabelText;
+                    }
+                    else
+                    {
+                        scSegmentCD.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+       
+
+        private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
+                {
+                    if (scSegmentCD1.SelectData())
+                    {
+                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
+                    }
+                    else
+                    {
+                        scSegmentCD1.SetFocus(1);
+                    }
+                }
+            }
         }
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
-        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
-        {
-            ckM_SearchControl6.Value1 = "202";
-        }
+        
     }
 }
