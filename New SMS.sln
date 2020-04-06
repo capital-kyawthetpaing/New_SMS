@@ -265,6 +265,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_Tokuisaki", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_ShiireKakeritsu", "MasterTouroku_ShiireKakeritsu\MasterTouroku_ShiireKakeritsu.csproj", "{EF117D7F-A0A8-46BE-B65A-039C2ABE4634}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_Shouhin", "MasterTouroku_Shohin\MasterTouroku_Shouhin.csproj", "{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JANCDHenkou", "JANCDHenkou\JANCDHenkou.csproj", "{F0FA21EE-FB12-45A7-B284-9E818B8B4A8A}"
 EndProject
 Global
@@ -1313,6 +1315,14 @@ Global
 		{EF117D7F-A0A8-46BE-B65A-039C2ABE4634}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EF117D7F-A0A8-46BE-B65A-039C2ABE4634}.Release|x86.ActiveCfg = Release|Any CPU
 		{EF117D7F-A0A8-46BE-B65A-039C2ABE4634}.Release|x86.Build.0 = Release|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Debug|x86.Build.0 = Debug|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Release|x86.ActiveCfg = Release|Any CPU
+		{FF06E55A-CD5C-4054-87A1-D68B14F09AA5}.Release|x86.Build.0 = Release|Any CPU
 		{F0FA21EE-FB12-45A7-B284-9E818B8B4A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F0FA21EE-FB12-45A7-B284-9E818B8B4A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0FA21EE-FB12-45A7-B284-9E818B8B4A8A}.Debug|x86.ActiveCfg = Debug|Any CPU

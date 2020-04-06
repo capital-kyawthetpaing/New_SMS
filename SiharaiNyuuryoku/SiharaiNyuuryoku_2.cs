@@ -132,17 +132,19 @@ namespace SiharaiNyuuryoku
             //}
             #endregion
 
+            //SetFunctionLabel(EProMode.MENTE);
+
             InProgramID = "SiharaiNyuuryoku_2";
             Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
             StartProgram();
-
-            SetFunctionLabel(EProMode.MENTE);
 
             BindData();
 
             LabelDataBind();
 
             SelectKeyData();
+
+            txtMeigi.Focus();
 
             //SetRequireField();
         }
@@ -216,7 +218,7 @@ namespace SiharaiNyuuryoku
                 SC_HanyouKeyEnd2.LabelText = dtSiharai2.Rows[0]["end2label"].ToString();
 
             }
-
+            F9Visible = false;
         }
 
         private void SelectKeyData()

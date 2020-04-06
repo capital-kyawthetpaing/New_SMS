@@ -17,10 +17,9 @@ namespace DL
             string sp = "M_Site_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@ItemSKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ItemSKUCD } },
+                { "@AdminNO", new ValuePair { value1 = SqlDbType.Int, value2 = mse.AdminNO } },
                 { "@APIKey", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.APIKey } }
             };
-            
             return SelectData(dic, sp);
         }
 

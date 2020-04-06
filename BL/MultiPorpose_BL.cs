@@ -28,6 +28,8 @@ namespace BL
         public static string ID_PostageCD = "309";      //送料扱いCD(3)
         public static string ID_NoticesCD = "310";      //特記事項CD(3)
         public static string ID_ReserveCD = "311";      //予約フラグCD(3)
+        public static string ID_ManufactCD = "312";     //要加工品区分 	
+        public static string ID_ConfirmCD = "313";     //要確認品区分
         public string PaymentType = "314";              //支払方法(1)
         public string PaymentMonth = "315";             //支払月
         public static string ID_OrderAttentionCD = "316";//発注区分 
