@@ -43,7 +43,6 @@ namespace ZaikoShoukai
             base.Btn_F10.Text = "CSV(F10)";
             CB_Soko.Focus();
             AddCol();
-            
         }
         protected override void EndSec()
         {
@@ -90,7 +89,6 @@ namespace ZaikoShoukai
                 if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();
-                    //AddCol();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
                 }
