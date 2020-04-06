@@ -513,7 +513,7 @@ namespace CKM_Controls
         }
 
         protected override void OnGotFocus(EventArgs e)
-        {
+         {
 
             MoveNext = false;
             base.OnGotFocus(e);

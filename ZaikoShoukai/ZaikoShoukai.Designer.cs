@@ -1566,6 +1566,7 @@
             // 現在庫
             // 
             this.現在庫.DataPropertyName = "在庫数";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = null;
             this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
@@ -1575,6 +1576,7 @@
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "入荷予定数";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
@@ -1839,7 +1841,7 @@
             this.SearchBrand.ChangeDate = "";
             this.SearchBrand.ChangeDateWidth = 100;
             this.SearchBrand.Code = "";
-            this.SearchBrand.CodeWidth = 60;
+            this.SearchBrand.CodeWidth = 100;
             this.SearchBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SearchBrand.DataCheck = false;
             this.SearchBrand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1850,7 +1852,7 @@
             this.SearchBrand.Margin = new System.Windows.Forms.Padding(0);
             this.SearchBrand.Name = "SearchBrand";
             this.SearchBrand.SearchEnable = true;
-            this.SearchBrand.Size = new System.Drawing.Size(374, 27);
+            this.SearchBrand.Size = new System.Drawing.Size(414, 27);
             this.SearchBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.SearchBrand.TabIndex = 6;
             this.SearchBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1914,7 +1916,7 @@
             this.Sports.ChangeDate = "";
             this.Sports.ChangeDateWidth = 100;
             this.Sports.Code = "";
-            this.Sports.CodeWidth = 40;
+            this.Sports.CodeWidth = 100;
             this.Sports.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sports.DataCheck = false;
             this.Sports.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1925,7 +1927,7 @@
             this.Sports.Margin = new System.Windows.Forms.Padding(0);
             this.Sports.Name = "Sports";
             this.Sports.SearchEnable = true;
-            this.Sports.Size = new System.Drawing.Size(354, 28);
+            this.Sports.Size = new System.Drawing.Size(414, 28);
             this.Sports.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.Sports.TabIndex = 20;
             this.Sports.TextSize = Search.CKM_SearchControl.FontSize.Normal;

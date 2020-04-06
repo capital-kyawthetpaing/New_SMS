@@ -57,7 +57,7 @@ namespace SiharaiNyuuryoku
 
             Btn_F7.Enabled = false;
             Btn_F7.Text = "編集(F7)";
-           
+            Btn_F10.Text = "";
 
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
@@ -104,15 +104,19 @@ namespace SiharaiNyuuryoku
             {
                 case 2:
                     ChangeMode(EOperationMode.INSERT);
+                    F12Visible = true;
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
+                    F12Visible = true;
                     break;
                 case 4:
                     ChangeMode(EOperationMode.DELETE);
+                    F12Visible = true;
                     break;
                 case 5:
                     ChangeMode(EOperationMode.SHOW);
+                    F12Visible = false;
                     break;
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
@@ -155,7 +159,7 @@ namespace SiharaiNyuuryoku
                     F9Visible = false;
                     F12Enable = true;
                     btnF10Show.Enabled = true;
-                    F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
                 case EOperationMode.UPDATE:
@@ -176,6 +180,7 @@ namespace SiharaiNyuuryoku
                     ScPayee.SearchEnable = false;
                     F12Enable = true;
                     btnF10Show.Enabled = F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
             }
@@ -224,6 +229,7 @@ namespace SiharaiNyuuryoku
                     mode = "2";
                     dt2 = sibl.D_Pay_Select2(dpe);
                     dt3 = sibl.D_Pay_Select3(dpe);
+
                     if (dt3.Rows.Count > 0)
                     {
                         SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD, dppe.PayeeCD, dppe.PayPlanDate, dt3, dt2);
@@ -314,12 +320,16 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("ERMCDate");
                             dt4.Columns.Remove("OtherGaku1");
                             dt4.Columns.Remove("Account1");
+                            dt4.Columns.Remove("start1");
                             dt4.Columns.Remove("SubAccount1");
+                            dt4.Columns.Remove("end1label");
                             dt4.Columns.Remove("OtherGaku2");
                             dt4.Columns.Remove("Account2");
+                            dt4.Columns.Remove("start2");
                             dt4.Columns.Remove("SubAccount2");
+                            dt4.Columns.Remove("end2label");
 
-                        }
+                    }
                     //}                   
                 }
 
