@@ -216,7 +216,7 @@ namespace SiharaiNyuuryoku
                 SC_HanyouKeyEnd2.LabelText = dtSiharai2.Rows[0]["end2label"].ToString();
 
             }
-
+            F9Visible = false;
         }
 
         private void SelectKeyData()

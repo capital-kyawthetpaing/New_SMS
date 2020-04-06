@@ -104,12 +104,15 @@ namespace SiharaiNyuuryoku
             {
                 case 2:
                     ChangeMode(EOperationMode.INSERT);
+                    F12Visible = true;
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
+                    F12Visible = true;
                     break;
                 case 4:
                     ChangeMode(EOperationMode.DELETE);
+                    F12Visible = true;
                     break;
                 case 5:
                     ChangeMode(EOperationMode.SHOW);
