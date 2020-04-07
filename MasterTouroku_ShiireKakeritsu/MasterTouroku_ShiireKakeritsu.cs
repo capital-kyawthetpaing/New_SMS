@@ -311,5 +311,23 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             MoveNextControl(e);
         }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+
+            }
+        }
     }
 }

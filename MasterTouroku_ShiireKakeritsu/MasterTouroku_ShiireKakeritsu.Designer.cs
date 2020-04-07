@@ -36,18 +36,11 @@
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSportsCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
-            this.btnRelease = new CKM_Controls.CKM_Button();
-            this.btnSelect = new CKM_Controls.CKM_Button();
+            this.btnReleaseAll = new CKM_Controls.CKM_Button();
+            this.btnSelectAll = new CKM_Controls.CKM_Button();
             this.btnChoice = new CKM_Controls.CKM_Button();
             this.txtRate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
@@ -88,6 +81,19 @@
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.scSupplierCD = new Search.CKM_SearchControl();
+            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSportsCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -174,8 +180,8 @@
             this.panelDetail.Controls.Add(this.btnDelete);
             this.panelDetail.Controls.Add(this.btnChange);
             this.panelDetail.Controls.Add(this.btnAdd);
-            this.panelDetail.Controls.Add(this.btnRelease);
-            this.panelDetail.Controls.Add(this.btnSelect);
+            this.panelDetail.Controls.Add(this.btnReleaseAll);
+            this.panelDetail.Controls.Add(this.btnSelectAll);
             this.panelDetail.Controls.Add(this.btnChoice);
             this.panelDetail.Controls.Add(this.txtRate);
             this.panelDetail.Controls.Add(this.ckM_Label24);
@@ -239,12 +245,12 @@
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
-            this.colBrandCD,
-            this.colSportsCD,
-            this.colSegmentCD,
-            this.colLastSeason,
-            this.colChangeDate,
-            this.colRate});
+            this.colBrandCD1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -257,56 +263,11 @@
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
-            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1150, 350);
+            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1200, 350);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            // 
-            // colBrandCD
-            // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "ブランド";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.Width = 250;
-            // 
-            // colSportsCD
-            // 
-            this.colSportsCD.DataPropertyName = "SportsCD";
-            this.colSportsCD.HeaderText = "競　技";
-            this.colSportsCD.Name = "colSportsCD";
-            this.colSportsCD.Width = 250;
-            // 
-            // colSegmentCD
-            // 
-            this.colSegmentCD.DataPropertyName = "SegmentCD";
-            this.colSegmentCD.HeaderText = "商品分類";
-            this.colSegmentCD.Name = "colSegmentCD";
-            this.colSegmentCD.Width = 250;
-            // 
-            // colLastSeason
-            // 
-            this.colLastSeason.DataPropertyName = "LastSeason";
-            this.colLastSeason.HeaderText = "シーズン";
-            this.colLastSeason.Name = "colLastSeason";
-            this.colLastSeason.Width = 60;
-            // 
-            // colChangeDate
-            // 
-            this.colChangeDate.DataPropertyName = "ChangeDate";
-            this.colChangeDate.HeaderText = "改定日";
-            this.colChangeDate.Name = "colChangeDate";
-            // 
-            // colRate
-            // 
-            this.colRate.DataPropertyName = "Rate";
-            this.colRate.HeaderText = "掛率";
-            this.colRate.Name = "colRate";
-            this.colRate.Width = 80;
+            this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
             // 
             // btnDelete
             // 
@@ -362,41 +323,43 @@
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // btnRelease
+            // btnReleaseAll
             // 
-            this.btnRelease.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRelease.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnRelease.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelease.DefaultBtnSize = false;
-            this.btnRelease.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelease.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRelease.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnRelease.Location = new System.Drawing.Point(1483, 238);
-            this.btnRelease.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRelease.Name = "btnRelease";
-            this.btnRelease.Size = new System.Drawing.Size(75, 23);
-            this.btnRelease.TabIndex = 40;
-            this.btnRelease.Text = "全解除";
-            this.btnRelease.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnReleaseAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnReleaseAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReleaseAll.DefaultBtnSize = false;
+            this.btnReleaseAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnReleaseAll.Location = new System.Drawing.Point(1483, 238);
+            this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnReleaseAll.Name = "btnReleaseAll";
+            this.btnReleaseAll.Size = new System.Drawing.Size(75, 23);
+            this.btnReleaseAll.TabIndex = 40;
+            this.btnReleaseAll.Text = "全解除";
+            this.btnReleaseAll.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.Click += new System.EventHandler(this.btnReleaseAll_Click);
             // 
-            // btnSelect
+            // btnSelectAll
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSelect.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelect.DefaultBtnSize = false;
-            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelect.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelect.Location = new System.Drawing.Point(1408, 238);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 39;
-            this.btnSelect.Text = "全選択";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSelectAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnSelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectAll.DefaultBtnSize = false;
+            this.btnSelectAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnSelectAll.Location = new System.Drawing.Point(1408, 238);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.TabIndex = 39;
+            this.btnSelectAll.Text = "全選択";
+            this.btnSelectAll.UseVisualStyleBackColor = false;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // btnChoice
             // 
@@ -1216,6 +1179,93 @@
             this.scSupplierCD.Value3 = null;
             this.scSupplierCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplierCD_CodeKeyDownEvent);
             // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "ブランド";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.Width = 250;
+            // 
+            // colSportsCD
+            // 
+            this.colSportsCD.DataPropertyName = "SportsCD";
+            this.colSportsCD.HeaderText = "競　技";
+            this.colSportsCD.Name = "colSportsCD";
+            this.colSportsCD.Width = 250;
+            // 
+            // colSegmentCD
+            // 
+            this.colSegmentCD.DataPropertyName = "SegmentCD";
+            this.colSegmentCD.HeaderText = "商品分類";
+            this.colSegmentCD.Name = "colSegmentCD";
+            this.colSegmentCD.Width = 250;
+            // 
+            // colLastSeason
+            // 
+            this.colLastSeason.DataPropertyName = "LastSeason";
+            this.colLastSeason.HeaderText = "シーズン";
+            this.colLastSeason.Name = "colLastSeason";
+            this.colLastSeason.Width = 60;
+            // 
+            // colChangeDate
+            // 
+            this.colChangeDate.DataPropertyName = "ChangeDate";
+            this.colChangeDate.HeaderText = "改定日";
+            this.colChangeDate.Name = "colChangeDate";
+            // 
+            // colRate
+            // 
+            this.colRate.DataPropertyName = "Rate";
+            this.colRate.HeaderText = "掛率";
+            this.colRate.Name = "colRate";
+            this.colRate.Width = 80;
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
+            // 
+            // colBrandCD1
+            // 
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SportsCD";
+            this.Column2.HeaderText = "競　技";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SegmentCD";
+            this.Column3.HeaderText = "商品分類";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "LastSeason";
+            this.Column4.HeaderText = "シーズン";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ChangeDate";
+            this.Column5.HeaderText = "改定日";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Rate";
+            this.Column6.HeaderText = "掛率";
+            this.Column6.Name = "Column6";
+            // 
             // frmMasterTouroku_ShiireKakeritsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1274,7 +1324,7 @@
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label14;
         private CKM_Controls.CKM_Button btnSearch;
-        private CKM_Controls.CKM_Button btnSelect;
+        private CKM_Controls.CKM_Button btnSelectAll;
         private CKM_Controls.CKM_Button btnChoice;
         private CKM_Controls.CKM_TextBox txtRate;
         private CKM_Controls.CKM_Label ckM_Label24;
@@ -1289,15 +1339,27 @@
         private CKM_Controls.CKM_Button btnDelete;
         private CKM_Controls.CKM_Button btnChange;
         private CKM_Controls.CKM_Button btnAdd;
-        private CKM_Controls.CKM_Button btnRelease;
+        private CKM_Controls.CKM_Button btnReleaseAll;
         private CKM_Controls.CKM_GridView dgv_ShiireKakeritsu;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSportsCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSegmentCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChangeDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
 
