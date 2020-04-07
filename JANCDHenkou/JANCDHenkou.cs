@@ -18,6 +18,7 @@ namespace JANCDHenkou
     public partial class JANCDHenkou : FrmMainForm
     {
         JANCDHenkou_BL jhbl;
+        DataTable dtDisplay;
         public JANCDHenkou()
         {
             InitializeComponent();
@@ -37,6 +38,8 @@ namespace JANCDHenkou
             Btn_F8.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
+ 
+            dgvJANCDHenkou.DataSource = dtDisplay;
         }
         private void JANCDHenkou_KeyUp(object sender, KeyEventArgs e)
         {
@@ -99,6 +102,8 @@ namespace JANCDHenkou
 
         private bool ErrorCheck()
         {
+            dgvJANCDHenkou.DataSource = dtDisplay;
+
             foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
             {
                 if (!(row.Cells["colGenJanCD"].Value == null))
@@ -110,14 +115,20 @@ namespace JANCDHenkou
                     }
                 }
 
-               if(!(row.Cells["colNewJANCD"].Value == null))
+                if (dtDisplay.Rows.Count > 0)
+                {
+
+                }
+
+                if (!(row.Cells["colNewJANCD"].Value == null))
                 {
                     if (jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
                     {
-                        DialogResult dr = MessageBox.Show("", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult dr = jhbl.ShowMessage("Q316");
+                        if (dr == DialogResult.No)
                         {
-                            //if(dr ==  DialogResult.No)
-
+                            dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+                            return false;
                         }
                     }
                 }
