@@ -350,17 +350,48 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
+
             scSegmentCD1.Value1 = "203";
+
+            Checkstate(true);
+
         }
 
         private void scSportsCD_Enter(object sender, EventArgs e)
         {
+
             scSportsCD.Value1 = "202";
         }
 
         private void scSegmentCD_Enter(object sender, EventArgs e)
         {
             scSegmentCD.Value1 = "203";
+
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+        //    {
+        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+        //        {
+        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+        //            chk1.Value = chk1.FalseValue;
+        //        }
+        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+        //    }
+        //    else
+        //    {
+        //        dgv_ShiireKakeritsu.ClearSelection();
+        //    }
+
         }
     }
 }
