@@ -191,6 +191,45 @@ namespace MasterTouroku_ShiireKakeritsu
 
         //}
 
+       
+     
+        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
+
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.FalseValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
+            }
+        }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -209,29 +248,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         scSupplierCD.SetFocus(1);
                     }
                 }
-            }
-        }
-     
-        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
-
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnReleaseAll_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-
             }
         }
 
@@ -322,7 +338,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
+       
         private void scSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -342,7 +358,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
         private void scSportsCD1_Enter(object sender, EventArgs e)
         {
             scSportsCD1.Value1 = "202";
