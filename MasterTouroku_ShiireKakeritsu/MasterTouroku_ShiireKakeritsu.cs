@@ -368,8 +368,6 @@ namespace MasterTouroku_ShiireKakeritsu
 
             scSegmentCD1.Value1 = "203";
 
-            Checkstate(true);
-
         }
 
         private void scSportsCD_Enter(object sender, EventArgs e)
@@ -381,16 +379,14 @@ namespace MasterTouroku_ShiireKakeritsu
         private void scSegmentCD_Enter(object sender, EventArgs e)
         {
             scSegmentCD.Value1 = "203";
-
-            Checkstate(false);
         }
-        private void Checkstate(bool flag)
-        {
-            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-            {
-                row1.Cells["colChk"].Value = flag;
-            }
-        }
+        //private void Checkstate(bool flag)
+        //{
+        //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+        //    {
+        //        row1.Cells["colChk"].Value = flag;
+        //    }
+        //}
         //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
@@ -407,6 +403,6 @@ namespace MasterTouroku_ShiireKakeritsu
         //        dgv_ShiireKakeritsu.ClearSelection();
         //    }
 
-        }
+        //}
     }
 }
