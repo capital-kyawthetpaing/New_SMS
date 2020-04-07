@@ -368,7 +368,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
             scSegmentCD1.Value1 = "203";
 
-            Checkstate(true);
+           
 
         }
 
@@ -382,7 +382,7 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             scSegmentCD.Value1 = "203";
 
-            Checkstate(false);
+          
         }
        
         }
