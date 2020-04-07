@@ -212,6 +212,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
+                        SearchData();
                     }
                     else
                     {

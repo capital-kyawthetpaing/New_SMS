@@ -309,7 +309,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDelete.Location = new System.Drawing.Point(1484, 287);
+            this.btnDelete.Location = new System.Drawing.Point(1483, 287);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -345,7 +345,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1332, 287);
+            this.btnAdd.Location = new System.Drawing.Point(1333, 287);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -363,7 +363,7 @@
             this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRelease.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnRelease.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnRelease.Location = new System.Drawing.Point(1484, 238);
+            this.btnRelease.Location = new System.Drawing.Point(1483, 238);
             this.btnRelease.Margin = new System.Windows.Forms.Padding(1);
             this.btnRelease.Name = "btnRelease";
             this.btnRelease.Size = new System.Drawing.Size(75, 23);
@@ -399,7 +399,7 @@
             this.btnChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnChoice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnChoice.Location = new System.Drawing.Point(1332, 238);
+            this.btnChoice.Location = new System.Drawing.Point(1333, 238);
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
             this.btnChoice.Size = new System.Drawing.Size(75, 23);
@@ -1037,7 +1037,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(146, 102);
+            this.ckM_Label8.Location = new System.Drawing.Point(146, 101);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(148, 12);
             this.ckM_Label8.TabIndex = 7;
@@ -1054,7 +1054,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(49, 104);
+            this.ckM_Label7.Location = new System.Drawing.Point(49, 101);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label7.TabIndex = 6;
