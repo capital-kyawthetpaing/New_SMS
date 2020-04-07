@@ -14,7 +14,7 @@ GO
 CREATE PROCEDURE M_Site_SelectByItemCD(
     -- Add the parameters for the stored procedure here
     @ITemCD varchar(30),
-    @ChangeDate varchar(10)
+    @ChangeDate varchar(10)    
 )AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
