@@ -160,7 +160,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
                 }
                 else
-                    dtGrid = dtMain;
+                    dtGrid = null;
             }
             else
             {
@@ -191,24 +191,6 @@ namespace MasterTouroku_ShiireKakeritsu
 
         //}
 
-        private void ckM_SearchControl3_Enter(object sender, EventArgs e)
-        {
-            scSportsCD1.Value1 = "202";
-        }
-        private void ckM_SearchControl4_Enter(object sender, EventArgs e)
-        {
-            scSegmentCD1.Value1 = "203";
-        }
-
-        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
-        {
-            scSportsCD.Value1 = "202";
-        }
-
-        private void ckM_SearchControl7_Enter(object sender, EventArgs e)
-        {
-            scSegmentCD.Value1 = "203";
-        }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -229,84 +211,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
-        private void ckM_SearchControl3_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSportsCD1.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
-                {
-                    if (scSportsCD1.SelectData())
-                    {
-                        scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
-                        scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        //SearchData();
-                    }
-                    else
-                    {
-                        scSportsCD1.SetFocus(1);
-                    }
-                }
-            }
-        }
-        private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSportsCD.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSportsCD.TxtCode.Text))
-                {
-                    if (scSportsCD.SelectData())
-                    {
-                        scSportsCD.Value1 = scSportsCD.TxtCode.Text;
-                        scSportsCD.Value2 = scSportsCD.LabelText;
-                    }
-                    else
-                    {
-                        scSportsCD.SetFocus(1);
-                    }
-                }
-            }
-        }
-        private void ckM_SearchControl7_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCD.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCD.TxtCode.Text))
-                {
-                    if (scSegmentCD.SelectData())
-                    {
-                        scSegmentCD.Value1 = scSegmentCD.TxtCode.Text;
-                        scSegmentCD.Value2 = scSegmentCD.LabelText;
-                    }
-                    else
-                    {
-                        scSegmentCD.SetFocus(1);
-                    }
-                }
-            }
-        }
-        private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                scSegmentCD1.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
-                {
-                    if (scSegmentCD1.SelectData())
-                    {
-                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
-                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
-                    }
-                    else
-                    {
-                        scSegmentCD1.SetFocus(1);
-                    }
-                }
-            }
-        }
+     
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -328,6 +233,134 @@ namespace MasterTouroku_ShiireKakeritsu
             {
 
             }
+        }
+
+        private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scBrandCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+                {
+                    if (scBrandCD1.SelectData())
+                    {
+                        scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+                        scBrandCD1.Value2 = scBrandCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scBrandCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSportsCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSportsCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSportsCD1.TxtCode.Text))
+                {
+                    if (scSportsCD1.SelectData())
+                    {
+                        scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
+                        scSportsCD1.Value2 = scSportsCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scSportsCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSegmentCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
+                {
+                    if (scSegmentCD1.SelectData())
+                    {
+                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scSegmentCD1.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void scSportsCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSportsCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSportsCD.TxtCode.Text))
+                {
+                    if (scSportsCD.SelectData())
+                    {
+                        scSportsCD.Value1 = scSportsCD.TxtCode.Text;
+                        scSportsCD.Value2 = scSportsCD.LabelText;
+                    }
+                    else
+                    {
+                        scSportsCD.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void scSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD.TxtCode.Text))
+                {
+                    if (scSegmentCD.SelectData())
+                    {
+                        scSegmentCD.Value1 = scSegmentCD.TxtCode.Text;
+                        scSegmentCD.Value2 = scSegmentCD.LabelText;
+                    }
+                    else
+                    {
+                        scSegmentCD.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void scSportsCD1_Enter(object sender, EventArgs e)
+        {
+            scSportsCD1.Value1 = "202";
+        }
+
+        private void scSegmentCD1_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD1.Value1 = "203";
+        }
+
+        private void scSportsCD_Enter(object sender, EventArgs e)
+        {
+            scSportsCD.Value1 = "202";
+        }
+
+        private void scSegmentCD_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD.Value1 = "203";
         }
     }
 }
