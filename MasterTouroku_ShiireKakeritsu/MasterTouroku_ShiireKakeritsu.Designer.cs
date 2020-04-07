@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
+            this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSportsCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
-            this.btnRelease = new CKM_Controls.CKM_Button();
-            this.btnSelect = new CKM_Controls.CKM_Button();
+            this.btnReleaseAll = new CKM_Controls.CKM_Button();
+            this.btnSelectAll = new CKM_Controls.CKM_Button();
             this.btnChoice = new CKM_Controls.CKM_Button();
             this.txtRate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
@@ -87,6 +87,12 @@
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.scSupplierCD = new Search.CKM_SearchControl();
+            this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSportsCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSegmentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -94,7 +100,7 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_TextBox1);
+            this.PanelHeader.Controls.Add(this.txtDate1);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.scSupplierCD);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
@@ -102,7 +108,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.scSupplierCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtDate1, 0);
             // 
             // PanelSearch
             // 
@@ -142,30 +148,30 @@
             this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_TextBox1
+            // txtDate1
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(1530, 15);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 5;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate1.AllowMinus = false;
+            this.txtDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtDate1.BackColor = System.Drawing.Color.White;
+            this.txtDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtDate1.DecimalPlace = 0;
+            this.txtDate1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDate1.IntegerPart = 0;
+            this.txtDate1.IsCorrectDate = true;
+            this.txtDate1.isEnterKeyDown = false;
+            this.txtDate1.IsNumber = true;
+            this.txtDate1.IsShop = false;
+            this.txtDate1.Length = 10;
+            this.txtDate1.Location = new System.Drawing.Point(1530, 15);
+            this.txtDate1.MaxLength = 10;
+            this.txtDate1.MoveNext = true;
+            this.txtDate1.Name = "txtDate1";
+            this.txtDate1.Size = new System.Drawing.Size(100, 19);
+            this.txtDate1.TabIndex = 5;
+            this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // panelDetail
             // 
@@ -173,8 +179,8 @@
             this.panelDetail.Controls.Add(this.btnDelete);
             this.panelDetail.Controls.Add(this.btnChange);
             this.panelDetail.Controls.Add(this.btnAdd);
-            this.panelDetail.Controls.Add(this.btnRelease);
-            this.panelDetail.Controls.Add(this.btnSelect);
+            this.panelDetail.Controls.Add(this.btnReleaseAll);
+            this.panelDetail.Controls.Add(this.btnSelectAll);
             this.panelDetail.Controls.Add(this.btnChoice);
             this.panelDetail.Controls.Add(this.txtRate);
             this.panelDetail.Controls.Add(this.ckM_Label24);
@@ -224,80 +230,81 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
-            this.colBrandCD,
-            this.colSportsCD,
-            this.colSegmentCD,
-            this.colLastSeason,
-            this.colChangeDate,
-            this.colRate});
+            this.colBrandCD1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
-            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1150, 350);
+            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1200, 350);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
+            //this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
             // 
             // colChk
             // 
             this.colChk.HeaderText = "";
             this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
             // 
-            // colBrandCD
+            // colBrandCD1
             // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "ブランド";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.Width = 250;
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.Width = 250;
             // 
-            // colSportsCD
+            // Column2
             // 
-            this.colSportsCD.DataPropertyName = "SportsCD";
-            this.colSportsCD.HeaderText = "競　技";
-            this.colSportsCD.Name = "colSportsCD";
-            this.colSportsCD.Width = 250;
+            this.Column2.DataPropertyName = "SportsCD";
+            this.Column2.HeaderText = "競　技";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
             // 
-            // colSegmentCD
+            // Column3
             // 
-            this.colSegmentCD.DataPropertyName = "SegmentCD";
-            this.colSegmentCD.HeaderText = "商品分類";
-            this.colSegmentCD.Name = "colSegmentCD";
-            this.colSegmentCD.Width = 250;
+            this.Column3.DataPropertyName = "SegmentCD";
+            this.Column3.HeaderText = "商品分類";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
             // 
-            // colLastSeason
+            // Column4
             // 
-            this.colLastSeason.DataPropertyName = "LastSeason";
-            this.colLastSeason.HeaderText = "シーズン";
-            this.colLastSeason.Name = "colLastSeason";
-            this.colLastSeason.Width = 60;
+            this.Column4.DataPropertyName = "LastSeason";
+            this.Column4.HeaderText = "シーズン";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
             // 
-            // colChangeDate
+            // Column5
             // 
-            this.colChangeDate.DataPropertyName = "ChangeDate";
-            this.colChangeDate.HeaderText = "改定日";
-            this.colChangeDate.Name = "colChangeDate";
+            this.Column5.DataPropertyName = "ChangeDate";
+            this.Column5.HeaderText = "改定日";
+            this.Column5.Name = "Column5";
             // 
-            // colRate
+            // Column6
             // 
-            this.colRate.DataPropertyName = "Rate";
-            this.colRate.HeaderText = "掛率";
-            this.colRate.Name = "colRate";
-            this.colRate.Width = 80;
+            this.Column6.DataPropertyName = "Rate";
+            this.Column6.HeaderText = "掛率";
+            this.Column6.Name = "Column6";
             // 
             // btnDelete
             // 
@@ -309,7 +316,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDelete.Location = new System.Drawing.Point(1484, 287);
+            this.btnDelete.Location = new System.Drawing.Point(1483, 287);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -345,7 +352,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1332, 287);
+            this.btnAdd.Location = new System.Drawing.Point(1333, 287);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -353,41 +360,43 @@
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // btnRelease
+            // btnReleaseAll
             // 
-            this.btnRelease.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRelease.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnRelease.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelease.DefaultBtnSize = false;
-            this.btnRelease.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelease.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRelease.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnRelease.Location = new System.Drawing.Point(1484, 238);
-            this.btnRelease.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRelease.Name = "btnRelease";
-            this.btnRelease.Size = new System.Drawing.Size(75, 23);
-            this.btnRelease.TabIndex = 40;
-            this.btnRelease.Text = "全解除";
-            this.btnRelease.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnReleaseAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnReleaseAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReleaseAll.DefaultBtnSize = false;
+            this.btnReleaseAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnReleaseAll.Location = new System.Drawing.Point(1483, 238);
+            this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnReleaseAll.Name = "btnReleaseAll";
+            this.btnReleaseAll.Size = new System.Drawing.Size(75, 23);
+            this.btnReleaseAll.TabIndex = 40;
+            this.btnReleaseAll.Text = "全解除";
+            this.btnReleaseAll.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.Click += new System.EventHandler(this.btnReleaseAll_Click);
             // 
-            // btnSelect
+            // btnSelectAll
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSelect.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelect.DefaultBtnSize = false;
-            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelect.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelect.Location = new System.Drawing.Point(1408, 238);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 39;
-            this.btnSelect.Text = "全選択";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSelectAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnSelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectAll.DefaultBtnSize = false;
+            this.btnSelectAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnSelectAll.Location = new System.Drawing.Point(1408, 238);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.TabIndex = 39;
+            this.btnSelectAll.Text = "全選択";
+            this.btnSelectAll.UseVisualStyleBackColor = false;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // btnChoice
             // 
@@ -399,7 +408,7 @@
             this.btnChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnChoice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnChoice.Location = new System.Drawing.Point(1332, 238);
+            this.btnChoice.Location = new System.Drawing.Point(1333, 238);
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
             this.btnChoice.Size = new System.Drawing.Size(75, 23);
@@ -557,8 +566,8 @@
             this.scSegmentCD.Value1 = null;
             this.scSegmentCD.Value2 = null;
             this.scSegmentCD.Value3 = null;
-            this.scSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl7_CodeKeyDownEvent);
-            this.scSegmentCD.Enter += new System.EventHandler(this.ckM_SearchControl7_Enter);
+            this.scSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCD_CodeKeyDownEvent);
+            this.scSegmentCD.Enter += new System.EventHandler(this.scSegmentCD_Enter);
             // 
             // ckM_Label21
             // 
@@ -602,8 +611,8 @@
             this.scSportsCD.Value1 = null;
             this.scSportsCD.Value2 = null;
             this.scSportsCD.Value3 = null;
-            this.scSportsCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl6_CodeKeyDownEvent);
-            this.scSportsCD.Enter += new System.EventHandler(this.ckM_SearchControl6_Enter);
+            this.scSportsCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSportsCD_CodeKeyDownEvent);
+            this.scSportsCD.Enter += new System.EventHandler(this.scSportsCD_Enter);
             // 
             // ckM_Label20
             // 
@@ -920,8 +929,8 @@
             this.scSegmentCD1.Value1 = null;
             this.scSegmentCD1.Value2 = null;
             this.scSegmentCD1.Value3 = null;
-            this.scSegmentCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl4_CodeKeyDownEvent);
-            this.scSegmentCD1.Enter += new System.EventHandler(this.ckM_SearchControl4_Enter);
+            this.scSegmentCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCD1_CodeKeyDownEvent);
+            this.scSegmentCD1.Enter += new System.EventHandler(this.scSegmentCD1_Enter);
             // 
             // ckM_Label11
             // 
@@ -965,8 +974,8 @@
             this.scSportsCD1.Value1 = null;
             this.scSportsCD1.Value2 = null;
             this.scSportsCD1.Value3 = null;
-            this.scSportsCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl3_CodeKeyDownEvent);
-            this.scSportsCD1.Enter += new System.EventHandler(this.ckM_SearchControl3_Enter);
+            this.scSportsCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSportsCD1_CodeKeyDownEvent);
+            this.scSportsCD1.Enter += new System.EventHandler(this.scSportsCD1_Enter);
             // 
             // ckM_Label10
             // 
@@ -1010,6 +1019,7 @@
             this.scBrandCD1.Value1 = null;
             this.scBrandCD1.Value2 = null;
             this.scBrandCD1.Value3 = null;
+            this.scBrandCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scBrandCD1_CodeKeyDownEvent);
             // 
             // ckM_Label9
             // 
@@ -1037,7 +1047,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(146, 102);
+            this.ckM_Label8.Location = new System.Drawing.Point(146, 101);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(148, 12);
             this.ckM_Label8.TabIndex = 7;
@@ -1054,7 +1064,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(49, 104);
+            this.ckM_Label7.Location = new System.Drawing.Point(49, 101);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label7.TabIndex = 6;
@@ -1207,6 +1217,47 @@
             this.scSupplierCD.Value3 = null;
             this.scSupplierCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplierCD_CodeKeyDownEvent);
             // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "ブランド";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.Width = 250;
+            // 
+            // colSportsCD
+            // 
+            this.colSportsCD.DataPropertyName = "SportsCD";
+            this.colSportsCD.HeaderText = "競　技";
+            this.colSportsCD.Name = "colSportsCD";
+            this.colSportsCD.Width = 250;
+            // 
+            // colSegmentCD
+            // 
+            this.colSegmentCD.DataPropertyName = "SegmentCD";
+            this.colSegmentCD.HeaderText = "商品分類";
+            this.colSegmentCD.Name = "colSegmentCD";
+            this.colSegmentCD.Width = 250;
+            // 
+            // colLastSeason
+            // 
+            this.colLastSeason.DataPropertyName = "LastSeason";
+            this.colLastSeason.HeaderText = "シーズン";
+            this.colLastSeason.Name = "colLastSeason";
+            this.colLastSeason.Width = 60;
+            // 
+            // colChangeDate
+            // 
+            this.colChangeDate.DataPropertyName = "ChangeDate";
+            this.colChangeDate.HeaderText = "改定日";
+            this.colChangeDate.Name = "colChangeDate";
+            // 
+            // colRate
+            // 
+            this.colRate.DataPropertyName = "Rate";
+            this.colRate.HeaderText = "掛率";
+            this.colRate.Name = "colRate";
+            this.colRate.Width = 80;
+            // 
             // frmMasterTouroku_ShiireKakeritsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1232,7 +1283,7 @@
 
         #endregion
 
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
+        private CKM_Controls.CKM_TextBox txtDate1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private Search.CKM_SearchControl scSupplierCD;
         private CKM_Controls.CKM_Label ckM_Label1;
@@ -1265,7 +1316,7 @@
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label14;
         private CKM_Controls.CKM_Button btnSearch;
-        private CKM_Controls.CKM_Button btnSelect;
+        private CKM_Controls.CKM_Button btnSelectAll;
         private CKM_Controls.CKM_Button btnChoice;
         private CKM_Controls.CKM_TextBox txtRate;
         private CKM_Controls.CKM_Label ckM_Label24;
@@ -1280,15 +1331,27 @@
         private CKM_Controls.CKM_Button btnDelete;
         private CKM_Controls.CKM_Button btnChange;
         private CKM_Controls.CKM_Button btnAdd;
-        private CKM_Controls.CKM_Button btnRelease;
+        private CKM_Controls.CKM_Button btnReleaseAll;
         private CKM_Controls.CKM_GridView dgv_ShiireKakeritsu;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSportsCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSegmentCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLastSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colChangeDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
 
