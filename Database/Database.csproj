@@ -199,6 +199,7 @@
     <Content Include="StoreProcedure\Fnc_UnitPrice_SP.sql" />
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
     <Content Include="StoreProcedure\Get_StoreName.sql" />
+    <Content Include="StoreProcedure\HMENU.sql" />
     <Content Include="StoreProcedure\ImportYahooJuuChuu.sql" />
     <Content Include="StoreProcedure\ImportYahooShipping.sql" />
     <Content Include="StoreProcedure\ImportYahooShippingDetail.sql" />
