@@ -169,30 +169,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
             dgv_ShiireKakeritsu.DataSource = dtGrid;
         }
-        //private void btnSelectAll_Click_1(object sender, EventArgs e)
-        //{
-        //    //if (ErrorCheck())
-        //    //{
-        //    //    moe = GetSearchInfo();
-        //    //    DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-        //    //    if (dt.Rows.Count > 0)
-        //    //    {
-        //    //        dgv_ShiireKakeritsu.DataSource = dt;
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        mskbl.ShowMessage("E128");
-        //    //        dgv_ShiireKakeritsu.DataSource = null;
-        //    //    }
-        //    //}
-        //}
-        //private void btnSelectAll_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-       
-     
+        
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -202,7 +179,6 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             Checkstate(true);
         }
-
         private void btnReleaseAll_Click(object sender, EventArgs e)
         {
             Checkstate(false);
