@@ -314,18 +314,19 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            Checkstate(true);
+            
         }
 
         private void btnReleaseAll_Click(object sender, EventArgs e)
         {
-            Checkstate(false);
+            
         }
-        private void Checkstate(bool flag)
+
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {
-                row1.Cells["colChk"].Value = flag;
+
             }
         }
     }
