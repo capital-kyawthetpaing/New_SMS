@@ -30,9 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
+            this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -94,7 +95,7 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_TextBox1);
+            this.PanelHeader.Controls.Add(this.txtDate1);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.scSupplierCD);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
@@ -102,7 +103,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.scSupplierCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtDate1, 0);
             // 
             // PanelSearch
             // 
@@ -142,30 +143,30 @@
             this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_TextBox1
+            // txtDate1
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(1530, 15);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 5;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate1.AllowMinus = false;
+            this.txtDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtDate1.BackColor = System.Drawing.Color.White;
+            this.txtDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtDate1.DecimalPlace = 0;
+            this.txtDate1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDate1.IntegerPart = 0;
+            this.txtDate1.IsCorrectDate = true;
+            this.txtDate1.isEnterKeyDown = false;
+            this.txtDate1.IsNumber = true;
+            this.txtDate1.IsShop = false;
+            this.txtDate1.Length = 10;
+            this.txtDate1.Location = new System.Drawing.Point(1530, 15);
+            this.txtDate1.MaxLength = 10;
+            this.txtDate1.MoveNext = true;
+            this.txtDate1.Name = "txtDate1";
+            this.txtDate1.Size = new System.Drawing.Size(100, 19);
+            this.txtDate1.TabIndex = 5;
+            this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // panelDetail
             // 
@@ -229,7 +230,7 @@
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -244,6 +245,14 @@
             this.colLastSeason,
             this.colChangeDate,
             this.colRate});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
@@ -1232,7 +1241,7 @@
 
         #endregion
 
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
+        private CKM_Controls.CKM_TextBox txtDate1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private Search.CKM_SearchControl scSupplierCD;
         private CKM_Controls.CKM_Label ckM_Label1;

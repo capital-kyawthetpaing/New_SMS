@@ -45,20 +45,50 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             this.Close();
         }
-        public void Clear()
+        public void CancelData()
         {
-            Clear(panelDetail);
+            scSupplierCD.Clear();
+            txtDate1.Text = string.Empty;
+            scBrandCD1.Clear();
+            scSportsCD1.Clear();
+            scSegmentCD1.Clear();
+            txtSeason.Text = string.Empty;
+            txtDate.Text = string.Empty;
+            txtCopy.Text = string.Empty;
+            scBrandCD.Clear();
+            scSportsCD.Clear();
+            scSegmentCD.Clear();
+            txtLastSeason.Text = string.Empty;
+            txtChangeDate.Text = string.Empty;
+            txtRate.Text = string.Empty;
             scSupplierCD.SetFocus(1);
+        }
+        public override void FunctionProcess(int Index)
+        {
+            base.FunctionProcess(Index);
+            switch (Index + 1)
+            {
+                case 6:
+                    {
+                        if (mskbl.ShowMessage("Q005") != DialogResult.Yes)
+                            return;
+                            CancelData();
+                    }
+                    break;
+            }
         }
         private bool ErrorCheck()
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
-            //if (!scSupplierCD.IsExists(1))
+            //if (!String.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
             //{
-            //    mskbl.ShowMessage("E101");
-            //    scSupplierCD.SetFocus(1);
-            //    return false;
+            //    if (!scSupplierCD.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        scSupplierCD.SetFocus(1);
+            //        return false;
+            //    }
             //}
             //if (scSupplierCD.IsExists(1))
             //{
@@ -66,7 +96,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //    scSupplierCD.SetFocus(1);
             //    return false;
             //}
-            //if (!RequireCheck(new Control[] { txtRevisionDate, txtRate1,txtCopy }))
+            //if (!RequireCheck(new Control[] { txtDate1 }))
             //    return false;
             return true;
         }
@@ -194,7 +224,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                     else
                     {
-
                         scSupplierCD.SetFocus(1);
                     }
                 }
@@ -212,7 +241,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        SearchData();
+                        //SearchData();
                     }
                     else
                     {
