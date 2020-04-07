@@ -311,5 +311,22 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             MoveNextControl(e);
         }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
+
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
     }
 }

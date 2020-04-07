@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -46,8 +46,8 @@
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
-            this.btnRelease = new CKM_Controls.CKM_Button();
-            this.btnSelect = new CKM_Controls.CKM_Button();
+            this.btnReleaseAll = new CKM_Controls.CKM_Button();
+            this.btnSelectAll = new CKM_Controls.CKM_Button();
             this.btnChoice = new CKM_Controls.CKM_Button();
             this.txtRate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
@@ -174,8 +174,8 @@
             this.panelDetail.Controls.Add(this.btnDelete);
             this.panelDetail.Controls.Add(this.btnChange);
             this.panelDetail.Controls.Add(this.btnAdd);
-            this.panelDetail.Controls.Add(this.btnRelease);
-            this.panelDetail.Controls.Add(this.btnSelect);
+            this.panelDetail.Controls.Add(this.btnReleaseAll);
+            this.panelDetail.Controls.Add(this.btnSelectAll);
             this.panelDetail.Controls.Add(this.btnChoice);
             this.panelDetail.Controls.Add(this.txtRate);
             this.panelDetail.Controls.Add(this.ckM_Label24);
@@ -225,17 +225,17 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -245,14 +245,14 @@
             this.colLastSeason,
             this.colChangeDate,
             this.colRate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
@@ -362,41 +362,43 @@
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // btnRelease
+            // btnReleaseAll
             // 
-            this.btnRelease.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnRelease.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnRelease.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRelease.DefaultBtnSize = false;
-            this.btnRelease.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnRelease.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRelease.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRelease.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnRelease.Location = new System.Drawing.Point(1483, 238);
-            this.btnRelease.Margin = new System.Windows.Forms.Padding(1);
-            this.btnRelease.Name = "btnRelease";
-            this.btnRelease.Size = new System.Drawing.Size(75, 23);
-            this.btnRelease.TabIndex = 40;
-            this.btnRelease.Text = "全解除";
-            this.btnRelease.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnReleaseAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnReleaseAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReleaseAll.DefaultBtnSize = false;
+            this.btnReleaseAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnReleaseAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReleaseAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnReleaseAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnReleaseAll.Location = new System.Drawing.Point(1483, 238);
+            this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnReleaseAll.Name = "btnReleaseAll";
+            this.btnReleaseAll.Size = new System.Drawing.Size(75, 23);
+            this.btnReleaseAll.TabIndex = 40;
+            this.btnReleaseAll.Text = "全解除";
+            this.btnReleaseAll.UseVisualStyleBackColor = false;
+            this.btnReleaseAll.Click += new System.EventHandler(this.btnReleaseAll_Click);
             // 
-            // btnSelect
+            // btnSelectAll
             // 
-            this.btnSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnSelect.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnSelect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSelect.DefaultBtnSize = false;
-            this.btnSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelect.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSelect.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelect.Location = new System.Drawing.Point(1408, 238);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(75, 23);
-            this.btnSelect.TabIndex = 39;
-            this.btnSelect.Text = "全選択";
-            this.btnSelect.UseVisualStyleBackColor = false;
+            this.btnSelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSelectAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnSelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSelectAll.DefaultBtnSize = false;
+            this.btnSelectAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnSelectAll.Location = new System.Drawing.Point(1408, 238);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSelectAll.Name = "btnSelectAll";
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
+            this.btnSelectAll.TabIndex = 39;
+            this.btnSelectAll.Text = "全選択";
+            this.btnSelectAll.UseVisualStyleBackColor = false;
+            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
             // 
             // btnChoice
             // 
@@ -1274,7 +1276,7 @@
         private CKM_Controls.CKM_Label ckM_Label15;
         private CKM_Controls.CKM_Label ckM_Label14;
         private CKM_Controls.CKM_Button btnSearch;
-        private CKM_Controls.CKM_Button btnSelect;
+        private CKM_Controls.CKM_Button btnSelectAll;
         private CKM_Controls.CKM_Button btnChoice;
         private CKM_Controls.CKM_TextBox txtRate;
         private CKM_Controls.CKM_Label ckM_Label24;
@@ -1289,7 +1291,7 @@
         private CKM_Controls.CKM_Button btnDelete;
         private CKM_Controls.CKM_Button btnChange;
         private CKM_Controls.CKM_Button btnAdd;
-        private CKM_Controls.CKM_Button btnRelease;
+        private CKM_Controls.CKM_Button btnReleaseAll;
         private CKM_Controls.CKM_GridView dgv_ShiireKakeritsu;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD;
