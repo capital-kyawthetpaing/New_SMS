@@ -250,7 +250,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
         private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -270,8 +269,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-    
-
         private void ckM_SearchControl7_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -291,9 +288,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
-       
-
         private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
