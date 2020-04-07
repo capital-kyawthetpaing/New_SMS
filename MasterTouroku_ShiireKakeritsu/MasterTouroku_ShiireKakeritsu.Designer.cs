@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
@@ -87,13 +93,6 @@
             this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -231,17 +230,17 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -251,14 +250,6 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
@@ -268,6 +259,52 @@
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
             this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
+            // 
+            // colBrandCD1
+            // 
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SportsCD";
+            this.Column2.HeaderText = "競　技";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SegmentCD";
+            this.Column3.HeaderText = "商品分類";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "LastSeason";
+            this.Column4.HeaderText = "シーズン";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ChangeDate";
+            this.Column5.HeaderText = "改定日";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Rate";
+            this.Column6.HeaderText = "掛率";
+            this.Column6.Name = "Column6";
             // 
             // btnDelete
             // 
@@ -529,8 +566,8 @@
             this.scSegmentCD.Value1 = null;
             this.scSegmentCD.Value2 = null;
             this.scSegmentCD.Value3 = null;
-            this.scSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl7_CodeKeyDownEvent);
-            this.scSegmentCD.Enter += new System.EventHandler(this.ckM_SearchControl7_Enter);
+            this.scSegmentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCD_CodeKeyDownEvent);
+            this.scSegmentCD.Enter += new System.EventHandler(this.scSegmentCD_Enter);
             // 
             // ckM_Label21
             // 
@@ -574,8 +611,8 @@
             this.scSportsCD.Value1 = null;
             this.scSportsCD.Value2 = null;
             this.scSportsCD.Value3 = null;
-            this.scSportsCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl6_CodeKeyDownEvent);
-            this.scSportsCD.Enter += new System.EventHandler(this.ckM_SearchControl6_Enter);
+            this.scSportsCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSportsCD_CodeKeyDownEvent);
+            this.scSportsCD.Enter += new System.EventHandler(this.scSportsCD_Enter);
             // 
             // ckM_Label20
             // 
@@ -892,8 +929,8 @@
             this.scSegmentCD1.Value1 = null;
             this.scSegmentCD1.Value2 = null;
             this.scSegmentCD1.Value3 = null;
-            this.scSegmentCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl4_CodeKeyDownEvent);
-            this.scSegmentCD1.Enter += new System.EventHandler(this.ckM_SearchControl4_Enter);
+            this.scSegmentCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSegmentCD1_CodeKeyDownEvent);
+            this.scSegmentCD1.Enter += new System.EventHandler(this.scSegmentCD1_Enter);
             // 
             // ckM_Label11
             // 
@@ -937,8 +974,8 @@
             this.scSportsCD1.Value1 = null;
             this.scSportsCD1.Value2 = null;
             this.scSportsCD1.Value3 = null;
-            this.scSportsCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ckM_SearchControl3_CodeKeyDownEvent);
-            this.scSportsCD1.Enter += new System.EventHandler(this.ckM_SearchControl3_Enter);
+            this.scSportsCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSportsCD1_CodeKeyDownEvent);
+            this.scSportsCD1.Enter += new System.EventHandler(this.scSportsCD1_Enter);
             // 
             // ckM_Label10
             // 
@@ -982,6 +1019,7 @@
             this.scBrandCD1.Value1 = null;
             this.scBrandCD1.Value2 = null;
             this.scBrandCD1.Value3 = null;
+            this.scBrandCD1.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scBrandCD1_CodeKeyDownEvent);
             // 
             // ckM_Label9
             // 
@@ -1219,52 +1257,6 @@
             this.colRate.HeaderText = "掛率";
             this.colRate.Name = "colRate";
             this.colRate.Width = 80;
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 50;
-            // 
-            // colBrandCD1
-            // 
-            this.colBrandCD1.DataPropertyName = "BrandCD";
-            this.colBrandCD1.HeaderText = "ブランド";
-            this.colBrandCD1.Name = "colBrandCD1";
-            this.colBrandCD1.Width = 250;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SportsCD";
-            this.Column2.HeaderText = "競　技";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SegmentCD";
-            this.Column3.HeaderText = "商品分類";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "LastSeason";
-            this.Column4.HeaderText = "シーズン";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ChangeDate";
-            this.Column5.HeaderText = "改定日";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Rate";
-            this.Column6.HeaderText = "掛率";
-            this.Column6.Name = "Column6";
             // 
             // frmMasterTouroku_ShiireKakeritsu
             // 

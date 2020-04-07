@@ -160,7 +160,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
                 }
                 else
-                    dtGrid = dtMain;
+                    dtGrid = null;
             }
             else
             {
@@ -191,23 +191,44 @@ namespace MasterTouroku_ShiireKakeritsu
 
         //}
 
-        private void ckM_SearchControl3_Enter(object sender, EventArgs e)
+       
+     
+        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
-            scSportsCD1.Value1 = "202";
-        }
-        private void ckM_SearchControl4_Enter(object sender, EventArgs e)
-        {
-            scSegmentCD1.Value1 = "203";
+            MoveNextControl(e);
         }
 
-        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
+        private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            scSportsCD.Value1 = "202";
+            Checkstate(true);
         }
 
-        private void ckM_SearchControl7_Enter(object sender, EventArgs e)
+        private void btnReleaseAll_Click(object sender, EventArgs e)
         {
-            scSegmentCD.Value1 = "203";
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.FalseValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
+            }
         }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -230,7 +251,30 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
-        private void ckM_SearchControl3_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scBrandCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+                {
+                    if (scBrandCD1.SelectData())
+                    {
+                        scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+                        scBrandCD1.Value2 = scBrandCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scBrandCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSportsCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -241,16 +285,41 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        //SearchData();
+                        BindGrid();
                     }
                     else
                     {
+                        BindGrid();
                         scSportsCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSegmentCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
+                {
+                    if (scSegmentCD1.SelectData())
+                    {
+                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scSegmentCD1.SetFocus(1);
                     }
                 }
             }
         }
-        private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
+
+        private void scSportsCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -269,7 +338,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        private void ckM_SearchControl7_CodeKeyDownEvent(object sender, KeyEventArgs e)
+       
+        private void scSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -288,46 +358,55 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scSportsCD1_Enter(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            scSportsCD1.Value1 = "202";
+        }
+
+        private void scSegmentCD1_Enter(object sender, EventArgs e)
+        {
+
+            scSegmentCD1.Value1 = "203";
+
+            Checkstate(true);
+
+        }
+
+        private void scSportsCD_Enter(object sender, EventArgs e)
+        {
+
+            scSportsCD.Value1 = "202";
+        }
+
+        private void scSegmentCD_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD.Value1 = "203";
+
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
             {
-                scSegmentCD1.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
-                {
-                    if (scSegmentCD1.SelectData())
-                    {
-                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
-                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
-                    }
-                    else
-                    {
-                        scSegmentCD1.SetFocus(1);
-                    }
-                }
+                row1.Cells["colChk"].Value = flag;
             }
         }
-        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
-        {
-            MoveNextControl(e);
-        }
+        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+        //    {
+        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+        //        {
+        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+        //            chk1.Value = chk1.FalseValue;
+        //        }
+        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+        //    }
+        //    else
+        //    {
+        //        dgv_ShiireKakeritsu.ClearSelection();
+        //    }
 
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnReleaseAll_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-
-            }
         }
     }
 }
