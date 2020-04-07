@@ -1,9 +1,9 @@
 
-/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM ******/
+/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM *****/
 DROP PROCEDURE [dbo].[M_Site_SelectByItemCD]
 GO
 
-/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM ******/
+/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM *****/
 SET ANSI_NULLS ON
 GO
 
