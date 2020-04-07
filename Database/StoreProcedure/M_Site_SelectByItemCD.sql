@@ -1,20 +1,18 @@
-
-/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM *****/
-DROP PROCEDURE [dbo].[M_Site_SelectByItemCD]
-GO
-
-/****** Object:  StoredProcedure [dbo].[M_Site_SelectByItemCD]    Script Date: 6/11/2019 2:21:19 PM *****/
+ BEGIN TRY 
+ Drop Procedure dbo.[M_Site_SelectByItemCD]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 /****** Object:  StoredProcedure [M_Site_SelectByItemCD]    */
 CREATE PROCEDURE M_Site_SelectByItemCD(
     -- Add the parameters for the stored procedure here
     @ITemCD varchar(30),
-    @ChangeDate varchar(10)    
+    @ChangeDate varchar(10)
 )AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
@@ -49,4 +47,3 @@ BEGIN
     ;
 END
 
-GO
