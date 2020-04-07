@@ -139,13 +139,13 @@ namespace ZaikoShoukai
                 SKUName = TB_Shohinmei.Text,
                 JanCD=TB_Jancd.Text,
                 SKUCD=TB_Skucd.Text,
-                MakerItem=TB_mekashohinCD.Text,
+                MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore=TB_Bikokeyword.Text,
-                ReserveCD=CB_ReserveCD.Text,
-                NoticesCD=CB_NoticesCD.Text,
-                PostageCD=CB_PostageCD.Text,
-                OrderAttentionCD=CB_OrderAttentionCD.Text,
+                ReserveCD=CB_ReserveCD.SelectedIndex.ToString(),
+                //NoticesCD=CB_NoticesCD.SelectedValue.ToString(),
+                //PostageCD=CB_PostageCD.SelectedValue.ToString(),
+                //OrderAttentionCD=CB_OrderAttentionCD.SelectedValue.ToString(),
                 SportsCD=Sports.TxtCode.Text,
                 InputDateFrom=TB_ShinkitorokuF.Text,
                 InputDateTo=TB_ShinkitorokuT.Text,
@@ -161,9 +161,9 @@ namespace ZaikoShoukai
         {
             msInfo_Entity = new M_SKUInfo_Entity()
             {
-                YearTerm = CB_year.Text,
-                Season=CB_Season.Text,
-                CatalogNO=TB_Catalog.Text,
+                YearTerm = CB_year.SelectedValue.ToString(),
+                Season=CB_Season.SelectedValue.ToString(),
+                CatalogNO=TB_Catalog.Text.ToString(),
                 InstructionsNO=TB_Shijishobengo.Text,
             };
             return msInfo_Entity;
@@ -229,12 +229,12 @@ namespace ZaikoShoukai
             CB_Tagu3.Text = String.Empty;
             CB_Tagu4.Text = String.Empty;
             CB_Tagu5.Text = String.Empty;
-            TB_mekashohinCD.Text = string.Empty;
             TB_item.Text = string.Empty;
+            TB_mekashohinCD.Text = string.Empty;
             TB_Bikokeyword.Text = string.Empty;
-            TB_item.Text = string.Empty;
-            TB_Catalog.Text = string.Empty;
             TB_mekashohinCD.Text = string.Empty;
+            TB_Catalog.Text = string.Empty;
+            TB_item.Text = string.Empty;
             TB_Shijishobengo.Text = string.Empty;
             TB_ShinkitorokuF.Text = String.Empty;
             TB_ShinkitorokuT.Text = string.Empty;
@@ -461,8 +461,8 @@ namespace ZaikoShoukai
             if (e.RowIndex != -1)
             {
                 String[] data = { CB_Soko.SelectedValue.ToString(),Shiiresaki.TxtCode.Text,TB_RackNoF.Text,TB_RackNoT.Text,Maker.TxtCode.Text,SearchBrand.TxtCode.Text,
-                                   TB_Shohinmei.Text,TB_Jancd.Text,TB_Skucd.Text,TB_Bikokeyword.Text,TB_mekashohinCD.Text,
-                                TB_item.Text,CB_NoticesCD.Text,CB_OrderAttentionCD.Text,CB_PostageCD.Text,CB_ReserveCD.Text,
+                                   TB_Shohinmei.Text,TB_Jancd.Text,TB_Skucd.Text,TB_Bikokeyword.Text,TB_item.Text,
+                                TB_mekashohinCD.Text,CB_NoticesCD.Text,CB_OrderAttentionCD.Text,CB_PostageCD.Text,CB_ReserveCD.Text,
                                 CB_Season.Text,LB_ChangeDate.Text, CB_Tagu1.Text,CB_Tagu2.Text,CB_Tagu3.Text,
                                 CB_Tagu4.Text,CB_Tagu5.Text,Sports.TxtCode.Text,TB_Shijishobengo.Text,TB_SaiShuhenkobiT.Text,
                                 TＢ_SaiShuhenkobiF.Text,TB_ShinkitorokuF.Text,TB_ShinkitorokuT.Text,TB_ShoninbiF.Text,TB_ShoninbiT.Text,
@@ -474,9 +474,9 @@ namespace ZaikoShoukai
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
                 size = GV_Zaiko.Rows[e.RowIndex].Cells[3].Value.ToString();
-                jancd = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
+                jancd = GV_Zaiko.Rows[e.RowIndex].Cells[14].Value.ToString();
                 brand = GV_Zaiko.Rows[e.RowIndex].Cells[13].Value.ToString();
-                item = GV_Zaiko.Rows[e.RowIndex].Cells[14].Value.ToString();
+                item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 soukocd = CB_Soko.SelectedValue.ToString();
                 Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, data);

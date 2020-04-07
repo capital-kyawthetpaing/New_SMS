@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -79,9 +78,9 @@
             this.ckM_LB_Kei_waza = new CKM_Controls.CKM_Label();
             this.TB_Shijishobengo = new CKM_Controls.CKM_TextBox();
             this.djofo = new CKM_Controls.CKM_Label();
-            this.TB_item = new CKM_Controls.CKM_TextBox();
-            this.ckM_LB_item = new CKM_Controls.CKM_Label();
             this.TB_mekashohinCD = new CKM_Controls.CKM_TextBox();
+            this.ckM_LB_item = new CKM_Controls.CKM_Label();
+            this.TB_item = new CKM_Controls.CKM_TextBox();
             this.ckM_LB_makashohincd = new CKM_Controls.CKM_Label();
             this.ckM_RB_or = new CKM_Controls.CKM_RadioButton();
             this.ckM_RB_and = new CKM_Controls.CKM_RadioButton();
@@ -867,29 +866,29 @@
             this.djofo.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.djofo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TB_item
+            // TB_mekashohinCD
             // 
-            this.TB_item.AllowMinus = false;
-            this.TB_item.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_item.BackColor = System.Drawing.Color.White;
-            this.TB_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_item.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.TB_item.DecimalPlace = 0;
-            this.TB_item.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_item.IntegerPart = 0;
-            this.TB_item.IsCorrectDate = true;
-            this.TB_item.isEnterKeyDown = false;
-            this.TB_item.IsNumber = true;
-            this.TB_item.IsShop = false;
-            this.TB_item.Length = 200;
-            this.TB_item.Location = new System.Drawing.Point(129, 263);
-            this.TB_item.MaxLength = 200;
-            this.TB_item.MoveNext = true;
-            this.TB_item.Name = "TB_item";
-            this.TB_item.Size = new System.Drawing.Size(1440, 19);
-            this.TB_item.TabIndex = 28;
-            this.TB_item.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_mekashohinCD.AllowMinus = false;
+            this.TB_mekashohinCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_mekashohinCD.BackColor = System.Drawing.Color.White;
+            this.TB_mekashohinCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_mekashohinCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_mekashohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_mekashohinCD.DecimalPlace = 0;
+            this.TB_mekashohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_mekashohinCD.IntegerPart = 0;
+            this.TB_mekashohinCD.IsCorrectDate = true;
+            this.TB_mekashohinCD.isEnterKeyDown = false;
+            this.TB_mekashohinCD.IsNumber = true;
+            this.TB_mekashohinCD.IsShop = false;
+            this.TB_mekashohinCD.Length = 200;
+            this.TB_mekashohinCD.Location = new System.Drawing.Point(129, 263);
+            this.TB_mekashohinCD.MaxLength = 200;
+            this.TB_mekashohinCD.MoveNext = true;
+            this.TB_mekashohinCD.Name = "TB_mekashohinCD";
+            this.TB_mekashohinCD.Size = new System.Drawing.Size(1440, 19);
+            this.TB_mekashohinCD.TabIndex = 28;
+            this.TB_mekashohinCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_LB_item
             // 
@@ -908,29 +907,29 @@
             this.ckM_LB_item.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_LB_item.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TB_mekashohinCD
+            // TB_item
             // 
-            this.TB_mekashohinCD.AllowMinus = false;
-            this.TB_mekashohinCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_mekashohinCD.BackColor = System.Drawing.Color.White;
-            this.TB_mekashohinCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_mekashohinCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_mekashohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.TB_mekashohinCD.DecimalPlace = 0;
-            this.TB_mekashohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_mekashohinCD.IntegerPart = 0;
-            this.TB_mekashohinCD.IsCorrectDate = true;
-            this.TB_mekashohinCD.isEnterKeyDown = false;
-            this.TB_mekashohinCD.IsNumber = true;
-            this.TB_mekashohinCD.IsShop = false;
-            this.TB_mekashohinCD.Length = 200;
-            this.TB_mekashohinCD.Location = new System.Drawing.Point(129, 245);
-            this.TB_mekashohinCD.MaxLength = 200;
-            this.TB_mekashohinCD.MoveNext = true;
-            this.TB_mekashohinCD.Name = "TB_mekashohinCD";
-            this.TB_mekashohinCD.Size = new System.Drawing.Size(1440, 19);
-            this.TB_mekashohinCD.TabIndex = 27;
-            this.TB_mekashohinCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.TB_item.AllowMinus = false;
+            this.TB_item.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.TB_item.BackColor = System.Drawing.Color.White;
+            this.TB_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_item.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.TB_item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_item.DecimalPlace = 0;
+            this.TB_item.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_item.IntegerPart = 0;
+            this.TB_item.IsCorrectDate = true;
+            this.TB_item.isEnterKeyDown = false;
+            this.TB_item.IsNumber = true;
+            this.TB_item.IsShop = false;
+            this.TB_item.Length = 200;
+            this.TB_item.Location = new System.Drawing.Point(129, 245);
+            this.TB_item.MaxLength = 200;
+            this.TB_item.MoveNext = true;
+            this.TB_item.Name = "TB_item";
+            this.TB_item.Size = new System.Drawing.Size(1440, 19);
+            this.TB_item.TabIndex = 27;
+            this.TB_item.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_LB_makashohincd
             // 
@@ -1470,7 +1469,7 @@
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1498,14 +1497,6 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 463);
@@ -1537,14 +1528,13 @@
             this.カラー.DataPropertyName = "カラー";
             this.カラー.HeaderText = "カラー";
             this.カラー.Name = "カラー";
-            this.カラー.Width = 100;
             // 
             // サイズ
             // 
             this.サイズ.DataPropertyName = "サイズ";
             this.サイズ.HeaderText = "サイズ";
             this.サイズ.Name = "サイズ";
-            this.サイズ.Width = 100;
+            this.サイズ.Width = 150;
             // 
             // 店舗名
             // 
@@ -1557,7 +1547,6 @@
             this.SoukoName.DataPropertyName = "倉庫名";
             this.SoukoName.HeaderText = "倉庫";
             this.SoukoName.Name = "SoukoName";
-            this.サイズ.Width = 150;
             // 
             // 棚番
             // 
@@ -1592,7 +1581,6 @@
             this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Button.UseColumnTextForButtonValue = true;
             this.Button.Width = 40;
-
             // 
             // 引当可能
             // 
@@ -1788,11 +1776,11 @@
             this.PL_head.Controls.Add(this.ckM_LB_Shiiresaki);
             this.PL_head.Controls.Add(this.CB_OrderAttentionCD);
             this.PL_head.Controls.Add(this.ckM_LB_Hatsu_chu);
-            this.PL_head.Controls.Add(this.TB_mekashohinCD);
+            this.PL_head.Controls.Add(this.TB_item);
             this.PL_head.Controls.Add(this.TB_Shijishobengo);
             this.PL_head.Controls.Add(this.ckM_LB_meka);
             this.PL_head.Controls.Add(this.djofo);
-            this.PL_head.Controls.Add(this.TB_item);
+            this.PL_head.Controls.Add(this.TB_mekashohinCD);
             this.PL_head.Controls.Add(this.CB_Tagu5);
             this.PL_head.Controls.Add(this.TB_ShoninbiF);
             this.PL_head.Controls.Add(this.ckM_LB_5);
@@ -2076,9 +2064,9 @@
         private CKM_Controls.CKM_Label ckM_LB_Toku_ki;
         private CKM_Controls.CKM_TextBox TB_Shijishobengo;
         private CKM_Controls.CKM_Label djofo;
-        private CKM_Controls.CKM_TextBox TB_mekashohinCD;
-        private CKM_Controls.CKM_Label ckM_LB_makashohincd;
         private CKM_Controls.CKM_TextBox TB_item;
+        private CKM_Controls.CKM_Label ckM_LB_makashohincd;
+        private CKM_Controls.CKM_TextBox TB_mekashohinCD;
         private CKM_Controls.CKM_Label ckM_LB_item;
         private CKM_Controls.CKM_CheckBox ckM_CKB_suru;
         private CKM_Controls.CKM_Label ckM_LB_Zaikosu_hyoji;
