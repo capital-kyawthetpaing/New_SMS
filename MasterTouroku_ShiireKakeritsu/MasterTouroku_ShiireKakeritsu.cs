@@ -370,5 +370,24 @@ namespace MasterTouroku_ShiireKakeritsu
                 dgv_ShiireKakeritsu.ClearSelection();
             }
         }
+
+        //private void btnAdd_Click(object sender, EventArgs e)
+        //{
+
+        //    string  BrandCD = scBrandCD.TxtCode.Text.Trim();
+        //    string SportsCD = scSportsCD.TxtCode.Text.Trim();
+        //    string SegmentCD = scSegmentCD.TxtCode.Text.Trim();
+        //    string LastSeason = txtLastSeason.Text.Trim();
+        //    string ChangeDate = txtChangeDate.Text.Trim();
+        //    string Rate = txtRate.Text.Trim();
+        //    DataTable dt = new DataTable();
+        //    dt.Rows.Add(1, BrandCD);
+        //    dt.Rows.Add(2, SportsCD);
+        //    dt.Rows.Add(3, SegmentCD);
+        //    dt.Rows.Add(4, LastSeason);
+        //    dt.Rows.Add(5, ChangeDate);
+        //    dt.Rows.Add(6, Rate);
+        //    dgv_ShiireKakeritsu.DataSource = dt;
+        //}
     }
 }
