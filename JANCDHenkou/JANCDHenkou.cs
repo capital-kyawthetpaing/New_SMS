@@ -173,11 +173,9 @@ namespace JANCDHenkou
                     {
                         jhbl.ShowMessage("E101");
                     }
-                    else if (dtGenJanCD.Rows.Count == 1)
+                    else if (dtGenJanCD.Rows.Count == 1) //BindData
                     {
-                        //dgvJANCDHenkou.DataSource = dtGenJanCD;
-                       
-                        
+                        dgvJANCDHenkou.DataSource = dtGenJanCD;
                     }
                     else
                     {

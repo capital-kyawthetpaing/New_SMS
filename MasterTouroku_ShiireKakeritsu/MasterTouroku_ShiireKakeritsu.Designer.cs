@@ -28,20 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
@@ -93,6 +87,13 @@
             this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -105,7 +106,6 @@
             this.PanelHeader.Controls.Add(this.scSupplierCD);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Size = new System.Drawing.Size(1682, 91);
-            this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.scSupplierCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
@@ -170,7 +170,7 @@
             this.txtDate1.MoveNext = true;
             this.txtDate1.Name = "txtDate1";
             this.txtDate1.Size = new System.Drawing.Size(100, 19);
-            this.txtDate1.TabIndex = 1;
+            this.txtDate1.TabIndex = 5;
             this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -224,24 +224,24 @@
             this.panelDetail.Location = new System.Drawing.Point(2, 152);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1680, 800);
-            this.panelDetail.TabIndex = 0;
+            this.panelDetail.TabIndex = 13;
             // 
             // dgv_ShiireKakeritsu
             // 
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -251,6 +251,14 @@
             this.Column4,
             this.Column5,
             this.Column6});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(197, 367);
@@ -260,52 +268,6 @@
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
             this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick_1);
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 50;
-            // 
-            // colBrandCD1
-            // 
-            this.colBrandCD1.DataPropertyName = "BrandCD";
-            this.colBrandCD1.HeaderText = "ブランド";
-            this.colBrandCD1.Name = "colBrandCD1";
-            this.colBrandCD1.Width = 250;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "SportsCD";
-            this.Column2.HeaderText = "競　技";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 250;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "SegmentCD";
-            this.Column3.HeaderText = "商品分類";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 250;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "LastSeason";
-            this.Column4.HeaderText = "シーズン";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "ChangeDate";
-            this.Column5.HeaderText = "改定日";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Rate";
-            this.Column6.HeaderText = "掛率";
-            this.Column6.Name = "Column6";
             // 
             // btnDelete
             // 
@@ -321,7 +283,7 @@
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 21;
+            this.btnDelete.TabIndex = 43;
             this.btnDelete.Text = "削除";
             this.btnDelete.UseVisualStyleBackColor = false;
             // 
@@ -339,7 +301,7 @@
             this.btnChange.Margin = new System.Windows.Forms.Padding(1);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
-            this.btnChange.TabIndex = 20;
+            this.btnChange.TabIndex = 42;
             this.btnChange.Text = "変更";
             this.btnChange.UseVisualStyleBackColor = false;
             // 
@@ -357,9 +319,10 @@
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 19;
+            this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReleaseAll
             // 
@@ -375,7 +338,7 @@
             this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnReleaseAll.Name = "btnReleaseAll";
             this.btnReleaseAll.Size = new System.Drawing.Size(75, 23);
-            this.btnReleaseAll.TabIndex = 18;
+            this.btnReleaseAll.TabIndex = 40;
             this.btnReleaseAll.Text = "全解除";
             this.btnReleaseAll.UseVisualStyleBackColor = false;
             this.btnReleaseAll.Click += new System.EventHandler(this.btnReleaseAll_Click);
@@ -394,7 +357,7 @@
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectAll.Name = "btnSelectAll";
             this.btnSelectAll.Size = new System.Drawing.Size(75, 23);
-            this.btnSelectAll.TabIndex = 17;
+            this.btnSelectAll.TabIndex = 39;
             this.btnSelectAll.Text = "全選択";
             this.btnSelectAll.UseVisualStyleBackColor = false;
             this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
@@ -413,7 +376,7 @@
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
             this.btnChoice.Size = new System.Drawing.Size(75, 23);
-            this.btnChoice.TabIndex = 16;
+            this.btnChoice.TabIndex = 38;
             this.btnChoice.Text = "選択";
             this.btnChoice.UseVisualStyleBackColor = false;
             // 
@@ -438,7 +401,7 @@
             this.txtRate.MoveNext = true;
             this.txtRate.Name = "txtRate";
             this.txtRate.Size = new System.Drawing.Size(100, 19);
-            this.txtRate.TabIndex = 15;
+            this.txtRate.TabIndex = 37;
             this.txtRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -454,7 +417,7 @@
             this.ckM_Label24.Location = new System.Drawing.Point(846, 292);
             this.ckM_Label24.Name = "ckM_Label24";
             this.ckM_Label24.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label24.TabIndex = 41;
+            this.ckM_Label24.TabIndex = 36;
             this.ckM_Label24.Text = "掛　率";
             this.ckM_Label24.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -480,7 +443,7 @@
             this.txtChangeDate.MoveNext = true;
             this.txtChangeDate.Name = "txtChangeDate";
             this.txtChangeDate.Size = new System.Drawing.Size(100, 19);
-            this.txtChangeDate.TabIndex = 14;
+            this.txtChangeDate.TabIndex = 21;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -496,7 +459,7 @@
             this.ckM_Label23.Location = new System.Drawing.Point(845, 248);
             this.ckM_Label23.Name = "ckM_Label23";
             this.ckM_Label23.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label23.TabIndex = 40;
+            this.ckM_Label23.TabIndex = 34;
             this.ckM_Label23.Text = "改定日";
             this.ckM_Label23.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -522,7 +485,7 @@
             this.txtLastSeason.MoveNext = true;
             this.txtLastSeason.Name = "txtLastSeason";
             this.txtLastSeason.Size = new System.Drawing.Size(100, 19);
-            this.txtLastSeason.TabIndex = 13;
+            this.txtLastSeason.TabIndex = 21;
             this.txtLastSeason.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label22
@@ -537,7 +500,7 @@
             this.ckM_Label22.Location = new System.Drawing.Point(829, 214);
             this.ckM_Label22.Name = "ckM_Label22";
             this.ckM_Label22.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label22.TabIndex = 39;
+            this.ckM_Label22.TabIndex = 32;
             this.ckM_Label22.Text = "シーズン";
             this.ckM_Label22.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -561,7 +524,7 @@
             this.scSegmentCD.SearchEnable = true;
             this.scSegmentCD.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD.TabIndex = 12;
+            this.scSegmentCD.TabIndex = 19;
             this.scSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD.UseChangeDate = false;
             this.scSegmentCD.Value1 = null;
@@ -582,7 +545,7 @@
             this.ckM_Label21.Location = new System.Drawing.Point(829, 173);
             this.ckM_Label21.Name = "ckM_Label21";
             this.ckM_Label21.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label21.TabIndex = 38;
+            this.ckM_Label21.TabIndex = 30;
             this.ckM_Label21.Text = "商品分類";
             this.ckM_Label21.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -606,7 +569,7 @@
             this.scSportsCD.SearchEnable = true;
             this.scSportsCD.Size = new System.Drawing.Size(414, 30);
             this.scSportsCD.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD.TabIndex = 11;
+            this.scSportsCD.TabIndex = 17;
             this.scSportsCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD.UseChangeDate = false;
             this.scSportsCD.Value1 = null;
@@ -627,7 +590,7 @@
             this.ckM_Label20.Location = new System.Drawing.Point(843, 147);
             this.ckM_Label20.Name = "ckM_Label20";
             this.ckM_Label20.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label20.TabIndex = 37;
+            this.ckM_Label20.TabIndex = 28;
             this.ckM_Label20.Text = "競　技";
             this.ckM_Label20.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -651,7 +614,7 @@
             this.scBrandCD.SearchEnable = true;
             this.scBrandCD.Size = new System.Drawing.Size(414, 30);
             this.scBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.scBrandCD.TabIndex = 10;
+            this.scBrandCD.TabIndex = 15;
             this.scBrandCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCD.UseChangeDate = false;
             this.scBrandCD.Value1 = null;
@@ -670,7 +633,7 @@
             this.ckM_Label19.Location = new System.Drawing.Point(833, 118);
             this.ckM_Label19.Name = "ckM_Label19";
             this.ckM_Label19.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label19.TabIndex = 36;
+            this.ckM_Label19.TabIndex = 26;
             this.ckM_Label19.Text = "ブランド";
             this.ckM_Label19.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -687,7 +650,7 @@
             this.ckM_Label18.Location = new System.Drawing.Point(895, 96);
             this.ckM_Label18.Name = "ckM_Label18";
             this.ckM_Label18.Size = new System.Drawing.Size(148, 12);
-            this.ckM_Label18.TabIndex = 42;
+            this.ckM_Label18.TabIndex = 25;
             this.ckM_Label18.Text = "この画面に表示する条件";
             this.ckM_Label18.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -704,7 +667,7 @@
             this.ckM_Label17.Location = new System.Drawing.Point(707, 98);
             this.ckM_Label17.Name = "ckM_Label17";
             this.ckM_Label17.Size = new System.Drawing.Size(161, 12);
-            this.ckM_Label17.TabIndex = 35;
+            this.ckM_Label17.TabIndex = 24;
             this.ckM_Label17.Text = "【追加・一括変更・選択】";
             this.ckM_Label17.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -723,7 +686,7 @@
             this.btnCopy.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(75, 23);
-            this.btnCopy.TabIndex = 9;
+            this.btnCopy.TabIndex = 23;
             this.btnCopy.Text = "複写";
             this.btnCopy.UseVisualStyleBackColor = false;
             // 
@@ -748,7 +711,7 @@
             this.txtCopy.MoveNext = true;
             this.txtCopy.Name = "txtCopy";
             this.txtCopy.Size = new System.Drawing.Size(100, 19);
-            this.txtCopy.TabIndex = 7;
+            this.txtCopy.TabIndex = 13;
             this.txtCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -764,7 +727,7 @@
             this.ckM_Label16.Location = new System.Drawing.Point(54, 304);
             this.ckM_Label16.Name = "ckM_Label16";
             this.ckM_Label16.Size = new System.Drawing.Size(83, 12);
-            this.ckM_Label16.TabIndex = 32;
+            this.ckM_Label16.TabIndex = 21;
             this.ckM_Label16.Text = "複写後改定日";
             this.ckM_Label16.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -781,7 +744,7 @@
             this.ckM_Label15.Location = new System.Drawing.Point(147, 276);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(226, 12);
-            this.ckM_Label15.TabIndex = 33;
+            this.ckM_Label15.TabIndex = 20;
             this.ckM_Label15.Text = "指定した条件をこの改定日で複写する";
             this.ckM_Label15.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -798,7 +761,7 @@
             this.ckM_Label14.Location = new System.Drawing.Point(57, 279);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label14.TabIndex = 31;
+            this.ckM_Label14.TabIndex = 19;
             this.ckM_Label14.Text = "【複　写】";
             this.ckM_Label14.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -817,7 +780,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 18;
             this.btnSearch.Text = "表示";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -843,7 +806,7 @@
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(100, 19);
-            this.txtDate.TabIndex = 6;
+            this.txtDate.TabIndex = 11;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -859,7 +822,7 @@
             this.ckM_Label13.Location = new System.Drawing.Point(97, 241);
             this.ckM_Label13.Name = "ckM_Label13";
             this.ckM_Label13.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label13.TabIndex = 30;
+            this.ckM_Label13.TabIndex = 16;
             this.ckM_Label13.Text = "改定日";
             this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -885,7 +848,7 @@
             this.txtSeason.MoveNext = true;
             this.txtSeason.Name = "txtSeason";
             this.txtSeason.Size = new System.Drawing.Size(100, 19);
-            this.txtSeason.TabIndex = 5;
+            this.txtSeason.TabIndex = 10;
             this.txtSeason.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label12
@@ -900,7 +863,7 @@
             this.ckM_Label12.Location = new System.Drawing.Point(84, 213);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label12.TabIndex = 29;
+            this.ckM_Label12.TabIndex = 14;
             this.ckM_Label12.Text = "シーズン";
             this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -924,7 +887,7 @@
             this.scSegmentCD1.SearchEnable = true;
             this.scSegmentCD1.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD1.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD1.TabIndex = 4;
+            this.scSegmentCD1.TabIndex = 8;
             this.scSegmentCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD1.UseChangeDate = false;
             this.scSegmentCD1.Value1 = null;
@@ -945,7 +908,7 @@
             this.ckM_Label11.Location = new System.Drawing.Point(85, 182);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label11.TabIndex = 28;
+            this.ckM_Label11.TabIndex = 12;
             this.ckM_Label11.Text = "商品分類";
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -969,7 +932,7 @@
             this.scSportsCD1.SearchEnable = true;
             this.scSportsCD1.Size = new System.Drawing.Size(414, 30);
             this.scSportsCD1.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD1.TabIndex = 3;
+            this.scSportsCD1.TabIndex = 6;
             this.scSportsCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD1.UseChangeDate = false;
             this.scSportsCD1.Value1 = null;
@@ -990,7 +953,7 @@
             this.ckM_Label10.Location = new System.Drawing.Point(97, 152);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label10.TabIndex = 27;
+            this.ckM_Label10.TabIndex = 10;
             this.ckM_Label10.Text = "競　技";
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1014,7 +977,7 @@
             this.scBrandCD1.SearchEnable = true;
             this.scBrandCD1.Size = new System.Drawing.Size(414, 30);
             this.scBrandCD1.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.scBrandCD1.TabIndex = 2;
+            this.scBrandCD1.TabIndex = 4;
             this.scBrandCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCD1.UseChangeDate = false;
             this.scBrandCD1.Value1 = null;
@@ -1034,7 +997,7 @@
             this.ckM_Label9.Location = new System.Drawing.Point(84, 123);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label9.TabIndex = 26;
+            this.ckM_Label9.TabIndex = 8;
             this.ckM_Label9.Text = "ブランド";
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1068,7 +1031,7 @@
             this.ckM_Label7.Location = new System.Drawing.Point(49, 101);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(83, 12);
-            this.ckM_Label7.TabIndex = 25;
+            this.ckM_Label7.TabIndex = 6;
             this.ckM_Label7.Text = "【抽出条件】";
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1094,7 +1057,7 @@
             this.txtRate1.MoveNext = true;
             this.txtRate1.Name = "txtRate1";
             this.txtRate1.Size = new System.Drawing.Size(100, 19);
-            this.txtRate1.TabIndex = 1;
+            this.txtRate1.TabIndex = 3;
             this.txtRate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1110,7 +1073,7 @@
             this.ckM_Label6.Location = new System.Drawing.Point(97, 70);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label6.TabIndex = 24;
+            this.ckM_Label6.TabIndex = 4;
             this.ckM_Label6.Text = "掛　率";
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1136,7 +1099,7 @@
             this.txtRevisionDate.MoveNext = true;
             this.txtRevisionDate.Name = "txtRevisionDate";
             this.txtRevisionDate.Size = new System.Drawing.Size(100, 19);
-            this.txtRevisionDate.TabIndex = 0;
+            this.txtRevisionDate.TabIndex = 2;
             this.txtRevisionDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRevisionDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1152,7 +1115,7 @@
             this.ckM_Label5.Location = new System.Drawing.Point(97, 42);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label5.TabIndex = 23;
+            this.ckM_Label5.TabIndex = 2;
             this.ckM_Label5.Text = "改定日";
             this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1169,7 +1132,7 @@
             this.ckM_Label4.Location = new System.Drawing.Point(146, 15);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(187, 12);
-            this.ckM_Label4.TabIndex = 34;
+            this.ckM_Label4.TabIndex = 1;
             this.ckM_Label4.Text = "この改定日以降の基本的な掛率";
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1186,7 +1149,7 @@
             this.ckM_Label3.Location = new System.Drawing.Point(61, 15);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label3.TabIndex = 22;
+            this.ckM_Label3.TabIndex = 0;
             this.ckM_Label3.Text = "【基　本】";
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1210,7 +1173,7 @@
             this.scSupplierCD.SearchEnable = true;
             this.scSupplierCD.Size = new System.Drawing.Size(444, 30);
             this.scSupplierCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scSupplierCD.TabIndex = 0;
+            this.scSupplierCD.TabIndex = 3;
             this.scSupplierCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSupplierCD.UseChangeDate = false;
             this.scSupplierCD.Value1 = null;
@@ -1258,6 +1221,52 @@
             this.colRate.HeaderText = "掛率";
             this.colRate.Name = "colRate";
             this.colRate.Width = 80;
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
+            // 
+            // colBrandCD1
+            // 
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.Width = 250;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "SportsCD";
+            this.Column2.HeaderText = "競　技";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 250;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "SegmentCD";
+            this.Column3.HeaderText = "商品分類";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 250;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "LastSeason";
+            this.Column4.HeaderText = "シーズン";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "ChangeDate";
+            this.Column5.HeaderText = "改定日";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Rate";
+            this.Column6.HeaderText = "掛率";
+            this.Column6.Name = "Column6";
             // 
             // frmMasterTouroku_ShiireKakeritsu
             // 
