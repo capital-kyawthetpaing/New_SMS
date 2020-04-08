@@ -376,7 +376,7 @@ namespace MasterTouroku_ShiireKakeritsu
      
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+
             //if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
             //{
             //    DataRow dtRow = dtMain.NewRow();
@@ -391,9 +391,9 @@ namespace MasterTouroku_ShiireKakeritsu
             //}
             //else
             //{
-              if(dgv_ShiireKakeritsu.Rows.Count == 0)
-              {
-                    
+            if (dgv_ShiireKakeritsu.Rows.Count == 0)
+            {
+
                     dt.Columns.Add("BrandCD");
                     dt.Columns.Add("SportsCD");
                     dt.Columns.Add("SegmentCD");
