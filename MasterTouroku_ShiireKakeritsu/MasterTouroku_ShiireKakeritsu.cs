@@ -377,20 +377,20 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnAdd_Click(object sender, EventArgs e)
         {
            
-            if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
-            {
-                DataRow dtRow = dtMain.NewRow();
-                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-                dtRow["LastSeason"] = txtLastSeason.Text;
-                dtRow["ChangeDate"] = txtChangeDate.Text;
-                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-                dtMain.Rows.Add(dtRow);
-                dgv_ShiireKakeritsu.DataSource = dtMain;
-            }
-            else
-            {
+            //if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
+            //{
+            //    DataRow dtRow = dtMain.NewRow();
+            //    dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            //    dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            //    dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            //    dtRow["LastSeason"] = txtLastSeason.Text;
+            //    dtRow["ChangeDate"] = txtChangeDate.Text;
+            //    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //    dtMain.Rows.Add(dtRow);
+            //    dgv_ShiireKakeritsu.DataSource = dtMain;
+            //}
+            //else
+            //{
               if(dgv_ShiireKakeritsu.Rows.Count == 0)
               {
                     
@@ -413,6 +413,6 @@ namespace MasterTouroku_ShiireKakeritsu
                
             }
 
-        }
+        //}
     }
 }
