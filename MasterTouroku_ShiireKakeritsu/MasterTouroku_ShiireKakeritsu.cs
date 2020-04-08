@@ -20,6 +20,7 @@ namespace MasterTouroku_ShiireKakeritsu
         M_OrderRate_Entity moe;
         DataTable dtMain;
         DataTable dtGrid;
+        
         public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
@@ -371,25 +372,43 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
+     
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //DataTable dt = new DataTable();
-            //dt.Columns.Add("BrandCD");
-            //dt.Columns.Add("SportsCD");
-            //dt.Columns.Add("SegmentCD");
-            //dt.Columns.Add("LastSeason");
-            //dt.Columns.Add("ChangeDate");
-            //dt.Columns.Add("Rate");
+           
+            if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
+            {
+                DataRow dtRow = dtMain.NewRow();
+                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                dtRow["LastSeason"] = txtLastSeason.Text;
+                dtRow["ChangeDate"] = txtChangeDate.Text;
+                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dtMain.Rows.Add(dtRow);
+                dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
+            else
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("BrandCD");
+                dt.Columns.Add("SportsCD");
+                dt.Columns.Add("SegmentCD");
+                dt.Columns.Add("LastSeason");
+                dt.Columns.Add("ChangeDate");
+                dt.Columns.Add("Rate");
 
-            DataRow dtRow = dtMain.NewRow();
-            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            dtRow["LastSeason"] = txtLastSeason.Text;
-            dtRow["ChangeDate"] = txtChangeDate.Text;
-            dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-            dtMain.Rows.Add(dtRow);
-            dgv_ShiireKakeritsu.DataSource = dtMain;
+                DataRow dtRow = dt.NewRow();
+                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                dtRow["LastSeason"] = txtLastSeason.Text;
+                dtRow["ChangeDate"] = txtChangeDate.Text;
+                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dt.Rows.Add(dtRow);
+                dgv_ShiireKakeritsu.DataSource = dt;
+            }
+
         }
     }
 }
