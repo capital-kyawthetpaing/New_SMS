@@ -371,23 +371,25 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
-        //private void btnAdd_Click(object sender, EventArgs e)
-        //{
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("BrandCD");
+            dt.Columns.Add("SportsCD");
+            dt.Columns.Add("SegmentCD");
+            dt.Columns.Add("LastSeason");
+            dt.Columns.Add("ChangeDate");
+            dt.Columns.Add("Rate");
 
-        //    string  BrandCD = scBrandCD.TxtCode.Text.Trim();
-        //    string SportsCD = scSportsCD.TxtCode.Text.Trim();
-        //    string SegmentCD = scSegmentCD.TxtCode.Text.Trim();
-        //    string LastSeason = txtLastSeason.Text.Trim();
-        //    string ChangeDate = txtChangeDate.Text.Trim();
-        //    string Rate = txtRate.Text.Trim();
-        //    DataTable dt = new DataTable();
-        //    dt.Rows.Add(1, BrandCD);
-        //    dt.Rows.Add(2, SportsCD);
-        //    dt.Rows.Add(3, SegmentCD);
-        //    dt.Rows.Add(4, LastSeason);
-        //    dt.Rows.Add(5, ChangeDate);
-        //    dt.Rows.Add(6, Rate);
-        //    dgv_ShiireKakeritsu.DataSource = dt;
-        //}
+            DataRow dtRow = dt.NewRow();
+            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            dtRow["LastSeason"] = txtLastSeason.Text;
+            dtRow["ChangeDate"] = txtChangeDate.Text;
+            dtRow["Rate"] = txtRate.Text;
+            dt.Rows.Add(dtRow);
+            dgv_ShiireKakeritsu.DataSource = dt;
+        }
     }
 }

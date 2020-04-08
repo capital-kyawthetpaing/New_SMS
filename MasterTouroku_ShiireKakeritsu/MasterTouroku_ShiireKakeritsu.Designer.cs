@@ -322,7 +322,7 @@
             this.btnAdd.TabIndex = 41;
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
-            //this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnReleaseAll
             // 
