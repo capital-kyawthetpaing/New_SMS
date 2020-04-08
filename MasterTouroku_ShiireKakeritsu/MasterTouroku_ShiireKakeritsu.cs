@@ -20,7 +20,8 @@ namespace MasterTouroku_ShiireKakeritsu
         M_OrderRate_Entity moe;
         DataTable dtMain;
         DataTable dtGrid;
-        
+        DataTable dt = new DataTable();
+
         public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
@@ -390,23 +391,26 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("BrandCD");
-                dt.Columns.Add("SportsCD");
-                dt.Columns.Add("SegmentCD");
-                dt.Columns.Add("LastSeason");
-                dt.Columns.Add("ChangeDate");
-                dt.Columns.Add("Rate");
-
-                DataRow dtRow = dt.NewRow();
-                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-                dtRow["LastSeason"] = txtLastSeason.Text;
-                dtRow["ChangeDate"] = txtChangeDate.Text;
-                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-                dt.Rows.Add(dtRow);
-                dgv_ShiireKakeritsu.DataSource = dt;
+              if(dgv_ShiireKakeritsu.Rows.Count == 0)
+              {
+                    
+                    dt.Columns.Add("BrandCD");
+                    dt.Columns.Add("SportsCD");
+                    dt.Columns.Add("SegmentCD");
+                    dt.Columns.Add("LastSeason");
+                    dt.Columns.Add("ChangeDate");
+                    dt.Columns.Add("Rate");
+               }            
+                    DataRow dtRow = dt.NewRow();
+                    dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                    dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                    dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                    dtRow["LastSeason"] = txtLastSeason.Text;
+                    dtRow["ChangeDate"] = txtChangeDate.Text;
+                    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                    dt.Rows.Add(dtRow);
+                    dgv_ShiireKakeritsu.DataSource = dt;
+               
             }
 
         }
