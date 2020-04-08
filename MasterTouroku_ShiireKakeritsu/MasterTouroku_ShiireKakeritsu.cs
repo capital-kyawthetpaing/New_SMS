@@ -363,6 +363,7 @@ namespace MasterTouroku_ShiireKakeritsu
             scSportsCD1.Value1 = "202";
         }
 
+
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
 
