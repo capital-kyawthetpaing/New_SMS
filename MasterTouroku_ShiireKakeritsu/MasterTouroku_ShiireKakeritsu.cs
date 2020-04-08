@@ -190,22 +190,22 @@ namespace MasterTouroku_ShiireKakeritsu
                 row1.Cells["colChk"].Value = flag;
             }
         }
-        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                {
-                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                    chk1.Value = chk1.FalseValue;
-                }
-                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            }
-            else
-            {
-                dgv_ShiireKakeritsu.ClearSelection();
-            }
-        }
+        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+        //    {
+        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+        //        {
+        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+        //            chk1.Value = chk1.FalseValue;
+        //        }
+        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+        //    }
+        //    else
+        //    {
+        //        dgv_ShiireKakeritsu.ClearSelection();
+        //    }
+        //}
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -341,14 +341,11 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
-
             scSegmentCD1.Value1 = "203";
-
         }
 
         private void scSportsCD_Enter(object sender, EventArgs e)
         {
-
             scSportsCD.Value1 = "202";
         }
 
@@ -356,23 +353,43 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             scSegmentCD.Value1 = "203";
         }
-        
-        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-        //    {
-        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-        //        {
-        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-        //            chk1.Value = chk1.FalseValue;
-        //        }
-        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-        //    }
-        //    else
-        //    {
-        //        dgv_ShiireKakeritsu.ClearSelection();
-        //    }
 
-        //}
+        private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.FalseValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("BrandCD");
+            dt.Columns.Add("SportsCD");
+            dt.Columns.Add("SegmentCD");
+            dt.Columns.Add("LastSeason");
+            dt.Columns.Add("ChangeDate");
+            dt.Columns.Add("Rate");
+
+            DataRow dtRow = dt.NewRow();
+            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            dtRow["LastSeason"] = txtLastSeason.Text;
+            dtRow["ChangeDate"] = txtChangeDate.Text;
+            dtRow["Rate"] = txtRate.Text;
+            dt.Rows.Add(dtRow);
+            dgv_ShiireKakeritsu.DataSource = dt;
+        }
     }
 }
