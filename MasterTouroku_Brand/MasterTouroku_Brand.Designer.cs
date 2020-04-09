@@ -200,11 +200,11 @@
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 20;
-            this.txtKanaName.Location = new System.Drawing.Point(135, 55);
+            this.txtKanaName.Location = new System.Drawing.Point(135, 51);
             this.txtKanaName.MaxLength = 20;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
-            this.txtKanaName.Size = new System.Drawing.Size(100, 19);
+            this.txtKanaName.Size = new System.Drawing.Size(130, 19);
             this.txtKanaName.TabIndex = 3;
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -217,7 +217,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(82, 59);
+            this.ckM_Label2.Location = new System.Drawing.Point(86, 54);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 2;
@@ -259,7 +259,7 @@
             this.txtBrandName.IsNumber = true;
             this.txtBrandName.IsShop = false;
             this.txtBrandName.Length = 40;
-            this.txtBrandName.Location = new System.Drawing.Point(133, 16);
+            this.txtBrandName.Location = new System.Drawing.Point(135, 16);
             this.txtBrandName.MaxLength = 40;
             this.txtBrandName.MoveNext = true;
             this.txtBrandName.Name = "txtBrandName";
@@ -277,7 +277,7 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(410, 3);
+            this.btnDisplay.Location = new System.Drawing.Point(406, 3);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(118, 28);
