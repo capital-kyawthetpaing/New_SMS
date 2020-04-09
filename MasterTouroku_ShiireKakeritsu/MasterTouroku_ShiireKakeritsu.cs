@@ -376,8 +376,8 @@ namespace MasterTouroku_ShiireKakeritsu
      
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
-            if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
+
+            if (!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
             {
                 DataRow dtRow = dtMain.NewRow();
                 dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
@@ -391,7 +391,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
-              if(dgv_ShiireKakeritsu.Rows.Count == 0)
+                if (dgv_ShiireKakeritsu.Rows.Count == 0)
               {
                     
                     dt.Columns.Add("BrandCD");
@@ -410,7 +410,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
                     dt.Rows.Add(dtRow);
                     dgv_ShiireKakeritsu.DataSource = dt;
-               
+
             }
 
         }

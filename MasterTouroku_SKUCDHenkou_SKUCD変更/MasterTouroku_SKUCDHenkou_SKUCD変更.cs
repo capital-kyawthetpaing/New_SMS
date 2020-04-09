@@ -17,5 +17,10 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             InitializeComponent();
         }
+
+        private void MasterTouroku_SKUCDHenkou_SKUCD変更_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
