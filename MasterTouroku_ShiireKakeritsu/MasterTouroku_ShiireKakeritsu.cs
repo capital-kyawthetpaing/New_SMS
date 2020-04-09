@@ -461,10 +461,6 @@ namespace MasterTouroku_ShiireKakeritsu
                             dtMain.Rows.Add(dtRow);
                             dgv_ShiireKakeritsu.DataSource = dtMain;
                         }
-                        //else
-                        //{
-                        //    chk.Value = chk.TrueValue;
-                        //}
                     }
 
 
@@ -473,6 +469,11 @@ namespace MasterTouroku_ShiireKakeritsu
             }
 
            
+        }
+
+        private void btnChoice_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
         }
     }
 }
