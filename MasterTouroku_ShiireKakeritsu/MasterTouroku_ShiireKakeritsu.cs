@@ -391,8 +391,8 @@ namespace MasterTouroku_ShiireKakeritsu
             //}
             //else
             //{
-            if (dgv_ShiireKakeritsu.Rows.Count == 0)
-            {
+                if (dgv_ShiireKakeritsu.Rows.Count == 0)
+                {
 
                     dt.Columns.Add("BrandCD");
                     dt.Columns.Add("SportsCD");
@@ -400,19 +400,126 @@ namespace MasterTouroku_ShiireKakeritsu
                     dt.Columns.Add("LastSeason");
                     dt.Columns.Add("ChangeDate");
                     dt.Columns.Add("Rate");
-               }            
-                    DataRow dtRow = dt.NewRow();
-                    dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-                    dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-                    dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-                    dtRow["LastSeason"] = txtLastSeason.Text;
-                    dtRow["ChangeDate"] = txtChangeDate.Text;
-                    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-                    dt.Rows.Add(dtRow);
-                    dgv_ShiireKakeritsu.DataSource = dt;
+                }            
+                DataRow dtRow = dt.NewRow();
+                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                dtRow["LastSeason"] = txtLastSeason.Text;
+                dtRow["ChangeDate"] = txtChangeDate.Text;
+                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dt.Rows.Add(dtRow);
+                dgv_ShiireKakeritsu.DataSource = dt;
                
-            }
+        }
 
-        //}
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChoice_Click(object sender, EventArgs e)
+        {
+
+            //if(dgv_ShiireKakeritsu.Rows.Count > 0)
+            //{
+            //    foreach(DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //    {
+            //        if(row.Cells["colBrandCD1"].Value.ToString() == scBrandCD.TxtCode.Text)
+            //        {
+            //            if(row.Cells["Column2"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                if (row.Cells["Column3"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                {
+            //                    if (row.Cells["Column4"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                    {
+            //                        if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                        {
+            //                            if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                            {
+            //                                if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                                {
+            //                                    row.Cells["colChk"].Value = true;
+            //                                }
+            //                            }
+            //                        }
+            //                    }
+            //                }                           
+            //            }                       
+            //        }
+            //        else if(row.Cells["Column2"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            if (row.Cells["Column3"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                if (row.Cells["Column4"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                {
+            //                    if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                    {
+            //                        if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                        {
+            //                            if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                            {
+            //                                row.Cells["colChk"].Value = true;
+            //                            }
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        else if (row.Cells["Column3"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            if (row.Cells["Column4"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                {
+            //                    if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                    {
+            //                        if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                        {
+            //                            row.Cells["colChk"].Value = true;
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        else if (row.Cells["Column4"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                {
+            //                    if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                    {
+            //                        row.Cells["colChk"].Value = true;
+            //                    }
+            //                }
+            //            }
+            //        }
+            //        else if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //                {
+            //                    row.Cells["colChk"].Value = true;
+            //                }
+            //            }
+            //        }
+            //        else if (row.Cells["Column5"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //            {
+            //                row.Cells["colChk"].Value = true;
+            //            }
+            //        }
+            //        else if (row.Cells["Column6"].Value.ToString() == scSportsCD.TxtCode.Text)
+            //        {
+            //            row.Cells["colChk"].Value = true;
+            //        }
+                    
+            //    }
+
+            //}
+        }
     }
 }
