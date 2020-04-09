@@ -82,7 +82,7 @@ inner join D_CostDetails dcd
  AND  dc.RegularlyFlg =@RegFlg
  AND   (@RecordDateFrom is null or (dc.RecordedDate>=@RecordDateFrom))
  AND    (@RecordDateTo is null or (dc.RecordedDate<=@RecordDateTo))
- AND (@ExpanseEntryDateFrom is null or (convert(varchar(10),dc.InputDateTime,111)>=@ExpanseEntryDateTo))
+ AND (@ExpanseEntryDateFrom is null or (convert(varchar(10),dc.InputDateTime,111)>=@ExpanseEntryDateFrom))
 AND (@ExpanseEntryDateTo is null or  (convert(varchar(10),dc.InputDateTime,111)<=@ExpanseEntryDateTo))
 AND (@PaymentDueDateFrom is null or  (dc.PayPlanDate>=@PaymentDueDateFrom))
 AND (@PaymentDueDateTo is null or  (dc.PayPlanDate<=@PaymentDueDateTo))
