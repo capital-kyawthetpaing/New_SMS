@@ -18,7 +18,11 @@ namespace JANCDHenkou
     public partial class JANCDHenkou : FrmMainForm
     {
         JANCDHenkou_BL jhbl;
-        DataTable dtDisplay;
+        public bool dup, isExist = true;
+        DataTable dtJanCDExist;
+        DataTable dtGenJanCD;
+
+
         public JANCDHenkou()
         {
             InitializeComponent();
@@ -38,13 +42,35 @@ namespace JANCDHenkou
             Btn_F8.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
- 
-            dgvJANCDHenkou.DataSource = dtDisplay;
+
+
+
+            //dtGenJanCD = CreateDatatable();
+            //dgvJANCDHenkou.DataSource = dtGenJanCD;
         }
         private void JANCDHenkou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
+
+        //public DataTable CreateDatatable()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt.Columns.Add("GenJanCD");
+        //    dt.Columns.Add("BrandCD");
+        //    dt.Columns.Add("BrandName");
+        //    dt.Columns.Add("ITemCD");
+        //    dt.Columns.Add("SKUName");
+        //    dt.Columns.Add("SizeName");
+        //    dt.Columns.Add("ColorName");
+        //    dt.Columns.Add("GenJanCD2");
+        //    dt.Columns.Add("newJanCD");
+        //    dt.Columns.Add("SKUCD");
+
+        //    dt.Rows.Add();
+        //    dt.AcceptChanges();
+        //    return dt;
+        //}
         public override void FunctionProcess(int index)
         {
             base.FunctionProcess(index);
@@ -89,40 +115,36 @@ namespace JANCDHenkou
         private void dgvJANCDHenkou_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var senderGrid = (DataGridView)sender;
-
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value  != null)
             {
-                Select_SKU frmSku = new Select_SKU();
-                frmSku.parJANCD = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString();
-                frmSku.parChangeDate = System.DateTime.Now.ToString("yyyy-MM-dd");
-                frmSku.ShowDialog();
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                    e.RowIndex >= 0)
+                {
+                    Select_SKU frmSku = new Select_SKU();
+                    frmSku.parJANCD = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString();
+                    frmSku.parChangeDate = System.DateTime.Now.ToString("yyyy-MM-dd");
+                    frmSku.ShowDialog();
+                }
             }
         }
 
         private bool ErrorCheck()
         {
-            dgvJANCDHenkou.DataSource = dtDisplay;
-
+           
             foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
             {
                 if (!(row.Cells["colGenJanCD"].Value == null))
                 {
-                    if (jhbl.SimpleSelect1("58", System.DateTime.Now.ToString("yyyy-MM-dd"),row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
+                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"),row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
                     {
                         jhbl.ShowMessage("E101");
                         return false;
                     }
                 }
-
-                if (dtDisplay.Rows.Count > 0)
-                {
-
-                }
-
+           
                 if (!(row.Cells["colNewJANCD"].Value == null))
                 {
-                    if (jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
+                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
                     {
                         DialogResult dr = jhbl.ShowMessage("Q316");
                         if (dr == DialogResult.No)
@@ -149,6 +171,101 @@ namespace JANCDHenkou
         private void BtnF11Show_Click(object sender, EventArgs e)
         {
             F11();
+        }
+
+        private void dgvJANCDHenkou_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((sender as DataGridView).CurrentCell is DataGridViewTextBoxCell)
+            {
+                // 現JANCD
+                if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"]) && !(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value == null))
+                {
+
+                    foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                    {
+                        if (r.Index != e.RowIndex & !r.IsNewRow)
+                        {
+                            if (r.Cells["colGenJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                            {
+                                jhbl.ShowMessage("E226");
+                                return;
+                            }
+                        }
+                    }
+
+                    dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                    if (dtJanCDExist.Rows.Count < 1) // If its not exists then error
+                    {
+                        jhbl.ShowMessage("E101");
+                    }
+                    else if (dtJanCDExist.Rows.Count == 1) //BindData
+                    {
+                        if (dtGenJanCD != null)
+                        {
+                            if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dtGenJanCD.Rows[0]["GenJanCD"].ToString()))
+                            {
+                                DataRow row = dtGenJanCD.NewRow();
+                                DataTable tmp = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                row["GenJanCD"] = tmp.Rows[0]["GenJanCD"].ToString();
+                                row["BrandCD"] = tmp.Rows[0]["BrandCD"].ToString();
+                                row["BrandName"] = tmp.Rows[0]["BrandName"].ToString();
+                                row["ITemCD"] = tmp.Rows[0]["ITemCD"].ToString();
+                                row["SKUName"] = tmp.Rows[0]["SKUName"].ToString();
+                                row["SizeName"] = tmp.Rows[0]["SizeName"].ToString();
+                                row["ColorName"] = tmp.Rows[0]["ColorName"].ToString();
+                                row["GenJanCD2"] = tmp.Rows[0]["GenJanCD2"].ToString();
+                                row["newJanCD"] = tmp.Rows[0]["newJanCD"];
+                                row["SKUCD"] = tmp.Rows[0]["SKUCD"].ToString();
+                                dtGenJanCD.Rows.Add(row);
+                                dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
+                                dtGenJanCD.AcceptChanges();
+                                dgvJANCDHenkou.DataSource = dtGenJanCD;
+                                dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
+                            }
+                        }
+                        else
+                        {
+                            dtGenJanCD = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                            dgvJANCDHenkou.DataSource = dtGenJanCD;
+                        }
+                    }
+                    else
+                    {
+
+                    }
+                }
+                // 現JANCD
+
+                // 新JANCD
+                if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"]) && !(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value == null))
+                {
+                    dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                    {
+                        isExist = false;
+                    }
+
+                    foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                    {
+                        if (r.Index != e.RowIndex & !r.IsNewRow)
+                        {
+                            if (r.Cells["colNewJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"].Value.ToString())
+                            {
+                                dup = false;
+                            }
+                        }
+                    }
+
+                    if (!isExist || !dup)
+                    {
+                        DialogResult dr = jhbl.ShowMessage("Q316");
+                        if (dr == DialogResult.No)
+                        {
+                            dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"];
+                        }
+                    }
+                }
+                // 新JANCD
+            }
         }
     }
 }

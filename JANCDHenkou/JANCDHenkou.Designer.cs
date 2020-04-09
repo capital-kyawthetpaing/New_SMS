@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.dgvJANCDHenkou = new CKM_Controls.CKM_GridView();
@@ -43,6 +44,7 @@
             this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenJanCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNewJANCD = new SMS.CustomControls.DataGridViewDecimalColumn();
+            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -98,7 +100,7 @@
             this.dgvJANCDHenkou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -115,7 +117,16 @@
             this.colSize,
             this.colColor,
             this.colGenJanCD2,
-            this.colNewJANCD});
+            this.colNewJANCD,
+            this.colSKUCD});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvJANCDHenkou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvJANCDHenkou.EnableHeadersVisualStyles = false;
             this.dgvJANCDHenkou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvJANCDHenkou.Location = new System.Drawing.Point(21, 145);
@@ -125,6 +136,7 @@
             this.dgvJANCDHenkou.UseRowNo = true;
             this.dgvJANCDHenkou.UseSetting = true;
             this.dgvJANCDHenkou.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellContentClick);
+            this.dgvJANCDHenkou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellEndEdit);
             // 
             // colGenJanCD
             // 
@@ -173,7 +185,7 @@
             // 
             // colSize
             // 
-            this.colSize.DataPropertyName = "Size";
+            this.colSize.DataPropertyName = "SizeName";
             this.colSize.HeaderText = "サイズ";
             this.colSize.Name = "colSize";
             this.colSize.ReadOnly = true;
@@ -181,7 +193,7 @@
             // 
             // colColor
             // 
-            this.colColor.DataPropertyName = "Color";
+            this.colColor.DataPropertyName = "ColorName";
             this.colColor.HeaderText = "カラー";
             this.colColor.Name = "colColor";
             this.colColor.ReadOnly = true;
@@ -205,6 +217,14 @@
             this.colNewJANCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colNewJANCD.UseMinus = false;
             this.colNewJANCD.UseThousandSeparator = false;
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Visible = false;
             // 
             // ckM_Label4
             // 
@@ -315,6 +335,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenJanCD2;
         private SMS.CustomControls.DataGridViewDecimalColumn colNewJANCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
     }
 }
 

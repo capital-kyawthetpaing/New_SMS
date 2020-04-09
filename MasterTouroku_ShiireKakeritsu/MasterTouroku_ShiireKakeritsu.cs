@@ -20,6 +20,8 @@ namespace MasterTouroku_ShiireKakeritsu
         M_OrderRate_Entity moe;
         DataTable dtMain;
         DataTable dtGrid;
+        DataTable dt = new DataTable();
+
         public frmMasterTouroku_ShiireKakeritsu()
         {
             InitializeComponent();
@@ -72,7 +74,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         if (mskbl.ShowMessage("Q005") != DialogResult.Yes)
                             return;
-                            CancelData();
+                        CancelData();
                     }
                     break;
             }
@@ -148,19 +150,19 @@ namespace MasterTouroku_ShiireKakeritsu
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtSeason.Text))
-                searchCondition = "LastSeason= '" + txtSeason.Text+ "'";
+                searchCondition = "LastSeason= '" + txtSeason.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text + "'";
 
             if (!string.IsNullOrWhiteSpace(searchCondition))
-            {               
-                DataRow[] dr= dtMain.Select(searchCondition);
+            {
+                DataRow[] dr = dtMain.Select(searchCondition);
                 if (dr.Count() > 0)
                 {
                     dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
                 }
                 else
-                    dtGrid = dtMain;
+                    dtGrid = null;
             }
             else
             {
@@ -169,46 +171,43 @@ namespace MasterTouroku_ShiireKakeritsu
 
             dgv_ShiireKakeritsu.DataSource = dtGrid;
         }
-        //private void btnSelectAll_Click_1(object sender, EventArgs e)
+
+        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(false);
+        }
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
-        //    //if (ErrorCheck())
-        //    //{
-        //    //    moe = GetSearchInfo();
-        //    //    DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-        //    //    if (dt.Rows.Count > 0)
-        //    //    {
-        //    //        dgv_ShiireKakeritsu.DataSource = dt;
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        mskbl.ShowMessage("E128");
-        //    //        dgv_ShiireKakeritsu.DataSource = null;
-        //    //    }
-        //    //}
+        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+        //    {
+        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+        //        {
+        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+        //            chk1.Value = chk1.FalseValue;
+        //        }
+        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+        //    }
+        //    else
+        //    {
+        //        dgv_ShiireKakeritsu.ClearSelection();
+        //    }
         //}
-        //private void btnSelectAll_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        private void ckM_SearchControl3_Enter(object sender, EventArgs e)
-        {
-            scSportsCD1.Value1 = "202";
-        }
-        private void ckM_SearchControl4_Enter(object sender, EventArgs e)
-        {
-            scSegmentCD1.Value1 = "203";
-        }
-
-        private void ckM_SearchControl6_Enter(object sender, EventArgs e)
-        {
-            scSportsCD.Value1 = "202";
-        }
-
-        private void ckM_SearchControl7_Enter(object sender, EventArgs e)
-        {
-            scSegmentCD.Value1 = "203";
-        }
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -230,7 +229,30 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
-        private void ckM_SearchControl3_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scBrandCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scBrandCD1.TxtCode.Text))
+                {
+                    if (scBrandCD1.SelectData())
+                    {
+                        scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
+                        scBrandCD1.Value2 = scBrandCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scBrandCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSportsCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -241,17 +263,41 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        //SearchData();
+                        BindGrid();
                     }
                     else
                     {
+                        BindGrid();
                         scSportsCD1.SetFocus(1);
+                    }
+                }
+
+            }
+        }
+
+        private void scSegmentCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                scSegmentCD1.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
+                {
+                    if (scSegmentCD1.SelectData())
+                    {
+                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
+                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
+                        BindGrid();
+                    }
+                    else
+                    {
+                        BindGrid();
+                        scSegmentCD1.SetFocus(1);
                     }
                 }
             }
         }
 
-        private void ckM_SearchControl6_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scSportsCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -270,9 +316,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-    
 
-        private void ckM_SearchControl7_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -291,31 +336,117 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
-       
-
-        private void ckM_SearchControl4_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        private void scSportsCD1_Enter(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            scSportsCD1.Value1 = "202";
+        }
+
+        private void scSegmentCD1_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD1.Value1 = "203";
+        }
+
+        private void scSportsCD_Enter(object sender, EventArgs e)
+        {
+            scSportsCD.Value1 = "202";
+        }
+
+        private void scSegmentCD_Enter(object sender, EventArgs e)
+        {
+            scSegmentCD.Value1 = "203";
+        }
+
+        private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {
-                scSegmentCD1.ChangeDate = bbl.GetDate();
-                if (!string.IsNullOrEmpty(scSegmentCD1.TxtCode.Text))
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
                 {
-                    if (scSegmentCD1.SelectData())
-                    {
-                        scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
-                        scSegmentCD1.Value2 = scSegmentCD1.LabelText;
-                    }
-                    else
-                    {
-                        scSegmentCD1.SetFocus(1);
-                    }
+                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.FalseValue;
                 }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
             }
         }
-        private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            MoveNextControl(e);
+
+            //if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
+            //{
+            //    DataRow dtRow = dtMain.NewRow();
+            //    dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            //    dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            //    dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            //    dtRow["LastSeason"] = txtLastSeason.Text;
+            //    dtRow["ChangeDate"] = txtChangeDate.Text;
+            //    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //    dtMain.Rows.Add(dtRow);
+            //    dgv_ShiireKakeritsu.DataSource = dtMain;
+            //}
+            //else
+            //{
+            if (dgv_ShiireKakeritsu.Rows.Count == 0)
+            {
+
+                dt.Columns.Add("BrandCD");
+                dt.Columns.Add("SportsCD");
+                dt.Columns.Add("SegmentCD");
+                dt.Columns.Add("LastSeason");
+                dt.Columns.Add("ChangeDate");
+                dt.Columns.Add("Rate");
+            }
+            DataRow dtRow = dt.NewRow();
+            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            dtRow["LastSeason"] = txtLastSeason.Text;
+            dtRow["ChangeDate"] = txtChangeDate.Text;
+            dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            dt.Rows.Add(dtRow);
+            dgv_ShiireKakeritsu.DataSource = dt;
+
         }
+        //}
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+        //    if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+        //    {
+
+        //        //dgv_ShiireKakeritsu.MultiSelect = true;
+        //        //dgv_ShiireKakeritsu.SelectAll();
+        //        //DataObject dataObj = dgv_ShiireKakeritsu.GetClipboardContent();
+        //        //if (dataObj != null)
+        //        //    Clipboard.SetDataObject(dataObj);
+        //        //var newline = System.Environment.NewLine;
+        //        //var tab = "\t";
+        //        // var clipboard_string = "";
+        //        //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+        //        //{
+        //        //    for (int i = 0; i < row.Cells.Count; i++)
+        //        //    {
+        //        //        if (i == (row.Cells.Count - 1))
+        //        //            clipboard_string += row.Cells[i].Value + newline;
+        //        //        else
+        //        //            clipboard_string += row.Cells[i].Value + tab;
+        //        //    }
+        //        //Clipboard.SetText(clipboard_string);
+        //        DataRow dtRow = dtMain.NewRow();
+        //        dtRow["BrandCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colBrandCD1"].Selected.ToString();
+        //        dtRow["SportsCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSportsCD1"].Selected.ToString();
+        //        dtRow["SegmentCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSegmentCD1"].Selected.ToString();
+        //        dtRow["LastSeason"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSeason"].Selected.ToString();
+        //        //dtRow["ChangeDate"] = dgv_ShiireKakeritsu.Rows[0].Cells["colDate"].Selected.ToString();
+        //        //dtRow["Rate"] =Convert.ToInt32(dgv_ShiireKakeritsu.Rows[0].Cells["colRate1"].Selected.ToString());
+        //        dtMain.Rows.Add(dtRow);
+            //    dgv_ShiireKakeritsu.DataSource = dtMain;
+            //}
+       }
     }
 }
