@@ -68,7 +68,7 @@
             this.PanelNormal.Controls.Add(this.ScBrandCD);
             this.PanelNormal.Location = new System.Drawing.Point(25, 3);
             this.PanelNormal.Name = "PanelNormal";
-            this.PanelNormal.Size = new System.Drawing.Size(200, 35);
+            this.PanelNormal.Size = new System.Drawing.Size(250, 35);
             this.PanelNormal.TabIndex = 0;
             // 
             // ブランドCD
@@ -94,7 +94,7 @@
             this.ScBrandCD.ChangeDate = "";
             this.ScBrandCD.ChangeDateWidth = 100;
             this.ScBrandCD.Code = "";
-            this.ScBrandCD.CodeWidth = 60;
+            this.ScBrandCD.CodeWidth = 100;
             this.ScBrandCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrandCD.DataCheck = false;
             this.ScBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -106,7 +106,7 @@
             this.ScBrandCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBrandCD.Name = "ScBrandCD";
             this.ScBrandCD.SearchEnable = true;
-            this.ScBrandCD.Size = new System.Drawing.Size(93, 28);
+            this.ScBrandCD.Size = new System.Drawing.Size(133, 28);
             this.ScBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrandCD.TabIndex = 1;
             this.ScBrandCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -123,7 +123,7 @@
             this.PanelCopy.Controls.Add(this.ScCopyBrand);
             this.PanelCopy.Location = new System.Drawing.Point(573, 3);
             this.PanelCopy.Name = "PanelCopy";
-            this.PanelCopy.Size = new System.Drawing.Size(200, 35);
+            this.PanelCopy.Size = new System.Drawing.Size(250, 35);
             this.PanelCopy.TabIndex = 1;
             // 
             // 複写ブランドCD
@@ -149,7 +149,7 @@
             this.ScCopyBrand.ChangeDate = "";
             this.ScCopyBrand.ChangeDateWidth = 100;
             this.ScCopyBrand.Code = "";
-            this.ScCopyBrand.CodeWidth = 60;
+            this.ScCopyBrand.CodeWidth = 100;
             this.ScCopyBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyBrand.DataCheck = false;
             this.ScCopyBrand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -160,7 +160,7 @@
             this.ScCopyBrand.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBrand.Name = "ScCopyBrand";
             this.ScCopyBrand.SearchEnable = true;
-            this.ScCopyBrand.Size = new System.Drawing.Size(93, 28);
+            this.ScCopyBrand.Size = new System.Drawing.Size(133, 28);
             this.ScCopyBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScCopyBrand.TabIndex = 1;
             this.ScCopyBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -200,11 +200,11 @@
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 20;
-            this.txtKanaName.Location = new System.Drawing.Point(135, 55);
+            this.txtKanaName.Location = new System.Drawing.Point(135, 51);
             this.txtKanaName.MaxLength = 20;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
-            this.txtKanaName.Size = new System.Drawing.Size(100, 19);
+            this.txtKanaName.Size = new System.Drawing.Size(130, 19);
             this.txtKanaName.TabIndex = 3;
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -217,7 +217,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(82, 59);
+            this.ckM_Label2.Location = new System.Drawing.Point(86, 54);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 2;
@@ -259,7 +259,7 @@
             this.txtBrandName.IsNumber = true;
             this.txtBrandName.IsShop = false;
             this.txtBrandName.Length = 40;
-            this.txtBrandName.Location = new System.Drawing.Point(133, 16);
+            this.txtBrandName.Location = new System.Drawing.Point(135, 16);
             this.txtBrandName.MaxLength = 40;
             this.txtBrandName.MoveNext = true;
             this.txtBrandName.Name = "txtBrandName";
@@ -277,7 +277,7 @@
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDisplay.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDisplay.Location = new System.Drawing.Point(410, 3);
+            this.btnDisplay.Location = new System.Drawing.Point(406, 3);
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(118, 28);

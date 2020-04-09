@@ -74,7 +74,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         if (mskbl.ShowMessage("Q005") != DialogResult.Yes)
                             return;
-                            CancelData();
+                        CancelData();
                     }
                     break;
             }
@@ -150,13 +150,13 @@ namespace MasterTouroku_ShiireKakeritsu
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtSeason.Text))
-                searchCondition = "LastSeason= '" + txtSeason.Text+ "'";
+                searchCondition = "LastSeason= '" + txtSeason.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text + "'";
 
             if (!string.IsNullOrWhiteSpace(searchCondition))
-            {               
-                DataRow[] dr= dtMain.Select(searchCondition);
+            {
+                DataRow[] dr = dtMain.Select(searchCondition);
                 if (dr.Count() > 0)
                 {
                     dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
@@ -171,7 +171,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
             dgv_ShiireKakeritsu.DataSource = dtGrid;
         }
-        
+
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -316,7 +316,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-       
+
         private void scSegmentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -373,7 +373,7 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
-     
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
@@ -394,25 +394,86 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dgv_ShiireKakeritsu.Rows.Count == 0)
             {
 
-                    dt.Columns.Add("BrandCD");
-                    dt.Columns.Add("SportsCD");
-                    dt.Columns.Add("SegmentCD");
-                    dt.Columns.Add("LastSeason");
-                    dt.Columns.Add("ChangeDate");
-                    dt.Columns.Add("Rate");
-               }            
-                    DataRow dtRow = dt.NewRow();
-                    dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-                    dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-                    dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-                    dtRow["LastSeason"] = txtLastSeason.Text;
-                    dtRow["ChangeDate"] = txtChangeDate.Text;
-                    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-                    dt.Rows.Add(dtRow);
-                    dgv_ShiireKakeritsu.DataSource = dt;
-               
+                dt.Columns.Add("BrandCD");
+                dt.Columns.Add("SportsCD");
+                dt.Columns.Add("SegmentCD");
+                dt.Columns.Add("LastSeason");
+                dt.Columns.Add("ChangeDate");
+                dt.Columns.Add("Rate");
+            }
+            DataRow dtRow = dt.NewRow();
+            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            dtRow["LastSeason"] = txtLastSeason.Text;
+            dtRow["ChangeDate"] = txtChangeDate.Text;
+            dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            dt.Rows.Add(dtRow);
+            dgv_ShiireKakeritsu.DataSource = dt;
+
+        }
+        
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtCopy.Text))
+            {
+                mskbl.ShowMessage("E102");
+                txtCopy.Focus();
+            }
+            else
+            {
+                if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+                {
+
+                    //dgv_ShiireKakeritsu.MultiSelect = true;
+                    //dgv_ShiireKakeritsu.SelectAll();
+                    //DataObject dataObj = dgv_ShiireKakeritsu.GetClipboardContent();
+                    //if (dataObj != null)
+                    //    Clipboard.SetDataObject(dataObj);
+                    //var newline = System.Environment.NewLine;
+                    //var tab = "\t";
+                    //var clipboard_string = "";
+                    //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    //{
+                    //    for (int i = 0; i < row.Cells.Count; i++)
+                    //    {
+                    //        if (i == (row.Cells.Count - 1))
+                    //            clipboard_string += row.Cells[i].Value + newline;
+                    //        else
+                    //            clipboard_string += row.Cells[i].Value + tab;
+                    //    }
+                    //Clipboard.SetText(clipboard_string);
+
+                    foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    {
+                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                        if (chk.Selected == true)
+                        {
+
+                            DataRow dtRow = dtMain.NewRow();
+                            dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
+                            dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
+                            dtRow["SegmentCD"] = row.Cells["colSegmentCD1"].Value.ToString();
+                            dtRow["LastSeason"] = row.Cells["colSeason"].Value.ToString();
+                            dtRow["ChangeDate"] = txtCopy.Text;
+                            dtRow["Rate"] = row.Cells["colRate1"].Value.ToString();
+                            dtMain.Rows.Add(dtRow);
+                            dgv_ShiireKakeritsu.DataSource = dtMain;
+                        }
+                    }
+
+
+
+                }
             }
 
-        //}
+           
+        }
+
+        private void btnChoice_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
     }
 }

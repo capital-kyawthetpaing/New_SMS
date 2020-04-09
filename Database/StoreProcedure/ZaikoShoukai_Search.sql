@@ -102,7 +102,7 @@ BEGIN
 					and (@MakerItem is Null or (msku.MakerItem=@MakerItem))
 					and (@ItemCD is Null or (msku.ITemCD=@ItemCD))
 					and DeleteFlg=0
-					and (@CommentInStore is Null or(msku.CommentInStore=@CommentInStore))
+					and (@CommentInStore is Null or(msku.CommentInStore  Like '%'  +@CommentInStore+ '%' ))
 					and (@ReserveCD is Null or ( msku.ReserveCD=@ReserveCD))
 					and (@NticesCD is Null or (msku.NoticesCD=@NticesCD))
 					and  (@PostageCD is Null or (msku.PostageCD=@PostageCD))
@@ -185,7 +185,7 @@ BEGIN
 					and (@MakerItem is Null or (msku.MakerItem=@MakerItem))
 					and (@ItemCD is Null or (msku.ITemCD=@ItemCD))
 					and DeleteFlg=0
-					and (@CommentInStore is Null or(msku.CommentInStore=@CommentInStore))
+					and (@CommentInStore is Null or(msku.CommentInStore  Like '%'  +@CommentInStore+ '%' ))
 					and (@ReserveCD is Null or ( msku.ReserveCD=@ReserveCD))
 					and (@NticesCD is Null or (msku.NoticesCD=@NticesCD))
 					and  (@PostageCD is Null or (msku.PostageCD=@PostageCD))
@@ -265,7 +265,7 @@ BEGIN
 					and (@MakerItem is Null or (msku.MakerItem=@MakerItem))
 					and (@ItemCD is Null or (msku.ITemCD=@ItemCD))
 					and DeleteFlg=0
-					and (@CommentInStore is Null or(msku.CommentInStore=@CommentInStore))
+					and (@CommentInStore is Null or(msku.CommentInStore  Like '%'  +@CommentInStore+ '%' ))
 					and (@ReserveCD is Null or ( msku.ReserveCD=@ReserveCD))
 					and (@NticesCD is Null or (msku.NoticesCD=@NticesCD))
 					and  (@PostageCD is Null or (msku.PostageCD=@PostageCD))

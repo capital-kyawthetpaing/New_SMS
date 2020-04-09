@@ -16,7 +16,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MasterTouroku_SKUCDHenkou_SKUCD変更());
         }
     }
 }
