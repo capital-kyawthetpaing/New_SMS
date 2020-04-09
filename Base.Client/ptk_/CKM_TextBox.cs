@@ -306,28 +306,26 @@ namespace CKM_Controls
                         return;
                     else if ((CtrlType == Type.Normal || CtrlType == Type.Number) && CtrlByte == Bytes.半角)
                     {
-                        if (this.Parent is UserControl)
+
+                        if (CtrlType == Type.Normal)
                         {
-                            if (CtrlType == Type.Normal)
+                            string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                            if (Convert.ToInt32(str) > length)
                             {
-                                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                                if (Convert.ToInt32(str) > length)
-                                {
-                                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    this.Focus();
-                                    return;
-                                }
+                                MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                this.Focus();
+                                return;
                             }
-                            if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                        }
+                        if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                        {
+                            int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                            int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                            if (onebyteCount != byteCount)
                             {
-                                int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-                                int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-                                if (onebyteCount != byteCount)
-                                {
-                                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    this.Focus();
-                                    return;
-                                }
+                                MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                this.Focus();
+                                return;
                             }
                         }
 
