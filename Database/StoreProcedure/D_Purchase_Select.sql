@@ -55,7 +55,7 @@ BEGIN
 
 	 Left Outer Join F_Vendor(getdate()) as FV
 	 ON FV.VendorCD=dp.VendorCD
-
+	  AND FV.PayeeCD=@VendorCD
 	--Left Outer Join M_Vendor AS MV
 	--ON MV.VendorCD=DP.VendorCD
 	--AND MV.ChangeDate<=DP.PurchaseDate
