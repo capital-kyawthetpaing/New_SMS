@@ -226,6 +226,7 @@ namespace JANCDHenkou
                         {
                             dtGenJanCD = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
                             dgvJANCDHenkou.DataSource = dtGenJanCD;
+
                         }
                     }
                     else
