@@ -17,5 +17,22 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             InitializeComponent();
         }
+
+        private void MasterTouroku_SKUCDHenkou_SKUCD変更_Load(object sender, EventArgs e)
+        {
+            InProgramID = "MasterTouroku_SKUCDHenkou_SKUCD変更";
+            SetFunctionLabel(EProMode.MENTE);
+            StartProgram();
+            Sc_Item.SetFocus(1);
+        }
+
+        private void SetRequiredField()
+        {
+            Sc_Item.TxtCode.Require(true);
+        }
+        protected override void EndSec()
+        {
+            base.EndSec();
+        }
     }
 }
