@@ -15,7 +15,7 @@ using CrystalDecisions.ReportSource;
 using CrystalDecisions.CrystalReports.Engine;
 using System.Runtime.InteropServices; //EXCEL出力(必要)
 using Microsoft.Office.Interop;//EXCEL出力(必要)
-using Search;
+//using Search;
 
 namespace Base.Client
 {
@@ -1476,7 +1476,9 @@ namespace Base.Client
             for (int i = 0; i < c.Count(); i++)
             {
                 var Con = c.ElementAt(i) as UserControl;
-                if (Con is CKM_SearchControl)
+                //if (Con is CKM_SearchControl)
+                //{
+                try
                 {
                     Control ctrl = Con.Controls.Find("txtCode", true)[0];
                     if (IsConsistFullWidth((ctrl as CKM_TextBox).Text))
@@ -1484,9 +1486,15 @@ namespace Base.Client
                         bbl.ShowMessage("E221");
                         (ctrl as CKM_TextBox).Focus();
                         (ctrl as CKM_TextBox).MoveNext = false;
-                        return　false;
+                        return false;
                     }
                 }
+                catch
+                {
+
+                    return true;
+                }
+                //}
             }
             return true;
         }
