@@ -389,6 +389,16 @@ namespace ZaikoShoukai
                 }
             }
         }
+
+        private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
+        {
+            if(CKB_searchsuru.Checked == false)
+            {
+                RB_item.Checked = false;
+                RB_Makashohincd.Checked = false;
+            }
+        }
+
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
