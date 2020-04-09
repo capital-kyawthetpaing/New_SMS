@@ -130,11 +130,13 @@
             this.ScKouzaCD.LabelText = "";
             this.ScKouzaCD.LabelVisible = false;
             this.ScKouzaCD.Location = new System.Drawing.Point(86, 2);
+            this.ScKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScKouzaCD.Name = "ScKouzaCD";
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(103, 52);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
             this.ScKouzaCD.TabIndex = 1;
+            this.ScKouzaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScKouzaCD.UseChangeDate = true;
             this.ScKouzaCD.Value1 = null;
             this.ScKouzaCD.Value2 = null;
@@ -157,11 +159,13 @@
             this.ScCopyKouzaCD.LabelText = "";
             this.ScCopyKouzaCD.LabelVisible = false;
             this.ScCopyKouzaCD.Location = new System.Drawing.Point(111, 3);
+            this.ScCopyKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyKouzaCD.Name = "ScCopyKouzaCD";
             this.ScCopyKouzaCD.SearchEnable = true;
             this.ScCopyKouzaCD.Size = new System.Drawing.Size(103, 52);
             this.ScCopyKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
             this.ScCopyKouzaCD.TabIndex = 1;
+            this.ScCopyKouzaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyKouzaCD.UseChangeDate = true;
             this.ScCopyKouzaCD.Value1 = null;
             this.ScCopyKouzaCD.Value2 = null;
@@ -229,11 +233,11 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(79, 34);
+            this.ckM_Label4.Location = new System.Drawing.Point(66, 34);
             this.ckM_Label4.Name = "ckM_Label4";
-            this.ckM_Label4.Size = new System.Drawing.Size(31, 12);
+            this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label4.TabIndex = 2;
-            this.ckM_Label4.Text = "定日";
+            this.ckM_Label4.Text = "改定日";
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -326,11 +330,13 @@
             this.ScBankCD.LabelText = "";
             this.ScBankCD.LabelVisible = true;
             this.ScBankCD.Location = new System.Drawing.Point(155, 44);
+            this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
             this.ScBankCD.TabIndex = 1;
+            this.ScBankCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBankCD.UseChangeDate = false;
             this.ScBankCD.Value1 = null;
             this.ScBankCD.Value2 = null;
@@ -352,11 +358,13 @@
             this.ScBranchCD.LabelText = "";
             this.ScBranchCD.LabelVisible = true;
             this.ScBranchCD.Location = new System.Drawing.Point(155, 69);
+            this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(424, 27);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
             this.ScBranchCD.TabIndex = 2;
+            this.ScBranchCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScBranchCD.UseChangeDate = false;
             this.ScBranchCD.Value1 = null;
             this.ScBranchCD.Value2 = null;
@@ -1224,17 +1232,21 @@
             // 
             // txtRemark
             // 
+            this.txtRemark.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtRemark.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtRemark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemark.Length = 500;
             this.txtRemark.Location = new System.Drawing.Point(155, 318);
             this.txtRemark.MaxLength = 500;
+            this.txtRemark.Mdea = false;
+            this.txtRemark.Mfocus = false;
             this.txtRemark.MoveNext = true;
             this.txtRemark.Multiline = true;
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.RowCount = 5;
             this.txtRemark.Size = new System.Drawing.Size(650, 95);
             this.txtRemark.TabIndex = 12;
+            this.txtRemark.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ckM_Label15
             // 
@@ -1386,7 +1398,7 @@
             this.txtKouzaNO.BackColor = System.Drawing.Color.White;
             this.txtKouzaNO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKouzaNO.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtKouzaNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtKouzaNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKouzaNO.DecimalPlace = 0;
             this.txtKouzaNO.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtKouzaNO.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -1402,7 +1414,6 @@
             this.txtKouzaNO.Name = "txtKouzaNO";
             this.txtKouzaNO.Size = new System.Drawing.Size(70, 19);
             this.txtKouzaNO.TabIndex = 4;
-            this.txtKouzaNO.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtKouzaNO.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label11
@@ -1595,6 +1606,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
