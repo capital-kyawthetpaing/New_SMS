@@ -43,9 +43,7 @@
             this.ChkDeleteFlg = new CKM_Controls.CKM_CheckBox();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.ginko_useflg = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.panelNormal = new System.Windows.Forms.Panel();
             this.panelCopy = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
@@ -57,14 +55,12 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_TextBox1);
             this.PanelHeader.Controls.Add(this.panelCopy);
             this.PanelHeader.Controls.Add(this.panelNormal);
             this.PanelHeader.Size = new System.Drawing.Size(1774, 91);
             this.PanelHeader.TabIndex = 1;
             this.PanelHeader.Controls.SetChildIndex(this.panelNormal, 0);
             this.PanelHeader.Controls.SetChildIndex(this.panelCopy, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
             // 
             // PanelSearch
             // 
@@ -257,9 +253,9 @@
             // 
             this.ginko_kananame.AllowMinus = false;
             this.ginko_kananame.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ginko_kananame.BackColor = System.Drawing.Color.White;
+            this.ginko_kananame.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ginko_kananame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ginko_kananame.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.ginko_kananame.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ginko_kananame.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginko_kananame.DecimalPlace = 0;
             this.ginko_kananame.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -270,9 +266,9 @@
             this.ginko_kananame.isEnterKeyDown = false;
             this.ginko_kananame.IsNumber = true;
             this.ginko_kananame.IsShop = false;
-            this.ginko_kananame.Length = 30;
-            this.ginko_kananame.Location = new System.Drawing.Point(123, 38);
-            this.ginko_kananame.MaxLength = 30;
+            this.ginko_kananame.Length = 12;
+            this.ginko_kananame.Location = new System.Drawing.Point(126, 39);
+            this.ginko_kananame.MaxLength = 12;
             this.ginko_kananame.MoveNext = true;
             this.ginko_kananame.Name = "ginko_kananame";
             this.ginko_kananame.Size = new System.Drawing.Size(300, 19);
@@ -349,7 +345,6 @@
             // 
             // PanelDetail
             // 
-            this.PanelDetail.Controls.Add(this.ckM_TextBox2);
             this.PanelDetail.Controls.Add(this.ginko_remarks);
             this.PanelDetail.Controls.Add(this.ginko_useflg);
             this.PanelDetail.Controls.Add(this.備考);
@@ -363,31 +358,6 @@
             this.PanelDetail.Name = "PanelDetail";
             this.PanelDetail.Size = new System.Drawing.Size(1776, 708);
             this.PanelDetail.TabIndex = 2;
-            // 
-            // ckM_TextBox2
-            // 
-            this.ckM_TextBox2.AllowMinus = false;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox2.IntegerPart = 0;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(838, 345);
-            this.ckM_TextBox2.MaxLength = 10;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 15;
-            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ginko_useflg
             // 
@@ -406,31 +376,6 @@
             this.ginko_useflg.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ginko_useflg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ginko_useflg.Visible = false;
-            // 
-            // ckM_TextBox1
-            // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(883, 15);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 14;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // panelNormal
             // 
@@ -466,7 +411,6 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmMasterTouroku_Ginkou_KeyUp);
             this.Controls.SetChildIndex(this.PanelDetail, 0);
             this.PanelHeader.ResumeLayout(false);
-            this.PanelHeader.PerformLayout();
             this.PanelSearch.ResumeLayout(false);
             this.PanelDetail.ResumeLayout(false);
             this.PanelDetail.PerformLayout();
@@ -499,8 +443,6 @@
         private CKM_Controls.CKM_Label ginko_useflg;
         private System.Windows.Forms.Panel panelCopy;
         private System.Windows.Forms.Panel panelNormal;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
-        private CKM_Controls.CKM_TextBox ckM_TextBox2;
     }
 }
 
