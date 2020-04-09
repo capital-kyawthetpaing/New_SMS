@@ -46,6 +46,7 @@ namespace TempoJuchuuNyuuryoku
             internal string CommentInStore;      // 
             internal bool NotPrintFLG;
             internal bool ChkTyokuso;
+            internal bool ChkFuyo;
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -78,6 +79,7 @@ namespace TempoJuchuuNyuuryoku
             Site,                   //ボタン
             Zaiko,              //ボタン
 
+            ChkFuyo,
             JuchuuSuu,           // 受注数
             TaniCD,                 // 単位 
             JuchuuUnitPrice,    //販売単価 
@@ -163,6 +165,13 @@ namespace TempoJuchuuNyuuryoku
                 w_CtlCol = (int)ColNO.NotPrintFLG;
 
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].NotPrintFLG);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
+
+                w_CtlCol = (int)ColNO.ChkFuyo;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkFuyo);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
@@ -484,6 +493,9 @@ namespace TempoJuchuuNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].GYONO);
 
                 //
+                w_CtlCol = (int)ColNO.ChkFuyo;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkFuyo);
+
                 w_CtlCol = (int)ColNO.ChkTyokuso;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkTyokuso);
                 //

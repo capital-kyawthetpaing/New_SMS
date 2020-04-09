@@ -84,7 +84,7 @@ namespace DL
                 {"@Address1" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.Address1}},
                 {"@Address2" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.Address2}},
                 {"@MailAddress" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.MailAddress}},
-                {"@MailAddress2" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.MailAddress2}},
+              //  {"@MailAddress2" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.MailAddress2}},
                 {"@TankaCD" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.TankaCD}},
                 {"@PointFLG" , new ValuePair{value1=SqlDbType.TinyInt,value2=cust.PointFLG}},
                 {"@MainStoreCD" , new ValuePair{value1=SqlDbType.VarChar,value2=cust.MainStoreCD}},

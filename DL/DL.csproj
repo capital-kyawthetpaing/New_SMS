@@ -105,6 +105,7 @@
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />
+    <Compile Include="MasterTouroku_ShiireKakeritsu_DL.cs" />
     <Compile Include="Menu_DL.cs" />
     <Compile Include="M_API_DL.cs" />
     <Compile Include="M_Authorizations_DL.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="M_Hanyou_DL.cs" />
     <Compile Include="M_ItemOrderPrice_DL.cs" />
     <Compile Include="M_ItemPrice_DL.cs" />
+    <Compile Include="M_ITEM_DL.cs" />
     <Compile Include="M_JANOrderPrice_DL.cs" />
     <Compile Include="M_Kouza_DL.cs" />
     <Compile Include="M_Location_DL.cs" />
@@ -156,11 +158,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="D_DepositHistory_DL.cs" />
     <Compile Include="M_Customer_DL.cs" />
+    <Compile Include="Search_PlanArrival_DL.cs" />
     <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
     <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
     <Compile Include="M_UnsouGaisya_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />
+    <Compile Include="ZaikoShoukai_DL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Entity\Entity.csproj">

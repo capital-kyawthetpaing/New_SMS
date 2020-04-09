@@ -43,6 +43,7 @@ namespace SiharaiNyuuryoku
         }
         
         private void FrmSiharaiNyuuryoku_Load(object sender, EventArgs e)
+
         {
             InProgramID = "SiharaiNyuuryoku";
 
@@ -56,7 +57,7 @@ namespace SiharaiNyuuryoku
 
             Btn_F7.Enabled = false;
             Btn_F7.Text = "編集(F7)";
-           
+            Btn_F10.Text = "";
 
             btnF10Show.Enabled = true;
             txtPaymentDate.Enabled = false;
@@ -103,15 +104,19 @@ namespace SiharaiNyuuryoku
             {
                 case 2:
                     ChangeMode(EOperationMode.INSERT);
+                    F12Visible = true;
                     break;
                 case 3:
                     ChangeMode(EOperationMode.UPDATE);
+                    F12Visible = true;
                     break;
                 case 4:
                     ChangeMode(EOperationMode.DELETE);
+                    F12Visible = true;
                     break;
                 case 5:
                     ChangeMode(EOperationMode.SHOW);
+                    F12Visible = false;
                     break;
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
@@ -154,7 +159,7 @@ namespace SiharaiNyuuryoku
                     F9Visible = false;
                     F12Enable = true;
                     btnF10Show.Enabled = true;
-                    F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
                 case EOperationMode.UPDATE:
@@ -175,6 +180,7 @@ namespace SiharaiNyuuryoku
                     ScPayee.SearchEnable = false;
                     F12Enable = true;
                     btnF10Show.Enabled = F11Enable = false;
+                    F11Visible = false;
                     Clear();
                     break;
             }
@@ -223,6 +229,7 @@ namespace SiharaiNyuuryoku
                     mode = "2";
                     dt2 = sibl.D_Pay_Select2(dpe);
                     dt3 = sibl.D_Pay_Select3(dpe);
+
                     if (dt3.Rows.Count > 0)
                     {
                         SiharaiNyuuryoku_2 f2 = new SiharaiNyuuryoku_2(mke.KouzaCD, dppe.PayeeCD, dppe.PayPlanDate, dt3, dt2);
@@ -254,6 +261,10 @@ namespace SiharaiNyuuryoku
                         month = 0 + DateTime.Now.Month.ToString();
                     }
                     string day = DateTime.Today.Day.ToString();
+                    if(day.Length == 1)
+                    {
+                        day = 0 + DateTime.Today.Day.ToString();
+                    }
                     txtPaymentDate.Text = year +"/"+ month +"/"+day;
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
@@ -286,7 +297,9 @@ namespace SiharaiNyuuryoku
                             dt4Detail.Columns.Remove("UnpaidAmount2");
                             dt4Detail.Columns.Remove("PayPlanNO");
 
-                           
+
+                            dt4.Columns.Remove("TransferGaku");
+                            //dt4.Columns.Remove("TransferFeeGaku");
                             dt4.Columns.Remove("VendorName");
                             dt4.Columns.Remove("BankCD");
                             dt4.Columns.Remove("BankName");
@@ -307,12 +320,16 @@ namespace SiharaiNyuuryoku
                             dt4.Columns.Remove("ERMCDate");
                             dt4.Columns.Remove("OtherGaku1");
                             dt4.Columns.Remove("Account1");
+                            dt4.Columns.Remove("start1");
                             dt4.Columns.Remove("SubAccount1");
+                            dt4.Columns.Remove("end1label");
                             dt4.Columns.Remove("OtherGaku2");
                             dt4.Columns.Remove("Account2");
+                            dt4.Columns.Remove("start2");
                             dt4.Columns.Remove("SubAccount2");
+                            dt4.Columns.Remove("end2label");
 
-                        }
+                    }
                     //}                   
                 }
 
@@ -443,7 +460,7 @@ namespace SiharaiNyuuryoku
                 //{
                 //DataDisplay();
                 //}
-                ErrorCheck(10);
+                ErrorCheck(11);
             }
         }
 
@@ -577,6 +594,37 @@ namespace SiharaiNyuuryoku
         {
             if (index == 10)
             {
+                if (type == 3)
+                {
+                    if (!RequireCheck(new Control[] { txtDueDate2 }))
+                        return false;
+
+                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
+                        return false;
+                    else
+                    {
+                        mve.PayeeCD = ScPayee.TxtCode.Text;
+                        mve.ChangeDate = DateTime.Now.ToShortDateString();
+                        DataTable dtvendor = new DataTable();
+                        dtvendor = sibl.M_Vendor_Select(mve);
+                        if (dtvendor.Rows.Count == 0)
+                        {
+                            sibl.ShowMessage("115");
+                            ScPayee.SetFocus(1);
+                            return false;
+                        }
+                        else
+                        {
+                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                        }
+                    }
+
+
+                }
+
+            }
+            else if(index == 11)
+            {
                 if (type == 1)
                 {
                     DataTable dtpay = new DataTable();
@@ -627,6 +675,7 @@ namespace SiharaiNyuuryoku
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
+                        txtPaymentDate.Text = dtpayno.Rows[0]["PayDate"].ToString();
                         mfye.InputPossibleStartDate = txtPaymentDate.Text;
                         mfye.InputPossibleEndDate = txtPaymentDate.Text;
                         DataTable dtcontrol = new DataTable();
@@ -637,41 +686,12 @@ namespace SiharaiNyuuryoku
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
-                        else
-                        {
-                            DataDisplay();
-                        }
+                        //else
+                        //{
+                        //    DataDisplay();
+                        //}
                     }
                 }
-
-                if (type == 3)
-                {
-                    if (!RequireCheck(new Control[] { txtDueDate2 }))
-                        return false;
-
-                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
-                        return false;
-                    else
-                    {
-                        mve.PayeeCD = ScPayee.TxtCode.Text;
-                        mve.ChangeDate = DateTime.Now.ToShortDateString();
-                        DataTable dtvendor = new DataTable();
-                        dtvendor = sibl.M_Vendor_Select(mve);
-                        if (dtvendor.Rows.Count == 0)
-                        {
-                            sibl.ShowMessage("115");
-                            ScPayee.SetFocus(1);
-                            return false;
-                        }
-                        else
-                        {
-                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
-                        }
-                    }
-
-
-                }
-
             }
             else if (index == 12)
             {

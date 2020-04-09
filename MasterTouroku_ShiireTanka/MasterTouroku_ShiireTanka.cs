@@ -14,9 +14,9 @@ using Search;
 
 namespace MasterTouroku_ShiireTanka
 {
-    public partial class frmMasterTouroku_ShiireTanka : FrmMainForm
+    public partial class MasterTouroku_ShiireTanka : FrmMainForm
     {
-        public frmMasterTouroku_ShiireTanka()
+        public MasterTouroku_ShiireTanka()
         {
             InitializeComponent();
         }

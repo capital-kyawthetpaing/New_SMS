@@ -132,10 +132,11 @@ namespace SiharaiNyuuryoku
             //}
             #endregion
 
+            //SetFunctionLabel(EProMode.MENTE);
+
             InProgramID = "SiharaiNyuuryoku_2";
             Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
-
-            SetFunctionLabel(EProMode.MENTE);
+            StartProgram();
 
             BindData();
 
@@ -143,7 +144,9 @@ namespace SiharaiNyuuryoku
 
             SelectKeyData();
 
-            SetRequireField();
+            txtMeigi.Focus();
+
+            //SetRequireField();
         }
 
         private void BindData()
@@ -185,7 +188,7 @@ namespace SiharaiNyuuryoku
             if (dtSiharai2.Rows.Count >= 0 || dtSiharai2 != null)
             {
                 dgvSearchPayment.DataSource = dtSiharai1;
-                txtTransferAmount.Text = dtSiharai2.Rows[0]["TransferfeeGaku"].ToString();
+                txtTransferAmount.Text = dtSiharai2.Rows[0]["TransferGaku"].ToString();
                 SC_BankCD.TxtCode.Text = dtSiharai2.Rows[0]["BankCD"].ToString();
                 SC_BankCD.LabelText = dtSiharai2.Rows[0]["BankName"].ToString();
                 SC_BranchCD.TxtCode.Text = dtSiharai2.Rows[0]["BranchCD"].ToString();
@@ -205,13 +208,17 @@ namespace SiharaiNyuuryoku
                 txtSettlementDate2.Text = dtSiharai2.Rows[0]["ERMCDate"].ToString();
                 txtOther1.Text = dtSiharai2.Rows[0]["OtherGaku1"].ToString();
                 SC_HanyouKeyStart1.TxtCode.Text = dtSiharai2.Rows[0]["Account1"].ToString();
+                SC_HanyouKeyStart1.LabelText = dtSiharai2.Rows[0]["start1"].ToString();
                 SC_HanyouKeyEnd1.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount1"].ToString();
+                SC_HanyouKeyEnd1.LabelText = dtSiharai2.Rows[0]["end1label"].ToString();
                 txtOther2.Text = dtSiharai2.Rows[0]["OtherGaku2"].ToString();
                 SC_HanyouKeyStart2.TxtCode.Text = dtSiharai2.Rows[0]["Account2"].ToString();
+                SC_HanyouKeyStart2.LabelText = dtSiharai2.Rows[0]["start2"].ToString();
                 SC_HanyouKeyEnd2.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount2"].ToString();
+                SC_HanyouKeyEnd2.LabelText = dtSiharai2.Rows[0]["end2label"].ToString();
 
             }
-
+            F9Visible = false;
         }
 
         private void SelectKeyData()
@@ -325,38 +332,46 @@ namespace SiharaiNyuuryoku
 
         private void SetData()
         {
-            dtSiharai2.Rows[0]["TransferGaku"] = txtTransferAmount.Text;
-            dtSiharai2.Rows[0]["BankCD"] = SC_BankCD.TxtCode.Text;
-            dtSiharai2.Rows[0]["BankName"] = SC_BankCD.LabelText;
-            dtSiharai2.Rows[0]["BranchCD"] = SC_BranchCD.TxtCode.Text;
-            dtSiharai2.Rows[0]["BranchName"] = SC_BranchCD.LabelText;
-            dtSiharai2.Rows[0]["KouzaKBN"] = txtKouzaKBN.Text;
-            dtSiharai2.Rows[0]["KouzaNO"] = txtAccNo.Text;
-            dtSiharai2.Rows[0]["KouzaMeigi"] = txtMeigi.Text;
-            dtSiharai2.Rows[0]["FeeKBN"] = txtFeeKBN.Text;
-            dtSiharai2.Rows[0]["Fee"] = txtAmount.Text;
-            dtSiharai2.Rows[0]["CashGaku"] = txtCash.Text;
-            dtSiharai2.Rows[0]["OffsetGaku"] = txtOffsetGaku.Text;
-            dtSiharai2.Rows[0]["BillGaku"] = txtBill.Text;
-            dtSiharai2.Rows[0]["BillNO"] = txtBillNo.Text;
-            dtSiharai2.Rows[0]["BillDate"] = txtBillDate.Text;
+            dtSiharai2.Rows[0]["TransferGaku"] = txtTransferAmount.Text.ToString() ;
+            dtSiharai2.Rows[0]["BankCD"] = SC_BankCD.TxtCode.Text.ToString();
+            dtSiharai2.Rows[0]["BankName"] = SC_BankCD.LabelText.ToString();
+            dtSiharai2.Rows[0]["BranchCD"] = SC_BranchCD.TxtCode.Text.ToString();
+            dtSiharai2.Rows[0]["BranchName"] = SC_BranchCD.LabelText.ToString();
+            dtSiharai2.Rows[0]["KouzaKBN"] = txtKouzaKBN.Text.ToString();
+            dtSiharai2.Rows[0]["KouzaNO"] = txtAccNo.Text.ToString();
+            dtSiharai2.Rows[0]["KouzaMeigi"] = txtMeigi.Text.ToString();
+            dtSiharai2.Rows[0]["FeeKBN"] = txtFeeKBN.Text.ToString();
+            dtSiharai2.Rows[0]["Fee"] = txtAmount.Text.ToString();
+            dtSiharai2.Rows[0]["CashGaku"] = txtCash.Text.ToString();
+            dtSiharai2.Rows[0]["OffsetGaku"] = txtOffsetGaku.Text.ToString();
+            dtSiharai2.Rows[0]["BillGaku"] = txtBill.Text.ToString();
+            dtSiharai2.Rows[0]["BillNO"] = txtBillNo.Text.ToString();
+            dtSiharai2.Rows[0]["BillDate"] = txtBillDate.Text.Replace('/','-').ToString();
 
-            dtSiharai2.Rows[0]["ERMCGaku"] = txtElectronicBone.Text;
-            dtSiharai2.Rows[0]["ERMCNO"] = txtElectronicRecordNo.Text;
-            dtSiharai2.Rows[0]["ERMCDate"] = txtSettlementDate2.Text;
+            dtSiharai2.Rows[0]["ERMCGaku"] = txtElectronicBone.Text.ToString();
+            dtSiharai2.Rows[0]["ERMCNO"] = txtElectronicRecordNo.Text.ToString();
+            dtSiharai2.Rows[0]["ERMCDate"] = txtSettlementDate2.Text.ToString();
 
-            dtSiharai2.Rows[0]["OtherGaku1"] = txtOther1.Text;
-            dtSiharai2.Rows[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text;
-            dtSiharai2.Rows[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text;
+            dtSiharai2.Rows[0]["OtherGaku1"] = txtOther1.Text.ToString();
+            dtSiharai2.Rows[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["start1"] = SC_HanyouKeyStart1.LabelText;
+            dtSiharai2.Rows[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
 
-            dtSiharai2.Rows[0]["OtherGaku2"] = txtOther2.Text;
-            dtSiharai2.Rows[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text;
-            dtSiharai2.Rows[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text;
+            dtSiharai2.Rows[0]["OtherGaku2"] = txtOther2.Text.ToString();
+            dtSiharai2.Rows[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["start2"] = SC_HanyouKeyStart2.LabelText;
+            dtSiharai2.Rows[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text.ToString();
+            //dtSiharai2.Rows[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
             dtSiharai2.AcceptChanges();
             //return dtSiharai2;
         }
         public void Clear()
         {
+            txtPayPlanDate.Text = string.Empty;
+            txtPayeeCD.Text = string.Empty;
+            lblVendorName.Text = string.Empty;
+            lblPayGaku1.Text = string.Empty;
             txtTransferAmount.Text = string.Empty;
             SC_BankCD.Clear();
             SC_BranchCD.Clear();
@@ -392,6 +407,7 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
                     return false;
 
+                SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
                 if (!SC_BankCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
@@ -402,6 +418,8 @@ namespace SiharaiNyuuryoku
                 if (!RequireCheck(new Control[] { SC_BranchCD.TxtCode }))
                     return false;
 
+                SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
+                SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
                 if (!SC_BranchCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");
@@ -411,25 +429,44 @@ namespace SiharaiNyuuryoku
 
                 if(!RequireCheck(new Control[] { txtKouzaKBN }))
                     return false;
-                if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
+                //if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    txtKouzaKBN.Focus();
+                //    return false;
+                //}
+                if(txtKouzaKBN.Text != "1" )
                 {
-                    bbl.ShowMessage("E101");
-                    txtKouzaKBN.Focus();
-                    return false;
+                    if(txtKouzaKBN.Text != "2")
+                    {
+                        bbl.ShowMessage("E101");
+                        txtKouzaKBN.Focus();
+                        return false;
+                    }
+                    
                 }
 
                 if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
                     return false;
-                if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
+                //if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    txtFeeKBN.Focus();
+                //    return false;
+                //}
+
+                if(!txtFeeKBN.Text.Equals("1"))
                 {
-                    bbl.ShowMessage("E101");
-                    txtFeeKBN.Focus();
-                    return false;
+                    if(!txtFeeKBN.Text.Equals("2"))
+                    {
+                        bbl.ShowMessage("E101");
+                        txtFeeKBN.Focus();
+                        return false;
+                    }
                 }
 
                 if (!RequireCheck(new Control[] {txtAmount }))
                     return false;
-
 
             }
 
@@ -511,8 +548,8 @@ namespace SiharaiNyuuryoku
 
         private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
         {
-            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
         }
 
         private void SC_HanyouKeyEnd2_Enter(object sender, EventArgs e)
@@ -554,6 +591,7 @@ namespace SiharaiNyuuryoku
             {
                 if (Convert.ToInt32(txtTransferAmount.Text)>0 && !string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
                 {
+                    SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
                     if (SC_BankCD.SelectData())
                     {
                         SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
@@ -582,8 +620,11 @@ namespace SiharaiNyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
+               
                 if (!string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text))
                 {
+                    SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
+                    SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
                     if (!SC_BranchCD.SelectData())
                     {
                         bbl.ShowMessage("E101");
@@ -654,6 +695,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd1.TxtCode.Text))
                 {
+                    SC_HanyouKeyEnd1.Value2 = SC_HanyouKeyStart1.TxtCode.Text;
                     if (!SC_HanyouKeyEnd1.SelectData())
                     {
                         bbl.ShowMessage("E101");
@@ -676,6 +718,7 @@ namespace SiharaiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd2.TxtCode.Text))
                 {
+                    SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.TxtCode.Text;
                     if (!SC_HanyouKeyEnd2.SelectData())
                     {
                         bbl.ShowMessage("E101");
@@ -790,14 +833,15 @@ namespace SiharaiNyuuryoku
                         bbl.ShowMessage("E102");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
-                    else if(Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) <0)
+                    else if (Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
+                    //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
                     {
                         bbl.ShowMessage("E143");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
                     else
                     {
-                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayPlanConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
+                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
                     }
                         LabelDataBind();
                 }

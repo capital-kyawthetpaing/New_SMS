@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity
+namespace Database
 {
-    class ZaikoShoukai
+    public class Class1
     {
-       
+        public void test()
+        {
 
+        }
     }
 }

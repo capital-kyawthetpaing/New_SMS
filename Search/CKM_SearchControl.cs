@@ -232,7 +232,8 @@ namespace Search
             Location,//---2019.12.09
             支払処理,//---2019-12-19
             支払番号検索 ,//2020-01-27
-            プログラムID //SES
+            プログラムID, //SES
+            商品分類//SES
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -406,7 +407,7 @@ namespace Search
                 //2019.6.15 add---------------->
                 case SearchType.ブランド:
                     txtCode.MaxLength = 6;
-                    txtCode.Width = 60;
+                    txtCode.Width = 100;
                     lblName.Width = 280;
                     break;
                 case SearchType.SKU_ITEM_CD:
@@ -501,8 +502,8 @@ namespace Search
                     lblName.Width = 350;
                     break;
                 case SearchType.競技:
-                    TxtCode.MaxLength = 4;
-                    TxtCode.Width = 40;
+                    TxtCode.MaxLength = 5;
+                    TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
                 case SearchType.大分類:
@@ -615,8 +616,14 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 100;
+                    TxtCode.MaxLength = 6;
                     TxtCode.Width = 750;
+                    lblName.Width = 300;
+                    break;
+
+                case SearchType.商品分類://SES
+                    TxtCode.MaxLength = 6;
+                    TxtCode.Width = 100;
                     lblName.Width = 300;
                     break;
             }
@@ -868,6 +875,19 @@ namespace Search
                         }
                     }
                     break;
+                case SearchType.商品分類:
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
+
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))
                     {
@@ -1609,7 +1629,16 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
-                    
+                    case SearchType.ブランド://Search_Brand	add by pes
+                        dtResult = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.競技://Search_Sport	add by pes
+                        dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+                    case SearchType.商品分類://Search_Segment add by pes
+                        dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
+
                 }
 
             }
@@ -1687,7 +1716,7 @@ namespace Search
                     dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
                 case SearchType.HanyouKeyEnd:
-                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1,Value2);
                     break;
                 //20200317
                 case SearchType.ブランド:
@@ -1695,6 +1724,9 @@ namespace Search
                     break;
                 case SearchType.競技:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 12, txtCode.Text, Value1);
+                    break;
+                case SearchType.商品分類:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 13, txtCode.Text, Value1);
                     break;
             }
             if (dtResult.Rows.Count > 0)

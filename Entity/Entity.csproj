@@ -127,6 +127,7 @@
     <Compile Include="M_Message_Entity.cs" />
     <Compile Include="M_MovePurpose_Entity.cs" />
     <Compile Include="M_MultiPorpose_Entity.cs" />
+    <Compile Include="M_OrderRate_Entity.cs" />
     <Compile Include="M_PrefixNumber_Entity.cs" />
     <Compile Include="M_Prefix_Entity.cs" />
     <Compile Include="M_ProcessNumber_Entity.cs" />
@@ -161,7 +162,6 @@
     <Compile Include="D_DepositHistory_Entity.cs" />
     <Compile Include="TempoRegiZaikoKakunin_Entity.cs" />
     <Compile Include="UriageMotochou_Entity.cs" />
-    <Compile Include="ZaikoShoukai.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

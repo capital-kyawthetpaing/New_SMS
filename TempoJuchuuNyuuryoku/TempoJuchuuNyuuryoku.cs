@@ -295,6 +295,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 0].CellCtl = IMT_HIKAT_0;   //引当表示
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 0].CellCtl = CHK_PRINT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 0].CellCtl = CHK_Tyokuso_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 0].CellCtl = CHK_FUYO_0;
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
@@ -332,6 +333,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 1].CellCtl = IMT_HIKAT_1;   //引当表示
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 1].CellCtl = CHK_PRINT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 1].CellCtl = CHK_Tyokuso_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 1].CellCtl = CHK_FUYO_1;
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
@@ -369,6 +371,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.Hikiate, 2].CellCtl = IMT_HIKAT_2;   //引当表示
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.NotPrintFLG, 2].CellCtl = CHK_PRINT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkTyokuso, 2].CellCtl = CHK_Tyokuso_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkFuyo, 2].CellCtl = CHK_FUYO_2;
         }
 
         // 明細部 Tab の処理
@@ -792,9 +795,10 @@ namespace TempoJuchuuNyuuryoku
                                         case (int)ClsGridJuchuu.ColNO.Zaiko:    // 
                                         case (int)ClsGridJuchuu.ColNO.NotPrintFLG:    // 
                                         case (int)ClsGridJuchuu.ColNO.ChkTyokuso:    // 
-                                                                                      //case (int)ClsGridJuchuu.ColNO.SoukoName:          //出荷倉庫
-                                                                                      //case (int)ClsGridJuchuu.ColNO.VendorCD:           //発注先
-                                                                                      //case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:    //入荷予定日
+                                        case (int)ClsGridJuchuu.ColNO.ChkFuyo:    // 
+                                                                                     //case (int)ClsGridJuchuu.ColNO.SoukoName:          //出荷倉庫
+                                                                                     //case (int)ClsGridJuchuu.ColNO.VendorCD:           //発注先
+                                                                                     //case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:    //入荷予定日
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 break;
@@ -980,6 +984,7 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.CommentInStore:    //
                             case (int)ClsGridJuchuu.ColNO.NotPrintFLG:    //
                             case (int)ClsGridJuchuu.ColNO.ChkTyokuso:    //
+                            case (int)ClsGridJuchuu.ColNO.ChkFuyo:    //
                             case (int)ClsGridJuchuu.ColNO.Site:    //
                             case (int)ClsGridJuchuu.ColNO.Zaiko:    // 
                                 {
@@ -1739,6 +1744,7 @@ namespace TempoJuchuuNyuuryoku
                     //    mGrid.g_DArray[i].SetKBN = "";
                     mGrid.g_DArray[i].NotPrintFLG = row["NotPrintFLG"].ToString() == "1" ? true : false;
                     mGrid.g_DArray[i].ChkTyokuso = row["DirectFLG"].ToString() == "1" ? true : false;
+                    mGrid.g_DArray[i].ChkFuyo = row["NotOrderFLG"].ToString() == "1" ? true : false;
 
                     mGrid.g_DArray[i].JuchuuHontaiGaku = bbl.Z_SetStr(row["JuchuuHontaiGaku"]);   // 
                     //mGrid.g_DArray[i].TaxRateDisp = bbl.Z_SetStr(row["MemberPriceOutTax"]);   // 
@@ -2090,7 +2096,8 @@ namespace TempoJuchuuNyuuryoku
             //明細部チェック
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
-                CheckHikiate(RW, ymd);
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
+                    CheckHikiate(RW, ymd);
             }
 
             //配列の内容を画面へセット
@@ -2415,6 +2422,14 @@ namespace TempoJuchuuNyuuryoku
                    
                     if (ret)
                     {
+                        if (mce.DeleteFlg == "1")
+                        {
+                            bbl.ShowMessage("E119");
+                            //顧客情報ALLクリア
+                            ClearCustomerInfo();
+                            return false;
+                        }
+
                         //顧客CDが変更されている場合のみ再セット
                         if (mOldCustomerCD != detailControls[index].Text || ChangeMitsumoriDate)
                         {
@@ -2702,7 +2717,7 @@ namespace TempoJuchuuNyuuryoku
 
                         M_Site_Entity msie = new M_Site_Entity
                         {
-                            ItemSKUCD = mGrid.g_DArray[row].SKUCD
+                            AdminNO = mGrid.g_DArray[row].AdminNO
                         };
                         Site_BL msbl = new Site_BL();
                         ret = msbl.M_Site_Select(msie);
@@ -2893,7 +2908,7 @@ namespace TempoJuchuuNyuuryoku
                     ChangeDate = ymd,
                     StoreCD = CboStoreCD.SelectedValue.ToString(),
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
-                    Suryo = mGrid.g_DArray[row].JuchuuSuu,
+                    Suryo = bbl.Z_SetStr(mGrid.g_DArray[row].JuchuuSuu),
                     DenType = "1",  //1(受注)
                     DenNo = keyControls[(int)EIndex.JuchuuNO].Text,
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
@@ -3102,6 +3117,7 @@ namespace TempoJuchuuNyuuryoku
             dt.Columns.Add("SiteJuchuuRows", typeof(int));
             dt.Columns.Add("NotPrintFLG", typeof(int));
             dt.Columns.Add("AddJuchuuRows", typeof(int));
+            dt.Columns.Add("NotOrderFLG", typeof(int));
             dt.Columns.Add("DirectFLG", typeof(int));
             dt.Columns.Add("SKUNO", typeof(int));
             dt.Columns.Add("SKUCD", typeof(string));
@@ -3162,16 +3178,14 @@ namespace TempoJuchuuNyuuryoku
                     {
                         AddJuchuuRows = mGrid.g_DArray[RW].juchuGyoNO > 0 ? mGrid.g_DArray[RW].juchuGyoNO : rowNo;
                     }
-                    int ChkTyokuso = 0;
-                    if (mGrid.g_DArray[RW].ChkTyokuso)
-                        ChkTyokuso = 1;
 
                     dt.Rows.Add(mGrid.g_DArray[RW].juchuGyoNO > 0 ? mGrid.g_DArray[RW].juchuGyoNO: rowNo
                         , mGrid.g_DArray[RW].GYONO
                         , 0
                         , notPrintFLG
                         , notPrintFLG == 1 ? AddJuchuuRows: 0
-                        , ChkTyokuso
+                        , mGrid.g_DArray[RW].ChkFuyo ? 1 : 0
+                        , mGrid.g_DArray[RW].ChkTyokuso ? 1: 0
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
@@ -3900,6 +3914,9 @@ namespace TempoJuchuuNyuuryoku
                             break;
                         case "CHK_PRINT":
                             CL = (int)ClsGridJuchuu.ColNO.NotPrintFLG;
+                            break;
+                        case "CHK_FUYO":
+                            CL = (int)ClsGridJuchuu.ColNO.ChkFuyo;
                             break;
                         case "CHK_Tyokuso":
                             CL = (int)ClsGridJuchuu.ColNO.ChkTyokuso;
