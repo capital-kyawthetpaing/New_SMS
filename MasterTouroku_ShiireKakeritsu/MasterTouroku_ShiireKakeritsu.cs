@@ -412,41 +412,68 @@ namespace MasterTouroku_ShiireKakeritsu
             dgv_ShiireKakeritsu.DataSource = dt;
 
         }
-        //}
+        
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-        //    if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
-        //    {
+            if(string.IsNullOrWhiteSpace(txtCopy.Text))
+            {
+                mskbl.ShowMessage("E102");
+                txtCopy.Focus();
+            }
+            else
+            {
+                if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+                {
 
-        //        //dgv_ShiireKakeritsu.MultiSelect = true;
-        //        //dgv_ShiireKakeritsu.SelectAll();
-        //        //DataObject dataObj = dgv_ShiireKakeritsu.GetClipboardContent();
-        //        //if (dataObj != null)
-        //        //    Clipboard.SetDataObject(dataObj);
-        //        //var newline = System.Environment.NewLine;
-        //        //var tab = "\t";
-        //        // var clipboard_string = "";
-        //        //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-        //        //{
-        //        //    for (int i = 0; i < row.Cells.Count; i++)
-        //        //    {
-        //        //        if (i == (row.Cells.Count - 1))
-        //        //            clipboard_string += row.Cells[i].Value + newline;
-        //        //        else
-        //        //            clipboard_string += row.Cells[i].Value + tab;
-        //        //    }
-        //        //Clipboard.SetText(clipboard_string);
-        //        DataRow dtRow = dtMain.NewRow();
-        //        dtRow["BrandCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colBrandCD1"].Selected.ToString();
-        //        dtRow["SportsCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSportsCD1"].Selected.ToString();
-        //        dtRow["SegmentCD"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSegmentCD1"].Selected.ToString();
-        //        dtRow["LastSeason"] = dgv_ShiireKakeritsu.Rows[0].Cells["colSeason"].Selected.ToString();
-        //        //dtRow["ChangeDate"] = dgv_ShiireKakeritsu.Rows[0].Cells["colDate"].Selected.ToString();
-        //        //dtRow["Rate"] =Convert.ToInt32(dgv_ShiireKakeritsu.Rows[0].Cells["colRate1"].Selected.ToString());
-        //        dtMain.Rows.Add(dtRow);
-            //    dgv_ShiireKakeritsu.DataSource = dtMain;
-            //}
-       }
+                    //dgv_ShiireKakeritsu.MultiSelect = true;
+                    //dgv_ShiireKakeritsu.SelectAll();
+                    //DataObject dataObj = dgv_ShiireKakeritsu.GetClipboardContent();
+                    //if (dataObj != null)
+                    //    Clipboard.SetDataObject(dataObj);
+                    //var newline = System.Environment.NewLine;
+                    //var tab = "\t";
+                    //var clipboard_string = "";
+                    //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    //{
+                    //    for (int i = 0; i < row.Cells.Count; i++)
+                    //    {
+                    //        if (i == (row.Cells.Count - 1))
+                    //            clipboard_string += row.Cells[i].Value + newline;
+                    //        else
+                    //            clipboard_string += row.Cells[i].Value + tab;
+                    //    }
+                    //Clipboard.SetText(clipboard_string);
+
+                    foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+                    {
+                        DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                        if (chk.Selected == true)
+                        {
+
+                            DataRow dtRow = dtMain.NewRow();
+                            dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
+                            dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
+                            dtRow["SegmentCD"] = row.Cells["colSegmentCD1"].Value.ToString();
+                            dtRow["LastSeason"] = row.Cells["colSeason"].Value.ToString();
+                            dtRow["ChangeDate"] = txtCopy.Text;
+                            dtRow["Rate"] = row.Cells["colRate1"].Value.ToString();
+                            dtMain.Rows.Add(dtRow);
+                            dgv_ShiireKakeritsu.DataSource = dtMain;
+                        }
+                    }
+
+
+
+                }
+            }
+
+           
+        }
+
+        private void btnChoice_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
     }
 }
