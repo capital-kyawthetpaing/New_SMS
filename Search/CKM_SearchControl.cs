@@ -388,7 +388,7 @@ namespace Search
                 case SearchType.単位:
                     txtCode.MaxLength = 3;
                     txtCode.Width = 30;
-                    lblName.Width = 280;
+                    lblName.Width = 140;
                     break;
                 case SearchType.銀行口座:
                     txtCode.MaxLength = 3;
