@@ -52,6 +52,7 @@ namespace BL
                 me.MakerItem = dt.Rows[0]["MakerItem"].ToString();
                 me.TaniCD = dt.Rows[0]["TaniCD"].ToString();
                 me.SportsCD = dt.Rows[0]["SportsCD"].ToString();
+                me.SegmentCD = dt.Rows[0]["SegmentCD"].ToString();
                 me.ZaikoKBN = dt.Rows[0]["ZaikoKBN"].ToString();
                 me.Rack = dt.Rows[0]["Rack"].ToString();
                 me.VirtualFlg = dt.Rows[0]["VirtualFlg"].ToString();
@@ -161,6 +162,7 @@ namespace BL
             dt.Columns.Add("MakerItem", typeof(string));
             dt.Columns.Add("TaniCD", typeof(string));
             dt.Columns.Add("SportsCD", typeof(string));
+            dt.Columns.Add("SegmentCD", typeof(string));
             dt.Columns.Add("ZaikoKBN", typeof(int));
             dt.Columns.Add("Rack", typeof(string));
             dt.Columns.Add("VirtualFlg", typeof(int));
@@ -262,6 +264,7 @@ namespace BL
                  , row["MakerItem"].ToString() == "" ? null : row["MakerItem"]
                  , row["TaniCD"].ToString() == "" ? null : row["TaniCD"]
                  , row["SportsCD"].ToString() == "" ? null : row["SportsCD"]
+                 , row["SegmentCD"].ToString() == "" ? null : row["SegmentCD"]
                  , Z_Set(row["ZaikoKBN"])
                  , row["Rack"].ToString() == "" ? null : row["Rack"]
                  , Z_Set(row["VirtualFlg"])

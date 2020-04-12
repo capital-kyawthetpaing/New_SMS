@@ -45,6 +45,7 @@ BEGIN
           ,MS.MakerItem
           ,MS.TaniCD
           ,MS.SportsCD
+          ,MS.SegmentCD
           ,MS.ZaikoKBN
           ,MS.Rack
           ,MS.VirtualFlg
@@ -105,4 +106,5 @@ BEGIN
     AND MS.ChangeDate = CONVERT(DATE, @ChangeDate)
     ;
 END
+
 
