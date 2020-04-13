@@ -38,7 +38,7 @@
             this.ScCopyVendor = new Search.CKM_SearchControl();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
-            this.txtEDIVendorCD = new CKM_Controls.CKM_TextBox();
+            this.txtRegisterNum = new CKM_Controls.CKM_TextBox();
             this.ckM_Label41 = new CKM_Controls.CKM_Label();
             this.chkEDIFlg = new CKM_Controls.CKM_CheckBox();
             this.ckM_Label40 = new CKM_Controls.CKM_Label();
@@ -305,7 +305,7 @@
             // 
             // PanelDetail
             // 
-            this.PanelDetail.Controls.Add(this.txtEDIVendorCD);
+            this.PanelDetail.Controls.Add(this.txtRegisterNum);
             this.PanelDetail.Controls.Add(this.ckM_Label41);
             this.PanelDetail.Controls.Add(this.chkEDIFlg);
             this.PanelDetail.Controls.Add(this.ckM_Label40);
@@ -393,30 +393,30 @@
             this.PanelDetail.Size = new System.Drawing.Size(1776, 782);
             this.PanelDetail.TabIndex = 2;
             // 
-            // txtEDIVendorCD
+            // txtRegisterNum
             // 
-            this.txtEDIVendorCD.AllowMinus = false;
-            this.txtEDIVendorCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtEDIVendorCD.BackColor = System.Drawing.Color.White;
-            this.txtEDIVendorCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEDIVendorCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtEDIVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtEDIVendorCD.DecimalPlace = 0;
-            this.txtEDIVendorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtEDIVendorCD.IntegerPart = 0;
-            this.txtEDIVendorCD.IsCorrectDate = true;
-            this.txtEDIVendorCD.isEnterKeyDown = false;
-            this.txtEDIVendorCD.IsNumber = true;
-            this.txtEDIVendorCD.IsShop = false;
-            this.txtEDIVendorCD.Length = 15;
-            this.txtEDIVendorCD.Location = new System.Drawing.Point(237, 625);
-            this.txtEDIVendorCD.MaxLength = 15;
-            this.txtEDIVendorCD.MoveNext = true;
-            this.txtEDIVendorCD.Name = "txtEDIVendorCD";
-            this.txtEDIVendorCD.Size = new System.Drawing.Size(110, 19);
-            this.txtEDIVendorCD.TabIndex = 35;
-            this.txtEDIVendorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            this.txtEDIVendorCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEDIVendorCD_KeyDown);
+            this.txtRegisterNum.AllowMinus = false;
+            this.txtRegisterNum.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtRegisterNum.BackColor = System.Drawing.Color.White;
+            this.txtRegisterNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegisterNum.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtRegisterNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtRegisterNum.DecimalPlace = 0;
+            this.txtRegisterNum.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRegisterNum.IntegerPart = 0;
+            this.txtRegisterNum.IsCorrectDate = true;
+            this.txtRegisterNum.isEnterKeyDown = false;
+            this.txtRegisterNum.IsNumber = true;
+            this.txtRegisterNum.IsShop = false;
+            this.txtRegisterNum.Length = 15;
+            this.txtRegisterNum.Location = new System.Drawing.Point(237, 625);
+            this.txtRegisterNum.MaxLength = 15;
+            this.txtRegisterNum.MoveNext = true;
+            this.txtRegisterNum.Name = "txtRegisterNum";
+            this.txtRegisterNum.Size = new System.Drawing.Size(110, 19);
+            this.txtRegisterNum.TabIndex = 35;
+            this.txtRegisterNum.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRegisterNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEDIVendorCD_KeyDown);
             // 
             // ckM_Label41
             // 
@@ -431,7 +431,7 @@
             this.ckM_Label41.Name = "ckM_Label41";
             this.ckM_Label41.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label41.TabIndex = 34;
-            this.ckM_Label41.Text = "口座番号";
+            this.ckM_Label41.Text = "登録番号";
             this.ckM_Label41.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1299,7 +1299,7 @@
             this.txtFaxno.BackColor = System.Drawing.Color.White;
             this.txtFaxno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFaxno.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtFaxno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtFaxno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtFaxno.DecimalPlace = 0;
             this.txtFaxno.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtFaxno.IntegerPart = 0;
@@ -1314,7 +1314,6 @@
             this.txtFaxno.Name = "txtFaxno";
             this.txtFaxno.Size = new System.Drawing.Size(100, 19);
             this.txtFaxno.TabIndex = 15;
-            this.txtFaxno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFaxno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtTelno
@@ -1324,7 +1323,7 @@
             this.txtTelno.BackColor = System.Drawing.Color.White;
             this.txtTelno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTelno.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtTelno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtTelno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTelno.DecimalPlace = 0;
             this.txtTelno.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtTelno.IntegerPart = 0;
@@ -1339,7 +1338,6 @@
             this.txtTelno.Name = "txtTelno";
             this.txtTelno.Size = new System.Drawing.Size(100, 19);
             this.txtTelno.TabIndex = 14;
-            this.txtTelno.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTelno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtMailAddress
@@ -2127,7 +2125,7 @@
         private CKM_Controls.CKM_Label ckM_Label37;
         private CKM_Controls.CKM_TextBox txtVendorShortName;
         private CKM_Controls.CKM_Label ckM_Label36;
-        private CKM_Controls.CKM_TextBox txtEDIVendorCD;
+        private CKM_Controls.CKM_TextBox txtRegisterNum;
         private CKM_Controls.CKM_Label ckM_Label41;
     }
 }
