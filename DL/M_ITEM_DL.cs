@@ -75,6 +75,7 @@ namespace DL
             AddParam(command, "@MakerItem", SqlDbType.VarChar, me.MakerItem);
             AddParam(command, "@TaniCD", SqlDbType.VarChar, me.TaniCD);
             AddParam(command, "@SportsCD", SqlDbType.VarChar, me.SportsCD);
+            AddParam(command, "@SegmentCD", SqlDbType.VarChar, me.SegmentCD);
             AddParam(command, "@ZaikoKBN", SqlDbType.TinyInt, me.ZaikoKBN);
             AddParam(command, "@Rack", SqlDbType.VarChar, me.Rack);
             AddParam(command, "@VirtualFlg", SqlDbType.TinyInt, me.VirtualFlg);

@@ -204,6 +204,7 @@ namespace Search
             MakerItem,
             SKUCD,
             競技,
+            分類,
             大分類,
             中分類,
             小分類,
@@ -387,7 +388,7 @@ namespace Search
                 case SearchType.単位:
                     txtCode.MaxLength = 3;
                     txtCode.Width = 30;
-                    lblName.Width = 280;
+                    lblName.Width = 140;
                     break;
                 case SearchType.銀行口座:
                     txtCode.MaxLength = 3;
@@ -506,6 +507,11 @@ namespace Search
                     TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
+                case SearchType.分類:
+                    TxtCode.MaxLength = 5;
+                    TxtCode.Width = 50;
+                    lblName.Width = 280;
+                    break;
                 case SearchType.大分類:
                     TxtCode.MaxLength = 4;
                     TxtCode.Width = 40;
@@ -616,7 +622,7 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 6;
+                    TxtCode.MaxLength = 10;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
@@ -864,6 +870,7 @@ namespace Search
                     break;
                 case SearchType.単位:
                 case SearchType.競技:
+                case SearchType.分類:
                     using (Search_HanyouKey frmMulti = new Search_HanyouKey())
                     {
                         frmMulti.parID = Value1;
@@ -875,18 +882,19 @@ namespace Search
                         }
                     }
                     break;
-                case SearchType.商品分類:
-                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
-                    {
-                        frmMulti.parID = Value1;
-                        frmMulti.ShowDialog();
-                        if (!frmMulti.flgCancel)
-                        {
-                            txtCode.Text = frmMulti.parKey;
-                            lblName.Text = frmMulti.parChar1;
-                        }
-                    }
-                    break;
+
+                //case SearchType.商品分類:
+                //    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                //    {
+                //        frmMulti.parID = Value1;
+                //        frmMulti.ShowDialog();
+                //        if (!frmMulti.flgCancel)
+                //        {
+                //            txtCode.Text = frmMulti.parKey;
+                //            lblName.Text = frmMulti.parChar1;
+                //        }
+                //    }
+                //    break;
 
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))

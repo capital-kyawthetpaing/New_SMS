@@ -265,7 +265,7 @@ namespace JANCDHenkou
                             dgvJANCDHenkou.DataSource = dtGenJanCD;
                         }
                     }
-                    }
+                    
                 }
                 // 現JANCD
 

@@ -41,6 +41,8 @@ namespace MasterTouroku_Shouhin
 
           , TaxRateFLGName
           , CostingKBNName
+                , SegmentCD
+                , SegmentName
 
           //KeyControl
           , JanCD = 0
@@ -285,7 +287,7 @@ namespace MasterTouroku_Shouhin
             };
             detailLabels = new Control[] {lblSKUCD, lblChangeDate, lblSizeNo, lblSizeName, lblColorNo, lblColorName
                                         ,lblMakerItem, label2, label11, label12, label13, label19, label20, label22, label23
-                                        ,label31, label32,label35,label36,label37,     ScVendor };
+                                        ,label31, label32,label35,label36,label37,label26,label10,     ScVendor };
             searchButtons = new Control[] { ScVendor.BtnSearch,ScSKUCD.BtnSearch };
 
             //イベント付与
@@ -622,6 +624,8 @@ namespace MasterTouroku_Shouhin
 
             detailLabels[(int)EIndex.TaxRateFLGName].Text = mse.TaxRateFLGName;
             detailLabels[(int)EIndex.CostingKBNName].Text = mse.CostingKBNName;
+            detailLabels[(int)EIndex.SegmentCD].Text = mse.SegmentCD;
+            detailLabels[(int)EIndex.SegmentName].Text = mse.SegmentName;
 
             //Text
             if (mse.VariousFLG.Equals("1"))
@@ -836,6 +840,8 @@ namespace MasterTouroku_Shouhin
                 TaniName = mie.TaniName,
                 SportsCD = mie.SportsCD,
                 SportsName = mie.SportsName,
+                SegmentCD = mie.SegmentCD,
+                SegmentName = mie.SegmentName,
                 Rack = mie.Rack,
                 DirectFlg = mie.DirectFlg,
                 ReserveCD = mie.ReserveCD,

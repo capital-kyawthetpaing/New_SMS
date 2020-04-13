@@ -51,6 +51,10 @@ namespace Search
                 {
                     title = "競技";
                 }
+                else if (parID.Equals(MultiPorpose_BL.ID_SegmentCD))
+                {
+                    title = "分類";
+                }
 
                 HeaderTitleText = title;
                 this.Text = title + "検索";
