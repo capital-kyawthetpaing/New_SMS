@@ -86,6 +86,7 @@
             this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -244,6 +245,7 @@
             this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
             this.colChk,
             this.colBrandCD1,
             this.colSportsCD1,
@@ -371,6 +373,7 @@
             this.btnChoice.TabIndex = 16;
             this.btnChoice.Text = "選択";
             this.btnChoice.UseVisualStyleBackColor = false;
+            this.btnChoice.Click += new System.EventHandler(this.btnChoice_Click);
             // 
             // txtRate
             // 
@@ -1215,6 +1218,13 @@
             this.colRate.Name = "colRate";
             this.colRate.Width = 80;
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Column1";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.Visible = false;
+            // 
             // colChk
             // 
             this.colChk.HeaderText = "";
@@ -1353,6 +1363,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSportsCD1;
