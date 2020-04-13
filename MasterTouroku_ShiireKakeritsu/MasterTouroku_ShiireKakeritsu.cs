@@ -55,6 +55,7 @@ namespace MasterTouroku_ShiireKakeritsu
             scSportsCD1.Clear();
             scSegmentCD1.Clear();
             txtSeason.Text = string.Empty;
+            txtYear.Text = string.Empty;
             txtDate.Text = string.Empty;
             txtCopy.Text = string.Empty;
             scBrandCD.Clear();
@@ -111,6 +112,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
+                LastYearTerm=txtYear.Text,
                 LastSeason = txtSeason.Text,
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text
@@ -149,6 +151,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(txtYear.Text))
+                searchCondition = "LastYearTerm='" + txtYear.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtSeason.Text))
                 searchCondition = "LastSeason= '" + txtSeason.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
@@ -397,6 +401,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 dt.Columns.Add("BrandCD");
                 dt.Columns.Add("SportsCD");
                 dt.Columns.Add("SegmentCD");
+                dt.Columns.Add("LastYearTerm");
                 dt.Columns.Add("LastSeason");
                 dt.Columns.Add("ChangeDate");
                 dt.Columns.Add("Rate");
@@ -405,6 +410,7 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+           // dtRow["LastYearTeam"] = txtYear.Text;
             dtRow["LastSeason"] = txtLastSeason.Text;
             dtRow["ChangeDate"] = txtChangeDate.Text;
             dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
@@ -455,6 +461,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
                             dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
                             dtRow["SegmentCD"] = row.Cells["colSegmentCD1"].Value.ToString();
+                            dtRow["LastYearTerm"] = row.Cells["colYear"].Value.ToString();
                             dtRow["LastSeason"] = row.Cells["colSeason"].Value.ToString();
                             dtRow["ChangeDate"] = txtCopy.Text;
                             dtRow["Rate"] = row.Cells["colRate1"].Value.ToString();
@@ -462,9 +469,6 @@ namespace MasterTouroku_ShiireKakeritsu
                             dgv_ShiireKakeritsu.DataSource = dtMain;
                         }
                     }
-
-
-
                 }
             }
 
@@ -474,6 +478,18 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnChoice_Click(object sender, EventArgs e)
         {
             Checkstate(true);
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            //if (this.dgv_ShiireKakeritsu.SelectedRows.Count > 0)
+            //{
+            //    dgv_ShiireKakeritsu.Rows.RemoveAt(this.dgv_ShiireKakeritsu.SelectedRows[0].Index);
+            //}
+            foreach (DataGridViewRow item in this.dgv_ShiireKakeritsu.SelectedRows)
+            {
+                dgv_ShiireKakeritsu.Rows.RemoveAt(item.Index);
+            }
         }
     }
 }

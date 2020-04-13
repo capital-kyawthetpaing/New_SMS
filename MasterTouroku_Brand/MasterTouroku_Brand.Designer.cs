@@ -200,7 +200,7 @@
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 20;
-            this.txtKanaName.Location = new System.Drawing.Point(135, 51);
+            this.txtKanaName.Location = new System.Drawing.Point(135, 48);
             this.txtKanaName.MaxLength = 20;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
@@ -217,7 +217,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(86, 54);
+            this.ckM_Label2.Location = new System.Drawing.Point(86, 51);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label2.TabIndex = 2;
