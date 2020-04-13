@@ -186,7 +186,7 @@ BEGIN
 						Tax22=@Tax22,
 
 						Fee31=@Fee31,
-						Tax31=Tax31,
+						Tax31=@Tax31,
 						Amount3=@Amount3,
 						Fee32=@Fee32,
 						Tax32=@Tax32,

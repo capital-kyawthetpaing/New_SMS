@@ -61,7 +61,23 @@ namespace MainMenu
             if (dt.Rows.Count > 0)
             {
                 var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
-                ButtonText(panelLeft, _result, 1);
+                //////Changed by PTk bcox of Gtone  HOMESTAYED TIME COVID_19
+             var  dt1=   dt.AsEnumerable()
+                    .GroupBy(r => new { Col1 = r["BusinessID"], Col2 = r["BusinessSEQ"] })
+                    .Select(g =>
+                    {
+                        var row = dt.NewRow();
+                        //r => r["PK"]).First()
+                        //row["PK"] = g.Min(r => r.Field<int>("PK"));
+                        row["char1"] = g.First().Field<string>("char1");
+                        row["BusinessID"] = g.Key.Col1;
+                        row["BusinessSEQ"] = g.Key.Col2;
+                   
+                        return row;
+                   
+                    })
+                    .CopyToDataTable();
+                ButtonText(panelLeft, dt1, 1);
             }
             //var _result =(from r1 in dt.AsEnumerable()  group r1 by new { Char1 = r1.Field<string>("Char1"), } into g  select new { Char1 = g.Key.Char1,   BusinessSEQ = g.Max(x => x.Field<int>("BusinessSEQ")) }).ToArray();    //Group By
             //var _result = dt.AsEnumerable().GroupBy(x => x.Field<string>("Char1")).Select(g => g.First()).CopyToDataTable();
@@ -71,7 +87,10 @@ namespace MainMenu
         protected void ButtonText(Panel p, DataTable k0, int Gym)
         {
             IOrderedEnumerable<DataRow> result;
-            result = k0.Select().OrderBy(row => row["ProgramSEQ"]);
+            if (Gym == 1)
+                 result = k0.Select().OrderBy(row => row["BusinessSEQ"]);
+            else
+                 result = k0.Select().OrderBy(row => row["ProgramSEQ"]);
             var k = result.CopyToDataTable();
             // MainMenuLogin
             System.Windows.Forms.ToolTip ToolTip1 = new System.Windows.Forms.ToolTip();
@@ -93,6 +112,8 @@ namespace MainMenu
                             {
                                 ((CKM_Button)ctrl).Text = k.Rows[j]["Char1"].ToString();
                                 ((CKM_Button)ctrl).Enabled = true;
+                                ((CKM_Button)ctrl).TabIndex =Convert.ToInt32 ( k.Rows[j]["BusinessSEQ"].ToString());
+
                             }
                         }
                         else if (Gym == 0 && k.Rows[j]["ProgramID"].ToString() != string.Empty)
@@ -101,6 +122,7 @@ namespace MainMenu
                             {
                                 ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
                                 ((CKM_Button)ctrl).Enabled = true;
+                                ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
                                 //  ((CKM_Button)ctrl).Name = mope_data.PROID.ToString();
                                 // ToolTip1.SetToolTip(((CKM_Button)ctrl),"");
                                 //ToolTip1.SetToolTip(((CKM_Button)ctrl), ((CKM_Button)ctrl).Text);
@@ -219,12 +241,12 @@ namespace MainMenu
             btnText = btn.Text;
             if (!string.IsNullOrWhiteSpace(btnText))
             {
-                RightButton_Text(btnText);
+                RightButton_Text(btnText, btn.TabIndex);
             }
         }
-        private void RightButton_Text(string Text)
+        private void RightButton_Text(string Text,int tabindex)
         {
-            var getData = menu.Select("Char1 = '" + Text + "'").CopyToDataTable();
+            var getData = menu.Select("Char1 = '" + Text + "' and BusinessSEQ ='"+tabindex.ToString()+"'").CopyToDataTable();
             if (getData != null)
             {
                 ButtonText(panel_right, getData, 0);

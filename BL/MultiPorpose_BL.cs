@@ -14,6 +14,7 @@ namespace BL
     {
         public static string ID_TANI = "201";
         public static string ID_SPORTS = "202";
+        public static string ID_SegmentCD = "203";
         public static string ID_ArrivalPlanCD = "206";
         public static string ID_PaymentMethod = "207";
         public static string ID_BRANDCD = "210";
@@ -137,10 +138,6 @@ namespace BL
             return dt;
         }
 
-        //public bool MultiPorpose_Exec(M_MultiPorpose_Entity mse, short operationMode, string operatorNm, string pc)
-        //{
-        //    return mmdl.M_MultiPorpose_Exec(mse, operationMode, operatorNm, pc);
-        //}
 
         public DataTable M_MultiPorpose_SelectByChar1(M_MultiPorpose_Entity mse)
         {

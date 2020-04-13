@@ -33,7 +33,8 @@ namespace Entity
         public string MakerItem { get; set; }
         public string TaniCD { get; set; }
         public string SportsCD { get; set; }
-        
+        public string SegmentCD { get; set; }
+
         public string ZaikoKBN { get; set; }
         public string Rack { get; set; }
         public string VirtualFlg { get; set; }
@@ -110,6 +111,7 @@ namespace Entity
         //Master用Entity	
         public string BrandName { get; set; }
         public string TaniName { get; set; }
+        public string SegmentName { get; set; }
         public string SportsName { get; set; }
         public string ReserveName { get; set; }
         public string NoticesName { get; set; }
