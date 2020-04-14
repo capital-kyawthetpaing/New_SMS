@@ -299,7 +299,7 @@ namespace MasterTouroku_Shiiresaki
                 AmountFractionKBN = cboAmountFractionKBN.SelectedValue.ToString(),    //Add By SawLay
                 NetFlg = chkNetFlg.Checked ? "1":"0",
                 EDIFlg = chkEDIFlg.Checked ? "1" : "0",   //Add By SawLay
-                EDIVendorCD = txtEDIVendorCD.Text, //Add By SawLay
+                EDIVendorCD = txtRegisterNum.Text, //Add By SawLay
                 StaffCD = ScStaffCD.TxtCode.Text,
                 AnalyzeCD1 = txtAnalyzeCD1.Text ,
                 AnalyzeCD2 = txtAnalyzeCD2.Text,
@@ -370,7 +370,7 @@ namespace MasterTouroku_Shiiresaki
                 ScKouzaCD.LabelText = mve.KouzaName;
                 chkNetFlg.Checked = mve.NetFlg.Equals("1") ? true : false;
                 chkEDIFlg.Checked = mve.EDIFlg.Equals("1") ? true : false; //Add By SawLay
-                txtEDIVendorCD.Text = mve.EDIVendorCD; //Add By SawLay
+                txtRegisterNum.Text = mve.EDIVendorCD; //Add By SawLay
                 ScStaffCD.TxtCode.Text = mve.StaffCD;
                 ScStaffCD.LabelText = mve.StaffName;
                 txtAnalyzeCD1.Text = mve.AnalyzeCD1;
@@ -722,10 +722,10 @@ namespace MasterTouroku_Shiiresaki
 
                     if(chkEDIFlg.Checked == true) //Add By SawLay   ErrorCheck for EDI会社番号
                     {
-                        if(string.IsNullOrWhiteSpace(txtEDIVendorCD.Text))
+                        if(string.IsNullOrWhiteSpace(txtRegisterNum.Text))
                         {
                             mtsbl.ShowMessage("E102");
-                            txtEDIVendorCD.Focus();
+                            txtRegisterNum.Focus();
                             return false;
                         }
                     }
@@ -1334,10 +1334,10 @@ namespace MasterTouroku_Shiiresaki
             {
                 if (chkEDIFlg.Checked == true)
                 {
-                    if(string.IsNullOrEmpty(txtEDIVendorCD.Text))
+                    if(string.IsNullOrEmpty(txtRegisterNum.Text))
                     {
                         mtsbl.ShowMessage("E102");
-                        txtEDIVendorCD.Focus();
+                        txtRegisterNum.Focus();
                     }
                 }
             }
