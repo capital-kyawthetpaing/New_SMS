@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -935,7 +934,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -949,14 +948,6 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -1318,7 +1309,7 @@
             this.ckM_TextBox25.MoveNext = true;
             this.ckM_TextBox25.Name = "ckM_TextBox25";
             this.ckM_TextBox25.Size = new System.Drawing.Size(497, 19);
-            this.ckM_TextBox25.TabIndex = 38;
+            this.ckM_TextBox25.TabIndex = 4;
             this.ckM_TextBox25.Text = "ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGH80";
             this.ckM_TextBox25.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1361,7 +1352,7 @@
             this.ckM_TextBox24.MoveNext = true;
             this.ckM_TextBox24.Name = "ckM_TextBox24";
             this.ckM_TextBox24.Size = new System.Drawing.Size(280, 19);
-            this.ckM_TextBox24.TabIndex = 37;
+            this.ckM_TextBox24.TabIndex = 2;
             this.ckM_TextBox24.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸ15";
             this.ckM_TextBox24.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1404,7 +1395,7 @@
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
             this.ckM_TextBox20.Size = new System.Drawing.Size(317, 19);
-            this.ckM_TextBox20.TabIndex = 2;
+            this.ckM_TextBox20.TabIndex = 3;
             this.ckM_TextBox20.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4XXXXXXXXX5";
             this.ckM_TextBox20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1536,7 +1527,7 @@
             this.ScBrand.ChangeDate = "";
             this.ScBrand.ChangeDateWidth = 100;
             this.ScBrand.Code = "";
-            this.ScBrand.CodeWidth = 60;
+            this.ScBrand.CodeWidth = 100;
             this.ScBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrand.DataCheck = false;
             this.ScBrand.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1546,7 +1537,7 @@
             this.ScBrand.Location = new System.Drawing.Point(136, 209);
             this.ScBrand.Name = "ScBrand";
             this.ScBrand.SearchEnable = true;
-            this.ScBrand.Size = new System.Drawing.Size(374, 27);
+            this.ScBrand.Size = new System.Drawing.Size(414, 27);
             this.ScBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrand.TabIndex = 8;
             this.ScBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -2665,7 +2656,7 @@
             this.ScSports.ChangeDate = "";
             this.ScSports.ChangeDateWidth = 100;
             this.ScSports.Code = "";
-            this.ScSports.CodeWidth = 40;
+            this.ScSports.CodeWidth = 100;
             this.ScSports.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSports.DataCheck = false;
             this.ScSports.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2675,7 +2666,7 @@
             this.ScSports.Location = new System.Drawing.Point(136, 253);
             this.ScSports.Name = "ScSports";
             this.ScSports.SearchEnable = true;
-            this.ScSports.Size = new System.Drawing.Size(354, 27);
+            this.ScSports.Size = new System.Drawing.Size(414, 27);
             this.ScSports.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.ScSports.TabIndex = 10;
             this.ScSports.TextSize = Search.CKM_SearchControl.FontSize.Normal;

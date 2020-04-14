@@ -225,9 +225,11 @@ namespace MasterTouroku_Shouhin
                 SetData();
 
                 SetEnabled();
+                SetEnabledForSet();
+                keyControls[(int)EIndex.JanCD].Enabled = false;
                 SetFuncKeyAll(this, "100000000001");
 
-                detailControls[0].Focus();
+                detailControls[(int)EIndex.SKUName].Focus();
             }
             catch (Exception ex)
             {
@@ -266,6 +268,23 @@ namespace MasterTouroku_Shouhin
                         break;
                 }
             }
+        }
+        private void SetEnabledForSet()
+        {
+            //セット品CB ONなら入力可	
+            lblSetKBN.Visible = ChkSetKbn.Checked;
+            lblSetKBN.ForeColor = System.Drawing.Color.Red;
+            keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
+            keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
+            ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
+
+            if (!ChkSetKbn.Checked)
+            {
+                //セット品以外の場合は、入力不可
+                keyControls[(int)EIndex.SetSKUCD].Text = "";
+                keyControls[(int)EIndex.SetSU].Text = "";
+            }
+
         }
         private void InitialControlArray()
         {
@@ -423,6 +442,7 @@ namespace MasterTouroku_Shouhin
         private bool CheckDetail(int index, bool set=true)
         {
             bool ret;
+            string ymd = lblChangeDate.Text;
 
             switch (index)
             {
@@ -447,7 +467,7 @@ namespace MasterTouroku_Shouhin
                     M_Vendor_Entity mce = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     ret = sbl.M_Vendor_SelectTop1(mce);
@@ -474,13 +494,13 @@ namespace MasterTouroku_Shouhin
                     {
                         SoukoCD = setSoukoCD,
                         TanaCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     ret = mibl.M_Location_SelectData(ml);
                     if (!ret)
                     {
                         //Ｅ２０４
-                        bbl.ShowMessage("E204");
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -729,6 +749,7 @@ namespace MasterTouroku_Shouhin
             detailControls[(int)EIndex.Rack].Text = mse.Rack;
             detailControls[(int)EIndex.PriceWithTax].Text =bbl.Z_SetStr( mse.PriceWithTax);
             detailControls[(int)EIndex.PriceOutTax].Text = bbl.Z_SetStr(mse.PriceOutTax);
+            detailControls[(int)EIndex.Rate].Text = bbl.Z_SetStr(mse.Rate);
             detailControls[(int)EIndex.OrderPriceWithTax].Text = bbl.Z_SetStr(mse.OrderPriceWithTax);
             detailControls[(int)EIndex.OrderPriceWithoutTax].Text = bbl.Z_SetStr(mse.OrderPriceWithoutTax);
             detailControls[(int)EIndex.SaleStartDate].Text = mse.SaleStartDate;
@@ -833,6 +854,7 @@ namespace MasterTouroku_Shouhin
                 KanaName=mie.KanaName,
                 SKUShortName=mie.SKUShortName,
                 EnglishName=mie.EnglishName,
+                MakerItem = mie.MakerItem,
                 MainVendorCD=mie.MainVendorCD,
                 BrandCD = mie.BrandCD,
                 BrandName = mie.BrandName,
@@ -1424,20 +1446,7 @@ namespace MasterTouroku_Shouhin
         {
             try
             {
-                //セット品CB ONなら入力可	
-                lblSetKBN.Visible = ChkSetKbn.Checked;
-                lblSetKBN.ForeColor = System.Drawing.Color.Red;
-                keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
-                keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
-                ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
-
-                if (!ChkSetKbn.Checked)
-                {
-                    //セット品以外の場合は、入力不可
-                    keyControls[(int)EIndex.SetSKUCD].Text = "";
-                    keyControls[(int)EIndex.SetSU].Text = "";
-                }
-
+                SetEnabledForSet();
             }
             catch (Exception ex)
             {

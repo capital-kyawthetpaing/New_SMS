@@ -37,11 +37,6 @@ namespace MasterTouroku_Shouhin
           , MakerItem
         , TaniCD
 
-          , ColorNO
-          , SizeNO
-          //, ColorName
-          //, SizeName
-
         , ChkVirtualFlg
         , ChkDiscontinueFlg
         , ChkStopFlg
@@ -120,7 +115,12 @@ namespace MasterTouroku_Shouhin
           , CommentOutStore
           , CommentInStore
           , WebAddress
-          
+
+          , ColorNO
+          , SizeNO
+          //, ColorName
+          //, SizeName
+
           , ApprovalDate                
           , DeleteFlg
           , COUNT
@@ -312,7 +312,6 @@ namespace MasterTouroku_Shouhin
             copyKeyControls = new Control[] { ScCopyITEM.TxtCode,ScCopyITEM.TxtChangeDate };
             detailControls = new Control[] {ckM_CheckBox19,ckM_CheckBox20,ckM_CheckBox21,ckM_CheckBox22
                 , ckM_TextBox6, ckM_TextBox24, ckM_TextBox20, ckM_TextBox25, ckM_TextBox4, ScTani.TxtCode
-                , ckM_TextBox2, ckM_TextBox1
 
                 ,ckM_CheckBox1,ckM_CheckBox2,ckM_CheckBox3,ckM_CheckBox4,ckM_CheckBox5,ckM_CheckBox6
                 ,ckM_CheckBox7,ckM_CheckBox8,ckM_CheckBox9,ckM_CheckBox10,ckM_CheckBox11,ckM_CheckBox12
@@ -327,6 +326,7 @@ namespace MasterTouroku_Shouhin
                 
                 , ckM_TextBox19, ckM_TextBox14, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3, ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
+                , ckM_TextBox2, ckM_TextBox1
                 ,ckM_TextBox16, checkDeleteFlg
             };
             detailLabels = new CKM_SearchControl[] { ScBrand, ScTani, ScSegmentCD, ScSports, ScVendor};
@@ -716,9 +716,17 @@ namespace MasterTouroku_Shouhin
                     if (!IsNumeric(jancd) || jancd.Length != 13)
                     {
                         bbl.ShowMessage("E220");
+                        dgvDetail.CurrentCell = dgvDetail[ColumnIndex, RowIndex];
                         dgvDetail.Focus();
                         return;
                     }
+                }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    dgvDetail.CurrentCell = dgvDetail[ColumnIndex, RowIndex];
+                    dgvDetail.Focus();
+                    return;
                 }
 
                 //サイズ名、カラー名が入力されていること
@@ -863,6 +871,7 @@ namespace MasterTouroku_Shouhin
         private bool CheckDetail(int index)
         {
             bool ret;
+            string ymd = ScITEM.ChangeDate;
 
             switch (index)
             {
@@ -874,6 +883,11 @@ namespace MasterTouroku_Shouhin
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
+                    }
+
+                    if (index.Equals((int)EIndex.SKUName) && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SKUShortName].Text))
+                    {
+                        detailControls[(int)EIndex.SKUShortName].Text =bbl.LeftB( detailControls[index].Text,40);
                     }
                     break;
 
@@ -956,7 +970,7 @@ namespace MasterTouroku_Shouhin
                     M_Vendor_Entity mce = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     ret = sbl.M_Vendor_SelectTop1(mce);
@@ -983,13 +997,13 @@ namespace MasterTouroku_Shouhin
                     {
                         SoukoCD = SoukoCD,
                         TanaCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     ret = mibl.M_Location_SelectData(ml);
                     if (!ret)
                     {
                         //Ｅ２０４
-                        bbl.ShowMessage("E204");
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -1342,7 +1356,7 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.OrderPriceWithoutTax:
                     case (int)EIndex.OrderPriceWithTax:
                         oldVal = oldVal.Replace(",", "");
-                        newVal=newVal.Replace(",", "");
+                        newVal= bbl.Z_SetStr(newVal).Replace(",", "");
                         break;
                     case (int)EIndex.OrderAttentionCD:
                     case (int)EIndex.CmbReserveCD:
@@ -1352,7 +1366,10 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.CmbConfirmCD:
                     case (int)EIndex.CmbTaxRateFLG:
                     case (int)EIndex.CmbCostingKBN:
-                        newVal = ((ComboBox)detailControls[index]).SelectedValue.ToString();
+                        if (((ComboBox)detailControls[index]).SelectedIndex > 0)
+                            newVal = ((ComboBox)detailControls[index]).SelectedValue.ToString();
+                        else
+                            newVal = "";
                         break;
                 }
                 switch (index)
@@ -1510,7 +1527,7 @@ namespace MasterTouroku_Shouhin
             mie.Rate = bbl.Z_SetStr(detailControls[(int)EIndex.Rate].Text);
             mie.SaleStartDate = detailControls[(int)EIndex.SaleStartDate].Text;
             mie.WebStartDate = detailControls[(int)EIndex.WebStartDate].Text;
-            mie.OrderAttentionCD = cmbOrderAttentionCD.SelectedValue != null ? cmbOrderAttentionCD.SelectedValue.ToString():"";
+            mie.OrderAttentionCD = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue.ToString():"";
             mie.OrderAttentionNote = detailControls[(int)EIndex.OrderAttentionNote].Text;
             mie.CommentInStore = detailControls[(int)EIndex.CommentInStore].Text;
             mie.CommentOutStore = detailControls[(int)EIndex.CommentOutStore].Text;
@@ -1640,6 +1657,110 @@ namespace MasterTouroku_Shouhin
                                 dr["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                             }
 
+                            if(rows.Length.Equals(0))
+                            {
+                                //セット品の場合は展開が必須
+                                if (!((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked)
+                                {
+
+                                    //新規データ
+                                    DataRow newrow = dtSKU.NewRow();
+
+                                    //SKU画面のChkAll参照
+                                    //データをDataTableに
+                                    newrow["ITemCD"] = mie.ITemCD;
+                                    newrow["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["ChangeDate"] = mie.ChangeDate;
+                                    newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
+                                    newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString();
+                                    newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString();
+
+                                    newrow["JanCD"] = jancd;
+                                    //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
+                                    //newrow["SetItemCD"] = keyControls[(int)EIndex.SetItemCD].Text;
+                                    newrow["SetSKUCD"] = "";
+                                    newrow["SetSU"] = 0;
+                                    newrow["ApprovalDate"] = detailControls[(int)EIndex.ApprovalDate].Text;
+
+                                    newrow["SKUName"] = detailControls[(int)EIndex.SKUName].Text;
+                                    newrow["KanaName"] = detailControls[(int)EIndex.KanaName].Text;
+                                    newrow["SKUShortName"] = detailControls[(int)EIndex.SKUShortName].Text;
+                                    newrow["EnglishName"] = detailControls[(int)EIndex.EnglishName].Text;
+                                    newrow["MakerItem"] = detailControls[(int)EIndex.MakerItem].Text;
+
+                                    newrow["VariousFLG"] = ((CheckBox)detailControls[(int)EIndex.ChkVariousFLG]).Checked ? 1 : 0;
+                                    newrow["SetKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked ? 1 : 0;
+                                    newrow["PresentKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkPresentKBN]).Checked ? 1 : 0;
+                                    newrow["SampleKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSampleKBN]).Checked ? 1 : 0;
+                                    newrow["DiscountKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscountKBN]).Checked ? 1 : 0;
+
+                                    newrow["WebFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebFlg]).Checked ? 1 : 0;
+                                    newrow["RealStoreFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkRealStoreFlg]).Checked ? 1 : 0;
+                                    newrow["MainVendorCD"] = detailControls[(int)EIndex.MainVendorCD].Text;
+                                    //newrow["MakerVendorCD"] = detailControls[(int)EIndex.MakerVendorCD].Text;
+
+                                    newrow["ZaikoKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkZaikoKBN]).Checked ? 1 : 0;
+                                    newrow["Rack"] = detailControls[(int)EIndex.Rack].Text;
+                                    newrow["VirtualFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkVirtualFlg]).Checked ? 1 : 0;
+                                    newrow["DirectFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDirectFlg]).Checked ? 1 : 0;
+
+                                    newrow["WebStockFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebStockFlg]).Checked ? 1 : 0;
+                                    newrow["StopFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStopFlg]).Checked ? 1 : 0;
+                                    newrow["DiscontinueFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscontinueFlg]).Checked ? 1 : 0;
+                                    newrow["InventoryAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkInventoryAddFlg]).Checked ? 1 : 0;
+                                    newrow["MakerAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkMakerAddFlg]).Checked ? 1 : 0;
+                                    newrow["StoreAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStoreAddFlg]).Checked ? 1 : 0;
+                                    newrow["NoNetOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkNoNetOrderFlg]).Checked ? 1 : 0;
+                                    newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
+                                    newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
+                                    newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
+                                    newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
+
+                                    newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;
+                                    newrow["PriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceWithTax].Text);
+                                    newrow["PriceOutTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceOutTax].Text);
+                                    newrow["OrderPriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithTax].Text);
+                                    newrow["OrderPriceWithoutTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithoutTax].Text);
+                                    newrow["Rate"] = bbl.Z_Set(detailControls[(int)EIndex.Rate].Text);
+                                    newrow["SaleStartDate"] = detailControls[(int)EIndex.SaleStartDate].Text;
+                                    newrow["WebStartDate"] = detailControls[(int)EIndex.WebStartDate].Text;
+                                    newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue : "";
+                                    newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
+                                    newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
+                                    newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
+                                    newrow["LastYearTerm"] = detailControls[(int)EIndex.LastYearTerm].Text;
+                                    newrow["LastSeason"] = detailControls[(int)EIndex.LastSeason].Text;
+                                    newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
+                                    newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
+                                    newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
+                                    newrow["LastInstructionsNO"] = detailControls[(int)EIndex.LastInstructionsNO].Text;
+                                    newrow["LastInstructionsDate"] = detailControls[(int)EIndex.LastInstructionsDate].Text;
+                                    newrow["WebAddress"] = detailControls[(int)EIndex.WebAddress].Text;
+                                    newrow["TagName1"] = detailControls[(int)EIndex.CmbTag1].Text;
+                                    newrow["TagName2"] = detailControls[(int)EIndex.CmbTag2].Text;
+                                    newrow["TagName3"] = detailControls[(int)EIndex.CmbTag3].Text;
+                                    newrow["TagName4"] = detailControls[(int)EIndex.CmbTag4].Text;
+                                    newrow["TagName5"] = detailControls[(int)EIndex.CmbTag5].Text;
+                                    newrow["TagName6"] = detailControls[(int)EIndex.CmbTag6].Text;
+                                    newrow["TagName7"] = detailControls[(int)EIndex.CmbTag7].Text;
+                                    newrow["TagName8"] = detailControls[(int)EIndex.CmbTag8].Text;
+                                    newrow["TagName9"] = detailControls[(int)EIndex.CmbTag9].Text;
+                                    newrow["TagName10"] = detailControls[(int)EIndex.CmbTag10].Text;
+
+                                    //チェックボックス
+                                    if (checkDeleteFlg.Checked)
+                                        newrow["DeleteFlg"] = 1;
+                                    else
+                                        newrow["DeleteFlg"] = 0;
+
+                                    //if (row.Length == 0)
+                                    //{
+                                    dtSKU.Rows.Add(newrow);
+                                    //}
+                                }
+                            }
+
                             me.JanCD = jancd;
                             bool noCheckFlg = false;
 
@@ -1692,7 +1813,7 @@ namespace MasterTouroku_Shouhin
             if (dt.Rows.Count == 0)
             {
                 //更新対象なし
-                bbl.ShowMessage("E102");
+                bbl.ShowMessage("E189");
                 dgvDetail.Focus();
                 return;
             }
@@ -2265,6 +2386,7 @@ namespace MasterTouroku_Shouhin
             ScSegmentCD.ChangeDate = ScITEM.ChangeDate;
             ScSports.ChangeDate = ScITEM.ChangeDate;
             ScVendor.ChangeDate = ScITEM.ChangeDate;
+            ScRackNo.ChangeDate = ScITEM.ChangeDate;
         }
         private void dgvDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2325,7 +2447,7 @@ namespace MasterTouroku_Shouhin
                     //同じ値のセルが複数あればエラー Ｅ１０５
                     for (int i = 1; i < dgvDetail.Rows.Count; i++)
                     {
-                        if (i != rowIndex && dgvDetail.Rows[i].Cells[1].Value == e.FormattedValue)
+                        if (i != rowIndex && dgvDetail.Rows[i].Cells[1].Value != null && dgvDetail.Rows[i].Cells[1].Value.Equals(e.FormattedValue))
                         {
                             bbl.ShowMessage("E105");
                             e.Cancel = true;
@@ -2338,7 +2460,7 @@ namespace MasterTouroku_Shouhin
                     // JANCD
                     //入力なしＯＫ
                     //重複OK
-                    dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.White;
+                    dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = rowIndex % 2 != 0 ? Color.FromArgb(221, 235, 247) : Color.White;
 
                     string jancd = e.FormattedValue.ToString();
 
@@ -2363,6 +2485,7 @@ namespace MasterTouroku_Shouhin
                         if (rows[0]["VirtualFlg"].ToString().Equals("1"))
                             dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.HotPink;
                     }
+                    
 
                     M_SKU_Entity me = new M_SKU_Entity();
                     me.ITemCD = keyControls[(int)EIndex.ItemCD].Text;
@@ -2381,26 +2504,26 @@ namespace MasterTouroku_Shouhin
                         }
                     }
 
-                    //画面上に重複するJANCDが存在する
-                    //重複チェック
-                    for (int i = 1; i < dgvDetail.Rows.Count; i++)
-                    {
-                        for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
-                        {
-                            if (i == rowIndex && ic == columnIndex)
-                                continue;
+                    ////画面上に重複するJANCDが存在する   F12押下時のみのチェックとする　4/13
+                    ////重複チェック
+                    //for (int i = 1; i < dgvDetail.Rows.Count; i++)
+                    //{
+                    //    for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
+                    //    {
+                    //        if (i == rowIndex && ic == columnIndex)
+                    //            continue;
 
-                            if (dgvDetail.Rows[i].Cells[ic].Value != null && dgvDetail.Rows[i].Cells[ic].Value.ToString().Equals(jancd))
-                            {
-                                if (bbl.ShowMessage("Q316") != DialogResult.Yes)
-                                {
-                                    e.Cancel = true;
-                                    return;
-                                }
-                                break;
-                            }
-                        }
-                    }
+                    //        if (dgvDetail.Rows[i].Cells[ic].Value != null && dgvDetail.Rows[i].Cells[ic].Value.ToString().Equals(jancd))
+                    //        {
+                    //            if (bbl.ShowMessage("Q316") != DialogResult.Yes)
+                    //            {
+                    //                e.Cancel = true;
+                    //                return;
+                    //            }
+                    //            break;
+                    //        }
+                    //    }
+                    //}
                 }
             }
             catch (Exception ex)
