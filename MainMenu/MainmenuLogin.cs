@@ -51,6 +51,7 @@ namespace MainMenu
             };
             return mse;
         }
+
         private void MainmenuLogin_Load(object sender, EventArgs e)
         {
             loginbl = new Login_BL();

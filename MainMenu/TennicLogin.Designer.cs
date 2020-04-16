@@ -195,7 +195,7 @@
             this.txtOperatorCD.BackColor = System.Drawing.Color.White;
             this.txtOperatorCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOperatorCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtOperatorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOperatorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtOperatorCD.DecimalPlace = 0;
             this.txtOperatorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtOperatorCD.IntegerPart = 0;
@@ -205,12 +205,11 @@
             this.txtOperatorCD.IsShop = false;
             this.txtOperatorCD.Length = 10;
             this.txtOperatorCD.Location = new System.Drawing.Point(320, 118);
-            this.txtOperatorCD.MaxLength = 10;
+            this.txtOperatorCD.MaxLength = 8;
             this.txtOperatorCD.MoveNext = true;
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(137, 19);
             this.txtOperatorCD.TabIndex = 0;
-            this.txtOperatorCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label2

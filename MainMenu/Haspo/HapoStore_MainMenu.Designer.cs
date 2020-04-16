@@ -698,6 +698,7 @@
             this.MaximizeBox = false;
             this.Name = "HapoStore_MainMenu";
             this.Text = "HapoStore_MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.HapoStore_MainMenu_FormClosing);
             this.Load += new System.EventHandler(this.HapoStore_MainMenu_Load);
             this.panel9.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
