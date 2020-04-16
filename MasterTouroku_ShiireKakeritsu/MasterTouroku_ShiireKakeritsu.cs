@@ -380,7 +380,6 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             //if(!string.IsNullOrWhiteSpace(scSupplierCD.TxtCode.Text))
             //{
             //    DataRow dtRow = dtMain.NewRow();
@@ -471,13 +470,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
             }
-
-           
         }
 
         private void btnChoice_Click(object sender, EventArgs e)
         {
-            //Checkstate(true);
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             if (dgv_ShiireKakeritsu.Rows.Count > 0)
             {
@@ -503,8 +499,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         {
                             dr[i]["Column1"] = "1";
                         }
-
-
                         //for (int i = 0; i < dtGrid.Rows.Count; i++)
                         //{
                         //    for (int j = 0; j < dtMain.Rows.Count; j++)
@@ -571,5 +565,18 @@ namespace MasterTouroku_ShiireKakeritsu
                 dgv_ShiireKakeritsu.Rows.RemoveAt(item.Index);
             }
         }
-    }
+
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dgvRow = new DataGridViewRow();
+            dgvRow.Cells[0].Value = scBrandCD.TxtCode.Text;
+            dgvRow.Cells[0].Value = scSportsCD.TxtCode.Text;
+            dgvRow.Cells[0].Value = scSegmentCD.TxtCode.Text;
+            dgvRow.Cells[0].Value = txtYear.Text;
+            dgvRow.Cells[0].Value = txtLastSeason.Text;
+            dgvRow.Cells[0].Value = txtChangeDate.Text;
+            dgvRow.Cells[0].Value = txtRate.Text;
+        }
+       
+        }
 }
