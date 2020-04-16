@@ -213,7 +213,7 @@
             this.ginko_name.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ginko_name.BackColor = System.Drawing.Color.White;
             this.ginko_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ginko_name.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.ginko_name.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ginko_name.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginko_name.DecimalPlace = 0;
             this.ginko_name.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -223,12 +223,12 @@
             this.ginko_name.isEnterKeyDown = false;
             this.ginko_name.IsNumber = true;
             this.ginko_name.IsShop = false;
-            this.ginko_name.Length = 30;
+            this.ginko_name.Length = 15;
             this.ginko_name.Location = new System.Drawing.Point(123, 7);
-            this.ginko_name.MaxLength = 30;
+            this.ginko_name.MaxLength = 15;
             this.ginko_name.MoveNext = true;
             this.ginko_name.Name = "ginko_name";
-            this.ginko_name.Size = new System.Drawing.Size(300, 19);
+            this.ginko_name.Size = new System.Drawing.Size(183, 19);
             this.ginko_name.TabIndex = 0;
             this.ginko_name.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -266,12 +266,12 @@
             this.ginko_kananame.isEnterKeyDown = false;
             this.ginko_kananame.IsNumber = true;
             this.ginko_kananame.IsShop = false;
-            this.ginko_kananame.Length = 12;
-            this.ginko_kananame.Location = new System.Drawing.Point(126, 39);
-            this.ginko_kananame.MaxLength = 12;
+            this.ginko_kananame.Length = 15;
+            this.ginko_kananame.Location = new System.Drawing.Point(124, 39);
+            this.ginko_kananame.MaxLength = 15;
             this.ginko_kananame.MoveNext = true;
             this.ginko_kananame.Name = "ginko_kananame";
-            this.ginko_kananame.Size = new System.Drawing.Size(300, 19);
+            this.ginko_kananame.Size = new System.Drawing.Size(183, 19);
             this.ginko_kananame.TabIndex = 1;
             this.ginko_kananame.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
