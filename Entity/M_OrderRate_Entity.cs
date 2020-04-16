@@ -12,6 +12,7 @@ namespace Entity
         public string BrandCD { get; set; }
         public string SportsCD { get; set; }
         public string SegmentCD { get; set; }
+        public string LastYearTerm{ get; set; }
         public string LastSeason { get; set; }
         public string ChangeDate { get; set; }
         public string Rate { get; set; }

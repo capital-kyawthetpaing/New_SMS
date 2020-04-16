@@ -41,6 +41,8 @@ namespace MasterTouroku_Shouhin
 
           , TaxRateFLGName
           , CostingKBNName
+                , SegmentCD
+                , SegmentName
 
           //KeyControl
           , JanCD = 0
@@ -223,9 +225,11 @@ namespace MasterTouroku_Shouhin
                 SetData();
 
                 SetEnabled();
+                SetEnabledForSet();
+                keyControls[(int)EIndex.JanCD].Enabled = false;
                 SetFuncKeyAll(this, "100000000001");
 
-                detailControls[0].Focus();
+                detailControls[(int)EIndex.SKUName].Focus();
             }
             catch (Exception ex)
             {
@@ -265,6 +269,23 @@ namespace MasterTouroku_Shouhin
                 }
             }
         }
+        private void SetEnabledForSet()
+        {
+            //セット品CB ONなら入力可	
+            lblSetKBN.Visible = ChkSetKbn.Checked;
+            lblSetKBN.ForeColor = System.Drawing.Color.Red;
+            keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
+            keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
+            ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
+
+            if (!ChkSetKbn.Checked)
+            {
+                //セット品以外の場合は、入力不可
+                keyControls[(int)EIndex.SetSKUCD].Text = "";
+                keyControls[(int)EIndex.SetSU].Text = "";
+            }
+
+        }
         private void InitialControlArray()
         {
             keyControls = new Control[] { SC_ITEM.TxtCode, ckM_TextBox16, ScSKUCD.TxtCode, ckM_TextBox15 };
@@ -285,7 +306,7 @@ namespace MasterTouroku_Shouhin
             };
             detailLabels = new Control[] {lblSKUCD, lblChangeDate, lblSizeNo, lblSizeName, lblColorNo, lblColorName
                                         ,lblMakerItem, label2, label11, label12, label13, label19, label20, label22, label23
-                                        ,label31, label32,label35,label36,label37,     ScVendor };
+                                        ,label31, label32,label35,label36,label37,label26,label10,     ScVendor };
             searchButtons = new Control[] { ScVendor.BtnSearch,ScSKUCD.BtnSearch };
 
             //イベント付与
@@ -421,6 +442,7 @@ namespace MasterTouroku_Shouhin
         private bool CheckDetail(int index, bool set=true)
         {
             bool ret;
+            string ymd = lblChangeDate.Text;
 
             switch (index)
             {
@@ -445,7 +467,7 @@ namespace MasterTouroku_Shouhin
                     M_Vendor_Entity mce = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     ret = sbl.M_Vendor_SelectTop1(mce);
@@ -472,13 +494,13 @@ namespace MasterTouroku_Shouhin
                     {
                         SoukoCD = setSoukoCD,
                         TanaCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     ret = mibl.M_Location_SelectData(ml);
                     if (!ret)
                     {
                         //Ｅ２０４
-                        bbl.ShowMessage("E204");
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -622,6 +644,8 @@ namespace MasterTouroku_Shouhin
 
             detailLabels[(int)EIndex.TaxRateFLGName].Text = mse.TaxRateFLGName;
             detailLabels[(int)EIndex.CostingKBNName].Text = mse.CostingKBNName;
+            detailLabels[(int)EIndex.SegmentCD].Text = mse.SegmentCD;
+            detailLabels[(int)EIndex.SegmentName].Text = mse.SegmentName;
 
             //Text
             if (mse.VariousFLG.Equals("1"))
@@ -725,6 +749,7 @@ namespace MasterTouroku_Shouhin
             detailControls[(int)EIndex.Rack].Text = mse.Rack;
             detailControls[(int)EIndex.PriceWithTax].Text =bbl.Z_SetStr( mse.PriceWithTax);
             detailControls[(int)EIndex.PriceOutTax].Text = bbl.Z_SetStr(mse.PriceOutTax);
+            detailControls[(int)EIndex.Rate].Text = bbl.Z_SetStr(mse.Rate);
             detailControls[(int)EIndex.OrderPriceWithTax].Text = bbl.Z_SetStr(mse.OrderPriceWithTax);
             detailControls[(int)EIndex.OrderPriceWithoutTax].Text = bbl.Z_SetStr(mse.OrderPriceWithoutTax);
             detailControls[(int)EIndex.SaleStartDate].Text = mse.SaleStartDate;
@@ -829,6 +854,7 @@ namespace MasterTouroku_Shouhin
                 KanaName=mie.KanaName,
                 SKUShortName=mie.SKUShortName,
                 EnglishName=mie.EnglishName,
+                MakerItem = mie.MakerItem,
                 MainVendorCD=mie.MainVendorCD,
                 BrandCD = mie.BrandCD,
                 BrandName = mie.BrandName,
@@ -836,6 +862,8 @@ namespace MasterTouroku_Shouhin
                 TaniName = mie.TaniName,
                 SportsCD = mie.SportsCD,
                 SportsName = mie.SportsName,
+                SegmentCD = mie.SegmentCD,
+                SegmentName = mie.SegmentName,
                 Rack = mie.Rack,
                 DirectFlg = mie.DirectFlg,
                 ReserveCD = mie.ReserveCD,
@@ -1418,20 +1446,7 @@ namespace MasterTouroku_Shouhin
         {
             try
             {
-                //セット品CB ONなら入力可	
-                lblSetKBN.Visible = ChkSetKbn.Checked;
-                lblSetKBN.ForeColor = System.Drawing.Color.Red;
-                keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
-                keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
-                ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
-
-                if (!ChkSetKbn.Checked)
-                {
-                    //セット品以外の場合は、入力不可
-                    keyControls[(int)EIndex.SetSKUCD].Text = "";
-                    keyControls[(int)EIndex.SetSU].Text = "";
-                }
-
+                SetEnabledForSet();
             }
             catch (Exception ex)
             {

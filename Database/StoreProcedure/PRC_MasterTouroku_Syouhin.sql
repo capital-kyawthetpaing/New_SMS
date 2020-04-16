@@ -8,6 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+
 CREATE PROCEDURE PRC_MasterTouroku_Syouhin
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
 
@@ -35,6 +36,7 @@ CREATE PROCEDURE PRC_MasterTouroku_Syouhin
     @MakerItem  varchar(50) ,
     @TaniCD  varchar(2) ,
     @SportsCD  varchar(6) ,
+    @SegmentCD varchar(6),
     @ZaikoKBN  tinyint ,
     @Rack  varchar(10) ,
     @VirtualFlg  tinyint ,
@@ -183,6 +185,7 @@ BEGIN
            ,[MakerItem]
            ,[TaniCD]
            ,[SportsCD]
+           ,[SegmentCD]
            ,[ZaikoKBN]
            ,[Rack]
            ,[VirtualFlg]
@@ -255,6 +258,7 @@ BEGIN
            ,@MakerItem
            ,@TaniCD
            ,@SportsCD
+           ,@SegmentCD
            ,@ZaikoKBN
            ,@Rack
            ,@VirtualFlg
@@ -394,6 +398,7 @@ BEGIN
            ,[MakerItem]              = @MakerItem
            ,[TaniCD]                 = @TaniCD
            ,[SportsCD]               = @SportsCD
+           ,[SegmentCD]              = @SegmentCD
            ,[ZaikoKBN]               = @ZaikoKBN
            ,[Rack]                   = @Rack
            ,[VirtualFlg]             = @VirtualFlg
@@ -547,6 +552,7 @@ BEGIN
                       ,[MakerItem]
                       ,[TaniCD]
                       ,[SportsCD]
+                      ,[SegmentCD]
                       ,[ZaikoKBN]
                       ,[Rack]
                       ,[VirtualFlg]
@@ -628,6 +634,7 @@ BEGIN
                        ,tbl.MakerItem
                        ,tbl.TaniCD
                        ,tbl.SportsCD
+                       ,tbl.SegmentCD
                        ,tbl.ZaikoKBN
                        ,tbl.Rack
                        ,tbl.VirtualFlg
@@ -816,6 +823,7 @@ BEGIN
                       ,[MakerItem]       = tbl.MakerItem
                       ,[TaniCD]          = tbl.TaniCD
                       ,[SportsCD]        = tbl.SportsCD
+                      ,[SegmentCD]       = tbl.SegmentCD
                       ,[ZaikoKBN]        = tbl.ZaikoKBN
                       ,[Rack ]           = tbl.Rack
                       ,[VirtualFlg]      = tbl.VirtualFlg
@@ -1076,4 +1084,5 @@ BEGIN
   return @W_ERR;
 
 END
+
 
