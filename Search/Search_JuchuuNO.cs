@@ -40,6 +40,8 @@ namespace Search
             ChkMisiire,
             ChkHachuAll,
 
+            StoreCD,
+
             CustomerCD,
             CustomerName,
             KanaName,
@@ -49,9 +51,6 @@ namespace Search
             VendorCD,
             VendorName,
             StaffCD,
-            SKUCD,
-            JanCD,
-            SKUName,
 
             DayStart,
             DayEnd,
@@ -64,7 +63,9 @@ namespace Search
             JuchuNoFrom,
             JuchuNoTo,
 
-            StoreCD,
+            SKUCD,
+            JanCD,
+            SKUName,
             COUNT
         }
 
@@ -95,10 +96,6 @@ namespace Search
             CboStoreCD.Bind(changeDate);
 
             //検索用のパラメータ設定
-            ScJuchuuNO.Value1 = OperatorCD;
-            ScJuchuuNO.Value2 = AllAvailableStores;
-            ScJuchuuNOTo.Value1 = OperatorCD;
-            ScJuchuuNOTo.Value2 = AllAvailableStores;
             ScCustomer.Value1 = "1";
 
             ssbl = new TempoJuchuuShoukai_BL();
@@ -131,8 +128,8 @@ namespace Search
                 BillingCloseDateTo = detailControls[(int)EIndex.BillingDateTo].Text,
                 CollectClearDateFrom = detailControls[(int)EIndex.CollectDateFrom].Text,
                 CollectClearDateTo = detailControls[(int)EIndex.CollectDateTo].Text,
-                JuchuuNOFrom = ScJuchuuNO.TxtCode.Text,
-                JuchuuNOTo = ScJuchuuNOTo.TxtCode.Text,
+                JuchuuNOFrom = detailControls[(int)EIndex.JuchuNoFrom].Text,
+                JuchuuNOTo = detailControls[(int)EIndex.JuchuNoTo].Text,
 
                 CustomerCD = ScCustomer.TxtCode.Text,
                 KanaName = detailControls[(int)EIndex.KanaName].Text,
@@ -311,11 +308,12 @@ namespace Search
             detailControls = new Control[] { ckM_CheckBox7,ckM_CheckBox5,ckM_CheckBox6,ckM_CheckBox1,ckM_CheckBox2
                 ,ckM_CheckBox8,ckM_CheckBox9,ckM_CheckBox3,ckM_CheckBox14,ckM_CheckBox15,ckM_CheckBox10,ckM_CheckBox11
                 ,ckM_CheckBox4,ckM_CheckBox12,ckM_CheckBox13
-                 ,ScCustomer.TxtCode,txtCustomerName, ckM_TextBox4,ckM_TextBox8, ckM_TextBox3,ckM_TextBox15
-                 ,ScVendor.TxtCode,txtVendorName, ScStaff.TxtCode, ckM_TextBox6, ckM_TextBox7, ckM_TextBox5
-                  ,ckM_TextBox1, ckM_TextBox2, ckM_TextBox10, ckM_TextBox9
-                 ,ckM_TextBox14, ckM_TextBox13,ckM_TextBox12, ckM_TextBox11,ScJuchuuNO.TxtCode,ScJuchuuNOTo.TxtCode
                 , CboStoreCD
+                 ,ScCustomer.TxtCode,txtCustomerName, ckM_TextBox4,ckM_TextBox8, ckM_TextBox3,ckM_TextBox15
+                 ,ScVendor.TxtCode,txtVendorName, ScStaff.TxtCode
+                  ,ckM_TextBox1, ckM_TextBox2, ckM_TextBox10, ckM_TextBox9
+                 ,ckM_TextBox14, ckM_TextBox13,ckM_TextBox12, ckM_TextBox11,ckM_TextBox17,ckM_TextBox16
+                 , ckM_TextBox6, ckM_TextBox7, ckM_TextBox5
                  };
 
             foreach (Control ctl in detailControls)
@@ -376,13 +374,33 @@ namespace Search
                     }
 
                     break;
+                case (int)EIndex.JuchuNoFrom:
+                case (int)EIndex.JuchuNoTo:
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        return true;
 
-                case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    //(From) ≧ (To)である場合Error
+                    if (index == (int)EIndex.JuchuNoTo)
                     {
-                        bbl.ShowMessage("E102");
-                        CboStoreCD.Focus();
-                        return false;
+                        if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {
+                            int result = detailControls[index].Text.CompareTo(detailControls[index - 1].Text);
+                            if (result < 0)
+                            {
+                                bbl.ShowMessage("E106");
+                                detailControls[index].Focus();
+                                return false;
+                            }
+                        }
+                    }
+                    break;
+                case (int)EIndex.StoreCD:
+                    //選択なくてもよい
+                    if (CboStoreCD.SelectedIndex <= 0)
+                    {
+                        //bbl.ShowMessage("E102");
+                        //CboStoreCD.Focus();
+                        return true;
                     }
                     else
                     {

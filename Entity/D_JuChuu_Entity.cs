@@ -38,6 +38,21 @@ namespace Entity
         public string Tel22 { get; set; }
         public string Tel23 { get; set; }
         public string CustomerKanaName { get; set; }
+        public string DeliveryCD { get; set; }
+        public string DeliveryName { get; set; }
+        public string DeliveryName2 { get; set; }
+        public string DeliveryAliasKBN { get; set; }
+        public string DeliveryZipCD1 { get; set; }
+        public string DeliveryZipCD2 { get; set; }
+        public string DeliveryAddress1 { get; set; }
+        public string DeliveryAddress2 { get; set; }
+        public string DeliveryTel11 { get; set; }
+        public string DeliveryTel12 { get; set; }
+        public string DeliveryTel13 { get; set; }
+        public string DeliveryTel21 { get; set; }
+        public string DeliveryTel22 { get; set; }
+        public string DeliveryTel23 { get; set; }
+        public string DeliveryKanaName { get; set; }
         public string JuchuuCarrierCD { get; set; }
         public string DecidedCarrierFLG { get; set; }
         public string LastCarrierCD { get; set; }

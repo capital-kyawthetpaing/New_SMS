@@ -491,6 +491,7 @@ namespace Search
                     txtCode.MaxLength = 13;
                     txtCode.Width = 110;
                     lblName.Width = 190;
+                    txtCode.Ctrl_Type = CKM_TextBox.Type.Number;
                     break;
                 case SearchType.MakerItem:
                     txtCode.MaxLength = 30;

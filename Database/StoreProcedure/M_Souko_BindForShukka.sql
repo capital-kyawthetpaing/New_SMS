@@ -1,5 +1,5 @@
  BEGIN TRY 
- Drop Procedure dbo.[M_Souko_IsExists]
+ Drop Procedure dbo.[M_Souko_BindForShukka]
 END try
 BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
@@ -13,11 +13,10 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[M_Souko_IsExists]
+CREATE PROCEDURE [dbo].[M_Souko_BindForShukka]
 	-- Add the parameters for the stored procedure here
-	@SoukoCD varchar(13),
-	@ChangeDate date,
-	@DeleteFlg tinyint
+	@ChangeDate as date,
+	@DeleteFlg as tinyint
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -25,8 +24,10 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	select ms.SoukoName, ms.StoreCD from
-	F_Souko(cast(@ChangeDate as varchar(10))) ms
-	where ms.SoukoCD = @SoukoCD
+	select ms.SoukoCD,ms.SoukoName from M_Souko ms
+	inner join F_Souko(cast(@ChangeDate as varchar(10))) fs on ms.SoukoCD = fs.SoukoCD
+	and ms.ChangeDate = fs.ChangeDate
+	AND MS.SoukoType IN (1,2,3,4)
+	ORDER BY ms.SoukoCD
 END
 

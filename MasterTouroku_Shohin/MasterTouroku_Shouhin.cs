@@ -90,7 +90,7 @@ namespace MasterTouroku_Shouhin
           , OrderPriceWithoutTax
           , OrderPriceWithTax
 
-          , OrderAttentionCD
+          , CmbOrderAttentionCD
           , OrderAttentionNote
 
           , CmbTag1
@@ -104,8 +104,8 @@ namespace MasterTouroku_Shouhin
             , CmbTag9
             , CmbTag10
 
-          , LastYearTerm
-          , LastSeason
+          , CmbLastYearTerm
+          , CmbLastSeason
           , LastCatalogNO
           , LastCatalogPage
           , LastCatalogText
@@ -202,6 +202,7 @@ namespace MasterTouroku_Shouhin
                 mse.ChangeDate = ymd;
                 mse.StoreCD = me.StoreCD;
                 mse.DeleteFlg = "0";
+                mse.searchType = "1";
 
                 //[M_Souko_Search]
                 ret = mibl.M_Souko_Search(mse);
@@ -214,6 +215,8 @@ namespace MasterTouroku_Shouhin
                 ckM_ComboBox3.Bind(ymd, "2");
                 ckM_ComboBox4.Bind(ymd, "2");
                 ckM_ComboBox5.Bind(ymd, "2");
+                CmbLastYearTerm.Bind(ymd);
+                CmbLastSeason.Bind(ymd);
 
                 for (int i = (int)EIndex.CmbTag1; i <= (int)EIndex.CmbTag10; i++)
                 {
@@ -324,7 +327,7 @@ namespace MasterTouroku_Shouhin
                 ,ckM_ComboBox8,ckM_ComboBox9,ckM_ComboBox10,ckM_ComboBox11,ckM_ComboBox12,ckM_ComboBox13
                 ,ckM_ComboBox14,ckM_ComboBox15,ckM_ComboBox16,ckM_ComboBox17
                 
-                , ckM_TextBox19, ckM_TextBox14, ckM_TextBox22, ckM_TextBox23,TxtRemark
+                , CmbLastYearTerm, CmbLastSeason, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3, ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
                 , ckM_TextBox2, ckM_TextBox1
                 ,ckM_TextBox16, checkDeleteFlg
@@ -407,18 +410,6 @@ namespace MasterTouroku_Shouhin
                 switch (index)
                 {
                     case (int)EIndex.ItemCD:
-
-                        //入力なければチェックなし
-                        if (copyKeyControls[index].Text == "")
-                        {
-                            copyKeyControls[index].Focus();
-                            return false;
-                        }
-                        else
-                        {
-                            //マスタデータチェック
-
-                        }
                         break;
 
                     case (int)EIndex.ChangeDate:
@@ -435,7 +426,7 @@ namespace MasterTouroku_Shouhin
 
                         //複写商品CDに入力がある場合、(When there is an input in 複写商品CD)Ｅ１０２
                         //必須入力
-                        if (copyKeyControls[(int)EIndex.ItemCD].Text != "" )
+                        if (!string.IsNullOrWhiteSpace( copyKeyControls[(int)EIndex.ItemCD].Text))
                         {
                             if (!RequireCheck(new Control[] { copyKeyControls[index] }))
                             {
@@ -632,8 +623,8 @@ namespace MasterTouroku_Shouhin
                         detailControls[(int)EIndex.OrderAttentionNote].Text = mie.OrderAttentionNote;
                         detailControls[(int)EIndex.CommentInStore].Text = mie.CommentInStore;
                         detailControls[(int)EIndex.CommentOutStore].Text = mie.CommentOutStore;
-                        detailControls[(int)EIndex.LastYearTerm].Text = mie.LastYearTerm;
-                        detailControls[(int)EIndex.LastSeason].Text = mie.LastSeason;
+                        ((ComboBox)detailControls[(int)EIndex.CmbLastYearTerm]).SelectedValue = mie.LastYearTerm;
+                        ((ComboBox)detailControls[(int)EIndex.CmbLastSeason]).SelectedValue = mie.LastSeason;
                         detailControls[(int)EIndex.LastCatalogNO].Text = mie.LastCatalogNO;
                         detailControls[(int)EIndex.LastCatalogPage].Text = mie.LastCatalogPage;
                         detailControls[(int)EIndex.LastCatalogText].Text = mie.LastCatalogText;
@@ -709,9 +700,9 @@ namespace MasterTouroku_Shouhin
 
                 //Gridの全ての値についてチェック
 
-                string jancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].EditedFormattedValue.ToString();
+                string jancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].EditedFormattedValue.ToString().Trim();
                 // 13桁の数字であること Ｅ２２０
-                if (!string.IsNullOrEmpty(jancd))
+                if (!string.IsNullOrWhiteSpace(jancd))
                 {
                     if (!IsNumeric(jancd) || jancd.Length != 13)
                     {
@@ -752,11 +743,11 @@ namespace MasterTouroku_Shouhin
                 using (MasterTouroku_SKU frmSku = new MasterTouroku_SKU(mie, dtSKU, dtSite, OperationMode))
                 {
                     frmSku.parSKUCD = mie.MakerItem;
-                    frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString();
+                    frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.parColorNo = dgvDetail.Rows[RowIndex].Cells[0].Value.ToString();
-                    frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString();
+                    frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString().Trim();
                     frmSku.parSizeNo = dgvDetail.Columns[ColumnIndex].HeaderText;
-                    frmSku.parSizeName = dgvDetail.Rows[0].Cells[ColumnIndex].Value.ToString();
+                    frmSku.parSizeName = dgvDetail.Rows[0].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.setSoukoCD = SoukoCD;
                     frmSku.parFractionKBN = mFractionKBN;
 
@@ -1279,10 +1270,10 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.Rate: name = "Rate"; oldVal = mie.Rate == null ? "0" : mie.Rate; break;
                     case (int)EIndex.OrderPriceWithoutTax: name = "OrderPriceWithoutTax"; oldVal = mie.OrderPriceWithoutTax == null ? "0" : mie.OrderPriceWithoutTax; break;
                     case (int)EIndex.OrderPriceWithTax: name = "OrderPriceWithTax"; oldVal = mie.OrderPriceWithTax == null ? "0" : mie.OrderPriceWithTax; break;
-                    case (int)EIndex.OrderAttentionCD: name = "OrderAttentionCD"; oldVal = "'" + mie.OrderAttentionCD + "'"; break;
+                    case (int)EIndex.CmbOrderAttentionCD: name = "OrderAttentionCD"; oldVal = "'" + mie.OrderAttentionCD + "'"; break;
                     case (int)EIndex.OrderAttentionNote: name = "OrderAttentionNote"; oldVal = "'" + mie.OrderAttentionNote + "'"; break;
-                    case (int)EIndex.LastYearTerm: name = "LastYearTerm"; oldVal = "'" + mie.LastYearTerm + "'"; break;
-                    case (int)EIndex.LastSeason: name = "LastSeason"; oldVal = "'" + mie.LastSeason + "'"; break;
+                    case (int)EIndex.CmbLastYearTerm: name = "LastYearTerm"; oldVal = "'" + mie.LastYearTerm + "'"; break;
+                    case (int)EIndex.CmbLastSeason: name = "LastSeason"; oldVal = "'" + mie.LastSeason + "'"; break;
                     case (int)EIndex.LastCatalogNO: name = "LastCatalogNO"; oldVal = "'" + mie.LastCatalogNO + "'"; break;
                     case (int)EIndex.LastCatalogPage: name = "LastCatalogPage"; oldVal = "'" + mie.LastCatalogPage + "'"; break;
                     case (int)EIndex.LastCatalogText: name = "LastCatalogText"; oldVal = "'" + mie.LastCatalogText + "'"; break;
@@ -1358,7 +1349,7 @@ namespace MasterTouroku_Shouhin
                         oldVal = oldVal.Replace(",", "");
                         newVal= bbl.Z_SetStr(newVal).Replace(",", "");
                         break;
-                    case (int)EIndex.OrderAttentionCD:
+                    case (int)EIndex.CmbOrderAttentionCD:
                     case (int)EIndex.CmbReserveCD:
                     case (int)EIndex.CmbNoticesCD:
                     case (int)EIndex.CmbPostageCD:
@@ -1366,6 +1357,8 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.CmbConfirmCD:
                     case (int)EIndex.CmbTaxRateFLG:
                     case (int)EIndex.CmbCostingKBN:
+                    case (int)EIndex.CmbLastYearTerm:
+                    case (int)EIndex.CmbLastSeason:
                         if (((ComboBox)detailControls[index]).SelectedIndex > 0)
                             newVal = ((ComboBox)detailControls[index]).SelectedValue.ToString();
                         else
@@ -1405,6 +1398,19 @@ namespace MasterTouroku_Shouhin
             {
                 row[name] = newVal;
             }
+        }
+
+        private bool IsSameVal(object val1, object val2)
+        {
+            bool ret = false;
+
+            if (val1 == null || val2 == null)
+                return ret;
+
+            if (val1.ToString().Trim() == val2.ToString().Trim())
+                ret = true;
+
+            return ret;
         }
         /// <summary>
         /// 画面情報をセット
@@ -1531,8 +1537,8 @@ namespace MasterTouroku_Shouhin
             mie.OrderAttentionNote = detailControls[(int)EIndex.OrderAttentionNote].Text;
             mie.CommentInStore = detailControls[(int)EIndex.CommentInStore].Text;
             mie.CommentOutStore = detailControls[(int)EIndex.CommentOutStore].Text;
-            mie.LastYearTerm = detailControls[(int)EIndex.LastYearTerm].Text;
-            mie.LastSeason = detailControls[(int)EIndex.LastSeason].Text;
+            mie.LastYearTerm = CmbLastYearTerm.SelectedIndex > 0 ? CmbLastYearTerm.SelectedValue.ToString() : ""; 
+            mie.LastSeason = CmbLastSeason.SelectedIndex > 0 ? CmbLastSeason.SelectedValue.ToString() : ""; 
             mie.LastCatalogNO = detailControls[(int)EIndex.LastCatalogNO].Text;
             mie.LastCatalogPage = detailControls[(int)EIndex.LastCatalogPage].Text;
             mie.LastCatalogText = detailControls[(int)EIndex.LastCatalogText].Text;
@@ -1613,7 +1619,7 @@ namespace MasterTouroku_Shouhin
                             foreach (DataRow rw in row)
                             {
                                 //サイズ名をセット
-                                rw["SizeName"] = dgvDetail.Rows[0].Cells[ic].Value.ToString();
+                                rw["SizeName"] = dgvDetail.Rows[0].Cells[ic].Value.ToString().Trim();
                             }
                         }
                     }
@@ -1635,7 +1641,7 @@ namespace MasterTouroku_Shouhin
                                 foreach (DataRow rw in row)
                                 {
                                     //カラー名をセット
-                                    rw["ColorName"] = dgvDetail.Rows[i].Cells[1].Value.ToString();
+                                    rw["ColorName"] = dgvDetail.Rows[i].Cells[1].Value.ToString().Trim();
                                 }                              
                             }
                         }
@@ -1647,7 +1653,7 @@ namespace MasterTouroku_Shouhin
                             if (dgvDetail.Rows[rowIndex].Cells[columnIndex].Value == null)
                                 continue;
 
-                            string jancd = dgvDetail.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+                            string jancd = dgvDetail.Rows[rowIndex].Cells[columnIndex].Value.ToString().Trim();
 
                             // parSKUCD + parSizeNo + parColorNo
                             DataRow[] rows = dtSKU.Select("SizeNo = " + dgvDetail.Columns[columnIndex].HeaderText
@@ -1673,8 +1679,8 @@ namespace MasterTouroku_Shouhin
                                     newrow["ChangeDate"] = mie.ChangeDate;
                                     newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                                     newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
-                                    newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString();
-                                    newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString();
+                                    newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                                    newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
 
                                     newrow["JanCD"] = jancd;
                                     //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
@@ -1729,8 +1735,8 @@ namespace MasterTouroku_Shouhin
                                     newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
                                     newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
                                     newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
-                                    newrow["LastYearTerm"] = detailControls[(int)EIndex.LastYearTerm].Text;
-                                    newrow["LastSeason"] = detailControls[(int)EIndex.LastSeason].Text;
+                                    newrow["LastYearTerm"] = detailControls[(int)EIndex.CmbLastYearTerm].Text;
+                                    newrow["LastSeason"] = detailControls[(int)EIndex.CmbLastSeason].Text;
                                     newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
                                     newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
                                     newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
@@ -1768,7 +1774,7 @@ namespace MasterTouroku_Shouhin
                             {
                                 for (int col = columnIndex + 1; col < dgvDetail.ColumnCount; col++)
                                 {
-                                    if (dgvDetail.Rows[row].Cells[col].Value != null && dgvDetail.Rows[row].Cells[col].Value.Equals(jancd))
+                                    if (IsSameVal(dgvDetail.Rows[row].Cells[col].Value, jancd))
                                     {
                                         if (bbl.ShowMessage("Q316") != DialogResult.Yes)
                                         {
@@ -2411,7 +2417,7 @@ namespace MasterTouroku_Shouhin
                 {
                     //サイズ名
                     //必須入力
-                    if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
                     {
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Size Name must not be empty";
@@ -2421,9 +2427,9 @@ namespace MasterTouroku_Shouhin
                     }
 
                     //同じ値のセルが複数あればエラー Ｅ１０５
-                    for(int i = 2; i<dgvDetail.Columns.Count; i++)
+                    for (int i = 2; i<dgvDetail.Columns.Count; i++)
                     {
-                        if(i != columnIndex && dgvDetail.Rows[0].Cells[i].Value != null && dgvDetail.Rows[0].Cells[i].Value.Equals(e.FormattedValue))
+                        if(i != columnIndex && IsSameVal(dgvDetail.Rows[0].Cells[i].Value, e.FormattedValue))
                         {
                             bbl.ShowMessage("E105");
                             e.Cancel = true;
@@ -2435,7 +2441,7 @@ namespace MasterTouroku_Shouhin
                 {
                     //カラー名
                     //必須入力
-                    if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
                     {
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Color Name must not be empty";
@@ -2447,7 +2453,7 @@ namespace MasterTouroku_Shouhin
                     //同じ値のセルが複数あればエラー Ｅ１０５
                     for (int i = 1; i < dgvDetail.Rows.Count; i++)
                     {
-                        if (i != rowIndex && dgvDetail.Rows[i].Cells[1].Value != null && dgvDetail.Rows[i].Cells[1].Value.Equals(e.FormattedValue))
+                        if (i != rowIndex && IsSameVal(dgvDetail.Rows[i].Cells[1].Value, e.FormattedValue))
                         {
                             bbl.ShowMessage("E105");
                             e.Cancel = true;
@@ -2462,10 +2468,10 @@ namespace MasterTouroku_Shouhin
                     //重複OK
                     dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = rowIndex % 2 != 0 ? Color.FromArgb(221, 235, 247) : Color.White;
 
-                    string jancd = e.FormattedValue.ToString();
+                    string jancd = e.FormattedValue.ToString().Trim();
 
                     //13桁の数字であること Ｅ２２０
-                    if (!string.IsNullOrEmpty(jancd))
+                    if (!string.IsNullOrWhiteSpace(jancd))
                     {
                         if (!IsNumeric(jancd) || jancd.Length != 13)
                         {
@@ -2481,6 +2487,8 @@ namespace MasterTouroku_Shouhin
                     if(rows.Length > 0 )
                     {
                         rows[0]["JANCD"] = jancd;
+                        rows[0]["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                        rows[0]["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
 
                         if (rows[0]["VirtualFlg"].ToString().Equals("1"))
                             dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.HotPink;

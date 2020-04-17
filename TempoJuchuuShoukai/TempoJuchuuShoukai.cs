@@ -36,6 +36,7 @@ namespace TempoJuchuuShoukai
             ChkMisiire,
             ChkHachuAll,
 
+            StoreCD,
             CustomerCD,
             KanaName,
             Tel1,
@@ -43,9 +44,6 @@ namespace TempoJuchuuShoukai
             Tel3,
             VendorCD,
             StaffCD,
-            SKUCD,
-            JanCD,
-            SKUName,
 
             DayStart,
             DayEnd,
@@ -58,7 +56,9 @@ namespace TempoJuchuuShoukai
             JuchuNoFrom,
             JuchuNoTo,
 
-            StoreCD,
+            SKUCD,
+            JanCD,
+            SKUName,
             COUNT
         }
 
@@ -100,7 +100,8 @@ namespace TempoJuchuuShoukai
 
                 //初期値セット
                 ssbl = new TempoJuchuuShoukai_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = ssbl.GetDate();
+                CboStoreCD.Bind(ymd);
 
                 //検索用のパラメータ設定
                 string stores = GetAllAvailableStores();
@@ -311,11 +312,12 @@ namespace TempoJuchuuShoukai
             detailControls = new Control[] { ckM_CheckBox7,ckM_CheckBox5,ckM_CheckBox6,ckM_CheckBox1,ckM_CheckBox2
                 ,ckM_CheckBox8,ckM_CheckBox9,ckM_CheckBox10,ckM_CheckBox11
                 ,ckM_CheckBox4,ckM_CheckBox12,ckM_CheckBox13
+                , CboStoreCD
                  ,ScCustomer.TxtCode, ckM_TextBox4,ckM_TextBox8, ckM_TextBox3,ckM_TextBox15
-                 ,ScVendor.TxtCode,ScStaff.TxtCode, ckM_TextBox6, ckM_TextBox7, ckM_TextBox5
+                 ,ScVendor.TxtCode,ScStaff.TxtCode
                   ,ckM_TextBox1, ckM_TextBox2, ckM_TextBox10, ckM_TextBox9
                  ,ckM_TextBox14, ckM_TextBox13,ckM_TextBox12, ckM_TextBox11,ScJuchuuNO.TxtCode,ScJuchuuNOTo.TxtCode
-                , CboStoreCD
+                 , ckM_TextBox6, ckM_TextBox7, ckM_TextBox5
                  };
 
             foreach (Control ctl in detailControls)
@@ -378,11 +380,13 @@ namespace TempoJuchuuShoukai
                     break;
 
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    //選択なくてもよい
+                    if (CboStoreCD.SelectedIndex <= 0)
                     {
-                        bbl.ShowMessage("E102");
-                        CboStoreCD.Focus();
-                        return false;
+                        //bbl.ShowMessage("E102");
+                        //CboStoreCD.Focus();
+                        //return false;
+                        return true;
                     }
                     else
                     {

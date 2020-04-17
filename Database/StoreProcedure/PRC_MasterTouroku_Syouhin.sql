@@ -8,6 +8,111 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+--  ======================================================================
+--       Program Call    商品マスタ
+--       Program ID      MasterTouroku_Syouhin
+--       Create date:    2020.3.8
+--    ======================================================================
+--CREATE TYPE [T_Site] AS TABLE(
+--	[AdminNO]  int
+--   ,[ColorNO]  int
+--   ,[SizeNO]  int
+--   ,[APIKey] tinyint
+--   ,[ShouhinCD] varchar(30)
+--   ,[SiteURL] varchar(300)
+--)
+--GO
+
+--CREATE TYPE [T_SKU] AS TABLE(
+--    [RowNO]  int
+--   ,[AdminNO]  int
+--   ,[SKUCD]  varchar(30)
+--   ,[ChangeDate]  date
+--   ,[VariousFLG]  tinyint
+--   ,[SKUName]  varchar(100)
+--   ,[KanaName]  varchar(50)
+--   ,[SKUShortName]  varchar(40)
+--   ,[EnglishName]  varchar(80)
+--   ,[ITemCD]  varchar(30)
+--   ,[ColorNO]  int
+--   ,[SizeNO]  int
+--   ,[JanCD]  varchar(13)
+--   ,[SetKBN]  tinyint
+--   ,[PresentKBN]  tinyint
+--   ,[SampleKBN]  tinyint
+--   ,[DiscountKBN]  tinyint
+--   ,[ColorName]  varchar(20)
+--   ,[SizeName]  varchar(20)
+--   ,[WebFlg]  tinyint
+--   ,[RealStoreFlg]  tinyint
+--   ,[MainVendorCD]  varchar(13)
+--   ,[MakerVendorCD]  varchar(13)
+--   ,[BrandCD]  varchar(6)
+--   ,[MakerItem]  varchar(50)
+--   ,[TaniCD]  varchar(2)
+--   ,[SportsCD]  varchar(6)
+--   ,[SegmentCD] varchar(6)
+--   ,[ZaikoKBN]  tinyint
+--   ,[Rack]  varchar(10)
+--   ,[VirtualFlg]  tinyint
+--   ,[DirectFlg]  tinyint
+--   ,[ReserveCD]  varchar(3)
+--   ,[NoticesCD]  varchar(3)
+--   ,[PostageCD]  varchar(3)
+--   ,[ManufactCD]  varchar(3)
+--   ,[ConfirmCD]  varchar(3)
+--   ,[WebStockFlg]  tinyint
+--   ,[StopFlg]  tinyint
+--   ,[DiscontinueFlg]  tinyint
+--   ,[InventoryAddFlg]  tinyint
+--   ,[MakerAddFlg]  tinyint
+--   ,[StoreAddFlg]  tinyint
+--   ,[NoNetOrderFlg]  tinyint
+--   ,[EDIOrderFlg]  tinyint
+--   ,[CatalogFlg]  tinyint
+--   ,[ParcelFlg]  tinyint
+--   ,[AutoOrderFlg]  tinyint
+--   ,[TaxRateFLG]  tinyint
+--   ,[CostingKBN]  tinyint
+--   ,[SaleExcludedFlg]  tinyint
+--   ,[PriceWithTax]  money
+--   ,[PriceOutTax]  money
+--   ,[OrderPriceWithTax]  money
+--   ,[OrderPriceWithoutTax]  money
+--   ,[Rate] decimal(5,2)
+--   ,[SaleStartDate]  date
+--   ,[WebStartDate]  date
+--   ,[OrderAttentionCD]  varchar(3)
+--   ,[OrderAttentionNote]  varchar(100)
+--   ,[CommentInStore]  varchar(300)
+--   ,[CommentOutStore]  varchar(300)
+--   ,[LastYearTerm]  varchar(6)
+--   ,[LastSeason]  varchar(6)
+--   ,[LastCatalogNO]  varchar(20)
+--   ,[LastCatalogPage]  varchar(20)
+--   ,[LastCatalogText]  varchar(1000)
+--   ,[LastInstructionsNO]  varchar(1000)
+--   ,[LastInstructionsDate]  date
+--   ,[WebAddress]  varchar(200)
+--   ,[ApprovalDate]  date
+--   ,[TagName1]  varchar(20)
+--   ,[TagName2]  varchar(20)
+--   ,[TagName3]  varchar(20)
+--   ,[TagName4]  varchar(20)
+--   ,[TagName5]  varchar(20)
+--   ,[TagName6]  varchar(20)
+--   ,[TagName7]  varchar(20)
+--   ,[TagName8]  varchar(20)
+--   ,[TagName9]  varchar(20)
+--   ,[TagName10]  varchar(20)
+--   ,[SetAdminCD]  int
+--   ,[SetItemCD]  varchar(30)
+--   ,[SetSKUCD]  varchar(30)
+--   ,[SetSU]  int
+--   ,[DeleteFlg] [tinyint]
+--   ,[UpdateFlg] [tinyint] NULL
+--)
+--GO
 
 CREATE PROCEDURE PRC_MasterTouroku_Syouhin
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
@@ -1035,7 +1140,7 @@ BEGIN
                    ,[ChangeDate]
                    ,[Rate]
                    ,[PriceWithoutTax]
-                   ,[Remarks]
+                   --,[Remarks]
                    ,[DeleteFlg]
                    ,[UsedFlg]
                    ,[InsertOperator]
@@ -1048,7 +1153,7 @@ BEGIN
                    ,@ChangeDate
                    ,tbl.Rate
                    ,tbl.PriceOutTax
-                   ,NULL AS Remarks
+                   --,NULL AS Remarks
                    ,0   --[DeleteFlg]
                    ,0   --[UsedFlg]
                    ,@Operator  
@@ -1084,5 +1189,4 @@ BEGIN
   return @W_ERR;
 
 END
-
 

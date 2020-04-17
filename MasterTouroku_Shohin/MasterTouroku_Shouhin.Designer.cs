@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -97,8 +97,6 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox14 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox19 = new CKM_Controls.CKM_TextBox();
             this.TxtRemark = new CKM_Controls.CKM_MultiLineTextBox();
             this.ScBrand = new Search.CKM_SearchControl();
             this.label42 = new CKM_Controls.CKM_Label();
@@ -171,6 +169,8 @@
             this.ScVendor = new Search.CKM_SearchControl();
             this.ScRackNo = new Search.CKM_SearchControl();
             this.ScTani = new Search.CKM_SearchControl();
+            this.CmbLastYearTerm = new CKM_Controls.CKM_ComboBox();
+            this.CmbLastSeason = new CKM_Controls.CKM_ComboBox();
             this.ScCopyITEM = new Search.CKM_SearchControl();
             this.ScITEM = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
@@ -348,8 +348,6 @@
             this.PanelDetail.Controls.Add(this.ckM_Label3);
             this.PanelDetail.Controls.Add(this.ckM_Label2);
             this.PanelDetail.Controls.Add(this.ckM_Label1);
-            this.PanelDetail.Controls.Add(this.ckM_TextBox14);
-            this.PanelDetail.Controls.Add(this.ckM_TextBox19);
             this.PanelDetail.Controls.Add(this.TxtRemark);
             this.PanelDetail.Controls.Add(this.ScBrand);
             this.PanelDetail.Controls.Add(this.label42);
@@ -394,6 +392,8 @@
             this.PanelDetail.Controls.Add(this.ScVendor);
             this.PanelDetail.Controls.Add(this.ScRackNo);
             this.PanelDetail.Controls.Add(this.ScTani);
+            this.PanelDetail.Controls.Add(this.CmbLastYearTerm);
+            this.PanelDetail.Controls.Add(this.CmbLastSeason);
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetail.Location = new System.Drawing.Point(0, 120);
             this.PanelDetail.Name = "PanelDetail";
@@ -929,17 +929,17 @@
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetail.ColumnHeadersHeight = 25;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colColorNo,
@@ -1425,7 +1425,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(605, 305);
+            this.ckM_Label2.Location = new System.Drawing.Point(605, 306);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 679;
@@ -1442,63 +1442,13 @@
             this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(618, 286);
+            this.ckM_Label1.Location = new System.Drawing.Point(618, 288);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 678;
             this.ckM_Label1.Text = "年　度";
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_TextBox14
-            // 
-            this.ckM_TextBox14.AllowMinus = false;
-            this.ckM_TextBox14.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox14.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox14.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox14.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox14.DecimalPlace = 0;
-            this.ckM_TextBox14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox14.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox14.IntegerPart = 0;
-            this.ckM_TextBox14.IsCorrectDate = true;
-            this.ckM_TextBox14.isEnterKeyDown = false;
-            this.ckM_TextBox14.IsNumber = true;
-            this.ckM_TextBox14.IsShop = false;
-            this.ckM_TextBox14.Length = 6;
-            this.ckM_TextBox14.Location = new System.Drawing.Point(667, 303);
-            this.ckM_TextBox14.MaxLength = 6;
-            this.ckM_TextBox14.MoveNext = true;
-            this.ckM_TextBox14.Name = "ckM_TextBox14";
-            this.ckM_TextBox14.Size = new System.Drawing.Size(49, 19);
-            this.ckM_TextBox14.TabIndex = 45;
-            this.ckM_TextBox14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_TextBox19
-            // 
-            this.ckM_TextBox19.AllowMinus = false;
-            this.ckM_TextBox19.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox19.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox19.DecimalPlace = 0;
-            this.ckM_TextBox19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox19.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox19.IntegerPart = 0;
-            this.ckM_TextBox19.IsCorrectDate = true;
-            this.ckM_TextBox19.isEnterKeyDown = false;
-            this.ckM_TextBox19.IsNumber = true;
-            this.ckM_TextBox19.IsShop = false;
-            this.ckM_TextBox19.Length = 6;
-            this.ckM_TextBox19.Location = new System.Drawing.Point(667, 284);
-            this.ckM_TextBox19.MaxLength = 6;
-            this.ckM_TextBox19.MoveNext = true;
-            this.ckM_TextBox19.Name = "ckM_TextBox19";
-            this.ckM_TextBox19.Size = new System.Drawing.Size(48, 19);
-            this.ckM_TextBox19.TabIndex = 44;
-            this.ckM_TextBox19.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // TxtRemark
             // 
@@ -2751,6 +2701,38 @@
             this.ScTani.Value2 = null;
             this.ScTani.Value3 = null;
             // 
+            // CmbLastYearTerm
+            // 
+            this.CmbLastYearTerm.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CmbLastYearTerm.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CmbLastYearTerm.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.CmbLastYearTerm.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CmbLastYearTerm.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbLastYearTerm.FormattingEnabled = true;
+            this.CmbLastYearTerm.Length = 20;
+            this.CmbLastYearTerm.Location = new System.Drawing.Point(667, 284);
+            this.CmbLastYearTerm.MaxLength = 20;
+            this.CmbLastYearTerm.MoveNext = true;
+            this.CmbLastYearTerm.Name = "CmbLastYearTerm";
+            this.CmbLastYearTerm.Size = new System.Drawing.Size(152, 20);
+            this.CmbLastYearTerm.TabIndex = 44;
+            // 
+            // CmbLastSeason
+            // 
+            this.CmbLastSeason.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CmbLastSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CmbLastSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.CmbLastSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CmbLastSeason.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbLastSeason.FormattingEnabled = true;
+            this.CmbLastSeason.Length = 20;
+            this.CmbLastSeason.Location = new System.Drawing.Point(667, 304);
+            this.CmbLastSeason.MaxLength = 10;
+            this.CmbLastSeason.MoveNext = true;
+            this.CmbLastSeason.Name = "CmbLastSeason";
+            this.CmbLastSeason.Size = new System.Drawing.Size(152, 20);
+            this.CmbLastSeason.TabIndex = 45;
+            // 
             // ScCopyITEM
             // 
             this.ScCopyITEM.AutoSize = true;
@@ -2882,8 +2864,6 @@
         private CKM_Controls.CKM_MultiLineTextBox TxtRemark;
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_Label ckM_Label1;
-        private CKM_Controls.CKM_TextBox ckM_TextBox14;
-        private CKM_Controls.CKM_TextBox ckM_TextBox19;
         private CKM_Controls.CKM_TextBox ckM_TextBox25;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_TextBox ckM_TextBox24;
@@ -2974,5 +2954,7 @@
         private CKM_Controls.CKM_Label ckM_Label22;
         private CKM_Controls.CKM_Label ckM_Label23;
         private Search.CKM_SearchControl ScTani;
+        private CKM_Controls.CKM_ComboBox CmbLastYearTerm;
+        private CKM_Controls.CKM_ComboBox CmbLastSeason;
     }
 }

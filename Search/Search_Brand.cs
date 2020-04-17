@@ -25,6 +25,7 @@ namespace Search
 
         #region"公開プロパティ"
         public string parBrandCD = "";
+        public string parBrandName = "";
         public string parMakerCD = "";
         public string parChangeDate = "";
         #endregion
@@ -163,9 +164,10 @@ namespace Search
                 return;
 
             parBrandCD = dgvDetail.CurrentRow.Cells["colBrandCD"].Value.ToString();
+            parBrandName = dgvDetail.CurrentRow.Cells["colBrandName"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
             parMakerCD = dgvDetail.CurrentRow.Cells["MakerCD"].Value.ToString();
-            ckM_TextBox3.Text = dgvDetail.CurrentRow.Cells["colBrandName"].Value.ToString();
+
             EndSec();
         }
 

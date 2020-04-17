@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[CheckJuchuData]
+CREATE PROCEDURE CheckJuchuData
     (@JuchuuNO varchar(11)
     )AS
     
@@ -155,5 +155,4 @@ BEGIN
     SELECT @ERRNO AS errno;
 
 END
-
 

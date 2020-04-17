@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[CheckJuchuDetailsData]
+CREATE PROCEDURE CheckJuchuDetailsData
     (@JuchuuNO varchar(11),
      @JuchuuRows int
     )AS
@@ -172,5 +172,4 @@ BEGIN
     SELECT @STATUS AS STATUS, @STATUS2 AS STATUS2;
 
 END
-
 
