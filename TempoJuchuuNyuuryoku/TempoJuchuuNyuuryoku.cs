@@ -2476,7 +2476,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-
+                     
                 case (int)EIndex.CustomerCD:
                 case (int)EIndex.DeliveryCD:
                     short kbn = 0;
