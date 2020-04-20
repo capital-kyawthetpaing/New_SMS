@@ -359,7 +359,8 @@ namespace MasterTouroku_YuubinBangou
                     YuubinBangouBL.ShowMessage("E102");
                     txtZip2To.Focus();
                 }
-                else if(!string.IsNullOrWhiteSpace(txtZip1from.Text) && !string.IsNullOrWhiteSpace(txtZip1To.Text))
+
+                if(!string.IsNullOrWhiteSpace(txtZip1from.Text) && !string.IsNullOrWhiteSpace(txtZip1To.Text))
                 {
                     if ((Convert.ToInt32(txtZip1from.Text.ToString())) > (Convert.ToInt32(txtZip1To.Text.ToString())))
                     {
@@ -367,7 +368,8 @@ namespace MasterTouroku_YuubinBangou
                         txtZip1To.Focus();
                     }
                 }
-                else if (!string.IsNullOrWhiteSpace(txtZip2From.Text) && !string.IsNullOrWhiteSpace(txtZip2To.Text))
+
+                 if (!string.IsNullOrWhiteSpace(txtZip2From.Text) && !string.IsNullOrWhiteSpace(txtZip2To.Text))
                 {
                     if (Convert.ToInt32(txtZip2From.Text.ToString()) > Convert.ToInt32(txtZip2To.Text.ToString()))
                     {
