@@ -27,6 +27,7 @@ namespace MainMenu
         Menu_BL mbl;
         string Staff_CD = "";
         string btnText = string.Empty;
+
         public Main_Menu(String SCD, M_Staff_Entity mse)
         {
             this.mse = mse;

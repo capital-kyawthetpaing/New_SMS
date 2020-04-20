@@ -12,6 +12,7 @@ using BL;
 using Entity;
 
 
+
 namespace MainMenu.Haspo
 {
     public partial class HaspoStoreMenuLogin : Form
