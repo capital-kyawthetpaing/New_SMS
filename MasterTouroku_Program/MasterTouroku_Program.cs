@@ -147,8 +147,6 @@ namespace MasterTouroku_Program
                             btnDisplay.Enabled = false;
                             F11Enable = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
-                            //mpe.ProgramID = scProgramCopy.Code;
-                            //DisplayData();
                             txtProgramName.Focus();
                         }
                         break;
@@ -162,7 +160,6 @@ namespace MasterTouroku_Program
                         F12Enable = true;
                         F11Enable = false;
                         SelectNextControl(PanelDetail, true, true, true, true);
-                        //scProgramID.SetFocus(1);  //ses
                         txtProgramName.Focus();
                         break;
                     case EOperationMode.DELETE:

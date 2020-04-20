@@ -133,9 +133,9 @@
             this.txtFileName.isEnterKeyDown = false;
             this.txtFileName.IsNumber = true;
             this.txtFileName.IsShop = false;
-            this.txtFileName.Length = 100;
+            this.txtFileName.Length = 50;
             this.txtFileName.Location = new System.Drawing.Point(166, 158);
-            this.txtFileName.MaxLength = 100;
+            this.txtFileName.MaxLength = 50;
             this.txtFileName.MoveNext = true;
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(750, 19);
