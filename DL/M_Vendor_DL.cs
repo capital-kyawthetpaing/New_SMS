@@ -223,5 +223,7 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, "M_Vendor_SelectForSiharaiNo");
         }
+
+        
     }
 }
