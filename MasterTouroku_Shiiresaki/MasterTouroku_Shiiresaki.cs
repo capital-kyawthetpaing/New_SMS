@@ -923,22 +923,33 @@ namespace MasterTouroku_Shiiresaki
                     }
                     else
                     {
-                        mze = new M_ZipCode_Entity();
-                        mze.ZipCD1 = txtZipCD1.Text;
-                        mze.ZipCD2 = txtZipCD2.Text;
+                        //if(OperationMode == EOperationMode.UPDATE)
+                        //{
+                            mze = new M_ZipCode_Entity();
+                            mze.ZipCD1 = txtZipCD1.Text;
+                            mze.ZipCD2 = txtZipCD2.Text;
+                            //mve = new M_Vendor_Entity();
 
-                        DataTable dtzip = new DataTable();
-                        dtzip = mtsbl.M_ZipCode_Select(mze);
-                        if (dtzip.Rows.Count > 0)
-                        {
-                            txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
-                            txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
-                        }
-                        else
-                        {
-                            txtAddress1.Text = string.Empty;
-                            txtAddress2.Text = string.Empty;
-                        }
+                            DataTable dtzip = new DataTable();
+                            dtzip = mtsbl.M_ZipCode_Select(mze);
+                            //dtzip = mtsbl.M_Vendor_Select(mze);
+                            if (dtzip.Rows.Count > 0)
+                            {
+                                txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
+                                txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                            }
+                            else
+                            {
+                                txtAddress1.Text = string.Empty;
+                                txtAddress2.Text = string.Empty;
+                            }
+                        //}
+                        //else if(OperationMode == EOperationMode.INSERT)
+                        //{
+
+                        //}
+
+                       
                     } 
                 }
             }
@@ -1341,6 +1352,6 @@ namespace MasterTouroku_Shiiresaki
                     }
                 }
             }
-        }
+        }      
     }
 }

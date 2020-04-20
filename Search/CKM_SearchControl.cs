@@ -922,6 +922,7 @@ namespace Search
                         if (!frmBrand.flgCancel)
                         {
                             txtCode.Text = frmBrand.parBrandCD;
+                            lblName.Text = frmBrand.parBrandName;
                         }
                     }
                     break;

@@ -455,5 +455,9 @@ namespace MasterTouroku_Ginkou
             FunctionProcess(10);
         }
 
+        private void PanelDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

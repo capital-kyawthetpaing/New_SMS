@@ -304,19 +304,20 @@ namespace CKM_Controls
                         return;
                     else if (CtrlType == Type.YearMonth && !YearMonthCheck())
                         return;
-                    else if ((CtrlType == Type.Normal || CtrlType == Type.Number) && CtrlByte == Bytes.半角)
+                    else if ((CtrlType == Type.Normal || CtrlType == Type.Number))
                     {
                         if (this.Parent is UserControl)
                         {
                             if (CtrlType == Type.Normal)
                             {
-                                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                                if (Convert.ToInt32(str) > length)
+                                string str1 = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                                if (Convert.ToInt32(str1) > length)
                                 {
                                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     this.Focus();
                                     return;
                                 }
+
                             }
                             if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
                             {
@@ -329,8 +330,26 @@ namespace CKM_Controls
                                     return;
                                 }
                             }
-                        }
 
+                        }
+                        //string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                        //if (Convert.ToInt32(str) > length)
+                        //{
+                        //    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    this.Focus();
+                        //    return;
+                        //}
+                        //if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                        //{
+                        //    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                        //    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                        //    if (onebyteCount != byteCount)
+                        //    {
+                        //        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //        this.Focus();
+                        //        return;
+                        //    }
+                        //}
                     }
                     base.OnKeyDown(e);
                 }
@@ -554,6 +573,36 @@ namespace CKM_Controls
             {
                 this.BackColor = SystemColors.Window;
             }
+
+            if (this.Parent is UserControl)
+            {
+                //
+            }
+            else {
+
+                if (CtrlByte == Bytes.半全角)
+                {
+                    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                    if (Convert.ToInt32(str) > length)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Focus();
+                        return;
+                    }
+                }
+                if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                {
+                    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                    if (onebyteCount != byteCount)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Focus();
+                        return;
+                    }
+                }
+            }
+            //  if ()
             //if (Ctrl_Type == Type.Normal)
             //{
             //    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
