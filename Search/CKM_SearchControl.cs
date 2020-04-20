@@ -842,6 +842,7 @@ namespace Search
                         {
                             txtCode.Text = frmKouza.parKouzaCD;
                             txtChangeDate.Text = frmKouza.parChangeDate;
+                            lblName.Text = frmKouza.parKouzaName;
                         }
 
                     }
@@ -921,6 +922,7 @@ namespace Search
                         if (!frmBrand.flgCancel)
                         {
                             txtCode.Text = frmBrand.parBrandCD;
+                            lblName.Text = frmBrand.parBrandName;
                         }
                     }
                     break;

@@ -158,7 +158,8 @@ namespace Search
         private void BindStore(string changedate,string scd)
         {
             cbo_Store.Bind(changedate, "2");
-            cbo_Store.SelectedValue = scd;
+            //cbo_Store.SelectedValue = scd;
+            cbo_Store.SelectedValue = StoreCD;
         }
         private void FrmSearch_Customer_KeyDown(object sender, KeyEventArgs e)
         {

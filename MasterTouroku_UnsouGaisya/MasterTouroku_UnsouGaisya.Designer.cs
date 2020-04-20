@@ -105,6 +105,7 @@
             this.ScShippingCD.LabelText = "";
             this.ScShippingCD.LabelVisible = false;
             this.ScShippingCD.Location = new System.Drawing.Point(99, -3);
+            this.ScShippingCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScShippingCD.Name = "ScShippingCD";
             this.ScShippingCD.SearchEnable = true;
             this.ScShippingCD.Size = new System.Drawing.Size(103, 50);
@@ -175,6 +176,7 @@
             this.ScCopyShippingCD.LabelText = "";
             this.ScCopyShippingCD.LabelVisible = false;
             this.ScCopyShippingCD.Location = new System.Drawing.Point(100, -5);
+            this.ScCopyShippingCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyShippingCD.Name = "ScCopyShippingCD";
             this.ScCopyShippingCD.SearchEnable = true;
             this.ScCopyShippingCD.Size = new System.Drawing.Size(103, 50);
@@ -284,7 +286,7 @@
             this.txtremark.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtremark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtremark.Length = 50;
-            this.txtremark.Location = new System.Drawing.Point(88, 247);
+            this.txtremark.Location = new System.Drawing.Point(112, 247);
             this.txtremark.MaxLength = 50;
             this.txtremark.Mdea = false;
             this.txtremark.Mfocus = false;
@@ -301,7 +303,7 @@
             this.chkDeleteFlg.AutoSize = true;
             this.chkDeleteFlg.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDeleteFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkDeleteFlg.Location = new System.Drawing.Point(604, 22);
+            this.chkDeleteFlg.Location = new System.Drawing.Point(641, 22);
             this.chkDeleteFlg.Name = "chkDeleteFlg";
             this.chkDeleteFlg.Size = new System.Drawing.Size(50, 16);
             this.chkDeleteFlg.TabIndex = 9;
@@ -317,7 +319,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(15, 22);
+            this.ckM_Label4.Location = new System.Drawing.Point(39, 22);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label4.TabIndex = 19;
@@ -334,7 +336,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(41, 46);
+            this.ckM_Label5.Location = new System.Drawing.Point(65, 46);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label5.TabIndex = 21;
@@ -358,7 +360,7 @@
             this.txtOtherCD.IsNumber = true;
             this.txtOtherCD.IsShop = false;
             this.txtOtherCD.Length = 20;
-            this.txtOtherCD.Location = new System.Drawing.Point(88, 199);
+            this.txtOtherCD.Location = new System.Drawing.Point(112, 199);
             this.txtOtherCD.MaxLength = 20;
             this.txtOtherCD.MoveNext = true;
             this.txtOtherCD.Name = "txtOtherCD";
@@ -375,7 +377,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(31, 74);
+            this.ckM_Label6.Location = new System.Drawing.Point(55, 74);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(54, 12);
             this.ckM_Label6.TabIndex = 15;
@@ -399,7 +401,7 @@
             this.txtPonpareCD.IsNumber = true;
             this.txtPonpareCD.IsShop = false;
             this.txtPonpareCD.Length = 20;
-            this.txtPonpareCD.Location = new System.Drawing.Point(88, 174);
+            this.txtPonpareCD.Location = new System.Drawing.Point(112, 174);
             this.txtPonpareCD.MaxLength = 20;
             this.txtPonpareCD.MoveNext = true;
             this.txtPonpareCD.Name = "txtPonpareCD";
@@ -416,7 +418,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(40, 99);
+            this.ckM_Label7.Location = new System.Drawing.Point(64, 99);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(45, 12);
             this.ckM_Label7.TabIndex = 16;
@@ -440,7 +442,7 @@
             this.txtWowmaCD.IsNumber = true;
             this.txtWowmaCD.IsShop = false;
             this.txtWowmaCD.Length = 20;
-            this.txtWowmaCD.Location = new System.Drawing.Point(88, 146);
+            this.txtWowmaCD.Location = new System.Drawing.Point(112, 146);
             this.txtWowmaCD.MaxLength = 20;
             this.txtWowmaCD.MoveNext = true;
             this.txtWowmaCD.Name = "txtWowmaCD";
@@ -457,7 +459,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(24, 124);
+            this.ckM_Label8.Location = new System.Drawing.Point(48, 124);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(61, 12);
             this.ckM_Label8.TabIndex = 17;
@@ -481,7 +483,7 @@
             this.txtAmazonCD.IsNumber = true;
             this.txtAmazonCD.IsShop = false;
             this.txtAmazonCD.Length = 20;
-            this.txtAmazonCD.Location = new System.Drawing.Point(88, 121);
+            this.txtAmazonCD.Location = new System.Drawing.Point(112, 121);
             this.txtAmazonCD.MaxLength = 20;
             this.txtAmazonCD.MoveNext = true;
             this.txtAmazonCD.Name = "txtAmazonCD";
@@ -498,7 +500,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(31, 149);
+            this.ckM_Label9.Location = new System.Drawing.Point(55, 149);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(54, 12);
             this.ckM_Label9.TabIndex = 18;
@@ -522,7 +524,7 @@
             this.txtRakutenCD.IsNumber = true;
             this.txtRakutenCD.IsShop = false;
             this.txtRakutenCD.Length = 20;
-            this.txtRakutenCD.Location = new System.Drawing.Point(88, 96);
+            this.txtRakutenCD.Location = new System.Drawing.Point(112, 96);
             this.txtRakutenCD.MaxLength = 20;
             this.txtRakutenCD.MoveNext = true;
             this.txtRakutenCD.Name = "txtRakutenCD";
@@ -539,7 +541,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(17, 177);
+            this.ckM_Label10.Location = new System.Drawing.Point(41, 177);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(68, 12);
             this.ckM_Label10.TabIndex = 20;
@@ -555,7 +557,7 @@
             this.cboIdentity.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.cboIdentity.FormattingEnabled = true;
             this.cboIdentity.Length = 20;
-            this.cboIdentity.Location = new System.Drawing.Point(88, 43);
+            this.cboIdentity.Location = new System.Drawing.Point(112, 43);
             this.cboIdentity.MaxLength = 20;
             this.cboIdentity.MoveNext = true;
             this.cboIdentity.Name = "cboIdentity";
@@ -571,7 +573,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(27, 203);
+            this.ckM_Label11.Location = new System.Drawing.Point(51, 203);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(58, 12);
             this.ckM_Label11.TabIndex = 21;
@@ -595,7 +597,7 @@
             this.txtYahooCD.IsNumber = true;
             this.txtYahooCD.IsShop = false;
             this.txtYahooCD.Length = 20;
-            this.txtYahooCD.Location = new System.Drawing.Point(88, 71);
+            this.txtYahooCD.Location = new System.Drawing.Point(112, 71);
             this.txtYahooCD.MaxLength = 20;
             this.txtYahooCD.MoveNext = true;
             this.txtYahooCD.Name = "txtYahooCD";
@@ -612,7 +614,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(41, 250);
+            this.ckM_Label12.Location = new System.Drawing.Point(65, 250);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label12.TabIndex = 22;
@@ -637,7 +639,7 @@
             this.txtShippingName.IsNumber = true;
             this.txtShippingName.IsShop = false;
             this.txtShippingName.Length = 20;
-            this.txtShippingName.Location = new System.Drawing.Point(88, 19);
+            this.txtShippingName.Location = new System.Drawing.Point(112, 17);
             this.txtShippingName.MaxLength = 20;
             this.txtShippingName.MoveNext = true;
             this.txtShippingName.Name = "txtShippingName";
@@ -667,6 +669,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
