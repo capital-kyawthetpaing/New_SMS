@@ -274,7 +274,8 @@ namespace MasterTouroku_Program
                 FileName=txtFileName.Text,
                 ProcessMode = ModeText,
                 ProgramID=InProgramID,
-                Operator = InOperatorCD,
+                //Operator = InOperatorCD,
+                InsertOperator = InOperatorCD,
                 Key = scProgramID.Code,
                 PC = InPcID
             };
