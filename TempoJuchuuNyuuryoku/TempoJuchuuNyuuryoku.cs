@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 using BL;
@@ -45,6 +41,15 @@ namespace TempoJuchuuNyuuryoku
             Tel2,
             Tel3,
 
+            DeliveryCD,
+            DeliveryName,
+            AddressBtn2,
+            DeliveryName2,
+            AliasKBN2,
+            Tel1D,
+            Tel2D,
+            Tel3D,
+
             PaymentMethodCD,
             //Discount,
             Point,
@@ -81,6 +86,7 @@ namespace TempoJuchuuNyuuryoku
         private string mOldJyuchuNo = "";    //排他処理のため使用
         private string mOldJyuchuDate = "";
         private string mOldCustomerCD = "";
+        private string mOldDeliveryCD = "";
         private decimal mZei10;//通常税額(Hidden)
         private decimal mZei8;//軽減税額(Hidden)
         private string mPaymentMethodCD;    //M_Customer.PaymentMethodCD
@@ -509,16 +515,17 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
                     }
 
-                    //// クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
-                    //switch (w_Col)
-                    //{
-                    //    case object _ when ClsGridMitsumori.ColNO.DELCK:
-                    //        {
-                    //            // 削除チェック
-                    //            S_Set_Cell_Selectable(w_Col, w_Row, false);
-                    //            break;
-                    //        }
-                    //}
+                    // クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
+                    switch (w_Col)
+                    {
+                        case (int)ClsGridJuchuu.ColNO.Site:
+                        case (int)ClsGridJuchuu.ColNO.Zaiko:
+                            {
+                                // ボタン
+                                S_Set_Cell_Selectable(w_Col, w_Row, false);
+                                break;
+                            }
+                    }
                 }
             }
 
@@ -1289,6 +1296,8 @@ namespace TempoJuchuuNyuuryoku
                 lblDisp.Visible = true;
                 Btn_F11.Text = "引当(F11)";
 
+                addInfo = new FrmAddress();
+
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
@@ -1311,6 +1320,7 @@ namespace TempoJuchuuNyuuryoku
                 ScMotoJuchuNo.Value1 = InOperatorCD;
                 ScMotoJuchuNo.Value2 = stores;
                 ScCustomer.Value1 = "1";
+                ScDeliveryCD.Value1 = "1";
 
                 ScStaff.TxtCode.Text = InOperatorCD;
 
@@ -1361,11 +1371,13 @@ namespace TempoJuchuuNyuuryoku
         {
             keyControls = new Control[] {  ScJuchuuNO.TxtCode, ScCopyJuchuuNO.TxtCode, ScMitsumoriNO.TxtCode, ckM_CheckBox1, ScMotoJuchuNo.TxtCode, CboStoreCD };
             keyLabels = new Control[] {  };
-            detailControls = new Control[] { ckM_TextBox1,CboSoukoName, ScStaff.TxtCode, ScCustomer.TxtCode,ckM_TextBox7,btnAddress, ckM_Text_4, panel1
-                         , ckM_TextBox18 , ckM_TextBox8 , ckM_TextBox13,CboPaymentMethodCD   , ckM_TextBox2  , ckM_TextBox5,ckM_TextBox6
-                         ,ckM_MultiLineTextBox1,TxtRemark1,TxtRemark2 };
-            detailLabels = new Control[] { ScCustomer,ScStaff };
-            searchButtons = new Control[] { ScCustomer.BtnSearch, ScStaff.BtnSearch};
+            detailControls = new Control[] { ckM_TextBox1,CboSoukoName, ScStaff.TxtCode
+                         , ScCustomer.TxtCode,ckM_TextBox7,btnAddress, ckM_Text_4, panel1, ckM_TextBox18 , ckM_TextBox8 , ckM_TextBox13
+                         , ScDeliveryCD.TxtCode,ckM_TextBox21,btnAddress2, ckM_TextBox22, panel2, ckM_TextBox20 , ckM_TextBox14 , ckM_TextBox19
+                         , CboPaymentMethodCD   , ckM_TextBox2  , ckM_TextBox5,ckM_TextBox6
+                         , ckM_MultiLineTextBox1,TxtRemark1,TxtRemark2 };
+            detailLabels = new Control[] { ScCustomer,ScStaff, ScDeliveryCD };
+            searchButtons = new Control[] { ScCustomer.BtnSearch, ScStaff.BtnSearch,ScDeliveryCD.BtnSearch};
 
             //イベント付与
             foreach (Control ctl in keyControls)
@@ -1379,11 +1391,13 @@ namespace TempoJuchuuNyuuryoku
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
 
-            radioButton1.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
-            radioButton2.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
+            radioSama.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
+            radioOnchu.CheckedChanged += new System.EventHandler(RadioButton_CheckedChanged);
 
-            radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
-            radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            radioSama.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            radioOnchu.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            radioOnchuD.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButtonD_KeyDown);
+            radioSamaD.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButtonD_KeyDown);
         }
         
         /// <summary>
@@ -1657,10 +1671,30 @@ namespace TempoJuchuuNyuuryoku
                         detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
 
                         if (row["AliasKBN"].ToString() == "1")
-                            radioButton1.Checked = true;
+                            radioSama.Checked = true;
                         else
-                            radioButton2.Checked = true;
+                            radioOnchu.Checked = true;
 
+                        detailControls[(int)EIndex.DeliveryCD].Text = row["DeliveryCD"].ToString();
+                        CheckDetail((int)EIndex.DeliveryCD);
+
+                        if (detailControls[(int)EIndex.DeliveryName].Enabled)
+                        {
+                            detailControls[(int)EIndex.DeliveryName].Text = row["DeliveryName"].ToString();
+                            addInfo.adeD.ZipCD1 = row["DeliveryZipCD1"].ToString();
+                            addInfo.adeD.ZipCD2 = row["DeliveryZipCD2"].ToString();
+                            addInfo.adeD.Address1 = row["DeliveryAddress1"].ToString();
+                            addInfo.adeD.Address2 = row["DeliveryAddress2"].ToString();
+                            addInfo.adeD.Tel11 = row["DeliveryTel11"].ToString();
+                            addInfo.adeD.Tel12 = row["DeliveryTel12"].ToString();
+                            addInfo.adeD.Tel13 = row["DeliveryTel13"].ToString();
+                        }
+                        detailControls[(int)EIndex.DeliveryName2].Text = row["DeliveryName2"].ToString();
+
+                        if (row["DeliveryAliasKBN"].ToString() == "1")
+                            radioSamaD.Checked = true;
+                        else
+                            radioOnchuD.Checked = true;
 
                         //【Data Area Footer】
                         detailControls[(int)EIndex.PaymentMethodCD].Text = row["PaymentMethodCD"].ToString();
@@ -1878,7 +1912,7 @@ namespace TempoJuchuuNyuuryoku
                 DataRow[] selectRow=  dt.Select("JanCD is not null");
                 if(selectRow.Length == 0)
                 {
-                    bbl.ShowMessage("E138", "見積番号");    //Todo:要チェック
+                    bbl.ShowMessage("E138", "見積番号");   
                     Scr_Clr(1);
                     previousCtrl.Focus();
                     return false;
@@ -1947,9 +1981,9 @@ namespace TempoJuchuuNyuuryoku
                         }
 
                         if (row["AliasKBN"].ToString() == "1")
-                            radioButton1.Checked = true;
+                            radioSama.Checked = true;
                         else
-                            radioButton2.Checked = true;
+                            radioOnchu.Checked = true;
 
                         //【Footer】
                         detailControls[(int)EIndex.RemarksInStore].Text = row["RemarksInStore"].ToString();
@@ -2120,6 +2154,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
+                        detailControls[index].Focus();
                         return false;
                     }
 
@@ -2130,6 +2165,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１０３
                         bbl.ShowMessage("E103");
+                        detailControls[index].Focus();
                         return false;
                     }
                     //入力できる範囲内の日付であること
@@ -2137,6 +2173,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１１５
                         bbl.ShowMessage("E115");
+                        detailControls[index].Focus();
                         return false;
                     }
 
@@ -2145,7 +2182,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         for (int i = (int)EIndex.StaffCD; i < (int)EIndex.CustomerCD; i++)
                             if (!string.IsNullOrWhiteSpace(detailControls[i].Text))
-                                if (!CheckDependsOnMitsumoriDate(i, true))
+                                if (!CheckDependsOnDate(i, true))
                                     return false;
 
                         //明細部JANCDの再チェック
@@ -2163,6 +2200,7 @@ namespace TempoJuchuuNyuuryoku
                         }
                         mOldJyuchuDate = detailControls[index].Text;
                         ScCustomer.ChangeDate = mOldJyuchuDate;
+                        ScDeliveryCD.ChangeDate = mOldJyuchuDate;
                     }
 
                     break;
@@ -2173,7 +2211,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         return false;
                     }
-                    if (!CheckDependsOnMitsumoriDate(index))
+                    if (!CheckDependsOnDate(index))
                         return false;
 
                     break;
@@ -2184,10 +2222,11 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
+                        detailControls[index].Focus();
                         return false;
                     }
 
-                    if (!CheckDependsOnMitsumoriDate(index))
+                    if (!CheckDependsOnDate(index))
                         return false;
 
                     break;
@@ -2199,16 +2238,18 @@ namespace TempoJuchuuNyuuryoku
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo();
+                        ClearCustomerInfo(0);
+                        detailControls[index].Focus();
                         return false;
                     }
-                    if (!CheckDependsOnMitsumoriDate(index))
+                    if (!CheckDependsOnDate(index))
                         return false;
 
                    
                     break;
 
                 case (int)EIndex.CustomerName:
+                case (int)EIndex.DeliveryName:
                     //入力可能の場合 入力必須(Entry required)
                     if (detailControls[index].Enabled)
                     {
@@ -2216,24 +2257,43 @@ namespace TempoJuchuuNyuuryoku
                         {
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
+                            detailControls[index].Focus();
                             return false;
                         }
                         //顧客名2に入力無い場合、先頭20Byteを顧客名2へセット
-                        if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.CustomerName2].Text))
+                        if (string.IsNullOrWhiteSpace(detailControls[index+2].Text))
                         {
-                            detailControls[(int)EIndex.CustomerName2].Text = bbl.LeftB(detailControls[index].Text, 20);
+                            detailControls[index + 2].Text = bbl.LeftB(detailControls[index].Text, 20);
                         }
                     }
                     break;
 
                 case (int)EIndex.CustomerName2:
+                case (int)EIndex.DeliveryName2:
                     //入力可能の場合 入力必須(Entry required)
                     if (detailControls[index].Enabled && string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //Ｅ１０２
                         bbl.ShowMessage("E102");
+                        detailControls[index].Focus();
                         return false;
                     }
+                    break;
+
+                case (int)EIndex.DeliveryCD:
+                    //入力必須(Entry required)
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        //Ｅ１０２
+                        bbl.ShowMessage("E102");
+                        //顧客情報ALLクリア
+                        ClearCustomerInfo(1);
+                        detailControls[index].Focus();
+                        return false;
+                    }
+                    if (!CheckDependsOnDate(index))
+                        return false;
+
                     break;
 
                 case (int)EIndex.PaymentMethodCD:
@@ -2251,6 +2311,7 @@ namespace TempoJuchuuNyuuryoku
                         {
                             //Ｅ１４６
                             bbl.ShowMessage("E146");
+                            detailControls[index].Focus();
                             return false;
                         }
 
@@ -2268,6 +2329,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１０３
                         bbl.ShowMessage("E103");
+                        detailControls[index].Focus();
                         return false;
                     }
 
@@ -2276,6 +2338,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１１５
                         bbl.ShowMessage("E115");
+                        detailControls[index].Focus();
                         return false;
                     }
 
@@ -2297,8 +2360,11 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //「入荷予定日が売上予定日より後になっている商品があります。このまま処理を進めますか？」
                         if (bbl.ShowMessage("Q304") != DialogResult.Yes)
+                        {
+                            detailControls[index].Focus();
                             //売上予定日にCursorを移動
                             return false;
+                        }
                     }
                         break;
 
@@ -2315,6 +2381,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         //Ｅ１０３
                         bbl.ShowMessage("E103");
+                        detailControls[index].Focus();
                         return false;
                     }
 
@@ -2345,11 +2412,11 @@ namespace TempoJuchuuNyuuryoku
         }
 
         /// <summary>
-        /// 見積日が変更されたときに必要なチェック処理
+        /// 日付が変更されたときに必要なチェック処理
         /// </summary>
         /// <param name="index"></param>
         /// <returns></returns>
-        private bool CheckDependsOnMitsumoriDate(int index, bool ChangeMitsumoriDate = false)
+        private bool CheckDependsOnDate(int index, bool ChangeDate = false)
         {
             string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
 
@@ -2409,8 +2476,13 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-
+                     
                 case (int)EIndex.CustomerCD:
+                case (int)EIndex.DeliveryCD:
+                    short kbn = 0;
+                    if (index.Equals((int)EIndex.DeliveryCD))
+                        kbn = 1;
+
                     //[M_Customer_Select]
                     M_Customer_Entity mce = new M_Customer_Entity
                     {
@@ -2418,7 +2490,7 @@ namespace TempoJuchuuNyuuryoku
                         ChangeDate = ymd
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce);
+                    ret = sbl.M_Customer_Select(mce, 1);
                    
                     if (ret)
                     {
@@ -2426,86 +2498,145 @@ namespace TempoJuchuuNyuuryoku
                         {
                             bbl.ShowMessage("E119");
                             //顧客情報ALLクリア
-                            ClearCustomerInfo();
+                            ClearCustomerInfo(kbn);
+                            detailControls[index].Focus();
                             return false;
                         }
 
-                        //顧客CDが変更されている場合のみ再セット
-                        if (mOldCustomerCD != detailControls[index].Text || ChangeMitsumoriDate)
+                        if (kbn.Equals(0))
                         {
-                            //住所情報セット
-                            addInfo.ade.VariousFLG = mce.VariousFLG;
-                            addInfo.ade.ZipCD1 = mce.ZipCD1;
-                            addInfo.ade.ZipCD2 = mce.ZipCD2;
-                            addInfo.ade.Address1 = mce.Address1;
-                            addInfo.ade.Address2 = mce.Address2;
+                            //顧客CDが変更されている場合のみ再セット
+                            if (mOldCustomerCD != detailControls[index].Text || ChangeDate)
+                            {
+                                //住所情報セット
+                                addInfo.ade.VariousFLG = mce.VariousFLG;
+                                addInfo.ade.ZipCD1 = mce.ZipCD1;
+                                addInfo.ade.ZipCD2 = mce.ZipCD2;
+                                addInfo.ade.Address1 = mce.Address1;
+                                addInfo.ade.Address2 = mce.Address2;
+                                addInfo.ade.Tel11 = mce.Tel11;
+                                addInfo.ade.Tel12 = mce.Tel12;
+                                addInfo.ade.Tel13 = mce.Tel13;
 
-                            if (mce.VariousFLG == "1")
-                            {
-                                detailControls[index + 1].Text = mce.CustomerName;
-                                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-                                    detailControls[index + 1].Enabled = true;
-                                detailControls[index + 3].Text = "";
-                                textBox1.Text = mce.RemarksInStore;
-                                textBox2.Text = mce.RemarksOutStore;
-                                lblLastSalesDate.Text = "";
-                                lblStoreName.Text = "";
-                                lblPoint.Text = "";
-                            }
-                            else
-                            {
-                                detailControls[index + 1].Text = mce.CustomerName;
-                                detailControls[index + 1].Enabled = false;
-                                detailControls[index + 3].Text = "";
-                                textBox1.Text = mce.RemarksInStore;
-                                textBox2.Text = mce.RemarksOutStore;
-                                lblLastSalesDate.Text = mce.LastSalesDate;
-                                lblPoint.Text =bbl.Z_SetStr( mce.LastPoint);
-                                
-                                //[M_Store_Select]
-                                M_Store_Entity mste = new M_Store_Entity
+                                detailControls[index + 5].Text = mce.Tel11;
+                                detailControls[index + 6].Text = mce.Tel12;
+                                detailControls[index + 7].Text = mce.Tel13;
+
+
+                                if (mce.VariousFLG == "1")
                                 {
-                                    StoreCD = mce.LastSalesStoreCD,
-                                    ChangeDate = mce.LastSalesDate
-                                };
-                                Store_BL stbl = new Store_BL();
-                                DataTable sdt = stbl.M_Store_Select(mste);
-                                if (sdt.Rows.Count > 0)
-                                {
-                                    lblStoreName.Text = sdt.Rows[0]["StoreName"].ToString();
+                                    detailControls[index + 1].Text = mce.CustomerName;
+                                    if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                                    {
+                                        detailControls[index + 1].Enabled = true;
+                                    }
+                                    detailControls[index + 3].Text = "";
+                                    textBox1.Text = mce.RemarksInStore;
+                                    textBox2.Text = mce.RemarksOutStore;
+                                    lblLastSalesDate.Text = "";
+                                    lblStoreName.Text = "";
+                                    lblPoint.Text = "";
                                 }
                                 else
                                 {
-                                    lblStoreName.Text = "";
+                                    detailControls[index + 1].Text = mce.CustomerName;
+                                    detailControls[index + 1].Enabled = false;
+                                    detailControls[index + 3].Text = "";
+                                    textBox1.Text = mce.RemarksInStore;
+                                    textBox2.Text = mce.RemarksOutStore;
+                                    lblLastSalesDate.Text = mce.LastSalesDate;
+                                    lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
+
+                                    //[M_Store_Select]
+                                    M_Store_Entity mste = new M_Store_Entity
+                                    {
+                                        StoreCD = mce.LastSalesStoreCD,
+                                        ChangeDate = mce.LastSalesDate
+                                    };
+                                    Store_BL stbl = new Store_BL();
+                                    DataTable sdt = stbl.M_Store_Select(mste);
+                                    if (sdt.Rows.Count > 0)
+                                    {
+                                        lblStoreName.Text = sdt.Rows[0]["StoreName"].ToString();
+                                    }
+                                    else
+                                    {
+                                        lblStoreName.Text = "";
+                                    }
+                                }
+                                //敬称
+                                if (mce.AliasKBN == "1")
+                                {
+                                    radioSama.Checked = true;
+                                }
+                                else
+                                {
+                                    radioOnchu.Checked = true;
+                                }
+                                mPaymentMethodCD = mce.PaymentMethodCD;
+
+                                //単価設定
+                                //[M_TankaCD]
+                                M_TankaCD_Entity mte = new M_TankaCD_Entity
+                                {
+                                    TankaCD = mce.TankaCD,
+                                    ChangeDate = ymd
+                                };
+                                TankaCD_BL mbl = new TankaCD_BL();
+                                DataTable dt = mbl.M_TankaCD_Select(mte);
+                                if (dt.Rows.Count > 0)
+                                {
+                                    lblTankaName.Text = dt.Rows[0]["TankaName"].ToString();
+                                }
+                                else
+                                {
+                                    lblTankaName.Text = "";
                                 }
                             }
-                            //敬称
-                            if (mce.AliasKBN == "1")
+                        }
+                        else
+                        {
+                            //配送先CDが変更されている場合のみ再セット
+                            if (mOldDeliveryCD != detailControls[index].Text || ChangeDate)
                             {
-                                radioButton1.Checked = true;
-                            }
-                            else
-                            {
-                                radioButton2.Checked = true;
-                            }
-                            mPaymentMethodCD=mce.PaymentMethodCD;
+                                //住所情報セット
+                                addInfo.adeD.VariousFLG = mce.VariousFLG;
+                                addInfo.adeD.ZipCD1 = mce.ZipCD1;
+                                addInfo.adeD.ZipCD2 = mce.ZipCD2;
+                                addInfo.adeD.Address1 = mce.Address1;
+                                addInfo.adeD.Address2 = mce.Address2;
+                                addInfo.adeD.Tel11 = mce.Tel11;
+                                addInfo.adeD.Tel12 = mce.Tel12;
+                                addInfo.adeD.Tel13 = mce.Tel13;
 
-                            //単価設定
-                            //[M_TankaCD]
-                            M_TankaCD_Entity mte = new M_TankaCD_Entity
-                            {
-                                TankaCD = mce.TankaCD,
-                                ChangeDate = ymd
-                            };
-                            TankaCD_BL mbl = new TankaCD_BL();
-                            DataTable dt = mbl.M_TankaCD_Select(mte);
-                            if (dt.Rows.Count > 0)
-                            {
-                                lblTankaName.Text = dt.Rows[0]["TankaName"].ToString();
-                            }
-                            else
-                            {
-                                lblTankaName.Text = "";
+                                detailControls[index + 5].Text = mce.Tel11;
+                                detailControls[index + 6].Text = mce.Tel12;
+                                detailControls[index + 7].Text = mce.Tel13;
+
+                                if (mce.VariousFLG == "1")
+                                {
+                                    detailControls[index + 1].Text = mce.CustomerName;
+                                    if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                                    {
+                                        detailControls[index + 1].Enabled = true;
+                                    }
+                                    detailControls[index + 3].Text = "";                                    
+                                }
+                                else
+                                {
+                                    detailControls[index + 1].Text = mce.CustomerName;
+                                    detailControls[index + 1].Enabled = false;
+                                    detailControls[index + 3].Text = "";
+                                }
+                                //敬称
+                                if (mce.AliasKBN == "1")
+                                {
+                                    radioSamaD.Checked = true;
+                                }
+                                else
+                                {
+                                    radioOnchuD.Checked = true;
+                                }
                             }
                         }
                     }
@@ -2513,12 +2644,15 @@ namespace TempoJuchuuNyuuryoku
                     {
                         bbl.ShowMessage("E101");
                         //顧客情報ALLクリア
-                        ClearCustomerInfo();
+                        ClearCustomerInfo(kbn);
+                        detailControls[index].Focus();
                         return false;
                     }
 
-                    mOldCustomerCD = detailControls[index].Text;    //位置確認
-
+                    if (kbn.Equals(0))
+                        mOldCustomerCD = detailControls[index].Text;    //位置確認
+                    else
+                        mOldDeliveryCD = detailControls[index].Text;
                     break;
             }
 
@@ -2736,7 +2870,7 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].JanCD;
 
                         //明細の出荷倉庫CDに、Header部の出荷倉庫CD、倉庫名をセットする。
-                        mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedValue.ToString();
+                        mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex>0 ? CboSoukoName.SelectedValue.ToString():"";
 
                         CheckHikiate(row, ymd);
 
@@ -3072,14 +3206,30 @@ namespace TempoJuchuuNyuuryoku
             dje.ZipCD2 = addInfo.ade.ZipCD2;
             dje.Address1 = addInfo.ade.Address1;
             dje.Address2 = addInfo.ade.Address2;
-            dje.Tel11 = addInfo.ade.Tel11;
-            dje.Tel12 = addInfo.ade.Tel12;
-            dje.Tel13 = addInfo.ade.Tel13;
-        
-            if (radioButton1.Checked)
+            dje.Tel11 = detailControls[(int)EIndex.Tel1].Text;
+            dje.Tel12 = detailControls[(int)EIndex.Tel2].Text;
+            dje.Tel13 = detailControls[(int)EIndex.Tel3].Text;
+
+            if (radioSama.Checked)
                 dje.AliasKBN="1";
                     else
                 dje.AliasKBN = "2";
+
+            dje.DeliveryCD = detailControls[(int)EIndex.DeliveryCD].Text;
+            dje.DeliveryName = detailControls[(int)EIndex.DeliveryName].Text;
+            dje.DeliveryName2 = detailControls[(int)EIndex.DeliveryName2].Text;
+            dje.DeliveryZipCD1 = addInfo.adeD.ZipCD1;
+            dje.DeliveryZipCD2 = addInfo.adeD.ZipCD2;
+            dje.DeliveryAddress1 = addInfo.adeD.Address1;
+            dje.DeliveryAddress2 = addInfo.adeD.Address2;
+            dje.DeliveryTel11 = detailControls[(int)EIndex.Tel1D].Text;
+            dje.DeliveryTel12 = detailControls[(int)EIndex.Tel2D].Text;
+            dje.DeliveryTel13 = detailControls[(int)EIndex.Tel3D].Text;
+
+            if (radioSamaD.Checked)
+                dje.DeliveryAliasKBN = "1";
+            else
+                dje.DeliveryAliasKBN = "2";
 
             dje.JuchuuGaku = bbl.Z_SetStr(lblKin1.Text);
             dje.Discount = bbl.Z_SetStr(lblKin5.Text);
@@ -3358,7 +3508,8 @@ namespace TempoJuchuuNyuuryoku
                 }
                 else if (ctl.GetType().Equals(typeof(Panel)))
                 {
-                    radioButton1.Checked = true;
+                    radioSama.Checked = true;
+                    radioSamaD.Checked = true;
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
                 {
@@ -3367,7 +3518,8 @@ namespace TempoJuchuuNyuuryoku
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_Button)))
                 {
                     //顧客情報ALLクリア
-                    ClearCustomerInfo();
+                    ClearCustomerInfo(0);
+                    ClearCustomerInfo(1);
                 }
                 else
                 {
@@ -3403,21 +3555,34 @@ namespace TempoJuchuuNyuuryoku
         /// <summary>
         /// 顧客情報クリア処理
         /// </summary>
-        private void ClearCustomerInfo()
+        private void ClearCustomerInfo(short kbn)
         {
-            mOldCustomerCD = "";
+            addInfo.ClearAddressInfo(kbn);
 
-            addInfo = new FrmAddress();
+            if (kbn.Equals(0))
+            {
+                mOldCustomerCD = "";
 
-            ScCustomer.LabelText = "";
-            detailControls[(int)EIndex.CustomerName].Text = "";
-            detailControls[(int)EIndex.CustomerName2].Text = "";
-            textBox1.Text = "";
-            textBox2.Text = "";
-            lblLastSalesDate.Text = "";
-            lblStoreName.Text = "";
-            lblTankaName.Text = "";
-            lblPoint.Text = "";
+                //addInfo = new FrmAddress();
+                
+                ScCustomer.LabelText = "";
+                detailControls[(int)EIndex.CustomerName].Text = "";
+                detailControls[(int)EIndex.CustomerName2].Text = "";
+                textBox1.Text = "";
+                textBox2.Text = "";
+                lblLastSalesDate.Text = "";
+                lblStoreName.Text = "";
+                lblTankaName.Text = "";
+                lblPoint.Text = "";
+            }
+            else
+            {
+                mOldDeliveryCD= "";
+
+                ScDeliveryCD.LabelText = "";
+                detailControls[(int)EIndex.DeliveryName].Text = "";
+                detailControls[(int)EIndex.DeliveryName2].Text = "";
+            }
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -3698,7 +3863,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     else
                     {
-                        ((Control)sender).Focus();
+                        //((Control)sender).Focus();
                     }
                 }
 
@@ -4034,7 +4199,6 @@ namespace TempoJuchuuNyuuryoku
                                     //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
                                     mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
 
-
                                     if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
                                     {
                                         //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.見積数
@@ -4067,25 +4231,26 @@ namespace TempoJuchuuNyuuryoku
                                 //税込販売額←Form.Detail.販売単価×Form.Detail.見積数
                                 mGrid.g_DArray[w_Row].JuchuuGaku = string.Format("{0:#,##0}", wTanka * wSuu);
 
-                                
-                                //if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
-                                //{
-                                //    //Function_単価取得.out消費税額×Form.Detail.見積数
-                                //    //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.見積数
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(fue.Zei) * wSuu;
-                                //    mGrid.g_DArray[w_Row].KeigenTax = 0;
-                                //}
-                                //else if (mGrid.g_DArray[w_Row].TaxRateFLG == 2)
-                                //{
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
-                                //    //軽減税額←TaxRateFLG＝2の時のFunction_単価取得.out消費税額×Form.Detail.見積数
-                                //    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(fue.Zei) * wSuu;
-                                //}
-                                //else
-                                //{
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
-                                //    mGrid.g_DArray[w_Row].KeigenTax = 0;
-                                //}
+                                //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
+                                mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku));
+
+                                if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
+                                {
+                                    //通常税額←
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
+                                    mGrid.g_DArray[w_Row].KeigenTax = 0;
+                                }
+                                else if (mGrid.g_DArray[w_Row].TaxRateFLG == 2)
+                                {
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
+                                    //軽減税額←
+                                    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
+                                }
+                                else
+                                {
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
+                                    mGrid.g_DArray[w_Row].KeigenTax = 0;
+                                }
                                 break;
 
                             case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
@@ -4199,21 +4364,19 @@ namespace TempoJuchuuNyuuryoku
             }
 
         }
-
-        private void BtnAddress_Click(object sender, EventArgs e)
+        private void RadioButtonD_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                addInfo.ade.CustomerCD= ScCustomer.TxtCode.Text ;
-                addInfo.ade.CustomerName= detailControls[(int)EIndex.CustomerName].Text ;
-                addInfo.ade.CustomerName2= detailControls[(int)EIndex.CustomerName2].Text;
-                addInfo.ade.Tel11 = detailControls[(int)EIndex.Tel1].Text;
-                addInfo.ade.Tel12 = detailControls[(int)EIndex.Tel2].Text;
-                addInfo.ade.Tel13 = detailControls[(int)EIndex.Tel3].Text;
-
-                addInfo.ShowDialog();
-
-                            }
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    detailControls[(int)EIndex.AliasKBN2 + 1].Focus();
+                }
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
@@ -4222,6 +4385,67 @@ namespace TempoJuchuuNyuuryoku
 
         }
 
+        private void BtnAddress_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                addInfo.ade.CustomerCD = ScCustomer.TxtCode.Text;
+                addInfo.ade.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
+                addInfo.ade.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
+                addInfo.ade.Tel11 = detailControls[(int)EIndex.Tel1].Text;
+                addInfo.ade.Tel12 = detailControls[(int)EIndex.Tel2].Text;
+                addInfo.ade.Tel13 = detailControls[(int)EIndex.Tel3].Text;
+                addInfo.kbn = 0;
+                addInfo.ShowDialog();
+
+                if(string.IsNullOrWhiteSpace(ScDeliveryCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(ScCustomer.TxtCode.Text))
+                {
+                    ScDeliveryCD.TxtCode.Text = ScCustomer.TxtCode.Text;
+                    CheckDetail((int)EIndex.DeliveryCD);
+                    detailControls[(int)EIndex.DeliveryName].Text = detailControls[(int)EIndex.CustomerName].Text;
+                    detailControls[(int)EIndex.DeliveryName2].Text = detailControls[(int)EIndex.CustomerName2].Text;
+                    if (radioSama.Checked)
+                        radioSamaD.Checked = true;
+                    else
+                        radioOnchuD.Checked = true;
+                    detailControls[(int)EIndex.Tel1D].Text = detailControls[(int)EIndex.Tel1].Text;
+                    detailControls[(int)EIndex.Tel2D].Text = detailControls[(int)EIndex.Tel2].Text;
+                    detailControls[(int)EIndex.Tel3D].Text = detailControls[(int)EIndex.Tel3].Text;
+
+                    addInfo.adeD.ZipCD1 = addInfo.ade.ZipCD1;
+                    addInfo.adeD.ZipCD2 = addInfo.ade.ZipCD2;
+                    addInfo.adeD.Address1 = addInfo.ade.Address1;
+                    addInfo.adeD.Address2 = addInfo.ade.Address2;
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+        private void BtnAddressD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                addInfo.adeD.CustomerCD = ScDeliveryCD.TxtCode.Text;
+                addInfo.adeD.CustomerName = detailControls[(int)EIndex.DeliveryName].Text;
+                addInfo.adeD.CustomerName2 = detailControls[(int)EIndex.DeliveryName2].Text;
+                addInfo.adeD.Tel11 = detailControls[(int)EIndex.Tel1D].Text;
+                addInfo.adeD.Tel12 = detailControls[(int)EIndex.Tel2D].Text;
+                addInfo.adeD.Tel13 = detailControls[(int)EIndex.Tel3D].Text;
+                addInfo.kbn = 1;
+                addInfo.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+
+        }
         private void CkM_CheckBox1_CheckedChanged(object sender, EventArgs e)
         {
             try
@@ -4365,7 +4589,10 @@ namespace TempoJuchuuNyuuryoku
             try
             {
                 if (CboStoreCD.SelectedIndex > 0)
+                {
                     ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+                    ScDeliveryCD.Value2 = CboStoreCD.SelectedValue.ToString();
+                }
             }
             catch (Exception ex)
             {
@@ -4380,6 +4607,8 @@ namespace TempoJuchuuNyuuryoku
             detailControls[(int)EIndex.CustomerName].Enabled = enabled;
             detailControls[(int)EIndex.CustomerName2].Enabled = enabled;
 
+            detailControls[(int)EIndex.DeliveryName].Enabled = enabled;
+            detailControls[(int)EIndex.DeliveryName2].Enabled = enabled;
             if (enabled)
             {
 
@@ -4388,6 +4617,8 @@ namespace TempoJuchuuNyuuryoku
             {
                 detailControls[(int)EIndex.CustomerName].Text = "";
                 detailControls[(int)EIndex.CustomerName2].Text = "";
+                detailControls[(int)EIndex.DeliveryName].Text = "";
+                detailControls[(int)EIndex.DeliveryName2].Text = "";
             }
         }
 

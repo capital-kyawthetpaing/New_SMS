@@ -257,7 +257,6 @@
             this.ckM_Label19 = new CKM_Controls.CKM_Label();
             this.ckM_CheckBox1 = new CKM_Controls.CKM_CheckBox();
             this.ckM_CheckBox2 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_TextBox7 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox14 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox19 = new CKM_Controls.CKM_TextBox();
@@ -308,6 +307,7 @@
             // 
             // PanelSearch
             // 
+            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -348,7 +348,7 @@
             this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(934, 110);
+            this.label9.Location = new System.Drawing.Point(934, 100);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 12);
             this.label9.TabIndex = 259;
@@ -393,7 +393,7 @@
             this.IMT_KAIDT_1.MaxLength = 10;
             this.IMT_KAIDT_1.MoveNext = true;
             this.IMT_KAIDT_1.Name = "IMT_KAIDT_1";
-            this.IMT_KAIDT_1.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_1.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_1.TabIndex = 14;
             this.IMT_KAIDT_1.Tag = "1";
             this.IMT_KAIDT_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -445,7 +445,7 @@
             this.IMT_KAIDT_0.MaxLength = 10;
             this.IMT_KAIDT_0.MoveNext = true;
             this.IMT_KAIDT_0.Name = "IMT_KAIDT_0";
-            this.IMT_KAIDT_0.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_0.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_0.TabIndex = 0;
             this.IMT_KAIDT_0.Tag = "0";
             this.IMT_KAIDT_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -472,7 +472,7 @@
             this.IMT_REMAK_2.MaxLength = 40;
             this.IMT_REMAK_2.MoveNext = true;
             this.IMT_REMAK_2.Name = "IMT_REMAK_2";
-            this.IMT_REMAK_2.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_2.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_2.TabIndex = 40;
             this.IMT_REMAK_2.Tag = "2";
             this.IMT_REMAK_2.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -499,7 +499,7 @@
             this.IMT_REMAK_1.MaxLength = 80;
             this.IMT_REMAK_1.MoveNext = true;
             this.IMT_REMAK_1.Name = "IMT_REMAK_1";
-            this.IMT_REMAK_1.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_1.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_1.TabIndex = 27;
             this.IMT_REMAK_1.Tag = "1";
             this.IMT_REMAK_1.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -526,7 +526,7 @@
             this.IMT_REMAK_0.MaxLength = 80;
             this.IMT_REMAK_0.MoveNext = true;
             this.IMT_REMAK_0.Name = "IMT_REMAK_0";
-            this.IMT_REMAK_0.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_0.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_0.TabIndex = 13;
             this.IMT_REMAK_0.Tag = "0";
             this.IMT_REMAK_0.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -943,7 +943,7 @@
             this.IMN_WEBPR2_7.IsNumber = true;
             this.IMN_WEBPR2_7.IsShop = false;
             this.IMN_WEBPR2_7.Length = 100;
-            this.IMN_WEBPR2_7.Location = new System.Drawing.Point(856, 285);
+            this.IMN_WEBPR2_7.Location = new System.Drawing.Point(857, 285);
             this.IMN_WEBPR2_7.MaxLength = 100;
             this.IMN_WEBPR2_7.MoveNext = true;
             this.IMN_WEBPR2_7.Name = "IMN_WEBPR2_7";
@@ -974,7 +974,7 @@
             this.IMN_WEBPR_7.MaxLength = 40;
             this.IMN_WEBPR_7.MoveNext = true;
             this.IMN_WEBPR_7.Name = "IMN_WEBPR_7";
-            this.IMN_WEBPR_7.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_7.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_7.TabIndex = 625;
             this.IMN_WEBPR_7.Tag = "7";
             this.IMN_WEBPR_7.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1058,7 +1058,7 @@
             this.IMT_REMAK_7.MaxLength = 80;
             this.IMT_REMAK_7.MoveNext = true;
             this.IMT_REMAK_7.Name = "IMT_REMAK_7";
-            this.IMT_REMAK_7.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_7.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_7.TabIndex = 627;
             this.IMT_REMAK_7.Tag = "7";
             this.IMT_REMAK_7.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1085,7 +1085,7 @@
             this.IMT_PAYDT_7.MaxLength = 10;
             this.IMT_PAYDT_7.MoveNext = true;
             this.IMT_PAYDT_7.Name = "IMT_PAYDT_7";
-            this.IMT_PAYDT_7.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_7.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_7.TabIndex = 632;
             this.IMT_PAYDT_7.Tag = "7";
             this.IMT_PAYDT_7.Text = "2019/01/01";
@@ -1113,7 +1113,7 @@
             this.IMN_CLINT_7.MaxLength = 10;
             this.IMN_CLINT_7.MoveNext = true;
             this.IMN_CLINT_7.Name = "IMN_CLINT_7";
-            this.IMN_CLINT_7.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_7.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_7.TabIndex = 623;
             this.IMN_CLINT_7.Tag = "7";
             this.IMN_CLINT_7.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -1139,7 +1139,7 @@
             this.IMT_KAIDT_7.MaxLength = 10;
             this.IMT_KAIDT_7.MoveNext = true;
             this.IMT_KAIDT_7.Name = "IMT_KAIDT_7";
-            this.IMT_KAIDT_7.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_7.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_7.TabIndex = 616;
             this.IMT_KAIDT_7.Tag = "7";
             this.IMT_KAIDT_7.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -1161,7 +1161,7 @@
             this.IMT_JUONO_7.IsNumber = true;
             this.IMT_JUONO_7.IsShop = false;
             this.IMT_JUONO_7.Length = 40;
-            this.IMT_JUONO_7.Location = new System.Drawing.Point(169, 266);
+            this.IMT_JUONO_7.Location = new System.Drawing.Point(168, 266);
             this.IMT_JUONO_7.MaxLength = 20;
             this.IMT_JUONO_7.MoveNext = true;
             this.IMT_JUONO_7.Name = "IMT_JUONO_7";
@@ -1189,7 +1189,7 @@
             this.IMN_GENER_7.IsNumber = true;
             this.IMN_GENER_7.IsShop = false;
             this.IMN_GENER_7.Length = 10;
-            this.IMN_GENER_7.Location = new System.Drawing.Point(1106, 285);
+            this.IMN_GENER_7.Location = new System.Drawing.Point(1105, 285);
             this.IMN_GENER_7.MaxLength = 9;
             this.IMN_GENER_7.MoveNext = true;
             this.IMN_GENER_7.Name = "IMN_GENER_7";
@@ -1276,7 +1276,7 @@
             this.IMT_ITMNM_7.MaxLength = 80;
             this.IMT_ITMNM_7.MoveNext = true;
             this.IMT_ITMNM_7.Name = "IMT_ITMNM_7";
-            this.IMT_ITMNM_7.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_7.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_7.TabIndex = 628;
             this.IMT_ITMNM_7.Tag = "7";
             this.IMT_ITMNM_7.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1399,7 +1399,7 @@
             this.IMN_WEBPR2_6.IsNumber = true;
             this.IMN_WEBPR2_6.IsShop = false;
             this.IMN_WEBPR2_6.Length = 100;
-            this.IMN_WEBPR2_6.Location = new System.Drawing.Point(856, 247);
+            this.IMN_WEBPR2_6.Location = new System.Drawing.Point(857, 247);
             this.IMN_WEBPR2_6.MaxLength = 100;
             this.IMN_WEBPR2_6.MoveNext = true;
             this.IMN_WEBPR2_6.Name = "IMN_WEBPR2_6";
@@ -1430,7 +1430,7 @@
             this.IMN_WEBPR_6.MaxLength = 40;
             this.IMN_WEBPR_6.MoveNext = true;
             this.IMN_WEBPR_6.Name = "IMN_WEBPR_6";
-            this.IMN_WEBPR_6.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_6.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_6.TabIndex = 606;
             this.IMN_WEBPR_6.Tag = "6";
             this.IMN_WEBPR_6.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1514,7 +1514,7 @@
             this.IMT_REMAK_6.MaxLength = 80;
             this.IMT_REMAK_6.MoveNext = true;
             this.IMT_REMAK_6.Name = "IMT_REMAK_6";
-            this.IMT_REMAK_6.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_6.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_6.TabIndex = 608;
             this.IMT_REMAK_6.Tag = "6";
             this.IMT_REMAK_6.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1541,7 +1541,7 @@
             this.IMT_PAYDT_6.MaxLength = 10;
             this.IMT_PAYDT_6.MoveNext = true;
             this.IMT_PAYDT_6.Name = "IMT_PAYDT_6";
-            this.IMT_PAYDT_6.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_6.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_6.TabIndex = 613;
             this.IMT_PAYDT_6.Tag = "6";
             this.IMT_PAYDT_6.Text = "2019/01/01";
@@ -1569,7 +1569,7 @@
             this.IMN_CLINT_6.MaxLength = 10;
             this.IMN_CLINT_6.MoveNext = true;
             this.IMN_CLINT_6.Name = "IMN_CLINT_6";
-            this.IMN_CLINT_6.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_6.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_6.TabIndex = 604;
             this.IMN_CLINT_6.Tag = "6";
             this.IMN_CLINT_6.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -1595,7 +1595,7 @@
             this.IMT_KAIDT_6.MaxLength = 10;
             this.IMT_KAIDT_6.MoveNext = true;
             this.IMT_KAIDT_6.Name = "IMT_KAIDT_6";
-            this.IMT_KAIDT_6.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_6.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_6.TabIndex = 597;
             this.IMT_KAIDT_6.Tag = "6";
             this.IMT_KAIDT_6.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -1617,7 +1617,7 @@
             this.IMT_JUONO_6.IsNumber = true;
             this.IMT_JUONO_6.IsShop = false;
             this.IMT_JUONO_6.Length = 40;
-            this.IMT_JUONO_6.Location = new System.Drawing.Point(169, 228);
+            this.IMT_JUONO_6.Location = new System.Drawing.Point(168, 228);
             this.IMT_JUONO_6.MaxLength = 20;
             this.IMT_JUONO_6.MoveNext = true;
             this.IMT_JUONO_6.Name = "IMT_JUONO_6";
@@ -1645,7 +1645,7 @@
             this.IMN_GENER_6.IsNumber = true;
             this.IMN_GENER_6.IsShop = false;
             this.IMN_GENER_6.Length = 10;
-            this.IMN_GENER_6.Location = new System.Drawing.Point(1106, 247);
+            this.IMN_GENER_6.Location = new System.Drawing.Point(1105, 247);
             this.IMN_GENER_6.MaxLength = 9;
             this.IMN_GENER_6.MoveNext = true;
             this.IMN_GENER_6.Name = "IMN_GENER_6";
@@ -1732,7 +1732,7 @@
             this.IMT_ITMNM_6.MaxLength = 80;
             this.IMT_ITMNM_6.MoveNext = true;
             this.IMT_ITMNM_6.Name = "IMT_ITMNM_6";
-            this.IMT_ITMNM_6.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_6.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_6.TabIndex = 609;
             this.IMT_ITMNM_6.Tag = "6";
             this.IMT_ITMNM_6.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1855,7 +1855,7 @@
             this.IMN_WEBPR2_5.IsNumber = true;
             this.IMN_WEBPR2_5.IsShop = false;
             this.IMN_WEBPR2_5.Length = 100;
-            this.IMN_WEBPR2_5.Location = new System.Drawing.Point(856, 209);
+            this.IMN_WEBPR2_5.Location = new System.Drawing.Point(857, 209);
             this.IMN_WEBPR2_5.MaxLength = 100;
             this.IMN_WEBPR2_5.MoveNext = true;
             this.IMN_WEBPR2_5.Name = "IMN_WEBPR2_5";
@@ -1886,7 +1886,7 @@
             this.IMN_WEBPR_5.MaxLength = 40;
             this.IMN_WEBPR_5.MoveNext = true;
             this.IMN_WEBPR_5.Name = "IMN_WEBPR_5";
-            this.IMN_WEBPR_5.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_5.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_5.TabIndex = 587;
             this.IMN_WEBPR_5.Tag = "5";
             this.IMN_WEBPR_5.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1970,7 +1970,7 @@
             this.IMT_REMAK_5.MaxLength = 80;
             this.IMT_REMAK_5.MoveNext = true;
             this.IMT_REMAK_5.Name = "IMT_REMAK_5";
-            this.IMT_REMAK_5.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_5.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_5.TabIndex = 589;
             this.IMT_REMAK_5.Tag = "5";
             this.IMT_REMAK_5.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -1997,7 +1997,7 @@
             this.IMT_PAYDT_5.MaxLength = 10;
             this.IMT_PAYDT_5.MoveNext = true;
             this.IMT_PAYDT_5.Name = "IMT_PAYDT_5";
-            this.IMT_PAYDT_5.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_5.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_5.TabIndex = 594;
             this.IMT_PAYDT_5.Tag = "5";
             this.IMT_PAYDT_5.Text = "2019/01/01";
@@ -2025,7 +2025,7 @@
             this.IMN_CLINT_5.MaxLength = 10;
             this.IMN_CLINT_5.MoveNext = true;
             this.IMN_CLINT_5.Name = "IMN_CLINT_5";
-            this.IMN_CLINT_5.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_5.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_5.TabIndex = 585;
             this.IMN_CLINT_5.Tag = "5";
             this.IMN_CLINT_5.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2051,7 +2051,7 @@
             this.IMT_KAIDT_5.MaxLength = 10;
             this.IMT_KAIDT_5.MoveNext = true;
             this.IMT_KAIDT_5.Name = "IMT_KAIDT_5";
-            this.IMT_KAIDT_5.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_5.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_5.TabIndex = 578;
             this.IMT_KAIDT_5.Tag = "5";
             this.IMT_KAIDT_5.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2073,7 +2073,7 @@
             this.IMT_JUONO_5.IsNumber = true;
             this.IMT_JUONO_5.IsShop = false;
             this.IMT_JUONO_5.Length = 40;
-            this.IMT_JUONO_5.Location = new System.Drawing.Point(169, 190);
+            this.IMT_JUONO_5.Location = new System.Drawing.Point(168, 190);
             this.IMT_JUONO_5.MaxLength = 20;
             this.IMT_JUONO_5.MoveNext = true;
             this.IMT_JUONO_5.Name = "IMT_JUONO_5";
@@ -2101,7 +2101,7 @@
             this.IMN_GENER_5.IsNumber = true;
             this.IMN_GENER_5.IsShop = false;
             this.IMN_GENER_5.Length = 10;
-            this.IMN_GENER_5.Location = new System.Drawing.Point(1106, 209);
+            this.IMN_GENER_5.Location = new System.Drawing.Point(1105, 209);
             this.IMN_GENER_5.MaxLength = 9;
             this.IMN_GENER_5.MoveNext = true;
             this.IMN_GENER_5.Name = "IMN_GENER_5";
@@ -2188,7 +2188,7 @@
             this.IMT_ITMNM_5.MaxLength = 80;
             this.IMT_ITMNM_5.MoveNext = true;
             this.IMT_ITMNM_5.Name = "IMT_ITMNM_5";
-            this.IMT_ITMNM_5.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_5.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_5.TabIndex = 590;
             this.IMT_ITMNM_5.Tag = "5";
             this.IMT_ITMNM_5.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2311,7 +2311,7 @@
             this.IMN_WEBPR2_4.IsNumber = true;
             this.IMN_WEBPR2_4.IsShop = false;
             this.IMN_WEBPR2_4.Length = 100;
-            this.IMN_WEBPR2_4.Location = new System.Drawing.Point(856, 171);
+            this.IMN_WEBPR2_4.Location = new System.Drawing.Point(857, 171);
             this.IMN_WEBPR2_4.MaxLength = 100;
             this.IMN_WEBPR2_4.MoveNext = true;
             this.IMN_WEBPR2_4.Name = "IMN_WEBPR2_4";
@@ -2342,7 +2342,7 @@
             this.IMN_WEBPR_4.MaxLength = 40;
             this.IMN_WEBPR_4.MoveNext = true;
             this.IMN_WEBPR_4.Name = "IMN_WEBPR_4";
-            this.IMN_WEBPR_4.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_4.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_4.TabIndex = 568;
             this.IMN_WEBPR_4.Tag = "4";
             this.IMN_WEBPR_4.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2426,7 +2426,7 @@
             this.IMT_REMAK_4.MaxLength = 80;
             this.IMT_REMAK_4.MoveNext = true;
             this.IMT_REMAK_4.Name = "IMT_REMAK_4";
-            this.IMT_REMAK_4.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_4.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_4.TabIndex = 570;
             this.IMT_REMAK_4.Tag = "4";
             this.IMT_REMAK_4.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2453,7 +2453,7 @@
             this.IMT_PAYDT_4.MaxLength = 10;
             this.IMT_PAYDT_4.MoveNext = true;
             this.IMT_PAYDT_4.Name = "IMT_PAYDT_4";
-            this.IMT_PAYDT_4.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_4.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_4.TabIndex = 575;
             this.IMT_PAYDT_4.Tag = "4";
             this.IMT_PAYDT_4.Text = "2019/01/01";
@@ -2481,7 +2481,7 @@
             this.IMN_CLINT_4.MaxLength = 10;
             this.IMN_CLINT_4.MoveNext = true;
             this.IMN_CLINT_4.Name = "IMN_CLINT_4";
-            this.IMN_CLINT_4.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_4.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_4.TabIndex = 566;
             this.IMN_CLINT_4.Tag = "4";
             this.IMN_CLINT_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2507,7 +2507,7 @@
             this.IMT_KAIDT_4.MaxLength = 10;
             this.IMT_KAIDT_4.MoveNext = true;
             this.IMT_KAIDT_4.Name = "IMT_KAIDT_4";
-            this.IMT_KAIDT_4.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_4.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_4.TabIndex = 559;
             this.IMT_KAIDT_4.Tag = "4";
             this.IMT_KAIDT_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2529,7 +2529,7 @@
             this.IMT_JUONO_4.IsNumber = true;
             this.IMT_JUONO_4.IsShop = false;
             this.IMT_JUONO_4.Length = 40;
-            this.IMT_JUONO_4.Location = new System.Drawing.Point(169, 152);
+            this.IMT_JUONO_4.Location = new System.Drawing.Point(168, 152);
             this.IMT_JUONO_4.MaxLength = 20;
             this.IMT_JUONO_4.MoveNext = true;
             this.IMT_JUONO_4.Name = "IMT_JUONO_4";
@@ -2557,7 +2557,7 @@
             this.IMN_GENER_4.IsNumber = true;
             this.IMN_GENER_4.IsShop = false;
             this.IMN_GENER_4.Length = 10;
-            this.IMN_GENER_4.Location = new System.Drawing.Point(1106, 171);
+            this.IMN_GENER_4.Location = new System.Drawing.Point(1105, 171);
             this.IMN_GENER_4.MaxLength = 9;
             this.IMN_GENER_4.MoveNext = true;
             this.IMN_GENER_4.Name = "IMN_GENER_4";
@@ -2644,7 +2644,7 @@
             this.IMT_ITMNM_4.MaxLength = 80;
             this.IMT_ITMNM_4.MoveNext = true;
             this.IMT_ITMNM_4.Name = "IMT_ITMNM_4";
-            this.IMT_ITMNM_4.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_4.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_4.TabIndex = 571;
             this.IMT_ITMNM_4.Tag = "4";
             this.IMT_ITMNM_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2767,7 +2767,7 @@
             this.IMN_WEBPR2_3.IsNumber = true;
             this.IMN_WEBPR2_3.IsShop = false;
             this.IMN_WEBPR2_3.Length = 100;
-            this.IMN_WEBPR2_3.Location = new System.Drawing.Point(856, 133);
+            this.IMN_WEBPR2_3.Location = new System.Drawing.Point(857, 133);
             this.IMN_WEBPR2_3.MaxLength = 100;
             this.IMN_WEBPR2_3.MoveNext = true;
             this.IMN_WEBPR2_3.Name = "IMN_WEBPR2_3";
@@ -2798,7 +2798,7 @@
             this.IMN_WEBPR_3.MaxLength = 40;
             this.IMN_WEBPR_3.MoveNext = true;
             this.IMN_WEBPR_3.Name = "IMN_WEBPR_3";
-            this.IMN_WEBPR_3.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_3.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_3.TabIndex = 548;
             this.IMN_WEBPR_3.Tag = "3";
             this.IMN_WEBPR_3.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2882,7 +2882,7 @@
             this.IMT_REMAK_3.MaxLength = 40;
             this.IMT_REMAK_3.MoveNext = true;
             this.IMT_REMAK_3.Name = "IMT_REMAK_3";
-            this.IMT_REMAK_3.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_3.Size = new System.Drawing.Size(345, 19);
             this.IMT_REMAK_3.TabIndex = 550;
             this.IMT_REMAK_3.Tag = "3";
             this.IMT_REMAK_3.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2909,7 +2909,7 @@
             this.IMT_PAYDT_3.MaxLength = 10;
             this.IMT_PAYDT_3.MoveNext = true;
             this.IMT_PAYDT_3.Name = "IMT_PAYDT_3";
-            this.IMT_PAYDT_3.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_3.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_3.TabIndex = 556;
             this.IMT_PAYDT_3.Tag = "3";
             this.IMT_PAYDT_3.Text = "2019/01/01";
@@ -2937,7 +2937,7 @@
             this.IMN_CLINT_3.MaxLength = 10;
             this.IMN_CLINT_3.MoveNext = true;
             this.IMN_CLINT_3.Name = "IMN_CLINT_3";
-            this.IMN_CLINT_3.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_3.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_3.TabIndex = 546;
             this.IMN_CLINT_3.Tag = "3";
             this.IMN_CLINT_3.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2963,7 +2963,7 @@
             this.IMT_KAIDT_3.MaxLength = 10;
             this.IMT_KAIDT_3.MoveNext = true;
             this.IMT_KAIDT_3.Name = "IMT_KAIDT_3";
-            this.IMT_KAIDT_3.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_3.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_3.TabIndex = 539;
             this.IMT_KAIDT_3.Tag = "3";
             this.IMT_KAIDT_3.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2985,7 +2985,7 @@
             this.IMT_JUONO_3.IsNumber = true;
             this.IMT_JUONO_3.IsShop = false;
             this.IMT_JUONO_3.Length = 40;
-            this.IMT_JUONO_3.Location = new System.Drawing.Point(169, 114);
+            this.IMT_JUONO_3.Location = new System.Drawing.Point(168, 114);
             this.IMT_JUONO_3.MaxLength = 20;
             this.IMT_JUONO_3.MoveNext = true;
             this.IMT_JUONO_3.Name = "IMT_JUONO_3";
@@ -3013,7 +3013,7 @@
             this.IMN_GENER_3.IsNumber = true;
             this.IMN_GENER_3.IsShop = false;
             this.IMN_GENER_3.Length = 10;
-            this.IMN_GENER_3.Location = new System.Drawing.Point(1106, 133);
+            this.IMN_GENER_3.Location = new System.Drawing.Point(1105, 133);
             this.IMN_GENER_3.MaxLength = 9;
             this.IMN_GENER_3.MoveNext = true;
             this.IMN_GENER_3.Name = "IMN_GENER_3";
@@ -3100,7 +3100,7 @@
             this.IMT_ITMNM_3.MaxLength = 80;
             this.IMT_ITMNM_3.MoveNext = true;
             this.IMT_ITMNM_3.Name = "IMT_ITMNM_3";
-            this.IMT_ITMNM_3.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_3.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_3.TabIndex = 552;
             this.IMT_ITMNM_3.Tag = "3";
             this.IMT_ITMNM_3.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3307,7 +3307,7 @@
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
             this.IMN_WEBPR2_2.Length = 100;
-            this.IMN_WEBPR2_2.Location = new System.Drawing.Point(856, 95);
+            this.IMN_WEBPR2_2.Location = new System.Drawing.Point(857, 95);
             this.IMN_WEBPR2_2.MaxLength = 100;
             this.IMN_WEBPR2_2.MoveNext = true;
             this.IMN_WEBPR2_2.Name = "IMN_WEBPR2_2";
@@ -3392,7 +3392,7 @@
             this.IMN_WEBPR_2.MaxLength = 40;
             this.IMN_WEBPR_2.MoveNext = true;
             this.IMN_WEBPR_2.Name = "IMN_WEBPR_2";
-            this.IMN_WEBPR_2.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_2.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_2.TabIndex = 38;
             this.IMN_WEBPR_2.Tag = "2";
             this.IMN_WEBPR_2.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3419,7 +3419,7 @@
             this.IMN_WEBPR_1.MaxLength = 40;
             this.IMN_WEBPR_1.MoveNext = true;
             this.IMN_WEBPR_1.Name = "IMN_WEBPR_1";
-            this.IMN_WEBPR_1.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_1.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_1.TabIndex = 25;
             this.IMN_WEBPR_1.Tag = "1";
             this.IMN_WEBPR_1.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3446,7 +3446,7 @@
             this.IMN_WEBPR_0.MaxLength = 40;
             this.IMN_WEBPR_0.MoveNext = true;
             this.IMN_WEBPR_0.Name = "IMN_WEBPR_0";
-            this.IMN_WEBPR_0.Size = new System.Drawing.Size(352, 19);
+            this.IMN_WEBPR_0.Size = new System.Drawing.Size(324, 19);
             this.IMN_WEBPR_0.TabIndex = 11;
             this.IMN_WEBPR_0.Tag = "0";
             this.IMN_WEBPR_0.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3644,7 +3644,7 @@
             this.IMT_PAYDT_2.MaxLength = 10;
             this.IMT_PAYDT_2.MoveNext = true;
             this.IMT_PAYDT_2.Name = "IMT_PAYDT_2";
-            this.IMT_PAYDT_2.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_2.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_2.TabIndex = 517;
             this.IMT_PAYDT_2.Tag = "2";
             this.IMT_PAYDT_2.Text = "2019/01/01";
@@ -3672,7 +3672,7 @@
             this.IMT_PAYDT_1.MaxLength = 10;
             this.IMT_PAYDT_1.MoveNext = true;
             this.IMT_PAYDT_1.Name = "IMT_PAYDT_1";
-            this.IMT_PAYDT_1.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_1.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_1.TabIndex = 514;
             this.IMT_PAYDT_1.Tag = "1";
             this.IMT_PAYDT_1.Text = "2019/01/01";
@@ -3700,7 +3700,7 @@
             this.IMT_PAYDT_0.MaxLength = 10;
             this.IMT_PAYDT_0.MoveNext = true;
             this.IMT_PAYDT_0.Name = "IMT_PAYDT_0";
-            this.IMT_PAYDT_0.Size = new System.Drawing.Size(88, 19);
+            this.IMT_PAYDT_0.Size = new System.Drawing.Size(81, 19);
             this.IMT_PAYDT_0.TabIndex = 511;
             this.IMT_PAYDT_0.Tag = "0";
             this.IMT_PAYDT_0.Text = "2019/01/01";
@@ -3728,7 +3728,7 @@
             this.IMN_CLINT_2.MaxLength = 10;
             this.IMN_CLINT_2.MoveNext = true;
             this.IMN_CLINT_2.Name = "IMN_CLINT_2";
-            this.IMN_CLINT_2.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_2.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_2.TabIndex = 34;
             this.IMN_CLINT_2.Tag = "2";
             this.IMN_CLINT_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3755,7 +3755,7 @@
             this.IMN_CLINT_1.MaxLength = 10;
             this.IMN_CLINT_1.MoveNext = true;
             this.IMN_CLINT_1.Name = "IMN_CLINT_1";
-            this.IMN_CLINT_1.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_1.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_1.TabIndex = 21;
             this.IMN_CLINT_1.Tag = "1";
             this.IMN_CLINT_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3782,7 +3782,7 @@
             this.IMN_CLINT_0.MaxLength = 10;
             this.IMN_CLINT_0.MoveNext = true;
             this.IMN_CLINT_0.Name = "IMN_CLINT_0";
-            this.IMN_CLINT_0.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_0.Size = new System.Drawing.Size(113, 19);
             this.IMN_CLINT_0.TabIndex = 7;
             this.IMN_CLINT_0.Tag = "0";
             this.IMN_CLINT_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3808,7 +3808,7 @@
             this.IMT_KAIDT_2.MaxLength = 10;
             this.IMT_KAIDT_2.MoveNext = true;
             this.IMT_KAIDT_2.Name = "IMT_KAIDT_2";
-            this.IMT_KAIDT_2.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_2.Size = new System.Drawing.Size(110, 19);
             this.IMT_KAIDT_2.TabIndex = 28;
             this.IMT_KAIDT_2.Tag = "2";
             this.IMT_KAIDT_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3830,7 +3830,7 @@
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
             this.IMT_JUONO_0.Length = 40;
-            this.IMT_JUONO_0.Location = new System.Drawing.Point(169, 0);
+            this.IMT_JUONO_0.Location = new System.Drawing.Point(168, 0);
             this.IMT_JUONO_0.MaxLength = 20;
             this.IMT_JUONO_0.MoveNext = true;
             this.IMT_JUONO_0.Name = "IMT_JUONO_0";
@@ -3857,7 +3857,7 @@
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
             this.IMT_JUONO_1.Length = 40;
-            this.IMT_JUONO_1.Location = new System.Drawing.Point(169, 38);
+            this.IMT_JUONO_1.Location = new System.Drawing.Point(168, 38);
             this.IMT_JUONO_1.MaxLength = 20;
             this.IMT_JUONO_1.MoveNext = true;
             this.IMT_JUONO_1.Name = "IMT_JUONO_1";
@@ -3884,7 +3884,7 @@
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
             this.IMT_JUONO_2.Length = 40;
-            this.IMT_JUONO_2.Location = new System.Drawing.Point(169, 76);
+            this.IMT_JUONO_2.Location = new System.Drawing.Point(168, 76);
             this.IMT_JUONO_2.MaxLength = 20;
             this.IMT_JUONO_2.MoveNext = true;
             this.IMT_JUONO_2.Name = "IMT_JUONO_2";
@@ -3912,7 +3912,7 @@
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
             this.IMN_GENER_2.Length = 10;
-            this.IMN_GENER_2.Location = new System.Drawing.Point(1106, 95);
+            this.IMN_GENER_2.Location = new System.Drawing.Point(1105, 95);
             this.IMN_GENER_2.MaxLength = 9;
             this.IMN_GENER_2.MoveNext = true;
             this.IMN_GENER_2.Name = "IMN_GENER_2";
@@ -3967,7 +3967,7 @@
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
             this.IMN_GENER_1.Length = 10;
-            this.IMN_GENER_1.Location = new System.Drawing.Point(1106, 57);
+            this.IMN_GENER_1.Location = new System.Drawing.Point(1105, 57);
             this.IMN_GENER_1.MaxLength = 9;
             this.IMN_GENER_1.MoveNext = true;
             this.IMN_GENER_1.Name = "IMN_GENER_1";
@@ -4022,7 +4022,7 @@
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
             this.IMN_GENER_0.Length = 10;
-            this.IMN_GENER_0.Location = new System.Drawing.Point(1106, 19);
+            this.IMN_GENER_0.Location = new System.Drawing.Point(1105, 19);
             this.IMN_GENER_0.MaxLength = 9;
             this.IMN_GENER_0.MoveNext = true;
             this.IMN_GENER_0.Name = "IMN_GENER_0";
@@ -4137,7 +4137,7 @@
             this.IMT_ITMNM_2.MaxLength = 80;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_2.TabIndex = 265;
             this.IMT_ITMNM_2.Tag = "2";
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -4164,7 +4164,7 @@
             this.IMT_ITMNM_1.MaxLength = 80;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_1.TabIndex = 264;
             this.IMT_ITMNM_1.Tag = "1";
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -4191,7 +4191,7 @@
             this.IMT_ITMNM_0.MaxLength = 80;
             this.IMT_ITMNM_0.MoveNext = true;
             this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
-            this.IMT_ITMNM_0.Size = new System.Drawing.Size(489, 19);
+            this.IMT_ITMNM_0.Size = new System.Drawing.Size(486, 19);
             this.IMT_ITMNM_0.TabIndex = 2;
             this.IMT_ITMNM_0.Tag = "0";
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -4288,8 +4288,9 @@
             this.SC_ITEM_0.ChangeDateWidth = 100;
             this.SC_ITEM_0.Code = "";
             this.SC_ITEM_0.CodeWidth = 110;
-            this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_0.DataCheck = false;
+            this.SC_ITEM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_0.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_0.IsCopy = false;
             this.SC_ITEM_0.LabelText = "";
@@ -4298,9 +4299,10 @@
             this.SC_ITEM_0.Name = "SC_ITEM_0";
             this.SC_ITEM_0.SearchEnable = true;
             this.SC_ITEM_0.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_0.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_0.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_0.TabIndex = 1;
             this.SC_ITEM_0.Tag = "0";
+            this.SC_ITEM_0.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_0.UseChangeDate = false;
             this.SC_ITEM_0.Value1 = null;
             this.SC_ITEM_0.Value2 = null;
@@ -4348,8 +4350,9 @@
             this.SC_ITEM_1.ChangeDateWidth = 100;
             this.SC_ITEM_1.Code = "";
             this.SC_ITEM_1.CodeWidth = 110;
-            this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_1.DataCheck = false;
+            this.SC_ITEM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_1.IsCopy = false;
             this.SC_ITEM_1.LabelText = "";
@@ -4358,9 +4361,10 @@
             this.SC_ITEM_1.Name = "SC_ITEM_1";
             this.SC_ITEM_1.SearchEnable = true;
             this.SC_ITEM_1.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_1.TabIndex = 482;
             this.SC_ITEM_1.Tag = "1";
+            this.SC_ITEM_1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_1.UseChangeDate = false;
             this.SC_ITEM_1.Value1 = null;
             this.SC_ITEM_1.Value2 = null;
@@ -4373,8 +4377,9 @@
             this.SC_ITEM_2.ChangeDateWidth = 100;
             this.SC_ITEM_2.Code = "";
             this.SC_ITEM_2.CodeWidth = 110;
-            this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_2.DataCheck = false;
+            this.SC_ITEM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_2.IsCopy = false;
             this.SC_ITEM_2.LabelText = "";
@@ -4383,9 +4388,10 @@
             this.SC_ITEM_2.Name = "SC_ITEM_2";
             this.SC_ITEM_2.SearchEnable = true;
             this.SC_ITEM_2.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_2.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_2.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_2.TabIndex = 483;
             this.SC_ITEM_2.Tag = "2";
+            this.SC_ITEM_2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_2.UseChangeDate = false;
             this.SC_ITEM_2.Value1 = null;
             this.SC_ITEM_2.Value2 = null;
@@ -4459,8 +4465,9 @@
             this.SC_ITEM_3.ChangeDateWidth = 100;
             this.SC_ITEM_3.Code = "";
             this.SC_ITEM_3.CodeWidth = 110;
-            this.SC_ITEM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_3.DataCheck = false;
+            this.SC_ITEM_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_3.IsCopy = false;
             this.SC_ITEM_3.LabelText = "";
@@ -4469,9 +4476,10 @@
             this.SC_ITEM_3.Name = "SC_ITEM_3";
             this.SC_ITEM_3.SearchEnable = true;
             this.SC_ITEM_3.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_3.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_3.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_3.TabIndex = 554;
             this.SC_ITEM_3.Tag = "3";
+            this.SC_ITEM_3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_3.UseChangeDate = false;
             this.SC_ITEM_3.Value1 = null;
             this.SC_ITEM_3.Value2 = null;
@@ -4484,8 +4492,9 @@
             this.SC_ITEM_4.ChangeDateWidth = 100;
             this.SC_ITEM_4.Code = "";
             this.SC_ITEM_4.CodeWidth = 110;
-            this.SC_ITEM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_4.DataCheck = false;
+            this.SC_ITEM_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_4.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_4.IsCopy = false;
             this.SC_ITEM_4.LabelText = "";
@@ -4494,9 +4503,10 @@
             this.SC_ITEM_4.Name = "SC_ITEM_4";
             this.SC_ITEM_4.SearchEnable = true;
             this.SC_ITEM_4.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_4.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_4.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_4.TabIndex = 573;
             this.SC_ITEM_4.Tag = "4";
+            this.SC_ITEM_4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_4.UseChangeDate = false;
             this.SC_ITEM_4.Value1 = null;
             this.SC_ITEM_4.Value2 = null;
@@ -4509,8 +4519,9 @@
             this.SC_ITEM_5.ChangeDateWidth = 100;
             this.SC_ITEM_5.Code = "";
             this.SC_ITEM_5.CodeWidth = 110;
-            this.SC_ITEM_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_5.DataCheck = false;
+            this.SC_ITEM_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_5.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_5.IsCopy = false;
             this.SC_ITEM_5.LabelText = "";
@@ -4519,9 +4530,10 @@
             this.SC_ITEM_5.Name = "SC_ITEM_5";
             this.SC_ITEM_5.SearchEnable = true;
             this.SC_ITEM_5.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_5.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_5.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_5.TabIndex = 592;
             this.SC_ITEM_5.Tag = "5";
+            this.SC_ITEM_5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_5.UseChangeDate = false;
             this.SC_ITEM_5.Value1 = null;
             this.SC_ITEM_5.Value2 = null;
@@ -4534,8 +4546,9 @@
             this.SC_ITEM_6.ChangeDateWidth = 100;
             this.SC_ITEM_6.Code = "";
             this.SC_ITEM_6.CodeWidth = 110;
-            this.SC_ITEM_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_6.DataCheck = false;
+            this.SC_ITEM_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_6.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_6.IsCopy = false;
             this.SC_ITEM_6.LabelText = "";
@@ -4544,9 +4557,10 @@
             this.SC_ITEM_6.Name = "SC_ITEM_6";
             this.SC_ITEM_6.SearchEnable = true;
             this.SC_ITEM_6.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_6.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_6.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_6.TabIndex = 611;
             this.SC_ITEM_6.Tag = "6";
+            this.SC_ITEM_6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_6.UseChangeDate = false;
             this.SC_ITEM_6.Value1 = null;
             this.SC_ITEM_6.Value2 = null;
@@ -4559,8 +4573,9 @@
             this.SC_ITEM_7.ChangeDateWidth = 100;
             this.SC_ITEM_7.Code = "";
             this.SC_ITEM_7.CodeWidth = 110;
-            this.SC_ITEM_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_7.DataCheck = false;
+            this.SC_ITEM_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_7.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_7.IsCopy = false;
             this.SC_ITEM_7.LabelText = "";
@@ -4569,9 +4584,10 @@
             this.SC_ITEM_7.Name = "SC_ITEM_7";
             this.SC_ITEM_7.SearchEnable = true;
             this.SC_ITEM_7.Size = new System.Drawing.Size(143, 28);
-            this.SC_ITEM_7.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.SC_ITEM_7.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
             this.SC_ITEM_7.TabIndex = 630;
             this.SC_ITEM_7.Tag = "7";
+            this.SC_ITEM_7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_ITEM_7.UseChangeDate = false;
             this.SC_ITEM_7.Value1 = null;
             this.SC_ITEM_7.Value2 = null;
@@ -4750,6 +4766,7 @@
             this.ScOrder.CodeWidth = 130;
             this.ScOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrder.DataCheck = true;
+            this.ScOrder.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScOrder.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScOrder.IsCopy = false;
             this.ScOrder.LabelText = "";
@@ -4760,6 +4777,7 @@
             this.ScOrder.Size = new System.Drawing.Size(444, 28);
             this.ScOrder.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScOrder.TabIndex = 9;
+            this.ScOrder.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScOrder.UseChangeDate = false;
             this.ScOrder.Value1 = null;
             this.ScOrder.Value2 = null;
@@ -5070,6 +5088,7 @@
             this.ScCopyOrderNO.CodeWidth = 100;
             this.ScCopyOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyOrderNO.DataCheck = true;
+            this.ScCopyOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCopyOrderNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScCopyOrderNO.IsCopy = true;
             this.ScCopyOrderNO.LabelText = "";
@@ -5080,6 +5099,7 @@
             this.ScCopyOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScCopyOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScCopyOrderNO.TabIndex = 1;
+            this.ScCopyOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyOrderNO.UseChangeDate = false;
             this.ScCopyOrderNO.Value1 = null;
             this.ScCopyOrderNO.Value2 = null;
@@ -5094,6 +5114,7 @@
             this.ScOrderNO.CodeWidth = 100;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrderNO.DataCheck = false;
+            this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScOrderNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScOrderNO.IsCopy = false;
             this.ScOrderNO.LabelText = "";
@@ -5104,6 +5125,7 @@
             this.ScOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScOrderNO.TabIndex = 0;
+            this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScOrderNO.UseChangeDate = false;
             this.ScOrderNO.Value1 = null;
             this.ScOrderNO.Value2 = null;
@@ -5118,16 +5140,18 @@
             this.ScStaff.CodeWidth = 100;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
-            this.ScStaff.Location = new System.Drawing.Point(997, 100);
+            this.ScStaff.Location = new System.Drawing.Point(997, 92);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.SearchEnable = true;
             this.ScStaff.Size = new System.Drawing.Size(344, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 8;
+            this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
             this.ScStaff.Value2 = null;
@@ -5226,6 +5250,7 @@
             this.ckM_SearchControl3.CodeWidth = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl3.IsCopy = false;
             this.ckM_SearchControl3.LabelText = "";
@@ -5236,6 +5261,7 @@
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
             this.ckM_SearchControl3.Value2 = null;
@@ -5270,11 +5296,16 @@
             // 
             // TxtRemark1
             // 
+            this.TxtRemark1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 500;
             this.TxtRemark1.Location = new System.Drawing.Point(99, 603);
             this.TxtRemark1.MaxLength = 250;
+            this.TxtRemark1.Mdea = false;
+            this.TxtRemark1.Mfocus = false;
             this.TxtRemark1.MoveNext = false;
             this.TxtRemark1.Multiline = true;
             this.TxtRemark1.Name = "TxtRemark1";
@@ -5282,6 +5313,7 @@
             this.TxtRemark1.Size = new System.Drawing.Size(650, 48);
             this.TxtRemark1.TabIndex = 21;
             this.TxtRemark1.Text = "bbbbbbb";
+            this.TxtRemark1.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // tabControl1
             // 
@@ -5364,7 +5396,7 @@
             // 
             this.CboSoukoName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CboSoukoName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboSoukoName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
+            this.CboSoukoName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.出荷指示倉庫;
             this.CboSoukoName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboSoukoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CboSoukoName.FormattingEnabled = true;
@@ -5379,11 +5411,16 @@
             // 
             // TxtRemark2
             // 
+            this.TxtRemark2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.TxtRemark2.BackColor = System.Drawing.Color.White;
             this.TxtRemark2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 500;
             this.TxtRemark2.Location = new System.Drawing.Point(99, 656);
             this.TxtRemark2.MaxLength = 250;
+            this.TxtRemark2.Mdea = false;
+            this.TxtRemark2.Mfocus = false;
             this.TxtRemark2.MoveNext = false;
             this.TxtRemark2.Multiline = true;
             this.TxtRemark2.Name = "TxtRemark2";
@@ -5391,6 +5428,7 @@
             this.TxtRemark2.Size = new System.Drawing.Size(650, 47);
             this.TxtRemark2.TabIndex = 22;
             this.TxtRemark2.Text = resources.GetString("TxtRemark2.Text");
+            this.TxtRemark2.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ckM_Label5
             // 
@@ -5452,6 +5490,7 @@
             this.ckM_SearchControl1.CodeWidth = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
+            this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl1.IsCopy = false;
             this.ckM_SearchControl1.LabelText = "";
@@ -5462,6 +5501,7 @@
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl1.TabIndex = 694;
+            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
             this.ckM_SearchControl1.Value2 = null;
@@ -5493,6 +5533,7 @@
             this.ScMotoOrderNo.CodeWidth = 100;
             this.ScMotoOrderNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMotoOrderNo.DataCheck = false;
+            this.ScMotoOrderNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScMotoOrderNo.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScMotoOrderNo.IsCopy = false;
             this.ScMotoOrderNo.LabelText = "";
@@ -5503,6 +5544,7 @@
             this.ScMotoOrderNo.Size = new System.Drawing.Size(133, 28);
             this.ScMotoOrderNo.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScMotoOrderNo.TabIndex = 5;
+            this.ScMotoOrderNo.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScMotoOrderNo.UseChangeDate = false;
             this.ScMotoOrderNo.Value1 = null;
             this.ScMotoOrderNo.Value2 = null;
@@ -5525,7 +5567,7 @@
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 15;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(1107, 156);
+            this.ckM_TextBox8.Location = new System.Drawing.Point(1107, 166);
             this.ckM_TextBox8.MaxLength = 15;
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
@@ -5550,7 +5592,7 @@
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 15;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(923, 156);
+            this.ckM_TextBox18.Location = new System.Drawing.Point(923, 166);
             this.ckM_TextBox18.MaxLength = 15;
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
@@ -5568,7 +5610,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(862, 159);
+            this.ckM_Label15.Location = new System.Drawing.Point(862, 169);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label15.TabIndex = 697;
@@ -5653,25 +5695,6 @@
             this.ckM_CheckBox2.UseVisualStyleBackColor = true;
             this.ckM_CheckBox2.CheckedChanged += new System.EventHandler(this.CkM_CheckBox2_CheckedChanged);
             // 
-            // ckM_Button1
-            // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button1.DefaultBtnSize = false;
-            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(720, 155);
-            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(58, 21);
-            this.ckM_Button1.TabIndex = 18;
-            this.ckM_Button1.Text = "変換";
-            this.ckM_Button1.UseVisualStyleBackColor = false;
-            this.ckM_Button1.Click += new System.EventHandler(this.BtnAddress_Click);
-            // 
             // ckM_TextBox7
             // 
             this.ckM_TextBox7.AllowMinus = false;
@@ -5731,7 +5754,7 @@
             this.ckM_TextBox19.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox19.DecimalPlace = 0;
             this.ckM_TextBox19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox19.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -5741,7 +5764,7 @@
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
             this.ckM_TextBox19.Length = 4;
-            this.ckM_TextBox19.Location = new System.Drawing.Point(680, 156);
+            this.ckM_TextBox19.Location = new System.Drawing.Point(680, 166);
             this.ckM_TextBox19.MaxLength = 4;
             this.ckM_TextBox19.MoveNext = true;
             this.ckM_TextBox19.Name = "ckM_TextBox19";
@@ -5756,7 +5779,7 @@
             this.ckM_TextBox20.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_TextBox20.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox20.DecimalPlace = 0;
             this.ckM_TextBox20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox20.ImeMode = System.Windows.Forms.ImeMode.Disable;
@@ -5766,7 +5789,7 @@
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
             this.ckM_TextBox20.Length = 3;
-            this.ckM_TextBox20.Location = new System.Drawing.Point(649, 156);
+            this.ckM_TextBox20.Location = new System.Drawing.Point(649, 166);
             this.ckM_TextBox20.MaxLength = 3;
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
@@ -5783,7 +5806,7 @@
             this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(587, 159);
+            this.label12.Location = new System.Drawing.Point(587, 169);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 12);
             this.label12.TabIndex = 712;
@@ -5869,7 +5892,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(1050, 159);
+            this.ckM_Label12.Location = new System.Drawing.Point(1050, 169);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(52, 12);
             this.ckM_Label12.TabIndex = 716;
@@ -5916,7 +5939,7 @@
             this.lblEDI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblEDI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEDI.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEDI.Location = new System.Drawing.Point(967, 132);
+            this.lblEDI.Location = new System.Drawing.Point(967, 127);
             this.lblEDI.Name = "lblEDI";
             this.lblEDI.Size = new System.Drawing.Size(85, 18);
             this.lblEDI.TabIndex = 719;
@@ -5935,7 +5958,6 @@
             this.Controls.Add(this.lblKin1);
             this.Controls.Add(this.ckM_CheckBox4);
             this.Controls.Add(this.ckM_CheckBox3);
-            this.Controls.Add(this.ckM_Button1);
             this.Controls.Add(this.ckM_TextBox7);
             this.Controls.Add(this.ckM_TextBox14);
             this.Controls.Add(this.ckM_TextBox19);
@@ -5968,6 +5990,7 @@
             this.ModeVisible = true;
             this.Name = "HacchuuNyuuryoku";
             this.PanelHeaderHeight = 90;
+            this.Text = "HacchuuNyuuryoku";
             this.Load += new System.EventHandler(this.Form_Load);
             this.Controls.SetChildIndex(this.ckM_TextBox9, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
@@ -5997,7 +6020,6 @@
             this.Controls.SetChildIndex(this.ckM_TextBox19, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox14, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox7, 0);
-            this.Controls.SetChildIndex(this.ckM_Button1, 0);
             this.Controls.SetChildIndex(this.ckM_CheckBox3, 0);
             this.Controls.SetChildIndex(this.ckM_CheckBox4, 0);
             this.Controls.SetChildIndex(this.lblKin1, 0);
@@ -6139,7 +6161,6 @@
         private CKM_Controls.CKM_TextBox IMT_JUONO_2;
         private CKM_Controls.CKM_CheckBox ckM_CheckBox1;
         private CKM_Controls.CKM_CheckBox ckM_CheckBox2;
-        private CKM_Controls.CKM_Button ckM_Button1;
         private CKM_Controls.CKM_TextBox ckM_TextBox7;
         private CKM_Controls.CKM_TextBox ckM_TextBox14;
         private CKM_Controls.CKM_TextBox ckM_TextBox19;

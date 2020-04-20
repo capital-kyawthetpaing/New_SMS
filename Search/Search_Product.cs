@@ -89,6 +89,8 @@ namespace Search
             cboTagName4.Bind(changeDate);
             cboTagName5.Bind(changeDate);
 
+            ScSports.Value1 = MultiPorpose_BL.ID_SPORTS;
+
             if (string.IsNullOrWhiteSpace(changeDate))
                 changeDate = sbl.GetDate();
 
@@ -494,14 +496,14 @@ namespace Search
                     }
                     else
                     {
-                        //[M_MakerBrand]
-                        M_MakerBrand_Entity mme = new M_MakerBrand_Entity
+                        //[M_Brand]
+                        M_Brand_Entity mme = new M_Brand_Entity
                         {
-                            ChangeDate = string.IsNullOrWhiteSpace(this.ChangeDate) ? sbl.GetDate() : this.ChangeDate,
+                            //ChangeDate = string.IsNullOrWhiteSpace(this.ChangeDate) ? sbl.GetDate() : this.ChangeDate,
                             BrandCD = detailControls[index].Text
                         };
-                        MakerBrand_BL mbl = new MakerBrand_BL();
-                        ret = mbl.M_MakerBrand_Select(mme);
+                        Brand_BL bbl = new Brand_BL();
+                        ret = bbl.M_Brand_Select(mme);
                         if (ret)
                         {
                             ScBrand.LabelText = mme.BrandName;

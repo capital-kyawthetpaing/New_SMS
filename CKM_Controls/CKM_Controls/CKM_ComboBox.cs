@@ -52,13 +52,15 @@ namespace CKM_Controls
             処理権限,
             店舗権限,
             役職,
-            //店舗名,
             データ種別,
             貨幣金種名,
             支払予定月,
             支払金種,
             ///*店舗名*/,
             受注確度,
+            /// <summary>	
+            /// 汎用マスタから金種区分マスタへ変更	
+            /// </summary>
             予定金種,
             年度,
             シーズン,
@@ -321,8 +323,14 @@ namespace CKM_Controls
                 //    DataTable storetb = storebl.BindData(mse);
                 //    BindCombo("StoreCD", "StoreName", storetb);
                 //    break;
-                case CboType.受注確度:
+                
                 case CboType.予定金種:
+                    M_DenominationKBN_Entity mde = new M_DenominationKBN_Entity();
+                    DenominationKBN_BL bl = new DenominationKBN_BL();
+                    DataTable dtDen = bl.BindKbn(mde, 0);
+                    BindCombo("DenominationCD", "DenominationName", dtDen);
+                    break;
+                case CboType.受注確度:
                 case CboType.年度:
                 case CboType.シーズン:
                 case CboType.予約フラグ:
@@ -350,9 +358,9 @@ namespace CKM_Controls
                         case CboType.受注確度:
                             me.ID = MultiPorpose_BL.ID_JyuchuChance;
                             break;
-                        case CboType.予定金種:
-                            me.ID = MultiPorpose_BL.ID_PaymentMethod;
-                            break;
+                        //case CboType.予定金種:
+                        //    me.ID = MultiPorpose_BL.ID_PaymentMethod;
+                        //    break;
                         case CboType.年度:
                             me.ID = MultiPorpose_BL.ID_YearTerm;
                             break;
@@ -417,6 +425,10 @@ namespace CKM_Controls
                             kbn = 0;
                             break;
                     }
+                    if (type != null)
+                    {
+                        kbn = Convert.ToInt16(type);
+                    }
                     if (kbn == 0)
                     {
                         DataTable dt = mbl.M_MultiPorpose_SoukoTypeSelect(me);
@@ -441,8 +453,8 @@ namespace CKM_Controls
                     mske.DeleteFlg = "0";
                     //mske.SoukoType = "3"; 3,4の両方へ変更
                     mske.ChangeDate = changeDate;
-                    GetLoginInformations();
-                    mske.StoreCD = StoreCD;
+                    //GetLoginInformations();
+                    //mske.StoreCD = StoreCD;
                     DataTable dtSouko = msbl.M_Souko_Bind(mske);
                     BindCombo("SoukoCD", "SoukoName", dtSouko);
                     break;

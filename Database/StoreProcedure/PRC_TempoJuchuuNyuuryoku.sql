@@ -7,47 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
---CREATE TYPE T_Juchuu AS TABLE
---    (
---    [JuchuuRows] [int],
---    [DisplayRows] [int],
---    [SiteJuchuuRows] [int] ,
---    [NotPrintFLG] [tinyint] ,
---    [AddJuchuuRows] [int],
---    [NotOrderFLG] [tinyint] ,
---    [DirectFLG] [tinyint] ,
---    [SKUNO] [int] ,
---    [SKUCD] [varchar](30) ,
---    [JanCD] [varchar](13) ,
---    [SKUName] [varchar](80) ,
---    [ColorName] [varchar](20) ,
---    [SizeName] [varchar](20) ,
---    [SetKBN] [tinyint] ,
-----  [SetRows] [tinyint] ,
---    [JuchuuSuu] [int] ,
---    [JuchuuUnitPrice] [money] ,
---    [TaniCD] [varchar](2) ,
---    [JuchuuGaku] [money] ,
---    [JuchuuHontaiGaku] [money] ,
---    [JuchuuTax] [money] ,
---    [JuchuuTaxRitsu] [int] ,
---    [CostUnitPrice] [money] ,
---    [CostGaku] [money] ,
---    [ProfitGaku] [money] ,
---    [SoukoCD] [varchar](6) ,
---    [VendorCD] [varchar](10) ,
---    [ArrivePlanDate] [date] ,
---    [CommentOutStore] [varchar](80) ,
---    [CommentInStore] [varchar](80) ,
---    [IndividualClientName] [varchar](80) ,
---    [ZaikoKBN] [tinyint] ,
---    [TemporaryNO] [varchar](11) ,	--仮引当番号
---    [UpdateFlg][tinyint]
---    )
---GO
-
-CREATE PROCEDURE [dbo].[PRC_TempoJuchuuNyuuryoku]
+Create PROCEDURE PRC_TempoJuchuuNyuuryoku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
     @JuchuuNO   varchar(11),
     @StoreCD   varchar(4),
@@ -69,6 +29,22 @@ CREATE PROCEDURE [dbo].[PRC_TempoJuchuuNyuuryoku]
     @Tel21   varchar(5),
     @Tel22   varchar(4),
     @Tel23   varchar(4),
+    
+    @DeliveryCD   varchar(13),
+    @DeliveryName   varchar(80),
+    @DeliveryName2   varchar(20),
+    @DeliveryAliasKBN   tinyint,
+    @DeliveryZipCD1   varchar(3),
+    @DeliveryZipCD2   varchar(4),
+    @DeliveryAddress1   varchar(100),
+    @DeliveryAddress2   varchar(100),
+    @DeliveryTel11   varchar(5),
+    @DeliveryTel12   varchar(4),
+    @DeliveryTel13   varchar(4),
+--    @DeliveryTel21   varchar(5),
+--    @DeliveryTel22   varchar(4),
+--    @DeliveryTel23   varchar(4),
+   
     @JuchuuGaku money ,
     @Discount money ,
     @HanbaiHontaiGaku money ,
@@ -107,9 +83,13 @@ BEGIN
     DECLARE @OperateModeNm varchar(10);
     DECLARE @KeyItem varchar(100);
     DECLARE @ReserveNO varchar(11);
+    DECLARE @Tennic tinyint;
+    DECLARE @DeliveryPlanNO  varchar(11);
     
     SET @W_ERR = 0;
     SET @SYSDATETIME = SYSDATETIME();
+    
+    SET @Tennic = (SeLECT M.Tennic FROM M_Control AS M WHERE M.MainKey = 1);
     
     --新規・変更Mode時、
     IF @OperateMode <= 2
@@ -290,6 +270,21 @@ BEGIN
            ,[Tel22]
            ,[Tel23]
            ,[CustomerKanaName]
+           ,[DeliveryCD]
+           ,[DeliveryName]
+           ,[DeliveryName2]
+           ,[DeliveryAliasKBN]
+           ,[DeliveryZipCD1]
+           ,[DeliveryZipCD2]
+           ,[DeliveryAddress1]
+           ,[DeliveryAddress2]
+           ,[DeliveryTel11]
+           ,[DeliveryTel12]
+           ,[DeliveryTel13]
+           ,[DeliveryTel21]
+           ,[DeliveryTel22]
+           ,[DeliveryTel23]
+           ,[DeliveryKanaName]
            ,[JuchuuCarrierCD]
            ,[DecidedCarrierFLG]
            ,[LastCarrierCD]
@@ -379,6 +374,21 @@ BEGIN
            ,NULL    --Tel22
            ,NULL    --Tel23
            ,NULL    --CustomerKanaName
+           ,@DeliveryCD
+           ,@DeliveryName
+           ,@DeliveryName2
+           ,@DeliveryAliasKBN
+           ,@DeliveryZipCD1
+           ,@DeliveryZipCD2
+           ,@DeliveryAddress1
+           ,@DeliveryAddress2
+           ,@DeliveryTel11
+           ,@DeliveryTel12
+           ,@DeliveryTel13
+           ,NULL    --Tel21
+           ,NULL    --Tel22
+           ,NULL    --Tel23
+           ,NULL   --,[DeliveryKanaName]
            ,NULL    --JuchuuCarrierCD
            ,0   --DecidedCarrierFLG
            ,NULL    --LastCarrierCD
@@ -448,6 +458,87 @@ BEGIN
                ,@NouhinsyoComment
                )
                ;
+               
+        --テニックの場合（店舗受注入力の結果を出荷指示に表示する）
+        --M_Control.TennicFLG＝1
+        IF @Tennic = 1
+        BEGIN
+            --【D_DeliveryPlan】配送予定情報　Table転送仕様Ｋ
+            --伝票番号採番
+            EXEC Fnc_GetNumber
+                19,             --in伝票種別 19
+                @JuchuuDate,      --in基準日
+                @StoreCD,       --in店舗CD
+                @Operator,
+                @DeliveryPlanNO OUTPUT
+                ;
+            
+            IF ISNULL(@DeliveryPlanNO,'') = ''
+            BEGIN
+                SET @W_ERR = 1;
+                RETURN @W_ERR;
+            END
+
+            INSERT INTO [D_DeliveryPlan]
+                   ([DeliveryPlanNO]
+                   ,[DeliveryKBN]
+                   ,[Number]
+                   ,[DeliveryName]
+                   ,[DeliverySoukoCD]
+                   ,[DeliveryZip1CD]
+                   ,[DeliveryZip2CD]
+                   ,[DeliveryAddress1]
+                   ,[DeliveryAddress2]
+                   ,[DeliveryMailAddress]
+                   ,[DeliveryTelphoneNO]
+                   ,[DeliveryFaxNO]
+                   ,[DecidedDeliveryDate]
+                   ,[DecidedDeliveryTime]
+                   ,[CarrierCD]
+                   ,[PaymentMethodCD]
+                   ,[CommentInStore]
+                   ,[CommentOutStore]
+                   ,[InvoiceNO]
+                   ,[DeliveryPlanDate]
+                   ,[HikiateFLG]
+                   ,[IncludeFLG]
+                   ,[OntheDayFLG]
+                   ,[ExpressFLG]
+                   ,[InsertOperator]
+                   ,[InsertDateTime]
+                   ,[UpdateOperator]
+                   ,[UpdateDateTime])
+            SELECT
+                    @DeliveryPlanNO
+                   ,1 AS DeliveryKBN	--(1:販売、2:倉庫移動)
+                   ,@JuchuuNO	AS Number
+                   ,@DeliveryName
+                   ,NULL	--[DeliverySoukoCD]
+                   ,@DeliveryZipCD1
+                   ,@DeliveryZipCD2
+                   ,@DeliveryAddress1
+                   ,@DeliveryAddress2
+                   ,NULL	--[DeliveryMailAddress]
+                   ,@DeliveryTel11 + '-' + @DeliveryTel12 + '-' + @DeliveryTel13	--[DeliveryTelphoneNO]
+                   ,NULL	--[DeliveryFaxNO]
+                   ,NULL	--[DecidedDeliveryDate]
+                   ,NULL	--[DecidedDeliveryTime]
+                   ,NULL	--[CarrierCD]
+                   ,@PaymentMethodCD	--[PaymentMethodCD]
+                   ,NULL	--[CommentInStore]
+                   ,NULL	--[CommentOutStore]
+                   ,NULL	--[InvoiceNO]
+                   ,NULL	--[DeliveryPlanDate]
+                   ,0	--[HikiateFLG]
+                   ,0	--[IncludeFLG]
+                   ,0	--[OntheDayFLG]
+                   ,0	--[ExpressFLG]
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,@Operator  
+                   ,@SYSDATETIME
+              ;            
+        END
     END
         
     --変更--
@@ -474,7 +565,18 @@ BEGIN
               ,[Tel13] = @Tel13                             
               ,[Tel21] = @Tel21                             
               ,[Tel22] = @Tel22                             
-              ,[Tel23] = @Tel23   
+              ,[Tel23] = @Tel23              
+              ,[DeliveryCD]       = @DeliveryCD
+              ,[DeliveryName]     = @DeliveryName
+              ,[DeliveryName2]    = @DeliveryName2
+              ,[DeliveryAliasKBN] = @DeliveryAliasKBN
+              ,[DeliveryZipCD1]   = @DeliveryZipCD1
+              ,[DeliveryZipCD2]   = @DeliveryZipCD2
+              ,[DeliveryAddress1] = @DeliveryAddress1
+              ,[DeliveryAddress2] = @DeliveryAddress2
+              ,[DeliveryTel11]    = @DeliveryTel11
+              ,[DeliveryTel12]    = @DeliveryTel12
+              ,[DeliveryTel13]    = @DeliveryTel13
               ,[JuchuuGaku] =       @JuchuuGaku
               ,[Discount] =         @Discount
               ,[HanbaiHontaiGaku] = @HanbaiHontaiGaku
@@ -501,6 +603,19 @@ BEGIN
            SET  [NouhinsyoComment] = @NouhinsyoComment
         WHERE [JuchuuNO] = @JuchuuNO
         ;
+        
+        UPDATE [D_DeliveryPlan] SET
+               [DeliveryName] = @DeliveryName
+              ,[DeliveryZip1CD]   = @DeliveryZipCD1
+              ,[DeliveryZip2CD]   = @DeliveryZipCD2
+              ,[DeliveryAddress1] = @DeliveryAddress1
+              ,[DeliveryAddress2] = @DeliveryAddress2
+              ,[DeliveryTelphoneNO] = @DeliveryTel11 + '-' + @DeliveryTel12 + '-' + @DeliveryTel13	--[]
+              ,[PaymentMethodCD]    = @PaymentMethodCD
+              ,[UpdateOperator]     =  @Operator  
+              ,[UpdateDateTime]     =  @SYSDATETIME
+         WHERE @JuchuuNO = D_DeliveryPlan.Number
+        ;
     END
     
     ELSE IF @OperateMode = 3 --削除--
@@ -516,12 +631,19 @@ BEGIN
          ;
 
         --【D_StoreJuchuu】
+        
+        --テニックの場合（店舗受注入力の結果を出荷指示に表示する）
+        --M_Control.TennicFLG＝1
+        IF @Tennic = 1
+        BEGIN
+            DELETE FROM [D_DeliveryPlan]
+            WHERE [Number] = @JuchuuNO;
+        END
     END
     
     --【D_JuchuuDetails】
     IF @OperateMode <= 2    --新規・修正時
     BEGIN
-
         --Table転送仕様Ｂ
         INSERT INTO [D_JuchuuDetails]
                    ([JuchuuNO]
@@ -621,7 +743,7 @@ BEGIN
                    ,NULL    --ArriveDateTime
                    ,NULL    --ArriveNO
                    ,0   --ArribveNORows
-                   ,NULL    --DeliveryPlanNO
+                   ,@DeliveryPlanNO
                    ,tbl.CommentOutStore
                    ,tbl.CommentInStore
                    ,tbl.IndividualClientName
@@ -712,7 +834,7 @@ BEGIN
            ,[UpdateDateTime] =  @SYSDATETIME
         WHERE MitsumoriNO = @MitsumoriNO
         ;
-        
+                
         --【D_Reserve】INSERT処理　受注行数分のレコードを作成(引当在庫レコードの件数分)
         --カーソル定義
         DECLARE CUR_TAB CURSOR FOR
@@ -869,6 +991,82 @@ BEGIN
         CLOSE CUR_TAB;
         DEALLOCATE CUR_TAB;
 
+        --テニックの場合（店舗受注入力の結果を出荷指示に表示する）
+        --M_Control.TennicFLG＝1
+        IF @Tennic = 1
+        BEGIN
+            --【D_DeliveryPlanDetails】配送予定明細　Table転送仕様Ｌ
+            INSERT INTO [D_DeliveryPlanDetails]
+               ([DeliveryPlanNO]
+               ,[DeliveryPlanRows]
+               ,[Number]
+               ,[NumberRows]
+               ,[CommentInStore]
+               ,[CommentOutStore]
+               ,[HikiateFLG]
+               ,[UpdateCancelKBN]
+               ,[DeliveryOrderComIn]
+               ,[DeliveryOrderComOut]
+               ,[InsertOperator]
+               ,[InsertDateTime]
+               ,[UpdateOperator]
+               ,[UpdateDateTime])
+             SELECT  
+                @DeliveryPlanNO
+               ,tbl.JuchuuRows AS DeliveryPlanRows
+               ,@JuchuuNO AS Number
+               ,tbl.JuchuuRows  As NumberRows
+               ,tbl.CommentInStore
+               ,tbl.CommentOutStore
+               ,(CASE DM.DirectFLG WHEN 1 THEN 1 ELSE DM.HikiateFLG END)
+               ,0	--UpdateCancelKBN]
+               ,NULL	--DeliveryOrderComIn]
+               ,NULL	--DeliveryOrderComOut]                        
+               ,@Operator  
+               ,@SYSDATETIME
+               ,@Operator  
+               ,@SYSDATETIME
+
+              FROM @Table tbl
+              INNER JOIN D_JuchuuDetails AS DM
+              ON DM.JuchuuRows = tbl.JuchuuRows
+              AND DM.JuchuuNO = @JuchuuNO
+              WHERE tbl.UpdateFlg = 0
+              ;
+              
+            --行削除されたデータはDELETE処理
+            DELETE FROM D_DeliveryPlanDetails
+             WHERE [Number] = @JuchuuNO
+             AND NOT EXISTS (SELECT 1 FROM @Table tbl WHERE tbl.JuchuuRows = D_DeliveryPlanDetails.[NumberRows]
+             )
+             ;
+	         
+            UPDATE [D_DeliveryPlanDetails] SET
+                   [CommentInStore]  = tbl.CommentInStore
+                  ,[CommentOutStore] = tbl.CommentOutStore
+                  ,[HikiateFLG]      = (CASE DM.DirectFLG WHEN 1 THEN 1 ELSE DM.HikiateFLG END)
+                  ,[UpdateOperator]  =  @Operator  
+                  ,[UpdateDateTime]  =  @SYSDATETIME
+                  
+             FROM @Table AS tbl
+              INNER JOIN D_JuchuuDetails AS DM
+              ON DM.JuchuuRows = tbl.JuchuuRows
+              AND DM.JuchuuNO = @JuchuuNO
+             WHERE @JuchuuNO = D_DeliveryPlanDetails.Number
+             AND tbl.JuchuuRows = D_DeliveryPlanDetails.NumberRows
+             AND tbl.UpdateFlg = 1
+            ;
+            
+            --出荷予定　D_DeliveryPlan Table転送仕様Ｋ
+            UPDATE [D_DeliveryPlan] SET
+                HikiateFLG = 1
+            WHERE @JuchuuNO = D_DeliveryPlan.Number
+            AND NOT EXISTS(SELECT 1 FROM D_DeliveryPlanDetails AS DD
+                WHERE DD.DeliveryPlanNO = D_DeliveryPlan.DeliveryPlanNO
+                AND DD.HikiateFLG = 0)
+            ;
+            
+        END
         
     END
     ELSE    --削除
@@ -932,8 +1130,15 @@ BEGIN
                ,[DeleteDateTime]     =  @SYSDATETIME
          WHERE [JuchuuNO] = @JuchuuNO
          ;
+        --テニックの場合（店舗受注入力の結果を出荷指示に表示する）
+        --M_Control.TennicFLG＝1
+        IF @Tennic = 1
+        BEGIN
+            DELETE FROM [D_DeliveryPlanDetails]
+            WHERE [Number] = @JuchuuNO;
+        END
     END
-	
+    
     --処理履歴データへ更新
     SET @KeyItem = @JuchuuNO;
         
@@ -952,4 +1157,4 @@ BEGIN
 
 END
 
-
+GO
