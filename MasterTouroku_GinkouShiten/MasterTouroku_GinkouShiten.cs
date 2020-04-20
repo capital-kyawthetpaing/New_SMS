@@ -76,7 +76,6 @@ namespace MasterTouroku_GinkouShiten
             TxtBankBranchName.Require(true);
             TxtKanaName.Require(true);
         }
-
         public override void FunctionProcess(int index)
 
         {

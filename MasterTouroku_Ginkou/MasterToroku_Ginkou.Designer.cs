@@ -213,7 +213,7 @@
             this.ginko_name.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ginko_name.BackColor = System.Drawing.Color.White;
             this.ginko_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ginko_name.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ginko_name.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ginko_name.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginko_name.DecimalPlace = 0;
             this.ginko_name.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -223,12 +223,12 @@
             this.ginko_name.isEnterKeyDown = false;
             this.ginko_name.IsNumber = true;
             this.ginko_name.IsShop = false;
-            this.ginko_name.Length = 15;
+            this.ginko_name.Length = 30;
             this.ginko_name.Location = new System.Drawing.Point(123, 7);
-            this.ginko_name.MaxLength = 15;
+            this.ginko_name.MaxLength = 30;
             this.ginko_name.MoveNext = true;
             this.ginko_name.Name = "ginko_name";
-            this.ginko_name.Size = new System.Drawing.Size(183, 19);
+            this.ginko_name.Size = new System.Drawing.Size(186, 19);
             this.ginko_name.TabIndex = 0;
             this.ginko_name.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -241,7 +241,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(76, 42);
+            this.ckM_Label5.Location = new System.Drawing.Point(76, 41);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label5.TabIndex = 11;
@@ -266,9 +266,9 @@
             this.ginko_kananame.isEnterKeyDown = false;
             this.ginko_kananame.IsNumber = true;
             this.ginko_kananame.IsShop = false;
-            this.ginko_kananame.Length = 15;
-            this.ginko_kananame.Location = new System.Drawing.Point(124, 39);
-            this.ginko_kananame.MaxLength = 15;
+            this.ginko_kananame.Length = 30;
+            this.ginko_kananame.Location = new System.Drawing.Point(124, 38);
+            this.ginko_kananame.MaxLength = 30;
             this.ginko_kananame.MoveNext = true;
             this.ginko_kananame.Name = "ginko_kananame";
             this.ginko_kananame.Size = new System.Drawing.Size(183, 19);
@@ -358,6 +358,7 @@
             this.PanelDetail.Name = "PanelDetail";
             this.PanelDetail.Size = new System.Drawing.Size(1776, 708);
             this.PanelDetail.TabIndex = 2;
+            this.PanelDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelDetail_Paint);
             // 
             // ginko_useflg
             // 

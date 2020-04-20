@@ -54,14 +54,15 @@ namespace MasterTouroku_ShiireKakeritsu
             scBrandCD1.Clear();
             scSportsCD1.Clear();
             scSegmentCD1.Clear();
-            txtSeason.Text = string.Empty;
-            txtYear.Text = string.Empty;
+            cbo_Year1.Text = string.Empty;
+            cbo_Season1.Text = string.Empty;
             txtDate.Text = string.Empty;
             txtCopy.Text = string.Empty;
             scBrandCD.Clear();
             scSportsCD.Clear();
             scSegmentCD.Clear();
-            txtLastSeason.Text = string.Empty;
+            cbo_Year.Text = string.Empty;
+            cbo_Season.Text = string.Empty;
             txtChangeDate.Text = string.Empty;
             txtRate.Text = string.Empty;
             scSupplierCD.SetFocus(1);
@@ -112,8 +113,10 @@ namespace MasterTouroku_ShiireKakeritsu
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
-                LastYearTerm=txtYear.Text,
-                LastSeason = txtSeason.Text,
+                //LastYearTerm=txtYear.Text,
+                LastYearTerm = cbo_Year1.Text,
+                LastSeason = cbo_Season1.Text,
+                //LastSeason = txtSeason.Text,
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text
             };
@@ -151,10 +154,10 @@ namespace MasterTouroku_ShiireKakeritsu
                 searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtYear.Text))
-                searchCondition = "LastYearTerm='" + txtYear.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtSeason.Text))
-                searchCondition = "LastSeason= '" + txtSeason.Text + "'";
+            //if (!string.IsNullOrWhiteSpace(txtYear.Text))
+            //    searchCondition = "LastYearTerm='" + txtYear.Text + "'";
+            //if (!string.IsNullOrWhiteSpace(txtSeason.Text))
+            //    searchCondition = "LastSeason= '" + txtSeason.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text + "'";
 
@@ -409,8 +412,10 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-           // dtRow["LastYearTeam"] = txtYear.Text;
-            dtRow["LastSeason"] = txtLastSeason.Text;
+            // dtRow["LastYearTeam"] = txtYear.Text;
+            dtRow["LastYearTeam"] = cbo_Year.SelectedValue.ToString();
+            dtRow["LastSeason"] = cbo_Season.SelectedValue.ToString();
+            //dtRow["LastSeason"] = txtLastSeason.Text;
             dtRow["ChangeDate"] = txtChangeDate.Text;
             dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
             dt.Rows.Add(dtRow);
@@ -484,8 +489,8 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
                     searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(txtLastSeason.Text))
-                    searchCondition = "LastSeason= '" + txtLastSeason.Text + "'";
+                //if (!string.IsNullOrWhiteSpace(txtLastSeason.Text))
+                //    searchCondition = "LastSeason= '" + txtLastSeason.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
                     searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtRate.Text))
@@ -572,8 +577,8 @@ namespace MasterTouroku_ShiireKakeritsu
             dgvRow.Cells[0].Value = scBrandCD.TxtCode.Text;
             dgvRow.Cells[0].Value = scSportsCD.TxtCode.Text;
             dgvRow.Cells[0].Value = scSegmentCD.TxtCode.Text;
-            dgvRow.Cells[0].Value = txtYear.Text;
-            dgvRow.Cells[0].Value = txtLastSeason.Text;
+            dgvRow.Cells[0].Value = cbo_Year.SelectedValue.ToString();
+            dgvRow.Cells[0].Value = cbo_Season.SelectedValue.ToString();
             dgvRow.Cells[0].Value = txtChangeDate.Text;
             dgvRow.Cells[0].Value = txtRate.Text;
         }

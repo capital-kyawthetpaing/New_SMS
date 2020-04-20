@@ -196,29 +196,29 @@ namespace CKM_Controls
             bbl = new Base_BL();
         }
 
-        protected override void OnEnabledChanged(EventArgs e)
-        {
-            base.OnEnabledChanged(e);
-            if (!Enabled)
-                this.BackColor = SystemColors.Control;
-            else
-                this.BackColor = SystemColors.Window;
+        //protected override void OnEnabledChanged(EventArgs e)
+        //{
+        //    base.OnEnabledChanged(e);
+        //    if (!Enabled)
+        //        this.BackColor = SystemColors.Control;
+        //    else
+        //        this.BackColor = SystemColors.Window;
 
 
-            //base.OnEnabledChanged(e);
+        //    //base.OnEnabledChanged(e);
 
-            //if (!Enabled)
-            //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
-            //    {
-            //        this.BackColor = Color.White;
-            //    }
-            //    else
-            //    {
-            //        this.BackColor = SystemColors.Control;
-            //    }
-            //else
-            //    this.BackColor = SystemColors.Window;
-        }
+        //    //if (!Enabled)
+        //    //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
+        //    //    {
+        //    //        this.BackColor = Color.White;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        this.BackColor = SystemColors.Control;
+        //    //    }
+        //    //else
+        //    //    this.BackColor = SystemColors.Window;
+        //}
 
         protected override void OnKeyUp(KeyEventArgs e)
         {
@@ -304,19 +304,20 @@ namespace CKM_Controls
                         return;
                     else if (CtrlType == Type.YearMonth && !YearMonthCheck())
                         return;
-                    else if ((CtrlType == Type.Normal || CtrlType == Type.Number) && CtrlByte == Bytes.半角)
+                    else if ((CtrlType == Type.Normal || CtrlType == Type.Number))
                     {
                         if (this.Parent is UserControl)
                         {
                             if (CtrlType == Type.Normal)
                             {
-                                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                                if (Convert.ToInt32(str) > length)
+                                string str1 = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                                if (Convert.ToInt32(str1) > length)
                                 {
                                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     this.Focus();
                                     return;
                                 }
+
                             }
                             if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
                             {
@@ -329,8 +330,26 @@ namespace CKM_Controls
                                     return;
                                 }
                             }
-                        }
 
+                        }
+                        //string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                        //if (Convert.ToInt32(str) > length)
+                        //{
+                        //    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    this.Focus();
+                        //    return;
+                        //}
+                        //if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                        //{
+                        //    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                        //    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                        //    if (onebyteCount != byteCount)
+                        //    {
+                        //        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //        this.Focus();
+                        //        return;
+                        //    }
+                        //}
                     }
                     base.OnKeyDown(e);
                 }
@@ -380,53 +399,7 @@ namespace CKM_Controls
                 }
             }
 
-            //else if (e.KeyCode == Keys.Tab)
-            //{
-            //    isEnterKeyDown = true;
-            //    MoveNext = true;
-            //    if (txt == null)
-            //    {
-            //        if ((IsRequire && string.IsNullOrWhiteSpace(Text)))
-            //        {
-            //            if (this.Parent is UserControl)
-            //            {
-            //                UserControl uc = this.Parent as UserControl;
-            //                (uc.Controls.Find("lblName", true)[0] as Label).Text = string.Empty;
-            //            }
 
-            //            ShowErrorMessage("E102");
-            //            return;
-            //        }
-            //        if ((CtrlType == Type.Normal || CtrlType == Type.Number) && CtrlByte == Bytes.半角)
-            //        {
-
-            //            if (CtrlType == Type.Normal)
-            //            {
-            //                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-            //                if (Convert.ToInt32(str) > length)
-            //                {
-            //                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                    this.Focus();
-            //                    return;
-            //                }
-            //            }
-            //            if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
-            //            {
-            //                int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-            //                int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-            //                if (onebyteCount != byteCount)
-            //                {
-            //                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                    this.Focus();
-            //                    return;
-            //                }
-            //            }
-
-            //        }
-            //    }
-           
-
-            //}
             else
                 base.OnKeyDown(e);
         }
@@ -554,6 +527,37 @@ namespace CKM_Controls
             {
                 this.BackColor = SystemColors.Window;
             }
+
+            if (this.Parent is UserControl)
+            {
+                //
+            }
+            else
+            {
+
+                if (CtrlByte == Bytes.半全角)
+                {
+                    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                    if (Convert.ToInt32(str) > length)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Focus();
+                        return;
+                    }
+                }
+                if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+                {
+                    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                    if (onebyteCount != byteCount)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Focus();
+                        return;
+                    }
+                }
+            }
+            //  if ()
             //if (Ctrl_Type == Type.Normal)
             //{
             //    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
@@ -580,7 +584,7 @@ namespace CKM_Controls
         }
 
         protected override void OnGotFocus(EventArgs e)
-         {
+        {
 
             MoveNext = false;
             base.OnGotFocus(e);
@@ -673,7 +677,7 @@ namespace CKM_Controls
                     MaxLength = 20;
                     break;
                 case Type.Number:
-                    this.TextAlign = HorizontalAlignment.Right;
+                    this.TextAlign = HorizontalAlignment.Left;
                     break;
             }
         }
@@ -730,7 +734,7 @@ namespace CKM_Controls
                             return false;
                     case Type.Time:
                         return TimeCheck();
-                        
+
                 }
             }
             return true;

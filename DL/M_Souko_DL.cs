@@ -28,6 +28,19 @@ namespace DL
             return SelectData(dic, "M_Souko_Search");
         }
 
+        public DataTable M_Souko_ZipcodeAddressSelect(M_Souko_Entity mse)
+        {
+            string sp = "M_Souko_ZipcodeAddressSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SoukoCD } },
+                {"@ZipCD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ZipCD1 } },
+                {"@ZipCD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ZipCD2 } }
+            };
+
+            return SelectData(dic, sp);
+
+        }
         public DataTable M_Souko_Bind(M_Souko_Entity mse)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
