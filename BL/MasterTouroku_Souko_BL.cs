@@ -58,6 +58,12 @@ namespace BL
         {
             return mzdl.M_ZipCode_Select(mze);
         }
+        public DataTable M_Souko_ZipcodeAddressSelect(M_Souko_Entity mse)
+        {
+            return msdl.M_Souko_ZipcodeAddressSelect(mse);
+        }
+      
+
 
         public M_Vendor_Entity M_Vendor_IsExists(M_Vendor_Entity mve)
         {
