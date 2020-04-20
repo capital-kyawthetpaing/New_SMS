@@ -29,7 +29,6 @@ namespace BL
                 me.BrandCD = dt.Rows[0]["BrandCD"].ToString();
                 me.BrandName = dt.Rows[0]["BrandName"].ToString();
                 me.BrandKana = dt.Rows[0]["BrandKana"].ToString();
-                me.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
                 me.UsedFlg = dt.Rows[0]["UsedFlg"].ToString();
 
                 return true;

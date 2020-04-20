@@ -34,7 +34,7 @@ BEGIN
 
     from F_Store(@ChangeDate) AS FS
     FULL JOIN M_SKU AS MS
-    ON MS.ITemCD = (CASE WHEN @ITemCD <> '' THEN @ITemCD ELSE ISNULL(MS.ITemCD,'') END)
+    ON MS.ITemCD = @ITemCD	--(CASE WHEN @ITemCD <> '' THEN @ITemCD ELSE ISNULL(MS.ITemCD,'') END)
     AND MS.ChangeDate = CONVERT(DATE, @ChangeDate)
     
     LEFT OUTER JOIN M_Site AS MT

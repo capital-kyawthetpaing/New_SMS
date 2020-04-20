@@ -31,14 +31,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,11 +55,13 @@
     <StartupObject>HacchuuNyuuryoku.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GridBase">
-      <HintPath>..\Menu\RequireDLL\GridBase.dll</HintPath>
+    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Search\RequiredDLL\GridBase.dll</HintPath>
     </Reference>
-    <Reference Include="GridControl">
-      <HintPath>..\Menu\RequireDLL\GridControl.dll</HintPath>
+    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />

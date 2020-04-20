@@ -1780,6 +1780,7 @@
             this.colChangeDate.HeaderText = "ChangeDate";
             this.colChangeDate.Name = "colChangeDate";
             this.colChangeDate.ReadOnly = true;
+            this.colChangeDate.Visible = false;
             // 
             // scClassificationA
             // 
@@ -1893,7 +1894,7 @@
             this.ScSports.ChangeDate = "";
             this.ScSports.ChangeDateWidth = 100;
             this.ScSports.Code = "";
-            this.ScSports.CodeWidth = 40;
+            this.ScSports.CodeWidth = 100;
             this.ScSports.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSports.DataCheck = false;
             this.ScSports.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1904,7 +1905,7 @@
             this.ScSports.Location = new System.Drawing.Point(774, 130);
             this.ScSports.Name = "ScSports";
             this.ScSports.SearchEnable = true;
-            this.ScSports.Size = new System.Drawing.Size(354, 28);
+            this.ScSports.Size = new System.Drawing.Size(414, 28);
             this.ScSports.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.ScSports.TabIndex = 13;
             this.ScSports.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1919,7 +1920,7 @@
             this.ScBrand.ChangeDate = "";
             this.ScBrand.ChangeDateWidth = 100;
             this.ScBrand.Code = "";
-            this.ScBrand.CodeWidth = 60;
+            this.ScBrand.CodeWidth = 100;
             this.ScBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrand.DataCheck = true;
             this.ScBrand.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1930,7 +1931,7 @@
             this.ScBrand.Location = new System.Drawing.Point(118, 52);
             this.ScBrand.Name = "ScBrand";
             this.ScBrand.SearchEnable = true;
-            this.ScBrand.Size = new System.Drawing.Size(374, 28);
+            this.ScBrand.Size = new System.Drawing.Size(414, 28);
             this.ScBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.ScBrand.TabIndex = 1;
             this.ScBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;

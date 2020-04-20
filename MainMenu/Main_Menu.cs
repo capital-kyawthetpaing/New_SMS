@@ -200,8 +200,13 @@ namespace MainMenu
                 Process[] localByName = Process.GetProcessesByName(exe_name);
                 if (localByName.Count() > 0)
                 {
+
+                   
                     IntPtr handle = localByName[0].MainWindowHandle;
                     ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    SetForegroundWindow(handle);
+
+
                     return;
                 }
                 System.Diagnostics.Process.Start(filePath + @"\\" + exe_name + ".exe", cmdLine + "");
@@ -215,9 +220,19 @@ namespace MainMenu
                 MessageBox.Show("The program cannot locate to the specified file!!!" + ex.ToString() +Environment.NewLine +cmdLine +Environment.NewLine + filePath+Environment.NewLine+ exe_name);
             }
         }
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        var cp = base.CreateParams;
+        //        cp.ExStyle |= 8;  // Turn on WS_EX_TOPMOST
+        //        return cp;
+        //    }
+        //}
         private const int SW_SHOWMAXIMIZED = 3;
 
         [DllImport("user32.dll")]
+
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
         
         private void panelLeft_Click(object sender, EventArgs e)
@@ -252,6 +267,10 @@ namespace MainMenu
                 ButtonText(panel_right, getData, 0);
             }
         }
+
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
+        public static extern bool SetForegroundWindow(IntPtr hwnd);
         private void panelRight_MouseEnter(object sender, EventArgs e)
         {
             // when we hoover the button we get this
@@ -276,15 +295,34 @@ namespace MainMenu
             if ((sender) as CKM_Button != btnleftcurrent)
                 (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
         }
-        private void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
+        public void Main_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            {
+                foreach (DataRow dr in menu.Rows)
+                {
+                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                    if (localByName.Count() > 0)
+                    {
+
+                        foreach (var process in localByName)
+                        {
+                            try
+                            {
+                                process.Kill();
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                }
                 e.Cancel = false;
+            }
             else
                 e.Cancel = true;
         }
-
         private void Main_Menu_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)

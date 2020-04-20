@@ -1,5 +1,5 @@
  BEGIN TRY 
- Drop Procedure dbo.[M_DenominationKBN_Select]
+ Drop Procedure dbo.[M_DenominationKBN_SelectAll]
 END try
 BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
@@ -7,12 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+/****** Object:  StoredProcedure [M_DenominationKBN_SelectAll]    */
 
-/****** Object:  StoredProcedure [M_DenominationKBN_Select]    */
-
-CREATE PROCEDURE M_DenominationKBN_Select(
+CREATE PROCEDURE M_DenominationKBN_SelectAll(
     -- Add the parameters for the stored procedure here
-    @DenominationCD  varchar(3)
+    @SystemKBN  tinyint
 )AS
 BEGIN
     -- SET NOCOUNT ON added to prevent extra result sets from
@@ -27,8 +26,12 @@ BEGIN
           ,(SELECT IDName FROM M_MultiPorpose AS M WHERE M.ID =303 AND M.[Key] = CardCompany) AS CardCompanyName
           ,[CalculationKBN]
           ,[MainFLG]
+        
+--        ,RIGHT('  ' +[Key],3) + ':' + [Char1] AS KeyAndChar1  --ComboBox用
     FROM M_DenominationKBN
-    WHERE DenominationCD = @DenominationCD
+    WHERE SystemKBN = (CASE WHEN ISNULL(@SystemKBN,0) = 0 THEN SystemKBN ELSE @SystemKBN END)
+    AND StoreNotDisplayFLG = 0  --2019.12.20
+    ORDER BY [DenominationCD]
     ;
 END
 

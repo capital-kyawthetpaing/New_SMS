@@ -119,23 +119,21 @@ namespace DL
         }
 
 
-        /// <summary>
-        /// 受注入力更新処理
-        /// TempoJuchuuNyuuryokuより更新時に使用
-        /// </summary>
-        /// <param name="dme"></param>
-        /// <param name="operationMode"></param>
-        /// <param name="operatorNm"></param>
-        /// <param name="pc"></param>
-        /// <returns></returns>
+        /// <summary>	
+        /// 受注入力更新処理	
+        /// TempoJuchuuNyuuryokuより更新時に使用	
+        /// </summary>	
+        /// <param name="dme"></param>	
+        /// <param name="operationMode"></param>	
+        /// <param name="operatorNm"></param>	
+        /// <param name="pc"></param>	
+        /// <returns></returns>	
         public bool D_Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode, string operatorNm, string pc)
         {
             string sp = "PRC_TempoJuchuuNyuuryoku";
-
             command = new SqlCommand(sp, GetConnection());
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
-
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
             AddParam(command, "@JuchuuNO", SqlDbType.VarChar, dme.JuchuuNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dme.StoreCD);
@@ -157,6 +155,17 @@ namespace DL
             AddParam(command, "@Tel21", SqlDbType.VarChar, dme.Tel21);
             AddParam(command, "@Tel22", SqlDbType.VarChar, dme.Tel22);
             AddParam(command, "@Tel23", SqlDbType.VarChar, dme.Tel23);
+            AddParam(command, "@DeliveryCD", SqlDbType.VarChar, dme.DeliveryCD);
+            AddParam(command, "@DeliveryName", SqlDbType.VarChar, dme.DeliveryName);
+            AddParam(command, "@DeliveryName2", SqlDbType.VarChar, dme.DeliveryName2);
+            AddParam(command, "@DeliveryAliasKBN", SqlDbType.TinyInt, dme.DeliveryAliasKBN);
+            AddParam(command, "@DeliveryZipCD1", SqlDbType.VarChar, dme.DeliveryZipCD1);
+            AddParam(command, "@DeliveryZipCD2", SqlDbType.VarChar, dme.DeliveryZipCD2);
+            AddParam(command, "@DeliveryAddress1", SqlDbType.VarChar, dme.DeliveryAddress1);
+            AddParam(command, "@DeliveryAddress2", SqlDbType.VarChar, dme.DeliveryAddress2);
+            AddParam(command, "@DeliveryTel11", SqlDbType.VarChar, dme.DeliveryTel11);
+            AddParam(command, "@DeliveryTel12", SqlDbType.VarChar, dme.DeliveryTel12);
+            AddParam(command, "@DeliveryTel13", SqlDbType.VarChar, dme.DeliveryTel13);
             AddParam(command, "@JuchuuGaku", SqlDbType.Money, dme.JuchuuGaku);
             AddParam(command, "@Discount", SqlDbType.Money, dme.Discount);
             AddParam(command, "@HanbaiHontaiGaku", SqlDbType.Money, dme.HanbaiHontaiGaku);
@@ -176,22 +185,17 @@ namespace DL
             AddParam(command, "@CommentInStore", SqlDbType.VarChar, dme.CommentInStore);
             AddParam(command, "@MitsumoriNO", SqlDbType.VarChar, dme.MitsumoriNO);
             AddParam(command, "@NouhinsyoComment", SqlDbType.VarChar, dme.NouhinsyoComment);
-
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
             AddParam(command, "@Operator", SqlDbType.VarChar, operatorNm);
             AddParam(command, "@PC", SqlDbType.VarChar, pc);
-
-            //OUTパラメータの追加
+            //OUTパラメータの追加	
             string outPutParam = "@OutJuchuuNo";
             command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
             command.Parameters[outPutParam].Direction = ParameterDirection.Output;
-
             UseTransaction = true;
-
             bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
             if (ret)
                 dme.JuchuuNO = outPutParam;
-
             return ret;
         }
 

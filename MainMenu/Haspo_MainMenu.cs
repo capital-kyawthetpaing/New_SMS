@@ -27,10 +27,15 @@ namespace MainMenu
         Menu_BL mbl;
         string Staff_CD = "";
         string btnText = string.Empty;
-        private const int SW_SHOWMAXIMIZED = 3;
 
+        private const int SW_SHOWMAXIMIZED = 3;
         [DllImport("user32.dll")]
         static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+
+
+        [return: MarshalAs(UnmanagedType.Bool)]
+        [DllImport("user32", CharSet = CharSet.Ansi, SetLastError = true, ExactSpelling = true)]
+        public static extern bool SetForegroundWindow(IntPtr hwnd);
         public Haspo_MainMenu(String SCD, M_Staff_Entity mse)
         {
             this.mse = mse;
@@ -250,11 +255,24 @@ namespace MainMenu
                     filePath = @"C:\\SMS\\AppData";
                 }
                 string cmdLine = " " + "001" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
+                //Process[] localByName = Process.GetProcessesByName(exe_name);
+                //if (localByName.Count() > 0)
+                //{
+                //    IntPtr handle = localByName[0].MainWindowHandle;
+                //    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                //    return;
+                //}
+
                 Process[] localByName = Process.GetProcessesByName(exe_name);
                 if (localByName.Count() > 0)
                 {
+
+
                     IntPtr handle = localByName[0].MainWindowHandle;
                     ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    SetForegroundWindow(handle);
+
+
                     return;
                 }
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
@@ -297,7 +315,27 @@ namespace MainMenu
         {
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+            {
+                foreach (DataRow dr in menu.Rows)
+                {
+                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                    if (localByName.Count() > 0)
+                    {
+
+                        foreach (var process in localByName)
+                        {
+                            try
+                            {
+                                process.Kill();
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                }
                 e.Cancel = false;
+            }
             else
                 e.Cancel = true;
         }

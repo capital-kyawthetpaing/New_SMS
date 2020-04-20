@@ -699,6 +699,7 @@
             this.MaximizeBox = false;
             this.Name = "Capitalsports_MainMenu";
             this.Text = "Capitalsports_MainMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Capitalsports_MainMenu_FormClosing);
             this.panel5.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);

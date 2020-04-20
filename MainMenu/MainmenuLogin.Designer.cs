@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainmenuLogin));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.ckM_Button3 = new CKM_Controls.CKM_Button();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Button2 = new CKM_Controls.CKM_Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPassword = new CKM_Controls.CKM_TextBox();
             this.txtOperatorCD = new CKM_Controls.CKM_TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,38 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(717, 36);
             this.tableLayoutPanel1.TabIndex = 15;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(21, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(271, 73);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(627, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 26);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "0.0.0.0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(526, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 26);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Version - ";
             // 
             // ckM_Button3
             // 
@@ -118,16 +150,6 @@
             this.ckM_Button2.Text = "終了(F1)";
             this.ckM_Button2.UseVisualStyleBackColor = false;
             this.ckM_Button2.Click += new System.EventHandler(this.ckM_Button2_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(21, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 73);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
             // 
             // ckM_Label2
             // 
@@ -195,7 +217,7 @@
             this.txtOperatorCD.BackColor = System.Drawing.Color.White;
             this.txtOperatorCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOperatorCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtOperatorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtOperatorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtOperatorCD.DecimalPlace = 0;
             this.txtOperatorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtOperatorCD.IntegerPart = 0;
@@ -210,30 +232,7 @@
             this.txtOperatorCD.Name = "txtOperatorCD";
             this.txtOperatorCD.Size = new System.Drawing.Size(137, 19);
             this.txtOperatorCD.TabIndex = 11;
-            this.txtOperatorCD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtOperatorCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(627, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(78, 26);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "0.0.0.0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(526, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 26);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Version - ";
             // 
             // MainmenuLogin
             // 

@@ -70,7 +70,7 @@ or  fad.Printable	=	    1
 or  fad.Outputable=	    1
 or  fad.Runable	=	    1  )
 
-) a on a.StoreMenuCD = fmd.MenuID and mp.ProgramId= a.ProgramID ) b 
+) a on a.StoreMenuCD = fmd.MenuID and mp.ProgramId= a.ProgramID ) b order by b.Businessseq , b.programseq asc
 End
 else
 Begin
@@ -115,7 +115,7 @@ or  fad.Printable	=	    1
 or  fad.Outputable=	    1
 or  fad.Runable	=	    1  )
 
-) a on a.MenuCD = fmd.MenuID and mp.ProgramId= a.ProgramID ) b 
+) a on a.MenuCD = fmd.MenuID and mp.ProgramId= a.ProgramID ) b  order by b.Businessseq , b.programseq asc
 
 End
 
