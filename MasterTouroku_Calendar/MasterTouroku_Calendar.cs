@@ -205,18 +205,18 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                {
+                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
+                //{
                     string[] str = txtMonth.Text.ToString().Split('/');
                     string year = str[0].ToString();
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString();
                     BindGridCalendar(now.AddMonths(1));
-                }
-                else
-                {
-                    txtMonth.Focus();
-                }
+                //}
+                //else
+                //{
+                //    txtMonth.Focus();
+                //}
 
             }
 
@@ -227,16 +227,16 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                {
+                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
+                //{
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString();
                     BindGridCalendar(now.AddMonths(-1));
-                }
-                else
-                {
-                    txtMonth.Focus();
-                }
+                //}
+                //else
+                //{
+                //    txtMonth.Focus();
+                //}
                     
 
             }

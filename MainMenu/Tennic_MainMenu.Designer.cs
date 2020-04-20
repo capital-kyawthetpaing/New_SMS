@@ -205,7 +205,7 @@
             this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(209, 360);
+            this.panelLeft.Size = new System.Drawing.Size(290, 360);
             this.panelLeft.TabIndex = 10;
             // 
             // btnGym20
@@ -221,7 +221,7 @@
             this.btnGym20.Location = new System.Drawing.Point(24, 678);
             this.btnGym20.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym20.Name = "btnGym20";
-            this.btnGym20.Size = new System.Drawing.Size(150, 30);
+            this.btnGym20.Size = new System.Drawing.Size(226, 30);
             this.btnGym20.TabIndex = 20;
             this.btnGym20.UseVisualStyleBackColor = false;
             // 
@@ -238,7 +238,7 @@
             this.btnGym16.Location = new System.Drawing.Point(24, 538);
             this.btnGym16.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym16.Name = "btnGym16";
-            this.btnGym16.Size = new System.Drawing.Size(150, 30);
+            this.btnGym16.Size = new System.Drawing.Size(226, 30);
             this.btnGym16.TabIndex = 19;
             this.btnGym16.UseVisualStyleBackColor = false;
             // 
@@ -255,7 +255,7 @@
             this.btnGym14.Location = new System.Drawing.Point(24, 468);
             this.btnGym14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym14.Name = "btnGym14";
-            this.btnGym14.Size = new System.Drawing.Size(150, 30);
+            this.btnGym14.Size = new System.Drawing.Size(226, 30);
             this.btnGym14.TabIndex = 18;
             this.btnGym14.UseVisualStyleBackColor = false;
             // 
@@ -272,7 +272,7 @@
             this.btnGym17.Location = new System.Drawing.Point(24, 573);
             this.btnGym17.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym17.Name = "btnGym17";
-            this.btnGym17.Size = new System.Drawing.Size(150, 30);
+            this.btnGym17.Size = new System.Drawing.Size(226, 30);
             this.btnGym17.TabIndex = 17;
             this.btnGym17.UseVisualStyleBackColor = false;
             // 
@@ -289,7 +289,7 @@
             this.btnGym19.Location = new System.Drawing.Point(24, 643);
             this.btnGym19.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym19.Name = "btnGym19";
-            this.btnGym19.Size = new System.Drawing.Size(150, 30);
+            this.btnGym19.Size = new System.Drawing.Size(226, 30);
             this.btnGym19.TabIndex = 15;
             this.btnGym19.UseVisualStyleBackColor = false;
             // 
@@ -306,7 +306,7 @@
             this.btnGym18.Location = new System.Drawing.Point(24, 608);
             this.btnGym18.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym18.Name = "btnGym18";
-            this.btnGym18.Size = new System.Drawing.Size(150, 30);
+            this.btnGym18.Size = new System.Drawing.Size(226, 30);
             this.btnGym18.TabIndex = 14;
             this.btnGym18.UseVisualStyleBackColor = false;
             // 
@@ -323,7 +323,7 @@
             this.btnGym15.Location = new System.Drawing.Point(24, 503);
             this.btnGym15.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym15.Name = "btnGym15";
-            this.btnGym15.Size = new System.Drawing.Size(150, 30);
+            this.btnGym15.Size = new System.Drawing.Size(226, 30);
             this.btnGym15.TabIndex = 13;
             this.btnGym15.UseVisualStyleBackColor = false;
             // 
@@ -340,7 +340,7 @@
             this.btnGym13.Location = new System.Drawing.Point(24, 433);
             this.btnGym13.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym13.Name = "btnGym13";
-            this.btnGym13.Size = new System.Drawing.Size(150, 30);
+            this.btnGym13.Size = new System.Drawing.Size(226, 30);
             this.btnGym13.TabIndex = 12;
             this.btnGym13.UseVisualStyleBackColor = false;
             // 
@@ -357,7 +357,7 @@
             this.btnGym12.Location = new System.Drawing.Point(24, 398);
             this.btnGym12.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym12.Name = "btnGym12";
-            this.btnGym12.Size = new System.Drawing.Size(150, 30);
+            this.btnGym12.Size = new System.Drawing.Size(226, 30);
             this.btnGym12.TabIndex = 11;
             this.btnGym12.UseVisualStyleBackColor = false;
             // 
@@ -374,7 +374,7 @@
             this.btnGym11.Location = new System.Drawing.Point(24, 362);
             this.btnGym11.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym11.Name = "btnGym11";
-            this.btnGym11.Size = new System.Drawing.Size(150, 30);
+            this.btnGym11.Size = new System.Drawing.Size(226, 30);
             this.btnGym11.TabIndex = 10;
             this.btnGym11.UseVisualStyleBackColor = false;
             // 
@@ -391,7 +391,7 @@
             this.btnGym6.Location = new System.Drawing.Point(24, 177);
             this.btnGym6.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym6.Name = "btnGym6";
-            this.btnGym6.Size = new System.Drawing.Size(150, 30);
+            this.btnGym6.Size = new System.Drawing.Size(226, 30);
             this.btnGym6.TabIndex = 9;
             this.btnGym6.UseVisualStyleBackColor = false;
             // 
@@ -408,7 +408,7 @@
             this.btnGym4.Location = new System.Drawing.Point(24, 107);
             this.btnGym4.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym4.Name = "btnGym4";
-            this.btnGym4.Size = new System.Drawing.Size(150, 30);
+            this.btnGym4.Size = new System.Drawing.Size(226, 30);
             this.btnGym4.TabIndex = 8;
             this.btnGym4.UseVisualStyleBackColor = false;
             // 
@@ -425,7 +425,7 @@
             this.btnGym7.Location = new System.Drawing.Point(24, 212);
             this.btnGym7.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym7.Name = "btnGym7";
-            this.btnGym7.Size = new System.Drawing.Size(150, 30);
+            this.btnGym7.Size = new System.Drawing.Size(226, 30);
             this.btnGym7.TabIndex = 7;
             this.btnGym7.UseVisualStyleBackColor = false;
             // 
@@ -442,7 +442,7 @@
             this.btnGym10.Location = new System.Drawing.Point(24, 317);
             this.btnGym10.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym10.Name = "btnGym10";
-            this.btnGym10.Size = new System.Drawing.Size(150, 30);
+            this.btnGym10.Size = new System.Drawing.Size(226, 30);
             this.btnGym10.TabIndex = 6;
             this.btnGym10.UseVisualStyleBackColor = false;
             // 
@@ -459,7 +459,7 @@
             this.btnGym9.Location = new System.Drawing.Point(24, 282);
             this.btnGym9.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym9.Name = "btnGym9";
-            this.btnGym9.Size = new System.Drawing.Size(150, 30);
+            this.btnGym9.Size = new System.Drawing.Size(226, 30);
             this.btnGym9.TabIndex = 5;
             this.btnGym9.UseVisualStyleBackColor = false;
             // 
@@ -476,7 +476,7 @@
             this.btnGym8.Location = new System.Drawing.Point(24, 247);
             this.btnGym8.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym8.Name = "btnGym8";
-            this.btnGym8.Size = new System.Drawing.Size(150, 30);
+            this.btnGym8.Size = new System.Drawing.Size(226, 30);
             this.btnGym8.TabIndex = 4;
             this.btnGym8.UseVisualStyleBackColor = false;
             // 
@@ -493,7 +493,7 @@
             this.btnGym5.Location = new System.Drawing.Point(24, 142);
             this.btnGym5.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym5.Name = "btnGym5";
-            this.btnGym5.Size = new System.Drawing.Size(150, 30);
+            this.btnGym5.Size = new System.Drawing.Size(226, 30);
             this.btnGym5.TabIndex = 3;
             this.btnGym5.UseVisualStyleBackColor = false;
             // 
@@ -510,7 +510,7 @@
             this.btnGym3.Location = new System.Drawing.Point(24, 72);
             this.btnGym3.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym3.Name = "btnGym3";
-            this.btnGym3.Size = new System.Drawing.Size(150, 30);
+            this.btnGym3.Size = new System.Drawing.Size(226, 30);
             this.btnGym3.TabIndex = 2;
             this.btnGym3.UseVisualStyleBackColor = false;
             // 
@@ -527,7 +527,7 @@
             this.btnGym2.Location = new System.Drawing.Point(24, 37);
             this.btnGym2.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym2.Name = "btnGym2";
-            this.btnGym2.Size = new System.Drawing.Size(150, 30);
+            this.btnGym2.Size = new System.Drawing.Size(226, 30);
             this.btnGym2.TabIndex = 1;
             this.btnGym2.UseVisualStyleBackColor = false;
             // 
@@ -544,7 +544,7 @@
             this.btnGym1.Location = new System.Drawing.Point(24, 1);
             this.btnGym1.Margin = new System.Windows.Forms.Padding(1);
             this.btnGym1.Name = "btnGym1";
-            this.btnGym1.Size = new System.Drawing.Size(150, 30);
+            this.btnGym1.Size = new System.Drawing.Size(226, 30);
             this.btnGym1.TabIndex = 0;
             this.btnGym1.UseVisualStyleBackColor = false;
             // 
@@ -603,7 +603,7 @@
             this.btnProj5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj5.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj5.Location = new System.Drawing.Point(79, 142);
+            this.btnProj5.Location = new System.Drawing.Point(98, 142);
             this.btnProj5.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj5.Name = "btnProj5";
             this.btnProj5.Size = new System.Drawing.Size(226, 30);
@@ -637,7 +637,7 @@
             this.btnProj7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj7.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj7.Location = new System.Drawing.Point(79, 212);
+            this.btnProj7.Location = new System.Drawing.Point(98, 212);
             this.btnProj7.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj7.Name = "btnProj7";
             this.btnProj7.Size = new System.Drawing.Size(226, 30);
@@ -671,7 +671,7 @@
             this.btnProj8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj8.Location = new System.Drawing.Point(79, 247);
+            this.btnProj8.Location = new System.Drawing.Point(98, 247);
             this.btnProj8.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj8.Name = "btnProj8";
             this.btnProj8.Size = new System.Drawing.Size(226, 30);
@@ -705,7 +705,7 @@
             this.btnProj9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj9.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj9.Location = new System.Drawing.Point(79, 282);
+            this.btnProj9.Location = new System.Drawing.Point(98, 282);
             this.btnProj9.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj9.Name = "btnProj9";
             this.btnProj9.Size = new System.Drawing.Size(226, 30);
@@ -739,7 +739,7 @@
             this.btnProj6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj6.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj6.Location = new System.Drawing.Point(79, 177);
+            this.btnProj6.Location = new System.Drawing.Point(98, 177);
             this.btnProj6.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj6.Name = "btnProj6";
             this.btnProj6.Size = new System.Drawing.Size(226, 30);
@@ -773,7 +773,7 @@
             this.btnProj2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj2.Location = new System.Drawing.Point(79, 37);
+            this.btnProj2.Location = new System.Drawing.Point(98, 37);
             this.btnProj2.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj2.Name = "btnProj2";
             this.btnProj2.Size = new System.Drawing.Size(226, 30);
@@ -807,7 +807,7 @@
             this.btnProj3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj3.Location = new System.Drawing.Point(79, 72);
+            this.btnProj3.Location = new System.Drawing.Point(98, 72);
             this.btnProj3.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj3.Name = "btnProj3";
             this.btnProj3.Size = new System.Drawing.Size(226, 30);
@@ -841,7 +841,7 @@
             this.btnProj1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj1.Location = new System.Drawing.Point(79, 1);
+            this.btnProj1.Location = new System.Drawing.Point(98, 1);
             this.btnProj1.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj1.Name = "btnProj1";
             this.btnProj1.Size = new System.Drawing.Size(226, 30);
@@ -875,7 +875,7 @@
             this.btnProj10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj10.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj10.Location = new System.Drawing.Point(79, 317);
+            this.btnProj10.Location = new System.Drawing.Point(98, 317);
             this.btnProj10.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj10.Name = "btnProj10";
             this.btnProj10.Size = new System.Drawing.Size(226, 30);
@@ -909,7 +909,7 @@
             this.btnProj4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProj4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnProj4.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnProj4.Location = new System.Drawing.Point(79, 107);
+            this.btnProj4.Location = new System.Drawing.Point(98, 107);
             this.btnProj4.Margin = new System.Windows.Forms.Padding(1);
             this.btnProj4.Name = "btnProj4";
             this.btnProj4.Size = new System.Drawing.Size(226, 30);

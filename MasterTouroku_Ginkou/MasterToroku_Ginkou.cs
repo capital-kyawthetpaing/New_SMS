@@ -450,10 +450,17 @@ namespace MasterTouroku_Ginkou
 
         }
 
+
+
+
         private void BtnF11Show_Click(object sender, EventArgs e)
         {
             FunctionProcess(10);
         }
 
+        private void PanelDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
