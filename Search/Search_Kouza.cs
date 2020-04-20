@@ -153,6 +153,7 @@ namespace Search
         {
             parKouzaCD = dgvDetail.CurrentRow.Cells["colKouzaCD"].Value.ToString();
             parChangeDate = dgvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
+            parKouzaName = dgvDetail.CurrentRow.Cells["colKouzaName"].Value.ToString();
 
             EndSec();
         }

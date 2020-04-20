@@ -842,6 +842,7 @@ namespace Search
                         {
                             txtCode.Text = frmKouza.parKouzaCD;
                             txtChangeDate.Text = frmKouza.parChangeDate;
+                            lblName.Text = frmKouza.parKouzaName;
                         }
 
                     }
