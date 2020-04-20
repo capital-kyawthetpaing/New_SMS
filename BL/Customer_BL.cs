@@ -17,9 +17,23 @@ namespace BL
             mmdl = new M_Customer_DL();
         }
 
-        public bool M_Customer_Select(M_Customer_Entity mce)
+        /// <summary>
+        /// 得意先データ取得処理
+        /// </summary>
+        /// <param name="mce"></param>
+        /// <param name="kbn">CustomerKBN 1:店舗会員、2:店舗現金会員、3:団体法人</param>
+        /// <returns></returns>
+        public bool M_Customer_Select(M_Customer_Entity mce, short kbn = 0)
         {
             DataTable dt = mmdl.M_Customer_Select(mce);
+
+            if (kbn > 0)
+            {
+                DataRow[] rows = dt.Select("CustomerKBN <>" + kbn.ToString());
+                foreach (DataRow row in rows)
+                    dt.Rows.Remove(row);
+            }
+
             if (dt.Rows.Count > 0)
             {
                 mce.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
@@ -110,15 +124,13 @@ namespace BL
                 return false;
 
         }
-
-        /// <summary>	
-        /// 得意先更新処理	
-        /// MasterTouroku_Tokuisakiより更新時に使用	
-        /// </summary>	
+        /// <summary>
+        /// 得意先更新処理
+        /// MasterTouroku_Tokuisakiより更新時に使用
+        /// </summary>
         public bool Customer_Exec(M_Customer_Entity me, short operationMode)
         {
             return mmdl.M_Customer_Exec(me, operationMode);
         }
-
     }
 }

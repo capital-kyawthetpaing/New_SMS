@@ -7,8 +7,10 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
+
 /****** Object:  StoredProcedure [D_Juchu_SelectAllForShoukai]    */
-CREATE PROCEDURE [dbo].[D_Juchu_SelectAllForShoukai](
+CREATE PROCEDURE D_Juchu_SelectAllForShoukai(
     -- Add the parameters for the stored procedure here
     @JuchuuDateFrom  varchar(10),
     @JuchuuDateTo  varchar(10),
@@ -43,8 +45,8 @@ CREATE PROCEDURE [dbo].[D_Juchu_SelectAllForShoukai](
     @StaffCD varchar(30) ,    
     
     @SKUName varchar(100),
-    @SKUCD varchar(300),            --�J���}��؂�
-    @JanCD varchar(300),        --�J���}��؂�
+    @SKUCD varchar(300),            --カンマ区切り
+    @JanCD varchar(300),        --カンマ区切り
     
     @JuchuuNOFrom  varchar(11),
     @JuchuuNOTo varchar(11),
@@ -110,44 +112,45 @@ BEGIN
                     ORDER BY A.ChangeDate DESC) AS Tel23
 
          ,(SELECT top 1 H.OrderCD 
-           FROM D_OrderDetails AS M
-           INNER JOIN D_Order AS H ON H.OrderNO = M.OrderNO
-          AND H.DeleteDateTime IS NULL
-          WHERE M.DeleteDateTime IS NULL
-          AND DH.JuchuuNO = M.JuchuuNO
+               FROM D_OrderDetails AS M
+               INNER JOIN D_Order AS H ON H.OrderNO = M.OrderNO
+              AND H.DeleteDateTime IS NULL
+              WHERE M.DeleteDateTime IS NULL
+              AND DH.JuchuuNO = M.JuchuuNO
             ) AS OrderCD
             
           ,DH.JuchuuGaku
           ,(SELECT top 1 A.StaffName 
           FROM M_Staff A 
           WHERE A.StaffCD = DH.StaffCD AND A.ChangeDate <= DH.JuchuuDate
+          AND A.DeleteFlg = 0
           ORDER BY A.ChangeDate desc) AS StaffName
 
          ,(SELECT CONVERT(varchar, MAX(H.OrderDate), 111) 
-           FROM D_OrderDetails AS M
-           INNER JOIN D_Order AS H ON H.OrderNO = M.OrderNO
-          AND H.DeleteDateTime IS NULL
-          WHERE M.DeleteDateTime IS NULL
-          AND DH.JuchuuNO = M.JuchuuNO
-            ) AS OrderDate  --������
+               FROM D_OrderDetails AS M
+               INNER JOIN D_Order AS H ON H.OrderNO = M.OrderNO
+              AND H.DeleteDateTime IS NULL
+              WHERE M.DeleteDateTime IS NULL
+              AND DH.JuchuuNO = M.JuchuuNO
+            ) AS OrderDate  --発注日
     
           ,(SELECT CONVERT(varchar, MAX(D.ArrivalDate), 111) 
-            FROM D_Stock AS D 
-            INNER JOIN D_Reserve AS R ON R.StockNO = D.StockNO
-            AND R.ReserveKBN = 1
-            AND R.DeleteDateTime IS NULL
-            WHERE D.DeleteDateTime IS NULL
-            AND DH.JuchuuNO = R.Number
-            ) AS ArrivalDate    --���ד�
+                FROM D_Stock AS D 
+                INNER JOIN D_Reserve AS R ON R.StockNO = D.StockNO
+                AND R.ReserveKBN = 1
+                AND R.DeleteDateTime IS NULL
+                WHERE D.DeleteDateTime IS NULL
+                AND DH.JuchuuNO = R.Number
+            ) AS ArrivalDate    --入荷日
 
           ,(SELECT CONVERT(varchar, MAX(D.ArrivalPlanDate), 111) 
-            FROM D_Stock AS D 
-            INNER JOIN D_Reserve AS R ON R.StockNO = D.StockNO
-            AND R.ReserveKBN = 1
-            AND R.DeleteDateTime IS NULL
-            WHERE D.DeleteDateTime IS NULL
-            AND DH.JuchuuNO = R.Number
-            ) AS ArrivalPlanDate   --���ח\���
+                FROM D_Stock AS D 
+                INNER JOIN D_Reserve AS R ON R.StockNO = D.StockNO
+                AND R.ReserveKBN = 1
+                AND R.DeleteDateTime IS NULL
+                WHERE D.DeleteDateTime IS NULL
+                AND DH.JuchuuNO = R.Number
+            ) AS ArrivalPlanDate   --入荷予定日
 
           ,(SELECT CONVERT(varchar, MAX(S.SalesDate), 111) 
             FROM D_SalesDetails AS D 
@@ -155,7 +158,7 @@ BEGIN
             AND S.DeleteDateTime IS NULL
             WHERE D.DeleteDateTime IS NULL
             AND DH.JuchuuNO = D.JuchuuNO
-            ) AS SalesDate  --�����
+            ) AS SalesDate  --売上日
 
           ,(SELECT CONVERT(varchar, MAX(BH.BillingCloseDate), 111) 
             FROM D_SalesDetails AS D 
@@ -166,7 +169,7 @@ BEGIN
             AND BH.DeleteDateTime IS NULL
             WHERE D.DeleteDateTime IS NULL
             AND DH.JuchuuNO = D.JuchuuNO
-            ) AS BillingCloseDate   --������
+            ) AS BillingCloseDate   --請求日
 
           ,(SELECT CONVERT(varchar, MAX(DP.CollectClearDate), 111) 
             FROM D_CollectPlan AS D 
@@ -176,58 +179,65 @@ BEGIN
             AND DP.DeleteDateTime IS NULL
             WHERE D.DeleteDateTime IS NULL
             AND DH.JuchuuNO = D.JuchuuNO
-            ) AS CollectClearDate   --�����
+            ) AS CollectClearDate   --入金日
             
            ,(SELECT M.DenominationName FROM M_DenominationKBN AS M
-            WHERE M.DenominationCD = DH.PaymentMethodCD) AS DenominationName    --������@
+            WHERE M.DenominationCD = DH.PaymentMethodCD) AS DenominationName    --入金方法
             
-            ,(CASE WHEN ISNULL(DC.CollectAmount,0)=0 THEN '������' 
-                WHEN ISNULL(DC.CollectAmount,0) <> DH.JuchuuGaku THEN '�ꕔ����'
-                WHEN ISNULL(DC.CollectAmount,0) >= DH.JuchuuGaku THEN '�������'
+            ,(CASE WHEN ISNULL(DC.CollectAmount,0)=0 THEN '未入金' 
+                WHEN ISNULL(DC.CollectAmount,0) <> DH.JuchuuGaku THEN '一部入金'
+                WHEN ISNULL(DC.CollectAmount,0) >= DH.JuchuuGaku THEN '入金完了'
                 ELSE '' END) AS CollectAmount
 
           ,(SELECT top 1 (CASE A.VariousFLG WHEN 1 THEN DM.SKUName ELSE A.SKUName END) AS SKUName 
               FROM M_SKU A 
               WHERE A.AdminNO = DM.AdminNO 
               AND A.ChangeDate <= DH.JuchuuDate 
+              AND A.DeleteFlg = 0
               ORDER BY A.ChangeDate desc) AS SKUName
             ,(SELECT top 1 M.ITemCD 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.JuchuuDate
              AND M.AdminNO = DM.AdminNO
+              AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS ITemCD
             ,(SELECT top 1 M.SKUCD 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.JuchuuDate
              AND M.AdminNO = DM.AdminNO
+              AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS SKUCD
             ,(SELECT top 1 M.JANCD 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.JuchuuDate
              AND M.AdminNO = DM.AdminNO
+              AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS JANCD
             ,(SELECT top 1 M.MakerItem 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.JuchuuDate
              AND M.AdminNO = DM.AdminNO
+              AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS MakerItem
              
           ,(SELECT top 1 (CASE A.VariousFLG WHEN 1 THEN DM.ColorName ELSE A.ColorName END) AS ColorName 
               FROM M_SKU A 
               WHERE A.AdminNO = DM.AdminNO AND A.ChangeDate <= DH.JuchuuDate 
+              AND A.DeleteFlg = 0
               ORDER BY A.ChangeDate desc) AS ColorName
           ,(SELECT top 1 (CASE A.VariousFLG WHEN 1 THEN DM.SizeName ELSE A.SizeName END) AS SizeName 
               FROM M_SKU A 
               WHERE A.AdminNO = DM.AdminNO AND A.ChangeDate <= DH.JuchuuDate 
+              AND A.DeleteFlg = 0
               ORDER BY A.ChangeDate desc) AS SizeName
              
               ,DH.CommentOutStore
               ,DH.CommentInStore
               ,DH.ReturnFLG
 
-          ,0 AS Check1  --ITemCD�p�`�F�b�N
-          ,0 AS Check2  --SKUCD�p�`�F�b�N
-          ,0 AS Check3  --JANCD�p�`�F�b�N
+          ,0 AS Check1  --ITemCD用チェック
+          ,0 AS Check2  --SKUCD用チェック
+          ,0 AS Check3  --JANCD用チェック
           ,1 AS DelFlg
     INTO #TableForJuchuuShoukai 
     
@@ -248,18 +258,30 @@ BEGIN
             AND DC.DeleteDateTime IS NULL
             WHERE D.DeleteDateTime IS NULL
             GROUP BY D.JuchuuNO
-            ) AS DC ON DH.JuchuuNO = DC.JuchuuNO   --������
+            ) AS DC ON DH.JuchuuNO = DC.JuchuuNO   --入金状態
                      
     WHERE DH.JuchuuDate >= (CASE WHEN @JuchuuDateFrom <> '' THEN CONVERT(DATE, @JuchuuDateFrom) ELSE DH.JuchuuDate END)
         AND DH.JuchuuDate <= (CASE WHEN @JuchuuDateTo <> '' THEN CONVERT(DATE, @JuchuuDateTo) ELSE DH.JuchuuDate END)
         AND DH.JuchuuNO >= (CASE WHEN @JuchuuNOFrom <> '' THEN @JuchuuNOFrom ELSE DH.JuchuuNO END)
         AND DH.JuchuuNO <= (CASE WHEN @JuchuuNOTo <> '' THEN @JuchuuNOTo ELSE DH.JuchuuNO END)
         AND DH.CustomerCD = (CASE WHEN @CustomerCD <> '' THEN @CustomerCD ELSE DH.CustomerCD END)
-        AND DH.StoreCD = @StoreCD
+        AND DH.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE DH.StoreCD END)
         AND DH.StaffCD = (CASE WHEN @StaffCD <> '' THEN @StaffCD ELSE DH.StaffCD END)
 
         AND DH.DeleteDateTime IS NULL
-             
+
+    --権限のある店舗のみ
+    AND EXISTS(select MS.StoreCD
+        from M_StoreAuthorizations MS
+        INNER JOIN M_Staff AS MF
+        ON MF.StaffCD = @Operator
+        AND MF.ChangeDate <= DH.JuchuuDate
+        AND MF.StoreAuthorizationsCD = MS.StoreAuthorizationsCD
+        AND MF.DeleteFlg = 0
+        where MS.ChangeDate <= DH.JuchuuDate
+        AND MS.StoreCD = DH.StoreCD
+        )
+        
     ORDER BY DH.JuchuuNO
     ;
 
@@ -274,10 +296,10 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --�i����ON�̏ꍇ
+        --進捗状況ONの場合
         IF @ChkMihikiate = 1
         BEGIN
-            --������
+            --未引当
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -289,7 +311,7 @@ BEGIN
                 AND M.ZaikoKBN = 1
                 AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO   
                 AND M.ChangeDate <= #TableForJuchuuShoukai.JuchuuDate  
-                --������Select�ł��Ȃ��󒍖��ׂ�����
+                --引当をSelectできない受注明細がある
                 AND NOT EXISTS(SELECT 1 FROM D_Reserve DR   
                     WHERE DR.ReserveKBN = 1
                     AND DR.Number = DM.JuchuuNO
@@ -297,7 +319,7 @@ BEGIN
                     AND DR.DeleteDateTime IS NULL
                     ));
                 
-            --������͈ꕔ�ł��������������
+            --もしくは一部でも未引当数がある
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -320,14 +342,14 @@ BEGIN
                 );
         END
 
-        --������ON�̏ꍇ
-        --�����͏o���Ă��邪���オ�S�Ăł��Ă��Ȃ��󒍖��ׂ��P���ł�܂܂�Ă���󒍂�\������
+        --未売上ONの場合
+        --引当は出来ているが売上が全てできていない受注明細が１件でも含まれている受注を表示する
         IF @ChkMiuriage = 1 
         BEGIN
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
-                --�����͏o���Ă���
+                --引当は出来ている
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
                 INNER JOIN (SELECT DR.Number, DR.NumberRows, SUM(DR.ReserveSu) AS ReserveSu 
@@ -340,7 +362,7 @@ BEGIN
             WHERE DM.DeleteDateTime IS NULL
             AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO
             AND DR.ReserveSu = DM.JuchuuSuu
-            --���㖾�ׂ�Select�ł��Ȃ��󒍖��ׂ�����
+            --売上明細をSelectできない受注明細がある
             AND NOT EXISTS(SELECT 1 FROM D_SalesDetails AS DS
                 WHERE DS.JuchuuNO = DM.JuchuuNO
                 AND DS.JuchuuRows = DM.JuchuuRows
@@ -351,7 +373,7 @@ BEGIN
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
-                --�����͏o���Ă���
+                --引当は出来ている
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
                 INNER JOIN (SELECT DR.Number, DR.NumberRows, SUM(DR.ReserveSu) AS ReserveSu 
@@ -361,7 +383,7 @@ BEGIN
                     GROUP BY DR.Number, DR.NumberRows) AS DR
                     ON DR.Number = DM.JuchuuNO
                     AND DR.NumberRows = DM.JuchuuRows
-                --������͈ꕔ�ł�����㐔������
+                --もしくは一部でも未売上数がある
                 INNER JOIN (SELECT DS.JuchuuNO, DS.JuchuuRows, SUM(DS.SalesSU) AS SalesSU
                 	FROM D_SalesDetails AS DS
                 	WHERE DS.DeleteDateTime IS NULL
@@ -376,8 +398,8 @@ BEGIN
 			);
         END
         
-        --������ON
-        --����͏o���Ă��邪������������󒍖��ׂ��P���ł�܂܂�Ă���󒍂�\������
+        --未請求ON
+        --売上は出来ているが未請求がある受注明細が１件でも含まれている受注を表示する
         IF @ChkMiseikyu = 1
         BEGIN
             UPDATE #TableForJuchuuShoukai
@@ -387,7 +409,7 @@ BEGIN
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
 
-                --����͂ł��Ă���
+                --売上はできている
                 INNER JOIN (SELECT DS.JuchuuNO, DS.JuchuuRows, SUM(DS.SalesSU) AS SalesSU
                 	FROM D_SalesDetails AS DS
                 	WHERE DS.DeleteDateTime IS NULL
@@ -400,7 +422,7 @@ BEGIN
             AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO
             AND DS.SalesSU = DM.JuchuuSuu	
             AND 
-                --�������ׂ�Select�ł��Ȃ��󒍖��ׂ�����
+                --請求明細をSelectできない受注明細がある
                 NOT EXISTS (SELECT DB.SalesNO
                     FROM D_BillingDetails DB
                     INNER JOIN D_SalesDetails AS DSD
@@ -420,7 +442,7 @@ BEGIN
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
 
-                --����͂ł��Ă���
+                --売上はできている
                 INNER JOIN (SELECT DS.JuchuuNO, DS.JuchuuRows, SUM(DS.SalesSU) AS SalesSU
                 	FROM D_SalesDetails AS DS
                 	WHERE DS.DeleteDateTime IS NULL
@@ -429,7 +451,7 @@ BEGIN
                 ON DS.JuchuuNO = DM.JuchuuNO
                 AND DS.JuchuuRows = DM.JuchuuRows
                 
-                --������͈ꕔ�ł���������z������
+                --もしくは一部でも未売請求額がある
                 INNER JOIN (SELECT DSD.JuchuuNO, DSD.JuchuuRows, SUM(DB.BillingGaku) AS BillingGaku
                     FROM D_BillingDetails DB
                     INNER JOIN D_SalesDetails AS DSD
@@ -447,7 +469,7 @@ BEGIN
 			);
         END
         
-        --������ON�̏ꍇ
+        --未入金ONの場合
         IF @ChkMinyukin = 1
         BEGIN
             UPDATE #TableForJuchuuShoukai
@@ -457,7 +479,7 @@ BEGIN
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
 
-                --�����͂ł��Ă���
+                --請求はできている
                 INNER JOIN (SELECT DSD.JuchuuNO, DSD.JuchuuRows, SUM(DB.BillingGaku) AS BillingGaku
                     FROM D_BillingDetails DB
                     INNER JOIN D_SalesDetails AS DSD
@@ -473,7 +495,7 @@ BEGIN
             AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO
             AND DB.BillingGaku = DM.JuchuuGaku
             AND 
-                --������ׂ�Select�ł��Ȃ��󒍖��ׂ�����
+                --入金明細をSelectできない受注明細がある
                 NOT EXISTS (SELECT DB.CollectPlanNO
                     FROM D_CollectBillingDetails DB
                     INNER JOIN D_CollectPlanDetails AS DP
@@ -493,7 +515,7 @@ BEGIN
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
 
-                --�����͂ł��Ă���
+                --請求はできている
                 INNER JOIN (SELECT DSD.JuchuuNO, DSD.JuchuuRows, SUM(DB.BillingGaku) AS BillingGaku
                     FROM D_BillingDetails DB
                     INNER JOIN D_SalesDetails AS DSD
@@ -505,7 +527,7 @@ BEGIN
                     ) AS DB ON DB.JuchuuNO = DM.JuchuuNO
                     AND DB.JuchuuRows = DM.JuchuuRows
                 
-                --������͈ꕔ�ł������z������
+                --もしくは一部でも未入金額がある
                 INNER JOIN (SELECT DP.JuchuuNO, DP.JuchuuRows, SUM(DB.CollectAmount) AS CollectAmount
                     FROM D_CollectBillingDetails DB
                     INNER JOIN D_CollectPlanDetails AS DP
@@ -529,14 +551,14 @@ BEGIN
         ;
     END
         
-    --�ʏ�ON,�ԕiON
+    --通常ON,返品ON
 	IF @ChkTujo = 1 OR @ChkHenpin = 1
     BEGIN    
         UPDATE #TableForJuchuuShoukai
         SET DelFlg = 1
         ;
         
-        --�ʏ�
+        --通常
         IF @ChkTujo = 1 
         BEGIN
             UPDATE #TableForJuchuuShoukai
@@ -545,7 +567,7 @@ BEGIN
             ;
         END
         
-        --�ԕi
+        --返品
         IF @ChkHenpin = 1
         BEGIN
             UPDATE #TableForJuchuuShoukai
@@ -565,7 +587,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --������ON
+        --未発注ON
         IF @ChkMihachu = 1
         BEGIN
             UPDATE #TableForJuchuuShoukai
@@ -574,7 +596,7 @@ BEGIN
                 Select DM.JuchuuNO                                                                                          
                 from D_JuchuuDetails AS DM 
 
-                --�����K�v�Ȗ��ׂŖ����������Ă��Ȃ���̂�����
+                --発注必要な明細で未だ発注していないものがある
                 INNER JOIN (SELECT DO.JuchuuNO, DO.JuchuuRows, SUM(DO.OrderSu) AS OrderSu
                     FROM D_OrderDetails AS DO
                     WHERE DO.DeleteDateTime IS NULL
@@ -589,10 +611,10 @@ BEGIN
 
         END
         
-        --�񓚑҂�ON
+        --回答待ちON
         IF @ChkNokiKaito = 1
         BEGIN
-        	--�[���񓚂���Ă��Ȃ�����������
+        	--納期回答されていない発注がある
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -604,7 +626,7 @@ BEGIN
                 AND DM.HikiateFLG <> 1
                 AND NOT EXISTS(
                                 
-                --�@D_ArrivalPlan�����݂��Ȃ�   
+                --①D_ArrivalPlanが存在しない   
                     SELECT DO.JuchuuNO, DO.JuchuuRows
                     FROM D_OrderDetails AS DO
                     INNER JOIN D_ArrivalPlan AS DA
@@ -629,7 +651,7 @@ BEGIN
             AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO
             AND DM.HikiateFLG <> 1
             AND EXISTS(
-            	--D_ArrivalPlan�����݂��Ă�A
+            	--D_ArrivalPlanが存在しても、
                     SELECT DO.JuchuuNO, DO.JuchuuRows
                     FROM D_OrderDetails AS DO
                     INNER JOIN D_ArrivalPlan AS DA
@@ -655,10 +677,10 @@ BEGIN
 			);
         END
         
-        --������ON
+        --未入荷ON
         IF @ChkMinyuka= 1 
         BEGIN
-        	--�[���񓚂���Ă��邪���ׂ�����
+        	--納期回答されているが入荷が未だ
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -668,7 +690,7 @@ BEGIN
             AND DM.JuchuuNO = #TableForJuchuuShoukai.JuchuuNO
             AND DM.HikiateFLG <> 1
             AND EXISTS(
-            	--�@D_ArrivalPlan�����݂���A
+            	--①D_ArrivalPlanが存在する、
                     SELECT DO.JuchuuNO, DO.JuchuuRows
                     FROM D_OrderDetails AS DO
                     INNER JOIN D_ArrivalPlan AS DA
@@ -689,17 +711,17 @@ BEGIN
                     AND (DA.ArrivalPlanDate IS NOT NULL
 						OR (ISNULL(DA.ArrivalPlanMonth,0) <> 0
                     	AND	MM.Num2 IN (1,2,4,6)))
-                    --�@��D_ArrivalPlan�ɑ΂��āA���ׂ������̂�̂�����
+                    --①のD_ArrivalPlanに対して、入荷が未だのものがある
                     AND DA.ArrivalPlanSu<> DA.ArrivalSu
                     )
 			);
         END
 
-        --���d��ON
+        --未仕入ON
         IF @ChkMisiire= 1 
         BEGIN
-        	--���ׂ������ǎd���������ȉ���Select�Ň@�̏ꍇ�A���o�ΏۂƂ���
-        	--�@D_PurchaseDetails�����݂��Ȃ�
+        	--入荷したけど仕入が未だ以下のSelectで①の場合、抽出対象とする
+        	--①D_PurchaseDetailsが存在しない
             UPDATE #TableForJuchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -711,7 +733,7 @@ BEGIN
                 AND DM.HikiateFLG <> 1
                 AND NOT EXISTS(
                                 
-                --�@D_ArrivalPlan�����݂��Ȃ�   
+                --①D_ArrivalPlanが存在しない   
                     SELECT DO.JuchuuNO, DO.JuchuuRows
                     FROM D_OrderDetails AS DO
                     INNER JOIN D_ArrivalPlan AS DA
@@ -810,7 +832,7 @@ BEGIN
     DECLARE @INDEX int;
     DECLARE @NEXT_INDEX int;
     /*
-    --ITEM������ɍ���Ȃ��f�[�^��e�[�u������폜
+    --ITEMより条件に合わないデータをテーブルから削除
     IF ISNULL(@ITemCD,'') <> ''
     BEGIN
                 
@@ -827,7 +849,7 @@ BEGIN
             BEGIN
                 IF LEN(@ITemCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForJuchuuShoukai
                     SET Check1 = 0
                     WHERE ITemCD = SUBSTRING(@ITemCD,@INDEX,LEN(@ITemCD)-@INDEX+1)
@@ -854,7 +876,7 @@ BEGIN
         ;
     END;
     */
-    --SKUCD������ɍ���Ȃ��f�[�^��e�[�u������폜
+    --SKUCDより条件に合わないデータをテーブルから削除
     IF ISNULL(@SKUCD,'') <> ''
     BEGIN
                 
@@ -871,7 +893,7 @@ BEGIN
             BEGIN
                 IF LEN(@SKUCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForJuchuuShoukai
                     SET Check2 = 0
                     WHERE EXISTS(
@@ -908,7 +930,7 @@ BEGIN
         ;
     END;
     
-    --JANCD������ɍ���Ȃ��f�[�^��e�[�u������폜
+    --JANCDより条件に合わないデータをテーブルから削除
     IF ISNULL(@JANCD,'') <> ''
     BEGIN
                 
@@ -925,7 +947,7 @@ BEGIN
             BEGIN
                 IF LEN(@JANCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForJuchuuShoukai
                     SET Check3 = 0
                     WHERE EXISTS(
@@ -962,8 +984,8 @@ BEGIN
         ;
     END;
     
-    --�yL_Log�zINSERT
-    --��������f�[�^�֍X�V     
+    --【L_Log】INSERT
+    --処理履歴データへ更新     
     EXEC L_Log_Insert_SP
         @SYSDATETIME,
         @Operator,
@@ -977,5 +999,4 @@ BEGIN
     ORDER BY DH.JuchuuNO
     ;
 END
-
 

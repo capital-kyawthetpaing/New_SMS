@@ -164,6 +164,7 @@ namespace CKM_Controls
         {
             Cursorin = Text;
             this.BackColor = Color.FromArgb(255, 242, 204);
+            this.Select(length,length) ;
             base.OnEnter(e);
             
         }

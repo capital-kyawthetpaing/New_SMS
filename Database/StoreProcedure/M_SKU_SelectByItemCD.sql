@@ -46,6 +46,7 @@ BEGIN
           ,MS.MakerItem
           ,MS.TaniCD
           ,MS.SportsCD
+          ,MS.SegmentCD
           ,MS.ZaikoKBN
           ,ISNULL(MS.Rack,'') AS Rack
           ,MS.VirtualFlg

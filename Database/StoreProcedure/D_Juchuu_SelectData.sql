@@ -14,7 +14,7 @@ GO
 --       Program ID      TempoJuchuuNyuuryoku
 --       Create date:    2019.6.19
 --    ======================================================================
-CREATE PROCEDURE [dbo].[D_Juchuu_SelectData]
+CREATE PROCEDURE D_Juchuu_SelectData
     (@OperateMode    tinyint,                 -- 処理区分（1:新規 2:修正 3:削除）
     @JuchuuNO varchar(11)
     )AS
@@ -64,6 +64,17 @@ BEGIN
                   ,DH.Tel22
                   ,DH.Tel23
                   ,DH.CustomerKanaName
+                  ,DH.DeliveryCD
+                  ,DH.DeliveryName
+                  ,DH.DeliveryName2
+                  ,DH.DeliveryAliasKBN
+                  ,DH.DeliveryZipCD1
+                  ,DH.DeliveryZipCD2
+                  ,DH.DeliveryAddress1
+                  ,DH.DeliveryAddress2
+                  ,DH.DeliveryTel11
+                  ,DH.DeliveryTel12
+                  ,DH.DeliveryTel13 
                   ,DH.JuchuuCarrierCD
                   ,DH.DecidedCarrierFLG
                   ,DH.LastCarrierCD
@@ -274,5 +285,4 @@ BEGIN
 --        END
 
 END
-
 

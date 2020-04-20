@@ -41,6 +41,8 @@ namespace MasterTouroku_Shouhin
 
           , TaxRateFLGName
           , CostingKBNName
+                , SegmentCD
+                , SegmentName
 
           //KeyControl
           , JanCD = 0
@@ -101,7 +103,7 @@ namespace MasterTouroku_Shouhin
           , OrderPriceWithoutTax
           , OrderPriceWithTax
 
-          , OrderAttentionCD
+          , CmbOrderAttentionCD
           , OrderAttentionNote
           , ShouhinCD
 
@@ -116,8 +118,8 @@ namespace MasterTouroku_Shouhin
             , CmbTag9
             , CmbTag10
 
-          , LastYearTerm
-          , LastSeason
+          , CmbLastYearTerm
+          , CmbLastSeason
           , LastCatalogNO
           , LastCatalogPage
           , LastCatalogText
@@ -212,6 +214,8 @@ namespace MasterTouroku_Shouhin
 
                 string ymd = bbl.GetDate();
                 cmbOrderAttentionCD.Bind(ymd, "2");
+                CmbLastYearTerm.Bind(ymd);
+                CmbLastSeason.Bind(ymd);
 
                 for (int i = (int)EIndex.CmbTag1; i <= (int)EIndex.CmbTag10; i++)
                 {
@@ -223,9 +227,11 @@ namespace MasterTouroku_Shouhin
                 SetData();
 
                 SetEnabled();
+                SetEnabledForSet();
+                keyControls[(int)EIndex.JanCD].Enabled = false;
                 SetFuncKeyAll(this, "100000000001");
 
-                detailControls[0].Focus();
+                detailControls[(int)EIndex.SKUName].Focus();
             }
             catch (Exception ex)
             {
@@ -265,6 +271,23 @@ namespace MasterTouroku_Shouhin
                 }
             }
         }
+        private void SetEnabledForSet()
+        {
+            //セット品CB ONなら入力可	
+            lblSetKBN.Visible = ChkSetKbn.Checked;
+            lblSetKBN.ForeColor = System.Drawing.Color.Red;
+            keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
+            keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
+            ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
+
+            if (!ChkSetKbn.Checked)
+            {
+                //セット品以外の場合は、入力不可
+                keyControls[(int)EIndex.SetSKUCD].Text = "";
+                keyControls[(int)EIndex.SetSU].Text = "";
+            }
+
+        }
         private void InitialControlArray()
         {
             keyControls = new Control[] { SC_ITEM.TxtCode, ckM_TextBox16, ScSKUCD.TxtCode, ckM_TextBox15 };
@@ -280,12 +303,12 @@ namespace MasterTouroku_Shouhin
                 ,ckM_ComboBox8,ckM_ComboBox9,ckM_ComboBox10,ckM_ComboBox11,ckM_ComboBox12,ckM_ComboBox13
                 ,ckM_ComboBox14,ckM_ComboBox15,ckM_ComboBox16,ckM_ComboBox17
                 
-                , ckM_TextBox19, ckM_TextBox14, ckM_TextBox22, ckM_TextBox23,TxtRemark
+                , CmbLastYearTerm, CmbLastSeason, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3,ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
             };
             detailLabels = new Control[] {lblSKUCD, lblChangeDate, lblSizeNo, lblSizeName, lblColorNo, lblColorName
                                         ,lblMakerItem, label2, label11, label12, label13, label19, label20, label22, label23
-                                        ,label31, label32,label35,label36,label37,     ScVendor };
+                                        ,label31, label32,label35,label36,label37,label26,label10,     ScVendor };
             searchButtons = new Control[] { ScVendor.BtnSearch,ScSKUCD.BtnSearch };
 
             //イベント付与
@@ -421,6 +444,7 @@ namespace MasterTouroku_Shouhin
         private bool CheckDetail(int index, bool set=true)
         {
             bool ret;
+            string ymd = lblChangeDate.Text;
 
             switch (index)
             {
@@ -445,7 +469,7 @@ namespace MasterTouroku_Shouhin
                     M_Vendor_Entity mce = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     ret = sbl.M_Vendor_SelectTop1(mce);
@@ -472,13 +496,13 @@ namespace MasterTouroku_Shouhin
                     {
                         SoukoCD = setSoukoCD,
                         TanaCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     ret = mibl.M_Location_SelectData(ml);
                     if (!ret)
                     {
                         //Ｅ２０４
-                        bbl.ShowMessage("E204");
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -622,6 +646,8 @@ namespace MasterTouroku_Shouhin
 
             detailLabels[(int)EIndex.TaxRateFLGName].Text = mse.TaxRateFLGName;
             detailLabels[(int)EIndex.CostingKBNName].Text = mse.CostingKBNName;
+            detailLabels[(int)EIndex.SegmentCD].Text = mse.SegmentCD;
+            detailLabels[(int)EIndex.SegmentName].Text = mse.SegmentName;
 
             //Text
             if (mse.VariousFLG.Equals("1"))
@@ -725,6 +751,7 @@ namespace MasterTouroku_Shouhin
             detailControls[(int)EIndex.Rack].Text = mse.Rack;
             detailControls[(int)EIndex.PriceWithTax].Text =bbl.Z_SetStr( mse.PriceWithTax);
             detailControls[(int)EIndex.PriceOutTax].Text = bbl.Z_SetStr(mse.PriceOutTax);
+            detailControls[(int)EIndex.Rate].Text = bbl.Z_SetStr(mse.Rate);
             detailControls[(int)EIndex.OrderPriceWithTax].Text = bbl.Z_SetStr(mse.OrderPriceWithTax);
             detailControls[(int)EIndex.OrderPriceWithoutTax].Text = bbl.Z_SetStr(mse.OrderPriceWithoutTax);
             detailControls[(int)EIndex.SaleStartDate].Text = mse.SaleStartDate;
@@ -733,9 +760,9 @@ namespace MasterTouroku_Shouhin
             detailControls[(int)EIndex.OrderAttentionNote].Text = mse.OrderAttentionNote;
             detailControls[(int)EIndex.CommentInStore].Text = mse.CommentInStore;
             detailControls[(int)EIndex.CommentOutStore].Text = mse.CommentOutStore;
-            detailControls[(int)EIndex.ShouhinCD].Text = mse.ShouhinCD; 
-            detailControls[(int)EIndex.LastYearTerm].Text = mse.LastYearTerm;
-            detailControls[(int)EIndex.LastSeason].Text = mse.LastSeason;
+            detailControls[(int)EIndex.ShouhinCD].Text = mse.ShouhinCD;
+            CmbLastYearTerm.SelectedValue = mse.LastYearTerm;
+            CmbLastSeason.SelectedValue = mse.LastSeason;
             detailControls[(int)EIndex.LastCatalogNO].Text = mse.LastCatalogNO;
             detailControls[(int)EIndex.LastCatalogPage].Text = mse.LastCatalogPage;
             detailControls[(int)EIndex.LastCatalogText].Text = mse.LastCatalogText;
@@ -829,6 +856,7 @@ namespace MasterTouroku_Shouhin
                 KanaName=mie.KanaName,
                 SKUShortName=mie.SKUShortName,
                 EnglishName=mie.EnglishName,
+                MakerItem = mie.MakerItem,
                 MainVendorCD=mie.MainVendorCD,
                 BrandCD = mie.BrandCD,
                 BrandName = mie.BrandName,
@@ -836,6 +864,15 @@ namespace MasterTouroku_Shouhin
                 TaniName = mie.TaniName,
                 SportsCD = mie.SportsCD,
                 SportsName = mie.SportsName,
+                SegmentCD = mie.SegmentCD,
+                SegmentName = mie.SegmentName,
+                ZaikoKBN = mie.ZaikoKBN,
+                NoNetOrderFlg = mie.NoNetOrderFlg,
+                EDIOrderFlg = mie.EDIOrderFlg,
+                AutoOrderFlg = mie.AutoOrderFlg,
+                InventoryAddFlg = mie.InventoryAddFlg,
+                MakerAddFlg = mie.MakerAddFlg,
+                StoreAddFlg = mie.StoreAddFlg,
                 Rack = mie.Rack,
                 DirectFlg = mie.DirectFlg,
                 ReserveCD = mie.ReserveCD,
@@ -907,31 +944,31 @@ namespace MasterTouroku_Shouhin
             mse.SKUShortName = row[0]["SKUShortName"].ToString();
             mse.EnglishName = row[0]["EnglishName"].ToString();
             mse.ITemCD = row[0]["ItemCD"].ToString();
-            mse.JanCD = row[0]["JanCD"].ToString();
+            //mse.JanCD = row[0]["JanCD"].ToString();
             mse.SetKBN = row[0]["SetKBN"].ToString();
             mse.PresentKBN = row[0]["PresentKBN"].ToString();
             mse.SampleKBN = row[0]["SampleKBN"].ToString();
             mse.DiscountKBN = row[0]["DiscountKBN"].ToString();
             mse.ColorName = row[0]["ColorName"].ToString();
             mse.SizeName = row[0]["SizeName"].ToString();
-            mse.WebFlg = row[0]["WebFlg"].ToString();
+            //mse.WebFlg = row[0]["WebFlg"].ToString();
             mse.RealStoreFlg = row[0]["RealStoreFlg"].ToString();
-            mse.MainVendorCD = row[0]["MainVendorCD"].ToString();
-            mse.MakerItem = row[0]["MakerItem"].ToString();
-            mse.ZaikoKBN = row[0]["ZaikoKBN"].ToString();
+            //mse.MainVendorCD = row[0]["MainVendorCD"].ToString();
+            //mse.MakerItem = row[0]["MakerItem"].ToString();
+            //mse.ZaikoKBN = row[0]["ZaikoKBN"].ToString();
             mse.Rack = row[0]["Rack"].ToString();
             mse.VirtualFlg = row[0]["VirtualFlg"].ToString();
             mse.WebStockFlg = row[0]["WebStockFlg"].ToString();
             mse.StopFlg = row[0]["StopFlg"].ToString();
             mse.DiscontinueFlg = row[0]["DiscontinueFlg"].ToString();
-            mse.InventoryAddFlg = row[0]["InventoryAddFlg"].ToString();
-            mse.MakerAddFlg = row[0]["MakerAddFlg"].ToString();
-            mse.StoreAddFlg = row[0]["StoreAddFlg"].ToString();
-            mse.NoNetOrderFlg = row[0]["NoNetOrderFlg"].ToString();
-            mse.EDIOrderFlg = row[0]["EDIOrderFlg"].ToString();
+            //mse.InventoryAddFlg = row[0]["InventoryAddFlg"].ToString();
+            //mse.MakerAddFlg = row[0]["MakerAddFlg"].ToString();
+            //mse.StoreAddFlg = row[0]["StoreAddFlg"].ToString();
+            //mse.NoNetOrderFlg = row[0]["NoNetOrderFlg"].ToString();
+            //mse.EDIOrderFlg = row[0]["EDIOrderFlg"].ToString();
             mse.CatalogFlg = row[0]["CatalogFlg"].ToString();
             mse.ParcelFlg = row[0]["ParcelFlg"].ToString();
-            mse.AutoOrderFlg = row[0]["AutoOrderFlg"].ToString();
+            //mse.AutoOrderFlg = row[0]["AutoOrderFlg"].ToString();
             //mse.TaxRateFLG = row[0]["TaxRateFLG"].ToString();
             //mse.TaxRateFLGName = row[0]["TaxRateFLGName"].ToString();
             //mse.CostingKBN = row[0]["CostingKBN"].ToString();
@@ -1108,12 +1145,12 @@ namespace MasterTouroku_Shouhin
             newrow["Rate"] = bbl.Z_Set(detailControls[(int)EIndex.Rate].Text);
             newrow["SaleStartDate"] = detailControls[(int)EIndex.SaleStartDate].Text;
             newrow["WebStartDate"] = detailControls[(int)EIndex.WebStartDate].Text;
-            newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedValue != null ? cmbOrderAttentionCD.SelectedValue : "";
+            newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue : "";
             newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
             newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
             newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
-            newrow["LastYearTerm"] = detailControls[(int)EIndex.LastYearTerm].Text;
-            newrow["LastSeason"] = detailControls[(int)EIndex.LastSeason].Text;
+            newrow["LastYearTerm"] = CmbLastYearTerm.SelectedIndex > 0 ? CmbLastYearTerm.SelectedValue : ""; 
+            newrow["LastSeason"] = CmbLastSeason.SelectedIndex > 0 ? CmbLastSeason.SelectedValue : ""; 
             newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
             newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
             newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
@@ -1418,20 +1455,7 @@ namespace MasterTouroku_Shouhin
         {
             try
             {
-                //セット品CB ONなら入力可	
-                lblSetKBN.Visible = ChkSetKbn.Checked;
-                lblSetKBN.ForeColor = System.Drawing.Color.Red;
-                keyControls[(int)EIndex.SetSKUCD].Enabled = ChkSetKbn.Checked;
-                keyControls[(int)EIndex.SetSU].Enabled = ChkSetKbn.Checked;
-                ScSKUCD.BtnSearch.Enabled = ChkSetKbn.Checked;
-
-                if (!ChkSetKbn.Checked)
-                {
-                    //セット品以外の場合は、入力不可
-                    keyControls[(int)EIndex.SetSKUCD].Text = "";
-                    keyControls[(int)EIndex.SetSU].Text = "";
-                }
-
+                SetEnabledForSet();
             }
             catch (Exception ex)
             {

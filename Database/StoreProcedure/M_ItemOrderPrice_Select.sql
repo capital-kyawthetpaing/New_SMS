@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /****** Object:  StoredProcedure [M_ItemOrderPrice_Select]    */
-CREATE PROCEDURE [dbo].[M_ItemOrderPrice_Select](
+CREATE PROCEDURE M_ItemOrderPrice_Select(
     -- Add the parameters for the stored procedure here
     @MakerItem varchar(30),
     @VendorCD varchar(13),
@@ -25,7 +25,6 @@ BEGIN
           ,CONVERT(varchar,MS.ChangeDate,111) AS ChangeDate
           ,MS.Rate
           ,MS.PriceWithoutTax
-          ,MS.Remarks
           ,MS.DeleteFlg
           ,MS.UsedFlg
           ,MS.InsertOperator
@@ -41,5 +40,4 @@ BEGIN
     ORDER BY MS.ChangeDate desc
     ;
 END
-
 

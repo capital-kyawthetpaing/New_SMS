@@ -1478,20 +1478,13 @@ namespace Base.Client
                 var Con = c.ElementAt(i) as UserControl;
                 if (Con is CKM_SearchControl)
                 {
-                    try
+                    Control ctrl = Con.Controls.Find("txtCode", true)[0];
+                    if (IsConsistFullWidth((ctrl as CKM_TextBox).Text))
                     {
-                        Control ctrl = Con.Controls.Find("txtCode", true)[0];
-                        if (IsConsistFullWidth((ctrl as CKM_TextBox).Text))
-                        {
-                            bbl.ShowMessage("E221");
-                            (ctrl as CKM_TextBox).Focus();
-                            (ctrl as CKM_TextBox).MoveNext = false;
-                            return false;
-                        }
-                    }
-                    catch
-                    {
-                        return true;
+                        bbl.ShowMessage("E221");
+                        (ctrl as CKM_TextBox).Focus();
+                        (ctrl as CKM_TextBox).MoveNext = false;
+                        return　false;
                     }
                 }
             }

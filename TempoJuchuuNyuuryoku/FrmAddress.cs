@@ -46,7 +46,9 @@ namespace TempoJuchuuNyuuryoku
         }
 
         #region"公開プロパティ"
+        public short kbn = 0;   //1:配送先
         public Address_Entity ade = new Address_Entity();
+        public Address_Entity adeD = new Address_Entity();
         #endregion
 
         private Control[] detailControls;
@@ -63,19 +65,13 @@ namespace TempoJuchuuNyuuryoku
             F11Visible = false;
         }
 
-        //        public void ClearAddressInfo()
-        //        {      
-        //        parCustomerCD = "";
-        //    parCustomerName = "";
-        //parCustomerName2 = "";
-        //        parZipCD1 = "";
-        //            parZipCD2 = "";
-        //            parAddress1 = "";
-        //            parAddress2 = "";
-        //            parTel11 = "";
-        //            parTel12 = "";
-        //            parTel13 = "";
-        //        }
+        public void ClearAddressInfo(short kbn)
+        {
+            if(kbn.Equals(0))
+                ade = new Address_Entity();
+            else
+                adeD = new Address_Entity();
+        }
         private void InitialControlArray()
         {
             detailControls = new Control[] { ckM_TextBox6, ckM_TextBox5, ckM_TextBox4, ckM_TextBox7 };
@@ -88,34 +84,73 @@ namespace TempoJuchuuNyuuryoku
         /// <summary>
         /// 初期値設定
         /// </summary>
-        private void InitScr()
+        private void InitScr(short kbn=0)
         {
-            detailControls[(int)EIndex.ZipCD1].Text = ade.ZipCD1;
-            detailControls[(int)EIndex.ZipCD2].Text = ade.ZipCD2;
-            detailControls[(int)EIndex.Address1].Text = ade.Address1;
-            detailControls[(int)EIndex.Address2].Text = ade.Address2;
-            lblTel1.Text = ade.Tel11;
-            lblTel2.Text = ade.Tel12;
-            lblTel3.Text = ade.Tel13;
-
-            lblCustomerCD.Text = ade.CustomerCD;
-            lblCustomerName.Text = ade.CustomerName;
-            lblCustomerName2.Text = ade.CustomerName2;
-
-            if (ade.VariousFLG == "0")
+            if (kbn.Equals(0))
             {
-                //入力不可とする。
-                foreach (Control ctl in detailControls)
-                    ctl.Enabled = false;
+                lblCustomer.Visible = true;
+                lblDelivery.Visible = false;
 
-                btnAddress.Enabled = false;
+                detailControls[(int)EIndex.ZipCD1].Text = ade.ZipCD1;
+                detailControls[(int)EIndex.ZipCD2].Text = ade.ZipCD2;
+                detailControls[(int)EIndex.Address1].Text = ade.Address1;
+                detailControls[(int)EIndex.Address2].Text = ade.Address2;
+                lblTel1.Text = ade.Tel11;
+                lblTel2.Text = ade.Tel12;
+                lblTel3.Text = ade.Tel13;
+
+                lblCustomerCD.Text = ade.CustomerCD;
+                lblCustomerName.Text = ade.CustomerName;
+                lblCustomerName2.Text = ade.CustomerName2;
+
+                if (ade.VariousFLG == "0")
+                {
+                    //入力不可とする。
+                    foreach (Control ctl in detailControls)
+                        ctl.Enabled = false;
+
+                    btnAddress.Enabled = false;
+                }
+                else
+                {
+                    //以下の項目は入力可能にする。
+                    foreach (Control ctl in detailControls)
+                        ctl.Enabled = true;
+
+                }
             }
             else
             {
-                //以下の項目は入力可能にする。
-                foreach (Control ctl in detailControls)
-                    ctl.Enabled = true;
+                lblCustomer.Visible = false;
+                lblDelivery.Visible = true;
 
+                detailControls[(int)EIndex.ZipCD1].Text = adeD.ZipCD1;
+                detailControls[(int)EIndex.ZipCD2].Text = adeD.ZipCD2;
+                detailControls[(int)EIndex.Address1].Text = adeD.Address1;
+                detailControls[(int)EIndex.Address2].Text = adeD.Address2;
+                lblTel1.Text = adeD.Tel11;
+                lblTel2.Text = adeD.Tel12;
+                lblTel3.Text = adeD.Tel13;
+
+                lblCustomerCD.Text = adeD.CustomerCD;
+                lblCustomerName.Text = adeD.CustomerName;
+                lblCustomerName2.Text = adeD.CustomerName2;
+
+                if (adeD.VariousFLG == "0")
+                {
+                    //入力不可とする。
+                    foreach (Control ctl in detailControls)
+                        ctl.Enabled = false;
+
+                    btnAddress.Enabled = false;
+                }
+                else
+                {
+                    //以下の項目は入力可能にする。
+                    foreach (Control ctl in detailControls)
+                        ctl.Enabled = true;
+
+                }
             }
         }
 
@@ -123,7 +158,7 @@ namespace TempoJuchuuNyuuryoku
         {
             try
             {
-                InitScr();
+                InitScr(kbn);
 
                 detailControls[0].Focus();
             }
@@ -138,10 +173,20 @@ namespace TempoJuchuuNyuuryoku
         {
             CheckDetail((int)EIndex.ZipCD2, false);
 
-            ade.ZipCD1 = detailControls[(int)EIndex.ZipCD1].Text;
-            ade.ZipCD2 = detailControls[(int)EIndex.ZipCD2].Text;
-            ade.Address1 = detailControls[(int)EIndex.Address1].Text;
-            ade.Address2 = detailControls[(int)EIndex.Address2].Text;
+            if (kbn.Equals(0))
+            {
+                ade.ZipCD1 = detailControls[(int)EIndex.ZipCD1].Text;
+                ade.ZipCD2 = detailControls[(int)EIndex.ZipCD2].Text;
+                ade.Address1 = detailControls[(int)EIndex.Address1].Text;
+                ade.Address2 = detailControls[(int)EIndex.Address2].Text;
+            }
+            else
+            {
+                adeD.ZipCD1 = detailControls[(int)EIndex.ZipCD1].Text;
+                adeD.ZipCD2 = detailControls[(int)EIndex.ZipCD2].Text;
+                adeD.Address1 = detailControls[(int)EIndex.Address1].Text;
+                adeD.Address2 = detailControls[(int)EIndex.Address2].Text;
+            }
 
             EndSec();
         }

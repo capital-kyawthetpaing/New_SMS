@@ -33,6 +33,7 @@ namespace MasterTouroku_Ginkou
         private void frmMasterTouroku_Ginkou_Load(object sender, EventArgs e)
         {
             
+
             InOperatorCD = "0001";
             InProgramID = "MasterTouroku_Ginkou";
             mgbl = new MasterToroku_Ginkou_Bl();

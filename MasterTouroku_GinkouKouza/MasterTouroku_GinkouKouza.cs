@@ -266,7 +266,7 @@ namespace MasterTouroku_GinkouKouza
             ScKouzaCD.TxtChangeDate.Require(true);
             txtKouzaMeigi.Require(true);
             txtKouzaName.Require(true);
-            ScBankCD.TxtCode.Require(true);
+            ScBankCD.TxtCode.Require(true); 
             ScBranchCD.TxtCode.Require(true);
             txtKouzaKBN.Require(true);
             txtKouzaNO.Require(true);

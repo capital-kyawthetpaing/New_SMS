@@ -35,11 +35,7 @@ namespace MasterTouroku_Shouhin
           , KanaName
           , EnglishName
           , MakerItem
-
-          , ColorNO
-          , SizeNO
-          //, ColorName
-          //, SizeName
+        , TaniCD
 
         , ChkVirtualFlg
         , ChkDiscontinueFlg
@@ -70,7 +66,7 @@ namespace MasterTouroku_Shouhin
         , Chk28
 
         , BrandCD
-        , TaniCD
+        , SegmentCD
         , SportsCD
         , MainVendorCD
         , Rack
@@ -94,7 +90,7 @@ namespace MasterTouroku_Shouhin
           , OrderPriceWithoutTax
           , OrderPriceWithTax
 
-          , OrderAttentionCD
+          , CmbOrderAttentionCD
           , OrderAttentionNote
 
           , CmbTag1
@@ -108,8 +104,8 @@ namespace MasterTouroku_Shouhin
             , CmbTag9
             , CmbTag10
 
-          , LastYearTerm
-          , LastSeason
+          , CmbLastYearTerm
+          , CmbLastSeason
           , LastCatalogNO
           , LastCatalogPage
           , LastCatalogText
@@ -119,7 +115,12 @@ namespace MasterTouroku_Shouhin
           , CommentOutStore
           , CommentInStore
           , WebAddress
-          
+
+          , ColorNO
+          , SizeNO
+          //, ColorName
+          //, SizeName
+
           , ApprovalDate                
           , DeleteFlg
           , COUNT
@@ -173,6 +174,7 @@ namespace MasterTouroku_Shouhin
                 Btn_F10.Text = "展開(F10)";
 
                 ScTani.Value1 = MultiPorpose_BL.ID_TANI;
+                ScSegmentCD.Value1 = MultiPorpose_BL.ID_SegmentCD;
                 ScSports.Value1 = MultiPorpose_BL.ID_SPORTS;
 
                 string ymd = bbl.GetDate();
@@ -200,6 +202,7 @@ namespace MasterTouroku_Shouhin
                 mse.ChangeDate = ymd;
                 mse.StoreCD = me.StoreCD;
                 mse.DeleteFlg = "0";
+                mse.searchType = "1";
 
                 //[M_Souko_Search]
                 ret = mibl.M_Souko_Search(mse);
@@ -212,6 +215,8 @@ namespace MasterTouroku_Shouhin
                 ckM_ComboBox3.Bind(ymd, "2");
                 ckM_ComboBox4.Bind(ymd, "2");
                 ckM_ComboBox5.Bind(ymd, "2");
+                CmbLastYearTerm.Bind(ymd);
+                CmbLastSeason.Bind(ymd);
 
                 for (int i = (int)EIndex.CmbTag1; i <= (int)EIndex.CmbTag10; i++)
                 {
@@ -309,26 +314,26 @@ namespace MasterTouroku_Shouhin
             keyControls = new Control[] { ScITEM.TxtCode,ScITEM.TxtChangeDate };
             copyKeyControls = new Control[] { ScCopyITEM.TxtCode,ScCopyITEM.TxtChangeDate };
             detailControls = new Control[] {ckM_CheckBox19,ckM_CheckBox20,ckM_CheckBox21,ckM_CheckBox22
-                , ckM_TextBox6, ckM_TextBox24, ckM_TextBox20, ckM_TextBox25, ckM_TextBox4
-                , ckM_TextBox2, ckM_TextBox1
+                , ckM_TextBox6, ckM_TextBox24, ckM_TextBox20, ckM_TextBox25, ckM_TextBox4, ScTani.TxtCode
 
                 ,ckM_CheckBox1,ckM_CheckBox2,ckM_CheckBox3,ckM_CheckBox4,ckM_CheckBox5,ckM_CheckBox6
                 ,ckM_CheckBox7,ckM_CheckBox8,ckM_CheckBox9,ckM_CheckBox10,ckM_CheckBox11,ckM_CheckBox12
                 ,ckM_CheckBox13,ckM_CheckBox14,ckM_CheckBox15,ckM_CheckBox16,ckM_CheckBox17,ckM_CheckBox18
                 ,ckM_CheckBox23,ckM_CheckBox24,ckM_CheckBox25,ckM_CheckBox26,ckM_CheckBox27,ckM_CheckBox28
-                , ScBrand.TxtCode, ScTani.TxtCode, ScSports.TxtCode, ScVendor.TxtCode, ScRackNo.TxtCode
+                , ScBrand.TxtCode, ScSegmentCD.TxtCode, ScSports.TxtCode, ScVendor.TxtCode, ScRackNo.TxtCode
                 ,ckM_ComboBox1,ckM_ComboBox2,ckM_ComboBox3,ckM_ComboBox4,ckM_ComboBox5,cmbTaxRateFLG,cmbCostingKBN
                 , ckM_TextBox18, ckM_TextBox17, ckM_TextBox8, ckM_TextBox9, ckM_TextBox5, ckM_TextBox11, ckM_TextBox10
                 ,cmbOrderAttentionCD, ckM_TextBox13
                 ,ckM_ComboBox8,ckM_ComboBox9,ckM_ComboBox10,ckM_ComboBox11,ckM_ComboBox12,ckM_ComboBox13
                 ,ckM_ComboBox14,ckM_ComboBox15,ckM_ComboBox16,ckM_ComboBox17
                 
-                , ckM_TextBox19, ckM_TextBox14, ckM_TextBox22, ckM_TextBox23,TxtRemark
+                , CmbLastYearTerm, CmbLastSeason, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3, ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
+                , ckM_TextBox2, ckM_TextBox1
                 ,ckM_TextBox16, checkDeleteFlg
             };
-            detailLabels = new CKM_SearchControl[] { ScBrand, ScTani, ScSports, ScVendor};
-            searchButtons = new Control[] { ScBrand.BtnSearch,ScTani.BtnSearch, ScSports.BtnSearch,ScVendor.BtnSearch
+            detailLabels = new CKM_SearchControl[] { ScBrand, ScTani, ScSegmentCD, ScSports, ScVendor};
+            searchButtons = new Control[] { ScBrand.BtnSearch,ScTani.BtnSearch,ScSegmentCD.BtnSearch, ScSports.BtnSearch,ScVendor.BtnSearch
                 ,ScCopyITEM.BtnSearch,ScITEM.BtnSearch };
 
             //イベント付与
@@ -405,18 +410,6 @@ namespace MasterTouroku_Shouhin
                 switch (index)
                 {
                     case (int)EIndex.ItemCD:
-
-                        //入力なければチェックなし
-                        if (copyKeyControls[index].Text == "")
-                        {
-                            copyKeyControls[index].Focus();
-                            return false;
-                        }
-                        else
-                        {
-                            //マスタデータチェック
-
-                        }
                         break;
 
                     case (int)EIndex.ChangeDate:
@@ -433,7 +426,7 @@ namespace MasterTouroku_Shouhin
 
                         //複写商品CDに入力がある場合、(When there is an input in 複写商品CD)Ｅ１０２
                         //必須入力
-                        if (copyKeyControls[(int)EIndex.ItemCD].Text != "" )
+                        if (!string.IsNullOrWhiteSpace( copyKeyControls[(int)EIndex.ItemCD].Text))
                         {
                             if (!RequireCheck(new Control[] { copyKeyControls[index] }))
                             {
@@ -576,6 +569,8 @@ namespace MasterTouroku_Shouhin
                         CheckDetail((int)EIndex.TaniCD);
                         detailControls[(int)EIndex.SportsCD].Text = mie.SportsCD;
                         CheckDetail((int)EIndex.SportsCD);
+                        detailControls[(int)EIndex.SegmentCD].Text = mie.SegmentCD;
+                        CheckDetail((int)EIndex.SegmentCD);
                         detailControls[(int)EIndex.Rack].Text = mie.Rack;
 
                         if (mie.ZaikoKBN.Equals("1"))
@@ -628,8 +623,8 @@ namespace MasterTouroku_Shouhin
                         detailControls[(int)EIndex.OrderAttentionNote].Text = mie.OrderAttentionNote;
                         detailControls[(int)EIndex.CommentInStore].Text = mie.CommentInStore;
                         detailControls[(int)EIndex.CommentOutStore].Text = mie.CommentOutStore;
-                        detailControls[(int)EIndex.LastYearTerm].Text = mie.LastYearTerm;
-                        detailControls[(int)EIndex.LastSeason].Text = mie.LastSeason;
+                        ((ComboBox)detailControls[(int)EIndex.CmbLastYearTerm]).SelectedValue = mie.LastYearTerm;
+                        ((ComboBox)detailControls[(int)EIndex.CmbLastSeason]).SelectedValue = mie.LastSeason;
                         detailControls[(int)EIndex.LastCatalogNO].Text = mie.LastCatalogNO;
                         detailControls[(int)EIndex.LastCatalogPage].Text = mie.LastCatalogPage;
                         detailControls[(int)EIndex.LastCatalogText].Text = mie.LastCatalogText;
@@ -705,16 +700,24 @@ namespace MasterTouroku_Shouhin
 
                 //Gridの全ての値についてチェック
 
-                string jancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].EditedFormattedValue.ToString();
+                string jancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].EditedFormattedValue.ToString().Trim();
                 // 13桁の数字であること Ｅ２２０
-                if (!string.IsNullOrEmpty(jancd))
+                if (!string.IsNullOrWhiteSpace(jancd))
                 {
                     if (!IsNumeric(jancd) || jancd.Length != 13)
                     {
                         bbl.ShowMessage("E220");
+                        dgvDetail.CurrentCell = dgvDetail[ColumnIndex, RowIndex];
                         dgvDetail.Focus();
                         return;
                     }
+                }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    dgvDetail.CurrentCell = dgvDetail[ColumnIndex, RowIndex];
+                    dgvDetail.Focus();
+                    return;
                 }
 
                 //サイズ名、カラー名が入力されていること
@@ -740,11 +743,11 @@ namespace MasterTouroku_Shouhin
                 using (MasterTouroku_SKU frmSku = new MasterTouroku_SKU(mie, dtSKU, dtSite, OperationMode))
                 {
                     frmSku.parSKUCD = mie.MakerItem;
-                    frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString();
+                    frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.parColorNo = dgvDetail.Rows[RowIndex].Cells[0].Value.ToString();
-                    frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString();
+                    frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString().Trim();
                     frmSku.parSizeNo = dgvDetail.Columns[ColumnIndex].HeaderText;
-                    frmSku.parSizeName = dgvDetail.Rows[0].Cells[ColumnIndex].Value.ToString();
+                    frmSku.parSizeName = dgvDetail.Rows[0].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.setSoukoCD = SoukoCD;
                     frmSku.parFractionKBN = mFractionKBN;
 
@@ -859,6 +862,7 @@ namespace MasterTouroku_Shouhin
         private bool CheckDetail(int index)
         {
             bool ret;
+            string ymd = ScITEM.ChangeDate;
 
             switch (index)
             {
@@ -870,6 +874,11 @@ namespace MasterTouroku_Shouhin
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
+                    }
+
+                    if (index.Equals((int)EIndex.SKUName) && string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SKUShortName].Text))
+                    {
+                        detailControls[(int)EIndex.SKUShortName].Text =bbl.LeftB( detailControls[index].Text,40);
                     }
                     break;
 
@@ -901,6 +910,7 @@ namespace MasterTouroku_Shouhin
 
                 case (int)EIndex.TaniCD:
                 case (int)EIndex.SportsCD:
+                case (int)EIndex.SegmentCD:
                     // 入力無くても良い(It is not necessary to input)
                     ((Search.CKM_SearchControl)detailControls[index].Parent).LabelText = "";
 
@@ -913,11 +923,13 @@ namespace MasterTouroku_Shouhin
                     string id = "";
                         if (index.Equals((int)EIndex.TaniCD))
                             id = MultiPorpose_BL.ID_TANI;
+                    else if (index.Equals((int)EIndex.SportsCD))
+                        id = MultiPorpose_BL.ID_SPORTS;
                         else
-                            id = MultiPorpose_BL.ID_SPORTS;
+                        id = MultiPorpose_BL.ID_SegmentCD;
 
-                        //[M_MultiPorpose]
-                        M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
+                    //[M_MultiPorpose]
+                    M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
                         {
                             ID = id,
                             Key = detailControls[index].Text
@@ -949,7 +961,7 @@ namespace MasterTouroku_Shouhin
                     M_Vendor_Entity mce = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     Vendor_BL sbl = new Vendor_BL();
                     ret = sbl.M_Vendor_SelectTop1(mce);
@@ -976,13 +988,13 @@ namespace MasterTouroku_Shouhin
                     {
                         SoukoCD = SoukoCD,
                         TanaCD = detailControls[index].Text,
-                        ChangeDate = bbl.GetDate()
+                        ChangeDate = ymd
                     };
                     ret = mibl.M_Location_SelectData(ml);
                     if (!ret)
                     {
                         //Ｅ２０４
-                        bbl.ShowMessage("E204");
+                        bbl.ShowMessage("E101");
                         return false;
                     }
                     break;
@@ -1219,7 +1231,7 @@ namespace MasterTouroku_Shouhin
                 string name = "";
                 string oldVal = "";
                 string newVal = detailControls[index].Text;
-
+                
                 switch (index)
                 {
                     case (int)EIndex.ApprovalDate: name = "ApprovalDate"; oldVal = "'" + mie.ApprovalDate + "'"; break;
@@ -1258,10 +1270,10 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.Rate: name = "Rate"; oldVal = mie.Rate == null ? "0" : mie.Rate; break;
                     case (int)EIndex.OrderPriceWithoutTax: name = "OrderPriceWithoutTax"; oldVal = mie.OrderPriceWithoutTax == null ? "0" : mie.OrderPriceWithoutTax; break;
                     case (int)EIndex.OrderPriceWithTax: name = "OrderPriceWithTax"; oldVal = mie.OrderPriceWithTax == null ? "0" : mie.OrderPriceWithTax; break;
-                    case (int)EIndex.OrderAttentionCD: name = "OrderAttentionCD"; oldVal = "'" + mie.OrderAttentionCD + "'"; break;
+                    case (int)EIndex.CmbOrderAttentionCD: name = "OrderAttentionCD"; oldVal = "'" + mie.OrderAttentionCD + "'"; break;
                     case (int)EIndex.OrderAttentionNote: name = "OrderAttentionNote"; oldVal = "'" + mie.OrderAttentionNote + "'"; break;
-                    case (int)EIndex.LastYearTerm: name = "LastYearTerm"; oldVal = "'" + mie.LastYearTerm + "'"; break;
-                    case (int)EIndex.LastSeason: name = "LastSeason"; oldVal = "'" + mie.LastSeason + "'"; break;
+                    case (int)EIndex.CmbLastYearTerm: name = "LastYearTerm"; oldVal = "'" + mie.LastYearTerm + "'"; break;
+                    case (int)EIndex.CmbLastSeason: name = "LastSeason"; oldVal = "'" + mie.LastSeason + "'"; break;
                     case (int)EIndex.LastCatalogNO: name = "LastCatalogNO"; oldVal = "'" + mie.LastCatalogNO + "'"; break;
                     case (int)EIndex.LastCatalogPage: name = "LastCatalogPage"; oldVal = "'" + mie.LastCatalogPage + "'"; break;
                     case (int)EIndex.LastCatalogText: name = "LastCatalogText"; oldVal = "'" + mie.LastCatalogText + "'"; break;
@@ -1271,9 +1283,36 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.CommentOutStore: name = "CommentOutStore"; oldVal = "'" + mie.CommentOutStore + "'"; break;
                     case (int)EIndex.WebAddress: name = "WebAddress"; oldVal = "'" + mie.WebAddress + "'"; break;
                     case (int)EIndex.DeleteFlg: name = "DeleteFlg"; oldVal = mie.DeleteFlg == null ? "0" : mie.DeleteFlg; break;
+                    case (int)EIndex.MakerItem:
+                        name = "MakerItem"; break;
+                    case (int)EIndex.TaniCD:
+                        name = "TaniCD"; break;
+                    case (int)EIndex.BrandCD:
+                        name = "BrandCD"; break;
+                    case (int)EIndex.SegmentCD:
+                        name = "SegmentCD"; break;
+                    case (int)EIndex.SportsCD:
+                        name = "SportsCD"; break;
+                    case (int)EIndex.CmbReserveCD:
+                        name = "ReserveCD"; break;
+                    case (int)EIndex.CmbNoticesCD:
+                        name = "NoticesCD"; break;
+                    case (int)EIndex.CmbPostageCD:
+                        name = "PostageCD"; break;
+                    case (int)EIndex.CmbManufactCD:
+                        name = "ManufactCD"; break;
+                    case (int)EIndex.CmbConfirmCD:
+                        name = "ConfirmCD"; break;
+                    case (int)EIndex.CmbTaxRateFLG:
+                        name = "TaxRateFLG"; break;
+                    case (int)EIndex.CmbCostingKBN:
+                        name = "CostingKBN"; break;
+
                     default:
                         continue;
                 }
+
+
                 switch (index)
                 {
                     case (int)EIndex.ChkVariousFLG:
@@ -1308,11 +1347,40 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.OrderPriceWithoutTax:
                     case (int)EIndex.OrderPriceWithTax:
                         oldVal = oldVal.Replace(",", "");
-                        newVal=newVal.Replace(",", "");
+                        newVal= bbl.Z_SetStr(newVal).Replace(",", "");
                         break;
-                    case (int)EIndex.OrderAttentionCD:
-                        newVal = ((ComboBox)detailControls[index]).SelectedValue.ToString();
+                    case (int)EIndex.CmbOrderAttentionCD:
+                    case (int)EIndex.CmbReserveCD:
+                    case (int)EIndex.CmbNoticesCD:
+                    case (int)EIndex.CmbPostageCD:
+                    case (int)EIndex.CmbManufactCD:
+                    case (int)EIndex.CmbConfirmCD:
+                    case (int)EIndex.CmbTaxRateFLG:
+                    case (int)EIndex.CmbCostingKBN:
+                    case (int)EIndex.CmbLastYearTerm:
+                    case (int)EIndex.CmbLastSeason:
+                        if (((ComboBox)detailControls[index]).SelectedIndex > 0)
+                            newVal = ((ComboBox)detailControls[index]).SelectedValue.ToString();
+                        else
+                            newVal = "";
                         break;
+                }
+                switch (index)
+                {
+                    case (int)EIndex.MakerItem:
+                    case (int)EIndex.TaniCD:
+                    case (int)EIndex.BrandCD:
+                    case (int)EIndex.SegmentCD:
+                    case (int)EIndex.SportsCD:
+                    case (int)EIndex.CmbReserveCD:
+                    case (int)EIndex.CmbNoticesCD:
+                    case (int)EIndex.CmbPostageCD:
+                    case (int)EIndex.CmbManufactCD:
+                    case (int)EIndex.CmbConfirmCD:
+                    case (int)EIndex.CmbTaxRateFLG:
+                    case (int)EIndex.CmbCostingKBN:
+                        ChangeAll(name, newVal);
+                        continue;
                 }
 
                 DataRow[] rows = dtSKU.Select(name + " = " + oldVal );
@@ -1324,7 +1392,26 @@ namespace MasterTouroku_Shouhin
 
             }
         }
+        private void  ChangeAll(string name, string newVal)
+        {
+            foreach (DataRow row in dtSKU.Rows)
+            {
+                row[name] = newVal;
+            }
+        }
 
+        private bool IsSameVal(object val1, object val2)
+        {
+            bool ret = false;
+
+            if (val1 == null || val2 == null)
+                return ret;
+
+            if (val1.ToString().Trim() == val2.ToString().Trim())
+                ret = true;
+
+            return ret;
+        }
         /// <summary>
         /// 画面情報をセット
         /// </summary>
@@ -1384,9 +1471,11 @@ namespace MasterTouroku_Shouhin
             mie.BrandName = ScBrand.LabelText;
             mie.MakerItem = detailControls[(int)EIndex.MakerItem].Text;
             mie.TaniCD = detailControls[(int)EIndex.TaniCD].Text;
-            mie.TaniName= ScTani.LabelText;
+            mie.TaniName= ScSegmentCD.LabelText;
             mie.SportsCD = detailControls[(int)EIndex.SportsCD].Text;
             mie.SportsName = ScSports.LabelText;
+            mie.SegmentCD= detailControls[(int)EIndex.SegmentCD].Text;
+            mie.SegmentName = ScSegmentCD.LabelText;
             mie.ZaikoKBN = ((CheckBox)detailControls[(int)EIndex.ChkZaikoKBN]).Checked ? "1" : "0";
             mie.Rack = detailControls[(int)EIndex.Rack].Text;
             mie.VirtualFlg = ((CheckBox)detailControls[(int)EIndex.ChkVirtualFlg]).Checked ? "1" : "0";
@@ -1444,12 +1533,12 @@ namespace MasterTouroku_Shouhin
             mie.Rate = bbl.Z_SetStr(detailControls[(int)EIndex.Rate].Text);
             mie.SaleStartDate = detailControls[(int)EIndex.SaleStartDate].Text;
             mie.WebStartDate = detailControls[(int)EIndex.WebStartDate].Text;
-            mie.OrderAttentionCD = cmbOrderAttentionCD.SelectedValue != null ? cmbOrderAttentionCD.SelectedValue.ToString():"";
+            mie.OrderAttentionCD = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue.ToString():"";
             mie.OrderAttentionNote = detailControls[(int)EIndex.OrderAttentionNote].Text;
             mie.CommentInStore = detailControls[(int)EIndex.CommentInStore].Text;
             mie.CommentOutStore = detailControls[(int)EIndex.CommentOutStore].Text;
-            mie.LastYearTerm = detailControls[(int)EIndex.LastYearTerm].Text;
-            mie.LastSeason = detailControls[(int)EIndex.LastSeason].Text;
+            mie.LastYearTerm = CmbLastYearTerm.SelectedIndex > 0 ? CmbLastYearTerm.SelectedValue.ToString() : ""; 
+            mie.LastSeason = CmbLastSeason.SelectedIndex > 0 ? CmbLastSeason.SelectedValue.ToString() : ""; 
             mie.LastCatalogNO = detailControls[(int)EIndex.LastCatalogNO].Text;
             mie.LastCatalogPage = detailControls[(int)EIndex.LastCatalogPage].Text;
             mie.LastCatalogText = detailControls[(int)EIndex.LastCatalogText].Text;
@@ -1530,7 +1619,7 @@ namespace MasterTouroku_Shouhin
                             foreach (DataRow rw in row)
                             {
                                 //サイズ名をセット
-                                rw["SizeName"] = dgvDetail.Rows[0].Cells[ic].Value.ToString();
+                                rw["SizeName"] = dgvDetail.Rows[0].Cells[ic].Value.ToString().Trim();
                             }
                         }
                     }
@@ -1552,7 +1641,7 @@ namespace MasterTouroku_Shouhin
                                 foreach (DataRow rw in row)
                                 {
                                     //カラー名をセット
-                                    rw["ColorName"] = dgvDetail.Rows[i].Cells[1].Value.ToString();
+                                    rw["ColorName"] = dgvDetail.Rows[i].Cells[1].Value.ToString().Trim();
                                 }                              
                             }
                         }
@@ -1564,7 +1653,119 @@ namespace MasterTouroku_Shouhin
                             if (dgvDetail.Rows[rowIndex].Cells[columnIndex].Value == null)
                                 continue;
 
-                            string jancd = dgvDetail.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+                            string jancd = dgvDetail.Rows[rowIndex].Cells[columnIndex].Value.ToString().Trim();
+
+                            // parSKUCD + parSizeNo + parColorNo
+                            DataRow[] rows = dtSKU.Select("SizeNo = " + dgvDetail.Columns[columnIndex].HeaderText
+                                        + " AND ColorNo = " + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString());
+                            foreach(DataRow dr in rows)
+                            {
+                                dr["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                            }
+
+                            if(rows.Length.Equals(0))
+                            {
+                                //セット品の場合は展開が必須
+                                if (!((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked)
+                                {
+
+                                    //新規データ
+                                    DataRow newrow = dtSKU.NewRow();
+
+                                    //SKU画面のChkAll参照
+                                    //データをDataTableに
+                                    newrow["ITemCD"] = mie.ITemCD;
+                                    newrow["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["ChangeDate"] = mie.ChangeDate;
+                                    newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
+                                    newrow["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                                    newrow["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
+
+                                    newrow["JanCD"] = jancd;
+                                    //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
+                                    //newrow["SetItemCD"] = keyControls[(int)EIndex.SetItemCD].Text;
+                                    newrow["SetSKUCD"] = "";
+                                    newrow["SetSU"] = 0;
+                                    newrow["ApprovalDate"] = detailControls[(int)EIndex.ApprovalDate].Text;
+
+                                    newrow["SKUName"] = detailControls[(int)EIndex.SKUName].Text;
+                                    newrow["KanaName"] = detailControls[(int)EIndex.KanaName].Text;
+                                    newrow["SKUShortName"] = detailControls[(int)EIndex.SKUShortName].Text;
+                                    newrow["EnglishName"] = detailControls[(int)EIndex.EnglishName].Text;
+                                    newrow["MakerItem"] = detailControls[(int)EIndex.MakerItem].Text;
+
+                                    newrow["VariousFLG"] = ((CheckBox)detailControls[(int)EIndex.ChkVariousFLG]).Checked ? 1 : 0;
+                                    newrow["SetKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked ? 1 : 0;
+                                    newrow["PresentKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkPresentKBN]).Checked ? 1 : 0;
+                                    newrow["SampleKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSampleKBN]).Checked ? 1 : 0;
+                                    newrow["DiscountKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscountKBN]).Checked ? 1 : 0;
+
+                                    newrow["WebFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebFlg]).Checked ? 1 : 0;
+                                    newrow["RealStoreFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkRealStoreFlg]).Checked ? 1 : 0;
+                                    newrow["MainVendorCD"] = detailControls[(int)EIndex.MainVendorCD].Text;
+                                    //newrow["MakerVendorCD"] = detailControls[(int)EIndex.MakerVendorCD].Text;
+
+                                    newrow["ZaikoKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkZaikoKBN]).Checked ? 1 : 0;
+                                    newrow["Rack"] = detailControls[(int)EIndex.Rack].Text;
+                                    newrow["VirtualFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkVirtualFlg]).Checked ? 1 : 0;
+                                    newrow["DirectFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDirectFlg]).Checked ? 1 : 0;
+
+                                    newrow["WebStockFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkWebStockFlg]).Checked ? 1 : 0;
+                                    newrow["StopFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStopFlg]).Checked ? 1 : 0;
+                                    newrow["DiscontinueFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkDiscontinueFlg]).Checked ? 1 : 0;
+                                    newrow["InventoryAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkInventoryAddFlg]).Checked ? 1 : 0;
+                                    newrow["MakerAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkMakerAddFlg]).Checked ? 1 : 0;
+                                    newrow["StoreAddFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkStoreAddFlg]).Checked ? 1 : 0;
+                                    newrow["NoNetOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkNoNetOrderFlg]).Checked ? 1 : 0;
+                                    newrow["EDIOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkEDIOrderFlg]).Checked ? 1 : 0;
+                                    newrow["CatalogFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkCatalogFlg]).Checked ? 1 : 0;
+                                    newrow["ParcelFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkParcelFlg]).Checked ? 1 : 0;
+                                    newrow["AutoOrderFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkAutoOrderFlg]).Checked ? 1 : 0;
+
+                                    newrow["SaleExcludedFlg"] = ((CheckBox)detailControls[(int)EIndex.ChkSaleExcludedFlg]).Checked ? 1 : 0;
+                                    newrow["PriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceWithTax].Text);
+                                    newrow["PriceOutTax"] = bbl.Z_Set(detailControls[(int)EIndex.PriceOutTax].Text);
+                                    newrow["OrderPriceWithTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithTax].Text);
+                                    newrow["OrderPriceWithoutTax"] = bbl.Z_Set(detailControls[(int)EIndex.OrderPriceWithoutTax].Text);
+                                    newrow["Rate"] = bbl.Z_Set(detailControls[(int)EIndex.Rate].Text);
+                                    newrow["SaleStartDate"] = detailControls[(int)EIndex.SaleStartDate].Text;
+                                    newrow["WebStartDate"] = detailControls[(int)EIndex.WebStartDate].Text;
+                                    newrow["OrderAttentionCD"] = cmbOrderAttentionCD.SelectedIndex > 0 ? cmbOrderAttentionCD.SelectedValue : "";
+                                    newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
+                                    newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
+                                    newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
+                                    newrow["LastYearTerm"] = detailControls[(int)EIndex.CmbLastYearTerm].Text;
+                                    newrow["LastSeason"] = detailControls[(int)EIndex.CmbLastSeason].Text;
+                                    newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
+                                    newrow["LastCatalogPage"] = detailControls[(int)EIndex.LastCatalogPage].Text;
+                                    newrow["LastCatalogText"] = detailControls[(int)EIndex.LastCatalogText].Text;
+                                    newrow["LastInstructionsNO"] = detailControls[(int)EIndex.LastInstructionsNO].Text;
+                                    newrow["LastInstructionsDate"] = detailControls[(int)EIndex.LastInstructionsDate].Text;
+                                    newrow["WebAddress"] = detailControls[(int)EIndex.WebAddress].Text;
+                                    newrow["TagName1"] = detailControls[(int)EIndex.CmbTag1].Text;
+                                    newrow["TagName2"] = detailControls[(int)EIndex.CmbTag2].Text;
+                                    newrow["TagName3"] = detailControls[(int)EIndex.CmbTag3].Text;
+                                    newrow["TagName4"] = detailControls[(int)EIndex.CmbTag4].Text;
+                                    newrow["TagName5"] = detailControls[(int)EIndex.CmbTag5].Text;
+                                    newrow["TagName6"] = detailControls[(int)EIndex.CmbTag6].Text;
+                                    newrow["TagName7"] = detailControls[(int)EIndex.CmbTag7].Text;
+                                    newrow["TagName8"] = detailControls[(int)EIndex.CmbTag8].Text;
+                                    newrow["TagName9"] = detailControls[(int)EIndex.CmbTag9].Text;
+                                    newrow["TagName10"] = detailControls[(int)EIndex.CmbTag10].Text;
+
+                                    //チェックボックス
+                                    if (checkDeleteFlg.Checked)
+                                        newrow["DeleteFlg"] = 1;
+                                    else
+                                        newrow["DeleteFlg"] = 0;
+
+                                    //if (row.Length == 0)
+                                    //{
+                                    dtSKU.Rows.Add(newrow);
+                                    //}
+                                }
+                            }
 
                             me.JanCD = jancd;
                             bool noCheckFlg = false;
@@ -1573,7 +1774,7 @@ namespace MasterTouroku_Shouhin
                             {
                                 for (int col = columnIndex + 1; col < dgvDetail.ColumnCount; col++)
                                 {
-                                    if (dgvDetail.Rows[row].Cells[col].Value != null && dgvDetail.Rows[row].Cells[col].Value.Equals(jancd))
+                                    if (IsSameVal(dgvDetail.Rows[row].Cells[col].Value, jancd))
                                     {
                                         if (bbl.ShowMessage("Q316") != DialogResult.Yes)
                                         {
@@ -1618,7 +1819,7 @@ namespace MasterTouroku_Shouhin
             if (dt.Rows.Count == 0)
             {
                 //更新対象なし
-                bbl.ShowMessage("E102");
+                bbl.ShowMessage("E189");
                 dgvDetail.Focus();
                 return;
             }
@@ -2188,9 +2389,10 @@ namespace MasterTouroku_Shouhin
         private void ScItem_Leave(object sender, EventArgs e)
         {
             ScBrand.ChangeDate = ScITEM.ChangeDate;
-            ScTani.ChangeDate = ScITEM.ChangeDate;
+            ScSegmentCD.ChangeDate = ScITEM.ChangeDate;
             ScSports.ChangeDate = ScITEM.ChangeDate;
             ScVendor.ChangeDate = ScITEM.ChangeDate;
+            ScRackNo.ChangeDate = ScITEM.ChangeDate;
         }
         private void dgvDetail_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -2215,7 +2417,7 @@ namespace MasterTouroku_Shouhin
                 {
                     //サイズ名
                     //必須入力
-                    if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
                     {
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Size Name must not be empty";
@@ -2225,9 +2427,9 @@ namespace MasterTouroku_Shouhin
                     }
 
                     //同じ値のセルが複数あればエラー Ｅ１０５
-                    for(int i = 2; i<dgvDetail.Columns.Count; i++)
+                    for (int i = 2; i<dgvDetail.Columns.Count; i++)
                     {
-                        if(i != columnIndex && dgvDetail.Rows[0].Cells[i].Value != null && dgvDetail.Rows[0].Cells[i].Value.Equals(e.FormattedValue))
+                        if(i != columnIndex && IsSameVal(dgvDetail.Rows[0].Cells[i].Value, e.FormattedValue))
                         {
                             bbl.ShowMessage("E105");
                             e.Cancel = true;
@@ -2239,7 +2441,7 @@ namespace MasterTouroku_Shouhin
                 {
                     //カラー名
                     //必須入力
-                    if (string.IsNullOrEmpty(e.FormattedValue.ToString()))
+                    if (string.IsNullOrWhiteSpace(e.FormattedValue.ToString()))
                     {
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Color Name must not be empty";
@@ -2251,7 +2453,7 @@ namespace MasterTouroku_Shouhin
                     //同じ値のセルが複数あればエラー Ｅ１０５
                     for (int i = 1; i < dgvDetail.Rows.Count; i++)
                     {
-                        if (i != rowIndex && dgvDetail.Rows[i].Cells[1].Value == e.FormattedValue)
+                        if (i != rowIndex && IsSameVal(dgvDetail.Rows[i].Cells[1].Value, e.FormattedValue))
                         {
                             bbl.ShowMessage("E105");
                             e.Cancel = true;
@@ -2264,12 +2466,12 @@ namespace MasterTouroku_Shouhin
                     // JANCD
                     //入力なしＯＫ
                     //重複OK
-                    dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.White;
+                    dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = rowIndex % 2 != 0 ? Color.FromArgb(221, 235, 247) : Color.White;
 
-                    string jancd = e.FormattedValue.ToString();
+                    string jancd = e.FormattedValue.ToString().Trim();
 
                     //13桁の数字であること Ｅ２２０
-                    if (!string.IsNullOrEmpty(jancd))
+                    if (!string.IsNullOrWhiteSpace(jancd))
                     {
                         if (!IsNumeric(jancd) || jancd.Length != 13)
                         {
@@ -2285,10 +2487,13 @@ namespace MasterTouroku_Shouhin
                     if(rows.Length > 0 )
                     {
                         rows[0]["JANCD"] = jancd;
+                        rows[0]["ColorName"] = dgvDetail.Rows[rowIndex].Cells[1].Value.ToString().Trim();
+                        rows[0]["SizeName"] = dgvDetail.Rows[0].Cells[columnIndex].Value.ToString().Trim();
 
                         if (rows[0]["VirtualFlg"].ToString().Equals("1"))
                             dgvDetail.Rows[rowIndex].Cells[columnIndex].Style.BackColor = Color.HotPink;
                     }
+                    
 
                     M_SKU_Entity me = new M_SKU_Entity();
                     me.ITemCD = keyControls[(int)EIndex.ItemCD].Text;
@@ -2307,26 +2512,26 @@ namespace MasterTouroku_Shouhin
                         }
                     }
 
-                    //画面上に重複するJANCDが存在する
-                    //重複チェック
-                    for (int i = 1; i < dgvDetail.Rows.Count; i++)
-                    {
-                        for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
-                        {
-                            if (i == rowIndex && ic == columnIndex)
-                                continue;
+                    ////画面上に重複するJANCDが存在する   F12押下時のみのチェックとする　4/13
+                    ////重複チェック
+                    //for (int i = 1; i < dgvDetail.Rows.Count; i++)
+                    //{
+                    //    for (int ic = 2; ic < dgvDetail.ColumnCount; ic++)
+                    //    {
+                    //        if (i == rowIndex && ic == columnIndex)
+                    //            continue;
 
-                            if (dgvDetail.Rows[i].Cells[ic].Value != null && dgvDetail.Rows[i].Cells[ic].Value.ToString().Equals(jancd))
-                            {
-                                if (bbl.ShowMessage("Q316") != DialogResult.Yes)
-                                {
-                                    e.Cancel = true;
-                                    return;
-                                }
-                                break;
-                            }
-                        }
-                    }
+                    //        if (dgvDetail.Rows[i].Cells[ic].Value != null && dgvDetail.Rows[i].Cells[ic].Value.ToString().Equals(jancd))
+                    //        {
+                    //            if (bbl.ShowMessage("Q316") != DialogResult.Yes)
+                    //            {
+                    //                e.Cancel = true;
+                    //                return;
+                    //            }
+                    //            break;
+                    //        }
+                    //    }
+                    //}
                 }
             }
             catch (Exception ex)
