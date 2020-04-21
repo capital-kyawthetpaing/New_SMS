@@ -20,7 +20,9 @@ namespace MasterTouroku_Souko
         DataTable dtLocation;
         MasterTouroku_Souko_BL mtsbl;
         M_Souko_Entity mse;
-        M_ZipCode_Entity mze;       
+        M_ZipCode_Entity mze;
+        string z1 = "";
+        string z2 = "";
         public FrmMasterTouroku_Souko()
         {
             InitializeComponent();
@@ -323,6 +325,13 @@ namespace MasterTouroku_Souko
                         if (!RequireCheck(new Control[] { ScSoukoCD.TxtCode, ScSoukoCD.TxtChangeDate }))
                             return false;
 
+                        if (ScSoukoCD.IsExists(1))
+                        {
+                            //***show Message mtsbl.ShowMessage("E132"); 
+                            mtsbl.ShowMessage("E132");
+                            ScSoukoCD.SetFocus(1);
+                            return false;
+                        }
                     }
                     else//Copy
                     {
@@ -579,19 +588,38 @@ namespace MasterTouroku_Souko
         {
             if (!string.IsNullOrWhiteSpace(txtZipCD1.Text) && !string.IsNullOrWhiteSpace(txtZipCD2.Text))
             {
-
-                mze = new M_ZipCode_Entity();
-                mze.ZipCD1 = txtZipCD1.Text;
-                mze.ZipCD2 = txtZipCD2.Text;
-
                 mtsbl = new MasterTouroku_Souko_BL();
-                DataTable dt = mtsbl.M_ZipCode_AddressSelect(mze);
 
-                if (dt.Rows.Count > 0)
+                if (z1 != txtZipCD1.Text || z2 != txtZipCD2.Text)
                 {
-                    TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                    TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+
+                    mze = new M_ZipCode_Entity();
+                    mze.ZipCD1 = txtZipCD1.Text;
+                    mze.ZipCD2 = txtZipCD2.Text;
+                    DataTable dt = mtsbl.M_ZipCode_AddressSelect(mze);
+                    if (dt.Rows.Count > 0)
+                    {
+                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
+                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                    }
                 }
+                else
+                {
+                    mse = new M_Souko_Entity();
+                    mse.ZipCD1 = txtZipCD1.Text;
+                    mse.ZipCD2 = txtZipCD2.Text;
+                    mse.SoukoCD = ScSoukoCD.Code;
+                    DataTable dt = mtsbl.M_Souko_ZipcodeAddressSelect(mse);
+                    if(dt.Rows.Count > 0)
+                    {
+                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
+                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                    }
+                }
+                
+
+
+                
             }
         }
         private void CustomEnable()
@@ -631,6 +659,15 @@ namespace MasterTouroku_Souko
                 type = 1;
                 ScSoukoMakerCD.ChangeDate = ScSoukoCD.ChangeDate;
                 F11();
+                if (OperationMode == EOperationMode.UPDATE)
+                {
+                   
+                    if (!string.IsNullOrEmpty(txtZipCD1.Text))
+                    {
+                         z1 = txtZipCD1.Text;
+                         z2 = txtZipCD2.Text;
+                    }
+                }
             }
 
         }
@@ -679,10 +716,12 @@ namespace MasterTouroku_Souko
                  CKM_TextBox txt = sender as CKM_TextBox;
                 if (!string.IsNullOrEmpty(txt.Text))
                     {
+                    
                         if (CheckZipCDEvent())
                             SetAddress();
-                        //MoveNextControl(e);
-                    }
+                    
+                    //MoveNextControl(e);
+                }
                 MoveNextControl(e);
             }
         }

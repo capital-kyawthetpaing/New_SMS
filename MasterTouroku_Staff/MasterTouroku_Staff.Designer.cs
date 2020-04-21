@@ -304,7 +304,7 @@
             this.cboStoreMenu.MoveNext = true;
             this.cboStoreMenu.Name = "cboStoreMenu";
             this.cboStoreMenu.Size = new System.Drawing.Size(175, 20);
-            this.cboStoreMenu.TabIndex = 26;
+            this.cboStoreMenu.TabIndex = 5;
             // 
             // txtStoreMenu
             // 
@@ -336,7 +336,7 @@
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
             this.cboStoreAuthorizations.Size = new System.Drawing.Size(175, 20);
-            this.cboStoreAuthorizations.TabIndex = 16;
+            this.cboStoreAuthorizations.TabIndex = 7;
             // 
             // cboPosition
             // 
@@ -351,7 +351,7 @@
             this.cboPosition.MoveNext = true;
             this.cboPosition.Name = "cboPosition";
             this.cboPosition.Size = new System.Drawing.Size(80, 20);
-            this.cboPosition.TabIndex = 17;
+            this.cboPosition.TabIndex = 8;
             // 
             // cboAuthorizations
             // 
@@ -366,7 +366,7 @@
             this.cboAuthorizations.MoveNext = true;
             this.cboAuthorizations.Name = "cboAuthorizations";
             this.cboAuthorizations.Size = new System.Drawing.Size(175, 20);
-            this.cboAuthorizations.TabIndex = 15;
+            this.cboAuthorizations.TabIndex = 6;
             // 
             // cboMenu
             // 
@@ -381,7 +381,7 @@
             this.cboMenu.MoveNext = true;
             this.cboMenu.Name = "cboMenu";
             this.cboMenu.Size = new System.Drawing.Size(175, 20);
-            this.cboMenu.TabIndex = 14;
+            this.cboMenu.TabIndex = 4;
             // 
             // cboBMNCD
             // 
@@ -396,7 +396,7 @@
             this.cboBMNCD.MoveNext = true;
             this.cboBMNCD.Name = "cboBMNCD";
             this.cboBMNCD.Size = new System.Drawing.Size(140, 20);
-            this.cboBMNCD.TabIndex = 13;
+            this.cboBMNCD.TabIndex = 3;
             // 
             // ScStore
             // 
@@ -417,7 +417,7 @@
             this.ScStore.SearchEnable = true;
             this.ScStore.Size = new System.Drawing.Size(354, 27);
             this.ScStore.Stype = Search.CKM_SearchControl.SearchType.店舗;
-            this.ScStore.TabIndex = 12;
+            this.ScStore.TabIndex = 2;
             this.ScStore.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStore.UseChangeDate = false;
             this.ScStore.Value1 = null;
@@ -442,7 +442,7 @@
             this.txtRemark.Name = "txtRemark";
             this.txtRemark.RowCount = 4;
             this.txtRemark.Size = new System.Drawing.Size(650, 95);
-            this.txtRemark.TabIndex = 23;
+            this.txtRemark.TabIndex = 14;
             this.txtRemark.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             this.txtRemark.WordWrap = false;
             // 
@@ -468,7 +468,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '●';
             this.txtPassword.Size = new System.Drawing.Size(130, 19);
-            this.txtPassword.TabIndex = 18;
+            this.txtPassword.TabIndex = 9;
             this.txtPassword.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtConfirm
@@ -493,7 +493,7 @@
             this.txtConfirm.Name = "txtConfirm";
             this.txtConfirm.PasswordChar = '●';
             this.txtConfirm.Size = new System.Drawing.Size(130, 19);
-            this.txtConfirm.TabIndex = 19;
+            this.txtConfirm.TabIndex = 10;
             this.txtConfirm.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtConfirm.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtConfirm_KeyDown);
             // 
@@ -518,7 +518,7 @@
             this.txtReceiptPrint.MoveNext = true;
             this.txtReceiptPrint.Name = "txtReceiptPrint";
             this.txtReceiptPrint.Size = new System.Drawing.Size(30, 19);
-            this.txtReceiptPrint.TabIndex = 22;
+            this.txtReceiptPrint.TabIndex = 13;
             this.txtReceiptPrint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtReceiptPrint.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtReceiptPrint_KeyDown);
             // 
@@ -543,7 +543,7 @@
             this.txtLeaveDate.MoveNext = true;
             this.txtLeaveDate.Name = "txtLeaveDate";
             this.txtLeaveDate.Size = new System.Drawing.Size(100, 19);
-            this.txtLeaveDate.TabIndex = 21;
+            this.txtLeaveDate.TabIndex = 12;
             this.txtLeaveDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtLeaveDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -569,7 +569,7 @@
             this.txtStaffKana.MoveNext = true;
             this.txtStaffKana.Name = "txtStaffKana";
             this.txtStaffKana.Size = new System.Drawing.Size(400, 19);
-            this.txtStaffKana.TabIndex = 11;
+            this.txtStaffKana.TabIndex = 1;
             this.txtStaffKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtJoinDate
@@ -593,7 +593,7 @@
             this.txtJoinDate.MoveNext = true;
             this.txtJoinDate.Name = "txtJoinDate";
             this.txtJoinDate.Size = new System.Drawing.Size(100, 19);
-            this.txtJoinDate.TabIndex = 20;
+            this.txtJoinDate.TabIndex = 11;
             this.txtJoinDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtJoinDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -619,7 +619,7 @@
             this.txtStaffName.MoveNext = true;
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(130, 19);
-            this.txtStaffName.TabIndex = 10;
+            this.txtStaffName.TabIndex = 0;
             this.txtStaffName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label18
