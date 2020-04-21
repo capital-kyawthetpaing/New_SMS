@@ -431,21 +431,19 @@ namespace CKM_Controls
                     }
                     if (kbn == 0)
                     {
-                        DataTable dt = mbl.M_MultiPorpose_SoukoTypeSelect(me);
-                        BindCombo("Key", "IDName", dt);
+                        DataTable dt = mbl.M_MultiPorpose_SelectForCombo(me, "Key2");
+                        BindCombo("Key", "Key2", dt);
                     }
                     else if (kbn == 1)
                     {
-                        DataTable dt = mbl.M_MultiPorpose_SelectForCombo(me);
-                        //BindCombo("Key", "KeyAndChar1", dt);
-                        BindCombo("Key", "Char1", dt);
+                        DataTable dt = mbl.M_MultiPorpose_SelectForCombo(me, "KeyAndChar1");
+                        BindCombo("Key", "KeyAndChar1", dt);
                     }
                     else if (kbn == 2)
                     {
-                        DataTable dt = mbl.M_MultiPorpose_SelectForCombo(me);
+                        DataTable dt = mbl.M_MultiPorpose_SelectForCombo(me, "Char1");
                         BindCombo("Key", "Char1", dt);
                     }
-
                     break;
                 case CboType.倉庫:
                     Search_Souko_BL msbl = new Search_Souko_BL();
