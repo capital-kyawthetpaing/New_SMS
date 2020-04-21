@@ -228,7 +228,7 @@
             this.PanelFooter.Location = new System.Drawing.Point(0, 929);
             this.PanelFooter.Name = "PanelFooter";
             this.PanelFooter.Size = new System.Drawing.Size(1713, 32);
-            this.PanelFooter.TabIndex = 8;
+            this.PanelFooter.TabIndex = 99;
             // 
             // tableLayoutPanel1
             // 

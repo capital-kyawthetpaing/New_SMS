@@ -767,6 +767,7 @@ namespace MitsumoriNyuuryoku
                                         case (int)ClsGridMitsumori.ColNO.NotPrintFLG:    // 
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                
                                                 break;
                                             }
                                         case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
@@ -974,7 +975,7 @@ namespace MitsumoriNyuuryoku
         {
             int w_Row;
 
-            if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
+            if (mGrid.F_Search_Ctrl_MK(previousCtrl, out int w_Col, out int w_CtlRow) == false)
             {
                 return;
             }
@@ -1016,11 +1017,9 @@ namespace MitsumoriNyuuryoku
         // -----------------------------------------------
         private void CPY_SUB()
         {
-            Control w_Act = ActiveControl;
+            Control w_Act = previousCtrl;
             int w_Row;
-            int w_Gyo;
-
-            w_Act = this.ActiveControl;
+            int w_Gyo;            
 
             if (mGrid.F_Search_Ctrl_MK(w_Act, out int w_Col, out int w_CtlRow) == false)
             {
@@ -1066,7 +1065,7 @@ namespace MitsumoriNyuuryoku
         }
         private void ADD_SUB()
         {
-            Control w_Act = ActiveControl;
+            Control w_Act = previousCtrl;
             int w_Row;
             int w_Gyo;
 
@@ -1728,10 +1727,11 @@ namespace MitsumoriNyuuryoku
                         ChangeDate = detailControls[(int)EIndex.MitsumoriDate].Text
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce);
+                    ret = sbl.M_Customer_Select(mce, 1);
                    
                     if (ret)
                     {
+
                         //顧客CDが変更されている場合のみ再セット
                         if (mOldCustomerCD != detailControls[index].Text || ChangeMitsumoriDate)
                         {
@@ -2783,8 +2783,7 @@ namespace MitsumoriNyuuryoku
 
                 string adminNo = mGrid.g_DArray[w_Row].AdminNO;
 
-                //在庫照会を該当商品をパラメータに起動します
-                //Form.印刷CheckBox＝onの場合、印刷プログラム(店舗納品書:TempoNouhinsyo)						
+                //在庫照会を該当商品をパラメータに起動します					
                 //EXEが存在しない時ｴﾗｰ
                 // 実行モジュールと同一フォルダのファイルを取得
                 System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);

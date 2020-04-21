@@ -107,8 +107,7 @@ namespace MitsumoriNyuuryoku
                 //入力不可とする。
                 foreach (Control ctl in detailControls)
                     ctl.Enabled = false;
-
-                btnAddress.Enabled = false;
+                
             }
             else
             {
@@ -226,19 +225,6 @@ namespace MitsumoriNyuuryoku
             }
 
             return true;
-        }
-
-        private void btnAddress_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CheckDetail((int)EIndex.ZipCD2);
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
         }
     }
 }
