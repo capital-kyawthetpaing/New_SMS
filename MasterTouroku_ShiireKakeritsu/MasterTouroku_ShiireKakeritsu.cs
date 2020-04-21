@@ -34,6 +34,12 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+            ckM_Button1.Text = "取込(F10)";
+            cbo_Year.Bind(string.Empty, "2");
+            cbo_Year.SelectedValue = StoreCD;
+            cbo_Year1.Bind(string.Empty, "2");
+            cbo_Season.Bind(string.Empty, "2");
+            cbo_Season1.Bind(string.Empty, "2");
             SetRequiredField();
             scSupplierCD.SetFocus(1);
         }
@@ -49,22 +55,23 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         public void CancelData()
         {
-            scSupplierCD.Clear();
-            txtDate1.Text = string.Empty;
-            scBrandCD1.Clear();
-            scSportsCD1.Clear();
-            scSegmentCD1.Clear();
-            cbo_Year1.Text = string.Empty;
-            cbo_Season1.Text = string.Empty;
-            txtDate.Text = string.Empty;
-            txtCopy.Text = string.Empty;
-            scBrandCD.Clear();
-            scSportsCD.Clear();
-            scSegmentCD.Clear();
-            cbo_Year.Text = string.Empty;
-            cbo_Season.Text = string.Empty;
-            txtChangeDate.Text = string.Empty;
-            txtRate.Text = string.Empty;
+            //scSupplierCD.Clear();
+            //txtDate1.Text = string.Empty;
+            //scBrandCD1.Clear();
+            //scSportsCD1.Clear();
+            //scSegmentCD1.Clear();
+            //cbo_Year1.Text = string.Empty;
+            //cbo_Season1.Text = string.Empty;
+            //txtDate.Text = string.Empty;
+            //txtCopy.Text = string.Empty;
+            //scBrandCD.Clear();
+            //scSportsCD.Clear();
+            //scSegmentCD.Clear();
+            //cbo_Year.Text = string.Empty;
+            //cbo_Season.Text = string.Empty;
+            //txtChangeDate.Text = string.Empty;
+            //txtRate.Text = string.Empty;
+            Clear(panelDetail);
             scSupplierCD.SetFocus(1);
         }
         public override void FunctionProcess(int Index)
@@ -114,8 +121,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
                 //LastYearTerm=txtYear.Text,
-                LastYearTerm = cbo_Year1.Text,
-                LastSeason = cbo_Season1.Text,
+                LastYearTerm = cbo_Year1.SelectedText,
+                LastSeason = cbo_Season1.SelectedText,
                 //LastSeason = txtSeason.Text,
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text
@@ -412,10 +419,8 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            // dtRow["LastYearTeam"] = txtYear.Text;
-            dtRow["LastYearTeam"] = cbo_Year.SelectedValue.ToString();
-            dtRow["LastSeason"] = cbo_Season.SelectedValue.ToString();
-            //dtRow["LastSeason"] = txtLastSeason.Text;
+            dtRow["LastYearTeam"] = cbo_Year.SelectedValue;
+            //dtRow["LastSeason"] = cbo_Season.SelectedText;
             dtRow["ChangeDate"] = txtChangeDate.Text;
             dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
             dt.Rows.Add(dtRow);

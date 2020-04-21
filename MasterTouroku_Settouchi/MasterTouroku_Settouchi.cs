@@ -57,7 +57,7 @@ namespace MasterTouroku_Settouchi
                 changedate = System.DateTime.Now.ToString("yyy/MM/dd");
             else changedate = txtDate.Text.ToString();
 
-            cboStore.Bind(changedate,"1");
+            cboStore.Bind(changedate,"3");
             cboSeqKBN.Bind(string.Empty);
         }
 

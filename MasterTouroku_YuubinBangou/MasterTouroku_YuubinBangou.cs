@@ -42,6 +42,14 @@ namespace MasterTouroku_YuubinBangou
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
         }
+
+        private void SetRequireFields()
+        {
+            txtZip1from.Require(true);
+            txtZip1To.Require(true);
+            txtZip2From.Require(true);
+            txtZip2To.Require(true);
+        }
         
         public override void FunctionProcess(int index)
         {
@@ -201,6 +209,9 @@ namespace MasterTouroku_YuubinBangou
         {
             if (index == 11)
             {
+                if (!RequireCheck(new Control[] { txtZip1from,txtZip1To,txtZip2From,txtZip2To }))
+                    return false;
+
                 //HeaderCheck on F11
                 if ((!string.IsNullOrWhiteSpace(txtZip1from.Text)) && (string.IsNullOrWhiteSpace(txtZip2From.Text)))
                 {
@@ -238,7 +249,10 @@ namespace MasterTouroku_YuubinBangou
             }
             else if (index == 12)
             {
-                foreach(DataGridViewRow row in dgvYuubinBangou.Rows)
+                if (!RequireCheck(new Control[] { txtZip1from, txtZip1To, txtZip2From, txtZip2To }))
+                    return false;
+
+                foreach (DataGridViewRow row in dgvYuubinBangou.Rows)
                 {
                     if (!(row.Cells["colZipCD1"].Value == null))
                     {

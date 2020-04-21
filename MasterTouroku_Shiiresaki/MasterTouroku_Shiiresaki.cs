@@ -516,26 +516,7 @@ namespace MasterTouroku_Shiiresaki
                         mtsbl.ShowMessage("E102");
                         txtZipCD2.Focus();
                         return false;
-                    }
-                    //else
-                    //{
-                    //    mze = new M_ZipCode_Entity();
-                    //    mze.ZipCD1 = txtZipCD1.Text;
-                    //    mze.ZipCD2 = txtZipCD2.Text;
-
-                    //    DataTable dtzip = new DataTable();
-                    //    dtzip = mtsbl.M_ZipCode_Select(mze);
-                    //    if (dtzip.Rows.Count > 0)
-                    //    {
-                    //        txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
-                    //        txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
-                    //    }
-                    //    else
-                    //    {
-                    //        txtAddress1.Text = string.Empty;
-                    //        txtAddress2.Text = string.Empty;
-                    //    }
-                    //}  
+                    }                  
                 }
                 
                 if(ScPayeeCD.TxtCode.Text != ScVendor.TxtCode.Text) // Error15
@@ -556,7 +537,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            ScPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -583,7 +565,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            ScMoneyPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -609,7 +592,7 @@ namespace MasterTouroku_Shiiresaki
                 }
 
                 //if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedValue.ToString()) || (cboPaymentKBN.SelectedValue.Equals(-1)))
-                if(cboPaymentKBN.SelectedValue.Equals(-1))// Error18
+                if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedValue.ToString()) || cboPaymentKBN.SelectedValue.ToString() == "-1") // Error18
                 {
                     mtsbl.ShowMessage("E102");
                     cboPaymentKBN.Focus();
@@ -928,6 +911,7 @@ namespace MasterTouroku_Shiiresaki
 
                             mve = new M_Vendor_Entity();
                             mve.VendorCD = ScVendor.TxtCode.Text;
+                            mve.ChangeDate = ScVendor.ChangeDate;
                             mve.ZipCD1 = txtZipCD1.Text;
                             mve.ZipCD2 = txtZipCD2.Text;
                             DataTable dtvendorzip = new DataTable();
@@ -939,8 +923,23 @@ namespace MasterTouroku_Shiiresaki
                             }
                             else
                             {
-                                txtAddress1.Text = string.Empty;
-                                txtAddress2.Text = string.Empty;
+                                mze = new M_ZipCode_Entity();
+                                mze.ZipCD1 = txtZipCD1.Text;
+                                mze.ZipCD2 = txtZipCD2.Text;
+
+                                DataTable dtzip = new DataTable();
+                                dtzip = mtsbl.M_ZipCode_Select(mze);
+
+                                if (dtzip.Rows.Count > 0)
+                                {
+                                    txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
+                                    txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                                }
+                                else
+                                {
+                                    txtAddress1.Text = string.Empty;
+                                    txtAddress2.Text = string.Empty;
+                                }
                             }
 
                         }
@@ -964,8 +963,6 @@ namespace MasterTouroku_Shiiresaki
                                 txtAddress2.Text = string.Empty;
                             }
                         }
-
-
                     } 
                 }
             }
@@ -1019,7 +1016,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();                           
+                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScPayeeCD.LabelText = txtVendorName.Text;
                         }
                         
                     }
@@ -1057,6 +1055,7 @@ namespace MasterTouroku_Shiiresaki
                         else
                         {
                             ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScMoneyPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -1182,20 +1181,19 @@ namespace MasterTouroku_Shiiresaki
                     {
                         mtsbl.ShowMessage("E102");
                         ScBankCD.SetFocus(1);
-                      
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(ScBankCD.TxtCode.Text))
-                {
-                    if (ScBankCD.SelectData())
-                    {
-                        ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
-                        ScBranchCD.Value2 = ScBankCD.LabelText;
                     }
                     else
                     {
-                        mtsbl.ShowMessage("E101");
-                        ScBankCD.SetFocus(1);
+                        if (ScBankCD.SelectData())
+                        {
+                            ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
+                            ScBranchCD.Value2 = ScBankCD.LabelText;
+                        }
+                        else
+                        {
+                            mtsbl.ShowMessage("E101");
+                            ScBankCD.SetFocus(1);
+                        }
                     }
 
                 }
@@ -1214,22 +1212,15 @@ namespace MasterTouroku_Shiiresaki
                         mtsbl.ShowMessage("E102");
                         ScBranchCD.SetFocus(1);
                     }
-
-                }
-                if (!string.IsNullOrWhiteSpace(ScBranchCD.TxtCode.Text))
-                {
-                    if (!ScBranchCD.SelectData())
+                    else
                     {
-                        mtsbl.ShowMessage("E101");
-                        ScBranchCD.SetFocus(1);
-                    }
+                        if (!ScBranchCD.SelectData())
+                        {
+                            mtsbl.ShowMessage("E101");
+                            ScBranchCD.SetFocus(1);
+                        }
+                    }                   
                 }
-                else
-                {
-                    mtsbl.ShowMessage("E101");
-                    ScBranchCD.SetFocus(1);
-                }
-            
             }
         }
 
@@ -1369,5 +1360,6 @@ namespace MasterTouroku_Shiiresaki
                 }
             }
         }      
+
     }
 }
