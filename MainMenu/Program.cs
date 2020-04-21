@@ -19,12 +19,27 @@ namespace MainMenu
         [STAThread]
         static void Main()
         {
+
+
+         // var f=  IsInteger("1234567890123");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
             Application.Run(LoginFormName());
         }
-
+        public static bool IsInteger(string value)
+        {
+            value = value.Replace("-", "");
+            if (Int64.TryParse(value, out Int64 Num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
        static Form LoginFormName()
         {
             Form pgname =null;

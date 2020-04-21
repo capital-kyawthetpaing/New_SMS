@@ -233,7 +233,7 @@ namespace BL
         public bool IsInteger(string value)
         {
             value = value.Replace("-", "");
-            if (Int32.TryParse(value, out int Num))
+            if (Int64.TryParse(value, out Int64 Num))
             {
                 return true;
             }
