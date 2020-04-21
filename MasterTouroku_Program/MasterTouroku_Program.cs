@@ -151,7 +151,7 @@ namespace MasterTouroku_Program
                         }
                         break;
                     case EOperationMode.UPDATE:
-                        mpe.Program_ID = scProgramID.Code;
+                        mpe.ProgramID = scProgramID.Code;  //ses
                         DisplayData();
                         DisablePanel(PanelNormal);
                         DisablePanel(PanelCopy);
@@ -163,7 +163,7 @@ namespace MasterTouroku_Program
                         txtProgramName.Focus();
                         break;
                     case EOperationMode.DELETE:
-                        mpe.Program_ID = scProgramID.Code;
+                        mpe.ProgramID = scProgramID.Code; //ses
                         DisplayData();
                         DisablePanel(PanelNormal);
                         DisablePanel(PanelCopy);
@@ -265,7 +265,7 @@ namespace MasterTouroku_Program
         {
             mpe = new M_Program_Entity
             {
-                Program_ID=scProgramID.Code,
+                Program_ID=scProgramID.Code, //ses
                 ProgramName=txtProgramName.Text,
                 Type=cboType.SelectedValue.ToString(),
                 ProgramEXE=txtExeName.Text,
@@ -293,7 +293,7 @@ namespace MasterTouroku_Program
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
                         DataTable dtProgram = new DataTable();
-                        mpe.Program_ID = scProgramID.Code;
+                        mpe.Program_ID = scProgramID.Code; //ses
                         dtProgram = mpbl.M_Program_Select(mpe);
                         if (dtProgram.Rows.Count > 0)
                         {
@@ -307,7 +307,7 @@ namespace MasterTouroku_Program
                         if (!RequireCheck(new Control[] { scProgramID.TxtCode }))
                             return false;
                         DataTable dtProgram = new DataTable();
-                        mpe.ProgramID = scProgramID.Code;
+                        mpe.Program_ID = scProgramID.Code;
                         dtProgram = mpbl.M_Program_Select(mpe);
                         if (dtProgram.Rows.Count > 0)
                         {
@@ -351,7 +351,7 @@ namespace MasterTouroku_Program
                 else
                 {
                     DataTable dtprogram = new DataTable();
-                    mpe.Program_ID = scProgramID.Code;
+                    mpe.Program_ID = scProgramID.Code; //ses
                     dtprogram = mpbl.M_Program_Select(mpe);
                     if (dtprogram.Rows.Count == 0)
                     {
@@ -407,7 +407,7 @@ namespace MasterTouroku_Program
             dtAdd.Rows.Add(0, string.Empty);
             dtAdd.Rows.Add(1, "入力");
             dtAdd.Rows.Add(2, "印刷");
-            dtAdd.Rows.Add(3, "印刷");
+            dtAdd.Rows.Add(3, "印刷+出力");
             dtAdd.Rows.Add(4, "出力");
             dtAdd.Rows.Add(5, "照会");
             dtAdd.Rows.Add(6, "更新");

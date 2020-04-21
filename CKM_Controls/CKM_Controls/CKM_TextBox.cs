@@ -196,29 +196,29 @@ namespace CKM_Controls
             bbl = new Base_BL();
         }
 
-        protected override void OnEnabledChanged(EventArgs e)
-        {
-            base.OnEnabledChanged(e);
-            if (!Enabled)
-                this.BackColor = SystemColors.Control;
-            else
-                this.BackColor = SystemColors.Window;
+        //protected override void OnEnabledChanged(EventArgs e)
+        //{
+        //    base.OnEnabledChanged(e);
+        //    if (!Enabled)
+        //        this.BackColor = SystemColors.Control;
+        //    else
+        //        this.BackColor = SystemColors.Window;
 
 
-            //base.OnEnabledChanged(e);
+        //    //base.OnEnabledChanged(e);
 
-            //if (!Enabled)
-            //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
-            //    {
-            //        this.BackColor = Color.White;
-            //    }
-            //    else
-            //    {
-            //        this.BackColor = SystemColors.Control;
-            //    }
-            //else
-            //    this.BackColor = SystemColors.Window;
-        }
+        //    //if (!Enabled)
+        //    //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
+        //    //    {
+        //    //        this.BackColor = Color.White;
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        this.BackColor = SystemColors.Control;
+        //    //    }
+        //    //else
+        //    //    this.BackColor = SystemColors.Window;
+        //}
 
         protected override void OnKeyUp(KeyEventArgs e)
         {
@@ -399,53 +399,7 @@ namespace CKM_Controls
                 }
             }
 
-            //else if (e.KeyCode == Keys.Tab)
-            //{
-            //    isEnterKeyDown = true;
-            //    MoveNext = true;
-            //    if (txt == null)
-            //    {
-            //        if ((IsRequire && string.IsNullOrWhiteSpace(Text)))
-            //        {
-            //            if (this.Parent is UserControl)
-            //            {
-            //                UserControl uc = this.Parent as UserControl;
-            //                (uc.Controls.Find("lblName", true)[0] as Label).Text = string.Empty;
-            //            }
 
-            //            ShowErrorMessage("E102");
-            //            return;
-            //        }
-            //        if ((CtrlType == Type.Normal || CtrlType == Type.Number) && CtrlByte == Bytes.半角)
-            //        {
-
-            //            if (CtrlType == Type.Normal)
-            //            {
-            //                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-            //                if (Convert.ToInt32(str) > length)
-            //                {
-            //                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                    this.Focus();
-            //                    return;
-            //                }
-            //            }
-            //            if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
-            //            {
-            //                int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-            //                int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-            //                if (onebyteCount != byteCount)
-            //                {
-            //                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //                    this.Focus();
-            //                    return;
-            //                }
-            //            }
-
-            //        }
-            //    }
-           
-
-            //}
             else
                 base.OnKeyDown(e);
         }
@@ -578,7 +532,8 @@ namespace CKM_Controls
             {
                 //
             }
-            else {
+            else
+            {
 
                 if (CtrlByte == Bytes.半全角)
                 {
@@ -629,7 +584,7 @@ namespace CKM_Controls
         }
 
         protected override void OnGotFocus(EventArgs e)
-         {
+        {
 
             MoveNext = false;
             base.OnGotFocus(e);
@@ -722,7 +677,7 @@ namespace CKM_Controls
                     MaxLength = 20;
                     break;
                 case Type.Number:
-                    this.TextAlign = HorizontalAlignment.Right;
+                    this.TextAlign = HorizontalAlignment.Left;
                     break;
             }
         }
@@ -779,7 +734,7 @@ namespace CKM_Controls
                             return false;
                     case Type.Time:
                         return TimeCheck();
-                        
+
                 }
             }
             return true;
@@ -924,7 +879,18 @@ namespace CKM_Controls
             MoveNext = true;
             return true;
         }
-
+        public static bool IsInteger(string value)
+        {
+            value = value.Replace("-", "");
+            if (Int64.TryParse(value, out Int64 Num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private bool IsCorrectTime(string hour, string minutes, string seconds)
         {
             if (Convert.ToInt32(hour) > 23 || Convert.ToInt32(minutes) > 59 || Convert.ToInt32(seconds) > 59)
@@ -1074,18 +1040,18 @@ namespace CKM_Controls
             this.SelectionLength = this.Text.Length;
         }
 
-        private bool IsInteger(string value)
-        {
-            value = value.Replace("-", "");
-            if (Int32.TryParse(value, out int Num))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool IsInteger(string value)
+        //{
+        //    value = value.Replace("-", "");
+        //    if (Int32.TryParse(value, out int Num))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         private bool IsDouble(string value)
         {

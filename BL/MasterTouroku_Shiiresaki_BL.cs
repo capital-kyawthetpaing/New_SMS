@@ -90,10 +90,10 @@ namespace BL
             return mzdl.M_ZipCode_Select(mze);
         }
 
-        //public DataTable M_Vendor_SelectForZipCode(M_ZipCode_Entity mze)
-        //{
-        //    return mvdl.M_Vendor_ZipCode_Select(mze);
-        //}
+        public DataTable M_Vendor_ZipCodeSelect(M_Vendor_Entity mve)
+        {
+            return mvdl.M_Vendor_ZipCodeSelect(mve);
+        }
 
         public DataTable Payee_Select(M_Vendor_Entity mve)
         {
