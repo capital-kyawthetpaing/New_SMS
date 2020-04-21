@@ -34,6 +34,7 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+            ckM_Button1.Text = "取込(F10)";
             SetRequiredField();
             scSupplierCD.SetFocus(1);
         }
@@ -114,8 +115,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
                 //LastYearTerm=txtYear.Text,
-                LastYearTerm = cbo_Year1.Text,
-                LastSeason = cbo_Season1.Text,
+                LastYearTerm = cbo_Year1.SelectedText,
+                LastSeason = cbo_Season1.SelectedText,
                 //LastSeason = txtSeason.Text,
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text

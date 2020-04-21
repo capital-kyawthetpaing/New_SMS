@@ -701,7 +701,6 @@ namespace MasterTouroku_Souko
             }
         }
         private void txtZipCD_KeyDown(object sender, KeyEventArgs e)
-
         {
             if (Keys.Enter == e.KeyCode)
             {
