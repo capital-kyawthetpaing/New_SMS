@@ -33,6 +33,7 @@ namespace DL
             string sp = "M_Souko_ZipcodeAddressSelect";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
+                {"@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
                 {"@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SoukoCD } },
                 {"@ZipCD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ZipCD1 } },
                 {"@ZipCD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ZipCD2 } }

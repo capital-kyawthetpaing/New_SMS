@@ -368,12 +368,12 @@
             this.BtnSubF12.DefaultBtnSize = false;
             this.BtnSubF12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnSubF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSubF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.BtnSubF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Large;
-            this.BtnSubF12.Location = new System.Drawing.Point(1122, 604);
+            this.BtnSubF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F, System.Drawing.FontStyle.Bold);
+            this.BtnSubF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
+            this.BtnSubF12.Location = new System.Drawing.Point(1157, 555);
             this.BtnSubF12.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSubF12.Name = "BtnSubF12";
-            this.BtnSubF12.Size = new System.Drawing.Size(101, 70);
+            this.BtnSubF12.Size = new System.Drawing.Size(201, 140);
             this.BtnSubF12.TabIndex = 8;
             this.BtnSubF12.Text = "登録(F12)";
             this.BtnSubF12.UseVisualStyleBackColor = false;
@@ -778,7 +778,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 3091;
+            this.ScOrderNO.ChangeDateWidth = 5665;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
