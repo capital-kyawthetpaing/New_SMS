@@ -28,17 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label26 = new CKM_Controls.CKM_Label();
-            this.txtYear = new CKM_Controls.CKM_TextBox();
             this.ckM_Label25 = new CKM_Controls.CKM_Label();
             this.dgv_ShiireKakeritsu = new CKM_Controls.CKM_GridView();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSegmentCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnDelete = new CKM_Controls.CKM_Button();
             this.btnChange = new CKM_Controls.CKM_Button();
             this.btnAdd = new CKM_Controls.CKM_Button();
@@ -49,7 +56,6 @@
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
             this.txtChangeDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label23 = new CKM_Controls.CKM_Label();
-            this.txtLastSeason = new CKM_Controls.CKM_TextBox();
             this.ckM_Label22 = new CKM_Controls.CKM_Label();
             this.scSegmentCD = new Search.CKM_SearchControl();
             this.ckM_Label21 = new CKM_Controls.CKM_Label();
@@ -67,7 +73,6 @@
             this.btnSearch = new CKM_Controls.CKM_Button();
             this.txtDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label13 = new CKM_Controls.CKM_Label();
-            this.txtSeason = new CKM_Controls.CKM_TextBox();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.scSegmentCD1 = new Search.CKM_SearchControl();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
@@ -90,15 +95,10 @@
             this.colLastSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colYear = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSegmentCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSeason = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbo_Year1 = new CKM_Controls.CKM_ComboBox();
+            this.cbo_Season1 = new CKM_Controls.CKM_ComboBox();
+            this.cbo_Year = new CKM_Controls.CKM_ComboBox();
+            this.cbo_Season = new CKM_Controls.CKM_ComboBox();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ShiireKakeritsu)).BeginInit();
@@ -182,9 +182,11 @@
             // 
             // panelDetail
             // 
-            this.panelDetail.Controls.Add(this.ckM_TextBox2);
+            this.panelDetail.Controls.Add(this.cbo_Season);
+            this.panelDetail.Controls.Add(this.cbo_Year);
+            this.panelDetail.Controls.Add(this.cbo_Season1);
+            this.panelDetail.Controls.Add(this.cbo_Year1);
             this.panelDetail.Controls.Add(this.ckM_Label26);
-            this.panelDetail.Controls.Add(this.txtYear);
             this.panelDetail.Controls.Add(this.ckM_Label25);
             this.panelDetail.Controls.Add(this.dgv_ShiireKakeritsu);
             this.panelDetail.Controls.Add(this.btnDelete);
@@ -197,7 +199,6 @@
             this.panelDetail.Controls.Add(this.ckM_Label24);
             this.panelDetail.Controls.Add(this.txtChangeDate);
             this.panelDetail.Controls.Add(this.ckM_Label23);
-            this.panelDetail.Controls.Add(this.txtLastSeason);
             this.panelDetail.Controls.Add(this.ckM_Label22);
             this.panelDetail.Controls.Add(this.scSegmentCD);
             this.panelDetail.Controls.Add(this.ckM_Label21);
@@ -215,7 +216,6 @@
             this.panelDetail.Controls.Add(this.btnSearch);
             this.panelDetail.Controls.Add(this.txtDate);
             this.panelDetail.Controls.Add(this.ckM_Label13);
-            this.panelDetail.Controls.Add(this.txtSeason);
             this.panelDetail.Controls.Add(this.ckM_Label12);
             this.panelDetail.Controls.Add(this.scSegmentCD1);
             this.panelDetail.Controls.Add(this.ckM_Label11);
@@ -236,30 +236,6 @@
             this.panelDetail.Size = new System.Drawing.Size(1680, 800);
             this.panelDetail.TabIndex = 0;
             // 
-            // ckM_TextBox2
-            // 
-            this.ckM_TextBox2.AllowMinus = false;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox2.IntegerPart = 0;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(897, 204);
-            this.ckM_TextBox2.MaxLength = 10;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 48;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // ckM_Label26
             // 
             this.ckM_Label26.AutoSize = true;
@@ -276,30 +252,6 @@
             this.ckM_Label26.Text = "年　度";
             this.ckM_Label26.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtYear
-            // 
-            this.txtYear.AllowMinus = false;
-            this.txtYear.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtYear.BackColor = System.Drawing.Color.White;
-            this.txtYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtYear.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtYear.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtYear.DecimalPlace = 0;
-            this.txtYear.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtYear.IntegerPart = 0;
-            this.txtYear.IsCorrectDate = true;
-            this.txtYear.isEnterKeyDown = false;
-            this.txtYear.IsNumber = true;
-            this.txtYear.IsShop = false;
-            this.txtYear.Length = 6;
-            this.txtYear.Location = new System.Drawing.Point(148, 202);
-            this.txtYear.MaxLength = 6;
-            this.txtYear.MoveNext = true;
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(100, 19);
-            this.txtYear.TabIndex = 46;
-            this.txtYear.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label25
             // 
@@ -323,20 +275,19 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.colChk,
             this.colBrandCD1,
             this.colSportsCD1,
@@ -345,6 +296,14 @@
             this.colSeason,
             this.colDate,
             this.colRate1});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(149, 365);
@@ -354,6 +313,63 @@
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
             this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick_1);
+            // 
+            // colChk
+            // 
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.Width = 50;
+            // 
+            // colBrandCD1
+            // 
+            this.colBrandCD1.DataPropertyName = "BrandCD";
+            this.colBrandCD1.HeaderText = "ブランド";
+            this.colBrandCD1.Name = "colBrandCD1";
+            this.colBrandCD1.ReadOnly = true;
+            this.colBrandCD1.Width = 250;
+            // 
+            // colSportsCD1
+            // 
+            this.colSportsCD1.DataPropertyName = "SportsCD";
+            this.colSportsCD1.HeaderText = "競　技";
+            this.colSportsCD1.Name = "colSportsCD1";
+            this.colSportsCD1.ReadOnly = true;
+            this.colSportsCD1.Width = 250;
+            // 
+            // colYear
+            // 
+            this.colYear.DataPropertyName = "LastYearTerm";
+            this.colYear.HeaderText = "年　度";
+            this.colYear.Name = "colYear";
+            // 
+            // colSegmentCD1
+            // 
+            this.colSegmentCD1.DataPropertyName = "SegmentCD";
+            this.colSegmentCD1.HeaderText = "商品分類";
+            this.colSegmentCD1.Name = "colSegmentCD1";
+            this.colSegmentCD1.ReadOnly = true;
+            this.colSegmentCD1.Width = 250;
+            // 
+            // colSeason
+            // 
+            this.colSeason.DataPropertyName = "LastSeason";
+            this.colSeason.HeaderText = "シーズン";
+            this.colSeason.Name = "colSeason";
+            this.colSeason.ReadOnly = true;
+            this.colSeason.Width = 150;
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "ChangeDate";
+            this.colDate.HeaderText = "改定日";
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            // 
+            // colRate1
+            // 
+            this.colRate1.DataPropertyName = "Rate";
+            this.colRate1.HeaderText = "掛率";
+            this.colRate1.Name = "colRate1";
             // 
             // btnDelete
             // 
@@ -552,30 +568,6 @@
             this.ckM_Label23.Text = "改定日";
             this.ckM_Label23.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtLastSeason
-            // 
-            this.txtLastSeason.AllowMinus = false;
-            this.txtLastSeason.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtLastSeason.BackColor = System.Drawing.Color.White;
-            this.txtLastSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLastSeason.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtLastSeason.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtLastSeason.DecimalPlace = 0;
-            this.txtLastSeason.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtLastSeason.IntegerPart = 0;
-            this.txtLastSeason.IsCorrectDate = true;
-            this.txtLastSeason.isEnterKeyDown = false;
-            this.txtLastSeason.IsNumber = true;
-            this.txtLastSeason.IsShop = false;
-            this.txtLastSeason.Length = 6;
-            this.txtLastSeason.Location = new System.Drawing.Point(897, 229);
-            this.txtLastSeason.MaxLength = 6;
-            this.txtLastSeason.MoveNext = true;
-            this.txtLastSeason.Name = "txtLastSeason";
-            this.txtLastSeason.Size = new System.Drawing.Size(100, 19);
-            this.txtLastSeason.TabIndex = 13;
-            this.txtLastSeason.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label22
             // 
@@ -916,30 +908,6 @@
             this.ckM_Label13.Text = "改定日";
             this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtSeason
-            // 
-            this.txtSeason.AllowMinus = false;
-            this.txtSeason.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtSeason.BackColor = System.Drawing.Color.White;
-            this.txtSeason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSeason.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtSeason.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtSeason.DecimalPlace = 0;
-            this.txtSeason.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtSeason.IntegerPart = 0;
-            this.txtSeason.IsCorrectDate = true;
-            this.txtSeason.isEnterKeyDown = false;
-            this.txtSeason.IsNumber = true;
-            this.txtSeason.IsShop = false;
-            this.txtSeason.Length = 6;
-            this.txtSeason.Location = new System.Drawing.Point(148, 226);
-            this.txtSeason.MaxLength = 6;
-            this.txtSeason.MoveNext = true;
-            this.txtSeason.Name = "txtSeason";
-            this.txtSeason.Size = new System.Drawing.Size(100, 19);
-            this.txtSeason.TabIndex = 5;
-            this.txtSeason.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label12
             // 
@@ -1312,69 +1280,65 @@
             this.colRate.Name = "colRate";
             this.colRate.Width = 80;
             // 
-            // Column1
+            // cbo_Year1
             // 
-            this.Column1.DataPropertyName = "Column1";
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.Visible = false;
+            this.cbo_Year1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Year1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Year1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.cbo_Year1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.cbo_Year1.FormattingEnabled = true;
+            this.cbo_Year1.Length = 20;
+            this.cbo_Year1.Location = new System.Drawing.Point(148, 197);
+            this.cbo_Year1.MaxLength = 10;
+            this.cbo_Year1.MoveNext = true;
+            this.cbo_Year1.Name = "cbo_Year1";
+            this.cbo_Year1.Size = new System.Drawing.Size(140, 20);
+            this.cbo_Year1.TabIndex = 49;
             // 
-            // colChk
+            // cbo_Season1
             // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.Width = 50;
+            this.cbo_Season1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Season1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Season1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cbo_Season1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.cbo_Season1.FormattingEnabled = true;
+            this.cbo_Season1.Length = 20;
+            this.cbo_Season1.Location = new System.Drawing.Point(148, 222);
+            this.cbo_Season1.MaxLength = 10;
+            this.cbo_Season1.MoveNext = true;
+            this.cbo_Season1.Name = "cbo_Season1";
+            this.cbo_Season1.Size = new System.Drawing.Size(140, 20);
+            this.cbo_Season1.TabIndex = 50;
             // 
-            // colBrandCD1
+            // cbo_Year
             // 
-            this.colBrandCD1.DataPropertyName = "BrandCD";
-            this.colBrandCD1.HeaderText = "ブランド";
-            this.colBrandCD1.Name = "colBrandCD1";
-            this.colBrandCD1.ReadOnly = true;
-            this.colBrandCD1.Width = 250;
+            this.cbo_Year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.cbo_Year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.cbo_Year.FormattingEnabled = true;
+            this.cbo_Year.Length = 20;
+            this.cbo_Year.Location = new System.Drawing.Point(897, 197);
+            this.cbo_Year.MaxLength = 10;
+            this.cbo_Year.MoveNext = true;
+            this.cbo_Year.Name = "cbo_Year";
+            this.cbo_Year.Size = new System.Drawing.Size(140, 20);
+            this.cbo_Year.TabIndex = 51;
             // 
-            // colSportsCD1
+            // cbo_Season
             // 
-            this.colSportsCD1.DataPropertyName = "SportsCD";
-            this.colSportsCD1.HeaderText = "競　技";
-            this.colSportsCD1.Name = "colSportsCD1";
-            this.colSportsCD1.ReadOnly = true;
-            this.colSportsCD1.Width = 250;
-            // 
-            // colYear
-            // 
-            this.colYear.DataPropertyName = "LastYearTerm";
-            this.colYear.HeaderText = "年　度";
-            this.colYear.Name = "colYear";
-            // 
-            // colSegmentCD1
-            // 
-            this.colSegmentCD1.DataPropertyName = "SegmentCD";
-            this.colSegmentCD1.HeaderText = "商品分類";
-            this.colSegmentCD1.Name = "colSegmentCD1";
-            this.colSegmentCD1.ReadOnly = true;
-            this.colSegmentCD1.Width = 250;
-            // 
-            // colSeason
-            // 
-            this.colSeason.DataPropertyName = "LastSeason";
-            this.colSeason.HeaderText = "シーズン";
-            this.colSeason.Name = "colSeason";
-            this.colSeason.ReadOnly = true;
-            this.colSeason.Width = 150;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "ChangeDate";
-            this.colDate.HeaderText = "改定日";
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            // 
-            // colRate1
-            // 
-            this.colRate1.DataPropertyName = "Rate";
-            this.colRate1.HeaderText = "掛率";
-            this.colRate1.Name = "colRate1";
+            this.cbo_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbo_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbo_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.cbo_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.cbo_Season.FormattingEnabled = true;
+            this.cbo_Season.Length = 20;
+            this.cbo_Season.Location = new System.Drawing.Point(897, 225);
+            this.cbo_Season.MaxLength = 10;
+            this.cbo_Season.MoveNext = true;
+            this.cbo_Season.Name = "cbo_Season";
+            this.cbo_Season.Size = new System.Drawing.Size(140, 20);
+            this.cbo_Season.TabIndex = 52;
             // 
             // frmMasterTouroku_ShiireKakeritsu
             // 
@@ -1410,7 +1374,6 @@
         private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_TextBox txtDate;
         private CKM_Controls.CKM_Label ckM_Label13;
-        private CKM_Controls.CKM_TextBox txtSeason;
         private CKM_Controls.CKM_Label ckM_Label12;
         private Search.CKM_SearchControl scSegmentCD1;
         private CKM_Controls.CKM_Label ckM_Label11;
@@ -1440,7 +1403,6 @@
         private CKM_Controls.CKM_Label ckM_Label24;
         private CKM_Controls.CKM_TextBox txtChangeDate;
         private CKM_Controls.CKM_Label ckM_Label23;
-        private CKM_Controls.CKM_TextBox txtLastSeason;
         private CKM_Controls.CKM_Label ckM_Label22;
         private Search.CKM_SearchControl scSegmentCD;
         private CKM_Controls.CKM_Label ckM_Label21;
@@ -1463,9 +1425,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private CKM_Controls.CKM_TextBox ckM_TextBox2;
         private CKM_Controls.CKM_Label ckM_Label26;
-        private CKM_Controls.CKM_TextBox txtYear;
         private CKM_Controls.CKM_Label ckM_Label25;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
@@ -1476,6 +1436,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSeason;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRate1;
+        private CKM_Controls.CKM_ComboBox cbo_Season;
+        private CKM_Controls.CKM_ComboBox cbo_Year;
+        private CKM_Controls.CKM_ComboBox cbo_Season1;
+        private CKM_Controls.CKM_ComboBox cbo_Year1;
     }
 }
 
