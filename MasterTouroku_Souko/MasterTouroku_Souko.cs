@@ -590,9 +590,21 @@ namespace MasterTouroku_Souko
             {
                 mtsbl = new MasterTouroku_Souko_BL();
 
-                if (z1 != txtZipCD1.Text || z2 != txtZipCD2.Text)
+                if (OperationMode == EOperationMode.UPDATE && (z1 == txtZipCD1.Text && z2 == txtZipCD2.Text))
                 {
-
+                    mse = new M_Souko_Entity();
+                    mse.ZipCD1 = txtZipCD1.Text;
+                    mse.ZipCD2 = txtZipCD2.Text;
+                    mse.SoukoCD = ScSoukoCD.Code;
+                    DataTable dt = mtsbl.M_Souko_ZipcodeAddressSelect(mse);
+                    if (dt.Rows.Count > 0)
+                    {
+                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
+                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                    }
+                }
+                else
+                {
                     mze = new M_ZipCode_Entity();
                     mze.ZipCD1 = txtZipCD1.Text;
                     mze.ZipCD2 = txtZipCD2.Text;
@@ -603,23 +615,7 @@ namespace MasterTouroku_Souko
                         TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
                     }
                 }
-                else
-                {
-                    mse = new M_Souko_Entity();
-                    mse.ZipCD1 = txtZipCD1.Text;
-                    mse.ZipCD2 = txtZipCD2.Text;
-                    mse.SoukoCD = ScSoukoCD.Code;
-                    DataTable dt = mtsbl.M_Souko_ZipcodeAddressSelect(mse);
-                    if(dt.Rows.Count > 0)
-                    {
-                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
-                    }
-                }
-                
 
-
-                
             }
         }
         private void CustomEnable()
@@ -705,6 +701,7 @@ namespace MasterTouroku_Souko
             }
         }
         private void txtZipCD_KeyDown(object sender, KeyEventArgs e)
+
         {
             if (Keys.Enter == e.KeyCode)
             {
