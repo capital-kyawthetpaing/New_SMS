@@ -1472,8 +1472,7 @@ namespace Search
                         {
                             if (!frmShoriNo.flgCancel)
                             {
-                                txtCode.Text = frmShoriNo.ID;
-                                
+                                txtCode.Text = frmShoriNo.Sc_Code;                               
                             }
                         }
                     }

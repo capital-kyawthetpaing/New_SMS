@@ -78,8 +78,8 @@ namespace DL
             {
                 {"@PayDateFrom", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDateFrom} },
                 {"@PayDateTo", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.PayDateTo} },
-                {"@InputDateTimeFrom", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.InputDateTimeFrom} },
-                {"@InputDateTimeTo", new ValuePair {value1 = SqlDbType.Int,value2 = dpe.InputDateTimeTo} }
+                {"@InputDateTimeFrom", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.InputDateTimeFrom} },
+                {"@InputDateTimeTo", new ValuePair {value1 = SqlDbType.Date,value2 = dpe.InputDateTimeTo} }
             };
             return SelectData(dic, "D_Pay_Search");
         }
