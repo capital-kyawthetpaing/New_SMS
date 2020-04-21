@@ -419,9 +419,8 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            //dtRow["LastYearTeam"] = cbo_Year.Text;
+            dtRow["LastYearTeam"] = cbo_Year.SelectedValue;
             //dtRow["LastSeason"] = cbo_Season.SelectedText;
-            //dtRow["LastSeason"] = txtLastSeason.Text;
             dtRow["ChangeDate"] = txtChangeDate.Text;
             dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
             dt.Rows.Add(dtRow);
