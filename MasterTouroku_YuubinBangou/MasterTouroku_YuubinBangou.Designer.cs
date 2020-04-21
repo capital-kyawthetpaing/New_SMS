@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
             this.dgvYuubinBangou = new CKM_Controls.CKM_GridView();
@@ -45,6 +44,7 @@
             this.txtZip2From = new CKM_Controls.CKM_TextBox();
             this.txtZip1from = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -54,10 +54,12 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ckM_Label3);
             this.PanelHeader.Controls.Add(this.panel1);
             this.PanelHeader.Size = new System.Drawing.Size(1774, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.panel1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
             // 
             // PanelSearch
             // 
@@ -102,7 +104,7 @@
             this.dgvYuubinBangou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -114,14 +116,6 @@
             this.colZipCD2,
             this.colAdd1,
             this.colAdd2});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvYuubinBangou.Location = new System.Drawing.Point(130, 17);
@@ -312,6 +306,21 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckM_Label3
+            // 
+            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label3.DefaultlabelSize = false;
+            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label3.Location = new System.Drawing.Point(367, 20);
+            this.ckM_Label3.Name = "ckM_Label3";
+            this.ckM_Label3.Size = new System.Drawing.Size(600, 12);
+            this.ckM_Label3.TabIndex = 2;
+            this.ckM_Label3.Text = "最大1000件までの表示です。適切な範囲指定を行ってください。";
+            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // frmMasterTouroku_YuubinBangou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -332,6 +341,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -350,6 +360,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
+        private CKM_Controls.CKM_Label ckM_Label3;
     }
 }
 
