@@ -46,6 +46,11 @@
             this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_3 = new CKM_Controls.CKM_TextBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
+            this.CHK_PRINT_4 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_3 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_2 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_1 = new GridControl.clsGridCheckBox();
+            this.CHK_PRINT_0 = new GridControl.clsGridCheckBox();
             this.IMT_ITMNM_4 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_3 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMNM_2 = new CKM_Controls.CKM_TextBox();
@@ -167,6 +172,7 @@
             this.label27 = new CKM_Controls.CKM_Label();
             this.ScCustomer = new Search.CKM_SearchControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -237,12 +243,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.CHK_PRINT_0 = new GridControl.clsGridCheckBox();
-            this.CHK_PRINT_1 = new GridControl.clsGridCheckBox();
-            this.CHK_PRINT_2 = new GridControl.clsGridCheckBox();
-            this.CHK_PRINT_3 = new GridControl.clsGridCheckBox();
-            this.CHK_PRINT_4 = new GridControl.clsGridCheckBox();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -270,7 +270,6 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -775,6 +774,86 @@
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 289);
             this.Pnl_Body.TabIndex = 21;
+            // 
+            // CHK_PRINT_4
+            // 
+            this.CHK_PRINT_4.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_4.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_4.Location = new System.Drawing.Point(885, 229);
+            this.CHK_PRINT_4.Name = "CHK_PRINT_4";
+            this.CHK_PRINT_4.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_4.TabIndex = 640;
+            this.CHK_PRINT_4.Tag = "4";
+            this.CHK_PRINT_4.Text = "なし";
+            this.CHK_PRINT_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_4.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_3
+            // 
+            this.CHK_PRINT_3.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_3.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_3.Location = new System.Drawing.Point(885, 171);
+            this.CHK_PRINT_3.Name = "CHK_PRINT_3";
+            this.CHK_PRINT_3.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_3.TabIndex = 639;
+            this.CHK_PRINT_3.Tag = "3";
+            this.CHK_PRINT_3.Text = "なし";
+            this.CHK_PRINT_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_3.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_2
+            // 
+            this.CHK_PRINT_2.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_2.Location = new System.Drawing.Point(885, 114);
+            this.CHK_PRINT_2.Name = "CHK_PRINT_2";
+            this.CHK_PRINT_2.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_2.TabIndex = 638;
+            this.CHK_PRINT_2.Tag = "2";
+            this.CHK_PRINT_2.Text = "なし";
+            this.CHK_PRINT_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_2.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_1
+            // 
+            this.CHK_PRINT_1.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_1.Location = new System.Drawing.Point(885, 58);
+            this.CHK_PRINT_1.Name = "CHK_PRINT_1";
+            this.CHK_PRINT_1.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_1.TabIndex = 637;
+            this.CHK_PRINT_1.Tag = "1";
+            this.CHK_PRINT_1.Text = "なし";
+            this.CHK_PRINT_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_1.UseVisualStyleBackColor = false;
+            // 
+            // CHK_PRINT_0
+            // 
+            this.CHK_PRINT_0.BackColor = System.Drawing.Color.White;
+            this.CHK_PRINT_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
+            this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.CHK_PRINT_0.Location = new System.Drawing.Point(885, 1);
+            this.CHK_PRINT_0.Name = "CHK_PRINT_0";
+            this.CHK_PRINT_0.Size = new System.Drawing.Size(47, 18);
+            this.CHK_PRINT_0.TabIndex = 636;
+            this.CHK_PRINT_0.Tag = "0";
+            this.CHK_PRINT_0.Text = "なし";
+            this.CHK_PRINT_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CHK_PRINT_0.UseVisualStyleBackColor = false;
             // 
             // IMT_ITMNM_4
             // 
@@ -1988,7 +2067,7 @@
             this.SC_ITEM_0.ChangeDateWidth = 100;
             this.SC_ITEM_0.Code = "";
             this.SC_ITEM_0.CodeWidth = 110;
-            this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_0.DataCheck = false;
             this.SC_ITEM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_0.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -2054,11 +2133,11 @@
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
             this.IMN_GENER2_4.Length = 10;
-            this.IMN_GENER2_4.Location = new System.Drawing.Point(931, 247);
+            this.IMN_GENER2_4.Location = new System.Drawing.Point(932, 247);
             this.IMN_GENER2_4.MaxLength = 9;
             this.IMN_GENER2_4.MoveNext = true;
             this.IMN_GENER2_4.Name = "IMN_GENER2_4";
-            this.IMN_GENER2_4.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_4.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_4.TabIndex = 411;
             this.IMN_GENER2_4.Tag = "4";
             this.IMN_GENER2_4.Text = "99,999,999";
@@ -2123,11 +2202,11 @@
             this.IMN_TEIKA_4.IsNumber = true;
             this.IMN_TEIKA_4.IsShop = false;
             this.IMN_TEIKA_4.Length = 10;
-            this.IMN_TEIKA_4.Location = new System.Drawing.Point(990, 247);
+            this.IMN_TEIKA_4.Location = new System.Drawing.Point(999, 247);
             this.IMN_TEIKA_4.MaxLength = 9;
             this.IMN_TEIKA_4.MoveNext = true;
             this.IMN_TEIKA_4.Name = "IMN_TEIKA_4";
-            this.IMN_TEIKA_4.Size = new System.Drawing.Size(88, 19);
+            this.IMN_TEIKA_4.Size = new System.Drawing.Size(80, 19);
             this.IMN_TEIKA_4.TabIndex = 408;
             this.IMN_TEIKA_4.Tag = "4";
             this.IMN_TEIKA_4.Text = "999,999,999";
@@ -2438,11 +2517,11 @@
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
             this.IMN_GENER2_3.Length = 10;
-            this.IMN_GENER2_3.Location = new System.Drawing.Point(931, 190);
+            this.IMN_GENER2_3.Location = new System.Drawing.Point(932, 190);
             this.IMN_GENER2_3.MaxLength = 9;
             this.IMN_GENER2_3.MoveNext = true;
             this.IMN_GENER2_3.Name = "IMN_GENER2_3";
-            this.IMN_GENER2_3.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_3.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_3.TabIndex = 46;
             this.IMN_GENER2_3.Tag = "3";
             this.IMN_GENER2_3.Text = "99,999,999";
@@ -2466,11 +2545,11 @@
             this.IMN_TEIKA_3.IsNumber = true;
             this.IMN_TEIKA_3.IsShop = false;
             this.IMN_TEIKA_3.Length = 10;
-            this.IMN_TEIKA_3.Location = new System.Drawing.Point(990, 190);
+            this.IMN_TEIKA_3.Location = new System.Drawing.Point(999, 190);
             this.IMN_TEIKA_3.MaxLength = 9;
             this.IMN_TEIKA_3.MoveNext = true;
             this.IMN_TEIKA_3.Name = "IMN_TEIKA_3";
-            this.IMN_TEIKA_3.Size = new System.Drawing.Size(88, 19);
+            this.IMN_TEIKA_3.Size = new System.Drawing.Size(80, 19);
             this.IMN_TEIKA_3.TabIndex = 43;
             this.IMN_TEIKA_3.Tag = "3";
             this.IMN_TEIKA_3.Text = "999,999,999";
@@ -2632,11 +2711,11 @@
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
             this.IMN_GENER2_2.Length = 10;
-            this.IMN_GENER2_2.Location = new System.Drawing.Point(931, 133);
+            this.IMN_GENER2_2.Location = new System.Drawing.Point(932, 133);
             this.IMN_GENER2_2.MaxLength = 9;
             this.IMN_GENER2_2.MoveNext = true;
             this.IMN_GENER2_2.Name = "IMN_GENER2_2";
-            this.IMN_GENER2_2.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_2.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_2.TabIndex = 31;
             this.IMN_GENER2_2.Tag = "2";
             this.IMN_GENER2_2.Text = "99,999,999";
@@ -2660,11 +2739,11 @@
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
             this.IMN_TEIKA_2.Length = 10;
-            this.IMN_TEIKA_2.Location = new System.Drawing.Point(990, 133);
+            this.IMN_TEIKA_2.Location = new System.Drawing.Point(999, 133);
             this.IMN_TEIKA_2.MaxLength = 9;
             this.IMN_TEIKA_2.MoveNext = true;
             this.IMN_TEIKA_2.Name = "IMN_TEIKA_2";
-            this.IMN_TEIKA_2.Size = new System.Drawing.Size(88, 19);
+            this.IMN_TEIKA_2.Size = new System.Drawing.Size(80, 19);
             this.IMN_TEIKA_2.TabIndex = 28;
             this.IMN_TEIKA_2.Tag = "2";
             this.IMN_TEIKA_2.Text = "999,999,999";
@@ -2826,11 +2905,11 @@
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
             this.IMN_GENER2_1.Length = 10;
-            this.IMN_GENER2_1.Location = new System.Drawing.Point(931, 76);
+            this.IMN_GENER2_1.Location = new System.Drawing.Point(932, 76);
             this.IMN_GENER2_1.MaxLength = 9;
             this.IMN_GENER2_1.MoveNext = true;
             this.IMN_GENER2_1.Name = "IMN_GENER2_1";
-            this.IMN_GENER2_1.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_1.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_1.TabIndex = 18;
             this.IMN_GENER2_1.Tag = "1";
             this.IMN_GENER2_1.Text = "99,999,999";
@@ -2854,11 +2933,11 @@
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
             this.IMN_TEIKA_1.Length = 10;
-            this.IMN_TEIKA_1.Location = new System.Drawing.Point(990, 76);
+            this.IMN_TEIKA_1.Location = new System.Drawing.Point(999, 76);
             this.IMN_TEIKA_1.MaxLength = 9;
             this.IMN_TEIKA_1.MoveNext = true;
             this.IMN_TEIKA_1.Name = "IMN_TEIKA_1";
-            this.IMN_TEIKA_1.Size = new System.Drawing.Size(88, 19);
+            this.IMN_TEIKA_1.Size = new System.Drawing.Size(80, 19);
             this.IMN_TEIKA_1.TabIndex = 15;
             this.IMN_TEIKA_1.Tag = "1";
             this.IMN_TEIKA_1.Text = "999,999,999";
@@ -3020,11 +3099,11 @@
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
             this.IMN_GENER2_0.Length = 10;
-            this.IMN_GENER2_0.Location = new System.Drawing.Point(931, 19);
+            this.IMN_GENER2_0.Location = new System.Drawing.Point(932, 19);
             this.IMN_GENER2_0.MaxLength = 9;
             this.IMN_GENER2_0.MoveNext = true;
             this.IMN_GENER2_0.Name = "IMN_GENER2_0";
-            this.IMN_GENER2_0.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_0.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_0.TabIndex = 4;
             this.IMN_GENER2_0.Tag = "0";
             this.IMN_GENER2_0.Text = "99,999,999";
@@ -3257,11 +3336,11 @@
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
             this.IMN_TEIKA_0.Length = 10;
-            this.IMN_TEIKA_0.Location = new System.Drawing.Point(990, 19);
+            this.IMN_TEIKA_0.Location = new System.Drawing.Point(999, 19);
             this.IMN_TEIKA_0.MaxLength = 9;
             this.IMN_TEIKA_0.MoveNext = true;
             this.IMN_TEIKA_0.Name = "IMN_TEIKA_0";
-            this.IMN_TEIKA_0.Size = new System.Drawing.Size(88, 19);
+            this.IMN_TEIKA_0.Size = new System.Drawing.Size(80, 19);
             this.IMN_TEIKA_0.TabIndex = 1;
             this.IMN_TEIKA_0.Tag = "0";
             this.IMN_TEIKA_0.Text = "999,999,999";
@@ -3275,7 +3354,7 @@
             this.SC_ITEM_1.ChangeDateWidth = 100;
             this.SC_ITEM_1.Code = "";
             this.SC_ITEM_1.CodeWidth = 110;
-            this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_1.DataCheck = false;
             this.SC_ITEM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_1.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -3329,7 +3408,7 @@
             this.SC_ITEM_2.ChangeDateWidth = 100;
             this.SC_ITEM_2.Code = "";
             this.SC_ITEM_2.CodeWidth = 110;
-            this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_2.DataCheck = false;
             this.SC_ITEM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_2.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -3383,7 +3462,7 @@
             this.SC_ITEM_3.ChangeDateWidth = 100;
             this.SC_ITEM_3.Code = "";
             this.SC_ITEM_3.CodeWidth = 110;
-            this.SC_ITEM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_3.DataCheck = false;
             this.SC_ITEM_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_3.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -3436,7 +3515,7 @@
             this.SC_ITEM_4.ChangeDateWidth = 100;
             this.SC_ITEM_4.Code = "";
             this.SC_ITEM_4.CodeWidth = 110;
-            this.SC_ITEM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.SC_ITEM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_4.DataCheck = false;
             this.SC_ITEM_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_4.ImeMode = System.Windows.Forms.ImeMode.Off;
@@ -3860,6 +3939,19 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1350, 57);
             this.panel4.TabIndex = 342;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.DarkGray;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Location = new System.Drawing.Point(873, 2);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 18);
+            this.label7.TabIndex = 290;
+            this.label7.Text = "印刷なし";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
@@ -4992,99 +5084,6 @@
             this.ckM_Label11.Text = "社内備考";
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.DarkGray;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label7.Location = new System.Drawing.Point(873, 2);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 18);
-            this.label7.TabIndex = 290;
-            this.label7.Text = "印刷なし";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // CHK_PRINT_0
-            // 
-            this.CHK_PRINT_0.BackColor = System.Drawing.Color.White;
-            this.CHK_PRINT_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
-            this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_0.Location = new System.Drawing.Point(885, 1);
-            this.CHK_PRINT_0.Name = "CHK_PRINT_0";
-            this.CHK_PRINT_0.Size = new System.Drawing.Size(47, 18);
-            this.CHK_PRINT_0.TabIndex = 636;
-            this.CHK_PRINT_0.Tag = "0";
-            this.CHK_PRINT_0.Text = "なし";
-            this.CHK_PRINT_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CHK_PRINT_0.UseVisualStyleBackColor = false;
-            // 
-            // CHK_PRINT_1
-            // 
-            this.CHK_PRINT_1.BackColor = System.Drawing.Color.White;
-            this.CHK_PRINT_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
-            this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_1.Location = new System.Drawing.Point(885, 58);
-            this.CHK_PRINT_1.Name = "CHK_PRINT_1";
-            this.CHK_PRINT_1.Size = new System.Drawing.Size(47, 18);
-            this.CHK_PRINT_1.TabIndex = 637;
-            this.CHK_PRINT_1.Tag = "1";
-            this.CHK_PRINT_1.Text = "なし";
-            this.CHK_PRINT_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CHK_PRINT_1.UseVisualStyleBackColor = false;
-            // 
-            // CHK_PRINT_2
-            // 
-            this.CHK_PRINT_2.BackColor = System.Drawing.Color.White;
-            this.CHK_PRINT_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
-            this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_2.Location = new System.Drawing.Point(885, 114);
-            this.CHK_PRINT_2.Name = "CHK_PRINT_2";
-            this.CHK_PRINT_2.Size = new System.Drawing.Size(47, 18);
-            this.CHK_PRINT_2.TabIndex = 638;
-            this.CHK_PRINT_2.Tag = "2";
-            this.CHK_PRINT_2.Text = "なし";
-            this.CHK_PRINT_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CHK_PRINT_2.UseVisualStyleBackColor = false;
-            // 
-            // CHK_PRINT_3
-            // 
-            this.CHK_PRINT_3.BackColor = System.Drawing.Color.White;
-            this.CHK_PRINT_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CHK_PRINT_3.ForeColor = System.Drawing.Color.Black;
-            this.CHK_PRINT_3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_3.Location = new System.Drawing.Point(885, 171);
-            this.CHK_PRINT_3.Name = "CHK_PRINT_3";
-            this.CHK_PRINT_3.Size = new System.Drawing.Size(47, 18);
-            this.CHK_PRINT_3.TabIndex = 639;
-            this.CHK_PRINT_3.Tag = "3";
-            this.CHK_PRINT_3.Text = "なし";
-            this.CHK_PRINT_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CHK_PRINT_3.UseVisualStyleBackColor = false;
-            // 
-            // CHK_PRINT_4
-            // 
-            this.CHK_PRINT_4.BackColor = System.Drawing.Color.White;
-            this.CHK_PRINT_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_PRINT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.CHK_PRINT_4.ForeColor = System.Drawing.Color.Black;
-            this.CHK_PRINT_4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_4.Location = new System.Drawing.Point(885, 229);
-            this.CHK_PRINT_4.Name = "CHK_PRINT_4";
-            this.CHK_PRINT_4.Size = new System.Drawing.Size(47, 18);
-            this.CHK_PRINT_4.TabIndex = 640;
-            this.CHK_PRINT_4.Tag = "4";
-            this.CHK_PRINT_4.Text = "なし";
-            this.CHK_PRINT_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CHK_PRINT_4.UseVisualStyleBackColor = false;
             // 
             // MitsumoriNyuuryoku
             // 
