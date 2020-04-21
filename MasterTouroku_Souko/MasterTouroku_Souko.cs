@@ -33,7 +33,6 @@ namespace MasterTouroku_Souko
             KeyUp += Form_KeyUp;
             //DisablePanel(PanelDetail);
             //*** bl = new bl();
-
         }
         private void FormLoadEvent(object sender, EventArgs e)
         {
