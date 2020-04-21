@@ -1466,16 +1466,17 @@ namespace Base.Client
             }
         }
 
-        public bool TxtCode_FullWidth(KeyEventArgs e=null)
+        public bool TxtCode_FullWidth(KeyEventArgs e=null)  // PTk Added 4/21/2020
         {
             
             Base_BL bbl = new Base_BL();
-            UserControl sc = ActiveControl as UserControl;  // New logic by PTK
+            UserControl sc = ActiveControl as UserControl;
 
             var c = GetAllControls(this);
             for (int i = 0; i < c.Count(); i++)
             {
                 var Con = c.ElementAt(i) as UserControl;
+                var ConTxt= c.ElementAt(i) as CKM_TextBox;
                 if (Con is CKM_SearchControl)
                 {
                     try
@@ -1493,6 +1494,32 @@ namespace Base.Client
                     {
                         return true;
                     }
+                }
+                else if(ConTxt is CKM_TextBox)
+                {
+
+                    if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
+                    {
+                        string str = Encoding.GetEncoding(932).GetByteCount((ConTxt as CKM_TextBox).Text).ToString();
+                        if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).Length)
+                        {
+                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).Focus();
+                            return false;
+                        }
+                    }
+                    if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半角)
+                    {
+                        int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount((ConTxt as CKM_TextBox).Text);
+                        int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount((ConTxt as CKM_TextBox).Text);
+                        if (onebyteCount != byteCount)
+                        {
+                            MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).Focus();
+                            return false;
+                        }
+                    }
+
                 }
             }
             return true;
