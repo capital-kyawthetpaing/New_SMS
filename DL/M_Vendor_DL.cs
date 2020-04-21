@@ -34,6 +34,19 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable M_Vendor_ZipCodeSelect(M_Vendor_Entity mve)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 =mve.VendorCD  } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mve.ChangeDate } },
+                { "@ZipCode1", new ValuePair { value1 = SqlDbType.VarChar, value2 = mve.ZipCD1 } },
+                { "@ZipCode2", new ValuePair { value1 = SqlDbType.VarChar, value2 =mve.ZipCD2 } }               
+            };
+            UseTransaction = true;
+            return SelectData(dic, "M_Vendor_ZipCodeSelect");
+        }
+
         public DataTable M_Vendor_SelectTop1(M_Vendor_Entity mve)
         {
             string sp = "M_Vendor_SelectTop1";

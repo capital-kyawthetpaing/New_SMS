@@ -519,23 +519,64 @@ namespace MasterTouroku_Shiiresaki
                     }
                     else
                     {
-                        mze = new M_ZipCode_Entity();
-                        mze.ZipCD1 = txtZipCD1.Text;
-                        mze.ZipCD2 = txtZipCD2.Text;
+                        if (OperationMode == EOperationMode.UPDATE)
+                        {
 
-                        DataTable dtzip = new DataTable();
-                        dtzip = mtsbl.M_ZipCode_Select(mze);
-                        if (dtzip.Rows.Count > 0)
-                        {
-                            txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
-                            txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                            mve = new M_Vendor_Entity();
+                            mve.VendorCD = ScVendor.TxtCode.Text;
+                            mve.ChangeDate = ScVendor.ChangeDate;
+                            mve.ZipCD1 = txtZipCD1.Text;
+                            mve.ZipCD2 = txtZipCD2.Text;
+                            DataTable dtvendorzip = new DataTable();
+                            dtvendorzip = mtsbl.M_Vendor_ZipCodeSelect(mve);
+                            if (dtvendorzip.Rows.Count > 0)
+                            {
+                                txtAddress1.Text = dtvendorzip.Rows[0]["Address1"].ToString();
+                                txtAddress2.Text = dtvendorzip.Rows[0]["Address2"].ToString();
+                            }
+                            else
+                            {
+                                mze = new M_ZipCode_Entity();
+                                mze.ZipCD1 = txtZipCD1.Text;
+                                mze.ZipCD2 = txtZipCD2.Text;
+
+                                DataTable dtzip = new DataTable();
+                                dtzip = mtsbl.M_ZipCode_Select(mze);
+
+                                if (dtzip.Rows.Count > 0)
+                                {
+                                    txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
+                                    txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                                }
+                                else
+                                {
+                                    txtAddress1.Text = string.Empty;
+                                    txtAddress2.Text = string.Empty;
+                                }
+                            }
+
                         }
-                        else
+                        else if (OperationMode == EOperationMode.INSERT)
                         {
-                            txtAddress1.Text = string.Empty;
-                            txtAddress2.Text = string.Empty;
+                            mze = new M_ZipCode_Entity();
+                            mze.ZipCD1 = txtZipCD1.Text;
+                            mze.ZipCD2 = txtZipCD2.Text;
+
+                            DataTable dtzip = new DataTable();
+                            dtzip = mtsbl.M_ZipCode_Select(mze);
+
+                            if (dtzip.Rows.Count > 0)
+                            {
+                                txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
+                                txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                            }
+                            else
+                            {
+                                txtAddress1.Text = string.Empty;
+                                txtAddress2.Text = string.Empty;
+                            }
                         }
-                    }  
+                    }
                 }
                 
                 if(ScPayeeCD.TxtCode.Text != ScVendor.TxtCode.Text) // Error15
@@ -609,7 +650,7 @@ namespace MasterTouroku_Shiiresaki
                 }
 
                 //if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedValue.ToString()) || (cboPaymentKBN.SelectedValue.Equals(-1)))
-                if(cboPaymentKBN.SelectedValue.Equals(-1))// Error18
+                if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedValue.ToString()) || cboPaymentKBN.SelectedValue.ToString() == "-1") // Error18
                 {
                     mtsbl.ShowMessage("E102");
                     cboPaymentKBN.Focus();
@@ -923,16 +964,52 @@ namespace MasterTouroku_Shiiresaki
                     }
                     else
                     {
-                        //if(OperationMode == EOperationMode.UPDATE)
-                        //{
+                        if (OperationMode == EOperationMode.UPDATE)
+                        {
+
+                            mve = new M_Vendor_Entity();
+                            mve.VendorCD = ScVendor.TxtCode.Text;
+                            mve.ChangeDate = ScVendor.ChangeDate;
+                            mve.ZipCD1 = txtZipCD1.Text;
+                            mve.ZipCD2 = txtZipCD2.Text;
+                            DataTable dtvendorzip = new DataTable();
+                            dtvendorzip = mtsbl.M_Vendor_ZipCodeSelect(mve);
+                            if(dtvendorzip.Rows.Count> 0)
+                            {
+                                txtAddress1.Text = dtvendorzip.Rows[0]["Address1"].ToString();
+                                txtAddress2.Text = dtvendorzip.Rows[0]["Address2"].ToString();
+                            }
+                            else
+                            {
+                                mze = new M_ZipCode_Entity();
+                                mze.ZipCD1 = txtZipCD1.Text;
+                                mze.ZipCD2 = txtZipCD2.Text;
+
+                                DataTable dtzip = new DataTable();
+                                dtzip = mtsbl.M_ZipCode_Select(mze);
+
+                                if (dtzip.Rows.Count > 0)
+                                {
+                                    txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
+                                    txtAddress2.Text = dtzip.Rows[0]["Address2"].ToString();
+                                }
+                                else
+                                {
+                                    txtAddress1.Text = string.Empty;
+                                    txtAddress2.Text = string.Empty;
+                                }
+                            }
+
+                        }
+                        else if (OperationMode == EOperationMode.INSERT)
+                        {
                             mze = new M_ZipCode_Entity();
                             mze.ZipCD1 = txtZipCD1.Text;
                             mze.ZipCD2 = txtZipCD2.Text;
-                            //mve = new M_Vendor_Entity();
 
                             DataTable dtzip = new DataTable();
                             dtzip = mtsbl.M_ZipCode_Select(mze);
-                            //dtzip = mtsbl.M_Vendor_Select(mze);
+
                             if (dtzip.Rows.Count > 0)
                             {
                                 txtAddress1.Text = dtzip.Rows[0]["Address1"].ToString();
@@ -943,13 +1020,7 @@ namespace MasterTouroku_Shiiresaki
                                 txtAddress1.Text = string.Empty;
                                 txtAddress2.Text = string.Empty;
                             }
-                        //}
-                        //else if(OperationMode == EOperationMode.INSERT)
-                        //{
-
-                        //}
-
-                       
+                        }
                     } 
                 }
             }
