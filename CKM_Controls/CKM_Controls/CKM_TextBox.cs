@@ -924,7 +924,18 @@ namespace CKM_Controls
             MoveNext = true;
             return true;
         }
-
+        public static bool IsInteger(string value)
+        {
+            value = value.Replace("-", "");
+            if (Int64.TryParse(value, out Int64 Num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private bool IsCorrectTime(string hour, string minutes, string seconds)
         {
             if (Convert.ToInt32(hour) > 23 || Convert.ToInt32(minutes) > 59 || Convert.ToInt32(seconds) > 59)
@@ -1074,18 +1085,18 @@ namespace CKM_Controls
             this.SelectionLength = this.Text.Length;
         }
 
-        private bool IsInteger(string value)
-        {
-            value = value.Replace("-", "");
-            if (Int32.TryParse(value, out int Num))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        //private bool IsInteger(string value)
+        //{
+        //    value = value.Replace("-", "");
+        //    if (Int32.TryParse(value, out int Num))
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        return false;
+        //    }
+        //}
 
         private bool IsDouble(string value)
         {
