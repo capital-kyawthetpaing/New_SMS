@@ -215,7 +215,7 @@ namespace MasterTouroku_Souko
 /// F2 & F3 Mode
  /// </summary>
 /// <param name="mode"></param>
-#region Function 11 & 12
+        #region Function 11 & 12
         private void F11()
         {
 
@@ -311,7 +311,7 @@ namespace MasterTouroku_Souko
 
  #endregion
 
-#region ErrorCheck Function
+        #region ErrorCheck Function
         private bool ErrorCheck(int index)
         {
 
@@ -436,40 +436,40 @@ namespace MasterTouroku_Souko
         }
 #endregion
 
-#region Insert/Update/Delete Case      
-        private void InsertUpdate(int mode)
-        {
-            //*** Insert Update Function      
-            if (mtsbl.M_Souko_Insert_Update(mse, mode))
-            {                
-                ChangeMode(OperationMode);
-                ScSoukoCD.SetFocus(1);
+        #region Insert/Update/Delete Case      
+                private void InsertUpdate(int mode)
+                {
+                    //*** Insert Update Function      
+                    if (mtsbl.M_Souko_Insert_Update(mse, mode))
+                    {                
+                        ChangeMode(OperationMode);
+                        ScSoukoCD.SetFocus(1);
 
-                mtsbl.ShowMessage("I101");
-            }
-            else
-            {
-                mtsbl.ShowMessage("S001");
-            }
-        }
-        private void Delete()
-        {
-            //*** Delete Function
-            if (mtsbl.M_Souko_Delete(mse))
-            {
+                        mtsbl.ShowMessage("I101");
+                    }
+                    else
+                    {
+                        mtsbl.ShowMessage("S001");
+                    }
+                }
+                private void Delete()
+                {
+                    //*** Delete Function
+                    if (mtsbl.M_Souko_Delete(mse))
+                    {
                 
-                ChangeMode(OperationMode);
-                ScSoukoCD.SetFocus(1);
+                        ChangeMode(OperationMode);
+                        ScSoukoCD.SetFocus(1);
 
-                mtsbl.ShowMessage("I102");
-            }
-            else
-            {
-                mtsbl.ShowMessage("S001");
-            }
-        }
+                        mtsbl.ShowMessage("I102");
+                    }
+                    else
+                    {
+                        mtsbl.ShowMessage("S001");
+                    }
+                }
 
- #endregion
+         #endregion
 
         #region Recall_Function
         private void BindCombo()
@@ -596,6 +596,7 @@ namespace MasterTouroku_Souko
                     mse.ZipCD1 = txtZipCD1.Text;
                     mse.ZipCD2 = txtZipCD2.Text;
                     mse.SoukoCD = ScSoukoCD.Code;
+                    mse.ChangeDate = ScSoukoCD.ChangeDate;
                     DataTable dt = mtsbl.M_Souko_ZipcodeAddressSelect(mse);
                     if (dt.Rows.Count > 0)
                     {
@@ -657,7 +658,6 @@ namespace MasterTouroku_Souko
                 F11();
                 if (OperationMode == EOperationMode.UPDATE)
                 {
-                   
                     if (!string.IsNullOrEmpty(txtZipCD1.Text))
                     {
                          z1 = txtZipCD1.Text;
