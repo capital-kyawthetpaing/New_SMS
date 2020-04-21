@@ -927,6 +927,7 @@ namespace MasterTouroku_Shiiresaki
                         {
 
                             mve = new M_Vendor_Entity();
+                            mve.VendorCD = ScVendor.TxtCode.Text;
                             mve.ZipCD1 = txtZipCD1.Text;
                             mve.ZipCD2 = txtZipCD2.Text;
                             DataTable dtvendorzip = new DataTable();
