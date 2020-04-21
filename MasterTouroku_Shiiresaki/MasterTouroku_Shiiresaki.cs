@@ -1360,5 +1360,6 @@ namespace MasterTouroku_Shiiresaki
                 }
             }
         }      
+
     }
 }
