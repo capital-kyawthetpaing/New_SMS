@@ -61,7 +61,7 @@ namespace BL
         /// </summary>
         /// <param name="mme"></param>
         /// <returns></returns>
-        public DataTable M_MultiPorpose_SelectForCombo(M_MultiPorpose_Entity mme)
+        public DataTable M_MultiPorpose_SelectForCombo(M_MultiPorpose_Entity mme, string DisplayMember = "")
         {
             DataTable dt = mmdl.M_MultiPorpose_SelectAll(mme);
             int count = dt.Columns.Count;
@@ -81,8 +81,12 @@ namespace BL
 
             ArrayList arrlst = new ArrayList();
             arrlst.Add("Key");
-            arrlst.Add("KeyAndChar1");
-            arrlst.Add("Char1");
+            if (DisplayMember.Equals("") || DisplayMember.Equals("KeyAndChar1"))
+                arrlst.Add("KeyAndChar1");
+            else if (DisplayMember.Equals("Char1"))
+                arrlst.Add("Char1");
+            else if (DisplayMember.Equals("Key2"))
+                arrlst.Add("Key2");
 
             for (int i = 0; i < count; i++)
             {
@@ -97,7 +101,7 @@ namespace BL
 
             return dt;
         }
-       
+
 
         public DataTable M_MultiPorpose_SoukoTypeSelect(M_MultiPorpose_Entity mme)
         {

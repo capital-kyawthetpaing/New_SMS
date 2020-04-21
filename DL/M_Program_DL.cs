@@ -25,7 +25,7 @@ namespace DL
             {
                 { "@ProgramID", new ValuePair { value1 = SqlDbType.VarChar, value2 = mpe.Program_ID } } 
             };
-            //UseTransaction = true;  //ses
+            UseTransaction = true;  //ses
             //return SelectData(sp);
             return SelectData(dic,sp);
             

@@ -370,6 +370,7 @@
             this.PanelSearch.Controls.Add(this.ckM_TextBox8);
             this.PanelSearch.Controls.Add(this.ckM_Label15);
             this.PanelSearch.Controls.Add(this.ckM_TextBox18);
+            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 22;
             // 
             // label4
@@ -5716,6 +5717,7 @@
             this.ScOrder.Size = new System.Drawing.Size(444, 28);
             this.ScOrder.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScOrder.TabIndex = 7;
+            this.ScOrder.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScOrder.UseChangeDate = false;
             this.ScOrder.Value1 = null;
             this.ScOrder.Value2 = null;
@@ -5810,7 +5812,6 @@
             this.label3.Size = new System.Drawing.Size(24, 16);
             this.label3.TabIndex = 303;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Visible = false;
             // 
             // label18
             // 
@@ -6008,6 +6009,7 @@
             this.ScCopyOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScCopyOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScCopyOrderNO.TabIndex = 9;
+            this.ScCopyOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScCopyOrderNO.UseChangeDate = false;
             this.ScCopyOrderNO.Value1 = null;
             this.ScCopyOrderNO.Value2 = null;
@@ -6032,6 +6034,7 @@
             this.ScOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ScOrderNO.TabIndex = 8;
+            this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScOrderNO.UseChangeDate = false;
             this.ScOrderNO.Value1 = null;
             this.ScOrderNO.Value2 = null;
@@ -6106,6 +6109,7 @@
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
             this.ckM_SearchControl3.Value2 = null;
@@ -6235,6 +6239,7 @@
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl1.TabIndex = 694;
+            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl1.UseChangeDate = false;
             this.ckM_SearchControl1.Value1 = null;
             this.ckM_SearchControl1.Value2 = null;
@@ -6669,6 +6674,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

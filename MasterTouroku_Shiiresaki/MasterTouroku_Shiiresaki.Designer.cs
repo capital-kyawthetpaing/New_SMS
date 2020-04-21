@@ -618,7 +618,7 @@
             // 
             this.txtNotDisplay.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtNotDisplay.BackColor = System.Drawing.Color.White;
-            this.txtNotDisplay.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半角;
+            this.txtNotDisplay.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtNotDisplay.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtNotDisplay.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtNotDisplay.Length = 50;
@@ -638,7 +638,7 @@
             // 
             this.txtDisplayNote.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtDisplayNote.BackColor = System.Drawing.Color.White;
-            this.txtDisplayNote.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半角;
+            this.txtDisplayNote.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtDisplayNote.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtDisplayNote.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtDisplayNote.Length = 50;
@@ -925,7 +925,7 @@
             this.txtKouzaMeigi.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKouzaMeigi.BackColor = System.Drawing.Color.White;
             this.txtKouzaMeigi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtKouzaMeigi.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtKouzaMeigi.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKouzaMeigi.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKouzaMeigi.DecimalPlace = 0;
             this.txtKouzaMeigi.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1370,7 +1370,7 @@
             this.txtAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress2.BackColor = System.Drawing.Color.White;
             this.txtAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress2.DecimalPlace = 0;
             this.txtAddress2.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1395,7 +1395,7 @@
             this.txtAddress1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress1.BackColor = System.Drawing.Color.White;
             this.txtAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress1.DecimalPlace = 0;
             this.txtAddress1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1471,7 +1471,7 @@
             this.txtVendorStaffName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorStaffName.BackColor = System.Drawing.Color.White;
             this.txtVendorStaffName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVendorStaffName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtVendorStaffName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorStaffName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorStaffName.DecimalPlace = 0;
             this.txtVendorStaffName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1496,7 +1496,7 @@
             this.txtPositionName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPositionName.BackColor = System.Drawing.Color.White;
             this.txtPositionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPositionName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtPositionName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPositionName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPositionName.DecimalPlace = 0;
             this.txtPositionName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1521,7 +1521,7 @@
             this.txtPostName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPostName.BackColor = System.Drawing.Color.White;
             this.txtPostName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPostName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtPostName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPostName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPostName.DecimalPlace = 0;
             this.txtPostName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1546,7 +1546,7 @@
             this.txtLongName2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName2.BackColor = System.Drawing.Color.White;
             this.txtLongName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLongName2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtLongName2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName2.DecimalPlace = 0;
             this.txtLongName2.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1571,7 +1571,7 @@
             this.txtLongName1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName1.BackColor = System.Drawing.Color.White;
             this.txtLongName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLongName1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtLongName1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName1.DecimalPlace = 0;
             this.txtLongName1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1596,7 +1596,7 @@
             this.txtVendorKana.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorKana.BackColor = System.Drawing.Color.White;
             this.txtVendorKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVendorKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtVendorKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorKana.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorKana.DecimalPlace = 0;
             this.txtVendorKana.Font = new System.Drawing.Font("MS Gothic", 9F);

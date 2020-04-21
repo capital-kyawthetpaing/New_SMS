@@ -18,7 +18,7 @@ namespace Search
         Search_SiharaiShoriNO_BL sssbl;
         D_Pay_Entity dpe = new D_Pay_Entity();
 
-        public string ID = "";
+        public string Sc_Code = "";
         public string date = "";
         public string parChangeDate = "";
         public string parName = "";
@@ -138,9 +138,9 @@ namespace Search
         {
             if (dgvSiharaiShoriNO.CurrentRow != null && dgvSiharaiShoriNO.CurrentRow.Index >= 0)
             {
-                ID = dgvSiharaiShoriNO.CurrentRow.Cells["colCD"].Value.ToString();
-                date = dgvSiharaiShoriNO.CurrentRow.Cells["colDate"].Value.ToString();
-                parName = dgvSiharaiShoriNO.CurrentRow.Cells["colName"].Value.ToString();
+                Sc_Code = dgvSiharaiShoriNO.CurrentRow.Cells["colPaymentNum"].Value.ToString();
+                //date = dgvSiharaiShoriNO.CurrentRow.Cells["colDate"].Value.ToString();
+                //parName = dgvSiharaiShoriNO.CurrentRow.Cells["colName"].Value.ToString();
                 this.Close();
             }
         }
