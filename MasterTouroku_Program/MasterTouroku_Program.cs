@@ -147,6 +147,7 @@ namespace MasterTouroku_Program
                             btnDisplay.Enabled = false;
                             F11Enable = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
+                            DisplayData();
                             txtProgramName.Focus();
                         }
                         break;

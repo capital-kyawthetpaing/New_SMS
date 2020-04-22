@@ -7,7 +7,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE [dbo].[D_Arrival_SelectAllForShiire]
+CREATE PROCEDURE D_Arrival_SelectAllForShiire
     (
     @ArrivalDateFrom  varchar(10),
     @ArrivalDateTo  varchar(10),
@@ -133,5 +133,4 @@ BEGIN
       ;
 
 END
-
 
