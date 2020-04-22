@@ -165,7 +165,7 @@ namespace MasterTouroku_Brand
                         btnDisplay.Enabled = false;
                         EnablePanel(PanelDetail);
                         F12Enable = true;
-                        F11Enable = false;
+                        F11Enable = false; 
                         txtBrandName.Focus();                      
                         break;
                     case EOperationMode.DELETE:                 
@@ -485,5 +485,7 @@ namespace MasterTouroku_Brand
             MoveNextControl(e);
         }
         #endregion
+
+        
     }
 }

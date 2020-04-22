@@ -84,6 +84,10 @@ namespace Search
             {
                 SendData();
             }
+            else if(Index + 1 == 11)
+            {
+                F11();
+            }
         }
 
         private void SendData()

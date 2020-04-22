@@ -54,17 +54,17 @@ namespace TairyuZaikoHyou
             string ymd = bbl.GetDate();
             cboWarehouse.Bind(string.Empty,"");
             CboYear.Bind(ymd);
-            //cboSeason.Bind(string.Empty,"");
-            //cboReservation.Bind(string.Empty,"");
-            //cboNotices.Bind(string.Empty,"");
-            //cboOrder.Bind(string.Empty,"");
-            //cboPostage.Bind(string.Empty,"");
-            //cboTag1.Bind(string.Empty,"");
-            //cboTag2.Bind(string.Empty,"");
-            //cboTag3.Bind(string.Empty,"");
-            //cboTag4.Bind(string.Empty,"");
-            //cboTag5.Bind(string.Empty,"");
-            
+            cboSeason.Bind(ymd);
+            cboReservation.Bind(ymd);
+            cboNotices.Bind(ymd);
+            cboOrder.Bind(ymd);
+            cboPostage.Bind(ymd);
+            cboTag1.Bind(ymd);
+            cboTag2.Bind(ymd);
+            cboTag3.Bind(ymd);
+            cboTag4.Bind(ymd);
+            cboTag5.Bind(ymd);
+
         }
 
         public void SetRequireField()

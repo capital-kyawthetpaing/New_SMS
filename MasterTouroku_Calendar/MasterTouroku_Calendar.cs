@@ -205,18 +205,15 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                //{
-                    string[] str = txtMonth.Text.ToString().Split('/');
-                    string year = str[0].ToString();
+                CreateDataTable();
+                mce = GetCalendarEntity();
+                if (mtcbl.M_Calendar_Insert_Update(mce))
+                {
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString();
                     BindGridCalendar(now.AddMonths(1));
-                //}
-                //else
-                //{
-                //    txtMonth.Focus();
-                //}
+                    txtMonth.Focus();
+                }
 
             }
 
@@ -227,17 +224,16 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                //{
+                CreateDataTable();
+                mce = GetCalendarEntity();
+                if (mtcbl.M_Calendar_Insert_Update(mce))
+                {
+
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString();
                     BindGridCalendar(now.AddMonths(-1));
-                //}
-                //else
-                //{
-                //    txtMonth.Focus();
-                //}
-                    
+                    txtMonth.Focus();
+                }
 
             }
 
@@ -282,8 +278,9 @@ namespace MasterTouroku_Calendar
             dtSetting.Columns.Add("DayOff7", typeof(string));
             dtSetting.Columns.Add("DayOff8", typeof(string));
             dtSetting.Columns.Add("DayOff9", typeof(string));
+            dtSetting.Columns.Add("DayOff10", typeof(string));
 
-            for (int day = 0; day < dtDay.Columns.Count; day++)
+            for (int day = 0; day < dtDay.Columns.Count-1; day++)
             {
                 dtSetting.Rows.Add();
                 string dd = (day + 1).ToString().Count() == 1 ? "0" + (day + 1).ToString() : (day + 1).ToString();
@@ -299,6 +296,7 @@ namespace MasterTouroku_Calendar
                 dtSetting.Rows[day]["DayOff7"] = dtDay.Rows[7][(day + 1).ToString()].ToString();
                 dtSetting.Rows[day]["DayOff8"] = dtDay.Rows[8][(day + 1).ToString()].ToString();
                 dtSetting.Rows[day]["DayOff9"] = dtDay.Rows[9][(day + 1).ToString()].ToString();
+                dtSetting.Rows[day]["DayOff10"] = dtDay.Rows[10][(day + 1).ToString()].ToString();
             }
 
         }
@@ -351,20 +349,33 @@ namespace MasterTouroku_Calendar
 
         private void GvCalendar_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
                 {
-                        if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
-                        {
-                            
-                            //bool isChecked = (bool)GvCalendar[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
-                            DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                        ////string str = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                        //chk1.Value = chk1.FalseValue;
+                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                    {
+                        DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                         GvCalendar.CancelEdit();
-                            //GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !isChecked;
-                            //GvCalendar.EndEdit();
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void GvCalendar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                    {
+                        DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                        GvCalendar.CancelEdit();
+
                     }
 
                 }
