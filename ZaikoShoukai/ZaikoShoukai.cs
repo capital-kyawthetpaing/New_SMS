@@ -24,7 +24,7 @@ namespace ZaikoShoukai
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
         string adminno = "";
-        string  shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
+        string shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
         int type = 0;
         public  ZaikoShoukai()
         {
@@ -50,20 +50,21 @@ namespace ZaikoShoukai
         }
         private void BindCombo()
         {
+            string ymd = bbl.GetDate();
             CB_Soko.Bind(String.Empty, "");
             CB_Soko.SelectedIndex = 1;
-            CB_year.Bind(String.Empty, "");
-            CB_Season.Bind(String.Empty, "");
-            CB_ReserveCD.Bind(String.Empty, "");
-            CB_NoticesCD.Bind(String.Empty, "");
-            CB_PostageCD.Bind(String.Empty, "");
-            CB_OrderAttentionCD.Bind(String.Empty, "");
-            CB_Tagu1.Bind(String.Empty, "");
-            CB_Tagu1.Bind(String.Empty, "");
-            CB_Tagu2.Bind(string.Empty, "");
-            CB_Tagu3.Bind(string.Empty, "");
-            CB_Tagu4.Bind(string.Empty, "");
-            CB_Tagu5.Bind(string.Empty, "");
+            CB_year.Bind(ymd);
+            CB_Season.Bind(ymd);
+            CB_ReserveCD.Bind(ymd);
+            //CB_NoticesCD.Bind(String.Empty, "");
+            //CB_PostageCD.Bind(String.Empty, "");
+            //CB_OrderAttentionCD.Bind(String.Empty, "");
+            //CB_Tagu1.Bind(String.Empty, "");
+            //CB_Tagu1.Bind(String.Empty, "");
+            //CB_Tagu2.Bind(string.Empty, "");
+            //CB_Tagu3.Bind(string.Empty, "");
+            //CB_Tagu4.Bind(string.Empty, "");
+            //CB_Tagu5.Bind(string.Empty, "");
         }
         private void F11()
         {
