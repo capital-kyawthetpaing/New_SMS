@@ -147,6 +147,7 @@ namespace MasterTouroku_Program
                             btnDisplay.Enabled = false;
                             F11Enable = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
+                            DisplayData();
                             txtProgramName.Focus();
                         }
                         break;
@@ -315,21 +316,21 @@ namespace MasterTouroku_Program
                             scProgramID.SetFocus(1);
                             return false;
                         }
-                        if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
-                        {
-                            if (!scProgramCopy.IsExists(1))
-                            {
-                                mpbl.ShowMessage("E133");
-                                scProgramCopy.SetFocus(1);
-                                return false;
-                            }
-                        }
+                        //if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
+                        //{
+                        //    if (!scProgramCopy.IsExists(1))
+                        //    {
+                        //        mpbl.ShowMessage("E133");
+                        //        scProgramCopy.SetFocus(1);
+                        //        return false;
+                        //    }
+                        //}
+                       
                         else
                         {
-
                             if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
                             {
-                                mpe.ProgramID= scProgramCopy.Code;
+                                mpe.Program_ID = scProgramCopy.Code;
                                 DataTable dtcopyprogram = new DataTable();
                                 dtcopyprogram = mpbl.M_Program_Select(mpe);
                                 if (dtcopyprogram.Rows.Count > 0)
@@ -343,9 +344,7 @@ namespace MasterTouroku_Program
                                     return false;
                                 }
                             }
-
                         }
-
                     }
                 }
                 else

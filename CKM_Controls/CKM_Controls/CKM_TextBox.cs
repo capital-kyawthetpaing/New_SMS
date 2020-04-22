@@ -306,7 +306,7 @@ namespace CKM_Controls
                         return;
                     else if ((CtrlType == Type.Normal || CtrlType == Type.Number))
                     {
-                        if (this.Parent is UserControl)
+                        if (this.Parent is UserControl)  /// PTK like in Search Con // Master Con
                         {
                             if (CtrlType == Type.Normal)
                             {
@@ -332,24 +332,10 @@ namespace CKM_Controls
                             }
 
                         }
-                        //string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                        //if (Convert.ToInt32(str) > length)
-                        //{
-                        //    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //    this.Focus();
-                        //    return;
-                        //}
-                        //if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
-                        //{
-                        //    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-                        //    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-                        //    if (onebyteCount != byteCount)
-                        //    {
-                        //        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        //        this.Focus();
-                        //        return;
-                        //    }
-                        //}
+                        else // PTK Added 
+                        {
+                            Control_Check();
+                        }
                     }
                     base.OnKeyDown(e);
                 }
@@ -402,6 +388,30 @@ namespace CKM_Controls
 
             else
                 base.OnKeyDown(e);
+        }
+        protected void Control_Check()
+        {
+            if (CtrlByte == Bytes.半全角)
+            {
+                string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
+                if (Convert.ToInt32(str) > length)
+                {
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Focus();
+                    return;
+                }
+            }
+            if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
+            {
+                int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                if (onebyteCount != byteCount)
+                {
+                    MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.Focus();
+                    return;
+                }
+            }
         }
         protected bool YearMonthCheck()  /// To be proceeded by PTK
         {
@@ -532,54 +542,10 @@ namespace CKM_Controls
             {
                 //
             }
-            else
+            else // PTK Commmented Because When error Occurred, Cant Mouse Click Anyway to Close or anyother event. (Moved in KeyDown and Lost Cus)
             {
-
-                if (CtrlByte == Bytes.半全角)
-                {
-                    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                    if (Convert.ToInt32(str) > length)
-                    {
-                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Focus();
-                        return;
-                    }
-                }
-                if (CtrlByte == Bytes.半角)//CtrlByte.Equals("半角")
-                {
-                    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-                    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-                    if (onebyteCount != byteCount)
-                    {
-                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Focus();
-                        return;
-                    }
-                }
+                //Control_Check();  
             }
-            //  if ()
-            //if (Ctrl_Type == Type.Normal)
-            //{
-            //    string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-            //    if (Convert.ToInt32(str) > length)
-            //    {
-            //        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        this.Focus();
-            //        return;
-            //    }
-            //}
-            //else if (Ctrl_Byte == Bytes.半角)//CtrlByte.Equals("半角")
-            //{
-            //    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
-            //    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
-            //    if (onebyteCount != byteCount)
-            //    {
-            //        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //        this.Focus();
-            //    }
-            //}
-
-
             base.OnLeave(e);
         }
 
@@ -588,6 +554,11 @@ namespace CKM_Controls
 
             MoveNext = false;
             base.OnGotFocus(e);
+        }
+
+        protected override void OnLostFocus(EventArgs e)
+        {
+            base.OnLostFocus(e);
         }
 
         protected override void OnEnter(EventArgs e)

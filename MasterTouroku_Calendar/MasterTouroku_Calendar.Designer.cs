@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtMonth = new CKM_Controls.CKM_TextBox();
             this.PanelDetail = new System.Windows.Forms.Panel();
@@ -74,7 +75,6 @@
             this.lbl0 = new System.Windows.Forms.Label();
             this.GvCalendar = new CKM_Controls.CKM_GridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -105,6 +105,7 @@
             this.Column29 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column30 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column31 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colFlag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -688,7 +689,7 @@
             this.GvCalendar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -697,7 +698,6 @@
             this.GvCalendar.ColumnHeadersHeight = 25;
             this.GvCalendar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.colFlag,
             this.Column2,
             this.Column3,
             this.Column4,
@@ -727,7 +727,16 @@
             this.Column28,
             this.Column29,
             this.Column30,
-            this.Column31});
+            this.Column31,
+            this.colFlag});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvCalendar.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvCalendar.EnableHeadersVisualStyles = false;
             this.GvCalendar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvCalendar.Location = new System.Drawing.Point(373, 57);
@@ -736,6 +745,7 @@
             this.GvCalendar.TabIndex = 10;
             this.GvCalendar.UseRowNo = false;
             this.GvCalendar.UseSetting = true;
+            this.GvCalendar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvCalendar_CellContentClick);
             // 
             // Column1
             // 
@@ -745,12 +755,6 @@
             this.Column1.Name = "Column1";
             this.Column1.TrueValue = "1";
             this.Column1.Width = 30;
-            // 
-            // colFlag
-            // 
-            this.colFlag.HeaderText = "Flag";
-            this.colFlag.Name = "colFlag";
-            this.colFlag.Visible = false;
             // 
             // Column2
             // 
@@ -1022,6 +1026,13 @@
             this.Column31.TrueValue = "1";
             this.Column31.Width = 30;
             // 
+            // colFlag
+            // 
+            this.colFlag.DataPropertyName = "Flag";
+            this.colFlag.HeaderText = "Flag";
+            this.colFlag.Name = "colFlag";
+            this.colFlag.Visible = false;
+            // 
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
@@ -1194,7 +1205,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFlag;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
@@ -1225,5 +1235,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column29;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column30;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFlag;
     }
 }

@@ -43,5 +43,6 @@ namespace BL
         {
             return msoukodl.M_Souko_AllBind(mse);
         }
+
     }
 }

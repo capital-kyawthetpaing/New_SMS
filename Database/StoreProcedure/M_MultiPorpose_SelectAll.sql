@@ -41,6 +41,8 @@ BEGIN
         ,CONVERT(varchar,[InsertDateTime]) AS InsertDateTime
         ,[UpdateOperator]
         ,CONVERT(varchar,[UpdateDateTime]) AS UpdateDateTime
+        ,RIGHT('  ' +[Key],3) + ':' + [Char1] AS KeyAndChar1	--ComboBox用
+        ,CONVERT(varchar,[Key]) AS Key2
 	FROM M_MultiPorpose
 
     WHERE [ID] = @ID

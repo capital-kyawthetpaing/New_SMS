@@ -77,10 +77,10 @@ namespace MasterTouroku_Calendar
             BindKBN(dtKBN);
             GvCalendar.DataSource = dtDay;
 
-            if (dtDay.Columns.Count < GvCalendar.Columns.Count)
+            if (dtDay.Columns.Count-1 < GvCalendar.Columns.Count-1)
             {
 
-                for (int i = GvCalendar.Columns.Count; i > dtDay.Columns.Count; i--)
+                for (int i = GvCalendar.Columns.Count-1; i > dtDay.Columns.Count-1; i--)
                 {
                     Label lbl = this.Controls.Find("lbl" + (i - 1), true)[0] as Label;
                     lbl.Text = string.Empty;
@@ -88,9 +88,9 @@ namespace MasterTouroku_Calendar
                     GvCalendar.Columns[i - 1].HeaderText = string.Empty;
                 }
             }
-            else if(dtDay.Columns.Count == GvCalendar.Columns.Count)
+            else if(dtDay.Columns.Count-1 == GvCalendar.Columns.Count-1)
             {
-                for (int i = 29; i <= dtDay.Columns.Count; i++)
+                for (int i = 29; i <= dtDay.Columns.Count-1; i++)
                 {
                     string strH = GvCalendar.Columns[i-1].HeaderText;
                     GvCalendar.Columns[i-1].HeaderText =i.ToString();
@@ -348,5 +348,28 @@ namespace MasterTouroku_Calendar
         }
 
         #endregion
+
+        private void GvCalendar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                    {
+                        bool isChecked = (bool)GvCalendar[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
+                        //DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                        ////string str = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                        //chk1.Value =false;
+
+                        GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !isChecked;
+                        GvCalendar.EndEdit();
+
+                    }
+
+                }
+
+            }
+        }
     }
 }

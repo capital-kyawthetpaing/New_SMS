@@ -42,7 +42,7 @@ GO
 --    )
 --GO
 
-CREATE PROCEDURE [dbo].[PRC_ShiireNyuuryokuF]
+CREATE PROCEDURE PRC_ShiireNyuuryokuF
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
     @PurchaseNO   varchar(11),
     @StoreCD   varchar(4),
@@ -749,5 +749,4 @@ BEGIN
   return @W_ERR;
 
 END
-
 

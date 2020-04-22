@@ -537,7 +537,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            ScPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -564,7 +565,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            ScMoneyPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -1014,7 +1016,8 @@ namespace MasterTouroku_Shiiresaki
                         }
                         else
                         {
-                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();                           
+                            ScPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScPayeeCD.LabelText = txtVendorName.Text;
                         }
                         
                     }
@@ -1052,6 +1055,7 @@ namespace MasterTouroku_Shiiresaki
                         else
                         {
                             ScMoneyPayeeCD.LabelText = dtpayee.Rows[0]["VendorName"].ToString();
+                            //ScMoneyPayeeCD.LabelText = txtVendorName.Text;
                         }
                     }
                 }
@@ -1177,20 +1181,19 @@ namespace MasterTouroku_Shiiresaki
                     {
                         mtsbl.ShowMessage("E102");
                         ScBankCD.SetFocus(1);
-                      
-                    }
-                }
-                if (!string.IsNullOrWhiteSpace(ScBankCD.TxtCode.Text))
-                {
-                    if (ScBankCD.SelectData())
-                    {
-                        ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
-                        ScBranchCD.Value2 = ScBankCD.LabelText;
                     }
                     else
                     {
-                        mtsbl.ShowMessage("E101");
-                        ScBankCD.SetFocus(1);
+                        if (ScBankCD.SelectData())
+                        {
+                            ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
+                            ScBranchCD.Value2 = ScBankCD.LabelText;
+                        }
+                        else
+                        {
+                            mtsbl.ShowMessage("E101");
+                            ScBankCD.SetFocus(1);
+                        }
                     }
 
                 }
@@ -1209,22 +1212,15 @@ namespace MasterTouroku_Shiiresaki
                         mtsbl.ShowMessage("E102");
                         ScBranchCD.SetFocus(1);
                     }
-
-                }
-                if (!string.IsNullOrWhiteSpace(ScBranchCD.TxtCode.Text))
-                {
-                    if (!ScBranchCD.SelectData())
+                    else
                     {
-                        mtsbl.ShowMessage("E101");
-                        ScBranchCD.SetFocus(1);
-                    }
+                        if (!ScBranchCD.SelectData())
+                        {
+                            mtsbl.ShowMessage("E101");
+                            ScBranchCD.SetFocus(1);
+                        }
+                    }                   
                 }
-                else
-                {
-                    mtsbl.ShowMessage("E101");
-                    ScBranchCD.SetFocus(1);
-                }
-            
             }
         }
 
@@ -1364,5 +1360,6 @@ namespace MasterTouroku_Shiiresaki
                 }
             }
         }      
+
     }
 }
