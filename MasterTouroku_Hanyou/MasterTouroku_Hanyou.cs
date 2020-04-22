@@ -432,9 +432,9 @@ namespace MasterTouroku_Hanyou
             {
                 DataTable dtID = new DataTable();
                 mhe = GetHanyouEntity();
-              
+
                 //if (Convert.ToInt32(ScID.Code) != 000)
-                if(ScID.Code != "000")
+                if (ScID.Code != "000")
                 {
                     dtID = mthbl.Hanyou_IDSelect(mhe);
                     if (dtID.Rows.Count == 0)
