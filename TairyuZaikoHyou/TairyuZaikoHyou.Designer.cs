@@ -309,7 +309,7 @@
             this.Sc_Brand.ChangeDate = "";
             this.Sc_Brand.ChangeDateWidth = 100;
             this.Sc_Brand.Code = "";
-            this.Sc_Brand.CodeWidth = 60;
+            this.Sc_Brand.CodeWidth = 100;
             this.Sc_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Brand.DataCheck = false;
             this.Sc_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -320,7 +320,7 @@
             this.Sc_Brand.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Brand.Name = "Sc_Brand";
             this.Sc_Brand.SearchEnable = true;
-            this.Sc_Brand.Size = new System.Drawing.Size(374, 32);
+            this.Sc_Brand.Size = new System.Drawing.Size(414, 32);
             this.Sc_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
             this.Sc_Brand.TabIndex = 5;
             this.Sc_Brand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -780,7 +780,7 @@
             this.Sc_Competition.ChangeDate = "";
             this.Sc_Competition.ChangeDateWidth = 100;
             this.Sc_Competition.Code = "";
-            this.Sc_Competition.CodeWidth = 40;
+            this.Sc_Competition.CodeWidth = 100;
             this.Sc_Competition.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Competition.DataCheck = false;
             this.Sc_Competition.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -791,7 +791,7 @@
             this.Sc_Competition.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Competition.Name = "Sc_Competition";
             this.Sc_Competition.SearchEnable = true;
-            this.Sc_Competition.Size = new System.Drawing.Size(354, 32);
+            this.Sc_Competition.Size = new System.Drawing.Size(414, 32);
             this.Sc_Competition.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.Sc_Competition.TabIndex = 24;
             this.Sc_Competition.TextSize = Search.CKM_SearchControl.FontSize.Normal;
