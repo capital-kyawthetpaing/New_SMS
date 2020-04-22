@@ -432,7 +432,9 @@ namespace MasterTouroku_Hanyou
             {
                 DataTable dtID = new DataTable();
                 mhe = GetHanyouEntity();
-                if (Convert.ToInt32(ScID.Code) != 000)
+              
+                //if (Convert.ToInt32(ScID.Code) != 000)
+                if(ScID.Code != "000")
                 {
                     dtID = mthbl.Hanyou_IDSelect(mhe);
                     if (dtID.Rows.Count == 0)
@@ -468,6 +470,7 @@ namespace MasterTouroku_Hanyou
                     if (OperationMode == EOperationMode.INSERT)
                     {
                         ScCopyKey.SearchEnable = true;
+                        F9Visible = true;
                         ScKey.TxtCode.MoveNext = false;
                         ScCopyKey.Value1 = ScID.Code;
                         ScCopyKey.Value2 = ScID.LabelText;
@@ -475,6 +478,7 @@ namespace MasterTouroku_Hanyou
                     else
                     {
                         ScKey.SearchEnable = true;
+                        F9Visible = true;
                         ScKey.Value1 = ScID.Code;
                         ScKey.Value2 = ScID.LabelText;
                     }

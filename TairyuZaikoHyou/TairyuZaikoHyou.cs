@@ -24,7 +24,7 @@ namespace TairyuZaikoHyou
         M_SKU_Entity mskue = new M_SKU_Entity();
         M_SKUInfo_Entity info = new M_SKUInfo_Entity();
         M_SKUTag_Entity mtage = new M_SKUTag_Entity();
-        
+
         public FrmTairyuZaikoHyou()
         {
             InitializeComponent();
@@ -46,21 +46,24 @@ namespace TairyuZaikoHyou
 
             BindCombo();
             SetRequireField();
+
+            
         }
         public void BindCombo()
         {
+            string ymd = bbl.GetDate();
             cboWarehouse.Bind(string.Empty,"");
-            CboYear.Bind(string.Empty,"");
-            cboSeason.Bind(string.Empty,"");
-            cboReservation.Bind(string.Empty,"");
-            cboNotices.Bind(string.Empty,"");
-            cboOrder.Bind(string.Empty,"");
-            cboPostage.Bind(string.Empty,"");
-            cboTag1.Bind(string.Empty,"");
-            cboTag2.Bind(string.Empty,"");
-            cboTag3.Bind(string.Empty,"");
-            cboTag4.Bind(string.Empty,"");
-            cboTag5.Bind(string.Empty,"");
+            CboYear.Bind(ymd);
+            //cboSeason.Bind(string.Empty,"");
+            //cboReservation.Bind(string.Empty,"");
+            //cboNotices.Bind(string.Empty,"");
+            //cboOrder.Bind(string.Empty,"");
+            //cboPostage.Bind(string.Empty,"");
+            //cboTag1.Bind(string.Empty,"");
+            //cboTag2.Bind(string.Empty,"");
+            //cboTag3.Bind(string.Empty,"");
+            //cboTag4.Bind(string.Empty,"");
+            //cboTag5.Bind(string.Empty,"");
             
         }
 
