@@ -196,29 +196,29 @@ namespace CKM_Controls
             bbl = new Base_BL();
         }
 
-        //protected override void OnEnabledChanged(EventArgs e)
-        //{
-        //    base.OnEnabledChanged(e);
-        //    if (!Enabled)
-        //        this.BackColor = SystemColors.Control;
-        //    else
-        //        this.BackColor = SystemColors.Window;
+        protected override void OnEnabledChanged(EventArgs e)
+        {
+            base.OnEnabledChanged(e);
+            if (!Enabled)
+                this.BackColor = SystemColors.Control;
+            else
+                this.BackColor = SystemColors.Window;
 
 
-        //    //base.OnEnabledChanged(e);
+            //base.OnEnabledChanged(e);
 
-        //    //if (!Enabled)
-        //    //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
-        //    //    {
-        //    //        this.BackColor = Color.White;
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        this.BackColor = SystemColors.Control;
-        //    //    }
-        //    //else
-        //    //    this.BackColor = SystemColors.Window;
-        //}
+            //if (!Enabled)
+            //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
+            //    {
+            //        this.BackColor = Color.White;
+            //    }
+            //    else
+            //    {
+            //        this.BackColor = SystemColors.Control;
+            //    }
+            //else
+            //    this.BackColor = SystemColors.Window;
+        }
 
         protected override void OnKeyUp(KeyEventArgs e)
         {
