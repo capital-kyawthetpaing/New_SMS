@@ -35,12 +35,17 @@ namespace MasterTouroku_ShiireKakeritsu
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             ckM_Button1.Text = "取込(F10)";
-            cbo_Year.Bind(string.Empty);
-            cbo_Year1.Bind(string.Empty);
-            cbo_Season.Bind(string.Empty);
-            cbo_Season1.Bind(string.Empty);
+            BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+        }
+        public void BindCombo()
+        {
+            string ymd = bbl.GetDate();
+            cbo_Year.Bind(ymd);
+            cbo_Year1.Bind(ymd);
+            cbo_Season.Bind(ymd);
+            cbo_Season1.Bind(ymd);
         }
         private void SetRequiredField()
         {
@@ -418,8 +423,8 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            dtRow["LastYearTeam"] = cbo_Year.SelectedValue;
-            //dtRow["LastSeason"] = cbo_Season.SelectedText;
+            dtRow["LastYearTeam"] = cbo_Year.Text;
+            dtRow["LastSeason"] = cbo_Season.Text;
             dtRow["ChangeDate"] = txtChangeDate.Text;
             dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
             dt.Rows.Add(dtRow);
