@@ -30,7 +30,6 @@ namespace MasterTouroku_Program
             InProgramID = Application.ProductName;
 
             SetFunctionLabel(EProMode.MENTE);
-
             StartProgram();
             SetRequireField();
             

@@ -31,9 +31,9 @@ namespace MasterTouroku_Souko
             PanelCopy.Enter += PanelCopy_Enter;
             ScSoukoCD.Leave += ScNormal_Leave;
             KeyUp += Form_KeyUp;
+            Btn_F11.Text = "";
             //DisablePanel(PanelDetail);
             //*** bl = new bl();
-
         }
         private void FormLoadEvent(object sender, EventArgs e)
         {
