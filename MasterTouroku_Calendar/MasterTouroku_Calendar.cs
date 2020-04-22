@@ -355,16 +355,16 @@ namespace MasterTouroku_Calendar
             {
                 if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
                 {
-                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
-                    {
-                        bool isChecked = (bool)GvCalendar[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
-                        //DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                        if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                        {
+                            
+                            //bool isChecked = (bool)GvCalendar[e.ColumnIndex, e.RowIndex].EditedFormattedValue;
+                            DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
                         ////string str = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-                        //chk1.Value =false;
-
-                        GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !isChecked;
-                        GvCalendar.EndEdit();
-
+                        //chk1.Value = chk1.FalseValue;
+                        GvCalendar.CancelEdit();
+                            //GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = !isChecked;
+                            //GvCalendar.EndEdit();
                     }
 
                 }
