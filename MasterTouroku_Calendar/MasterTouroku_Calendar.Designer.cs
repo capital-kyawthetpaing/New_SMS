@@ -737,6 +737,7 @@
             this.GvCalendar.UseRowNo = false;
             this.GvCalendar.UseSetting = true;
             this.GvCalendar.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvCalendar_CellContentClick);
+            this.GvCalendar.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvCalendar_CellContentDoubleClick);
             // 
             // label8
             // 
