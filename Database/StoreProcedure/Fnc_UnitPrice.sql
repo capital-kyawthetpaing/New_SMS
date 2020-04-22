@@ -8,10 +8,10 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[Fnc_UnitPrice]
+CREATE PROCEDURE Fnc_UnitPrice
 (   
     -- Add the parameters for the function here
-    @SKUCD      varchar(30),	
+    @AdminNo     int,	
     @ChangeDate  varchar(10),
     @CustomerCD  varchar(13),
     @StoreCD  varchar(4),
@@ -34,7 +34,7 @@ BEGIN
     	SET @ChangeDate = CONVERT(varchar, GETDATE(),111);
     
     EXEC Fnc_UnitPrice_SP
-        @SKUCD     ,    
+        @AdminNo     ,    
         @ChangeDate ,
         @CustomerCD ,
         @StoreCD  ,
@@ -57,5 +57,4 @@ BEGIN
 	    @Bikou  AS Bikou
 	    ;   
 END
-
 

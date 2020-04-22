@@ -7,12 +7,13 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 --  ======================================================================
 --       Program Call    仕入入力
 --       Program ID      ShiireNyuuryoku
 --       Create date:    2019.11.24
 --    ======================================================================
-CREATE PROCEDURE [dbo].[D_Purchase_SelectData]
+CREATE PROCEDURE D_Purchase_SelectData
     (@OperateMode    tinyint,                 -- 処理区分（1:新規 2:修正 3:削除）
     @PurchaseNO varchar(11)
     )AS
@@ -250,5 +251,4 @@ BEGIN
 --        END
 
 END
-
 

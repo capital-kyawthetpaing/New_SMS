@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[CheckPayPlanData]
+CREATE PROCEDURE CheckPayPlanData
     (@PurchaseNO varchar(11)
     )AS
     
@@ -48,5 +48,4 @@ BEGIN
     SELECT @ERRNO AS errno;
 
 END
-
 
