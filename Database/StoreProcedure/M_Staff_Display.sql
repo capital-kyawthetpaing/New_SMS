@@ -32,6 +32,8 @@ BEGIN
 		MP.Char1,
 		staff.MenuCD,
 		q2.MenuName,
+		staff.StoreMenuCD,
+		q2.MenuName,
 		staff.AuthorizationsCD,
 		q3.AuthorizationsName,
 		staff.StoreAuthorizationsCD,

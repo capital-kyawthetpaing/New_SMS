@@ -38,6 +38,12 @@ BEGIN
 			where DeleteFlg = 0 
 			order by StoreCD
 		end
-	
+	if @Type = 3 -- MasterTouroku_Settouchi 2020_04_21
+		begin
+			select * from F_Store(@ChangeDate) fs
+			where DeleteFlg = 0 
+			and (StoreKBN = 1 OR StoreKBN = 2)
+			order by StoreCD
+		end
 END
 

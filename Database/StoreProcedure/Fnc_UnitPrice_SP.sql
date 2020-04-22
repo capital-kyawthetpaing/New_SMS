@@ -13,10 +13,10 @@ GO
 -- Create date: <Create Date,,>
 -- Description: <Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[Fnc_UnitPrice_SP]
+CREATE PROCEDURE Fnc_UnitPrice_SP
 (   
     -- Add the parameters for the function here
-    @SKUCD      varchar(30),	
+    @AdminNo     int,	
     @ChangeDate  varchar(10),
     @CustomerCD  varchar(13),
     @StoreCD  varchar(4),
@@ -50,7 +50,14 @@ BEGIN
     DECLARE @TaxRate1 decimal(3,1);
     DECLARE @TaxRate2 decimal(3,1);
     DECLARE @FractionKBN tinyint;
+    DECLARE @SaleExcludedFlg tinyint;
     
+    DECLARE @GeneralSaleRate     decimal(3,1);
+    DECLARE @GeneralSaleFraction tinyint;
+    DECLARE @MemberSaleRate      decimal(3,1);
+    DECLARE @MemberSaleFraction  tinyint;
+    DECLARE @ClientSaleRate      decimal(3,1);
+    DECLARE @ClientSaleFraction  tinyint;
     
     SET @ZeikomiTanka = 0;
     SET @ZeinukiTanka = 0;
@@ -64,6 +71,7 @@ BEGIN
     --①in基準日が以下の条件でカレンダーマスター(M_Calendar)に存在しなければ、
     SET @iCnt = (SELECT COUNT(*) FROM M_Calendar M
                 WHERE M.CalendarDate = convert(date,@ChangeDate)
+              --  AND M.CalendarCD = 0	--2019.12.16 add★
                 );
  
     IF @iCnt = 0
@@ -71,10 +79,10 @@ BEGIN
         RETURN;
     END
     
-    --②inSKUCDがSKUマスター(M_SKU)に存在しなければ
+    --②inAdminNOがSKUマスター(M_SKU)に存在しなければ
     SET @iCnt = (SELECT COUNT(*) FROM M_SKU M
                 WHERE M.ChangeDate <= convert(date,@ChangeDate)
-                AND M.SKUCD = @SKUCD
+                AND M.AdminNo = @AdminNo
                 AND M.DeleteFLG = 0
                 );
                 
@@ -83,9 +91,11 @@ BEGIN
         RETURN;
     END
     
-	SELECT top 1 @TaxRateFLG=TaxRateFLG FROM M_SKU M
+	SELECT top 1 @TaxRateFLG=TaxRateFLG
+		,@SaleExcludedFlg=SaleExcludedFlg
+	FROM M_SKU M
     WHERE M.ChangeDate <= convert(date,@ChangeDate)
-    AND M.SKUCD = @SKUCD
+    AND M.AdminNo = @AdminNo
     AND M.DeleteFLG = 0
     ORDER BY M.ChangeDate desc
     ;
@@ -131,8 +141,6 @@ BEGIN
             RETURN;
         END
         
-        SET @WebTempo = 1;
-        
         SELECT top 1 @StoreKBN=StoreKBN FROM M_Store M
         WHERE M.ChangeDate <= convert(date,@ChangeDate)
         AND M.StoreCD = @StoreCD
@@ -140,14 +148,21 @@ BEGIN
         ORDER BY M.ChangeDate desc
         ;
         
-        IF @StoreKBN = 2	--2　:WEB店
+        IF @StoreKBN = 1    --1　:実店
         BEGIN
-	        SELECT top 1 @WebStoreCD=StoreCD FROM M_Store M
-	        WHERE M.ChangeDate <= convert(date,@ChangeDate)
-	        AND M.DeleteFLG = 0
-	        AND M.StoreKBN = 3	--3　:WEBまとめ店舗
-	        ORDER BY M.ChangeDate desc
-	        ;
+            SET @WebStoreCD = null;
+            SET @WebTempo = 0;
+        END
+        ELSE IF @StoreKBN = 2   --2　:WEB店
+        BEGIN
+            SET @WebTempo = 1;
+            
+            SELECT top 1 @WebStoreCD=StoreCD FROM M_Store M
+            WHERE M.ChangeDate <= convert(date,@ChangeDate)
+            AND M.DeleteFLG = 0
+            AND M.StoreKBN = 3  --3　:WEBまとめ店舗
+            ORDER BY M.ChangeDate desc
+            ;
         END
     END
     ELSE
@@ -156,11 +171,43 @@ BEGIN
         SET @WebTempo=0;
     END
     
-    --⑤inSale区分≠Nullの場合、0と1以外であれば、	
+/*    --⑤inSale区分≠Nullの場合、0と1以外であれば、	
 	IF ISNULL(@SaleKbn,0) NOT IN (0,1)
 		RETURN;
-		
-
+*/		
+	--Sale期間の判断
+    SET @iCnt = (SELECT COUNT(*) FROM M_Sale
+                Where StoreCD = @StoreCD
+                AND StartDate <= convert(date,@ChangeDate)
+                AND EndDate >= convert(date,@ChangeDate)
+                );
+                
+    IF @iCnt = 0
+    BEGIN
+        SET @SaleKbn = 0;
+    END
+    ELSE
+    BEGIN
+        Select top 1 @SaleKbn=ISNULL(SaleFlg,0)     --SaleFlg＝１ならマスター単価、2なら割引率
+            ,@GeneralSaleRate      =GeneralSaleRate
+            ,@GeneralSaleFraction  =GeneralSaleFraction
+            ,@MemberSaleRate       =MemberSaleRate
+            ,@MemberSaleFraction   =MemberSaleFraction
+            ,@ClientSaleRate       =ClientSaleRate
+            ,@ClientSaleFraction   =ClientSaleFraction
+        From M_Sale
+        Where StoreCD = @StoreCD
+        AND StartDate <= convert(date,@ChangeDate)
+        AND EndDate >= convert(date,@ChangeDate)
+        ;
+        
+        --Sale期間でも対象外商品は通常価格
+        IF @SaleExcludedFlg = 1
+        BEGIN
+        	SET @SaleKbn = 0;
+        END
+    END
+    
     --【税率を求める】
     Select top 1 @TaxRate1=TaxRate1,@TaxRate2=TaxRate2,@FractionKBN=FractionKBN
     From M_SalesTax
@@ -209,7 +256,7 @@ BEGIN
     
     WHERE MI.StoreCD = REPLICATE('0',4)
     AND MI.TankaCD = REPLICATE('0',13)
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -243,7 +290,7 @@ BEGIN
     
     WHERE MI.StoreCD = @WebStoreCD
     AND MI.TankaCD = REPLICATE('0',13)
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -277,7 +324,7 @@ BEGIN
     
     WHERE MI.StoreCD = @StoreCD
     AND MI.TankaCD = REPLICATE('0',13)
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -311,7 +358,7 @@ BEGIN
     
     WHERE MI.StoreCD = REPLICATE('0',4)
     AND MI.TankaCD = @TankaCD
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -345,7 +392,7 @@ BEGIN
     
     WHERE MI.StoreCD = @WebStoreCD
     AND MI.TankaCD = @TankaCD
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -379,7 +426,7 @@ BEGIN
     
     WHERE MI.StoreCD = @StoreCD
     AND MI.TankaCD = @TankaCD
-    AND MI.SKUCD = @SKUCD
+    AND MI.AdminNo = @AdminNo
     AND MI.ChangeDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidStartDate <= CONVERT(DATE, @ChangeDate)
 --    AND MI.ValidEndDate >= CONVERT(DATE, @ChangeDate)
@@ -644,35 +691,70 @@ BEGIN
     END
     ELSE    --●Web店舗＝0の場合
     BEGIN
-        IF @CustomerKBN = 3 --●CustomerKBN＝3の場合
+        IF @SaleKbn = 0     --←Saleしていない
         BEGIN
-    
-            SET @ZeikomiTanka = @ClientPriceWithTax;
-            SET @ZeinukiTanka = @ClientPriceOutTax;
-        END
-        
-        ELSE --●CustomerKBN<>3の場合
-        BEGIN
-            IF @SaleKbn = 1
-            BEGIN   
-                SET @ZeikomiTanka = @SalePriceWithTax;
-                SET @ZeinukiTanka = @SalePriceOutTax;
-            END
-            ELSE IF @SaleKbn = 0
+            IF @CustomerKBN = 3 --●CustomerKBN＝3の場合
             BEGIN
-                IF @CustomerKBN = 1 --●CustomerKBN＝1の場合
-                BEGIN
-                    SET @ZeikomiTanka = @MemberPriceWithTax;
-                    SET @ZeinukiTanka = @MemberPriceOutTax;
-                END
-                ELSE IF @CustomerKBN = 2 --●CustomerKBN＝2の場合
-                BEGIN
-                    SET @ZeikomiTanka = @GeneralPriceWithTax;
-                    SET @ZeinukiTanka = @GeneralPriceOutTax;
-                END
-                
+                SET @ZeikomiTanka = @ClientPriceWithTax;    --税込外商単価
+                SET @ZeinukiTanka = @ClientPriceOutTax;     --税抜外商単価
+            END
+            ELSE IF @CustomerKBN = 2 --●CustomerKBN＝2の場合
+            BEGIN
+                SET @ZeikomiTanka = @GeneralPriceWithTax;   --税込一般単価
+                SET @ZeinukiTanka = @GeneralPriceOutTax;    --税抜一般単価
+            END
+            ELSE IF @CustomerKBN = 1 --●CustomerKBN＝1の場合
+            BEGIN
+                SET @ZeikomiTanka = @MemberPriceWithTax;    --税込会員単価
+                SET @ZeinukiTanka = @MemberPriceOutTax;     --税抜会員単価
             END
         END
+        ELSE IF @SaleKbn = 1	--←マスター額でのSale
+        BEGIN
+            SET @ZeikomiTanka = @SalePriceWithTax;
+            SET @ZeinukiTanka = @SalePriceOutTax;
+        END
+        ELSE IF @SaleKbn = 2	--←マスター割引率でのSale
+        BEGIN        	
+            IF @CustomerKBN = 3 --●CustomerKBN＝3の場合
+            BEGIN
+                SET @PriceWithTax = @ClientPriceWithTax;    --税込外商単価
+                SET @PriceWithoutTax = @ClientPriceOutTax;      --税抜外商単価
+                SET @SaleRate = @ClientSaleRate;
+                SET @FractionKBN = @ClientSaleFraction;
+
+            END
+            ELSE IF @CustomerKBN = 2 --●CustomerKBN＝2の場合
+            BEGIN
+                SET @PriceWithTax = @GeneralPriceWithTax;   --税込一般単価
+                SET @PriceWithoutTax = @GeneralPriceOutTax;    --税抜一般単価
+                SET @SaleRate = @GeneralSaleRate;
+                SET @FractionKBN = @GeneralSaleFraction;
+            END
+            ELSE IF @CustomerKBN = 1 --●CustomerKBN＝1の場合
+            BEGIN
+                SET @PriceWithTax = @MemberPriceWithTax;    --税込会員単価
+                SET @PriceWithoutTax = @MemberPriceOutTax;     --税抜会員単価
+                SET @SaleRate = @MemberSaleRate;
+                SET @FractionKBN = @MemberSaleFraction;
+            END
+            
+            IF @FractionKBN = 1 --＝1なら、計算した税額の小数点以下を切り捨て
+            BEGIN
+                SET @ZeikomiTanka = FLOOR(@PriceWithTax * (100-@SaleRate)/100);
+                SET @ZeinukiTanka = FLOOR(@PriceWithoutTax * (100-@SaleRate)/100);
+            END
+            ELSE IF @FractionKBN = 2    --＝2なら、計算した税額の小数点以下を四捨五入
+            BEGIN
+                SET @ZeikomiTanka = ROUND(@PriceWithTax * (100-@SaleRate)/100, 0);
+                SET @ZeinukiTanka = ROUND(@PriceWithoutTax * (100-@SaleRate)/100, 0);
+            END
+            ELSE IF @FractionKBN = 3    --＝3なら、計算した税額の小数点以下を切り上げ
+            BEGIN
+                SET @ZeikomiTanka = CEILING(@PriceWithTax * (100-@SaleRate)/100);
+                SET @ZeinukiTanka = CEILING(@PriceWithoutTax * (100-@SaleRate)/100);
+	        END
+	    END
     END
     
     SET @Zei = @ZeikomiTanka - @ZeinukiTanka;
@@ -680,7 +762,7 @@ BEGIN
 
 	SELECT @GenkaTanka=LastCost
 	FROM M_SKULastCost
-	WHERE SKUCD = @SKUCD
+	WHERE AdminNo = @AdminNo
 	;
 	
 --END TRY
@@ -690,4 +772,3 @@ BEGIN
 --END CATCH
 
 END
-

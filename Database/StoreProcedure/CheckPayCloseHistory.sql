@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[CheckPayCloseHistory]
+CREATE PROCEDURE CheckPayCloseHistory
     (@PayeeCD varchar(11),
      @PayCloseDate varchar(10)
     )AS
@@ -33,5 +33,4 @@ BEGIN
     ;
 
 END
-
 

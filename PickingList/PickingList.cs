@@ -53,8 +53,9 @@ namespace PickingList
         }
         public void BindData()
         {
-            txtDateTo1.Text = todayDate;
-            cboSouko.Bind(todayDate);
+            string ymd = bbl.GetDate();
+            txtDateTo1.Text = ymd;
+            cboSouko.Bind(ymd);
             cboSouko.SelectedValue = SoukoCD;
 
         }

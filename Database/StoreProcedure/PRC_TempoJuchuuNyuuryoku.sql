@@ -7,6 +7,46 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
+--CREATE TYPE T_Juchuu AS TABLE
+--    (
+--    [JuchuuRows] [int],
+--    [DisplayRows] [int],
+--    [SiteJuchuuRows] [int] ,
+--    [NotPrintFLG] [tinyint] ,
+--    [AddJuchuuRows] [int],
+--    [NotOrderFLG] [tinyint] ,
+--    [DirectFLG] [tinyint] ,
+--    [SKUNO] [int] ,
+--    [SKUCD] [varchar](30) ,
+--    [JanCD] [varchar](13) ,
+--    [SKUName] [varchar](80) ,
+--    [ColorName] [varchar](20) ,
+--    [SizeName] [varchar](20) ,
+--    [SetKBN] [tinyint] ,
+----  [SetRows] [tinyint] ,
+--    [JuchuuSuu] [int] ,
+--    [JuchuuUnitPrice] [money] ,
+--    [TaniCD] [varchar](2) ,
+--    [JuchuuGaku] [money] ,
+--    [JuchuuHontaiGaku] [money] ,
+--    [JuchuuTax] [money] ,
+--    [JuchuuTaxRitsu] [int] ,
+--    [CostUnitPrice] [money] ,
+--    [CostGaku] [money] ,
+--    [ProfitGaku] [money] ,
+--    [SoukoCD] [varchar](6) ,
+--    [VendorCD] [varchar](10) ,
+--    [ArrivePlanDate] [date] ,
+--    [CommentOutStore] [varchar](80) ,
+--    [CommentInStore] [varchar](80) ,
+--    [IndividualClientName] [varchar](80) ,
+--    [ZaikoKBN] [tinyint] ,
+--    [TemporaryNO] [varchar](11) ,	--仮引当番号
+--    [UpdateFlg][tinyint]
+--    )
+--GO
+
 Create PROCEDURE PRC_TempoJuchuuNyuuryoku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
     @JuchuuNO   varchar(11),
@@ -1157,4 +1197,3 @@ BEGIN
 
 END
 
-GO

@@ -147,13 +147,13 @@ BEGIN
 		GROUP BY W.AdminNo, W.ChangeDate
     ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
 	
-    INNER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
-    INNER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
+    LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
+    LEFT OUTER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
         ON MMI.AdminNO = MI.AdminNO AND MMI.ChangeDate = MI.ChangeDate AND MMI.SEQ = MI.SEQ
     INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
         FROM M_SKU M
-        INNER JOIN M_SKUInfo MI ON MI.AdminNO = M.AdminNO AND MI.ChangeDate = M.ChangeDate
-        INNER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
+        LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = M.AdminNO AND MI.ChangeDate = M.ChangeDate
+        LEFT OUTER JOIN (SELECT MI.AdminNO,MI.ChangeDate,MAX(MI.SEQ) AS SEQ FROM M_SKUInfo MI GROUP BY MI.AdminNO,MI.ChangeDate) AS MMI
             ON MMI.AdminNO = MI.AdminNO AND MMI.ChangeDate = MI.ChangeDate AND MMI.SEQ = MI.SEQ
         WHERE M.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE M.JanCD END)
         AND M.SKUCD = (CASE WHEN @SKUCD <> '' THEN @SKUCD ELSE M.SKUCD END)
@@ -192,7 +192,7 @@ BEGIN
     AND MS.DeleteFlg = 0
     ;
     
-    IF @TagName1 <>'' 
+    IF ISNULL(@TagName1,'') <>'' 
     BEGIN
     	UPDATE #TableForSearchProduct
         SET Check4 = 1
@@ -200,7 +200,7 @@ BEGIN
         ;
     END
 
-    IF @TagName2 <>'' 
+    IF ISNULL(@TagName2,'') <>'' 
     BEGIN
     	UPDATE #TableForSearchProduct
         SET Check4 = 1
@@ -208,7 +208,7 @@ BEGIN
         ;
     END
 
-    IF @TagName3 <>'' 
+    IF ISNULL(@TagName3,'') <>'' 
     BEGIN
     	UPDATE #TableForSearchProduct
         SET Check4 = 1
@@ -216,7 +216,7 @@ BEGIN
         ;
     END
 
-    IF @TagName4 <>'' 
+    IF ISNULL(@TagName4,'') <>'' 
     BEGIN
     	UPDATE #TableForSearchProduct
         SET Check4 = 1
@@ -224,7 +224,7 @@ BEGIN
         ;
     END
 
-    IF @TagName5 <>'' 
+    IF ISNULL(@TagName5,'') <>'' 
     BEGIN
     	UPDATE #TableForSearchProduct
         SET Check4 = 1
@@ -232,7 +232,7 @@ BEGIN
         ;
     END
     
-    IF @TagName1 <>'' OR @TagName2 <>'' OR @TagName3 <>'' OR @TagName4 <>'' OR @TagName5 <>''
+    IF ISNULL(@TagName1,'') <>'' OR ISNULL(@TagName2,'') <>'' OR ISNULL(@TagName3,'') <>'' OR ISNULL(@TagName4,'') <>'' OR ISNULL(@TagName5,'') <>''
     BEGIN
     	DELETE FROM #TableForSearchProduct
     	WHERE Check4 = 0
@@ -481,7 +481,7 @@ BEGIN
                     )AS W  
                 GROUP BY W.AdminNo, W.ChangeDate
             ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
-            INNER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
+            LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
             INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
                 FROM M_SKU M
                 WHERE M.ChangeDate <= CONVERT(DATE, @ChangeDate)
@@ -577,7 +577,7 @@ BEGIN
                     )AS W  
                 GROUP BY W.AdminNo, W.ChangeDate
             ) AS W ON W.AdminNo = MS.AdminNo AND W.ChangeDate = MS.ChangeDate
-            INNER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
+            LEFT OUTER JOIN M_SKUInfo MI ON MI.AdminNO = MS.AdminNO AND MI.ChangeDate = MS.ChangeDate
             INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
                 FROM M_SKU M
                 WHERE M.ChangeDate <= CONVERT(DATE, @ChangeDate)

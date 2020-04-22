@@ -35,11 +35,10 @@ namespace MasterTouroku_ShiireKakeritsu
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             ckM_Button1.Text = "取込(F10)";
-            cbo_Year.Bind(string.Empty, "2");
-            cbo_Year.SelectedValue = StoreCD;
-            cbo_Year1.Bind(string.Empty, "2");
-            cbo_Season.Bind(string.Empty, "2");
-            cbo_Season1.Bind(string.Empty, "2");
+            cbo_Year.Bind(string.Empty);
+            cbo_Year1.Bind(string.Empty);
+            cbo_Season.Bind(string.Empty);
+            cbo_Season1.Bind(string.Empty);
             SetRequiredField();
             scSupplierCD.SetFocus(1);
         }
