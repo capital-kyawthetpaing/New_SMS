@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[D_Delivery_SelectAll]
+CREATE PROCEDURE D_Delivery_SelectAll
     (
     @ArrivalDateFrom  varchar(10),
     @ArrivalDateTo  varchar(10),
@@ -132,5 +132,4 @@ BEGIN
       ;
 
 END
-
 

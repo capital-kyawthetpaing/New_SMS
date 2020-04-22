@@ -8,8 +8,38 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
+--CREATE TYPE T_Shiire AS TABLE
+--    (
+--    [PurchaseRows] [int],
+--    [DisplayRows] [int],
+    
+--    [SKUCD] [varchar](30) ,
+--    [AdminNO] [int] ,
+--    [JanCD] [varchar](13) ,
+--    [ItemName] [varchar](80) NULL,
+--    [ColorName] [varchar](20) ,
+--    [SizeName] [varchar](20) ,
+    
+--    [PurchaseSu] [int] ,
+--    [OldPurchaseSu] [int] ,
+--    [TaniCD] [varchar](2) ,
+--    [TaniName] [varchar](10) ,
+--    [PurchaserUnitPrice] [money] ,
+--    [CalculationGaku] [money] ,
+--    [AdjustmentGaku] [money] ,
+--    [PurchaseGaku] [money] ,
+--    [PurchaseTax] [money] ,
+--    [TaxRitsu] [int],
+--    [CommentOutStore] [varchar](80) ,
+--    [CommentInStore] [varchar](80) ,
+--    [WarehousingNO] [varchar](11) ,
+--    [StockNO] [varchar](11) ,
+--    [ReserveNO][varchar](11) ,
+--    [UpdateFlg][tinyint]		--新規時：0、修正：1、行削除：2
+--    )
+--GO
 
-CREATE PROCEDURE [dbo].[PRC_ShiireNyuuryoku]
+CREATE PROCEDURE PRC_ShiireNyuuryoku
     (@OperateMode    int,                 -- 処理区分（1:新規 2:修正 3:削除）
     @PurchaseNO   varchar(11),
     @StoreCD   varchar(4),
@@ -196,8 +226,9 @@ BEGIN
            ,@SYSDATETIME
            ,NULL                  
            ,NULL
-           );               
-
+           );         
+                 
+/*
 		--テーブル転送仕様Ｂ
         INSERT INTO [D_PurchaseDetails]
                    ([PurchaseNO]
@@ -229,6 +260,7 @@ BEGIN
                    ,[OrderUnitPrice]
                    ,[OrderNO]
                    ,[OrderRows]
+                   ,[StockNO]
                    ,[DifferenceFlg]
                    ,[DeliveryNo]
 
@@ -265,6 +297,7 @@ BEGIN
                    ,0	--OrderUnitPrice
                    ,NULL	--OrderNO
                    ,0	--OrderRows
+                   ,@StockNO
                    ,1	--DifferenceFlg
                    ,NULL	--DeliveryNo
                    
@@ -276,7 +309,7 @@ BEGIN
               FROM @Table tbl
               WHERE tbl.UpdateFlg = 0
               ;
-
+*/
         --明細数分Insert★
         --カーソルオープン
         OPEN CUR_TABLE;
@@ -371,7 +404,88 @@ BEGIN
               FROM @Table tbl
               WHERE tbl.PurchaseRows = @tblPurchaseRows
               ;
-          
+            --テーブル転送仕様Ｂ
+            INSERT INTO [D_PurchaseDetails]
+                   ([PurchaseNO]
+                   ,[PurchaseRows]
+                   ,[DisplayRows]
+                   ,[ArrivalNO]
+                   ,[SKUCD]
+                   ,[AdminNO]
+                   ,[JanCD]
+                   ,[ItemName]
+                   ,[ColorName]
+                   ,[SizeName]
+                   ,[Remark]
+                   ,[PurchaseSu]
+                   ,[TaniCD]
+                   ,[TaniName]
+                   ,[PurchaserUnitPrice]
+                   ,[CalculationGaku]
+                   ,[AdjustmentGaku]
+                   ,[PurchaseGaku]
+                   ,[PurchaseTax]
+                   ,[TotalPurchaseGaku]
+                   ,[CurrencyCD]
+                   ,[TaxRitsu]
+                   ,[CommentOutStore]
+                   ,[CommentInStore]
+                   ,[ReturnNO]
+                   ,[ReturnRows]
+                   ,[OrderUnitPrice]
+                   ,[OrderNO]
+                   ,[OrderRows]
+                   ,[StockNO]
+                   ,[DifferenceFlg]
+                   ,[DeliveryNo]
+
+                   ,[InsertOperator]
+                   ,[InsertDateTime]
+                   ,[UpdateOperator]
+                   ,[UpdateDateTime])
+             SELECT @PurchaseNO                         
+                   ,tbl.PurchaseRows                       
+                   ,tbl.DisplayRows 
+                   ,NULL	--ArrivalNO   
+                   ,tbl.SKUCD
+                   ,tbl.AdminNO
+                   ,tbl.JanCD
+                   ,tbl.ItemName
+                   ,tbl.ColorName
+                   ,tbl.SizeName
+                   ,NULL	--Remark
+                   ,tbl.PurchaseSu
+                   ,tbl.TaniCD
+                   ,tbl.TaniName
+                   ,tbl.PurchaserUnitPrice
+                   ,tbl.CalculationGaku
+                   ,tbl.AdjustmentGaku
+                   ,tbl.PurchaseGaku
+                   ,tbl.PurchaseTax
+                   ,tbl.PurchaseGaku + tbl.PurchaseTax --TotalPurchaseGaku
+                   ,(SELECT M.CurrencyCD FROM M_Control AS M WHERE M.MainKey = 1)	--CurrencyCD
+                   ,tbl.TaxRitsu
+                   ,tbl.CommentOutStore
+                   ,tbl.CommentInStore
+                   ,NULL	--ReturnNO
+                   ,NULL	--ReturnRows
+                   ,0	--OrderUnitPrice
+                   ,NULL	--OrderNO
+                   ,0	--OrderRows
+                   ,@StockNO
+                   ,1	--DifferenceFlg
+                   ,NULL	--DeliveryNo
+                   
+                   ,@Operator  
+                   ,@SYSDATETIME
+                   ,@Operator  
+                   ,@SYSDATETIME
+
+              FROM @Table tbl
+              WHERE tbl.UpdateFlg = 0
+              AND tbl.PurchaseRows = @tblPurchaseRows
+              ;
+
             --【D_Warehousing】追加更新（Insert)  Table転送仕様Ｇ
             INSERT INTO [D_Warehousing]
                ([WarehousingDate]
@@ -508,6 +622,7 @@ BEGIN
                ,[TaxRitsu]           = tbl.TaxRitsu
                ,[CommentOutStore]    = tbl.CommentOutStore
                ,[CommentInStore]     = tbl.CommentInStore         
+              -- ,[StockNO]            = @StockNO	変更なし
                ,[UpdateOperator]     =  @Operator  
                ,[UpdateDateTime]     =  @SYSDATETIME
         FROM D_PurchaseDetails
@@ -517,6 +632,7 @@ BEGIN
          AND tbl.UpdateFlg = 1
          ;
         
+        /*
         --追加行
         INSERT INTO [D_PurchaseDetails]
                    ([PurchaseNO]
@@ -548,6 +664,7 @@ BEGIN
                    ,[OrderUnitPrice]
                    ,[OrderNO]
                    ,[OrderRows]
+                   ,[StockNO]
                    ,[DifferenceFlg]
                    ,[DeliveryNo]
 
@@ -584,6 +701,7 @@ BEGIN
                    ,0   --OrderUnitPrice
                    ,NULL    --OrderNO
                    ,0   --OrderRows
+                   ,@StockNO
                    ,1   --DifferenceFlg
                    ,NULL    --DeliveryNo
                    
@@ -595,7 +713,7 @@ BEGIN
               FROM @Table tbl
               WHERE tbl.UpdateFlg = 0
               ;
-        
+        */
         --【D_PayPlan】Update　Table転送仕様Ｅ 支払予定
         UPDATE [D_PayPlan]
            SET 
@@ -954,7 +1072,90 @@ BEGIN
                   FROM @Table tbl
                   WHERE tbl.PurchaseRows = @tblPurchaseRows
                   ;
-              
+
+        
+                --追加行
+                INSERT INTO [D_PurchaseDetails]
+                           ([PurchaseNO]
+                           ,[PurchaseRows]
+                           ,[DisplayRows]
+                           ,[ArrivalNO]
+                           ,[SKUCD]
+                           ,[AdminNO]
+                           ,[JanCD]
+                           ,[ItemName]
+                           ,[ColorName]
+                           ,[SizeName]
+                           ,[Remark]
+                           ,[PurchaseSu]
+                           ,[TaniCD]
+                           ,[TaniName]
+                           ,[PurchaserUnitPrice]
+                           ,[CalculationGaku]
+                           ,[AdjustmentGaku]
+                           ,[PurchaseGaku]
+                           ,[PurchaseTax]
+                           ,[TotalPurchaseGaku]
+                           ,[CurrencyCD]
+                           ,[TaxRitsu]
+                           ,[CommentOutStore]
+                           ,[CommentInStore]
+                           ,[ReturnNO]
+                           ,[ReturnRows]
+                           ,[OrderUnitPrice]
+                           ,[OrderNO]
+                           ,[OrderRows]
+                           ,[StockNO]
+                           ,[DifferenceFlg]
+                           ,[DeliveryNo]
+
+                           ,[InsertOperator]
+                           ,[InsertDateTime]
+                           ,[UpdateOperator]
+                           ,[UpdateDateTime])
+                     SELECT @PurchaseNO                         
+                           ,tbl.PurchaseRows                       
+                           ,tbl.DisplayRows 
+                           ,NULL    --ArrivalNO   
+                           ,tbl.SKUCD
+                           ,tbl.AdminNO
+                           ,tbl.JanCD
+                           ,tbl.ItemName
+                           ,tbl.ColorName
+                           ,tbl.SizeName
+                           ,NULL    --Remark
+                           ,tbl.PurchaseSu
+                           ,tbl.TaniCD
+                           ,tbl.TaniName
+                           ,tbl.PurchaserUnitPrice
+                           ,tbl.CalculationGaku
+                           ,tbl.AdjustmentGaku
+                           ,tbl.PurchaseGaku
+                           ,tbl.PurchaseTax
+                           ,tbl.PurchaseGaku + tbl.PurchaseTax --TotalPurchaseGaku
+                           ,(SELECT M.CurrencyCD FROM M_Control AS M WHERE M.MainKey = 1)   --CurrencyCD
+                           ,tbl.TaxRitsu
+                           ,tbl.CommentOutStore
+                           ,tbl.CommentInStore
+                           ,NULL    --ReturnNO
+                           ,NULL    --ReturnRows
+                           ,0   --OrderUnitPrice
+                           ,NULL    --OrderNO
+                           ,0   --OrderRows
+                           ,@StockNO
+                           ,1   --DifferenceFlg
+                           ,NULL    --DeliveryNo
+                           
+                           ,@Operator  
+                           ,@SYSDATETIME
+                           ,@Operator  
+                           ,@SYSDATETIME
+
+                      FROM @Table tbl
+                      WHERE tbl.UpdateFlg = 0
+                      AND tbl.PurchaseRows = @tblPurchaseRows
+                      ;
+
                 --【D_Warehousing】追加更新（Insert)  Table転送仕様Ｇ
                 INSERT INTO [D_Warehousing]
                    ([WarehousingDate]
@@ -1044,9 +1245,9 @@ BEGIN
     ELSE IF @OperateMode = 3 --削除--
     BEGIN
         SET @OperateModeNm = '削除';
-    	
-    	--【D_PurchaseHistory】Insert　Table転送仕様Ｃ　赤
-    	EXEC INSERT_D_PurchaseHistory
+        
+        --【D_PurchaseHistory】Insert　Table転送仕様Ｃ　赤
+        EXEC INSERT_D_PurchaseHistory
             @PurchaseNO    -- varchar(11),
             ,2  --@RecoredKBN
             ,@SYSDATETIME   --  datetime,
@@ -1261,5 +1462,4 @@ BEGIN
   return @W_ERR;
 
 END
-
 

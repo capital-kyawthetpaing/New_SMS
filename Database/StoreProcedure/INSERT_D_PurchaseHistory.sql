@@ -8,7 +8,8 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 
-CREATE PROCEDURE [dbo].[INSERT_D_PurchaseHistory]
+
+CREATE PROCEDURE [INSERT_D_PurchaseHistory]
 (
     @PurchaseNO varchar(11),
     @RecordKBN tinyint,
@@ -131,6 +132,7 @@ BEGIN
            ,[OrderUnitPrice]
            ,[OrderNO]
            ,[OrderRows]
+           ,[StockNO]
            ,[DifferenceFlg]
            ,[DeliveryNo]
            ,[InsertOperator]
@@ -172,6 +174,7 @@ BEGIN
            ,DP.OrderUnitPrice
            ,DP.OrderNO
            ,DP.OrderRows
+           ,DP.StockNO
            ,DP.DifferenceFlg
            ,DP.DeliveryNo
            ,DP.InsertOperator
@@ -181,12 +184,11 @@ BEGIN
            ,DP.DeleteOperator
            ,DP.DeleteDateTime
 
-	FROM D_PurchaseDetails AS DP
-	WHERE DP.PurchaseNO = @PurchaseNO
-	AND DP.DeleteDateTime IS NULL;
+    FROM D_PurchaseDetails AS DP
+    WHERE DP.PurchaseNO = @PurchaseNO
+    AND DP.DeleteDateTime IS NULL;
 
 
 END
-
 
 

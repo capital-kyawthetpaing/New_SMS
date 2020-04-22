@@ -57,7 +57,7 @@ BEGIN
 	begin
 		Delete M_ZipCode 
 
-		Insert into M_ZipCode
+		Insert into M_ZipCode(ZipCD1,ZipCD2,Address1,Address2,InsertOperator,InsertDateTime,UpdateOperator,UpdateDateTime)
 		select *,
 		@Operator,
 		@currentDate,
@@ -75,7 +75,7 @@ BEGIN
 		AND ZipCD2 >= @Zip2From
 		AND ZipCD2 <= @Zip2To
 
-		Insert into M_ZipCode
+		Insert into M_ZipCode(ZipCD1,ZipCD2,Address1,Address2,InsertOperator,InsertDateTime,UpdateOperator,UpdateDateTime)
 		Select *,
 		@Operator,
 		@currentDate,

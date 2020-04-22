@@ -70,9 +70,9 @@ BEGIN
 	if @CheckType = '22'
 		select MenuName,MenuID from M_Menu Order By MenuID
 	if @CheckType = '23'
-		select AuthorizationsName,AuthorizationsCD from M_Authorizations where ChangeDate <= GETDATE() Order By AuthorizationsCD
+		select AuthorizationsName,AuthorizationsCD from F_Authorizations(GetDate()) Order By AuthorizationsCD
 	if @CheckType = '24'
-		select StoreAuthorizationsName,StoreAuthorizationsCD,StoreCD from M_StoreAuthorizations where ChangeDate <= GETDATE() Order By StoreAuthorizationsCD
+		select StoreAuthorizationsName,StoreAuthorizationsCD,StoreCD from F_StoreAuthorizations(GetDate()) Order By StoreAuthorizationsCD
 	if @CheckType = '25'
 		select StoreName,StoreCD from M_Store where ChangeDate<= @ChangeDate and (StoreKBN =2 or StoreKBN  = 3)
 	if @CheckType = '26'

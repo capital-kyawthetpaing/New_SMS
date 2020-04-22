@@ -148,6 +148,7 @@
     <Content Include="StoreProcedure\D_Pay_Insert.sql" />
     <Content Include="StoreProcedure\D_Pay_LargePayNoSelect.sql" />
     <Content Include="StoreProcedure\D_Pay_PayNoSelect.sql" />
+    <Content Include="StoreProcedure\D_Pay_Search.sql" />
     <Content Include="StoreProcedure\D_Pay_Select1.sql" />
     <Content Include="StoreProcedure\D_Pay_Select2.sql" />
     <Content Include="StoreProcedure\D_Pay_Select3.sql" />
@@ -262,6 +263,7 @@
     <Content Include="StoreProcedure\M_Customer_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_SelectAll.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_Select.sql" />
+    <Content Include="StoreProcedure\M_DenominationKBN_SelectAll.sql" />
     <Content Include="StoreProcedure\M_Ginkou_Delete.sql" />
     <Content Include="StoreProcedure\M_Ginkou_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Ginkou_Select.sql" />
@@ -284,6 +286,8 @@
     <Content Include="StoreProcedure\M_Location_InsertUpdate.sql" />
     <Content Include="StoreProcedure\M_Location_Search.sql" />
     <Content Include="StoreProcedure\M_Location_Select.sql" />
+    <Content Include="StoreProcedure\M_Location_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_Location_SelectData.sql" />
     <Content Include="StoreProcedure\M_Location_SelectForTanaoroshi.sql" />
     <Content Include="StoreProcedure\M_MailPattern_Select.sql" />
     <Content Include="StoreProcedure\M_MailPattern_SelectAll.sql" />
@@ -336,6 +340,7 @@
     <Content Include="StoreProcedure\M_Souko_Bind.sql" />
     <Content Include="StoreProcedure\M_Souko_BindAll.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForNyuuka.sql" />
+    <Content Include="StoreProcedure\M_Souko_BindForShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForTanaoroshi.sql" />
     <Content Include="StoreProcedure\M_Souko_Delete.sql" />
     <Content Include="StoreProcedure\M_Souko_InitSelect.sql" />
@@ -344,6 +349,7 @@
     <Content Include="StoreProcedure\M_Souko_Search.sql" />
     <Content Include="StoreProcedure\M_Souko_Select.sql" />
     <Content Include="StoreProcedure\M_Souko_SelectForNyuuka.sql" />
+    <Content Include="StoreProcedure\M_Souko_ZipcodeAddressSelect.sql" />
     <Content Include="StoreProcedure\M_StaffAccess.sql" />
     <Content Include="StoreProcedure\M_Staff_Delete.sql" />
     <Content Include="StoreProcedure\M_Staff_Display.sql" />
@@ -375,6 +381,7 @@
     <Content Include="StoreProcedure\M_Store_Select.sql" />
     <Content Include="StoreProcedure\M_Store_SelectAll.sql" />
     <Content Include="StoreProcedure\M_Store_SelectByApiKey.sql" />
+    <Content Include="StoreProcedure\M_Store_SelectByKbn.sql" />
     <Content Include="StoreProcedure\M_Store_SelectData.sql" />
     <Content Include="StoreProcedure\M_TanaDate_Select.sql" />
     <Content Include="StoreProcedure\M_TankaCD_Select.sql" />
@@ -392,7 +399,9 @@
     <Content Include="StoreProcedure\M_Vendor_Search.sql" />
     <Content Include="StoreProcedure\M_Vendor_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
+    <Content Include="StoreProcedure\M_Vendor_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_Vendor_Staff_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendor_ZipCodeSelect.sql" />
     <Content Include="StoreProcedure\M_ZipCode_Select.sql" />
     <Content Include="StoreProcedure\M_ZipCode_Update.sql" />
     <Content Include="StoreProcedure\M_ZipCode_YuubinBangou_Select.sql" />

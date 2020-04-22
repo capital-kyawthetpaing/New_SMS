@@ -1,5 +1,5 @@
  BEGIN TRY 
- Drop Procedure dbo.[M_Vendor_Staff_Select]
+ Drop Procedure dbo.[M_Vendor_ZipCodeSelect]
 END try
 BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
@@ -12,10 +12,13 @@ GO
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
 -- =============================================
-CREATE PROCEDURE [dbo].[M_Vendor_Staff_Select]
+CREATE PROCEDURE [dbo].[M_Vendor_ZipCodeSelect]
 	-- Add the parameters for the stored procedure here
-	@StaffCD varchar(10),
-    @ChangeDate varchar(10)
+	@VendorCD as varchar(13),
+	@ChangeDate as date,
+	@ZipCode1 as varchar(3),
+	@ZipCode2 as varchar(4)
+
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -23,15 +26,8 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	Select
-	 ms.StaffCD,
-	 ms.StaffName,
-	 convert(varchar(10),ms.LeaveDate,111) as LeaveDate,
-	 ms.DeleteFlg 
-	 from F_Staff(cast(@ChangeDate as varchar(10))) ms
-	 --From M_Staff ms 
-	--inner join (select * from F_Staff(cast(@ChangeDate as varchar(10)))) fs on ms.StaffCD = fs.StaffCD
-	Where ms.StaffCD = @StaffCD
-	--AND ms.ChangeDate <= @ChangeDate
+	SELECT * from M_Vendor where VendorCD= @VendorCD 
+	and ChangeDate = @ChangeDate
+	and ZipCD1 = @ZipCode1 
+	and ZipCD2= @ZipCode2
 END
-
