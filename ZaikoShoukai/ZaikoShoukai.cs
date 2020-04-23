@@ -24,7 +24,7 @@ namespace ZaikoShoukai
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
         string adminno = "";
-        string  shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
+        string shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
         int type = 0;
         public  ZaikoShoukai()
         {
@@ -50,20 +50,21 @@ namespace ZaikoShoukai
         }
         private void BindCombo()
         {
+            string ymd = bbl.GetDate();
             CB_Soko.Bind(String.Empty, "");
             CB_Soko.SelectedIndex = 1;
-            CB_year.Bind(String.Empty, "");
-            CB_Season.Bind(String.Empty, "");
-            CB_ReserveCD.Bind(String.Empty, "");
-            CB_NoticesCD.Bind(String.Empty, "");
-            CB_PostageCD.Bind(String.Empty, "");
-            CB_OrderAttentionCD.Bind(String.Empty, "");
-            CB_Tagu1.Bind(String.Empty, "");
-            CB_Tagu1.Bind(String.Empty, "");
-            CB_Tagu2.Bind(string.Empty, "");
-            CB_Tagu3.Bind(string.Empty, "");
-            CB_Tagu4.Bind(string.Empty, "");
-            CB_Tagu5.Bind(string.Empty, "");
+            CB_year.Bind(ymd);
+            CB_Season.Bind(ymd);
+            CB_ReserveCD.Bind(ymd);
+            CB_NoticesCD.Bind(ymd);
+            CB_PostageCD.Bind(ymd);
+            CB_OrderAttentionCD.Bind(ymd);
+            CB_Tagu1.Bind(ymd);
+            CB_Tagu1.Bind(ymd);
+            CB_Tagu2.Bind(ymd);
+            CB_Tagu3.Bind(ymd);
+            CB_Tagu4.Bind(ymd);
+            CB_Tagu5.Bind(ymd);
         }
         private void F11()
         {
@@ -143,10 +144,10 @@ namespace ZaikoShoukai
                 ITemCD=TB_item.Text,
                 CommentInStore=TB_Bikokeyword.Text,
                 ReserveCD=CB_ReserveCD.SelectedIndex.ToString(),
-                //NoticesCD=CB_NoticesCD.SelectedValue.ToString(),
-                //PostageCD=CB_PostageCD.SelectedValue.ToString(),
-                //OrderAttentionCD=CB_OrderAttentionCD.SelectedValue.ToString(),
-                SportsCD=Sports.TxtCode.Text,
+                NoticesCD = CB_NoticesCD.SelectedIndex.ToString(),
+                PostageCD = CB_PostageCD.SelectedIndex.ToString(),
+                OrderAttentionCD = CB_OrderAttentionCD.SelectedIndex.ToString(),
+                SportsCD =Sports.TxtCode.Text,
                 InputDateFrom=TB_ShinkitorokuF.Text,
                 InputDateTo=TB_ShinkitorokuT.Text,
                UpdateDateFrom= TＢ_SaiShuhenkobiF.Text,
@@ -398,6 +399,8 @@ namespace ZaikoShoukai
                 RB_Makashohincd.Checked = false;
             }
         }
+
+       
 
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {

@@ -831,6 +831,7 @@ namespace MasterTouroku_Shiiresaki
                     DisablePanel(PanelDetail);
                     ScVendor.SearchEnable = true;
                     ScCopyVendor.SearchEnable = false;
+                    //F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
@@ -1235,22 +1236,21 @@ namespace MasterTouroku_Shiiresaki
                         mtsbl.ShowMessage("E102");
                         ScKouzaCD.SetFocus(1);
                     }
-                }
-                if (!string.IsNullOrWhiteSpace(ScKouzaCD.TxtCode.Text))                    
-                {
-                    if (!ScKouzaCD.SelectData())
+                    else
+                    {
+                        if (!ScKouzaCD.SelectData())
                         {
                             mtsbl.ShowMessage("E101");
                             ScKouzaCD.SetFocus(1);
                         }
-                    else
+                        else
                         {
                             mke = new M_Kouza_Entity();
                             mke.KouzaCD = ScKouzaCD.TxtCode.Text;
                             mke.ChangeDate = ScKouzaCD.ChangeDate;
                             DataTable dtkouza = new DataTable();
                             dtkouza = mtsbl.Kouza_Select(mke);
-                            if(dtkouza.Rows.Count > 0)
+                            if (dtkouza.Rows.Count > 0)
                             {
                                 if (dtkouza.Rows[0]["DeleteFlg"].ToString() == "1")
                                 {
@@ -1261,9 +1261,10 @@ namespace MasterTouroku_Shiiresaki
                                 {
                                     ScKouzaCD.LabelText = dtkouza.Rows[0]["KouzaName"].ToString();
                                 }
-                            } 
+                            }
                         }
-                }           
+                    }
+                }       
             }
         }
 
@@ -1360,5 +1361,6 @@ namespace MasterTouroku_Shiiresaki
                 }
             }
         }      
+
     }
 }

@@ -77,10 +77,10 @@ namespace MasterTouroku_Calendar
             BindKBN(dtKBN);
             GvCalendar.DataSource = dtDay;
 
-            if (dtDay.Columns.Count < GvCalendar.Columns.Count)
+            if (dtDay.Columns.Count-1 < GvCalendar.Columns.Count-1)
             {
 
-                for (int i = GvCalendar.Columns.Count; i > dtDay.Columns.Count; i--)
+                for (int i = GvCalendar.Columns.Count-1; i > dtDay.Columns.Count-1; i--)
                 {
                     Label lbl = this.Controls.Find("lbl" + (i - 1), true)[0] as Label;
                     lbl.Text = string.Empty;
@@ -88,9 +88,9 @@ namespace MasterTouroku_Calendar
                     GvCalendar.Columns[i - 1].HeaderText = string.Empty;
                 }
             }
-            else if(dtDay.Columns.Count == GvCalendar.Columns.Count)
+            else if(dtDay.Columns.Count-1 == GvCalendar.Columns.Count-1)
             {
-                for (int i = 29; i <= dtDay.Columns.Count; i++)
+                for (int i = 29; i <= dtDay.Columns.Count-1; i++)
                 {
                     string strH = GvCalendar.Columns[i-1].HeaderText;
                     GvCalendar.Columns[i-1].HeaderText =i.ToString();
@@ -205,18 +205,15 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                //{
-                    string[] str = txtMonth.Text.ToString().Split('/');
-                    string year = str[0].ToString();
+                CreateDataTable();
+                mce = GetCalendarEntity();
+                if (mtcbl.M_Calendar_Insert_Update(mce))
+                {
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddDays(1).AddMonths(1).AddDays(-1).ToString();
                     BindGridCalendar(now.AddMonths(1));
-                //}
-                //else
-                //{
-                //    txtMonth.Focus();
-                //}
+                    txtMonth.Focus();
+                }
 
             }
 
@@ -227,17 +224,16 @@ namespace MasterTouroku_Calendar
         {
             if (!string.IsNullOrWhiteSpace(txtMonth.Text))
             {
-                //if (mtcbl.ShowMessage("Q004") == DialogResult.Yes)
-                //{
+                CreateDataTable();
+                mce = GetCalendarEntity();
+                if (mtcbl.M_Calendar_Insert_Update(mce))
+                {
+
                     now = Convert.ToDateTime(txtMonth.Text.ToString() + "/01 00:00:00");
                     lblMonth.Text = txtMonth.Text = now.AddMonths(-1).ToString();
                     BindGridCalendar(now.AddMonths(-1));
-                //}
-                //else
-                //{
-                //    txtMonth.Focus();
-                //}
-                    
+                    txtMonth.Focus();
+                }
 
             }
 
@@ -282,8 +278,9 @@ namespace MasterTouroku_Calendar
             dtSetting.Columns.Add("DayOff7", typeof(string));
             dtSetting.Columns.Add("DayOff8", typeof(string));
             dtSetting.Columns.Add("DayOff9", typeof(string));
+            dtSetting.Columns.Add("DayOff10", typeof(string));
 
-            for (int day = 0; day < dtDay.Columns.Count; day++)
+            for (int day = 0; day < dtDay.Columns.Count-1; day++)
             {
                 dtSetting.Rows.Add();
                 string dd = (day + 1).ToString().Count() == 1 ? "0" + (day + 1).ToString() : (day + 1).ToString();
@@ -299,6 +296,7 @@ namespace MasterTouroku_Calendar
                 dtSetting.Rows[day]["DayOff7"] = dtDay.Rows[7][(day + 1).ToString()].ToString();
                 dtSetting.Rows[day]["DayOff8"] = dtDay.Rows[8][(day + 1).ToString()].ToString();
                 dtSetting.Rows[day]["DayOff9"] = dtDay.Rows[9][(day + 1).ToString()].ToString();
+                dtSetting.Rows[day]["DayOff10"] = dtDay.Rows[10][(day + 1).ToString()].ToString();
             }
 
         }
@@ -348,5 +346,41 @@ namespace MasterTouroku_Calendar
         }
 
         #endregion
+
+        private void GvCalendar_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                    {
+                        DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                        GvCalendar.CancelEdit();
+
+                    }
+
+                }
+
+            }
+        }
+
+        private void GvCalendar_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            {
+                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                {
+                    if (GvCalendar.Rows[e.RowIndex].Cells["colFlag"].Value.ToString() == "0")
+                    {
+                        DataGridViewCheckBoxCell chk1 = GvCalendar.Rows[e.RowIndex].Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                        GvCalendar.CancelEdit();
+
+                    }
+
+                }
+
+            }
+        }
     }
 }

@@ -30,7 +30,6 @@ namespace MasterTouroku_Program
             InProgramID = Application.ProductName;
 
             SetFunctionLabel(EProMode.MENTE);
-
             StartProgram();
             SetRequireField();
             
@@ -147,6 +146,7 @@ namespace MasterTouroku_Program
                             btnDisplay.Enabled = false;
                             F11Enable = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
+                            DisplayData();
                             txtProgramName.Focus();
                         }
                         break;
@@ -327,22 +327,6 @@ namespace MasterTouroku_Program
                        
                         else
                         {
-                            //if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
-                            //{
-                            //    mpe.ProgramID= scProgramCopy.Code;
-                            //    DataTable dtcopyprogram = new DataTable();
-                            //    dtcopyprogram = mpbl.M_Program_Select(mpe);
-                            //    if (dtcopyprogram.Rows.Count > 0)
-                            //    {
-                            //        txtProgramName.Text = dtcopyprogram.Rows[0]["ProgramName"].ToString();
-                            //    }
-                            //    else
-                            //    {
-                            //        mpbl.ShowMessage("E133");
-                            //        scProgramCopy.SetFocus(1);
-                            //        return false;
-                            //    }
-                            //}
                             if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
                             {
                                 mpe.Program_ID = scProgramCopy.Code;
