@@ -585,38 +585,29 @@ namespace MasterTouroku_Souko
             return true;
         }
         private void SetAddress()
+
         {
             if (!string.IsNullOrWhiteSpace(txtZipCD1.Text) && !string.IsNullOrWhiteSpace(txtZipCD2.Text))
             {
                 mtsbl = new MasterTouroku_Souko_BL();
 
-                if (OperationMode == EOperationMode.UPDATE && (z1 == txtZipCD1.Text && z2 == txtZipCD2.Text))
+                if (OperationMode == EOperationMode.UPDATE)
                 {
-                    mse = new M_Souko_Entity();
-                    mse.ZipCD1 = txtZipCD1.Text;
-                    mse.ZipCD2 = txtZipCD2.Text;
-                    mse.SoukoCD = ScSoukoCD.Code;
-                    mse.ChangeDate = ScSoukoCD.ChangeDate;
-                    DataTable dt = mtsbl.M_Souko_ZipcodeAddressSelect(mse);
-                    if (dt.Rows.Count > 0)
+                    if (z1 != txtZipCD1.Text || z2 !=txtZipCD2.Text)
                     {
-                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                        mze = new M_ZipCode_Entity();
+                        mze.ZipCD1 = txtZipCD1.Text;
+                        mze.ZipCD2 = txtZipCD2.Text;
+                        DataTable dt = mtsbl.M_ZipCode_AddressSelect(mze);
+                        if (dt.Rows.Count > 0)
+                        {
+                            TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
+                            TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                        }
                     }
+                    z1 = txtZipCD1.Text;
+                    z2 = txtZipCD2.Text;
                 }
-                else
-                {
-                    mze = new M_ZipCode_Entity();
-                    mze.ZipCD1 = txtZipCD1.Text;
-                    mze.ZipCD2 = txtZipCD2.Text;
-                    DataTable dt = mtsbl.M_ZipCode_AddressSelect(mze);
-                    if (dt.Rows.Count > 0)
-                    {
-                        TxtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                        TxtAddress2.Text = dt.Rows[0]["Address2"].ToString();
-                    }
-                }
-
             }
         }
         private void CustomEnable()
@@ -660,8 +651,8 @@ namespace MasterTouroku_Souko
                 {
                     if (!string.IsNullOrEmpty(txtZipCD1.Text))
                     {
-                         z1 = txtZipCD1.Text;
-                         z2 = txtZipCD2.Text;
+                        z1 = txtZipCD1.Text;
+                        z2 = txtZipCD2.Text;
                     }
                 }
             }
@@ -713,7 +704,7 @@ namespace MasterTouroku_Souko
                 if (!string.IsNullOrEmpty(txt.Text))
                     {
                     
-                        if (CheckZipCDEvent())
+                    if (CheckZipCDEvent())
                             SetAddress();
                     
                     //MoveNextControl(e);
