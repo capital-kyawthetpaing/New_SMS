@@ -11,6 +11,7 @@ using System.Diagnostics;
 using CsvHelper;
 using System.IO;
 using ClosedXML.Excel;
+using System.Drawing;
 
 namespace ZaikoShoukai
 {
@@ -23,8 +24,8 @@ namespace ZaikoShoukai
         D_Stock_Entity ds_Entity;
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
-        string adminno = "";
-        string shohinmei, color, size, item, skucd, brand, jancd, makercd,soukocd;
+        string adminno = "", SoukoCD = "";
+        string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate;
         int type = 0;
         public  ZaikoShoukai()
         {
@@ -92,6 +93,7 @@ namespace ZaikoShoukai
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
+                    SoukoCD = dtData.Rows[0]["倉庫CD"].ToString();
                 }
                 else
                 {
@@ -390,7 +392,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)
@@ -399,8 +400,6 @@ namespace ZaikoShoukai
                 RB_Makashohincd.Checked = false;
             }
         }
-
-       
 
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -473,16 +472,7 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                String[] data = { CB_Soko.SelectedValue.ToString(),Shiiresaki.TxtCode.Text,TB_RackNoF.Text,TB_RackNoT.Text,Maker.TxtCode.Text,SearchBrand.TxtCode.Text,
-                                   TB_Shohinmei.Text,TB_Jancd.Text,TB_Skucd.Text,TB_Bikokeyword.Text,TB_item.Text,
-                                TB_mekashohinCD.Text,CB_NoticesCD.Text,CB_OrderAttentionCD.Text,CB_PostageCD.Text,CB_ReserveCD.Text,
-                                CB_Season.Text,LB_ChangeDate.Text, CB_Tagu1.Text,CB_Tagu2.Text,CB_Tagu3.Text,
-                                CB_Tagu4.Text,CB_Tagu5.Text,Sports.TxtCode.Text,TB_Shijishobengo.Text,TB_SaiShuhenkobiT.Text,
-                                TＢ_SaiShuhenkobiF.Text,TB_ShinkitorokuF.Text,TB_ShinkitorokuT.Text,TB_ShoninbiF.Text,TB_ShoninbiT.Text,
-                                CKB_searchsuru.CheckState.ToString(),RB_item.Checked.ToString(),RB_Makashohincd.Checked.ToString(),CB_year.Text,
-                                TB_Catalog.Text
-                               };
-
+                
                 skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -491,8 +481,8 @@ namespace ZaikoShoukai
                 brand = GV_Zaiko.Rows[e.RowIndex].Cells[13].Value.ToString();
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
-                soukocd = CB_Soko.SelectedValue.ToString();
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, data);
+                changedate = LB_ChangeDate.Text;
+                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD);
                 frmVendor.ShowDialog();
             }
         }
