@@ -114,6 +114,7 @@ namespace MasterTouroku_Brand
                     DisablePanel(PanelDetail);
                     ScBrandCD.SearchEnable = true;
                     ScCopyBrand.SearchEnable = false;
+                    F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;

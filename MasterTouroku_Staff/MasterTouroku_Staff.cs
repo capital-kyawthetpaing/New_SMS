@@ -450,7 +450,7 @@ namespace MasterTouroku_Staff
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
                     ScStaff.SearchEnable = false;
-                    ScStaffCopyCD.SearchEnable = true;
+                    ScStaffCopyCD.SearchEnable = true; 
                     F9Visible = false;
                     F12Enable = true;
                     btnDisplay.Enabled = F11Enable = true;
@@ -465,6 +465,7 @@ namespace MasterTouroku_Staff
                     DisablePanel(PanelDetail);
                     ScStaff.SearchEnable = true;
                     ScStaffCopyCD.SearchEnable = false;
+                    F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
