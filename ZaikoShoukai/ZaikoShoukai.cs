@@ -400,6 +400,8 @@ namespace ZaikoShoukai
             }
         }
 
+       
+
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
