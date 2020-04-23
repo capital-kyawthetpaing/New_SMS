@@ -21,6 +21,8 @@ namespace MasterTouroku_Shiiresaki
         M_Vendor_Entity mve;
         M_ZipCode_Entity mze;
         int type = 0;//1 = normal, 2 = copy (for f11)
+        string z1 = "";
+        string z2 = "";
 
         public MasterTouroku_Shiiresaki()
         {
@@ -899,7 +901,7 @@ namespace MasterTouroku_Shiiresaki
             if(e.KeyCode == Keys.Enter)
             {
                 if(!String.IsNullOrWhiteSpace(txtZipCD1.Text))
-                {
+                {                  
                     if (string.IsNullOrWhiteSpace(txtZipCD2.Text))
                     {
                         mtsbl.ShowMessage("E102");
@@ -909,20 +911,7 @@ namespace MasterTouroku_Shiiresaki
                     {
                         if (OperationMode == EOperationMode.UPDATE)
                         {
-
-                            mve = new M_Vendor_Entity();
-                            mve.VendorCD = ScVendor.TxtCode.Text;
-                            mve.ChangeDate = ScVendor.ChangeDate;
-                            mve.ZipCD1 = txtZipCD1.Text;
-                            mve.ZipCD2 = txtZipCD2.Text;
-                            DataTable dtvendorzip = new DataTable();
-                            dtvendorzip = mtsbl.M_Vendor_ZipCodeSelect(mve);
-                            if(dtvendorzip.Rows.Count> 0)
-                            {
-                                txtAddress1.Text = dtvendorzip.Rows[0]["Address1"].ToString();
-                                txtAddress2.Text = dtvendorzip.Rows[0]["Address2"].ToString();
-                            }
-                            else
+                            if (z1 != txtZipCD1.Text || z2 != txtZipCD2.Text)
                             {
                                 mze = new M_ZipCode_Entity();
                                 mze.ZipCD1 = txtZipCD1.Text;
@@ -942,7 +931,8 @@ namespace MasterTouroku_Shiiresaki
                                     txtAddress2.Text = string.Empty;
                                 }
                             }
-
+                            z1 = txtZipCD1.Text;
+                            z2 = txtZipCD2.Text;
                         }
                         else if (OperationMode == EOperationMode.INSERT)
                         {
@@ -975,6 +965,14 @@ namespace MasterTouroku_Shiiresaki
             {
                 type = 1;
                 F11();
+                if (OperationMode == EOperationMode.UPDATE)
+                {
+                    if (!string.IsNullOrEmpty(txtZipCD1.Text))
+                    {
+                        z1 = txtZipCD1.Text;
+                        z2 = txtZipCD2.Text;
+                    }
+                }
             }
         }
 
