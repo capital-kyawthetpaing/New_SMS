@@ -1596,11 +1596,11 @@
             this.txtVendorKana.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorKana.BackColor = System.Drawing.Color.White;
             this.txtVendorKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtVendorKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtVendorKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtVendorKana.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorKana.DecimalPlace = 0;
             this.txtVendorKana.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtVendorKana.ImeMode = System.Windows.Forms.ImeMode.Katakana;
+            this.txtVendorKana.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
             this.txtVendorKana.IntegerPart = 0;
             this.txtVendorKana.IsCorrectDate = true;
             this.txtVendorKana.isEnterKeyDown = false;

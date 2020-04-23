@@ -118,6 +118,7 @@ namespace MasterTouroku_Program
                     DisablePanel(PanelDetail);
                     scProgramID.SearchEnable = true;
                     scProgramCopy.SearchEnable = false;
+                    F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
@@ -202,10 +203,10 @@ namespace MasterTouroku_Program
                 txtFileName.Text = dt.Rows[0]["FileName"].ToString();
                 scProgramID.SetFocus(1);
             }
-            else
-            {
-                mpbl.ShowMessage("E133");
-            }
+            //else
+            //{
+            //    mpbl.ShowMessage("E133");
+            //}
         }
         private void F12()
         {
@@ -274,7 +275,6 @@ namespace MasterTouroku_Program
                 FileName=txtFileName.Text,
                 ProcessMode = ModeText,
                 ProgramID=InProgramID,
-                //Operator = InOperatorCD,
                 InsertOperator = InOperatorCD,
                 Key = scProgramID.Code,
                 PC = InPcID
@@ -315,16 +315,6 @@ namespace MasterTouroku_Program
                             scProgramID.SetFocus(1);
                             return false;
                         }
-                        //if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))
-                        //{
-                        //    if (!scProgramCopy.IsExists(1))
-                        //    {
-                        //        mpbl.ShowMessage("E133");
-                        //        scProgramCopy.SetFocus(1);
-                        //        return false;
-                        //    }
-                        //}
-                       
                         else
                         {
                             if (!string.IsNullOrWhiteSpace(scProgramCopy.TxtCode.Text))

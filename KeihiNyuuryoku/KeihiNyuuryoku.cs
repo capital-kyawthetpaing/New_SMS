@@ -526,6 +526,7 @@ namespace KeihiNyuuryoku
                     DisablePanel(panelDetail);
                     ScCost.SearchEnable = true;
                     ScCost_Copy.SearchEnable = false;
+                    F9Visible = true;
                     F12Enable = false;
                     F11Enable = true;
                     ScCost.SetFocus(1);

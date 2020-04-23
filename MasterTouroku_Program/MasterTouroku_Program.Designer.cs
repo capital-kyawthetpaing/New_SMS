@@ -139,7 +139,7 @@
             this.txtFileName.MoveNext = true;
             this.txtFileName.Name = "txtFileName";
             this.txtFileName.Size = new System.Drawing.Size(750, 19);
-            this.txtFileName.TabIndex = 12;
+            this.txtFileName.TabIndex = 15;
             this.txtFileName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtFilePass
@@ -163,7 +163,7 @@
             this.txtFilePass.MoveNext = true;
             this.txtFilePass.Name = "txtFilePass";
             this.txtFilePass.Size = new System.Drawing.Size(750, 19);
-            this.txtFilePass.TabIndex = 11;
+            this.txtFilePass.TabIndex = 13;
             this.txtFilePass.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtFileDrive
@@ -187,7 +187,7 @@
             this.txtFileDrive.MoveNext = true;
             this.txtFileDrive.Name = "txtFileDrive";
             this.txtFileDrive.Size = new System.Drawing.Size(50, 19);
-            this.txtFileDrive.TabIndex = 10;
+            this.txtFileDrive.TabIndex = 12;
             this.txtFileDrive.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtExeName
@@ -211,7 +211,7 @@
             this.txtExeName.MoveNext = true;
             this.txtExeName.Name = "txtExeName";
             this.txtExeName.Size = new System.Drawing.Size(750, 19);
-            this.txtExeName.TabIndex = 9;
+            this.txtExeName.TabIndex = 11;
             this.txtExeName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // cboType
@@ -227,7 +227,7 @@
             this.cboType.MoveNext = true;
             this.cboType.Name = "cboType";
             this.cboType.Size = new System.Drawing.Size(121, 20);
-            this.cboType.TabIndex = 8;
+            this.cboType.TabIndex = 10;
             // 
             // txtProgramName
             // 
@@ -235,7 +235,7 @@
             this.txtProgramName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProgramName.BackColor = System.Drawing.Color.White;
             this.txtProgramName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProgramName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtProgramName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtProgramName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProgramName.DecimalPlace = 0;
             this.txtProgramName.Font = new System.Drawing.Font("MS Gothic", 9F);
