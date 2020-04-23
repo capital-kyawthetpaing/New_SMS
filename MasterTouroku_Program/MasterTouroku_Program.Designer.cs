@@ -251,7 +251,7 @@
             this.txtProgramName.MoveNext = true;
             this.txtProgramName.Name = "txtProgramName";
             this.txtProgramName.Size = new System.Drawing.Size(750, 19);
-            this.txtProgramName.TabIndex = 7;
+            this.txtProgramName.TabIndex = 9;
             this.txtProgramName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label9
