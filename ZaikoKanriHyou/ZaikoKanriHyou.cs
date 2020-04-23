@@ -52,7 +52,6 @@ namespace ZaikoKanriHyou
 
         {
             txtTargetDate.Require(true);
-
         }
 
         protected override void EndSec()
@@ -277,11 +276,6 @@ namespace ZaikoKanriHyou
         private void ZaikoKanriHyou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
-        }
-
-        private void panelDetail_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
