@@ -376,19 +376,19 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                {
-                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                    chk1.Value = chk1.FalseValue;
-                }
-                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            }
-            else
-            {
-                dgv_ShiireKakeritsu.ClearSelection();
-            }
+            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            //{
+            //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            //    {
+            //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+            //        chk1.Value = chk1.FalseValue;
+            //    }
+            //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            //}
+            //else
+            //{
+            //    dgv_ShiireKakeritsu.ClearSelection();
+            //}
         }
 
 
@@ -423,10 +423,10 @@ namespace MasterTouroku_ShiireKakeritsu
             dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
             dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
             dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            dtRow["LastYearTeam"] = cbo_Year.Text;
+            dtRow["LastYearTerm"] = cbo_Year.Text;
             dtRow["LastSeason"] = cbo_Season.Text;
             dtRow["ChangeDate"] = txtChangeDate.Text;
-            dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
             dt.Rows.Add(dtRow);
             dgv_ShiireKakeritsu.DataSource = dt;
 
