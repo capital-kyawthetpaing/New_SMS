@@ -570,26 +570,32 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //if (this.dgv_ShiireKakeritsu.SelectedRows.Count > 0)
-            //{
-            //    dgv_ShiireKakeritsu.Rows.RemoveAt(this.dgv_ShiireKakeritsu.SelectedRows[0].Index);
-            //}
-            foreach (DataGridViewRow item in this.dgv_ShiireKakeritsu.SelectedRows)
+
+            foreach (DataGridViewRow row in this.dgv_ShiireKakeritsu.SelectedRows)
             {
-                dgv_ShiireKakeritsu.Rows.RemoveAt(item.Index);
-            }
+                int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+                dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+             }
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dgvRow = new DataGridViewRow();
-            dgvRow.Cells[0].Value = scBrandCD.TxtCode.Text;
-            dgvRow.Cells[0].Value = scSportsCD.TxtCode.Text;
-            dgvRow.Cells[0].Value = scSegmentCD.TxtCode.Text;
-            dgvRow.Cells[0].Value = cbo_Year.SelectedValue.ToString();
-            dgvRow.Cells[0].Value = cbo_Season.SelectedValue.ToString();
-            dgvRow.Cells[0].Value = txtChangeDate.Text;
-            dgvRow.Cells[0].Value = txtRate.Text;
+            //DataGridViewRow dgvRow = new DataGridViewRow();
+            //dgvRow.Cells[0].Value = scBrandCD.TxtCode.Text;
+            //dgvRow.Cells[0].Value = scSportsCD.TxtCode.Text;
+            //dgvRow.Cells[0].Value = scSegmentCD.TxtCode.Text;
+            //dgvRow.Cells[0].Value = cbo_Year.SelectedValue.ToString();
+            //dgvRow.Cells[0].Value = cbo_Season.SelectedValue.ToString();
+            //dgvRow.Cells[0].Value = txtChangeDate.Text;
+            //dgvRow.Cells[0].Value = txtRate.Text;
+            //DataGridViewRow dgvRow = new DataGridViewRow();
+            //scBrandCD.TxtCode.Text = dgvRow.Cells["colBrandCD1"].Value.ToString();
+            //scSportsCD.TxtCode.Text= dgvRow.Cells["colSportsCD1"].Value.ToString();
+            //scSegmentCD.TxtCode.Text = dgvRow.Cells["colSegmentCD1"].Value.ToString();
+            //cbo_Year.Text= dgvRow.Cells["colYear"].Value.ToString();
+            //cbo_Season.Text= dgvRow.Cells["LastSeason"].Value.ToString();
+            //txtChangeDate.Text= dgvRow.Cells["colSeason"].Value.ToString();
+            //txtRate.Text= dgvRow.Cells["colRate1"].Value.ToString();
         }
        
         }
