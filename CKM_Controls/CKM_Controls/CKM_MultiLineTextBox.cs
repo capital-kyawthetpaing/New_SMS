@@ -291,7 +291,7 @@ namespace CKM_Controls
         //}
 
         protected override void OnKeyPress(KeyPressEventArgs e)
-        {
+        { 
             //if (Over_CheckBytes() )
             //{
             //    if (Char.IsLetterOrDigit(e.KeyChar))
@@ -306,17 +306,23 @@ namespace CKM_Controls
         }
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+
+            if (e.Alt && e.KeyCode == Keys.Enter)    // Wait PTK , Not Confirm
+            {
+                SendKeys.Send("^{ENTER}");
+                return;
+            }
+            else if (e.KeyCode == Keys.Enter)
             {
                 Cursorin = Text;
                 MoveNext = true;
+                return;
             }
             var f = this.Text;
         }
         protected override void OnKeyUp(KeyEventArgs e)
-
         {
-                if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
                 {
                     ke = e;
                     Cursorout = Text;
@@ -324,13 +330,7 @@ namespace CKM_Controls
             if (Isselected)
             {
                 Isselected = false;
-                //SelectAll();
-                //Focus();
             }
-            
-
-
-            
             base.OnKeyUp(e);
         }
 

@@ -77,6 +77,7 @@ namespace MasterTouroku_Ginkou
                     DisablePanel(PanelDetail);
                     BtnF11Show.Enabled = F11Enable = true;
                     copy_ginKou_CD.SearchEnable = true;
+                    F9Visible = false;
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
@@ -90,6 +91,7 @@ namespace MasterTouroku_Ginkou
                     DisablePanel(PanelDetail);
                     ginKou_CD.SearchEnable = true;
                     copy_ginKou_CD.SearchEnable = false;
+                    F9Visible = true;
                     break;
             }
             ginKou_CD.SetFocus(1);
