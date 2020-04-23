@@ -235,7 +235,7 @@
             this.txtProgramName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProgramName.BackColor = System.Drawing.Color.White;
             this.txtProgramName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtProgramName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtProgramName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtProgramName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProgramName.DecimalPlace = 0;
             this.txtProgramName.Font = new System.Drawing.Font("MS Gothic", 9F);
