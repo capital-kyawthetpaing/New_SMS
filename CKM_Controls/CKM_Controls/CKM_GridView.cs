@@ -111,6 +111,11 @@ namespace CKM_Controls
                         direction = Keys.Tab;
                         reverseKey = Keys.Shift | Keys.Tab;
                         break;
+                    case Keys.ProcessKey:
+                        return base.ProcessCmdKey(ref msg, keyData);
+                        //direction = Keys.Tab;
+                        //reverseKey = Keys.Shift | Keys.Tab;
+                        //break;
                     default:
                         // Simply process all other keys normally
                         return base.ProcessCmdKey(ref msg, keyData);
