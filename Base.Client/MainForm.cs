@@ -1793,7 +1793,7 @@ namespace Base.Client
         {
             PreviousCtrl = this.ActiveControl;
         }
-        private Form IsmaxTabIndex(KeyEventArgs e, Control cr)
+        private Form IsmaxTabIndex(KeyEventArgs e, Control cr) //PTK
         {
             Form fr = null;
             if (cr.Parent is Panel)
@@ -1820,7 +1820,8 @@ namespace Base.Client
             return fr;
 
         }
-        public void MoveNextControl(KeyEventArgs e)
+        public void MoveNextControl(KeyEventArgs e)  //PTK 
+        
         {
 
             IsmaxTabIndex(e, ActiveControl);
@@ -1830,6 +1831,7 @@ namespace Base.Client
             //    var f = (ActiveControl as CKM_TextBox);
             //    var gt = f.TabIndex;
             //}
+
 
 
             if (e.KeyCode == Keys.F12)
@@ -1854,7 +1856,11 @@ namespace Base.Client
                         return;
                 }
             }
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Menu)
+            {
+                return;
+            }
+            if (e.KeyCode == Keys.Enter  )
             {
                 if (ActiveControl is CKM_TextBox)
                 {
@@ -1912,18 +1918,12 @@ namespace Base.Client
                     {
                         if (this.Parent != null)
                             this.Parent.SelectNextControl(ActiveControl, true, true, true, true);
-                        //else
-                        //{
-                        //    (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
-                        //}
+                        else    /// Just a While  Wait not Confirm by PTK  For (Alt+Enter)  Link to Multiline_Textbox
+                        {
+                            (ActiveControl as CKM_MultiLineTextBox).Focus();
+                           // (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
+                        }
                     }
-                    //else if (f != g)
-                    //{
-
-
-                    //}
-                    //else
-                    //    this.SelectNextControl(ActiveControl, true, true, true, true);
                     else if (f == g)
                     {
                         if (!con.Mdea)
@@ -1934,10 +1934,19 @@ namespace Base.Client
                             con.Mdea = false;
                     }
                 }
+                else if ((ActiveControl is TextBox))
+                {
+                    if ((ActiveControl as TextBox).Multiline)
+                    {
+
+                    }
+                    else
+                        this.SelectNextControl(ActiveControl, true, true, true, true);
+                }
                 else
                 {
-                    this.SelectNextControl(ActiveControl, true, true, true, true);
 
+                    this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
             }
          
