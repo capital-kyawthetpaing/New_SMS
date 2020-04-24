@@ -41,6 +41,7 @@ namespace MasterTouroku_YuubinBangou
 
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
+            SetRequireFields();
         }
 
         private void SetRequireFields()
@@ -529,5 +530,6 @@ namespace MasterTouroku_YuubinBangou
         {
             
         }
+
     }
 }
