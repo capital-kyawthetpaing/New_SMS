@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_LBLSoko = new CKM_Controls.CKM_Label();
             this.CB_Soko = new CKM_Controls.CKM_ComboBox();
             this.ckM_LB_Tanaban = new CKM_Controls.CKM_Label();
@@ -219,9 +220,10 @@
             this.TB_RackNoF.BackColor = System.Drawing.Color.White;
             this.TB_RackNoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_RackNoF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.TB_RackNoF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoF.DecimalPlace = 0;
             this.TB_RackNoF.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_RackNoF.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TB_RackNoF.IntegerPart = 0;
             this.TB_RackNoF.IsCorrectDate = true;
             this.TB_RackNoF.isEnterKeyDown = false;
@@ -234,7 +236,6 @@
             this.TB_RackNoF.Name = "TB_RackNoF";
             this.TB_RackNoF.Size = new System.Drawing.Size(80, 19);
             this.TB_RackNoF.TabIndex = 2;
-            this.TB_RackNoF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_RackNoF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label3
@@ -261,9 +262,10 @@
             this.TB_RackNoT.BackColor = System.Drawing.Color.White;
             this.TB_RackNoT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_RackNoT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.TB_RackNoT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoT.DecimalPlace = 0;
             this.TB_RackNoT.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_RackNoT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TB_RackNoT.IntegerPart = 0;
             this.TB_RackNoT.IsCorrectDate = true;
             this.TB_RackNoT.isEnterKeyDown = false;
@@ -276,7 +278,6 @@
             this.TB_RackNoT.Name = "TB_RackNoT";
             this.TB_RackNoT.Size = new System.Drawing.Size(80, 19);
             this.TB_RackNoT.TabIndex = 3;
-            this.TB_RackNoT.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TB_RackNoT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_RackNoT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_RackNoT_KeyDown);
             // 
@@ -457,6 +458,7 @@
             this.TB_Catalog.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Catalog.DecimalPlace = 0;
             this.TB_Catalog.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Catalog.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TB_Catalog.IntegerPart = 0;
             this.TB_Catalog.IsCorrectDate = true;
             this.TB_Catalog.isEnterKeyDown = false;
@@ -1467,17 +1469,17 @@
             this.GV_Zaiko.AllowUserToAddRows = false;
             this.GV_Zaiko.AllowUserToDeleteRows = false;
             this.GV_Zaiko.AllowUserToResizeRows = false;
-            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle67.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle68.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
             this.GV_Zaiko.ColumnHeadersHeight = 25;
             this.GV_Zaiko.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SKUCD,
@@ -1500,6 +1502,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle77;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 463);
@@ -1560,20 +1570,20 @@
             // 現在庫
             // 
             this.現在庫.DataPropertyName = "在庫数";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle23.Format = "N0";
-            dataGridViewCellStyle23.NullValue = null;
-            this.現在庫.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle69.Format = "N0";
+            dataGridViewCellStyle69.NullValue = null;
+            this.現在庫.DefaultCellStyle = dataGridViewCellStyle69;
             this.現在庫.HeaderText = "現在庫";
             this.現在庫.Name = "現在庫";
             // 
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "入荷予定数";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.Format = "N0";
-            dataGridViewCellStyle24.NullValue = null;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle70.Format = "N0";
+            dataGridViewCellStyle70.NullValue = null;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle70;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
             // 
@@ -1588,18 +1598,18 @@
             // 引当可能
             // 
             this.引当可能.DataPropertyName = "引当可能数";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle25.Format = "N0";
-            dataGridViewCellStyle25.NullValue = null;
-            this.引当可能.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle71.Format = "N0";
+            dataGridViewCellStyle71.NullValue = null;
+            this.引当可能.DefaultCellStyle = dataGridViewCellStyle71;
             this.引当可能.HeaderText = "引当可能";
             this.引当可能.Name = "引当可能";
             // 
             // メーカー
             // 
             this.メーカー.DataPropertyName = "メーカー在庫数";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.メーカー.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.メーカー.DefaultCellStyle = dataGridViewCellStyle72;
             this.メーカー.HeaderText = "メーカー";
             this.メーカー.Name = "メーカー";
             // 
@@ -1633,40 +1643,40 @@
             // 最速入荷日
             // 
             this.最速入荷日.DataPropertyName = "最速入荷日";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.Format = "d";
-            dataGridViewCellStyle27.NullValue = null;
-            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.Format = "d";
+            dataGridViewCellStyle73.NullValue = null;
+            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle73;
             this.最速入荷日.HeaderText = "最速入荷日";
             this.最速入荷日.Name = "最速入荷日";
             // 
             // 基準在庫
             // 
             this.基準在庫.DataPropertyName = "基準在庫";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "N0";
-            dataGridViewCellStyle28.NullValue = null;
-            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle74.Format = "N0";
+            dataGridViewCellStyle74.NullValue = null;
+            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle74;
             this.基準在庫.HeaderText = "基準在庫";
             this.基準在庫.Name = "基準在庫";
             // 
             // 販売定価
             // 
             this.販売定価.DataPropertyName = "販売定価";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle29.Format = "N0";
-            dataGridViewCellStyle29.NullValue = null;
-            this.販売定価.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle75.Format = "N0";
+            dataGridViewCellStyle75.NullValue = null;
+            this.販売定価.DefaultCellStyle = dataGridViewCellStyle75;
             this.販売定価.HeaderText = "販売定価";
             this.販売定価.Name = "販売定価";
             // 
             // 標準原価
             // 
             this.標準原価.DataPropertyName = "標準原価";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle30.Format = "N0";
-            dataGridViewCellStyle30.NullValue = null;
-            this.標準原価.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle76.Format = "N0";
+            dataGridViewCellStyle76.NullValue = null;
+            this.標準原価.DefaultCellStyle = dataGridViewCellStyle76;
             this.標準原価.HeaderText = "標準原価";
             this.標準原価.MaxInputLength = 6;
             this.標準原価.Name = "標準原価";
@@ -1875,9 +1885,9 @@
             this.TB_Skucd.isEnterKeyDown = false;
             this.TB_Skucd.IsNumber = true;
             this.TB_Skucd.IsShop = false;
-            this.TB_Skucd.Length = 50;
+            this.TB_Skucd.Length = 23;
             this.TB_Skucd.Location = new System.Drawing.Point(304, 154);
-            this.TB_Skucd.MaxLength = 50;
+            this.TB_Skucd.MaxLength = 23;
             this.TB_Skucd.MoveNext = true;
             this.TB_Skucd.Name = "TB_Skucd";
             this.TB_Skucd.Size = new System.Drawing.Size(200, 19);
@@ -1899,9 +1909,9 @@
             this.TB_Jancd.isEnterKeyDown = false;
             this.TB_Jancd.IsNumber = true;
             this.TB_Jancd.IsShop = false;
-            this.TB_Jancd.Length = 20;
+            this.TB_Jancd.Length = 13;
             this.TB_Jancd.Location = new System.Drawing.Point(129, 154);
-            this.TB_Jancd.MaxLength = 20;
+            this.TB_Jancd.MaxLength = 13;
             this.TB_Jancd.MoveNext = true;
             this.TB_Jancd.Name = "TB_Jancd";
             this.TB_Jancd.Size = new System.Drawing.Size(100, 19);
