@@ -47,13 +47,12 @@ namespace TanabanNyuuryoku
             F10Visible = false;
             F11Visible = false;
 
-            txtArrivalDateFrom.Text = DateTime.Now.ToShortDateString();
-            txtArrivalDateTo.Text = DateTime.Now.ToShortDateString();
+            txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
 
             BindCombo();
             chkNotRegister.Checked = true;
-
-            cboWarehouse.SelectedIndexChanged += cboWarehouse_SelectedIndexChanged;
+            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
 
             SetRequireField();
 
@@ -311,8 +310,7 @@ namespace TanabanNyuuryoku
      
         private void Clear()
         {
-            Clear(panelDetail);
-            //dgvTanaban.DataSource = string.Empty;
+            Clear(panelDetail);         
         }
 
         private void txtArrivalDateTo_KeyDown(object sender, KeyEventArgs e)
@@ -351,11 +349,6 @@ namespace TanabanNyuuryoku
                     row1.Cells["colChk"].Value = false;
                 }
             }
-        }
-
-        private void cboWarehouse_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
         }
 
         private void btnApplicable_Click(object sender, EventArgs e)
