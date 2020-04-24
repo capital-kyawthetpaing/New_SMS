@@ -431,14 +431,6 @@ namespace MasterTouroku_Hanyou
             else
             {
                 DataTable dtID = new DataTable();
-                if(ScID.Code.Length == 1)
-                {
-                    ScID.Code = "00" + ScID.Code;
-                }
-                else if(ScID.Code.Length == 2)
-                {
-                    ScID.Code = "0" + ScID.Code;
-                }
                 mhe = GetHanyouEntity();
 
                 //if (Convert.ToInt32(ScID.Code) != 000)

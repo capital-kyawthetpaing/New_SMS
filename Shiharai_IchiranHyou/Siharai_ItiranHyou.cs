@@ -183,8 +183,8 @@ namespace Shiharai_IchiranHyou
                 {
                     DialogResult DResult;
                     DResult = bbl.ShowMessage("Q203");
-                    if(DResult== DialogResult.OK)
-                    {
+                    //if(DResult== DialogResult.OK)ses
+                    //{
                         //LoacalDirectory
                         string folderPath = "C:\\CSV\\";
                         FileInfo logFileInfo = new FileInfo(folderPath);
@@ -193,7 +193,7 @@ namespace Shiharai_IchiranHyou
 
                         //ExportCSVFile
                         ToCSV(dtResult, folderPath);
-                    }             
+                    //}             
                 }
                finally
                 {
