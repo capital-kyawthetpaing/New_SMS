@@ -167,6 +167,8 @@ namespace MasterTouroku_Shouhin
                 this.InitialControlArray();
                 mibl = new ITEM_BL();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -836,7 +838,7 @@ namespace MasterTouroku_Shouhin
             else if (colorNo + 1 < dgvDetail.Rows.Count)
             {
                 int maxRow = dgvDetail.Rows.Count - (colorNo + 1);
-                for (int i = 1; i < maxRow; i++)
+                for (int i = 1; i <= maxRow; i++)
                 {
                     DataRow[] rows = dtSKU.Select("ColorNo = " + dgvDetail.Rows[dgvDetail.Rows.Count - 1].Cells[0].Value.ToString());
                     foreach (DataRow row in rows)
@@ -2277,7 +2279,7 @@ namespace MasterTouroku_Shouhin
             //展開ボタンClick時   
             try
             {
-                FunctionProcess(9);
+                InitGrid();
 
             }
             catch (Exception ex)
