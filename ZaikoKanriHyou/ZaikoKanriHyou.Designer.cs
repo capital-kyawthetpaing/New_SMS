@@ -77,7 +77,6 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1713, 889);
             this.panelDetail.TabIndex = 13;
-            this.panelDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDetail_Paint);
             // 
             // scMakerShohinCD
             // 

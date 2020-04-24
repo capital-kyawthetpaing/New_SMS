@@ -1442,12 +1442,7 @@ namespace Base.Client
                             Button btn = PanelFooter.Controls.Find("btn" + e.KeyCode.ToString(), true)[0] as Button;
                             if (btn.Enabled)
                             {
-                                //btn.Focus();  これがあるとF9キー押下時に検索が2重に開く
-                                // var val = PanelFooter.Controls.Find("btn" + e.KeyCode.ToString(), true)[0] as UserControl;
-                                //if (!(sc.ActiveControl as CKM_TextBox).MoveNext)   // Old logic by PTK  
-                                //{
-                                //    return;
-                                //}
+                                
                                 if (e.KeyCode == Keys.F12)
                                 {
                                     if (TxtCode_FullWidth(e))
@@ -1462,9 +1457,12 @@ namespace Base.Client
                                     PreviousCtrl = ActiveControl;
                                     if (!string.IsNullOrWhiteSpace(btn.Text))
                                         ButtonFunction(btn.Tag.ToString());
+
+                                    if (e.KeyCode.Equals(Keys.F10))
+                                        e.Handled = true;
+
                                 }
-
-
+                             
                             }
                             break;
                     }

@@ -219,9 +219,10 @@
             this.TB_RackNoF.BackColor = System.Drawing.Color.White;
             this.TB_RackNoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_RackNoF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_RackNoF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoF.DecimalPlace = 0;
             this.TB_RackNoF.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_RackNoF.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TB_RackNoF.IntegerPart = 0;
             this.TB_RackNoF.IsCorrectDate = true;
             this.TB_RackNoF.isEnterKeyDown = false;
@@ -260,9 +261,10 @@
             this.TB_RackNoT.BackColor = System.Drawing.Color.White;
             this.TB_RackNoT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_RackNoT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.TB_RackNoT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_RackNoT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoT.DecimalPlace = 0;
             this.TB_RackNoT.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_RackNoT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TB_RackNoT.IntegerPart = 0;
             this.TB_RackNoT.IsCorrectDate = true;
             this.TB_RackNoT.isEnterKeyDown = false;
@@ -397,6 +399,7 @@
             this.TB_Bikokeyword.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Bikokeyword.DecimalPlace = 0;
             this.TB_Bikokeyword.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Bikokeyword.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TB_Bikokeyword.IntegerPart = 0;
             this.TB_Bikokeyword.IsCorrectDate = true;
             this.TB_Bikokeyword.isEnterKeyDown = false;
@@ -455,6 +458,7 @@
             this.TB_Catalog.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Catalog.DecimalPlace = 0;
             this.TB_Catalog.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Catalog.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TB_Catalog.IntegerPart = 0;
             this.TB_Catalog.IsCorrectDate = true;
             this.TB_Catalog.isEnterKeyDown = false;
@@ -783,6 +787,7 @@
             this.CB_Tagu3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
             this.CB_Tagu3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu3.FormattingEnabled = true;
+            this.CB_Tagu3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.CB_Tagu3.Length = 40;
             this.CB_Tagu3.Location = new System.Drawing.Point(1213, 118);
             this.CB_Tagu3.MaxLength = 20;
@@ -835,6 +840,7 @@
             this.TB_Shijishobengo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Shijishobengo.DecimalPlace = 0;
             this.TB_Shijishobengo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TB_Shijishobengo.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TB_Shijishobengo.IntegerPart = 0;
             this.TB_Shijishobengo.IsCorrectDate = true;
             this.TB_Shijishobengo.isEnterKeyDown = false;
@@ -922,9 +928,9 @@
             this.TB_item.isEnterKeyDown = false;
             this.TB_item.IsNumber = true;
             this.TB_item.IsShop = false;
-            this.TB_item.Length = 200;
+            this.TB_item.Length = 309;
             this.TB_item.Location = new System.Drawing.Point(129, 245);
-            this.TB_item.MaxLength = 200;
+            this.TB_item.MaxLength = 309;
             this.TB_item.MoveNext = true;
             this.TB_item.Name = "TB_item";
             this.TB_item.Size = new System.Drawing.Size(1440, 19);
@@ -1865,7 +1871,7 @@
             this.TB_Skucd.BackColor = System.Drawing.Color.White;
             this.TB_Skucd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Skucd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_Skucd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_Skucd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Skucd.DecimalPlace = 0;
             this.TB_Skucd.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.TB_Skucd.IntegerPart = 0;
@@ -1873,9 +1879,9 @@
             this.TB_Skucd.isEnterKeyDown = false;
             this.TB_Skucd.IsNumber = true;
             this.TB_Skucd.IsShop = false;
-            this.TB_Skucd.Length = 50;
+            this.TB_Skucd.Length = 23;
             this.TB_Skucd.Location = new System.Drawing.Point(304, 154);
-            this.TB_Skucd.MaxLength = 50;
+            this.TB_Skucd.MaxLength = 23;
             this.TB_Skucd.MoveNext = true;
             this.TB_Skucd.Name = "TB_Skucd";
             this.TB_Skucd.Size = new System.Drawing.Size(200, 19);
@@ -1889,7 +1895,7 @@
             this.TB_Jancd.BackColor = System.Drawing.Color.White;
             this.TB_Jancd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TB_Jancd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_Jancd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.TB_Jancd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Jancd.DecimalPlace = 0;
             this.TB_Jancd.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.TB_Jancd.IntegerPart = 0;
@@ -1897,9 +1903,9 @@
             this.TB_Jancd.isEnterKeyDown = false;
             this.TB_Jancd.IsNumber = true;
             this.TB_Jancd.IsShop = false;
-            this.TB_Jancd.Length = 20;
+            this.TB_Jancd.Length = 13;
             this.TB_Jancd.Location = new System.Drawing.Point(129, 154);
-            this.TB_Jancd.MaxLength = 20;
+            this.TB_Jancd.MaxLength = 13;
             this.TB_Jancd.MoveNext = true;
             this.TB_Jancd.Name = "TB_Jancd";
             this.TB_Jancd.Size = new System.Drawing.Size(100, 19);
