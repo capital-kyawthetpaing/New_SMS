@@ -1820,7 +1820,7 @@ namespace Base.Client
             return fr;
 
         }
-        public void MoveNextControl(KeyEventArgs e)  //PTK 
+        public void MoveNextControl(KeyEventArgs e)  //PTK  Addeddddd ,,,if Something Changed, Discuss with PTK
         
         {
 
@@ -1938,10 +1938,17 @@ namespace Base.Client
                 {
                     if ((ActiveControl as TextBox).Multiline)
                     {
-
+                        // Make 
                     }
                     else
+                    {
+                        if (ActiveControl.Parent.Parent is CKM_GridView)
+                        {
+                        var f=    (this.ActiveControl as TextBox).Text;
+                        }
+                        else
                         this.SelectNextControl(ActiveControl, true, true, true, true);
+                    }
                 }
                 else
                 {

@@ -593,12 +593,12 @@ namespace Search
                     lblName.Width = 600;
                     break;
                 case SearchType.ItemMulti: //2019.12.05
-                    txtCode.MaxLength = 139;
+                    txtCode.MaxLength = 309;
                     txtCode.Width = 600;
                     lblName.Width = 280;
                     break;
                 case SearchType.SKUMulti: //2019.12.05
-                    txtCode.MaxLength = 139;
+                    txtCode.MaxLength = 309;
                     txtCode.Width = 600;
                     lblName.Width = 280;
                     break;
