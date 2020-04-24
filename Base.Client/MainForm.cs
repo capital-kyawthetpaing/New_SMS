@@ -590,7 +590,13 @@ namespace Base.Client
                 if (ctrl is CKM_MultiLineTextBox)
                     ((CKM_MultiLineTextBox)ctrl).Enabled = false;
                 else if (ctrl is CKM_TextBox)
+                {
                     ((CKM_TextBox)ctrl).Enabled = false;
+                    //if (!Enabled)
+                    ((CKM_TextBox)ctrl).BackColor = SystemColors.Control;
+                    //else
+                    //    this.BackColor = SystemColors.Window;
+                }
                 else if (ctrl is ComboBox)
                     ((ComboBox)ctrl).Enabled = false;
                 else if (ctrl is CheckBox)
@@ -614,7 +620,13 @@ namespace Base.Client
                 if (ctrl is CKM_MultiLineTextBox)
                     ((CKM_MultiLineTextBox)ctrl).Enabled = true;
                 else if (ctrl is CKM_TextBox)
+                {
                     ((CKM_TextBox)ctrl).Enabled = true;
+                    //if (!Enabled)
+                    //    this.BackColor = SystemColors.Control;
+                    //else
+                    ((CKM_TextBox)ctrl).BackColor = SystemColors.Window;
+                }
                 else if (ctrl is ComboBox)
                     ((ComboBox)ctrl).Enabled = true;
                 else if (ctrl is CheckBox)
@@ -1465,7 +1477,6 @@ namespace Base.Client
                 //EndSec();
             }
         }
-
         public bool TxtCode_FullWidth(KeyEventArgs e=null)  // PTk Added 4/21/2020
         {
             
@@ -1653,7 +1664,6 @@ namespace Base.Client
                     }
             }
         }
-
         //入力可能店舗チェック
         protected bool CheckAvailableStores(string storeCD)
         {
@@ -1673,7 +1683,6 @@ namespace Base.Client
             }
             return ret;
         }
-
         public static int GetResultWithHasuKbn(int kbn, decimal d)
         {
             int result = 0;
@@ -1701,9 +1710,6 @@ namespace Base.Client
 
             return result;
         }
-
-
-
         // フォーム右上の閉じるボタンを無効にする
         // CreateParams プロパティをオーバーライドする
         // 「閉じる」ボタンが無効状態となり、押すことができなくなります。システムメニューの「閉じる」も表示されなくなり、
@@ -1720,7 +1726,6 @@ namespace Base.Client
                 return createParam;
             }
         }
-
         protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
         {
             this.txt = txt;
@@ -1766,7 +1771,6 @@ namespace Base.Client
             }
             return true;
         }
-
         protected bool ReverseRequireCheck(Control[] ctrl, TextBox txt = null)
         {
             txt1 = txt;
@@ -1788,7 +1792,6 @@ namespace Base.Client
             }
             return true;
         }
-
         private void BtnF1_MouseEnter(object sender, EventArgs e)
         {
             PreviousCtrl = this.ActiveControl;
@@ -1820,7 +1823,7 @@ namespace Base.Client
             return fr;
 
         }
-        public void MoveNextControl(KeyEventArgs e)  //PTK  Addeddddd ,,,if Something Changed, Discuss with PTK
+        public void MoveNextControl(KeyEventArgs e)  //PTK  Addedd// if Something Changed, Discuss with PTK
         
         {
 
@@ -1959,7 +1962,6 @@ namespace Base.Client
          
 
         }
-
         protected void OutputExecel(DataGridView dgv, string EXCEL_SAVE_PATH)
         {
             if (dgv.Rows.Count > 0)

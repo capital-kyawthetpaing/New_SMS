@@ -689,5 +689,22 @@ namespace CKM_Controls
             else
                 return false;
         }
+
+        protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)  // PTK added
+        {
+            if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Enter || (e.Shift && e.KeyCode == Keys.Tab))
+            {
+                var go = DataSource;
+                var g = Text;
+                //gooooooooo
+            }
+            else
+            {
+                Refresh();
+                RefreshItems();
+                return;
+            }
+            base.OnPreviewKeyDown(e);
+        }
     }
 }
