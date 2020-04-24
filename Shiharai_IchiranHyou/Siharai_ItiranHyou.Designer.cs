@@ -175,6 +175,7 @@
             this.SC_Payment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Payment.DataCheck = false;
             this.SC_Payment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Payment.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.SC_Payment.IsCopy = false;
             this.SC_Payment.LabelText = "";
             this.SC_Payment.LabelVisible = true;
@@ -203,6 +204,7 @@
             this.SC_Staff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Staff.DataCheck = false;
             this.SC_Staff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_Staff.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.SC_Staff.IsCopy = false;
             this.SC_Staff.LabelText = "";
             this.SC_Staff.LabelVisible = true;
