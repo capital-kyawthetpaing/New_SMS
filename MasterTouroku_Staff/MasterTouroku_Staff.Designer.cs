@@ -296,11 +296,11 @@
             this.cboStoreMenu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboStoreMenu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStoreMenu.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.メニュー;
-            this.cboStoreMenu.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStoreMenu.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.cboStoreMenu.FormattingEnabled = true;
-            this.cboStoreMenu.Length = 10;
+            this.cboStoreMenu.Length = 25;
             this.cboStoreMenu.Location = new System.Drawing.Point(143, 137);
-            this.cboStoreMenu.MaxLength = 10;
+            this.cboStoreMenu.MaxLength = 25;
             this.cboStoreMenu.MoveNext = true;
             this.cboStoreMenu.Name = "cboStoreMenu";
             this.cboStoreMenu.Size = new System.Drawing.Size(175, 20);
@@ -332,7 +332,7 @@
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 25;
             this.cboStoreAuthorizations.Location = new System.Drawing.Point(143, 187);
-            this.cboStoreAuthorizations.MaxLength = 12;
+            this.cboStoreAuthorizations.MaxLength = 25;
             this.cboStoreAuthorizations.MoveNext = true;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
             this.cboStoreAuthorizations.Size = new System.Drawing.Size(175, 20);
@@ -347,10 +347,10 @@
             this.cboPosition.FormattingEnabled = true;
             this.cboPosition.Length = 10;
             this.cboPosition.Location = new System.Drawing.Point(143, 210);
-            this.cboPosition.MaxLength = 5;
+            this.cboPosition.MaxLength = 10;
             this.cboPosition.MoveNext = true;
             this.cboPosition.Name = "cboPosition";
-            this.cboPosition.Size = new System.Drawing.Size(80, 20);
+            this.cboPosition.Size = new System.Drawing.Size(140, 20);
             this.cboPosition.TabIndex = 8;
             // 
             // cboAuthorizations
@@ -362,7 +362,7 @@
             this.cboAuthorizations.FormattingEnabled = true;
             this.cboAuthorizations.Length = 25;
             this.cboAuthorizations.Location = new System.Drawing.Point(143, 164);
-            this.cboAuthorizations.MaxLength = 12;
+            this.cboAuthorizations.MaxLength = 25;
             this.cboAuthorizations.MoveNext = true;
             this.cboAuthorizations.Name = "cboAuthorizations";
             this.cboAuthorizations.Size = new System.Drawing.Size(175, 20);
@@ -377,7 +377,7 @@
             this.cboMenu.FormattingEnabled = true;
             this.cboMenu.Length = 25;
             this.cboMenu.Location = new System.Drawing.Point(143, 111);
-            this.cboMenu.MaxLength = 12;
+            this.cboMenu.MaxLength = 25;
             this.cboMenu.MoveNext = true;
             this.cboMenu.Name = "cboMenu";
             this.cboMenu.Size = new System.Drawing.Size(175, 20);
@@ -553,7 +553,7 @@
             this.txtStaffKana.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStaffKana.BackColor = System.Drawing.Color.White;
             this.txtStaffKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtStaffKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtStaffKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStaffKana.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtStaffKana.DecimalPlace = 0;
             this.txtStaffKana.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -568,7 +568,7 @@
             this.txtStaffKana.MaxLength = 40;
             this.txtStaffKana.MoveNext = true;
             this.txtStaffKana.Name = "txtStaffKana";
-            this.txtStaffKana.Size = new System.Drawing.Size(400, 19);
+            this.txtStaffKana.Size = new System.Drawing.Size(300, 19);
             this.txtStaffKana.TabIndex = 1;
             this.txtStaffKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -613,12 +613,12 @@
             this.txtStaffName.isEnterKeyDown = false;
             this.txtStaffName.IsNumber = true;
             this.txtStaffName.IsShop = false;
-            this.txtStaffName.Length = 20;
+            this.txtStaffName.Length = 40;
             this.txtStaffName.Location = new System.Drawing.Point(143, 16);
-            this.txtStaffName.MaxLength = 20;
+            this.txtStaffName.MaxLength = 40;
             this.txtStaffName.MoveNext = true;
             this.txtStaffName.Name = "txtStaffName";
-            this.txtStaffName.Size = new System.Drawing.Size(130, 19);
+            this.txtStaffName.Size = new System.Drawing.Size(300, 19);
             this.txtStaffName.TabIndex = 0;
             this.txtStaffName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
