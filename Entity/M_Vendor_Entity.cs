@@ -47,6 +47,7 @@ namespace Entity
         public string AmountFractionKBN { get; set; }
         public string NetFlg { get; set; }
         public string EDIFlg { get; set; }
+        public string EDIMail { get; set; }
         public string EDIVendorCD { get; set; }
         public string LastOrderDate { get; set; }
         public string StaffCD { get; set; }
