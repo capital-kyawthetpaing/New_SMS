@@ -242,6 +242,18 @@ namespace MasterTouroku_Shiiresaki
                     {
                         mve.HolidayKBN = "2";
                     }
+                    if(chkEDIFlg.Checked)
+                    {
+                        mve.EDIFlg = "1";
+                    }
+                    else if(chkEDIMail.Checked)
+                    {
+                        mve.EDIFlg = "2";
+                    }
+                    else
+                    {
+                        mve.EDIFlg = "0";
+                    }
                     switch (OperationMode)
                     {
                         case EOperationMode.INSERT:
@@ -268,9 +280,9 @@ namespace MasterTouroku_Shiiresaki
             {
                 VendorCD = ScVendor.TxtCode.Text,
                 ChangeDate = ScVendor.ChangeDate,
-                ShoguchiFlg = chkShouguchiFlg.Checked ? "1" : "0", 
+                ShoguchiFlg = chkShouguchiFlg.Checked ? "1" : "0",
                 VendorName = txtVendorName.Text,    //Add By SawLay
-                VendorShortName = txtVendorShortName.Text, 
+                VendorShortName = txtVendorShortName.Text,
                 VendorKana = txtVendorKana.Text,
                 VendorLongName1 = txtLongName1.Text,
                 VendorLongName2 = txtLongName2.Text,
@@ -290,17 +302,18 @@ namespace MasterTouroku_Shiiresaki
                 PaymentCloseDay = txtPaymentCloseDay.Text,
                 PaymentPlanKBN = cboPaymentKBN.SelectedValue.ToString(),
                 PaymentPlanDay = txtPaymentPlanDay.Text,
-                BankCD = ScBankCD.TxtCode.Text ,
-                BranchCD = ScBranchCD.TxtCode.Text ,
+                BankCD = ScBankCD.TxtCode.Text,
+                BranchCD = ScBranchCD.TxtCode.Text,
                 KouzaKBN = txtKouzaKBN.Text,
                 KouzaNO = txtKouzaNo.Text,
                 KouzaMeigi = txtKouzaMeigi.Text,
                 KouzaCD = ScKouzaCD.TxtCode.Text,
                 TaxTiming = cboTaxTiming.SelectedValue.ToString(),            //Add By SawLay
-                TaxFractionKBN =cboTaxFractionKBN.SelectedValue.ToString(),     //Add By SawLay
+                TaxFractionKBN = cboTaxFractionKBN.SelectedValue.ToString(),     //Add By SawLay
                 AmountFractionKBN = cboAmountFractionKBN.SelectedValue.ToString(),    //Add By SawLay
-                NetFlg = chkNetFlg.Checked ? "1":"0",
+                NetFlg = chkNetFlg.Checked ? "1" : "0",
                 EDIFlg = chkEDIFlg.Checked ? "1" : "0",   //Add By SawLay
+                EDIMail = chkEDIMail.Checked ? "2" : "0",
                 EDIVendorCD = txtRegisterNum.Text, //Add By SawLay
                 StaffCD = ScStaffCD.TxtCode.Text,
                 AnalyzeCD1 = txtAnalyzeCD1.Text ,
@@ -372,6 +385,7 @@ namespace MasterTouroku_Shiiresaki
                 ScKouzaCD.LabelText = mve.KouzaName;
                 chkNetFlg.Checked = mve.NetFlg.Equals("1") ? true : false;
                 chkEDIFlg.Checked = mve.EDIFlg.Equals("1") ? true : false; //Add By SawLay
+                chkEDIMail.Checked = mve.EDIFlg.Equals("2") ? true : false;
                 txtRegisterNum.Text = mve.EDIVendorCD; //Add By SawLay
                 ScStaffCD.TxtCode.Text = mve.StaffCD;
                 ScStaffCD.LabelText = mve.StaffName;
@@ -1344,21 +1358,36 @@ namespace MasterTouroku_Shiiresaki
                 }
             }
         }
+      
+        private void chkEDIMail_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkEDIMail.Checked == true)
+            {
+                chkEDIFlg.Checked = false;
+            }
+        }
 
-        private void txtEDIVendorCD_KeyDown(object sender, KeyEventArgs e)  //Add By SawLay
+        private void chkEDIFlg_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chkEDIFlg.Checked == true)
+            {
+                chkEDIMail.Checked = false;
+            }
+        }
+
+        private void txtRegisterNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (chkEDIFlg.Checked == true)
                 {
-                    if(string.IsNullOrEmpty(txtRegisterNum.Text))
+                    if (string.IsNullOrEmpty(txtRegisterNum.Text))
                     {
                         mtsbl.ShowMessage("E102");
                         txtRegisterNum.Focus();
                     }
                 }
             }
-        }      
-
+        }
     }
 }

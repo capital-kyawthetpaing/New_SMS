@@ -85,7 +85,7 @@ namespace MasterTouroku_Tempo
         private Store_BL mbl;
         private M_Store_Entity mse;
 
-        //private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
+        private string mZipCD = "";
 
         public MasterTouroku_Tempo()
         {
@@ -396,6 +396,7 @@ namespace MasterTouroku_Tempo
                             ScStaff31.LabelText = dtStore.Rows[0]["ApprovalStaffNM31"].ToString();
                             ScStaff32.LabelText = dtStore.Rows[0]["ApprovalStaffNM32"].ToString();
                             ScMailPatternCD.LabelText = dtStore.Rows[0]["MailPatternName"].ToString();
+                            mZipCD = dtStore.Rows[0]["ZipCD1"].ToString() + dtStore.Rows[0]["ZipCD2"].ToString();
                         }                    
                     }
                 }
@@ -524,7 +525,7 @@ namespace MasterTouroku_Tempo
                         ZipCode_BL zbl = new ZipCode_BL();
                         //bool ret = zbl.M_ZipCode_Select(mze);
                         DataTable dt = zbl.M_ZipCode_Select(mze);
-                        if (dt.Rows.Count > 0 && detailControls[(int)EIndex.Address1].Text == "")
+                        if (dt.Rows.Count > 0 && (detailControls[(int)EIndex.Address1].Text == "" || mZipCD != mze.ZipCD1 + mze.ZipCD2))
                         {
                             detailControls[(int)EIndex.Address1].Text = dt.Rows[0]["Address1"].ToString();   //住所１
                             detailControls[(int)EIndex.Address2].Text = dt.Rows[0]["Address2"].ToString();  //住所２
@@ -533,6 +534,7 @@ namespace MasterTouroku_Tempo
                         {
                             //存在しない場合でもエラーとはしない(It is not an error that record does not exist)
                         }
+                        mZipCD = mze.ZipCD1 + mze.ZipCD2;
                     }
                     break;
 
@@ -790,7 +792,7 @@ namespace MasterTouroku_Tempo
 
             mse.StoreName = detailControls[index + (int)EIndex.StoreName].Text;
             mse.MallCD = detailControls[index + (int)EIndex.MallCD].Text;
-            mse.APIKey = detailControls[index + (int)EIndex.APIKey].Text;
+            mse.APIKey = bbl.Z_SetStr( detailControls[index + (int)EIndex.APIKey].Text);
 
             mse.ZipCD1 = detailControls[index + (int)EIndex.ZipCD1].Text;
             mse.ZipCD2 = detailControls[index + (int)EIndex.ZipCD2].Text;
@@ -1007,7 +1009,7 @@ namespace MasterTouroku_Tempo
             {
                 ((CKM_SearchControl)ctl).LabelText = "";
             }
-
+            mZipCD = "";
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -1022,7 +1024,7 @@ namespace MasterTouroku_Tempo
                             // ｷｰ部
                             foreach (Control ctl in keyControls)
                             {
-                                ctl.Enabled = Kbn == 0 ? true : false;
+                                ctl.Parent.Enabled = Kbn == 0 ? true : false;
                             }
                             if (base.OperationMode != EOperationMode.INSERT)
                                 ScStore.SearchEnable = Kbn == 0 ? true : false;
@@ -1041,7 +1043,7 @@ namespace MasterTouroku_Tempo
                             // ｷｰ部(複写)
                             foreach (Control ctl in copyKeyControls)
                             {
-                                ctl.Enabled = Kbn == 0 ? true : false;
+                                ctl.Parent.Enabled = Kbn == 0 ? true : false;
                             }
                             ScCopyStore.SearchEnable = Kbn == 0 ? true : false;
                             break;
@@ -1058,12 +1060,18 @@ namespace MasterTouroku_Tempo
                             // 明細部
                             foreach (Control ctl in detailControls)
                             {
-                                ctl.Enabled = Kbn == 0 ? true : false;
+                                if (ctl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                    ctl.Parent.Enabled = Kbn == 0 ? true : false;
+                                else
+                                    ctl.Enabled = Kbn == 0 ? true : false;
                             }
                             for (int index = 0; index < searchButtons.Length - 2; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
 
                             checkDeleteFlg.Enabled = Kbn == 0 ? true : false;
+
+                            if(Kbn.Equals(0))
+                                SetEnabled();
 
                             break;
                         }
@@ -1300,6 +1308,9 @@ namespace MasterTouroku_Tempo
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
+                            else if (index.Equals((int)EIndex.StoreName))
+                                //カーソルが消えるのを回避
+                                detailControls[index + 3].Focus();
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
@@ -1493,11 +1504,11 @@ namespace MasterTouroku_Tempo
                     //実店舗場所：店舗区分＝「実店舗」の時のみ入力可能。
                     panel2.Enabled = true;
                     detailControls[(int)EIndex.ReceiptPrint].Enabled = true;
-                    detailControls[(int)EIndex.MoveMailPatternCD].Enabled = true;
+                    ScMailPatternCD.Enabled = true;
 
                     //実店舗を選択した場合(When 実店舗 is selected)、以下の項目を入力不可にする (Input is possible)
                     //モールCD
-                    detailControls[(int)EIndex.MallCD].Enabled = false;
+                    ScMall.Enabled = false;
                     detailControls[(int)EIndex.MallCD].Text = "";
                     ScMall.LabelText = "";
 
@@ -1516,7 +1527,10 @@ namespace MasterTouroku_Tempo
                     //【伝票住所表記】の全て
                     for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Remarks; i++)
                     {
-                        detailControls[i].Enabled = true;
+                        if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                            detailControls[i].Parent.Enabled = true;
+                        else
+                            detailControls[i].Enabled = true;
                     }
 
                     for (int index = 0; index < searchButtons.Length - 2; index++)
@@ -1528,10 +1542,10 @@ namespace MasterTouroku_Tempo
                 {
                     panel2.Enabled = false;
                     detailControls[(int)EIndex.ReceiptPrint].Enabled = false;
-                    detailControls[(int)EIndex.MoveMailPatternCD].Enabled = false;
+                    ScMailPatternCD.Enabled = false;
 
                     //モールCD
-                    detailControls[(int)EIndex.MallCD].Enabled = true;
+                    ScMall.Enabled = true;
                     detailControls[(int)EIndex.APIKey].Enabled = true;
 
                     //Web店舗、Webまとめ店舗を選択した場合(When Web店舗 or Webまとめ店舗 is selected)、以下の項目を入力不可にする
@@ -1547,7 +1561,10 @@ namespace MasterTouroku_Tempo
                     //【伝票住所表記】の全て
                     for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Remarks; i++)
                     {
-                        detailControls[i].Enabled = false;
+                        if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                            detailControls[i].Parent.Enabled = false;
+                        else
+                            detailControls[i].Enabled = false;
                         detailControls[i].Text = "";
                     }
 
