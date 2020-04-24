@@ -54,7 +54,7 @@ namespace CKM_Controls
                 CalculateWidth();
             }
         }
-
+        
         private Bytes CtrlByte { get; set; }
         public enum Bytes
         {
@@ -94,6 +94,7 @@ namespace CKM_Controls
         [DisplayName("AllowMinus")]
         public bool AllowMinus { get; set; } = false;
 
+        public Color ClientColor { get; set; } = SystemColors.Window;
         private bool IsRequire { get; set; } = false;
         private bool IsReversecheck { get; set; } = false;
         public bool IsCorrectDate { get; set; } = true;
@@ -126,6 +127,7 @@ namespace CKM_Controls
             get { return BackGroundColor; }
             set
             {
+
                 BackGroundColor = value;
                 switch (BackGroundColor)
                 {
@@ -140,6 +142,9 @@ namespace CKM_Controls
                         break;
 
                 }
+
+                //PTK Added 
+                ClientColor = BackColor ;
             }
         }
         private FontSize Font_Size { get; set; }
@@ -194,21 +199,26 @@ namespace CKM_Controls
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             bbl = new Base_BL();
+
+            //ToolTip tt = new ToolTip();
+            //tt.SetToolTip(this, "CKM");
+           
+            //tt.IsBalloon = true;
+            //tt.Show("Test ToolTip", this, 0, 0, 0);
         }
 
         protected override void OnEnabledChanged(EventArgs e)
         {
             base.OnEnabledChanged(e);
-            if (!Enabled)
-                this.BackColor = SystemColors.Control;
-            else
-                this.BackColor = SystemColors.Window;
 
+
+
+            //BackColor = ClientColor; PTK  if HSK request, only to open
 
             //base.OnEnabledChanged(e);
 
             //if (!Enabled)
-            //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)
+            //    if (FindMainForm(this) == null)  //Shop Base Check  (null ==true)  //PTK added for Shop
             //    {
             //        this.BackColor = Color.White;
             //    }
@@ -217,7 +227,9 @@ namespace CKM_Controls
             //        this.BackColor = SystemColors.Control;
             //    }
             //else
+
             //    this.BackColor = SystemColors.Window;
+            // BackColor = ClientColor; 
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -547,6 +559,7 @@ namespace CKM_Controls
                 //Control_Check();  
             }
             base.OnLeave(e);
+           /// var f =BackColor= ClientColor;  //PTK temm removed
         }
 
         protected override void OnGotFocus(EventArgs e)
