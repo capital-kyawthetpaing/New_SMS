@@ -425,13 +425,18 @@ namespace TanabanNyuuryoku
             }
         }
 
+        private void cboWarehouse_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+        }
+
         //private void CheckRowAdd(DataGridViewRow row)
         //{
         //    if(row.Index == dgvTanaban.Rows.Count -1)
         //    {
         //        if(!string.IsNullOrWhiteSpace(row.Cells[dgvTanaban.Columns["colbtn"].Index].Value.ToString()))
         //        {
-                    
+
         //        }
         //    }
         //}

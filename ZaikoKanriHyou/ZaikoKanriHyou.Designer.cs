@@ -145,6 +145,7 @@
             this.txtSKUName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName.BackColor = System.Drawing.Color.White;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSKUName.ClientColor = System.Drawing.Color.White;
             this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
@@ -333,6 +334,7 @@
             this.cboSouko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.SoukoAll;
             this.cboSouko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSouko.Flag = 0;
             this.cboSouko.FormattingEnabled = true;
             this.cboSouko.Length = 10;
             this.cboSouko.Location = new System.Drawing.Point(146, 58);
@@ -365,6 +367,7 @@
             this.txtTargetDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDate.BackColor = System.Drawing.Color.White;
             this.txtTargetDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetDate.ClientColor = System.Drawing.Color.White;
             this.txtTargetDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDate.DecimalPlace = 0;
