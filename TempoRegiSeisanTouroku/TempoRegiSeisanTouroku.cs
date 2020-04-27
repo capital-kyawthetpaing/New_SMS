@@ -91,7 +91,8 @@ namespace TempoRegiSeisanTouroku
             
             StartProgram();
 
-            lblDate.Text = DateTime.Today.ToShortDateString();
+            lblDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            //lblDate.Text = DateTime.Today.ToShortDateString();
             DisplayData();
 
             //SelectData();
@@ -116,7 +117,7 @@ namespace TempoRegiSeisanTouroku
         public void DisplayData()
         {
             string data = InOperatorCD;
-            string date = DateTime.Today.ToShortDateString();
+            string date = DateTime.Now.ToString("yyyy/MM/dd");
             dsce.StoreCD = data;
             dsce.CalculationDate = date;
             DataTable dtcash = new DataTable();
