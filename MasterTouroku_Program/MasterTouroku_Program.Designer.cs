@@ -245,9 +245,9 @@
             this.txtProgramName.isEnterKeyDown = false;
             this.txtProgramName.IsNumber = true;
             this.txtProgramName.IsShop = false;
-            this.txtProgramName.Length = 50;
+            this.txtProgramName.Length = 100;
             this.txtProgramName.Location = new System.Drawing.Point(166, 11);
-            this.txtProgramName.MaxLength = 50;
+            this.txtProgramName.MaxLength = 100;
             this.txtProgramName.MoveNext = true;
             this.txtProgramName.Name = "txtProgramName";
             this.txtProgramName.Size = new System.Drawing.Size(750, 19);

@@ -58,5 +58,38 @@ namespace DL
 
             return ret;
         }
+
+        /// <summary>	
+        /// 店舗売上入力更新処理	
+        /// TempoUriageNyuuryokuより更新時に使用	
+        /// ※店舗レジ出荷売上入力の更新内容とほとんど同じ	
+        /// </summary>	
+        /// <param name="dse"></param>	
+        /// <param name="dt"></param>	
+        /// <param name="operationMode"></param>	
+        /// <returns></returns>	
+        public bool PRC_TempoUriageNyuuryoku(D_Sales_Entity dse, DataTable dt, short operationMode)
+        {
+            string sp = "PRC_TempoUriageNyuuryoku";
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@StoreCD", SqlDbType.VarChar, dse.StoreCD);
+            AddParam(command, "@SalesDate", SqlDbType.VarChar, dse.SalesDate);
+            AddParam(command, "@BillingType", SqlDbType.TinyInt, dse.BillingType);
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dse.Operator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dse.PC);
+            //OUTパラメータの追加	
+            string outPutParam = "@OutSalesNO";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+            UseTransaction = true;
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dse.SalesNO = outPutParam;
+            return ret;
+        }
     }
 }

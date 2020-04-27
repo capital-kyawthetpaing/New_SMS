@@ -20,7 +20,6 @@ namespace ZaikoIdouNyuuryoku
         private const short mc_L_END = 3; // ロック用
 
         private ListBox DeleteRowNo = new ListBox();
-        private bool mIraiKidou = false;
         private EOperationMode mDetailOperationMode = EOperationMode.INSERT;
         private EIdoType mIdoType = EIdoType.NULL;
         private enum EIdoType : int
@@ -652,9 +651,17 @@ namespace ZaikoIdouNyuuryoku
                                 keyControls[(int)EIndex.CopyMoveNO].Text = "";
                                 keyControls[(int)EIndex.CopyMoveNO].Enabled = false;
                                 ScCopyOrderNO.BtnSearch.Enabled = false;
-                                keyControls[(int)EIndex.RequestNO].Enabled = true;
-                                ScRequestNO.BtnSearch.Enabled = true;
-
+                                if (OperationMode == EOperationMode.SHOW)
+                                {
+                                    keyControls[(int)EIndex.RequestNO].Enabled = true;
+                                    ScRequestNO.BtnSearch.Enabled = true;
+                                }
+                                else
+                                {
+                                    keyControls[(int)EIndex.RequestNO].Text = "";
+                                    keyControls[(int)EIndex.RequestNO].Enabled = false;
+                                    ScRequestNO.BtnSearch.Enabled = false;
+                                }
                                 Scr_Lock(1, mc_L_END, 1);   // フレームのロック
                                 this.Vsb_Mei_0.TabStop = false;
 
@@ -675,30 +682,30 @@ namespace ZaikoIdouNyuuryoku
                     {
                         if (pGrid == 1)
                         {
-                            // 入力可の列の設定
-                            for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
-                            {
-                                if (m_EnableCnt - 1 < w_Row)
-                                    break;
+                            //// 入力可の列の設定
+                            //for (w_Row = mGrid.g_MK_State.GetLowerBound(1); w_Row <= mGrid.g_MK_State.GetUpperBound(1); w_Row++)
+                            //{
+                            //    if (m_EnableCnt - 1 < w_Row)
+                            //        break;
 
-                                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
-                                {
-                                    continue;
-                                }
+                            //    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].JanCD))
+                            //    {
+                            //        continue;
+                            //    }
 
-                                for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                                {
-                                    switch (w_Col)
-                                    {
-                                        case (int)ClsGridIdo.ColNO.Chk:    // 
-                                            if (OperationMode == EOperationMode.INSERT)
-                                            {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
-                                            }
-                                            break;
-                                    }
-                                }
-                            }
+                            //    for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
+                            //    {
+                            //        switch (w_Col)
+                            //        {
+                            //            case (int)ClsGridIdo.ColNO.Chk:    // 
+                            //                if (OperationMode == EOperationMode.INSERT)
+                            //                {
+                            //                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                            //                }
+                            //                break;
+                            //        }
+                            //    }
+                            //}
                         }
                         else
                         {
@@ -909,7 +916,6 @@ namespace ZaikoIdouNyuuryoku
                 if (cmds.Length - 1 > (int)ECmdLine.PcID)
                 {
                     //修正モードのみ
-                    mIraiKidou = true;
                     Btn_F2.Text = "";
                     Btn_F3.Text = "";
                     Btn_F4.Text = "";
@@ -1002,7 +1008,7 @@ namespace ZaikoIdouNyuuryoku
                     break;
 
                 case (int)EIndex.RequestNO:
-                    if (!string.IsNullOrWhiteSpace(keyControls[index].Text))
+                    if (!string.IsNullOrWhiteSpace(keyControls[index].Text) && keyControls[index].Enabled)
                         return CheckData(set, index);
 
                     break;
@@ -1125,41 +1131,15 @@ namespace ZaikoIdouNyuuryoku
                     //モード：新規の場合 在庫移動の移動依頼番号に対して全て回答済の場合
                     if (OperationMode == EOperationMode.INSERT)
                     {
-                        if (bbl.Z_Set(dt.Rows[0]["CNT_UnAns"]) == 0)
+                        if (bbl.Z_Set(dt.Rows[0]["CNT_UnAns"]) == 0)    //未回答が０
                         {
                             //Ｅ２０９
                             bbl.ShowMessage("E209");
                             return false;
                         }
-
-                        //モード：新規の場合 在庫移動の移動依頼番号に対して全て未回答の場合
-                        //画面転送表15に従って、画面情報を表示(移動依頼ありで、全明細に対し未回答の場合の画面転送)
-                        SetEnabledAfterDisp(1);
-                    }
-                    else
-                    {
-                        //モード：変更・削除の場合 在庫移動の移動依頼番号に対して全て未回答の場合
-                        if (bbl.Z_Set(dt.Rows[0]["CNT_Ans"]) == 0)
-                        {
-                            //Ｅ２１０
-                            bbl.ShowMessage("E210");
-                            return false;
-                        }
-
-                        //モード：照会の場合
-                        //画面転送表16に従って、画面情報を表示
-                        if (OperationMode == EOperationMode.SHOW)
-                        {
-
-                        }
-                        //モード：変更・削除の場合 在庫移動の移動依頼番号に対して全て、または一部が回答済の場合
-                        //画面転送表14に従って、画面情報を表示(移動依頼ありで、明細全部または一部に対し回答済の場合の画面転送)
-                        else if (OperationMode == EOperationMode.UPDATE || OperationMode == EOperationMode.DELETE)
-                        {
-                            SetEnabledAfterDisp(0);
-
-                        }
-                    }                    
+                        if (set == false)
+                            return true;
+                    }                 
                 }
                 else
                 {
@@ -1181,55 +1161,26 @@ namespace ZaikoIdouNyuuryoku
                         return false;
                     }
 
+                    if (index == (int)EIndex.MoveNO)
+                    {
+                        //移動依頼のある在庫移動の場合
+                        if (!string.IsNullOrWhiteSpace(dt.Rows[0]["RequestNO"].ToString()))
+                        {
+                            //在庫移動の移動依頼番号に対して全て未回答の場合
+                            if (bbl.Z_Set(dt.Rows[0]["CNT_Ans"]) == 0)
+                            {
+                                //モード：変更・削除の場合
+                                //Ｅ２１０
+                                bbl.ShowMessage("E210");
+                                return false;
+                            }
+                        }
+                    }
+
                     //画面セットなしの場合、処理正常終了
                     if (set == false)
                     {
                         return true;
-                    }
-
-                    if (index == (int)EIndex.CopyMoveNO)
-                    {
-                        //★移動依頼があるかないかは、複写時は関係なし。
-                        //この場合、移動依頼番号は転送しない。
-                        //Errorでない場合、画面転送表01に従って画面表示
-                        mDetailOperationMode = EOperationMode.INSERT;
-                    }
-                    else
-                    {
-                        //移動依頼のない在庫移動の場合
-                        if (dt.Rows[0]["RequestNO"].ToString().Equals("0") || string.IsNullOrWhiteSpace(dt.Rows[0]["RequestNO"].ToString()))
-                        {
-                            //画面転送表11に従って、画面情報を表示(移動依頼なしの場合の画面転送)
-                            SetEnabledAfterDisp(2);
-
-
-                        }
-                        else
-                        {
-                            //在庫移動の移動依頼番号に対して全て、または一部が回答済の場合
-                            if (bbl.Z_Set(dt.Rows[0]["CNT_UnAns"]) > 0)
-                            {
-                                //画面転送表12に従って、画面情報を表示(移動依頼ありで、明細全部または一部に対し回答済の場合の画面転送)
-                                SetEnabledAfterDisp(0);
-                            }
-
-                            //在庫移動の移動依頼番号に対して全て未回答の場合
-                            else
-                            {
-                                if (OperationMode == EOperationMode.SHOW)
-                                {
-                                    //画面転送表13に従って、画面情報を表示(移動依頼ありで、全明細に対し未回答の場合の画面転送)
-                         
-                                }
-                                else
-                                {
-                                    //モード：変更・削除の場合
-                                    //Ｅ２１０
-                                    bbl.ShowMessage("E210");
-                                    return false;
-                                }
-                            }
-                        }
                     }
                 }
 
@@ -1254,15 +1205,17 @@ namespace ZaikoIdouNyuuryoku
                     {
                         CboStoreCD.SelectedValue = row["StoreCD"];
 
-                        if (index == (int)EIndex.CopyMoveNO)
+                        if (index != (int)EIndex.MoveNO)
                         {
                             detailControls[(int)EIndex.MoveDate].Text = bbl.GetDate();
                         }
                         else
                         {
+                            keyControls[(int)EIndex.RequestNO].Text = dt.Rows[0]["RequestNO"].ToString();
                             detailControls[(int)EIndex.MoveDate].Text = row["MoveDate"].ToString();                         
                         }
 
+                        mIdoType = EIdoType.NULL;
                         CboIdoKbn.SelectedValue = row["MovePurposeKBN"];
                         CheckDetail((int)EIndex.MovePurposeKBN);
 
@@ -1270,6 +1223,7 @@ namespace ZaikoIdouNyuuryoku
                         CheckDetail((int)EIndex.StaffCD);
 
                         ckM_CheckBox3.Checked = false;
+
 
                         CboToSoukoCD.SelectedValue = row["ToSoukoCD"].ToString();
                         CheckDetail((int)EIndex.ToSoukoCD);
@@ -1280,32 +1234,30 @@ namespace ZaikoIdouNyuuryoku
                         if (bbl.Z_Set(row["MoveRows"]) == 0)
                             break;
                     }
+                    if (index == (int)EIndex.RequestNO)
+                    {
+                        //回答区分<>0の移動依頼明細の場合
+                        if (!Convert.ToInt16(row["AnswerKBN"]).Equals(0))
+                        {
+                            continue;
+                        }
+                    }
 
                     mGrid.g_DArray[i].JanCD = row["JanCD"].ToString();
                     mGrid.g_DArray[i].AdminNO = row["AdminNO"].ToString();
                     mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
                     mGrid.g_DArray[i].OldMoveSu = Convert.ToInt16(row["MoveSu"]);
 
-                    CheckGrid((int)ClsGridIdo.ColNO.JanCD, i);
-
                     mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
-
-                    mGrid.g_DArray[i].NewJanCD = row["NewJanCD"].ToString();
-                    mGrid.g_DArray[i].NewAdminNO = row["NewAdminNO"].ToString();
-                    mGrid.g_DArray[i].NewSKUCD = row["NewSKUCD"].ToString();
-                    mGrid.g_DArray[i].NewSKUName = row["NewSKUName"].ToString();   // 
-                    mGrid.g_DArray[i].NewColorName = row["NewColorName"].ToString();   // 
-                    mGrid.g_DArray[i].NewSizeName = row["NewSizeName"].ToString();   // 
-
 
                     mGrid.g_DArray[i].MoveSu = bbl.Z_SetStr(row["MoveSu"]);   // 
                     mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
                     mGrid.g_DArray[i].ExpectReturnDate = row["ExpectReturnDate"].ToString();
 
                     mGrid.g_DArray[i].FromRackNO = row["FromRackNO"].ToString();
-                    //mGrid.g_DArray[i].ToRackNO = row["ToRackNO"].ToString();  Todo:修正
+                    mGrid.g_DArray[i].ToRackNO = row["ToRackNO"].ToString(); 
                     mGrid.g_DArray[i].VendorCD = row["VendorCD"].ToString();
                     mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
 
@@ -1314,25 +1266,25 @@ namespace ZaikoIdouNyuuryoku
                         //回答区分＝0の移動依頼明細の場合
                         if(Convert.ToInt16(row["AnswerKBN"]).Equals(0))
                         {
-                            mGrid.g_DArray[i].JanCD = row["R_JanCD"].ToString();
-                            mGrid.g_DArray[i].AdminNO = row["R_AdminNO"].ToString();
-                            mGrid.g_DArray[i].SKUCD = row["R_SKUCD"].ToString();
-
-                            CheckGrid((int)ClsGridIdo.ColNO.JanCD, i);
-
-                            mGrid.g_DArray[i].SKUName = row["R_SKUName"].ToString();   // 
-                            mGrid.g_DArray[i].ColorName = row["R_ColorName"].ToString();   // 
-                            mGrid.g_DArray[i].SizeName = row["R_SizeName"].ToString();   // 
-
-                            mGrid.g_DArray[i].MoveSu ="";   // 
                             mGrid.g_DArray[i].IraiSu = bbl.Z_SetStr(row["RequestSu"]);   // 
                         }
+                        mGrid.g_DArray[i].RequestRows = Convert.ToInt16(row["RequestRows"]);
+                    }
+                    else
+                    {
+                        mGrid.g_DArray[i].NewJanCD = row["NewJanCD"].ToString();
+                        mGrid.g_DArray[i].NewAdminNO = row["NewAdminNO"].ToString();
+                        mGrid.g_DArray[i].NewSKUCD = row["NewSKUCD"].ToString();
+                        mGrid.g_DArray[i].NewSKUName = row["NewSKUName"].ToString();   // 
+                        mGrid.g_DArray[i].NewColorName = row["NewColorName"].ToString();   // 
+                        mGrid.g_DArray[i].NewSizeName = row["NewSizeName"].ToString();   // 
                     }
 
                     mGrid.g_DArray[i].AnswerKBN = Convert.ToInt16(row["AnswerKBN"]);
-                    //mGrid.g_DArray[i].WarehousingNO = row["WarehousingNO"].ToString();
-                    //mGrid.g_DArray[i].StockNO = row["StockNO"].ToString();
-                    //mGrid.g_DArray[i].ToStockNO = row["ToStockNO"].ToString();
+                    if(mGrid.g_DArray[i].AnswerKBN.Equals(9))
+                    {
+                        mGrid.g_DArray[i].Chk = true;
+                    }
 
                     if (index == (int)EIndex.MoveNO)
                     {
@@ -1357,12 +1309,64 @@ namespace ZaikoIdouNyuuryoku
 
             }
 
+            if (index == (int)EIndex.RequestNO)
+            {
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    //モード：新規の場合 移動依頼の移動依頼番号に対して未回答がある場合
+                    //未回答分の移動依頼のみを移動依頼明細から表示する(回答済の移動依頼明細は表示しない)
+                    //画面転送表15に従って、画面情報を表示(移動依頼ありで、移動依頼明細に対し未回答がある場合の画面転送)
+                    //※	画面転送表15は、移動依頼番号検索時の未回答あり。画面転送表12は、移動番号検索の未回答あり。
+                    SetEnabledAfterDisp(1);
+                }
+            }
+            else
+            {
+                if (index == (int)EIndex.CopyMoveNO)
+                {
+                    //★移動依頼があるかないかは、複写時は関係なし。
+                    //この場合、移動依頼番号は転送しない。
+                    //Errorでない場合、画面転送表01に従って画面表示
+                    mDetailOperationMode = EOperationMode.INSERT;
+                }
+                else
+                {
+                    //移動依頼のない在庫移動の場合
+                    if (dt.Rows[0]["RequestNO"].ToString().Equals("0") || string.IsNullOrWhiteSpace(dt.Rows[0]["RequestNO"].ToString()))
+                    {
+                        //画面転送表11に従って、画面情報を表示(移動依頼なしの場合の画面転送)
+                        SetEnabledAfterDisp(2);
+                    }
+                    else
+                    {
+                        keyControls[(int)EIndex.RequestNO].Text = dt.Rows[0]["RequestNO"].ToString();
+
+                        //在庫移動の移動依頼番号に対して全て、または一部が回答済の場合
+                        if (bbl.Z_Set(dt.Rows[0]["CNT_Ans"]) > 0)
+                        {
+                            //画面転送表12に従って、画面情報を表示(移動依頼ありで、明細全部または一部に対し回答済の場合の画面転送)
+                            SetEnabledAfterDisp(0);
+                        }
+
+                        //在庫移動の移動依頼番号に対して全て未回答の場合
+                        else
+                        {
+                            if (OperationMode == EOperationMode.SHOW)
+                            {
+                                //画面転送表13に従って、画面情報を表示(移動依頼ありで、全明細に対し未回答の場合の画面転送)
+
+                            }
+                        }
+                    }
+                }
+            }
+
             if (OperationMode == EOperationMode.UPDATE)
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
             }
             else if (OperationMode == EOperationMode.INSERT)
             {
@@ -1374,10 +1378,10 @@ namespace ZaikoIdouNyuuryoku
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -1487,11 +1491,14 @@ namespace ZaikoIdouNyuuryoku
 
                     ret = zibl.M_MovePurpose_Select(mme);
                     if (mIdoType != (EIdoType)Convert.ToInt16(mme.MovePurposeType))
+                    {
                         //明細部クリア
                         S_Clear_Grid();
 
-                    mIdoType = (EIdoType)Convert.ToInt16( mme.MovePurposeType);
-                    SetEnabled(mIdoType);
+                        mIdoType = (EIdoType)Convert.ToInt16(mme.MovePurposeType);
+                        SetEnabled(mIdoType);
+                    }
+
                     break;
 
                 case (int)EIndex.CheckBox3:
@@ -1513,16 +1520,10 @@ namespace ZaikoIdouNyuuryoku
                         //チェックボックスがONの場合 移動依頼番号が入力済で、
                         //Key Areaが、新規モードの場合Error
 
-                        //Ｅ１３８
-                        bbl.ShowMessage("E138", "移動依頼番号");
-                        keyControls[(int)EIndex.RequestNO].Focus();
-                        return false;
-
-
-                        //Key Areaが、変更モードの場合
-                        // Form.Detail Display Areaの全明細の移動依頼拒否チェックボックスをONとする
-                        //→	そのまま更新すれば、全明細が9：拒否となる
-
+                        ////Ｅ１３８
+                        //bbl.ShowMessage("E138", "移動依頼番号");
+                        //keyControls[(int)EIndex.RequestNO].Focus();
+                        //return false;
                     }
                     break;
 
@@ -1595,7 +1596,7 @@ namespace ZaikoIdouNyuuryoku
                 case (int)EIndex.FromSoukoCD:
                 case (int)EIndex.ToSoukoCD:
                     //入力できる場合(When input is possible)
-                    if (detailControls[index].Enabled)
+                    if (detailControls[index].Enabled || !string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
@@ -1614,6 +1615,13 @@ namespace ZaikoIdouNyuuryoku
                     //入力できる場合(When input is possible)
                     if (detailControls[index].Enabled)
                     {
+                        //新規行追加が不可の場合は未入力時エラー
+                        if (BtnSubF2.Enabled == false && string.IsNullOrWhiteSpace(detailControls[index].Text))
+                        {           //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                             return true;
 
@@ -1773,17 +1781,8 @@ namespace ZaikoIdouNyuuryoku
                             ret=  sbl.M_SKUPrice_SelectTanka(mspe);
                             lblGeneralPriceOutTax.Text = bbl.Z_SetStr( mspe.GeneralPriceOutTax);
 
-                            //その倉庫でそのSKUが存在する棚番がひとつであれば自動で棚番表示する。
-                            D_Stock_Entity dse = new D_Stock_Entity
-                            {
-                                SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
-                                AdminNO = mAdminNO
-                            };
-                            dt = zibl.D_Stock_SelectRackNO(dse);
-                            if(dt.Rows.Count == 1)
-                            {
-                                detailControls[(int)EIndex.FromRackNO].Text = dt.Rows[0]["RackNO"].ToString();
-                            }
+                            SetFromRackNO();
+                          
                         }
                     }
                     break;
@@ -1917,14 +1916,30 @@ namespace ZaikoIdouNyuuryoku
                                 SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
                                 RackNO = detailControls[(int)EIndex.FromRackNO].Text,
                                 AdminNO = mAdminNO,
-                                StockSu = detailControls[index].Text
+                                StockSu = bbl.Z_SetStr( bbl.Z_Set( detailControls[index].Text) - bbl.Z_Set( detailControls[(int)EIndex.Suryo].Tag))
                             };
+                            ////返品用の倉庫(移動先倉庫)に存在する棚番である必要があります
+                            //if (mIdoType == EIdoType.返品)
+                            //{
+                            //    if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ToRackNO].Text) && set)
+                            //        return true;
+
+                            //    dse.RackNO = detailControls[(int)EIndex.ToRackNO].Text;
+                            //}
+
                             ret = zibl.D_Stock_SelectSuryo(dse);
                             if (!ret)
                             {
-                                //Ｅ２０５
-                                bbl.ShowMessage("E205");
-                                return false;
+                                if (mDetailOperationMode != EOperationMode.DELETE)
+                                {
+                                    //Ｅ２０５
+                                    bbl.ShowMessage("E205");
+                                    //if (mIdoType == EIdoType.返品)
+                                    //{
+                                    //    index = (int)EIndex.ToRackNO;
+                                    //}
+                                    return false;
+                                }
                             }
                         }
                     }
@@ -1941,6 +1956,13 @@ namespace ZaikoIdouNyuuryoku
                             bbl.ShowMessage("E102");
                             return false;
                         }
+                        ////返品用の倉庫(移動先倉庫)に存在する棚番である必要があります
+                        //if (mIdoType == EIdoType.返品)
+                        //{
+                        //    if (!CheckDetail((int)EIndex.Suryo))
+                        //        return false;
+                        //}
+
 
                         if (!CheckDependsOnDate(index))
                             return false;
@@ -2008,23 +2030,19 @@ namespace ZaikoIdouNyuuryoku
             return true;
         }
 
-        // ********************************************
-        // ERR時のSETFOCUS  ERR_FOCUS_GRID_SUB
-        // 
-        // *******************************************
-        private void ERR_FOCUS_GRID_SUB(int pCol, int pRow)
+        private void SetFromRackNO()
         {
-            Control w_Ctrl;
-            bool w_Ret;
-            int w_CtlRow;
-
-            w_CtlRow = pRow - Vsb_Mei_0.Value;
-
-                w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
-
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
-            w_Ret = mGrid.F_MoveFocus((int)ClsGridIdo.Gen_MK_FocusMove.MvSet, (int)ClsGridIdo.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
-
+            //その倉庫でそのSKUが存在する棚番がひとつであれば自動で棚番表示する。
+            D_Stock_Entity dse = new D_Stock_Entity
+            {
+                SoukoCD = CboFromSoukoCD.SelectedValue.ToString(),
+                AdminNO = mAdminNO
+            };
+            DataTable  dt = zibl.D_Stock_SelectRackNO(dse);
+            if (dt.Rows.Count == 1)
+            {
+                detailControls[(int)EIndex.FromRackNO].Text = dt.Rows[0]["RackNO"].ToString();
+            }
         }
 
         /// <summary>
@@ -2188,76 +2206,6 @@ namespace ZaikoIdouNyuuryoku
         }
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
-            //bool ret = false;
-
-            string ymd = detailControls[(int)EIndex.MoveDate].Text;
-
-            if (string.IsNullOrWhiteSpace(ymd))
-                ymd = bbl.GetDate();
-
-            switch (col)
-            {
-                case (int)ClsGridIdo.ColNO.JanCD:
-                    //[M_SKU]
-                    M_SKU_Entity mse = new M_SKU_Entity
-                    {
-                        JanCD = mGrid.g_DArray[row].JanCD,
-                        AdminNO = mGrid.g_DArray[row].AdminNO,
-                        ChangeDate = ymd
-                    };
-
-                    SKU_BL mbl = new SKU_BL();
-                    DataTable dt = mbl.M_SKU_SelectAll(mse);
-                    if (dt.Rows.Count > 0)
-                    {
-                        //mGrid.g_DArray[row].DiscountKbn = Convert.ToInt16(dt.Rows[0]["DiscountKbn"].ToString());
-                        //mGrid.g_DArray[row].TaxRateFLG = Convert.ToInt16(dt.Rows[0]["TaxRateFLG"].ToString());
-                        //mGrid.g_DArray[row].VariousFLG = Convert.ToInt16(dt.Rows[0]["VariousFLG"].ToString());
-                        //mGrid.g_DArray[row].ZaikoKBN = Convert.ToInt16(dt.Rows[0]["ZaikoKBN"].ToString());
-                    }
-
-                    break;
-            }
-
-            //switch (col)
-            //{
-            //    case (int)ClsGridIdo.ColNO.PurchaseSu:
-            //    case (int)ClsGridIdo.ColNO.PurchaserUnitPrice: //単価 
-            //    case (int)ClsGridIdo.ColNO.AdjustmentGaku: //調整額
-            //        //入力された場合、以下を再計算
-            //        //計算仕入額←	form.仕入数	×	form.仕入単価
-            //        mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaserUnitPrice));
-            //        //計算仕入額＋調整額＝仕入額
-            //        mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
-            //         //消費税額(Hidden)←Function_消費税計算.out金額１	
-            //         decimal zei;
-            //        decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG,out zei, ymd);
-            //        mGrid.g_DArray[row].PurchaseTax = zei;
-            //        mGrid.g_DArray[row].PurchaseGaku10 = 0;
-            //        mGrid.g_DArray[row].PurchaseGaku8 = 0;
-
-            //        //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
-            //        if (mGrid.g_DArray[row].TaxRateFLG.Equals(1))
-            //        {
-            //            mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
-            //        }
-            //        //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
-            //        else if (mGrid.g_DArray[row].TaxRateFLG.Equals(2))
-            //        {
-            //            mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
-            //        }
-
-            //        //各金額項目の再計算必要
-            //        if (chkAll == false)
-            //            CalcKin();
-
-            //            break;
-
-            //}
-
-            //配列の内容を画面へセット
-            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-
             return true;
         }
 
@@ -2337,6 +2285,14 @@ namespace ZaikoIdouNyuuryoku
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD))
                     break;
 
+                //在庫移動明細表示エリア(Detail Display Area).移動数 ＞ 0　の明細行のみ更新対象とします。
+                //移動依頼あり
+                if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.RequestNO].Text))
+                {
+                    if (bbl.Z_Set(mGrid.g_DArray[RW].MoveSu) <= 0 && mGrid.g_DArray[RW].Chk == false)
+                        continue;
+                }
+
                 dt.Rows.Add(mGrid.g_DArray[RW].MoveRows > 0 ? mGrid.g_DArray[RW].MoveRows : rowNo
                     , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                     , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
@@ -2358,8 +2314,7 @@ namespace ZaikoIdouNyuuryoku
                     , mGrid.g_DArray[RW].CommentInStore == "" ? null : mGrid.g_DArray[RW].CommentInStore
 
                     , bbl.Z_Set(mGrid.g_DArray[RW].RequestRows)
-                    , bbl.Z_Set(mGrid.g_DArray[RW].AnswerKBN)
-                    //, mGrid.g_DArray[RW].StockNO
+                    , mGrid.g_DArray[RW].Chk ? "9": bbl.Z_Set(mGrid.g_DArray[RW].MoveSu) > 0 ? "1" : "0" //bbl.Z_Set(mGrid.g_DArray[RW].AnswerKBN)
                     , mGrid.g_DArray[RW].ArrivalPlanNO
                     , mGrid.g_DArray[RW].MoveRows > 0 ? 1:0
                     );
@@ -2369,29 +2324,35 @@ namespace ZaikoIdouNyuuryoku
             }
             if (OperationMode == EOperationMode.UPDATE)
             {
+                if(dt.Rows.Count == 0)
+                {
+                    //全て行削除の場合は削除処理にする
+                    OperationMode = EOperationMode.DELETE;
+                }
+
                 //削除した行
                 foreach (D_Move_Entity delNo in DeleteRowNo.Items)
                 {
                     dt.Rows.Add(delNo.MoveRows
-                        , null
-                        , 0
-                        , null
+                        , delNo.SKUCD
+                        , delNo.AdminNO
+                        , delNo.JanCD
                         , 0
                         , delNo.OldMoveSu
 
                         , 0
-                        , null
-                        , null
-                        , null
-                        , 0
-                        , null
-                        , null
-                        , null
-                        , null
+                        , delNo.FromRackNO == "" ? null : delNo.FromRackNO
+                        , delNo.ToRackNO == "" ? null : delNo.ToRackNO
                         , null
                         , 0
-                        , 0
                         , null
+                        , null
+                        , null
+                        , null
+                        , null
+                        , delNo.RequestRows
+                        , 0
+                        , delNo.ArrivalPlanNO
                         , 2
                         );
                 }
@@ -2431,7 +2392,15 @@ namespace ZaikoIdouNyuuryoku
                 for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                 {
                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                    {
+                    {   
+                        //在庫移動明細表示エリア(Detail Display Area).移動数 ＞ 0　の明細行のみ更新対象とします。
+                                     //移動依頼あり
+                        if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.RequestNO].Text))
+                        {
+                            if (bbl.Z_Set(mGrid.g_DArray[RW].MoveSu) <= 0)
+                                continue;
+                        }
+
                         detailControls[(int)EIndex.Gyono].Text = (RW + 1).ToString();
                         if (CheckDetail((int)EIndex.Gyono) == false)
                         {
@@ -2481,10 +2450,10 @@ namespace ZaikoIdouNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {
@@ -2509,6 +2478,16 @@ namespace ZaikoIdouNyuuryoku
                 case EOperationMode.INSERT:
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
+                    if (!BtnSubF2.Enabled && mode == EOperationMode.INSERT)
+                        return;
+
+                    if (!BtnSubF3.Enabled && mode == EOperationMode.UPDATE)
+                        return;
+
+                    if (!BtnSubF4.Enabled && mode == EOperationMode.DELETE)
+                        return;
+
+
                     mDetailOperationMode = mode;
 
                     //「在庫移動明細編集エリア」の全項目をClear
@@ -2584,11 +2563,12 @@ namespace ZaikoIdouNyuuryoku
             mOldMoveDate = "";
             m_MaxMoveGyoNo = 0;
             mFromStoreCD = "";
+            detailControls[(int)EIndex.Suryo].Tag = "";
 
             S_Clear_Grid();   //画面クリア（明細部）
 
             ClrDetailEditArea();
-
+            DeleteRowNo = new ListBox();
             //BtnSubF2.Enabled = true;
             //BtnSubF3.Enabled = true;
             //BtnSubF4.Enabled = true;
@@ -2600,7 +2580,10 @@ namespace ZaikoIdouNyuuryoku
         {
 
             if (CboIdoKbn.DataSource != null)
+            {
                 CboIdoKbn.SelectedIndex = 1;
+                CheckDetail((int)EIndex.MovePurposeKBN);
+            }
 
             if (CboFromSoukoCD.DataSource != null)
             {
@@ -2684,6 +2667,11 @@ namespace ZaikoIdouNyuuryoku
         public override void FunctionProcess(int Index)
         {
             int idx = Array.IndexOf(detailControls, previousCtrl);
+
+            if(previousCtrl != null)
+            if(previousCtrl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                idx = Array.IndexOf(detailControls, ((Search.CKM_SearchControl)previousCtrl).TxtCode);
+
             //フォーカスが「在庫移動明細エリア」にある場合のみ利用可能。
             if (idx >= (int)EIndex.Gyono && idx <= (int)EIndex.RemarksInStore && Index<=3)
             {
@@ -2903,7 +2891,7 @@ namespace ZaikoIdouNyuuryoku
                                     {
                                         exists = true;
                                         detailControls[i].Focus();
-                                        break;
+                                        return;
                                     }
                                 }
                                 if (!exists && detailControls[(int)EIndex.Gyono].CanFocus)
@@ -2917,9 +2905,24 @@ namespace ZaikoIdouNyuuryoku
                             }
                             else
                             {
-                                //あたかもTabキーが押されたかのようにする
-                                //Shiftが押されている時は前のコントロールのフォーカスを移動
-                                ProcessTabKey(!e.Shift);
+                                bool exists2 = false;
+                                for (int i = index + 2; i <= (int)EIndex.RemarksInStore; i++)
+                                {
+                                    if (detailControls[i].CanFocus)
+                                    {
+                                        exists2 = true;
+                                        detailControls[i].Focus();
+                                        return;
+                                    }
+                                }
+                                if (!exists2 && detailControls[(int)EIndex.Gyono].CanFocus)
+                                    detailControls[(int)EIndex.Gyono].Focus();
+                                else
+                                {
+                                    //あたかもTabキーが押されたかのようにする
+                                    //Shiftが押されている時は前のコントロールのフォーカスを移動
+                                    ProcessTabKey(!e.Shift);
+                                }
                             }
                         }
                     }
@@ -2997,15 +3000,15 @@ namespace ZaikoIdouNyuuryoku
                 //フォーカスが「在庫移動明細エリア」にある場合のみ利用可能。
                 int idx = Array.IndexOf(detailControls, previousCtrl);
 
-                //Key Areaが、新規モードと変更モードの場合のみ利用可能。
-                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-                {
-                    //Key Areaの移動依頼番号が入力済の場合は、移動依頼の回答のみを行うため、新規ボタン利用不可。
-                    if(string.IsNullOrWhiteSpace(detailControls[(int)EIndex.RemarksInStore].Text))
-                        BtnSubF2.Enabled = true;
-                }
-                BtnSubF3.Enabled = true;
-                BtnSubF4.Enabled = true;
+                ////Key Areaが、新規モードと変更モードの場合のみ利用可能。
+                //if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                //{
+                //    //Key Areaの移動依頼番号が入力済の場合は、移動依頼の回答のみを行うため、新規ボタン利用不可。
+                //    if(string.IsNullOrWhiteSpace(detailControls[(int)EIndex.RemarksInStore].Text))
+                //        BtnSubF2.Enabled = true;
+                //}
+                //BtnSubF3.Enabled = true;
+                //BtnSubF4.Enabled = true;
 
             }
             catch (Exception ex)
@@ -3015,122 +3018,6 @@ namespace ZaikoIdouNyuuryoku
             }
         }
 
-        //private void GridControl_Enter(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        previousCtrl = this.ActiveControl;
-
-        //        int w_Row;
-        //        Control w_ActCtl;
-
-        //        w_ActCtl = (Control)sender;
-        //        w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-        //        // 背景色
-        //        w_ActCtl.BackColor = ClsGridBase.BKColor;
-
-        //        if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
-        //        {
-        //            return;
-        //        }
-
-        //        Grid_Gotfocus(w_Col, w_Row, System.Convert.ToInt32(w_ActCtl.Tag));
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //エラー時共通処理
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        //private void GridControl_Leave(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        int w_Row;
-        //        Control w_ActCtl;
-
-        //        w_ActCtl = (Control)sender;
-        //        w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-        //        if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
-        //        {
-        //            return;
-        //        }
-        //        // 背景色
-        //        w_ActCtl.BackColor = mGrid.F_GetBackColor_MK(w_Col, w_Row);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //エラー時共通処理
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
-
-        //private void GridControl_KeyDown(object sender, KeyEventArgs e)
-        //{
-        //    try
-        //    {
-        //        //Enterキー押下時処理
-        //        //Returnキーが押されているか調べる
-        //        //AltかCtrlキーが押されている時は、本来の動作をさせる
-        //        if ((e.KeyCode == Keys.Return) &&
-        //            ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
-        //        {
-        //            int w_Row;
-        //            Control w_ActCtl;
-
-        //            w_ActCtl = (Control)sender;
-        //            w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-
-        //            bool lastCell = false;
-
-        //            if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int CL, out int w_CtlRow) == false)
-        //            {
-        //                return;
-        //            }
-
-        //            if (CL == (int)ClsGridIdo.ColNO.Chk)
-        //                if (w_Row == mGrid.g_MK_Max_Row - 1)
-        //                    lastCell = true;
-
-
-        //            //画面の内容を配列へセット
-        //            mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-
-        //            //チェック処理
-        //            if (CheckGrid(CL, w_Row) == false)
-        //            {
-        //                //Focusセット処理
-        //                w_ActCtl.Focus();
-        //                return;
-        //            }
-
-        //            if (lastCell)
-        //            {
-        //                w_ActCtl.Focus();
-        //                return;
-        //            }
-
-        //            //あたかもTabキーが押されたかのようにする
-        //            //Shiftが押されている時は前のコントロールのフォーカスを移動
-        //            //this.ProcessTabKey(!e.Shift);
-        //            //行き先がなかったら移動しない
-        //            S_Grid_0_Event_Enter(CL, w_Row, w_ActCtl, w_ActCtl);
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //エラー時共通処理
-        //        MessageBox.Show(ex.Message);
-        //        //EndSec();
-        //    }
-        //}
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             try
@@ -3164,38 +3051,6 @@ namespace ZaikoIdouNyuuryoku
             }
         }
 
-        ///// <summary>
-        ///// 明細部削除チェックボックスクリック時処理
-        ///// </summary>
-        ///// <param name="sender"></param>
-        ///// <param name="e"></param>
-        //private void CHK_Del_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        int w_Row;
-        //        Control w_ActCtl;
-
-        //        w_ActCtl = (Control)sender;
-        //        w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
-               
-        //        //画面より配列セット 
-        //        mGrid.S_DispToArray(Vsb_Mei_0.Value);
-
-        //        bool Check = mGrid.g_DArray[w_Row].Chk;
-        //        ChangeCheck(Check, w_Row);
-
-        //        //配列の内容を画面へセット
-        //        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        //エラー時共通処理
-        //        MessageBox.Show(ex.Message);
-        //        //EndSec();
-        //    }
-        //}
-
         /// <summary>
         /// CheckBox　CheckedChangedイベント
         /// </summary>
@@ -3205,8 +3060,23 @@ namespace ZaikoIdouNyuuryoku
         {
             try
             {
-               
-            } 
+                if (ckM_CheckBox3.Checked)
+                {
+                    //Key Areaが、変更モードの場合
+                    // Form.Detail Display Areaの全明細の移動依頼拒否チェックボックスをONとする
+                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                    {
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
+                        {
+                            mGrid.g_DArray[RW].Chk = true;
+                        }
+                    }
+                    //配列の内容を画面へセット
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                    //→	そのまま更新すれば、全明細が9：拒否となる
+                }
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
@@ -3265,8 +3135,9 @@ namespace ZaikoIdouNyuuryoku
             switch (kbn)
             {
                 case EIdoType.店舗間移動:
-                        for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
-                    {                    //移動依頼あり
+                    for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
+                    {
+                        //移動依頼あり
                         if (!string.IsNullOrWhiteSpace(keyControls[(int)EIndex.RequestNO].Text))
                         {
                             switch (i)
@@ -3279,14 +3150,15 @@ namespace ZaikoIdouNyuuryoku
                                 case (int)EIndex.ToRackNO:
                                 case (int)EIndex.HenpinSaki:
                                     detailControls[i].Enabled = false;
-                                    detailControls[i].Text = "";
+                                    if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                                        ((Search.CKM_SearchControl)detailControls[i].Parent).BtnSearch.Enabled = false;
                                     break;
 
                                 default:
                                     detailControls[i].Enabled = true;
                                     break;
                             }
-                        }                  
+                        }
                         //移動依頼なし
                         else
                         {
@@ -3492,16 +3364,55 @@ namespace ZaikoIdouNyuuryoku
             if (kbn == 0)
             {
                 BtnSubF2.Enabled = false;
-                BtnSubF4.Enabled = false;
+                BtnSubF3.Enabled = true;
+                BtnSubF4.Enabled = true;
                 mDetailOperationMode = EOperationMode.UPDATE;
+
+                //12
+                for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
+                {
+                    switch (i)
+                    {
+                        case (int)EIndex.MovePurposeKBN:
+                        case (int)EIndex.ToSoukoCD:
+                        case (int)EIndex.JANCD:
+                        case (int)EIndex.JANCD_F:
+                        case (int)EIndex.Suryo:
+                            detailControls[i].Enabled = false;
+                            break;
+                    }
+                }
+                return;
             }
             else if(kbn == 1)
             {
+                BtnSubF2.Enabled = false;
                 BtnSubF4.Enabled = false;
-                mDetailOperationMode = EOperationMode.INSERT;
+                mDetailOperationMode = EOperationMode.UPDATE;
+
+                //15
+                for (int i = 0; i <= (int)EIndex.RemarksInStore; i++)
+                {
+                    switch (i)
+                    {
+                        case (int)EIndex.MovePurposeKBN:
+                        case (int)EIndex.ToSoukoCD:
+                        case (int)EIndex.JANCD:
+                        case (int)EIndex.JANCD_F:
+                        //case (int)EIndex.Suryo:
+                        case (int)EIndex.ToRackNO:
+                        case (int)EIndex.HenpinSaki:
+                            detailControls[i].Enabled = false;
+                            break;
+                    }
+                }
+                return;
             }
             else if (kbn == 2)
             {
+                BtnSubF2.Enabled = true;
+                BtnSubF3.Enabled = true;
+                BtnSubF4.Enabled = true;
                 mDetailOperationMode = EOperationMode.UPDATE;
                 return;
             }
@@ -3527,6 +3438,11 @@ namespace ZaikoIdouNyuuryoku
         {
             int row = gyono - 1;
 
+            if (mGrid.g_DArray[row].Chk)
+                ckM_CheckBox4.Checked = true;
+            else
+                ckM_CheckBox4.Checked = false;
+
             detailControls[(int)EIndex.Gyono].Text = mGrid.g_DArray[row].GYONO;
             detailControls[(int)EIndex.JANCD].Text = mGrid.g_DArray[row].JanCD;
             mJANCD = mGrid.g_DArray[row].JanCD;
@@ -3546,8 +3462,13 @@ namespace ZaikoIdouNyuuryoku
             lblSKUNameF.Text = mGrid.g_DArray[row].NewSKUName;
 
             detailControls[(int)EIndex.Suryo].Text = bbl.Z_SetStr( mGrid.g_DArray[row].MoveSu);
+            detailControls[(int)EIndex.Suryo].Tag = bbl.Z_SetStr(mGrid.g_DArray[row].OldMoveSu);
             lblIraiSu.Text = bbl.Z_SetStr(mGrid.g_DArray[row].IraiSu);
             detailControls[(int)EIndex.FromRackNO].Text = mGrid.g_DArray[row].FromRackNO;
+            if(string.IsNullOrWhiteSpace(mGrid.g_DArray[row].FromRackNO))
+            {
+                SetFromRackNO();
+            }
             detailControls[(int)EIndex.ToRackNO].Text = mGrid.g_DArray[row].ToRackNO;
             detailControls[(int)EIndex.ExpectReturnDate].Text = mGrid.g_DArray[row].ExpectReturnDate;
             detailControls[(int)EIndex.EvaluationPrice].Text =bbl.Z_SetStr( mGrid.g_DArray[row].EvaluationPrice);
@@ -3583,6 +3504,11 @@ namespace ZaikoIdouNyuuryoku
             else
             {
                 //mGrid.g_DArray[row].MoveRows = m_MaxMoveGyoNo;
+                if (ckM_CheckBox4.Checked)
+                    mGrid.g_DArray[row].Chk = true;
+                else
+                    mGrid.g_DArray[row].Chk = false;
+
                 mGrid.g_DArray[row].JanCD = detailControls[(int)EIndex.JANCD].Text;
                 mGrid.g_DArray[row].AdminNO = mAdminNO;
                 mGrid.g_DArray[row].ColorName = lblColorName.Text;
@@ -3631,12 +3557,19 @@ namespace ZaikoIdouNyuuryoku
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
             //行削除したデータは行番号を退避するよう変更
-            if (mGrid.g_DArray[w_Row].RequestRows > 0)
+            if (mGrid.g_DArray[w_Row].MoveRows > 0)
             {
                 D_Move_Entity dmen = new D_Move_Entity
                 {
                     OldMoveSu = mGrid.g_DArray[w_Row].OldMoveSu,
-                    MoveRows = mGrid.g_DArray[w_Row].MoveRows
+                    MoveRows = mGrid.g_DArray[w_Row].MoveRows,
+                    RequestRows = mGrid.g_DArray[w_Row].RequestRows,
+                    ArrivalPlanNO = mGrid.g_DArray[w_Row].ArrivalPlanNO,
+                    FromRackNO = mGrid.g_DArray[w_Row].FromRackNO,
+                    ToRackNO = mGrid.g_DArray[w_Row].ToRackNO,
+                    JanCD = mGrid.g_DArray[w_Row].JanCD,
+                    AdminNO = mGrid.g_DArray[w_Row].AdminNO,
+                    SKUCD = mGrid.g_DArray[w_Row].SKUCD,
                 };
                 DeleteRowNo.Items.Add(dmen);
             }
@@ -3746,9 +3679,20 @@ namespace ZaikoIdouNyuuryoku
             }
             for (int w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
             {
-
+                switch (w_Col)
+                {
+                    case (int)ClsGridIdo.ColNO.GYONO:
+                    case (int)ClsGridIdo.ColNO.Space:
+                        {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
-
+                            break;
+                        }
+                    default:
+                        {
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            break;
+                        }
+                }
             }
         }
     }
