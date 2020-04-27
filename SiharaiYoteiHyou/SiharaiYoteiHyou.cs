@@ -470,7 +470,6 @@ namespace SiharaiYoteiHyou
             scPaymentDestinaion.Value1 = "2";
             scPaymentDestinaion.ChangeDate = bbl.GetDate();
         }
-
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
