@@ -553,6 +553,10 @@ namespace NyuukinNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridNyuukin_S.ColNO.GYONO:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridNyuukin_S.ColNO.BillingDate:
                             case (int)ClsGridNyuukin_S.ColNO.BillingNo:
                             case (int)ClsGridNyuukin_S.ColNO.SalesNO:
@@ -941,7 +945,7 @@ namespace NyuukinNyuuryoku
                 }
 
                 //	パラメータ	基準日：Form.日付	店舗：Form.店舗		得意先区分：3
-                ScCustomer.Value1 = mse.StoreCD;
+                ScCustomer.Value2 = mse.StoreCD;
                 ScCustomer.Value1 = "3";
 
                 if (mDisplayMode == EMode.Null)
@@ -1571,17 +1575,17 @@ namespace NyuukinNyuuryoku
 
             if (OperationMode == EOperationMode.SHOW)
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
             }
             else
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
             }
         }
         protected override void ExecDisp()
@@ -1636,7 +1640,7 @@ namespace NyuukinNyuuryoku
                             return false;
                         }
 
-                        ScCustomer.Value1 = CboStoreCD.SelectedValue.ToString();
+                        ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
                     }
 
                     break;
@@ -2278,10 +2282,10 @@ namespace NyuukinNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {

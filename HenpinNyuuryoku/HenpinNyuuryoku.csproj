@@ -31,14 +31,6 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,10 +55,6 @@
     <StartupObject>HenpinNyuuryoku.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="GridBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
-    </Reference>
     <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\bin\Debug\GridControl.dll</HintPath>
@@ -142,6 +130,10 @@
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
     </ProjectReference>
     <ProjectReference Include="..\DL\DL.csproj">
       <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
