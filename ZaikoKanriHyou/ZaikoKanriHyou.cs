@@ -44,7 +44,7 @@ namespace ZaikoKanriHyou
             SetFunctionLabel(EProMode.PRINT);
             Btn_F10.Text = "";
             cboSouko.Bind(string.Empty);
-            cboSouko.SelectedValue = SoukoCD;
+            //cboSouko.SelectedValue = SoukoCD;
             F11Visible = false;
         }
 
