@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -218,6 +219,7 @@
             this.TB_RackNoF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_RackNoF.BackColor = System.Drawing.Color.White;
             this.TB_RackNoF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_RackNoF.ClientColor = System.Drawing.Color.White;
             this.TB_RackNoF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_RackNoF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoF.DecimalPlace = 0;
@@ -260,6 +262,7 @@
             this.TB_RackNoT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_RackNoT.BackColor = System.Drawing.Color.White;
             this.TB_RackNoT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_RackNoT.ClientColor = System.Drawing.Color.White;
             this.TB_RackNoT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_RackNoT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_RackNoT.DecimalPlace = 0;
@@ -354,6 +357,7 @@
             this.TB_Shohinmei.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Shohinmei.BackColor = System.Drawing.Color.White;
             this.TB_Shohinmei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Shohinmei.ClientColor = System.Drawing.Color.White;
             this.TB_Shohinmei.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Shohinmei.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Shohinmei.DecimalPlace = 0;
@@ -395,6 +399,7 @@
             this.TB_Bikokeyword.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Bikokeyword.BackColor = System.Drawing.Color.White;
             this.TB_Bikokeyword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Bikokeyword.ClientColor = System.Drawing.Color.White;
             this.TB_Bikokeyword.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Bikokeyword.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Bikokeyword.DecimalPlace = 0;
@@ -454,6 +459,7 @@
             this.TB_Catalog.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Catalog.BackColor = System.Drawing.Color.White;
             this.TB_Catalog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Catalog.ClientColor = System.Drawing.Color.White;
             this.TB_Catalog.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Catalog.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Catalog.DecimalPlace = 0;
@@ -494,7 +500,7 @@
             // 
             this.CB_year.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
+            this.CB_year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度フラグ;
             this.CB_year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_year.FormattingEnabled = true;
             this.CB_year.ItemHeight = 12;
@@ -527,7 +533,7 @@
             // 
             this.CB_Season.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
+            this.CB_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズンフラグ;
             this.CB_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_Season.FormattingEnabled = true;
             this.CB_Season.ItemHeight = 12;
@@ -656,7 +662,7 @@
             // 
             this.CB_Tagu1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Tagu1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Tagu1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
+            this.CB_Tagu1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu1.FormattingEnabled = true;
             this.CB_Tagu1.Length = 40;
@@ -688,7 +694,7 @@
             // 
             this.CB_Tagu2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Tagu2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Tagu2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
+            this.CB_Tagu2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu2.FormattingEnabled = true;
             this.CB_Tagu2.Length = 40;
@@ -720,7 +726,7 @@
             // 
             this.CB_Tagu5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Tagu5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Tagu5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
+            this.CB_Tagu5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu5.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu5.FormattingEnabled = true;
             this.CB_Tagu5.Length = 40;
@@ -752,7 +758,7 @@
             // 
             this.CB_Tagu4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Tagu4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Tagu4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
+            this.CB_Tagu4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu4.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu4.FormattingEnabled = true;
             this.CB_Tagu4.Length = 40;
@@ -784,7 +790,7 @@
             // 
             this.CB_Tagu3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Tagu3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Tagu3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグフラグ;
+            this.CB_Tagu3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CB_Tagu3.FormattingEnabled = true;
             this.CB_Tagu3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -836,6 +842,7 @@
             this.TB_Shijishobengo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Shijishobengo.BackColor = System.Drawing.Color.White;
             this.TB_Shijishobengo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Shijishobengo.ClientColor = System.Drawing.Color.White;
             this.TB_Shijishobengo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Shijishobengo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Shijishobengo.DecimalPlace = 0;
@@ -878,6 +885,7 @@
             this.TB_mekashohinCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_mekashohinCD.BackColor = System.Drawing.Color.White;
             this.TB_mekashohinCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_mekashohinCD.ClientColor = System.Drawing.Color.White;
             this.TB_mekashohinCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_mekashohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_mekashohinCD.DecimalPlace = 0;
@@ -919,6 +927,7 @@
             this.TB_item.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_item.BackColor = System.Drawing.Color.White;
             this.TB_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_item.ClientColor = System.Drawing.Color.White;
             this.TB_item.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_item.DecimalPlace = 0;
@@ -1001,6 +1010,7 @@
             this.TB_ShoninbiT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShoninbiT.BackColor = System.Drawing.Color.White;
             this.TB_ShoninbiT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ShoninbiT.ClientColor = System.Drawing.Color.White;
             this.TB_ShoninbiT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_ShoninbiT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TB_ShoninbiT.DecimalPlace = 0;
@@ -1044,6 +1054,7 @@
             this.TB_SaiShuhenkobiT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_SaiShuhenkobiT.BackColor = System.Drawing.Color.White;
             this.TB_SaiShuhenkobiT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_SaiShuhenkobiT.ClientColor = System.Drawing.Color.White;
             this.TB_SaiShuhenkobiT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_SaiShuhenkobiT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TB_SaiShuhenkobiT.DecimalPlace = 0;
@@ -1086,6 +1097,7 @@
             this.TＢ_SaiShuhenkobiF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TＢ_SaiShuhenkobiF.BackColor = System.Drawing.Color.White;
             this.TＢ_SaiShuhenkobiF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TＢ_SaiShuhenkobiF.ClientColor = System.Drawing.Color.White;
             this.TＢ_SaiShuhenkobiF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TＢ_SaiShuhenkobiF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TＢ_SaiShuhenkobiF.DecimalPlace = 0;
@@ -1128,6 +1140,7 @@
             this.TB_ShinkitorokuT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShinkitorokuT.BackColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ShinkitorokuT.ClientColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_ShinkitorokuT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TB_ShinkitorokuT.DecimalPlace = 0;
@@ -1154,6 +1167,7 @@
             this.TB_ShinkitorokuF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShinkitorokuF.BackColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ShinkitorokuF.ClientColor = System.Drawing.Color.White;
             this.TB_ShinkitorokuF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_ShinkitorokuF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TB_ShinkitorokuF.DecimalPlace = 0;
@@ -1476,7 +1490,7 @@
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1504,6 +1518,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 463);
@@ -1726,6 +1748,7 @@
             this.TB_ShoninbiF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ShoninbiF.BackColor = System.Drawing.Color.White;
             this.TB_ShoninbiF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ShoninbiF.ClientColor = System.Drawing.Color.White;
             this.TB_ShoninbiF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_ShoninbiF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.TB_ShoninbiF.DecimalPlace = 0;
@@ -1836,6 +1859,7 @@
             this.PL_head.Name = "PL_head";
             this.PL_head.Size = new System.Drawing.Size(1582, 344);
             this.PL_head.TabIndex = 0;
+          
             // 
             // SearchBrand
             // 
@@ -1870,6 +1894,7 @@
             this.TB_Skucd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Skucd.BackColor = System.Drawing.Color.White;
             this.TB_Skucd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Skucd.ClientColor = System.Drawing.Color.White;
             this.TB_Skucd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Skucd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Skucd.DecimalPlace = 0;
@@ -1894,6 +1919,7 @@
             this.TB_Jancd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Jancd.BackColor = System.Drawing.Color.White;
             this.TB_Jancd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Jancd.ClientColor = System.Drawing.Color.White;
             this.TB_Jancd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Jancd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Jancd.DecimalPlace = 0;

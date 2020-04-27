@@ -123,6 +123,7 @@
             this.txtTargetDays.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDays.BackColor = System.Drawing.Color.White;
             this.txtTargetDays.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetDays.ClientColor = System.Drawing.Color.White;
             this.txtTargetDays.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetDays.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTargetDays.DecimalPlace = 0;
@@ -335,6 +336,7 @@
             this.txtProductName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProductName.BackColor = System.Drawing.Color.White;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProductName.ClientColor = System.Drawing.Color.White;
             this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtProductName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProductName.DecimalPlace = 0;
@@ -376,6 +378,7 @@
             this.txtJANCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD.BackColor = System.Drawing.Color.White;
             this.txtJANCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJANCD.ClientColor = System.Drawing.Color.White;
             this.txtJANCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtJANCD.DecimalPlace = 0;
@@ -417,6 +420,7 @@
             this.txtSKUCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUCD.BackColor = System.Drawing.Color.White;
             this.txtSKUCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSKUCD.ClientColor = System.Drawing.Color.White;
             this.txtSKUCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUCD.DecimalPlace = 0;
@@ -458,6 +462,7 @@
             this.txtRemarks.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRemarks.BackColor = System.Drawing.Color.White;
             this.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRemarks.ClientColor = System.Drawing.Color.White;
             this.txtRemarks.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRemarks.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtRemarks.DecimalPlace = 0;
@@ -482,6 +487,7 @@
             this.txtStorageFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStorageFrom.BackColor = System.Drawing.Color.White;
             this.txtStorageFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStorageFrom.ClientColor = System.Drawing.Color.White;
             this.txtStorageFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStorageFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtStorageFrom.DecimalPlace = 0;
@@ -506,6 +512,7 @@
             this.txtStorageTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStorageTo.BackColor = System.Drawing.Color.White;
             this.txtStorageTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStorageTo.ClientColor = System.Drawing.Color.White;
             this.txtStorageTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStorageTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtStorageTo.DecimalPlace = 0;
@@ -707,6 +714,7 @@
             this.txtCatalog.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCatalog.BackColor = System.Drawing.Color.White;
             this.txtCatalog.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCatalog.ClientColor = System.Drawing.Color.White;
             this.txtCatalog.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCatalog.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCatalog.DecimalPlace = 0;
@@ -984,6 +992,7 @@
             this.txtInstructionNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtInstructionNo.BackColor = System.Drawing.Color.White;
             this.txtInstructionNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtInstructionNo.ClientColor = System.Drawing.Color.White;
             this.txtInstructionNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtInstructionNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtInstructionNo.DecimalPlace = 0;
@@ -1066,6 +1075,7 @@
             this.txtManufactureCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtManufactureCD.BackColor = System.Drawing.Color.White;
             this.txtManufactureCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtManufactureCD.ClientColor = System.Drawing.Color.White;
             this.txtManufactureCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtManufactureCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtManufactureCD.DecimalPlace = 0;
@@ -1090,6 +1100,7 @@
             this.txtItem.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtItem.BackColor = System.Drawing.Color.White;
             this.txtItem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItem.ClientColor = System.Drawing.Color.White;
             this.txtItem.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtItem.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtItem.DecimalPlace = 0;
