@@ -52,7 +52,7 @@ namespace TanabanNyuuryoku
 
             BindCombo();
             chkNotRegister.Checked = true;
-           
+            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
 
             SetRequireField();
 
