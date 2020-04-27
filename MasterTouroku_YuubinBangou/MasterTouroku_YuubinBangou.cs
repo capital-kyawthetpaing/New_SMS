@@ -41,6 +41,7 @@ namespace MasterTouroku_YuubinBangou
 
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
+            SetRequireFields();
         }
 
         private void SetRequireFields()
@@ -315,13 +316,13 @@ namespace MasterTouroku_YuubinBangou
                         //    dgvYuubinBangou.BeginEdit(true);
                         //    return false;
                         //}
-                        else if (string.IsNullOrWhiteSpace(row.Cells["colZipCD1"].Value.ToString()))
-                        {
-                            YuubinBangouBL.ShowMessage("E102");
-                            dgvYuubinBangou.CurrentCell = row.Cells["colZipCD1"];
-                            dgvYuubinBangou.BeginEdit(true);
-                            return false;
-                        }
+                        //else if (string.IsNullOrWhiteSpace(row.Cells["colZipCD1"].Value.ToString()))
+                        //{
+                        //    YuubinBangouBL.ShowMessage("E102");
+                        //    dgvYuubinBangou.CurrentCell = row.Cells["colZipCD1"];
+                        //    dgvYuubinBangou.BeginEdit(true);
+                        //    return false;
+                        //}
                         else
                         {
                             row.Cells["colZipCD1"].Value = null;
@@ -507,12 +508,12 @@ namespace MasterTouroku_YuubinBangou
                 }
                 else if (dgvYuubinBangou.CurrentCell == dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"])
                 {
-                    if ( string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
+                    if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
                     {
                         YuubinBangouBL.ShowMessage("E102");
                         dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"];
                     }
-                    if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
+                    if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
                     {
                         dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value = null;
                     }
@@ -529,5 +530,6 @@ namespace MasterTouroku_YuubinBangou
         {
             
         }
+
     }
 }

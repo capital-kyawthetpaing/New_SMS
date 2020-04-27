@@ -531,6 +531,10 @@ namespace KaitouNoukiTouroku
                         switch (w_Col)
                         {
                             case (int)ClsGridKaitouNouki.ColNO.GYONO:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridKaitouNouki.ColNO.OrderDate:
                             case (int)ClsGridKaitouNouki.ColNO.OrderNo:
                             case (int)ClsGridKaitouNouki.ColNO.TaniCD:
@@ -561,6 +565,7 @@ namespace KaitouNoukiTouroku
                     switch (w_Col)
                     {
                         case  (int)ClsGridKaitouNouki.ColNO.Chk:
+                        case (int)ClsGridKaitouNouki.ColNO.Btn:
                             {
                                 // チェック
                                 S_Set_Cell_Selectable(w_Col, w_Row, false);
@@ -879,116 +884,6 @@ namespace KaitouNoukiTouroku
             SetFuncKey(this, 8, W_Ret);
         }
 
-        private void Grid_NotFocus(int pCol, int pRow)
-        {
-            // ﾌｫｰｶｽをはじく
-            int w_Col;
-            bool w_AllFlg = false;
-            int w_CtlRow;
-
-            if (OperationMode >= EOperationMode.DELETE)
-                return;
-
-            if (m_EnableCnt - 1 < pRow)
-                return;
-
-            w_CtlRow = pRow - Vsb_Mei_0.Value;
-            if (w_CtlRow >= 0 && w_CtlRow <= mGrid.g_MK_Ctl_Row - 1)
-                //画面範囲の時
-                //配列の内容を画面にセット
-                mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0, w_CtlRow, w_CtlRow);
-
-
-            //if (pCol == (int)ClsGridHacchuu.ColNO.JanCD || pCol == (int)ClsGridHacchuu.ColNO.ChkDel)
-            //{
-            //    if (mGrid.g_DArray[pRow].DELCK == true)
-            //    {
-            //        // 削除チェック時は、JanCDは フォーカスセット可 変更不可
-            //        mGrid.g_MK_State[(int)ClsGridHacchuu.ColNO.JanCD, pRow].Cell_ReadOnly = true;
-
-
-            //        //削除チェック時、ReadOnlyの列以外 使用不可
-            //        for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-            //        {
-            //            if (mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly)
-            //            {
-            //                //READONLYの列(JanCD または 取消区分)は使用可
-            //            }
-            //            else if (pCol == (int)ClsGridHacchuu.ColNO.ChkDel)
-            //            {
-            //                //削除チェックは使用可
-            //                mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-            //            }
-            //            else
-            //            {
-            //                mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-            //            }
-            //        }
-            //        return;
-            //    }
-            //    else {
-            //        w_AllFlg = true;
-            //        //削除チェックOFFは、JanCDは 元に戻す
-            //        mGrid.g_MK_State[(int)ClsGridHacchuu.ColNO.JanCD, pRow].Cell_ReadOnly = false;
-            //    }
-            //}
-
-
-            if (pCol == (int)ClsGridKaitouNouki.ColNO.OrderNo || w_AllFlg == true)
-            {
-                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].OrderNo))
-                {
-                    for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                    {        
-                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                    }
-
-                    w_AllFlg = false;
-                }
-                
-                else
-                {
-                    //JANCD入力時
-                    w_AllFlg = true;
-
-                    for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
-                    {
-                        switch (w_Col)
-                        {
-                            case (int)ClsGridKaitouNouki.ColNO.Chk:    // 
-                            case (int)ClsGridKaitouNouki.ColNO.Btn:    // 
-                            case (int)ClsGridKaitouNouki.ColNO.ArrivePlanCD:
-                            case (int)ClsGridKaitouNouki.ColNO.ArrivalPlanMonth:    // 
-                            case (int)ClsGridKaitouNouki.ColNO.ArrivePlanDate:    //希望納期
-                                {
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                                }
-                                break;
-
-                        }
-
-                    }
-                    w_AllFlg = false;
-
-                    //w_AllFlg = true;
-                }
-            }
-
-        }
-
-        // -----------------------------------------------
-        // <明細部>行削除処理 Ｆ７
-        // -----------------------------------------------
-        private void DEL_SUB()
-        {
-       
-        }
-      
-        private void Grid_Gyo_Clr(int RW)  // 明細部１行クリア
-        {
-
-        }
-
         #endregion
 
         public KaitouNoukiTouroku()
@@ -1262,10 +1157,10 @@ namespace KaitouNoukiTouroku
 
             }
 
+            S_BodySeigyo(1, 0);
             S_BodySeigyo(1, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(1, 0);
 
             return true;
         }
@@ -1486,9 +1381,8 @@ namespace KaitouNoukiTouroku
 
                 case (int)EIndex.ArrivalPlanKbn:
                     string kbn = "";
-                    if (ckM_ComboBox1.SelectedIndex != -1)
-                        if (!ckM_ComboBox1.SelectedValue.Equals("-1"))
-                            kbn = ckM_ComboBox1.SelectedValue.ToString();
+                    if (ckM_ComboBox1.SelectedIndex > 0)
+                        kbn = ckM_ComboBox1.SelectedValue.ToString();
 
                     string num2 = "";   //未使用
                     if (!knbl.ChkArrivalPlanKbn(kbn, detailControls[(int)EIndex.ArrivalPlanDate].Text,detailControls[(int)EIndex.ArrivalPlanMonth].Text, out num2))
@@ -1545,7 +1439,8 @@ namespace KaitouNoukiTouroku
 
                 case (int)ClsGridKaitouNouki.ColNO.ArrivePlanCD:
                     string num2 = "";
-                    if (!knbl.ChkArrivalPlanKbn(mGrid.g_DArray[row].ArrivalPlanCD, mGrid.g_DArray[row].ArrivalPlanDate, mGrid.g_DArray[row].ArrivalPlanMonth,out num2))
+                    string kbn =mGrid.g_DArray[row].ArrivalPlanCD == "-1"? "" :mGrid.g_DArray[row].ArrivalPlanCD;
+                    if (!knbl.ChkArrivalPlanKbn(kbn, mGrid.g_DArray[row].ArrivalPlanDate, mGrid.g_DArray[row].ArrivalPlanMonth,out num2))
                     {
                         return false;
                     }
@@ -1807,7 +1702,7 @@ namespace KaitouNoukiTouroku
                         , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanMonth.Replace("/", ""))
                         , mGrid.g_DArray[RW].ArrivalPlanCD == "" ? null : mGrid.g_DArray[RW].ArrivalPlanCD
                         , mGrid.g_DArray[RW].CalcuArrivalPlanDate == "" ? null : mGrid.g_DArray[RW].CalcuArrivalPlanDate
-                        , bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanSu)
+                        , mGrid.g_DArray[RW].ArrivalPlanSu ==null ? bbl.Z_Set(mGrid.g_DArray[RW].OrderSu): bbl.Z_Set(mGrid.g_DArray[RW].ArrivalPlanSu)
                         , mGrid.g_DArray[RW].DestinationSoukoCD == "" ? null : mGrid.g_DArray[RW].DestinationSoukoCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
@@ -1977,10 +1872,10 @@ namespace KaitouNoukiTouroku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             detailControls[(int)EIndex.ArrivalPlanDateFrom].Focus();
 
@@ -2130,8 +2025,7 @@ namespace KaitouNoukiTouroku
                 case 6://F7:
                     break;
 
-                case 7://F8:行追加
-                    DEL_SUB();
+                case 7://F8:
                     break;
 
                 case 9://F10
@@ -2143,9 +2037,9 @@ namespace KaitouNoukiTouroku
                 case 11:    //F12:登録
                     {
 
-                            //Ｑ１０１		
-                            if (bbl.ShowMessage("Q101") != DialogResult.Yes)
-                                return;
+                        //Ｑ１０１		
+                        if (bbl.ShowMessage("Q101") != DialogResult.Yes)
+                            return;
 
                         this.ExecSec();
                         break;
@@ -2499,9 +2393,10 @@ namespace KaitouNoukiTouroku
                         mGrid.g_DArray[RW].Chk = false;
                         mGrid.g_DArray[RW].ArrivalPlanDate = detailControls[(int)EIndex.ArrivalPlanDate].Text;
                         mGrid.g_DArray[RW].ArrivalPlanMonth = detailControls[(int)EIndex.ArrivalPlanMonth].Text;
-                        if(ckM_ComboBox1.SelectedIndex != -1)
-                            if (!ckM_ComboBox1.SelectedValue.Equals("-1"))
-                                mGrid.g_DArray[RW].ArrivalPlanCD = ckM_ComboBox1.SelectedValue.ToString();
+                        if (ckM_ComboBox1.SelectedIndex > 0)
+                            mGrid.g_DArray[RW].ArrivalPlanCD = ckM_ComboBox1.SelectedValue.ToString();
+                        else
+                            mGrid.g_DArray[RW].ArrivalPlanCD = "";
                     }
                 }
                 //配列の内容を画面へセット

@@ -323,7 +323,6 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -668,9 +667,6 @@
             this.Pnl_Body.Controls.Add(this.IMC_SOKNM_2);
             this.Pnl_Body.Controls.Add(this.IMC_SOKNM_1);
             this.Pnl_Body.Controls.Add(this.IMC_SOKNM_0);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Controls.Add(this.IMN_GENER2_2);
             this.Pnl_Body.Controls.Add(this.IMN_TEIKA_2);
             this.Pnl_Body.Controls.Add(this.IMN_GENER_2);
@@ -768,6 +764,9 @@
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_0);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_1);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_2);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Location = new System.Drawing.Point(1, 66);
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 232);
