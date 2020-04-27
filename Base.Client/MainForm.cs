@@ -601,14 +601,18 @@ namespace Base.Client
                     ((ComboBox)ctrl).Enabled = false;
                 else if (ctrl is CheckBox)
                     ((CheckBox)ctrl).Enabled = false;
-                else if (ctrl is UserControl)
-                    ((UserControl)ctrl).Enabled = false;
+                else if (ctrl is CKM_SearchControl csc)
+                {
+                   csc.Enabled=csc.TxtChangeDate.Enabled = false;
+                    csc.TxtCode.BackColor = csc.TxtChangeDate.BackColor=SystemColors.Control;
+                }
                 else if (ctrl is CKM_GridView)
                     ((CKM_GridView)ctrl).DisabledColumn("*");
                 else if (ctrl is CKM_RadioButton)
                     ((CKM_RadioButton)ctrl).Enabled = false;
                 else if (ctrl is Panel)
                     DisablePanel(ctrl as Panel);
+             
             }
         }
 
@@ -631,14 +635,19 @@ namespace Base.Client
                     ((ComboBox)ctrl).Enabled = true;
                 else if (ctrl is CheckBox)
                     ((CheckBox)ctrl).Enabled = true;
-                else if (ctrl is UserControl)
-                    ((UserControl)ctrl).Enabled = true;
+                else if (ctrl is CKM_SearchControl csc)
+                {
+                    csc.Enabled = true;
+                    csc.TxtCode.Enabled =csc.TxtChangeDate.Enabled= true;
+                    csc.TxtChangeDate.BackColor = csc.TxtCode.BackColor = SystemColors.Window;
+                }
                 else if (ctrl is CKM_GridView)
                     ((CKM_GridView)ctrl).EnabledColumn("*");
                 else if (ctrl is CKM_RadioButton)
                     ((CKM_RadioButton)ctrl).Enabled = true;
                 else if (ctrl is Panel)
                     EnablePanel(ctrl as Panel);
+
             }
         }
 

@@ -48,7 +48,7 @@ namespace SiiresakiZaikoYoteiHyou
             F10Visible = false;
             Btn_F11.Text = "Excel(F11)";
             txtTargetDateFrom.Text = DateTime.Now.ToString("yyyy/MM");
-            txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
         }
         private void SetRequiredField()

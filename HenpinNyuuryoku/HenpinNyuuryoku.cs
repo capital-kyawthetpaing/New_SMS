@@ -1267,10 +1267,10 @@ namespace HenpinNyuuryoku
 
             if (OperationMode == EOperationMode.UPDATE )
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
             }
             //else if(OperationMode == EOperationMode.INSERT)
             //{
@@ -1282,10 +1282,10 @@ namespace HenpinNyuuryoku
             //}
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -2153,10 +2153,10 @@ namespace HenpinNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {
@@ -2971,6 +2971,11 @@ namespace HenpinNyuuryoku
                 switch (w_Col)
                 {
                     case (int)ClsGridShiire.ColNO.GYONO:
+                    case (int)ClsGridShiire.ColNO.Space:
+                        {
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            break;
+                        }
                     case (int)ClsGridShiire.ColNO.ExpectReturnDate:
                     case (int)ClsGridShiire.ColNO.MakerItem:
                     case (int)ClsGridShiire.ColNO.JanCD:
@@ -2980,7 +2985,6 @@ namespace HenpinNyuuryoku
                     case (int)ClsGridShiire.ColNO.CommentInStore:
                     case (int)ClsGridShiire.ColNO.CommentOutStore:
                     case (int)ClsGridShiire.ColNO.ReturnPlanSu:
-                    case (int)ClsGridShiire.ColNO.Space:
                     case (int)ClsGridShiire.ColNO.CalculationGaku:
                     case (int)ClsGridShiire.ColNO.PurchaseGaku:
                         {
