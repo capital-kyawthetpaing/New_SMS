@@ -12,6 +12,7 @@ using CsvHelper;
 using System.IO;
 using ClosedXML.Excel;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace ZaikoShoukai
 {
@@ -145,7 +146,7 @@ namespace ZaikoShoukai
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore=TB_Bikokeyword.Text,
-                ReserveCD=CB_ReserveCD.SelectedValue.ToString(),
+                ReserveCD = CB_ReserveCD.SelectedValue.ToString(),
                 NoticesCD = CB_NoticesCD.SelectedValue.ToString(),
                 PostageCD = CB_PostageCD.SelectedValue.ToString(),
                 OrderAttentionCD = CB_OrderAttentionCD.SelectedValue.ToString(),
