@@ -143,7 +143,12 @@ namespace JANCDHenkou
            
                 if (!(row.Cells["colNewJANCD"].Value == null))
                 {
-                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
+                    if(!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13))
+                    {
+                        jhbl.ShowMessage("E220");
+                        return false;
+                    }
+                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
                     {
                         DialogResult dr = jhbl.ShowMessage("Q316");
                         if (dr == DialogResult.No)
@@ -153,6 +158,7 @@ namespace JANCDHenkou
                         }
                     }
                 }
+
             }
             return true;
         }
