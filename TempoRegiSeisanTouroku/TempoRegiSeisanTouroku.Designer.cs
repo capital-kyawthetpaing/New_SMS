@@ -2156,7 +2156,7 @@
             this.lblDate.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.lblDate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(789, 89);
+            this.lblDate.Location = new System.Drawing.Point(896, 89);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(205, 24);
             this.lblDate.TabIndex = 54;
