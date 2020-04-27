@@ -437,6 +437,7 @@
     <Content Include="StoreProcedure\PRC_TempoRegiDataUpdate.sql" />
     <Content Include="StoreProcedure\PRC_TempoRegiHanbaiTouroku.sql" />
     <Content Include="StoreProcedure\PRC_TempoShukkaNyuuryoku.sql" />
+    <Content Include="StoreProcedure\PRC_TempoUriageNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ZaikoIdouNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ZaikoIdou_A2B2.sql" />
     <Content Include="StoreProcedure\RakutenOrderDataDetail_Insert.sql" />

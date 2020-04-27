@@ -74,6 +74,8 @@ namespace HacchuuNyuuryoku
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
+        private string mZipCD = "";
+        private string InOperatorName = "";
         private string mOldOrderNo = "";    //排他処理のため使用
         private string mOldOrderDate = "";
         private string mOldOrderCD = "";
@@ -515,6 +517,11 @@ namespace HacchuuNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridHacchuu.ColNO.GYONO:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
+
                             case (int)ClsGridHacchuu.ColNO.SKUCD:
                             case (int)ClsGridHacchuu.ColNO.TaniCD:
                             case (int)ClsGridHacchuu.ColNO.PriceOutTax:
@@ -801,6 +808,7 @@ namespace HacchuuNyuuryoku
                                         case (int)ClsGridHacchuu.ColNO.SKUName:    // 
                                         case (int)ClsGridHacchuu.ColNO.ColorName:    // 
                                         case (int)ClsGridHacchuu.ColNO.SizeName:
+                                        case (int)ClsGridHacchuu.ColNO.MakerItem:
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
                                                 break;
@@ -996,10 +1004,12 @@ namespace HacchuuNyuuryoku
                             case (int)ClsGridHacchuu.ColNO.SKUName:
                             case (int)ClsGridHacchuu.ColNO.ColorName:
                             case (int)ClsGridHacchuu.ColNO.SizeName:
-                                if (mGrid.g_DArray[pRow].VariousFLG == 1)
+                            case (int)ClsGridHacchuu.ColNO.MakerItem:
+                                //修正時は変更不可
+                                if (mGrid.g_DArray[pRow].VariousFLG == 1 && mGrid.g_DArray[pRow].hacchuGyoNO == 0)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.WHColor;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Color = System.Drawing.Color.Empty;
                                 }
                                 else
                                 {
@@ -1154,11 +1164,9 @@ namespace HacchuuNyuuryoku
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
-            Grid_NotFocus((int)ClsGridHacchuu.ColNO.JanCD, w_Row);
-            CalcKin();
-
             int col = (int)ClsGridHacchuu.ColNO.JanCD;
             Grid_NotFocus(col, w_Row);
+            CalcKin();
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -1261,6 +1269,8 @@ namespace HacchuuNyuuryoku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -1298,6 +1308,8 @@ namespace HacchuuNyuuryoku
                     CboStoreCD.SelectedValue = mse.StoreCD;
                     ScStaff.LabelText = mse.StaffName;
                 }
+                InOperatorName = mse.StaffName;
+                StoreCD = mse.StoreCD;  //初期値を退避
 
                 //承認用データを抽出
                 DataTable dtApp = new DataTable();
@@ -1542,12 +1554,6 @@ namespace HacchuuNyuuryoku
                         {
                             //警告メッセージを表示する
                             bbl.ShowMessage(errno);
-
-                            //E165：売上済み
-                            if (errno.Equals("E165"))
-                            {
-                                lblDisp.Text = "売上済";
-                            }
                         }
                     }
                     //【削除モードの時】
@@ -1590,6 +1596,15 @@ namespace HacchuuNyuuryoku
 
                     if (i == 0)
                     {
+                        if (bbl.Z_Set( row["ReturnFLG"]).Equals(2))
+                        {
+                            ckM_CheckBox2.Checked = true;
+                        }
+                        else if (bbl.Z_Set(row["ReturnFLG"]).Equals(1))
+                        {
+                            ckM_CheckBox1.Checked = true;
+                        }
+
                         CboStoreCD.SelectedValue = row["StoreCD"];
 
                         //明細にデータをセット
@@ -1637,7 +1652,7 @@ namespace HacchuuNyuuryoku
                         else
                             SetBtnSubF11Enabled(false);
 
-                        lblDisp.Text = row["ApprovalStage"].ToString();
+                        SetlblDisp( row["ApprovalStage"].ToString());
 
                         if (row["AliasKBN"].ToString() == "1")
                             radioButton2.Checked = true;
@@ -1677,6 +1692,7 @@ namespace HacchuuNyuuryoku
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
+                    mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
 
                     mGrid.g_DArray[i].Rate = bbl.Z_SetStr(row["Rate"]);   // 
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["OrderUnitPrice"]);   // 
@@ -1704,11 +1720,11 @@ namespace HacchuuNyuuryoku
                     //税額(Hidden)
                     //mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].PriceOutTax) - bbl.Z_Set(mGrid.g_DArray[i].Rate);
 
-                    mGrid.g_DArray[i].ArrivePlanDate = row["ArrivePlanDate"].ToString();
                     mGrid.g_DArray[i].DesiredDeliveryDate = row["DesiredDeliveryDate"].ToString();
 
                     if (index == (int)EIndex.OrderNO)
                     {
+                        mGrid.g_DArray[i].ArrivePlanDate = row["ArrivePlanDate"].ToString();
                         mGrid.g_DArray[i].hacchuGyoNO = Convert.ToInt16(row["OrderRows"].ToString());
                         if (m_MaxOrderGyoNo < mGrid.g_DArray[i].hacchuGyoNO)
                             m_MaxOrderGyoNo = mGrid.g_DArray[i].hacchuGyoNO;
@@ -1721,16 +1737,15 @@ namespace HacchuuNyuuryoku
                 mOldOrderDate = detailControls[(int)EIndex.OrderDate].Text;
 
                 mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
-
             }
             CalcKin();
 
             if (OperationMode == EOperationMode.UPDATE)
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
             }
             else if (OperationMode == EOperationMode.INSERT)
             {
@@ -1742,10 +1757,10 @@ namespace HacchuuNyuuryoku
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -1915,7 +1930,7 @@ namespace HacchuuNyuuryoku
                         bool ret = mbl.M_ZipCode_SelectData(mze);
                         if (ret)
                         {
-                            if (set)
+                            if (set || mZipCD != mze.ZipCD1 + mze.ZipCD2)
                             {
                                 detailControls[index + 1].Text = mze.Address1;
                                 detailControls[index + 2].Text = mze.Address2;
@@ -1927,6 +1942,7 @@ namespace HacchuuNyuuryoku
                             mbl.ShowMessage("E101");
                             return false;
                         }
+                        mZipCD = mze.ZipCD1 + mze.ZipCD2;
                     }
                     break;
             }
@@ -2280,6 +2296,20 @@ namespace HacchuuNyuuryoku
                     }
                     break;
 
+                case (int)ClsGridHacchuu.ColNO.MakerItem:
+                    //入力できる場合(When input is possible)
+                    if (mGrid.g_MK_State[col, row].Cell_Enabled)
+                    {
+                        //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].MakerItem))
+                        {
+                            //Ｅ１０２
+                            bbl.ShowMessage("E102");
+                            return false;
+                        }
+                    }
+                    break;
+
                 case (int)ClsGridHacchuu.ColNO.Rate:
                     //入力無くても良い(It is not necessary to input)
                     //入力無い場合、0とする（When there is no input, it is set to 0）
@@ -2321,7 +2351,13 @@ namespace HacchuuNyuuryoku
                             bbl.ShowMessage("E115");
                             return false;
                         }
-
+                        //発注日以上の日であること
+                        int result = mGrid.g_DArray[row].DesiredDeliveryDate.CompareTo(ymd);
+                        if (result < 0)
+                        {
+                            bbl.ShowMessage("E104");
+                            return false;
+                        }
                     }
                     break;
 
@@ -2458,7 +2494,7 @@ namespace HacchuuNyuuryoku
             else
                 doe.ReturnFLG = "0";
 
-            if (CboSoukoName.SelectedValue == null)
+            if (CboSoukoName.SelectedIndex <= 0)
             {
                 doe.DestinationSoukoCD = "";
             }
@@ -2520,6 +2556,7 @@ namespace HacchuuNyuuryoku
             dt.Columns.Add("SKUNO", typeof(int));
             dt.Columns.Add("SKUCD", typeof(string));
             dt.Columns.Add("JanCD", typeof(string));
+            dt.Columns.Add("MakerItem", typeof(string));
             dt.Columns.Add("SKUName", typeof(string));
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
@@ -2577,6 +2614,7 @@ namespace HacchuuNyuuryoku
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
+                        , mGrid.g_DArray[RW].MakerItem == "" ? null : mGrid.g_DArray[RW].MakerItem
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
@@ -2689,14 +2727,18 @@ namespace HacchuuNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {
                 case EOperationMode.INSERT:
+                    ScStaff.TxtCode.Text = InOperatorCD;
+                    ScStaff.LabelText = InOperatorName;
+                    CboStoreCD.SelectedValue = StoreCD;
+
                     detailControls[0].Focus();
                     break;
 
@@ -2715,12 +2757,17 @@ namespace HacchuuNyuuryoku
             //「承認」を初期表示。
             //ボタンを押すたびに「承認」「却下」のモードを変更する。
             if (init)
-                lblDisp.Text = "承認";
+            {
+                SetlblDisp( "承認");
+            }
             else if (lblDisp.Text == "承認")
-                lblDisp.Text = "却下";
+            {
+                SetlblDisp("却下");
+            }
             else
-                lblDisp.Text = "承認";
-
+            {
+                SetlblDisp("承認");
+            }
             ////F11ボタンは、
             ////その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
             //if (lblDisp.Text == "申請" || lblDisp.Text == "承認中")
@@ -2728,7 +2775,27 @@ namespace HacchuuNyuuryoku
             //else
             //    BtnSubF11.Enabled = false;
         }
+        private void SetlblDisp(string text)
+        {
+            lblDisp.Text = text;
+            lblDisp.BackColor = Color.LightPink;
 
+            switch (text)
+            {
+                case "申請":
+                case "承認":
+                case "承認中":
+                    lblDisp.BackColor = Color.LightPink;
+                    break;
+                case "却下":
+                    lblDisp.BackColor = Color.Plum;
+                    break;
+                case "承認済":
+                    lblDisp.BackColor = Color.LightBlue;
+                    break;
+
+            }
+        }
         /// <summary>
         /// 画面クリア(0:全項目、1:KEY部以外)
         /// </summary>
@@ -2786,6 +2853,7 @@ namespace HacchuuNyuuryoku
 
             //顧客情報ALLクリア
             ClearCustomerInfo();
+            mZipCD = "";
 
             foreach (Control ctl in detailLabels)
             {
@@ -2940,6 +3008,10 @@ namespace HacchuuNyuuryoku
                     }
                     if (kbn != EsearchKbn.Null)
                         SearchData(kbn, previousCtrl);
+
+                    break;
+
+                case 10:
 
                     break;
 
@@ -3190,10 +3262,10 @@ namespace HacchuuNyuuryoku
                 //ただし、その明細が入荷予定日ありの明細である場合、削除できない（F7ボタンを使えないようにする）
                 if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].ArrivePlanDate))
                 {
-                    Btn_F7.Visible = false;
+                    Btn_F7.Enabled = false;
                 }
                 else
-                    Btn_F7.Visible = true;
+                    Btn_F7.Enabled = true;
 
                 if (mGrid.F_Search_Ctrl_MK(w_ActCtl, out int w_Col, out int w_CtlRow) == false)
                 {
@@ -3583,7 +3655,7 @@ namespace HacchuuNyuuryoku
                     case EIndex.CheckBox4:
                         if (enabled)
                         {
-                            for (int i = (int)EIndex.DestinationName; i <= (int)EIndex.Address2; i++)
+                            for (int i = (int)EIndex.DestinationName; i <= (int)EIndex.Fax; i++)
                             {
                                 detailControls[i].Enabled = enabled;
                             }
@@ -3592,7 +3664,7 @@ namespace HacchuuNyuuryoku
                         }
                         else
                         {
-                            for (int i = (int)EIndex.DestinationName; i <= (int)EIndex.Address2; i++)
+                            for (int i = (int)EIndex.DestinationName; i <= (int)EIndex.Fax; i++)
                             {
                                 detailControls[i].Enabled = enabled;
                                     detailControls[i].Text = "";

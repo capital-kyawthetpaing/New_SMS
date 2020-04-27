@@ -468,9 +468,8 @@ namespace SiharaiYoteiHyou
         private void scPaymentDestinaion_Enter(object sender, EventArgs e)
         {
             scPaymentDestinaion.Value1 = "2";
-            scPaymentDestinaion.ChangeDate = txtPaymentDueDateTo.Text;
+            scPaymentDestinaion.ChangeDate = bbl.GetDate();
         }
-
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
