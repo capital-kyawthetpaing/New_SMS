@@ -1082,10 +1082,10 @@ namespace PickingNyuuryoku
 
             }
 
+            S_BodySeigyo(1, 0);
             S_BodySeigyo(1, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(1, 0);
 
             detailControls[0].Focus();
 
@@ -1433,10 +1433,10 @@ namespace PickingNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             keyControls[0].Focus();
 

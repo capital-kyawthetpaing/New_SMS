@@ -76,6 +76,7 @@
     <Compile Include="D_MonthlyDebt_Entity.cs" />
     <Compile Include="D_MonthlyPurchase_Entity.cs" />
     <Compile Include="D_MonthlyStock_Entity.cs" />
+    <Compile Include="D_MoveRequest_Entity.cs" />
     <Compile Include="D_Move_Entity.cs" />
     <Compile Include="D_Order_Entity.cs" />
     <Compile Include="D_PayCloseHistory_Entity.cs" />

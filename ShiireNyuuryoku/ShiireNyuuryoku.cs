@@ -15,7 +15,7 @@ using GridBase;
 namespace ShiireNyuuryoku
 {
     /// <summary>
-    /// ShiireNyuuryoku 仕入入力（発注・入荷なし）  
+    /// ShiireNyuuryoku 仕入入力（発注・入荷なし）
     /// </summary>
     internal partial class ShiireNyuuryoku : FrmMainForm
     {
@@ -1166,13 +1166,13 @@ namespace ShiireNyuuryoku
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
-            Grid_NotFocus((int)ClsGridShiire.ColNO.JanCD, w_Row);
+            
+            int col = (int)ClsGridShiire.ColNO.JanCD;
+            Grid_NotFocus(col, w_Row);
+
             CalcKin();
             CalcZei();
             CalcAdjust();
-
-            int col = (int)ClsGridShiire.ColNO.JanCD;
-            Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -1215,12 +1215,12 @@ namespace ShiireNyuuryoku
             //退避内容を戻す
             mGrid.g_DArray[w_Row].GYONO = w_Gyo.ToString();          //行番号
 
+            int col = (int)ClsGridShiire.ColNO.JanCD;
+            Grid_NotFocus(col, w_Row);
+
             CalcKin();
             CalcZei();
             CalcAdjust();
-
-            int col = (int)ClsGridShiire.ColNO.JanCD;
-            Grid_NotFocus(col, w_Row);
 
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -1241,9 +1241,6 @@ namespace ShiireNyuuryoku
             Array.Clear(mGrid.g_DArray, RW, 1);
 
             mGrid.g_DArray[RW].GYONO = w_Gyo;
-
-            //ZEI_SUB(); // 消費税計算
-            //Kin_Kei(); // 再計算
 
             // JanCD列以外入力不可 (JanCDを入力した時点で他の列が入力可になるため)
             Grid_NotFocus((int)ClsGridShiire.ColNO.JanCD, RW);
@@ -1683,10 +1680,10 @@ namespace ShiireNyuuryoku
 
             if (OperationMode == EOperationMode.UPDATE )
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
             }
             else if (OperationMode == EOperationMode.INSERT)
             {
@@ -1698,10 +1695,10 @@ namespace ShiireNyuuryoku
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -2569,10 +2566,10 @@ namespace ShiireNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {

@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.GvDetail = new CKM_Controls.CKM_GridView();
+            this.colTanaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CboFromSoukoCD = new CKM_Controls.CKM_ComboBox();
             this.lblSoukoCD = new System.Windows.Forms.Label();
             this.ckM_Label1 = new System.Windows.Forms.Label();
             this.label5 = new CKM_Controls.CKM_Label();
-            this.colTanaCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +64,7 @@
             this.btnSubF11.DefaultBtnSize = false;
             this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnSubF11.Location = new System.Drawing.Point(338, 44);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
@@ -81,29 +80,20 @@
             this.GvDetail.AllowUserToAddRows = false;
             this.GvDetail.AllowUserToDeleteRows = false;
             this.GvDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GvDetail.AutoGenerateColumns = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GvDetail.ColumnHeadersHeight = 25;
             this.GvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTanaCD});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(106, 140);
@@ -116,13 +106,21 @@
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
             // 
+            // colTanaCD
+            // 
+            this.colTanaCD.DataPropertyName = "TanaCD";
+            this.colTanaCD.HeaderText = "棚番号";
+            this.colTanaCD.Name = "colTanaCD";
+            this.colTanaCD.ReadOnly = true;
+            // 
             // CboFromSoukoCD
             // 
             this.CboFromSoukoCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CboFromSoukoCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CboFromSoukoCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.CboFromSoukoCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.CboFromSoukoCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.CboFromSoukoCD.Flag = 0;
+            this.CboFromSoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.CboFromSoukoCD.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.CboFromSoukoCD.Length = 30;
             this.CboFromSoukoCD.Location = new System.Drawing.Point(106, 52);
@@ -136,7 +134,7 @@
             // 
             this.lblSoukoCD.AutoSize = true;
             this.lblSoukoCD.BackColor = System.Drawing.Color.Transparent;
-            this.lblSoukoCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblSoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSoukoCD.Location = new System.Drawing.Point(68, 56);
             this.lblSoukoCD.Name = "lblSoukoCD";
             this.lblSoukoCD.Size = new System.Drawing.Size(31, 12);
@@ -161,8 +159,9 @@
             this.label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.DefaultlabelSize = true;
-            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(55, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 12);
@@ -170,13 +169,6 @@
             this.label5.Text = "基準日";
             this.label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colTanaCD
-            // 
-            this.colTanaCD.DataPropertyName = "TanaCD";
-            this.colTanaCD.HeaderText = "棚番号";
-            this.colTanaCD.Name = "colTanaCD";
-            this.colTanaCD.ReadOnly = true;
             // 
             // Search_Location
             // 

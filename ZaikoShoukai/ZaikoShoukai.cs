@@ -12,6 +12,7 @@ using CsvHelper;
 using System.IO;
 using ClosedXML.Excel;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace ZaikoShoukai
 {
@@ -145,10 +146,10 @@ namespace ZaikoShoukai
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore=TB_Bikokeyword.Text,
-                ReserveCD=CB_ReserveCD.SelectedIndex.ToString(),
-                NoticesCD = CB_NoticesCD.SelectedIndex.ToString(),
-                PostageCD = CB_PostageCD.SelectedIndex.ToString(),
-                OrderAttentionCD = CB_OrderAttentionCD.SelectedIndex.ToString(),
+                ReserveCD = CB_ReserveCD.SelectedValue.ToString(),
+                NoticesCD = CB_NoticesCD.SelectedValue.ToString(),
+                PostageCD = CB_PostageCD.SelectedValue.ToString(),
+                OrderAttentionCD = CB_OrderAttentionCD.SelectedValue.ToString(),
                 SportsCD =Sports.TxtCode.Text,
                 InputDateFrom=TB_ShinkitorokuF.Text,
                 InputDateTo=TB_ShinkitorokuT.Text,
@@ -392,6 +393,8 @@ namespace ZaikoShoukai
                 }
             }
         }
+
+
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)
