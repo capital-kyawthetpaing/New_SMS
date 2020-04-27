@@ -1529,6 +1529,8 @@ namespace NyuukaNyuuryoku
                 this.S_SetInit_Grid();
                 this.S_SetInit_Grid2();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
                 Btn_F7.Text = "";
@@ -1963,19 +1965,19 @@ namespace NyuukaNyuuryoku
 
             if (OperationMode == EOperationMode.UPDATE )
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
-                S_BodySeigyo(1, 0);
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -2831,11 +2833,11 @@ namespace NyuukaNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
             mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {

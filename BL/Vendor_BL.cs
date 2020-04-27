@@ -117,6 +117,7 @@ namespace BL
                 mve.TaxFractionKBN = dt.Rows[0]["TaxFractionKBN"].ToString();
                 mve.AmountFractionKBN = dt.Rows[0]["AmountFractionKBN"].ToString();
                 mve.NetFlg = dt.Rows[0]["NetFlg"].ToString();
+                mve.EDIFlg = dt.Rows[0]["EDIFlg"].ToString();
                 mve.LastOrderDate = dt.Rows[0]["LastOrderDate"].ToString();
                 mve.StaffCD = dt.Rows[0]["StaffCD"].ToString();
                 mve.AnalyzeCD1 = dt.Rows[0]["AnalyzeCD1"].ToString();
@@ -126,7 +127,6 @@ namespace BL
                 mve.NotDisplyNote = dt.Rows[0]["NotDisplyNote"].ToString();
                 mve.DisplayNote = dt.Rows[0]["DisplayNote"].ToString();
                 mve.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
-
                 return true;
             }
             else

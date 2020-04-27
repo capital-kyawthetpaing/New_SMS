@@ -79,6 +79,7 @@
     <Compile Include="D_MonthlyDebt_DL.cs" />
     <Compile Include="D_MonthlyPurchase_DL.cs" />
     <Compile Include="D_MonthlyStock_DL.cs" />
+    <Compile Include="D_MoveRequest_DL.cs" />
     <Compile Include="D_Move_DL.cs" />
     <Compile Include="D_Order_DL.cs" />
     <Compile Include="D_PayCloseHistory_DL.cs" />

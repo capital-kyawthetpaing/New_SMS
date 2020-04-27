@@ -213,6 +213,7 @@
             this.ginko_name.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ginko_name.BackColor = System.Drawing.Color.White;
             this.ginko_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ginko_name.ClientColor = System.Drawing.Color.White;
             this.ginko_name.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ginko_name.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginko_name.DecimalPlace = 0;
@@ -255,6 +256,7 @@
             this.ginko_kananame.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ginko_kananame.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ginko_kananame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ginko_kananame.ClientColor = System.Drawing.Color.White;
             this.ginko_kananame.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ginko_kananame.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginko_kananame.DecimalPlace = 0;

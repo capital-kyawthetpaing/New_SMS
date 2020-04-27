@@ -175,23 +175,6 @@ namespace CKM_Controls
             //DrawMode = DrawMode.OwnerDrawFixed;
             // EnabledChanged += new EventHandler(EnableDisplayCombo_EnabledChanged);
         }
-
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (IsRequire && string.IsNullOrWhiteSpace(Text))
-                {
-                    ShowErrorMessage("E102");
-                    MoveNext = false;
-                    return;
-                }
-                else
-                    MoveNext = true;
-            }
-            base.OnKeyDown(e);
-        }
-
         public bool AcceptKey = false;
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
@@ -698,19 +681,48 @@ namespace CKM_Controls
 
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)  // PTK added
         {
+            //if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Enter || (e.Shift && e.KeyCode == Keys.Tab))
+            //{
+
+            //}
+            //else
+               
+                Flag++;
+            base.OnPreviewKeyDown(e);
+        }
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            
+            base.OnKeyUp(e);
+        }
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            var con = this;
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Down || e.KeyCode == Keys.Tab || e.KeyCode == Keys.Enter || (e.Shift && e.KeyCode == Keys.Tab))
             {
                 var go = DataSource;
                 var g = Text;
-                //gooooooooo
+                Flag = 0;
             }
             else
             {
-                Refresh();
-                RefreshItems();
                 return;
             }
-            base.OnPreviewKeyDown(e);
+            Flag = 0;
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (IsRequire && string.IsNullOrWhiteSpace(Text))
+                {
+                    ShowErrorMessage("E102");
+                    MoveNext = false;
+                    return;
+                }
+                else
+                    MoveNext = true;
+            }
+            base.OnKeyDown(e);
         }
+        public int Flag { get; set; } = 0;
+        
     }
 }

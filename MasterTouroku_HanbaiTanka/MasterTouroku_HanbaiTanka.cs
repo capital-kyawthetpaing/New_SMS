@@ -1132,20 +1132,20 @@ namespace MasterTouroku_HanbaiTanka
 
             if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
 
                 //明細の先頭項目へ
                 mGrid.F_MoveFocus((int)ClsGridHanbaiTanka.Gen_MK_FocusMove.MvSet, (int)ClsGridHanbaiTanka.Gen_MK_FocusMove.MvNxt, this.ActiveControl, -1, -1, this.ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridHanbaiTanka.ColNO.ChangeDate);
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -1591,10 +1591,10 @@ namespace MasterTouroku_HanbaiTanka
         {
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             ChangeOperationMode(base.OperationMode);
         }
