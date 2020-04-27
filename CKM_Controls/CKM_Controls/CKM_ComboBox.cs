@@ -460,10 +460,12 @@ namespace CKM_Controls
                     Search_Souko_BL ssbl = new Search_Souko_BL();
                     M_Souko_Entity msentity = new M_Souko_Entity();
                     msentity.ChangeDate = changeDate;
+                    msentity.DeleteFlg = "0";
                     GetLoginInformations();
-                    msentity.StoreCD = StoreCD;
+                    //msentity.StoreCD = StoreCD;
                     DataTable dtSoukoSelectAll = ssbl.M_Souko_BindAll(msentity);
-                    BindFirstData("SoukoCD", "SoukoName", dtSoukoSelectAll);
+                    //BindFirstData("SoukoCD", "SoukoName", dtSoukoSelectAll);
+                    BindCombo("SoukoCD", "SoukoName", dtSoukoSelectAll);
                     break;
 
                 case CboType.入荷倉庫:

@@ -52,7 +52,8 @@ namespace TanabanNyuuryoku
 
             BindCombo();
             chkNotRegister.Checked = true;
-            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+            cboWarehouse.SelectedValue = SoukoCD;
+            
 
             SetRequireField();
 
@@ -61,14 +62,14 @@ namespace TanabanNyuuryoku
 
         private void BindCombo()
         {
-            cboWarehouse.Bind(string.Empty, "");
+            cboWarehouse.Bind(string.Empty,"");
         }
 
         private void SetRequireField()
         {
             cboWarehouse.Require(true);
         }
-
+        //ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
 
         /// <summary>
         /// override F1 Button click
