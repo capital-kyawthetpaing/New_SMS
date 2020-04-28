@@ -22,7 +22,9 @@ namespace Entity
         public string PayeeFlg { get; set; }
         public string MoneyPayeeFlg { get; set; }
         public string PayeeCD { get; set; }
+        public string payeeName { get; set; }
         public string MoneyPayeeCD { get; set; }
+        public string moneypayeeName { get; set; }
         public string ZipCD1 { get; set; }
         public string ZipCD2 { get; set; }
         public string Address1 { get; set; }
@@ -71,5 +73,6 @@ namespace Entity
         public string Keyword3 { get; set; }
         public string VendorKBN { get; set; }
         public string KeyWordType { get; set; }
+
     }
 }

@@ -267,7 +267,6 @@ namespace ZaikoShoukai
             dtData.Clear();
            
         }
-
         private void Excel()
         {
             if (!ErrorCheck())
@@ -314,7 +313,6 @@ namespace ZaikoShoukai
                     }
                 }
         }
-
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);

@@ -35,6 +35,7 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.comboStore = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
+            this.scPaymentDestinaion = new Search.CKM_SearchControl();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.RdoCloseStsSumi = new CKM_Controls.CKM_RadioButton();
@@ -48,7 +49,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.radioClosedStatusAll = new CKM_Controls.CKM_RadioButton();
-            this.scPaymentDestinaion = new Search.CKM_SearchControl();
             this.panelDetail.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -167,7 +167,6 @@
             this.comboStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.comboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.comboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
-            this.comboStore.Flag = 0;
             this.comboStore.FormattingEnabled = true;
             this.comboStore.Length = 10;
             this.comboStore.Location = new System.Drawing.Point(1385, 6);
@@ -193,6 +192,34 @@
             this.ckM_Label4.Text = "支払先";
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // scPaymentDestinaion
+            // 
+            this.scPaymentDestinaion.AutoSize = true;
+            this.scPaymentDestinaion.ChangeDate = "";
+            this.scPaymentDestinaion.ChangeDateWidth = 100;
+            this.scPaymentDestinaion.Code = "";
+            this.scPaymentDestinaion.CodeWidth = 130;
+            this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scPaymentDestinaion.DataCheck = false;
+            this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scPaymentDestinaion.IsCopy = false;
+            this.scPaymentDestinaion.LabelText = "";
+            this.scPaymentDestinaion.LabelVisible = true;
+            this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
+            this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
+            this.scPaymentDestinaion.Name = "scPaymentDestinaion";
+            this.scPaymentDestinaion.SearchEnable = true;
+            this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
+            this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.scPaymentDestinaion.TabIndex = 5;
+            this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scPaymentDestinaion.UseChangeDate = false;
+            this.scPaymentDestinaion.Value1 = null;
+            this.scPaymentDestinaion.Value2 = null;
+            this.scPaymentDestinaion.Value3 = null;
+            this.scPaymentDestinaion.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scPaymentDestinaion_CodeKeyDownEvent);
+            this.scPaymentDestinaion.Enter += new System.EventHandler(this.scPaymentDestinaion_Enter);
             // 
             // ckM_Label5
             // 
@@ -368,34 +395,6 @@
             this.radioClosedStatusAll.TabIndex = 1;
             this.radioClosedStatusAll.Text = "全て";
             this.radioClosedStatusAll.UseVisualStyleBackColor = true;
-            // 
-            // scPaymentDestinaion
-            // 
-            this.scPaymentDestinaion.AutoSize = true;
-            this.scPaymentDestinaion.ChangeDate = "";
-            this.scPaymentDestinaion.ChangeDateWidth = 100;
-            this.scPaymentDestinaion.Code = "";
-            this.scPaymentDestinaion.CodeWidth = 130;
-            this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scPaymentDestinaion.DataCheck = false;
-            this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scPaymentDestinaion.IsCopy = false;
-            this.scPaymentDestinaion.LabelText = "";
-            this.scPaymentDestinaion.LabelVisible = true;
-            this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
-            this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
-            this.scPaymentDestinaion.Name = "scPaymentDestinaion";
-            this.scPaymentDestinaion.SearchEnable = true;
-            this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
-            this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;
-            this.scPaymentDestinaion.TabIndex = 5;
-            this.scPaymentDestinaion.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scPaymentDestinaion.UseChangeDate = false;
-            this.scPaymentDestinaion.Value1 = null;
-            this.scPaymentDestinaion.Value2 = null;
-            this.scPaymentDestinaion.Value3 = null;
-            this.scPaymentDestinaion.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scPaymentDestinaion_CodeKeyDownEvent);
-            this.scPaymentDestinaion.Enter += new System.EventHandler(this.scPaymentDestinaion_Enter);
             // 
             // SiharaiYoteiHyou
             // 
