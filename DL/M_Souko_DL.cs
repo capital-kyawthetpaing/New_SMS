@@ -214,9 +214,8 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                //{ "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
                 //{ "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
-                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.DeleteFlg } },
             };
             return SelectData(dic, "M_Souko_BindAll");
         }

@@ -67,7 +67,6 @@ namespace JANCDHenkou
         //    dt.Columns.Add("newJanCD");
         //    dt.Columns.Add("SKUCD");
 
-        //    dt.Rows.Add();
         //    dt.AcceptChanges();
         //    return dt;
         //}
@@ -197,17 +196,17 @@ namespace JANCDHenkou
                             }
                         }
                     }
-
+                    
                     dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
-                    if (dtJanCDExist.Rows.Count < 1) // If its not exists then error
+                    if (dtJanCDExist.Rows.Count == 0) // If its not exists then error
                     {
                         jhbl.ShowMessage("E101");
                     }
                     else if (dtJanCDExist.Rows.Count == 1) //BindData
                     {
-                        if (dtGenJanCD != null)
+                        if (dgvJANCDHenkou != null)
                         {
-                            if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dtGenJanCD.Rows[0]["GenJanCD"].ToString()))
+                            if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                             {
                                 DataRow row = dtGenJanCD.NewRow();
                                 DataTable tmp = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
@@ -244,7 +243,7 @@ namespace JANCDHenkou
                         if (!frmsku.flgCancel)
                         {
                             SKUCD = frmsku.parSKUCD;
-                            if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dtGenJanCD.Rows[0]["GenJanCD"].ToString()))
+                            if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                             {
                                 DataRow row = dtGenJanCD.NewRow();
                                 DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
@@ -264,12 +263,13 @@ namespace JANCDHenkou
                                 dgvJANCDHenkou.DataSource = dtGenJanCD;
                                 dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
                             }
+                            else
+                            {
+                                dtGenJanCD = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
+                                dgvJANCDHenkou.DataSource = dtGenJanCD;
+                            }
                         }
-                        else
-                        {
-                            dtGenJanCD = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
-                            dgvJANCDHenkou.DataSource = dtGenJanCD;
-                        }
+                       
                     }
                     
                 }
