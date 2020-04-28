@@ -629,7 +629,7 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 80;
+                    TxtCode.MaxLength = 100;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;

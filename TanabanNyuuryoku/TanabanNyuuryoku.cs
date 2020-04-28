@@ -52,7 +52,8 @@ namespace TanabanNyuuryoku
 
             BindCombo();
             chkNotRegister.Checked = true;
-            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+            //ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+            cboWarehouse.SelectedValue = SoukoCD;
 
             SetRequireField();
 
