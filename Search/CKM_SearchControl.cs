@@ -173,7 +173,6 @@ namespace Search
             倉庫,
             店舗,
             仕入先,
-            仕入先PayeeFlg,//20200427
             スタッフ,
             銀行口座,
             モール,
@@ -367,11 +366,6 @@ namespace Search
                     lblName.Width = 280;
                     break;
                 case SearchType.仕入先:
-                    txtCode.MaxLength = 13;
-                    txtCode.Width = 130;
-                    lblName.Width = 280;
-                    break;
-                case SearchType.仕入先PayeeFlg://20200427
                     txtCode.MaxLength = 13;
                     txtCode.Width = 130;
                     lblName.Width = 280;
@@ -629,7 +623,7 @@ namespace Search
                     lblName.Width = 300;
                     break;
                 case SearchType.プログラムID:
-                    TxtCode.MaxLength = 100;
+                    TxtCode.MaxLength = 80;
                     TxtCode.Width = 750;
                     lblName.Width = 300;
                     break;
@@ -813,20 +807,6 @@ namespace Search
                     break;
                 case SearchType.仕入先:
                     using (Search_Vendor frmVendor = new Search_Vendor(changedate,Value1))
-                    {
-                        frmVendor.parChangeDate = changedate;
-                        frmVendor.ShowDialog();
-                        if (!frmVendor.flgCancel)
-                        {
-                            txtCode.Text = frmVendor.VendorCD;
-                            lblName.Text = frmVendor.VendorName;
-                            if (UseChangeDate == true)
-                                txtChangeDate.Text = frmVendor.ChangeDate;
-                        }
-                    }
-                    break;
-                case SearchType.仕入先PayeeFlg://20200427
-                    using (Search_Vendor frmVendor = new Search_Vendor(changedate, Value1))
                     {
                         frmVendor.parChangeDate = changedate;
                         frmVendor.ShowDialog();
@@ -1642,9 +1622,9 @@ namespace Search
                     case SearchType.SKUCD:
                         dtResult = bbl.SimpleSelect1("39", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-                    case SearchType.仕入先PayeeFlg://Search_Vendor for PayeeFlg=1
-                        dtResult = bbl.SimpleSelect1("44", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
-                        break;
+                    //case SearchType.仕入先://Search_Vendor
+                    //    dtResult = bbl.SimpleSelect1("44", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                    //    break;
                     case SearchType.得意先://Search_Customer
                         dtResult = bbl.SimpleSelect1("45", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
@@ -1728,9 +1708,6 @@ namespace Search
                     break;
                 case SearchType.仕入先:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 4, TxtCode.Text);
-                    break;
-                case SearchType.仕入先PayeeFlg:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
                     break;
                 case SearchType.スタッフ:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 5, TxtCode.Text);

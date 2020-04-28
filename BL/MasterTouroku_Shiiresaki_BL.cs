@@ -50,7 +50,9 @@ namespace BL
                 mve.TelephoneNO = dtVendor.Rows[0]["TelephoneNO"].ToString();
                 mve.FaxNO = dtVendor.Rows[0]["FaxNO"].ToString();
                 mve.PayeeCD = dtVendor.Rows[0]["PayeeCD"].ToString();
+                mve.payeeName = dtVendor.Rows[0]["payeeName"].ToString();
                 mve.MoneyPayeeCD = dtVendor.Rows[0]["MoneyPayeeCD"].ToString();
+                mve.moneypayeeName = dtVendor.Rows[0]["moneypayeeName"].ToString();
                 mve.PaymentCloseDay = dtVendor.Rows[0]["PaymentCloseDay"].ToString();
                 mve.PaymentPlanKBN = dtVendor.Rows[0]["PaymentPlanKBN"].ToString();
                 mve.PaymentPlanDay = dtVendor.Rows[0]["PaymentPlanDay"].ToString();

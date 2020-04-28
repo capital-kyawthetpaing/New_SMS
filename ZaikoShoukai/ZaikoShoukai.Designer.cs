@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -187,6 +186,7 @@
             this.CB_Soko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.CB_Soko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Soko.Flag = 0;
             this.CB_Soko.FormattingEnabled = true;
             this.CB_Soko.Length = 10;
             this.CB_Soko.Location = new System.Drawing.Point(129, 15);
@@ -502,6 +502,7 @@
             this.CB_year.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_year.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度フラグ;
             this.CB_year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_year.Flag = 0;
             this.CB_year.FormattingEnabled = true;
             this.CB_year.ItemHeight = 12;
             this.CB_year.Length = 20;
@@ -535,6 +536,7 @@
             this.CB_Season.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Season.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズンフラグ;
             this.CB_Season.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Season.Flag = 0;
             this.CB_Season.FormattingEnabled = true;
             this.CB_Season.ItemHeight = 12;
             this.CB_Season.Length = 20;
@@ -568,6 +570,7 @@
             this.CB_ReserveCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_ReserveCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.予約;
             this.CB_ReserveCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_ReserveCD.Flag = 0;
             this.CB_ReserveCD.FormattingEnabled = true;
             this.CB_ReserveCD.Length = 20;
             this.CB_ReserveCD.Location = new System.Drawing.Point(692, 116);
@@ -600,6 +603,7 @@
             this.CB_NoticesCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_NoticesCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.特記;
             this.CB_NoticesCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_NoticesCD.Flag = 0;
             this.CB_NoticesCD.FormattingEnabled = true;
             this.CB_NoticesCD.Length = 20;
             this.CB_NoticesCD.Location = new System.Drawing.Point(692, 135);
@@ -632,6 +636,7 @@
             this.CB_PostageCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_PostageCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.送料;
             this.CB_PostageCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_PostageCD.Flag = 0;
             this.CB_PostageCD.FormattingEnabled = true;
             this.CB_PostageCD.Length = 20;
             this.CB_PostageCD.Location = new System.Drawing.Point(692, 154);
@@ -664,6 +669,7 @@
             this.CB_Tagu1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Tagu1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CB_Tagu1.Flag = 0;
             this.CB_Tagu1.FormattingEnabled = true;
             this.CB_Tagu1.Length = 40;
             this.CB_Tagu1.Location = new System.Drawing.Point(1213, 80);
@@ -696,6 +702,7 @@
             this.CB_Tagu2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Tagu2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CB_Tagu2.Flag = 0;
             this.CB_Tagu2.FormattingEnabled = true;
             this.CB_Tagu2.Length = 40;
             this.CB_Tagu2.Location = new System.Drawing.Point(1213, 99);
@@ -728,6 +735,7 @@
             this.CB_Tagu5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Tagu5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu5.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CB_Tagu5.Flag = 0;
             this.CB_Tagu5.FormattingEnabled = true;
             this.CB_Tagu5.Length = 40;
             this.CB_Tagu5.Location = new System.Drawing.Point(1213, 156);
@@ -760,6 +768,7 @@
             this.CB_Tagu4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Tagu4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu4.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CB_Tagu4.Flag = 0;
             this.CB_Tagu4.FormattingEnabled = true;
             this.CB_Tagu4.Length = 40;
             this.CB_Tagu4.Location = new System.Drawing.Point(1213, 137);
@@ -792,6 +801,7 @@
             this.CB_Tagu3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Tagu3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.CB_Tagu3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CB_Tagu3.Flag = 0;
             this.CB_Tagu3.FormattingEnabled = true;
             this.CB_Tagu3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.CB_Tagu3.Length = 40;
@@ -1289,6 +1299,7 @@
             this.CB_OrderAttentionCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_OrderAttentionCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.発注フラグ;
             this.CB_OrderAttentionCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_OrderAttentionCD.Flag = 0;
             this.CB_OrderAttentionCD.FormattingEnabled = true;
             this.CB_OrderAttentionCD.Length = 20;
             this.CB_OrderAttentionCD.Location = new System.Drawing.Point(934, 138);
@@ -1490,7 +1501,7 @@
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1518,19 +1529,12 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 463);
             this.GV_Zaiko.MultiSelect = false;
             this.GV_Zaiko.Name = "GV_Zaiko";
+            this.GV_Zaiko.ReadOnly = true;
             this.GV_Zaiko.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GV_Zaiko.Size = new System.Drawing.Size(1440, 400);
             this.GV_Zaiko.TabIndex = 13;
@@ -1543,6 +1547,7 @@
             this.SKUCD.DataPropertyName = "SKUCD";
             this.SKUCD.HeaderText = "SKUCD";
             this.SKUCD.Name = "SKUCD";
+            this.SKUCD.ReadOnly = true;
             this.SKUCD.Width = 200;
             // 
             // 商品名
@@ -1550,6 +1555,7 @@
             this.商品名.DataPropertyName = "商品名";
             this.商品名.HeaderText = "商品名";
             this.商品名.Name = "商品名";
+            this.商品名.ReadOnly = true;
             this.商品名.Width = 400;
             // 
             // カラー
@@ -1557,12 +1563,14 @@
             this.カラー.DataPropertyName = "カラー";
             this.カラー.HeaderText = "カラー";
             this.カラー.Name = "カラー";
+            this.カラー.ReadOnly = true;
             // 
             // サイズ
             // 
             this.サイズ.DataPropertyName = "サイズ";
             this.サイズ.HeaderText = "サイズ";
             this.サイズ.Name = "サイズ";
+            this.サイズ.ReadOnly = true;
             this.サイズ.Width = 150;
             // 
             // 店舗名
@@ -1570,18 +1578,21 @@
             this.店舗名.DataPropertyName = "店舗名";
             this.店舗名.HeaderText = "店舗名";
             this.店舗名.Name = "店舗名";
+            this.店舗名.ReadOnly = true;
             // 
             // SoukoName
             // 
             this.SoukoName.DataPropertyName = "倉庫名";
             this.SoukoName.HeaderText = "倉庫";
             this.SoukoName.Name = "SoukoName";
+            this.SoukoName.ReadOnly = true;
             // 
             // 棚番
             // 
             this.棚番.DataPropertyName = "棚番";
             this.棚番.HeaderText = "棚番";
             this.棚番.Name = "棚番";
+            this.棚番.ReadOnly = true;
             // 
             // 現在庫
             // 
@@ -1592,6 +1603,7 @@
             this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
             this.現在庫.HeaderText = "現在庫";
             this.現在庫.Name = "現在庫";
+            this.現在庫.ReadOnly = true;
             // 
             // 入荷予定
             // 
@@ -1602,11 +1614,13 @@
             this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
+            this.入荷予定.ReadOnly = true;
             // 
             // Button
             // 
             this.Button.HeaderText = "";
             this.Button.Name = "Button";
+            this.Button.ReadOnly = true;
             this.Button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Button.UseColumnTextForButtonValue = true;
             this.Button.Width = 40;
@@ -1620,6 +1634,7 @@
             this.引当可能.DefaultCellStyle = dataGridViewCellStyle5;
             this.引当可能.HeaderText = "引当可能";
             this.引当可能.Name = "引当可能";
+            this.引当可能.ReadOnly = true;
             // 
             // メーカー
             // 
@@ -1628,18 +1643,21 @@
             this.メーカー.DefaultCellStyle = dataGridViewCellStyle6;
             this.メーカー.HeaderText = "メーカー";
             this.メーカー.Name = "メーカー";
+            this.メーカー.ReadOnly = true;
             // 
             // JANCD
             // 
             this.JANCD.DataPropertyName = "JANCD";
             this.JANCD.HeaderText = "JANCD";
             this.JANCD.Name = "JANCD";
+            this.JANCD.ReadOnly = true;
             // 
             // ブランド
             // 
             this.ブランド.DataPropertyName = "ブランド名";
             this.ブランド.HeaderText = "ブランド";
             this.ブランド.Name = "ブランド";
+            this.ブランド.ReadOnly = true;
             this.ブランド.Width = 180;
             // 
             // ITEM
@@ -1647,6 +1665,7 @@
             this.ITEM.DataPropertyName = "ITem";
             this.ITEM.HeaderText = "ITEM";
             this.ITEM.Name = "ITEM";
+            this.ITEM.ReadOnly = true;
             this.ITEM.Width = 200;
             // 
             // メーカー商品CD
@@ -1654,6 +1673,7 @@
             this.メーカー商品CD.DataPropertyName = "メーカー商品CD";
             this.メーカー商品CD.HeaderText = "メーカー商品CD";
             this.メーカー商品CD.Name = "メーカー商品CD";
+            this.メーカー商品CD.ReadOnly = true;
             this.メーカー商品CD.Width = 200;
             // 
             // 最速入荷日
@@ -1665,6 +1685,7 @@
             this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle7;
             this.最速入荷日.HeaderText = "最速入荷日";
             this.最速入荷日.Name = "最速入荷日";
+            this.最速入荷日.ReadOnly = true;
             // 
             // 基準在庫
             // 
@@ -1675,6 +1696,7 @@
             this.基準在庫.DefaultCellStyle = dataGridViewCellStyle8;
             this.基準在庫.HeaderText = "基準在庫";
             this.基準在庫.Name = "基準在庫";
+            this.基準在庫.ReadOnly = true;
             // 
             // 販売定価
             // 
@@ -1685,6 +1707,7 @@
             this.販売定価.DefaultCellStyle = dataGridViewCellStyle9;
             this.販売定価.HeaderText = "販売定価";
             this.販売定価.Name = "販売定価";
+            this.販売定価.ReadOnly = true;
             // 
             // 標準原価
             // 
@@ -1696,6 +1719,7 @@
             this.標準原価.HeaderText = "標準原価";
             this.標準原価.MaxInputLength = 6;
             this.標準原価.Name = "標準原価";
+            this.標準原価.ReadOnly = true;
             this.標準原価.Width = 80;
             // 
             // ckM_LB_Kijunbi
@@ -1859,7 +1883,6 @@
             this.PL_head.Name = "PL_head";
             this.PL_head.Size = new System.Drawing.Size(1582, 344);
             this.PL_head.TabIndex = 0;
-          
             // 
             // SearchBrand
             // 

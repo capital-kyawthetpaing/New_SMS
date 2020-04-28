@@ -360,9 +360,9 @@ namespace MasterTouroku_Shiiresaki
                 txtTelno.Text = mve.TelephoneNO;
                 txtFaxno.Text = mve.FaxNO;
                 ScPayeeCD.TxtCode.Text = mve.PayeeCD;
-                ScPayeeCD.LabelText = mve.VendorName;
+                ScPayeeCD.LabelText = mve.payeeName;
                 ScMoneyPayeeCD.TxtCode.Text = mve.MoneyPayeeCD;
-                ScMoneyPayeeCD.LabelText = mve.VendorName;
+                ScMoneyPayeeCD.LabelText = mve.moneypayeeName;
                 txtPaymentCloseDay.Text = mve.PaymentCloseDay;
                 txtPaymentPlanDay.Text = mve.PaymentPlanDay;
                 cboPaymentKBN.SelectedValue = mve.PaymentPlanKBN;
@@ -1238,6 +1238,7 @@ namespace MasterTouroku_Shiiresaki
         }
 
         private void ScKouzaCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
+
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -1276,7 +1277,8 @@ namespace MasterTouroku_Shiiresaki
                             }
                         }
                     }
-                }       
+                }
+                ScKouzaCD.TxtChangeDate.Text = ScVendor.TxtChangeDate.Text;
             }
         }
 
@@ -1323,6 +1325,7 @@ namespace MasterTouroku_Shiiresaki
                         }    
                     }
                 }
+               
             }
         }
 
