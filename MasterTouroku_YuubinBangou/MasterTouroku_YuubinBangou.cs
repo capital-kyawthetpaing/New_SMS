@@ -301,13 +301,13 @@ namespace MasterTouroku_YuubinBangou
                                 return false;
                             }
 
-                            if (!string.IsNullOrWhiteSpace(row.Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(row.Cells["colAdd2"].Value.ToString()))
-                            {
-                                YuubinBangouBL.ShowMessage("E102");
-                                dgvYuubinBangou.CurrentCell = row.Cells["colAdd2"];
-                                dgvYuubinBangou.BeginEdit(true);
-                                return false;
-                            }
+                            //if (!string.IsNullOrWhiteSpace(row.Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(row.Cells["colAdd2"].Value.ToString()))
+                            //{
+                            //    YuubinBangouBL.ShowMessage("E102");
+                            //    dgvYuubinBangou.CurrentCell = row.Cells["colAdd2"];
+                            //    dgvYuubinBangou.BeginEdit(true);
+                            //    return false;
+                            //}
                         }
                         //else if(!string.IsNullOrWhiteSpace(row.Cells["colZipCD2"].Value.ToString()) && (string.IsNullOrWhiteSpace(row.Cells["colZipCD1"].Value.ToString())))
                         //{
@@ -508,11 +508,11 @@ namespace MasterTouroku_YuubinBangou
                 }
                 else if (dgvYuubinBangou.CurrentCell == dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"])
                 {
-                    if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
-                    {
-                        YuubinBangouBL.ShowMessage("E102");
-                        dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"];
-                    }
+                    //if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
+                    //{
+                    //    YuubinBangouBL.ShowMessage("E102");
+                    //    dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"];
+                    //}
                     if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
                     {
                         dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value = null;
