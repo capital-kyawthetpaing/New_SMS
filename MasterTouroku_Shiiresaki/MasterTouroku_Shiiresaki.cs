@@ -1276,7 +1276,8 @@ namespace MasterTouroku_Shiiresaki
                             }
                         }
                     }
-                }       
+                }
+                ScKouzaCD.TxtChangeDate.Text = ScVendor.TxtChangeDate.Text;
             }
         }
 
@@ -1323,6 +1324,7 @@ namespace MasterTouroku_Shiiresaki
                         }    
                     }
                 }
+               
             }
         }
 
