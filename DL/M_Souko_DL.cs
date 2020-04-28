@@ -216,7 +216,7 @@ namespace DL
             {
                 //{ "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
                 //{ "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mse.ChangeDate } },
-                 { "@DeleteFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.DeleteFlg } },
+                { "@DeleteFlg", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.DeleteFlg } },
             };
             return SelectData(dic, "M_Souko_BindAll");
         }

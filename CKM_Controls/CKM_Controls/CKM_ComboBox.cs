@@ -459,10 +459,10 @@ namespace CKM_Controls
                 case CboType.WarehouseSelectAll:
                     Search_Souko_BL ssbl = new Search_Souko_BL();
                     M_Souko_Entity msentity = new M_Souko_Entity();
-                    msentity.ChangeDate = changeDate;
-                    msentity.DeleteFlg = "0";
+                    //msentity.ChangeDate = changeDate;
                     GetLoginInformations();
                     //msentity.StoreCD = StoreCD;
+                    msentity.DeleteFlg = "0";
                     DataTable dtSoukoSelectAll = ssbl.M_Souko_BindAll(msentity);
                     //BindFirstData("SoukoCD", "SoukoName", dtSoukoSelectAll);
                     BindCombo("SoukoCD", "SoukoName", dtSoukoSelectAll);
