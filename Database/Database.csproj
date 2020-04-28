@@ -339,6 +339,7 @@
     <Content Include="StoreProcedure\M_Souko_AllBind.sql" />
     <Content Include="StoreProcedure\M_Souko_Bind.sql" />
     <Content Include="StoreProcedure\M_Souko_BindAll.sql" />
+    <Content Include="StoreProcedure\M_Souko_BindForHenpin.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForNyuuka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForTanaoroshi.sql" />
