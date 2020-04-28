@@ -513,6 +513,7 @@ namespace MasterTouroku_YuubinBangou
                     //    YuubinBangouBL.ShowMessage("E102");
                     //    dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"];
                     //}
+
                     if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
                     {
                         dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value = null;
