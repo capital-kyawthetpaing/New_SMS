@@ -590,21 +590,44 @@ namespace MasterTouroku_ShiireKakeritsu
             //    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
             // }
 
-            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-            {
-               if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
-                {
-                    int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
-                    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-                }
-            }
+            
+                //if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
+                // {
+                //     int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+                //     dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+                // }
+          foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+          {
+              DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+              if (chk.Value == chk.TrueValue)
+              {
+                  int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+                  dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+              }
+          }
+            
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-          
-         
-          
+            string date = string.Empty;
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (chk.Selected == true)
+                {
+                    scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
+                    scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
+                    scSegmentCD.TxtCode.Text = row.Cells["colSegmentCD1"].Value.ToString();
+                    cbo_Year.SelectedText = row.Cells["colYear"].Value.ToString();
+                    cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
+                    date = row.Cells["colDate"].Value.ToString().Substring(0,10);
+                    string[] a = date.Split('/');
+                    txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
+                    txtRate.Text = row.Cells["colRate1"].Value.ToString();
+                }
+            }
+
         }
 
     }
