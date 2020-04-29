@@ -104,6 +104,7 @@
             this.cboStoreAuthorizations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStoreAuthorizations.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStoreAuthorizations.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 10;
             this.cboStoreAuthorizations.Location = new System.Drawing.Point(1469, 20);
@@ -175,6 +176,7 @@
             this.txtTargetYear.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetYear.BackColor = System.Drawing.Color.White;
             this.txtTargetYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetYear.ClientColor = System.Drawing.Color.White;
             this.txtTargetYear.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetYear.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetYear.DecimalPlace = 0;
