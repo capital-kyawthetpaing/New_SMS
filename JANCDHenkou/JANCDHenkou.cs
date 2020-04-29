@@ -12,6 +12,7 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
+using System.IO;
 
 namespace JANCDHenkou
 {
@@ -43,33 +44,30 @@ namespace JANCDHenkou
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
 
-
-
-            //dtGenJanCD = CreateDatatable();
-            //dgvJANCDHenkou.DataSource = dtGenJanCD;
+            dtGenJanCD = CreateDatatable();
         }
         private void JANCDHenkou_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
-        //public DataTable CreateDatatable()
-        //{
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("GenJanCD");
-        //    dt.Columns.Add("BrandCD");
-        //    dt.Columns.Add("BrandName");
-        //    dt.Columns.Add("ITemCD");
-        //    dt.Columns.Add("SKUName");
-        //    dt.Columns.Add("SizeName");
-        //    dt.Columns.Add("ColorName");
-        //    dt.Columns.Add("GenJanCD2");
-        //    dt.Columns.Add("newJanCD");
-        //    dt.Columns.Add("SKUCD");
+        public DataTable CreateDatatable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("GenJanCD" , typeof(string));
+            dt.Columns.Add("BrandCD" , typeof(string));
+            dt.Columns.Add("BrandName", typeof(string));
+            dt.Columns.Add("ITemCD" , typeof(string));
+            dt.Columns.Add("SKUName", typeof(string));
+            dt.Columns.Add("SizeName", typeof(string));
+            dt.Columns.Add("ColorName", typeof(string));
+            dt.Columns.Add("GenJanCD2", typeof(string));
+            dt.Columns.Add("newJanCD", typeof(string));
+            dt.Columns.Add("SKUCD", typeof(string));
 
-        //    dt.AcceptChanges();
-        //    return dt;
-        //}
+            dt.AcceptChanges();
+            return dt;
+        }
         public override void FunctionProcess(int index)
         {
             base.FunctionProcess(index);
@@ -126,45 +124,29 @@ namespace JANCDHenkou
             }
         }
 
-        private bool ErrorCheck()
-        {
-           
-            foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
-            {
-                if (!(row.Cells["colGenJanCD"].Value == null))
-                {
-                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"),row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
-                    {
-                        jhbl.ShowMessage("E101");
-                        return false;
-                    }
-                }
-           
-                if (!(row.Cells["colNewJANCD"].Value == null))
-                {
-                    if(!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13))
-                    {
-                        jhbl.ShowMessage("E220");
-                        return false;
-                    }
-                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
-                    {
-                        DialogResult dr = jhbl.ShowMessage("Q316");
-                        if (dr == DialogResult.No)
-                        {
-                            dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
-                            return false;
-                        }
-                    }
-                }
-
-            }
-            return true;
-        }
-
         private void F11()
         {
-            ErrorCheck();
+            OpenFileDialog op = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                RestoreDirectory = true
+            };
+
+            if(op.ShowDialog() == DialogResult.OK)
+            {
+                string str = op.FileName;
+                string ext = Path.GetExtension(str);
+                if(!(ext.Equals(".xls") || ext.Equals(".xlsx")))
+                {
+                    jhbl.ShowMessage("E137");
+                }
+                else
+                {
+
+                }
+            }
+            
+           
         }
 
         private void F12()
@@ -177,6 +159,40 @@ namespace JANCDHenkou
             F11();
         }
 
+        private bool ErrorCheck()
+        {
+            foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
+            {
+                if (!(row.Cells["colGenJanCD"].Value == null))
+                {
+                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
+                    {
+                        jhbl.ShowMessage("E101");
+                        return false;
+                    }
+                }
+
+                if (!(row.Cells["colNewJANCD"].Value == null))
+                {
+                    if (!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13) && !IsDigit(row.Cells["colNewJanCD"].Value.ToString()))
+                    {
+                        jhbl.ShowMessage("E220");
+                        dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+                        return false;
+                    }
+                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
+                    {
+                        DialogResult dr = jhbl.ShowMessage("Q316");
+                        if (dr == DialogResult.No)
+                        {
+                            dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
+        }
         private void dgvJANCDHenkou_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             if ((sender as DataGridView).CurrentCell is DataGridViewTextBoxCell)
@@ -196,7 +212,7 @@ namespace JANCDHenkou
                             }
                         }
                     }
-                    
+
                     dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
                     if (dtJanCDExist.Rows.Count == 0) // If its not exists then error
                     {
@@ -226,12 +242,11 @@ namespace JANCDHenkou
                                 dgvJANCDHenkou.DataSource = dtGenJanCD;
                                 dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
                             }
-                        }
-                        else
-                        {
-                            dtGenJanCD = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
-                            dgvJANCDHenkou.DataSource = dtGenJanCD;
-
+                            else
+                            {
+                                dtGenJanCD = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                dgvJANCDHenkou.DataSource = dtGenJanCD;
+                            }
                         }
                     }
                     else
@@ -269,42 +284,96 @@ namespace JANCDHenkou
                                 dgvJANCDHenkou.DataSource = dtGenJanCD;
                             }
                         }
-                       
+
                     }
-                    
+
                 }
                 // 現JANCD
 
                 // 新JANCD
                 if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"]) && !(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value == null))
                 {
-                    dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                    if (!dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString().Length.Equals(13) &&
+                       !IsDigit(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString())) //Error If not 13 digits
                     {
-                        isExist = false;
+                        jhbl.ShowMessage("E220");
+                        dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"];
                     }
-
-                    foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                    else
                     {
-                        if (r.Index != e.RowIndex & !r.IsNewRow)
+                        dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
                         {
-                            if (r.Cells["colNewJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"].Value.ToString())
+                            isExist = false;
+                        }
+
+                        foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                        {
+                            if (r.Index != e.RowIndex & !r.IsNewRow)
                             {
-                                dup = false;
+                                if (r.Cells["colNewJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"].Value.ToString())
+                                {
+                                    dup = false;
+                                }
                             }
                         }
-                    }
 
-                    if (!isExist || !dup)
-                    {
-                        DialogResult dr = jhbl.ShowMessage("Q316");
-                        if (dr == DialogResult.No)
+                        if (!isExist || !dup)
                         {
-                            dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"];
+                            DialogResult dr = jhbl.ShowMessage("Q316");
+                            if (dr == DialogResult.No)
+                            {
+                                dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"];
+                            }
                         }
                     }
                 }
                 // 新JANCD
             }
         }
+        private bool IsDigit(string str)
+        {
+            if (!String.IsNullOrWhiteSpace(str))
+            {
+                for (int s = 0; s < str.Length; s++)
+                {
+                    if (char.IsDigit(str[s]) == false)
+                        return false;
+
+                }
+            }
+            return true;
+        }
+
+        //protected DataTable ExcelToDatatable(string filePath)
+        //{
+        //    FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+        //    string ext = Path.GetExtension(filePath);
+        //    IExcelDataReader excelReader;
+        //    if (ext.Equals(".xls"))
+        //        //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+        //        excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+        //    else if (ext.Equals(".xlsx"))
+        //        //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+        //        excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+        //    else
+        //        //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+        //        excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+
+        //    //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+        //    bool useHeaderRow = true;
+
+        //    DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+        //    {
+        //        ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+        //        {
+        //            UseHeaderRow = useHeaderRow,
+        //        }
+        //    });
+
+
+        //    excelReader.Close();
+        //    return result.Tables[0];
+        //}
     }
 }

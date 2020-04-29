@@ -342,6 +342,7 @@ namespace CKM_Controls
                     {
                         case CboType.受注確度:
                             me.ID = MultiPorpose_BL.ID_JyuchuChance;
+                            kbn = 2;
                             break;
                         //case CboType.予定金種:
                         //    me.ID = MultiPorpose_BL.ID_PaymentMethod;
