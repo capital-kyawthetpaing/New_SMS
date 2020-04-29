@@ -19,6 +19,8 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
         TempoRegiKaiinTouroku_BL tprg_Kaiin_BL = new TempoRegiKaiinTouroku_BL();
         M_Customer_Entity cust = new M_Customer_Entity();
         M_ZipCode_Entity mze;
+        string z1 = "";
+        string z2 = "";
         public Frm_TempoRegiKaiinTouroku_CustomerDetail(int Flg ,string CustomerCD)
         {
             InitializeComponent();
@@ -27,7 +29,9 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             if (Flg.Equals(1))
             {
                 lblCustomerNo.Text = CustomerCD;
-                DisplayData();               
+                DisplayData();
+                z1 = txtZipCode1.Text;
+                z2 = txtZipCode2.Text;
             }     
             else
             {
@@ -269,7 +273,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 txtZipCode2.Focus();
                 return;
             }
-
+            
             mze = new M_ZipCode_Entity();
             mze.ZipCD1 = txtZipCode1.Text;
             mze.ZipCD2 = txtZipCode2.Text;
@@ -297,16 +301,19 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 mze = new M_ZipCode_Entity();
                 mze.ZipCD1 = txtZipCode1.Text;
                 mze.ZipCD2 = txtZipCode2.Text;
-                               
-                DataTable dt = tprg_Kaiin_BL.M_ZipCode_AddressSelect(mze);
-
-                if (dt.Rows.Count > 0)
+                if (z1 != txtZipCode1.Text || z2 != txtZipCode2.Text)
                 {
-                    txtAddress1.Text = dt.Rows[0]["Address1"].ToString();
-                    txtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                    DataTable dt = tprg_Kaiin_BL.M_ZipCode_AddressSelect(mze);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        txtAddress1.Text = dt.Rows[0]["Address1"].ToString();
+                        txtAddress2.Text = dt.Rows[0]["Address2"].ToString();
+                    }
                 }
+                z1 = txtZipCode1.Text;
+                z2 = txtZipCode2.Text;
             }
-           
         }        
         private bool CheckZipCD(CKM_TextBox txt)
         {

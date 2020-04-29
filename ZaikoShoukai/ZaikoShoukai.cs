@@ -391,8 +391,6 @@ namespace ZaikoShoukai
                 }
             }
         }
-
-
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)
