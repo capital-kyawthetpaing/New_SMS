@@ -325,8 +325,8 @@ namespace MasterTouroku_YuubinBangou
                         //}
                         else
                         {
-                            row.Cells["colZipCD1"].Value = null;
-                            row.Cells["colZipCD2"].Value = null;
+                            //row.Cells["colZipCD1"].Value = null;
+                            //row.Cells["colZipCD2"].Value = null;
                             row.Cells["colAdd1"].Value = null;
                             row.Cells["colAdd2"].Value = null;
                             return false;
