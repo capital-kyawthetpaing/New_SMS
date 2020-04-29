@@ -210,6 +210,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 row1.Cells["colChk"].Value = flag;
             }
         }
+
         //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
@@ -226,6 +227,7 @@ namespace MasterTouroku_ShiireKakeritsu
         //        dgv_ShiireKakeritsu.ClearSelection();
         //    }
         //}
+
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -444,7 +446,6 @@ namespace MasterTouroku_ShiireKakeritsu
 
         }
         
-
         private void btnCopy_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrWhiteSpace(txtCopy.Text))
@@ -583,17 +584,28 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            foreach (DataGridViewRow row in this.dgv_ShiireKakeritsu.SelectedRows)
+            //foreach (DataGridViewRow row in this.dgv_ShiireKakeritsu.SelectedRows)
+            //{
+            //    int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+            //    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+            // }
+
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
             {
-                int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
-                dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-             }
+               if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
+                {
+                    int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+                    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+                }
+            }
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
+          
+         
+          
+        }
 
-        }
-       
-        }
+    }
 }

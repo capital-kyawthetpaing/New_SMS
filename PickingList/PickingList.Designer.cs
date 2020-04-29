@@ -455,6 +455,7 @@
             this.cboSouko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.SoukoAll;
             this.cboSouko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSouko.Flag = 0;
             this.cboSouko.FormattingEnabled = true;
             this.cboSouko.Length = 10;
             this.cboSouko.Location = new System.Drawing.Point(1101, 52);
