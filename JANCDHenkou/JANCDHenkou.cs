@@ -13,6 +13,7 @@ using BL;
 using Entity;
 using Search;
 using System.IO;
+using ExcelDataReader;
 
 namespace JANCDHenkou
 {
@@ -142,7 +143,7 @@ namespace JANCDHenkou
                 }
                 else
                 {
-
+                    DataTable dtexcel = ExcelToDatatable(str);
                 }
             }
             
@@ -344,36 +345,48 @@ namespace JANCDHenkou
             return true;
         }
 
-        //protected DataTable ExcelToDatatable(string filePath)
-        //{
-        //    FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+        protected DataTable ExcelToDatatable(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
 
-        //    string ext = Path.GetExtension(filePath);
-        //    IExcelDataReader excelReader;
-        //    if (ext.Equals(".xls"))
-        //        //1. Reading from a binary Excel file ('97-2003 format; *.xls)
-        //        excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
-        //    else if (ext.Equals(".xlsx"))
-        //        //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
-        //        excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-        //    else
-        //        //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
-        //        excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+            string ext = Path.GetExtension(filePath);
+            IExcelDataReader excelReader;
+            if (ext.Equals(".xls"))
+                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            else if (ext.Equals(".xlsx"))
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            else
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
 
-        //    //3. DataSet - The result of each spreadsheet will be created in the result.Tables
-        //    bool useHeaderRow = true;
+            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+            bool useHeaderRow = true;
 
-        //    DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
-        //    {
-        //        ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
-        //        {
-        //            UseHeaderRow = useHeaderRow,
-        //        }
-        //    });
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = useHeaderRow,
+                }
+            });
 
 
-        //    excelReader.Close();
-        //    return result.Tables[0];
-        //}
+            excelReader.Close();
+            return result.Tables[0];
+        }
+
+        protected Boolean CheckColumn(String[] colName, DataTable dt)
+        {
+            DataColumnCollection col = dt.Columns;
+            for (int i = 0; i < colName.Length; i++)
+            {
+                if (!col.Contains(colName[i]))
+                    return false;
+            }
+            return true;
+
+        }
     }
 }
