@@ -376,18 +376,30 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                //foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                //{
+                //    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                //    chk1.Value = chk1.TrueValue;
+                //}
+                //dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
+            }
+           
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             //{
-            //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            //    if (Convert.ToBoolean(row.Cells["colChk"].Value))
             //    {
-            //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-            //        chk1.Value = chk1.FalseValue;
+            //        row.Selected = true;
             //    }
-            //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            //}
-            //else
-            //{
-            //    dgv_ShiireKakeritsu.ClearSelection();
+            //    else
+            //        row.Selected = false;
             //}
         }
 

@@ -101,7 +101,7 @@
             this.ScSKUCD.IsCopy = false;
             this.ScSKUCD.LabelText = "";
             this.ScSKUCD.LabelVisible = true;
-            this.ScSKUCD.Location = new System.Drawing.Point(156, 179);
+            this.ScSKUCD.Location = new System.Drawing.Point(164, 200);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
             this.ScSKUCD.SearchEnable = true;
@@ -124,7 +124,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(113, 200);
+            this.ckM_Label7.Location = new System.Drawing.Point(117, 209);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label7.TabIndex = 13;
@@ -141,7 +141,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(104, 178);
+            this.ckM_Label6.Location = new System.Drawing.Point(104, 190);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label6.TabIndex = 12;
@@ -158,7 +158,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(104, 102);
+            this.ckM_Label5.Location = new System.Drawing.Point(104, 101);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label5.TabIndex = 11;
@@ -290,6 +290,7 @@
             this.txtEndDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtEndDate.BackColor = System.Drawing.Color.White;
             this.txtEndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEndDate.ClientColor = System.Drawing.Color.White;
             this.txtEndDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtEndDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtEndDate.DecimalPlace = 0;
@@ -315,6 +316,7 @@
             this.txtStartDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStartDate.BackColor = System.Drawing.Color.White;
             this.txtStartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStartDate.ClientColor = System.Drawing.Color.White;
             this.txtStartDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStartDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtStartDate.DecimalPlace = 0;
