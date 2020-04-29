@@ -381,7 +381,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
             //    {
             //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-            //        chk1.Value = chk1.FalseValue;
+            //        chk1.Value = chk1.TrueValue;
             //    }
             //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             //}
@@ -389,6 +389,15 @@ namespace MasterTouroku_ShiireKakeritsu
             //{
             //    dgv_ShiireKakeritsu.ClearSelection();
             //}
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["colChk"].Value))
+                {
+                    row.Selected = true;
+                }
+                else
+                    row.Selected = false;
+            }
         }
 
 
