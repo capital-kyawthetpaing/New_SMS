@@ -189,8 +189,6 @@ namespace SiharaiYoteiHyou
         {
             this.Close();
         }
-
-
         /// <summary>
         /// 支払先検索にEenterする場合、選択出来ないかとかをチェックする処理///
         /// </summary>
