@@ -11,8 +11,7 @@ namespace MasterTouroku_GinkouShiten
 {
     public partial class MasterTouroku_GinkouShiten : FrmMainForm
     {
-        //***Declare Entity
-        //***Declare BL
+       
         MasterTouroku_GinkouShiten_BL mtbstbl;
         M_Bank_Entity mbe;
         M_BankShiten_Entity mbste;
@@ -111,7 +110,6 @@ namespace MasterTouroku_GinkouShiten
             }
         }
         private void F11()
-
         {
             if (ErrorCheck(11))
             {
@@ -177,7 +175,6 @@ namespace MasterTouroku_GinkouShiten
                         }
                         break;
                 }
-
                 //***Add Control Enable/Disable;
             }
         }
@@ -320,7 +317,6 @@ namespace MasterTouroku_GinkouShiten
         }
         private bool ErrorCheck(int index)
         {
-
             if (index == 11)
             {
                 //HeaderCheck on F11
@@ -331,6 +327,12 @@ namespace MasterTouroku_GinkouShiten
                         if (!RequireCheck(new Control[] { ScBankCD.TxtCode, ScBranchCD.TxtCode, ScBranchCD.TxtChangeDate }))//E102
                             return false;
 
+                        if (!ScBankCD.IsExists(2))
+                        {
+                            mtbstbl.ShowMessage("E133");
+                            ScBankCD.SetFocus(1);
+                            return false;
+                        }
                         if (ScBranchCD.IsExists(1))
                         {
                             //***show Message mtsbl.ShowMessage("E132"); 
@@ -355,6 +357,12 @@ namespace MasterTouroku_GinkouShiten
                         if (!RequireCheck(new Control[] { ScCopyBranchCD.TxtChangeDate }, ScCopyBranchCD.TxtCode))
                             return false;
 
+                        if (!ScBankCD.IsExists(2))
+                        {
+                            mtbstbl.ShowMessage("E133");
+                            ScBankCD.SetFocus(1);
+                            return false;
+                        }
                         if (ScBranchCD.IsExists(1))
                         {
                             //***show Message mtsbl.ShowMessage("E132"); 
@@ -362,15 +370,6 @@ namespace MasterTouroku_GinkouShiten
                             ScBranchCD.SetFocus(1);
                             return false;
                         }
-
-                        //if (ScBranchCD.IsExists(1))
-                        //{
-                        //    //***show Message mtsbl.ShowMessage("E132"); 
-                        //    mtbstbl.ShowMessage("E132");
-                        //    ScBranchCD.SetFocus(1);
-                        //    return false;
-                        //}
-
 
                         if (!string.IsNullOrWhiteSpace(ScCopyBranchCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(ScCopyBranchCD.TxtChangeDate.Text))
                         {
@@ -383,9 +382,6 @@ namespace MasterTouroku_GinkouShiten
                             }
 
                         }
-
-
-                           
                     }
                 }
                 else 
@@ -407,22 +403,28 @@ namespace MasterTouroku_GinkouShiten
             }
             else if (index == 12)
             {
-                if (!RequireCheck(new Control[] { ScBranchCD.TxtCode, ScBranchCD.TxtChangeDate ,TxtBankBranchName ,TxtKanaName  }))
+                if (!RequireCheck(new Control[] { ScBranchCD.TxtCode, ScBranchCD.TxtChangeDate   }))
                     return false;
 
                 if (OperationMode == EOperationMode.INSERT)
                 {
+                    if (!ScBankCD.IsExists(2))
+                    {
+                        mtbstbl.ShowMessage("E133");
+                        ScBankCD.SetFocus(1);
+                        return false;
+                    }
                     if (ScBranchCD.IsExists(1))
                     {
-                        //*** ShowMessage
-                        //mtsbl.ShowMessage("E132");
+                        //***show Message mtsbl.ShowMessage("E132"); 
                         mtbstbl.ShowMessage("E132");
                         ScBranchCD.SetFocus(1);
                         return false;
                     }
                 }
 
-
+                if (!RequireCheck(new Control[] { TxtBankBranchName, TxtKanaName }))
+                    return false;
                 if (OperationMode == EOperationMode.DELETE)
                 {
                     if (ScBranchCD.IsExistsDeleteCheck())
