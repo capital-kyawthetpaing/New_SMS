@@ -1639,13 +1639,13 @@ namespace Search
                     case SearchType.HanyouKeyEnd:
                         dtResult = bbl.SimpleSelect1("54", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text,Value1,Value2);
                         break;
-                    case SearchType.ブランド://Search_Brand	add by pes
+                    case SearchType.ブランド:
                         dtResult = bbl.SimpleSelect1("56", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-                    case SearchType.競技://Search_Sport	add by pes
+                    case SearchType.競技:
                         dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-                    case SearchType.商品分類://Search_Segment add by pes
+                    case SearchType.商品分類:
                         dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
 
