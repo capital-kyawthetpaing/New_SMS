@@ -129,7 +129,7 @@ namespace JANCDHenkou
         {
             OpenFileDialog op = new OpenFileDialog
             {
-                InitialDirectory = @"C:\",
+                InitialDirectory = @"C:\JANCDHenkou\",
                 RestoreDirectory = true
             };
 
@@ -144,6 +144,20 @@ namespace JANCDHenkou
                 else
                 {
                     DataTable dtexcel = ExcelToDatatable(str);
+                    string[] colname = { "現JANCD", "新JANCD" };
+                    if(CheckColumn(colname,dtexcel))
+                    {
+                        string xml = jhbl.DataTableToXml(dtexcel);
+                        dtGenJanCD = jhbl.M_SKU_JanCDHenkou_Select(xml);
+                        if (dtGenJanCD.Rows.Count > 0)
+                        {
+                            dgvJANCDHenkou.DataSource = dtGenJanCD;
+                        }
+                    }
+                    else
+                    {
+                        jhbl.ShowMessage("E137");
+                    }
                 }
             }
             
@@ -382,7 +396,8 @@ namespace JANCDHenkou
             DataColumnCollection col = dt.Columns;
             for (int i = 0; i < colName.Length; i++)
             {
-                if (!col.Contains(colName[i]))
+                //if (!col.Contains(colName[i]))
+                if (!dt.Columns[i].ColumnName.ToString().Equals(colName[i]))
                     return false;
             }
             return true;
