@@ -399,7 +399,6 @@ namespace ZaikoShoukai
                 RB_Makashohincd.Checked = false;
             }
         }
-
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -487,7 +486,7 @@ namespace ZaikoShoukai
         }
         private bool ErrorCheck()
         {
-            if(!String.IsNullOrEmpty( Shiiresaki.TxtCode.Text))
+            if (!String.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
             {
                 if (!Shiiresaki.IsExists(2))
                 {

@@ -260,3 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 /HikiateHenkouNyuuryoku
+/BL/HikiateHenkouNyuuryoku_BL.cs
+/DL/HikiateHenkouNyuuryoku_DL.cs
+/Entity/HikiateHenkouNyuuryoku_Entity.cs

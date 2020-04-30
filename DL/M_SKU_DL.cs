@@ -277,6 +277,16 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_SKU_JanCDHenkou_Select(string xml)
+        {
+            string sp = "M_SKU_JanCDHenkou_Select";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@xml",new ValuePair { value1=SqlDbType.Xml,value2=xml} } 
+            };
+            return SelectData(dic, sp);
+        }
     }
 
 }

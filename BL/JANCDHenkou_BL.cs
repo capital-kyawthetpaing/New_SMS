@@ -11,12 +11,16 @@ namespace BL
 {
     public class JANCDHenkou_BL : Base_BL
     {
-    
+        M_SKU_DL skudl;
         public JANCDHenkou_BL()
         {
-           
+            skudl = new M_SKU_DL();
         }
 
-       
+       public DataTable M_SKU_JanCDHenkou_Select(string xml)
+       {
+            return skudl.M_SKU_JanCDHenkou_Select(xml);
+       }
+        
     }
 }

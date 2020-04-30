@@ -94,6 +94,9 @@
     <Content Include="StoreProcedure\D_DepositHistory_Insert.sql" />
     <Content Include="StoreProcedure\D_DepositHistory_InsertUpdate.sql" />
     <Content Include="StoreProcedure\D_DepositＨistory_Gaku_Select.sql" />
+    <Content Include="StoreProcedure\D_EDIOrder_Select.sql" />
+    <Content Include="StoreProcedure\D_EDIOrder_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_EDIOrder_SelectForCSV.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Delete.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Select.sql" />
@@ -113,6 +116,7 @@
     <Content Include="StoreProcedure\D_Juchuu_DataSelect_ForShukkaShoukai.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectData.sql" />
+    <Content Include="StoreProcedure\D_Juchuu_SelectData_ForShukka.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectData_ForTempoRegiHanbaiRireki.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectData_ForTempoShukkaNyuuryoku.sql" />
     <Content Include="StoreProcedure\D_Juchu_SelectAllForShoukai.sql" />
@@ -134,10 +138,12 @@
     <Content Include="StoreProcedure\D_NyuuKinPrint.sql" />
     <Content Include="StoreProcedure\D_Order_ExecForNyuka.sql" />
     <Content Include="StoreProcedure\D_Order_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_Order_SelectAllForEDIHacchuu.sql" />
     <Content Include="StoreProcedure\D_Order_SelectAllForShoukai.sql" />
     <Content Include="StoreProcedure\D_Order_SelectAllForSyonin.sql" />
     <Content Include="StoreProcedure\D_Order_SelectData.sql" />
     <Content Include="StoreProcedure\D_Order_SelectDataForKaitouNouki.sql" />
+    <Content Include="StoreProcedure\D_Order_SelectForEDIHacchuu.sql" />
     <Content Include="StoreProcedure\D_Order_SelectForReport.sql" />
     <Content Include="StoreProcedure\D_PayClose_Search.sql" />
     <Content Include="StoreProcedure\D_PaymentConfirm_SelectForPrint.sql" />
@@ -174,9 +180,11 @@
     <Content Include="StoreProcedure\D_Sales_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectData.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectData_ForTempoRegiHanbaiRireki.sql" />
+    <Content Include="StoreProcedure\D_Sales_SelectData_ForTempoRegiJisseki.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectForPrint.sql" />
     <Content Include="StoreProcedure\D_Sales_Update.sql" />
     <Content Include="StoreProcedure\D_Shipping_Select.sql" />
+    <Content Include="StoreProcedure\D_Shipping_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Shipping_SelectAllForShoukai.sql" />
     <Content Include="StoreProcedure\D_SKENDeliveryDetails_SelectAll.sql" />
     <Content Include="StoreProcedure\D_SKENDelivery_SelectAll.sql" />
@@ -252,6 +260,7 @@
     <Content Include="StoreProcedure\M_Carrier_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Carrier_Search.sql" />
     <Content Include="StoreProcedure\M_Carrier_Select.sql" />
+    <Content Include="StoreProcedure\M_Carrier_SelectForShukka.sql" />
     <Content Include="StoreProcedure\M_Control_CheckDate.sql" />
     <Content Include="StoreProcedure\M_Control_PaymentSelect.sql" />
     <Content Include="StoreProcedure\M_Control_RecordCheck.sql" />
@@ -413,6 +422,7 @@
     <Content Include="StoreProcedure\PickingList_InsertUpdateSelect_Check3.sql" />
     <Content Include="StoreProcedure\PickingList_InsertUpdate_Check1.sql" />
     <Content Include="StoreProcedure\PickingList_InsertUpdate_Check3.sql" />
+    <Content Include="StoreProcedure\PRC_EDIOrder_Insert.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiSaikenKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiSaimuKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiShiireKeisanSyori.sql" />
@@ -431,6 +441,7 @@
     <Content Include="StoreProcedure\PRC_SeikyuuShimeShori.sql" />
     <Content Include="StoreProcedure\PRC_ShiireNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ShiireNyuuryokuF.sql" />
+    <Content Include="StoreProcedure\PRC_ShukkaNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_ShukkaShijiTouroku.sql" />
     <Content Include="StoreProcedure\PRC_ShukkaUriageUpdate.sql" />
     <Content Include="StoreProcedure\PRC_TanaoroshiShimeShori.sql" />
