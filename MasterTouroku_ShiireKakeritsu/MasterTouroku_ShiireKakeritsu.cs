@@ -590,22 +590,45 @@ namespace MasterTouroku_ShiireKakeritsu
             //    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
             // }
 
-            
-                //if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
-                // {
-                //     int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
-                //     dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-                // }
-          foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-          {
-              DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-              if (chk.Value == chk.TrueValue)
-              {
-                  int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
-                  dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-              }
-          }
-            
+
+            //if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
+            // {
+            //     int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+            //     dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+            // }
+            //DataTable dt = new DataTable();
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //{
+
+            //  DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+            //  if (chk.Value == chk.TrueValue)
+            //  {
+            //        //int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+            //        //dgv_ShiireKakeritsu.Rows.Remove(row);
+
+            //  }
+            //}
+            //foreach (DataRow row in dt.Rows)
+            //{
+
+            //        dt.Rows.Remove(row);
+            //}
+
+            List<DataRow> toDelete = new List<DataRow>();
+            for (int i = 0; i < dgv_ShiireKakeritsu.Rows.Count; i++)
+            {
+                {
+                    DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
+                    DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                    if (check.Value == check.TrueValue)
+                    {
+                        DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
+                        toDelete.Add(dataRow);
+                    }
+                }
+            }
+            toDelete.ForEach(row => row.Delete());
+
         }
 
         private void btnChange_Click(object sender, EventArgs e)

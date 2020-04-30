@@ -285,6 +285,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIHacchuu", "EDIHacchuu\ED
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShukkaNyuuryoku", "ShukkaNyuuryoku\ShukkaNyuuryoku.csproj", "{94C12706-B9D9-4CD6-B1D6-3DDFB872D735}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikiateHenkouNyuuryoku", "HikiateHenkouNyuuryoku\HikiateHenkouNyuuryoku.csproj", "{7E9791F4-705A-4118-B77F-F4E219FF71A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1411,6 +1413,14 @@ Global
 		{94C12706-B9D9-4CD6-B1D6-3DDFB872D735}.Release|Any CPU.Build.0 = Release|Any CPU
 		{94C12706-B9D9-4CD6-B1D6-3DDFB872D735}.Release|x86.ActiveCfg = Release|Any CPU
 		{94C12706-B9D9-4CD6-B1D6-3DDFB872D735}.Release|x86.Build.0 = Release|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Debug|x86.Build.0 = Debug|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|x86.ActiveCfg = Release|Any CPU
+		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
