@@ -1,3 +1,7 @@
+IF OBJECT_ID ( 'D_Shipping_SelectAll', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_Shipping_SelectAll]
+GO
+
 /****** Object:  StoredProcedure [D_Shipping_SelectAll]    */
 CREATE PROCEDURE D_Shipping_SelectAll(
     @ShippingDateFrom  varchar(10),

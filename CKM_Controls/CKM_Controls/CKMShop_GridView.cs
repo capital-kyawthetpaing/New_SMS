@@ -495,8 +495,6 @@ namespace CKM_Controls
             {
 
             }
-
-
         }
 
         private void MyProcessCmdKey(Keys keyData)
@@ -557,7 +555,6 @@ namespace CKM_Controls
                 this.AllowUserToDeleteRows = false;
                 this.AllowUserToResizeRows = false;
             }
-
         }
 
         public void DisabledColumn(string DisablecolumnName)
@@ -696,10 +693,8 @@ namespace CKM_Controls
 
         }
 
-
         protected override void OnEnabledChanged(EventArgs e)
         {
-
             base.OnEnabledChanged(e);
         }
     }

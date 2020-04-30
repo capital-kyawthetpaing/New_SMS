@@ -1,3 +1,7 @@
+IF OBJECT_ID ( 'D_Order_SelectForEDIHacchuu', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_Order_SelectForEDIHacchuu]
+GO
+
 /****** Object:  StoredProcedure [D_Order_SelectForEDIHacchuu]    */
 CREATE PROCEDURE D_Order_SelectForEDIHacchuu(
     -- Add the parameters for the stored procedure here

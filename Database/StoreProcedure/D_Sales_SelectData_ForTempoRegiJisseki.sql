@@ -1,3 +1,6 @@
+IF OBJECT_ID ( 'D_Sales_SelectData_ForTempoRegiJisseki', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_Sales_SelectData_ForTempoRegiJisseki]
+GO
 
 /****** Object:  StoredProcedure [dbo].[D_Sales_SelectData_ForTempoRegiJisseki]    Script Date: 2019/10/20 19:54:54 ******/
 SET ANSI_NULLS ON

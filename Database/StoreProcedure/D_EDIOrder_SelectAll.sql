@@ -1,3 +1,7 @@
+IF OBJECT_ID ( 'D_EDIOrder_SelectAll', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_EDIOrder_SelectAll]
+GO
+
 /****** Object:  StoredProcedure [D_Order_SelectAll]    */
 CREATE PROCEDURE D_EDIOrder_SelectAll(
     -- Add the parameters for the stored procedure here

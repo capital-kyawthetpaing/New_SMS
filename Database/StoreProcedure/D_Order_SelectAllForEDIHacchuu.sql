@@ -1,3 +1,8 @@
+IF OBJECT_ID ( 'D_Order_SelectAllForEDIHacchuu', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_Order_SelectAllForEDIHacchuu]
+GO
+
+
 --  ======================================================================
 --       Program Call    EDIî≠íç
 --       Program ID      D_Order_SelectAllForEDIHacchuu
