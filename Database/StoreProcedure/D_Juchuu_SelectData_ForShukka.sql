@@ -1,3 +1,6 @@
+IF OBJECT_ID ( 'D_Juchuu_SelectData_ForShukka', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_Juchuu_SelectData_ForShukka]
+GO
 
 /****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForShukka]    Script Date: 2019/09/15 19:54:54 ******/
 SET ANSI_NULLS ON

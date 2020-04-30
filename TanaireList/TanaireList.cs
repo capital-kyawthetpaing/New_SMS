@@ -50,9 +50,10 @@ namespace TanaireList
 
         public void BindData()
         {
+            string ymd = bbl.GetDate();
             txtStartDate.Focus();
-            txtEndDate.Text = todayDate;
-            cboSouko.Bind(todayDate);
+            txtEndDate.Text = ymd;
+            cboSouko.Bind(ymd);
 
         }
 

@@ -71,6 +71,7 @@
     <Compile Include="D_InventoryControl_DL.cs" />
     <Compile Include="D_InventoryProcessing_DL.cs" />
     <Compile Include="D_Inventory_DL.cs" />
+    <Compile Include="D_JANUpdate_DL.cs" />
     <Compile Include="D_JuChuu_DL.cs" />
     <Compile Include="D_MailAdress_DL.cs" />
     <Compile Include="D_Mail_DL.cs" />

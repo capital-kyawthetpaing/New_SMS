@@ -1,3 +1,7 @@
+IF OBJECT_ID ( 'D_EDIOrder_SelectForCSV', 'P' ) IS NOT NULL
+    Drop Procedure dbo.[D_EDIOrder_SelectForCSV]
+GO
+
 --  ======================================================================
 --       Program Call    EDIî≠íç
 --       Program ID      D_EDIOrder_SelectForCSV
