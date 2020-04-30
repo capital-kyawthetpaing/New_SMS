@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.dgvJANCDHenkou = new CKM_Controls.CKM_GridView();
@@ -48,6 +49,7 @@
             this.colGenJanCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colnewJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdminCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJANCDHenkou)).BeginInit();
             this.SuspendLayout();
@@ -99,7 +101,7 @@
             this.dgvJANCDHenkou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -117,7 +119,16 @@
             this.colColor,
             this.colGenJanCD2,
             this.colnewJanCD,
-            this.colSKUCD});
+            this.colSKUCD,
+            this.colAdminCD});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvJANCDHenkou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvJANCDHenkou.EnableHeadersVisualStyles = false;
             this.dgvJANCDHenkou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvJANCDHenkou.Location = new System.Drawing.Point(21, 145);
@@ -232,6 +243,7 @@
             this.colITEM.DataPropertyName = "ITEM";
             this.colITEM.HeaderText = "ITEM";
             this.colITEM.Name = "colITEM";
+            this.colITEM.ReadOnly = true;
             this.colITEM.Width = 250;
             // 
             // colSKUName
@@ -279,6 +291,14 @@
             this.colSKUCD.ReadOnly = true;
             this.colSKUCD.Visible = false;
             // 
+            // colAdminCD
+            // 
+            this.colAdminCD.DataPropertyName = "AdminNO";
+            this.colAdminCD.HeaderText = "AdminNO";
+            this.colAdminCD.Name = "colAdminCD";
+            this.colAdminCD.ReadOnly = true;
+            this.colAdminCD.Visible = false;
+            // 
             // JANCDHenkou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -321,6 +341,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenJanCD2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colnewJanCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAdminCD;
     }
 }
 
