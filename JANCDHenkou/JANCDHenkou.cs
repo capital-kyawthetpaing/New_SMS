@@ -20,10 +20,10 @@ namespace JANCDHenkou
     public partial class JANCDHenkou : FrmMainForm
     {
         JANCDHenkou_BL jhbl;
-        public bool dup, isExist = true;
+        public bool dup, isExist = false;
         DataTable dtJanCDExist;
         DataTable dtGenJanCD;
-        string SKUCD;
+        string SKUCD, xml;
 
         public JANCDHenkou()
         {
@@ -84,7 +84,7 @@ namespace JANCDHenkou
                         break;
                     }
                 case 11:
-                  //  F11();
+                     F11();
                     break;
                 case 12:
                     F12();
@@ -147,7 +147,7 @@ namespace JANCDHenkou
                     string[] colname = { "現JANCD", "新JANCD" };
                     if(CheckColumn(colname,dtexcel))
                     {
-                        string xml = jhbl.DataTableToXml(dtexcel);
+                        xml = jhbl.DataTableToXml(dtexcel);
                         dtGenJanCD = jhbl.M_SKU_JanCDHenkou_Select(xml);
                         if (dtGenJanCD.Rows.Count > 0)
                         {
@@ -166,7 +166,14 @@ namespace JANCDHenkou
 
         private void F12()
         {
-            ErrorCheck();
+            if(ErrorCheck())
+            {
+                xml = jhbl.DataTableToXml(dtGenJanCD);
+                if(jhbl.JanCDHenkou_Insert(xml))
+                {
+
+                }
+            }
         }
 
         private void BtnF11Show_Click(object sender, EventArgs e)
@@ -178,25 +185,28 @@ namespace JANCDHenkou
         {
             foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
             {
+                //現JANCD
                 if (!(row.Cells["colGenJanCD"].Value == null))
                 {
-                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1)
+                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1) //error if not exists in M_SKU tb
                     {
                         jhbl.ShowMessage("E101");
                         return false;
                     }
                 }
 
+                //新JANCD
                 if (!(row.Cells["colNewJANCD"].Value == null))
                 {
-                    if (!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13) && !IsDigit(row.Cells["colNewJanCD"].Value.ToString()))
+                    if (!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13) && !IsDigit(row.Cells["colNewJanCD"].Value.ToString()))    //For 13digits and digit only
                     {
                         jhbl.ShowMessage("E220");
                         dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
                         return false;
                     }
-                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)
+                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)    //error if exists in M_SKU tb
                     {
+                        
                         DialogResult dr = jhbl.ShowMessage("Q316");
                         if (dr == DialogResult.No)
                         {
@@ -216,7 +226,7 @@ namespace JANCDHenkou
                 if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"]) && !(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value == null))
                 {
 
-                    foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                    foreach (DataGridViewRow r in dgvJANCDHenkou.Rows)      //duplicate error
                     {
                         if (r.Index != e.RowIndex & !r.IsNewRow)
                         {
@@ -229,11 +239,11 @@ namespace JANCDHenkou
                     }
 
                     dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
-                    if (dtJanCDExist.Rows.Count == 0) // If its not exists then error
+                    if (dtJanCDExist.Rows.Count == 0)        // error if not exists in M_SKU tb
                     {
                         jhbl.ShowMessage("E101");
                     }
-                    else if (dtJanCDExist.Rows.Count == 1) //BindData
+                    else if (dtJanCDExist.Rows.Count == 1)      //BindData
                     {
                         if (dgvJANCDHenkou != null)
                         {
@@ -309,30 +319,31 @@ namespace JANCDHenkou
                 if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"]) && !(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value == null))
                 {
                     if (!dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString().Length.Equals(13) &&
-                       !IsDigit(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString())) //Error If not 13 digits
+                       !IsDigit(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString()))          //For 13digits and digit only
                     {
                         jhbl.ShowMessage("E220");
                         dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"];
                     }
                     else
                     {
-                        dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                        dtJanCDExist = jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString());
+                        if(dtJanCDExist.Rows.Count > 0)          //error if exists in M_SKU tb
                         {
-                            isExist = false;
+                            isExist = true;
                         }
 
-                        foreach (DataGridViewRow r in dgvJANCDHenkou.Rows) //duplicate error
+                        foreach (DataGridViewRow r in dgvJANCDHenkou.Rows)      //duplicate error
                         {
                             if (r.Index != e.RowIndex & !r.IsNewRow)
                             {
                                 if (r.Cells["colNewJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colNewJanCD"].Value.ToString())
                                 {
-                                    dup = false;
+                                    dup = true;
                                 }
                             }
                         }
 
-                        if (!isExist || !dup)
+                        if (isExist && dup)
                         {
                             DialogResult dr = jhbl.ShowMessage("Q316");
                             if (dr == DialogResult.No)
