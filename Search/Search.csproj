@@ -499,6 +499,8 @@
     <Content Include="RequiredDLL\CsvHelper.dll" />
     <Content Include="RequiredDLL\DocumentFormat.OpenXml.dll" />
     <Content Include="RequiredDLL\ElencySolutions.CsvHelper.dll" />
+    <Content Include="RequiredDLL\ExcelDataReader.DataSet.dll" />
+    <Content Include="RequiredDLL\ExcelDataReader.dll" />
     <Content Include="RequiredDLL\GridBase.dll" />
     <Content Include="RequiredDLL\GridControl.dll" />
   </ItemGroup>
