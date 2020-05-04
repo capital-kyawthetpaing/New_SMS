@@ -121,6 +121,15 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             {
                 return false;
             }
+            mze = new M_ZipCode_Entity();
+            mze.ZipCD1 = txtZipCode1.Text;
+            mze.ZipCD2 = txtZipCode2.Text;
+            if (!tprg_Kaiin_BL.M_ZipCode_Select(mze))
+            {
+                tprg_Kaiin_BL.ShowMessage("E101");
+                txtZipCode1.Focus();
+                return false;
+            }
 
             return true;
         }

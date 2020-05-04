@@ -35,9 +35,14 @@ namespace MasterTouroku_ShiireKakeritsu
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             ckM_Button1.Text = "取込(F10)";
+            F2Visible = false;
+            F3Visible = false;
+            F4Visible = false;
+            F5Visible = false;
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            txtDate1.Text= DateTime.Now.ToString("yyyy/MM/dd");
         }
         public void BindCombo()
         {
@@ -98,6 +103,11 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
+            //if (!((rdoAllStores.Checked == true) || (rdoIndividualStores.Checked == true)))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    return false;
+            //}
             //if (!String.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
             //{
             //    if (!scSupplierCD.IsExists(2))
