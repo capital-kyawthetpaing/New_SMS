@@ -42,6 +42,7 @@ namespace MasterTouroku_ShiireKakeritsu
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            txtDate1.Text= DateTime.Now.ToString("yyyy/MM/dd");
         }
         public void BindCombo()
         {
