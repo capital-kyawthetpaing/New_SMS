@@ -98,6 +98,11 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
+            //if (!((rdoAllStores.Checked == true) || (rdoIndividualStores.Checked == true)))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    return false;
+            //}
             //if (!String.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
             //{
             //    if (!scSupplierCD.IsExists(2))
