@@ -719,15 +719,15 @@ namespace MasterTouroku_Shiiresaki
                         }
                     }
 
-                    if(chkEDIFlg.Checked == true) //Add By SawLay   ErrorCheck for EDI会社番号
-                    {
-                        if(string.IsNullOrWhiteSpace(txtRegisterNum.Text))
-                        {
-                            mtsbl.ShowMessage("E102");
-                            txtRegisterNum.Focus();
-                            return false;
-                        }
-                    }
+                    //if(chkEDIFlg.Checked == true) //Add By SawLay   ErrorCheck for EDI会社番号
+                    //{
+                    //    if(string.IsNullOrWhiteSpace(txtRegisterNum.Text))
+                    //    {
+                    //        mtsbl.ShowMessage("E102");
+                    //        txtRegisterNum.Focus();
+                    //        return false;
+                    //    }
+                    //}
 
                     if (!RequireCheck(new Control[] { ScKouzaCD.TxtCode })) // Error26
                         return false;
@@ -760,6 +760,17 @@ namespace MasterTouroku_Shiiresaki
                     }
                    
                 }
+
+                if (chkEDIFlg.Checked == true) //Add By SawLay   ErrorCheck for EDI会社番号
+                {
+                    if (string.IsNullOrWhiteSpace(txtRegisterNum.Text))
+                    {
+                        mtsbl.ShowMessage("E102");
+                        txtRegisterNum.Focus();
+                        return false;
+                    }
+                }
+
 
                 if (!string.IsNullOrWhiteSpace(ScStaffCD.TxtCode.Text)) // Error 28
                 {
