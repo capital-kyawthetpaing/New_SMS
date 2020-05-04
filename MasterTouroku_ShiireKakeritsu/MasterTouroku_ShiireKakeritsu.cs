@@ -35,6 +35,10 @@ namespace MasterTouroku_ShiireKakeritsu
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             ckM_Button1.Text = "取込(F10)";
+            F2Visible = false;
+            F3Visible = false;
+            F4Visible = false;
+            F5Visible = false;
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
