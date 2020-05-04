@@ -16,8 +16,8 @@ GO
 IF OBJECT_ID ( 'PRC_ShukkaNyuuryoku', 'P' ) IS NOT NULL
     Drop Procedure dbo.[PRC_ShukkaNyuuryoku]
 GO
-IF EXISTS (select * from sys.table_types where name = 'T_Shukka')
-    Drop TYPE dbo.[T_Shukka]
+IF EXISTS (select * from sys.table_types where name = 'T_ShukkaF')
+    Drop TYPE dbo.[T_ShukkaF]
 GO
 
 --  ======================================================================
@@ -369,7 +369,7 @@ END
 
 GO
 
-CREATE TYPE T_Shukka AS TABLE
+CREATE TYPE T_ShukkaF AS TABLE
     (
     [ShippingRows] [int],    
     [InstructionRows] [int],
@@ -413,7 +413,7 @@ CREATE PROCEDURE PRC_ShukkaNyuuryoku
      @StaffCD   varchar(10),
      @UnitsCount   tinyint,
     
-     @Table  T_Shukka READONLY,
+     @Table  T_ShukkaF READONLY,
      @Operator  varchar(10),
      @PC  varchar(30),
      @OutShippingNO varchar(11) OUTPUT

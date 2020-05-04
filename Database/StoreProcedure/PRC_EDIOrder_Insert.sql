@@ -536,12 +536,6 @@ BEGIN
      WHERE DH.EDIOrderNo = @EDIOrderNo       
      ORDER BY MV.ChangeDate DESC;
     
-    -- CSV出力
-    EXEC ExportCSV
-         @VendorCD,
-         @EDIOrderNo,
-         @SYSDATETIME;
-    
     --メール関係テーブル追加
     IF @EDIFlg = 2 
     BEGIN
