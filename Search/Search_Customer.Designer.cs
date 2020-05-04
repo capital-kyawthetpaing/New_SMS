@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtRefDate = new CKM_Controls.CKM_TextBox();
@@ -54,6 +53,7 @@
             this.txtCustCDTo = new CKM_Controls.CKM_TextBox();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.gv_CustomerSearch = new CKM_Controls.CKM_GridView();
+            this.lblStoreKBN = new CKM_Controls.CKM_Label();
             this.CustomerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,6 @@
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRefDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblStoreKBN = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gv_CustomerSearch)).BeginInit();
             this.SuspendLayout();
@@ -139,6 +138,7 @@
             this.txtRefDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRefDate.BackColor = System.Drawing.Color.White;
             this.txtRefDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRefDate.ClientColor = System.Drawing.Color.White;
             this.txtRefDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRefDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtRefDate.DecimalPlace = 0;
@@ -181,6 +181,7 @@
             this.txtCustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCustomerName.BackColor = System.Drawing.Color.White;
             this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerName.ClientColor = System.Drawing.Color.White;
             this.txtCustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtCustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustomerName.DecimalPlace = 0;
@@ -223,6 +224,7 @@
             this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKanaName.BackColor = System.Drawing.Color.White;
             this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKanaName.ClientColor = System.Drawing.Color.White;
             this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKanaName.DecimalPlace = 0;
@@ -265,6 +267,7 @@
             this.txtPhno.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPhno.BackColor = System.Drawing.Color.White;
             this.txtPhno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPhno.ClientColor = System.Drawing.Color.White;
             this.txtPhno.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPhno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPhno.DecimalPlace = 0;
@@ -306,6 +309,7 @@
             this.txtBirthDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBirthDate.BackColor = System.Drawing.Color.White;
             this.txtBirthDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBirthDate.ClientColor = System.Drawing.Color.White;
             this.txtBirthDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtBirthDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtBirthDate.DecimalPlace = 0;
@@ -370,6 +374,7 @@
             this.cbo_Store.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_Store.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cbo_Store.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_Store.Flag = 0;
             this.cbo_Store.FormattingEnabled = true;
             this.cbo_Store.Length = 10;
             this.cbo_Store.Location = new System.Drawing.Point(885, 29);
@@ -402,6 +407,7 @@
             this.txtKeyword.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKeyword.BackColor = System.Drawing.Color.White;
             this.txtKeyword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKeyword.ClientColor = System.Drawing.Color.White;
             this.txtKeyword.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtKeyword.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKeyword.DecimalPlace = 0;
@@ -445,6 +451,7 @@
             this.txtCustCDFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCustCDFrom.BackColor = System.Drawing.Color.White;
             this.txtCustCDFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustCDFrom.ClientColor = System.Drawing.Color.White;
             this.txtCustCDFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCustCDFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustCDFrom.DecimalPlace = 0;
@@ -486,6 +493,7 @@
             this.txtCustCDTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCustCDTo.BackColor = System.Drawing.Color.White;
             this.txtCustCDTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustCDTo.ClientColor = System.Drawing.Color.White;
             this.txtCustCDTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCustCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustCDTo.DecimalPlace = 0;
@@ -534,7 +542,7 @@
             this.gv_CustomerSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -551,14 +559,6 @@
             this.Address,
             this.Remark,
             this.colRefDate});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gv_CustomerSearch.DefaultCellStyle = dataGridViewCellStyle4;
             this.gv_CustomerSearch.EnableHeadersVisualStyles = false;
             this.gv_CustomerSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gv_CustomerSearch.Location = new System.Drawing.Point(12, 216);
@@ -568,6 +568,23 @@
             this.gv_CustomerSearch.UseRowNo = true;
             this.gv_CustomerSearch.UseSetting = true;
             this.gv_CustomerSearch.DoubleClick += new System.EventHandler(this.gv_CustomerSearch_DoubleClick);
+            // 
+            // lblStoreKBN
+            // 
+            this.lblStoreKBN.AutoSize = true;
+            this.lblStoreKBN.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStoreKBN.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreKBN.DefaultlabelSize = true;
+            this.lblStoreKBN.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStoreKBN.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.lblStoreKBN.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreKBN.Location = new System.Drawing.Point(1177, 31);
+            this.lblStoreKBN.Name = "lblStoreKBN";
+            this.lblStoreKBN.Size = new System.Drawing.Size(0, 12);
+            this.lblStoreKBN.TabIndex = 23;
+            this.lblStoreKBN.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.lblStoreKBN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblStoreKBN.Visible = false;
             // 
             // CustomerNo
             // 
@@ -623,7 +640,7 @@
             this.Remark.DataPropertyName = "RemarksInStore";
             this.Remark.HeaderText = "備考";
             this.Remark.Name = "Remark";
-            this.Remark.Width = 250;
+            this.Remark.Width = 200;
             // 
             // colRefDate
             // 
@@ -631,23 +648,6 @@
             this.colRefDate.HeaderText = "基準日";
             this.colRefDate.Name = "colRefDate";
             this.colRefDate.Visible = false;
-            // 
-            // lblStoreKBN
-            // 
-            this.lblStoreKBN.AutoSize = true;
-            this.lblStoreKBN.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblStoreKBN.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreKBN.DefaultlabelSize = true;
-            this.lblStoreKBN.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.lblStoreKBN.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.lblStoreKBN.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreKBN.Location = new System.Drawing.Point(1177, 31);
-            this.lblStoreKBN.Name = "lblStoreKBN";
-            this.lblStoreKBN.Size = new System.Drawing.Size(0, 12);
-            this.lblStoreKBN.TabIndex = 23;
-            this.lblStoreKBN.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.lblStoreKBN.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblStoreKBN.Visible = false;
             // 
             // FrmSearch_Customer
             // 
