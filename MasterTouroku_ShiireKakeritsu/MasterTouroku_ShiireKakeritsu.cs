@@ -41,6 +41,8 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         public void BindCombo()
         {
+            cbo_Store.Bind(string.Empty,"2");
+            cbo_Store.SelectedValue = StoreCD;
             string ymd = bbl.GetDate();
             cbo_Year.Bind(ymd);
             cbo_Year1.Bind(ymd);
