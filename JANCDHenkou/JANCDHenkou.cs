@@ -171,7 +171,7 @@ namespace JANCDHenkou
             if(ErrorCheck())
             {
                 xml = jhbl.DataTableToXml(dtGenJanCD);
-                if(jhbl.JanCDHenkou_Insert(xml))
+                if(jhbl.JanCDHenkou_Insert(xml, InOperatorCD))
                 {
 
                 }
