@@ -608,7 +608,7 @@ namespace MasterTouroku_Shiiresaki
                 }
 
                 //if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedValue.ToString()) || (cboPaymentKBN.SelectedValue.Equals(-1)))
-                if (string.IsNullOrWhiteSpace(cboPaymentKBN.SelectedText.ToString())) // Error18
+                if (string.IsNullOrWhiteSpace(cboPaymentKBN.Text.ToString())) // Error18
                 {
                     mtsbl.ShowMessage("E102");
                     cboPaymentKBN.Focus();
