@@ -162,6 +162,7 @@
             this.txtDateTo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateTo1.BackColor = System.Drawing.Color.White;
             this.txtDateTo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDateTo1.ClientColor = System.Drawing.Color.White;
             this.txtDateTo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDateTo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtDateTo1.DecimalPlace = 0;
@@ -187,6 +188,7 @@
             this.txtDateFrom1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateFrom1.BackColor = System.Drawing.Color.White;
             this.txtDateFrom1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDateFrom1.ClientColor = System.Drawing.Color.White;
             this.txtDateFrom1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDateFrom1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtDateFrom1.DecimalPlace = 0;
@@ -212,6 +214,7 @@
             this.txtShipmentDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShipmentDate.BackColor = System.Drawing.Color.White;
             this.txtShipmentDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtShipmentDate.ClientColor = System.Drawing.Color.White;
             this.txtShipmentDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtShipmentDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtShipmentDate.DecimalPlace = 0;
@@ -342,6 +345,7 @@
             this.txtDateTo2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateTo2.BackColor = System.Drawing.Color.White;
             this.txtDateTo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDateTo2.ClientColor = System.Drawing.Color.White;
             this.txtDateTo2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDateTo2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtDateTo2.DecimalPlace = 0;
@@ -367,6 +371,7 @@
             this.txtDateFrom2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDateFrom2.BackColor = System.Drawing.Color.White;
             this.txtDateFrom2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDateFrom2.ClientColor = System.Drawing.Color.White;
             this.txtDateFrom2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDateFrom2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtDateFrom2.DecimalPlace = 0;
@@ -450,6 +455,7 @@
             this.cboSouko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.SoukoAll;
             this.cboSouko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSouko.Flag = 0;
             this.cboSouko.FormattingEnabled = true;
             this.cboSouko.Length = 10;
             this.cboSouko.Location = new System.Drawing.Point(1101, 52);

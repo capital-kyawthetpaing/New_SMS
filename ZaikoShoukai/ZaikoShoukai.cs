@@ -12,6 +12,7 @@ using CsvHelper;
 using System.IO;
 using ClosedXML.Excel;
 using System.Drawing;
+using System.Collections.Generic;
 
 namespace ZaikoShoukai
 {
@@ -145,7 +146,7 @@ namespace ZaikoShoukai
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore=TB_Bikokeyword.Text,
-                ReserveCD=CB_ReserveCD.SelectedValue.ToString(),
+                ReserveCD = CB_ReserveCD.SelectedValue.ToString(),
                 NoticesCD = CB_NoticesCD.SelectedValue.ToString(),
                 PostageCD = CB_PostageCD.SelectedValue.ToString(),
                 OrderAttentionCD = CB_OrderAttentionCD.SelectedValue.ToString(),
@@ -266,7 +267,6 @@ namespace ZaikoShoukai
             dtData.Clear();
            
         }
-
         private void Excel()
         {
             if (!ErrorCheck())
@@ -313,7 +313,6 @@ namespace ZaikoShoukai
                     }
                 }
         }
-
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
@@ -400,7 +399,6 @@ namespace ZaikoShoukai
                 RB_Makashohincd.Checked = false;
             }
         }
-
         private void Sports_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -488,7 +486,7 @@ namespace ZaikoShoukai
         }
         private bool ErrorCheck()
         {
-            if(!String.IsNullOrEmpty( Shiiresaki.TxtCode.Text))
+            if (!String.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
             {
                 if (!Shiiresaki.IsExists(2))
                 {

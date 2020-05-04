@@ -74,8 +74,9 @@ namespace CKM_Controls
             予約,      //20200316       
             特記,
             送料,
-            発注フラグ,
-            タグフラグ,  //20200316
+            発注フラグ,//20200316
+            年度フラグ,//20200427
+            シーズンフラグ,//20200427
 
             /// <summary>
             /// SoukoType IN (3,4)
@@ -328,9 +329,10 @@ namespace CKM_Controls
                 case CboType.予約:   //20200316
                 case CboType.特記:
                 case CboType.送料:
-                case CboType.発注フラグ:
-                case CboType.タグフラグ:   //20200316
-               
+                case CboType.発注フラグ:  //20200316
+                case CboType.年度フラグ://20200427
+                case CboType.シーズンフラグ://20200427
+
 
                     MultiPorpose_BL mbl = new MultiPorpose_BL();
                     M_MultiPorpose_Entity me = new M_MultiPorpose_Entity();
@@ -340,6 +342,7 @@ namespace CKM_Controls
                     {
                         case CboType.受注確度:
                             me.ID = MultiPorpose_BL.ID_JyuchuChance;
+                            kbn = 2;
                             break;
                         //case CboType.予定金種:
                         //    me.ID = MultiPorpose_BL.ID_PaymentMethod;
@@ -389,24 +392,29 @@ namespace CKM_Controls
                                  //20200316
                         case CboType.予約:
                             me.ID = MultiPorpose_BL.ID_ReserveCD;
-                            kbn = 0;
+                            kbn = 2;
                             break;
                         case CboType.特記:
                             me.ID = MultiPorpose_BL.ID_NoticesCD;
-                            kbn = 0;
+                            kbn = 2;
                             break;
                         case CboType.送料:
                             me.ID = MultiPorpose_BL.ID_PostageCD;
-                            kbn = 0;
+                            kbn = 2;
                             break;
                         case CboType.発注フラグ:
                             me.ID = MultiPorpose_BL.ID_OrderAttentionCD;
-                            kbn = 0;
+                            kbn = 2;
                             break;
-                        case CboType.タグフラグ:
-                            me.ID = MultiPorpose_BL.ID_TagName;
-                            kbn = 0;
+                        case CboType.年度フラグ:
+                            me.ID = MultiPorpose_BL.ID_YearTerm;
+                            kbn = 2;
                             break;
+                        case CboType.シーズンフラグ:
+                            me.ID = MultiPorpose_BL.ID_Season;
+                            kbn = 2;
+                            break;
+                        
                     }
                     if (type != null)
                     {

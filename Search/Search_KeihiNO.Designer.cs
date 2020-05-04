@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -59,12 +58,6 @@
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.dgvCostSearch = new CKM_Controls.CKM_GridView();
-            this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
-            this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label12 = new CKM_Controls.CKM_Label();
-            this.chkTeiki = new CKM_Controls.CKM_CheckBox();
-            this.PaymentCD = new Search.CKM_SearchControl();
-            this.scStaffCD = new Search.CKM_SearchControl();
             this.ExpenseNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecordDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpenseEntryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +69,12 @@
             this.PaymentDueDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TaxIncludePayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
+            this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label12 = new CKM_Controls.CKM_Label();
+            this.chkTeiki = new CKM_Controls.CKM_CheckBox();
+            this.PaymentCD = new Search.CKM_SearchControl();
+            this.scStaffCD = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCostSearch)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +159,7 @@
             this.txtRecordDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRecordDateFrom.BackColor = System.Drawing.Color.White;
             this.txtRecordDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecordDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtRecordDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRecordDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtRecordDateFrom.DecimalPlace = 0;
@@ -202,6 +202,7 @@
             this.txtRecordDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRecordDateTo.BackColor = System.Drawing.Color.White;
             this.txtRecordDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRecordDateTo.ClientColor = System.Drawing.Color.White;
             this.txtRecordDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRecordDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtRecordDateTo.DecimalPlace = 0;
@@ -244,6 +245,7 @@
             this.txtEntryDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtEntryDateFrom.BackColor = System.Drawing.Color.White;
             this.txtEntryDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEntryDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtEntryDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtEntryDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtEntryDateFrom.DecimalPlace = 0;
@@ -286,6 +288,7 @@
             this.txtEntryDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtEntryDateTo.BackColor = System.Drawing.Color.White;
             this.txtEntryDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEntryDateTo.ClientColor = System.Drawing.Color.White;
             this.txtEntryDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtEntryDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtEntryDateTo.DecimalPlace = 0;
@@ -365,7 +368,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(52, 114);
+            this.ckM_Label8.Location = new System.Drawing.Point(51, 114);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 17;
@@ -418,6 +421,7 @@
             this.txtPaymentDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateTo.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateTo.DecimalPlace = 0;
@@ -460,6 +464,7 @@
             this.txtPaymentDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateFrom.DecimalPlace = 0;
@@ -525,7 +530,7 @@
             this.dgvCostSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -544,14 +549,6 @@
             this.PaymentDueDate,
             this.PaymentDate,
             this.TaxIncludePayment});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCostSearch.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCostSearch.Enabled = false;
             this.dgvCostSearch.EnableHeadersVisualStyles = false;
             this.dgvCostSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -566,139 +563,6 @@
             this.dgvCostSearch.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvCostSearch_CellPainting);
             this.dgvCostSearch.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvCostSearch_Paint);
             this.dgvCostSearch.DoubleClick += new System.EventHandler(this.dgvCostSearch_DoubleClick);
-            // 
-            // txtPaymentDueDateFrom
-            // 
-            this.txtPaymentDueDateFrom.AllowMinus = false;
-            this.txtPaymentDueDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtPaymentDueDateFrom.BackColor = System.Drawing.Color.White;
-            this.txtPaymentDueDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaymentDueDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtPaymentDueDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.txtPaymentDueDateFrom.DecimalPlace = 0;
-            this.txtPaymentDueDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtPaymentDueDateFrom.IntegerPart = 8;
-            this.txtPaymentDueDateFrom.IsCorrectDate = true;
-            this.txtPaymentDueDateFrom.isEnterKeyDown = false;
-            this.txtPaymentDueDateFrom.IsNumber = true;
-            this.txtPaymentDueDateFrom.IsShop = false;
-            this.txtPaymentDueDateFrom.Length = 10;
-            this.txtPaymentDueDateFrom.Location = new System.Drawing.Point(98, 79);
-            this.txtPaymentDueDateFrom.MaxLength = 10;
-            this.txtPaymentDueDateFrom.MoveNext = true;
-            this.txtPaymentDueDateFrom.Name = "txtPaymentDueDateFrom";
-            this.txtPaymentDueDateFrom.Size = new System.Drawing.Size(100, 19);
-            this.txtPaymentDueDateFrom.TabIndex = 14;
-            this.txtPaymentDueDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPaymentDueDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // txtPaymentDueDateTo
-            // 
-            this.txtPaymentDueDateTo.AllowMinus = false;
-            this.txtPaymentDueDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtPaymentDueDateTo.BackColor = System.Drawing.Color.White;
-            this.txtPaymentDueDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPaymentDueDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtPaymentDueDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.txtPaymentDueDateTo.DecimalPlace = 0;
-            this.txtPaymentDueDateTo.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtPaymentDueDateTo.IntegerPart = 8;
-            this.txtPaymentDueDateTo.IsCorrectDate = true;
-            this.txtPaymentDueDateTo.isEnterKeyDown = false;
-            this.txtPaymentDueDateTo.IsNumber = true;
-            this.txtPaymentDueDateTo.IsShop = false;
-            this.txtPaymentDueDateTo.Length = 10;
-            this.txtPaymentDueDateTo.Location = new System.Drawing.Point(248, 79);
-            this.txtPaymentDueDateTo.MaxLength = 10;
-            this.txtPaymentDueDateTo.MoveNext = true;
-            this.txtPaymentDueDateTo.Name = "txtPaymentDueDateTo";
-            this.txtPaymentDueDateTo.Size = new System.Drawing.Size(103, 19);
-            this.txtPaymentDueDateTo.TabIndex = 16;
-            this.txtPaymentDueDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_Label12
-            // 
-            this.ckM_Label12.AutoSize = true;
-            this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label12.DefaultlabelSize = true;
-            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(476, 49);
-            this.ckM_Label12.Name = "ckM_Label12";
-            this.ckM_Label12.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label12.TabIndex = 11;
-            this.ckM_Label12.Text = "定期";
-            this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chkTeiki
-            // 
-            this.chkTeiki.AutoSize = true;
-            this.chkTeiki.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkTeiki.Location = new System.Drawing.Point(510, 47);
-            this.chkTeiki.Name = "chkTeiki";
-            this.chkTeiki.Size = new System.Drawing.Size(15, 14);
-            this.chkTeiki.TabIndex = 12;
-            this.chkTeiki.UseVisualStyleBackColor = true;
-            // 
-            // PaymentCD
-            // 
-            this.PaymentCD.AutoSize = true;
-            this.PaymentCD.ChangeDate = "";
-            this.PaymentCD.ChangeDateWidth = 100;
-            this.PaymentCD.Code = "";
-            this.PaymentCD.CodeWidth = 130;
-            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.PaymentCD.DataCheck = false;
-            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.PaymentCD.IsCopy = false;
-            this.PaymentCD.LabelText = "";
-            this.PaymentCD.LabelVisible = true;
-            this.PaymentCD.Location = new System.Drawing.Point(98, 106);
-            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
-            this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.SearchEnable = true;
-            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
-            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.PaymentCD.TabIndex = 18;
-            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.PaymentCD.UseChangeDate = false;
-            this.PaymentCD.Value1 = null;
-            this.PaymentCD.Value2 = null;
-            this.PaymentCD.Value3 = null;
-            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
-            this.PaymentCD.Enter += new System.EventHandler(this.PaymentCD_Enter);
-            // 
-            // scStaffCD
-            // 
-            this.scStaffCD.AutoSize = true;
-            this.scStaffCD.ChangeDate = "";
-            this.scStaffCD.ChangeDateWidth = 100;
-            this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 100;
-            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaffCD.DataCheck = false;
-            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.scStaffCD.IsCopy = false;
-            this.scStaffCD.LabelText = "";
-            this.scStaffCD.LabelVisible = true;
-            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
-            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaffCD.Name = "scStaffCD";
-            this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
-            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaffCD.TabIndex = 6;
-            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaffCD.UseChangeDate = false;
-            this.scStaffCD.Value1 = null;
-            this.scStaffCD.Value2 = null;
-            this.scStaffCD.Value3 = null;
-            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
             // 
             // ExpenseNo
             // 
@@ -793,6 +657,141 @@
             this.TaxIncludePayment.HeaderText = "   税込支払額";
             this.TaxIncludePayment.Name = "TaxIncludePayment";
             this.TaxIncludePayment.ReadOnly = true;
+            // 
+            // txtPaymentDueDateFrom
+            // 
+            this.txtPaymentDueDateFrom.AllowMinus = false;
+            this.txtPaymentDueDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtPaymentDueDateFrom.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDueDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDueDateFrom.ClientColor = System.Drawing.Color.White;
+            this.txtPaymentDueDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtPaymentDueDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtPaymentDueDateFrom.DecimalPlace = 0;
+            this.txtPaymentDueDateFrom.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentDueDateFrom.IntegerPart = 8;
+            this.txtPaymentDueDateFrom.IsCorrectDate = true;
+            this.txtPaymentDueDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDueDateFrom.IsNumber = true;
+            this.txtPaymentDueDateFrom.IsShop = false;
+            this.txtPaymentDueDateFrom.Length = 10;
+            this.txtPaymentDueDateFrom.Location = new System.Drawing.Point(98, 79);
+            this.txtPaymentDueDateFrom.MaxLength = 10;
+            this.txtPaymentDueDateFrom.MoveNext = true;
+            this.txtPaymentDueDateFrom.Name = "txtPaymentDueDateFrom";
+            this.txtPaymentDueDateFrom.Size = new System.Drawing.Size(100, 19);
+            this.txtPaymentDueDateFrom.TabIndex = 14;
+            this.txtPaymentDueDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPaymentDueDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // txtPaymentDueDateTo
+            // 
+            this.txtPaymentDueDateTo.AllowMinus = false;
+            this.txtPaymentDueDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtPaymentDueDateTo.BackColor = System.Drawing.Color.White;
+            this.txtPaymentDueDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDueDateTo.ClientColor = System.Drawing.Color.White;
+            this.txtPaymentDueDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtPaymentDueDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtPaymentDueDateTo.DecimalPlace = 0;
+            this.txtPaymentDueDateTo.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtPaymentDueDateTo.IntegerPart = 8;
+            this.txtPaymentDueDateTo.IsCorrectDate = true;
+            this.txtPaymentDueDateTo.isEnterKeyDown = false;
+            this.txtPaymentDueDateTo.IsNumber = true;
+            this.txtPaymentDueDateTo.IsShop = false;
+            this.txtPaymentDueDateTo.Length = 10;
+            this.txtPaymentDueDateTo.Location = new System.Drawing.Point(248, 79);
+            this.txtPaymentDueDateTo.MaxLength = 10;
+            this.txtPaymentDueDateTo.MoveNext = true;
+            this.txtPaymentDueDateTo.Name = "txtPaymentDueDateTo";
+            this.txtPaymentDueDateTo.Size = new System.Drawing.Size(103, 19);
+            this.txtPaymentDueDateTo.TabIndex = 16;
+            this.txtPaymentDueDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_Label12
+            // 
+            this.ckM_Label12.AutoSize = true;
+            this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label12.DefaultlabelSize = true;
+            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label12.Location = new System.Drawing.Point(476, 49);
+            this.ckM_Label12.Name = "ckM_Label12";
+            this.ckM_Label12.Size = new System.Drawing.Size(31, 12);
+            this.ckM_Label12.TabIndex = 11;
+            this.ckM_Label12.Text = "定期";
+            this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkTeiki
+            // 
+            this.chkTeiki.AutoSize = true;
+            this.chkTeiki.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.chkTeiki.Location = new System.Drawing.Point(510, 47);
+            this.chkTeiki.Name = "chkTeiki";
+            this.chkTeiki.Size = new System.Drawing.Size(15, 14);
+            this.chkTeiki.TabIndex = 12;
+            this.chkTeiki.UseVisualStyleBackColor = true;
+            // 
+            // PaymentCD
+            // 
+            this.PaymentCD.AutoSize = true;
+            this.PaymentCD.ChangeDate = "";
+            this.PaymentCD.ChangeDateWidth = 100;
+            this.PaymentCD.Code = "";
+            this.PaymentCD.CodeWidth = 130;
+            this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.PaymentCD.DataCheck = false;
+            this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.PaymentCD.IsCopy = false;
+            this.PaymentCD.LabelText = "";
+            this.PaymentCD.LabelVisible = true;
+            this.PaymentCD.Location = new System.Drawing.Point(98, 106);
+            this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
+            this.PaymentCD.Name = "PaymentCD";
+            this.PaymentCD.SearchEnable = true;
+            this.PaymentCD.Size = new System.Drawing.Size(444, 27);
+            this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;
+            this.PaymentCD.TabIndex = 18;
+            this.PaymentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.PaymentCD.UseChangeDate = false;
+            this.PaymentCD.Value1 = null;
+            this.PaymentCD.Value2 = null;
+            this.PaymentCD.Value3 = null;
+            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
+            this.PaymentCD.Enter += new System.EventHandler(this.PaymentCD_Enter);
+            // 
+            // scStaffCD
+            // 
+            this.scStaffCD.AutoSize = true;
+            this.scStaffCD.ChangeDate = "";
+            this.scStaffCD.ChangeDateWidth = 100;
+            this.scStaffCD.Code = "";
+            this.scStaffCD.CodeWidth = 100;
+            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaffCD.DataCheck = false;
+            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.scStaffCD.IsCopy = false;
+            this.scStaffCD.LabelText = "";
+            this.scStaffCD.LabelVisible = true;
+            this.scStaffCD.Location = new System.Drawing.Point(510, 7);
+            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.SearchEnable = true;
+            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaffCD.TabIndex = 6;
+            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaffCD.UseChangeDate = false;
+            this.scStaffCD.Value1 = null;
+            this.scStaffCD.Value2 = null;
+            this.scStaffCD.Value3 = null;
+            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
             // 
             // frmSearch_KeihiNO
             // 

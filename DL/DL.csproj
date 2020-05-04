@@ -71,6 +71,7 @@
     <Compile Include="D_InventoryControl_DL.cs" />
     <Compile Include="D_InventoryProcessing_DL.cs" />
     <Compile Include="D_Inventory_DL.cs" />
+    <Compile Include="D_JANUpdate_DL.cs" />
     <Compile Include="D_JuChuu_DL.cs" />
     <Compile Include="D_MailAdress_DL.cs" />
     <Compile Include="D_Mail_DL.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="D_YahooAPI_DL.cs" />
     <Compile Include="D_YahooCount_DL.cs" />
     <Compile Include="Function_DL.cs" />
+    <Compile Include="HikiateHenkouNyuuryoku_DL.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />

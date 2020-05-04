@@ -34,6 +34,10 @@
             this.panelDetail = new System.Windows.Forms.Panel();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.dgvJANCDHenkou = new CKM_Controls.CKM_GridView();
+            this.ckM_Label4 = new CKM_Controls.CKM_Label();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.colGenJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBtnJAN = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,12 +47,9 @@
             this.colSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGenJanCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNewJANCD = new SMS.CustomControls.DataGridViewDecimalColumn();
+            this.colnewJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.colAdminCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJANCDHenkou)).BeginInit();
             this.SuspendLayout();
@@ -117,8 +118,9 @@
             this.colSize,
             this.colColor,
             this.colGenJanCD2,
-            this.colNewJANCD,
-            this.colSKUCD});
+            this.colnewJanCD,
+            this.colSKUCD,
+            this.colAdminCD});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -137,94 +139,6 @@
             this.dgvJANCDHenkou.UseSetting = true;
             this.dgvJANCDHenkou.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellContentClick);
             this.dgvJANCDHenkou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellEndEdit);
-            // 
-            // colGenJanCD
-            // 
-            this.colGenJanCD.DataPropertyName = "GenJanCD";
-            this.colGenJanCD.HeaderText = "現JANCD";
-            this.colGenJanCD.MaxInputLength = 13;
-            this.colGenJanCD.Name = "colGenJanCD";
-            // 
-            // colBtnJAN
-            // 
-            this.colBtnJAN.HeaderText = "";
-            this.colBtnJAN.Name = "colBtnJAN";
-            this.colBtnJAN.Text = "";
-            this.colBtnJAN.Width = 30;
-            // 
-            // colBrandCD
-            // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.ReadOnly = true;
-            this.colBrandCD.Width = 80;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "ブランド";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Width = 150;
-            // 
-            // colITEM
-            // 
-            this.colITEM.DataPropertyName = "ITEM";
-            this.colITEM.HeaderText = "ITEM";
-            this.colITEM.Name = "colITEM";
-            this.colITEM.Width = 250;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Width = 500;
-            // 
-            // colSize
-            // 
-            this.colSize.DataPropertyName = "SizeName";
-            this.colSize.HeaderText = "サイズ";
-            this.colSize.Name = "colSize";
-            this.colSize.ReadOnly = true;
-            this.colSize.Width = 150;
-            // 
-            // colColor
-            // 
-            this.colColor.DataPropertyName = "ColorName";
-            this.colColor.HeaderText = "カラー";
-            this.colColor.Name = "colColor";
-            this.colColor.ReadOnly = true;
-            this.colColor.Width = 150;
-            // 
-            // colGenJanCD2
-            // 
-            this.colGenJanCD2.DataPropertyName = "GenJanCD2";
-            this.colGenJanCD2.HeaderText = "現JANCD";
-            this.colGenJanCD2.Name = "colGenJanCD2";
-            this.colGenJanCD2.ReadOnly = true;
-            // 
-            // colNewJANCD
-            // 
-            this.colNewJANCD.DataPropertyName = "newJanCD";
-            this.colNewJANCD.DecimalPlace = ((byte)(0));
-            this.colNewJANCD.HeaderText = "新JANCD";
-            this.colNewJANCD.MaxInputLength = 13;
-            this.colNewJANCD.Name = "colNewJANCD";
-            this.colNewJANCD.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colNewJANCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.colNewJANCD.UseMinus = false;
-            this.colNewJANCD.UseThousandSeparator = false;
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "SKUCD";
-            this.colSKUCD.HeaderText = "SKUCD";
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.ReadOnly = true;
-            this.colSKUCD.Visible = false;
             // 
             // ckM_Label4
             // 
@@ -294,6 +208,97 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colGenJanCD
+            // 
+            this.colGenJanCD.DataPropertyName = "GenJanCD";
+            this.colGenJanCD.HeaderText = "現JANCD";
+            this.colGenJanCD.MaxInputLength = 13;
+            this.colGenJanCD.Name = "colGenJanCD";
+            // 
+            // colBtnJAN
+            // 
+            this.colBtnJAN.HeaderText = "";
+            this.colBtnJAN.Name = "colBtnJAN";
+            this.colBtnJAN.Text = "";
+            this.colBtnJAN.Width = 30;
+            // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.ReadOnly = true;
+            this.colBrandCD.Width = 80;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "ブランド";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Width = 150;
+            // 
+            // colITEM
+            // 
+            this.colITEM.DataPropertyName = "ITEM";
+            this.colITEM.HeaderText = "ITEM";
+            this.colITEM.Name = "colITEM";
+            this.colITEM.ReadOnly = true;
+            this.colITEM.Width = 250;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Width = 500;
+            // 
+            // colSize
+            // 
+            this.colSize.DataPropertyName = "SizeName";
+            this.colSize.HeaderText = "サイズ";
+            this.colSize.Name = "colSize";
+            this.colSize.ReadOnly = true;
+            this.colSize.Width = 150;
+            // 
+            // colColor
+            // 
+            this.colColor.DataPropertyName = "ColorName";
+            this.colColor.HeaderText = "カラー";
+            this.colColor.Name = "colColor";
+            this.colColor.ReadOnly = true;
+            this.colColor.Width = 150;
+            // 
+            // colGenJanCD2
+            // 
+            this.colGenJanCD2.DataPropertyName = "GenJanCD2";
+            this.colGenJanCD2.HeaderText = "現JANCD";
+            this.colGenJanCD2.Name = "colGenJanCD2";
+            this.colGenJanCD2.ReadOnly = true;
+            // 
+            // colnewJanCD
+            // 
+            this.colnewJanCD.DataPropertyName = "newJanCD";
+            this.colnewJanCD.HeaderText = "新JANCD";
+            this.colnewJanCD.Name = "colnewJanCD";
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Visible = false;
+            // 
+            // colAdminCD
+            // 
+            this.colAdminCD.DataPropertyName = "AdminNO";
+            this.colAdminCD.HeaderText = "AdminNO";
+            this.colAdminCD.Name = "colAdminCD";
+            this.colAdminCD.ReadOnly = true;
+            this.colAdminCD.Visible = false;
+            // 
             // JANCDHenkou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -334,8 +339,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSize;
         private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGenJanCD2;
-        private SMS.CustomControls.DataGridViewDecimalColumn colNewJANCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colnewJanCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAdminCD;
     }
 }
 
