@@ -243,12 +243,16 @@ namespace Search
                 }
 
             }
-            if(!PaymentCD.IsExists(2))
+            if(!String.IsNullOrEmpty(PaymentCD.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                PaymentCD.SetFocus(1);
-                return false;
+                if (!PaymentCD.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    PaymentCD.SetFocus(1);
+                    return false;
+                }
             }
+           
             //<remark>支払済、未支払のどちらもチェックが入っていない場合、エラー<remark>
             if (chkPaid.Checked == false && chkUnpaid.Checked == false)
             {
@@ -256,12 +260,14 @@ namespace Search
                 chkPaid.Focus();
                 return false;
             }
-
-            if(!scStaffCD.IsExists(2))
+            if (!String.IsNullOrEmpty(PaymentCD.TxtCode.Text))
             {
-                bbl.ShowMessage("E101");
-                scStaffCD.SetFocus(1);
-                return false;
+                if (!scStaffCD.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    scStaffCD.SetFocus(1);
+                    return false;
+                }
             }
            
             //zco

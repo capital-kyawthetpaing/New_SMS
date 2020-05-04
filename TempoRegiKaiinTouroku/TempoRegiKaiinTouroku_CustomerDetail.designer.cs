@@ -275,6 +275,7 @@
             this.txtMailAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtMailAddress2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMailAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMailAddress2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMailAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtMailAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMailAddress2.DecimalPlace = 0;
@@ -332,6 +333,7 @@
             this.txtBirthDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtBirthDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtBirthDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBirthDate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtBirthDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtBirthDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtBirthDate.DecimalPlace = 0;
@@ -504,6 +506,7 @@
             this.txtAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtAddress2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress2.DecimalPlace = 0;
@@ -529,6 +532,7 @@
             this.txtAddress1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtAddress1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress1.DecimalPlace = 0;
@@ -586,6 +590,7 @@
             this.txtZipCode2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtZipCode2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtZipCode2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCode2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtZipCode2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCode2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtZipCode2.DecimalPlace = 0;
@@ -610,6 +615,7 @@
             this.txtZipCode1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtZipCode1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtZipCode1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCode1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtZipCode1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCode1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtZipCode1.DecimalPlace = 0;
@@ -650,7 +656,8 @@
             this.txtMailAddress.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtMailAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMailAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMailAddress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.txtMailAddress.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtMailAddress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtMailAddress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMailAddress.DecimalPlace = 0;
             this.txtMailAddress.Font = new System.Drawing.Font("MS Gothic", 16F);
@@ -706,6 +713,7 @@
             this.txthomeTelNo3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txthomeTelNo3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txthomeTelNo3.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txthomeTelNo3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txthomeTelNo3.DecimalPlace = 0;
@@ -731,6 +739,7 @@
             this.txthomeTelNo2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txthomeTelNo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txthomeTelNo2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txthomeTelNo2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txthomeTelNo2.DecimalPlace = 0;
@@ -771,6 +780,7 @@
             this.txthomeTelNo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txthomeTelNo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txthomeTelNo1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txthomeTelNo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txthomeTelNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txthomeTelNo1.DecimalPlace = 0;
@@ -811,6 +821,7 @@
             this.txtTelNo3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtTelNo3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelNo3.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTelNo3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTelNo3.DecimalPlace = 0;
@@ -852,6 +863,7 @@
             this.txtTelNo2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtTelNo2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelNo2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTelNo2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTelNo2.DecimalPlace = 0;
@@ -892,6 +904,7 @@
             this.txtTelNo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtTelNo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelNo1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTelNo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTelNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTelNo1.DecimalPlace = 0;
@@ -965,6 +978,7 @@
             this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtKanaName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKanaName.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKanaName.DecimalPlace = 0;
@@ -1006,6 +1020,7 @@
             this.txtGroupName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtGroupName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtGroupName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGroupName.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtGroupName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtGroupName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtGroupName.DecimalPlace = 0;
@@ -1047,6 +1062,7 @@
             this.txtLastName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLastName.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtLastName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLastName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLastName.DecimalPlace = 0;
@@ -1072,6 +1088,7 @@
             this.txtFirstName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFirstName.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtFirstName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtFirstName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtFirstName.DecimalPlace = 0;
