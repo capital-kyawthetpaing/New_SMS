@@ -106,49 +106,49 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
-            else
-            {
-                mve.VendorCD = scSupplierCD.TxtCode.Text;
-                mve.ChangeDate = txtDate1.Text;
-                DataTable dtvendor = new DataTable();
-                dtvendor = mskbl.M_Vendor_Select(mve);
-                if(dtvendor.Rows.Count == 0)
-                {
-                    mskbl.ShowMessage("E101");
-                    scSupplierCD.SetFocus(1);
-                    return false;
-                }
-                else
-                {
-                    if(dtvendor.Rows[0]["DeleteFlg"].ToString() == "1")
-                    {
-                        mskbl.ShowMessage("E119");
-                        scSupplierCD.SetFocus(1);
-                        return false;
-                    }
-                }
-            }
+            //else
+            //{
+            //    mve.VendorCD = scSupplierCD.TxtCode.Text;
+            //    mve.ChangeDate = txtDate1.Text;
+            //    DataTable dtvendor = new DataTable();
+            //    dtvendor = mskbl.M_Vendor_Select(mve);
+            //    if(dtvendor.Rows.Count == 0)
+            //    {
+            //        mskbl.ShowMessage("E101");
+            //        scSupplierCD.SetFocus(1);
+            //        return false;
+            //    }
+            //    else
+            //    {
+            //        if(dtvendor.Rows[0]["DeleteFlg"].ToString() == "1")
+            //        {
+            //            mskbl.ShowMessage("E119");
+            //            scSupplierCD.SetFocus(1);
+            //            return false;
+            //        }
+            //    }
+            //}
 
-            if(string.IsNullOrWhiteSpace(txtDate1.Text))
-            {
-                mskbl.ShowMessage("E102");
-                txtDate1.Focus();
-                return false;
-            }
+            //if(string.IsNullOrWhiteSpace(txtDate1.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtDate1.Focus();
+            //    return false;
+            //}
 
-            if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
-            {
-                mskbl.ShowMessage("E102");
-                txtRevisionDate.Focus();
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtRevisionDate.Focus();
+            //    return false;
+            //}
 
-            if (string.IsNullOrWhiteSpace(txtRate1.Text))
-            {
-                mskbl.ShowMessage("E102");
-                txtRate1.Focus();
-                return false;
-            }
+            //if (string.IsNullOrWhiteSpace(txtRate1.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtRate1.Focus();
+            //    return false;
+            //}
             
             //if (!((rdoAllStores.Checked == true) || (rdoIndividualStores.Checked == true)))
             //{
@@ -429,31 +429,47 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            //{
+            //    DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+            //    //foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            //    //{
+            //    //    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+            //    //    chk1.Value = chk1.TrueValue;
+            //    //}
+            //    //dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            //}
+
+            //else
+            //{
+            //    dgv_ShiireKakeritsu.ClearSelection();
+            //}
+
+            ////foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            ////{
+            ////    if (Convert.ToBoolean(row.Cells["colChk"].Value))
+            ////    {
+            ////        row.Selected = true;
+            ////    }
+            ////    else
+            ////        row.Selected = false;
+            ////}
+
+            ///pnz 5.5.2020
             if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {
-                DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                //foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                //{
-                //    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                //    chk1.Value = chk1.TrueValue;
-                //}
-                //dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.FalseValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             }
-            
             else
             {
                 dgv_ShiireKakeritsu.ClearSelection();
             }
-           
-            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-            //{
-            //    if (Convert.ToBoolean(row.Cells["colChk"].Value))
-            //    {
-            //        row.Selected = true;
-            //    }
-            //    else
-            //        row.Selected = false;
-            //}
+
         }
 
 
