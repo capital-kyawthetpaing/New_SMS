@@ -95,7 +95,6 @@
             this.rdoIndividualStores = new CKM_Controls.CKM_RadioButton();
             this.cbo_Store = new CKM_Controls.CKM_ComboBox();
             this.scSupplierCD = new Search.CKM_SearchControl();
-            this.col1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colBrandCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSportsCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -385,7 +384,6 @@
             this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col1,
             this.colChk,
             this.colBrandCD1,
             this.colSportsCD1,
@@ -1377,12 +1375,6 @@
             this.scSupplierCD.Value3 = null;
             this.scSupplierCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scSupplierCD_CodeKeyDownEvent);
             // 
-            // col1
-            // 
-            this.col1.HeaderText = "Column1";
-            this.col1.Name = "col1";
-            this.col1.Visible = false;
-            // 
             // colChk
             // 
             this.colChk.HeaderText = "";
@@ -1539,7 +1531,6 @@
         private CKM_Controls.CKM_RadioButton rdoAllStores;
         private CKM_Controls.CKM_Label ckM_Label27;
         private CKM_Controls.CKM_ComboBox cbo_Store;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colChk;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSportsCD1;

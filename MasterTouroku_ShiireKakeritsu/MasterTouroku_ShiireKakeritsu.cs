@@ -547,7 +547,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
                     {
                         DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                        if (chk.Selected == true)
+                        if (chk.Value == chk.TrueValue)
                         {
 
                             DataRow dtRow = dtMain.NewRow();
