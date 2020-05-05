@@ -429,21 +429,20 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            //{
-            //    DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-            //    //foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-            //    //{
-            //    //    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-            //    //    chk1.Value = chk1.TrueValue;
-            //    //}
-            //    //dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            //}
-
-            //else
-            //{
-            //    dgv_ShiireKakeritsu.ClearSelection();
-            //}
+            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            {
+                DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell colChk = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.TrueValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            }
+            else
+            {
+                dgv_ShiireKakeritsu.ClearSelection();
+            }
 
             ////foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             ////{
@@ -456,19 +455,19 @@ namespace MasterTouroku_ShiireKakeritsu
             ////}
 
             ///pnz 5.5.2020
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                {
-                    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                    chk1.Value = chk1.FalseValue;
-                }
-                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            }
-            else
-            {
-                dgv_ShiireKakeritsu.ClearSelection();
-            }
+            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            //{
+            //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            //    {
+            //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+            //        chk1.Value = chk1.FalseValue;
+            //    }
+            //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+            //}
+            //else
+            //{
+            //    dgv_ShiireKakeritsu.ClearSelection();
+            //}
 
         }
 
@@ -651,11 +650,11 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnDelete_Click(object sender, EventArgs e)
         {
 
-            foreach (DataGridViewRow row in this.dgv_ShiireKakeritsu.SelectedRows)
-            {
-                int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
-                dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-            }
+            //foreach (DataGridViewRow row in this.dgv_ShiireKakeritsu.SelectedRows)
+            //{
+            //    int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
+            //    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
+            //}
 
 
             //if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
@@ -681,52 +680,54 @@ namespace MasterTouroku_ShiireKakeritsu
             //        dt.Rows.Remove(row);
             //}
 
-            //List<DataRow> toDelete = new List<DataRow>();
-            //for (int i = 0; i < dgv_ShiireKakeritsu.Rows.Count; i++)
-            //{
-            //    {
-            //        DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
-            //        DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
-            //        if (check.Value == check.TrueValue)
-            //        {
-            //            DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
-            //            toDelete.Add(dataRow);
-            //        }
-            //    }
-            //}
-            //toDelete.ForEach(row => row.Delete());
-
+            List<DataRow> toDelete = new List<DataRow>();
+            for (int i = 0; i < dgv_ShiireKakeritsu.Rows.Count; i++)
+            {
+                {
+                    DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
+                    DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                    if (check.Value == check.TrueValue)
+                    {
+                        DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
+                        toDelete.Add(dataRow);
+                    }
+                }
+            }
+            toDelete.ForEach(row => row.Delete());
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            string date = string.Empty;
-            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                if (chk.Value == chk.TrueValue)
-                {
-                    scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
-                    scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
-                    scSegmentCD.TxtCode.Text = row.Cells["colSegmentCD1"].Value.ToString();
-                    cbo_Year.SelectedText = row.Cells["colYear"].Value.ToString();
-                    cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
-                    date = row.Cells["colDate"].Value.ToString().Substring(0,10);
-                    string[] a = date.Split('/');
-                    if(a[0].Length == 1)
-                    {
-                        a[0] = "0" + a[0];
-                    }
-                    if(a[1].Length == 1)
-                    {
-                        a[1] = "0" + a[1];
-                    }
-                    txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
-                    txtRate.Text = row.Cells["colRate1"].Value.ToString();
-                }
-            }
-
+            //string date = string.Empty;
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //{
+            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+            //    if (chk.Value == chk.TrueValue)
+            //    {
+            //        scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
+            //        scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
+            //        scSegmentCD.TxtCode.Text = row.Cells["colSegmentCD1"].Value.ToString();
+            //        cbo_Year.SelectedText = row.Cells["colYear"].Value.ToString();
+            //        cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
+            //        date = row.Cells["colDate"].Value.ToString().Substring(0,10);
+            //        string[] a = date.Split('/');
+            //        if(a[0].Length == 1)
+            //        {
+            //            a[0] = "0" + a[0];
+            //        }
+            //        if(a[1].Length == 1)
+            //        {
+            //            a[1] = "0" + a[1];
+            //        }
+            //        txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
+            //        txtRate.Text = row.Cells["colRate1"].Value.ToString();
+            //    }
+            //}
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //{
+            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+            //    dgv_ShiireKakeritsu.Rows[dgv_ShiireKakeritsu.UpdateCellValue.txtRevisionDate].Cells[2].Text.ToString();
+            //}
         }
-
     }
 }
