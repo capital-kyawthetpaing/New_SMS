@@ -498,17 +498,41 @@ namespace MasterTouroku_ShiireKakeritsu
                 dt.Columns.Add("LastSeason");
                 dt.Columns.Add("ChangeDate");
                 dt.Columns.Add("Rate");
+
+                DataRow dtRow = dt.NewRow();
+                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                dtRow["LastYearTerm"] = cbo_Year.Text;
+                dtRow["LastSeason"] = cbo_Season.Text;
+                dtRow["ChangeDate"] = txtChangeDate.Text;
+                //dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dt.Rows.Add(dtRow);
+                dgv_ShiireKakeritsu.DataSource = dt;
             }
-            DataRow dtRow = dt.NewRow();
-            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            dtRow["LastYearTerm"] = cbo_Year.Text;
-            dtRow["LastSeason"] = cbo_Season.Text;
-            dtRow["ChangeDate"] = txtChangeDate.Text;
-            //dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-            dt.Rows.Add(dtRow);
-            dgv_ShiireKakeritsu.DataSource = dt;
+            else
+            {
+                DataRow row = dtMain.NewRow();
+                row["BrandCD"] = scBrandCD.TxtCode.Text;
+                row["SportsCD"] = scSportsCD.TxtCode.Text;
+                row["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                row["LastYearTerm"] = cbo_Year.Text;
+                row["LastSeason"] = cbo_Season.Text;
+                row["ChangeDate"] = txtChangeDate.Text;
+                row["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dtMain.Rows.Add(row);
+                dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
+            //DataRow dtRow = dt.NewRow();
+            //dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            //dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            //dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            //dtRow["LastYearTerm"] = cbo_Year.Text;
+            //dtRow["LastSeason"] = cbo_Season.Text;
+            //dtRow["ChangeDate"] = txtChangeDate.Text;
+            ////dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //dt.Rows.Add(dtRow);
+            //dgv_ShiireKakeritsu.DataSource = dt;
 
         }
         
@@ -521,8 +545,8 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
-                if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
-                {
+                //if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+                //{
 
                     //dgv_ShiireKakeritsu.MultiSelect = true;
                     //dgv_ShiireKakeritsu.SelectAll();
@@ -561,7 +585,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             dgv_ShiireKakeritsu.DataSource = dtMain;
                         }
                     }
-                }
+                //}
             }
         }
 
