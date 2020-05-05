@@ -21,6 +21,8 @@ namespace MasterTouroku_ShiireKakeritsu
         DataTable dtMain;
         DataTable dtGrid;
         DataTable dt = new DataTable();
+        M_Vendor_Entity mve = new M_Vendor_Entity();
+        int type = 0;
 
         public frmMasterTouroku_ShiireKakeritsu()
         {
@@ -57,6 +59,7 @@ namespace MasterTouroku_ShiireKakeritsu
         private void SetRequiredField()
         {
             scSupplierCD.TxtCode.Require(true);
+            txtDate1.Require(true);
             txtRevisionDate.Require(true);
             txtRate1.Require(true);
         }
@@ -103,20 +106,56 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
+            else
+            {
+                mve.VendorCD = scSupplierCD.TxtCode.Text;
+                mve.ChangeDate = txtDate1.Text;
+                DataTable dtvendor = new DataTable();
+                dtvendor = mskbl.M_Vendor_Select(mve);
+                if(dtvendor.Rows.Count == 0)
+                {
+                    mskbl.ShowMessage("E101");
+                    scSupplierCD.SetFocus(1);
+                    return false;
+                }
+                else
+                {
+                    if(dtvendor.Rows[0]["DeleteFlg"].ToString() == "1")
+                    {
+                        mskbl.ShowMessage("E119");
+                        scSupplierCD.SetFocus(1);
+                        return false;
+                    }
+                }
+            }
+
+            if(string.IsNullOrWhiteSpace(txtDate1.Text))
+            {
+                mskbl.ShowMessage("E102");
+                txtDate1.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
+            {
+                mskbl.ShowMessage("E102");
+                txtRevisionDate.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtRate1.Text))
+            {
+                mskbl.ShowMessage("E102");
+                txtRate1.Focus();
+                return false;
+            }
+            
             //if (!((rdoAllStores.Checked == true) || (rdoIndividualStores.Checked == true)))
             //{
             //    mskbl.ShowMessage("E102");
             //    return false;
             //}
-            //if (!String.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
-            //{
-            //    if (!scSupplierCD.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E101");
-            //        scSupplierCD.SetFocus(1);
-            //        return false;
-            //    }
-            //}
+           
             //if (scSupplierCD.IsExists(1))
             //{
             //    mskbl.ShowMessage("E119");
