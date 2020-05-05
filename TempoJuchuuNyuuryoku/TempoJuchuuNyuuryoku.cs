@@ -502,6 +502,8 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.Space1:
                             case (int)ClsGridJuchuu.ColNO.Space2:
                             case (int)ClsGridJuchuu.ColNO.Space3:
+                            case (int)ClsGridJuchuu.ColNO.Site:
+                            case (int)ClsGridJuchuu.ColNO.Zaiko:
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                     break;
@@ -523,7 +525,7 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.Nyuka:
                             case (int)ClsGridJuchuu.ColNO.Syukka:
                                 {
-                                    //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -2305,11 +2307,11 @@ namespace TempoJuchuuNyuuryoku
                             detailControls[index].Focus();
                             return false;
                         }
-                        ////顧客名2に入力無い場合、先頭20Byteを顧客名2へセット   delete 4/24
-                        //if (string.IsNullOrWhiteSpace(detailControls[index+2].Text))
-                        //{
-                        //    detailControls[index + 2].Text = bbl.LeftB(detailControls[index].Text, 20);
-                        //}
+                        //顧客名2に入力無い場合、先頭20Byteを顧客名2へセット   delete 4/24
+                        if (string.IsNullOrWhiteSpace(detailControls[index + 2].Text))
+                        {
+                            detailControls[index + 2].Text = bbl.LeftB(detailControls[index].Text, 20);
+                        }
                     }
                     break;
 
@@ -3662,6 +3664,7 @@ namespace TempoJuchuuNyuuryoku
                 ScCustomer.LabelText = "";
                 detailControls[(int)EIndex.CustomerName].Text = "";
                 detailControls[(int)EIndex.CustomerName2].Text = "";
+                detailControls[(int)EIndex.CustomerName].Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 lblLastSalesDate.Text = "";
@@ -3676,6 +3679,7 @@ namespace TempoJuchuuNyuuryoku
                 ScDeliveryCD.LabelText = "";
                 detailControls[(int)EIndex.DeliveryName].Text = "";
                 detailControls[(int)EIndex.DeliveryName2].Text = "";
+                detailControls[(int)EIndex.DeliveryName].Enabled = false;
             }
         }
 

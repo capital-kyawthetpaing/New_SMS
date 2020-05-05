@@ -242,6 +242,37 @@ namespace GridBase
                     w_Edit.TxtCode.ReadOnly = pReadOnly;
                 }
             }
+            public void SBold(bool pBold)
+            {
+                if(pBold)
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Bold);
+
+                    }
+                }
+                else
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Regular);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Regular);
+
+                    }
+                }
+            }
         }
 
         public struct ST_State_GridKihon
@@ -250,13 +281,15 @@ namespace GridBase
             public bool Cell_ReadOnly;     //編集可/不可  (True=不可 False=可)
             public bool Cell_Selectable;   //フォーカスセット可能か
             public Color Cell_Color;       //セルの色(行の色とは別に固定色であればセット  表示項目の灰色等)
-                                                             //初期化
+            public bool Cell_Bold;
+            //初期化
             public void SetDefault()
             {
                 Cell_Enabled = false;        //使用不可
                 Cell_ReadOnly = false;       //編集可
                 Cell_Selectable = true;      //フォーカスセット可能
                 Cell_Color = System.Drawing.Color.Empty;
+                Cell_Bold = false;
             }
         }
 
