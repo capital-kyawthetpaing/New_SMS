@@ -704,7 +704,7 @@ namespace MasterTouroku_ShiireKakeritsu
             foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             {
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                if (chk.Selected == true)
+                if (chk.Value == chk.TrueValue)
                 {
                     scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
                     scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
@@ -713,6 +713,14 @@ namespace MasterTouroku_ShiireKakeritsu
                     cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
                     date = row.Cells["colDate"].Value.ToString().Substring(0,10);
                     string[] a = date.Split('/');
+                    if(a[0].Length == 1)
+                    {
+                        a[0] = "0" + a[0];
+                    }
+                    if(a[1].Length == 1)
+                    {
+                        a[1] = "0" + a[1];
+                    }
                     txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
                     txtRate.Text = row.Cells["colRate1"].Value.ToString();
                 }
