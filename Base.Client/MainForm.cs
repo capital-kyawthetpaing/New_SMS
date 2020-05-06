@@ -272,6 +272,18 @@ namespace Base.Client
             }
         }
 
+        public System.Drawing.Color ModeColor
+        {
+            get
+            {
+                return lblMode.BackColor;
+            }
+            set
+            {
+                lblMode.BackColor = value;
+            }
+        }
+
         [Browsable(true)]
         [Category("CKM Properties")]
         [Description("FormName")]
