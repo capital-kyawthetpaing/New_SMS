@@ -74,15 +74,15 @@ namespace Search
             }
 
 
-            if (string.IsNullOrWhiteSpace(txtCustomerName.Text) && string.IsNullOrWhiteSpace(txtKanaName.Text)&& string.IsNullOrWhiteSpace(txtPhno.Text) && string.IsNullOrWhiteSpace(txtBirthDate.Text) &&
-                 (!chk_Store.Checked) && (!chk_Web.Checked) && string.IsNullOrWhiteSpace(cbo_Store.Text)&& string.IsNullOrWhiteSpace(txtKeyword.Text)&& string.IsNullOrWhiteSpace(txtCustCDFrom.Text) && string.IsNullOrWhiteSpace(txtCustCDTo.Text))
+            if (string.IsNullOrWhiteSpace(txtCustomerName.Text) && string.IsNullOrWhiteSpace(txtKanaName.Text) && string.IsNullOrWhiteSpace(txtPhno.Text) && string.IsNullOrWhiteSpace(txtBirthDate.Text) &&
+                 (!chk_Store.Checked) && (!chk_Web.Checked) && string.IsNullOrWhiteSpace(cbo_Store.Text) && string.IsNullOrWhiteSpace(txtKeyword.Text) && string.IsNullOrWhiteSpace(txtCustCDFrom.Text) && string.IsNullOrWhiteSpace(txtCustCDTo.Text))
             {
                 scbl.ShowMessage("E111");
                 txtCustomerName.Focus();
                 return false;
             }
 
-                return true;
+            return true;
 
             
         }

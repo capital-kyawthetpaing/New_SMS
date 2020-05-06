@@ -13,5 +13,6 @@ namespace CKM_Controls
         {
             this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
         }
+     
     }
 }

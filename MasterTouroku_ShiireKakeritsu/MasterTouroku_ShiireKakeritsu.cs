@@ -21,6 +21,8 @@ namespace MasterTouroku_ShiireKakeritsu
         DataTable dtMain;
         DataTable dtGrid;
         DataTable dt = new DataTable();
+        M_Vendor_Entity mve = new M_Vendor_Entity();
+        int type = 0;
 
         public frmMasterTouroku_ShiireKakeritsu()
         {
@@ -35,12 +37,19 @@ namespace MasterTouroku_ShiireKakeritsu
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             ckM_Button1.Text = "取込(F10)";
+            F2Visible = false;
+            F3Visible = false;
+            F4Visible = false;
+            F5Visible = false;
             BindCombo();
             SetRequiredField();
             scSupplierCD.SetFocus(1);
+            txtDate1.Text= DateTime.Now.ToString("yyyy/MM/dd");
         }
         public void BindCombo()
         {
+            cbo_Store.Bind(string.Empty,"2");
+            cbo_Store.SelectedValue = StoreCD;
             string ymd = bbl.GetDate();
             cbo_Year.Bind(ymd);
             cbo_Year1.Bind(ymd);
@@ -50,6 +59,7 @@ namespace MasterTouroku_ShiireKakeritsu
         private void SetRequiredField()
         {
             scSupplierCD.TxtCode.Require(true);
+            txtDate1.Require(true);
             txtRevisionDate.Require(true);
             txtRate1.Require(true);
         }
@@ -96,15 +106,56 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
                 return false;
-            //if (!String.IsNullOrEmpty(scSupplierCD.TxtCode.Text))
+            //else
             //{
-            //    if (!scSupplierCD.IsExists(2))
+            //    mve.VendorCD = scSupplierCD.TxtCode.Text;
+            //    mve.ChangeDate = txtDate1.Text;
+            //    DataTable dtvendor = new DataTable();
+            //    dtvendor = mskbl.M_Vendor_Select(mve);
+            //    if(dtvendor.Rows.Count == 0)
             //    {
-            //        bbl.ShowMessage("E101");
+            //        mskbl.ShowMessage("E101");
             //        scSupplierCD.SetFocus(1);
             //        return false;
             //    }
+            //    else
+            //    {
+            //        if(dtvendor.Rows[0]["DeleteFlg"].ToString() == "1")
+            //        {
+            //            mskbl.ShowMessage("E119");
+            //            scSupplierCD.SetFocus(1);
+            //            return false;
+            //        }
+            //    }
             //}
+
+            //if(string.IsNullOrWhiteSpace(txtDate1.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtDate1.Focus();
+            //    return false;
+            //}
+
+            //if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtRevisionDate.Focus();
+            //    return false;
+            //}
+
+            //if (string.IsNullOrWhiteSpace(txtRate1.Text))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    txtRate1.Focus();
+            //    return false;
+            //}
+            
+            //if (!((rdoAllStores.Checked == true) || (rdoIndividualStores.Checked == true)))
+            //{
+            //    mskbl.ShowMessage("E102");
+            //    return false;
+            //}
+           
             //if (scSupplierCD.IsExists(1))
             //{
             //    mskbl.ShowMessage("E119");
@@ -381,28 +432,43 @@ namespace MasterTouroku_ShiireKakeritsu
             if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {
                 DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                //foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                //{
-                //    DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                //    chk1.Value = chk1.TrueValue;
-                //}
-                //dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
+                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+                {
+                    DataGridViewCheckBoxCell colChk = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+                    chk1.Value = chk1.TrueValue;
+                }
+                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             }
-            
             else
             {
                 dgv_ShiireKakeritsu.ClearSelection();
             }
-           
-            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+
+            ////foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            ////{
+            ////    if (Convert.ToBoolean(row.Cells["colChk"].Value))
+            ////    {
+            ////        row.Selected = true;
+            ////    }
+            ////    else
+            ////        row.Selected = false;
+            ////}
+
+            ///pnz 5.5.2020
+            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             //{
-            //    if (Convert.ToBoolean(row.Cells["colChk"].Value))
+            //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
             //    {
-            //        row.Selected = true;
+            //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
+            //        chk1.Value = chk1.FalseValue;
             //    }
-            //    else
-            //        row.Selected = false;
+            //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
             //}
+            //else
+            //{
+            //    dgv_ShiireKakeritsu.ClearSelection();
+            //}
+
         }
 
 
@@ -432,17 +498,41 @@ namespace MasterTouroku_ShiireKakeritsu
                 dt.Columns.Add("LastSeason");
                 dt.Columns.Add("ChangeDate");
                 dt.Columns.Add("Rate");
+
+                DataRow dtRow = dt.NewRow();
+                dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+                dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+                dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                dtRow["LastYearTerm"] = cbo_Year.Text;
+                dtRow["LastSeason"] = cbo_Season.Text;
+                dtRow["ChangeDate"] = txtChangeDate.Text;
+                //dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dt.Rows.Add(dtRow);
+                dgv_ShiireKakeritsu.DataSource = dt;
             }
-            DataRow dtRow = dt.NewRow();
-            dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
-            dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
-            dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
-            dtRow["LastYearTerm"] = cbo_Year.Text;
-            dtRow["LastSeason"] = cbo_Season.Text;
-            dtRow["ChangeDate"] = txtChangeDate.Text;
-            //dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-            dt.Rows.Add(dtRow);
-            dgv_ShiireKakeritsu.DataSource = dt;
+            else
+            {
+                DataRow row = dtMain.NewRow();
+                row["BrandCD"] = scBrandCD.TxtCode.Text;
+                row["SportsCD"] = scSportsCD.TxtCode.Text;
+                row["SegmentCD"] = scSegmentCD.TxtCode.Text;
+                row["LastYearTerm"] = cbo_Year.Text;
+                row["LastSeason"] = cbo_Season.Text;
+                row["ChangeDate"] = txtChangeDate.Text;
+                row["Rate"] = Convert.ToDecimal(txtRate.Text);
+                dtMain.Rows.Add(row);
+                dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
+            //DataRow dtRow = dt.NewRow();
+            //dtRow["BrandCD"] = scBrandCD.TxtCode.Text;
+            //dtRow["SportsCD"] = scSportsCD.TxtCode.Text;
+            //dtRow["SegmentCD"] = scSegmentCD.TxtCode.Text;
+            //dtRow["LastYearTerm"] = cbo_Year.Text;
+            //dtRow["LastSeason"] = cbo_Season.Text;
+            //dtRow["ChangeDate"] = txtChangeDate.Text;
+            ////dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //dt.Rows.Add(dtRow);
+            //dgv_ShiireKakeritsu.DataSource = dt;
 
         }
         
@@ -455,8 +545,8 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             else
             {
-                if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
-                {
+                //if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+                //{
 
                     //dgv_ShiireKakeritsu.MultiSelect = true;
                     //dgv_ShiireKakeritsu.SelectAll();
@@ -480,7 +570,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
                     {
                         DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                        if (chk.Selected == true)
+                        if (chk.Value == chk.TrueValue)
                         {
 
                             DataRow dtRow = dtMain.NewRow();
@@ -495,7 +585,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             dgv_ShiireKakeritsu.DataSource = dtMain;
                         }
                     }
-                }
+                //}
             }
         }
 
@@ -588,7 +678,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //{
             //    int rowIndex = dgv_ShiireKakeritsu.CurrentCell.RowIndex;
             //    dgv_ShiireKakeritsu.Rows.RemoveAt(rowIndex);
-            // }
+            //}
 
 
             //if(Convert.ToBoolean(row1.Cells["colChk"].EditedFormattedValue) == true)
@@ -628,30 +718,40 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
             toDelete.ForEach(row => row.Delete());
-
         }
 
         private void btnChange_Click(object sender, EventArgs e)
         {
-            string date = string.Empty;
-            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-            {
-                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
-                if (chk.Selected == true)
-                {
-                    scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
-                    scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
-                    scSegmentCD.TxtCode.Text = row.Cells["colSegmentCD1"].Value.ToString();
-                    cbo_Year.SelectedText = row.Cells["colYear"].Value.ToString();
-                    cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
-                    date = row.Cells["colDate"].Value.ToString().Substring(0,10);
-                    string[] a = date.Split('/');
-                    txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
-                    txtRate.Text = row.Cells["colRate1"].Value.ToString();
-                }
-            }
-
+            //string date = string.Empty;
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //{
+            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+            //    if (chk.Value == chk.TrueValue)
+            //    {
+            //        scBrandCD.TxtCode.Text = row.Cells["colBrandCD1"].Value.ToString();
+            //        scSportsCD.TxtCode.Text = row.Cells["colSportsCD1"].Value.ToString();
+            //        scSegmentCD.TxtCode.Text = row.Cells["colSegmentCD1"].Value.ToString();
+            //        cbo_Year.SelectedText = row.Cells["colYear"].Value.ToString();
+            //        cbo_Season.SelectedText = row.Cells["colSeason"].Value.ToString();
+            //        date = row.Cells["colDate"].Value.ToString().Substring(0,10);
+            //        string[] a = date.Split('/');
+            //        if(a[0].Length == 1)
+            //        {
+            //            a[0] = "0" + a[0];
+            //        }
+            //        if(a[1].Length == 1)
+            //        {
+            //            a[1] = "0" + a[1];
+            //        }
+            //        txtChangeDate.Text = a[2].ToString() + "/" + a[0].ToString() + "/" + a[1].ToString();
+            //        txtRate.Text = row.Cells["colRate1"].Value.ToString();
+            //    }
+            //}
+            //foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            //{
+            //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+            //    dgv_ShiireKakeritsu.Rows[dgv_ShiireKakeritsu.UpdateCellValue.txtRevisionDate].Cells[2].Text.ToString();
+            //}
         }
-
     }
 }
