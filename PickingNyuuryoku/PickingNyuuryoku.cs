@@ -1981,7 +1981,7 @@ namespace PickingNyuuryoku
                         break;
 
                     default:
-                        mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                        mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                         break;
                 }
             }

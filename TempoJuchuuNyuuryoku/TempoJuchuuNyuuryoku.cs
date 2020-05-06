@@ -972,10 +972,12 @@ namespace TempoJuchuuNyuuryoku
                                 if (mGrid.g_DArray[pRow].juchuGyoNO == 0)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -1000,11 +1002,13 @@ namespace TempoJuchuuNyuuryoku
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -1029,10 +1033,12 @@ namespace TempoJuchuuNyuuryoku
                                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Nyuka))
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                     }
                                     else
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                     }
                                 }
                                 break;
@@ -1042,23 +1048,16 @@ namespace TempoJuchuuNyuuryoku
                                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Syukka))
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                     }
                                     else
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                     }
                                 }
                                 break;
 
-                                //Todo:修正時を考慮しなければならない
-                                ////case (int)ClsGridJuchuu.ColNO.JanCD:
-                                //case (int)ClsGridJuchuu.ColNO.SKUName:    // 
-                                //case (int)ClsGridJuchuu.ColNO.ColorName:    // 
-                                //case (int)ClsGridJuchuu.ColNO.SizeName:
-                                //    {
-                                //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                //        break;
-                                //    }
                         }
 
                     }
@@ -1073,16 +1072,20 @@ namespace TempoJuchuuNyuuryoku
                 {
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = false;
                 }
                 else
                 {
                     //入荷予定日,発注先 入力不可
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = true;
                 }
             }
             //else if (pCol == (int)ClsGridJuchuu.ColNO.JuchuuSuu)
@@ -1104,11 +1107,13 @@ namespace TempoJuchuuNyuuryoku
                 {
                     mGrid.g_MK_State[pCol, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[pCol, pRow].Cell_Bold = false;
                 }
                 else
                 {
                     mGrid.g_MK_State[pCol, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[pCol, pRow].Cell_Bold = true;
                 }
             }
 

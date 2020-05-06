@@ -548,7 +548,7 @@ namespace KaitouNoukiTouroku
                             case (int)ClsGridKaitouNouki.ColNO.CommentOutStore:
                             case (int)ClsGridKaitouNouki.ColNO.IndividualClientName:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }

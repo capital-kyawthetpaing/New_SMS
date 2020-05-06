@@ -244,7 +244,7 @@ namespace GridBase
             }
             public void SBold(bool pBold)
             {
-                if(pBold)
+                if(pBold)　　　　
                 {
                     if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
                     {
