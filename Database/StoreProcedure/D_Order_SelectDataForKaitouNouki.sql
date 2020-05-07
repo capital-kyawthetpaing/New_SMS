@@ -213,6 +213,11 @@ BEGIN
     ORDER BY DH.OrderNO
     ;
     
+    ALTER TABLE [#TableForKaitouNouki] ALTER COLUMN [OrderNO] VARCHAR(11) NOT NULL;
+    ALTER TABLE [#TableForKaitouNouki] ALTER COLUMN [OrderRows] int NOT NULL;
+    ALTER TABLE [#TableForKaitouNouki] ALTER COLUMN [ArrivalPlanNO] VARCHAR(11) NOT NULL;
+    ALTER TABLE [#TableForKaitouNouki] ALTER COLUMN [ROWNUM] int NOT NULL;
+    
     ALTER TABLE [#TableForKaitouNouki] ADD PRIMARY KEY CLUSTERED ([OrderNO], [OrderRows], [ArrivalPlanNO], [ROWNUM])
     WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
     ;
