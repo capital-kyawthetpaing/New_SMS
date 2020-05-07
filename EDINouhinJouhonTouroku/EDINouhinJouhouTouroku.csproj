@@ -84,20 +84,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EDINouhinJouhonTouroku_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDINouhinJouhonTouroku_Report.rpt</DependentUpon>
+    <Compile Include="EDINouhinJouhouTouroku_Report.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EDINouhinJouhouTouroku.resx">
       <DependentUpon>EDINouhinJouhouTouroku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EDINouhinJouhonTouroku_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>EDINouhinJouhonTouroku_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
