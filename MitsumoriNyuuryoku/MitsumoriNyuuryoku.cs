@@ -1725,8 +1725,9 @@ namespace MitsumoriNyuuryoku
                         ChangeDate = detailControls[(int)EIndex.MitsumoriDate].Text
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce, 1);
-                   
+                    //ret = sbl.M_Customer_Select(mce, 1);
+                    ret = sbl.M_Customer_Select(mce);
+
                     if (ret)
                     {
 
