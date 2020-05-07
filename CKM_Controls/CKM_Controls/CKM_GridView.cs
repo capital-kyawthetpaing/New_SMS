@@ -351,7 +351,7 @@ namespace CKM_Controls
 
         private void MyProcessCmdKey(Keys keyData)
         {
-                if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
+                if (this.CurrentCell != null && this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
                 {
                     if (this.Name == "dgvPETC0302I")
                     {

@@ -277,7 +277,7 @@
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox2.DecimalPlace = 0;
             this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox2.ForeColor = System.Drawing.Color.Red;
+            this.ckM_TextBox2.ForeColor = System.Drawing.Color.Black;
             this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox2.IntegerPart = 2;
             this.ckM_TextBox2.IsCorrectDate = true;
@@ -338,7 +338,7 @@
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
             this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox1.ForeColor = System.Drawing.Color.Red;
+            this.ckM_TextBox1.ForeColor = System.Drawing.Color.Black;
             this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
@@ -419,6 +419,7 @@
             this.GvDetail.Location = new System.Drawing.Point(46, 206);
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(963, 468);
             this.GvDetail.TabIndex = 2;
             this.GvDetail.UseRowNo = true;
@@ -482,7 +483,7 @@
             this.cboSyori.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
             this.cboSyori.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.cboSyori.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboSyori.ForeColor = System.Drawing.Color.Red;
+            this.cboSyori.ForeColor = System.Drawing.Color.Black;
             this.cboSyori.FormattingEnabled = true;
             this.cboSyori.Length = 40;
             this.cboSyori.Location = new System.Drawing.Point(105, 15);
@@ -509,6 +510,7 @@
             this.PanelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
