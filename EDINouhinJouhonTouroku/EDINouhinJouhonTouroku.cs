@@ -42,7 +42,7 @@ namespace EDINouhinJouhonTouroku
 
         private void FrmEDINouhinJouhonTouroku_Load(object sender, EventArgs e)
         {
-            InProgramID = "EDINouhinJouhonTouroku";
+            InProgramID = "EDINouhinJouhouTouroku";
 
             //SetFunctionLabel(EProMode.MENTE);
             this.SetFunctionLabel(EProMode.SHOW);

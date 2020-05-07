@@ -101,6 +101,7 @@
     <Compile Include="Fnc_Present_Entity.cs" />
     <Compile Include="Fnc_Reserve_Entity.cs" />
     <Compile Include="Fnc_UnitPrice_Entity.cs" />
+    <Compile Include="HikiateHenkouNyuuryoku_Entity.cs" />
     <Compile Include="L_Log_Entity.cs" />
     <Compile Include="M_API_Entity.cs" />
     <Compile Include="M_AuthorizationsDetails_Entity.cs" />

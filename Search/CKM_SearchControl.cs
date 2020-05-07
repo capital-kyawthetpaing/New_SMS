@@ -905,18 +905,18 @@ namespace Search
                     }
                     break;
 
-                //case SearchType.商品分類:
-                //    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
-                //    {
-                //        frmMulti.parID = Value1;
-                //        frmMulti.ShowDialog();
-                //        if (!frmMulti.flgCancel)
-                //        {
-                //            txtCode.Text = frmMulti.parKey;
-                //            lblName.Text = frmMulti.parChar1;
-                //        }
-                //    }
-                //    break;
+                case SearchType.商品分類:
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
 
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))
@@ -943,7 +943,9 @@ namespace Search
                         {
                             txtCode.Text = frmBrand.parBrandCD;
                             lblName.Text = frmBrand.parBrandName;
+                            CheckBasedFormPanel();
                         }
+
                     }
                     break;
 
@@ -1499,9 +1501,65 @@ namespace Search
                     break;
 
             }
+
+
             SetFocus(1);
         }
 
+        protected void CheckBasedFormPanel()
+        {
+            try
+            {
+                Control ctrl = this;
+                do
+                {
+                    ctrl = ctrl.Parent;
+                } while (!(ctrl is Form));
+                if (ctrl.GetType().BaseType.Name.Contains("FrmMainForm"))
+                {
+                    if (FindParentPanel(this) is Panel)
+                    {
+                        SendKeys.Send("{ENTER}");
+                    }
+               
+                }
+            }
+            catch
+            {
+
+            }
+                
+        }
+        private static Control FindParentPanel(Control theControl)
+        {
+            Control rControl = null;
+
+            if (theControl.Parent != null)
+            {
+                if (theControl.Parent.GetType() == typeof(System.Windows.Forms.Panel))
+                {
+                    rControl = theControl.Parent;
+                    if ((rControl as Panel).Name == "PanelHeader")
+                    {
+                        rControl = theControl.Parent;
+                    }
+                    else
+                    {
+                        rControl = FindParentPanel(theControl.Parent);
+                    }
+                }
+                else
+
+                {
+                    rControl = FindParentPanel(theControl.Parent);
+                }
+            }
+            else
+            {
+                rControl = null;
+            }
+            return rControl;
+        }
         public bool IsExistsDeleteCheck()
         {
             DataTable dtResult = new DataTable();

@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}</ProjectGuid>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E9791F4-705A-4118-B77F-F4E219FF71A6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EDINouhinJouhonTouroku</RootNamespace>
-    <AssemblyName>EDINouhinJouhonTouroku</AssemblyName>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HikiateHenkouNyuuryoku</RootNamespace>
+    <AssemblyName>HikiateHenkouNyuuryoku</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -27,17 +31,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -45,60 +40,45 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>HikiateHenkouNyuuryoku.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="GridControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EDINouhinJouhonTouroku.cs">
+    <Compile Include="ClsGridHikiate.cs" />
+    <Compile Include="ClsGridZaiko.cs" />
+    <Compile Include="HikiateHenkouNyuuryoku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EDINouhinJouhonTouroku.Designer.cs">
-      <DependentUpon>EDINouhinJouhonTouroku.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DataTableEDINouhinJouhonTouroku.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="EDINouhinJouhonTouroku_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDINouhinJouhonTouroku_Report.rpt</DependentUpon>
-      <SubType>Component</SubType>
+    <Compile Include="HikiateHenkouNyuuryoku.Designer.cs">
+      <DependentUpon>HikiateHenkouNyuuryoku.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EDINouhinJouhonTouroku.resx">
-      <DependentUpon>EDINouhinJouhonTouroku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EDINouhinJouhonTouroku_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>EDINouhinJouhonTouroku_Report.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -109,17 +89,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataTableEDINouhinJouhonTouroku.xsc">
-      <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
-    </None>
-    <None Include="DataTableEDINouhinJouhonTouroku.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataTableEDINouhinJouhonTouroku.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataTableEDINouhinJouhonTouroku.xss">
-      <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="HikiateHenkouNyuuryoku.resx">
+      <DependentUpon>HikiateHenkouNyuuryoku.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,18 +103,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows インストーラー 3.1</ProductName>
+      <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
@@ -158,13 +132,29 @@
       <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Entity\Entity.csproj">
       <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
       <Name>Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
