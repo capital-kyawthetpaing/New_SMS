@@ -2988,7 +2988,8 @@ namespace HenpinNyuuryoku
                     case (int)ClsGridShiire.ColNO.CalculationGaku:
                     case (int)ClsGridShiire.ColNO.PurchaseGaku:
                         {
-                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                             break;
                         }
                 }

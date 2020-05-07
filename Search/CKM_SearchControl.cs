@@ -905,18 +905,18 @@ namespace Search
                     }
                     break;
 
-                //case SearchType.商品分類:
-                //    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
-                //    {
-                //        frmMulti.parID = Value1;
-                //        frmMulti.ShowDialog();
-                //        if (!frmMulti.flgCancel)
-                //        {
-                //            txtCode.Text = frmMulti.parKey;
-                //            lblName.Text = frmMulti.parChar1;
-                //        }
-                //    }
-                //    break;
+                case SearchType.商品分類:
+                    using (Search_HanyouKey frmMulti = new Search_HanyouKey())
+                    {
+                        frmMulti.parID = Value1;
+                        frmMulti.ShowDialog();
+                        if (!frmMulti.flgCancel)
+                        {
+                            txtCode.Text = frmMulti.parKey;
+                            lblName.Text = frmMulti.parChar1;
+                        }
+                    }
+                    break;
 
                 case SearchType.銀行:
                     using (FrmSearch_Ginkou frmGinkou = new FrmSearch_Ginkou(changedate))

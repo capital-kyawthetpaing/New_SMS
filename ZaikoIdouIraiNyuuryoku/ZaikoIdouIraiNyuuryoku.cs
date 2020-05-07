@@ -2860,6 +2860,7 @@ namespace ZaikoIdouIraiNyuuryoku
                     case (int)ClsGridIdoIrai.ColNO.GYONO:
                     case (int)ClsGridIdoIrai.ColNO.Space:
                     case (int)ClsGridIdoIrai.ColNO.Space2:
+                    case (int)ClsGridIdoIrai.ColNO.CommentOutStore:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
                             break;
@@ -2867,6 +2868,7 @@ namespace ZaikoIdouIraiNyuuryoku
                     default:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                             break;
                         }
                 }

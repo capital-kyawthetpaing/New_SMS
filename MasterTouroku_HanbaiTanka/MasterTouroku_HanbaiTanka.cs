@@ -504,11 +504,14 @@ namespace MasterTouroku_HanbaiTanka
                         switch (w_Col)
                         {
                             case (int)ClsGridHanbaiTanka.ColNO.GYONO:
+                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                break;
                             case (int)ClsGridHanbaiTanka.ColNO.ITemCD:
                             case (int)ClsGridHanbaiTanka.ColNO.JanCD:
                             case (int)ClsGridHanbaiTanka.ColNO.ITemName:
+                            case (int)ClsGridHanbaiTanka.ColNO.GenkaWithoutTax:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }

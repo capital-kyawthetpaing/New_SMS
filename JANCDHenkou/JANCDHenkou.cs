@@ -24,6 +24,7 @@ namespace JANCDHenkou
         DataTable dtJanCDExist;
         DataTable dtGenJanCD;
         string SKUCD, xml;
+        L_Log_Entity log_data;
 
         public JANCDHenkou()
         {
@@ -44,7 +45,7 @@ namespace JANCDHenkou
             Btn_F8.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
-            Btn_F11.Text = "登録(F12)";
+            Btn_F12.Text = "登録(F12)";
 
             dtGenJanCD = CreateDatatable();
         }
@@ -104,7 +105,6 @@ namespace JANCDHenkou
         public void Clear()
         {
             Clear(panelDetail);
-            //txtTargetPeriodF.Focus();
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace JANCDHenkou
         {
             OpenFileDialog op = new OpenFileDialog
             {
-                InitialDirectory = @"C:\JANCDHenkou\",
+                InitialDirectory = @"C:\",
                 RestoreDirectory = true
             };
 
@@ -170,10 +170,15 @@ namespace JANCDHenkou
         {
             if(ErrorCheck())
             {
-                xml = jhbl.DataTableToXml(dtGenJanCD);
-                if(jhbl.JanCDHenkou_Insert(xml, InOperatorCD))
+                if (jhbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
+                    xml = jhbl.DataTableToXml(dtGenJanCD);
+                    log_data = Get_Log_Data();
 
+                    if (jhbl.JanCDHenkou_Insert(xml, log_data))
+                    {
+                        Clear();
+                    }
                 }
             }
         }
@@ -194,6 +199,20 @@ namespace JANCDHenkou
                     {
                         jhbl.ShowMessage("E101");
                         return false;
+                    }
+                    if (dtGenJanCD.Rows.Count > 0)
+                    {
+                        foreach (DataRow r in dtGenJanCD.Rows)
+                        {
+                            if (r.RowState == DataRowState.Added)
+                            {
+                                if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                                {
+                                    jhbl.ShowMessage("E226");
+                                    return false;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -415,6 +434,19 @@ namespace JANCDHenkou
             }
             return true;
 
+        }
+
+        private L_Log_Entity Get_Log_Data()
+        {
+            log_data = new L_Log_Entity()
+            {
+                Program = "JANCDHenkou",
+                PC = InPcID,
+                OperateMode = string.Empty,
+                Operator = InOperatorCD,
+                KeyItem = string.Empty
+            };
+            return log_data;
         }
     }
 }
