@@ -3,12 +3,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace CKM_Controls
 {
     public class CKM_GridView : DataGridView
@@ -57,10 +57,37 @@ namespace CKM_Controls
             }
             return true;
         }
+
+        protected void Check_SubFormGrid(Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                try
+                {
+                    Control ctrl = this;
+                    do
+                    {
+                        ctrl = ctrl.Parent;
+                    } while (!(ctrl is Form));
+                    if (ctrl.GetType().BaseType.Name.Contains("FrmSubForm"))
+                    {
+                        Button btn12 = ctrl.Controls.Find("BtnF12", true).FirstOrDefault() as Button;
+                        btn12.PerformClick();
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+        }
         protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
 
         {
+            Check_SubFormGrid(keyData);
             CheckDuplicate();
+            MasterTouroku_YuubinBangou_BL YuubinBangouBL = new MasterTouroku_YuubinBangou_BL();  DataTable dtDisplay = DataSource as DataTable; var dgvYuubinBangou = this;
             if (IsSkipped && ( keyData == Keys.Enter || keyData == Keys.Up || keyData == Keys.Down))
             {
                 mtsbl.ShowMessage("E105");
@@ -107,10 +134,102 @@ namespace CKM_Controls
                         direction = keyData;
                         reverseKey = Keys.Tab;
                         break;
-                    case Keys.Enter:
-                        direction = Keys.Tab;
-                        reverseKey = Keys.Shift | Keys.Tab;
-                        break;
+                    case Keys.Enter:   //// PTK Added not still Confirm
+                        if (this.Name == "dgvYuubinBangou")
+                        {
+                            if (CurrentCell.OwningColumn.Name == "colZipCD2")
+                            {
+                                if (String.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD1"].Value.ToString()))
+                                {
+                                    direction = Keys.Shift | Keys.Tab;
+                                    YuubinBangouBL.ShowMessage("E102");
+                                    //CurrentCell.Selected = true;
+                                    CurrentCell.Selected = true;
+                                    NotifyCurrentCellDirty(true);
+                                    BeginEdit(true);
+                                    break;
+                                }
+                                if ((!string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString()) && string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD2"].EditedFormattedValue.ToString())))
+                                {
+                                    YuubinBangouBL.ShowMessage("E102");
+                                    BeginEdit(true); break;
+                                }
+                                if (!string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString()) && !string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD2"].EditedFormattedValue.ToString()))
+                                {
+                                    DataRow[] drarr = dtDisplay.Select("ZipCD1 = '" + Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString() + "' AND ZipCD2 = '" + Rows[CurrentRow.Index].Cells["colZipCD2"].EditedFormattedValue.ToString() + "'");
+                                    if (drarr.Length > 1)
+                                    {
+                                        YuubinBangouBL.ShowMessage("E105");
+                                        BeginEdit(true);
+                                        break;
+                                    }
+                                    else if (TanaCheck("colZipCD1",Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString())  && TanaCheck("colZipCD2"))
+                                    {
+                                        YuubinBangouBL.ShowMessage("E105");
+                                        BeginEdit(true);
+                                        break;
+                                    }
+                                    else
+                                    {
+                                        direction = Keys.Tab;
+                                        reverseKey = Keys.Shift | Keys.Tab;
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    direction = Keys.Tab;
+                                    reverseKey = Keys.Shift | Keys.Tab;
+                                    break;
+                                }
+                            }
+                            else if (CurrentCell.OwningColumn.Name == "colAdd1")
+                            {
+                                if (!string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString()) && string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colAdd1"].EditedFormattedValue.ToString()))
+                                {
+                                    YuubinBangouBL.ShowMessage("E102");
+                                    CurrentCell = Rows[CurrentRow.Index].Cells["colAdd1"];
+                                    break;
+                                    // dgvYuubinBangou.BeginEdit(true);
+                                }
+                                else if (string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD1"].EditedFormattedValue.ToString()) && !string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colAdd1"].EditedFormattedValue.ToString()))
+                                {
+                                    Rows[CurrentRow.Index].Cells["colAdd1"].Value = null;
+                                    direction = Keys.Tab;
+                                    reverseKey = Keys.Shift | Keys.Tab;
+                                    break;
+                                }
+                                else
+                                {
+                                    direction = Keys.Tab;
+                                    reverseKey = Keys.Shift | Keys.Tab;
+                                    break;
+                                }
+                            }
+                            else if (CurrentCell.OwningColumn.Name == "colAdd2") ///////Changed
+                            {
+                                if (string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colZipCD2"].EditedFormattedValue.ToString()) && !string.IsNullOrWhiteSpace(Rows[CurrentRow.Index].Cells["colAdd2"].EditedFormattedValue.ToString()))
+                                {
+                                     Rows[CurrentRow.Index].Cells["colAdd2"].Value = null;
+                                }
+                                direction = Keys.Tab;
+                                reverseKey = Keys.Shift | Keys.Tab;
+                                break;
+                            }
+                            else
+                            {
+                                direction = Keys.Tab;
+                                reverseKey = Keys.Shift | Keys.Tab;
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            direction = Keys.Tab;
+                            reverseKey = Keys.Shift | Keys.Tab;
+
+                            break;
+                        }//(!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()))
                     case Keys.ProcessKey:
                         return base.ProcessCmdKey(ref msg, keyData);
                         //direction = Keys.Tab;
@@ -211,7 +330,15 @@ namespace CKM_Controls
             return true;
 
         }
+        protected bool MoreDuplicate()
+        {
+            return true;
+        }
+        protected  virtual void ErrorCheck()
+        {
+            
 
+        }
         public void frmKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -240,9 +367,10 @@ namespace CKM_Controls
                             ProcessTabKey(keyData);
                             break;
                         case Keys.Tab:
-
+                       
                             ProcessDialogKey(keyData);
                             break;
+                        
                         case Keys.Tab | Keys.Shift:
                             ProcessTabKey(keyData);
                             break;
@@ -460,16 +588,34 @@ namespace CKM_Controls
             
         }
         
-        private bool TanaCheck( string colname)
+        private bool TanaCheck( string colname, string Val= null)
         {
             int e = 0;
-            foreach (DataGridViewRow gr in Rows)
+            if (Val == null)
             {
-                if ((gr.Cells[colname].EditedFormattedValue != null))
-                    if (gr.Cells[colname].EditedFormattedValue.ToString() ==CurrentCell.EditedFormattedValue.ToString())
+                foreach (DataGridViewRow gr in Rows)
+                {
+                    if ((gr.Cells[colname].EditedFormattedValue != null))
                     {
-                        e++;
+                        if (gr.Cells[colname].EditedFormattedValue.ToString() == CurrentCell.EditedFormattedValue.ToString())
+                        {
+                            e++;
+                        }
                     }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow gr in Rows)
+                {
+                    if ((gr.Cells[colname].EditedFormattedValue != null))
+                    {
+                        if (gr.Cells[colname].EditedFormattedValue.ToString() == Val)
+                        {
+                            e++;
+                        }
+                    }
+                }
             }
             if (e > 1)
             {
@@ -506,6 +652,89 @@ namespace CKM_Controls
                 this.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             }
             else this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+        }
+
+        protected override void OnCellEndEdit(DataGridViewCellEventArgs e)
+        {
+
+            // var dtDisplay = new DataTable();
+            if (Name == "dgvYuubinBangou")
+            {
+                DataTable dtDisplay = DataSource as DataTable;
+                MasterTouroku_YuubinBangou_BL YuubinBangouBL = new MasterTouroku_YuubinBangou_BL(); 
+
+                Base_BL bb = new Base_BL();
+                var dgvYuubinBangou = this;
+                if (CurrentCell is DataGridViewTextBoxCell)
+                {
+                    if (dgvYuubinBangou.CurrentCell == dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"])
+                    {
+                        //if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()))
+                        //{
+                        //    YuubinBangouBL.ShowMessage("E102");
+                        //    dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"];
+                        //}
+
+                        //if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()))
+                        //{
+                          //  YuubinBangouBL.ShowMessage("E102");
+                            //try
+                            //{
+                            //   // dgvYuubinBangou.RefreshEdit();
+                            //  //dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"];
+                            //}
+                            //catch (Exception ex)
+                            //{
+                            //    var ad = ex.Message;
+                            //}
+                           // ProcessLeftKey(Keys.Left);
+                          //  MyProcessCmdKey(Keys.Shift | Keys.Tab);
+                        //}
+
+                        //if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value.ToString()))
+                        //{
+                        //    DataRow[] drarr = dtDisplay.Select("ZipCD1 = '" + dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value + "' AND ZipCD2 = '" + dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"].Value + "'");
+                        //    if (drarr.Length > 1)
+                        //    {
+                        //        YuubinBangouBL.ShowMessage("E105");
+                        //        dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD2"];
+                        //    }
+                        //}
+
+                    }
+                    else if (dgvYuubinBangou.CurrentCell == dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd1"])
+                    {
+                        //if (!string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd1"].Value.ToString()))
+                        //{
+                        //    YuubinBangouBL.ShowMessage("E102");
+                        //    dgvYuubinBangou.CurrentCell = dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd1"];
+
+                        //    // dgvYuubinBangou.BeginEdit(true);
+                        //}
+                        //else if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd1"].Value.ToString()))
+                        //{
+                        //    dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd1"].Value = null;
+                        //}
+                    }
+                    else if (dgvYuubinBangou.CurrentCell == dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"])
+                    {
+                        //if (string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colZipCD1"].Value.ToString()) && !string.IsNullOrWhiteSpace(dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value.ToString()))
+                        //{
+                        //    dgvYuubinBangou.Rows[e.RowIndex].Cells["colAdd2"].Value = null;
+                        //}
+                    }
+
+                }
+            }
+            else
+            {
+                base.OnCellEndEdit(e);
+            }
+        }
+
+        protected override void OnCellValidating(DataGridViewCellValidatingEventArgs e)
+        {
+            base.OnCellValidating(e);
         }
     }
 }
