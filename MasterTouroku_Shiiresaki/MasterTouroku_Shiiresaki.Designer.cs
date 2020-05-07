@@ -402,7 +402,7 @@
             this.chkEDIMail.Location = new System.Drawing.Point(163, 630);
             this.chkEDIMail.Name = "chkEDIMail";
             this.chkEDIMail.Size = new System.Drawing.Size(52, 16);
-            this.chkEDIMail.TabIndex = 80;
+            this.chkEDIMail.TabIndex = 35;
             this.chkEDIMail.Text = "Mail";
             this.chkEDIMail.UseVisualStyleBackColor = true;
             this.chkEDIMail.CheckedChanged += new System.EventHandler(this.chkEDIMail_CheckedChanged);
@@ -413,6 +413,7 @@
             this.txtRegisterNum.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRegisterNum.BackColor = System.Drawing.Color.White;
             this.txtRegisterNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegisterNum.ClientColor = System.Drawing.Color.White;
             this.txtRegisterNum.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRegisterNum.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtRegisterNum.DecimalPlace = 0;
@@ -428,7 +429,7 @@
             this.txtRegisterNum.MoveNext = true;
             this.txtRegisterNum.Name = "txtRegisterNum";
             this.txtRegisterNum.Size = new System.Drawing.Size(110, 19);
-            this.txtRegisterNum.TabIndex = 35;
+            this.txtRegisterNum.TabIndex = 36;
             this.txtRegisterNum.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtRegisterNum.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRegisterNum_KeyDown);
             // 
@@ -484,6 +485,7 @@
             this.cboAmountFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboAmountFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
             this.cboAmountFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboAmountFractionKBN.Flag = 0;
             this.cboAmountFractionKBN.FormattingEnabled = true;
             this.cboAmountFractionKBN.Length = 10;
             this.cboAmountFractionKBN.Location = new System.Drawing.Point(425, 422);
@@ -499,6 +501,7 @@
             this.cboTaxFractionKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTaxFractionKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
             this.cboTaxFractionKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTaxFractionKBN.Flag = 0;
             this.cboTaxFractionKBN.FormattingEnabled = true;
             this.cboTaxFractionKBN.Length = 10;
             this.cboTaxFractionKBN.Location = new System.Drawing.Point(425, 403);
@@ -514,6 +517,7 @@
             this.cboTaxTiming.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTaxTiming.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
             this.cboTaxTiming.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTaxTiming.Flag = 0;
             this.cboTaxTiming.FormattingEnabled = true;
             this.cboTaxTiming.Length = 10;
             this.cboTaxTiming.Location = new System.Drawing.Point(425, 385);
@@ -580,6 +584,7 @@
             this.txtVendorShortName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorShortName.BackColor = System.Drawing.Color.White;
             this.txtVendorShortName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorShortName.ClientColor = System.Drawing.Color.White;
             this.txtVendorShortName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorShortName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorShortName.DecimalPlace = 0;
@@ -646,7 +651,7 @@
             this.txtNotDisplay.Name = "txtNotDisplay";
             this.txtNotDisplay.RowCount = 5;
             this.txtNotDisplay.Size = new System.Drawing.Size(500, 95);
-            this.txtNotDisplay.TabIndex = 42;
+            this.txtNotDisplay.TabIndex = 43;
             this.txtNotDisplay.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // txtDisplayNote
@@ -666,7 +671,7 @@
             this.txtDisplayNote.Name = "txtDisplayNote";
             this.txtDisplayNote.RowCount = 5;
             this.txtDisplayNote.Size = new System.Drawing.Size(500, 95);
-            this.txtDisplayNote.TabIndex = 41;
+            this.txtDisplayNote.TabIndex = 42;
             this.txtDisplayNote.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // txtDisplayOrder
@@ -675,6 +680,7 @@
             this.txtDisplayOrder.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDisplayOrder.BackColor = System.Drawing.Color.White;
             this.txtDisplayOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDisplayOrder.ClientColor = System.Drawing.Color.White;
             this.txtDisplayOrder.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDisplayOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtDisplayOrder.DecimalPlace = 0;
@@ -690,7 +696,7 @@
             this.txtDisplayOrder.MoveNext = true;
             this.txtDisplayOrder.Name = "txtDisplayOrder";
             this.txtDisplayOrder.Size = new System.Drawing.Size(50, 19);
-            this.txtDisplayOrder.TabIndex = 40;
+            this.txtDisplayOrder.TabIndex = 41;
             this.txtDisplayOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDisplayOrder.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtDisplayOrder.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDisplayOrder_KeyDown);
@@ -701,6 +707,7 @@
             this.txtAnalyzeCD3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD3.BackColor = System.Drawing.Color.White;
             this.txtAnalyzeCD3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnalyzeCD3.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD3.DecimalPlace = 0;
@@ -716,7 +723,7 @@
             this.txtAnalyzeCD3.MoveNext = true;
             this.txtAnalyzeCD3.Name = "txtAnalyzeCD3";
             this.txtAnalyzeCD3.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD3.TabIndex = 39;
+            this.txtAnalyzeCD3.TabIndex = 40;
             this.txtAnalyzeCD3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAnalyzeCD2
@@ -725,6 +732,7 @@
             this.txtAnalyzeCD2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD2.BackColor = System.Drawing.Color.White;
             this.txtAnalyzeCD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnalyzeCD2.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD2.DecimalPlace = 0;
@@ -740,7 +748,7 @@
             this.txtAnalyzeCD2.MoveNext = true;
             this.txtAnalyzeCD2.Name = "txtAnalyzeCD2";
             this.txtAnalyzeCD2.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD2.TabIndex = 38;
+            this.txtAnalyzeCD2.TabIndex = 39;
             this.txtAnalyzeCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtAnalyzeCD1
@@ -749,6 +757,7 @@
             this.txtAnalyzeCD1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAnalyzeCD1.BackColor = System.Drawing.Color.White;
             this.txtAnalyzeCD1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnalyzeCD1.ClientColor = System.Drawing.Color.White;
             this.txtAnalyzeCD1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAnalyzeCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAnalyzeCD1.DecimalPlace = 0;
@@ -764,7 +773,7 @@
             this.txtAnalyzeCD1.MoveNext = true;
             this.txtAnalyzeCD1.Name = "txtAnalyzeCD1";
             this.txtAnalyzeCD1.Size = new System.Drawing.Size(100, 19);
-            this.txtAnalyzeCD1.TabIndex = 37;
+            this.txtAnalyzeCD1.TabIndex = 38;
             this.txtAnalyzeCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label35
@@ -888,7 +897,7 @@
             this.ScStaffCD.SearchEnable = true;
             this.ScStaffCD.Size = new System.Drawing.Size(344, 27);
             this.ScStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaffCD.TabIndex = 36;
+            this.ScStaffCD.TabIndex = 37;
             this.ScStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaffCD.UseChangeDate = false;
             this.ScStaffCD.Value1 = null;
@@ -940,6 +949,7 @@
             this.txtKouzaMeigi.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKouzaMeigi.BackColor = System.Drawing.Color.White;
             this.txtKouzaMeigi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKouzaMeigi.ClientColor = System.Drawing.Color.White;
             this.txtKouzaMeigi.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKouzaMeigi.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKouzaMeigi.DecimalPlace = 0;
@@ -1051,6 +1061,7 @@
             this.txtKouzaNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKouzaNo.BackColor = System.Drawing.Color.White;
             this.txtKouzaNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKouzaNo.ClientColor = System.Drawing.Color.White;
             this.txtKouzaNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKouzaNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKouzaNo.DecimalPlace = 0;
@@ -1076,6 +1087,7 @@
             this.txtKouzaKBN.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKouzaKBN.BackColor = System.Drawing.Color.White;
             this.txtKouzaKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKouzaKBN.ClientColor = System.Drawing.Color.White;
             this.txtKouzaKBN.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKouzaKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtKouzaKBN.DecimalPlace = 0;
@@ -1246,6 +1258,7 @@
             this.txtPaymentPlanDay.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentPlanDay.BackColor = System.Drawing.Color.White;
             this.txtPaymentPlanDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentPlanDay.ClientColor = System.Drawing.Color.White;
             this.txtPaymentPlanDay.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentPlanDay.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtPaymentPlanDay.DecimalPlace = 0;
@@ -1272,6 +1285,7 @@
             this.cboPaymentKBN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPaymentKBN.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.支払予定月;
             this.cboPaymentKBN.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboPaymentKBN.Flag = 0;
             this.cboPaymentKBN.FormattingEnabled = true;
             this.cboPaymentKBN.Length = 10;
             this.cboPaymentKBN.Location = new System.Drawing.Point(107, 403);
@@ -1287,6 +1301,7 @@
             this.txtPaymentCloseDay.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentCloseDay.BackColor = System.Drawing.Color.White;
             this.txtPaymentCloseDay.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentCloseDay.ClientColor = System.Drawing.Color.White;
             this.txtPaymentCloseDay.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentCloseDay.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtPaymentCloseDay.DecimalPlace = 0;
@@ -1313,6 +1328,7 @@
             this.txtFaxno.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtFaxno.BackColor = System.Drawing.Color.White;
             this.txtFaxno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFaxno.ClientColor = System.Drawing.Color.White;
             this.txtFaxno.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtFaxno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtFaxno.DecimalPlace = 0;
@@ -1337,6 +1353,7 @@
             this.txtTelno.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTelno.BackColor = System.Drawing.Color.White;
             this.txtTelno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelno.ClientColor = System.Drawing.Color.White;
             this.txtTelno.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTelno.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtTelno.DecimalPlace = 0;
@@ -1361,6 +1378,7 @@
             this.txtMailAddress.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMailAddress.BackColor = System.Drawing.Color.White;
             this.txtMailAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMailAddress.ClientColor = System.Drawing.Color.White;
             this.txtMailAddress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtMailAddress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMailAddress.DecimalPlace = 0;
@@ -1385,6 +1403,7 @@
             this.txtAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress2.BackColor = System.Drawing.Color.White;
             this.txtAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress2.ClientColor = System.Drawing.Color.White;
             this.txtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress2.DecimalPlace = 0;
@@ -1410,6 +1429,7 @@
             this.txtAddress1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAddress1.BackColor = System.Drawing.Color.White;
             this.txtAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAddress1.ClientColor = System.Drawing.Color.White;
             this.txtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtAddress1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAddress1.DecimalPlace = 0;
@@ -1435,6 +1455,7 @@
             this.txtZipCD2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD2.BackColor = System.Drawing.Color.White;
             this.txtZipCD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCD2.ClientColor = System.Drawing.Color.White;
             this.txtZipCD2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD2.DecimalPlace = 0;
@@ -1461,6 +1482,7 @@
             this.txtZipCD1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD1.BackColor = System.Drawing.Color.White;
             this.txtZipCD1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCD1.ClientColor = System.Drawing.Color.White;
             this.txtZipCD1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD1.DecimalPlace = 0;
@@ -1486,6 +1508,7 @@
             this.txtVendorStaffName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorStaffName.BackColor = System.Drawing.Color.White;
             this.txtVendorStaffName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorStaffName.ClientColor = System.Drawing.Color.White;
             this.txtVendorStaffName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorStaffName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorStaffName.DecimalPlace = 0;
@@ -1511,6 +1534,7 @@
             this.txtPositionName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPositionName.BackColor = System.Drawing.Color.White;
             this.txtPositionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPositionName.ClientColor = System.Drawing.Color.White;
             this.txtPositionName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPositionName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPositionName.DecimalPlace = 0;
@@ -1536,6 +1560,7 @@
             this.txtPostName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPostName.BackColor = System.Drawing.Color.White;
             this.txtPostName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPostName.ClientColor = System.Drawing.Color.White;
             this.txtPostName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPostName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPostName.DecimalPlace = 0;
@@ -1561,6 +1586,7 @@
             this.txtLongName2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName2.BackColor = System.Drawing.Color.White;
             this.txtLongName2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLongName2.ClientColor = System.Drawing.Color.White;
             this.txtLongName2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName2.DecimalPlace = 0;
@@ -1586,6 +1612,7 @@
             this.txtLongName1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtLongName1.BackColor = System.Drawing.Color.White;
             this.txtLongName1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLongName1.ClientColor = System.Drawing.Color.White;
             this.txtLongName1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtLongName1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtLongName1.DecimalPlace = 0;
@@ -1611,6 +1638,7 @@
             this.txtVendorKana.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorKana.BackColor = System.Drawing.Color.White;
             this.txtVendorKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorKana.ClientColor = System.Drawing.Color.White;
             this.txtVendorKana.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtVendorKana.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorKana.DecimalPlace = 0;
@@ -1636,6 +1664,7 @@
             this.txtVendorName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorName.BackColor = System.Drawing.Color.White;
             this.txtVendorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorName.ClientColor = System.Drawing.Color.White;
             this.txtVendorName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorName.DecimalPlace = 0;

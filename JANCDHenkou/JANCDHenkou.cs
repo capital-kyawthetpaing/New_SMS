@@ -35,7 +35,7 @@ namespace JANCDHenkou
         {
             InProgramID = Application.ProductName;
             StartProgram();
-            SetFunctionLabel(EProMode.KehiNyuuryoku);
+            SetFunctionLabel(EProMode.JUCHUTORIKOMIAPI);
             Btn_F2.Text = string.Empty;
             Btn_F3.Text = string.Empty;
             Btn_F4.Text = string.Empty;
@@ -44,6 +44,7 @@ namespace JANCDHenkou
             Btn_F8.Text = string.Empty;
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
+            Btn_F11.Text = "登録(F12)";
 
             dtGenJanCD = CreateDatatable();
         }
@@ -71,6 +72,7 @@ namespace JANCDHenkou
         }
         public override void FunctionProcess(int index)
         {
+            //CKM_SearchControl sc = new CKM_SearchControl();
             base.FunctionProcess(index);
             switch (index + 1)
             {
@@ -81,8 +83,8 @@ namespace JANCDHenkou
                         {
                             Clear();
                         }
-                        break;
                     }
+                    break;
                 case 11:
                      F11();
                     break;
@@ -169,7 +171,7 @@ namespace JANCDHenkou
             if(ErrorCheck())
             {
                 xml = jhbl.DataTableToXml(dtGenJanCD);
-                if(jhbl.JanCDHenkou_Insert(xml))
+                if(jhbl.JanCDHenkou_Insert(xml, InOperatorCD))
                 {
 
                 }

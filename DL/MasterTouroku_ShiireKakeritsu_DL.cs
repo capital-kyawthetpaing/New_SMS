@@ -16,6 +16,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 {"@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
+                //{"@StoreCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.StoreCD} },
                 //{"@BrandCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.BrandCD} },
                 //{"@SportsCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SportsCD} },
                 //{"@SegmentCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SegmentCD} },
