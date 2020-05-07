@@ -806,7 +806,7 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.TankaCD:
 
                     ScTankaCD.LabelText = "";
-                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ZipCD1].Text))
+                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.TankaCD].Text))
                     {
                         //以下の条件でM_TankaCDが存在しない場合、エラー
                         //[M_TankaCD]
@@ -936,11 +936,17 @@ namespace MasterTouroku_Tokuisaki
                         CustomerCD = detailControls[index].Text,
                         ChangeDate = keyControls[(int)EIndex.ChangeDate].Text
                     };
+                    short kbn = 1;
                     if (index == (int)EIndex.BillingCD)
+                    {
                         me.CustomerKBN = "2";   //2:請求先
+                        kbn = 2;
+                    }
                     else if (index == (int)EIndex.CollectCD)
+                    {
                         me.CustomerKBN = "3";   //3:入金請求先
-
+                        kbn = 3;
+                    }
                     ret = mbl.M_Customer_Select(me);
                     if (ret)
                     {
@@ -1501,7 +1507,11 @@ break;
                                 break;
 
                             case (int)EIndex.ChangeDate:
-                                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                                if (OperationMode == EOperationMode.INSERT)
+                                {
+                                    copyKeyControls[(int)EIndex.CustomerCD].Focus();
+                                }
+                                else if(OperationMode == EOperationMode.UPDATE)
                                 {
                                     detailControls[0].Focus();
                                 }
