@@ -36,7 +36,7 @@ namespace JANCDHenkou
         {
             InProgramID = Application.ProductName;
             StartProgram();
-            SetFunctionLabel(EProMode.JUCHUTORIKOMIAPI);
+            SetFunctionLabel(EProMode.KehiNyuuryoku);
             Btn_F2.Text = string.Empty;
             Btn_F3.Text = string.Empty;
             Btn_F4.Text = string.Empty;
@@ -46,7 +46,7 @@ namespace JANCDHenkou
             Btn_F10.Text = string.Empty;
             Btn_F11.Text = "取込(F11)";
             Btn_F12.Text = "登録(F12)";
-
+            ModeVisible = false;
             dtGenJanCD = CreateDatatable();
         }
         private void JANCDHenkou_KeyUp(object sender, KeyEventArgs e)
@@ -269,7 +269,8 @@ namespace JANCDHenkou
                         {
                             if (dgvJANCDHenkou != null)
                             {
-                                if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
+                                if(dtGenJanCD.Rows.Count > 0)
+                                //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
                                     DataRow row = dtGenJanCD.NewRow();
                                     DataTable tmp = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
@@ -281,7 +282,7 @@ namespace JANCDHenkou
                                     row["SizeName"] = tmp.Rows[0]["SizeName"].ToString();
                                     row["ColorName"] = tmp.Rows[0]["ColorName"].ToString();
                                     row["GenJanCD2"] = tmp.Rows[0]["GenJanCD2"].ToString();
-                                    row["newJanCD"] = tmp.Rows[0]["newJanCD"];
+                                    //row["newJanCD"] = tmp.Rows[0]["newJanCD"];
                                     row["SKUCD"] = tmp.Rows[0]["SKUCD"].ToString();
                                     dtGenJanCD.Rows.Add(row);
                                     dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
@@ -305,7 +306,8 @@ namespace JANCDHenkou
                             if (!frmsku.flgCancel)
                             {
                                 SKUCD = frmsku.parSKUCD;
-                                if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
+                                if(dtGenJanCD.Rows.Count > 0)
+                                //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
                                     DataRow row = dtGenJanCD.NewRow();
                                     DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
@@ -317,7 +319,7 @@ namespace JANCDHenkou
                                     row["SizeName"] = tmp1.Rows[0]["SizeName"].ToString();
                                     row["ColorName"] = tmp1.Rows[0]["ColorName"].ToString();
                                     row["GenJanCD2"] = tmp1.Rows[0]["GenJanCD2"].ToString();
-                                    row["newJanCD"] = tmp1.Rows[0]["newJanCD"];
+                                   // row["newJanCD"] = tmp1.Rows[0]["newJanCD"];
                                     row["SKUCD"] = tmp1.Rows[0]["SKUCD"].ToString();
                                     dtGenJanCD.Rows.Add(row);
                                     dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
