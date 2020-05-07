@@ -213,7 +213,7 @@ namespace MasterTouroku_ShiireKakeritsu
             if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
                 searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'" ;
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
             //if (!string.IsNullOrWhiteSpace(txtYear.Text))
@@ -221,7 +221,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //if (!string.IsNullOrWhiteSpace(txtSeason.Text))
             //    searchCondition = "LastSeason= '" + txtSeason.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                searchCondition = "ChangeDate= '" + txtDate.Text + "'";
+                searchCondition = "ChangeDate= '" + txtDate.Text;
 
             if (!string.IsNullOrWhiteSpace(searchCondition))
             {
@@ -659,7 +659,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 dgv_ShiireKakeritsu.DataSource = dtMain;
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
-                    if (drow.Cells["Column1"].Value.ToString() == "1")
+                    if (drow.Cells["col1"].Value.ToString() == "1")
                     {
                         drow.Cells["colChk"].Value = true;
                     }
