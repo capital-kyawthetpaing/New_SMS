@@ -24,9 +24,9 @@ namespace BL
             return skudl.M_SKU_JanCDHenkou_Select(xml);
        }
         
-        public bool JanCDHenkou_Insert(string xml, string InOperatorCD)
+        public bool JanCDHenkou_Insert(string xml, L_Log_Entity log_data)
         {
-            return janupdl.JanCDHenkou_Insert(xml, InOperatorCD);
+            return janupdl.JanCDHenkou_Insert(xml, log_data);
         }
     }
 }
