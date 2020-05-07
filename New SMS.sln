@@ -285,7 +285,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShukkaNyuuryoku", "ShukkaNy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikiateHenkouNyuuryoku", "HikiateHenkouNyuuryoku\HikiateHenkouNyuuryoku.csproj", "{7E9791F4-705A-4118-B77F-F4E219FF71A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhonTouroku", "EDINouhinJouhonTouroku\EDINouhinJouhonTouroku.csproj", "{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhouTouroku", "EDINouhinJouhonTouroku\EDINouhinJouhouTouroku.csproj", "{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

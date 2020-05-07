@@ -14,7 +14,7 @@ using CrystalDecisions.Shared;
 
 namespace EDINouhinJouhonTouroku
 {
-    public partial class FrmEDINouhinJouhonTouroku : FrmMainForm
+    public partial class FrmEDINouhinJouhouTouroku : FrmMainForm
     {
         M_MultiPorpose_Entity mmpe;
         EDINouhinJouhon_Batch_BL ediNHJ_bl;
@@ -35,7 +35,7 @@ namespace EDINouhinJouhonTouroku
 
             COUNT
         }
-        public FrmEDINouhinJouhonTouroku()
+        public FrmEDINouhinJouhouTouroku()
         {
             InitializeComponent();
         }
