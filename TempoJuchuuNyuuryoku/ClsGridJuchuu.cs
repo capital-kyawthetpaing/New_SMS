@@ -77,7 +77,7 @@ namespace TempoJuchuuNyuuryoku
             SetKBN,             // セット区分
             ColorName,          // カラー
             SizeName,           //サイズ
-            Site,                   //ボタン
+            Site,               //ボタン
             Zaiko,              //ボタン
             Space2,
 

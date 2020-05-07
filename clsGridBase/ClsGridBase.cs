@@ -215,7 +215,6 @@ namespace GridBase
             public void SEnabled(bool pEnabled)
             {
                 CellCtl.Enabled = pEnabled;
-
             }
 
             public void SReadOnly(bool pReadOnly)

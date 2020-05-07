@@ -1062,8 +1062,7 @@ namespace TempoJuchuuNyuuryoku
 
                     }
                     w_AllFlg = false;
-
-                    //w_AllFlg = true;
+                    
                 }
             }
             if (pCol == (int)ClsGridJuchuu.ColNO.Nyuka)
@@ -1088,19 +1087,6 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = true;
                 }
             }
-            //else if (pCol == (int)ClsGridJuchuu.ColNO.JuchuuSuu)
-            //{
-            //    if (mGrid.g_DArray[pRow].DiscountKbn == 1)
-            //    {
-            //        mGrid.g_MK_State[pCol, pRow].Cell_Enabled = false;
-            //        mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = true;
-            //    }
-            //    else
-            //    {
-            //        mGrid.g_MK_State[pCol, pRow].Cell_Enabled = true;
-            //        mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = false;
-            //    }
-            //}
             else if (pCol == (int)ClsGridJuchuu.ColNO.CostUnitPrice)
             {
                 if (mGrid.g_DArray[pRow].VariousFLG == 1)
