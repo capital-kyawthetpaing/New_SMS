@@ -528,7 +528,7 @@ namespace HacchuuNyuuryoku
                             case (int)ClsGridHacchuu.ColNO.ArrivePlanDate:    //支払予定日
                             case (int)ClsGridHacchuu.ColNO.IndividualClientName:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -960,10 +960,13 @@ namespace HacchuuNyuuryoku
                     for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
                     {
                         if (w_Col == (int)ClsGridHacchuu.ColNO.JanCD)// || pCol == (int)ClsGridHacchuu.ColNO.ChkDel)
-                            //JANCD使用可
+                        {//JANCD使用可
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                        }
                         else
+                        {
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        }
                     }
 
                     w_AllFlg = false;
@@ -982,10 +985,12 @@ namespace HacchuuNyuuryoku
                                 if (mGrid.g_DArray[pRow].hacchuGyoNO == 0)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -994,10 +999,12 @@ namespace HacchuuNyuuryoku
                                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].ArrivePlanDate))
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -1010,11 +1017,12 @@ namespace HacchuuNyuuryoku
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Color = System.Drawing.Color.Empty;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                                    mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -2210,10 +2218,15 @@ namespace HacchuuNyuuryoku
                         if (mGrid.g_DArray[row].VariousFLG == 0)
                         {
                             //仕入先との組み合わせでITEM発注単価マスターかJAN発注単価マスタに存在すること SelectできなければError
+                            //①②③④の順番でターゲットが大きくなる（①に近いほど、商品が特定されていく）
+
                             //[M_JANOrderPrice]
                             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
+
+                            //①JAN発注単価マスタ（店舗指定なし）
                             mje.JanCD = mGrid.g_DArray[row].JanCD;
                             mje.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
+                            mje.StoreCD = "0000";
                             mje.ChangeDate = ymd;
 
                             JANOrderPrice_BL jbl = new JANOrderPrice_BL();
@@ -3173,6 +3186,11 @@ namespace HacchuuNyuuryoku
                         if (index == (int)EIndex.Fax)
                             //明細の先頭項目へ
                             mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridHacchuu.ColNO.JanCD);
+                        else if (ckM_CheckBox3.Checked && index == (int)EIndex.SoukoName)
+                        {
+                            //明細の先頭項目へ
+                            mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, ActiveControl, -1, -1, ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridHacchuu.ColNO.JanCD);
+                        }
                         else if (detailControls.Length - 1 > index)
                         {
                             if (detailControls[index + 1].CanFocus)

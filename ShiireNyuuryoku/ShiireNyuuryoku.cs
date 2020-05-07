@@ -529,15 +529,19 @@ namespace ShiireNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridShiire.ColNO.GYONO:
-                            case (int)ClsGridShiire.ColNO.DirectFLG:
-                            case (int)ClsGridShiire.ColNO.MakerItem:
                             case (int)ClsGridShiire.ColNO.Space:
+                            case (int)ClsGridShiire.ColNO.DirectFLG:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
+                            case (int)ClsGridShiire.ColNO.MakerItem:
                             case (int)ClsGridShiire.ColNO.TaniCD:
                             case (int)ClsGridShiire.ColNO.CalculationGaku:
                             case (int)ClsGridShiire.ColNO.PurchaseGaku:
                             case (int)ClsGridShiire.ColNO.TaxRate:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }

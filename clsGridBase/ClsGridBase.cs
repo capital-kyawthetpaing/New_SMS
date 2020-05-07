@@ -215,7 +215,6 @@ namespace GridBase
             public void SEnabled(bool pEnabled)
             {
                 CellCtl.Enabled = pEnabled;
-
             }
 
             public void SReadOnly(bool pReadOnly)
@@ -242,6 +241,37 @@ namespace GridBase
                     w_Edit.TxtCode.ReadOnly = pReadOnly;
                 }
             }
+            public void SBold(bool pBold)
+            {
+                if(pBold)　　　　
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Bold);
+
+                    }
+                }
+                else
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Regular);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 9, FontStyle.Regular);
+
+                    }
+                }
+            }
         }
 
         public struct ST_State_GridKihon
@@ -250,13 +280,15 @@ namespace GridBase
             public bool Cell_ReadOnly;     //編集可/不可  (True=不可 False=可)
             public bool Cell_Selectable;   //フォーカスセット可能か
             public Color Cell_Color;       //セルの色(行の色とは別に固定色であればセット  表示項目の灰色等)
-                                                             //初期化
+            public bool Cell_Bold;
+            //初期化
             public void SetDefault()
             {
                 Cell_Enabled = false;        //使用不可
                 Cell_ReadOnly = false;       //編集可
                 Cell_Selectable = true;      //フォーカスセット可能
                 Cell_Color = System.Drawing.Color.Empty;
+                Cell_Bold = false;
             }
         }
 
@@ -461,40 +493,83 @@ namespace GridBase
 
                 if (w_Dest != (int)Gen_MK_FocusMove.MvSet)
                 {
-                    for (w_NowRow = w_RowSt; w_NowRow <= w_RowEd; w_NowRow += w_Step)
+                    if (w_Step >= 0)
                     {
-                        if (w_NowRow == w_RowSt)
+                        for (w_NowRow = w_RowSt; w_NowRow <= w_RowEd; w_NowRow += w_Step)
                         {
-                            w_ColST = w_ColSt_T;     //最初の行
-                        }
-                        else {
-                            w_ColST = w_ColSt_M;
-                        }
-
-                        for (w_NowCol = w_ColST; w_NowCol <= w_ColEd; w_NowCol += w_Step)
-                        {
-
-                            if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                            if (w_NowRow == w_RowSt)
                             {
-                                //スタート位置はとばす
+                                w_ColST = w_ColSt_T;     //最初の行
                             }
                             else
                             {
-                                pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
-                                if (pOKFlg)
-                                {
-                                    pOKRow = w_NowRow;
-                                    pOKCol = g_MK_FocusOrder[w_NowCol];
-                                    break;
-                                }
+                                w_ColST = w_ColSt_M;
                             }
-                            
-                        }
-                        if (pOKFlg)
-                        {
-                            break;
+
+                            for (w_NowCol = w_ColST; w_NowCol <= w_ColEd; w_NowCol += w_Step)
+                            {
+
+                                if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                                {
+                                    //スタート位置はとばす
+                                }
+                                else
+                                {
+                                    pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
+                                    if (pOKFlg)
+                                    {
+                                        pOKRow = w_NowRow;
+                                        pOKCol = g_MK_FocusOrder[w_NowCol];
+                                        break;
+                                    }
+                                }
+
+                            }
+                            if (pOKFlg)
+                            {
+                                break;
+                            }
                         }
                     }
+                    else
+                    {
+                        for (w_NowRow = w_RowSt; w_NowRow >= w_RowEd; w_NowRow += w_Step)
+                        {
+                            if (w_NowRow == w_RowSt)
+                            {
+                                w_ColST = w_ColSt_T;     //最初の行
+                            }
+                            else
+                            {
+                                w_ColST = w_ColSt_M;
+                            }
+
+                            for (w_NowCol = w_ColST; w_NowCol >= w_ColEd; w_NowCol += w_Step)
+                            {
+
+                                if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                                {
+                                    //スタート位置はとばす
+                                }
+                                else
+                                {
+                                    pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
+                                    if (pOKFlg)
+                                    {
+                                        pOKRow = w_NowRow;
+                                        pOKCol = g_MK_FocusOrder[w_NowCol];
+                                        break;
+                                    }
+                                }
+
+                            }
+                            if (pOKFlg)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    
                 }
             }
             if (pOKFlg == false)
