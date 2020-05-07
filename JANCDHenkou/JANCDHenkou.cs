@@ -430,6 +430,44 @@ namespace JANCDHenkou
             return result.Tables[0];
         }
 
+        private void dgvJANCDHenkou_Paint(object sender, PaintEventArgs e)
+        {
+            string[] columns = { "現JANCD", "ブランド", "ITEM", "商品名", "サイズ", "カラー", "現JANCD", "新JANCD" };
+            for (int j = 0; j < 1;)
+            {
+                Rectangle r1 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j, -1, true);
+                Rectangle r2 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j, 0, true);
+                int w1 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                int w2 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j + 2, -1, true).Width;
+                r1.X += 2;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+                e.Graphics.FillRectangle(new SolidBrush(this.dgvJANCDHenkou.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(columns[j / 2],
+                this.dgvJANCDHenkou.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.dgvJANCDHenkou.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 2;
+            }
+        }
+
+        private void dgvJANCDHenkou_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex == -1 && e.ColumnIndex > -1)
+            {
+                Rectangle r2 = e.CellBounds;
+                r2.Y += e.CellBounds.Height / 2;
+                r2.Height = e.CellBounds.Height / 2;
+                e.PaintBackground(r2, true);
+                e.PaintContent(r2);
+                e.Handled = true;
+            }
+        }
+
         protected Boolean CheckColumn(String[] colName, DataTable dt)
         {
             DataColumnCollection col = dt.Columns;

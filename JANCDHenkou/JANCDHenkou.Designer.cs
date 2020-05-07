@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.dgvJANCDHenkou = new CKM_Controls.CKM_GridView();
@@ -101,7 +100,7 @@
             this.dgvJANCDHenkou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -121,14 +120,6 @@
             this.colnewJanCD,
             this.colSKUCD,
             this.colAdminCD});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvJANCDHenkou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvJANCDHenkou.EnableHeadersVisualStyles = false;
             this.dgvJANCDHenkou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvJANCDHenkou.Location = new System.Drawing.Point(21, 145);
@@ -139,6 +130,8 @@
             this.dgvJANCDHenkou.UseSetting = true;
             this.dgvJANCDHenkou.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellContentClick);
             this.dgvJANCDHenkou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellEndEdit);
+            this.dgvJANCDHenkou.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvJANCDHenkou_CellPainting);
+            this.dgvJANCDHenkou.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvJANCDHenkou_Paint);
             // 
             // ckM_Label4
             // 
@@ -225,7 +218,7 @@
             // colBrandCD
             // 
             this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "";
+            this.colBrandCD.HeaderText = "ブランド";
             this.colBrandCD.Name = "colBrandCD";
             this.colBrandCD.ReadOnly = true;
             this.colBrandCD.Width = 80;
@@ -233,7 +226,7 @@
             // colBrandName
             // 
             this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "ブランド";
+            this.colBrandName.HeaderText = "";
             this.colBrandName.Name = "colBrandName";
             this.colBrandName.ReadOnly = true;
             this.colBrandName.Width = 150;
