@@ -561,7 +561,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
                     if (chk.Value == chk.TrueValue)
                     {
-
                         DataRow dtRow = dtMain.NewRow();
                         dtRow["BrandCD"] = row.Cells["colBrandCD1"].Value.ToString();
                         dtRow["SportsCD"] = row.Cells["colSportsCD1"].Value.ToString();
@@ -574,7 +573,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         dgv_ShiireKakeritsu.DataSource = dtMain;
                     }
                 }
-               
             }
         }
 
@@ -590,8 +588,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
                     searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                //if (!string.IsNullOrWhiteSpace(txtLastSeason.Text))
-                //    searchCondition = "LastSeason= '" + txtLastSeason.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
                     searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtRate.Text))
@@ -633,11 +629,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         //    drow.Cells["colChk"].Value = true;
                         //}
                         //dtMain = dtGrid.Copy();
-
-                        //if (dgv_ShiireKakeritsu.Contains(dtGrid.DataSet.ToString()))
-
-                        //    dtGrid.Columns[0].DefaultValue = "1";
-
                     }
                 }
                 else
