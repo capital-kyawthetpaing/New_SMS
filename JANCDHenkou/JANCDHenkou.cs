@@ -105,7 +105,6 @@ namespace JANCDHenkou
         public void Clear()
         {
             Clear(panelDetail);
-            //txtTargetPeriodF.Focus();
         }
 
         /// <summary>
@@ -132,7 +131,7 @@ namespace JANCDHenkou
         {
             OpenFileDialog op = new OpenFileDialog
             {
-                InitialDirectory = @"C:\JANCDHenkou\",
+                InitialDirectory = @"C:\",
                 RestoreDirectory = true
             };
 
@@ -171,12 +170,15 @@ namespace JANCDHenkou
         {
             if(ErrorCheck())
             {
-                xml = jhbl.DataTableToXml(dtGenJanCD);
-                log_data = Get_Log_Data();
-
-                if(jhbl.JanCDHenkou_Insert(xml, log_data))
+                if (jhbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
+                    xml = jhbl.DataTableToXml(dtGenJanCD);
+                    log_data = Get_Log_Data();
 
+                    if (jhbl.JanCDHenkou_Insert(xml, log_data))
+                    {
+                        Clear();
+                    }
                 }
             }
         }
@@ -204,7 +206,7 @@ namespace JANCDHenkou
                         {
                             if (r.RowState == DataRowState.Added)
                             {
-                                if (r["colGenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                                if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
                                 {
                                     jhbl.ShowMessage("E226");
                                     return false;

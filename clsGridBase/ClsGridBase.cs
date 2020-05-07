@@ -493,40 +493,83 @@ namespace GridBase
 
                 if (w_Dest != (int)Gen_MK_FocusMove.MvSet)
                 {
-                    for (w_NowRow = w_RowSt; w_NowRow <= w_RowEd; w_NowRow += w_Step)
+                    if (w_Step >= 0)
                     {
-                        if (w_NowRow == w_RowSt)
+                        for (w_NowRow = w_RowSt; w_NowRow <= w_RowEd; w_NowRow += w_Step)
                         {
-                            w_ColST = w_ColSt_T;     //最初の行
-                        }
-                        else {
-                            w_ColST = w_ColSt_M;
-                        }
-
-                        for (w_NowCol = w_ColST; w_NowCol <= w_ColEd; w_NowCol += w_Step)
-                        {
-
-                            if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                            if (w_NowRow == w_RowSt)
                             {
-                                //スタート位置はとばす
+                                w_ColST = w_ColSt_T;     //最初の行
                             }
                             else
                             {
-                                pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
-                                if (pOKFlg)
-                                {
-                                    pOKRow = w_NowRow;
-                                    pOKCol = g_MK_FocusOrder[w_NowCol];
-                                    break;
-                                }
+                                w_ColST = w_ColSt_M;
                             }
-                            
-                        }
-                        if (pOKFlg)
-                        {
-                            break;
+
+                            for (w_NowCol = w_ColST; w_NowCol <= w_ColEd; w_NowCol += w_Step)
+                            {
+
+                                if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                                {
+                                    //スタート位置はとばす
+                                }
+                                else
+                                {
+                                    pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
+                                    if (pOKFlg)
+                                    {
+                                        pOKRow = w_NowRow;
+                                        pOKCol = g_MK_FocusOrder[w_NowCol];
+                                        break;
+                                    }
+                                }
+
+                            }
+                            if (pOKFlg)
+                            {
+                                break;
+                            }
                         }
                     }
+                    else
+                    {
+                        for (w_NowRow = w_RowSt; w_NowRow >= w_RowEd; w_NowRow += w_Step)
+                        {
+                            if (w_NowRow == w_RowSt)
+                            {
+                                w_ColST = w_ColSt_T;     //最初の行
+                            }
+                            else
+                            {
+                                w_ColST = w_ColSt_M;
+                            }
+
+                            for (w_NowCol = w_ColST; w_NowCol >= w_ColEd; w_NowCol += w_Step)
+                            {
+
+                                if (w_NowRow == w_RowSt && w_NowCol == w_ColST)
+                                {
+                                    //スタート位置はとばす
+                                }
+                                else
+                                {
+                                    pOKFlg = F_MoveFocus_Sub(g_MK_FocusOrder[w_NowCol], w_NowRow);
+                                    if (pOKFlg)
+                                    {
+                                        pOKRow = w_NowRow;
+                                        pOKCol = g_MK_FocusOrder[w_NowCol];
+                                        break;
+                                    }
+                                }
+
+                            }
+                            if (pOKFlg)
+                            {
+                                break;
+                            }
+                        }
+                    }
+                    
                 }
             }
             if (pOKFlg == false)
