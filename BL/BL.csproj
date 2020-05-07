@@ -57,6 +57,7 @@
     <Compile Include="Customer_BL.cs" />
     <Compile Include="DenominationKBN_BL.cs" />
     <Compile Include="Denomination_BL.cs" />
+    <Compile Include="Hacchuusho_BL.cs" />
     <Compile Include="HikiateHenkouNyuuryoku_BL.cs" />
     <Compile Include="ITEM_BL.cs" />
     <Compile Include="JANCDHenkou_BL.cs" />
