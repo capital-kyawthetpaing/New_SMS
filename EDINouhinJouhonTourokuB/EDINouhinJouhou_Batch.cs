@@ -12,7 +12,7 @@ using BL;
 
 namespace EDINouhinJouhonTourokuB
 {
-    public class EDINouhinJouhon_Batch
+    public class EDINouhinJouhou_Batch
     {
         D_SKENDelivery_Entity dskend = new D_SKENDelivery_Entity();
         EDINouhinJouhon_Batch_BL edij_bl = new EDINouhinJouhon_Batch_BL();
