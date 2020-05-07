@@ -209,9 +209,12 @@ namespace CKM_Controls
 
         protected override void OnEnabledChanged(EventArgs e)
         {
+            if (!Enabled)
+                this.BackColor = SystemColors.Control;
+            else
+                this.BackColor = SystemColors.Window;
+
             base.OnEnabledChanged(e);
-
-
 
             //BackColor = ClientColor; PTK  if HSK request, only to open
 

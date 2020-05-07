@@ -523,16 +523,20 @@ namespace ShukkaShijiTouroku
                         switch (w_Col)
                         {
                             case (int)ClsGridShukka.ColNO.GYONO:
+                            case (int)ClsGridShukka.ColNO.Space:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridShukka.ColNO.DecidedDeliveryDate:
                             case (int)ClsGridShukka.ColNO.JuchuNo:
                             case (int)ClsGridShukka.ColNO.InstructionNO:
-                            case (int)ClsGridShukka.ColNO.Space:
                             case (int)ClsGridShukka.ColNO.DeliveryAddress1:
                             case (int)ClsGridShukka.ColNO.DeliveryName:
                             case (int)ClsGridShukka.ColNO.PrintDate:
                             case (int)ClsGridShukka.ColNO.ShippingDate:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -1040,6 +1044,8 @@ namespace ShukkaShijiTouroku
         /// <returns></returns>
         private bool CheckData(bool set)
         {
+            DeleteExclusive(dtInstruction);
+
             //[D_Instruction_SelectData]
             die = GetEntity();
 
@@ -1067,7 +1073,6 @@ namespace ShukkaShijiTouroku
                 //明細にデータをセット
                 int i = 0;
                 m_dataCnt = 0;
-                DeleteExclusive(dtInstruction);
 
                 string ymd = bbl.GetDate();
 
@@ -1495,7 +1500,7 @@ namespace ShukkaShijiTouroku
             OperationMode = mode; // (1:新規,2:修正,3;削除)
 
             //排他処理を解除
-            DeleteExclusive();
+            DeleteExclusive(dtInstruction);
 
             Scr_Clr(0);
 

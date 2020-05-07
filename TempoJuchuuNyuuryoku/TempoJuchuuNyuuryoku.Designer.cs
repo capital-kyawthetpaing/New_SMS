@@ -62,9 +62,6 @@
             this.IMC_SOKNM_2 = new CKM_Controls.CKM_ComboBox();
             this.IMC_SOKNM_1 = new CKM_Controls.CKM_ComboBox();
             this.IMC_SOKNM_0 = new CKM_Controls.CKM_ComboBox();
-            this.IMT_VENNM_0 = new CKM_Controls.CKM_TextBox();
-            this.IMT_VENNM_1 = new CKM_Controls.CKM_TextBox();
-            this.IMT_VENNM_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_GENER2_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_TEIKA_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_GENER_2 = new CKM_Controls.CKM_TextBox();
@@ -154,6 +151,9 @@
             this.IMT_VENCD_0 = new Search.CKM_SearchControl();
             this.IMT_VENCD_1 = new Search.CKM_SearchControl();
             this.IMT_VENCD_2 = new Search.CKM_SearchControl();
+            this.IMT_VENNM_0 = new CKM_Controls.CKM_TextBox();
+            this.IMT_VENNM_1 = new CKM_Controls.CKM_TextBox();
+            this.IMT_VENNM_2 = new CKM_Controls.CKM_TextBox();
             this.label31 = new CKM_Controls.CKM_Label();
             this.label33 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox6 = new CKM_Controls.CKM_TextBox();
@@ -415,6 +415,7 @@
             this.IMT_KAIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_1.DecimalPlace = 0;
             this.IMT_KAIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_KAIDT_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
             this.IMT_KAIDT_1.isEnterKeyDown = false;
@@ -467,6 +468,7 @@
             this.IMT_KAIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_0.DecimalPlace = 0;
             this.IMT_KAIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_KAIDT_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
             this.IMT_KAIDT_0.isEnterKeyDown = false;
@@ -504,7 +506,7 @@
             this.IMT_REMAK_2.MaxLength = 80;
             this.IMT_REMAK_2.MoveNext = true;
             this.IMT_REMAK_2.Name = "IMT_REMAK_2";
-            this.IMT_REMAK_2.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_2.Size = new System.Drawing.Size(399, 19);
             this.IMT_REMAK_2.TabIndex = 40;
             this.IMT_REMAK_2.Tag = "2";
             this.IMT_REMAK_2.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -531,7 +533,7 @@
             this.IMT_REMAK_1.MaxLength = 80;
             this.IMT_REMAK_1.MoveNext = true;
             this.IMT_REMAK_1.Name = "IMT_REMAK_1";
-            this.IMT_REMAK_1.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_1.Size = new System.Drawing.Size(399, 19);
             this.IMT_REMAK_1.TabIndex = 27;
             this.IMT_REMAK_1.Tag = "1";
             this.IMT_REMAK_1.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -558,7 +560,7 @@
             this.IMT_REMAK_0.MaxLength = 80;
             this.IMT_REMAK_0.MoveNext = true;
             this.IMT_REMAK_0.Name = "IMT_REMAK_0";
-            this.IMT_REMAK_0.Size = new System.Drawing.Size(400, 19);
+            this.IMT_REMAK_0.Size = new System.Drawing.Size(399, 19);
             this.IMT_REMAK_0.TabIndex = 13;
             this.IMT_REMAK_0.Tag = "0";
             this.IMT_REMAK_0.Text = "社内備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -875,9 +877,9 @@
             this.CHK_PRINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_2.Location = new System.Drawing.Point(885, 153);
+            this.CHK_PRINT_2.Location = new System.Drawing.Point(872, 153);
             this.CHK_PRINT_2.Name = "CHK_PRINT_2";
-            this.CHK_PRINT_2.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_2.Size = new System.Drawing.Size(59, 17);
             this.CHK_PRINT_2.TabIndex = 641;
             this.CHK_PRINT_2.Tag = "2";
             this.CHK_PRINT_2.Text = "なし";
@@ -891,9 +893,9 @@
             this.CHK_PRINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_1.Location = new System.Drawing.Point(885, 77);
+            this.CHK_PRINT_1.Location = new System.Drawing.Point(872, 77);
             this.CHK_PRINT_1.Name = "CHK_PRINT_1";
-            this.CHK_PRINT_1.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_1.Size = new System.Drawing.Size(59, 17);
             this.CHK_PRINT_1.TabIndex = 640;
             this.CHK_PRINT_1.Tag = "1";
             this.CHK_PRINT_1.Text = "なし";
@@ -907,9 +909,9 @@
             this.CHK_PRINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.CHK_PRINT_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_PRINT_0.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CHK_PRINT_0.Location = new System.Drawing.Point(885, 1);
+            this.CHK_PRINT_0.Location = new System.Drawing.Point(872, 1);
             this.CHK_PRINT_0.Name = "CHK_PRINT_0";
-            this.CHK_PRINT_0.Size = new System.Drawing.Size(47, 17);
+            this.CHK_PRINT_0.Size = new System.Drawing.Size(59, 17);
             this.CHK_PRINT_0.TabIndex = 639;
             this.CHK_PRINT_0.Tag = "0";
             this.CHK_PRINT_0.Text = "なし";
@@ -1131,87 +1133,6 @@
             this.IMC_SOKNM_0.Size = new System.Drawing.Size(90, 20);
             this.IMC_SOKNM_0.TabIndex = 531;
             this.IMC_SOKNM_0.Tag = "0";
-            // 
-            // IMT_VENNM_0
-            // 
-            this.IMT_VENNM_0.AllowMinus = false;
-            this.IMT_VENNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_0.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_0.DecimalPlace = 0;
-            this.IMT_VENNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_0.IntegerPart = 0;
-            this.IMT_VENNM_0.IsCorrectDate = true;
-            this.IMT_VENNM_0.isEnterKeyDown = false;
-            this.IMT_VENNM_0.IsNumber = true;
-            this.IMT_VENNM_0.IsShop = false;
-            this.IMT_VENNM_0.Length = 80;
-            this.IMT_VENNM_0.Location = new System.Drawing.Point(417, 38);
-            this.IMT_VENNM_0.MaxLength = 80;
-            this.IMT_VENNM_0.MoveNext = true;
-            this.IMT_VENNM_0.Name = "IMT_VENNM_0";
-            this.IMT_VENNM_0.ReadOnly = true;
-            this.IMT_VENNM_0.Size = new System.Drawing.Size(208, 19);
-            this.IMT_VENNM_0.TabIndex = 526;
-            this.IMT_VENNM_0.Tag = "0";
-            this.IMT_VENNM_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_VENNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_VENNM_1
-            // 
-            this.IMT_VENNM_1.AllowMinus = false;
-            this.IMT_VENNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_1.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_1.DecimalPlace = 0;
-            this.IMT_VENNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_1.IntegerPart = 0;
-            this.IMT_VENNM_1.IsCorrectDate = true;
-            this.IMT_VENNM_1.isEnterKeyDown = false;
-            this.IMT_VENNM_1.IsNumber = true;
-            this.IMT_VENNM_1.IsShop = false;
-            this.IMT_VENNM_1.Length = 80;
-            this.IMT_VENNM_1.Location = new System.Drawing.Point(417, 114);
-            this.IMT_VENNM_1.MaxLength = 80;
-            this.IMT_VENNM_1.MoveNext = true;
-            this.IMT_VENNM_1.Name = "IMT_VENNM_1";
-            this.IMT_VENNM_1.ReadOnly = true;
-            this.IMT_VENNM_1.Size = new System.Drawing.Size(208, 19);
-            this.IMT_VENNM_1.TabIndex = 527;
-            this.IMT_VENNM_1.Tag = "1";
-            this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_VENNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMT_VENNM_2
-            // 
-            this.IMT_VENNM_2.AllowMinus = false;
-            this.IMT_VENNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMT_VENNM_2.BackColor = System.Drawing.Color.Silver;
-            this.IMT_VENNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.IMT_VENNM_2.DecimalPlace = 0;
-            this.IMT_VENNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMT_VENNM_2.IntegerPart = 0;
-            this.IMT_VENNM_2.IsCorrectDate = true;
-            this.IMT_VENNM_2.isEnterKeyDown = false;
-            this.IMT_VENNM_2.IsNumber = true;
-            this.IMT_VENNM_2.IsShop = false;
-            this.IMT_VENNM_2.Length = 80;
-            this.IMT_VENNM_2.Location = new System.Drawing.Point(417, 190);
-            this.IMT_VENNM_2.MaxLength = 80;
-            this.IMT_VENNM_2.MoveNext = true;
-            this.IMT_VENNM_2.Name = "IMT_VENNM_2";
-            this.IMT_VENNM_2.ReadOnly = true;
-            this.IMT_VENNM_2.Size = new System.Drawing.Size(208, 19);
-            this.IMT_VENNM_2.TabIndex = 528;
-            this.IMT_VENNM_2.Tag = "2";
-            this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_VENNM_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMN_GENER2_2
             // 
@@ -1978,12 +1899,12 @@
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 4;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(1312, 152);
+            this.ckM_TextBox3.Location = new System.Drawing.Point(1321, 152);
             this.ckM_TextBox3.MaxLength = 2;
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.ReadOnly = true;
-            this.ckM_TextBox3.Size = new System.Drawing.Size(30, 19);
+            this.ckM_TextBox3.Size = new System.Drawing.Size(21, 19);
             this.ckM_TextBox3.TabIndex = 509;
             this.ckM_TextBox3.Tag = "2";
             this.ckM_TextBox3.Text = "　";
@@ -2008,12 +1929,12 @@
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 4;
-            this.ckM_TextBox4.Location = new System.Drawing.Point(1312, 76);
+            this.ckM_TextBox4.Location = new System.Drawing.Point(1321, 76);
             this.ckM_TextBox4.MaxLength = 2;
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
             this.ckM_TextBox4.ReadOnly = true;
-            this.ckM_TextBox4.Size = new System.Drawing.Size(30, 19);
+            this.ckM_TextBox4.Size = new System.Drawing.Size(21, 19);
             this.ckM_TextBox4.TabIndex = 508;
             this.ckM_TextBox4.Tag = "1";
             this.ckM_TextBox4.Text = "　";
@@ -2038,12 +1959,12 @@
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 4;
-            this.ckM_TextBox12.Location = new System.Drawing.Point(1312, 0);
+            this.ckM_TextBox12.Location = new System.Drawing.Point(1321, 0);
             this.ckM_TextBox12.MaxLength = 2;
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
             this.ckM_TextBox12.ReadOnly = true;
-            this.ckM_TextBox12.Size = new System.Drawing.Size(30, 19);
+            this.ckM_TextBox12.Size = new System.Drawing.Size(21, 19);
             this.ckM_TextBox12.TabIndex = 507;
             this.ckM_TextBox12.Tag = "0";
             this.ckM_TextBox12.Text = "　";
@@ -2071,7 +1992,7 @@
             this.IMT_ITMNM_2.MaxLength = 100;
             this.IMT_ITMNM_2.MoveNext = true;
             this.IMT_ITMNM_2.Name = "IMT_ITMNM_2";
-            this.IMT_ITMNM_2.Size = new System.Drawing.Size(507, 19);
+            this.IMT_ITMNM_2.Size = new System.Drawing.Size(494, 19);
             this.IMT_ITMNM_2.TabIndex = 265;
             this.IMT_ITMNM_2.Tag = "2";
             this.IMT_ITMNM_2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2098,7 +2019,7 @@
             this.IMT_ITMNM_1.MaxLength = 100;
             this.IMT_ITMNM_1.MoveNext = true;
             this.IMT_ITMNM_1.Name = "IMT_ITMNM_1";
-            this.IMT_ITMNM_1.Size = new System.Drawing.Size(507, 19);
+            this.IMT_ITMNM_1.Size = new System.Drawing.Size(494, 19);
             this.IMT_ITMNM_1.TabIndex = 264;
             this.IMT_ITMNM_1.Tag = "1";
             this.IMT_ITMNM_1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2125,7 +2046,7 @@
             this.IMT_ITMNM_0.MaxLength = 100;
             this.IMT_ITMNM_0.MoveNext = true;
             this.IMT_ITMNM_0.Name = "IMT_ITMNM_0";
-            this.IMT_ITMNM_0.Size = new System.Drawing.Size(507, 19);
+            this.IMT_ITMNM_0.Size = new System.Drawing.Size(494, 19);
             this.IMT_ITMNM_0.TabIndex = 2;
             this.IMT_ITMNM_0.Tag = "0";
             this.IMT_ITMNM_0.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2133,42 +2054,46 @@
             // 
             // BTN_Zaiko_2
             // 
+            this.BTN_Zaiko_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Zaiko_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_2.Location = new System.Drawing.Point(1273, 151);
             this.BTN_Zaiko_2.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_2.Name = "BTN_Zaiko_2";
-            this.BTN_Zaiko_2.Size = new System.Drawing.Size(39, 21);
+            this.BTN_Zaiko_2.Size = new System.Drawing.Size(48, 21);
             this.BTN_Zaiko_2.TabIndex = 506;
             this.BTN_Zaiko_2.Tag = "2";
             this.BTN_Zaiko_2.Text = "　";
-            this.BTN_Zaiko_2.UseVisualStyleBackColor = true;
+            this.BTN_Zaiko_2.UseVisualStyleBackColor = false;
             // 
             // BTN_Zaiko_1
             // 
+            this.BTN_Zaiko_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Zaiko_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_1.Location = new System.Drawing.Point(1273, 75);
             this.BTN_Zaiko_1.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_1.Name = "BTN_Zaiko_1";
-            this.BTN_Zaiko_1.Size = new System.Drawing.Size(39, 21);
+            this.BTN_Zaiko_1.Size = new System.Drawing.Size(48, 21);
             this.BTN_Zaiko_1.TabIndex = 504;
             this.BTN_Zaiko_1.Tag = "1";
             this.BTN_Zaiko_1.Text = "　";
-            this.BTN_Zaiko_1.UseVisualStyleBackColor = true;
+            this.BTN_Zaiko_1.UseVisualStyleBackColor = false;
             // 
             // BTN_Zaiko_0
             // 
+            this.BTN_Zaiko_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Zaiko_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Zaiko_0.Location = new System.Drawing.Point(1273, -1);
             this.BTN_Zaiko_0.Margin = new System.Windows.Forms.Padding(0);
             this.BTN_Zaiko_0.Name = "BTN_Zaiko_0";
-            this.BTN_Zaiko_0.Size = new System.Drawing.Size(39, 21);
+            this.BTN_Zaiko_0.Size = new System.Drawing.Size(48, 21);
             this.BTN_Zaiko_0.TabIndex = 502;
             this.BTN_Zaiko_0.Tag = "0";
             this.BTN_Zaiko_0.Text = "　";
-            this.BTN_Zaiko_0.UseVisualStyleBackColor = true;
+            this.BTN_Zaiko_0.UseVisualStyleBackColor = false;
             // 
             // BTN_Site_2
             // 
+            this.BTN_Site_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Site_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_2.Location = new System.Drawing.Point(1226, 151);
             this.BTN_Site_2.Margin = new System.Windows.Forms.Padding(0);
@@ -2177,10 +2102,11 @@
             this.BTN_Site_2.TabIndex = 505;
             this.BTN_Site_2.Tag = "2";
             this.BTN_Site_2.Text = "　";
-            this.BTN_Site_2.UseVisualStyleBackColor = true;
+            this.BTN_Site_2.UseVisualStyleBackColor = false;
             // 
             // BTN_Site_1
             // 
+            this.BTN_Site_1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Site_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_1.Location = new System.Drawing.Point(1226, 75);
             this.BTN_Site_1.Margin = new System.Windows.Forms.Padding(0);
@@ -2189,10 +2115,11 @@
             this.BTN_Site_1.TabIndex = 503;
             this.BTN_Site_1.Tag = "1";
             this.BTN_Site_1.Text = "　";
-            this.BTN_Site_1.UseVisualStyleBackColor = true;
+            this.BTN_Site_1.UseVisualStyleBackColor = false;
             // 
             // BTN_Site_0
             // 
+            this.BTN_Site_0.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.BTN_Site_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.BTN_Site_0.Location = new System.Drawing.Point(1226, -1);
             this.BTN_Site_0.Margin = new System.Windows.Forms.Padding(0);
@@ -2201,7 +2128,7 @@
             this.BTN_Site_0.TabIndex = 501;
             this.BTN_Site_0.Tag = "0";
             this.BTN_Site_0.Text = "　";
-            this.BTN_Site_0.UseVisualStyleBackColor = true;
+            this.BTN_Site_0.UseVisualStyleBackColor = false;
             // 
             // ckM_TextBox15
             // 
@@ -2483,6 +2410,7 @@
             this.IMT_KAIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_2.DecimalPlace = 0;
             this.IMT_KAIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_KAIDT_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
             this.IMT_KAIDT_2.isEnterKeyDown = false;
@@ -2915,7 +2843,7 @@
             this.IMN_WEBPR_2.MaxLength = 80;
             this.IMN_WEBPR_2.MoveNext = true;
             this.IMN_WEBPR_2.Name = "IMN_WEBPR_2";
-            this.IMN_WEBPR_2.Size = new System.Drawing.Size(520, 19);
+            this.IMN_WEBPR_2.Size = new System.Drawing.Size(390, 19);
             this.IMN_WEBPR_2.TabIndex = 38;
             this.IMN_WEBPR_2.Tag = "2";
             this.IMN_WEBPR_2.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -2998,7 +2926,7 @@
             this.IMN_WEBPR_1.MaxLength = 80;
             this.IMN_WEBPR_1.MoveNext = true;
             this.IMN_WEBPR_1.Name = "IMN_WEBPR_1";
-            this.IMN_WEBPR_1.Size = new System.Drawing.Size(520, 19);
+            this.IMN_WEBPR_1.Size = new System.Drawing.Size(390, 19);
             this.IMN_WEBPR_1.TabIndex = 25;
             this.IMN_WEBPR_1.Tag = "1";
             this.IMN_WEBPR_1.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3143,7 +3071,7 @@
             this.IMN_WEBPR_0.MaxLength = 80;
             this.IMN_WEBPR_0.MoveNext = true;
             this.IMN_WEBPR_0.Name = "IMN_WEBPR_0";
-            this.IMN_WEBPR_0.Size = new System.Drawing.Size(520, 19);
+            this.IMN_WEBPR_0.Size = new System.Drawing.Size(390, 19);
             this.IMN_WEBPR_0.TabIndex = 11;
             this.IMN_WEBPR_0.Tag = "0";
             this.IMN_WEBPR_0.Text = "社外備考・コメント10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
@@ -3532,6 +3460,87 @@
             this.IMT_VENCD_2.Value1 = null;
             this.IMT_VENCD_2.Value2 = null;
             this.IMT_VENCD_2.Value3 = null;
+            // 
+            // IMT_VENNM_0
+            // 
+            this.IMT_VENNM_0.AllowMinus = false;
+            this.IMT_VENNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_0.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_0.DecimalPlace = 0;
+            this.IMT_VENNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_0.IntegerPart = 0;
+            this.IMT_VENNM_0.IsCorrectDate = true;
+            this.IMT_VENNM_0.isEnterKeyDown = false;
+            this.IMT_VENNM_0.IsNumber = true;
+            this.IMT_VENNM_0.IsShop = false;
+            this.IMT_VENNM_0.Length = 80;
+            this.IMT_VENNM_0.Location = new System.Drawing.Point(417, 38);
+            this.IMT_VENNM_0.MaxLength = 80;
+            this.IMT_VENNM_0.MoveNext = true;
+            this.IMT_VENNM_0.Name = "IMT_VENNM_0";
+            this.IMT_VENNM_0.ReadOnly = true;
+            this.IMT_VENNM_0.Size = new System.Drawing.Size(208, 19);
+            this.IMT_VENNM_0.TabIndex = 526;
+            this.IMT_VENNM_0.Tag = "0";
+            this.IMT_VENNM_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_VENNM_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_VENNM_1
+            // 
+            this.IMT_VENNM_1.AllowMinus = false;
+            this.IMT_VENNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_1.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_1.DecimalPlace = 0;
+            this.IMT_VENNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_1.IntegerPart = 0;
+            this.IMT_VENNM_1.IsCorrectDate = true;
+            this.IMT_VENNM_1.isEnterKeyDown = false;
+            this.IMT_VENNM_1.IsNumber = true;
+            this.IMT_VENNM_1.IsShop = false;
+            this.IMT_VENNM_1.Length = 80;
+            this.IMT_VENNM_1.Location = new System.Drawing.Point(417, 114);
+            this.IMT_VENNM_1.MaxLength = 80;
+            this.IMT_VENNM_1.MoveNext = true;
+            this.IMT_VENNM_1.Name = "IMT_VENNM_1";
+            this.IMT_VENNM_1.ReadOnly = true;
+            this.IMT_VENNM_1.Size = new System.Drawing.Size(208, 19);
+            this.IMT_VENNM_1.TabIndex = 527;
+            this.IMT_VENNM_1.Tag = "1";
+            this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_VENNM_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // IMT_VENNM_2
+            // 
+            this.IMT_VENNM_2.AllowMinus = false;
+            this.IMT_VENNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.IMT_VENNM_2.BackColor = System.Drawing.Color.Silver;
+            this.IMT_VENNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
+            this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.IMT_VENNM_2.DecimalPlace = 0;
+            this.IMT_VENNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.IMT_VENNM_2.IntegerPart = 0;
+            this.IMT_VENNM_2.IsCorrectDate = true;
+            this.IMT_VENNM_2.isEnterKeyDown = false;
+            this.IMT_VENNM_2.IsNumber = true;
+            this.IMT_VENNM_2.IsShop = false;
+            this.IMT_VENNM_2.Length = 80;
+            this.IMT_VENNM_2.Location = new System.Drawing.Point(417, 190);
+            this.IMT_VENNM_2.MaxLength = 80;
+            this.IMT_VENNM_2.MoveNext = true;
+            this.IMT_VENNM_2.Name = "IMT_VENNM_2";
+            this.IMT_VENNM_2.ReadOnly = true;
+            this.IMT_VENNM_2.Size = new System.Drawing.Size(208, 19);
+            this.IMT_VENNM_2.TabIndex = 528;
+            this.IMT_VENNM_2.Tag = "2";
+            this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
+            this.IMT_VENNM_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label31
             // 
@@ -3925,7 +3934,7 @@
             this.label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label6.Location = new System.Drawing.Point(1275, 2);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 16);
+            this.label6.Size = new System.Drawing.Size(47, 16);
             this.label6.TabIndex = 289;
             this.label6.Text = "在庫";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3962,9 +3971,9 @@
             this.label22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label22.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label22.Location = new System.Drawing.Point(1313, 2);
+            this.label22.Location = new System.Drawing.Point(1322, 2);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(30, 16);
+            this.label22.Size = new System.Drawing.Size(21, 16);
             this.label22.TabIndex = 287;
             this.label22.Text = "　";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -1310,7 +1310,10 @@ namespace MasterTouroku_Tempo
                                 detailControls[index + 1].Focus();
                             else if (index.Equals((int)EIndex.StoreName))
                                 //カーソルが消えるのを回避
-                                detailControls[index + 3].Focus();
+                                if (detailControls[index + 3].CanFocus)
+                                    detailControls[index + 3].Focus();
+                                else
+                                    this.ProcessTabKey(!e.Shift);
                             else
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
@@ -1499,6 +1502,7 @@ namespace MasterTouroku_Tempo
         {
             if (base.OperationMode == EOperationMode.INSERT || base.OperationMode == EOperationMode.UPDATE)
             {
+
                 if (radioButton1.Checked)
                 {
                     //実店舗場所：店舗区分＝「実店舗」の時のみ入力可能。
@@ -1507,13 +1511,7 @@ namespace MasterTouroku_Tempo
                     ScMailPatternCD.Enabled = true;
 
                     //実店舗を選択した場合(When 実店舗 is selected)、以下の項目を入力不可にする (Input is possible)
-                    //モールCD
-                    ScMall.Enabled = false;
-                    detailControls[(int)EIndex.MallCD].Text = "";
-                    ScMall.LabelText = "";
 
-                    detailControls[(int)EIndex.APIKey].Enabled = false;
-                    detailControls[(int)EIndex.APIKey].Text = "";
 
                     //実店舗場所
                     //郵便番号
@@ -1525,7 +1523,7 @@ namespace MasterTouroku_Tempo
                     //【発注承認】の全て
                     //【見積初期値】の全て
                     //【伝票住所表記】の全て
-                    for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Remarks; i++)
+                    for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Print6; i++)
                     {
                         if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
                             detailControls[i].Parent.Enabled = true;
@@ -1536,17 +1534,12 @@ namespace MasterTouroku_Tempo
                     for (int index = 0; index < searchButtons.Length - 2; index++)
                         searchButtons[index].Enabled = true;
 
-                    ScMall.SearchEnable = false;   //モール検索
                 }
                 else
                 {
                     panel2.Enabled = false;
                     detailControls[(int)EIndex.ReceiptPrint].Enabled = false;
                     ScMailPatternCD.Enabled = false;
-
-                    //モールCD
-                    ScMall.Enabled = true;
-                    detailControls[(int)EIndex.APIKey].Enabled = true;
 
                     //Web店舗、Webまとめ店舗を選択した場合(When Web店舗 or Webまとめ店舗 is selected)、以下の項目を入力不可にする
                     //実店舗場所
@@ -1559,7 +1552,7 @@ namespace MasterTouroku_Tempo
                     //【発注承認】の全て
                     //【見積初期値】の全て
                     //【伝票住所表記】の全て
-                    for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Remarks; i++)
+                    for (int i = (int)EIndex.ZipCD1; i <= (int)EIndex.Print6; i++)
                     {
                         if (detailControls[i].Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
                             detailControls[i].Parent.Enabled = false;
@@ -1574,7 +1567,26 @@ namespace MasterTouroku_Tempo
                     for (int index = 1; index < detailLabels.Length; index++)
                         ((CKM_SearchControl)detailLabels[index]).LabelText = "";
 
+                }
+
+                //Web店舗を選択した場合に入力可能にする。
+                if (radioButton2.Checked)
+                {
+                    //モールCD
+                    ScMall.Enabled = true;
+                    detailControls[(int)EIndex.APIKey].Enabled = true;
                     ScMall.SearchEnable = true;   //モール検索
+                }
+                else
+                {
+                    //モールCD
+                    ScMall.Enabled = false;
+                    detailControls[(int)EIndex.MallCD].Text = "";
+                    ScMall.LabelText = "";
+                    ScMall.SearchEnable = false;   //モール検索
+
+                    detailControls[(int)EIndex.APIKey].Enabled = false;
+                    detailControls[(int)EIndex.APIKey].Text = "";
                 }
             }
         }

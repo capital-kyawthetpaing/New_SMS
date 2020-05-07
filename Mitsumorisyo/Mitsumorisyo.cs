@@ -87,6 +87,7 @@ namespace Mitsumorisyo
                 {
                     detailControls[(int)EIndex.MitsumoriNO].Text = cmds[cmds.Length - 1];
                     PrintSec();
+                    EndSec();
                 }
 
             }
@@ -856,8 +857,16 @@ namespace Mitsumorisyo
         }
         private void CboStoreCD_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(CboStoreCD.SelectedIndex > 0)
-                ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+            try
+            {
+                if (CboStoreCD.SelectedIndex > 0)
+                    ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
         }
 
         #endregion
