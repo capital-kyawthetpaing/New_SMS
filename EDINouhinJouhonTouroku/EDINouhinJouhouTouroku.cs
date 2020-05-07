@@ -40,7 +40,7 @@ namespace EDINouhinJouhonTouroku
             InitializeComponent();
         }
 
-        private void FrmEDINouhinJouhonTouroku_Load(object sender, EventArgs e)
+        private void FrmEDINouhinJouhouTouroku_Load(object sender, EventArgs e)
         {
             InProgramID = "EDINouhinJouhouTouroku";
 
@@ -279,7 +279,7 @@ namespace EDINouhinJouhonTouroku
 
                 //①保存した.xsdはプロジェクトに追加しておきます。
                 DialogResult ret;
-                EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku_Report();
+                EDINouhinJouhonTouroku_Report Report = new EDINouhinJouhonTouroku_Report();
                 
 
                 //DataTableのDetailOnが１かどうかで詳細セクションを印字するかどうかの設定を
@@ -524,6 +524,6 @@ namespace EDINouhinJouhonTouroku
             }
         }
 
-
+       
     }
 }

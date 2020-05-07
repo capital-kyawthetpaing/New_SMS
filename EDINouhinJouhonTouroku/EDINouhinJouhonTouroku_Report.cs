@@ -16,14 +16,14 @@ namespace EDINouhinJouhouTouroku {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class EDINouhinJouhouTouroku_Report : ReportClass {
+    public class EDINouhinJouhonTouroku_Report : ReportClass {
         
-        public EDINouhinJouhouTouroku_Report() {
+        public EDINouhinJouhonTouroku_Report() {
         }
         
         public override string ResourceName {
             get {
-                return "EDINouhinJouhouTouroku_Report.rpt";
+                return "EDINouhinJouhonTouroku_Report.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace EDINouhinJouhouTouroku {
         
         public override string FullResourceName {
             get {
-                return "EDINouhinJouhouTouroku.EDINouhinJouhouTouroku_Report.rpt";
+                return "EDINouhinJouhouTouroku.EDINouhinJouhonTouroku_Report.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace EDINouhinJouhouTouroku {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedEDINouhinJouhouTouroku_Report : Component, ICachedReport {
+    public class CachedEDINouhinJouhonTouroku_Report : Component, ICachedReport {
         
-        public CachedEDINouhinJouhouTouroku_Report() {
+        public CachedEDINouhinJouhonTouroku_Report() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace EDINouhinJouhouTouroku {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            EDINouhinJouhouTouroku_Report rpt = new EDINouhinJouhouTouroku_Report();
+            EDINouhinJouhonTouroku_Report rpt = new EDINouhinJouhonTouroku_Report();
             rpt.Site = this.Site;
             return rpt;
         }
