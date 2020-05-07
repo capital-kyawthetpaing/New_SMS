@@ -752,6 +752,17 @@ namespace MasterTouroku_ShiireKakeritsu
             //    DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
             //    dgv_ShiireKakeritsu.Rows[dgv_ShiireKakeritsu.UpdateCellValue.txtRevisionDate].Cells[2].Text.ToString();
             //}
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            {
+                DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)row.Cells[0];
+                if (chk.Value == chk.TrueValue)
+                {
+                    decimal Rate = Convert.ToDecimal(row.Cells[7].Value);
+                    DataRow dtRow = dtMain.NewRow();
+                    //dtRow["Rate"] = row.Cells["colRate1"].Value.ToString();
+                    dgv_ShiireKakeritsu.Update();
+                }
+            }
         }
     }
 }
