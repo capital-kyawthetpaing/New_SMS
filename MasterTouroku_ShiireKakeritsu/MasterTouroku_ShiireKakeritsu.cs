@@ -768,11 +768,19 @@ namespace MasterTouroku_ShiireKakeritsu
             //        }
             //    }
             //}
-            if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+            //if (this.dgv_ShiireKakeritsu.GetCellCount(DataGridViewElementStates.Selected) > 0)
+            //{
+            //    DataRow dtRow = dt.NewRow();
+            //    dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
+            //    dgv_ShiireKakeritsu.Update();
+            //}
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             {
-                DataRow dtRow = dt.NewRow();
-                dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
-                dgv_ShiireKakeritsu.Update();
+                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                if (check.Value == check.TrueValue)
+                {                  
+                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);                  
+                }
             }
         }
     }
