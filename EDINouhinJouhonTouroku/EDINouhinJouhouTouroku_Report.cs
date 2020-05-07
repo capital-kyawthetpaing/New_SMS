@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EDINouhinJouhonTouroku {
+namespace EDINouhinJouhouTouroku {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace EDINouhinJouhonTouroku {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class EDINouhinJouhonTouroku_Report : ReportClass {
+    public class EDINouhinJouhouTouroku_Report : ReportClass {
         
-        public EDINouhinJouhonTouroku_Report() {
+        public EDINouhinJouhouTouroku_Report() {
         }
         
         public override string ResourceName {
             get {
-                return "EDINouhinJouhonTouroku_Report.rpt";
+                return "EDINouhinJouhouTouroku_Report.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace EDINouhinJouhonTouroku {
         
         public override string FullResourceName {
             get {
-                return "EDINouhinJouhonTouroku.EDINouhinJouhonTouroku_Report.rpt";
+                return "EDINouhinJouhouTouroku.EDINouhinJouhouTouroku_Report.rpt";
             }
             set {
                 // Do nothing
@@ -114,9 +114,9 @@ namespace EDINouhinJouhonTouroku {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedEDINouhinJouhonTouroku_Report : Component, ICachedReport {
+    public class CachedEDINouhinJouhouTouroku_Report : Component, ICachedReport {
         
-        public CachedEDINouhinJouhonTouroku_Report() {
+        public CachedEDINouhinJouhouTouroku_Report() {
         }
         
         [Browsable(false)]
@@ -153,7 +153,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            EDINouhinJouhonTouroku_Report rpt = new EDINouhinJouhonTouroku_Report();
+            EDINouhinJouhouTouroku_Report rpt = new EDINouhinJouhouTouroku_Report();
             rpt.Site = this.Site;
             return rpt;
         }

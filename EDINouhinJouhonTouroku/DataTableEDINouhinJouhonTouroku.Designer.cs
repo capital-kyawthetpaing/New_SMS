@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace EDINouhinJouhonTouroku {
+namespace EDINouhinJouhouTouroku {
     
     
     /// <summary>
@@ -24,12 +24,12 @@ namespace EDINouhinJouhonTouroku {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class EDINouhinJouhonTouroku : global::System.Data.DataSet {
         
-        private EDINouhinJouhonTourokuDataTable tableEDINouhinJouhonTouroku;
+        private EDINouhinJouhouTourokuDataTable tableEDINouhinJouhouTouroku;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public EDINouhinJouhonTouroku() {
             this.BeginInit();
             this.InitClass();
@@ -40,7 +40,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected EDINouhinJouhonTouroku(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
@@ -54,8 +54,8 @@ namespace EDINouhinJouhonTouroku {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["EDINouhinJouhonTouroku"] != null)) {
-                    base.Tables.Add(new EDINouhinJouhonTourokuDataTable(ds.Tables["EDINouhinJouhonTouroku"]));
+                if ((ds.Tables["EDINouhinJouhouTouroku"] != null)) {
+                    base.Tables.Add(new EDINouhinJouhouTourokuDataTable(ds.Tables["EDINouhinJouhouTouroku"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -76,17 +76,17 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public EDINouhinJouhonTourokuDataTable _EDINouhinJouhonTouroku {
+        public EDINouhinJouhouTourokuDataTable EDINouhinJouhouTouroku {
             get {
-                return this.tableEDINouhinJouhonTouroku;
+                return this.tableEDINouhinJouhouTouroku;
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -99,7 +99,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public new global::System.Data.DataTableCollection Tables {
             get {
@@ -108,7 +108,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public new global::System.Data.DataRelationCollection Relations {
             get {
@@ -117,7 +117,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected override void InitializeDerivedDataSet() {
             this.BeginInit();
             this.InitClass();
@@ -125,7 +125,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
             EDINouhinJouhonTouroku cln = ((EDINouhinJouhonTouroku)(base.Clone()));
             cln.InitVars();
@@ -134,26 +134,26 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected override bool ShouldSerializeTables() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected override bool ShouldSerializeRelations() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected override void ReadXmlSerializable(global::System.Xml.XmlReader reader) {
             if ((this.DetermineSchemaSerializationMode(reader) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["EDINouhinJouhonTouroku"] != null)) {
-                    base.Tables.Add(new EDINouhinJouhonTourokuDataTable(ds.Tables["EDINouhinJouhonTouroku"]));
+                if ((ds.Tables["EDINouhinJouhouTouroku"] != null)) {
+                    base.Tables.Add(new EDINouhinJouhouTourokuDataTable(ds.Tables["EDINouhinJouhouTouroku"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -171,7 +171,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         protected override global::System.Xml.Schema.XmlSchema GetSchemaSerializable() {
             global::System.IO.MemoryStream stream = new global::System.IO.MemoryStream();
             this.WriteXmlSchema(new global::System.Xml.XmlTextWriter(stream, null));
@@ -180,42 +180,42 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars() {
             this.InitVars(true);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableEDINouhinJouhonTouroku = ((EDINouhinJouhonTourokuDataTable)(base.Tables["EDINouhinJouhonTouroku"]));
+            this.tableEDINouhinJouhouTouroku = ((EDINouhinJouhouTourokuDataTable)(base.Tables["EDINouhinJouhouTouroku"]));
             if ((initTable == true)) {
-                if ((this.tableEDINouhinJouhonTouroku != null)) {
-                    this.tableEDINouhinJouhonTouroku.InitVars();
+                if ((this.tableEDINouhinJouhouTouroku != null)) {
+                    this.tableEDINouhinJouhouTouroku.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
             this.DataSetName = "EDINouhinJouhonTouroku";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/EDINouhinJouhonTouroku.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableEDINouhinJouhonTouroku = new EDINouhinJouhonTourokuDataTable();
-            base.Tables.Add(this.tableEDINouhinJouhonTouroku);
+            this.tableEDINouhinJouhouTouroku = new EDINouhinJouhouTourokuDataTable();
+            base.Tables.Add(this.tableEDINouhinJouhouTouroku);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerialize_EDINouhinJouhonTouroku() {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        private bool ShouldSerializeEDINouhinJouhouTouroku() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -223,7 +223,7 @@ namespace EDINouhinJouhonTouroku {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
             EDINouhinJouhonTouroku ds = new EDINouhinJouhonTouroku();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
@@ -269,15 +269,15 @@ namespace EDINouhinJouhonTouroku {
             return type;
         }
         
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void EDINouhinJouhonTourokuRowChangeEventHandler(object sender, EDINouhinJouhonTourokuRowChangeEvent e);
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public delegate void EDINouhinJouhouTourokuRowChangeEventHandler(object sender, EDINouhinJouhouTourokuRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class EDINouhinJouhonTourokuDataTable : global::System.Data.TypedTableBase<EDINouhinJouhonTourokuRow> {
+        public partial class EDINouhinJouhouTourokuDataTable : global::System.Data.TypedTableBase<EDINouhinJouhouTourokuRow> {
             
             private global::System.Data.DataColumn columnSKENNouhinshoNO;
             
@@ -298,17 +298,17 @@ namespace EDINouhinJouhonTouroku {
             private global::System.Data.DataColumn columnErrorText;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuDataTable() {
-                this.TableName = "EDINouhinJouhonTouroku";
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuDataTable() {
+                this.TableName = "EDINouhinJouhouTouroku";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EDINouhinJouhonTourokuDataTable(global::System.Data.DataTable table) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EDINouhinJouhouTourokuDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -324,14 +324,14 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected EDINouhinJouhonTourokuDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            protected EDINouhinJouhouTourokuDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKENNouhinshoNOColumn {
                 get {
                     return this.columnSKENNouhinshoNO;
@@ -339,7 +339,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKENHacchuuColumn {
                 get {
                     return this.columnSKENHacchuu;
@@ -347,7 +347,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKENNouhinHinbanColumn {
                 get {
                     return this.columnSKENNouhinHinban;
@@ -355,7 +355,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKENJanCDColumn {
                 get {
                     return this.columnSKENJanCD;
@@ -363,7 +363,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKUNameColumn {
                 get {
                     return this.columnSKUName;
@@ -371,7 +371,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ColorNameColumn {
                 get {
                     return this.columnColorName;
@@ -379,7 +379,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SizeNameColumn {
                 get {
                     return this.columnSizeName;
@@ -387,7 +387,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn SKENNouhinSuuColumn {
                 get {
                     return this.columnSKENNouhinSuu;
@@ -395,7 +395,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn ErrorTextColumn {
                 get {
                     return this.columnErrorText;
@@ -403,7 +403,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -412,35 +412,35 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuRow this[int index] {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuRow this[int index] {
                 get {
-                    return ((EDINouhinJouhonTourokuRow)(this.Rows[index]));
+                    return ((EDINouhinJouhouTourokuRow)(this.Rows[index]));
                 }
             }
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EDINouhinJouhonTourokuRowChangeEventHandler EDINouhinJouhonTourokuRowChanging;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EDINouhinJouhouTourokuRowChangeEventHandler EDINouhinJouhouTourokuRowChanging;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EDINouhinJouhonTourokuRowChangeEventHandler EDINouhinJouhonTourokuRowChanged;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EDINouhinJouhouTourokuRowChangeEventHandler EDINouhinJouhouTourokuRowChanged;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EDINouhinJouhonTourokuRowChangeEventHandler EDINouhinJouhonTourokuRowDeleting;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EDINouhinJouhouTourokuRowChangeEventHandler EDINouhinJouhouTourokuRowDeleting;
             
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event EDINouhinJouhonTourokuRowChangeEventHandler EDINouhinJouhonTourokuRowDeleted;
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public event EDINouhinJouhouTourokuRowChangeEventHandler EDINouhinJouhouTourokuRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddEDINouhinJouhonTourokuRow(EDINouhinJouhonTourokuRow row) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void AddEDINouhinJouhouTourokuRow(EDINouhinJouhouTourokuRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuRow AddEDINouhinJouhonTourokuRow(string SKENNouhinshoNO, string SKENHacchuu, string SKENNouhinHinban, string SKENJanCD, string SKUName, string ColorName, string SizeName, string SKENNouhinSuu, string ErrorText) {
-                EDINouhinJouhonTourokuRow rowEDINouhinJouhonTourokuRow = ((EDINouhinJouhonTourokuRow)(this.NewRow()));
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuRow AddEDINouhinJouhouTourokuRow(string SKENNouhinshoNO, string SKENHacchuu, string SKENNouhinHinban, string SKENJanCD, string SKUName, string ColorName, string SizeName, string SKENNouhinSuu, string ErrorText) {
+                EDINouhinJouhouTourokuRow rowEDINouhinJouhouTourokuRow = ((EDINouhinJouhouTourokuRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         SKENNouhinshoNO,
                         SKENHacchuu,
@@ -451,27 +451,27 @@ namespace EDINouhinJouhonTouroku {
                         SizeName,
                         SKENNouhinSuu,
                         ErrorText};
-                rowEDINouhinJouhonTourokuRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowEDINouhinJouhonTourokuRow);
-                return rowEDINouhinJouhonTourokuRow;
+                rowEDINouhinJouhouTourokuRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEDINouhinJouhouTourokuRow);
+                return rowEDINouhinJouhouTourokuRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                EDINouhinJouhonTourokuDataTable cln = ((EDINouhinJouhonTourokuDataTable)(base.Clone()));
+                EDINouhinJouhouTourokuDataTable cln = ((EDINouhinJouhouTourokuDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new EDINouhinJouhonTourokuDataTable();
+                return new EDINouhinJouhouTourokuDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
                 this.columnSKENNouhinshoNO = base.Columns["SKENNouhinshoNO"];
                 this.columnSKENHacchuu = base.Columns["SKENHacchuu"];
@@ -485,7 +485,7 @@ namespace EDINouhinJouhonTouroku {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
                 this.columnSKENNouhinshoNO = new global::System.Data.DataColumn("SKENNouhinshoNO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSKENNouhinshoNO);
@@ -505,72 +505,70 @@ namespace EDINouhinJouhonTouroku {
                 base.Columns.Add(this.columnSKENNouhinSuu);
                 this.columnErrorText = new global::System.Data.DataColumn("ErrorText", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnErrorText);
-                this.ExtendedProperties.Add("Generator_TablePropName", "_EDINouhinJouhonTouroku");
-                this.ExtendedProperties.Add("Generator_UserTableName", "EDINouhinJouhonTouroku");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuRow NewEDINouhinJouhonTourokuRow() {
-                return ((EDINouhinJouhonTourokuRow)(this.NewRow()));
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuRow NewEDINouhinJouhouTourokuRow() {
+                return ((EDINouhinJouhouTourokuRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new EDINouhinJouhonTourokuRow(builder);
+                return new EDINouhinJouhouTourokuRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(EDINouhinJouhonTourokuRow);
+                return typeof(EDINouhinJouhouTourokuRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.EDINouhinJouhonTourokuRowChanged != null)) {
-                    this.EDINouhinJouhonTourokuRowChanged(this, new EDINouhinJouhonTourokuRowChangeEvent(((EDINouhinJouhonTourokuRow)(e.Row)), e.Action));
+                if ((this.EDINouhinJouhouTourokuRowChanged != null)) {
+                    this.EDINouhinJouhouTourokuRowChanged(this, new EDINouhinJouhouTourokuRowChangeEvent(((EDINouhinJouhouTourokuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.EDINouhinJouhonTourokuRowChanging != null)) {
-                    this.EDINouhinJouhonTourokuRowChanging(this, new EDINouhinJouhonTourokuRowChangeEvent(((EDINouhinJouhonTourokuRow)(e.Row)), e.Action));
+                if ((this.EDINouhinJouhouTourokuRowChanging != null)) {
+                    this.EDINouhinJouhouTourokuRowChanging(this, new EDINouhinJouhouTourokuRowChangeEvent(((EDINouhinJouhouTourokuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.EDINouhinJouhonTourokuRowDeleted != null)) {
-                    this.EDINouhinJouhonTourokuRowDeleted(this, new EDINouhinJouhonTourokuRowChangeEvent(((EDINouhinJouhonTourokuRow)(e.Row)), e.Action));
+                if ((this.EDINouhinJouhouTourokuRowDeleted != null)) {
+                    this.EDINouhinJouhouTourokuRowDeleted(this, new EDINouhinJouhouTourokuRowChangeEvent(((EDINouhinJouhouTourokuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.EDINouhinJouhonTourokuRowDeleting != null)) {
-                    this.EDINouhinJouhonTourokuRowDeleting(this, new EDINouhinJouhonTourokuRowChangeEvent(((EDINouhinJouhonTourokuRow)(e.Row)), e.Action));
+                if ((this.EDINouhinJouhouTourokuRowDeleting != null)) {
+                    this.EDINouhinJouhouTourokuRowDeleting(this, new EDINouhinJouhouTourokuRowChangeEvent(((EDINouhinJouhouTourokuRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveEDINouhinJouhonTourokuRow(EDINouhinJouhonTourokuRow row) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void RemoveEDINouhinJouhouTourokuRow(EDINouhinJouhouTourokuRow row) {
                 this.Rows.Remove(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
@@ -592,7 +590,7 @@ namespace EDINouhinJouhonTouroku {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "EDINouhinJouhonTourokuDataTable";
+                attribute2.FixedValue = "EDINouhinJouhouTourokuDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -636,300 +634,300 @@ namespace EDINouhinJouhonTouroku {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class EDINouhinJouhonTourokuRow : global::System.Data.DataRow {
+        public partial class EDINouhinJouhouTourokuRow : global::System.Data.DataRow {
             
-            private EDINouhinJouhonTourokuDataTable tableEDINouhinJouhonTouroku;
+            private EDINouhinJouhouTourokuDataTable tableEDINouhinJouhouTouroku;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal EDINouhinJouhonTourokuRow(global::System.Data.DataRowBuilder rb) : 
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            internal EDINouhinJouhouTourokuRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableEDINouhinJouhonTouroku = ((EDINouhinJouhonTourokuDataTable)(this.Table));
+                this.tableEDINouhinJouhouTouroku = ((EDINouhinJouhouTourokuDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKENNouhinshoNO {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKENNouhinshoNOColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENNouhinshoNOColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinshoNO\' in table \'EDINouhinJouhonTouroku\' is DBNul" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinshoNO\' in table \'EDINouhinJouhouTouroku\' is DBNul" +
                                 "l.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKENNouhinshoNOColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENNouhinshoNOColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKENHacchuu {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKENHacchuuColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENHacchuu\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENHacchuu\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKENHacchuuColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKENNouhinHinban {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKENNouhinHinbanColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENNouhinHinbanColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinHinban\' in table \'EDINouhinJouhonTouroku\' is DBNu" +
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinHinban\' in table \'EDINouhinJouhouTouroku\' is DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKENNouhinHinbanColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENNouhinHinbanColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKENJanCD {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKENJanCDColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENJanCDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENJanCD\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENJanCD\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKENJanCDColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENJanCDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKUName {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKUNameColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKUNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKUName\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKUName\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKUNameColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKUNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ColorName {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.ColorNameColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.ColorNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ColorName\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ColorName\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.ColorNameColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.ColorNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SizeName {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SizeNameColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SizeNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SizeName\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'SizeName\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SizeNameColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SizeNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string SKENNouhinSuu {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.SKENNouhinSuuColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.SKENNouhinSuuColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinSuu\' in table \'EDINouhinJouhonTouroku\' is DBNull." +
+                        throw new global::System.Data.StrongTypingException("The value for column \'SKENNouhinSuu\' in table \'EDINouhinJouhouTouroku\' is DBNull." +
                                 "", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.SKENNouhinSuuColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.SKENNouhinSuuColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string ErrorText {
                 get {
                     try {
-                        return ((string)(this[this.tableEDINouhinJouhonTouroku.ErrorTextColumn]));
+                        return ((string)(this[this.tableEDINouhinJouhouTouroku.ErrorTextColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ErrorText\' in table \'EDINouhinJouhonTouroku\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ErrorText\' in table \'EDINouhinJouhouTouroku\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableEDINouhinJouhonTouroku.ErrorTextColumn] = value;
+                    this[this.tableEDINouhinJouhouTouroku.ErrorTextColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKENNouhinshoNONull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKENNouhinshoNOColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENNouhinshoNOColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKENNouhinshoNONull() {
-                this[this.tableEDINouhinJouhonTouroku.SKENNouhinshoNOColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKENNouhinshoNOColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKENHacchuuNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKENHacchuuColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKENHacchuuNull() {
-                this[this.tableEDINouhinJouhonTouroku.SKENHacchuuColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKENHacchuuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKENNouhinHinbanNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKENNouhinHinbanColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENNouhinHinbanColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKENNouhinHinbanNull() {
-                this[this.tableEDINouhinJouhonTouroku.SKENNouhinHinbanColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKENNouhinHinbanColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKENJanCDNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKENJanCDColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENJanCDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKENJanCDNull() {
-                this[this.tableEDINouhinJouhonTouroku.SKENJanCDColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKENJanCDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKUNameNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKUNameColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKUNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKUNameNull() {
-                this[this.tableEDINouhinJouhonTouroku.SKUNameColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKUNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsColorNameNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.ColorNameColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.ColorNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetColorNameNull() {
-                this[this.tableEDINouhinJouhonTouroku.ColorNameColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.ColorNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSizeNameNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SizeNameColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SizeNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSizeNameNull() {
-                this[this.tableEDINouhinJouhonTouroku.SizeNameColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SizeNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSKENNouhinSuuNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.SKENNouhinSuuColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.SKENNouhinSuuColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSKENNouhinSuuNull() {
-                this[this.tableEDINouhinJouhonTouroku.SKENNouhinSuuColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.SKENNouhinSuuColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsErrorTextNull() {
-                return this.IsNull(this.tableEDINouhinJouhonTouroku.ErrorTextColumn);
+                return this.IsNull(this.tableEDINouhinJouhouTouroku.ErrorTextColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetErrorTextNull() {
-                this[this.tableEDINouhinJouhonTouroku.ErrorTextColumn] = global::System.Convert.DBNull;
+                this[this.tableEDINouhinJouhouTouroku.ErrorTextColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Row event argument class
         ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class EDINouhinJouhonTourokuRowChangeEvent : global::System.EventArgs {
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        public class EDINouhinJouhouTourokuRowChangeEvent : global::System.EventArgs {
             
-            private EDINouhinJouhonTourokuRow eventRow;
+            private EDINouhinJouhouTourokuRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuRowChangeEvent(EDINouhinJouhonTourokuRow row, global::System.Data.DataRowAction action) {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuRowChangeEvent(EDINouhinJouhouTourokuRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public EDINouhinJouhonTourokuRow Row {
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public EDINouhinJouhouTourokuRow Row {
                 get {
                     return this.eventRow;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataRowAction Action {
                 get {
                     return this.eventAction;

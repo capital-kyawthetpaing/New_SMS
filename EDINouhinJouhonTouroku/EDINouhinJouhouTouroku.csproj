@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EDINouhinJouhonTouroku</RootNamespace>
-    <AssemblyName>EDINouhinJouhonTouroku</AssemblyName>
+    <RootNamespace>EDINouhinJouhouTouroku</RootNamespace>
+    <AssemblyName>EDINouhinJouhouTouroku</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -84,10 +84,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EDINouhinJouhonTouroku_Report.cs">
+    <Compile Include="EDINouhinJouhouTouroku_Report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EDINouhinJouhonTouroku_Report.rpt</DependentUpon>
+      <DependentUpon>EDINouhinJouhouTouroku_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -95,9 +95,9 @@
     <EmbeddedResource Include="EDINouhinJouhouTouroku.resx">
       <DependentUpon>EDINouhinJouhouTouroku.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EDINouhinJouhonTouroku_Report.rpt">
+    <EmbeddedResource Include="EDINouhinJouhouTouroku_Report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>EDINouhinJouhonTouroku_Report.cs</LastGenOutput>
+      <LastGenOutput>EDINouhinJouhouTouroku_Report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

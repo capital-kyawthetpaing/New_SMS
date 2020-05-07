@@ -279,7 +279,8 @@ namespace EDINouhinJouhonTouroku
 
                 //①保存した.xsdはプロジェクトに追加しておきます。
                 DialogResult ret;
-                EDINouhinJouhonTouroku_Report Report = new EDINouhinJouhonTouroku_Report();
+                EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku_Report();
+                
 
                 //DataTableのDetailOnが１かどうかで詳細セクションを印字するかどうかの設定を
                 //している（セクションエキスパート）
