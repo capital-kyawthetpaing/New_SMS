@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>EDINouhinJouhonTouroku</RootNamespace>
-    <AssemblyName>EDINouhinJouhonTouroku</AssemblyName>
+    <RootNamespace>EDINouhinJouhouTouroku</RootNamespace>
+    <AssemblyName>EDINouhinJouhouTouroku</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -73,31 +73,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EDINouhinJouhonTouroku.cs">
+    <Compile Include="EDINouhinJouhouTouroku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EDINouhinJouhonTouroku.Designer.cs">
-      <DependentUpon>EDINouhinJouhonTouroku.cs</DependentUpon>
+    <Compile Include="EDINouhinJouhouTouroku.Designer.cs">
+      <DependentUpon>EDINouhinJouhouTouroku.cs</DependentUpon>
     </Compile>
     <Compile Include="DataTableEDINouhinJouhonTouroku.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataTableEDINouhinJouhonTouroku.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EDINouhinJouhonTouroku_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EDINouhinJouhonTouroku_Report.rpt</DependentUpon>
+    <Compile Include="EDINouhinJouhouTouroku_Report.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="EDINouhinJouhonTouroku.resx">
-      <DependentUpon>EDINouhinJouhonTouroku.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EDINouhinJouhonTouroku_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>EDINouhinJouhonTouroku_Report.cs</LastGenOutput>
+    <EmbeddedResource Include="EDINouhinJouhouTouroku.resx">
+      <DependentUpon>EDINouhinJouhouTouroku.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
