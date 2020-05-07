@@ -1367,10 +1367,10 @@ namespace Base.Client
         {
             try
             {
-                Button btn = (Button)sender;
+                Button btn = (Button)sender;//新規(F2) 変更(F3) 削除(F4) 照会(F5) ｷｬﾝｾﾙ(F6)
                 if (!string.IsNullOrWhiteSpace(btn.Text))
                 {
-                    if (btn.Text == "終了(F1)")
+                    if (btn.Text == "終了(F1)" || btn.Text == "新規(F2)" || btn.Text ==  "変更(F3)"|| btn.Text == "削除(F4)"|| btn.Text == "照会(F5)"|| btn.Text == "ｷｬﾝｾﾙ(F6)")
                     {
                         ButtonFunction(btn.Tag.ToString());
                     }
