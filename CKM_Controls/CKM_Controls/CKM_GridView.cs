@@ -57,9 +57,35 @@ namespace CKM_Controls
             }
             return true;
         }
+
+        protected void Check_SubFormGrid(Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                try
+                {
+                    Control ctrl = this;
+                    do
+                    {
+                        ctrl = ctrl.Parent;
+                    } while (!(ctrl is Form));
+                    if (ctrl.GetType().BaseType.Name.Contains("FrmSubForm"))
+                    {
+                        Button btn12 = ctrl.Controls.Find("BtnF12", true).FirstOrDefault() as Button;
+                        btn12.PerformClick();
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+        }
         protected override bool ProcessCmdKey(ref System.Windows.Forms.Message msg, Keys keyData)
 
         {
+            Check_SubFormGrid(keyData);
             CheckDuplicate();
             MasterTouroku_YuubinBangou_BL YuubinBangouBL = new MasterTouroku_YuubinBangou_BL();  DataTable dtDisplay = DataSource as DataTable; var dgvYuubinBangou = this;
             if (IsSkipped && ( keyData == Keys.Enter || keyData == Keys.Up || keyData == Keys.Down))
