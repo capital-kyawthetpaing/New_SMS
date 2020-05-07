@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="StoreProcedure\ALL_Hikiate.sql" />
     <Content Include="StoreProcedure\Amazon_Allow_Check.sql" />
     <Content Include="StoreProcedure\Amazon_API_InsertOrderDetails.sql" />
     <Content Include="StoreProcedure\Amazon_API_Insert_NextToken.sql" />
@@ -428,6 +429,7 @@
     <Content Include="StoreProcedure\PRC_GetsujiShiireKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiZaikoKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_HacchuuNyuuryoku.sql" />
+    <Content Include="StoreProcedure\PRC_HikiateHenkouNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_KaitouNoukiTouroku.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HanbaiTanka.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HanbaiTanka_SKU.sql" />
