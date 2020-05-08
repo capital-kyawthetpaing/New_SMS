@@ -32,7 +32,8 @@ namespace DL
                 { "@ID", new ValuePair { value1 = SqlDbType.Int, value2 = mme.ID } },
                 { "@Key", new ValuePair { value1 = SqlDbType.VarChar, value2 = mme.Key } },
                 { "@Num1", new ValuePair { value1 = SqlDbType.Int, value2 = mme.Num1 } },
-                { "@UpdateOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mme.UpdateOperator } },
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mme.UpdateOperator } },
+                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = mme.PC } },
             };
 
             UseTransaction = true;
@@ -49,7 +50,7 @@ namespace DL
 
             };
 
-            return SelectData(dic, sp);
+            return SelectData(dic, sp); 
         }
 
         public bool SKEN_InsertData(D_SKENDelivery_Entity dskend)

@@ -14,7 +14,7 @@ using CrystalDecisions.Shared;
 
 namespace EDINouhinJouhonTouroku
 {
-    public partial class FrmEDINouhinJouhonTouroku : FrmMainForm
+    public partial class FrmEDINouhinJouhouTouroku : FrmMainForm
     {
         M_MultiPorpose_Entity mmpe;
         EDINouhinJouhon_Batch_BL ediNHJ_bl;
@@ -35,14 +35,14 @@ namespace EDINouhinJouhonTouroku
 
             COUNT
         }
-        public FrmEDINouhinJouhonTouroku()
+        public FrmEDINouhinJouhouTouroku()
         {
             InitializeComponent();
         }
 
-        private void FrmEDINouhinJouhonTouroku_Load(object sender, EventArgs e)
+        private void FrmEDINouhinJouhouTouroku_Load(object sender, EventArgs e)
         {
-            InProgramID = "EDINouhinJouhonTouroku";
+            InProgramID = "EDINouhinJouhouTouroku";
 
             //SetFunctionLabel(EProMode.MENTE);
             this.SetFunctionLabel(EProMode.SHOW);
@@ -279,7 +279,8 @@ namespace EDINouhinJouhonTouroku
 
                 //①保存した.xsdはプロジェクトに追加しておきます。
                 DialogResult ret;
-                EDINouhinJouhonTouroku_Report Report = new EDINouhinJouhonTouroku_Report();
+                EDINouhinJouhouTouroku_Report Report = new EDINouhinJouhouTouroku_Report();
+                
 
                 //DataTableのDetailOnが１かどうかで詳細セクションを印字するかどうかの設定を
                 //している（セクションエキスパート）
@@ -523,6 +524,6 @@ namespace EDINouhinJouhonTouroku
             }
         }
 
-
+       
     }
 }

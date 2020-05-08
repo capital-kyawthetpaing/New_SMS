@@ -3690,6 +3690,7 @@ namespace ZaikoIdouNyuuryoku
                     default:
                         {
                             mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Empty;
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                             break;
                         }
                 }

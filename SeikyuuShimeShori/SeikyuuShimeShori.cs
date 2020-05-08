@@ -62,7 +62,8 @@ namespace SeikyuuShimeShori
                 base.StartProgram();
 
                 ssbl = new SeikyuuShimeShori_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = bbl.GetDate();
+                CboStoreCD.Bind(ymd);
 
                 BindCombo("KBN", "Name");
 
@@ -104,9 +105,9 @@ namespace SeikyuuShimeShori
             datarow[value] = "請求確定";
             dt.Rows.Add(datarow);
 
-            DataRow dr = dt.NewRow();
-            dr[key] = "-1";
-            dt.Rows.InsertAt(dr, 0);
+            //DataRow dr = dt.NewRow();
+            //dr[key] = "-1";
+            //dt.Rows.InsertAt(dr, 0);
             cboSyori.DataSource = dt;
             cboSyori.DisplayMember = value;
             cboSyori.ValueMember = key;
@@ -220,6 +221,14 @@ namespace SeikyuuShimeShori
             bool ret;
             switch (index)
             {
+                case (int)EIndex.Syori:
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
+                    {
+                        return false;
+                    }
+                    break;
+
                 case (int)EIndex.SeqSDT:
                     //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
@@ -328,10 +337,9 @@ namespace SeikyuuShimeShori
                 //    break;
 
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedValue.Equals("-1"))
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        bbl.ShowMessage("E102");
-                        CboStoreCD.Focus();
                         return false;
                     }
                     else

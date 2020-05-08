@@ -1,6 +1,6 @@
 ﻿namespace EDINouhinJouhonTouroku
 {
-    partial class FrmEDINouhinJouhonTouroku
+    partial class FrmEDINouhinJouhouTouroku
     {
         /// <summary>
         /// Required designer variable.
@@ -507,7 +507,7 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FrmEDINouhinJouhonTouroku
+            // FrmEDINouhinJouhouTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -516,10 +516,10 @@
             this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
-            this.Name = "FrmEDINouhinJouhonTouroku";
+            this.Name = "FrmEDINouhinJouhouTouroku";
             this.PanelHeaderHeight = 50;
-            this.Text = "EDINouhinJouhonTouroku";
-            this.Load += new System.EventHandler(this.FrmEDINouhinJouhonTouroku_Load);
+            this.Text = "EDINouhinJouhouTouroku";
+            this.Load += new System.EventHandler(this.FrmEDINouhinJouhouTouroku_Load);
             this.Controls.SetChildIndex(this.panelDetail, 0);
             this.panelDetail.ResumeLayout(false);
             this.panelDetail.PerformLayout();

@@ -45,9 +45,8 @@ namespace MitsumoriNyuuryoku
             PaymentTerms,
             DeliveryPlace,
             ValidityPeriod,
-            RemarksInStore,
-            RemarksOutStore
-
+            RemarksOutStore,
+            RemarksInStore
 
         }
 
@@ -72,6 +71,7 @@ namespace MitsumoriNyuuryoku
 
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
+        private string InOperatorName = "";
         private string mOldMitsumoriNo = "";    //排他処理のため使用
         private string mOldMitsumoriDate = "";
         private string mOldCustomerCD = "";
@@ -247,6 +247,7 @@ namespace MitsumoriNyuuryoku
 
             // 1行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 0].CellCtl = IMT_GYONO_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 0].CellCtl = ckM_TextBox9;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SKUCD, 0].CellCtl = IMT_ITMCD_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.JanCD, 0].CellCtl = SC_ITEM_0;// IMT_JANCD_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SizeName, 0].CellCtl = IMT_KAIDT_0;
@@ -272,6 +273,7 @@ namespace MitsumoriNyuuryoku
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 1].CellCtl = ckM_TextBox10;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SKUCD, 1].CellCtl = IMT_ITMCD_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.JanCD, 1].CellCtl = SC_ITEM_1;//IMT_JANCD_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SizeName, 1].CellCtl = IMT_KAIDT_1;
@@ -297,6 +299,7 @@ namespace MitsumoriNyuuryoku
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 2].CellCtl = ckM_TextBox11;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SKUCD, 2].CellCtl = IMT_ITMCD_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.JanCD, 2].CellCtl = SC_ITEM_2;//IMT_JANCD_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SizeName, 2].CellCtl = IMT_KAIDT_2;
@@ -322,6 +325,7 @@ namespace MitsumoriNyuuryoku
 
             // 4行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 3].CellCtl = ckM_TextBox12;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SKUCD, 3].CellCtl = IMT_ITMCD_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.JanCD, 3].CellCtl = SC_ITEM_3;// IMT_JANCD_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SizeName, 3].CellCtl = IMT_KAIDT_3;
@@ -347,6 +351,7 @@ namespace MitsumoriNyuuryoku
 
             // 5行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 4].CellCtl = ckM_TextBox8;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SKUCD, 4].CellCtl = IMT_ITMCD_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.JanCD, 4].CellCtl = SC_ITEM_4;//IMT_JANCD_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.SizeName, 4].CellCtl = IMT_KAIDT_4;
@@ -476,6 +481,12 @@ namespace MitsumoriNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridMitsumori.ColNO.GYONO:
+                            case (int)ClsGridMitsumori.ColNO.Site:
+                            case (int)ClsGridMitsumori.ColNO.Zaiko:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridMitsumori.ColNO.SKUCD:
                             case (int)ClsGridMitsumori.ColNO.SetKBN:
                             case (int)ClsGridMitsumori.ColNO.MitsumoriHontaiGaku:
@@ -486,7 +497,7 @@ namespace MitsumoriNyuuryoku
                             case (int)ClsGridMitsumori.ColNO.CostGaku:
                             case (int)ClsGridMitsumori.ColNO.ProfitGaku:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -499,16 +510,16 @@ namespace MitsumoriNyuuryoku
                         mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.MaxGyoColor;
                     }
 
-                    //// クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
-                    //switch (w_Col)
-                    //{
-                    //    case object _ when ClsGridMitsumori.ColNO.DELCK:
-                    //        {
-                    //            // 削除チェック
-                    //            S_Set_Cell_Selectable(w_Col, w_Row, false);
-                    //            break;
-                    //        }
-                    //}
+                    // クリック以外ではフォーカス入らない列の設定(Cell_Selectable)
+                    switch (w_Col)
+                    {
+                        case (int)ClsGridMitsumori.ColNO.Site:
+                            case(int)ClsGridMitsumori.ColNO.Zaiko:
+                            {
+                                S_Set_Cell_Selectable(w_Col, w_Row, false);
+                                break;
+                            }
+                    }
                 }
             }
 
@@ -702,6 +713,7 @@ namespace MitsumoriNyuuryoku
                                     }
                                 }
                             }
+                            mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                         }
                         else
                         {
@@ -797,6 +809,7 @@ namespace MitsumoriNyuuryoku
                                             break;
                                     }
                                 }
+                                mGrid.S_DispFromArray(0, ref Vsb_Mei_0);
                             }
                         }
                         else
@@ -907,11 +920,13 @@ namespace MitsumoriNyuuryoku
                         {
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
                             mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                         }
                         else
                         {
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                             mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
+                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                         }
                         break;
                     case (int)ClsGridMitsumori.ColNO.SKUName:
@@ -920,11 +935,13 @@ namespace MitsumoriNyuuryoku
                         {
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                             mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
+                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                         }
                         else
                         {
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
                             mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                         }
                         break;
                 }
@@ -1162,27 +1179,9 @@ namespace MitsumoriNyuuryoku
                     CboStoreCD.SelectedValue = mse.StoreCD;
                     ScStaff.LabelText = mse.StaffName;
                 }
+                InOperatorName = mse.StaffName;
+                StoreCD = mse.StoreCD;  //初期値を退避
 
-                //[M_Store]
-                M_Store_Entity mse2 = new M_Store_Entity
-                {
-                    StoreCD = mse.StoreCD,
-                    ChangeDate = ymd
-                };
-                Store_BL sbl = new Store_BL();
-                DataTable dt = sbl.M_Store_Select(mse2);
-                if (dt.Rows.Count > 0)
-                {
-                    detailControls[(int)EIndex.DeliveryDate].Text = dt.Rows[0]["DeliveryDate"].ToString();
-                    detailControls[(int)EIndex.PaymentTerms].Text = dt.Rows[0]["PaymentTerms"].ToString();
-                    detailControls[(int)EIndex.DeliveryPlace].Text = dt.Rows[0]["DeliveryPlace"].ToString();
-                    detailControls[(int)EIndex.ValidityPeriod].Text = dt.Rows[0]["ValidityPeriod"].ToString();
-                }
-                else
-                {
-                    bbl.ShowMessage("E133");
-                    EndSec();
-                }
             }
             catch (Exception ex)
             {
@@ -1412,47 +1411,47 @@ namespace MitsumoriNyuuryoku
                     {
                         CboStoreCD.SelectedValue = row["StoreCD"];
 
-                    //明細にデータをセット
-                    detailControls[(int)EIndex.MitsumoriDate].Text = row["MitsumoriDate"].ToString();
-                    mOldMitsumoriDate = detailControls[(int)EIndex.MitsumoriDate].Text;
-                    CboJuchuuChanceKBN.SelectedValue = row["JuchuuChanceKBN"];
-                    detailControls[(int)EIndex.StaffCD].Text = row["StaffCD"].ToString();
-                    CheckDetail((int)EIndex.StaffCD);
+                        //明細にデータをセット
+                        detailControls[(int)EIndex.MitsumoriDate].Text = row["MitsumoriDate"].ToString();
+                        mOldMitsumoriDate = detailControls[(int)EIndex.MitsumoriDate].Text;
+                        CboJuchuuChanceKBN.SelectedValue = row["JuchuuChanceKBN"];
+                        detailControls[(int)EIndex.StaffCD].Text = row["StaffCD"].ToString();
+                        CheckDetail((int)EIndex.StaffCD);
 
-                    detailControls[(int)EIndex.CustomerCD].Text = row["CustomerCD"].ToString();
-                    CheckDetail((int)EIndex.CustomerCD);
+                        detailControls[(int)EIndex.CustomerCD].Text = row["CustomerCD"].ToString();
+                        CheckDetail((int)EIndex.CustomerCD);
 
-                    if (detailControls[(int)EIndex.CustomerName].Enabled)
-                    {
-                        detailControls[(int)EIndex.CustomerName].Text = row["CustomerName"].ToString();
-                        detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
-                        addInfo.ade.ZipCD1 = row["ZipCD1"].ToString();
-                        addInfo.ade.ZipCD2 = row["ZipCD2"].ToString();
-                        addInfo.ade.Address1 = row["Address1"].ToString();
-                        addInfo.ade.Address2 = row["Address2"].ToString();
-                        addInfo.ade.Tel11 = row["Tel11"].ToString();
-                        addInfo.ade.Tel12 = row["Tel12"].ToString();
-                        addInfo.ade.Tel13 = row["Tel13"].ToString();
-                    }
+                        if (detailControls[(int)EIndex.CustomerName].Enabled)
+                        {
+                            detailControls[(int)EIndex.CustomerName].Text = row["CustomerName"].ToString();
+                            detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
+                            addInfo.ade.ZipCD1 = row["ZipCD1"].ToString();
+                            addInfo.ade.ZipCD2 = row["ZipCD2"].ToString();
+                            addInfo.ade.Address1 = row["Address1"].ToString();
+                            addInfo.ade.Address2 = row["Address2"].ToString();
+                            addInfo.ade.Tel11 = row["Tel11"].ToString();
+                            addInfo.ade.Tel12 = row["Tel12"].ToString();
+                            addInfo.ade.Tel13 = row["Tel13"].ToString();
+                        }
 
-                    if (row["AliasKBN"].ToString() == "1")
-                        radioButton1.Checked = true;
-                    else
-                        radioButton2.Checked = true;
-               
-                    
-                    detailControls[(int)EIndex.MitsumoriName].Text = row["MitsumoriName"].ToString();
-                    detailControls[(int)EIndex.DeliveryDate].Text = row["DeliveryDate"].ToString();
-                    detailControls[(int)EIndex.PaymentTerms].Text = row["PaymentTerms"].ToString();
-                    detailControls[(int)EIndex.DeliveryPlace].Text = row["DeliveryPlace"].ToString();
-                    detailControls[(int)EIndex.ValidityPeriod].Text = row["ValidityPeriod"].ToString();
-                    detailControls[(int)EIndex.RemarksInStore].Text = row["RemarksInStore"].ToString();
-                    detailControls[(int)EIndex.RemarksOutStore].Text = row["RemarksOutStore"].ToString();
+                        if (row["AliasKBN"].ToString() == "1")
+                            radioButton1.Checked = true;
+                        else
+                            radioButton2.Checked = true;
 
-                    lblKin1.Text = bbl.Z_SetStr(row["SUM_MitsumoriGaku"]);
-                    lblKin2.Text = bbl.Z_SetStr(row["SUM_MitsumoriHontaiGaku"]); ;
-                    lblKin3.Text = bbl.Z_SetStr(row["SUM_CostGaku"]); ;
-                    lblKin4.Text = bbl.Z_SetStr(row["SUM_ProfitGaku"]); ;
+
+                        detailControls[(int)EIndex.MitsumoriName].Text = row["MitsumoriName"].ToString();
+                        detailControls[(int)EIndex.DeliveryDate].Text = row["DeliveryDate"].ToString();
+                        detailControls[(int)EIndex.PaymentTerms].Text = row["PaymentTerms"].ToString();
+                        detailControls[(int)EIndex.DeliveryPlace].Text = row["DeliveryPlace"].ToString();
+                        detailControls[(int)EIndex.ValidityPeriod].Text = row["ValidityPeriod"].ToString();
+                        detailControls[(int)EIndex.RemarksOutStore].Text = row["RemarksOutStore"].ToString();
+                        detailControls[(int)EIndex.RemarksInStore].Text = row["RemarksInStore"].ToString();
+
+                        lblKin1.Text = bbl.Z_SetStr(row["SUM_MitsumoriGaku"]);
+                        lblKin2.Text = bbl.Z_SetStr(row["SUM_MitsumoriHontaiGaku"]); ;
+                        lblKin3.Text = bbl.Z_SetStr(row["SUM_CostGaku"]); ;
+                        lblKin4.Text = bbl.Z_SetStr(row["SUM_ProfitGaku"]); ;
 
                         ChkPrint.Checked = true;
 
@@ -1462,7 +1461,7 @@ namespace MitsumoriNyuuryoku
                     }
 
                     mGrid.g_DArray[i].JanCD = row["JanCD"].ToString();
-                    mGrid.g_DArray[i].OldJanCD = mGrid.g_DArray[i].JanCD;
+                    //mGrid.g_DArray[i].OldJanCD = mGrid.g_DArray[i].JanCD; del 4 / 24
                     mGrid.g_DArray[i].AdminNO = row["SKUNO"].ToString();
                     mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
                     mGrid.g_DArray[i].MitsumoriSuu = bbl.Z_SetStr(row["MitsumoriSuu"]);   //単価算出のため先にセットしておく    
@@ -1509,8 +1508,7 @@ namespace MitsumoriNyuuryoku
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                 S_BodySeigyo(1, 0);
 
-                //明細の先頭項目へ
-                mGrid.F_MoveFocus((int)ClsGridBase.Gen_MK_FocusMove.MvSet, (int)ClsGridBase.Gen_MK_FocusMove.MvNxt, this.ActiveControl, -1, -1, this.ActiveControl, Vsb_Mei_0, Vsb_Mei_0.Value, (int)ClsGridMitsumori.ColNO.JanCD);
+                detailControls[(int)EIndex.MitsumoriDate].Focus();
             }
             else if(OperationMode == EOperationMode.INSERT)
             {
@@ -1727,8 +1725,9 @@ namespace MitsumoriNyuuryoku
                         ChangeDate = detailControls[(int)EIndex.MitsumoriDate].Text
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce, 1);
-                   
+                    //ret = sbl.M_Customer_Select(mce, 1);
+                    ret = sbl.M_Customer_Select(mce);
+
                     if (ret)
                     {
 
@@ -1744,6 +1743,8 @@ namespace MitsumoriNyuuryoku
                             addInfo.ade.Tel11 = mce.Tel11;
                             addInfo.ade.Tel12 = mce.Tel12;
                             addInfo.ade.Tel13 = mce.Tel13;
+
+                            detailControls[index + 1].Enabled = false;
 
                             if (mce.VariousFLG == "1")
                             {
@@ -1834,7 +1835,7 @@ namespace MitsumoriNyuuryoku
 
                     if (!changeYmd)
                     {
-                        if (chkAll && mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD)
+                        if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD) //chkAll &&  change
                             return true;
                     }
 
@@ -1849,7 +1850,7 @@ namespace MitsumoriNyuuryoku
                         ChangeDate = ymd
                     };
 
-                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD)
+                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD || string.IsNullOrWhiteSpace(mGrid.g_DArray[row].OldJanCD))
                     {
                         mse.SKUCD = mGrid.g_DArray[row].SKUCD;
                         mse.AdminNO = mGrid.g_DArray[row].AdminNO;
@@ -2333,6 +2334,11 @@ namespace MitsumoriNyuuryoku
             switch (mode)
             {
                 case EOperationMode.INSERT:
+                    ScStaff.TxtCode.Text = InOperatorCD;
+                    ScStaff.LabelText = InOperatorName;
+                    CboStoreCD.SelectedValue = StoreCD;
+                    SetInitStoreInfo();
+
                     detailControls[0].Focus();
                     break;
 
@@ -2344,6 +2350,29 @@ namespace MitsumoriNyuuryoku
 
             }
 
+        }
+        private void SetInitStoreInfo()
+        {
+            //[M_Store]
+            M_Store_Entity mse2 = new M_Store_Entity
+            {
+                StoreCD = StoreCD,
+                ChangeDate = bbl.GetDate()
+            };
+            Store_BL sbl = new Store_BL();
+            DataTable dt = sbl.M_Store_Select(mse2);
+            if (dt.Rows.Count > 0)
+            {
+                detailControls[(int)EIndex.DeliveryDate].Text = dt.Rows[0]["DeliveryDate"].ToString();
+                detailControls[(int)EIndex.PaymentTerms].Text = dt.Rows[0]["PaymentTerms"].ToString();
+                detailControls[(int)EIndex.DeliveryPlace].Text = dt.Rows[0]["DeliveryPlace"].ToString();
+                detailControls[(int)EIndex.ValidityPeriod].Text = dt.Rows[0]["ValidityPeriod"].ToString();
+            }
+            else
+            {
+                bbl.ShowMessage("E133");
+                EndSec();
+            }
         }
 
         /// <summary>
@@ -2409,6 +2438,8 @@ namespace MitsumoriNyuuryoku
             TxtRemark1.Text = "";
             TxtRemark2.Text = "";
             ChkPrint.Checked = false;
+
+
         }
 
         /// <summary>
@@ -2445,10 +2476,6 @@ namespace MitsumoriNyuuryoku
                                 ctl.Enabled = Kbn == 0 ? true : false;
                             }
                             ScMitsumoriNO.BtnSearch.Enabled = Kbn == 0 ? true : false;
-
-                            for (int index = 0; index < searchButtons.Length; index++)
-                                searchButtons[index].Enabled = Kbn == 0 ? true : false;
-
                             break;
                         }
 
@@ -3021,6 +3048,12 @@ namespace MitsumoriNyuuryoku
                                     if (ret)
                                     {
                                     }
+                                    
+                                    //販売単価=Function_単価取得.out税込単価		
+                                    mGrid.g_DArray[w_Row].MitsumoriUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+
+                                    //原価単価=Function_単価取得.out原価単価	
+                                    mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
 
                                     //税抜販売額=Function_消費税計算.out金額１
                                     mGrid.g_DArray[w_Row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(bbl.Z_Set(fue.ZeikomiTanka) * wSuu, mGrid.g_DArray[w_Row].TaxRateFLG, ymd));
@@ -3064,25 +3097,24 @@ namespace MitsumoriNyuuryoku
                                 //税込販売額←Form.Detail.販売単価×Form.Detail.見積数
                                 mGrid.g_DArray[w_Row].MitsumoriGaku = string.Format("{0:#,##0}", wTanka * wSuu);
 
-                                
-                                //if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
-                                //{
-                                //    //Function_単価取得.out消費税額×Form.Detail.見積数
-                                //    //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.見積数
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(fue.Zei) * wSuu;
-                                //    mGrid.g_DArray[w_Row].KeigenTax = 0;
-                                //}
-                                //else if (mGrid.g_DArray[w_Row].TaxRateFLG == 2)
-                                //{
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
-                                //    //軽減税額←TaxRateFLG＝2の時のFunction_単価取得.out消費税額×Form.Detail.見積数
-                                //    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(fue.Zei) * wSuu;
-                                //}
-                                //else
-                                //{
-                                //    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
-                                //    mGrid.g_DArray[w_Row].KeigenTax = 0;
-                                //}
+                                if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
+                                {
+                                    //Function_単価取得.out消費税額×Form.Detail.見積数
+                                    //通常税額←TaxRateFLG＝1の時
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriHontaiGaku);
+                                    mGrid.g_DArray[w_Row].KeigenTax = 0;
+                                }
+                                else if (mGrid.g_DArray[w_Row].TaxRateFLG == 2)
+                                {
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
+                                    //軽減税額←TaxRateFLG＝2の時
+                                    mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriHontaiGaku);
+                                }
+                                else
+                                {
+                                    mGrid.g_DArray[w_Row].MitsumoriTax = 0;
+                                    mGrid.g_DArray[w_Row].KeigenTax = 0;
+                                }
                                 break;
 
                             case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価

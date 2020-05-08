@@ -502,6 +502,8 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.Space1:
                             case (int)ClsGridJuchuu.ColNO.Space2:
                             case (int)ClsGridJuchuu.ColNO.Space3:
+                            case (int)ClsGridJuchuu.ColNO.Site:
+                            case (int)ClsGridJuchuu.ColNO.Zaiko:
                                 {
                                     mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                     break;
@@ -523,7 +525,7 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.Nyuka:
                             case (int)ClsGridJuchuu.ColNO.Syukka:
                                 {
-                                    //mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -970,10 +972,12 @@ namespace TempoJuchuuNyuuryoku
                                 if (mGrid.g_DArray[pRow].juchuGyoNO == 0)
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -998,11 +1002,13 @@ namespace TempoJuchuuNyuuryoku
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                 }
                                 else
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
                                     mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                 }
                                 break;
 
@@ -1027,10 +1033,12 @@ namespace TempoJuchuuNyuuryoku
                                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Nyuka))
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                     }
                                     else
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                     }
                                 }
                                 break;
@@ -1040,29 +1048,21 @@ namespace TempoJuchuuNyuuryoku
                                     if (string.IsNullOrWhiteSpace(mGrid.g_DArray[pRow].Syukka))
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                     }
                                     else
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                     }
                                 }
                                 break;
 
-                                //Todo:修正時を考慮しなければならない
-                                ////case (int)ClsGridJuchuu.ColNO.JanCD:
-                                //case (int)ClsGridJuchuu.ColNO.SKUName:    // 
-                                //case (int)ClsGridJuchuu.ColNO.ColorName:    // 
-                                //case (int)ClsGridJuchuu.ColNO.SizeName:
-                                //    {
-                                //        mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                //        break;
-                                //    }
                         }
 
                     }
                     w_AllFlg = false;
-
-                    //w_AllFlg = true;
+                    
                 }
             }
             if (pCol == (int)ClsGridJuchuu.ColNO.Nyuka)
@@ -1071,42 +1071,35 @@ namespace TempoJuchuuNyuuryoku
                 {
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = false;
                 }
                 else
                 {
                     //入荷予定日,発注先 入力不可
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.ArrivePlanDate, pRow].Cell_Bold = true;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[(int)ClsGridJuchuu.ColNO.VendorCD, pRow].Cell_Bold = true;
                 }
             }
-            //else if (pCol == (int)ClsGridJuchuu.ColNO.JuchuuSuu)
-            //{
-            //    if (mGrid.g_DArray[pRow].DiscountKbn == 1)
-            //    {
-            //        mGrid.g_MK_State[pCol, pRow].Cell_Enabled = false;
-            //        mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = true;
-            //    }
-            //    else
-            //    {
-            //        mGrid.g_MK_State[pCol, pRow].Cell_Enabled = true;
-            //        mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = false;
-            //    }
-            //}
             else if (pCol == (int)ClsGridJuchuu.ColNO.CostUnitPrice)
             {
                 if (mGrid.g_DArray[pRow].VariousFLG == 1)
                 {
                     mGrid.g_MK_State[pCol, pRow].Cell_Enabled = true;
                     mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = false;
+                    mGrid.g_MK_State[pCol, pRow].Cell_Bold = false;
                 }
                 else
                 {
                     mGrid.g_MK_State[pCol, pRow].Cell_Enabled = false;
                     mGrid.g_MK_State[pCol, pRow].Cell_ReadOnly = true;
+                    mGrid.g_MK_State[pCol, pRow].Cell_Bold = true;
                 }
             }
 
@@ -2305,11 +2298,11 @@ namespace TempoJuchuuNyuuryoku
                             detailControls[index].Focus();
                             return false;
                         }
-                        ////顧客名2に入力無い場合、先頭20Byteを顧客名2へセット   delete 4/24
-                        //if (string.IsNullOrWhiteSpace(detailControls[index+2].Text))
-                        //{
-                        //    detailControls[index + 2].Text = bbl.LeftB(detailControls[index].Text, 20);
-                        //}
+                        //顧客名2に入力無い場合、先頭20Byteを顧客名2へセット   delete 4/24
+                        if (string.IsNullOrWhiteSpace(detailControls[index + 2].Text))
+                        {
+                            detailControls[index + 2].Text = bbl.LeftB(detailControls[index].Text, 20);
+                        }
                     }
                     break;
 
@@ -3662,6 +3655,7 @@ namespace TempoJuchuuNyuuryoku
                 ScCustomer.LabelText = "";
                 detailControls[(int)EIndex.CustomerName].Text = "";
                 detailControls[(int)EIndex.CustomerName2].Text = "";
+                detailControls[(int)EIndex.CustomerName].Enabled = false;
                 textBox1.Text = "";
                 textBox2.Text = "";
                 lblLastSalesDate.Text = "";
@@ -3676,6 +3670,7 @@ namespace TempoJuchuuNyuuryoku
                 ScDeliveryCD.LabelText = "";
                 detailControls[(int)EIndex.DeliveryName].Text = "";
                 detailControls[(int)EIndex.DeliveryName2].Text = "";
+                detailControls[(int)EIndex.DeliveryName].Enabled = false;
             }
         }
 

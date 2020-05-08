@@ -1325,6 +1325,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                     CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
 
+                    mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
                     mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
                     mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
@@ -1461,7 +1462,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         mGrid.g_DArray[i].OldPurchaseSu = Convert.ToInt16(row["PurchaseSu"]);
 
                         CheckGrid((int)ClsGridShiire.ColNO.JanCD, i);
-
+                        mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
                         mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
                         mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
                         mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
@@ -3170,7 +3171,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     case (int)ClsGridShiire.ColNO.PurchaseGaku:
                     case (int)ClsGridShiire.ColNO.TaxRate:
                         {
-                            mGrid.g_MK_State[w_Col, w_Row].Cell_Color = backCL;
+                            mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                             break;
                         }
                 }

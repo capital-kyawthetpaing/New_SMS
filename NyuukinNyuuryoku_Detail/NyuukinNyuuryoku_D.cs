@@ -572,7 +572,7 @@ namespace NyuukinNyuuryoku
                             case (int)ClsGridNyuukin_S.ColNO.SKUName:
                             case (int)ClsGridNyuukin_S.ColNO.CommentInStore:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }

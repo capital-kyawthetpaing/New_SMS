@@ -104,6 +104,8 @@
     <Compile Include="D_YahooAPI_DL.cs" />
     <Compile Include="D_YahooCount_DL.cs" />
     <Compile Include="Function_DL.cs" />
+    <Compile Include="Hacchuusho_DL.cs" />
+    <Compile Include="HikiateHenkouNyuuryoku_DL.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />
