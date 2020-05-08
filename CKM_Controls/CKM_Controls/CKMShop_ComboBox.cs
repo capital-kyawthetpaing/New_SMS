@@ -304,7 +304,11 @@ namespace CKM_Controls
                     return;
                 }
                 else
+                {
                     MoveNext = true;
+
+                    base.OnKeyDown(e);
+                }
             }
             else if ((e.KeyCode == Keys.Down || e.KeyCode == Keys.Up || e.KeyCode == Keys.Right || e.KeyCode == Keys.Left || e.KeyCode == Keys.Enter) || (e.KeyCode != Keys.Delete))
             {
@@ -312,8 +316,10 @@ namespace CKM_Controls
                 return;
             }
             else
-                e.Handled = true; return;
-
+            {
+                e.Handled = true;
+                return;
+            }
         }
         protected override void OnPreviewKeyDown(PreviewKeyDownEventArgs e)
 

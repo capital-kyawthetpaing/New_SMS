@@ -12,14 +12,14 @@ namespace EDINouhinJouhonTourokuB
     class Program
     {
         static Login_BL loginbl = new Login_BL();
-        static EDINouhinJouhon_Batch edijh = new EDINouhinJouhon_Batch();
+        static EDINouhinJouhou_Batch edijh = new EDINouhinJouhou_Batch();
         static M_MultiPorpose_Entity mmpe = new M_MultiPorpose_Entity();
         static EDINouhinJouhon_Batch_BL edinjh_bl = new EDINouhinJouhon_Batch_BL();
 
         static DataTable dtMulti;
         static void Main(string[] args)
         {
-            Console.Title = "EDINouhinJouhonTouroku";
+            Console.Title = "EDINouhinJouhouTouroku";
 
             if (loginbl.ReadConfig() == true)
             {

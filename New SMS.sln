@@ -145,9 +145,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIKaitouNoukiTouroku", "ED
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIKaitouNoukiTourokuB", "EDIKaitouNoukiTourokuB\EDIKaitouNoukiTourokuB.csproj", "{B542A1BE-1070-4B98-AD39-EE545C7B480F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhonTourokuB", "EDINouhinJouhonTourokuB\EDINouhinJouhonTourokuB.csproj", "{22A3390D-629A-42A7-BF7B-E124DF85E761}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhonTouroku", "EDINouhinJouhonTouroku\EDINouhinJouhonTouroku.csproj", "{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhouTourokuB", "EDINouhinJouhonTourokuB\EDINouhinJouhouTourokuB.csproj", "{22A3390D-629A-42A7-BF7B-E124DF85E761}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TanabanNyuuryoku", "TanabanNyuuryoku\TanabanNyuuryoku.csproj", "{00F6339D-0BFC-469F-AB1A-7E395732660B}"
 EndProject
@@ -286,6 +284,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShukkaNyuuryoku", "ShukkaNyuuryoku\ShukkaNyuuryoku.csproj", "{94C12706-B9D9-4CD6-B1D6-3DDFB872D735}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HikiateHenkouNyuuryoku", "HikiateHenkouNyuuryoku\HikiateHenkouNyuuryoku.csproj", "{7E9791F4-705A-4118-B77F-F4E219FF71A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDINouhinJouhouTouroku", "EDINouhinJouhonTouroku\EDINouhinJouhouTouroku.csproj", "{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -871,14 +871,6 @@ Global
 		{22A3390D-629A-42A7-BF7B-E124DF85E761}.Release|Any CPU.Build.0 = Release|Any CPU
 		{22A3390D-629A-42A7-BF7B-E124DF85E761}.Release|x86.ActiveCfg = Release|Any CPU
 		{22A3390D-629A-42A7-BF7B-E124DF85E761}.Release|x86.Build.0 = Release|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Debug|x86.Build.0 = Debug|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Release|x86.ActiveCfg = Release|Any CPU
-		{5CE563A5-814D-44ED-90E5-3DFF68E1F38D}.Release|x86.Build.0 = Release|Any CPU
 		{00F6339D-0BFC-469F-AB1A-7E395732660B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00F6339D-0BFC-469F-AB1A-7E395732660B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00F6339D-0BFC-469F-AB1A-7E395732660B}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -1421,6 +1413,14 @@ Global
 		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|x86.ActiveCfg = Release|Any CPU
 		{7E9791F4-705A-4118-B77F-F4E219FF71A6}.Release|x86.Build.0 = Release|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Debug|x86.Build.0 = Debug|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Release|x86.ActiveCfg = Release|Any CPU
+		{02312DC2-7B3A-48A6-8EFB-B6B4083F97A4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
