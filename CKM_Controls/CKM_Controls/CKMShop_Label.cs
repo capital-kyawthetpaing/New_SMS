@@ -115,7 +115,7 @@ namespace CKM_Controls
                 switch (FontSize)
                 {
                     case CKM_FontSize.Normal:
-                        this.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+                        this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
                         break;
                     case CKM_FontSize.Small:
                         this.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
