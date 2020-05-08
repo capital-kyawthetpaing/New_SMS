@@ -774,6 +774,13 @@ namespace MasterTouroku_Tokuisaki
         private bool CheckDetail(int index, bool msg = true)
         {
             bool ret;
+
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.CustomerName:
