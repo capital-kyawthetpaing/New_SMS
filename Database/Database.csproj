@@ -191,6 +191,7 @@
     <Content Include="StoreProcedure\D_SKENDelivery_SelectAll.sql" />
     <Content Include="StoreProcedure\D_SKEN_InsertData.sql" />
     <Content Include="StoreProcedure\D_StockHistory_Insert.sql" />
+    <Content Include="StoreProcedure\D_StockReplica_Insert.sql" />
     <Content Include="StoreProcedure\D_StockSelectForTairyuzaikohyo.sql" />
     <Content Include="StoreProcedure\D_Stock_DataSelect.sql" />
     <Content Include="StoreProcedure\D_Stock_Update.sql" />
@@ -360,7 +361,6 @@
     <Content Include="StoreProcedure\M_Souko_Search.sql" />
     <Content Include="StoreProcedure\M_Souko_Select.sql" />
     <Content Include="StoreProcedure\M_Souko_SelectForNyuuka.sql" />
-    <Content Include="StoreProcedure\M_Souko_ZipcodeAddressSelect.sql" />
     <Content Include="StoreProcedure\M_StaffAccess.sql" />
     <Content Include="StoreProcedure\M_Staff_Delete.sql" />
     <Content Include="StoreProcedure\M_Staff_Display.sql" />
