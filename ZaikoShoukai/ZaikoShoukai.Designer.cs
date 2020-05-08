@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -695,7 +696,7 @@
             this.ckM_LB_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_2.Location = new System.Drawing.Point(1167, 103);
+            this.ckM_LB_2.Location = new System.Drawing.Point(1165, 103);
             this.ckM_LB_2.Name = "ckM_LB_2";
             this.ckM_LB_2.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_2.TabIndex = 36;
@@ -761,7 +762,7 @@
             this.ckM_LB_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_4.Location = new System.Drawing.Point(1167, 140);
+            this.ckM_LB_4.Location = new System.Drawing.Point(1165, 140);
             this.ckM_LB_4.Name = "ckM_LB_4";
             this.ckM_LB_4.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_4.TabIndex = 40;
@@ -795,7 +796,7 @@
             this.ckM_LB_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_3.Location = new System.Drawing.Point(1167, 122);
+            this.ckM_LB_3.Location = new System.Drawing.Point(1165, 122);
             this.ckM_LB_3.Name = "ckM_LB_3";
             this.ckM_LB_3.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_3.TabIndex = 38;
@@ -829,7 +830,7 @@
             this.djofo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.djofo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.djofo.ForeColor = System.Drawing.Color.Black;
-            this.djofo.Location = new System.Drawing.Point(1140, 178);
+            this.djofo.Location = new System.Drawing.Point(1139, 178);
             this.djofo.Name = "djofo";
             this.djofo.Size = new System.Drawing.Size(70, 12);
             this.djofo.TabIndex = 46;
@@ -954,7 +955,7 @@
             this.ckM_LB_ShoninbiT.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_ShoninbiT.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_ShoninbiT.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_ShoninbiT.Location = new System.Drawing.Point(716, 294);
+            this.ckM_LB_ShoninbiT.Location = new System.Drawing.Point(715, 294);
             this.ckM_LB_ShoninbiT.Name = "ckM_LB_ShoninbiT";
             this.ckM_LB_ShoninbiT.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_ShoninbiT.TabIndex = 58;
@@ -1449,7 +1450,7 @@
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1477,6 +1478,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle11;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 463);
