@@ -1791,6 +1791,12 @@ namespace HacchuuNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set = true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.OrderDate:
@@ -1970,6 +1976,9 @@ namespace HacchuuNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
             w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
@@ -2107,6 +2116,14 @@ namespace HacchuuNyuuryoku
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
+
+
+            int w_CtlRow = row - Vsb_Mei_0.Value;
+            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                    return false;
+            }
 
             switch (col)
             {
@@ -3399,6 +3416,9 @@ namespace HacchuuNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;

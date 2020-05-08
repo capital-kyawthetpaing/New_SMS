@@ -910,6 +910,8 @@ namespace KaitouNoukiTouroku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -1205,6 +1207,12 @@ namespace KaitouNoukiTouroku
         {
             string fmtYmd = "";
 
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.StoreCD:
@@ -1408,7 +1416,10 @@ namespace KaitouNoukiTouroku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.Edi];
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            w_Ctrl = detailControls[(int)EIndex.Edi];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridKaitouNouki.Gen_MK_FocusMove.MvSet, (int)ClsGridKaitouNouki.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -1418,6 +1429,14 @@ namespace KaitouNoukiTouroku
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
             string fmtYmd = "";
+
+
+            int w_CtlRow = row - Vsb_Mei_0.Value;
+            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                    return false;
+            }
 
             switch (col)
             {
@@ -2239,6 +2258,9 @@ namespace KaitouNoukiTouroku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;
