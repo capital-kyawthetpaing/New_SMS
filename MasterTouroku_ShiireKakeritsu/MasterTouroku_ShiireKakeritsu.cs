@@ -246,22 +246,6 @@ namespace MasterTouroku_ShiireKakeritsu
             MoveNextControl(e);
         }
 
-        private void btnSelectAll_Click(object sender, EventArgs e)
-        {
-            Checkstate(true);
-        }
-        private void btnReleaseAll_Click(object sender, EventArgs e)
-        {
-            Checkstate(false);
-        }
-        private void Checkstate(bool flag)
-        {
-            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-            {
-                row1.Cells["colChk"].Value = flag;
-            }
-        }
-
         //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //{
         //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
@@ -546,7 +530,21 @@ namespace MasterTouroku_ShiireKakeritsu
            
 
         }
-
+        private void Checkstate(bool flag)
+        {
+            foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
+            {
+                row1.Cells["colChk"].Value = flag;
+            }
+        }
+        private void btnSelectAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(true);
+        }
+        private void btnReleaseAll_Click(object sender, EventArgs e)
+        {
+            Checkstate(false);
+        }
         private void btnCopy_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCopy.Text))
@@ -650,6 +648,17 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
+        private void btnChange_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            {
+                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                if (check.Value == check.TrueValue)
+                {
+                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
+                }
+            }
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -667,18 +676,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
             toDelete.ForEach(row => row.Delete());
-        }
-
-        private void btnChange_Click(object sender, EventArgs e)
-        {         
-            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-            {
-                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
-                if (check.Value == check.TrueValue)
-                {                  
-                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);                  
-                }
-            }
         }
     }
 }
