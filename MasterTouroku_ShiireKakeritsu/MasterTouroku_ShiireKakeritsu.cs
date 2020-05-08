@@ -250,58 +250,7 @@ namespace MasterTouroku_ShiireKakeritsu
             };
             return moe;
         }
-      
-        private void SearchData()
-        {
-            if (ErrorCheck(1))
-            {
-                moe = GetSearchInfo();
-                dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-                if (dtMain.Rows.Count > 0)
-                {
-                    BindGrid();
-                }
-                else
-                {
-                    mskbl.ShowMessage("E128");
-                    dgv_ShiireKakeritsu.DataSource = null;
-                }
-            }
-        }
-
-        private void BindGrid()
-        {
-            string searchCondition = string.Empty;
-            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
-                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
-                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-            //if (!string.IsNullOrWhiteSpace(txtYear.Text))
-            //    searchCondition = "LastYearTerm='" + txtYear.Text + "'";
-            //if (!string.IsNullOrWhiteSpace(txtSeason.Text))
-            //    searchCondition = "LastSeason= '" + txtSeason.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                searchCondition = "ChangeDate= '" + txtDate.Text;
-
-            if (!string.IsNullOrWhiteSpace(searchCondition))
-            {
-                DataRow[] dr = dtMain.Select(searchCondition);
-                if (dr.Count() > 0)
-                {
-                    dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
-                }
-                else
-                    dtGrid = null;
-            }
-            else
-            {
-                dtGrid = dtMain;
-            }
-
-            dgv_ShiireKakeritsu.DataSource = dtGrid;
-        }
+       
 
         private void frmMasterTouroku_ShiireKakeritsu_KeyUp(object sender, KeyEventArgs e)
         {
@@ -378,7 +327,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //}
 
         }
-
 
         #region KeyDown Event For 【抽出条件】
         private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -459,12 +407,63 @@ namespace MasterTouroku_ShiireKakeritsu
             scSegmentCD1.Value1 = "203";
         }
 
-
-        #endregion       
-        
+        #endregion
 
         #region ButtonClick for 【抽出条件】
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            SearchData();
+        }
+        private void SearchData()
+        {
+            if (ErrorCheck(1))
+            {
+                moe = GetSearchInfo();
+                dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+                if (dtMain.Rows.Count > 0)
+                {
+                    BindGrid();
+                }
+                else
+                {
+                    mskbl.ShowMessage("E128");
+                    dgv_ShiireKakeritsu.DataSource = null;
+                }
+            }
+        }
+        private void BindGrid()
+        {
+            string searchCondition = string.Empty;
+            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+            searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+            searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+                searchCondition = "ChangeDate= '" + txtDate.Text;
 
+            if (!string.IsNullOrWhiteSpace(searchCondition))
+            {
+                DataRow[] dr = dtMain.Select(searchCondition);
+                if (dr.Count() > 0)
+                {
+                    dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
+                }
+                else
+                    dtGrid = null;
+            }
+            else
+            {
+                dtGrid = dtMain;
+            }
+
+            dgv_ShiireKakeritsu.DataSource = dtGrid;
+        }
         private void btnCopy_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtCopy.Text))
@@ -493,12 +492,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            SearchData();
-        }
-
 
         #endregion
 
@@ -533,10 +526,10 @@ namespace MasterTouroku_ShiireKakeritsu
                         scSportsCD.Value1 = scSportsCD.TxtCode.Text;
                         scSportsCD.Value2 = scSportsCD.LabelText;
                     }
-                    else
-                    {
-                        scSportsCD.SetFocus(1);
-                    }
+                    //else
+                    //{
+                    //    scSportsCD.SetFocus(1);
+                    //}
                 }
             }
         }
@@ -553,10 +546,10 @@ namespace MasterTouroku_ShiireKakeritsu
                         scSegmentCD.Value1 = scSegmentCD.TxtCode.Text;
                         scSegmentCD.Value2 = scSegmentCD.LabelText;
                     }
-                    else
-                    {
-                        scSegmentCD.SetFocus(1);
-                    }
+                    //else
+                    //{
+                    //    scSegmentCD.SetFocus(1);
+                    //}
                 }
             }
         }
