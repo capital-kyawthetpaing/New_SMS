@@ -533,10 +533,10 @@ namespace MasterTouroku_ShiireKakeritsu
                         scSportsCD.Value1 = scSportsCD.TxtCode.Text;
                         scSportsCD.Value2 = scSportsCD.LabelText;
                     }
-                    else
-                    {
-                        scSportsCD.SetFocus(1);
-                    }
+                    //else
+                    //{
+                    //    scSportsCD.SetFocus(1);
+                    //}
                 }
             }
         }
@@ -553,10 +553,10 @@ namespace MasterTouroku_ShiireKakeritsu
                         scSegmentCD.Value1 = scSegmentCD.TxtCode.Text;
                         scSegmentCD.Value2 = scSegmentCD.LabelText;
                     }
-                    else
-                    {
-                        scSegmentCD.SetFocus(1);
-                    }
+                    //else
+                    //{
+                    //    scSegmentCD.SetFocus(1);
+                    //}
                 }
             }
         }
