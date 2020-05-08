@@ -74,7 +74,7 @@ namespace NyuukinNyuuryoku
                 //初期値セット
                 nnbl = new NyuukinNyuuryoku_BL();
                 string ymd = nnbl.GetDate();
-                CboStoreCD.Bind(string.Empty);
+                CboStoreCD.Bind(ymd);
                 CboArrivalPlan.Bind(ymd);
                 //パラメータ 基準日：Form.日付,店舗：Form.店舗	,得意先区分：3
                 ScCustomer.Value1 = "3";
@@ -186,6 +186,12 @@ namespace NyuukinNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.DayStart:
@@ -256,8 +262,8 @@ namespace NyuukinNyuuryoku
 
                 case (int)EIndex.CustomerCD:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
-                    {
-                        ScCustomer.LabelText = "";
+                    {   //顧客情報ALLクリア
+                        ClearCustomerInfo();
                         return true;
                     }
                     
@@ -271,6 +277,13 @@ namespace NyuukinNyuuryoku
                     bool ret = sbl.M_Customer_Select(mce);
                     if (ret)
                     {
+                        //if (mce.DeleteFlg == "1")
+                        //{
+                        //    bbl.ShowMessage("E119");
+                        //    //顧客情報ALLクリア
+                        //    ClearCustomerInfo();
+                        //    return false;
+                        //}
                         ScCustomer.LabelText = mce.CustomerName;
                     }
                     else

@@ -1517,6 +1517,12 @@ namespace ShiireNyuuryokuFromNyuuka
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.PurchaseDate:
@@ -1741,7 +1747,10 @@ namespace ShiireNyuuryokuFromNyuuka
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -1880,6 +1889,14 @@ namespace ShiireNyuuryokuFromNyuuka
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
+
+
+            int w_CtlRow = row - Vsb_Mei_0.Value;
+            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                    return false;
+            }
 
             switch (col)
             {

@@ -528,7 +528,7 @@ namespace BL
             {
                 decimal decimal_part = d % 1;
                 if (decimal_part == 0)
-                    return string.Format("{0:#,##0}", Convert.ToInt32(d));
+                    return string.Format("{0:#,##0}", Convert.ToInt64(d));
                 else
                     return d.ToString();
             }

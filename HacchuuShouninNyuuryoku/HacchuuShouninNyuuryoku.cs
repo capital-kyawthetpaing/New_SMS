@@ -80,6 +80,7 @@ namespace HacchuuShouninNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
                 Btn_F6.Text = "";
+                Btn_F9.Text = "";
 
                 //コンボボックス初期化
                 string ymd = bbl.GetDate();
@@ -148,14 +149,18 @@ namespace HacchuuShouninNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
 
             switch (index)
             {
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
-                        bbl.ShowMessage("E102");
-                        CboStoreCD.Focus();
                         return false;
                     }
                     else
@@ -340,15 +345,6 @@ namespace HacchuuShouninNyuuryoku
                 case 3:     //F4:削除
                 case 4:     //F5:照会
                     {
-                        break;
-                    }
-
-                case 5: //F6:キャンセル
-                    {
-                        //Ｑ００４				
-                        if (bbl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-
                         break;
                     }
 
