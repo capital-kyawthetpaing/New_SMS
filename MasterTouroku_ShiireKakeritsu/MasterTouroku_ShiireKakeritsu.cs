@@ -684,6 +684,18 @@ namespace MasterTouroku_ShiireKakeritsu
 
 
         }
+       
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
+            {
+                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+                if (check.Value == check.TrueValue)
+                {
+                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
+                }
+            }
+        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -702,19 +714,6 @@ namespace MasterTouroku_ShiireKakeritsu
             }
             toDelete.ForEach(row => row.Delete());
         }
-
-        private void btnChange_Click(object sender, EventArgs e)
-        {
-            foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
-            {
-                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
-                if (check.Value == check.TrueValue)
-                {
-                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
-                }
-            }
-        }
-
         #endregion
     }
 }
