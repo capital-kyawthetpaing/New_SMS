@@ -505,7 +505,7 @@
             this.ckmShop_Label28.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label28.TabIndex = 161;
             this.ckmShop_Label28.Text = "12";
-            this.ckmShop_Label28.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label28.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label27
@@ -521,7 +521,7 @@
             this.ckmShop_Label27.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label27.TabIndex = 160;
             this.ckmShop_Label27.Text = "11";
-            this.ckmShop_Label27.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label27.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label26
@@ -537,7 +537,7 @@
             this.ckmShop_Label26.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label26.TabIndex = 159;
             this.ckmShop_Label26.Text = "10";
-            this.ckmShop_Label26.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label26.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label25
@@ -553,7 +553,7 @@
             this.ckmShop_Label25.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label25.TabIndex = 158;
             this.ckmShop_Label25.Text = "9";
-            this.ckmShop_Label25.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label25.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label24
@@ -569,7 +569,7 @@
             this.ckmShop_Label24.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label24.TabIndex = 157;
             this.ckmShop_Label24.Text = "8";
-            this.ckmShop_Label24.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label24.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label23
@@ -585,7 +585,7 @@
             this.ckmShop_Label23.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label23.TabIndex = 156;
             this.ckmShop_Label23.Text = "7";
-            this.ckmShop_Label23.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label23.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label22
@@ -601,7 +601,7 @@
             this.ckmShop_Label22.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label22.TabIndex = 155;
             this.ckmShop_Label22.Text = "6";
-            this.ckmShop_Label22.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label22.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label21
@@ -617,7 +617,7 @@
             this.ckmShop_Label21.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label21.TabIndex = 154;
             this.ckmShop_Label21.Text = "5";
-            this.ckmShop_Label21.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label21.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label20
@@ -633,7 +633,7 @@
             this.ckmShop_Label20.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label20.TabIndex = 153;
             this.ckmShop_Label20.Text = "4";
-            this.ckmShop_Label20.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label20.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label19
@@ -649,7 +649,7 @@
             this.ckmShop_Label19.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label19.TabIndex = 152;
             this.ckmShop_Label19.Text = "3";
-            this.ckmShop_Label19.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label19.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label18
@@ -665,7 +665,7 @@
             this.ckmShop_Label18.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label18.TabIndex = 151;
             this.ckmShop_Label18.Text = "2";
-            this.ckmShop_Label18.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label18.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label17
@@ -681,7 +681,7 @@
             this.ckmShop_Label17.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label17.TabIndex = 31;
             this.ckmShop_Label17.Text = "1";
-            this.ckmShop_Label17.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label17.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label14
@@ -755,7 +755,6 @@
             this.txtSize3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize3.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize3.DecimalPlace = 0;
@@ -788,7 +787,7 @@
             this.ckmShop_Label16.Size = new System.Drawing.Size(238, 35);
             this.ckmShop_Label16.TabIndex = 132;
             this.ckmShop_Label16.Text = " 0：設定なし";
-            this.ckmShop_Label16.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label16.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label15
@@ -804,7 +803,7 @@
             this.ckmShop_Label15.Size = new System.Drawing.Size(238, 35);
             this.ckmShop_Label15.TabIndex = 131;
             this.ckmShop_Label15.Text = " 0：設定なし";
-            this.ckmShop_Label15.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label15.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblMaxPoint
@@ -820,7 +819,7 @@
             this.lblMaxPoint.Size = new System.Drawing.Size(237, 35);
             this.lblMaxPoint.TabIndex = 129;
             this.lblMaxPoint.Text = "最大ポイント";
-            this.lblMaxPoint.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblMaxPoint.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.lblMaxPoint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label12
@@ -836,7 +835,7 @@
             this.ckmShop_Label12.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label12.TabIndex = 128;
             this.ckmShop_Label12.Text = "有効月数";
-            this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label11
@@ -852,7 +851,7 @@
             this.ckmShop_Label11.Size = new System.Drawing.Size(311, 35);
             this.ckmShop_Label11.TabIndex = 127;
             this.ckmShop_Label11.Text = "サービスデー倍率";
-            this.ckmShop_Label11.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label11.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label10
@@ -868,7 +867,7 @@
             this.ckmShop_Label10.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label10.TabIndex = 126;
             this.ckmShop_Label10.Text = "料率％";
-            this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label9
@@ -884,7 +883,7 @@
             this.ckmShop_Label9.Size = new System.Drawing.Size(238, 35);
             this.ckmShop_Label9.TabIndex = 125;
             this.ckmShop_Label9.Text = " 0：期限なし";
-            this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label8
@@ -899,7 +898,7 @@
             this.ckmShop_Label8.Size = new System.Drawing.Size(85, 22);
             this.ckmShop_Label8.TabIndex = 124;
             this.ckmShop_Label8.Text = "サイズ";
-            this.ckmShop_Label8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ckmShop_Label7
@@ -931,7 +930,7 @@
             this.ckmShop_Label5.Size = new System.Drawing.Size(237, 35);
             this.ckmShop_Label5.TabIndex = 121;
             this.ckmShop_Label5.Text = "引換ポイント";
-            this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label4
@@ -947,7 +946,7 @@
             this.ckmShop_Label4.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label4.TabIndex = 120;
             this.ckmShop_Label4.Text = "改定日";
-            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtSize12
@@ -956,7 +955,6 @@
             this.txtSize12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize12.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize12.DecimalPlace = 0;
@@ -982,7 +980,6 @@
             this.txtSize11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize11.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize11.DecimalPlace = 0;
@@ -1008,7 +1005,6 @@
             this.txtSize10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize10.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize10.DecimalPlace = 0;
@@ -1034,7 +1030,6 @@
             this.txtSize9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize9.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize9.DecimalPlace = 0;
@@ -1060,7 +1055,6 @@
             this.txtSize8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize8.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize8.DecimalPlace = 0;
@@ -1086,7 +1080,6 @@
             this.txtSize7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize7.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize7.DecimalPlace = 0;
@@ -1112,7 +1105,6 @@
             this.txtSize5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize5.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize5.DecimalPlace = 0;
@@ -1138,7 +1130,6 @@
             this.txtSize6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize6.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize6.DecimalPlace = 0;
@@ -1164,7 +1155,6 @@
             this.txtSize4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize4.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize4.DecimalPlace = 0;
@@ -1190,7 +1180,6 @@
             this.txtSize2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize2.DecimalPlace = 0;
@@ -1216,7 +1205,6 @@
             this.txtSize1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtSize1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSize1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtSize1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSize1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSize1.DecimalPlace = 0;
@@ -1242,7 +1230,6 @@
             this.txtPrint12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint12.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint12.DecimalPlace = 0;
@@ -1269,7 +1256,6 @@
             this.txtPrint11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint11.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint11.DecimalPlace = 0;
@@ -1296,7 +1282,6 @@
             this.txtPrint10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint10.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint10.DecimalPlace = 0;
@@ -1323,7 +1308,6 @@
             this.txtPrint9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint9.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint9.DecimalPlace = 0;
@@ -1350,7 +1334,6 @@
             this.txtPrint8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint8.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint8.DecimalPlace = 0;
@@ -1377,7 +1360,6 @@
             this.txtPrint7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint7.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint7.DecimalPlace = 0;
@@ -1404,7 +1386,6 @@
             this.txtPrint6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint6.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint6.DecimalPlace = 0;
@@ -1431,7 +1412,6 @@
             this.txtPrint5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint5.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint5.DecimalPlace = 0;
@@ -1458,7 +1438,6 @@
             this.txtPrint4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint4.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint4.DecimalPlace = 0;
@@ -1485,7 +1464,6 @@
             this.txtPrint3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint3.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint3.DecimalPlace = 0;
@@ -1512,7 +1490,6 @@
             this.txtPrint2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint2.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint2.DecimalPlace = 0;
@@ -1539,7 +1516,6 @@
             this.txtPrint1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPrint1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPrint1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPrint1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrint1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPrint1.DecimalPlace = 0;
@@ -1566,7 +1542,6 @@
             this.txtTicketUnit.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtTicketUnit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTicketUnit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTicketUnit.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtTicketUnit.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTicketUnit.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtTicketUnit.DecimalPlace = 0;
@@ -1592,7 +1567,6 @@
             this.txtMaxPoint.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtMaxPoint.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMaxPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMaxPoint.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtMaxPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtMaxPoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtMaxPoint.DecimalPlace = 0;
@@ -1618,7 +1592,6 @@
             this.txtExperationDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtExperationDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtExperationDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtExperationDate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtExperationDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtExperationDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtExperationDate.DecimalPlace = 0;
@@ -1644,7 +1617,6 @@
             this.txtPointRate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtPointRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPointRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPointRate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPointRate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPointRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtPointRate.DecimalPlace = 1;
@@ -1670,7 +1642,6 @@
             this.txtServiceDayRate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtServiceDayRate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtServiceDayRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtServiceDayRate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtServiceDayRate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtServiceDayRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtServiceDayRate.DecimalPlace = 1;
@@ -1696,7 +1667,6 @@
             this.txtChangeDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtChangeDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtChangeDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtChangeDate.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtChangeDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtChangeDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtChangeDate.DecimalPlace = 0;
