@@ -43,7 +43,9 @@ namespace MasterTouroku_UnsouGaisya
         }
         private void BindCombo()
         {
-            cboIdentity.Bind(string.Empty,"26");
+            string ymd = bbl.GetDate();
+            //cboIdentity.Bind(string.Empty,"26");
+            cboIdentity.Bind(ymd);
         }
         private void SetRequireField()
         {
@@ -418,7 +420,7 @@ namespace MasterTouroku_UnsouGaisya
                     return false;
                 }
 
-                if (string.IsNullOrWhiteSpace(cboIdentity.SelectedValue.ToString()))
+                if (string.IsNullOrWhiteSpace(cboIdentity.Text.ToString()))
                 {
                     mtugsbl.ShowMessage("E102");
                     cboIdentity.Focus();
