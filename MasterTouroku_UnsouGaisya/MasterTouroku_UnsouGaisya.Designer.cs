@@ -70,7 +70,7 @@
             // 
             this.PanelHeader.Controls.Add(this.PanelCopy);
             this.PanelHeader.Controls.Add(this.PanelNormal);
-            this.PanelHeader.Size = new System.Drawing.Size(1710, 91);
+            this.PanelHeader.Size = new System.Drawing.Size(1521, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.PanelNormal, 0);
             this.PanelHeader.Controls.SetChildIndex(this.PanelCopy, 0);
@@ -78,7 +78,7 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnDisplay);
-            this.PanelSearch.Location = new System.Drawing.Point(1176, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(987, 0);
             this.PanelSearch.TabIndex = 1;
             // 
             // PanelNormal
@@ -248,7 +248,7 @@
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetail.Location = new System.Drawing.Point(0, 147);
             this.PanelDetail.Name = "PanelDetail";
-            this.PanelDetail.Size = new System.Drawing.Size(1712, 782);
+            this.PanelDetail.Size = new System.Drawing.Size(1523, 782);
             this.PanelDetail.TabIndex = 2;
             // 
             // panel1
@@ -275,7 +275,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1712, 782);
+            this.panel1.Size = new System.Drawing.Size(1523, 782);
             this.panel1.TabIndex = 0;
             // 
             // txtremark
@@ -303,7 +303,7 @@
             this.chkDeleteFlg.AutoSize = true;
             this.chkDeleteFlg.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDeleteFlg.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkDeleteFlg.Location = new System.Drawing.Point(641, 22);
+            this.chkDeleteFlg.Location = new System.Drawing.Point(1438, 22);
             this.chkDeleteFlg.Name = "chkDeleteFlg";
             this.chkDeleteFlg.Size = new System.Drawing.Size(50, 16);
             this.chkDeleteFlg.TabIndex = 9;
@@ -350,6 +350,7 @@
             this.txtOtherCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOtherCD.BackColor = System.Drawing.Color.White;
             this.txtOtherCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOtherCD.ClientColor = System.Drawing.Color.White;
             this.txtOtherCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtOtherCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtOtherCD.DecimalPlace = 0;
@@ -391,6 +392,7 @@
             this.txtPonpareCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPonpareCD.BackColor = System.Drawing.Color.White;
             this.txtPonpareCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPonpareCD.ClientColor = System.Drawing.Color.White;
             this.txtPonpareCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPonpareCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPonpareCD.DecimalPlace = 0;
@@ -432,6 +434,7 @@
             this.txtWowmaCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtWowmaCD.BackColor = System.Drawing.Color.White;
             this.txtWowmaCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtWowmaCD.ClientColor = System.Drawing.Color.White;
             this.txtWowmaCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtWowmaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtWowmaCD.DecimalPlace = 0;
@@ -473,6 +476,7 @@
             this.txtAmazonCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtAmazonCD.BackColor = System.Drawing.Color.White;
             this.txtAmazonCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAmazonCD.ClientColor = System.Drawing.Color.White;
             this.txtAmazonCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtAmazonCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtAmazonCD.DecimalPlace = 0;
@@ -514,6 +518,7 @@
             this.txtRakutenCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtRakutenCD.BackColor = System.Drawing.Color.White;
             this.txtRakutenCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRakutenCD.ClientColor = System.Drawing.Color.White;
             this.txtRakutenCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtRakutenCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtRakutenCD.DecimalPlace = 0;
@@ -555,6 +560,7 @@
             this.cboIdentity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboIdentity.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.識別;
             this.cboIdentity.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboIdentity.Flag = 0;
             this.cboIdentity.FormattingEnabled = true;
             this.cboIdentity.Length = 20;
             this.cboIdentity.Location = new System.Drawing.Point(112, 43);
@@ -587,6 +593,7 @@
             this.txtYahooCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtYahooCD.BackColor = System.Drawing.Color.White;
             this.txtYahooCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtYahooCD.ClientColor = System.Drawing.Color.White;
             this.txtYahooCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtYahooCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtYahooCD.DecimalPlace = 0;
@@ -628,6 +635,7 @@
             this.txtShippingName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShippingName.BackColor = System.Drawing.Color.White;
             this.txtShippingName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtShippingName.ClientColor = System.Drawing.Color.White;
             this.txtShippingName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtShippingName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtShippingName.DecimalPlace = 0;
@@ -651,7 +659,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1712, 961);
+            this.ClientSize = new System.Drawing.Size(1523, 961);
             this.Controls.Add(this.PanelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
