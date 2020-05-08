@@ -190,52 +190,80 @@ namespace JANCDHenkou
 
         private bool ErrorCheck()
         {
+            DataTable dt  = dtGenJanCD;
             foreach (DataGridViewRow row in dgvJANCDHenkou.Rows)
             {
-                //現JANCD
-                if (!(row.Cells["colGenJanCD"].Value == null))
+                if (!dgvJANCDHenkou.Rows[row.Index].IsNewRow)
                 {
-                    if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1) //error if not exists in M_SKU tb
+                    //現JANCD
+                    if (dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value == null)
                     {
-                        jhbl.ShowMessage("E101");
+                        jhbl.ShowMessage("E102");
+                        dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"];
+                        dgvJANCDHenkou.BeginEdit(true);
                         return false;
                     }
-                    if (dtGenJanCD.Rows.Count > 0)
+                    else
                     {
-                        foreach (DataRow r in dtGenJanCD.Rows)
+                        if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colGenJanCD"].Value.ToString()).Rows.Count < 1) //error if not exists in M_SKU tb
                         {
-                            if (r.RowState == DataRowState.Added)
+                            jhbl.ShowMessage("E101");
+                            dgvJANCDHenkou.CurrentCell = row.Cells["colGenJanCD"];
+                            dgvJANCDHenkou.BeginEdit(true);
+                            return false;
+                        }
+                        if (dtGenJanCD.Rows.Count > 0)
+                        {
+                            foreach (DataRow r in dtGenJanCD.Rows)
                             {
-                                if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                                if (r.RowState == DataRowState.Added)
                                 {
-                                    jhbl.ShowMessage("E226");
-                                    return false;
+                                    if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                                    {
+                                        jhbl.ShowMessage("E226");
+                                        dgvJANCDHenkou.CurrentCell = row.Cells["colGenJanCD"];
+                                        dgvJANCDHenkou.BeginEdit(true);
+                                        return false;
+                                    }
                                 }
                             }
                         }
                     }
-                }
 
-                //新JANCD
-                if (!(row.Cells["colNewJANCD"].Value == null))
-                {
-                    if (!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13) && !IsDigit(row.Cells["colNewJanCD"].Value.ToString()))    //For 13digits and digit only
+                   // 新JANCD
+                    if (row.Cells["colNewJANCD"].Value == null)
                     {
-                        jhbl.ShowMessage("E220");
-                        dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+                        jhbl.ShowMessage("E102");
+                        dgvJANCDHenkou.CurrentCell = row.Cells["colNewJANCD"];
+                        dgvJANCDHenkou.BeginEdit(true);
                         return false;
                     }
-                    else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)    //error if exists in M_SKU tb
+                    else
                     {
-                        
-                        DialogResult dr = jhbl.ShowMessage("Q316");
-                        if (dr == DialogResult.No)
+                        if (!row.Cells["colNewJanCD"].Value.ToString().Length.Equals(13) || !IsDigit(row.Cells["colNewJanCD"].Value.ToString()))    //For 13digits and digit only
                         {
+                            jhbl.ShowMessage("E220");
                             dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+
+                            dgvJANCDHenkou.BeginEdit(true);
                             return false;
+                        }
+                        else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)    //error if exists in M_SKU tb
+                        {
+
+                            DialogResult dr = jhbl.ShowMessage("Q316");
+                            if (dr == DialogResult.No)
+                            {
+                                dgvJANCDHenkou.CurrentCell = row.Cells["colNewJanCD"];
+                                dgvJANCDHenkou.BeginEdit(true);
+                                return false;
+                            }
+                            else
+                                return true;
                         }
                     }
                 }
+
             }
             return true;
         }
@@ -246,7 +274,12 @@ namespace JANCDHenkou
                 // 現JANCD
                 if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"]) )
                 { 
-                    if(!string.IsNullOrWhiteSpace(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
+                    if(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value == null)
+                    {
+                        jhbl.ShowMessage("E102");
+                        dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"];
+                    }
+                    else
                    {
                         foreach (DataGridViewRow r in dgvJANCDHenkou.Rows)      //duplicate error
                         {
@@ -255,6 +288,7 @@ namespace JANCDHenkou
                                 if (r.Cells["colGenJanCD"].Value.ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
                                 {
                                     jhbl.ShowMessage("E226");
+                                    dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"];
                                     return;
                                 }
                             }
@@ -264,6 +298,7 @@ namespace JANCDHenkou
                         if (dtJanCDExist.Rows.Count == 0)        // error if not exists in M_SKU tb
                         {
                             jhbl.ShowMessage("E101");
+                            dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"];
                         }
                         else if (dtJanCDExist.Rows.Count == 1)      //BindData
                         {
@@ -272,23 +307,18 @@ namespace JANCDHenkou
                                 if(dtGenJanCD.Rows.Count > 0)
                                 //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
-                                    DataRow row = dtGenJanCD.NewRow();
                                     DataTable tmp = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
-                                    row["GenJanCD"] = tmp.Rows[0]["GenJanCD"].ToString();
-                                    row["BrandCD"] = tmp.Rows[0]["BrandCD"].ToString();
-                                    row["BrandName"] = tmp.Rows[0]["BrandName"].ToString();
-                                    row["ITemCD"] = tmp.Rows[0]["ITemCD"].ToString();
-                                    row["SKUName"] = tmp.Rows[0]["SKUName"].ToString();
-                                    row["SizeName"] = tmp.Rows[0]["SizeName"].ToString();
-                                    row["ColorName"] = tmp.Rows[0]["ColorName"].ToString();
-                                    row["GenJanCD2"] = tmp.Rows[0]["GenJanCD2"].ToString();
-                                    //row["newJanCD"] = tmp.Rows[0]["newJanCD"];
-                                    row["SKUCD"] = tmp.Rows[0]["SKUCD"].ToString();
-                                    dtGenJanCD.Rows.Add(row);
-                                    dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value = tmp.Rows[0]["GenJanCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandCD"].Value = tmp.Rows[0]["BrandCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandName"].Value = tmp.Rows[0]["BrandName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colITEM"].Value = tmp.Rows[0]["ITemCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUName"].Value = tmp.Rows[0]["SKUName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSize"].Value = tmp.Rows[0]["SizeName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colColor"].Value = tmp.Rows[0]["ColorName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD2"].Value = tmp.Rows[0]["GenJanCD2"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUCD"].Value = tmp.Rows[0]["SKUCD"].ToString();
                                     dtGenJanCD.AcceptChanges();
                                     dgvJANCDHenkou.DataSource = dtGenJanCD;
-                                    dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
                                 }
                                 else
                                 {
@@ -309,23 +339,35 @@ namespace JANCDHenkou
                                 if(dtGenJanCD.Rows.Count > 0)
                                 //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
-                                    DataRow row = dtGenJanCD.NewRow();
-                                    DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
-                                    row["GenJanCD"] = tmp1.Rows[0]["GenJanCD"].ToString();
-                                    row["BrandCD"] = tmp1.Rows[0]["BrandCD"].ToString();
-                                    row["BrandName"] = tmp1.Rows[0]["BrandName"].ToString();
-                                    row["ITemCD"] = tmp1.Rows[0]["ITemCD"].ToString();
-                                    row["SKUName"] = tmp1.Rows[0]["SKUName"].ToString();
-                                    row["SizeName"] = tmp1.Rows[0]["SizeName"].ToString();
-                                    row["ColorName"] = tmp1.Rows[0]["ColorName"].ToString();
-                                    row["GenJanCD2"] = tmp1.Rows[0]["GenJanCD2"].ToString();
-                                   // row["newJanCD"] = tmp1.Rows[0]["newJanCD"];
-                                    row["SKUCD"] = tmp1.Rows[0]["SKUCD"].ToString();
-                                    dtGenJanCD.Rows.Add(row);
-                                    dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
+                                    DataTable tmp1 = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value = tmp1.Rows[0]["GenJanCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandCD"].Value = tmp1.Rows[0]["BrandCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandName"].Value = tmp1.Rows[0]["BrandName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colITEM"].Value = tmp1.Rows[0]["ITemCD"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUName"].Value = tmp1.Rows[0]["SKUName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSize"].Value = tmp1.Rows[0]["SizeName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colColor"].Value = tmp1.Rows[0]["ColorName"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD2"].Value = tmp1.Rows[0]["GenJanCD2"].ToString();
+                                    dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUCD"].Value = tmp1.Rows[0]["SKUCD"].ToString();
                                     dtGenJanCD.AcceptChanges();
                                     dgvJANCDHenkou.DataSource = dtGenJanCD;
-                                    dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
+                                    // DataRow row = dtGenJanCD.NewRow();
+                                    // DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
+                                    // row["GenJanCD"] = tmp1.Rows[0]["GenJanCD"].ToString();
+                                    // row["BrandCD"] = tmp1.Rows[0]["BrandCD"].ToString();
+                                    // row["BrandName"] = tmp1.Rows[0]["BrandName"].ToString();
+                                    // row["ITemCD"] = tmp1.Rows[0]["ITemCD"].ToString();
+                                    // row["SKUName"] = tmp1.Rows[0]["SKUName"].ToString();
+                                    // row["SizeName"] = tmp1.Rows[0]["SizeName"].ToString();
+                                    // row["ColorName"] = tmp1.Rows[0]["ColorName"].ToString();
+                                    // row["GenJanCD2"] = tmp1.Rows[0]["GenJanCD2"].ToString();
+                                    //// row["newJanCD"] = tmp1.Rows[0]["newJanCD"];
+                                    // row["SKUCD"] = tmp1.Rows[0]["SKUCD"].ToString();
+                                    // dtGenJanCD.Rows.Add(row);
+                                    // dtGenJanCD.Rows.RemoveAt(dtGenJanCD.Rows.IndexOf(row) + 1);
+                                    // dtGenJanCD.AcceptChanges();
+                                    // dgvJANCDHenkou.DataSource = dtGenJanCD;
+                                    // dgvJANCDHenkou.Rows.RemoveAt(dgvJANCDHenkou.Rows.Count - 2);
                                 }
                                 else
                                 {
@@ -341,9 +383,15 @@ namespace JANCDHenkou
                 // 現JANCD
 
                 // 新JANCD
-                else if ((dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"]))
+                else if (dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"])
                 {
-                   if (!string.IsNullOrWhiteSpace(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString()))
+                   if (dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value == null)
+                   {
+                        jhbl.ShowMessage("E102");
+                        dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"];
+                        
+                    }
+                   else
                    {
                         if (!dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString().Length.Equals(13) ||
                            !IsDigit(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString()))          //For 13digits and digit only
@@ -433,15 +481,14 @@ namespace JANCDHenkou
         private void dgvJANCDHenkou_Paint(object sender, PaintEventArgs e)
         {
             string[] columns = { "現JANCD", "ブランド", "ITEM", "商品名", "サイズ", "カラー", "現JANCD", "新JANCD" };
-            for (int j = 0; j < 1;)
+            for (int j = 0; j < 4;)
             {
                 Rectangle r1 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j, -1, true);
-                Rectangle r2 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j, 0, true);
                 int w1 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j + 1, -1, true).Width;
                 int w2 = this.dgvJANCDHenkou.GetCellDisplayRectangle(j + 2, -1, true).Width;
                 r1.X += 2;
                 r1.Y += 1;
-                r1.Width = r1.Width + w1 - 2;
+                r1.Width = r1.Width + w1  - 2;
                 r1.Height = r1.Height - 2;
                 e.Graphics.FillRectangle(new SolidBrush(this.dgvJANCDHenkou.ColumnHeadersDefaultCellStyle.BackColor), r1);
                 StringFormat format = new StringFormat();
