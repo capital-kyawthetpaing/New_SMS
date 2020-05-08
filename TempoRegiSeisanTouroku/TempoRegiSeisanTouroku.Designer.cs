@@ -217,7 +217,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1592, 574);
+            this.tabPage2.Size = new System.Drawing.Size(1592, 604);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "                   ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1415,7 +1415,7 @@
             this.txt1000.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt1000.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt1000.DecimalPlace = 0;
-            this.txt1000.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt1000.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt1000.IntegerPart = 6;
             this.txt1000.IsCorrectDate = true;
             this.txt1000.isEnterKeyDown = false;
@@ -1426,7 +1426,7 @@
             this.txt1000.MaxLength = 7;
             this.txt1000.MoveNext = true;
             this.txt1000.Name = "txt1000";
-            this.txt1000.Size = new System.Drawing.Size(240, 34);
+            this.txt1000.Size = new System.Drawing.Size(240, 39);
             this.txt1000.TabIndex = 56;
             this.txt1000.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt1000.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1625,7 +1625,7 @@
             // lblCashStorage
             // 
             this.lblCashStorage.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblCashStorage.BackColor = System.Drawing.Color.Transparent;
+            this.lblCashStorage.BackColor = System.Drawing.Color.Black;
             this.lblCashStorage.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.lblCashStorage.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.lblCashStorage.ForeColor = System.Drawing.Color.Red;
@@ -1639,7 +1639,7 @@
             // lblCashBalance
             // 
             this.lblCashBalance.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblCashBalance.BackColor = System.Drawing.Color.Transparent;
+            this.lblCashBalance.BackColor = System.Drawing.Color.Black;
             this.lblCashBalance.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.lblCashBalance.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.lblCashBalance.ForeColor = System.Drawing.Color.Black;
@@ -1675,7 +1675,7 @@
             this.txtotheramount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtotheramount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtotheramount.DecimalPlace = 0;
-            this.txtotheramount.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txtotheramount.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txtotheramount.IntegerPart = 6;
             this.txtotheramount.IsCorrectDate = true;
             this.txtotheramount.isEnterKeyDown = false;
@@ -1686,7 +1686,7 @@
             this.txtotheramount.MaxLength = 7;
             this.txtotheramount.MoveNext = true;
             this.txtotheramount.Name = "txtotheramount";
-            this.txtotheramount.Size = new System.Drawing.Size(240, 34);
+            this.txtotheramount.Size = new System.Drawing.Size(240, 39);
             this.txtotheramount.TabIndex = 63;
             this.txtotheramount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtotheramount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1702,7 +1702,7 @@
             this.txt1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt1.DecimalPlace = 0;
-            this.txt1.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt1.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt1.IntegerPart = 6;
             this.txt1.IsCorrectDate = true;
             this.txt1.isEnterKeyDown = false;
@@ -1713,7 +1713,7 @@
             this.txt1.MaxLength = 7;
             this.txt1.MoveNext = true;
             this.txt1.Name = "txt1";
-            this.txt1.Size = new System.Drawing.Size(240, 34);
+            this.txt1.Size = new System.Drawing.Size(240, 39);
             this.txt1.TabIndex = 62;
             this.txt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1729,7 +1729,7 @@
             this.txt5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt5.DecimalPlace = 0;
-            this.txt5.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt5.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt5.IntegerPart = 6;
             this.txt5.IsCorrectDate = true;
             this.txt5.isEnterKeyDown = false;
@@ -1740,7 +1740,7 @@
             this.txt5.MaxLength = 7;
             this.txt5.MoveNext = true;
             this.txt5.Name = "txt5";
-            this.txt5.Size = new System.Drawing.Size(240, 34);
+            this.txt5.Size = new System.Drawing.Size(240, 39);
             this.txt5.TabIndex = 61;
             this.txt5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1756,7 +1756,7 @@
             this.txt10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt10.DecimalPlace = 0;
-            this.txt10.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt10.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt10.IntegerPart = 6;
             this.txt10.IsCorrectDate = true;
             this.txt10.isEnterKeyDown = false;
@@ -1767,7 +1767,7 @@
             this.txt10.MaxLength = 7;
             this.txt10.MoveNext = true;
             this.txt10.Name = "txt10";
-            this.txt10.Size = new System.Drawing.Size(240, 34);
+            this.txt10.Size = new System.Drawing.Size(240, 39);
             this.txt10.TabIndex = 60;
             this.txt10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1783,7 +1783,7 @@
             this.txt50.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt50.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt50.DecimalPlace = 0;
-            this.txt50.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt50.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt50.IntegerPart = 6;
             this.txt50.IsCorrectDate = true;
             this.txt50.isEnterKeyDown = false;
@@ -1794,7 +1794,7 @@
             this.txt50.MaxLength = 7;
             this.txt50.MoveNext = true;
             this.txt50.Name = "txt50";
-            this.txt50.Size = new System.Drawing.Size(240, 34);
+            this.txt50.Size = new System.Drawing.Size(240, 39);
             this.txt50.TabIndex = 59;
             this.txt50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt50.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1810,7 +1810,7 @@
             this.txt100.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt100.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt100.DecimalPlace = 0;
-            this.txt100.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt100.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt100.IntegerPart = 6;
             this.txt100.IsCorrectDate = true;
             this.txt100.isEnterKeyDown = false;
@@ -1821,7 +1821,7 @@
             this.txt100.MaxLength = 7;
             this.txt100.MoveNext = true;
             this.txt100.Name = "txt100";
-            this.txt100.Size = new System.Drawing.Size(240, 34);
+            this.txt100.Size = new System.Drawing.Size(240, 39);
             this.txt100.TabIndex = 58;
             this.txt100.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt100.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1837,7 +1837,7 @@
             this.txt500.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt500.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt500.DecimalPlace = 0;
-            this.txt500.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt500.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt500.IntegerPart = 6;
             this.txt500.IsCorrectDate = true;
             this.txt500.isEnterKeyDown = false;
@@ -1848,7 +1848,7 @@
             this.txt500.MaxLength = 7;
             this.txt500.MoveNext = true;
             this.txt500.Name = "txt500";
-            this.txt500.Size = new System.Drawing.Size(240, 34);
+            this.txt500.Size = new System.Drawing.Size(240, 39);
             this.txt500.TabIndex = 57;
             this.txt500.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt500.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1864,7 +1864,7 @@
             this.txt2000.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt2000.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt2000.DecimalPlace = 0;
-            this.txt2000.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt2000.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt2000.IntegerPart = 6;
             this.txt2000.IsCorrectDate = true;
             this.txt2000.isEnterKeyDown = false;
@@ -1875,7 +1875,7 @@
             this.txt2000.MaxLength = 7;
             this.txt2000.MoveNext = true;
             this.txt2000.Name = "txt2000";
-            this.txt2000.Size = new System.Drawing.Size(240, 34);
+            this.txt2000.Size = new System.Drawing.Size(240, 39);
             this.txt2000.TabIndex = 55;
             this.txt2000.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt2000.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1891,7 +1891,7 @@
             this.txt5000.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt5000.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt5000.DecimalPlace = 0;
-            this.txt5000.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt5000.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt5000.IntegerPart = 6;
             this.txt5000.IsCorrectDate = true;
             this.txt5000.isEnterKeyDown = false;
@@ -1902,7 +1902,7 @@
             this.txt5000.MaxLength = 7;
             this.txt5000.MoveNext = true;
             this.txt5000.Name = "txt5000";
-            this.txt5000.Size = new System.Drawing.Size(240, 34);
+            this.txt5000.Size = new System.Drawing.Size(240, 39);
             this.txt5000.TabIndex = 54;
             this.txt5000.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt5000.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
@@ -1918,7 +1918,7 @@
             this.txt10000.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txt10000.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txt10000.DecimalPlace = 0;
-            this.txt10000.Font = new System.Drawing.Font("MS Gothic", 20F);
+            this.txt10000.Font = new System.Drawing.Font("MS Gothic", 24F);
             this.txt10000.IntegerPart = 6;
             this.txt10000.IsCorrectDate = true;
             this.txt10000.isEnterKeyDown = false;
@@ -1929,7 +1929,7 @@
             this.txt10000.MaxLength = 7;
             this.txt10000.MoveNext = true;
             this.txt10000.Name = "txt10000";
-            this.txt10000.Size = new System.Drawing.Size(240, 34);
+            this.txt10000.Size = new System.Drawing.Size(240, 39);
             this.txt10000.TabIndex = 53;
             this.txt10000.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txt10000.TextSize = CKM_Controls.CKM_TextBox.FontSize.Large;
