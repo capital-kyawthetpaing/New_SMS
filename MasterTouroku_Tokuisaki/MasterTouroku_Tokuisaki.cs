@@ -849,7 +849,7 @@ namespace MasterTouroku_Tokuisaki
                             return false;
                         }
                     }
-                    if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (index .Equals((int)EIndex.ZipCD2) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //以下の条件でM_ZipCodeが存在する場合、
                         //[M_ZipCode]
