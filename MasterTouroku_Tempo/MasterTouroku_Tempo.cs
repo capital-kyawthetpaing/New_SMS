@@ -1216,12 +1216,17 @@ namespace MasterTouroku_Tempo
                                 {
                                     SetEnabled();
 
-                                    if (radioButton1.Checked)
-                                        radioButton1.Focus();
-                                    else if (radioButton2.Checked)
-                                        radioButton2.Focus();
-                                    else if (radioButton3.Checked)
-                                        radioButton3.Focus();
+                                    if (OperationMode == EOperationMode.INSERT)
+                                        copyKeyControls[(int)EIndex.StoreCD].Focus();
+                                    else
+                                    {
+                                        if (radioButton1.Checked)
+                                            radioButton1.Focus();
+                                        else if (radioButton2.Checked)
+                                            radioButton2.Focus();
+                                        else if (radioButton3.Checked)
+                                            radioButton3.Focus();
+                                    }
                                 }
                                 else
                                 {
