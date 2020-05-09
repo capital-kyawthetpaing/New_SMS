@@ -1101,6 +1101,7 @@ namespace MasterTouroku_Shouhin
             newrow["SizeNO"] = detailLabels[(int)EIndex.SizeNo].Text;
             newrow["ColorName"] = detailLabels[(int)EIndex.ColorName].Text;
             newrow["SizeName"] = detailLabels[(int)EIndex.SizeName].Text;
+            newrow["MakerItem"] = detailLabels[(int)EIndex.MakerItem].Text;
 
             newrow["JanCD"] =  keyControls[(int)EIndex.JanCD].Text;
             //newrow["SetAdminCD"] = keyControls[(int)EIndex.SetAdminCD].Text;
@@ -1113,7 +1114,6 @@ namespace MasterTouroku_Shouhin
             newrow["KanaName"] = detailControls[(int)EIndex.KanaName].Text;
             newrow["SKUShortName"] = detailControls[(int)EIndex.SKUShortName].Text;
             newrow["EnglishName"] = detailControls[(int)EIndex.EnglishName].Text;
-            newrow["MakerItem"] = detailControls[(int)EIndex.MakerItem].Text;
                         
             newrow["VariousFLG"] = ((CheckBox)detailControls[(int)EIndex.ChkVariousFLG]).Checked ? 1 : 0;
             newrow["SetKBN"] = ((CheckBox)detailControls[(int)EIndex.ChkSetKBN]).Checked ? 1 : 0;

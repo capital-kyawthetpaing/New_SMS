@@ -242,6 +242,8 @@ namespace DL
             }
             catch (Exception ex)
             {
+                if (UseTransaction)
+                    RollBackTransaction();
                 throw (ex);
             }
             finally
