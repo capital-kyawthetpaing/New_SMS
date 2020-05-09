@@ -21,7 +21,7 @@ GO
 -- =============================================
 CREATE PROCEDURE [dbo].[M_Vendor_SelectTop1]
 	-- Add the parameters for the stored procedure here
-	@VendorCD varchar(10),
+	@VendorCD varchar(13),
     @ChangeDate varchar(10),
     @VendorFlg varchar(1)
 --    @PayeeFlg varchar(1),
