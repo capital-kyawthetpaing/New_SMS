@@ -436,12 +436,12 @@ namespace SeikyuuSho
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
                                     detailControls[index + 1].Enabled = true;
-
+                                ScCustomer.LabelText = mce.CustomerName;
                             }
                             else
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
-                                
+                                ScCustomer.LabelText = mce.CustomerName;
                                 ////[M_Store_Select]
                                 //M_Store_Entity me = new M_Store_Entity
                                 //{
