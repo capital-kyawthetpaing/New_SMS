@@ -70,6 +70,7 @@ namespace ShiireNyuuryokuFromNyuuka
         private string mOldPurchaseNO = "";    //排他処理のため使用
         private string mOldPurchaseDate = "";
         private string mOldVendorCD = "";
+        private string mOldCalledVendorCD = "";
         private string InStoreCD = "";
 
         private string mPayeeCD = "";
@@ -1821,6 +1822,14 @@ namespace ShiireNyuuryokuFromNyuuka
                         if (index == (int)EIndex.CalledVendorCD)
                         {
                             ScCalledVendorCD.LabelText = mve.VendorName;
+
+                            if (mOldCalledVendorCD != detailControls[index].Text)
+                            {
+                                detailControls[(int)EIndex.VendorCD].Text = detailControls[index].Text;
+                                ScVendorCD.LabelText = mve.VendorName;
+
+                                mOldCalledVendorCD = detailControls[index].Text;
+                            }
                         }
                         else
                         {
@@ -2414,6 +2423,7 @@ namespace ShiireNyuuryokuFromNyuuka
         {
             if (index == EIndex.CalledVendorCD)
             {
+                mOldCalledVendorCD = "";
                 ScCalledVendorCD.LabelText = "";
             }
             else
