@@ -3149,7 +3149,7 @@ namespace TempoJuchuuNyuuryoku
                     ChangeDate = ymd,
                     StoreCD = CboStoreCD.SelectedValue.ToString(),
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
-                    Suryo = bbl.Z_SetStr(mGrid.g_DArray[row].JuchuuSuu),
+                    Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
                     DenType = "1",  //1(受注)
                     DenNo = keyControls[(int)EIndex.JuchuuNO].Text,
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
