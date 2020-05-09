@@ -1653,14 +1653,23 @@ namespace HacchuuNyuuryoku
                         detailControls[(int)EIndex.Tel].Text = row["DestinationTelphoneNO"].ToString();
                         detailControls[(int)EIndex.Fax].Text = row["DestinationFaxNO"].ToString();
 
-                        //申請中、承認中の場合
-                        int mApprovalStageFLG = Convert.ToInt16(row["ApprovalStageFLG"].ToString());
-                        if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG)
-                            SetBtnSubF11Enabled(true);
-                        else
-                            SetBtnSubF11Enabled(false);
+                        if (index == (int)EIndex.OrderNO)
+                        {
+                            //申請中、承認中の場合
+                            int mApprovalStageFLG = Convert.ToInt16(row["ApprovalStageFLG"].ToString());
+                            if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG)
+                                SetBtnSubF11Enabled(true);
+                            else
+                                SetBtnSubF11Enabled(false);
 
-                        SetlblDisp( row["ApprovalStage"].ToString());
+                            SetlblDisp(row["ApprovalStage"].ToString());
+                        }
+                        else
+                        {
+                            //複写時
+                            SetBtnSubF11Enabled(true);
+                            SetlblDisp("承認中");
+                        }
 
                         if (row["AliasKBN"].ToString() == "1")
                             radioButton2.Checked = true;
@@ -2241,7 +2250,7 @@ namespace HacchuuNyuuryoku
                             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
 
                             //①JAN発注単価マスタ（店舗指定なし）
-                            mje.JanCD = mGrid.g_DArray[row].JanCD;
+                            mje.AdminNO = mGrid.g_DArray[row].AdminNO;
                             mje.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
                             mje.StoreCD = "0000";
                             mje.ChangeDate = ymd;
@@ -2254,24 +2263,48 @@ namespace HacchuuNyuuryoku
                             }
                             else
                             {
-                                //[M_ItemOrderPrice]
-                                M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity();
-                                mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
-                                mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
-                                mje2.ChangeDate = ymd;
+                                //②	JAN発注単価マスタ（店舗指定あり）
+                                mje.StoreCD = CboStoreCD.SelectedValue.ToString();
 
-                                ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
-                                ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                ret = jbl.M_JANOrderPrice_Select(mje);
                                 if (ret)
                                 {
-                                    mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                    mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje.PriceWithoutTax);
                                 }
                                 else
                                 {
-                                    mGrid.g_DArray[row].OldJanCD = "";
-                                    
-                                    bbl.ShowMessage("E170");
-                                    return false;
+                                    //[M_ItemOrderPrice]
+                                    M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity();
+
+                                    //③	ITEM発注単価マスター（店舗指定あり）	
+                                    mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
+                                    mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
+                                    mje2.ChangeDate = ymd;
+                                    mje2.StoreCD = "0000";
+
+                                    ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
+                                    ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                    if (ret)
+                                    {
+                                        mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                    }
+                                    else
+                                    {
+                                        //④	ITEM発注単価マスター（店舗指定なし）
+                                        mje2.StoreCD = CboStoreCD.SelectedValue.ToString();
+                                        ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                        if (ret)
+                                        {
+                                            mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                        }
+                                        else
+                                        {
+                                            mGrid.g_DArray[row].OldJanCD = "";
+
+                                            bbl.ShowMessage("E170");
+                                            return false;
+                                        }
+                                    }
                                 }
                             }
                             //発注単価×発注数	
