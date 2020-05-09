@@ -2821,15 +2821,15 @@ namespace HacchuuNyuuryoku
             //ボタンを押すたびに「承認」「却下」のモードを変更する。
             if (init)
             {
-                SetlblDisp( "承認");
+                SetlblDisp("承認中");
             }
-            else if (lblDisp.Text == "承認")
+            else if (lblDisp.Text == "承認中")
             {
                 SetlblDisp("却下");
             }
             else
             {
-                SetlblDisp("承認");
+                SetlblDisp("承認中");
             }
             ////F11ボタンは、
             ////その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
@@ -2848,13 +2848,13 @@ namespace HacchuuNyuuryoku
                 case "申請":
                 case "承認":
                 case "承認中":
-                    lblDisp.BackColor = Color.LightPink;
+                    lblDisp.BackColor = Color.LemonChiffon;
                     break;
                 case "却下":
                     lblDisp.BackColor = Color.Plum;
                     break;
                 case "承認済":
-                    lblDisp.BackColor = Color.LightBlue;
+                    lblDisp.BackColor = Color.PowderBlue;
                     break;
 
             }
