@@ -1148,6 +1148,8 @@ namespace MitsumoriNyuuryoku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -1836,11 +1838,14 @@ namespace MitsumoriNyuuryoku
         }
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
-            int w_CtlRow = row - Vsb_Mei_0.Value;
-            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            if (!chkAll)
             {
-                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
             }
 
             switch (col)
@@ -3168,13 +3173,8 @@ namespace MitsumoriNyuuryoku
                                 break;
 
                             case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
-                                int tanka;
-                                int su;
                                 //原価額=Form.Detail.原価単価×	Form.Detail.見積数
-                                if (int.TryParse(mGrid.g_DArray[w_Row].CostUnitPrice, out tanka) && int.TryParse(mGrid.g_DArray[w_Row].MitsumoriSuu, out su))
-                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", tanka * su);
-                                else
-                                    mGrid.g_DArray[w_Row].CostGaku = "0";
+                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriSuu));
                                
                                 break;
                         }
