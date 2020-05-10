@@ -2335,12 +2335,14 @@ namespace MasterTouroku_HanbaiTanka
                 lblSkuCD.Text = " SKUCD";
                 keyControls[(int)EIndex.StoreCD].Enabled = true;
                 keyControls[(int)EIndex.StoreCD].Text = "0000";
+                CheckKey((int)EIndex.StoreCD);
                 ScStore.BtnSearch.Enabled = true;
                 lblGridSkuCD.Text = "SKUCD";
                 lblGridJanCD.Text = "JANCD";
                 //単価設定CDも入力？？
                 detailControls[(int)EIndex.TankaCD].Enabled = true;
                 detailControls[(int)EIndex.TankaCD].Text = "0000000000000";
+                CheckDetail((int)EIndex.TankaCD);
                 ScTanka.BtnSearch.Enabled = true;
             }
         }
@@ -2388,8 +2390,12 @@ namespace MasterTouroku_HanbaiTanka
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 //セルの金額が0円か空白の場合に定価×掛率の結果を反映
                 this.CalcMoney(0);
+
+                this.Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
@@ -2403,9 +2409,13 @@ namespace MasterTouroku_HanbaiTanka
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 //セルの金額に関わらず全ての金額に定価×掛率の結果を反映
                 this.CalcMoney(1);
-                            }
+
+                this.Cursor = Cursors.Default;
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
