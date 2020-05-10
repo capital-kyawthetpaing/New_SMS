@@ -2465,7 +2465,7 @@ namespace MasterTouroku_HanbaiTanka
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceOutTax) == 0)
                             mGrid.g_DArray[RW].ClientPriceOutTax = result.ToString("#,##0");
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text), MidpointRounding.AwayFromZero));
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text));
                         zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceWithTax) == 0)
@@ -2473,7 +2473,7 @@ namespace MasterTouroku_HanbaiTanka
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax) == 0)
                             mGrid.g_DArray[RW].SalePriceOutTax = result.ToString("#,##0");
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text), MidpointRounding.AwayFromZero));
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text));
                         zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceWithTax) == 0)
