@@ -2330,7 +2330,12 @@ namespace MitsumoriNyuuryoku
                 bbl.ShowMessage("I101");
 
             if (ChkPrint.Checked && OperationMode != EOperationMode.DELETE)
+            {
+                //排他処理を解除
+                DeleteExclusive();
+
                 ExecPrint(dme.MitsumoriNO);
+            }
 
             //更新後画面クリア
             ChangeOperationMode(base.OperationMode);
