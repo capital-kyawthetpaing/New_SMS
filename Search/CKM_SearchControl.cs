@@ -1098,19 +1098,19 @@ namespace Search
                         }
                     }
                     break;
-                //case SearchType.仕入番号:
-                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                //    {
-                //        frmShiire.OperatorCD = Value1;
-                //        frmShiire.AllAvailableStores = Value2;
-                //        frmShiire.ShowDialog();
-                //        if (!frmShiire.flgCancel)
-                //        {
-                //            txtCode.Text = frmShiire.PurchaseNO;
-                //            txtChangeDate.Text = frmShiire.ChangeDate;
-                //        }
-                //    }
-                //    break;
+                case SearchType.仕入番号:
+                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                    {
+                        frmShiire.OperatorCD = Value1;
+                        frmShiire.AllAvailableStores = Value2;
+                        frmShiire.ShowDialog();
+                        if (!frmShiire.flgCancel)
+                        {
+                            txtCode.Text = frmShiire.PurchaseNO;
+                            txtChangeDate.Text = frmShiire.ChangeDate;
+                        }
+                    }
+                    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {
