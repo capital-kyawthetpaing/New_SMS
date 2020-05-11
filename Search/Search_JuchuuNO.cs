@@ -268,7 +268,7 @@ namespace Search
 
             if (dt.Rows.Count > 0)
             {
-                GvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
@@ -511,7 +511,16 @@ namespace Search
             if (GvDetail.CurrentRow != null && GvDetail.CurrentRow.Index >= 0)
             {
                 JuchuuNO = GvDetail.CurrentRow.Cells["colJuchuuNO"].Value.ToString();
-                //ChangeDate = GvDetail.CurrentRow.Cells["ColChangeDate"].Value.ToString();
+                if(string.IsNullOrWhiteSpace( JuchuuNO))
+                {
+                    //直前の受注NOまで遡る
+                    for(int row = GvDetail.CurrentRow.Index-1; row>=0; row--)
+                    {
+                        JuchuuNO = GvDetail.Rows[row].Cells["colJuchuuNO"].Value.ToString();
+                        if (!string.IsNullOrWhiteSpace(JuchuuNO))
+                            return;
+                    }
+                }
             }
         }
         /// <summary>

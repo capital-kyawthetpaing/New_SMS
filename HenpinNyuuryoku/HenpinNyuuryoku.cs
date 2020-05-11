@@ -1762,12 +1762,14 @@ namespace HenpinNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
-
-            int w_CtlRow = row - Vsb_Mei_0.Value;
-            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            if (!chkAll && !changeYmd)
             {
-                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
             }
 
             switch (col)

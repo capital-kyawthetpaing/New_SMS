@@ -66,35 +66,6 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.colStoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuchuuSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuchuuUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colKin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBikou = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBikou2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCommentInStoreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCommentOutStoreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHouho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOrderCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOrderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNyukaBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSikyuYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNyukinYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -141,6 +112,35 @@
             this.btnSubF10 = new CKM_Controls.CKM_Button();
             this.ckM_TextBox16 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox17 = new CKM_Controls.CKM_TextBox();
+            this.colStoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStoreName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuSuu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuchuuUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colKin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStaff = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBikou = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBikou2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCommentInStoreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCommentOutStoreM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHouho = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApprovalStageFLG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coIOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colOrderName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colArrivalDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNyukaBi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaleDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSikyuYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNyukinYmd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -453,6 +453,7 @@
             this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox7.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
@@ -461,6 +462,7 @@
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = false;
             this.ckM_TextBox7.isEnterKeyDown = false;
+            this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 300;
@@ -495,6 +497,7 @@
             this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox6.DecimalPlace = 0;
@@ -503,6 +506,7 @@
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = false;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 300;
@@ -537,6 +541,7 @@
             this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox8.DecimalPlace = 0;
@@ -545,6 +550,7 @@
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = false;
             this.ckM_TextBox8.isEnterKeyDown = false;
+            this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 5;
@@ -579,6 +585,7 @@
             this.ckM_TextBox5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox5.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox5.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox5.DecimalPlace = 0;
@@ -587,6 +594,7 @@
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
+            this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
             this.ckM_TextBox5.Length = 80;
@@ -676,6 +684,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -684,6 +693,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -755,6 +765,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -763,6 +774,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -836,254 +848,6 @@
             this.GvDetail.DoubleClick += new System.EventHandler(this.GvDetail_DoubleClick);
             this.GvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
             // 
-            // colStoreCD
-            // 
-            this.colStoreCD.DataPropertyName = "StoreCD";
-            this.colStoreCD.HeaderText = "店舗CD";
-            this.colStoreCD.Name = "colStoreCD";
-            this.colStoreCD.ReadOnly = true;
-            this.colStoreCD.Visible = false;
-            // 
-            // colStoreName
-            // 
-            this.colStoreName.DataPropertyName = "StoreName";
-            this.colStoreName.HeaderText = "店舗";
-            this.colStoreName.Name = "colStoreName";
-            this.colStoreName.ReadOnly = true;
-            this.colStoreName.Width = 150;
-            // 
-            // colVendorCD
-            // 
-            this.colVendorCD.DataPropertyName = "CustomerCD";
-            this.colVendorCD.HeaderText = "顧客";
-            this.colVendorCD.Name = "colVendorCD";
-            this.colVendorCD.ReadOnly = true;
-            // 
-            // colVendorName
-            // 
-            this.colVendorName.DataPropertyName = "CustomerName";
-            this.colVendorName.HeaderText = " ";
-            this.colVendorName.Name = "colVendorName";
-            this.colVendorName.ReadOnly = true;
-            this.colVendorName.Width = 200;
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "TEL";
-            this.colSKUCD.HeaderText = "電話番号";
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.ReadOnly = true;
-            // 
-            // colJuchuuDate
-            // 
-            this.colJuchuuDate.DataPropertyName = "JuchuuDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colJuchuuDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colJuchuuDate.HeaderText = "受注日";
-            this.colJuchuuDate.Name = "colJuchuuDate";
-            this.colJuchuuDate.ReadOnly = true;
-            this.colJuchuuDate.Width = 80;
-            // 
-            // colJuchuuNO
-            // 
-            this.colJuchuuNO.DataPropertyName = "JuchuuNO";
-            this.colJuchuuNO.HeaderText = "受注番号";
-            this.colJuchuuNO.Name = "colJuchuuNO";
-            this.colJuchuuNO.ReadOnly = true;
-            // 
-            // colJANCD
-            // 
-            this.colJANCD.DataPropertyName = "JANCD";
-            this.colJANCD.HeaderText = "商品名";
-            this.colJANCD.Name = "colJANCD";
-            this.colJANCD.ReadOnly = true;
-            this.colJANCD.Width = 140;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = " ";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Width = 400;
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "サイズ";
-            this.colSizeName.Name = "colSizeName";
-            this.colSizeName.ReadOnly = true;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "カラー";
-            this.colColorName.Name = "colColorName";
-            this.colColorName.ReadOnly = true;
-            // 
-            // colJuchuuSuu
-            // 
-            this.colJuchuuSuu.DataPropertyName = "JuchuuSuu";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colJuchuuSuu.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colJuchuuSuu.HeaderText = "数量";
-            this.colJuchuuSuu.Name = "colJuchuuSuu";
-            this.colJuchuuSuu.ReadOnly = true;
-            // 
-            // colJuchuuUnitPrice
-            // 
-            this.colJuchuuUnitPrice.DataPropertyName = "JuchuuUnitPrice";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.colJuchuuUnitPrice.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colJuchuuUnitPrice.HeaderText = "単価";
-            this.colJuchuuUnitPrice.Name = "colJuchuuUnitPrice";
-            this.colJuchuuUnitPrice.ReadOnly = true;
-            this.colJuchuuUnitPrice.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colJuchuuUnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // colKin
-            // 
-            this.colKin.DataPropertyName = "JuchuuGaku";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.colKin.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colKin.HeaderText = "金額";
-            this.colKin.Name = "colKin";
-            this.colKin.ReadOnly = true;
-            // 
-            // colStaff
-            // 
-            this.colStaff.DataPropertyName = "StaffName";
-            this.colStaff.HeaderText = "担当スタッフ";
-            this.colStaff.Name = "colStaff";
-            this.colStaff.ReadOnly = true;
-            // 
-            // colBikou
-            // 
-            this.colBikou.DataPropertyName = "CommentInStore";
-            this.colBikou.HeaderText = "受注コメント(社内)";
-            this.colBikou.Name = "colBikou";
-            this.colBikou.ReadOnly = true;
-            this.colBikou.Width = 200;
-            // 
-            // colBikou2
-            // 
-            this.colBikou2.DataPropertyName = "CommentOutStore";
-            this.colBikou2.HeaderText = "受注コメント(社外)";
-            this.colBikou2.Name = "colBikou2";
-            this.colBikou2.ReadOnly = true;
-            this.colBikou2.Width = 200;
-            // 
-            // colCommentInStoreM
-            // 
-            this.colCommentInStoreM.DataPropertyName = "CommentInStoreM";
-            this.colCommentInStoreM.HeaderText = "受注明細コメント(社内)";
-            this.colCommentInStoreM.Name = "colCommentInStoreM";
-            this.colCommentInStoreM.ReadOnly = true;
-            this.colCommentInStoreM.Width = 200;
-            // 
-            // colCommentOutStoreM
-            // 
-            this.colCommentOutStoreM.DataPropertyName = "CommentOutStoreM";
-            this.colCommentOutStoreM.HeaderText = "受注明細コメント(社外)";
-            this.colCommentOutStoreM.Name = "colCommentOutStoreM";
-            this.colCommentOutStoreM.ReadOnly = true;
-            this.colCommentOutStoreM.Width = 200;
-            // 
-            // colHouho
-            // 
-            this.colHouho.DataPropertyName = "DenominationName";
-            this.colHouho.HeaderText = "入金方法";
-            this.colHouho.Name = "colHouho";
-            this.colHouho.ReadOnly = true;
-            // 
-            // colApprovalStageFLG
-            // 
-            this.colApprovalStageFLG.DataPropertyName = "CollectAmount";
-            this.colApprovalStageFLG.HeaderText = "入金状態";
-            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
-            this.colApprovalStageFLG.ReadOnly = true;
-            // 
-            // coIOrderDate
-            // 
-            this.coIOrderDate.DataPropertyName = "OrderDate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.coIOrderDate.HeaderText = "発注日";
-            this.coIOrderDate.Name = "coIOrderDate";
-            this.coIOrderDate.ReadOnly = true;
-            this.coIOrderDate.Width = 80;
-            // 
-            // colOrderCD
-            // 
-            this.colOrderCD.DataPropertyName = "OrderCD";
-            this.colOrderCD.HeaderText = "発注先";
-            this.colOrderCD.Name = "colOrderCD";
-            this.colOrderCD.ReadOnly = true;
-            // 
-            // colOrderName
-            // 
-            this.colOrderName.DataPropertyName = "OrderName";
-            this.colOrderName.HeaderText = "　";
-            this.colOrderName.Name = "colOrderName";
-            this.colOrderName.ReadOnly = true;
-            this.colOrderName.Width = 150;
-            // 
-            // colArrivalDate
-            // 
-            this.colArrivalDate.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colArrivalDate.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colArrivalDate.HeaderText = "入荷予定日";
-            this.colArrivalDate.Name = "colArrivalDate";
-            this.colArrivalDate.ReadOnly = true;
-            this.colArrivalDate.Width = 80;
-            // 
-            // colNyukaBi
-            // 
-            this.colNyukaBi.DataPropertyName = "ArrivalDate";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNyukaBi.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colNyukaBi.HeaderText = "入荷日";
-            this.colNyukaBi.Name = "colNyukaBi";
-            this.colNyukaBi.ReadOnly = true;
-            this.colNyukaBi.Width = 80;
-            // 
-            // colSaleDate
-            // 
-            this.colSaleDate.DataPropertyName = "SalesDate";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle10;
-            this.colSaleDate.HeaderText = "売上日";
-            this.colSaleDate.Name = "colSaleDate";
-            this.colSaleDate.ReadOnly = true;
-            this.colSaleDate.Width = 80;
-            // 
-            // colSikyuYmd
-            // 
-            this.colSikyuYmd.DataPropertyName = "BillingCloseDate";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSikyuYmd.DefaultCellStyle = dataGridViewCellStyle11;
-            this.colSikyuYmd.HeaderText = "請求日";
-            this.colSikyuYmd.Name = "colSikyuYmd";
-            this.colSikyuYmd.ReadOnly = true;
-            this.colSikyuYmd.Width = 80;
-            // 
-            // colNyukinYmd
-            // 
-            this.colNyukinYmd.DataPropertyName = "CollectClearDate";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colNyukinYmd.DefaultCellStyle = dataGridViewCellStyle12;
-            this.colNyukinYmd.HeaderText = "入金日";
-            this.colNyukinYmd.Name = "colNyukinYmd";
-            this.colNyukinYmd.ReadOnly = true;
-            this.colNyukinYmd.Width = 80;
-            // 
             // ckM_Label6
             // 
             this.ckM_Label6.AutoSize = true;
@@ -1107,6 +871,7 @@
             this.ckM_TextBox9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox9.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox9.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox9.DecimalPlace = 0;
@@ -1115,6 +880,7 @@
             this.ckM_TextBox9.IntegerPart = 0;
             this.ckM_TextBox9.IsCorrectDate = true;
             this.ckM_TextBox9.isEnterKeyDown = false;
+            this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 10;
@@ -1150,6 +916,7 @@
             this.ckM_TextBox10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox10.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox10.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox10.DecimalPlace = 0;
@@ -1158,6 +925,7 @@
             this.ckM_TextBox10.IntegerPart = 0;
             this.ckM_TextBox10.IsCorrectDate = true;
             this.ckM_TextBox10.isEnterKeyDown = false;
+            this.ckM_TextBox10.isMaxLengthErr = false;
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
             this.ckM_TextBox10.Length = 10;
@@ -1193,6 +961,7 @@
             this.ckM_TextBox11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox11.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox11.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox11.DecimalPlace = 0;
@@ -1201,6 +970,7 @@
             this.ckM_TextBox11.IntegerPart = 0;
             this.ckM_TextBox11.IsCorrectDate = true;
             this.ckM_TextBox11.isEnterKeyDown = false;
+            this.ckM_TextBox11.isMaxLengthErr = false;
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
             this.ckM_TextBox11.Length = 10;
@@ -1236,6 +1006,7 @@
             this.ckM_TextBox12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox12.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox12.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox12.DecimalPlace = 0;
@@ -1244,6 +1015,7 @@
             this.ckM_TextBox12.IntegerPart = 0;
             this.ckM_TextBox12.IsCorrectDate = true;
             this.ckM_TextBox12.isEnterKeyDown = false;
+            this.ckM_TextBox12.isMaxLengthErr = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 10;
@@ -1279,6 +1051,7 @@
             this.ckM_TextBox13.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox13.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox13.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox13.DecimalPlace = 0;
@@ -1287,6 +1060,7 @@
             this.ckM_TextBox13.IntegerPart = 0;
             this.ckM_TextBox13.IsCorrectDate = true;
             this.ckM_TextBox13.isEnterKeyDown = false;
+            this.ckM_TextBox13.isMaxLengthErr = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
             this.ckM_TextBox13.Length = 10;
@@ -1322,6 +1096,7 @@
             this.ckM_TextBox14.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox14.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox14.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox14.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox14.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox14.DecimalPlace = 0;
@@ -1330,6 +1105,7 @@
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = true;
             this.ckM_TextBox14.isEnterKeyDown = false;
+            this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
             this.ckM_TextBox14.Length = 10;
@@ -1608,6 +1384,7 @@
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
@@ -1616,6 +1393,7 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 30;
@@ -1714,6 +1492,7 @@
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -1722,6 +1501,7 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = false;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 4;
@@ -1739,6 +1519,7 @@
             this.ckM_TextBox15.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox15.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox15.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox15.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox15.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox15.DecimalPlace = 0;
@@ -1747,6 +1528,7 @@
             this.ckM_TextBox15.IntegerPart = 0;
             this.ckM_TextBox15.IsCorrectDate = false;
             this.ckM_TextBox15.isEnterKeyDown = false;
+            this.ckM_TextBox15.isMaxLengthErr = false;
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.Length = 4;
@@ -1764,6 +1546,7 @@
             this.txtCustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtCustomerName.BackColor = System.Drawing.Color.White;
             this.txtCustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerName.ClientColor = System.Drawing.Color.White;
             this.txtCustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtCustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustomerName.DecimalPlace = 0;
@@ -1772,6 +1555,7 @@
             this.txtCustomerName.IntegerPart = 0;
             this.txtCustomerName.IsCorrectDate = true;
             this.txtCustomerName.isEnterKeyDown = false;
+            this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
             this.txtCustomerName.Length = 80;
@@ -1790,6 +1574,7 @@
             this.txtVendorName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorName.BackColor = System.Drawing.Color.White;
             this.txtVendorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorName.ClientColor = System.Drawing.Color.White;
             this.txtVendorName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtVendorName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorName.DecimalPlace = 0;
@@ -1798,6 +1583,7 @@
             this.txtVendorName.IntegerPart = 0;
             this.txtVendorName.IsCorrectDate = true;
             this.txtVendorName.isEnterKeyDown = false;
+            this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;
             this.txtVendorName.Length = 80;
@@ -1888,6 +1674,7 @@
             this.ckM_TextBox16.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox16.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox16.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox16.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox16.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox16.DecimalPlace = 0;
@@ -1896,6 +1683,7 @@
             this.ckM_TextBox16.IntegerPart = 0;
             this.ckM_TextBox16.IsCorrectDate = true;
             this.ckM_TextBox16.isEnterKeyDown = false;
+            this.ckM_TextBox16.isMaxLengthErr = false;
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
             this.ckM_TextBox16.Length = 11;
@@ -1913,6 +1701,7 @@
             this.ckM_TextBox17.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox17.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox17.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox17.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox17.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox17.DecimalPlace = 0;
@@ -1921,6 +1710,7 @@
             this.ckM_TextBox17.IntegerPart = 0;
             this.ckM_TextBox17.IsCorrectDate = true;
             this.ckM_TextBox17.isEnterKeyDown = false;
+            this.ckM_TextBox17.isMaxLengthErr = false;
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
             this.ckM_TextBox17.Length = 11;
@@ -1931,6 +1721,254 @@
             this.ckM_TextBox17.Size = new System.Drawing.Size(100, 19);
             this.ckM_TextBox17.TabIndex = 40;
             this.ckM_TextBox17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // colStoreCD
+            // 
+            this.colStoreCD.DataPropertyName = "StoreCD";
+            this.colStoreCD.HeaderText = "店舗CD";
+            this.colStoreCD.Name = "colStoreCD";
+            this.colStoreCD.ReadOnly = true;
+            this.colStoreCD.Visible = false;
+            // 
+            // colStoreName
+            // 
+            this.colStoreName.DataPropertyName = "StoreName";
+            this.colStoreName.HeaderText = "店舗";
+            this.colStoreName.Name = "colStoreName";
+            this.colStoreName.ReadOnly = true;
+            this.colStoreName.Width = 150;
+            // 
+            // colVendorCD
+            // 
+            this.colVendorCD.DataPropertyName = "CustomerCD";
+            this.colVendorCD.HeaderText = "顧客";
+            this.colVendorCD.Name = "colVendorCD";
+            this.colVendorCD.ReadOnly = true;
+            // 
+            // colVendorName
+            // 
+            this.colVendorName.DataPropertyName = "CustomerName";
+            this.colVendorName.HeaderText = " ";
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.ReadOnly = true;
+            this.colVendorName.Width = 200;
+            // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "TEL";
+            this.colSKUCD.HeaderText = "電話番号";
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            // 
+            // colJuchuuDate
+            // 
+            this.colJuchuuDate.DataPropertyName = "JuchuuDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colJuchuuDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colJuchuuDate.HeaderText = "受注日";
+            this.colJuchuuDate.Name = "colJuchuuDate";
+            this.colJuchuuDate.ReadOnly = true;
+            this.colJuchuuDate.Width = 80;
+            // 
+            // colJuchuuNO
+            // 
+            this.colJuchuuNO.DataPropertyName = "JuchuuNO";
+            this.colJuchuuNO.HeaderText = "受注番号";
+            this.colJuchuuNO.Name = "colJuchuuNO";
+            this.colJuchuuNO.ReadOnly = true;
+            // 
+            // colJANCD
+            // 
+            this.colJANCD.DataPropertyName = "JANCD";
+            this.colJANCD.HeaderText = "商品名";
+            this.colJANCD.Name = "colJANCD";
+            this.colJANCD.ReadOnly = true;
+            this.colJANCD.Width = 140;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = " ";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Width = 400;
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "サイズ";
+            this.colSizeName.Name = "colSizeName";
+            this.colSizeName.ReadOnly = true;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "カラー";
+            this.colColorName.Name = "colColorName";
+            this.colColorName.ReadOnly = true;
+            // 
+            // colJuchuuSuu
+            // 
+            this.colJuchuuSuu.DataPropertyName = "JuchuuSuu";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colJuchuuSuu.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colJuchuuSuu.HeaderText = "数量";
+            this.colJuchuuSuu.Name = "colJuchuuSuu";
+            this.colJuchuuSuu.ReadOnly = true;
+            // 
+            // colJuchuuUnitPrice
+            // 
+            this.colJuchuuUnitPrice.DataPropertyName = "JuchuuUnitPrice";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colJuchuuUnitPrice.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colJuchuuUnitPrice.HeaderText = "単価";
+            this.colJuchuuUnitPrice.Name = "colJuchuuUnitPrice";
+            this.colJuchuuUnitPrice.ReadOnly = true;
+            this.colJuchuuUnitPrice.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colJuchuuUnitPrice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // colKin
+            // 
+            this.colKin.DataPropertyName = "JuchuuGaku";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colKin.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colKin.HeaderText = "金額";
+            this.colKin.Name = "colKin";
+            this.colKin.ReadOnly = true;
+            // 
+            // colStaff
+            // 
+            this.colStaff.DataPropertyName = "StaffName";
+            this.colStaff.HeaderText = "担当スタッフ";
+            this.colStaff.Name = "colStaff";
+            this.colStaff.ReadOnly = true;
+            // 
+            // colBikou
+            // 
+            this.colBikou.DataPropertyName = "CommentInStore";
+            this.colBikou.HeaderText = "受注コメント(社内)";
+            this.colBikou.Name = "colBikou";
+            this.colBikou.ReadOnly = true;
+            this.colBikou.Width = 200;
+            // 
+            // colBikou2
+            // 
+            this.colBikou2.DataPropertyName = "CommentOutStore";
+            this.colBikou2.HeaderText = "受注コメント(社外)";
+            this.colBikou2.Name = "colBikou2";
+            this.colBikou2.ReadOnly = true;
+            this.colBikou2.Width = 200;
+            // 
+            // colCommentInStoreM
+            // 
+            this.colCommentInStoreM.DataPropertyName = "CommentInStoreM";
+            this.colCommentInStoreM.HeaderText = "受注明細コメント(社内)";
+            this.colCommentInStoreM.Name = "colCommentInStoreM";
+            this.colCommentInStoreM.ReadOnly = true;
+            this.colCommentInStoreM.Width = 200;
+            // 
+            // colCommentOutStoreM
+            // 
+            this.colCommentOutStoreM.DataPropertyName = "CommentOutStoreM";
+            this.colCommentOutStoreM.HeaderText = "受注明細コメント(社外)";
+            this.colCommentOutStoreM.Name = "colCommentOutStoreM";
+            this.colCommentOutStoreM.ReadOnly = true;
+            this.colCommentOutStoreM.Width = 200;
+            // 
+            // colHouho
+            // 
+            this.colHouho.DataPropertyName = "DenominationName";
+            this.colHouho.HeaderText = "入金方法";
+            this.colHouho.Name = "colHouho";
+            this.colHouho.ReadOnly = true;
+            // 
+            // colApprovalStageFLG
+            // 
+            this.colApprovalStageFLG.DataPropertyName = "CollectAmount";
+            this.colApprovalStageFLG.HeaderText = "入金状態";
+            this.colApprovalStageFLG.Name = "colApprovalStageFLG";
+            this.colApprovalStageFLG.ReadOnly = true;
+            // 
+            // coIOrderDate
+            // 
+            this.coIOrderDate.DataPropertyName = "OrderDate";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.coIOrderDate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.coIOrderDate.HeaderText = "発注日";
+            this.coIOrderDate.Name = "coIOrderDate";
+            this.coIOrderDate.ReadOnly = true;
+            this.coIOrderDate.Width = 80;
+            // 
+            // colOrderCD
+            // 
+            this.colOrderCD.DataPropertyName = "OrderCD";
+            this.colOrderCD.HeaderText = "発注先";
+            this.colOrderCD.Name = "colOrderCD";
+            this.colOrderCD.ReadOnly = true;
+            // 
+            // colOrderName
+            // 
+            this.colOrderName.DataPropertyName = "OrderName";
+            this.colOrderName.HeaderText = "　";
+            this.colOrderName.Name = "colOrderName";
+            this.colOrderName.ReadOnly = true;
+            this.colOrderName.Width = 150;
+            // 
+            // colArrivalDate
+            // 
+            this.colArrivalDate.DataPropertyName = "ArrivalPlanDate";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colArrivalDate.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colArrivalDate.HeaderText = "入荷予定日";
+            this.colArrivalDate.Name = "colArrivalDate";
+            this.colArrivalDate.ReadOnly = true;
+            this.colArrivalDate.Width = 80;
+            // 
+            // colNyukaBi
+            // 
+            this.colNyukaBi.DataPropertyName = "ArrivalDate";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNyukaBi.DefaultCellStyle = dataGridViewCellStyle9;
+            this.colNyukaBi.HeaderText = "入荷日";
+            this.colNyukaBi.Name = "colNyukaBi";
+            this.colNyukaBi.ReadOnly = true;
+            this.colNyukaBi.Width = 80;
+            // 
+            // colSaleDate
+            // 
+            this.colSaleDate.DataPropertyName = "SalesDate";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSaleDate.DefaultCellStyle = dataGridViewCellStyle10;
+            this.colSaleDate.HeaderText = "売上日";
+            this.colSaleDate.Name = "colSaleDate";
+            this.colSaleDate.ReadOnly = true;
+            this.colSaleDate.Width = 80;
+            // 
+            // colSikyuYmd
+            // 
+            this.colSikyuYmd.DataPropertyName = "BillingCloseDate";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSikyuYmd.DefaultCellStyle = dataGridViewCellStyle11;
+            this.colSikyuYmd.HeaderText = "請求日";
+            this.colSikyuYmd.Name = "colSikyuYmd";
+            this.colSikyuYmd.ReadOnly = true;
+            this.colSikyuYmd.Width = 80;
+            // 
+            // colNyukinYmd
+            // 
+            this.colNyukinYmd.DataPropertyName = "CollectClearDate";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colNyukinYmd.DefaultCellStyle = dataGridViewCellStyle12;
+            this.colNyukinYmd.HeaderText = "入金日";
+            this.colNyukinYmd.Name = "colNyukinYmd";
+            this.colNyukinYmd.ReadOnly = true;
+            this.colNyukinYmd.Width = 80;
             // 
             // Search_JuchuuNO
             // 

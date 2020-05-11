@@ -2736,11 +2736,14 @@ namespace TempoJuchuuNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
-            int w_CtlRow = row - Vsb_Mei_0.Value;
-            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            if (!chkAll && !changeYmd)
             {
-                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
             }
 
             switch (col)
@@ -3030,8 +3033,7 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Hikiate))
+                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
@@ -3892,24 +3894,26 @@ namespace TempoJuchuuNyuuryoku
                         if (!frmProduct.flgCancel)
                         {
                             mGrid.g_DArray[w_Row].JanCD = frmProduct.JANCD;
-                            mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
+                            //mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, w_Row, false, true);
+                            //CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;
 
                 case EsearchKbn.Vendor:
-                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
-                        CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
+                    //if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
+                    //    CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
 
-                    //配列の内容を画面へセット
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    ////配列の内容を画面へセット
+                    //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     break;
             }
 
