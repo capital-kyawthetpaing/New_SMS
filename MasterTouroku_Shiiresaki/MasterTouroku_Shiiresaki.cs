@@ -132,6 +132,7 @@ namespace MasterTouroku_Shiiresaki
 
         private void F11()
 
+
         {
             if (ErrorCheck(11))
             {
