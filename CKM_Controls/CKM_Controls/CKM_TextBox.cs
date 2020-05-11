@@ -177,7 +177,7 @@ namespace CKM_Controls
                         this.Font = new System.Drawing.Font("MS Gothic", 10F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.Medium:
-                        this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular);
+                        this.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.Large:
                         this.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Regular);
