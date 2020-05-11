@@ -855,6 +855,8 @@ namespace MasterTouroku_HanbaiTanka
                 mibl = new ItemPrice_BL();
                 msbl = new SKUPrice_BL();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -1180,6 +1182,12 @@ namespace MasterTouroku_HanbaiTanka
         /// <returns></returns>
         private bool CheckDetail(int index, bool set)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.TankaCD:
@@ -1247,6 +1255,9 @@ namespace MasterTouroku_HanbaiTanka
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
             w_Ctrl = detailControls[(int)EIndex.ITemName];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
@@ -1255,6 +1266,13 @@ namespace MasterTouroku_HanbaiTanka
         }
         private bool CheckGrid(int col, int row)
         {
+            int w_CtlRow = row - Vsb_Mei_0.Value;
+            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                    return false;
+            }
+
             switch (col)
             {
                 case (int)ClsGridHanbaiTanka.ColNO.ChangeDate:
@@ -2317,12 +2335,14 @@ namespace MasterTouroku_HanbaiTanka
                 lblSkuCD.Text = " SKUCD";
                 keyControls[(int)EIndex.StoreCD].Enabled = true;
                 keyControls[(int)EIndex.StoreCD].Text = "0000";
+                CheckKey((int)EIndex.StoreCD);
                 ScStore.BtnSearch.Enabled = true;
                 lblGridSkuCD.Text = "SKUCD";
                 lblGridJanCD.Text = "JANCD";
                 //単価設定CDも入力？？
                 detailControls[(int)EIndex.TankaCD].Enabled = true;
                 detailControls[(int)EIndex.TankaCD].Text = "0000000000000";
+                CheckDetail((int)EIndex.TankaCD);
                 ScTanka.BtnSearch.Enabled = true;
             }
         }
@@ -2370,8 +2390,12 @@ namespace MasterTouroku_HanbaiTanka
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 //セルの金額が0円か空白の場合に定価×掛率の結果を反映
                 this.CalcMoney(0);
+
+                this.Cursor = Cursors.Default;
             }
             catch (Exception ex)
             {
@@ -2385,9 +2409,13 @@ namespace MasterTouroku_HanbaiTanka
         {
             try
             {
+                this.Cursor = Cursors.WaitCursor;
+
                 //セルの金額に関わらず全ての金額に定価×掛率の結果を反映
                 this.CalcMoney(1);
-                            }
+
+                this.Cursor = Cursors.Default;
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
@@ -2447,7 +2475,7 @@ namespace MasterTouroku_HanbaiTanka
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceOutTax) == 0)
                             mGrid.g_DArray[RW].ClientPriceOutTax = result.ToString("#,##0");
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text), MidpointRounding.AwayFromZero));
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text));
                         zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceWithTax) == 0)
@@ -2455,7 +2483,7 @@ namespace MasterTouroku_HanbaiTanka
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax) == 0)
                             mGrid.g_DArray[RW].SalePriceOutTax = result.ToString("#,##0");
 
-                        result = Convert.ToInt32(Math.Round(teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text), MidpointRounding.AwayFromZero));
+                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text));
                         zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
                         if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceWithTax) == 0)

@@ -10,6 +10,7 @@ namespace Entity
     {
         public string MakerItem {get;set;}
         public string VendorCD { get; set; }
+        public string StoreCD { get; set; }
         public string Rate { get; set; }
         public string PriceWithoutTax { get; set; }
         public string Remarks { get; set; }

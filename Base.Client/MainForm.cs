@@ -1705,26 +1705,34 @@ namespace Base.Client
         public static int GetResultWithHasuKbn(int kbn, decimal d)
         {
             int result = 0;
-            switch (kbn)
+            try
             {
-                case (int)HASU_KBN.KIRIAGE:
-                    if (d < 0)
-                    {
-                        result = -1 * Convert.ToInt32(Math.Ceiling(-d));
-                    }
-                    else
-                    {
-                        result = Convert.ToInt32(Math.Ceiling(d));
-                    }
-                    break;
+                switch (kbn)
+                {
+                    case (int)HASU_KBN.KIRIAGE:
+                        if (d < 0)
+                        {
+                            result = -1 * Convert.ToInt32(Math.Ceiling(-d));
+                        }
+                        else
+                        {
+                            result = Convert.ToInt32(Math.Ceiling(d));
+                        }
+                        break;
 
-                case (int)HASU_KBN.KIRISUTE:
-                    result = Convert.ToInt32(Math.Truncate(d));
-                    break;
+                    case (int)HASU_KBN.KIRISUTE:
+                        result = Convert.ToInt32(Math.Truncate(d));
+                        break;
 
-                case (int)HASU_KBN.SISYAGONYU:
-                    result = Convert.ToInt32(Math.Round(d, MidpointRounding.AwayFromZero));
-                    break;
+                    case (int)HASU_KBN.SISYAGONYU:
+                        result = Convert.ToInt32(Math.Round(d, MidpointRounding.AwayFromZero));
+                        break;
+                }
+            }
+            catch
+            {
+                //桁数エラー
+                result = 0;
             }
 
             return result;
