@@ -247,7 +247,7 @@ namespace CKM_Controls
                    Font = new Font("MS Gothic", 10, Font.Style);
                     break;
                 case Font_.Medium:
-                    Font = new Font("MS Gothic", 18, Font.Style);
+                    Font = new Font("MS Gothic", 26, Font.Style);
                     break;
                 case Font_.Large:
                     Font = new Font("MS Gothic", 24, Font.Style);
