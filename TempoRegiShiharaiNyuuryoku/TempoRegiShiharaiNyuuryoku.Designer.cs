@@ -60,7 +60,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(135, 284);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(135, 286);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label4.TabIndex = 5;
@@ -98,6 +98,7 @@
             this.txtPayment.IntegerPart = 8;
             this.txtPayment.IsCorrectDate = true;
             this.txtPayment.isEnterKeyDown = false;
+            this.txtPayment.isMaxLengthErr = false;
             this.txtPayment.IsNumber = true;
             this.txtPayment.IsShop = false;
             this.txtPayment.Length = 11;
