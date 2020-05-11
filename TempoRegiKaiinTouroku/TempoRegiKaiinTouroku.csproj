@@ -111,7 +111,7 @@
       <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
-      <Project>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</Project>
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
       <Name>CKM_Controls</Name>
     </ProjectReference>
     <ProjectReference Include="..\Search\Search.csproj">
