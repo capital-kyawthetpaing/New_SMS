@@ -111,7 +111,7 @@ namespace CKM_Controls
                 CalculateWidth();
             }
         }
-        public float FontSize = 18;
+        public float FontSize = 26;
         [Browsable(true)]
         [Category("CKM Properties")]
         [Description("Font Size")]
