@@ -72,6 +72,7 @@
     <Content Include="StoreProcedure\D_ArrivalPlan_Select.sql" />
     <Content Include="StoreProcedure\D_ArrivalPlan_SelectData.sql" />
     <Content Include="StoreProcedure\D_ArrivalPlan_SelectDataByOrderNO.sql" />
+    <Content Include="StoreProcedure\D_ArrivalPlan_SelectForPrint.sql" />
     <Content Include="StoreProcedure\D_Arrival_SelectAllForShiire.sql" />
     <Content Include="StoreProcedure\D_Arrival_SelectData.sql" />
     <Content Include="StoreProcedure\D_BillingProcessing_SelectAll.sql" />
@@ -98,6 +99,7 @@
     <Content Include="StoreProcedure\D_EDIOrder_Select.sql" />
     <Content Include="StoreProcedure\D_EDIOrder_SelectAll.sql" />
     <Content Include="StoreProcedure\D_EDIOrder_SelectForCSV.sql" />
+    <Content Include="StoreProcedure\D_EDI_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Delete.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Insert.sql" />
     <Content Include="StoreProcedure\D_Exclusive_Select.sql" />
@@ -183,6 +185,7 @@
     <Content Include="StoreProcedure\D_Sales_SelectData_ForTempoRegiHanbaiRireki.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectData_ForTempoRegiJisseki.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectForPrint.sql" />
+    <Content Include="StoreProcedure\D_Sales_SelectForRegi.sql" />
     <Content Include="StoreProcedure\D_Sales_Update.sql" />
     <Content Include="StoreProcedure\D_Shipping_Select.sql" />
     <Content Include="StoreProcedure\D_Shipping_SelectAll.sql" />
@@ -200,10 +203,15 @@
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
+    <Content Include="StoreProcedure\Fnc_M_SKU_SelectLatest.sql" />
+    <Content Include="StoreProcedure\Fnc_M_Souko_SelectLatest.sql" />
+    <Content Include="StoreProcedure\Fnc_M_Store_SelectLatest.sql" />
+    <Content Include="StoreProcedure\Fnc_M_Vendor_SelectLatest.sql" />
     <Content Include="StoreProcedure\Fnc_PlanDate.sql" />
     <Content Include="StoreProcedure\Fnc_PlanDate_SP.sql" />
     <Content Include="StoreProcedure\Fnc_Reserve.sql" />
     <Content Include="StoreProcedure\Fnc_Reserve_SP.sql" />
+    <Content Include="StoreProcedure\Fnc_SplitText.sql" />
     <Content Include="StoreProcedure\Fnc_TAXCalculation.sql" />
     <Content Include="StoreProcedure\Fnc_TAXCalculation_SP.sql" />
     <Content Include="StoreProcedure\Fnc_UnitPrice.sql" />
@@ -374,11 +382,13 @@
     <Content Include="StoreProcedure\M_StoreAuthorization_Select.sql" />
     <Content Include="StoreProcedure\M_StoreBottunGroup_Select.sql" />
     <Content Include="StoreProcedure\M_StoreButtonDetails_Insert_Update.sql" />
+    <Content Include="StoreProcedure\M_StoreButtonDetails_SelectAll.sql" />
     <Content Include="StoreProcedure\M_StoreButtonGroup_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_StoreButtonGroup_SelectAll.sql" />
     <Content Include="StoreProcedure\M_StoreButton_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Check.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Insert.sql" />
+    <Content Include="StoreProcedure\M_StoreClose_Select.sql" />
     <Content Include="StoreProcedure\M_StoreClose_SelectAll.sql" />
     <Content Include="StoreProcedure\M_StoreClose_Update.sql" />
     <Content Include="StoreProcedure\M_StorePoint_Insert_Update.sql" />
@@ -409,6 +419,7 @@
     <Content Include="StoreProcedure\M_Vendor_PayeeFlg_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_Search.sql" />
     <Content Include="StoreProcedure\M_Vendor_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendor_SelectForPayeeCD.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_Vendor_Staff_Select.sql" />
