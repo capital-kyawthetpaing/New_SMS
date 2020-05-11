@@ -217,7 +217,6 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnSubF11);
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 0;
             // 
             // label6
@@ -560,7 +559,7 @@
             this.txtCreditETC.MoveNext = true;
             this.txtCreditETC.Name = "txtCreditETC";
             this.txtCreditETC.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditETC.TabIndex = 57;
+            this.txtCreditETC.TabIndex = 50;
             this.txtCreditETC.Text = "999,999,999";
             this.txtCreditETC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditETC.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -604,7 +603,7 @@
             this.txtCreditDeposit.MoveNext = true;
             this.txtCreditDeposit.Name = "txtCreditDeposit";
             this.txtCreditDeposit.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditDeposit.TabIndex = 56;
+            this.txtCreditDeposit.TabIndex = 49;
             this.txtCreditDeposit.Text = "999,999,999";
             this.txtCreditDeposit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditDeposit.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -648,7 +647,7 @@
             this.txtCreditInsurance.MoveNext = true;
             this.txtCreditInsurance.Name = "txtCreditInsurance";
             this.txtCreditInsurance.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditInsurance.TabIndex = 55;
+            this.txtCreditInsurance.TabIndex = 48;
             this.txtCreditInsurance.Text = "999,999,999";
             this.txtCreditInsurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditInsurance.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -675,7 +674,7 @@
             this.txtConfirmComment.MoveNext = true;
             this.txtConfirmComment.Name = "txtConfirmComment";
             this.txtConfirmComment.Size = new System.Drawing.Size(317, 19);
-            this.txtConfirmComment.TabIndex = 52;
+            this.txtConfirmComment.TabIndex = 45;
             this.txtConfirmComment.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtConfirmComment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -838,7 +837,7 @@
             this.txtCollectPlanDate.MoveNext = true;
             this.txtCollectPlanDate.Name = "txtCollectPlanDate";
             this.txtCollectPlanDate.Size = new System.Drawing.Size(29, 19);
-            this.txtCollectPlanDate.TabIndex = 32;
+            this.txtCollectPlanDate.TabIndex = 30;
             this.txtCollectPlanDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCollectPlanDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -856,7 +855,7 @@
             this.cmbCollectPlanMonth.MoveNext = true;
             this.cmbCollectPlanMonth.Name = "cmbCollectPlanMonth";
             this.cmbCollectPlanMonth.Size = new System.Drawing.Size(140, 20);
-            this.cmbCollectPlanMonth.TabIndex = 31;
+            this.cmbCollectPlanMonth.TabIndex = 29;
             // 
             // ckM_Label17
             // 
@@ -883,7 +882,7 @@
             this.ChkNoInvoiceFlg.Location = new System.Drawing.Point(958, 298);
             this.ChkNoInvoiceFlg.Name = "ChkNoInvoiceFlg";
             this.ChkNoInvoiceFlg.Size = new System.Drawing.Size(89, 16);
-            this.ChkNoInvoiceFlg.TabIndex = 29;
+            this.ChkNoInvoiceFlg.TabIndex = 33;
             this.ChkNoInvoiceFlg.Text = "請求書不要";
             this.ChkNoInvoiceFlg.UseVisualStyleBackColor = true;
             // 
@@ -960,7 +959,7 @@
             this.txtTotalPoint.MoveNext = true;
             this.txtTotalPoint.Name = "txtTotalPoint";
             this.txtTotalPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtTotalPoint.TabIndex = 67;
+            this.txtTotalPoint.TabIndex = 60;
             this.txtTotalPoint.Text = "999,999,999";
             this.txtTotalPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTotalPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -987,7 +986,7 @@
             this.txtWaitingPoint.MoveNext = true;
             this.txtWaitingPoint.Name = "txtWaitingPoint";
             this.txtWaitingPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtWaitingPoint.TabIndex = 66;
+            this.txtWaitingPoint.TabIndex = 59;
             this.txtWaitingPoint.Text = "999,999,999";
             this.txtWaitingPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtWaitingPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1014,7 +1013,7 @@
             this.txtLastPoint.MoveNext = true;
             this.txtLastPoint.Name = "txtLastPoint";
             this.txtLastPoint.Size = new System.Drawing.Size(80, 19);
-            this.txtLastPoint.TabIndex = 65;
+            this.txtLastPoint.TabIndex = 58;
             this.txtLastPoint.Text = "999,999,999";
             this.txtLastPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLastPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1027,7 +1026,7 @@
             this.ChkPointFLG.Location = new System.Drawing.Point(520, 485);
             this.ChkPointFLG.Name = "ChkPointFLG";
             this.ChkPointFLG.Size = new System.Drawing.Size(102, 16);
-            this.ChkPointFLG.TabIndex = 64;
+            this.ChkPointFLG.TabIndex = 57;
             this.ChkPointFLG.Text = "ポイント対象";
             this.ChkPointFLG.UseVisualStyleBackColor = true;
             // 
@@ -1070,7 +1069,7 @@
             this.txtDisplayOrder.MoveNext = true;
             this.txtDisplayOrder.Name = "txtDisplayOrder";
             this.txtDisplayOrder.Size = new System.Drawing.Size(49, 19);
-            this.txtDisplayOrder.TabIndex = 60;
+            this.txtDisplayOrder.TabIndex = 53;
             this.txtDisplayOrder.Text = "99,999";
             this.txtDisplayOrder.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtDisplayOrder.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1106,7 +1105,7 @@
             this.cmbCreditLevel.MoveNext = true;
             this.cmbCreditLevel.Name = "cmbCreditLevel";
             this.cmbCreditLevel.Size = new System.Drawing.Size(140, 20);
-            this.cmbCreditLevel.TabIndex = 53;
+            this.cmbCreditLevel.TabIndex = 46;
             // 
             // ckM_Label12
             // 
@@ -1191,7 +1190,7 @@
             this.ChkAttentionFLG.Location = new System.Drawing.Point(35, 443);
             this.ChkAttentionFLG.Name = "ChkAttentionFLG";
             this.ChkAttentionFLG.Size = new System.Drawing.Size(115, 16);
-            this.ChkAttentionFLG.TabIndex = 50;
+            this.ChkAttentionFLG.TabIndex = 43;
             this.ChkAttentionFLG.Text = "債権要注意会員";
             this.ChkAttentionFLG.UseVisualStyleBackColor = true;
             // 
@@ -1203,7 +1202,7 @@
             this.ChkConfirmFLG.Location = new System.Drawing.Point(35, 463);
             this.ChkConfirmFLG.Name = "ChkConfirmFLG";
             this.ChkConfirmFLG.Size = new System.Drawing.Size(115, 16);
-            this.ChkConfirmFLG.TabIndex = 51;
+            this.ChkConfirmFLG.TabIndex = 44;
             this.ChkConfirmFLG.Text = "取引要確認会員";
             this.ChkConfirmFLG.UseVisualStyleBackColor = true;
             // 
@@ -1221,7 +1220,7 @@
             this.cmbStoreTankaKBN.MoveNext = true;
             this.cmbStoreTankaKBN.Name = "cmbStoreTankaKBN";
             this.cmbStoreTankaKBN.Size = new System.Drawing.Size(140, 20);
-            this.cmbStoreTankaKBN.TabIndex = 31;
+            this.cmbStoreTankaKBN.TabIndex = 41;
             // 
             // cmbPaymentUnit
             // 
@@ -1237,7 +1236,7 @@
             this.cmbPaymentUnit.MoveNext = true;
             this.cmbPaymentUnit.Name = "cmbPaymentUnit";
             this.cmbPaymentUnit.Size = new System.Drawing.Size(140, 20);
-            this.cmbPaymentUnit.TabIndex = 30;
+            this.cmbPaymentUnit.TabIndex = 40;
             // 
             // ckM_Label9
             // 
@@ -1270,7 +1269,7 @@
             this.cmbPaymentMethodCD.MoveNext = true;
             this.cmbPaymentMethodCD.Name = "cmbPaymentMethodCD";
             this.cmbPaymentMethodCD.Size = new System.Drawing.Size(140, 20);
-            this.cmbPaymentMethodCD.TabIndex = 28;
+            this.cmbPaymentMethodCD.TabIndex = 38;
             // 
             // ckM_Label8
             // 
@@ -1312,7 +1311,6 @@
             this.txtTel23.Name = "txtTel23";
             this.txtTel23.Size = new System.Drawing.Size(37, 19);
             this.txtTel23.TabIndex = 23;
-            this.txtTel23.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel23.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtTel13
@@ -1337,7 +1335,6 @@
             this.txtTel13.Name = "txtTel13";
             this.txtTel13.Size = new System.Drawing.Size(37, 19);
             this.txtTel13.TabIndex = 20;
-            this.txtTel13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtTel22
@@ -1363,7 +1360,6 @@
             this.txtTel22.Name = "txtTel22";
             this.txtTel22.Size = new System.Drawing.Size(37, 19);
             this.txtTel22.TabIndex = 22;
-            this.txtTel22.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtTel12
@@ -1388,7 +1384,6 @@
             this.txtTel12.Name = "txtTel12";
             this.txtTel12.Size = new System.Drawing.Size(37, 19);
             this.txtTel12.TabIndex = 19;
-            this.txtTel12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ChkDMFlg
@@ -1425,7 +1420,7 @@
             this.txtCountryName.MoveNext = true;
             this.txtCountryName.Name = "txtCountryName";
             this.txtCountryName.Size = new System.Drawing.Size(201, 19);
-            this.txtCountryName.TabIndex = 11;
+            this.txtCountryName.TabIndex = 12;
             this.txtCountryName.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX30";
             this.txtCountryName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1437,7 +1432,7 @@
             this.ChkCountryKBN.Location = new System.Drawing.Point(99, 166);
             this.ChkCountryKBN.Name = "ChkCountryKBN";
             this.ChkCountryKBN.Size = new System.Drawing.Size(50, 16);
-            this.ChkCountryKBN.TabIndex = 10;
+            this.ChkCountryKBN.TabIndex = 11;
             this.ChkCountryKBN.Text = "海外";
             this.ChkCountryKBN.UseVisualStyleBackColor = true;
             // 
@@ -1499,7 +1494,7 @@
             this.txtLongName2.MoveNext = true;
             this.txtLongName2.Name = "txtLongName2";
             this.txtLongName2.Size = new System.Drawing.Size(318, 19);
-            this.txtLongName2.TabIndex = 7;
+            this.txtLongName2.TabIndex = 8;
             this.txtLongName2.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtLongName2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1525,7 +1520,7 @@
             this.txtBirthDate.MoveNext = true;
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.Size = new System.Drawing.Size(82, 19);
-            this.txtBirthDate.TabIndex = 8;
+            this.txtBirthDate.TabIndex = 9;
             this.txtBirthDate.Text = "9999/99/99";
             this.txtBirthDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBirthDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1552,7 +1547,7 @@
             this.txtLongName1.MoveNext = true;
             this.txtLongName1.Name = "txtLongName1";
             this.txtLongName1.Size = new System.Drawing.Size(317, 19);
-            this.txtLongName1.TabIndex = 6;
+            this.txtLongName1.TabIndex = 7;
             this.txtLongName1.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸ25";
             this.txtLongName1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1595,7 +1590,7 @@
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(317, 19);
-            this.txtKanaName.TabIndex = 5;
+            this.txtKanaName.TabIndex = 6;
             this.txtKanaName.Text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXX30";
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1638,7 +1633,7 @@
             this.txtCustomerName.MoveNext = true;
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(490, 19);
-            this.txtCustomerName.TabIndex = 3;
+            this.txtCustomerName.TabIndex = 4;
             this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1667,7 +1662,7 @@
             this.pnlAliasKBN.Location = new System.Drawing.Point(632, 57);
             this.pnlAliasKBN.Name = "pnlAliasKBN";
             this.pnlAliasKBN.Size = new System.Drawing.Size(203, 33);
-            this.pnlAliasKBN.TabIndex = 4;
+            this.pnlAliasKBN.TabIndex = 5;
             // 
             // ckM_Label7
             // 
@@ -1725,7 +1720,7 @@
             this.CboStoreCD.MoveNext = true;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(210, 20);
-            this.CboStoreCD.TabIndex = 48;
+            this.CboStoreCD.TabIndex = 70;
             // 
             // ckM_Label6
             // 
@@ -1766,7 +1761,7 @@
             this.txtFirstName.MoveNext = true;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(119, 19);
-            this.txtFirstName.TabIndex = 2;
+            this.txtFirstName.TabIndex = 3;
             this.txtFirstName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // panel6
@@ -1823,7 +1818,7 @@
             this.pnlTaxPrintKBN.Location = new System.Drawing.Point(1092, 288);
             this.pnlTaxPrintKBN.Name = "pnlTaxPrintKBN";
             this.pnlTaxPrintKBN.Size = new System.Drawing.Size(261, 33);
-            this.pnlTaxPrintKBN.TabIndex = 30;
+            this.pnlTaxPrintKBN.TabIndex = 34;
             // 
             // ckM_RadioButton7
             // 
@@ -1877,7 +1872,7 @@
             this.pnlHolidayKBN.Location = new System.Drawing.Point(758, 366);
             this.pnlHolidayKBN.Name = "pnlHolidayKBN";
             this.pnlHolidayKBN.Size = new System.Drawing.Size(318, 33);
-            this.pnlHolidayKBN.TabIndex = 33;
+            this.pnlHolidayKBN.TabIndex = 31;
             // 
             // ckM_RadioButton6
             // 
@@ -2017,7 +2012,7 @@
             this.txtRegisteredNumber.MoveNext = true;
             this.txtRegisteredNumber.Name = "txtRegisteredNumber";
             this.txtRegisteredNumber.Size = new System.Drawing.Size(114, 19);
-            this.txtRegisteredNumber.TabIndex = 34;
+            this.txtRegisteredNumber.TabIndex = 32;
             this.txtRegisteredNumber.Text = "XXXXXXXXXXXXX15";
             this.txtRegisteredNumber.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2060,7 +2055,7 @@
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(414, 27);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
-            this.ScKouzaCD.TabIndex = 29;
+            this.ScKouzaCD.TabIndex = 39;
             this.ScKouzaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScKouzaCD.UseChangeDate = false;
             this.ScKouzaCD.Value1 = null;
@@ -2085,7 +2080,7 @@
             this.ScStaff.SearchEnable = true;
             this.ScStaff.Size = new System.Drawing.Size(344, 27);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff.TabIndex = 49;
+            this.ScStaff.TabIndex = 71;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
@@ -2110,7 +2105,7 @@
             this.ScTankaCD.SearchEnable = true;
             this.ScTankaCD.Size = new System.Drawing.Size(274, 27);
             this.ScTankaCD.Stype = Search.CKM_SearchControl.SearchType.単価設定;
-            this.ScTankaCD.TabIndex = 33;
+            this.ScTankaCD.TabIndex = 42;
             this.ScTankaCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScTankaCD.UseChangeDate = false;
             this.ScTankaCD.Value1 = null;
@@ -2140,7 +2135,7 @@
             this.checkDeleteFlg.Location = new System.Drawing.Point(1280, 7);
             this.checkDeleteFlg.Name = "checkDeleteFlg";
             this.checkDeleteFlg.Size = new System.Drawing.Size(15, 14);
-            this.checkDeleteFlg.TabIndex = 639;
+            this.checkDeleteFlg.TabIndex = 72;
             this.checkDeleteFlg.UseVisualStyleBackColor = true;
             // 
             // txtTel21
@@ -2166,7 +2161,6 @@
             this.txtTel21.Name = "txtTel21";
             this.txtTel21.Size = new System.Drawing.Size(37, 19);
             this.txtTel21.TabIndex = 21;
-            this.txtTel21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel21.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtTel11
@@ -2191,7 +2185,6 @@
             this.txtTel11.Name = "txtTel11";
             this.txtTel11.Size = new System.Drawing.Size(37, 19);
             this.txtTel11.TabIndex = 18;
-            this.txtTel11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTel11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtMailAddress
@@ -2462,7 +2455,7 @@
             this.txtCreditAdditionAmount.MoveNext = true;
             this.txtCreditAdditionAmount.Name = "txtCreditAdditionAmount";
             this.txtCreditAdditionAmount.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditAdditionAmount.TabIndex = 59;
+            this.txtCreditAdditionAmount.TabIndex = 52;
             this.txtCreditAdditionAmount.Text = "999,999,999";
             this.txtCreditAdditionAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditAdditionAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2489,7 +2482,7 @@
             this.txtCreditWarningAmount.MoveNext = true;
             this.txtCreditWarningAmount.Name = "txtCreditWarningAmount";
             this.txtCreditWarningAmount.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditWarningAmount.TabIndex = 58;
+            this.txtCreditWarningAmount.TabIndex = 51;
             this.txtCreditWarningAmount.Text = "999,999,999";
             this.txtCreditWarningAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditWarningAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2516,7 +2509,7 @@
             this.txtCreditCard.MoveNext = true;
             this.txtCreditCard.Name = "txtCreditCard";
             this.txtCreditCard.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditCard.TabIndex = 54;
+            this.txtCreditCard.TabIndex = 47;
             this.txtCreditCard.Text = "999,999,999";
             this.txtCreditCard.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditCard.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -2543,7 +2536,7 @@
             this.txtAnalyzeCD3.MoveNext = true;
             this.txtAnalyzeCD3.Name = "txtAnalyzeCD3";
             this.txtAnalyzeCD3.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD3.TabIndex = 63;
+            this.txtAnalyzeCD3.TabIndex = 56;
             this.txtAnalyzeCD3.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2569,7 +2562,7 @@
             this.txtAnalyzeCD2.MoveNext = true;
             this.txtAnalyzeCD2.Name = "txtAnalyzeCD2";
             this.txtAnalyzeCD2.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD2.TabIndex = 62;
+            this.txtAnalyzeCD2.TabIndex = 55;
             this.txtAnalyzeCD2.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2595,7 +2588,7 @@
             this.txtAnalyzeCD1.MoveNext = true;
             this.txtAnalyzeCD1.Name = "txtAnalyzeCD1";
             this.txtAnalyzeCD1.Size = new System.Drawing.Size(82, 19);
-            this.txtAnalyzeCD1.TabIndex = 61;
+            this.txtAnalyzeCD1.TabIndex = 54;
             this.txtAnalyzeCD1.Text = "XXXXXXXXXX";
             this.txtAnalyzeCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2673,8 +2666,7 @@
             this.txtZipCD2.MoveNext = true;
             this.txtZipCD2.Name = "txtZipCD2";
             this.txtZipCD2.Size = new System.Drawing.Size(40, 19);
-            this.txtZipCD2.TabIndex = 13;
-            this.txtZipCD2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtZipCD2.TabIndex = 14;
             this.txtZipCD2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtZipCD1
@@ -2699,8 +2691,7 @@
             this.txtZipCD1.MoveNext = true;
             this.txtZipCD1.Name = "txtZipCD1";
             this.txtZipCD1.Size = new System.Drawing.Size(30, 19);
-            this.txtZipCD1.TabIndex = 12;
-            this.txtZipCD1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtZipCD1.TabIndex = 13;
             this.txtZipCD1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtLastName
@@ -2974,7 +2965,7 @@
             this.pnlSex.Location = new System.Drawing.Point(224, 142);
             this.pnlSex.Name = "pnlSex";
             this.pnlSex.Size = new System.Drawing.Size(252, 20);
-            this.pnlSex.TabIndex = 9;
+            this.pnlSex.TabIndex = 10;
             // 
             // radioButton7
             // 

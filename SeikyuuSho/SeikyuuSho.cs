@@ -66,7 +66,9 @@ namespace SeikyuuSho
                 base.StartProgram();
 
                 mibl = new SeikyuuSho_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = bbl.GetDate();
+                CboStoreCD.Bind(ymd);
+                ScCustomer.Value1 = "2";
 
                 SetFuncKeyAll(this, "100001000011");
                 Scr_Clr(0);
@@ -227,11 +229,13 @@ namespace SeikyuuSho
         }
         protected override void PrintSec()
         {
-            // レコード定義を行う
-            DataTable table = CheckData(out DataTable dtForUpdate);
+            DataTable dtForUpdate = null;
 
             try
             {
+                // レコード定義を行う
+                DataTable table = CheckData(out dtForUpdate);
+
                 if (table == null)
                 {
                     return;
@@ -256,8 +260,8 @@ namespace SeikyuuSho
                             ret = DialogResult.No;
                         }
                         else { 
-                            //Q202 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                            ret = bbl.ShowMessage("Q202");
+                            //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                            ret = bbl.ShowMessage("Q208");
                             if (ret == DialogResult.Cancel)
                             {
                                 return;
@@ -355,7 +359,9 @@ namespace SeikyuuSho
                         //Ｅ１０３
                         mibl.ShowMessage("E103");
                         return false;
-                    }                  
+                    }
+
+                    ScCustomer.ChangeDate = detailControls[index].Text;
                     break;
 
                 case (int)EIndex.StaffCD:
@@ -419,23 +425,29 @@ namespace SeikyuuSho
                     {
                         if (mOldCustomerCD != detailControls[index].Text)
                         {
-
+                            if(mce.CollectFLG != "1")
+                            {
+                                bbl.ShowMessage("E101");
+                                //顧客情報ALLクリア
+                                ClearCustomerInfo();
+                                return false;
+                            }
                             if (mce.VariousFLG == "1")
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
                                     detailControls[index + 1].Enabled = true;
-
+                                ScCustomer.LabelText = mce.CustomerName;
                             }
                             else
                             {
                                 detailControls[index + 1].Text = mce.CustomerName;
-                                
-                                //[M_Store_Select]
-                                M_Store_Entity me = new M_Store_Entity
-                                {
-                                    StoreCD = mce.LastSalesStoreCD,
-                                    ChangeDate = mce.LastSalesDate
-                                };
+                                ScCustomer.LabelText = mce.CustomerName;
+                                ////[M_Store_Select]
+                                //M_Store_Entity me = new M_Store_Entity
+                                //{
+                                //    StoreCD = mce.LastSalesStoreCD,
+                                //    ChangeDate = mce.LastSalesDate
+                                //};
                             }
                         }
                     }
@@ -744,6 +756,21 @@ namespace SeikyuuSho
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 //EndSec();
+            }
+        }
+        private void CboStoreCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (CboStoreCD.SelectedIndex > 0)
+                {
+                    ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
             }
         }
 

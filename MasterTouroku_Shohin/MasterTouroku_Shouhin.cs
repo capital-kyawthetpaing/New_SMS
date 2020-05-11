@@ -196,7 +196,7 @@ namespace MasterTouroku_Shouhin
                 me.DeleteFlg = "0";
 
                 //【M_Store_SelectByKbn】
-                 ret = mibl.M_Store_SelectByKbn(me);
+                ret = mibl.M_Store_SelectByKbn(me);
 
                 //【M_Souko】
                 M_Souko_Entity mse = new M_Souko_Entity();
@@ -788,8 +788,6 @@ namespace MasterTouroku_Shouhin
                 //SizeName
                 dgvDetail.Rows.Add();
             }
-            dgvDetail.Rows[0].Cells[0].Style.BackColor = Color.Silver;
-            dgvDetail.Rows[0].Cells[1].Style.BackColor = Color.Silver;
 
 
             int colorNo = Convert.ToInt16(bbl.Z_Set(detailControls[(int)EIndex.ColorNO].Text));
@@ -848,6 +846,10 @@ namespace MasterTouroku_Shouhin
                     dgvDetail.Rows.RemoveAt(dgvDetail.Rows.Count - 1);
                 }
             }
+            
+            //並び替えができないようにする
+            foreach (DataGridViewColumn c in dgvDetail.Columns)
+                c.SortMode = DataGridViewColumnSortMode.NotSortable;
 
             dgvDetail.Enabled = true;
             dgvDetail.RowHeadersVisible = false;
@@ -860,11 +862,25 @@ namespace MasterTouroku_Shouhin
             {
                 dgvDetail.ReadOnly = true;
             }
+            dgvDetail.Rows[0].Cells[0].Style.BackColor = Color.Silver;
+            dgvDetail.Rows[0].Cells[1].Style.BackColor = Color.Silver;
+            dgvDetail.Rows[0].Cells[0].ReadOnly = true;
+            dgvDetail.Rows[0].Cells[1].ReadOnly = true;
+            //DataGridView1の左側2列を固定する
+            dgvDetail.Columns[1].Frozen = true;
+            //DataGridView1の上部1行を固定する
+            dgvDetail.Rows[0].Frozen = true;
         }
         private bool CheckDetail(int index)
         {
             bool ret;
             string ymd = ScITEM.ChangeDate;
+
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
 
             switch (index)
             {

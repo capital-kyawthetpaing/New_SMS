@@ -1229,6 +1229,12 @@ namespace TempoUriageNyuuryoku
         {
             bool ret;
 
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.StoreCD:
@@ -1414,25 +1420,6 @@ namespace TempoUriageNyuuryoku
             }
 
             return true;
-        }
-
-        // ********************************************
-        // ERR時のSETFOCUS  ERR_FOCUS_GRID_SUB
-        // 
-        // *******************************************
-        private void ERR_FOCUS_GRID_SUB(int pCol, int pRow)
-        {
-            Control w_Ctrl;
-            bool w_Ret;
-            int w_CtlRow;
-
-            w_CtlRow = pRow - Vsb_Mei_0.Value;
-
-                w_Ctrl = detailControls[(int)EIndex.COUNT-1];
-
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
-            w_Ret = mGrid.F_MoveFocus((int)ClsGridTempoUriage.Gen_MK_FocusMove.MvSet, (int)ClsGridTempoUriage.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
-
         }
 
         private D_Juchuu_Entity GetEntity(Exclusive_BL.DataKbn kbn)
