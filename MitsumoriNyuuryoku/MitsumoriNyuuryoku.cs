@@ -270,7 +270,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaxRate, 0].CellCtl = IMT_ZEIRT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Site, 0].CellCtl = BTN_Site_0;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Zaiko, 0].CellCtl = BTN_Zaiko_0;
-
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space2, 0].CellCtl = ckM_TextBox17;
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space1, 1].CellCtl = ckM_TextBox10;
@@ -296,6 +296,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaxRate, 1].CellCtl = IMT_ZEIRT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Site, 1].CellCtl = BTN_Site_1;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Zaiko, 1].CellCtl = BTN_Zaiko_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space2, 1].CellCtl = ckM_TextBox16;
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
@@ -322,6 +323,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaxRate, 2].CellCtl = IMT_ZEIRT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Site, 2].CellCtl = BTN_Site_2;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Zaiko, 2].CellCtl = BTN_Zaiko_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space2, 2].CellCtl = ckM_TextBox15;
 
             // 4行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 3].CellCtl = IMT_GYONO_3;
@@ -348,6 +350,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaxRate, 3].CellCtl = IMT_ZEIRT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Site, 3].CellCtl = BTN_Site_3;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Zaiko, 3].CellCtl = BTN_Zaiko_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space2, 3].CellCtl = ckM_TextBox14;
 
             // 5行目
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.GYONO, 4].CellCtl = IMT_GYONO_4;
@@ -374,6 +377,7 @@ namespace MitsumoriNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.TaxRate, 4].CellCtl = IMT_ZEIRT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Site, 4].CellCtl = BTN_Site_4;
             mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Zaiko, 4].CellCtl = BTN_Zaiko_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridMitsumori.ColNO.Space2, 4].CellCtl = ckM_TextBox13;
         }
 
         // 明細部 Tab の処理
@@ -481,6 +485,8 @@ namespace MitsumoriNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridMitsumori.ColNO.GYONO:
+                            case (int)ClsGridMitsumori.ColNO.Space1:
+                            case (int)ClsGridMitsumori.ColNO.Space2:
                             case (int)ClsGridMitsumori.ColNO.Site:
                             case (int)ClsGridMitsumori.ColNO.Zaiko:
                                 {

@@ -1281,6 +1281,7 @@
             this.lblCashBalance.Name = "lblCashBalance";
             this.lblCashBalance.Size = new System.Drawing.Size(240, 39);
             this.lblCashBalance.TabIndex = 64;
+            this.lblCashBalance.Text = "xxxxxxxxx";
             this.lblCashBalance.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.lblCashBalance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -1295,6 +1296,7 @@
             this.lblCashStorage.Name = "lblCashStorage";
             this.lblCashStorage.Size = new System.Drawing.Size(240, 39);
             this.lblCashStorage.TabIndex = 65;
+            this.lblCashStorage.Text = "xxxxxxxxx";
             this.lblCashStorage.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Red;
             this.lblCashStorage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 

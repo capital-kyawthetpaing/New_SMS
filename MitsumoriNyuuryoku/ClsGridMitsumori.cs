@@ -76,6 +76,7 @@ namespace MitsumoriNyuuryoku
             CommentOutStore,    // 社外備考・コメント
             IndividualClientName,    //  個別販売先
             ProfitGaku,             // 粗利額
+            Space2,
             COUNT
         }
         internal ST_DArray_Grid[] g_DArray=null;
@@ -134,6 +135,16 @@ namespace MitsumoriNyuuryoku
 
                 // 
                 w_CtlCol = (int)ColNO.Space1;
+
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].GYONO);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+
+                // 
+                w_CtlCol = (int)ColNO.Space2;
 
                 //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].GYONO);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);

@@ -2876,7 +2876,7 @@ namespace ShiireNyuuryoku
                         if (!frmProduct.flgCancel)
                         {
                             mGrid.g_DArray[w_Row].JanCD = frmProduct.JANCD;
-                            mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
+                            //mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 

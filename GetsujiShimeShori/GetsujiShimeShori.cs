@@ -9,8 +9,6 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
-using Search;
-using GridBase;
 
 namespace GetsujiShimeShori
 {
