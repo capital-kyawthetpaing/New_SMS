@@ -2375,11 +2375,14 @@ namespace NyuukaNyuuryoku
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
 
-            int w_CtlRow = row - Vsb_Mei_0.Value;
-            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            if (!chkAll && !changeYmd)
             {
-                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
             }
 
             switch (col)
@@ -2415,12 +2418,14 @@ namespace NyuukaNyuuryoku
         }
         private bool CheckGrid2(int col, int row, bool chkAll = false, bool changeYmd = false)
         {
-
-            int w_CtlRow = row - Vsb_Mei_1.Value;
-            if (mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            if (!chkAll && !changeYmd)
             {
-                if (((CKM_Controls.CKM_TextBox)mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
+                int w_CtlRow = row - Vsb_Mei_1.Value;
+                if (mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
             }
 
             switch (col)
@@ -3108,7 +3113,8 @@ namespace NyuukaNyuuryoku
 
                             setCtl.Focus();
 
-                            CheckDetail((int)EIndex.JANCD, true);
+                            //CheckDetail((int)EIndex.JANCD, true);
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;

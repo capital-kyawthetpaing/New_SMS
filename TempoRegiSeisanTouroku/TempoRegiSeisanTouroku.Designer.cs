@@ -94,6 +94,8 @@
             this.ckmShop_Label61 = new CKM_Controls.CKMShop_Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lblCashBalance = new CKM_Controls.CKMShop_Label();
+            this.lblCashStorage = new CKM_Controls.CKMShop_Label();
             this.txtCustomerNum = new CKM_Controls.CKMShop_Label();
             this.txtTotalSales = new CKM_Controls.CKMShop_Label();
             this.txtSlipsNum = new CKM_Controls.CKMShop_Label();
@@ -142,8 +144,6 @@
             this.ckmShop_Label6 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.lblDate = new CKM_Controls.CKMShop_Label();
-            this.lblCashStorage = new CKM_Controls.CKMShop_Label();
-            this.lblCashBalance = new CKM_Controls.CKMShop_Label();
             this.tabPage2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1270,6 +1270,36 @@
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
+            // lblCashBalance
+            // 
+            this.lblCashBalance.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblCashBalance.BackColor = System.Drawing.Color.Transparent;
+            this.lblCashBalance.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblCashBalance.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblCashBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblCashBalance.Location = new System.Drawing.Point(235, 532);
+            this.lblCashBalance.Name = "lblCashBalance";
+            this.lblCashBalance.Size = new System.Drawing.Size(240, 39);
+            this.lblCashBalance.TabIndex = 64;
+            this.lblCashBalance.Text = "xxxxxxxxx";
+            this.lblCashBalance.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.lblCashBalance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblCashStorage
+            // 
+            this.lblCashStorage.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblCashStorage.BackColor = System.Drawing.Color.Transparent;
+            this.lblCashStorage.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblCashStorage.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblCashStorage.ForeColor = System.Drawing.Color.Red;
+            this.lblCashStorage.Location = new System.Drawing.Point(235, 571);
+            this.lblCashStorage.Name = "lblCashStorage";
+            this.lblCashStorage.Size = new System.Drawing.Size(240, 39);
+            this.lblCashStorage.TabIndex = 65;
+            this.lblCashStorage.Text = "xxxxxxxxx";
+            this.lblCashStorage.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Red;
+            this.lblCashStorage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // txtCustomerNum
             // 
             this.txtCustomerNum.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -2157,34 +2187,6 @@
             this.lblDate.Text = "ckmShop_Label62";
             this.lblDate.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCashStorage
-            // 
-            this.lblCashStorage.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblCashStorage.BackColor = System.Drawing.Color.Transparent;
-            this.lblCashStorage.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblCashStorage.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblCashStorage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblCashStorage.Location = new System.Drawing.Point(235, 571);
-            this.lblCashStorage.Name = "lblCashStorage";
-            this.lblCashStorage.Size = new System.Drawing.Size(240, 39);
-            this.lblCashStorage.TabIndex = 111;
-            this.lblCashStorage.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.lblCashStorage.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCashBalance
-            // 
-            this.lblCashBalance.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblCashBalance.BackColor = System.Drawing.Color.Transparent;
-            this.lblCashBalance.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblCashBalance.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblCashBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblCashBalance.Location = new System.Drawing.Point(235, 532);
-            this.lblCashBalance.Name = "lblCashBalance";
-            this.lblCashBalance.Size = new System.Drawing.Size(240, 39);
-            this.lblCashBalance.TabIndex = 112;
-            this.lblCashBalance.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.lblCashBalance.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmTempoRegiSeisanTouroku
             // 
