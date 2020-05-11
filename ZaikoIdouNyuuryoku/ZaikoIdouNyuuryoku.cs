@@ -3648,7 +3648,8 @@ namespace ZaikoIdouNyuuryoku
 
                             setCtl.Focus();
 
-                            CheckDetail((int)EIndex.JANCD, true);
+                            //CheckDetail((int)EIndex.JANCD, true);
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;

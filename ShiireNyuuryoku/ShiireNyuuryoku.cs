@@ -2053,7 +2053,7 @@ namespace ShiireNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
-            if (!chkAll)
+            if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
                 if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
@@ -2880,10 +2880,12 @@ namespace ShiireNyuuryoku
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            CheckGrid((int)ClsGridShiire.ColNO.JanCD, w_Row, false, true);
+                            //CheckGrid((int)ClsGridShiire.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;

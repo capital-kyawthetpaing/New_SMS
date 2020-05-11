@@ -1838,7 +1838,7 @@ namespace MitsumoriNyuuryoku
         }
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
-            if (!chkAll)
+            if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
                 if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
@@ -2692,10 +2692,12 @@ namespace MitsumoriNyuuryoku
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            CheckGrid((int)ClsGridMitsumori.ColNO.JanCD, w_Row, false, true);
+                            //CheckGrid((int)ClsGridMitsumori.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;
