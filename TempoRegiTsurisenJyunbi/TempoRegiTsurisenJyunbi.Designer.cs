@@ -97,6 +97,7 @@
             this.DepositGaku.IntegerPart = 8;
             this.DepositGaku.IsCorrectDate = true;
             this.DepositGaku.isEnterKeyDown = false;
+            this.DepositGaku.isMaxLengthErr = false;
             this.DepositGaku.IsNumber = true;
             this.DepositGaku.IsShop = false;
             this.DepositGaku.Length = 10;
