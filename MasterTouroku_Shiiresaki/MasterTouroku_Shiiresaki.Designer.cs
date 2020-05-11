@@ -421,6 +421,7 @@
             this.txtRegisterNum.IntegerPart = 0;
             this.txtRegisterNum.IsCorrectDate = true;
             this.txtRegisterNum.isEnterKeyDown = false;
+            this.txtRegisterNum.isMaxLengthErr = false;
             this.txtRegisterNum.IsNumber = true;
             this.txtRegisterNum.IsShop = false;
             this.txtRegisterNum.Length = 15;
@@ -593,6 +594,7 @@
             this.txtVendorShortName.IntegerPart = 0;
             this.txtVendorShortName.IsCorrectDate = true;
             this.txtVendorShortName.isEnterKeyDown = false;
+            this.txtVendorShortName.isMaxLengthErr = false;
             this.txtVendorShortName.IsNumber = true;
             this.txtVendorShortName.IsShop = false;
             this.txtVendorShortName.Length = 10;
@@ -688,6 +690,7 @@
             this.txtDisplayOrder.IntegerPart = 0;
             this.txtDisplayOrder.IsCorrectDate = true;
             this.txtDisplayOrder.isEnterKeyDown = false;
+            this.txtDisplayOrder.isMaxLengthErr = false;
             this.txtDisplayOrder.IsNumber = true;
             this.txtDisplayOrder.IsShop = false;
             this.txtDisplayOrder.Length = 5;
@@ -715,6 +718,7 @@
             this.txtAnalyzeCD3.IntegerPart = 0;
             this.txtAnalyzeCD3.IsCorrectDate = true;
             this.txtAnalyzeCD3.isEnterKeyDown = false;
+            this.txtAnalyzeCD3.isMaxLengthErr = false;
             this.txtAnalyzeCD3.IsNumber = true;
             this.txtAnalyzeCD3.IsShop = false;
             this.txtAnalyzeCD3.Length = 10;
@@ -740,6 +744,7 @@
             this.txtAnalyzeCD2.IntegerPart = 0;
             this.txtAnalyzeCD2.IsCorrectDate = true;
             this.txtAnalyzeCD2.isEnterKeyDown = false;
+            this.txtAnalyzeCD2.isMaxLengthErr = false;
             this.txtAnalyzeCD2.IsNumber = true;
             this.txtAnalyzeCD2.IsShop = false;
             this.txtAnalyzeCD2.Length = 10;
@@ -765,6 +770,7 @@
             this.txtAnalyzeCD1.IntegerPart = 0;
             this.txtAnalyzeCD1.IsCorrectDate = true;
             this.txtAnalyzeCD1.isEnterKeyDown = false;
+            this.txtAnalyzeCD1.isMaxLengthErr = false;
             this.txtAnalyzeCD1.IsNumber = true;
             this.txtAnalyzeCD1.IsShop = false;
             this.txtAnalyzeCD1.Length = 10;
@@ -958,6 +964,7 @@
             this.txtKouzaMeigi.IntegerPart = 0;
             this.txtKouzaMeigi.IsCorrectDate = true;
             this.txtKouzaMeigi.isEnterKeyDown = false;
+            this.txtKouzaMeigi.isMaxLengthErr = false;
             this.txtKouzaMeigi.IsNumber = true;
             this.txtKouzaMeigi.IsShop = false;
             this.txtKouzaMeigi.Length = 40;
@@ -1069,6 +1076,7 @@
             this.txtKouzaNo.IntegerPart = 0;
             this.txtKouzaNo.IsCorrectDate = true;
             this.txtKouzaNo.isEnterKeyDown = false;
+            this.txtKouzaNo.isMaxLengthErr = false;
             this.txtKouzaNo.IsNumber = true;
             this.txtKouzaNo.IsShop = false;
             this.txtKouzaNo.Length = 7;
@@ -1095,6 +1103,7 @@
             this.txtKouzaKBN.IntegerPart = 0;
             this.txtKouzaKBN.IsCorrectDate = true;
             this.txtKouzaKBN.isEnterKeyDown = false;
+            this.txtKouzaKBN.isMaxLengthErr = false;
             this.txtKouzaKBN.IsNumber = true;
             this.txtKouzaKBN.IsShop = false;
             this.txtKouzaKBN.Length = 1;
@@ -1266,6 +1275,7 @@
             this.txtPaymentPlanDay.IntegerPart = 0;
             this.txtPaymentPlanDay.IsCorrectDate = true;
             this.txtPaymentPlanDay.isEnterKeyDown = false;
+            this.txtPaymentPlanDay.isMaxLengthErr = false;
             this.txtPaymentPlanDay.IsNumber = true;
             this.txtPaymentPlanDay.IsShop = false;
             this.txtPaymentPlanDay.Length = 2;
@@ -1309,6 +1319,7 @@
             this.txtPaymentCloseDay.IntegerPart = 0;
             this.txtPaymentCloseDay.IsCorrectDate = true;
             this.txtPaymentCloseDay.isEnterKeyDown = false;
+            this.txtPaymentCloseDay.isMaxLengthErr = false;
             this.txtPaymentCloseDay.IsNumber = true;
             this.txtPaymentCloseDay.IsShop = false;
             this.txtPaymentCloseDay.Length = 2;
@@ -1336,6 +1347,7 @@
             this.txtFaxno.IntegerPart = 0;
             this.txtFaxno.IsCorrectDate = true;
             this.txtFaxno.isEnterKeyDown = false;
+            this.txtFaxno.isMaxLengthErr = false;
             this.txtFaxno.IsNumber = true;
             this.txtFaxno.IsShop = false;
             this.txtFaxno.Length = 11;
@@ -1361,6 +1373,7 @@
             this.txtTelno.IntegerPart = 0;
             this.txtTelno.IsCorrectDate = true;
             this.txtTelno.isEnterKeyDown = false;
+            this.txtTelno.isMaxLengthErr = false;
             this.txtTelno.IsNumber = true;
             this.txtTelno.IsShop = false;
             this.txtTelno.Length = 11;
@@ -1386,6 +1399,7 @@
             this.txtMailAddress.IntegerPart = 0;
             this.txtMailAddress.IsCorrectDate = true;
             this.txtMailAddress.isEnterKeyDown = false;
+            this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
             this.txtMailAddress.Length = 20;
@@ -1412,6 +1426,7 @@
             this.txtAddress2.IntegerPart = 0;
             this.txtAddress2.IsCorrectDate = true;
             this.txtAddress2.isEnterKeyDown = false;
+            this.txtAddress2.isMaxLengthErr = false;
             this.txtAddress2.IsNumber = true;
             this.txtAddress2.IsShop = false;
             this.txtAddress2.Length = 40;
@@ -1438,6 +1453,7 @@
             this.txtAddress1.IntegerPart = 0;
             this.txtAddress1.IsCorrectDate = true;
             this.txtAddress1.isEnterKeyDown = false;
+            this.txtAddress1.isMaxLengthErr = false;
             this.txtAddress1.IsNumber = true;
             this.txtAddress1.IsShop = false;
             this.txtAddress1.Length = 40;
@@ -1463,6 +1479,7 @@
             this.txtZipCD2.IntegerPart = 0;
             this.txtZipCD2.IsCorrectDate = true;
             this.txtZipCD2.isEnterKeyDown = false;
+            this.txtZipCD2.isMaxLengthErr = false;
             this.txtZipCD2.IsNumber = true;
             this.txtZipCD2.IsShop = false;
             this.txtZipCD2.Length = 4;
@@ -1490,6 +1507,7 @@
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
             this.txtZipCD1.isEnterKeyDown = false;
+            this.txtZipCD1.isMaxLengthErr = false;
             this.txtZipCD1.IsNumber = true;
             this.txtZipCD1.IsShop = false;
             this.txtZipCD1.Length = 3;
@@ -1517,6 +1535,7 @@
             this.txtVendorStaffName.IntegerPart = 0;
             this.txtVendorStaffName.IsCorrectDate = true;
             this.txtVendorStaffName.isEnterKeyDown = false;
+            this.txtVendorStaffName.isMaxLengthErr = false;
             this.txtVendorStaffName.IsNumber = true;
             this.txtVendorStaffName.IsShop = false;
             this.txtVendorStaffName.Length = 25;
@@ -1543,6 +1562,7 @@
             this.txtPositionName.IntegerPart = 0;
             this.txtPositionName.IsCorrectDate = true;
             this.txtPositionName.isEnterKeyDown = false;
+            this.txtPositionName.isMaxLengthErr = false;
             this.txtPositionName.IsNumber = true;
             this.txtPositionName.IsShop = false;
             this.txtPositionName.Length = 25;
@@ -1569,6 +1589,7 @@
             this.txtPostName.IntegerPart = 0;
             this.txtPostName.IsCorrectDate = true;
             this.txtPostName.isEnterKeyDown = false;
+            this.txtPostName.isMaxLengthErr = false;
             this.txtPostName.IsNumber = true;
             this.txtPostName.IsShop = false;
             this.txtPostName.Length = 25;
@@ -1595,6 +1616,7 @@
             this.txtLongName2.IntegerPart = 0;
             this.txtLongName2.IsCorrectDate = true;
             this.txtLongName2.isEnterKeyDown = false;
+            this.txtLongName2.isMaxLengthErr = false;
             this.txtLongName2.IsNumber = true;
             this.txtLongName2.IsShop = false;
             this.txtLongName2.Length = 40;
@@ -1621,6 +1643,7 @@
             this.txtLongName1.IntegerPart = 0;
             this.txtLongName1.IsCorrectDate = true;
             this.txtLongName1.isEnterKeyDown = false;
+            this.txtLongName1.isMaxLengthErr = false;
             this.txtLongName1.IsNumber = true;
             this.txtLongName1.IsShop = false;
             this.txtLongName1.Length = 40;
@@ -1647,6 +1670,7 @@
             this.txtVendorKana.IntegerPart = 0;
             this.txtVendorKana.IsCorrectDate = true;
             this.txtVendorKana.isEnterKeyDown = false;
+            this.txtVendorKana.isMaxLengthErr = false;
             this.txtVendorKana.IsNumber = true;
             this.txtVendorKana.IsShop = false;
             this.txtVendorKana.Length = 25;
@@ -1673,11 +1697,12 @@
             this.txtVendorName.IntegerPart = 0;
             this.txtVendorName.IsCorrectDate = true;
             this.txtVendorName.isEnterKeyDown = false;
+            this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;
-            this.txtVendorName.Length = 25;
+            this.txtVendorName.Length = 50;
             this.txtVendorName.Location = new System.Drawing.Point(107, 28);
-            this.txtVendorName.MaxLength = 25;
+            this.txtVendorName.MaxLength = 50;
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(250, 19);
