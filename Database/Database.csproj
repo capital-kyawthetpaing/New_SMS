@@ -429,6 +429,10 @@
     <Content Include="StoreProcedure\PRC_GetsujiShiireKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_GetsujiZaikoKeisanSyori.sql" />
     <Content Include="StoreProcedure\PRC_HacchuuNyuuryoku.sql" />
+    <Content Include="StoreProcedure\PRC_Hacchuusho_D_Order_SelectByKey.sql" />
+    <Content Include="StoreProcedure\PRC_Hacchuusho_M_AutorisationCheck.sql" />
+    <Content Include="StoreProcedure\PRC_Hacchuusho_Register.sql" />
+    <Content Include="StoreProcedure\PRC_Hacchuusho_SelectData.sql" />
     <Content Include="StoreProcedure\PRC_HikiateHenkouNyuuryoku.sql" />
     <Content Include="StoreProcedure\PRC_KaitouNoukiTouroku.sql" />
     <Content Include="StoreProcedure\PRC_MasterTouroku_HanbaiTanka.sql" />
@@ -475,6 +479,7 @@
     <Content Include="StoreProcedure\sp_renamediagram.sql" />
     <Content Include="StoreProcedure\sp_upgraddiagrams.sql" />
     <Content Include="StoreProcedure\test.sql" />
+    <Content Include="StoreProcedure\Trg_Order.sql" />
     <Content Include="StoreProcedure\UPDATE_D_BillingDetails_7_9.sql" />
     <Content Include="StoreProcedure\UPDATE_D_Billing_6_9.sql" />
     <Content Include="StoreProcedure\UPDATE_D_CollectBillingDetails_11_9.sql" />
