@@ -42,16 +42,16 @@
             this.lblColorSize = new CKM_Controls.CKMShop_Label();
             this.chkColorSize = new CKM_Controls.CKMShop_CheckBox();
             this.dgvZaikokakunin = new CKM_Controls.CKMShop_GridView();
-            this.colWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblZaiko = new CKM_Controls.CKMShop_Label();
             this.lblProduct = new CKM_Controls.CKMShop_Label();
             this.lblplandate = new CKM_Controls.CKMShop_Label();
             this.lblsou = new CKM_Controls.CKMShop_Label();
             this.lblallowsou = new CKM_Controls.CKMShop_Label();
+            this.colWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaikokakunin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(33, 151);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(33, 142);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label1.TabIndex = 3;
@@ -85,10 +85,11 @@
             this.txtJanCD.IntegerPart = 0;
             this.txtJanCD.IsCorrectDate = true;
             this.txtJanCD.isEnterKeyDown = false;
+            this.txtJanCD.isMaxLengthErr = false;
             this.txtJanCD.IsNumber = true;
             this.txtJanCD.IsShop = false;
             this.txtJanCD.Length = 13;
-            this.txtJanCD.Location = new System.Drawing.Point(159, 146);
+            this.txtJanCD.Location = new System.Drawing.Point(159, 139);
             this.txtJanCD.MaxLength = 13;
             this.txtJanCD.MoveNext = true;
             this.txtJanCD.Name = "txtJanCD";
@@ -108,7 +109,7 @@
             this.btnInquery.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
             this.btnInquery.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnInquery.ForeColor = System.Drawing.Color.Black;
-            this.btnInquery.Location = new System.Drawing.Point(1555, 153);
+            this.btnInquery.Location = new System.Drawing.Point(1558, 146);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
             this.btnInquery.Size = new System.Drawing.Size(120, 35);
@@ -140,7 +141,7 @@
             this.lblItemName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblItemName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblItemName.ForeColor = System.Drawing.Color.Black;
-            this.lblItemName.Location = new System.Drawing.Point(321, 135);
+            this.lblItemName.Location = new System.Drawing.Point(321, 139);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(760, 50);
             this.lblItemName.TabIndex = 49;
@@ -156,7 +157,7 @@
             this.lblColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(340, 198);
+            this.lblColorSize.Location = new System.Drawing.Point(340, 202);
             this.lblColorSize.Name = "lblColorSize";
             this.lblColorSize.Size = new System.Drawing.Size(550, 30);
             this.lblColorSize.TabIndex = 50;
@@ -167,7 +168,7 @@
             // 
             // chkColorSize
             // 
-            this.chkColorSize.Location = new System.Drawing.Point(289, 203);
+            this.chkColorSize.Location = new System.Drawing.Point(289, 205);
             this.chkColorSize.Name = "chkColorSize";
             this.chkColorSize.Size = new System.Drawing.Size(30, 24);
             this.chkColorSize.TabIndex = 51;
@@ -218,18 +219,98 @@
             this.dgvZaikokakunin.HeaderHeight_ = 22;
             this.dgvZaikokakunin.HeaderVisible = false;
             this.dgvZaikokakunin.Height_ = 200;
-            this.dgvZaikokakunin.Location = new System.Drawing.Point(128, 308);
+            this.dgvZaikokakunin.Location = new System.Drawing.Point(76, 302);
             this.dgvZaikokakunin.Name = "dgvZaikokakunin";
             this.dgvZaikokakunin.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvZaikokakunin.RowHeight_ = 30;
             this.dgvZaikokakunin.RowTemplate.Height = 30;
             this.dgvZaikokakunin.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvZaikokakunin.Size = new System.Drawing.Size(1650, 400);
+            this.dgvZaikokakunin.Size = new System.Drawing.Size(1700, 400);
             this.dgvZaikokakunin.TabIndex = 48;
             this.dgvZaikokakunin.UseRowNo = true;
             this.dgvZaikokakunin.UseSetting = true;
-            this.dgvZaikokakunin.Width_ = 1600;
+            this.dgvZaikokakunin.Width_ = 1700;
             this.dgvZaikokakunin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZaikokakunin_CellDoubleClick);
+            // 
+            // lblZaiko
+            // 
+            this.lblZaiko.AutoSize = true;
+            this.lblZaiko.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZaiko.BackColor = System.Drawing.Color.Transparent;
+            this.lblZaiko.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblZaiko.Location = new System.Drawing.Point(125, 264);
+            this.lblZaiko.Name = "lblZaiko";
+            this.lblZaiko.Size = new System.Drawing.Size(163, 35);
+            this.lblZaiko.TabIndex = 52;
+            this.lblZaiko.Text = "在庫倉庫";
+            this.lblZaiko.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblZaiko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblProduct
+            // 
+            this.lblProduct.AutoSize = true;
+            this.lblProduct.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lblProduct.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblProduct.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblProduct.Location = new System.Drawing.Point(420, 264);
+            this.lblProduct.Name = "lblProduct";
+            this.lblProduct.Size = new System.Drawing.Size(125, 35);
+            this.lblProduct.TabIndex = 53;
+            this.lblProduct.Text = "商　品";
+            this.lblProduct.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblplandate
+            // 
+            this.lblplandate.AutoSize = true;
+            this.lblplandate.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblplandate.BackColor = System.Drawing.Color.Transparent;
+            this.lblplandate.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblplandate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblplandate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblplandate.Location = new System.Drawing.Point(1267, 263);
+            this.lblplandate.Name = "lblplandate";
+            this.lblplandate.Size = new System.Drawing.Size(200, 35);
+            this.lblplandate.TabIndex = 54;
+            this.lblplandate.Text = "入荷予定日";
+            this.lblplandate.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblplandate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblsou
+            // 
+            this.lblsou.AutoSize = true;
+            this.lblsou.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblsou.BackColor = System.Drawing.Color.Transparent;
+            this.lblsou.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblsou.Location = new System.Drawing.Point(1469, 264);
+            this.lblsou.Name = "lblsou";
+            this.lblsou.Size = new System.Drawing.Size(126, 35);
+            this.lblsou.TabIndex = 55;
+            this.lblsou.Text = "在庫数";
+            this.lblsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblallowsou
+            // 
+            this.lblallowsou.AutoSize = true;
+            this.lblallowsou.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblallowsou.BackColor = System.Drawing.Color.Transparent;
+            this.lblallowsou.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblallowsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblallowsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.lblallowsou.Location = new System.Drawing.Point(1617, 264);
+            this.lblallowsou.Name = "lblallowsou";
+            this.lblallowsou.Size = new System.Drawing.Size(145, 35);
+            this.lblallowsou.TabIndex = 56;
+            this.lblallowsou.Text = " 可能数";
+            this.lblallowsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.lblallowsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // colWarehouse
             // 
@@ -274,6 +355,7 @@
             this.colQuantity.ReadOnly = true;
             this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colQuantity.Width = 150;
             // 
             // colNo
             // 
@@ -285,92 +367,13 @@
             this.colNo.ReadOnly = true;
             this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // lblZaiko
-            // 
-            this.lblZaiko.AutoSize = true;
-            this.lblZaiko.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZaiko.BackColor = System.Drawing.Color.Transparent;
-            this.lblZaiko.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblZaiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblZaiko.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblZaiko.Location = new System.Drawing.Point(168, 261);
-            this.lblZaiko.Name = "lblZaiko";
-            this.lblZaiko.Size = new System.Drawing.Size(163, 35);
-            this.lblZaiko.TabIndex = 52;
-            this.lblZaiko.Text = "在庫倉庫";
-            this.lblZaiko.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblZaiko.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblProduct
-            // 
-            this.lblProduct.AutoSize = true;
-            this.lblProduct.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblProduct.BackColor = System.Drawing.Color.Transparent;
-            this.lblProduct.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblProduct.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblProduct.Location = new System.Drawing.Point(467, 261);
-            this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(125, 35);
-            this.lblProduct.TabIndex = 53;
-            this.lblProduct.Text = "商　品";
-            this.lblProduct.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblProduct.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblplandate
-            // 
-            this.lblplandate.AutoSize = true;
-            this.lblplandate.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblplandate.BackColor = System.Drawing.Color.Transparent;
-            this.lblplandate.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblplandate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblplandate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblplandate.Location = new System.Drawing.Point(1321, 261);
-            this.lblplandate.Name = "lblplandate";
-            this.lblplandate.Size = new System.Drawing.Size(200, 35);
-            this.lblplandate.TabIndex = 54;
-            this.lblplandate.Text = "入荷予定日";
-            this.lblplandate.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblplandate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblsou
-            // 
-            this.lblsou.AutoSize = true;
-            this.lblsou.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblsou.BackColor = System.Drawing.Color.Transparent;
-            this.lblsou.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblsou.Location = new System.Drawing.Point(1521, 261);
-            this.lblsou.Name = "lblsou";
-            this.lblsou.Size = new System.Drawing.Size(126, 35);
-            this.lblsou.TabIndex = 55;
-            this.lblsou.Text = "在庫数";
-            this.lblsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblallowsou
-            // 
-            this.lblallowsou.AutoSize = true;
-            this.lblallowsou.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblallowsou.BackColor = System.Drawing.Color.Transparent;
-            this.lblallowsou.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblallowsou.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblallowsou.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblallowsou.Location = new System.Drawing.Point(1621, 261);
-            this.lblallowsou.Name = "lblallowsou";
-            this.lblallowsou.Size = new System.Drawing.Size(145, 35);
-            this.lblallowsou.TabIndex = 56;
-            this.lblallowsou.Text = " 可能数";
-            this.lblallowsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.lblallowsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.colNo.Width = 150;
             // 
             // frmTempoRegiZaikoKakunin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1840, 961);
+            this.ClientSize = new System.Drawing.Size(1840, 761);
             this.Controls.Add(this.lblallowsou);
             this.Controls.Add(this.lblsou);
             this.Controls.Add(this.lblplandate);
