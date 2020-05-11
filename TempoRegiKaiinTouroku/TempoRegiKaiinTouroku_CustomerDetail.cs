@@ -430,6 +430,8 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                     CompletePhoneNo(1);
                 }
             }
-        }      
+        }
+
+       
     }
 }

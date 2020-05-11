@@ -75,9 +75,9 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(127, 204);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(126, 204);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label5.TabIndex = 4;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -97,6 +97,7 @@
             this.DepositGaku.IntegerPart = 8;
             this.DepositGaku.IsCorrectDate = true;
             this.DepositGaku.isEnterKeyDown = false;
+            this.DepositGaku.isMaxLengthErr = false;
             this.DepositGaku.IsNumber = true;
             this.DepositGaku.IsShop = false;
             this.DepositGaku.Length = 10;
@@ -117,7 +118,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(52, 144);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(51, 143);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(200, 35);
             this.ckmShop_Label1.TabIndex = 0;
