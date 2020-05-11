@@ -1946,9 +1946,11 @@ namespace PickingNyuuryoku
 
                                     break;
                             }
+                            setCtl.Focus();
 
+                            //SendKeys.Send("{ENTER}");
                         }
-                        setCtl.Focus();
+
                     }
                     break;
             }

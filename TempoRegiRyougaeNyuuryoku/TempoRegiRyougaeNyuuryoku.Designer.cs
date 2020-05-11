@@ -74,6 +74,7 @@
             this.ExchangeMoney.IntegerPart = 8;
             this.ExchangeMoney.IsCorrectDate = true;
             this.ExchangeMoney.isEnterKeyDown = false;
+            this.ExchangeMoney.isMaxLengthErr = false;
             this.ExchangeMoney.IsNumber = true;
             this.ExchangeMoney.IsShop = false;
             this.ExchangeMoney.Length = 10;
@@ -148,6 +149,7 @@
             this.ExchangeCount.IntegerPart = 3;
             this.ExchangeCount.IsCorrectDate = true;
             this.ExchangeCount.isEnterKeyDown = false;
+            this.ExchangeCount.isMaxLengthErr = false;
             this.ExchangeCount.IsNumber = true;
             this.ExchangeCount.IsShop = false;
             this.ExchangeCount.Length = 3;
@@ -205,7 +207,7 @@
             this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(84, 203);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(85, 198);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label6.TabIndex = 13;
@@ -240,7 +242,7 @@
             this.ExchangeDenomination.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.ExchangeDenomination.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.ExchangeDenomination.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ExchangeDenomination.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.ExchangeDenomination.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.ExchangeDenomination.FontSize_ = 18F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -264,9 +266,9 @@
             this.ExchangeLabel.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
             this.ExchangeLabel.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.ExchangeLabel.ForeColor = System.Drawing.Color.Black;
-            this.ExchangeLabel.Location = new System.Drawing.Point(364, 257);
+            this.ExchangeLabel.Location = new System.Drawing.Point(364, 253);
             this.ExchangeLabel.Name = "ExchangeLabel";
-            this.ExchangeLabel.Size = new System.Drawing.Size(200, 29);
+            this.ExchangeLabel.Size = new System.Drawing.Size(200, 42);
             this.ExchangeLabel.TabIndex = 14;
             this.ExchangeLabel.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ExchangeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
