@@ -1653,14 +1653,23 @@ namespace HacchuuNyuuryoku
                         detailControls[(int)EIndex.Tel].Text = row["DestinationTelphoneNO"].ToString();
                         detailControls[(int)EIndex.Fax].Text = row["DestinationFaxNO"].ToString();
 
-                        //申請中、承認中の場合
-                        int mApprovalStageFLG = Convert.ToInt16(row["ApprovalStageFLG"].ToString());
-                        if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG)
-                            SetBtnSubF11Enabled(true);
-                        else
-                            SetBtnSubF11Enabled(false);
+                        if (index == (int)EIndex.OrderNO)
+                        {
+                            //申請中、承認中の場合
+                            int mApprovalStageFLG = Convert.ToInt16(row["ApprovalStageFLG"].ToString());
+                            if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG)
+                                SetBtnSubF11Enabled(true);
+                            else
+                                SetBtnSubF11Enabled(false);
 
-                        SetlblDisp( row["ApprovalStage"].ToString());
+                            SetlblDisp(row["ApprovalStage"].ToString());
+                        }
+                        else
+                        {
+                            //複写時
+                            SetBtnSubF11Enabled(true);
+                            SetlblDisp("承認中");
+                        }
 
                         if (row["AliasKBN"].ToString() == "1")
                             radioButton2.Checked = true;
@@ -1791,6 +1800,12 @@ namespace HacchuuNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set = true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.OrderDate:
@@ -1970,6 +1985,9 @@ namespace HacchuuNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
             w_Ctrl = detailControls[(int)EIndex.RemarksInStore];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
@@ -2108,6 +2126,16 @@ namespace HacchuuNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
+            if (!chkAll)
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
+
             switch (col)
             {
                 case (int)ClsGridHacchuu.ColNO.JanCD:
@@ -2224,7 +2252,7 @@ namespace HacchuuNyuuryoku
                             M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
 
                             //①JAN発注単価マスタ（店舗指定なし）
-                            mje.JanCD = mGrid.g_DArray[row].JanCD;
+                            mje.AdminNO = mGrid.g_DArray[row].AdminNO;
                             mje.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
                             mje.StoreCD = "0000";
                             mje.ChangeDate = ymd;
@@ -2237,24 +2265,48 @@ namespace HacchuuNyuuryoku
                             }
                             else
                             {
-                                //[M_ItemOrderPrice]
-                                M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity();
-                                mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
-                                mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
-                                mje2.ChangeDate = ymd;
+                                //②	JAN発注単価マスタ（店舗指定あり）
+                                mje.StoreCD = CboStoreCD.SelectedValue.ToString();
 
-                                ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
-                                ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                ret = jbl.M_JANOrderPrice_Select(mje);
                                 if (ret)
                                 {
-                                    mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                    mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje.PriceWithoutTax);
                                 }
                                 else
                                 {
-                                    mGrid.g_DArray[row].OldJanCD = "";
-                                    
-                                    bbl.ShowMessage("E170");
-                                    return false;
+                                    //[M_ItemOrderPrice]
+                                    M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity();
+
+                                    //③	ITEM発注単価マスター（店舗指定あり）	
+                                    mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
+                                    mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
+                                    mje2.ChangeDate = ymd;
+                                    mje2.StoreCD = "0000";
+
+                                    ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
+                                    ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                    if (ret)
+                                    {
+                                        mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                    }
+                                    else
+                                    {
+                                        //④	ITEM発注単価マスター（店舗指定なし）
+                                        mje2.StoreCD = CboStoreCD.SelectedValue.ToString();
+                                        ret = ibl.M_ItemOrderPrice_Select(mje2);
+                                        if (ret)
+                                        {
+                                            mGrid.g_DArray[row].OrderUnitPrice = bbl.Z_SetStr(mje2.PriceWithoutTax);
+                                        }
+                                        else
+                                        {
+                                            mGrid.g_DArray[row].OldJanCD = "";
+
+                                            bbl.ShowMessage("E170");
+                                            return false;
+                                        }
+                                    }
                                 }
                             }
                             //発注単価×発注数	
@@ -2771,15 +2823,15 @@ namespace HacchuuNyuuryoku
             //ボタンを押すたびに「承認」「却下」のモードを変更する。
             if (init)
             {
-                SetlblDisp( "承認");
+                SetlblDisp("承認中");
             }
-            else if (lblDisp.Text == "承認")
+            else if (lblDisp.Text == "承認中")
             {
                 SetlblDisp("却下");
             }
             else
             {
-                SetlblDisp("承認");
+                SetlblDisp("承認中");
             }
             ////F11ボタンは、
             ////その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
@@ -2798,13 +2850,13 @@ namespace HacchuuNyuuryoku
                 case "申請":
                 case "承認":
                 case "承認中":
-                    lblDisp.BackColor = Color.LightPink;
+                    lblDisp.BackColor = Color.LemonChiffon;
                     break;
                 case "却下":
                     lblDisp.BackColor = Color.Plum;
                     break;
                 case "承認済":
-                    lblDisp.BackColor = Color.LightBlue;
+                    lblDisp.BackColor = Color.PowderBlue;
                     break;
 
             }
@@ -3399,6 +3451,9 @@ namespace HacchuuNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;

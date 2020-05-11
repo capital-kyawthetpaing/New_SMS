@@ -1148,6 +1148,8 @@ namespace MitsumoriNyuuryoku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -1503,10 +1505,10 @@ namespace MitsumoriNyuuryoku
 
             if (OperationMode == EOperationMode.UPDATE )
             {
+                S_BodySeigyo(1, 0);
                 S_BodySeigyo(1, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(1, 0);
 
                 detailControls[(int)EIndex.MitsumoriDate].Focus();
             }
@@ -1520,10 +1522,10 @@ namespace MitsumoriNyuuryoku
             }
             else
             {
+                S_BodySeigyo(2, 0);
                 S_BodySeigyo(2, 1);
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-                S_BodySeigyo(2, 0);
 
                 previousCtrl.Focus();
             }
@@ -1552,6 +1554,12 @@ namespace MitsumoriNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.MitsumoriDate:
@@ -1678,7 +1686,10 @@ namespace MitsumoriNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.ValidityPeriod];
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            w_Ctrl = detailControls[(int)EIndex.ValidityPeriod];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridMitsumori.Gen_MK_FocusMove.MvSet, (int)ClsGridMitsumori.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -1827,6 +1838,15 @@ namespace MitsumoriNyuuryoku
         }
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
+            if (!chkAll)
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
 
             switch (col)
             {
@@ -1906,6 +1926,7 @@ namespace MitsumoriNyuuryoku
                         mGrid.g_DArray[row].VariousFLG = Convert.ToInt16(selectRow["VariousFLG"].ToString());
 
                         decimal wSuu = bbl.Z_Set(mGrid.g_DArray[row].MitsumoriSuu);
+                        
                         //Function_単価取得.
                         Fnc_UnitPrice_Entity fue = new Fnc_UnitPrice_Entity
                         {
@@ -1926,25 +1947,38 @@ namespace MitsumoriNyuuryoku
                             //原価単価=Function_単価取得.out原価単価	
                             mGrid.g_DArray[row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
                         }
-
-                        if (wSuu != 0)
-                        {
-                            //税抜販売額＝Form.見積数≠Nullの場合	Function_消費税計算.out金額１	
-                            mGrid.g_DArray[row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[row].MitsumoriUnitPrice) * wSuu, mGrid.g_DArray[row].TaxRateFLG, ymd));
-                            //税込販売額=Form.見積数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.見積数	
-                            mGrid.g_DArray[row].MitsumoriGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].MitsumoriUnitPrice) * wSuu);
-                            //原価額=Form.見積数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.見積数
-                            mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
-                        }
                         else
                         {
-                            //Form.見積数＝Nullの場合Function_単価取得.out税抜単価×1
-                            mGrid.g_DArray[row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
-                            //税込販売額=Form.見積数＝Nullの場合Function_単価取得.out税込単価					×	1
-                            mGrid.g_DArray[row].MitsumoriGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
-                            //原価額=Form.見積数＝Nullの場合Function_単価取得.out原価単価					×	1
-                            mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                            //販売単価		
+                            mGrid.g_DArray[row].MitsumoriUnitPrice = "0";
+                            //原価単価
+                            mGrid.g_DArray[row].CostUnitPrice = "0";
                         }
+
+                        //	(Form.見積数＝Null	の場合は×１とする)
+                        if (wSuu.Equals(0))
+                            wSuu = 1;
+
+                        //税抜販売額
+                        if (mGrid.g_DArray[row].VariousFLG.Equals(1))
+                        {
+                            //（諸口の場合は入力された税込単価から税抜単価を都度計算する）
+                            //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.見積数
+                            decimal tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[row].MitsumoriUnitPrice), mGrid.g_DArray[row].TaxRateFLG, ymd);
+
+                            mGrid.g_DArray[row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", tanka * wSuu);
+                        }
+                        else if (mGrid.g_DArray[row].VariousFLG.Equals(0))
+                        {
+                            //税抜販売額＝Form.見積数＝Nullの場合Function_単価取得.out税抜単価×Form.見積数
+                            mGrid.g_DArray[row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
+                        }
+
+                        //税込販売額=Form.見積数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.見積数	
+                        mGrid.g_DArray[row].MitsumoriGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].MitsumoriUnitPrice) * wSuu);
+                        //原価額=Form.見積数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.見積数
+                        mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
+                        
                         //粗利額=⑧Form.税抜販売額－⑪Form.原価額				
                         mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].MitsumoriHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
 
@@ -2052,16 +2086,19 @@ namespace MitsumoriNyuuryoku
             decimal zei8 = 0;
 
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-            {   
-                //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
-                mGrid.g_DArray[RW].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[RW].CostGaku));
+            {
+                if (bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriSuu) != 0)
+                {
+                    //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
+                    mGrid.g_DArray[RW].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[RW].CostGaku));
 
-                kin1 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriGaku);
-                kin2 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku);
-                zei10 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriTax);
-                zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
-                kin3 += bbl.Z_Set(mGrid.g_DArray[RW].CostGaku);
-                kin4 += bbl.Z_Set(mGrid.g_DArray[RW].ProfitGaku);
+                    kin1 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriGaku);
+                    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku);
+                    zei10 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriTax);
+                    zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
+                    kin3 += bbl.Z_Set(mGrid.g_DArray[RW].CostGaku);
+                    kin4 += bbl.Z_Set(mGrid.g_DArray[RW].ProfitGaku);
+                }
             }
 
             //Footer部
@@ -2293,7 +2330,12 @@ namespace MitsumoriNyuuryoku
                 bbl.ShowMessage("I101");
 
             if (ChkPrint.Checked && OperationMode != EOperationMode.DELETE)
+            {
+                //排他処理を解除
+                DeleteExclusive();
+
                 ExecPrint(dme.MitsumoriNO);
+            }
 
             //更新後画面クリア
             ChangeOperationMode(base.OperationMode);
@@ -2326,10 +2368,10 @@ namespace MitsumoriNyuuryoku
 
             Scr_Clr(0);
 
+            S_BodySeigyo(0, 0);
             S_BodySeigyo(0, 1);
             //配列の内容を画面にセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            S_BodySeigyo(0, 0);
 
             switch (mode)
             {
@@ -3047,22 +3089,40 @@ namespace MitsumoriNyuuryoku
                                     bool ret = bbl.Fnc_UnitPrice(fue);
                                     if (ret)
                                     {
+                                        //販売単価=Function_単価取得.out税込単価		
+                                        mGrid.g_DArray[w_Row].MitsumoriUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+
+                                        //原価単価=Function_単価取得.out原価単価	
+                                        mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                                    }
+                                    else
+                                    {
+                                        //販売単価		
+                                        mGrid.g_DArray[w_Row].MitsumoriUnitPrice = "0";
+                                        //原価単価
+                                        mGrid.g_DArray[w_Row].CostUnitPrice = "0";
+                                    }
+
+                                    //税抜販売額
+                                    if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                                    {
+                                        //（諸口の場合は入力された税込単価から税抜単価を都度計算する）
+                                        //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.見積数
+                                        decimal zeinukiTanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd);
+
+                                        mGrid.g_DArray[w_Row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", zeinukiTanka * wSuu);
+                                    }
+                                    else if (mGrid.g_DArray[w_Row].VariousFLG.Equals(0))
+                                    {
+                                        //税抜販売額＝Form.見積数＝Nullの場合Function_単価取得.out税抜単価×Form.見積数
+                                        mGrid.g_DArray[w_Row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
                                     }
                                     
-                                    //販売単価=Function_単価取得.out税込単価		
-                                    mGrid.g_DArray[w_Row].MitsumoriUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
-
-                                    //原価単価=Function_単価取得.out原価単価	
-                                    mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
-
-                                    //税抜販売額=Function_消費税計算.out金額１
-                                    mGrid.g_DArray[w_Row].MitsumoriHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(bbl.Z_Set(fue.ZeikomiTanka) * wSuu, mGrid.g_DArray[w_Row].TaxRateFLG, ymd));
-
                                     //税込販売額←	Function_単価取得.out税込単価×	Form.Detail.見積数			
-                                    mGrid.g_DArray[w_Row].MitsumoriGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
+                                    mGrid.g_DArray[w_Row].MitsumoriGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriUnitPrice) * wSuu);
 
                                     //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
-                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
+                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * wSuu);
 
 
                                     if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
@@ -3118,13 +3178,8 @@ namespace MitsumoriNyuuryoku
                                 break;
 
                             case (int)ClsGridMitsumori.ColNO.CostUnitPrice: //原価単価
-                                int tanka;
-                                int su;
                                 //原価額=Form.Detail.原価単価×	Form.Detail.見積数
-                                if (int.TryParse(mGrid.g_DArray[w_Row].CostUnitPrice, out tanka) && int.TryParse(mGrid.g_DArray[w_Row].MitsumoriSuu, out su))
-                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", tanka * su);
-                                else
-                                    mGrid.g_DArray[w_Row].CostGaku = "0";
+                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriSuu));
                                
                                 break;
                         }
@@ -3136,6 +3191,9 @@ namespace MitsumoriNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;
@@ -3243,13 +3301,24 @@ namespace MitsumoriNyuuryoku
         {
             try
             {
-                addInfo.ade.CustomerCD= ScCustomer.TxtCode.Text ;
-                addInfo.ade.CustomerName= detailControls[(int)EIndex.CustomerName].Text ;
-                addInfo.ade.CustomerName2= detailControls[(int)EIndex.CustomerName2].Text;
+                addInfo.ade.CustomerCD = ScCustomer.TxtCode.Text;
+                addInfo.ade.CustomerName = detailControls[(int)EIndex.CustomerName].Text;
+                addInfo.ade.CustomerName2 = detailControls[(int)EIndex.CustomerName2].Text;
 
                 addInfo.ShowDialog();
 
-                            }
+                if (detailControls[(int)EIndex.CustomerName2].CanFocus)
+                {
+                    detailControls[(int)EIndex.CustomerName2].Focus();
+                }
+                else
+                {
+                    if (radioButton1.Checked)
+                        radioButton1.Focus();
+                    else
+                        radioButton2.Focus();
+                }
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理

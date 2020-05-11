@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 
 namespace Mitsumorisyo
 {
@@ -49,7 +48,6 @@ namespace Mitsumorisyo
         private string mOldMitsumoriNo = "";    //排他処理のため使用
         private string mOldCustomerCD = "";
 
-
         public Mitsumorisyo()
         {
             InitializeComponent();
@@ -76,7 +74,8 @@ namespace Mitsumorisyo
                 ScCustomer.Value1 = "1";    //1:販売先
 
                 mibl = new MitsumoriNyuuryoku_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = bbl.GetDate();
+                CboStoreCD.Bind(ymd);
 
                 SetFuncKeyAll(this, "100001000011");
                 Scr_Clr(0);
@@ -86,6 +85,7 @@ namespace Mitsumorisyo
                 if(cmds.Length-1 > (int)ECmdLine.PcID)
                 {
                     detailControls[(int)EIndex.MitsumoriNO].Text = cmds[cmds.Length - 1];
+                    PrintMode = EPrintMode.DIRECT;
                     PrintSec();
                     EndSec();
                 }
@@ -228,7 +228,7 @@ namespace Mitsumorisyo
                 previousCtrl.Focus();
                 return null;
             }
-            else
+            else 
             {
                 //明細にデータをセット
                 int i = 0;

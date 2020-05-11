@@ -1112,6 +1112,12 @@ namespace PickingNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.PickingDate:
@@ -1144,26 +1150,7 @@ namespace PickingNyuuryoku
             }
 
             return true;
-        }
-
-        // ********************************************
-        // ERR時のSETFOCUS  ERR_FOCUS_GRID_SUB
-        // 
-        // *******************************************
-        private void ERR_FOCUS_GRID_SUB(int pCol, int pRow)
-        {
-            Control w_Ctrl;
-            bool w_Ret;
-            int w_CtlRow;
-
-            w_CtlRow = pRow - Vsb_Mei_0.Value;
-
-                w_Ctrl = detailControls[(int)EIndex.PickingDate];
-
-            IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
-            w_Ret = mGrid.F_MoveFocus((int)ClsGridPicking.Gen_MK_FocusMove.MvSet, (int)ClsGridPicking.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
-
-        }
+        }        
 
         /// <summary>
         /// 日付が変更されたときに必要なチェック処理

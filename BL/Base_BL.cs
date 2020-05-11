@@ -528,7 +528,7 @@ namespace BL
             {
                 decimal decimal_part = d % 1;
                 if (decimal_part == 0)
-                    return string.Format("{0:#,##0}", Convert.ToInt32(d));
+                    return string.Format("{0:#,##0}", Convert.ToInt64(d));
                 else
                     return d.ToString();
             }
@@ -559,6 +559,17 @@ namespace BL
             return outKingaku;
         }
 
+        /// <summary>
+        /// 消費税計算処理
+        /// 税抜金額より税込金額を取得する
+        /// 計算モード：１
+        /// </summary>
+        /// <param name="kingaku">税抜金額</param>
+        /// <param name="taxRateFLG">0:非課税、1:通常課税、2:軽減課税</param>
+        /// <param name="zei">OUT:消費税</param>
+        /// <param name="zeiritsu">OUT:消費税率</param>
+        /// <param name="ymd">YYYY/MM/DD形式,未入力時システム日付</param>
+        /// <returns></returns>
         public decimal GetZeikomiKingaku(decimal kingaku, int taxRateFLG, out decimal zei, out decimal zeiritsu, string ymd = "")
         {
             decimal outKingaku = 0;
