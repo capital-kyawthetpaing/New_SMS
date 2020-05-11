@@ -66,7 +66,6 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             txtZipCode1.Require(true);
             txtZipCode2.Require(true);
             txtAddress1.Require(true);
-            txtAddress2.Require(true);
 
         }
         protected override void EndSec()
@@ -117,7 +116,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 return false;
             }
 
-            if (!RequireCheck(new Control[] {txtZipCode1,txtZipCode2, txtAddress1, txtAddress2 }))
+            if (!RequireCheck(new Control[] {txtZipCode1,txtZipCode2, txtAddress1 }))
             {
                 return false;
             }

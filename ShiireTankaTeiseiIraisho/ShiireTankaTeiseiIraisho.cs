@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 using System.Runtime.InteropServices; //EXCEL出力(必要)
 using Microsoft.Office.Interop;//EXCEL出力(必要)
 

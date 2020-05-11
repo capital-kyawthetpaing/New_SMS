@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 
 namespace HacchuuShoukai
 {
@@ -100,7 +99,7 @@ namespace HacchuuShoukai
                 //初期値セット
                 ssbl = new HacchuuShoukai_BL();
                 string ymd = ssbl.GetDate();
-                CboStoreCD.Bind(string.Empty);
+                CboStoreCD.Bind(ymd);
                 CboSoukoName.Bind(ymd);
                 CboArrivalPlan.Bind(ymd);
                 //検索用のパラメータ設定
