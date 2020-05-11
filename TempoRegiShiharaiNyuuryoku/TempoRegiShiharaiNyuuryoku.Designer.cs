@@ -76,7 +76,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(171, 340);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(171, 338);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.txtRemarks.Font = new System.Drawing.Font("MS Gothic", 16F);
             this.txtRemarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarks.Length = 200;
-            this.txtRemarks.Location = new System.Drawing.Point(299, 337);
+            this.txtRemarks.Location = new System.Drawing.Point(299, 335);
             this.txtRemarks.MaxLength = 200;
             this.txtRemarks.Mdea = false;
             this.txtRemarks.Mfocus = false;
@@ -149,7 +149,7 @@
             this.cboDenominationName.ItemHeight = 29;
             this.cboDenominationName.ItemHeight_ = 29;
             this.cboDenominationName.Length = 20;
-            this.cboDenominationName.Location = new System.Drawing.Point(299, 286);
+            this.cboDenominationName.Location = new System.Drawing.Point(299, 287);
             this.cboDenominationName.MaxItem = 8;
             this.cboDenominationName.MaxLength = 10;
             this.cboDenominationName.MoveNext = true;

@@ -39,14 +39,16 @@
             this.txtCustomerNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
             this.txtCustomerNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCustomerNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCustomerNo.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtCustomerNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCustomerNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustomerNo.DecimalPlace = 0;
-            this.txtCustomerNo.Font = new System.Drawing.Font("MS Gothic", 16F);
+            this.txtCustomerNo.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtCustomerNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtCustomerNo.IntegerPart = 0;
             this.txtCustomerNo.IsCorrectDate = true;
             this.txtCustomerNo.isEnterKeyDown = false;
+            this.txtCustomerNo.isMaxLengthErr = false;
             this.txtCustomerNo.IsNumber = true;
             this.txtCustomerNo.IsShop = false;
             this.txtCustomerNo.Length = 13;
@@ -54,7 +56,7 @@
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(160, 29);
+            this.txtCustomerNo.Size = new System.Drawing.Size(235, 42);
             this.txtCustomerNo.TabIndex = 1;
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Customer_KeyDown);
@@ -69,7 +71,7 @@
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(254, 224);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
-            this.ckmShop_Label4.Size = new System.Drawing.Size(681, 19);
+            this.ckmShop_Label4.Size = new System.Drawing.Size(680, 19);
             this.ckmShop_Label4.TabIndex = 5;
             this.ckmShop_Label4.Text = "↑お客様にお渡しした会員カードに記載されている会員番号を入力する";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -88,7 +90,7 @@
             this.btnCustomerSearch.Location = new System.Drawing.Point(138, 177);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
-            this.btnCustomerSearch.Size = new System.Drawing.Size(120, 29);
+            this.btnCustomerSearch.Size = new System.Drawing.Size(120, 42);
             this.btnCustomerSearch.TabIndex = 6;
             this.btnCustomerSearch.Text = "会員番号";
             this.btnCustomerSearch.UseVisualStyleBackColor = false;

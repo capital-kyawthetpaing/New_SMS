@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="StorePoint_DataSet" targetNamespace="http://tempuri.org/StorePoint_DataSet.xsd" xmlns:mstns="http://tempuri.org/StorePoint_DataSet.xsd" xmlns="http://tempuri.org/StorePoint_DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="StorePoint_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="StorePoint_DataSet" msprop:Generator_UserDSName="StorePoint_DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StorePointTable" msprop:Generator_TableClassName="StorePointTableDataTable" msprop:Generator_TableVarName="tableStorePointTable" msprop:Generator_RowChangedName="StorePointTableRowChanged" msprop:Generator_TablePropName="StorePointTable" msprop:Generator_RowDeletingName="StorePointTableRowDeleting" msprop:Generator_RowChangingName="StorePointTableRowChanging" msprop:Generator_RowEvHandlerName="StorePointTableRowChangeEventHandler" msprop:Generator_RowDeletedName="StorePointTableRowDeleted" msprop:Generator_RowClassName="StorePointTableRow" msprop:Generator_UserTableName="StorePointTable" msprop:Generator_RowEvArgName="StorePointTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TicketUnit" msprop:Generator_ColumnVarNameInTable="columnTicketUnit" msprop:Generator_ColumnPropNameInRow="TicketUnit" msprop:Generator_ColumnPropNameInTable="TicketUnitColumn" msprop:Generator_UserColumnName="TicketUnit" type="xs:string" minOccurs="0" />
+              <xs:element name="Print1" msprop:Generator_ColumnVarNameInTable="columnPrint1" msprop:Generator_ColumnPropNameInRow="Print1" msprop:Generator_ColumnPropNameInTable="Print1Column" msprop:Generator_UserColumnName="Print1" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold1" msprop:Generator_ColumnVarNameInTable="columnBold1" msprop:Generator_ColumnPropNameInRow="Bold1" msprop:Generator_ColumnPropNameInTable="Bold1Column" msprop:Generator_UserColumnName="Bold1" type="xs:int" minOccurs="0" />
+              <xs:element name="Size1" msprop:Generator_ColumnVarNameInTable="columnSize1" msprop:Generator_ColumnPropNameInRow="Size1" msprop:Generator_ColumnPropNameInTable="Size1Column" msprop:Generator_UserColumnName="Size1" type="xs:int" minOccurs="0" />
+              <xs:element name="Print2" msprop:Generator_ColumnVarNameInTable="columnPrint2" msprop:Generator_ColumnPropNameInRow="Print2" msprop:Generator_ColumnPropNameInTable="Print2Column" msprop:Generator_UserColumnName="Print2" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold2" msprop:Generator_ColumnVarNameInTable="columnBold2" msprop:Generator_ColumnPropNameInRow="Bold2" msprop:Generator_ColumnPropNameInTable="Bold2Column" msprop:Generator_UserColumnName="Bold2" type="xs:int" minOccurs="0" />
+              <xs:element name="Size2" msprop:Generator_ColumnVarNameInTable="columnSize2" msprop:Generator_ColumnPropNameInRow="Size2" msprop:Generator_ColumnPropNameInTable="Size2Column" msprop:Generator_UserColumnName="Size2" type="xs:int" minOccurs="0" />
+              <xs:element name="Print3" msprop:Generator_ColumnVarNameInTable="columnPrint3" msprop:Generator_ColumnPropNameInRow="Print3" msprop:Generator_ColumnPropNameInTable="Print3Column" msprop:Generator_UserColumnName="Print3" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold3" msprop:Generator_ColumnVarNameInTable="columnBold3" msprop:Generator_ColumnPropNameInRow="Bold3" msprop:Generator_ColumnPropNameInTable="Bold3Column" msprop:Generator_UserColumnName="Bold3" type="xs:int" minOccurs="0" />
+              <xs:element name="Size3" msprop:Generator_ColumnVarNameInTable="columnSize3" msprop:Generator_ColumnPropNameInRow="Size3" msprop:Generator_ColumnPropNameInTable="Size3Column" msprop:Generator_UserColumnName="Size3" type="xs:int" minOccurs="0" />
+              <xs:element name="Print4" msprop:Generator_ColumnVarNameInTable="columnPrint4" msprop:Generator_ColumnPropNameInRow="Print4" msprop:Generator_ColumnPropNameInTable="Print4Column" msprop:Generator_UserColumnName="Print4" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold4" msprop:Generator_ColumnVarNameInTable="columnBold4" msprop:Generator_ColumnPropNameInRow="Bold4" msprop:Generator_ColumnPropNameInTable="Bold4Column" msprop:Generator_UserColumnName="Bold4" type="xs:int" minOccurs="0" />
+              <xs:element name="Size4" msprop:Generator_ColumnVarNameInTable="columnSize4" msprop:Generator_ColumnPropNameInRow="Size4" msprop:Generator_ColumnPropNameInTable="Size4Column" msprop:Generator_UserColumnName="Size4" type="xs:int" minOccurs="0" />
+              <xs:element name="Print5" msprop:Generator_ColumnVarNameInTable="columnPrint5" msprop:Generator_ColumnPropNameInRow="Print5" msprop:Generator_ColumnPropNameInTable="Print5Column" msprop:Generator_UserColumnName="Print5" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold5" msprop:Generator_ColumnVarNameInTable="columnBold5" msprop:Generator_ColumnPropNameInRow="Bold5" msprop:Generator_ColumnPropNameInTable="Bold5Column" msprop:Generator_UserColumnName="Bold5" type="xs:int" minOccurs="0" />
+              <xs:element name="Size5" msprop:Generator_ColumnVarNameInTable="columnSize5" msprop:Generator_ColumnPropNameInRow="Size5" msprop:Generator_ColumnPropNameInTable="Size5Column" msprop:Generator_UserColumnName="Size5" type="xs:int" minOccurs="0" />
+              <xs:element name="Print6" msprop:Generator_ColumnVarNameInTable="columnPrint6" msprop:Generator_ColumnPropNameInRow="Print6" msprop:Generator_ColumnPropNameInTable="Print6Column" msprop:Generator_UserColumnName="Print6" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold6" msprop:Generator_ColumnVarNameInTable="columnBold6" msprop:Generator_ColumnPropNameInRow="Bold6" msprop:Generator_ColumnPropNameInTable="Bold6Column" msprop:Generator_UserColumnName="Bold6" type="xs:int" minOccurs="0" />
+              <xs:element name="Size6" msprop:Generator_ColumnVarNameInTable="columnSize6" msprop:Generator_ColumnPropNameInRow="Size6" msprop:Generator_ColumnPropNameInTable="Size6Column" msprop:Generator_UserColumnName="Size6" type="xs:int" minOccurs="0" />
+              <xs:element name="Print7" msprop:Generator_ColumnVarNameInTable="columnPrint7" msprop:Generator_ColumnPropNameInRow="Print7" msprop:Generator_ColumnPropNameInTable="Print7Column" msprop:Generator_UserColumnName="Print7" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold7" msprop:Generator_ColumnVarNameInTable="columnBold7" msprop:Generator_ColumnPropNameInRow="Bold7" msprop:Generator_ColumnPropNameInTable="Bold7Column" msprop:Generator_UserColumnName="Bold7" type="xs:int" minOccurs="0" />
+              <xs:element name="Size7" msprop:Generator_ColumnVarNameInTable="columnSize7" msprop:Generator_ColumnPropNameInRow="Size7" msprop:Generator_ColumnPropNameInTable="Size7Column" msprop:Generator_UserColumnName="Size7" type="xs:int" minOccurs="0" />
+              <xs:element name="Print8" msprop:Generator_ColumnVarNameInTable="columnPrint8" msprop:Generator_ColumnPropNameInRow="Print8" msprop:Generator_ColumnPropNameInTable="Print8Column" msprop:Generator_UserColumnName="Print8" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold8" msprop:Generator_ColumnVarNameInTable="columnBold8" msprop:Generator_ColumnPropNameInRow="Bold8" msprop:Generator_ColumnPropNameInTable="Bold8Column" msprop:Generator_UserColumnName="Bold8" type="xs:int" minOccurs="0" />
+              <xs:element name="Size8" msprop:Generator_ColumnVarNameInTable="columnSize8" msprop:Generator_ColumnPropNameInRow="Size8" msprop:Generator_ColumnPropNameInTable="Size8Column" msprop:Generator_UserColumnName="Size8" type="xs:int" minOccurs="0" />
+              <xs:element name="Print9" msprop:Generator_ColumnVarNameInTable="columnPrint9" msprop:Generator_ColumnPropNameInRow="Print9" msprop:Generator_ColumnPropNameInTable="Print9Column" msprop:Generator_UserColumnName="Print9" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold9" msprop:Generator_ColumnVarNameInTable="columnBold9" msprop:Generator_ColumnPropNameInRow="Bold9" msprop:Generator_ColumnPropNameInTable="Bold9Column" msprop:Generator_UserColumnName="Bold9" type="xs:int" minOccurs="0" />
+              <xs:element name="Size9" msprop:Generator_ColumnVarNameInTable="columnSize9" msprop:Generator_ColumnPropNameInRow="Size9" msprop:Generator_ColumnPropNameInTable="Size9Column" msprop:Generator_UserColumnName="Size9" type="xs:int" minOccurs="0" />
+              <xs:element name="Print10" msprop:Generator_ColumnVarNameInTable="columnPrint10" msprop:Generator_ColumnPropNameInRow="Print10" msprop:Generator_ColumnPropNameInTable="Print10Column" msprop:Generator_UserColumnName="Print10" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold10" msprop:Generator_ColumnVarNameInTable="columnBold10" msprop:Generator_ColumnPropNameInRow="Bold10" msprop:Generator_ColumnPropNameInTable="Bold10Column" msprop:Generator_UserColumnName="Bold10" type="xs:int" minOccurs="0" />
+              <xs:element name="Size10" msprop:Generator_ColumnVarNameInTable="columnSize10" msprop:Generator_ColumnPropNameInRow="Size10" msprop:Generator_ColumnPropNameInTable="Size10Column" msprop:Generator_UserColumnName="Size10" type="xs:int" minOccurs="0" />
+              <xs:element name="Print11" msprop:Generator_ColumnVarNameInTable="columnPrint11" msprop:Generator_ColumnPropNameInRow="Print11" msprop:Generator_ColumnPropNameInTable="Print11Column" msprop:Generator_UserColumnName="Print11" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold11" msprop:Generator_ColumnVarNameInTable="columnBold11" msprop:Generator_ColumnPropNameInRow="Bold11" msprop:Generator_ColumnPropNameInTable="Bold11Column" msprop:Generator_UserColumnName="Bold11" type="xs:int" minOccurs="0" />
+              <xs:element name="Size11" msprop:Generator_ColumnVarNameInTable="columnSize11" msprop:Generator_ColumnPropNameInRow="Size11" msprop:Generator_ColumnPropNameInTable="Size11Column" msprop:Generator_UserColumnName="Size11" type="xs:int" minOccurs="0" />
+              <xs:element name="Print12" msprop:Generator_ColumnVarNameInTable="columnPrint12" msprop:Generator_ColumnPropNameInRow="Print12" msprop:Generator_ColumnPropNameInTable="Print12Column" msprop:Generator_UserColumnName="Print12" type="xs:string" minOccurs="0" />
+              <xs:element name="Bold12" msprop:Generator_ColumnVarNameInTable="columnBold12" msprop:Generator_ColumnPropNameInRow="Bold12" msprop:Generator_ColumnPropNameInTable="Bold12Column" msprop:Generator_UserColumnName="Bold12" type="xs:int" minOccurs="0" />
+              <xs:element name="Size12" msprop:Generator_ColumnVarNameInTable="columnSize12" msprop:Generator_ColumnPropNameInRow="Size12" msprop:Generator_ColumnPropNameInTable="Size12Column" msprop:Generator_UserColumnName="Size12" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
