@@ -56,7 +56,7 @@
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(160, 42);
+            this.txtCustomerNo.Size = new System.Drawing.Size(235, 42);
             this.txtCustomerNo.TabIndex = 1;
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Customer_KeyDown);
