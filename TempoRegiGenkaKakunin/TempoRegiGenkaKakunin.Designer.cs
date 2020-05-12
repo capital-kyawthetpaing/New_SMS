@@ -48,11 +48,6 @@
             this.ckmShop_Label6 = new CKM_Controls.CKMShop_Label();
             this.chkColorSize = new CKM_Controls.CKMShop_CheckBox();
             this.GvSKU = new CKM_Controls.CKMShop_GridView();
-            this.lblColorSize = new CKM_Controls.CKMShop_Label();
-            this.lblItemName = new CKM_Controls.CKMShop_Label();
-            this.txtJanCD = new CKM_Controls.CKM_TextBox();
-            this.btnInquiry = new CKM_Controls.CKM_Button();
-            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.colMakerVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPriceWithoutTax = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +56,11 @@
             this.colCostRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProfitRate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblColorSize = new CKM_Controls.CKMShop_Label();
+            this.lblItemName = new CKM_Controls.CKMShop_Label();
+            this.txtJanCD = new CKM_Controls.CKM_TextBox();
+            this.btnInquiry = new CKM_Controls.CKM_Button();
+            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.PanelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvSKU)).BeginInit();
             this.SuspendLayout();
@@ -275,8 +275,8 @@
             this.GvSKU.Name = "GvSKU";
             this.GvSKU.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GvSKU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GvSKU.RowHeight_ = 55;
-            this.GvSKU.RowTemplate.Height = 55;
+            this.GvSKU.RowHeight_ = 70;
+            this.GvSKU.RowTemplate.Height = 70;
             this.GvSKU.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
             this.GvSKU.Size = new System.Drawing.Size(1850, 500);
             this.GvSKU.TabIndex = 7;
@@ -284,6 +284,98 @@
             this.GvSKU.UseSetting = true;
             this.GvSKU.Width_ = 1850;
             this.GvSKU.DoubleClick += new System.EventHandler(this.GvSKU_DoubleClick);
+            // 
+            // colMakerVendorCD
+            // 
+            this.colMakerVendorCD.DataPropertyName = "MakerVendorCD";
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colMakerVendorCD.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colMakerVendorCD.HeaderText = "メーカー";
+            this.colMakerVendorCD.Name = "colMakerVendorCD";
+            this.colMakerVendorCD.ReadOnly = true;
+            this.colMakerVendorCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colMakerVendorCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colMakerVendorCD.Width = 300;
+            // 
+            // colVendorName
+            // 
+            this.colVendorName.DataPropertyName = "JanCD";
+            this.colVendorName.HeaderText = "商　品";
+            this.colVendorName.Name = "colVendorName";
+            this.colVendorName.ReadOnly = true;
+            this.colVendorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colVendorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colVendorName.Width = 780;
+            // 
+            // colPriceWithoutTax
+            // 
+            this.colPriceWithoutTax.DataPropertyName = "PriceWithoutTax";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colPriceWithoutTax.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colPriceWithoutTax.HeaderText = "税抜定価";
+            this.colPriceWithoutTax.Name = "colPriceWithoutTax";
+            this.colPriceWithoutTax.ReadOnly = true;
+            this.colPriceWithoutTax.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colPriceWithoutTax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colPriceWithoutTax.Width = 160;
+            // 
+            // colGeneralPriceOutTax
+            // 
+            this.colGeneralPriceOutTax.DataPropertyName = "GeneralPriceOutTax";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colGeneralPriceOutTax.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colGeneralPriceOutTax.HeaderText = "税抜販売";
+            this.colGeneralPriceOutTax.Name = "colGeneralPriceOutTax";
+            this.colGeneralPriceOutTax.ReadOnly = true;
+            this.colGeneralPriceOutTax.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colGeneralPriceOutTax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colGeneralPriceOutTax.Width = 140;
+            // 
+            // colLastCost
+            // 
+            this.colLastCost.DataPropertyName = "LastCost";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colLastCost.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colLastCost.HeaderText = "原価";
+            this.colLastCost.Name = "colLastCost";
+            this.colLastCost.ReadOnly = true;
+            this.colLastCost.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colLastCost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colLastCost.Width = 140;
+            // 
+            // colCostRate
+            // 
+            this.colCostRate.DataPropertyName = "CostRate";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colCostRate.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colCostRate.HeaderText = "原価率";
+            this.colCostRate.Name = "colCostRate";
+            this.colCostRate.ReadOnly = true;
+            this.colCostRate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCostRate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCostRate.Width = 140;
+            // 
+            // colProfitRate
+            // 
+            this.colProfitRate.DataPropertyName = "ProfitRate";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colProfitRate.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colProfitRate.HeaderText = "利益率";
+            this.colProfitRate.Name = "colProfitRate";
+            this.colProfitRate.ReadOnly = true;
+            this.colProfitRate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colProfitRate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colProfitRate.Width = 140;
+            // 
+            // colJanCD
+            // 
+            this.colJanCD.DataPropertyName = "JanCD";
+            this.colJanCD.HeaderText = "JanCD";
+            this.colJanCD.Name = "colJanCD";
+            this.colJanCD.ReadOnly = true;
+            this.colJanCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colJanCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colJanCD.Visible = false;
             // 
             // lblColorSize
             // 
@@ -377,98 +469,6 @@
             this.ckmShop_Label1.Text = "商　品";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colMakerVendorCD
-            // 
-            this.colMakerVendorCD.DataPropertyName = "MakerVendorCD";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colMakerVendorCD.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colMakerVendorCD.HeaderText = "メーカー";
-            this.colMakerVendorCD.Name = "colMakerVendorCD";
-            this.colMakerVendorCD.ReadOnly = true;
-            this.colMakerVendorCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colMakerVendorCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colMakerVendorCD.Width = 300;
-            // 
-            // colVendorName
-            // 
-            this.colVendorName.DataPropertyName = "JanCD";
-            this.colVendorName.HeaderText = "商　品";
-            this.colVendorName.Name = "colVendorName";
-            this.colVendorName.ReadOnly = true;
-            this.colVendorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colVendorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colVendorName.Width = 780;
-            // 
-            // colPriceWithoutTax
-            // 
-            this.colPriceWithoutTax.DataPropertyName = "PriceWithoutTax";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colPriceWithoutTax.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPriceWithoutTax.HeaderText = "税抜定価";
-            this.colPriceWithoutTax.Name = "colPriceWithoutTax";
-            this.colPriceWithoutTax.ReadOnly = true;
-            this.colPriceWithoutTax.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colPriceWithoutTax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colPriceWithoutTax.Width = 160;
-            // 
-            // colGeneralPriceOutTax
-            // 
-            this.colGeneralPriceOutTax.DataPropertyName = "GeneralPriceOutTax";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colGeneralPriceOutTax.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colGeneralPriceOutTax.HeaderText = "税抜販売";
-            this.colGeneralPriceOutTax.Name = "colGeneralPriceOutTax";
-            this.colGeneralPriceOutTax.ReadOnly = true;
-            this.colGeneralPriceOutTax.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colGeneralPriceOutTax.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colGeneralPriceOutTax.Width = 140;
-            // 
-            // colLastCost
-            // 
-            this.colLastCost.DataPropertyName = "LastCost";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colLastCost.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colLastCost.HeaderText = "原価";
-            this.colLastCost.Name = "colLastCost";
-            this.colLastCost.ReadOnly = true;
-            this.colLastCost.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colLastCost.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colLastCost.Width = 140;
-            // 
-            // colCostRate
-            // 
-            this.colCostRate.DataPropertyName = "CostRate";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colCostRate.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colCostRate.HeaderText = "原価率";
-            this.colCostRate.Name = "colCostRate";
-            this.colCostRate.ReadOnly = true;
-            this.colCostRate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCostRate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCostRate.Width = 140;
-            // 
-            // colProfitRate
-            // 
-            this.colProfitRate.DataPropertyName = "ProfitRate";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colProfitRate.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colProfitRate.HeaderText = "利益率";
-            this.colProfitRate.Name = "colProfitRate";
-            this.colProfitRate.ReadOnly = true;
-            this.colProfitRate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colProfitRate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colProfitRate.Width = 140;
-            // 
-            // colJanCD
-            // 
-            this.colJanCD.DataPropertyName = "JanCD";
-            this.colJanCD.HeaderText = "JanCD";
-            this.colJanCD.Name = "colJanCD";
-            this.colJanCD.ReadOnly = true;
-            this.colJanCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colJanCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colJanCD.Visible = false;
             // 
             // FrmTempoRegiGenkaKakunin
             // 
