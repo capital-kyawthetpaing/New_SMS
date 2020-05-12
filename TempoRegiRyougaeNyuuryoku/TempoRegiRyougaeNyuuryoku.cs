@@ -280,6 +280,5 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             MoveNextControl(e);
         }
-    
     }
 }
