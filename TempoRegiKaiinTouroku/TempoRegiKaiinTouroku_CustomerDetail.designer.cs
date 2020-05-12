@@ -105,9 +105,9 @@
             // 
             // chkDelete
             // 
-            this.chkDelete.Location = new System.Drawing.Point(84, 46);
+            this.chkDelete.Location = new System.Drawing.Point(84, 47);
             this.chkDelete.Name = "chkDelete";
-            this.chkDelete.Size = new System.Drawing.Size(40, 35);
+            this.chkDelete.Size = new System.Drawing.Size(30, 30);
             this.chkDelete.TabIndex = 0;
             this.chkDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDelete.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.ckmShop_Label21.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label21.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label21.Location = new System.Drawing.Point(-4, 47);
+            this.ckmShop_Label21.Location = new System.Drawing.Point(-6, 43);
             this.ckmShop_Label21.Name = "ckmShop_Label21";
             this.ckmShop_Label21.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label21.TabIndex = 48;
@@ -455,7 +455,7 @@
             // 
             this.chkSend.Location = new System.Drawing.Point(1086, 371);
             this.chkSend.Name = "chkSend";
-            this.chkSend.Size = new System.Drawing.Size(40, 35);
+            this.chkSend.Size = new System.Drawing.Size(30, 30);
             this.chkSend.TabIndex = 15;
             this.chkSend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkSend.UseVisualStyleBackColor = true;
