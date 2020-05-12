@@ -411,6 +411,7 @@
             this.IMT_KAIDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_KAIDT_1.BackColor = System.Drawing.Color.White;
             this.IMT_KAIDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_KAIDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_KAIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_1.DecimalPlace = 0;
@@ -419,6 +420,7 @@
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
             this.IMT_KAIDT_1.isEnterKeyDown = false;
+            this.IMT_KAIDT_1.isMaxLengthErr = false;
             this.IMT_KAIDT_1.IsNumber = true;
             this.IMT_KAIDT_1.IsShop = false;
             this.IMT_KAIDT_1.Length = 20;
@@ -426,7 +428,7 @@
             this.IMT_KAIDT_1.MaxLength = 20;
             this.IMT_KAIDT_1.MoveNext = true;
             this.IMT_KAIDT_1.Name = "IMT_KAIDT_1";
-            this.IMT_KAIDT_1.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_1.Size = new System.Drawing.Size(134, 19);
             this.IMT_KAIDT_1.TabIndex = 14;
             this.IMT_KAIDT_1.Tag = "1";
             this.IMT_KAIDT_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -438,6 +440,7 @@
             this.ckM_Text_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_Text_4.BackColor = System.Drawing.Color.White;
             this.ckM_Text_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_Text_4.ClientColor = System.Drawing.Color.White;
             this.ckM_Text_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_Text_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_Text_4.DecimalPlace = 0;
@@ -446,6 +449,7 @@
             this.ckM_Text_4.IntegerPart = 0;
             this.ckM_Text_4.IsCorrectDate = true;
             this.ckM_Text_4.isEnterKeyDown = false;
+            this.ckM_Text_4.isMaxLengthErr = false;
             this.ckM_Text_4.IsNumber = true;
             this.ckM_Text_4.IsShop = false;
             this.ckM_Text_4.Length = 40;
@@ -464,6 +468,7 @@
             this.IMT_KAIDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_KAIDT_0.BackColor = System.Drawing.Color.White;
             this.IMT_KAIDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_KAIDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_KAIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_0.DecimalPlace = 0;
@@ -472,6 +477,7 @@
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
             this.IMT_KAIDT_0.isEnterKeyDown = false;
+            this.IMT_KAIDT_0.isMaxLengthErr = false;
             this.IMT_KAIDT_0.IsNumber = true;
             this.IMT_KAIDT_0.IsShop = false;
             this.IMT_KAIDT_0.Length = 20;
@@ -479,7 +485,7 @@
             this.IMT_KAIDT_0.MaxLength = 20;
             this.IMT_KAIDT_0.MoveNext = true;
             this.IMT_KAIDT_0.Name = "IMT_KAIDT_0";
-            this.IMT_KAIDT_0.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_0.Size = new System.Drawing.Size(134, 19);
             this.IMT_KAIDT_0.TabIndex = 0;
             this.IMT_KAIDT_0.Tag = "0";
             this.IMT_KAIDT_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -491,6 +497,7 @@
             this.IMT_REMAK_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_REMAK_2.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMAK_2.ClientColor = System.Drawing.Color.White;
             this.IMT_REMAK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_2.DecimalPlace = 0;
@@ -499,6 +506,7 @@
             this.IMT_REMAK_2.IntegerPart = 0;
             this.IMT_REMAK_2.IsCorrectDate = true;
             this.IMT_REMAK_2.isEnterKeyDown = false;
+            this.IMT_REMAK_2.isMaxLengthErr = false;
             this.IMT_REMAK_2.IsNumber = true;
             this.IMT_REMAK_2.IsShop = false;
             this.IMT_REMAK_2.Length = 80;
@@ -518,6 +526,7 @@
             this.IMT_REMAK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_REMAK_1.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMAK_1.ClientColor = System.Drawing.Color.White;
             this.IMT_REMAK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_1.DecimalPlace = 0;
@@ -526,6 +535,7 @@
             this.IMT_REMAK_1.IntegerPart = 0;
             this.IMT_REMAK_1.IsCorrectDate = true;
             this.IMT_REMAK_1.isEnterKeyDown = false;
+            this.IMT_REMAK_1.isMaxLengthErr = false;
             this.IMT_REMAK_1.IsNumber = true;
             this.IMT_REMAK_1.IsShop = false;
             this.IMT_REMAK_1.Length = 80;
@@ -545,6 +555,7 @@
             this.IMT_REMAK_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_REMAK_0.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_REMAK_0.ClientColor = System.Drawing.Color.White;
             this.IMT_REMAK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_0.DecimalPlace = 0;
@@ -553,6 +564,7 @@
             this.IMT_REMAK_0.IntegerPart = 0;
             this.IMT_REMAK_0.IsCorrectDate = true;
             this.IMT_REMAK_0.isEnterKeyDown = false;
+            this.IMT_REMAK_0.isMaxLengthErr = false;
             this.IMT_REMAK_0.IsNumber = true;
             this.IMT_REMAK_0.IsShop = false;
             this.IMT_REMAK_0.Length = 80;
@@ -572,6 +584,7 @@
             this.IMT_ITMCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
@@ -579,6 +592,7 @@
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
+            this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
             this.IMT_ITMCD_0.Length = 40;
@@ -599,6 +613,7 @@
             this.IMT_ITMCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_1.DecimalPlace = 0;
@@ -606,6 +621,7 @@
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
+            this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
             this.IMT_ITMCD_1.Length = 40;
@@ -626,6 +642,7 @@
             this.IMT_ITMCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_2.DecimalPlace = 0;
@@ -633,6 +650,7 @@
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
+            this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
             this.IMT_ITMCD_2.Length = 40;
@@ -924,6 +942,7 @@
             this.IMT_HIKAT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_HIKAT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_HIKAT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_HIKAT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_HIKAT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_2.DecimalPlace = 0;
@@ -932,6 +951,7 @@
             this.IMT_HIKAT_2.IntegerPart = 0;
             this.IMT_HIKAT_2.IsCorrectDate = true;
             this.IMT_HIKAT_2.isEnterKeyDown = false;
+            this.IMT_HIKAT_2.isMaxLengthErr = false;
             this.IMT_HIKAT_2.IsNumber = true;
             this.IMT_HIKAT_2.IsShop = false;
             this.IMT_HIKAT_2.Length = 10;
@@ -952,6 +972,7 @@
             this.IMT_HIKAT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_HIKAT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_HIKAT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_HIKAT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_HIKAT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_1.DecimalPlace = 0;
@@ -960,6 +981,7 @@
             this.IMT_HIKAT_1.IntegerPart = 0;
             this.IMT_HIKAT_1.IsCorrectDate = true;
             this.IMT_HIKAT_1.isEnterKeyDown = false;
+            this.IMT_HIKAT_1.isMaxLengthErr = false;
             this.IMT_HIKAT_1.IsNumber = true;
             this.IMT_HIKAT_1.IsShop = false;
             this.IMT_HIKAT_1.Length = 10;
@@ -980,6 +1002,7 @@
             this.IMT_HIKAT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_HIKAT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_HIKAT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_HIKAT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_HIKAT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_HIKAT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_HIKAT_0.DecimalPlace = 0;
@@ -988,6 +1011,7 @@
             this.IMT_HIKAT_0.IntegerPart = 0;
             this.IMT_HIKAT_0.IsCorrectDate = true;
             this.IMT_HIKAT_0.isEnterKeyDown = false;
+            this.IMT_HIKAT_0.isMaxLengthErr = false;
             this.IMT_HIKAT_0.IsNumber = true;
             this.IMT_HIKAT_0.IsShop = false;
             this.IMT_HIKAT_0.Length = 10;
@@ -1008,6 +1032,7 @@
             this.IMT_JUONO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JUONO_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_JUONO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JUONO_0.ClientColor = System.Drawing.Color.White;
             this.IMT_JUONO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_0.DecimalPlace = 0;
@@ -1015,6 +1040,7 @@
             this.IMT_JUONO_0.IntegerPart = 0;
             this.IMT_JUONO_0.IsCorrectDate = true;
             this.IMT_JUONO_0.isEnterKeyDown = false;
+            this.IMT_JUONO_0.isMaxLengthErr = false;
             this.IMT_JUONO_0.IsNumber = true;
             this.IMT_JUONO_0.IsShop = false;
             this.IMT_JUONO_0.Length = 40;
@@ -1035,6 +1061,7 @@
             this.IMT_JUONO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JUONO_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_JUONO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JUONO_1.ClientColor = System.Drawing.Color.White;
             this.IMT_JUONO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_1.DecimalPlace = 0;
@@ -1042,6 +1069,7 @@
             this.IMT_JUONO_1.IntegerPart = 0;
             this.IMT_JUONO_1.IsCorrectDate = true;
             this.IMT_JUONO_1.isEnterKeyDown = false;
+            this.IMT_JUONO_1.isMaxLengthErr = false;
             this.IMT_JUONO_1.IsNumber = true;
             this.IMT_JUONO_1.IsShop = false;
             this.IMT_JUONO_1.Length = 40;
@@ -1062,6 +1090,7 @@
             this.IMT_JUONO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JUONO_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_JUONO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JUONO_2.ClientColor = System.Drawing.Color.White;
             this.IMT_JUONO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_2.DecimalPlace = 0;
@@ -1069,6 +1098,7 @@
             this.IMT_JUONO_2.IntegerPart = 0;
             this.IMT_JUONO_2.IsCorrectDate = true;
             this.IMT_JUONO_2.isEnterKeyDown = false;
+            this.IMT_JUONO_2.isMaxLengthErr = false;
             this.IMT_JUONO_2.IsNumber = true;
             this.IMT_JUONO_2.IsShop = false;
             this.IMT_JUONO_2.Length = 40;
@@ -1140,6 +1170,7 @@
             this.IMN_GENER2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_2.BackColor = System.Drawing.Color.White;
             this.IMN_GENER2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_2.DecimalPlace = 0;
@@ -1148,6 +1179,7 @@
             this.IMN_GENER2_2.IntegerPart = 0;
             this.IMN_GENER2_2.IsCorrectDate = true;
             this.IMN_GENER2_2.isEnterKeyDown = false;
+            this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
             this.IMN_GENER2_2.Length = 10;
@@ -1168,6 +1200,7 @@
             this.IMN_TEIKA_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA_2.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_2.DecimalPlace = 0;
@@ -1176,6 +1209,7 @@
             this.IMN_TEIKA_2.IntegerPart = 0;
             this.IMN_TEIKA_2.IsCorrectDate = true;
             this.IMN_TEIKA_2.isEnterKeyDown = false;
+            this.IMN_TEIKA_2.isMaxLengthErr = false;
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
             this.IMN_TEIKA_2.Length = 10;
@@ -1196,6 +1230,7 @@
             this.IMN_GENER_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_2.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER_2.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_2.DecimalPlace = 0;
@@ -1204,6 +1239,7 @@
             this.IMN_GENER_2.IntegerPart = 0;
             this.IMN_GENER_2.IsCorrectDate = true;
             this.IMN_GENER_2.isEnterKeyDown = false;
+            this.IMN_GENER_2.isMaxLengthErr = false;
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
             this.IMN_GENER_2.Length = 10;
@@ -1224,6 +1260,7 @@
             this.IMN_MEMBR_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_2.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_2.DecimalPlace = 0;
@@ -1232,6 +1269,7 @@
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
             this.IMN_MEMBR_2.isEnterKeyDown = false;
+            this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
             this.IMN_MEMBR_2.Length = 10;
@@ -1251,6 +1289,7 @@
             this.IMN_GENER2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_1.BackColor = System.Drawing.Color.White;
             this.IMN_GENER2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_1.DecimalPlace = 0;
@@ -1259,6 +1298,7 @@
             this.IMN_GENER2_1.IntegerPart = 0;
             this.IMN_GENER2_1.IsCorrectDate = true;
             this.IMN_GENER2_1.isEnterKeyDown = false;
+            this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
             this.IMN_GENER2_1.Length = 10;
@@ -1279,6 +1319,7 @@
             this.IMN_TEIKA_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA_1.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_1.DecimalPlace = 0;
@@ -1287,6 +1328,7 @@
             this.IMN_TEIKA_1.IntegerPart = 0;
             this.IMN_TEIKA_1.IsCorrectDate = true;
             this.IMN_TEIKA_1.isEnterKeyDown = false;
+            this.IMN_TEIKA_1.isMaxLengthErr = false;
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
             this.IMN_TEIKA_1.Length = 10;
@@ -1307,6 +1349,7 @@
             this.IMN_GENER_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_1.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER_1.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_1.DecimalPlace = 0;
@@ -1315,6 +1358,7 @@
             this.IMN_GENER_1.IntegerPart = 0;
             this.IMN_GENER_1.IsCorrectDate = true;
             this.IMN_GENER_1.isEnterKeyDown = false;
+            this.IMN_GENER_1.isMaxLengthErr = false;
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
             this.IMN_GENER_1.Length = 10;
@@ -1335,6 +1379,7 @@
             this.IMN_MEMBR_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_1.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_1.DecimalPlace = 0;
@@ -1343,6 +1388,7 @@
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
             this.IMN_MEMBR_1.isEnterKeyDown = false;
+            this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
             this.IMN_MEMBR_1.Length = 10;
@@ -1362,6 +1408,7 @@
             this.IMN_GENER2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_0.BackColor = System.Drawing.Color.White;
             this.IMN_GENER2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_0.DecimalPlace = 0;
@@ -1370,6 +1417,7 @@
             this.IMN_GENER2_0.IntegerPart = 0;
             this.IMN_GENER2_0.IsCorrectDate = true;
             this.IMN_GENER2_0.isEnterKeyDown = false;
+            this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
             this.IMN_GENER2_0.Length = 10;
@@ -1390,6 +1438,7 @@
             this.IMN_GENER_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_0.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER_0.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_0.DecimalPlace = 0;
@@ -1398,6 +1447,7 @@
             this.IMN_GENER_0.IntegerPart = 0;
             this.IMN_GENER_0.IsCorrectDate = true;
             this.IMN_GENER_0.isEnterKeyDown = false;
+            this.IMN_GENER_0.isMaxLengthErr = false;
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
             this.IMN_GENER_0.Length = 10;
@@ -1418,6 +1468,7 @@
             this.IMN_MEMBR_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_0.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_0.DecimalPlace = 0;
@@ -1426,6 +1477,7 @@
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
             this.IMN_MEMBR_0.isEnterKeyDown = false;
+            this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
             this.IMN_MEMBR_0.Length = 10;
@@ -1445,6 +1497,7 @@
             this.IMN_TEIKA_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA_0.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA_0.DecimalPlace = 0;
@@ -1453,6 +1506,7 @@
             this.IMN_TEIKA_0.IntegerPart = 0;
             this.IMN_TEIKA_0.IsCorrectDate = true;
             this.IMN_TEIKA_0.isEnterKeyDown = false;
+            this.IMN_TEIKA_0.isMaxLengthErr = false;
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
             this.IMN_TEIKA_0.Length = 10;
@@ -1473,6 +1527,7 @@
             this.IMT_NYUKA_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_NYUKA_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_NYUKA_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_NYUKA_2.ClientColor = System.Drawing.Color.White;
             this.IMT_NYUKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_2.DecimalPlace = 0;
@@ -1481,6 +1536,7 @@
             this.IMT_NYUKA_2.IntegerPart = 0;
             this.IMT_NYUKA_2.IsCorrectDate = true;
             this.IMT_NYUKA_2.isEnterKeyDown = false;
+            this.IMT_NYUKA_2.isMaxLengthErr = false;
             this.IMT_NYUKA_2.IsNumber = true;
             this.IMT_NYUKA_2.IsShop = false;
             this.IMT_NYUKA_2.Length = 20;
@@ -1500,6 +1556,7 @@
             this.IMT_SYUKA_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_SYUKA_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_SYUKA_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_SYUKA_2.ClientColor = System.Drawing.Color.White;
             this.IMT_SYUKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_2.DecimalPlace = 0;
@@ -1508,6 +1565,7 @@
             this.IMT_SYUKA_2.IntegerPart = 0;
             this.IMT_SYUKA_2.IsCorrectDate = true;
             this.IMT_SYUKA_2.isEnterKeyDown = false;
+            this.IMT_SYUKA_2.isMaxLengthErr = false;
             this.IMT_SYUKA_2.IsNumber = true;
             this.IMT_SYUKA_2.IsShop = false;
             this.IMT_SYUKA_2.Length = 20;
@@ -1527,6 +1585,7 @@
             this.IMT_NYUKA_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_NYUKA_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_NYUKA_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_NYUKA_1.ClientColor = System.Drawing.Color.White;
             this.IMT_NYUKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_1.DecimalPlace = 0;
@@ -1535,6 +1594,7 @@
             this.IMT_NYUKA_1.IntegerPart = 0;
             this.IMT_NYUKA_1.IsCorrectDate = true;
             this.IMT_NYUKA_1.isEnterKeyDown = false;
+            this.IMT_NYUKA_1.isMaxLengthErr = false;
             this.IMT_NYUKA_1.IsNumber = true;
             this.IMT_NYUKA_1.IsShop = false;
             this.IMT_NYUKA_1.Length = 20;
@@ -1554,6 +1614,7 @@
             this.IMT_SYUKA_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_SYUKA_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_SYUKA_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_SYUKA_1.ClientColor = System.Drawing.Color.White;
             this.IMT_SYUKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_1.DecimalPlace = 0;
@@ -1562,6 +1623,7 @@
             this.IMT_SYUKA_1.IntegerPart = 0;
             this.IMT_SYUKA_1.IsCorrectDate = true;
             this.IMT_SYUKA_1.isEnterKeyDown = false;
+            this.IMT_SYUKA_1.isMaxLengthErr = false;
             this.IMT_SYUKA_1.IsNumber = true;
             this.IMT_SYUKA_1.IsShop = false;
             this.IMT_SYUKA_1.Length = 20;
@@ -1581,6 +1643,7 @@
             this.IMT_NYUKA_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_NYUKA_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_NYUKA_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_NYUKA_0.ClientColor = System.Drawing.Color.White;
             this.IMT_NYUKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_NYUKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_NYUKA_0.DecimalPlace = 0;
@@ -1589,6 +1652,7 @@
             this.IMT_NYUKA_0.IntegerPart = 0;
             this.IMT_NYUKA_0.IsCorrectDate = true;
             this.IMT_NYUKA_0.isEnterKeyDown = false;
+            this.IMT_NYUKA_0.isMaxLengthErr = false;
             this.IMT_NYUKA_0.IsNumber = true;
             this.IMT_NYUKA_0.IsShop = false;
             this.IMT_NYUKA_0.Length = 20;
@@ -1608,6 +1672,7 @@
             this.IMT_SYUKA_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_SYUKA_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_SYUKA_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_SYUKA_0.ClientColor = System.Drawing.Color.White;
             this.IMT_SYUKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_SYUKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_SYUKA_0.DecimalPlace = 0;
@@ -1616,6 +1681,7 @@
             this.IMT_SYUKA_0.IntegerPart = 0;
             this.IMT_SYUKA_0.IsCorrectDate = true;
             this.IMT_SYUKA_0.isEnterKeyDown = false;
+            this.IMT_SYUKA_0.isMaxLengthErr = false;
             this.IMT_SYUKA_0.IsNumber = true;
             this.IMT_SYUKA_0.IsShop = false;
             this.IMT_SYUKA_0.Length = 20;
@@ -1635,6 +1701,7 @@
             this.IMT_COLDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_COLDT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_COLDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_COLDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_COLDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_2.DecimalPlace = 0;
@@ -1643,6 +1710,7 @@
             this.IMT_COLDT_2.IntegerPart = 0;
             this.IMT_COLDT_2.IsCorrectDate = true;
             this.IMT_COLDT_2.isEnterKeyDown = false;
+            this.IMT_COLDT_2.isMaxLengthErr = false;
             this.IMT_COLDT_2.IsNumber = true;
             this.IMT_COLDT_2.IsShop = false;
             this.IMT_COLDT_2.Length = 10;
@@ -1663,6 +1731,7 @@
             this.IMT_PAYDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_2.DecimalPlace = 0;
@@ -1671,6 +1740,7 @@
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
             this.IMT_PAYDT_2.isEnterKeyDown = false;
+            this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
             this.IMT_PAYDT_2.Length = 10;
@@ -1691,6 +1761,7 @@
             this.IMT_ARIDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_2.BackColor = System.Drawing.Color.White;
             this.IMT_ARIDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_2.DecimalPlace = 0;
@@ -1699,6 +1770,7 @@
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
             this.IMT_ARIDT_2.isEnterKeyDown = false;
+            this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
             this.IMT_ARIDT_2.Length = 10;
@@ -1719,6 +1791,7 @@
             this.IMT_COLDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_COLDT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_COLDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_COLDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_COLDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_1.DecimalPlace = 0;
@@ -1727,6 +1800,7 @@
             this.IMT_COLDT_1.IntegerPart = 0;
             this.IMT_COLDT_1.IsCorrectDate = true;
             this.IMT_COLDT_1.isEnterKeyDown = false;
+            this.IMT_COLDT_1.isMaxLengthErr = false;
             this.IMT_COLDT_1.IsNumber = true;
             this.IMT_COLDT_1.IsShop = false;
             this.IMT_COLDT_1.Length = 10;
@@ -1747,6 +1821,7 @@
             this.IMT_PAYDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_1.DecimalPlace = 0;
@@ -1755,6 +1830,7 @@
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
             this.IMT_PAYDT_1.isEnterKeyDown = false;
+            this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
             this.IMT_PAYDT_1.Length = 10;
@@ -1775,6 +1851,7 @@
             this.IMT_ARIDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_1.BackColor = System.Drawing.Color.White;
             this.IMT_ARIDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_1.DecimalPlace = 0;
@@ -1783,6 +1860,7 @@
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
             this.IMT_ARIDT_1.isEnterKeyDown = false;
+            this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
             this.IMT_ARIDT_1.Length = 10;
@@ -1803,6 +1881,7 @@
             this.IMT_COLDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_COLDT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_COLDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_COLDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_COLDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_COLDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_COLDT_0.DecimalPlace = 0;
@@ -1811,6 +1890,7 @@
             this.IMT_COLDT_0.IntegerPart = 0;
             this.IMT_COLDT_0.IsCorrectDate = true;
             this.IMT_COLDT_0.isEnterKeyDown = false;
+            this.IMT_COLDT_0.isMaxLengthErr = false;
             this.IMT_COLDT_0.IsNumber = true;
             this.IMT_COLDT_0.IsShop = false;
             this.IMT_COLDT_0.Length = 10;
@@ -1831,6 +1911,7 @@
             this.IMT_PAYDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_0.DecimalPlace = 0;
@@ -1839,6 +1920,7 @@
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
             this.IMT_PAYDT_0.isEnterKeyDown = false;
+            this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
             this.IMT_PAYDT_0.Length = 10;
@@ -1859,6 +1941,7 @@
             this.IMT_ARIDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_0.BackColor = System.Drawing.Color.White;
             this.IMT_ARIDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_0.DecimalPlace = 0;
@@ -1867,6 +1950,7 @@
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
             this.IMT_ARIDT_0.isEnterKeyDown = false;
+            this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
             this.IMT_ARIDT_0.Length = 10;
@@ -1887,6 +1971,7 @@
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -1896,6 +1981,7 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 4;
@@ -1917,6 +2003,7 @@
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
@@ -1926,6 +2013,7 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 4;
@@ -1947,6 +2035,7 @@
             this.ckM_TextBox12.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox12.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox12.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox12.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox12.DecimalPlace = 0;
@@ -1956,6 +2045,7 @@
             this.ckM_TextBox12.IntegerPart = 0;
             this.ckM_TextBox12.IsCorrectDate = true;
             this.ckM_TextBox12.isEnterKeyDown = false;
+            this.ckM_TextBox12.isMaxLengthErr = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 4;
@@ -1977,6 +2067,7 @@
             this.IMT_ITMNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMNM_2.BackColor = System.Drawing.Color.White;
             this.IMT_ITMNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_2.DecimalPlace = 0;
@@ -1985,6 +2076,7 @@
             this.IMT_ITMNM_2.IntegerPart = 0;
             this.IMT_ITMNM_2.IsCorrectDate = true;
             this.IMT_ITMNM_2.isEnterKeyDown = false;
+            this.IMT_ITMNM_2.isMaxLengthErr = false;
             this.IMT_ITMNM_2.IsNumber = true;
             this.IMT_ITMNM_2.IsShop = false;
             this.IMT_ITMNM_2.Length = 100;
@@ -2004,6 +2096,7 @@
             this.IMT_ITMNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMNM_1.BackColor = System.Drawing.Color.White;
             this.IMT_ITMNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_1.DecimalPlace = 0;
@@ -2012,6 +2105,7 @@
             this.IMT_ITMNM_1.IntegerPart = 0;
             this.IMT_ITMNM_1.IsCorrectDate = true;
             this.IMT_ITMNM_1.isEnterKeyDown = false;
+            this.IMT_ITMNM_1.isMaxLengthErr = false;
             this.IMT_ITMNM_1.IsNumber = true;
             this.IMT_ITMNM_1.IsShop = false;
             this.IMT_ITMNM_1.Length = 100;
@@ -2031,6 +2125,7 @@
             this.IMT_ITMNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMNM_0.BackColor = System.Drawing.Color.White;
             this.IMT_ITMNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMNM_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_0.DecimalPlace = 0;
@@ -2039,6 +2134,7 @@
             this.IMT_ITMNM_0.IntegerPart = 0;
             this.IMT_ITMNM_0.IsCorrectDate = true;
             this.IMT_ITMNM_0.isEnterKeyDown = false;
+            this.IMT_ITMNM_0.isMaxLengthErr = false;
             this.IMT_ITMNM_0.IsNumber = true;
             this.IMT_ITMNM_0.IsShop = false;
             this.IMT_ITMNM_0.Length = 100;
@@ -2136,6 +2232,7 @@
             this.ckM_TextBox15.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox15.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox15.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox15.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox15.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox15.DecimalPlace = 0;
@@ -2145,6 +2242,7 @@
             this.ckM_TextBox15.IntegerPart = 0;
             this.ckM_TextBox15.IsCorrectDate = true;
             this.ckM_TextBox15.isEnterKeyDown = false;
+            this.ckM_TextBox15.isMaxLengthErr = false;
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.Length = 4;
@@ -2166,6 +2264,7 @@
             this.ckM_TextBox16.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox16.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox16.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox16.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox16.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox16.DecimalPlace = 0;
@@ -2175,6 +2274,7 @@
             this.ckM_TextBox16.IntegerPart = 0;
             this.ckM_TextBox16.IsCorrectDate = true;
             this.ckM_TextBox16.isEnterKeyDown = false;
+            this.ckM_TextBox16.isMaxLengthErr = false;
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
             this.ckM_TextBox16.Length = 4;
@@ -2196,6 +2296,7 @@
             this.ckM_TextBox17.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox17.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox17.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox17.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox17.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox17.DecimalPlace = 0;
@@ -2205,6 +2306,7 @@
             this.ckM_TextBox17.IntegerPart = 0;
             this.ckM_TextBox17.IsCorrectDate = true;
             this.ckM_TextBox17.isEnterKeyDown = false;
+            this.ckM_TextBox17.isMaxLengthErr = false;
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
             this.ckM_TextBox17.Length = 4;
@@ -2226,6 +2328,7 @@
             this.IMT_ZEIRT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZEIRT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZEIRT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEIRT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ZEIRT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEIRT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_2.DecimalPlace = 0;
@@ -2235,6 +2338,7 @@
             this.IMT_ZEIRT_2.IntegerPart = 0;
             this.IMT_ZEIRT_2.IsCorrectDate = true;
             this.IMT_ZEIRT_2.isEnterKeyDown = false;
+            this.IMT_ZEIRT_2.isMaxLengthErr = false;
             this.IMT_ZEIRT_2.IsNumber = true;
             this.IMT_ZEIRT_2.IsShop = false;
             this.IMT_ZEIRT_2.Length = 4;
@@ -2256,6 +2360,7 @@
             this.IMT_ZEIRT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZEIRT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZEIRT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEIRT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ZEIRT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEIRT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_1.DecimalPlace = 0;
@@ -2265,6 +2370,7 @@
             this.IMT_ZEIRT_1.IntegerPart = 0;
             this.IMT_ZEIRT_1.IsCorrectDate = true;
             this.IMT_ZEIRT_1.isEnterKeyDown = false;
+            this.IMT_ZEIRT_1.isMaxLengthErr = false;
             this.IMT_ZEIRT_1.IsNumber = true;
             this.IMT_ZEIRT_1.IsShop = false;
             this.IMT_ZEIRT_1.Length = 4;
@@ -2286,6 +2392,7 @@
             this.IMT_ZKDIS_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZKDIS_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZKDIS_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZKDIS_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ZKDIS_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZKDIS_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_2.DecimalPlace = 0;
@@ -2295,6 +2402,7 @@
             this.IMT_ZKDIS_2.IntegerPart = 0;
             this.IMT_ZKDIS_2.IsCorrectDate = true;
             this.IMT_ZKDIS_2.isEnterKeyDown = false;
+            this.IMT_ZKDIS_2.isMaxLengthErr = false;
             this.IMT_ZKDIS_2.IsNumber = true;
             this.IMT_ZKDIS_2.IsShop = false;
             this.IMT_ZKDIS_2.Length = 4;
@@ -2316,6 +2424,7 @@
             this.IMT_ZKDIS_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZKDIS_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZKDIS_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZKDIS_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ZKDIS_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZKDIS_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_1.DecimalPlace = 0;
@@ -2325,6 +2434,7 @@
             this.IMT_ZKDIS_1.IntegerPart = 0;
             this.IMT_ZKDIS_1.IsCorrectDate = true;
             this.IMT_ZKDIS_1.isEnterKeyDown = false;
+            this.IMT_ZKDIS_1.isMaxLengthErr = false;
             this.IMT_ZKDIS_1.IsNumber = true;
             this.IMT_ZKDIS_1.IsShop = false;
             this.IMT_ZKDIS_1.Length = 4;
@@ -2346,6 +2456,7 @@
             this.IMT_ZKDIS_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZKDIS_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZKDIS_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZKDIS_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ZKDIS_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZKDIS_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZKDIS_0.DecimalPlace = 0;
@@ -2355,6 +2466,7 @@
             this.IMT_ZKDIS_0.IntegerPart = 0;
             this.IMT_ZKDIS_0.IsCorrectDate = true;
             this.IMT_ZKDIS_0.isEnterKeyDown = false;
+            this.IMT_ZKDIS_0.isMaxLengthErr = false;
             this.IMT_ZKDIS_0.IsNumber = true;
             this.IMT_ZKDIS_0.IsShop = false;
             this.IMT_ZKDIS_0.Length = 4;
@@ -2376,6 +2488,7 @@
             this.IMT_ZEIRT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ZEIRT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ZEIRT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ZEIRT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ZEIRT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEIRT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEIRT_0.DecimalPlace = 0;
@@ -2385,6 +2498,7 @@
             this.IMT_ZEIRT_0.IntegerPart = 0;
             this.IMT_ZEIRT_0.IsCorrectDate = true;
             this.IMT_ZEIRT_0.isEnterKeyDown = false;
+            this.IMT_ZEIRT_0.isMaxLengthErr = false;
             this.IMT_ZEIRT_0.IsNumber = true;
             this.IMT_ZEIRT_0.IsShop = false;
             this.IMT_ZEIRT_0.Length = 4;
@@ -2406,6 +2520,7 @@
             this.IMT_KAIDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_KAIDT_2.BackColor = System.Drawing.Color.White;
             this.IMT_KAIDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_KAIDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_KAIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_2.DecimalPlace = 0;
@@ -2414,6 +2529,7 @@
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
             this.IMT_KAIDT_2.isEnterKeyDown = false;
+            this.IMT_KAIDT_2.isMaxLengthErr = false;
             this.IMT_KAIDT_2.IsNumber = true;
             this.IMT_KAIDT_2.IsShop = false;
             this.IMT_KAIDT_2.Length = 20;
@@ -2421,7 +2537,7 @@
             this.IMT_KAIDT_2.MaxLength = 20;
             this.IMT_KAIDT_2.MoveNext = true;
             this.IMT_KAIDT_2.Name = "IMT_KAIDT_2";
-            this.IMT_KAIDT_2.Size = new System.Drawing.Size(144, 19);
+            this.IMT_KAIDT_2.Size = new System.Drawing.Size(134, 19);
             this.IMT_KAIDT_2.TabIndex = 28;
             this.IMT_KAIDT_2.Tag = "2";
             this.IMT_KAIDT_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2433,6 +2549,7 @@
             this.IMN_WEBPR2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_2.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_2.DecimalPlace = 0;
@@ -2441,6 +2558,7 @@
             this.IMN_WEBPR2_2.IntegerPart = 0;
             this.IMN_WEBPR2_2.IsCorrectDate = true;
             this.IMN_WEBPR2_2.isEnterKeyDown = false;
+            this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
             this.IMN_WEBPR2_2.Length = 80;
@@ -2460,6 +2578,7 @@
             this.IMN_WEBPR2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_1.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_1.DecimalPlace = 0;
@@ -2468,6 +2587,7 @@
             this.IMN_WEBPR2_1.IntegerPart = 0;
             this.IMN_WEBPR2_1.IsCorrectDate = true;
             this.IMN_WEBPR2_1.isEnterKeyDown = false;
+            this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
             this.IMN_WEBPR2_1.Length = 80;
@@ -2487,6 +2607,7 @@
             this.IMN_WEBPR2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_0.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_0.DecimalPlace = 0;
@@ -2495,6 +2616,7 @@
             this.IMN_WEBPR2_0.IntegerPart = 0;
             this.IMN_WEBPR2_0.IsCorrectDate = true;
             this.IMN_WEBPR2_0.isEnterKeyDown = false;
+            this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
             this.IMN_WEBPR2_0.Length = 80;
@@ -2514,6 +2636,7 @@
             this.IMN_SALEP2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_2.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_2.DecimalPlace = 0;
@@ -2522,14 +2645,15 @@
             this.IMN_SALEP2_2.IntegerPart = 0;
             this.IMN_SALEP2_2.IsCorrectDate = true;
             this.IMN_SALEP2_2.isEnterKeyDown = false;
+            this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
             this.IMN_SALEP2_2.Length = 10;
-            this.IMN_SALEP2_2.Location = new System.Drawing.Point(1148, 190);
+            this.IMN_SALEP2_2.Location = new System.Drawing.Point(1161, 190);
             this.IMN_SALEP2_2.MaxLength = 9;
             this.IMN_SALEP2_2.MoveNext = true;
             this.IMN_SALEP2_2.Name = "IMN_SALEP2_2";
-            this.IMN_SALEP2_2.Size = new System.Drawing.Size(88, 19);
+            this.IMN_SALEP2_2.Size = new System.Drawing.Size(75, 19);
             this.IMN_SALEP2_2.TabIndex = 37;
             this.IMN_SALEP2_2.Tag = "2";
             this.IMN_SALEP2_2.Text = "99,999,999";
@@ -2542,6 +2666,7 @@
             this.IMN_SALEP2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_1.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_1.DecimalPlace = 0;
@@ -2550,14 +2675,15 @@
             this.IMN_SALEP2_1.IntegerPart = 0;
             this.IMN_SALEP2_1.IsCorrectDate = true;
             this.IMN_SALEP2_1.isEnterKeyDown = false;
+            this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
             this.IMN_SALEP2_1.Length = 10;
-            this.IMN_SALEP2_1.Location = new System.Drawing.Point(1148, 114);
+            this.IMN_SALEP2_1.Location = new System.Drawing.Point(1161, 114);
             this.IMN_SALEP2_1.MaxLength = 9;
             this.IMN_SALEP2_1.MoveNext = true;
             this.IMN_SALEP2_1.Name = "IMN_SALEP2_1";
-            this.IMN_SALEP2_1.Size = new System.Drawing.Size(88, 19);
+            this.IMN_SALEP2_1.Size = new System.Drawing.Size(75, 19);
             this.IMN_SALEP2_1.TabIndex = 24;
             this.IMN_SALEP2_1.Tag = "1";
             this.IMN_SALEP2_1.Text = "99,999,999";
@@ -2570,6 +2696,7 @@
             this.IMN_SALEP2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_0.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_0.DecimalPlace = 0;
@@ -2578,14 +2705,15 @@
             this.IMN_SALEP2_0.IntegerPart = 0;
             this.IMN_SALEP2_0.IsCorrectDate = true;
             this.IMN_SALEP2_0.isEnterKeyDown = false;
+            this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
             this.IMN_SALEP2_0.Length = 10;
-            this.IMN_SALEP2_0.Location = new System.Drawing.Point(1148, 38);
+            this.IMN_SALEP2_0.Location = new System.Drawing.Point(1161, 38);
             this.IMN_SALEP2_0.MaxLength = 9;
             this.IMN_SALEP2_0.MoveNext = true;
             this.IMN_SALEP2_0.Name = "IMN_SALEP2_0";
-            this.IMN_SALEP2_0.Size = new System.Drawing.Size(88, 19);
+            this.IMN_SALEP2_0.Size = new System.Drawing.Size(75, 19);
             this.IMN_SALEP2_0.TabIndex = 10;
             this.IMN_SALEP2_0.Tag = "0";
             this.IMN_SALEP2_0.Text = "99,999,999";
@@ -2598,6 +2726,7 @@
             this.ckM_TextBox9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox9.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox9.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox9.DecimalPlace = 0;
@@ -2606,6 +2735,7 @@
             this.ckM_TextBox9.IntegerPart = 0;
             this.ckM_TextBox9.IsCorrectDate = true;
             this.ckM_TextBox9.isEnterKeyDown = false;
+            this.ckM_TextBox9.isMaxLengthErr = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 10;
@@ -2625,6 +2755,7 @@
             this.ckM_TextBox10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox10.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox10.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox10.DecimalPlace = 0;
@@ -2633,6 +2764,7 @@
             this.ckM_TextBox10.IntegerPart = 0;
             this.ckM_TextBox10.IsCorrectDate = true;
             this.ckM_TextBox10.isEnterKeyDown = false;
+            this.ckM_TextBox10.isMaxLengthErr = false;
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
             this.ckM_TextBox10.Length = 10;
@@ -2652,6 +2784,7 @@
             this.ckM_TextBox11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox11.BackColor = System.Drawing.Color.Silver;
             this.ckM_TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox11.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox11.DecimalPlace = 0;
@@ -2660,6 +2793,7 @@
             this.ckM_TextBox11.IntegerPart = 0;
             this.ckM_TextBox11.IsCorrectDate = true;
             this.ckM_TextBox11.isEnterKeyDown = false;
+            this.ckM_TextBox11.isMaxLengthErr = false;
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
             this.ckM_TextBox11.Length = 10;
@@ -2714,6 +2848,7 @@
             this.IMN_GENKA_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENKA_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENKA_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENKA_2.ClientColor = System.Drawing.Color.White;
             this.IMN_GENKA_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_2.DecimalPlace = 0;
@@ -2722,6 +2857,7 @@
             this.IMN_GENKA_2.IntegerPart = 0;
             this.IMN_GENKA_2.IsCorrectDate = true;
             this.IMN_GENKA_2.isEnterKeyDown = false;
+            this.IMN_GENKA_2.isMaxLengthErr = false;
             this.IMN_GENKA_2.IsNumber = true;
             this.IMN_GENKA_2.IsShop = false;
             this.IMN_GENKA_2.Length = 10;
@@ -2743,6 +2879,7 @@
             this.IMN_GENKA_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENKA_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENKA_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENKA_1.ClientColor = System.Drawing.Color.White;
             this.IMN_GENKA_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_1.DecimalPlace = 0;
@@ -2751,6 +2888,7 @@
             this.IMN_GENKA_1.IntegerPart = 0;
             this.IMN_GENKA_1.IsCorrectDate = true;
             this.IMN_GENKA_1.isEnterKeyDown = false;
+            this.IMN_GENKA_1.isMaxLengthErr = false;
             this.IMN_GENKA_1.IsNumber = true;
             this.IMN_GENKA_1.IsShop = false;
             this.IMN_GENKA_1.Length = 10;
@@ -2772,6 +2910,7 @@
             this.IMN_TEIKA2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_2.DecimalPlace = 0;
@@ -2780,6 +2919,7 @@
             this.IMN_TEIKA2_2.IntegerPart = 0;
             this.IMN_TEIKA2_2.IsCorrectDate = true;
             this.IMN_TEIKA2_2.isEnterKeyDown = false;
+            this.IMN_TEIKA2_2.isMaxLengthErr = false;
             this.IMN_TEIKA2_2.IsNumber = true;
             this.IMN_TEIKA2_2.IsShop = false;
             this.IMN_TEIKA2_2.Length = 10;
@@ -2801,6 +2941,7 @@
             this.IMN_CLINT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT_2.BackColor = System.Drawing.Color.White;
             this.IMN_CLINT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT_2.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_2.DecimalPlace = 0;
@@ -2809,6 +2950,7 @@
             this.IMN_CLINT_2.IntegerPart = 0;
             this.IMN_CLINT_2.IsCorrectDate = true;
             this.IMN_CLINT_2.isEnterKeyDown = false;
+            this.IMN_CLINT_2.isMaxLengthErr = false;
             this.IMN_CLINT_2.IsNumber = true;
             this.IMN_CLINT_2.IsShop = false;
             this.IMN_CLINT_2.Length = 20;
@@ -2816,7 +2958,7 @@
             this.IMN_CLINT_2.MaxLength = 20;
             this.IMN_CLINT_2.MoveNext = true;
             this.IMN_CLINT_2.Name = "IMN_CLINT_2";
-            this.IMN_CLINT_2.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_2.Size = new System.Drawing.Size(132, 19);
             this.IMN_CLINT_2.TabIndex = 34;
             this.IMN_CLINT_2.Tag = "2";
             this.IMN_CLINT_2.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2828,6 +2970,7 @@
             this.IMN_WEBPR_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_2.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_2.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_2.DecimalPlace = 0;
@@ -2836,6 +2979,7 @@
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
             this.IMN_WEBPR_2.isEnterKeyDown = false;
+            this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
             this.IMN_WEBPR_2.Length = 80;
@@ -2855,6 +2999,7 @@
             this.IMN_TEIKA2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_1.DecimalPlace = 0;
@@ -2863,6 +3008,7 @@
             this.IMN_TEIKA2_1.IntegerPart = 0;
             this.IMN_TEIKA2_1.IsCorrectDate = true;
             this.IMN_TEIKA2_1.isEnterKeyDown = false;
+            this.IMN_TEIKA2_1.isMaxLengthErr = false;
             this.IMN_TEIKA2_1.IsNumber = true;
             this.IMN_TEIKA2_1.IsShop = false;
             this.IMN_TEIKA2_1.Length = 10;
@@ -2884,6 +3030,7 @@
             this.IMN_CLINT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT_1.BackColor = System.Drawing.Color.White;
             this.IMN_CLINT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT_1.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_1.DecimalPlace = 0;
@@ -2892,6 +3039,7 @@
             this.IMN_CLINT_1.IntegerPart = 0;
             this.IMN_CLINT_1.IsCorrectDate = true;
             this.IMN_CLINT_1.isEnterKeyDown = false;
+            this.IMN_CLINT_1.isMaxLengthErr = false;
             this.IMN_CLINT_1.IsNumber = true;
             this.IMN_CLINT_1.IsShop = false;
             this.IMN_CLINT_1.Length = 20;
@@ -2899,7 +3047,7 @@
             this.IMN_CLINT_1.MaxLength = 20;
             this.IMN_CLINT_1.MoveNext = true;
             this.IMN_CLINT_1.Name = "IMN_CLINT_1";
-            this.IMN_CLINT_1.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_1.Size = new System.Drawing.Size(132, 19);
             this.IMN_CLINT_1.TabIndex = 21;
             this.IMN_CLINT_1.Tag = "1";
             this.IMN_CLINT_1.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -2911,6 +3059,7 @@
             this.IMN_WEBPR_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_1.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_1.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_1.DecimalPlace = 0;
@@ -2919,6 +3068,7 @@
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
             this.IMN_WEBPR_1.isEnterKeyDown = false;
+            this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
             this.IMN_WEBPR_1.Length = 80;
@@ -2938,6 +3088,7 @@
             this.IMN_TEIKA2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_TEIKA2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_TEIKA2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_TEIKA2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_TEIKA2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_TEIKA2_0.DecimalPlace = 0;
@@ -2946,6 +3097,7 @@
             this.IMN_TEIKA2_0.IntegerPart = 0;
             this.IMN_TEIKA2_0.IsCorrectDate = true;
             this.IMN_TEIKA2_0.isEnterKeyDown = false;
+            this.IMN_TEIKA2_0.isMaxLengthErr = false;
             this.IMN_TEIKA2_0.IsNumber = true;
             this.IMN_TEIKA2_0.IsShop = false;
             this.IMN_TEIKA2_0.Length = 10;
@@ -3000,6 +3152,7 @@
             this.IMN_GENKA_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENKA_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENKA_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENKA_0.ClientColor = System.Drawing.Color.White;
             this.IMN_GENKA_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENKA_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENKA_0.DecimalPlace = 0;
@@ -3008,6 +3161,7 @@
             this.IMN_GENKA_0.IntegerPart = 0;
             this.IMN_GENKA_0.IsCorrectDate = true;
             this.IMN_GENKA_0.isEnterKeyDown = false;
+            this.IMN_GENKA_0.isMaxLengthErr = false;
             this.IMN_GENKA_0.IsNumber = true;
             this.IMN_GENKA_0.IsShop = false;
             this.IMN_GENKA_0.Length = 10;
@@ -3029,6 +3183,7 @@
             this.IMN_CLINT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT_0.BackColor = System.Drawing.Color.White;
             this.IMN_CLINT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT_0.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_0.DecimalPlace = 0;
@@ -3037,6 +3192,7 @@
             this.IMN_CLINT_0.IntegerPart = 0;
             this.IMN_CLINT_0.IsCorrectDate = true;
             this.IMN_CLINT_0.isEnterKeyDown = false;
+            this.IMN_CLINT_0.isMaxLengthErr = false;
             this.IMN_CLINT_0.IsNumber = true;
             this.IMN_CLINT_0.IsShop = false;
             this.IMN_CLINT_0.Length = 20;
@@ -3044,7 +3200,7 @@
             this.IMN_CLINT_0.MaxLength = 20;
             this.IMN_CLINT_0.MoveNext = true;
             this.IMN_CLINT_0.Name = "IMN_CLINT_0";
-            this.IMN_CLINT_0.Size = new System.Drawing.Size(136, 19);
+            this.IMN_CLINT_0.Size = new System.Drawing.Size(132, 19);
             this.IMN_CLINT_0.TabIndex = 7;
             this.IMN_CLINT_0.Tag = "0";
             this.IMN_CLINT_0.Text = "ＸＸＸＸＸＸＸＸＸ10";
@@ -3056,6 +3212,7 @@
             this.IMN_WEBPR_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_0.BackColor = System.Drawing.Color.White;
             this.IMN_WEBPR_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_0.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_0.DecimalPlace = 0;
@@ -3064,6 +3221,7 @@
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
             this.IMN_WEBPR_0.isEnterKeyDown = false;
+            this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
             this.IMN_WEBPR_0.Length = 80;
@@ -3083,6 +3241,7 @@
             this.IMT_JANCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JANCD_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_JANCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_0.ClientColor = System.Drawing.Color.White;
             this.IMT_JANCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_0.DecimalPlace = 0;
@@ -3090,6 +3249,7 @@
             this.IMT_JANCD_0.IntegerPart = 0;
             this.IMT_JANCD_0.IsCorrectDate = true;
             this.IMT_JANCD_0.isEnterKeyDown = false;
+            this.IMT_JANCD_0.isMaxLengthErr = false;
             this.IMT_JANCD_0.IsNumber = true;
             this.IMT_JANCD_0.IsShop = false;
             this.IMT_JANCD_0.Length = 10;
@@ -3138,6 +3298,7 @@
             this.IMT_JANCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JANCD_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_JANCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_1.ClientColor = System.Drawing.Color.White;
             this.IMT_JANCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_1.DecimalPlace = 0;
@@ -3145,6 +3306,7 @@
             this.IMT_JANCD_1.IntegerPart = 0;
             this.IMT_JANCD_1.IsCorrectDate = true;
             this.IMT_JANCD_1.isEnterKeyDown = false;
+            this.IMT_JANCD_1.isMaxLengthErr = false;
             this.IMT_JANCD_1.IsNumber = true;
             this.IMT_JANCD_1.IsShop = false;
             this.IMT_JANCD_1.Length = 10;
@@ -3193,6 +3355,7 @@
             this.IMT_JANCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_JANCD_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_JANCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_JANCD_2.ClientColor = System.Drawing.Color.White;
             this.IMT_JANCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_JANCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JANCD_2.DecimalPlace = 0;
@@ -3200,6 +3363,7 @@
             this.IMT_JANCD_2.IntegerPart = 0;
             this.IMT_JANCD_2.IsCorrectDate = true;
             this.IMT_JANCD_2.isEnterKeyDown = false;
+            this.IMT_JANCD_2.isMaxLengthErr = false;
             this.IMT_JANCD_2.IsNumber = true;
             this.IMT_JANCD_2.IsShop = false;
             this.IMT_JANCD_2.Length = 10;
@@ -3221,6 +3385,7 @@
             this.IMN_CLINT2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_CLINT2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_2.DecimalPlace = 0;
@@ -3229,6 +3394,7 @@
             this.IMN_CLINT2_2.IntegerPart = 0;
             this.IMN_CLINT2_2.IsCorrectDate = true;
             this.IMN_CLINT2_2.isEnterKeyDown = false;
+            this.IMN_CLINT2_2.isMaxLengthErr = false;
             this.IMN_CLINT2_2.IsNumber = true;
             this.IMN_CLINT2_2.IsShop = false;
             this.IMN_CLINT2_2.Length = 4;
@@ -3249,6 +3415,7 @@
             this.IMN_CLINT2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_CLINT2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_1.DecimalPlace = 0;
@@ -3257,6 +3424,7 @@
             this.IMN_CLINT2_1.IntegerPart = 0;
             this.IMN_CLINT2_1.IsCorrectDate = true;
             this.IMN_CLINT2_1.isEnterKeyDown = false;
+            this.IMN_CLINT2_1.isMaxLengthErr = false;
             this.IMN_CLINT2_1.IsNumber = true;
             this.IMN_CLINT2_1.IsShop = false;
             this.IMN_CLINT2_1.Length = 4;
@@ -3277,6 +3445,7 @@
             this.IMN_CLINT2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_CLINT2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_CLINT2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_CLINT2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_CLINT2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT2_0.DecimalPlace = 0;
@@ -3285,6 +3454,7 @@
             this.IMN_CLINT2_0.IntegerPart = 0;
             this.IMN_CLINT2_0.IsCorrectDate = true;
             this.IMN_CLINT2_0.isEnterKeyDown = false;
+            this.IMN_CLINT2_0.isMaxLengthErr = false;
             this.IMN_CLINT2_0.IsNumber = true;
             this.IMN_CLINT2_0.IsShop = false;
             this.IMN_CLINT2_0.Length = 4;
@@ -3305,6 +3475,7 @@
             this.IMN_SALEP_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_2.DecimalPlace = 0;
@@ -3313,6 +3484,7 @@
             this.IMN_SALEP_2.IntegerPart = 0;
             this.IMN_SALEP_2.IsCorrectDate = true;
             this.IMN_SALEP_2.isEnterKeyDown = false;
+            this.IMN_SALEP_2.isMaxLengthErr = false;
             this.IMN_SALEP_2.IsNumber = true;
             this.IMN_SALEP_2.IsShop = false;
             this.IMN_SALEP_2.Length = 10;
@@ -3334,6 +3506,7 @@
             this.IMN_SALEP_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_1.DecimalPlace = 0;
@@ -3342,6 +3515,7 @@
             this.IMN_SALEP_1.IntegerPart = 0;
             this.IMN_SALEP_1.IsCorrectDate = true;
             this.IMN_SALEP_1.isEnterKeyDown = false;
+            this.IMN_SALEP_1.isMaxLengthErr = false;
             this.IMN_SALEP_1.IsNumber = true;
             this.IMN_SALEP_1.IsShop = false;
             this.IMN_SALEP_1.Length = 10;
@@ -3363,6 +3537,7 @@
             this.IMN_SALEP_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP_0.DecimalPlace = 0;
@@ -3371,6 +3546,7 @@
             this.IMN_SALEP_0.IntegerPart = 0;
             this.IMN_SALEP_0.IsCorrectDate = true;
             this.IMN_SALEP_0.isEnterKeyDown = false;
+            this.IMN_SALEP_0.isMaxLengthErr = false;
             this.IMN_SALEP_0.IsNumber = true;
             this.IMN_SALEP_0.IsShop = false;
             this.IMN_SALEP_0.Length = 10;
@@ -3467,6 +3643,7 @@
             this.IMT_VENNM_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_VENNM_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_VENNM_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_0.ClientColor = System.Drawing.Color.White;
             this.IMT_VENNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_0.DecimalPlace = 0;
@@ -3474,6 +3651,7 @@
             this.IMT_VENNM_0.IntegerPart = 0;
             this.IMT_VENNM_0.IsCorrectDate = true;
             this.IMT_VENNM_0.isEnterKeyDown = false;
+            this.IMT_VENNM_0.isMaxLengthErr = false;
             this.IMT_VENNM_0.IsNumber = true;
             this.IMT_VENNM_0.IsShop = false;
             this.IMT_VENNM_0.Length = 80;
@@ -3494,6 +3672,7 @@
             this.IMT_VENNM_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_VENNM_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_VENNM_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_1.ClientColor = System.Drawing.Color.White;
             this.IMT_VENNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_1.DecimalPlace = 0;
@@ -3501,6 +3680,7 @@
             this.IMT_VENNM_1.IntegerPart = 0;
             this.IMT_VENNM_1.IsCorrectDate = true;
             this.IMT_VENNM_1.isEnterKeyDown = false;
+            this.IMT_VENNM_1.isMaxLengthErr = false;
             this.IMT_VENNM_1.IsNumber = true;
             this.IMT_VENNM_1.IsShop = false;
             this.IMT_VENNM_1.Length = 80;
@@ -3521,6 +3701,7 @@
             this.IMT_VENNM_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_VENNM_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_VENNM_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_VENNM_2.ClientColor = System.Drawing.Color.White;
             this.IMT_VENNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_VENNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENNM_2.DecimalPlace = 0;
@@ -3528,6 +3709,7 @@
             this.IMT_VENNM_2.IntegerPart = 0;
             this.IMT_VENNM_2.IsCorrectDate = true;
             this.IMT_VENNM_2.isEnterKeyDown = false;
+            this.IMT_VENNM_2.isMaxLengthErr = false;
             this.IMT_VENNM_2.IsNumber = true;
             this.IMT_VENNM_2.IsShop = false;
             this.IMT_VENNM_2.Length = 80;
@@ -3582,6 +3764,7 @@
             this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox6.DecimalPlace = 0;
@@ -3590,6 +3773,7 @@
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = true;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 10;
@@ -3608,6 +3792,7 @@
             this.ckM_TextBox5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox5.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox5.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox5.DecimalPlace = 0;
@@ -3616,6 +3801,7 @@
             this.ckM_TextBox5.IntegerPart = 0;
             this.ckM_TextBox5.IsCorrectDate = true;
             this.ckM_TextBox5.isEnterKeyDown = false;
+            this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
             this.ckM_TextBox5.Length = 10;
@@ -4388,6 +4574,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -4396,6 +4583,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -4730,6 +4918,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -4738,6 +4927,7 @@
             this.ckM_TextBox2.IntegerPart = 4;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -5120,6 +5310,7 @@
             this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox7.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
@@ -5128,6 +5319,7 @@
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = true;
             this.ckM_TextBox7.isEnterKeyDown = false;
+            this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 80;
@@ -5292,6 +5484,7 @@
             this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox8.DecimalPlace = 0;
@@ -5300,6 +5493,7 @@
             this.ckM_TextBox8.IntegerPart = 0;
             this.ckM_TextBox8.IsCorrectDate = false;
             this.ckM_TextBox8.isEnterKeyDown = false;
+            this.ckM_TextBox8.isMaxLengthErr = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 4;
@@ -5317,6 +5511,7 @@
             this.ckM_TextBox13.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox13.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox13.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox13.DecimalPlace = 0;
@@ -5325,6 +5520,7 @@
             this.ckM_TextBox13.IntegerPart = 0;
             this.ckM_TextBox13.IsCorrectDate = false;
             this.ckM_TextBox13.isEnterKeyDown = false;
+            this.ckM_TextBox13.isMaxLengthErr = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
             this.ckM_TextBox13.Length = 4;
@@ -5342,6 +5538,7 @@
             this.ckM_TextBox18.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox18.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox18.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox18.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox18.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox18.DecimalPlace = 0;
@@ -5350,6 +5547,7 @@
             this.ckM_TextBox18.IntegerPart = 0;
             this.ckM_TextBox18.IsCorrectDate = false;
             this.ckM_TextBox18.isEnterKeyDown = false;
+            this.ckM_TextBox18.isMaxLengthErr = false;
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 5;
@@ -5514,6 +5712,7 @@
             this.ckM_TextBox14.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox14.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox14.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox14.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox14.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox14.DecimalPlace = 0;
@@ -5522,6 +5721,7 @@
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = false;
             this.ckM_TextBox14.isEnterKeyDown = false;
+            this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
             this.ckM_TextBox14.Length = 4;
@@ -5539,6 +5739,7 @@
             this.ckM_TextBox19.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox19.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox19.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox19.DecimalPlace = 0;
@@ -5547,6 +5748,7 @@
             this.ckM_TextBox19.IntegerPart = 0;
             this.ckM_TextBox19.IsCorrectDate = false;
             this.ckM_TextBox19.isEnterKeyDown = false;
+            this.ckM_TextBox19.isMaxLengthErr = false;
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
             this.ckM_TextBox19.Length = 4;
@@ -5564,6 +5766,7 @@
             this.ckM_TextBox20.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox20.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox20.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox20.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox20.DecimalPlace = 0;
@@ -5572,6 +5775,7 @@
             this.ckM_TextBox20.IntegerPart = 0;
             this.ckM_TextBox20.IsCorrectDate = false;
             this.ckM_TextBox20.isEnterKeyDown = false;
+            this.ckM_TextBox20.isMaxLengthErr = false;
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
             this.ckM_TextBox20.Length = 5;
@@ -5626,6 +5830,7 @@
             this.ckM_TextBox21.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox21.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox21.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox21.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox21.DecimalPlace = 0;
@@ -5634,6 +5839,7 @@
             this.ckM_TextBox21.IntegerPart = 0;
             this.ckM_TextBox21.IsCorrectDate = true;
             this.ckM_TextBox21.isEnterKeyDown = false;
+            this.ckM_TextBox21.isMaxLengthErr = false;
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
             this.ckM_TextBox21.Length = 80;
@@ -5652,6 +5858,7 @@
             this.ckM_TextBox22.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox22.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox22.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox22.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox22.DecimalPlace = 0;
@@ -5660,6 +5867,7 @@
             this.ckM_TextBox22.IntegerPart = 0;
             this.ckM_TextBox22.IsCorrectDate = true;
             this.ckM_TextBox22.isEnterKeyDown = false;
+            this.ckM_TextBox22.isMaxLengthErr = false;
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
             this.ckM_TextBox22.Length = 40;

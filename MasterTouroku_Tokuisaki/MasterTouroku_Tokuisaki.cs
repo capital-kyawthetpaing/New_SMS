@@ -517,20 +517,27 @@ namespace MasterTouroku_Tokuisaki
 
                         //複写得意先CDに入力がある場合、(When there is an input in 複写得意先CD)Ｅ１０２
                         //必須入力
-                        if (copyKeyControls[(int)EIndex.CustomerCD].Text != "" && copyKeyControls[index].Text == "")
+                        if (!string.IsNullOrWhiteSpace(copyKeyControls[(int)EIndex.CustomerCD].Text) && string.IsNullOrWhiteSpace(copyKeyControls[index].Text ))
                         {
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
                         }
-
-                        copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
-
-                        //日付として正しいこと(Be on the correct date)Ｅ１０３
-                        if (!bbl.CheckDate(copyKeyControls[index].Text))
+                        else if (!string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
-                            bbl.ShowMessage("E103");
-                            return false;
+                            copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
+
+                            //日付として正しいこと(Be on the correct date)Ｅ１０３
+                            if (!bbl.CheckDate(copyKeyControls[index].Text))
+                            {
+                                bbl.ShowMessage("E103");
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            //両方とも未入力
+                            return true;
                         }
                         break;
                 }
@@ -838,7 +845,7 @@ namespace MasterTouroku_Tokuisaki
 
                     break;
 
-                case (int)EIndex.ZipCD1:
+                //case (int)EIndex.ZipCD1:
                 case (int)EIndex.ZipCD2:
                     //郵便番号1、2 入力無くても良い(It is not necessary to input)
                     if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ZipCD1].Text))
@@ -849,7 +856,7 @@ namespace MasterTouroku_Tokuisaki
                             return false;
                         }
                     }
-                    if (index .Equals((int)EIndex.ZipCD2) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (index.Equals((int)EIndex.ZipCD2) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //以下の条件でM_ZipCodeが存在する場合、
                         //[M_ZipCode]
