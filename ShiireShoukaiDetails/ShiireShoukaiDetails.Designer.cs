@@ -186,7 +186,7 @@
             this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(12, 306);
+            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(10, 312);
             this.dgv_PurchaseDetails.Name = "dgv_PurchaseDetails";
             this.dgv_PurchaseDetails.Size = new System.Drawing.Size(1900, 600);
             this.dgv_PurchaseDetails.TabIndex = 9;
@@ -446,6 +446,7 @@
             this.txtItemName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtItemName.DecimalPlace = 0;
             this.txtItemName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtItemName.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
             this.txtItemName.IntegerPart = 0;
             this.txtItemName.IsCorrectDate = true;
             this.txtItemName.isEnterKeyDown = false;
