@@ -207,7 +207,7 @@
             this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(85, 219);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(85, 220);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label6.TabIndex = 13;
