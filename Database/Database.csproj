@@ -99,7 +99,6 @@
     <Content Include="StoreProcedure\D_DepositHistory_UpdateIssued.sql" />
     <Content Include="StoreProcedure\D_DepositＨistory_Gaku_Select.sql" />
     <Content Include="StoreProcedure\D_EDIOrderDetails_SelectAll.sql" />
-    <Content Include="StoreProcedure\D_EDIOrderDetails_SelectForPrint.sql" />
     <Content Include="StoreProcedure\D_EDIOrder_Select.sql" />
     <Content Include="StoreProcedure\D_EDIOrder_SelectAll.sql" />
     <Content Include="StoreProcedure\D_EDIOrder_SelectForCSV.sql" />
