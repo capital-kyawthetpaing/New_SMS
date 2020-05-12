@@ -52,6 +52,10 @@ namespace CKM_Controls
             this.Cursor = Cursors.Hand;
             base.OnMouseHover(e);
         }
+        protected override bool ShowFocusCues
+        {
+            get { return true; }
+        }
 
     }
 }
