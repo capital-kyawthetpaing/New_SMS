@@ -52,7 +52,7 @@
             this.txtCustomerNo.IsNumber = true;
             this.txtCustomerNo.IsShop = false;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(258, 177);
+            this.txtCustomerNo.Location = new System.Drawing.Point(301, 181);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
@@ -69,7 +69,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(254, 224);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(297, 227);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(680, 19);
             this.ckmShop_Label4.TabIndex = 5;
@@ -87,7 +87,7 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(138, 177);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(181, 181);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
             this.btnCustomerSearch.Size = new System.Drawing.Size(120, 42);
