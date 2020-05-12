@@ -40,7 +40,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(53, 228);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(46, 172);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(200, 35);
             this.ckmShop_Label4.TabIndex = 122;
@@ -66,7 +66,7 @@
             this.txtprintprogress.IsNumber = true;
             this.txtprintprogress.IsShop = false;
             this.txtprintprogress.Length = 11;
-            this.txtprintprogress.Location = new System.Drawing.Point(259, 226);
+            this.txtprintprogress.Location = new System.Drawing.Point(252, 170);
             this.txtprintprogress.MaxLength = 11;
             this.txtprintprogress.MoveNext = true;
             this.txtprintprogress.Name = "txtprintprogress";
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 829);
+            this.ClientSize = new System.Drawing.Size(1884, 961);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.txtprintprogress);
             this.Name = "TempoRegiFurikomiYoushi";
