@@ -656,6 +656,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtRow["ChangeDate"] = txtChangeDate.Text;
                     dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
                     dt.Rows.Add(dtRow);
+                    CancelData();
                     dgv_ShiireKakeritsu.DataSource = dt;
                 }
                 else
