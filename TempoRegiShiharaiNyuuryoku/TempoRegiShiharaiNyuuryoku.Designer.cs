@@ -76,7 +76,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(171, 338);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(171, 353);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 6;
@@ -101,12 +101,12 @@
             this.txtPayment.isMaxLengthErr = false;
             this.txtPayment.IsNumber = true;
             this.txtPayment.IsShop = false;
-            this.txtPayment.Length = 11;
+            this.txtPayment.Length = 10;
             this.txtPayment.Location = new System.Drawing.Point(299, 232);
-            this.txtPayment.MaxLength = 11;
+            this.txtPayment.MaxLength = 10;
             this.txtPayment.MoveNext = true;
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(130, 42);
+            this.txtPayment.Size = new System.Drawing.Size(230, 42);
             this.txtPayment.TabIndex = 4;
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -120,7 +120,7 @@
             this.txtRemarks.Font = new System.Drawing.Font("MS Gothic", 16F);
             this.txtRemarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarks.Length = 200;
-            this.txtRemarks.Location = new System.Drawing.Point(299, 335);
+            this.txtRemarks.Location = new System.Drawing.Point(299, 360);
             this.txtRemarks.MaxLength = 200;
             this.txtRemarks.Mdea = false;
             this.txtRemarks.Mfocus = false;
@@ -128,7 +128,7 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.RowCount = 5;
-            this.txtRemarks.Size = new System.Drawing.Size(460, 120);
+            this.txtRemarks.Size = new System.Drawing.Size(500, 150);
             this.txtRemarks.TabIndex = 6;
             this.txtRemarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Medium;
             // 
@@ -146,15 +146,15 @@
             this.cboDenominationName.FontSize_ = 18F;
             this.cboDenominationName.FormattingEnabled = true;
             this.cboDenominationName.IntegralHeight = false;
-            this.cboDenominationName.ItemHeight = 29;
-            this.cboDenominationName.ItemHeight_ = 29;
+            this.cboDenominationName.ItemHeight = 40;
+            this.cboDenominationName.ItemHeight_ = 40;
             this.cboDenominationName.Length = 20;
             this.cboDenominationName.Location = new System.Drawing.Point(299, 287);
             this.cboDenominationName.MaxItem = 8;
             this.cboDenominationName.MaxLength = 10;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(180, 35);
+            this.cboDenominationName.Size = new System.Drawing.Size(280, 46);
             this.cboDenominationName.TabIndex = 5;
             // 
             // TempoRegiShiharaiNyuuryoku
