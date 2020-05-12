@@ -128,7 +128,7 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.RowCount = 5;
-            this.txtRemarks.Size = new System.Drawing.Size(500, 150);
+            this.txtRemarks.Size = new System.Drawing.Size(750, 200);
             this.txtRemarks.TabIndex = 6;
             this.txtRemarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Medium;
             // 
