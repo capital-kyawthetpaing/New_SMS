@@ -108,17 +108,16 @@
             // 
             // lblCustomerName
             // 
-            this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.lblCustomerName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCustomerName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomerName.Location = new System.Drawing.Point(598, 237);
+            this.lblCustomerName.Location = new System.Drawing.Point(597, 237);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(148, 35);
+            this.lblCustomerName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblCustomerName.Size = new System.Drawing.Size(600, 35);
             this.lblCustomerName.TabIndex = 22;
-            this.lblCustomerName.Text = "xxxxxxx";
             this.lblCustomerName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
