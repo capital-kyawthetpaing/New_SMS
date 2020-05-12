@@ -283,9 +283,6 @@ namespace TempoRejiPointSettei
             MoveNextControl(e);
         }
 
-        private void FrmTempoRejiPointSettei_KeyDown(object sender, KeyEventArgs e)
-        {
 
-        }
     }
 }
