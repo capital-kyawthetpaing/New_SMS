@@ -802,17 +802,20 @@ namespace ShiireNyuuryoku
                                 {
                                     switch (w_Col)
                                     {
+                                        case (int)ClsGridShiire.ColNO.MakerItem:
                                         case (int)ClsGridShiire.ColNO.SKUName:
                                         case (int)ClsGridShiire.ColNO.ColorName:
                                         case (int)ClsGridShiire.ColNO.SizeName:
                                             if (mGrid.g_DArray[w_Row].VariousFLG == 1)
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = false;
                                                 //mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.WHColor;
                                             }
                                             else
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                                 //mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                             }
                                             break;
@@ -825,6 +828,7 @@ namespace ShiireNyuuryoku
                                         case (int)ClsGridShiire.ColNO.JanCD:
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = false;
                                                 break;
                                             }
                                     }
@@ -967,17 +971,20 @@ namespace ShiireNyuuryoku
                         {
                             switch (w_Col)
                             {
+                                case (int)ClsGridShiire.ColNO.MakerItem:
                                 case (int)ClsGridShiire.ColNO.SKUName:
                                 case (int)ClsGridShiire.ColNO.ColorName:
                                 case (int)ClsGridShiire.ColNO.SizeName:
                                     if (mGrid.g_DArray[pRow].VariousFLG == 1)
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                         //mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.WHColor;
                                     }
                                     else
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                                        mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
                                         //mGrid.g_MK_State[w_Col, pRow].Cell_Color = GridBase.ClsGridBase.GrayColor;
                                     }
                                     break;
@@ -988,6 +995,7 @@ namespace ShiireNyuuryoku
                                 case (int)ClsGridShiire.ColNO.CommentInStore:
                                 case (int)ClsGridShiire.ColNO.CommentOutStore:
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
+                                    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
                                     break;
                             }
                         }
@@ -1638,6 +1646,7 @@ namespace ShiireNyuuryoku
 
                     mGrid.g_DArray[i].TaniCD = row["TaniCD"].ToString();   // 
                     mGrid.g_DArray[i].TaniName = row["TaniName"].ToString();   // 
+                    mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();   // 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
@@ -2365,6 +2374,7 @@ namespace ShiireNyuuryoku
             dt.Columns.Add("SKUCD", typeof(string));
             dt.Columns.Add("AdminNO", typeof(int));
             dt.Columns.Add("JanCD", typeof(string));
+            dt.Columns.Add("MakerItem", typeof(string));
             dt.Columns.Add("ItemName", typeof(string));
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
@@ -2410,6 +2420,7 @@ namespace ShiireNyuuryoku
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
+                        , mGrid.g_DArray[RW].MakerItem == "" ? null : mGrid.g_DArray[RW].MakerItem
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
@@ -2880,7 +2891,7 @@ namespace ShiireNyuuryoku
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            //CheckGrid((int)ClsGridShiire.ColNO.JanCD, w_Row, false, true);
+                            CheckGrid((int)ClsGridShiire.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);

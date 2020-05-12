@@ -62,7 +62,7 @@
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1443, 729);
-            this.panelDetail.TabIndex = 1;
+            this.panelDetail.TabIndex = 0;
             // 
             // ckmShop_Label3
             // 
@@ -86,7 +86,7 @@
             this.chkAdvanceFlg.Margin = new System.Windows.Forms.Padding(0);
             this.chkAdvanceFlg.Name = "chkAdvanceFlg";
             this.chkAdvanceFlg.Size = new System.Drawing.Size(25, 24);
-            this.chkAdvanceFlg.TabIndex = 24;
+            this.chkAdvanceFlg.TabIndex = 3;
             this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
@@ -108,15 +108,15 @@
             // 
             // lblCustomerName
             // 
-            this.lblCustomerName.AutoSize = true;
             this.lblCustomerName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCustomerName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.lblCustomerName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.lblCustomerName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblCustomerName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.lblCustomerName.Location = new System.Drawing.Point(448, 245);
+            this.lblCustomerName.Location = new System.Drawing.Point(597, 237);
             this.lblCustomerName.Name = "lblCustomerName";
-            this.lblCustomerName.Size = new System.Drawing.Size(0, 19);
+            this.lblCustomerName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblCustomerName.Size = new System.Drawing.Size(600, 35);
             this.lblCustomerName.TabIndex = 22;
             this.lblCustomerName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -135,15 +135,16 @@
             this.txtCustomerCD.IntegerPart = 8;
             this.txtCustomerCD.IsCorrectDate = true;
             this.txtCustomerCD.isEnterKeyDown = false;
+            this.txtCustomerCD.isMaxLengthErr = false;
             this.txtCustomerCD.IsNumber = true;
             this.txtCustomerCD.IsShop = false;
             this.txtCustomerCD.Length = 13;
-            this.txtCustomerCD.Location = new System.Drawing.Point(295, 231);
-            this.txtCustomerCD.MaxLength = 10;
+            this.txtCustomerCD.Location = new System.Drawing.Point(295, 233);
+            this.txtCustomerCD.MaxLength = 13;
             this.txtCustomerCD.MoveNext = true;
             this.txtCustomerCD.Name = "txtCustomerCD";
-            this.txtCustomerCD.Size = new System.Drawing.Size(150, 42);
-            this.txtCustomerCD.TabIndex = 4;
+            this.txtCustomerCD.Size = new System.Drawing.Size(300, 42);
+            this.txtCustomerCD.TabIndex = 2;
             this.txtCustomerCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCD_KeyDown);
             // 
@@ -161,7 +162,7 @@
             this.btnCustomerCD.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerCD.Name = "btnCustomerCD";
             this.btnCustomerCD.Size = new System.Drawing.Size(118, 28);
-            this.btnCustomerCD.TabIndex = 3;
+            this.btnCustomerCD.TabIndex = 7;
             this.btnCustomerCD.Text = "会員番号";
             this.btnCustomerCD.UseVisualStyleBackColor = false;
             this.btnCustomerCD.Click += new System.EventHandler(this.btnCustomerCD_Click);
@@ -182,8 +183,8 @@
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.RowCount = 5;
-            this.txtRemarks.Size = new System.Drawing.Size(460, 120);
-            this.txtRemarks.TabIndex = 5;
+            this.txtRemarks.Size = new System.Drawing.Size(500, 150);
+            this.txtRemarks.TabIndex = 4;
             this.txtRemarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Medium;
             // 
             // cboDenominationName
@@ -209,8 +210,8 @@
             this.cboDenominationName.MaxLength = 20;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(180, 35);
-            this.cboDenominationName.TabIndex = 2;
+            this.cboDenominationName.Size = new System.Drawing.Size(300, 35);
+            this.cboDenominationName.TabIndex = 1;
             // 
             // txtPayment
             // 
@@ -226,6 +227,7 @@
             this.txtPayment.IntegerPart = 8;
             this.txtPayment.IsCorrectDate = true;
             this.txtPayment.isEnterKeyDown = false;
+            this.txtPayment.isMaxLengthErr = false;
             this.txtPayment.IsNumber = true;
             this.txtPayment.IsShop = false;
             this.txtPayment.Length = 11;
@@ -233,8 +235,8 @@
             this.txtPayment.MaxLength = 11;
             this.txtPayment.MoveNext = true;
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(130, 42);
-            this.txtPayment.TabIndex = 1;
+            this.txtPayment.Size = new System.Drawing.Size(200, 42);
+            this.txtPayment.TabIndex = 0;
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 

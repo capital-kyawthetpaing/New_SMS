@@ -1695,6 +1695,9 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.ade.Tel13 = row["Tel13"].ToString();
                         }
                         detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
+                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
+                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
+                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
 
                         if (row["AliasKBN"].ToString() == "1")
                             radioSama.Checked = true;
@@ -1716,6 +1719,9 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.adeD.Tel13 = row["DeliveryTel13"].ToString();
                         }
                         detailControls[(int)EIndex.DeliveryName2].Text = row["DeliveryName2"].ToString();
+                        detailControls[(int)EIndex.Tel1D].Text = row["DeliveryTel11"].ToString();
+                        detailControls[(int)EIndex.Tel2D].Text = row["DeliveryTel12"].ToString();
+                        detailControls[(int)EIndex.Tel3D].Text = row["DeliveryTel13"].ToString();
 
                         if (row["DeliveryAliasKBN"].ToString() == "1")
                             radioSamaD.Checked = true;
@@ -3033,8 +3039,7 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Hikiate))
+                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
@@ -3899,7 +3904,7 @@ namespace TempoJuchuuNyuuryoku
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
 
-                            //CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, w_Row, false, true);
+                            CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, w_Row, false, true);
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -3910,11 +3915,11 @@ namespace TempoJuchuuNyuuryoku
                     break;
 
                 case EsearchKbn.Vendor:
-                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
-                        CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
+                    //if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
+                    //    CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
 
-                    //配列の内容を画面へセット
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    ////配列の内容を画面へセット
+                    //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     break;
             }
 

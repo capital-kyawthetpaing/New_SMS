@@ -165,6 +165,10 @@
     <Compile Include="Search_PlanArrival_DL.cs" />
     <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
     <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
+    <Compile Include="TempoRegiJournal_DL.cs" />
+    <Compile Include="TempoRegiPoint_DL.cs" />
+    <Compile Include="TempoRegiRyousyuusyo_DL.cs" />
+    <Compile Include="TempoRegiTorihikiReceipt_DL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
     <Compile Include="M_UnsouGaisya_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />
