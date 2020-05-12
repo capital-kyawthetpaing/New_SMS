@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,6 +38,31 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Display = new CKM_Controls.CKM_Button();
             this.dgv_PurchaseDetails = new CKM_Controls.CKM_GridView();
+            this.txtDisable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SupplierDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.makerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColorSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Remark1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParchaseCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PurchaseUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ParchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderCount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderUnitPrice1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderAmount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderDate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivalPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DestinationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stroe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StaffOperator = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PayConfirmFinishedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DeliveryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.chkNotOK = new CKM_Controls.CKM_CheckBox();
@@ -71,31 +95,6 @@
             this.scItem = new Search.CKM_SearchControl();
             this.scSkuCD = new Search.CKM_SearchControl();
             this.scJanCD = new Search.CKM_SearchControl();
-            this.txtDisable = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SupplierDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.JANCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.makerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColorSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Remark1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParchaseCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PurchaseUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ParchaseAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderCount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderUnitPrice1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderAmount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderDate1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivalPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DestinationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stroe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StaffOperator = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PayConfirmFinishedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DeliveryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PurchaseDetails)).BeginInit();
@@ -143,7 +142,7 @@
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -176,14 +175,6 @@
             this.PaymentPlanDate,
             this.PayConfirmFinishedDate,
             this.DeliveryNo});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
@@ -192,6 +183,171 @@
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;
             this.dgv_PurchaseDetails.UseSetting = true;
+            // 
+            // txtDisable
+            // 
+            this.txtDisable.HeaderText = "";
+            this.txtDisable.Name = "txtDisable";
+            this.txtDisable.ReadOnly = true;
+            // 
+            // SupplierNo
+            // 
+            this.SupplierNo.DataPropertyName = "PurchaseNO";
+            this.SupplierNo.HeaderText = "仕入番号";
+            this.SupplierNo.Name = "SupplierNo";
+            // 
+            // SupplierDate
+            // 
+            this.SupplierDate.DataPropertyName = "PurchaseDate";
+            this.SupplierDate.HeaderText = "仕入日";
+            this.SupplierDate.Name = "SupplierDate";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "PurchaseCDName";
+            this.Supplier.HeaderText = "仕入先";
+            this.Supplier.Name = "Supplier";
+            this.Supplier.Width = 250;
+            // 
+            // SKUCD
+            // 
+            this.SKUCD.DataPropertyName = "SKUCD";
+            this.SKUCD.HeaderText = "SKUCD";
+            this.SKUCD.Name = "SKUCD";
+            // 
+            // JANCD
+            // 
+            this.JANCD.DataPropertyName = "JanCD";
+            this.JANCD.HeaderText = "JANCD";
+            this.JANCD.Name = "JANCD";
+            // 
+            // makerCD
+            // 
+            this.makerCD.DataPropertyName = "ItemName";
+            this.makerCD.HeaderText = "メーカー商品CD";
+            this.makerCD.Name = "makerCD";
+            this.makerCD.Width = 150;
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "商品名";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.Width = 250;
+            // 
+            // ColorSize
+            // 
+            this.ColorSize.DataPropertyName = "ColorSize";
+            this.ColorSize.HeaderText = "カラー・サイズ";
+            this.ColorSize.Name = "ColorSize";
+            // 
+            // Remark1
+            // 
+            this.Remark1.DataPropertyName = "Remark";
+            this.Remark1.HeaderText = "備考";
+            this.Remark1.Name = "Remark1";
+            // 
+            // ParchaseCount
+            // 
+            this.ParchaseCount.DataPropertyName = "PurchaseSu";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ParchaseCount.HeaderText = "仕入数";
+            this.ParchaseCount.Name = "ParchaseCount";
+            // 
+            // PurchaseUnitPrice
+            // 
+            this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
+            this.PurchaseUnitPrice.HeaderText = "仕入単価";
+            this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
+            // 
+            // ParchaseAmount
+            // 
+            this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ParchaseAmount.HeaderText = "仕入額";
+            this.ParchaseAmount.Name = "ParchaseAmount";
+            // 
+            // OrderCount1
+            // 
+            this.OrderCount1.DataPropertyName = "OrderSu";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.OrderCount1.HeaderText = "発注数";
+            this.OrderCount1.Name = "OrderCount1";
+            // 
+            // OrderUnitPrice1
+            // 
+            this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.OrderUnitPrice1.HeaderText = "発注単価";
+            this.OrderUnitPrice1.Name = "OrderUnitPrice1";
+            // 
+            // OrderAmount1
+            // 
+            this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.OrderAmount1.HeaderText = "発注額";
+            this.OrderAmount1.Name = "OrderAmount1";
+            // 
+            // OrderDate1
+            // 
+            this.OrderDate1.DataPropertyName = "OrderDate";
+            this.OrderDate1.HeaderText = "発注日";
+            this.OrderDate1.Name = "OrderDate1";
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNO";
+            this.OrderNumber.HeaderText = "発注番号";
+            this.OrderNumber.Name = "OrderNumber";
+            // 
+            // ArrivalPlanDate
+            // 
+            this.ArrivalPlanDate.DataPropertyName = "ArrivePlanDate";
+            this.ArrivalPlanDate.HeaderText = "入荷日";
+            this.ArrivalPlanDate.Name = "ArrivalPlanDate";
+            // 
+            // DestinationName
+            // 
+            this.DestinationName.DataPropertyName = "DestinationName";
+            this.DestinationName.HeaderText = "納入先";
+            this.DestinationName.Name = "DestinationName";
+            // 
+            // Stroe
+            // 
+            this.Stroe.DataPropertyName = "StoreName";
+            this.Stroe.HeaderText = "店舗";
+            this.Stroe.Name = "Stroe";
+            // 
+            // StaffOperator
+            // 
+            this.StaffOperator.DataPropertyName = "StaffName";
+            this.StaffOperator.HeaderText = "担当スタッフ";
+            this.StaffOperator.Name = "StaffOperator";
+            // 
+            // PaymentPlanDate
+            // 
+            this.PaymentPlanDate.DataPropertyName = "PaymentPlanDate";
+            this.PaymentPlanDate.HeaderText = "支払予定日";
+            this.PaymentPlanDate.Name = "PaymentPlanDate";
+            // 
+            // PayConfirmFinishedDate
+            // 
+            this.PayConfirmFinishedDate.DataPropertyName = "PayConfirmFinishedDate";
+            this.PayConfirmFinishedDate.HeaderText = "支払日";
+            this.PayConfirmFinishedDate.Name = "PayConfirmFinishedDate";
+            // 
+            // DeliveryNo
+            // 
+            this.DeliveryNo.DataPropertyName = "DeliveryNo";
+            this.DeliveryNo.HeaderText = "納品書番号";
+            this.DeliveryNo.Name = "DeliveryNo";
             // 
             // panel1
             // 
@@ -281,7 +437,7 @@
             this.txtItemName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtItemName.DecimalPlace = 0;
             this.txtItemName.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtItemName.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtItemName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtItemName.IntegerPart = 0;
             this.txtItemName.IsCorrectDate = true;
             this.txtItemName.isEnterKeyDown = false;
@@ -874,171 +1030,6 @@
             this.scJanCD.Value1 = null;
             this.scJanCD.Value2 = null;
             this.scJanCD.Value3 = null;
-            // 
-            // txtDisable
-            // 
-            this.txtDisable.HeaderText = "";
-            this.txtDisable.Name = "txtDisable";
-            this.txtDisable.ReadOnly = true;
-            // 
-            // SupplierNo
-            // 
-            this.SupplierNo.DataPropertyName = "PurchaseNO";
-            this.SupplierNo.HeaderText = "仕入番号";
-            this.SupplierNo.Name = "SupplierNo";
-            // 
-            // SupplierDate
-            // 
-            this.SupplierDate.DataPropertyName = "PurchaseDate";
-            this.SupplierDate.HeaderText = "仕入日";
-            this.SupplierDate.Name = "SupplierDate";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "PurchaseCDName";
-            this.Supplier.HeaderText = "仕入先";
-            this.Supplier.Name = "Supplier";
-            this.Supplier.Width = 250;
-            // 
-            // SKUCD
-            // 
-            this.SKUCD.DataPropertyName = "SKUCD";
-            this.SKUCD.HeaderText = "SKUCD";
-            this.SKUCD.Name = "SKUCD";
-            // 
-            // JANCD
-            // 
-            this.JANCD.DataPropertyName = "JanCD";
-            this.JANCD.HeaderText = "JANCD";
-            this.JANCD.Name = "JANCD";
-            // 
-            // makerCD
-            // 
-            this.makerCD.DataPropertyName = "ItemName";
-            this.makerCD.HeaderText = "メーカー商品CD";
-            this.makerCD.Name = "makerCD";
-            this.makerCD.Width = 150;
-            // 
-            // ItemName
-            // 
-            this.ItemName.DataPropertyName = "ItemName";
-            this.ItemName.HeaderText = "商品名";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.Width = 250;
-            // 
-            // ColorSize
-            // 
-            this.ColorSize.DataPropertyName = "ColorSize";
-            this.ColorSize.HeaderText = "カラー・サイズ";
-            this.ColorSize.Name = "ColorSize";
-            // 
-            // Remark1
-            // 
-            this.Remark1.DataPropertyName = "Remark";
-            this.Remark1.HeaderText = "備考";
-            this.Remark1.Name = "Remark1";
-            // 
-            // ParchaseCount
-            // 
-            this.ParchaseCount.DataPropertyName = "PurchaseSu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ParchaseCount.HeaderText = "仕入数";
-            this.ParchaseCount.Name = "ParchaseCount";
-            // 
-            // PurchaseUnitPrice
-            // 
-            this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.PurchaseUnitPrice.HeaderText = "仕入単価";
-            this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
-            // 
-            // ParchaseAmount
-            // 
-            this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ParchaseAmount.HeaderText = "仕入額";
-            this.ParchaseAmount.Name = "ParchaseAmount";
-            // 
-            // OrderCount1
-            // 
-            this.OrderCount1.DataPropertyName = "OrderSu";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.OrderCount1.HeaderText = "発注数";
-            this.OrderCount1.Name = "OrderCount1";
-            // 
-            // OrderUnitPrice1
-            // 
-            this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.OrderUnitPrice1.HeaderText = "発注単価";
-            this.OrderUnitPrice1.Name = "OrderUnitPrice1";
-            // 
-            // OrderAmount1
-            // 
-            this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.OrderAmount1.HeaderText = "発注額";
-            this.OrderAmount1.Name = "OrderAmount1";
-            // 
-            // OrderDate1
-            // 
-            this.OrderDate1.DataPropertyName = "OrderDate";
-            this.OrderDate1.HeaderText = "発注日";
-            this.OrderDate1.Name = "OrderDate1";
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.DataPropertyName = "OrderNO";
-            this.OrderNumber.HeaderText = "発注番号";
-            this.OrderNumber.Name = "OrderNumber";
-            // 
-            // ArrivalPlanDate
-            // 
-            this.ArrivalPlanDate.DataPropertyName = "ArrivePlanDate";
-            this.ArrivalPlanDate.HeaderText = "入荷日";
-            this.ArrivalPlanDate.Name = "ArrivalPlanDate";
-            // 
-            // DestinationName
-            // 
-            this.DestinationName.DataPropertyName = "DestinationName";
-            this.DestinationName.HeaderText = "納入先";
-            this.DestinationName.Name = "DestinationName";
-            // 
-            // Stroe
-            // 
-            this.Stroe.DataPropertyName = "StoreName";
-            this.Stroe.HeaderText = "店舗";
-            this.Stroe.Name = "Stroe";
-            // 
-            // StaffOperator
-            // 
-            this.StaffOperator.DataPropertyName = "StaffName";
-            this.StaffOperator.HeaderText = "担当スタッフ";
-            this.StaffOperator.Name = "StaffOperator";
-            // 
-            // PaymentPlanDate
-            // 
-            this.PaymentPlanDate.DataPropertyName = "PaymentPlanDate";
-            this.PaymentPlanDate.HeaderText = "支払予定日";
-            this.PaymentPlanDate.Name = "PaymentPlanDate";
-            // 
-            // PayConfirmFinishedDate
-            // 
-            this.PayConfirmFinishedDate.DataPropertyName = "PayConfirmFinishedDate";
-            this.PayConfirmFinishedDate.HeaderText = "支払日";
-            this.PayConfirmFinishedDate.Name = "PayConfirmFinishedDate";
-            // 
-            // DeliveryNo
-            // 
-            this.DeliveryNo.DataPropertyName = "DeliveryNo";
-            this.DeliveryNo.HeaderText = "納品書番号";
-            this.DeliveryNo.Name = "DeliveryNo";
             // 
             // ShiireShoukaiDetails
             // 
