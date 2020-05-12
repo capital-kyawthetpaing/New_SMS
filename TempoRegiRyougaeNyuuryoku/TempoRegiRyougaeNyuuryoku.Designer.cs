@@ -82,7 +82,7 @@
             this.ExchangeMoney.MaxLength = 10;
             this.ExchangeMoney.MoveNext = true;
             this.ExchangeMoney.Name = "ExchangeMoney";
-            this.ExchangeMoney.Size = new System.Drawing.Size(188, 42);
+            this.ExchangeMoney.Size = new System.Drawing.Size(168, 42);
             this.ExchangeMoney.TabIndex = 1;
             this.ExchangeMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ExchangeMoney.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -111,7 +111,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(123, 284);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(123, 288);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label4.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.ExchangeCount.IsNumber = true;
             this.ExchangeCount.IsShop = false;
             this.ExchangeCount.Length = 3;
-            this.ExchangeCount.Location = new System.Drawing.Point(251, 280);
+            this.ExchangeCount.Location = new System.Drawing.Point(251, 281);
             this.ExchangeCount.MaxLength = 3;
             this.ExchangeCount.MoveNext = true;
             this.ExchangeCount.Name = "ExchangeCount";
@@ -254,7 +254,7 @@
             this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
             this.ExchangeDenomination.Name = "ExchangeDenomination";
-            this.ExchangeDenomination.Size = new System.Drawing.Size(220, 43);
+            this.ExchangeDenomination.Size = new System.Drawing.Size(180, 43);
             this.ExchangeDenomination.TabIndex = 2;
             this.ExchangeDenomination.SelectedIndexChanged += new System.EventHandler(this.ExchangeDenomination_SelectedIndexChanged);
             // 
