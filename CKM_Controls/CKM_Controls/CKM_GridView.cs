@@ -530,7 +530,14 @@ namespace CKM_Controls
                 }
             }
         }
-
+        protected override void OnDataBindingComplete(DataGridViewBindingCompleteEventArgs e)
+        {
+           if (DataSource != null)
+            {
+                this.Focus();
+            }
+            base.OnDataBindingComplete(e);
+        }
         protected override void OnCellFormatting(DataGridViewCellFormattingEventArgs e)
         {
             base.OnCellFormatting(e);
