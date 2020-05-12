@@ -350,7 +350,7 @@
             this.txtBirthDate.MaxLength = 10;
             this.txtBirthDate.MoveNext = true;
             this.txtBirthDate.Name = "txtBirthDate";
-            this.txtBirthDate.Size = new System.Drawing.Size(150, 42);
+            this.txtBirthDate.Size = new System.Drawing.Size(200, 42);
             this.txtBirthDate.TabIndex = 6;
             this.txtBirthDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBirthDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
