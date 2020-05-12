@@ -1,15 +1,11 @@
---  ======================================================================
---       ジャーナル印刷情報取得
---  ======================================================================
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectData_ForTempoRegiJournal]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    店舗レジ ジャーナル印刷　ジャーナル印刷出力

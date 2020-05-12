@@ -1,12 +1,9 @@
---  ======================================================================
---       à¯ä∑åîî≠çsíPà éÊìæ
---    ======================================================================
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectTicketUnit_ForTempRegiPoint]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
 
