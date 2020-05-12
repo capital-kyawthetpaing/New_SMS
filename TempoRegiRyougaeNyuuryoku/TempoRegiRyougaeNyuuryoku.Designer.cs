@@ -247,7 +247,7 @@
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ExchangeDenomination.ItemHeight = 37;
-            this.ExchangeDenomination.ItemHeight_ = 35;
+            this.ExchangeDenomination.ItemHeight_ = 37;
             this.ExchangeDenomination.Length = 20;
             this.ExchangeDenomination.Location = new System.Drawing.Point(251, 215);
             this.ExchangeDenomination.MaxItem = 8;
