@@ -2024,6 +2024,10 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.ade.Tel13 = row["Tel13"].ToString();
                         }
 
+                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
+                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
+                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
+
                         if (row["AliasKBN"].ToString() == "1")
                             radioSama.Checked = true;
                         else
@@ -3167,17 +3171,21 @@ namespace TempoJuchuuNyuuryoku
                 ret = bbl.Fnc_Reserve(fre);
                 if(ret)
                 {
-                    //ただし、			out引当最終日 ≦ Today の場合、Null		
-                    int result = fre.LastDay.CompareTo(bbl.GetDate());
-                    if (result <= 0)
-                    {
-                        mGrid.g_DArray[row].ArrivePlanDate = "";
-                    }
-                    else
-                    {
-                        mGrid.g_DArray[row].ArrivePlanDate = fre.LastDay;
-                    }
+                    int result;
 
+                    if (!string.IsNullOrWhiteSpace(fre.LastDay))
+                    {
+                        //ただし、			out引当最終日 ≦ Today の場合、Null		
+                        result = fre.LastDay.CompareTo(bbl.GetDate());
+                        if (result <= 0)
+                        {
+                            mGrid.g_DArray[row].ArrivePlanDate = "";
+                        }
+                        else
+                        {
+                            mGrid.g_DArray[row].ArrivePlanDate = fre.LastDay;
+                        }
+                    }
                     if (fre.Result == "1")
                     {
                         mGrid.g_DArray[row].Hikiate = "引当OK";
@@ -3191,7 +3199,7 @@ namespace TempoJuchuuNyuuryoku
                         }
                         else
                         {
-                            if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
+                            if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
                             {
                                 result = detailControls[(int)EIndex.SalesDate].Text.CompareTo(mGrid.g_DArray[row].ArrivePlanDate);
                                 if (result < 0)

@@ -21,6 +21,7 @@ namespace DL
                 { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.MakerItem } },
                 { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.VendorCD } },
                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ChangeDate } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.StoreCD } },
             };
             return SelectData(dic, sp);
         }
