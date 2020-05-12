@@ -510,12 +510,12 @@ namespace Search
                     lblName.Width = 350;
                     break;
                 case SearchType.競技:
-                    TxtCode.MaxLength = 5;
+                    TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
                     lblName.Width = 280;
                     break;
                 case SearchType.分類:
-                    TxtCode.MaxLength = 5;
+                    TxtCode.MaxLength = 6;
                     TxtCode.Width = 50;
                     lblName.Width = 280;
                     break;
