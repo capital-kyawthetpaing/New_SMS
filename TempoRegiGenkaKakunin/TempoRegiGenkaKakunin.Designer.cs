@@ -275,8 +275,8 @@
             this.GvSKU.Name = "GvSKU";
             this.GvSKU.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.GvSKU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GvSKU.RowHeight_ = 20;
-            this.GvSKU.RowTemplate.Height = 20;
+            this.GvSKU.RowHeight_ = 70;
+            this.GvSKU.RowTemplate.Height = 70;
             this.GvSKU.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
             this.GvSKU.Size = new System.Drawing.Size(1850, 500);
             this.GvSKU.TabIndex = 7;
