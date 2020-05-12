@@ -1527,6 +1527,7 @@ namespace Base.Client
                 }
                 else if(ConTxt is CKM_TextBox)
                 {
+                    (ConTxt as CKM_TextBox).isMaxLengthErr = false;
 
                     if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
                     {
@@ -1534,6 +1535,7 @@ namespace Base.Client
                         if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).Length)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).isMaxLengthErr = true;
                             (ConTxt as CKM_TextBox).Focus();
                             return false;
                         }
@@ -1545,6 +1547,7 @@ namespace Base.Client
                         if (onebyteCount != byteCount)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).isMaxLengthErr = true;
                             (ConTxt as CKM_TextBox).Focus();
                             return false;
                         }
