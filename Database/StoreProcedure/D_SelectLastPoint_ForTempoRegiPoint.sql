@@ -1,15 +1,11 @@
---  ======================================================================
---       最新ポイント取得
---  ======================================================================
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectLastPoint_ForTempoRegiPoint]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 --  ======================================================================
 --       Program Call    店舗レジ ポイント引換券印刷
 --       Program ID      TempoRegiPoint

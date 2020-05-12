@@ -1,12 +1,11 @@
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_DepositHistory_UpdateIssued]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    店舗レジ 領収書印刷 店舗取引履歴 発行済更新

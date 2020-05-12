@@ -1,12 +1,11 @@
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_Receipt_Select]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    店舗レジ 領収書印刷　レシート印刷出力
