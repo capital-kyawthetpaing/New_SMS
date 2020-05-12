@@ -671,7 +671,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtMain.Rows.Add(row);
                     dgv_ShiireKakeritsu.DataSource = dtMain;
                 }
-
             }
 
 

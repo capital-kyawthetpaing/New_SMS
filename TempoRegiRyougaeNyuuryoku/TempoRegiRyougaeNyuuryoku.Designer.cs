@@ -246,15 +246,15 @@
             this.ExchangeDenomination.FontSize_ = 26F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.ExchangeDenomination.ItemHeight = 40;
-            this.ExchangeDenomination.ItemHeight_ = 40;
+            this.ExchangeDenomination.ItemHeight = 35;
+            this.ExchangeDenomination.ItemHeight_ = 35;
             this.ExchangeDenomination.Length = 20;
             this.ExchangeDenomination.Location = new System.Drawing.Point(251, 215);
             this.ExchangeDenomination.MaxItem = 8;
             this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
             this.ExchangeDenomination.Name = "ExchangeDenomination";
-            this.ExchangeDenomination.Size = new System.Drawing.Size(140, 46);
+            this.ExchangeDenomination.Size = new System.Drawing.Size(140, 41);
             this.ExchangeDenomination.TabIndex = 2;
             this.ExchangeDenomination.SelectedIndexChanged += new System.EventHandler(this.ExchangeDenomination_SelectedIndexChanged);
             // 
