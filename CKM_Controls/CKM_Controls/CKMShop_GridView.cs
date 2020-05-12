@@ -500,13 +500,13 @@ namespace CKM_Controls
         private void MyProcessCmdKey(Keys keyData)
         {
             // MessageBox.Show(this.CurrentCell.EditedFormattedValue.ToString());
-            if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
+            if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-") && Name == "dgvPETC0302I")
             {
-                if (this.Name == "dgvPETC0302I")
-                {
+                //if (this.Name == "dgvPETC0302I")
+                //{
                     ProcessLeftKey(keyData);
                     ProcessRightKey(keyData);
-                }
+                //}
             }
             else
             {
