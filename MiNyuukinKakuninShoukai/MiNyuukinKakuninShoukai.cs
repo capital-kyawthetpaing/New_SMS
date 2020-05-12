@@ -9,8 +9,6 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
-using Search;
-using GridBase;
 
 namespace MiNyuukinKakuninShoukai
 {
@@ -151,6 +149,11 @@ namespace MiNyuukinKakuninShoukai
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
 
             switch (index)
             {

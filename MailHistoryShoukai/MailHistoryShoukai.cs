@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 
 namespace MailHistoryShoukai
 {
@@ -180,6 +179,12 @@ namespace MailHistoryShoukai
         /// <returns></returns>
         private bool CheckDetail(int index)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.MailDateSt:
@@ -270,10 +275,15 @@ namespace MailHistoryShoukai
                                 ChangeDate = ymd
                             };
                             Customer_BL sbl = new Customer_BL();
-                            bool ret = sbl.M_Customer_Select(mce);
+                            bool ret = sbl.M_Customer_Select(mce, 1);
 
                             if (ret)
                             {
+                                if(mce.DeleteFlg.Equals("1"))
+                                {
+
+                                }
+                                ScCustomer.LabelText = mce.CustomerName;
                             }
                         }
                         else

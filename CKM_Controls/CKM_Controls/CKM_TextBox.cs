@@ -103,6 +103,7 @@ namespace CKM_Controls
         public bool IsNumber { get; set; } = true;
 
         public bool isEnterKeyDown { get; set; } = false;
+        public bool isMaxLengthErr { get; set; } = false;
 
         private TextBox txt = null;
         private TextBox txt1 = null;
@@ -176,13 +177,13 @@ namespace CKM_Controls
                         this.Font = new System.Drawing.Font("MS Gothic", 10F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.Medium:
-                        this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular);
+                        this.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.Large:
-                        this.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Regular);
+                        this.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.XLarge:
-                        this.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Regular);
+                        this.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Regular);
                         break;
                 }
             }
@@ -298,6 +299,7 @@ namespace CKM_Controls
             {
                 isEnterKeyDown = true;
                 MoveNext = true;
+                isMaxLengthErr = false;
                 if (txt == null)
                 {
                     if ((IsRequire && string.IsNullOrWhiteSpace(Text)))
@@ -329,6 +331,7 @@ namespace CKM_Controls
                                 if (Convert.ToInt32(str1) > length)
                                 {
                                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    isMaxLengthErr = true;
                                     this.Focus();
                                     return;
                                 }
@@ -341,6 +344,7 @@ namespace CKM_Controls
                                 if (onebyteCount != byteCount)
                                 {
                                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    isMaxLengthErr = true;
                                     this.Focus();
                                     return;
                                 }
@@ -412,6 +416,7 @@ namespace CKM_Controls
                 if (Convert.ToInt32(str) > length)
                 {
                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    isMaxLengthErr = true;
                     this.Focus();
                     return;
                 }
@@ -423,6 +428,7 @@ namespace CKM_Controls
                 if (onebyteCount != byteCount)
                 {
                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    isMaxLengthErr = true;
                     this.Focus();
                     return;
                 }

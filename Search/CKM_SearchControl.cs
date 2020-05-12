@@ -795,6 +795,8 @@ namespace Search
                         lblName.Text = frmss.SoukoName;
                         txtChangeDate.Text = frmss.ChangeDate;
 
+                        CheckBasedFormPanel();//PTK added
+
                     }
                     break;
                 case SearchType.店舗:
@@ -808,6 +810,8 @@ namespace Search
                             txtCode.Text = frmStore.parStoreCD;
                             lblName.Text = frmStore.parStoreName;
                             txtChangeDate.Text = frmStore.parChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -822,6 +826,8 @@ namespace Search
                             lblName.Text = frmVendor.VendorName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmVendor.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -836,6 +842,8 @@ namespace Search
                             lblName.Text = frmVendor.VendorName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmVendor.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -850,6 +858,8 @@ namespace Search
                             lblName.Text = frmStaff.parStaffName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmStaff.parChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }                          
                     }
                     break;
@@ -863,6 +873,7 @@ namespace Search
                             txtCode.Text = frmKouza.parKouzaCD;
                             txtChangeDate.Text = frmKouza.parChangeDate;
                             lblName.Text = frmKouza.parKouzaName;
+                            CheckBasedFormPanel();//PTK added
                         }
 
                     }
@@ -876,6 +887,7 @@ namespace Search
                         {
                             txtCode.Text = frmMal.parKey;
                             lblName.Text = frmMal.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -887,6 +899,7 @@ namespace Search
                         {
                             txtCode.Text = frmMail.parMailPatternCD;
                             lblName.Text = frmMail.parMailPatternName;
+                            CheckBasedFormPanel();//PTK added__
                         }
                     }
                     break;
@@ -901,6 +914,7 @@ namespace Search
                         {
                             txtCode.Text = frmMulti.parKey;
                             lblName.Text = frmMulti.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -914,6 +928,7 @@ namespace Search
                         {
                             txtCode.Text = frmMulti.parKey;
                             lblName.Text = frmMulti.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -928,6 +943,8 @@ namespace Search
                             lblName.Text = frmGinkou.BankName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmGinkou.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -943,7 +960,9 @@ namespace Search
                         {
                             txtCode.Text = frmBrand.parBrandCD;
                             lblName.Text = frmBrand.parBrandName;
+                            CheckBasedFormPanel();//PTK added
                         }
+
                     }
                     break;
 
@@ -955,6 +974,8 @@ namespace Search
                         if (!frmProgram.flgCancel)
                         {
                             txtCode.Text = frmProgram.ProgramID;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                         break;
                     }
@@ -969,6 +990,8 @@ namespace Search
                             txtCode.Text = frmItemCD.ITEM;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmItemCD.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -983,6 +1006,7 @@ namespace Search
                             txtCode.Text = frmTankaSettei.parTankaCD;
                             lblName.Text = frmTankaSettei.parTankaName;
                             txtChangeDate.Text = frmTankaSettei.parChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -998,6 +1022,7 @@ namespace Search
                             txtCode.Text = frmMitsumori.MitsumoriNo;
                             lblName.Text = frmMitsumori.MitsumoriName;
                             txtChangeDate.Text = frmMitsumori.ChangeDate;
+                            CheckBasedFormPanel(); //Added by PTK 
                         }
                     }
                     break;
@@ -1012,6 +1037,7 @@ namespace Search
                         {
                             txtCode.Text = frmJuchuu.JuchuuNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
+                            CheckBasedFormPanel(); //Added by PTK
                         }
                     }
                     break;
@@ -1026,6 +1052,7 @@ namespace Search
                         {
                             txtCode.Text = frmHacchuu.OrderNO;
                             txtChangeDate.Text = frmHacchuu.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1040,6 +1067,7 @@ namespace Search
                         {
                             txtCode.Text = frmUriage.SalesNo;
                             txtChangeDate.Text = frmUriage.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1053,6 +1081,7 @@ namespace Search
                         {
                             txtCode.Text = frmNyukin.CollectNO;
                             txtChangeDate.Text = frmNyukin.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1064,6 +1093,7 @@ namespace Search
                         {
                             txtCode.Text = frmKeshikomi.ConfirmNO;
                             txtChangeDate.Text = frmKeshikomi.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1078,22 +1108,23 @@ namespace Search
                         {
                             txtCode.Text = frmNyuka.ArrivalNO;
                             txtChangeDate.Text = frmNyuka.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
-                //case SearchType.仕入番号:
-                //    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
-                //    {
-                //        frmShiire.OperatorCD = Value1;
-                //        frmShiire.AllAvailableStores = Value2;
-                //        frmShiire.ShowDialog();
-                //        if (!frmShiire.flgCancel)
-                //        {
-                //            txtCode.Text = frmShiire.PurchaseNO;
-                //            txtChangeDate.Text = frmShiire.ChangeDate;
-                //        }
-                //    }
-                //    break;
+                case SearchType.仕入番号:
+                    using (Search_ShiireNO frmShiire = new Search_ShiireNO(changedate))
+                    {
+                        frmShiire.OperatorCD = Value1;
+                        frmShiire.AllAvailableStores = Value2;
+                        frmShiire.ShowDialog();
+                        if (!frmShiire.flgCancel)
+                        {
+                            txtCode.Text = frmShiire.PurchaseNO;
+                            txtChangeDate.Text = frmShiire.ChangeDate;
+                        }
+                    }
+                    break;
                 case SearchType.移動番号:
                     using (Search_ZaikoIdouNO frmIdo = new Search_ZaikoIdouNO(changedate))
                     {
@@ -1104,6 +1135,7 @@ namespace Search
                         {
                             txtCode.Text = frmIdo.MoveNO;
                             txtChangeDate.Text = frmIdo.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1117,6 +1149,7 @@ namespace Search
                         {
                             txtCode.Text = frmIdouIrai.RequestNO;
                             txtChangeDate.Text = frmIdouIrai.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1130,6 +1163,7 @@ namespace Search
                         {
                             txtCode.Text = frmInst.InstructionNO;
                             txtChangeDate.Text = frmInst.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1143,6 +1177,7 @@ namespace Search
                         {
                             txtCode.Text = frmShukka.ShippingNO;
                             txtChangeDate.Text = frmShukka.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1156,6 +1191,7 @@ namespace Search
                         {
                             txtCode.Text = frmShiire.PurchaseNO;
                             txtChangeDate.Text = frmShiire.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1169,6 +1205,7 @@ namespace Search
                         {
                             txtCode.Text = frmLocation.TanaCD;
                             txtChangeDate.Text = frmLocation.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1182,6 +1219,7 @@ namespace Search
                         {
                             txtCode.Text = frmPickingNO.PickingNO;
                             txtChangeDate.Text = frmPickingNO.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1198,6 +1236,8 @@ namespace Search
                             lblName.Text = frmCustomer.CustName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmCustomer.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1213,6 +1253,7 @@ namespace Search
                         {
                             txtCode.Text = frmJanCD.JANCD;
                             txtChangeDate.Text = frmJanCD.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1227,6 +1268,7 @@ namespace Search
                         {
                             txtCode.Text = frmMakerItem.MakerItem;
                             txtChangeDate.Text = frmMakerItem.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1242,6 +1284,7 @@ namespace Search
                         {
                             txtCode.Text = frmSKUCD.SKUCD;
                             txtChangeDate.Text = frmSKUCD.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1267,6 +1310,7 @@ namespace Search
                         {
                             txtCode.Text = frmMal.parKey;
                             lblName.Text = frmMal.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1279,6 +1323,7 @@ namespace Search
                         {
                             txtCode.Text = frmMal.parKey;
                             lblName.Text = frmMal.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1291,6 +1336,7 @@ namespace Search
                         {
                             txtCode.Text = frmMal.parKey;
                             lblName.Text = frmMal.parChar1;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1306,6 +1352,8 @@ namespace Search
                             lblName.Text = frmGinkouShiten.BranchName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmGinkouShiten.ChangeDate;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1317,6 +1365,8 @@ namespace Search
                         {
                             TxtCode.Text = frmID.ID;
                             lblName.Text = frmID.IDName;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1327,6 +1377,8 @@ namespace Search
                         if (!frmKey.flgCancel)
                         {
                             TxtCode.Text = frmKey.KeyCode;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1339,7 +1391,7 @@ namespace Search
                         {
                             TxtCode.Text = frmKey.KeyCode;
                             lblName.Text = frmKey.Char1;
-
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1351,6 +1403,7 @@ namespace Search
                         {
                             TxtCode.Text = frmKey.KeyCode;
                             lblName.Text = frmKey.Char3;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1377,6 +1430,8 @@ namespace Search
                             lblName.Text = frmSupplier.parName;
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmSupplier.date;
+
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1387,6 +1442,7 @@ namespace Search
                         if (!skeihino.flgCancel)
                         {
                             TxtCode.Text = skeihino.ExpenseNumber;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     //frmSearch_KeihiNO skeihino = new frmSearch_KeihiNO();
@@ -1402,6 +1458,7 @@ namespace Search
                             txtCode.Text = carrier.ID;
                             lblName.Text = carrier.parName;
                             txtChangeDate.Text = carrier.date;
+                            CheckBasedFormPanel();//PTK Added
                         }
                     }
                     break;
@@ -1415,6 +1472,7 @@ namespace Search
                         {
                             txtCode.Text = frmHacchuu.EDIOrderNO;
                             txtChangeDate.Text = frmHacchuu.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1430,6 +1488,7 @@ namespace Search
                         {
                             txtCode.Text = frmJanCD.JANCD;
                             txtChangeDate.Text = frmJanCD.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1444,6 +1503,7 @@ namespace Search
                         {
                             txtCode.Text = frmMakerItem.MakerItem;
                             txtChangeDate.Text = frmMakerItem.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1459,6 +1519,7 @@ namespace Search
                         {
                             txtCode.Text = frmSKUCD.SKUCD;
                             txtChangeDate.Text = frmSKUCD.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1492,16 +1553,73 @@ namespace Search
                         {
                             if (!frmShoriNo.flgCancel)
                             {
-                                txtCode.Text = frmShoriNo.Sc_Code;                               
+                                txtCode.Text = frmShoriNo.Sc_Code;
+                                CheckBasedFormPanel();//PTK added
                             }
                         }
                     }
                     break;
 
             }
+
+
             SetFocus(1);
         }
 
+        protected void CheckBasedFormPanel()
+        {
+            try
+            {
+                Control ctrl = this;
+                do
+                {
+                    ctrl = ctrl.Parent;
+                } while (!(ctrl is Form));
+                if (ctrl.GetType().BaseType.Name.Contains("FrmMainForm") || ctrl.GetType().BaseType.Name.Contains("FrmSubForm"))//FrmSubForm   
+                {
+                    //if (FindParentPanel(this) is Panel)// Commented by PTK bcox Nishikawa san want all Panelheader and Detail ,,,means no to check panel header   2020/05/12
+                    //{
+                    SendKeys.Send("{ENTER}");
+                }
+               
+                //}
+            }
+            catch
+            {
+
+            }
+                
+        }
+        private static Control FindParentPanel(Control theControl)
+        {
+            Control rControl = null;
+
+            if (theControl.Parent != null)
+            {
+                if (theControl.Parent.GetType() == typeof(System.Windows.Forms.Panel))
+                {
+                    rControl = theControl.Parent;
+                    if ((rControl as Panel).Name == "PanelHeader")
+                    {
+                        rControl = theControl.Parent;
+                    }
+                    else
+                    {
+                        rControl = FindParentPanel(theControl.Parent);
+                    }
+                }
+                else
+
+                {
+                    rControl = FindParentPanel(theControl.Parent);
+                }
+            }
+            else
+            {
+                rControl = null;
+            }
+            return rControl;
+        }
         public bool IsExistsDeleteCheck()
         {
             DataTable dtResult = new DataTable();

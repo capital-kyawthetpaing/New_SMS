@@ -14,10 +14,12 @@ namespace BL
     {
         MasterTouroku_ShiireKakeritsu_DL mskdl;
         M_Vendor_DL mvdl;
+        M_Brand_DL mbdl;
         public MasterTouroku_ShiireKakeritsu_BL()
         {
             mskdl = new MasterTouroku_ShiireKakeritsu_DL();
             mvdl = new M_Vendor_DL();
+            mbdl = new M_Brand_DL();
         }
         public DataTable M_ShiireKakeritsu_Select(M_OrderRate_Entity moe)
         {
@@ -39,6 +41,11 @@ namespace BL
         public DataTable M_Vendor_Select(M_Vendor_Entity mve)
         {
             return mvdl.M_Vendor_Select(mve);
+        }
+
+        public DataTable M_BrandSelect(M_Brand_Entity mbe)
+        {
+            return mbdl.M_BrandSelect(mbe);
         }
     }
     

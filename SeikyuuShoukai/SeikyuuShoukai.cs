@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 
 namespace SeikyuuShoukai
 {
@@ -60,7 +59,8 @@ namespace SeikyuuShoukai
                 base.StartProgram();
 
                 ssbl = new SeikyuuShoukai_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = ssbl.GetDate();
+                CboStoreCD.Bind(ymd);
 
                 //基準日：Form.請求締日	(未入力時はToday)得意先区分：2	
                 ScCustomer.Value1 = "2";

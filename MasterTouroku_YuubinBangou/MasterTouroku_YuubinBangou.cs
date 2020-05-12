@@ -423,7 +423,7 @@ namespace MasterTouroku_YuubinBangou
         }
         
         private void dgvYuubinBangou_Paint(object sender, PaintEventArgs e)
-            {
+        {
             string[] monthes = { "郵便番号", "住所1", "住所2" };
             for (int j = 0; j < 1;)
             {

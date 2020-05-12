@@ -138,7 +138,7 @@ namespace TempoRegiRyougaeNyuuryoku
                         {                          
                            
                             trrnbl.ShowMessage("I101");
-                            // RunConsole();//exeRun
+                            RunConsole();//exeRun
                             ExchangeDenomination.SelectedValue = "-1";
                             ExchangeMoney.Clear();
                             ExchangeCount.Clear();
@@ -174,9 +174,8 @@ namespace TempoRegiRyougaeNyuuryoku
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
             }
             catch
-           // catch(Exception e)
             {
-                //MessageBox.Show(e.Message);
+                
             }
         }
         /// <summary>
@@ -281,6 +280,5 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             MoveNextControl(e);
         }
-    
     }
 }

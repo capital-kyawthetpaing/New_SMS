@@ -24,7 +24,7 @@ namespace BL
             {
                 mie.Rate = dt.Rows[0]["Rate"].ToString();
                 mie.PriceWithoutTax = dt.Rows[0]["PriceWithoutTax"].ToString();
-                mie.Remarks = dt.Rows[0]["Remarks"].ToString();
+                //mie.Remarks = dt.Rows[0]["Remarks"].ToString();
                 mie.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
                 mie.UsedFlg = dt.Rows[0]["UsedFlg"].ToString();
 

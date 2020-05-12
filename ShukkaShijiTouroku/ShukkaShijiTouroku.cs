@@ -1188,6 +1188,12 @@ namespace ShukkaShijiTouroku
         {
             string strYmd = "";
 
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.StoreCD:
@@ -1278,6 +1284,9 @@ namespace ShukkaShijiTouroku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
             w_Ctrl = detailControls[(int)EIndex.CarrierCD];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
@@ -1288,6 +1297,16 @@ namespace ShukkaShijiTouroku
         private bool CheckGrid(int col, int row, bool chkAll = false, bool changeYmd = false)
         {
             string fmtYmd = "";
+
+            if (!chkAll && !changeYmd)
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
 
             switch (col)
             {

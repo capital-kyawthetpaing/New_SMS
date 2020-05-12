@@ -104,6 +104,7 @@
     <Compile Include="D_YahooAPI_DL.cs" />
     <Compile Include="D_YahooCount_DL.cs" />
     <Compile Include="Function_DL.cs" />
+    <Compile Include="Hacchuusho_DL.cs" />
     <Compile Include="HikiateHenkouNyuuryoku_DL.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
@@ -164,6 +165,10 @@
     <Compile Include="Search_PlanArrival_DL.cs" />
     <Compile Include="TempoRegiFurikomiYoushi_DL.cs" />
     <Compile Include="TempoRegiHanbaiTouroku_DL.cs" />
+    <Compile Include="TempoRegiJournal_DL.cs" />
+    <Compile Include="TempoRegiPoint_DL.cs" />
+    <Compile Include="TempoRegiRyousyuusyo_DL.cs" />
+    <Compile Include="TempoRegiTorihikiReceipt_DL.cs" />
     <Compile Include="TempoShukkaNyuuryoku_DL.cs" />
     <Compile Include="M_UnsouGaisya_DL.cs" />
     <Compile Include="ZaikoKanriHyou_DL.cs" />

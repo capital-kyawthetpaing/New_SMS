@@ -110,6 +110,7 @@ namespace DL
             }
             catch(Exception ex) {
                 var msg = ex.Message;
+                throw ex;
             }
             return dt;
         }
@@ -242,6 +243,8 @@ namespace DL
             }
             catch (Exception ex)
             {
+                if (UseTransaction)
+                    RollBackTransaction();
                 throw (ex);
             }
             finally

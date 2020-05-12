@@ -16,7 +16,7 @@ namespace EDINouhinJouhonTouroku
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmEDINouhinJouhonTouroku());
+            Application.Run(new FrmEDINouhinJouhouTouroku());
         }
     }
 }

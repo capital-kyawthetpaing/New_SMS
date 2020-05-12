@@ -10,7 +10,6 @@ using BL;
 using Entity;
 using Base.Client;
 using Search;
-using GridBase;
 
 namespace KaitounoukiKakuninsho
 {
@@ -549,7 +548,7 @@ namespace KaitounoukiKakuninsho
             }
 
             CboSoukoName.Enabled = false;
-            detailControls[0].Focus();
+            detailControls[1].Focus();
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -668,6 +667,10 @@ namespace KaitounoukiKakuninsho
                                 //あたかもTabキーが押されたかのようにする
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
                                 this.ProcessTabKey(!e.Shift);
+                        }
+                        else
+                        {
+                            detailControls[0].Focus();
                         }
                     }
                     else

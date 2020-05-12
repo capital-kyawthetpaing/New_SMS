@@ -59,14 +59,13 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
         private void SetRequireField()
         {
             //txtkaiinNo.Require(true);
-            txtFirstName.Require(true);
             txtLastName.Require(true);
+            txtFirstName.Require(true);
            // txtKanaName.Require(true);
             //必ず
             txtZipCode1.Require(true);
             txtZipCode2.Require(true);
             txtAddress1.Require(true);
-            txtAddress2.Require(true);
 
         }
         protected override void EndSec()
@@ -75,7 +74,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
         }
         private bool ErrorCheck()
         {
-            if(!RequireCheck(new Control[] { txtFirstName,txtLastName}))
+            if(!RequireCheck(new Control[] { txtLastName,txtFirstName}))
             {
                 return false;
             }
@@ -103,13 +102,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 return false;
             }
             
-            if(chkSend.Checked)
-            {
-                if (!RequireCheck(new Control[] { txtMailAddress, txtMailAddress2 }))
-                {
-                    return false;
-                }
-            }
+            
             if (txtMailAddress.Text != txtMailAddress2.Text)
             {
                 tprg_Kaiin_BL.ShowMessage("E174");
@@ -117,7 +110,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 return false;
             }
 
-            if (!RequireCheck(new Control[] {txtZipCode1,txtZipCode2, txtAddress1, txtAddress2 }))
+            if (!RequireCheck(new Control[] {txtZipCode1,txtZipCode2, txtAddress1 }))
             {
                 return false;
             }
@@ -177,8 +170,8 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             if(cust != null)
             {
                 txtAddress1.Text = cust.CustomerCD;
+                txtLastName.Text =  cust.LastName;
                 txtFirstName.Text = cust.FirstName;
-                txtLastName.Text = cust.LastName;
                 txtGroupName.Text = cust.GroupName;
                 txtKanaName.Text = cust.KanaName;
                 rdoMale.Checked = cust.Sex.Equals("1") ? true : false;
@@ -198,7 +191,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 txtAddress2.Text = cust.Address2;
                 chkDelete.Checked = cust.DeleteFlg.Equals("1") ? true : false ;
                 chkSend.Checked = cust.DMFlg.Equals("1") ? true : false ;
-                txtFirstName.Focus();
+                txtLastName.Focus();
             }
         }
         private M_Customer_Entity GetTempoRegiKaiinToroku()
@@ -358,13 +351,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             {
                 CKM_TextBox txt = sender as CKM_TextBox;
 
-                if(chkSend.Checked)
-                {
-                    if (!RequireCheck(new Control[] { txtMailAddress, txtMailAddress2 }))
-                    {
-                        return ;
-                    }
-                }
+                
 
                 if(txtMailAddress.Text != txt.Text)
                 {                   
@@ -431,6 +418,6 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                     CompletePhoneNo(1);
                 }
             }
-        }      
+        }
     }
 }

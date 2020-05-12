@@ -9,8 +9,6 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
-using Search;
-using GridBase;
 
 namespace GetsujiShimeShori
 {
@@ -111,6 +109,10 @@ namespace GetsujiShimeShori
                         InStoreCD = cmds[(int)FrmMainForm.ECmdLine.PcID + 1];
                         CboStoreCD.SelectedValue = InStoreCD;
                     }
+                    else
+                    {
+                        CboStoreCD.SelectedValue = StoreCD;
+                    }
                 }
 
                 //画面転送表00に従って、画面表示
@@ -178,15 +180,15 @@ namespace GetsujiShimeShori
                     && me.MonthlyClaimsFLG.Equals("1") && me.MonthlyDebtFLG.Equals("1") && me.MonthlyStockFLG.Equals("1"))
                 {
 
-                //BtnKakutei.BackColor = true;
-                //BtnKaijo.BackColor = true;
+                BtnKakutei.BackColor = Color.FromArgb(255, 192, 0);
                 BtnKakutei.Enabled = true;
                 BtnKaijo.Enabled = true;
             }
             else
             {
+                BtnKakutei.BackColor = Color.FromArgb(255, 255, 0);
                 BtnKakutei.Enabled = false;
-                BtnKaijo.Enabled = false;
+                BtnKaijo.Enabled = true;
             }
         }
 
@@ -605,7 +607,7 @@ namespace GetsujiShimeShori
                     //「解除する(前月度へ)」
                     //M_StoreClose					テーブル転送仕様Ｄに従ってUpdate										
                     OperateModeNm = "解除 月次確定";
-                    FiscalYYYYMM = Convert.ToDateTime(FiscalYYYYMM + "/01").AddMonths(-1).ToString("yyyyMM");
+                    FiscalYYYYMM = FiscalYYYYMM.Replace("/", "");
                     break;
             }
 
@@ -626,6 +628,18 @@ namespace GetsujiShimeShori
             };
 
             bool ret = gsbl.M_StoreClose_Update(me);
+
+            //更新後の表示処理のため
+            switch (index)
+            {
+                case (int)EIndex.Kakutei:
+                    lblChangeDate.Text = FiscalYYYYMM.Substring(0, 4) + "/" + FiscalYYYYMM.Substring(4, 2);
+                    break;
+                case (int)EIndex.Kaijo:
+                    FiscalYYYYMM = Convert.ToDateTime(FiscalYYYYMM.Substring(0, 4) + "/" + FiscalYYYYMM.Substring(4, 2) + "/01").AddMonths(-1).ToString("yyyyMM");
+                    lblChangeDate.Text = FiscalYYYYMM.Substring(0, 4) + "/" + FiscalYYYYMM.Substring(4, 2);
+                    break;
+            }
         }
         private bool ExecSaikenSaimu(string exe)
         {

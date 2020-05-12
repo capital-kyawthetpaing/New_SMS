@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Display = new CKM_Controls.CKM_Button();
             this.dgv_PurchaseDetails = new CKM_Controls.CKM_GridView();
             this.txtDisable = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,17 +137,17 @@
             this.dgv_PurchaseDetails.AllowUserToAddRows = false;
             this.dgv_PurchaseDetails.AllowUserToDeleteRows = false;
             this.dgv_PurchaseDetails.AllowUserToResizeRows = false;
-            dataGridViewCellStyle41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_PurchaseDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_PurchaseDetails.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle42.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle42.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle42.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_PurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_PurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_PurchaseDetails.ColumnHeadersHeight = 25;
             this.dgv_PurchaseDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.txtDisable,
@@ -177,7 +177,7 @@
             this.DeliveryNo});
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(25, 313);
+            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
             this.dgv_PurchaseDetails.Name = "dgv_PurchaseDetails";
             this.dgv_PurchaseDetails.Size = new System.Drawing.Size(1900, 600);
             this.dgv_PurchaseDetails.TabIndex = 9;
@@ -223,7 +223,7 @@
             // 
             // makerCD
             // 
-            this.makerCD.DataPropertyName = "MakerItem";
+            this.makerCD.DataPropertyName = "ItemName";
             this.makerCD.HeaderText = "メーカー商品CD";
             this.makerCD.Name = "makerCD";
             this.makerCD.Width = 150;
@@ -250,48 +250,48 @@
             // ParchaseCount
             // 
             this.ParchaseCount.DataPropertyName = "PurchaseSu";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle3;
             this.ParchaseCount.HeaderText = "仕入数";
             this.ParchaseCount.Name = "ParchaseCount";
             // 
             // PurchaseUnitPrice
             // 
             this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
             this.PurchaseUnitPrice.HeaderText = "仕入単価";
             this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
             // 
             // ParchaseAmount
             // 
             this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle5;
             this.ParchaseAmount.HeaderText = "仕入額";
             this.ParchaseAmount.Name = "ParchaseAmount";
             // 
             // OrderCount1
             // 
             this.OrderCount1.DataPropertyName = "OrderSu";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle6;
             this.OrderCount1.HeaderText = "発注数";
             this.OrderCount1.Name = "OrderCount1";
             // 
             // OrderUnitPrice1
             // 
             this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle7;
             this.OrderUnitPrice1.HeaderText = "発注単価";
             this.OrderUnitPrice1.Name = "OrderUnitPrice1";
             // 
             // OrderAmount1
             // 
             this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle8;
             this.OrderAmount1.HeaderText = "発注額";
             this.OrderAmount1.Name = "OrderAmount1";
             // 
@@ -432,13 +432,16 @@
             this.txtItemName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtItemName.BackColor = System.Drawing.Color.White;
             this.txtItemName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtItemName.ClientColor = System.Drawing.Color.White;
             this.txtItemName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtItemName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtItemName.DecimalPlace = 0;
             this.txtItemName.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtItemName.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtItemName.IntegerPart = 0;
             this.txtItemName.IsCorrectDate = true;
             this.txtItemName.isEnterKeyDown = false;
+            this.txtItemName.isMaxLengthErr = false;
             this.txtItemName.IsNumber = true;
             this.txtItemName.IsShop = false;
             this.txtItemName.Length = 80;
@@ -524,6 +527,7 @@
             this.txtMakerItemCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtMakerItemCD.BackColor = System.Drawing.Color.White;
             this.txtMakerItemCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMakerItemCD.ClientColor = System.Drawing.Color.White;
             this.txtMakerItemCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtMakerItemCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMakerItemCD.DecimalPlace = 0;
@@ -531,6 +535,7 @@
             this.txtMakerItemCD.IntegerPart = 0;
             this.txtMakerItemCD.IsCorrectDate = true;
             this.txtMakerItemCD.isEnterKeyDown = false;
+            this.txtMakerItemCD.isMaxLengthErr = false;
             this.txtMakerItemCD.IsNumber = true;
             this.txtMakerItemCD.IsShop = false;
             this.txtMakerItemCD.Length = 100;
@@ -565,6 +570,7 @@
             this.cboStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStore.Flag = 0;
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Length = 10;
             this.cboStore.Location = new System.Drawing.Point(1457, 14);
@@ -703,6 +709,7 @@
             this.txtOrderDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderDate2.BackColor = System.Drawing.Color.White;
             this.txtOrderDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrderDate2.ClientColor = System.Drawing.Color.White;
             this.txtOrderDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtOrderDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtOrderDate2.DecimalPlace = 0;
@@ -710,6 +717,7 @@
             this.txtOrderDate2.IntegerPart = 0;
             this.txtOrderDate2.IsCorrectDate = true;
             this.txtOrderDate2.isEnterKeyDown = false;
+            this.txtOrderDate2.isMaxLengthErr = false;
             this.txtOrderDate2.IsNumber = true;
             this.txtOrderDate2.IsShop = false;
             this.txtOrderDate2.Length = 10;
@@ -729,6 +737,7 @@
             this.txtPlanDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPlanDate2.BackColor = System.Drawing.Color.White;
             this.txtPlanDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlanDate2.ClientColor = System.Drawing.Color.White;
             this.txtPlanDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPlanDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPlanDate2.DecimalPlace = 0;
@@ -736,6 +745,7 @@
             this.txtPlanDate2.IntegerPart = 0;
             this.txtPlanDate2.IsCorrectDate = true;
             this.txtPlanDate2.isEnterKeyDown = false;
+            this.txtPlanDate2.isMaxLengthErr = false;
             this.txtPlanDate2.IsNumber = true;
             this.txtPlanDate2.IsShop = false;
             this.txtPlanDate2.Length = 10;
@@ -755,6 +765,7 @@
             this.txtPurchaseDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate2.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate2.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate2.DecimalPlace = 0;
@@ -762,6 +773,7 @@
             this.txtPurchaseDate2.IntegerPart = 0;
             this.txtPurchaseDate2.IsCorrectDate = true;
             this.txtPurchaseDate2.isEnterKeyDown = false;
+            this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
             this.txtPurchaseDate2.Length = 10;
@@ -815,6 +827,7 @@
             this.txtOrderDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtOrderDate1.BackColor = System.Drawing.Color.White;
             this.txtOrderDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrderDate1.ClientColor = System.Drawing.Color.White;
             this.txtOrderDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtOrderDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtOrderDate1.DecimalPlace = 0;
@@ -822,6 +835,7 @@
             this.txtOrderDate1.IntegerPart = 0;
             this.txtOrderDate1.IsCorrectDate = true;
             this.txtOrderDate1.isEnterKeyDown = false;
+            this.txtOrderDate1.isMaxLengthErr = false;
             this.txtOrderDate1.IsNumber = true;
             this.txtOrderDate1.IsShop = false;
             this.txtOrderDate1.Length = 10;
@@ -857,6 +871,7 @@
             this.txtPlanDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPlanDate1.BackColor = System.Drawing.Color.White;
             this.txtPlanDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlanDate1.ClientColor = System.Drawing.Color.White;
             this.txtPlanDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPlanDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPlanDate1.DecimalPlace = 0;
@@ -864,6 +879,7 @@
             this.txtPlanDate1.IntegerPart = 0;
             this.txtPlanDate1.IsCorrectDate = true;
             this.txtPlanDate1.isEnterKeyDown = false;
+            this.txtPlanDate1.isMaxLengthErr = false;
             this.txtPlanDate1.IsNumber = true;
             this.txtPlanDate1.IsShop = false;
             this.txtPlanDate1.Length = 10;
@@ -899,6 +915,7 @@
             this.txtPurchaseDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate1.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate1.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate1.DecimalPlace = 0;
@@ -906,6 +923,7 @@
             this.txtPurchaseDate1.IntegerPart = 0;
             this.txtPurchaseDate1.IsCorrectDate = true;
             this.txtPurchaseDate1.isEnterKeyDown = false;
+            this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
             this.txtPurchaseDate1.Length = 10;

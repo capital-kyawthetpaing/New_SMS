@@ -1999,6 +1999,12 @@ namespace NyuukaNyuuryoku
         {
             bool ret;
 
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.ArrivalDate:
@@ -2339,7 +2345,10 @@ namespace NyuukaNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.Nyukasu];
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            w_Ctrl = detailControls[(int)EIndex.Nyukasu];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, (int)ClsGridHikiate.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -2353,6 +2362,9 @@ namespace NyuukaNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_1.Value;
 
+            //配列の内容を画面へセット
+            mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
+
             w_Ctrl = detailControls[(int)EIndex.Nyukasu];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
@@ -2362,6 +2374,17 @@ namespace NyuukaNyuuryoku
        
         private bool CheckGrid(int col, int row, bool chkAll=false, bool changeYmd=false)
         {
+
+            if (!chkAll && !changeYmd)
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
+
             switch (col)
             {
                 case (int)ClsGridHikiate.ColNO.SURYO:
@@ -2395,6 +2418,16 @@ namespace NyuukaNyuuryoku
         }
         private bool CheckGrid2(int col, int row, bool chkAll = false, bool changeYmd = false)
         {
+            if (!chkAll && !changeYmd)
+            {
+                int w_CtlRow = row - Vsb_Mei_1.Value;
+                if (mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid2.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
+
             switch (col)
             {
                 case (int)ClsGridHikiate.ColNO.SURYO:
@@ -3080,7 +3113,8 @@ namespace NyuukaNyuuryoku
 
                             setCtl.Focus();
 
-                            CheckDetail((int)EIndex.JANCD, true);
+                            //CheckDetail((int)EIndex.JANCD, true);
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;
@@ -3315,6 +3349,9 @@ namespace NyuukaNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;

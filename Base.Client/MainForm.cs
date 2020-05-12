@@ -1367,10 +1367,10 @@ namespace Base.Client
         {
             try
             {
-                Button btn = (Button)sender;
+                Button btn = (Button)sender;//新規(F2) 変更(F3) 削除(F4) 照会(F5) ｷｬﾝｾﾙ(F6)
                 if (!string.IsNullOrWhiteSpace(btn.Text))
                 {
-                    if (btn.Text == "終了(F1)")
+                    if (btn.Text == "終了(F1)" || btn.Text == "新規(F2)" || btn.Text ==  "変更(F3)"|| btn.Text == "削除(F4)"|| btn.Text == "照会(F5)"|| btn.Text == "ｷｬﾝｾﾙ(F6)")
                     {
                         ButtonFunction(btn.Tag.ToString());
                     }
@@ -1527,6 +1527,7 @@ namespace Base.Client
                 }
                 else if(ConTxt is CKM_TextBox)
                 {
+                    (ConTxt as CKM_TextBox).isMaxLengthErr = false;
 
                     if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
                     {
@@ -1534,6 +1535,7 @@ namespace Base.Client
                         if (Convert.ToInt32(str) > (ConTxt as CKM_TextBox).Length)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).isMaxLengthErr = true;
                             (ConTxt as CKM_TextBox).Focus();
                             return false;
                         }
@@ -1545,6 +1547,7 @@ namespace Base.Client
                         if (onebyteCount != byteCount)
                         {
                             MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            (ConTxt as CKM_TextBox).isMaxLengthErr = true;
                             (ConTxt as CKM_TextBox).Focus();
                             return false;
                         }
@@ -1705,26 +1708,34 @@ namespace Base.Client
         public static int GetResultWithHasuKbn(int kbn, decimal d)
         {
             int result = 0;
-            switch (kbn)
+            try
             {
-                case (int)HASU_KBN.KIRIAGE:
-                    if (d < 0)
-                    {
-                        result = -1 * Convert.ToInt32(Math.Ceiling(-d));
-                    }
-                    else
-                    {
-                        result = Convert.ToInt32(Math.Ceiling(d));
-                    }
-                    break;
+                switch (kbn)
+                {
+                    case (int)HASU_KBN.KIRIAGE:
+                        if (d < 0)
+                        {
+                            result = -1 * Convert.ToInt32(Math.Ceiling(-d));
+                        }
+                        else
+                        {
+                            result = Convert.ToInt32(Math.Ceiling(d));
+                        }
+                        break;
 
-                case (int)HASU_KBN.KIRISUTE:
-                    result = Convert.ToInt32(Math.Truncate(d));
-                    break;
+                    case (int)HASU_KBN.KIRISUTE:
+                        result = Convert.ToInt32(Math.Truncate(d));
+                        break;
 
-                case (int)HASU_KBN.SISYAGONYU:
-                    result = Convert.ToInt32(Math.Round(d, MidpointRounding.AwayFromZero));
-                    break;
+                    case (int)HASU_KBN.SISYAGONYU:
+                        result = Convert.ToInt32(Math.Round(d, MidpointRounding.AwayFromZero));
+                        break;
+                }
+            }
+            catch
+            {
+                //桁数エラー
+                result = 0;
             }
 
             return result;

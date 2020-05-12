@@ -298,8 +298,9 @@
             this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox7 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label10 = new CKM_Controls.CKM_Label();
+            this.ckM_Label11 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
-            this.PanelSearch.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -308,9 +309,16 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.ckM_ComboBox1);
+            this.PanelHeader.Controls.Add(this.Btn_Hanei);
+            this.PanelHeader.Controls.Add(this.ckM_Label11);
+            this.PanelHeader.Controls.Add(this.ckM_TextBox8);
+            this.PanelHeader.Controls.Add(this.ckM_Label10);
+            this.PanelHeader.Controls.Add(this.ckM_TextBox18);
             this.PanelHeader.Controls.Add(this.ckM_Label8);
             this.PanelHeader.Controls.Add(this.ckM_TextBox7);
             this.PanelHeader.Controls.Add(this.ChkMikakutei);
+            this.PanelHeader.Controls.Add(this.ckM_Label15);
             this.PanelHeader.Controls.Add(this.ckM_Label6);
             this.PanelHeader.Controls.Add(this.ChkFuyo);
             this.PanelHeader.Controls.Add(this.ckM_Label4);
@@ -359,17 +367,19 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ChkFuyo, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label6, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label15, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ChkMikakutei, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox7, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label8, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox18, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label10, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox8, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label11, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.Btn_Hanei, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox1, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Controls.Add(this.ckM_ComboBox1);
-            this.PanelSearch.Controls.Add(this.Btn_Hanei);
-            this.PanelSearch.Controls.Add(this.ckM_TextBox8);
-            this.PanelSearch.Controls.Add(this.ckM_Label15);
-            this.PanelSearch.Controls.Add(this.ckM_TextBox18);
             this.PanelSearch.TabIndex = 22;
             // 
             // label4
@@ -6266,7 +6276,7 @@
             this.ckM_TextBox8.IsNumber = false;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 7;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(199, 9);
+            this.ckM_TextBox8.Location = new System.Drawing.Point(1034, 101);
             this.ckM_TextBox8.MaxLength = 7;
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
@@ -6291,7 +6301,7 @@
             this.ckM_TextBox18.IsNumber = false;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 10;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(111, 9);
+            this.ckM_TextBox18.Location = new System.Drawing.Point(946, 101);
             this.ckM_TextBox18.MaxLength = 10;
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
@@ -6310,7 +6320,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(35, 11);
+            this.ckM_Label15.Location = new System.Drawing.Point(954, 84);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label15.TabIndex = 697;
@@ -6328,7 +6338,7 @@
             this.Btn_Hanei.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_Hanei.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.Btn_Hanei.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.Btn_Hanei.Location = new System.Drawing.Point(419, 7);
+            this.Btn_Hanei.Location = new System.Drawing.Point(1254, 99);
             this.Btn_Hanei.Margin = new System.Windows.Forms.Padding(1);
             this.Btn_Hanei.Name = "Btn_Hanei";
             this.Btn_Hanei.Size = new System.Drawing.Size(104, 21);
@@ -6605,7 +6615,7 @@
             this.ckM_ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ckM_ComboBox1.FormattingEnabled = true;
             this.ckM_ComboBox1.Length = 20;
-            this.ckM_ComboBox1.Location = new System.Drawing.Point(277, 8);
+            this.ckM_ComboBox1.Location = new System.Drawing.Point(1112, 100);
             this.ckM_ComboBox1.MaxLength = 10;
             this.ckM_ComboBox1.MoveNext = true;
             this.ckM_ComboBox1.Name = "ckM_ComboBox1";
@@ -6656,6 +6666,40 @@
             this.ckM_TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // ckM_Label10
+            // 
+            this.ckM_Label10.AutoSize = true;
+            this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label10.DefaultlabelSize = true;
+            this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label10.Location = new System.Drawing.Point(1047, 84);
+            this.ckM_Label10.Name = "ckM_Label10";
+            this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label10.TabIndex = 698;
+            this.ckM_Label10.Text = "予定月";
+            this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label11
+            // 
+            this.ckM_Label11.AutoSize = true;
+            this.ckM_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label11.DefaultlabelSize = true;
+            this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label11.Location = new System.Drawing.Point(1126, 84);
+            this.ckM_Label11.Name = "ckM_Label11";
+            this.ckM_Label11.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label11.TabIndex = 733;
+            this.ckM_Label11.Text = "予定状況";
+            this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // KaitouNoukiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -6669,8 +6713,6 @@
             this.Controls.SetChildIndex(this.tabControl1, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
-            this.PanelSearch.ResumeLayout(false);
-            this.PanelSearch.PerformLayout();
             this.Pnl_Body.ResumeLayout(false);
             this.Pnl_Body.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -6953,6 +6995,8 @@
         private GridControl.clsGridCheckBox CHK_EDICK_8;
         private CKM_Controls.CKM_Button Btn_NoSelect;
         private CKM_Controls.CKM_Button Btn_SelectAll;
+        private CKM_Controls.CKM_Label ckM_Label11;
+        private CKM_Controls.CKM_Label ckM_Label10;
     }
 }
 

@@ -517,20 +517,27 @@ namespace MasterTouroku_Tokuisaki
 
                         //複写得意先CDに入力がある場合、(When there is an input in 複写得意先CD)Ｅ１０２
                         //必須入力
-                        if (copyKeyControls[(int)EIndex.CustomerCD].Text != "" && copyKeyControls[index].Text == "")
+                        if (!string.IsNullOrWhiteSpace(copyKeyControls[(int)EIndex.CustomerCD].Text) && string.IsNullOrWhiteSpace(copyKeyControls[index].Text ))
                         {
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
                         }
-
-                        copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
-
-                        //日付として正しいこと(Be on the correct date)Ｅ１０３
-                        if (!bbl.CheckDate(copyKeyControls[index].Text))
+                        else if (!string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
-                            bbl.ShowMessage("E103");
-                            return false;
+                            copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
+
+                            //日付として正しいこと(Be on the correct date)Ｅ１０３
+                            if (!bbl.CheckDate(copyKeyControls[index].Text))
+                            {
+                                bbl.ShowMessage("E103");
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            //両方とも未入力
+                            return true;
                         }
                         break;
                 }
@@ -774,6 +781,13 @@ namespace MasterTouroku_Tokuisaki
         private bool CheckDetail(int index, bool msg = true)
         {
             bool ret;
+
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.CustomerName:
@@ -806,7 +820,7 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.TankaCD:
 
                     ScTankaCD.LabelText = "";
-                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ZipCD1].Text))
+                    if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.TankaCD].Text))
                     {
                         //以下の条件でM_TankaCDが存在しない場合、エラー
                         //[M_TankaCD]
@@ -831,7 +845,7 @@ namespace MasterTouroku_Tokuisaki
 
                     break;
 
-                case (int)EIndex.ZipCD1:
+                //case (int)EIndex.ZipCD1:
                 case (int)EIndex.ZipCD2:
                     //郵便番号1、2 入力無くても良い(It is not necessary to input)
                     if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.ZipCD1].Text))
@@ -842,7 +856,7 @@ namespace MasterTouroku_Tokuisaki
                             return false;
                         }
                     }
-                    if (!string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    if (index.Equals((int)EIndex.ZipCD2) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         //以下の条件でM_ZipCodeが存在する場合、
                         //[M_ZipCode]
@@ -936,11 +950,17 @@ namespace MasterTouroku_Tokuisaki
                         CustomerCD = detailControls[index].Text,
                         ChangeDate = keyControls[(int)EIndex.ChangeDate].Text
                     };
+                    short kbn = 1;
                     if (index == (int)EIndex.BillingCD)
+                    {
                         me.CustomerKBN = "2";   //2:請求先
+                        kbn = 2;
+                    }
                     else if (index == (int)EIndex.CollectCD)
+                    {
                         me.CustomerKBN = "3";   //3:入金請求先
-
+                        kbn = 3;
+                    }
                     ret = mbl.M_Customer_Select(me);
                     if (ret)
                     {
@@ -1501,7 +1521,11 @@ break;
                                 break;
 
                             case (int)EIndex.ChangeDate:
-                                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                                if (OperationMode == EOperationMode.INSERT)
+                                {
+                                    copyKeyControls[(int)EIndex.CustomerCD].Focus();
+                                }
+                                else if(OperationMode == EOperationMode.UPDATE)
                                 {
                                     detailControls[0].Focus();
                                 }

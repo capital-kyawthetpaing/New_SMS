@@ -884,9 +884,9 @@ namespace MasterTouroku_Shiiresaki
             dtT.Columns.Add("TaxTimeId", typeof(int));
             dtT.Columns.Add("TaxTimeName", typeof(string));
             dtT.Rows.Add(0, string.Empty);
-            dtT.Rows.Add(1, "売上明細単位");
-            dtT.Rows.Add(2, "売上伝票単位");
-            dtT.Rows.Add(3, "請求書単位");
+            dtT.Rows.Add(1, "明細単位");
+            dtT.Rows.Add(2, "伝票単位");
+            dtT.Rows.Add(3, "締単位");
 
             cboTaxTiming.ValueMember = "TaxTimeId";
             cboTaxTiming.DisplayMember = "TaxTimeName";

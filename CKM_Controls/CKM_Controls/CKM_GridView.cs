@@ -351,7 +351,7 @@ namespace CKM_Controls
 
         private void MyProcessCmdKey(Keys keyData)
         {
-                if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
+                if (this.CurrentCell != null && this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
                 {
                     if (this.Name == "dgvPETC0302I")
                     {
@@ -530,7 +530,14 @@ namespace CKM_Controls
                 }
             }
         }
-
+        protected override void OnDataBindingComplete(DataGridViewBindingCompleteEventArgs e)
+        {
+           if (DataSource != null)
+            {
+                this.Focus();
+            }
+            base.OnDataBindingComplete(e);
+        }
         protected override void OnCellFormatting(DataGridViewCellFormattingEventArgs e)
         {
             base.OnCellFormatting(e);

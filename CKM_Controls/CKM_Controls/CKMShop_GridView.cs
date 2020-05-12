@@ -247,7 +247,7 @@ namespace CKM_Controls
                    Font = new Font("MS Gothic", 10, Font.Style);
                     break;
                 case Font_.Medium:
-                    Font = new Font("MS Gothic", 18, Font.Style);
+                    Font = new Font("MS Gothic", 26, Font.Style);
                     break;
                 case Font_.Large:
                     Font = new Font("MS Gothic", 24, Font.Style);
@@ -500,13 +500,13 @@ namespace CKM_Controls
         private void MyProcessCmdKey(Keys keyData)
         {
             // MessageBox.Show(this.CurrentCell.EditedFormattedValue.ToString());
-            if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
+            if (this.CurrentCell.EditedFormattedValue.ToString().Contains("-") && Name == "dgvPETC0302I")
             {
-                if (this.Name == "dgvPETC0302I")
-                {
+                //if (this.Name == "dgvPETC0302I")
+                //{
                     ProcessLeftKey(keyData);
                     ProcessRightKey(keyData);
-                }
+                //}
             }
             else
             {

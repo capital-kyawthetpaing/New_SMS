@@ -1695,6 +1695,9 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.ade.Tel13 = row["Tel13"].ToString();
                         }
                         detailControls[(int)EIndex.CustomerName2].Text = row["CustomerName2"].ToString();
+                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
+                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
+                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
 
                         if (row["AliasKBN"].ToString() == "1")
                             radioSama.Checked = true;
@@ -1716,6 +1719,9 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.adeD.Tel13 = row["DeliveryTel13"].ToString();
                         }
                         detailControls[(int)EIndex.DeliveryName2].Text = row["DeliveryName2"].ToString();
+                        detailControls[(int)EIndex.Tel1D].Text = row["DeliveryTel11"].ToString();
+                        detailControls[(int)EIndex.Tel2D].Text = row["DeliveryTel12"].ToString();
+                        detailControls[(int)EIndex.Tel3D].Text = row["DeliveryTel13"].ToString();
 
                         if (row["DeliveryAliasKBN"].ToString() == "1")
                             radioSamaD.Checked = true;
@@ -2018,6 +2024,10 @@ namespace TempoJuchuuNyuuryoku
                             addInfo.ade.Tel13 = row["Tel13"].ToString();
                         }
 
+                        detailControls[(int)EIndex.Tel1].Text = row["Tel11"].ToString();
+                        detailControls[(int)EIndex.Tel2].Text = row["Tel12"].ToString();
+                        detailControls[(int)EIndex.Tel3].Text = row["Tel13"].ToString();
+
                         if (row["AliasKBN"].ToString() == "1")
                             radioSama.Checked = true;
                         else
@@ -2184,6 +2194,13 @@ namespace TempoJuchuuNyuuryoku
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             switch (index)
             {
                 case (int)EIndex.JuchuuDate:
@@ -2442,7 +2459,10 @@ namespace TempoJuchuuNyuuryoku
 
             w_CtlRow = pRow - Vsb_Mei_0.Value;
 
-                w_Ctrl = detailControls[(int)EIndex.PaymentMethodCD];
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+            w_Ctrl = detailControls[(int)EIndex.PaymentMethodCD];
 
             IMT_DMY_0.Focus();       // エラー内容をハイライトにするため
             w_Ret = mGrid.F_MoveFocus((int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, (int)ClsGridJuchuu.Gen_MK_FocusMove.MvSet, w_Ctrl, -1, -1, this.ActiveControl, Vsb_Mei_0, pRow, pCol);
@@ -2726,6 +2746,16 @@ namespace TempoJuchuuNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
+            if (!chkAll && !changeYmd)
+            {
+                int w_CtlRow = row - Vsb_Mei_0.Value;
+                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                {
+                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                        return false;
+                }
+            }
+
             switch (col)
             {
                 case (int)ClsGridJuchuu.ColNO.JanCD:
@@ -3006,14 +3036,14 @@ namespace TempoJuchuuNyuuryoku
                     break;
 
                 case (int)ClsGridJuchuu.ColNO.VendorCD:
+                    mGrid.g_DArray[row].VendorName = "";
+
                     if (mGrid.g_MK_State[col, row].Cell_Enabled)
                     {
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-                            mGrid.g_DArray[row].VendorName = "";
-
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Hikiate))
+                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
@@ -3036,8 +3066,15 @@ namespace TempoJuchuuNyuuryoku
 
                     ret = vebl.M_Vendor_SelectTop1(me);
                     if (ret)
+                    {
                         mGrid.g_DArray[row].VendorName = me.VendorName;
-
+                    }
+                    else
+                    {
+                        //Ｅ１０１  
+                        bbl.ShowMessage("E101");
+                        return false;
+                    }
                     break;
 
                 case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:
@@ -3124,7 +3161,7 @@ namespace TempoJuchuuNyuuryoku
                     ChangeDate = ymd,
                     StoreCD = CboStoreCD.SelectedValue.ToString(),
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
-                    Suryo = bbl.Z_SetStr(mGrid.g_DArray[row].JuchuuSuu),
+                    Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
                     DenType = "1",  //1(受注)
                     DenNo = keyControls[(int)EIndex.JuchuuNO].Text,
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
@@ -3134,17 +3171,21 @@ namespace TempoJuchuuNyuuryoku
                 ret = bbl.Fnc_Reserve(fre);
                 if(ret)
                 {
-                    //ただし、			out引当最終日 ≦ Today の場合、Null		
-                    int result = fre.LastDay.CompareTo(bbl.GetDate());
-                    if (result <= 0)
-                    {
-                        mGrid.g_DArray[row].ArrivePlanDate = "";
-                    }
-                    else
-                    {
-                        mGrid.g_DArray[row].ArrivePlanDate = fre.LastDay;
-                    }
+                    int result;
 
+                    if (!string.IsNullOrWhiteSpace(fre.LastDay))
+                    {
+                        //ただし、			out引当最終日 ≦ Today の場合、Null		
+                        result = fre.LastDay.CompareTo(bbl.GetDate());
+                        if (result <= 0)
+                        {
+                            mGrid.g_DArray[row].ArrivePlanDate = "";
+                        }
+                        else
+                        {
+                            mGrid.g_DArray[row].ArrivePlanDate = fre.LastDay;
+                        }
+                    }
                     if (fre.Result == "1")
                     {
                         mGrid.g_DArray[row].Hikiate = "引当OK";
@@ -3158,7 +3199,7 @@ namespace TempoJuchuuNyuuryoku
                         }
                         else
                         {
-                            if (string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
+                            if (!string.IsNullOrWhiteSpace(detailControls[(int)EIndex.SalesDate].Text))
                             {
                                 result = detailControls[(int)EIndex.SalesDate].Text.CompareTo(mGrid.g_DArray[row].ArrivePlanDate);
                                 if (result < 0)
@@ -3875,16 +3916,18 @@ namespace TempoJuchuuNyuuryoku
 
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
+                            SendKeys.Send("{ENTER}");
                         }
                     }
                     break;
 
                 case EsearchKbn.Vendor:
-                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
-                        CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
+                    //if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[w_Row].VendorCD))
+                    //    CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, w_Row, false, true);
 
-                    //配列の内容を画面へセット
-                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                    ////配列の内容を画面へセット
+                    //mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     break;
             }
 
@@ -4383,6 +4426,9 @@ namespace TempoJuchuuNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        //配列の内容を画面へセット
+                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+
                         //Focusセット処理
                         w_ActCtl.Focus();
                         return;
