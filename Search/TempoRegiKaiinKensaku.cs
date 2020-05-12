@@ -67,7 +67,7 @@ namespace Search
                 if (dt != null)
                 {
                     dgvKaniiKensaku.DataSource = dt;
-                    txtZipCD.Focus();
+                    //txtZipCD.Focus();
                 }
             }
         }

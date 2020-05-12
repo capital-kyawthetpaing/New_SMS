@@ -21,7 +21,7 @@ namespace DL
                    { "@ItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.ItemCD  } },
                    { "@ItemName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.ITemName  } },
                    { "@MakerItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.MakerItemCD  } },
-                  // { "@MakerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.MakerName } },
+                   //{ "@MakerItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.MakerName } },
                    { "@PurchaseSDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Purchase_SDate  } },
                    { "@PurchaseEDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Purchasee_EDate  } },
                    { "@PlanSDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Plan_SDate } },
