@@ -431,7 +431,5 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 }
             }
         }
-
-       
     }
 }
