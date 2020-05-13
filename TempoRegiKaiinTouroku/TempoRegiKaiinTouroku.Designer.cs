@@ -56,7 +56,7 @@
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(235, 42);
+            this.txtCustomerNo.Size = new System.Drawing.Size(240, 42);
             this.txtCustomerNo.TabIndex = 1;
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Customer_KeyDown);
@@ -66,12 +66,12 @@
             this.ckmShop_Label4.AutoSize = true;
             this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(296, 226);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
-            this.ckmShop_Label4.Size = new System.Drawing.Size(939, 27);
+            this.ckmShop_Label4.Size = new System.Drawing.Size(1265, 38);
             this.ckmShop_Label4.TabIndex = 5;
             this.ckmShop_Label4.Text = "↑お客様にお渡しした会員カードに記載されている会員番号を入力する";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
