@@ -21,6 +21,7 @@ namespace Search
         DataTable dt;
         public string CustomerCD = "";
         public string CustomerName = "";
+        
 
         public TempoRegiKaiinKensaku()
         {
@@ -37,7 +38,7 @@ namespace Search
             InProgramID = "TempoRegiKaiinKensaku";
 
             //StartProgram();
-
+            ShowCloseMessage = false;
             txtZipCD.Focus();
 
             dgvKaniiKensaku.RowHeadersVisible = false;
@@ -45,6 +46,7 @@ namespace Search
 
         protected override void EndSec()
         {
+            
             this.Close();
         }
 
