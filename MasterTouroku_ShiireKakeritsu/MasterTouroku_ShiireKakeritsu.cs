@@ -25,6 +25,8 @@ namespace MasterTouroku_ShiireKakeritsu
         M_Brand_Entity mbe = new M_Brand_Entity();
         DataView dvMain;
         int type = 0;
+        public bool IsNumber { get; set; } = true;
+        public bool MoveNext { get; set; } = true;
 
         public frmMasterTouroku_ShiireKakeritsu()
         {
@@ -720,12 +722,39 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void txtRate_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(!txtRate.Text.Contains("."))
+                if (NumberCheck())
                 {
-                    txtRate.Text = txtRate.Text + ".00";
-                }
+                    if (!txtRate.Text.Contains("."))
+                    {
+                        txtRate.Text = txtRate.Text + ".00";
+                    }
+                } 
+            }
+        }
+
+        private bool NumberCheck()
+        {
+            if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
+            {
+                IsNumber = false;
+                mskbl.ShowMessage("E118");
+                return false;
+            }
+            MoveNext = true;
+            return true;
+        }
+        public static bool IsInteger(string value)
+        {
+            value = value.Replace("-", "");
+            if (Int64.TryParse(value, out Int64 Num))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 
