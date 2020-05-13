@@ -16,16 +16,16 @@ namespace Search
 
     public partial class TempoRegiKaiinKensaku : ShopBaseForm
     {
-        TempoRegiKaiinKensaku_BL trkkkBL = new TempoRegiKaiinKensaku_BL();
+        TempoRegiKaiinKensaku_BL trkkkBL;
         M_Customer_Entity Customer = new M_Customer_Entity();
         DataTable dt;
         public string CustomerCD = "";
         public string CustomerName = "";
-        
 
-        public TempoRegiKaiinKensaku()
+        public TempoRegiKaiinKensaku(string OperatorCD)
         {
             InitializeComponent();
+            trkkkBL = new TempoRegiKaiinKensaku_BL();
         }
         //    public TempoRegiKaiinKensaku()
         //{
@@ -37,8 +37,8 @@ namespace Search
         {
             InProgramID = "TempoRegiKaiinKensaku";
 
-            //StartProgram();
-            ShowCloseMessage = false;
+            StartProgram();
+
             txtZipCD.Focus();
 
             dgvKaniiKensaku.RowHeadersVisible = false;
@@ -46,7 +46,6 @@ namespace Search
 
         protected override void EndSec()
         {
-            
             this.Close();
         }
 
@@ -105,6 +104,7 @@ namespace Search
         {
             CustomerCD = dgvKaniiKensaku.CurrentRow.Cells["colCustomerCD"].Value.ToString().Replace(System.Environment.NewLine, string.Empty);
             CustomerName = dgvKaniiKensaku.CurrentRow.Cells["colCustomerName"].Value.ToString().Split(new[] { Environment.NewLine }, StringSplitOptions.None)[0];
+            
             this.Close();
         }
 
