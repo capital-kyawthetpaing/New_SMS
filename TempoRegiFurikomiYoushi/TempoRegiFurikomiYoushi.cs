@@ -91,7 +91,7 @@ namespace TempoRegiFurikomiYoushi
 
         private void TempoRegiFurikomiYoushi_Load(object sender, EventArgs e)
         {
-            InProgramID = "TempoRegiFurikomiYoushi";
+            InProgramID = "店舗振込用紙";
 
             string data = InOperatorCD;
             StartProgram();
