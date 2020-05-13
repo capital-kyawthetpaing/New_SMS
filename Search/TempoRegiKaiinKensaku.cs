@@ -40,7 +40,7 @@ namespace Search
             StartProgram();
 
             txtZipCD.Focus();
-
+            ShowCloseMessage = false;
             dgvKaniiKensaku.RowHeadersVisible = false;
         }
 
