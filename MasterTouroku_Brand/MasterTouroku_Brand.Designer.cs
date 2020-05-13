@@ -189,6 +189,7 @@
             this.txtKanaName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtKanaName.BackColor = System.Drawing.Color.White;
             this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtKanaName.ClientColor = System.Drawing.Color.White;
             this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKanaName.DecimalPlace = 0;
@@ -197,11 +198,12 @@
             this.txtKanaName.IntegerPart = 0;
             this.txtKanaName.IsCorrectDate = true;
             this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
-            this.txtKanaName.Length = 20;
+            this.txtKanaName.Length = 1;
             this.txtKanaName.Location = new System.Drawing.Point(135, 48);
-            this.txtKanaName.MaxLength = 20;
+            this.txtKanaName.MaxLength = 1;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(130, 19);
@@ -248,6 +250,7 @@
             this.txtBrandName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtBrandName.BackColor = System.Drawing.Color.White;
             this.txtBrandName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBrandName.ClientColor = System.Drawing.Color.White;
             this.txtBrandName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtBrandName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtBrandName.DecimalPlace = 0;
@@ -256,11 +259,12 @@
             this.txtBrandName.IntegerPart = 0;
             this.txtBrandName.IsCorrectDate = true;
             this.txtBrandName.isEnterKeyDown = false;
+            this.txtBrandName.isMaxLengthErr = false;
             this.txtBrandName.IsNumber = true;
             this.txtBrandName.IsShop = false;
-            this.txtBrandName.Length = 40;
+            this.txtBrandName.Length = 10;
             this.txtBrandName.Location = new System.Drawing.Point(135, 16);
-            this.txtBrandName.MaxLength = 40;
+            this.txtBrandName.MaxLength = 10;
             this.txtBrandName.MoveNext = true;
             this.txtBrandName.Name = "txtBrandName";
             this.txtBrandName.Size = new System.Drawing.Size(260, 19);
