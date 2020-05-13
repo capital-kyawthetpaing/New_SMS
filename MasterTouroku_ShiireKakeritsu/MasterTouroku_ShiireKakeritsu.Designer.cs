@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -252,6 +251,7 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1680, 800);
             this.panelDetail.TabIndex = 0;
+            //this.panelDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDetail_Paint);
             // 
             // ckM_Button1
             // 
@@ -374,17 +374,17 @@
             this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -396,14 +396,6 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(149, 365);
@@ -624,9 +616,11 @@
             this.txtRate.MaxLength = 20;
             this.txtRate.MoveNext = true;
             this.txtRate.Name = "txtRate";
+            this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
             this.txtRate.TabIndex = 24;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
             // ckM_Label24
             // 
