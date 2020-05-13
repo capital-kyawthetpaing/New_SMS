@@ -612,7 +612,9 @@ namespace MasterTouroku_ShiireKakeritsu
                         drow.Cells["colChk"].Value = false;
                     }
                 }
+
             }
+            dgv_ShiireKakeritsu.RefreshEdit();
         }
 
         private void btnSelectAll_Click(object sender, EventArgs e)
