@@ -603,7 +603,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     dtGrid = dtMain;
                 }
-
+ 
                 dgv_ShiireKakeritsu.DataSource = dtMain;
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
@@ -616,6 +616,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         drow.Cells["colChk"].Value = false;
                     }
                 }
+
             }
         }
 
@@ -689,7 +690,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
                 if (check.Value == check.TrueValue)
                 {
-                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
+                    row.Cells["colRate1"].Value =Convert.ToDecimal(txtRate.Text);
                 }
             }
         }
