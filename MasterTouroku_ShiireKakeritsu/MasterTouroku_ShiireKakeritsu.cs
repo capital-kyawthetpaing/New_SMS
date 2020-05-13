@@ -717,5 +717,17 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain = view.ToTable();
         }
         #endregion
+
+        private void txtRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(!txtRate.Text.Contains("."))
+                {
+                    txtRate.Text = txtRate.Text + ".00";
+                }
+            }
+        }
+
     }
 }
