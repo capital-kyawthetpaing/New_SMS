@@ -687,7 +687,7 @@ namespace MasterTouroku_ShiireKakeritsu
         }
        
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
+        {         
             foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             {
                 DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
@@ -696,6 +696,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
                 }
             }
+           
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -734,6 +735,10 @@ namespace MasterTouroku_ShiireKakeritsu
             }
         }
 
+        /// <summary>
+        /// For Rate Textbox
+        /// </summary>
+        /// <returns></returns>
         private bool NumberCheck()
         {
             if (!string.IsNullOrWhiteSpace(txtRate.Text) && !bbl.IsInteger(txtRate.Text))
