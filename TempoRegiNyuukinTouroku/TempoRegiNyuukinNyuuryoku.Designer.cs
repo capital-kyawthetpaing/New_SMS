@@ -222,7 +222,7 @@
             this.txtPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPayment.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtPayment.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.txtPayment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.txtPayment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtPayment.DecimalPlace = 0;
             this.txtPayment.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtPayment.IntegerPart = 8;
@@ -233,12 +233,11 @@
             this.txtPayment.IsShop = false;
             this.txtPayment.Length = 11;
             this.txtPayment.Location = new System.Drawing.Point(247, 148);
-            this.txtPayment.MaxLength = 11;
+            this.txtPayment.MaxLength = 20;
             this.txtPayment.MoveNext = true;
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.Size = new System.Drawing.Size(200, 42);
             this.txtPayment.TabIndex = 0;
-            this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
             // ckmShop_Label5
