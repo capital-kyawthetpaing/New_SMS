@@ -1217,6 +1217,13 @@ namespace TempoJuchuuNyuuryoku
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
             int col = (int)ClsGridJuchuu.ColNO.JanCD;
+
+            string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
+
+            if (string.IsNullOrWhiteSpace(ymd))
+                ymd = bbl.GetDate();
+
+            CheckHikiate(w_Row, ymd);
             Grid_NotFocus(col, w_Row);
             CalcKin();
 

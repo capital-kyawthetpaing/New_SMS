@@ -326,7 +326,6 @@ namespace MasterTouroku_GinkouShiten
                     {
                         if (!RequireCheck(new Control[] { ScBankCD.TxtCode, ScBranchCD.TxtCode, ScBranchCD.TxtChangeDate }))//E102
                             return false;
-
                         if (!ScBankCD.IsExists(2))
                         {
                             mtbstbl.ShowMessage("E133");
@@ -525,7 +524,7 @@ namespace MasterTouroku_GinkouShiten
 
         private void ChangeDate_Leave(object sender, EventArgs e)
         {
-            ScBankCD.ChangeDate = ScBranchCD.TxtChangeDate.Text;
+            //ScBankCD.ChangeDate = ScBranchCD.TxtChangeDate.Text;
         }
 
         private void CopyChangeDate_Leave(object sender, EventArgs e)
@@ -588,6 +587,11 @@ namespace MasterTouroku_GinkouShiten
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             FunctionProcess(10);
+        }
+
+        private void ScBankCD_Enter(object sender, EventArgs e)
+        {
+            ScBankCD.ChangeDate = ScBranchCD.TxtChangeDate.Text;
         }
     }
 }
