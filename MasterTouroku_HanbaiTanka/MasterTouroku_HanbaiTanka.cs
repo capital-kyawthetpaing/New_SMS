@@ -1098,6 +1098,11 @@ namespace MasterTouroku_HanbaiTanka
                         detailControls[(int)EIndex.WebRate].Text = bbl.Z_SetStr(row["WebRate"]);
                     }
 
+                    if (OperationMode == EOperationMode.INSERT  && radioButton1.Checked)
+                    {
+                        CheckDetail((int)EIndex.TankaCD);
+                    }
+
                     mGrid.g_DArray[i].ChangeDate = row["ChangeDate"].ToString();   // 
                     mGrid.g_DArray[i].OldChangeDate = row["ChangeDate"].ToString();   // 
                     mGrid.g_DArray[i].GenkaWithoutTax = bbl.Z_SetStr(row["GenkaWithoutTax"]);   // 
@@ -1266,12 +1271,6 @@ namespace MasterTouroku_HanbaiTanka
         }
         private bool CheckGrid(int col, int row)
         {
-            int w_CtlRow = row - Vsb_Mei_0.Value;
-            if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-            {
-                if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                    return false;
-            }
 
             switch (col)
             {
@@ -2092,6 +2091,13 @@ namespace MasterTouroku_HanbaiTanka
                                 lastCell = true;
                             break;
 
+                    }
+
+                    int w_CtlRow = w_Row - Vsb_Mei_0.Value;
+                    if (mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[CL, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return ;
                     }
 
                     bool changeFlg = false;

@@ -23,6 +23,7 @@ namespace MasterTouroku_ShiireKakeritsu
         DataTable dt = new DataTable();
         M_Vendor_Entity mve = new M_Vendor_Entity();
         M_Brand_Entity mbe = new M_Brand_Entity();
+        DataView dvMain;
         int type = 0;
 
         public frmMasterTouroku_ShiireKakeritsu()
@@ -412,7 +413,8 @@ namespace MasterTouroku_ShiireKakeritsu
         #region ButtonClick for 【抽出条件】
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            SearchData();
+            //SearchData();
+            BindGrid();
         }
         private void SearchData()
         {
@@ -447,22 +449,24 @@ namespace MasterTouroku_ShiireKakeritsu
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text;
 
-            if (!string.IsNullOrWhiteSpace(searchCondition))
-            {
-                DataRow[] dr = dtMain.Select(searchCondition);
-                if (dr.Count() > 0)
-                {
-                    dtGrid = dtMain.Select(searchCondition).CopyToDataTable();
-                }
-                else
-                    dtGrid = null;
-            }
-            else
-            {
-                dtGrid = dtMain;
-            }
+            //if (!string.IsNullOrWhiteSpace(searchCondition))
+            //{
+                dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
 
-            dgv_ShiireKakeritsu.DataSource = dtGrid;
+            //    DataRow[] dr = dtMain.Select(searchCondition);
+            //    if (dr.Count() > 0)
+            //    {
+            //        dtGrid = dvmain//dtMain.Select(searchCondition).CopyToDataTable();
+            //    }
+            //    else
+            //        dtGrid = null;
+            //}
+            //else
+            //{
+            //    dtGrid = dtMain;
+            //}
+
+            dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         private void btnCopy_Click(object sender, EventArgs e)
         {
@@ -708,6 +712,9 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
             toDelete.ForEach(row => row.Delete());
+
+            DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+            dtMain = view.ToTable();
         }
         #endregion
     }

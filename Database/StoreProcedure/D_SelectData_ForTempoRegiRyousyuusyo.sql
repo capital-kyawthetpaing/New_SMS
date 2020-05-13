@@ -1,12 +1,11 @@
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectData_ForTempoRegiRyousyuusyo]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    “X•ÜƒŒƒW —ÌŽû‘ˆóü

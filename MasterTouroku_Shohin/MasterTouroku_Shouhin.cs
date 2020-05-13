@@ -435,15 +435,21 @@ namespace MasterTouroku_Shouhin
                                 return false;
                             }
                         }
-
-                        copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
-
-                        //日付として正しいこと(Be on the correct date)Ｅ１０３
-                        if (!bbl.CheckDate(copyKeyControls[index].Text))
+                        else if (!string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
-                            bbl.ShowMessage("E103");
-                            copyKeyControls[index].Focus();
-                            return false;
+                            copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
+
+                            //日付として正しいこと(Be on the correct date)Ｅ１０３
+                            if (!bbl.CheckDate(copyKeyControls[index].Text))
+                            {
+                                bbl.ShowMessage("E103");
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            //両方とも未入力
+                            return true;
                         }
                         break;
                 }
@@ -2179,7 +2185,11 @@ namespace MasterTouroku_Shouhin
                                 break;
 
                             case (int)EIndex.ChangeDate:
-                                if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
+                                if (OperationMode == EOperationMode.INSERT)
+                                {
+                                    copyKeyControls[(int)EIndex.ItemCD].Focus();
+                                }
+                                else if (OperationMode == EOperationMode.UPDATE)
                                 {
                                     detailControls[0].Focus();
                                 }

@@ -159,6 +159,7 @@
             this.ScBankCD.Value2 = null;
             this.ScBankCD.Value3 = null;
             this.ScBankCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScBankCD_CodeKeyDownEvent);
+            this.ScBankCD.Enter += new System.EventHandler(this.ScBankCD_Enter);
             this.ScBankCD.Leave += new System.EventHandler(this.ScBankCD_Leave);
             // 
             // ScBranchCD
@@ -423,6 +424,7 @@
             this.TxtKanaName.IntegerPart = 0;
             this.TxtKanaName.IsCorrectDate = true;
             this.TxtKanaName.isEnterKeyDown = false;
+            this.TxtKanaName.isMaxLengthErr = false;
             this.TxtKanaName.IsNumber = true;
             this.TxtKanaName.IsShop = false;
             this.TxtKanaName.Length = 30;
@@ -449,6 +451,7 @@
             this.TxtBankBranchName.IntegerPart = 0;
             this.TxtBankBranchName.IsCorrectDate = true;
             this.TxtBankBranchName.isEnterKeyDown = false;
+            this.TxtBankBranchName.isMaxLengthErr = false;
             this.TxtBankBranchName.IsNumber = true;
             this.TxtBankBranchName.IsShop = false;
             this.TxtBankBranchName.Length = 30;

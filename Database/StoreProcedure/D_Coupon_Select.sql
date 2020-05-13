@@ -1,15 +1,11 @@
---  ======================================================================
---       商品引換券情報取得
---  ======================================================================
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_Coupon_Select]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 --  ======================================================================
 --       Program Call    店舗レジ ポイント引換券印刷
 --       Program ID      TempoRegiPoint
@@ -20,7 +16,7 @@ CREATE PROCEDURE [dbo].[D_Coupon_Select]
     @StoreCD varchar(4)
 )AS
     
---********************************************--
+--********************************************-- 
 --                                            --
 --                 処理開始                   --
 --                                            --
