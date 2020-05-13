@@ -113,7 +113,7 @@ namespace TempoRegiNyuukinTouroku
                         chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
-                //RunConsole();
+                RunConsole();
             }
         }
 
