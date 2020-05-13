@@ -136,7 +136,7 @@ namespace TanabanNyuuryoku
              mle.Register = chkRegister.Checked ? "1" : "0";
              mle.ProcessMode = ModeText;
              mle.Operator = InOperatorCD;
-             mle.ProgramID = InProgramID;
+            mle.ProgramID = InProgramID;
              mle.Key = cboWarehouse.SelectedValue.ToString();
              mle.PC = InPcID;
         return mle;
@@ -320,7 +320,7 @@ namespace TanabanNyuuryoku
                 if (!string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
                 {
                     int result = txtArrivalDateFrom.Text.CompareTo(txtArrivalDateTo.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         tnbnBL.ShowMessage("E104");
                         txtArrivalDateTo.Focus();
