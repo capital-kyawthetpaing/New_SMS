@@ -47,7 +47,7 @@
             this.BtnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearchCustomer.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.BtnSearchCustomer.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.BtnSearchCustomer.Location = new System.Drawing.Point(116, 155);
+            this.BtnSearchCustomer.Location = new System.Drawing.Point(181, 160);
             this.BtnSearchCustomer.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSearchCustomer.Name = "BtnSearchCustomer";
             this.BtnSearchCustomer.Size = new System.Drawing.Size(190, 42);
@@ -64,7 +64,7 @@
             this.lblLastPoint.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblLastPoint.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblLastPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblLastPoint.Location = new System.Drawing.Point(69, 209);
+            this.lblLastPoint.Location = new System.Drawing.Point(129, 203);
             this.lblLastPoint.Name = "lblLastPoint";
             this.lblLastPoint.Size = new System.Drawing.Size(237, 35);
             this.lblLastPoint.TabIndex = 18;
@@ -80,7 +80,7 @@
             this.lblTicketUnit.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblTicketUnit.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblTicketUnit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblTicketUnit.Location = new System.Drawing.Point(69, 251);
+            this.lblTicketUnit.Location = new System.Drawing.Point(129, 245);
             this.lblTicketUnit.Name = "lblTicketUnit";
             this.lblTicketUnit.Size = new System.Drawing.Size(237, 35);
             this.lblTicketUnit.TabIndex = 19;
@@ -106,7 +106,7 @@
             this.TxtCustomerCD.IsNumber = true;
             this.TxtCustomerCD.IsShop = false;
             this.TxtCustomerCD.Length = 13;
-            this.TxtCustomerCD.Location = new System.Drawing.Point(306, 155);
+            this.TxtCustomerCD.Location = new System.Drawing.Point(366, 160);
             this.TxtCustomerCD.MaxLength = 13;
             this.TxtCustomerCD.MoveNext = true;
             this.TxtCustomerCD.Name = "TxtCustomerCD";
@@ -135,7 +135,7 @@
             this.TxtLastPoint.IsNumber = true;
             this.TxtLastPoint.IsShop = false;
             this.TxtLastPoint.Length = 11;
-            this.TxtLastPoint.Location = new System.Drawing.Point(306, 207);
+            this.TxtLastPoint.Location = new System.Drawing.Point(366, 201);
             this.TxtLastPoint.MaxLength = 11;
             this.TxtLastPoint.MoveNext = true;
             this.TxtLastPoint.Name = "TxtLastPoint";
@@ -163,7 +163,7 @@
             this.TxtIssuePoint.IsNumber = true;
             this.TxtIssuePoint.IsShop = false;
             this.TxtIssuePoint.Length = 11;
-            this.TxtIssuePoint.Location = new System.Drawing.Point(306, 249);
+            this.TxtIssuePoint.Location = new System.Drawing.Point(366, 243);
             this.TxtIssuePoint.MaxLength = 11;
             this.TxtIssuePoint.MoveNext = true;
             this.TxtIssuePoint.Name = "TxtIssuePoint";
@@ -182,7 +182,7 @@
             this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
             this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.LblCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.LblCustomerName.Location = new System.Drawing.Point(560, 155);
+            this.LblCustomerName.Location = new System.Drawing.Point(620, 160);
             this.LblCustomerName.Name = "LblCustomerName";
             this.LblCustomerName.Size = new System.Drawing.Size(326, 19);
             this.LblCustomerName.TabIndex = 23;
