@@ -180,12 +180,12 @@
             this.LblCustomerName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.LblCustomerName.DefaultlabelSize = true;
-            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
-            this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
+            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Medium;
             this.LblCustomerName.ForeColor = System.Drawing.Color.Black;
             this.LblCustomerName.Location = new System.Drawing.Point(513, 96);
             this.LblCustomerName.Name = "LblCustomerName";
-            this.LblCustomerName.Size = new System.Drawing.Size(326, 19);
+            this.LblCustomerName.Size = new System.Drawing.Size(357, 22);
             this.LblCustomerName.TabIndex = 23;
             this.LblCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸ15";
             this.LblCustomerName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
