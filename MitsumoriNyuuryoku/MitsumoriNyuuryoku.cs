@@ -42,8 +42,8 @@ namespace MitsumoriNyuuryoku
 
             MitsumoriName,
             DeliveryDate,
-            PaymentTerms,
             DeliveryPlace,
+            PaymentTerms,
             ValidityPeriod,
             RemarksOutStore,
             RemarksInStore
@@ -2385,7 +2385,7 @@ namespace MitsumoriNyuuryoku
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = InOperatorName;
                     CboStoreCD.SelectedValue = StoreCD;
-                    SetInitStoreInfo();
+                    SetInitStoreInfo(StoreCD);
 
                     detailControls[0].Focus();
                     break;
@@ -2399,12 +2399,12 @@ namespace MitsumoriNyuuryoku
             }
 
         }
-        private void SetInitStoreInfo()
+        private void SetInitStoreInfo(string storeCD)
         {
             //[M_Store]
             M_Store_Entity mse2 = new M_Store_Entity
             {
-                StoreCD = StoreCD,
+                StoreCD = storeCD,
                 ChangeDate = bbl.GetDate()
             };
             Store_BL sbl = new Store_BL();
@@ -3344,7 +3344,10 @@ namespace MitsumoriNyuuryoku
             try
             {
                 if (CboStoreCD.SelectedIndex > 0)
+                {
                     ScCustomer.Value2 = CboStoreCD.SelectedValue.ToString();
+                    SetInitStoreInfo(CboStoreCD.SelectedValue.ToString());
+                }
             }
             catch (Exception ex)
             {
