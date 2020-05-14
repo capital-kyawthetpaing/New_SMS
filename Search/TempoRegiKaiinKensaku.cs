@@ -22,7 +22,7 @@ namespace Search
         public string CustomerCD = "";
         public string CustomerName = "";
 
-        public TempoRegiKaiinKensaku(string OperatorCD)
+        public TempoRegiKaiinKensaku()
         {
             InitializeComponent();
             trkkkBL = new TempoRegiKaiinKensaku_BL();

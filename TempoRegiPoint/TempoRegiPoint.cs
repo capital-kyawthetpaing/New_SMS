@@ -140,7 +140,6 @@ namespace TempoRegiPoint
             BtnSearchCustomer.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
             //btnSearchCustomer.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
 
-            TxtCustomerCD.Size = new Size(142, 34);
             TxtCustomerCD.Require(true);
             TxtCustomerCD.Clear();
 
@@ -400,7 +399,7 @@ namespace TempoRegiPoint
         /// <param name="e"></param>
         private void BtnSearchCustomer_Click(object sender, EventArgs e)
         {
-            var search = new Search.Search_Customer();
+            var search = new Search.FrmSearch_Customer(ChangeDate, "1", StoreCD);
             var result = search.ShowDialog();
 #if DEBUG_CUSTOMER
             TxtCustomerCD.Text = CUSTOMER_CD;
@@ -471,5 +470,9 @@ namespace TempoRegiPoint
                 TxtLastPoint.Text = string.Empty;
             }
         }
+
+       
+
+        
     }
 }

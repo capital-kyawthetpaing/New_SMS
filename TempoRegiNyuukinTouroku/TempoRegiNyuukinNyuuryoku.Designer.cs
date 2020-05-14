@@ -72,7 +72,7 @@
             this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label3.Location = new System.Drawing.Point(275, 333);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(281, 333);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(755, 35);
             this.ckmShop_Label3.TabIndex = 25;
@@ -82,10 +82,10 @@
             // 
             // chkAdvanceFlg
             // 
-            this.chkAdvanceFlg.Location = new System.Drawing.Point(248, 337);
+            this.chkAdvanceFlg.Location = new System.Drawing.Point(249, 337);
             this.chkAdvanceFlg.Margin = new System.Windows.Forms.Padding(0);
             this.chkAdvanceFlg.Name = "chkAdvanceFlg";
-            this.chkAdvanceFlg.Size = new System.Drawing.Size(25, 24);
+            this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 30);
             this.chkAdvanceFlg.TabIndex = 3;
             this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkAdvanceFlg.UseVisualStyleBackColor = true;
@@ -199,7 +199,7 @@
             this.cboDenominationName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半角;
             this.cboDenominationName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDenominationName.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.cboDenominationName.Font = new System.Drawing.Font("Meiryo UI", 26F);
             this.cboDenominationName.FontSize_ = 26F;
             this.cboDenominationName.FormattingEnabled = true;
             this.cboDenominationName.IntegralHeight = false;

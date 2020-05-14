@@ -166,6 +166,8 @@ namespace MasterTouroku_Tempo
             radioButton5.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             radioButton6.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             radioButton7.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            radioButton8.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
+            radioButton9.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
 
             //KTP handle from user control
             //foreach (Control ctl in searchButtons)
@@ -1623,6 +1625,10 @@ namespace MasterTouroku_Tempo
                             radioButton6.Focus();
                         else if (radioButton7.Checked)
                             radioButton7.Focus();
+                        else if (radioButton8.Checked)
+                            radioButton8.Focus();
+                        else if (radioButton9.Checked)
+                            radioButton9.Focus();
 
                     }
                     else
