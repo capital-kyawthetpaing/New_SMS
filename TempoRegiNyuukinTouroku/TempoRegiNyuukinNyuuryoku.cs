@@ -113,7 +113,7 @@ namespace TempoRegiNyuukinTouroku
                         chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
-                //RunConsole();
+                RunConsole();
             }
         }
 
@@ -195,7 +195,7 @@ namespace TempoRegiNyuukinTouroku
 
         private void btnCustomerCD_Click(object sender, EventArgs e)
         {
-            TempoRegiKaiinKensaku kaiinkensaku = new TempoRegiKaiinKensaku();
+            TempoRegiKaiinKensaku kaiinkensaku = new TempoRegiKaiinKensaku(InOperatorCD);
             kaiinkensaku.ShowDialog();
             if (!(string.IsNullOrWhiteSpace(kaiinkensaku.CustomerCD)) && !(string.IsNullOrWhiteSpace(kaiinkensaku.CustomerName)))
             {
