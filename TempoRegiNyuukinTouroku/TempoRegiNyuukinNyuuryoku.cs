@@ -195,12 +195,13 @@ namespace TempoRegiNyuukinTouroku
 
         private void btnCustomerCD_Click(object sender, EventArgs e)
         {
-            TempoRegiKaiinKensaku kaiinkensaku = new TempoRegiKaiinKensaku(InOperatorCD);
+            TempoRegiKaiinKensaku kaiinkensaku = new TempoRegiKaiinKensaku();
             kaiinkensaku.ShowDialog();
             if (!(string.IsNullOrWhiteSpace(kaiinkensaku.CustomerCD)) && !(string.IsNullOrWhiteSpace(kaiinkensaku.CustomerName)))
             {
                 txtCustomerCD.Text = kaiinkensaku.CustomerCD;
                 lblCustomerName.Text = kaiinkensaku.CustomerName;
+                //txtCustomerCD.Focus();
             }
         }
 
