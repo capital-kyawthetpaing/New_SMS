@@ -70,7 +70,7 @@ BEGIN
                   ,store.StoreName
                   ,store.Address1
                   ,store.Address2
-                  ,store.TelphoneNO
+                  ,store.TelephoneNO
               FROM D_DepositHistory history
               LEFT OUTER JOIN D_Sales sales ON sales.SalesNO = history.Number
               LEFT OUTER JOIN (SELECT ROW_NUMBER() OVER(PARTITION BY JanCD, SKUCD ORDER BY ChangeDate DESC) as RANK
@@ -98,7 +98,7 @@ BEGIN
                                      ,StoreName
                                      ,Address1
                                      ,Address2
-                                     ,TelphoneNO
+                                     ,TelephoneNO
                                      ,ChangeDate
                                      ,ReceiptPrint
                                      ,DeleteFlg
