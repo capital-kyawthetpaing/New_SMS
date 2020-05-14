@@ -470,5 +470,9 @@ namespace TempoRegiPoint
                 TxtLastPoint.Text = string.Empty;
             }
         }
+
+       
+
+        
     }
 }
