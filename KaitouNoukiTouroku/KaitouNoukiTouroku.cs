@@ -1734,6 +1734,9 @@ namespace KaitouNoukiTouroku
                         arrivalPlanDate = mGrid.g_DArray[RW].FirstArrivalPlanDate;
                     }
 
+                    if (mGrid.g_DArray[RW].ArrivalPlanCD.Equals("-1"))
+                        mGrid.g_DArray[RW].ArrivalPlanCD = "";
+
                    dt.Rows.Add(seq
                         , mGrid.g_DArray[RW].OrderNo
                         , mGrid.g_DArray[RW].OrderRows
