@@ -118,6 +118,7 @@ namespace MasterTouroku_UnsouGaisya
                     DisablePanel(PanelDetail);
                     ScShippingCD.SearchEnable = true;
                     ScCopyShippingCD.SearchEnable = false;
+                    F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
