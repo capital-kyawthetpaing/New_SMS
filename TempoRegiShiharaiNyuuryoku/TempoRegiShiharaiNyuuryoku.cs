@@ -166,6 +166,7 @@ namespace TempoRegiShiharaiNyuuryoku
             return ddpe;
         }
 
+
         private void TempoRegiShiharaiNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
