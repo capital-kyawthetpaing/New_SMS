@@ -17,9 +17,11 @@ namespace TempoRegiShiharaiNyuuryoku
     {
         TempoRegiShiharaiNyuuryoku_BL trgshbl = new TempoRegiShiharaiNyuuryoku_BL();
         D_DepositHistory_Entity ddpe = new D_DepositHistory_Entity();
+        DataTable dtDepositNO;
         public TempoRegiShiharaiNyuuryoku()
         {
             InitializeComponent();
+            dtDepositNO = new DataTable();
         }
 
         private void TempoRejiShiharaiNyuuryoku_Load(object sender, EventArgs e)
@@ -95,7 +97,7 @@ namespace TempoRegiShiharaiNyuuryoku
                     ddpe = GetDepositEntity();
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
-                        trgshbl.ShowMessage("I101");
+                        trgshbl.ShowMessage("I101");                      
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -103,6 +105,26 @@ namespace TempoRegiShiharaiNyuuryoku
                         DisplayData();                       
                     }
                 }
+                RunConsole();//exeRun
+            }
+        }
+
+        private void RunConsole()
+        {
+            string programID = "TempoRegiTorihikiReceipt";
+            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+            string Mode = "5";
+            dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
+            string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
+            try
+            {
+                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            }
+            catch
+            {
+
             }
         }
 
