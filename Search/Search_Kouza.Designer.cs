@@ -87,13 +87,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.DefaultlabelSize = true;
             this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(148, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(18, 12);
             this.label3.TabIndex = 316;
             this.label3.Text = "～";
+            this.label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // radioButton2
@@ -108,17 +113,23 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "履歴";
             this.radioButton2.UseVisualStyleBackColor = false;
+            this.radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioButton_KeyDown);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.DefaultlabelSize = true;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(31, 41);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 12);
             this.label12.TabIndex = 315;
             this.label12.Text = "表示対象";
+            this.label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // radioButton1
@@ -133,11 +144,15 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "基準日";
             this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioButton_KeyDown);
             // 
             // ckM_TextBox3
             // 
             this.ckM_TextBox3.AllowMinus = false;
+            this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.SystemColors.Window;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -146,43 +161,59 @@
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
-            this.ckM_TextBox3.Length = 10;
+            this.ckM_TextBox3.IsShop = false;
+            this.ckM_TextBox3.Length = 30;
             this.ckM_TextBox3.Location = new System.Drawing.Point(93, 98);
             this.ckM_TextBox3.MaxLength = 30;
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(305, 19);
             this.ckM_TextBox3.TabIndex = 309;
+            this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.DefaultlabelSize = true;
             this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(23, 108);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 12);
             this.label9.TabIndex = 314;
             this.label9.Text = "銀行口座名";
+            this.label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.DefaultlabelSize = true;
             this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(40, 11);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 12);
             this.label5.TabIndex = 313;
             this.label5.Text = "基準日";
+            this.label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_TextBox2
             // 
             this.ckM_TextBox2.AllowMinus = false;
+            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.SystemColors.Window;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -191,19 +222,25 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.Length = 10;
+            this.ckM_TextBox2.IsShop = false;
+            this.ckM_TextBox2.Length = 3;
             this.ckM_TextBox2.Location = new System.Drawing.Point(184, 68);
             this.ckM_TextBox2.MaxLength = 3;
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
             this.ckM_TextBox2.Size = new System.Drawing.Size(36, 19);
             this.ckM_TextBox2.TabIndex = 308;
+            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox1
             // 
             this.ckM_TextBox1.AllowMinus = false;
+            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.SystemColors.Window;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -212,8 +249,10 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.Length = 10;
+            this.ckM_TextBox1.IsShop = false;
+            this.ckM_TextBox1.Length = 3;
             this.ckM_TextBox1.Location = new System.Drawing.Point(93, 68);
             this.ckM_TextBox1.MaxLength = 3;
             this.ckM_TextBox1.MoveNext = true;
@@ -221,27 +260,35 @@
             this.ckM_TextBox1.Size = new System.Drawing.Size(36, 19);
             this.ckM_TextBox1.TabIndex = 307;
             this.ckM_TextBox1.Text = "XXX";
+            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.DefaultlabelSize = true;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(19, 71);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 12);
             this.label4.TabIndex = 312;
             this.label4.Text = "銀行口座CD";
+            this.label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSubF11
             // 
             this.btnSubF11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnSubF11.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
             this.btnSubF11.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubF11.DefaultBtnSize = true;
             this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnSubF11.Location = new System.Drawing.Point(572, 92);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF11.Name = "btnSubF11";
@@ -258,11 +305,10 @@
             this.dgvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDetail.AutoGenerateColumns = false;
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -366,13 +412,18 @@
             // ckM_Label2
             // 
             this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label2.Location = new System.Drawing.Point(19, 102);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label2.TabIndex = 312;
             this.ckM_Label2.Text = "銀行口座名";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Search_Kouza

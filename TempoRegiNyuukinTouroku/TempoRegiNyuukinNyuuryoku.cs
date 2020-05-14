@@ -201,6 +201,7 @@ namespace TempoRegiNyuukinTouroku
             {
                 txtCustomerCD.Text = kaiinkensaku.CustomerCD;
                 lblCustomerName.Text = kaiinkensaku.CustomerName;
+                //txtCustomerCD.Focus();
             }
         }
 

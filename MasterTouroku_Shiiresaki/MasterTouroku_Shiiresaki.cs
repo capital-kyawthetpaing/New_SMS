@@ -35,6 +35,9 @@ namespace MasterTouroku_Shiiresaki
             this.KeyUp += Form_KeyUp;
 
             mtsbl = new MasterTouroku_Shiiresaki_BL();
+            mbe = new M_Bank_Entity();
+            mbse = new M_BankShiten_Entity();
+            mke = new M_Kouza_Entity();
         }
 
         private void Form_KeyUp(object sender, KeyEventArgs e)
@@ -160,11 +163,43 @@ namespace MasterTouroku_Shiiresaki
                         {
                             if (string.IsNullOrWhiteSpace(ScCopyVendor.ChangeDate) || (DisplayData(ScCopyVendor)))
                             {
+                                if (!string.IsNullOrWhiteSpace(ScVendor.ChangeDate))
+                                {
+                                    mbe.ChangeDate = ScVendor.ChangeDate;
+                                    mbe.BankCD = ScBankCD.TxtCode.Text;
+                                    DataTable dtbank = new DataTable();
+                                    dtbank = mtsbl.Bank_Select(mbe);
+                                   if (dtbank.Rows.Count > 0)
+                                    {
+                                        ScBankCD.LabelText = dtbank.Rows[0]["BankName"].ToString();
+                                        ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
+                                        ScBranchCD.Value2 = ScBankCD.LabelText;
+                                    }
+                                    mbse.ChangeDate = ScVendor.ChangeDate;
+                                    mbse.BranchCD = ScBranchCD.TxtCode.Text;
+                                    mbse.BankCD = ScBankCD.TxtCode.Text;
+                                    DataTable dtbranch = new DataTable();
+                                    dtbranch = mtsbl.BankShiten_Select(mbse);
+                                    if (dtbranch.Rows.Count > 0)
+                                    {
+                                        ScBranchCD.LabelText = dtbranch.Rows[0]["BranchName"].ToString();
+                                    }
+
+                                    mke.ChangeDate = ScVendor.ChangeDate;
+                                    mke.KouzaCD = ScKouzaCD.TxtCode.Text;
+                                    DataTable dtKouza = new DataTable();
+                                    dtKouza = mtsbl.Kouza_Select(mke);
+                                    if (dtKouza.Rows.Count > 0)
+                                    {
+                                        ScKouzaCD.LabelText = dtKouza.Rows[0]["KouzaName"].ToString();
+                                    }
+                                }
                                 DisablePanel(PanelHeader);
                                 EnablePanel(PanelDetail);
                                 btnDisplay.Enabled = F11Enable = false;
                                 SelectNextControl(PanelDetail, true, true, true, true);
                             }
+                            
                         }
                         break;
                     case EOperationMode.UPDATE:
@@ -181,7 +216,7 @@ namespace MasterTouroku_Shiiresaki
                         break;
                     case EOperationMode.DELETE:
                         if (DisplayData(ScVendor))
-                        {
+                        {                                                     
                             DisablePanel(PanelNormal);
                             DisablePanel(PanelCopy);
                             DisablePanel(PanelDetail);
@@ -405,6 +440,7 @@ namespace MasterTouroku_Shiiresaki
                 mtsbl.ShowMessage("E133");
                 return false;
             }
+          
         }
 
         private void InsertUpdate(int mode)
@@ -858,7 +894,7 @@ namespace MasterTouroku_Shiiresaki
                     DisablePanel(PanelDetail);
                     ScVendor.SearchEnable = true;
                     ScCopyVendor.SearchEnable = false;
-                    //F9Visible = true;
+                    F9Visible = true;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
@@ -1009,7 +1045,7 @@ namespace MasterTouroku_Shiiresaki
         private void ScCopyVendor_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-            {
+            {               
                 type = 2;
                 F11();
             }

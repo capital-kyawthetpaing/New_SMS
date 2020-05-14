@@ -58,6 +58,9 @@ namespace Base.Client
         protected string StoreCD { get; set; }
         protected string ChangeDate { get; set; }
         public Control PreviousCtrl { get; set; }
+
+        protected bool ShowCloseMessage = true;
+
         /// <summary>
         ///     ''' 終了押下時
         ///     ''' </summary>
@@ -373,7 +376,13 @@ namespace Base.Client
             {
                 Button btn = (Button)sender;
                 if (!string.IsNullOrWhiteSpace(btn.Text))
-                    ButtonFunction(btn.Tag.ToString());
+                {
+                    if(ShowCloseMessage)
+                        ButtonFunction(btn.Tag.ToString());
+                    else
+                        EndSec();
+                }
+                  
             }
             catch (Exception ex)
             {

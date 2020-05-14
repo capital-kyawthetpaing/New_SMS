@@ -2129,11 +2129,12 @@ namespace HacchuuNyuuryoku
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-                {
-                    if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
-                        return false;
-                }
+                if(w_CtlRow < ClsGridHacchuu.gc_P_GYO)
+                    if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                    {
+                        if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
+                            return false;
+                    }
             }
 
             switch (col)

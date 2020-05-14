@@ -2756,7 +2756,8 @@ namespace TempoJuchuuNyuuryoku
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                if (w_CtlRow < ClsGridJuchuu.gc_P_GYO)
+                    if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
                         return false;
@@ -2909,25 +2910,38 @@ namespace TempoJuchuuNyuuryoku
                                 //原価単価=Function_単価取得.out原価単価	
                                 mGrid.g_DArray[row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
                             }
-
-                            if (wSuu != 0)
-                            {
-                                //税抜販売額＝Form.受注数≠Nullの場合	Function_単価取得.out税抜単価×Form.Detail.受注数
-                                mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
-                                //税込販売額=Form.受注数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.受注数	
-                                mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
-                                //原価額=Form.受注数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.受注数
-                                mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
-                            }
                             else
                             {
-                                //税抜販売額＝Form.受注数＝Nullの場合Function_単価取得.out税抜単価×1
-                                mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka));
-                                //税込販売額=Form.受注数＝Nullの場合Function_単価取得.out税込単価×1
-                                mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
-                                //原価額=Form.受注数＝Nullの場合Function_単価取得.out原価単価×	1
-                                mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice));
+                                //販売単価		
+                                mGrid.g_DArray[row].JuchuuUnitPrice = "0";
+                                //原価単価
+                                mGrid.g_DArray[row].CostUnitPrice = "0";
                             }
+
+                            //	(Form.受注数＝Null	の場合は×１とする)
+                            if (wSuu.Equals(0))
+                                wSuu = 1;
+
+                            //税抜販売額
+                            if (mGrid.g_DArray[row].VariousFLG.Equals(1))
+                            {
+                                //（諸口の場合は入力された税込単価から税抜単価を都度計算する）
+                                //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.受注数
+                                decimal tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[row].JuchuuUnitPrice), mGrid.g_DArray[row].TaxRateFLG, ymd);
+
+                                mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", tanka * wSuu);
+                            }
+                            else if (mGrid.g_DArray[row].VariousFLG.Equals(0))
+                            {
+                                //税抜販売額＝Form.受注数＝Nullの場合Function_単価取得.out税抜単価×Form.受注数
+                                mGrid.g_DArray[row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
+                            }
+
+                            //税込販売額=Form.受注数≠Nullの場合Function_単価取得.out税込単価×Form.Detail.受注数	
+                            mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
+                            //原価額=Form.受注数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.受注数
+                            mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
+        
                             //粗利額=⑦Form.税抜販売額－⑩Form.原価額				
                             mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
 
@@ -3081,6 +3095,15 @@ namespace TempoJuchuuNyuuryoku
                         //Ｅ１０１  
                         bbl.ShowMessage("E101");
                         return false;
+                    }
+                    break;
+
+                case (int)ClsGridJuchuu.ColNO.ChkTyokuso:
+                    bool Check = mGrid.g_DArray[row].ChkTyokuso;
+                    if (Check)
+                    {
+                        mGrid.g_DArray[row].ArrivePlanDate = "";
+                        mGrid.g_DArray[row].KariHikiateNO = "";
                     }
                     break;
 
@@ -4345,13 +4368,38 @@ namespace TempoJuchuuNyuuryoku
 
                                     bool ret = bbl.Fnc_UnitPrice(fue);
                                     if (ret)
+                                    {   
+                                        //数量変更時も単価再計算
+                                        //販売単価=Function_単価取得.out税込単価		
+                                        mGrid.g_DArray[w_Row].JuchuuUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka));
+
+                                        //原価単価=Function_単価取得.out原価単価	
+                                        mGrid.g_DArray[w_Row].CostUnitPrice = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka));
+                                    }
+                                    else
                                     {
+                                        //販売単価		
+                                        mGrid.g_DArray[w_Row].JuchuuUnitPrice = "0";
+                                        //原価単価
+                                        mGrid.g_DArray[w_Row].CostUnitPrice = "0";
                                     }
 
-                                    //税抜販売額=Function_消費税計算.out金額１
-                                    mGrid.g_DArray[w_Row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(bbl.Z_Set(fue.ZeikomiTanka) * wSuu, mGrid.g_DArray[w_Row].TaxRateFLG, ymd));
+                                    //税抜販売額
+                                    if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                                    {
+                                        //（諸口の場合は入力された税込単価から税抜単価を都度計算する）
+                                        //税抜販売額＝Function_消費税計算.out金額１×Form.Detail.受注数
+                                        wTanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd);
 
-                                    //税込販売額←	Function_単価取得.out税込単価×	Form.Detail.見積数			
+                                        mGrid.g_DArray[w_Row].JuchuuHontaiGaku = string.Format("{0:#,##0}", wTanka * wSuu);
+                                    }
+                                    else if (mGrid.g_DArray[w_Row].VariousFLG.Equals(0))
+                                    {
+                                        //税抜販売額＝Function_単価取得.out税抜単価×Form.受注数
+                                        mGrid.g_DArray[w_Row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeinukiTanka) * wSuu);
+                                    }
+
+                                    //税込販売額←	Function_単価取得.out税込単価×	Form.Detail.受注数			
                                     mGrid.g_DArray[w_Row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
 
                                     //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
@@ -4359,14 +4407,14 @@ namespace TempoJuchuuNyuuryoku
 
                                     if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
                                     {
-                                        //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.見積数
+                                        //通常税額←TaxRateFLG＝1の時のFunction_単価取得.out消費税額×Form.Detail.受注数
                                         mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(fue.Zei) * wSuu;
                                         mGrid.g_DArray[w_Row].KeigenTax = 0;
                                     }
                                     else if (mGrid.g_DArray[w_Row].TaxRateFLG == 2)
                                     {
                                         mGrid.g_DArray[w_Row].MitsumoriTax = 0;
-                                        //軽減税額←TaxRateFLG＝2の時のFunction_単価取得.out消費税額×Form.Detail.見積数
+                                        //軽減税額←TaxRateFLG＝2の時のFunction_単価取得.out消費税額×Form.Detail.受注数
                                         mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(fue.Zei) * wSuu;
                                     }
                                     else
@@ -4382,11 +4430,12 @@ namespace TempoJuchuuNyuuryoku
                                 //paremetersin計算モード←2
                                 //in基準日←Form.見積日
                                 //in軽減税率FLG←⑫TaxRateFLG
-                                //in金額←Form.Detail.販売単価×Form.Detail.見積数
-                                //税抜販売額←Function_消費税計算.out金額１
-                                mGrid.g_DArray[w_Row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(wTanka * wSuu, mGrid.g_DArray[w_Row].TaxRateFLG, ymd));
+                                //in金額←Form.Detail.販売単価
 
-                                //税込販売額←Form.Detail.販売単価×Form.Detail.見積数
+                                //税抜販売額←Function_消費税計算.out金額１×Form.Detail.受注数
+                                mGrid.g_DArray[w_Row].JuchuuHontaiGaku = string.Format("{0:#,##0}", bbl.GetZeinukiKingaku(wTanka , mGrid.g_DArray[w_Row].TaxRateFLG, ymd) * wSuu);
+
+                                //税込販売額←Form.Detail.販売単価×Form.Detail.受注数
                                 mGrid.g_DArray[w_Row].JuchuuGaku = string.Format("{0:#,##0}", wTanka * wSuu);
 
                                 //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
@@ -4412,13 +4461,8 @@ namespace TempoJuchuuNyuuryoku
                                 break;
 
                             case (int)ClsGridJuchuu.ColNO.CostUnitPrice: //原価単価
-                                int tanka;
-                                int su;
-                                //原価額=Form.Detail.原価単価×	Form.Detail.見積数
-                                if (int.TryParse(mGrid.g_DArray[w_Row].CostUnitPrice, out tanka) && int.TryParse(mGrid.g_DArray[w_Row].JuchuuSuu, out su))
-                                    mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", tanka * su);
-                                else
-                                    mGrid.g_DArray[w_Row].CostGaku = "0";
+                                //原価額=Form.Detail.原価単価×	Form.Detail.受注数
+                                mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].CostUnitPrice) * bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu));
 
                                 //粗利額
                                 mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku)); // 

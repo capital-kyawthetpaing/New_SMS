@@ -103,6 +103,7 @@
             this.txtTargetDateTo.IntegerPart = 0;
             this.txtTargetDateTo.IsCorrectDate = true;
             this.txtTargetDateTo.isEnterKeyDown = false;
+            this.txtTargetDateTo.isMaxLengthErr = false;
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
             this.txtTargetDateTo.Length = 10;
@@ -147,6 +148,7 @@
             this.txtTargetDateFrom.IntegerPart = 0;
             this.txtTargetDateFrom.IsCorrectDate = true;
             this.txtTargetDateFrom.isEnterKeyDown = false;
+            this.txtTargetDateFrom.isMaxLengthErr = false;
             this.txtTargetDateFrom.IsNumber = true;
             this.txtTargetDateFrom.IsShop = false;
             this.txtTargetDateFrom.Length = 10;
