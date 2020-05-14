@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle100 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle101 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle108 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle102 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle103 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle104 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle105 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle106 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle107 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
@@ -48,12 +48,6 @@
             this.ckmShop_Label11 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
             this.dgvKaniiKensaku = new CKM_Controls.CKMShop_GridView();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtZipCD = new CKM_Controls.CKM_TextBox();
             this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.txtCustomerCD = new CKM_Controls.CKM_TextBox();
@@ -61,6 +55,12 @@
             this.txtDBO = new CKM_Controls.CKM_TextBox();
             this.btnShow = new CKM_Controls.CKM_Button();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKaniiKensaku)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(167, 72);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(108, 66);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(91, 35);
             this.ckmShop_Label4.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(730, 170);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(718, 162);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(128, 35);
             this.ckmShop_Label1.TabIndex = 122;
@@ -105,7 +105,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(1016, 170);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(1005, 162);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label5.TabIndex = 123;
@@ -121,7 +121,7 @@
             this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(340, 170);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(325, 162);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label6.TabIndex = 124;
@@ -137,7 +137,7 @@
             this.ckmShop_Label7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(1619, 170);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(1603, 157);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(293, 35);
             this.ckmShop_Label7.TabIndex = 125;
@@ -153,7 +153,7 @@
             this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(132, 122);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(73, 116);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
             this.ckmShop_Label8.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label8.TabIndex = 126;
@@ -169,7 +169,7 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(1021, 22);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(979, 16);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label9.TabIndex = 127;
@@ -185,7 +185,7 @@
             this.ckmShop_Label10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label10.Location = new System.Drawing.Point(87, 170);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(72, 162);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
             this.ckmShop_Label10.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label10.TabIndex = 128;
@@ -201,7 +201,7 @@
             this.ckmShop_Label11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label11.Location = new System.Drawing.Point(588, 22);
+            this.ckmShop_Label11.Location = new System.Drawing.Point(538, 16);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
             this.ckmShop_Label11.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label11.TabIndex = 129;
@@ -217,7 +217,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(97, 22);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(38, 16);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label12.TabIndex = 130;
@@ -231,19 +231,19 @@
             this.dgvKaniiKensaku.AllowUserToDeleteRows = false;
             this.dgvKaniiKensaku.AllowUserToResizeRows = false;
             this.dgvKaniiKensaku.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.Control;
-            dataGridViewCellStyle100.BackColor = System.Drawing.SystemColors.Control;
-            this.dgvKaniiKensaku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle100;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            this.dgvKaniiKensaku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvKaniiKensaku.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.dgvKaniiKensaku.BackgroundColor = System.Drawing.Color.White;
             this.dgvKaniiKensaku.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle101.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle101.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle101.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle101.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle101.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle101.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKaniiKensaku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle101;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKaniiKensaku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvKaniiKensaku.ColumnHeadersHeight = 22;
             this.dgvKaniiKensaku.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvKaniiKensaku.ColumnHeadersVisible = false;
@@ -254,14 +254,14 @@
             this.colZipCD,
             this.colAddress,
             this.colSaleDate_StoreCD});
-            dataGridViewCellStyle108.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle108.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle108.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle108.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle108.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle108.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle108.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvKaniiKensaku.DefaultCellStyle = dataGridViewCellStyle108;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvKaniiKensaku.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvKaniiKensaku.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvKaniiKensaku.EnableHeadersVisualStyles = false;
             this.dgvKaniiKensaku.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -270,91 +270,19 @@
             this.dgvKaniiKensaku.HeaderHeight_ = 22;
             this.dgvKaniiKensaku.HeaderVisible = false;
             this.dgvKaniiKensaku.Height_ = 511;
-            this.dgvKaniiKensaku.Location = new System.Drawing.Point(12, 209);
+            this.dgvKaniiKensaku.Location = new System.Drawing.Point(12, 201);
             this.dgvKaniiKensaku.Name = "dgvKaniiKensaku";
             this.dgvKaniiKensaku.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvKaniiKensaku.RowHeight_ = 20;
             this.dgvKaniiKensaku.RowTemplate.Height = 20;
             this.dgvKaniiKensaku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvKaniiKensaku.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1875, 620);
+            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1900, 630);
             this.dgvKaniiKensaku.TabIndex = 6;
             this.dgvKaniiKensaku.UseRowNo = true;
             this.dgvKaniiKensaku.UseSetting = true;
             this.dgvKaniiKensaku.Width_ = 1875;
             this.dgvKaniiKensaku.DoubleClick += new System.EventHandler(this.dgvKaniiKensaku_DoubleClick);
-            // 
-            // colNo
-            // 
-            this.colNo.DataPropertyName = "No";
-            dataGridViewCellStyle102.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle102;
-            this.colNo.HeaderText = "No";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 80;
-            // 
-            // colCustomerCD
-            // 
-            this.colCustomerCD.DataPropertyName = "CustomerCD";
-            dataGridViewCellStyle103.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle103;
-            this.colCustomerCD.HeaderText = "会員番号";
-            this.colCustomerCD.Name = "colCustomerCD";
-            this.colCustomerCD.ReadOnly = true;
-            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerCD.Width = 250;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            dataGridViewCellStyle104.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle104;
-            this.colCustomerName.HeaderText = "会員名";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerName.Width = 400;
-            // 
-            // colZipCD
-            // 
-            this.colZipCD.DataPropertyName = "ZipCD";
-            dataGridViewCellStyle105.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle105;
-            this.colZipCD.HeaderText = "〒/TEL";
-            this.colZipCD.Name = "colZipCD";
-            this.colZipCD.ReadOnly = true;
-            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colZipCD.Width = 280;
-            // 
-            // colAddress
-            // 
-            this.colAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle106.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAddress.DefaultCellStyle = dataGridViewCellStyle106;
-            this.colAddress.HeaderText = "住所";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAddress.Width = 635;
-            // 
-            // colSaleDate_StoreCD
-            // 
-            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
-            dataGridViewCellStyle107.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle107;
-            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
-            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
-            this.colSaleDate_StoreCD.ReadOnly = true;
-            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSaleDate_StoreCD.Width = 210;
             // 
             // txtZipCD
             // 
@@ -374,7 +302,7 @@
             this.txtZipCD.IsNumber = true;
             this.txtZipCD.IsShop = false;
             this.txtZipCD.Length = 10;
-            this.txtZipCD.Location = new System.Drawing.Point(261, 19);
+            this.txtZipCD.Location = new System.Drawing.Point(202, 13);
             this.txtZipCD.MaxLength = 10;
             this.txtZipCD.MoveNext = true;
             this.txtZipCD.Name = "txtZipCD";
@@ -401,7 +329,7 @@
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 30;
-            this.txtKanaName.Location = new System.Drawing.Point(261, 69);
+            this.txtKanaName.Location = new System.Drawing.Point(202, 63);
             this.txtKanaName.MaxLength = 30;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
@@ -427,7 +355,7 @@
             this.txtCustomerCD.IsNumber = true;
             this.txtCustomerCD.IsShop = false;
             this.txtCustomerCD.Length = 13;
-            this.txtCustomerCD.Location = new System.Drawing.Point(1184, 19);
+            this.txtCustomerCD.Location = new System.Drawing.Point(1142, 13);
             this.txtCustomerCD.MaxLength = 13;
             this.txtCustomerCD.MoveNext = true;
             this.txtCustomerCD.Name = "txtCustomerCD";
@@ -454,7 +382,7 @@
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
             this.txtCustomerName.Length = 30;
-            this.txtCustomerName.Location = new System.Drawing.Point(261, 119);
+            this.txtCustomerName.Location = new System.Drawing.Point(202, 113);
             this.txtCustomerName.MaxLength = 30;
             this.txtCustomerName.MoveNext = true;
             this.txtCustomerName.Name = "txtCustomerName";
@@ -480,7 +408,7 @@
             this.txtDBO.IsNumber = true;
             this.txtDBO.IsShop = false;
             this.txtDBO.Length = 10;
-            this.txtDBO.Location = new System.Drawing.Point(710, 19);
+            this.txtDBO.Location = new System.Drawing.Point(660, 13);
             this.txtDBO.MaxLength = 10;
             this.txtDBO.MoveNext = true;
             this.txtDBO.Name = "txtDBO";
@@ -499,7 +427,7 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnShow.Location = new System.Drawing.Point(1674, 119);
+            this.btnShow.Location = new System.Drawing.Point(1677, 106);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(200, 42);
@@ -532,6 +460,78 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1924, 833);
             this.panelDetail.TabIndex = 0;
+            // 
+            // colNo
+            // 
+            this.colNo.DataPropertyName = "No";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNo.HeaderText = "No";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNo.Width = 65;
+            // 
+            // colCustomerCD
+            // 
+            this.colCustomerCD.DataPropertyName = "CustomerCD";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colCustomerCD.HeaderText = "会員番号";
+            this.colCustomerCD.Name = "colCustomerCD";
+            this.colCustomerCD.ReadOnly = true;
+            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerCD.Width = 250;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.DataPropertyName = "CustomerName";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colCustomerName.HeaderText = "会員名";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerName.Width = 400;
+            // 
+            // colZipCD
+            // 
+            this.colZipCD.DataPropertyName = "ZipCD";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colZipCD.HeaderText = "〒/TEL";
+            this.colZipCD.Name = "colZipCD";
+            this.colZipCD.ReadOnly = true;
+            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colZipCD.Width = 280;
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "Address";
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAddress.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colAddress.HeaderText = "住所";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAddress.Width = 600;
+            // 
+            // colSaleDate_StoreCD
+            // 
+            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
+            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
+            this.colSaleDate_StoreCD.ReadOnly = true;
+            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSaleDate_StoreCD.Width = 260;
             // 
             // TempoRegiKaiinKensaku
             // 
