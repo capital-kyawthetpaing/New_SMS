@@ -2108,6 +2108,7 @@ namespace ShiireNyuuryokuFromNyuuka
             dt.Columns.Add("SKUCD", typeof(string));
             dt.Columns.Add("AdminNO", typeof(int));
             dt.Columns.Add("JanCD", typeof(string));
+            dt.Columns.Add("MakerItem", typeof(string));
             dt.Columns.Add("ItemName", typeof(string));
             dt.Columns.Add("ColorName", typeof(string));
             dt.Columns.Add("SizeName", typeof(string));
@@ -2162,6 +2163,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         , mGrid.g_DArray[RW].SKUCD == "" ? null : mGrid.g_DArray[RW].SKUCD
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdminNO)
                         , mGrid.g_DArray[RW].JanCD == "" ? null : mGrid.g_DArray[RW].JanCD
+                        , mGrid.g_DArray[RW].MakerItem == "" ? null : mGrid.g_DArray[RW].MakerItem
                         , mGrid.g_DArray[RW].SKUName == "" ? null : mGrid.g_DArray[RW].SKUName
                         , mGrid.g_DArray[RW].ColorName == "" ? null : mGrid.g_DArray[RW].ColorName
                         , mGrid.g_DArray[RW].SizeName == "" ? null : mGrid.g_DArray[RW].SizeName
