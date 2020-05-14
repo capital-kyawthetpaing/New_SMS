@@ -74,7 +74,7 @@ namespace CKM_Controls
                // Length = length_;
             }
 
-        } 
+        }
 
         private Bytes CtrlByte { get; set; }
         public enum Bytes

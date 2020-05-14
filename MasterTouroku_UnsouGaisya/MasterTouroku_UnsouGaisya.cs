@@ -46,7 +46,24 @@ namespace MasterTouroku_UnsouGaisya
             string ymd = bbl.GetDate();
             //cboIdentity.Bind(string.Empty,"26");
             cboIdentity.Bind(ymd);
+            BindNormal();
         }
+
+        private void BindNormal()
+        {
+            DataTable dtT = new DataTable();
+            dtT.Columns.Add("TypeId", typeof(int));
+            dtT.Columns.Add("TypeName", typeof(string));
+            //dtT.Rows.Add(0, string.Empty);
+            dtT.Rows.Add(0, "普通便");
+            dtT.Rows.Add(1, "代引き");
+            dtT.Rows.Add(2, "ネコポス");
+
+            cboNormalType.ValueMember = "TypeId";
+            cboNormalType.DisplayMember = "TypeName";
+            cboNormalType.DataSource = dtT;
+        }
+
         private void SetRequireField()
         {
             ScShippingCD.TxtCode.Require(true);
@@ -425,6 +442,13 @@ namespace MasterTouroku_UnsouGaisya
                 {
                     mtugsbl.ShowMessage("E102");
                     cboIdentity.Focus();
+                    return false;
+                }
+
+                if(string.IsNullOrWhiteSpace(cboNormalType.Text.ToString()))
+                {
+                    mtugsbl.ShowMessage("E102");
+                    cboNormalType.Focus();
                     return false;
                 }
 
