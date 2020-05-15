@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.TB_Shohinmei = new CKM_Controls.CKM_TextBox();
             this.LBLSoko = new CKM_Controls.CKM_Label();
@@ -129,6 +128,7 @@
             this.TB_Shohinmei.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Shohinmei.BackColor = System.Drawing.Color.White;
             this.TB_Shohinmei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Shohinmei.ClientColor = System.Drawing.Color.White;
             this.TB_Shohinmei.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Shohinmei.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Shohinmei.DecimalPlace = 0;
@@ -138,9 +138,10 @@
             this.TB_Shohinmei.IntegerPart = 0;
             this.TB_Shohinmei.IsCorrectDate = true;
             this.TB_Shohinmei.isEnterKeyDown = false;
+            this.TB_Shohinmei.isMaxLengthErr = false;
             this.TB_Shohinmei.IsNumber = true;
             this.TB_Shohinmei.IsShop = false;
-            this.TB_Shohinmei.Length = 80;
+            this.TB_Shohinmei.Length = 40;
             this.TB_Shohinmei.Location = new System.Drawing.Point(135, 9);
             this.TB_Shohinmei.MaxLength = 40;
             this.TB_Shohinmei.MoveNext = true;
@@ -159,7 +160,7 @@
             this.LBLSoko.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LBLSoko.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LBLSoko.ForeColor = System.Drawing.Color.Black;
-            this.LBLSoko.Location = new System.Drawing.Point(100, 163);
+            this.LBLSoko.Location = new System.Drawing.Point(100, 152);
             this.LBLSoko.Name = "LBLSoko";
             this.LBLSoko.Size = new System.Drawing.Size(31, 12);
             this.LBLSoko.TabIndex = 725;
@@ -173,9 +174,10 @@
             this.CB_Soko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.CB_Soko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CB_Soko.Flag = 0;
             this.CB_Soko.FormattingEnabled = true;
             this.CB_Soko.Length = 10;
-            this.CB_Soko.Location = new System.Drawing.Point(135, 159);
+            this.CB_Soko.Location = new System.Drawing.Point(135, 148);
             this.CB_Soko.MaxLength = 10;
             this.CB_Soko.MoveNext = true;
             this.CB_Soko.Name = "CB_Soko";
@@ -205,6 +207,7 @@
             this.TB_ColorName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_ColorName.BackColor = System.Drawing.Color.White;
             this.TB_ColorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_ColorName.ClientColor = System.Drawing.Color.White;
             this.TB_ColorName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_ColorName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_ColorName.DecimalPlace = 0;
@@ -214,6 +217,7 @@
             this.TB_ColorName.IntegerPart = 0;
             this.TB_ColorName.IsCorrectDate = true;
             this.TB_ColorName.isEnterKeyDown = false;
+            this.TB_ColorName.isMaxLengthErr = false;
             this.TB_ColorName.IsNumber = true;
             this.TB_ColorName.IsShop = false;
             this.TB_ColorName.Length = 10;
@@ -235,7 +239,7 @@
             this.LB_Item.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_Item.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_Item.ForeColor = System.Drawing.Color.Black;
-            this.LB_Item.Location = new System.Drawing.Point(88, 102);
+            this.LB_Item.Location = new System.Drawing.Point(88, 96);
             this.LB_Item.Name = "LB_Item";
             this.LB_Item.Size = new System.Drawing.Size(33, 12);
             this.LB_Item.TabIndex = 729;
@@ -249,6 +253,7 @@
             this.TB_item.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_item.BackColor = System.Drawing.Color.White;
             this.TB_item.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_item.ClientColor = System.Drawing.Color.White;
             this.TB_item.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_item.DecimalPlace = 0;
@@ -258,16 +263,17 @@
             this.TB_item.IntegerPart = 0;
             this.TB_item.IsCorrectDate = true;
             this.TB_item.isEnterKeyDown = false;
+            this.TB_item.isMaxLengthErr = false;
             this.TB_item.IsNumber = true;
             this.TB_item.IsShop = false;
             this.TB_item.Length = 32;
-            this.TB_item.Location = new System.Drawing.Point(135, 99);
+            this.TB_item.Location = new System.Drawing.Point(135, 93);
             this.TB_item.MaxLength = 32;
             this.TB_item.MoveNext = true;
             this.TB_item.Name = "TB_item";
             this.TB_item.Size = new System.Drawing.Size(200, 19);
             this.TB_item.TabIndex = 728;
-            this.TB_item.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_item.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3X2";
             this.TB_item.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // LB_SizeName
@@ -279,7 +285,7 @@
             this.LB_SizeName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_SizeName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_SizeName.ForeColor = System.Drawing.Color.Black;
-            this.LB_SizeName.Location = new System.Drawing.Point(88, 71);
+            this.LB_SizeName.Location = new System.Drawing.Point(88, 68);
             this.LB_SizeName.Name = "LB_SizeName";
             this.LB_SizeName.Size = new System.Drawing.Size(44, 12);
             this.LB_SizeName.TabIndex = 731;
@@ -293,6 +299,7 @@
             this.TB_SizeName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_SizeName.BackColor = System.Drawing.Color.White;
             this.TB_SizeName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_SizeName.ClientColor = System.Drawing.Color.White;
             this.TB_SizeName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_SizeName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_SizeName.DecimalPlace = 0;
@@ -302,16 +309,17 @@
             this.TB_SizeName.IntegerPart = 0;
             this.TB_SizeName.IsCorrectDate = true;
             this.TB_SizeName.isEnterKeyDown = false;
+            this.TB_SizeName.isMaxLengthErr = false;
             this.TB_SizeName.IsNumber = true;
             this.TB_SizeName.IsShop = false;
             this.TB_SizeName.Length = 10;
-            this.TB_SizeName.Location = new System.Drawing.Point(135, 68);
+            this.TB_SizeName.Location = new System.Drawing.Point(135, 65);
             this.TB_SizeName.MaxLength = 10;
             this.TB_SizeName.MoveNext = true;
             this.TB_SizeName.Name = "TB_SizeName";
             this.TB_SizeName.Size = new System.Drawing.Size(130, 19);
             this.TB_SizeName.TabIndex = 730;
-            this.TB_SizeName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_SizeName.Text = "ＸＸＸＸＸＸＸＸＸ10";
             this.TB_SizeName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // TB_Skucd
@@ -320,6 +328,7 @@
             this.TB_Skucd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Skucd.BackColor = System.Drawing.Color.White;
             this.TB_Skucd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Skucd.ClientColor = System.Drawing.Color.White;
             this.TB_Skucd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_Skucd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Skucd.DecimalPlace = 0;
@@ -329,16 +338,17 @@
             this.TB_Skucd.IntegerPart = 0;
             this.TB_Skucd.IsCorrectDate = true;
             this.TB_Skucd.isEnterKeyDown = false;
+            this.TB_Skucd.isMaxLengthErr = false;
             this.TB_Skucd.IsNumber = true;
             this.TB_Skucd.IsShop = false;
             this.TB_Skucd.Length = 32;
-            this.TB_Skucd.Location = new System.Drawing.Point(136, 131);
+            this.TB_Skucd.Location = new System.Drawing.Point(136, 119);
             this.TB_Skucd.MaxLength = 32;
             this.TB_Skucd.MoveNext = true;
             this.TB_Skucd.Name = "TB_Skucd";
             this.TB_Skucd.Size = new System.Drawing.Size(200, 19);
             this.TB_Skucd.TabIndex = 732;
-            this.TB_Skucd.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_Skucd.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.TB_Skucd.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // LB_makerCD
@@ -350,7 +360,7 @@
             this.LB_makerCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_makerCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_makerCD.ForeColor = System.Drawing.Color.Black;
-            this.LB_makerCD.Location = new System.Drawing.Point(390, 138);
+            this.LB_makerCD.Location = new System.Drawing.Point(390, 126);
             this.LB_makerCD.Name = "LB_makerCD";
             this.LB_makerCD.Size = new System.Drawing.Size(97, 12);
             this.LB_makerCD.TabIndex = 735;
@@ -364,6 +374,7 @@
             this.TB_makerCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_makerCD.BackColor = System.Drawing.Color.White;
             this.TB_makerCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_makerCD.ClientColor = System.Drawing.Color.White;
             this.TB_makerCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_makerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_makerCD.DecimalPlace = 0;
@@ -373,16 +384,17 @@
             this.TB_makerCD.IntegerPart = 0;
             this.TB_makerCD.IsCorrectDate = true;
             this.TB_makerCD.isEnterKeyDown = false;
+            this.TB_makerCD.isMaxLengthErr = false;
             this.TB_makerCD.IsNumber = true;
             this.TB_makerCD.IsShop = false;
-            this.TB_makerCD.Length = 32;
-            this.TB_makerCD.Location = new System.Drawing.Point(491, 135);
-            this.TB_makerCD.MaxLength = 32;
+            this.TB_makerCD.Length = 30;
+            this.TB_makerCD.Location = new System.Drawing.Point(491, 123);
+            this.TB_makerCD.MaxLength = 30;
             this.TB_makerCD.MoveNext = true;
             this.TB_makerCD.Name = "TB_makerCD";
             this.TB_makerCD.Size = new System.Drawing.Size(200, 19);
             this.TB_makerCD.TabIndex = 734;
-            this.TB_makerCD.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_makerCD.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.TB_makerCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // TB_Jancd
@@ -391,6 +403,7 @@
             this.TB_Jancd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Jancd.BackColor = System.Drawing.Color.White;
             this.TB_Jancd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Jancd.ClientColor = System.Drawing.Color.White;
             this.TB_Jancd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TB_Jancd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TB_Jancd.DecimalPlace = 0;
@@ -400,16 +413,17 @@
             this.TB_Jancd.IntegerPart = 0;
             this.TB_Jancd.IsCorrectDate = true;
             this.TB_Jancd.isEnterKeyDown = false;
+            this.TB_Jancd.isMaxLengthErr = false;
             this.TB_Jancd.IsNumber = true;
             this.TB_Jancd.IsShop = false;
-            this.TB_Jancd.Length = 32;
-            this.TB_Jancd.Location = new System.Drawing.Point(491, 101);
-            this.TB_Jancd.MaxLength = 32;
+            this.TB_Jancd.Length = 13;
+            this.TB_Jancd.Location = new System.Drawing.Point(491, 94);
+            this.TB_Jancd.MaxLength = 13;
             this.TB_Jancd.MoveNext = true;
             this.TB_Jancd.Name = "TB_Jancd";
             this.TB_Jancd.Size = new System.Drawing.Size(200, 19);
             this.TB_Jancd.TabIndex = 736;
-            this.TB_Jancd.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_Jancd.Text = "XXXXXXXXX1XX3";
             this.TB_Jancd.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // LB_Brand
@@ -421,7 +435,7 @@
             this.LB_Brand.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_Brand.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_Brand.ForeColor = System.Drawing.Color.Black;
-            this.LB_Brand.Location = new System.Drawing.Point(431, 49);
+            this.LB_Brand.Location = new System.Drawing.Point(431, 44);
             this.LB_Brand.Name = "LB_Brand";
             this.LB_Brand.Size = new System.Drawing.Size(57, 12);
             this.LB_Brand.TabIndex = 739;
@@ -435,6 +449,7 @@
             this.TB_Brand.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TB_Brand.BackColor = System.Drawing.Color.White;
             this.TB_Brand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TB_Brand.ClientColor = System.Drawing.Color.White;
             this.TB_Brand.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TB_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TB_Brand.DecimalPlace = 0;
@@ -444,16 +459,17 @@
             this.TB_Brand.IntegerPart = 0;
             this.TB_Brand.IsCorrectDate = true;
             this.TB_Brand.isEnterKeyDown = false;
+            this.TB_Brand.isMaxLengthErr = false;
             this.TB_Brand.IsNumber = true;
             this.TB_Brand.IsShop = false;
             this.TB_Brand.Length = 34;
-            this.TB_Brand.Location = new System.Drawing.Point(491, 46);
+            this.TB_Brand.Location = new System.Drawing.Point(491, 41);
             this.TB_Brand.MaxLength = 34;
             this.TB_Brand.MoveNext = true;
             this.TB_Brand.Name = "TB_Brand";
             this.TB_Brand.Size = new System.Drawing.Size(250, 19);
             this.TB_Brand.TabIndex = 738;
-            this.TB_Brand.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.TB_Brand.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3XXXXXXXXX4";
             this.TB_Brand.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label4
@@ -461,7 +477,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label4.Location = new System.Drawing.Point(448, 105);
+            this.label4.Location = new System.Drawing.Point(448, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 12);
             this.label4.TabIndex = 740;
@@ -473,7 +489,7 @@
             this.LB_Skucd.AutoSize = true;
             this.LB_Skucd.BackColor = System.Drawing.Color.Transparent;
             this.LB_Skucd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.LB_Skucd.Location = new System.Drawing.Point(85, 135);
+            this.LB_Skucd.Location = new System.Drawing.Point(85, 123);
             this.LB_Skucd.Name = "LB_Skucd";
             this.LB_Skucd.Size = new System.Drawing.Size(47, 12);
             this.LB_Skucd.TabIndex = 741;
@@ -485,17 +501,17 @@
             this.GV_PlanArrival.AllowUserToAddRows = false;
             this.GV_PlanArrival.AllowUserToDeleteRows = false;
             this.GV_PlanArrival.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_PlanArrival.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_PlanArrival.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
             this.GV_PlanArrival.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_PlanArrival.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_PlanArrival.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.GV_PlanArrival.ColumnHeadersHeight = 25;
             this.GV_PlanArrival.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.入荷予定,
@@ -503,17 +519,9 @@
             this.入荷数量,
             this.発注番号,
             this.引当数量});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_PlanArrival.DefaultCellStyle = dataGridViewCellStyle8;
             this.GV_PlanArrival.EnableHeadersVisualStyles = false;
             this.GV_PlanArrival.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.GV_PlanArrival.Location = new System.Drawing.Point(113, 212);
+            this.GV_PlanArrival.Location = new System.Drawing.Point(113, 206);
             this.GV_PlanArrival.Name = "GV_PlanArrival";
             this.GV_PlanArrival.Size = new System.Drawing.Size(542, 211);
             this.GV_PlanArrival.TabIndex = 742;
@@ -523,40 +531,40 @@
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle10;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
             // 
             // 倉庫
             // 
             this.倉庫.DataPropertyName = "SoukoName";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.倉庫.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.倉庫.DefaultCellStyle = dataGridViewCellStyle11;
             this.倉庫.HeaderText = "倉庫";
             this.倉庫.Name = "倉庫";
             // 
             // 入荷数量
             // 
             this.入荷数量.DataPropertyName = "ArrivalPlanSu";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle12;
             this.入荷数量.HeaderText = "入荷数量";
             this.入荷数量.Name = "入荷数量";
             // 
             // 発注番号
             // 
             this.発注番号.DataPropertyName = "Number";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.発注番号.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.発注番号.DefaultCellStyle = dataGridViewCellStyle13;
             this.発注番号.HeaderText = "発注番号";
             this.発注番号.Name = "発注番号";
             // 
             // 引当数量
             // 
             this.引当数量.DataPropertyName = "AllowableSU";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.引当数量.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.引当数量.DefaultCellStyle = dataGridViewCellStyle14;
             this.引当数量.HeaderText = "引当数量";
             this.引当数量.Name = "引当数量";
             // 
