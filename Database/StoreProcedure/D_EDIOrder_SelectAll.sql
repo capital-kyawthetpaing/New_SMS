@@ -30,8 +30,9 @@ BEGIN
              ORDER BY M.ChangeDate desc) AS SKUName
     FROM D_EDIOrder AS DH
     LEFT JOIN ( SELECT EDIOrderNO
-                      ,MIN(EDIOrderRows) OVER(PARTITION by EDIOrderNO) AS MinRow
+                      ,MIN(EDIOrderRows) AS MinRow
                   FROM D_EDIOrderDetails
+                 GROUP BY EDIOrderNO
                ) AS MM ON DH.EDIOrderNO = MM.EDIOrderNO
     LEFT OUTER JOIN D_EDIOrderDetails AS DM ON MM.EDIOrderNO = DM.EDIOrderNO AND MM.MinRow = DM.EDIOrderRows
     WHERE DH.OrderDate >= (CASE WHEN @OrderDateFrom <> '' THEN CONVERT(DATE, @OrderDateFrom) ELSE DH.OrderDate END)

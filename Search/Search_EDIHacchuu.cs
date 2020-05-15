@@ -240,7 +240,7 @@ namespace Search
                     break;
 
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         ehbl.ShowMessage("E102");
                         CboStoreCD.Focus();
@@ -271,10 +271,11 @@ namespace Search
                     M_Vendor_Entity mve = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        ChangeDate = ehbl.GetDate() 
+                        ChangeDate = ehbl.GetDate() ,
+                        VendorFlg = "1"
                     };
                     Vendor_BL bl = new Vendor_BL();
-                    bool ret = bl.M_Vendor_Select(mve);
+                    bool ret = bl.M_Vendor_SelectTop1(mve);
                     if (ret)
                     {
                         ScVendor.LabelText = mve.VendorName;
