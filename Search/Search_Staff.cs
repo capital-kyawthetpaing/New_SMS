@@ -48,37 +48,9 @@ namespace Search
 
             HeaderTitleText = "スタッフ";
             this.Text = ProNm;
-            PutCursor();
+          
         }
-        protected void PutCursor()
-        {
-            var c = GetAllControls(this);
-            for (int i = 0; i < c.Count(); i++)
-            {
-                Control ctrl = c.ElementAt(i) as Control;
-                if (ctrl is CKM_TextBox ctr)
-                { ctr.Focus(); return; }
-                else if (ctrl is CKM_CheckBox ctr1)
-                { }
-                else if (ctrl is CKM_MultiLineTextBox)
-                { }
-                else if (ctrl is CKM_ComboBox)
-                { }
-                else if (ctrl is CKM_RadioButton)
-                { }
-            }
-        }
-        public IEnumerable<Control> GetAllControls(Control root)
-        {
-            foreach (Control control in root.Controls)
-            {
-                foreach (Control child in GetAllControls(control))
-                {
-                    yield return child;
-                }
-            }
-            yield return root;
-        }
+
         private void InitialControlArray()
         {
             detailControls = new Control[] { ScStore.TxtCode, ckM_TextBox1, ckM_TextBox2, ckM_TextBox3, ckM_TextBox4 };

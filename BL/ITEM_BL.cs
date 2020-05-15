@@ -111,6 +111,99 @@ namespace BL
         }
 
         /// <summary>
+        /// 商品マスタメンテよりデータ取得
+        /// </summary>
+        /// <param name="me"></param>
+        /// <remarks>指定した適用日以前で最新のデータを取得</remarks>
+        /// <returns></returns> 
+        public bool M_ITEM_SelectTop1(M_ITEM_Entity me)
+        {
+            DataTable dt = mdl.M_ITEM_SelectTop1(me);
+            if (dt.Rows.Count > 0)
+            {
+                me.ITemCD = dt.Rows[0]["ITemCD"].ToString();
+                me.ColorNO = dt.Rows[0]["ColorNO"].ToString();
+                me.SizeNO = dt.Rows[0]["SizeNO"].ToString();
+                me.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
+
+                me.VariousFLG = dt.Rows[0]["VariousFLG"].ToString();
+                me.ITemName = dt.Rows[0]["ITemName"].ToString();
+                me.KanaName = dt.Rows[0]["KanaName"].ToString();
+                me.SKUShortName = dt.Rows[0]["SKUShortName"].ToString();
+                me.EnglishName = dt.Rows[0]["EnglishName"].ToString();
+                me.SetKBN = dt.Rows[0]["SetKBN"].ToString();
+                me.PresentKBN = dt.Rows[0]["PresentKBN"].ToString();
+                me.SampleKBN = dt.Rows[0]["SampleKBN"].ToString();
+                me.DiscountKBN = dt.Rows[0]["DiscountKBN"].ToString();
+                me.ColorName = dt.Rows[0]["ColorName"].ToString();
+                me.SizeName = dt.Rows[0]["SizeName"].ToString();
+                me.WebFlg = dt.Rows[0]["WebFlg"].ToString();
+                me.RealStoreFlg = dt.Rows[0]["RealStoreFlg"].ToString();
+                me.MainVendorCD = dt.Rows[0]["MainVendorCD"].ToString();
+                me.MakerVendorCD = dt.Rows[0]["MakerVendorCD"].ToString();
+                me.BrandCD = dt.Rows[0]["BrandCD"].ToString();
+                me.MakerItem = dt.Rows[0]["MakerItem"].ToString();
+                me.TaniCD = dt.Rows[0]["TaniCD"].ToString();
+                me.SportsCD = dt.Rows[0]["SportsCD"].ToString();
+                me.SegmentCD = dt.Rows[0]["SegmentCD"].ToString();
+                me.ZaikoKBN = dt.Rows[0]["ZaikoKBN"].ToString();
+                me.Rack = dt.Rows[0]["Rack"].ToString();
+                me.VirtualFlg = dt.Rows[0]["VirtualFlg"].ToString();
+                me.DirectFlg = dt.Rows[0]["DirectFlg"].ToString();
+                me.ReserveCD = dt.Rows[0]["ReserveCD"].ToString();
+                me.NoticesCD = dt.Rows[0]["NoticesCD"].ToString();
+                me.PostageCD = dt.Rows[0]["PostageCD"].ToString();
+                me.ManufactCD = dt.Rows[0]["ManufactCD"].ToString();
+                me.ConfirmCD = dt.Rows[0]["ConfirmCD"].ToString();
+                me.WebStockFlg = dt.Rows[0]["WebStockFlg"].ToString();
+                me.StopFlg = dt.Rows[0]["StopFlg"].ToString();
+                me.DiscontinueFlg = dt.Rows[0]["DiscontinueFlg"].ToString();
+                me.InventoryAddFlg = dt.Rows[0]["InventoryAddFlg"].ToString();
+                me.MakerAddFlg = dt.Rows[0]["MakerAddFlg"].ToString();
+                me.StoreAddFlg = dt.Rows[0]["StoreAddFlg"].ToString();
+                me.NoNetOrderFlg = dt.Rows[0]["NoNetOrderFlg"].ToString();
+                me.EDIOrderFlg = dt.Rows[0]["EDIOrderFlg"].ToString();
+                me.CatalogFlg = dt.Rows[0]["CatalogFlg"].ToString();
+                me.ParcelFlg = dt.Rows[0]["ParcelFlg"].ToString();
+                me.AutoOrderFlg = dt.Rows[0]["AutoOrderFlg"].ToString();
+                me.TaxRateFLG = dt.Rows[0]["TaxRateFLG"].ToString();
+                me.CostingKBN = dt.Rows[0]["CostingKBN"].ToString();
+                me.SaleExcludedFlg = dt.Rows[0]["SaleExcludedFlg"].ToString();
+                me.PriceWithTax = dt.Rows[0]["PriceWithTax"].ToString();
+                me.PriceOutTax = dt.Rows[0]["PriceOutTax"].ToString();
+                me.Rate = dt.Rows[0]["Rate"].ToString();
+                me.OrderPriceWithTax = dt.Rows[0]["OrderPriceWithTax"].ToString();
+                me.OrderPriceWithoutTax = dt.Rows[0]["OrderPriceWithoutTax"].ToString();
+                me.SaleStartDate = dt.Rows[0]["SaleStartDate"].ToString();
+                me.WebStartDate = dt.Rows[0]["WebStartDate"].ToString();
+                me.OrderAttentionCD = dt.Rows[0]["OrderAttentionCD"].ToString();
+                me.OrderAttentionNote = dt.Rows[0]["OrderAttentionNote"].ToString();
+                me.CommentInStore = dt.Rows[0]["CommentInStore"].ToString();
+                me.CommentOutStore = dt.Rows[0]["CommentOutStore"].ToString();
+                me.LastYearTerm = dt.Rows[0]["LastYearTerm"].ToString();
+                me.LastSeason = dt.Rows[0]["LastSeason"].ToString();
+                me.LastCatalogNO = dt.Rows[0]["LastCatalogNO"].ToString();
+                me.LastCatalogPage = dt.Rows[0]["LastCatalogPage"].ToString();
+                me.LastCatalogText = dt.Rows[0]["LastCatalogText"].ToString();
+                me.LastInstructionsNO = dt.Rows[0]["LastInstructionsNO"].ToString();
+                me.LastInstructionsDate = dt.Rows[0]["LastInstructionsDate"].ToString();
+                me.WebAddress = dt.Rows[0]["WebAddress"].ToString();
+                me.ApprovalDate = dt.Rows[0]["ApprovalDate"].ToString();
+
+                me.DeleteFlg = dt.Rows[0]["DeleteFlg"].ToString();
+                me.UsedFlg = dt.Rows[0]["UsedFlg"].ToString();
+                me.InsertOperator = dt.Rows[0]["InsertOperator"].ToString();
+                me.InsertDateTime = dt.Rows[0]["InsertDateTime"].ToString();
+                me.UpdateOperator = dt.Rows[0]["UpdateOperator"].ToString();
+                me.UpdateDateTime = dt.Rows[0]["UpdateDateTime"].ToString();
+
+                return true;
+            }
+
+            return false;
+        }
+        
+        /// <summary>
         /// M_SKUデータ抽出
         /// </summary>
         /// <param name="me"></param>

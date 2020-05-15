@@ -2328,12 +2328,14 @@ namespace MasterTouroku_HanbaiTanka
                 lblSkuCD.Text = "ITEMCD";
                 keyControls[(int)EIndex.StoreCD].Enabled = false;
                 keyControls[(int)EIndex.StoreCD].Text = "";
+                ScStore.LabelText = "";
                 ScStore.BtnSearch.Enabled = false;
                 lblGridSkuCD.Text = "ITEMCD";
                 lblGridJanCD.Text = "";
                 //単価設定CDも入力？？
                 detailControls[(int)EIndex.TankaCD].Enabled = false;
                 detailControls[(int)EIndex.TankaCD].Text = "";
+                ScTanka.LabelText = "";
                 ScTanka.BtnSearch.Enabled = false;
             }
             else
