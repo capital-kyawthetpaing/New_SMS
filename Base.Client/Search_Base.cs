@@ -36,6 +36,7 @@ namespace Base.Client
         public Search_Base()
         {
             InitializeComponent();
+            //PutCursor();
         }
 
         protected virtual void EndSec()
@@ -85,7 +86,7 @@ namespace Base.Client
             //}
             FunctionProcess(Index);
         }
-
+     
         public virtual void FunctionProcess(int Index)
         {
 

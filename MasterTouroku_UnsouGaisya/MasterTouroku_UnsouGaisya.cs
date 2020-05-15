@@ -46,7 +46,24 @@ namespace MasterTouroku_UnsouGaisya
             string ymd = bbl.GetDate();
             //cboIdentity.Bind(string.Empty,"26");
             cboIdentity.Bind(ymd);
+            BindNormal();
         }
+
+        private void BindNormal()
+        {
+            DataTable dtT = new DataTable();
+            dtT.Columns.Add("TypeId", typeof(int));
+            dtT.Columns.Add("TypeName", typeof(string));
+            //dtT.Rows.Add(0, string.Empty);
+            dtT.Rows.Add(0, "普通便");
+            dtT.Rows.Add(1, "代引き");
+            dtT.Rows.Add(2, "ネコポス");
+
+            cboNormalType.ValueMember = "TypeId";
+            cboNormalType.DisplayMember = "TypeName";
+            cboNormalType.DataSource = dtT;
+        }
+
         private void SetRequireField()
         {
             ScShippingCD.TxtCode.Require(true);
@@ -147,6 +164,7 @@ namespace MasterTouroku_UnsouGaisya
             {
                 txtShippingName.Text = mse.ShippingName;
                 cboIdentity.SelectedValue = mse.CarrierFlg;
+                cboNormalType.SelectedValue = mse.NormalFlg;
                 txtYahooCD.Text = mse.YahooCD;
                 txtRakutenCD.Text = mse.RakutenCD;
                 txtAmazonCD.Text = mse.AmazonCD;
@@ -268,7 +286,15 @@ namespace MasterTouroku_UnsouGaisya
                             InsertUpdate(2);
                             break;
                         case EOperationMode.DELETE:
-                            Delete();
+                            if(mse.UsedFlg == "1")
+                            {
+                                mtugsbl.ShowMessage("E154");
+                            }
+                            else
+                            {
+                                Delete();
+                            }
+                            
                             break;
                     }
                 }
@@ -322,6 +348,7 @@ namespace MasterTouroku_UnsouGaisya
                 ChangeDate = ScShippingCD.ChangeDate,
                 ShippingName = txtShippingName.Text,
                 CarrierFlg = cboIdentity.SelectedValue.ToString(),
+                NormalFlg = cboNormalType.SelectedValue.ToString(),
                 YahooCD = txtYahooCD.Text,
                 RakutenCD = txtRakutenCD.Text,
                 AmazonCD = txtAmazonCD.Text,
@@ -425,6 +452,13 @@ namespace MasterTouroku_UnsouGaisya
                 {
                     mtugsbl.ShowMessage("E102");
                     cboIdentity.Focus();
+                    return false;
+                }
+
+                if(string.IsNullOrWhiteSpace(cboNormalType.Text.ToString()))
+                {
+                    mtugsbl.ShowMessage("E102");
+                    cboNormalType.Focus();
                     return false;
                 }
 
