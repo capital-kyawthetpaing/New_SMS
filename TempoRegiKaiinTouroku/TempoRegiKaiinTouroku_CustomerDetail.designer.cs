@@ -323,7 +323,7 @@
             this.ckmShop_Label9.Location = new System.Drawing.Point(1124, 371);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(423, 35);
-            this.ckmShop_Label9.TabIndex = 107;
+            this.ckmShop_Label9.TabIndex = 15;
             this.ckmShop_Label9.Text = "DM等の案内を送って良い";
             this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

@@ -1541,8 +1541,8 @@ namespace HikiateHenkouNyuuryoku
             switch (index)
             {
                 case (int)HIndex.StoreCD:
-                    { 
-                        if (CboStoreCD.SelectedIndex == -1)
+                    {
+                        if (string.IsNullOrWhiteSpace(headControls[index].Text))
                         {
                             bbl.ShowMessage("E102");
                             CboStoreCD.Focus();
