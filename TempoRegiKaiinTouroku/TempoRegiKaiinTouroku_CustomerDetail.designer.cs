@@ -462,24 +462,26 @@
             // 
             // rdoFemale
             // 
-            this.rdoFemale.AutoSize = true;
             this.rdoFemale.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdoFemale.Location = new System.Drawing.Point(421, 129);
+            this.rdoFemale.ForeColor = System.Drawing.Color.Black;
+            this.rdoFemale.Location = new System.Drawing.Point(421, 131);
             this.rdoFemale.Name = "rdoFemale";
             this.rdoFemale.Size = new System.Drawing.Size(66, 37);
             this.rdoFemale.TabIndex = 5;
             this.rdoFemale.Text = "女";
+            this.rdoFemale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoFemale.UseVisualStyleBackColor = true;
             // 
             // rdoMale
             // 
-            this.rdoMale.AutoSize = true;
             this.rdoMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoMale.ForeColor = System.Drawing.Color.Black;
             this.rdoMale.Location = new System.Drawing.Point(346, 129);
             this.rdoMale.Name = "rdoMale";
             this.rdoMale.Size = new System.Drawing.Size(68, 41);
             this.rdoMale.TabIndex = 4;
             this.rdoMale.Text = "男";
+            this.rdoMale.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rdoMale.UseVisualStyleBackColor = true;
             // 
             // btnAddress
