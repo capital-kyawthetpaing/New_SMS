@@ -417,7 +417,9 @@
             // 
             // colChk
             // 
+            this.colChk.FalseValue = "false";
             this.colChk.HeaderText = "";
+            this.colChk.IndeterminateValue = "false";
             this.colChk.Name = "colChk";
             this.colChk.TrueValue = "true";
             this.colChk.Width = 50;
@@ -608,7 +610,7 @@
             this.txtRate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRate.ClientColor = System.Drawing.Color.White;
             this.txtRate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.txtRate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtRate.DecimalPlace = 2;
             this.txtRate.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtRate.IntegerPart = 0;
@@ -622,9 +624,11 @@
             this.txtRate.MaxLength = 20;
             this.txtRate.MoveNext = true;
             this.txtRate.Name = "txtRate";
+            this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
             this.txtRate.TabIndex = 24;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
             // ckM_Label24
             // 

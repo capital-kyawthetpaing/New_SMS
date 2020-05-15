@@ -40,21 +40,42 @@ namespace CKM_Controls
             }
         }
 
-        private int length = 10;
-        [Browsable(true)]
-        [Category("CKM Properties")]
-        [Description("Set Max Length")]
-        [DisplayName("MaximumLength(Byte Count)")]
+        //[Browsable(false), EditorBrowsable(EditorBrowsableState.Always)]
+        //[Obsolete("just cast me to avoid all this hiding...", true)]
+        public  int length_ = 10;
+      //  [Browsable(true), EditorBrowsable(EditorBrowsableState.Never)]
+      ////  [Obsolete("Hiding...", false)]
+      //  [Category("CKM Properties")]
+      //  [Description("Set Max Length")]
+      //  [DisplayName("MaximumLength(Byte Count)")]
         public int Length
         {
-            get { return length; }
+            get { return length_; }
+            set {
+              //  length_ = value;
+             ///   MaxLength = value;
+            }
+            //get { return MaxLength; }
+            //set { MaxLength = value; }
+         //   get { return length; }
+         //   set
+         //   {
+         //      length = value;
+         //       MaxLength = Length;
+         ////       CalculateWidth();
+         //   }
+        }
+        public override int MaxLength
+        {
+            get { return length_; }
             set
             {
-                this.length = value;
-                CalculateWidth();
+                length_ = value;
+               // Length = length_;
             }
+
         }
-        
+
         private Bytes CtrlByte { get; set; }
         public enum Bytes
         {
@@ -94,6 +115,9 @@ namespace CKM_Controls
         [DisplayName("AllowMinus")]
         public bool AllowMinus { get; set; } = false;
 
+        
+
+        
         public Color ClientColor { get; set; } = SystemColors.Window;
         private bool IsRequire { get; set; } = false;
         private bool IsReversecheck { get; set; } = false;
@@ -328,7 +352,7 @@ namespace CKM_Controls
                             if (CtrlType == Type.Normal)
                             {
                                 string str1 = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                                if (Convert.ToInt32(str1) > length)
+                                if (Convert.ToInt32(str1) > MaxLength)//lenght_ //Added by PTK
                                 {
                                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     isMaxLengthErr = true;
@@ -413,7 +437,7 @@ namespace CKM_Controls
             if (CtrlByte == Bytes.半全角)
             {
                 string str = Encoding.GetEncoding(932).GetByteCount(Text).ToString();
-                if (Convert.ToInt32(str) > length)
+                if (Convert.ToInt32(str) > MaxLength)//lenght_ //Added by PTK
                 {
                     MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     isMaxLengthErr = true;
@@ -643,8 +667,8 @@ namespace CKM_Controls
 
             //int l1 = this.Ctrl_Byte == Bytes.半角 ? 10 : 13;
             //this.Width = (l1 * Length) / divider;
-
-            this.MaxLength = length;
+            this.Length = length_;
+            this.MaxLength = length_;
         }
 
         /// <summary>

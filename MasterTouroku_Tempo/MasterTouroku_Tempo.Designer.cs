@@ -34,12 +34,21 @@
             this.label4 = new CKM_Controls.CKM_Label();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
+            this.ScMailPatternCD = new Search.CKM_SearchControl();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox20 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox19 = new CKM_Controls.CKM_TextBox();
             this.TxtRemark = new CKM_Controls.CKM_MultiLineTextBox();
+            this.ScKouza = new Search.CKM_SearchControl();
+            this.ScStaff12 = new Search.CKM_SearchControl();
+            this.ScStaff32 = new Search.CKM_SearchControl();
+            this.ScStaff22 = new Search.CKM_SearchControl();
+            this.ScStaff11 = new Search.CKM_SearchControl();
+            this.ScStaff31 = new Search.CKM_SearchControl();
+            this.ScStaff21 = new Search.CKM_SearchControl();
+            this.ScMall = new Search.CKM_SearchControl();
             this.label12 = new CKM_Controls.CKM_Label();
             this.label42 = new CKM_Controls.CKM_Label();
             this.checkDeleteFlg = new System.Windows.Forms.CheckBox();
@@ -104,15 +113,6 @@
             this.radioButton3 = new CKM_Controls.CKM_RadioButton();
             this.radioButton2 = new CKM_Controls.CKM_RadioButton();
             this.radioButton1 = new CKM_Controls.CKM_RadioButton();
-            this.ScMailPatternCD = new Search.CKM_SearchControl();
-            this.ScKouza = new Search.CKM_SearchControl();
-            this.ScStaff12 = new Search.CKM_SearchControl();
-            this.ScStaff32 = new Search.CKM_SearchControl();
-            this.ScStaff22 = new Search.CKM_SearchControl();
-            this.ScStaff11 = new Search.CKM_SearchControl();
-            this.ScStaff31 = new Search.CKM_SearchControl();
-            this.ScStaff21 = new Search.CKM_SearchControl();
-            this.ScMall = new Search.CKM_SearchControl();
             this.ScCopyStore = new Search.CKM_SearchControl();
             this.ScStore = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
@@ -310,6 +310,31 @@
             this.PanelDetail.Size = new System.Drawing.Size(1370, 570);
             this.PanelDetail.TabIndex = 4;
             // 
+            // ScMailPatternCD
+            // 
+            this.ScMailPatternCD.AutoSize = true;
+            this.ScMailPatternCD.ChangeDate = "";
+            this.ScMailPatternCD.ChangeDateWidth = 100;
+            this.ScMailPatternCD.Code = "";
+            this.ScMailPatternCD.CodeWidth = 50;
+            this.ScMailPatternCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScMailPatternCD.DataCheck = false;
+            this.ScMailPatternCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScMailPatternCD.IsCopy = false;
+            this.ScMailPatternCD.LabelText = "";
+            this.ScMailPatternCD.LabelVisible = true;
+            this.ScMailPatternCD.Location = new System.Drawing.Point(586, 439);
+            this.ScMailPatternCD.Name = "ScMailPatternCD";
+            this.ScMailPatternCD.SearchEnable = true;
+            this.ScMailPatternCD.Size = new System.Drawing.Size(364, 27);
+            this.ScMailPatternCD.Stype = Search.CKM_SearchControl.SearchType.メール文章;
+            this.ScMailPatternCD.TabIndex = 30;
+            this.ScMailPatternCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScMailPatternCD.UseChangeDate = false;
+            this.ScMailPatternCD.Value1 = null;
+            this.ScMailPatternCD.Value2 = null;
+            this.ScMailPatternCD.Value3 = null;
+            // 
             // ckM_Label3
             // 
             this.ckM_Label3.AutoSize = true;
@@ -431,6 +456,206 @@
             this.TxtRemark.Size = new System.Drawing.Size(325, 95);
             this.TxtRemark.TabIndex = 31;
             this.TxtRemark.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
+            // 
+            // ScKouza
+            // 
+            this.ScKouza.AutoSize = true;
+            this.ScKouza.ChangeDate = "";
+            this.ScKouza.ChangeDateWidth = 100;
+            this.ScKouza.Code = "";
+            this.ScKouza.CodeWidth = 30;
+            this.ScKouza.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScKouza.DataCheck = false;
+            this.ScKouza.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScKouza.IsCopy = false;
+            this.ScKouza.LabelText = "";
+            this.ScKouza.LabelVisible = true;
+            this.ScKouza.Location = new System.Drawing.Point(136, 214);
+            this.ScKouza.Name = "ScKouza";
+            this.ScKouza.SearchEnable = true;
+            this.ScKouza.Size = new System.Drawing.Size(414, 27);
+            this.ScKouza.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
+            this.ScKouza.TabIndex = 12;
+            this.ScKouza.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScKouza.UseChangeDate = false;
+            this.ScKouza.Value1 = null;
+            this.ScKouza.Value2 = null;
+            this.ScKouza.Value3 = null;
+            // 
+            // ScStaff12
+            // 
+            this.ScStaff12.AutoSize = true;
+            this.ScStaff12.ChangeDate = "";
+            this.ScStaff12.ChangeDateWidth = 100;
+            this.ScStaff12.Code = "";
+            this.ScStaff12.CodeWidth = 100;
+            this.ScStaff12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff12.DataCheck = false;
+            this.ScStaff12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff12.IsCopy = false;
+            this.ScStaff12.LabelText = "";
+            this.ScStaff12.LabelVisible = true;
+            this.ScStaff12.Location = new System.Drawing.Point(587, 277);
+            this.ScStaff12.Name = "ScStaff12";
+            this.ScStaff12.SearchEnable = true;
+            this.ScStaff12.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff12.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff12.TabIndex = 15;
+            this.ScStaff12.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff12.UseChangeDate = false;
+            this.ScStaff12.Value1 = null;
+            this.ScStaff12.Value2 = null;
+            this.ScStaff12.Value3 = null;
+            // 
+            // ScStaff32
+            // 
+            this.ScStaff32.AutoSize = true;
+            this.ScStaff32.ChangeDate = "";
+            this.ScStaff32.ChangeDateWidth = 100;
+            this.ScStaff32.Code = "";
+            this.ScStaff32.CodeWidth = 100;
+            this.ScStaff32.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff32.DataCheck = false;
+            this.ScStaff32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff32.IsCopy = false;
+            this.ScStaff32.LabelText = "";
+            this.ScStaff32.LabelVisible = true;
+            this.ScStaff32.Location = new System.Drawing.Point(587, 330);
+            this.ScStaff32.Name = "ScStaff32";
+            this.ScStaff32.SearchEnable = true;
+            this.ScStaff32.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff32.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff32.TabIndex = 19;
+            this.ScStaff32.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff32.UseChangeDate = false;
+            this.ScStaff32.Value1 = null;
+            this.ScStaff32.Value2 = null;
+            this.ScStaff32.Value3 = null;
+            // 
+            // ScStaff22
+            // 
+            this.ScStaff22.AutoSize = true;
+            this.ScStaff22.ChangeDate = "";
+            this.ScStaff22.ChangeDateWidth = 100;
+            this.ScStaff22.Code = "";
+            this.ScStaff22.CodeWidth = 100;
+            this.ScStaff22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff22.DataCheck = false;
+            this.ScStaff22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff22.IsCopy = false;
+            this.ScStaff22.LabelText = "";
+            this.ScStaff22.LabelVisible = true;
+            this.ScStaff22.Location = new System.Drawing.Point(587, 304);
+            this.ScStaff22.Name = "ScStaff22";
+            this.ScStaff22.SearchEnable = true;
+            this.ScStaff22.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff22.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff22.TabIndex = 17;
+            this.ScStaff22.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff22.UseChangeDate = false;
+            this.ScStaff22.Value1 = null;
+            this.ScStaff22.Value2 = null;
+            this.ScStaff22.Value3 = null;
+            // 
+            // ScStaff11
+            // 
+            this.ScStaff11.AutoSize = true;
+            this.ScStaff11.ChangeDate = "";
+            this.ScStaff11.ChangeDateWidth = 100;
+            this.ScStaff11.Code = "";
+            this.ScStaff11.CodeWidth = 100;
+            this.ScStaff11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff11.DataCheck = false;
+            this.ScStaff11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff11.IsCopy = false;
+            this.ScStaff11.LabelText = "";
+            this.ScStaff11.LabelVisible = true;
+            this.ScStaff11.Location = new System.Drawing.Point(199, 277);
+            this.ScStaff11.Name = "ScStaff11";
+            this.ScStaff11.SearchEnable = true;
+            this.ScStaff11.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff11.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff11.TabIndex = 14;
+            this.ScStaff11.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff11.UseChangeDate = false;
+            this.ScStaff11.Value1 = null;
+            this.ScStaff11.Value2 = null;
+            this.ScStaff11.Value3 = null;
+            // 
+            // ScStaff31
+            // 
+            this.ScStaff31.AutoSize = true;
+            this.ScStaff31.ChangeDate = "";
+            this.ScStaff31.ChangeDateWidth = 100;
+            this.ScStaff31.Code = "";
+            this.ScStaff31.CodeWidth = 100;
+            this.ScStaff31.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff31.DataCheck = false;
+            this.ScStaff31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff31.IsCopy = false;
+            this.ScStaff31.LabelText = "";
+            this.ScStaff31.LabelVisible = true;
+            this.ScStaff31.Location = new System.Drawing.Point(199, 330);
+            this.ScStaff31.Name = "ScStaff31";
+            this.ScStaff31.SearchEnable = true;
+            this.ScStaff31.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff31.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff31.TabIndex = 18;
+            this.ScStaff31.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff31.UseChangeDate = false;
+            this.ScStaff31.Value1 = null;
+            this.ScStaff31.Value2 = null;
+            this.ScStaff31.Value3 = null;
+            // 
+            // ScStaff21
+            // 
+            this.ScStaff21.AutoSize = true;
+            this.ScStaff21.ChangeDate = "";
+            this.ScStaff21.ChangeDateWidth = 100;
+            this.ScStaff21.Code = "";
+            this.ScStaff21.CodeWidth = 100;
+            this.ScStaff21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff21.DataCheck = false;
+            this.ScStaff21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff21.IsCopy = false;
+            this.ScStaff21.LabelText = "";
+            this.ScStaff21.LabelVisible = true;
+            this.ScStaff21.Location = new System.Drawing.Point(199, 304);
+            this.ScStaff21.Name = "ScStaff21";
+            this.ScStaff21.SearchEnable = true;
+            this.ScStaff21.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff21.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff21.TabIndex = 16;
+            this.ScStaff21.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff21.UseChangeDate = false;
+            this.ScStaff21.Value1 = null;
+            this.ScStaff21.Value2 = null;
+            this.ScStaff21.Value3 = null;
+            // 
+            // ScMall
+            // 
+            this.ScMall.AutoSize = true;
+            this.ScMall.ChangeDate = "";
+            this.ScMall.ChangeDateWidth = 100;
+            this.ScMall.Code = "";
+            this.ScMall.CodeWidth = 30;
+            this.ScMall.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScMall.DataCheck = false;
+            this.ScMall.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScMall.IsCopy = false;
+            this.ScMall.LabelText = "";
+            this.ScMall.LabelVisible = true;
+            this.ScMall.Location = new System.Drawing.Point(136, 55);
+            this.ScMall.Name = "ScMall";
+            this.ScMall.SearchEnable = true;
+            this.ScMall.Size = new System.Drawing.Size(344, 27);
+            this.ScMall.Stype = Search.CKM_SearchControl.SearchType.モール;
+            this.ScMall.TabIndex = 3;
+            this.ScMall.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScMall.UseChangeDate = false;
+            this.ScMall.Value1 = null;
+            this.ScMall.Value2 = null;
+            this.ScMall.Value3 = null;
             // 
             // label12
             // 
@@ -971,7 +1196,7 @@
             this.ckM_TextBox12.isEnterKeyDown = false;
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
-            this.ckM_TextBox12.Length = 50;
+            this.ckM_TextBox12.Length = 40;
             this.ckM_TextBox12.Location = new System.Drawing.Point(136, 550);
             this.ckM_TextBox12.MaxLength = 40;
             this.ckM_TextBox12.MoveNext = true;
@@ -996,7 +1221,7 @@
             this.ckM_TextBox13.isEnterKeyDown = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
-            this.ckM_TextBox13.Length = 50;
+            this.ckM_TextBox13.Length = 40;
             this.ckM_TextBox13.Location = new System.Drawing.Point(136, 531);
             this.ckM_TextBox13.MaxLength = 40;
             this.ckM_TextBox13.MoveNext = true;
@@ -1021,7 +1246,7 @@
             this.ckM_TextBox10.isEnterKeyDown = false;
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
-            this.ckM_TextBox10.Length = 50;
+            this.ckM_TextBox10.Length = 40;
             this.ckM_TextBox10.Location = new System.Drawing.Point(136, 512);
             this.ckM_TextBox10.MaxLength = 40;
             this.ckM_TextBox10.MoveNext = true;
@@ -1046,7 +1271,7 @@
             this.ckM_TextBox11.isEnterKeyDown = false;
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
-            this.ckM_TextBox11.Length = 50;
+            this.ckM_TextBox11.Length = 40;
             this.ckM_TextBox11.Location = new System.Drawing.Point(136, 493);
             this.ckM_TextBox11.MaxLength = 40;
             this.ckM_TextBox11.MoveNext = true;
@@ -1071,7 +1296,7 @@
             this.ckM_TextBox9.isEnterKeyDown = false;
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
-            this.ckM_TextBox9.Length = 50;
+            this.ckM_TextBox9.Length = 40;
             this.ckM_TextBox9.Location = new System.Drawing.Point(136, 474);
             this.ckM_TextBox9.MaxLength = 40;
             this.ckM_TextBox9.MoveNext = true;
@@ -1096,7 +1321,7 @@
             this.ckM_TextBox8.isEnterKeyDown = false;
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
-            this.ckM_TextBox8.Length = 50;
+            this.ckM_TextBox8.Length = 40;
             this.ckM_TextBox8.Location = new System.Drawing.Point(136, 455);
             this.ckM_TextBox8.MaxLength = 40;
             this.ckM_TextBox8.MoveNext = true;
@@ -1377,7 +1602,7 @@
             this.label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(99, 123);
+            this.label18.Location = new System.Drawing.Point(99, 112);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(31, 12);
             this.label18.TabIndex = 646;
@@ -1606,231 +1831,6 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = " 実店舗";
             this.radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // ScMailPatternCD
-            // 
-            this.ScMailPatternCD.AutoSize = true;
-            this.ScMailPatternCD.ChangeDate = "";
-            this.ScMailPatternCD.ChangeDateWidth = 100;
-            this.ScMailPatternCD.Code = "";
-            this.ScMailPatternCD.CodeWidth = 50;
-            this.ScMailPatternCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScMailPatternCD.DataCheck = false;
-            this.ScMailPatternCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScMailPatternCD.IsCopy = false;
-            this.ScMailPatternCD.LabelText = "";
-            this.ScMailPatternCD.LabelVisible = true;
-            this.ScMailPatternCD.Location = new System.Drawing.Point(586, 439);
-            this.ScMailPatternCD.Name = "ScMailPatternCD";
-            this.ScMailPatternCD.SearchEnable = true;
-            this.ScMailPatternCD.Size = new System.Drawing.Size(364, 27);
-            this.ScMailPatternCD.Stype = Search.CKM_SearchControl.SearchType.メール文章;
-            this.ScMailPatternCD.TabIndex = 30;
-            this.ScMailPatternCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScMailPatternCD.UseChangeDate = false;
-            this.ScMailPatternCD.Value1 = null;
-            this.ScMailPatternCD.Value2 = null;
-            this.ScMailPatternCD.Value3 = null;
-            // 
-            // ScKouza
-            // 
-            this.ScKouza.AutoSize = true;
-            this.ScKouza.ChangeDate = "";
-            this.ScKouza.ChangeDateWidth = 100;
-            this.ScKouza.Code = "";
-            this.ScKouza.CodeWidth = 30;
-            this.ScKouza.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScKouza.DataCheck = false;
-            this.ScKouza.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScKouza.IsCopy = false;
-            this.ScKouza.LabelText = "";
-            this.ScKouza.LabelVisible = true;
-            this.ScKouza.Location = new System.Drawing.Point(136, 214);
-            this.ScKouza.Name = "ScKouza";
-            this.ScKouza.SearchEnable = true;
-            this.ScKouza.Size = new System.Drawing.Size(414, 27);
-            this.ScKouza.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
-            this.ScKouza.TabIndex = 12;
-            this.ScKouza.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScKouza.UseChangeDate = false;
-            this.ScKouza.Value1 = null;
-            this.ScKouza.Value2 = null;
-            this.ScKouza.Value3 = null;
-            // 
-            // ScStaff12
-            // 
-            this.ScStaff12.AutoSize = true;
-            this.ScStaff12.ChangeDate = "";
-            this.ScStaff12.ChangeDateWidth = 100;
-            this.ScStaff12.Code = "";
-            this.ScStaff12.CodeWidth = 100;
-            this.ScStaff12.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff12.DataCheck = false;
-            this.ScStaff12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff12.IsCopy = false;
-            this.ScStaff12.LabelText = "";
-            this.ScStaff12.LabelVisible = true;
-            this.ScStaff12.Location = new System.Drawing.Point(587, 277);
-            this.ScStaff12.Name = "ScStaff12";
-            this.ScStaff12.SearchEnable = true;
-            this.ScStaff12.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff12.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff12.TabIndex = 15;
-            this.ScStaff12.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff12.UseChangeDate = false;
-            this.ScStaff12.Value1 = null;
-            this.ScStaff12.Value2 = null;
-            this.ScStaff12.Value3 = null;
-            // 
-            // ScStaff32
-            // 
-            this.ScStaff32.AutoSize = true;
-            this.ScStaff32.ChangeDate = "";
-            this.ScStaff32.ChangeDateWidth = 100;
-            this.ScStaff32.Code = "";
-            this.ScStaff32.CodeWidth = 100;
-            this.ScStaff32.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff32.DataCheck = false;
-            this.ScStaff32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff32.IsCopy = false;
-            this.ScStaff32.LabelText = "";
-            this.ScStaff32.LabelVisible = true;
-            this.ScStaff32.Location = new System.Drawing.Point(587, 330);
-            this.ScStaff32.Name = "ScStaff32";
-            this.ScStaff32.SearchEnable = true;
-            this.ScStaff32.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff32.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff32.TabIndex = 19;
-            this.ScStaff32.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff32.UseChangeDate = false;
-            this.ScStaff32.Value1 = null;
-            this.ScStaff32.Value2 = null;
-            this.ScStaff32.Value3 = null;
-            // 
-            // ScStaff22
-            // 
-            this.ScStaff22.AutoSize = true;
-            this.ScStaff22.ChangeDate = "";
-            this.ScStaff22.ChangeDateWidth = 100;
-            this.ScStaff22.Code = "";
-            this.ScStaff22.CodeWidth = 100;
-            this.ScStaff22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff22.DataCheck = false;
-            this.ScStaff22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff22.IsCopy = false;
-            this.ScStaff22.LabelText = "";
-            this.ScStaff22.LabelVisible = true;
-            this.ScStaff22.Location = new System.Drawing.Point(587, 304);
-            this.ScStaff22.Name = "ScStaff22";
-            this.ScStaff22.SearchEnable = true;
-            this.ScStaff22.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff22.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff22.TabIndex = 17;
-            this.ScStaff22.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff22.UseChangeDate = false;
-            this.ScStaff22.Value1 = null;
-            this.ScStaff22.Value2 = null;
-            this.ScStaff22.Value3 = null;
-            // 
-            // ScStaff11
-            // 
-            this.ScStaff11.AutoSize = true;
-            this.ScStaff11.ChangeDate = "";
-            this.ScStaff11.ChangeDateWidth = 100;
-            this.ScStaff11.Code = "";
-            this.ScStaff11.CodeWidth = 100;
-            this.ScStaff11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff11.DataCheck = false;
-            this.ScStaff11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff11.IsCopy = false;
-            this.ScStaff11.LabelText = "";
-            this.ScStaff11.LabelVisible = true;
-            this.ScStaff11.Location = new System.Drawing.Point(199, 277);
-            this.ScStaff11.Name = "ScStaff11";
-            this.ScStaff11.SearchEnable = true;
-            this.ScStaff11.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff11.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff11.TabIndex = 14;
-            this.ScStaff11.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff11.UseChangeDate = false;
-            this.ScStaff11.Value1 = null;
-            this.ScStaff11.Value2 = null;
-            this.ScStaff11.Value3 = null;
-            // 
-            // ScStaff31
-            // 
-            this.ScStaff31.AutoSize = true;
-            this.ScStaff31.ChangeDate = "";
-            this.ScStaff31.ChangeDateWidth = 100;
-            this.ScStaff31.Code = "";
-            this.ScStaff31.CodeWidth = 100;
-            this.ScStaff31.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff31.DataCheck = false;
-            this.ScStaff31.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff31.IsCopy = false;
-            this.ScStaff31.LabelText = "";
-            this.ScStaff31.LabelVisible = true;
-            this.ScStaff31.Location = new System.Drawing.Point(199, 330);
-            this.ScStaff31.Name = "ScStaff31";
-            this.ScStaff31.SearchEnable = true;
-            this.ScStaff31.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff31.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff31.TabIndex = 18;
-            this.ScStaff31.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff31.UseChangeDate = false;
-            this.ScStaff31.Value1 = null;
-            this.ScStaff31.Value2 = null;
-            this.ScStaff31.Value3 = null;
-            // 
-            // ScStaff21
-            // 
-            this.ScStaff21.AutoSize = true;
-            this.ScStaff21.ChangeDate = "";
-            this.ScStaff21.ChangeDateWidth = 100;
-            this.ScStaff21.Code = "";
-            this.ScStaff21.CodeWidth = 100;
-            this.ScStaff21.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff21.DataCheck = false;
-            this.ScStaff21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff21.IsCopy = false;
-            this.ScStaff21.LabelText = "";
-            this.ScStaff21.LabelVisible = true;
-            this.ScStaff21.Location = new System.Drawing.Point(199, 304);
-            this.ScStaff21.Name = "ScStaff21";
-            this.ScStaff21.SearchEnable = true;
-            this.ScStaff21.Size = new System.Drawing.Size(344, 27);
-            this.ScStaff21.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff21.TabIndex = 16;
-            this.ScStaff21.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff21.UseChangeDate = false;
-            this.ScStaff21.Value1 = null;
-            this.ScStaff21.Value2 = null;
-            this.ScStaff21.Value3 = null;
-            // 
-            // ScMall
-            // 
-            this.ScMall.AutoSize = true;
-            this.ScMall.ChangeDate = "";
-            this.ScMall.ChangeDateWidth = 100;
-            this.ScMall.Code = "";
-            this.ScMall.CodeWidth = 30;
-            this.ScMall.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScMall.DataCheck = false;
-            this.ScMall.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScMall.IsCopy = false;
-            this.ScMall.LabelText = "";
-            this.ScMall.LabelVisible = true;
-            this.ScMall.Location = new System.Drawing.Point(136, 55);
-            this.ScMall.Name = "ScMall";
-            this.ScMall.SearchEnable = true;
-            this.ScMall.Size = new System.Drawing.Size(344, 27);
-            this.ScMall.Stype = Search.CKM_SearchControl.SearchType.モール;
-            this.ScMall.TabIndex = 3;
-            this.ScMall.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScMall.UseChangeDate = false;
-            this.ScMall.Value1 = null;
-            this.ScMall.Value2 = null;
-            this.ScMall.Value3 = null;
             // 
             // ScCopyStore
             // 

@@ -113,7 +113,7 @@ namespace TempoRegiNyuukinTouroku
                         chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
-                //RunConsole();
+                RunConsole();
             }
         }
 
@@ -201,6 +201,7 @@ namespace TempoRegiNyuukinTouroku
             {
                 txtCustomerCD.Text = kaiinkensaku.CustomerCD;
                 lblCustomerName.Text = kaiinkensaku.CustomerName;
+                //txtCustomerCD.Focus();
             }
         }
 

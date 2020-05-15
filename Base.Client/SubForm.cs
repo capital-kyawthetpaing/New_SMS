@@ -219,6 +219,7 @@ namespace Base.Client
         private void SubMainForm_Load(object sender, EventArgs e)
         {
             this.lblHeaderTitle.BackColor = Color.FromArgb(112, 173, 71);
+           
 
         }
 
@@ -571,5 +572,7 @@ namespace Base.Client
             }
         }
         #endregion
+
+
     }
 }

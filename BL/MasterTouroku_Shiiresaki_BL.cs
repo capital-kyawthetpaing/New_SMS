@@ -17,6 +17,7 @@ namespace BL
         M_Kouza_DL mkdl;
         M_BankShiten_DL mbsdl;
         M_Staff_DL msdl;
+
         public MasterTouroku_Shiiresaki_BL()
         {
             mvdl = new M_Vendor_DL();
@@ -109,6 +110,11 @@ namespace BL
         public DataTable Bank_Select(M_Bank_Entity mbe)
         {
             return mbdl.M_Vendor_Bank_Select(mbe);
+        }
+
+        public DataTable BankShiten_Select(M_BankShiten_Entity mbse)
+        {
+            return mbsdl.M_BankShiten_Select(mbse);
         }
 
         public DataTable Kouza_Select(M_Kouza_Entity mke)

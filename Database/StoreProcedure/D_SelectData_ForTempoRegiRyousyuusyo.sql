@@ -1,12 +1,11 @@
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectData_ForTempoRegiRyousyuusyo]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    店舗レジ 領収書印刷
@@ -40,7 +39,7 @@ BEGIN
           ,store.StoreName
           ,store.Address1
           ,store.Address2
-          ,'電話 ' + store.TelphoneNO AS TelphoneNO
+          ,'電話 ' + store.TelephoneNO AS TelphoneNO
           ,store.ReceiptPrint + '-' + staff.ReceiptPrint AS ReceiptPrint
           ,multiPorpose.Char1
           ,multiPorpose.Char2
@@ -55,7 +54,7 @@ BEGIN
                              ,StoreName
                              ,Address1
                              ,Address2
-                             ,TelphoneNO
+                             ,TelephoneNO
                              ,ChangeDate
                              ,ReceiptPrint
                              ,DeleteFlg 
@@ -81,5 +80,4 @@ BEGIN
         ;
 END
 GO
-
 

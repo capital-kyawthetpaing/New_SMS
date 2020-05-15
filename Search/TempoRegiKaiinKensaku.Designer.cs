@@ -73,7 +73,7 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(150, 71);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(108, 66);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(91, 35);
             this.ckmShop_Label4.TabIndex = 3;
@@ -89,7 +89,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(683, 170);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(718, 162);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(128, 35);
             this.ckmShop_Label1.TabIndex = 122;
@@ -105,7 +105,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(986, 170);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(1005, 162);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label5.TabIndex = 123;
@@ -121,7 +121,7 @@
             this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(364, 170);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(325, 162);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label6.TabIndex = 124;
@@ -137,7 +137,7 @@
             this.ckmShop_Label7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(1628, 170);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(1603, 157);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(293, 35);
             this.ckmShop_Label7.TabIndex = 125;
@@ -153,7 +153,7 @@
             this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(116, 112);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(73, 116);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
             this.ckmShop_Label8.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label8.TabIndex = 126;
@@ -169,7 +169,7 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(826, 31);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(979, 16);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label9.TabIndex = 127;
@@ -185,7 +185,7 @@
             this.ckmShop_Label10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label10.Location = new System.Drawing.Point(111, 170);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(72, 162);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
             this.ckmShop_Label10.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label10.TabIndex = 128;
@@ -201,7 +201,7 @@
             this.ckmShop_Label11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label11.Location = new System.Drawing.Point(490, 31);
+            this.ckmShop_Label11.Location = new System.Drawing.Point(538, 16);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
             this.ckmShop_Label11.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label11.TabIndex = 129;
@@ -217,7 +217,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(83, 31);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(38, 16);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label12.TabIndex = 130;
@@ -270,14 +270,14 @@
             this.dgvKaniiKensaku.HeaderHeight_ = 22;
             this.dgvKaniiKensaku.HeaderVisible = false;
             this.dgvKaniiKensaku.Height_ = 511;
-            this.dgvKaniiKensaku.Location = new System.Drawing.Point(36, 209);
+            this.dgvKaniiKensaku.Location = new System.Drawing.Point(12, 201);
             this.dgvKaniiKensaku.Name = "dgvKaniiKensaku";
             this.dgvKaniiKensaku.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvKaniiKensaku.RowHeight_ = 20;
             this.dgvKaniiKensaku.RowTemplate.Height = 20;
             this.dgvKaniiKensaku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvKaniiKensaku.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1875, 620);
+            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1900, 630);
             this.dgvKaniiKensaku.TabIndex = 6;
             this.dgvKaniiKensaku.UseRowNo = true;
             this.dgvKaniiKensaku.UseSetting = true;
@@ -302,11 +302,11 @@
             this.txtZipCD.IsNumber = true;
             this.txtZipCD.IsShop = false;
             this.txtZipCD.Length = 10;
-            this.txtZipCD.Location = new System.Drawing.Point(249, 28);
+            this.txtZipCD.Location = new System.Drawing.Point(202, 13);
             this.txtZipCD.MaxLength = 10;
             this.txtZipCD.MoveNext = true;
             this.txtZipCD.Name = "txtZipCD";
-            this.txtZipCD.Size = new System.Drawing.Size(170, 42);
+            this.txtZipCD.Size = new System.Drawing.Size(190, 42);
             this.txtZipCD.TabIndex = 0;
             this.txtZipCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
@@ -329,11 +329,11 @@
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 30;
-            this.txtKanaName.Location = new System.Drawing.Point(249, 69);
+            this.txtKanaName.Location = new System.Drawing.Point(202, 63);
             this.txtKanaName.MaxLength = 30;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
-            this.txtKanaName.Size = new System.Drawing.Size(400, 42);
+            this.txtKanaName.Size = new System.Drawing.Size(550, 42);
             this.txtKanaName.TabIndex = 3;
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
@@ -355,11 +355,11 @@
             this.txtCustomerCD.IsNumber = true;
             this.txtCustomerCD.IsShop = false;
             this.txtCustomerCD.Length = 13;
-            this.txtCustomerCD.Location = new System.Drawing.Point(989, 28);
+            this.txtCustomerCD.Location = new System.Drawing.Point(1142, 13);
             this.txtCustomerCD.MaxLength = 13;
             this.txtCustomerCD.MoveNext = true;
             this.txtCustomerCD.Name = "txtCustomerCD";
-            this.txtCustomerCD.Size = new System.Drawing.Size(180, 42);
+            this.txtCustomerCD.Size = new System.Drawing.Size(250, 42);
             this.txtCustomerCD.TabIndex = 2;
             this.txtCustomerCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
@@ -382,11 +382,11 @@
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
             this.txtCustomerName.Length = 30;
-            this.txtCustomerName.Location = new System.Drawing.Point(249, 110);
+            this.txtCustomerName.Location = new System.Drawing.Point(202, 113);
             this.txtCustomerName.MaxLength = 30;
             this.txtCustomerName.MoveNext = true;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(400, 42);
+            this.txtCustomerName.Size = new System.Drawing.Size(550, 42);
             this.txtCustomerName.TabIndex = 4;
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
@@ -408,11 +408,11 @@
             this.txtDBO.IsNumber = true;
             this.txtDBO.IsShop = false;
             this.txtDBO.Length = 10;
-            this.txtDBO.Location = new System.Drawing.Point(608, 28);
+            this.txtDBO.Location = new System.Drawing.Point(660, 13);
             this.txtDBO.MaxLength = 10;
             this.txtDBO.MoveNext = true;
             this.txtDBO.Name = "txtDBO";
-            this.txtDBO.Size = new System.Drawing.Size(140, 42);
+            this.txtDBO.Size = new System.Drawing.Size(190, 42);
             this.txtDBO.TabIndex = 1;
             this.txtDBO.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDBO.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -427,10 +427,10 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnShow.Location = new System.Drawing.Point(1758, 124);
+            this.btnShow.Location = new System.Drawing.Point(1677, 106);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(141, 42);
+            this.btnShow.Size = new System.Drawing.Size(200, 42);
             this.btnShow.TabIndex = 5;
             this.btnShow.Text = "照会";
             this.btnShow.UseVisualStyleBackColor = false;
@@ -471,7 +471,7 @@
             this.colNo.ReadOnly = true;
             this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 80;
+            this.colNo.Width = 65;
             // 
             // colCustomerCD
             // 
@@ -507,7 +507,7 @@
             this.colZipCD.ReadOnly = true;
             this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colZipCD.Width = 300;
+            this.colZipCD.Width = 280;
             // 
             // colAddress
             // 
@@ -519,7 +519,7 @@
             this.colAddress.ReadOnly = true;
             this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAddress.Width = 650;
+            this.colAddress.Width = 600;
             // 
             // colSaleDate_StoreCD
             // 
@@ -531,7 +531,7 @@
             this.colSaleDate_StoreCD.ReadOnly = true;
             this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSaleDate_StoreCD.Width = 250;
+            this.colSaleDate_StoreCD.Width = 260;
             // 
             // TempoRegiKaiinKensaku
             // 

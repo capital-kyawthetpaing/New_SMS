@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
+using CKM_Controls;
 
 namespace Search
 {
@@ -47,8 +48,9 @@ namespace Search
 
             HeaderTitleText = "スタッフ";
             this.Text = ProNm;
-
+          
         }
+
         private void InitialControlArray()
         {
             detailControls = new Control[] { ScStore.TxtCode, ckM_TextBox1, ckM_TextBox2, ckM_TextBox3, ckM_TextBox4 };

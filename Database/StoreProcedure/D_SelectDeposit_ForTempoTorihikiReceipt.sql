@@ -1,15 +1,11 @@
---  ======================================================================
---       入金印刷情報取得
---  ======================================================================
-USE [CAP]
-GO
-
+ BEGIN TRY 
+ Drop Procedure dbo.[D_SelectDeposit_ForTempoTorihikiReceipt]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
-
 
 --  ======================================================================
 --       Program Call    店舗取引レシート印刷　レシート印刷出力
@@ -90,7 +86,7 @@ BEGIN
                                      ,StoreName
                                      ,Address1
                                      ,Address2
-                                     ,TelphoneNO
+                                     ,TelephoneNO
                                      ,ChangeDate
                                      ,ReceiptPrint
                                      ,DeleteFlg 
@@ -173,4 +169,5 @@ BEGIN
 END
 
 GO
+
 

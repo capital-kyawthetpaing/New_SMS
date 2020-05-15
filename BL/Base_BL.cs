@@ -102,8 +102,10 @@ namespace BL
                                          dtMsg.Rows[0]["MessageMark"].ToString().Equals("5") ? MessageBoxIcon.Stop :
                                          dtMsg.Rows[0]["MessageMark"].ToString().Equals("6") ? MessageBoxIcon.Exclamation :
                                          MessageBoxIcon.None;
-
-                return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button1);
+                if(mme.MessageID=="Q003")
+                    return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button2);
+                else
+                    return MessageBox.Show(message, mme.MessageID, msgbtn, msgicon, MessageBoxDefaultButton.Button1);
             }
             else
             {
