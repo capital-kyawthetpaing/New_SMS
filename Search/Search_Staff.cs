@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BL;
 using Entity;
 using Base.Client;
+using CKM_Controls;
 
 namespace Search
 {
@@ -47,8 +48,9 @@ namespace Search
 
             HeaderTitleText = "スタッフ";
             this.Text = ProNm;
-
+          
         }
+
         private void InitialControlArray()
         {
             detailControls = new Control[] { ScStore.TxtCode, ckM_TextBox1, ckM_TextBox2, ckM_TextBox3, ckM_TextBox4 };
@@ -62,6 +64,9 @@ namespace Search
             //btnStoreCD.Click += new System.EventHandler(BtnSearch_Click);
             radioButton1.Enter += new System.EventHandler(RadioButton_Enter);
             radioButton2.Enter += new System.EventHandler(RadioButton_Enter);
+            radioButton1.KeyDown += new  KeyEventHandler(RadioButton_KeyDown);
+            radioButton2.KeyDown += new KeyEventHandler(RadioButton_KeyDown);
+
         }
         /// <summary>
         /// 画面クリア

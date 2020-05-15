@@ -44,7 +44,7 @@ namespace Search
         private void Search_PlanArrival_Load(object sender, EventArgs e)
         {
             CB_Soko.Bind(String.Empty, "");
-            CB_Soko.SelectedValue =soukocd ;
+            CB_Soko.SelectedText =soukocd;
             TB_Shohinmei.Text= shohinmei;
             TB_ColorName.Text = color;
             TB_SizeName.Text = size;

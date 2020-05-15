@@ -154,6 +154,7 @@
             this.txtSKUName.IntegerPart = 0;
             this.txtSKUName.IsCorrectDate = true;
             this.txtSKUName.isEnterKeyDown = false;
+            this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
             this.txtSKUName.Length = 10;
@@ -375,6 +376,7 @@
             this.txtTargetDate.IntegerPart = 0;
             this.txtTargetDate.IsCorrectDate = true;
             this.txtTargetDate.isEnterKeyDown = false;
+            this.txtTargetDate.isMaxLengthErr = false;
             this.txtTargetDate.IsNumber = true;
             this.txtTargetDate.IsShop = false;
             this.txtTargetDate.Length = 10;

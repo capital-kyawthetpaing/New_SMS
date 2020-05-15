@@ -1149,7 +1149,7 @@ namespace KaitouNoukiTouroku
                         else
                             mGrid.g_DArray[i].ArrivalPlanMonth = "";
 
-                      mGrid.g_DArray[i].ArrivalPlanCD = bbl.Z_SetStr(row["ArrivalPlanCD"]);
+                        mGrid.g_DArray[i].ArrivalPlanCD = row["ArrivalPlanCD"].ToString();
                         mGrid.g_DArray[i].TaniName = row["DestinationKBN"].ToString();
                         mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
                         mGrid.g_DArray[i].CommentOutStore = row["CommentOutStore"].ToString();   //         
@@ -1456,7 +1456,8 @@ namespace KaitouNoukiTouroku
             if (!chkAll && !changeYmd)
             {
                 int w_CtlRow = row - Vsb_Mei_0.Value;
-                if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+                if (w_CtlRow < ClsGridKaitouNouki.gc_P_GYO)
+                    if (mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl.GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
                 {
                     if (((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[col, w_CtlRow].CellCtl).isMaxLengthErr)
                         return false;
@@ -1732,6 +1733,9 @@ namespace KaitouNoukiTouroku
                     {
                         arrivalPlanDate = mGrid.g_DArray[RW].FirstArrivalPlanDate;
                     }
+
+                    if (mGrid.g_DArray[RW].ArrivalPlanCD.Equals("-1"))
+                        mGrid.g_DArray[RW].ArrivalPlanCD = "";
 
                    dt.Rows.Add(seq
                         , mGrid.g_DArray[RW].OrderNo

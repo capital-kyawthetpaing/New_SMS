@@ -86,7 +86,7 @@ BEGIN
                                      ,StoreName
                                      ,Address1
                                      ,Address2
-                                     ,TelphoneNO
+                                     ,TelephoneNO
                                      ,ChangeDate
                                      ,ReceiptPrint
                                      ,DeleteFlg 
@@ -169,4 +169,5 @@ BEGIN
 END
 
 GO
+
 

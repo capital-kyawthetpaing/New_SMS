@@ -55,7 +55,7 @@
             this.txtprintprogress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtprintprogress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtprintprogress.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.txtprintprogress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtprintprogress.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtprintprogress.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtprintprogress.DecimalPlace = 0;
             this.txtprintprogress.Font = new System.Drawing.Font("MS Gothic", 26F);

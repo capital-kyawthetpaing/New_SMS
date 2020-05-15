@@ -23,6 +23,18 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_ITEM_SelectTop1(M_ITEM_Entity me)
+        {
+            string sp = "M_ITEM_SelectTop1";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                    { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ITemCD } },
+                    { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } },
+            };
+            return SelectData(dic, sp);
+        }
         //public DataTable M_SKU_SelectAll(M_SKU_Entity mse)
         //{
         //    string sp = "M_SKU_SelectAll";
@@ -35,7 +47,7 @@ namespace DL
         //            { "@SetKBN", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SetKBN } },
         //            { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ChangeDate } },
         //        };
-            
+
         //    return SelectData(dic,sp);
         //}
         /// <summary>

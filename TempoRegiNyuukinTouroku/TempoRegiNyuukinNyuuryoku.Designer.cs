@@ -41,11 +41,13 @@
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_CheckBox1 = new CKM_Controls.CKMShop_CheckBox();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.ckmShop_CheckBox1);
             this.panelDetail.Controls.Add(this.ckmShop_Label3);
             this.panelDetail.Controls.Add(this.chkAdvanceFlg);
             this.panelDetail.Controls.Add(this.ckmShop_Label2);
@@ -72,21 +74,21 @@
             this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label3.Location = new System.Drawing.Point(281, 333);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(605, 192);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(755, 35);
-            this.ckmShop_Label3.TabIndex = 25;
+            this.ckmShop_Label3.TabIndex = 9;
             this.ckmShop_Label3.Text = "次回以降の店頭販売分の先入金として預かる";
             this.ckmShop_Label3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkAdvanceFlg
             // 
-            this.chkAdvanceFlg.Location = new System.Drawing.Point(249, 337);
+            this.chkAdvanceFlg.Location = new System.Drawing.Point(708, 119);
             this.chkAdvanceFlg.Margin = new System.Windows.Forms.Padding(0);
             this.chkAdvanceFlg.Name = "chkAdvanceFlg";
             this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 30);
-            this.chkAdvanceFlg.TabIndex = 3;
+            this.chkAdvanceFlg.TabIndex = 6;
             this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
@@ -101,7 +103,7 @@
             this.ckmShop_Label2.Location = new System.Drawing.Point(119, 334);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
             this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
-            this.ckmShop_Label2.TabIndex = 23;
+            this.ckmShop_Label2.TabIndex = 8;
             this.ckmShop_Label2.Text = "前受金";
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -117,7 +119,7 @@
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lblCustomerName.Size = new System.Drawing.Size(600, 42);
-            this.lblCustomerName.TabIndex = 22;
+            this.lblCustomerName.TabIndex = 7;
             this.lblCustomerName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -144,7 +146,7 @@
             this.txtCustomerCD.MoveNext = true;
             this.txtCustomerCD.Name = "txtCustomerCD";
             this.txtCustomerCD.Size = new System.Drawing.Size(250, 42);
-            this.txtCustomerCD.TabIndex = 2;
+            this.txtCustomerCD.TabIndex = 3;
             this.txtCustomerCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerCD_KeyDown);
             // 
@@ -162,7 +164,7 @@
             this.btnCustomerCD.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerCD.Name = "btnCustomerCD";
             this.btnCustomerCD.Size = new System.Drawing.Size(180, 42);
-            this.btnCustomerCD.TabIndex = 7;
+            this.btnCustomerCD.TabIndex = 2;
             this.btnCustomerCD.Text = "会員番号";
             this.btnCustomerCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCustomerCD.UseVisualStyleBackColor = false;
@@ -185,7 +187,7 @@
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.RowCount = 5;
             this.txtRemarks.Size = new System.Drawing.Size(750, 200);
-            this.txtRemarks.TabIndex = 4;
+            this.txtRemarks.TabIndex = 5;
             this.txtRemarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Medium;
             // 
             // cboDenominationName
@@ -251,8 +253,8 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(121, 389);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
-            this.ckmShop_Label5.TabIndex = 19;
+            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label5.TabIndex = 10;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -268,7 +270,7 @@
             this.ckmShop_Label4.Location = new System.Drawing.Point(118, 216);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(127, 35);
-            this.ckmShop_Label4.TabIndex = 18;
+            this.ckmShop_Label4.TabIndex = 7;
             this.ckmShop_Label4.Text = "金  種";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -284,10 +286,18 @@
             this.ckmShop_Label1.Location = new System.Drawing.Point(120, 151);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(126, 35);
-            this.ckmShop_Label1.TabIndex = 17;
+            this.ckmShop_Label1.TabIndex = 6;
             this.ckmShop_Label1.Text = "入金額";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckmShop_CheckBox1
+            // 
+            this.ckmShop_CheckBox1.Location = new System.Drawing.Point(246, 334);
+            this.ckmShop_CheckBox1.Name = "ckmShop_CheckBox1";
+            this.ckmShop_CheckBox1.Size = new System.Drawing.Size(40, 27);
+            this.ckmShop_CheckBox1.TabIndex = 4;
+            this.ckmShop_CheckBox1.UseVisualStyleBackColor = true;
             // 
             // TempoRegiNyuukinNyuuryoku
             // 
@@ -322,6 +332,6 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label2;
         private CKM_Controls.CKMShop_Label ckmShop_Label3;
         private CKM_Controls.CKMShop_CheckBox chkAdvanceFlg;
-
+        private CKM_Controls.CKMShop_CheckBox ckmShop_CheckBox1;
     }
 }

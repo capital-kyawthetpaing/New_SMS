@@ -39,7 +39,7 @@ BEGIN
           ,store.StoreName
           ,store.Address1
           ,store.Address2
-          ,'電話 ' + store.TelphoneNO AS TelphoneNO
+          ,'電話 ' + store.TelephoneNO AS TelphoneNO
           ,store.ReceiptPrint + '-' + staff.ReceiptPrint AS ReceiptPrint
           ,multiPorpose.Char1
           ,multiPorpose.Char2
@@ -54,7 +54,7 @@ BEGIN
                              ,StoreName
                              ,Address1
                              ,Address2
-                             ,TelphoneNO
+                             ,TelephoneNO
                              ,ChangeDate
                              ,ReceiptPrint
                              ,DeleteFlg 
@@ -80,5 +80,4 @@ BEGIN
         ;
 END
 GO
-
 

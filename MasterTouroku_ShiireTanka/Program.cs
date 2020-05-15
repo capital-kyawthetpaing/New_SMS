@@ -16,7 +16,7 @@ namespace MasterTouroku_ShiireTanka
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMasterTouroku_ShiireTanka());
+            Application.Run(new FrmMasterTouroku_ShiireTanka());
         }
     }
 }

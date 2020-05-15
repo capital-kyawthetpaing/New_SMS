@@ -28,13 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new CKM_Controls.CKM_Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label12 = new CKM_Controls.CKM_Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.label9 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -47,33 +45,35 @@
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.ckM_Label1 = new System.Windows.Forms.Label();
             this.ScMaker = new Search.CKM_SearchControl();
+            this.radioButton2 = new CKM_Controls.CKM_RadioButton();
+            this.radioButton1 = new CKM_Controls.CKM_RadioButton();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.radioButton2);
+            this.PanelHeader.Controls.Add(this.radioButton1);
             this.PanelHeader.Controls.Add(this.ScMaker);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.ckM_TextBox3);
             this.PanelHeader.Controls.Add(this.btnSubF11);
             this.PanelHeader.Controls.Add(this.label9);
             this.PanelHeader.Controls.Add(this.label8);
-            this.PanelHeader.Controls.Add(this.radioButton1);
             this.PanelHeader.Controls.Add(this.label5);
             this.PanelHeader.Controls.Add(this.label12);
-            this.PanelHeader.Controls.Add(this.radioButton2);
             this.PanelHeader.Size = new System.Drawing.Size(916, 128);
-            this.PanelHeader.Controls.SetChildIndex(this.radioButton2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label12, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label5, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.radioButton1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label8, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label9, 0);
             this.PanelHeader.Controls.SetChildIndex(this.btnSubF11, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScMaker, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.radioButton1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.radioButton2, 0);
             // 
             // label8
             // 
@@ -81,8 +81,9 @@
             this.label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.DefaultlabelSize = true;
-            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(52, 89);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(44, 12);
@@ -91,28 +92,15 @@
             this.label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(183, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "履歴";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            this.radioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioButton_KeyDown);
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.DefaultlabelSize = true;
-            this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(39, 35);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 12);
@@ -121,42 +109,31 @@
             this.label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(103, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "基準日";
-            this.radioButton1.UseVisualStyleBackColor = false;
-            this.radioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RadioButton_KeyDown);
-            // 
             // ckM_TextBox3
             // 
             this.ckM_TextBox3.AllowMinus = false;
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
-            this.ckM_TextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
             this.ckM_TextBox3.isEnterKeyDown = false;
+            this.ckM_TextBox3.isMaxLengthErr = false;
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
-            this.ckM_TextBox3.Length = 30;
+            this.ckM_TextBox3.Length = 15;
             this.ckM_TextBox3.Location = new System.Drawing.Point(103, 59);
             this.ckM_TextBox3.MaxLength = 15;
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(195, 19);
-            this.ckM_TextBox3.TabIndex = 2;
+            this.ckM_TextBox3.TabIndex = 3;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label9
@@ -165,8 +142,9 @@
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(26, 62);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 12);
@@ -181,8 +159,9 @@
             this.label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.DefaultlabelSize = true;
-            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(52, 8);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 12);
@@ -196,17 +175,17 @@
             this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDetail.ColumnHeadersHeight = 25;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colBrandCD,
@@ -214,14 +193,14 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -286,13 +265,13 @@
             this.btnSubF11.DefaultBtnSize = true;
             this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnSubF11.Location = new System.Drawing.Point(776, 81);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF11.Name = "btnSubF11";
             this.btnSubF11.Size = new System.Drawing.Size(118, 28);
-            this.btnSubF11.TabIndex = 4;
+            this.btnSubF11.TabIndex = 5;
             this.btnSubF11.Text = "表示(F11)";
             this.btnSubF11.UseVisualStyleBackColor = false;
             this.btnSubF11.Click += new System.EventHandler(this.BtnSubF11_Click);
@@ -304,7 +283,7 @@
             this.ckM_Label1.Location = new System.Drawing.Point(103, 3);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(84, 20);
-            this.ckM_Label1.TabIndex = 330;
+            this.ckM_Label1.TabIndex = 0;
             this.ckM_Label1.Text = "YYYY/MM/DD";
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -317,20 +296,46 @@
             this.ScMaker.CodeWidth = 130;
             this.ScMaker.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMaker.DataCheck = false;
+            this.ScMaker.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ScMaker.IsCopy = false;
             this.ScMaker.LabelText = "";
             this.ScMaker.LabelVisible = true;
-            this.ScMaker.Location = new System.Drawing.Point(103, 82);
+            this.ScMaker.Location = new System.Drawing.Point(103, 76);
+            this.ScMaker.Margin = new System.Windows.Forms.Padding(0);
             this.ScMaker.Name = "ScMaker";
             this.ScMaker.SearchEnable = true;
             this.ScMaker.Size = new System.Drawing.Size(444, 27);
             this.ScMaker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScMaker.TabIndex = 3;
+            this.ScMaker.TabIndex = 4;
             this.ScMaker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScMaker.UseChangeDate = false;
             this.ScMaker.Value1 = null;
             this.ScMaker.Value2 = null;
             this.ScMaker.Value3 = null;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Location = new System.Drawing.Point(171, 32);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(49, 16);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "履歴";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.Location = new System.Drawing.Point(103, 33);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(62, 16);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "基準日";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Search_Brand
             // 
@@ -355,9 +360,7 @@
 
         #endregion
         private CKM_Controls.CKM_Label label8;
-        private System.Windows.Forms.RadioButton radioButton2;
         private CKM_Controls.CKM_Label label12;
-        private System.Windows.Forms.RadioButton radioButton1;
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
         private CKM_Controls.CKM_Label label9;
         private CKM_Controls.CKM_Label label5;
@@ -370,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MakerCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MakerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChangeDate;
+        private CKM_Controls.CKM_RadioButton radioButton2;
+        private CKM_Controls.CKM_RadioButton radioButton1;
     }
 }
