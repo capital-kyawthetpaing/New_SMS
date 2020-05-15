@@ -339,6 +339,7 @@ namespace MasterTouroku_UnsouGaisya
                 ChangeDate = ScShippingCD.ChangeDate,
                 ShippingName = txtShippingName.Text,
                 CarrierFlg = cboIdentity.SelectedValue.ToString(),
+                
                 YahooCD = txtYahooCD.Text,
                 RakutenCD = txtRakutenCD.Text,
                 AmazonCD = txtAmazonCD.Text,
