@@ -28,16 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
             this.dgvYuubinBangou = new CKM_Controls.CKM_GridView();
-            this.colZipCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtZip2To = new CKM_Controls.CKM_TextBox();
@@ -46,6 +41,12 @@
             this.txtZip1from = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.colZipCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarrierName = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCarrierLeadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -57,7 +58,7 @@
             // 
             this.PanelHeader.Controls.Add(this.ckM_Label3);
             this.PanelHeader.Controls.Add(this.panel1);
-            this.PanelHeader.Size = new System.Drawing.Size(1774, 91);
+            this.PanelHeader.Size = new System.Drawing.Size(1832, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.panel1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
@@ -65,7 +66,7 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnDisplay);
-            this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1298, 0);
             this.PanelSearch.TabIndex = 0;
             // 
             // btnDisplay
@@ -93,43 +94,37 @@
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetail.Location = new System.Drawing.Point(0, 147);
             this.PanelDetail.Name = "PanelDetail";
-            this.PanelDetail.Size = new System.Drawing.Size(1776, 782);
+            this.PanelDetail.Size = new System.Drawing.Size(1834, 782);
             this.PanelDetail.TabIndex = 0;
             // 
             // dgvYuubinBangou
             // 
             this.dgvYuubinBangou.AllowUserToDeleteRows = false;
             this.dgvYuubinBangou.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvYuubinBangou.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvYuubinBangou.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvYuubinBangou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvYuubinBangou.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvYuubinBangou.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvYuubinBangou.ColumnHeadersHeight = 25;
             this.dgvYuubinBangou.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colZipCD1,
             this.colZipCD2,
             this.colAdd1,
-            this.colAdd2});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colAdd2,
+            this.colCarrierName,
+            this.colCarrierLeadDay});
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvYuubinBangou.Location = new System.Drawing.Point(130, 17);
+            this.dgvYuubinBangou.Location = new System.Drawing.Point(23, 17);
             this.dgvYuubinBangou.Name = "dgvYuubinBangou";
-            this.dgvYuubinBangou.Size = new System.Drawing.Size(1550, 600);
+            this.dgvYuubinBangou.Size = new System.Drawing.Size(1800, 750);
             this.dgvYuubinBangou.TabIndex = 0;
             this.dgvYuubinBangou.UseRowNo = true;
             this.dgvYuubinBangou.UseSetting = true;
@@ -137,38 +132,6 @@
             this.dgvYuubinBangou.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvYuubinBangou_CellPainting);
             this.dgvYuubinBangou.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvYuubinBangou_EditingControlShowing);
             this.dgvYuubinBangou.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvYuubinBangou_Paint);
-            // 
-            // colZipCD1
-            // 
-            this.colZipCD1.DataPropertyName = "ZipCD1";
-            this.colZipCD1.HeaderText = "郵便番号";
-            this.colZipCD1.MaxInputLength = 3;
-            this.colZipCD1.Name = "colZipCD1";
-            this.colZipCD1.Width = 40;
-            // 
-            // colZipCD2
-            // 
-            this.colZipCD2.DataPropertyName = "ZipCD2";
-            this.colZipCD2.HeaderText = "";
-            this.colZipCD2.MaxInputLength = 4;
-            this.colZipCD2.Name = "colZipCD2";
-            this.colZipCD2.Width = 50;
-            // 
-            // colAdd1
-            // 
-            this.colAdd1.DataPropertyName = "Address1";
-            this.colAdd1.HeaderText = "住所1";
-            this.colAdd1.MaxInputLength = 80;
-            this.colAdd1.Name = "colAdd1";
-            this.colAdd1.Width = 700;
-            // 
-            // colAdd2
-            // 
-            this.colAdd2.DataPropertyName = "Address2";
-            this.colAdd2.HeaderText = "住所2";
-            this.colAdd2.MaxInputLength = 80;
-            this.colAdd2.Name = "colAdd2";
-            this.colAdd2.Width = 700;
             // 
             // panel1
             // 
@@ -214,6 +177,7 @@
             this.txtZip2To.IntegerPart = 0;
             this.txtZip2To.IsCorrectDate = true;
             this.txtZip2To.isEnterKeyDown = false;
+            this.txtZip2To.isMaxLengthErr = false;
             this.txtZip2To.IsNumber = true;
             this.txtZip2To.IsShop = false;
             this.txtZip2To.Length = 4;
@@ -240,6 +204,7 @@
             this.txtZip1To.IntegerPart = 0;
             this.txtZip1To.IsCorrectDate = true;
             this.txtZip1To.isEnterKeyDown = false;
+            this.txtZip1To.isMaxLengthErr = false;
             this.txtZip1To.IsNumber = true;
             this.txtZip1To.IsShop = false;
             this.txtZip1To.Length = 3;
@@ -265,6 +230,7 @@
             this.txtZip2From.IntegerPart = 0;
             this.txtZip2From.IsCorrectDate = true;
             this.txtZip2From.isEnterKeyDown = false;
+            this.txtZip2From.isMaxLengthErr = false;
             this.txtZip2From.IsNumber = true;
             this.txtZip2From.IsShop = false;
             this.txtZip2From.Length = 4;
@@ -291,6 +257,7 @@
             this.txtZip1from.IntegerPart = 0;
             this.txtZip1from.IsCorrectDate = true;
             this.txtZip1from.isEnterKeyDown = false;
+            this.txtZip1from.isMaxLengthErr = false;
             this.txtZip1from.IsNumber = true;
             this.txtZip1from.IsShop = false;
             this.txtZip1from.Length = 3;
@@ -336,11 +303,58 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
+            // colZipCD1
+            // 
+            this.colZipCD1.DataPropertyName = "ZipCD1";
+            this.colZipCD1.HeaderText = "郵便番号";
+            this.colZipCD1.MaxInputLength = 3;
+            this.colZipCD1.Name = "colZipCD1";
+            this.colZipCD1.Width = 40;
+            // 
+            // colZipCD2
+            // 
+            this.colZipCD2.DataPropertyName = "ZipCD2";
+            this.colZipCD2.HeaderText = "";
+            this.colZipCD2.MaxInputLength = 4;
+            this.colZipCD2.Name = "colZipCD2";
+            this.colZipCD2.Width = 50;
+            // 
+            // colAdd1
+            // 
+            this.colAdd1.DataPropertyName = "Address1";
+            this.colAdd1.HeaderText = "住所1";
+            this.colAdd1.MaxInputLength = 80;
+            this.colAdd1.Name = "colAdd1";
+            this.colAdd1.Width = 700;
+            // 
+            // colAdd2
+            // 
+            this.colAdd2.DataPropertyName = "Address2";
+            this.colAdd2.HeaderText = "住所2";
+            this.colAdd2.MaxInputLength = 80;
+            this.colAdd2.Name = "colAdd2";
+            this.colAdd2.Width = 700;
+            // 
+            // colCarrierName
+            // 
+            this.colCarrierName.DataPropertyName = "(none)";
+            this.colCarrierName.HeaderText = "奨励運送会社";
+            this.colCarrierName.Name = "colCarrierName";
+            this.colCarrierName.Width = 200;
+            // 
+            // colCarrierLeadDay
+            // 
+            this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
+            this.colCarrierLeadDay.HeaderText = "日数";
+            this.colCarrierLeadDay.MaxInputLength = 3;
+            this.colCarrierLeadDay.Name = "colCarrierLeadDay";
+            this.colCarrierLeadDay.Width = 50;
+            // 
             // frmMasterTouroku_YuubinBangou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1776, 961);
+            this.ClientSize = new System.Drawing.Size(1834, 961);
             this.Controls.Add(this.PanelDetail);
             this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
@@ -372,11 +386,13 @@
         private CKM_Controls.CKM_TextBox txtZip1from;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_GridView dgvYuubinBangou;
+        private CKM_Controls.CKM_Label ckM_Label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
-        private CKM_Controls.CKM_Label ckM_Label3;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCarrierName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierLeadDay;
     }
 }
 

@@ -42,6 +42,7 @@ namespace MasterTouroku_YuubinBangou
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
+            BindGridCombo();
         }
 
         private void SetRequireFields()
@@ -50,6 +51,18 @@ namespace MasterTouroku_YuubinBangou
             txtZip1To.Require(true);
             txtZip2From.Require(true);
             txtZip2To.Require(true);
+        }
+
+        private void BindGridCombo()
+        {
+            dtDisplay = new DataTable();
+            dtDisplay.Columns.Add("CarrierName", typeof(string));
+            dtDisplay.Columns.Add("CarrierCD", typeof(string));
+            dtDisplay = YuubinBangouBL.SimpleSelect1("62");
+
+            colCarrierName.ValueMember = "CarrierCD";
+            colCarrierName.DisplayMember = "CarrierName";
+            colCarrierName.DataSource = dtDisplay;
         }
         
         public override void FunctionProcess(int index)
@@ -228,22 +241,22 @@ namespace MasterTouroku_YuubinBangou
                     return false;
                 }
 
-                if ((!string.IsNullOrWhiteSpace(txtZip2From.Text)) && (!string.IsNullOrWhiteSpace(txtZip2To.Text)))
-                {
-                    if ((Convert.ToInt32(txtZip2From.Text.ToString())) > (Convert.ToInt32(txtZip2To.Text.ToString())))
-                    {
-                        YuubinBangouBL.ShowMessage("E106");
-                        txtZip2To.Focus();
-                        return false;
-                    }
-                }
+                //if ((!string.IsNullOrWhiteSpace(txtZip2From.Text)) && (!string.IsNullOrWhiteSpace(txtZip2To.Text)))
+                //{
+                //    if ((Convert.ToInt32(txtZip2From.Text.ToString())) > (Convert.ToInt32(txtZip2To.Text.ToString())))
+                //    {
+                //        YuubinBangouBL.ShowMessage("E106");
+                //        txtZip2To.Focus();
+                //        return false;
+                //    }
+                //}
 
                 if ((!string.IsNullOrWhiteSpace(txtZip1from.Text)) && (!string.IsNullOrWhiteSpace(txtZip1To.Text)))
                 {
-                    if ((Convert.ToInt32(txtZip1from.Text.ToString())) > (Convert.ToInt32(txtZip1To.Text.ToString())))
+                    if ((Convert.ToInt32(txtZip1from.Text.ToString() + txtZip2From.Text.ToString())) > (Convert.ToInt32(txtZip1To.Text.ToString() + txtZip2To.Text.ToString())))
                     {
                         YuubinBangouBL.ShowMessage("E106");
-                        txtZip1To.Focus();
+                        txtZip2To.Focus();
                         return false;
                     }
                 }
@@ -391,14 +404,14 @@ namespace MasterTouroku_YuubinBangou
                     }
                 }
 
-                 if (!string.IsNullOrWhiteSpace(txtZip2From.Text) && !string.IsNullOrWhiteSpace(txtZip2To.Text))
-                {
-                    if (Convert.ToInt32(txtZip2From.Text.ToString()) > Convert.ToInt32(txtZip2To.Text.ToString()))
-                    {
-                        YuubinBangouBL.ShowMessage("E106");
-                        txtZip2To.Focus();
-                    }
-                }
+                // if (!string.IsNullOrWhiteSpace(txtZip2From.Text) && !string.IsNullOrWhiteSpace(txtZip2To.Text))
+                //{
+                //    if (Convert.ToInt32(txtZip2From.Text.ToString()) > Convert.ToInt32(txtZip2To.Text.ToString()))
+                //    {
+                //        YuubinBangouBL.ShowMessage("E106");
+                //        txtZip2To.Focus();
+                //    }
+                //}
             }
         }
 
