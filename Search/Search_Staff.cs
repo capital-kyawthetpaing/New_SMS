@@ -64,6 +64,9 @@ namespace Search
             //btnStoreCD.Click += new System.EventHandler(BtnSearch_Click);
             radioButton1.Enter += new System.EventHandler(RadioButton_Enter);
             radioButton2.Enter += new System.EventHandler(RadioButton_Enter);
+            radioButton1.KeyDown += new  KeyEventHandler(RadioButton_KeyDown);
+            radioButton2.KeyDown += new KeyEventHandler(RadioButton_KeyDown);
+
         }
         /// <summary>
         /// 画面クリア

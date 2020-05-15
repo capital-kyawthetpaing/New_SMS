@@ -157,6 +157,11 @@ namespace Search
         {
             MoveNextControl(e);
         }
+
+        private void Search_Vendor_Load(object sender, EventArgs e)
+        {
+            txtChangeDate.Focus();
+        }
     }
 }
 

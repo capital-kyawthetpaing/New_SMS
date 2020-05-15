@@ -34,9 +34,7 @@
             this.ckM_TextBox4 = new CKM_Controls.CKM_TextBox();
             this.label3 = new CKM_Controls.CKM_Label();
             this.label4 = new CKM_Controls.CKM_Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label12 = new CKM_Controls.CKM_Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.label9 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -53,6 +51,8 @@
             this.ColChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.ckM_Label1 = new System.Windows.Forms.Label();
+            this.radioButton1 = new CKM_Controls.CKM_RadioButton();
+            this.radioButton2 = new CKM_Controls.CKM_RadioButton();
             this.ScStore = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
@@ -60,13 +60,14 @@
             // 
             // PanelHeader
             // 
+            this.PanelHeader.Controls.Add(this.radioButton2);
+            this.PanelHeader.Controls.Add(this.radioButton1);
             this.PanelHeader.Controls.Add(this.ScStore);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.ckM_TextBox3);
             this.PanelHeader.Controls.Add(this.btnSubF11);
             this.PanelHeader.Controls.Add(this.label9);
             this.PanelHeader.Controls.Add(this.label8);
-            this.PanelHeader.Controls.Add(this.radioButton1);
             this.PanelHeader.Controls.Add(this.ckM_TextBox4);
             this.PanelHeader.Controls.Add(this.label5);
             this.PanelHeader.Controls.Add(this.label3);
@@ -74,11 +75,9 @@
             this.PanelHeader.Controls.Add(this.label6);
             this.PanelHeader.Controls.Add(this.ckM_TextBox2);
             this.PanelHeader.Controls.Add(this.label4);
-            this.PanelHeader.Controls.Add(this.radioButton2);
             this.PanelHeader.Controls.Add(this.ckM_TextBox1);
             this.PanelHeader.Size = new System.Drawing.Size(916, 188);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.radioButton2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label6, 0);
@@ -86,13 +85,14 @@
             this.PanelHeader.Controls.SetChildIndex(this.label3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label5, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox4, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.radioButton1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label8, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label9, 0);
             this.PanelHeader.Controls.SetChildIndex(this.btnSubF11, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox3, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScStore, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.radioButton1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.radioButton2, 0);
             // 
             // label8
             // 
@@ -135,7 +135,7 @@
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
             this.ckM_TextBox4.Size = new System.Drawing.Size(195, 19);
-            this.ckM_TextBox4.TabIndex = 6;
+            this.ckM_TextBox4.TabIndex = 7;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label3
@@ -172,19 +172,6 @@
             this.label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(183, 35);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(49, 16);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "履歴";
-            this.radioButton2.UseVisualStyleBackColor = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -201,19 +188,6 @@
             this.label12.Text = "表示対象";
             this.label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(103, 35);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(62, 16);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "基準日";
-            this.radioButton1.UseVisualStyleBackColor = false;
             // 
             // ckM_TextBox3
             // 
@@ -239,7 +213,7 @@
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox3.TabIndex = 5;
+            this.ckM_TextBox3.TabIndex = 6;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label9
@@ -300,7 +274,7 @@
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
             this.ckM_TextBox2.Size = new System.Drawing.Size(36, 19);
-            this.ckM_TextBox2.TabIndex = 4;
+            this.ckM_TextBox2.TabIndex = 5;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox1
@@ -327,7 +301,7 @@
             this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
             this.ckM_TextBox1.Size = new System.Drawing.Size(36, 19);
-            this.ckM_TextBox1.TabIndex = 3;
+            this.ckM_TextBox1.TabIndex = 4;
             this.ckM_TextBox1.Text = "XXX";
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -457,7 +431,7 @@
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
             this.btnSubF11.Name = "btnSubF11";
             this.btnSubF11.Size = new System.Drawing.Size(118, 28);
-            this.btnSubF11.TabIndex = 7;
+            this.btnSubF11.TabIndex = 8;
             this.btnSubF11.Text = "表示(F11)";
             this.btnSubF11.UseVisualStyleBackColor = false;
             this.btnSubF11.Click += new System.EventHandler(this.BtnSubF11_Click);
@@ -469,9 +443,33 @@
             this.ckM_Label1.Location = new System.Drawing.Point(103, 3);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(84, 20);
-            this.ckM_Label1.TabIndex = 330;
+            this.ckM_Label1.TabIndex = 0;
             this.ckM_Label1.Text = "YYYY/MM/DD";
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.Location = new System.Drawing.Point(103, 35);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(62, 16);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "基準日";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Location = new System.Drawing.Point(171, 34);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(49, 16);
+            this.radioButton2.TabIndex = 2;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "履歴";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // ScStore
             // 
@@ -492,7 +490,7 @@
             this.ScStore.SearchEnable = true;
             this.ScStore.Size = new System.Drawing.Size(354, 27);
             this.ScStore.Stype = Search.CKM_SearchControl.SearchType.店舗;
-            this.ScStore.TabIndex = 2;
+            this.ScStore.TabIndex = 3;
             this.ScStore.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStore.UseChangeDate = false;
             this.ScStore.Value1 = null;
@@ -524,9 +522,7 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox4;
         private CKM_Controls.CKM_Label label3;
         private CKM_Controls.CKM_Label label4;
-        private System.Windows.Forms.RadioButton radioButton2;
         private CKM_Controls.CKM_Label label12;
-        private System.Windows.Forms.RadioButton radioButton1;
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
         private CKM_Controls.CKM_Label label9;
         private CKM_Controls.CKM_Label label5;
@@ -544,5 +540,7 @@
         private CKM_Controls.CKM_Button btnSubF11;
         private System.Windows.Forms.Label ckM_Label1;
         private CKM_SearchControl ScStore;
+        private CKM_Controls.CKM_RadioButton radioButton2;
+        private CKM_Controls.CKM_RadioButton radioButton1;
     }
 }
