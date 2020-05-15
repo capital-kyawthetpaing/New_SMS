@@ -30,6 +30,7 @@ namespace DL
                    { "@ChangeDate", new ValuePair { value1 = System.Data.SqlDbType.Date, value2 = mse.ChangeDate } },
                    { "@ShippingName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ShippingName } },
                    { "@Identify", new ValuePair { value1 = SqlDbType.TinyInt, value2 = mse.CarrierFlg } },
+                   { "@Normal", new ValuePair {value1 = SqlDbType.TinyInt, value2 = mse.NormalFlg} },
                    { "@YahooCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.YahooCD } },
                    { "@RakutenCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.RakutenCD } },
                    { "@AmazonCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.AmazonCD } },

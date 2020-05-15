@@ -31,6 +31,7 @@ namespace BL
             {
                 mse.ShippingName = dtCarrier.Rows[0]["CarrierName"].ToString();
                 mse.CarrierFlg = dtCarrier.Rows[0]["CarrierFlg"].ToString();
+                mse.NormalFlg = dtCarrier.Rows[0]["NormalFLG"].ToString();
                 mse.YahooCD = dtCarrier.Rows[0]["YahooCarrierCD"].ToString();
                 mse.RakutenCD = dtCarrier.Rows[0]["RakutenCarrierCD"].ToString();
                 mse.AmazonCD = dtCarrier.Rows[0]["AmazonCarrierCD"].ToString();

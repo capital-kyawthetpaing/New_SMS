@@ -21,5 +21,6 @@ namespace Entity
         public string OtherCD { get; set; }
         public string Remarks { get; set; }
         public string DisplayKBN { get; set; }
+        public string NormalFlg { get; set; }
     }
 }

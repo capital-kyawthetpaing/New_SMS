@@ -114,12 +114,6 @@
     <Compile Include="CustomControl1.Designer.cs">
       <DependentUpon>CustomControl1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Furikomi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +159,6 @@
     <EmbeddedResource Include="CR_regi\yreportsizetest.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>yreportsizetest.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Furikomi.resx">
       <DependentUpon>Furikomi.cs</DependentUpon>
