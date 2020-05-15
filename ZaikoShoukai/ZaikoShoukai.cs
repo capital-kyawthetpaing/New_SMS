@@ -13,6 +13,7 @@ using System.IO;
 using ClosedXML.Excel;
 using System.Drawing;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ZaikoShoukai
 {
@@ -53,7 +54,7 @@ namespace ZaikoShoukai
         private void BindCombo()
         {
             string ymd = bbl.GetDate();
-            CB_Soko.Bind(String.Empty, "");
+            CB_Soko.Bind(ymd);
             CB_Soko.SelectedIndex = 1;
             CB_year.Bind(ymd);
             CB_Season.Bind(ymd);
@@ -88,13 +89,13 @@ namespace ZaikoShoukai
                 msInfo_Entity = GetInfoEntity();
                 msT_Entity = GetTagEntity();
                 ds_Entity = GetStockEntity();
+                
                 dtData = zaibl.ZaikoShoukai_Search(msku_Entity, msInfo_Entity, msT_Entity,ds_Entity, type);
                 if (dtData.Rows.Count > 0)
                 {
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
-                    SoukoCD = dtData.Rows[0]["倉庫CD"].ToString();
                 }
                 else
                 {
@@ -134,6 +135,7 @@ namespace ZaikoShoukai
         }
         public M_SKU_Entity GetDataEntity()
         {
+            
             msku_Entity = new M_SKU_Entity()
             {
                 ChangeDate=LB_ChangeDate.Text,
@@ -145,7 +147,7 @@ namespace ZaikoShoukai
                 SKUCD=TB_Skucd.Text,
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
-                CommentInStore=TB_Bikokeyword.Text,
+                CommentInStore= TB_Bikokeyword.Text,
                 ReserveCD = CB_ReserveCD.SelectedValue.ToString(),
                 NoticesCD = CB_NoticesCD.SelectedValue.ToString(),
                 PostageCD = CB_PostageCD.SelectedValue.ToString(),
@@ -470,7 +472,7 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                
+                SoukoCD = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
                 skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();

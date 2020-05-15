@@ -164,6 +164,7 @@ namespace MasterTouroku_UnsouGaisya
             {
                 txtShippingName.Text = mse.ShippingName;
                 cboIdentity.SelectedValue = mse.CarrierFlg;
+                cboNormalType.SelectedValue = mse.NormalFlg;
                 txtYahooCD.Text = mse.YahooCD;
                 txtRakutenCD.Text = mse.RakutenCD;
                 txtAmazonCD.Text = mse.AmazonCD;
@@ -285,7 +286,15 @@ namespace MasterTouroku_UnsouGaisya
                             InsertUpdate(2);
                             break;
                         case EOperationMode.DELETE:
-                            Delete();
+                            if(mse.UsedFlg == "1")
+                            {
+                                mtugsbl.ShowMessage("E154");
+                            }
+                            else
+                            {
+                                Delete();
+                            }
+                            
                             break;
                     }
                 }
@@ -339,7 +348,7 @@ namespace MasterTouroku_UnsouGaisya
                 ChangeDate = ScShippingCD.ChangeDate,
                 ShippingName = txtShippingName.Text,
                 CarrierFlg = cboIdentity.SelectedValue.ToString(),
-                
+                NormalFlg = cboNormalType.SelectedValue.ToString(),
                 YahooCD = txtYahooCD.Text,
                 RakutenCD = txtRakutenCD.Text,
                 AmazonCD = txtAmazonCD.Text,
