@@ -1149,7 +1149,7 @@ namespace KaitouNoukiTouroku
                         else
                             mGrid.g_DArray[i].ArrivalPlanMonth = "";
 
-                      mGrid.g_DArray[i].ArrivalPlanCD = bbl.Z_SetStr(row["ArrivalPlanCD"]);
+                        mGrid.g_DArray[i].ArrivalPlanCD = row["ArrivalPlanCD"].ToString();
                         mGrid.g_DArray[i].TaniName = row["DestinationKBN"].ToString();
                         mGrid.g_DArray[i].CommentInStore = row["CommentInStore"].ToString();   // 
                         mGrid.g_DArray[i].CommentOutStore = row["CommentOutStore"].ToString();   //         
