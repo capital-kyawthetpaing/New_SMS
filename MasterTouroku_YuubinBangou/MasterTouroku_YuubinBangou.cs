@@ -42,7 +42,7 @@ namespace MasterTouroku_YuubinBangou
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
-            BindGridCombo();
+            //BindGridCombo();
         }
 
         private void SetRequireFields()
@@ -53,17 +53,17 @@ namespace MasterTouroku_YuubinBangou
             txtZip2To.Require(true);
         }
 
-        private void BindGridCombo()
-        {
-            dtDisplay = new DataTable();
-            dtDisplay.Columns.Add("CarrierName", typeof(string));
-            dtDisplay.Columns.Add("CarrierCD", typeof(string));
-            dtDisplay = YuubinBangouBL.SimpleSelect1("62");
+        //private void BindGridCombo()
+        //{
+        //    DataTable dt = new DataTable();
+        //    dt.Columns.Add("CarrierName", typeof(string));
+        //    dt.Columns.Add("CarrierCD", typeof(string));
+        //    dt = YuubinBangouBL.SimpleSelect1("62");
 
-            colCarrierName.ValueMember = "CarrierCD";
-            colCarrierName.DisplayMember = "CarrierName";
-            colCarrierName.DataSource = dtDisplay;
-        }
+        //    colCarrierName.ValueMember = "CarrierCD";
+        //    colCarrierName.DisplayMember = "CarrierName";
+        //    colCarrierName.DataSource = dt;
+        //}
         
         public override void FunctionProcess(int index)
         {
@@ -165,6 +165,8 @@ namespace MasterTouroku_YuubinBangou
 
             if (dtDisplay != null)
             {
+                dtDisplay.Columns.Remove("CarrierName");
+            
                 dgvYuubinBangou.DataSource = dtDisplay;
                 txtZip1from.Focus();
 

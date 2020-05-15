@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
             this.dgvYuubinBangou = new CKM_Controls.CKM_GridView();
@@ -45,8 +46,6 @@
             this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarrierName = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCarrierLeadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -58,7 +57,7 @@
             // 
             this.PanelHeader.Controls.Add(this.ckM_Label3);
             this.PanelHeader.Controls.Add(this.panel1);
-            this.PanelHeader.Size = new System.Drawing.Size(1832, 91);
+            this.PanelHeader.Size = new System.Drawing.Size(1774, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.panel1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label3, 0);
@@ -66,7 +65,7 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnDisplay);
-            this.PanelSearch.Location = new System.Drawing.Point(1298, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
             this.PanelSearch.TabIndex = 0;
             // 
             // btnDisplay
@@ -94,7 +93,7 @@
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetail.Location = new System.Drawing.Point(0, 147);
             this.PanelDetail.Name = "PanelDetail";
-            this.PanelDetail.Size = new System.Drawing.Size(1834, 782);
+            this.PanelDetail.Size = new System.Drawing.Size(1776, 782);
             this.PanelDetail.TabIndex = 0;
             // 
             // dgvYuubinBangou
@@ -106,7 +105,7 @@
             this.dgvYuubinBangou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -117,14 +116,20 @@
             this.colZipCD1,
             this.colZipCD2,
             this.colAdd1,
-            this.colAdd2,
-            this.colCarrierName,
-            this.colCarrierLeadDay});
+            this.colAdd2});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvYuubinBangou.Location = new System.Drawing.Point(23, 17);
+            this.dgvYuubinBangou.Location = new System.Drawing.Point(93, 17);
             this.dgvYuubinBangou.Name = "dgvYuubinBangou";
-            this.dgvYuubinBangou.Size = new System.Drawing.Size(1800, 750);
+            this.dgvYuubinBangou.Size = new System.Drawing.Size(1550, 750);
             this.dgvYuubinBangou.TabIndex = 0;
             this.dgvYuubinBangou.UseRowNo = true;
             this.dgvYuubinBangou.UseSetting = true;
@@ -335,26 +340,11 @@
             this.colAdd2.Name = "colAdd2";
             this.colAdd2.Width = 700;
             // 
-            // colCarrierName
-            // 
-            this.colCarrierName.DataPropertyName = "(none)";
-            this.colCarrierName.HeaderText = "奨励運送会社";
-            this.colCarrierName.Name = "colCarrierName";
-            this.colCarrierName.Width = 200;
-            // 
-            // colCarrierLeadDay
-            // 
-            this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
-            this.colCarrierLeadDay.HeaderText = "日数";
-            this.colCarrierLeadDay.MaxInputLength = 3;
-            this.colCarrierLeadDay.Name = "colCarrierLeadDay";
-            this.colCarrierLeadDay.Width = 50;
-            // 
             // frmMasterTouroku_YuubinBangou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1834, 961);
+            this.ClientSize = new System.Drawing.Size(1776, 961);
             this.Controls.Add(this.PanelDetail);
             this.F9Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
@@ -391,8 +381,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colCarrierName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierLeadDay;
     }
 }
 
