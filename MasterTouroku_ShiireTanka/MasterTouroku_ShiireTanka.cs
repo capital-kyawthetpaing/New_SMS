@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Base.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,16 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Base.Client;
-using BL;
-using Entity;
-using Search;
 
 namespace MasterTouroku_ShiireTanka
 {
-    public partial class MasterTouroku_ShiireTanka : FrmMainForm
+    public partial class FrmMasterTouroku_ShiireTanka : FrmMainForm
     {
-        public MasterTouroku_ShiireTanka()
+        public FrmMasterTouroku_ShiireTanka()
         {
             InitializeComponent();
         }

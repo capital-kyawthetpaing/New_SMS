@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.lblChangeDate = new System.Windows.Forms.Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -76,6 +77,7 @@
             this.PanelHeader.Controls.Add(this.RdoRireki);
             this.PanelHeader.Controls.Add(this.ckM_Label4);
             this.PanelHeader.Size = new System.Drawing.Size(954, 198);
+            this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.RdoRireki, 0);
             this.PanelHeader.Controls.SetChildIndex(this.TxtSoukoCDFrom, 0);
@@ -117,7 +119,7 @@
             this.lblChangeDate.Location = new System.Drawing.Point(111, 12);
             this.lblChangeDate.Name = "lblChangeDate";
             this.lblChangeDate.Size = new System.Drawing.Size(84, 20);
-            this.lblChangeDate.TabIndex = 47;
+            this.lblChangeDate.TabIndex = 0;
             this.lblChangeDate.Text = "YYYY/MM/DD";
             this.lblChangeDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -146,7 +148,7 @@
             this.RdoKijunBi.Location = new System.Drawing.Point(109, 39);
             this.RdoKijunBi.Name = "RdoKijunBi";
             this.RdoKijunBi.Size = new System.Drawing.Size(62, 16);
-            this.RdoKijunBi.TabIndex = 49;
+            this.RdoKijunBi.TabIndex = 1;
             this.RdoKijunBi.TabStop = true;
             this.RdoKijunBi.Text = "基準日";
             this.RdoKijunBi.UseVisualStyleBackColor = true;
@@ -158,7 +160,7 @@
             this.RdoRireki.Location = new System.Drawing.Point(176, 39);
             this.RdoRireki.Name = "RdoRireki";
             this.RdoRireki.Size = new System.Drawing.Size(49, 16);
-            this.RdoRireki.TabIndex = 50;
+            this.RdoRireki.TabIndex = 2;
             this.RdoRireki.Text = "履歴";
             this.RdoRireki.UseVisualStyleBackColor = true;
             // 
@@ -185,6 +187,7 @@
             this.TxtSoukoCDFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoCDFrom.BackColor = System.Drawing.Color.White;
             this.TxtSoukoCDFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtSoukoCDFrom.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoCDFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtSoukoCDFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtSoukoCDFrom.DecimalPlace = 0;
@@ -193,6 +196,7 @@
             this.TxtSoukoCDFrom.IntegerPart = 0;
             this.TxtSoukoCDFrom.IsCorrectDate = true;
             this.TxtSoukoCDFrom.isEnterKeyDown = false;
+            this.TxtSoukoCDFrom.isMaxLengthErr = false;
             this.TxtSoukoCDFrom.IsNumber = true;
             this.TxtSoukoCDFrom.IsShop = false;
             this.TxtSoukoCDFrom.Length = 6;
@@ -201,7 +205,7 @@
             this.TxtSoukoCDFrom.MoveNext = true;
             this.TxtSoukoCDFrom.Name = "TxtSoukoCDFrom";
             this.TxtSoukoCDFrom.Size = new System.Drawing.Size(54, 19);
-            this.TxtSoukoCDFrom.TabIndex = 0;
+            this.TxtSoukoCDFrom.TabIndex = 3;
             this.TxtSoukoCDFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // TxtSoukoCDTo
@@ -210,6 +214,7 @@
             this.TxtSoukoCDTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoCDTo.BackColor = System.Drawing.Color.White;
             this.TxtSoukoCDTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtSoukoCDTo.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoCDTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtSoukoCDTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtSoukoCDTo.DecimalPlace = 0;
@@ -218,6 +223,7 @@
             this.TxtSoukoCDTo.IntegerPart = 0;
             this.TxtSoukoCDTo.IsCorrectDate = true;
             this.TxtSoukoCDTo.isEnterKeyDown = false;
+            this.TxtSoukoCDTo.isMaxLengthErr = false;
             this.TxtSoukoCDTo.IsNumber = true;
             this.TxtSoukoCDTo.IsShop = false;
             this.TxtSoukoCDTo.Length = 6;
@@ -226,7 +232,7 @@
             this.TxtSoukoCDTo.MoveNext = true;
             this.TxtSoukoCDTo.Name = "TxtSoukoCDTo";
             this.TxtSoukoCDTo.Size = new System.Drawing.Size(54, 19);
-            this.TxtSoukoCDTo.TabIndex = 1;
+            this.TxtSoukoCDTo.TabIndex = 4;
             this.TxtSoukoCDTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TxtSoukoCDTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtSoukoCDTo_KeyDown);
             // 
@@ -253,6 +259,7 @@
             this.TxtSoukoName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoName.BackColor = System.Drawing.Color.White;
             this.TxtSoukoName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtSoukoName.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtSoukoName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtSoukoName.DecimalPlace = 0;
@@ -261,6 +268,7 @@
             this.TxtSoukoName.IntegerPart = 0;
             this.TxtSoukoName.IsCorrectDate = true;
             this.TxtSoukoName.isEnterKeyDown = false;
+            this.TxtSoukoName.isMaxLengthErr = false;
             this.TxtSoukoName.IsNumber = true;
             this.TxtSoukoName.IsShop = false;
             this.TxtSoukoName.Length = 40;
@@ -269,7 +277,7 @@
             this.TxtSoukoName.MoveNext = true;
             this.TxtSoukoName.Name = "TxtSoukoName";
             this.TxtSoukoName.Size = new System.Drawing.Size(280, 19);
-            this.TxtSoukoName.TabIndex = 2;
+            this.TxtSoukoName.TabIndex = 5;
             this.TxtSoukoName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label5
@@ -313,6 +321,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(109, 116);
@@ -320,7 +329,7 @@
             this.CboStoreCD.MoveNext = true;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(210, 20);
-            this.CboStoreCD.TabIndex = 3;
+            this.CboStoreCD.TabIndex = 6;
             // 
             // CboSoukoType
             // 
@@ -330,6 +339,7 @@
             this.CboSoukoType.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboSoukoType.DisplayMember = "Souko";
             this.CboSoukoType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboSoukoType.Flag = 0;
             this.CboSoukoType.FormattingEnabled = true;
             this.CboSoukoType.Length = 20;
             this.CboSoukoType.Location = new System.Drawing.Point(109, 143);
@@ -337,7 +347,7 @@
             this.CboSoukoType.MoveNext = true;
             this.CboSoukoType.Name = "CboSoukoType";
             this.CboSoukoType.Size = new System.Drawing.Size(140, 20);
-            this.CboSoukoType.TabIndex = 4;
+            this.CboSoukoType.TabIndex = 7;
             this.CboSoukoType.ValueMember = "Type";
             // 
             // ckM_Label7
@@ -371,7 +381,7 @@
             this.BtnF11.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF11.Name = "BtnF11";
             this.BtnF11.Size = new System.Drawing.Size(115, 28);
-            this.BtnF11.TabIndex = 5;
+            this.BtnF11.TabIndex = 8;
             this.BtnF11.Text = "表示(F11)";
             this.BtnF11.UseVisualStyleBackColor = false;
             this.BtnF11.Click += new System.EventHandler(this.BtnF11_Click);
@@ -381,17 +391,17 @@
             this.GvSouko.AllowUserToAddRows = false;
             this.GvSouko.AllowUserToDeleteRows = false;
             this.GvSouko.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GvSouko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GvSouko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvSouko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvSouko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvSouko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvSouko.ColumnHeadersHeight = 25;
             this.GvSouko.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRowNo,
@@ -400,6 +410,14 @@
             this.colStoreName,
             this.colSoukoType,
             this.colChangeDate});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvSouko.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvSouko.EnableHeadersVisualStyles = false;
             this.GvSouko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvSouko.Location = new System.Drawing.Point(9, 248);

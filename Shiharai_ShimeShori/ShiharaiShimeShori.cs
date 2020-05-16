@@ -42,7 +42,6 @@ namespace Shiharai_ShimeShori
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-
         }
         private void RequireFields()
         {

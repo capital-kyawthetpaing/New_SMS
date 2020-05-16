@@ -223,7 +223,7 @@ namespace EDIHacchuu
             switch (index)
             {
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
                         bbl.ShowMessage("E102");
                         CboStoreCD.Focus();

@@ -23,6 +23,7 @@ namespace MasterTouroku_Renban
         public FrmMasterTouroku_Renban()
         {
             InitializeComponent();
+            mtrbl = new MasterTouroku_Renban_BL();
         }
 
 
@@ -31,11 +32,7 @@ namespace MasterTouroku_Renban
             InProgramID = "MasterTouroku_Renban";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-
-            mtrbl = new MasterTouroku_Renban_BL();
             txtPrefixValue.Focus();
-
-
         }
 
         private void CheckMode()
@@ -49,7 +46,7 @@ namespace MasterTouroku_Renban
                     Clear(PanelDetail);
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
-                    BtnF11Show.Enabled = F11Enable = false;
+                    BtnF11Show.Enabled = F11Enable = true;
                     F12Enable = true;
                     txtPrefixValue.Focus();
                     break;
@@ -149,7 +146,7 @@ namespace MasterTouroku_Renban
                         {
                             DisablePanel(PanelHeader);
                             EnablePanel(PanelDetail);
-                            F11Enable = true;
+                            F11Enable = false;
                             F12Enable = true;
                             txtContinuous.Focus();
                             BtnF11Show.Enabled = F11Enable = false;
@@ -171,18 +168,13 @@ namespace MasterTouroku_Renban
                         {
                             DisablePanel(PanelHeader);
                             DisablePanel(PanelDetail);
-                            F11Enable = true;
+                            F11Enable = false;
                             F12Enable = false;
                             BtnF11Show.Enabled = F11Enable = false;
                         }
                         break;
                 }
-
-
-
-
             }
-
         }
 
         private bool DisplayDataInsert(string prefix)
@@ -368,8 +360,6 @@ namespace MasterTouroku_Renban
                         txtPrefixValue.Focus();
                         return false;
                     }
-                    
-
                 }
 
             }
@@ -418,9 +408,7 @@ namespace MasterTouroku_Renban
                         txtContinuous.Focus();
                         return false;
                     }
-
                 }
-
             }
 
             return true;
