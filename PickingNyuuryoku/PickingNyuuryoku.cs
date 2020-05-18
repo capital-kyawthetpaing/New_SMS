@@ -1566,6 +1566,21 @@ namespace PickingNyuuryoku
                     }
 
                 case 8: //F9:検索
+                    EsearchKbn kbn = EsearchKbn.Null;
+                    if (Array.IndexOf(keyControls, PreviousCtrl) == (int)EIndex.SKUCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+                    else if (Array.IndexOf(keyControls, PreviousCtrl) == (int)EIndex.JanCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+
+                    if (kbn != EsearchKbn.Null)
+                        SearchData(kbn, previousCtrl);
+
                     break;
                 case 9://(F10)
                     ExecDisp();
@@ -1710,8 +1725,20 @@ namespace PickingNyuuryoku
             try
             {
                 previousCtrl = this.ActiveControl;
-            }
 
+                int index = Array.IndexOf(keyControls, sender);
+                switch (index)
+                {
+                    case (int)EIndex.SKUCD:
+                    case (int)EIndex.JanCD:
+                        F9Visible = true;
+                        break;
+
+                    default:
+                        F9Visible = false;
+                        break;
+                }
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
@@ -1724,6 +1751,7 @@ namespace PickingNyuuryoku
             try
             {
                 previousCtrl = this.ActiveControl;
+            
             }
             catch (Exception ex)
             {

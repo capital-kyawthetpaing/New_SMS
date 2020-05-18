@@ -434,6 +434,7 @@ namespace HacchuuShoukai
                 }
             }
 
+            ScVendor.LabelText = "";
             //foreach (Control ctl in detailLabels)
             //{
             //    ((CKM_SearchControl)ctl).LabelText = "";
@@ -488,6 +489,8 @@ namespace HacchuuShoukai
             GvDetail.DataSource = null;
             GvDetail.Enabled = false;
             Btn_F10.Enabled = false;
+
+            detailControls[0].Focus();
         }
 
         /// <summary>
@@ -530,6 +533,29 @@ namespace HacchuuShoukai
 
                         break;
                     }
+                case 8:
+                    EsearchKbn kbn = EsearchKbn.Null;
+
+                    if (Array.IndexOf(detailControls, PreviousCtrl) == (int)EIndex.ITemCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+                    else if (Array.IndexOf(detailControls, PreviousCtrl) == (int)EIndex.SKUCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+                    else if (Array.IndexOf(detailControls, PreviousCtrl) == (int)EIndex.JanCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+
+                    if (kbn != EsearchKbn.Null)
+                        SearchData(kbn, previousCtrl);
+
+                    break;
                 case 9://F10:出力
                        //Ｑ２０５				
                     if (bbl.ShowMessage("Q205") != DialogResult.Yes)
@@ -566,13 +592,17 @@ namespace HacchuuShoukai
             {
                 case EsearchKbn.Product:
                     string ymd = bbl.GetDate();
+                    int index = Array.IndexOf(detailControls, setCtl);
+
                     using (Search_Product frmProduct = new Search_Product(ymd))
                     {
+                        if(index.Equals((int)EIndex.JanCD))
+                            frmProduct.Mode = "5";
+
                         frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            int index = Array.IndexOf(detailControls, setCtl);
 
                             switch (index)
                             {
@@ -751,7 +781,6 @@ namespace HacchuuShoukai
             }
         }
         #endregion
-
     }
 }
 
