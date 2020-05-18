@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,6 +33,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\BL.dll</HintPath>
+    </Reference>
+    <Reference Include="CSControl">
+      <HintPath>..\Base.Client\RequiredSource\CSControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\bin\Debug\Entity.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +94,14 @@
     <ProjectReference Include="..\Base.Client\Base.Client.csproj">
       <Project>{79AF5F26-A50B-433C-9F87-C9173B9EFE04}</Project>
       <Name>Base.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
+      <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
