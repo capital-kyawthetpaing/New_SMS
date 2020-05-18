@@ -30,7 +30,6 @@
         {
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.txtprintprogress = new CKM_Controls.CKM_TextBox();
-            this.ckmShop_CheckBox1 = new CKM_Controls.CKMShop_CheckBox();
             this.SuspendLayout();
             // 
             // ckmShop_Label4
@@ -76,22 +75,11 @@
             this.txtprintprogress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtprintprogress.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtprintprogress_KeyDown);
             // 
-            // ckmShop_CheckBox1
-            // 
-            this.ckmShop_CheckBox1.Location = new System.Drawing.Point(838, 425);
-            this.ckmShop_CheckBox1.Name = "ckmShop_CheckBox1";
-            this.ckmShop_CheckBox1.Size = new System.Drawing.Size(40, 27);
-            this.ckmShop_CheckBox1.TabIndex = 123;
-            this.ckmShop_CheckBox1.Text = "        ";
-            this.ckmShop_CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckmShop_CheckBox1.UseVisualStyleBackColor = true;
-            // 
             // TempoRegiFurikomiYoushi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1884, 961);
-            this.Controls.Add(this.ckmShop_CheckBox1);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.txtprintprogress);
             this.Name = "TempoRegiFurikomiYoushi";
@@ -99,7 +87,6 @@
             this.Load += new System.EventHandler(this.TempoRegiFurikomiYoushi_Load);
             this.Controls.SetChildIndex(this.txtprintprogress, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
-            this.Controls.SetChildIndex(this.ckmShop_CheckBox1, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +96,6 @@
 
         private CKM_Controls.CKMShop_Label ckmShop_Label4;
         private CKM_Controls.CKM_TextBox txtprintprogress;
-        private CKM_Controls.CKMShop_CheckBox ckmShop_CheckBox1;
     }
 }
 
