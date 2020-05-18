@@ -1,5 +1,4 @@
-﻿using Base.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,31 +7,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Search;
+using Base.Client;
 using BL;
 
 namespace MasterTouroku_ShiireTanka
 {
-
-
     public partial class FrmMasterTouroku_ShiireTanka : FrmMainForm
     {
-
         Base_BL bbl = new Base_BL();
         public FrmMasterTouroku_ShiireTanka()
         {
             InitializeComponent();
         }
 
-        private void sport_Enter(object sender, EventArgs e)
-        {
-            sport.Value1 = "202";
-            sport.ChangeDate = bbl.GetDate();
-        }
-
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
-           
+            InProgramID = "MasterTouroku_ShiireTanka";
+            StartProgram();
+            
+
+        }
+        private void BindCombo()
+        {
+            string ymd = bbl.GetDate();
+            CB_store.Bind(ymd);
+            CB_year.Bind(ymd);
+            CB_season.Bind(ymd);
+        }
+
+        protected override void EndSec()
+        {
+            this.Close();
         }
     }
 }
