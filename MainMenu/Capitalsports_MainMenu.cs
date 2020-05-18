@@ -373,7 +373,8 @@ namespace MainMenu
 
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
-           // this.Hide();
+            ForceToclose();
+            // this.Hide();
             CapitalsportsLogin hln = new CapitalsportsLogin();
             this.Hide();
             hln.ShowDialog();
@@ -391,28 +392,32 @@ namespace MainMenu
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
             {
-                foreach (DataRow dr in menu.Rows)
-                {
-                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
-                    if (localByName.Count() > 0)
-                    {
-
-                        foreach (var process in localByName)
-                        {
-                            try
-                            {
-                                process.Kill();
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
+                ForceToclose();
                 e.Cancel = false;
             }
             else
                 e.Cancel = true;
+        }
+        public void ForceToclose()
+        {
+            foreach (DataRow dr in menu.Rows)
+            {
+                var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                if (localByName.Count() > 0)
+                {
+
+                    foreach (var process in localByName)
+                    {
+                        try
+                        {
+                            process.Kill();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
         }
     }
 }
