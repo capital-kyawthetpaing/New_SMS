@@ -299,7 +299,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(535, 5);
+            this.ckM_Label1.Location = new System.Drawing.Point(535, 15);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(93, 19);
             this.ckM_Label1.TabIndex = 274;
@@ -339,6 +339,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 2;
@@ -347,6 +348,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -358,7 +360,7 @@
             this.ckM_TextBox1.TabIndex = 0;
             this.ckM_TextBox1.Text = "2019/01/01";
             this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // BtnSubF12
             // 
@@ -411,14 +413,16 @@
             this.txtSu.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSu.BackColor = System.Drawing.Color.White;
             this.txtSu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSu.ClientColor = System.Drawing.Color.White;
             this.txtSu.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSu.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtSu.DecimalPlace = 0;
-            this.txtSu.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F);
+            this.txtSu.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F);
             this.txtSu.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtSu.IntegerPart = 0;
             this.txtSu.IsCorrectDate = true;
             this.txtSu.isEnterKeyDown = false;
+            this.txtSu.isMaxLengthErr = false;
             this.txtSu.IsNumber = true;
             this.txtSu.IsShop = false;
             this.txtSu.Length = 3;
@@ -426,7 +430,7 @@
             this.txtSu.MaxLength = 3;
             this.txtSu.MoveNext = true;
             this.txtSu.Name = "txtSu";
-            this.txtSu.Size = new System.Drawing.Size(73, 39);
+            this.txtSu.Size = new System.Drawing.Size(73, 47);
             this.txtSu.TabIndex = 3;
             this.txtSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.XLarge;
@@ -437,7 +441,7 @@
             this.ckmShop_Label9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label9.Location = new System.Drawing.Point(12, 103);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
@@ -453,7 +457,7 @@
             this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label1.Location = new System.Drawing.Point(82, 139);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
@@ -469,7 +473,7 @@
             this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label2.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label2.Location = new System.Drawing.Point(82, 175);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
@@ -485,7 +489,7 @@
             this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label3.Location = new System.Drawing.Point(70, 211);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
@@ -501,7 +505,7 @@
             this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label4.Location = new System.Drawing.Point(41, 266);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
@@ -574,7 +578,7 @@
             this.ckmShop_Label5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label5.Location = new System.Drawing.Point(70, 296);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
@@ -590,6 +594,7 @@
             this.txtVendorDeliveryNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtVendorDeliveryNo.BackColor = System.Drawing.Color.White;
             this.txtVendorDeliveryNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorDeliveryNo.ClientColor = System.Drawing.Color.White;
             this.txtVendorDeliveryNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtVendorDeliveryNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtVendorDeliveryNo.DecimalPlace = 0;
@@ -598,6 +603,7 @@
             this.txtVendorDeliveryNo.IntegerPart = 0;
             this.txtVendorDeliveryNo.IsCorrectDate = true;
             this.txtVendorDeliveryNo.isEnterKeyDown = false;
+            this.txtVendorDeliveryNo.isMaxLengthErr = false;
             this.txtVendorDeliveryNo.IsNumber = false;
             this.txtVendorDeliveryNo.IsShop = false;
             this.txtVendorDeliveryNo.Length = 15;
@@ -608,7 +614,7 @@
             this.txtVendorDeliveryNo.Size = new System.Drawing.Size(176, 29);
             this.txtVendorDeliveryNo.TabIndex = 0;
             this.txtVendorDeliveryNo.Text = "XXXXXXXXXXX1315";
-            this.txtVendorDeliveryNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtVendorDeliveryNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // txtJANCD
             // 
@@ -616,6 +622,7 @@
             this.txtJANCD.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtJANCD.BackColor = System.Drawing.Color.White;
             this.txtJANCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtJANCD.ClientColor = System.Drawing.Color.White;
             this.txtJANCD.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtJANCD.DecimalPlace = 0;
@@ -624,6 +631,7 @@
             this.txtJANCD.IntegerPart = 0;
             this.txtJANCD.IsCorrectDate = true;
             this.txtJANCD.isEnterKeyDown = false;
+            this.txtJANCD.isMaxLengthErr = false;
             this.txtJANCD.IsNumber = false;
             this.txtJANCD.IsShop = false;
             this.txtJANCD.Length = 13;
@@ -634,7 +642,7 @@
             this.txtJANCD.Size = new System.Drawing.Size(176, 29);
             this.txtJANCD.TabIndex = 2;
             this.txtJANCD.Text = "XXXXXXXXXXX13";
-            this.txtJANCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtJANCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // BtnJANCD
             // 
@@ -666,7 +674,7 @@
             this.ckmShop_Label6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label6.Location = new System.Drawing.Point(70, 326);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
@@ -682,7 +690,7 @@
             this.ckmShop_Label7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label7.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label7.Location = new System.Drawing.Point(866, 305);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
@@ -720,7 +728,7 @@
             this.ckmShop_Label8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label8.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label8.Location = new System.Drawing.Point(718, 139);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
@@ -736,7 +744,7 @@
             this.ckmShop_Label10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label10.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label10.Location = new System.Drawing.Point(747, 103);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
@@ -778,7 +786,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 5665;
+            this.ScOrderNO.ChangeDateWidth = 10384;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
@@ -788,11 +796,11 @@
             this.ScOrderNO.IsCopy = false;
             this.ScOrderNO.LabelText = "";
             this.ScOrderNO.LabelVisible = false;
-            this.ScOrderNO.Location = new System.Drawing.Point(637, -5);
-            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            this.ScOrderNO.Location = new System.Drawing.Point(635, -6);
+            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
             this.ScOrderNO.Name = "ScOrderNO";
             this.ScOrderNO.SearchEnable = true;
-            this.ScOrderNO.Size = new System.Drawing.Size(211, 43);
+            this.ScOrderNO.Size = new System.Drawing.Size(269, 72);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.入荷番号;
             this.ScOrderNO.TabIndex = 0;
             this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Medium;
@@ -1154,6 +1162,7 @@
             this.IMN_GENER2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_5.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_5.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_5.DecimalPlace = 0;
@@ -1162,9 +1171,10 @@
             this.IMN_GENER2_5.IntegerPart = 3;
             this.IMN_GENER2_5.IsCorrectDate = true;
             this.IMN_GENER2_5.isEnterKeyDown = false;
+            this.IMN_GENER2_5.isMaxLengthErr = false;
             this.IMN_GENER2_5.IsNumber = true;
             this.IMN_GENER2_5.IsShop = false;
-            this.IMN_GENER2_5.Length = 10;
+            this.IMN_GENER2_5.Length = 9;
             this.IMN_GENER2_5.Location = new System.Drawing.Point(519, 145);
             this.IMN_GENER2_5.MaxLength = 9;
             this.IMN_GENER2_5.MoveNext = true;
@@ -1174,7 +1184,7 @@
             this.IMN_GENER2_5.Tag = "5";
             this.IMN_GENER2_5.Text = "999";
             this.IMN_GENER2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_5
             // 
@@ -1182,6 +1192,7 @@
             this.IMN_WEBPR2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_5.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_5.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_5.DecimalPlace = 0;
@@ -1190,6 +1201,7 @@
             this.IMN_WEBPR2_5.IntegerPart = 0;
             this.IMN_WEBPR2_5.IsCorrectDate = true;
             this.IMN_WEBPR2_5.isEnterKeyDown = false;
+            this.IMN_WEBPR2_5.isMaxLengthErr = false;
             this.IMN_WEBPR2_5.IsNumber = true;
             this.IMN_WEBPR2_5.IsShop = false;
             this.IMN_WEBPR2_5.Length = 100;
@@ -1201,7 +1213,7 @@
             this.IMN_WEBPR2_5.TabIndex = 588;
             this.IMN_WEBPR2_5.Tag = "5";
             this.IMN_WEBPR2_5.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_5
             // 
@@ -1209,6 +1221,7 @@
             this.IMT_PAYDT_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_5.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_5.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_5.DecimalPlace = 0;
@@ -1217,6 +1230,7 @@
             this.IMT_PAYDT_5.IntegerPart = 0;
             this.IMT_PAYDT_5.IsCorrectDate = true;
             this.IMT_PAYDT_5.isEnterKeyDown = false;
+            this.IMT_PAYDT_5.isMaxLengthErr = false;
             this.IMT_PAYDT_5.IsNumber = true;
             this.IMT_PAYDT_5.IsShop = false;
             this.IMT_PAYDT_5.Length = 3;
@@ -1229,7 +1243,7 @@
             this.IMT_PAYDT_5.Tag = "5";
             this.IMT_PAYDT_5.Text = "999";
             this.IMT_PAYDT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_5
             // 
@@ -1237,6 +1251,7 @@
             this.IMN_SURYO_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_5.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_5.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_5.DecimalPlace = 0;
@@ -1245,6 +1260,7 @@
             this.IMN_SURYO_5.IntegerPart = 3;
             this.IMN_SURYO_5.IsCorrectDate = true;
             this.IMN_SURYO_5.isEnterKeyDown = false;
+            this.IMN_SURYO_5.isMaxLengthErr = false;
             this.IMN_SURYO_5.IsNumber = true;
             this.IMN_SURYO_5.IsShop = false;
             this.IMN_SURYO_5.Length = 3;
@@ -1257,7 +1273,7 @@
             this.IMN_SURYO_5.Tag = "5";
             this.IMN_SURYO_5.Text = "999";
             this.IMN_SURYO_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_5
             // 
@@ -1265,6 +1281,7 @@
             this.IMN_MEMBR_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_5.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_5.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_5.DecimalPlace = 0;
@@ -1273,9 +1290,10 @@
             this.IMN_MEMBR_5.IntegerPart = 0;
             this.IMN_MEMBR_5.IsCorrectDate = true;
             this.IMN_MEMBR_5.isEnterKeyDown = false;
+            this.IMN_MEMBR_5.isMaxLengthErr = false;
             this.IMN_MEMBR_5.IsNumber = true;
             this.IMN_MEMBR_5.IsShop = false;
-            this.IMN_MEMBR_5.Length = 10;
+            this.IMN_MEMBR_5.Length = 5;
             this.IMN_MEMBR_5.Location = new System.Drawing.Point(750, 145);
             this.IMN_MEMBR_5.MaxLength = 5;
             this.IMN_MEMBR_5.MoveNext = true;
@@ -1284,7 +1302,7 @@
             this.IMN_MEMBR_5.TabIndex = 584;
             this.IMN_MEMBR_5.Tag = "5";
             this.IMN_MEMBR_5.Text = "XXXX";
-            this.IMN_MEMBR_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT_5
             // 
@@ -1292,6 +1310,7 @@
             this.IMT_ARIDT_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_5.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_5.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_5.DecimalPlace = 0;
@@ -1300,6 +1319,7 @@
             this.IMT_ARIDT_5.IntegerPart = 0;
             this.IMT_ARIDT_5.IsCorrectDate = true;
             this.IMT_ARIDT_5.isEnterKeyDown = false;
+            this.IMT_ARIDT_5.isMaxLengthErr = false;
             this.IMT_ARIDT_5.IsNumber = true;
             this.IMT_ARIDT_5.IsShop = false;
             this.IMT_ARIDT_5.Length = 10;
@@ -1312,7 +1332,7 @@
             this.IMT_ARIDT_5.Tag = "5";
             this.IMT_ARIDT_5.Text = "2019/01/01";
             this.IMT_ARIDT_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_5
             // 
@@ -1320,6 +1340,7 @@
             this.IMN_SALEP2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_5.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_5.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_5.DecimalPlace = 0;
@@ -1328,6 +1349,7 @@
             this.IMN_SALEP2_5.IntegerPart = 3;
             this.IMN_SALEP2_5.IsCorrectDate = true;
             this.IMN_SALEP2_5.isEnterKeyDown = false;
+            this.IMN_SALEP2_5.isMaxLengthErr = false;
             this.IMN_SALEP2_5.IsNumber = true;
             this.IMN_SALEP2_5.IsShop = false;
             this.IMN_SALEP2_5.Length = 11;
@@ -1340,7 +1362,7 @@
             this.IMN_SALEP2_5.Tag = "5";
             this.IMN_SALEP2_5.Text = "999";
             this.IMN_SALEP2_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_5
             // 
@@ -1348,6 +1370,7 @@
             this.IMT_ITMCD_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_5.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_5.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_5.DecimalPlace = 0;
@@ -1355,6 +1378,7 @@
             this.IMT_ITMCD_5.IntegerPart = 0;
             this.IMT_ITMCD_5.IsCorrectDate = true;
             this.IMT_ITMCD_5.isEnterKeyDown = false;
+            this.IMT_ITMCD_5.isMaxLengthErr = false;
             this.IMT_ITMCD_5.IsNumber = true;
             this.IMT_ITMCD_5.IsShop = false;
             this.IMT_ITMCD_5.Length = 11;
@@ -1367,7 +1391,7 @@
             this.IMT_ITMCD_5.TabIndex = 580;
             this.IMT_ITMCD_5.Tag = "5";
             this.IMT_ITMCD_5.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // CHK_DELCK_4
             // 
@@ -1392,6 +1416,7 @@
             this.IMN_GENER2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_4.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_4.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_4.DecimalPlace = 0;
@@ -1400,9 +1425,10 @@
             this.IMN_GENER2_4.IntegerPart = 3;
             this.IMN_GENER2_4.IsCorrectDate = true;
             this.IMN_GENER2_4.isEnterKeyDown = false;
+            this.IMN_GENER2_4.isMaxLengthErr = false;
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
-            this.IMN_GENER2_4.Length = 10;
+            this.IMN_GENER2_4.Length = 9;
             this.IMN_GENER2_4.Location = new System.Drawing.Point(519, 116);
             this.IMN_GENER2_4.MaxLength = 9;
             this.IMN_GENER2_4.MoveNext = true;
@@ -1412,7 +1438,7 @@
             this.IMN_GENER2_4.Tag = "4";
             this.IMN_GENER2_4.Text = "999";
             this.IMN_GENER2_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_4
             // 
@@ -1420,6 +1446,7 @@
             this.IMN_WEBPR2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_4.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_4.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_4.DecimalPlace = 0;
@@ -1428,6 +1455,7 @@
             this.IMN_WEBPR2_4.IntegerPart = 0;
             this.IMN_WEBPR2_4.IsCorrectDate = true;
             this.IMN_WEBPR2_4.isEnterKeyDown = false;
+            this.IMN_WEBPR2_4.isMaxLengthErr = false;
             this.IMN_WEBPR2_4.IsNumber = true;
             this.IMN_WEBPR2_4.IsShop = false;
             this.IMN_WEBPR2_4.Length = 100;
@@ -1439,7 +1467,7 @@
             this.IMN_WEBPR2_4.TabIndex = 569;
             this.IMN_WEBPR2_4.Tag = "4";
             this.IMN_WEBPR2_4.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_4
             // 
@@ -1447,6 +1475,7 @@
             this.IMT_PAYDT_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_4.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_4.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_4.DecimalPlace = 0;
@@ -1455,6 +1484,7 @@
             this.IMT_PAYDT_4.IntegerPart = 0;
             this.IMT_PAYDT_4.IsCorrectDate = true;
             this.IMT_PAYDT_4.isEnterKeyDown = false;
+            this.IMT_PAYDT_4.isMaxLengthErr = false;
             this.IMT_PAYDT_4.IsNumber = true;
             this.IMT_PAYDT_4.IsShop = false;
             this.IMT_PAYDT_4.Length = 3;
@@ -1467,7 +1497,7 @@
             this.IMT_PAYDT_4.Tag = "4";
             this.IMT_PAYDT_4.Text = "999";
             this.IMT_PAYDT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_4
             // 
@@ -1475,6 +1505,7 @@
             this.IMN_SURYO_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_4.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_4.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_4.DecimalPlace = 0;
@@ -1483,6 +1514,7 @@
             this.IMN_SURYO_4.IntegerPart = 3;
             this.IMN_SURYO_4.IsCorrectDate = true;
             this.IMN_SURYO_4.isEnterKeyDown = false;
+            this.IMN_SURYO_4.isMaxLengthErr = false;
             this.IMN_SURYO_4.IsNumber = true;
             this.IMN_SURYO_4.IsShop = false;
             this.IMN_SURYO_4.Length = 3;
@@ -1495,7 +1527,7 @@
             this.IMN_SURYO_4.Tag = "4";
             this.IMN_SURYO_4.Text = "999";
             this.IMN_SURYO_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_4
             // 
@@ -1503,6 +1535,7 @@
             this.IMN_MEMBR_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_4.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_4.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_4.DecimalPlace = 0;
@@ -1511,9 +1544,10 @@
             this.IMN_MEMBR_4.IntegerPart = 0;
             this.IMN_MEMBR_4.IsCorrectDate = true;
             this.IMN_MEMBR_4.isEnterKeyDown = false;
+            this.IMN_MEMBR_4.isMaxLengthErr = false;
             this.IMN_MEMBR_4.IsNumber = true;
             this.IMN_MEMBR_4.IsShop = false;
-            this.IMN_MEMBR_4.Length = 10;
+            this.IMN_MEMBR_4.Length = 5;
             this.IMN_MEMBR_4.Location = new System.Drawing.Point(750, 116);
             this.IMN_MEMBR_4.MaxLength = 5;
             this.IMN_MEMBR_4.MoveNext = true;
@@ -1522,7 +1556,7 @@
             this.IMN_MEMBR_4.TabIndex = 565;
             this.IMN_MEMBR_4.Tag = "4";
             this.IMN_MEMBR_4.Text = "XXXX";
-            this.IMN_MEMBR_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT_4
             // 
@@ -1530,6 +1564,7 @@
             this.IMT_ARIDT_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_4.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_4.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_4.DecimalPlace = 0;
@@ -1538,6 +1573,7 @@
             this.IMT_ARIDT_4.IntegerPart = 0;
             this.IMT_ARIDT_4.IsCorrectDate = true;
             this.IMT_ARIDT_4.isEnterKeyDown = false;
+            this.IMT_ARIDT_4.isMaxLengthErr = false;
             this.IMT_ARIDT_4.IsNumber = true;
             this.IMT_ARIDT_4.IsShop = false;
             this.IMT_ARIDT_4.Length = 10;
@@ -1550,7 +1586,7 @@
             this.IMT_ARIDT_4.Tag = "4";
             this.IMT_ARIDT_4.Text = "2019/01/01";
             this.IMT_ARIDT_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_4
             // 
@@ -1558,6 +1594,7 @@
             this.IMN_SALEP2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_4.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_4.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_4.DecimalPlace = 0;
@@ -1566,6 +1603,7 @@
             this.IMN_SALEP2_4.IntegerPart = 3;
             this.IMN_SALEP2_4.IsCorrectDate = true;
             this.IMN_SALEP2_4.isEnterKeyDown = false;
+            this.IMN_SALEP2_4.isMaxLengthErr = false;
             this.IMN_SALEP2_4.IsNumber = true;
             this.IMN_SALEP2_4.IsShop = false;
             this.IMN_SALEP2_4.Length = 11;
@@ -1578,7 +1616,7 @@
             this.IMN_SALEP2_4.Tag = "4";
             this.IMN_SALEP2_4.Text = "999";
             this.IMN_SALEP2_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_4
             // 
@@ -1586,6 +1624,7 @@
             this.IMT_ITMCD_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_4.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_4.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_4.DecimalPlace = 0;
@@ -1593,6 +1632,7 @@
             this.IMT_ITMCD_4.IntegerPart = 0;
             this.IMT_ITMCD_4.IsCorrectDate = true;
             this.IMT_ITMCD_4.isEnterKeyDown = false;
+            this.IMT_ITMCD_4.isMaxLengthErr = false;
             this.IMT_ITMCD_4.IsNumber = true;
             this.IMT_ITMCD_4.IsShop = false;
             this.IMT_ITMCD_4.Length = 11;
@@ -1605,7 +1645,7 @@
             this.IMT_ITMCD_4.TabIndex = 561;
             this.IMT_ITMCD_4.Tag = "4";
             this.IMT_ITMCD_4.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // CHK_DELCK_3
             // 
@@ -1630,6 +1670,7 @@
             this.IMN_GENER2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_3.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_3.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_3.DecimalPlace = 0;
@@ -1638,9 +1679,10 @@
             this.IMN_GENER2_3.IntegerPart = 3;
             this.IMN_GENER2_3.IsCorrectDate = true;
             this.IMN_GENER2_3.isEnterKeyDown = false;
+            this.IMN_GENER2_3.isMaxLengthErr = false;
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
-            this.IMN_GENER2_3.Length = 10;
+            this.IMN_GENER2_3.Length = 9;
             this.IMN_GENER2_3.Location = new System.Drawing.Point(519, 87);
             this.IMN_GENER2_3.MaxLength = 9;
             this.IMN_GENER2_3.MoveNext = true;
@@ -1650,7 +1692,7 @@
             this.IMN_GENER2_3.Tag = "3";
             this.IMN_GENER2_3.Text = "999";
             this.IMN_GENER2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_3
             // 
@@ -1658,6 +1700,7 @@
             this.IMN_WEBPR2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_3.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_3.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_3.DecimalPlace = 0;
@@ -1666,6 +1709,7 @@
             this.IMN_WEBPR2_3.IntegerPart = 0;
             this.IMN_WEBPR2_3.IsCorrectDate = true;
             this.IMN_WEBPR2_3.isEnterKeyDown = false;
+            this.IMN_WEBPR2_3.isMaxLengthErr = false;
             this.IMN_WEBPR2_3.IsNumber = true;
             this.IMN_WEBPR2_3.IsShop = false;
             this.IMN_WEBPR2_3.Length = 100;
@@ -1677,7 +1721,7 @@
             this.IMN_WEBPR2_3.TabIndex = 549;
             this.IMN_WEBPR2_3.Tag = "3";
             this.IMN_WEBPR2_3.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_3
             // 
@@ -1685,6 +1729,7 @@
             this.IMT_PAYDT_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_3.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_3.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_3.DecimalPlace = 0;
@@ -1693,6 +1738,7 @@
             this.IMT_PAYDT_3.IntegerPart = 0;
             this.IMT_PAYDT_3.IsCorrectDate = true;
             this.IMT_PAYDT_3.isEnterKeyDown = false;
+            this.IMT_PAYDT_3.isMaxLengthErr = false;
             this.IMT_PAYDT_3.IsNumber = true;
             this.IMT_PAYDT_3.IsShop = false;
             this.IMT_PAYDT_3.Length = 3;
@@ -1705,7 +1751,7 @@
             this.IMT_PAYDT_3.Tag = "3";
             this.IMT_PAYDT_3.Text = "999";
             this.IMT_PAYDT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_3
             // 
@@ -1713,6 +1759,7 @@
             this.IMN_SURYO_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_3.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_3.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_3.DecimalPlace = 0;
@@ -1721,6 +1768,7 @@
             this.IMN_SURYO_3.IntegerPart = 3;
             this.IMN_SURYO_3.IsCorrectDate = true;
             this.IMN_SURYO_3.isEnterKeyDown = false;
+            this.IMN_SURYO_3.isMaxLengthErr = false;
             this.IMN_SURYO_3.IsNumber = true;
             this.IMN_SURYO_3.IsShop = false;
             this.IMN_SURYO_3.Length = 3;
@@ -1733,7 +1781,7 @@
             this.IMN_SURYO_3.Tag = "3";
             this.IMN_SURYO_3.Text = "999";
             this.IMN_SURYO_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_3
             // 
@@ -1741,6 +1789,7 @@
             this.IMN_MEMBR_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_3.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_3.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_3.DecimalPlace = 0;
@@ -1749,9 +1798,10 @@
             this.IMN_MEMBR_3.IntegerPart = 0;
             this.IMN_MEMBR_3.IsCorrectDate = true;
             this.IMN_MEMBR_3.isEnterKeyDown = false;
+            this.IMN_MEMBR_3.isMaxLengthErr = false;
             this.IMN_MEMBR_3.IsNumber = true;
             this.IMN_MEMBR_3.IsShop = false;
-            this.IMN_MEMBR_3.Length = 10;
+            this.IMN_MEMBR_3.Length = 5;
             this.IMN_MEMBR_3.Location = new System.Drawing.Point(750, 87);
             this.IMN_MEMBR_3.MaxLength = 5;
             this.IMN_MEMBR_3.MoveNext = true;
@@ -1760,7 +1810,7 @@
             this.IMN_MEMBR_3.TabIndex = 545;
             this.IMN_MEMBR_3.Tag = "3";
             this.IMN_MEMBR_3.Text = "XXXX";
-            this.IMN_MEMBR_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT_3
             // 
@@ -1768,6 +1818,7 @@
             this.IMT_ARIDT_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_3.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_3.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_3.DecimalPlace = 0;
@@ -1776,6 +1827,7 @@
             this.IMT_ARIDT_3.IntegerPart = 0;
             this.IMT_ARIDT_3.IsCorrectDate = true;
             this.IMT_ARIDT_3.isEnterKeyDown = false;
+            this.IMT_ARIDT_3.isMaxLengthErr = false;
             this.IMT_ARIDT_3.IsNumber = true;
             this.IMT_ARIDT_3.IsShop = false;
             this.IMT_ARIDT_3.Length = 10;
@@ -1788,7 +1840,7 @@
             this.IMT_ARIDT_3.Tag = "3";
             this.IMT_ARIDT_3.Text = "2019/01/01";
             this.IMT_ARIDT_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_3
             // 
@@ -1796,6 +1848,7 @@
             this.IMN_SALEP2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_3.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_3.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_3.DecimalPlace = 0;
@@ -1804,6 +1857,7 @@
             this.IMN_SALEP2_3.IntegerPart = 3;
             this.IMN_SALEP2_3.IsCorrectDate = true;
             this.IMN_SALEP2_3.isEnterKeyDown = false;
+            this.IMN_SALEP2_3.isMaxLengthErr = false;
             this.IMN_SALEP2_3.IsNumber = true;
             this.IMN_SALEP2_3.IsShop = false;
             this.IMN_SALEP2_3.Length = 11;
@@ -1816,7 +1870,7 @@
             this.IMN_SALEP2_3.Tag = "3";
             this.IMN_SALEP2_3.Text = "999";
             this.IMN_SALEP2_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_3
             // 
@@ -1824,6 +1878,7 @@
             this.IMT_ITMCD_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_3.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_3.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_3.DecimalPlace = 0;
@@ -1831,6 +1886,7 @@
             this.IMT_ITMCD_3.IntegerPart = 0;
             this.IMT_ITMCD_3.IsCorrectDate = true;
             this.IMT_ITMCD_3.isEnterKeyDown = false;
+            this.IMT_ITMCD_3.isMaxLengthErr = false;
             this.IMT_ITMCD_3.IsNumber = true;
             this.IMT_ITMCD_3.IsShop = false;
             this.IMT_ITMCD_3.Length = 11;
@@ -1843,7 +1899,7 @@
             this.IMT_ITMCD_3.TabIndex = 541;
             this.IMT_ITMCD_3.Tag = "3";
             this.IMT_ITMCD_3.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // CHK_DELCK_2
             // 
@@ -1868,6 +1924,7 @@
             this.IMT_ARIDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_0.DecimalPlace = 0;
@@ -1876,6 +1933,7 @@
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
             this.IMT_ARIDT_0.isEnterKeyDown = false;
+            this.IMT_ARIDT_0.isMaxLengthErr = false;
             this.IMT_ARIDT_0.IsNumber = true;
             this.IMT_ARIDT_0.IsShop = false;
             this.IMT_ARIDT_0.Length = 10;
@@ -1888,7 +1946,7 @@
             this.IMT_ARIDT_0.Tag = "0";
             this.IMT_ARIDT_0.Text = "2019/01/01";
             this.IMT_ARIDT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER2_2
             // 
@@ -1896,6 +1954,7 @@
             this.IMN_GENER2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_2.DecimalPlace = 0;
@@ -1904,9 +1963,10 @@
             this.IMN_GENER2_2.IntegerPart = 3;
             this.IMN_GENER2_2.IsCorrectDate = true;
             this.IMN_GENER2_2.isEnterKeyDown = false;
+            this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
-            this.IMN_GENER2_2.Length = 10;
+            this.IMN_GENER2_2.Length = 9;
             this.IMN_GENER2_2.Location = new System.Drawing.Point(519, 58);
             this.IMN_GENER2_2.MaxLength = 9;
             this.IMN_GENER2_2.MoveNext = true;
@@ -1916,7 +1976,7 @@
             this.IMN_GENER2_2.Tag = "2";
             this.IMN_GENER2_2.Text = "999";
             this.IMN_GENER2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER2_1
             // 
@@ -1924,6 +1984,7 @@
             this.IMN_GENER2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_1.DecimalPlace = 0;
@@ -1932,9 +1993,10 @@
             this.IMN_GENER2_1.IntegerPart = 3;
             this.IMN_GENER2_1.IsCorrectDate = true;
             this.IMN_GENER2_1.isEnterKeyDown = false;
+            this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
-            this.IMN_GENER2_1.Length = 10;
+            this.IMN_GENER2_1.Length = 9;
             this.IMN_GENER2_1.Location = new System.Drawing.Point(519, 29);
             this.IMN_GENER2_1.MaxLength = 9;
             this.IMN_GENER2_1.MoveNext = true;
@@ -1944,7 +2006,7 @@
             this.IMN_GENER2_1.Tag = "1";
             this.IMN_GENER2_1.Text = "999";
             this.IMN_GENER2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER2_0
             // 
@@ -1952,6 +2014,7 @@
             this.IMN_GENER2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER2_0.DecimalPlace = 0;
@@ -1960,9 +2023,10 @@
             this.IMN_GENER2_0.IntegerPart = 3;
             this.IMN_GENER2_0.IsCorrectDate = true;
             this.IMN_GENER2_0.isEnterKeyDown = false;
+            this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
-            this.IMN_GENER2_0.Length = 10;
+            this.IMN_GENER2_0.Length = 9;
             this.IMN_GENER2_0.Location = new System.Drawing.Point(519, 0);
             this.IMN_GENER2_0.MaxLength = 9;
             this.IMN_GENER2_0.MoveNext = true;
@@ -1972,7 +2036,7 @@
             this.IMN_GENER2_0.Tag = "0";
             this.IMN_GENER2_0.Text = "999";
             this.IMN_GENER2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR_2
             // 
@@ -1980,6 +2044,7 @@
             this.IMN_WEBPR_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_2.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_2.DecimalPlace = 0;
@@ -1988,6 +2053,7 @@
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
             this.IMN_WEBPR_2.isEnterKeyDown = false;
+            this.IMN_WEBPR_2.isMaxLengthErr = false;
             this.IMN_WEBPR_2.IsNumber = true;
             this.IMN_WEBPR_2.IsShop = false;
             this.IMN_WEBPR_2.Length = 100;
@@ -1999,7 +2065,7 @@
             this.IMN_WEBPR_2.TabIndex = 39;
             this.IMN_WEBPR_2.Tag = "2";
             this.IMN_WEBPR_2.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR_1
             // 
@@ -2007,6 +2073,7 @@
             this.IMN_WEBPR_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_1.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_1.DecimalPlace = 0;
@@ -2015,6 +2082,7 @@
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
             this.IMN_WEBPR_1.isEnterKeyDown = false;
+            this.IMN_WEBPR_1.isMaxLengthErr = false;
             this.IMN_WEBPR_1.IsNumber = true;
             this.IMN_WEBPR_1.IsShop = false;
             this.IMN_WEBPR_1.Length = 100;
@@ -2026,7 +2094,7 @@
             this.IMN_WEBPR_1.TabIndex = 26;
             this.IMN_WEBPR_1.Tag = "1";
             this.IMN_WEBPR_1.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR_0
             // 
@@ -2034,6 +2102,7 @@
             this.IMN_WEBPR_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR_0.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_0.DecimalPlace = 0;
@@ -2042,6 +2111,7 @@
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
             this.IMN_WEBPR_0.isEnterKeyDown = false;
+            this.IMN_WEBPR_0.isMaxLengthErr = false;
             this.IMN_WEBPR_0.IsNumber = true;
             this.IMN_WEBPR_0.IsShop = false;
             this.IMN_WEBPR_0.Length = 100;
@@ -2053,7 +2123,7 @@
             this.IMN_WEBPR_0.TabIndex = 12;
             this.IMN_WEBPR_0.Tag = "0";
             this.IMN_WEBPR_0.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_2
             // 
@@ -2061,6 +2131,7 @@
             this.IMT_PAYDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_2.DecimalPlace = 0;
@@ -2069,6 +2140,7 @@
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
             this.IMT_PAYDT_2.isEnterKeyDown = false;
+            this.IMT_PAYDT_2.isMaxLengthErr = false;
             this.IMT_PAYDT_2.IsNumber = true;
             this.IMT_PAYDT_2.IsShop = false;
             this.IMT_PAYDT_2.Length = 3;
@@ -2081,7 +2153,7 @@
             this.IMT_PAYDT_2.Tag = "2";
             this.IMT_PAYDT_2.Text = "999";
             this.IMT_PAYDT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_1
             // 
@@ -2089,6 +2161,7 @@
             this.IMT_PAYDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_1.DecimalPlace = 0;
@@ -2097,6 +2170,7 @@
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
             this.IMT_PAYDT_1.isEnterKeyDown = false;
+            this.IMT_PAYDT_1.isMaxLengthErr = false;
             this.IMT_PAYDT_1.IsNumber = true;
             this.IMT_PAYDT_1.IsShop = false;
             this.IMT_PAYDT_1.Length = 3;
@@ -2109,7 +2183,7 @@
             this.IMT_PAYDT_1.Tag = "1";
             this.IMT_PAYDT_1.Text = "999";
             this.IMT_PAYDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT_0
             // 
@@ -2117,6 +2191,7 @@
             this.IMT_PAYDT_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT_0.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT_0.DecimalPlace = 0;
@@ -2125,6 +2200,7 @@
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
             this.IMT_PAYDT_0.isEnterKeyDown = false;
+            this.IMT_PAYDT_0.isMaxLengthErr = false;
             this.IMT_PAYDT_0.IsNumber = true;
             this.IMT_PAYDT_0.IsShop = false;
             this.IMT_PAYDT_0.Length = 3;
@@ -2137,7 +2213,7 @@
             this.IMT_PAYDT_0.Tag = "0";
             this.IMT_PAYDT_0.Text = "999";
             this.IMT_PAYDT_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_2
             // 
@@ -2145,6 +2221,7 @@
             this.IMN_SURYO_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_2.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_2.DecimalPlace = 0;
@@ -2153,6 +2230,7 @@
             this.IMN_SURYO_2.IntegerPart = 3;
             this.IMN_SURYO_2.IsCorrectDate = true;
             this.IMN_SURYO_2.isEnterKeyDown = false;
+            this.IMN_SURYO_2.isMaxLengthErr = false;
             this.IMN_SURYO_2.IsNumber = true;
             this.IMN_SURYO_2.IsShop = false;
             this.IMN_SURYO_2.Length = 3;
@@ -2165,7 +2243,7 @@
             this.IMN_SURYO_2.Tag = "2";
             this.IMN_SURYO_2.Text = "999";
             this.IMN_SURYO_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_2
             // 
@@ -2173,6 +2251,7 @@
             this.IMN_MEMBR_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_2.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_2.DecimalPlace = 0;
@@ -2181,9 +2260,10 @@
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
             this.IMN_MEMBR_2.isEnterKeyDown = false;
+            this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
-            this.IMN_MEMBR_2.Length = 10;
+            this.IMN_MEMBR_2.Length = 5;
             this.IMN_MEMBR_2.Location = new System.Drawing.Point(750, 58);
             this.IMN_MEMBR_2.MaxLength = 5;
             this.IMN_MEMBR_2.MoveNext = true;
@@ -2192,7 +2272,7 @@
             this.IMN_MEMBR_2.TabIndex = 32;
             this.IMN_MEMBR_2.Tag = "2";
             this.IMN_MEMBR_2.Text = "XXXX";
-            this.IMN_MEMBR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_1
             // 
@@ -2200,6 +2280,7 @@
             this.IMN_SURYO_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_1.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_1.DecimalPlace = 0;
@@ -2208,6 +2289,7 @@
             this.IMN_SURYO_1.IntegerPart = 3;
             this.IMN_SURYO_1.IsCorrectDate = true;
             this.IMN_SURYO_1.isEnterKeyDown = false;
+            this.IMN_SURYO_1.isMaxLengthErr = false;
             this.IMN_SURYO_1.IsNumber = true;
             this.IMN_SURYO_1.IsShop = false;
             this.IMN_SURYO_1.Length = 3;
@@ -2220,7 +2302,7 @@
             this.IMN_SURYO_1.Tag = "1";
             this.IMN_SURYO_1.Text = "999";
             this.IMN_SURYO_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_1
             // 
@@ -2228,6 +2310,7 @@
             this.IMN_MEMBR_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_1.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_1.DecimalPlace = 0;
@@ -2236,9 +2319,10 @@
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
             this.IMN_MEMBR_1.isEnterKeyDown = false;
+            this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
-            this.IMN_MEMBR_1.Length = 10;
+            this.IMN_MEMBR_1.Length = 5;
             this.IMN_MEMBR_1.Location = new System.Drawing.Point(750, 29);
             this.IMN_MEMBR_1.MaxLength = 5;
             this.IMN_MEMBR_1.MoveNext = true;
@@ -2247,7 +2331,7 @@
             this.IMN_MEMBR_1.TabIndex = 19;
             this.IMN_MEMBR_1.Tag = "1";
             this.IMN_MEMBR_1.Text = "XXXX";
-            this.IMN_MEMBR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO_0
             // 
@@ -2255,6 +2339,7 @@
             this.IMN_SURYO_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO_0.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO_0.DecimalPlace = 0;
@@ -2263,6 +2348,7 @@
             this.IMN_SURYO_0.IntegerPart = 3;
             this.IMN_SURYO_0.IsCorrectDate = true;
             this.IMN_SURYO_0.isEnterKeyDown = false;
+            this.IMN_SURYO_0.isMaxLengthErr = false;
             this.IMN_SURYO_0.IsNumber = true;
             this.IMN_SURYO_0.IsShop = false;
             this.IMN_SURYO_0.Length = 3;
@@ -2275,7 +2361,7 @@
             this.IMN_SURYO_0.Tag = "0";
             this.IMN_SURYO_0.Text = "999";
             this.IMN_SURYO_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR_0
             // 
@@ -2283,6 +2369,7 @@
             this.IMN_MEMBR_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR_0.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_0.DecimalPlace = 0;
@@ -2291,9 +2378,10 @@
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
             this.IMN_MEMBR_0.isEnterKeyDown = false;
+            this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
-            this.IMN_MEMBR_0.Length = 10;
+            this.IMN_MEMBR_0.Length = 5;
             this.IMN_MEMBR_0.Location = new System.Drawing.Point(750, 0);
             this.IMN_MEMBR_0.MaxLength = 5;
             this.IMN_MEMBR_0.MoveNext = true;
@@ -2302,7 +2390,7 @@
             this.IMN_MEMBR_0.TabIndex = 5;
             this.IMN_MEMBR_0.Tag = "0";
             this.IMN_MEMBR_0.Text = "XXXX";
-            this.IMN_MEMBR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT_2
             // 
@@ -2310,6 +2398,7 @@
             this.IMT_ARIDT_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_2.DecimalPlace = 0;
@@ -2318,6 +2407,7 @@
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
             this.IMT_ARIDT_2.isEnterKeyDown = false;
+            this.IMT_ARIDT_2.isMaxLengthErr = false;
             this.IMT_ARIDT_2.IsNumber = true;
             this.IMT_ARIDT_2.IsShop = false;
             this.IMT_ARIDT_2.Length = 10;
@@ -2330,7 +2420,7 @@
             this.IMT_ARIDT_2.Tag = "2";
             this.IMT_ARIDT_2.Text = "2019/01/01";
             this.IMT_ARIDT_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT_1
             // 
@@ -2338,6 +2428,7 @@
             this.IMT_ARIDT_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_1.DecimalPlace = 0;
@@ -2346,6 +2437,7 @@
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
             this.IMT_ARIDT_1.isEnterKeyDown = false;
+            this.IMT_ARIDT_1.isMaxLengthErr = false;
             this.IMT_ARIDT_1.IsNumber = true;
             this.IMT_ARIDT_1.IsShop = false;
             this.IMT_ARIDT_1.Length = 10;
@@ -2358,7 +2450,7 @@
             this.IMT_ARIDT_1.Tag = "1";
             this.IMT_ARIDT_1.Text = "2019/01/01";
             this.IMT_ARIDT_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP_2
             // 
@@ -2366,6 +2458,7 @@
             this.IMN_SALEP_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP_2.DecimalPlace = 0;
@@ -2374,6 +2467,7 @@
             this.IMN_SALEP_2.IntegerPart = 3;
             this.IMN_SALEP_2.IsCorrectDate = true;
             this.IMN_SALEP_2.isEnterKeyDown = false;
+            this.IMN_SALEP_2.isMaxLengthErr = false;
             this.IMN_SALEP_2.IsNumber = true;
             this.IMN_SALEP_2.IsShop = false;
             this.IMN_SALEP_2.Length = 11;
@@ -2386,7 +2480,7 @@
             this.IMN_SALEP_2.Tag = "2";
             this.IMN_SALEP_2.Text = "999";
             this.IMN_SALEP_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP_1
             // 
@@ -2394,6 +2488,7 @@
             this.IMN_SALEP_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP_1.DecimalPlace = 0;
@@ -2402,6 +2497,7 @@
             this.IMN_SALEP_1.IntegerPart = 3;
             this.IMN_SALEP_1.IsCorrectDate = true;
             this.IMN_SALEP_1.isEnterKeyDown = false;
+            this.IMN_SALEP_1.isMaxLengthErr = false;
             this.IMN_SALEP_1.IsNumber = true;
             this.IMN_SALEP_1.IsShop = false;
             this.IMN_SALEP_1.Length = 11;
@@ -2414,7 +2510,7 @@
             this.IMN_SALEP_1.Tag = "1";
             this.IMN_SALEP_1.Text = "999";
             this.IMN_SALEP_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP_0
             // 
@@ -2422,6 +2518,7 @@
             this.IMN_SALEP_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP_0.DecimalPlace = 0;
@@ -2430,6 +2527,7 @@
             this.IMN_SALEP_0.IntegerPart = 3;
             this.IMN_SALEP_0.IsCorrectDate = true;
             this.IMN_SALEP_0.isEnterKeyDown = false;
+            this.IMN_SALEP_0.isMaxLengthErr = false;
             this.IMN_SALEP_0.IsNumber = true;
             this.IMN_SALEP_0.IsShop = false;
             this.IMN_SALEP_0.Length = 11;
@@ -2442,7 +2540,7 @@
             this.IMN_SALEP_0.Tag = "0";
             this.IMN_SALEP_0.Text = "999";
             this.IMN_SALEP_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_0
             // 
@@ -2450,6 +2548,7 @@
             this.IMT_ITMCD_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
@@ -2457,6 +2556,7 @@
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
+            this.IMT_ITMCD_0.isMaxLengthErr = false;
             this.IMT_ITMCD_0.IsNumber = true;
             this.IMT_ITMCD_0.IsShop = false;
             this.IMT_ITMCD_0.Length = 11;
@@ -2469,7 +2569,7 @@
             this.IMT_ITMCD_0.TabIndex = 24;
             this.IMT_ITMCD_0.Tag = "0";
             this.IMT_ITMCD_0.Text = "XXXXXXXXX1X";
-            this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_1
             // 
@@ -2477,6 +2577,7 @@
             this.IMT_ITMCD_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_1.DecimalPlace = 0;
@@ -2484,6 +2585,7 @@
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
+            this.IMT_ITMCD_1.isMaxLengthErr = false;
             this.IMT_ITMCD_1.IsNumber = true;
             this.IMT_ITMCD_1.IsShop = false;
             this.IMT_ITMCD_1.Length = 11;
@@ -2496,7 +2598,7 @@
             this.IMT_ITMCD_1.TabIndex = 26;
             this.IMT_ITMCD_1.Tag = "1";
             this.IMT_ITMCD_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD_2
             // 
@@ -2504,6 +2606,7 @@
             this.IMT_ITMCD_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_2.DecimalPlace = 0;
@@ -2511,6 +2614,7 @@
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
+            this.IMT_ITMCD_2.isMaxLengthErr = false;
             this.IMT_ITMCD_2.IsNumber = true;
             this.IMT_ITMCD_2.IsShop = false;
             this.IMT_ITMCD_2.Length = 11;
@@ -2523,7 +2627,7 @@
             this.IMT_ITMCD_2.TabIndex = 28;
             this.IMT_ITMCD_2.Tag = "2";
             this.IMT_ITMCD_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // Vsb_Mei_0
             // 
@@ -2741,7 +2845,7 @@
             this.ckmShop_Label11.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label11.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label11.Location = new System.Drawing.Point(-4, 366);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
@@ -2779,7 +2883,7 @@
             this.ckmShop_Label12.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label12.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
+            this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label12.Location = new System.Drawing.Point(-3, 581);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
@@ -2876,6 +2980,7 @@
             this.IMT_ARIDT2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT2_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT2_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT2_0.DecimalPlace = 0;
@@ -2884,6 +2989,7 @@
             this.IMT_ARIDT2_0.IntegerPart = 0;
             this.IMT_ARIDT2_0.IsCorrectDate = true;
             this.IMT_ARIDT2_0.isEnterKeyDown = false;
+            this.IMT_ARIDT2_0.isMaxLengthErr = false;
             this.IMT_ARIDT2_0.IsNumber = true;
             this.IMT_ARIDT2_0.IsShop = false;
             this.IMT_ARIDT2_0.Length = 10;
@@ -2896,7 +3002,7 @@
             this.IMT_ARIDT2_0.Tag = "0";
             this.IMT_ARIDT2_0.Text = "2019/01/01";
             this.IMT_ARIDT2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER22_2
             // 
@@ -2904,6 +3010,7 @@
             this.IMN_GENER22_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER22_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER22_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER22_2.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER22_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER22_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER22_2.DecimalPlace = 0;
@@ -2912,9 +3019,10 @@
             this.IMN_GENER22_2.IntegerPart = 3;
             this.IMN_GENER22_2.IsCorrectDate = true;
             this.IMN_GENER22_2.isEnterKeyDown = false;
+            this.IMN_GENER22_2.isMaxLengthErr = false;
             this.IMN_GENER22_2.IsNumber = true;
             this.IMN_GENER22_2.IsShop = false;
-            this.IMN_GENER22_2.Length = 10;
+            this.IMN_GENER22_2.Length = 9;
             this.IMN_GENER22_2.Location = new System.Drawing.Point(519, 58);
             this.IMN_GENER22_2.MaxLength = 9;
             this.IMN_GENER22_2.MoveNext = true;
@@ -2924,7 +3032,7 @@
             this.IMN_GENER22_2.Tag = "2";
             this.IMN_GENER22_2.Text = "999";
             this.IMN_GENER22_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER22_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER22_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER22_1
             // 
@@ -2932,6 +3040,7 @@
             this.IMN_GENER22_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER22_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER22_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER22_1.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER22_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER22_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER22_1.DecimalPlace = 0;
@@ -2940,9 +3049,10 @@
             this.IMN_GENER22_1.IntegerPart = 3;
             this.IMN_GENER22_1.IsCorrectDate = true;
             this.IMN_GENER22_1.isEnterKeyDown = false;
+            this.IMN_GENER22_1.isMaxLengthErr = false;
             this.IMN_GENER22_1.IsNumber = true;
             this.IMN_GENER22_1.IsShop = false;
-            this.IMN_GENER22_1.Length = 10;
+            this.IMN_GENER22_1.Length = 9;
             this.IMN_GENER22_1.Location = new System.Drawing.Point(519, 29);
             this.IMN_GENER22_1.MaxLength = 9;
             this.IMN_GENER22_1.MoveNext = true;
@@ -2952,7 +3062,7 @@
             this.IMN_GENER22_1.Tag = "1";
             this.IMN_GENER22_1.Text = "999";
             this.IMN_GENER22_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER22_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER22_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_GENER22_0
             // 
@@ -2960,6 +3070,7 @@
             this.IMN_GENER22_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER22_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_GENER22_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_GENER22_0.ClientColor = System.Drawing.Color.White;
             this.IMN_GENER22_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER22_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_GENER22_0.DecimalPlace = 0;
@@ -2968,9 +3079,10 @@
             this.IMN_GENER22_0.IntegerPart = 3;
             this.IMN_GENER22_0.IsCorrectDate = true;
             this.IMN_GENER22_0.isEnterKeyDown = false;
+            this.IMN_GENER22_0.isMaxLengthErr = false;
             this.IMN_GENER22_0.IsNumber = true;
             this.IMN_GENER22_0.IsShop = false;
-            this.IMN_GENER22_0.Length = 10;
+            this.IMN_GENER22_0.Length = 9;
             this.IMN_GENER22_0.Location = new System.Drawing.Point(519, 0);
             this.IMN_GENER22_0.MaxLength = 9;
             this.IMN_GENER22_0.MoveNext = true;
@@ -2980,7 +3092,7 @@
             this.IMN_GENER22_0.Tag = "0";
             this.IMN_GENER22_0.Text = "999";
             this.IMN_GENER22_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_GENER22_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_GENER22_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_2
             // 
@@ -2988,6 +3100,7 @@
             this.IMN_WEBPR2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_2.DecimalPlace = 0;
@@ -2996,6 +3109,7 @@
             this.IMN_WEBPR2_2.IntegerPart = 0;
             this.IMN_WEBPR2_2.IsCorrectDate = true;
             this.IMN_WEBPR2_2.isEnterKeyDown = false;
+            this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
             this.IMN_WEBPR2_2.Length = 100;
@@ -3007,7 +3121,7 @@
             this.IMN_WEBPR2_2.TabIndex = 39;
             this.IMN_WEBPR2_2.Tag = "2";
             this.IMN_WEBPR2_2.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_1
             // 
@@ -3015,6 +3129,7 @@
             this.IMN_WEBPR2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_1.DecimalPlace = 0;
@@ -3023,6 +3138,7 @@
             this.IMN_WEBPR2_1.IntegerPart = 0;
             this.IMN_WEBPR2_1.IsCorrectDate = true;
             this.IMN_WEBPR2_1.isEnterKeyDown = false;
+            this.IMN_WEBPR2_1.isMaxLengthErr = false;
             this.IMN_WEBPR2_1.IsNumber = true;
             this.IMN_WEBPR2_1.IsShop = false;
             this.IMN_WEBPR2_1.Length = 100;
@@ -3034,7 +3150,7 @@
             this.IMN_WEBPR2_1.TabIndex = 26;
             this.IMN_WEBPR2_1.Tag = "1";
             this.IMN_WEBPR2_1.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_WEBPR2_0
             // 
@@ -3042,6 +3158,7 @@
             this.IMN_WEBPR2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_WEBPR2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_WEBPR2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_WEBPR2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_WEBPR2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR2_0.DecimalPlace = 0;
@@ -3050,6 +3167,7 @@
             this.IMN_WEBPR2_0.IntegerPart = 0;
             this.IMN_WEBPR2_0.IsCorrectDate = true;
             this.IMN_WEBPR2_0.isEnterKeyDown = false;
+            this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
             this.IMN_WEBPR2_0.Length = 100;
@@ -3061,7 +3179,7 @@
             this.IMN_WEBPR2_0.TabIndex = 12;
             this.IMN_WEBPR2_0.Tag = "0";
             this.IMN_WEBPR2_0.Text = "ＸＸＸＸＸＸＸＸＸＸ";
-            this.IMN_WEBPR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_WEBPR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT2_2
             // 
@@ -3069,6 +3187,7 @@
             this.IMT_PAYDT2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT2_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT2_2.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT2_2.DecimalPlace = 0;
@@ -3077,6 +3196,7 @@
             this.IMT_PAYDT2_2.IntegerPart = 0;
             this.IMT_PAYDT2_2.IsCorrectDate = true;
             this.IMT_PAYDT2_2.isEnterKeyDown = false;
+            this.IMT_PAYDT2_2.isMaxLengthErr = false;
             this.IMT_PAYDT2_2.IsNumber = true;
             this.IMT_PAYDT2_2.IsShop = false;
             this.IMT_PAYDT2_2.Length = 3;
@@ -3089,7 +3209,7 @@
             this.IMT_PAYDT2_2.Tag = "2";
             this.IMT_PAYDT2_2.Text = "999";
             this.IMT_PAYDT2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT2_1
             // 
@@ -3097,6 +3217,7 @@
             this.IMT_PAYDT2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT2_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT2_1.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT2_1.DecimalPlace = 0;
@@ -3105,6 +3226,7 @@
             this.IMT_PAYDT2_1.IntegerPart = 0;
             this.IMT_PAYDT2_1.IsCorrectDate = true;
             this.IMT_PAYDT2_1.isEnterKeyDown = false;
+            this.IMT_PAYDT2_1.isMaxLengthErr = false;
             this.IMT_PAYDT2_1.IsNumber = true;
             this.IMT_PAYDT2_1.IsShop = false;
             this.IMT_PAYDT2_1.Length = 3;
@@ -3117,7 +3239,7 @@
             this.IMT_PAYDT2_1.Tag = "1";
             this.IMT_PAYDT2_1.Text = "999";
             this.IMT_PAYDT2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_PAYDT2_0
             // 
@@ -3125,6 +3247,7 @@
             this.IMT_PAYDT2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_PAYDT2_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_PAYDT2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_PAYDT2_0.ClientColor = System.Drawing.Color.White;
             this.IMT_PAYDT2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMT_PAYDT2_0.DecimalPlace = 0;
@@ -3133,6 +3256,7 @@
             this.IMT_PAYDT2_0.IntegerPart = 0;
             this.IMT_PAYDT2_0.IsCorrectDate = true;
             this.IMT_PAYDT2_0.isEnterKeyDown = false;
+            this.IMT_PAYDT2_0.isMaxLengthErr = false;
             this.IMT_PAYDT2_0.IsNumber = true;
             this.IMT_PAYDT2_0.IsShop = false;
             this.IMT_PAYDT2_0.Length = 3;
@@ -3145,7 +3269,7 @@
             this.IMT_PAYDT2_0.Tag = "0";
             this.IMT_PAYDT2_0.Text = "999";
             this.IMT_PAYDT2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMT_PAYDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_PAYDT2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO2_2
             // 
@@ -3153,6 +3277,7 @@
             this.IMN_SURYO2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO2_2.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO2_2.DecimalPlace = 0;
@@ -3161,6 +3286,7 @@
             this.IMN_SURYO2_2.IntegerPart = 3;
             this.IMN_SURYO2_2.IsCorrectDate = true;
             this.IMN_SURYO2_2.isEnterKeyDown = false;
+            this.IMN_SURYO2_2.isMaxLengthErr = false;
             this.IMN_SURYO2_2.IsNumber = true;
             this.IMN_SURYO2_2.IsShop = false;
             this.IMN_SURYO2_2.Length = 3;
@@ -3173,7 +3299,7 @@
             this.IMN_SURYO2_2.Tag = "2";
             this.IMN_SURYO2_2.Text = "999";
             this.IMN_SURYO2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR2_2
             // 
@@ -3181,6 +3307,7 @@
             this.IMN_MEMBR2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR2_2.DecimalPlace = 0;
@@ -3189,9 +3316,10 @@
             this.IMN_MEMBR2_2.IntegerPart = 0;
             this.IMN_MEMBR2_2.IsCorrectDate = true;
             this.IMN_MEMBR2_2.isEnterKeyDown = false;
+            this.IMN_MEMBR2_2.isMaxLengthErr = false;
             this.IMN_MEMBR2_2.IsNumber = true;
             this.IMN_MEMBR2_2.IsShop = false;
-            this.IMN_MEMBR2_2.Length = 10;
+            this.IMN_MEMBR2_2.Length = 5;
             this.IMN_MEMBR2_2.Location = new System.Drawing.Point(750, 58);
             this.IMN_MEMBR2_2.MaxLength = 5;
             this.IMN_MEMBR2_2.MoveNext = true;
@@ -3200,7 +3328,7 @@
             this.IMN_MEMBR2_2.TabIndex = 32;
             this.IMN_MEMBR2_2.Tag = "2";
             this.IMN_MEMBR2_2.Text = "XXXX";
-            this.IMN_MEMBR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO2_1
             // 
@@ -3208,6 +3336,7 @@
             this.IMN_SURYO2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO2_1.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO2_1.DecimalPlace = 0;
@@ -3216,6 +3345,7 @@
             this.IMN_SURYO2_1.IntegerPart = 3;
             this.IMN_SURYO2_1.IsCorrectDate = true;
             this.IMN_SURYO2_1.isEnterKeyDown = false;
+            this.IMN_SURYO2_1.isMaxLengthErr = false;
             this.IMN_SURYO2_1.IsNumber = true;
             this.IMN_SURYO2_1.IsShop = false;
             this.IMN_SURYO2_1.Length = 3;
@@ -3228,7 +3358,7 @@
             this.IMN_SURYO2_1.Tag = "1";
             this.IMN_SURYO2_1.Text = "999";
             this.IMN_SURYO2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR2_1
             // 
@@ -3236,6 +3366,7 @@
             this.IMN_MEMBR2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR2_1.DecimalPlace = 0;
@@ -3244,9 +3375,10 @@
             this.IMN_MEMBR2_1.IntegerPart = 0;
             this.IMN_MEMBR2_1.IsCorrectDate = true;
             this.IMN_MEMBR2_1.isEnterKeyDown = false;
+            this.IMN_MEMBR2_1.isMaxLengthErr = false;
             this.IMN_MEMBR2_1.IsNumber = true;
             this.IMN_MEMBR2_1.IsShop = false;
-            this.IMN_MEMBR2_1.Length = 10;
+            this.IMN_MEMBR2_1.Length = 5;
             this.IMN_MEMBR2_1.Location = new System.Drawing.Point(750, 29);
             this.IMN_MEMBR2_1.MaxLength = 5;
             this.IMN_MEMBR2_1.MoveNext = true;
@@ -3255,7 +3387,7 @@
             this.IMN_MEMBR2_1.TabIndex = 19;
             this.IMN_MEMBR2_1.Tag = "1";
             this.IMN_MEMBR2_1.Text = "XXXX";
-            this.IMN_MEMBR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SURYO2_0
             // 
@@ -3263,6 +3395,7 @@
             this.IMN_SURYO2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SURYO2_0.BackColor = System.Drawing.Color.White;
             this.IMN_SURYO2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SURYO2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SURYO2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SURYO2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SURYO2_0.DecimalPlace = 0;
@@ -3271,6 +3404,7 @@
             this.IMN_SURYO2_0.IntegerPart = 3;
             this.IMN_SURYO2_0.IsCorrectDate = true;
             this.IMN_SURYO2_0.isEnterKeyDown = false;
+            this.IMN_SURYO2_0.isMaxLengthErr = false;
             this.IMN_SURYO2_0.IsNumber = true;
             this.IMN_SURYO2_0.IsShop = false;
             this.IMN_SURYO2_0.Length = 3;
@@ -3283,7 +3417,7 @@
             this.IMN_SURYO2_0.Tag = "0";
             this.IMN_SURYO2_0.Text = "999";
             this.IMN_SURYO2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SURYO2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SURYO2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_MEMBR2_0
             // 
@@ -3291,6 +3425,7 @@
             this.IMN_MEMBR2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_MEMBR2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_MEMBR2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_MEMBR2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_MEMBR2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR2_0.DecimalPlace = 0;
@@ -3299,9 +3434,10 @@
             this.IMN_MEMBR2_0.IntegerPart = 0;
             this.IMN_MEMBR2_0.IsCorrectDate = true;
             this.IMN_MEMBR2_0.isEnterKeyDown = false;
+            this.IMN_MEMBR2_0.isMaxLengthErr = false;
             this.IMN_MEMBR2_0.IsNumber = true;
             this.IMN_MEMBR2_0.IsShop = false;
-            this.IMN_MEMBR2_0.Length = 10;
+            this.IMN_MEMBR2_0.Length = 5;
             this.IMN_MEMBR2_0.Location = new System.Drawing.Point(750, 0);
             this.IMN_MEMBR2_0.MaxLength = 5;
             this.IMN_MEMBR2_0.MoveNext = true;
@@ -3310,7 +3446,7 @@
             this.IMN_MEMBR2_0.TabIndex = 5;
             this.IMN_MEMBR2_0.Tag = "0";
             this.IMN_MEMBR2_0.Text = "XXXX";
-            this.IMN_MEMBR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_MEMBR2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT2_2
             // 
@@ -3318,6 +3454,7 @@
             this.IMT_ARIDT2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT2_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT2_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT2_2.DecimalPlace = 0;
@@ -3326,6 +3463,7 @@
             this.IMT_ARIDT2_2.IntegerPart = 0;
             this.IMT_ARIDT2_2.IsCorrectDate = true;
             this.IMT_ARIDT2_2.isEnterKeyDown = false;
+            this.IMT_ARIDT2_2.isMaxLengthErr = false;
             this.IMT_ARIDT2_2.IsNumber = true;
             this.IMT_ARIDT2_2.IsShop = false;
             this.IMT_ARIDT2_2.Length = 10;
@@ -3338,7 +3476,7 @@
             this.IMT_ARIDT2_2.Tag = "2";
             this.IMT_ARIDT2_2.Text = "2019/01/01";
             this.IMT_ARIDT2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ARIDT2_1
             // 
@@ -3346,6 +3484,7 @@
             this.IMT_ARIDT2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ARIDT2_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ARIDT2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ARIDT2_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ARIDT2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT2_1.DecimalPlace = 0;
@@ -3354,6 +3493,7 @@
             this.IMT_ARIDT2_1.IntegerPart = 0;
             this.IMT_ARIDT2_1.IsCorrectDate = true;
             this.IMT_ARIDT2_1.isEnterKeyDown = false;
+            this.IMT_ARIDT2_1.isMaxLengthErr = false;
             this.IMT_ARIDT2_1.IsNumber = true;
             this.IMT_ARIDT2_1.IsShop = false;
             this.IMT_ARIDT2_1.Length = 10;
@@ -3366,7 +3506,7 @@
             this.IMT_ARIDT2_1.Tag = "1";
             this.IMT_ARIDT2_1.Text = "2019/01/01";
             this.IMT_ARIDT2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.IMT_ARIDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ARIDT2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_2
             // 
@@ -3374,6 +3514,7 @@
             this.IMN_SALEP2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_2.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_2.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_2.DecimalPlace = 0;
@@ -3382,6 +3523,7 @@
             this.IMN_SALEP2_2.IntegerPart = 3;
             this.IMN_SALEP2_2.IsCorrectDate = true;
             this.IMN_SALEP2_2.isEnterKeyDown = false;
+            this.IMN_SALEP2_2.isMaxLengthErr = false;
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
             this.IMN_SALEP2_2.Length = 11;
@@ -3394,7 +3536,7 @@
             this.IMN_SALEP2_2.Tag = "2";
             this.IMN_SALEP2_2.Text = "999";
             this.IMN_SALEP2_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_1
             // 
@@ -3402,6 +3544,7 @@
             this.IMN_SALEP2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_1.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_1.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_1.DecimalPlace = 0;
@@ -3410,6 +3553,7 @@
             this.IMN_SALEP2_1.IntegerPart = 3;
             this.IMN_SALEP2_1.IsCorrectDate = true;
             this.IMN_SALEP2_1.isEnterKeyDown = false;
+            this.IMN_SALEP2_1.isMaxLengthErr = false;
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
             this.IMN_SALEP2_1.Length = 11;
@@ -3422,7 +3566,7 @@
             this.IMN_SALEP2_1.Tag = "1";
             this.IMN_SALEP2_1.Text = "999";
             this.IMN_SALEP2_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMN_SALEP2_0
             // 
@@ -3430,6 +3574,7 @@
             this.IMN_SALEP2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_0.BackColor = System.Drawing.Color.Silver;
             this.IMN_SALEP2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMN_SALEP2_0.ClientColor = System.Drawing.Color.White;
             this.IMN_SALEP2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.IMN_SALEP2_0.DecimalPlace = 0;
@@ -3438,6 +3583,7 @@
             this.IMN_SALEP2_0.IntegerPart = 3;
             this.IMN_SALEP2_0.IsCorrectDate = true;
             this.IMN_SALEP2_0.isEnterKeyDown = false;
+            this.IMN_SALEP2_0.isMaxLengthErr = false;
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
             this.IMN_SALEP2_0.Length = 11;
@@ -3450,7 +3596,7 @@
             this.IMN_SALEP2_0.Tag = "0";
             this.IMN_SALEP2_0.Text = "999";
             this.IMN_SALEP2_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_SALEP2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMN_SALEP2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD2_0
             // 
@@ -3458,6 +3604,7 @@
             this.IMT_ITMCD2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD2_0.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD2_0.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD2_0.DecimalPlace = 0;
@@ -3465,6 +3612,7 @@
             this.IMT_ITMCD2_0.IntegerPart = 0;
             this.IMT_ITMCD2_0.IsCorrectDate = true;
             this.IMT_ITMCD2_0.isEnterKeyDown = false;
+            this.IMT_ITMCD2_0.isMaxLengthErr = false;
             this.IMT_ITMCD2_0.IsNumber = true;
             this.IMT_ITMCD2_0.IsShop = false;
             this.IMT_ITMCD2_0.Length = 11;
@@ -3477,7 +3625,7 @@
             this.IMT_ITMCD2_0.TabIndex = 24;
             this.IMT_ITMCD2_0.Tag = "0";
             this.IMT_ITMCD2_0.Text = "XXXXXXXXX1X";
-            this.IMT_ITMCD2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD2_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD2_1
             // 
@@ -3485,6 +3633,7 @@
             this.IMT_ITMCD2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD2_1.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD2_1.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD2_1.DecimalPlace = 0;
@@ -3492,6 +3641,7 @@
             this.IMT_ITMCD2_1.IntegerPart = 0;
             this.IMT_ITMCD2_1.IsCorrectDate = true;
             this.IMT_ITMCD2_1.isEnterKeyDown = false;
+            this.IMT_ITMCD2_1.isMaxLengthErr = false;
             this.IMT_ITMCD2_1.IsNumber = true;
             this.IMT_ITMCD2_1.IsShop = false;
             this.IMT_ITMCD2_1.Length = 11;
@@ -3504,7 +3654,7 @@
             this.IMT_ITMCD2_1.TabIndex = 26;
             this.IMT_ITMCD2_1.Tag = "1";
             this.IMT_ITMCD2_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD2_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // IMT_ITMCD2_2
             // 
@@ -3512,6 +3662,7 @@
             this.IMT_ITMCD2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMT_ITMCD2_2.BackColor = System.Drawing.Color.Silver;
             this.IMT_ITMCD2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.IMT_ITMCD2_2.ClientColor = System.Drawing.Color.White;
             this.IMT_ITMCD2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD2_2.DecimalPlace = 0;
@@ -3519,6 +3670,7 @@
             this.IMT_ITMCD2_2.IntegerPart = 0;
             this.IMT_ITMCD2_2.IsCorrectDate = true;
             this.IMT_ITMCD2_2.isEnterKeyDown = false;
+            this.IMT_ITMCD2_2.isMaxLengthErr = false;
             this.IMT_ITMCD2_2.IsNumber = true;
             this.IMT_ITMCD2_2.IsShop = false;
             this.IMT_ITMCD2_2.Length = 11;
@@ -3531,7 +3683,7 @@
             this.IMT_ITMCD2_2.TabIndex = 28;
             this.IMT_ITMCD2_2.Tag = "2";
             this.IMT_ITMCD2_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
-            this.IMT_ITMCD2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.IMT_ITMCD2_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.SmallLarge;
             // 
             // Vsb_Mei_1
             // 

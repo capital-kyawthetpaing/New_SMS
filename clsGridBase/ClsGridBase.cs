@@ -700,9 +700,9 @@ namespace GridBase
                 w_Edit.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
 
                 if (decimalKeta == 0)
-                    w_Edit.MaxLength = keta + Convert.ToInt32(Math.Ceiling((double)keta / 3));
+                    w_Edit.MaxLength = keta + Convert.ToInt32(Math.Ceiling((double)(keta-1) / 3));
                 else
-                    w_Edit.MaxLength = keta + Convert.ToInt32(Math.Ceiling((double)keta / 3)) + decimalKeta + 1;
+                    w_Edit.MaxLength = keta + Convert.ToInt32(Math.Ceiling((double)(keta-1) / 3)) + decimalKeta + 1;
 
                 w_Edit.IntegerPart = keta;
                 w_Edit.DecimalPlace = decimalKeta;
