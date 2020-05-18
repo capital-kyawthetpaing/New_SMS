@@ -45,7 +45,7 @@ namespace CKM_Controls
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
             base.OnPaintBackground(pevent);
-            pevent.Graphics.Clear(Color.White);
+           // pevent.Graphics.Clear(Color.White);
         }
         protected override void OnMouseHover(EventArgs e)
         {
@@ -56,6 +56,13 @@ namespace CKM_Controls
         {
             get { return true; }
         }
-
+        protected override void OnGotFocus(EventArgs e)
+        {
+            base.OnGotFocus(e);
+        }
+        protected override void OnLostFocus(EventArgs e)
+        {
+            base.OnLostFocus(e);
+        }
     }
 }
