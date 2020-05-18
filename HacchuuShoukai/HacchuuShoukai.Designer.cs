@@ -340,6 +340,7 @@
             this.ckM_SearchControl2.LabelText = "";
             this.ckM_SearchControl2.LabelVisible = false;
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
+            this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
             this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
@@ -367,6 +368,7 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
@@ -582,9 +584,9 @@
             this.ckM_TextBox5.isMaxLengthErr = false;
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
-            this.ckM_TextBox5.Length = 40;
+            this.ckM_TextBox5.Length = 100;
             this.ckM_TextBox5.Location = new System.Drawing.Point(478, 128);
-            this.ckM_TextBox5.MaxLength = 40;
+            this.ckM_TextBox5.MaxLength = 100;
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(520, 19);
@@ -606,6 +608,7 @@
             this.ScVendor.LabelText = "";
             this.ScVendor.LabelVisible = true;
             this.ScVendor.Location = new System.Drawing.Point(478, 12);
+            this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
             this.ScVendor.NameWidth = 280;
             this.ScVendor.SearchEnable = true;
@@ -807,10 +810,11 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1650,6 +1654,7 @@
             this.ScJuchuuNO.LabelText = "";
             this.ScJuchuuNO.LabelVisible = false;
             this.ScJuchuuNO.Location = new System.Drawing.Point(120, 206);
+            this.ScJuchuuNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScJuchuuNO.Name = "ScJuchuuNO";
             this.ScJuchuuNO.NameWidth = 600;
             this.ScJuchuuNO.SearchEnable = true;

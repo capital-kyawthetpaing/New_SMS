@@ -334,6 +334,12 @@ namespace Search
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             bool ret;
 
             switch (index)
@@ -613,6 +619,24 @@ namespace Search
 
             switch (Index)
             {
+                case 8:
+                    EsearchKbn kbn = EsearchKbn.Null;
+
+                     if (Array.IndexOf(detailControls, previousCtrl) == (int)EIndex.SKUCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+                    else if (Array.IndexOf(detailControls, previousCtrl) == (int)EIndex.JanCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+
+                    if (kbn != EsearchKbn.Null)
+                        SearchData(kbn, previousCtrl);
+
+                    break;
                 case 9://F10:出力
                        //Ｑ２０５				
                     if (bbl.ShowMessage("Q205") != DialogResult.Yes)
