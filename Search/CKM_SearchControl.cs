@@ -371,6 +371,11 @@ namespace Search
                     txtCode.Width = 130;
                     lblName.Width = 280;
                     break;
+                case SearchType.Supplier:
+                    TxtCode.MaxLength = 13;
+                    TxtCode.Width = 130;
+                    lblName.Width = 280;
+                    break;
                  case SearchType.仕入先PayeeFlg:
                     txtCode.MaxLength = 13;
                     txtCode.Width = 130;
@@ -637,7 +642,7 @@ namespace Search
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
-                    lblName.Width = 300;
+                    lblName.Width = 200;
                     break;
             }
             //}
