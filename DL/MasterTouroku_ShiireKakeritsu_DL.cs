@@ -33,20 +33,14 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@Xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = Xml } },
-                { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },
-                { "@StoreCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.StoreCD} },
-                { "@BrandCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.BrandCD} },
-                { "@SportsCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SportsCD} },
-                { "@SegmentCD",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.SegmentCD} },
-                { "@LastYearTerm",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.LastYearTerm} },
-                { "@LastSeason",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.LastSeason} },
+                { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },              
                 { "@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
                 { "@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},
-                { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProgramID }},
-                { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.PC }},
-                { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
-                { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
+                //{ "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Operator }},
+                //{ "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProgramID }},
+                //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.PC }},
+                //{ "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
+                //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
             };
 
             return InsertUpdateDeleteData(dic, sp);

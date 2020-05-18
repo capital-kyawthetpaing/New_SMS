@@ -147,8 +147,11 @@ namespace TempoRegiFurikomiYoushi
             }
             
             return true;
-        } 
+        }
 
+        private void ckmShop_CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
