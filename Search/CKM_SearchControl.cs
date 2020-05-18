@@ -642,7 +642,7 @@ namespace Search
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
-                    lblName.Width = 300;
+                    lblName.Width = 200;
                     break;
             }
             //}
