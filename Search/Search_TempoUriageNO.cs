@@ -168,7 +168,7 @@ namespace Search
                     if (ret)
                     {
                         if ((int)EIndex.CustomerCD == Array.IndexOf(detailControls, sender))
-                            return;
+                            btnSubF11.Focus();
                         else
                             detailControls[Array.IndexOf(detailControls, sender) + 1].Focus();
                     }
