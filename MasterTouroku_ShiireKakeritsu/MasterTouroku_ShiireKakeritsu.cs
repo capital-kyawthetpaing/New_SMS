@@ -25,6 +25,7 @@ namespace MasterTouroku_ShiireKakeritsu
         M_Brand_Entity mbe = new M_Brand_Entity();
         DataView dvMain;
         int type = 0;
+        string Xml;
         public bool IsNumber { get; set; } = true;
         public bool MoveNext { get; set; } = true;
 
@@ -108,6 +109,9 @@ namespace MasterTouroku_ShiireKakeritsu
                             return;
                         CancelData();
                     }
+                    break;
+                case 12:
+                    F12();
                     break;
             }
         }
@@ -763,6 +767,40 @@ namespace MasterTouroku_ShiireKakeritsu
                 return false;
             }
         }
-
+        private void F12()
+        {
+            if (ErrorCheck(12))
+            {
+                if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
+                {
+                    //Xml = mskbl.DataTableToXml(dtMain);
+                    //if (mskbl.M_OrderRate_Update(moe, Xml))
+                    //{
+                    //    Clear(PanelHeader);
+                    //    Clear(panelDetail);
+                    //    mskbl.ShowMessage("I101");
+                    //}
+                    //else
+                    //{
+                    //    mskbl.ShowMessage("S001");
+                    //}
+                    UpdateInsert();
+                }
+            }
+        }
+        private void UpdateInsert()
+        {
+            Xml = mskbl.DataTableToXml(dtMain);
+            if (mskbl.M_OrderRate_Update(moe, Xml))
+            {
+                Clear(PanelHeader);
+                Clear(panelDetail);
+                mskbl.ShowMessage("I101");
+            }
+            else
+            {
+                mskbl.ShowMessage("S001");
+            }
+        }
     }
 }
