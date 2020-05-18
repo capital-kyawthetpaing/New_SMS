@@ -338,7 +338,7 @@ namespace ShiireShoukaiDetails
 
             if (!string.IsNullOrEmpty(txtPurchaseDate1.Text)&& !string.IsNullOrEmpty(txtPurchaseDate2.Text))
             {
-                if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1 || txtPurchaseDate1.Text == txtPurchaseDate2.Text)
+                if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1)
                 {
                     ssdbl.ShowMessage("E104");
                     txtPurchaseDate2.Focus();
@@ -348,7 +348,7 @@ namespace ShiireShoukaiDetails
 
             if (!string.IsNullOrEmpty(txtPlanDate1.Text) && !string.IsNullOrEmpty(txtPlanDate2.Text))
             {
-                if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1 || txtPlanDate1.Text == txtPlanDate2.Text)
+                if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1)
                 {
                     ssdbl.ShowMessage("E104");
                     txtPlanDate2.Focus();
@@ -358,15 +358,13 @@ namespace ShiireShoukaiDetails
 
             if(!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
             {
-                if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
-                {
-                    if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
-                    {
-                        ssdbl.ShowMessage("E104");
-                        txtOrderDate2.Focus();
-                        return false;
-                    }
-                }
+               if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
+               {
+                  ssdbl.ShowMessage("E104");
+                  txtOrderDate2.Focus();
+                  return false;
+               }
+                
             }
 
             if (!string.IsNullOrEmpty(scMakerCD.TxtCode.Text))
@@ -411,14 +409,13 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtPurchaseDate1.Text) && !string.IsNullOrEmpty(txtPurchaseDate2.Text))
                 {
-                    if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1 || txtPurchaseDate1.Text==txtPurchaseDate2.Text)
+                    if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text)==1)
                     {
                         ssdbl.ShowMessage("E104");
                         txtPurchaseDate2.Focus();
                     }
                 }
             }
-           
         }
 
         private void txtPlanDate2_KeyDown(object sender, KeyEventArgs e)
@@ -427,7 +424,7 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtPlanDate1.Text) && !string.IsNullOrEmpty(txtPlanDate2.Text))
                 {
-                    if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1 || txtPlanDate1.Text == txtPlanDate2.Text)
+                    if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1)
                     {
                         ssdbl.ShowMessage("E104");
                         txtPlanDate2.Focus();
@@ -442,14 +439,12 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
                 {
-                    if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
-                    {
-                        if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
-                        {
-                            ssdbl.ShowMessage("E104");
-                            txtOrderDate2.Focus();
-                        }
-                    }
+                   if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1)
+                   {
+                        ssdbl.ShowMessage("E104");
+                        txtOrderDate2.Focus();
+                   }
+                 
                 }
             }
           

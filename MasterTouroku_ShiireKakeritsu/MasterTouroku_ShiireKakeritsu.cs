@@ -236,6 +236,25 @@ namespace MasterTouroku_ShiireKakeritsu
                     return false;
                 }
             }
+            else if (type == 3)
+            {
+                if (!RequireCheck(new Control[] { scSupplierCD.TxtCode }))
+                    return false;
+
+                if(string.IsNullOrWhiteSpace(txtRevisionDate.Text ))
+                {
+                    mskbl.ShowMessage("E102");
+                    txtRate.Focus();
+                    return false;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtRate1.Text))
+                {
+                    mskbl.ShowMessage("E102");
+                    txtRate.Focus();
+                    return false;
+                }
+            }
 
             return true;
         }
@@ -791,15 +810,33 @@ namespace MasterTouroku_ShiireKakeritsu
         private void UpdateInsert()
         {
             Xml = mskbl.DataTableToXml(dtMain);
+            moe.VendorCD = scSupplierCD.TxtCode.Text;
+            moe.ChangeDate = txtRevisionDate.Text;
+            moe.Rate = txtRate1.Text;     
             if (mskbl.M_OrderRate_Update(moe, Xml))
             {
                 Clear(PanelHeader);
                 Clear(panelDetail);
+                dgv_ShiireKakeritsu.DataSource = string.Empty;
                 mskbl.ShowMessage("I101");
             }
             else
             {
                 mskbl.ShowMessage("S001");
+            }
+        }
+
+        private void txtRate1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (NumberCheck())
+                {
+                    if (!txtRate1.Text.Contains("."))
+                    {
+                        txtRate1.Text = txtRate1.Text + ".00";
+                    }
+                }
             }
         }
     }
