@@ -325,30 +325,33 @@ namespace MainMenu
             if ((sender) as CKM_Button != btnleftcurrent)
                 (sender as CKM_Button).BackColor = Color.FromArgb(192, 255, 192);
         }
+        public void ForceToCLose()
+        {
+            foreach (DataRow dr in menu.Rows)
+            {
+                var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                if (localByName.Count() > 0)
+                {
 
+                    foreach (var process in localByName)
+                    {
+                        try
+                        {
+                            process.Kill();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
+        }
         private void Tennic_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
             {
-                foreach (DataRow dr in menu.Rows)
-                {
-                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
-                    if (localByName.Count() > 0)
-                    {
-
-                        foreach (var process in localByName)
-                        {
-                            try
-                            {
-                                process.Kill();
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
+                ForceToCLose();
                 e.Cancel = false;
             }
             else
@@ -363,6 +366,7 @@ namespace MainMenu
             }
             else if (e.KeyData==Keys.F12)
             {
+                ForceToCLose();
                 TennicLogin tcl = new TennicLogin();
                 this.Hide();
                 tcl.ShowDialog();
@@ -372,6 +376,7 @@ namespace MainMenu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            ForceToCLose();
             TennicLogin tcl = new TennicLogin();
             this.Hide();
             tcl.ShowDialog();
