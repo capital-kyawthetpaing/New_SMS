@@ -867,6 +867,11 @@ namespace PickingNyuuryoku
         /// <returns></returns>
         private bool CheckKey(int index, bool set=true)
         {
+            if (keyControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)keyControls[index]).isMaxLengthErr)
+                    return false;
+            }
 
             switch (index)
             {
@@ -1111,12 +1116,7 @@ namespace PickingNyuuryoku
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
-        {
-            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
-            {
-                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
-                    return false;
-            }
+        {       
 
             switch (index)
             {
@@ -1948,13 +1948,17 @@ namespace PickingNyuuryoku
             {
                 case EsearchKbn.Product:
                     string ymd = snbl.GetDate();
+                    int index = Array.IndexOf(keyControls, setCtl);
+
                     using (Search_Product frmProduct = new Search_Product(ymd))
                     {
+                        if (index.Equals((int)EIndex.JanCD))
+                            frmProduct.Mode = "5";
+
                         frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            int index = Array.IndexOf(keyControls, setCtl);
 
                             switch (index)
                             {
