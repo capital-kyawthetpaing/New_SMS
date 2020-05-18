@@ -35,14 +35,9 @@ namespace MasterTouroku_ShiireTanka
             CB_season.Bind(ymd);
         }
 
-        private void LB_season_Click(object sender, EventArgs e)
+        protected override void EndSec()
         {
-
-        }
-
-        private void CB_season_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

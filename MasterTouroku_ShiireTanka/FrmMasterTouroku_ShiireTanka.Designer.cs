@@ -461,7 +461,7 @@
             this.CB_season.Name = "CB_season";
             this.CB_season.Size = new System.Drawing.Size(100, 20);
             this.CB_season.TabIndex = 18;
-            this.CB_season.SelectedIndexChanged += new System.EventHandler(this.CB_season_SelectedIndexChanged);
+           
             // 
             // LB_season
             // 
@@ -479,7 +479,7 @@
             this.LB_season.Text = "シーズン";
             this.LB_season.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_season.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LB_season.Click += new System.EventHandler(this.LB_season_Click);
+           
             // 
             // CB_year
             // 
@@ -1635,6 +1635,13 @@
             this.ClientSize = new System.Drawing.Size(1834, 761);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
+            this.F10Visible = false;
+            this.F2Visible = false;
+            this.F3Visible = false;
+            this.F4Visible = false;
+            this.F5Visible = false;
+            this.F7Visible = false;
+            this.F8Visible = false;
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "FrmMasterTouroku_ShiireTanka";
