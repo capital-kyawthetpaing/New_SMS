@@ -37,6 +37,7 @@ namespace ShiireShoukaiDetails
             BindCombo();
             RequiredField();           
             this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
+            cboStore.SelectedValue = StoreCD;
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace ShiireShoukaiDetails
         /// </summary>
         private void BindCombo()
         {
-            cboStore.Bind(string.Empty, "2");
+            cboStore.Bind(string.Empty,"2");
         }
         /// <summary>
         /// 仕入先の履歴を表示されること
