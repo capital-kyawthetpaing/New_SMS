@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text;
 using Base.Client;
 using BL;
 using Entity;
@@ -777,7 +778,14 @@ namespace MasterTouroku_Shouhin
 
         private void InitGrid()
         {
-            if(dgvDetail.Columns.Count.Equals(0))
+            for (int i = (int)EIndex.ColorNO; i <= (int)EIndex.SizeNO; i++)
+                if (CheckDetail(i) == false)
+                {
+                    detailControls[i].Focus();
+                    return;
+                }
+
+            if (dgvDetail.Columns.Count.Equals(0))
             {
                 //ColorNo
                 dgvDetail.Columns.Add("ColorNo" , " ");
@@ -1078,7 +1086,6 @@ namespace MasterTouroku_Shouhin
                             }
                         }
                     }
-                    InitGrid();
 
                     break;
 
@@ -2121,12 +2128,13 @@ namespace MasterTouroku_Shouhin
 
                     break;
                 case 9://F10:展開
-                    if (dgvDetail.CurrentCell == null)
-                        return;
+                    InitGrid();
+                    //if (dgvDetail.CurrentCell == null)
+                    //    return;
 
-                    int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
-                    int RowIndex = dgvDetail.CurrentCell.RowIndex;
-                    Expand(ColumnIndex, RowIndex);
+                    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
+                    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
+                    //Expand(ColumnIndex, RowIndex);
                     break;
 
                 case 11:    //F12:登録
@@ -2275,6 +2283,10 @@ namespace MasterTouroku_Shouhin
                     bool ret = CheckDetail(index);
                     if (ret)
                     {
+                        if(index.Equals((int)EIndex.SizeNO))
+                        {
+                            InitGrid();
+                        }
                         if (detailControls.Length - 1 > index)
                         {
                             if (detailControls[index + 1].CanFocus)
@@ -2453,6 +2465,14 @@ namespace MasterTouroku_Shouhin
                         e.Cancel = true;
                         return;
                     }
+                    //20Bまで
+                    string str = Encoding.GetEncoding(932).GetByteCount(e.FormattedValue.ToString()).ToString();
+                    if (Convert.ToInt32(str) > 20)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true;
+                        return;
+                    }
 
                     //同じ値のセルが複数あればエラー Ｅ１０５
                     for (int i = 2; i<dgvDetail.Columns.Count; i++)
@@ -2474,6 +2494,14 @@ namespace MasterTouroku_Shouhin
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Color Name must not be empty";
                         bbl.ShowMessage("E102");
+                        e.Cancel = true;
+                        return;
+                    }
+                    //20Bまで
+                    string str = Encoding.GetEncoding(932).GetByteCount(e.FormattedValue.ToString()).ToString();
+                    if (Convert.ToInt32(str) > 20)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true;
                         return;
                     }

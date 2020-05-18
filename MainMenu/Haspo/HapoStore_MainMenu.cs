@@ -380,10 +380,32 @@ namespace MainMenu.Haspo
 
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
+            ForceToClose();
             HaspoStoreMenuLogin hln = new HaspoStoreMenuLogin();
             this.Hide();
             hln.ShowDialog();
             this.Close();
+        }
+        public void ForceToClose()
+        {
+            foreach (DataRow dr in menu.Rows)
+            {
+                var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                if (localByName.Count() > 0)
+                {
+
+                    foreach (var process in localByName)
+                    {
+                        try
+                        {
+                            process.Kill();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
         }
 
         private void HapoStore_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
@@ -391,24 +413,7 @@ namespace MainMenu.Haspo
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
             {
-                foreach (DataRow dr in menu.Rows)
-                {
-                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
-                    if (localByName.Count() > 0)
-                    {
-
-                        foreach (var process in localByName)
-                        {
-                            try
-                            {
-                                process.Kill();
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
+                ForceToClose();
                 e.Cancel = false;
             }
             else
