@@ -247,7 +247,7 @@ namespace ShiireShoukaiDetails
                 dpd_entity.ProgramID = "1";
                
 
-                    dpd_entity = GetDPurchaseDetails();
+                dpd_entity = GetDPurchaseDetails();
 
                 DataTable dtResult = new DataTable();
                 dtResult = ssdbl.ShiireShoukaiDetails_Select(dpd_entity);
