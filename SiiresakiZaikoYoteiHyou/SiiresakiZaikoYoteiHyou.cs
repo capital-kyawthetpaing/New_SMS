@@ -198,7 +198,7 @@ namespace SiiresakiZaikoYoteiHyou
                     }
                 }
             }
-        }
+            }
 
         private L_Log_Entity Get_L_Log_Entity()
         {
