@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_Changedate = new CKM_Controls.CKM_TextBox();
             this.LB_changedate = new CKM_Controls.CKM_Label();
@@ -44,7 +45,7 @@
             this.RB_zenten = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.GV_tanka = new CKM_Controls.CKM_GridView();
             this.ck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ブランド = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.競技 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,7 +127,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_tanka)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -352,7 +353,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.ckM_GridView1);
+            this.panel3.Controls.Add(this.GV_tanka);
             this.panel3.Controls.Add(this.LB_listprice);
             this.panel3.Controls.Add(this.btn_choiceD);
             this.panel3.Controls.Add(this.btn_selectallD);
@@ -420,23 +421,23 @@
             this.panel3.Size = new System.Drawing.Size(1826, 670);
             this.panel3.TabIndex = 101;
             // 
-            // ckM_GridView1
+            // GV_tanka
             // 
-            this.ckM_GridView1.AllowUserToDeleteRows = false;
-            this.ckM_GridView1.AllowUserToResizeRows = false;
+            this.GV_tanka.AllowUserToDeleteRows = false;
+            this.GV_tanka.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_tanka.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GV_tanka.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.ckM_GridView1.ColumnHeadersHeight = 25;
-            this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GV_tanka.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GV_tanka.ColumnHeadersHeight = 25;
+            this.GV_tanka.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
             this.ブランド,
             this.競技,
@@ -450,14 +451,22 @@
             this.定価,
             this.掛率,
             this.発注単価});
-            this.ckM_GridView1.EnableHeadersVisualStyles = false;
-            this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(84, 389);
-            this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.Size = new System.Drawing.Size(1560, 250);
-            this.ckM_GridView1.TabIndex = 67;
-            this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_tanka.DefaultCellStyle = dataGridViewCellStyle3;
+            this.GV_tanka.EnableHeadersVisualStyles = false;
+            this.GV_tanka.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_tanka.Location = new System.Drawing.Point(84, 389);
+            this.GV_tanka.Name = "GV_tanka";
+            this.GV_tanka.Size = new System.Drawing.Size(1560, 250);
+            this.GV_tanka.TabIndex = 67;
+            this.GV_tanka.UseRowNo = true;
+            this.GV_tanka.UseSetting = false;
             // 
             // ck
             // 
@@ -1777,7 +1786,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_tanka)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1862,7 +1871,7 @@
         private CKM_Controls.CKM_Button btn_selectallD;
         private CKM_Controls.CKM_Button btn_releaseallD;
         private CKM_Controls.CKM_Label LB_listprice;
-        private CKM_Controls.CKM_GridView ckM_GridView1;
+        private CKM_Controls.CKM_GridView GV_tanka;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ブランド;
         private System.Windows.Forms.DataGridViewTextBoxColumn 競技;
