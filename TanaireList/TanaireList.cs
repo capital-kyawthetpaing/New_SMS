@@ -377,11 +377,6 @@ namespace TanaireList
                     }
 
                 }
-                //else
-                //{
-                //    tnlbl.ShowMessage("E101");
-                //    ScSKUCD.SetFocus(1);
-                //}
 
             }
         }
