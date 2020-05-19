@@ -17,6 +17,7 @@ namespace ShiireShoukaiShiiresaki
    
     public partial class ShiireShoukaiShiiresaki : FrmMainForm
     {
+        private const string ProNm = "仕入照会(仕入先)";
         string paid = "";
         string unpaid = "";
         string payeeflg = "";
@@ -41,7 +42,7 @@ namespace ShiireShoukaiShiiresaki
             BindCombo();
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
-           
+          base.InProgramNM = ProNm;
             txtPurchaseDateFrom.Focus();
                     
         }
@@ -201,7 +202,12 @@ namespace ShiireShoukaiShiiresaki
             {
                 return;
             }
-                if (dgvPurchaseSearch.DataSource != null)
+            string filePath = "";
+            if (!ShowSaveFileDialog(InProgramNM, out filePath))
+            {
+                return;
+            }
+            if (dgvPurchaseSearch.DataSource != null)
             {
                 //Build the CSV file data as a Comma separated string.
                 string csv = string.Empty;
