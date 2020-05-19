@@ -52,19 +52,6 @@ namespace SiharaiYoteiHyou
             base.InProgramNM = ProNm;
             BindCombo();
             RequiredField();
-            this.comboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;
-        }
-
-        private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!comboStore.SelectedValue.Equals("-1"))
-            {
-                if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
-                {
-                    shyhbl.ShowMessage("E139");
-                    comboStore.Focus();
-                }
-            }
         }
 
         private void RequiredField()
@@ -469,6 +456,19 @@ namespace SiharaiYoteiHyou
             scPaymentDestinaion.Value1 = "2";
             scPaymentDestinaion.ChangeDate = bbl.GetDate();
         }
+
+        private void comboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode ==Keys.KeyCode)
+            {
+                if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
+                {
+                    shyhbl.ShowMessage("E139");
+                    comboStore.Focus();
+                }
+            }
+        }
+
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

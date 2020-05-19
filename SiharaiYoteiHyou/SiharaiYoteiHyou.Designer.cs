@@ -58,6 +58,10 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 34);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -89,6 +93,7 @@
             this.txtPaymentDueDateFrom.IntegerPart = 0;
             this.txtPaymentDueDateFrom.IsCorrectDate = true;
             this.txtPaymentDueDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDueDateFrom.isMaxLengthErr = false;
             this.txtPaymentDueDateFrom.IsNumber = true;
             this.txtPaymentDueDateFrom.IsShop = false;
             this.txtPaymentDueDateFrom.Length = 10;
@@ -132,6 +137,7 @@
             this.txtPaymentDueDateTo.IntegerPart = 0;
             this.txtPaymentDueDateTo.IsCorrectDate = true;
             this.txtPaymentDueDateTo.isEnterKeyDown = false;
+            this.txtPaymentDueDateTo.isMaxLengthErr = false;
             this.txtPaymentDueDateTo.IsNumber = true;
             this.txtPaymentDueDateTo.IsShop = false;
             this.txtPaymentDueDateTo.Length = 10;
@@ -176,6 +182,7 @@
             this.comboStore.Name = "comboStore";
             this.comboStore.Size = new System.Drawing.Size(170, 20);
             this.comboStore.TabIndex = 13;
+            this.comboStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboStore_KeyDown);
             // 
             // ckM_Label4
             // 
@@ -376,6 +383,7 @@
             this.scPaymentDestinaion.ChangeDateWidth = 100;
             this.scPaymentDestinaion.Code = "";
             this.scPaymentDestinaion.CodeWidth = 130;
+            this.scPaymentDestinaion.CodeWidth1 = 130;
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
             this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -385,6 +393,7 @@
             this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
             this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
             this.scPaymentDestinaion.Name = "scPaymentDestinaion";
+            this.scPaymentDestinaion.NameWidth = 280;
             this.scPaymentDestinaion.SearchEnable = true;
             this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;

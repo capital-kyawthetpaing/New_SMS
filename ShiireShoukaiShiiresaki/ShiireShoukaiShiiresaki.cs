@@ -43,26 +43,16 @@ namespace ShiireShoukaiShiiresaki
             chkUnpaid.Checked = true;
            
             txtPurchaseDateFrom.Focus();
-            this.ComboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;            
+                    
         }
 
-        private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!ComboStore.SelectedValue.Equals("-1"))
-            {
-                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
-                {
-                    dpurchase_bl.ShowMessage("E141");
-                    ComboStore.Focus();
-                }
-            }
-        }
+       
 
         private void SetRequireField()
         {
            
             ComboStore.Require(true);
-            this.Btn_F10.Text = "Excel出力(F10)";
+            this.Btn_F10.Text = "出力(F10)";
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
@@ -448,6 +438,18 @@ namespace ShiireShoukaiShiiresaki
         {
             scSupplier.Value1 = "1";//仕入先区分：1
             scSupplier.ChangeDate = txtPurchaseDateTo.Text;
+        }
+
+        private void ComboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
+                {
+                    dpurchase_bl.ShowMessage("E141");
+                    ComboStore.Focus();
+                }
+            }
         }
     }
 }
