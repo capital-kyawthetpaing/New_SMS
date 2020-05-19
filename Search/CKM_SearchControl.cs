@@ -55,6 +55,7 @@ namespace Search
         {
             Normal,
             Small,
+            SmallLarge,
             Medium,
             Large,
             XLarge
@@ -78,6 +79,9 @@ namespace Search
                         break;
                     case FontSize.Small:
                         Adjust_Size(10F, FontStyle.Regular, CKM_TextBox.FontSize.Small);
+                        break;
+                    case FontSize.SmallLarge:
+                        Adjust_Size(14F, FontStyle.Regular, CKM_TextBox.FontSize.SmallLarge);
                         break;
                     case FontSize.Medium:
                         Adjust_Size(16F, FontStyle.Regular, CKM_TextBox.FontSize.Medium);

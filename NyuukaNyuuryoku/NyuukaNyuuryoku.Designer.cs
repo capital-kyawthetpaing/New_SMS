@@ -38,26 +38,26 @@
             this.BtnSubF12 = new CKM_Controls.CKM_Button();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.txtSu = new CKM_Controls.CKM_TextBox();
-            this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label9 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label1 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label2 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label3 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label4 = new CKM_Controls.CKM_Label();
             this.CboSoukoName = new CKM_Controls.CKMShop_ComboBox();
             this.lblSKUName = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.lblColorName = new System.Windows.Forms.Label();
-            this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label5 = new CKM_Controls.CKM_Label();
             this.txtVendorDeliveryNo = new CKM_Controls.CKM_TextBox();
             this.txtJANCD = new CKM_Controls.CKM_TextBox();
             this.BtnJANCD = new System.Windows.Forms.Button();
             this.lblSizeName = new System.Windows.Forms.Label();
-            this.ckmShop_Label6 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label6 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label7 = new CKM_Controls.CKM_Label();
             this.lblTani = new System.Windows.Forms.Label();
             this.lblVendor = new System.Windows.Forms.Label();
-            this.ckmShop_Label8 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label8 = new CKM_Controls.CKM_Label();
+            this.ckmShop_Label10 = new CKM_Controls.CKM_Label();
             this.lblSKUCD = new System.Windows.Forms.Label();
             this.label11 = new CKM_Controls.CKM_Label();
             this.ScOrderNO = new Search.CKM_SearchControl();
@@ -148,10 +148,10 @@
             this.BTN_Detail_2 = new System.Windows.Forms.Button();
             this.BTN_Detail_1 = new System.Windows.Forms.Button();
             this.BTN_Detail_0 = new System.Windows.Forms.Button();
-            this.ckmShop_Label11 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label11 = new CKM_Controls.CKM_Label();
             this.lblHikiate = new System.Windows.Forms.Label();
             this.lblZaiko = new System.Windows.Forms.Label();
-            this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label12 = new CKM_Controls.CKM_Label();
             this.Pnl_Body2 = new System.Windows.Forms.Panel();
             this.IMT_GYONO2_2 = new System.Windows.Forms.Label();
             this.IMT_GYONO2_1 = new System.Windows.Forms.Label();
@@ -209,7 +209,7 @@
             // 
             this.PanelHeader.Controls.Add(this.ScOrderNO);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
-            this.PanelHeader.Size = new System.Drawing.Size(1368, 44);
+            this.PanelHeader.Size = new System.Drawing.Size(1368, 49);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScOrderNO, 0);
@@ -280,6 +280,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_見積;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1078, 211);
@@ -299,7 +300,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(535, 15);
+            this.ckM_Label1.Location = new System.Drawing.Point(536, 17);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(93, 19);
             this.ckM_Label1.TabIndex = 274;
@@ -322,7 +323,9 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -352,7 +355,7 @@
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(375, 2);
+            this.ckM_TextBox1.Location = new System.Drawing.Point(375, 1);
             this.ckM_TextBox1.MaxLength = 10;
             this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
@@ -370,7 +373,7 @@
             this.BtnSubF12.DefaultBtnSize = false;
             this.BtnSubF12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnSubF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSubF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F, System.Drawing.FontStyle.Bold);
+            this.BtnSubF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.BtnSubF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.BtnSubF12.Location = new System.Drawing.Point(1157, 555);
             this.BtnSubF12.Margin = new System.Windows.Forms.Padding(1);
@@ -396,7 +399,9 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
+            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -438,81 +443,86 @@
             // ckmShop_Label9
             // 
             this.ckmShop_Label9.AutoSize = true;
-            this.ckmShop_Label9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label9.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label9.DefaultlabelSize = true;
             this.ckmShop_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label9.Location = new System.Drawing.Point(12, 103);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(12, 111);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(157, 27);
             this.ckmShop_Label9.TabIndex = 720;
             this.ckmShop_Label9.Text = "納品書番号";
-            this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label1
             // 
             this.ckmShop_Label1.AutoSize = true;
-            this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label1.DefaultlabelSize = true;
             this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label1.Location = new System.Drawing.Point(82, 139);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(82, 144);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(87, 27);
             this.ckmShop_Label1.TabIndex = 721;
             this.ckmShop_Label1.Text = "JANCD";
-            this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label2
             // 
             this.ckmShop_Label2.AutoSize = true;
-            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label2.DefaultlabelSize = true;
             this.ckmShop_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label2.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label2.Location = new System.Drawing.Point(82, 175);
+            this.ckmShop_Label2.Location = new System.Drawing.Point(82, 178);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
             this.ckmShop_Label2.Size = new System.Drawing.Size(87, 27);
             this.ckmShop_Label2.TabIndex = 722;
             this.ckmShop_Label2.Text = "SKUCD";
-            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label3
             // 
             this.ckmShop_Label3.AutoSize = true;
-            this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label3.DefaultlabelSize = true;
             this.ckmShop_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label3.Location = new System.Drawing.Point(70, 211);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(99, 27);
             this.ckmShop_Label3.TabIndex = 723;
             this.ckmShop_Label3.Text = "商品名";
-            this.ckmShop_Label3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label4
             // 
             this.ckmShop_Label4.AutoSize = true;
-            this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label4.DefaultlabelSize = true;
             this.ckmShop_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label4.Location = new System.Drawing.Point(41, 266);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(128, 27);
             this.ckmShop_Label4.TabIndex = 724;
             this.ckmShop_Label4.Text = "ブランド";
-            this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // CboSoukoName
@@ -531,7 +541,7 @@
             this.CboSoukoName.ItemHeight = 26;
             this.CboSoukoName.ItemHeight_ = 26;
             this.CboSoukoName.Length = 20;
-            this.CboSoukoName.Location = new System.Drawing.Point(823, 102);
+            this.CboSoukoName.Location = new System.Drawing.Point(823, 107);
             this.CboSoukoName.MaxItem = 8;
             this.CboSoukoName.MaxLength = 10;
             this.CboSoukoName.MoveNext = true;
@@ -575,17 +585,18 @@
             // ckmShop_Label5
             // 
             this.ckmShop_Label5.AutoSize = true;
-            this.ckmShop_Label5.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label5.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label5.DefaultlabelSize = true;
             this.ckmShop_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label5.Location = new System.Drawing.Point(70, 296);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(99, 27);
             this.ckmShop_Label5.TabIndex = 728;
             this.ckmShop_Label5.Text = "カラー";
-            this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtVendorDeliveryNo
@@ -607,7 +618,7 @@
             this.txtVendorDeliveryNo.IsNumber = false;
             this.txtVendorDeliveryNo.IsShop = false;
             this.txtVendorDeliveryNo.Length = 15;
-            this.txtVendorDeliveryNo.Location = new System.Drawing.Point(175, 102);
+            this.txtVendorDeliveryNo.Location = new System.Drawing.Point(175, 110);
             this.txtVendorDeliveryNo.MaxLength = 15;
             this.txtVendorDeliveryNo.MoveNext = true;
             this.txtVendorDeliveryNo.Name = "txtVendorDeliveryNo";
@@ -635,7 +646,7 @@
             this.txtJANCD.IsNumber = false;
             this.txtJANCD.IsShop = false;
             this.txtJANCD.Length = 13;
-            this.txtJANCD.Location = new System.Drawing.Point(174, 138);
+            this.txtJANCD.Location = new System.Drawing.Point(174, 143);
             this.txtJANCD.MaxLength = 13;
             this.txtJANCD.MoveNext = true;
             this.txtJANCD.Name = "txtJANCD";
@@ -647,7 +658,7 @@
             // BtnJANCD
             // 
             this.BtnJANCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.BtnJANCD.Location = new System.Drawing.Point(350, 139);
+            this.BtnJANCD.Location = new System.Drawing.Point(350, 143);
             this.BtnJANCD.Margin = new System.Windows.Forms.Padding(0);
             this.BtnJANCD.Name = "BtnJANCD";
             this.BtnJANCD.Size = new System.Drawing.Size(33, 29);
@@ -671,42 +682,44 @@
             // ckmShop_Label6
             // 
             this.ckmShop_Label6.AutoSize = true;
-            this.ckmShop_Label6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label6.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label6.DefaultlabelSize = true;
             this.ckmShop_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label6.Location = new System.Drawing.Point(70, 326);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(99, 27);
             this.ckmShop_Label6.TabIndex = 733;
             this.ckmShop_Label6.Text = "サイズ";
-            this.ckmShop_Label6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label7
             // 
             this.ckmShop_Label7.AutoSize = true;
-            this.ckmShop_Label7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label7.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label7.DefaultlabelSize = true;
             this.ckmShop_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label7.Location = new System.Drawing.Point(866, 305);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(128, 27);
             this.ckmShop_Label7.TabIndex = 735;
             this.ckmShop_Label7.Text = "入荷総数";
-            this.ckmShop_Label7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTani
             // 
             this.lblTani.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(173)))), ((int)(((byte)(71)))));
             this.lblTani.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblTani.Location = new System.Drawing.Point(1083, 300);
+            this.lblTani.Location = new System.Drawing.Point(1082, 300);
             this.lblTani.Name = "lblTani";
-            this.lblTani.Size = new System.Drawing.Size(97, 36);
+            this.lblTani.Size = new System.Drawing.Size(97, 41);
             this.lblTani.TabIndex = 736;
             this.lblTani.Text = "XXXX";
             this.lblTani.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -715,7 +728,7 @@
             // 
             this.lblVendor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(173)))), ((int)(((byte)(71)))));
             this.lblVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblVendor.Location = new System.Drawing.Point(823, 138);
+            this.lblVendor.Location = new System.Drawing.Point(823, 143);
             this.lblVendor.Name = "lblVendor";
             this.lblVendor.Size = new System.Drawing.Size(535, 30);
             this.lblVendor.TabIndex = 738;
@@ -725,40 +738,42 @@
             // ckmShop_Label8
             // 
             this.ckmShop_Label8.AutoSize = true;
-            this.ckmShop_Label8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label8.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label8.DefaultlabelSize = true;
             this.ckmShop_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label8.Location = new System.Drawing.Point(718, 139);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(718, 144);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
             this.ckmShop_Label8.Size = new System.Drawing.Size(99, 27);
             this.ckmShop_Label8.TabIndex = 737;
             this.ckmShop_Label8.Text = "発注先";
-            this.ckmShop_Label8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label10
             // 
             this.ckmShop_Label10.AutoSize = true;
-            this.ckmShop_Label10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label10.DefaultlabelSize = true;
             this.ckmShop_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.Blue;
-            this.ckmShop_Label10.Location = new System.Drawing.Point(747, 103);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(747, 108);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
             this.ckmShop_Label10.Size = new System.Drawing.Size(70, 27);
             this.ckmShop_Label10.TabIndex = 739;
             this.ckmShop_Label10.Text = "倉庫";
-            this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblSKUCD
             // 
             this.lblSKUCD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(173)))), ((int)(((byte)(71)))));
             this.lblSKUCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblSKUCD.Location = new System.Drawing.Point(175, 171);
+            this.lblSKUCD.Location = new System.Drawing.Point(175, 176);
             this.lblSKUCD.Name = "lblSKUCD";
             this.lblSKUCD.Size = new System.Drawing.Size(515, 30);
             this.lblSKUCD.TabIndex = 740;
@@ -774,7 +789,7 @@
             this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
             this.label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Small;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(297, 6);
+            this.label11.Location = new System.Drawing.Point(297, 5);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(72, 19);
             this.label11.TabIndex = 741;
@@ -786,24 +801,25 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 10384;
+            this.ScOrderNO.ChangeDateWidth = 358410;
             this.ScOrderNO.Code = "XXXXXXXXX01";
-            this.ScOrderNO.CodeWidth = 150;
+            this.ScOrderNO.CodeWidth = 137;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrderNO.DataCheck = false;
-            this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
+            this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F);
             this.ScOrderNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScOrderNO.IsCopy = false;
             this.ScOrderNO.LabelText = "";
             this.ScOrderNO.LabelVisible = false;
-            this.ScOrderNO.Location = new System.Drawing.Point(635, -6);
-            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.ScOrderNO.Location = new System.Drawing.Point(636, 4);
+            this.ScOrderNO.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.ScOrderNO.Name = "ScOrderNO";
+            this.ScOrderNO.NameWidth = 546;
             this.ScOrderNO.SearchEnable = true;
-            this.ScOrderNO.Size = new System.Drawing.Size(269, 72);
+            this.ScOrderNO.Size = new System.Drawing.Size(192, 42);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.入荷番号;
             this.ScOrderNO.TabIndex = 0;
-            this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.Medium;
+            this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.SmallLarge;
             this.ScOrderNO.UseChangeDate = false;
             this.ScOrderNO.Value1 = null;
             this.ScOrderNO.Value2 = null;
@@ -2842,17 +2858,18 @@
             // ckmShop_Label11
             // 
             this.ckmShop_Label11.AutoSize = true;
-            this.ckmShop_Label11.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label11.DefaultlabelSize = true;
             this.ckmShop_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label11.Location = new System.Drawing.Point(-4, 366);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
             this.ckmShop_Label11.Size = new System.Drawing.Size(128, 27);
             this.ckmShop_Label11.TabIndex = 743;
             this.ckmShop_Label11.Text = "【引当】";
-            this.ckmShop_Label11.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblHikiate
@@ -2880,17 +2897,18 @@
             // ckmShop_Label12
             // 
             this.ckmShop_Label12.AutoSize = true;
-            this.ckmShop_Label12.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckmShop_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label12.DefaultlabelSize = true;
             this.ckmShop_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Large;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label12.Location = new System.Drawing.Point(-3, 581);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(128, 27);
             this.ckmShop_Label12.TabIndex = 745;
             this.ckmShop_Label12.Text = "【在庫】";
-            this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Blue;
+            this.ckmShop_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Blue;
             this.ckmShop_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Pnl_Body2
@@ -3961,7 +3979,7 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
             this.Name = "NyuukaNyuuryoku";
-            this.PanelHeaderHeight = 100;
+            this.PanelHeaderHeight = 105;
             this.Load += new System.EventHandler(this.Form_Load);
             this.Controls.SetChildIndex(this.CboStoreCD, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label11, 0);
@@ -4022,26 +4040,26 @@
         private Search.CKM_SearchControl ckM_SearchControl1;
         private CKM_Controls.CKM_Button BtnSubF12;
         private CKM_Controls.CKM_TextBox txtSu;
-        private CKM_Controls.CKMShop_Label ckmShop_Label9;
-        private CKM_Controls.CKMShop_Label ckmShop_Label1;
-        private CKM_Controls.CKMShop_Label ckmShop_Label2;
-        private CKM_Controls.CKMShop_Label ckmShop_Label3;
-        private CKM_Controls.CKMShop_Label ckmShop_Label4;
+        private CKM_Controls.CKM_Label ckmShop_Label9;
+        private CKM_Controls.CKM_Label ckmShop_Label1;
+        private CKM_Controls.CKM_Label ckmShop_Label2;
+        private CKM_Controls.CKM_Label ckmShop_Label3;
+        private CKM_Controls.CKM_Label ckmShop_Label4;
         private CKM_Controls.CKMShop_ComboBox CboSoukoName;
         private System.Windows.Forms.Label lblSKUName;
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.Label lblColorName;
-        private CKM_Controls.CKMShop_Label ckmShop_Label5;
+        private CKM_Controls.CKM_Label ckmShop_Label5;
         private CKM_Controls.CKM_TextBox txtVendorDeliveryNo;
         private CKM_Controls.CKM_TextBox txtJANCD;
         private System.Windows.Forms.Button BtnJANCD;
         private System.Windows.Forms.Label lblSizeName;
-        private CKM_Controls.CKMShop_Label ckmShop_Label6;
-        private CKM_Controls.CKMShop_Label ckmShop_Label7;
+        private CKM_Controls.CKM_Label ckmShop_Label6;
+        private CKM_Controls.CKM_Label ckmShop_Label7;
         private System.Windows.Forms.Label lblTani;
         private System.Windows.Forms.Label lblVendor;
-        private CKM_Controls.CKMShop_Label ckmShop_Label8;
-        private CKM_Controls.CKMShop_Label ckmShop_Label10;
+        private CKM_Controls.CKM_Label ckmShop_Label8;
+        private CKM_Controls.CKM_Label ckmShop_Label10;
         private System.Windows.Forms.Label lblSKUCD;
         private CKM_Controls.CKM_Label label11;
         private Search.CKM_SearchControl ScOrderNO;
@@ -4132,10 +4150,10 @@
         private GridControl.clsGridCheckBox CHK_EDICK_2;
         private GridControl.clsGridCheckBox CHK_EDICK_1;
         private GridControl.clsGridCheckBox CHK_EDICK_0;
-        private CKM_Controls.CKMShop_Label ckmShop_Label11;
+        private CKM_Controls.CKM_Label ckmShop_Label11;
         private System.Windows.Forms.Label lblHikiate;
         private System.Windows.Forms.Label lblZaiko;
-        private CKM_Controls.CKMShop_Label ckmShop_Label12;
+        private CKM_Controls.CKM_Label ckmShop_Label12;
         private System.Windows.Forms.Panel Pnl_Body2;
         private System.Windows.Forms.Label IMT_GYONO2_2;
         private System.Windows.Forms.Label IMT_GYONO2_1;

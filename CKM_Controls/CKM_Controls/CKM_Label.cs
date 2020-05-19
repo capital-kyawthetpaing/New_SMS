@@ -24,7 +24,8 @@ namespace CKM_Controls
             Default,
             White,
             Green,
-            DarkGreen
+            DarkGreen,
+            Blue
         }
         [Browsable(true)]
         [Category("CKM Properties")]
@@ -50,7 +51,9 @@ namespace CKM_Controls
                     case CKM_Color.DarkGreen:
                         this.ForeColor = Color.FromArgb(84, 130, 53);
                         break;
-
+                    case CKM_Color.Blue:
+                        this.ForeColor = Color.Blue;
+                        break;
                 }
             }
         }
