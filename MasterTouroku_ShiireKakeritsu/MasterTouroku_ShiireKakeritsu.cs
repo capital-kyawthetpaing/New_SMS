@@ -831,28 +831,28 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        protected DataTable ChangeDataColumnName(DataTable dtAdd)
-        {
-            dtAdd.Columns["VendorCD"].ColumnName = "仕入先CD";
-            //dtAdd.Columns["StoreCD"].ColumnName = "店舗CD";
-            //dtAdd.Columns["BrandCD"].ColumnName = "ブランドCD";
-            //dtAdd.Columns["SportsCD"].ColumnName = "競　技CD";
-            //dtAdd.Columns["SegmentCD"].ColumnName = "商品分類CD";
-            //dtAdd.Columns["LastYearTerm"].ColumnName = "年度";
-            //dtAdd.Columns["LastSeason"].ColumnName = "シーズン";
-            //dtAdd.Columns["ChangeDate"].ColumnName = "改定日";
-            //dtAdd.Columns["Rate"].ColumnName = "掛率";
-            return dtAdd;
-        }
+        //protected DataTable ChangeDataColumnName(DataTable dtAdd)
+        //{
+        //    dtAdd.Columns["VendorCD"].ColumnName = "仕入先CD";
+        //    dtAdd.Columns["StoreCD"].ColumnName = "店舗CD";
+        //    dtAdd.Columns["BrandCD"].ColumnName = "ブランドCD";
+        //    dtAdd.Columns["SportsCD"].ColumnName = "競　技CD";
+        //    dtAdd.Columns["SegmentCD"].ColumnName = "商品分類CD";
+        //    dtAdd.Columns["LastYearTerm"].ColumnName = "年度";
+        //    dtAdd.Columns["LastSeason"].ColumnName = "シーズン";
+        //    dtAdd.Columns["ChangeDate"].ColumnName = "改定日";
+        //    dtAdd.Columns["Rate"].ColumnName = "掛率";
+        //    return dtAdd;
+        //}
        private void ckM_Button1_Click(object sender, EventArgs e)
         {
             moe = new M_OrderRate_Entity();
             moe = GetSearchInfo();
-            DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dt.Rows.Count > 0)
+            DataTable dtmain = mskbl.M_ShiireKakeritsu_Select(moe);
+            if (dtMain.Rows.Count > 0)
             {
                 DataTable dtExport = dt;
-                dtExport = ChangeDataColumnName(dtExport);
+                //dtExport = ChangeDataColumnName(dtExport);
                 string folderPath = "C:\\MasterTouroku_ShiireKakeritsu\\";
                 if (!Directory.Exists(folderPath))
                 {
@@ -870,7 +870,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
                         Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
-                        Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+                        //'Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
                         //worksheet = workbook.ActiveSheet;
                         //worksheet.Name = "worksheet";
                         //worksheet.SaveAs(savedialog.FileName);
