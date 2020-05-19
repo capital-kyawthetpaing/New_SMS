@@ -43,6 +43,7 @@ namespace ShiireShoukaiShiiresaki
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
           base.InProgramNM = ProNm;
+            Btn_F10.Enabled = false;
             txtPurchaseDateFrom.Focus();
                     
         }
@@ -145,6 +146,7 @@ namespace ShiireShoukaiShiiresaki
                     dgvPurchaseSearch.DataSource = dtPurchase;
                     dgvPurchaseSearch.Enabled = true;
                     dgvPurchaseSearch.Focus();
+                    Btn_F10.Enabled = true;
                 }
                 else
                 {

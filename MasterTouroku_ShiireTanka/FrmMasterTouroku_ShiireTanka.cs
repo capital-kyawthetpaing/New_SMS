@@ -81,7 +81,7 @@ namespace MasterTouroku_ShiireTanka
                         shiiresaki.SetFocus(1);
                     }
                 }
-            //}
+            }
         }
     }
 }

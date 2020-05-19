@@ -261,9 +261,12 @@
             // chk12
             // 
             this.chk12.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk12.Location = new System.Drawing.Point(29, 6);
+            this.chk12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk12.ForeColor = System.Drawing.Color.Black;
+            this.chk12.IsattachedCaption = false;
+            this.chk12.Location = new System.Drawing.Point(29, 4);
             this.chk12.Name = "chk12";
-            this.chk12.Size = new System.Drawing.Size(30, 30);
+            this.chk12.Size = new System.Drawing.Size(35, 35);
             this.chk12.TabIndex = 0;
             this.chk12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk12.UseVisualStyleBackColor = true;
@@ -281,9 +284,12 @@
             // chk11
             // 
             this.chk11.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk11.Location = new System.Drawing.Point(29, 6);
+            this.chk11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk11.ForeColor = System.Drawing.Color.Black;
+            this.chk11.IsattachedCaption = false;
+            this.chk11.Location = new System.Drawing.Point(29, 4);
             this.chk11.Name = "chk11";
-            this.chk11.Size = new System.Drawing.Size(30, 30);
+            this.chk11.Size = new System.Drawing.Size(35, 35);
             this.chk11.TabIndex = 0;
             this.chk11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk11.UseVisualStyleBackColor = true;
@@ -301,9 +307,12 @@
             // chk9
             // 
             this.chk9.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk9.Location = new System.Drawing.Point(29, 6);
+            this.chk9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk9.ForeColor = System.Drawing.Color.Black;
+            this.chk9.IsattachedCaption = false;
+            this.chk9.Location = new System.Drawing.Point(29, 4);
             this.chk9.Name = "chk9";
-            this.chk9.Size = new System.Drawing.Size(30, 30);
+            this.chk9.Size = new System.Drawing.Size(35, 35);
             this.chk9.TabIndex = 0;
             this.chk9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk9.UseVisualStyleBackColor = true;
@@ -321,9 +330,12 @@
             // chk10
             // 
             this.chk10.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk10.Location = new System.Drawing.Point(29, 6);
+            this.chk10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk10.ForeColor = System.Drawing.Color.Black;
+            this.chk10.IsattachedCaption = false;
+            this.chk10.Location = new System.Drawing.Point(29, 4);
             this.chk10.Name = "chk10";
-            this.chk10.Size = new System.Drawing.Size(30, 30);
+            this.chk10.Size = new System.Drawing.Size(35, 35);
             this.chk10.TabIndex = 0;
             this.chk10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk10.UseVisualStyleBackColor = true;
@@ -341,9 +353,12 @@
             // chk7
             // 
             this.chk7.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk7.Location = new System.Drawing.Point(29, 6);
+            this.chk7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk7.ForeColor = System.Drawing.Color.Black;
+            this.chk7.IsattachedCaption = false;
+            this.chk7.Location = new System.Drawing.Point(29, 4);
             this.chk7.Name = "chk7";
-            this.chk7.Size = new System.Drawing.Size(30, 30);
+            this.chk7.Size = new System.Drawing.Size(35, 35);
             this.chk7.TabIndex = 0;
             this.chk7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk7.UseVisualStyleBackColor = true;
@@ -361,9 +376,12 @@
             // chk8
             // 
             this.chk8.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk8.Location = new System.Drawing.Point(29, 6);
+            this.chk8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk8.ForeColor = System.Drawing.Color.Black;
+            this.chk8.IsattachedCaption = false;
+            this.chk8.Location = new System.Drawing.Point(29, 4);
             this.chk8.Name = "chk8";
-            this.chk8.Size = new System.Drawing.Size(30, 30);
+            this.chk8.Size = new System.Drawing.Size(35, 35);
             this.chk8.TabIndex = 0;
             this.chk8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk8.UseVisualStyleBackColor = true;
@@ -381,9 +399,12 @@
             // chk6
             // 
             this.chk6.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk6.Location = new System.Drawing.Point(29, 8);
+            this.chk6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk6.ForeColor = System.Drawing.Color.Black;
+            this.chk6.IsattachedCaption = false;
+            this.chk6.Location = new System.Drawing.Point(29, 6);
             this.chk6.Name = "chk6";
-            this.chk6.Size = new System.Drawing.Size(30, 30);
+            this.chk6.Size = new System.Drawing.Size(35, 35);
             this.chk6.TabIndex = 0;
             this.chk6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk6.UseVisualStyleBackColor = true;
@@ -401,9 +422,12 @@
             // chk5
             // 
             this.chk5.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk5.Location = new System.Drawing.Point(29, 6);
+            this.chk5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk5.ForeColor = System.Drawing.Color.Black;
+            this.chk5.IsattachedCaption = false;
+            this.chk5.Location = new System.Drawing.Point(29, 4);
             this.chk5.Name = "chk5";
-            this.chk5.Size = new System.Drawing.Size(30, 30);
+            this.chk5.Size = new System.Drawing.Size(35, 35);
             this.chk5.TabIndex = 0;
             this.chk5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk5.UseVisualStyleBackColor = true;
@@ -421,9 +445,12 @@
             // chk4
             // 
             this.chk4.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk4.Location = new System.Drawing.Point(29, 6);
+            this.chk4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk4.ForeColor = System.Drawing.Color.Black;
+            this.chk4.IsattachedCaption = false;
+            this.chk4.Location = new System.Drawing.Point(29, 4);
             this.chk4.Name = "chk4";
-            this.chk4.Size = new System.Drawing.Size(30, 30);
+            this.chk4.Size = new System.Drawing.Size(35, 35);
             this.chk4.TabIndex = 0;
             this.chk4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk4.UseVisualStyleBackColor = true;
@@ -441,9 +468,12 @@
             // chk3
             // 
             this.chk3.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk3.Location = new System.Drawing.Point(29, 6);
+            this.chk3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk3.ForeColor = System.Drawing.Color.Black;
+            this.chk3.IsattachedCaption = false;
+            this.chk3.Location = new System.Drawing.Point(29, 4);
             this.chk3.Name = "chk3";
-            this.chk3.Size = new System.Drawing.Size(30, 30);
+            this.chk3.Size = new System.Drawing.Size(35, 35);
             this.chk3.TabIndex = 0;
             this.chk3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk3.UseVisualStyleBackColor = true;
@@ -461,9 +491,12 @@
             // chk2
             // 
             this.chk2.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk2.Location = new System.Drawing.Point(30, 6);
+            this.chk2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk2.ForeColor = System.Drawing.Color.Black;
+            this.chk2.IsattachedCaption = false;
+            this.chk2.Location = new System.Drawing.Point(30, 4);
             this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(30, 30);
+            this.chk2.Size = new System.Drawing.Size(35, 35);
             this.chk2.TabIndex = 0;
             this.chk2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk2.UseVisualStyleBackColor = true;
@@ -718,9 +751,12 @@
             // chk1
             // 
             this.chk1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk1.Location = new System.Drawing.Point(29, 7);
+            this.chk1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk1.ForeColor = System.Drawing.Color.Black;
+            this.chk1.IsattachedCaption = false;
+            this.chk1.Location = new System.Drawing.Point(29, 3);
             this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(30, 30);
+            this.chk1.Size = new System.Drawing.Size(35, 35);
             this.chk1.TabIndex = 0;
             this.chk1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk1.UseVisualStyleBackColor = true;
@@ -1658,7 +1694,7 @@
             this.txtPointRate.isMaxLengthErr = false;
             this.txtPointRate.IsNumber = true;
             this.txtPointRate.IsShop = false;
-            this.txtPointRate.Length = 5;
+            this.txtPointRate.Length = 20;
             this.txtPointRate.Location = new System.Drawing.Point(820, 62);
             this.txtPointRate.MaxLength = 20;
             this.txtPointRate.MoveNext = true;
@@ -1685,7 +1721,7 @@
             this.txtServiceDayRate.isMaxLengthErr = false;
             this.txtServiceDayRate.IsNumber = true;
             this.txtServiceDayRate.IsShop = false;
-            this.txtServiceDayRate.Length = 4;
+            this.txtServiceDayRate.Length = 20;
             this.txtServiceDayRate.Location = new System.Drawing.Point(820, 104);
             this.txtServiceDayRate.MaxLength = 20;
             this.txtServiceDayRate.MoveNext = true;

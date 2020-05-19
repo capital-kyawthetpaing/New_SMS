@@ -105,9 +105,12 @@
             // 
             // chkDelete
             // 
-            this.chkDelete.Location = new System.Drawing.Point(84, 47);
+            this.chkDelete.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkDelete.ForeColor = System.Drawing.Color.Black;
+            this.chkDelete.IsattachedCaption = false;
+            this.chkDelete.Location = new System.Drawing.Point(84, 45);
             this.chkDelete.Name = "chkDelete";
-            this.chkDelete.Size = new System.Drawing.Size(30, 30);
+            this.chkDelete.Size = new System.Drawing.Size(35, 35);
             this.chkDelete.TabIndex = 0;
             this.chkDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDelete.UseVisualStyleBackColor = true;
@@ -120,7 +123,7 @@
             this.ckmShop_Label21.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label21.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label21.Location = new System.Drawing.Point(-6, 43);
+            this.ckmShop_Label21.Location = new System.Drawing.Point(-6, 44);
             this.ckmShop_Label21.Name = "ckmShop_Label21";
             this.ckmShop_Label21.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label21.TabIndex = 48;
@@ -215,7 +218,7 @@
             this.PanelDelete.Controls.Add(this.ckmShop_Label21);
             this.PanelDelete.Location = new System.Drawing.Point(845, 82);
             this.PanelDelete.Name = "PanelDelete";
-            this.PanelDelete.Size = new System.Drawing.Size(120, 100);
+            this.PanelDelete.Size = new System.Drawing.Size(130, 100);
             this.PanelDelete.TabIndex = 67;
             // 
             // panel5
@@ -306,7 +309,7 @@
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label10.Location = new System.Drawing.Point(215, 373);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
-            this.ckmShop_Label10.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label10.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label10.TabIndex = 108;
             this.ckmShop_Label10.Text = "確　認";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -320,7 +323,7 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(1124, 371);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(1132, 371);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(423, 35);
             this.ckmShop_Label9.TabIndex = 15;
@@ -453,9 +456,12 @@
             // 
             // chkSend
             // 
+            this.chkSend.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkSend.ForeColor = System.Drawing.Color.Black;
+            this.chkSend.IsattachedCaption = true;
             this.chkSend.Location = new System.Drawing.Point(1095, 372);
             this.chkSend.Name = "chkSend";
-            this.chkSend.Size = new System.Drawing.Size(30, 30);
+            this.chkSend.Size = new System.Drawing.Size(35, 35);
             this.chkSend.TabIndex = 15;
             this.chkSend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkSend.UseVisualStyleBackColor = true;
@@ -981,7 +987,7 @@
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label7.Location = new System.Drawing.Point(214, 131);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
-            this.ckmShop_Label7.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label7.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label7.TabIndex = 82;
             this.ckmShop_Label7.Text = "性　別";
             this.ckmShop_Label7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
