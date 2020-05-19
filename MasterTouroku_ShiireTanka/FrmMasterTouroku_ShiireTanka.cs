@@ -68,11 +68,20 @@ namespace MasterTouroku_ShiireTanka
         {
             if(e.KeyCode == Keys.Enter)
             {
-                if(String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                if(!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
                 {
-                    
+                    if(shiiresaki.SelectData())
+                    {
+                        shiiresaki.Value1 = shiiresaki.TxtCode.Text;
+                        shiiresaki.Value2 = shiiresaki.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        shiiresaki.SetFocus(1);
+                    }
                 }
-            }
+            //}
         }
     }
 }
