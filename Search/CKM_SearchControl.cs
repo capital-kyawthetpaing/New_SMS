@@ -1079,6 +1079,7 @@ namespace Search
                             txtCode.Text = frmJuchuu.JuchuuNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                             CheckBasedFormPanel(); //Added by PTK
+
                         }
                     }
                     break;
