@@ -83,6 +83,7 @@ namespace SiharaiYoteiHyou
         public void BindCombo()
         {
             comboStore.Bind(string.Empty, "2");
+            comboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// エラーチェック処理

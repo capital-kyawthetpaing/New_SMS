@@ -142,6 +142,26 @@ namespace Search
 
         [Browsable(true)]
         [Category("CKM Properties")]
+        [Description("Code Width1")]
+        [DisplayName("Code Width1")]
+
+        public int CodeWidth1
+        {
+            get => txtCode.Width;
+            set
+            {
+                txtCode.Width = value;
+                CalculateWidth();
+            }
+            //get => CodeWidth_S;
+            //set {
+            //    CodeWidth_S = value;
+            //    CalculateWidth();
+            //}
+        }
+
+        [Browsable(true)]
+        [Category("CKM Properties")]
         [Description("Name Width")]
         [DisplayName("Name Width")]
         public int NameWidth
