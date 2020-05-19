@@ -44,19 +44,23 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtEndDate = new CKM_Controls.CKM_TextBox();
             this.txtStartDate = new CKM_Controls.CKM_TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cboSouko);
-            this.panel1.Controls.Add(this.ScSKUCD);
-            this.panel1.Controls.Add(this.ckM_Label7);
-            this.panel1.Controls.Add(this.ckM_Label6);
             this.panel1.Controls.Add(this.ckM_Label5);
             this.panel1.Controls.Add(this.chkLocationNashi);
             this.panel1.Controls.Add(this.chkLocationAri);
@@ -102,9 +106,10 @@
             this.ScSKUCD.IsCopy = false;
             this.ScSKUCD.LabelText = "";
             this.ScSKUCD.LabelVisible = true;
-            this.ScSKUCD.Location = new System.Drawing.Point(164, 200);
+            this.ScSKUCD.Location = new System.Drawing.Point(68, 19);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 350;
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(574, 32);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
@@ -125,7 +130,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(117, 209);
+            this.ckM_Label7.Location = new System.Drawing.Point(21, 28);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label7.TabIndex = 13;
@@ -142,7 +147,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(104, 190);
+            this.ckM_Label6.Location = new System.Drawing.Point(8, 9);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label6.TabIndex = 12;
@@ -311,6 +316,7 @@
             this.txtEndDate.TabIndex = 1;
             this.txtEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEndDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEndDate_KeyDown);
             // 
             // txtStartDate
             // 
@@ -339,6 +345,16 @@
             this.txtStartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtStartDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ScSKUCD);
+            this.panel2.Controls.Add(this.ckM_Label6);
+            this.panel2.Controls.Add(this.ckM_Label7);
+            this.panel2.Location = new System.Drawing.Point(92, 163);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 60);
+            this.panel2.TabIndex = 14;
+            // 
             // FrmTanaireList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -363,6 +379,8 @@
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +404,7 @@
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_ComboBox cboSouko;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -489,6 +490,7 @@
             this.ScItem.Location = new System.Drawing.Point(934, 99);
             this.ScItem.Margin = new System.Windows.Forms.Padding(0);
             this.ScItem.Name = "ScItem";
+            this.ScItem.NameWidth = 280;
             this.ScItem.SearchEnable = true;
             this.ScItem.Size = new System.Drawing.Size(633, 27);
             this.ScItem.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
@@ -515,6 +517,7 @@
             this.ScSKUCD.Location = new System.Drawing.Point(934, 134);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 280;
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(633, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
@@ -541,6 +544,7 @@
             this.ScJanCD.Location = new System.Drawing.Point(933, 171);
             this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScJanCD.Name = "ScJanCD";
+            this.ScJanCD.NameWidth = 280;
             this.ScJanCD.SearchEnable = true;
             this.ScJanCD.Size = new System.Drawing.Size(633, 27);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
@@ -594,6 +598,7 @@
             this.ScSupplier.Location = new System.Drawing.Point(1323, 12);
             this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.ScSupplier.Name = "ScSupplier";
+            this.ScSupplier.NameWidth = 280;
             this.ScSupplier.SearchEnable = true;
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -630,7 +635,7 @@
             this.dgvNyuukaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -657,6 +662,14 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
