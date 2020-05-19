@@ -118,6 +118,8 @@ namespace TanabanNyuuryoku
                 if (dtstorage.Rows.Count == 0)
                 {
                     tnbnBL.ShowMessage("E128");
+                    dgvTanaban.DataSource = string.Empty;
+                    txtArrivalDateFrom.Focus();
                 }
                 else
                 {
@@ -156,7 +158,7 @@ namespace TanabanNyuuryoku
                 if (!string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
                 {
                     int result = txtArrivalDateFrom.Text.CompareTo(txtArrivalDateTo.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         tnbnBL.ShowMessage("E104");
                         txtArrivalDateTo.Focus();
@@ -184,11 +186,15 @@ namespace TanabanNyuuryoku
 
                 }
 
-                if (chkNotRegister.Checked == false || chkRegister.Checked == false)
+                if (chkNotRegister.Checked == false)
                 {
-                    tnbnBL.ShowMessage("E111");
-                    chkNotRegister.Focus();
-                    return false;            
+                    if (chkRegister.Checked == false)
+                    {
+                        tnbnBL.ShowMessage("E111");
+                        chkNotRegister.Focus();
+                        return false;
+                    }
+                               
                 }
 
                 if(!string.IsNullOrWhiteSpace (ScStorage.TxtCode.Text))
@@ -310,7 +316,17 @@ namespace TanabanNyuuryoku
      
         private void Clear()
         {
-            Clear(panelDetail);         
+            //Clear(panelDetail);
+            txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
+
+            BindCombo();
+            chkNotRegister.Checked = true;
+            chkRegister.Checked = false;
+            ScStorage.Value1 = cboWarehouse.SelectedValue.ToString();
+
+            dgvTanaban.DataSource = string.Empty;
+            txtArrivalDateFrom.Focus();
         }
 
         private void txtArrivalDateTo_KeyDown(object sender, KeyEventArgs e)
