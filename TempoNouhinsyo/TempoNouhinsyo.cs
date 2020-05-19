@@ -377,6 +377,12 @@ namespace TempoNouhinsyo
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             bool ret;
             switch (index)
             {

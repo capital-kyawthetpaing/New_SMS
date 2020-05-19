@@ -334,6 +334,12 @@ namespace Search
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
+            if (detailControls[index].GetType().Equals(typeof(CKM_Controls.CKM_TextBox)))
+            {
+                if (((CKM_Controls.CKM_TextBox)detailControls[index]).isMaxLengthErr)
+                    return false;
+            }
+
             bool ret;
 
             switch (index)
@@ -613,6 +619,24 @@ namespace Search
 
             switch (Index)
             {
+                case 8:
+                    EsearchKbn kbn = EsearchKbn.Null;
+
+                     if (Array.IndexOf(detailControls, previousCtrl) == (int)EIndex.SKUCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+                    else if (Array.IndexOf(detailControls, previousCtrl) == (int)EIndex.JanCD)
+                    {
+                        //商品検索
+                        kbn = EsearchKbn.Product;
+                    }
+
+                    if (kbn != EsearchKbn.Null)
+                        SearchData(kbn, previousCtrl);
+
+                    break;
                 case 9://F10:出力
                        //Ｑ２０５				
                     if (bbl.ShowMessage("Q205") != DialogResult.Yes)
@@ -638,11 +662,15 @@ namespace Search
                     string ymd = bbl.GetDate();
                     using (Search_Product frmProduct = new Search_Product(ymd))
                     {
+                        int index = Array.IndexOf(detailControls, setCtl);
+
+                        if (index.Equals((int)EIndex.JanCD))
+                            frmProduct.Mode = "5";
+
                         frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            int index = Array.IndexOf(detailControls, setCtl);
 
                             switch (index)
                             {

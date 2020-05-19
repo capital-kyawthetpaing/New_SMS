@@ -55,6 +55,7 @@ namespace Search
         {
             Normal,
             Small,
+            SmallLarge,
             Medium,
             Large,
             XLarge
@@ -78,6 +79,9 @@ namespace Search
                         break;
                     case FontSize.Small:
                         Adjust_Size(10F, FontStyle.Regular, CKM_TextBox.FontSize.Small);
+                        break;
+                    case FontSize.SmallLarge:
+                        Adjust_Size(14F, FontStyle.Regular, CKM_TextBox.FontSize.SmallLarge);
                         break;
                     case FontSize.Medium:
                         Adjust_Size(16F, FontStyle.Regular, CKM_TextBox.FontSize.Medium);
@@ -135,6 +139,27 @@ namespace Search
             //    CalculateWidth();
             //}
         }
+
+        private int NameWidth_S = 100;
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Name Width")]
+        [DisplayName("Name Width")]
+        public int NameWidth
+        {
+            get => lblName.Width;
+            set
+            {
+                lblName.Width = value;
+                CalculateWidth();
+            }
+            //get => CodeWidth_S;
+            //set {
+            //    CodeWidth_S = value;
+            //    CalculateWidth();
+            //}
+        }
+
 
 
         [Browsable(true)]
@@ -517,7 +542,7 @@ namespace Search
                 case SearchType.競技:
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
-                    lblName.Width = 280;
+                    lblName.Width = 180;
                     break;
                 case SearchType.分類:
                     TxtCode.MaxLength = 6;
@@ -642,7 +667,7 @@ namespace Search
                 case SearchType.商品分類://SES
                     TxtCode.MaxLength = 6;
                     TxtCode.Width = 100;
-                    lblName.Width = 300;
+                    lblName.Width = 180;
                     break;
             }
             //}
