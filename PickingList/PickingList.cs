@@ -497,6 +497,8 @@ namespace PickingList
             chkUnissued1.Checked = true;
             chkReissued1.Checked = false;
 
+            cboSouko.SelectedValue = SoukoCD;
+
             txtDateFrom1.Text = string.Empty;
             txtDateTo1.Text = todayDate;
             txtShipmentDate.Text = string.Empty;
@@ -521,7 +523,7 @@ namespace PickingList
             if (chkUnissued1.Checked == true)
             {
                 int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     bbl.ShowMessage("E104");
                     txtDateFrom1.Focus();
@@ -554,7 +556,7 @@ namespace PickingList
             if (chkReissued1.Checked == true)
             {
                 int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     bbl.ShowMessage("E104");
                     txtDateFrom2.Focus();
@@ -597,6 +599,32 @@ namespace PickingList
         private void ScPickingNo2_Enter(object sender, EventArgs e)
         {
             ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
+        }
+
+        private void txtDateTo1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (chkUnissued1.Checked == true)
+            {
+                int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
+                if (result > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    txtDateFrom1.Focus();
+                }
+            }
+        }
+
+        private void txtDateTo2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (chkReissued1.Checked == true)
+            {
+                int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
+                if (result > 0)
+                {
+                    bbl.ShowMessage("E104");
+                    txtDateFrom2.Focus();
+                }
+            }
         }
 
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)
