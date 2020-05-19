@@ -217,9 +217,12 @@
             // 
             // chkColorSize
             // 
-            this.chkColorSize.Location = new System.Drawing.Point(357, 95);
+            this.chkColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkColorSize.ForeColor = System.Drawing.Color.Black;
+            this.chkColorSize.IsattachedCaption = false;
+            this.chkColorSize.Location = new System.Drawing.Point(357, 94);
             this.chkColorSize.Name = "chkColorSize";
-            this.chkColorSize.Size = new System.Drawing.Size(30, 30);
+            this.chkColorSize.Size = new System.Drawing.Size(35, 35);
             this.chkColorSize.TabIndex = 1;
             this.chkColorSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkColorSize.UseVisualStyleBackColor = true;

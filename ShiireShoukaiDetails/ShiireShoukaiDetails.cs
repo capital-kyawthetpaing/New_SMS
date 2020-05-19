@@ -35,6 +35,7 @@ namespace ShiireShoukaiDetails
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
             Btn_F10.Text = "出力(F10)";
+            Btn_F10.Enabled = false;
             BindCombo();
             RequiredField();           
            // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
@@ -257,6 +258,7 @@ namespace ShiireShoukaiDetails
                 if(dtResult.Rows.Count>0)
                 {
                     dgv_PurchaseDetails.DataSource = dtResult;
+                    Btn_F10.Enabled = true;
                     //dgv_SizeColor.DataSource = dtResult;
                     //dgv_Store.DataSource = dtResult;
                 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.chkAdvanceFlg = new CKM_Controls.CKMShop_CheckBox();
             this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.lblCustomerName = new CKM_Controls.CKMShop_Label();
@@ -41,6 +40,7 @@
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.chkAdvanceFlg = new CKM_Controls.CKMShop_CheckBox();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,14 +63,6 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1443, 729);
             this.panelDetail.TabIndex = 0;
-            // 
-            // chkAdvanceFlg
-            // 
-            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 336);
-            this.chkAdvanceFlg.Name = "chkAdvanceFlg";
-            this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 30);
-            this.chkAdvanceFlg.TabIndex = 4;
-            this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // ckmShop_Label3
             // 
@@ -286,6 +278,18 @@
             this.ckmShop_Label1.Text = "入金額";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkAdvanceFlg
+            // 
+            this.chkAdvanceFlg.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAdvanceFlg.ForeColor = System.Drawing.Color.Black;
+            this.chkAdvanceFlg.IsattachedCaption = false;
+            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 335);
+            this.chkAdvanceFlg.Name = "chkAdvanceFlg";
+            this.chkAdvanceFlg.Size = new System.Drawing.Size(35, 35);
+            this.chkAdvanceFlg.TabIndex = 4;
+            this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // TempoRegiNyuukinNyuuryoku
             // 
