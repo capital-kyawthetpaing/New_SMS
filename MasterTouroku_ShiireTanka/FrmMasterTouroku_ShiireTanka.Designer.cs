@@ -34,6 +34,7 @@
             this.RB_history = new CKM_Controls.CKM_RadioButton();
             this.RB_current = new CKM_Controls.CKM_RadioButton();
             this.LB_display = new CKM_Controls.CKM_Label();
+            this.shiiresaki = new Search.CKM_SearchControl();
             this.LB_shiiresaki = new CKM_Controls.CKM_Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CB_store = new CKM_Controls.CKM_ComboBox();
@@ -53,6 +54,7 @@
             this.ckM_Button4 = new CKM_Controls.CKM_Button();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
+            this.ckM_SearchControl3 = new Search.CKM_SearchControl();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
@@ -60,9 +62,11 @@
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_ComboBox2 = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label13 = new CKM_Controls.CKM_Label();
+            this.ckM_SearchControl4 = new Search.CKM_SearchControl();
             this.ckM_Label14 = new CKM_Controls.CKM_Label();
+            this.ckM_SearchControl5 = new Search.CKM_SearchControl();
             this.ckM_Label15 = new CKM_Controls.CKM_Label();
-            this.ckM_Label16 = new CKM_Controls.CKM_Label();
+            this.ckM_SearchControl6 = new Search.CKM_SearchControl();
             this.ckM_Label17 = new CKM_Controls.CKM_Label();
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
             this.ckM_Button3 = new CKM_Controls.CKM_Button();
@@ -75,10 +79,12 @@
             this.LB_price = new CKM_Controls.CKM_Label();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.ckM_SearchControl2 = new Search.CKM_SearchControl();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_Button1 = new CKM_Controls.CKM_Button();
+            this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.TB_date = new CKM_Controls.CKM_TextBox();
             this.lB_date = new CKM_Controls.CKM_Label();
@@ -86,8 +92,11 @@
             this.LB_season = new CKM_Controls.CKM_Label();
             this.CB_year = new CKM_Controls.CKM_ComboBox();
             this.LB_year = new CKM_Controls.CKM_Label();
+            this.segment = new Search.CKM_SearchControl();
             this.lb_segment = new CKM_Controls.CKM_Label();
+            this.sport = new Search.CKM_SearchControl();
             this.lb_sport = new CKM_Controls.CKM_Label();
+            this.brand1 = new Search.CKM_SearchControl();
             this.LB_brand1 = new CKM_Controls.CKM_Label();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.LB_condition = new CKM_Controls.CKM_Label();
@@ -95,17 +104,6 @@
             this.RB_item = new CKM_Controls.CKM_RadioButton();
             this.LB_shohin = new CKM_Controls.CKM_Label();
             this.Btn_display = new CKM_Controls.CKM_Button();
-            this.ckM_SearchControl3 = new Search.CKM_SearchControl();
-            this.ckM_SearchControl4 = new Search.CKM_SearchControl();
-            this.ckM_SearchControl5 = new Search.CKM_SearchControl();
-            this.ckM_SearchControl6 = new Search.CKM_SearchControl();
-            this.ckM_SearchControl2 = new Search.CKM_SearchControl();
-            this.ckM_SearchControl1 = new Search.CKM_SearchControl();
-            this.segment = new Search.CKM_SearchControl();
-            this.sport = new Search.CKM_SearchControl();
-            this.brand1 = new Search.CKM_SearchControl();
-            this.shiiresaki = new Search.CKM_SearchControl();
-            this.ckM_SearchControl7 = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -223,6 +221,32 @@
             this.LB_display.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_display.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // shiiresaki
+            // 
+            this.shiiresaki.AutoSize = true;
+            this.shiiresaki.ChangeDate = "";
+            this.shiiresaki.ChangeDateWidth = 100;
+            this.shiiresaki.Code = "";
+            this.shiiresaki.CodeWidth = 130;
+            this.shiiresaki.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.shiiresaki.DataCheck = false;
+            this.shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiiresaki.IsCopy = false;
+            this.shiiresaki.LabelText = "";
+            this.shiiresaki.LabelVisible = true;
+            this.shiiresaki.Location = new System.Drawing.Point(117, 8);
+            this.shiiresaki.Margin = new System.Windows.Forms.Padding(0);
+            this.shiiresaki.Name = "shiiresaki";
+            this.shiiresaki.SearchEnable = true;
+            this.shiiresaki.Size = new System.Drawing.Size(444, 28);
+            this.shiiresaki.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.shiiresaki.TabIndex = 1;
+            this.shiiresaki.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.shiiresaki.UseChangeDate = false;
+            this.shiiresaki.Value1 = null;
+            this.shiiresaki.Value2 = null;
+            this.shiiresaki.Value3 = null;
+            // 
             // LB_shiiresaki
             // 
             this.LB_shiiresaki.AutoSize = true;
@@ -310,7 +334,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.ckM_SearchControl7);
             this.panel3.Controls.Add(this.ckM_Button7);
             this.panel3.Controls.Add(this.ckM_Button8);
             this.panel3.Controls.Add(this.ckM_Button9);
@@ -336,7 +359,6 @@
             this.panel3.Controls.Add(this.ckM_SearchControl5);
             this.panel3.Controls.Add(this.ckM_Label15);
             this.panel3.Controls.Add(this.ckM_SearchControl6);
-            this.panel3.Controls.Add(this.ckM_Label16);
             this.panel3.Controls.Add(this.ckM_Label17);
             this.panel3.Controls.Add(this.ckM_Label18);
             this.panel3.Controls.Add(this.ckM_Button3);
@@ -607,6 +629,32 @@
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckM_SearchControl3
+            // 
+            this.ckM_SearchControl3.AutoSize = true;
+            this.ckM_SearchControl3.ChangeDate = "";
+            this.ckM_SearchControl3.ChangeDateWidth = 100;
+            this.ckM_SearchControl3.Code = "";
+            this.ckM_SearchControl3.CodeWidth = 150;
+            this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl3.DataCheck = false;
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl3.IsCopy = false;
+            this.ckM_SearchControl3.LabelText = "";
+            this.ckM_SearchControl3.LabelVisible = false;
+            this.ckM_SearchControl3.Location = new System.Drawing.Point(86, 264);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.SearchEnable = true;
+            this.ckM_SearchControl3.Size = new System.Drawing.Size(183, 28);
+            this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl3.TabIndex = 53;
+            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl3.UseChangeDate = false;
+            this.ckM_SearchControl3.Value1 = null;
+            this.ckM_SearchControl3.Value2 = null;
+            this.ckM_SearchControl3.Value3 = null;
+            // 
             // ckM_Label10
             // 
             this.ckM_Label10.AutoSize = true;
@@ -734,6 +782,32 @@
             this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckM_SearchControl4
+            // 
+            this.ckM_SearchControl4.AutoSize = true;
+            this.ckM_SearchControl4.ChangeDate = "";
+            this.ckM_SearchControl4.ChangeDateWidth = 100;
+            this.ckM_SearchControl4.Code = "";
+            this.ckM_SearchControl4.CodeWidth = 100;
+            this.ckM_SearchControl4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl4.DataCheck = false;
+            this.ckM_SearchControl4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl4.IsCopy = false;
+            this.ckM_SearchControl4.LabelText = "";
+            this.ckM_SearchControl4.LabelVisible = true;
+            this.ckM_SearchControl4.Location = new System.Drawing.Point(1018, 237);
+            this.ckM_SearchControl4.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl4.Name = "ckM_SearchControl4";
+            this.ckM_SearchControl4.SearchEnable = true;
+            this.ckM_SearchControl4.Size = new System.Drawing.Size(334, 28);
+            this.ckM_SearchControl4.Stype = Search.CKM_SearchControl.SearchType.商品分類;
+            this.ckM_SearchControl4.TabIndex = 45;
+            this.ckM_SearchControl4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl4.UseChangeDate = false;
+            this.ckM_SearchControl4.Value1 = null;
+            this.ckM_SearchControl4.Value2 = null;
+            this.ckM_SearchControl4.Value3 = null;
+            // 
             // ckM_Label14
             // 
             this.ckM_Label14.AutoSize = true;
@@ -750,6 +824,32 @@
             this.ckM_Label14.Text = "商品分類";
             this.ckM_Label14.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_SearchControl5
+            // 
+            this.ckM_SearchControl5.AutoSize = true;
+            this.ckM_SearchControl5.ChangeDate = "";
+            this.ckM_SearchControl5.ChangeDateWidth = 100;
+            this.ckM_SearchControl5.Code = "";
+            this.ckM_SearchControl5.CodeWidth = 100;
+            this.ckM_SearchControl5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl5.DataCheck = false;
+            this.ckM_SearchControl5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl5.IsCopy = false;
+            this.ckM_SearchControl5.LabelText = "";
+            this.ckM_SearchControl5.LabelVisible = true;
+            this.ckM_SearchControl5.Location = new System.Drawing.Point(539, 237);
+            this.ckM_SearchControl5.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl5.Name = "ckM_SearchControl5";
+            this.ckM_SearchControl5.SearchEnable = true;
+            this.ckM_SearchControl5.Size = new System.Drawing.Size(314, 28);
+            this.ckM_SearchControl5.Stype = Search.CKM_SearchControl.SearchType.競技;
+            this.ckM_SearchControl5.TabIndex = 43;
+            this.ckM_SearchControl5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl5.UseChangeDate = false;
+            this.ckM_SearchControl5.Value1 = null;
+            this.ckM_SearchControl5.Value2 = null;
+            this.ckM_SearchControl5.Value3 = null;
             // 
             // ckM_Label15
             // 
@@ -768,22 +868,31 @@
             this.ckM_Label15.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_Label16
+            // ckM_SearchControl6
             // 
-            this.ckM_Label16.AutoSize = true;
-            this.ckM_Label16.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label16.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label16.DefaultlabelSize = true;
-            this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label16.Location = new System.Drawing.Point(24, 246);
-            this.ckM_Label16.Name = "ckM_Label16";
-            this.ckM_Label16.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label16.TabIndex = 40;
-            this.ckM_Label16.Text = "ブランド";
-            this.ckM_Label16.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_SearchControl6.AutoSize = true;
+            this.ckM_SearchControl6.ChangeDate = "";
+            this.ckM_SearchControl6.ChangeDateWidth = 100;
+            this.ckM_SearchControl6.Code = "";
+            this.ckM_SearchControl6.CodeWidth = 100;
+            this.ckM_SearchControl6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl6.DataCheck = false;
+            this.ckM_SearchControl6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl6.IsCopy = false;
+            this.ckM_SearchControl6.LabelText = "";
+            this.ckM_SearchControl6.LabelVisible = true;
+            this.ckM_SearchControl6.Location = new System.Drawing.Point(84, 237);
+            this.ckM_SearchControl6.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl6.Name = "ckM_SearchControl6";
+            this.ckM_SearchControl6.SearchEnable = true;
+            this.ckM_SearchControl6.Size = new System.Drawing.Size(414, 28);
+            this.ckM_SearchControl6.Stype = Search.CKM_SearchControl.SearchType.ブランド;
+            this.ckM_SearchControl6.TabIndex = 41;
+            this.ckM_SearchControl6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl6.UseChangeDate = false;
+            this.ckM_SearchControl6.Value1 = null;
+            this.ckM_SearchControl6.Value2 = null;
+            this.ckM_SearchControl6.Value3 = null;
             // 
             // ckM_Label17
             // 
@@ -1028,6 +1137,32 @@
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // ckM_SearchControl2
+            // 
+            this.ckM_SearchControl2.AutoSize = true;
+            this.ckM_SearchControl2.ChangeDate = "";
+            this.ckM_SearchControl2.ChangeDateWidth = 100;
+            this.ckM_SearchControl2.Code = "";
+            this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl2.DataCheck = false;
+            this.ckM_SearchControl2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl2.IsCopy = false;
+            this.ckM_SearchControl2.LabelText = "";
+            this.ckM_SearchControl2.LabelVisible = true;
+            this.ckM_SearchControl2.Location = new System.Drawing.Point(84, 148);
+            this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl2.Name = "ckM_SearchControl2";
+            this.ckM_SearchControl2.SearchEnable = true;
+            this.ckM_SearchControl2.Size = new System.Drawing.Size(415, 28);
+            this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl2.TabIndex = 27;
+            this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl2.UseChangeDate = false;
+            this.ckM_SearchControl2.Value1 = null;
+            this.ckM_SearchControl2.Value2 = null;
+            this.ckM_SearchControl2.Value3 = null;
+            // 
             // ckM_Label3
             // 
             this.ckM_Label3.AutoSize = true;
@@ -1096,6 +1231,32 @@
             this.ckM_Button1.TabIndex = 23;
             this.ckM_Button1.Text = "取込(F10)";
             this.ckM_Button1.UseVisualStyleBackColor = false;
+            // 
+            // ckM_SearchControl1
+            // 
+            this.ckM_SearchControl1.AutoSize = true;
+            this.ckM_SearchControl1.ChangeDate = "";
+            this.ckM_SearchControl1.ChangeDateWidth = 100;
+            this.ckM_SearchControl1.Code = "";
+            this.ckM_SearchControl1.CodeWidth = 150;
+            this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_SearchControl1.DataCheck = false;
+            this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl1.IsCopy = false;
+            this.ckM_SearchControl1.LabelText = "";
+            this.ckM_SearchControl1.LabelVisible = false;
+            this.ckM_SearchControl1.Location = new System.Drawing.Point(86, 82);
+            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
+            this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.SearchEnable = true;
+            this.ckM_SearchControl1.Size = new System.Drawing.Size(183, 28);
+            this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.Default;
+            this.ckM_SearchControl1.TabIndex = 22;
+            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ckM_SearchControl1.UseChangeDate = false;
+            this.ckM_SearchControl1.Value1 = null;
+            this.ckM_SearchControl1.Value2 = null;
+            this.ckM_SearchControl1.Value3 = null;
             // 
             // ckM_Label2
             // 
@@ -1224,6 +1385,32 @@
             this.LB_year.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_year.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // segment
+            // 
+            this.segment.AutoSize = true;
+            this.segment.ChangeDate = "";
+            this.segment.ChangeDateWidth = 100;
+            this.segment.Code = "";
+            this.segment.CodeWidth = 100;
+            this.segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.segment.DataCheck = false;
+            this.segment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment.IsCopy = false;
+            this.segment.LabelText = "";
+            this.segment.LabelVisible = true;
+            this.segment.Location = new System.Drawing.Point(981, 55);
+            this.segment.Margin = new System.Windows.Forms.Padding(0);
+            this.segment.Name = "segment";
+            this.segment.SearchEnable = true;
+            this.segment.Size = new System.Drawing.Size(334, 28);
+            this.segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
+            this.segment.TabIndex = 14;
+            this.segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.segment.UseChangeDate = false;
+            this.segment.Value1 = null;
+            this.segment.Value2 = null;
+            this.segment.Value3 = null;
+            // 
             // lb_segment
             // 
             this.lb_segment.AutoSize = true;
@@ -1241,6 +1428,32 @@
             this.lb_segment.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lb_segment.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // sport
+            // 
+            this.sport.AutoSize = true;
+            this.sport.ChangeDate = "";
+            this.sport.ChangeDateWidth = 100;
+            this.sport.Code = "";
+            this.sport.CodeWidth = 100;
+            this.sport.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.sport.DataCheck = false;
+            this.sport.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sport.IsCopy = false;
+            this.sport.LabelText = "";
+            this.sport.LabelVisible = true;
+            this.sport.Location = new System.Drawing.Point(561, 55);
+            this.sport.Margin = new System.Windows.Forms.Padding(0);
+            this.sport.Name = "sport";
+            this.sport.SearchEnable = true;
+            this.sport.Size = new System.Drawing.Size(314, 28);
+            this.sport.Stype = Search.CKM_SearchControl.SearchType.競技;
+            this.sport.TabIndex = 12;
+            this.sport.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.sport.UseChangeDate = false;
+            this.sport.Value1 = null;
+            this.sport.Value2 = null;
+            this.sport.Value3 = null;
+            // 
             // lb_sport
             // 
             this.lb_sport.AutoSize = true;
@@ -1250,13 +1463,39 @@
             this.lb_sport.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lb_sport.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lb_sport.ForeColor = System.Drawing.Color.Black;
-            this.lb_sport.Location = new System.Drawing.Point(495, 106);
+            this.lb_sport.Location = new System.Drawing.Point(514, 66);
             this.lb_sport.Name = "lb_sport";
             this.lb_sport.Size = new System.Drawing.Size(44, 12);
             this.lb_sport.TabIndex = 11;
             this.lb_sport.Text = "競　技";
             this.lb_sport.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lb_sport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // brand1
+            // 
+            this.brand1.AutoSize = true;
+            this.brand1.ChangeDate = "";
+            this.brand1.ChangeDateWidth = 100;
+            this.brand1.Code = "";
+            this.brand1.CodeWidth = 100;
+            this.brand1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.brand1.DataCheck = false;
+            this.brand1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand1.IsCopy = false;
+            this.brand1.LabelText = "";
+            this.brand1.LabelVisible = true;
+            this.brand1.Location = new System.Drawing.Point(84, 55);
+            this.brand1.Margin = new System.Windows.Forms.Padding(0);
+            this.brand1.Name = "brand1";
+            this.brand1.SearchEnable = true;
+            this.brand1.Size = new System.Drawing.Size(414, 28);
+            this.brand1.Stype = Search.CKM_SearchControl.SearchType.ブランド;
+            this.brand1.TabIndex = 10;
+            this.brand1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.brand1.UseChangeDate = false;
+            this.brand1.Value1 = null;
+            this.brand1.Value2 = null;
+            this.brand1.Value3 = null;
             // 
             // LB_brand1
             // 
@@ -1368,291 +1607,6 @@
             this.Btn_display.Text = "表示(F11)";
             this.Btn_display.UseVisualStyleBackColor = false;
             // 
-            // ckM_SearchControl3
-            // 
-            this.ckM_SearchControl3.AutoSize = true;
-            this.ckM_SearchControl3.ChangeDate = "";
-            this.ckM_SearchControl3.ChangeDateWidth = 100;
-            this.ckM_SearchControl3.Code = "";
-            this.ckM_SearchControl3.CodeWidth = 150;
-            this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl3.DataCheck = false;
-            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl3.IsCopy = false;
-            this.ckM_SearchControl3.LabelText = "";
-            this.ckM_SearchControl3.LabelVisible = false;
-            this.ckM_SearchControl3.Location = new System.Drawing.Point(86, 264);
-            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl3.Name = "ckM_SearchControl3";
-            this.ckM_SearchControl3.SearchEnable = true;
-            this.ckM_SearchControl3.Size = new System.Drawing.Size(183, 28);
-            this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.ckM_SearchControl3.TabIndex = 53;
-            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl3.UseChangeDate = false;
-            this.ckM_SearchControl3.Value1 = null;
-            this.ckM_SearchControl3.Value2 = null;
-            this.ckM_SearchControl3.Value3 = null;
-            // 
-            // ckM_SearchControl4
-            // 
-            this.ckM_SearchControl4.AutoSize = true;
-            this.ckM_SearchControl4.ChangeDate = "";
-            this.ckM_SearchControl4.ChangeDateWidth = 100;
-            this.ckM_SearchControl4.Code = "";
-            this.ckM_SearchControl4.CodeWidth = 100;
-            this.ckM_SearchControl4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl4.DataCheck = false;
-            this.ckM_SearchControl4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl4.IsCopy = false;
-            this.ckM_SearchControl4.LabelText = "";
-            this.ckM_SearchControl4.LabelVisible = true;
-            this.ckM_SearchControl4.Location = new System.Drawing.Point(1018, 237);
-            this.ckM_SearchControl4.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl4.Name = "ckM_SearchControl4";
-            this.ckM_SearchControl4.SearchEnable = true;
-            this.ckM_SearchControl4.Size = new System.Drawing.Size(314, 28);
-            this.ckM_SearchControl4.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.ckM_SearchControl4.TabIndex = 45;
-            this.ckM_SearchControl4.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl4.UseChangeDate = false;
-            this.ckM_SearchControl4.Value1 = null;
-            this.ckM_SearchControl4.Value2 = null;
-            this.ckM_SearchControl4.Value3 = null;
-            // 
-            // ckM_SearchControl5
-            // 
-            this.ckM_SearchControl5.AutoSize = true;
-            this.ckM_SearchControl5.ChangeDate = "";
-            this.ckM_SearchControl5.ChangeDateWidth = 100;
-            this.ckM_SearchControl5.Code = "";
-            this.ckM_SearchControl5.CodeWidth = 100;
-            this.ckM_SearchControl5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl5.DataCheck = false;
-            this.ckM_SearchControl5.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl5.IsCopy = false;
-            this.ckM_SearchControl5.LabelText = "";
-            this.ckM_SearchControl5.LabelVisible = true;
-            this.ckM_SearchControl5.Location = new System.Drawing.Point(539, 237);
-            this.ckM_SearchControl5.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl5.Name = "ckM_SearchControl5";
-            this.ckM_SearchControl5.SearchEnable = true;
-            this.ckM_SearchControl5.Size = new System.Drawing.Size(314, 28);
-            this.ckM_SearchControl5.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.ckM_SearchControl5.TabIndex = 43;
-            this.ckM_SearchControl5.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl5.UseChangeDate = false;
-            this.ckM_SearchControl5.Value1 = null;
-            this.ckM_SearchControl5.Value2 = null;
-            this.ckM_SearchControl5.Value3 = null;
-            // 
-            // ckM_SearchControl6
-            // 
-            this.ckM_SearchControl6.AutoSize = true;
-            this.ckM_SearchControl6.ChangeDate = "";
-            this.ckM_SearchControl6.ChangeDateWidth = 100;
-            this.ckM_SearchControl6.Code = "";
-            this.ckM_SearchControl6.CodeWidth = 100;
-            this.ckM_SearchControl6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl6.DataCheck = false;
-            this.ckM_SearchControl6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl6.IsCopy = false;
-            this.ckM_SearchControl6.LabelText = "";
-            this.ckM_SearchControl6.LabelVisible = true;
-            this.ckM_SearchControl6.Location = new System.Drawing.Point(84, 237);
-            this.ckM_SearchControl6.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl6.Name = "ckM_SearchControl6";
-            this.ckM_SearchControl6.SearchEnable = true;
-            this.ckM_SearchControl6.Size = new System.Drawing.Size(414, 28);
-            this.ckM_SearchControl6.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.ckM_SearchControl6.TabIndex = 41;
-            this.ckM_SearchControl6.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl6.UseChangeDate = false;
-            this.ckM_SearchControl6.Value1 = null;
-            this.ckM_SearchControl6.Value2 = null;
-            this.ckM_SearchControl6.Value3 = null;
-            // 
-            // ckM_SearchControl2
-            // 
-            this.ckM_SearchControl2.AutoSize = true;
-            this.ckM_SearchControl2.ChangeDate = "";
-            this.ckM_SearchControl2.ChangeDateWidth = 100;
-            this.ckM_SearchControl2.Code = "";
-            this.ckM_SearchControl2.CodeWidth = 100;
-            this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl2.DataCheck = false;
-            this.ckM_SearchControl2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl2.IsCopy = false;
-            this.ckM_SearchControl2.LabelText = "";
-            this.ckM_SearchControl2.LabelVisible = true;
-            this.ckM_SearchControl2.Location = new System.Drawing.Point(84, 148);
-            this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl2.Name = "ckM_SearchControl2";
-            this.ckM_SearchControl2.SearchEnable = true;
-            this.ckM_SearchControl2.Size = new System.Drawing.Size(415, 28);
-            this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.ckM_SearchControl2.TabIndex = 27;
-            this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl2.UseChangeDate = false;
-            this.ckM_SearchControl2.Value1 = null;
-            this.ckM_SearchControl2.Value2 = null;
-            this.ckM_SearchControl2.Value3 = null;
-            // 
-            // ckM_SearchControl1
-            // 
-            this.ckM_SearchControl1.AutoSize = true;
-            this.ckM_SearchControl1.ChangeDate = "";
-            this.ckM_SearchControl1.ChangeDateWidth = 100;
-            this.ckM_SearchControl1.Code = "";
-            this.ckM_SearchControl1.CodeWidth = 150;
-            this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl1.DataCheck = false;
-            this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_SearchControl1.IsCopy = false;
-            this.ckM_SearchControl1.LabelText = "";
-            this.ckM_SearchControl1.LabelVisible = false;
-            this.ckM_SearchControl1.Location = new System.Drawing.Point(86, 82);
-            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl1.Name = "ckM_SearchControl1";
-            this.ckM_SearchControl1.SearchEnable = true;
-            this.ckM_SearchControl1.Size = new System.Drawing.Size(183, 28);
-            this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.Default;
-            this.ckM_SearchControl1.TabIndex = 22;
-            this.ckM_SearchControl1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl1.UseChangeDate = false;
-            this.ckM_SearchControl1.Value1 = null;
-            this.ckM_SearchControl1.Value2 = null;
-            this.ckM_SearchControl1.Value3 = null;
-            // 
-            // segment
-            // 
-            this.segment.AutoSize = true;
-            this.segment.ChangeDate = "";
-            this.segment.ChangeDateWidth = 100;
-            this.segment.Code = "";
-            this.segment.CodeWidth = 100;
-            this.segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.segment.DataCheck = false;
-            this.segment.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.segment.IsCopy = false;
-            this.segment.LabelText = "";
-            this.segment.LabelVisible = true;
-            this.segment.Location = new System.Drawing.Point(981, 55);
-            this.segment.Margin = new System.Windows.Forms.Padding(0);
-            this.segment.Name = "segment";
-            this.segment.SearchEnable = true;
-            this.segment.Size = new System.Drawing.Size(314, 28);
-            this.segment.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.segment.TabIndex = 14;
-            this.segment.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.segment.UseChangeDate = false;
-            this.segment.Value1 = null;
-            this.segment.Value2 = null;
-            this.segment.Value3 = null;
-            // 
-            // sport
-            // 
-            this.sport.AutoSize = true;
-            this.sport.ChangeDate = "";
-            this.sport.ChangeDateWidth = 100;
-            this.sport.Code = "";
-            this.sport.CodeWidth = 100;
-            this.sport.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.sport.DataCheck = false;
-            this.sport.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.sport.IsCopy = false;
-            this.sport.LabelText = "";
-            this.sport.LabelVisible = true;
-            this.sport.Location = new System.Drawing.Point(542, 97);
-            this.sport.Margin = new System.Windows.Forms.Padding(0);
-            this.sport.Name = "sport";
-            this.sport.SearchEnable = true;
-            this.sport.Size = new System.Drawing.Size(314, 28);
-            this.sport.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.sport.TabIndex = 12;
-            this.sport.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.sport.UseChangeDate = false;
-            this.sport.Value1 = null;
-            this.sport.Value2 = null;
-            this.sport.Value3 = null;
-            // 
-            // brand1
-            // 
-            this.brand1.AutoSize = true;
-            this.brand1.ChangeDate = "";
-            this.brand1.ChangeDateWidth = 100;
-            this.brand1.Code = "";
-            this.brand1.CodeWidth = 100;
-            this.brand1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.brand1.DataCheck = false;
-            this.brand1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.brand1.IsCopy = false;
-            this.brand1.LabelText = "";
-            this.brand1.LabelVisible = true;
-            this.brand1.Location = new System.Drawing.Point(84, 55);
-            this.brand1.Margin = new System.Windows.Forms.Padding(0);
-            this.brand1.Name = "brand1";
-            this.brand1.SearchEnable = true;
-            this.brand1.Size = new System.Drawing.Size(414, 28);
-            this.brand1.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.brand1.TabIndex = 10;
-            this.brand1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.brand1.UseChangeDate = false;
-            this.brand1.Value1 = null;
-            this.brand1.Value2 = null;
-            this.brand1.Value3 = null;
-            // 
-            // shiiresaki
-            // 
-            this.shiiresaki.AutoSize = true;
-            this.shiiresaki.ChangeDate = "";
-            this.shiiresaki.ChangeDateWidth = 100;
-            this.shiiresaki.Code = "";
-            this.shiiresaki.CodeWidth = 130;
-            this.shiiresaki.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.shiiresaki.DataCheck = false;
-            this.shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.shiiresaki.IsCopy = false;
-            this.shiiresaki.LabelText = "";
-            this.shiiresaki.LabelVisible = true;
-            this.shiiresaki.Location = new System.Drawing.Point(117, 8);
-            this.shiiresaki.Margin = new System.Windows.Forms.Padding(0);
-            this.shiiresaki.Name = "shiiresaki";
-            this.shiiresaki.SearchEnable = true;
-            this.shiiresaki.Size = new System.Drawing.Size(444, 28);
-            this.shiiresaki.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.shiiresaki.TabIndex = 1;
-            this.shiiresaki.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.shiiresaki.UseChangeDate = false;
-            this.shiiresaki.Value1 = null;
-            this.shiiresaki.Value2 = null;
-            this.shiiresaki.Value3 = null;
-            // 
-            // ckM_SearchControl7
-            // 
-            this.ckM_SearchControl7.AutoSize = true;
-            this.ckM_SearchControl7.ChangeDate = "";
-            this.ckM_SearchControl7.ChangeDateWidth = 100;
-            this.ckM_SearchControl7.Code = "";
-            this.ckM_SearchControl7.CodeWidth = 100;
-            this.ckM_SearchControl7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_SearchControl7.DataCheck = false;
-            this.ckM_SearchControl7.IsCopy = false;
-            this.ckM_SearchControl7.LabelText = "";
-            this.ckM_SearchControl7.LabelVisible = true;
-            this.ckM_SearchControl7.Location = new System.Drawing.Point(505, 21);
-            this.ckM_SearchControl7.Margin = new System.Windows.Forms.Padding(0);
-            this.ckM_SearchControl7.Name = "ckM_SearchControl7";
-            this.ckM_SearchControl7.SearchEnable = true;
-            this.ckM_SearchControl7.Size = new System.Drawing.Size(314, 52);
-            this.ckM_SearchControl7.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.ckM_SearchControl7.TabIndex = 66;
-            this.ckM_SearchControl7.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ckM_SearchControl7.UseChangeDate = true;
-            this.ckM_SearchControl7.Value1 = null;
-            this.ckM_SearchControl7.Value2 = null;
-            this.ckM_SearchControl7.Value3 = null;
-            // 
             // FrmMasterTouroku_ShiireTanka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1752,7 +1706,6 @@
         private Search.CKM_SearchControl ckM_SearchControl5;
         private CKM_Controls.CKM_Label ckM_Label15;
         private Search.CKM_SearchControl ckM_SearchControl6;
-        private CKM_Controls.CKM_Label ckM_Label16;
         private CKM_Controls.CKM_Label ckM_Label17;
         private CKM_Controls.CKM_Label ckM_Label18;
         private CKM_Controls.CKM_Button ckM_Button3;
@@ -1766,6 +1719,5 @@
         private CKM_Controls.CKM_Button ckM_Button7;
         private CKM_Controls.CKM_Button ckM_Button8;
         private CKM_Controls.CKM_Button ckM_Button9;
-        private Search.CKM_SearchControl ckM_SearchControl7;
     }
 }

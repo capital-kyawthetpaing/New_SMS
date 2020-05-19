@@ -792,17 +792,6 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
-                    //Xml = mskbl.DataTableToXml(dtMain);
-                    //if (mskbl.M_OrderRate_Update(moe, Xml))
-                    //{
-                    //    Clear(PanelHeader);
-                    //    Clear(panelDetail);
-                    //    mskbl.ShowMessage("I101");
-                    //}
-                    //else
-                    //{
-                    //    mskbl.ShowMessage("S001");
-                    //}
                     UpdateInsert();
                 }
             }

@@ -987,7 +987,7 @@ namespace HenpinNyuuryoku
             detailControls = new Control[] { ScVendorCD.TxtCode, ckM_TextBox1, ckM_TextBox2, ScStaff.TxtCode
                          ,ckM_TextBox4, ckM_TextBox3,ScMaker.TxtCode, ckM_TextBox18                          
                          ,TxtRemark1, ckM_TextBox8, ckM_TextBox5 };
-            detailLabels = new Control[] { ScVendorCD, ScStaff };
+            detailLabels = new Control[] { ScVendorCD, ScStaff , ScMaker };
             searchButtons = new Control[] { ScVendorCD.BtnSearch, ScStaff.BtnSearch};
 
             //イベント付与

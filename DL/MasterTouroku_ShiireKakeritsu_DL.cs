@@ -42,7 +42,6 @@ namespace DL
                 //{ "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.ProcessMode }},
                 //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = moe.Key }}
             };
-
             return InsertUpdateDeleteData(dic, sp);
         }
     }

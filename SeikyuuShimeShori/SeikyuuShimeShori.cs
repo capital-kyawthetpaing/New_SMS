@@ -74,6 +74,7 @@ namespace SeikyuuShimeShori
 
                 ExecDisp();
 
+                detailControls[(int)EIndex.Syori].Focus();
             }
             catch (Exception ex)
             {

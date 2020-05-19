@@ -512,11 +512,15 @@ namespace Search
                     string ymd = tjbl.GetDate();
                     using (Search_Product frmProduct = new Search_Product(ymd))
                     {
+                        int index = Array.IndexOf(detailControls, setCtl);
+
+                        if (index.Equals((int)EIndex.JanCD))
+                            frmProduct.Mode = "5";
+
                         frmProduct.ShowDialog();
 
                         if (!frmProduct.flgCancel)
                         {
-                            int index = Array.IndexOf(detailControls, setCtl);
 
                             switch (index)
                             {
