@@ -172,7 +172,7 @@ namespace ShukkaShoukai
             if (!string.IsNullOrWhiteSpace(txtShippingEndDate.Text))
             {
                 int result = txtShippingStartDate.Text.CompareTo(txtShippingEndDate.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     skskbl.ShowMessage("E104");
                     txtShippingEndDate.Focus();
@@ -397,7 +397,7 @@ namespace ShukkaShoukai
                 if (!string.IsNullOrWhiteSpace(txtShippingEndDate.Text))
                 {
                     int result = txtShippingStartDate.Text.CompareTo(txtShippingEndDate.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         skskbl.ShowMessage("E104");
                         txtShippingEndDate.Focus();
