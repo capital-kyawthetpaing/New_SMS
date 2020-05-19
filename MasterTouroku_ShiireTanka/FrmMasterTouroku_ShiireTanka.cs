@@ -24,8 +24,6 @@ namespace MasterTouroku_ShiireTanka
         {
             InProgramID = "MasterTouroku_ShiireTanka";
             StartProgram();
-            
-
         }
         private void BindCombo()
         {
@@ -38,6 +36,11 @@ namespace MasterTouroku_ShiireTanka
         protected override void EndSec()
         {
             this.Close();
+        }
+
+        private void FrmMasterTouroku_ShiireTanka_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }
