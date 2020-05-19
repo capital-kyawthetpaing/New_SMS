@@ -472,7 +472,7 @@ namespace NyuukaShoukai
                 if (!string.IsNullOrWhiteSpace(txtArrivalDay2.Text))
                 {
                     int result = txtArrivalDay1.Text.CompareTo(txtArrivalDay2.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         nkskbl.ShowMessage("E104");
                         txtArrivalDay2.Focus();
@@ -489,7 +489,7 @@ namespace NyuukaShoukai
                 if (!string.IsNullOrWhiteSpace(txtStockDate2.Text))
                 {
                     int result = txtStockDate1.Text.CompareTo(txtStockDate2.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         nkskbl.ShowMessage("E104");
                         txtStockDate2.Focus();
@@ -506,7 +506,7 @@ namespace NyuukaShoukai
                 if (!string.IsNullOrWhiteSpace(txtPurchaseDate2.Text))
                 {
                     int result = txtPurchaseDate1.Text.CompareTo(txtPurchaseDate2.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         nkskbl.ShowMessage("E104");
                         txtPurchaseDate2.Focus();
