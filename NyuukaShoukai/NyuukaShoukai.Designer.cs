@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -110,6 +109,7 @@
             this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboWarehouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWarehouse.Flag = 0;
             this.cboWarehouse.FormattingEnabled = true;
             this.cboWarehouse.Length = 10;
             this.cboWarehouse.Location = new System.Drawing.Point(60, 10);
@@ -153,6 +153,7 @@
             this.txtDeliveryNote.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDeliveryNote.BackColor = System.Drawing.Color.White;
             this.txtDeliveryNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeliveryNote.ClientColor = System.Drawing.Color.White;
             this.txtDeliveryNote.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDeliveryNote.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtDeliveryNote.DecimalPlace = 0;
@@ -160,6 +161,7 @@
             this.txtDeliveryNote.IntegerPart = 0;
             this.txtDeliveryNote.IsCorrectDate = true;
             this.txtDeliveryNote.isEnterKeyDown = false;
+            this.txtDeliveryNote.isMaxLengthErr = false;
             this.txtDeliveryNote.IsNumber = true;
             this.txtDeliveryNote.IsShop = false;
             this.txtDeliveryNote.Length = 15;
@@ -555,6 +557,7 @@
             this.txtProductName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProductName.BackColor = System.Drawing.Color.White;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProductName.ClientColor = System.Drawing.Color.White;
             this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtProductName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProductName.DecimalPlace = 0;
@@ -563,6 +566,7 @@
             this.txtProductName.IntegerPart = 0;
             this.txtProductName.IsCorrectDate = true;
             this.txtProductName.isEnterKeyDown = false;
+            this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
             this.txtProductName.Length = 80;
@@ -607,6 +611,7 @@
             this.cboSourceWH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSourceWH.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboSourceWH.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSourceWH.Flag = 0;
             this.cboSourceWH.FormattingEnabled = true;
             this.cboSourceWH.Length = 10;
             this.cboSourceWH.Location = new System.Drawing.Point(86, 6);
@@ -625,7 +630,7 @@
             this.dgvNyuukaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -652,14 +657,6 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
@@ -823,6 +820,7 @@
             this.txtArrivalDay1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtArrivalDay1.BackColor = System.Drawing.Color.White;
             this.txtArrivalDay1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArrivalDay1.ClientColor = System.Drawing.Color.White;
             this.txtArrivalDay1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtArrivalDay1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtArrivalDay1.DecimalPlace = 0;
@@ -831,6 +829,7 @@
             this.txtArrivalDay1.IntegerPart = 0;
             this.txtArrivalDay1.IsCorrectDate = true;
             this.txtArrivalDay1.isEnterKeyDown = false;
+            this.txtArrivalDay1.isMaxLengthErr = false;
             this.txtArrivalDay1.IsNumber = true;
             this.txtArrivalDay1.IsShop = false;
             this.txtArrivalDay1.Length = 8;
@@ -849,6 +848,7 @@
             this.txtArrivalDay2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtArrivalDay2.BackColor = System.Drawing.Color.White;
             this.txtArrivalDay2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArrivalDay2.ClientColor = System.Drawing.Color.White;
             this.txtArrivalDay2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtArrivalDay2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtArrivalDay2.DecimalPlace = 0;
@@ -857,6 +857,7 @@
             this.txtArrivalDay2.IntegerPart = 0;
             this.txtArrivalDay2.IsCorrectDate = true;
             this.txtArrivalDay2.isEnterKeyDown = false;
+            this.txtArrivalDay2.isMaxLengthErr = false;
             this.txtArrivalDay2.IsNumber = true;
             this.txtArrivalDay2.IsShop = false;
             this.txtArrivalDay2.Length = 8;
@@ -876,6 +877,7 @@
             this.txtStockDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStockDate1.BackColor = System.Drawing.Color.White;
             this.txtStockDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStockDate1.ClientColor = System.Drawing.Color.White;
             this.txtStockDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStockDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtStockDate1.DecimalPlace = 0;
@@ -884,6 +886,7 @@
             this.txtStockDate1.IntegerPart = 0;
             this.txtStockDate1.IsCorrectDate = true;
             this.txtStockDate1.isEnterKeyDown = false;
+            this.txtStockDate1.isMaxLengthErr = false;
             this.txtStockDate1.IsNumber = true;
             this.txtStockDate1.IsShop = false;
             this.txtStockDate1.Length = 8;
@@ -902,6 +905,7 @@
             this.txtStockDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStockDate2.BackColor = System.Drawing.Color.White;
             this.txtStockDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStockDate2.ClientColor = System.Drawing.Color.White;
             this.txtStockDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStockDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtStockDate2.DecimalPlace = 0;
@@ -910,6 +914,7 @@
             this.txtStockDate2.IntegerPart = 0;
             this.txtStockDate2.IsCorrectDate = true;
             this.txtStockDate2.isEnterKeyDown = false;
+            this.txtStockDate2.isMaxLengthErr = false;
             this.txtStockDate2.IsNumber = true;
             this.txtStockDate2.IsShop = false;
             this.txtStockDate2.Length = 8;
@@ -929,6 +934,7 @@
             this.txtPurchaseDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate1.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate1.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate1.DecimalPlace = 0;
@@ -937,6 +943,7 @@
             this.txtPurchaseDate1.IntegerPart = 0;
             this.txtPurchaseDate1.IsCorrectDate = true;
             this.txtPurchaseDate1.isEnterKeyDown = false;
+            this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
             this.txtPurchaseDate1.Length = 8;
@@ -955,6 +962,7 @@
             this.txtPurchaseDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate2.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate2.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate2.DecimalPlace = 0;
@@ -963,6 +971,7 @@
             this.txtPurchaseDate2.IntegerPart = 0;
             this.txtPurchaseDate2.IsCorrectDate = true;
             this.txtPurchaseDate2.isEnterKeyDown = false;
+            this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
             this.txtPurchaseDate2.Length = 8;
