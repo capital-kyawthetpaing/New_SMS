@@ -37,5 +37,10 @@ namespace MasterTouroku_ShiireTanka
         {
             this.Close();
         }
+
+        private void FrmMasterTouroku_ShiireTanka_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }

@@ -41,22 +41,7 @@ namespace ShiireShoukaiShiiresaki
             BindCombo();
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
-            //if(chkPaid.Checked == true)
-            //{
-            //    paid = "1";
-            //}
-            //else
-            //{
-            //    paid = "0";
-            //}
-            //if (chkUnpaid.Checked == true)
-            //{
-            //    unpaid = "0";
-            //}
-            //else
-            //{
-            //    unpaid = "1";
-            //}
+           
             txtPurchaseDateFrom.Focus();
             this.ComboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;            
         }
