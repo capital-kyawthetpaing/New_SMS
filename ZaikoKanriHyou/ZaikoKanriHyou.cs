@@ -49,7 +49,6 @@ namespace ZaikoKanriHyou
         }
 
         private void SetRequiredField()
-
         {
             txtTargetDate.Require(true);
         }

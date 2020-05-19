@@ -48,12 +48,12 @@
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
-            this.ScStaff = new Search.CKM_SearchControl();
-            this.ScCustomer = new Search.CKM_SearchControl();
             this.label9 = new CKM_Controls.CKM_Label();
             this.lblSkuCD = new System.Windows.Forms.Label();
             this.ckM_CustomerName = new CKM_Controls.CKM_TextBox();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
+            this.ScStaff = new Search.CKM_SearchControl();
+            this.ScCustomer = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +127,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_受注;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(830, 11);
@@ -258,6 +259,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -266,6 +268,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -301,6 +304,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -309,6 +313,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -320,58 +325,6 @@
             this.ckM_TextBox2.TabIndex = 1;
             this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ScStaff
-            // 
-            this.ScStaff.AutoSize = true;
-            this.ScStaff.ChangeDate = "";
-            this.ScStaff.ChangeDateWidth = 100;
-            this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
-            this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScStaff.DataCheck = false;
-            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ScStaff.IsCopy = false;
-            this.ScStaff.LabelText = "";
-            this.ScStaff.LabelVisible = true;
-            this.ScStaff.Location = new System.Drawing.Point(106, 42);
-            this.ScStaff.Name = "ScStaff";
-            this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
-            this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.ScStaff.TabIndex = 3;
-            this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScStaff.UseChangeDate = false;
-            this.ScStaff.Value1 = null;
-            this.ScStaff.Value2 = null;
-            this.ScStaff.Value3 = null;
-            // 
-            // ScCustomer
-            // 
-            this.ScCustomer.AutoSize = true;
-            this.ScCustomer.ChangeDate = "";
-            this.ScCustomer.ChangeDateWidth = 100;
-            this.ScCustomer.Code = "";
-            this.ScCustomer.CodeWidth = 100;
-            this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScCustomer.DataCheck = true;
-            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ScCustomer.IsCopy = false;
-            this.ScCustomer.LabelText = "";
-            this.ScCustomer.LabelVisible = true;
-            this.ScCustomer.Location = new System.Drawing.Point(106, 81);
-            this.ScCustomer.Name = "ScCustomer";
-            this.ScCustomer.SearchEnable = true;
-            this.ScCustomer.Size = new System.Drawing.Size(634, 28);
-            this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
-            this.ScCustomer.TabIndex = 4;
-            this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScCustomer.UseChangeDate = false;
-            this.ScCustomer.Value1 = null;
-            this.ScCustomer.Value2 = null;
-            this.ScCustomer.Value3 = null;
             // 
             // label9
             // 
@@ -408,6 +361,7 @@
             this.ckM_CustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_CustomerName.BackColor = System.Drawing.Color.White;
             this.ckM_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_CustomerName.ClientColor = System.Drawing.Color.White;
             this.ckM_CustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_CustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_CustomerName.DecimalPlace = 0;
@@ -416,9 +370,10 @@
             this.ckM_CustomerName.IntegerPart = 0;
             this.ckM_CustomerName.IsCorrectDate = true;
             this.ckM_CustomerName.isEnterKeyDown = false;
+            this.ckM_CustomerName.isMaxLengthErr = false;
             this.ckM_CustomerName.IsNumber = true;
             this.ckM_CustomerName.IsShop = false;
-            this.ckM_CustomerName.Length = 80;
+            this.ckM_CustomerName.Length = 40;
             this.ckM_CustomerName.Location = new System.Drawing.Point(237, 86);
             this.ckM_CustomerName.MaxLength = 40;
             this.ckM_CustomerName.MoveNext = true;
@@ -446,6 +401,63 @@
             this.btnSubF11.TabIndex = 6;
             this.btnSubF11.Text = "表示(F11)";
             this.btnSubF11.UseVisualStyleBackColor = false;
+            this.btnSubF11.Click += new System.EventHandler(this.BtnF11_Click);
+            // 
+            // ScStaff
+            // 
+            this.ScStaff.AutoSize = true;
+            this.ScStaff.ChangeDate = "";
+            this.ScStaff.ChangeDateWidth = 100;
+            this.ScStaff.Code = "";
+            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScStaff.DataCheck = false;
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ScStaff.IsCopy = false;
+            this.ScStaff.LabelText = "";
+            this.ScStaff.LabelVisible = true;
+            this.ScStaff.Location = new System.Drawing.Point(106, 42);
+            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
+            this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 210;
+            this.ScStaff.SearchEnable = true;
+            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.ScStaff.TabIndex = 3;
+            this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScStaff.UseChangeDate = false;
+            this.ScStaff.Value1 = null;
+            this.ScStaff.Value2 = null;
+            this.ScStaff.Value3 = null;
+            // 
+            // ScCustomer
+            // 
+            this.ScCustomer.AutoSize = true;
+            this.ScCustomer.ChangeDate = "";
+            this.ScCustomer.ChangeDateWidth = 100;
+            this.ScCustomer.Code = "";
+            this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScCustomer.DataCheck = true;
+            this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScCustomer.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ScCustomer.IsCopy = false;
+            this.ScCustomer.LabelText = "";
+            this.ScCustomer.LabelVisible = true;
+            this.ScCustomer.Location = new System.Drawing.Point(106, 81);
+            this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
+            this.ScCustomer.Name = "ScCustomer";
+            this.ScCustomer.NameWidth = 500;
+            this.ScCustomer.SearchEnable = true;
+            this.ScCustomer.Size = new System.Drawing.Size(634, 28);
+            this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
+            this.ScCustomer.TabIndex = 4;
+            this.ScCustomer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScCustomer.UseChangeDate = false;
+            this.ScCustomer.Value1 = null;
+            this.ScCustomer.Value2 = null;
+            this.ScCustomer.Value3 = null;
             // 
             // Search_TempoUriageNO
             // 
