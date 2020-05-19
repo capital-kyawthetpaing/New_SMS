@@ -24,8 +24,6 @@ namespace MasterTouroku_ShiireTanka
         {
             InProgramID = "MasterTouroku_ShiireTanka";
             StartProgram();
-            
-
         }
         private void BindCombo()
         {
