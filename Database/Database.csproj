@@ -426,6 +426,7 @@
     <Content Include="StoreProcedure\M_VendorFTP_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_BankShiten_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_Bank_Select.sql" />
+    <Content Include="StoreProcedure\M_Vendor_DataSelect.sql" />
     <Content Include="StoreProcedure\M_Vendor_Delete.sql" />
     <Content Include="StoreProcedure\M_Vendor_Insert_Update.sql" />
     <Content Include="StoreProcedure\M_Vendor_IsExists.sql" />

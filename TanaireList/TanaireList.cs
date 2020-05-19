@@ -38,7 +38,8 @@ namespace TanaireList
 
             ModeVisible = false;
             Btn_F2.Text = string.Empty;
-            
+            Btn_F10.Text = "出力(F10)";
+
             SetRequireField();
         }
 
@@ -287,7 +288,7 @@ namespace TanaireList
                 DateTime dt1 = Convert.ToDateTime(txtStartDate.Text);
                 DateTime dt2 = Convert.ToDateTime(txtEndDate.Text);
 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     tnlbl.ShowMessage("E104");
                     txtStartDate.Focus();
@@ -350,6 +351,11 @@ namespace TanaireList
         {
             txtStartDate.Text = string.Empty;
             txtEndDate.Text = todayDate;
+            chkUnregistered.Checked = true;
+            chkRegistered.Checked = false;
+            chkLocationAri.Checked = true;
+            chkLocationNashi.Checked = true;
+            Clear(panel2);
 
         }
 
@@ -371,12 +377,24 @@ namespace TanaireList
                     }
 
                 }
-                //else
-                //{
-                //    tnlbl.ShowMessage("E101");
-                //    ScSKUCD.SetFocus(1);
-                //}
 
+            }
+        }
+
+        private void txtEndDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(txtStartDate.Text))
+            {
+                DateTime dt1 = Convert.ToDateTime(txtStartDate.Text);
+                DateTime dt2 = Convert.ToDateTime(txtEndDate.Text);
+
+                if (dt1 > dt2)
+                {
+                    tnlbl.ShowMessage("E104");
+                    txtStartDate.Focus();
+                }
+                else
+                    cboSouko.Focus();
             }
         }
     }

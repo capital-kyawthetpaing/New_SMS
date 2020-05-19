@@ -1,4 +1,5 @@
 ﻿using System;
+using Search;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,8 +25,9 @@ namespace MasterTouroku_ShiireTanka
         {
             InProgramID = "MasterTouroku_ShiireTanka";
             StartProgram();
-            
-
+            ModeText = "ITEM";
+            BindCombo();
+            TB_Changedate.Text = bbl.GetDate();
         }
         private void BindCombo()
         {
@@ -38,6 +40,48 @@ namespace MasterTouroku_ShiireTanka
         protected override void EndSec()
         {
             this.Close();
+        }
+
+        private void FrmMasterTouroku_ShiireTanka_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
+
+        private void shiiresaki_Enter(object sender, EventArgs e)
+        {
+            shiiresaki.Value1 = "1";
+            shiiresaki.ChangeDate = TB_Changedate.Text;
+        }
+
+        private bool ErrorCheck()
+        {
+            if(String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+            {
+                bbl.ShowMessage("E102");
+                shiiresaki.Focus();
+                return false;
+            }
+            return true;
+        }
+
+        private void shiiresaki_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if(!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                {
+                    if(shiiresaki.SelectData())
+                    {
+                        shiiresaki.Value1 = shiiresaki.TxtCode.Text;
+                        shiiresaki.Value2 = shiiresaki.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        shiiresaki.SetFocus(1);
+                    }
+                }
+            //}
         }
     }
 }

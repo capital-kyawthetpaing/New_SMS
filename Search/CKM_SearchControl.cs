@@ -167,7 +167,7 @@ namespace Search
         public int NameWidth
         {
             get => lblName.Width;
-            set=> lblName.Width = value;
+            set => lblName.Width = value;
 
         }
 
