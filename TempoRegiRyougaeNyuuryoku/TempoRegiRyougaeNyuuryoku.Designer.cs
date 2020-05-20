@@ -146,15 +146,15 @@
             this.ExchangeCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ExchangeCount.DecimalPlace = 0;
             this.ExchangeCount.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.ExchangeCount.IntegerPart = 4;
+            this.ExchangeCount.IntegerPart = 7;
             this.ExchangeCount.IsCorrectDate = true;
             this.ExchangeCount.isEnterKeyDown = false;
             this.ExchangeCount.isMaxLengthErr = false;
             this.ExchangeCount.IsNumber = true;
             this.ExchangeCount.IsShop = false;
-            this.ExchangeCount.Length = 5;
+            this.ExchangeCount.Length = 10;
             this.ExchangeCount.Location = new System.Drawing.Point(251, 281);
-            this.ExchangeCount.MaxLength = 5;
+            this.ExchangeCount.MaxLength = 10;
             this.ExchangeCount.MoveNext = true;
             this.ExchangeCount.Name = "ExchangeCount";
             this.ExchangeCount.Size = new System.Drawing.Size(120, 42);
@@ -242,7 +242,7 @@
             this.ExchangeDenomination.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.ExchangeDenomination.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.ExchangeDenomination.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ExchangeDenomination.Font = new System.Drawing.Font("Meiryo UI", 26F);
+            this.ExchangeDenomination.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
             this.ExchangeDenomination.FontSize_ = 26F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -254,7 +254,7 @@
             this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
             this.ExchangeDenomination.Name = "ExchangeDenomination";
-            this.ExchangeDenomination.Size = new System.Drawing.Size(180, 44);
+            this.ExchangeDenomination.Size = new System.Drawing.Size(168, 44);
             this.ExchangeDenomination.TabIndex = 2;
             this.ExchangeDenomination.SelectedIndexChanged += new System.EventHandler(this.ExchangeDenomination_SelectedIndexChanged);
             // 
