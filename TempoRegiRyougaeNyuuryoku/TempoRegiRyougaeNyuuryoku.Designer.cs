@@ -143,10 +143,10 @@
             this.ExchangeCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ExchangeCount.ClientColor = System.Drawing.Color.White;
             this.ExchangeCount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ExchangeCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ExchangeCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ExchangeCount.DecimalPlace = 0;
             this.ExchangeCount.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.ExchangeCount.IntegerPart = 5;
+            this.ExchangeCount.IntegerPart = 7;
             this.ExchangeCount.IsCorrectDate = true;
             this.ExchangeCount.isEnterKeyDown = false;
             this.ExchangeCount.isMaxLengthErr = false;
@@ -159,6 +159,7 @@
             this.ExchangeCount.Name = "ExchangeCount";
             this.ExchangeCount.Size = new System.Drawing.Size(120, 42);
             this.ExchangeCount.TabIndex = 3;
+            this.ExchangeCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ExchangeCount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.ExchangeCount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeCount_KeyDown);
             // 
@@ -253,7 +254,7 @@
             this.ExchangeDenomination.MaxLength = 20;
             this.ExchangeDenomination.MoveNext = true;
             this.ExchangeDenomination.Name = "ExchangeDenomination";
-            this.ExchangeDenomination.Size = new System.Drawing.Size(180, 44);
+            this.ExchangeDenomination.Size = new System.Drawing.Size(168, 44);
             this.ExchangeDenomination.TabIndex = 2;
             this.ExchangeDenomination.SelectedIndexChanged += new System.EventHandler(this.ExchangeDenomination_SelectedIndexChanged);
             // 

@@ -519,6 +519,9 @@ namespace CKM_Controls
                 case CboType.取込種別:
                     Settlement_BL sebl = new Settlement_BL();
                     M_Settlement_Entity mese = new M_Settlement_Entity();
+                    //mese.DeleteFlg = "0";
+                    //mese.ChangeDate = changeDate;
+                    
                     DataTable dtSet = sebl.M_Settlement_Bind(mese);
                     BindCombo("PatternCD", "PatternName", dtSet);
                     break;
