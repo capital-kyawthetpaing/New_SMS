@@ -831,6 +831,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
+        
         protected DataTable ChangeDataColumnName(DataTable dtMain)
         {
             dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
