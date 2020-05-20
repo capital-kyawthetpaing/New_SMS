@@ -828,5 +828,18 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
+        protected DataTable ChangeDataColumnName(DataTable dtMain)
+        {
+            dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
+            dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
+            dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
+            dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
+            dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
+            dtMain.Columns["LastYearTerm"].ColumnName = "年度";
+            dtMain.Columns["LastSeason"].ColumnName = "シーズン";
+            dtMain.Columns["ChangeDate"].ColumnName = "改定日";
+            dtMain.Columns["Rate"].ColumnName = "掛率";
+            return dtMain;
+        }
     }
 }
