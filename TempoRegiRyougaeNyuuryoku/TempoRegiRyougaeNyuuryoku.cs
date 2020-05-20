@@ -53,9 +53,15 @@ namespace TempoRegiRyougaeNyuuryoku
         public void displayData()
         {
             int moneyammount = countmoney * moneytype;
+            //ExchangeCount.Text = countmoney.ToString("#,##0");
+            //string aa = countmoney.ToString("#,##0");
+            //ExchangeCount.Text = aa.Trim();
+            countmoney = Convert.ToInt32(ExchangeCount.Text.Trim());
+            ExchangeCount.Text = countmoney.ToString("#,##0");
             string moneysperate = moneyammount.ToString("#,##0");
             ExchangeLabel.Text = moneysperate;
             if (ExchangeLabel.Text != ExchangeMoney.Text)
+
             {
                 trrnbl.ShowMessage("E181");
                 ExchangeCount.Focus();
@@ -222,7 +228,8 @@ namespace TempoRegiRyougaeNyuuryoku
                 }
                 else
                 {
-                    countmoney = Convert.ToInt32(ExchangeCount.Text);
+                    ExchangeCount.Text = countmoney.ToString("#,##0");
+                    countmoney = Convert.ToInt32(ExchangeCount.Text.Trim());
                 }
 
                 if (ExchangeDenomination.SelectedValue.ToString()=="-1")

@@ -603,26 +603,34 @@ namespace PickingList
 
         private void txtDateTo1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (chkUnissued1.Checked == true)
+
+            if (e.KeyCode == Keys.Enter)
             {
-                int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
-                if (result > 0)
+                if (chkUnissued1.Checked == true)
                 {
-                    bbl.ShowMessage("E104");
-                    txtDateFrom1.Focus();
+                    int result = txtDateFrom1.Text.CompareTo(txtDateTo1.Text);
+                    if (result > 0)
+                    {
+                        bbl.ShowMessage("E104");
+                        txtDateFrom1.Focus();
+                    }
                 }
             }
         }
 
         private void txtDateTo2_KeyDown(object sender, KeyEventArgs e)
         {
-            if (chkReissued1.Checked == true)
+
+            if (e.KeyCode == Keys.Enter)
             {
-                int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
-                if (result > 0)
+                if (chkReissued1.Checked == true)
                 {
-                    bbl.ShowMessage("E104");
-                    txtDateFrom2.Focus();
+                    int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
+                    if (result > 0)
+                    {
+                        bbl.ShowMessage("E104");
+                        txtDateFrom2.Focus();
+                    }
                 }
             }
         }

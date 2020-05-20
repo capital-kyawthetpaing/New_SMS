@@ -60,11 +60,11 @@
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(96, 294);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(134, 294);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
-            this.ckmShop_Label4.Size = new System.Drawing.Size(163, 35);
+            this.ckmShop_Label4.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label4.TabIndex = 5;
-            this.ckmShop_Label4.Text = "貨幣金種";
+            this.ckmShop_Label4.Text = "金　種";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -137,12 +137,12 @@
             this.cboDenominationName.Alignment = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboDenominationName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboDenominationName.Cbo_Type = CKM_Controls.CKMShop_ComboBox.CboType.貨幣金種名;
+            this.cboDenominationName.Cbo_Type = CKM_Controls.CKMShop_ComboBox.CboType.金種名;
             this.cboDenominationName.cboalign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.cboDenominationName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDenominationName.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.cboDenominationName.Font = new System.Drawing.Font("Meiryo UI", 26F);
             this.cboDenominationName.FontSize_ = 26F;
             this.cboDenominationName.FormattingEnabled = true;
             this.cboDenominationName.IntegralHeight = false;
@@ -161,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 661);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.cboDenominationName);
             this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.txtPayment);
