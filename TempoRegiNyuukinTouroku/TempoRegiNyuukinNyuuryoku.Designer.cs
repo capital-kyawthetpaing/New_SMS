@@ -61,15 +61,19 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1443, 729);
+            this.panelDetail.Size = new System.Drawing.Size(1713, 833);
             this.panelDetail.TabIndex = 0;
             // 
             // chkAdvanceFlg
             // 
-            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 336);
+            this.chkAdvanceFlg.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAdvanceFlg.ForeColor = System.Drawing.Color.Black;
+            this.chkAdvanceFlg.IsattachedCaption = false;
+            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 335);
             this.chkAdvanceFlg.Name = "chkAdvanceFlg";
-            this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 30);
+            this.chkAdvanceFlg.Size = new System.Drawing.Size(35, 35);
             this.chkAdvanceFlg.TabIndex = 4;
+            this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // ckmShop_Label3
@@ -159,7 +163,7 @@
             this.btnCustomerCD.Location = new System.Drawing.Point(66, 275);
             this.btnCustomerCD.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerCD.Name = "btnCustomerCD";
-            this.btnCustomerCD.Size = new System.Drawing.Size(180, 42);
+            this.btnCustomerCD.Size = new System.Drawing.Size(180, 43);
             this.btnCustomerCD.TabIndex = 2;
             this.btnCustomerCD.Text = "会員番号";
             this.btnCustomerCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,7 +213,7 @@
             this.cboDenominationName.MaxLength = 20;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(270, 46);
+            this.cboDenominationName.Size = new System.Drawing.Size(250, 46);
             this.cboDenominationName.TabIndex = 1;
             // 
             // txtPayment
@@ -234,7 +238,7 @@
             this.txtPayment.MaxLength = 11;
             this.txtPayment.MoveNext = true;
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(200, 42);
+            this.txtPayment.Size = new System.Drawing.Size(250, 42);
             this.txtPayment.TabIndex = 0;
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -291,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panelDetail);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TempoRegiNyuukinNyuuryoku";

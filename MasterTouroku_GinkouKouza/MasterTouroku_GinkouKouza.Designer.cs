@@ -108,6 +108,7 @@
             // 
             this.PanelHeader.Controls.Add(this.panel2);
             this.PanelHeader.Controls.Add(this.panel1);
+            this.PanelHeader.Size = new System.Drawing.Size(1711, 91);
             this.PanelHeader.TabIndex = 0;
             this.PanelHeader.Controls.SetChildIndex(this.panel1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.panel2, 0);
@@ -115,6 +116,7 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnDisplay);
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             this.PanelSearch.TabIndex = 0;
             // 
             // ScKouzaCD
@@ -124,6 +126,7 @@
             this.ScKouzaCD.ChangeDateWidth = 100;
             this.ScKouzaCD.Code = "";
             this.ScKouzaCD.CodeWidth = 30;
+            this.ScKouzaCD.CodeWidth1 = 30;
             this.ScKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScKouzaCD.DataCheck = false;
             this.ScKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -133,6 +136,7 @@
             this.ScKouzaCD.Location = new System.Drawing.Point(86, 2);
             this.ScKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScKouzaCD.Name = "ScKouzaCD";
+            this.ScKouzaCD.NameWidth = 350;
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(103, 50);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
@@ -154,6 +158,7 @@
             this.ScCopyKouzaCD.ChangeDateWidth = 100;
             this.ScCopyKouzaCD.Code = "";
             this.ScCopyKouzaCD.CodeWidth = 30;
+            this.ScCopyKouzaCD.CodeWidth1 = 30;
             this.ScCopyKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyKouzaCD.DataCheck = false;
             this.ScCopyKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -163,6 +168,7 @@
             this.ScCopyKouzaCD.Location = new System.Drawing.Point(111, 3);
             this.ScCopyKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyKouzaCD.Name = "ScCopyKouzaCD";
+            this.ScCopyKouzaCD.NameWidth = 350;
             this.ScCopyKouzaCD.SearchEnable = true;
             this.ScCopyKouzaCD.Size = new System.Drawing.Size(103, 50);
             this.ScCopyKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
@@ -328,6 +334,7 @@
             this.ScBankCD.ChangeDateWidth = 100;
             this.ScBankCD.Code = "";
             this.ScBankCD.CodeWidth = 40;
+            this.ScBankCD.CodeWidth1 = 40;
             this.ScBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBankCD.DataCheck = false;
             this.ScBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -337,6 +344,7 @@
             this.ScBankCD.Location = new System.Drawing.Point(155, 46);
             this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
+            this.ScBankCD.NameWidth = 350;
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -357,6 +365,7 @@
             this.ScBranchCD.ChangeDateWidth = 100;
             this.ScBranchCD.Code = "";
             this.ScBranchCD.CodeWidth = 40;
+            this.ScBranchCD.CodeWidth1 = 40;
             this.ScBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBranchCD.DataCheck = false;
             this.ScBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -366,6 +375,7 @@
             this.ScBranchCD.Location = new System.Drawing.Point(155, 72);
             this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
+            this.ScBranchCD.NameWidth = 350;
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(424, 27);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;

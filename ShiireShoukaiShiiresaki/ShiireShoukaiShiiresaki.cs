@@ -17,12 +17,12 @@ namespace ShiireShoukaiShiiresaki
    
     public partial class ShiireShoukaiShiiresaki : FrmMainForm
     {
+        private const string ProNm = "仕入照会(仕入先)";
         string paid = "";
         string unpaid = "";
         string payeeflg = "";
         string StoreAuthen_CD = "";
         string StoreAuthen_ChangeDate = "";
-        string StoreCD = "";
         D_Purchase_Entity dpde;
         ShiireShoukaiShiiresaki_BL dpurchase_bl;
         Base_BL bbl = new Base_BL();
@@ -42,43 +42,19 @@ namespace ShiireShoukaiShiiresaki
             BindCombo();
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
-            //if(chkPaid.Checked == true)
-            //{
-            //    paid = "1";
-            //}
-            //else
-            //{
-            //    paid = "0";
-            //}
-            //if (chkUnpaid.Checked == true)
-            //{
-            //    unpaid = "0";
-            //}
-            //else
-            //{
-            //    unpaid = "1";
-            //}
+          base.InProgramNM = ProNm;
+            Btn_F10.Enabled = false;
             txtPurchaseDateFrom.Focus();
-            this.ComboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;            
+                    
         }
 
-        private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!ComboStore.SelectedValue.Equals("-1"))
-            {
-                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
-                {
-                    dpurchase_bl.ShowMessage("E141");
-                    ComboStore.Focus();
-                }
-            }
-        }
+       
 
         private void SetRequireField()
         {
            
             ComboStore.Require(true);
-            this.Btn_F10.Text = "Excel出力(F10)";
+            this.Btn_F10.Text = "出力(F10)";
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
@@ -89,7 +65,7 @@ namespace ShiireShoukaiShiiresaki
 
         public void BindCombo()
         {
-            ComboStore.Bind(string.Empty,"2");
+            ComboStore.Bind(string.Empty, "2");
             ComboStore.SelectedValue = StoreCD;
         }
         /// <summary>
@@ -170,6 +146,7 @@ namespace ShiireShoukaiShiiresaki
                     dgvPurchaseSearch.DataSource = dtPurchase;
                     dgvPurchaseSearch.Enabled = true;
                     dgvPurchaseSearch.Focus();
+                    Btn_F10.Enabled = true;
                 }
                 else
                 {
@@ -227,7 +204,12 @@ namespace ShiireShoukaiShiiresaki
             {
                 return;
             }
-                if (dgvPurchaseSearch.DataSource != null)
+            string filePath = "";
+            if (!ShowSaveFileDialog(InProgramNM, out filePath))
+            {
+                return;
+            }
+            if (dgvPurchaseSearch.DataSource != null)
             {
                 //Build the CSV file data as a Comma separated string.
                 string csv = string.Empty;
@@ -336,10 +318,7 @@ namespace ShiireShoukaiShiiresaki
             /// <remarks>仕入日(from)は仕入日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
-                DateTime dt1 = Convert.ToDateTime(txtPurchaseDateFrom.Text);
-                DateTime dt2 = Convert.ToDateTime(txtPurchaseDateTo.Text);
-
-                if (dt1 >= dt2)
+                if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1)
                 {
                     dpurchase_bl.ShowMessage("E104");
                     txtPurchaseDateTo.Focus();
@@ -351,31 +330,25 @@ namespace ShiireShoukaiShiiresaki
             /// <remarks>入荷日(from)は入荷日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtArrivalDateFrom.Text) && !string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
             {
-                DateTime dt1 = Convert.ToDateTime(txtArrivalDateFrom.Text);
-                DateTime dt2 = Convert.ToDateTime(txtArrivalDateTo.Text);
-
-                if (dt1 >= dt2)
+                if (string.Compare(txtArrivalDateFrom.Text, txtArrivalDateTo.Text) == 1)
                 {
                     dpurchase_bl.ShowMessage("E104");
                     txtArrivalDateTo.Focus();
                     return false;
                 }
-
+               
             }
 
             /// <remarks>支払予定日(from)は支払予定日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))
             {
-                DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
-                DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
 
-                if (dt1 >= dt2)
+                if (string.Compare(txtPaymentDueDateFrom.Text, txtPaymentDueDateTo.Text) == 1)
                 {
                     dpurchase_bl.ShowMessage("E104");
                     txtPaymentDueDateTo.Focus();
                     return false;
                 }
-
             }
 
             /// <remarks>仕入先CDが存在しない場合エラーになる</remarks>
@@ -427,7 +400,7 @@ namespace ShiireShoukaiShiiresaki
             {
                 if (!string.IsNullOrEmpty(txtPurchaseDateFrom.Text) && !string.IsNullOrEmpty(txtPurchaseDateTo.Text))
                 {
-                    if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1 || txtPurchaseDateFrom.Text == txtPurchaseDateTo.Text)
+                    if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1 )
                     {
                         dpurchase_bl.ShowMessage("E104");
                         txtPurchaseDateTo.Focus();
@@ -442,7 +415,7 @@ namespace ShiireShoukaiShiiresaki
             {
                 if (!string.IsNullOrEmpty(txtArrivalDateFrom.Text) && !string.IsNullOrEmpty(txtArrivalDateTo.Text))
                 {
-                    if (string.Compare(txtArrivalDateFrom.Text, txtArrivalDateTo.Text) == 1 || txtArrivalDateFrom.Text == txtArrivalDateTo.Text)
+                    if (string.Compare(txtArrivalDateFrom.Text, txtArrivalDateTo.Text) == 1 )
                     {
                         dpurchase_bl.ShowMessage("E104");
                         txtArrivalDateTo.Focus();
@@ -459,7 +432,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     if (!string.IsNullOrEmpty(txtPaymentDueDateFrom.Text) && !string.IsNullOrEmpty(txtPaymentDueDateTo.Text))
                     {
-                        if (string.Compare(txtPaymentDueDateFrom.Text, txtPaymentDueDateTo.Text) == 1 || txtPaymentDueDateFrom.Text == txtPaymentDueDateTo.Text)
+                        if (string.Compare(txtPaymentDueDateFrom.Text, txtPaymentDueDateTo.Text) == 1 )
                         {
                             dpurchase_bl.ShowMessage("E104");
                             txtPaymentDueDateTo.Focus();
@@ -473,6 +446,18 @@ namespace ShiireShoukaiShiiresaki
         {
             scSupplier.Value1 = "1";//仕入先区分：1
             scSupplier.ChangeDate = txtPurchaseDateTo.Text;
+        }
+
+        private void ComboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (!base.CheckAvailableStores(ComboStore.SelectedValue.ToString()))
+                {
+                    dpurchase_bl.ShowMessage("E141");
+                    ComboStore.Focus();
+                }
+            }
         }
     }
 }

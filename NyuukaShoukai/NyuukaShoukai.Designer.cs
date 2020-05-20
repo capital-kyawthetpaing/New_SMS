@@ -110,6 +110,7 @@
             this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboWarehouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWarehouse.Flag = 0;
             this.cboWarehouse.FormattingEnabled = true;
             this.cboWarehouse.Length = 10;
             this.cboWarehouse.Location = new System.Drawing.Point(60, 10);
@@ -153,6 +154,7 @@
             this.txtDeliveryNote.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtDeliveryNote.BackColor = System.Drawing.Color.White;
             this.txtDeliveryNote.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDeliveryNote.ClientColor = System.Drawing.Color.White;
             this.txtDeliveryNote.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtDeliveryNote.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtDeliveryNote.DecimalPlace = 0;
@@ -160,6 +162,7 @@
             this.txtDeliveryNote.IntegerPart = 0;
             this.txtDeliveryNote.IsCorrectDate = true;
             this.txtDeliveryNote.isEnterKeyDown = false;
+            this.txtDeliveryNote.isMaxLengthErr = false;
             this.txtDeliveryNote.IsNumber = true;
             this.txtDeliveryNote.IsShop = false;
             this.txtDeliveryNote.Length = 15;
@@ -487,6 +490,7 @@
             this.ScItem.Location = new System.Drawing.Point(934, 99);
             this.ScItem.Margin = new System.Windows.Forms.Padding(0);
             this.ScItem.Name = "ScItem";
+            this.ScItem.NameWidth = 280;
             this.ScItem.SearchEnable = true;
             this.ScItem.Size = new System.Drawing.Size(633, 27);
             this.ScItem.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
@@ -513,6 +517,7 @@
             this.ScSKUCD.Location = new System.Drawing.Point(934, 134);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 280;
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(633, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
@@ -539,6 +544,7 @@
             this.ScJanCD.Location = new System.Drawing.Point(933, 171);
             this.ScJanCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScJanCD.Name = "ScJanCD";
+            this.ScJanCD.NameWidth = 280;
             this.ScJanCD.SearchEnable = true;
             this.ScJanCD.Size = new System.Drawing.Size(633, 27);
             this.ScJanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
@@ -555,6 +561,7 @@
             this.txtProductName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProductName.BackColor = System.Drawing.Color.White;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProductName.ClientColor = System.Drawing.Color.White;
             this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtProductName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProductName.DecimalPlace = 0;
@@ -563,6 +570,7 @@
             this.txtProductName.IntegerPart = 0;
             this.txtProductName.IsCorrectDate = true;
             this.txtProductName.isEnterKeyDown = false;
+            this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
             this.txtProductName.Length = 80;
@@ -590,6 +598,7 @@
             this.ScSupplier.Location = new System.Drawing.Point(1323, 12);
             this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.ScSupplier.Name = "ScSupplier";
+            this.ScSupplier.NameWidth = 280;
             this.ScSupplier.SearchEnable = true;
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -607,6 +616,7 @@
             this.cboSourceWH.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSourceWH.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboSourceWH.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSourceWH.Flag = 0;
             this.cboSourceWH.FormattingEnabled = true;
             this.cboSourceWH.Length = 10;
             this.cboSourceWH.Location = new System.Drawing.Point(86, 6);
@@ -823,6 +833,7 @@
             this.txtArrivalDay1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtArrivalDay1.BackColor = System.Drawing.Color.White;
             this.txtArrivalDay1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArrivalDay1.ClientColor = System.Drawing.Color.White;
             this.txtArrivalDay1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtArrivalDay1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtArrivalDay1.DecimalPlace = 0;
@@ -831,6 +842,7 @@
             this.txtArrivalDay1.IntegerPart = 0;
             this.txtArrivalDay1.IsCorrectDate = true;
             this.txtArrivalDay1.isEnterKeyDown = false;
+            this.txtArrivalDay1.isMaxLengthErr = false;
             this.txtArrivalDay1.IsNumber = true;
             this.txtArrivalDay1.IsShop = false;
             this.txtArrivalDay1.Length = 8;
@@ -849,6 +861,7 @@
             this.txtArrivalDay2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtArrivalDay2.BackColor = System.Drawing.Color.White;
             this.txtArrivalDay2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtArrivalDay2.ClientColor = System.Drawing.Color.White;
             this.txtArrivalDay2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtArrivalDay2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtArrivalDay2.DecimalPlace = 0;
@@ -857,6 +870,7 @@
             this.txtArrivalDay2.IntegerPart = 0;
             this.txtArrivalDay2.IsCorrectDate = true;
             this.txtArrivalDay2.isEnterKeyDown = false;
+            this.txtArrivalDay2.isMaxLengthErr = false;
             this.txtArrivalDay2.IsNumber = true;
             this.txtArrivalDay2.IsShop = false;
             this.txtArrivalDay2.Length = 8;
@@ -876,6 +890,7 @@
             this.txtStockDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStockDate1.BackColor = System.Drawing.Color.White;
             this.txtStockDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStockDate1.ClientColor = System.Drawing.Color.White;
             this.txtStockDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStockDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtStockDate1.DecimalPlace = 0;
@@ -884,6 +899,7 @@
             this.txtStockDate1.IntegerPart = 0;
             this.txtStockDate1.IsCorrectDate = true;
             this.txtStockDate1.isEnterKeyDown = false;
+            this.txtStockDate1.isMaxLengthErr = false;
             this.txtStockDate1.IsNumber = true;
             this.txtStockDate1.IsShop = false;
             this.txtStockDate1.Length = 8;
@@ -902,6 +918,7 @@
             this.txtStockDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtStockDate2.BackColor = System.Drawing.Color.White;
             this.txtStockDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtStockDate2.ClientColor = System.Drawing.Color.White;
             this.txtStockDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtStockDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtStockDate2.DecimalPlace = 0;
@@ -910,6 +927,7 @@
             this.txtStockDate2.IntegerPart = 0;
             this.txtStockDate2.IsCorrectDate = true;
             this.txtStockDate2.isEnterKeyDown = false;
+            this.txtStockDate2.isMaxLengthErr = false;
             this.txtStockDate2.IsNumber = true;
             this.txtStockDate2.IsShop = false;
             this.txtStockDate2.Length = 8;
@@ -929,6 +947,7 @@
             this.txtPurchaseDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate1.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate1.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate1.DecimalPlace = 0;
@@ -937,6 +956,7 @@
             this.txtPurchaseDate1.IntegerPart = 0;
             this.txtPurchaseDate1.IsCorrectDate = true;
             this.txtPurchaseDate1.isEnterKeyDown = false;
+            this.txtPurchaseDate1.isMaxLengthErr = false;
             this.txtPurchaseDate1.IsNumber = true;
             this.txtPurchaseDate1.IsShop = false;
             this.txtPurchaseDate1.Length = 8;
@@ -955,6 +975,7 @@
             this.txtPurchaseDate2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDate2.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDate2.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDate2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDate2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDate2.DecimalPlace = 0;
@@ -963,6 +984,7 @@
             this.txtPurchaseDate2.IntegerPart = 0;
             this.txtPurchaseDate2.IsCorrectDate = true;
             this.txtPurchaseDate2.isEnterKeyDown = false;
+            this.txtPurchaseDate2.isMaxLengthErr = false;
             this.txtPurchaseDate2.IsNumber = true;
             this.txtPurchaseDate2.IsShop = false;
             this.txtPurchaseDate2.Length = 8;

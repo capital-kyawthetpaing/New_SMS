@@ -34,31 +34,34 @@ namespace ShiireShoukaiDetails
             InProgramID = Application.ProductName;
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+            Btn_F10.Text = "出力(F10)";
+            Btn_F10.Enabled = false;
             BindCombo();
             RequiredField();           
-            this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
+           // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
             cboStore.SelectedValue = StoreCD;
         }
 
         /// <summary>
         /// Combo の中であるデータに選択すること
         /// </summary>       
-        private void CboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(!cboStore.SelectedValue.Equals("-1"))
-            {
-                //if (!CboStore_ErrorCheck())
-                //{
-                //    ssdbl.ShowMessage("E141");
-                //    cboStore.Focus();
-                //}
-                if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-                {
-                    ssdbl.ShowMessage("E141");
-                    cboStore.Focus();
-                }
-            }
-        }
+        //private void CboStore_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if(!cboStore.SelectedValue.Equals("-1"))
+        //    {
+        //        //if (!CboStore_ErrorCheck())
+        //        //{
+        //        //    ssdbl.ShowMessage("E141");
+        //        //    cboStore.Focus();
+        //        //}
+        //        if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+        //        {
+        //            ssdbl.ShowMessage("E141");
+        //            cboStore.Focus();
+        //        }
+        //    }
+        //}
+
         private void RequiredField()
         {
             cboStore.Require(true);
@@ -255,6 +258,7 @@ namespace ShiireShoukaiDetails
                 if(dtResult.Rows.Count>0)
                 {
                     dgv_PurchaseDetails.DataSource = dtResult;
+                    Btn_F10.Enabled = true;
                     //dgv_SizeColor.DataSource = dtResult;
                     //dgv_Store.DataSource = dtResult;
                 }
@@ -359,7 +363,7 @@ namespace ShiireShoukaiDetails
 
             if(!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
             {
-               if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
+               if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1)
                {
                   ssdbl.ShowMessage("E104");
                   txtOrderDate2.Focus();
@@ -396,11 +400,10 @@ namespace ShiireShoukaiDetails
 
             if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
             {
-                ssdbl.ShowMessage("E141");
+                bbl.ShowMessage("E141");
                 cboStore.Focus();
                 return false;
             }
-
             return true;
         }
 
@@ -455,6 +458,18 @@ namespace ShiireShoukaiDetails
         {
             scMakerCD.Value1 = "1";//仕入先区分：1
             scMakerCD.ChangeDate = txtPurchaseDate2.Text;
+        }
+
+        private void cboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+                {
+                    bbl.ShowMessage("E141");
+                    cboStore.Focus();
+                }
+            }
         }
     }
 }

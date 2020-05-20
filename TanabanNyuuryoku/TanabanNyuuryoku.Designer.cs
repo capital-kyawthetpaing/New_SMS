@@ -67,6 +67,10 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
             // panelDetail
             // 
             this.panelDetail.Controls.Add(this.dgvTanaban);
@@ -303,6 +307,7 @@
             this.ScStorage.ChangeDateWidth = 100;
             this.ScStorage.Code = "";
             this.ScStorage.CodeWidth = 100;
+            this.ScStorage.CodeWidth1 = 100;
             this.ScStorage.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStorage.DataCheck = false;
             this.ScStorage.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -312,6 +317,7 @@
             this.ScStorage.Location = new System.Drawing.Point(958, 83);
             this.ScStorage.Margin = new System.Windows.Forms.Padding(0);
             this.ScStorage.Name = "ScStorage";
+            this.ScStorage.NameWidth = 600;
             this.ScStorage.SearchEnable = true;
             this.ScStorage.Size = new System.Drawing.Size(133, 28);
             this.ScStorage.Stype = Search.CKM_SearchControl.SearchType.棚番号;

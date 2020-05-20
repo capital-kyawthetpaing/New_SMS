@@ -42,6 +42,10 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
             // panalDetail
             // 
             this.panalDetail.Controls.Add(this.cboStore);

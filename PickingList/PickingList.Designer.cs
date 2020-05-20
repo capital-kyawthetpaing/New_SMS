@@ -62,6 +62,10 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
             // ckM_Label2
             // 
             this.ckM_Label2.AutoSize = true;
@@ -170,6 +174,7 @@
             this.txtDateTo1.IntegerPart = 0;
             this.txtDateTo1.IsCorrectDate = true;
             this.txtDateTo1.isEnterKeyDown = false;
+            this.txtDateTo1.isMaxLengthErr = false;
             this.txtDateTo1.IsNumber = true;
             this.txtDateTo1.IsShop = false;
             this.txtDateTo1.Length = 10;
@@ -181,6 +186,7 @@
             this.txtDateTo1.TabIndex = 4;
             this.txtDateTo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateTo1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateTo1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDateTo1_KeyDown);
             // 
             // txtDateFrom1
             // 
@@ -196,6 +202,7 @@
             this.txtDateFrom1.IntegerPart = 0;
             this.txtDateFrom1.IsCorrectDate = true;
             this.txtDateFrom1.isEnterKeyDown = false;
+            this.txtDateFrom1.isMaxLengthErr = false;
             this.txtDateFrom1.IsNumber = true;
             this.txtDateFrom1.IsShop = false;
             this.txtDateFrom1.Length = 10;
@@ -222,6 +229,7 @@
             this.txtShipmentDate.IntegerPart = 0;
             this.txtShipmentDate.IsCorrectDate = true;
             this.txtShipmentDate.isEnterKeyDown = false;
+            this.txtShipmentDate.isMaxLengthErr = false;
             this.txtShipmentDate.IsNumber = true;
             this.txtShipmentDate.IsShop = false;
             this.txtShipmentDate.Length = 10;
@@ -258,6 +266,7 @@
             this.ScPickingNo1.ChangeDateWidth = 100;
             this.ScPickingNo1.Code = "";
             this.ScPickingNo1.CodeWidth = 100;
+            this.ScPickingNo1.CodeWidth1 = 100;
             this.ScPickingNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPickingNo1.DataCheck = true;
             this.ScPickingNo1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -267,6 +276,7 @@
             this.ScPickingNo1.Location = new System.Drawing.Point(7, 8);
             this.ScPickingNo1.Margin = new System.Windows.Forms.Padding(0);
             this.ScPickingNo1.Name = "ScPickingNo1";
+            this.ScPickingNo1.NameWidth = 600;
             this.ScPickingNo1.SearchEnable = true;
             this.ScPickingNo1.Size = new System.Drawing.Size(133, 28);
             this.ScPickingNo1.Stype = Search.CKM_SearchControl.SearchType.ピッキング番号;
@@ -302,6 +312,7 @@
             this.ScPickingNo2.ChangeDateWidth = 100;
             this.ScPickingNo2.Code = "";
             this.ScPickingNo2.CodeWidth = 100;
+            this.ScPickingNo2.CodeWidth1 = 100;
             this.ScPickingNo2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPickingNo2.DataCheck = true;
             this.ScPickingNo2.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -311,6 +322,7 @@
             this.ScPickingNo2.Location = new System.Drawing.Point(12, 6);
             this.ScPickingNo2.Margin = new System.Windows.Forms.Padding(0);
             this.ScPickingNo2.Name = "ScPickingNo2";
+            this.ScPickingNo2.NameWidth = 600;
             this.ScPickingNo2.SearchEnable = true;
             this.ScPickingNo2.Size = new System.Drawing.Size(133, 27);
             this.ScPickingNo2.Stype = Search.CKM_SearchControl.SearchType.ピッキング番号;
@@ -353,6 +365,7 @@
             this.txtDateTo2.IntegerPart = 0;
             this.txtDateTo2.IsCorrectDate = true;
             this.txtDateTo2.isEnterKeyDown = false;
+            this.txtDateTo2.isMaxLengthErr = false;
             this.txtDateTo2.IsNumber = true;
             this.txtDateTo2.IsShop = false;
             this.txtDateTo2.Length = 10;
@@ -364,6 +377,7 @@
             this.txtDateTo2.TabIndex = 10;
             this.txtDateTo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDateTo2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDateTo2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDateTo2_KeyDown);
             // 
             // txtDateFrom2
             // 
@@ -379,6 +393,7 @@
             this.txtDateFrom2.IntegerPart = 0;
             this.txtDateFrom2.IsCorrectDate = true;
             this.txtDateFrom2.isEnterKeyDown = false;
+            this.txtDateFrom2.isMaxLengthErr = false;
             this.txtDateFrom2.IsNumber = true;
             this.txtDateFrom2.IsShop = false;
             this.txtDateFrom2.Length = 10;
