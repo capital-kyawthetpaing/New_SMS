@@ -11,9 +11,6 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
-using System.IO;
-using System.Diagnostics;
-using ClosedXML.Excel;
 
 namespace MasterTouroku_ShiireKakeritsu
 {
@@ -843,40 +840,6 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain.Columns["ChangeDate"].ColumnName = "改定日";
             dtMain.Columns["Rate"].ColumnName = "掛率";
             return dtMain;
-        }
-        private void ckM_Button1_Click(object sender, EventArgs e)
-        {
-            moe = new M_OrderRate_Entity();
-            moe = GetSearchInfo();
-            DataTable dtmain = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dtMain.Rows.Count > 0)
-            {
-                DataTable dtExport = dtMain;
-                dtExport = ChangeDataColumnName(dtMain);
-                string folderPath = "C:\\MasterTouroku_ShiireKakeritsu\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Filter = "Excel Files|*.xlsx;";
-                savedialog.Title = "Save";
-                savedialog.FileName = "仕入先別発注掛率マスタ";
-                savedialog.InitialDirectory = folderPath;
-                savedialog.RestoreDirectory = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-                    {
-                        using (XLWorkbook wb = new XLWorkbook())
-                        {
-                            wb.Worksheets.Add(dtExport,"Result");
-                            wb.SaveAs(savedialog.FileName);
-                        }
-                    }
-                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                }
-            }
         }
     }
 }
