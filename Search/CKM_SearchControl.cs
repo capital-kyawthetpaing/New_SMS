@@ -1522,7 +1522,7 @@ namespace Search
                 case SearchType.JANMulti:
                     using (Search_Product frmJanCD = new Search_Product(changedate))
                     {
-                        frmJanCD.Mode = "4";
+                        frmJanCD.Mode = "5";
                         frmJanCD.JANCD = txtCode.Text;
                         frmJanCD.ShowDialog();
 

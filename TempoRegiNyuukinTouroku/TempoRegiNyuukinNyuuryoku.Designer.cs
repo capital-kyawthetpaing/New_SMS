@@ -61,7 +61,7 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1443, 729);
+            this.panelDetail.Size = new System.Drawing.Size(1713, 833);
             this.panelDetail.TabIndex = 0;
             // 
             // chkAdvanceFlg
@@ -213,7 +213,7 @@
             this.cboDenominationName.MaxLength = 20;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(270, 46);
+            this.cboDenominationName.Size = new System.Drawing.Size(250, 46);
             this.cboDenominationName.TabIndex = 1;
             // 
             // txtPayment
@@ -238,7 +238,7 @@
             this.txtPayment.MaxLength = 11;
             this.txtPayment.MoveNext = true;
             this.txtPayment.Name = "txtPayment";
-            this.txtPayment.Size = new System.Drawing.Size(200, 42);
+            this.txtPayment.Size = new System.Drawing.Size(250, 42);
             this.txtPayment.TabIndex = 0;
             this.txtPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPayment.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -253,7 +253,7 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(121, 389);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 10;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panelDetail);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TempoRegiNyuukinNyuuryoku";
