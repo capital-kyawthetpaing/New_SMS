@@ -349,8 +349,12 @@ namespace TanaireList
 
         public void Clear()
         {
+
             txtStartDate.Text = string.Empty;
             txtEndDate.Text = todayDate;
+
+            BindData();
+
             chkUnregistered.Checked = true;
             chkRegistered.Checked = false;
             chkLocationAri.Checked = true;
@@ -383,18 +387,22 @@ namespace TanaireList
 
         private void txtEndDate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtStartDate.Text))
-            {
-                DateTime dt1 = Convert.ToDateTime(txtStartDate.Text);
-                DateTime dt2 = Convert.ToDateTime(txtEndDate.Text);
 
-                if (dt1 > dt2)
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtStartDate.Text))
                 {
-                    tnlbl.ShowMessage("E104");
-                    txtStartDate.Focus();
+                    DateTime dt1 = Convert.ToDateTime(txtStartDate.Text);
+                    DateTime dt2 = Convert.ToDateTime(txtEndDate.Text);
+
+                    if (dt1 > dt2)
+                    {
+                        tnlbl.ShowMessage("E104");
+                        txtStartDate.Focus();
+                    }
+                    else
+                        cboSouko.Focus();
                 }
-                else
-                    cboSouko.Focus();
             }
         }
     }
