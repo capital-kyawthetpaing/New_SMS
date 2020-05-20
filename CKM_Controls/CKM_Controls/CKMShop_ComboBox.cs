@@ -189,6 +189,7 @@ namespace CKM_Controls
 
         public CKMShop_ComboBox()
         {
+
             bbl = new Base_BL();
             //AutoCompleteMode = AutoCompleteMode.Append;
             //AutoCompleteSource = AutoCompleteSource.ListItems;
@@ -202,6 +203,7 @@ namespace CKM_Controls
             //  Location = new Point(Location.X, Location.Y - 10);
             DrawItem += new DrawItemEventHandler(EnableDisplayCombo_DrawItem);
           //  UpdateData = DataSource;
+
 
         }
         public StringFormat sf;
@@ -223,6 +225,7 @@ namespace CKM_Controls
            // r.Y = r.Y+4;
             if (e.Index >= 0)
             {
+
 
                 //sf.Alignment = StringAlignment.Center;
                 string label = string.Empty; ;
