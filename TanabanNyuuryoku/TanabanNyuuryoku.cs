@@ -45,7 +45,7 @@ namespace TanabanNyuuryoku
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-            F11Visible = false;
+            //F11Visible = false;
 
             txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
