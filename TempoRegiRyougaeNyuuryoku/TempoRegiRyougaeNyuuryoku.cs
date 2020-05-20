@@ -53,15 +53,13 @@ namespace TempoRegiRyougaeNyuuryoku
         public void displayData()
         {
             int moneyammount = countmoney * moneytype;
-            //ExchangeCount.Text = countmoney.ToString("#,##0");
             //string aa = countmoney.ToString("#,##0");
             //ExchangeCount.Text = aa.Trim();
-            countmoney = Convert.ToInt32(ExchangeCount.Text.Trim());
+           // countmoney = Convert.ToInt32(ExchangeCount.Text.Replace(",",""));
             ExchangeCount.Text = countmoney.ToString("#,##0");
             string moneysperate = moneyammount.ToString("#,##0");
             ExchangeLabel.Text = moneysperate;
             if (ExchangeLabel.Text != ExchangeMoney.Text)
-
             {
                 trrnbl.ShowMessage("E181");
                 ExchangeCount.Focus();
@@ -108,7 +106,7 @@ namespace TempoRegiRyougaeNyuuryoku
                 IsIssued = "0",
                 ExchangeMoney = ExchangeMoney.Text,
                 ExchangeDenomination = ExchangeDenomination.SelectedValue.ToString(),
-                ExchangeCount = ExchangeCount.Text,
+                ExchangeCount = ExchangeCount.Text.Replace(",", ""),
                 Remark = Remark.Text,
                 StoreCD = storeCD,
                 Operator = InOperatorCD,
@@ -224,14 +222,12 @@ namespace TempoRegiRyougaeNyuuryoku
                     trrnbl.ShowMessage("E102");
                     ExchangeCount.Focus();
                     ExchangeCount.MoveNext = false;
-                    
                 }
                 else
                 {
-                    ExchangeCount.Text = countmoney.ToString("#,##0");
-                    countmoney = Convert.ToInt32(ExchangeCount.Text.Trim());
+                    //ExchangeCount.Text = countmoney.ToString("#,##0");
+                    countmoney = Convert.ToInt32(ExchangeCount.Text.Replace(",", "").ToString());
                 }
-
                 if (ExchangeDenomination.SelectedValue.ToString()=="-1")
                 {
 
@@ -250,8 +246,6 @@ namespace TempoRegiRyougaeNyuuryoku
                 valid = true;
                 displayData();
             }
-
-           
         }
         private void ExchangeDenomination_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -273,7 +267,8 @@ namespace TempoRegiRyougaeNyuuryoku
                     }
                     else
                     {
-                        countmoney = Convert.ToInt32(ExchangeCount.Text);
+                        countmoney = Convert.ToInt32(ExchangeCount.Text.Replace(",", "").ToString());
+                        //countmoney = Convert.ToInt32(ExchangeCount.Text);
                     }
                     combovalue = ExchangeDenomination.SelectedValue.ToString();
                     moneytype = Convert.ToInt32(combovalue);
