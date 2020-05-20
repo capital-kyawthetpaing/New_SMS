@@ -243,6 +243,11 @@ namespace TempoRegiNyuukinTouroku
             string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode ;//parameter
             System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
         }
+
+        private void panelDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
