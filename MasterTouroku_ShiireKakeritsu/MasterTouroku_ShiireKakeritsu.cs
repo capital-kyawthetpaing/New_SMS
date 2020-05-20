@@ -831,19 +831,19 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        //protected DataTable ChangeDataColumnName(DataTable dtMain)
-        //{
-        //    dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
-        //    dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
-        //    dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
-        //    dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
-        //    dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
-        //    dtMain.Columns["LastYearTerm"].ColumnName = "年度";
-        //    dtMain.Columns["LastSeason"].ColumnName = "シーズン";
-        //    dtMain.Columns["ChangeDate"].ColumnName = "改定日";
-        //    dtMain.Columns["Rate"].ColumnName = "掛率";
-        //    return dtMain;
-        //}
+        protected DataTable ChangeDataColumnName(DataTable dtMain)
+        {
+            dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
+            dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
+            dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
+            dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
+            dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
+            dtMain.Columns["LastYearTerm"].ColumnName = "年度";
+            dtMain.Columns["LastSeason"].ColumnName = "シーズン";
+            dtMain.Columns["ChangeDate"].ColumnName = "改定日";
+            dtMain.Columns["Rate"].ColumnName = "掛率";
+            return dtMain;
+        }
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
             moe = new M_OrderRate_Entity();
@@ -851,8 +851,8 @@ namespace MasterTouroku_ShiireKakeritsu
             DataTable dtmain = mskbl.M_ShiireKakeritsu_Select(moe);
             if (dtMain.Rows.Count > 0)
             {
-                DataTable dtExport = dt;
-                //dtExport = ChangeDataColumnName(dtMain);
+                DataTable dtExport = dtMain;
+                dtExport = ChangeDataColumnName(dtMain);
                 string folderPath = "C:\\MasterTouroku_ShiireKakeritsu\\";
                 if (!Directory.Exists(folderPath))
                 {
@@ -870,7 +870,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         using (XLWorkbook wb = new XLWorkbook())
                         {
-                            wb.Worksheets.Add(dtMain,"Result");
+                            wb.Worksheets.Add(dtExport,"Result");
                             wb.SaveAs(savedialog.FileName);
                         }
                     }
