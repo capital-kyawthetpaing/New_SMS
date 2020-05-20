@@ -154,7 +154,7 @@
             this.cboDenominationName.MaxLength = 10;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(220, 46);
+            this.cboDenominationName.Size = new System.Drawing.Size(200, 46);
             this.cboDenominationName.TabIndex = 5;
             // 
             // TempoRegiShiharaiNyuuryoku

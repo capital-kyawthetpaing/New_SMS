@@ -45,7 +45,7 @@ namespace TanabanNyuuryoku
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-            F11Visible = false;
+            //F11Visible = false;
 
             txtArrivalDateFrom.Text = DateTime.Now.ToString("yyyy/MM/dd");
             txtArrivalDateTo.Text = DateTime.Now.ToString("yyyy/MM/dd");
@@ -89,9 +89,14 @@ namespace TanabanNyuuryoku
                 case 2:
                 case 3:
                 case 4:
-                case 5:                 
+                case 5:
+                    break;
                 case 6:
-                    Clear();
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        Clear();
+                        //ScVendor.SetFocus(1);
+                    }                  
                     break;
                 case 11:
                     F11();
@@ -138,7 +143,7 @@ namespace TanabanNyuuryoku
              mle.Register = chkRegister.Checked ? "1" : "0";
              mle.ProcessMode = ModeText;
              mle.Operator = InOperatorCD;
-            mle.ProgramID = InProgramID;
+             mle.ProgramID = InProgramID;
              mle.Key = cboWarehouse.SelectedValue.ToString();
              mle.PC = InPcID;
         return mle;

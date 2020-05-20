@@ -143,7 +143,7 @@
             this.ExchangeCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ExchangeCount.ClientColor = System.Drawing.Color.White;
             this.ExchangeCount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ExchangeCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ExchangeCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ExchangeCount.DecimalPlace = 0;
             this.ExchangeCount.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.ExchangeCount.IntegerPart = 4;
@@ -159,6 +159,7 @@
             this.ExchangeCount.Name = "ExchangeCount";
             this.ExchangeCount.Size = new System.Drawing.Size(120, 42);
             this.ExchangeCount.TabIndex = 3;
+            this.ExchangeCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ExchangeCount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.ExchangeCount.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ExchangeCount_KeyDown);
             // 
@@ -241,7 +242,7 @@
             this.ExchangeDenomination.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.ExchangeDenomination.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.ExchangeDenomination.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ExchangeDenomination.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F);
+            this.ExchangeDenomination.Font = new System.Drawing.Font("Meiryo UI", 26F);
             this.ExchangeDenomination.FontSize_ = 26F;
             this.ExchangeDenomination.FormattingEnabled = true;
             this.ExchangeDenomination.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
