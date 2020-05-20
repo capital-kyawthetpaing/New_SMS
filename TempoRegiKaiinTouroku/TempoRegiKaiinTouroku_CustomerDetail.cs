@@ -79,7 +79,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 return false;
             }
 
-            if(!Checkwidth(new Control[] { txtTelNo1,txtTelNo2,txtTelNo3, txthomeTelNo1,txthomeTelNo2,txthomeTelNo3}))
+            if(!Checkwidth(new Control[] { txtTelNo1,txtTelNo2,txtTelNo3, txthomeTelNo1,txthomeTelNo2,txthomeTelNo3,txtZipCode1,txtZipCode2}))
             {
                 return false;
             }
