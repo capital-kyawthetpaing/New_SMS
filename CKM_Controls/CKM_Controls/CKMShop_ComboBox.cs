@@ -124,7 +124,7 @@ namespace CKM_Controls
         }
 
 
-        public Align Alignment { get; set; }
+        public Align Alignment { get; set; } = Align.left;
         public enum Align
         {
             //Right = 0,
@@ -190,31 +190,37 @@ namespace CKM_Controls
         public CKMShop_ComboBox()
         {
             bbl = new Base_BL();
-            AutoCompleteMode = AutoCompleteMode.Append;
-            AutoCompleteSource = AutoCompleteSource.ListItems;
-            DrawMode = DrawMode.OwnerDrawFixed;
+            //AutoCompleteMode = AutoCompleteMode.Append;
+            //AutoCompleteSource = AutoCompleteSource.ListItems;
+            DrawMode = DrawMode.Normal;
+            //this.Text = "123455";
             IsFocus = false;
+           // Margin =  new Padding(Margin.Left+10,Margin.Top,Margin.Right,Margin.Bottom);
             sf = new StringFormat();
-            sf.Alignment = sa;
+            sf.Alignment = StringAlignment.Near;
+            sf.LineAlignment = StringAlignment.Near;
+            //  Location = new Point(Location.X, Location.Y - 10);
             DrawItem += new DrawItemEventHandler(EnableDisplayCombo_DrawItem);
           //  UpdateData = DataSource;
 
         }
         public StringFormat sf;
         public StringAlignment sa;
-        protected override void OnDrawItem(DrawItemEventArgs e)
-        {
-
-            base.OnDrawItem(e);
-        }
+       
 
         //sf.LineAlignment = StringAlignment.Center;
 
-        public void EnableDisplayCombo_DrawItem(object sender, DrawItemEventArgs e)
+        protected override void OnPaint(PaintEventArgs e)
         {
+
+            base.OnPaint(e);
+        }
+        public void EnableDisplayCombo_DrawItem(object sender, DrawItemEventArgs e)  //PTK Added
+        {
+           
             System.Drawing.Graphics g = e.Graphics;
             Rectangle r = e.Bounds;
-
+           // r.Y = r.Y+4;
             if (e.Index >= 0)
             {
 
@@ -226,22 +232,22 @@ namespace CKM_Controls
                 // This is how we draw a disabled control
                 if (e.State == (DrawItemState.Disabled | DrawItemState.NoAccelerator | DrawItemState.NoFocusRect | DrawItemState.ComboBoxEdit))
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(SystemColors.Control), r);
-                    g.DrawString(label, e.Font, Brushes.Black, r, sf);
+                    e.Graphics.FillRectangle(new SolidBrush(SystemColors.Control), r); TextRenderer.DrawText(e.Graphics, label, e.Font, new Rectangle(e.Bounds.X, e.Bounds.Y - 4, e.Bounds.Width, e.Bounds.Height), ForeColor, TextFormatFlags.Left | TextFormatFlags.Left);
+                    // g.DrawString(label, e.Font, Brushes.Black, r, sf);
                     e.DrawFocusRectangle();
                 }
                 // This is how we draw the items in an enabled control that aren't in focus
                 else if (e.State == (DrawItemState.NoAccelerator | DrawItemState.NoFocusRect))
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.White), r);
-                    g.DrawString(label, e.Font, Brushes.Black, r, sf);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), r); TextRenderer.DrawText(e.Graphics, label, e.Font, new Rectangle(e.Bounds.X, e.Bounds.Y - 4, e.Bounds.Width, e.Bounds.Height), ForeColor, TextFormatFlags.Left | TextFormatFlags.Left);
+                    // g.DrawString(label, e.Font, Brushes.Black, r, sf);
                     e.DrawFocusRectangle();
                 }
                 // This is how we draw the focused items
                 else if (e.State == (DrawItemState.NoAccelerator))
                 {
-                    e.Graphics.FillRectangle(new SolidBrush(Color.White), r);
-                    g.DrawString(label, e.Font, Brushes.Black, r, sf);
+                    e.Graphics.FillRectangle(new SolidBrush(Color.White), r); TextRenderer.DrawText(e.Graphics, label, e.Font, new Rectangle(e.Bounds.X, e.Bounds.Y - 4, e.Bounds.Width, e.Bounds.Height), ForeColor, TextFormatFlags.Left | TextFormatFlags.Left);
+                    // g.DrawString(label, e.Font, Brushes.Black, r, sf);
                     e.DrawFocusRectangle();
                 }
                 else
@@ -255,8 +261,11 @@ namespace CKM_Controls
                         e.Graphics.FillRectangle(new SolidBrush(Color.FromArgb(226, 239, 218)), r);
 
                     }
-                    g.DrawString(label, e.Font, Brushes.Black, r, sf);
+                  // g.DrawString(label, e.Font, Brushes.Black,r , sf);
+
+                    TextRenderer.DrawText(e.Graphics, label, e.Font, new Rectangle(e.Bounds.X, e.Bounds.Y-4,e.Bounds.Width,e.Bounds.Height), ForeColor, TextFormatFlags.Left | TextFormatFlags.Left);
                     e.DrawFocusRectangle();
+
                     this.Cursor = Cursors.Hand;
                 }
             }

@@ -63,13 +63,18 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1443, 729);
             this.panelDetail.TabIndex = 0;
+            this.panelDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.panelDetail_Paint);
             // 
             // chkAdvanceFlg
             // 
+            this.chkAdvanceFlg.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAdvanceFlg.ForeColor = System.Drawing.Color.Black;
+            this.chkAdvanceFlg.IsattachedCaption = true;
             this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 336);
             this.chkAdvanceFlg.Name = "chkAdvanceFlg";
-            this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 30);
+            this.chkAdvanceFlg.Size = new System.Drawing.Size(35, 35);
             this.chkAdvanceFlg.TabIndex = 4;
+            this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // ckmShop_Label3
@@ -80,7 +85,7 @@
             this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label3.Location = new System.Drawing.Point(280, 333);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(286, 333);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(755, 35);
             this.ckmShop_Label3.TabIndex = 9;
@@ -188,28 +193,27 @@
             // 
             // cboDenominationName
             // 
-            this.cboDenominationName.Alignment = CKM_Controls.CKMShop_ComboBox.Align.right;
+            this.cboDenominationName.Alignment = CKM_Controls.CKMShop_ComboBox.Align.left;
             this.cboDenominationName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboDenominationName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboDenominationName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.cboDenominationName.Cbo_Type = CKM_Controls.CKMShop_ComboBox.CboType.金種名;
-            this.cboDenominationName.cboalign = CKM_Controls.CKMShop_ComboBox.Align.right;
-            this.cboDenominationName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
-            this.cboDenominationName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半角;
-            this.cboDenominationName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboDenominationName.cboalign = CKM_Controls.CKMShop_ComboBox.Align.left;
+            this.cboDenominationName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.left;
+            this.cboDenominationName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
             this.cboDenominationName.Font = new System.Drawing.Font("Meiryo UI", 26F);
             this.cboDenominationName.FontSize_ = 26F;
             this.cboDenominationName.FormattingEnabled = true;
             this.cboDenominationName.IntegralHeight = false;
-            this.cboDenominationName.ItemHeight = 40;
-            this.cboDenominationName.ItemHeight_ = 40;
+            this.cboDenominationName.ItemHeight = 44;
+            this.cboDenominationName.ItemHeight_ = 100;
             this.cboDenominationName.Length = 20;
             this.cboDenominationName.Location = new System.Drawing.Point(246, 210);
             this.cboDenominationName.MaxItem = 8;
-            this.cboDenominationName.MaxLength = 20;
+            this.cboDenominationName.MaxLength = 10;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(270, 46);
+            this.cboDenominationName.Size = new System.Drawing.Size(250, 52);
             this.cboDenominationName.TabIndex = 1;
             // 
             // txtPayment
@@ -249,7 +253,7 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(121, 389);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label5.TabIndex = 10;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
