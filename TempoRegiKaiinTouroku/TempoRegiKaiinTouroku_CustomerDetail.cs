@@ -79,6 +79,11 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 return false;
             }
 
+            if(!Checkwidth(new Control[] { txtTelNo1,txtTelNo2,txtTelNo3, txthomeTelNo1,txthomeTelNo2,txthomeTelNo3}))
+            {
+                return false;
+            }
+
             if (!string.IsNullOrWhiteSpace(txtTelNo1.Text) ||
                     !string.IsNullOrWhiteSpace(txtTelNo2.Text) ||
                     !string.IsNullOrWhiteSpace(txtTelNo3.Text)
@@ -202,8 +207,8 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 StroeCD=StoreCD,
                 FirstName = txtFirstName.Text,
                 LastName = txtLastName.Text,
-                CustomerName = txtFirstName.Text + txtLastName.Text,
-                LongName1 = txtFirstName.Text + txtLastName.Text,
+                CustomerName =  txtLastName.Text+ txtFirstName.Text ,
+                LongName1 =   txtLastName.Text+ txtFirstName.Text,
                 KanaName = txtKanaName.Text,
                 StoreKBN = "2",
                 CustomerKBN = "1",
@@ -419,5 +424,26 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 }
             }
         }
+        protected bool Checkwidth(Control[] ctrl, TextBox txt = null)
+        {
+            foreach (Control c in ctrl)
+            {
+                if (c is CKM_TextBox)
+                {
+                    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(Text);
+                    int onebyteCount = System.Text.ASCIIEncoding.ASCII.GetByteCount(Text);
+                    int maxlength = ((CKM_TextBox)c).MaxLength;
+                    string str1 = Encoding.GetEncoding(932).GetByteCount(((CKM_TextBox)c).Text).ToString();
+                    if (Convert.ToInt32(str1) > maxlength )
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        ((CKM_TextBox)c).Focus();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        
     }
 }
