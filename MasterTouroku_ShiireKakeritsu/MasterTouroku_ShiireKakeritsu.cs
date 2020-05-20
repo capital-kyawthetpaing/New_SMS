@@ -11,9 +11,6 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
-using System.IO;
-using System.Diagnostics;
-using ClosedXML.Excel;
 
 namespace MasterTouroku_ShiireKakeritsu
 {
@@ -828,53 +825,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         txtRate1.Text = txtRate1.Text + ".00";
                     }
-                }
-            }
-        }
-        //protected DataTable ChangeDataColumnName(DataTable dtMain)
-        //{
-        //    dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
-        //    dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
-        //    dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
-        //    dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
-        //    dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
-        //    dtMain.Columns["LastYearTerm"].ColumnName = "年度";
-        //    dtMain.Columns["LastSeason"].ColumnName = "シーズン";
-        //    dtMain.Columns["ChangeDate"].ColumnName = "改定日";
-        //    dtMain.Columns["Rate"].ColumnName = "掛率";
-        //    return dtMain;
-        //}
-        private void ckM_Button1_Click(object sender, EventArgs e)
-        {
-            moe = new M_OrderRate_Entity();
-            moe = GetSearchInfo();
-            DataTable dtmain = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dtMain.Rows.Count > 0)
-            {
-                DataTable dtExport = dt;
-                //dtExport = ChangeDataColumnName(dtMain);
-                string folderPath = "C:\\MasterTouroku_ShiireKakeritsu\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Filter = "Excel Files|*.xlsx;";
-                savedialog.Title = "Save";
-                savedialog.FileName = "仕入先別発注掛率マスタ";
-                savedialog.InitialDirectory = folderPath;
-                savedialog.RestoreDirectory = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-                    {
-                        using (XLWorkbook wb = new XLWorkbook())
-                        {
-                            wb.Worksheets.Add(dtMain,"Result");
-                            wb.SaveAs(savedialog.FileName);
-                        }
-                    }
-                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
                 }
             }
         }
