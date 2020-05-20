@@ -167,7 +167,7 @@ namespace Search
         public int NameWidth
         {
             get => lblName.Width;
-            set=> lblName.Width = value;
+            set => lblName.Width = value;
 
         }
 
@@ -1079,6 +1079,7 @@ namespace Search
                             txtCode.Text = frmJuchuu.JuchuuNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                             CheckBasedFormPanel(); //Added by PTK
+
                         }
                     }
                     break;

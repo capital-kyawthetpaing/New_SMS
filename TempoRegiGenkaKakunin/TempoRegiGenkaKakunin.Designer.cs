@@ -217,9 +217,12 @@
             // 
             // chkColorSize
             // 
-            this.chkColorSize.Location = new System.Drawing.Point(357, 95);
+            this.chkColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkColorSize.ForeColor = System.Drawing.Color.Black;
+            this.chkColorSize.IsattachedCaption = false;
+            this.chkColorSize.Location = new System.Drawing.Point(357, 94);
             this.chkColorSize.Name = "chkColorSize";
-            this.chkColorSize.Size = new System.Drawing.Size(30, 30);
+            this.chkColorSize.Size = new System.Drawing.Size(35, 35);
             this.chkColorSize.TabIndex = 1;
             this.chkColorSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkColorSize.UseVisualStyleBackColor = true;
@@ -384,7 +387,7 @@
             this.lblColorSize.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(421, 91);
+            this.lblColorSize.Location = new System.Drawing.Point(417, 89);
             this.lblColorSize.Name = "lblColorSize";
             this.lblColorSize.Size = new System.Drawing.Size(550, 35);
             this.lblColorSize.TabIndex = 0;
@@ -449,7 +452,7 @@
             this.btnInquiry.Location = new System.Drawing.Point(1718, 35);
             this.btnInquiry.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquiry.Name = "btnInquiry";
-            this.btnInquiry.Size = new System.Drawing.Size(140, 42);
+            this.btnInquiry.Size = new System.Drawing.Size(140, 43);
             this.btnInquiry.TabIndex = 2;
             this.btnInquiry.Text = "照会";
             this.btnInquiry.UseVisualStyleBackColor = false;

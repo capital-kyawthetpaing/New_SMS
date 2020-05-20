@@ -54,6 +54,9 @@ namespace TempoRegiRyougaeNyuuryoku
         {
             int moneyammount = countmoney * moneytype;
             string moneysperate = moneyammount.ToString("#,##0");
+            //ExchangeCount.Text = countmoney.ToString("#,##0");
+            string aa= countmoney.ToString("#,##0");
+            ExchangeCount.Text = aa;
             ExchangeLabel.Text = moneysperate;
             if (ExchangeLabel.Text != ExchangeMoney.Text)
             {

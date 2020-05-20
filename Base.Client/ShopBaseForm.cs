@@ -377,10 +377,10 @@ namespace Base.Client
                 Button btn = (Button)sender;
                 if (!string.IsNullOrWhiteSpace(btn.Text))
                 {
-                    if(ShowCloseMessage)
+                    //if(ShowCloseMessage)
                         ButtonFunction(btn.Tag.ToString());
-                    else
-                        EndSec();
+                    //else
+                    //    EndSec();
                 }
                   
             }
@@ -399,8 +399,9 @@ namespace Base.Client
             // 終了ファンクション
             if (Index + 1 == FuncEnd)
             {
-
-                if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                if(!ShowCloseMessage)
+                    EndSec();
+                else if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                     EndSec();
                 else
                 {
