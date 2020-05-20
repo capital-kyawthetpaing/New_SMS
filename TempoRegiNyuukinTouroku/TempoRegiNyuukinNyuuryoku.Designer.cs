@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.chkAdvanceFlg = new CKM_Controls.CKMShop_CheckBox();
             this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.lblCustomerName = new CKM_Controls.CKMShop_Label();
@@ -41,6 +40,7 @@
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.chkAdvanceFlg = new CKM_Controls.CKMShop_CheckBox();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,18 +63,6 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1443, 729);
             this.panelDetail.TabIndex = 0;
-            // 
-            // chkAdvanceFlg
-            // 
-            this.chkAdvanceFlg.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.chkAdvanceFlg.ForeColor = System.Drawing.Color.Black;
-            this.chkAdvanceFlg.IsattachedCaption = true;
-            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 336);
-            this.chkAdvanceFlg.Name = "chkAdvanceFlg";
-            this.chkAdvanceFlg.Size = new System.Drawing.Size(30, 35);
-            this.chkAdvanceFlg.TabIndex = 4;
-            this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // ckmShop_Label3
             // 
@@ -163,7 +151,7 @@
             this.btnCustomerCD.Location = new System.Drawing.Point(66, 275);
             this.btnCustomerCD.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerCD.Name = "btnCustomerCD";
-            this.btnCustomerCD.Size = new System.Drawing.Size(180, 43);
+            this.btnCustomerCD.Size = new System.Drawing.Size(180, 42);
             this.btnCustomerCD.TabIndex = 2;
             this.btnCustomerCD.Text = "会員番号";
             this.btnCustomerCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -253,7 +241,7 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(121, 389);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 10;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -290,6 +278,18 @@
             this.ckmShop_Label1.Text = "入金額";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkAdvanceFlg
+            // 
+            this.chkAdvanceFlg.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAdvanceFlg.ForeColor = System.Drawing.Color.Black;
+            this.chkAdvanceFlg.IsattachedCaption = false;
+            this.chkAdvanceFlg.Location = new System.Drawing.Point(246, 335);
+            this.chkAdvanceFlg.Name = "chkAdvanceFlg";
+            this.chkAdvanceFlg.Size = new System.Drawing.Size(35, 35);
+            this.chkAdvanceFlg.TabIndex = 4;
+            this.chkAdvanceFlg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAdvanceFlg.UseVisualStyleBackColor = true;
             // 
             // TempoRegiNyuukinNyuuryoku
             // 
