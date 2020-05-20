@@ -3164,9 +3164,13 @@ namespace HacchuuNyuuryoku
                             mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
-
-                            CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, w_Row, false, true);
-
+                            
+                            if (CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, w_Row, false, true) == false)
+                            {
+                                //Focusセット処理
+                                ERR_FOCUS_GRID_SUB((int)ClsGridHacchuu.ColNO.JanCD, w_Row);
+                                return;
+                            }
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 

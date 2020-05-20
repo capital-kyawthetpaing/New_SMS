@@ -194,6 +194,7 @@
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
             this.ScVendor.CodeWidth = 130;
+            this.ScVendor.CodeWidth1 = 130;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -203,6 +204,7 @@
             this.ScVendor.Location = new System.Drawing.Point(96, -2);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
+            this.ScVendor.NameWidth = 280;
             this.ScVendor.SearchEnable = true;
             this.ScVendor.Size = new System.Drawing.Size(163, 50);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -265,6 +267,7 @@
             this.ScCopyVendor.ChangeDateWidth = 100;
             this.ScCopyVendor.Code = "";
             this.ScCopyVendor.CodeWidth = 130;
+            this.ScCopyVendor.CodeWidth1 = 130;
             this.ScCopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyVendor.DataCheck = false;
             this.ScCopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -274,6 +277,7 @@
             this.ScCopyVendor.Location = new System.Drawing.Point(94, -3);
             this.ScCopyVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyVendor.Name = "ScCopyVendor";
+            this.ScCopyVendor.NameWidth = 280;
             this.ScCopyVendor.SearchEnable = true;
             this.ScCopyVendor.Size = new System.Drawing.Size(163, 50);
             this.ScCopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -489,7 +493,7 @@
             this.cboAmountFractionKBN.Flag = 0;
             this.cboAmountFractionKBN.FormattingEnabled = true;
             this.cboAmountFractionKBN.Length = 10;
-            this.cboAmountFractionKBN.Location = new System.Drawing.Point(425, 422);
+            this.cboAmountFractionKBN.Location = new System.Drawing.Point(497, 422);
             this.cboAmountFractionKBN.MaxLength = 10;
             this.cboAmountFractionKBN.MoveNext = true;
             this.cboAmountFractionKBN.Name = "cboAmountFractionKBN";
@@ -505,7 +509,7 @@
             this.cboTaxFractionKBN.Flag = 0;
             this.cboTaxFractionKBN.FormattingEnabled = true;
             this.cboTaxFractionKBN.Length = 10;
-            this.cboTaxFractionKBN.Location = new System.Drawing.Point(425, 403);
+            this.cboTaxFractionKBN.Location = new System.Drawing.Point(497, 403);
             this.cboTaxFractionKBN.MaxLength = 10;
             this.cboTaxFractionKBN.MoveNext = true;
             this.cboTaxFractionKBN.Name = "cboTaxFractionKBN";
@@ -521,7 +525,7 @@
             this.cboTaxTiming.Flag = 0;
             this.cboTaxTiming.FormattingEnabled = true;
             this.cboTaxTiming.Length = 10;
-            this.cboTaxTiming.Location = new System.Drawing.Point(425, 385);
+            this.cboTaxTiming.Location = new System.Drawing.Point(497, 385);
             this.cboTaxTiming.MaxLength = 10;
             this.cboTaxTiming.MoveNext = true;
             this.cboTaxTiming.Name = "cboTaxTiming";
@@ -537,7 +541,7 @@
             this.ckM_Label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label39.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label39.Location = new System.Drawing.Point(314, 427);
+            this.ckM_Label39.Location = new System.Drawing.Point(386, 427);
             this.ckM_Label39.Name = "ckM_Label39";
             this.ckM_Label39.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label39.TabIndex = 74;
@@ -554,7 +558,7 @@
             this.ckM_Label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label38.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label38.Location = new System.Drawing.Point(327, 407);
+            this.ckM_Label38.Location = new System.Drawing.Point(399, 407);
             this.ckM_Label38.Name = "ckM_Label38";
             this.ckM_Label38.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label38.TabIndex = 73;
@@ -571,7 +575,7 @@
             this.ckM_Label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label37.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label37.Location = new System.Drawing.Point(353, 389);
+            this.ckM_Label37.Location = new System.Drawing.Point(425, 389);
             this.ckM_Label37.Name = "ckM_Label37";
             this.ckM_Label37.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label37.TabIndex = 72;
@@ -891,6 +895,7 @@
             this.ScStaffCD.ChangeDateWidth = 100;
             this.ScStaffCD.Code = "";
             this.ScStaffCD.CodeWidth = 100;
+            this.ScStaffCD.CodeWidth1 = 100;
             this.ScStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaffCD.DataCheck = false;
             this.ScStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -900,6 +905,7 @@
             this.ScStaffCD.Location = new System.Drawing.Point(107, 669);
             this.ScStaffCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaffCD.Name = "ScStaffCD";
+            this.ScStaffCD.NameWidth = 210;
             this.ScStaffCD.SearchEnable = true;
             this.ScStaffCD.Size = new System.Drawing.Size(344, 27);
             this.ScStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
@@ -929,6 +935,7 @@
             this.ScKouzaCD.ChangeDateWidth = 100;
             this.ScKouzaCD.Code = "";
             this.ScKouzaCD.CodeWidth = 30;
+            this.ScKouzaCD.CodeWidth1 = 30;
             this.ScKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScKouzaCD.DataCheck = false;
             this.ScKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -938,6 +945,7 @@
             this.ScKouzaCD.Location = new System.Drawing.Point(107, 582);
             this.ScKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScKouzaCD.Name = "ScKouzaCD";
+            this.ScKouzaCD.NameWidth = 350;
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(414, 27);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
@@ -1124,6 +1132,7 @@
             this.ScBranchCD.ChangeDateWidth = 100;
             this.ScBranchCD.Code = "";
             this.ScBranchCD.CodeWidth = 40;
+            this.ScBranchCD.CodeWidth1 = 40;
             this.ScBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBranchCD.DataCheck = false;
             this.ScBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1133,6 +1142,7 @@
             this.ScBranchCD.Location = new System.Drawing.Point(107, 489);
             this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
+            this.ScBranchCD.NameWidth = 350;
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(424, 27);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
@@ -1151,6 +1161,7 @@
             this.ScBankCD.ChangeDateWidth = 100;
             this.ScBankCD.Code = "";
             this.ScBankCD.CodeWidth = 40;
+            this.ScBankCD.CodeWidth1 = 40;
             this.ScBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBankCD.DataCheck = false;
             this.ScBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1160,6 +1171,7 @@
             this.ScBankCD.Location = new System.Drawing.Point(107, 464);
             this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
+            this.ScBankCD.NameWidth = 350;
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 28);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -1213,7 +1225,8 @@
             this.ScMoneyPayeeCD.ChangeDate = "";
             this.ScMoneyPayeeCD.ChangeDateWidth = 100;
             this.ScMoneyPayeeCD.Code = "";
-            this.ScMoneyPayeeCD.CodeWidth = 100;
+            this.ScMoneyPayeeCD.CodeWidth = 130;
+            this.ScMoneyPayeeCD.CodeWidth1 = 130;
             this.ScMoneyPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMoneyPayeeCD.DataCheck = false;
             this.ScMoneyPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1223,8 +1236,9 @@
             this.ScMoneyPayeeCD.Location = new System.Drawing.Point(107, 350);
             this.ScMoneyPayeeCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScMoneyPayeeCD.Name = "ScMoneyPayeeCD";
+            this.ScMoneyPayeeCD.NameWidth = 350;
             this.ScMoneyPayeeCD.SearchEnable = true;
-            this.ScMoneyPayeeCD.Size = new System.Drawing.Size(415, 27);
+            this.ScMoneyPayeeCD.Size = new System.Drawing.Size(514, 27);
             this.ScMoneyPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
             this.ScMoneyPayeeCD.TabIndex = 17;
             this.ScMoneyPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1240,7 +1254,8 @@
             this.ScPayeeCD.ChangeDate = "";
             this.ScPayeeCD.ChangeDateWidth = 100;
             this.ScPayeeCD.Code = "";
-            this.ScPayeeCD.CodeWidth = 100;
+            this.ScPayeeCD.CodeWidth = 130;
+            this.ScPayeeCD.CodeWidth1 = 130;
             this.ScPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPayeeCD.DataCheck = false;
             this.ScPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1250,8 +1265,9 @@
             this.ScPayeeCD.Location = new System.Drawing.Point(107, 324);
             this.ScPayeeCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScPayeeCD.Name = "ScPayeeCD";
+            this.ScPayeeCD.NameWidth = 350;
             this.ScPayeeCD.SearchEnable = true;
-            this.ScPayeeCD.Size = new System.Drawing.Size(415, 28);
+            this.ScPayeeCD.Size = new System.Drawing.Size(514, 28);
             this.ScPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
             this.ScPayeeCD.TabIndex = 16;
             this.ScPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
