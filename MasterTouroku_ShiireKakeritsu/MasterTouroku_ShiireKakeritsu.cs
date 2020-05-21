@@ -914,22 +914,22 @@ namespace MasterTouroku_ShiireKakeritsu
             DataColumnCollection col = dtMain.Columns;
             for (int i = 0; i < colName.Length; i++)
             {
-                if (!dtMain.Columns[1].ColumnName.ToString().Equals("VendorCD"))
+                if (!dtMain.Columns[1].ColumnName.ToString().Equals("仕入先CD"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dtMain.Columns[2].ColumnName.ToString().Equals("StoreCD"))
+                else if (!dtMain.Columns[2].ColumnName.ToString().Equals("店舗CD"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dtMain.Columns[8].ColumnName.ToString().Equals("ChangeDate"))
+                else if (!dtMain.Columns[8].ColumnName.ToString().Equals("改定日"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dtMain.Columns[9].ColumnName.ToString().Equals("Rate"))
+                else if (!dtMain.Columns[9].ColumnName.ToString().Equals("掛率"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
@@ -947,7 +947,7 @@ namespace MasterTouroku_ShiireKakeritsu
             if (dt.Rows.Count > 0)
             {
                 DataTable dtExport = dt;
-                dtExport = ChangeDataColumnName(dtExport);
+                dtExport = ChangeDataColumnName(dtMain);
                 string folderPath = "C:\\SSS\\";
                 if (!Directory.Exists(folderPath))
                 {
