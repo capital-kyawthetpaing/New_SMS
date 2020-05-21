@@ -14,6 +14,7 @@ using System.Diagnostics;
 using System.IO;
 using ClosedXML.Excel;
 using Search;
+using ExcelDataReader;
 
 namespace MasterTouroku_ShiireKakeritsu
 {
@@ -270,10 +271,8 @@ namespace MasterTouroku_ShiireKakeritsu
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
-                //LastYearTerm=txtYear.Text,
                 LastYearTerm = cbo_Year1.SelectedText,
                 LastSeason = cbo_Season1.SelectedText,
-                //LastSeason = txtSeason.Text,
                 ChangeDate = txtDate.Text,
                 Rate = txtRate.Text
             };
@@ -756,7 +755,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     if (!txtRate.Text.Contains("."))
                     {
-                        txtRate.Text = txtRate.Text + ".00";
+                        txtRate.Text =txtRate.Text + ".00";
                     }
                 } 
             }
@@ -844,16 +843,112 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain.Columns["Rate"].ColumnName = "掛率";
             return dtMain;
         }
+        protected DataTable ExcelToDatatable(string filePath)
+        {
+            FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
+
+            string ext = Path.GetExtension(filePath);
+            IExcelDataReader excelReader;
+            if (ext.Equals(".xls"))
+                //1. Reading from a binary Excel file ('97-2003 format; *.xls)
+                excelReader = ExcelReaderFactory.CreateBinaryReader(stream);
+            else if (ext.Equals(".xlsx"))
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx)
+                excelReader = ExcelReaderFactory.CreateOpenXmlReader(stream);
+            else
+                //2. Reading from a OpenXml Excel file (2007 format; *.xlsx) 
+                excelReader = ExcelReaderFactory.CreateCsvReader(stream, null);
+
+            //3. DataSet - The result of each spreadsheet will be created in the result.Tables
+            bool useHeaderRow = true;
+
+            DataSet result = excelReader.AsDataSet(new ExcelDataSetConfiguration()
+            {
+                ConfigureDataTable = (_) => new ExcelDataTableConfiguration()
+                {
+                    UseHeaderRow = useHeaderRow,
+                }
+            });
+
+
+            excelReader.Close();
+            return result.Tables[0];
+        }
+        private void F10()
+        {
+            OpenFileDialog op = new OpenFileDialog
+            {
+                InitialDirectory = @"C:\",
+                RestoreDirectory = true
+            };
+            if (op.ShowDialog() == DialogResult.OK)
+            {
+                string str = op.FileName;
+                string ext = Path.GetExtension(str);
+                if (!(ext.Equals(".xls") || ext.Equals(".xlsx")))
+                {
+                    mskbl.ShowMessage("E137");
+                }
+                else
+                {
+                    DataTable dtExcel= ExcelToDatatable(str);
+                    string[] colname = { "仕入先CD", "店舗CD", "改定日", "掛率" };
+                    if (CheckColumn(colname, dtExcel))
+                    {
+                        Xml = mskbl.DataTableToXml(dtExcel);
+                        dtExcel = mskbl.M_ShiireKakeritsu_Select(moe);
+                        if (dtExcel.Rows.Count > 0)
+                        {
+                            dgv_ShiireKakeritsu.DataSource = dtMain;
+                        }
+                    }
+                    else
+                    {
+                        mskbl.ShowMessage("E137");
+                    }
+                }
+            }
+        }
+        protected Boolean CheckColumn(String[] colName, DataTable dtExcel) //Check Columns if require columns are exist in import excel
+        {
+            DataColumnCollection col = dtExcel.Columns;
+            for (int i = 0; i < colName.Length; i++)
+            {
+                if (!dt.Columns[0].ColumnName.ToString().Equals("仕入先CD"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else if (!dt.Columns[1].ColumnName.ToString().Equals("店舗CD"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else if (!dt.Columns[7].ColumnName.ToString().Equals("改定日"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else if (!dt.Columns[8].ColumnName.ToString().Equals("掛率"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
             moe = new M_OrderRate_Entity();
             moe = GetSearchInfo();
-            DataTable dtmain = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dtMain.Rows.Count > 0)
+            DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+            if (dt.Rows.Count > 0)
             {
-                DataTable dtExport = dtMain;
-                dtExport = ChangeDataColumnName(dtMain);
-                string folderPath = "C:\\MasterTouroku_ShiireKakeritsu\\";
+                DataTable dtExport = dt;
+                dtExport = ChangeDataColumnName(dtExport);
+                string folderPath = "C:\\SSS\\";
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
@@ -863,6 +958,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 savedialog.Title = "Save";
                 savedialog.FileName = "仕入先別発注掛率マスタ";
                 savedialog.InitialDirectory = folderPath;
+
                 savedialog.RestoreDirectory = true;
                 if (savedialog.ShowDialog() == DialogResult.OK)
                 {
@@ -870,12 +966,14 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         using (XLWorkbook wb = new XLWorkbook())
                         {
-                            wb.Worksheets.Add(dtExport, "Result");
+                            wb.Worksheets.Add(dtMain, "Result");
                             wb.SaveAs(savedialog.FileName);
                         }
+                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
-                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+
                 }
+                F10();
             }
         }
     }

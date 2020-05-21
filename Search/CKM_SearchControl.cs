@@ -1540,6 +1540,8 @@ namespace Search
                     {
                         frmMakerItem.Mode = "3";
                         frmMakerItem.MakerItem = txtCode.Text;
+
+
                         frmMakerItem.ShowDialog();
                         if (!frmMakerItem.flgCancel)
                         {
