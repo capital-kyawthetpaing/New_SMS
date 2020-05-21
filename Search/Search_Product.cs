@@ -712,8 +712,10 @@ namespace Search
                 if (Mode == "5")
                 {
                     JANCD = "";
-                    for (int i = 0; i < GvDetail.RowCount - 1; i++)
-                    {
+                    //Modified by KTP ( modify last row doesn't work)
+                    //for (int i = 0; i < GvDetail.RowCount - 1; i++)
+                    for (int i = 0; i < GvDetail.RowCount; i++)
+                        {
                         if (GvDetail.Rows[i].Cells["colCheck"].Value != null && GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
                         {
                             list.Add(GvDetail.Rows[i].Cells["colJANCD"].Value.ToString());
