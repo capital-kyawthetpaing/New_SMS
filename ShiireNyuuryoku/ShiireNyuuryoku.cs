@@ -868,6 +868,7 @@ namespace ShiireNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 

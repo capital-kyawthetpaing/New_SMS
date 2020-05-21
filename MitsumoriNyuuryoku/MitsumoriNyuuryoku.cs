@@ -852,6 +852,7 @@ namespace MitsumoriNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000010");
                             }
 

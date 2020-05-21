@@ -857,6 +857,7 @@ namespace NyuukinNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111011000000");
                             }
 
