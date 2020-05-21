@@ -46,6 +46,8 @@
             this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCarrierLeadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -116,7 +118,9 @@
             this.colZipCD1,
             this.colZipCD2,
             this.colAdd1,
-            this.colAdd2});
+            this.colAdd2,
+            this.colCarrier,
+            this.colCarrierLeadDay});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -127,9 +131,9 @@
             this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvYuubinBangou.Location = new System.Drawing.Point(93, 17);
+            this.dgvYuubinBangou.Location = new System.Drawing.Point(32, 17);
             this.dgvYuubinBangou.Name = "dgvYuubinBangou";
-            this.dgvYuubinBangou.Size = new System.Drawing.Size(1550, 750);
+            this.dgvYuubinBangou.Size = new System.Drawing.Size(1700, 750);
             this.dgvYuubinBangou.TabIndex = 0;
             this.dgvYuubinBangou.UseRowNo = true;
             this.dgvYuubinBangou.UseSetting = true;
@@ -185,7 +189,7 @@
             this.txtZip2To.isMaxLengthErr = false;
             this.txtZip2To.IsNumber = true;
             this.txtZip2To.IsShop = false;
-            this.txtZip2To.Length = 4;
+            this.txtZip2To.Length = 10;
             this.txtZip2To.Location = new System.Drawing.Point(210, 14);
             this.txtZip2To.MaxLength = 4;
             this.txtZip2To.MoveNext = true;
@@ -212,7 +216,7 @@
             this.txtZip1To.isMaxLengthErr = false;
             this.txtZip1To.IsNumber = true;
             this.txtZip1To.IsShop = false;
-            this.txtZip1To.Length = 3;
+            this.txtZip1To.Length = 10;
             this.txtZip1To.Location = new System.Drawing.Point(180, 14);
             this.txtZip1To.MaxLength = 3;
             this.txtZip1To.MoveNext = true;
@@ -238,7 +242,7 @@
             this.txtZip2From.isMaxLengthErr = false;
             this.txtZip2From.IsNumber = true;
             this.txtZip2From.IsShop = false;
-            this.txtZip2From.Length = 4;
+            this.txtZip2From.Length = 10;
             this.txtZip2From.Location = new System.Drawing.Point(98, 14);
             this.txtZip2From.MaxLength = 4;
             this.txtZip2From.MoveNext = true;
@@ -265,7 +269,7 @@
             this.txtZip1from.isMaxLengthErr = false;
             this.txtZip1from.IsNumber = true;
             this.txtZip1from.IsShop = false;
-            this.txtZip1from.Length = 3;
+            this.txtZip1from.Length = 10;
             this.txtZip1from.Location = new System.Drawing.Point(68, 14);
             this.txtZip1from.MaxLength = 3;
             this.txtZip1from.MoveNext = true;
@@ -340,6 +344,19 @@
             this.colAdd2.Name = "colAdd2";
             this.colAdd2.Width = 700;
             // 
+            // colCarrier
+            // 
+            this.colCarrier.DataPropertyName = "Carrier";
+            this.colCarrier.HeaderText = "奨励運送会社";
+            this.colCarrier.Name = "colCarrier";
+            // 
+            // colCarrierLeadDay
+            // 
+            this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
+            this.colCarrierLeadDay.HeaderText = "日数";
+            this.colCarrierLeadDay.Name = "colCarrierLeadDay";
+            this.colCarrierLeadDay.Width = 50;
+            // 
             // frmMasterTouroku_YuubinBangou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -381,6 +398,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colCarrier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierLeadDay;
     }
 }
 

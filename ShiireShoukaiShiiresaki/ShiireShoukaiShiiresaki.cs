@@ -163,6 +163,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     Clear(PanelHeader);
                     txtPurchaseDateFrom.Focus();
+                    Btn_F10.Enabled = false;
                     dgvPurchaseSearch.DataSource = null;
                 }
             }
