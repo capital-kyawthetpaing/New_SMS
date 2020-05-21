@@ -161,7 +161,7 @@ namespace TempoRegiTsurisenJyunbi
             dtDepositNO = bbl.SimpleSelect1("51", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();//テーブル転送仕様Ａで覚えた入出金番号
 
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
+            string cmdLine =InCompanyCD+ " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
