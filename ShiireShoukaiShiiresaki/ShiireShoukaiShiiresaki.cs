@@ -146,7 +146,6 @@ namespace ShiireShoukaiShiiresaki
                 }
             }
         }
-
         public override void FunctionProcess(int index)
         {
             if (index + 1 == 11)
@@ -164,6 +163,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     Clear(PanelHeader);
                     txtPurchaseDateFrom.Focus();
+                    Btn_F10.Enabled = false;
                     dgvPurchaseSearch.DataSource = null;
                 }
             }
@@ -275,7 +275,6 @@ namespace ShiireShoukaiShiiresaki
             }
 
         }
-
         private void scStaff_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -441,7 +440,6 @@ namespace ShiireShoukaiShiiresaki
             scSupplier.Value1 = "1";//仕入先区分：1
             scSupplier.ChangeDate = txtPurchaseDateTo.Text;
         }
-
         private void ComboStore_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)

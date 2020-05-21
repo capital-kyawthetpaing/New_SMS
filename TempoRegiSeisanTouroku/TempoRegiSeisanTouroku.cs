@@ -205,7 +205,7 @@ namespace TempoRegiSeisanTouroku
                 txt10.Text = "0";
                 txt5.Text = "0";
                 txt1.Text = "0";
-                txtotheramount.Text = "1";
+                txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
 
                 txtChange.Text = "0";
