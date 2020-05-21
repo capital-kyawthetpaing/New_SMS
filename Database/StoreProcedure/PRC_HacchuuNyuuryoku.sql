@@ -319,8 +319,8 @@ CREATE PROCEDURE PRC_HacchuuNyuuryoku
     @OrderTax10 money ,
     @OrderGaku money ,
 
-    @CommentOutStore varchar(80) ,
-    @CommentInStore varchar(80) ,
+    @CommentOutStore varchar(500) ,
+    @CommentInStore varchar(500) ,
     @ApprovalEnabled tinyint,	--承認ボタンが利用できない場合=0
     @ApprovalStageFLG int,
 

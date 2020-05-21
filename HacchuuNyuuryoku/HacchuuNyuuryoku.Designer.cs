@@ -5588,7 +5588,7 @@
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 500;
             this.TxtRemark1.Location = new System.Drawing.Point(99, 603);
-            this.TxtRemark1.MaxLength = 250;
+            this.TxtRemark1.MaxLength = 500;
             this.TxtRemark1.Mdea = false;
             this.TxtRemark1.Mfocus = false;
             this.TxtRemark1.MoveNext = false;
@@ -5704,7 +5704,7 @@
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 500;
             this.TxtRemark2.Location = new System.Drawing.Point(99, 656);
-            this.TxtRemark2.MaxLength = 250;
+            this.TxtRemark2.MaxLength = 500;
             this.TxtRemark2.Mdea = false;
             this.TxtRemark2.Mfocus = false;
             this.TxtRemark2.MoveNext = false;
