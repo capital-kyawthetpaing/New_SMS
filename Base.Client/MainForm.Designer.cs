@@ -142,7 +142,7 @@
             // 
             this.lblMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMode.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMode.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMode.Location = new System.Drawing.Point(476, 9);
             this.lblMode.Name = "lblMode";
             this.lblMode.Size = new System.Drawing.Size(94, 21);
@@ -154,7 +154,7 @@
             // 
             this.lblHeaderTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(173)))), ((int)(((byte)(71)))));
             this.lblHeaderTitle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblHeaderTitle.Font = new System.Drawing.Font("ＭＳ ゴシック", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeaderTitle.Font = new System.Drawing.Font("MS Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHeaderTitle.Location = new System.Drawing.Point(11, 9);
             this.lblHeaderTitle.Name = "lblHeaderTitle";
             this.lblHeaderTitle.Size = new System.Drawing.Size(465, 21);
@@ -176,7 +176,7 @@
             // 
             this.lblLoginDate.BackColor = System.Drawing.Color.Transparent;
             this.lblLoginDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblLoginDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblLoginDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblLoginDate.Location = new System.Drawing.Point(375, 9);
             this.lblLoginDate.Name = "lblLoginDate";
             this.lblLoginDate.Size = new System.Drawing.Size(150, 21);
@@ -188,7 +188,7 @@
             // 
             this.lblOperatorName.BackColor = System.Drawing.Color.Transparent;
             this.lblOperatorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOperatorName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOperatorName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblOperatorName.Location = new System.Drawing.Point(165, 9);
             this.lblOperatorName.Name = "lblOperatorName";
             this.lblOperatorName.Size = new System.Drawing.Size(210, 21);
@@ -199,7 +199,7 @@
             // 
             this.lblOperator.AutoSize = true;
             this.lblOperator.BackColor = System.Drawing.Color.Transparent;
-            this.lblOperator.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblOperator.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblOperator.Location = new System.Drawing.Point(76, 12);
             this.lblOperator.Name = "lblOperator";
             this.lblOperator.Size = new System.Drawing.Size(83, 12);
@@ -211,7 +211,7 @@
             // 
             this.lblDisp.BackColor = System.Drawing.Color.HotPink;
             this.lblDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblDisp.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDisp.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDisp.Location = new System.Drawing.Point(601, 10);
             this.lblDisp.Name = "lblDisp";
             this.lblDisp.Size = new System.Drawing.Size(132, 21);
@@ -276,7 +276,7 @@
             this.BtnF3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF3.Location = new System.Drawing.Point(230, 2);
             this.BtnF3.Margin = new System.Windows.Forms.Padding(1);
@@ -298,7 +298,7 @@
             this.BtnF4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF4.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF4.Location = new System.Drawing.Point(344, 2);
             this.BtnF4.Margin = new System.Windows.Forms.Padding(1);
@@ -320,7 +320,7 @@
             this.BtnF5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF5.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF5.Location = new System.Drawing.Point(458, 2);
             this.BtnF5.Margin = new System.Windows.Forms.Padding(1);
@@ -342,7 +342,7 @@
             this.BtnF6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF6.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF6.Location = new System.Drawing.Point(572, 2);
             this.BtnF6.Margin = new System.Windows.Forms.Padding(1);
@@ -364,7 +364,7 @@
             this.BtnF7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF7.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF7.Location = new System.Drawing.Point(686, 2);
             this.BtnF7.Margin = new System.Windows.Forms.Padding(1);
@@ -386,7 +386,7 @@
             this.BtnF8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF8.Location = new System.Drawing.Point(800, 2);
             this.BtnF8.Margin = new System.Windows.Forms.Padding(1);
@@ -408,7 +408,7 @@
             this.BtnF9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF9.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF9.Location = new System.Drawing.Point(914, 2);
             this.BtnF9.Margin = new System.Windows.Forms.Padding(1);
@@ -430,7 +430,7 @@
             this.BtnF10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF10.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF10.Location = new System.Drawing.Point(1028, 2);
             this.BtnF10.Margin = new System.Windows.Forms.Padding(1);
@@ -452,7 +452,7 @@
             this.BtnF11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF11.Location = new System.Drawing.Point(1142, 2);
             this.BtnF11.Margin = new System.Windows.Forms.Padding(1);
@@ -474,7 +474,7 @@
             this.BtnF1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF1.Location = new System.Drawing.Point(2, 2);
             this.BtnF1.Margin = new System.Windows.Forms.Padding(1);
@@ -496,7 +496,7 @@
             this.BtnF2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF2.Location = new System.Drawing.Point(116, 2);
             this.BtnF2.Margin = new System.Windows.Forms.Padding(1);
@@ -518,7 +518,7 @@
             this.BtnF12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.BtnF12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.BtnF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnF12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.BtnF12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.BtnF12.Location = new System.Drawing.Point(1256, 2);
             this.BtnF12.Margin = new System.Windows.Forms.Padding(1);
@@ -537,7 +537,7 @@
             this.lblStoreAuthoCD.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblStoreAuthoCD.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreAuthoCD.DefaultlabelSize = true;
-            this.lblStoreAuthoCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStoreAuthoCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblStoreAuthoCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblStoreAuthoCD.ForeColor = System.Drawing.Color.Black;
             this.lblStoreAuthoCD.Location = new System.Drawing.Point(75, 171);
@@ -554,7 +554,7 @@
             this.lblStoreCD.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblStoreCD.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreCD.DefaultlabelSize = true;
-            this.lblStoreCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStoreCD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblStoreCD.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblStoreCD.ForeColor = System.Drawing.Color.Black;
             this.lblStoreCD.Location = new System.Drawing.Point(216, 171);
@@ -571,7 +571,7 @@
             this.lblStoreAuthorizationChangeDate.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblStoreAuthorizationChangeDate.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreAuthorizationChangeDate.DefaultlabelSize = true;
-            this.lblStoreAuthorizationChangeDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStoreAuthorizationChangeDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblStoreAuthorizationChangeDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblStoreAuthorizationChangeDate.ForeColor = System.Drawing.Color.Black;
             this.lblStoreAuthorizationChangeDate.Location = new System.Drawing.Point(142, 171);
@@ -588,7 +588,7 @@
             this.lblProgramID.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblProgramID.BackColor = System.Drawing.Color.Transparent;
             this.lblProgramID.DefaultlabelSize = true;
-            this.lblProgramID.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.lblProgramID.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblProgramID.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblProgramID.ForeColor = System.Drawing.Color.Black;
             this.lblProgramID.Location = new System.Drawing.Point(284, 171);
@@ -611,7 +611,7 @@
             this.Controls.Add(this.lblStoreAuthoCD);
             this.Controls.Add(this.PanelFooter);
             this.Controls.Add(this.panelTop);
-            this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
             this.Name = "FrmMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -620,6 +620,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainForm_FormClosed);
             this.Load += new System.EventHandler(this.FrmMainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMainForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMainForm_KeyUp);
             this.panelTop.ResumeLayout(false);
             this.PanelHeader.ResumeLayout(false);
             this.PanelSubFooter.ResumeLayout(false);
