@@ -29,6 +29,7 @@ namespace SiharaiYoteiHyou
         //string expense = "";
         //string purchase = "";
         //string ymd;
+        bool combo_focus;
         Base_BL bbl = new Base_BL();
         SiharaiYoteiHyou_BL shyhbl;
         D_PayPlan_Entity dppe;
@@ -83,7 +84,7 @@ namespace SiharaiYoteiHyou
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     shyhbl.ShowMessage("E104");
                     txtPaymentDueDateFrom.Focus();
@@ -445,7 +446,12 @@ namespace SiharaiYoteiHyou
         }
         private void SiharaiYoteiHyou_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+            if(combo_focus == true)
+            {
+                comboStore.Focus();
+                combo_focus = false;
+            }
+            else { MoveNextControl(e); }
         }
 
         /// <summary>
@@ -459,12 +465,13 @@ namespace SiharaiYoteiHyou
 
         private void comboStore_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode ==Keys.KeyCode)
+            if(e.KeyCode ==Keys.Enter)
             {
                 if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
                 {
                     shyhbl.ShowMessage("E139");
                     comboStore.Focus();
+                    combo_focus = true;
                 }
             }
         }
@@ -479,12 +486,11 @@ namespace SiharaiYoteiHyou
                     DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                     DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
 
-                    if (dt1 >= dt2)
+                    if (dt1 > dt2)
                     {
                         shyhbl.ShowMessage("E104");
                         txtPaymentDueDateFrom.Focus();
                     }
-
                 }
             }
         }

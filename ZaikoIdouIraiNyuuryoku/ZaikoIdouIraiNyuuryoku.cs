@@ -713,6 +713,7 @@ namespace ZaikoIdouIraiNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -1069,7 +1070,7 @@ namespace ZaikoIdouIraiNyuuryoku
                 if (index == (int)EIndex.RequestNO)
                 {
                     //★特例処理★変更モード、削除モードで、移動依頼番号に対し回答済の場合
-                    if (!string.IsNullOrWhiteSpace(dt.Rows[0]["AnswerDateTime"].ToString()))
+                    if (!string.IsNullOrWhiteSpace(dt.Rows[0]["AnswerDateTime"].ToString()) && OperationMode != EOperationMode.SHOW)
                     {
                         OperationMode = EOperationMode.SHOW;
                         if (set == false)
@@ -1079,7 +1080,7 @@ namespace ZaikoIdouIraiNyuuryoku
                         }
                         else
                         {
-                            bbl.ShowMessage("E191", "移動依頼番号");
+                            bbl.ShowMessage("E191");//「回答済データのため、照会モードで表示します。」
                         }
                     }
                 }

@@ -238,32 +238,41 @@ namespace TanabanNyuuryoku
                 //        return false;
                 //    }
                 //}
-
-                foreach (DataGridViewRow row in dgvTanaban.Rows)
+                if(dgvTanaban.Rows.Count > 0 )
                 {
-                    string tana = row.Cells["colRackNo1"].Value.ToString();
-                    if (string.IsNullOrWhiteSpace(tana))
+                    foreach (DataGridViewRow row in dgvTanaban.Rows)
                     {
-                        tnbnBL.ShowMessage("E102");
-                        dgvTanaban.ClearSelection();
-                        row.Cells["colRackNo1"].Selected = true;
-                        return false;
-                    }
-                    else
-                    {
-                        mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
-                        mle.TanaCD = tana;
-                        DataTable dtLocation = new DataTable();
-                        dtLocation = tnbnBL.M_LocationTana_Select(mle);
-                        if (dtLocation.Rows.Count == 0)
+                        string tana = row.Cells["colRackNo1"].Value.ToString();
+                        if (string.IsNullOrWhiteSpace(tana))
                         {
-                            tnbnBL.ShowMessage("E101");
+                            tnbnBL.ShowMessage("E102");
                             dgvTanaban.ClearSelection();
                             row.Cells["colRackNo1"].Selected = true;
                             return false;
                         }
+                        else
+                        {
+                            mle.SoukoCD = cboWarehouse.SelectedValue.ToString();
+                            mle.TanaCD = tana;
+                            DataTable dtLocation = new DataTable();
+                            dtLocation = tnbnBL.M_LocationTana_Select(mle);
+                            if (dtLocation.Rows.Count == 0)
+                            {
+                                tnbnBL.ShowMessage("E101");
+                                dgvTanaban.ClearSelection();
+                                row.Cells["colRackNo1"].Selected = true;
+                                return false;
+                            }
+                        }
                     }
                 }
+                else
+                {
+                    tnbnBL.ShowMessage("E128");
+                    txtArrivalDateFrom.Focus();
+                    return false;
+                }
+              
                
                     
             }

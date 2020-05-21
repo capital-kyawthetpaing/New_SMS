@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -140,6 +139,7 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnDisplay);
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             this.PanelSearch.TabIndex = 0;
             // 
             // ckM_Label1
@@ -165,6 +165,7 @@
             this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboWarehouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWarehouse.Flag = 0;
             this.cboWarehouse.FormattingEnabled = true;
             this.cboWarehouse.Length = 10;
             this.cboWarehouse.Location = new System.Drawing.Point(102, 10);
@@ -214,6 +215,7 @@
             this.txtShippingStartDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShippingStartDate.BackColor = System.Drawing.Color.White;
             this.txtShippingStartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtShippingStartDate.ClientColor = System.Drawing.Color.White;
             this.txtShippingStartDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtShippingStartDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtShippingStartDate.DecimalPlace = 0;
@@ -221,9 +223,10 @@
             this.txtShippingStartDate.IntegerPart = 0;
             this.txtShippingStartDate.IsCorrectDate = true;
             this.txtShippingStartDate.isEnterKeyDown = false;
+            this.txtShippingStartDate.isMaxLengthErr = false;
             this.txtShippingStartDate.IsNumber = true;
             this.txtShippingStartDate.IsShop = false;
-            this.txtShippingStartDate.Length = 8;
+            this.txtShippingStartDate.Length = 10;
             this.txtShippingStartDate.Location = new System.Drawing.Point(102, 40);
             this.txtShippingStartDate.MaxLength = 8;
             this.txtShippingStartDate.MoveNext = true;
@@ -239,6 +242,7 @@
             this.txtShippingEndDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtShippingEndDate.BackColor = System.Drawing.Color.White;
             this.txtShippingEndDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtShippingEndDate.ClientColor = System.Drawing.Color.White;
             this.txtShippingEndDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtShippingEndDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtShippingEndDate.DecimalPlace = 0;
@@ -246,9 +250,10 @@
             this.txtShippingEndDate.IntegerPart = 0;
             this.txtShippingEndDate.IsCorrectDate = true;
             this.txtShippingEndDate.isEnterKeyDown = false;
+            this.txtShippingEndDate.isMaxLengthErr = false;
             this.txtShippingEndDate.IsNumber = true;
             this.txtShippingEndDate.IsShop = false;
-            this.txtShippingEndDate.Length = 8;
+            this.txtShippingEndDate.Length = 10;
             this.txtShippingEndDate.Location = new System.Drawing.Point(233, 40);
             this.txtShippingEndDate.MaxLength = 8;
             this.txtShippingEndDate.MoveNext = true;
@@ -387,6 +392,7 @@
             this.SC_Order.ChangeDateWidth = 100;
             this.SC_Order.Code = "";
             this.SC_Order.CodeWidth = 100;
+            this.SC_Order.CodeWidth1 = 100;
             this.SC_Order.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Order.DataCheck = false;
             this.SC_Order.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -396,6 +402,7 @@
             this.SC_Order.Location = new System.Drawing.Point(427, 60);
             this.SC_Order.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Order.Name = "SC_Order";
+            this.SC_Order.NameWidth = 600;
             this.SC_Order.SearchEnable = true;
             this.SC_Order.Size = new System.Drawing.Size(133, 28);
             this.SC_Order.Stype = Search.CKM_SearchControl.SearchType.受注番号;
@@ -413,6 +420,7 @@
             this.txtProductName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtProductName.BackColor = System.Drawing.Color.White;
             this.txtProductName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProductName.ClientColor = System.Drawing.Color.White;
             this.txtProductName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtProductName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtProductName.DecimalPlace = 0;
@@ -421,9 +429,10 @@
             this.txtProductName.IntegerPart = 0;
             this.txtProductName.IsCorrectDate = true;
             this.txtProductName.isEnterKeyDown = false;
+            this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
-            this.txtProductName.Length = 80;
+            this.txtProductName.Length = 10;
             this.txtProductName.Location = new System.Drawing.Point(1056, 117);
             this.txtProductName.MaxLength = 80;
             this.txtProductName.MoveNext = true;
@@ -456,6 +465,7 @@
             this.SC_JanCD.ChangeDateWidth = 100;
             this.SC_JanCD.Code = "";
             this.SC_JanCD.CodeWidth = 600;
+            this.SC_JanCD.CodeWidth1 = 600;
             this.SC_JanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_JanCD.DataCheck = false;
             this.SC_JanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -465,6 +475,7 @@
             this.SC_JanCD.Location = new System.Drawing.Point(1056, 79);
             this.SC_JanCD.Margin = new System.Windows.Forms.Padding(0);
             this.SC_JanCD.Name = "SC_JanCD";
+            this.SC_JanCD.NameWidth = 280;
             this.SC_JanCD.SearchEnable = true;
             this.SC_JanCD.Size = new System.Drawing.Size(633, 27);
             this.SC_JanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
@@ -499,6 +510,7 @@
             this.Sc_SKUCD.ChangeDateWidth = 100;
             this.Sc_SKUCD.Code = "";
             this.Sc_SKUCD.CodeWidth = 600;
+            this.Sc_SKUCD.CodeWidth1 = 600;
             this.Sc_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_SKUCD.DataCheck = false;
             this.Sc_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -508,6 +520,7 @@
             this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 56);
             this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_SKUCD.Name = "Sc_SKUCD";
+            this.Sc_SKUCD.NameWidth = 280;
             this.Sc_SKUCD.SearchEnable = true;
             this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
             this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
@@ -541,7 +554,8 @@
             this.Sc_Item.ChangeDate = "";
             this.Sc_Item.ChangeDateWidth = 100;
             this.Sc_Item.Code = "";
-            this.Sc_Item.CodeWidth = 600;
+            this.Sc_Item.CodeWidth = 190;
+            this.Sc_Item.CodeWidth1 = 190;
             this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Item.DataCheck = false;
             this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -551,9 +565,10 @@
             this.Sc_Item.Location = new System.Drawing.Point(1055, 33);
             this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Item.Name = "Sc_Item";
+            this.Sc_Item.NameWidth = 350;
             this.Sc_Item.SearchEnable = true;
-            this.Sc_Item.Size = new System.Drawing.Size(633, 27);
-            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.Sc_Item.Size = new System.Drawing.Size(223, 27);
+            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.Sc_Item.TabIndex = 60;
             this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Item.UseChangeDate = false;
@@ -584,6 +599,7 @@
             this.cboDestinationWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboDestinationWarehouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboDestinationWarehouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboDestinationWarehouse.Flag = 0;
             this.cboDestinationWarehouse.FormattingEnabled = true;
             this.cboDestinationWarehouse.Length = 10;
             this.cboDestinationWarehouse.Location = new System.Drawing.Point(427, 92);
@@ -638,7 +654,7 @@
             this.dgvShukkaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -660,14 +676,6 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
@@ -803,6 +811,7 @@
             this.cboShipping.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboShipping.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.配送会社;
             this.cboShipping.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboShipping.Flag = 0;
             this.cboShipping.FormattingEnabled = true;
             this.cboShipping.Length = 10;
             this.cboShipping.Location = new System.Drawing.Point(1056, 10);
