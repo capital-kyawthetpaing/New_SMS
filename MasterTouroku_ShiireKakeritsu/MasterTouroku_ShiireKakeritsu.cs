@@ -909,27 +909,27 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        protected Boolean CheckColumn(String[] colName, DataTable dtExcel) //Check Columns if require columns are exist in import excel
+        protected Boolean CheckColumn(String[] colName,DataTable dtMain) //Check Columns if require columns are exist in import excel
         {
-            DataColumnCollection col = dtExcel.Columns;
+            DataColumnCollection col = dtMain.Columns;
             for (int i = 0; i < colName.Length; i++)
             {
-                if (!dt.Columns[0].ColumnName.ToString().Equals("仕入先CD"))
+                if (!dtMain.Columns[1].ColumnName.ToString().Equals("VendorCD"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dt.Columns[1].ColumnName.ToString().Equals("店舗CD"))
+                else if (!dtMain.Columns[2].ColumnName.ToString().Equals("StoreCD"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dt.Columns[7].ColumnName.ToString().Equals("改定日"))
+                else if (!dtMain.Columns[8].ColumnName.ToString().Equals("ChangeDate"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
                 }
-                else if (!dt.Columns[8].ColumnName.ToString().Equals("掛率"))
+                else if (!dtMain.Columns[9].ColumnName.ToString().Equals("Rate"))
                 {
                     mskbl.ShowMessage("E137");
                     return false;
