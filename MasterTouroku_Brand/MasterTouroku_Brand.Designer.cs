@@ -95,6 +95,7 @@
             this.ScBrandCD.ChangeDateWidth = 100;
             this.ScBrandCD.Code = "";
             this.ScBrandCD.CodeWidth = 100;
+            this.ScBrandCD.CodeWidth1 = 100;
             this.ScBrandCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrandCD.DataCheck = false;
             this.ScBrandCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -105,6 +106,7 @@
             this.ScBrandCD.Location = new System.Drawing.Point(106, 1);
             this.ScBrandCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBrandCD.Name = "ScBrandCD";
+            this.ScBrandCD.NameWidth = 280;
             this.ScBrandCD.SearchEnable = true;
             this.ScBrandCD.Size = new System.Drawing.Size(133, 28);
             this.ScBrandCD.Stype = Search.CKM_SearchControl.SearchType.ブランド;
@@ -150,6 +152,7 @@
             this.ScCopyBrand.ChangeDateWidth = 100;
             this.ScCopyBrand.Code = "";
             this.ScCopyBrand.CodeWidth = 100;
+            this.ScCopyBrand.CodeWidth1 = 100;
             this.ScCopyBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyBrand.DataCheck = false;
             this.ScCopyBrand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -159,6 +162,7 @@
             this.ScCopyBrand.Location = new System.Drawing.Point(105, 1);
             this.ScCopyBrand.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBrand.Name = "ScCopyBrand";
+            this.ScCopyBrand.NameWidth = 280;
             this.ScCopyBrand.SearchEnable = true;
             this.ScCopyBrand.Size = new System.Drawing.Size(133, 28);
             this.ScCopyBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
@@ -201,9 +205,9 @@
             this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
-            this.txtKanaName.Length = 1;
+            this.txtKanaName.Length = 20;
             this.txtKanaName.Location = new System.Drawing.Point(135, 48);
-            this.txtKanaName.MaxLength = 1;
+            this.txtKanaName.MaxLength = 20;
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(130, 19);
@@ -262,9 +266,9 @@
             this.txtBrandName.isMaxLengthErr = false;
             this.txtBrandName.IsNumber = true;
             this.txtBrandName.IsShop = false;
-            this.txtBrandName.Length = 10;
+            this.txtBrandName.Length = 40;
             this.txtBrandName.Location = new System.Drawing.Point(135, 16);
-            this.txtBrandName.MaxLength = 10;
+            this.txtBrandName.MaxLength = 40;
             this.txtBrandName.MoveNext = true;
             this.txtBrandName.Name = "txtBrandName";
             this.txtBrandName.Size = new System.Drawing.Size(260, 19);
