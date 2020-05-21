@@ -452,7 +452,6 @@ namespace ShiireShoukaiShiiresaki
                     ComboStore.Focus();
                    cb_focus = true;
                 }
-
             }
         }
     }
