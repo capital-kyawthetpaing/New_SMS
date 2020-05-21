@@ -1520,6 +1520,7 @@
             this.txtZipCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD1.DecimalPlace = 0;
             this.txtZipCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtZipCD1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
             this.txtZipCD1.isEnterKeyDown = false;
