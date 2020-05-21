@@ -48,6 +48,9 @@ namespace ShukkaShoukai
             BindCombo();
             cboWarehouse.Focus();
             SetRequiredField();
+
+            SC_Order.Value1 = InOperatorCD;
+            SC_Order.Value2 = StoreCD;
            
         }
 
@@ -282,7 +285,7 @@ namespace ShukkaShoukai
             return true;
         }
         public void F11()
-        {
+         {
             if (ErrorCheck())
             {
                 mshe = new D_Shipping_Entity

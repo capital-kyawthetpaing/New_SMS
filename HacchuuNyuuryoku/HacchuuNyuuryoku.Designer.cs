@@ -476,9 +476,9 @@
             this.IMT_REMAK_2.isMaxLengthErr = false;
             this.IMT_REMAK_2.IsNumber = true;
             this.IMT_REMAK_2.IsShop = false;
-            this.IMT_REMAK_2.Length = 40;
+            this.IMT_REMAK_2.Length = 80;
             this.IMT_REMAK_2.Location = new System.Drawing.Point(188, 95);
-            this.IMT_REMAK_2.MaxLength = 40;
+            this.IMT_REMAK_2.MaxLength = 80;
             this.IMT_REMAK_2.MoveNext = true;
             this.IMT_REMAK_2.Name = "IMT_REMAK_2";
             this.IMT_REMAK_2.Size = new System.Drawing.Size(335, 19);
@@ -935,7 +935,7 @@
             this.IMN_GENER2_7.isMaxLengthErr = false;
             this.IMN_GENER2_7.IsNumber = true;
             this.IMN_GENER2_7.IsShop = false;
-            this.IMN_GENER2_7.Length = 10;
+            this.IMN_GENER2_7.Length = 9;
             this.IMN_GENER2_7.Location = new System.Drawing.Point(1201, 285);
             this.IMN_GENER2_7.MaxLength = 9;
             this.IMN_GENER2_7.MoveNext = true;
@@ -996,7 +996,7 @@
             this.IMN_WEBPR_7.IsShop = false;
             this.IMN_WEBPR_7.Length = 80;
             this.IMN_WEBPR_7.Location = new System.Drawing.Point(523, 285);
-            this.IMN_WEBPR_7.MaxLength = 40;
+            this.IMN_WEBPR_7.MaxLength = 80;
             this.IMN_WEBPR_7.MoveNext = true;
             this.IMN_WEBPR_7.Name = "IMN_WEBPR_7";
             this.IMN_WEBPR_7.Size = new System.Drawing.Size(334, 19);
@@ -1023,7 +1023,7 @@
             this.IMN_TEIKA_7.isMaxLengthErr = false;
             this.IMN_TEIKA_7.IsNumber = true;
             this.IMN_TEIKA_7.IsShop = false;
-            this.IMN_TEIKA_7.Length = 10;
+            this.IMN_TEIKA_7.Length = 9;
             this.IMN_TEIKA_7.Location = new System.Drawing.Point(1232, 266);
             this.IMN_TEIKA_7.MaxLength = 9;
             this.IMN_TEIKA_7.MoveNext = true;
@@ -1230,7 +1230,7 @@
             this.IMN_GENER_7.isMaxLengthErr = false;
             this.IMN_GENER_7.IsNumber = true;
             this.IMN_GENER_7.IsShop = false;
-            this.IMN_GENER_7.Length = 10;
+            this.IMN_GENER_7.Length = 9;
             this.IMN_GENER_7.Location = new System.Drawing.Point(1105, 285);
             this.IMN_GENER_7.MaxLength = 9;
             this.IMN_GENER_7.MoveNext = true;
@@ -1260,7 +1260,7 @@
             this.IMN_MEMBR_7.isMaxLengthErr = false;
             this.IMN_MEMBR_7.IsNumber = true;
             this.IMN_MEMBR_7.IsShop = false;
-            this.IMN_MEMBR_7.Length = 10;
+            this.IMN_MEMBR_7.Length = 5;
             this.IMN_MEMBR_7.Location = new System.Drawing.Point(1167, 285);
             this.IMN_MEMBR_7.MaxLength = 5;
             this.IMN_MEMBR_7.MoveNext = true;
@@ -1424,7 +1424,7 @@
             this.IMN_GENER2_6.isMaxLengthErr = false;
             this.IMN_GENER2_6.IsNumber = true;
             this.IMN_GENER2_6.IsShop = false;
-            this.IMN_GENER2_6.Length = 10;
+            this.IMN_GENER2_6.Length = 9;
             this.IMN_GENER2_6.Location = new System.Drawing.Point(1201, 247);
             this.IMN_GENER2_6.MaxLength = 9;
             this.IMN_GENER2_6.MoveNext = true;
@@ -1485,7 +1485,7 @@
             this.IMN_WEBPR_6.IsShop = false;
             this.IMN_WEBPR_6.Length = 80;
             this.IMN_WEBPR_6.Location = new System.Drawing.Point(523, 247);
-            this.IMN_WEBPR_6.MaxLength = 40;
+            this.IMN_WEBPR_6.MaxLength = 80;
             this.IMN_WEBPR_6.MoveNext = true;
             this.IMN_WEBPR_6.Name = "IMN_WEBPR_6";
             this.IMN_WEBPR_6.Size = new System.Drawing.Size(334, 19);
@@ -1512,7 +1512,7 @@
             this.IMN_TEIKA_6.isMaxLengthErr = false;
             this.IMN_TEIKA_6.IsNumber = true;
             this.IMN_TEIKA_6.IsShop = false;
-            this.IMN_TEIKA_6.Length = 10;
+            this.IMN_TEIKA_6.Length = 9;
             this.IMN_TEIKA_6.Location = new System.Drawing.Point(1232, 228);
             this.IMN_TEIKA_6.MaxLength = 9;
             this.IMN_TEIKA_6.MoveNext = true;
@@ -1719,7 +1719,7 @@
             this.IMN_GENER_6.isMaxLengthErr = false;
             this.IMN_GENER_6.IsNumber = true;
             this.IMN_GENER_6.IsShop = false;
-            this.IMN_GENER_6.Length = 10;
+            this.IMN_GENER_6.Length = 9;
             this.IMN_GENER_6.Location = new System.Drawing.Point(1105, 247);
             this.IMN_GENER_6.MaxLength = 9;
             this.IMN_GENER_6.MoveNext = true;
@@ -1749,7 +1749,7 @@
             this.IMN_MEMBR_6.isMaxLengthErr = false;
             this.IMN_MEMBR_6.IsNumber = true;
             this.IMN_MEMBR_6.IsShop = false;
-            this.IMN_MEMBR_6.Length = 10;
+            this.IMN_MEMBR_6.Length = 5;
             this.IMN_MEMBR_6.Location = new System.Drawing.Point(1167, 247);
             this.IMN_MEMBR_6.MaxLength = 5;
             this.IMN_MEMBR_6.MoveNext = true;
@@ -1913,7 +1913,7 @@
             this.IMN_GENER2_5.isMaxLengthErr = false;
             this.IMN_GENER2_5.IsNumber = true;
             this.IMN_GENER2_5.IsShop = false;
-            this.IMN_GENER2_5.Length = 10;
+            this.IMN_GENER2_5.Length = 9;
             this.IMN_GENER2_5.Location = new System.Drawing.Point(1201, 209);
             this.IMN_GENER2_5.MaxLength = 9;
             this.IMN_GENER2_5.MoveNext = true;
@@ -1974,7 +1974,7 @@
             this.IMN_WEBPR_5.IsShop = false;
             this.IMN_WEBPR_5.Length = 80;
             this.IMN_WEBPR_5.Location = new System.Drawing.Point(523, 209);
-            this.IMN_WEBPR_5.MaxLength = 40;
+            this.IMN_WEBPR_5.MaxLength = 80;
             this.IMN_WEBPR_5.MoveNext = true;
             this.IMN_WEBPR_5.Name = "IMN_WEBPR_5";
             this.IMN_WEBPR_5.Size = new System.Drawing.Size(334, 19);
@@ -2001,7 +2001,7 @@
             this.IMN_TEIKA_5.isMaxLengthErr = false;
             this.IMN_TEIKA_5.IsNumber = true;
             this.IMN_TEIKA_5.IsShop = false;
-            this.IMN_TEIKA_5.Length = 10;
+            this.IMN_TEIKA_5.Length = 9;
             this.IMN_TEIKA_5.Location = new System.Drawing.Point(1232, 190);
             this.IMN_TEIKA_5.MaxLength = 9;
             this.IMN_TEIKA_5.MoveNext = true;
@@ -2208,7 +2208,7 @@
             this.IMN_GENER_5.isMaxLengthErr = false;
             this.IMN_GENER_5.IsNumber = true;
             this.IMN_GENER_5.IsShop = false;
-            this.IMN_GENER_5.Length = 10;
+            this.IMN_GENER_5.Length = 9;
             this.IMN_GENER_5.Location = new System.Drawing.Point(1105, 209);
             this.IMN_GENER_5.MaxLength = 9;
             this.IMN_GENER_5.MoveNext = true;
@@ -2238,7 +2238,7 @@
             this.IMN_MEMBR_5.isMaxLengthErr = false;
             this.IMN_MEMBR_5.IsNumber = true;
             this.IMN_MEMBR_5.IsShop = false;
-            this.IMN_MEMBR_5.Length = 10;
+            this.IMN_MEMBR_5.Length = 5;
             this.IMN_MEMBR_5.Location = new System.Drawing.Point(1167, 209);
             this.IMN_MEMBR_5.MaxLength = 5;
             this.IMN_MEMBR_5.MoveNext = true;
@@ -2402,7 +2402,7 @@
             this.IMN_GENER2_4.isMaxLengthErr = false;
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
-            this.IMN_GENER2_4.Length = 10;
+            this.IMN_GENER2_4.Length = 9;
             this.IMN_GENER2_4.Location = new System.Drawing.Point(1201, 171);
             this.IMN_GENER2_4.MaxLength = 9;
             this.IMN_GENER2_4.MoveNext = true;
@@ -2463,7 +2463,7 @@
             this.IMN_WEBPR_4.IsShop = false;
             this.IMN_WEBPR_4.Length = 80;
             this.IMN_WEBPR_4.Location = new System.Drawing.Point(523, 171);
-            this.IMN_WEBPR_4.MaxLength = 40;
+            this.IMN_WEBPR_4.MaxLength = 80;
             this.IMN_WEBPR_4.MoveNext = true;
             this.IMN_WEBPR_4.Name = "IMN_WEBPR_4";
             this.IMN_WEBPR_4.Size = new System.Drawing.Size(334, 19);
@@ -2490,7 +2490,7 @@
             this.IMN_TEIKA_4.isMaxLengthErr = false;
             this.IMN_TEIKA_4.IsNumber = true;
             this.IMN_TEIKA_4.IsShop = false;
-            this.IMN_TEIKA_4.Length = 10;
+            this.IMN_TEIKA_4.Length = 9;
             this.IMN_TEIKA_4.Location = new System.Drawing.Point(1232, 152);
             this.IMN_TEIKA_4.MaxLength = 9;
             this.IMN_TEIKA_4.MoveNext = true;
@@ -2697,7 +2697,7 @@
             this.IMN_GENER_4.isMaxLengthErr = false;
             this.IMN_GENER_4.IsNumber = true;
             this.IMN_GENER_4.IsShop = false;
-            this.IMN_GENER_4.Length = 10;
+            this.IMN_GENER_4.Length = 9;
             this.IMN_GENER_4.Location = new System.Drawing.Point(1105, 171);
             this.IMN_GENER_4.MaxLength = 9;
             this.IMN_GENER_4.MoveNext = true;
@@ -2727,7 +2727,7 @@
             this.IMN_MEMBR_4.isMaxLengthErr = false;
             this.IMN_MEMBR_4.IsNumber = true;
             this.IMN_MEMBR_4.IsShop = false;
-            this.IMN_MEMBR_4.Length = 10;
+            this.IMN_MEMBR_4.Length = 5;
             this.IMN_MEMBR_4.Location = new System.Drawing.Point(1167, 171);
             this.IMN_MEMBR_4.MaxLength = 5;
             this.IMN_MEMBR_4.MoveNext = true;
@@ -2891,7 +2891,7 @@
             this.IMN_GENER2_3.isMaxLengthErr = false;
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
-            this.IMN_GENER2_3.Length = 10;
+            this.IMN_GENER2_3.Length = 9;
             this.IMN_GENER2_3.Location = new System.Drawing.Point(1201, 133);
             this.IMN_GENER2_3.MaxLength = 9;
             this.IMN_GENER2_3.MoveNext = true;
@@ -2952,7 +2952,7 @@
             this.IMN_WEBPR_3.IsShop = false;
             this.IMN_WEBPR_3.Length = 80;
             this.IMN_WEBPR_3.Location = new System.Drawing.Point(523, 133);
-            this.IMN_WEBPR_3.MaxLength = 40;
+            this.IMN_WEBPR_3.MaxLength = 80;
             this.IMN_WEBPR_3.MoveNext = true;
             this.IMN_WEBPR_3.Name = "IMN_WEBPR_3";
             this.IMN_WEBPR_3.Size = new System.Drawing.Size(334, 19);
@@ -2979,7 +2979,7 @@
             this.IMN_TEIKA_3.isMaxLengthErr = false;
             this.IMN_TEIKA_3.IsNumber = true;
             this.IMN_TEIKA_3.IsShop = false;
-            this.IMN_TEIKA_3.Length = 10;
+            this.IMN_TEIKA_3.Length = 9;
             this.IMN_TEIKA_3.Location = new System.Drawing.Point(1232, 114);
             this.IMN_TEIKA_3.MaxLength = 9;
             this.IMN_TEIKA_3.MoveNext = true;
@@ -3040,9 +3040,9 @@
             this.IMT_REMAK_3.isMaxLengthErr = false;
             this.IMT_REMAK_3.IsNumber = true;
             this.IMT_REMAK_3.IsShop = false;
-            this.IMT_REMAK_3.Length = 40;
+            this.IMT_REMAK_3.Length = 80;
             this.IMT_REMAK_3.Location = new System.Drawing.Point(188, 133);
-            this.IMT_REMAK_3.MaxLength = 40;
+            this.IMT_REMAK_3.MaxLength = 80;
             this.IMT_REMAK_3.MoveNext = true;
             this.IMT_REMAK_3.Name = "IMT_REMAK_3";
             this.IMT_REMAK_3.Size = new System.Drawing.Size(335, 19);
@@ -3186,7 +3186,7 @@
             this.IMN_GENER_3.isMaxLengthErr = false;
             this.IMN_GENER_3.IsNumber = true;
             this.IMN_GENER_3.IsShop = false;
-            this.IMN_GENER_3.Length = 10;
+            this.IMN_GENER_3.Length = 9;
             this.IMN_GENER_3.Location = new System.Drawing.Point(1105, 133);
             this.IMN_GENER_3.MaxLength = 9;
             this.IMN_GENER_3.MoveNext = true;
@@ -3216,7 +3216,7 @@
             this.IMN_MEMBR_3.isMaxLengthErr = false;
             this.IMN_MEMBR_3.IsNumber = true;
             this.IMN_MEMBR_3.IsShop = false;
-            this.IMN_MEMBR_3.Length = 10;
+            this.IMN_MEMBR_3.Length = 5;
             this.IMN_MEMBR_3.Location = new System.Drawing.Point(1167, 133);
             this.IMN_MEMBR_3.MaxLength = 5;
             this.IMN_MEMBR_3.MoveNext = true;
@@ -3410,7 +3410,7 @@
             this.IMN_GENER2_2.isMaxLengthErr = false;
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
-            this.IMN_GENER2_2.Length = 10;
+            this.IMN_GENER2_2.Length = 9;
             this.IMN_GENER2_2.Location = new System.Drawing.Point(1201, 95);
             this.IMN_GENER2_2.MaxLength = 9;
             this.IMN_GENER2_2.MoveNext = true;
@@ -3440,7 +3440,7 @@
             this.IMN_GENER2_1.isMaxLengthErr = false;
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
-            this.IMN_GENER2_1.Length = 10;
+            this.IMN_GENER2_1.Length = 9;
             this.IMN_GENER2_1.Location = new System.Drawing.Point(1201, 57);
             this.IMN_GENER2_1.MaxLength = 9;
             this.IMN_GENER2_1.MoveNext = true;
@@ -3470,7 +3470,7 @@
             this.IMN_GENER2_0.isMaxLengthErr = false;
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
-            this.IMN_GENER2_0.Length = 10;
+            this.IMN_GENER2_0.Length = 9;
             this.IMN_GENER2_0.Location = new System.Drawing.Point(1201, 19);
             this.IMN_GENER2_0.MaxLength = 9;
             this.IMN_GENER2_0.MoveNext = true;
@@ -3589,7 +3589,7 @@
             this.IMN_WEBPR_2.IsShop = false;
             this.IMN_WEBPR_2.Length = 80;
             this.IMN_WEBPR_2.Location = new System.Drawing.Point(523, 95);
-            this.IMN_WEBPR_2.MaxLength = 40;
+            this.IMN_WEBPR_2.MaxLength = 80;
             this.IMN_WEBPR_2.MoveNext = true;
             this.IMN_WEBPR_2.Name = "IMN_WEBPR_2";
             this.IMN_WEBPR_2.Size = new System.Drawing.Size(334, 19);
@@ -3618,7 +3618,7 @@
             this.IMN_WEBPR_1.IsShop = false;
             this.IMN_WEBPR_1.Length = 80;
             this.IMN_WEBPR_1.Location = new System.Drawing.Point(523, 57);
-            this.IMN_WEBPR_1.MaxLength = 40;
+            this.IMN_WEBPR_1.MaxLength = 80;
             this.IMN_WEBPR_1.MoveNext = true;
             this.IMN_WEBPR_1.Name = "IMN_WEBPR_1";
             this.IMN_WEBPR_1.Size = new System.Drawing.Size(334, 19);
@@ -3647,7 +3647,7 @@
             this.IMN_WEBPR_0.IsShop = false;
             this.IMN_WEBPR_0.Length = 80;
             this.IMN_WEBPR_0.Location = new System.Drawing.Point(523, 19);
-            this.IMN_WEBPR_0.MaxLength = 40;
+            this.IMN_WEBPR_0.MaxLength = 80;
             this.IMN_WEBPR_0.MoveNext = true;
             this.IMN_WEBPR_0.Name = "IMN_WEBPR_0";
             this.IMN_WEBPR_0.Size = new System.Drawing.Size(334, 19);
@@ -3674,7 +3674,7 @@
             this.IMN_TEIKA_2.isMaxLengthErr = false;
             this.IMN_TEIKA_2.IsNumber = true;
             this.IMN_TEIKA_2.IsShop = false;
-            this.IMN_TEIKA_2.Length = 10;
+            this.IMN_TEIKA_2.Length = 9;
             this.IMN_TEIKA_2.Location = new System.Drawing.Point(1232, 76);
             this.IMN_TEIKA_2.MaxLength = 9;
             this.IMN_TEIKA_2.MoveNext = true;
@@ -3735,7 +3735,7 @@
             this.IMN_TEIKA_1.isMaxLengthErr = false;
             this.IMN_TEIKA_1.IsNumber = true;
             this.IMN_TEIKA_1.IsShop = false;
-            this.IMN_TEIKA_1.Length = 10;
+            this.IMN_TEIKA_1.Length = 9;
             this.IMN_TEIKA_1.Location = new System.Drawing.Point(1232, 38);
             this.IMN_TEIKA_1.MaxLength = 9;
             this.IMN_TEIKA_1.MoveNext = true;
@@ -3796,7 +3796,7 @@
             this.IMN_TEIKA_0.isMaxLengthErr = false;
             this.IMN_TEIKA_0.IsNumber = true;
             this.IMN_TEIKA_0.IsShop = false;
-            this.IMN_TEIKA_0.Length = 10;
+            this.IMN_TEIKA_0.Length = 9;
             this.IMN_TEIKA_0.Location = new System.Drawing.Point(1232, 0);
             this.IMN_TEIKA_0.MaxLength = 9;
             this.IMN_TEIKA_0.MoveNext = true;
@@ -4150,7 +4150,7 @@
             this.IMN_GENER_2.isMaxLengthErr = false;
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
-            this.IMN_GENER_2.Length = 10;
+            this.IMN_GENER_2.Length = 9;
             this.IMN_GENER_2.Location = new System.Drawing.Point(1105, 95);
             this.IMN_GENER_2.MaxLength = 9;
             this.IMN_GENER_2.MoveNext = true;
@@ -4180,7 +4180,7 @@
             this.IMN_MEMBR_2.isMaxLengthErr = false;
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
-            this.IMN_MEMBR_2.Length = 10;
+            this.IMN_MEMBR_2.Length = 5;
             this.IMN_MEMBR_2.Location = new System.Drawing.Point(1167, 95);
             this.IMN_MEMBR_2.MaxLength = 5;
             this.IMN_MEMBR_2.MoveNext = true;
@@ -4209,7 +4209,7 @@
             this.IMN_GENER_1.isMaxLengthErr = false;
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
-            this.IMN_GENER_1.Length = 10;
+            this.IMN_GENER_1.Length = 9;
             this.IMN_GENER_1.Location = new System.Drawing.Point(1105, 57);
             this.IMN_GENER_1.MaxLength = 9;
             this.IMN_GENER_1.MoveNext = true;
@@ -4239,7 +4239,7 @@
             this.IMN_MEMBR_1.isMaxLengthErr = false;
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
-            this.IMN_MEMBR_1.Length = 10;
+            this.IMN_MEMBR_1.Length = 5;
             this.IMN_MEMBR_1.Location = new System.Drawing.Point(1167, 57);
             this.IMN_MEMBR_1.MaxLength = 5;
             this.IMN_MEMBR_1.MoveNext = true;
@@ -4268,7 +4268,7 @@
             this.IMN_GENER_0.isMaxLengthErr = false;
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
-            this.IMN_GENER_0.Length = 10;
+            this.IMN_GENER_0.Length = 9;
             this.IMN_GENER_0.Location = new System.Drawing.Point(1105, 19);
             this.IMN_GENER_0.MaxLength = 9;
             this.IMN_GENER_0.MoveNext = true;
@@ -4298,7 +4298,7 @@
             this.IMN_MEMBR_0.isMaxLengthErr = false;
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
-            this.IMN_MEMBR_0.Length = 10;
+            this.IMN_MEMBR_0.Length = 5;
             this.IMN_MEMBR_0.Location = new System.Drawing.Point(1167, 19);
             this.IMN_MEMBR_0.MaxLength = 5;
             this.IMN_MEMBR_0.MoveNext = true;
@@ -4562,6 +4562,7 @@
             this.SC_ITEM_0.LabelVisible = false;
             this.SC_ITEM_0.Location = new System.Drawing.Point(27, -5);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
+            this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
             this.SC_ITEM_0.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_0.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4598,7 +4599,7 @@
             this.IMT_JANCD_0.isMaxLengthErr = false;
             this.IMT_JANCD_0.IsNumber = true;
             this.IMT_JANCD_0.IsShop = false;
-            this.IMT_JANCD_0.Length = 10;
+            this.IMT_JANCD_0.Length = 30;
             this.IMT_JANCD_0.Location = new System.Drawing.Point(27, 0);
             this.IMT_JANCD_0.MaxLength = 30;
             this.IMT_JANCD_0.MoveNext = true;
@@ -4626,6 +4627,7 @@
             this.SC_ITEM_1.LabelVisible = false;
             this.SC_ITEM_1.Location = new System.Drawing.Point(27, 33);
             this.SC_ITEM_1.Name = "SC_ITEM_1";
+            this.SC_ITEM_1.NameWidth = 190;
             this.SC_ITEM_1.SearchEnable = true;
             this.SC_ITEM_1.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4653,6 +4655,7 @@
             this.SC_ITEM_2.LabelVisible = false;
             this.SC_ITEM_2.Location = new System.Drawing.Point(27, 71);
             this.SC_ITEM_2.Name = "SC_ITEM_2";
+            this.SC_ITEM_2.NameWidth = 190;
             this.SC_ITEM_2.SearchEnable = true;
             this.SC_ITEM_2.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_2.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4681,7 +4684,7 @@
             this.IMT_JANCD_2.isMaxLengthErr = false;
             this.IMT_JANCD_2.IsNumber = true;
             this.IMT_JANCD_2.IsShop = false;
-            this.IMT_JANCD_2.Length = 10;
+            this.IMT_JANCD_2.Length = 30;
             this.IMT_JANCD_2.Location = new System.Drawing.Point(27, 74);
             this.IMT_JANCD_2.MaxLength = 30;
             this.IMT_JANCD_2.MoveNext = true;
@@ -4743,6 +4746,7 @@
             this.SC_ITEM_3.LabelVisible = false;
             this.SC_ITEM_3.Location = new System.Drawing.Point(27, 109);
             this.SC_ITEM_3.Name = "SC_ITEM_3";
+            this.SC_ITEM_3.NameWidth = 190;
             this.SC_ITEM_3.SearchEnable = true;
             this.SC_ITEM_3.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_3.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4770,6 +4774,7 @@
             this.SC_ITEM_4.LabelVisible = false;
             this.SC_ITEM_4.Location = new System.Drawing.Point(27, 147);
             this.SC_ITEM_4.Name = "SC_ITEM_4";
+            this.SC_ITEM_4.NameWidth = 190;
             this.SC_ITEM_4.SearchEnable = true;
             this.SC_ITEM_4.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_4.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4797,6 +4802,7 @@
             this.SC_ITEM_5.LabelVisible = false;
             this.SC_ITEM_5.Location = new System.Drawing.Point(27, 185);
             this.SC_ITEM_5.Name = "SC_ITEM_5";
+            this.SC_ITEM_5.NameWidth = 190;
             this.SC_ITEM_5.SearchEnable = true;
             this.SC_ITEM_5.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_5.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4824,6 +4830,7 @@
             this.SC_ITEM_6.LabelVisible = false;
             this.SC_ITEM_6.Location = new System.Drawing.Point(27, 223);
             this.SC_ITEM_6.Name = "SC_ITEM_6";
+            this.SC_ITEM_6.NameWidth = 190;
             this.SC_ITEM_6.SearchEnable = true;
             this.SC_ITEM_6.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_6.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -4851,6 +4858,7 @@
             this.SC_ITEM_7.LabelVisible = false;
             this.SC_ITEM_7.Location = new System.Drawing.Point(27, 261);
             this.SC_ITEM_7.Name = "SC_ITEM_7";
+            this.SC_ITEM_7.NameWidth = 190;
             this.SC_ITEM_7.SearchEnable = true;
             this.SC_ITEM_7.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_7.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -5042,6 +5050,7 @@
             this.ScOrder.LabelVisible = true;
             this.ScOrder.Location = new System.Drawing.Point(87, 122);
             this.ScOrder.Name = "ScOrder";
+            this.ScOrder.NameWidth = 280;
             this.ScOrder.SearchEnable = true;
             this.ScOrder.Size = new System.Drawing.Size(444, 28);
             this.ScOrder.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -5364,6 +5373,7 @@
             this.ScCopyOrderNO.LabelVisible = false;
             this.ScCopyOrderNO.Location = new System.Drawing.Point(342, 3);
             this.ScCopyOrderNO.Name = "ScCopyOrderNO";
+            this.ScCopyOrderNO.NameWidth = 600;
             this.ScCopyOrderNO.SearchEnable = true;
             this.ScCopyOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScCopyOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
@@ -5390,6 +5400,7 @@
             this.ScOrderNO.LabelVisible = false;
             this.ScOrderNO.Location = new System.Drawing.Point(86, 3);
             this.ScOrderNO.Name = "ScOrderNO";
+            this.ScOrderNO.NameWidth = 600;
             this.ScOrderNO.SearchEnable = true;
             this.ScOrderNO.Size = new System.Drawing.Size(133, 28);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
@@ -5416,6 +5427,7 @@
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(997, 92);
             this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 210;
             this.ScStaff.SearchEnable = true;
             this.ScStaff.Size = new System.Drawing.Size(344, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
@@ -5433,6 +5445,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_見積;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1060, 7);
@@ -5526,6 +5539,7 @@
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -5574,7 +5588,7 @@
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 500;
             this.TxtRemark1.Location = new System.Drawing.Point(99, 603);
-            this.TxtRemark1.MaxLength = 250;
+            this.TxtRemark1.MaxLength = 500;
             this.TxtRemark1.Mdea = false;
             this.TxtRemark1.Mfocus = false;
             this.TxtRemark1.MoveNext = false;
@@ -5670,6 +5684,7 @@
             this.CboSoukoName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.出荷指示倉庫;
             this.CboSoukoName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboSoukoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboSoukoName.Flag = 0;
             this.CboSoukoName.FormattingEnabled = true;
             this.CboSoukoName.Length = 20;
             this.CboSoukoName.Location = new System.Drawing.Point(163, 155);
@@ -5689,7 +5704,7 @@
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 500;
             this.TxtRemark2.Location = new System.Drawing.Point(99, 656);
-            this.TxtRemark2.MaxLength = 250;
+            this.TxtRemark2.MaxLength = 500;
             this.TxtRemark2.Mdea = false;
             this.TxtRemark2.Mfocus = false;
             this.TxtRemark2.MoveNext = false;
@@ -5768,6 +5783,7 @@
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -5811,6 +5827,7 @@
             this.ScMotoOrderNo.LabelVisible = false;
             this.ScMotoOrderNo.Location = new System.Drawing.Point(870, 3);
             this.ScMotoOrderNo.Name = "ScMotoOrderNo";
+            this.ScMotoOrderNo.NameWidth = 600;
             this.ScMotoOrderNo.SearchEnable = true;
             this.ScMotoOrderNo.Size = new System.Drawing.Size(133, 28);
             this.ScMotoOrderNo.Stype = Search.CKM_SearchControl.SearchType.発注番号;
