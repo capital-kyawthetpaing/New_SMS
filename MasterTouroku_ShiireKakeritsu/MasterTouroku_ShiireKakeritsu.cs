@@ -611,6 +611,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
                     searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+                    searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+                    searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
                     searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtRate.Text))
@@ -790,7 +794,7 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private void F12()
         {
-            if (ErrorCheck(12))
+            if (ErrorCheck(2))
             {
                 if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
@@ -896,7 +900,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     if (CheckColumn(colname, dtExcel))
                     {
                         Xml = mskbl.DataTableToXml(dtExcel);
-                        dtExcel = mskbl.M_ShiireKakeritsu_Select(moe);
+                        //dtExcel = mskbl.M_ShiireKakeritsu_Select(moe);
                         if (dtExcel.Rows.Count > 0)
                         {
                             dgv_ShiireKakeritsu.DataSource = dtMain;
@@ -971,7 +975,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         }
                         Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
-
                 }
                 F10();
             }
