@@ -1277,7 +1277,7 @@
             this.lblCashBalance.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCashBalance.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCashBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblCashBalance.Location = new System.Drawing.Point(235, 563);
+            this.lblCashBalance.Location = new System.Drawing.Point(242, 563);
             this.lblCashBalance.Name = "lblCashBalance";
             this.lblCashBalance.Size = new System.Drawing.Size(240, 39);
             this.lblCashBalance.TabIndex = 64;
@@ -1292,7 +1292,7 @@
             this.lblCashStorage.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCashStorage.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCashStorage.ForeColor = System.Drawing.Color.Red;
-            this.lblCashStorage.Location = new System.Drawing.Point(235, 605);
+            this.lblCashStorage.Location = new System.Drawing.Point(242, 605);
             this.lblCashStorage.Name = "lblCashStorage";
             this.lblCashStorage.Size = new System.Drawing.Size(240, 39);
             this.lblCashStorage.TabIndex = 65;
@@ -1452,7 +1452,7 @@
             this.txt1000.isMaxLengthErr = false;
             this.txt1000.IsNumber = true;
             this.txt1000.IsShop = false;
-            this.txt1000.Length = 7;
+            this.txt1000.Length = 10;
             this.txt1000.Location = new System.Drawing.Point(235, 234);
             this.txt1000.MaxLength = 7;
             this.txt1000.MoveNext = true;
@@ -1685,7 +1685,7 @@
             this.txtotheramount.isMaxLengthErr = false;
             this.txtotheramount.IsNumber = true;
             this.txtotheramount.IsShop = false;
-            this.txtotheramount.Length = 7;
+            this.txtotheramount.Length = 10;
             this.txtotheramount.Location = new System.Drawing.Point(235, 521);
             this.txtotheramount.MaxLength = 7;
             this.txtotheramount.MoveNext = true;
@@ -1713,7 +1713,7 @@
             this.txt1.isMaxLengthErr = false;
             this.txt1.IsNumber = true;
             this.txt1.IsShop = false;
-            this.txt1.Length = 7;
+            this.txt1.Length = 10;
             this.txt1.Location = new System.Drawing.Point(235, 480);
             this.txt1.MaxLength = 7;
             this.txt1.MoveNext = true;
@@ -1741,7 +1741,7 @@
             this.txt5.isMaxLengthErr = false;
             this.txt5.IsNumber = true;
             this.txt5.IsShop = false;
-            this.txt5.Length = 7;
+            this.txt5.Length = 10;
             this.txt5.Location = new System.Drawing.Point(235, 439);
             this.txt5.MaxLength = 7;
             this.txt5.MoveNext = true;
@@ -1769,7 +1769,7 @@
             this.txt10.isMaxLengthErr = false;
             this.txt10.IsNumber = true;
             this.txt10.IsShop = false;
-            this.txt10.Length = 7;
+            this.txt10.Length = 10;
             this.txt10.Location = new System.Drawing.Point(235, 398);
             this.txt10.MaxLength = 7;
             this.txt10.MoveNext = true;
@@ -1797,7 +1797,7 @@
             this.txt50.isMaxLengthErr = false;
             this.txt50.IsNumber = true;
             this.txt50.IsShop = false;
-            this.txt50.Length = 7;
+            this.txt50.Length = 10;
             this.txt50.Location = new System.Drawing.Point(235, 357);
             this.txt50.MaxLength = 7;
             this.txt50.MoveNext = true;
@@ -1825,7 +1825,7 @@
             this.txt100.isMaxLengthErr = false;
             this.txt100.IsNumber = true;
             this.txt100.IsShop = false;
-            this.txt100.Length = 7;
+            this.txt100.Length = 10;
             this.txt100.Location = new System.Drawing.Point(235, 316);
             this.txt100.MaxLength = 7;
             this.txt100.MoveNext = true;
@@ -1853,7 +1853,7 @@
             this.txt500.isMaxLengthErr = false;
             this.txt500.IsNumber = true;
             this.txt500.IsShop = false;
-            this.txt500.Length = 7;
+            this.txt500.Length = 10;
             this.txt500.Location = new System.Drawing.Point(235, 275);
             this.txt500.MaxLength = 7;
             this.txt500.MoveNext = true;
@@ -1881,7 +1881,7 @@
             this.txt2000.isMaxLengthErr = false;
             this.txt2000.IsNumber = true;
             this.txt2000.IsShop = false;
-            this.txt2000.Length = 7;
+            this.txt2000.Length = 10;
             this.txt2000.Location = new System.Drawing.Point(235, 193);
             this.txt2000.MaxLength = 7;
             this.txt2000.MoveNext = true;
@@ -1909,7 +1909,7 @@
             this.txt5000.isMaxLengthErr = false;
             this.txt5000.IsNumber = true;
             this.txt5000.IsShop = false;
-            this.txt5000.Length = 7;
+            this.txt5000.Length = 10;
             this.txt5000.Location = new System.Drawing.Point(235, 152);
             this.txt5000.MaxLength = 7;
             this.txt5000.MoveNext = true;
@@ -1937,7 +1937,7 @@
             this.txt10000.isMaxLengthErr = false;
             this.txt10000.IsNumber = true;
             this.txt10000.IsShop = false;
-            this.txt10000.Length = 7;
+            this.txt10000.Length = 10;
             this.txt10000.Location = new System.Drawing.Point(235, 111);
             this.txt10000.MaxLength = 20;
             this.txt10000.MoveNext = true;
