@@ -20,7 +20,6 @@ namespace MasterTouroku_ShiireTanka
         {
             InitializeComponent();
         }
-
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
             InProgramID = "MasterTouroku_ShiireTanka";
@@ -33,14 +32,16 @@ namespace MasterTouroku_ShiireTanka
         {
             string ymd = bbl.GetDate();
             CB_store.Bind(ymd);
-            CB_store.SelectedValue = StoreCD;
+            if(RB_koten.Checked == true)
+            {
+                CB_store.SelectedValue = StoreCD;
+            }
             CB_year.Bind(ymd);
             CB_season.Bind(ymd);
         }
-
         public override void FunctionProcess(int Index)
         {
-            switch(Index +1)
+            switch (Index + 1)
             {
                 case 6:
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
@@ -51,8 +52,6 @@ namespace MasterTouroku_ShiireTanka
 
             }
         }
-        
-
         private bool ErrorCheck()
         {
             if (String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
@@ -61,33 +60,43 @@ namespace MasterTouroku_ShiireTanka
                 shiiresaki.Focus();
                 return false;
             }
+
+            if(RB_koten.Checked == true )  
+            {
+                if(String.IsNullOrEmpty(CB_store.Text))
+                {
+                    bbl.ShowMessage("E102");
+                }
+                if (!base.CheckAvailableStores(CB_store.SelectedValue.ToString()))
+                {
+                    bbl.ShowMessage("E141");
+                    CB_store.Focus();
+                    return false;
+                }
+            }
             return true;
         }
         protected override void EndSec()
         {
             this.Close();
         }
-
         private void FrmMasterTouroku_ShiireTanka_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
-
+        #region Search_Control
         private void shiiresaki_Enter(object sender, EventArgs e)
         {
             shiiresaki.Value1 = "1";
             shiiresaki.ChangeDate = TB_Changedate.Text;
         }
-
-       
-
         private void shiiresaki_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
                 {
-                    if(shiiresaki.SelectData())
+                    if (shiiresaki.SelectData())
                     {
                         shiiresaki.Value1 = shiiresaki.TxtCode.Text;
                         shiiresaki.Value2 = shiiresaki.LabelText;
@@ -108,9 +117,9 @@ namespace MasterTouroku_ShiireTanka
 
         private void sport_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode== Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-               if(sport.SelectData())
+                if (sport.SelectData())
                 {
                     sport.Value1 = sport.TxtCode.Text;
                     sport.Value2 = sport.LabelText;
@@ -125,9 +134,9 @@ namespace MasterTouroku_ShiireTanka
 
         private void segment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode== Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(segment.SelectData())
+                if (segment.SelectData())
                 {
                     segment.Value1 = segment.TxtCode.Text;
                     segment.Value2 = segment.LabelText;
@@ -147,9 +156,9 @@ namespace MasterTouroku_ShiireTanka
 
         private void brand_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
-                if(brand.SelectData())
+                if (brand.SelectData())
                 {
                     brand.Value1 = brand.TxtCode.Text;
                     brand.Value2 = brand.LabelText;
@@ -222,13 +231,12 @@ namespace MasterTouroku_ShiireTanka
         {
             segmentC.Value1 = "203";
         }
-
+        #endregion
         private void F11()
         {
 
 
         }
-
         private void Clear()
         {
             shiiresaki.Clear();
@@ -256,6 +264,7 @@ namespace MasterTouroku_ShiireTanka
             makershohinC.Clear();
             TB_dateE.Text = string.Empty;
             TB_rate_E.Text = string.Empty;
+            
         }
     }
 }
