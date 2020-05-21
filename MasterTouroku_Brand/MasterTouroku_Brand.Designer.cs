@@ -35,7 +35,6 @@
             this.複写ブランドCD = new CKM_Controls.CKM_Label();
             this.ScCopyBrand = new Search.CKM_SearchControl();
             this.PanelDetail = new System.Windows.Forms.Panel();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
@@ -178,7 +177,6 @@
             // 
             // PanelDetail
             // 
-            this.PanelDetail.Controls.Add(this.ckM_TextBox1);
             this.PanelDetail.Controls.Add(this.txtKanaName);
             this.PanelDetail.Controls.Add(this.ckM_Label2);
             this.PanelDetail.Controls.Add(this.ckM_Label1);
@@ -188,32 +186,6 @@
             this.PanelDetail.Name = "PanelDetail";
             this.PanelDetail.Size = new System.Drawing.Size(1776, 799);
             this.PanelDetail.TabIndex = 1;
-            // 
-            // ckM_TextBox1
-            // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.isMaxLengthErr = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 5;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(602, 289);
-            this.ckM_TextBox1.MaxLength = 5;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 4;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtKanaName
             // 
@@ -362,7 +334,6 @@
         private CKM_Controls.CKM_TextBox txtBrandName;
         private CKM_Controls.CKM_TextBox txtKanaName;
         private CKM_Controls.CKM_Label ckM_Label2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
     }
 }
 

@@ -381,6 +381,7 @@ namespace ShiireShoukaiShiiresaki
             {
                 dpurchase_bl.ShowMessage("E141");
                 ComboStore.Focus();
+                cb_focus = true;
                 return false;
             }
 
