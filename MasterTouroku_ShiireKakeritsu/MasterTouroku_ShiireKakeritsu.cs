@@ -889,22 +889,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 {
                     mskbl.ShowMessage("E137");
                 }
-                //else if (!dt.Columns[0].ColumnName.ToString().Equals("仕入先CD"))
-                //{
-                //    mskbl.ShowMessage("E137");
-                //}
-                //else if(!dt.Columns[1].ColumnName.ToString().Equals("店舗CD"))
-                //{
-                //    mskbl.ShowMessage("E137");
-                //}
-                //else if (!dt.Columns[7].ColumnName.ToString().Equals("改定日"))
-                //{
-                //    mskbl.ShowMessage("E137");
-                //}
-                //else if (!dt.Columns[8].ColumnName.ToString().Equals("掛率"))
-                //{
-                //    mskbl.ShowMessage("E137");
-                //}
                 else
                 {
                     DataTable dtExcel= ExcelToDatatable(str);
@@ -925,13 +909,31 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        protected Boolean CheckColumn(String[] colName, DataTable dtExcel)
+        protected Boolean CheckColumn(String[] colName, DataTable dtExcel) //Check Columns if require columns are exist in import excel
         {
             DataColumnCollection col = dtExcel.Columns;
             for (int i = 0; i < colName.Length; i++)
             {
-                if (!dtExcel.Columns[i].ColumnName.ToString().Equals(colName[i]))
+                if (!dt.Columns[0].ColumnName.ToString().Equals("仕入先CD"))
+                {
+                    mskbl.ShowMessage("E137");
                     return false;
+                }
+                else if (!dt.Columns[1].ColumnName.ToString().Equals("店舗CD"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else if (!dt.Columns[7].ColumnName.ToString().Equals("改定日"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
+                else if (!dt.Columns[8].ColumnName.ToString().Equals("掛率"))
+                {
+                    mskbl.ShowMessage("E137");
+                    return false;
+                }
             }
             return true;
         }
