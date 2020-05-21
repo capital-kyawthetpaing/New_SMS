@@ -42,7 +42,7 @@ namespace MasterTouroku_YuubinBangou
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
             ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
-            //BindGridCombo();
+            BindGridCombo();
         }
 
         private void SetRequireFields()
@@ -53,18 +53,35 @@ namespace MasterTouroku_YuubinBangou
             txtZip2To.Require(true);
         }
 
-        //private void BindGridCombo()
-        //{
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("CarrierName", typeof(string));
-        //    dt.Columns.Add("CarrierCD", typeof(string));
-        //    dt = YuubinBangouBL.SimpleSelect1("62");
+        private void BindGridCombo()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("CarrierName", typeof(string));
+            dt.Columns.Add("CarrierCD", typeof(string));
+            dt = YuubinBangouBL.SimpleSelect1("62");
 
-        //    colCarrierName.ValueMember = "CarrierCD";
-        //    colCarrierName.DisplayMember = "CarrierName";
-        //    colCarrierName.DataSource = dt;
-        //}
-        
+            DataGridViewComboBoxColumn col = (DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"];
+            col.DataPropertyName = "Carrier";
+            col.ValueMember = "CarrierCD";
+            col.DisplayMember = "CarrierName";
+            ((DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"]).DataSource = dt;
+        }
+
+
+        public DataTable CreateDataTable()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("ZipCD1", typeof(string));
+            dt.Columns.Add("ZipCD2", typeof(string));
+            dt.Columns.Add("Address1", typeof(string));
+            dt.Columns.Add("Address2", typeof(string));
+            dt.Columns.Add("CarrierName", typeof(string));
+            dt.Columns.Add("CarrierCD", typeof(string));
+            dt.Columns.Add("CarrierLeadDay", typeof(string));
+
+            return dt;
+        }
+
         public override void FunctionProcess(int index)
         {
             CKM_SearchControl sc = new CKM_SearchControl();
@@ -160,13 +177,12 @@ namespace MasterTouroku_YuubinBangou
 
             string ZipCD1To = txtZip1To.Text;
             string ZipCD2To = txtZip2To.Text;
-            
+
+            //dtDisplay = CreateDataTable();
             dtDisplay = YuubinBangouBL.M_ZipCode_YuubinBangou_Select(ZipCode,ZipCD1To,ZipCD2To);
 
             if (dtDisplay != null)
             {
-                //dtDisplay.Columns.Remove("CarrierName");
-            
                 dgvYuubinBangou.DataSource = dtDisplay;
                 txtZip1from.Focus();
 
