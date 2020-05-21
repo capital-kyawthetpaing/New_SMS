@@ -16,6 +16,7 @@ namespace MasterTouroku_ShiireTanka
     public partial class FrmMasterTouroku_ShiireTanka : FrmMainForm
     {
         Base_BL bbl = new Base_BL();
+        bool cb_focus = false;
         public FrmMasterTouroku_ShiireTanka()
         {
             InitializeComponent();
@@ -82,7 +83,13 @@ namespace MasterTouroku_ShiireTanka
         }
         private void FrmMasterTouroku_ShiireTanka_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+            if (cb_focus == false)
+            { MoveNextControl(e); }
+            else
+            {
+                CB_store.Focus();
+                cb_focus = false;
+            }
         }
         #region Search_Control
         private void shiiresaki_Enter(object sender, EventArgs e)
@@ -265,6 +272,32 @@ namespace MasterTouroku_ShiireTanka
             TB_dateE.Text = string.Empty;
             TB_rate_E.Text = string.Empty;
             
+        }
+
+        private void RB_koten_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RB_koten.Checked == true)
+            {
+                CB_store.SelectedValue = StoreCD;
+            }
+            else
+            {
+                CB_store.Text = string.Empty;
+            }
+
+        }
+
+        private void CB_store_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (RB_koten.Checked == true)
+            {
+                if (!base.CheckAvailableStores(CB_store.SelectedValue.ToString()))
+                {
+                    bbl.ShowMessage("E141");
+                    CB_store.Focus();
+                    cb_focus = true;
+                }
+            }
         }
     }
 }

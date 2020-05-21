@@ -89,10 +89,10 @@ namespace BL
                 return true;
 
             }
-            //入荷予定日に入力がある場合、入力されたらエラー
+            //入荷予定日に入力がある場合、入力されたらエラー 「入荷予定日が入力済みのため、入力不要です。」
             if (!string.IsNullOrWhiteSpace(arrivalPranDate))
             {
-                ShowMessage("E103");
+                ShowMessage("E232");
                 return false;
             }
 
