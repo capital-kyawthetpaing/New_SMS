@@ -165,7 +165,7 @@ namespace MasterTouroku_YuubinBangou
 
             if (dtDisplay != null)
             {
-                dtDisplay.Columns.Remove("CarrierName");
+                //dtDisplay.Columns.Remove("CarrierName");
             
                 dgvYuubinBangou.DataSource = dtDisplay;
                 txtZip1from.Focus();
