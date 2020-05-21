@@ -410,7 +410,7 @@ namespace Search
                 case SearchType.Supplier:
                     TxtCode.MaxLength = 13;
                     TxtCode.Width = 130;
-                    lblName.Width = 280;
+                    lblName.Width = 320;
                     break;
                  case SearchType.仕入先PayeeFlg:
                     txtCode.MaxLength = 13;
@@ -1522,7 +1522,7 @@ namespace Search
                 case SearchType.JANMulti:
                     using (Search_Product frmJanCD = new Search_Product(changedate))
                     {
-                        frmJanCD.Mode = "4";
+                        frmJanCD.Mode = "5";
                         frmJanCD.JANCD = txtCode.Text;
                         frmJanCD.ShowDialog();
 

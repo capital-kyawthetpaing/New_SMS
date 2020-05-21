@@ -851,6 +851,7 @@ namespace HacchuuNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -1648,6 +1649,7 @@ namespace HacchuuNyuuryoku
 
                         detailControls[(int)EIndex.ZipCD1].Text = row["DestinationZip1CD"].ToString();
                         detailControls[(int)EIndex.ZipCD2].Text = row["DestinationZip2CD"].ToString();
+                        mZipCD = detailControls[(int)EIndex.ZipCD1].Text + detailControls[(int)EIndex.ZipCD2].Text;
                         detailControls[(int)EIndex.Address1].Text = row["DestinationAddress1"].ToString();
                         detailControls[(int)EIndex.Address2].Text = row["DestinationAddress2"].ToString();
                         detailControls[(int)EIndex.Tel].Text = row["DestinationTelphoneNO"].ToString();
@@ -1711,7 +1713,7 @@ namespace HacchuuNyuuryoku
                     mGrid.g_DArray[i].SizeName = row["SizeName"].ToString();   // 
                     mGrid.g_DArray[i].MakerItem = row["MakerItem"].ToString();
 
-                    mGrid.g_DArray[i].Rate = bbl.Z_SetStr(row["Rate"]);   // 
+                    mGrid.g_DArray[i].Rate = string.Format("{0:#,##0.00}", bbl.Z_Set(row["Rate"]));   // 
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["OrderUnitPrice"]);   // 
                     //mGrid.g_DArray[i].PriceOutTax = bbl.Z_SetStr(row["PriceOutTax"]);   //  CheckGridでセット
 
@@ -1953,7 +1955,7 @@ namespace HacchuuNyuuryoku
                         bool ret = mbl.M_ZipCode_SelectData(mze);
                         if (ret)
                         {
-                            if (set || mZipCD != mze.ZipCD1 + mze.ZipCD2)
+                            if (mZipCD != mze.ZipCD1 + mze.ZipCD2)
                             {
                                 detailControls[index + 1].Text = mze.Address1;
                                 detailControls[index + 2].Text = mze.Address2;
@@ -2391,6 +2393,8 @@ namespace HacchuuNyuuryoku
 
                         //変更された場合、金額再計算 発注単価×発注数
                         mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].OrderSu));
+
+                        CalcZei(row, ymd);
                     }
                     break;
 
@@ -2436,6 +2440,10 @@ namespace HacchuuNyuuryoku
                         if (bbl.ShowMessage("Q305") != DialogResult.OK)
                             return false;
                     }
+
+                    if(!chkAll)
+                        CalcZei(row, ymd);
+
                     break;
 
                 case (int)ClsGridHacchuu.ColNO.OrderUnitPrice:
@@ -2447,6 +2455,9 @@ namespace HacchuuNyuuryoku
                         if (bbl.ShowMessage("Q306") != DialogResult.OK)
                             return false;
                     }
+                    if (!chkAll)
+                        CalcZei(row, ymd);
+
                     break;
 
                 case (int)ClsGridHacchuu.ColNO.OrderGaku:
@@ -2457,35 +2468,7 @@ namespace HacchuuNyuuryoku
                         mGrid.g_DArray[row].OrderGaku = "0";
                     }
 
-                    M_SalesTax_Entity mste = new M_SalesTax_Entity
-                    {
-                        ChangeDate = ymd
-                    };
-
-                    SalesTax_BL msbl = new SalesTax_BL();
-
-                    ret = msbl.M_SalesTax_Select(mste);
-
-                    if (mGrid.g_DArray[row].TaxRateFLG == 1)
-                    {
-                        mGrid.g_DArray[row].TaxRate = bbl.Z_Set(mste.TaxRate1);
-                        ///通常税額←M_SKU.TaxRateFLG＝1	の時の発注額×税率×(1/100)			
-                        mGrid.g_DArray[row].HacchuTax = GetResultWithHasuKbn(mTaxFractionKBN, bbl.Z_Set(mGrid.g_DArray[row].OrderGaku) * mGrid.g_DArray[row].TaxRate / 100);
-                        mGrid.g_DArray[row].KeigenTax = 0;
-                    }
-                    else if (mGrid.g_DArray[row].TaxRateFLG == 2)
-                    {
-                        mGrid.g_DArray[row].TaxRate = bbl.Z_Set(mste.TaxRate2);
-                        mGrid.g_DArray[row].HacchuTax = 0;
-                        //軽減税額←M_SKU.TaxRateFLG＝2の時の発注額×税率×(1/100)			
-                        mGrid.g_DArray[row].KeigenTax = GetResultWithHasuKbn(mTaxFractionKBN, bbl.Z_Set(mGrid.g_DArray[row].OrderGaku) * mGrid.g_DArray[row].TaxRate / 100);
-                    }
-                    else
-                    {
-                        mGrid.g_DArray[row].TaxRate = 0;
-                        mGrid.g_DArray[row].HacchuTax = 0;
-                        mGrid.g_DArray[row].KeigenTax = 0;
-                    }
+                    CalcZei(row, ymd);
 
                     break;
             }
@@ -2510,6 +2493,39 @@ namespace HacchuuNyuuryoku
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
             return true;
+        }
+
+        private void CalcZei(int row, string ymd)
+        {
+            M_SalesTax_Entity mste = new M_SalesTax_Entity
+            {
+                ChangeDate = ymd
+            };
+
+            SalesTax_BL msbl = new SalesTax_BL();
+
+          bool  ret = msbl.M_SalesTax_Select(mste);
+
+            if (mGrid.g_DArray[row].TaxRateFLG == 1)
+            {
+                mGrid.g_DArray[row].TaxRate = bbl.Z_Set(mste.TaxRate1);
+                ///通常税額←M_SKU.TaxRateFLG＝1	の時の発注額×税率×(1/100)			
+                mGrid.g_DArray[row].HacchuTax = GetResultWithHasuKbn(mTaxFractionKBN, bbl.Z_Set(mGrid.g_DArray[row].OrderGaku) * mGrid.g_DArray[row].TaxRate / 100);
+                mGrid.g_DArray[row].KeigenTax = 0;
+            }
+            else if (mGrid.g_DArray[row].TaxRateFLG == 2)
+            {
+                mGrid.g_DArray[row].TaxRate = bbl.Z_Set(mste.TaxRate2);
+                mGrid.g_DArray[row].HacchuTax = 0;
+                //軽減税額←M_SKU.TaxRateFLG＝2の時の発注額×税率×(1/100)			
+                mGrid.g_DArray[row].KeigenTax = GetResultWithHasuKbn(mTaxFractionKBN, bbl.Z_Set(mGrid.g_DArray[row].OrderGaku) * mGrid.g_DArray[row].TaxRate / 100);
+            }
+            else
+            {
+                mGrid.g_DArray[row].TaxRate = 0;
+                mGrid.g_DArray[row].HacchuTax = 0;
+                mGrid.g_DArray[row].KeigenTax = 0;
+            }
         }
 
         /// <summary>
@@ -3164,9 +3180,13 @@ namespace HacchuuNyuuryoku
                             mGrid.g_DArray[w_Row].OldJanCD = frmProduct.JANCD;
                             mGrid.g_DArray[w_Row].SKUCD = frmProduct.SKUCD;
                             mGrid.g_DArray[w_Row].AdminNO = frmProduct.AdminNO;
-
-                            CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, w_Row, false, true);
-
+                            
+                            if (CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, w_Row, false, true) == false)
+                            {
+                                //Focusセット処理
+                                ERR_FOCUS_GRID_SUB((int)ClsGridHacchuu.ColNO.JanCD, w_Row);
+                                return;
+                            }
                             //配列の内容を画面へセット
                             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 

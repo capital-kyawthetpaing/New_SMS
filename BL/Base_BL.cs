@@ -126,13 +126,13 @@ namespace BL
             {
                 if (originalText.Contains("{0}"))
                     originalText = originalText.Replace("{0}", mme.MessageText1);
-                else if (originalText.Contains("{1}"))
+                if (originalText.Contains("{1}"))
                     originalText = originalText.Replace("{1}", mme.MessageText2);
-                else if (originalText.Contains("{2}"))
+                if (originalText.Contains("{2}"))
                     originalText = originalText.Replace("{2}", mme.MessageText3);
-                else if (originalText.Contains("{3}"))
+                if (originalText.Contains("{3}"))
                     originalText = originalText.Replace("{3}", mme.MessageText4);
-                else if (originalText.Contains("{4}"))
+                if (originalText.Contains("{4}"))
                     originalText = originalText.Replace("{4}", mme.MessageText5);
 
                 //originalText += !string.IsNullOrWhiteSpace(mme.MessageText2) ? originalText.Replace("{2}", mme.MessageText2) : string.Empty;

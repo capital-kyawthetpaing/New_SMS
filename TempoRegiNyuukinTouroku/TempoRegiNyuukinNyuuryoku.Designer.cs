@@ -61,7 +61,7 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1443, 729);
+            this.panelDetail.Size = new System.Drawing.Size(1713, 833);
             this.panelDetail.TabIndex = 0;
             // 
             // chkAdvanceFlg
@@ -213,7 +213,7 @@
             this.cboDenominationName.MaxLength = 20;
             this.cboDenominationName.MoveNext = true;
             this.cboDenominationName.Name = "cboDenominationName";
-            this.cboDenominationName.Size = new System.Drawing.Size(270, 46);
+            this.cboDenominationName.Size = new System.Drawing.Size(250, 46);
             this.cboDenominationName.TabIndex = 1;
             // 
             // txtPayment
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 857);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.panelDetail);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TempoRegiNyuukinNyuuryoku";
