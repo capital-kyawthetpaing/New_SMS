@@ -185,7 +185,6 @@ namespace ShiireShoukaiDetails
                     Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
                     //Btn_Display.Enabled = F11Enable = true;
-                    
                     chkOk.Checked = true;
                     chkNotOK.Checked = true;
                     dgv_PurchaseDetails.DataSource = null;
@@ -267,7 +266,6 @@ namespace ShiireShoukaiDetails
                     ssdbl.ShowMessage("E128");
                     dgv_PurchaseDetails.DataSource = null;
                 }
-               
             }
             
         }

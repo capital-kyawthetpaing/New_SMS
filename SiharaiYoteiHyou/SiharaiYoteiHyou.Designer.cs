@@ -258,7 +258,7 @@
             this.ckM_Label7.Location = new System.Drawing.Point(55, 122);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label7.TabIndex = 8;
+            this.ckM_Label7.TabIndex = 9;
             this.ckM_Label7.Text = "支払状況";
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -297,7 +297,7 @@
             this.ckM_Label8.Location = new System.Drawing.Point(81, 154);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label8.TabIndex = 9;
+            this.ckM_Label8.TabIndex = 11;
             this.ckM_Label8.Text = "種別";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -309,7 +309,7 @@
             this.chkPurchase.Location = new System.Drawing.Point(118, 154);
             this.chkPurchase.Name = "chkPurchase";
             this.chkPurchase.Size = new System.Drawing.Size(50, 16);
-            this.chkPurchase.TabIndex = 10;
+            this.chkPurchase.TabIndex = 12;
             this.chkPurchase.Text = "仕入";
             this.chkPurchase.UseVisualStyleBackColor = true;
             // 
@@ -320,7 +320,7 @@
             this.chkExpense.Location = new System.Drawing.Point(250, 153);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(50, 16);
-            this.chkExpense.TabIndex = 11;
+            this.chkExpense.TabIndex = 13;
             this.chkExpense.Text = "経費";
             this.chkExpense.UseVisualStyleBackColor = true;
             // 
@@ -354,7 +354,7 @@
             this.panel2.Location = new System.Drawing.Point(115, 115);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 25);
-            this.panel2.TabIndex = 19;
+            this.panel2.TabIndex = 10;
             // 
             // panel1
             // 
@@ -363,7 +363,7 @@
             this.panel1.Location = new System.Drawing.Point(115, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 25);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 8;
             // 
             // radioClosedStatusAll
             // 
