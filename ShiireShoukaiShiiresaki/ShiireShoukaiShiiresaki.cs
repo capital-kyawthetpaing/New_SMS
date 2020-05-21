@@ -23,16 +23,15 @@ namespace ShiireShoukaiShiiresaki
         string payeeflg = "";
         string StoreAuthen_CD = "";
         string StoreAuthen_ChangeDate = "";
+        bool cb_focus=false;
         D_Purchase_Entity dpde;
         ShiireShoukaiShiiresaki_BL dpurchase_bl;
         Base_BL bbl = new Base_BL();
         public ShiireShoukaiShiiresaki()
         {
-            
             InitializeComponent();
             dpurchase_bl = new ShiireShoukaiShiiresaki_BL();
         }
-
         private void frmShiireShoukaiShiiresaki_Load(object sender, EventArgs e)
         {
             InProgramID = "ShiireShoukaiShiiresaki";
@@ -42,17 +41,12 @@ namespace ShiireShoukaiShiiresaki
             BindCombo();
             chkPaid.Checked = true;
             chkUnpaid.Checked = true;
-          base.InProgramNM = ProNm;
+            base.InProgramNM = ProNm;
             Btn_F10.Enabled = false;
             txtPurchaseDateFrom.Focus();
-                    
         }
-
-       
-
         private void SetRequireField()
         {
-           
             ComboStore.Require(true);
             this.Btn_F10.Text = "出力(F10)";
             F2Visible = false;
@@ -62,7 +56,6 @@ namespace ShiireShoukaiShiiresaki
             F9Visible = false;
             F12Visible = false;
         }
-
         public void BindCombo()
         {
             ComboStore.Bind(string.Empty, "2");
@@ -71,8 +64,6 @@ namespace ShiireShoukaiShiiresaki
         /// <summary>
         /// エラーチェック処理
         /// </summary>
-       
-        
         private D_Purchase_Entity GetSearchInfo()
         {
             dpde = new D_Purchase_Entity
@@ -155,7 +146,6 @@ namespace ShiireShoukaiShiiresaki
                 }
             }
         }
-
         public override void FunctionProcess(int index)
         {
             if (index + 1 == 11)
@@ -261,8 +251,6 @@ namespace ShiireShoukaiShiiresaki
         {
             this.Close();
         }
-
-
         private void scSupplier_CodeKeyDownEvent(object sender, KeyEventArgs e)
 
         {
@@ -286,7 +274,6 @@ namespace ShiireShoukaiShiiresaki
             }
 
         }
-
         private void scStaff_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -310,7 +297,13 @@ namespace ShiireShoukaiShiiresaki
 
         private void ShiireShoukaiShiiresaki_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+            if(cb_focus== false)
+            { MoveNextControl(e); }
+            else
+            {
+                ComboStore.Focus();
+                cb_focus = false;
+            }
         }
 
         private bool ErrorCheck()
@@ -324,7 +317,6 @@ namespace ShiireShoukaiShiiresaki
                     txtPurchaseDateTo.Focus();
                     return false;
                 }
-
             }
 
             /// <remarks>入荷日(from)は入荷日(To)より大きいの場合エラーになる</remarks>
@@ -396,11 +388,11 @@ namespace ShiireShoukaiShiiresaki
 
         private void txtPurchaseDateTo_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (!string.IsNullOrEmpty(txtPurchaseDateFrom.Text) && !string.IsNullOrEmpty(txtPurchaseDateTo.Text))
                 {
-                    if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1 )
+                    if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1)
                     {
                         dpurchase_bl.ShowMessage("E104");
                         txtPurchaseDateTo.Focus();
@@ -447,7 +439,6 @@ namespace ShiireShoukaiShiiresaki
             scSupplier.Value1 = "1";//仕入先区分：1
             scSupplier.ChangeDate = txtPurchaseDateTo.Text;
         }
-
         private void ComboStore_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -456,6 +447,7 @@ namespace ShiireShoukaiShiiresaki
                 {
                     dpurchase_bl.ShowMessage("E141");
                     ComboStore.Focus();
+                   cb_focus = true;
                 }
             }
         }

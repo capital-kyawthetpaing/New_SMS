@@ -65,16 +65,16 @@ namespace CKM_Controls
          ////       CalculateWidth();
          //   }
         }
-        public override int MaxLength
-        {
-            get { return length_; }
-            set
-            {
-                length_ = value;
-               // Length = length_;
-            }
+        //public override int MaxLength
+        //{
+        //    get { return length_; }
+        //    set
+        //    {
+        //        length_ = value;
+        //       // Length = length_;
+        //    }
 
-        }
+        //}
 
         private Bytes CtrlByte { get; set; }
         public enum Bytes

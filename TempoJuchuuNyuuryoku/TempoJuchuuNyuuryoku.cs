@@ -880,6 +880,7 @@ namespace TempoJuchuuNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -2783,7 +2784,7 @@ namespace TempoJuchuuNyuuryoku
                                 mGrid.g_DArray[row].OldJanCD = "";
                             }
                         }
-                        if(changeYmd)
+                        if (changeYmd)
                             //単価再計算するように
                             mGrid.g_DArray[row].NotReCalc = false;
                     }
@@ -2809,7 +2810,7 @@ namespace TempoJuchuuNyuuryoku
                         ChangeDate = ymd
                     };
 
-                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD || string.IsNullOrWhiteSpace(mGrid.g_DArray[row].OldJanCD)) 
+                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD || string.IsNullOrWhiteSpace(mGrid.g_DArray[row].OldJanCD))
                     {
                         mse.SKUCD = mGrid.g_DArray[row].SKUCD;
                         mse.AdminNO = mGrid.g_DArray[row].AdminNO;
@@ -2845,7 +2846,7 @@ namespace TempoJuchuuNyuuryoku
 
                             if (!frmSKU.flgCancel)
                             {
-                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];  
+                                selectRow = dt.Select(" AdminNO = " + frmSKU.parAdminNO)[0];
                             }
                         }
 
@@ -2882,7 +2883,7 @@ namespace TempoJuchuuNyuuryoku
                         };
                         Vendor_BL vbl = new Vendor_BL();
 
-                        ret= vbl.M_Vendor_SelectTop1(mve);
+                        ret = vbl.M_Vendor_SelectTop1(mve);
                         if (ret)
                             mGrid.g_DArray[row].VendorName = mve.VendorName;
 
@@ -2941,7 +2942,7 @@ namespace TempoJuchuuNyuuryoku
                             mGrid.g_DArray[row].JuchuuGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.ZeikomiTanka) * wSuu);
                             //原価額=Form.受注数≠Nullの場合Function_単価取得.out原価単価×Form.Detail.受注数
                             mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
-        
+
                             //粗利額=⑦Form.税抜販売額－⑩Form.原価額				
                             mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
 
@@ -3002,12 +3003,12 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].OldJanCD = mGrid.g_DArray[row].JanCD;
 
                         //明細の出荷倉庫CDに、Header部の出荷倉庫CD、倉庫名をセットする。
-                        mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex>0 ? CboSoukoName.SelectedValue.ToString():"";
+                        mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString() : "";
 
                         CheckHikiate(row, ymd);
 
                         Grid_NotFocus(col, row);
-                        
+
                     }
 
                     break;
@@ -3077,24 +3078,27 @@ namespace TempoJuchuuNyuuryoku
                         }
                     }
 
-                    M_Vendor_Entity me = new M_Vendor_Entity
+                    if (!string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                     {
-                        VendorCD = mGrid.g_DArray[row].VendorCD,
-                        ChangeDate = ymd,
-                        DeleteFlg = "0"
-                    };
-                    Vendor_BL vebl = new Vendor_BL();
+                        M_Vendor_Entity me = new M_Vendor_Entity
+                        {
+                            VendorCD = mGrid.g_DArray[row].VendorCD,
+                            ChangeDate = ymd,
+                            DeleteFlg = "0"
+                        };
+                        Vendor_BL vebl = new Vendor_BL();
 
-                    ret = vebl.M_Vendor_SelectTop1(me);
-                    if (ret)
-                    {
-                        mGrid.g_DArray[row].VendorName = me.VendorName;
-                    }
-                    else
-                    {
-                        //Ｅ１０１  
-                        bbl.ShowMessage("E101");
-                        return false;
+                        ret = vebl.M_Vendor_SelectTop1(me);
+                        if (ret)
+                        {
+                            mGrid.g_DArray[row].VendorName = me.VendorName;
+                        }
+                        else
+                        {
+                            //Ｅ１０１  
+                            bbl.ShowMessage("E101");
+                            return false;
+                        }
                     }
                     break;
 
