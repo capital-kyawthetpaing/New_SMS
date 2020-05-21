@@ -493,7 +493,7 @@
             this.cboAmountFractionKBN.Flag = 0;
             this.cboAmountFractionKBN.FormattingEnabled = true;
             this.cboAmountFractionKBN.Length = 10;
-            this.cboAmountFractionKBN.Location = new System.Drawing.Point(497, 422);
+            this.cboAmountFractionKBN.Location = new System.Drawing.Point(443, 422);
             this.cboAmountFractionKBN.MaxLength = 10;
             this.cboAmountFractionKBN.MoveNext = true;
             this.cboAmountFractionKBN.Name = "cboAmountFractionKBN";
@@ -509,7 +509,7 @@
             this.cboTaxFractionKBN.Flag = 0;
             this.cboTaxFractionKBN.FormattingEnabled = true;
             this.cboTaxFractionKBN.Length = 10;
-            this.cboTaxFractionKBN.Location = new System.Drawing.Point(497, 403);
+            this.cboTaxFractionKBN.Location = new System.Drawing.Point(443, 403);
             this.cboTaxFractionKBN.MaxLength = 10;
             this.cboTaxFractionKBN.MoveNext = true;
             this.cboTaxFractionKBN.Name = "cboTaxFractionKBN";
@@ -525,7 +525,7 @@
             this.cboTaxTiming.Flag = 0;
             this.cboTaxTiming.FormattingEnabled = true;
             this.cboTaxTiming.Length = 10;
-            this.cboTaxTiming.Location = new System.Drawing.Point(497, 385);
+            this.cboTaxTiming.Location = new System.Drawing.Point(443, 385);
             this.cboTaxTiming.MaxLength = 10;
             this.cboTaxTiming.MoveNext = true;
             this.cboTaxTiming.Name = "cboTaxTiming";
@@ -541,7 +541,7 @@
             this.ckM_Label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label39.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label39.Location = new System.Drawing.Point(386, 427);
+            this.ckM_Label39.Location = new System.Drawing.Point(332, 427);
             this.ckM_Label39.Name = "ckM_Label39";
             this.ckM_Label39.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label39.TabIndex = 74;
@@ -558,7 +558,7 @@
             this.ckM_Label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label38.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label38.Location = new System.Drawing.Point(399, 407);
+            this.ckM_Label38.Location = new System.Drawing.Point(345, 407);
             this.ckM_Label38.Name = "ckM_Label38";
             this.ckM_Label38.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label38.TabIndex = 73;
@@ -575,7 +575,7 @@
             this.ckM_Label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label37.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label37.Location = new System.Drawing.Point(425, 389);
+            this.ckM_Label37.Location = new System.Drawing.Point(371, 389);
             this.ckM_Label37.Name = "ckM_Label37";
             this.ckM_Label37.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label37.TabIndex = 72;
@@ -1450,7 +1450,7 @@
             this.txtAddress2.MaxLength = 40;
             this.txtAddress2.MoveNext = true;
             this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(400, 19);
+            this.txtAddress2.Size = new System.Drawing.Size(550, 19);
             this.txtAddress2.TabIndex = 12;
             this.txtAddress2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1477,7 +1477,7 @@
             this.txtAddress1.MaxLength = 40;
             this.txtAddress1.MoveNext = true;
             this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(400, 19);
+            this.txtAddress1.Size = new System.Drawing.Size(550, 19);
             this.txtAddress1.TabIndex = 11;
             this.txtAddress1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1559,7 +1559,7 @@
             this.txtVendorStaffName.MaxLength = 25;
             this.txtVendorStaffName.MoveNext = true;
             this.txtVendorStaffName.Name = "txtVendorStaffName";
-            this.txtVendorStaffName.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorStaffName.Size = new System.Drawing.Size(320, 19);
             this.txtVendorStaffName.TabIndex = 8;
             this.txtVendorStaffName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1586,7 +1586,7 @@
             this.txtPositionName.MaxLength = 25;
             this.txtPositionName.MoveNext = true;
             this.txtPositionName.Name = "txtPositionName";
-            this.txtPositionName.Size = new System.Drawing.Size(250, 19);
+            this.txtPositionName.Size = new System.Drawing.Size(320, 19);
             this.txtPositionName.TabIndex = 7;
             this.txtPositionName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1613,7 +1613,7 @@
             this.txtPostName.MaxLength = 25;
             this.txtPostName.MoveNext = true;
             this.txtPostName.Name = "txtPostName";
-            this.txtPostName.Size = new System.Drawing.Size(250, 19);
+            this.txtPostName.Size = new System.Drawing.Size(320, 19);
             this.txtPostName.TabIndex = 6;
             this.txtPostName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1640,7 +1640,7 @@
             this.txtLongName2.MaxLength = 40;
             this.txtLongName2.MoveNext = true;
             this.txtLongName2.Name = "txtLongName2";
-            this.txtLongName2.Size = new System.Drawing.Size(400, 19);
+            this.txtLongName2.Size = new System.Drawing.Size(550, 19);
             this.txtLongName2.TabIndex = 5;
             this.txtLongName2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1667,7 +1667,7 @@
             this.txtLongName1.MaxLength = 40;
             this.txtLongName1.MoveNext = true;
             this.txtLongName1.Name = "txtLongName1";
-            this.txtLongName1.Size = new System.Drawing.Size(400, 19);
+            this.txtLongName1.Size = new System.Drawing.Size(550, 19);
             this.txtLongName1.TabIndex = 4;
             this.txtLongName1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1694,7 +1694,7 @@
             this.txtVendorKana.MaxLength = 25;
             this.txtVendorKana.MoveNext = true;
             this.txtVendorKana.Name = "txtVendorKana";
-            this.txtVendorKana.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorKana.Size = new System.Drawing.Size(320, 19);
             this.txtVendorKana.TabIndex = 3;
             this.txtVendorKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1721,7 +1721,7 @@
             this.txtVendorName.MaxLength = 50;
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorName.Size = new System.Drawing.Size(320, 19);
             this.txtVendorName.TabIndex = 1;
             this.txtVendorName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
