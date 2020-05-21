@@ -1366,12 +1366,12 @@
             this.txtFaxno.isMaxLengthErr = false;
             this.txtFaxno.IsNumber = true;
             this.txtFaxno.IsShop = false;
-            this.txtFaxno.Length = 11;
+            this.txtFaxno.Length = 15;
             this.txtFaxno.Location = new System.Drawing.Point(107, 303);
-            this.txtFaxno.MaxLength = 11;
+            this.txtFaxno.MaxLength = 15;
             this.txtFaxno.MoveNext = true;
             this.txtFaxno.Name = "txtFaxno";
-            this.txtFaxno.Size = new System.Drawing.Size(100, 19);
+            this.txtFaxno.Size = new System.Drawing.Size(150, 19);
             this.txtFaxno.TabIndex = 15;
             this.txtFaxno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1392,12 +1392,12 @@
             this.txtTelno.isMaxLengthErr = false;
             this.txtTelno.IsNumber = true;
             this.txtTelno.IsShop = false;
-            this.txtTelno.Length = 11;
+            this.txtTelno.Length = 15;
             this.txtTelno.Location = new System.Drawing.Point(107, 284);
-            this.txtTelno.MaxLength = 11;
+            this.txtTelno.MaxLength = 15;
             this.txtTelno.MoveNext = true;
             this.txtTelno.Name = "txtTelno";
-            this.txtTelno.Size = new System.Drawing.Size(100, 19);
+            this.txtTelno.Size = new System.Drawing.Size(150, 19);
             this.txtTelno.TabIndex = 14;
             this.txtTelno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1418,12 +1418,12 @@
             this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
-            this.txtMailAddress.Length = 20;
+            this.txtMailAddress.Length = 100;
             this.txtMailAddress.Location = new System.Drawing.Point(107, 265);
-            this.txtMailAddress.MaxLength = 20;
+            this.txtMailAddress.MaxLength = 100;
             this.txtMailAddress.MoveNext = true;
             this.txtMailAddress.Name = "txtMailAddress";
-            this.txtMailAddress.Size = new System.Drawing.Size(200, 19);
+            this.txtMailAddress.Size = new System.Drawing.Size(350, 19);
             this.txtMailAddress.TabIndex = 13;
             this.txtMailAddress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
