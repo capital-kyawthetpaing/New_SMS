@@ -66,19 +66,20 @@ namespace TempoRegiTsurisenJyunbi
         public bool CheckMonth()
         {
             string ymd = bbl.GetDate();
-            txtDate.Text = ymd;
+            //txtDate.Text = ymd;
             DateTime target = DateTime.Parse(txtDate.Text);
-            DateTime today = DateTime.Today;
-            DateTime yesterday = today.AddDays(-1);
-            if(target>=yesterday)
+            //DateTime today = DateTime.Today;
+            DateTime yesterday = DateTime.Now.AddDays(-1);
+            if(target<=yesterday)
             {
                 trtjb.ShowMessage("E103");
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
         private void SetRequireField()
         {
+            txtDate.Require(true);
             DepositGaku.Require(true);
         }
         public override void FunctionProcess(int index)
@@ -180,7 +181,6 @@ namespace TempoRegiTsurisenJyunbi
                 {
                     CheckMonth();
                 }
-                
             }
         }
         private void RunConsole()
