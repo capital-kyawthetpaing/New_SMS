@@ -40,7 +40,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void TempoRegiMasterNyuuryoku_Load(object sender, EventArgs e)
         {
-            InProgramID = "TempoRegi_Master_Nyuuryoku";
+            InProgramID = "TempoRegiMasterNyuuryoku";
             StartProgram();
             this.Text = "マスター入力";
             SetRequireField();
