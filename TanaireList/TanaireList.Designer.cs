@@ -108,7 +108,7 @@
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(574, 32);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.ScSKUCD.TabIndex = 7;
+            this.ScSKUCD.TabIndex = 0;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
             this.ScSKUCD.Value1 = null;

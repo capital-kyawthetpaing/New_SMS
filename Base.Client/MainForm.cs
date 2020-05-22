@@ -2092,5 +2092,10 @@ namespace Base.Client
                 }
             }
         }
+
+        private void FrmMainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }

@@ -2243,7 +2243,7 @@ namespace TempoJuchuuNyuuryoku
                     //受注日が変更された場合のチェック処理
                     if (mOldJyuchuDate != detailControls[index].Text)
                     {
-                        for (int i = (int)EIndex.StaffCD; i < (int)EIndex.CustomerCD; i++)
+                        for (int i = (int)EIndex.StaffCD; i <= (int)EIndex.DeliveryCD; i++)
                             if (!string.IsNullOrWhiteSpace(detailControls[i].Text))
                                 if (!CheckDependsOnDate(i, true))
                                     return false;
