@@ -521,7 +521,7 @@ namespace MasterTouroku_Shiiresaki
                 }
                 else
                 {
-                    if (!ScVendor.IsExists())
+                    if (!ScVendor.IsExists(1))
                     {
                         mtsbl.ShowMessage("E133");
                         ScVendor.SetFocus(1);
@@ -855,7 +855,7 @@ namespace MasterTouroku_Shiiresaki
                 
                 if (OperationMode == EOperationMode.INSERT)
                 {
-                    if (ScVendor.IsExists())
+                    if (ScVendor.IsExists(1))
                     {
                         mtsbl.ShowMessage("E132");
                         ScVendor.SetFocus(1);

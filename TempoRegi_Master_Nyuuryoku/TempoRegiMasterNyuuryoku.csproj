@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{15364BB5-11F2-4717-BF7C-61722CAED9B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TempoRegi_Master_Nyuuryoku</RootNamespace>
-    <AssemblyName>TempoRegi_Master_Nyuuryoku</AssemblyName>
+    <RootNamespace>TempoRegiMasterNyuuryoku</RootNamespace>
+    <AssemblyName>TempoRegiMasterNyuuryoku</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -61,11 +61,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TempoRegiMasterNyuryokuForm.cs">
+    <Compile Include="TempoRegiMasterNyuuryoku.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TempoRegiMasterNyuryokuForm.Designer.cs">
-      <DependentUpon>TempoRegiMasterNyuryokuForm.cs</DependentUpon>
+    <Compile Include="TempoRegiMasterNyuuryoku.Designer.cs">
+      <DependentUpon>TempoRegiMasterNyuuryoku.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +79,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="TempoRegiMasterNyuryokuForm.resx">
-      <DependentUpon>TempoRegiMasterNyuryokuForm.cs</DependentUpon>
+    <EmbeddedResource Include="TempoRegiMasterNyuuryoku.resx">
+      <DependentUpon>TempoRegiMasterNyuuryoku.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
