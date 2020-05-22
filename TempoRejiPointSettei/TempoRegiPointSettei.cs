@@ -14,17 +14,17 @@ using CKM_Controls;
 
 namespace TempoRejiPointSettei
 {
-    public partial class FrmTempoRejiPointSettei : ShopBaseForm 
+    public partial class FrmTempoRegiPointSettei : ShopBaseForm 
     {
         TempoRejiPointSettei_BL pointSettei_bl;
         M_StorePoint_Entity mspe;
 
         string type="1";
-        public FrmTempoRejiPointSettei()
+        public FrmTempoRegiPointSettei()
         {
             InitializeComponent();
         }
-        private void FrmTempoRejiPointSettei_Load(object sender, EventArgs e)
+        private void FrmTempoRegiPointSettei_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRejiPointSettei";            
             StartProgram();
@@ -278,11 +278,12 @@ namespace TempoRejiPointSettei
             this.Close();
         }
 
-        private void FrmTempoRejiPointSettei_KeyUp(object sender, KeyEventArgs e)
+        private void FrmTempoRegiPointSettei_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
 
+       
     }
 }

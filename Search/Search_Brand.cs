@@ -376,5 +376,29 @@ namespace Search
             }
         }
 
+        private void dgvDetail_Paint(object sender, PaintEventArgs e)
+        {
+            string[] monthes = { "","メーカー (仕入先)",""};
+            for (int j = 2; j < 3;)
+            {
+                Rectangle r1 =this.dgvDetail.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.dgvDetail.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+
+                e.Graphics.FillRectangle(new SolidBrush(this.dgvDetail.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 2],
+                this.dgvDetail.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.dgvDetail.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 2;
+
+            }
+        }
     }
 }

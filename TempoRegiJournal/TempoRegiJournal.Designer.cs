@@ -78,6 +78,7 @@
             this.txtPrintDateFrom.Text = "9999/99/99";
             this.txtPrintDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrintDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtPrintDateFrom.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrintDateFrom_KeyDown);
             // 
             // ckmShop_Label1
             // 
@@ -120,6 +121,7 @@
             this.txtPrintDateTo.Text = "9999/99/99";
             this.txtPrintDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrintDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtPrintDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPrintDateTo_KeyDown);
             // 
             // ckmShop_Label3
             // 
