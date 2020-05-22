@@ -1089,7 +1089,7 @@ namespace MasterTouroku_HanbaiTanka
                         mGrid.g_DArray[i].ITemName = row["SKUName"].ToString();   // 
                     }
 
-                    if (i == 0 && OperationMode != EOperationMode.INSERT)     
+                    if (i == 0 && !string.IsNullOrWhiteSpace(row["UpdateOperator"].ToString()))     
                     {
                         detailControls[(int)EIndex.GeneralRate].Text = bbl.Z_SetStr(row["GeneralRate"]);
                         detailControls[(int)EIndex.MemberRate].Text = bbl.Z_SetStr(row["MemberRate"]);
@@ -1098,7 +1098,7 @@ namespace MasterTouroku_HanbaiTanka
                         detailControls[(int)EIndex.WebRate].Text = bbl.Z_SetStr(row["WebRate"]);
                     }
 
-                    if (OperationMode == EOperationMode.INSERT  && radioButton1.Checked)
+                    if (OperationMode == EOperationMode.INSERT)
                     {
                         CheckDetail((int)EIndex.TankaCD);
                     }
