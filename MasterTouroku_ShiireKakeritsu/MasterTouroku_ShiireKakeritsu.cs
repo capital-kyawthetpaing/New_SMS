@@ -975,5 +975,5 @@ namespace MasterTouroku_ShiireKakeritsu
                 F10();
             }
         }
-    //}
+    }
 }
