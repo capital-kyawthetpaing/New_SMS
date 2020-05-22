@@ -67,7 +67,7 @@ namespace TempoRegiTorihikiReceipt
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void TempoRegiJournal_Load(object sender, EventArgs e)
+        private void TempoRegiTorihikiReceipt_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRegiTorihikiReceipt";
             string data = InOperatorCD;

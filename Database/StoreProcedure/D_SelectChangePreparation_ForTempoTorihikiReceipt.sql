@@ -1,18 +1,22 @@
- BEGIN TRY 
- Drop Procedure dbo.[D_Coupon_Select]
+BEGIN TRY 
+ Drop Procedure dbo.[D_SelectChangePreparation_ForTempoTorihikiReceipt]
 END try
 BEGIN CATCH END CATCH 
+
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 --  ======================================================================
 --       Program Call    店舗取引レシート印刷　レシート印刷出力
 --       Program ID      TempoTorihikiReceipt
 --       Create date:    2020.02.24
+--       Update date:    2020.05.21  TelephoneNO → Telephone
 --    ======================================================================
-CREATE PROCEDURE [dbo].[D_SelectChangePreparation_ForTempoTorihikiReceipt]
+ALTER PROCEDURE [dbo].[D_SelectChangePreparation_ForTempoTorihikiReceipt]
 (
     @DepositNO        int
 )AS
@@ -86,7 +90,7 @@ BEGIN
                                      ,StoreName
                                      ,Address1
                                      ,Address2
-                                     ,TelephoneNO
+                                     ,Telephone
                                      ,ChangeDate
                                      ,ReceiptPrint
                                      ,DeleteFlg 
@@ -154,4 +158,3 @@ BEGIN
         ;
 END
 
-GO
