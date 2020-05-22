@@ -124,6 +124,7 @@ namespace SiharaiYoteiHyou
             {
                 shyhbl.ShowMessage("E139");
                 comboStore.Focus();
+                combo_focus = true;
                 return false;
             }
             return true;
