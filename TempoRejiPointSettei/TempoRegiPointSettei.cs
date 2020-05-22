@@ -99,8 +99,8 @@ namespace TempoRejiPointSettei
             {
                 StoreCD=StoreCD,
                 ChangeDate = txtChangeDate.Text.Replace("/", "-"),
-                PointRate = txtPointRate.Text,
-                ServicedayRate = txtServiceDayRate.Text,
+                PointRate = txtPointRate.Text=="99.9" ? "100.0" : txtPointRate.Text,
+                ServicedayRate = txtServiceDayRate.Text=="9.9"? "10.0" : txtServiceDayRate.Text,
                 ExpirationDate = txtExperationDate.Text,
                 MaxPoint = txtMaxPoint.Text,
                 TicketUnit = txtTicketUnit.Text,
@@ -283,7 +283,24 @@ namespace TempoRejiPointSettei
             MoveNextControl(e);
         }
 
+        private void txtPointRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (txtPointRate.Text == "99.9")
+                    txtPointRate.Text = "100.0";
+               
+            }
+        }
 
-       
+        private void txtServiceDayRate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtServiceDayRate.Text == "9.9")
+                    txtServiceDayRate.Text = "10.0";
+
+            }
+        }
     }
 }
