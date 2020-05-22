@@ -444,8 +444,8 @@ namespace Search
                     break;
                 case SearchType.スタッフ:
                     txtCode.MaxLength = 10;
-                    txtCode.Width = 100;
-                    lblName.Width = 210;
+                    txtCode.Width = 70;
+                    lblName.Width = 250;
                     break;
                 case SearchType.銀行:
                     TxtCode.MaxLength = 4;
