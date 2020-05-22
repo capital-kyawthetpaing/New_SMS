@@ -1,18 +1,22 @@
- BEGIN TRY 
+BEGIN TRY 
  Drop Procedure dbo.[D_SelectData_ForTempoRegiJournal]
 END try
 BEGIN CATCH END CATCH 
+
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 --  ======================================================================
 --       Program Call    店舗レジ ジャーナル印刷　ジャーナル印刷出力
 --       Program ID      TempoRegiJournal
 --       Create date:    2019.12.11
+--       Update date:    2020.05.21  TelephoneNO → Telephone
 --    ======================================================================
-CREATE PROCEDURE [dbo].[D_SelectData_ForTempoRegiJournal]
+ALTER PROCEDURE [dbo].[D_SelectData_ForTempoRegiJournal]
 (
     @StoreCD   varchar(4),
     @DateFrom  varchar(10),
@@ -200,7 +204,7 @@ BEGIN
                                      ,StoreName
                                      ,Address1
                                      ,Address2
-                                     ,TelephoneNO
+                                     ,Telephone
                                      ,ChangeDate
                                      ,ReceiptPrint
                                      ,DeleteFlg 
@@ -1303,7 +1307,7 @@ BEGIN
 	      ,store.StoreName										-- 店舗名
           ,store.Address1										-- 住所１
           ,store.Address2										-- 住所２
-          ,store.TelphoneNO										-- 電話番号
+          ,store.Telephone										-- 電話番号
           ,tempHistory1.IssueDate								-- 発行日時
           ,tempHistory1.JanCD									-- JANCD
           ,tempHistory1.SKUShortName							-- 商品名
@@ -1615,7 +1619,7 @@ BEGIN
                              ,StoreName
                              ,Address1
                              ,Address2
-                             ,TelephoneNO
+                             ,Telephone
                              ,ChangeDate
                              ,ReceiptPrint
                              ,DeleteFlg
@@ -1643,4 +1647,8 @@ BEGIN
 END
 
 
-GO
+
+
+
+
+
