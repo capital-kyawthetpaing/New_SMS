@@ -266,22 +266,29 @@ namespace MasterTouroku_Tempo
 
                         //複写店舗ストアCDに入力がある場合、(When there is an input in 複写店舗ストアCD)Ｅ１０２
                         //必須入力
-                        if (copyKeyControls[(int)EIndex.StoreCD].Text != "" && copyKeyControls[index].Text == "")
+                        if (!string.IsNullOrWhiteSpace(copyKeyControls[(int)EIndex.StoreCD].Text) && string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
                             copyKeyControls[index].Focus();
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
                         }
-
-                        copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
-
-                        //日付として正しいこと(Be on the correct date)Ｅ１０３
-                        if (!bbl.CheckDate(copyKeyControls[index].Text))
+                        else if (!string.IsNullOrWhiteSpace(copyKeyControls[index].Text))
                         {
-                            copyKeyControls[index].Focus();
-                            bbl.ShowMessage("E103");
-                            return false;
+                            copyKeyControls[index].Text = bbl.FormatDate(copyKeyControls[index].Text);
+
+                            //日付として正しいこと(Be on the correct date)Ｅ１０３
+                            if (!bbl.CheckDate(copyKeyControls[index].Text))
+                            {
+                                copyKeyControls[index].Focus();
+                                bbl.ShowMessage("E103");
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            //両方とも未入力
+                            return true;
                         }
                         break;
                 }
