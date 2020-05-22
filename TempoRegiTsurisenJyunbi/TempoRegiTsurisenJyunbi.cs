@@ -59,6 +59,7 @@ namespace TempoRegiTsurisenJyunbi
             this.Text = "釣銭準備入力";
             SetRequireField();
             storeCD = StoreCD;
+            //txtDate.Text = DateTime.Now.ToString("yyyy/MM/dd");
         }
         private void SetRequireField()
         {
