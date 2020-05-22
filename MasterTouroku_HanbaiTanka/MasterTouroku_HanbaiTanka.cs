@@ -1089,7 +1089,7 @@ namespace MasterTouroku_HanbaiTanka
                         mGrid.g_DArray[i].ITemName = row["SKUName"].ToString();   // 
                     }
 
-                    if (i == 0)     
+                    if (i == 0 && OperationMode != EOperationMode.INSERT)     
                     {
                         detailControls[(int)EIndex.GeneralRate].Text = bbl.Z_SetStr(row["GeneralRate"]);
                         detailControls[(int)EIndex.MemberRate].Text = bbl.Z_SetStr(row["MemberRate"]);
