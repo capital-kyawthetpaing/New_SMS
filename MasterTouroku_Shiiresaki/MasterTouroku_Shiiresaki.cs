@@ -481,8 +481,9 @@ namespace MasterTouroku_Shiiresaki
                     {
                         if (!RequireCheck(new Control[] { ScVendor.TxtCode, ScVendor.TxtChangeDate }))
                             return false;
-
-                        if (ScVendor.IsExists())
+                        //mve.VendorCD = ScVendor.TxtCode.Text;
+                        //mve.ChangeDate = ScVendor.TxtChangeDate.Text;
+                        if (ScVendor.IsExists(1))
                         {
                             mtsbl.ShowMessage("E132"); 
                             ScVendor.SetFocus(1);
