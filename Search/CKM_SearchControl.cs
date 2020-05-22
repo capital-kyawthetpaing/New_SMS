@@ -552,7 +552,7 @@ namespace Search
                     break;
                 case SearchType.競技:
                     TxtCode.MaxLength = 6;
-                    TxtCode.Width = 100;
+                    TxtCode.Width = 50;
                     lblName.Width = 250;
                     break;
                 case SearchType.分類:
