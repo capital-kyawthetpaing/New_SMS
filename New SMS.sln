@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_Ginkou", "Mas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_Renban", "MasterTouroku_Renban\MasterTouroku_Renban.csproj", "{3C43E684-E917-48C8-9C86-B57736FD7E07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRejiPointSettei", "TempoRejiPointSettei\TempoRejiPointSettei.csproj", "{9D4C1B3B-BBA9-4297-B695-651FC93D5F45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiPointSettei", "TempoRejiPointSettei\TempoRegiPointSettei.csproj", "{9D4C1B3B-BBA9-4297-B695-651FC93D5F45}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuchuuTorikomiAPI", "PCAP0208I\JuchuuTorikomiAPI.csproj", "{02E4F8F6-F8D4-4321-ACD1-1EBCE3654CF9}"
 EndProject

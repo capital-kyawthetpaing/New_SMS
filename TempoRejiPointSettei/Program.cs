@@ -16,7 +16,7 @@ namespace TempoRejiPointSettei
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmTempoRejiPointSettei());
+            Application.Run(new FrmTempoRegiPointSettei());
         }
     }
 }

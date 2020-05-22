@@ -647,9 +647,9 @@
             this.txtNotDisplay.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtNotDisplay.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtNotDisplay.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtNotDisplay.Length = 100;
+            this.txtNotDisplay.Length = 500;
             this.txtNotDisplay.Location = new System.Drawing.Point(765, 682);
-            this.txtNotDisplay.MaxLength = 100;
+            this.txtNotDisplay.MaxLength = 500;
             this.txtNotDisplay.Mdea = false;
             this.txtNotDisplay.Mfocus = false;
             this.txtNotDisplay.MoveNext = true;
@@ -667,9 +667,9 @@
             this.txtDisplayNote.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.txtDisplayNote.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtDisplayNote.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtDisplayNote.Length = 100;
+            this.txtDisplayNote.Length = 500;
             this.txtDisplayNote.Location = new System.Drawing.Point(765, 579);
-            this.txtDisplayNote.MaxLength = 100;
+            this.txtDisplayNote.MaxLength = 500;
             this.txtDisplayNote.Mdea = false;
             this.txtDisplayNote.Mfocus = false;
             this.txtDisplayNote.MoveNext = true;

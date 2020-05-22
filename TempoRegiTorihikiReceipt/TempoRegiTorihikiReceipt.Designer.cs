@@ -176,7 +176,7 @@
             this.Controls.Add(this.lblSalseNo);
             this.Name = "TempoRegiJournal";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.TempoRegiJournal_Load);
+            this.Load += new System.EventHandler(this.TempoRegiTorihikiReceipt_Load);
             this.Controls.SetChildIndex(this.lblSalseNo, 0);
             this.Controls.SetChildIndex(this.txtPrintDateFrom, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label1, 0);
