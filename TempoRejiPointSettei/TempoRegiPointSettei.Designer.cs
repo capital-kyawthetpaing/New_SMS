@@ -1,6 +1,6 @@
 ﻿namespace TempoRejiPointSettei
 {
-    partial class FrmTempoRejiPointSettei
+    partial class FrmTempoRegiPointSettei
     {
         /// <summary>
         /// Required designer variable.
@@ -1758,16 +1758,16 @@
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
-            // FrmTempoRejiPointSettei
+            // FrmTempoRegiPointSettei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1704, 961);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmTempoRejiPointSettei";
+            this.Name = "FrmTempoRegiPointSettei";
             this.Text = "ポイント設定";
-            this.Load += new System.EventHandler(this.FrmTempoRejiPointSettei_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTempoRejiPointSettei_KeyUp);
+            this.Load += new System.EventHandler(this.FrmTempoRegiPointSettei_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTempoRegiPointSettei_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
