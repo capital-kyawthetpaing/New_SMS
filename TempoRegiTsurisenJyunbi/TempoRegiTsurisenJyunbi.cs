@@ -144,9 +144,10 @@ namespace TempoRegiTsurisenJyunbi
                     {
                         trtjb.ShowMessage("I101");
                         RunConsole();
+                        txtDate.Clear();
                         DepositGaku.Clear();
                         Remark.Clear();
-                        DepositGaku.Focus();
+                        txtDate.Focus();
                     }
                     else
                     {

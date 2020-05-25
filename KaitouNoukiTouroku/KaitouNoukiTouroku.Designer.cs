@@ -276,7 +276,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.Btn_SelectAll = new CKM_Controls.CKM_Button();
-            this.CboSoukoName = new CKM_Controls.CKM_ComboBox();
+            this.CboArrivalPlanCD = new CKM_Controls.CKM_ComboBox();
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox18 = new CKM_Controls.CKM_TextBox();
@@ -295,7 +295,7 @@
             this.ckM_TextBox5 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox6 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
-            this.ckM_ComboBox1 = new CKM_Controls.CKM_ComboBox();
+            this.CboArrivalPlanKbn = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox7 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label10 = new CKM_Controls.CKM_Label();
@@ -309,7 +309,7 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.ckM_ComboBox1);
+            this.PanelHeader.Controls.Add(this.CboArrivalPlanKbn);
             this.PanelHeader.Controls.Add(this.Btn_Hanei);
             this.PanelHeader.Controls.Add(this.ckM_Label11);
             this.PanelHeader.Controls.Add(this.ckM_TextBox8);
@@ -328,7 +328,7 @@
             this.PanelHeader.Controls.Add(this.ckM_TextBox5);
             this.PanelHeader.Controls.Add(this.ScCopyOrderNO);
             this.PanelHeader.Controls.Add(this.ScOrderNO);
-            this.PanelHeader.Controls.Add(this.CboSoukoName);
+            this.PanelHeader.Controls.Add(this.CboArrivalPlanCD);
             this.PanelHeader.Controls.Add(this.label4);
             this.PanelHeader.Controls.Add(this.ckM_TextBox6);
             this.PanelHeader.Controls.Add(this.ckM_Label7);
@@ -357,7 +357,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label7, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox6, 0);
             this.PanelHeader.Controls.SetChildIndex(this.label4, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.CboSoukoName, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.CboArrivalPlanCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScOrderNO, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScCopyOrderNO, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox5, 0);
@@ -376,7 +376,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox8, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label11, 0);
             this.PanelHeader.Controls.SetChildIndex(this.Btn_Hanei, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_ComboBox1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.CboArrivalPlanKbn, 0);
             // 
             // PanelSearch
             // 
@@ -889,7 +889,7 @@
             this.IMC_KBN_10.Length = 30;
             this.IMC_KBN_10.Location = new System.Drawing.Point(1209, 398);
             this.IMC_KBN_10.MaxLength = 15;
-            this.IMC_KBN_10.MoveNext = true;
+            this.IMC_KBN_10.MoveNext = false;
             this.IMC_KBN_10.Name = "IMC_KBN_10";
             this.IMC_KBN_10.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_10.TabIndex = 721;
@@ -928,7 +928,7 @@
             this.IMT_ARIDT_10.Length = 10;
             this.IMT_ARIDT_10.Location = new System.Drawing.Point(1063, 399);
             this.IMT_ARIDT_10.MaxLength = 10;
-            this.IMT_ARIDT_10.MoveNext = true;
+            this.IMT_ARIDT_10.MoveNext = false;
             this.IMT_ARIDT_10.Name = "IMT_ARIDT_10";
             this.IMT_ARIDT_10.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_10.TabIndex = 714;
@@ -1103,7 +1103,7 @@
             this.IMN_GENER2_10.Length = 7;
             this.IMN_GENER2_10.Location = new System.Drawing.Point(1142, 399);
             this.IMN_GENER2_10.MaxLength = 7;
-            this.IMN_GENER2_10.MoveNext = true;
+            this.IMN_GENER2_10.MoveNext = false;
             this.IMN_GENER2_10.Name = "IMN_GENER2_10";
             this.IMN_GENER2_10.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_10.TabIndex = 706;
@@ -1374,7 +1374,7 @@
             this.IMC_KBN_9.Length = 30;
             this.IMC_KBN_9.Location = new System.Drawing.Point(1209, 360);
             this.IMC_KBN_9.MaxLength = 15;
-            this.IMC_KBN_9.MoveNext = true;
+            this.IMC_KBN_9.MoveNext = false;
             this.IMC_KBN_9.Name = "IMC_KBN_9";
             this.IMC_KBN_9.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_9.TabIndex = 702;
@@ -1413,7 +1413,7 @@
             this.IMT_ARIDT_9.Length = 10;
             this.IMT_ARIDT_9.Location = new System.Drawing.Point(1063, 361);
             this.IMT_ARIDT_9.MaxLength = 10;
-            this.IMT_ARIDT_9.MoveNext = true;
+            this.IMT_ARIDT_9.MoveNext = false;
             this.IMT_ARIDT_9.Name = "IMT_ARIDT_9";
             this.IMT_ARIDT_9.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_9.TabIndex = 695;
@@ -1588,7 +1588,7 @@
             this.IMN_GENER2_9.Length = 7;
             this.IMN_GENER2_9.Location = new System.Drawing.Point(1142, 361);
             this.IMN_GENER2_9.MaxLength = 7;
-            this.IMN_GENER2_9.MoveNext = true;
+            this.IMN_GENER2_9.MoveNext = false;
             this.IMN_GENER2_9.Name = "IMN_GENER2_9";
             this.IMN_GENER2_9.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_9.TabIndex = 687;
@@ -1859,7 +1859,7 @@
             this.IMC_KBN_8.Length = 30;
             this.IMC_KBN_8.Location = new System.Drawing.Point(1209, 322);
             this.IMC_KBN_8.MaxLength = 15;
-            this.IMC_KBN_8.MoveNext = true;
+            this.IMC_KBN_8.MoveNext = false;
             this.IMC_KBN_8.Name = "IMC_KBN_8";
             this.IMC_KBN_8.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_8.TabIndex = 683;
@@ -1898,7 +1898,7 @@
             this.IMT_ARIDT_8.Length = 10;
             this.IMT_ARIDT_8.Location = new System.Drawing.Point(1063, 323);
             this.IMT_ARIDT_8.MaxLength = 10;
-            this.IMT_ARIDT_8.MoveNext = true;
+            this.IMT_ARIDT_8.MoveNext = false;
             this.IMT_ARIDT_8.Name = "IMT_ARIDT_8";
             this.IMT_ARIDT_8.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_8.TabIndex = 676;
@@ -2073,7 +2073,7 @@
             this.IMN_GENER2_8.Length = 7;
             this.IMN_GENER2_8.Location = new System.Drawing.Point(1142, 323);
             this.IMN_GENER2_8.MaxLength = 7;
-            this.IMN_GENER2_8.MoveNext = true;
+            this.IMN_GENER2_8.MoveNext = false;
             this.IMN_GENER2_8.Name = "IMN_GENER2_8";
             this.IMN_GENER2_8.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_8.TabIndex = 668;
@@ -2344,7 +2344,7 @@
             this.IMC_KBN_7.Length = 30;
             this.IMC_KBN_7.Location = new System.Drawing.Point(1209, 284);
             this.IMC_KBN_7.MaxLength = 15;
-            this.IMC_KBN_7.MoveNext = true;
+            this.IMC_KBN_7.MoveNext = false;
             this.IMC_KBN_7.Name = "IMC_KBN_7";
             this.IMC_KBN_7.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_7.TabIndex = 664;
@@ -2362,7 +2362,7 @@
             this.IMC_KBN_6.Length = 30;
             this.IMC_KBN_6.Location = new System.Drawing.Point(1209, 246);
             this.IMC_KBN_6.MaxLength = 15;
-            this.IMC_KBN_6.MoveNext = true;
+            this.IMC_KBN_6.MoveNext = false;
             this.IMC_KBN_6.Name = "IMC_KBN_6";
             this.IMC_KBN_6.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_6.TabIndex = 663;
@@ -2380,7 +2380,7 @@
             this.IMC_KBN_5.Length = 30;
             this.IMC_KBN_5.Location = new System.Drawing.Point(1209, 208);
             this.IMC_KBN_5.MaxLength = 15;
-            this.IMC_KBN_5.MoveNext = true;
+            this.IMC_KBN_5.MoveNext = false;
             this.IMC_KBN_5.Name = "IMC_KBN_5";
             this.IMC_KBN_5.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_5.TabIndex = 662;
@@ -2398,7 +2398,7 @@
             this.IMC_KBN_4.Length = 30;
             this.IMC_KBN_4.Location = new System.Drawing.Point(1209, 170);
             this.IMC_KBN_4.MaxLength = 15;
-            this.IMC_KBN_4.MoveNext = true;
+            this.IMC_KBN_4.MoveNext = false;
             this.IMC_KBN_4.Name = "IMC_KBN_4";
             this.IMC_KBN_4.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_4.TabIndex = 661;
@@ -2416,7 +2416,7 @@
             this.IMC_KBN_3.Length = 30;
             this.IMC_KBN_3.Location = new System.Drawing.Point(1209, 132);
             this.IMC_KBN_3.MaxLength = 15;
-            this.IMC_KBN_3.MoveNext = true;
+            this.IMC_KBN_3.MoveNext = false;
             this.IMC_KBN_3.Name = "IMC_KBN_3";
             this.IMC_KBN_3.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_3.TabIndex = 660;
@@ -2530,7 +2530,7 @@
             this.IMC_KBN_2.Length = 30;
             this.IMC_KBN_2.Location = new System.Drawing.Point(1209, 94);
             this.IMC_KBN_2.MaxLength = 15;
-            this.IMC_KBN_2.MoveNext = true;
+            this.IMC_KBN_2.MoveNext = false;
             this.IMC_KBN_2.Name = "IMC_KBN_2";
             this.IMC_KBN_2.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_2.TabIndex = 651;
@@ -2548,7 +2548,7 @@
             this.IMC_KBN_1.Length = 30;
             this.IMC_KBN_1.Location = new System.Drawing.Point(1209, 56);
             this.IMC_KBN_1.MaxLength = 15;
-            this.IMC_KBN_1.MoveNext = true;
+            this.IMC_KBN_1.MoveNext = false;
             this.IMC_KBN_1.Name = "IMC_KBN_1";
             this.IMC_KBN_1.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_1.TabIndex = 650;
@@ -2566,7 +2566,7 @@
             this.IMC_KBN_0.Length = 30;
             this.IMC_KBN_0.Location = new System.Drawing.Point(1209, 19);
             this.IMC_KBN_0.MaxLength = 15;
-            this.IMC_KBN_0.MoveNext = true;
+            this.IMC_KBN_0.MoveNext = false;
             this.IMC_KBN_0.Name = "IMC_KBN_0";
             this.IMC_KBN_0.Size = new System.Drawing.Size(90, 20);
             this.IMC_KBN_0.TabIndex = 649;
@@ -2593,7 +2593,7 @@
             this.IMT_ARIDT_7.Length = 10;
             this.IMT_ARIDT_7.Location = new System.Drawing.Point(1063, 285);
             this.IMT_ARIDT_7.MaxLength = 10;
-            this.IMT_ARIDT_7.MoveNext = true;
+            this.IMT_ARIDT_7.MoveNext = false;
             this.IMT_ARIDT_7.Name = "IMT_ARIDT_7";
             this.IMT_ARIDT_7.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_7.TabIndex = 631;
@@ -2623,7 +2623,7 @@
             this.IMT_ARIDT_6.Length = 10;
             this.IMT_ARIDT_6.Location = new System.Drawing.Point(1063, 247);
             this.IMT_ARIDT_6.MaxLength = 10;
-            this.IMT_ARIDT_6.MoveNext = true;
+            this.IMT_ARIDT_6.MoveNext = false;
             this.IMT_ARIDT_6.Name = "IMT_ARIDT_6";
             this.IMT_ARIDT_6.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_6.TabIndex = 612;
@@ -2653,7 +2653,7 @@
             this.IMT_ARIDT_5.Length = 10;
             this.IMT_ARIDT_5.Location = new System.Drawing.Point(1063, 209);
             this.IMT_ARIDT_5.MaxLength = 10;
-            this.IMT_ARIDT_5.MoveNext = true;
+            this.IMT_ARIDT_5.MoveNext = false;
             this.IMT_ARIDT_5.Name = "IMT_ARIDT_5";
             this.IMT_ARIDT_5.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_5.TabIndex = 593;
@@ -2683,7 +2683,7 @@
             this.IMT_ARIDT_4.Length = 10;
             this.IMT_ARIDT_4.Location = new System.Drawing.Point(1063, 171);
             this.IMT_ARIDT_4.MaxLength = 10;
-            this.IMT_ARIDT_4.MoveNext = true;
+            this.IMT_ARIDT_4.MoveNext = false;
             this.IMT_ARIDT_4.Name = "IMT_ARIDT_4";
             this.IMT_ARIDT_4.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_4.TabIndex = 574;
@@ -2713,7 +2713,7 @@
             this.IMT_ARIDT_3.Length = 10;
             this.IMT_ARIDT_3.Location = new System.Drawing.Point(1063, 133);
             this.IMT_ARIDT_3.MaxLength = 10;
-            this.IMT_ARIDT_3.MoveNext = true;
+            this.IMT_ARIDT_3.MoveNext = false;
             this.IMT_ARIDT_3.Name = "IMT_ARIDT_3";
             this.IMT_ARIDT_3.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_3.TabIndex = 555;
@@ -2743,7 +2743,7 @@
             this.IMT_ARIDT_0.Length = 10;
             this.IMT_ARIDT_0.Location = new System.Drawing.Point(1063, 19);
             this.IMT_ARIDT_0.MaxLength = 10;
-            this.IMT_ARIDT_0.MoveNext = true;
+            this.IMT_ARIDT_0.MoveNext = false;
             this.IMT_ARIDT_0.Name = "IMT_ARIDT_0";
             this.IMT_ARIDT_0.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_0.TabIndex = 510;
@@ -2773,7 +2773,7 @@
             this.IMT_ARIDT_2.Length = 10;
             this.IMT_ARIDT_2.Location = new System.Drawing.Point(1063, 95);
             this.IMT_ARIDT_2.MaxLength = 10;
-            this.IMT_ARIDT_2.MoveNext = true;
+            this.IMT_ARIDT_2.MoveNext = false;
             this.IMT_ARIDT_2.Name = "IMT_ARIDT_2";
             this.IMT_ARIDT_2.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_2.TabIndex = 516;
@@ -2803,7 +2803,7 @@
             this.IMT_ARIDT_1.Length = 10;
             this.IMT_ARIDT_1.Location = new System.Drawing.Point(1064, 57);
             this.IMT_ARIDT_1.MaxLength = 10;
-            this.IMT_ARIDT_1.MoveNext = true;
+            this.IMT_ARIDT_1.MoveNext = false;
             this.IMT_ARIDT_1.Name = "IMT_ARIDT_1";
             this.IMT_ARIDT_1.Size = new System.Drawing.Size(80, 19);
             this.IMT_ARIDT_1.TabIndex = 513;
@@ -3729,7 +3729,7 @@
             this.IMN_GENER2_7.Length = 7;
             this.IMN_GENER2_7.Location = new System.Drawing.Point(1142, 285);
             this.IMN_GENER2_7.MaxLength = 7;
-            this.IMN_GENER2_7.MoveNext = true;
+            this.IMN_GENER2_7.MoveNext = false;
             this.IMN_GENER2_7.Name = "IMN_GENER2_7";
             this.IMN_GENER2_7.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_7.TabIndex = 621;
@@ -3980,7 +3980,7 @@
             this.IMN_GENER2_6.Length = 7;
             this.IMN_GENER2_6.Location = new System.Drawing.Point(1142, 247);
             this.IMN_GENER2_6.MaxLength = 7;
-            this.IMN_GENER2_6.MoveNext = true;
+            this.IMN_GENER2_6.MoveNext = false;
             this.IMN_GENER2_6.Name = "IMN_GENER2_6";
             this.IMN_GENER2_6.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_6.TabIndex = 602;
@@ -4231,7 +4231,7 @@
             this.IMN_GENER2_5.Length = 7;
             this.IMN_GENER2_5.Location = new System.Drawing.Point(1142, 209);
             this.IMN_GENER2_5.MaxLength = 7;
-            this.IMN_GENER2_5.MoveNext = true;
+            this.IMN_GENER2_5.MoveNext = false;
             this.IMN_GENER2_5.Name = "IMN_GENER2_5";
             this.IMN_GENER2_5.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_5.TabIndex = 583;
@@ -4482,7 +4482,7 @@
             this.IMN_GENER2_4.Length = 7;
             this.IMN_GENER2_4.Location = new System.Drawing.Point(1142, 171);
             this.IMN_GENER2_4.MaxLength = 7;
-            this.IMN_GENER2_4.MoveNext = true;
+            this.IMN_GENER2_4.MoveNext = false;
             this.IMN_GENER2_4.Name = "IMN_GENER2_4";
             this.IMN_GENER2_4.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_4.TabIndex = 564;
@@ -4733,7 +4733,7 @@
             this.IMN_GENER2_3.Length = 7;
             this.IMN_GENER2_3.Location = new System.Drawing.Point(1142, 133);
             this.IMN_GENER2_3.MaxLength = 7;
-            this.IMN_GENER2_3.MoveNext = true;
+            this.IMN_GENER2_3.MoveNext = false;
             this.IMN_GENER2_3.Name = "IMN_GENER2_3";
             this.IMN_GENER2_3.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_3.TabIndex = 544;
@@ -4984,7 +4984,7 @@
             this.IMN_GENER2_2.Length = 7;
             this.IMN_GENER2_2.Location = new System.Drawing.Point(1142, 95);
             this.IMN_GENER2_2.MaxLength = 7;
-            this.IMN_GENER2_2.MoveNext = true;
+            this.IMN_GENER2_2.MoveNext = false;
             this.IMN_GENER2_2.Name = "IMN_GENER2_2";
             this.IMN_GENER2_2.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_2.TabIndex = 31;
@@ -5014,7 +5014,7 @@
             this.IMN_GENER2_1.Length = 7;
             this.IMN_GENER2_1.Location = new System.Drawing.Point(1142, 57);
             this.IMN_GENER2_1.MaxLength = 7;
-            this.IMN_GENER2_1.MoveNext = true;
+            this.IMN_GENER2_1.MoveNext = false;
             this.IMN_GENER2_1.Name = "IMN_GENER2_1";
             this.IMN_GENER2_1.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_1.TabIndex = 18;
@@ -5044,7 +5044,7 @@
             this.IMN_GENER2_0.Length = 7;
             this.IMN_GENER2_0.Location = new System.Drawing.Point(1142, 19);
             this.IMN_GENER2_0.MaxLength = 7;
-            this.IMN_GENER2_0.MoveNext = true;
+            this.IMN_GENER2_0.MoveNext = false;
             this.IMN_GENER2_0.Name = "IMN_GENER2_0";
             this.IMN_GENER2_0.Size = new System.Drawing.Size(68, 19);
             this.IMN_GENER2_0.TabIndex = 4;
@@ -6033,6 +6033,7 @@
             this.ScOrder.ChangeDateWidth = 100;
             this.ScOrder.Code = "";
             this.ScOrder.CodeWidth = 130;
+            this.ScOrder.CodeWidth1 = 130;
             this.ScOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrder.DataCheck = true;
             this.ScOrder.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6328,6 +6329,7 @@
             this.ScCopyOrderNO.ChangeDateWidth = 100;
             this.ScCopyOrderNO.Code = "";
             this.ScCopyOrderNO.CodeWidth = 100;
+            this.ScCopyOrderNO.CodeWidth1 = 100;
             this.ScCopyOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyOrderNO.DataCheck = true;
             this.ScCopyOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6356,6 +6358,7 @@
             this.ScOrderNO.ChangeDateWidth = 100;
             this.ScOrderNO.Code = "";
             this.ScOrderNO.CodeWidth = 100;
+            this.ScOrderNO.CodeWidth1 = 100;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrderNO.DataCheck = false;
             this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6435,6 +6438,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6547,22 +6551,22 @@
             this.Btn_SelectAll.UseVisualStyleBackColor = false;
             this.Btn_SelectAll.Click += new System.EventHandler(this.Btn_SelectAll_Click);
             // 
-            // CboSoukoName
+            // CboArrivalPlanCD
             // 
-            this.CboSoukoName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CboSoukoName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboSoukoName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
-            this.CboSoukoName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.CboSoukoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CboSoukoName.Flag = 0;
-            this.CboSoukoName.FormattingEnabled = true;
-            this.CboSoukoName.Length = 20;
-            this.CboSoukoName.Location = new System.Drawing.Point(438, 80);
-            this.CboSoukoName.MaxLength = 10;
-            this.CboSoukoName.MoveNext = true;
-            this.CboSoukoName.Name = "CboSoukoName";
-            this.CboSoukoName.Size = new System.Drawing.Size(140, 20);
-            this.CboSoukoName.TabIndex = 11;
+            this.CboArrivalPlanCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CboArrivalPlanCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CboArrivalPlanCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
+            this.CboArrivalPlanCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CboArrivalPlanCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboArrivalPlanCD.Flag = 0;
+            this.CboArrivalPlanCD.FormattingEnabled = true;
+            this.CboArrivalPlanCD.Length = 20;
+            this.CboArrivalPlanCD.Location = new System.Drawing.Point(438, 80);
+            this.CboArrivalPlanCD.MaxLength = 10;
+            this.CboArrivalPlanCD.MoveNext = true;
+            this.CboArrivalPlanCD.Name = "CboArrivalPlanCD";
+            this.CboArrivalPlanCD.Size = new System.Drawing.Size(140, 20);
+            this.CboArrivalPlanCD.TabIndex = 11;
             // 
             // ckM_SearchControl1
             // 
@@ -6571,6 +6575,7 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6953,22 +6958,22 @@
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_ComboBox1
+            // CboArrivalPlanKbn
             // 
-            this.ckM_ComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.ckM_ComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.ckM_ComboBox1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
-            this.ckM_ComboBox1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.ckM_ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ckM_ComboBox1.Flag = 0;
-            this.ckM_ComboBox1.FormattingEnabled = true;
-            this.ckM_ComboBox1.Length = 20;
-            this.ckM_ComboBox1.Location = new System.Drawing.Point(1112, 100);
-            this.ckM_ComboBox1.MaxLength = 10;
-            this.ckM_ComboBox1.MoveNext = true;
-            this.ckM_ComboBox1.Name = "ckM_ComboBox1";
-            this.ckM_ComboBox1.Size = new System.Drawing.Size(140, 20);
-            this.ckM_ComboBox1.TabIndex = 17;
+            this.CboArrivalPlanKbn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CboArrivalPlanKbn.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CboArrivalPlanKbn.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
+            this.CboArrivalPlanKbn.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CboArrivalPlanKbn.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboArrivalPlanKbn.Flag = 0;
+            this.CboArrivalPlanKbn.FormattingEnabled = true;
+            this.CboArrivalPlanKbn.Length = 20;
+            this.CboArrivalPlanKbn.Location = new System.Drawing.Point(1112, 100);
+            this.CboArrivalPlanKbn.MaxLength = 10;
+            this.CboArrivalPlanKbn.MoveNext = true;
+            this.CboArrivalPlanKbn.Name = "CboArrivalPlanKbn";
+            this.CboArrivalPlanKbn.Size = new System.Drawing.Size(140, 20);
+            this.CboArrivalPlanKbn.TabIndex = 17;
             // 
             // ckM_Label8
             // 
@@ -7136,7 +7141,7 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private CKM_Controls.CKM_ComboBox CboSoukoName;
+        private CKM_Controls.CKM_ComboBox CboArrivalPlanCD;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -7260,7 +7265,7 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
         private CKM_Controls.CKM_TextBox ckM_TextBox4;
         private CKM_Controls.CKM_Label ckM_Label5;
-        private CKM_Controls.CKM_ComboBox ckM_ComboBox1;
+        private CKM_Controls.CKM_ComboBox CboArrivalPlanKbn;
         private CKM_Controls.CKM_TextBox IMT_JANCD_7;
         private CKM_Controls.CKM_TextBox IMT_JANCD_6;
         private CKM_Controls.CKM_TextBox IMT_JANCD_5;
