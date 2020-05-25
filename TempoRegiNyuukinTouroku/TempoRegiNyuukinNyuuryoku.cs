@@ -247,7 +247,7 @@ namespace TempoRegiNyuukinTouroku
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "2";
             string depositNo = bbl.SimpleSelect1("52", "", Application.ProductName, "", "").Rows[0]["DepositNO"].ToString();
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode + " " + depositNo; //parameter
+            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode + " " + depositNo + " " + InCompanyCD; //parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
