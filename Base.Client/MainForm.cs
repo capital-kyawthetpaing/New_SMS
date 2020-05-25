@@ -1988,8 +1988,8 @@ namespace Base.Client
                 }
                 else
                 {
-
-                    this.SelectNextControl(ActiveControl, true, true, true, true);
+                    //CheckBoxやRadioButtonのフォーカス移動を自動にされると制御できないため　2020/5/25
+                    //this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
             }
          
