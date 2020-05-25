@@ -9910,7 +9910,7 @@
             this.Controls.Add(this.ckmShop_Label1);
             this.Controls.Add(this.panel1);
             this.Name = "TempoRegiMasterNyuuryoku";
-            this.Text = "TempoRegiMasterNyuryoku";
+            this.Text = "店舗レジ マスター登録";
             this.Load += new System.EventHandler(this.TempoRegiMasterNyuuryoku_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TempoRegiMasterNyuuryoku_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
