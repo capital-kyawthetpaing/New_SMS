@@ -880,7 +880,7 @@ namespace MitsumoriNyuuryoku
             //mGrid.g_MK_Ctrl(ClsGridMitsumori.ColNO.DELCK, pCtlRow).GVal(W_Del);
 
             // ﾌｧﾝｸｼｮﾝﾎﾞﾀﾝ使用可否
-            SetFuncKeyAll(this, "111111111111");
+            SetFuncKeyAll(this, "111111111101");
 
             // 検索ﾎﾞﾀﾝ使用不可.解除
             if (W_Del == true)
