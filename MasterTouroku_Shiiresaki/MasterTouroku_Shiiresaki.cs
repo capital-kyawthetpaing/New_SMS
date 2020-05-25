@@ -1022,6 +1022,7 @@ namespace MasterTouroku_Shiiresaki
         }
         
         private void ScVendor_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
+
         {
             if(e.KeyCode == Keys.Enter)
             {
