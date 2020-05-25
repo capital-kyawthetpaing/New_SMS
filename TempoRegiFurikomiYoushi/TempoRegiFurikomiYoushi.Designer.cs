@@ -83,7 +83,7 @@
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.txtprintprogress);
             this.Name = "TempoRegiFurikomiYoushi";
-            this.Text = "TempoRegiFurikomiYoushi";
+            this.Text = "店舗レジ 振込用紙印刷";
             this.Load += new System.EventHandler(this.TempoRegiFurikomiYoushi_Load);
             this.Controls.SetChildIndex(this.txtprintprogress, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
