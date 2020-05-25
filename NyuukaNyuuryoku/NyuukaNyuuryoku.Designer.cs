@@ -315,6 +315,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -391,6 +392,7 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -544,7 +546,7 @@
             this.CboSoukoName.Location = new System.Drawing.Point(823, 107);
             this.CboSoukoName.MaxItem = 8;
             this.CboSoukoName.MaxLength = 10;
-            this.CboSoukoName.MoveNext = true;
+            this.CboSoukoName.MoveNext = false;
             this.CboSoukoName.Name = "CboSoukoName";
             this.CboSoukoName.Size = new System.Drawing.Size(300, 32);
             this.CboSoukoName.TabIndex = 1;
@@ -801,9 +803,10 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 358410;
+            this.ScOrderNO.ChangeDateWidth = 597349;
             this.ScOrderNO.Code = "XXXXXXXXX01";
-            this.ScOrderNO.CodeWidth = 137;
+            this.ScOrderNO.CodeWidth = 150;
+            this.ScOrderNO.CodeWidth1 = 150;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrderNO.DataCheck = false;
             this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F);
@@ -814,9 +817,9 @@
             this.ScOrderNO.Location = new System.Drawing.Point(636, 4);
             this.ScOrderNO.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.ScOrderNO.Name = "ScOrderNO";
-            this.ScOrderNO.NameWidth = 546;
+            this.ScOrderNO.NameWidth = 600;
             this.ScOrderNO.SearchEnable = true;
-            this.ScOrderNO.Size = new System.Drawing.Size(192, 42);
+            this.ScOrderNO.Size = new System.Drawing.Size(205, 42);
             this.ScOrderNO.Stype = Search.CKM_SearchControl.SearchType.入荷番号;
             this.ScOrderNO.TabIndex = 0;
             this.ScOrderNO.TextSize = Search.CKM_SearchControl.FontSize.SmallLarge;
