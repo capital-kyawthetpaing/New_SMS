@@ -307,7 +307,7 @@
             this.label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.DefaultlabelSize = true;
-            this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(1025, 11);
@@ -324,7 +324,7 @@
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
             this.label9.Location = new System.Drawing.Point(960, 104);
@@ -341,7 +341,7 @@
             this.label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.DefaultlabelSize = true;
-            this.label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(30, 104);
@@ -362,7 +362,7 @@
             this.IMT_KAIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_1.DecimalPlace = 0;
-            this.IMT_KAIDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_1.IntegerPart = 0;
             this.IMT_KAIDT_1.IsCorrectDate = true;
@@ -391,7 +391,7 @@
             this.IMT_KAIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_0.DecimalPlace = 0;
-            this.IMT_KAIDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_0.IntegerPart = 0;
             this.IMT_KAIDT_0.IsCorrectDate = true;
@@ -420,7 +420,7 @@
             this.IMT_REMAK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_2.DecimalPlace = 0;
-            this.IMT_REMAK_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_2.IntegerPart = 0;
             this.IMT_REMAK_2.IsCorrectDate = true;
@@ -449,7 +449,7 @@
             this.IMT_REMAK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_1.DecimalPlace = 0;
-            this.IMT_REMAK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_1.IntegerPart = 0;
             this.IMT_REMAK_1.IsCorrectDate = true;
@@ -478,7 +478,7 @@
             this.IMT_REMAK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_0.DecimalPlace = 0;
-            this.IMT_REMAK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_0.IntegerPart = 0;
             this.IMT_REMAK_0.IsCorrectDate = true;
@@ -507,7 +507,7 @@
             this.IMT_ITMCD_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_0.DecimalPlace = 0;
-            this.IMT_ITMCD_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_0.IntegerPart = 0;
             this.IMT_ITMCD_0.IsCorrectDate = true;
             this.IMT_ITMCD_0.isEnterKeyDown = false;
@@ -537,7 +537,7 @@
             this.IMT_ITMCD_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_1.DecimalPlace = 0;
-            this.IMT_ITMCD_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_1.IntegerPart = 0;
             this.IMT_ITMCD_1.IsCorrectDate = true;
             this.IMT_ITMCD_1.isEnterKeyDown = false;
@@ -567,7 +567,7 @@
             this.IMT_ITMCD_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_2.DecimalPlace = 0;
-            this.IMT_ITMCD_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_2.IntegerPart = 0;
             this.IMT_ITMCD_2.IsCorrectDate = true;
             this.IMT_ITMCD_2.isEnterKeyDown = false;
@@ -795,7 +795,7 @@
             this.IMT_KAIDT_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_9.DecimalPlace = 0;
-            this.IMT_KAIDT_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_9.IntegerPart = 0;
             this.IMT_KAIDT_9.IsCorrectDate = true;
@@ -824,7 +824,7 @@
             this.IMN_CLINT_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_9.DecimalPlace = 0;
-            this.IMN_CLINT_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_9.IntegerPart = 0;
             this.IMN_CLINT_9.IsCorrectDate = true;
@@ -853,7 +853,7 @@
             this.IMT_ITMNM_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_9.DecimalPlace = 0;
-            this.IMT_ITMNM_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_9.IntegerPart = 0;
             this.IMT_ITMNM_9.IsCorrectDate = true;
@@ -882,7 +882,7 @@
             this.IMT_TYOKU_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_9.DecimalPlace = 0;
-            this.IMT_TYOKU_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_9.IntegerPart = 0;
             this.IMT_TYOKU_9.IsCorrectDate = true;
@@ -911,7 +911,7 @@
             this.IMT_ZEI_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_9.DecimalPlace = 0;
-            this.IMT_ZEI_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_9.IntegerPart = 0;
             this.IMT_ZEI_9.IsCorrectDate = true;
@@ -940,7 +940,7 @@
             this.IMN_SIRGK_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_9.DecimalPlace = 0;
-            this.IMN_SIRGK_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_9.IntegerPart = 7;
             this.IMN_SIRGK_9.IsCorrectDate = true;
@@ -970,7 +970,7 @@
             this.IMN_CALGK_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_9.DecimalPlace = 0;
-            this.IMN_CALGK_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_9.IntegerPart = 7;
             this.IMN_CALGK_9.IsCorrectDate = true;
@@ -1012,7 +1012,7 @@
             this.IMN_GENER2_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_9.DecimalPlace = 0;
-            this.IMN_GENER2_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_9.IntegerPart = 0;
             this.IMN_GENER2_9.IsCorrectDate = true;
@@ -1042,7 +1042,7 @@
             this.IMN_WEBPR_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_9.DecimalPlace = 0;
-            this.IMN_WEBPR_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_9.IntegerPart = 0;
             this.IMN_WEBPR_9.IsCorrectDate = true;
@@ -1071,7 +1071,7 @@
             this.IMT_REMAK_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_9.DecimalPlace = 0;
-            this.IMT_REMAK_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_9.IntegerPart = 0;
             this.IMT_REMAK_9.IsCorrectDate = true;
@@ -1100,7 +1100,7 @@
             this.IMT_PAYDT_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_9.DecimalPlace = 0;
-            this.IMT_PAYDT_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_9.IntegerPart = 0;
             this.IMT_PAYDT_9.IsCorrectDate = true;
@@ -1130,7 +1130,7 @@
             this.IMT_JUONO_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_9.DecimalPlace = 0;
-            this.IMT_JUONO_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_9.IntegerPart = 0;
             this.IMT_JUONO_9.IsCorrectDate = true;
@@ -1160,7 +1160,7 @@
             this.IMN_GENER_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_9.DecimalPlace = 0;
-            this.IMN_GENER_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_9.IntegerPart = 0;
             this.IMN_GENER_9.IsCorrectDate = true;
@@ -1190,7 +1190,7 @@
             this.IMN_MEMBR_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_9.DecimalPlace = 0;
-            this.IMN_MEMBR_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_9.IntegerPart = 0;
             this.IMN_MEMBR_9.IsCorrectDate = true;
@@ -1219,7 +1219,7 @@
             this.IMN_SALEP2_9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_9.DecimalPlace = 0;
-            this.IMN_SALEP2_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_9.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_9.IntegerPart = 0;
             this.IMN_SALEP2_9.IsCorrectDate = true;
@@ -1249,7 +1249,7 @@
             this.ckM_TextBox35.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox35.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox35.DecimalPlace = 0;
-            this.ckM_TextBox35.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox35.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox35.IntegerPart = 0;
             this.ckM_TextBox35.IsCorrectDate = true;
             this.ckM_TextBox35.isEnterKeyDown = false;
@@ -1279,7 +1279,7 @@
             this.IMT_KAIDT_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_8.DecimalPlace = 0;
-            this.IMT_KAIDT_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_8.IntegerPart = 0;
             this.IMT_KAIDT_8.IsCorrectDate = true;
@@ -1308,7 +1308,7 @@
             this.IMN_CLINT_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_8.DecimalPlace = 0;
-            this.IMN_CLINT_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_8.IntegerPart = 0;
             this.IMN_CLINT_8.IsCorrectDate = true;
@@ -1337,7 +1337,7 @@
             this.IMT_ITMNM_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_8.DecimalPlace = 0;
-            this.IMT_ITMNM_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_8.IntegerPart = 0;
             this.IMT_ITMNM_8.IsCorrectDate = true;
@@ -1366,7 +1366,7 @@
             this.IMT_TYOKU_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_8.DecimalPlace = 0;
-            this.IMT_TYOKU_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_8.IntegerPart = 0;
             this.IMT_TYOKU_8.IsCorrectDate = true;
@@ -1395,7 +1395,7 @@
             this.IMT_ZEI_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_8.DecimalPlace = 0;
-            this.IMT_ZEI_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_8.IntegerPart = 0;
             this.IMT_ZEI_8.IsCorrectDate = true;
@@ -1424,7 +1424,7 @@
             this.IMN_SIRGK_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_8.DecimalPlace = 0;
-            this.IMN_SIRGK_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_8.IntegerPart = 7;
             this.IMN_SIRGK_8.IsCorrectDate = true;
@@ -1454,7 +1454,7 @@
             this.IMN_CALGK_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_8.DecimalPlace = 0;
-            this.IMN_CALGK_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_8.IntegerPart = 7;
             this.IMN_CALGK_8.IsCorrectDate = true;
@@ -1496,7 +1496,7 @@
             this.IMN_GENER2_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_8.DecimalPlace = 0;
-            this.IMN_GENER2_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_8.IntegerPart = 0;
             this.IMN_GENER2_8.IsCorrectDate = true;
@@ -1526,7 +1526,7 @@
             this.IMN_WEBPR_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_8.DecimalPlace = 0;
-            this.IMN_WEBPR_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_8.IntegerPart = 0;
             this.IMN_WEBPR_8.IsCorrectDate = true;
@@ -1555,7 +1555,7 @@
             this.IMT_REMAK_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_8.DecimalPlace = 0;
-            this.IMT_REMAK_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_8.IntegerPart = 0;
             this.IMT_REMAK_8.IsCorrectDate = true;
@@ -1584,7 +1584,7 @@
             this.IMT_PAYDT_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_8.DecimalPlace = 0;
-            this.IMT_PAYDT_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_8.IntegerPart = 0;
             this.IMT_PAYDT_8.IsCorrectDate = true;
@@ -1614,7 +1614,7 @@
             this.IMT_JUONO_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_8.DecimalPlace = 0;
-            this.IMT_JUONO_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_8.IntegerPart = 0;
             this.IMT_JUONO_8.IsCorrectDate = true;
@@ -1644,7 +1644,7 @@
             this.IMN_GENER_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_8.DecimalPlace = 0;
-            this.IMN_GENER_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_8.IntegerPart = 0;
             this.IMN_GENER_8.IsCorrectDate = true;
@@ -1674,7 +1674,7 @@
             this.IMN_MEMBR_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_8.DecimalPlace = 0;
-            this.IMN_MEMBR_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_8.IntegerPart = 0;
             this.IMN_MEMBR_8.IsCorrectDate = true;
@@ -1703,7 +1703,7 @@
             this.IMN_SALEP2_8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_8.DecimalPlace = 0;
-            this.IMN_SALEP2_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_8.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_8.IntegerPart = 0;
             this.IMN_SALEP2_8.IsCorrectDate = true;
@@ -1733,7 +1733,7 @@
             this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox19.DecimalPlace = 0;
-            this.ckM_TextBox19.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox19.IntegerPart = 0;
             this.ckM_TextBox19.IsCorrectDate = true;
             this.ckM_TextBox19.isEnterKeyDown = false;
@@ -1763,7 +1763,7 @@
             this.IMT_KAIDT_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_7.DecimalPlace = 0;
-            this.IMT_KAIDT_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_7.IntegerPart = 0;
             this.IMT_KAIDT_7.IsCorrectDate = true;
@@ -1792,7 +1792,7 @@
             this.IMT_KAIDT_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_6.DecimalPlace = 0;
-            this.IMT_KAIDT_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_6.IntegerPart = 0;
             this.IMT_KAIDT_6.IsCorrectDate = true;
@@ -1821,7 +1821,7 @@
             this.IMT_KAIDT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_5.DecimalPlace = 0;
-            this.IMT_KAIDT_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_5.IntegerPart = 0;
             this.IMT_KAIDT_5.IsCorrectDate = true;
@@ -1850,7 +1850,7 @@
             this.IMT_KAIDT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_4.DecimalPlace = 0;
-            this.IMT_KAIDT_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_4.IntegerPart = 0;
             this.IMT_KAIDT_4.IsCorrectDate = true;
@@ -1879,7 +1879,7 @@
             this.IMT_KAIDT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_3.DecimalPlace = 0;
-            this.IMT_KAIDT_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_3.IntegerPart = 0;
             this.IMT_KAIDT_3.IsCorrectDate = true;
@@ -1908,7 +1908,7 @@
             this.IMT_KAIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_KAIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_KAIDT_2.DecimalPlace = 0;
-            this.IMT_KAIDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_KAIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_KAIDT_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_KAIDT_2.IntegerPart = 0;
             this.IMT_KAIDT_2.IsCorrectDate = true;
@@ -1937,7 +1937,7 @@
             this.IMN_CLINT_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_7.DecimalPlace = 0;
-            this.IMN_CLINT_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_7.IntegerPart = 0;
             this.IMN_CLINT_7.IsCorrectDate = true;
@@ -1966,7 +1966,7 @@
             this.IMN_CLINT_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_6.DecimalPlace = 0;
-            this.IMN_CLINT_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_6.IntegerPart = 0;
             this.IMN_CLINT_6.IsCorrectDate = true;
@@ -1995,7 +1995,7 @@
             this.IMN_CLINT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_5.DecimalPlace = 0;
-            this.IMN_CLINT_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_5.IntegerPart = 0;
             this.IMN_CLINT_5.IsCorrectDate = true;
@@ -2024,7 +2024,7 @@
             this.IMN_CLINT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_4.DecimalPlace = 0;
-            this.IMN_CLINT_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_4.IntegerPart = 0;
             this.IMN_CLINT_4.IsCorrectDate = true;
@@ -2053,7 +2053,7 @@
             this.IMN_CLINT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_3.DecimalPlace = 0;
-            this.IMN_CLINT_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_3.IntegerPart = 0;
             this.IMN_CLINT_3.IsCorrectDate = true;
@@ -2082,7 +2082,7 @@
             this.IMN_CLINT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_2.DecimalPlace = 0;
-            this.IMN_CLINT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_2.IntegerPart = 0;
             this.IMN_CLINT_2.IsCorrectDate = true;
@@ -2111,7 +2111,7 @@
             this.IMN_CLINT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_1.DecimalPlace = 0;
-            this.IMN_CLINT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_1.IntegerPart = 0;
             this.IMN_CLINT_1.IsCorrectDate = true;
@@ -2140,7 +2140,7 @@
             this.IMN_CLINT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_CLINT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_CLINT_0.DecimalPlace = 0;
-            this.IMN_CLINT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CLINT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CLINT_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_CLINT_0.IntegerPart = 0;
             this.IMN_CLINT_0.IsCorrectDate = true;
@@ -2169,7 +2169,7 @@
             this.IMT_ITMNM_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_7.DecimalPlace = 0;
-            this.IMT_ITMNM_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_7.IntegerPart = 0;
             this.IMT_ITMNM_7.IsCorrectDate = true;
@@ -2198,7 +2198,7 @@
             this.IMT_ITMNM_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_6.DecimalPlace = 0;
-            this.IMT_ITMNM_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_6.IntegerPart = 0;
             this.IMT_ITMNM_6.IsCorrectDate = true;
@@ -2227,7 +2227,7 @@
             this.IMT_ITMNM_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_5.DecimalPlace = 0;
-            this.IMT_ITMNM_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_5.IntegerPart = 0;
             this.IMT_ITMNM_5.IsCorrectDate = true;
@@ -2256,7 +2256,7 @@
             this.IMT_ITMNM_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_4.DecimalPlace = 0;
-            this.IMT_ITMNM_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_4.IntegerPart = 0;
             this.IMT_ITMNM_4.IsCorrectDate = true;
@@ -2285,7 +2285,7 @@
             this.IMT_ITMNM_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_3.DecimalPlace = 0;
-            this.IMT_ITMNM_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_3.IntegerPart = 0;
             this.IMT_ITMNM_3.IsCorrectDate = true;
@@ -2314,7 +2314,7 @@
             this.IMT_ITMNM_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_2.DecimalPlace = 0;
-            this.IMT_ITMNM_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_2.IntegerPart = 0;
             this.IMT_ITMNM_2.IsCorrectDate = true;
@@ -2343,7 +2343,7 @@
             this.IMT_ITMNM_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_1.DecimalPlace = 0;
-            this.IMT_ITMNM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_1.IntegerPart = 0;
             this.IMT_ITMNM_1.IsCorrectDate = true;
@@ -2372,7 +2372,7 @@
             this.IMT_ITMNM_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ITMNM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMNM_0.DecimalPlace = 0;
-            this.IMT_ITMNM_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMNM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMNM_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_ITMNM_0.IntegerPart = 0;
             this.IMT_ITMNM_0.IsCorrectDate = true;
@@ -2401,7 +2401,7 @@
             this.IMT_TYOKU_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_7.DecimalPlace = 0;
-            this.IMT_TYOKU_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_7.IntegerPart = 0;
             this.IMT_TYOKU_7.IsCorrectDate = true;
@@ -2430,7 +2430,7 @@
             this.IMT_TYOKU_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_6.DecimalPlace = 0;
-            this.IMT_TYOKU_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_6.IntegerPart = 0;
             this.IMT_TYOKU_6.IsCorrectDate = true;
@@ -2459,7 +2459,7 @@
             this.IMT_TYOKU_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_5.DecimalPlace = 0;
-            this.IMT_TYOKU_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_5.IntegerPart = 0;
             this.IMT_TYOKU_5.IsCorrectDate = true;
@@ -2488,7 +2488,7 @@
             this.IMT_TYOKU_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_4.DecimalPlace = 0;
-            this.IMT_TYOKU_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_4.IntegerPart = 0;
             this.IMT_TYOKU_4.IsCorrectDate = true;
@@ -2517,7 +2517,7 @@
             this.IMT_TYOKU_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_3.DecimalPlace = 0;
-            this.IMT_TYOKU_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_3.IntegerPart = 0;
             this.IMT_TYOKU_3.IsCorrectDate = true;
@@ -2546,7 +2546,7 @@
             this.IMT_TYOKU_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_2.DecimalPlace = 0;
-            this.IMT_TYOKU_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_2.IntegerPart = 0;
             this.IMT_TYOKU_2.IsCorrectDate = true;
@@ -2575,7 +2575,7 @@
             this.IMT_TYOKU_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_1.DecimalPlace = 0;
-            this.IMT_TYOKU_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_1.IntegerPart = 0;
             this.IMT_TYOKU_1.IsCorrectDate = true;
@@ -2604,7 +2604,7 @@
             this.IMT_TYOKU_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_TYOKU_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_TYOKU_0.DecimalPlace = 0;
-            this.IMT_TYOKU_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_TYOKU_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_TYOKU_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_TYOKU_0.IntegerPart = 0;
             this.IMT_TYOKU_0.IsCorrectDate = true;
@@ -2633,7 +2633,7 @@
             this.IMT_ZEI_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_7.DecimalPlace = 0;
-            this.IMT_ZEI_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_7.IntegerPart = 0;
             this.IMT_ZEI_7.IsCorrectDate = true;
@@ -2662,7 +2662,7 @@
             this.IMT_ZEI_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_6.DecimalPlace = 0;
-            this.IMT_ZEI_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_6.IntegerPart = 0;
             this.IMT_ZEI_6.IsCorrectDate = true;
@@ -2691,7 +2691,7 @@
             this.IMT_ZEI_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_5.DecimalPlace = 0;
-            this.IMT_ZEI_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_5.IntegerPart = 0;
             this.IMT_ZEI_5.IsCorrectDate = true;
@@ -2720,7 +2720,7 @@
             this.IMT_ZEI_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_4.DecimalPlace = 0;
-            this.IMT_ZEI_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_4.IntegerPart = 0;
             this.IMT_ZEI_4.IsCorrectDate = true;
@@ -2749,7 +2749,7 @@
             this.IMT_ZEI_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_3.DecimalPlace = 0;
-            this.IMT_ZEI_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_3.IntegerPart = 0;
             this.IMT_ZEI_3.IsCorrectDate = true;
@@ -2778,7 +2778,7 @@
             this.IMT_ZEI_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_2.DecimalPlace = 0;
-            this.IMT_ZEI_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_2.IntegerPart = 0;
             this.IMT_ZEI_2.IsCorrectDate = true;
@@ -2807,7 +2807,7 @@
             this.IMT_ZEI_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_1.DecimalPlace = 0;
-            this.IMT_ZEI_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_1.IntegerPart = 0;
             this.IMT_ZEI_1.IsCorrectDate = true;
@@ -2836,7 +2836,7 @@
             this.IMT_ZEI_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_ZEI_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ZEI_0.DecimalPlace = 0;
-            this.IMT_ZEI_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ZEI_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ZEI_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ZEI_0.IntegerPart = 0;
             this.IMT_ZEI_0.IsCorrectDate = true;
@@ -2865,7 +2865,7 @@
             this.IMN_SIRGK_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_7.DecimalPlace = 0;
-            this.IMN_SIRGK_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_7.IntegerPart = 7;
             this.IMN_SIRGK_7.IsCorrectDate = true;
@@ -2895,7 +2895,7 @@
             this.IMN_SIRGK_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_6.DecimalPlace = 0;
-            this.IMN_SIRGK_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_6.IntegerPart = 7;
             this.IMN_SIRGK_6.IsCorrectDate = true;
@@ -2925,7 +2925,7 @@
             this.IMN_SIRGK_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_5.DecimalPlace = 0;
-            this.IMN_SIRGK_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_5.IntegerPart = 7;
             this.IMN_SIRGK_5.IsCorrectDate = true;
@@ -2955,7 +2955,7 @@
             this.IMN_SIRGK_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_4.DecimalPlace = 0;
-            this.IMN_SIRGK_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_4.IntegerPart = 7;
             this.IMN_SIRGK_4.IsCorrectDate = true;
@@ -2985,7 +2985,7 @@
             this.IMN_SIRGK_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_3.DecimalPlace = 0;
-            this.IMN_SIRGK_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_3.IntegerPart = 7;
             this.IMN_SIRGK_3.IsCorrectDate = true;
@@ -3015,7 +3015,7 @@
             this.IMN_SIRGK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_2.DecimalPlace = 0;
-            this.IMN_SIRGK_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_2.IntegerPart = 7;
             this.IMN_SIRGK_2.IsCorrectDate = true;
@@ -3045,7 +3045,7 @@
             this.IMN_SIRGK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_1.DecimalPlace = 0;
-            this.IMN_SIRGK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_1.IntegerPart = 7;
             this.IMN_SIRGK_1.IsCorrectDate = true;
@@ -3075,7 +3075,7 @@
             this.IMN_SIRGK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SIRGK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SIRGK_0.DecimalPlace = 0;
-            this.IMN_SIRGK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SIRGK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SIRGK_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SIRGK_0.IntegerPart = 7;
             this.IMN_SIRGK_0.IsCorrectDate = true;
@@ -3105,7 +3105,7 @@
             this.IMN_CALGK_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_7.DecimalPlace = 0;
-            this.IMN_CALGK_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_7.IntegerPart = 7;
             this.IMN_CALGK_7.IsCorrectDate = true;
@@ -3135,7 +3135,7 @@
             this.IMN_CALGK_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_6.DecimalPlace = 0;
-            this.IMN_CALGK_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_6.IntegerPart = 7;
             this.IMN_CALGK_6.IsCorrectDate = true;
@@ -3165,7 +3165,7 @@
             this.IMN_CALGK_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_5.DecimalPlace = 0;
-            this.IMN_CALGK_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_5.IntegerPart = 7;
             this.IMN_CALGK_5.IsCorrectDate = true;
@@ -3195,7 +3195,7 @@
             this.IMN_CALGK_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_4.DecimalPlace = 0;
-            this.IMN_CALGK_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_4.IntegerPart = 7;
             this.IMN_CALGK_4.IsCorrectDate = true;
@@ -3225,7 +3225,7 @@
             this.IMN_CALGK_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_3.DecimalPlace = 0;
-            this.IMN_CALGK_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_3.IntegerPart = 7;
             this.IMN_CALGK_3.IsCorrectDate = true;
@@ -3255,7 +3255,7 @@
             this.IMN_CALGK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_2.DecimalPlace = 0;
-            this.IMN_CALGK_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_2.IntegerPart = 7;
             this.IMN_CALGK_2.IsCorrectDate = true;
@@ -3285,7 +3285,7 @@
             this.IMN_CALGK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_1.DecimalPlace = 0;
-            this.IMN_CALGK_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_1.IntegerPart = 7;
             this.IMN_CALGK_1.IsCorrectDate = true;
@@ -3315,7 +3315,7 @@
             this.IMN_CALGK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_CALGK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_CALGK_0.DecimalPlace = 0;
-            this.IMN_CALGK_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_CALGK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_CALGK_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_CALGK_0.IntegerPart = 7;
             this.IMN_CALGK_0.IsCorrectDate = true;
@@ -3436,7 +3436,7 @@
             this.CHK_DELCK_7.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_7.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_7.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_7.Location = new System.Drawing.Point(0, 285);
             this.CHK_DELCK_7.Name = "CHK_DELCK_7";
@@ -3457,7 +3457,7 @@
             this.IMN_GENER2_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_7.DecimalPlace = 0;
-            this.IMN_GENER2_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_7.IntegerPart = 0;
             this.IMN_GENER2_7.IsCorrectDate = true;
@@ -3487,7 +3487,7 @@
             this.IMN_WEBPR_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_7.DecimalPlace = 0;
-            this.IMN_WEBPR_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_7.IntegerPart = 0;
             this.IMN_WEBPR_7.IsCorrectDate = true;
@@ -3516,7 +3516,7 @@
             this.IMT_REMAK_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_7.DecimalPlace = 0;
-            this.IMT_REMAK_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_7.IntegerPart = 0;
             this.IMT_REMAK_7.IsCorrectDate = true;
@@ -3545,7 +3545,7 @@
             this.IMT_PAYDT_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_7.DecimalPlace = 0;
-            this.IMT_PAYDT_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_7.IntegerPart = 0;
             this.IMT_PAYDT_7.IsCorrectDate = true;
@@ -3575,7 +3575,7 @@
             this.IMT_JUONO_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_7.DecimalPlace = 0;
-            this.IMT_JUONO_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_7.IntegerPart = 0;
             this.IMT_JUONO_7.IsCorrectDate = true;
@@ -3605,7 +3605,7 @@
             this.IMN_GENER_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_7.DecimalPlace = 0;
-            this.IMN_GENER_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_7.IntegerPart = 0;
             this.IMN_GENER_7.IsCorrectDate = true;
@@ -3635,7 +3635,7 @@
             this.IMN_MEMBR_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_7.DecimalPlace = 0;
-            this.IMN_MEMBR_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_7.IntegerPart = 0;
             this.IMN_MEMBR_7.IsCorrectDate = true;
@@ -3664,7 +3664,7 @@
             this.IMN_SALEP2_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_7.DecimalPlace = 0;
-            this.IMN_SALEP2_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_7.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_7.IntegerPart = 0;
             this.IMN_SALEP2_7.IsCorrectDate = true;
@@ -3694,7 +3694,7 @@
             this.IMT_ITMCD_7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_7.DecimalPlace = 0;
-            this.IMT_ITMCD_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_7.IntegerPart = 0;
             this.IMT_ITMCD_7.IsCorrectDate = true;
             this.IMT_ITMCD_7.isEnterKeyDown = false;
@@ -3719,7 +3719,7 @@
             this.CHK_DELCK_6.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_6.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_6.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_6.Location = new System.Drawing.Point(0, 247);
             this.CHK_DELCK_6.Name = "CHK_DELCK_6";
@@ -3740,7 +3740,7 @@
             this.IMN_GENER2_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_6.DecimalPlace = 0;
-            this.IMN_GENER2_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_6.IntegerPart = 0;
             this.IMN_GENER2_6.IsCorrectDate = true;
@@ -3770,7 +3770,7 @@
             this.IMN_WEBPR_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_6.DecimalPlace = 0;
-            this.IMN_WEBPR_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_6.IntegerPart = 0;
             this.IMN_WEBPR_6.IsCorrectDate = true;
@@ -3799,7 +3799,7 @@
             this.IMT_REMAK_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_6.DecimalPlace = 0;
-            this.IMT_REMAK_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_6.IntegerPart = 0;
             this.IMT_REMAK_6.IsCorrectDate = true;
@@ -3828,7 +3828,7 @@
             this.IMT_PAYDT_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_6.DecimalPlace = 0;
-            this.IMT_PAYDT_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_6.IntegerPart = 0;
             this.IMT_PAYDT_6.IsCorrectDate = true;
@@ -3858,7 +3858,7 @@
             this.IMT_JUONO_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_6.DecimalPlace = 0;
-            this.IMT_JUONO_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_6.IntegerPart = 0;
             this.IMT_JUONO_6.IsCorrectDate = true;
@@ -3888,7 +3888,7 @@
             this.IMN_GENER_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_6.DecimalPlace = 0;
-            this.IMN_GENER_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_6.IntegerPart = 0;
             this.IMN_GENER_6.IsCorrectDate = true;
@@ -3918,7 +3918,7 @@
             this.IMN_MEMBR_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_6.DecimalPlace = 0;
-            this.IMN_MEMBR_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_6.IntegerPart = 0;
             this.IMN_MEMBR_6.IsCorrectDate = true;
@@ -3947,7 +3947,7 @@
             this.IMN_SALEP2_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_6.DecimalPlace = 0;
-            this.IMN_SALEP2_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_6.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_6.IntegerPart = 0;
             this.IMN_SALEP2_6.IsCorrectDate = true;
@@ -3977,7 +3977,7 @@
             this.IMT_ITMCD_6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_6.DecimalPlace = 0;
-            this.IMT_ITMCD_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_6.IntegerPart = 0;
             this.IMT_ITMCD_6.IsCorrectDate = true;
             this.IMT_ITMCD_6.isEnterKeyDown = false;
@@ -4002,7 +4002,7 @@
             this.CHK_DELCK_5.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_5.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_5.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_5.Location = new System.Drawing.Point(0, 209);
             this.CHK_DELCK_5.Name = "CHK_DELCK_5";
@@ -4023,7 +4023,7 @@
             this.IMN_GENER2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_5.DecimalPlace = 0;
-            this.IMN_GENER2_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_5.IntegerPart = 0;
             this.IMN_GENER2_5.IsCorrectDate = true;
@@ -4053,7 +4053,7 @@
             this.IMN_WEBPR_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_5.DecimalPlace = 0;
-            this.IMN_WEBPR_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_5.IntegerPart = 0;
             this.IMN_WEBPR_5.IsCorrectDate = true;
@@ -4082,7 +4082,7 @@
             this.IMT_REMAK_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_5.DecimalPlace = 0;
-            this.IMT_REMAK_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_5.IntegerPart = 0;
             this.IMT_REMAK_5.IsCorrectDate = true;
@@ -4111,7 +4111,7 @@
             this.IMT_PAYDT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_5.DecimalPlace = 0;
-            this.IMT_PAYDT_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_5.IntegerPart = 0;
             this.IMT_PAYDT_5.IsCorrectDate = true;
@@ -4141,7 +4141,7 @@
             this.IMT_JUONO_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_5.DecimalPlace = 0;
-            this.IMT_JUONO_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_5.IntegerPart = 0;
             this.IMT_JUONO_5.IsCorrectDate = true;
@@ -4171,7 +4171,7 @@
             this.IMN_GENER_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_5.DecimalPlace = 0;
-            this.IMN_GENER_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_5.IntegerPart = 0;
             this.IMN_GENER_5.IsCorrectDate = true;
@@ -4201,7 +4201,7 @@
             this.IMN_MEMBR_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_5.DecimalPlace = 0;
-            this.IMN_MEMBR_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_5.IntegerPart = 0;
             this.IMN_MEMBR_5.IsCorrectDate = true;
@@ -4230,7 +4230,7 @@
             this.IMN_SALEP2_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_5.DecimalPlace = 0;
-            this.IMN_SALEP2_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_5.IntegerPart = 0;
             this.IMN_SALEP2_5.IsCorrectDate = true;
@@ -4260,7 +4260,7 @@
             this.IMT_ITMCD_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_5.DecimalPlace = 0;
-            this.IMT_ITMCD_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_5.IntegerPart = 0;
             this.IMT_ITMCD_5.IsCorrectDate = true;
             this.IMT_ITMCD_5.isEnterKeyDown = false;
@@ -4285,7 +4285,7 @@
             this.CHK_DELCK_4.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_4.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_4.Location = new System.Drawing.Point(0, 171);
             this.CHK_DELCK_4.Name = "CHK_DELCK_4";
@@ -4306,7 +4306,7 @@
             this.IMN_GENER2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_4.DecimalPlace = 0;
-            this.IMN_GENER2_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_4.IntegerPart = 0;
             this.IMN_GENER2_4.IsCorrectDate = true;
@@ -4336,7 +4336,7 @@
             this.IMN_WEBPR_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_4.DecimalPlace = 0;
-            this.IMN_WEBPR_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_4.IntegerPart = 0;
             this.IMN_WEBPR_4.IsCorrectDate = true;
@@ -4365,7 +4365,7 @@
             this.IMT_REMAK_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_4.DecimalPlace = 0;
-            this.IMT_REMAK_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_4.IntegerPart = 0;
             this.IMT_REMAK_4.IsCorrectDate = true;
@@ -4394,7 +4394,7 @@
             this.IMT_PAYDT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_4.DecimalPlace = 0;
-            this.IMT_PAYDT_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_4.IntegerPart = 0;
             this.IMT_PAYDT_4.IsCorrectDate = true;
@@ -4424,7 +4424,7 @@
             this.IMT_JUONO_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_4.DecimalPlace = 0;
-            this.IMT_JUONO_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_4.IntegerPart = 0;
             this.IMT_JUONO_4.IsCorrectDate = true;
@@ -4454,7 +4454,7 @@
             this.IMN_GENER_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_4.DecimalPlace = 0;
-            this.IMN_GENER_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_4.IntegerPart = 0;
             this.IMN_GENER_4.IsCorrectDate = true;
@@ -4484,7 +4484,7 @@
             this.IMN_MEMBR_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_4.DecimalPlace = 0;
-            this.IMN_MEMBR_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_4.IntegerPart = 0;
             this.IMN_MEMBR_4.IsCorrectDate = true;
@@ -4513,7 +4513,7 @@
             this.IMN_SALEP2_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_4.DecimalPlace = 0;
-            this.IMN_SALEP2_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_4.IntegerPart = 0;
             this.IMN_SALEP2_4.IsCorrectDate = true;
@@ -4543,7 +4543,7 @@
             this.IMT_ITMCD_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_4.DecimalPlace = 0;
-            this.IMT_ITMCD_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_4.IntegerPart = 0;
             this.IMT_ITMCD_4.IsCorrectDate = true;
             this.IMT_ITMCD_4.isEnterKeyDown = false;
@@ -4568,7 +4568,7 @@
             this.CHK_DELCK_3.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_3.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_3.Location = new System.Drawing.Point(0, 133);
             this.CHK_DELCK_3.Name = "CHK_DELCK_3";
@@ -4589,7 +4589,7 @@
             this.IMN_GENER2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_3.DecimalPlace = 0;
-            this.IMN_GENER2_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_3.IntegerPart = 0;
             this.IMN_GENER2_3.IsCorrectDate = true;
@@ -4619,7 +4619,7 @@
             this.IMN_WEBPR_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_3.DecimalPlace = 0;
-            this.IMN_WEBPR_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_3.IntegerPart = 0;
             this.IMN_WEBPR_3.IsCorrectDate = true;
@@ -4648,7 +4648,7 @@
             this.IMT_REMAK_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_REMAK_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_REMAK_3.DecimalPlace = 0;
-            this.IMT_REMAK_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_REMAK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_3.IntegerPart = 0;
             this.IMT_REMAK_3.IsCorrectDate = true;
@@ -4677,7 +4677,7 @@
             this.IMT_PAYDT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_3.DecimalPlace = 0;
-            this.IMT_PAYDT_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_3.IntegerPart = 0;
             this.IMT_PAYDT_3.IsCorrectDate = true;
@@ -4707,7 +4707,7 @@
             this.IMT_JUONO_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_3.DecimalPlace = 0;
-            this.IMT_JUONO_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_3.IntegerPart = 0;
             this.IMT_JUONO_3.IsCorrectDate = true;
@@ -4737,7 +4737,7 @@
             this.IMN_GENER_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_3.DecimalPlace = 0;
-            this.IMN_GENER_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_3.IntegerPart = 0;
             this.IMN_GENER_3.IsCorrectDate = true;
@@ -4767,7 +4767,7 @@
             this.IMN_MEMBR_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_3.DecimalPlace = 0;
-            this.IMN_MEMBR_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_3.IntegerPart = 0;
             this.IMN_MEMBR_3.IsCorrectDate = true;
@@ -4796,7 +4796,7 @@
             this.IMN_SALEP2_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_3.DecimalPlace = 0;
-            this.IMN_SALEP2_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_3.IntegerPart = 0;
             this.IMN_SALEP2_3.IsCorrectDate = true;
@@ -4826,7 +4826,7 @@
             this.IMT_ITMCD_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ITMCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_ITMCD_3.DecimalPlace = 0;
-            this.IMT_ITMCD_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_ITMCD_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_ITMCD_3.IntegerPart = 0;
             this.IMT_ITMCD_3.IsCorrectDate = true;
             this.IMT_ITMCD_3.isEnterKeyDown = false;
@@ -4851,7 +4851,7 @@
             this.CHK_DELCK_2.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_2.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_2.Location = new System.Drawing.Point(0, 95);
             this.CHK_DELCK_2.Name = "CHK_DELCK_2";
@@ -4872,7 +4872,7 @@
             this.IMN_GENER2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_2.DecimalPlace = 0;
-            this.IMN_GENER2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_2.IntegerPart = 0;
             this.IMN_GENER2_2.IsCorrectDate = true;
@@ -4902,7 +4902,7 @@
             this.IMN_GENER2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_1.DecimalPlace = 0;
-            this.IMN_GENER2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_1.IntegerPart = 0;
             this.IMN_GENER2_1.IsCorrectDate = true;
@@ -4932,7 +4932,7 @@
             this.IMN_GENER2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER2_0.DecimalPlace = 0;
-            this.IMN_GENER2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER2_0.IntegerPart = 0;
             this.IMN_GENER2_0.IsCorrectDate = true;
@@ -4962,7 +4962,7 @@
             this.IMN_WEBPR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_2.DecimalPlace = 0;
-            this.IMN_WEBPR_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_2.IntegerPart = 0;
             this.IMN_WEBPR_2.IsCorrectDate = true;
@@ -4991,7 +4991,7 @@
             this.IMN_WEBPR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_1.DecimalPlace = 0;
-            this.IMN_WEBPR_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_1.IntegerPart = 0;
             this.IMN_WEBPR_1.IsCorrectDate = true;
@@ -5020,7 +5020,7 @@
             this.IMN_WEBPR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_WEBPR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_WEBPR_0.DecimalPlace = 0;
-            this.IMN_WEBPR_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_WEBPR_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_WEBPR_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMN_WEBPR_0.IntegerPart = 0;
             this.IMN_WEBPR_0.IsCorrectDate = true;
@@ -5049,7 +5049,7 @@
             this.IMT_PAYDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_2.DecimalPlace = 0;
-            this.IMT_PAYDT_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_2.IntegerPart = 0;
             this.IMT_PAYDT_2.IsCorrectDate = true;
@@ -5079,7 +5079,7 @@
             this.IMT_PAYDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_1.DecimalPlace = 0;
-            this.IMT_PAYDT_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_1.IntegerPart = 0;
             this.IMT_PAYDT_1.IsCorrectDate = true;
@@ -5109,7 +5109,7 @@
             this.IMT_PAYDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_PAYDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_PAYDT_0.DecimalPlace = 0;
-            this.IMT_PAYDT_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_PAYDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_PAYDT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_PAYDT_0.IntegerPart = 0;
             this.IMT_PAYDT_0.IsCorrectDate = true;
@@ -5139,7 +5139,7 @@
             this.IMT_JUONO_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_0.DecimalPlace = 0;
-            this.IMT_JUONO_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_0.IntegerPart = 0;
             this.IMT_JUONO_0.IsCorrectDate = true;
@@ -5169,7 +5169,7 @@
             this.IMT_JUONO_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_1.DecimalPlace = 0;
-            this.IMT_JUONO_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_1.IntegerPart = 0;
             this.IMT_JUONO_1.IsCorrectDate = true;
@@ -5199,7 +5199,7 @@
             this.IMT_JUONO_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMT_JUONO_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_JUONO_2.DecimalPlace = 0;
-            this.IMT_JUONO_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMT_JUONO_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_JUONO_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_JUONO_2.IntegerPart = 0;
             this.IMT_JUONO_2.IsCorrectDate = true;
@@ -5229,7 +5229,7 @@
             this.IMN_GENER_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_2.DecimalPlace = 0;
-            this.IMN_GENER_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_2.IntegerPart = 0;
             this.IMN_GENER_2.IsCorrectDate = true;
@@ -5259,7 +5259,7 @@
             this.IMN_MEMBR_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_2.DecimalPlace = 0;
-            this.IMN_MEMBR_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_2.IntegerPart = 0;
             this.IMN_MEMBR_2.IsCorrectDate = true;
@@ -5288,7 +5288,7 @@
             this.IMN_GENER_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_1.DecimalPlace = 0;
-            this.IMN_GENER_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_1.IntegerPart = 0;
             this.IMN_GENER_1.IsCorrectDate = true;
@@ -5318,7 +5318,7 @@
             this.IMN_MEMBR_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_1.DecimalPlace = 0;
-            this.IMN_MEMBR_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_1.IntegerPart = 0;
             this.IMN_MEMBR_1.IsCorrectDate = true;
@@ -5347,7 +5347,7 @@
             this.IMN_GENER_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_GENER_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_GENER_0.DecimalPlace = 0;
-            this.IMN_GENER_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_GENER_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_GENER_0.IntegerPart = 0;
             this.IMN_GENER_0.IsCorrectDate = true;
@@ -5377,7 +5377,7 @@
             this.IMN_MEMBR_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.IMN_MEMBR_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMN_MEMBR_0.DecimalPlace = 0;
-            this.IMN_MEMBR_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_MEMBR_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_MEMBR_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_MEMBR_0.IntegerPart = 0;
             this.IMN_MEMBR_0.IsCorrectDate = true;
@@ -5406,7 +5406,7 @@
             this.IMN_SALEP2_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_2.DecimalPlace = 0;
-            this.IMN_SALEP2_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_2.IntegerPart = 0;
             this.IMN_SALEP2_2.IsCorrectDate = true;
@@ -5436,7 +5436,7 @@
             this.IMN_SALEP2_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_1.DecimalPlace = 0;
-            this.IMN_SALEP2_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_1.IntegerPart = 0;
             this.IMN_SALEP2_1.IsCorrectDate = true;
@@ -5466,7 +5466,7 @@
             this.IMN_SALEP2_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMN_SALEP2_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.IMN_SALEP2_0.DecimalPlace = 0;
-            this.IMN_SALEP2_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.IMN_SALEP2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_SALEP2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMN_SALEP2_0.IntegerPart = 0;
             this.IMN_SALEP2_0.IsCorrectDate = true;
@@ -5499,7 +5499,7 @@
             this.CHK_DELCK_1.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_1.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_1.Location = new System.Drawing.Point(0, 57);
             this.CHK_DELCK_1.Name = "CHK_DELCK_1";
@@ -5515,7 +5515,7 @@
             this.CHK_DELCK_0.BackColor = System.Drawing.Color.White;
             this.CHK_DELCK_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CHK_DELCK_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CHK_DELCK_0.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.CHK_DELCK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_DELCK_0.ForeColor = System.Drawing.Color.Black;
             this.CHK_DELCK_0.Location = new System.Drawing.Point(0, 19);
             this.CHK_DELCK_0.Name = "CHK_DELCK_0";
@@ -5533,9 +5533,10 @@
             this.SC_ITEM_0.ChangeDateWidth = 100;
             this.SC_ITEM_0.Code = "";
             this.SC_ITEM_0.CodeWidth = 110;
+            this.SC_ITEM_0.CodeWidth1 = 110;
             this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_0.DataCheck = false;
-            this.SC_ITEM_0.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_0.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_0.IsCopy = false;
             this.SC_ITEM_0.LabelText = "";
@@ -5562,9 +5563,10 @@
             this.SC_ITEM_1.ChangeDateWidth = 100;
             this.SC_ITEM_1.Code = "";
             this.SC_ITEM_1.CodeWidth = 110;
+            this.SC_ITEM_1.CodeWidth1 = 110;
             this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_1.DataCheck = false;
-            this.SC_ITEM_1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_1.IsCopy = false;
             this.SC_ITEM_1.LabelText = "";
@@ -5591,9 +5593,10 @@
             this.SC_ITEM_2.ChangeDateWidth = 100;
             this.SC_ITEM_2.Code = "";
             this.SC_ITEM_2.CodeWidth = 110;
+            this.SC_ITEM_2.CodeWidth1 = 110;
             this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_2.DataCheck = false;
-            this.SC_ITEM_2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_2.IsCopy = false;
             this.SC_ITEM_2.LabelText = "";
@@ -5620,9 +5623,10 @@
             this.SC_ITEM_3.ChangeDateWidth = 100;
             this.SC_ITEM_3.Code = "";
             this.SC_ITEM_3.CodeWidth = 110;
+            this.SC_ITEM_3.CodeWidth1 = 110;
             this.SC_ITEM_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_3.DataCheck = false;
-            this.SC_ITEM_3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_3.IsCopy = false;
             this.SC_ITEM_3.LabelText = "";
@@ -5649,9 +5653,10 @@
             this.SC_ITEM_4.ChangeDateWidth = 100;
             this.SC_ITEM_4.Code = "";
             this.SC_ITEM_4.CodeWidth = 110;
+            this.SC_ITEM_4.CodeWidth1 = 110;
             this.SC_ITEM_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_4.DataCheck = false;
-            this.SC_ITEM_4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_4.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_4.IsCopy = false;
             this.SC_ITEM_4.LabelText = "";
@@ -5678,9 +5683,10 @@
             this.SC_ITEM_5.ChangeDateWidth = 100;
             this.SC_ITEM_5.Code = "";
             this.SC_ITEM_5.CodeWidth = 110;
+            this.SC_ITEM_5.CodeWidth1 = 110;
             this.SC_ITEM_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_5.DataCheck = false;
-            this.SC_ITEM_5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_5.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_5.IsCopy = false;
             this.SC_ITEM_5.LabelText = "";
@@ -5707,9 +5713,10 @@
             this.SC_ITEM_6.ChangeDateWidth = 100;
             this.SC_ITEM_6.Code = "";
             this.SC_ITEM_6.CodeWidth = 110;
+            this.SC_ITEM_6.CodeWidth1 = 110;
             this.SC_ITEM_6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_6.DataCheck = false;
-            this.SC_ITEM_6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_6.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_6.IsCopy = false;
             this.SC_ITEM_6.LabelText = "";
@@ -5736,9 +5743,10 @@
             this.SC_ITEM_7.ChangeDateWidth = 100;
             this.SC_ITEM_7.Code = "";
             this.SC_ITEM_7.CodeWidth = 110;
+            this.SC_ITEM_7.CodeWidth1 = 110;
             this.SC_ITEM_7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_7.DataCheck = false;
-            this.SC_ITEM_7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_7.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_7.IsCopy = false;
             this.SC_ITEM_7.LabelText = "";
@@ -5765,9 +5773,10 @@
             this.SC_ITEM_8.ChangeDateWidth = 100;
             this.SC_ITEM_8.Code = "";
             this.SC_ITEM_8.CodeWidth = 110;
+            this.SC_ITEM_8.CodeWidth1 = 110;
             this.SC_ITEM_8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_8.DataCheck = false;
-            this.SC_ITEM_8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_8.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_8.IsCopy = false;
             this.SC_ITEM_8.LabelText = "";
@@ -5794,9 +5803,10 @@
             this.SC_ITEM_9.ChangeDateWidth = 100;
             this.SC_ITEM_9.Code = "";
             this.SC_ITEM_9.CodeWidth = 110;
+            this.SC_ITEM_9.CodeWidth1 = 110;
             this.SC_ITEM_9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_9.DataCheck = false;
-            this.SC_ITEM_9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.SC_ITEM_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.SC_ITEM_9.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.SC_ITEM_9.IsCopy = false;
             this.SC_ITEM_9.LabelText = "";
@@ -5824,7 +5834,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.DefaultlabelSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(28, 31);
@@ -5841,7 +5851,7 @@
             this.label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.DefaultlabelSize = true;
-            this.label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label27.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label27.ForeColor = System.Drawing.Color.Black;
             this.label27.Location = new System.Drawing.Point(257, 13);
@@ -5882,7 +5892,7 @@
             this.label8.BackColor = System.Drawing.Color.DarkGray;
             this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label8.Location = new System.Drawing.Point(852, 2);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(102, 16);
@@ -5895,7 +5905,7 @@
             this.label18.BackColor = System.Drawing.Color.DarkGray;
             this.label18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label18.Location = new System.Drawing.Point(747, 2);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(105, 16);
@@ -5908,7 +5918,7 @@
             this.label28.BackColor = System.Drawing.Color.DarkGray;
             this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label28.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label28.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label28.Location = new System.Drawing.Point(1295, 18);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(48, 16);
@@ -5921,7 +5931,7 @@
             this.label25.BackColor = System.Drawing.Color.DarkGray;
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label25.Location = new System.Drawing.Point(1268, 2);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(75, 16);
@@ -5934,7 +5944,7 @@
             this.label46.BackColor = System.Drawing.Color.DarkGray;
             this.label46.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label46.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label46.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label46.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label46.Location = new System.Drawing.Point(28, 2);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(141, 16);
@@ -5947,7 +5957,7 @@
             this.ckM_Label2.BackColor = System.Drawing.Color.DarkGray;
             this.ckM_Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ckM_Label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckM_Label2.Location = new System.Drawing.Point(0, 2);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(28, 16);
@@ -5960,7 +5970,7 @@
             this.label3.BackColor = System.Drawing.Color.DarkGray;
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label3.Location = new System.Drawing.Point(0, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 16);
@@ -5972,7 +5982,7 @@
             this.label13.BackColor = System.Drawing.Color.DarkGray;
             this.label13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label13.Location = new System.Drawing.Point(1116, 2);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(72, 16);
@@ -5985,7 +5995,7 @@
             this.label20.BackColor = System.Drawing.Color.DarkGray;
             this.label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label20.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label20.Location = new System.Drawing.Point(340, 2);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(407, 16);
@@ -5998,7 +6008,7 @@
             this.label7.BackColor = System.Drawing.Color.DarkGray;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label7.Location = new System.Drawing.Point(169, 2);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 16);
@@ -6011,7 +6021,7 @@
             this.label23.BackColor = System.Drawing.Color.DarkGray;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label23.Location = new System.Drawing.Point(1050, 2);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(66, 16);
@@ -6024,7 +6034,7 @@
             this.label15.BackColor = System.Drawing.Color.DarkGray;
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label15.Location = new System.Drawing.Point(1015, 2);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(35, 16);
@@ -6037,7 +6047,7 @@
             this.label16.BackColor = System.Drawing.Color.DarkGray;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label16.Location = new System.Drawing.Point(954, 2);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(61, 16);
@@ -6050,7 +6060,7 @@
             this.label10.BackColor = System.Drawing.Color.DarkGray;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label10.Location = new System.Drawing.Point(1188, 2);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(80, 16);
@@ -6063,7 +6073,7 @@
             this.label47.BackColor = System.Drawing.Color.DarkGray;
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label47.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label47.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label47.Location = new System.Drawing.Point(28, 18);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(294, 16);
@@ -6076,7 +6086,7 @@
             this.label5.BackColor = System.Drawing.Color.DarkGray;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label5.Location = new System.Drawing.Point(808, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(487, 16);
@@ -6089,7 +6099,7 @@
             this.label2.BackColor = System.Drawing.Color.DarkGray;
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label2.Location = new System.Drawing.Point(322, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(486, 16);
@@ -6112,9 +6122,10 @@
             this.ScOrderNO.ChangeDateWidth = 100;
             this.ScOrderNO.Code = "";
             this.ScOrderNO.CodeWidth = 100;
+            this.ScOrderNO.CodeWidth1 = 100;
             this.ScOrderNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrderNO.DataCheck = false;
-            this.ScOrderNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScOrderNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScOrderNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScOrderNO.IsCopy = false;
             this.ScOrderNO.LabelText = "";
@@ -6139,10 +6150,11 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
-            this.ScStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
@@ -6150,9 +6162,9 @@
             this.ScStaff.Location = new System.Drawing.Point(1023, 96);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
-            this.ScStaff.NameWidth = 210;
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 7;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -6173,7 +6185,7 @@
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1060, 7);
             this.CboStoreCD.MaxLength = 40;
-            this.CboStoreCD.MoveNext = true;
+            this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
             this.CboStoreCD.TabIndex = 3;
@@ -6184,7 +6196,7 @@
             this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label1.Location = new System.Drawing.Point(16, 11);
@@ -6202,9 +6214,10 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
-            this.ckM_SearchControl3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl3.IsCopy = false;
             this.ckM_SearchControl3.LabelText = "";
@@ -6233,7 +6246,7 @@
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 2;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox1.IntegerPart = 0;
@@ -6258,7 +6271,8 @@
             this.TxtRemark1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
-            this.TxtRemark1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.TxtRemark1.F_focus = false;
+            this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 360;
             this.TxtRemark1.Location = new System.Drawing.Point(99, 645);
@@ -6300,7 +6314,7 @@
             // 
             this.lblKin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin3.Location = new System.Drawing.Point(1217, 650);
             this.lblKin3.Name = "lblKin3";
             this.lblKin3.Size = new System.Drawing.Size(85, 18);
@@ -6312,7 +6326,7 @@
             // 
             this.lblKin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin2.Location = new System.Drawing.Point(1046, 650);
             this.lblKin2.Name = "lblKin2";
             this.lblKin2.Size = new System.Drawing.Size(85, 18);
@@ -6326,7 +6340,7 @@
             this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label3.Location = new System.Drawing.Point(36, 649);
@@ -6344,9 +6358,10 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
-            this.ckM_SearchControl1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl1.IsCopy = false;
             this.ckM_SearchControl1.LabelText = "";
@@ -6371,7 +6386,7 @@
             this.ckM_Label18.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label18.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label18.DefaultlabelSize = true;
-            this.ckM_Label18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label18.Location = new System.Drawing.Point(973, 653);
@@ -6388,7 +6403,7 @@
             this.ckM_Label19.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label19.DefaultlabelSize = true;
-            this.ckM_Label19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label19.Location = new System.Drawing.Point(1170, 653);
@@ -6402,7 +6417,7 @@
             // ckM_CheckBox3
             // 
             this.ckM_CheckBox3.AutoSize = true;
-            this.ckM_CheckBox3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_CheckBox3.Location = new System.Drawing.Point(508, 11);
             this.ckM_CheckBox3.Name = "ckM_CheckBox3";
             this.ckM_CheckBox3.Size = new System.Drawing.Size(50, 16);
@@ -6418,7 +6433,7 @@
             this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label12.DefaultlabelSize = true;
-            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label12.Location = new System.Drawing.Point(999, 674);
@@ -6433,7 +6448,7 @@
             // 
             this.lblZei.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblZei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblZei.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblZei.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblZei.Location = new System.Drawing.Point(712, 100);
             this.lblZei.Name = "lblZei";
             this.lblZei.Size = new System.Drawing.Size(64, 18);
@@ -6448,9 +6463,10 @@
             this.ScVendorCD.ChangeDateWidth = 100;
             this.ScVendorCD.Code = "";
             this.ScVendorCD.CodeWidth = 130;
+            this.ScVendorCD.CodeWidth1 = 130;
             this.ScVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendorCD.DataCheck = true;
-            this.ScVendorCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScVendorCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScVendorCD.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScVendorCD.IsCopy = false;
             this.ScVendorCD.LabelText = "";
@@ -6473,7 +6489,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label17.Location = new System.Drawing.Point(171, 104);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 12);
@@ -6491,7 +6507,7 @@
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 2;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox2.IntegerPart = 0;
@@ -6517,7 +6533,7 @@
             this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label7.Location = new System.Drawing.Point(794, 104);
@@ -6534,7 +6550,7 @@
             this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label9.DefaultlabelSize = true;
-            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label9.Location = new System.Drawing.Point(599, 11);
@@ -6551,7 +6567,7 @@
             this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label6.Location = new System.Drawing.Point(1183, 674);
@@ -6572,7 +6588,7 @@
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox5.DecimalPlace = 0;
-            this.ckM_TextBox5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox5.IntegerPart = 9;
             this.ckM_TextBox5.IsCorrectDate = true;
@@ -6596,7 +6612,7 @@
             this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
             this.ckM_Label10.DefaultlabelSize = true;
-            this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
             this.ckM_Label10.Location = new System.Drawing.Point(664, 103);
@@ -6614,9 +6630,10 @@
             this.ScCopyNO.ChangeDateWidth = 100;
             this.ScCopyNO.Code = "";
             this.ScCopyNO.CodeWidth = 100;
+            this.ScCopyNO.CodeWidth1 = 100;
             this.ScCopyNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyNO.DataCheck = true;
-            this.ScCopyNO.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCopyNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScCopyNO.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScCopyNO.IsCopy = false;
             this.ScCopyNO.LabelText = "";
@@ -6638,7 +6655,7 @@
             // ckM_CheckBox1
             // 
             this.ckM_CheckBox1.AutoSize = true;
-            this.ckM_CheckBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_CheckBox1.Location = new System.Drawing.Point(1191, 130);
             this.ckM_CheckBox1.Name = "ckM_CheckBox1";
             this.ckM_CheckBox1.Size = new System.Drawing.Size(115, 16);
@@ -6651,7 +6668,7 @@
             // 
             this.lblKin1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKin1.Location = new System.Drawing.Point(1046, 672);
             this.lblKin1.Name = "lblKin1";
             this.lblKin1.Size = new System.Drawing.Size(85, 18);

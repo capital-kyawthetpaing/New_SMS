@@ -91,10 +91,12 @@ namespace TempoRegiFurikomiYoushi
 
         private void TempoRegiFurikomiYoushi_Load(object sender, EventArgs e)
         {
-            // InProgramID = "店舗振込用紙";
+            //InProgramID = "店舗振込用紙";
+           // InProgramID = "店舗レジ振込用紙印刷";
             InProgramID = "TempoRegiFurikomiYoushi";
             string data = InOperatorCD;
             StartProgram();
+            this.Text = "店舗レジ 振込用紙印刷";
             SetRequireField();
 
             txtprintprogress.Focus();

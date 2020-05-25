@@ -455,7 +455,6 @@ namespace TanaoroshiSaihyou
         /// <returns></returns>
         private bool CheckDetail(int index, bool set=true)
         {
-            bool ret;
             switch (index)
             {
                 case (int)EIndex.InventoryDate:
@@ -486,6 +485,7 @@ namespace TanaoroshiSaihyou
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSoukoCD.MoveNext = false;
                         return false;
                     }
 
