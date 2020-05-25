@@ -75,6 +75,7 @@
             this.ginKou_CD.ChangeDateWidth = 100;
             this.ginKou_CD.Code = "";
             this.ginKou_CD.CodeWidth = 40;
+            this.ginKou_CD.CodeWidth1 = 40;
             this.ginKou_CD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ginKou_CD.DataCheck = false;
             this.ginKou_CD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -84,6 +85,7 @@
             this.ginKou_CD.Location = new System.Drawing.Point(61, 3);
             this.ginKou_CD.Margin = new System.Windows.Forms.Padding(0);
             this.ginKou_CD.Name = "ginKou_CD";
+            this.ginKou_CD.NameWidth = 350;
             this.ginKou_CD.SearchEnable = true;
             this.ginKou_CD.Size = new System.Drawing.Size(103, 50);
             this.ginKou_CD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -102,6 +104,7 @@
             this.copy_ginKou_CD.ChangeDateWidth = 100;
             this.copy_ginKou_CD.Code = "";
             this.copy_ginKou_CD.CodeWidth = 40;
+            this.copy_ginKou_CD.CodeWidth1 = 40;
             this.copy_ginKou_CD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.copy_ginKou_CD.DataCheck = false;
             this.copy_ginKou_CD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -111,6 +114,7 @@
             this.copy_ginKou_CD.Location = new System.Drawing.Point(83, 3);
             this.copy_ginKou_CD.Margin = new System.Windows.Forms.Padding(0);
             this.copy_ginKou_CD.Name = "copy_ginKou_CD";
+            this.copy_ginKou_CD.NameWidth = 350;
             this.copy_ginKou_CD.SearchEnable = true;
             this.copy_ginKou_CD.Size = new System.Drawing.Size(103, 50);
             this.copy_ginKou_CD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -222,6 +226,7 @@
             this.ginko_name.IntegerPart = 0;
             this.ginko_name.IsCorrectDate = true;
             this.ginko_name.isEnterKeyDown = false;
+            this.ginko_name.isMaxLengthErr = false;
             this.ginko_name.IsNumber = true;
             this.ginko_name.IsShop = false;
             this.ginko_name.Length = 30;
@@ -230,7 +235,7 @@
             this.ginko_name.MoveNext = true;
             this.ginko_name.Name = "ginko_name";
             this.ginko_name.Size = new System.Drawing.Size(186, 19);
-            this.ginko_name.TabIndex = 0;
+            this.ginko_name.TabIndex = 2;
             this.ginko_name.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label5
@@ -266,6 +271,7 @@
             this.ginko_kananame.IntegerPart = 0;
             this.ginko_kananame.IsCorrectDate = true;
             this.ginko_kananame.isEnterKeyDown = false;
+            this.ginko_kananame.isMaxLengthErr = false;
             this.ginko_kananame.IsNumber = true;
             this.ginko_kananame.IsShop = false;
             this.ginko_kananame.Length = 30;
@@ -274,7 +280,7 @@
             this.ginko_kananame.MoveNext = true;
             this.ginko_kananame.Name = "ginko_kananame";
             this.ginko_kananame.Size = new System.Drawing.Size(183, 19);
-            this.ginko_kananame.TabIndex = 1;
+            this.ginko_kananame.TabIndex = 3;
             this.ginko_kananame.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // 備考
@@ -311,7 +317,7 @@
             this.ginko_remarks.Name = "ginko_remarks";
             this.ginko_remarks.RowCount = 5;
             this.ginko_remarks.Size = new System.Drawing.Size(620, 95);
-            this.ginko_remarks.TabIndex = 2;
+            this.ginko_remarks.TabIndex = 4;
             this.ginko_remarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ChkDeleteFlg
@@ -322,7 +328,7 @@
             this.ChkDeleteFlg.Name = "ChkDeleteFlg";
             this.ChkDeleteFlg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ChkDeleteFlg.Size = new System.Drawing.Size(50, 16);
-            this.ChkDeleteFlg.TabIndex = 3;
+            this.ChkDeleteFlg.TabIndex = 7;
             this.ChkDeleteFlg.Text = "削除";
             this.ChkDeleteFlg.UseVisualStyleBackColor = true;
             // 
@@ -374,7 +380,7 @@
             this.ginko_useflg.Location = new System.Drawing.Point(1666, 40);
             this.ginko_useflg.Name = "ginko_useflg";
             this.ginko_useflg.Size = new System.Drawing.Size(65, 12);
-            this.ginko_useflg.TabIndex = 3;
+            this.ginko_useflg.TabIndex = 10;
             this.ginko_useflg.Text = "使用済FLG";
             this.ginko_useflg.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ginko_useflg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
