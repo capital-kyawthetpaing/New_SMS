@@ -108,7 +108,8 @@ namespace ShiireTankaTeiseiIraisho
                 base.StartProgram();    
 
                 stbl = new ShiireTankaTeiseiIraisho_BL();
-                CboStoreCD.Bind(string.Empty);
+                string ymd = stbl.GetDate();
+                CboStoreCD.Bind(ymd);
 
                 ScOrder.Value1 = "1";
 
