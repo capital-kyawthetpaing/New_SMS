@@ -1163,7 +1163,7 @@ namespace MitsumoriNyuuryoku
                 string ymd = bbl.GetDate();
                 mibl = new MitsumoriNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
-                CboJuchuuChanceKBN.Bind(string.Empty);
+                CboJuchuuChanceKBN.Bind(string.Empty);                
 
                 string stores = GetAllAvailableStores();
                 ScMitsumoriNO.Value1 = InOperatorCD;
@@ -1267,12 +1267,14 @@ namespace MitsumoriNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1623,6 +1625,7 @@ namespace MitsumoriNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboJuchuuChanceKBN.MoveNext = false;
                         return false;
                     }
                     break;
