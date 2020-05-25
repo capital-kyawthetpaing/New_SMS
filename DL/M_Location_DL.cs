@@ -37,7 +37,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                {
                    {"@SoukoCD",new ValuePair { value1=SqlDbType.VarChar,value2=mle.SoukoCD} },
-                   { "@TanaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mle.TanaCD } }
+                   {"@TanaCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mle.TanaCD } }
                };
             return SelectData(dic, "M_LocationTana_Select");
         }
