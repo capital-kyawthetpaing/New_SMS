@@ -461,6 +461,7 @@ namespace SyukkaShijisho
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSouko.MoveNext = false;
                         return false;
                     }
                     break;                    

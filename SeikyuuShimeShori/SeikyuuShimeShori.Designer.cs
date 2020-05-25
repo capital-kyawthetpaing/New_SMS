@@ -87,7 +87,6 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -155,7 +154,7 @@
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1062, 15);
             this.CboStoreCD.MaxLength = 20;
-            this.CboStoreCD.MoveNext = true;
+            this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
             this.CboStoreCD.TabIndex = 0;
@@ -168,6 +167,7 @@
             this.ckM_SearchControl2.ChangeDateWidth = 100;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -196,6 +196,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -373,6 +374,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -503,7 +505,7 @@
             this.cboSyori.Location = new System.Drawing.Point(105, 15);
             this.cboSyori.MaxDropDownItems = 3;
             this.cboSyori.MaxLength = 20;
-            this.cboSyori.MoveNext = true;
+            this.cboSyori.MoveNext = false;
             this.cboSyori.Name = "cboSyori";
             this.cboSyori.Size = new System.Drawing.Size(130, 20);
             this.cboSyori.TabIndex = 1;

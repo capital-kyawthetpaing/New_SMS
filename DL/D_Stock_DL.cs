@@ -75,7 +75,8 @@ namespace DL
                {
                    {"@SoukoCD",new ValuePair { value1=SqlDbType.VarChar,value2=de.SoukoCD} },
                    {"@RackNO",new ValuePair { value1=SqlDbType.VarChar,value2=de.RackNO} },
-                   {"@AdminNO",new ValuePair { value1=SqlDbType.Int,value2=de.AdminNO} }
+                   {"@AdminNO",new ValuePair { value1=SqlDbType.Int,value2=de.AdminNO} },
+                   {"@Suryo",new ValuePair { value1=SqlDbType.Int,value2=de.StockSu} }
                };
             return SelectData(dic, "D_Stock_SelectSuryo");
         }
@@ -85,9 +86,7 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                {
                    {"@SoukoCD",new ValuePair { value1=SqlDbType.VarChar,value2=de.SoukoCD} },
-                   {"@RackNO",new ValuePair { value1=SqlDbType.VarChar,value2=de.RackNO} },
                    {"@AdminNO",new ValuePair { value1=SqlDbType.Int,value2=de.AdminNO} },
-                   {"@Suryo",new ValuePair { value1=SqlDbType.Int,value2=de.StockSu} }
                };
             return SelectData(dic, "D_Stock_SelectRackNO");
         }

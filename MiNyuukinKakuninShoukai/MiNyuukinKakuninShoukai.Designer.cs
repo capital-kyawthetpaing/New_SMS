@@ -51,8 +51,6 @@
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.GvDetail = new CKM_Controls.CKM_GridView();
-            this.CboSoukoName = new CKM_Controls.CKM_ComboBox();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.BtnSyonin = new System.Windows.Forms.DataGridViewButtonColumn();
             this.CollectPlanNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Store = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +64,8 @@
             this.colVendorCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVendorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CboPaymentMethodCD = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).BeginInit();
@@ -74,7 +74,7 @@
             // PanelHeader
             // 
             this.PanelHeader.Controls.Add(this.ckM_Label2);
-            this.PanelHeader.Controls.Add(this.CboSoukoName);
+            this.PanelHeader.Controls.Add(this.CboPaymentMethodCD);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.ckM_CheckBox2);
             this.PanelHeader.Controls.Add(this.ckM_CheckBox1);
@@ -96,7 +96,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.CboSoukoName, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.CboPaymentMethodCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
             // 
             // PanelSearch
@@ -181,6 +181,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_見積;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(115, 6);
@@ -197,6 +198,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -205,7 +207,9 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -222,6 +226,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 2;
@@ -230,6 +235,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -269,6 +275,7 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -277,7 +284,9 @@
             this.ckM_SearchControl1.LabelText = "";
             this.ckM_SearchControl1.LabelVisible = false;
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
+            this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -335,6 +344,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 2;
@@ -343,6 +353,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -424,39 +435,6 @@
             this.GvDetail.UseSetting = true;
             this.GvDetail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GvDetail_CellContentClick);
             this.GvDetail.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.GvDetail_CellFormatting);
-            // 
-            // CboSoukoName
-            // 
-            this.CboSoukoName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.CboSoukoName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CboSoukoName.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
-            this.CboSoukoName.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
-            this.CboSoukoName.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.CboSoukoName.FormattingEnabled = true;
-            this.CboSoukoName.Length = 20;
-            this.CboSoukoName.Location = new System.Drawing.Point(115, 90);
-            this.CboSoukoName.MaxLength = 10;
-            this.CboSoukoName.MoveNext = true;
-            this.CboSoukoName.Name = "CboSoukoName";
-            this.CboSoukoName.Size = new System.Drawing.Size(140, 20);
-            this.CboSoukoName.TabIndex = 5;
-            // 
-            // ckM_Label2
-            // 
-            this.ckM_Label2.AutoSize = true;
-            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(55, 94);
-            this.ckM_Label2.Name = "ckM_Label2";
-            this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label2.TabIndex = 723;
-            this.ckM_Label2.Text = "入金方法";
-            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // BtnSyonin
             // 
@@ -578,6 +556,40 @@
             this.colSKUName.ReadOnly = true;
             this.colSKUName.Width = 300;
             // 
+            // CboPaymentMethodCD
+            // 
+            this.CboPaymentMethodCD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CboPaymentMethodCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.CboPaymentMethodCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷予定状況;
+            this.CboPaymentMethodCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CboPaymentMethodCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboPaymentMethodCD.Flag = 0;
+            this.CboPaymentMethodCD.FormattingEnabled = true;
+            this.CboPaymentMethodCD.Length = 20;
+            this.CboPaymentMethodCD.Location = new System.Drawing.Point(115, 90);
+            this.CboPaymentMethodCD.MaxLength = 10;
+            this.CboPaymentMethodCD.MoveNext = false;
+            this.CboPaymentMethodCD.Name = "CboPaymentMethodCD";
+            this.CboPaymentMethodCD.Size = new System.Drawing.Size(140, 20);
+            this.CboPaymentMethodCD.TabIndex = 5;
+            // 
+            // ckM_Label2
+            // 
+            this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
+            this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label2.Location = new System.Drawing.Point(55, 94);
+            this.ckM_Label2.Name = "ckM_Label2";
+            this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label2.TabIndex = 723;
+            this.ckM_Label2.Text = "入金方法";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // MiNyuukinKakuninShoukai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -595,6 +607,7 @@
             this.PanelSearch.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GvDetail)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -614,7 +627,7 @@
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_TextBox ckM_TextBox2;
         private CKM_Controls.CKM_GridView GvDetail;
-        private CKM_Controls.CKM_ComboBox CboSoukoName;
+        private CKM_Controls.CKM_ComboBox CboPaymentMethodCD;
         private CKM_Controls.CKM_Label ckM_Label2;
         private System.Windows.Forms.DataGridViewButtonColumn BtnSyonin;
         private System.Windows.Forms.DataGridViewTextBoxColumn CollectPlanNO;
