@@ -1465,12 +1465,14 @@ namespace TempoJuchuuNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -2272,11 +2274,14 @@ namespace TempoJuchuuNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSoukoName.MoveNext = false;
                         return false;
                     }
                     if (!CheckDependsOnDate(index))
+                    {
+                        CboSoukoName.MoveNext = false;
                         return false;
-
+                    }                        
                     break;
 
                 case (int)EIndex.StaffCD:
@@ -2363,6 +2368,7 @@ namespace TempoJuchuuNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboPaymentMethodCD.MoveNext = false;
                         return false;
                     }
                     break;
@@ -4248,7 +4254,7 @@ namespace TempoJuchuuNyuuryoku
                     int CL=-1;
                     string ctlName = "";
                     if (w_ActCtl.Parent.GetType().Equals(typeof(Search.CKM_SearchControl)))
-                        ctlName= w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
+                        ctlName = w_ActCtl.Parent.Name.Substring(0, w_ActCtl.Parent.Name.LastIndexOf("_"));
                     else
                         ctlName = w_ActCtl.Name.Substring(0, w_ActCtl.Name.LastIndexOf("_"));
 
@@ -4481,6 +4487,11 @@ namespace TempoJuchuuNyuuryoku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        if (w_ActCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                        {
+                            ((CKM_Controls.CKM_ComboBox)w_ActCtl).MoveNext = false;
+                        }
+
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
