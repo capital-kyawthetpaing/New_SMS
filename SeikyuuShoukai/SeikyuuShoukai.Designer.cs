@@ -146,11 +146,12 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア_受注;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(1062, 15);
             this.CboStoreCD.MaxLength = 20;
-            this.CboStoreCD.MoveNext = true;
+            this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(280, 20);
             this.CboStoreCD.TabIndex = 0;
@@ -163,6 +164,7 @@
             this.ckM_SearchControl2.ChangeDateWidth = 100;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -171,7 +173,9 @@
             this.ckM_SearchControl2.LabelText = "";
             this.ckM_SearchControl2.LabelVisible = false;
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
+            this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
+            this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
             this.ckM_SearchControl2.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -189,6 +193,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -197,7 +202,9 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
+            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -214,6 +221,7 @@
             this.ckM_CustomerName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_CustomerName.BackColor = System.Drawing.Color.White;
             this.ckM_CustomerName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_CustomerName.ClientColor = System.Drawing.Color.White;
             this.ckM_CustomerName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_CustomerName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_CustomerName.DecimalPlace = 0;
@@ -225,7 +233,7 @@
             this.ckM_CustomerName.isMaxLengthErr = false;
             this.ckM_CustomerName.IsNumber = true;
             this.ckM_CustomerName.IsShop = false;
-            this.ckM_CustomerName.Length = 80;
+            this.ckM_CustomerName.Length = 40;
             this.ckM_CustomerName.Location = new System.Drawing.Point(236, 65);
             this.ckM_CustomerName.MaxLength = 40;
             this.ckM_CustomerName.MoveNext = true;
@@ -271,6 +279,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -316,6 +325,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -345,6 +355,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -353,7 +364,9 @@
             this.ScCustomer.LabelText = "";
             this.ScCustomer.LabelVisible = true;
             this.ScCustomer.Location = new System.Drawing.Point(105, 60);
+            this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer.Name = "ScCustomer";
+            this.ScCustomer.NameWidth = 500;
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(634, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;

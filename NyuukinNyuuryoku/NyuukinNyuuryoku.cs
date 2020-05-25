@@ -230,6 +230,7 @@ namespace NyuukinNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
@@ -237,6 +238,7 @@ namespace NyuukinNyuuryoku
                         //店舗権限のチェック
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;

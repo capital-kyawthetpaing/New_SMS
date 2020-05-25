@@ -246,16 +246,17 @@ namespace SeikyuuShoukai
                 //    break;
 
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedValue.Equals("-1"))
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { CboStoreCD }))
                     {
-                        bbl.ShowMessage("E102");
-                        CboStoreCD.Focus();
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;

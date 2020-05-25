@@ -78,7 +78,7 @@ namespace MiNyuukinKakuninShoukai
                 string ymd = bbl.GetDate();
                 mibl = new MiNyuukinKakuninShoukai_BL();
                 CboStoreCD.Bind(ymd);
-                Bind(CboSoukoName, 1);
+                Bind(CboPaymentMethodCD, 1);
 
                 Scr_Clr(0);
 
@@ -132,7 +132,7 @@ namespace MiNyuukinKakuninShoukai
 
         private void InitialControlArray()
         {
-            detailControls = new Control[] { CboStoreCD, ckM_TextBox1, ckM_TextBox2, ckM_CheckBox1, ckM_CheckBox2, CboSoukoName };
+            detailControls = new Control[] { CboStoreCD, ckM_TextBox1, ckM_TextBox2, ckM_CheckBox1, ckM_CheckBox2, CboPaymentMethodCD };
 
             //イベント付与
             foreach (Control ctl in detailControls)
@@ -161,12 +161,14 @@ namespace MiNyuukinKakuninShoukai
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             return false;
                         }
@@ -219,6 +221,7 @@ namespace MiNyuukinKakuninShoukai
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboPaymentMethodCD.MoveNext = false;
                         return false;
                     }
                     else
@@ -306,7 +309,7 @@ namespace MiNyuukinKakuninShoukai
                 if (!ckM_CheckBox1.Checked)
                     doe.Kbn = 3;
 
-            doe.PaymentMethodCD = CboSoukoName.SelectedValue.ToString();
+            doe.PaymentMethodCD = CboPaymentMethodCD.SelectedValue.ToString();
 
             return doe;
         }
@@ -335,11 +338,11 @@ namespace MiNyuukinKakuninShoukai
 
             ckM_CheckBox1.Checked = true;
             ckM_CheckBox2.Checked = true;
-            if (CboSoukoName.DataSource != null)
+            if (CboPaymentMethodCD.DataSource != null)
             {
-                if (((DataTable)CboSoukoName.DataSource).Rows.Count >= 2)
+                if (((DataTable)CboPaymentMethodCD.DataSource).Rows.Count >= 2)
                 {
-                    CboSoukoName.SelectedIndex = 1;
+                    CboPaymentMethodCD.SelectedIndex = 1;
                 }
             }
         }

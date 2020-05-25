@@ -807,7 +807,7 @@ namespace MasterTouroku_ShiireKakeritsu
             Xml = mskbl.DataTableToXml(dtMain);
             moe.VendorCD = scSupplierCD.TxtCode.Text;
             moe.ChangeDate = txtRevisionDate.Text;
-            moe.Rate = txtRate1.Text;     
+            moe.Rate = txtRate1.Text;
             if (mskbl.M_OrderRate_Update(moe, Xml))
             {
                 Clear(PanelHeader);
