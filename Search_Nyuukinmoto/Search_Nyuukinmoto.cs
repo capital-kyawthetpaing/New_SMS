@@ -243,9 +243,10 @@ namespace Search_Nyuukinmoto
                     break;
 
                 case (int)EIndex.StoreCD:
-                    if (CboStoreCD.SelectedIndex == -1)
+                    //選択必須(Entry required)
+                    if (!RequireCheck(new Control[] { CboStoreCD }))
                     {
-                        nnbl.ShowMessage("E102");
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
@@ -253,6 +254,7 @@ namespace Search_Nyuukinmoto
                         //店舗権限のチェック、引数で処理可能店舗の配列をセットしたい
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             nnbl.ShowMessage("E141");
                             return false;
                         }

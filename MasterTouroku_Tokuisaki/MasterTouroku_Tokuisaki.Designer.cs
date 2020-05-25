@@ -561,7 +561,7 @@
             this.txtCreditETC.isMaxLengthErr = false;
             this.txtCreditETC.IsNumber = true;
             this.txtCreditETC.IsShop = false;
-            this.txtCreditETC.Length = 10;
+            this.txtCreditETC.Length = 20;
             this.txtCreditETC.Location = new System.Drawing.Point(136, 559);
             this.txtCreditETC.MaxLength = 20;
             this.txtCreditETC.MoveNext = true;
@@ -607,7 +607,7 @@
             this.txtCreditDeposit.isMaxLengthErr = false;
             this.txtCreditDeposit.IsNumber = true;
             this.txtCreditDeposit.IsShop = false;
-            this.txtCreditDeposit.Length = 10;
+            this.txtCreditDeposit.Length = 20;
             this.txtCreditDeposit.Location = new System.Drawing.Point(136, 540);
             this.txtCreditDeposit.MaxLength = 20;
             this.txtCreditDeposit.MoveNext = true;
@@ -653,7 +653,7 @@
             this.txtCreditInsurance.isMaxLengthErr = false;
             this.txtCreditInsurance.IsNumber = true;
             this.txtCreditInsurance.IsShop = false;
-            this.txtCreditInsurance.Length = 10;
+            this.txtCreditInsurance.Length = 20;
             this.txtCreditInsurance.Location = new System.Drawing.Point(136, 521);
             this.txtCreditInsurance.MaxLength = 20;
             this.txtCreditInsurance.MoveNext = true;
@@ -682,7 +682,7 @@
             this.txtConfirmComment.isMaxLengthErr = false;
             this.txtConfirmComment.IsNumber = true;
             this.txtConfirmComment.IsShop = false;
-            this.txtConfirmComment.Length = 10;
+            this.txtConfirmComment.Length = 50;
             this.txtConfirmComment.Location = new System.Drawing.Point(256, 460);
             this.txtConfirmComment.MaxLength = 50;
             this.txtConfirmComment.MoveNext = true;
@@ -714,6 +714,7 @@
             this.txtRemarksOutStore.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtRemarksOutStore.BackColor = System.Drawing.Color.White;
             this.txtRemarksOutStore.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtRemarksOutStore.F_focus = false;
             this.txtRemarksOutStore.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtRemarksOutStore.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarksOutStore.Length = 500;
@@ -759,7 +760,7 @@
             this.cmbAmountFractionKBN.Length = 20;
             this.cmbAmountFractionKBN.Location = new System.Drawing.Point(1219, 369);
             this.cmbAmountFractionKBN.MaxLength = 10;
-            this.cmbAmountFractionKBN.MoveNext = true;
+            this.cmbAmountFractionKBN.MoveNext = false;
             this.cmbAmountFractionKBN.Name = "cmbAmountFractionKBN";
             this.cmbAmountFractionKBN.Size = new System.Drawing.Size(140, 20);
             this.cmbAmountFractionKBN.TabIndex = 37;
@@ -793,7 +794,7 @@
             this.cmbTaxFractionKBN.Length = 20;
             this.cmbTaxFractionKBN.Location = new System.Drawing.Point(1219, 348);
             this.cmbTaxFractionKBN.MaxLength = 10;
-            this.cmbTaxFractionKBN.MoveNext = true;
+            this.cmbTaxFractionKBN.MoveNext = false;
             this.cmbTaxFractionKBN.Name = "cmbTaxFractionKBN";
             this.cmbTaxFractionKBN.Size = new System.Drawing.Size(140, 20);
             this.cmbTaxFractionKBN.TabIndex = 36;
@@ -827,7 +828,7 @@
             this.cmbTaxTiming.Length = 20;
             this.cmbTaxTiming.Location = new System.Drawing.Point(1219, 327);
             this.cmbTaxTiming.MaxLength = 10;
-            this.cmbTaxTiming.MoveNext = true;
+            this.cmbTaxTiming.MoveNext = false;
             this.cmbTaxTiming.Name = "cmbTaxTiming";
             this.cmbTaxTiming.Size = new System.Drawing.Size(140, 20);
             this.cmbTaxTiming.TabIndex = 35;
@@ -850,7 +851,7 @@
             this.txtCollectPlanDate.isMaxLengthErr = false;
             this.txtCollectPlanDate.IsNumber = true;
             this.txtCollectPlanDate.IsShop = false;
-            this.txtCollectPlanDate.Length = 10;
+            this.txtCollectPlanDate.Length = 2;
             this.txtCollectPlanDate.Location = new System.Drawing.Point(858, 343);
             this.txtCollectPlanDate.MaxLength = 2;
             this.txtCollectPlanDate.MoveNext = true;
@@ -872,7 +873,7 @@
             this.cmbCollectPlanMonth.Length = 20;
             this.cmbCollectPlanMonth.Location = new System.Drawing.Point(858, 320);
             this.cmbCollectPlanMonth.MaxLength = 10;
-            this.cmbCollectPlanMonth.MoveNext = true;
+            this.cmbCollectPlanMonth.MoveNext = false;
             this.cmbCollectPlanMonth.Name = "cmbCollectPlanMonth";
             this.cmbCollectPlanMonth.Size = new System.Drawing.Size(140, 20);
             this.cmbCollectPlanMonth.TabIndex = 29;
@@ -975,7 +976,7 @@
             this.txtTotalPoint.isMaxLengthErr = false;
             this.txtTotalPoint.IsNumber = true;
             this.txtTotalPoint.IsShop = false;
-            this.txtTotalPoint.Length = 10;
+            this.txtTotalPoint.Length = 20;
             this.txtTotalPoint.Location = new System.Drawing.Point(607, 542);
             this.txtTotalPoint.MaxLength = 20;
             this.txtTotalPoint.MoveNext = true;
@@ -1004,7 +1005,7 @@
             this.txtWaitingPoint.isMaxLengthErr = false;
             this.txtWaitingPoint.IsNumber = true;
             this.txtWaitingPoint.IsShop = false;
-            this.txtWaitingPoint.Length = 10;
+            this.txtWaitingPoint.Length = 20;
             this.txtWaitingPoint.Location = new System.Drawing.Point(607, 523);
             this.txtWaitingPoint.MaxLength = 20;
             this.txtWaitingPoint.MoveNext = true;
@@ -1033,7 +1034,7 @@
             this.txtLastPoint.isMaxLengthErr = false;
             this.txtLastPoint.IsNumber = true;
             this.txtLastPoint.IsShop = false;
-            this.txtLastPoint.Length = 10;
+            this.txtLastPoint.Length = 20;
             this.txtLastPoint.Location = new System.Drawing.Point(607, 504);
             this.txtLastPoint.MaxLength = 20;
             this.txtLastPoint.MoveNext = true;
@@ -1091,7 +1092,7 @@
             this.txtDisplayOrder.isMaxLengthErr = false;
             this.txtDisplayOrder.IsNumber = true;
             this.txtDisplayOrder.IsShop = false;
-            this.txtDisplayOrder.Length = 10;
+            this.txtDisplayOrder.Length = 5;
             this.txtDisplayOrder.Location = new System.Drawing.Point(607, 372);
             this.txtDisplayOrder.MaxLength = 5;
             this.txtDisplayOrder.MoveNext = true;
@@ -1131,7 +1132,7 @@
             this.cmbCreditLevel.Length = 20;
             this.cmbCreditLevel.Location = new System.Drawing.Point(136, 482);
             this.cmbCreditLevel.MaxLength = 10;
-            this.cmbCreditLevel.MoveNext = true;
+            this.cmbCreditLevel.MoveNext = false;
             this.cmbCreditLevel.Name = "cmbCreditLevel";
             this.cmbCreditLevel.Size = new System.Drawing.Size(140, 20);
             this.cmbCreditLevel.TabIndex = 46;
@@ -1247,7 +1248,7 @@
             this.cmbStoreTankaKBN.Length = 20;
             this.cmbStoreTankaKBN.Location = new System.Drawing.Point(136, 401);
             this.cmbStoreTankaKBN.MaxLength = 10;
-            this.cmbStoreTankaKBN.MoveNext = true;
+            this.cmbStoreTankaKBN.MoveNext = false;
             this.cmbStoreTankaKBN.Name = "cmbStoreTankaKBN";
             this.cmbStoreTankaKBN.Size = new System.Drawing.Size(140, 20);
             this.cmbStoreTankaKBN.TabIndex = 41;
@@ -1264,7 +1265,7 @@
             this.cmbPaymentUnit.Length = 20;
             this.cmbPaymentUnit.Location = new System.Drawing.Point(136, 381);
             this.cmbPaymentUnit.MaxLength = 10;
-            this.cmbPaymentUnit.MoveNext = true;
+            this.cmbPaymentUnit.MoveNext = false;
             this.cmbPaymentUnit.Name = "cmbPaymentUnit";
             this.cmbPaymentUnit.Size = new System.Drawing.Size(140, 20);
             this.cmbPaymentUnit.TabIndex = 40;
@@ -1298,7 +1299,7 @@
             this.cmbPaymentMethodCD.Length = 20;
             this.cmbPaymentMethodCD.Location = new System.Drawing.Point(136, 342);
             this.cmbPaymentMethodCD.MaxLength = 10;
-            this.cmbPaymentMethodCD.MoveNext = true;
+            this.cmbPaymentMethodCD.MoveNext = false;
             this.cmbPaymentMethodCD.Name = "cmbPaymentMethodCD";
             this.cmbPaymentMethodCD.Size = new System.Drawing.Size(140, 20);
             this.cmbPaymentMethodCD.TabIndex = 38;
@@ -1338,7 +1339,7 @@
             this.txtTel23.isMaxLengthErr = false;
             this.txtTel23.IsNumber = true;
             this.txtTel23.IsShop = false;
-            this.txtTel23.Length = 10;
+            this.txtTel23.Length = 4;
             this.txtTel23.Location = new System.Drawing.Point(463, 241);
             this.txtTel23.MaxLength = 4;
             this.txtTel23.MoveNext = true;
@@ -1364,7 +1365,7 @@
             this.txtTel13.isMaxLengthErr = false;
             this.txtTel13.IsNumber = true;
             this.txtTel13.IsShop = false;
-            this.txtTel13.Length = 10;
+            this.txtTel13.Length = 4;
             this.txtTel13.Location = new System.Drawing.Point(210, 241);
             this.txtTel13.MaxLength = 4;
             this.txtTel13.MoveNext = true;
@@ -1391,7 +1392,7 @@
             this.txtTel22.isMaxLengthErr = false;
             this.txtTel22.IsNumber = true;
             this.txtTel22.IsShop = false;
-            this.txtTel22.Length = 10;
+            this.txtTel22.Length = 4;
             this.txtTel22.Location = new System.Drawing.Point(426, 241);
             this.txtTel22.MaxLength = 4;
             this.txtTel22.MoveNext = true;
@@ -1417,7 +1418,7 @@
             this.txtTel12.isMaxLengthErr = false;
             this.txtTel12.IsNumber = true;
             this.txtTel12.IsShop = false;
-            this.txtTel12.Length = 10;
+            this.txtTel12.Length = 4;
             this.txtTel12.Location = new System.Drawing.Point(173, 241);
             this.txtTel12.MaxLength = 4;
             this.txtTel12.MoveNext = true;
@@ -1456,7 +1457,7 @@
             this.txtCountryName.isMaxLengthErr = false;
             this.txtCountryName.IsNumber = true;
             this.txtCountryName.IsShop = false;
-            this.txtCountryName.Length = 10;
+            this.txtCountryName.Length = 30;
             this.txtCountryName.Location = new System.Drawing.Point(156, 165);
             this.txtCountryName.MaxLength = 30;
             this.txtCountryName.MoveNext = true;
@@ -1532,7 +1533,7 @@
             this.txtLongName2.isMaxLengthErr = false;
             this.txtLongName2.IsNumber = true;
             this.txtLongName2.IsShop = false;
-            this.txtLongName2.Length = 10;
+            this.txtLongName2.Length = 50;
             this.txtLongName2.Location = new System.Drawing.Point(136, 123);
             this.txtLongName2.MaxLength = 50;
             this.txtLongName2.MoveNext = true;
@@ -1589,7 +1590,7 @@
             this.txtLongName1.isMaxLengthErr = false;
             this.txtLongName1.IsNumber = true;
             this.txtLongName1.IsShop = false;
-            this.txtLongName1.Length = 10;
+            this.txtLongName1.Length = 50;
             this.txtLongName1.Location = new System.Drawing.Point(136, 104);
             this.txtLongName1.MaxLength = 50;
             this.txtLongName1.MoveNext = true;
@@ -1634,7 +1635,7 @@
             this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
-            this.txtKanaName.Length = 10;
+            this.txtKanaName.Length = 30;
             this.txtKanaName.Location = new System.Drawing.Point(136, 85);
             this.txtKanaName.MaxLength = 30;
             this.txtKanaName.MoveNext = true;
@@ -1679,7 +1680,7 @@
             this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
-            this.txtCustomerName.Length = 10;
+            this.txtCustomerName.Length = 80;
             this.txtCustomerName.Location = new System.Drawing.Point(136, 66);
             this.txtCustomerName.MaxLength = 80;
             this.txtCustomerName.MoveNext = true;
@@ -1770,7 +1771,7 @@
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(638, 25);
             this.CboStoreCD.MaxLength = 15;
-            this.CboStoreCD.MoveNext = true;
+            this.CboStoreCD.MoveNext = false;
             this.CboStoreCD.Name = "CboStoreCD";
             this.CboStoreCD.Size = new System.Drawing.Size(210, 20);
             this.CboStoreCD.TabIndex = 70;
@@ -1810,7 +1811,7 @@
             this.txtFirstName.isMaxLengthErr = false;
             this.txtFirstName.IsNumber = true;
             this.txtFirstName.IsShop = false;
-            this.txtFirstName.Length = 10;
+            this.txtFirstName.Length = 40;
             this.txtFirstName.Location = new System.Drawing.Point(291, 47);
             this.txtFirstName.MaxLength = 40;
             this.txtFirstName.MoveNext = true;
@@ -2020,7 +2021,7 @@
             this.txtBillingCloseDate.isMaxLengthErr = false;
             this.txtBillingCloseDate.IsNumber = true;
             this.txtBillingCloseDate.IsShop = false;
-            this.txtBillingCloseDate.Length = 10;
+            this.txtBillingCloseDate.Length = 2;
             this.txtBillingCloseDate.Location = new System.Drawing.Point(858, 301);
             this.txtBillingCloseDate.MaxLength = 2;
             this.txtBillingCloseDate.MoveNext = true;
@@ -2065,7 +2066,7 @@
             this.txtRegisteredNumber.isMaxLengthErr = false;
             this.txtRegisteredNumber.IsNumber = true;
             this.txtRegisteredNumber.IsShop = false;
-            this.txtRegisteredNumber.Length = 10;
+            this.txtRegisteredNumber.Length = 15;
             this.txtRegisteredNumber.Location = new System.Drawing.Point(858, 405);
             this.txtRegisteredNumber.MaxLength = 15;
             this.txtRegisteredNumber.MoveNext = true;
@@ -2080,6 +2081,7 @@
             this.txtRemarksInStore.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtRemarksInStore.BackColor = System.Drawing.Color.White;
             this.txtRemarksInStore.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtRemarksInStore.F_focus = false;
             this.txtRemarksInStore.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.txtRemarksInStore.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarksInStore.Length = 500;
@@ -2130,8 +2132,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
-            this.ScStaff.CodeWidth1 = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2141,9 +2143,9 @@
             this.ScStaff.Location = new System.Drawing.Point(943, 39);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
-            this.ScStaff.NameWidth = 210;
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 27);
+            this.ScStaff.Size = new System.Drawing.Size(354, 27);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 71;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -2224,7 +2226,7 @@
             this.txtTel21.isMaxLengthErr = false;
             this.txtTel21.IsNumber = true;
             this.txtTel21.IsShop = false;
-            this.txtTel21.Length = 10;
+            this.txtTel21.Length = 4;
             this.txtTel21.Location = new System.Drawing.Point(389, 241);
             this.txtTel21.MaxLength = 4;
             this.txtTel21.MoveNext = true;
@@ -2250,7 +2252,7 @@
             this.txtTel11.isMaxLengthErr = false;
             this.txtTel11.IsNumber = true;
             this.txtTel11.IsShop = false;
-            this.txtTel11.Length = 10;
+            this.txtTel11.Length = 4;
             this.txtTel11.Location = new System.Drawing.Point(136, 241);
             this.txtTel11.MaxLength = 4;
             this.txtTel11.MoveNext = true;
@@ -2277,7 +2279,7 @@
             this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
-            this.txtMailAddress.Length = 10;
+            this.txtMailAddress.Length = 100;
             this.txtMailAddress.Location = new System.Drawing.Point(136, 260);
             this.txtMailAddress.MaxLength = 100;
             this.txtMailAddress.MoveNext = true;
@@ -2525,7 +2527,7 @@
             this.txtCreditAdditionAmount.isMaxLengthErr = false;
             this.txtCreditAdditionAmount.IsNumber = true;
             this.txtCreditAdditionAmount.IsShop = false;
-            this.txtCreditAdditionAmount.Length = 10;
+            this.txtCreditAdditionAmount.Length = 20;
             this.txtCreditAdditionAmount.Location = new System.Drawing.Point(321, 521);
             this.txtCreditAdditionAmount.MaxLength = 20;
             this.txtCreditAdditionAmount.MoveNext = true;
@@ -2554,7 +2556,7 @@
             this.txtCreditWarningAmount.isMaxLengthErr = false;
             this.txtCreditWarningAmount.IsNumber = true;
             this.txtCreditWarningAmount.IsShop = false;
-            this.txtCreditWarningAmount.Length = 10;
+            this.txtCreditWarningAmount.Length = 20;
             this.txtCreditWarningAmount.Location = new System.Drawing.Point(321, 502);
             this.txtCreditWarningAmount.MaxLength = 20;
             this.txtCreditWarningAmount.MoveNext = true;
@@ -2583,7 +2585,7 @@
             this.txtCreditCard.isMaxLengthErr = false;
             this.txtCreditCard.IsNumber = true;
             this.txtCreditCard.IsShop = false;
-            this.txtCreditCard.Length = 10;
+            this.txtCreditCard.Length = 20;
             this.txtCreditCard.Location = new System.Drawing.Point(136, 502);
             this.txtCreditCard.MaxLength = 20;
             this.txtCreditCard.MoveNext = true;
@@ -2696,7 +2698,7 @@
             this.txtAddress2.isMaxLengthErr = false;
             this.txtAddress2.IsNumber = true;
             this.txtAddress2.IsShop = false;
-            this.txtAddress2.Length = 10;
+            this.txtAddress2.Length = 100;
             this.txtAddress2.Location = new System.Drawing.Point(136, 222);
             this.txtAddress2.MaxLength = 100;
             this.txtAddress2.MoveNext = true;
@@ -2724,7 +2726,7 @@
             this.txtAddress1.isMaxLengthErr = false;
             this.txtAddress1.IsNumber = true;
             this.txtAddress1.IsShop = false;
-            this.txtAddress1.Length = 10;
+            this.txtAddress1.Length = 100;
             this.txtAddress1.Location = new System.Drawing.Point(136, 203);
             this.txtAddress1.MaxLength = 100;
             this.txtAddress1.MoveNext = true;
@@ -2752,7 +2754,7 @@
             this.txtZipCD2.isMaxLengthErr = false;
             this.txtZipCD2.IsNumber = true;
             this.txtZipCD2.IsShop = false;
-            this.txtZipCD2.Length = 10;
+            this.txtZipCD2.Length = 4;
             this.txtZipCD2.Location = new System.Drawing.Point(167, 184);
             this.txtZipCD2.MaxLength = 4;
             this.txtZipCD2.MoveNext = true;
@@ -2779,7 +2781,7 @@
             this.txtZipCD1.isMaxLengthErr = false;
             this.txtZipCD1.IsNumber = true;
             this.txtZipCD1.IsShop = false;
-            this.txtZipCD1.Length = 10;
+            this.txtZipCD1.Length = 3;
             this.txtZipCD1.Location = new System.Drawing.Point(136, 184);
             this.txtZipCD1.MaxLength = 3;
             this.txtZipCD1.MoveNext = true;
@@ -2806,7 +2808,7 @@
             this.txtLastName.isMaxLengthErr = false;
             this.txtLastName.IsNumber = true;
             this.txtLastName.IsShop = false;
-            this.txtLastName.Length = 10;
+            this.txtLastName.Length = 40;
             this.txtLastName.Location = new System.Drawing.Point(136, 47);
             this.txtLastName.MaxLength = 40;
             this.txtLastName.MoveNext = true;

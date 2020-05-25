@@ -914,8 +914,8 @@ namespace KaitouNoukiTouroku
                 string ymd = bbl.GetDate();
                 knbl = new KaitouNoukiTouroku_BL();
                 CboStoreCD.Bind(ymd);
-                CboSoukoName.Bind(ymd);//入荷予定区分
-                ckM_ComboBox1.Bind(ymd);//入荷予定区分
+                CboArrivalPlanCD.Bind(ymd);//入荷予定区分
+                CboArrivalPlanKbn.Bind(ymd);//入荷予定区分
 
                 for (int W_CtlRow = 0; W_CtlRow <= mGrid.g_MK_Ctl_Row - 1; W_CtlRow++)
                 {
@@ -968,8 +968,8 @@ namespace KaitouNoukiTouroku
             //keyControls = new Control[] { };
             //keyLabels = new Control[] {  };
             detailControls = new Control[] { CboStoreCD, ckM_TextBox1 ,ckM_TextBox2 ,ckM_TextBox4 ,ckM_TextBox3,ckM_TextBox6,ckM_TextBox5
-                    , ScOrder.TxtCode, ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode,ChkMikakutei, CboSoukoName,ChkKanbai,ChkFuyo                
-                    ,ckM_TextBox7,  ckM_TextBox18, ckM_TextBox8,ckM_ComboBox1   
+                    , ScOrder.TxtCode, ScOrderNO.TxtCode, ScCopyOrderNO.TxtCode,ChkMikakutei, CboArrivalPlanCD,ChkKanbai,ChkFuyo                
+                    ,ckM_TextBox7,  ckM_TextBox18, ckM_TextBox8,CboArrivalPlanKbn   
                          };
             detailLabels = new Control[] { ScOrder };
             searchButtons = new Control[] { ScOrder.BtnSearch, ScCopyOrderNO.BtnSearch, ScOrderNO.BtnSearch };
@@ -1242,12 +1242,14 @@ namespace KaitouNoukiTouroku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1387,7 +1389,7 @@ namespace KaitouNoukiTouroku
 
                 case (int)EIndex.ArrivalPlanCD:
                     //選択は任意。
-                    if (CboSoukoName.Enabled)
+                    if (CboArrivalPlanKbn.Enabled)
                     {
 
                     }
@@ -1412,12 +1414,13 @@ namespace KaitouNoukiTouroku
 
                 case (int)EIndex.ArrivalPlanKbn:
                     string kbn = "";
-                    if (ckM_ComboBox1.SelectedIndex > 0)
-                        kbn = ckM_ComboBox1.SelectedValue.ToString();
+                    if (CboArrivalPlanKbn.SelectedIndex > 0)
+                        kbn = CboArrivalPlanKbn.SelectedValue.ToString();
 
                     string num2 = "";   //未使用
                     if (!knbl.ChkArrivalPlanKbn(kbn, detailControls[(int)EIndex.ArrivalPlanDate].Text,detailControls[(int)EIndex.ArrivalPlanMonth].Text, out num2))
                     {
+                        CboArrivalPlanKbn.MoveNext = false;
                         return false;
                     }
                     break;
@@ -2287,6 +2290,11 @@ namespace KaitouNoukiTouroku
                     //チェック処理
                     if (CheckGrid(CL, w_Row) == false)
                     {
+                        if (w_ActCtl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
+                        {
+                            ((CKM_Controls.CKM_ComboBox)w_ActCtl).MoveNext = false;
+                        }
+
                         //配列の内容を画面へセット
                         mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
@@ -2334,9 +2342,9 @@ namespace KaitouNoukiTouroku
             try
             {
                 //チェックがONのときのみ入力可
-                CboSoukoName.Enabled = ChkMikakutei.Checked;
+                CboArrivalPlanCD.Enabled = ChkMikakutei.Checked;
                 if (!ChkMikakutei.Checked)
-                    CboSoukoName.SelectedIndex = -1;
+                    CboArrivalPlanCD.SelectedIndex = -1;
 
             }
             catch (Exception ex)
@@ -2444,8 +2452,8 @@ namespace KaitouNoukiTouroku
                         mGrid.g_DArray[RW].Chk = false;
                         mGrid.g_DArray[RW].ArrivalPlanDate = detailControls[(int)EIndex.ArrivalPlanDate].Text;
                         mGrid.g_DArray[RW].ArrivalPlanMonth = detailControls[(int)EIndex.ArrivalPlanMonth].Text;
-                        if (ckM_ComboBox1.SelectedIndex > 0)
-                            mGrid.g_DArray[RW].ArrivalPlanCD = ckM_ComboBox1.SelectedValue.ToString();
+                        if (CboArrivalPlanKbn.SelectedIndex > 0)
+                            mGrid.g_DArray[RW].ArrivalPlanCD = CboArrivalPlanKbn.SelectedValue.ToString();
                         else
                             mGrid.g_DArray[RW].ArrivalPlanCD = "";
                     }
