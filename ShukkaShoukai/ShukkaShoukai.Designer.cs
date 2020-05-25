@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -227,7 +226,7 @@
             this.txtShippingStartDate.isMaxLengthErr = false;
             this.txtShippingStartDate.IsNumber = true;
             this.txtShippingStartDate.IsShop = false;
-            this.txtShippingStartDate.Length = 10;
+            this.txtShippingStartDate.Length = 8;
             this.txtShippingStartDate.Location = new System.Drawing.Point(102, 40);
             this.txtShippingStartDate.MaxLength = 8;
             this.txtShippingStartDate.MoveNext = true;
@@ -254,7 +253,7 @@
             this.txtShippingEndDate.isMaxLengthErr = false;
             this.txtShippingEndDate.IsNumber = true;
             this.txtShippingEndDate.IsShop = false;
-            this.txtShippingEndDate.Length = 10;
+            this.txtShippingEndDate.Length = 8;
             this.txtShippingEndDate.Location = new System.Drawing.Point(233, 40);
             this.txtShippingEndDate.MaxLength = 8;
             this.txtShippingEndDate.MoveNext = true;
@@ -433,7 +432,7 @@
             this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
-            this.txtProductName.Length = 10;
+            this.txtProductName.Length = 80;
             this.txtProductName.Location = new System.Drawing.Point(1056, 117);
             this.txtProductName.MaxLength = 80;
             this.txtProductName.MoveNext = true;
@@ -510,8 +509,8 @@
             this.Sc_SKUCD.ChangeDate = "";
             this.Sc_SKUCD.ChangeDateWidth = 100;
             this.Sc_SKUCD.Code = "";
-            this.Sc_SKUCD.CodeWidth = 190;
-            this.Sc_SKUCD.CodeWidth1 = 190;
+            this.Sc_SKUCD.CodeWidth = 600;
+            this.Sc_SKUCD.CodeWidth1 = 600;
             this.Sc_SKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_SKUCD.DataCheck = false;
             this.Sc_SKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -521,10 +520,10 @@
             this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 56);
             this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_SKUCD.Name = "Sc_SKUCD";
-            this.Sc_SKUCD.NameWidth = 350;
+            this.Sc_SKUCD.NameWidth = 280;
             this.Sc_SKUCD.SearchEnable = true;
-            this.Sc_SKUCD.Size = new System.Drawing.Size(223, 27);
-            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.Sc_SKUCD.Size = new System.Drawing.Size(633, 27);
+            this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
             this.Sc_SKUCD.TabIndex = 61;
             this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_SKUCD.UseChangeDate = false;
@@ -555,8 +554,8 @@
             this.Sc_Item.ChangeDate = "";
             this.Sc_Item.ChangeDateWidth = 100;
             this.Sc_Item.Code = "";
-            this.Sc_Item.CodeWidth = 190;
-            this.Sc_Item.CodeWidth1 = 190;
+            this.Sc_Item.CodeWidth = 600;
+            this.Sc_Item.CodeWidth1 = 600;
             this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Item.DataCheck = false;
             this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -566,10 +565,10 @@
             this.Sc_Item.Location = new System.Drawing.Point(1055, 33);
             this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Item.Name = "Sc_Item";
-            this.Sc_Item.NameWidth = 350;
+            this.Sc_Item.NameWidth = 280;
             this.Sc_Item.SearchEnable = true;
-            this.Sc_Item.Size = new System.Drawing.Size(223, 27);
-            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
+            this.Sc_Item.Size = new System.Drawing.Size(633, 27);
+            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
             this.Sc_Item.TabIndex = 60;
             this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Item.UseChangeDate = false;
@@ -655,7 +654,7 @@
             this.dgvShukkaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -677,14 +676,6 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
