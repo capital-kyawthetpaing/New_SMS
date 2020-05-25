@@ -50,22 +50,22 @@ namespace CKM_Controls
       //  [DisplayName("MaximumLength(Byte Count)")]
         public int Length
         {
-            get { return length_; }
+            get { return MaxLength; }
             set {
               //  length_ = value;
              ///   MaxLength = value;
             }
 
         }
-        public override int MaxLength    // PTK Added 
-        {
-            get { return length_; }
-            set
-            {
-                length_ = value;
-            }
+        //public override int MaxLength    // PTK Added 
+        //{
+        //    get { return length_; }
+        //    set
+        //    {
+        //        length_ = value;
+        //    }
 
-        }
+        //}
 
         private Bytes CtrlByte { get; set; }
         public enum Bytes
@@ -268,15 +268,15 @@ namespace CKM_Controls
 
         
         {
-            if (char.IsDigit(e.KeyChar) || char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Space || char.IsLetter(e.KeyChar)) // PTK Added
+            //if (char.IsDigit(e.KeyChar) || char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Space || char.IsLetter(e.KeyChar)) // PTK Added
 
-            {
-                if (Text.Length >= MaxLength)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
+            //{
+            //    if (Text.Length >= MaxLength)
+            //    {
+            //        e.Handled = true;
+            //        return;
+            //    }
+            //}
             //Key Price Check   by PTK mdf date 08/05/2019
             if (Ctrl_Type == Type.Price)
             {
