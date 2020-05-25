@@ -235,7 +235,7 @@
             this.ginko_name.MoveNext = true;
             this.ginko_name.Name = "ginko_name";
             this.ginko_name.Size = new System.Drawing.Size(186, 19);
-            this.ginko_name.TabIndex = 2;
+            this.ginko_name.TabIndex = 0;
             this.ginko_name.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label5
@@ -280,7 +280,7 @@
             this.ginko_kananame.MoveNext = true;
             this.ginko_kananame.Name = "ginko_kananame";
             this.ginko_kananame.Size = new System.Drawing.Size(183, 19);
-            this.ginko_kananame.TabIndex = 3;
+            this.ginko_kananame.TabIndex = 1;
             this.ginko_kananame.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // 備考
@@ -305,6 +305,7 @@
             this.ginko_remarks.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ginko_remarks.BackColor = System.Drawing.SystemColors.Window;
             this.ginko_remarks.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ginko_remarks.F_focus = false;
             this.ginko_remarks.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.ginko_remarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ginko_remarks.Length = 500;
@@ -317,7 +318,7 @@
             this.ginko_remarks.Name = "ginko_remarks";
             this.ginko_remarks.RowCount = 5;
             this.ginko_remarks.Size = new System.Drawing.Size(620, 95);
-            this.ginko_remarks.TabIndex = 4;
+            this.ginko_remarks.TabIndex = 2;
             this.ginko_remarks.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ChkDeleteFlg
@@ -328,7 +329,7 @@
             this.ChkDeleteFlg.Name = "ChkDeleteFlg";
             this.ChkDeleteFlg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ChkDeleteFlg.Size = new System.Drawing.Size(50, 16);
-            this.ChkDeleteFlg.TabIndex = 7;
+            this.ChkDeleteFlg.TabIndex = 3;
             this.ChkDeleteFlg.Text = "削除";
             this.ChkDeleteFlg.UseVisualStyleBackColor = true;
             // 
