@@ -672,8 +672,8 @@ namespace CKM_Controls
 
             //int l1 = this.Ctrl_Byte == Bytes.半角 ? 10 : 13;
             //this.Width = (l1 * Length) / divider;
-            this.Length = length_;
-            this.MaxLength = length_;
+            //this.Length = length_;
+            //this.MaxLength = length_;
         }
 
         /// <summary>
