@@ -43,7 +43,7 @@ namespace MasterTouroku_YuubinBangou
             ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
             CreateDataTable();
-            //BindGridCombo();
+            BindGridCombo();
         }
 
         private void SetRequireFields()
@@ -60,8 +60,10 @@ namespace MasterTouroku_YuubinBangou
             dt.Columns.Add("CarrierName", typeof(string));
             dt.Columns.Add("CarrierCD", typeof(string));
             dt = YuubinBangouBL.SimpleSelect1("62");
-            //DataRow dr = "";
-            //dt.Rows.InsertAt(string.Empty, "0", 0);
+            DataRow row = dt.NewRow();
+            row["CarrierName"] = string.Empty;
+            row["CarrierCD"] = "0";
+            dt.Rows.InsertAt(row, 0);
 
             DataGridViewComboBoxColumn col = (DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"];
             col.DataPropertyName = "Carrier";
@@ -186,7 +188,25 @@ namespace MasterTouroku_YuubinBangou
 
             if (dtDisplay != null)
             {
+                //for (int i = 0; i < dtDisplay.Rows.Count; i++)
+                //{
+                //    dgvYuubinBangou.Rows[i].Cells["colZipCD1"].Value = dtDisplay.Rows[i]["ZipCD1"];
+                //    dgvYuubinBangou.Rows[i].Cells["colZipCD2"].Value = dtDisplay.Rows[i]["ZipCD2"];
+                //    dgvYuubinBangou.Rows[i].Cells["colAdd1"].Value = dtDisplay.Rows[i]["Address1"];
+                //    dgvYuubinBangou.Rows[i].Cells["colAdd2"].Value = dtDisplay.Rows[i]["Address2"];
+                //    dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value = dtDisplay.Rows[i]["CarrierCD"];
+                //    dgvYuubinBangou.Rows[i].Cells["colCarrierLeadDay"].Value = dtDisplay.Rows[i]["CarrierLeadDay"];
+                    
+                //}
                 dgvYuubinBangou.DataSource = dtDisplay;
+                int i = 0;
+                foreach (DataRow dr in dtDisplay.Rows)
+                {
+                    if (dr["CarrierCD"] != DBNull.Value )
+                    {
+                        dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value = dr["CarrierCD"]; i++;
+                    }
+                }
                 txtZip1from.Focus();
 
                 return true;
@@ -205,6 +225,11 @@ namespace MasterTouroku_YuubinBangou
             ZipCode = GetZipCodeEntity();
             string ZipCD1To = txtZip1To.Text;
             string ZipCD2To = txtZip2To.Text;
+            int i = 0;
+            foreach (DataRow dr in dtDisplay.Rows)
+            {
+                dr["CarrierCD"] = Convert.ToInt32(dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value); i++;
+            }
             Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
 
             if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))

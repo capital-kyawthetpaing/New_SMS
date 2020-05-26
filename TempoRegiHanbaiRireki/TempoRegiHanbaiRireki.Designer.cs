@@ -34,56 +34,11 @@
             this.btnDown = new CKM_Controls.CKM_Button();
             this.pnlDetails = new System.Windows.Forms.Panel();
             this.label75 = new CKM_Controls.CKMShop_Label();
-            this.lblDtColorSize10 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuNO10 = new CKM_Controls.CKMShop_Label();
-            this.lblJANCD10 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
-            this.lblDtKin10 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSSu10 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuDate10 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSKUName10 = new CKM_Controls.CKMShop_Label();
             this.label73 = new CKM_Controls.CKMShop_Label();
-            this.lblDtGyo10 = new CKM_Controls.CKMShop_Label();
-            this.lblDtColorSize9 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuNO9 = new CKM_Controls.CKMShop_Label();
-            this.lblJANCD9 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName9 = new CKM_Controls.CKMShop_Label();
-            this.lblDtKin9 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSSu9 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuDate9 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSKUName9 = new CKM_Controls.CKMShop_Label();
             this.label63 = new CKM_Controls.CKMShop_Label();
-            this.lblDtGyo9 = new CKM_Controls.CKMShop_Label();
-            this.lblDtColorSize8 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuNO8 = new CKM_Controls.CKMShop_Label();
-            this.lblJANCD8 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName8 = new CKM_Controls.CKMShop_Label();
-            this.lblDtKin8 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSSu8 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuDate8 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSKUName8 = new CKM_Controls.CKMShop_Label();
             this.label53 = new CKM_Controls.CKMShop_Label();
-            this.lblDtGyo8 = new CKM_Controls.CKMShop_Label();
-            this.lblDtColorSize7 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuNO7 = new CKM_Controls.CKMShop_Label();
-            this.lblJANCD7 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName7 = new CKM_Controls.CKMShop_Label();
-            this.lblDtKin7 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSSu7 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuDate7 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSKUName7 = new CKM_Controls.CKMShop_Label();
             this.label43 = new CKM_Controls.CKMShop_Label();
-            this.lblDtGyo7 = new CKM_Controls.CKMShop_Label();
-            this.lblDtColorSize6 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuNO6 = new CKM_Controls.CKMShop_Label();
-            this.lblJANCD6 = new CKM_Controls.CKMShop_Label();
-            this.lblStoreName6 = new CKM_Controls.CKMShop_Label();
-            this.lblDtKin6 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSSu6 = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuDate6 = new CKM_Controls.CKMShop_Label();
-            this.lblDtSKUName6 = new CKM_Controls.CKMShop_Label();
             this.label33 = new CKM_Controls.CKMShop_Label();
-            this.lblDtGyo6 = new CKM_Controls.CKMShop_Label();
             this.lblDtColorSize5 = new CKM_Controls.CKMShop_Label();
             this.lblJuchuuNO5 = new CKM_Controls.CKMShop_Label();
             this.lblJANCD5 = new CKM_Controls.CKMShop_Label();
@@ -139,10 +94,55 @@
             this.lblGyoSelect3 = new System.Windows.Forms.Panel();
             this.lblGyoSelect2 = new System.Windows.Forms.Panel();
             this.lblGyoSelect10 = new System.Windows.Forms.Panel();
+            this.lblJuchuuDate10 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSSu10 = new CKM_Controls.CKMShop_Label();
+            this.lblDtGyo10 = new CKM_Controls.CKMShop_Label();
+            this.lblDtKin10 = new CKM_Controls.CKMShop_Label();
+            this.lblDtColorSize10 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName10 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuNO10 = new CKM_Controls.CKMShop_Label();
+            this.lblJANCD10 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSKUName10 = new CKM_Controls.CKMShop_Label();
             this.lblGyoSelect9 = new System.Windows.Forms.Panel();
+            this.lblDtGyo9 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName9 = new CKM_Controls.CKMShop_Label();
+            this.lblDtKin9 = new CKM_Controls.CKMShop_Label();
+            this.lblDtColorSize9 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSSu9 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuDate9 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuNO9 = new CKM_Controls.CKMShop_Label();
+            this.lblJANCD9 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSKUName9 = new CKM_Controls.CKMShop_Label();
             this.lblGyoSelect8 = new System.Windows.Forms.Panel();
+            this.lblDtGyo8 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName8 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuDate8 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSSu8 = new CKM_Controls.CKMShop_Label();
+            this.lblDtKin8 = new CKM_Controls.CKMShop_Label();
+            this.lblDtColorSize8 = new CKM_Controls.CKMShop_Label();
+            this.lblJANCD8 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuNO8 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSKUName8 = new CKM_Controls.CKMShop_Label();
             this.lblGyoSelect7 = new System.Windows.Forms.Panel();
+            this.lblDtGyo7 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName7 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuDate7 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuNO7 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSSu7 = new CKM_Controls.CKMShop_Label();
+            this.lblDtKin7 = new CKM_Controls.CKMShop_Label();
+            this.lblDtColorSize7 = new CKM_Controls.CKMShop_Label();
+            this.lblJANCD7 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSKUName7 = new CKM_Controls.CKMShop_Label();
             this.lblGyoSelect6 = new System.Windows.Forms.Panel();
+            this.lblDtGyo6 = new CKM_Controls.CKMShop_Label();
+            this.lblStoreName6 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuDate6 = new CKM_Controls.CKMShop_Label();
+            this.lblJuchuuNO6 = new CKM_Controls.CKMShop_Label();
+            this.lblJANCD6 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSSu6 = new CKM_Controls.CKMShop_Label();
+            this.lblDtKin6 = new CKM_Controls.CKMShop_Label();
+            this.lblDtColorSize6 = new CKM_Controls.CKMShop_Label();
+            this.lblDtSKUName6 = new CKM_Controls.CKMShop_Label();
             this.lblGyoSelect5 = new System.Windows.Forms.Panel();
             this.lblGyoSelect4 = new System.Windows.Forms.Panel();
             this.ckmShop_Label15 = new CKM_Controls.CKMShop_Label();
@@ -157,6 +157,9 @@
             this.pnlDetails.SuspendLayout();
             this.lblGyoSelect10.SuspendLayout();
             this.lblGyoSelect9.SuspendLayout();
+            this.lblGyoSelect8.SuspendLayout();
+            this.lblGyoSelect7.SuspendLayout();
+            this.lblGyoSelect6.SuspendLayout();
             this.SuspendLayout();
             // 
             // ckmShop_Label1
@@ -234,45 +237,10 @@
             this.pnlDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDetails.Controls.Add(this.label75);
             this.pnlDetails.Controls.Add(this.label73);
-            this.pnlDetails.Controls.Add(this.lblDtColorSize9);
-            this.pnlDetails.Controls.Add(this.lblJuchuuNO9);
-            this.pnlDetails.Controls.Add(this.lblJANCD9);
-            this.pnlDetails.Controls.Add(this.lblStoreName9);
-            this.pnlDetails.Controls.Add(this.lblDtKin9);
-            this.pnlDetails.Controls.Add(this.lblDtSSu9);
-            this.pnlDetails.Controls.Add(this.lblJuchuuDate9);
-            this.pnlDetails.Controls.Add(this.lblDtSKUName9);
             this.pnlDetails.Controls.Add(this.label63);
-            this.pnlDetails.Controls.Add(this.lblDtColorSize8);
-            this.pnlDetails.Controls.Add(this.lblJuchuuNO8);
-            this.pnlDetails.Controls.Add(this.lblJANCD8);
-            this.pnlDetails.Controls.Add(this.lblStoreName8);
-            this.pnlDetails.Controls.Add(this.lblDtKin8);
-            this.pnlDetails.Controls.Add(this.lblDtSSu8);
-            this.pnlDetails.Controls.Add(this.lblJuchuuDate8);
-            this.pnlDetails.Controls.Add(this.lblDtSKUName8);
             this.pnlDetails.Controls.Add(this.label53);
-            this.pnlDetails.Controls.Add(this.lblDtGyo8);
-            this.pnlDetails.Controls.Add(this.lblDtColorSize7);
-            this.pnlDetails.Controls.Add(this.lblJuchuuNO7);
-            this.pnlDetails.Controls.Add(this.lblJANCD7);
-            this.pnlDetails.Controls.Add(this.lblStoreName7);
-            this.pnlDetails.Controls.Add(this.lblDtKin7);
-            this.pnlDetails.Controls.Add(this.lblDtSSu7);
-            this.pnlDetails.Controls.Add(this.lblJuchuuDate7);
-            this.pnlDetails.Controls.Add(this.lblDtSKUName7);
             this.pnlDetails.Controls.Add(this.label43);
-            this.pnlDetails.Controls.Add(this.lblDtGyo7);
-            this.pnlDetails.Controls.Add(this.lblDtColorSize6);
-            this.pnlDetails.Controls.Add(this.lblJuchuuNO6);
-            this.pnlDetails.Controls.Add(this.lblJANCD6);
-            this.pnlDetails.Controls.Add(this.lblStoreName6);
-            this.pnlDetails.Controls.Add(this.lblDtKin6);
-            this.pnlDetails.Controls.Add(this.lblDtSSu6);
-            this.pnlDetails.Controls.Add(this.lblJuchuuDate6);
-            this.pnlDetails.Controls.Add(this.lblDtSKUName6);
             this.pnlDetails.Controls.Add(this.label33);
-            this.pnlDetails.Controls.Add(this.lblDtGyo6);
             this.pnlDetails.Controls.Add(this.lblDtColorSize5);
             this.pnlDetails.Controls.Add(this.lblJuchuuNO5);
             this.pnlDetails.Controls.Add(this.lblJANCD5);
@@ -355,134 +323,6 @@
             this.label75.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblDtColorSize10
-            // 
-            this.lblDtColorSize10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtColorSize10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtColorSize10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize10.Location = new System.Drawing.Point(1501, 1);
-            this.lblDtColorSize10.Name = "lblDtColorSize10";
-            this.lblDtColorSize10.Size = new System.Drawing.Size(165, 70);
-            this.lblDtColorSize10.TabIndex = 147;
-            this.lblDtColorSize10.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblDtColorSize10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDtColorSize10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblJuchuuNO10
-            // 
-            this.lblJuchuuNO10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuNO10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuNO10.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuNO10.Location = new System.Drawing.Point(603, 40);
-            this.lblJuchuuNO10.Name = "lblJuchuuNO10";
-            this.lblJuchuuNO10.Size = new System.Drawing.Size(200, 30);
-            this.lblJuchuuNO10.TabIndex = 146;
-            this.lblJuchuuNO10.Text = "XXXXXXXXXX";
-            this.lblJuchuuNO10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblJuchuuNO10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblJANCD10
-            // 
-            this.lblJANCD10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJANCD10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJANCD10.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD10.Location = new System.Drawing.Point(603, 3);
-            this.lblJANCD10.Name = "lblJANCD10";
-            this.lblJANCD10.Size = new System.Drawing.Size(270, 30);
-            this.lblJANCD10.TabIndex = 145;
-            this.lblJANCD10.Text = "49XXXXXXXXX13";
-            this.lblJANCD10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblJANCD10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblStoreName10
-            // 
-            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName10.Location = new System.Drawing.Point(64, 40);
-            this.lblStoreName10.Name = "lblStoreName10";
-            this.lblStoreName10.Size = new System.Drawing.Size(540, 34);
-            this.lblStoreName10.TabIndex = 144;
-            this.lblStoreName10.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblStoreName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblDtKin10
-            // 
-            this.lblDtKin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtKin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtKin10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin10.Location = new System.Drawing.Point(1710, 41);
-            this.lblDtKin10.Name = "lblDtKin10";
-            this.lblDtKin10.Size = new System.Drawing.Size(120, 30);
-            this.lblDtKin10.TabIndex = 143;
-            this.lblDtKin10.Text = "\\99,999,999";
-            this.lblDtKin10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin10.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtKin10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblDtSSu10
-            // 
-            this.lblDtSSu10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSSu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSSu10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSSu10.Location = new System.Drawing.Point(1734, 2);
-            this.lblDtSSu10.Name = "lblDtSSu10";
-            this.lblDtSSu10.Size = new System.Drawing.Size(96, 30);
-            this.lblDtSSu10.TabIndex = 142;
-            this.lblDtSSu10.Text = "9,999";
-            this.lblDtSSu10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtSSu10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblJuchuuDate10
-            // 
-            this.lblJuchuuDate10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate10.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuDate10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuDate10.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate10.Location = new System.Drawing.Point(64, 3);
-            this.lblJuchuuDate10.Name = "lblJuchuuDate10";
-            this.lblJuchuuDate10.Size = new System.Drawing.Size(210, 30);
-            this.lblJuchuuDate10.TabIndex = 141;
-            this.lblJuchuuDate10.Text = "9999/99/99";
-            this.lblJuchuuDate10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblJuchuuDate10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
-            // lblDtSKUName10
-            // 
-            this.lblDtSKUName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSKUName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSKUName10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName10.Location = new System.Drawing.Point(884, 3);
-            this.lblDtSKUName10.Name = "lblDtSKUName10";
-            this.lblDtSKUName10.Size = new System.Drawing.Size(611, 70);
-            this.lblDtSKUName10.TabIndex = 140;
-            this.lblDtSKUName10.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblDtSKUName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblDtSKUName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
-            // 
             // label73
             // 
             this.label73.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -498,149 +338,6 @@
             this.label73.Text = "label73";
             this.label73.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblDtGyo10
-            // 
-            this.lblDtGyo10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo10.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtGyo10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtGyo10.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo10.Location = new System.Drawing.Point(3, 2);
-            this.lblDtGyo10.Name = "lblDtGyo10";
-            this.lblDtGyo10.Size = new System.Drawing.Size(53, 75);
-            this.lblDtGyo10.TabIndex = 139;
-            this.lblDtGyo10.Text = "10";
-            this.lblDtGyo10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize9
-            // 
-            this.lblDtColorSize9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtColorSize9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtColorSize9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize9.Location = new System.Drawing.Point(751, 351);
-            this.lblDtColorSize9.Name = "lblDtColorSize9";
-            this.lblDtColorSize9.Size = new System.Drawing.Size(165, 34);
-            this.lblDtColorSize9.TabIndex = 137;
-            this.lblDtColorSize9.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblDtColorSize9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtColorSize9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblJuchuuNO9
-            // 
-            this.lblJuchuuNO9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuNO9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuNO9.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuNO9.Location = new System.Drawing.Point(210, 369);
-            this.lblJuchuuNO9.Name = "lblJuchuuNO9";
-            this.lblJuchuuNO9.Size = new System.Drawing.Size(102, 17);
-            this.lblJuchuuNO9.TabIndex = 136;
-            this.lblJuchuuNO9.Text = "XXXXXXXXXX";
-            this.lblJuchuuNO9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJuchuuNO9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblJANCD9
-            // 
-            this.lblJANCD9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJANCD9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJANCD9.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD9.Location = new System.Drawing.Point(210, 352);
-            this.lblJANCD9.Name = "lblJANCD9";
-            this.lblJANCD9.Size = new System.Drawing.Size(116, 15);
-            this.lblJANCD9.TabIndex = 135;
-            this.lblJANCD9.Text = "49XXXXXXXXX13";
-            this.lblJANCD9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJANCD9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblStoreName9
-            // 
-            this.lblStoreName9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName9.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblStoreName9.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName9.Location = new System.Drawing.Point(39, 369);
-            this.lblStoreName9.Name = "lblStoreName9";
-            this.lblStoreName9.Size = new System.Drawing.Size(151, 17);
-            this.lblStoreName9.TabIndex = 134;
-            this.lblStoreName9.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblStoreName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblDtKin9
-            // 
-            this.lblDtKin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtKin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtKin9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin9.Location = new System.Drawing.Point(928, 369);
-            this.lblDtKin9.Name = "lblDtKin9";
-            this.lblDtKin9.Size = new System.Drawing.Size(96, 15);
-            this.lblDtKin9.TabIndex = 133;
-            this.lblDtKin9.Text = "\\99,999,999";
-            this.lblDtKin9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin9.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtKin9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblDtSSu9
-            // 
-            this.lblDtSSu9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSSu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSSu9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSSu9.Location = new System.Drawing.Point(928, 351);
-            this.lblDtSSu9.Name = "lblDtSSu9";
-            this.lblDtSSu9.Size = new System.Drawing.Size(96, 15);
-            this.lblDtSSu9.TabIndex = 132;
-            this.lblDtSSu9.Text = "9,999";
-            this.lblDtSSu9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu9.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtSSu9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblJuchuuDate9
-            // 
-            this.lblJuchuuDate9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate9.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuDate9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuDate9.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate9.Location = new System.Drawing.Point(39, 351);
-            this.lblJuchuuDate9.Name = "lblJuchuuDate9";
-            this.lblJuchuuDate9.Size = new System.Drawing.Size(96, 15);
-            this.lblJuchuuDate9.TabIndex = 131;
-            this.lblJuchuuDate9.Text = "9999/99/99";
-            this.lblJuchuuDate9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblJuchuuDate9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
-            // 
-            // lblDtSKUName9
-            // 
-            this.lblDtSKUName9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSKUName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSKUName9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName9.Location = new System.Drawing.Point(343, 351);
-            this.lblDtSKUName9.Name = "lblDtSKUName9";
-            this.lblDtSKUName9.Size = new System.Drawing.Size(411, 38);
-            this.lblDtSKUName9.TabIndex = 130;
-            this.lblDtSKUName9.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblDtSKUName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtSKUName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
             // 
             // label63
             // 
@@ -658,149 +355,6 @@
             this.label63.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label63.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblDtGyo9
-            // 
-            this.lblDtGyo9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo9.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtGyo9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtGyo9.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo9.Location = new System.Drawing.Point(2, 3);
-            this.lblDtGyo9.Name = "lblDtGyo9";
-            this.lblDtGyo9.Size = new System.Drawing.Size(53, 75);
-            this.lblDtGyo9.TabIndex = 129;
-            this.lblDtGyo9.Text = "9";
-            this.lblDtGyo9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize8
-            // 
-            this.lblDtColorSize8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtColorSize8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtColorSize8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize8.Location = new System.Drawing.Point(751, 308);
-            this.lblDtColorSize8.Name = "lblDtColorSize8";
-            this.lblDtColorSize8.Size = new System.Drawing.Size(165, 34);
-            this.lblDtColorSize8.TabIndex = 127;
-            this.lblDtColorSize8.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblDtColorSize8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtColorSize8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblJuchuuNO8
-            // 
-            this.lblJuchuuNO8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuNO8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuNO8.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuNO8.Location = new System.Drawing.Point(210, 326);
-            this.lblJuchuuNO8.Name = "lblJuchuuNO8";
-            this.lblJuchuuNO8.Size = new System.Drawing.Size(102, 17);
-            this.lblJuchuuNO8.TabIndex = 126;
-            this.lblJuchuuNO8.Text = "XXXXXXXXXX";
-            this.lblJuchuuNO8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJuchuuNO8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblJANCD8
-            // 
-            this.lblJANCD8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJANCD8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJANCD8.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD8.Location = new System.Drawing.Point(210, 309);
-            this.lblJANCD8.Name = "lblJANCD8";
-            this.lblJANCD8.Size = new System.Drawing.Size(116, 15);
-            this.lblJANCD8.TabIndex = 125;
-            this.lblJANCD8.Text = "49XXXXXXXXX13";
-            this.lblJANCD8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJANCD8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblStoreName8
-            // 
-            this.lblStoreName8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName8.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblStoreName8.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName8.Location = new System.Drawing.Point(39, 326);
-            this.lblStoreName8.Name = "lblStoreName8";
-            this.lblStoreName8.Size = new System.Drawing.Size(151, 17);
-            this.lblStoreName8.TabIndex = 124;
-            this.lblStoreName8.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblStoreName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblDtKin8
-            // 
-            this.lblDtKin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtKin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtKin8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin8.Location = new System.Drawing.Point(928, 326);
-            this.lblDtKin8.Name = "lblDtKin8";
-            this.lblDtKin8.Size = new System.Drawing.Size(96, 15);
-            this.lblDtKin8.TabIndex = 123;
-            this.lblDtKin8.Text = "\\99,999,999";
-            this.lblDtKin8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtKin8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblDtSSu8
-            // 
-            this.lblDtSSu8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSSu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSSu8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSSu8.Location = new System.Drawing.Point(928, 308);
-            this.lblDtSSu8.Name = "lblDtSSu8";
-            this.lblDtSSu8.Size = new System.Drawing.Size(96, 15);
-            this.lblDtSSu8.TabIndex = 122;
-            this.lblDtSSu8.Text = "9,999";
-            this.lblDtSSu8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtSSu8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblJuchuuDate8
-            // 
-            this.lblJuchuuDate8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate8.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuDate8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuDate8.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate8.Location = new System.Drawing.Point(39, 308);
-            this.lblJuchuuDate8.Name = "lblJuchuuDate8";
-            this.lblJuchuuDate8.Size = new System.Drawing.Size(96, 15);
-            this.lblJuchuuDate8.TabIndex = 121;
-            this.lblJuchuuDate8.Text = "9999/99/99";
-            this.lblJuchuuDate8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblJuchuuDate8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
-            // lblDtSKUName8
-            // 
-            this.lblDtSKUName8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSKUName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSKUName8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName8.Location = new System.Drawing.Point(343, 308);
-            this.lblDtSKUName8.Name = "lblDtSKUName8";
-            this.lblDtSKUName8.Size = new System.Drawing.Size(411, 38);
-            this.lblDtSKUName8.TabIndex = 120;
-            this.lblDtSKUName8.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblDtSKUName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtSKUName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
-            // 
             // label53
             // 
             this.label53.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -816,149 +370,6 @@
             this.label53.Text = "label53";
             this.label53.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblDtGyo8
-            // 
-            this.lblDtGyo8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo8.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtGyo8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtGyo8.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo8.Location = new System.Drawing.Point(0, 303);
-            this.lblDtGyo8.Name = "lblDtGyo8";
-            this.lblDtGyo8.Size = new System.Drawing.Size(53, 43);
-            this.lblDtGyo8.TabIndex = 119;
-            this.lblDtGyo8.Text = "5";
-            this.lblDtGyo8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize7
-            // 
-            this.lblDtColorSize7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtColorSize7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtColorSize7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize7.Location = new System.Drawing.Point(751, 264);
-            this.lblDtColorSize7.Name = "lblDtColorSize7";
-            this.lblDtColorSize7.Size = new System.Drawing.Size(165, 34);
-            this.lblDtColorSize7.TabIndex = 117;
-            this.lblDtColorSize7.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblDtColorSize7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtColorSize7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblJuchuuNO7
-            // 
-            this.lblJuchuuNO7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuNO7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuNO7.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuNO7.Location = new System.Drawing.Point(210, 283);
-            this.lblJuchuuNO7.Name = "lblJuchuuNO7";
-            this.lblJuchuuNO7.Size = new System.Drawing.Size(102, 17);
-            this.lblJuchuuNO7.TabIndex = 116;
-            this.lblJuchuuNO7.Text = "XXXXXXXXXX";
-            this.lblJuchuuNO7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJuchuuNO7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblJANCD7
-            // 
-            this.lblJANCD7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJANCD7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJANCD7.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD7.Location = new System.Drawing.Point(210, 265);
-            this.lblJANCD7.Name = "lblJANCD7";
-            this.lblJANCD7.Size = new System.Drawing.Size(116, 15);
-            this.lblJANCD7.TabIndex = 115;
-            this.lblJANCD7.Text = "49XXXXXXXXX13";
-            this.lblJANCD7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJANCD7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblStoreName7
-            // 
-            this.lblStoreName7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName7.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName7.Location = new System.Drawing.Point(39, 283);
-            this.lblStoreName7.Name = "lblStoreName7";
-            this.lblStoreName7.Size = new System.Drawing.Size(151, 17);
-            this.lblStoreName7.TabIndex = 114;
-            this.lblStoreName7.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblStoreName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblDtKin7
-            // 
-            this.lblDtKin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtKin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtKin7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin7.Location = new System.Drawing.Point(928, 283);
-            this.lblDtKin7.Name = "lblDtKin7";
-            this.lblDtKin7.Size = new System.Drawing.Size(96, 15);
-            this.lblDtKin7.TabIndex = 113;
-            this.lblDtKin7.Text = "\\99,999,999";
-            this.lblDtKin7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtKin7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblDtSSu7
-            // 
-            this.lblDtSSu7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSSu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSSu7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSSu7.Location = new System.Drawing.Point(928, 264);
-            this.lblDtSSu7.Name = "lblDtSSu7";
-            this.lblDtSSu7.Size = new System.Drawing.Size(96, 15);
-            this.lblDtSSu7.TabIndex = 112;
-            this.lblDtSSu7.Text = "9,999";
-            this.lblDtSSu7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtSSu7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblJuchuuDate7
-            // 
-            this.lblJuchuuDate7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate7.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuDate7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuDate7.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate7.Location = new System.Drawing.Point(39, 264);
-            this.lblJuchuuDate7.Name = "lblJuchuuDate7";
-            this.lblJuchuuDate7.Size = new System.Drawing.Size(96, 15);
-            this.lblJuchuuDate7.TabIndex = 111;
-            this.lblJuchuuDate7.Text = "9999/99/99";
-            this.lblJuchuuDate7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblJuchuuDate7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
-            // 
-            // lblDtSKUName7
-            // 
-            this.lblDtSKUName7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSKUName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSKUName7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName7.Location = new System.Drawing.Point(343, 264);
-            this.lblDtSKUName7.Name = "lblDtSKUName7";
-            this.lblDtSKUName7.Size = new System.Drawing.Size(411, 38);
-            this.lblDtSKUName7.TabIndex = 110;
-            this.lblDtSKUName7.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblDtSKUName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtSKUName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
             // 
             // label43
             // 
@@ -976,149 +387,6 @@
             this.label43.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblDtGyo7
-            // 
-            this.lblDtGyo7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo7.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtGyo7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtGyo7.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo7.Location = new System.Drawing.Point(0, 260);
-            this.lblDtGyo7.Name = "lblDtGyo7";
-            this.lblDtGyo7.Size = new System.Drawing.Size(53, 43);
-            this.lblDtGyo7.TabIndex = 109;
-            this.lblDtGyo7.Text = "7";
-            this.lblDtGyo7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDtColorSize6
-            // 
-            this.lblDtColorSize6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtColorSize6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtColorSize6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize6.Location = new System.Drawing.Point(751, 221);
-            this.lblDtColorSize6.Name = "lblDtColorSize6";
-            this.lblDtColorSize6.Size = new System.Drawing.Size(165, 34);
-            this.lblDtColorSize6.TabIndex = 107;
-            this.lblDtColorSize6.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
-            this.lblDtColorSize6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtColorSize6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtColorSize6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblJuchuuNO6
-            // 
-            this.lblJuchuuNO6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuNO6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuNO6.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuNO6.Location = new System.Drawing.Point(210, 239);
-            this.lblJuchuuNO6.Name = "lblJuchuuNO6";
-            this.lblJuchuuNO6.Size = new System.Drawing.Size(102, 17);
-            this.lblJuchuuNO6.TabIndex = 106;
-            this.lblJuchuuNO6.Text = "XXXXXXXXXX";
-            this.lblJuchuuNO6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuNO6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJuchuuNO6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblJANCD6
-            // 
-            this.lblJANCD6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJANCD6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJANCD6.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD6.Location = new System.Drawing.Point(210, 222);
-            this.lblJANCD6.Name = "lblJANCD6";
-            this.lblJANCD6.Size = new System.Drawing.Size(116, 15);
-            this.lblJANCD6.TabIndex = 105;
-            this.lblJANCD6.Text = "49XXXXXXXXX13";
-            this.lblJANCD6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJANCD6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblJANCD6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblStoreName6
-            // 
-            this.lblStoreName6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName6.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblStoreName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblStoreName6.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName6.Location = new System.Drawing.Point(39, 239);
-            this.lblStoreName6.Name = "lblStoreName6";
-            this.lblStoreName6.Size = new System.Drawing.Size(151, 17);
-            this.lblStoreName6.TabIndex = 104;
-            this.lblStoreName6.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblStoreName6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblStoreName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblDtKin6
-            // 
-            this.lblDtKin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtKin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtKin6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin6.Location = new System.Drawing.Point(928, 239);
-            this.lblDtKin6.Name = "lblDtKin6";
-            this.lblDtKin6.Size = new System.Drawing.Size(96, 15);
-            this.lblDtKin6.TabIndex = 103;
-            this.lblDtKin6.Text = "\\99,999,999";
-            this.lblDtKin6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtKin6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtKin6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblDtSSu6
-            // 
-            this.lblDtSSu6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSSu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSSu6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSSu6.Location = new System.Drawing.Point(928, 221);
-            this.lblDtSSu6.Name = "lblDtSSu6";
-            this.lblDtSSu6.Size = new System.Drawing.Size(96, 15);
-            this.lblDtSSu6.TabIndex = 102;
-            this.lblDtSSu6.Text = "9,999";
-            this.lblDtSSu6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSSu6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblDtSSu6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblJuchuuDate6
-            // 
-            this.lblJuchuuDate6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate6.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuDate6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuDate6.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuDate6.Location = new System.Drawing.Point(39, 221);
-            this.lblJuchuuDate6.Name = "lblJuchuuDate6";
-            this.lblJuchuuDate6.Size = new System.Drawing.Size(96, 15);
-            this.lblJuchuuDate6.TabIndex = 101;
-            this.lblJuchuuDate6.Text = "9999/99/99";
-            this.lblJuchuuDate6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuDate6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblJuchuuDate6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
-            // lblDtSKUName6
-            // 
-            this.lblDtSKUName6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtSKUName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtSKUName6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtSKUName6.Location = new System.Drawing.Point(343, 221);
-            this.lblDtSKUName6.Name = "lblDtSKUName6";
-            this.lblDtSKUName6.Size = new System.Drawing.Size(411, 38);
-            this.lblDtSKUName6.TabIndex = 100;
-            this.lblDtSKUName6.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
-            this.lblDtSKUName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblDtSKUName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
-            // 
             // label33
             // 
             this.label33.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -1134,21 +402,6 @@
             this.label33.Text = "label33";
             this.label33.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblDtGyo6
-            // 
-            this.lblDtGyo6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo6.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblDtGyo6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblDtGyo6.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo6.Location = new System.Drawing.Point(0, 217);
-            this.lblDtGyo6.Name = "lblDtGyo6";
-            this.lblDtGyo6.Size = new System.Drawing.Size(53, 43);
-            this.lblDtGyo6.TabIndex = 99;
-            this.lblDtGyo6.Text = "6";
-            this.lblDtGyo6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtGyo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDtColorSize5
             // 
@@ -1996,44 +1249,794 @@
             this.lblGyoSelect10.Controls.Add(this.lblJuchuuNO10);
             this.lblGyoSelect10.Controls.Add(this.lblJANCD10);
             this.lblGyoSelect10.Controls.Add(this.lblDtSKUName10);
-            this.lblGyoSelect10.Location = new System.Drawing.Point(0, 552);
+            this.lblGyoSelect10.Location = new System.Drawing.Point(0, 617);
             this.lblGyoSelect10.Name = "lblGyoSelect10";
             this.lblGyoSelect10.Size = new System.Drawing.Size(1840, 80);
             this.lblGyoSelect10.TabIndex = 158;
             this.lblGyoSelect10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
             // 
+            // lblJuchuuDate10
+            // 
+            this.lblJuchuuDate10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuDate10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuDate10.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuDate10.Location = new System.Drawing.Point(64, 3);
+            this.lblJuchuuDate10.Name = "lblJuchuuDate10";
+            this.lblJuchuuDate10.Size = new System.Drawing.Size(210, 30);
+            this.lblJuchuuDate10.TabIndex = 141;
+            this.lblJuchuuDate10.Text = "9999/99/99";
+            this.lblJuchuuDate10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuDate10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtSSu10
+            // 
+            this.lblDtSSu10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSSu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSSu10.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSSu10.Location = new System.Drawing.Point(1734, 2);
+            this.lblDtSSu10.Name = "lblDtSSu10";
+            this.lblDtSSu10.Size = new System.Drawing.Size(96, 30);
+            this.lblDtSSu10.TabIndex = 142;
+            this.lblDtSSu10.Text = "9,999";
+            this.lblDtSSu10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDtSSu10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtGyo10
+            // 
+            this.lblDtGyo10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtGyo10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo10.ForeColor = System.Drawing.Color.Black;
+            this.lblDtGyo10.Location = new System.Drawing.Point(3, 2);
+            this.lblDtGyo10.Name = "lblDtGyo10";
+            this.lblDtGyo10.Size = new System.Drawing.Size(53, 75);
+            this.lblDtGyo10.TabIndex = 139;
+            this.lblDtGyo10.Text = "10";
+            this.lblDtGyo10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblDtKin10
+            // 
+            this.lblDtKin10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtKin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtKin10.ForeColor = System.Drawing.Color.Black;
+            this.lblDtKin10.Location = new System.Drawing.Point(1710, 41);
+            this.lblDtKin10.Name = "lblDtKin10";
+            this.lblDtKin10.Size = new System.Drawing.Size(120, 30);
+            this.lblDtKin10.TabIndex = 143;
+            this.lblDtKin10.Text = "\\99,999,999";
+            this.lblDtKin10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin10.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtColorSize10
+            // 
+            this.lblDtColorSize10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtColorSize10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtColorSize10.ForeColor = System.Drawing.Color.Black;
+            this.lblDtColorSize10.Location = new System.Drawing.Point(1501, 1);
+            this.lblDtColorSize10.Name = "lblDtColorSize10";
+            this.lblDtColorSize10.Size = new System.Drawing.Size(165, 70);
+            this.lblDtColorSize10.TabIndex = 147;
+            this.lblDtColorSize10.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtColorSize10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblStoreName10
+            // 
+            this.lblStoreName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName10.Location = new System.Drawing.Point(64, 40);
+            this.lblStoreName10.Name = "lblStoreName10";
+            this.lblStoreName10.Size = new System.Drawing.Size(540, 34);
+            this.lblStoreName10.TabIndex = 144;
+            this.lblStoreName10.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStoreName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblJuchuuNO10
+            // 
+            this.lblJuchuuNO10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuNO10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuNO10.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuNO10.Location = new System.Drawing.Point(603, 40);
+            this.lblJuchuuNO10.Name = "lblJuchuuNO10";
+            this.lblJuchuuNO10.Size = new System.Drawing.Size(200, 30);
+            this.lblJuchuuNO10.TabIndex = 146;
+            this.lblJuchuuNO10.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuNO10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblJANCD10
+            // 
+            this.lblJANCD10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD10.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJANCD10.ForeColor = System.Drawing.Color.Black;
+            this.lblJANCD10.Location = new System.Drawing.Point(603, 3);
+            this.lblJANCD10.Name = "lblJANCD10";
+            this.lblJANCD10.Size = new System.Drawing.Size(270, 30);
+            this.lblJANCD10.TabIndex = 145;
+            this.lblJANCD10.Text = "49XXXXXXXXX13";
+            this.lblJANCD10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJANCD10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
+            // lblDtSKUName10
+            // 
+            this.lblDtSKUName10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName10.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSKUName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSKUName10.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSKUName10.Location = new System.Drawing.Point(884, 3);
+            this.lblDtSKUName10.Name = "lblDtSKUName10";
+            this.lblDtSKUName10.Size = new System.Drawing.Size(611, 70);
+            this.lblDtSKUName10.TabIndex = 140;
+            this.lblDtSKUName10.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtSKUName10.Click += new System.EventHandler(this.lblGyoSelect10_Click);
+            // 
             // lblGyoSelect9
             // 
             this.lblGyoSelect9.Controls.Add(this.lblDtGyo9);
-            this.lblGyoSelect9.Location = new System.Drawing.Point(1, 462);
+            this.lblGyoSelect9.Controls.Add(this.lblStoreName9);
+            this.lblGyoSelect9.Controls.Add(this.lblDtKin9);
+            this.lblGyoSelect9.Controls.Add(this.lblDtColorSize9);
+            this.lblGyoSelect9.Controls.Add(this.lblDtSSu9);
+            this.lblGyoSelect9.Controls.Add(this.lblJuchuuDate9);
+            this.lblGyoSelect9.Controls.Add(this.lblJuchuuNO9);
+            this.lblGyoSelect9.Controls.Add(this.lblJANCD9);
+            this.lblGyoSelect9.Controls.Add(this.lblDtSKUName9);
+            this.lblGyoSelect9.Location = new System.Drawing.Point(1, 536);
             this.lblGyoSelect9.Name = "lblGyoSelect9";
-            this.lblGyoSelect9.Size = new System.Drawing.Size(1031, 80);
+            this.lblGyoSelect9.Size = new System.Drawing.Size(1840, 80);
             this.lblGyoSelect9.TabIndex = 157;
             this.lblGyoSelect9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
             // 
+            // lblDtGyo9
+            // 
+            this.lblDtGyo9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtGyo9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo9.ForeColor = System.Drawing.Color.Black;
+            this.lblDtGyo9.Location = new System.Drawing.Point(2, 3);
+            this.lblDtGyo9.Name = "lblDtGyo9";
+            this.lblDtGyo9.Size = new System.Drawing.Size(53, 75);
+            this.lblDtGyo9.TabIndex = 129;
+            this.lblDtGyo9.Text = "9";
+            this.lblDtGyo9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStoreName9
+            // 
+            this.lblStoreName9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName9.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblStoreName9.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName9.Location = new System.Drawing.Point(60, 45);
+            this.lblStoreName9.Name = "lblStoreName9";
+            this.lblStoreName9.Size = new System.Drawing.Size(540, 34);
+            this.lblStoreName9.TabIndex = 134;
+            this.lblStoreName9.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStoreName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtKin9
+            // 
+            this.lblDtKin9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtKin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtKin9.ForeColor = System.Drawing.Color.Black;
+            this.lblDtKin9.Location = new System.Drawing.Point(1713, 43);
+            this.lblDtKin9.Name = "lblDtKin9";
+            this.lblDtKin9.Size = new System.Drawing.Size(120, 30);
+            this.lblDtKin9.TabIndex = 133;
+            this.lblDtKin9.Text = "\\99,999,999";
+            this.lblDtKin9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtColorSize9
+            // 
+            this.lblDtColorSize9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtColorSize9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtColorSize9.ForeColor = System.Drawing.Color.Black;
+            this.lblDtColorSize9.Location = new System.Drawing.Point(1504, 3);
+            this.lblDtColorSize9.Name = "lblDtColorSize9";
+            this.lblDtColorSize9.Size = new System.Drawing.Size(165, 70);
+            this.lblDtColorSize9.TabIndex = 137;
+            this.lblDtColorSize9.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtColorSize9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtSSu9
+            // 
+            this.lblDtSSu9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSSu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSSu9.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSSu9.Location = new System.Drawing.Point(1733, 4);
+            this.lblDtSSu9.Name = "lblDtSSu9";
+            this.lblDtSSu9.Size = new System.Drawing.Size(96, 30);
+            this.lblDtSSu9.TabIndex = 132;
+            this.lblDtSSu9.Text = "9,999";
+            this.lblDtSSu9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu9.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJuchuuDate9
+            // 
+            this.lblJuchuuDate9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuDate9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuDate9.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuDate9.Location = new System.Drawing.Point(69, 3);
+            this.lblJuchuuDate9.Name = "lblJuchuuDate9";
+            this.lblJuchuuDate9.Size = new System.Drawing.Size(210, 30);
+            this.lblJuchuuDate9.TabIndex = 131;
+            this.lblJuchuuDate9.Text = "9999/99/99";
+            this.lblJuchuuDate9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuDate9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJuchuuNO9
+            // 
+            this.lblJuchuuNO9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuNO9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuNO9.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuNO9.Location = new System.Drawing.Point(606, 45);
+            this.lblJuchuuNO9.Name = "lblJuchuuNO9";
+            this.lblJuchuuNO9.Size = new System.Drawing.Size(200, 30);
+            this.lblJuchuuNO9.TabIndex = 136;
+            this.lblJuchuuNO9.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuNO9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblJANCD9
+            // 
+            this.lblJANCD9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD9.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJANCD9.ForeColor = System.Drawing.Color.Black;
+            this.lblJANCD9.Location = new System.Drawing.Point(602, 4);
+            this.lblJANCD9.Name = "lblJANCD9";
+            this.lblJANCD9.Size = new System.Drawing.Size(270, 30);
+            this.lblJANCD9.TabIndex = 135;
+            this.lblJANCD9.Text = "49XXXXXXXXX13";
+            this.lblJANCD9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJANCD9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
+            // lblDtSKUName9
+            // 
+            this.lblDtSKUName9.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName9.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSKUName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSKUName9.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSKUName9.Location = new System.Drawing.Point(884, 3);
+            this.lblDtSKUName9.Name = "lblDtSKUName9";
+            this.lblDtSKUName9.Size = new System.Drawing.Size(611, 70);
+            this.lblDtSKUName9.TabIndex = 130;
+            this.lblDtSKUName9.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtSKUName9.Click += new System.EventHandler(this.lblGyoSelect9_Click);
+            // 
             // lblGyoSelect8
             // 
-            this.lblGyoSelect8.Location = new System.Drawing.Point(0, 303);
+            this.lblGyoSelect8.Controls.Add(this.lblDtGyo8);
+            this.lblGyoSelect8.Controls.Add(this.lblStoreName8);
+            this.lblGyoSelect8.Controls.Add(this.lblJuchuuDate8);
+            this.lblGyoSelect8.Controls.Add(this.lblDtSSu8);
+            this.lblGyoSelect8.Controls.Add(this.lblDtKin8);
+            this.lblGyoSelect8.Controls.Add(this.lblDtColorSize8);
+            this.lblGyoSelect8.Controls.Add(this.lblJANCD8);
+            this.lblGyoSelect8.Controls.Add(this.lblJuchuuNO8);
+            this.lblGyoSelect8.Controls.Add(this.lblDtSKUName8);
+            this.lblGyoSelect8.Location = new System.Drawing.Point(0, 454);
             this.lblGyoSelect8.Name = "lblGyoSelect8";
-            this.lblGyoSelect8.Size = new System.Drawing.Size(1031, 43);
+            this.lblGyoSelect8.Size = new System.Drawing.Size(1840, 80);
             this.lblGyoSelect8.TabIndex = 156;
             this.lblGyoSelect8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
             // 
+            // lblDtGyo8
+            // 
+            this.lblDtGyo8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtGyo8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo8.ForeColor = System.Drawing.Color.Black;
+            this.lblDtGyo8.Location = new System.Drawing.Point(4, 3);
+            this.lblDtGyo8.Name = "lblDtGyo8";
+            this.lblDtGyo8.Size = new System.Drawing.Size(53, 75);
+            this.lblDtGyo8.TabIndex = 119;
+            this.lblDtGyo8.Text = "8";
+            this.lblDtGyo8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStoreName8
+            // 
+            this.lblStoreName8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName8.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblStoreName8.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName8.Location = new System.Drawing.Point(61, 43);
+            this.lblStoreName8.Name = "lblStoreName8";
+            this.lblStoreName8.Size = new System.Drawing.Size(540, 34);
+            this.lblStoreName8.TabIndex = 124;
+            this.lblStoreName8.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblStoreName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJuchuuDate8
+            // 
+            this.lblJuchuuDate8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuDate8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuDate8.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuDate8.Location = new System.Drawing.Point(67, 3);
+            this.lblJuchuuDate8.Name = "lblJuchuuDate8";
+            this.lblJuchuuDate8.Size = new System.Drawing.Size(210, 30);
+            this.lblJuchuuDate8.TabIndex = 121;
+            this.lblJuchuuDate8.Text = "9999/99/99";
+            this.lblJuchuuDate8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuDate8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtSSu8
+            // 
+            this.lblDtSSu8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSSu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSSu8.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSSu8.Location = new System.Drawing.Point(1734, 2);
+            this.lblDtSSu8.Name = "lblDtSSu8";
+            this.lblDtSSu8.Size = new System.Drawing.Size(96, 30);
+            this.lblDtSSu8.TabIndex = 122;
+            this.lblDtSSu8.Text = "9,999";
+            this.lblDtSSu8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtKin8
+            // 
+            this.lblDtKin8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtKin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtKin8.ForeColor = System.Drawing.Color.Black;
+            this.lblDtKin8.Location = new System.Drawing.Point(1710, 41);
+            this.lblDtKin8.Name = "lblDtKin8";
+            this.lblDtKin8.Size = new System.Drawing.Size(120, 30);
+            this.lblDtKin8.TabIndex = 123;
+            this.lblDtKin8.Text = "\\99,999,999";
+            this.lblDtKin8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin8.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtColorSize8
+            // 
+            this.lblDtColorSize8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtColorSize8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtColorSize8.ForeColor = System.Drawing.Color.Black;
+            this.lblDtColorSize8.Location = new System.Drawing.Point(1504, 5);
+            this.lblDtColorSize8.Name = "lblDtColorSize8";
+            this.lblDtColorSize8.Size = new System.Drawing.Size(165, 70);
+            this.lblDtColorSize8.TabIndex = 127;
+            this.lblDtColorSize8.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtColorSize8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJANCD8
+            // 
+            this.lblJANCD8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJANCD8.ForeColor = System.Drawing.Color.Black;
+            this.lblJANCD8.Location = new System.Drawing.Point(607, 3);
+            this.lblJANCD8.Name = "lblJANCD8";
+            this.lblJANCD8.Size = new System.Drawing.Size(270, 30);
+            this.lblJANCD8.TabIndex = 125;
+            this.lblJANCD8.Text = "49XXXXXXXXX13";
+            this.lblJANCD8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJANCD8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblJuchuuNO8
+            // 
+            this.lblJuchuuNO8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO8.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuNO8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuNO8.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuNO8.Location = new System.Drawing.Point(609, 41);
+            this.lblJuchuuNO8.Name = "lblJuchuuNO8";
+            this.lblJuchuuNO8.Size = new System.Drawing.Size(200, 30);
+            this.lblJuchuuNO8.TabIndex = 126;
+            this.lblJuchuuNO8.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblJuchuuNO8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
+            // lblDtSKUName8
+            // 
+            this.lblDtSKUName8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName8.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSKUName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSKUName8.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSKUName8.Location = new System.Drawing.Point(884, 3);
+            this.lblDtSKUName8.Name = "lblDtSKUName8";
+            this.lblDtSKUName8.Size = new System.Drawing.Size(611, 70);
+            this.lblDtSKUName8.TabIndex = 120;
+            this.lblDtSKUName8.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblDtSKUName8.Click += new System.EventHandler(this.lblGyoSelect8_Click);
+            // 
             // lblGyoSelect7
             // 
-            this.lblGyoSelect7.Location = new System.Drawing.Point(0, 260);
+            this.lblGyoSelect7.Controls.Add(this.lblDtGyo7);
+            this.lblGyoSelect7.Controls.Add(this.lblStoreName7);
+            this.lblGyoSelect7.Controls.Add(this.lblJuchuuDate7);
+            this.lblGyoSelect7.Controls.Add(this.lblJuchuuNO7);
+            this.lblGyoSelect7.Controls.Add(this.lblDtSSu7);
+            this.lblGyoSelect7.Controls.Add(this.lblDtKin7);
+            this.lblGyoSelect7.Controls.Add(this.lblDtColorSize7);
+            this.lblGyoSelect7.Controls.Add(this.lblJANCD7);
+            this.lblGyoSelect7.Controls.Add(this.lblDtSKUName7);
+            this.lblGyoSelect7.Location = new System.Drawing.Point(0, 371);
             this.lblGyoSelect7.Name = "lblGyoSelect7";
-            this.lblGyoSelect7.Size = new System.Drawing.Size(1031, 43);
+            this.lblGyoSelect7.Size = new System.Drawing.Size(1840, 80);
             this.lblGyoSelect7.TabIndex = 155;
             this.lblGyoSelect7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
             // 
+            // lblDtGyo7
+            // 
+            this.lblDtGyo7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtGyo7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo7.ForeColor = System.Drawing.Color.Black;
+            this.lblDtGyo7.Location = new System.Drawing.Point(1, 13);
+            this.lblDtGyo7.Name = "lblDtGyo7";
+            this.lblDtGyo7.Size = new System.Drawing.Size(53, 43);
+            this.lblDtGyo7.TabIndex = 109;
+            this.lblDtGyo7.Text = "7";
+            this.lblDtGyo7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStoreName7
+            // 
+            this.lblStoreName7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName7.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName7.Location = new System.Drawing.Point(59, 36);
+            this.lblStoreName7.Name = "lblStoreName7";
+            this.lblStoreName7.Size = new System.Drawing.Size(151, 17);
+            this.lblStoreName7.TabIndex = 114;
+            this.lblStoreName7.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJuchuuDate7
+            // 
+            this.lblJuchuuDate7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuDate7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuDate7.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuDate7.Location = new System.Drawing.Point(81, 13);
+            this.lblJuchuuDate7.Name = "lblJuchuuDate7";
+            this.lblJuchuuDate7.Size = new System.Drawing.Size(96, 15);
+            this.lblJuchuuDate7.TabIndex = 111;
+            this.lblJuchuuDate7.Text = "9999/99/99";
+            this.lblJuchuuDate7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJuchuuNO7
+            // 
+            this.lblJuchuuNO7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuNO7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuNO7.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuNO7.Location = new System.Drawing.Point(244, 41);
+            this.lblJuchuuNO7.Name = "lblJuchuuNO7";
+            this.lblJuchuuNO7.Size = new System.Drawing.Size(102, 17);
+            this.lblJuchuuNO7.TabIndex = 116;
+            this.lblJuchuuNO7.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblJuchuuNO7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtSSu7
+            // 
+            this.lblDtSSu7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSSu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSSu7.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSSu7.Location = new System.Drawing.Point(1007, 32);
+            this.lblDtSSu7.Name = "lblDtSSu7";
+            this.lblDtSSu7.Size = new System.Drawing.Size(96, 15);
+            this.lblDtSSu7.TabIndex = 112;
+            this.lblDtSSu7.Text = "9,999";
+            this.lblDtSSu7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtKin7
+            // 
+            this.lblDtKin7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtKin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtKin7.ForeColor = System.Drawing.Color.Black;
+            this.lblDtKin7.Location = new System.Drawing.Point(1031, 51);
+            this.lblDtKin7.Name = "lblDtKin7";
+            this.lblDtKin7.Size = new System.Drawing.Size(96, 15);
+            this.lblDtKin7.TabIndex = 113;
+            this.lblDtKin7.Text = "\\99,999,999";
+            this.lblDtKin7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin7.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtColorSize7
+            // 
+            this.lblDtColorSize7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtColorSize7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtColorSize7.ForeColor = System.Drawing.Color.Black;
+            this.lblDtColorSize7.Location = new System.Drawing.Point(846, 24);
+            this.lblDtColorSize7.Name = "lblDtColorSize7";
+            this.lblDtColorSize7.Size = new System.Drawing.Size(165, 34);
+            this.lblDtColorSize7.TabIndex = 117;
+            this.lblDtColorSize7.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDtColorSize7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblJANCD7
+            // 
+            this.lblJANCD7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD7.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJANCD7.ForeColor = System.Drawing.Color.Black;
+            this.lblJANCD7.Location = new System.Drawing.Point(230, 13);
+            this.lblJANCD7.Name = "lblJANCD7";
+            this.lblJANCD7.Size = new System.Drawing.Size(116, 15);
+            this.lblJANCD7.TabIndex = 115;
+            this.lblJANCD7.Text = "49XXXXXXXXX13";
+            this.lblJANCD7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblJANCD7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
+            // lblDtSKUName7
+            // 
+            this.lblDtSKUName7.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName7.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSKUName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSKUName7.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSKUName7.Location = new System.Drawing.Point(445, 18);
+            this.lblDtSKUName7.Name = "lblDtSKUName7";
+            this.lblDtSKUName7.Size = new System.Drawing.Size(411, 38);
+            this.lblDtSKUName7.TabIndex = 110;
+            this.lblDtSKUName7.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDtSKUName7.Click += new System.EventHandler(this.lblGyoSelect7_Click);
+            // 
             // lblGyoSelect6
             // 
-            this.lblGyoSelect6.Location = new System.Drawing.Point(0, 217);
+            this.lblGyoSelect6.Controls.Add(this.lblDtGyo6);
+            this.lblGyoSelect6.Controls.Add(this.lblStoreName6);
+            this.lblGyoSelect6.Controls.Add(this.lblJuchuuDate6);
+            this.lblGyoSelect6.Controls.Add(this.lblJuchuuNO6);
+            this.lblGyoSelect6.Controls.Add(this.lblJANCD6);
+            this.lblGyoSelect6.Controls.Add(this.lblDtSSu6);
+            this.lblGyoSelect6.Controls.Add(this.lblDtKin6);
+            this.lblGyoSelect6.Controls.Add(this.lblDtColorSize6);
+            this.lblGyoSelect6.Controls.Add(this.lblDtSKUName6);
+            this.lblGyoSelect6.Location = new System.Drawing.Point(0, 287);
             this.lblGyoSelect6.Name = "lblGyoSelect6";
-            this.lblGyoSelect6.Size = new System.Drawing.Size(1031, 43);
+            this.lblGyoSelect6.Size = new System.Drawing.Size(1840, 80);
             this.lblGyoSelect6.TabIndex = 154;
             this.lblGyoSelect6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtGyo6
+            // 
+            this.lblDtGyo6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtGyo6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtGyo6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo6.ForeColor = System.Drawing.Color.Black;
+            this.lblDtGyo6.Location = new System.Drawing.Point(1, 1);
+            this.lblDtGyo6.Name = "lblDtGyo6";
+            this.lblDtGyo6.Size = new System.Drawing.Size(53, 43);
+            this.lblDtGyo6.TabIndex = 99;
+            this.lblDtGyo6.Text = "6";
+            this.lblDtGyo6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtGyo6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblStoreName6
+            // 
+            this.lblStoreName6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName6.BackColor = System.Drawing.Color.Transparent;
+            this.lblStoreName6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblStoreName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblStoreName6.ForeColor = System.Drawing.Color.Black;
+            this.lblStoreName6.Location = new System.Drawing.Point(54, 44);
+            this.lblStoreName6.Name = "lblStoreName6";
+            this.lblStoreName6.Size = new System.Drawing.Size(151, 17);
+            this.lblStoreName6.TabIndex = 104;
+            this.lblStoreName6.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
+            this.lblStoreName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblStoreName6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJuchuuDate6
+            // 
+            this.lblJuchuuDate6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuDate6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuDate6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuDate6.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuDate6.Location = new System.Drawing.Point(81, 17);
+            this.lblJuchuuDate6.Name = "lblJuchuuDate6";
+            this.lblJuchuuDate6.Size = new System.Drawing.Size(96, 15);
+            this.lblJuchuuDate6.TabIndex = 101;
+            this.lblJuchuuDate6.Text = "9999/99/99";
+            this.lblJuchuuDate6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuDate6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJuchuuNO6
+            // 
+            this.lblJuchuuNO6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuNO6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJuchuuNO6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJuchuuNO6.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuNO6.Location = new System.Drawing.Point(211, 36);
+            this.lblJuchuuNO6.Name = "lblJuchuuNO6";
+            this.lblJuchuuNO6.Size = new System.Drawing.Size(102, 17);
+            this.lblJuchuuNO6.TabIndex = 106;
+            this.lblJuchuuNO6.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuNO6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblJuchuuNO6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblJANCD6
+            // 
+            this.lblJANCD6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD6.BackColor = System.Drawing.Color.Transparent;
+            this.lblJANCD6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJANCD6.ForeColor = System.Drawing.Color.Black;
+            this.lblJANCD6.Location = new System.Drawing.Point(197, 17);
+            this.lblJANCD6.Name = "lblJANCD6";
+            this.lblJANCD6.Size = new System.Drawing.Size(116, 15);
+            this.lblJANCD6.TabIndex = 105;
+            this.lblJANCD6.Text = "49XXXXXXXXX13";
+            this.lblJANCD6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJANCD6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblJANCD6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtSSu6
+            // 
+            this.lblDtSSu6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSSu6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSSu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSSu6.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSSu6.Location = new System.Drawing.Point(1056, 19);
+            this.lblDtSSu6.Name = "lblDtSSu6";
+            this.lblDtSSu6.Size = new System.Drawing.Size(96, 15);
+            this.lblDtSSu6.TabIndex = 102;
+            this.lblDtSSu6.Text = "9,999";
+            this.lblDtSSu6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSSu6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtKin6
+            // 
+            this.lblDtKin6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtKin6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtKin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtKin6.ForeColor = System.Drawing.Color.Black;
+            this.lblDtKin6.Location = new System.Drawing.Point(1056, 46);
+            this.lblDtKin6.Name = "lblDtKin6";
+            this.lblDtKin6.Size = new System.Drawing.Size(96, 15);
+            this.lblDtKin6.TabIndex = 103;
+            this.lblDtKin6.Text = "\\99,999,999";
+            this.lblDtKin6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtKin6.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtKin6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtColorSize6
+            // 
+            this.lblDtColorSize6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtColorSize6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtColorSize6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtColorSize6.ForeColor = System.Drawing.Color.Black;
+            this.lblDtColorSize6.Location = new System.Drawing.Point(846, 27);
+            this.lblDtColorSize6.Name = "lblDtColorSize6";
+            this.lblDtColorSize6.Size = new System.Drawing.Size(165, 34);
+            this.lblDtColorSize6.TabIndex = 107;
+            this.lblDtColorSize6.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtColorSize6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDtColorSize6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
+            // 
+            // lblDtSKUName6
+            // 
+            this.lblDtSKUName6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName6.BackColor = System.Drawing.Color.Transparent;
+            this.lblDtSKUName6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblDtSKUName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtSKUName6.ForeColor = System.Drawing.Color.Black;
+            this.lblDtSKUName6.Location = new System.Drawing.Point(374, 17);
+            this.lblDtSKUName6.Name = "lblDtSKUName6";
+            this.lblDtSKUName6.Size = new System.Drawing.Size(411, 38);
+            this.lblDtSKUName6.TabIndex = 100;
+            this.lblDtSKUName6.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblDtSKUName6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDtSKUName6.Click += new System.EventHandler(this.lblGyoSelect6_Click);
             // 
             // lblGyoSelect5
             // 
@@ -2208,6 +2211,7 @@
             this.lblCusName.TabIndex = 77;
             this.lblCusName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.lblCusName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblCusName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // TempoRegiHanbaiRireki
             // 
@@ -2249,6 +2253,9 @@
             this.pnlDetails.ResumeLayout(false);
             this.lblGyoSelect10.ResumeLayout(false);
             this.lblGyoSelect9.ResumeLayout(false);
+            this.lblGyoSelect8.ResumeLayout(false);
+            this.lblGyoSelect7.ResumeLayout(false);
+            this.lblGyoSelect6.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

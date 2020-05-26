@@ -696,6 +696,7 @@ namespace Search
         /// </summary>
         private void CalculateWidth()
         {
+            txtCode.Width = CodeWidth;
             btnSearch.Location = new Point(txtCode.Width - 1, btnSearch.Location.Y);
             lblName.Location = new Point(txtCode.Width + btnSearch.Width - 2, lblName.Location.Y);
 

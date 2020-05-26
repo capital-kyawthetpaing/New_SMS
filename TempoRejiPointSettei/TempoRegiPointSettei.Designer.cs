@@ -1703,7 +1703,6 @@
             this.txtPointRate.TabIndex = 1;
             this.txtPointRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPointRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
-            this.txtPointRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPointRate_KeyDown);
             // 
             // txtServiceDayRate
             // 
@@ -1731,7 +1730,6 @@
             this.txtServiceDayRate.TabIndex = 2;
             this.txtServiceDayRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtServiceDayRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
-            this.txtServiceDayRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtServiceDayRate_KeyDown);
             // 
             // txtChangeDate
             // 
