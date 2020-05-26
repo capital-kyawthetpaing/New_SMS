@@ -107,7 +107,7 @@
             this.dgvYuubinBangou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -189,7 +189,7 @@
             this.txtZip2To.isMaxLengthErr = false;
             this.txtZip2To.IsNumber = true;
             this.txtZip2To.IsShop = false;
-            this.txtZip2To.Length = 10;
+            this.txtZip2To.Length = 4;
             this.txtZip2To.Location = new System.Drawing.Point(210, 14);
             this.txtZip2To.MaxLength = 4;
             this.txtZip2To.MoveNext = true;
@@ -216,7 +216,7 @@
             this.txtZip1To.isMaxLengthErr = false;
             this.txtZip1To.IsNumber = true;
             this.txtZip1To.IsShop = false;
-            this.txtZip1To.Length = 10;
+            this.txtZip1To.Length = 3;
             this.txtZip1To.Location = new System.Drawing.Point(180, 14);
             this.txtZip1To.MaxLength = 3;
             this.txtZip1To.MoveNext = true;
@@ -242,7 +242,7 @@
             this.txtZip2From.isMaxLengthErr = false;
             this.txtZip2From.IsNumber = true;
             this.txtZip2From.IsShop = false;
-            this.txtZip2From.Length = 10;
+            this.txtZip2From.Length = 4;
             this.txtZip2From.Location = new System.Drawing.Point(98, 14);
             this.txtZip2From.MaxLength = 4;
             this.txtZip2From.MoveNext = true;
@@ -269,7 +269,7 @@
             this.txtZip1from.isMaxLengthErr = false;
             this.txtZip1from.IsNumber = true;
             this.txtZip1from.IsShop = false;
-            this.txtZip1from.Length = 10;
+            this.txtZip1from.Length = 3;
             this.txtZip1from.Location = new System.Drawing.Point(68, 14);
             this.txtZip1from.MaxLength = 3;
             this.txtZip1from.MoveNext = true;
@@ -346,7 +346,7 @@
             // 
             // colCarrier
             // 
-            this.colCarrier.DataPropertyName = "Carrier";
+            this.colCarrier.DataPropertyName = "(none)";
             this.colCarrier.HeaderText = "奨励運送会社";
             this.colCarrier.Name = "colCarrier";
             // 

@@ -24,7 +24,17 @@ namespace BL
 
                 return mbe;
             }
+            return null;
+        }
 
+        public M_Bank_Entity M_Bank_ChangeDate_Select(M_Bank_Entity mb)
+        {
+            DataTable dt = mbdl.M_Bank_ChangeDate_Select(mb);
+            if(dt.Rows.Count >0)
+            {
+                mb.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
+                return mb;
+            }
             return null;
         }
 

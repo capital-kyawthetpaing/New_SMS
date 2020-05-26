@@ -530,7 +530,7 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1924, 833);
+            this.panelDetail.Size = new System.Drawing.Size(1884, 833);
             this.panelDetail.TabIndex = 0;
             // 
             // TempoRegiKaiinKensaku
@@ -538,10 +538,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "決  定";
-            this.ClientSize = new System.Drawing.Size(1924, 961);
+            this.ClientSize = new System.Drawing.Size(1884, 961);
             this.Controls.Add(this.panelDetail);
             this.Name = "TempoRegiKaiinKensaku";
-            this.Text = "TempoRegiKaiinKensaku";
+            this.Text = "会員検索";
             this.Load += new System.EventHandler(this.TempoRegiKaiinKensaku_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TempoRegiKaiinKensaku_KeyUp);
             this.Controls.SetChildIndex(this.panelDetail, 0);
