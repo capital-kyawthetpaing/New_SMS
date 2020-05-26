@@ -2598,7 +2598,7 @@
             this.ckmShop_Label18.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label18.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label18.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label18.Location = new System.Drawing.Point(1030, 11);
+            this.ckmShop_Label18.Location = new System.Drawing.Point(1030, 8);
             this.ckmShop_Label18.Name = "ckmShop_Label18";
             this.ckmShop_Label18.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label18.TabIndex = 61;
@@ -4208,7 +4208,7 @@
             this.btnConfirm1.Location = new System.Drawing.Point(1701, 340);
             this.btnConfirm1.Margin = new System.Windows.Forms.Padding(1);
             this.btnConfirm1.Name = "btnConfirm1";
-            this.btnConfirm1.Size = new System.Drawing.Size(200, 43);
+            this.btnConfirm1.Size = new System.Drawing.Size(200, 45);
             this.btnConfirm1.TabIndex = 12;
             this.btnConfirm1.Text = "確定";
             this.btnConfirm1.UseVisualStyleBackColor = false;
@@ -9881,6 +9881,7 @@
             this.lblSearchName.TabIndex = 22;
             this.lblSearchName.Text = "ＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblSearchName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSearchName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSearchName.Visible = false;
             // 
             // TempoRegiMasterNyuuryoku
