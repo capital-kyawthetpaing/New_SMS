@@ -1995,6 +1995,7 @@ namespace TempoJuchuuNyuuryoku
                         //明細にデータをセット
                         string ymd = bbl.GetDate();
                         detailControls[(int)EIndex.JuchuuDate].Text = ymd;
+                        mOldJyuchuDate = ymd;
 
                         //[M_Souko_Select]
                         M_Souko_Entity me = new M_Souko_Entity
@@ -4016,7 +4017,7 @@ namespace TempoJuchuuNyuuryoku
                                 detailControls[(int)EIndex.JuchuuDate].Focus();
                             }
                         }
-                        else if (index == (int)EIndex.CopyJuchuuNO)
+                        else if (index == (int)EIndex.CopyJuchuuNO || index == (int)EIndex.MitsumoriNO)
                         {
                             detailControls[(int)EIndex.JuchuuDate].Focus();
                         }
