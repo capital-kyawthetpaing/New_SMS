@@ -62,7 +62,7 @@
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(134, 294);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
-            this.ckmShop_Label4.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label4.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label4.TabIndex = 5;
             this.ckmShop_Label4.Text = "金　種";
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -78,7 +78,7 @@
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label5.Location = new System.Drawing.Point(134, 355);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
-            this.ckmShop_Label5.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label5.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label5.TabIndex = 6;
             this.ckmShop_Label5.Text = "備　考";
             this.ckmShop_Label5.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -117,7 +117,6 @@
             this.txtRemarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemarks.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
-            this.txtRemarks.F_focus = false;
             this.txtRemarks.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtRemarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarks.Length = 200;
@@ -162,7 +161,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1913, 961);
+            this.ClientSize = new System.Drawing.Size(1713, 961);
             this.Controls.Add(this.cboDenominationName);
             this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.txtPayment);
