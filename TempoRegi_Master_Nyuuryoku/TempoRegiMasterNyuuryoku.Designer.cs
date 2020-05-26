@@ -4205,7 +4205,7 @@
             this.btnConfirm1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnConfirm1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnConfirm1.Location = new System.Drawing.Point(1689, 293);
+            this.btnConfirm1.Location = new System.Drawing.Point(1701, 340);
             this.btnConfirm1.Margin = new System.Windows.Forms.Padding(1);
             this.btnConfirm1.Name = "btnConfirm1";
             this.btnConfirm1.Size = new System.Drawing.Size(200, 43);
@@ -4224,7 +4224,7 @@
             this.btn_Confrim2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confrim2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btn_Confrim2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btn_Confrim2.Location = new System.Drawing.Point(1678, 794);
+            this.btn_Confrim2.Location = new System.Drawing.Point(1701, 862);
             this.btn_Confrim2.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Confrim2.Name = "btn_Confrim2";
             this.btn_Confrim2.Size = new System.Drawing.Size(200, 43);
@@ -9870,19 +9870,17 @@
             // 
             // lblSearchName
             // 
-            this.lblSearchName.AutoSize = true;
             this.lblSearchName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSearchName.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblSearchName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblSearchName.ForeColor = System.Drawing.Color.Black;
-            this.lblSearchName.Location = new System.Drawing.Point(617, 804);
+            this.lblSearchName.Location = new System.Drawing.Point(617, 798);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(205, 35);
+            this.lblSearchName.Size = new System.Drawing.Size(1000, 100);
             this.lblSearchName.TabIndex = 22;
-            this.lblSearchName.Text = "SearchName";
+            this.lblSearchName.Text = "ＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblSearchName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSearchName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSearchName.Visible = false;
             // 
             // TempoRegiMasterNyuuryoku
