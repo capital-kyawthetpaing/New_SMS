@@ -68,6 +68,21 @@ BEGIN
            ,[Tel22]
            ,[Tel23]
            ,[CustomerKanaName]
+           ,[DeliveryCD]
+           ,[DeliveryName]
+           ,[DeliveryName2]
+           ,[DeliveryAliasKBN]
+           ,[DeliveryZipCD1]
+           ,[DeliveryZipCD2]
+           ,[DeliveryAddress1]
+           ,[DeliveryAddress2]
+           ,[DeliveryTel11]
+           ,[DeliveryTel12]
+           ,[DeliveryTel13]
+           ,[DeliveryTel21]
+           ,[DeliveryTel22]
+           ,[DeliveryTel23]
+           ,[DeliveryKanaName]
            ,[JuchuuCarrierCD]
            ,[DecidedCarrierFLG]
            ,[LastCarrierCD]
@@ -157,6 +172,21 @@ BEGIN
            ,Tel22
            ,Tel23
            ,CustomerKanaName
+           ,DeliveryCD
+           ,DeliveryName
+           ,DeliveryName2
+           ,DeliveryAliasKBN
+           ,DeliveryZipCD1
+           ,DeliveryZipCD2
+           ,DeliveryAddress1
+           ,DeliveryAddress2
+           ,DeliveryTel11
+           ,DeliveryTel12
+           ,DeliveryTel13
+           ,DeliveryTel21
+           ,DeliveryTel22
+           ,DeliveryTel23
+           ,DeliveryKanaName
            ,JuchuuCarrierCD
            ,DecidedCarrierFLG
            ,LastCarrierCD
@@ -256,6 +286,21 @@ BEGIN
            ,[Tel22]
            ,[Tel23]
            ,[CustomerKanaName]
+           ,[DeliveryCD]
+           ,[DeliveryName]
+           ,[DeliveryName2]
+           ,[DeliveryAliasKBN]
+           ,[DeliveryZipCD1]
+           ,[DeliveryZipCD2]
+           ,[DeliveryAddress1]
+           ,[DeliveryAddress2]
+           ,[DeliveryTel11]
+           ,[DeliveryTel12]
+           ,[DeliveryTel13]
+           ,[DeliveryTel21]
+           ,[DeliveryTel22]
+           ,[DeliveryTel23]
+           ,[DeliveryKanaName]
            ,[JuchuuCarrierCD]
            ,[DecidedCarrierFLG]
            ,[LastCarrierCD]
@@ -345,6 +390,21 @@ BEGIN
            ,Tel22
            ,Tel23
            ,CustomerKanaName
+           ,DeliveryCD
+           ,DeliveryName
+           ,DeliveryName2
+           ,DeliveryAliasKBN
+           ,DeliveryZipCD1
+           ,DeliveryZipCD2
+           ,DeliveryAddress1
+           ,DeliveryAddress2
+           ,DeliveryTel11
+           ,DeliveryTel12
+           ,DeliveryTel13
+           ,DeliveryTel21
+           ,DeliveryTel22
+           ,DeliveryTel23
+           ,DeliveryKanaName
            ,JuchuuCarrierCD
            ,DecidedCarrierFLG
            ,LastCarrierCD
