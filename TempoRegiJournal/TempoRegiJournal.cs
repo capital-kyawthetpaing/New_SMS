@@ -50,6 +50,7 @@ namespace TempoRegiJournal
             txtPrintDateTo.Require(true);
 
             txtPrintDateFrom.Text = txtPrintDateTo.Text = DateTime.Today.ToShortDateString();
+            txtPrintDateFrom.Focus();
         }
 
         private void DisplayData()
@@ -166,6 +167,12 @@ namespace TempoRegiJournal
             {
                 var row = data.Rows[index];
 
+                if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"])))
+                {
+                    // 発行日時がないデータは出力対象外
+                    continue;
+                }
+
                 // 共通データ
                 var salesNO = Convert.ToString(row["SalesNO"]);                             // 売上番号
                 var storeReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);         // 店舗レシート表記
@@ -179,7 +186,7 @@ namespace TempoRegiJournal
                     store.StoreName = Convert.ToString(row["StoreName"]);                       // 店舗名
                     store.Address1 = Convert.ToString(row["Address1"]);                         // 住所1
                     store.Address2 = Convert.ToString(row["Address2"]);                         // 住所2
-                    store.TelphoneNO = Convert.ToString(row["Telephone"]);                      // 電話番号
+                    store.TelphoneNO = Convert.ToString(row["TelephoneNO"]);                    // 電話番号
                     store.StoreReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);       // 店舗レシート表記
                                                                                                 //
                     storeDataSet.StoreTable.Rows.Add(store);

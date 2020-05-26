@@ -918,19 +918,19 @@ namespace MasterTouroku_ShiireKakeritsu
             DataColumnCollection col = dtMain.Columns;
             //for (int i = 0; i < colName.Length; i++)
             {
-                if (!dtMain.Columns[0].ColumnName.ToString().Equals("仕入先CD"))
+                if (!dtMain.Columns[1].ColumnName.ToString().Equals("仕入先CD"))
                 {
                     return false;
                 }
-                else if (!dtMain.Columns[1].ColumnName.ToString().Equals("店舗CD"))
+                else if (!dtMain.Columns[2].ColumnName.ToString().Equals("店舗CD"))
                 {
                     return false;
                 }
-                else if (!dtMain.Columns[7].ColumnName.ToString().Equals("改定日"))
+                else if (!dtMain.Columns[8].ColumnName.ToString().Equals("改定日"))
                 {
                     return false;
                 }
-                else if (!dtMain.Columns[8].ColumnName.ToString().Equals("掛率"))
+                else if (!dtMain.Columns[9].ColumnName.ToString().Equals("掛率"))
                 {
                     return false;
                 }

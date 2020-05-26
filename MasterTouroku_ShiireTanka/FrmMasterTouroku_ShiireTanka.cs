@@ -50,6 +50,9 @@ namespace MasterTouroku_ShiireTanka
                         Clear();
                     }
                     break;
+                case 11:
+                    F11();
+                    break;
 
             }
         }
@@ -61,7 +64,25 @@ namespace MasterTouroku_ShiireTanka
                 shiiresaki.Focus();
                 return false;
             }
-
+            else
+            {
+                if (shiiresaki.IsExists(2))
+                {
+                    {
+                        bbl.ShowMessage("E102");
+                        shiiresaki.Focus();
+                        return false;
+                    }
+                }
+            }
+           
+            if(string.IsNullOrEmpty(TB_Changedate.Text))
+            {
+                bbl.ShowMessage("E102");
+                TB_Changedate.Focus();
+                return false;
+            }
+            
             if(RB_koten.Checked == true )  
             {
                 if(String.IsNullOrEmpty(CB_store.Text))
@@ -72,6 +93,7 @@ namespace MasterTouroku_ShiireTanka
                 {
                     bbl.ShowMessage("E141");
                     CB_store.Focus();
+                    cb_focus = true;
                     return false;
                 }
             }
@@ -90,7 +112,7 @@ namespace MasterTouroku_ShiireTanka
                 CB_store.Focus();
                 cb_focus = false;
             }
-        }
+        } 
         #region Search_Control
         private void shiiresaki_Enter(object sender, EventArgs e)
         {
@@ -241,7 +263,10 @@ namespace MasterTouroku_ShiireTanka
         #endregion
         private void F11()
         {
+            if(ErrorCheck())
+            {
 
+            }
 
         }
         private void Clear()
