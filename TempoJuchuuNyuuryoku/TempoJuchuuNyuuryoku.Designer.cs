@@ -323,7 +323,6 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // label4
@@ -453,14 +452,14 @@
             this.ckM_Text_4.isMaxLengthErr = false;
             this.ckM_Text_4.IsNumber = true;
             this.ckM_Text_4.IsShop = false;
-            this.ckM_Text_4.Length = 40;
+            this.ckM_Text_4.Length = 20;
             this.ckM_Text_4.Location = new System.Drawing.Point(87, 155);
-            this.ckM_Text_4.MaxLength = 40;
+            this.ckM_Text_4.MaxLength = 20;
             this.ckM_Text_4.MoveNext = true;
             this.ckM_Text_4.Name = "ckM_Text_4";
-            this.ckM_Text_4.Size = new System.Drawing.Size(260, 19);
+            this.ckM_Text_4.Size = new System.Drawing.Size(256, 19);
             this.ckM_Text_4.TabIndex = 13;
-            this.ckM_Text_4.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.ckM_Text_4.Text = "ＸＸＸＸＸＸＸＸＸ10";
             this.ckM_Text_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_KAIDT_0
@@ -2818,6 +2817,7 @@
             this.SC_ITEM_0.ChangeDateWidth = 100;
             this.SC_ITEM_0.Code = "";
             this.SC_ITEM_0.CodeWidth = 110;
+            this.SC_ITEM_0.CodeWidth1 = 110;
             this.SC_ITEM_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_0.DataCheck = false;
             this.SC_ITEM_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2828,6 +2828,7 @@
             this.SC_ITEM_0.Location = new System.Drawing.Point(27, -5);
             this.SC_ITEM_0.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
+            this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
             this.SC_ITEM_0.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_0.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -3277,6 +3278,7 @@
             this.SC_ITEM_1.ChangeDateWidth = 100;
             this.SC_ITEM_1.Code = "";
             this.SC_ITEM_1.CodeWidth = 110;
+            this.SC_ITEM_1.CodeWidth1 = 110;
             this.SC_ITEM_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_1.DataCheck = false;
             this.SC_ITEM_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3287,6 +3289,7 @@
             this.SC_ITEM_1.Location = new System.Drawing.Point(27, 71);
             this.SC_ITEM_1.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_1.Name = "SC_ITEM_1";
+            this.SC_ITEM_1.NameWidth = 190;
             this.SC_ITEM_1.SearchEnable = true;
             this.SC_ITEM_1.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_1.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -3335,6 +3338,7 @@
             this.SC_ITEM_2.ChangeDateWidth = 100;
             this.SC_ITEM_2.Code = "";
             this.SC_ITEM_2.CodeWidth = 110;
+            this.SC_ITEM_2.CodeWidth1 = 110;
             this.SC_ITEM_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM_2.DataCheck = false;
             this.SC_ITEM_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3345,6 +3349,7 @@
             this.SC_ITEM_2.Location = new System.Drawing.Point(27, 147);
             this.SC_ITEM_2.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_2.Name = "SC_ITEM_2";
+            this.SC_ITEM_2.NameWidth = 190;
             this.SC_ITEM_2.SearchEnable = true;
             this.SC_ITEM_2.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM_2.Stype = Search.CKM_SearchControl.SearchType.JANCD_Detail;
@@ -3576,6 +3581,7 @@
             this.IMT_VENCD_0.ChangeDateWidth = 100;
             this.IMT_VENCD_0.Code = "";
             this.IMT_VENCD_0.CodeWidth = 130;
+            this.IMT_VENCD_0.CodeWidth1 = 130;
             this.IMT_VENCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_0.DataCheck = false;
             this.IMT_VENCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3585,6 +3591,7 @@
             this.IMT_VENCD_0.Location = new System.Drawing.Point(256, 33);
             this.IMT_VENCD_0.Margin = new System.Windows.Forms.Padding(0);
             this.IMT_VENCD_0.Name = "IMT_VENCD_0";
+            this.IMT_VENCD_0.NameWidth = 280;
             this.IMT_VENCD_0.SearchEnable = true;
             this.IMT_VENCD_0.Size = new System.Drawing.Size(163, 27);
             this.IMT_VENCD_0.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -3602,6 +3609,7 @@
             this.IMT_VENCD_1.ChangeDateWidth = 100;
             this.IMT_VENCD_1.Code = "";
             this.IMT_VENCD_1.CodeWidth = 130;
+            this.IMT_VENCD_1.CodeWidth1 = 130;
             this.IMT_VENCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_1.DataCheck = false;
             this.IMT_VENCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3611,6 +3619,7 @@
             this.IMT_VENCD_1.Location = new System.Drawing.Point(256, 109);
             this.IMT_VENCD_1.Margin = new System.Windows.Forms.Padding(0);
             this.IMT_VENCD_1.Name = "IMT_VENCD_1";
+            this.IMT_VENCD_1.NameWidth = 280;
             this.IMT_VENCD_1.SearchEnable = true;
             this.IMT_VENCD_1.Size = new System.Drawing.Size(163, 27);
             this.IMT_VENCD_1.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -3628,6 +3637,7 @@
             this.IMT_VENCD_2.ChangeDateWidth = 100;
             this.IMT_VENCD_2.Code = "";
             this.IMT_VENCD_2.CodeWidth = 130;
+            this.IMT_VENCD_2.CodeWidth1 = 130;
             this.IMT_VENCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.IMT_VENCD_2.DataCheck = false;
             this.IMT_VENCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3637,6 +3647,7 @@
             this.IMT_VENCD_2.Location = new System.Drawing.Point(256, 185);
             this.IMT_VENCD_2.Margin = new System.Windows.Forms.Padding(0);
             this.IMT_VENCD_2.Name = "IMT_VENCD_2";
+            this.IMT_VENCD_2.NameWidth = 280;
             this.IMT_VENCD_2.SearchEnable = true;
             this.IMT_VENCD_2.Size = new System.Drawing.Size(163, 27);
             this.IMT_VENCD_2.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -3867,6 +3878,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -3877,6 +3889,7 @@
             this.ScCustomer.Location = new System.Drawing.Point(87, 112);
             this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer.Name = "ScCustomer";
+            this.ScCustomer.NameWidth = 500;
             this.ScCustomer.SearchEnable = true;
             this.ScCustomer.Size = new System.Drawing.Size(133, 28);
             this.ScCustomer.Stype = Search.CKM_SearchControl.SearchType.得意先;
@@ -4371,6 +4384,7 @@
             this.ScCopyJuchuuNO.ChangeDateWidth = 100;
             this.ScCopyJuchuuNO.Code = "";
             this.ScCopyJuchuuNO.CodeWidth = 100;
+            this.ScCopyJuchuuNO.CodeWidth1 = 100;
             this.ScCopyJuchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyJuchuuNO.DataCheck = true;
             this.ScCopyJuchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4381,6 +4395,7 @@
             this.ScCopyJuchuuNO.Location = new System.Drawing.Point(342, 3);
             this.ScCopyJuchuuNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyJuchuuNO.Name = "ScCopyJuchuuNO";
+            this.ScCopyJuchuuNO.NameWidth = 600;
             this.ScCopyJuchuuNO.SearchEnable = true;
             this.ScCopyJuchuuNO.Size = new System.Drawing.Size(133, 28);
             this.ScCopyJuchuuNO.Stype = Search.CKM_SearchControl.SearchType.受注番号;
@@ -4398,6 +4413,7 @@
             this.ScJuchuuNO.ChangeDateWidth = 100;
             this.ScJuchuuNO.Code = "";
             this.ScJuchuuNO.CodeWidth = 100;
+            this.ScJuchuuNO.CodeWidth1 = 100;
             this.ScJuchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScJuchuuNO.DataCheck = false;
             this.ScJuchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4408,6 +4424,7 @@
             this.ScJuchuuNO.Location = new System.Drawing.Point(86, 3);
             this.ScJuchuuNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScJuchuuNO.Name = "ScJuchuuNO";
+            this.ScJuchuuNO.NameWidth = 600;
             this.ScJuchuuNO.SearchEnable = true;
             this.ScJuchuuNO.Size = new System.Drawing.Size(133, 28);
             this.ScJuchuuNO.Stype = Search.CKM_SearchControl.SearchType.受注番号;
@@ -4424,7 +4441,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4435,8 +4453,9 @@
             this.ScStaff.Location = new System.Drawing.Point(511, 89);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 9;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -4504,6 +4523,7 @@
             this.ScMitsumoriNO.ChangeDateWidth = 100;
             this.ScMitsumoriNO.Code = "";
             this.ScMitsumoriNO.CodeWidth = 100;
+            this.ScMitsumoriNO.CodeWidth1 = 100;
             this.ScMitsumoriNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMitsumoriNO.DataCheck = false;
             this.ScMitsumoriNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4514,6 +4534,7 @@
             this.ScMitsumoriNO.Location = new System.Drawing.Point(578, 3);
             this.ScMitsumoriNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScMitsumoriNO.Name = "ScMitsumoriNO";
+            this.ScMitsumoriNO.NameWidth = 600;
             this.ScMitsumoriNO.SearchEnable = true;
             this.ScMitsumoriNO.Size = new System.Drawing.Size(133, 28);
             this.ScMitsumoriNO.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -4528,7 +4549,7 @@
             // 
             this.panel1.Controls.Add(this.radioOnchu);
             this.panel1.Controls.Add(this.radioSama);
-            this.panel1.Location = new System.Drawing.Point(350, 155);
+            this.panel1.Location = new System.Drawing.Point(348, 155);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(113, 27);
             this.panel1.TabIndex = 14;
@@ -4565,6 +4586,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4575,6 +4597,7 @@
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
             this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -4619,6 +4642,7 @@
             this.TxtRemark1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark1.F_focus = false;
             this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 250;
@@ -4839,6 +4863,7 @@
             this.ckM_MultiLineTextBox1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox1.F_focus = false;
             this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox1.Length = 250;
@@ -5290,6 +5315,7 @@
             this.TxtRemark2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark2.BackColor = System.Drawing.Color.White;
             this.TxtRemark2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark2.F_focus = false;
             this.TxtRemark2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 250;
@@ -5435,6 +5461,7 @@
             this.ckM_SearchControl1.ChangeDateWidth = 100;
             this.ckM_SearchControl1.Code = "";
             this.ckM_SearchControl1.CodeWidth = 100;
+            this.ckM_SearchControl1.CodeWidth1 = 100;
             this.ckM_SearchControl1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl1.DataCheck = false;
             this.ckM_SearchControl1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5445,6 +5472,7 @@
             this.ckM_SearchControl1.Location = new System.Drawing.Point(577, 3);
             this.ckM_SearchControl1.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl1.Name = "ckM_SearchControl1";
+            this.ckM_SearchControl1.NameWidth = 600;
             this.ckM_SearchControl1.SearchEnable = true;
             this.ckM_SearchControl1.Size = new System.Drawing.Size(133, 28);
             this.ckM_SearchControl1.Stype = Search.CKM_SearchControl.SearchType.見積番号;
@@ -5479,6 +5507,7 @@
             this.ScMotoJuchuNo.ChangeDateWidth = 100;
             this.ScMotoJuchuNo.Code = "";
             this.ScMotoJuchuNo.CodeWidth = 100;
+            this.ScMotoJuchuNo.CodeWidth1 = 100;
             this.ScMotoJuchuNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMotoJuchuNo.DataCheck = false;
             this.ScMotoJuchuNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5489,6 +5518,7 @@
             this.ScMotoJuchuNo.Location = new System.Drawing.Point(870, 3);
             this.ScMotoJuchuNo.Margin = new System.Windows.Forms.Padding(0);
             this.ScMotoJuchuNo.Name = "ScMotoJuchuNo";
+            this.ScMotoJuchuNo.NameWidth = 600;
             this.ScMotoJuchuNo.SearchEnable = true;
             this.ScMotoJuchuNo.Size = new System.Drawing.Size(133, 28);
             this.ScMotoJuchuNo.Stype = Search.CKM_SearchControl.SearchType.受注番号;
@@ -5891,14 +5921,14 @@
             this.ckM_TextBox22.isMaxLengthErr = false;
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
-            this.ckM_TextBox22.Length = 40;
+            this.ckM_TextBox22.Length = 20;
             this.ckM_TextBox22.Location = new System.Drawing.Point(87, 217);
-            this.ckM_TextBox22.MaxLength = 40;
+            this.ckM_TextBox22.MaxLength = 20;
             this.ckM_TextBox22.MoveNext = true;
             this.ckM_TextBox22.Name = "ckM_TextBox22";
-            this.ckM_TextBox22.Size = new System.Drawing.Size(260, 19);
+            this.ckM_TextBox22.Size = new System.Drawing.Size(256, 19);
             this.ckM_TextBox22.TabIndex = 21;
-            this.ckM_TextBox22.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
+            this.ckM_TextBox22.Text = "ＸＸＸＸＸＸＸＸＸ10";
             this.ckM_TextBox22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ScDeliveryCD
@@ -5908,6 +5938,7 @@
             this.ScDeliveryCD.ChangeDateWidth = 100;
             this.ScDeliveryCD.Code = "";
             this.ScDeliveryCD.CodeWidth = 100;
+            this.ScDeliveryCD.CodeWidth1 = 100;
             this.ScDeliveryCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScDeliveryCD.DataCheck = true;
             this.ScDeliveryCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5918,6 +5949,7 @@
             this.ScDeliveryCD.Location = new System.Drawing.Point(87, 174);
             this.ScDeliveryCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScDeliveryCD.Name = "ScDeliveryCD";
+            this.ScDeliveryCD.NameWidth = 500;
             this.ScDeliveryCD.SearchEnable = true;
             this.ScDeliveryCD.Size = new System.Drawing.Size(133, 28);
             this.ScDeliveryCD.Stype = Search.CKM_SearchControl.SearchType.得意先;
@@ -5944,7 +5976,7 @@
             // 
             this.panel2.Controls.Add(this.radioOnchuD);
             this.panel2.Controls.Add(this.radioSamaD);
-            this.panel2.Location = new System.Drawing.Point(350, 217);
+            this.panel2.Location = new System.Drawing.Point(348, 217);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(113, 24);
             this.panel2.TabIndex = 22;

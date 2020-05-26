@@ -60,8 +60,10 @@ namespace MasterTouroku_YuubinBangou
             dt.Columns.Add("CarrierName", typeof(string));
             dt.Columns.Add("CarrierCD", typeof(string));
             dt = YuubinBangouBL.SimpleSelect1("62");
-            DataRow dr = "";
-            dt.Rows.InsertAt(string.Empty, "0", 0);
+            DataRow row = dt.NewRow();
+            row["CarrierName"] = string.Empty;
+            row["CarrierCD"] = "0";
+            dt.Rows.InsertAt(row, 0);
 
             DataGridViewComboBoxColumn col = (DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"];
             col.DataPropertyName = "Carrier";
@@ -186,6 +188,10 @@ namespace MasterTouroku_YuubinBangou
 
             if (dtDisplay != null)
             {
+                //foreach (DataRow dr in dtDisplay.Rows)
+                //{
+
+                //}
                 dgvYuubinBangou.DataSource = dtDisplay;
                 txtZip1from.Focus();
 
@@ -205,6 +211,11 @@ namespace MasterTouroku_YuubinBangou
             ZipCode = GetZipCodeEntity();
             string ZipCD1To = txtZip1To.Text;
             string ZipCD2To = txtZip2To.Text;
+            int i = 0;
+            foreach (DataRow dr in dtDisplay.Rows)
+            {
+                dr["CarrierCD"] = Convert.ToInt32(dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value); i++;
+            }
             Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
 
             if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))
