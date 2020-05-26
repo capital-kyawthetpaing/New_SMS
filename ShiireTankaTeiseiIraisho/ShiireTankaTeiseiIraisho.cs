@@ -90,7 +90,7 @@ namespace ShiireTankaTeiseiIraisho
         public ShiireTankaTeiseiIraisho()
         {
             InitializeComponent();
-                    }
+        }
 
         private void Form_Load(object sender, EventArgs e)
         {
@@ -302,8 +302,16 @@ namespace ShiireTankaTeiseiIraisho
                 OutputExecelFromDataTable(table, filePath);
 
                 //更新処理
-                //tableの見積番号だけ            
-                stbl.D_Purchase_Update(dpe, dtForUpdate);
+                //tableの見積番号だけ   
+                try
+                {
+                    stbl.D_Purchase_Update(dpe, dtForUpdate);
+                }
+                catch(Exception ex)
+                {
+
+                    var f = ex.Message;
+                }
 
                 //ログファイルへの更新
                 bbl.L_Log_Insert(Get_L_Log_Entity());
