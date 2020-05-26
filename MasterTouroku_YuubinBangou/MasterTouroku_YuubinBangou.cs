@@ -60,6 +60,8 @@ namespace MasterTouroku_YuubinBangou
             dt.Columns.Add("CarrierName", typeof(string));
             dt.Columns.Add("CarrierCD", typeof(string));
             dt = YuubinBangouBL.SimpleSelect1("62");
+            DataRow dr = "";
+            dt.Rows.InsertAt(string.Empty, "0", 0);
 
             DataGridViewComboBoxColumn col = (DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"];
             col.DataPropertyName = "Carrier";
