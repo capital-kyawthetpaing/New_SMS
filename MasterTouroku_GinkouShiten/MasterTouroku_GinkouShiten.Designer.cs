@@ -140,6 +140,7 @@
             this.ScBankCD.ChangeDateWidth = 100;
             this.ScBankCD.Code = "";
             this.ScBankCD.CodeWidth = 40;
+            this.ScBankCD.CodeWidth1 = 40;
             this.ScBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBankCD.DataCheck = false;
             this.ScBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -149,6 +150,7 @@
             this.ScBankCD.Location = new System.Drawing.Point(63, 1);
             this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
+            this.ScBankCD.NameWidth = 350;
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -169,6 +171,7 @@
             this.ScBranchCD.ChangeDateWidth = 100;
             this.ScBranchCD.Code = "";
             this.ScBranchCD.CodeWidth = 40;
+            this.ScBranchCD.CodeWidth1 = 40;
             this.ScBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBranchCD.DataCheck = false;
             this.ScBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -178,6 +181,7 @@
             this.ScBranchCD.Location = new System.Drawing.Point(63, 23);
             this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
+            this.ScBranchCD.NameWidth = 350;
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(103, 50);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
@@ -260,6 +264,7 @@
             this.ScCopyBankCD.ChangeDateWidth = 100;
             this.ScCopyBankCD.Code = "";
             this.ScCopyBankCD.CodeWidth = 40;
+            this.ScCopyBankCD.CodeWidth1 = 40;
             this.ScCopyBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyBankCD.DataCheck = false;
             this.ScCopyBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -269,6 +274,7 @@
             this.ScCopyBankCD.Location = new System.Drawing.Point(83, 0);
             this.ScCopyBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBankCD.Name = "ScCopyBankCD";
+            this.ScCopyBankCD.NameWidth = 350;
             this.ScCopyBankCD.SearchEnable = true;
             this.ScCopyBankCD.Size = new System.Drawing.Size(424, 27);
             this.ScCopyBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -279,6 +285,7 @@
             this.ScCopyBankCD.Value2 = null;
             this.ScCopyBankCD.Value3 = null;
             this.ScCopyBankCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScCopyBankCD_CodeKeyDownEvent);
+            this.ScCopyBankCD.Enter += new System.EventHandler(this.ScCopyBankCD_Enter);
             this.ScCopyBankCD.Leave += new System.EventHandler(this.ScCopyBankCD_Leave);
             // 
             // ScCopyBranchCD
@@ -288,6 +295,7 @@
             this.ScCopyBranchCD.ChangeDateWidth = 100;
             this.ScCopyBranchCD.Code = "";
             this.ScCopyBranchCD.CodeWidth = 40;
+            this.ScCopyBranchCD.CodeWidth1 = 40;
             this.ScCopyBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyBranchCD.DataCheck = false;
             this.ScCopyBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -297,6 +305,7 @@
             this.ScCopyBranchCD.Location = new System.Drawing.Point(83, 23);
             this.ScCopyBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyBranchCD.Name = "ScCopyBranchCD";
+            this.ScCopyBranchCD.NameWidth = 350;
             this.ScCopyBranchCD.SearchEnable = true;
             this.ScCopyBranchCD.Size = new System.Drawing.Size(103, 50);
             this.ScCopyBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
