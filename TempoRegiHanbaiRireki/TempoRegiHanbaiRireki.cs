@@ -638,21 +638,10 @@ namespace TempoRegiHanbaiRireki
             }
         }
 
-        private void btnCustomerNo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                TempoRegiKaiinKensaku form = new TempoRegiKaiinKensaku();
-                form.ShowDialog();
-                txtCustomerNo.Text = form.CustomerCD;
+        //private void btnCustomerNo_Click(object sender, EventArgs e)
+        //{
 
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //}
 
         private void lblGyoSelect1_Click(object sender, EventArgs e)
         {

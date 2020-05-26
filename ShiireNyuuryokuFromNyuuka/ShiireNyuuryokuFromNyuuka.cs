@@ -1130,12 +1130,14 @@ namespace ShiireNyuuryokuFromNyuuka
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -2661,7 +2663,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         if (index == (int)EIndex.StoreCD)
                         {
-                            detailControls[(int)EIndex.PurchaseDate].Focus();
+                            detailControls[(int)EIndex.CalledVendorCD].Focus();
                         }
                         else if(index == (int)EIndex.PurchaseNO)
                             if(OperationMode == EOperationMode.UPDATE)

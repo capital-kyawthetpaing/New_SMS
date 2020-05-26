@@ -919,6 +919,7 @@ namespace NyuukinNyuuryoku
                 CboStoreCD.Bind(ymd);
                 CboTorikomi.Bind(ymd);//
                 cboDenomination.Bind(ymd);//
+                cboKouza.Bind(ymd);
 
                 //検索用のパラメータ設定
                 string stores = GetAllAvailableStores();
@@ -1630,12 +1631,14 @@ namespace NyuukinNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1653,6 +1656,7 @@ namespace NyuukinNyuuryoku
                         //選択必須(Entry required)
                         if (!RequireCheck(new Control[] { keyControls[index] }))
                         {
+                            CboTorikomi.MoveNext = false;
                             return false;
                         }
                     }
@@ -1825,6 +1829,7 @@ namespace NyuukinNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        cboDenomination.MoveNext = false;
                         return false;
                     }
                     M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
@@ -1932,6 +1937,7 @@ namespace NyuukinNyuuryoku
                         //入力必須(Entry required)
                         if (!RequireCheck(new Control[] { detailControls[index] }))
                         {
+                            cboKouza.MoveNext = false;
                             return false;
                         }
                     }

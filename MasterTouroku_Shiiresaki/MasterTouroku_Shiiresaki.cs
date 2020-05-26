@@ -481,8 +481,9 @@ namespace MasterTouroku_Shiiresaki
                     {
                         if (!RequireCheck(new Control[] { ScVendor.TxtCode, ScVendor.TxtChangeDate }))
                             return false;
-
-                        if (ScVendor.IsExists())
+                        //mve.VendorCD = ScVendor.TxtCode.Text;
+                        //mve.ChangeDate = ScVendor.TxtChangeDate.Text;
+                        if (ScVendor.IsExists(1))
                         {
                             mtsbl.ShowMessage("E132"); 
                             ScVendor.SetFocus(1);
@@ -520,7 +521,7 @@ namespace MasterTouroku_Shiiresaki
                 }
                 else
                 {
-                    if (!ScVendor.IsExists())
+                    if (!ScVendor.IsExists(1))
                     {
                         mtsbl.ShowMessage("E133");
                         ScVendor.SetFocus(1);
@@ -854,7 +855,7 @@ namespace MasterTouroku_Shiiresaki
                 
                 if (OperationMode == EOperationMode.INSERT)
                 {
-                    if (ScVendor.IsExists())
+                    if (ScVendor.IsExists(1))
                     {
                         mtsbl.ShowMessage("E132");
                         ScVendor.SetFocus(1);
@@ -1021,6 +1022,7 @@ namespace MasterTouroku_Shiiresaki
         }
         
         private void ScVendor_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
+
         {
             if(e.KeyCode == Keys.Enter)
             {

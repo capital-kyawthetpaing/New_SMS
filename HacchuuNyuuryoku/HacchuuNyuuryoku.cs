@@ -82,6 +82,7 @@ namespace HacchuuNyuuryoku
         private decimal mZei10;//通常税額(Hidden)
         private decimal mZei8;//軽減税額(Hidden)
 
+        private bool mSyoninsya;
         private int W_ApprovalStageFLG;
         private int mAmountFractionKBN;
         private int mTaxFractionKBN;
@@ -1418,12 +1419,14 @@ namespace HacchuuNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1657,9 +1660,10 @@ namespace HacchuuNyuuryoku
 
                         if (index == (int)EIndex.OrderNO)
                         {
+                            //その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
                             //申請中、承認中の場合
                             int mApprovalStageFLG = Convert.ToInt16(row["ApprovalStageFLG"].ToString());
-                            if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG)
+                            if (mApprovalStageFLG >= 1 && mApprovalStageFLG < 9 && W_ApprovalStageFLG >= mApprovalStageFLG && mSyoninsya)
                                 SetBtnSubF11Enabled(true);
                             else
                                 SetBtnSubF11Enabled(false);
@@ -1910,6 +1914,7 @@ namespace HacchuuNyuuryoku
                         //選択必須(Entry required)
                         if (!RequireCheck(new Control[] { detailControls[index] }))
                         {
+                            CboSoukoName.MoveNext = false;
                             return false;
                         }
 
@@ -3008,7 +3013,7 @@ namespace HacchuuNyuuryoku
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
 
-                            SetBtnSubF11Enabled(Kbn == 0 ? true : false);
+                            //SetBtnSubF11Enabled(Kbn == 0 ? true : false);
                             Pnl_Body.Enabled = Kbn == 0 ? true : false;
 
                             SetEnabled(EIndex.CheckBox3, ckM_CheckBox3.Checked);
@@ -3632,6 +3637,44 @@ namespace HacchuuNyuuryoku
                 MessageBox.Show(ex.Message);
             }
         }
+        private void CboStoreCD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //オペレータが申請者（店舗ストアマスタの発注承認スタッフ以外）の場合、使用不可。
+                if (CboStoreCD.SelectedIndex > 0)
+                {
+                    string ymd = detailControls[(int)EIndex.OrderDate].Text;
+
+                    if (string.IsNullOrWhiteSpace(ymd))
+                        ymd = bbl.GetDate();
+
+                     mSyoninsya = false;
+                    //[M_Store_SelectData]
+                    M_Store_Entity mse = new M_Store_Entity
+                    {
+                        StoreCD = CboStoreCD.SelectedValue.ToString(),
+                        ChangeDate = ymd
+                    };
+                    Store_BL sbl = new Store_BL();
+                    DataTable dt = sbl.M_Store_Select(mse);
+                    if (dt.Rows.Count > 0)
+                    {
+                        if (InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD11"].ToString()) || InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD12"].ToString())
+                            || InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD21"].ToString()) || InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD22"].ToString())
+                            || InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD31"].ToString()) || InOperatorCD.Equals(dt.Rows[0]["ApprovalStaffCD32"].ToString()))
+                        {
+                            mSyoninsya = true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+            }
+        }
         /// <summary>
         /// その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
         /// 「承認」を初期表示。
@@ -3770,6 +3813,7 @@ namespace HacchuuNyuuryoku
                 }
             }
         }
+
     }
 }
 

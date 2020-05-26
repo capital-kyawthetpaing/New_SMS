@@ -277,7 +277,7 @@ namespace TempoJuchuuShoukai
 
             if (dt.Rows.Count > 0)
             {
-                GvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
@@ -393,6 +393,7 @@ namespace TempoJuchuuShoukai
                         //店舗権限のチェック
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;

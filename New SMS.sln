@@ -139,7 +139,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaikenKanriHyou", "SaikenKa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaimuKanriHyou", "SaimuKanriHyou\SaimuKanriHyou.csproj", "{3232A03D-32F2-426A-9485-39A346CFB414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegi_Master_Nyuuryoku", "TempoRegi_Master_Nyuuryoku\TempoRegi_Master_Nyuuryoku.csproj", "{15364BB5-11F2-4717-BF7C-61722CAED9B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiMasterNyuuryoku", "TempoRegi_Master_Nyuuryoku\TempoRegiMasterNyuuryoku.csproj", "{15364BB5-11F2-4717-BF7C-61722CAED9B9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDIKaitouNoukiTouroku", "EDIKaitouNoukiTouroku\EDIKaitouNoukiTouroku.csproj", "{1CA1270E-EAF9-44D1-A50B-A3491D9C094F}"
 EndProject

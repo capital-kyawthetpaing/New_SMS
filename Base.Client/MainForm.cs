@@ -1861,15 +1861,6 @@ namespace Base.Client
         {
 
             IsmaxTabIndex(e, ActiveControl);
-            //IsmaxTab(e);
-            //if (ActiveControl is CKM_TextBox)
-            //{
-            //    var f = (ActiveControl as CKM_TextBox);
-            //    var gt = f.TabIndex;
-            //}
-
-
-
             if (e.KeyCode == Keys.F12)
             {
                 if (ActiveControl is UserControl)
@@ -1892,11 +1883,11 @@ namespace Base.Client
                         return;
                 }
             }
-            if (e.KeyCode == Keys.Menu)
+            if (e.KeyCode == Keys.Menu || e.KeyCode == Keys.ProcessKey)
             {
                 return;
             }
-            if (e.KeyCode == Keys.Enter  )
+            if (e.KeyCode == Keys.Enter)
             {
                 if (ActiveControl is CKM_TextBox)
                 {
@@ -1957,19 +1948,30 @@ namespace Base.Client
                         else    /// Just a While  Wait not Confirm by PTK  For (Alt+Enter)  Link to Multiline_Textbox
                         {
                             (ActiveControl as CKM_MultiLineTextBox).Focus();
-                           // (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
+                            // (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
                         }
                     }
                     else if (f == g)
                     {
-                        if (!con.Mdea)
+                        // var d = PreviousCtrl;
+                        if (!con.Mdea && !con.F_focus)
                         {
                             this.SelectNextControl(ActiveControl, true, true, true, true);
+
                         }
                         else
+                        {
                             con.Mdea = false;
+                        }
                     }
+                    else
+                    {
+
+                    }
+
+
                 }
+            
                 else if ((ActiveControl is TextBox))
                 {
                     if ((ActiveControl as TextBox).Multiline)
@@ -1988,8 +1990,8 @@ namespace Base.Client
                 }
                 else
                 {
-
-                    this.SelectNextControl(ActiveControl, true, true, true, true);
+                    //CheckBoxやRadioButtonのフォーカス移動を自動にされると制御できないため　2020/5/25
+                    //this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
             }
          

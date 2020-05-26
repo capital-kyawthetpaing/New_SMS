@@ -161,12 +161,14 @@ namespace HacchuuShouninNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;

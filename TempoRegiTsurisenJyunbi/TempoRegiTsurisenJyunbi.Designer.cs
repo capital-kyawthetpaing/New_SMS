@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
+            this.txtDate = new CKM_Controls.CKM_TextBox();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.Remark = new CKM_Controls.CKM_MultiLineTextBox();
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.DepositGaku = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
-            this.txtDate = new CKM_Controls.CKM_TextBox();
-            this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,6 +52,66 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1713, 818);
             this.panel5.TabIndex = 1;
+            // 
+            // ckmShop_Label3
+            // 
+            this.ckmShop_Label3.AutoSize = true;
+            this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label3.ForeColor = System.Drawing.Color.Black;
+            this.ckmShop_Label3.Location = new System.Drawing.Point(449, 84);
+            this.ckmShop_Label3.Name = "ckmShop_Label3";
+            this.ckmShop_Label3.Size = new System.Drawing.Size(607, 35);
+            this.ckmShop_Label3.TabIndex = 7;
+            this.ckmShop_Label3.Text = "この日の開店時のレジ内釣銭金です";
+            this.ckmShop_Label3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
+            this.ckmShop_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtDate
+            // 
+            this.txtDate.AllowMinus = false;
+            this.txtDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtDate.BackColor = System.Drawing.Color.White;
+            this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDate.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtDate.DecimalPlace = 0;
+            this.txtDate.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtDate.IntegerPart = 0;
+            this.txtDate.IsCorrectDate = true;
+            this.txtDate.isEnterKeyDown = false;
+            this.txtDate.isMaxLengthErr = false;
+            this.txtDate.IsNumber = true;
+            this.txtDate.IsShop = false;
+            this.txtDate.Length = 10;
+            this.txtDate.Location = new System.Drawing.Point(258, 79);
+            this.txtDate.MaxLength = 10;
+            this.txtDate.MoveNext = true;
+            this.txtDate.Name = "txtDate";
+            this.txtDate.Size = new System.Drawing.Size(188, 42);
+            this.txtDate.TabIndex = 0;
+            this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDate_KeyDown);
+            // 
+            // ckmShop_Label2
+            // 
+            this.ckmShop_Label2.AutoSize = true;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.Location = new System.Drawing.Point(130, 83);
+            this.ckmShop_Label2.Name = "ckmShop_Label2";
+            this.ckmShop_Label2.Size = new System.Drawing.Size(125, 35);
+            this.ckmShop_Label2.TabIndex = 5;
+            this.ckmShop_Label2.Text = "日　付";
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
+            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Remark
             // 
@@ -131,61 +191,6 @@
             this.ckmShop_Label1.Text = "釣銭準備額\t\t\t\t\t\t\t";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckmShop_Label2
-            // 
-            this.ckmShop_Label2.AutoSize = true;
-            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label2.Location = new System.Drawing.Point(130, 83);
-            this.ckmShop_Label2.Name = "ckmShop_Label2";
-            this.ckmShop_Label2.Size = new System.Drawing.Size(125, 35);
-            this.ckmShop_Label2.TabIndex = 5;
-            this.ckmShop_Label2.Text = "日　付";
-            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
-            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtDate
-            // 
-            this.txtDate.AllowMinus = false;
-            this.txtDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDate.ClientColor = System.Drawing.SystemColors.Window;
-            this.txtDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtDate.DecimalPlace = 0;
-            this.txtDate.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.txtDate.IntegerPart = 0;
-            this.txtDate.IsCorrectDate = true;
-            this.txtDate.isEnterKeyDown = false;
-            this.txtDate.isMaxLengthErr = false;
-            this.txtDate.IsNumber = true;
-            this.txtDate.IsShop = false;
-            this.txtDate.Length = 10;
-            this.txtDate.Location = new System.Drawing.Point(258, 79);
-            this.txtDate.MaxLength = 10;
-            this.txtDate.MoveNext = true;
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(188, 42);
-            this.txtDate.TabIndex = 6;
-            this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
-            // 
-            // ckmShop_Label3
-            // 
-            this.ckmShop_Label3.AutoSize = true;
-            this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.ckmShop_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label3.Location = new System.Drawing.Point(449, 84);
-            this.ckmShop_Label3.Name = "ckmShop_Label3";
-            this.ckmShop_Label3.Size = new System.Drawing.Size(607, 35);
-            this.ckmShop_Label3.TabIndex = 7;
-            this.ckmShop_Label3.Text = "この日の開店時のレジ内釣銭金です";
-            this.ckmShop_Label3.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
-            this.ckmShop_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // frmTempoRegiTsurisenJyunbi
             // 

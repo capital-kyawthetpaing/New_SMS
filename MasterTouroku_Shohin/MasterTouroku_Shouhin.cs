@@ -1032,7 +1032,7 @@ namespace MasterTouroku_Shouhin
                     break;
 
                 case (int)EIndex.SaleStartDate:
-                    case(int)EIndex.WebStartDate:
+                case(int)EIndex.WebStartDate:
                 case (int)EIndex.LastInstructionsDate:
                 case (int)EIndex.ApprovalDate:
                     //入力無くても良い(It is not necessary to input)
@@ -1159,6 +1159,7 @@ namespace MasterTouroku_Shouhin
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                         return false;
                     }
                     break;
@@ -2287,7 +2288,12 @@ namespace MasterTouroku_Shouhin
                         {
                             InitGrid();
                         }
-                        if (detailControls.Length - 1 > index)
+
+                        if((index>=(int)EIndex.LastInstructionsNO && index <= (int)EIndex.WebAddress) || index.Equals((int)EIndex.LastCatalogText))
+                        {
+                            //MultiLineのフォーカス移動はMovenextプロパティにて処理する
+                        }
+                        else if (detailControls.Length - 1 > index)
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();

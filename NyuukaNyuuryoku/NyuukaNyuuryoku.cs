@@ -2052,6 +2052,7 @@ namespace NyuukaNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSoukoName.MoveNext = false;
                         return false;
                     }
                     ////[M_Souko_Select]

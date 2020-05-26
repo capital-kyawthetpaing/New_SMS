@@ -836,6 +836,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -949,12 +951,14 @@ namespace ZaikoIdouIraiNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1330,12 +1334,16 @@ namespace ZaikoIdouIraiNyuuryoku
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
+                            ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
                         }
                         if (!CheckDependsOnDate(index))
+                        {
+                            ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             return false;
+                        }
                     }
                     break;
 
