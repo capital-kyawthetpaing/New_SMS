@@ -14,5 +14,6 @@ namespace Entity
         public string BankName { get; set; }
         public string BankKana { get; set; }
         public string Remarks { get; set; }
+        public string ChangeDate { get; set; }
     }
 }
