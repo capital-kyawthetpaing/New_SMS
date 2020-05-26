@@ -177,6 +177,7 @@
     <Content Include="StoreProcedure\D_Purchase_Select.sql" />
     <Content Include="StoreProcedure\D_Purchase_SelectData.sql" />
     <Content Include="StoreProcedure\D_Purchase_SelectDataF.sql" />
+    <Content Include="StoreProcedure\D_Purchase_Update.sql" />
     <Content Include="StoreProcedure\D_RakutenChangeReason_Insert.sql" />
     <Content Include="StoreProcedure\D_RakutenCoupon_Insert.sql" />
     <Content Include="StoreProcedure\D_RakutenJuchuuDetails_Insert.sql" />
