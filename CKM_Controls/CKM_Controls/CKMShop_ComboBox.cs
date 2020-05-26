@@ -45,6 +45,7 @@ namespace CKM_Controls
             両替元額,
             店舗名,
             金種名,
+            金種名1,
             倉庫,
             入金方法,
             入荷倉庫
@@ -503,6 +504,11 @@ namespace CKM_Controls
                     DenominationKBN_BL dbl = new DenominationKBN_BL();
                     DataTable dtdeno = dbl.SimpleSelect1("35");
                     BindCombo("DenominationCD", "DenominationName", dtdeno);
+                    break;
+                case CboType.金種名1:
+                    DenominationKBN_BL dbl1 = new DenominationKBN_BL();
+                    DataTable dtdeno1 = dbl1.SimpleSelect1("63");
+                    BindCombo("DenominationCD", "DenominationName", dtdeno1);
                     break;
                 case CboType.倉庫:
                     Search_Souko_BL msbl = new Search_Souko_BL();

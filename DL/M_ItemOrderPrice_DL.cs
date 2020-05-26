@@ -25,6 +25,17 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-    }
+
+        public DataTable M_ItemOrderPrice_Insert(M_ItemOrderPrice_Entity mi)
+        {
+            string sp = "M_ItemOrderPrice_Insert";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.VendorCD } },
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.StoreCD } },
+            };
+            return SelectData(dic, sp);
+        }
+    } 
 
 }

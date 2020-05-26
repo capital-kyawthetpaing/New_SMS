@@ -61,7 +61,7 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1713, 833);
+            this.panelDetail.Size = new System.Drawing.Size(1913, 833);
             this.panelDetail.TabIndex = 0;
             // 
             // chkAdvanceFlg
@@ -175,6 +175,7 @@
             this.txtRemarks.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.Green;
             this.txtRemarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtRemarks.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtRemarks.F_focus = false;
             this.txtRemarks.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtRemarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarks.Length = 200;
@@ -295,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.panelDetail);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "TempoRegiNyuukinNyuuryoku";

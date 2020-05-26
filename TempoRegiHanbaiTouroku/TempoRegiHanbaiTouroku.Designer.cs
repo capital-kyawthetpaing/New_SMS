@@ -1754,7 +1754,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1870, 961);
             this.Controls.Add(this.lblKeijobi);
             this.Controls.Add(this.btnTanka);
             this.Controls.Add(this.btnGenkin);

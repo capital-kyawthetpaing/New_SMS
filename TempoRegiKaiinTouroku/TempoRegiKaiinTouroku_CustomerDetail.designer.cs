@@ -267,9 +267,9 @@
             this.panel5.Controls.Add(this.txtFirstName);
             this.panel5.Controls.Add(this.txtLastName);
             this.panel5.Controls.Add(this.ckmShop_Label4);
-            this.panel5.Location = new System.Drawing.Point(17, 280);
+            this.panel5.Location = new System.Drawing.Point(-1, 280);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1940, 600);
+            this.panel5.Size = new System.Drawing.Size(1920, 600);
             this.panel5.TabIndex = 1;
             // 
             // txtTelNo1
@@ -1168,7 +1168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.lblCustomerNo);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.PanelDelete);
