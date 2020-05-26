@@ -57,7 +57,7 @@ namespace ShukkaShoukai
         public void BindCombo()
         {
             cboWarehouse.Bind(string.Empty,"");
-            cboWarehouse.SelectedValue = SoukoCD;
+            //cboWarehouse.SelectedValue = SoukoCD;
             cboShipping.Bind(string.Empty,"");
             cboDestinationWarehouse.Bind(string.Empty,"");
         }
