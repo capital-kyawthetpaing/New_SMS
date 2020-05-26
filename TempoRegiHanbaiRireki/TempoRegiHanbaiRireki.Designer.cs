@@ -167,7 +167,7 @@
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label1.Location = new System.Drawing.Point(12, 106);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(12, 107);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(200, 43);
             this.ckmShop_Label1.TabIndex = 3;
@@ -183,7 +183,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(981, 112);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(978, 111);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(200, 35);
             this.ckmShop_Label12.TabIndex = 37;
@@ -2005,7 +2005,7 @@
             // lblGyoSelect9
             // 
             this.lblGyoSelect9.Controls.Add(this.lblDtGyo9);
-            this.lblGyoSelect9.Location = new System.Drawing.Point(-1, 471);
+            this.lblGyoSelect9.Location = new System.Drawing.Point(1, 462);
             this.lblGyoSelect9.Name = "lblGyoSelect9";
             this.lblGyoSelect9.Size = new System.Drawing.Size(1031, 80);
             this.lblGyoSelect9.TabIndex = 157;
@@ -2106,7 +2106,7 @@
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(200, 42);
+            this.txtCustomerNo.Size = new System.Drawing.Size(205, 42);
             this.txtCustomerNo.TabIndex = 0;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -2202,13 +2202,12 @@
             this.lblCusName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCusName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCusName.ForeColor = System.Drawing.Color.Black;
-            this.lblCusName.Location = new System.Drawing.Point(420, 109);
+            this.lblCusName.Location = new System.Drawing.Point(425, 107);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(550, 60);
             this.lblCusName.TabIndex = 77;
             this.lblCusName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.lblCusName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblCusName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // TempoRegiHanbaiRireki
             // 
