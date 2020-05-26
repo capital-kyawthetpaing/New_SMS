@@ -38,6 +38,15 @@ namespace DL
             return SelectData(dic, "M_Bank_Select");
         }
 
+        public DataTable M_Bank_ChangeDate_Select(M_Bank_Entity mbe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@BankCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mbe.BankCD } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mbe.ChangeDate } }
+            };
+            return SelectData(dic, "M_Bank_ChangeDate_Select");
+        }
         public DataTable M_Ginkou_Select(M_Ginkou_Entity mge)
         {
 
