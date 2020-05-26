@@ -2562,8 +2562,9 @@ namespace TempoJuchuuNyuuryoku
                         ChangeDate = ymd
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce, 1);
-                   
+                    //ret = sbl.M_Customer_Select(mce, 1);
+                    ret = sbl.M_Customer_Select(mce);
+
                     if (ret)
                     {
                         if (mce.DeleteFlg == "1")
