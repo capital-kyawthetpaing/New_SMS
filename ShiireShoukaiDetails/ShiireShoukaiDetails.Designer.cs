@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -78,6 +77,8 @@
             this.cboStore = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
+            this.scStaffCD = new Search.CKM_SearchControl();
+            this.scMakerCD = new Search.CKM_SearchControl();
             this.sc_Supplier = new CKM_Controls.CKM_Label();
             this.lblPayStatus = new CKM_Controls.CKM_Label();
             this.txtOrderDate2 = new CKM_Controls.CKM_TextBox();
@@ -91,8 +92,6 @@
             this.lblplanDate = new CKM_Controls.CKM_Label();
             this.txtPurchaseDate1 = new CKM_Controls.CKM_TextBox();
             this.lblSupplierDate = new CKM_Controls.CKM_Label();
-            this.scStaffCD = new Search.CKM_SearchControl();
-            this.scMakerCD = new Search.CKM_SearchControl();
             this.scItem = new Search.CKM_SearchControl();
             this.scSkuCD = new Search.CKM_SearchControl();
             this.scJanCD = new Search.CKM_SearchControl();
@@ -143,7 +142,7 @@
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -176,14 +175,6 @@
             this.PaymentPlanDate,
             this.PayConfirmFinishedDate,
             this.DeliveryNo});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
@@ -624,6 +615,65 @@
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // scStaffCD
+            // 
+            this.scStaffCD.AutoSize = true;
+            this.scStaffCD.ChangeDate = "";
+            this.scStaffCD.ChangeDateWidth = 100;
+            this.scStaffCD.Code = "";
+            this.scStaffCD.CodeWidth = 70;
+            this.scStaffCD.CodeWidth1 = 70;
+            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaffCD.DataCheck = false;
+            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.IsCopy = false;
+            this.scStaffCD.LabelText = "";
+            this.scStaffCD.LabelVisible = true;
+            this.scStaffCD.Location = new System.Drawing.Point(484, 32);
+            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.NameWidth = 250;
+            this.scStaffCD.SearchEnable = true;
+            this.scStaffCD.Size = new System.Drawing.Size(354, 27);
+            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaffCD.TabIndex = 15;
+            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaffCD.UseChangeDate = false;
+            this.scStaffCD.Value1 = null;
+            this.scStaffCD.Value2 = null;
+            this.scStaffCD.Value3 = null;
+            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
+            // 
+            // scMakerCD
+            // 
+            this.scMakerCD.AutoSize = true;
+            this.scMakerCD.ChangeDate = "";
+            this.scMakerCD.ChangeDateWidth = 100;
+            this.scMakerCD.Code = "";
+            this.scMakerCD.CodeWidth = 130;
+            this.scMakerCD.CodeWidth1 = 130;
+            this.scMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scMakerCD.DataCheck = false;
+            this.scMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scMakerCD.IsCopy = false;
+            this.scMakerCD.LabelText = "";
+            this.scMakerCD.LabelVisible = true;
+            this.scMakerCD.Location = new System.Drawing.Point(484, 7);
+            this.scMakerCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scMakerCD.Name = "scMakerCD";
+            this.scMakerCD.NameWidth = 280;
+            this.scMakerCD.SearchEnable = true;
+            this.scMakerCD.Size = new System.Drawing.Size(444, 27);
+            this.scMakerCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.scMakerCD.TabIndex = 13;
+            this.scMakerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scMakerCD.UseChangeDate = false;
+            this.scMakerCD.Value1 = null;
+            this.scMakerCD.Value2 = null;
+            this.scMakerCD.Value3 = null;
+            this.scMakerCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sc_SupplierName_CodeKeyDownEvent);
+            this.scMakerCD.Enter += new System.EventHandler(this.scMakerCD_Enter);
+            // 
             // sc_Supplier
             // 
             this.sc_Supplier.AutoSize = true;
@@ -907,65 +957,6 @@
             this.lblSupplierDate.Text = "仕入日";
             this.lblSupplierDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblSupplierDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // scStaffCD
-            // 
-            this.scStaffCD.AutoSize = true;
-            this.scStaffCD.ChangeDate = "";
-            this.scStaffCD.ChangeDateWidth = 100;
-            this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 70;
-            this.scStaffCD.CodeWidth1 = 70;
-            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaffCD.DataCheck = false;
-            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaffCD.IsCopy = false;
-            this.scStaffCD.LabelText = "";
-            this.scStaffCD.LabelVisible = true;
-            this.scStaffCD.Location = new System.Drawing.Point(484, 32);
-            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaffCD.Name = "scStaffCD";
-            this.scStaffCD.NameWidth = 250;
-            this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(354, 27);
-            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaffCD.TabIndex = 15;
-            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaffCD.UseChangeDate = false;
-            this.scStaffCD.Value1 = null;
-            this.scStaffCD.Value2 = null;
-            this.scStaffCD.Value3 = null;
-            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
-            // 
-            // scMakerCD
-            // 
-            this.scMakerCD.AutoSize = true;
-            this.scMakerCD.ChangeDate = "";
-            this.scMakerCD.ChangeDateWidth = 100;
-            this.scMakerCD.Code = "";
-            this.scMakerCD.CodeWidth = 130;
-            this.scMakerCD.CodeWidth1 = 130;
-            this.scMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scMakerCD.DataCheck = false;
-            this.scMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scMakerCD.IsCopy = false;
-            this.scMakerCD.LabelText = "";
-            this.scMakerCD.LabelVisible = true;
-            this.scMakerCD.Location = new System.Drawing.Point(484, 7);
-            this.scMakerCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scMakerCD.Name = "scMakerCD";
-            this.scMakerCD.NameWidth = 280;
-            this.scMakerCD.SearchEnable = true;
-            this.scMakerCD.Size = new System.Drawing.Size(444, 27);
-            this.scMakerCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scMakerCD.TabIndex = 13;
-            this.scMakerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scMakerCD.UseChangeDate = false;
-            this.scMakerCD.Value1 = null;
-            this.scMakerCD.Value2 = null;
-            this.scMakerCD.Value3 = null;
-            this.scMakerCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sc_SupplierName_CodeKeyDownEvent);
-            this.scMakerCD.Enter += new System.EventHandler(this.scMakerCD_Enter);
             // 
             // scItem
             // 
