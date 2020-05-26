@@ -56,49 +56,7 @@ namespace MasterTouroku_ShiireTanka
 
             }
         }
-        private bool ErrorCheck()
-        {
-            if (String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
-            {
-                bbl.ShowMessage("E102");
-                shiiresaki.Focus();
-                return false;
-            }
-            else
-            {
-                if (shiiresaki.IsExists(2))
-                {
-                    {
-                        bbl.ShowMessage("E102");
-                        shiiresaki.Focus();
-                        return false;
-                    }
-                }
-            }
-           
-            if(string.IsNullOrEmpty(TB_Changedate.Text))
-            {
-                bbl.ShowMessage("E102");
-                TB_Changedate.Focus();
-                return false;
-            }
-            
-            if(RB_koten.Checked == true )  
-            {
-                if(String.IsNullOrEmpty(CB_store.Text))
-                {
-                    bbl.ShowMessage("E102");
-                }
-                if (!base.CheckAvailableStores(CB_store.SelectedValue.ToString()))
-                {
-                    bbl.ShowMessage("E141");
-                    CB_store.Focus();
-                    cb_focus = true;
-                    return false;
-                }
-            }
-            return true;
-        }
+       
         protected override void EndSec()
         {
             this.Close();
@@ -199,7 +157,22 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
+        private void makershohin_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if(makershohin.SelectData())
+                {
+                    makershohin.Value1 = makershohin.TxtCode.Text;
+                    makershohin.Value2 = makershohin.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    makershohin.SetFocus(1);
+                }
+            }
+        }
         private void brandC_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -254,20 +227,124 @@ namespace MasterTouroku_ShiireTanka
                     segmentC.SetFocus(1);
                 }
             }
+            
         }
 
         private void segmentC_Enter(object sender, EventArgs e)
         {
             segmentC.Value1 = "203";
         }
+        private void makershohinC_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                if(makershohinC.SelectData())
+                {
+                    makershohinC.Value1 = makershohinC.TxtCode.Text;
+                    makershohinC.Value2 = makershohinC.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    makershohinC.SetFocus(1);
+                }
+            }
+
+        }
         #endregion
+
+
+        private bool ErrorCheck()
+        {
+            if (String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+            {
+                bbl.ShowMessage("E102");
+                shiiresaki.Focus();
+                return false;
+            }
+            if (!shiiresaki.IsExists(2))
+            {
+                {
+                    bbl.ShowMessage("E101");
+                    shiiresaki.Focus();
+                    return false;
+                }
+            }
+            if (string.IsNullOrEmpty(TB_Changedate.Text))
+            {
+                bbl.ShowMessage("E102");
+                TB_Changedate.Focus();
+                return false;
+            }
+            if (RB_koten.Checked == true)
+            {
+                if (String.IsNullOrEmpty(CB_store.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    CB_store.Focus();
+                    cb_focus = true;
+                    return false;
+
+                }
+                if (!base.CheckAvailableStores(CB_store.SelectedValue.ToString()))
+                {
+                    bbl.ShowMessage("E141");
+                    CB_store.Focus();
+                    cb_focus = true;
+                    return false;
+                }
+            }
+            if (!String.IsNullOrEmpty(makershohin.TxtCode.Text))
+            {
+                if (!makershohin.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    makershohin.Focus();
+                    return false;
+                }
+            }
+            if (string.IsNullOrEmpty(itemcd.TxtCode.Text))
+            {
+                bbl.ShowMessage("E102");
+                itemcd.SetFocus(1);
+                return false;
+            }
+            if(string.IsNullOrEmpty(TB_date_add.Text))
+            {
+                bbl.ShowMessage("E102");
+                TB_date_add.Focus();
+                return false;
+
+            }
+            if (string.IsNullOrEmpty(TB_rate.Text))
+            {
+                bbl.ShowMessage("E102");
+                TB_rate.Focus();
+                return false;
+            }
+            if (string.IsNullOrEmpty(TB_orderprice.Text))
+            {
+                bbl.ShowMessage("E102");
+                TB_orderprice.Focus();
+                return false;
+            }
+            if (!String.IsNullOrEmpty(makershohinC.TxtCode.Text))
+            {
+                if (!makershohinC.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    makershohinC.SetFocus(1);
+                    return false;
+                }
+            }
+            return true;
+        }
         private void F11()
         {
-            if(ErrorCheck())
+            if(!ErrorCheck())
             {
 
             }
-
         }
         private void Clear()
         {
@@ -298,7 +375,6 @@ namespace MasterTouroku_ShiireTanka
             TB_rate_E.Text = string.Empty;
             
         }
-
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
             if (RB_koten.Checked == true)
@@ -311,7 +387,6 @@ namespace MasterTouroku_ShiireTanka
             }
 
         }
-
         private void CB_store_KeyDown(object sender, KeyEventArgs e)
         {
             if (RB_koten.Checked == true)
