@@ -118,6 +118,7 @@
             this.Remark.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.Remark.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.Remark.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.Remark.F_focus = false;
             this.Remark.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.Remark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.Remark.Length = 200;
@@ -196,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.panel5);
             this.Name = "frmTempoRegiTsurisenJyunbi";
             this.Text = "店舗レジ 釣銭準備入力";

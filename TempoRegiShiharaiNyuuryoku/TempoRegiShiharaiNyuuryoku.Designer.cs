@@ -117,6 +117,7 @@
             this.txtRemarks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.txtRemarks.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRemarks.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtRemarks.F_focus = false;
             this.txtRemarks.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtRemarks.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtRemarks.Length = 200;
@@ -137,7 +138,7 @@
             this.cboDenominationName.Alignment = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cboDenominationName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboDenominationName.Cbo_Type = CKM_Controls.CKMShop_ComboBox.CboType.金種名;
+            this.cboDenominationName.Cbo_Type = CKM_Controls.CKMShop_ComboBox.CboType.金種名1;
             this.cboDenominationName.cboalign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.ComboAlign = CKM_Controls.CKMShop_ComboBox.Align.right;
             this.cboDenominationName.Ctrl_Byte = CKM_Controls.CKMShop_ComboBox.Bytes.半全角;
