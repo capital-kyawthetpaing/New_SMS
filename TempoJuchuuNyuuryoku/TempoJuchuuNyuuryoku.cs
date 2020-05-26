@@ -1995,6 +1995,7 @@ namespace TempoJuchuuNyuuryoku
                         //明細にデータをセット
                         string ymd = bbl.GetDate();
                         detailControls[(int)EIndex.JuchuuDate].Text = ymd;
+                        mOldJyuchuDate = ymd;
 
                         //[M_Souko_Select]
                         M_Souko_Entity me = new M_Souko_Entity
@@ -2562,8 +2563,9 @@ namespace TempoJuchuuNyuuryoku
                         ChangeDate = ymd
                     };
                     Customer_BL sbl = new Customer_BL();
-                    ret = sbl.M_Customer_Select(mce, 1);
-                   
+                    //ret = sbl.M_Customer_Select(mce, 1);
+                    ret = sbl.M_Customer_Select(mce);
+
                     if (ret)
                     {
                         if (mce.DeleteFlg == "1")
@@ -2601,6 +2603,7 @@ namespace TempoJuchuuNyuuryoku
                                     if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
                                     {
                                         detailControls[index + 1].Enabled = true;
+                                        detailControls[index + 3].Enabled = true;
                                     }
                                     detailControls[index + 3].Text = "";
                                     textBox1.Text = mce.RemarksInStore;
@@ -2614,6 +2617,7 @@ namespace TempoJuchuuNyuuryoku
                                     detailControls[index + 1].Text = mce.CustomerName;
                                     detailControls[index + 1].Enabled = false;
                                     detailControls[index + 3].Text = "";
+                                    detailControls[index + 3].Enabled = false;
                                     textBox1.Text = mce.RemarksInStore;
                                     textBox2.Text = mce.RemarksOutStore;
                                     lblLastSalesDate.Text = mce.LastSalesDate;
@@ -2712,6 +2716,7 @@ namespace TempoJuchuuNyuuryoku
                                     if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
                                     {
                                         detailControls[index + 1].Enabled = true;
+                                        detailControls[index + 3].Enabled = true;
                                     }
                                     detailControls[index + 3].Text = "";                                    
                                 }
@@ -2720,6 +2725,7 @@ namespace TempoJuchuuNyuuryoku
                                     detailControls[index + 1].Text = mce.CustomerName;
                                     detailControls[index + 1].Enabled = false;
                                     detailControls[index + 3].Text = "";
+                                    detailControls[index + 3].Enabled = false;
                                 }
                                 //敬称
                                 if (mce.AliasKBN == "1")
@@ -3791,9 +3797,20 @@ namespace TempoJuchuuNyuuryoku
                     case 3:
                         {
                             // 明細部
-                            foreach (Control ctl in detailControls)
+                            for (int idx = 0; idx < (int)EIndex.COUNT; idx++)
                             {
-                                ctl.Enabled = Kbn == 0 ? true : false;
+                                switch (idx)
+                                {
+                                    case (int)EIndex.CustomerName:
+                                    case (int)EIndex.CustomerName2:
+                                    case (int)EIndex.DeliveryName:
+                                    case (int)EIndex.DeliveryName2:
+                                        break;
+                                    default:
+                                        detailControls[idx].Enabled = Kbn == 0 ? true : false;
+                                        break;
+                                }
+
                             }
                             for (int index = 0; index < searchButtons.Length; index++)
                                 searchButtons[index].Enabled = Kbn == 0 ? true : false;
@@ -4000,7 +4017,7 @@ namespace TempoJuchuuNyuuryoku
                                 detailControls[(int)EIndex.JuchuuDate].Focus();
                             }
                         }
-                        else if (index == (int)EIndex.CopyJuchuuNO)
+                        else if (index == (int)EIndex.CopyJuchuuNO || index == (int)EIndex.MitsumoriNO)
                         {
                             detailControls[(int)EIndex.JuchuuDate].Focus();
                         }
