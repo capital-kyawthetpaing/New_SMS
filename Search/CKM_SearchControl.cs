@@ -1538,7 +1538,7 @@ namespace Search
                 case SearchType.ItemMulti:
                     using (Search_Product frmMakerItem = new Search_Product(changedate))
                     {
-                        frmMakerItem.Mode = "3";
+                        frmMakerItem.Mode = "1";
                         frmMakerItem.MakerItem = txtCode.Text;
 
 

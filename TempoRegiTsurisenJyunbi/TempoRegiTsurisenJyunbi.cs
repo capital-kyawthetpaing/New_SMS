@@ -63,7 +63,7 @@ namespace TempoRegiTsurisenJyunbi
             DateTime tomorrow = DateTime.Now.AddDays(1);
             txtDate.Text = tomorrow.Date.ToString("yyyy/MM/dd");
         }
-        public bool CheckMonth()
+        public bool CheckDate()
         {
             string ymd = bbl.GetDate();
             //txtDate.Text = ymd;
@@ -180,7 +180,7 @@ namespace TempoRegiTsurisenJyunbi
                 }
                 else
                 {
-                    CheckMonth();
+                    CheckDate();
                 }
             }
         }
