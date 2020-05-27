@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
@@ -47,7 +48,7 @@
             this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCarrierLeadDay = new SMS.CustomControls.DataGridViewDecimalColumn();
+            this.colCarrierLeadDay = new SMS.CustomControls.dgvInventoryColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -121,18 +122,20 @@
             this.colAdd2,
             this.colCarrier,
             this.colCarrierLeadDay});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvYuubinBangou.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvYuubinBangou.Location = new System.Drawing.Point(23, 17);
             this.dgvYuubinBangou.Name = "dgvYuubinBangou";
+            this.dgvYuubinBangou.RowHeight_ = 20;
+            this.dgvYuubinBangou.RowTemplate.Height = 20;
             this.dgvYuubinBangou.Size = new System.Drawing.Size(1750, 750);
             this.dgvYuubinBangou.TabIndex = 0;
             this.dgvYuubinBangou.UseRowNo = true;
@@ -354,13 +357,15 @@
             // colCarrierLeadDay
             // 
             this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
-            this.colCarrierLeadDay.DecimalPlace = ((byte)(0));
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.colCarrierLeadDay.DefaultCellStyle = dataGridViewCellStyle3;
             this.colCarrierLeadDay.HeaderText = "日数";
-            this.colCarrierLeadDay.MaxInputLength = 3;
+            this.colCarrierLeadDay.MaxInputLength = 32767;
             this.colCarrierLeadDay.Name = "colCarrierLeadDay";
             this.colCarrierLeadDay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCarrierLeadDay.UseMinus = false;
-            this.colCarrierLeadDay.UseThousandSeparator = false;
+            this.colCarrierLeadDay.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colCarrierLeadDay.UseThousandSeparator = true;
             this.colCarrierLeadDay.Width = 50;
             // 
             // frmMasterTouroku_YuubinBangou
@@ -405,7 +410,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
         private System.Windows.Forms.DataGridViewComboBoxColumn colCarrier;
-        private SMS.CustomControls.DataGridViewDecimalColumn colCarrierLeadDay;
+        private SMS.CustomControls.dgvInventoryColumn colCarrierLeadDay;
     }
 }
 

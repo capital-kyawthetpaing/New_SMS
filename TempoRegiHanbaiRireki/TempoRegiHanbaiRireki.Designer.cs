@@ -914,7 +914,7 @@
             this.lblStoreName2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreName2.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreName2.Location = new System.Drawing.Point(64, 40);
+            this.lblStoreName2.Location = new System.Drawing.Point(67, 40);
             this.lblStoreName2.Name = "lblStoreName2";
             this.lblStoreName2.Size = new System.Drawing.Size(530, 30);
             this.lblStoreName2.TabIndex = 72;
