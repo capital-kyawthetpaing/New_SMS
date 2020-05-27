@@ -30,9 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDisplay = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
             this.dgvYuubinBangou = new CKM_Controls.CKM_GridView();
+            this.colZipCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colCarrierLeadDay = new SMS.CustomControls.dgvInventoryColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtZip2To = new CKM_Controls.CKM_TextBox();
@@ -41,12 +48,6 @@
             this.txtZip1from = new CKM_Controls.CKM_TextBox();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.colZipCD1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colZipCD2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCarrierLeadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.PanelDetail.SuspendLayout();
@@ -122,16 +123,72 @@
             this.colCarrierLeadDay});
             this.dgvYuubinBangou.EnableHeadersVisualStyles = false;
             this.dgvYuubinBangou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvYuubinBangou.Location = new System.Drawing.Point(14, 17);
+            this.dgvYuubinBangou.Location = new System.Drawing.Point(23, 17);
             this.dgvYuubinBangou.Name = "dgvYuubinBangou";
+            this.dgvYuubinBangou.RowHeight_ = 20;
+            this.dgvYuubinBangou.RowTemplate.Height = 20;
             this.dgvYuubinBangou.Size = new System.Drawing.Size(1750, 750);
             this.dgvYuubinBangou.TabIndex = 0;
             this.dgvYuubinBangou.UseRowNo = true;
             this.dgvYuubinBangou.UseSetting = true;
             this.dgvYuubinBangou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvYuubinBangou_CellEndEdit);
             this.dgvYuubinBangou.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvYuubinBangou_CellPainting);
+            this.dgvYuubinBangou.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvYuubinBangou_DataError);
             this.dgvYuubinBangou.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvYuubinBangou_EditingControlShowing);
             this.dgvYuubinBangou.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvYuubinBangou_Paint);
+            // 
+            // colZipCD1
+            // 
+            this.colZipCD1.DataPropertyName = "ZipCD1";
+            this.colZipCD1.HeaderText = "郵便番号";
+            this.colZipCD1.MaxInputLength = 3;
+            this.colZipCD1.Name = "colZipCD1";
+            this.colZipCD1.Width = 40;
+            // 
+            // colZipCD2
+            // 
+            this.colZipCD2.DataPropertyName = "ZipCD2";
+            this.colZipCD2.HeaderText = "";
+            this.colZipCD2.MaxInputLength = 4;
+            this.colZipCD2.Name = "colZipCD2";
+            this.colZipCD2.Width = 50;
+            // 
+            // colAdd1
+            // 
+            this.colAdd1.DataPropertyName = "Address1";
+            this.colAdd1.HeaderText = "住所1";
+            this.colAdd1.MaxInputLength = 80;
+            this.colAdd1.Name = "colAdd1";
+            this.colAdd1.Width = 700;
+            // 
+            // colAdd2
+            // 
+            this.colAdd2.DataPropertyName = "Address2";
+            this.colAdd2.HeaderText = "住所2";
+            this.colAdd2.MaxInputLength = 80;
+            this.colAdd2.Name = "colAdd2";
+            this.colAdd2.Width = 700;
+            // 
+            // colCarrier
+            // 
+            this.colCarrier.DataPropertyName = "(none)";
+            this.colCarrier.HeaderText = "奨励運送会社";
+            this.colCarrier.Name = "colCarrier";
+            this.colCarrier.Width = 150;
+            // 
+            // colCarrierLeadDay
+            // 
+            this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = "0";
+            this.colCarrierLeadDay.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colCarrierLeadDay.HeaderText = "日数";
+            this.colCarrierLeadDay.MaxInputLength = 32767;
+            this.colCarrierLeadDay.Name = "colCarrierLeadDay";
+            this.colCarrierLeadDay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCarrierLeadDay.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colCarrierLeadDay.UseThousandSeparator = true;
+            this.colCarrierLeadDay.Width = 50;
             // 
             // panel1
             // 
@@ -303,52 +360,6 @@
             this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // colZipCD1
-            // 
-            this.colZipCD1.DataPropertyName = "ZipCD1";
-            this.colZipCD1.HeaderText = "郵便番号";
-            this.colZipCD1.MaxInputLength = 3;
-            this.colZipCD1.Name = "colZipCD1";
-            this.colZipCD1.Width = 40;
-            // 
-            // colZipCD2
-            // 
-            this.colZipCD2.DataPropertyName = "ZipCD2";
-            this.colZipCD2.HeaderText = "";
-            this.colZipCD2.MaxInputLength = 4;
-            this.colZipCD2.Name = "colZipCD2";
-            this.colZipCD2.Width = 50;
-            // 
-            // colAdd1
-            // 
-            this.colAdd1.DataPropertyName = "Address1";
-            this.colAdd1.HeaderText = "住所1";
-            this.colAdd1.MaxInputLength = 80;
-            this.colAdd1.Name = "colAdd1";
-            this.colAdd1.Width = 700;
-            // 
-            // colAdd2
-            // 
-            this.colAdd2.DataPropertyName = "Address2";
-            this.colAdd2.HeaderText = "住所2";
-            this.colAdd2.MaxInputLength = 80;
-            this.colAdd2.Name = "colAdd2";
-            this.colAdd2.Width = 700;
-            // 
-            // colCarrier
-            // 
-            this.colCarrier.DataPropertyName = "(none)";
-            this.colCarrier.HeaderText = "奨励運送会社";
-            this.colCarrier.Name = "colCarrier";
-            this.colCarrier.Width = 150;
-            // 
-            // colCarrierLeadDay
-            // 
-            this.colCarrierLeadDay.DataPropertyName = "CarrierLeadDay";
-            this.colCarrierLeadDay.HeaderText = "日数";
-            this.colCarrierLeadDay.Name = "colCarrierLeadDay";
-            this.colCarrierLeadDay.Width = 50;
-            // 
             // frmMasterTouroku_YuubinBangou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -391,7 +402,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
         private System.Windows.Forms.DataGridViewComboBoxColumn colCarrier;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierLeadDay;
+        private SMS.CustomControls.dgvInventoryColumn colCarrierLeadDay;
     }
 }
 

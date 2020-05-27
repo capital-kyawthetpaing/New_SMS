@@ -48,8 +48,17 @@ namespace CKM_Controls
         [DisplayName("Row Height")]
         public int RowHeight_
         {
-            get => RowHeight;
-            set => RowHeight = RowTemplate.Height = value;
+            get { return RowHeight; }
+            set { RowHeight = value;
+                RowTemplate.Height = RowHeight;
+                AllowUserToAddRows = false;
+                AllowUserToAddRows = true;
+                this.Refresh();
+                this.RefreshEdit();
+                Invalidate();
+            }
+           
+
         }
 
         MasterTouroku_Souko_BL mtsbl;
