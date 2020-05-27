@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Sc_Item = new Search.CKM_SearchControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
@@ -122,8 +122,6 @@
             this.ckM_TextBox60 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox61 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox62 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label8 = new CKM_Controls.CKM_Label();
-            this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox43 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox44 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox45 = new CKM_Controls.CKM_TextBox();
@@ -140,10 +138,6 @@
             this.ckM_TextBox56 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox57 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox58 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.ckM_Label5 = new CKM_Controls.CKM_Label();
-            this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox33 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox34 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox35 = new CKM_Controls.CKM_TextBox();
@@ -186,6 +180,17 @@
             this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
             this.lblPartNum = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
+            this.Sc_Item = new Search.CKM_SearchControl();
+            this.ckM_Button1 = new CKM_Controls.CKM_Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
@@ -212,34 +217,6 @@
             // PanelSearch
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
-            // 
-            // Sc_Item
-            // 
-            this.Sc_Item.AutoSize = true;
-            this.Sc_Item.ChangeDate = "";
-            this.Sc_Item.ChangeDateWidth = 100;
-            this.Sc_Item.Code = "";
-            this.Sc_Item.CodeWidth = 190;
-            this.Sc_Item.CodeWidth1 = 190;
-            this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_Item.DataCheck = false;
-            this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_Item.IsCopy = false;
-            this.Sc_Item.LabelText = "";
-            this.Sc_Item.LabelVisible = false;
-            this.Sc_Item.Location = new System.Drawing.Point(120, 16);
-            this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_Item.Name = "Sc_Item";
-            this.Sc_Item.NameWidth = 350;
-            this.Sc_Item.SearchEnable = true;
-            this.Sc_Item.Size = new System.Drawing.Size(223, 28);
-            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
-            this.Sc_Item.TabIndex = 2;
-            this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_Item.UseChangeDate = false;
-            this.Sc_Item.Value1 = null;
-            this.Sc_Item.Value2 = null;
-            this.Sc_Item.Value3 = null;
             // 
             // ckM_TextBox1
             // 
@@ -400,6 +377,16 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.label10);
+            this.panelDetail.Controls.Add(this.label9);
+            this.panelDetail.Controls.Add(this.label8);
+            this.panelDetail.Controls.Add(this.label7);
+            this.panelDetail.Controls.Add(this.label6);
+            this.panelDetail.Controls.Add(this.label5);
+            this.panelDetail.Controls.Add(this.label4);
+            this.panelDetail.Controls.Add(this.label3);
+            this.panelDetail.Controls.Add(this.label2);
+            this.panelDetail.Controls.Add(this.ckM_Button1);
             this.panelDetail.Controls.Add(this.ckM_Label12);
             this.panelDetail.Controls.Add(this.ckM_Label9);
             this.panelDetail.Controls.Add(this.ckM_Label11);
@@ -472,8 +459,6 @@
             this.panelDetail.Controls.Add(this.ckM_TextBox60);
             this.panelDetail.Controls.Add(this.ckM_TextBox61);
             this.panelDetail.Controls.Add(this.ckM_TextBox62);
-            this.panelDetail.Controls.Add(this.ckM_Label8);
-            this.panelDetail.Controls.Add(this.ckM_Label7);
             this.panelDetail.Controls.Add(this.ckM_TextBox43);
             this.panelDetail.Controls.Add(this.ckM_TextBox44);
             this.panelDetail.Controls.Add(this.ckM_TextBox45);
@@ -490,10 +475,6 @@
             this.panelDetail.Controls.Add(this.ckM_TextBox56);
             this.panelDetail.Controls.Add(this.ckM_TextBox57);
             this.panelDetail.Controls.Add(this.ckM_TextBox58);
-            this.panelDetail.Controls.Add(this.ckM_Label6);
-            this.panelDetail.Controls.Add(this.ckM_Label5);
-            this.panelDetail.Controls.Add(this.ckM_Label4);
-            this.panelDetail.Controls.Add(this.ckM_Label3);
             this.panelDetail.Controls.Add(this.ckM_TextBox33);
             this.panelDetail.Controls.Add(this.ckM_TextBox34);
             this.panelDetail.Controls.Add(this.ckM_TextBox35);
@@ -553,7 +534,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(449, 555);
+            this.ckM_Label12.Location = new System.Drawing.Point(473, 555);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(105, 12);
             this.ckM_Label12.TabIndex = 151;
@@ -570,7 +551,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(174, 536);
+            this.ckM_Label9.Location = new System.Drawing.Point(198, 536);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label9.TabIndex = 150;
@@ -587,7 +568,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(390, 536);
+            this.ckM_Label11.Location = new System.Drawing.Point(414, 536);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label11.TabIndex = 149;
@@ -604,7 +585,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(322, 536);
+            this.ckM_Label10.Location = new System.Drawing.Point(346, 536);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 148;
@@ -630,7 +611,7 @@
             this.ckM_TextBox125.IsNumber = true;
             this.ckM_TextBox125.IsShop = false;
             this.ckM_TextBox125.Length = 32767;
-            this.ckM_TextBox125.Location = new System.Drawing.Point(376, 551);
+            this.ckM_TextBox125.Location = new System.Drawing.Point(400, 551);
             this.ckM_TextBox125.MoveNext = true;
             this.ckM_TextBox125.Name = "ckM_TextBox125";
             this.ckM_TextBox125.Size = new System.Drawing.Size(70, 19);
@@ -655,7 +636,7 @@
             this.ckM_TextBox124.IsNumber = true;
             this.ckM_TextBox124.IsShop = false;
             this.ckM_TextBox124.Length = 32767;
-            this.ckM_TextBox124.Location = new System.Drawing.Point(307, 551);
+            this.ckM_TextBox124.Location = new System.Drawing.Point(331, 551);
             this.ckM_TextBox124.MoveNext = true;
             this.ckM_TextBox124.Name = "ckM_TextBox124";
             this.ckM_TextBox124.Size = new System.Drawing.Size(70, 19);
@@ -680,7 +661,7 @@
             this.ckM_TextBox123.IsNumber = true;
             this.ckM_TextBox123.IsShop = false;
             this.ckM_TextBox123.Length = 32767;
-            this.ckM_TextBox123.Location = new System.Drawing.Point(58, 551);
+            this.ckM_TextBox123.Location = new System.Drawing.Point(82, 551);
             this.ckM_TextBox123.MoveNext = true;
             this.ckM_TextBox123.Name = "ckM_TextBox123";
             this.ckM_TextBox123.Size = new System.Drawing.Size(250, 19);
@@ -697,7 +678,7 @@
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -716,14 +697,22 @@
             this.Column8,
             this.Column9,
             this.Column10});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ckM_GridView1.Location = new System.Drawing.Point(321, 158);
+            this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
             this.ckM_GridView1.Name = "ckM_GridView1";
             this.ckM_GridView1.RowHeadersVisible = false;
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
-            this.ckM_GridView1.Size = new System.Drawing.Size(990, 150);
+            this.ckM_GridView1.Size = new System.Drawing.Size(990, 360);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = true;
@@ -806,7 +795,7 @@
             this.ckM_TextBox103.IsNumber = true;
             this.ckM_TextBox103.IsShop = false;
             this.ckM_TextBox103.Length = 32767;
-            this.ckM_TextBox103.Location = new System.Drawing.Point(191, 499);
+            this.ckM_TextBox103.Location = new System.Drawing.Point(215, 499);
             this.ckM_TextBox103.MoveNext = true;
             this.ckM_TextBox103.Name = "ckM_TextBox103";
             this.ckM_TextBox103.Size = new System.Drawing.Size(130, 19);
@@ -831,7 +820,7 @@
             this.ckM_TextBox104.IsNumber = true;
             this.ckM_TextBox104.IsShop = false;
             this.ckM_TextBox104.Length = 32767;
-            this.ckM_TextBox104.Location = new System.Drawing.Point(152, 499);
+            this.ckM_TextBox104.Location = new System.Drawing.Point(176, 499);
             this.ckM_TextBox104.MoveNext = true;
             this.ckM_TextBox104.Name = "ckM_TextBox104";
             this.ckM_TextBox104.Size = new System.Drawing.Size(40, 19);
@@ -856,7 +845,7 @@
             this.ckM_TextBox105.IsNumber = true;
             this.ckM_TextBox105.IsShop = false;
             this.ckM_TextBox105.Length = 32767;
-            this.ckM_TextBox105.Location = new System.Drawing.Point(103, 499);
+            this.ckM_TextBox105.Location = new System.Drawing.Point(127, 499);
             this.ckM_TextBox105.MoveNext = true;
             this.ckM_TextBox105.Name = "ckM_TextBox105";
             this.ckM_TextBox105.Size = new System.Drawing.Size(50, 19);
@@ -881,7 +870,7 @@
             this.ckM_TextBox106.IsNumber = true;
             this.ckM_TextBox106.IsShop = false;
             this.ckM_TextBox106.Length = 32767;
-            this.ckM_TextBox106.Location = new System.Drawing.Point(54, 499);
+            this.ckM_TextBox106.Location = new System.Drawing.Point(78, 499);
             this.ckM_TextBox106.MoveNext = true;
             this.ckM_TextBox106.Name = "ckM_TextBox106";
             this.ckM_TextBox106.Size = new System.Drawing.Size(50, 19);
@@ -906,7 +895,7 @@
             this.ckM_TextBox107.IsNumber = true;
             this.ckM_TextBox107.IsShop = false;
             this.ckM_TextBox107.Length = 32767;
-            this.ckM_TextBox107.Location = new System.Drawing.Point(191, 481);
+            this.ckM_TextBox107.Location = new System.Drawing.Point(215, 481);
             this.ckM_TextBox107.MoveNext = true;
             this.ckM_TextBox107.Name = "ckM_TextBox107";
             this.ckM_TextBox107.Size = new System.Drawing.Size(130, 19);
@@ -931,7 +920,7 @@
             this.ckM_TextBox108.IsNumber = true;
             this.ckM_TextBox108.IsShop = false;
             this.ckM_TextBox108.Length = 32767;
-            this.ckM_TextBox108.Location = new System.Drawing.Point(152, 481);
+            this.ckM_TextBox108.Location = new System.Drawing.Point(176, 481);
             this.ckM_TextBox108.MoveNext = true;
             this.ckM_TextBox108.Name = "ckM_TextBox108";
             this.ckM_TextBox108.Size = new System.Drawing.Size(40, 19);
@@ -956,7 +945,7 @@
             this.ckM_TextBox109.IsNumber = true;
             this.ckM_TextBox109.IsShop = false;
             this.ckM_TextBox109.Length = 32767;
-            this.ckM_TextBox109.Location = new System.Drawing.Point(103, 481);
+            this.ckM_TextBox109.Location = new System.Drawing.Point(127, 481);
             this.ckM_TextBox109.MoveNext = true;
             this.ckM_TextBox109.Name = "ckM_TextBox109";
             this.ckM_TextBox109.Size = new System.Drawing.Size(50, 19);
@@ -981,7 +970,7 @@
             this.ckM_TextBox110.IsNumber = true;
             this.ckM_TextBox110.IsShop = false;
             this.ckM_TextBox110.Length = 32767;
-            this.ckM_TextBox110.Location = new System.Drawing.Point(54, 481);
+            this.ckM_TextBox110.Location = new System.Drawing.Point(78, 481);
             this.ckM_TextBox110.MoveNext = true;
             this.ckM_TextBox110.Name = "ckM_TextBox110";
             this.ckM_TextBox110.Size = new System.Drawing.Size(50, 19);
@@ -1006,7 +995,7 @@
             this.ckM_TextBox111.IsNumber = true;
             this.ckM_TextBox111.IsShop = false;
             this.ckM_TextBox111.Length = 32767;
-            this.ckM_TextBox111.Location = new System.Drawing.Point(191, 463);
+            this.ckM_TextBox111.Location = new System.Drawing.Point(215, 463);
             this.ckM_TextBox111.MoveNext = true;
             this.ckM_TextBox111.Name = "ckM_TextBox111";
             this.ckM_TextBox111.Size = new System.Drawing.Size(130, 19);
@@ -1031,7 +1020,7 @@
             this.ckM_TextBox112.IsNumber = true;
             this.ckM_TextBox112.IsShop = false;
             this.ckM_TextBox112.Length = 32767;
-            this.ckM_TextBox112.Location = new System.Drawing.Point(191, 445);
+            this.ckM_TextBox112.Location = new System.Drawing.Point(215, 445);
             this.ckM_TextBox112.MoveNext = true;
             this.ckM_TextBox112.Name = "ckM_TextBox112";
             this.ckM_TextBox112.Size = new System.Drawing.Size(130, 19);
@@ -1056,7 +1045,7 @@
             this.ckM_TextBox113.IsNumber = true;
             this.ckM_TextBox113.IsShop = false;
             this.ckM_TextBox113.Length = 32767;
-            this.ckM_TextBox113.Location = new System.Drawing.Point(191, 427);
+            this.ckM_TextBox113.Location = new System.Drawing.Point(215, 427);
             this.ckM_TextBox113.MoveNext = true;
             this.ckM_TextBox113.Name = "ckM_TextBox113";
             this.ckM_TextBox113.Size = new System.Drawing.Size(130, 19);
@@ -1081,7 +1070,7 @@
             this.ckM_TextBox114.IsNumber = true;
             this.ckM_TextBox114.IsShop = false;
             this.ckM_TextBox114.Length = 32767;
-            this.ckM_TextBox114.Location = new System.Drawing.Point(152, 463);
+            this.ckM_TextBox114.Location = new System.Drawing.Point(176, 463);
             this.ckM_TextBox114.MoveNext = true;
             this.ckM_TextBox114.Name = "ckM_TextBox114";
             this.ckM_TextBox114.Size = new System.Drawing.Size(40, 19);
@@ -1106,7 +1095,7 @@
             this.ckM_TextBox115.IsNumber = true;
             this.ckM_TextBox115.IsShop = false;
             this.ckM_TextBox115.Length = 32767;
-            this.ckM_TextBox115.Location = new System.Drawing.Point(152, 445);
+            this.ckM_TextBox115.Location = new System.Drawing.Point(176, 445);
             this.ckM_TextBox115.MoveNext = true;
             this.ckM_TextBox115.Name = "ckM_TextBox115";
             this.ckM_TextBox115.Size = new System.Drawing.Size(40, 19);
@@ -1131,7 +1120,7 @@
             this.ckM_TextBox116.IsNumber = true;
             this.ckM_TextBox116.IsShop = false;
             this.ckM_TextBox116.Length = 32767;
-            this.ckM_TextBox116.Location = new System.Drawing.Point(152, 427);
+            this.ckM_TextBox116.Location = new System.Drawing.Point(176, 427);
             this.ckM_TextBox116.MoveNext = true;
             this.ckM_TextBox116.Name = "ckM_TextBox116";
             this.ckM_TextBox116.Size = new System.Drawing.Size(40, 19);
@@ -1156,7 +1145,7 @@
             this.ckM_TextBox117.IsNumber = true;
             this.ckM_TextBox117.IsShop = false;
             this.ckM_TextBox117.Length = 32767;
-            this.ckM_TextBox117.Location = new System.Drawing.Point(103, 463);
+            this.ckM_TextBox117.Location = new System.Drawing.Point(127, 463);
             this.ckM_TextBox117.MoveNext = true;
             this.ckM_TextBox117.Name = "ckM_TextBox117";
             this.ckM_TextBox117.Size = new System.Drawing.Size(50, 19);
@@ -1181,7 +1170,7 @@
             this.ckM_TextBox118.IsNumber = true;
             this.ckM_TextBox118.IsShop = false;
             this.ckM_TextBox118.Length = 32767;
-            this.ckM_TextBox118.Location = new System.Drawing.Point(103, 445);
+            this.ckM_TextBox118.Location = new System.Drawing.Point(127, 445);
             this.ckM_TextBox118.MoveNext = true;
             this.ckM_TextBox118.Name = "ckM_TextBox118";
             this.ckM_TextBox118.Size = new System.Drawing.Size(50, 19);
@@ -1206,7 +1195,7 @@
             this.ckM_TextBox119.IsNumber = true;
             this.ckM_TextBox119.IsShop = false;
             this.ckM_TextBox119.Length = 32767;
-            this.ckM_TextBox119.Location = new System.Drawing.Point(103, 427);
+            this.ckM_TextBox119.Location = new System.Drawing.Point(127, 427);
             this.ckM_TextBox119.MoveNext = true;
             this.ckM_TextBox119.Name = "ckM_TextBox119";
             this.ckM_TextBox119.Size = new System.Drawing.Size(50, 19);
@@ -1231,7 +1220,7 @@
             this.ckM_TextBox120.IsNumber = true;
             this.ckM_TextBox120.IsShop = false;
             this.ckM_TextBox120.Length = 32767;
-            this.ckM_TextBox120.Location = new System.Drawing.Point(54, 463);
+            this.ckM_TextBox120.Location = new System.Drawing.Point(78, 463);
             this.ckM_TextBox120.MoveNext = true;
             this.ckM_TextBox120.Name = "ckM_TextBox120";
             this.ckM_TextBox120.Size = new System.Drawing.Size(50, 19);
@@ -1256,7 +1245,7 @@
             this.ckM_TextBox121.IsNumber = true;
             this.ckM_TextBox121.IsShop = false;
             this.ckM_TextBox121.Length = 32767;
-            this.ckM_TextBox121.Location = new System.Drawing.Point(54, 445);
+            this.ckM_TextBox121.Location = new System.Drawing.Point(78, 445);
             this.ckM_TextBox121.MoveNext = true;
             this.ckM_TextBox121.Name = "ckM_TextBox121";
             this.ckM_TextBox121.Size = new System.Drawing.Size(50, 19);
@@ -1281,7 +1270,7 @@
             this.ckM_TextBox122.IsNumber = true;
             this.ckM_TextBox122.IsShop = false;
             this.ckM_TextBox122.Length = 32767;
-            this.ckM_TextBox122.Location = new System.Drawing.Point(54, 427);
+            this.ckM_TextBox122.Location = new System.Drawing.Point(78, 427);
             this.ckM_TextBox122.MoveNext = true;
             this.ckM_TextBox122.Name = "ckM_TextBox122";
             this.ckM_TextBox122.Size = new System.Drawing.Size(50, 19);
@@ -1306,7 +1295,7 @@
             this.ckM_TextBox83.IsNumber = true;
             this.ckM_TextBox83.IsShop = false;
             this.ckM_TextBox83.Length = 32767;
-            this.ckM_TextBox83.Location = new System.Drawing.Point(191, 409);
+            this.ckM_TextBox83.Location = new System.Drawing.Point(215, 409);
             this.ckM_TextBox83.MoveNext = true;
             this.ckM_TextBox83.Name = "ckM_TextBox83";
             this.ckM_TextBox83.Size = new System.Drawing.Size(130, 19);
@@ -1331,7 +1320,7 @@
             this.ckM_TextBox84.IsNumber = true;
             this.ckM_TextBox84.IsShop = false;
             this.ckM_TextBox84.Length = 32767;
-            this.ckM_TextBox84.Location = new System.Drawing.Point(152, 409);
+            this.ckM_TextBox84.Location = new System.Drawing.Point(176, 409);
             this.ckM_TextBox84.MoveNext = true;
             this.ckM_TextBox84.Name = "ckM_TextBox84";
             this.ckM_TextBox84.Size = new System.Drawing.Size(40, 19);
@@ -1356,7 +1345,7 @@
             this.ckM_TextBox85.IsNumber = true;
             this.ckM_TextBox85.IsShop = false;
             this.ckM_TextBox85.Length = 32767;
-            this.ckM_TextBox85.Location = new System.Drawing.Point(103, 409);
+            this.ckM_TextBox85.Location = new System.Drawing.Point(127, 409);
             this.ckM_TextBox85.MoveNext = true;
             this.ckM_TextBox85.Name = "ckM_TextBox85";
             this.ckM_TextBox85.Size = new System.Drawing.Size(50, 19);
@@ -1381,7 +1370,7 @@
             this.ckM_TextBox86.IsNumber = true;
             this.ckM_TextBox86.IsShop = false;
             this.ckM_TextBox86.Length = 32767;
-            this.ckM_TextBox86.Location = new System.Drawing.Point(54, 409);
+            this.ckM_TextBox86.Location = new System.Drawing.Point(78, 409);
             this.ckM_TextBox86.MoveNext = true;
             this.ckM_TextBox86.Name = "ckM_TextBox86";
             this.ckM_TextBox86.Size = new System.Drawing.Size(50, 19);
@@ -1406,7 +1395,7 @@
             this.ckM_TextBox87.IsNumber = true;
             this.ckM_TextBox87.IsShop = false;
             this.ckM_TextBox87.Length = 32767;
-            this.ckM_TextBox87.Location = new System.Drawing.Point(191, 391);
+            this.ckM_TextBox87.Location = new System.Drawing.Point(215, 391);
             this.ckM_TextBox87.MoveNext = true;
             this.ckM_TextBox87.Name = "ckM_TextBox87";
             this.ckM_TextBox87.Size = new System.Drawing.Size(130, 19);
@@ -1431,7 +1420,7 @@
             this.ckM_TextBox88.IsNumber = true;
             this.ckM_TextBox88.IsShop = false;
             this.ckM_TextBox88.Length = 32767;
-            this.ckM_TextBox88.Location = new System.Drawing.Point(152, 391);
+            this.ckM_TextBox88.Location = new System.Drawing.Point(176, 391);
             this.ckM_TextBox88.MoveNext = true;
             this.ckM_TextBox88.Name = "ckM_TextBox88";
             this.ckM_TextBox88.Size = new System.Drawing.Size(40, 19);
@@ -1456,7 +1445,7 @@
             this.ckM_TextBox89.IsNumber = true;
             this.ckM_TextBox89.IsShop = false;
             this.ckM_TextBox89.Length = 32767;
-            this.ckM_TextBox89.Location = new System.Drawing.Point(103, 391);
+            this.ckM_TextBox89.Location = new System.Drawing.Point(127, 391);
             this.ckM_TextBox89.MoveNext = true;
             this.ckM_TextBox89.Name = "ckM_TextBox89";
             this.ckM_TextBox89.Size = new System.Drawing.Size(50, 19);
@@ -1481,7 +1470,7 @@
             this.ckM_TextBox90.IsNumber = true;
             this.ckM_TextBox90.IsShop = false;
             this.ckM_TextBox90.Length = 32767;
-            this.ckM_TextBox90.Location = new System.Drawing.Point(54, 391);
+            this.ckM_TextBox90.Location = new System.Drawing.Point(78, 391);
             this.ckM_TextBox90.MoveNext = true;
             this.ckM_TextBox90.Name = "ckM_TextBox90";
             this.ckM_TextBox90.Size = new System.Drawing.Size(50, 19);
@@ -1506,7 +1495,7 @@
             this.ckM_TextBox91.IsNumber = true;
             this.ckM_TextBox91.IsShop = false;
             this.ckM_TextBox91.Length = 32767;
-            this.ckM_TextBox91.Location = new System.Drawing.Point(191, 373);
+            this.ckM_TextBox91.Location = new System.Drawing.Point(215, 373);
             this.ckM_TextBox91.MoveNext = true;
             this.ckM_TextBox91.Name = "ckM_TextBox91";
             this.ckM_TextBox91.Size = new System.Drawing.Size(130, 19);
@@ -1531,7 +1520,7 @@
             this.ckM_TextBox92.IsNumber = true;
             this.ckM_TextBox92.IsShop = false;
             this.ckM_TextBox92.Length = 32767;
-            this.ckM_TextBox92.Location = new System.Drawing.Point(191, 355);
+            this.ckM_TextBox92.Location = new System.Drawing.Point(215, 355);
             this.ckM_TextBox92.MoveNext = true;
             this.ckM_TextBox92.Name = "ckM_TextBox92";
             this.ckM_TextBox92.Size = new System.Drawing.Size(130, 19);
@@ -1556,7 +1545,7 @@
             this.ckM_TextBox93.IsNumber = true;
             this.ckM_TextBox93.IsShop = false;
             this.ckM_TextBox93.Length = 32767;
-            this.ckM_TextBox93.Location = new System.Drawing.Point(191, 337);
+            this.ckM_TextBox93.Location = new System.Drawing.Point(215, 337);
             this.ckM_TextBox93.MoveNext = true;
             this.ckM_TextBox93.Name = "ckM_TextBox93";
             this.ckM_TextBox93.Size = new System.Drawing.Size(130, 19);
@@ -1581,7 +1570,7 @@
             this.ckM_TextBox94.IsNumber = true;
             this.ckM_TextBox94.IsShop = false;
             this.ckM_TextBox94.Length = 32767;
-            this.ckM_TextBox94.Location = new System.Drawing.Point(152, 373);
+            this.ckM_TextBox94.Location = new System.Drawing.Point(176, 373);
             this.ckM_TextBox94.MoveNext = true;
             this.ckM_TextBox94.Name = "ckM_TextBox94";
             this.ckM_TextBox94.Size = new System.Drawing.Size(40, 19);
@@ -1606,7 +1595,7 @@
             this.ckM_TextBox95.IsNumber = true;
             this.ckM_TextBox95.IsShop = false;
             this.ckM_TextBox95.Length = 32767;
-            this.ckM_TextBox95.Location = new System.Drawing.Point(152, 355);
+            this.ckM_TextBox95.Location = new System.Drawing.Point(176, 355);
             this.ckM_TextBox95.MoveNext = true;
             this.ckM_TextBox95.Name = "ckM_TextBox95";
             this.ckM_TextBox95.Size = new System.Drawing.Size(40, 19);
@@ -1631,7 +1620,7 @@
             this.ckM_TextBox96.IsNumber = true;
             this.ckM_TextBox96.IsShop = false;
             this.ckM_TextBox96.Length = 32767;
-            this.ckM_TextBox96.Location = new System.Drawing.Point(152, 337);
+            this.ckM_TextBox96.Location = new System.Drawing.Point(176, 337);
             this.ckM_TextBox96.MoveNext = true;
             this.ckM_TextBox96.Name = "ckM_TextBox96";
             this.ckM_TextBox96.Size = new System.Drawing.Size(40, 19);
@@ -1656,7 +1645,7 @@
             this.ckM_TextBox97.IsNumber = true;
             this.ckM_TextBox97.IsShop = false;
             this.ckM_TextBox97.Length = 32767;
-            this.ckM_TextBox97.Location = new System.Drawing.Point(103, 373);
+            this.ckM_TextBox97.Location = new System.Drawing.Point(127, 373);
             this.ckM_TextBox97.MoveNext = true;
             this.ckM_TextBox97.Name = "ckM_TextBox97";
             this.ckM_TextBox97.Size = new System.Drawing.Size(50, 19);
@@ -1681,7 +1670,7 @@
             this.ckM_TextBox98.IsNumber = true;
             this.ckM_TextBox98.IsShop = false;
             this.ckM_TextBox98.Length = 32767;
-            this.ckM_TextBox98.Location = new System.Drawing.Point(103, 355);
+            this.ckM_TextBox98.Location = new System.Drawing.Point(127, 355);
             this.ckM_TextBox98.MoveNext = true;
             this.ckM_TextBox98.Name = "ckM_TextBox98";
             this.ckM_TextBox98.Size = new System.Drawing.Size(50, 19);
@@ -1706,7 +1695,7 @@
             this.ckM_TextBox99.IsNumber = true;
             this.ckM_TextBox99.IsShop = false;
             this.ckM_TextBox99.Length = 32767;
-            this.ckM_TextBox99.Location = new System.Drawing.Point(103, 337);
+            this.ckM_TextBox99.Location = new System.Drawing.Point(127, 337);
             this.ckM_TextBox99.MoveNext = true;
             this.ckM_TextBox99.Name = "ckM_TextBox99";
             this.ckM_TextBox99.Size = new System.Drawing.Size(50, 19);
@@ -1731,7 +1720,7 @@
             this.ckM_TextBox100.IsNumber = true;
             this.ckM_TextBox100.IsShop = false;
             this.ckM_TextBox100.Length = 32767;
-            this.ckM_TextBox100.Location = new System.Drawing.Point(54, 373);
+            this.ckM_TextBox100.Location = new System.Drawing.Point(78, 373);
             this.ckM_TextBox100.MoveNext = true;
             this.ckM_TextBox100.Name = "ckM_TextBox100";
             this.ckM_TextBox100.Size = new System.Drawing.Size(50, 19);
@@ -1756,7 +1745,7 @@
             this.ckM_TextBox101.IsNumber = true;
             this.ckM_TextBox101.IsShop = false;
             this.ckM_TextBox101.Length = 32767;
-            this.ckM_TextBox101.Location = new System.Drawing.Point(54, 355);
+            this.ckM_TextBox101.Location = new System.Drawing.Point(78, 355);
             this.ckM_TextBox101.MoveNext = true;
             this.ckM_TextBox101.Name = "ckM_TextBox101";
             this.ckM_TextBox101.Size = new System.Drawing.Size(50, 19);
@@ -1781,7 +1770,7 @@
             this.ckM_TextBox102.IsNumber = true;
             this.ckM_TextBox102.IsShop = false;
             this.ckM_TextBox102.Length = 32767;
-            this.ckM_TextBox102.Location = new System.Drawing.Point(54, 337);
+            this.ckM_TextBox102.Location = new System.Drawing.Point(78, 337);
             this.ckM_TextBox102.MoveNext = true;
             this.ckM_TextBox102.Name = "ckM_TextBox102";
             this.ckM_TextBox102.Size = new System.Drawing.Size(50, 19);
@@ -1806,7 +1795,7 @@
             this.ckM_TextBox63.IsNumber = true;
             this.ckM_TextBox63.IsShop = false;
             this.ckM_TextBox63.Length = 32767;
-            this.ckM_TextBox63.Location = new System.Drawing.Point(191, 319);
+            this.ckM_TextBox63.Location = new System.Drawing.Point(215, 319);
             this.ckM_TextBox63.MoveNext = true;
             this.ckM_TextBox63.Name = "ckM_TextBox63";
             this.ckM_TextBox63.Size = new System.Drawing.Size(130, 19);
@@ -1831,7 +1820,7 @@
             this.ckM_TextBox64.IsNumber = true;
             this.ckM_TextBox64.IsShop = false;
             this.ckM_TextBox64.Length = 32767;
-            this.ckM_TextBox64.Location = new System.Drawing.Point(152, 319);
+            this.ckM_TextBox64.Location = new System.Drawing.Point(176, 319);
             this.ckM_TextBox64.MoveNext = true;
             this.ckM_TextBox64.Name = "ckM_TextBox64";
             this.ckM_TextBox64.Size = new System.Drawing.Size(40, 19);
@@ -1856,7 +1845,7 @@
             this.ckM_TextBox65.IsNumber = true;
             this.ckM_TextBox65.IsShop = false;
             this.ckM_TextBox65.Length = 32767;
-            this.ckM_TextBox65.Location = new System.Drawing.Point(103, 319);
+            this.ckM_TextBox65.Location = new System.Drawing.Point(127, 319);
             this.ckM_TextBox65.MoveNext = true;
             this.ckM_TextBox65.Name = "ckM_TextBox65";
             this.ckM_TextBox65.Size = new System.Drawing.Size(50, 19);
@@ -1881,7 +1870,7 @@
             this.ckM_TextBox66.IsNumber = true;
             this.ckM_TextBox66.IsShop = false;
             this.ckM_TextBox66.Length = 32767;
-            this.ckM_TextBox66.Location = new System.Drawing.Point(54, 319);
+            this.ckM_TextBox66.Location = new System.Drawing.Point(78, 319);
             this.ckM_TextBox66.MoveNext = true;
             this.ckM_TextBox66.Name = "ckM_TextBox66";
             this.ckM_TextBox66.Size = new System.Drawing.Size(50, 19);
@@ -1906,7 +1895,7 @@
             this.ckM_TextBox67.IsNumber = true;
             this.ckM_TextBox67.IsShop = false;
             this.ckM_TextBox67.Length = 32767;
-            this.ckM_TextBox67.Location = new System.Drawing.Point(191, 301);
+            this.ckM_TextBox67.Location = new System.Drawing.Point(215, 301);
             this.ckM_TextBox67.MoveNext = true;
             this.ckM_TextBox67.Name = "ckM_TextBox67";
             this.ckM_TextBox67.Size = new System.Drawing.Size(130, 19);
@@ -1931,7 +1920,7 @@
             this.ckM_TextBox68.IsNumber = true;
             this.ckM_TextBox68.IsShop = false;
             this.ckM_TextBox68.Length = 32767;
-            this.ckM_TextBox68.Location = new System.Drawing.Point(152, 301);
+            this.ckM_TextBox68.Location = new System.Drawing.Point(176, 301);
             this.ckM_TextBox68.MoveNext = true;
             this.ckM_TextBox68.Name = "ckM_TextBox68";
             this.ckM_TextBox68.Size = new System.Drawing.Size(40, 19);
@@ -1956,7 +1945,7 @@
             this.ckM_TextBox69.IsNumber = true;
             this.ckM_TextBox69.IsShop = false;
             this.ckM_TextBox69.Length = 32767;
-            this.ckM_TextBox69.Location = new System.Drawing.Point(103, 301);
+            this.ckM_TextBox69.Location = new System.Drawing.Point(127, 301);
             this.ckM_TextBox69.MoveNext = true;
             this.ckM_TextBox69.Name = "ckM_TextBox69";
             this.ckM_TextBox69.Size = new System.Drawing.Size(50, 19);
@@ -1981,7 +1970,7 @@
             this.ckM_TextBox70.IsNumber = true;
             this.ckM_TextBox70.IsShop = false;
             this.ckM_TextBox70.Length = 32767;
-            this.ckM_TextBox70.Location = new System.Drawing.Point(54, 301);
+            this.ckM_TextBox70.Location = new System.Drawing.Point(78, 301);
             this.ckM_TextBox70.MoveNext = true;
             this.ckM_TextBox70.Name = "ckM_TextBox70";
             this.ckM_TextBox70.Size = new System.Drawing.Size(50, 19);
@@ -2006,7 +1995,7 @@
             this.ckM_TextBox71.IsNumber = true;
             this.ckM_TextBox71.IsShop = false;
             this.ckM_TextBox71.Length = 32767;
-            this.ckM_TextBox71.Location = new System.Drawing.Point(191, 283);
+            this.ckM_TextBox71.Location = new System.Drawing.Point(215, 283);
             this.ckM_TextBox71.MoveNext = true;
             this.ckM_TextBox71.Name = "ckM_TextBox71";
             this.ckM_TextBox71.Size = new System.Drawing.Size(130, 19);
@@ -2031,7 +2020,7 @@
             this.ckM_TextBox72.IsNumber = true;
             this.ckM_TextBox72.IsShop = false;
             this.ckM_TextBox72.Length = 32767;
-            this.ckM_TextBox72.Location = new System.Drawing.Point(191, 265);
+            this.ckM_TextBox72.Location = new System.Drawing.Point(215, 265);
             this.ckM_TextBox72.MoveNext = true;
             this.ckM_TextBox72.Name = "ckM_TextBox72";
             this.ckM_TextBox72.Size = new System.Drawing.Size(130, 19);
@@ -2056,7 +2045,7 @@
             this.ckM_TextBox73.IsNumber = true;
             this.ckM_TextBox73.IsShop = false;
             this.ckM_TextBox73.Length = 32767;
-            this.ckM_TextBox73.Location = new System.Drawing.Point(191, 247);
+            this.ckM_TextBox73.Location = new System.Drawing.Point(215, 247);
             this.ckM_TextBox73.MoveNext = true;
             this.ckM_TextBox73.Name = "ckM_TextBox73";
             this.ckM_TextBox73.Size = new System.Drawing.Size(130, 19);
@@ -2081,7 +2070,7 @@
             this.ckM_TextBox74.IsNumber = true;
             this.ckM_TextBox74.IsShop = false;
             this.ckM_TextBox74.Length = 32767;
-            this.ckM_TextBox74.Location = new System.Drawing.Point(152, 283);
+            this.ckM_TextBox74.Location = new System.Drawing.Point(176, 283);
             this.ckM_TextBox74.MoveNext = true;
             this.ckM_TextBox74.Name = "ckM_TextBox74";
             this.ckM_TextBox74.Size = new System.Drawing.Size(40, 19);
@@ -2106,7 +2095,7 @@
             this.ckM_TextBox75.IsNumber = true;
             this.ckM_TextBox75.IsShop = false;
             this.ckM_TextBox75.Length = 32767;
-            this.ckM_TextBox75.Location = new System.Drawing.Point(152, 265);
+            this.ckM_TextBox75.Location = new System.Drawing.Point(176, 265);
             this.ckM_TextBox75.MoveNext = true;
             this.ckM_TextBox75.Name = "ckM_TextBox75";
             this.ckM_TextBox75.Size = new System.Drawing.Size(40, 19);
@@ -2131,7 +2120,7 @@
             this.ckM_TextBox76.IsNumber = true;
             this.ckM_TextBox76.IsShop = false;
             this.ckM_TextBox76.Length = 32767;
-            this.ckM_TextBox76.Location = new System.Drawing.Point(152, 247);
+            this.ckM_TextBox76.Location = new System.Drawing.Point(176, 247);
             this.ckM_TextBox76.MoveNext = true;
             this.ckM_TextBox76.Name = "ckM_TextBox76";
             this.ckM_TextBox76.Size = new System.Drawing.Size(40, 19);
@@ -2156,7 +2145,7 @@
             this.ckM_TextBox77.IsNumber = true;
             this.ckM_TextBox77.IsShop = false;
             this.ckM_TextBox77.Length = 32767;
-            this.ckM_TextBox77.Location = new System.Drawing.Point(103, 283);
+            this.ckM_TextBox77.Location = new System.Drawing.Point(127, 283);
             this.ckM_TextBox77.MoveNext = true;
             this.ckM_TextBox77.Name = "ckM_TextBox77";
             this.ckM_TextBox77.Size = new System.Drawing.Size(50, 19);
@@ -2181,7 +2170,7 @@
             this.ckM_TextBox78.IsNumber = true;
             this.ckM_TextBox78.IsShop = false;
             this.ckM_TextBox78.Length = 32767;
-            this.ckM_TextBox78.Location = new System.Drawing.Point(103, 265);
+            this.ckM_TextBox78.Location = new System.Drawing.Point(127, 265);
             this.ckM_TextBox78.MoveNext = true;
             this.ckM_TextBox78.Name = "ckM_TextBox78";
             this.ckM_TextBox78.Size = new System.Drawing.Size(50, 19);
@@ -2206,7 +2195,7 @@
             this.ckM_TextBox79.IsNumber = true;
             this.ckM_TextBox79.IsShop = false;
             this.ckM_TextBox79.Length = 32767;
-            this.ckM_TextBox79.Location = new System.Drawing.Point(103, 247);
+            this.ckM_TextBox79.Location = new System.Drawing.Point(127, 247);
             this.ckM_TextBox79.MoveNext = true;
             this.ckM_TextBox79.Name = "ckM_TextBox79";
             this.ckM_TextBox79.Size = new System.Drawing.Size(50, 19);
@@ -2231,7 +2220,7 @@
             this.ckM_TextBox80.IsNumber = true;
             this.ckM_TextBox80.IsShop = false;
             this.ckM_TextBox80.Length = 32767;
-            this.ckM_TextBox80.Location = new System.Drawing.Point(54, 283);
+            this.ckM_TextBox80.Location = new System.Drawing.Point(78, 283);
             this.ckM_TextBox80.MoveNext = true;
             this.ckM_TextBox80.Name = "ckM_TextBox80";
             this.ckM_TextBox80.Size = new System.Drawing.Size(50, 19);
@@ -2256,7 +2245,7 @@
             this.ckM_TextBox81.IsNumber = true;
             this.ckM_TextBox81.IsShop = false;
             this.ckM_TextBox81.Length = 32767;
-            this.ckM_TextBox81.Location = new System.Drawing.Point(54, 265);
+            this.ckM_TextBox81.Location = new System.Drawing.Point(78, 265);
             this.ckM_TextBox81.MoveNext = true;
             this.ckM_TextBox81.Name = "ckM_TextBox81";
             this.ckM_TextBox81.Size = new System.Drawing.Size(50, 19);
@@ -2281,7 +2270,7 @@
             this.ckM_TextBox82.IsNumber = true;
             this.ckM_TextBox82.IsShop = false;
             this.ckM_TextBox82.Length = 32767;
-            this.ckM_TextBox82.Location = new System.Drawing.Point(54, 247);
+            this.ckM_TextBox82.Location = new System.Drawing.Point(78, 247);
             this.ckM_TextBox82.MoveNext = true;
             this.ckM_TextBox82.Name = "ckM_TextBox82";
             this.ckM_TextBox82.Size = new System.Drawing.Size(50, 19);
@@ -2306,7 +2295,7 @@
             this.ckM_TextBox59.IsNumber = true;
             this.ckM_TextBox59.IsShop = false;
             this.ckM_TextBox59.Length = 32767;
-            this.ckM_TextBox59.Location = new System.Drawing.Point(191, 229);
+            this.ckM_TextBox59.Location = new System.Drawing.Point(215, 229);
             this.ckM_TextBox59.MoveNext = true;
             this.ckM_TextBox59.Name = "ckM_TextBox59";
             this.ckM_TextBox59.Size = new System.Drawing.Size(130, 19);
@@ -2331,7 +2320,7 @@
             this.ckM_TextBox60.IsNumber = true;
             this.ckM_TextBox60.IsShop = false;
             this.ckM_TextBox60.Length = 32767;
-            this.ckM_TextBox60.Location = new System.Drawing.Point(152, 229);
+            this.ckM_TextBox60.Location = new System.Drawing.Point(176, 229);
             this.ckM_TextBox60.MoveNext = true;
             this.ckM_TextBox60.Name = "ckM_TextBox60";
             this.ckM_TextBox60.Size = new System.Drawing.Size(40, 19);
@@ -2356,7 +2345,7 @@
             this.ckM_TextBox61.IsNumber = true;
             this.ckM_TextBox61.IsShop = false;
             this.ckM_TextBox61.Length = 32767;
-            this.ckM_TextBox61.Location = new System.Drawing.Point(103, 229);
+            this.ckM_TextBox61.Location = new System.Drawing.Point(127, 229);
             this.ckM_TextBox61.MoveNext = true;
             this.ckM_TextBox61.Name = "ckM_TextBox61";
             this.ckM_TextBox61.Size = new System.Drawing.Size(50, 19);
@@ -2381,46 +2370,12 @@
             this.ckM_TextBox62.IsNumber = true;
             this.ckM_TextBox62.IsShop = false;
             this.ckM_TextBox62.Length = 32767;
-            this.ckM_TextBox62.Location = new System.Drawing.Point(54, 229);
+            this.ckM_TextBox62.Location = new System.Drawing.Point(78, 229);
             this.ckM_TextBox62.MoveNext = true;
             this.ckM_TextBox62.Name = "ckM_TextBox62";
             this.ckM_TextBox62.Size = new System.Drawing.Size(50, 19);
             this.ckM_TextBox62.TabIndex = 79;
             this.ckM_TextBox62.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_Label8
-            // 
-            this.ckM_Label8.AutoSize = true;
-            this.ckM_Label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label8.DefaultlabelSize = true;
-            this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(155, 142);
-            this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label8.TabIndex = 78;
-            this.ckM_Label8.Text = "不要\t\t";
-            this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label7
-            // 
-            this.ckM_Label7.AutoSize = true;
-            this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(113, 142);
-            this.ckM_Label7.Name = "ckM_Label7";
-            this.ckM_Label7.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label7.TabIndex = 77;
-            this.ckM_Label7.Text = "現状\t\t";
-            this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_TextBox43
             // 
@@ -2440,7 +2395,7 @@
             this.ckM_TextBox43.IsNumber = true;
             this.ckM_TextBox43.IsShop = false;
             this.ckM_TextBox43.Length = 32767;
-            this.ckM_TextBox43.Location = new System.Drawing.Point(191, 211);
+            this.ckM_TextBox43.Location = new System.Drawing.Point(215, 211);
             this.ckM_TextBox43.MoveNext = true;
             this.ckM_TextBox43.Name = "ckM_TextBox43";
             this.ckM_TextBox43.Size = new System.Drawing.Size(130, 19);
@@ -2465,7 +2420,7 @@
             this.ckM_TextBox44.IsNumber = true;
             this.ckM_TextBox44.IsShop = false;
             this.ckM_TextBox44.Length = 32767;
-            this.ckM_TextBox44.Location = new System.Drawing.Point(152, 211);
+            this.ckM_TextBox44.Location = new System.Drawing.Point(176, 211);
             this.ckM_TextBox44.MoveNext = true;
             this.ckM_TextBox44.Name = "ckM_TextBox44";
             this.ckM_TextBox44.Size = new System.Drawing.Size(40, 19);
@@ -2490,7 +2445,7 @@
             this.ckM_TextBox45.IsNumber = true;
             this.ckM_TextBox45.IsShop = false;
             this.ckM_TextBox45.Length = 32767;
-            this.ckM_TextBox45.Location = new System.Drawing.Point(103, 211);
+            this.ckM_TextBox45.Location = new System.Drawing.Point(127, 211);
             this.ckM_TextBox45.MoveNext = true;
             this.ckM_TextBox45.Name = "ckM_TextBox45";
             this.ckM_TextBox45.Size = new System.Drawing.Size(50, 19);
@@ -2515,7 +2470,7 @@
             this.ckM_TextBox46.IsNumber = true;
             this.ckM_TextBox46.IsShop = false;
             this.ckM_TextBox46.Length = 32767;
-            this.ckM_TextBox46.Location = new System.Drawing.Point(54, 211);
+            this.ckM_TextBox46.Location = new System.Drawing.Point(78, 211);
             this.ckM_TextBox46.MoveNext = true;
             this.ckM_TextBox46.Name = "ckM_TextBox46";
             this.ckM_TextBox46.Size = new System.Drawing.Size(50, 19);
@@ -2540,7 +2495,7 @@
             this.ckM_TextBox47.IsNumber = true;
             this.ckM_TextBox47.IsShop = false;
             this.ckM_TextBox47.Length = 32767;
-            this.ckM_TextBox47.Location = new System.Drawing.Point(191, 193);
+            this.ckM_TextBox47.Location = new System.Drawing.Point(215, 193);
             this.ckM_TextBox47.MoveNext = true;
             this.ckM_TextBox47.Name = "ckM_TextBox47";
             this.ckM_TextBox47.Size = new System.Drawing.Size(130, 19);
@@ -2565,7 +2520,7 @@
             this.ckM_TextBox48.IsNumber = true;
             this.ckM_TextBox48.IsShop = false;
             this.ckM_TextBox48.Length = 32767;
-            this.ckM_TextBox48.Location = new System.Drawing.Point(191, 175);
+            this.ckM_TextBox48.Location = new System.Drawing.Point(215, 175);
             this.ckM_TextBox48.MoveNext = true;
             this.ckM_TextBox48.Name = "ckM_TextBox48";
             this.ckM_TextBox48.Size = new System.Drawing.Size(130, 19);
@@ -2590,7 +2545,7 @@
             this.ckM_TextBox49.IsNumber = true;
             this.ckM_TextBox49.IsShop = false;
             this.ckM_TextBox49.Length = 32767;
-            this.ckM_TextBox49.Location = new System.Drawing.Point(191, 157);
+            this.ckM_TextBox49.Location = new System.Drawing.Point(215, 157);
             this.ckM_TextBox49.MoveNext = true;
             this.ckM_TextBox49.Name = "ckM_TextBox49";
             this.ckM_TextBox49.Size = new System.Drawing.Size(130, 19);
@@ -2615,7 +2570,7 @@
             this.ckM_TextBox50.IsNumber = true;
             this.ckM_TextBox50.IsShop = false;
             this.ckM_TextBox50.Length = 32767;
-            this.ckM_TextBox50.Location = new System.Drawing.Point(152, 193);
+            this.ckM_TextBox50.Location = new System.Drawing.Point(176, 193);
             this.ckM_TextBox50.MoveNext = true;
             this.ckM_TextBox50.Name = "ckM_TextBox50";
             this.ckM_TextBox50.Size = new System.Drawing.Size(40, 19);
@@ -2640,7 +2595,7 @@
             this.ckM_TextBox51.IsNumber = true;
             this.ckM_TextBox51.IsShop = false;
             this.ckM_TextBox51.Length = 32767;
-            this.ckM_TextBox51.Location = new System.Drawing.Point(152, 175);
+            this.ckM_TextBox51.Location = new System.Drawing.Point(176, 175);
             this.ckM_TextBox51.MoveNext = true;
             this.ckM_TextBox51.Name = "ckM_TextBox51";
             this.ckM_TextBox51.Size = new System.Drawing.Size(40, 19);
@@ -2665,7 +2620,7 @@
             this.ckM_TextBox52.IsNumber = true;
             this.ckM_TextBox52.IsShop = false;
             this.ckM_TextBox52.Length = 32767;
-            this.ckM_TextBox52.Location = new System.Drawing.Point(152, 157);
+            this.ckM_TextBox52.Location = new System.Drawing.Point(176, 157);
             this.ckM_TextBox52.MoveNext = true;
             this.ckM_TextBox52.Name = "ckM_TextBox52";
             this.ckM_TextBox52.Size = new System.Drawing.Size(40, 19);
@@ -2690,7 +2645,7 @@
             this.ckM_TextBox53.IsNumber = true;
             this.ckM_TextBox53.IsShop = false;
             this.ckM_TextBox53.Length = 32767;
-            this.ckM_TextBox53.Location = new System.Drawing.Point(103, 193);
+            this.ckM_TextBox53.Location = new System.Drawing.Point(127, 193);
             this.ckM_TextBox53.MoveNext = true;
             this.ckM_TextBox53.Name = "ckM_TextBox53";
             this.ckM_TextBox53.Size = new System.Drawing.Size(50, 19);
@@ -2715,7 +2670,7 @@
             this.ckM_TextBox54.IsNumber = true;
             this.ckM_TextBox54.IsShop = false;
             this.ckM_TextBox54.Length = 32767;
-            this.ckM_TextBox54.Location = new System.Drawing.Point(103, 175);
+            this.ckM_TextBox54.Location = new System.Drawing.Point(127, 175);
             this.ckM_TextBox54.MoveNext = true;
             this.ckM_TextBox54.Name = "ckM_TextBox54";
             this.ckM_TextBox54.Size = new System.Drawing.Size(50, 19);
@@ -2740,7 +2695,7 @@
             this.ckM_TextBox55.IsNumber = true;
             this.ckM_TextBox55.IsShop = false;
             this.ckM_TextBox55.Length = 32767;
-            this.ckM_TextBox55.Location = new System.Drawing.Point(103, 157);
+            this.ckM_TextBox55.Location = new System.Drawing.Point(127, 157);
             this.ckM_TextBox55.MoveNext = true;
             this.ckM_TextBox55.Name = "ckM_TextBox55";
             this.ckM_TextBox55.Size = new System.Drawing.Size(50, 19);
@@ -2765,7 +2720,7 @@
             this.ckM_TextBox56.IsNumber = true;
             this.ckM_TextBox56.IsShop = false;
             this.ckM_TextBox56.Length = 32767;
-            this.ckM_TextBox56.Location = new System.Drawing.Point(54, 193);
+            this.ckM_TextBox56.Location = new System.Drawing.Point(78, 193);
             this.ckM_TextBox56.MoveNext = true;
             this.ckM_TextBox56.Name = "ckM_TextBox56";
             this.ckM_TextBox56.Size = new System.Drawing.Size(50, 19);
@@ -2790,7 +2745,7 @@
             this.ckM_TextBox57.IsNumber = true;
             this.ckM_TextBox57.IsShop = false;
             this.ckM_TextBox57.Length = 32767;
-            this.ckM_TextBox57.Location = new System.Drawing.Point(54, 175);
+            this.ckM_TextBox57.Location = new System.Drawing.Point(78, 175);
             this.ckM_TextBox57.MoveNext = true;
             this.ckM_TextBox57.Name = "ckM_TextBox57";
             this.ckM_TextBox57.Size = new System.Drawing.Size(50, 19);
@@ -2815,80 +2770,12 @@
             this.ckM_TextBox58.IsNumber = true;
             this.ckM_TextBox58.IsShop = false;
             this.ckM_TextBox58.Length = 32767;
-            this.ckM_TextBox58.Location = new System.Drawing.Point(54, 157);
+            this.ckM_TextBox58.Location = new System.Drawing.Point(78, 157);
             this.ckM_TextBox58.MoveNext = true;
             this.ckM_TextBox58.Name = "ckM_TextBox58";
             this.ckM_TextBox58.Size = new System.Drawing.Size(50, 19);
             this.ckM_TextBox58.TabIndex = 61;
             this.ckM_TextBox58.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ckM_Label6
-            // 
-            this.ckM_Label6.AutoSize = true;
-            this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(286, 125);
-            this.ckM_Label6.Name = "ckM_Label6";
-            this.ckM_Label6.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label6.TabIndex = 60;
-            this.ckM_Label6.Text = "不要\t\t";
-            this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label5
-            // 
-            this.ckM_Label5.AutoSize = true;
-            this.ckM_Label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label5.DefaultlabelSize = true;
-            this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(286, 107);
-            this.ckM_Label5.Name = "ckM_Label5";
-            this.ckM_Label5.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label5.TabIndex = 59;
-            this.ckM_Label5.Text = "現状\t\t";
-            this.ckM_Label5.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label4
-            // 
-            this.ckM_Label4.AutoSize = true;
-            this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label4.DefaultlabelSize = true;
-            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(273, 88);
-            this.ckM_Label4.Name = "ckM_Label4";
-            this.ckM_Label4.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label4.TabIndex = 58;
-            this.ckM_Label4.Text = "新連番";
-            this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label3
-            // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(56, 142);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label3.TabIndex = 57;
-            this.ckM_Label3.Text = "新連番";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_TextBox33
             // 
@@ -2908,7 +2795,7 @@
             this.ckM_TextBox33.IsNumber = true;
             this.ckM_TextBox33.IsShop = false;
             this.ckM_TextBox33.Length = 32767;
-            this.ckM_TextBox33.Location = new System.Drawing.Point(1209, 139);
+            this.ckM_TextBox33.Location = new System.Drawing.Point(1233, 139);
             this.ckM_TextBox33.MoveNext = true;
             this.ckM_TextBox33.Name = "ckM_TextBox33";
             this.ckM_TextBox33.Size = new System.Drawing.Size(100, 19);
@@ -2933,7 +2820,7 @@
             this.ckM_TextBox34.IsNumber = true;
             this.ckM_TextBox34.IsShop = false;
             this.ckM_TextBox34.Length = 32767;
-            this.ckM_TextBox34.Location = new System.Drawing.Point(1110, 139);
+            this.ckM_TextBox34.Location = new System.Drawing.Point(1134, 139);
             this.ckM_TextBox34.MoveNext = true;
             this.ckM_TextBox34.Name = "ckM_TextBox34";
             this.ckM_TextBox34.Size = new System.Drawing.Size(100, 19);
@@ -2958,7 +2845,7 @@
             this.ckM_TextBox35.IsNumber = true;
             this.ckM_TextBox35.IsShop = false;
             this.ckM_TextBox35.Length = 32767;
-            this.ckM_TextBox35.Location = new System.Drawing.Point(1011, 139);
+            this.ckM_TextBox35.Location = new System.Drawing.Point(1035, 139);
             this.ckM_TextBox35.MoveNext = true;
             this.ckM_TextBox35.Name = "ckM_TextBox35";
             this.ckM_TextBox35.Size = new System.Drawing.Size(100, 19);
@@ -2983,7 +2870,7 @@
             this.ckM_TextBox36.IsNumber = true;
             this.ckM_TextBox36.IsShop = false;
             this.ckM_TextBox36.Length = 32767;
-            this.ckM_TextBox36.Location = new System.Drawing.Point(912, 139);
+            this.ckM_TextBox36.Location = new System.Drawing.Point(936, 139);
             this.ckM_TextBox36.MoveNext = true;
             this.ckM_TextBox36.Name = "ckM_TextBox36";
             this.ckM_TextBox36.Size = new System.Drawing.Size(100, 19);
@@ -3008,7 +2895,7 @@
             this.ckM_TextBox37.IsNumber = true;
             this.ckM_TextBox37.IsShop = false;
             this.ckM_TextBox37.Length = 32767;
-            this.ckM_TextBox37.Location = new System.Drawing.Point(813, 139);
+            this.ckM_TextBox37.Location = new System.Drawing.Point(837, 139);
             this.ckM_TextBox37.MoveNext = true;
             this.ckM_TextBox37.Name = "ckM_TextBox37";
             this.ckM_TextBox37.Size = new System.Drawing.Size(100, 19);
@@ -3033,7 +2920,7 @@
             this.ckM_TextBox38.IsNumber = true;
             this.ckM_TextBox38.IsShop = false;
             this.ckM_TextBox38.Length = 32767;
-            this.ckM_TextBox38.Location = new System.Drawing.Point(714, 139);
+            this.ckM_TextBox38.Location = new System.Drawing.Point(738, 139);
             this.ckM_TextBox38.MoveNext = true;
             this.ckM_TextBox38.Name = "ckM_TextBox38";
             this.ckM_TextBox38.Size = new System.Drawing.Size(100, 19);
@@ -3058,7 +2945,7 @@
             this.ckM_TextBox39.IsNumber = true;
             this.ckM_TextBox39.IsShop = false;
             this.ckM_TextBox39.Length = 32767;
-            this.ckM_TextBox39.Location = new System.Drawing.Point(615, 139);
+            this.ckM_TextBox39.Location = new System.Drawing.Point(639, 139);
             this.ckM_TextBox39.MoveNext = true;
             this.ckM_TextBox39.Name = "ckM_TextBox39";
             this.ckM_TextBox39.Size = new System.Drawing.Size(100, 19);
@@ -3083,7 +2970,7 @@
             this.ckM_TextBox40.IsNumber = true;
             this.ckM_TextBox40.IsShop = false;
             this.ckM_TextBox40.Length = 32767;
-            this.ckM_TextBox40.Location = new System.Drawing.Point(516, 139);
+            this.ckM_TextBox40.Location = new System.Drawing.Point(540, 139);
             this.ckM_TextBox40.MoveNext = true;
             this.ckM_TextBox40.Name = "ckM_TextBox40";
             this.ckM_TextBox40.Size = new System.Drawing.Size(100, 19);
@@ -3108,7 +2995,7 @@
             this.ckM_TextBox41.IsNumber = true;
             this.ckM_TextBox41.IsShop = false;
             this.ckM_TextBox41.Length = 32767;
-            this.ckM_TextBox41.Location = new System.Drawing.Point(418, 139);
+            this.ckM_TextBox41.Location = new System.Drawing.Point(442, 139);
             this.ckM_TextBox41.MoveNext = true;
             this.ckM_TextBox41.Name = "ckM_TextBox41";
             this.ckM_TextBox41.Size = new System.Drawing.Size(100, 19);
@@ -3133,7 +3020,7 @@
             this.ckM_TextBox42.IsNumber = true;
             this.ckM_TextBox42.IsShop = false;
             this.ckM_TextBox42.Length = 32767;
-            this.ckM_TextBox42.Location = new System.Drawing.Point(320, 139);
+            this.ckM_TextBox42.Location = new System.Drawing.Point(344, 139);
             this.ckM_TextBox42.MoveNext = true;
             this.ckM_TextBox42.Name = "ckM_TextBox42";
             this.ckM_TextBox42.Size = new System.Drawing.Size(100, 19);
@@ -3158,7 +3045,7 @@
             this.ckM_TextBox30.IsNumber = true;
             this.ckM_TextBox30.IsShop = false;
             this.ckM_TextBox30.Length = 32767;
-            this.ckM_TextBox30.Location = new System.Drawing.Point(1209, 121);
+            this.ckM_TextBox30.Location = new System.Drawing.Point(1233, 121);
             this.ckM_TextBox30.MoveNext = true;
             this.ckM_TextBox30.Name = "ckM_TextBox30";
             this.ckM_TextBox30.Size = new System.Drawing.Size(100, 19);
@@ -3183,7 +3070,7 @@
             this.ckM_TextBox31.IsNumber = true;
             this.ckM_TextBox31.IsShop = false;
             this.ckM_TextBox31.Length = 32767;
-            this.ckM_TextBox31.Location = new System.Drawing.Point(1209, 103);
+            this.ckM_TextBox31.Location = new System.Drawing.Point(1233, 103);
             this.ckM_TextBox31.MoveNext = true;
             this.ckM_TextBox31.Name = "ckM_TextBox31";
             this.ckM_TextBox31.Size = new System.Drawing.Size(100, 19);
@@ -3208,7 +3095,7 @@
             this.ckM_TextBox32.IsNumber = true;
             this.ckM_TextBox32.IsShop = false;
             this.ckM_TextBox32.Length = 32767;
-            this.ckM_TextBox32.Location = new System.Drawing.Point(1209, 85);
+            this.ckM_TextBox32.Location = new System.Drawing.Point(1233, 85);
             this.ckM_TextBox32.MoveNext = true;
             this.ckM_TextBox32.Name = "ckM_TextBox32";
             this.ckM_TextBox32.Size = new System.Drawing.Size(100, 19);
@@ -3233,7 +3120,7 @@
             this.ckM_TextBox27.IsNumber = true;
             this.ckM_TextBox27.IsShop = false;
             this.ckM_TextBox27.Length = 32767;
-            this.ckM_TextBox27.Location = new System.Drawing.Point(1110, 121);
+            this.ckM_TextBox27.Location = new System.Drawing.Point(1134, 121);
             this.ckM_TextBox27.MoveNext = true;
             this.ckM_TextBox27.Name = "ckM_TextBox27";
             this.ckM_TextBox27.Size = new System.Drawing.Size(100, 19);
@@ -3258,7 +3145,7 @@
             this.ckM_TextBox28.IsNumber = true;
             this.ckM_TextBox28.IsShop = false;
             this.ckM_TextBox28.Length = 32767;
-            this.ckM_TextBox28.Location = new System.Drawing.Point(1110, 103);
+            this.ckM_TextBox28.Location = new System.Drawing.Point(1134, 103);
             this.ckM_TextBox28.MoveNext = true;
             this.ckM_TextBox28.Name = "ckM_TextBox28";
             this.ckM_TextBox28.Size = new System.Drawing.Size(100, 19);
@@ -3283,7 +3170,7 @@
             this.ckM_TextBox29.IsNumber = true;
             this.ckM_TextBox29.IsShop = false;
             this.ckM_TextBox29.Length = 32767;
-            this.ckM_TextBox29.Location = new System.Drawing.Point(1110, 85);
+            this.ckM_TextBox29.Location = new System.Drawing.Point(1134, 85);
             this.ckM_TextBox29.MoveNext = true;
             this.ckM_TextBox29.Name = "ckM_TextBox29";
             this.ckM_TextBox29.Size = new System.Drawing.Size(100, 19);
@@ -3308,7 +3195,7 @@
             this.ckM_TextBox24.IsNumber = true;
             this.ckM_TextBox24.IsShop = false;
             this.ckM_TextBox24.Length = 32767;
-            this.ckM_TextBox24.Location = new System.Drawing.Point(1011, 121);
+            this.ckM_TextBox24.Location = new System.Drawing.Point(1035, 121);
             this.ckM_TextBox24.MoveNext = true;
             this.ckM_TextBox24.Name = "ckM_TextBox24";
             this.ckM_TextBox24.Size = new System.Drawing.Size(100, 19);
@@ -3333,7 +3220,7 @@
             this.ckM_TextBox25.IsNumber = true;
             this.ckM_TextBox25.IsShop = false;
             this.ckM_TextBox25.Length = 32767;
-            this.ckM_TextBox25.Location = new System.Drawing.Point(1011, 103);
+            this.ckM_TextBox25.Location = new System.Drawing.Point(1035, 103);
             this.ckM_TextBox25.MoveNext = true;
             this.ckM_TextBox25.Name = "ckM_TextBox25";
             this.ckM_TextBox25.Size = new System.Drawing.Size(100, 19);
@@ -3358,7 +3245,7 @@
             this.ckM_TextBox26.IsNumber = true;
             this.ckM_TextBox26.IsShop = false;
             this.ckM_TextBox26.Length = 32767;
-            this.ckM_TextBox26.Location = new System.Drawing.Point(1011, 85);
+            this.ckM_TextBox26.Location = new System.Drawing.Point(1035, 85);
             this.ckM_TextBox26.MoveNext = true;
             this.ckM_TextBox26.Name = "ckM_TextBox26";
             this.ckM_TextBox26.Size = new System.Drawing.Size(100, 19);
@@ -3383,7 +3270,7 @@
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
             this.ckM_TextBox21.Length = 32767;
-            this.ckM_TextBox21.Location = new System.Drawing.Point(912, 121);
+            this.ckM_TextBox21.Location = new System.Drawing.Point(936, 121);
             this.ckM_TextBox21.MoveNext = true;
             this.ckM_TextBox21.Name = "ckM_TextBox21";
             this.ckM_TextBox21.Size = new System.Drawing.Size(100, 19);
@@ -3408,7 +3295,7 @@
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
             this.ckM_TextBox22.Length = 32767;
-            this.ckM_TextBox22.Location = new System.Drawing.Point(912, 103);
+            this.ckM_TextBox22.Location = new System.Drawing.Point(936, 103);
             this.ckM_TextBox22.MoveNext = true;
             this.ckM_TextBox22.Name = "ckM_TextBox22";
             this.ckM_TextBox22.Size = new System.Drawing.Size(100, 19);
@@ -3433,7 +3320,7 @@
             this.ckM_TextBox23.IsNumber = true;
             this.ckM_TextBox23.IsShop = false;
             this.ckM_TextBox23.Length = 32767;
-            this.ckM_TextBox23.Location = new System.Drawing.Point(912, 85);
+            this.ckM_TextBox23.Location = new System.Drawing.Point(936, 85);
             this.ckM_TextBox23.MoveNext = true;
             this.ckM_TextBox23.Name = "ckM_TextBox23";
             this.ckM_TextBox23.Size = new System.Drawing.Size(100, 19);
@@ -3458,7 +3345,7 @@
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 32767;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(813, 121);
+            this.ckM_TextBox18.Location = new System.Drawing.Point(837, 121);
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
             this.ckM_TextBox18.Size = new System.Drawing.Size(100, 19);
@@ -3483,7 +3370,7 @@
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
             this.ckM_TextBox19.Length = 32767;
-            this.ckM_TextBox19.Location = new System.Drawing.Point(813, 103);
+            this.ckM_TextBox19.Location = new System.Drawing.Point(837, 103);
             this.ckM_TextBox19.MoveNext = true;
             this.ckM_TextBox19.Name = "ckM_TextBox19";
             this.ckM_TextBox19.Size = new System.Drawing.Size(100, 19);
@@ -3508,7 +3395,7 @@
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
             this.ckM_TextBox20.Length = 32767;
-            this.ckM_TextBox20.Location = new System.Drawing.Point(813, 85);
+            this.ckM_TextBox20.Location = new System.Drawing.Point(837, 85);
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
             this.ckM_TextBox20.Size = new System.Drawing.Size(100, 19);
@@ -3533,7 +3420,7 @@
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.Length = 32767;
-            this.ckM_TextBox15.Location = new System.Drawing.Point(714, 121);
+            this.ckM_TextBox15.Location = new System.Drawing.Point(738, 121);
             this.ckM_TextBox15.MoveNext = true;
             this.ckM_TextBox15.Name = "ckM_TextBox15";
             this.ckM_TextBox15.Size = new System.Drawing.Size(100, 19);
@@ -3558,7 +3445,7 @@
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
             this.ckM_TextBox16.Length = 32767;
-            this.ckM_TextBox16.Location = new System.Drawing.Point(714, 103);
+            this.ckM_TextBox16.Location = new System.Drawing.Point(738, 103);
             this.ckM_TextBox16.MoveNext = true;
             this.ckM_TextBox16.Name = "ckM_TextBox16";
             this.ckM_TextBox16.Size = new System.Drawing.Size(100, 19);
@@ -3583,7 +3470,7 @@
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
             this.ckM_TextBox17.Length = 32767;
-            this.ckM_TextBox17.Location = new System.Drawing.Point(714, 85);
+            this.ckM_TextBox17.Location = new System.Drawing.Point(738, 85);
             this.ckM_TextBox17.MoveNext = true;
             this.ckM_TextBox17.Name = "ckM_TextBox17";
             this.ckM_TextBox17.Size = new System.Drawing.Size(100, 19);
@@ -3608,7 +3495,7 @@
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 32767;
-            this.ckM_TextBox12.Location = new System.Drawing.Point(615, 121);
+            this.ckM_TextBox12.Location = new System.Drawing.Point(639, 121);
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
             this.ckM_TextBox12.Size = new System.Drawing.Size(100, 19);
@@ -3633,7 +3520,7 @@
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
             this.ckM_TextBox13.Length = 32767;
-            this.ckM_TextBox13.Location = new System.Drawing.Point(615, 103);
+            this.ckM_TextBox13.Location = new System.Drawing.Point(639, 103);
             this.ckM_TextBox13.MoveNext = true;
             this.ckM_TextBox13.Name = "ckM_TextBox13";
             this.ckM_TextBox13.Size = new System.Drawing.Size(100, 19);
@@ -3658,7 +3545,7 @@
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
             this.ckM_TextBox14.Length = 32767;
-            this.ckM_TextBox14.Location = new System.Drawing.Point(615, 85);
+            this.ckM_TextBox14.Location = new System.Drawing.Point(639, 85);
             this.ckM_TextBox14.MoveNext = true;
             this.ckM_TextBox14.Name = "ckM_TextBox14";
             this.ckM_TextBox14.Size = new System.Drawing.Size(100, 19);
@@ -3683,7 +3570,7 @@
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 32767;
-            this.ckM_TextBox9.Location = new System.Drawing.Point(516, 121);
+            this.ckM_TextBox9.Location = new System.Drawing.Point(540, 121);
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
             this.ckM_TextBox9.Size = new System.Drawing.Size(100, 19);
@@ -3708,7 +3595,7 @@
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
             this.ckM_TextBox10.Length = 32767;
-            this.ckM_TextBox10.Location = new System.Drawing.Point(516, 103);
+            this.ckM_TextBox10.Location = new System.Drawing.Point(540, 103);
             this.ckM_TextBox10.MoveNext = true;
             this.ckM_TextBox10.Name = "ckM_TextBox10";
             this.ckM_TextBox10.Size = new System.Drawing.Size(100, 19);
@@ -3733,7 +3620,7 @@
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
             this.ckM_TextBox11.Length = 32767;
-            this.ckM_TextBox11.Location = new System.Drawing.Point(516, 85);
+            this.ckM_TextBox11.Location = new System.Drawing.Point(540, 85);
             this.ckM_TextBox11.MoveNext = true;
             this.ckM_TextBox11.Name = "ckM_TextBox11";
             this.ckM_TextBox11.Size = new System.Drawing.Size(100, 19);
@@ -3758,7 +3645,7 @@
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 32767;
-            this.ckM_TextBox6.Location = new System.Drawing.Point(418, 121);
+            this.ckM_TextBox6.Location = new System.Drawing.Point(442, 121);
             this.ckM_TextBox6.MoveNext = true;
             this.ckM_TextBox6.Name = "ckM_TextBox6";
             this.ckM_TextBox6.Size = new System.Drawing.Size(100, 19);
@@ -3783,7 +3670,7 @@
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 32767;
-            this.ckM_TextBox7.Location = new System.Drawing.Point(418, 103);
+            this.ckM_TextBox7.Location = new System.Drawing.Point(442, 103);
             this.ckM_TextBox7.MoveNext = true;
             this.ckM_TextBox7.Name = "ckM_TextBox7";
             this.ckM_TextBox7.Size = new System.Drawing.Size(100, 19);
@@ -3808,7 +3695,7 @@
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 32767;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(418, 85);
+            this.ckM_TextBox8.Location = new System.Drawing.Point(442, 85);
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
             this.ckM_TextBox8.Size = new System.Drawing.Size(100, 19);
@@ -3833,7 +3720,7 @@
             this.ckM_TextBox5.IsNumber = true;
             this.ckM_TextBox5.IsShop = false;
             this.ckM_TextBox5.Length = 32767;
-            this.ckM_TextBox5.Location = new System.Drawing.Point(320, 121);
+            this.ckM_TextBox5.Location = new System.Drawing.Point(344, 121);
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
             this.ckM_TextBox5.Size = new System.Drawing.Size(100, 19);
@@ -3858,7 +3745,7 @@
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 32767;
-            this.ckM_TextBox4.Location = new System.Drawing.Point(320, 103);
+            this.ckM_TextBox4.Location = new System.Drawing.Point(344, 103);
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
             this.ckM_TextBox4.Size = new System.Drawing.Size(100, 19);
@@ -3883,7 +3770,7 @@
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 32767;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(320, 85);
+            this.ckM_TextBox3.Location = new System.Drawing.Point(344, 85);
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
             this.ckM_TextBox3.Size = new System.Drawing.Size(100, 19);
@@ -3909,6 +3796,140 @@
             this.lblProductName.TabIndex = 15;
             this.lblProductName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Sc_Item
+            // 
+            this.Sc_Item.AutoSize = true;
+            this.Sc_Item.ChangeDate = "";
+            this.Sc_Item.ChangeDateWidth = 100;
+            this.Sc_Item.Code = "";
+            this.Sc_Item.CodeWidth = 190;
+            this.Sc_Item.CodeWidth1 = 190;
+            this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_Item.DataCheck = false;
+            this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_Item.IsCopy = false;
+            this.Sc_Item.LabelText = "";
+            this.Sc_Item.LabelVisible = false;
+            this.Sc_Item.Location = new System.Drawing.Point(120, 16);
+            this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_Item.Name = "Sc_Item";
+            this.Sc_Item.NameWidth = 350;
+            this.Sc_Item.SearchEnable = true;
+            this.Sc_Item.Size = new System.Drawing.Size(223, 28);
+            this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
+            this.Sc_Item.TabIndex = 2;
+            this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_Item.UseChangeDate = false;
+            this.Sc_Item.Value1 = null;
+            this.Sc_Item.Value2 = null;
+            this.Sc_Item.Value3 = null;
+            // 
+            // ckM_Button1
+            // 
+            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckM_Button1.DefaultBtnSize = false;
+            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.ckM_Button1.Location = new System.Drawing.Point(1215, 528);
+            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
+            this.ckM_Button1.Name = "ckM_Button1";
+            this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
+            this.ckM_Button1.TabIndex = 152;
+            this.ckM_Button1.Text = "架空商品";
+            this.ckM_Button1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(263, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1070, 20);
+            this.label2.TabIndex = 153;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(264, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.TabIndex = 154;
+            this.label3.Text = "新連番";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(264, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.TabIndex = 155;
+            this.label4.Text = "現状\t\t";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(264, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.TabIndex = 156;
+            this.label5.Text = "不要\t\t";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(264, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 19);
+            this.label6.TabIndex = 157;
+            this.label6.Text = "\t\t";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(37, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 19);
+            this.label7.TabIndex = 158;
+            this.label7.Text = "新連番";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(127, 138);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 19);
+            this.label8.TabIndex = 159;
+            this.label8.Text = "現状\t\t";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Silver;
+            this.label9.Location = new System.Drawing.Point(177, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 160;
+            this.label9.Text = "不要\t\t\t";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(37, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 360);
+            this.label10.TabIndex = 161;
+            this.label10.Text = "  カ    ラ    ー";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MasterTouroku_SKUCDHenkou_SKUCD変更
             // 
@@ -3950,7 +3971,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox5;
         private CKM_Controls.CKM_TextBox ckM_TextBox4;
         private CKM_Controls.CKM_TextBox ckM_TextBox3;
-        private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_TextBox ckM_TextBox33;
         private CKM_Controls.CKM_TextBox ckM_TextBox34;
         private CKM_Controls.CKM_TextBox ckM_TextBox35;
@@ -4053,8 +4073,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox60;
         private CKM_Controls.CKM_TextBox ckM_TextBox61;
         private CKM_Controls.CKM_TextBox ckM_TextBox62;
-        private CKM_Controls.CKM_Label ckM_Label8;
-        private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_TextBox ckM_TextBox43;
         private CKM_Controls.CKM_TextBox ckM_TextBox44;
         private CKM_Controls.CKM_TextBox ckM_TextBox45;
@@ -4071,9 +4089,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox56;
         private CKM_Controls.CKM_TextBox ckM_TextBox57;
         private CKM_Controls.CKM_TextBox ckM_TextBox58;
-        private CKM_Controls.CKM_Label ckM_Label6;
-        private CKM_Controls.CKM_Label ckM_Label5;
-        private CKM_Controls.CKM_Label ckM_Label4;
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_Label ckM_Label9;
         private CKM_Controls.CKM_Label ckM_Label11;
@@ -4091,5 +4106,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private CKM_Controls.CKM_Button ckM_Button1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }
