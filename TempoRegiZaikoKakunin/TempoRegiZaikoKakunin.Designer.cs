@@ -42,16 +42,16 @@
             this.lblColorSize = new CKM_Controls.CKMShop_Label();
             this.chkColorSize = new CKM_Controls.CKMShop_CheckBox();
             this.dgvZaikokakunin = new CKM_Controls.CKMShop_GridView();
-            this.lblZaiko = new CKM_Controls.CKMShop_Label();
-            this.lblProduct = new CKM_Controls.CKMShop_Label();
-            this.lblplandate = new CKM_Controls.CKMShop_Label();
-            this.lblsou = new CKM_Controls.CKMShop_Label();
-            this.lblallowsou = new CKM_Controls.CKMShop_Label();
             this.colWarehouse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblZaiko = new CKM_Controls.CKMShop_Label();
+            this.lblProduct = new CKM_Controls.CKMShop_Label();
+            this.lblplandate = new CKM_Controls.CKMShop_Label();
+            this.lblsou = new CKM_Controls.CKMShop_Label();
+            this.lblallowsou = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvZaikokakunin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.btnInquery.Location = new System.Drawing.Point(1730, 139);
             this.btnInquery.Margin = new System.Windows.Forms.Padding(1);
             this.btnInquery.Name = "btnInquery";
-            this.btnInquery.Size = new System.Drawing.Size(120, 42);
+            this.btnInquery.Size = new System.Drawing.Size(120, 45);
             this.btnInquery.TabIndex = 2;
             this.btnInquery.Text = "照会";
             this.btnInquery.UseVisualStyleBackColor = false;
@@ -235,6 +235,63 @@
             this.dgvZaikokakunin.Width_ = 1800;
             this.dgvZaikokakunin.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvZaikokakunin_CellDoubleClick);
             // 
+            // colWarehouse
+            // 
+            this.colWarehouse.DataPropertyName = "SoukoName";
+            this.colWarehouse.HeaderText = "在庫倉庫";
+            this.colWarehouse.Name = "colWarehouse";
+            this.colWarehouse.ReadOnly = true;
+            this.colWarehouse.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colWarehouse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colWarehouse.Width = 320;
+            // 
+            // colProduct
+            // 
+            this.colProduct.DataPropertyName = "JanCD";
+            this.colProduct.HeaderText = "商　品";
+            this.colProduct.Name = "colProduct";
+            this.colProduct.ReadOnly = true;
+            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colProduct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colProduct.Width = 840;
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "ArrivalPlanDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDate.HeaderText = "入荷予定日";
+            this.colDate.MaxInputLength = 8;
+            this.colDate.Name = "colDate";
+            this.colDate.ReadOnly = true;
+            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colDate.Width = 240;
+            // 
+            // colQuantity
+            // 
+            this.colQuantity.DataPropertyName = "ZaikouSu";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colQuantity.HeaderText = "在庫数";
+            this.colQuantity.Name = "colQuantity";
+            this.colQuantity.ReadOnly = true;
+            this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colQuantity.Width = 170;
+            // 
+            // colNo
+            // 
+            this.colNo.DataPropertyName = "KanoSu";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colNo.HeaderText = "可能数";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNo.Width = 170;
+            // 
             // lblZaiko
             // 
             this.lblZaiko.AutoSize = true;
@@ -314,63 +371,6 @@
             this.lblallowsou.Text = " 可能数";
             this.lblallowsou.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.lblallowsou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // colWarehouse
-            // 
-            this.colWarehouse.DataPropertyName = "SoukoName";
-            this.colWarehouse.HeaderText = "在庫倉庫";
-            this.colWarehouse.Name = "colWarehouse";
-            this.colWarehouse.ReadOnly = true;
-            this.colWarehouse.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colWarehouse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colWarehouse.Width = 320;
-            // 
-            // colProduct
-            // 
-            this.colProduct.DataPropertyName = "JanCD";
-            this.colProduct.HeaderText = "商　品";
-            this.colProduct.Name = "colProduct";
-            this.colProduct.ReadOnly = true;
-            this.colProduct.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colProduct.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colProduct.Width = 840;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colDate.HeaderText = "入荷予定日";
-            this.colDate.MaxInputLength = 8;
-            this.colDate.Name = "colDate";
-            this.colDate.ReadOnly = true;
-            this.colDate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colDate.Width = 240;
-            // 
-            // colQuantity
-            // 
-            this.colQuantity.DataPropertyName = "ZaikouSu";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colQuantity.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colQuantity.HeaderText = "在庫数";
-            this.colQuantity.Name = "colQuantity";
-            this.colQuantity.ReadOnly = true;
-            this.colQuantity.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colQuantity.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colQuantity.Width = 170;
-            // 
-            // colNo
-            // 
-            this.colNo.DataPropertyName = "KanoSu";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colNo.HeaderText = "可能数";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 170;
             // 
             // frmTempoRegiZaikoKakunin
             // 
