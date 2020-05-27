@@ -40,6 +40,18 @@ namespace CKM_Controls
             get => UseRow;
             set => UseRow = RowHeadersVisible = value;
         }
+
+        public int RowHeight = 20;
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Row Height")]
+        [DisplayName("Row Height")]
+        public int RowHeight_
+        {
+            get => RowHeight;
+            set => RowHeight = RowTemplate.Height = value;
+        }
+
         MasterTouroku_Souko_BL mtsbl;
         string DisablecolName = string.Empty;
         string EnablecolName = string.Empty;
