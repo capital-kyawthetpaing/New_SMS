@@ -590,13 +590,28 @@ namespace MasterTouroku_YuubinBangou
         {
             try
             {
-
+                if (Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) > -256)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    dgvYuubinBangou.CurrentCell.Value = 0;
+                }
+                
             }
             catch (Exception ex)
             {
-                string msg = ex.ToString();
-                MessageBox.Show(msg);
+                MessageBox.Show("Enter valid number. . . ");
+                dgvYuubinBangou.CurrentCell.Value = 0;
             }
+            dgvYuubinBangou.RefreshEdit();
+        }
+
+        private void dgvYuubinBangou_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            //dgvYuubinBangou.Rows[e.RowIndex].ErrorText = "0";
 
         }
     }
