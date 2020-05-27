@@ -586,5 +586,18 @@ namespace MasterTouroku_YuubinBangou
             
         }
 
+        private void dgvYuubinBangou_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.ToString();
+                MessageBox.Show(msg);
+            }
+
+        }
     }
 }
