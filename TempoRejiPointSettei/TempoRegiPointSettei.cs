@@ -79,7 +79,7 @@ namespace TempoRejiPointSettei
                 pointSettei_bl = new TempoRejiPointSettei_BL();
                 if (pointSettei_bl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    mspe = GetKouzaEntity();
+                    mspe = GetStorePointEntity();
                     if (pointSettei_bl.M_StorePoint_Insert_Update(mspe))
                     {
                         pointSettei_bl.ShowMessage("I101");
@@ -93,7 +93,7 @@ namespace TempoRejiPointSettei
                 }
             }
         }
-        public M_StorePoint_Entity GetKouzaEntity()
+        public M_StorePoint_Entity GetStorePointEntity()
         {
             mspe = new M_StorePoint_Entity
             {
