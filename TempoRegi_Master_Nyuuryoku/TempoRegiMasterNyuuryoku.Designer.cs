@@ -4208,7 +4208,7 @@
             this.btnConfirm1.Location = new System.Drawing.Point(1701, 340);
             this.btnConfirm1.Margin = new System.Windows.Forms.Padding(1);
             this.btnConfirm1.Name = "btnConfirm1";
-            this.btnConfirm1.Size = new System.Drawing.Size(200, 43);
+            this.btnConfirm1.Size = new System.Drawing.Size(200, 45);
             this.btnConfirm1.TabIndex = 12;
             this.btnConfirm1.Text = "確定";
             this.btnConfirm1.UseVisualStyleBackColor = false;
@@ -4224,10 +4224,10 @@
             this.btn_Confrim2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confrim2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btn_Confrim2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btn_Confrim2.Location = new System.Drawing.Point(1701, 862);
+            this.btn_Confrim2.Location = new System.Drawing.Point(1701, 854);
             this.btn_Confrim2.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Confrim2.Name = "btn_Confrim2";
-            this.btn_Confrim2.Size = new System.Drawing.Size(200, 43);
+            this.btn_Confrim2.Size = new System.Drawing.Size(200, 45);
             this.btn_Confrim2.TabIndex = 13;
             this.btn_Confrim2.Text = "確定";
             this.btn_Confrim2.UseVisualStyleBackColor = false;
@@ -9815,10 +9815,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnSearch.Location = new System.Drawing.Point(442, 800);
+            this.btnSearch.Location = new System.Drawing.Point(442, 799);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(170, 43);
+            this.btnSearch.Size = new System.Drawing.Size(170, 45);
             this.btnSearch.TabIndex = 18;
             this.btnSearch.Text = "検索";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -9881,6 +9881,7 @@
             this.lblSearchName.TabIndex = 22;
             this.lblSearchName.Text = "ＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblSearchName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSearchName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSearchName.Visible = false;
             // 
             // TempoRegiMasterNyuuryoku
