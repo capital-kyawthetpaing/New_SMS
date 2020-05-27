@@ -79,7 +79,7 @@ namespace TempoRejiPointSettei
                 pointSettei_bl = new TempoRejiPointSettei_BL();
                 if (pointSettei_bl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    mspe = GetKouzaEntity();
+                    mspe = GetStorePointEntity();
                     if (pointSettei_bl.M_StorePoint_Insert_Update(mspe))
                     {
                         pointSettei_bl.ShowMessage("I101");
@@ -93,14 +93,14 @@ namespace TempoRejiPointSettei
                 }
             }
         }
-        public M_StorePoint_Entity GetKouzaEntity()
+        public M_StorePoint_Entity GetStorePointEntity()
         {
             mspe = new M_StorePoint_Entity
             {
                 StoreCD=StoreCD,
                 ChangeDate = txtChangeDate.Text.Replace("/", "-"),
-                PointRate = txtPointRate.Text=="99.9" ? "100.0" : txtPointRate.Text,
-                ServicedayRate = txtServiceDayRate.Text=="9.9"? "10.0" : txtServiceDayRate.Text,
+                PointRate = txtPointRate.Text,
+                ServicedayRate = txtServiceDayRate.Text,
                 ExpirationDate = txtExperationDate.Text,
                 MaxPoint = txtMaxPoint.Text,
                 TicketUnit = txtTicketUnit.Text,
@@ -283,24 +283,24 @@ namespace TempoRejiPointSettei
             MoveNextControl(e);
         }
 
-        private void txtPointRate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if(e.KeyCode==Keys.Enter)
-            {
-                if (txtPointRate.Text == "99.9")
-                    txtPointRate.Text = "100.0";
+        //private void txtPointRate_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.KeyCode==Keys.Enter)
+        //    {
+        //        if (txtPointRate.Text == "99.9")
+        //            txtPointRate.Text = "100.0";
                
-            }
-        }
+        //    }
+        //}
 
-        private void txtServiceDayRate_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (txtServiceDayRate.Text == "9.9")
-                    txtServiceDayRate.Text = "10.0";
+        //private void txtServiceDayRate_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        if (txtServiceDayRate.Text == "9.9")
+        //            txtServiceDayRate.Text = "10.0";
 
-            }
-        }
+        //    }
+        //}
     }
 }
