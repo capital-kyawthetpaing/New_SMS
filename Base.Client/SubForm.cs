@@ -302,7 +302,11 @@ namespace Base.Client
                             if (btn.Enabled)
                                 ButtonFunction(btn.Tag.ToString());
                             break;
+                        case Keys.Enter:
+                            MoveNextControl(e);
+                            break;
                     }
+                    
                 }
             }
             catch (Exception ex)
