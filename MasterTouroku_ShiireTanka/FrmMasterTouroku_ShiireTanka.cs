@@ -384,6 +384,7 @@ namespace MasterTouroku_ShiireTanka
             else
             {
                 CB_store.Text = string.Empty;
+                CB_store.SelectedValue = "0000";
             }
 
         }
@@ -398,6 +399,11 @@ namespace MasterTouroku_ShiireTanka
                     cb_focus = true;
                 }
             }
+        }
+
+        private void Btn_display_Click(object sender, EventArgs e)
+        {
+            F11();
         }
     }
 }
