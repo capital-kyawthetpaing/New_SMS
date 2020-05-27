@@ -177,6 +177,13 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckM_TextBox123 = new CKM_Controls.CKM_TextBox();
+            this.ckM_TextBox124 = new CKM_Controls.CKM_TextBox();
+            this.ckM_TextBox125 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label10 = new CKM_Controls.CKM_Label();
+            this.ckM_Label11 = new CKM_Controls.CKM_Label();
+            this.ckM_Label9 = new CKM_Controls.CKM_Label();
+            this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
@@ -391,6 +398,13 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.ckM_Label12);
+            this.panelDetail.Controls.Add(this.ckM_Label9);
+            this.panelDetail.Controls.Add(this.ckM_Label11);
+            this.panelDetail.Controls.Add(this.ckM_Label10);
+            this.panelDetail.Controls.Add(this.ckM_TextBox125);
+            this.panelDetail.Controls.Add(this.ckM_TextBox124);
+            this.panelDetail.Controls.Add(this.ckM_TextBox123);
             this.panelDetail.Controls.Add(this.ckM_GridView1);
             this.panelDetail.Controls.Add(this.ckM_TextBox103);
             this.panelDetail.Controls.Add(this.ckM_TextBox104);
@@ -3526,7 +3540,9 @@
             // 
             // ckM_GridView1
             // 
+            this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ckM_GridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
@@ -3538,10 +3554,10 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            this.ckM_GridView1.Location = new System.Drawing.Point(320, 157);
+            this.ckM_GridView1.Location = new System.Drawing.Point(321, 158);
             this.ckM_GridView1.Name = "ckM_GridView1";
             this.ckM_GridView1.RowHeadersVisible = false;
-            this.ckM_GridView1.Size = new System.Drawing.Size(1000, 150);
+            this.ckM_GridView1.Size = new System.Drawing.Size(990, 150);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
@@ -3550,51 +3566,197 @@
             // 
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
+            this.Column1.Width = 97;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Column2";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 98;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Column3";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 99;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Column4";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 99;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 99;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Column6";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 99;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Column7";
             this.Column7.Name = "Column7";
+            this.Column7.Width = 99;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Column8";
             this.Column8.Name = "Column8";
+            this.Column8.Width = 99;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Column9";
             this.Column9.Name = "Column9";
+            this.Column9.Width = 99;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Column10";
             this.Column10.Name = "Column10";
+            this.Column10.Width = 99;
+            // 
+            // ckM_TextBox123
+            // 
+            this.ckM_TextBox123.AllowMinus = false;
+            this.ckM_TextBox123.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox123.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox123.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox123.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox123.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox123.DecimalPlace = 0;
+            this.ckM_TextBox123.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_TextBox123.IntegerPart = 0;
+            this.ckM_TextBox123.IsCorrectDate = true;
+            this.ckM_TextBox123.isEnterKeyDown = false;
+            this.ckM_TextBox123.isMaxLengthErr = false;
+            this.ckM_TextBox123.IsNumber = true;
+            this.ckM_TextBox123.IsShop = false;
+            this.ckM_TextBox123.Length = 32767;
+            this.ckM_TextBox123.Location = new System.Drawing.Point(58, 551);
+            this.ckM_TextBox123.MoveNext = true;
+            this.ckM_TextBox123.Name = "ckM_TextBox123";
+            this.ckM_TextBox123.Size = new System.Drawing.Size(250, 19);
+            this.ckM_TextBox123.TabIndex = 144;
+            this.ckM_TextBox123.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_TextBox124
+            // 
+            this.ckM_TextBox124.AllowMinus = false;
+            this.ckM_TextBox124.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox124.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox124.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox124.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox124.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox124.DecimalPlace = 0;
+            this.ckM_TextBox124.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox124.IntegerPart = 0;
+            this.ckM_TextBox124.IsCorrectDate = true;
+            this.ckM_TextBox124.isEnterKeyDown = false;
+            this.ckM_TextBox124.isMaxLengthErr = false;
+            this.ckM_TextBox124.IsNumber = true;
+            this.ckM_TextBox124.IsShop = false;
+            this.ckM_TextBox124.Length = 32767;
+            this.ckM_TextBox124.Location = new System.Drawing.Point(307, 551);
+            this.ckM_TextBox124.MoveNext = true;
+            this.ckM_TextBox124.Name = "ckM_TextBox124";
+            this.ckM_TextBox124.Size = new System.Drawing.Size(70, 19);
+            this.ckM_TextBox124.TabIndex = 145;
+            this.ckM_TextBox124.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_TextBox125
+            // 
+            this.ckM_TextBox125.AllowMinus = false;
+            this.ckM_TextBox125.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.ckM_TextBox125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox125.ClientColor = System.Drawing.SystemColors.Window;
+            this.ckM_TextBox125.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.ckM_TextBox125.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ckM_TextBox125.DecimalPlace = 0;
+            this.ckM_TextBox125.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox125.IntegerPart = 0;
+            this.ckM_TextBox125.IsCorrectDate = true;
+            this.ckM_TextBox125.isEnterKeyDown = false;
+            this.ckM_TextBox125.isMaxLengthErr = false;
+            this.ckM_TextBox125.IsNumber = true;
+            this.ckM_TextBox125.IsShop = false;
+            this.ckM_TextBox125.Length = 32767;
+            this.ckM_TextBox125.Location = new System.Drawing.Point(376, 551);
+            this.ckM_TextBox125.MoveNext = true;
+            this.ckM_TextBox125.Name = "ckM_TextBox125";
+            this.ckM_TextBox125.Size = new System.Drawing.Size(70, 19);
+            this.ckM_TextBox125.TabIndex = 146;
+            this.ckM_TextBox125.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_Label10
+            // 
+            this.ckM_Label10.AutoSize = true;
+            this.ckM_Label10.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label10.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label10.DefaultlabelSize = true;
+            this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label10.Location = new System.Drawing.Point(322, 536);
+            this.ckM_Label10.Name = "ckM_Label10";
+            this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label10.TabIndex = 148;
+            this.ckM_Label10.Text = "サイズ";
+            this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label11
+            // 
+            this.ckM_Label11.AutoSize = true;
+            this.ckM_Label11.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label11.DefaultlabelSize = true;
+            this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label11.Location = new System.Drawing.Point(390, 536);
+            this.ckM_Label11.Name = "ckM_Label11";
+            this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
+            this.ckM_Label11.TabIndex = 149;
+            this.ckM_Label11.Text = "カラー\t\t";
+            this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label9
+            // 
+            this.ckM_Label9.AutoSize = true;
+            this.ckM_Label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label9.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label9.DefaultlabelSize = true;
+            this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label9.Location = new System.Drawing.Point(174, 536);
+            this.ckM_Label9.Name = "ckM_Label9";
+            this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
+            this.ckM_Label9.TabIndex = 150;
+            this.ckM_Label9.Text = "ITEM";
+            this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label12
+            // 
+            this.ckM_Label12.AutoSize = true;
+            this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label12.DefaultlabelSize = true;
+            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label12.Location = new System.Drawing.Point(449, 555);
+            this.ckM_Label12.Name = "ckM_Label12";
+            this.ckM_Label12.Size = new System.Drawing.Size(105, 12);
+            this.ckM_Label12.TabIndex = 151;
+            this.ckM_Label12.Text = "をSKUCDとします\t";
+            this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // MasterTouroku_SKUCDHenkou_SKUCD変更
             // 
@@ -3675,16 +3837,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox7;
         private CKM_Controls.CKM_TextBox ckM_TextBox8;
         private CKM_Controls.CKM_GridView ckM_GridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private CKM_Controls.CKM_TextBox ckM_TextBox103;
         private CKM_Controls.CKM_TextBox ckM_TextBox104;
         private CKM_Controls.CKM_TextBox ckM_TextBox105;
@@ -3770,5 +3922,22 @@
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_Label ckM_Label4;
+        private CKM_Controls.CKM_Label ckM_Label12;
+        private CKM_Controls.CKM_Label ckM_Label9;
+        private CKM_Controls.CKM_Label ckM_Label11;
+        private CKM_Controls.CKM_Label ckM_Label10;
+        private CKM_Controls.CKM_TextBox ckM_TextBox125;
+        private CKM_Controls.CKM_TextBox ckM_TextBox124;
+        private CKM_Controls.CKM_TextBox ckM_TextBox123;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }
