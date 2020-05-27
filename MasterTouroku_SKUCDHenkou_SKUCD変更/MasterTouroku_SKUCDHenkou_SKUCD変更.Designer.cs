@@ -73,6 +73,7 @@
             this.Sc_Item.ChangeDateWidth = 100;
             this.Sc_Item.Code = "";
             this.Sc_Item.CodeWidth = 190;
+            this.Sc_Item.CodeWidth1 = 190;
             this.Sc_Item.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Item.DataCheck = false;
             this.Sc_Item.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -82,6 +83,7 @@
             this.Sc_Item.Location = new System.Drawing.Point(120, 16);
             this.Sc_Item.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Item.Name = "Sc_Item";
+            this.Sc_Item.NameWidth = 350;
             this.Sc_Item.SearchEnable = true;
             this.Sc_Item.Size = new System.Drawing.Size(223, 28);
             this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
@@ -98,6 +100,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -105,6 +108,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -122,6 +126,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -129,6 +134,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
