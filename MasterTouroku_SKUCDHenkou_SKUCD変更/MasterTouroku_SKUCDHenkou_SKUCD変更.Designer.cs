@@ -40,6 +40,16 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
@@ -181,16 +191,6 @@
             this.lblPartNum = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.Sc_Item = new Search.CKM_SearchControl();
-            this.ckM_Button1 = new CKM_Controls.CKM_Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
@@ -522,8 +522,114 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1776, 601);
+            this.panelDetail.Size = new System.Drawing.Size(1776, 649);
             this.panelDetail.TabIndex = 13;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(37, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 360);
+            this.label10.TabIndex = 161;
+            this.label10.Text = "  カ    ラ    ー";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Silver;
+            this.label9.Location = new System.Drawing.Point(177, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 160;
+            this.label9.Text = "不要\t\t\t";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(127, 138);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 19);
+            this.label8.TabIndex = 159;
+            this.label8.Text = "現状\t\t";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(37, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 19);
+            this.label7.TabIndex = 158;
+            this.label7.Text = "新連番";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(264, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 19);
+            this.label6.TabIndex = 157;
+            this.label6.Text = "\t\t";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(264, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.TabIndex = 156;
+            this.label5.Text = "不要\t\t";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(264, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.TabIndex = 155;
+            this.label4.Text = "現状\t\t";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(264, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.TabIndex = 154;
+            this.label3.Text = "新連番";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(263, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1070, 20);
+            this.label2.TabIndex = 153;
+            // 
+            // ckM_Button1
+            // 
+            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckM_Button1.DefaultBtnSize = false;
+            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.ckM_Button1.Location = new System.Drawing.Point(1215, 577);
+            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
+            this.ckM_Button1.Name = "ckM_Button1";
+            this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
+            this.ckM_Button1.TabIndex = 152;
+            this.ckM_Button1.Text = "架空商品";
+            this.ckM_Button1.UseVisualStyleBackColor = false;
             // 
             // ckM_Label12
             // 
@@ -534,7 +640,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(473, 555);
+            this.ckM_Label12.Location = new System.Drawing.Point(473, 604);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(105, 12);
             this.ckM_Label12.TabIndex = 151;
@@ -551,7 +657,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(198, 536);
+            this.ckM_Label9.Location = new System.Drawing.Point(198, 585);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label9.TabIndex = 150;
@@ -568,7 +674,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(414, 536);
+            this.ckM_Label11.Location = new System.Drawing.Point(414, 585);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label11.TabIndex = 149;
@@ -585,7 +691,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(346, 536);
+            this.ckM_Label10.Location = new System.Drawing.Point(346, 585);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 148;
@@ -611,7 +717,7 @@
             this.ckM_TextBox125.IsNumber = true;
             this.ckM_TextBox125.IsShop = false;
             this.ckM_TextBox125.Length = 32767;
-            this.ckM_TextBox125.Location = new System.Drawing.Point(400, 551);
+            this.ckM_TextBox125.Location = new System.Drawing.Point(400, 600);
             this.ckM_TextBox125.MoveNext = true;
             this.ckM_TextBox125.Name = "ckM_TextBox125";
             this.ckM_TextBox125.Size = new System.Drawing.Size(70, 19);
@@ -636,7 +742,7 @@
             this.ckM_TextBox124.IsNumber = true;
             this.ckM_TextBox124.IsShop = false;
             this.ckM_TextBox124.Length = 32767;
-            this.ckM_TextBox124.Location = new System.Drawing.Point(331, 551);
+            this.ckM_TextBox124.Location = new System.Drawing.Point(331, 600);
             this.ckM_TextBox124.MoveNext = true;
             this.ckM_TextBox124.Name = "ckM_TextBox124";
             this.ckM_TextBox124.Size = new System.Drawing.Size(70, 19);
@@ -661,7 +767,7 @@
             this.ckM_TextBox123.IsNumber = true;
             this.ckM_TextBox123.IsShop = false;
             this.ckM_TextBox123.Length = 32767;
-            this.ckM_TextBox123.Location = new System.Drawing.Point(82, 551);
+            this.ckM_TextBox123.Location = new System.Drawing.Point(82, 600);
             this.ckM_TextBox123.MoveNext = true;
             this.ckM_TextBox123.Name = "ckM_TextBox123";
             this.ckM_TextBox123.Size = new System.Drawing.Size(250, 19);
@@ -674,11 +780,12 @@
             this.ckM_GridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.ckM_GridView1.AutoGenerateColumns = false;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -712,10 +819,10 @@
             this.ckM_GridView1.RowHeadersVisible = false;
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
-            this.ckM_GridView1.Size = new System.Drawing.Size(990, 360);
+            this.ckM_GridView1.Size = new System.Drawing.Size(1005, 380);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = true;
+            this.ckM_GridView1.UseSetting = false;
             // 
             // Column1
             // 
@@ -3825,117 +3932,11 @@
             this.Sc_Item.Value2 = null;
             this.Sc_Item.Value3 = null;
             // 
-            // ckM_Button1
-            // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button1.DefaultBtnSize = false;
-            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(1215, 528);
-            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
-            this.ckM_Button1.TabIndex = 152;
-            this.ckM_Button1.Text = "架空商品";
-            this.ckM_Button1.UseVisualStyleBackColor = false;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(263, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1070, 20);
-            this.label2.TabIndex = 153;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(264, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 19);
-            this.label3.TabIndex = 154;
-            this.label3.Text = "新連番";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(264, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 19);
-            this.label4.TabIndex = 155;
-            this.label4.Text = "現状\t\t";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(264, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 19);
-            this.label5.TabIndex = 156;
-            this.label5.Text = "不要\t\t";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(264, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 19);
-            this.label6.TabIndex = 157;
-            this.label6.Text = "\t\t";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(37, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 19);
-            this.label7.TabIndex = 158;
-            this.label7.Text = "新連番";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(127, 138);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 19);
-            this.label8.TabIndex = 159;
-            this.label8.Text = "現状\t\t";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label9
-            // 
-            this.label9.BackColor = System.Drawing.Color.Silver;
-            this.label9.Location = new System.Drawing.Point(177, 138);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 19);
-            this.label9.TabIndex = 160;
-            this.label9.Text = "不要\t\t\t";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(37, 157);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 360);
-            this.label10.TabIndex = 161;
-            this.label10.Text = "  カ    ラ    ー";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MasterTouroku_SKUCDHenkou_SKUCD変更
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1776, 813);
+            this.ClientSize = new System.Drawing.Size(1776, 861);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
