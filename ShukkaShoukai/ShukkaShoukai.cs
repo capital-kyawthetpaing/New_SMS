@@ -49,6 +49,9 @@ namespace ShukkaShoukai
             cboWarehouse.Focus();
             SetRequiredField();
 
+            Sc_Item.CodeWidth = 600;
+            Sc_SKUCD.CodeWidth = 600;
+
             SC_Order.Value1 = InOperatorCD;
             SC_Order.Value2 = StoreCD;
            
