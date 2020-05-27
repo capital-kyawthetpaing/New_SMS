@@ -9402,7 +9402,7 @@
             this.ckmShop_Label118.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label118.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label118.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label118.Location = new System.Drawing.Point(478, 10);
+            this.ckmShop_Label118.Location = new System.Drawing.Point(478, 7);
             this.ckmShop_Label118.Name = "ckmShop_Label118";
             this.ckmShop_Label118.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label118.TabIndex = 91;
@@ -9815,7 +9815,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnSearch.Location = new System.Drawing.Point(442, 798);
+            this.btnSearch.Location = new System.Drawing.Point(442, 799);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(170, 45);
