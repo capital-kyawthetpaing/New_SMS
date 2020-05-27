@@ -171,7 +171,6 @@
             // 
             // dgvDetail
             // 
-            this.dgvDetail.AllowUserToAddRows = false;
             this.dgvDetail.AllowUserToDeleteRows = false;
             this.dgvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -200,6 +199,8 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
+            this.dgvDetail.RowHeight_ = 20;
+            this.dgvDetail.RowTemplate.Height = 20;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDetail.Size = new System.Drawing.Size(876, 290);
             this.dgvDetail.TabIndex = 1;
