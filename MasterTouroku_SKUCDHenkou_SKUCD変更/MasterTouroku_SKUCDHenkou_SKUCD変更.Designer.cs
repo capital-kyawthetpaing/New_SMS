@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
@@ -40,6 +40,46 @@
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ckM_CheckBox30 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox29 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox28 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox27 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox26 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox25 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox24 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox23 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox22 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox21 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox20 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox19 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox18 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox17 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox16 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox15 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox14 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox13 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox12 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox11 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox10 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox9 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox8 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox7 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox6 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox5 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox4 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox2 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox1 = new CKM_Controls.CKM_CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ckM_Button1 = new CKM_Controls.CKM_Button();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label11 = new CKM_Controls.CKM_Label();
@@ -48,16 +88,6 @@
             this.ckM_TextBox124 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox123 = new CKM_Controls.CKM_TextBox();
             this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_TextBox103 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox104 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox105 = new CKM_Controls.CKM_TextBox();
@@ -181,16 +211,16 @@
             this.lblPartNum = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.Sc_Item = new Search.CKM_SearchControl();
-            this.ckM_Button1 = new CKM_Controls.CKM_Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
@@ -205,7 +235,7 @@
             this.PanelHeader.Controls.Add(this.ckM_TextBox2);
             this.PanelHeader.Controls.Add(this.ckM_TextBox1);
             this.PanelHeader.Controls.Add(this.Sc_Item);
-            this.PanelHeader.Size = new System.Drawing.Size(1774, 124);
+            this.PanelHeader.Size = new System.Drawing.Size(1671, 124);
             this.PanelHeader.Controls.SetChildIndex(this.Sc_Item, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox2, 0);
@@ -216,7 +246,7 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1137, 0);
             // 
             // ckM_TextBox1
             // 
@@ -282,7 +312,7 @@
             this.F11Display.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.F11Display.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.F11Display.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.F11Display.Location = new System.Drawing.Point(1649, 53);
+            this.F11Display.Location = new System.Drawing.Point(1532, 53);
             this.F11Display.Margin = new System.Windows.Forms.Padding(1);
             this.F11Display.Name = "F11Display";
             this.F11Display.Size = new System.Drawing.Size(100, 23);
@@ -377,6 +407,36 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.ckM_CheckBox30);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox29);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox28);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox27);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox26);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox25);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox24);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox23);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox22);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox21);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox20);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox19);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox18);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox17);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox16);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox15);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox14);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox13);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox12);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox11);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox10);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox9);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox8);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox7);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox6);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox5);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox4);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox3);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox2);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox1);
             this.panelDetail.Controls.Add(this.label10);
             this.panelDetail.Controls.Add(this.label9);
             this.panelDetail.Controls.Add(this.label8);
@@ -522,8 +582,415 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1776, 601);
+            this.panelDetail.Size = new System.Drawing.Size(1673, 617);
             this.panelDetail.TabIndex = 13;
+            // 
+            // ckM_CheckBox30
+            // 
+            this.ckM_CheckBox30.AutoSize = true;
+            this.ckM_CheckBox30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox30.Location = new System.Drawing.Point(189, 502);
+            this.ckM_CheckBox30.Name = "ckM_CheckBox30";
+            this.ckM_CheckBox30.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox30.TabIndex = 191;
+            this.ckM_CheckBox30.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox29
+            // 
+            this.ckM_CheckBox29.AutoSize = true;
+            this.ckM_CheckBox29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox29.Location = new System.Drawing.Point(189, 484);
+            this.ckM_CheckBox29.Name = "ckM_CheckBox29";
+            this.ckM_CheckBox29.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox29.TabIndex = 190;
+            this.ckM_CheckBox29.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox28
+            // 
+            this.ckM_CheckBox28.AutoSize = true;
+            this.ckM_CheckBox28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox28.Location = new System.Drawing.Point(189, 466);
+            this.ckM_CheckBox28.Name = "ckM_CheckBox28";
+            this.ckM_CheckBox28.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox28.TabIndex = 189;
+            this.ckM_CheckBox28.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox27
+            // 
+            this.ckM_CheckBox27.AutoSize = true;
+            this.ckM_CheckBox27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox27.Location = new System.Drawing.Point(189, 448);
+            this.ckM_CheckBox27.Name = "ckM_CheckBox27";
+            this.ckM_CheckBox27.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox27.TabIndex = 188;
+            this.ckM_CheckBox27.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox26
+            // 
+            this.ckM_CheckBox26.AutoSize = true;
+            this.ckM_CheckBox26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox26.Location = new System.Drawing.Point(189, 430);
+            this.ckM_CheckBox26.Name = "ckM_CheckBox26";
+            this.ckM_CheckBox26.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox26.TabIndex = 187;
+            this.ckM_CheckBox26.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox25
+            // 
+            this.ckM_CheckBox25.AutoSize = true;
+            this.ckM_CheckBox25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox25.Location = new System.Drawing.Point(189, 412);
+            this.ckM_CheckBox25.Name = "ckM_CheckBox25";
+            this.ckM_CheckBox25.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox25.TabIndex = 186;
+            this.ckM_CheckBox25.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox24
+            // 
+            this.ckM_CheckBox24.AutoSize = true;
+            this.ckM_CheckBox24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox24.Location = new System.Drawing.Point(189, 394);
+            this.ckM_CheckBox24.Name = "ckM_CheckBox24";
+            this.ckM_CheckBox24.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox24.TabIndex = 185;
+            this.ckM_CheckBox24.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox23
+            // 
+            this.ckM_CheckBox23.AutoSize = true;
+            this.ckM_CheckBox23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox23.Location = new System.Drawing.Point(189, 376);
+            this.ckM_CheckBox23.Name = "ckM_CheckBox23";
+            this.ckM_CheckBox23.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox23.TabIndex = 184;
+            this.ckM_CheckBox23.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox22
+            // 
+            this.ckM_CheckBox22.AutoSize = true;
+            this.ckM_CheckBox22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox22.Location = new System.Drawing.Point(189, 358);
+            this.ckM_CheckBox22.Name = "ckM_CheckBox22";
+            this.ckM_CheckBox22.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox22.TabIndex = 183;
+            this.ckM_CheckBox22.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox21
+            // 
+            this.ckM_CheckBox21.AutoSize = true;
+            this.ckM_CheckBox21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox21.Location = new System.Drawing.Point(189, 340);
+            this.ckM_CheckBox21.Name = "ckM_CheckBox21";
+            this.ckM_CheckBox21.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox21.TabIndex = 182;
+            this.ckM_CheckBox21.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox20
+            // 
+            this.ckM_CheckBox20.AutoSize = true;
+            this.ckM_CheckBox20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox20.Location = new System.Drawing.Point(189, 322);
+            this.ckM_CheckBox20.Name = "ckM_CheckBox20";
+            this.ckM_CheckBox20.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox20.TabIndex = 181;
+            this.ckM_CheckBox20.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox19
+            // 
+            this.ckM_CheckBox19.AutoSize = true;
+            this.ckM_CheckBox19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox19.Location = new System.Drawing.Point(189, 304);
+            this.ckM_CheckBox19.Name = "ckM_CheckBox19";
+            this.ckM_CheckBox19.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox19.TabIndex = 180;
+            this.ckM_CheckBox19.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox18
+            // 
+            this.ckM_CheckBox18.AutoSize = true;
+            this.ckM_CheckBox18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox18.Location = new System.Drawing.Point(189, 286);
+            this.ckM_CheckBox18.Name = "ckM_CheckBox18";
+            this.ckM_CheckBox18.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox18.TabIndex = 179;
+            this.ckM_CheckBox18.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox17
+            // 
+            this.ckM_CheckBox17.AutoSize = true;
+            this.ckM_CheckBox17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox17.Location = new System.Drawing.Point(189, 268);
+            this.ckM_CheckBox17.Name = "ckM_CheckBox17";
+            this.ckM_CheckBox17.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox17.TabIndex = 178;
+            this.ckM_CheckBox17.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox16
+            // 
+            this.ckM_CheckBox16.AutoSize = true;
+            this.ckM_CheckBox16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox16.Location = new System.Drawing.Point(189, 250);
+            this.ckM_CheckBox16.Name = "ckM_CheckBox16";
+            this.ckM_CheckBox16.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox16.TabIndex = 177;
+            this.ckM_CheckBox16.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox15
+            // 
+            this.ckM_CheckBox15.AutoSize = true;
+            this.ckM_CheckBox15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox15.Location = new System.Drawing.Point(189, 232);
+            this.ckM_CheckBox15.Name = "ckM_CheckBox15";
+            this.ckM_CheckBox15.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox15.TabIndex = 176;
+            this.ckM_CheckBox15.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox14
+            // 
+            this.ckM_CheckBox14.AutoSize = true;
+            this.ckM_CheckBox14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox14.Location = new System.Drawing.Point(189, 214);
+            this.ckM_CheckBox14.Name = "ckM_CheckBox14";
+            this.ckM_CheckBox14.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox14.TabIndex = 175;
+            this.ckM_CheckBox14.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox13
+            // 
+            this.ckM_CheckBox13.AutoSize = true;
+            this.ckM_CheckBox13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox13.Location = new System.Drawing.Point(189, 196);
+            this.ckM_CheckBox13.Name = "ckM_CheckBox13";
+            this.ckM_CheckBox13.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox13.TabIndex = 174;
+            this.ckM_CheckBox13.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox12
+            // 
+            this.ckM_CheckBox12.AutoSize = true;
+            this.ckM_CheckBox12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox12.Location = new System.Drawing.Point(189, 178);
+            this.ckM_CheckBox12.Name = "ckM_CheckBox12";
+            this.ckM_CheckBox12.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox12.TabIndex = 173;
+            this.ckM_CheckBox12.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox11
+            // 
+            this.ckM_CheckBox11.AutoSize = true;
+            this.ckM_CheckBox11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox11.Location = new System.Drawing.Point(189, 160);
+            this.ckM_CheckBox11.Name = "ckM_CheckBox11";
+            this.ckM_CheckBox11.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox11.TabIndex = 172;
+            this.ckM_CheckBox11.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox10
+            // 
+            this.ckM_CheckBox10.AutoSize = true;
+            this.ckM_CheckBox10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox10.Location = new System.Drawing.Point(1432, 124);
+            this.ckM_CheckBox10.Name = "ckM_CheckBox10";
+            this.ckM_CheckBox10.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox10.TabIndex = 171;
+            this.ckM_CheckBox10.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox9
+            // 
+            this.ckM_CheckBox9.AutoSize = true;
+            this.ckM_CheckBox9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox9.Location = new System.Drawing.Point(1561, 124);
+            this.ckM_CheckBox9.Name = "ckM_CheckBox9";
+            this.ckM_CheckBox9.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox9.TabIndex = 170;
+            this.ckM_CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckM_CheckBox9.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox8
+            // 
+            this.ckM_CheckBox8.AutoSize = true;
+            this.ckM_CheckBox8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox8.Location = new System.Drawing.Point(1305, 124);
+            this.ckM_CheckBox8.Name = "ckM_CheckBox8";
+            this.ckM_CheckBox8.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox8.TabIndex = 169;
+            this.ckM_CheckBox8.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox7
+            // 
+            this.ckM_CheckBox7.AutoSize = true;
+            this.ckM_CheckBox7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox7.Location = new System.Drawing.Point(1177, 124);
+            this.ckM_CheckBox7.Name = "ckM_CheckBox7";
+            this.ckM_CheckBox7.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox7.TabIndex = 168;
+            this.ckM_CheckBox7.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox6
+            // 
+            this.ckM_CheckBox6.AutoSize = true;
+            this.ckM_CheckBox6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox6.Location = new System.Drawing.Point(1048, 124);
+            this.ckM_CheckBox6.Name = "ckM_CheckBox6";
+            this.ckM_CheckBox6.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox6.TabIndex = 167;
+            this.ckM_CheckBox6.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox5
+            // 
+            this.ckM_CheckBox5.AutoSize = true;
+            this.ckM_CheckBox5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox5.Location = new System.Drawing.Point(918, 124);
+            this.ckM_CheckBox5.Name = "ckM_CheckBox5";
+            this.ckM_CheckBox5.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox5.TabIndex = 166;
+            this.ckM_CheckBox5.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox4
+            // 
+            this.ckM_CheckBox4.AutoSize = true;
+            this.ckM_CheckBox4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox4.Location = new System.Drawing.Point(790, 124);
+            this.ckM_CheckBox4.Name = "ckM_CheckBox4";
+            this.ckM_CheckBox4.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox4.TabIndex = 165;
+            this.ckM_CheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox3
+            // 
+            this.ckM_CheckBox3.AutoSize = true;
+            this.ckM_CheckBox3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox3.Location = new System.Drawing.Point(658, 124);
+            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
+            this.ckM_CheckBox3.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox3.TabIndex = 164;
+            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox2
+            // 
+            this.ckM_CheckBox2.AutoSize = true;
+            this.ckM_CheckBox2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox2.Location = new System.Drawing.Point(532, 124);
+            this.ckM_CheckBox2.Name = "ckM_CheckBox2";
+            this.ckM_CheckBox2.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox2.TabIndex = 163;
+            this.ckM_CheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox1
+            // 
+            this.ckM_CheckBox1.AutoSize = true;
+            this.ckM_CheckBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox1.Location = new System.Drawing.Point(400, 124);
+            this.ckM_CheckBox1.Name = "ckM_CheckBox1";
+            this.ckM_CheckBox1.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox1.TabIndex = 162;
+            this.ckM_CheckBox1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Silver;
+            this.label10.Location = new System.Drawing.Point(37, 157);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 360);
+            this.label10.TabIndex = 161;
+            this.label10.Text = "  カ    ラ    ー";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Silver;
+            this.label9.Location = new System.Drawing.Point(177, 138);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(85, 19);
+            this.label9.TabIndex = 160;
+            this.label9.Text = "不要\t\t\t";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Silver;
+            this.label8.Location = new System.Drawing.Point(127, 138);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 19);
+            this.label8.TabIndex = 159;
+            this.label8.Text = "現状\t\t";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Silver;
+            this.label7.Location = new System.Drawing.Point(37, 138);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(90, 19);
+            this.label7.TabIndex = 158;
+            this.label7.Text = "新連番";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label6.Location = new System.Drawing.Point(264, 138);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 19);
+            this.label6.TabIndex = 157;
+            this.label6.Text = "\t\t";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label5.Location = new System.Drawing.Point(264, 120);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 19);
+            this.label5.TabIndex = 156;
+            this.label5.Text = "不要\t\t";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label4.Location = new System.Drawing.Point(264, 102);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.TabIndex = 155;
+            this.label4.Text = "現状\t\t";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(264, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.TabIndex = 154;
+            this.label3.Text = "新連番";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.label2.Location = new System.Drawing.Point(263, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1370, 20);
+            this.label2.TabIndex = 153;
+            // 
+            // ckM_Button1
+            // 
+            this.ckM_Button1.BackColor = System.Drawing.Color.Violet;
+            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ckM_Button1.DefaultBtnSize = false;
+            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.ckM_Button1.Location = new System.Drawing.Point(1534, 549);
+            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
+            this.ckM_Button1.Name = "ckM_Button1";
+            this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
+            this.ckM_Button1.TabIndex = 152;
+            this.ckM_Button1.Text = "架空商品";
+            this.ckM_Button1.UseVisualStyleBackColor = false;
             // 
             // ckM_Label12
             // 
@@ -534,7 +1001,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(473, 555);
+            this.ckM_Label12.Location = new System.Drawing.Point(473, 604);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(105, 12);
             this.ckM_Label12.TabIndex = 151;
@@ -551,7 +1018,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(198, 536);
+            this.ckM_Label9.Location = new System.Drawing.Point(198, 585);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
             this.ckM_Label9.TabIndex = 150;
@@ -568,7 +1035,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(414, 536);
+            this.ckM_Label11.Location = new System.Drawing.Point(414, 585);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label11.TabIndex = 149;
@@ -585,7 +1052,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(346, 536);
+            this.ckM_Label10.Location = new System.Drawing.Point(346, 585);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 148;
@@ -611,7 +1078,7 @@
             this.ckM_TextBox125.IsNumber = true;
             this.ckM_TextBox125.IsShop = false;
             this.ckM_TextBox125.Length = 32767;
-            this.ckM_TextBox125.Location = new System.Drawing.Point(400, 551);
+            this.ckM_TextBox125.Location = new System.Drawing.Point(400, 600);
             this.ckM_TextBox125.MoveNext = true;
             this.ckM_TextBox125.Name = "ckM_TextBox125";
             this.ckM_TextBox125.Size = new System.Drawing.Size(70, 19);
@@ -636,7 +1103,7 @@
             this.ckM_TextBox124.IsNumber = true;
             this.ckM_TextBox124.IsShop = false;
             this.ckM_TextBox124.Length = 32767;
-            this.ckM_TextBox124.Location = new System.Drawing.Point(331, 551);
+            this.ckM_TextBox124.Location = new System.Drawing.Point(331, 600);
             this.ckM_TextBox124.MoveNext = true;
             this.ckM_TextBox124.Name = "ckM_TextBox124";
             this.ckM_TextBox124.Size = new System.Drawing.Size(70, 19);
@@ -661,7 +1128,7 @@
             this.ckM_TextBox123.IsNumber = true;
             this.ckM_TextBox123.IsShop = false;
             this.ckM_TextBox123.Length = 32767;
-            this.ckM_TextBox123.Location = new System.Drawing.Point(82, 551);
+            this.ckM_TextBox123.Location = new System.Drawing.Point(82, 600);
             this.ckM_TextBox123.MoveNext = true;
             this.ckM_TextBox123.Name = "ckM_TextBox123";
             this.ckM_TextBox123.Size = new System.Drawing.Size(250, 19);
@@ -672,18 +1139,18 @@
             // 
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -697,14 +1164,14 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
@@ -712,70 +1179,10 @@
             this.ckM_GridView1.RowHeadersVisible = false;
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
-            this.ckM_GridView1.Size = new System.Drawing.Size(990, 360);
+            this.ckM_GridView1.Size = new System.Drawing.Size(1308, 380);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
-            this.ckM_GridView1.UseSetting = true;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 97;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 98;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 99;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 99;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 99;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 99;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 99;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 99;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 99;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 99;
+            this.ckM_GridView1.UseSetting = false;
             // 
             // ckM_TextBox103
             // 
@@ -2795,10 +3202,10 @@
             this.ckM_TextBox33.IsNumber = true;
             this.ckM_TextBox33.IsShop = false;
             this.ckM_TextBox33.Length = 32767;
-            this.ckM_TextBox33.Location = new System.Drawing.Point(1233, 139);
+            this.ckM_TextBox33.Location = new System.Drawing.Point(1504, 139);
             this.ckM_TextBox33.MoveNext = true;
             this.ckM_TextBox33.Name = "ckM_TextBox33";
-            this.ckM_TextBox33.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox33.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox33.TabIndex = 56;
             this.ckM_TextBox33.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2820,10 +3227,10 @@
             this.ckM_TextBox34.IsNumber = true;
             this.ckM_TextBox34.IsShop = false;
             this.ckM_TextBox34.Length = 32767;
-            this.ckM_TextBox34.Location = new System.Drawing.Point(1134, 139);
+            this.ckM_TextBox34.Location = new System.Drawing.Point(1375, 139);
             this.ckM_TextBox34.MoveNext = true;
             this.ckM_TextBox34.Name = "ckM_TextBox34";
-            this.ckM_TextBox34.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox34.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox34.TabIndex = 55;
             this.ckM_TextBox34.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2845,10 +3252,10 @@
             this.ckM_TextBox35.IsNumber = true;
             this.ckM_TextBox35.IsShop = false;
             this.ckM_TextBox35.Length = 32767;
-            this.ckM_TextBox35.Location = new System.Drawing.Point(1035, 139);
+            this.ckM_TextBox35.Location = new System.Drawing.Point(1246, 139);
             this.ckM_TextBox35.MoveNext = true;
             this.ckM_TextBox35.Name = "ckM_TextBox35";
-            this.ckM_TextBox35.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox35.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox35.TabIndex = 54;
             this.ckM_TextBox35.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2870,10 +3277,10 @@
             this.ckM_TextBox36.IsNumber = true;
             this.ckM_TextBox36.IsShop = false;
             this.ckM_TextBox36.Length = 32767;
-            this.ckM_TextBox36.Location = new System.Drawing.Point(936, 139);
+            this.ckM_TextBox36.Location = new System.Drawing.Point(1117, 139);
             this.ckM_TextBox36.MoveNext = true;
             this.ckM_TextBox36.Name = "ckM_TextBox36";
-            this.ckM_TextBox36.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox36.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox36.TabIndex = 53;
             this.ckM_TextBox36.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2895,10 +3302,10 @@
             this.ckM_TextBox37.IsNumber = true;
             this.ckM_TextBox37.IsShop = false;
             this.ckM_TextBox37.Length = 32767;
-            this.ckM_TextBox37.Location = new System.Drawing.Point(837, 139);
+            this.ckM_TextBox37.Location = new System.Drawing.Point(988, 139);
             this.ckM_TextBox37.MoveNext = true;
             this.ckM_TextBox37.Name = "ckM_TextBox37";
-            this.ckM_TextBox37.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox37.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox37.TabIndex = 52;
             this.ckM_TextBox37.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2920,10 +3327,10 @@
             this.ckM_TextBox38.IsNumber = true;
             this.ckM_TextBox38.IsShop = false;
             this.ckM_TextBox38.Length = 32767;
-            this.ckM_TextBox38.Location = new System.Drawing.Point(738, 139);
+            this.ckM_TextBox38.Location = new System.Drawing.Point(859, 139);
             this.ckM_TextBox38.MoveNext = true;
             this.ckM_TextBox38.Name = "ckM_TextBox38";
-            this.ckM_TextBox38.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox38.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox38.TabIndex = 51;
             this.ckM_TextBox38.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2945,10 +3352,10 @@
             this.ckM_TextBox39.IsNumber = true;
             this.ckM_TextBox39.IsShop = false;
             this.ckM_TextBox39.Length = 32767;
-            this.ckM_TextBox39.Location = new System.Drawing.Point(639, 139);
+            this.ckM_TextBox39.Location = new System.Drawing.Point(730, 139);
             this.ckM_TextBox39.MoveNext = true;
             this.ckM_TextBox39.Name = "ckM_TextBox39";
-            this.ckM_TextBox39.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox39.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox39.TabIndex = 50;
             this.ckM_TextBox39.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2970,10 +3377,10 @@
             this.ckM_TextBox40.IsNumber = true;
             this.ckM_TextBox40.IsShop = false;
             this.ckM_TextBox40.Length = 32767;
-            this.ckM_TextBox40.Location = new System.Drawing.Point(540, 139);
+            this.ckM_TextBox40.Location = new System.Drawing.Point(601, 139);
             this.ckM_TextBox40.MoveNext = true;
             this.ckM_TextBox40.Name = "ckM_TextBox40";
-            this.ckM_TextBox40.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox40.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox40.TabIndex = 49;
             this.ckM_TextBox40.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2995,10 +3402,10 @@
             this.ckM_TextBox41.IsNumber = true;
             this.ckM_TextBox41.IsShop = false;
             this.ckM_TextBox41.Length = 32767;
-            this.ckM_TextBox41.Location = new System.Drawing.Point(442, 139);
+            this.ckM_TextBox41.Location = new System.Drawing.Point(473, 139);
             this.ckM_TextBox41.MoveNext = true;
             this.ckM_TextBox41.Name = "ckM_TextBox41";
-            this.ckM_TextBox41.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox41.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox41.TabIndex = 48;
             this.ckM_TextBox41.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3023,7 +3430,7 @@
             this.ckM_TextBox42.Location = new System.Drawing.Point(344, 139);
             this.ckM_TextBox42.MoveNext = true;
             this.ckM_TextBox42.Name = "ckM_TextBox42";
-            this.ckM_TextBox42.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox42.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox42.TabIndex = 47;
             this.ckM_TextBox42.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3045,10 +3452,10 @@
             this.ckM_TextBox30.IsNumber = true;
             this.ckM_TextBox30.IsShop = false;
             this.ckM_TextBox30.Length = 32767;
-            this.ckM_TextBox30.Location = new System.Drawing.Point(1233, 121);
+            this.ckM_TextBox30.Location = new System.Drawing.Point(1504, 121);
             this.ckM_TextBox30.MoveNext = true;
             this.ckM_TextBox30.Name = "ckM_TextBox30";
-            this.ckM_TextBox30.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox30.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox30.TabIndex = 46;
             this.ckM_TextBox30.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3070,10 +3477,10 @@
             this.ckM_TextBox31.IsNumber = true;
             this.ckM_TextBox31.IsShop = false;
             this.ckM_TextBox31.Length = 32767;
-            this.ckM_TextBox31.Location = new System.Drawing.Point(1233, 103);
+            this.ckM_TextBox31.Location = new System.Drawing.Point(1504, 103);
             this.ckM_TextBox31.MoveNext = true;
             this.ckM_TextBox31.Name = "ckM_TextBox31";
-            this.ckM_TextBox31.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox31.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox31.TabIndex = 45;
             this.ckM_TextBox31.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3095,10 +3502,10 @@
             this.ckM_TextBox32.IsNumber = true;
             this.ckM_TextBox32.IsShop = false;
             this.ckM_TextBox32.Length = 32767;
-            this.ckM_TextBox32.Location = new System.Drawing.Point(1233, 85);
+            this.ckM_TextBox32.Location = new System.Drawing.Point(1504, 85);
             this.ckM_TextBox32.MoveNext = true;
             this.ckM_TextBox32.Name = "ckM_TextBox32";
-            this.ckM_TextBox32.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox32.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox32.TabIndex = 44;
             this.ckM_TextBox32.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3120,10 +3527,10 @@
             this.ckM_TextBox27.IsNumber = true;
             this.ckM_TextBox27.IsShop = false;
             this.ckM_TextBox27.Length = 32767;
-            this.ckM_TextBox27.Location = new System.Drawing.Point(1134, 121);
+            this.ckM_TextBox27.Location = new System.Drawing.Point(1375, 121);
             this.ckM_TextBox27.MoveNext = true;
             this.ckM_TextBox27.Name = "ckM_TextBox27";
-            this.ckM_TextBox27.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox27.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox27.TabIndex = 43;
             this.ckM_TextBox27.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3145,10 +3552,10 @@
             this.ckM_TextBox28.IsNumber = true;
             this.ckM_TextBox28.IsShop = false;
             this.ckM_TextBox28.Length = 32767;
-            this.ckM_TextBox28.Location = new System.Drawing.Point(1134, 103);
+            this.ckM_TextBox28.Location = new System.Drawing.Point(1375, 103);
             this.ckM_TextBox28.MoveNext = true;
             this.ckM_TextBox28.Name = "ckM_TextBox28";
-            this.ckM_TextBox28.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox28.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox28.TabIndex = 42;
             this.ckM_TextBox28.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3170,10 +3577,10 @@
             this.ckM_TextBox29.IsNumber = true;
             this.ckM_TextBox29.IsShop = false;
             this.ckM_TextBox29.Length = 32767;
-            this.ckM_TextBox29.Location = new System.Drawing.Point(1134, 85);
+            this.ckM_TextBox29.Location = new System.Drawing.Point(1375, 85);
             this.ckM_TextBox29.MoveNext = true;
             this.ckM_TextBox29.Name = "ckM_TextBox29";
-            this.ckM_TextBox29.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox29.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox29.TabIndex = 41;
             this.ckM_TextBox29.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3195,10 +3602,10 @@
             this.ckM_TextBox24.IsNumber = true;
             this.ckM_TextBox24.IsShop = false;
             this.ckM_TextBox24.Length = 32767;
-            this.ckM_TextBox24.Location = new System.Drawing.Point(1035, 121);
+            this.ckM_TextBox24.Location = new System.Drawing.Point(1246, 121);
             this.ckM_TextBox24.MoveNext = true;
             this.ckM_TextBox24.Name = "ckM_TextBox24";
-            this.ckM_TextBox24.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox24.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox24.TabIndex = 40;
             this.ckM_TextBox24.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3220,10 +3627,10 @@
             this.ckM_TextBox25.IsNumber = true;
             this.ckM_TextBox25.IsShop = false;
             this.ckM_TextBox25.Length = 32767;
-            this.ckM_TextBox25.Location = new System.Drawing.Point(1035, 103);
+            this.ckM_TextBox25.Location = new System.Drawing.Point(1246, 103);
             this.ckM_TextBox25.MoveNext = true;
             this.ckM_TextBox25.Name = "ckM_TextBox25";
-            this.ckM_TextBox25.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox25.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox25.TabIndex = 39;
             this.ckM_TextBox25.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3245,10 +3652,10 @@
             this.ckM_TextBox26.IsNumber = true;
             this.ckM_TextBox26.IsShop = false;
             this.ckM_TextBox26.Length = 32767;
-            this.ckM_TextBox26.Location = new System.Drawing.Point(1035, 85);
+            this.ckM_TextBox26.Location = new System.Drawing.Point(1246, 85);
             this.ckM_TextBox26.MoveNext = true;
             this.ckM_TextBox26.Name = "ckM_TextBox26";
-            this.ckM_TextBox26.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox26.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox26.TabIndex = 38;
             this.ckM_TextBox26.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3270,10 +3677,10 @@
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
             this.ckM_TextBox21.Length = 32767;
-            this.ckM_TextBox21.Location = new System.Drawing.Point(936, 121);
+            this.ckM_TextBox21.Location = new System.Drawing.Point(1117, 121);
             this.ckM_TextBox21.MoveNext = true;
             this.ckM_TextBox21.Name = "ckM_TextBox21";
-            this.ckM_TextBox21.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox21.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox21.TabIndex = 37;
             this.ckM_TextBox21.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3295,10 +3702,10 @@
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
             this.ckM_TextBox22.Length = 32767;
-            this.ckM_TextBox22.Location = new System.Drawing.Point(936, 103);
+            this.ckM_TextBox22.Location = new System.Drawing.Point(1117, 103);
             this.ckM_TextBox22.MoveNext = true;
             this.ckM_TextBox22.Name = "ckM_TextBox22";
-            this.ckM_TextBox22.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox22.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox22.TabIndex = 36;
             this.ckM_TextBox22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3320,10 +3727,10 @@
             this.ckM_TextBox23.IsNumber = true;
             this.ckM_TextBox23.IsShop = false;
             this.ckM_TextBox23.Length = 32767;
-            this.ckM_TextBox23.Location = new System.Drawing.Point(936, 85);
+            this.ckM_TextBox23.Location = new System.Drawing.Point(1117, 85);
             this.ckM_TextBox23.MoveNext = true;
             this.ckM_TextBox23.Name = "ckM_TextBox23";
-            this.ckM_TextBox23.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox23.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox23.TabIndex = 35;
             this.ckM_TextBox23.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3345,10 +3752,10 @@
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 32767;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(837, 121);
+            this.ckM_TextBox18.Location = new System.Drawing.Point(988, 121);
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
-            this.ckM_TextBox18.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox18.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox18.TabIndex = 34;
             this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3370,10 +3777,10 @@
             this.ckM_TextBox19.IsNumber = true;
             this.ckM_TextBox19.IsShop = false;
             this.ckM_TextBox19.Length = 32767;
-            this.ckM_TextBox19.Location = new System.Drawing.Point(837, 103);
+            this.ckM_TextBox19.Location = new System.Drawing.Point(988, 103);
             this.ckM_TextBox19.MoveNext = true;
             this.ckM_TextBox19.Name = "ckM_TextBox19";
-            this.ckM_TextBox19.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox19.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox19.TabIndex = 33;
             this.ckM_TextBox19.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3395,10 +3802,10 @@
             this.ckM_TextBox20.IsNumber = true;
             this.ckM_TextBox20.IsShop = false;
             this.ckM_TextBox20.Length = 32767;
-            this.ckM_TextBox20.Location = new System.Drawing.Point(837, 85);
+            this.ckM_TextBox20.Location = new System.Drawing.Point(988, 85);
             this.ckM_TextBox20.MoveNext = true;
             this.ckM_TextBox20.Name = "ckM_TextBox20";
-            this.ckM_TextBox20.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox20.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox20.TabIndex = 32;
             this.ckM_TextBox20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3420,10 +3827,10 @@
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.Length = 32767;
-            this.ckM_TextBox15.Location = new System.Drawing.Point(738, 121);
+            this.ckM_TextBox15.Location = new System.Drawing.Point(859, 121);
             this.ckM_TextBox15.MoveNext = true;
             this.ckM_TextBox15.Name = "ckM_TextBox15";
-            this.ckM_TextBox15.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox15.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox15.TabIndex = 31;
             this.ckM_TextBox15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3445,10 +3852,10 @@
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
             this.ckM_TextBox16.Length = 32767;
-            this.ckM_TextBox16.Location = new System.Drawing.Point(738, 103);
+            this.ckM_TextBox16.Location = new System.Drawing.Point(859, 103);
             this.ckM_TextBox16.MoveNext = true;
             this.ckM_TextBox16.Name = "ckM_TextBox16";
-            this.ckM_TextBox16.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox16.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox16.TabIndex = 30;
             this.ckM_TextBox16.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3470,10 +3877,10 @@
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
             this.ckM_TextBox17.Length = 32767;
-            this.ckM_TextBox17.Location = new System.Drawing.Point(738, 85);
+            this.ckM_TextBox17.Location = new System.Drawing.Point(859, 85);
             this.ckM_TextBox17.MoveNext = true;
             this.ckM_TextBox17.Name = "ckM_TextBox17";
-            this.ckM_TextBox17.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox17.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox17.TabIndex = 29;
             this.ckM_TextBox17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3495,10 +3902,10 @@
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 32767;
-            this.ckM_TextBox12.Location = new System.Drawing.Point(639, 121);
+            this.ckM_TextBox12.Location = new System.Drawing.Point(730, 121);
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
-            this.ckM_TextBox12.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox12.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox12.TabIndex = 28;
             this.ckM_TextBox12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3520,10 +3927,10 @@
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
             this.ckM_TextBox13.Length = 32767;
-            this.ckM_TextBox13.Location = new System.Drawing.Point(639, 103);
+            this.ckM_TextBox13.Location = new System.Drawing.Point(730, 103);
             this.ckM_TextBox13.MoveNext = true;
             this.ckM_TextBox13.Name = "ckM_TextBox13";
-            this.ckM_TextBox13.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox13.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox13.TabIndex = 27;
             this.ckM_TextBox13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3545,10 +3952,10 @@
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
             this.ckM_TextBox14.Length = 32767;
-            this.ckM_TextBox14.Location = new System.Drawing.Point(639, 85);
+            this.ckM_TextBox14.Location = new System.Drawing.Point(730, 85);
             this.ckM_TextBox14.MoveNext = true;
             this.ckM_TextBox14.Name = "ckM_TextBox14";
-            this.ckM_TextBox14.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox14.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox14.TabIndex = 26;
             this.ckM_TextBox14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3570,10 +3977,10 @@
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 32767;
-            this.ckM_TextBox9.Location = new System.Drawing.Point(540, 121);
+            this.ckM_TextBox9.Location = new System.Drawing.Point(601, 121);
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
-            this.ckM_TextBox9.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox9.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox9.TabIndex = 25;
             this.ckM_TextBox9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3595,10 +4002,10 @@
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
             this.ckM_TextBox10.Length = 32767;
-            this.ckM_TextBox10.Location = new System.Drawing.Point(540, 103);
+            this.ckM_TextBox10.Location = new System.Drawing.Point(601, 103);
             this.ckM_TextBox10.MoveNext = true;
             this.ckM_TextBox10.Name = "ckM_TextBox10";
-            this.ckM_TextBox10.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox10.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox10.TabIndex = 24;
             this.ckM_TextBox10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3620,10 +4027,10 @@
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
             this.ckM_TextBox11.Length = 32767;
-            this.ckM_TextBox11.Location = new System.Drawing.Point(540, 85);
+            this.ckM_TextBox11.Location = new System.Drawing.Point(601, 85);
             this.ckM_TextBox11.MoveNext = true;
             this.ckM_TextBox11.Name = "ckM_TextBox11";
-            this.ckM_TextBox11.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox11.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox11.TabIndex = 23;
             this.ckM_TextBox11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3645,10 +4052,10 @@
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 32767;
-            this.ckM_TextBox6.Location = new System.Drawing.Point(442, 121);
+            this.ckM_TextBox6.Location = new System.Drawing.Point(473, 121);
             this.ckM_TextBox6.MoveNext = true;
             this.ckM_TextBox6.Name = "ckM_TextBox6";
-            this.ckM_TextBox6.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox6.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox6.TabIndex = 22;
             this.ckM_TextBox6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3670,10 +4077,10 @@
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 32767;
-            this.ckM_TextBox7.Location = new System.Drawing.Point(442, 103);
+            this.ckM_TextBox7.Location = new System.Drawing.Point(473, 103);
             this.ckM_TextBox7.MoveNext = true;
             this.ckM_TextBox7.Name = "ckM_TextBox7";
-            this.ckM_TextBox7.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox7.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox7.TabIndex = 21;
             this.ckM_TextBox7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3695,10 +4102,10 @@
             this.ckM_TextBox8.IsNumber = true;
             this.ckM_TextBox8.IsShop = false;
             this.ckM_TextBox8.Length = 32767;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(442, 85);
+            this.ckM_TextBox8.Location = new System.Drawing.Point(473, 85);
             this.ckM_TextBox8.MoveNext = true;
             this.ckM_TextBox8.Name = "ckM_TextBox8";
-            this.ckM_TextBox8.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox8.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox8.TabIndex = 20;
             this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3723,7 +4130,7 @@
             this.ckM_TextBox5.Location = new System.Drawing.Point(344, 121);
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
-            this.ckM_TextBox5.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox5.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox5.TabIndex = 19;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3748,7 +4155,7 @@
             this.ckM_TextBox4.Location = new System.Drawing.Point(344, 103);
             this.ckM_TextBox4.MoveNext = true;
             this.ckM_TextBox4.Name = "ckM_TextBox4";
-            this.ckM_TextBox4.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox4.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox4.TabIndex = 18;
             this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3773,7 +4180,7 @@
             this.ckM_TextBox3.Location = new System.Drawing.Point(344, 85);
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
-            this.ckM_TextBox3.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox3.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox3.TabIndex = 17;
             this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3825,117 +4232,71 @@
             this.Sc_Item.Value2 = null;
             this.Sc_Item.Value3 = null;
             // 
-            // ckM_Button1
+            // Column1
             // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ckM_Button1.DefaultBtnSize = false;
-            this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(1215, 528);
-            this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
-            this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
-            this.ckM_Button1.TabIndex = 152;
-            this.ckM_Button1.Text = "架空商品";
-            this.ckM_Button1.UseVisualStyleBackColor = false;
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 128;
             // 
-            // label2
+            // Column2
             // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(263, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1070, 20);
-            this.label2.TabIndex = 153;
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 128;
             // 
-            // label3
+            // Column3
             // 
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(264, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 19);
-            this.label3.TabIndex = 154;
-            this.label3.Text = "新連番";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 129;
             // 
-            // label4
+            // Column4
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(264, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 19);
-            this.label4.TabIndex = 155;
-            this.label4.Text = "現状\t\t";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 129;
             // 
-            // label5
+            // Column5
             // 
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label5.Location = new System.Drawing.Point(264, 120);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 19);
-            this.label5.TabIndex = 156;
-            this.label5.Text = "不要\t\t";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 129;
             // 
-            // label6
+            // Column6
             // 
-            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.label6.Location = new System.Drawing.Point(264, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 19);
-            this.label6.TabIndex = 157;
-            this.label6.Text = "\t\t";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 129;
             // 
-            // label7
+            // Column7
             // 
-            this.label7.BackColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(37, 138);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 19);
-            this.label7.TabIndex = 158;
-            this.label7.Text = "新連番";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 129;
             // 
-            // label8
+            // Column8
             // 
-            this.label8.BackColor = System.Drawing.Color.Silver;
-            this.label8.Location = new System.Drawing.Point(127, 138);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 19);
-            this.label8.TabIndex = 159;
-            this.label8.Text = "現状\t\t";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 129;
             // 
-            // label9
+            // Column9
             // 
-            this.label9.BackColor = System.Drawing.Color.Silver;
-            this.label9.Location = new System.Drawing.Point(177, 138);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(85, 19);
-            this.label9.TabIndex = 160;
-            this.label9.Text = "不要\t\t\t";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 129;
             // 
-            // label10
+            // Column10
             // 
-            this.label10.BackColor = System.Drawing.Color.Silver;
-            this.label10.Location = new System.Drawing.Point(37, 157);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 360);
-            this.label10.TabIndex = 161;
-            this.label10.Text = "  カ    ラ    ー";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 129;
             // 
             // MasterTouroku_SKUCDHenkou_SKUCD変更
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1776, 813);
+            this.ClientSize = new System.Drawing.Size(1673, 829);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
@@ -4096,16 +4457,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox125;
         private CKM_Controls.CKM_TextBox ckM_TextBox124;
         private CKM_Controls.CKM_TextBox ckM_TextBox123;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private CKM_Controls.CKM_Button ckM_Button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -4116,5 +4467,45 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox30;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox29;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox28;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox27;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox26;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox25;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox24;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox23;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox22;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox21;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox20;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox19;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox18;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox17;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox16;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox15;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox14;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox13;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox12;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox11;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox10;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox9;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox8;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox7;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox6;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox5;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox4;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox2;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

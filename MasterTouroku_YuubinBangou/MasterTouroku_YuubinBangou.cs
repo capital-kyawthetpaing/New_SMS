@@ -219,26 +219,36 @@ namespace MasterTouroku_YuubinBangou
             ZipCode = GetZipCodeEntity();
             string ZipCD1To = txtZip1To.Text;
             string ZipCD2To = txtZip2To.Text;
-            int i = 0;
-            foreach (DataRow dr in dtDisplay.Rows)
-            {
-                dr["CarrierCD"] = dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value; i++;
-            }
-            Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
 
-            if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))
+            if (dtDisplay.Rows.Count > 0)
             {
-                Clear(PanelHeader);
-                Clear(PanelDetail);
+                int i = 0;
+                foreach (DataRow dr in dtDisplay.Rows)
+                {
+                    dr["CarrierCD"] = dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value; i++;
 
-                ChangeMode(OperationMode);
-                txtZip1from.Focus();
+                    if(dr["ZipCD1"] == DBNull.Value)
+                    {
+                        dtDisplay.Rows.Remove(dr);
+                    }
+                }
 
-                YuubinBangouBL.ShowMessage("I101");
-            }
-            else
-            {
-                YuubinBangouBL.ShowMessage("S001");
+                Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
+
+                if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))
+                {
+                    Clear(PanelHeader);
+                    Clear(PanelDetail);
+
+                    ChangeMode(OperationMode);
+                    txtZip1from.Focus();
+
+                    YuubinBangouBL.ShowMessage("I101");
+                }
+                else
+                {
+                    YuubinBangouBL.ShowMessage("S001");
+                }
             }
         }
 
@@ -382,7 +392,7 @@ namespace MasterTouroku_YuubinBangou
                             //row.Cells["colZipCD2"].Value = null;
                             row.Cells["colAdd1"].Value = null;
                             row.Cells["colAdd2"].Value = null;
-                            return false;
+                            return true;
                         }
                     }
                 }
@@ -590,13 +600,28 @@ namespace MasterTouroku_YuubinBangou
         {
             try
             {
-
+                if (Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) > 0)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    dgvYuubinBangou.CurrentCell.Value = 0;
+                }
+                
             }
             catch (Exception ex)
             {
-                string msg = ex.ToString();
-                MessageBox.Show(msg);
+                MessageBox.Show("Enter valid number. . . ");
+                dgvYuubinBangou.CurrentCell.Value = 0;
             }
+            dgvYuubinBangou.RefreshEdit();
+        }
+
+        private void dgvYuubinBangou_CellValidated(object sender, DataGridViewCellEventArgs e)
+        {
+            //dgvYuubinBangou.Rows[e.RowIndex].ErrorText = "0";
 
         }
     }
