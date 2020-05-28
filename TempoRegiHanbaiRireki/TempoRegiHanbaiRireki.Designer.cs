@@ -436,7 +436,7 @@
             this.lblDtGyo1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblDtGyo1.ForeColor = System.Drawing.Color.Black;
-            this.lblDtGyo1.Location = new System.Drawing.Point(4, 3);
+            this.lblDtGyo1.Location = new System.Drawing.Point(4, 5);
             this.lblDtGyo1.Name = "lblDtGyo1";
             this.lblDtGyo1.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo1.TabIndex = 54;
