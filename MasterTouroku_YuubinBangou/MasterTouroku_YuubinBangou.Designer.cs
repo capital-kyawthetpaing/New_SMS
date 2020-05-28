@@ -39,7 +39,7 @@
             this.colAdd1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdd2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCarrier = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCarrierLeadDay = new SMS.CustomControls.dgvInventoryColumn();
+            this.colCarrierLeadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtZip2To = new CKM_Controls.CKM_TextBox();
@@ -133,6 +133,7 @@
             this.dgvYuubinBangou.UseSetting = true;
             this.dgvYuubinBangou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvYuubinBangou_CellEndEdit);
             this.dgvYuubinBangou.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvYuubinBangou_CellPainting);
+            this.dgvYuubinBangou.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvYuubinBangou_CellValidated);
             this.dgvYuubinBangou.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvYuubinBangou_DataError);
             this.dgvYuubinBangou.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvYuubinBangou_EditingControlShowing);
             this.dgvYuubinBangou.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvYuubinBangou_Paint);
@@ -183,11 +184,10 @@
             dataGridViewCellStyle3.NullValue = "0";
             this.colCarrierLeadDay.DefaultCellStyle = dataGridViewCellStyle3;
             this.colCarrierLeadDay.HeaderText = "日数";
-            this.colCarrierLeadDay.MaxInputLength = 32767;
+            this.colCarrierLeadDay.MaxInputLength = 3;
             this.colCarrierLeadDay.Name = "colCarrierLeadDay";
             this.colCarrierLeadDay.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCarrierLeadDay.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colCarrierLeadDay.UseThousandSeparator = true;
+            this.colCarrierLeadDay.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colCarrierLeadDay.Width = 50;
             // 
             // panel1
@@ -402,7 +402,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAdd2;
         private System.Windows.Forms.DataGridViewComboBoxColumn colCarrier;
-        private SMS.CustomControls.dgvInventoryColumn colCarrierLeadDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCarrierLeadDay;
     }
 }
 
