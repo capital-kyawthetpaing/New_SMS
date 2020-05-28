@@ -73,7 +73,7 @@ namespace Search
                     {
                       vbl.ShowMessage("E106");
                       return false;
-                     }
+                }
             }
             return true;
          }

@@ -34,10 +34,7 @@ namespace BL
                 return false;
         }
 
-        public bool M_ItemOrderPrice_Insert(M_ItemPrice_Entity mie)
-        {
-            return M_ItemOrderPrice_Insert(mie);
-        }
+        
 
     }
 }
