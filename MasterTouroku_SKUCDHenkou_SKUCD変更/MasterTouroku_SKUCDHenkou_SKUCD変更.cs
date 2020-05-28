@@ -134,6 +134,19 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         return false;
                     }
                 }
+                if(OperationMode == EOperationMode.UPDATE)
+                {
+                    mie.ITemCD = Sc_Item.TxtCode.Text;
+                    mie.ChangeDate = txtDate1.Text;
+                    DataTable dtitem = new DataTable();
+                    dtitem = mskubl.M_ITEM_NormalSelect(mie);
+                    if (dtitem.Rows.Count == 0)
+                    {
+                        mskubl.ShowMessage("E133");
+                        Sc_Item.SetFocus(1);
+                        return false;
+                    }
+                }
             }
             
             
