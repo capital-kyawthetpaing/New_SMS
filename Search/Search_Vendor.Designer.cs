@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtChangeDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -127,7 +128,7 @@
             this.txtChangeDate.MoveNext = true;
             this.txtChangeDate.Name = "txtChangeDate";
             this.txtChangeDate.Size = new System.Drawing.Size(100, 19);
-            this.txtChangeDate.TabIndex = 1;
+            this.txtChangeDate.TabIndex = 0;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -172,7 +173,7 @@
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(491, 19);
-            this.txtVendorName.TabIndex = 2;
+            this.txtVendorName.TabIndex = 1;
             this.txtVendorName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtVendorKana
@@ -199,8 +200,7 @@
             this.txtVendorKana.MoveNext = true;
             this.txtVendorKana.Name = "txtVendorKana";
             this.txtVendorKana.Size = new System.Drawing.Size(201, 19);
-            this.txtVendorKana.TabIndex = 3;
-            this.txtVendorKana.TabStop = false;
+            this.txtVendorKana.TabIndex = 2;
             this.txtVendorKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label3
@@ -260,7 +260,7 @@
             this.txtNotDisplayNote.MoveNext = true;
             this.txtNotDisplayNote.Name = "txtNotDisplayNote";
             this.txtNotDisplayNote.Size = new System.Drawing.Size(553, 19);
-            this.txtNotDisplayNote.TabIndex = 4;
+            this.txtNotDisplayNote.TabIndex = 3;
             this.txtNotDisplayNote.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtNotDisplayNote.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNotDisplayNote_KeyDown);
             // 
@@ -304,7 +304,7 @@
             this.txtSupplierNoFrom.MoveNext = true;
             this.txtSupplierNoFrom.Name = "txtSupplierNoFrom";
             this.txtSupplierNoFrom.Size = new System.Drawing.Size(100, 19);
-            this.txtSupplierNoFrom.TabIndex = 5;
+            this.txtSupplierNoFrom.TabIndex = 4;
             this.txtSupplierNoFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label6
@@ -347,7 +347,7 @@
             this.txtSupplierNoTo.MoveNext = true;
             this.txtSupplierNoTo.Name = "txtSupplierNoTo";
             this.txtSupplierNoTo.Size = new System.Drawing.Size(100, 19);
-            this.txtSupplierNoTo.TabIndex = 6;
+            this.txtSupplierNoTo.TabIndex = 5;
             this.txtSupplierNoTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtSupplierNoTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSupplierNoTo_KeyDown);
             // 
@@ -375,17 +375,17 @@
             this.dgvSearchVendor.AllowUserToAddRows = false;
             this.dgvSearchVendor.AllowUserToDeleteRows = false;
             this.dgvSearchVendor.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvSearchVendor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvSearchVendor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvSearchVendor.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvSearchVendor.ColumnHeadersHeight = 25;
             this.dgvSearchVendor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colVendorCD,
@@ -393,10 +393,19 @@
             this.Column3,
             this.Column4,
             this.colChangeDate});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSearchVendor.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSearchVendor.EnableHeadersVisualStyles = false;
             this.dgvSearchVendor.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSearchVendor.Location = new System.Drawing.Point(12, 227);
             this.dgvSearchVendor.Name = "dgvSearchVendor";
+            this.dgvSearchVendor.RowHeight_ = 20;
             this.dgvSearchVendor.Size = new System.Drawing.Size(1250, 500);
             this.dgvSearchVendor.TabIndex = 9;
             this.dgvSearchVendor.UseRowNo = true;
