@@ -372,16 +372,16 @@ namespace CKM_Controls
 
         private void MyProcessCmdKey(Keys keyData)
         {
-                if (this.CurrentCell != null && this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
-                {
-                    if (this.Name == "dgvPETC0302I")
-                    {
-                        ProcessLeftKey(keyData);
-                        ProcessRightKey(keyData);
-                    }
-                }
-                else
-                {
+                //if (this.CurrentCell != null && this.CurrentCell.EditedFormattedValue.ToString().Contains("-"))
+                //{
+                //    if (this.Name == "dgvPETC0302I")
+                //    {
+                //        ProcessLeftKey(keyData);
+                //        ProcessRightKey(keyData);
+                //    }
+                //}
+                //else
+                //{
                     switch (keyData)
                     {
                         case Keys.Enter:
@@ -411,7 +411,7 @@ namespace CKM_Controls
                         case Keys.None:
                             break;
                     }
-                }
+                //}
             //}
         } // MyProcessCmdKey
 
