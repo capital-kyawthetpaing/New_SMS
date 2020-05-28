@@ -96,7 +96,7 @@
     <Compile Include="MasterTouroku_Settouchi_BL.cs" />
     <Compile Include="MasterTouroku_ShiireKakeritsu_BL.cs" />
     <Compile Include="MasterTouroku_Shiiresaki_BL.cs" />
-    <Compile Include="MasterTouroku_SKUCDHenkou_SKUCD変更_BL.cs" />
+    <Compile Include="MasterTouroku_ShiireTanka_BL.cs" />
     <Compile Include="MasterTouroku_Souko_BL.cs" />
     <Compile Include="MasterTouroku_Staff_BL.cs" />
     <Compile Include="MasterTouroku_UnsouGaisya_BL.cs" />

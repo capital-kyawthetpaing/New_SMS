@@ -110,6 +110,7 @@
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />
     <Compile Include="MasterTouroku_ShiireKakeritsu_DL.cs" />
+    <Compile Include="MasterTouroku_ShiireTanka_DL.cs" />
     <Compile Include="Menu_DL.cs" />
     <Compile Include="M_API_DL.cs" />
     <Compile Include="M_Authorizations_DL.cs" />
