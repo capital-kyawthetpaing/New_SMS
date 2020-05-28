@@ -32,7 +32,8 @@ namespace MasterTouroku_YuubinBangou
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            
+
+            txtZip1from.Focus();
             SelectNextControl(PanelDetail, true, true, true, true);
             
             Btn_F2.Text = string.Empty;
@@ -40,7 +41,7 @@ namespace MasterTouroku_YuubinBangou
             Btn_F9.Text = string.Empty;
 
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
-            ChangeMode(EOperationMode.UPDATE);
+            //ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
             CreateDataTable();
             BindGridCombo();
@@ -231,6 +232,10 @@ namespace MasterTouroku_YuubinBangou
                     if(dr["ZipCD1"] == DBNull.Value)
                     {
                         dtDisplay.Rows.Remove(dr);
+                    }
+                    else if(dr["ZipCD1"] != DBNull.Value && dr["CarrierLeadDay"] == DBNull.Value)
+                    {
+                        dr["CarrierLeadDay"] = "0";
                     }
                 }
 
