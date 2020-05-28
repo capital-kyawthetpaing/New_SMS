@@ -177,7 +177,7 @@
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
             this.ckmShop_Label1.Location = new System.Drawing.Point(15, 77);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
-            this.ckmShop_Label1.Size = new System.Drawing.Size(200, 45);
+            this.ckmShop_Label1.Size = new System.Drawing.Size(200, 41);
             this.ckmShop_Label1.TabIndex = 3;
             this.ckmShop_Label1.Text = "会員番号";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
@@ -503,7 +503,7 @@
             this.lblGyoSelect1.Controls.Add(this.lblStoreName1);
             this.lblGyoSelect1.Location = new System.Drawing.Point(0, 0);
             this.lblGyoSelect1.Name = "lblGyoSelect1";
-            this.lblGyoSelect1.Size = new System.Drawing.Size(1898, 80);
+            this.lblGyoSelect1.Size = new System.Drawing.Size(1898, 75);
             this.lblGyoSelect1.TabIndex = 149;
             this.lblGyoSelect1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
@@ -546,7 +546,7 @@
             this.lblDtColorSize1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtColorSize1.ForeColor = System.Drawing.Color.Black;
-            this.lblDtColorSize1.Location = new System.Drawing.Point(1445, 8);
+            this.lblDtColorSize1.Location = new System.Drawing.Point(1445, 6);
             this.lblDtColorSize1.Name = "lblDtColorSize1";
             this.lblDtColorSize1.Size = new System.Drawing.Size(295, 60);
             this.lblDtColorSize1.TabIndex = 50;
@@ -2101,7 +2101,7 @@
             this.txtCustomerNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtCustomerNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtCustomerNo.DecimalPlace = 0;
-            this.txtCustomerNo.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtCustomerNo.Font = new System.Drawing.Font("MS Gothic", 22F);
             this.txtCustomerNo.ForeColor = System.Drawing.Color.Black;
             this.txtCustomerNo.IntegerPart = 0;
             this.txtCustomerNo.IsCorrectDate = false;
@@ -2110,14 +2110,14 @@
             this.txtCustomerNo.IsNumber = false;
             this.txtCustomerNo.IsShop = true;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(214, 77);
+            this.txtCustomerNo.Location = new System.Drawing.Point(214, 79);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(205, 42);
+            this.txtCustomerNo.Size = new System.Drawing.Size(205, 37);
             this.txtCustomerNo.TabIndex = 0;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
-            this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNo_KeyDown);
             // 
             // lblLastPoint
@@ -2149,7 +2149,7 @@
             this.btnShow.Location = new System.Drawing.Point(1458, 74);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(200, 45);
+            this.btnShow.Size = new System.Drawing.Size(200, 41);
             this.btnShow.TabIndex = 1;
             this.btnShow.Text = "照会";
             this.btnShow.UseVisualStyleBackColor = false;
