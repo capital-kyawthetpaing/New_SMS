@@ -179,6 +179,7 @@
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
             this.dgv_PurchaseDetails.Name = "dgv_PurchaseDetails";
+            this.dgv_PurchaseDetails.RowHeight_ = 20;
             this.dgv_PurchaseDetails.Size = new System.Drawing.Size(1900, 600);
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;

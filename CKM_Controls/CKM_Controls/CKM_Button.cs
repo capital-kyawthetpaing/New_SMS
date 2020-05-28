@@ -84,6 +84,7 @@ namespace CKM_Controls
         public enum CKM_FontSize
         {
             Normal,
+            XSmall,
             Small,
             Medium,
             Large,
@@ -104,14 +105,17 @@ namespace CKM_Controls
                     case CKM_FontSize.Normal:
                         this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
                         break;
-                    case CKM_FontSize.Small:
+                    case CKM_FontSize.XSmall:
                         this.Font = new System.Drawing.Font("MS Gothic", 14F, System.Drawing.FontStyle.Bold);
+                        break;
+                    case CKM_FontSize.Small:
+                        this.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
                         break;
                     case CKM_FontSize.Medium:
                         this.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
                         break;
                     case CKM_FontSize.Large:
-                        this.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
+                        this.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
                         break;
                     case CKM_FontSize.XLarge:
                         this.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
