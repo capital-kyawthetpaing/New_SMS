@@ -514,9 +514,9 @@
             this.lblDtKin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblDtKin1.ForeColor = System.Drawing.Color.Black;
-            this.lblDtKin1.Location = new System.Drawing.Point(1770, 38);
+            this.lblDtKin1.Location = new System.Drawing.Point(1745, 42);
             this.lblDtKin1.Name = "lblDtKin1";
-            this.lblDtKin1.Size = new System.Drawing.Size(120, 30);
+            this.lblDtKin1.Size = new System.Drawing.Size(150, 30);
             this.lblDtKin1.TabIndex = 53;
             this.lblDtKin1.Text = "\\99,999,999";
             this.lblDtKin1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -568,7 +568,6 @@
             this.lblDtSKUName1.TabIndex = 47;
             this.lblDtSKUName1.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblDtSKUName1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblDtSKUName1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblDtSKUName1.Click += new System.EventHandler(this.lblGyoSelect1_Click);
             // 
             // lblJuchuuNO1
@@ -2222,7 +2221,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "出荷・売上へ";
-            this.ClientSize = new System.Drawing.Size(1913, 1061);
+            this.ClientSize = new System.Drawing.Size(1913, 1011);
             this.Controls.Add(this.lblCusName);
             this.Controls.Add(this.ckmShop_Label5);
             this.Controls.Add(this.ckmShop_Label4);
