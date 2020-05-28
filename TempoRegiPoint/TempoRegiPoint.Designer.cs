@@ -47,10 +47,10 @@
             this.BtnSearchCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearchCustomer.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.BtnSearchCustomer.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.BtnSearchCustomer.Location = new System.Drawing.Point(9, 96);
+            this.BtnSearchCustomer.Location = new System.Drawing.Point(9, 95);
             this.BtnSearchCustomer.Margin = new System.Windows.Forms.Padding(1);
             this.BtnSearchCustomer.Name = "BtnSearchCustomer";
-            this.BtnSearchCustomer.Size = new System.Drawing.Size(250, 42);
+            this.BtnSearchCustomer.Size = new System.Drawing.Size(250, 45);
             this.BtnSearchCustomer.TabIndex = 4;
             this.BtnSearchCustomer.Text = "会員番号";
             this.BtnSearchCustomer.UseVisualStyleBackColor = false;
@@ -106,7 +106,7 @@
             this.TxtCustomerCD.IsNumber = true;
             this.TxtCustomerCD.IsShop = false;
             this.TxtCustomerCD.Length = 13;
-            this.TxtCustomerCD.Location = new System.Drawing.Point(258, 96);
+            this.TxtCustomerCD.Location = new System.Drawing.Point(259, 96);
             this.TxtCustomerCD.MaxLength = 13;
             this.TxtCustomerCD.MoveNext = true;
             this.TxtCustomerCD.Name = "TxtCustomerCD";
@@ -183,7 +183,7 @@
             this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
             this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Medium;
             this.LblCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.LblCustomerName.Location = new System.Drawing.Point(513, 96);
+            this.LblCustomerName.Location = new System.Drawing.Point(515, 96);
             this.LblCustomerName.Name = "LblCustomerName";
             this.LblCustomerName.Size = new System.Drawing.Size(357, 22);
             this.LblCustomerName.TabIndex = 23;
