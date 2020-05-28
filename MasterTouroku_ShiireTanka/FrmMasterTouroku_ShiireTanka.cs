@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
+using Entity;
 
 namespace MasterTouroku_ShiireTanka
 {
@@ -17,9 +18,13 @@ namespace MasterTouroku_ShiireTanka
     {
         Base_BL bbl = new Base_BL();
         bool cb_focus = false;
+        M_ItemOrderPrice_Entity m_IOE;
+        M_ITEM_Entity m_IE;
+        MasterTouroku_ShiireTanka_BL bl;
         public FrmMasterTouroku_ShiireTanka()
         {
             InitializeComponent();
+            bl = new MasterTouroku_ShiireTanka_BL();
         }
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
@@ -27,7 +32,7 @@ namespace MasterTouroku_ShiireTanka
             StartProgram();
             ModeText = "ITEM";
             BindCombo();
-            TB_Changedate.Text = bbl.GetDate();
+            TB_headerdate.Text = bbl.GetDate();
         }
         private void BindCombo()
         {
@@ -75,7 +80,7 @@ namespace MasterTouroku_ShiireTanka
         private void shiiresaki_Enter(object sender, EventArgs e)
         {
             shiiresaki.Value1 = "1";
-            shiiresaki.ChangeDate = TB_Changedate.Text;
+            shiiresaki.ChangeDate = TB_headerdate.Text;
         }
         private void shiiresaki_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -270,10 +275,10 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
-            if (string.IsNullOrEmpty(TB_Changedate.Text))
+            if (string.IsNullOrEmpty(TB_headerdate.Text))
             {
                 bbl.ShowMessage("E102");
-                TB_Changedate.Focus();
+                TB_headerdate.Focus();
                 return false;
             }
             if (RB_koten.Checked == true)
@@ -341,17 +346,62 @@ namespace MasterTouroku_ShiireTanka
         }
         private void F11()
         {
-            if(!ErrorCheck())
+            if(ErrorCheck())
             {
+                m_IOE = GetItemorder();
+                m_IE = GetItem();
+                DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+                if(dt.Rows.Count > 0)
+                {
+                    GV_tanka.Refresh();
+                    GV_tanka.DataSource = dt;
+                    brand.Clear();
+                    sport.Clear();
+                    segment.Clear();
+                    CB_year.Text = string.Empty;
+                    CB_season.Text = string.Empty;
+                    TB_date_condition.Text = string.Empty;
+                    makershohin.Clear();
+                }
+                else
+                {
+                    GV_tanka.DataSource = null;
+                }
 
             }
+        }
+
+        private M_ItemOrderPrice_Entity GetItemorder()
+        {
+            m_IOE = new M_ItemOrderPrice_Entity
+            {
+                VendorCD = shiiresaki.TxtCode.Text,
+                StoreCD = CB_store.SelectedValue.ToString(),
+                MakerItem=makershohin.TxtCode.Text,
+                Rate=TB_rate.Text,
+                ChangeDate=TB_date_condition.Text
+            };
+            return m_IOE;
+        }
+        private M_ITEM_Entity GetItem()
+        {
+            m_IE = new M_ITEM_Entity
+            {
+                SportsCD=sport.TxtCode.Text,
+                SegmentCD=segment.TxtCode.Text,
+                BrandCD=brand.TxtCode.Text,
+                LastYearTerm=CB_year.Text,
+                LastSeason=CB_season.Text,
+                ChangeDate=TB_headerdate.Text
+            };
+            return m_IE;
         }
         private void Clear()
         {
             shiiresaki.Clear();
             RB_zenten.Checked = true;
             RB_item.Checked = true;
-            TB_Changedate.Text = bbl.GetDate();
+            TB_headerdate.Text = bbl.GetDate();
             brand.Clear();
             sport.Clear();
             segment.Clear();
