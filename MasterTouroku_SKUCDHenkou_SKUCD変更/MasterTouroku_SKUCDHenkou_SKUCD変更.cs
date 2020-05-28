@@ -18,6 +18,8 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
     {
         MasterTouroku_SKUCDHenkou_SKUCD変更_BL mskubl;
         M_ITEM_Entity mie;
+        int type = 0;
+
         public MasterTouroku_SKUCDHenkou_SKUCD変更()
         {
             InitializeComponent();
@@ -123,15 +125,39 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 
                 if (OperationMode == EOperationMode.INSERT)
                 {
-                    mie.ITemCD = Sc_Item.TxtCode.Text;
-                    mie.ChangeDate = txtDate1.Text;
-                    DataTable dtitem = new DataTable();
-                    dtitem = mskubl.M_ITEM_NormalSelect(mie);
-                    if(dtitem.Rows.Count > 0)
+                    if(type == 1)
                     {
-                        mskubl.ShowMessage("E132");
-                        Sc_Item.SetFocus(1);
-                        return false;
+                        mie.ITemCD = Sc_Item.TxtCode.Text;
+                        mie.ChangeDate = txtDate1.Text;
+                        DataTable dtitem = new DataTable();
+                        dtitem = mskubl.M_ITEM_NormalSelect(mie);
+                        if (dtitem.Rows.Count > 0)
+                        {
+                            mskubl.ShowMessage("E132");
+                            Sc_Item.SetFocus(1);
+                            return false;
+                        }
+
+                    }
+                    else if(type == 2)
+                    {
+                        if (string.IsNullOrWhiteSpace(txtRevDate.Text))
+                        {
+                            mskubl.ShowMessage("E102");
+                            txtRevDate.Focus();
+                            return false;
+                        }
+
+                        mie.ITemCD = Sc_Item.TxtCode.Text;
+                        mie.ChangeDate = txtRevDate.Text;
+                        DataTable dtitem = new DataTable();
+                        dtitem = mskubl.M_ITEM_NormalSelect(mie);
+                        if (dtitem.Rows.Count > 0)
+                        {
+                            mskubl.ShowMessage("E132");
+                            Sc_Item.SetFocus(1);
+                            return false;
+                        }
                     }
                 }
                 if(OperationMode == EOperationMode.UPDATE)
@@ -148,9 +174,44 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     }
                 }
             }
-            
-            
+            else if(index == 12)
+            {
+                //if(!string.IsNullOrWhiteSpace(txtoldsize1.Text))
+                //{
+                //    if(string.IsNullOrWhiteSpace(txtnewsize1.Text))
+                //    {
+                //        mskubl.ShowMessage("E102");
+                //        txtnewsize1.Focus();
+                //        return false;
+                //    }
+                //}
+            }
+
             return true;
        }
+
+        private void F11Display_Click(object sender, EventArgs e)
+        {
+            F11();
+        }
+
+        private void F11()
+        {
+            if(type == 1)
+            {
+                if (ErrorCheck(11))
+                {
+
+                }
+            }
+            else if(type == 2)
+            {
+                if(ErrorCheck(11))
+                {
+
+                }
+            }
+            
+        }
     }
 }
