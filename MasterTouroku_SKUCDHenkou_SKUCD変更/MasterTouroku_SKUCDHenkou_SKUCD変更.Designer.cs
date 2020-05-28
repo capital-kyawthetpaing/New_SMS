@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.txtDate1 = new CKM_Controls.CKM_TextBox();
+            this.txtRevDate = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
             this.txtItem = new CKM_Controls.CKM_Label();
-            this.txtDate = new CKM_Controls.CKM_Label();
-            this.txtDate2 = new CKM_Controls.CKM_Label();
+            this.ckmdate1 = new CKM_Controls.CKM_Label();
+            this.ckmdate2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
@@ -88,6 +87,16 @@
             this.ckM_TextBox124 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox123 = new CKM_Controls.CKM_TextBox();
             this.ckM_GridView1 = new CKM_Controls.CKM_GridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_TextBox103 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox104 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox105 = new CKM_Controls.CKM_TextBox();
@@ -211,16 +220,6 @@
             this.lblPartNum = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.Sc_Item = new Search.CKM_SearchControl();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ckM_GridView1)).BeginInit();
@@ -228,79 +227,79 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.txtDate2);
-            this.PanelHeader.Controls.Add(this.txtDate);
+            this.PanelHeader.Controls.Add(this.ckmdate2);
+            this.PanelHeader.Controls.Add(this.ckmdate1);
             this.PanelHeader.Controls.Add(this.txtItem);
             this.PanelHeader.Controls.Add(this.F11Display);
-            this.PanelHeader.Controls.Add(this.ckM_TextBox2);
-            this.PanelHeader.Controls.Add(this.ckM_TextBox1);
+            this.PanelHeader.Controls.Add(this.txtRevDate);
+            this.PanelHeader.Controls.Add(this.txtDate1);
             this.PanelHeader.Controls.Add(this.Sc_Item);
-            this.PanelHeader.Size = new System.Drawing.Size(1671, 124);
+            this.PanelHeader.Size = new System.Drawing.Size(1675, 124);
             this.PanelHeader.Controls.SetChildIndex(this.Sc_Item, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox2, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtDate1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtRevDate, 0);
             this.PanelHeader.Controls.SetChildIndex(this.F11Display, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtItem, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.txtDate, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.txtDate2, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckmdate1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckmdate2, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1137, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1141, 0);
             // 
-            // ckM_TextBox1
+            // txtDate1
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.isMaxLengthErr = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(120, 50);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 3;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate1.AllowMinus = false;
+            this.txtDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtDate1.BackColor = System.Drawing.Color.White;
+            this.txtDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDate1.ClientColor = System.Drawing.Color.White;
+            this.txtDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtDate1.DecimalPlace = 0;
+            this.txtDate1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDate1.IntegerPart = 0;
+            this.txtDate1.IsCorrectDate = true;
+            this.txtDate1.isEnterKeyDown = false;
+            this.txtDate1.isMaxLengthErr = false;
+            this.txtDate1.IsNumber = true;
+            this.txtDate1.IsShop = false;
+            this.txtDate1.Length = 10;
+            this.txtDate1.Location = new System.Drawing.Point(120, 50);
+            this.txtDate1.MaxLength = 10;
+            this.txtDate1.MoveNext = true;
+            this.txtDate1.Name = "txtDate1";
+            this.txtDate1.Size = new System.Drawing.Size(100, 19);
+            this.txtDate1.TabIndex = 3;
+            this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox2
+            // txtRevDate
             // 
-            this.ckM_TextBox2.AllowMinus = false;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox2.IntegerPart = 0;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.isMaxLengthErr = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(302, 50);
-            this.ckM_TextBox2.MaxLength = 10;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 4;
-            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRevDate.AllowMinus = false;
+            this.txtRevDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtRevDate.BackColor = System.Drawing.Color.White;
+            this.txtRevDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRevDate.ClientColor = System.Drawing.Color.White;
+            this.txtRevDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtRevDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtRevDate.DecimalPlace = 0;
+            this.txtRevDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRevDate.IntegerPart = 0;
+            this.txtRevDate.IsCorrectDate = true;
+            this.txtRevDate.isEnterKeyDown = false;
+            this.txtRevDate.isMaxLengthErr = false;
+            this.txtRevDate.IsNumber = true;
+            this.txtRevDate.IsShop = false;
+            this.txtRevDate.Length = 10;
+            this.txtRevDate.Location = new System.Drawing.Point(302, 50);
+            this.txtRevDate.MaxLength = 10;
+            this.txtRevDate.MoveNext = true;
+            this.txtRevDate.Name = "txtRevDate";
+            this.txtRevDate.Size = new System.Drawing.Size(100, 19);
+            this.txtRevDate.TabIndex = 4;
+            this.txtRevDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRevDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // F11Display
             // 
@@ -337,39 +336,39 @@
             this.txtItem.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.txtItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtDate
+            // ckmdate1
             // 
-            this.txtDate.AutoSize = true;
-            this.txtDate.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate.BackColor = System.Drawing.Color.Transparent;
-            this.txtDate.DefaultlabelSize = true;
-            this.txtDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.txtDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.txtDate.ForeColor = System.Drawing.Color.Black;
-            this.txtDate.Location = new System.Drawing.Point(73, 53);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(44, 12);
-            this.txtDate.TabIndex = 7;
-            this.txtDate.Text = "改定日";
-            this.txtDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmdate1.AutoSize = true;
+            this.ckmdate1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate1.BackColor = System.Drawing.Color.Transparent;
+            this.ckmdate1.DefaultlabelSize = true;
+            this.ckmdate1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckmdate1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckmdate1.ForeColor = System.Drawing.Color.Black;
+            this.ckmdate1.Location = new System.Drawing.Point(73, 53);
+            this.ckmdate1.Name = "ckmdate1";
+            this.ckmdate1.Size = new System.Drawing.Size(44, 12);
+            this.ckmdate1.TabIndex = 7;
+            this.ckmdate1.Text = "改定日";
+            this.ckmdate1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtDate2
+            // ckmdate2
             // 
-            this.txtDate2.AutoSize = true;
-            this.txtDate2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate2.BackColor = System.Drawing.Color.Transparent;
-            this.txtDate2.DefaultlabelSize = true;
-            this.txtDate2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.txtDate2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.txtDate2.ForeColor = System.Drawing.Color.Black;
-            this.txtDate2.Location = new System.Drawing.Point(229, 53);
-            this.txtDate2.Name = "txtDate2";
-            this.txtDate2.Size = new System.Drawing.Size(70, 12);
-            this.txtDate2.TabIndex = 8;
-            this.txtDate2.Text = "複写改定日";
-            this.txtDate2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmdate2.AutoSize = true;
+            this.ckmdate2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmdate2.DefaultlabelSize = true;
+            this.ckmdate2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckmdate2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckmdate2.ForeColor = System.Drawing.Color.Black;
+            this.ckmdate2.Location = new System.Drawing.Point(229, 53);
+            this.ckmdate2.Name = "ckmdate2";
+            this.ckmdate2.Size = new System.Drawing.Size(70, 12);
+            this.ckmdate2.TabIndex = 8;
+            this.ckmdate2.Text = "複写改定日";
+            this.ckmdate2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_Label1
             // 
@@ -582,7 +581,7 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1673, 617);
+            this.panelDetail.Size = new System.Drawing.Size(1677, 700);
             this.panelDetail.TabIndex = 13;
             // 
             // ckM_CheckBox30
@@ -976,7 +975,7 @@
             // 
             // ckM_Button1
             // 
-            this.ckM_Button1.BackColor = System.Drawing.Color.Violet;
+            this.ckM_Button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.ckM_Button1.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
             this.ckM_Button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ckM_Button1.DefaultBtnSize = false;
@@ -1139,18 +1138,18 @@
             // 
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1164,25 +1163,76 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
             this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.RowHeadersVisible = false;
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
             this.ckM_GridView1.Size = new System.Drawing.Size(1308, 380);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Column1";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 128;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Column2";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 128;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Column3";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 129;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 129;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 129;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 129;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 129;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Column8";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 129;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Column9";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 129;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Column10";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 129;
             // 
             // ckM_TextBox103
             // 
@@ -4191,7 +4241,6 @@
             this.lblPartNum.Name = "lblPartNum";
             this.lblPartNum.Size = new System.Drawing.Size(200, 19);
             this.lblPartNum.TabIndex = 16;
-            this.lblPartNum.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.lblPartNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProductName
@@ -4201,7 +4250,6 @@
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(485, 19);
             this.lblProductName.TabIndex = 15;
-            this.lblProductName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Sc_Item
@@ -4232,71 +4280,11 @@
             this.Sc_Item.Value2 = null;
             this.Sc_Item.Value3 = null;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 128;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 128;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 129;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Column4";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 129;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Column5";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 129;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Column6";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 129;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Column7";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 129;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Column8";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 129;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Column9";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 129;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Column10";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 129;
-            // 
             // MasterTouroku_SKUCDHenkou_SKUCD変更
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1673, 829);
+            this.ClientSize = new System.Drawing.Size(1677, 912);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
@@ -4318,12 +4306,12 @@
         #endregion
 
         private Search.CKM_SearchControl Sc_Item;
-        private CKM_Controls.CKM_Label txtDate2;
-        private CKM_Controls.CKM_Label txtDate;
+        private CKM_Controls.CKM_Label ckmdate2;
+        private CKM_Controls.CKM_Label ckmdate1;
         private CKM_Controls.CKM_Label txtItem;
         private CKM_Controls.CKM_Button F11Display;
-        private CKM_Controls.CKM_TextBox ckM_TextBox2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
+        private CKM_Controls.CKM_TextBox txtRevDate;
+        private CKM_Controls.CKM_TextBox txtDate1;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private System.Windows.Forms.Panel panelDetail;

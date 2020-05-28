@@ -145,6 +145,16 @@ namespace DL
             return InsertUpdateDeleteData(sp,ref outPutParam);
         }
 
+        public DataTable M_ITEM_NormalSelect (M_ITEM_Entity mie)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ITemCD } },
+                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ChangeDate } },
+            };
+            return SelectData(dic, "M_ITEM_NormalSelect");
+        }
+
     }
 
 }
