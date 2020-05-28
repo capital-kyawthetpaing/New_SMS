@@ -45,6 +45,7 @@ namespace MasterTouroku_YuubinBangou
             SetRequireFields();
             CreateDataTable();
             BindGridCombo();
+            txtZip1from.Focus();
         }
 
         private void SetRequireFields()

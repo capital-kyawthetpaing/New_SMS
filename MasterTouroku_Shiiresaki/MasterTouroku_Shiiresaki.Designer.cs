@@ -606,7 +606,7 @@
             this.txtVendorShortName.MaxLength = 10;
             this.txtVendorShortName.MoveNext = true;
             this.txtVendorShortName.Name = "txtVendorShortName";
-            this.txtVendorShortName.Size = new System.Drawing.Size(110, 19);
+            this.txtVendorShortName.Size = new System.Drawing.Size(130, 19);
             this.txtVendorShortName.TabIndex = 2;
             this.txtVendorShortName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtVendorShortName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVendorShortName_KeyDown);
