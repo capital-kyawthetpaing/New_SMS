@@ -32,7 +32,8 @@ namespace MasterTouroku_YuubinBangou
 
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            
+
+            txtZip1from.Focus();
             SelectNextControl(PanelDetail, true, true, true, true);
             
             Btn_F2.Text = string.Empty;
