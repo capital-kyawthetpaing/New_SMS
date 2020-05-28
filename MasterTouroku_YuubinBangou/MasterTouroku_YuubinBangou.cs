@@ -41,7 +41,7 @@ namespace MasterTouroku_YuubinBangou
             Btn_F9.Text = string.Empty;
 
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
-            //ChangeMode(EOperationMode.UPDATE);
+            ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
             CreateDataTable();
             BindGridCombo();
