@@ -149,8 +149,8 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ITemCD } },
-                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = me.ChangeDate } },
+                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ITemCD } },
+                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ChangeDate } },
             };
             return SelectData(dic, "M_ITEM_NormalSelect");
         }
