@@ -600,7 +600,7 @@ namespace MasterTouroku_YuubinBangou
         {
             try
             {
-                if (Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) > -256)
+                if (Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvYuubinBangou.CurrentCell.EditedFormattedValue) > 0)
                 {
                     return;
                 }

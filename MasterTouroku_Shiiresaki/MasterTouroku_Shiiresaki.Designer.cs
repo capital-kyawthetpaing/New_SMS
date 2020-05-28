@@ -645,6 +645,7 @@
             this.txtNotDisplay.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtNotDisplay.BackColor = System.Drawing.Color.White;
             this.txtNotDisplay.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtNotDisplay.F_focus = false;
             this.txtNotDisplay.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtNotDisplay.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtNotDisplay.Length = 500;
@@ -665,6 +666,7 @@
             this.txtDisplayNote.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtDisplayNote.BackColor = System.Drawing.Color.White;
             this.txtDisplayNote.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtDisplayNote.F_focus = false;
             this.txtDisplayNote.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtDisplayNote.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txtDisplayNote.Length = 500;
@@ -894,8 +896,8 @@
             this.ScStaffCD.ChangeDate = "";
             this.ScStaffCD.ChangeDateWidth = 100;
             this.ScStaffCD.Code = "";
-            this.ScStaffCD.CodeWidth = 100;
-            this.ScStaffCD.CodeWidth1 = 100;
+            this.ScStaffCD.CodeWidth = 70;
+            this.ScStaffCD.CodeWidth1 = 70;
             this.ScStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaffCD.DataCheck = false;
             this.ScStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -905,9 +907,9 @@
             this.ScStaffCD.Location = new System.Drawing.Point(107, 669);
             this.ScStaffCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaffCD.Name = "ScStaffCD";
-            this.ScStaffCD.NameWidth = 210;
+            this.ScStaffCD.NameWidth = 250;
             this.ScStaffCD.SearchEnable = true;
-            this.ScStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.ScStaffCD.Size = new System.Drawing.Size(354, 27);
             this.ScStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaffCD.TabIndex = 37;
             this.ScStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
