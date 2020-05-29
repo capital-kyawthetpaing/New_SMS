@@ -87,10 +87,10 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(41, 102);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(41, 101);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
-            this.btnCustomerSearch.Size = new System.Drawing.Size(200, 43);
+            this.btnCustomerSearch.Size = new System.Drawing.Size(200, 45);
             this.btnCustomerSearch.TabIndex = 6;
             this.btnCustomerSearch.Text = "会員番号";
             this.btnCustomerSearch.UseVisualStyleBackColor = false;

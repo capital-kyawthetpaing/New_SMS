@@ -154,7 +154,8 @@ namespace Search
                 CalculateWidth();
             }
             //get => CodeWidth_S;
-            //set {
+            //set
+            //{
             //    CodeWidth_S = value;
             //    CalculateWidth();
             //}

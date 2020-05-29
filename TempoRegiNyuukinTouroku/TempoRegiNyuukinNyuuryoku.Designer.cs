@@ -160,10 +160,10 @@
             this.btnCustomerCD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerCD.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnCustomerCD.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnCustomerCD.Location = new System.Drawing.Point(66, 275);
+            this.btnCustomerCD.Location = new System.Drawing.Point(66, 274);
             this.btnCustomerCD.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerCD.Name = "btnCustomerCD";
-            this.btnCustomerCD.Size = new System.Drawing.Size(180, 43);
+            this.btnCustomerCD.Size = new System.Drawing.Size(180, 45);
             this.btnCustomerCD.TabIndex = 2;
             this.btnCustomerCD.Text = "会員番号";
             this.btnCustomerCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

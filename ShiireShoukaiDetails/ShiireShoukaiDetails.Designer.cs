@@ -179,6 +179,7 @@
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
             this.dgv_PurchaseDetails.Name = "dgv_PurchaseDetails";
+            this.dgv_PurchaseDetails.RowHeight_ = 20;
             this.dgv_PurchaseDetails.Size = new System.Drawing.Size(1900, 600);
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;
@@ -1003,10 +1004,10 @@
             this.scSkuCD.Location = new System.Drawing.Point(484, 108);
             this.scSkuCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSkuCD.Name = "scSkuCD";
-            this.scSkuCD.NameWidth = 280;
+            this.scSkuCD.NameWidth = 350;
             this.scSkuCD.SearchEnable = true;
             this.scSkuCD.Size = new System.Drawing.Size(633, 27);
-            this.scSkuCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
+            this.scSkuCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.scSkuCD.TabIndex = 21;
             this.scSkuCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSkuCD.UseChangeDate = false;

@@ -40,6 +40,8 @@ namespace ShiireShoukaiDetails
             RequiredField();           
            // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
             cboStore.SelectedValue = StoreCD;
+            scItem.CodeWidth = 600;
+            scSkuCD.CodeWidth = 600;
         }
 
         /// <summary>

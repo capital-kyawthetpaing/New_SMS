@@ -43,6 +43,8 @@ namespace TempoRegiHanbaiRireki
                 lblLastPoint.Text = "";
                 Clear(pnlDetails);
 
+                lblCusName.TextAlign = ContentAlignment.TopLeft;
+
                 txtCustomerNo.Focus();
             }
             catch (Exception ex)
