@@ -39,7 +39,7 @@ namespace MasterTouroku_YuubinBangou
             //btnDisplay.Enabled = F11Enable = true;
             //F12Enable = false;
 
-            //SelectNextControl(PanelDetail, true, true, true, true);
+            SelectNextControl(PanelDetail, true, true, true, true);
             dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
 
             Btn_F2.Text = string.Empty;
@@ -174,6 +174,7 @@ namespace MasterTouroku_YuubinBangou
                             break;
                     }
                 }
+                else PreviousCtrl.Focus();
             }
         }
 
@@ -426,7 +427,9 @@ namespace MasterTouroku_YuubinBangou
                     BindGridCombo();
                     break;
             }
+            PanelHeader.Focus();
             txtZip1from.Focus();
+            
         }
 
         protected override void EndSec()

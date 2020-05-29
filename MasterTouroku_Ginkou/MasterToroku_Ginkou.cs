@@ -167,19 +167,26 @@ namespace MasterTouroku_Ginkou
 
         private void Delete()
         {
-            if (mgbl.M_Ginkou_Delete(mge))
+            if (ginko_useflg.Text == "1")
             {
-                Clear(PanelHeader);
-                Clear(PanelDetail);
-
-                EnablePanel(PanelHeader);
-                DisablePanel(PanelDetail);
-                 ginKou_CD.SetFocus(1);
-                mgbl.ShowMessage("I102");
+                mgbl.ShowMessage("E154");
             }
             else
             {
-                mgbl.ShowMessage("S001");
+                if (mgbl.M_Ginkou_Delete(mge))
+                {
+                    Clear(PanelHeader);
+                    Clear(PanelDetail);
+
+                    EnablePanel(PanelHeader);
+                    DisablePanel(PanelDetail);
+                    ginKou_CD.SetFocus(1);
+                    mgbl.ShowMessage("I102");
+                }
+                else
+                {
+                    mgbl.ShowMessage("S001");
+                }
             }
         }
         private void F12()
@@ -351,7 +358,7 @@ namespace MasterTouroku_Ginkou
                             Btn_F11.Enabled = false;
                             F12Enable = true;
                             ginko_name.Focus();
-
+                            
                     }
                     break;
                     case EOperationMode.SHOW:
@@ -385,7 +392,7 @@ namespace MasterTouroku_Ginkou
                 ChkDeleteFlg.Checked = mge.ginko_DeleteFlag.Equals("1") ? true : false;
                 ginko_useflg.Text = mge.ginko_useflag;
                 ginko_name.Focus();
-
+                
                 return true;
             }
             else
