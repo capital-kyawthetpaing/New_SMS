@@ -185,6 +185,8 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 //        return false;
                 //    }
                 //}
+
+
             }
 
             return true;
