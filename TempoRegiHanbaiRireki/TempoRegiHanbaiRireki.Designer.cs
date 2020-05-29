@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
             this.btnUp = new CKM_Controls.CKM_Button();
             this.btnDown = new CKM_Controls.CKM_Button();
@@ -154,6 +153,7 @@
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label5 = new CKM_Controls.CKMShop_Label();
             this.lblCusName = new CKM_Controls.CKMShop_Label();
+            this.btnCustomerSearch = new CKM_Controls.CKM_Button();
             this.pnlDetails.SuspendLayout();
             this.lblGyoSelect1.SuspendLayout();
             this.lblGyoSelect3.SuspendLayout();
@@ -166,22 +166,6 @@
             this.lblGyoSelect5.SuspendLayout();
             this.lblGyoSelect4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // ckmShop_Label1
-            // 
-            this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.ckmShop_Label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
-            this.ckmShop_Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
-            this.ckmShop_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckmShop_Label1.Location = new System.Drawing.Point(6, 77);
-            this.ckmShop_Label1.Name = "ckmShop_Label1";
-            this.ckmShop_Label1.Size = new System.Drawing.Size(200, 41);
-            this.ckmShop_Label1.TabIndex = 3;
-            this.ckmShop_Label1.Text = "会員番号";
-            this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
-            this.ckmShop_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckmShop_Label12
             // 
@@ -2110,7 +2094,7 @@
             this.txtCustomerNo.IsNumber = false;
             this.txtCustomerNo.IsShop = true;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(205, 79);
+            this.txtCustomerNo.Location = new System.Drawing.Point(204, 79);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
@@ -2218,12 +2202,32 @@
             this.lblCusName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblCusName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnCustomerSearch
+            // 
+            this.btnCustomerSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
+            this.btnCustomerSearch.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
+            this.btnCustomerSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCustomerSearch.DefaultBtnSize = false;
+            this.btnCustomerSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
+            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 79);
+            this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCustomerSearch.Name = "btnCustomerSearch";
+            this.btnCustomerSearch.Size = new System.Drawing.Size(200, 45);
+            this.btnCustomerSearch.TabIndex = 78;
+            this.btnCustomerSearch.Text = "会員番号";
+            this.btnCustomerSearch.UseVisualStyleBackColor = false;
+            this.btnCustomerSearch.Click += new System.EventHandler(this.btnCustomerSearch_Click);
+            // 
             // TempoRegiHanbaiRireki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "出荷・売上へ";
             this.ClientSize = new System.Drawing.Size(1913, 1061);
+            this.Controls.Add(this.btnCustomerSearch);
             this.Controls.Add(this.lblCusName);
             this.Controls.Add(this.ckmShop_Label5);
             this.Controls.Add(this.ckmShop_Label4);
@@ -2237,11 +2241,9 @@
             this.Controls.Add(this.ckmShop_Label12);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
-            this.Controls.Add(this.ckmShop_Label1);
             this.Name = "TempoRegiHanbaiRireki";
             this.Text = "TempoRegiHanbaiRireki";
             this.Load += new System.EventHandler(this.TempoRegiHanbaiRireki_Load);
-            this.Controls.SetChildIndex(this.ckmShop_Label1, 0);
             this.Controls.SetChildIndex(this.btnUp, 0);
             this.Controls.SetChildIndex(this.btnDown, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label12, 0);
@@ -2255,6 +2257,7 @@
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label5, 0);
             this.Controls.SetChildIndex(this.lblCusName, 0);
+            this.Controls.SetChildIndex(this.btnCustomerSearch, 0);
             this.pnlDetails.ResumeLayout(false);
             this.lblGyoSelect1.ResumeLayout(false);
             this.lblGyoSelect3.ResumeLayout(false);
@@ -2272,8 +2275,6 @@
         }
 
         #endregion
-
-        private CKM_Controls.CKMShop_Label ckmShop_Label1;
         private CKM_Controls.CKMShop_Label ckmShop_Label12;
         private CKM_Controls.CKM_Button btnUp;
         private CKM_Controls.CKM_Button btnDown;
@@ -2399,6 +2400,7 @@
         private System.Windows.Forms.Panel lblGyoSelect5;
         private System.Windows.Forms.Panel lblGyoSelect4;
         private CKM_Controls.CKMShop_Label lblCusName;
+        private CKM_Controls.CKM_Button btnCustomerSearch;
     }
 }
 
