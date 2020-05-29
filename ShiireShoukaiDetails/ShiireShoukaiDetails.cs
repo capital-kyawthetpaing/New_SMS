@@ -207,7 +207,7 @@ namespace ShiireShoukaiDetails
                 MakerItemCD = txtMakerItemCD.Text,
                 //MakerName = txtMakerItemCD.Text,
                 Purchase_SDate = txtPurchaseDate1.Text,
-                Purchasee_EDate = txtPurchaseDate2.Text,
+                Purchase_EDate = txtPurchaseDate2.Text,
                 Plan_SDate = txtPlanDate1.Text,
                 Plan_EDate = txtPlanDate2.Text,
                 Order_SDate = txtOrderDate1.Text,
