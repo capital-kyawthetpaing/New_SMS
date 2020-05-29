@@ -1022,6 +1022,8 @@ namespace ShiireNyuuryokuFromNyuuka
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
                 
