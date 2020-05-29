@@ -23,7 +23,7 @@ namespace DL
                    { "@MakerItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.MakerItemCD  } },
                    //{ "@MakerItemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.MakerName } },
                    { "@PurchaseSDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Purchase_SDate  } },
-                   { "@PurchaseEDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Purchasee_EDate  } },
+                   { "@PurchaseEDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Purchase_EDate  } },
                    { "@PlanSDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Plan_SDate } },
                    { "@PlanEDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Plan_EDate  } },
                    { "@OrderSDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = dpd_e.Order_SDate  } },

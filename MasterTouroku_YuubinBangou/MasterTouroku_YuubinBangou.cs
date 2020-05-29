@@ -29,21 +29,27 @@ namespace MasterTouroku_YuubinBangou
         private void FormLoadEvent(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
-
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+
             
+            //OperationMode = EOperationMode.UPDATE;
+            //DisablePanel(PanelDetail);
+            //EnablePanel(PanelHeader);
+            //btnDisplay.Enabled = F11Enable = true;
+            //F12Enable = false;
+
             SelectNextControl(PanelDetail, true, true, true, true);
-            
+            dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
+
             Btn_F2.Text = string.Empty;
             Btn_F4.Text = string.Empty;
             Btn_F9.Text = string.Empty;
-
-            dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
-            ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
             CreateDataTable();
             BindGridCombo();
+            ChangeMode(EOperationMode.UPDATE);
+            txtZip1from.Focus();
         }
 
         private void SetRequireFields()
@@ -168,6 +174,7 @@ namespace MasterTouroku_YuubinBangou
                             break;
                     }
                 }
+                else PreviousCtrl.Focus();
             }
         }
 
@@ -230,6 +237,10 @@ namespace MasterTouroku_YuubinBangou
                     if(dr["ZipCD1"] == DBNull.Value)
                     {
                         dtDisplay.Rows.Remove(dr);
+                    }
+                    else if(dr["ZipCD1"] != DBNull.Value && dr["CarrierLeadDay"] == DBNull.Value)
+                    {
+                        dr["CarrierLeadDay"] = "0";
                     }
                 }
 
@@ -416,7 +427,9 @@ namespace MasterTouroku_YuubinBangou
                     BindGridCombo();
                     break;
             }
+            PanelHeader.Focus();
             txtZip1from.Focus();
+            
         }
 
         protected override void EndSec()

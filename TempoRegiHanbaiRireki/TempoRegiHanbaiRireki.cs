@@ -43,6 +43,8 @@ namespace TempoRegiHanbaiRireki
                 lblLastPoint.Text = "";
                 Clear(pnlDetails);
 
+                lblCusName.TextAlign = ContentAlignment.TopLeft;
+
                 txtCustomerNo.Focus();
             }
             catch (Exception ex)
@@ -761,6 +763,17 @@ namespace TempoRegiHanbaiRireki
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCustomerSearch_Click(object sender, EventArgs e)
+        {
+            TempoRegiKaiinKensaku tgkkk = new TempoRegiKaiinKensaku();
+            tgkkk.ShowDialog();
+
+            if (!string.IsNullOrEmpty(tgkkk.CustomerCD))
+            {
+                txtCustomerNo.Text = tgkkk.CustomerCD;
             }
         }
     }

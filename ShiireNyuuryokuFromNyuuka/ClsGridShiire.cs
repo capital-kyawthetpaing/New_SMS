@@ -28,7 +28,7 @@ namespace ShiireNyuuryokuFromNyuuka
             internal string ArrivalSu;      // 
             internal string PurchaseSu;      //仕入数
             internal string TaniName;      //
-            internal string PurchaserUnitPrice;
+            internal string PurchaseUnitPrice;
             internal string CalculationGaku;
             internal string AdjustmentGaku;      //調整額
             internal string PurchaseGaku;
@@ -84,7 +84,7 @@ namespace ShiireNyuuryokuFromNyuuka
             OrderUnitPrice,    //発注単価 
             PurchaseSu,           // 仕入数
             TaniCD,                 // 単位 
-            PurchaserUnitPrice,          //単価
+            PurchaseUnitPrice,          //単価
             CalculationGaku,
             AdjustmentGaku,      // 調整額
             PurchaseGaku,
@@ -260,9 +260,9 @@ namespace ShiireNyuuryokuFromNyuuka
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
 
                 // 販売単価
-                w_CtlCol = (int)ColNO.PurchaserUnitPrice;
+                w_CtlCol = (int)ColNO.PurchaseUnitPrice;
 
-                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].PurchaserUnitPrice);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].PurchaseUnitPrice);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
@@ -450,8 +450,8 @@ namespace ShiireNyuuryokuFromNyuuka
                             //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].TANK2Val);
                             break;
                         // 
-                        case (int)ColNO.PurchaserUnitPrice:
-                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].PurchaserUnitPrice);
+                        case (int)ColNO.PurchaseUnitPrice:
+                            g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].PurchaseUnitPrice);
                             //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].URIA2Val);
                             break;
                         // 

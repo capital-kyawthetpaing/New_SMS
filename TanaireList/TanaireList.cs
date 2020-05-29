@@ -33,6 +33,7 @@ namespace TanaireList
             //SetFunctionLabel(EProMode.MENTE);
             this.SetFunctionLabel(EProMode.PRINT);
             StartProgram();
+            KeyUp += FrmTanaireList_KeyUp;
 
             BindData();
 

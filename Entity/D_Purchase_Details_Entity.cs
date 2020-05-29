@@ -19,7 +19,7 @@ namespace Entity
         public string ChkMi { get; set; }
         public string StaffCD { get; set; }
         public string Purchase_SDate { get; set; }
-        public string Purchasee_EDate { get; set; }
+        public string Purchase_EDate { get; set; }
         public string Plan_SDate { get; set; }
         public string Plan_EDate { get; set; }
         public string Order_SDate { get; set; }

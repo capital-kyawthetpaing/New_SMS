@@ -28,7 +28,7 @@ namespace ShiireTankaTeiseiIraisho
             StoreCD,
             ArrivalPlanDateFrom,
             ArrivalPlanDateTo,
-         
+
             OrderCD,
 
             CheckBox3,
@@ -80,7 +80,7 @@ namespace ShiireTankaTeiseiIraisho
         private Control[] detailControls;
         private Control[] detailLabels;
         private Control[] searchButtons;
-        
+
         private ShiireTankaTeiseiIraisho_BL stbl;
         private D_Purchase_Entity dpe;
 
@@ -97,7 +97,7 @@ namespace ShiireTankaTeiseiIraisho
             try
             {
                 base.InProgramID = ProID;
-                base.InProgramNM=ProNm;
+                base.InProgramNM = ProNm;
 
                 this.SetFunctionLabel(EProMode.PRINT);
                 this.InitialControlArray();
@@ -105,7 +105,7 @@ namespace ShiireTankaTeiseiIraisho
                 base.Btn_F11.Text = "";
 
                 //起動時共通処理
-                base.StartProgram();    
+                base.StartProgram();
 
                 stbl = new ShiireTankaTeiseiIraisho_BL();
                 string ymd = stbl.GetDate();
@@ -127,18 +127,18 @@ namespace ShiireTankaTeiseiIraisho
         }
         private void InitialControlArray()
         {
-            detailControls = new Control[] { CboStoreCD, ckM_TextBox1 ,ckM_TextBox2 
+            detailControls = new Control[] { CboStoreCD, ckM_TextBox1 ,ckM_TextBox2
                     , ScOrder.TxtCode,ChkMisyutsuryoku,ChkSyutsuryokuZumi
                          };
             detailLabels = new Control[] { ScOrder };
-            searchButtons = new Control[] { ScOrder.BtnSearch};
+            searchButtons = new Control[] { ScOrder.BtnSearch };
 
             foreach (Control ctl in detailControls)
             {
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
-        }       
+        }
 
         /// <summary>
         /// 仕入データ取得処理
@@ -157,7 +157,7 @@ namespace ShiireTankaTeiseiIraisho
                     return null;
                 }
             }
-            
+
             //どれかのチェックがあること	
             if (!ChkMisyutsuryoku.Checked && !ChkSyutsuryokuZumi.Checked)
             {
@@ -188,7 +188,7 @@ namespace ShiireTankaTeiseiIraisho
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    if (row["DisplayRows"].ToString() == "1" )
+                    if (row["DisplayRows"].ToString() == "1")
                     {
                         bool ret = SelectAndInsertExclusive(row["PurchaseNO"].ToString());
                         if (!ret)
@@ -307,7 +307,7 @@ namespace ShiireTankaTeiseiIraisho
                 {
                     stbl.D_Purchase_Update(dpe, dtForUpdate);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
 
                     var f = ex.Message;
@@ -359,25 +359,25 @@ namespace ShiireTankaTeiseiIraisho
                         string breakKey = "";
                         foreach (DataRow row in dt.Rows)
                         {
-                            if(breakKey != "" && breakKey != row["VendorCD"].ToString())
+                            if (breakKey != "" && breakKey != row["VendorCD"].ToString())
                             {
                                 count = DATA_COUNT;
                             }
 
-                            if(count >= DATA_COUNT)
+                            if (count >= DATA_COUNT)
                             {
                                 //行１からGYO_COUNTまでの行をこぴーする
-                                objWorkBook.Sheets[1].Range("1:"+ GYO_COUNT).Copy(objWorkBook.Sheets[1].Range("A" + (GYO_COUNT*page + 1)));
+                                objWorkBook.Sheets[1].Range("1:" + GYO_COUNT).Copy(objWorkBook.Sheets[1].Range("A" + (GYO_COUNT * page + 1)));
 
                                 //Detail部をクリアする
                                 currentRow = (int)ERow.DetailStartRow + page * GYO_COUNT;
 
-                                objWorkBook.Sheets[1].Range("A"+ currentRow + ":BZ" + (currentRow+DATA_COUNT-1)).ClearContents();
+                                objWorkBook.Sheets[1].Range("A" + currentRow + ":BZ" + (currentRow + DATA_COUNT - 1)).ClearContents();
                                 page++;
                                 count = 0;
                             }
 
-                            if (count == 0 )
+                            if (count == 0)
                             {
                                 breakKey = row["VendorCD"].ToString();
 
@@ -408,13 +408,13 @@ namespace ShiireTankaTeiseiIraisho
                             count++;
                         }
 
-                            //// エクセル表示
-                            //objExcel.Visible = true;
-                            objWorkBook.Save();
+                        //// エクセル表示
+                        //objExcel.Visible = true;
+                        objWorkBook.Save();
 
-                            // クローズ
-                            objWorkBook.Close(false);
-                            objExcel.Quit();
+                        // クローズ
+                        objWorkBook.Close(false);
+                        objExcel.Quit();
                     }
                     finally
                     {
@@ -454,11 +454,11 @@ namespace ShiireTankaTeiseiIraisho
                 }
             }
         }
-            /// <summary>
-            /// get Log information
-            /// print log
-            /// </summary>
-            private L_Log_Entity Get_L_Log_Entity()
+        /// <summary>
+        /// get Log information
+        /// print log
+        /// </summary>
+        private L_Log_Entity Get_L_Log_Entity()
         {
             //画面指定項目をカンマ編集で羅列（ex."2019/07/01,2019/7/31,ABCDEFG,未出力"）
             string item = detailControls[0].Text;
@@ -473,7 +473,7 @@ namespace ShiireTankaTeiseiIraisho
             if (ChkSyutsuryokuZumi.Checked)
             {
                 item += "," + ChkSyutsuryokuZumi.Text;
-            }            
+            }
 
             L_Log_Entity lle = new L_Log_Entity
             {
@@ -492,15 +492,15 @@ namespace ShiireTankaTeiseiIraisho
         /// <param name="index"></param>
         /// <param name="set">画面展開なしの場合:falesに設定する</param>
         /// <returns></returns>
-        private bool CheckDetail(int index, bool set=true)
+        private bool CheckDetail(int index, bool set = true)
         {
             bool ret;
             switch (index)
             {
                 case (int)EIndex.ArrivalPlanDateFrom:
                 case (int)EIndex.ArrivalPlanDateTo:
-                    if(index == (int)EIndex.ArrivalPlanDateFrom)
-                        {
+                    if (index == (int)EIndex.ArrivalPlanDateFrom)
+                    {
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                             return true;
                     }
@@ -516,7 +516,7 @@ namespace ShiireTankaTeiseiIraisho
                     }
 
                     string strYmd = "";
-                            strYmd = bbl.FormatDate(detailControls[index].Text);
+                    strYmd = bbl.FormatDate(detailControls[index].Text);
 
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
                     if (!bbl.CheckDate(strYmd))
@@ -526,10 +526,10 @@ namespace ShiireTankaTeiseiIraisho
                         return false;
                     }
 
-                            detailControls[index].Text = strYmd;
+                    detailControls[index].Text = strYmd;
 
                     //見積日(From) ≧ 見積日(To)である場合Error
-                    if ( index == (int)EIndex.ArrivalPlanDateTo)
+                    if (index == (int)EIndex.ArrivalPlanDateTo)
                     {
                         if (!string.IsNullOrWhiteSpace(detailControls[index - 1].Text) && !string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
@@ -558,7 +558,7 @@ namespace ShiireTankaTeiseiIraisho
                     M_Vendor_Entity mve = new M_Vendor_Entity
                     {
                         VendorCD = detailControls[index].Text,
-                        VendorFlg ="1",
+                        VendorFlg = "1",
                         ChangeDate = bbl.GetDate()
                     };
                     Vendor_BL sbl = new Vendor_BL();
@@ -661,7 +661,7 @@ namespace ShiireTankaTeiseiIraisho
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_ComboBox)))
                 {
-                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex=-1;
+                    ((CKM_Controls.CKM_ComboBox)ctl).SelectedIndex = -1;
                 }
                 else
                 {
@@ -711,7 +711,7 @@ namespace ShiireTankaTeiseiIraisho
 
             detailControls[(int)EIndex.ArrivalPlanDateTo].Text = ymd;
             ChkMisyutsuryoku.Checked = true;
-         detailControls[1].Focus();
+            detailControls[1].Focus();
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -786,9 +786,9 @@ namespace ShiireTankaTeiseiIraisho
                         break;
                     }
 
-                case 11:   
-                        break;
-                    
+                case 11:
+                    break;
+
             }   //switch end
 
         }
@@ -821,7 +821,7 @@ namespace ShiireTankaTeiseiIraisho
                     {
                         if (detailControls.Length - 1 > index)
                         {
-                            if(index== (int)EIndex.OrderCD)
+                            if (index == (int)EIndex.OrderCD)
                                 //Shiftが押されている時は前のコントロールのフォーカスを移動
                                 this.ProcessTabKey(!e.Shift);
                             else if (detailControls[index + 1].CanFocus)
@@ -871,8 +871,8 @@ namespace ShiireTankaTeiseiIraisho
                 previousCtrl = this.ActiveControl;
 
                 int index = Array.IndexOf(detailControls, sender);
-                switch(index)
-                    {
+                switch (index)
+                {
                     case (int)EIndex.OrderCD:
                         F9Visible = true;
                         break;
@@ -888,7 +888,7 @@ namespace ShiireTankaTeiseiIraisho
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
-        }   
+        }
 
         #endregion
 
