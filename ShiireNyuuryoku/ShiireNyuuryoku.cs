@@ -1659,6 +1659,8 @@ namespace ShiireNyuuryoku
                     mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_PurchaseGaku"]) * sign);   // 
                     mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_CalculationGaku"]) * sign);   // 
 
+                    CheckGrid((int)ClsGridShiire.ColNO.AdjustmentGaku,i, true);
+
                     mGrid.g_DArray[i].CommentInStore = row["D_CommentInStore"].ToString();   // 
                     mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   //    
 
@@ -2221,12 +2223,12 @@ namespace ShiireNyuuryoku
                     //入力された場合、以下を再計算
                     //計算仕入額←	form.仕入数	×	form.仕入単価
                     mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaseUnitPrice));
-                    //計算仕入額＋調整額＝仕入額
+                    //仕入額←	計算仕入額＋調整額
                     mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
                      //消費税額(Hidden)←Function_消費税計算.out金額１	
                      decimal zei;
                     decimal zeiritsu;
-                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG, out zei,out zeiritsu, ymd);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku), mGrid.g_DArray[row].TaxRateFLG, out zei,out zeiritsu, ymd);
                     mGrid.g_DArray[row].PurchaseTax = zei;
                     mGrid.g_DArray[row].PurchaseGaku10 = 0;
                     mGrid.g_DArray[row].PurchaseGaku8 = 0;
@@ -2235,18 +2237,20 @@ namespace ShiireNyuuryoku
                     //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
                     if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.TSUJYO))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku10 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
                     //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
                     else if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.KEIGEN))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
 
                     //各金額項目の再計算必要
                     if (chkAll == false)
+                    {
                         CalcKin();
-
+                        CalcZei();
+                    }
                         break;
 
             }
