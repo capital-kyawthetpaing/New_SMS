@@ -174,7 +174,7 @@
             this.btnDown.Location = new System.Drawing.Point(1659, 435);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(243, 41);
+            this.btnDown.Size = new System.Drawing.Size(243, 45);
             this.btnDown.TabIndex = 47;
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = false;
@@ -193,7 +193,7 @@
             this.btnUp.Location = new System.Drawing.Point(1416, 435);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(243, 41);
+            this.btnUp.Size = new System.Drawing.Size(243, 45);
             this.btnUp.TabIndex = 46;
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = false;
