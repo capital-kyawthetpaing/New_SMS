@@ -54,7 +54,7 @@ namespace CKM_Controls
                 AllowUserToAddRows = false;
                 AllowUserToAddRows = true;
                 this.Refresh();
-                this.RefreshEdit();
+             //   this.RefreshEdit();
                 Invalidate();
             }
            
