@@ -1558,8 +1558,21 @@ namespace HacchuuNyuuryoku
 
                 if (index == (int)EIndex.OrderNO)
                 {
+                    //上位承認者が承認行為を行った後に下位承認者が承認しようとした場合
+                    //（以下のSelectができる場合）、Error「上位承認者によって既に承認済みです。」	
+                    bool ret = mibl.CheckSyonin(doe.OrderNO, InOperatorCD, out string errno2);
+                    if (ret)
+                    {
+                        if (!string.IsNullOrWhiteSpace(errno2))
+                        {
+                            bbl.ShowMessage(errno2);
+                            previousCtrl.Focus();
+                            return false;
+                        }
+                    }
+
                     //進捗チェック　既に出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み警告
-                    bool ret = mibl.CheckHacchuData(doe.OrderNO, out string errno);
+                    ret = mibl.CheckHacchuData(doe.OrderNO, out string errno);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
