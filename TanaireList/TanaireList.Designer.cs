@@ -192,7 +192,7 @@
             this.chkLocationNashi.Location = new System.Drawing.Point(286, 100);
             this.chkLocationNashi.Name = "chkLocationNashi";
             this.chkLocationNashi.Size = new System.Drawing.Size(50, 16);
-            this.chkLocationNashi.TabIndex = 6;
+            this.chkLocationNashi.TabIndex = 10;
             this.chkLocationNashi.Text = "なし";
             this.chkLocationNashi.UseVisualStyleBackColor = true;
             // 
@@ -205,7 +205,7 @@
             this.chkLocationAri.Location = new System.Drawing.Point(164, 100);
             this.chkLocationAri.Name = "chkLocationAri";
             this.chkLocationAri.Size = new System.Drawing.Size(50, 16);
-            this.chkLocationAri.TabIndex = 5;
+            this.chkLocationAri.TabIndex = 9;
             this.chkLocationAri.Text = "あり";
             this.chkLocationAri.UseVisualStyleBackColor = true;
             // 
@@ -233,7 +233,7 @@
             this.chkRegistered.Location = new System.Drawing.Point(286, 78);
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(63, 16);
-            this.chkRegistered.TabIndex = 4;
+            this.chkRegistered.TabIndex = 8;
             this.chkRegistered.Text = "登録済";
             this.chkRegistered.UseVisualStyleBackColor = true;
             // 
@@ -246,7 +246,7 @@
             this.chkUnregistered.Location = new System.Drawing.Point(164, 78);
             this.chkUnregistered.Name = "chkUnregistered";
             this.chkUnregistered.Size = new System.Drawing.Size(63, 16);
-            this.chkUnregistered.TabIndex = 3;
+            this.chkUnregistered.TabIndex = 7;
             this.chkUnregistered.Text = "未登録";
             this.chkUnregistered.UseVisualStyleBackColor = true;
             // 

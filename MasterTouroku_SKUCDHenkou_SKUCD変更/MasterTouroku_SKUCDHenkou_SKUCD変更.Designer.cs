@@ -31,15 +31,45 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.ckM_TextBox1 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
+            this.txtDate1 = new CKM_Controls.CKM_TextBox();
+            this.txtRevDate = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
             this.txtItem = new CKM_Controls.CKM_Label();
-            this.txtDate = new CKM_Controls.CKM_Label();
-            this.txtDate2 = new CKM_Controls.CKM_Label();
+            this.ckmdate1 = new CKM_Controls.CKM_Label();
+            this.ckmdate2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ckM_CheckBox30 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox29 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox28 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox27 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox26 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox25 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox24 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox23 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox22 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox21 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox20 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox19 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox18 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox17 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox16 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox15 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox14 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox13 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox12 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox11 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox10 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox9 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox8 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox7 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox6 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox5 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox4 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox2 = new CKM_Controls.CKM_CheckBox();
+            this.ckM_CheckBox1 = new CKM_Controls.CKM_CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -159,35 +189,35 @@
             this.ckM_TextBox41 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox42 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox30 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox31 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox32 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize10 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize10 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox27 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox28 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox29 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize9 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize9 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox24 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox25 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox26 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize8 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize8 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox21 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox22 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox23 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize7 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize7 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox18 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox19 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox20 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize6 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize6 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox15 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox16 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox17 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize5 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize5 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox12 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox13 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox14 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize4 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize4 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox9 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox10 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox11 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize3 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize3 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox6 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox7 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox8 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize2 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize2 = new CKM_Controls.CKM_TextBox();
             this.ckM_TextBox5 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox4 = new CKM_Controls.CKM_TextBox();
-            this.ckM_TextBox3 = new CKM_Controls.CKM_TextBox();
+            this.txtoldsize1 = new CKM_Controls.CKM_TextBox();
+            this.txtnewsize1 = new CKM_Controls.CKM_TextBox();
             this.lblPartNum = new System.Windows.Forms.Label();
             this.lblProductName = new System.Windows.Forms.Label();
             this.Sc_Item = new Search.CKM_SearchControl();
@@ -198,79 +228,79 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.txtDate2);
-            this.PanelHeader.Controls.Add(this.txtDate);
+            this.PanelHeader.Controls.Add(this.ckmdate2);
+            this.PanelHeader.Controls.Add(this.ckmdate1);
             this.PanelHeader.Controls.Add(this.txtItem);
             this.PanelHeader.Controls.Add(this.F11Display);
-            this.PanelHeader.Controls.Add(this.ckM_TextBox2);
-            this.PanelHeader.Controls.Add(this.ckM_TextBox1);
+            this.PanelHeader.Controls.Add(this.txtRevDate);
+            this.PanelHeader.Controls.Add(this.txtDate1);
             this.PanelHeader.Controls.Add(this.Sc_Item);
-            this.PanelHeader.Size = new System.Drawing.Size(1774, 124);
+            this.PanelHeader.Size = new System.Drawing.Size(1675, 124);
             this.PanelHeader.Controls.SetChildIndex(this.Sc_Item, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox1, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_TextBox2, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtDate1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.txtRevDate, 0);
             this.PanelHeader.Controls.SetChildIndex(this.F11Display, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtItem, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.txtDate, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.txtDate2, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckmdate1, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ckmdate2, 0);
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(1141, 0);
             // 
-            // ckM_TextBox1
+            // txtDate1
             // 
-            this.ckM_TextBox1.AllowMinus = false;
-            this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
-            this.ckM_TextBox1.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox1.IntegerPart = 0;
-            this.ckM_TextBox1.IsCorrectDate = true;
-            this.ckM_TextBox1.isEnterKeyDown = false;
-            this.ckM_TextBox1.isMaxLengthErr = false;
-            this.ckM_TextBox1.IsNumber = true;
-            this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(120, 50);
-            this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = true;
-            this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox1.TabIndex = 3;
-            this.ckM_TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtDate1.AllowMinus = false;
+            this.txtDate1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtDate1.BackColor = System.Drawing.Color.White;
+            this.txtDate1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDate1.ClientColor = System.Drawing.Color.White;
+            this.txtDate1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtDate1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtDate1.DecimalPlace = 0;
+            this.txtDate1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtDate1.IntegerPart = 0;
+            this.txtDate1.IsCorrectDate = true;
+            this.txtDate1.isEnterKeyDown = false;
+            this.txtDate1.isMaxLengthErr = false;
+            this.txtDate1.IsNumber = true;
+            this.txtDate1.IsShop = false;
+            this.txtDate1.Length = 10;
+            this.txtDate1.Location = new System.Drawing.Point(120, 50);
+            this.txtDate1.MaxLength = 10;
+            this.txtDate1.MoveNext = true;
+            this.txtDate1.Name = "txtDate1";
+            this.txtDate1.Size = new System.Drawing.Size(100, 19);
+            this.txtDate1.TabIndex = 3;
+            this.txtDate1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtDate1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox2
+            // txtRevDate
             // 
-            this.ckM_TextBox2.AllowMinus = false;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox2.IntegerPart = 0;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.isMaxLengthErr = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(302, 50);
-            this.ckM_TextBox2.MaxLength = 10;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox2.TabIndex = 4;
-            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRevDate.AllowMinus = false;
+            this.txtRevDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtRevDate.BackColor = System.Drawing.Color.White;
+            this.txtRevDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRevDate.ClientColor = System.Drawing.Color.White;
+            this.txtRevDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtRevDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
+            this.txtRevDate.DecimalPlace = 0;
+            this.txtRevDate.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtRevDate.IntegerPart = 0;
+            this.txtRevDate.IsCorrectDate = true;
+            this.txtRevDate.isEnterKeyDown = false;
+            this.txtRevDate.isMaxLengthErr = false;
+            this.txtRevDate.IsNumber = true;
+            this.txtRevDate.IsShop = false;
+            this.txtRevDate.Length = 10;
+            this.txtRevDate.Location = new System.Drawing.Point(302, 50);
+            this.txtRevDate.MaxLength = 10;
+            this.txtRevDate.MoveNext = true;
+            this.txtRevDate.Name = "txtRevDate";
+            this.txtRevDate.Size = new System.Drawing.Size(100, 19);
+            this.txtRevDate.TabIndex = 4;
+            this.txtRevDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRevDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // F11Display
             // 
@@ -282,13 +312,14 @@
             this.F11Display.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.F11Display.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.F11Display.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.F11Display.Location = new System.Drawing.Point(1649, 53);
+            this.F11Display.Location = new System.Drawing.Point(1532, 53);
             this.F11Display.Margin = new System.Windows.Forms.Padding(1);
             this.F11Display.Name = "F11Display";
             this.F11Display.Size = new System.Drawing.Size(100, 23);
             this.F11Display.TabIndex = 5;
             this.F11Display.Text = "表示(F11)";
             this.F11Display.UseVisualStyleBackColor = false;
+            this.F11Display.Click += new System.EventHandler(this.F11Display_Click);
             // 
             // txtItem
             // 
@@ -307,39 +338,39 @@
             this.txtItem.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.txtItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtDate
+            // ckmdate1
             // 
-            this.txtDate.AutoSize = true;
-            this.txtDate.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate.BackColor = System.Drawing.Color.Transparent;
-            this.txtDate.DefaultlabelSize = true;
-            this.txtDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.txtDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.txtDate.ForeColor = System.Drawing.Color.Black;
-            this.txtDate.Location = new System.Drawing.Point(73, 53);
-            this.txtDate.Name = "txtDate";
-            this.txtDate.Size = new System.Drawing.Size(44, 12);
-            this.txtDate.TabIndex = 7;
-            this.txtDate.Text = "改定日";
-            this.txtDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmdate1.AutoSize = true;
+            this.ckmdate1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate1.BackColor = System.Drawing.Color.Transparent;
+            this.ckmdate1.DefaultlabelSize = true;
+            this.ckmdate1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckmdate1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckmdate1.ForeColor = System.Drawing.Color.Black;
+            this.ckmdate1.Location = new System.Drawing.Point(73, 53);
+            this.ckmdate1.Name = "ckmdate1";
+            this.ckmdate1.Size = new System.Drawing.Size(44, 12);
+            this.ckmdate1.TabIndex = 7;
+            this.ckmdate1.Text = "改定日";
+            this.ckmdate1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtDate2
+            // ckmdate2
             // 
-            this.txtDate2.AutoSize = true;
-            this.txtDate2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate2.BackColor = System.Drawing.Color.Transparent;
-            this.txtDate2.DefaultlabelSize = true;
-            this.txtDate2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.txtDate2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.txtDate2.ForeColor = System.Drawing.Color.Black;
-            this.txtDate2.Location = new System.Drawing.Point(229, 53);
-            this.txtDate2.Name = "txtDate2";
-            this.txtDate2.Size = new System.Drawing.Size(70, 12);
-            this.txtDate2.TabIndex = 8;
-            this.txtDate2.Text = "複写改定日";
-            this.txtDate2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.txtDate2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmdate2.AutoSize = true;
+            this.ckmdate2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmdate2.DefaultlabelSize = true;
+            this.ckmdate2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckmdate2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckmdate2.ForeColor = System.Drawing.Color.Black;
+            this.ckmdate2.Location = new System.Drawing.Point(229, 53);
+            this.ckmdate2.Name = "ckmdate2";
+            this.ckmdate2.Size = new System.Drawing.Size(70, 12);
+            this.ckmdate2.TabIndex = 8;
+            this.ckmdate2.Text = "複写改定日";
+            this.ckmdate2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckmdate2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_Label1
             // 
@@ -377,6 +408,36 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.ckM_CheckBox30);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox29);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox28);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox27);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox26);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox25);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox24);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox23);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox22);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox21);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox20);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox19);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox18);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox17);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox16);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox15);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox14);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox13);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox12);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox11);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox10);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox9);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox8);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox7);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox6);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox5);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox4);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox3);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox2);
+            this.panelDetail.Controls.Add(this.ckM_CheckBox1);
             this.panelDetail.Controls.Add(this.label10);
             this.panelDetail.Controls.Add(this.label9);
             this.panelDetail.Controls.Add(this.label8);
@@ -486,35 +547,35 @@
             this.panelDetail.Controls.Add(this.ckM_TextBox41);
             this.panelDetail.Controls.Add(this.ckM_TextBox42);
             this.panelDetail.Controls.Add(this.ckM_TextBox30);
-            this.panelDetail.Controls.Add(this.ckM_TextBox31);
-            this.panelDetail.Controls.Add(this.ckM_TextBox32);
+            this.panelDetail.Controls.Add(this.txtoldsize10);
+            this.panelDetail.Controls.Add(this.txtnewsize10);
             this.panelDetail.Controls.Add(this.ckM_TextBox27);
-            this.panelDetail.Controls.Add(this.ckM_TextBox28);
-            this.panelDetail.Controls.Add(this.ckM_TextBox29);
+            this.panelDetail.Controls.Add(this.txtoldsize9);
+            this.panelDetail.Controls.Add(this.txtnewsize9);
             this.panelDetail.Controls.Add(this.ckM_TextBox24);
-            this.panelDetail.Controls.Add(this.ckM_TextBox25);
-            this.panelDetail.Controls.Add(this.ckM_TextBox26);
+            this.panelDetail.Controls.Add(this.txtoldsize8);
+            this.panelDetail.Controls.Add(this.txtnewsize8);
             this.panelDetail.Controls.Add(this.ckM_TextBox21);
-            this.panelDetail.Controls.Add(this.ckM_TextBox22);
-            this.panelDetail.Controls.Add(this.ckM_TextBox23);
+            this.panelDetail.Controls.Add(this.txtoldsize7);
+            this.panelDetail.Controls.Add(this.txtnewsize7);
             this.panelDetail.Controls.Add(this.ckM_TextBox18);
-            this.panelDetail.Controls.Add(this.ckM_TextBox19);
-            this.panelDetail.Controls.Add(this.ckM_TextBox20);
+            this.panelDetail.Controls.Add(this.txtoldsize6);
+            this.panelDetail.Controls.Add(this.txtnewsize6);
             this.panelDetail.Controls.Add(this.ckM_TextBox15);
-            this.panelDetail.Controls.Add(this.ckM_TextBox16);
-            this.panelDetail.Controls.Add(this.ckM_TextBox17);
+            this.panelDetail.Controls.Add(this.txtoldsize5);
+            this.panelDetail.Controls.Add(this.txtnewsize5);
             this.panelDetail.Controls.Add(this.ckM_TextBox12);
-            this.panelDetail.Controls.Add(this.ckM_TextBox13);
-            this.panelDetail.Controls.Add(this.ckM_TextBox14);
+            this.panelDetail.Controls.Add(this.txtoldsize4);
+            this.panelDetail.Controls.Add(this.txtnewsize4);
             this.panelDetail.Controls.Add(this.ckM_TextBox9);
-            this.panelDetail.Controls.Add(this.ckM_TextBox10);
-            this.panelDetail.Controls.Add(this.ckM_TextBox11);
+            this.panelDetail.Controls.Add(this.txtoldsize3);
+            this.panelDetail.Controls.Add(this.txtnewsize3);
             this.panelDetail.Controls.Add(this.ckM_TextBox6);
-            this.panelDetail.Controls.Add(this.ckM_TextBox7);
-            this.panelDetail.Controls.Add(this.ckM_TextBox8);
+            this.panelDetail.Controls.Add(this.txtoldsize2);
+            this.panelDetail.Controls.Add(this.txtnewsize2);
             this.panelDetail.Controls.Add(this.ckM_TextBox5);
-            this.panelDetail.Controls.Add(this.ckM_TextBox4);
-            this.panelDetail.Controls.Add(this.ckM_TextBox3);
+            this.panelDetail.Controls.Add(this.txtoldsize1);
+            this.panelDetail.Controls.Add(this.txtnewsize1);
             this.panelDetail.Controls.Add(this.lblPartNum);
             this.panelDetail.Controls.Add(this.lblProductName);
             this.panelDetail.Controls.Add(this.ckM_Label2);
@@ -522,8 +583,309 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 180);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1776, 649);
+            this.panelDetail.Size = new System.Drawing.Size(1677, 700);
             this.panelDetail.TabIndex = 13;
+            // 
+            // ckM_CheckBox30
+            // 
+            this.ckM_CheckBox30.AutoSize = true;
+            this.ckM_CheckBox30.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox30.Location = new System.Drawing.Point(189, 502);
+            this.ckM_CheckBox30.Name = "ckM_CheckBox30";
+            this.ckM_CheckBox30.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox30.TabIndex = 191;
+            this.ckM_CheckBox30.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox29
+            // 
+            this.ckM_CheckBox29.AutoSize = true;
+            this.ckM_CheckBox29.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox29.Location = new System.Drawing.Point(189, 484);
+            this.ckM_CheckBox29.Name = "ckM_CheckBox29";
+            this.ckM_CheckBox29.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox29.TabIndex = 190;
+            this.ckM_CheckBox29.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox28
+            // 
+            this.ckM_CheckBox28.AutoSize = true;
+            this.ckM_CheckBox28.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox28.Location = new System.Drawing.Point(189, 466);
+            this.ckM_CheckBox28.Name = "ckM_CheckBox28";
+            this.ckM_CheckBox28.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox28.TabIndex = 189;
+            this.ckM_CheckBox28.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox27
+            // 
+            this.ckM_CheckBox27.AutoSize = true;
+            this.ckM_CheckBox27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox27.Location = new System.Drawing.Point(189, 448);
+            this.ckM_CheckBox27.Name = "ckM_CheckBox27";
+            this.ckM_CheckBox27.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox27.TabIndex = 188;
+            this.ckM_CheckBox27.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox26
+            // 
+            this.ckM_CheckBox26.AutoSize = true;
+            this.ckM_CheckBox26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox26.Location = new System.Drawing.Point(189, 430);
+            this.ckM_CheckBox26.Name = "ckM_CheckBox26";
+            this.ckM_CheckBox26.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox26.TabIndex = 187;
+            this.ckM_CheckBox26.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox25
+            // 
+            this.ckM_CheckBox25.AutoSize = true;
+            this.ckM_CheckBox25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox25.Location = new System.Drawing.Point(189, 412);
+            this.ckM_CheckBox25.Name = "ckM_CheckBox25";
+            this.ckM_CheckBox25.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox25.TabIndex = 186;
+            this.ckM_CheckBox25.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox24
+            // 
+            this.ckM_CheckBox24.AutoSize = true;
+            this.ckM_CheckBox24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox24.Location = new System.Drawing.Point(189, 394);
+            this.ckM_CheckBox24.Name = "ckM_CheckBox24";
+            this.ckM_CheckBox24.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox24.TabIndex = 185;
+            this.ckM_CheckBox24.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox23
+            // 
+            this.ckM_CheckBox23.AutoSize = true;
+            this.ckM_CheckBox23.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox23.Location = new System.Drawing.Point(189, 376);
+            this.ckM_CheckBox23.Name = "ckM_CheckBox23";
+            this.ckM_CheckBox23.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox23.TabIndex = 184;
+            this.ckM_CheckBox23.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox22
+            // 
+            this.ckM_CheckBox22.AutoSize = true;
+            this.ckM_CheckBox22.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox22.Location = new System.Drawing.Point(189, 358);
+            this.ckM_CheckBox22.Name = "ckM_CheckBox22";
+            this.ckM_CheckBox22.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox22.TabIndex = 183;
+            this.ckM_CheckBox22.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox21
+            // 
+            this.ckM_CheckBox21.AutoSize = true;
+            this.ckM_CheckBox21.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox21.Location = new System.Drawing.Point(189, 340);
+            this.ckM_CheckBox21.Name = "ckM_CheckBox21";
+            this.ckM_CheckBox21.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox21.TabIndex = 182;
+            this.ckM_CheckBox21.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox20
+            // 
+            this.ckM_CheckBox20.AutoSize = true;
+            this.ckM_CheckBox20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox20.Location = new System.Drawing.Point(189, 322);
+            this.ckM_CheckBox20.Name = "ckM_CheckBox20";
+            this.ckM_CheckBox20.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox20.TabIndex = 181;
+            this.ckM_CheckBox20.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox19
+            // 
+            this.ckM_CheckBox19.AutoSize = true;
+            this.ckM_CheckBox19.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox19.Location = new System.Drawing.Point(189, 304);
+            this.ckM_CheckBox19.Name = "ckM_CheckBox19";
+            this.ckM_CheckBox19.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox19.TabIndex = 180;
+            this.ckM_CheckBox19.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox18
+            // 
+            this.ckM_CheckBox18.AutoSize = true;
+            this.ckM_CheckBox18.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox18.Location = new System.Drawing.Point(189, 286);
+            this.ckM_CheckBox18.Name = "ckM_CheckBox18";
+            this.ckM_CheckBox18.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox18.TabIndex = 179;
+            this.ckM_CheckBox18.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox17
+            // 
+            this.ckM_CheckBox17.AutoSize = true;
+            this.ckM_CheckBox17.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox17.Location = new System.Drawing.Point(189, 268);
+            this.ckM_CheckBox17.Name = "ckM_CheckBox17";
+            this.ckM_CheckBox17.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox17.TabIndex = 178;
+            this.ckM_CheckBox17.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox16
+            // 
+            this.ckM_CheckBox16.AutoSize = true;
+            this.ckM_CheckBox16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox16.Location = new System.Drawing.Point(189, 250);
+            this.ckM_CheckBox16.Name = "ckM_CheckBox16";
+            this.ckM_CheckBox16.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox16.TabIndex = 177;
+            this.ckM_CheckBox16.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox15
+            // 
+            this.ckM_CheckBox15.AutoSize = true;
+            this.ckM_CheckBox15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox15.Location = new System.Drawing.Point(189, 232);
+            this.ckM_CheckBox15.Name = "ckM_CheckBox15";
+            this.ckM_CheckBox15.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox15.TabIndex = 176;
+            this.ckM_CheckBox15.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox14
+            // 
+            this.ckM_CheckBox14.AutoSize = true;
+            this.ckM_CheckBox14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox14.Location = new System.Drawing.Point(189, 214);
+            this.ckM_CheckBox14.Name = "ckM_CheckBox14";
+            this.ckM_CheckBox14.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox14.TabIndex = 175;
+            this.ckM_CheckBox14.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox13
+            // 
+            this.ckM_CheckBox13.AutoSize = true;
+            this.ckM_CheckBox13.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox13.Location = new System.Drawing.Point(189, 196);
+            this.ckM_CheckBox13.Name = "ckM_CheckBox13";
+            this.ckM_CheckBox13.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox13.TabIndex = 174;
+            this.ckM_CheckBox13.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox12
+            // 
+            this.ckM_CheckBox12.AutoSize = true;
+            this.ckM_CheckBox12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox12.Location = new System.Drawing.Point(189, 178);
+            this.ckM_CheckBox12.Name = "ckM_CheckBox12";
+            this.ckM_CheckBox12.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox12.TabIndex = 173;
+            this.ckM_CheckBox12.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox11
+            // 
+            this.ckM_CheckBox11.AutoSize = true;
+            this.ckM_CheckBox11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox11.Location = new System.Drawing.Point(189, 160);
+            this.ckM_CheckBox11.Name = "ckM_CheckBox11";
+            this.ckM_CheckBox11.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox11.TabIndex = 172;
+            this.ckM_CheckBox11.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox10
+            // 
+            this.ckM_CheckBox10.AutoSize = true;
+            this.ckM_CheckBox10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox10.Location = new System.Drawing.Point(1432, 124);
+            this.ckM_CheckBox10.Name = "ckM_CheckBox10";
+            this.ckM_CheckBox10.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox10.TabIndex = 171;
+            this.ckM_CheckBox10.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox9
+            // 
+            this.ckM_CheckBox9.AutoSize = true;
+            this.ckM_CheckBox9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox9.Location = new System.Drawing.Point(1561, 124);
+            this.ckM_CheckBox9.Name = "ckM_CheckBox9";
+            this.ckM_CheckBox9.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox9.TabIndex = 170;
+            this.ckM_CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ckM_CheckBox9.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox8
+            // 
+            this.ckM_CheckBox8.AutoSize = true;
+            this.ckM_CheckBox8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox8.Location = new System.Drawing.Point(1305, 124);
+            this.ckM_CheckBox8.Name = "ckM_CheckBox8";
+            this.ckM_CheckBox8.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox8.TabIndex = 169;
+            this.ckM_CheckBox8.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox7
+            // 
+            this.ckM_CheckBox7.AutoSize = true;
+            this.ckM_CheckBox7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox7.Location = new System.Drawing.Point(1177, 124);
+            this.ckM_CheckBox7.Name = "ckM_CheckBox7";
+            this.ckM_CheckBox7.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox7.TabIndex = 168;
+            this.ckM_CheckBox7.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox6
+            // 
+            this.ckM_CheckBox6.AutoSize = true;
+            this.ckM_CheckBox6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox6.Location = new System.Drawing.Point(1048, 124);
+            this.ckM_CheckBox6.Name = "ckM_CheckBox6";
+            this.ckM_CheckBox6.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox6.TabIndex = 167;
+            this.ckM_CheckBox6.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox5
+            // 
+            this.ckM_CheckBox5.AutoSize = true;
+            this.ckM_CheckBox5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox5.Location = new System.Drawing.Point(918, 124);
+            this.ckM_CheckBox5.Name = "ckM_CheckBox5";
+            this.ckM_CheckBox5.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox5.TabIndex = 166;
+            this.ckM_CheckBox5.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox4
+            // 
+            this.ckM_CheckBox4.AutoSize = true;
+            this.ckM_CheckBox4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox4.Location = new System.Drawing.Point(790, 124);
+            this.ckM_CheckBox4.Name = "ckM_CheckBox4";
+            this.ckM_CheckBox4.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox4.TabIndex = 165;
+            this.ckM_CheckBox4.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox3
+            // 
+            this.ckM_CheckBox3.AutoSize = true;
+            this.ckM_CheckBox3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox3.Location = new System.Drawing.Point(658, 124);
+            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
+            this.ckM_CheckBox3.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox3.TabIndex = 164;
+            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox2
+            // 
+            this.ckM_CheckBox2.AutoSize = true;
+            this.ckM_CheckBox2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox2.Location = new System.Drawing.Point(532, 124);
+            this.ckM_CheckBox2.Name = "ckM_CheckBox2";
+            this.ckM_CheckBox2.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox2.TabIndex = 163;
+            this.ckM_CheckBox2.UseVisualStyleBackColor = true;
+            // 
+            // ckM_CheckBox1
+            // 
+            this.ckM_CheckBox1.AutoSize = true;
+            this.ckM_CheckBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_CheckBox1.Location = new System.Drawing.Point(400, 124);
+            this.ckM_CheckBox1.Name = "ckM_CheckBox1";
+            this.ckM_CheckBox1.Size = new System.Drawing.Size(15, 14);
+            this.ckM_CheckBox1.TabIndex = 162;
+            this.ckM_CheckBox1.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -610,7 +972,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label2.Location = new System.Drawing.Point(263, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1070, 20);
+            this.label2.Size = new System.Drawing.Size(1370, 20);
             this.label2.TabIndex = 153;
             // 
             // ckM_Button1
@@ -623,7 +985,7 @@
             this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.ckM_Button1.Location = new System.Drawing.Point(1215, 577);
+            this.ckM_Button1.Location = new System.Drawing.Point(1534, 549);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
             this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
@@ -780,12 +1142,11 @@
             this.ckM_GridView1.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.ckM_GridView1.AutoGenerateColumns = false;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -816,10 +1177,9 @@
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
             this.ckM_GridView1.Name = "ckM_GridView1";
-            this.ckM_GridView1.RowHeadersVisible = false;
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
-            this.ckM_GridView1.Size = new System.Drawing.Size(1005, 380);
+            this.ckM_GridView1.Size = new System.Drawing.Size(1308, 380);
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
@@ -828,61 +1188,61 @@
             // 
             this.Column1.HeaderText = "Column1";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 97;
+            this.Column1.Width = 128;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Column2";
             this.Column2.Name = "Column2";
-            this.Column2.Width = 98;
+            this.Column2.Width = 128;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Column3";
             this.Column3.Name = "Column3";
-            this.Column3.Width = 99;
+            this.Column3.Width = 129;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Column4";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 99;
+            this.Column4.Width = 129;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Column5";
             this.Column5.Name = "Column5";
-            this.Column5.Width = 99;
+            this.Column5.Width = 129;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Column6";
             this.Column6.Name = "Column6";
-            this.Column6.Width = 99;
+            this.Column6.Width = 129;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Column7";
             this.Column7.Name = "Column7";
-            this.Column7.Width = 99;
+            this.Column7.Width = 129;
             // 
             // Column8
             // 
             this.Column8.HeaderText = "Column8";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 99;
+            this.Column8.Width = 129;
             // 
             // Column9
             // 
             this.Column9.HeaderText = "Column9";
             this.Column9.Name = "Column9";
-            this.Column9.Width = 99;
+            this.Column9.Width = 129;
             // 
             // Column10
             // 
             this.Column10.HeaderText = "Column10";
             this.Column10.Name = "Column10";
-            this.Column10.Width = 99;
+            this.Column10.Width = 129;
             // 
             // ckM_TextBox103
             // 
@@ -2902,10 +3262,10 @@
             this.ckM_TextBox33.IsNumber = true;
             this.ckM_TextBox33.IsShop = false;
             this.ckM_TextBox33.Length = 32767;
-            this.ckM_TextBox33.Location = new System.Drawing.Point(1233, 139);
+            this.ckM_TextBox33.Location = new System.Drawing.Point(1504, 139);
             this.ckM_TextBox33.MoveNext = true;
             this.ckM_TextBox33.Name = "ckM_TextBox33";
-            this.ckM_TextBox33.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox33.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox33.TabIndex = 56;
             this.ckM_TextBox33.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2927,10 +3287,10 @@
             this.ckM_TextBox34.IsNumber = true;
             this.ckM_TextBox34.IsShop = false;
             this.ckM_TextBox34.Length = 32767;
-            this.ckM_TextBox34.Location = new System.Drawing.Point(1134, 139);
+            this.ckM_TextBox34.Location = new System.Drawing.Point(1375, 139);
             this.ckM_TextBox34.MoveNext = true;
             this.ckM_TextBox34.Name = "ckM_TextBox34";
-            this.ckM_TextBox34.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox34.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox34.TabIndex = 55;
             this.ckM_TextBox34.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2952,10 +3312,10 @@
             this.ckM_TextBox35.IsNumber = true;
             this.ckM_TextBox35.IsShop = false;
             this.ckM_TextBox35.Length = 32767;
-            this.ckM_TextBox35.Location = new System.Drawing.Point(1035, 139);
+            this.ckM_TextBox35.Location = new System.Drawing.Point(1246, 139);
             this.ckM_TextBox35.MoveNext = true;
             this.ckM_TextBox35.Name = "ckM_TextBox35";
-            this.ckM_TextBox35.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox35.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox35.TabIndex = 54;
             this.ckM_TextBox35.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -2977,10 +3337,10 @@
             this.ckM_TextBox36.IsNumber = true;
             this.ckM_TextBox36.IsShop = false;
             this.ckM_TextBox36.Length = 32767;
-            this.ckM_TextBox36.Location = new System.Drawing.Point(936, 139);
+            this.ckM_TextBox36.Location = new System.Drawing.Point(1117, 139);
             this.ckM_TextBox36.MoveNext = true;
             this.ckM_TextBox36.Name = "ckM_TextBox36";
-            this.ckM_TextBox36.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox36.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox36.TabIndex = 53;
             this.ckM_TextBox36.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3002,10 +3362,10 @@
             this.ckM_TextBox37.IsNumber = true;
             this.ckM_TextBox37.IsShop = false;
             this.ckM_TextBox37.Length = 32767;
-            this.ckM_TextBox37.Location = new System.Drawing.Point(837, 139);
+            this.ckM_TextBox37.Location = new System.Drawing.Point(988, 139);
             this.ckM_TextBox37.MoveNext = true;
             this.ckM_TextBox37.Name = "ckM_TextBox37";
-            this.ckM_TextBox37.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox37.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox37.TabIndex = 52;
             this.ckM_TextBox37.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3027,10 +3387,10 @@
             this.ckM_TextBox38.IsNumber = true;
             this.ckM_TextBox38.IsShop = false;
             this.ckM_TextBox38.Length = 32767;
-            this.ckM_TextBox38.Location = new System.Drawing.Point(738, 139);
+            this.ckM_TextBox38.Location = new System.Drawing.Point(859, 139);
             this.ckM_TextBox38.MoveNext = true;
             this.ckM_TextBox38.Name = "ckM_TextBox38";
-            this.ckM_TextBox38.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox38.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox38.TabIndex = 51;
             this.ckM_TextBox38.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3052,10 +3412,10 @@
             this.ckM_TextBox39.IsNumber = true;
             this.ckM_TextBox39.IsShop = false;
             this.ckM_TextBox39.Length = 32767;
-            this.ckM_TextBox39.Location = new System.Drawing.Point(639, 139);
+            this.ckM_TextBox39.Location = new System.Drawing.Point(730, 139);
             this.ckM_TextBox39.MoveNext = true;
             this.ckM_TextBox39.Name = "ckM_TextBox39";
-            this.ckM_TextBox39.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox39.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox39.TabIndex = 50;
             this.ckM_TextBox39.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3077,10 +3437,10 @@
             this.ckM_TextBox40.IsNumber = true;
             this.ckM_TextBox40.IsShop = false;
             this.ckM_TextBox40.Length = 32767;
-            this.ckM_TextBox40.Location = new System.Drawing.Point(540, 139);
+            this.ckM_TextBox40.Location = new System.Drawing.Point(601, 139);
             this.ckM_TextBox40.MoveNext = true;
             this.ckM_TextBox40.Name = "ckM_TextBox40";
-            this.ckM_TextBox40.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox40.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox40.TabIndex = 49;
             this.ckM_TextBox40.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3102,10 +3462,10 @@
             this.ckM_TextBox41.IsNumber = true;
             this.ckM_TextBox41.IsShop = false;
             this.ckM_TextBox41.Length = 32767;
-            this.ckM_TextBox41.Location = new System.Drawing.Point(442, 139);
+            this.ckM_TextBox41.Location = new System.Drawing.Point(473, 139);
             this.ckM_TextBox41.MoveNext = true;
             this.ckM_TextBox41.Name = "ckM_TextBox41";
-            this.ckM_TextBox41.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox41.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox41.TabIndex = 48;
             this.ckM_TextBox41.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3130,7 +3490,7 @@
             this.ckM_TextBox42.Location = new System.Drawing.Point(344, 139);
             this.ckM_TextBox42.MoveNext = true;
             this.ckM_TextBox42.Name = "ckM_TextBox42";
-            this.ckM_TextBox42.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox42.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox42.TabIndex = 47;
             this.ckM_TextBox42.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -3152,62 +3512,62 @@
             this.ckM_TextBox30.IsNumber = true;
             this.ckM_TextBox30.IsShop = false;
             this.ckM_TextBox30.Length = 32767;
-            this.ckM_TextBox30.Location = new System.Drawing.Point(1233, 121);
+            this.ckM_TextBox30.Location = new System.Drawing.Point(1504, 121);
             this.ckM_TextBox30.MoveNext = true;
             this.ckM_TextBox30.Name = "ckM_TextBox30";
-            this.ckM_TextBox30.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox30.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox30.TabIndex = 46;
             this.ckM_TextBox30.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox31
+            // txtoldsize10
             // 
-            this.ckM_TextBox31.AllowMinus = false;
-            this.ckM_TextBox31.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox31.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox31.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox31.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox31.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox31.DecimalPlace = 0;
-            this.ckM_TextBox31.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox31.IntegerPart = 0;
-            this.ckM_TextBox31.IsCorrectDate = true;
-            this.ckM_TextBox31.isEnterKeyDown = false;
-            this.ckM_TextBox31.isMaxLengthErr = false;
-            this.ckM_TextBox31.IsNumber = true;
-            this.ckM_TextBox31.IsShop = false;
-            this.ckM_TextBox31.Length = 32767;
-            this.ckM_TextBox31.Location = new System.Drawing.Point(1233, 103);
-            this.ckM_TextBox31.MoveNext = true;
-            this.ckM_TextBox31.Name = "ckM_TextBox31";
-            this.ckM_TextBox31.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox31.TabIndex = 45;
-            this.ckM_TextBox31.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize10.AllowMinus = false;
+            this.txtoldsize10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize10.BackColor = System.Drawing.Color.White;
+            this.txtoldsize10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize10.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize10.DecimalPlace = 0;
+            this.txtoldsize10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize10.IntegerPart = 0;
+            this.txtoldsize10.IsCorrectDate = true;
+            this.txtoldsize10.isEnterKeyDown = false;
+            this.txtoldsize10.isMaxLengthErr = false;
+            this.txtoldsize10.IsNumber = true;
+            this.txtoldsize10.IsShop = false;
+            this.txtoldsize10.Length = 32767;
+            this.txtoldsize10.Location = new System.Drawing.Point(1504, 103);
+            this.txtoldsize10.MoveNext = true;
+            this.txtoldsize10.Name = "txtoldsize10";
+            this.txtoldsize10.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize10.TabIndex = 45;
+            this.txtoldsize10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox32
+            // txtnewsize10
             // 
-            this.ckM_TextBox32.AllowMinus = false;
-            this.ckM_TextBox32.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox32.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox32.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox32.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox32.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox32.DecimalPlace = 0;
-            this.ckM_TextBox32.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox32.IntegerPart = 0;
-            this.ckM_TextBox32.IsCorrectDate = true;
-            this.ckM_TextBox32.isEnterKeyDown = false;
-            this.ckM_TextBox32.isMaxLengthErr = false;
-            this.ckM_TextBox32.IsNumber = true;
-            this.ckM_TextBox32.IsShop = false;
-            this.ckM_TextBox32.Length = 32767;
-            this.ckM_TextBox32.Location = new System.Drawing.Point(1233, 85);
-            this.ckM_TextBox32.MoveNext = true;
-            this.ckM_TextBox32.Name = "ckM_TextBox32";
-            this.ckM_TextBox32.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox32.TabIndex = 44;
-            this.ckM_TextBox32.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize10.AllowMinus = false;
+            this.txtnewsize10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize10.BackColor = System.Drawing.Color.White;
+            this.txtnewsize10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize10.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize10.DecimalPlace = 0;
+            this.txtnewsize10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize10.IntegerPart = 0;
+            this.txtnewsize10.IsCorrectDate = true;
+            this.txtnewsize10.isEnterKeyDown = false;
+            this.txtnewsize10.isMaxLengthErr = false;
+            this.txtnewsize10.IsNumber = true;
+            this.txtnewsize10.IsShop = false;
+            this.txtnewsize10.Length = 32767;
+            this.txtnewsize10.Location = new System.Drawing.Point(1504, 85);
+            this.txtnewsize10.MoveNext = true;
+            this.txtnewsize10.Name = "txtnewsize10";
+            this.txtnewsize10.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize10.TabIndex = 44;
+            this.txtnewsize10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox27
             // 
@@ -3227,62 +3587,62 @@
             this.ckM_TextBox27.IsNumber = true;
             this.ckM_TextBox27.IsShop = false;
             this.ckM_TextBox27.Length = 32767;
-            this.ckM_TextBox27.Location = new System.Drawing.Point(1134, 121);
+            this.ckM_TextBox27.Location = new System.Drawing.Point(1375, 121);
             this.ckM_TextBox27.MoveNext = true;
             this.ckM_TextBox27.Name = "ckM_TextBox27";
-            this.ckM_TextBox27.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox27.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox27.TabIndex = 43;
             this.ckM_TextBox27.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox28
+            // txtoldsize9
             // 
-            this.ckM_TextBox28.AllowMinus = false;
-            this.ckM_TextBox28.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox28.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox28.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox28.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox28.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox28.DecimalPlace = 0;
-            this.ckM_TextBox28.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox28.IntegerPart = 0;
-            this.ckM_TextBox28.IsCorrectDate = true;
-            this.ckM_TextBox28.isEnterKeyDown = false;
-            this.ckM_TextBox28.isMaxLengthErr = false;
-            this.ckM_TextBox28.IsNumber = true;
-            this.ckM_TextBox28.IsShop = false;
-            this.ckM_TextBox28.Length = 32767;
-            this.ckM_TextBox28.Location = new System.Drawing.Point(1134, 103);
-            this.ckM_TextBox28.MoveNext = true;
-            this.ckM_TextBox28.Name = "ckM_TextBox28";
-            this.ckM_TextBox28.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox28.TabIndex = 42;
-            this.ckM_TextBox28.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize9.AllowMinus = false;
+            this.txtoldsize9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize9.BackColor = System.Drawing.Color.White;
+            this.txtoldsize9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize9.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize9.DecimalPlace = 0;
+            this.txtoldsize9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize9.IntegerPart = 0;
+            this.txtoldsize9.IsCorrectDate = true;
+            this.txtoldsize9.isEnterKeyDown = false;
+            this.txtoldsize9.isMaxLengthErr = false;
+            this.txtoldsize9.IsNumber = true;
+            this.txtoldsize9.IsShop = false;
+            this.txtoldsize9.Length = 32767;
+            this.txtoldsize9.Location = new System.Drawing.Point(1375, 103);
+            this.txtoldsize9.MoveNext = true;
+            this.txtoldsize9.Name = "txtoldsize9";
+            this.txtoldsize9.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize9.TabIndex = 42;
+            this.txtoldsize9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox29
+            // txtnewsize9
             // 
-            this.ckM_TextBox29.AllowMinus = false;
-            this.ckM_TextBox29.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox29.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox29.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox29.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox29.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox29.DecimalPlace = 0;
-            this.ckM_TextBox29.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox29.IntegerPart = 0;
-            this.ckM_TextBox29.IsCorrectDate = true;
-            this.ckM_TextBox29.isEnterKeyDown = false;
-            this.ckM_TextBox29.isMaxLengthErr = false;
-            this.ckM_TextBox29.IsNumber = true;
-            this.ckM_TextBox29.IsShop = false;
-            this.ckM_TextBox29.Length = 32767;
-            this.ckM_TextBox29.Location = new System.Drawing.Point(1134, 85);
-            this.ckM_TextBox29.MoveNext = true;
-            this.ckM_TextBox29.Name = "ckM_TextBox29";
-            this.ckM_TextBox29.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox29.TabIndex = 41;
-            this.ckM_TextBox29.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize9.AllowMinus = false;
+            this.txtnewsize9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize9.BackColor = System.Drawing.Color.White;
+            this.txtnewsize9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize9.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize9.DecimalPlace = 0;
+            this.txtnewsize9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize9.IntegerPart = 0;
+            this.txtnewsize9.IsCorrectDate = true;
+            this.txtnewsize9.isEnterKeyDown = false;
+            this.txtnewsize9.isMaxLengthErr = false;
+            this.txtnewsize9.IsNumber = true;
+            this.txtnewsize9.IsShop = false;
+            this.txtnewsize9.Length = 32767;
+            this.txtnewsize9.Location = new System.Drawing.Point(1375, 85);
+            this.txtnewsize9.MoveNext = true;
+            this.txtnewsize9.Name = "txtnewsize9";
+            this.txtnewsize9.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize9.TabIndex = 41;
+            this.txtnewsize9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox24
             // 
@@ -3302,62 +3662,62 @@
             this.ckM_TextBox24.IsNumber = true;
             this.ckM_TextBox24.IsShop = false;
             this.ckM_TextBox24.Length = 32767;
-            this.ckM_TextBox24.Location = new System.Drawing.Point(1035, 121);
+            this.ckM_TextBox24.Location = new System.Drawing.Point(1246, 121);
             this.ckM_TextBox24.MoveNext = true;
             this.ckM_TextBox24.Name = "ckM_TextBox24";
-            this.ckM_TextBox24.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox24.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox24.TabIndex = 40;
             this.ckM_TextBox24.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox25
+            // txtoldsize8
             // 
-            this.ckM_TextBox25.AllowMinus = false;
-            this.ckM_TextBox25.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox25.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox25.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox25.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox25.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox25.DecimalPlace = 0;
-            this.ckM_TextBox25.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox25.IntegerPart = 0;
-            this.ckM_TextBox25.IsCorrectDate = true;
-            this.ckM_TextBox25.isEnterKeyDown = false;
-            this.ckM_TextBox25.isMaxLengthErr = false;
-            this.ckM_TextBox25.IsNumber = true;
-            this.ckM_TextBox25.IsShop = false;
-            this.ckM_TextBox25.Length = 32767;
-            this.ckM_TextBox25.Location = new System.Drawing.Point(1035, 103);
-            this.ckM_TextBox25.MoveNext = true;
-            this.ckM_TextBox25.Name = "ckM_TextBox25";
-            this.ckM_TextBox25.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox25.TabIndex = 39;
-            this.ckM_TextBox25.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize8.AllowMinus = false;
+            this.txtoldsize8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize8.BackColor = System.Drawing.Color.White;
+            this.txtoldsize8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize8.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize8.DecimalPlace = 0;
+            this.txtoldsize8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize8.IntegerPart = 0;
+            this.txtoldsize8.IsCorrectDate = true;
+            this.txtoldsize8.isEnterKeyDown = false;
+            this.txtoldsize8.isMaxLengthErr = false;
+            this.txtoldsize8.IsNumber = true;
+            this.txtoldsize8.IsShop = false;
+            this.txtoldsize8.Length = 32767;
+            this.txtoldsize8.Location = new System.Drawing.Point(1246, 103);
+            this.txtoldsize8.MoveNext = true;
+            this.txtoldsize8.Name = "txtoldsize8";
+            this.txtoldsize8.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize8.TabIndex = 39;
+            this.txtoldsize8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox26
+            // txtnewsize8
             // 
-            this.ckM_TextBox26.AllowMinus = false;
-            this.ckM_TextBox26.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox26.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox26.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox26.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox26.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox26.DecimalPlace = 0;
-            this.ckM_TextBox26.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox26.IntegerPart = 0;
-            this.ckM_TextBox26.IsCorrectDate = true;
-            this.ckM_TextBox26.isEnterKeyDown = false;
-            this.ckM_TextBox26.isMaxLengthErr = false;
-            this.ckM_TextBox26.IsNumber = true;
-            this.ckM_TextBox26.IsShop = false;
-            this.ckM_TextBox26.Length = 32767;
-            this.ckM_TextBox26.Location = new System.Drawing.Point(1035, 85);
-            this.ckM_TextBox26.MoveNext = true;
-            this.ckM_TextBox26.Name = "ckM_TextBox26";
-            this.ckM_TextBox26.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox26.TabIndex = 38;
-            this.ckM_TextBox26.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize8.AllowMinus = false;
+            this.txtnewsize8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize8.BackColor = System.Drawing.Color.White;
+            this.txtnewsize8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize8.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize8.DecimalPlace = 0;
+            this.txtnewsize8.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize8.IntegerPart = 0;
+            this.txtnewsize8.IsCorrectDate = true;
+            this.txtnewsize8.isEnterKeyDown = false;
+            this.txtnewsize8.isMaxLengthErr = false;
+            this.txtnewsize8.IsNumber = true;
+            this.txtnewsize8.IsShop = false;
+            this.txtnewsize8.Length = 32767;
+            this.txtnewsize8.Location = new System.Drawing.Point(1246, 85);
+            this.txtnewsize8.MoveNext = true;
+            this.txtnewsize8.Name = "txtnewsize8";
+            this.txtnewsize8.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize8.TabIndex = 38;
+            this.txtnewsize8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox21
             // 
@@ -3377,62 +3737,62 @@
             this.ckM_TextBox21.IsNumber = true;
             this.ckM_TextBox21.IsShop = false;
             this.ckM_TextBox21.Length = 32767;
-            this.ckM_TextBox21.Location = new System.Drawing.Point(936, 121);
+            this.ckM_TextBox21.Location = new System.Drawing.Point(1117, 121);
             this.ckM_TextBox21.MoveNext = true;
             this.ckM_TextBox21.Name = "ckM_TextBox21";
-            this.ckM_TextBox21.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox21.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox21.TabIndex = 37;
             this.ckM_TextBox21.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox22
+            // txtoldsize7
             // 
-            this.ckM_TextBox22.AllowMinus = false;
-            this.ckM_TextBox22.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox22.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox22.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox22.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox22.DecimalPlace = 0;
-            this.ckM_TextBox22.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox22.IntegerPart = 0;
-            this.ckM_TextBox22.IsCorrectDate = true;
-            this.ckM_TextBox22.isEnterKeyDown = false;
-            this.ckM_TextBox22.isMaxLengthErr = false;
-            this.ckM_TextBox22.IsNumber = true;
-            this.ckM_TextBox22.IsShop = false;
-            this.ckM_TextBox22.Length = 32767;
-            this.ckM_TextBox22.Location = new System.Drawing.Point(936, 103);
-            this.ckM_TextBox22.MoveNext = true;
-            this.ckM_TextBox22.Name = "ckM_TextBox22";
-            this.ckM_TextBox22.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox22.TabIndex = 36;
-            this.ckM_TextBox22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize7.AllowMinus = false;
+            this.txtoldsize7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize7.BackColor = System.Drawing.Color.White;
+            this.txtoldsize7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize7.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize7.DecimalPlace = 0;
+            this.txtoldsize7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize7.IntegerPart = 0;
+            this.txtoldsize7.IsCorrectDate = true;
+            this.txtoldsize7.isEnterKeyDown = false;
+            this.txtoldsize7.isMaxLengthErr = false;
+            this.txtoldsize7.IsNumber = true;
+            this.txtoldsize7.IsShop = false;
+            this.txtoldsize7.Length = 32767;
+            this.txtoldsize7.Location = new System.Drawing.Point(1117, 103);
+            this.txtoldsize7.MoveNext = true;
+            this.txtoldsize7.Name = "txtoldsize7";
+            this.txtoldsize7.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize7.TabIndex = 36;
+            this.txtoldsize7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox23
+            // txtnewsize7
             // 
-            this.ckM_TextBox23.AllowMinus = false;
-            this.ckM_TextBox23.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox23.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox23.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox23.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox23.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox23.DecimalPlace = 0;
-            this.ckM_TextBox23.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox23.IntegerPart = 0;
-            this.ckM_TextBox23.IsCorrectDate = true;
-            this.ckM_TextBox23.isEnterKeyDown = false;
-            this.ckM_TextBox23.isMaxLengthErr = false;
-            this.ckM_TextBox23.IsNumber = true;
-            this.ckM_TextBox23.IsShop = false;
-            this.ckM_TextBox23.Length = 32767;
-            this.ckM_TextBox23.Location = new System.Drawing.Point(936, 85);
-            this.ckM_TextBox23.MoveNext = true;
-            this.ckM_TextBox23.Name = "ckM_TextBox23";
-            this.ckM_TextBox23.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox23.TabIndex = 35;
-            this.ckM_TextBox23.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize7.AllowMinus = false;
+            this.txtnewsize7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize7.BackColor = System.Drawing.Color.White;
+            this.txtnewsize7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize7.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize7.DecimalPlace = 0;
+            this.txtnewsize7.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize7.IntegerPart = 0;
+            this.txtnewsize7.IsCorrectDate = true;
+            this.txtnewsize7.isEnterKeyDown = false;
+            this.txtnewsize7.isMaxLengthErr = false;
+            this.txtnewsize7.IsNumber = true;
+            this.txtnewsize7.IsShop = false;
+            this.txtnewsize7.Length = 32767;
+            this.txtnewsize7.Location = new System.Drawing.Point(1117, 85);
+            this.txtnewsize7.MoveNext = true;
+            this.txtnewsize7.Name = "txtnewsize7";
+            this.txtnewsize7.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize7.TabIndex = 35;
+            this.txtnewsize7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox18
             // 
@@ -3452,62 +3812,62 @@
             this.ckM_TextBox18.IsNumber = true;
             this.ckM_TextBox18.IsShop = false;
             this.ckM_TextBox18.Length = 32767;
-            this.ckM_TextBox18.Location = new System.Drawing.Point(837, 121);
+            this.ckM_TextBox18.Location = new System.Drawing.Point(988, 121);
             this.ckM_TextBox18.MoveNext = true;
             this.ckM_TextBox18.Name = "ckM_TextBox18";
-            this.ckM_TextBox18.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox18.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox18.TabIndex = 34;
             this.ckM_TextBox18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox19
+            // txtoldsize6
             // 
-            this.ckM_TextBox19.AllowMinus = false;
-            this.ckM_TextBox19.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox19.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox19.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox19.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox19.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox19.DecimalPlace = 0;
-            this.ckM_TextBox19.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox19.IntegerPart = 0;
-            this.ckM_TextBox19.IsCorrectDate = true;
-            this.ckM_TextBox19.isEnterKeyDown = false;
-            this.ckM_TextBox19.isMaxLengthErr = false;
-            this.ckM_TextBox19.IsNumber = true;
-            this.ckM_TextBox19.IsShop = false;
-            this.ckM_TextBox19.Length = 32767;
-            this.ckM_TextBox19.Location = new System.Drawing.Point(837, 103);
-            this.ckM_TextBox19.MoveNext = true;
-            this.ckM_TextBox19.Name = "ckM_TextBox19";
-            this.ckM_TextBox19.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox19.TabIndex = 33;
-            this.ckM_TextBox19.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize6.AllowMinus = false;
+            this.txtoldsize6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize6.BackColor = System.Drawing.Color.White;
+            this.txtoldsize6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize6.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize6.DecimalPlace = 0;
+            this.txtoldsize6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize6.IntegerPart = 0;
+            this.txtoldsize6.IsCorrectDate = true;
+            this.txtoldsize6.isEnterKeyDown = false;
+            this.txtoldsize6.isMaxLengthErr = false;
+            this.txtoldsize6.IsNumber = true;
+            this.txtoldsize6.IsShop = false;
+            this.txtoldsize6.Length = 32767;
+            this.txtoldsize6.Location = new System.Drawing.Point(988, 103);
+            this.txtoldsize6.MoveNext = true;
+            this.txtoldsize6.Name = "txtoldsize6";
+            this.txtoldsize6.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize6.TabIndex = 33;
+            this.txtoldsize6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox20
+            // txtnewsize6
             // 
-            this.ckM_TextBox20.AllowMinus = false;
-            this.ckM_TextBox20.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox20.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox20.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox20.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox20.DecimalPlace = 0;
-            this.ckM_TextBox20.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox20.IntegerPart = 0;
-            this.ckM_TextBox20.IsCorrectDate = true;
-            this.ckM_TextBox20.isEnterKeyDown = false;
-            this.ckM_TextBox20.isMaxLengthErr = false;
-            this.ckM_TextBox20.IsNumber = true;
-            this.ckM_TextBox20.IsShop = false;
-            this.ckM_TextBox20.Length = 32767;
-            this.ckM_TextBox20.Location = new System.Drawing.Point(837, 85);
-            this.ckM_TextBox20.MoveNext = true;
-            this.ckM_TextBox20.Name = "ckM_TextBox20";
-            this.ckM_TextBox20.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox20.TabIndex = 32;
-            this.ckM_TextBox20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize6.AllowMinus = false;
+            this.txtnewsize6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize6.BackColor = System.Drawing.Color.White;
+            this.txtnewsize6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize6.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize6.DecimalPlace = 0;
+            this.txtnewsize6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize6.IntegerPart = 0;
+            this.txtnewsize6.IsCorrectDate = true;
+            this.txtnewsize6.isEnterKeyDown = false;
+            this.txtnewsize6.isMaxLengthErr = false;
+            this.txtnewsize6.IsNumber = true;
+            this.txtnewsize6.IsShop = false;
+            this.txtnewsize6.Length = 32767;
+            this.txtnewsize6.Location = new System.Drawing.Point(988, 85);
+            this.txtnewsize6.MoveNext = true;
+            this.txtnewsize6.Name = "txtnewsize6";
+            this.txtnewsize6.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize6.TabIndex = 32;
+            this.txtnewsize6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox15
             // 
@@ -3527,62 +3887,62 @@
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
             this.ckM_TextBox15.Length = 32767;
-            this.ckM_TextBox15.Location = new System.Drawing.Point(738, 121);
+            this.ckM_TextBox15.Location = new System.Drawing.Point(859, 121);
             this.ckM_TextBox15.MoveNext = true;
             this.ckM_TextBox15.Name = "ckM_TextBox15";
-            this.ckM_TextBox15.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox15.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox15.TabIndex = 31;
             this.ckM_TextBox15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox16
+            // txtoldsize5
             // 
-            this.ckM_TextBox16.AllowMinus = false;
-            this.ckM_TextBox16.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox16.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox16.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox16.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox16.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox16.DecimalPlace = 0;
-            this.ckM_TextBox16.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox16.IntegerPart = 0;
-            this.ckM_TextBox16.IsCorrectDate = true;
-            this.ckM_TextBox16.isEnterKeyDown = false;
-            this.ckM_TextBox16.isMaxLengthErr = false;
-            this.ckM_TextBox16.IsNumber = true;
-            this.ckM_TextBox16.IsShop = false;
-            this.ckM_TextBox16.Length = 32767;
-            this.ckM_TextBox16.Location = new System.Drawing.Point(738, 103);
-            this.ckM_TextBox16.MoveNext = true;
-            this.ckM_TextBox16.Name = "ckM_TextBox16";
-            this.ckM_TextBox16.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox16.TabIndex = 30;
-            this.ckM_TextBox16.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize5.AllowMinus = false;
+            this.txtoldsize5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize5.BackColor = System.Drawing.Color.White;
+            this.txtoldsize5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize5.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize5.DecimalPlace = 0;
+            this.txtoldsize5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize5.IntegerPart = 0;
+            this.txtoldsize5.IsCorrectDate = true;
+            this.txtoldsize5.isEnterKeyDown = false;
+            this.txtoldsize5.isMaxLengthErr = false;
+            this.txtoldsize5.IsNumber = true;
+            this.txtoldsize5.IsShop = false;
+            this.txtoldsize5.Length = 32767;
+            this.txtoldsize5.Location = new System.Drawing.Point(859, 103);
+            this.txtoldsize5.MoveNext = true;
+            this.txtoldsize5.Name = "txtoldsize5";
+            this.txtoldsize5.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize5.TabIndex = 30;
+            this.txtoldsize5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox17
+            // txtnewsize5
             // 
-            this.ckM_TextBox17.AllowMinus = false;
-            this.ckM_TextBox17.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox17.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox17.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox17.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox17.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox17.DecimalPlace = 0;
-            this.ckM_TextBox17.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox17.IntegerPart = 0;
-            this.ckM_TextBox17.IsCorrectDate = true;
-            this.ckM_TextBox17.isEnterKeyDown = false;
-            this.ckM_TextBox17.isMaxLengthErr = false;
-            this.ckM_TextBox17.IsNumber = true;
-            this.ckM_TextBox17.IsShop = false;
-            this.ckM_TextBox17.Length = 32767;
-            this.ckM_TextBox17.Location = new System.Drawing.Point(738, 85);
-            this.ckM_TextBox17.MoveNext = true;
-            this.ckM_TextBox17.Name = "ckM_TextBox17";
-            this.ckM_TextBox17.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox17.TabIndex = 29;
-            this.ckM_TextBox17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize5.AllowMinus = false;
+            this.txtnewsize5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize5.BackColor = System.Drawing.Color.White;
+            this.txtnewsize5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize5.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize5.DecimalPlace = 0;
+            this.txtnewsize5.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize5.IntegerPart = 0;
+            this.txtnewsize5.IsCorrectDate = true;
+            this.txtnewsize5.isEnterKeyDown = false;
+            this.txtnewsize5.isMaxLengthErr = false;
+            this.txtnewsize5.IsNumber = true;
+            this.txtnewsize5.IsShop = false;
+            this.txtnewsize5.Length = 32767;
+            this.txtnewsize5.Location = new System.Drawing.Point(859, 85);
+            this.txtnewsize5.MoveNext = true;
+            this.txtnewsize5.Name = "txtnewsize5";
+            this.txtnewsize5.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize5.TabIndex = 29;
+            this.txtnewsize5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox12
             // 
@@ -3602,62 +3962,62 @@
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 32767;
-            this.ckM_TextBox12.Location = new System.Drawing.Point(639, 121);
+            this.ckM_TextBox12.Location = new System.Drawing.Point(730, 121);
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
-            this.ckM_TextBox12.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox12.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox12.TabIndex = 28;
             this.ckM_TextBox12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox13
+            // txtoldsize4
             // 
-            this.ckM_TextBox13.AllowMinus = false;
-            this.ckM_TextBox13.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox13.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox13.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox13.DecimalPlace = 0;
-            this.ckM_TextBox13.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox13.IntegerPart = 0;
-            this.ckM_TextBox13.IsCorrectDate = true;
-            this.ckM_TextBox13.isEnterKeyDown = false;
-            this.ckM_TextBox13.isMaxLengthErr = false;
-            this.ckM_TextBox13.IsNumber = true;
-            this.ckM_TextBox13.IsShop = false;
-            this.ckM_TextBox13.Length = 32767;
-            this.ckM_TextBox13.Location = new System.Drawing.Point(639, 103);
-            this.ckM_TextBox13.MoveNext = true;
-            this.ckM_TextBox13.Name = "ckM_TextBox13";
-            this.ckM_TextBox13.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox13.TabIndex = 27;
-            this.ckM_TextBox13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize4.AllowMinus = false;
+            this.txtoldsize4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize4.BackColor = System.Drawing.Color.White;
+            this.txtoldsize4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize4.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize4.DecimalPlace = 0;
+            this.txtoldsize4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize4.IntegerPart = 0;
+            this.txtoldsize4.IsCorrectDate = true;
+            this.txtoldsize4.isEnterKeyDown = false;
+            this.txtoldsize4.isMaxLengthErr = false;
+            this.txtoldsize4.IsNumber = true;
+            this.txtoldsize4.IsShop = false;
+            this.txtoldsize4.Length = 32767;
+            this.txtoldsize4.Location = new System.Drawing.Point(730, 103);
+            this.txtoldsize4.MoveNext = true;
+            this.txtoldsize4.Name = "txtoldsize4";
+            this.txtoldsize4.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize4.TabIndex = 27;
+            this.txtoldsize4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox14
+            // txtnewsize4
             // 
-            this.ckM_TextBox14.AllowMinus = false;
-            this.ckM_TextBox14.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox14.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox14.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox14.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox14.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox14.DecimalPlace = 0;
-            this.ckM_TextBox14.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox14.IntegerPart = 0;
-            this.ckM_TextBox14.IsCorrectDate = true;
-            this.ckM_TextBox14.isEnterKeyDown = false;
-            this.ckM_TextBox14.isMaxLengthErr = false;
-            this.ckM_TextBox14.IsNumber = true;
-            this.ckM_TextBox14.IsShop = false;
-            this.ckM_TextBox14.Length = 32767;
-            this.ckM_TextBox14.Location = new System.Drawing.Point(639, 85);
-            this.ckM_TextBox14.MoveNext = true;
-            this.ckM_TextBox14.Name = "ckM_TextBox14";
-            this.ckM_TextBox14.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox14.TabIndex = 26;
-            this.ckM_TextBox14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize4.AllowMinus = false;
+            this.txtnewsize4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize4.BackColor = System.Drawing.Color.White;
+            this.txtnewsize4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize4.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize4.DecimalPlace = 0;
+            this.txtnewsize4.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize4.IntegerPart = 0;
+            this.txtnewsize4.IsCorrectDate = true;
+            this.txtnewsize4.isEnterKeyDown = false;
+            this.txtnewsize4.isMaxLengthErr = false;
+            this.txtnewsize4.IsNumber = true;
+            this.txtnewsize4.IsShop = false;
+            this.txtnewsize4.Length = 32767;
+            this.txtnewsize4.Location = new System.Drawing.Point(730, 85);
+            this.txtnewsize4.MoveNext = true;
+            this.txtnewsize4.Name = "txtnewsize4";
+            this.txtnewsize4.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize4.TabIndex = 26;
+            this.txtnewsize4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox9
             // 
@@ -3677,62 +4037,62 @@
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 32767;
-            this.ckM_TextBox9.Location = new System.Drawing.Point(540, 121);
+            this.ckM_TextBox9.Location = new System.Drawing.Point(601, 121);
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
-            this.ckM_TextBox9.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox9.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox9.TabIndex = 25;
             this.ckM_TextBox9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox10
+            // txtoldsize3
             // 
-            this.ckM_TextBox10.AllowMinus = false;
-            this.ckM_TextBox10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox10.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox10.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox10.DecimalPlace = 0;
-            this.ckM_TextBox10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox10.IntegerPart = 0;
-            this.ckM_TextBox10.IsCorrectDate = true;
-            this.ckM_TextBox10.isEnterKeyDown = false;
-            this.ckM_TextBox10.isMaxLengthErr = false;
-            this.ckM_TextBox10.IsNumber = true;
-            this.ckM_TextBox10.IsShop = false;
-            this.ckM_TextBox10.Length = 32767;
-            this.ckM_TextBox10.Location = new System.Drawing.Point(540, 103);
-            this.ckM_TextBox10.MoveNext = true;
-            this.ckM_TextBox10.Name = "ckM_TextBox10";
-            this.ckM_TextBox10.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox10.TabIndex = 24;
-            this.ckM_TextBox10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize3.AllowMinus = false;
+            this.txtoldsize3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize3.BackColor = System.Drawing.Color.White;
+            this.txtoldsize3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize3.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize3.DecimalPlace = 0;
+            this.txtoldsize3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize3.IntegerPart = 0;
+            this.txtoldsize3.IsCorrectDate = true;
+            this.txtoldsize3.isEnterKeyDown = false;
+            this.txtoldsize3.isMaxLengthErr = false;
+            this.txtoldsize3.IsNumber = true;
+            this.txtoldsize3.IsShop = false;
+            this.txtoldsize3.Length = 32767;
+            this.txtoldsize3.Location = new System.Drawing.Point(601, 103);
+            this.txtoldsize3.MoveNext = true;
+            this.txtoldsize3.Name = "txtoldsize3";
+            this.txtoldsize3.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize3.TabIndex = 24;
+            this.txtoldsize3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox11
+            // txtnewsize3
             // 
-            this.ckM_TextBox11.AllowMinus = false;
-            this.ckM_TextBox11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox11.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox11.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox11.DecimalPlace = 0;
-            this.ckM_TextBox11.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox11.IntegerPart = 0;
-            this.ckM_TextBox11.IsCorrectDate = true;
-            this.ckM_TextBox11.isEnterKeyDown = false;
-            this.ckM_TextBox11.isMaxLengthErr = false;
-            this.ckM_TextBox11.IsNumber = true;
-            this.ckM_TextBox11.IsShop = false;
-            this.ckM_TextBox11.Length = 32767;
-            this.ckM_TextBox11.Location = new System.Drawing.Point(540, 85);
-            this.ckM_TextBox11.MoveNext = true;
-            this.ckM_TextBox11.Name = "ckM_TextBox11";
-            this.ckM_TextBox11.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox11.TabIndex = 23;
-            this.ckM_TextBox11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize3.AllowMinus = false;
+            this.txtnewsize3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize3.BackColor = System.Drawing.Color.White;
+            this.txtnewsize3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize3.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize3.DecimalPlace = 0;
+            this.txtnewsize3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize3.IntegerPart = 0;
+            this.txtnewsize3.IsCorrectDate = true;
+            this.txtnewsize3.isEnterKeyDown = false;
+            this.txtnewsize3.isMaxLengthErr = false;
+            this.txtnewsize3.IsNumber = true;
+            this.txtnewsize3.IsShop = false;
+            this.txtnewsize3.Length = 32767;
+            this.txtnewsize3.Location = new System.Drawing.Point(601, 85);
+            this.txtnewsize3.MoveNext = true;
+            this.txtnewsize3.Name = "txtnewsize3";
+            this.txtnewsize3.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize3.TabIndex = 23;
+            this.txtnewsize3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox6
             // 
@@ -3752,62 +4112,62 @@
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 32767;
-            this.ckM_TextBox6.Location = new System.Drawing.Point(442, 121);
+            this.ckM_TextBox6.Location = new System.Drawing.Point(473, 121);
             this.ckM_TextBox6.MoveNext = true;
             this.ckM_TextBox6.Name = "ckM_TextBox6";
-            this.ckM_TextBox6.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox6.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox6.TabIndex = 22;
             this.ckM_TextBox6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox7
+            // txtoldsize2
             // 
-            this.ckM_TextBox7.AllowMinus = false;
-            this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox7.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox7.DecimalPlace = 0;
-            this.ckM_TextBox7.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox7.IntegerPart = 0;
-            this.ckM_TextBox7.IsCorrectDate = true;
-            this.ckM_TextBox7.isEnterKeyDown = false;
-            this.ckM_TextBox7.isMaxLengthErr = false;
-            this.ckM_TextBox7.IsNumber = true;
-            this.ckM_TextBox7.IsShop = false;
-            this.ckM_TextBox7.Length = 32767;
-            this.ckM_TextBox7.Location = new System.Drawing.Point(442, 103);
-            this.ckM_TextBox7.MoveNext = true;
-            this.ckM_TextBox7.Name = "ckM_TextBox7";
-            this.ckM_TextBox7.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox7.TabIndex = 21;
-            this.ckM_TextBox7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize2.AllowMinus = false;
+            this.txtoldsize2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize2.BackColor = System.Drawing.Color.White;
+            this.txtoldsize2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize2.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize2.DecimalPlace = 0;
+            this.txtoldsize2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize2.IntegerPart = 0;
+            this.txtoldsize2.IsCorrectDate = true;
+            this.txtoldsize2.isEnterKeyDown = false;
+            this.txtoldsize2.isMaxLengthErr = false;
+            this.txtoldsize2.IsNumber = true;
+            this.txtoldsize2.IsShop = false;
+            this.txtoldsize2.Length = 32767;
+            this.txtoldsize2.Location = new System.Drawing.Point(473, 103);
+            this.txtoldsize2.MoveNext = true;
+            this.txtoldsize2.Name = "txtoldsize2";
+            this.txtoldsize2.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize2.TabIndex = 21;
+            this.txtoldsize2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox8
+            // txtnewsize2
             // 
-            this.ckM_TextBox8.AllowMinus = false;
-            this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox8.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox8.DecimalPlace = 0;
-            this.ckM_TextBox8.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox8.IntegerPart = 0;
-            this.ckM_TextBox8.IsCorrectDate = true;
-            this.ckM_TextBox8.isEnterKeyDown = false;
-            this.ckM_TextBox8.isMaxLengthErr = false;
-            this.ckM_TextBox8.IsNumber = true;
-            this.ckM_TextBox8.IsShop = false;
-            this.ckM_TextBox8.Length = 32767;
-            this.ckM_TextBox8.Location = new System.Drawing.Point(442, 85);
-            this.ckM_TextBox8.MoveNext = true;
-            this.ckM_TextBox8.Name = "ckM_TextBox8";
-            this.ckM_TextBox8.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox8.TabIndex = 20;
-            this.ckM_TextBox8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize2.AllowMinus = false;
+            this.txtnewsize2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize2.BackColor = System.Drawing.Color.White;
+            this.txtnewsize2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize2.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize2.DecimalPlace = 0;
+            this.txtnewsize2.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize2.IntegerPart = 0;
+            this.txtnewsize2.IsCorrectDate = true;
+            this.txtnewsize2.isEnterKeyDown = false;
+            this.txtnewsize2.isMaxLengthErr = false;
+            this.txtnewsize2.IsNumber = true;
+            this.txtnewsize2.IsShop = false;
+            this.txtnewsize2.Length = 32767;
+            this.txtnewsize2.Location = new System.Drawing.Point(473, 85);
+            this.txtnewsize2.MoveNext = true;
+            this.txtnewsize2.Name = "txtnewsize2";
+            this.txtnewsize2.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize2.TabIndex = 20;
+            this.txtnewsize2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox5
             // 
@@ -3830,59 +4190,59 @@
             this.ckM_TextBox5.Location = new System.Drawing.Point(344, 121);
             this.ckM_TextBox5.MoveNext = true;
             this.ckM_TextBox5.Name = "ckM_TextBox5";
-            this.ckM_TextBox5.Size = new System.Drawing.Size(100, 19);
+            this.ckM_TextBox5.Size = new System.Drawing.Size(130, 19);
             this.ckM_TextBox5.TabIndex = 19;
             this.ckM_TextBox5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox4
+            // txtoldsize1
             // 
-            this.ckM_TextBox4.AllowMinus = false;
-            this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox4.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox4.DecimalPlace = 0;
-            this.ckM_TextBox4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox4.IntegerPart = 0;
-            this.ckM_TextBox4.IsCorrectDate = true;
-            this.ckM_TextBox4.isEnterKeyDown = false;
-            this.ckM_TextBox4.isMaxLengthErr = false;
-            this.ckM_TextBox4.IsNumber = true;
-            this.ckM_TextBox4.IsShop = false;
-            this.ckM_TextBox4.Length = 32767;
-            this.ckM_TextBox4.Location = new System.Drawing.Point(344, 103);
-            this.ckM_TextBox4.MoveNext = true;
-            this.ckM_TextBox4.Name = "ckM_TextBox4";
-            this.ckM_TextBox4.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox4.TabIndex = 18;
-            this.ckM_TextBox4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtoldsize1.AllowMinus = false;
+            this.txtoldsize1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtoldsize1.BackColor = System.Drawing.Color.White;
+            this.txtoldsize1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtoldsize1.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtoldsize1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtoldsize1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtoldsize1.DecimalPlace = 0;
+            this.txtoldsize1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtoldsize1.IntegerPart = 0;
+            this.txtoldsize1.IsCorrectDate = true;
+            this.txtoldsize1.isEnterKeyDown = false;
+            this.txtoldsize1.isMaxLengthErr = false;
+            this.txtoldsize1.IsNumber = true;
+            this.txtoldsize1.IsShop = false;
+            this.txtoldsize1.Length = 32767;
+            this.txtoldsize1.Location = new System.Drawing.Point(344, 103);
+            this.txtoldsize1.MoveNext = true;
+            this.txtoldsize1.Name = "txtoldsize1";
+            this.txtoldsize1.Size = new System.Drawing.Size(130, 19);
+            this.txtoldsize1.TabIndex = 18;
+            this.txtoldsize1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
-            // ckM_TextBox3
+            // txtnewsize1
             // 
-            this.ckM_TextBox3.AllowMinus = false;
-            this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox3.ClientColor = System.Drawing.SystemColors.Window;
-            this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ckM_TextBox3.DecimalPlace = 0;
-            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ckM_TextBox3.IntegerPart = 0;
-            this.ckM_TextBox3.IsCorrectDate = true;
-            this.ckM_TextBox3.isEnterKeyDown = false;
-            this.ckM_TextBox3.isMaxLengthErr = false;
-            this.ckM_TextBox3.IsNumber = true;
-            this.ckM_TextBox3.IsShop = false;
-            this.ckM_TextBox3.Length = 32767;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(344, 85);
-            this.ckM_TextBox3.MoveNext = true;
-            this.ckM_TextBox3.Name = "ckM_TextBox3";
-            this.ckM_TextBox3.Size = new System.Drawing.Size(100, 19);
-            this.ckM_TextBox3.TabIndex = 17;
-            this.ckM_TextBox3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtnewsize1.AllowMinus = false;
+            this.txtnewsize1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtnewsize1.BackColor = System.Drawing.Color.White;
+            this.txtnewsize1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnewsize1.ClientColor = System.Drawing.SystemColors.Window;
+            this.txtnewsize1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtnewsize1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtnewsize1.DecimalPlace = 0;
+            this.txtnewsize1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtnewsize1.IntegerPart = 0;
+            this.txtnewsize1.IsCorrectDate = true;
+            this.txtnewsize1.isEnterKeyDown = false;
+            this.txtnewsize1.isMaxLengthErr = false;
+            this.txtnewsize1.IsNumber = true;
+            this.txtnewsize1.IsShop = false;
+            this.txtnewsize1.Length = 32767;
+            this.txtnewsize1.Location = new System.Drawing.Point(344, 85);
+            this.txtnewsize1.MoveNext = true;
+            this.txtnewsize1.Name = "txtnewsize1";
+            this.txtnewsize1.Size = new System.Drawing.Size(130, 19);
+            this.txtnewsize1.TabIndex = 17;
+            this.txtnewsize1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // lblPartNum
             // 
@@ -3891,7 +4251,6 @@
             this.lblPartNum.Name = "lblPartNum";
             this.lblPartNum.Size = new System.Drawing.Size(200, 19);
             this.lblPartNum.TabIndex = 16;
-            this.lblPartNum.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.lblPartNum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblProductName
@@ -3901,7 +4260,6 @@
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(485, 19);
             this.lblProductName.TabIndex = 15;
-            this.lblProductName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.lblProductName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Sc_Item
@@ -3936,7 +4294,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1776, 861);
+            this.ClientSize = new System.Drawing.Size(1677, 912);
             this.Controls.Add(this.panelDetail);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
@@ -3958,20 +4316,20 @@
         #endregion
 
         private Search.CKM_SearchControl Sc_Item;
-        private CKM_Controls.CKM_Label txtDate2;
-        private CKM_Controls.CKM_Label txtDate;
+        private CKM_Controls.CKM_Label ckmdate2;
+        private CKM_Controls.CKM_Label ckmdate1;
         private CKM_Controls.CKM_Label txtItem;
         private CKM_Controls.CKM_Button F11Display;
-        private CKM_Controls.CKM_TextBox ckM_TextBox2;
-        private CKM_Controls.CKM_TextBox ckM_TextBox1;
+        private CKM_Controls.CKM_TextBox txtRevDate;
+        private CKM_Controls.CKM_TextBox txtDate1;
         private CKM_Controls.CKM_Label ckM_Label1;
         private CKM_Controls.CKM_Label ckM_Label2;
         private System.Windows.Forms.Panel panelDetail;
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblPartNum;
         private CKM_Controls.CKM_TextBox ckM_TextBox5;
-        private CKM_Controls.CKM_TextBox ckM_TextBox4;
-        private CKM_Controls.CKM_TextBox ckM_TextBox3;
+        private CKM_Controls.CKM_TextBox txtoldsize1;
+        private CKM_Controls.CKM_TextBox txtnewsize1;
         private CKM_Controls.CKM_TextBox ckM_TextBox33;
         private CKM_Controls.CKM_TextBox ckM_TextBox34;
         private CKM_Controls.CKM_TextBox ckM_TextBox35;
@@ -3983,32 +4341,32 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox41;
         private CKM_Controls.CKM_TextBox ckM_TextBox42;
         private CKM_Controls.CKM_TextBox ckM_TextBox30;
-        private CKM_Controls.CKM_TextBox ckM_TextBox31;
-        private CKM_Controls.CKM_TextBox ckM_TextBox32;
+        private CKM_Controls.CKM_TextBox txtoldsize10;
+        private CKM_Controls.CKM_TextBox txtnewsize10;
         private CKM_Controls.CKM_TextBox ckM_TextBox27;
-        private CKM_Controls.CKM_TextBox ckM_TextBox28;
-        private CKM_Controls.CKM_TextBox ckM_TextBox29;
+        private CKM_Controls.CKM_TextBox txtoldsize9;
+        private CKM_Controls.CKM_TextBox txtnewsize9;
         private CKM_Controls.CKM_TextBox ckM_TextBox24;
-        private CKM_Controls.CKM_TextBox ckM_TextBox25;
-        private CKM_Controls.CKM_TextBox ckM_TextBox26;
+        private CKM_Controls.CKM_TextBox txtoldsize8;
+        private CKM_Controls.CKM_TextBox txtnewsize8;
         private CKM_Controls.CKM_TextBox ckM_TextBox21;
-        private CKM_Controls.CKM_TextBox ckM_TextBox22;
-        private CKM_Controls.CKM_TextBox ckM_TextBox23;
+        private CKM_Controls.CKM_TextBox txtoldsize7;
+        private CKM_Controls.CKM_TextBox txtnewsize7;
         private CKM_Controls.CKM_TextBox ckM_TextBox18;
-        private CKM_Controls.CKM_TextBox ckM_TextBox19;
-        private CKM_Controls.CKM_TextBox ckM_TextBox20;
+        private CKM_Controls.CKM_TextBox txtoldsize6;
+        private CKM_Controls.CKM_TextBox txtnewsize6;
         private CKM_Controls.CKM_TextBox ckM_TextBox15;
-        private CKM_Controls.CKM_TextBox ckM_TextBox16;
-        private CKM_Controls.CKM_TextBox ckM_TextBox17;
+        private CKM_Controls.CKM_TextBox txtoldsize5;
+        private CKM_Controls.CKM_TextBox txtnewsize5;
         private CKM_Controls.CKM_TextBox ckM_TextBox12;
-        private CKM_Controls.CKM_TextBox ckM_TextBox13;
-        private CKM_Controls.CKM_TextBox ckM_TextBox14;
+        private CKM_Controls.CKM_TextBox txtoldsize4;
+        private CKM_Controls.CKM_TextBox txtnewsize4;
         private CKM_Controls.CKM_TextBox ckM_TextBox9;
-        private CKM_Controls.CKM_TextBox ckM_TextBox10;
-        private CKM_Controls.CKM_TextBox ckM_TextBox11;
+        private CKM_Controls.CKM_TextBox txtoldsize3;
+        private CKM_Controls.CKM_TextBox txtnewsize3;
         private CKM_Controls.CKM_TextBox ckM_TextBox6;
-        private CKM_Controls.CKM_TextBox ckM_TextBox7;
-        private CKM_Controls.CKM_TextBox ckM_TextBox8;
+        private CKM_Controls.CKM_TextBox txtoldsize2;
+        private CKM_Controls.CKM_TextBox txtnewsize2;
         private CKM_Controls.CKM_GridView ckM_GridView1;
         private CKM_Controls.CKM_TextBox ckM_TextBox103;
         private CKM_Controls.CKM_TextBox ckM_TextBox104;
@@ -4097,16 +4455,6 @@
         private CKM_Controls.CKM_TextBox ckM_TextBox125;
         private CKM_Controls.CKM_TextBox ckM_TextBox124;
         private CKM_Controls.CKM_TextBox ckM_TextBox123;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private CKM_Controls.CKM_Button ckM_Button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -4117,5 +4465,45 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox30;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox29;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox28;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox27;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox26;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox25;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox24;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox23;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox22;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox21;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox20;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox19;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox18;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox17;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox16;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox15;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox14;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox13;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox12;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox11;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox10;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox9;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox8;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox7;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox6;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox5;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox4;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox2;
+        private CKM_Controls.CKM_CheckBox ckM_CheckBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
     }
 }

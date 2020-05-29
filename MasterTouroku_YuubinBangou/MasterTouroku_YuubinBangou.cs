@@ -29,21 +29,27 @@ namespace MasterTouroku_YuubinBangou
         private void FormLoadEvent(object sender, EventArgs e)
         {
             InProgramID = Application.ProductName;
-
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+
             
+            //OperationMode = EOperationMode.UPDATE;
+            //DisablePanel(PanelDetail);
+            //EnablePanel(PanelHeader);
+            //btnDisplay.Enabled = F11Enable = true;
+            //F12Enable = false;
+
             SelectNextControl(PanelDetail, true, true, true, true);
-            
+            dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
+
             Btn_F2.Text = string.Empty;
             Btn_F4.Text = string.Empty;
             Btn_F9.Text = string.Empty;
-
-            dgvYuubinBangou.Hiragana_Column("colAdd1,colAdd2");
-            ChangeMode(EOperationMode.UPDATE);
             SetRequireFields();
             CreateDataTable();
             BindGridCombo();
+            ChangeMode(EOperationMode.UPDATE);
+            txtZip1from.Focus();
         }
 
         private void SetRequireFields()
@@ -168,6 +174,7 @@ namespace MasterTouroku_YuubinBangou
                             break;
                     }
                 }
+                else PreviousCtrl.Focus();
             }
         }
 
@@ -219,26 +226,40 @@ namespace MasterTouroku_YuubinBangou
             ZipCode = GetZipCodeEntity();
             string ZipCD1To = txtZip1To.Text;
             string ZipCD2To = txtZip2To.Text;
-            int i = 0;
-            foreach (DataRow dr in dtDisplay.Rows)
-            {
-                dr["CarrierCD"] = dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value; i++;
-            }
-            Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
 
-            if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))
+            if (dtDisplay.Rows.Count > 0)
             {
-                Clear(PanelHeader);
-                Clear(PanelDetail);
+                int i = 0;
+                foreach (DataRow dr in dtDisplay.Rows)
+                {
+                    dr["CarrierCD"] = dgvYuubinBangou.Rows[i].Cells["colCarrier"].Value; i++;
 
-                ChangeMode(OperationMode);
-                txtZip1from.Focus();
+                    if(dr["ZipCD1"] == DBNull.Value)
+                    {
+                        dtDisplay.Rows.Remove(dr);
+                    }
+                    else if(dr["ZipCD1"] != DBNull.Value && dr["CarrierLeadDay"] == DBNull.Value)
+                    {
+                        dr["CarrierLeadDay"] = "0";
+                    }
+                }
 
-                YuubinBangouBL.ShowMessage("I101");
-            }
-            else
-            {
-                YuubinBangouBL.ShowMessage("S001");
+                Xml = YuubinBangouBL.DataTableToXml(dtDisplay);
+
+                if (YuubinBangouBL.M_ZipCode_Update(ZipCode, ZipCD1To, ZipCD2To, Xml))
+                {
+                    Clear(PanelHeader);
+                    Clear(PanelDetail);
+
+                    ChangeMode(OperationMode);
+                    txtZip1from.Focus();
+
+                    YuubinBangouBL.ShowMessage("I101");
+                }
+                else
+                {
+                    YuubinBangouBL.ShowMessage("S001");
+                }
             }
         }
 
@@ -382,7 +403,7 @@ namespace MasterTouroku_YuubinBangou
                             //row.Cells["colZipCD2"].Value = null;
                             row.Cells["colAdd1"].Value = null;
                             row.Cells["colAdd2"].Value = null;
-                            return false;
+                            return true;
                         }
                     }
                 }
@@ -406,7 +427,9 @@ namespace MasterTouroku_YuubinBangou
                     BindGridCombo();
                     break;
             }
+            PanelHeader.Focus();
             txtZip1from.Focus();
+            
         }
 
         protected override void EndSec()

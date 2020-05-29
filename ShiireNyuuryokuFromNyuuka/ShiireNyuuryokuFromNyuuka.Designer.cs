@@ -625,14 +625,6 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_7);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_6);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_5);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_4);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_3);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_0);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_1);
-            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_2);
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_7);
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_6);
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_5);
@@ -641,6 +633,14 @@
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_2);
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_1);
             this.Pnl_Body.Controls.Add(this.IMT_ZEI_0);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_7);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_6);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_5);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_4);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_3);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_0);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_1);
+            this.Pnl_Body.Controls.Add(this.IMT_ITMCD_2);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_7);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_6);
             this.Pnl_Body.Controls.Add(this.IMN_SIRGK_5);
@@ -991,10 +991,10 @@
             this.IMT_ZEI_7.MaxLength = 5;
             this.IMT_ZEI_7.MoveNext = true;
             this.IMT_ZEI_7.Name = "IMT_ZEI_7";
-            this.IMT_ZEI_7.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_7.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_7.TabIndex = 682;
             this.IMT_ZEI_7.Tag = "7";
-            this.IMT_ZEI_7.Text = "XXXX";
+            this.IMT_ZEI_7.Text = "非課税";
             this.IMT_ZEI_7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_6
@@ -1020,10 +1020,10 @@
             this.IMT_ZEI_6.MaxLength = 5;
             this.IMT_ZEI_6.MoveNext = true;
             this.IMT_ZEI_6.Name = "IMT_ZEI_6";
-            this.IMT_ZEI_6.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_6.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_6.TabIndex = 681;
             this.IMT_ZEI_6.Tag = "6";
-            this.IMT_ZEI_6.Text = "XXXX";
+            this.IMT_ZEI_6.Text = "非課税";
             this.IMT_ZEI_6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_5
@@ -1049,10 +1049,10 @@
             this.IMT_ZEI_5.MaxLength = 5;
             this.IMT_ZEI_5.MoveNext = true;
             this.IMT_ZEI_5.Name = "IMT_ZEI_5";
-            this.IMT_ZEI_5.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_5.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_5.TabIndex = 680;
             this.IMT_ZEI_5.Tag = "5";
-            this.IMT_ZEI_5.Text = "XXXX";
+            this.IMT_ZEI_5.Text = "非課税";
             this.IMT_ZEI_5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_4
@@ -1078,10 +1078,10 @@
             this.IMT_ZEI_4.MaxLength = 5;
             this.IMT_ZEI_4.MoveNext = true;
             this.IMT_ZEI_4.Name = "IMT_ZEI_4";
-            this.IMT_ZEI_4.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_4.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_4.TabIndex = 679;
             this.IMT_ZEI_4.Tag = "4";
-            this.IMT_ZEI_4.Text = "XXXX";
+            this.IMT_ZEI_4.Text = "非課税";
             this.IMT_ZEI_4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_3
@@ -1107,10 +1107,10 @@
             this.IMT_ZEI_3.MaxLength = 5;
             this.IMT_ZEI_3.MoveNext = true;
             this.IMT_ZEI_3.Name = "IMT_ZEI_3";
-            this.IMT_ZEI_3.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_3.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_3.TabIndex = 678;
             this.IMT_ZEI_3.Tag = "3";
-            this.IMT_ZEI_3.Text = "XXXX";
+            this.IMT_ZEI_3.Text = "非課税";
             this.IMT_ZEI_3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_2
@@ -1136,10 +1136,10 @@
             this.IMT_ZEI_2.MaxLength = 5;
             this.IMT_ZEI_2.MoveNext = true;
             this.IMT_ZEI_2.Name = "IMT_ZEI_2";
-            this.IMT_ZEI_2.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_2.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_2.TabIndex = 677;
             this.IMT_ZEI_2.Tag = "2";
-            this.IMT_ZEI_2.Text = "XXXX";
+            this.IMT_ZEI_2.Text = "非課税";
             this.IMT_ZEI_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_1
@@ -1165,10 +1165,10 @@
             this.IMT_ZEI_1.MaxLength = 5;
             this.IMT_ZEI_1.MoveNext = true;
             this.IMT_ZEI_1.Name = "IMT_ZEI_1";
-            this.IMT_ZEI_1.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_1.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_1.TabIndex = 676;
             this.IMT_ZEI_1.Tag = "1";
-            this.IMT_ZEI_1.Text = "XXXX";
+            this.IMT_ZEI_1.Text = "非課税";
             this.IMT_ZEI_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMT_ZEI_0
@@ -1194,10 +1194,10 @@
             this.IMT_ZEI_0.MaxLength = 5;
             this.IMT_ZEI_0.MoveNext = true;
             this.IMT_ZEI_0.Name = "IMT_ZEI_0";
-            this.IMT_ZEI_0.Size = new System.Drawing.Size(36, 19);
+            this.IMT_ZEI_0.Size = new System.Drawing.Size(39, 19);
             this.IMT_ZEI_0.TabIndex = 675;
             this.IMT_ZEI_0.Tag = "0";
-            this.IMT_ZEI_0.Text = "XXXX";
+            this.IMT_ZEI_0.Text = "非課税";
             this.IMT_ZEI_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // IMN_SIRGK_7
@@ -5776,9 +5776,9 @@
             this.CHK_EDICK_7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_7.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_7.Location = new System.Drawing.Point(1309, 285);
+            this.CHK_EDICK_7.Location = new System.Drawing.Point(1317, 285);
             this.CHK_EDICK_7.Name = "CHK_EDICK_7";
-            this.CHK_EDICK_7.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_7.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_7.TabIndex = 642;
             this.CHK_EDICK_7.Tag = "7";
             this.CHK_EDICK_7.Text = "　";
@@ -5792,9 +5792,9 @@
             this.CHK_EDICK_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_6.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_6.Location = new System.Drawing.Point(1309, 247);
+            this.CHK_EDICK_6.Location = new System.Drawing.Point(1317, 247);
             this.CHK_EDICK_6.Name = "CHK_EDICK_6";
-            this.CHK_EDICK_6.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_6.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_6.TabIndex = 641;
             this.CHK_EDICK_6.Tag = "6";
             this.CHK_EDICK_6.Text = "　";
@@ -5808,9 +5808,9 @@
             this.CHK_EDICK_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_5.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_5.Location = new System.Drawing.Point(1309, 209);
+            this.CHK_EDICK_5.Location = new System.Drawing.Point(1317, 209);
             this.CHK_EDICK_5.Name = "CHK_EDICK_5";
-            this.CHK_EDICK_5.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_5.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_5.TabIndex = 640;
             this.CHK_EDICK_5.Tag = "5";
             this.CHK_EDICK_5.Text = "　";
@@ -5824,9 +5824,9 @@
             this.CHK_EDICK_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_4.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_4.Location = new System.Drawing.Point(1309, 171);
+            this.CHK_EDICK_4.Location = new System.Drawing.Point(1317, 171);
             this.CHK_EDICK_4.Name = "CHK_EDICK_4";
-            this.CHK_EDICK_4.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_4.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_4.TabIndex = 639;
             this.CHK_EDICK_4.Tag = "4";
             this.CHK_EDICK_4.Text = "　";
@@ -5840,9 +5840,9 @@
             this.CHK_EDICK_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_3.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_3.Location = new System.Drawing.Point(1309, 133);
+            this.CHK_EDICK_3.Location = new System.Drawing.Point(1317, 133);
             this.CHK_EDICK_3.Name = "CHK_EDICK_3";
-            this.CHK_EDICK_3.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_3.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_3.TabIndex = 638;
             this.CHK_EDICK_3.Tag = "3";
             this.CHK_EDICK_3.Text = "　";
@@ -5856,9 +5856,9 @@
             this.CHK_EDICK_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_2.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_2.Location = new System.Drawing.Point(1309, 95);
+            this.CHK_EDICK_2.Location = new System.Drawing.Point(1317, 95);
             this.CHK_EDICK_2.Name = "CHK_EDICK_2";
-            this.CHK_EDICK_2.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_2.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_2.TabIndex = 637;
             this.CHK_EDICK_2.Tag = "2";
             this.CHK_EDICK_2.Text = "　";
@@ -5872,9 +5872,9 @@
             this.CHK_EDICK_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_1.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_1.Location = new System.Drawing.Point(1309, 57);
+            this.CHK_EDICK_1.Location = new System.Drawing.Point(1317, 57);
             this.CHK_EDICK_1.Name = "CHK_EDICK_1";
-            this.CHK_EDICK_1.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_1.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_1.TabIndex = 636;
             this.CHK_EDICK_1.Tag = "1";
             this.CHK_EDICK_1.Text = "　";
@@ -5888,9 +5888,9 @@
             this.CHK_EDICK_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CHK_EDICK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.CHK_EDICK_0.ForeColor = System.Drawing.Color.Black;
-            this.CHK_EDICK_0.Location = new System.Drawing.Point(1309, 19);
+            this.CHK_EDICK_0.Location = new System.Drawing.Point(1317, 19);
             this.CHK_EDICK_0.Name = "CHK_EDICK_0";
-            this.CHK_EDICK_0.Size = new System.Drawing.Size(33, 18);
+            this.CHK_EDICK_0.Size = new System.Drawing.Size(25, 18);
             this.CHK_EDICK_0.TabIndex = 635;
             this.CHK_EDICK_0.Tag = "0";
             this.CHK_EDICK_0.Text = "　";
@@ -5939,8 +5939,8 @@
             this.ScCalledVendorCD.ChangeDate = "";
             this.ScCalledVendorCD.ChangeDateWidth = 100;
             this.ScCalledVendorCD.Code = "";
-            this.ScCalledVendorCD.CodeWidth = 130;
-            this.ScCalledVendorCD.CodeWidth1 = 130;
+            this.ScCalledVendorCD.CodeWidth = 100;
+            this.ScCalledVendorCD.CodeWidth1 = 100;
             this.ScCalledVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCalledVendorCD.DataCheck = true;
             this.ScCalledVendorCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5951,7 +5951,7 @@
             this.ScCalledVendorCD.Location = new System.Drawing.Point(87, 95);
             this.ScCalledVendorCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCalledVendorCD.Name = "ScCalledVendorCD";
-            this.ScCalledVendorCD.NameWidth = 280;
+            this.ScCalledVendorCD.NameWidth = 310;
             this.ScCalledVendorCD.SearchEnable = true;
             this.ScCalledVendorCD.Size = new System.Drawing.Size(444, 28);
             this.ScCalledVendorCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -6841,8 +6841,8 @@
             this.ScVendorCD.ChangeDate = "";
             this.ScVendorCD.ChangeDateWidth = 100;
             this.ScVendorCD.Code = "";
-            this.ScVendorCD.CodeWidth = 130;
-            this.ScVendorCD.CodeWidth1 = 130;
+            this.ScVendorCD.CodeWidth = 100;
+            this.ScVendorCD.CodeWidth1 = 100;
             this.ScVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendorCD.DataCheck = true;
             this.ScVendorCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6853,7 +6853,7 @@
             this.ScVendorCD.Location = new System.Drawing.Point(87, 121);
             this.ScVendorCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendorCD.Name = "ScVendorCD";
-            this.ScVendorCD.NameWidth = 280;
+            this.ScVendorCD.NameWidth = 310;
             this.ScVendorCD.SearchEnable = true;
             this.ScVendorCD.Size = new System.Drawing.Size(444, 28);
             this.ScVendorCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
