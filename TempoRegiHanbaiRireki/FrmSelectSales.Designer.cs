@@ -99,9 +99,9 @@
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 292);
+            this.panel4.Location = new System.Drawing.Point(0, 542);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1100, 49);
+            this.panel4.Size = new System.Drawing.Size(1913, 49);
             this.panel4.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -116,7 +116,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1100, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1913, 49);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnClose
@@ -128,12 +128,12 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnClose.Location = new System.Drawing.Point(1, 1);
             this.btnClose.Margin = new System.Windows.Forms.Padding(1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(328, 47);
+            this.btnClose.Size = new System.Drawing.Size(571, 47);
             this.btnClose.TabIndex = 0;
             this.btnClose.Tag = "0";
             this.btnClose.Text = "戻　る";
@@ -149,12 +149,12 @@
             this.btnProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F, System.Drawing.FontStyle.Bold);
+            this.btnProcess.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnProcess.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnProcess.Location = new System.Drawing.Point(331, 1);
+            this.btnProcess.Location = new System.Drawing.Point(574, 1);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(1);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(768, 47);
+            this.btnProcess.Size = new System.Drawing.Size(1338, 47);
             this.btnProcess.TabIndex = 1;
             this.btnProcess.Tag = "1";
             this.btnProcess.Text = "出荷・売上へ";
@@ -169,12 +169,12 @@
             this.btnDown.DefaultBtnSize = false;
             this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.btnDown.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnDown.Location = new System.Drawing.Point(822, 248);
+            this.btnDown.Location = new System.Drawing.Point(1659, 435);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(245, 32);
+            this.btnDown.Size = new System.Drawing.Size(243, 41);
             this.btnDown.TabIndex = 47;
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = false;
@@ -188,12 +188,12 @@
             this.btnUp.DefaultBtnSize = false;
             this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.btnUp.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnUp.Location = new System.Drawing.Point(579, 248);
+            this.btnUp.Location = new System.Drawing.Point(1416, 435);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(243, 32);
+            this.btnUp.Size = new System.Drawing.Size(243, 41);
             this.btnUp.TabIndex = 46;
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = false;
@@ -204,12 +204,12 @@
             this.ckmShop_Label8.AutoSize = true;
             this.ckmShop_Label8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(78, 24);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(65, 13);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
-            this.ckmShop_Label8.Size = new System.Drawing.Size(93, 19);
+            this.ckmShop_Label8.Size = new System.Drawing.Size(137, 30);
             this.ckmShop_Label8.TabIndex = 78;
             this.ckmShop_Label8.Text = "売上日付";
             this.ckmShop_Label8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -220,12 +220,12 @@
             this.ckmShop_Label16.AutoSize = true;
             this.ckmShop_Label16.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label16.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label16.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label16.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label16.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label16.Location = new System.Drawing.Point(1008, 24);
+            this.ckmShop_Label16.Location = new System.Drawing.Point(1823, 13);
             this.ckmShop_Label16.Name = "ckmShop_Label16";
-            this.ckmShop_Label16.Size = new System.Drawing.Size(51, 19);
+            this.ckmShop_Label16.Size = new System.Drawing.Size(75, 30);
             this.ckmShop_Label16.TabIndex = 77;
             this.ckmShop_Label16.Text = "金額";
             this.ckmShop_Label16.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -236,12 +236,12 @@
             this.ckmShop_Label15.AutoSize = true;
             this.ckmShop_Label15.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label15.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 14F, System.Drawing.FontStyle.Bold);
-            this.ckmShop_Label15.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Small;
+            this.ckmShop_Label15.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label15.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label15.Location = new System.Drawing.Point(265, 24);
+            this.ckmShop_Label15.Location = new System.Drawing.Point(580, 13);
             this.ckmShop_Label15.Name = "ckmShop_Label15";
-            this.ckmShop_Label15.Size = new System.Drawing.Size(51, 19);
+            this.ckmShop_Label15.Size = new System.Drawing.Size(75, 30);
             this.ckmShop_Label15.TabIndex = 76;
             this.ckmShop_Label15.Text = "商品";
             this.ckmShop_Label15.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -302,68 +302,71 @@
             this.pnlDetails.Controls.Add(this.label1);
             this.pnlDetails.Controls.Add(this.lblDtGyo2);
             this.pnlDetails.Controls.Add(this.lblDtGyo3);
-            this.pnlDetails.Location = new System.Drawing.Point(34, 46);
+            this.pnlDetails.Location = new System.Drawing.Point(1, 46);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(1033, 202);
+            this.pnlDetails.Size = new System.Drawing.Size(1900, 388);
             this.pnlDetails.TabIndex = 75;
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(915, 0);
+            this.label3.Location = new System.Drawing.Point(1692, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1, 202);
+            this.label3.Size = new System.Drawing.Size(1, 450);
             this.label3.TabIndex = 98;
             this.label3.Text = "label3";
             // 
             // lblDtColorSize5
             // 
             this.lblDtColorSize5.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize5.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize5.Location = new System.Drawing.Point(751, 164);
+            this.lblDtColorSize5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize5.Location = new System.Drawing.Point(1381, 314);
             this.lblDtColorSize5.Name = "lblDtColorSize5";
-            this.lblDtColorSize5.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize5.Size = new System.Drawing.Size(305, 60);
             this.lblDtColorSize5.TabIndex = 97;
             this.lblDtColorSize5.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJuchuuNO5
             // 
             this.lblJuchuuNO5.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO5.Location = new System.Drawing.Point(210, 181);
+            this.lblJuchuuNO5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO5.Location = new System.Drawing.Point(580, 349);
             this.lblJuchuuNO5.Name = "lblJuchuuNO5";
-            this.lblJuchuuNO5.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO5.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO5.TabIndex = 96;
             this.lblJuchuuNO5.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJANCD5
             // 
             this.lblJANCD5.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD5.Location = new System.Drawing.Point(210, 165);
+            this.lblJANCD5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD5.Location = new System.Drawing.Point(581, 313);
             this.lblJANCD5.Name = "lblJANCD5";
-            this.lblJANCD5.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD5.Size = new System.Drawing.Size(225, 30);
             this.lblJANCD5.TabIndex = 95;
             this.lblJANCD5.Text = "49XXXXXXXXX13";
+            this.lblJANCD5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStoreName5
             // 
             this.lblStoreName5.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName5.Location = new System.Drawing.Point(39, 181);
+            this.lblStoreName5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName5.Location = new System.Drawing.Point(62, 349);
             this.lblStoreName5.Name = "lblStoreName5";
-            this.lblStoreName5.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName5.Size = new System.Drawing.Size(510, 30);
             this.lblStoreName5.TabIndex = 94;
             this.lblStoreName5.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtKin5
             // 
             this.lblDtKin5.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin5.Location = new System.Drawing.Point(928, 181);
+            this.lblDtKin5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin5.Location = new System.Drawing.Point(1704, 352);
             this.lblDtKin5.Name = "lblDtKin5";
-            this.lblDtKin5.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin5.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin5.TabIndex = 93;
             this.lblDtKin5.Text = "\\99,999,999";
             this.lblDtKin5.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -371,51 +374,52 @@
             // lblDtSSu5
             // 
             this.lblDtSSu5.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu5.Location = new System.Drawing.Point(928, 164);
+            this.lblDtSSu5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu5.Location = new System.Drawing.Point(1797, 311);
             this.lblDtSSu5.Name = "lblDtSSu5";
-            this.lblDtSSu5.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu5.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu5.TabIndex = 92;
             this.lblDtSSu5.Text = "9,999";
-            this.lblDtSSu5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblJuchuuDate5
             // 
             this.lblJuchuuDate5.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate5.Location = new System.Drawing.Point(39, 164);
+            this.lblJuchuuDate5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate5.Location = new System.Drawing.Point(65, 312);
             this.lblJuchuuDate5.Name = "lblJuchuuDate5";
-            this.lblJuchuuDate5.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate5.Size = new System.Drawing.Size(210, 30);
             this.lblJuchuuDate5.TabIndex = 91;
             this.lblJuchuuDate5.Text = "9999/99/99";
-            this.lblJuchuuDate5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtSKUName5
             // 
             this.lblDtSKUName5.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName5.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName5.Location = new System.Drawing.Point(343, 164);
+            this.lblDtSKUName5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName5.Location = new System.Drawing.Point(815, 311);
             this.lblDtSKUName5.Name = "lblDtSKUName5";
-            this.lblDtSKUName5.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName5.Size = new System.Drawing.Size(560, 60);
             this.lblDtSKUName5.TabIndex = 90;
             this.lblDtSKUName5.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label23
             // 
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label23.Location = new System.Drawing.Point(-1, 160);
+            this.label23.Location = new System.Drawing.Point(3, 306);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(1033, 1);
+            this.label23.Size = new System.Drawing.Size(1900, 1);
             this.label23.TabIndex = 88;
             this.label23.Text = "label23";
             // 
             // lblDtGyo5
             // 
             this.lblDtGyo5.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo5.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo5.Location = new System.Drawing.Point(0, 160);
+            this.lblDtGyo5.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo5.Location = new System.Drawing.Point(3, 311);
             this.lblDtGyo5.Name = "lblDtGyo5";
-            this.lblDtGyo5.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo5.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo5.TabIndex = 89;
             this.lblDtGyo5.Text = "5";
             this.lblDtGyo5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -423,51 +427,54 @@
             // lblDtColorSize4
             // 
             this.lblDtColorSize4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize4.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize4.Location = new System.Drawing.Point(751, 124);
+            this.lblDtColorSize4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize4.Location = new System.Drawing.Point(1384, 236);
             this.lblDtColorSize4.Name = "lblDtColorSize4";
-            this.lblDtColorSize4.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize4.Size = new System.Drawing.Size(305, 60);
             this.lblDtColorSize4.TabIndex = 87;
             this.lblDtColorSize4.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJuchuuNO4
             // 
             this.lblJuchuuNO4.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO4.Location = new System.Drawing.Point(210, 141);
+            this.lblJuchuuNO4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO4.Location = new System.Drawing.Point(582, 270);
             this.lblJuchuuNO4.Name = "lblJuchuuNO4";
-            this.lblJuchuuNO4.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO4.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO4.TabIndex = 86;
             this.lblJuchuuNO4.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJANCD4
             // 
             this.lblJANCD4.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD4.Location = new System.Drawing.Point(210, 125);
+            this.lblJANCD4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD4.Location = new System.Drawing.Point(580, 233);
             this.lblJANCD4.Name = "lblJANCD4";
-            this.lblJANCD4.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD4.Size = new System.Drawing.Size(225, 30);
             this.lblJANCD4.TabIndex = 85;
             this.lblJANCD4.Text = "49XXXXXXXXX13";
+            this.lblJANCD4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStoreName4
             // 
             this.lblStoreName4.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName4.Location = new System.Drawing.Point(39, 141);
+            this.lblStoreName4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName4.Location = new System.Drawing.Point(62, 271);
             this.lblStoreName4.Name = "lblStoreName4";
-            this.lblStoreName4.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName4.Size = new System.Drawing.Size(510, 30);
             this.lblStoreName4.TabIndex = 84;
             this.lblStoreName4.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtKin4
             // 
             this.lblDtKin4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin4.Location = new System.Drawing.Point(928, 141);
+            this.lblDtKin4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin4.Location = new System.Drawing.Point(1704, 273);
             this.lblDtKin4.Name = "lblDtKin4";
-            this.lblDtKin4.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin4.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin4.TabIndex = 83;
             this.lblDtKin4.Text = "\\99,999,999";
             this.lblDtKin4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -475,51 +482,52 @@
             // lblDtSSu4
             // 
             this.lblDtSSu4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu4.Location = new System.Drawing.Point(928, 124);
+            this.lblDtSSu4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu4.Location = new System.Drawing.Point(1797, 233);
             this.lblDtSSu4.Name = "lblDtSSu4";
-            this.lblDtSSu4.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu4.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu4.TabIndex = 82;
             this.lblDtSSu4.Text = "9,999";
-            this.lblDtSSu4.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblJuchuuDate4
             // 
             this.lblJuchuuDate4.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate4.Location = new System.Drawing.Point(39, 124);
+            this.lblJuchuuDate4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate4.Location = new System.Drawing.Point(63, 233);
             this.lblJuchuuDate4.Name = "lblJuchuuDate4";
-            this.lblJuchuuDate4.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate4.Size = new System.Drawing.Size(210, 30);
             this.lblJuchuuDate4.TabIndex = 81;
             this.lblJuchuuDate4.Text = "9999/99/99";
-            this.lblJuchuuDate4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtSKUName4
             // 
             this.lblDtSKUName4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName4.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName4.Location = new System.Drawing.Point(343, 124);
+            this.lblDtSKUName4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName4.Location = new System.Drawing.Point(817, 236);
             this.lblDtSKUName4.Name = "lblDtSKUName4";
-            this.lblDtSKUName4.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName4.Size = new System.Drawing.Size(560, 60);
             this.lblDtSKUName4.TabIndex = 80;
             this.lblDtSKUName4.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label10
             // 
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Location = new System.Drawing.Point(-1, 120);
+            this.label10.Location = new System.Drawing.Point(-1, 228);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(1033, 1);
+            this.label10.Size = new System.Drawing.Size(1980, 1);
             this.label10.TabIndex = 78;
             this.label10.Text = "label10";
             // 
             // lblDtGyo4
             // 
             this.lblDtGyo4.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo4.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo4.Location = new System.Drawing.Point(0, 120);
+            this.lblDtGyo4.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo4.Location = new System.Drawing.Point(3, 233);
             this.lblDtGyo4.Name = "lblDtGyo4";
-            this.lblDtGyo4.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo4.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo4.TabIndex = 79;
             this.lblDtGyo4.Text = "4";
             this.lblDtGyo4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -527,103 +535,109 @@
             // lblJuchuuNO3
             // 
             this.lblJuchuuNO3.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO3.Location = new System.Drawing.Point(211, 101);
+            this.lblJuchuuNO3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO3.Location = new System.Drawing.Point(581, 191);
             this.lblJuchuuNO3.Name = "lblJuchuuNO3";
-            this.lblJuchuuNO3.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO3.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO3.TabIndex = 77;
             this.lblJuchuuNO3.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJANCD3
             // 
             this.lblJANCD3.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD3.Location = new System.Drawing.Point(211, 85);
+            this.lblJANCD3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD3.Location = new System.Drawing.Point(580, 158);
             this.lblJANCD3.Name = "lblJANCD3";
-            this.lblJANCD3.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD3.Size = new System.Drawing.Size(225, 30);
             this.lblJANCD3.TabIndex = 76;
             this.lblJANCD3.Text = "49XXXXXXXXX13";
+            this.lblJANCD3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStoreName3
             // 
             this.lblStoreName3.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName3.Location = new System.Drawing.Point(40, 101);
+            this.lblStoreName3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName3.Location = new System.Drawing.Point(62, 194);
             this.lblStoreName3.Name = "lblStoreName3";
-            this.lblStoreName3.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName3.Size = new System.Drawing.Size(510, 30);
             this.lblStoreName3.TabIndex = 75;
             this.lblStoreName3.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJuchuuNO2
             // 
             this.lblJuchuuNO2.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO2.Location = new System.Drawing.Point(211, 61);
+            this.lblJuchuuNO2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO2.Location = new System.Drawing.Point(581, 114);
             this.lblJuchuuNO2.Name = "lblJuchuuNO2";
-            this.lblJuchuuNO2.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO2.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO2.TabIndex = 74;
             this.lblJuchuuNO2.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJANCD2
             // 
             this.lblJANCD2.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD2.Location = new System.Drawing.Point(211, 45);
+            this.lblJANCD2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD2.Location = new System.Drawing.Point(580, 80);
             this.lblJANCD2.Name = "lblJANCD2";
-            this.lblJANCD2.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD2.Size = new System.Drawing.Size(225, 30);
             this.lblJANCD2.TabIndex = 73;
             this.lblJANCD2.Text = "49XXXXXXXXX13";
+            this.lblJANCD2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStoreName2
             // 
             this.lblStoreName2.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName2.Location = new System.Drawing.Point(40, 61);
+            this.lblStoreName2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName2.Location = new System.Drawing.Point(62, 118);
             this.lblStoreName2.Name = "lblStoreName2";
-            this.lblStoreName2.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName2.Size = new System.Drawing.Size(510, 30);
             this.lblStoreName2.TabIndex = 72;
             this.lblStoreName2.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJuchuuNO1
             // 
             this.lblJuchuuNO1.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuNO1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuNO1.Location = new System.Drawing.Point(211, 20);
+            this.lblJuchuuNO1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuNO1.Location = new System.Drawing.Point(581, 42);
             this.lblJuchuuNO1.Name = "lblJuchuuNO1";
-            this.lblJuchuuNO1.Size = new System.Drawing.Size(102, 16);
+            this.lblJuchuuNO1.Size = new System.Drawing.Size(225, 30);
             this.lblJuchuuNO1.TabIndex = 71;
             this.lblJuchuuNO1.Text = "XXXXXXXXXX";
+            this.lblJuchuuNO1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblJANCD1
             // 
             this.lblJANCD1.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJANCD1.Location = new System.Drawing.Point(211, 4);
+            this.lblJANCD1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJANCD1.Location = new System.Drawing.Point(580, 6);
             this.lblJANCD1.Name = "lblJANCD1";
-            this.lblJANCD1.Size = new System.Drawing.Size(116, 14);
+            this.lblJANCD1.Size = new System.Drawing.Size(225, 30);
             this.lblJANCD1.TabIndex = 70;
             this.lblJANCD1.Text = "49XXXXXXXXX13";
+            this.lblJANCD1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblStoreName1
             // 
             this.lblStoreName1.BackColor = System.Drawing.Color.Transparent;
-            this.lblStoreName1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblStoreName1.Location = new System.Drawing.Point(40, 20);
+            this.lblStoreName1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblStoreName1.Location = new System.Drawing.Point(63, 41);
             this.lblStoreName1.Name = "lblStoreName1";
-            this.lblStoreName1.Size = new System.Drawing.Size(151, 16);
+            this.lblStoreName1.Size = new System.Drawing.Size(510, 30);
             this.lblStoreName1.TabIndex = 69;
             this.lblStoreName1.Text = "店舗名　スタッフ名ＸＸＸＸＸ";
-            this.lblStoreName1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblStoreName1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtKin3
             // 
             this.lblDtKin3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin3.Location = new System.Drawing.Point(929, 101);
+            this.lblDtKin3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin3.Location = new System.Drawing.Point(1704, 195);
             this.lblDtKin3.Name = "lblDtKin3";
-            this.lblDtKin3.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin3.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin3.TabIndex = 68;
             this.lblDtKin3.Text = "\\99,999,999";
             this.lblDtKin3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -631,52 +645,54 @@
             // lblDtSSu3
             // 
             this.lblDtSSu3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu3.Location = new System.Drawing.Point(929, 84);
+            this.lblDtSSu3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu3.Location = new System.Drawing.Point(1798, 157);
             this.lblDtSSu3.Name = "lblDtSSu3";
-            this.lblDtSSu3.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu3.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu3.TabIndex = 67;
             this.lblDtSSu3.Text = "9,999";
-            this.lblDtSSu3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblJuchuuDate3
             // 
             this.lblJuchuuDate3.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate3.Location = new System.Drawing.Point(40, 84);
+            this.lblJuchuuDate3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate3.Location = new System.Drawing.Point(65, 157);
             this.lblJuchuuDate3.Name = "lblJuchuuDate3";
-            this.lblJuchuuDate3.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate3.Size = new System.Drawing.Size(210, 30);
             this.lblJuchuuDate3.TabIndex = 66;
             this.lblJuchuuDate3.Text = "9999/99/99";
-            this.lblJuchuuDate3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtColorSize3
             // 
             this.lblDtColorSize3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize3.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize3.Location = new System.Drawing.Point(751, 84);
+            this.lblDtColorSize3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize3.Location = new System.Drawing.Point(1382, 160);
             this.lblDtColorSize3.Name = "lblDtColorSize3";
-            this.lblDtColorSize3.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize3.Size = new System.Drawing.Size(305, 60);
             this.lblDtColorSize3.TabIndex = 65;
             this.lblDtColorSize3.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtSKUName3
             // 
             this.lblDtSKUName3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName3.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName3.Location = new System.Drawing.Point(344, 84);
+            this.lblDtSKUName3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName3.Location = new System.Drawing.Point(816, 161);
             this.lblDtSKUName3.Name = "lblDtSKUName3";
-            this.lblDtSKUName3.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName3.Size = new System.Drawing.Size(560, 60);
             this.lblDtSKUName3.TabIndex = 64;
             this.lblDtSKUName3.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtKin2
             // 
             this.lblDtKin2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin2.Location = new System.Drawing.Point(929, 61);
+            this.lblDtKin2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin2.Location = new System.Drawing.Point(1704, 119);
             this.lblDtKin2.Name = "lblDtKin2";
-            this.lblDtKin2.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin2.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin2.TabIndex = 63;
             this.lblDtKin2.Text = "\\99,999,999";
             this.lblDtKin2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -684,70 +700,72 @@
             // lblDtSSu2
             // 
             this.lblDtSSu2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu2.Location = new System.Drawing.Point(929, 44);
+            this.lblDtSSu2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu2.Location = new System.Drawing.Point(1799, 82);
             this.lblDtSSu2.Name = "lblDtSSu2";
-            this.lblDtSSu2.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu2.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu2.TabIndex = 62;
             this.lblDtSSu2.Text = "9,999";
-            this.lblDtSSu2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblJuchuuDate2
             // 
             this.lblJuchuuDate2.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate2.Location = new System.Drawing.Point(40, 44);
+            this.lblJuchuuDate2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate2.Location = new System.Drawing.Point(65, 82);
             this.lblJuchuuDate2.Name = "lblJuchuuDate2";
-            this.lblJuchuuDate2.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate2.Size = new System.Drawing.Size(210, 30);
             this.lblJuchuuDate2.TabIndex = 61;
             this.lblJuchuuDate2.Text = "9999/99/99";
-            this.lblJuchuuDate2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtColorSize2
             // 
             this.lblDtColorSize2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize2.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize2.Location = new System.Drawing.Point(751, 44);
+            this.lblDtColorSize2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize2.Location = new System.Drawing.Point(1381, 84);
             this.lblDtColorSize2.Name = "lblDtColorSize2";
-            this.lblDtColorSize2.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize2.Size = new System.Drawing.Size(305, 60);
             this.lblDtColorSize2.TabIndex = 60;
             this.lblDtColorSize2.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtSKUName2
             // 
             this.lblDtSKUName2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName2.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName2.Location = new System.Drawing.Point(344, 44);
+            this.lblDtSKUName2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName2.Location = new System.Drawing.Point(814, 81);
             this.lblDtSKUName2.Name = "lblDtSKUName2";
-            this.lblDtSKUName2.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName2.Size = new System.Drawing.Size(560, 60);
             this.lblDtSKUName2.TabIndex = 59;
             this.lblDtSKUName2.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label12
             // 
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Location = new System.Drawing.Point(204, -1);
+            this.label12.Location = new System.Drawing.Point(574, -1);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(1, 202);
+            this.label12.Size = new System.Drawing.Size(1, 450);
             this.label12.TabIndex = 58;
             this.label12.Text = "label12";
             // 
             // label11
             // 
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label11.Location = new System.Drawing.Point(33, 0);
+            this.label11.Location = new System.Drawing.Point(59, -3);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(1, 202);
+            this.label11.Size = new System.Drawing.Size(1, 450);
             this.label11.TabIndex = 57;
             this.label11.Text = "label11";
             // 
             // lblDtGyo1
             // 
             this.lblDtGyo1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo1.Location = new System.Drawing.Point(0, 0);
+            this.lblDtGyo1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo1.Location = new System.Drawing.Point(4, 5);
             this.lblDtGyo1.Name = "lblDtGyo1";
-            this.lblDtGyo1.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo1.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo1.TabIndex = 54;
             this.lblDtGyo1.Text = "1";
             this.lblDtGyo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -755,10 +773,10 @@
             // lblDtKin1
             // 
             this.lblDtKin1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtKin1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtKin1.Location = new System.Drawing.Point(929, 20);
+            this.lblDtKin1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtKin1.Location = new System.Drawing.Point(1704, 43);
             this.lblDtKin1.Name = "lblDtKin1";
-            this.lblDtKin1.Size = new System.Drawing.Size(96, 14);
+            this.lblDtKin1.Size = new System.Drawing.Size(190, 30);
             this.lblDtKin1.TabIndex = 53;
             this.lblDtKin1.Text = "\\99,999,999";
             this.lblDtKin1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -766,70 +784,72 @@
             // lblDtSSu1
             // 
             this.lblDtSSu1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSSu1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSSu1.Location = new System.Drawing.Point(929, 4);
+            this.lblDtSSu1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSSu1.Location = new System.Drawing.Point(1797, 5);
             this.lblDtSSu1.Name = "lblDtSSu1";
-            this.lblDtSSu1.Size = new System.Drawing.Size(96, 14);
+            this.lblDtSSu1.Size = new System.Drawing.Size(96, 30);
             this.lblDtSSu1.TabIndex = 52;
             this.lblDtSSu1.Text = "9,999";
-            this.lblDtSSu1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblDtSSu1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblJuchuuDate1
             // 
             this.lblJuchuuDate1.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuDate1.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblJuchuuDate1.Location = new System.Drawing.Point(40, 4);
+            this.lblJuchuuDate1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblJuchuuDate1.Location = new System.Drawing.Point(66, 4);
             this.lblJuchuuDate1.Name = "lblJuchuuDate1";
-            this.lblJuchuuDate1.Size = new System.Drawing.Size(96, 14);
+            this.lblJuchuuDate1.Size = new System.Drawing.Size(210, 30);
             this.lblJuchuuDate1.TabIndex = 51;
             this.lblJuchuuDate1.Text = "9999/99/99";
-            this.lblJuchuuDate1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblJuchuuDate1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtColorSize1
             // 
             this.lblDtColorSize1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtColorSize1.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtColorSize1.Location = new System.Drawing.Point(751, 4);
+            this.lblDtColorSize1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtColorSize1.Location = new System.Drawing.Point(1381, 9);
             this.lblDtColorSize1.Name = "lblDtColorSize1";
-            this.lblDtColorSize1.Size = new System.Drawing.Size(165, 31);
+            this.lblDtColorSize1.Size = new System.Drawing.Size(305, 60);
             this.lblDtColorSize1.TabIndex = 50;
             this.lblDtColorSize1.Text = "カラー・サイズＸＸＸＸＸＸＸＸＸＸＸ";
+            this.lblDtColorSize1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblDtSKUName1
             // 
             this.lblDtSKUName1.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtSKUName1.Font = new System.Drawing.Font("ＭＳ ゴシック", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtSKUName1.Location = new System.Drawing.Point(344, 4);
+            this.lblDtSKUName1.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtSKUName1.Location = new System.Drawing.Point(817, 4);
             this.lblDtSKUName1.Name = "lblDtSKUName1";
-            this.lblDtSKUName1.Size = new System.Drawing.Size(411, 36);
+            this.lblDtSKUName1.Size = new System.Drawing.Size(560, 60);
             this.lblDtSKUName1.TabIndex = 47;
             this.lblDtSKUName1.Text = "商品名ＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
+            this.lblDtSKUName1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(0, 80);
+            this.label2.Location = new System.Drawing.Point(0, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1033, 1);
+            this.label2.Size = new System.Drawing.Size(1980, 1);
             this.label2.TabIndex = 47;
             this.label2.Text = "label2";
             // 
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(0, 40);
+            this.label1.Location = new System.Drawing.Point(0, 76);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1033, 1);
+            this.label1.Size = new System.Drawing.Size(1980, 1);
             this.label1.TabIndex = 46;
             this.label1.Text = "label1";
             // 
             // lblDtGyo2
             // 
             this.lblDtGyo2.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo2.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo2.Location = new System.Drawing.Point(0, 40);
+            this.lblDtGyo2.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo2.Location = new System.Drawing.Point(4, 80);
             this.lblDtGyo2.Name = "lblDtGyo2";
-            this.lblDtGyo2.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo2.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo2.TabIndex = 55;
             this.lblDtGyo2.Text = "2";
             this.lblDtGyo2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -837,10 +857,10 @@
             // lblDtGyo3
             // 
             this.lblDtGyo3.BackColor = System.Drawing.Color.Transparent;
-            this.lblDtGyo3.Font = new System.Drawing.Font("ＭＳ ゴシック", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblDtGyo3.Location = new System.Drawing.Point(0, 80);
+            this.lblDtGyo3.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblDtGyo3.Location = new System.Drawing.Point(3, 156);
             this.lblDtGyo3.Name = "lblDtGyo3";
-            this.lblDtGyo3.Size = new System.Drawing.Size(33, 40);
+            this.lblDtGyo3.Size = new System.Drawing.Size(53, 65);
             this.lblDtGyo3.TabIndex = 56;
             this.lblDtGyo3.Text = "3";
             this.lblDtGyo3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -850,7 +870,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1100, 341);
+            this.ClientSize = new System.Drawing.Size(1913, 591);
             this.Controls.Add(this.ckmShop_Label8);
             this.Controls.Add(this.ckmShop_Label16);
             this.Controls.Add(this.ckmShop_Label15);
@@ -858,7 +878,7 @@
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
             this.Controls.Add(this.panel4);
-            this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "FrmSelectSales";
             this.Text = "販売履歴";
             this.Load += new System.EventHandler(this.FrmSelectSales_Load);
