@@ -405,8 +405,8 @@ namespace Search
                     break;
                 case SearchType.仕入先:
                     txtCode.MaxLength = 13;
-                    txtCode.Width = 130;
-                    lblName.Width = 280;
+                    txtCode.Width = 100;
+                    lblName.Width = 310;
                     break;
                 case SearchType.Supplier:
                     TxtCode.MaxLength = 13;

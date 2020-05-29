@@ -2847,13 +2847,13 @@ namespace HacchuuNyuuryoku
             {
                 SetlblDisp("承認中");
             }
-            else if (lblDisp.Text == "承認中")
+            else if (lblDisp.Text == "承認中" || lblDisp.Text == "承認")
             {
                 SetlblDisp("却下");
             }
             else
             {
-                SetlblDisp("承認中");
+                SetlblDisp("承認");
             }
             ////F11ボタンは、
             ////その発注が「申請」「承認中」の場合に表示＆利用可能。以外は表示しない。
