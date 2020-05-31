@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -121,6 +120,7 @@
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox4.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
@@ -129,6 +129,7 @@
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
+            this.ckM_TextBox4.isMaxLengthErr = false;
             this.ckM_TextBox4.IsNumber = true;
             this.ckM_TextBox4.IsShop = false;
             this.ckM_TextBox4.Length = 15;
@@ -164,6 +165,7 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.入荷倉庫;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 30;
             this.CboStoreCD.Location = new System.Drawing.Point(1040, 11);
@@ -199,11 +201,10 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -220,19 +221,14 @@
             this.colSizeName,
             this.colVendorDeliveryNo,
             this.colArrivalSu});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle6;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(9, 176);
+            this.GvDetail.MultiSelect = false;
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(1243, 317);
             this.GvDetail.TabIndex = 20;
             this.GvDetail.UseRowNo = true;
@@ -324,6 +320,7 @@
             this.ckM_TextBox1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox1.DecimalPlace = 0;
@@ -332,6 +329,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
@@ -367,6 +365,7 @@
             this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox2.DecimalPlace = 0;
@@ -375,6 +374,7 @@
             this.ckM_TextBox2.IntegerPart = 0;
             this.ckM_TextBox2.IsCorrectDate = true;
             this.ckM_TextBox2.isEnterKeyDown = false;
+            this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
@@ -393,6 +393,7 @@
             this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox6.DecimalPlace = 0;
@@ -401,6 +402,7 @@
             this.ckM_TextBox6.IntegerPart = 0;
             this.ckM_TextBox6.IsCorrectDate = false;
             this.ckM_TextBox6.isEnterKeyDown = false;
+            this.ckM_TextBox6.isMaxLengthErr = false;
             this.ckM_TextBox6.IsNumber = true;
             this.ckM_TextBox6.IsShop = false;
             this.ckM_TextBox6.Length = 300;
@@ -435,6 +437,7 @@
             this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox7.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
@@ -443,6 +446,7 @@
             this.ckM_TextBox7.IntegerPart = 0;
             this.ckM_TextBox7.IsCorrectDate = false;
             this.ckM_TextBox7.isEnterKeyDown = false;
+            this.ckM_TextBox7.isMaxLengthErr = false;
             this.ckM_TextBox7.IsNumber = true;
             this.ckM_TextBox7.IsShop = false;
             this.ckM_TextBox7.Length = 300;
