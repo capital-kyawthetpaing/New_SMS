@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54A95E9B-B28A-4507-B39A-22BB92D155C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IkkatuHacchuuNyuuryoku</RootNamespace>
+    <AssemblyName>IkkatuHacchuuNyuuryoku</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Base.Client">
+      <HintPath>..\bin\Debug\Base.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="BL">
+      <HintPath>..\bin\Debug\BL.dll</HintPath>
+    </Reference>
+    <Reference Include="CKM_Controls">
+      <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="DL">
+      <HintPath>..\bin\Debug\DL.dll</HintPath>
+    </Reference>
+    <Reference Include="Entity">
+      <HintPath>..\bin\Debug\Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="GridBase">
+      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
+    </Reference>
+    <Reference Include="GridControl">
+      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Search">
+      <HintPath>..\bin\Debug\Search.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClsGridIkkatuHacchuu.cs" />
+    <Compile Include="IkkatuHacchuuNyuuryoku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IkkatuHacchuuNyuuryoku.Designer.cs">
+      <DependentUpon>IkkatuHacchuuNyuuryoku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IkkatuHacchuuNyuuryokuUtility.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IkkatuHacchuuNyuuryoku.resx">
+      <DependentUpon>IkkatuHacchuuNyuuryoku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_CheckBox.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_ComboBox+Align.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_ComboBox+Bytes.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_ComboBox+CboType.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_ComboBox.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView+AltBackcolor.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView+DBackcolor.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView+DGVBackcolor.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView+FontStyle_.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView+Font_.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_GridView.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_Label+CKM_Color.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_Label+CKM_FontSize.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_Label.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKMShop_RadioButton.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Button+CKM_Color.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Button+CKM_FontSize.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Button.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_CheckBox.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_ComboBox+Bytes.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_ComboBox+CboType.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_ComboBox.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_GridView.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Label+CKM_Color.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Label+CKM_FontSize.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_Label.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_MultiLineTextBox+Bytes.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_MultiLineTextBox+CKM_Color.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_MultiLineTextBox+FontSize.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_MultiLineTextBox.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_RadioButton.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_TextBox+Bytes.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_TextBox+CKM_Color.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_TextBox+FontSize.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_TextBox+Type.datasource" />
+    <None Include="Properties\DataSources\CKM_Controls.CKM_TextBox.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewDecimalCell.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewDecimalColumn.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewDecimalControl.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewMaskedTextBoxCell.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewMaskedTextColumn.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.DataGridViewMaskedTextControl.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.dgvInventoryCell.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.dgvInventoryColumn+Type.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.dgvInventoryColumn.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.dgvInventoryControl+Type.datasource" />
+    <None Include="Properties\DataSources\SMS.CustomControls.dgvInventoryControl.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

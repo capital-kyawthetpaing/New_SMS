@@ -179,12 +179,45 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 //if(!string.IsNullOrWhiteSpace(txtoldsize1.Text))
                 //{
                 //    if(string.IsNullOrWhiteSpace(txtnewsize1.Text))
+
                 //    {
                 //        mskubl.ShowMessage("E102");
                 //        txtnewsize1.Focus();
                 //        return false;
                 //    }
                 //}
+
+                foreach (Control c in this.Controls)
+                {
+
+                    if (c.GetType().ToString() == "System.Windows.Form.Textbox")
+                    {
+                        
+                        //your code goes here
+                        //if (sizetb_Ctrl)
+                        //{
+
+                        //}
+
+                    }
+
+                }
+
+                foreach (Control control in this.Controls)
+                {
+                    if (control is TextBox)
+                    // You can check any other property here and do what you want
+                    // for example:
+                    {
+                        //if(this.Controls.Find("txtnewsize",true))
+                        //{
+
+                        //}
+                    }
+                }
+
+
+
 
 
             }

@@ -22,5 +22,14 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, "D_Order_SelectForReport");
         }
+        public DataTable D_Order_SelectByOrderProcessNO(string orderProcessNO)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+               {"@p_OrderProcessNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderProcessNO } },
+            };
+            UseTransaction = true;
+            return SelectData(dic, "D_Order_SelectByOrderProcessNO");
+        }
     }
 }
