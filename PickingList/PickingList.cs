@@ -530,7 +530,7 @@ namespace PickingList
                     return false;
                 }
             }
-            if (chkUnissued2.Checked==true)
+            if (chkReissued1.Checked==true)
                 if (!ScPickingNo1.IsExists(2))
                 {
                     bbl.ShowMessage("E128");
@@ -547,13 +547,7 @@ namespace PickingList
                 return false;
             }
 
-            if (chkReissued2.Checked == true)
-                if (!ScPickingNo2.IsExists(2))
-                {
-                    bbl.ShowMessage("E128");
-                    return false;
-                }
-            if (chkReissued1.Checked == true)
+            if (chkUnissued2.Checked == true)
             {
                 int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
                 if (result > 0)
@@ -564,32 +558,23 @@ namespace PickingList
                 }
             }
 
+            if (chkReissued2.Checked == true)
+                if (!ScPickingNo2.IsExists(2))
+                {
+                    bbl.ShowMessage("E128");
+                    return false;
+                }
+           
 
 
             return true;
-        }
-
-        private void chkUnissued1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkUnissued1.Checked == true)
-            {
-                txtDateFrom1.Enabled = true;
-                txtDateTo1.Enabled = true;
-                txtDateTo1.Text = todayDate;
-
-            }
-            else
-            {
-                txtDateFrom1.Enabled = false;
-                txtDateTo1.Enabled = false;
-                txtDateTo1.Text = string.Empty;
-            }
         }
 
         private void FrmPickingList_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
+
 
         private void ScPickingNo1_Enter(object sender, EventArgs e)
         {
@@ -600,6 +585,7 @@ namespace PickingList
         {
             ScPickingNo2.Value1 = cboSouko.SelectedValue.ToString();
         }
+
 
         private void txtDateTo1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -623,7 +609,7 @@ namespace PickingList
 
             if (e.KeyCode == Keys.Enter)
             {
-                if (chkReissued1.Checked == true)
+                if (chkUnissued2.Checked == true)
                 {
                     int result = txtDateFrom2.Text.CompareTo(txtDateTo2.Text);
                     if (result > 0)
@@ -634,6 +620,73 @@ namespace PickingList
                 }
             }
         }
+
+        private void txtShipmentDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                if (string.IsNullOrWhiteSpace(txtDateTo1.Text) && string.IsNullOrWhiteSpace(txtShipmentDate.Text))
+                {
+                    bbl.ShowMessage("E202", "出荷予定日(To)", "出荷予定日");
+                    txtShipmentDate.Focus();
+                }
+                if ((!string.IsNullOrWhiteSpace(txtDateFrom1.Text) || !string.IsNullOrWhiteSpace(txtDateTo1.Text)) && !string.IsNullOrWhiteSpace(txtShipmentDate.Text))
+                {
+                    bbl.ShowMessage("E188", "出荷予定日(To)", "出荷予定日");
+                    txtShipmentDate.Focus();
+                }
+            }
+
+        }
+
+        private void ScPickingNo1_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScPickingNo1.TxtCode.Text))
+                {
+                    if (!ScPickingNo1.IsExists(2))
+                    {
+                        bbl.ShowMessage("E128");
+                        ScPickingNo1.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void ScPickingNo2_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(ScPickingNo2.TxtCode.Text))
+                {
+                    if (!ScPickingNo2.IsExists(2))
+                    {
+                        bbl.ShowMessage("E128");
+                        ScPickingNo2.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void chkUnissued1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUnissued1.Checked == true)
+            {
+                txtDateFrom1.Enabled = true;
+                txtDateTo1.Enabled = true;
+                txtDateTo1.Text = todayDate;
+
+            }
+            else
+            {
+                txtDateFrom1.Enabled = false;
+                txtDateTo1.Enabled = false;
+                txtDateTo1.Text = string.Empty;
+            }
+        }
+
+
 
         private void chkReissued1_CheckedChanged(object sender, EventArgs e)
         {
