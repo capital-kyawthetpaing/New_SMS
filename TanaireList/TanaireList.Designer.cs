@@ -89,7 +89,7 @@
             this.panel2.Location = new System.Drawing.Point(92, 163);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(700, 60);
-            this.panel2.TabIndex = 14;
+            this.panel2.TabIndex = 7;
             // 
             // ScSKUCD
             // 
@@ -197,6 +197,7 @@
             this.chkLocationNashi.Name = "chkLocationNashi";
             this.chkLocationNashi.Size = new System.Drawing.Size(50, 16);
             this.chkLocationNashi.TabIndex = 6;
+            this.chkLocationNashi.TabStop = false;
             this.chkLocationNashi.Text = "なし";
             this.chkLocationNashi.UseVisualStyleBackColor = true;
             // 
@@ -238,6 +239,7 @@
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(63, 16);
             this.chkRegistered.TabIndex = 4;
+            this.chkRegistered.TabStop = false;
             this.chkRegistered.Text = "登録済";
             this.chkRegistered.UseVisualStyleBackColor = true;
             // 
@@ -380,7 +382,6 @@
             this.PanelHeaderHeight = 40;
             this.Text = "TanaireList";
             this.Load += new System.EventHandler(this.FrmTanaireList_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTanaireList_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

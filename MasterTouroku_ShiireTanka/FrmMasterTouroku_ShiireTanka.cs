@@ -289,6 +289,22 @@ namespace MasterTouroku_ShiireTanka
             }
 
         }
+        private void itemcd_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (itemcd.SelectData())
+                {
+                    itemcd.Value1 = itemcd.TxtCode.Text;
+                    itemcd.Value2 = itemcd.LabelText;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    itemcd.SetFocus(1);
+                }
+            }
+        }
         #endregion
         private bool ErrorCheck()
         {
@@ -436,7 +452,6 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
         private M_ItemOrderPrice_Entity GetItemorder()
         {
             m_IOE = new M_ItemOrderPrice_Entity
@@ -465,7 +480,6 @@ namespace MasterTouroku_ShiireTanka
             };
             return m_IE;
         }
-
         private void TB_date_add_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode == Keys.Enter)
@@ -540,12 +554,10 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
         private void Btn_display_Click(object sender, EventArgs e)
         {
             F11();
         }
-
         private void RB_item_CheckedChanged(object sender, EventArgs e)
         {
             if (RB_sku.Checked == true)
@@ -567,7 +579,26 @@ namespace MasterTouroku_ShiireTanka
                 this.GV_sku.Size = new System.Drawing.Size(0, 0);
             }
         }
+        private void TB_rate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!String.IsNullOrEmpty(LB_listprice.Text))
+                {
+                    decimal rate = Convert.ToDecimal(TB_rate.Text);
+                    decimal con = (decimal)0.01;
+                    decimal listprice = Convert.ToDecimal(LB_listprice.Text);
+                    //TB_orderprice.Text = Convert.ToString(listprice * (rate * con));
+                    //TB_orderprice.Text= string.Format("{0:#,##0}", Convert.ToInt64((listprice * (rate * con))));
+             
+                    TB_orderprice.Text = Math.Round(listprice * (rate * con)).ToString();
+                }
+            }
+        }
 
-       
+        private void itemcd_Enter(object sender, EventArgs e)
+        {
+            itemcd.Value1 = "1";
+        }
     }
 }
