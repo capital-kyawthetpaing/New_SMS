@@ -57,6 +57,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
@@ -376,7 +380,6 @@
             this.PanelHeaderHeight = 40;
             this.Text = "TanaireList";
             this.Load += new System.EventHandler(this.FrmTanaireList_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTanaireList_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
