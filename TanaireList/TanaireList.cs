@@ -22,7 +22,7 @@ namespace TanaireList
         public FrmTanaireList()
         {
             InitializeComponent();
-            this.KeyUp += FrmTanaireList_KeyUp ;
+           // this.KeyUp += FrmTanaireList_KeyUp ;
             tnlbl = new TanaireList_BL();
         }
 
@@ -33,7 +33,7 @@ namespace TanaireList
             //SetFunctionLabel(EProMode.MENTE);
             this.SetFunctionLabel(EProMode.PRINT);
             StartProgram();
-            KeyUp += FrmTanaireList_KeyUp;
+            //KeyUp += FrmTanaireList_KeyUp;
 
             BindData();
 
