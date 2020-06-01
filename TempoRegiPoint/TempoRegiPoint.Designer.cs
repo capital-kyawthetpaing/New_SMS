@@ -105,9 +105,9 @@
             this.TxtCustomerCD.isMaxLengthErr = false;
             this.TxtCustomerCD.IsNumber = true;
             this.TxtCustomerCD.IsShop = false;
-            this.TxtCustomerCD.Length = 13;
-            this.TxtCustomerCD.Location = new System.Drawing.Point(259, 96);
-            this.TxtCustomerCD.MaxLength = 13;
+            this.TxtCustomerCD.Length = 11;
+            this.TxtCustomerCD.Location = new System.Drawing.Point(258, 96);
+            this.TxtCustomerCD.MaxLength = 11;
             this.TxtCustomerCD.MoveNext = true;
             this.TxtCustomerCD.Name = "TxtCustomerCD";
             this.TxtCustomerCD.Size = new System.Drawing.Size(255, 42);
@@ -156,10 +156,9 @@
             this.TxtIssuePoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.TxtIssuePoint.DecimalPlace = 0;
             this.TxtIssuePoint.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.TxtIssuePoint.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.TxtIssuePoint.IntegerPart = 7;
+            this.TxtIssuePoint.IntegerPart = 8;
             this.TxtIssuePoint.IsCorrectDate = true;
-            this.TxtIssuePoint.isEnterKeyDown = true;
+            this.TxtIssuePoint.isEnterKeyDown = false;
             this.TxtIssuePoint.isMaxLengthErr = false;
             this.TxtIssuePoint.IsNumber = true;
             this.TxtIssuePoint.IsShop = false;
@@ -180,14 +179,14 @@
             this.LblCustomerName.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.LblCustomerName.DefaultlabelSize = true;
-            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
-            this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Medium;
+            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LblCustomerName.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LblCustomerName.ForeColor = System.Drawing.Color.Black;
-            this.LblCustomerName.Location = new System.Drawing.Point(515, 96);
+            this.LblCustomerName.Location = new System.Drawing.Point(513, 96);
             this.LblCustomerName.Name = "LblCustomerName";
-            this.LblCustomerName.Size = new System.Drawing.Size(357, 22);
+            this.LblCustomerName.Size = new System.Drawing.Size(529, 12);
             this.LblCustomerName.TabIndex = 23;
-            this.LblCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸ15";
+            this.LblCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40";
             this.LblCustomerName.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LblCustomerName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
