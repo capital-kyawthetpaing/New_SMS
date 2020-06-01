@@ -9,20 +9,37 @@ namespace DL
     /// </summary>
     public class TempoRegiPoint_DL : Base_DL
     {
+        ///// <summary>
+        ///// 会員情報取得処理
+        ///// </summary>
+        ///// <param name="customerCD">会員番号</param>
+        ///// <param name="changeDate">変更日付</param>
+        ///// <returns>会員情報</returns>
+        //public DataTable D_CustomerSelectData(string customerCD = "", string changeDate = "")
+        //{
+        //    string sp = "M_Customer_Select";
+
+        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+        //    {
+        //        { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = customerCD } },
+        //        { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = changeDate } }
+        //    };
+
+        //    return SelectData(dic, sp);
+        //}
+
         /// <summary>
         /// 会員情報取得処理
         /// </summary>
         /// <param name="customerCD">会員番号</param>
-        /// <param name="changeDate">変更日付</param>
         /// <returns>会員情報</returns>
-        public DataTable D_CustomerSelectData(string customerCD = "", string changeDate = "")
+        public DataTable D_GetCustomer(string customerCD = "")
         {
-            string sp = "M_Customer_Select";
+            string sp = "D_GetCustomer_ForTempoRegiPoint";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = customerCD } },
-                { "@ChangeDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = changeDate } }
             };
 
             return SelectData(dic, sp);
