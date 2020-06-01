@@ -36,16 +36,16 @@
             this.label9 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
             this.dgvDetail = new CKM_Controls.CKM_GridView();
+            this.btnSubF11 = new CKM_Controls.CKM_Button();
+            this.ckM_Label1 = new System.Windows.Forms.Label();
+            this.radioButton2 = new CKM_Controls.CKM_RadioButton();
+            this.radioButton1 = new CKM_Controls.CKM_RadioButton();
+            this.ScMaker = new Search.CKM_SearchControl();
             this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBrandName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MakerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MakerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColChangeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSubF11 = new CKM_Controls.CKM_Button();
-            this.ckM_Label1 = new System.Windows.Forms.Label();
-            this.ScMaker = new Search.CKM_SearchControl();
-            this.radioButton2 = new CKM_Controls.CKM_RadioButton();
-            this.radioButton1 = new CKM_Controls.CKM_RadioButton();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             this.label8.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.DefaultlabelSize = true;
-            this.label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(52, 89);
@@ -97,7 +97,7 @@
             this.label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.DefaultlabelSize = true;
-            this.label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(39, 35);
@@ -118,7 +118,7 @@
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox3.DecimalPlace = 0;
-            this.ckM_TextBox3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ckM_TextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox3.IntegerPart = 0;
             this.ckM_TextBox3.IsCorrectDate = true;
@@ -127,7 +127,7 @@
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 15;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(103, 59);
+            this.ckM_TextBox3.Location = new System.Drawing.Point(103, 58);
             this.ckM_TextBox3.MaxLength = 15;
             this.ckM_TextBox3.MoveNext = true;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
@@ -141,10 +141,10 @@
             this.label9.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.DefaultlabelSize = true;
-            this.label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(26, 62);
+            this.label9.Location = new System.Drawing.Point(26, 61);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(70, 12);
             this.label9.TabIndex = 323;
@@ -158,7 +158,7 @@
             this.label5.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.DefaultlabelSize = true;
-            this.label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(52, 8);
@@ -178,7 +178,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -191,7 +191,6 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvDetail.Location = new System.Drawing.Point(18, 175);
@@ -206,49 +205,9 @@
             this.dgvDetail.TabIndex = 1;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
-            this.dgvDetail.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DgvDetail_CellPainting);
             this.dgvDetail.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvDetail_Paint);
             this.dgvDetail.DoubleClick += new System.EventHandler(this.DgvDetail_DoubleClick);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DgvDetail_KeyDown);
-            // 
-            // colBrandCD
-            // 
-            this.colBrandCD.DataPropertyName = "BrandCD";
-            this.colBrandCD.HeaderText = "CD";
-            this.colBrandCD.Name = "colBrandCD";
-            this.colBrandCD.ReadOnly = true;
-            this.colBrandCD.Width = 70;
-            // 
-            // colBrandName
-            // 
-            this.colBrandName.DataPropertyName = "BrandName";
-            this.colBrandName.HeaderText = "ブランド名";
-            this.colBrandName.Name = "colBrandName";
-            this.colBrandName.ReadOnly = true;
-            this.colBrandName.Width = 250;
-            // 
-            // MakerCD
-            // 
-            this.MakerCD.DataPropertyName = "MakerCD";
-            this.MakerCD.HeaderText = "仕入先";
-            this.MakerCD.Name = "MakerCD";
-            this.MakerCD.ReadOnly = true;
-            // 
-            // MakerName
-            // 
-            this.MakerName.DataPropertyName = "MakerName";
-            this.MakerName.HeaderText = "（メーカー）";
-            this.MakerName.Name = "MakerName";
-            this.MakerName.ReadOnly = true;
-            this.MakerName.Width = 300;
-            // 
-            // ColChangeDate
-            // 
-            this.ColChangeDate.DataPropertyName = "ChangeDate";
-            this.ColChangeDate.HeaderText = "改定日";
-            this.ColChangeDate.Name = "ColChangeDate";
-            this.ColChangeDate.ReadOnly = true;
-            this.ColChangeDate.Width = 90;
             // 
             // btnSubF11
             // 
@@ -258,7 +217,7 @@
             this.btnSubF11.DefaultBtnSize = true;
             this.btnSubF11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnSubF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSubF11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.btnSubF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
             this.btnSubF11.Location = new System.Drawing.Point(776, 81);
             this.btnSubF11.Margin = new System.Windows.Forms.Padding(1);
@@ -280,38 +239,10 @@
             this.ckM_Label1.Text = "YYYY/MM/DD";
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ScMaker
-            // 
-            this.ScMaker.AutoSize = true;
-            this.ScMaker.ChangeDate = "";
-            this.ScMaker.ChangeDateWidth = 100;
-            this.ScMaker.Code = "";
-            this.ScMaker.CodeWidth = 130;
-            this.ScMaker.CodeWidth1 = 130;
-            this.ScMaker.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScMaker.DataCheck = false;
-            this.ScMaker.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScMaker.IsCopy = false;
-            this.ScMaker.LabelText = "";
-            this.ScMaker.LabelVisible = true;
-            this.ScMaker.Location = new System.Drawing.Point(103, 76);
-            this.ScMaker.Margin = new System.Windows.Forms.Padding(0);
-            this.ScMaker.Name = "ScMaker";
-            this.ScMaker.NameWidth = 280;
-            this.ScMaker.SearchEnable = true;
-            this.ScMaker.Size = new System.Drawing.Size(444, 27);
-            this.ScMaker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.ScMaker.TabIndex = 4;
-            this.ScMaker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScMaker.UseChangeDate = false;
-            this.ScMaker.Value1 = null;
-            this.ScMaker.Value2 = null;
-            this.ScMaker.Value3 = null;
-            // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton2.Location = new System.Drawing.Point(171, 32);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(49, 16);
@@ -323,7 +254,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.radioButton1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.radioButton1.Location = new System.Drawing.Point(103, 33);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(62, 16);
@@ -331,6 +262,73 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "基準日";
             this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // ScMaker
+            // 
+            this.ScMaker.AutoSize = true;
+            this.ScMaker.ChangeDate = "";
+            this.ScMaker.ChangeDateWidth = 100;
+            this.ScMaker.Code = "";
+            this.ScMaker.CodeWidth = 100;
+            this.ScMaker.CodeWidth1 = 100;
+            this.ScMaker.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScMaker.DataCheck = false;
+            this.ScMaker.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScMaker.IsCopy = false;
+            this.ScMaker.LabelText = "";
+            this.ScMaker.LabelVisible = true;
+            this.ScMaker.Location = new System.Drawing.Point(103, 80);
+            this.ScMaker.Margin = new System.Windows.Forms.Padding(0);
+            this.ScMaker.Name = "ScMaker";
+            this.ScMaker.NameWidth = 310;
+            this.ScMaker.SearchEnable = true;
+            this.ScMaker.Size = new System.Drawing.Size(444, 27);
+            this.ScMaker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.ScMaker.TabIndex = 4;
+            this.ScMaker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScMaker.UseChangeDate = false;
+            this.ScMaker.Value1 = null;
+            this.ScMaker.Value2 = null;
+            this.ScMaker.Value3 = null;
+            // 
+            // colBrandCD
+            // 
+            this.colBrandCD.DataPropertyName = "BrandCD";
+            this.colBrandCD.HeaderText = "CD";
+            this.colBrandCD.Name = "colBrandCD";
+            this.colBrandCD.ReadOnly = true;
+            this.colBrandCD.Width = 70;
+            // 
+            // colBrandName
+            // 
+            this.colBrandName.DataPropertyName = "BrandName";
+            this.colBrandName.HeaderText = "ブランド名";
+            this.colBrandName.Name = "colBrandName";
+            this.colBrandName.ReadOnly = true;
+            this.colBrandName.Width = 250;
+            // 
+            // MakerCD
+            // 
+            this.MakerCD.DataPropertyName = "MakerCD";
+            this.MakerCD.HeaderText = "メーカー ";
+            this.MakerCD.Name = "MakerCD";
+            this.MakerCD.ReadOnly = true;
+            // 
+            // MakerName
+            // 
+            this.MakerName.DataPropertyName = "MakerName";
+            this.MakerName.HeaderText = " ";
+            this.MakerName.Name = "MakerName";
+            this.MakerName.ReadOnly = true;
+            this.MakerName.Width = 300;
+            // 
+            // ColChangeDate
+            // 
+            this.ColChangeDate.DataPropertyName = "ChangeDate";
+            this.ColChangeDate.HeaderText = "改定日";
+            this.ColChangeDate.Name = "ColChangeDate";
+            this.ColChangeDate.ReadOnly = true;
+            this.ColChangeDate.Width = 90;
             // 
             // Search_Brand
             // 
@@ -363,12 +361,12 @@
         private CKM_Controls.CKM_Button btnSubF11;
         private System.Windows.Forms.Label ckM_Label1;
         private CKM_SearchControl ScMaker;
+        private CKM_Controls.CKM_RadioButton radioButton2;
+        private CKM_Controls.CKM_RadioButton radioButton1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colBrandName;
         private System.Windows.Forms.DataGridViewTextBoxColumn MakerCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn MakerName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColChangeDate;
-        private CKM_Controls.CKM_RadioButton radioButton2;
-        private CKM_Controls.CKM_RadioButton radioButton1;
     }
 }

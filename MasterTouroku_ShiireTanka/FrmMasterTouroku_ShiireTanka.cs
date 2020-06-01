@@ -41,9 +41,35 @@ namespace MasterTouroku_ShiireTanka
             if(RB_koten.Checked == true)
             {
                 CB_store.SelectedValue = StoreCD;
+                CB_store.Enabled = true;
+            }
+            else
+            {
+                CB_store.SelectedValue = "0000";
+                CB_store.Enabled = false;
+            }
+            if (RB_sku.Checked == true)
+            {
+                panel4.Enabled = false;
+                panel5.Enabled = false;
+                GV_item.Hide();
+                GV_sku.Show();
+                this.GV_item.Location = new System.Drawing.Point(89, 346);
+                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+               
+            }
+            else
+            {
+                panel4.Enabled = true;
+                panel5.Enabled = true;
+                GV_item.Show();
+                GV_sku.Hide();
+                this.GV_sku.Size = new System.Drawing.Size(0, 0);
             }
             CB_year.Bind(ymd);
             CB_season.Bind(ymd);
+            CB_yearC.Bind(ymd);
+            cb_seasonC.Bind(ymd);
         }
         public override void FunctionProcess(int Index)
         {
@@ -62,6 +88,13 @@ namespace MasterTouroku_ShiireTanka
             }
         }
        
+        private void EnabledPanelContents(Panel panel, bool enabled)
+        {
+            foreach (Control item in panel.Controls)
+            {
+                item.Enabled = enabled;
+            }
+        }
         protected override void EndSec()
         {
             this.Close();
@@ -257,8 +290,6 @@ namespace MasterTouroku_ShiireTanka
 
         }
         #endregion
-
-
         private bool ErrorCheck()
         {
             if (String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
@@ -299,6 +330,35 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
+
+            if(!String.IsNullOrEmpty(brand.TxtCode.Text))
+            {
+                if(!brand.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    brand.SetFocus(1);
+                    return false;
+                }
+            }
+            if (!String.IsNullOrEmpty(sport.TxtCode.Text))
+            {
+                if (!sport.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    sport.SetFocus(1);
+                    return false;
+                }
+            }
+            if (!String.IsNullOrEmpty(segment.TxtCode.Text))
+            {
+                if (!segment.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    segment.SetFocus(1);
+                    return false;
+                }
+            }
+           
             if (!String.IsNullOrEmpty(makershohin.TxtCode.Text))
             {
                 if (!makershohin.IsExists(2))
@@ -308,31 +368,35 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
-            if (string.IsNullOrEmpty(itemcd.TxtCode.Text))
+            if(RB_item.Checked== true)
             {
-                bbl.ShowMessage("E102");
-                itemcd.SetFocus(1);
-                return false;
-            }
-            if(string.IsNullOrEmpty(TB_date_add.Text))
-            {
-                bbl.ShowMessage("E102");
-                TB_date_add.Focus();
-                return false;
+                if (string.IsNullOrEmpty(itemcd.TxtCode.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    itemcd.SetFocus(1);
+                    return false;
+                }
+                if (string.IsNullOrEmpty(TB_date_add.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    TB_date_add.Focus();
+                    return false;
 
+                }
+                if (string.IsNullOrEmpty(TB_rate.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    TB_rate.Focus();
+                    return false;
+                }
+                if (string.IsNullOrEmpty(TB_orderprice.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    TB_orderprice.Focus();
+                    return false;
+                }
             }
-            if (string.IsNullOrEmpty(TB_rate.Text))
-            {
-                bbl.ShowMessage("E102");
-                TB_rate.Focus();
-                return false;
-            }
-            if (string.IsNullOrEmpty(TB_orderprice.Text))
-            {
-                bbl.ShowMessage("E102");
-                TB_orderprice.Focus();
-                return false;
-            }
+            
             if (!String.IsNullOrEmpty(makershohinC.TxtCode.Text))
             {
                 if (!makershohinC.IsExists(2))
@@ -353,8 +417,10 @@ namespace MasterTouroku_ShiireTanka
                 DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
                 if(dt.Rows.Count > 0)
                 {
-                    GV_tanka.Refresh();
-                    GV_tanka.DataSource = dt;
+                    GV_item.Refresh();
+                    GV_item.DataSource = dt;
+                    GV_sku.Refresh();
+                    GV_sku.DataSource = dt;
                     brand.Clear();
                     sport.Clear();
                     segment.Clear();
@@ -365,9 +431,9 @@ namespace MasterTouroku_ShiireTanka
                 }
                 else
                 {
-                    GV_tanka.DataSource = null;
+                    GV_item.DataSource = null;
+                    GV_sku.DataSource = null;
                 }
-
             }
         }
 
@@ -377,9 +443,11 @@ namespace MasterTouroku_ShiireTanka
             {
                 VendorCD = shiiresaki.TxtCode.Text,
                 StoreCD = CB_store.SelectedValue.ToString(),
-                MakerItem=makershohin.TxtCode.Text,
-                Rate=TB_rate.Text,
-                ChangeDate=TB_date_condition.Text
+                MakerItem = makershohin.TxtCode.Text,
+                Rate = TB_rate.Text,
+                ChangeDate = TB_date_condition.Text,
+                Headerdate=TB_headerdate.Text,
+                Display = RB_current.Checked ? "0" : "1"
             };
             return m_IOE;
         }
@@ -392,9 +460,28 @@ namespace MasterTouroku_ShiireTanka
                 BrandCD=brand.TxtCode.Text,
                 LastYearTerm=CB_year.Text,
                 LastSeason=CB_season.Text,
-                ChangeDate=TB_headerdate.Text
+                ChangeDate=TB_date_add.Text,
+                ITemCD= itemcd.TxtCode.Text
             };
             return m_IE;
+        }
+
+        private void TB_date_add_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (String.IsNullOrEmpty(TB_date_add.Text))
+                {
+                    TB_date_add.Text = TB_headerdate.Text;
+                }
+                m_IE = GetItem();
+                DataTable dt = bl.M_ITem_ItemNandPriceoutTax_Select(m_IE);
+                if (dt.Rows.Count > 0)
+                {
+                    itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
+                    LB_listprice.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                }
+            }
         }
         private void Clear()
         {
@@ -423,18 +510,21 @@ namespace MasterTouroku_ShiireTanka
             makershohinC.Clear();
             TB_dateE.Text = string.Empty;
             TB_rate_E.Text = string.Empty;
-            
+            GV_item.Refresh();
+            GV_sku.Refresh();
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
             if (RB_koten.Checked == true)
             {
                 CB_store.SelectedValue = StoreCD;
+                CB_store.Enabled = true;
             }
             else
             {
-                CB_store.Text = string.Empty;
+                
                 CB_store.SelectedValue = "0000";
+                CB_store.Enabled = false;
             }
 
         }
@@ -455,5 +545,29 @@ namespace MasterTouroku_ShiireTanka
         {
             F11();
         }
+
+        private void RB_item_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RB_sku.Checked == true)
+            {
+                panel4.Enabled = false;
+                panel5.Enabled = false;
+                GV_item.Hide();
+                GV_sku.Show();
+                this.GV_item.Location = new System.Drawing.Point(89, 346);
+                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+
+            }
+            else
+            {
+                panel4.Enabled = true;
+                panel5.Enabled = true;
+                GV_item.Show();
+                GV_sku.Hide();
+                this.GV_sku.Size = new System.Drawing.Size(0, 0);
+            }
+        }
+
+       
     }
 }
