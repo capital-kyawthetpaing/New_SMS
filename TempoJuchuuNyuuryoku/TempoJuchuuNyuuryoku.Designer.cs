@@ -673,6 +673,9 @@
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
+            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Controls.Add(this.CHK_FUYO_2);
             this.Pnl_Body.Controls.Add(this.CHK_FUYO_1);
             this.Pnl_Body.Controls.Add(this.CHK_FUYO_0);
@@ -788,9 +791,6 @@
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_0);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_1);
             this.Pnl_Body.Controls.Add(this.IMT_VENCD_2);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_0);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_1);
-            this.Pnl_Body.Controls.Add(this.IMT_VENNM_2);
             this.Pnl_Body.Location = new System.Drawing.Point(1, 66);
             this.Pnl_Body.Name = "Pnl_Body";
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 232);
@@ -3680,12 +3680,12 @@
             this.IMT_VENNM_0.IsNumber = true;
             this.IMT_VENNM_0.IsShop = false;
             this.IMT_VENNM_0.Length = 80;
-            this.IMT_VENNM_0.Location = new System.Drawing.Point(389, 38);
+            this.IMT_VENNM_0.Location = new System.Drawing.Point(387, 38);
             this.IMT_VENNM_0.MaxLength = 80;
             this.IMT_VENNM_0.MoveNext = true;
             this.IMT_VENNM_0.Name = "IMT_VENNM_0";
             this.IMT_VENNM_0.ReadOnly = true;
-            this.IMT_VENNM_0.Size = new System.Drawing.Size(236, 19);
+            this.IMT_VENNM_0.Size = new System.Drawing.Size(238, 19);
             this.IMT_VENNM_0.TabIndex = 526;
             this.IMT_VENNM_0.Tag = "0";
             this.IMT_VENNM_0.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3709,12 +3709,12 @@
             this.IMT_VENNM_1.IsNumber = true;
             this.IMT_VENNM_1.IsShop = false;
             this.IMT_VENNM_1.Length = 80;
-            this.IMT_VENNM_1.Location = new System.Drawing.Point(389, 114);
+            this.IMT_VENNM_1.Location = new System.Drawing.Point(387, 114);
             this.IMT_VENNM_1.MaxLength = 80;
             this.IMT_VENNM_1.MoveNext = true;
             this.IMT_VENNM_1.Name = "IMT_VENNM_1";
             this.IMT_VENNM_1.ReadOnly = true;
-            this.IMT_VENNM_1.Size = new System.Drawing.Size(236, 19);
+            this.IMT_VENNM_1.Size = new System.Drawing.Size(238, 19);
             this.IMT_VENNM_1.TabIndex = 527;
             this.IMT_VENNM_1.Tag = "1";
             this.IMT_VENNM_1.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
@@ -3738,12 +3738,12 @@
             this.IMT_VENNM_2.IsNumber = true;
             this.IMT_VENNM_2.IsShop = false;
             this.IMT_VENNM_2.Length = 80;
-            this.IMT_VENNM_2.Location = new System.Drawing.Point(389, 190);
+            this.IMT_VENNM_2.Location = new System.Drawing.Point(387, 190);
             this.IMT_VENNM_2.MaxLength = 80;
             this.IMT_VENNM_2.MoveNext = true;
             this.IMT_VENNM_2.Name = "IMT_VENNM_2";
             this.IMT_VENNM_2.ReadOnly = true;
-            this.IMT_VENNM_2.Size = new System.Drawing.Size(236, 19);
+            this.IMT_VENNM_2.Size = new System.Drawing.Size(238, 19);
             this.IMT_VENNM_2.TabIndex = 528;
             this.IMT_VENNM_2.Tag = "2";
             this.IMT_VENNM_2.Text = "XXXXXXXXX1XXXXXXXX2XXXXXXXX3";
