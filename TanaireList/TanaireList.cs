@@ -22,7 +22,7 @@ namespace TanaireList
         public FrmTanaireList()
         {
             InitializeComponent();
-           // this.KeyUp += FrmTanaireList_KeyUp ;
+            this.KeyUp += FrmTanaireList_KeyUp ;
             tnlbl = new TanaireList_BL();
         }
 
