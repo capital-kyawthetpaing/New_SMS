@@ -219,7 +219,7 @@ namespace Search
 
             if (dt.Rows.Count>0)
             {
-                GvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
                 GvDetail.Enabled = true;
                 GvDetail.Focus();

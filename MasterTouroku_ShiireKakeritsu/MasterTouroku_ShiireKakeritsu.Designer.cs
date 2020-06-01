@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -286,7 +285,7 @@
             this.cbo_Season.MoveNext = true;
             this.cbo_Season.Name = "cbo_Season";
             this.cbo_Season.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Season.TabIndex = 14;
+            this.cbo_Season.TabIndex = 19;
             // 
             // cbo_Year
             // 
@@ -302,7 +301,7 @@
             this.cbo_Year.MoveNext = true;
             this.cbo_Year.Name = "cbo_Year";
             this.cbo_Year.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Year.TabIndex = 13;
+            this.cbo_Year.TabIndex = 18;
             // 
             // cbo_Season1
             // 
@@ -380,7 +379,7 @@
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -397,18 +396,11 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(149, 365);
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
+            this.dgv_ShiireKakeritsu.RowHeight_ = 20;
             this.dgv_ShiireKakeritsu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1300, 400);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
@@ -627,7 +619,7 @@
             this.txtRate.Name = "txtRate";
             this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
-            this.txtRate.TabIndex = 24;
+            this.txtRate.TabIndex = 25;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
@@ -671,7 +663,7 @@
             this.txtChangeDate.MoveNext = true;
             this.txtChangeDate.Name = "txtChangeDate";
             this.txtChangeDate.Size = new System.Drawing.Size(100, 19);
-            this.txtChangeDate.TabIndex = 23;
+            this.txtChangeDate.TabIndex = 20;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -730,7 +722,7 @@
             this.scSegmentCD.SearchEnable = true;
             this.scSegmentCD.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD.TabIndex = 12;
+            this.scSegmentCD.TabIndex = 17;
             this.scSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD.UseChangeDate = false;
             this.scSegmentCD.Value1 = null;
@@ -762,8 +754,8 @@
             this.scSportsCD.ChangeDate = "";
             this.scSportsCD.ChangeDateWidth = 100;
             this.scSportsCD.Code = "";
-            this.scSportsCD.CodeWidth = 100;
-            this.scSportsCD.CodeWidth1 = 100;
+            this.scSportsCD.CodeWidth = 50;
+            this.scSportsCD.CodeWidth1 = 50;
             this.scSportsCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSportsCD.DataCheck = false;
             this.scSportsCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -775,9 +767,9 @@
             this.scSportsCD.Name = "scSportsCD";
             this.scSportsCD.NameWidth = 250;
             this.scSportsCD.SearchEnable = true;
-            this.scSportsCD.Size = new System.Drawing.Size(384, 30);
+            this.scSportsCD.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD.TabIndex = 11;
+            this.scSportsCD.TabIndex = 16;
             this.scSportsCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD.UseChangeDate = false;
             this.scSportsCD.Value1 = null;
@@ -1113,8 +1105,8 @@
             this.scSportsCD1.ChangeDate = "";
             this.scSportsCD1.ChangeDateWidth = 100;
             this.scSportsCD1.Code = "";
-            this.scSportsCD1.CodeWidth = 100;
-            this.scSportsCD1.CodeWidth1 = 100;
+            this.scSportsCD1.CodeWidth = 50;
+            this.scSportsCD1.CodeWidth1 = 50;
             this.scSportsCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSportsCD1.DataCheck = false;
             this.scSportsCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1126,7 +1118,7 @@
             this.scSportsCD1.Name = "scSportsCD1";
             this.scSportsCD1.NameWidth = 250;
             this.scSportsCD1.SearchEnable = true;
-            this.scSportsCD1.Size = new System.Drawing.Size(384, 30);
+            this.scSportsCD1.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD1.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.scSportsCD1.TabIndex = 6;
             this.scSportsCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1461,8 +1453,8 @@
             this.scSupplierCD.ChangeDate = "";
             this.scSupplierCD.ChangeDateWidth = 100;
             this.scSupplierCD.Code = "";
-            this.scSupplierCD.CodeWidth = 130;
-            this.scSupplierCD.CodeWidth1 = 130;
+            this.scSupplierCD.CodeWidth = 100;
+            this.scSupplierCD.CodeWidth1 = 100;
             this.scSupplierCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSupplierCD.DataCheck = false;
             this.scSupplierCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1472,7 +1464,7 @@
             this.scSupplierCD.Location = new System.Drawing.Point(136, 12);
             this.scSupplierCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSupplierCD.Name = "scSupplierCD";
-            this.scSupplierCD.NameWidth = 280;
+            this.scSupplierCD.NameWidth = 310;
             this.scSupplierCD.SearchEnable = true;
             this.scSupplierCD.Size = new System.Drawing.Size(444, 30);
             this.scSupplierCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;

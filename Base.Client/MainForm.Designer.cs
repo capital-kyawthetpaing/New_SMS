@@ -60,6 +60,8 @@
             this.lblStoreCD = new CKM_Controls.CKM_Label();
             this.lblStoreAuthorizationChangeDate = new CKM_Controls.CKM_Label();
             this.lblProgramID = new CKM_Controls.CKM_Label();
+            this.lblIkkatuHacchuuMode = new System.Windows.Forms.Label();
+            this.btnChangeIkkatuHacchuuMode = new CKM_Controls.CKM_Button();
             this.panelTop.SuspendLayout();
             this.PanelHeader.SuspendLayout();
             this.PanelSubFooter.SuspendLayout();
@@ -122,6 +124,8 @@
             this.PanelTitle.Controls.Add(this.PanelLeft);
             this.PanelTitle.Controls.Add(this.PanelRight);
             this.PanelTitle.Controls.Add(this.lblDisp);
+            this.PanelTitle.Controls.Add(this.btnChangeIkkatuHacchuuMode);
+            this.PanelTitle.Controls.Add(this.lblIkkatuHacchuuMode);
             this.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTitle.Location = new System.Drawing.Point(0, 0);
             this.PanelTitle.Name = "PanelTitle";
@@ -137,6 +141,37 @@
             this.PanelLeft.Name = "PanelLeft";
             this.PanelLeft.Size = new System.Drawing.Size(573, 54);
             this.PanelLeft.TabIndex = 0;
+            // 
+            // lblIkkatuHacchuuMode
+            // 
+            this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.LightGreen;
+            this.lblIkkatuHacchuuMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblIkkatuHacchuuMode.Font = new System.Drawing.Font("ＭＳ ゴシック", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIkkatuHacchuuMode.Location = new System.Drawing.Point(601, 10);
+            this.lblIkkatuHacchuuMode.Name = "lblIkkatuHacchuuMode";
+            this.lblIkkatuHacchuuMode.Size = new System.Drawing.Size(94, 21);
+            this.lblIkkatuHacchuuMode.TabIndex = 62;
+            this.lblIkkatuHacchuuMode.Text = "Net発注";
+            this.lblIkkatuHacchuuMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIkkatuHacchuuMode.Visible = false;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangeIkkatuHacchuuMode.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnChangeIkkatuHacchuuMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeIkkatuHacchuuMode.DefaultBtnSize = false;
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnChangeIkkatuHacchuuMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeIkkatuHacchuuMode.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.btnChangeIkkatuHacchuuMode.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnChangeIkkatuHacchuuMode.Location = new System.Drawing.Point(700, 5);
+            this.btnChangeIkkatuHacchuuMode.Margin = new System.Windows.Forms.Padding(1);
+            this.btnChangeIkkatuHacchuuMode.Name = "btnChangeIkkatuHacchuuMode";
+            this.btnChangeIkkatuHacchuuMode.Size = new System.Drawing.Size(140, 29);
+            this.btnChangeIkkatuHacchuuMode.TabIndex = 704;
+            this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
+            this.btnChangeIkkatuHacchuuMode.Visible = false;
             // 
             // lblMode
             // 
@@ -668,5 +703,7 @@
         private CKM_Controls.CKM_Label lblStoreCD;
         private CKM_Controls.CKM_Label lblStoreAuthorizationChangeDate;
         private CKM_Controls.CKM_Label lblProgramID;
+        protected System.Windows.Forms.Label lblIkkatuHacchuuMode;
+        protected CKM_Controls.CKM_Button btnChangeIkkatuHacchuuMode;
     }
 }

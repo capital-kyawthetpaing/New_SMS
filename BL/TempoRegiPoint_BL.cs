@@ -8,16 +8,27 @@ namespace BL
     /// </summary>
     public class TempoRegiPoint_BL : Base_BL
     {
+        ///// <summary>
+        ///// 会員情報取得
+        ///// </summary>
+        ///// <param name="customerCD">会員番号</param>
+        ///// <param name="changeDate">変更日付</param>
+        ///// <returns>会員情報</returns>
+        //public DataTable D_GetCustomer(string customerCD = "", string changeDate = "")
+        //{
+        //    var dl = new TempoRegiPoint_DL();
+        //    return dl.D_CustomerSelectData(customerCD, changeDate);
+        //}
+
         /// <summary>
         /// 会員情報取得
         /// </summary>
         /// <param name="customerCD">会員番号</param>
-        /// <param name="changeDate">変更日付</param>
-        /// <returns>会員情報</returns>
-        public DataTable D_GetCustomer(string customerCD = "", string changeDate = "")
+        /// <returns>会員情報の有無(true=あり、false=なし)</returns>
+        public DataTable D_GetCustomer(string customerCD = "")
         {
             var dl = new TempoRegiPoint_DL();
-            return dl.D_CustomerSelectData(customerCD, changeDate);
+            return dl.D_GetCustomer(customerCD);
         }
 
         /// <summary>
