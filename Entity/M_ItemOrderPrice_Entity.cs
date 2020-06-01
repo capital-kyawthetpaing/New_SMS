@@ -14,5 +14,8 @@ namespace Entity
         public string Rate { get; set; }
         public string PriceWithoutTax { get; set; }
         public string Remarks { get; set; }
+        public string Display { get; set; }
+
+        public string Headerdate { get; set; }
     }
 }

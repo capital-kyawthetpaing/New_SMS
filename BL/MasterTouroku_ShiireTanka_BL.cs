@@ -16,5 +16,9 @@ namespace BL
         {
             return dl.M_ItemOrderPrice_Insert(mie,mi);
         }
+        public DataTable  M_ITem_ItemNandPriceoutTax_Select( M_ITEM_Entity mi)
+        {
+            return dl.M_ITem_ItemNandPriceoutTax_Select(mi);
+        }
     }
 }

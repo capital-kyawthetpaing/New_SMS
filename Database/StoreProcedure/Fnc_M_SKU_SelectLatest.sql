@@ -43,6 +43,9 @@ RETURN(
       ,main.MakerItem
       ,main.TaniCD
       ,main.SportsCD
+      ,main.ClassificationA
+      ,main.ClassificationB
+      ,main.ClassificationC
       ,main.ZaikoKBN
       ,main.Rack
       ,main.VirtualFlg
@@ -59,6 +62,7 @@ RETURN(
       ,main.MakerAddFlg
       ,main.StoreAddFlg
       ,main.NoNetOrderFlg
+      ,main.EDIOrderFlg
       ,main.CatalogFlg
       ,main.ParcelFlg
       ,main.AutoOrderFlg

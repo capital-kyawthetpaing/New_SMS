@@ -25,6 +25,7 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+
         public DataTable D_Order_SelectAll(D_Order_Entity doe, M_SKU_Entity mse)
         {
             string sp = "D_Order_SelectAll";
@@ -45,10 +46,10 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-
         public DataTable D_Order_SelectAllForShoukai(D_Order_Entity doe, M_SKU_Entity mse, string operatorNm, string pc)
         {
             string sp = "D_Order_SelectAllForShoukai";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
@@ -59,6 +60,7 @@ namespace DL
                 { "@ArrivalDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalDateTo } },
                 { "@PurchaseDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.PurchaseDateFrom } },
                 { "@PurchaseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.PurchaseDateTo } },
+
                 { "@ChkMikakutei", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMikakutei.ToString() } },
                 { "@ArrivalPlan", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanCD } },
                 { "@ChkKanbai", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkKanbai.ToString() } },
@@ -74,22 +76,25 @@ namespace DL
                 { "@ChkNet", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkNet.ToString() } },
                 { "@ChkFax", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFax.ToString() } },
                 { "@ChkEdi", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkEdi.ToString() } },
+
                 { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
-                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },	
-                //{ "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },	
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
+                //{ "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StaffCD } },
                 { "@MakerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.MakerItem } },
                 { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+
                 { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.JuchuuNO } },
                 { "@DestinationSoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.DestinationSoukoCD } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
+
             };
+
             return SelectData(dic, sp);
         }
-
         /// <summary>
         /// 発注承認入力データ取得処理
         /// </summary>
@@ -211,7 +216,18 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable CheckSyonin(string hacchuNo, string InOperatorCD)
+        {
+            string sp = "CheckSyonin";
 
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = hacchuNo } },
+                { "@Operator",new ValuePair { value1 = SqlDbType.VarChar, value2 = InOperatorCD } },
+            };
+
+            return SelectData(dic, sp);
+        }
         public bool D_Hacchu_Update(D_Mitsumori_Entity dme, DataTable dt, string operatorNm, string pc)
         {
             string sp = "D_Hacchu_Update";
@@ -231,10 +247,10 @@ namespace DL
 
             return ret;
         }
-
         public DataTable D_Order_SelectDataForKaitouNouki(D_Order_Entity doe)
         {
             string sp = "D_Order_SelectDataForKaitouNouki";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@ArrivalPlanDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ArrivalPlanDateFrom } },
@@ -243,19 +259,23 @@ namespace DL
                 { "@ArrivalPlanMonthTo", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanMonthTo } },
                 { "@OrderDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateFrom } },
                 { "@OrderDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderDateTo } },
+
                 { "@OrderNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoFrom } },
                 { "@OrderNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNoTo } },
                 { "@EDIDate", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.EDIDate } },
+
                 { "@ChkMikakutei", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkMikakutei.ToString() } },
                 { "@ArrivalPlan", new ValuePair { value1 = SqlDbType.Int, value2 = doe.ArrivalPlanCD } },
                 { "@ChkKanbai", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkKanbai.ToString() } },
                 { "@ChkFuyo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = doe.ChkFuyo.ToString() } },
+
                 { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderCD } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
+
             };
+
             return SelectData(dic, sp);
         }
-
 
         /// <summary>
         /// 回答納期登録更新処理
@@ -297,8 +317,6 @@ namespace DL
             return ret;
         }
 
-       
-
         /// <summary>
         /// 回答納期確認書よりデータ取得
         /// </summary>
@@ -333,15 +351,19 @@ namespace DL
         public DataTable D_Order_Select(string orderNo)
         {
             string sp = "D_Order_SelectForEDIHacchuu";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                 {
                     { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = orderNo } },
                 };
+
             return SelectData(dic, sp);
         }
+
         public DataTable D_Order_SelectAllForEDIHacchuu(D_Order_Entity doe)
         {
             string sp = "D_Order_SelectAllForEDIHacchuu";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
                 {
                     { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.StoreCD } },
@@ -352,16 +374,20 @@ namespace DL
                     { "@OrderNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.OrderNO } },
                     { "@ChkMisyonin", new ValuePair { value1 = SqlDbType.VarChar, value2 = doe.ChkMisyonin.ToString() } },
                 };
+
             return SelectData(dic, sp);
         }
+
         public bool D_Order_ExecForNyuka(D_Order_Entity de)
         {
             string sp = "D_Order_ExecForNyuka";
+
             command = new SqlCommand(sp, GetConnection());
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
+
             AddParam(command, "@StoreCD", SqlDbType.VarChar, de.StoreCD);
-            AddParam(command, "@ChangeDate", SqlDbType.Date, de.ChangeDate);    //ArrivalDate	
+            AddParam(command, "@ChangeDate", SqlDbType.Date, de.ChangeDate);    //ArrivalDate
             AddParam(command, "@SoukoCD", SqlDbType.VarChar, de.DestinationSoukoCD);
             AddParam(command, "@StaffCD", SqlDbType.VarChar, de.StaffCD);
             AddParam(command, "@OrderWayKBN", SqlDbType.TinyInt, de.OrderWayKBN);
@@ -383,17 +409,19 @@ namespace DL
             AddParam(command, "@OrderTax", SqlDbType.Money, de.OrderTax);
             AddParam(command, "@OrderTaxRitsu", SqlDbType.Int, de.OrderTaxRitsu);
             AddParam(command, "@Operator", SqlDbType.VarChar, de.Operator);
-            //OUTパラメータの追加	
+
+            //OUTパラメータの追加
             string outPutParam = "@OutOrderNo";
             command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
             command.Parameters[outPutParam].Direction = ParameterDirection.Output;
-            UseTransaction = true;
 
+            UseTransaction = true;
+            
             bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
             if (ret)
                 de.OrderNO = outPutParam;
+
             return ret;
         }
-
     }
 }

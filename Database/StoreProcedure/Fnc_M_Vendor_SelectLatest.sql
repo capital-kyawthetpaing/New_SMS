@@ -37,6 +37,7 @@ RETURN(
       ,main.Address1
       ,main.Address2
       ,main.MailAddress
+      ,main.TelephoneNO
       ,main.FaxNO
       ,main.PaymentCloseDay
       ,main.PaymentPlanKBN
@@ -48,7 +49,11 @@ RETURN(
       ,main.KouzaNO
       ,main.KouzaMeigi
       ,main.KouzaCD
+      ,main.TaxTiming
+      ,main.TaxFractionKBN
+      ,main.AmountFractionKBN
       ,main.NetFlg
+      ,main.EDIFlg
       ,main.LastOrderDate
       ,main.StaffCD
       ,main.AnalyzeCD1
