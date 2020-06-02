@@ -1895,9 +1895,7 @@ namespace Search
                 case SearchType.仕入先:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 4, TxtCode.Text);
                     break;
-                case SearchType.仕入先PayeeFlg:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
-                    break;
+                
                 case SearchType.スタッフ:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 5, TxtCode.Text);
                     break;
@@ -1927,9 +1925,11 @@ namespace Search
                 case SearchType.商品分類:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 13, txtCode.Text, Value1);
                     break;
-                case SearchType.SKU_ITEM_CD:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
+
+                case SearchType.仕入先PayeeFlg:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
                     break;
+
             }
             if (dtResult.Rows.Count > 0)
             {
