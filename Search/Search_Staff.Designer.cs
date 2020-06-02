@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new CKM_Controls.CKM_Label();
             this.ckM_TextBox4 = new CKM_Controls.CKM_TextBox();
             this.label3 = new CKM_Controls.CKM_Label();
@@ -164,7 +165,7 @@
             this.label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(158, 90);
+            this.label4.Location = new System.Drawing.Point(198, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 12);
             this.label4.TabIndex = 325;
@@ -268,12 +269,12 @@
             this.ckM_TextBox2.isMaxLengthErr = false;
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 3;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(196, 87);
-            this.ckM_TextBox2.MaxLength = 3;
+            this.ckM_TextBox2.Length = 10;
+            this.ckM_TextBox2.Location = new System.Drawing.Point(240, 87);
+            this.ckM_TextBox2.MaxLength = 10;
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(36, 19);
+            this.ckM_TextBox2.Size = new System.Drawing.Size(70, 19);
             this.ckM_TextBox2.TabIndex = 5;
             this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -295,12 +296,12 @@
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
-            this.ckM_TextBox1.Length = 3;
+            this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(102, 87);
-            this.ckM_TextBox1.MaxLength = 3;
+            this.ckM_TextBox1.MaxLength = 10;
             this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
-            this.ckM_TextBox1.Size = new System.Drawing.Size(36, 19);
+            this.ckM_TextBox1.Size = new System.Drawing.Size(70, 19);
             this.ckM_TextBox1.TabIndex = 4;
             this.ckM_TextBox1.Text = "XXX";
             this.ckM_TextBox1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -332,7 +333,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -347,6 +348,14 @@
             this.colJoinDate,
             this.LeaveDate,
             this.ColChangeDate});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -355,6 +364,8 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
+            this.dgvDetail.RowHeight_ = 20;
+            this.dgvDetail.RowTemplate.Height = 20;
             this.dgvDetail.Size = new System.Drawing.Size(876, 290);
             this.dgvDetail.TabIndex = 1;
             this.dgvDetail.UseRowNo = true;
@@ -478,6 +489,7 @@
             this.ScStore.ChangeDateWidth = 100;
             this.ScStore.Code = "";
             this.ScStore.CodeWidth = 40;
+            this.ScStore.CodeWidth1 = 40;
             this.ScStore.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStore.DataCheck = false;
             this.ScStore.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -487,6 +499,7 @@
             this.ScStore.Location = new System.Drawing.Point(103, 53);
             this.ScStore.Margin = new System.Windows.Forms.Padding(0);
             this.ScStore.Name = "ScStore";
+            this.ScStore.NameWidth = 280;
             this.ScStore.SearchEnable = true;
             this.ScStore.Size = new System.Drawing.Size(354, 27);
             this.ScStore.Stype = Search.CKM_SearchControl.SearchType.店舗;
