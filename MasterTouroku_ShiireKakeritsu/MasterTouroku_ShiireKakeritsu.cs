@@ -1059,5 +1059,14 @@ namespace MasterTouroku_ShiireKakeritsu
                 F10();
             }
         }
+
+        private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!base.CheckAvailableStores(cbo_Store.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E141");
+                cbo_Store.Focus();
+            }
+        }
     }
 }
