@@ -966,24 +966,20 @@ namespace MasterTouroku_ShiireKakeritsu
                         mskbl.ShowMessage("E138");
                         return false;
                     }
-                    //else if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
+                    //else if (row["ブランドCD"] ==DBNull.Value && row["競　技CD"] !=DBNull.Value)
                     //{
-                    //    if (mskbl.SimpleSelect1("64", '202', row["競　技CD"]))
-                    //    {
-                    //        mskbl.ShowMessage("E138");
-                    //        return false;
-                    //    }
+                    //        if (mskbl.SimpleSelect1("64", string.Empty, "202", string.IsNullOrWhiteSpace(row["競　技CD"]), string.Empty))
+                    //        {
+                    //            mskbl.ShowMessage("E138");
+                    //            return false;
+                    //        }
                     //}
                     else if (row["競　技CD"] == DBNull.Value && row["商品分類CD"] != DBNull.Value)
                     {
                         mskbl.ShowMessage("E229");
                         return false;
                     }
-                    //else if (mskbl.SimpleSelect1("64", '203', row["商品分類CD"]))
-                    //{
-                    //    mskbl.ShowMessage("E138");
-                    //    return false;
-                    //}
+
                     else if (row["商品分類CD"] == DBNull.Value && row["年度"] != DBNull.Value)
                     {
                         mskbl.ShowMessage("E229");
