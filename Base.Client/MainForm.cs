@@ -1992,7 +1992,7 @@ namespace Base.Client
                 {
                     //CheckBoxやRadioButtonのフォーカス移動を自動にされると制御できないため　2020/5/25
                     //f comment on these place, we can't move another control from radio button or checkbox on Enter Key Press. 2020/06/01
-                    this.SelectNextControl(ActiveControl, true, true, true, true);
+                    //this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
             }
          

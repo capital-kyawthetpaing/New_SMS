@@ -110,7 +110,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         }
 
         private bool ErrorCheck(int index)
-       {
+        {
             if(index == 11)
             {
                 if (RequireCheck(new Control[] { Sc_Item.TxtCode }))
@@ -187,34 +187,43 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 //    }
                 //}
 
-                foreach (Control c in this.Controls)
-                {
+                //foreach (Control c in this.Controls)
+                //{
 
-                    if (c.GetType().ToString() == "System.Windows.Form.Textbox")
-                    {
-                        
-                        //your code goes here
-                        //if (sizetb_Ctrl)
-                        //{
+                //    if (c.GetType().ToString() == "System.Windows.Form.Textbox")
+                //    {
 
-                        //}
+                //        //your code goes here
+                //        //if (sizetb_Ctrl)
+                //        //{
 
-                    }
+                //        //}
 
-                }
+                //    }
 
-                foreach (Control control in this.Controls)
-                {
-                    if (control is TextBox)
-                    // You can check any other property here and do what you want
-                    // for example:
-                    {
-                        //if(this.Controls.Find("txtnewsize",true))
-                        //{
+                //}
 
-                        //}
-                    }
-                }
+                //foreach (Control control in this.Controls)
+                //{
+                //    if (control is TextBox)
+                //    // You can check any other property here and do what you want
+                //    // for example:
+                //    {
+                //        //if (this.Controls.Find("txtnewsize", true))
+                //        //{
+
+                //        //}
+
+
+
+                //    }
+                //}
+
+                var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
+                //if(sizetb_Ctrl == true)
+                //{
+
+                //}
 
 
 
