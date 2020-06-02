@@ -26,6 +26,15 @@ namespace DL
                 { "@lastyearterm", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastYearTerm } },
                 { "@lastseason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
                 { "@heardate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
+                { "@itemcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Display } },
+                { "@dateadd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.BrandCD } },
+                { "@rate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Rate} },
+                { "@priceouttax", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.PriceOutTax } },
+                { "@priceoutwithouttax", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.PriceWithoutTax } },
+                { "@insertoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
+                { "@insertdatetime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
+                { "@updateoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
+                { "@updatetime", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
             };
             return SelectData(dic, sp);
         }

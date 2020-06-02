@@ -528,7 +528,7 @@
             this.btnAddress.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnAddress.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnAddress.ForeColor = System.Drawing.Color.Black;
-            this.btnAddress.Location = new System.Drawing.Point(525, 417);
+            this.btnAddress.Location = new System.Drawing.Point(526, 417);
             this.btnAddress.Margin = new System.Windows.Forms.Padding(1);
             this.btnAddress.Name = "btnAddress";
             this.btnAddress.Size = new System.Drawing.Size(200, 45);
@@ -641,7 +641,7 @@
             this.txtZipCode2.IsNumber = true;
             this.txtZipCode2.IsShop = false;
             this.txtZipCode2.Length = 4;
-            this.txtZipCode2.Location = new System.Drawing.Point(445, 418);
+            this.txtZipCode2.Location = new System.Drawing.Point(446, 418);
             this.txtZipCode2.MaxLength = 4;
             this.txtZipCode2.MoveNext = true;
             this.txtZipCode2.Name = "txtZipCode2";
