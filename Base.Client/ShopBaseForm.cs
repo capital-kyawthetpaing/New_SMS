@@ -570,6 +570,12 @@ namespace Base.Client
                 }
                 else if (ActiveControl is CKM_GridView)
                 { }
+                else if (ActiveControl is CKMShop_CheckBox csc || (ActiveControl is CKMShop_RadioButton csr))
+                {
+
+
+                    this.SelectNextControl(ActiveControl, true, true, true, true);
+                }
                 else
                 {
 
@@ -596,7 +602,7 @@ namespace Base.Client
                             else
                                 con.Mdea = false;
                         }
-                            
+
                     }
                     else
                     {

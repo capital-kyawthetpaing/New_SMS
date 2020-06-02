@@ -16,6 +16,7 @@ namespace Entity
         public string Remarks { get; set; }
         public string Display { get; set; }
 
+        public string InsertOperator { get; set; }
         public string Headerdate { get; set; }
     }
 }
