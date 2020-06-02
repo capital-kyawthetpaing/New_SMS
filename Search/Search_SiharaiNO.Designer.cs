@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPaymentDateFrom = new CKM_Controls.CKM_TextBox();
             this.txtPaymentDateTo = new CKM_Controls.CKM_TextBox();
@@ -41,7 +42,6 @@
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.btnShow = new CKM_Controls.CKM_Button();
             this.dgvSiharaiNO = new CKM_Controls.CKM_GridView();
-            this.Sc_PaymentDestination = new Search.CKM_SearchControl();
             this.colTransactionNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPaymentNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPaymentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +51,7 @@
             this.colAmountOfPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTransferAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colOtherThanTransfer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sc_PaymentDestination = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSiharaiNO)).BeginInit();
             this.SuspendLayout();
@@ -105,6 +106,7 @@
             this.txtPaymentDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateFrom.DecimalPlace = 0;
@@ -112,6 +114,7 @@
             this.txtPaymentDateFrom.IntegerPart = 0;
             this.txtPaymentDateFrom.IsCorrectDate = true;
             this.txtPaymentDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDateFrom.isMaxLengthErr = false;
             this.txtPaymentDateFrom.IsNumber = true;
             this.txtPaymentDateFrom.IsShop = false;
             this.txtPaymentDateFrom.Length = 8;
@@ -130,6 +133,7 @@
             this.txtPaymentDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateTo.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateTo.DecimalPlace = 0;
@@ -137,6 +141,7 @@
             this.txtPaymentDateTo.IntegerPart = 0;
             this.txtPaymentDateTo.IsCorrectDate = true;
             this.txtPaymentDateTo.isEnterKeyDown = false;
+            this.txtPaymentDateTo.isMaxLengthErr = false;
             this.txtPaymentDateTo.IsNumber = true;
             this.txtPaymentDateTo.IsShop = false;
             this.txtPaymentDateTo.Length = 8;
@@ -156,6 +161,7 @@
             this.txtPaymentInputDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPaymentInputDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentInputDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateFrom.DecimalPlace = 0;
@@ -163,6 +169,7 @@
             this.txtPaymentInputDateFrom.IntegerPart = 0;
             this.txtPaymentInputDateFrom.IsCorrectDate = true;
             this.txtPaymentInputDateFrom.isEnterKeyDown = false;
+            this.txtPaymentInputDateFrom.isMaxLengthErr = false;
             this.txtPaymentInputDateFrom.IsNumber = true;
             this.txtPaymentInputDateFrom.IsShop = false;
             this.txtPaymentInputDateFrom.Length = 8;
@@ -181,6 +188,7 @@
             this.txtPaymentInputDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateTo.BackColor = System.Drawing.Color.White;
             this.txtPaymentInputDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentInputDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateTo.DecimalPlace = 0;
@@ -188,6 +196,7 @@
             this.txtPaymentInputDateTo.IntegerPart = 0;
             this.txtPaymentInputDateTo.IsCorrectDate = true;
             this.txtPaymentInputDateTo.isEnterKeyDown = false;
+            this.txtPaymentInputDateTo.isMaxLengthErr = false;
             this.txtPaymentInputDateTo.IsNumber = true;
             this.txtPaymentInputDateTo.IsShop = false;
             this.txtPaymentInputDateTo.Length = 8;
@@ -290,6 +299,7 @@
             // 
             // dgvSiharaiNO
             // 
+            this.dgvSiharaiNO.AllowUserToAddRows = false;
             this.dgvSiharaiNO.AllowUserToDeleteRows = false;
             this.dgvSiharaiNO.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -297,7 +307,7 @@
             this.dgvSiharaiNO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -314,43 +324,25 @@
             this.colAmountOfPayment,
             this.colTransferAmount,
             this.colOtherThanTransfer});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSiharaiNO.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSiharaiNO.EnableHeadersVisualStyles = false;
             this.dgvSiharaiNO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSiharaiNO.Location = new System.Drawing.Point(31, 205);
             this.dgvSiharaiNO.Name = "dgvSiharaiNO";
+            this.dgvSiharaiNO.RowHeight_ = 20;
             this.dgvSiharaiNO.Size = new System.Drawing.Size(953, 400);
             this.dgvSiharaiNO.TabIndex = 0;
             this.dgvSiharaiNO.UseRowNo = true;
             this.dgvSiharaiNO.UseSetting = true;
             this.dgvSiharaiNO.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSiharaiNO_CellDoubleClick);
             this.dgvSiharaiNO.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvSiharaiNO_Paint);
-            // 
-            // Sc_PaymentDestination
-            // 
-            this.Sc_PaymentDestination.AutoSize = true;
-            this.Sc_PaymentDestination.ChangeDate = "";
-            this.Sc_PaymentDestination.ChangeDateWidth = 100;
-            this.Sc_PaymentDestination.Code = "";
-            this.Sc_PaymentDestination.CodeWidth = 130;
-            this.Sc_PaymentDestination.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.Sc_PaymentDestination.DataCheck = false;
-            this.Sc_PaymentDestination.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.Sc_PaymentDestination.IsCopy = false;
-            this.Sc_PaymentDestination.LabelText = "";
-            this.Sc_PaymentDestination.LabelVisible = true;
-            this.Sc_PaymentDestination.Location = new System.Drawing.Point(105, 75);
-            this.Sc_PaymentDestination.Margin = new System.Windows.Forms.Padding(0);
-            this.Sc_PaymentDestination.Name = "Sc_PaymentDestination";
-            this.Sc_PaymentDestination.SearchEnable = true;
-            this.Sc_PaymentDestination.Size = new System.Drawing.Size(444, 28);
-            this.Sc_PaymentDestination.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.Sc_PaymentDestination.TabIndex = 4;
-            this.Sc_PaymentDestination.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.Sc_PaymentDestination.UseChangeDate = false;
-            this.Sc_PaymentDestination.Value1 = null;
-            this.Sc_PaymentDestination.Value2 = null;
-            this.Sc_PaymentDestination.Value3 = null;
-            this.Sc_PaymentDestination.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_PaymentDestination_CodeKeyDownEvent);
             // 
             // colTransactionNo
             // 
@@ -423,6 +415,35 @@
             this.colOtherThanTransfer.MaxInputLength = 8;
             this.colOtherThanTransfer.Name = "colOtherThanTransfer";
             this.colOtherThanTransfer.Width = 80;
+            // 
+            // Sc_PaymentDestination
+            // 
+            this.Sc_PaymentDestination.AutoSize = true;
+            this.Sc_PaymentDestination.ChangeDate = "";
+            this.Sc_PaymentDestination.ChangeDateWidth = 100;
+            this.Sc_PaymentDestination.Code = "";
+            this.Sc_PaymentDestination.CodeWidth = 100;
+            this.Sc_PaymentDestination.CodeWidth1 = 100;
+            this.Sc_PaymentDestination.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.Sc_PaymentDestination.DataCheck = false;
+            this.Sc_PaymentDestination.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.Sc_PaymentDestination.IsCopy = false;
+            this.Sc_PaymentDestination.LabelText = "";
+            this.Sc_PaymentDestination.LabelVisible = true;
+            this.Sc_PaymentDestination.Location = new System.Drawing.Point(105, 75);
+            this.Sc_PaymentDestination.Margin = new System.Windows.Forms.Padding(0);
+            this.Sc_PaymentDestination.Name = "Sc_PaymentDestination";
+            this.Sc_PaymentDestination.NameWidth = 310;
+            this.Sc_PaymentDestination.SearchEnable = true;
+            this.Sc_PaymentDestination.Size = new System.Drawing.Size(444, 28);
+            this.Sc_PaymentDestination.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.Sc_PaymentDestination.TabIndex = 4;
+            this.Sc_PaymentDestination.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.Sc_PaymentDestination.UseChangeDate = false;
+            this.Sc_PaymentDestination.Value1 = null;
+            this.Sc_PaymentDestination.Value2 = null;
+            this.Sc_PaymentDestination.Value3 = null;
+            this.Sc_PaymentDestination.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Sc_PaymentDestination_CodeKeyDownEvent);
             // 
             // FrmSearch_SiharaiNO
             // 
