@@ -1832,7 +1832,7 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                     case SearchType.商品分類:
-                        dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        dtResult = bbl.SimpleSelect1("64", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
 
                 }
