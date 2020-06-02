@@ -145,10 +145,10 @@ namespace CKM_Controls
         {
             base.OnLostFocus(e);
         }
-        protected override bool ShowFocusCues
-        {
-            get { return true; }
-        }
+        //protected override bool ShowFocusCues
+        //{
+        //    get { return true; }
+        //}
 
     }
 }

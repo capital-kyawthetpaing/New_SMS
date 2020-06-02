@@ -435,6 +435,13 @@ namespace MasterTouroku_ShiireTanka
             {
                 m_IOE = GetItemorder();
                 m_IE = GetItem();
+                brand.Clear();
+                sport.Clear();
+                segment.Clear();
+                CB_year.Text = string.Empty;
+                CB_season.Text = string.Empty;
+                TB_date_condition.Text = string.Empty;
+                makershohin.Clear();
                 DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
                 if(dt.Rows.Count > 0)
                 {
@@ -442,13 +449,7 @@ namespace MasterTouroku_ShiireTanka
                     GV_item.DataSource = dt;
                     GV_sku.Refresh();
                     GV_sku.DataSource = dt;
-                    brand.Clear();
-                    sport.Clear();
-                    segment.Clear();
-                    CB_year.Text = string.Empty;
-                    CB_season.Text = string.Empty;
-                    TB_date_condition.Text = string.Empty;
-                    makershohin.Clear();
+                   
                 }
                 else
                 {
@@ -467,7 +468,10 @@ namespace MasterTouroku_ShiireTanka
                 Rate = TB_rate.Text,
                 ChangeDate = TB_date_condition.Text,
                 Headerdate=TB_headerdate.Text,
-                Display = RB_current.Checked ? "0" : "1"
+                PriceWithoutTax=TB_pricewithouttax.Text,
+                Display = RB_current.Checked ? "0" : "1",
+                InsertOperator =  InOperatorCD
+
             };
             return m_IOE;
         }
@@ -481,7 +485,9 @@ namespace MasterTouroku_ShiireTanka
                 LastYearTerm=CB_year.Text,
                 LastSeason=CB_season.Text,
                 ChangeDate=TB_date_add.Text,
-                ITemCD= itemcd.TxtCode.Text
+                ITemCD= itemcd.TxtCode.Text,
+                PriceOutTax=LB_priceouttax.Text
+                
             };
             return m_IE;
         }
@@ -601,6 +607,13 @@ namespace MasterTouroku_ShiireTanka
             }
         }
 
-        
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+
+            m_IOE = GetItemorder();
+            m_IE = GetItem();
+             DataTable dt=bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            
+        }
     }
 }

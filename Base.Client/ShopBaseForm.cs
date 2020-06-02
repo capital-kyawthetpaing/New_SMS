@@ -572,6 +572,8 @@ namespace Base.Client
                 { }
                 else if (ActiveControl is CKMShop_CheckBox csc || (ActiveControl is CKMShop_RadioButton csr))
                 {
+
+
                     this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
                 else
