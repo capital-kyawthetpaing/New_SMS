@@ -1927,6 +1927,9 @@ namespace Search
                 case SearchType.商品分類:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 13, txtCode.Text, Value1);
                     break;
+                case SearchType.SKU_ITEM_CD:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
+                    break;
             }
             if (dtResult.Rows.Count > 0)
             {
