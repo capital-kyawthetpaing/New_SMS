@@ -71,10 +71,10 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     }
                     break;
                 case 11:
-                    //F11();
+                    F11();
                     break;
                 case 12:
-                    //F12();
+                    F12();
                     break;
             }
         }
@@ -88,7 +88,8 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     Clear(PanelHeader);
                     Clear(panelDetail);
                     EnablePanel(PanelHeader);
-                    DisablePanel(panelDetail);
+                    //DisablePanel(panelDetail);
+                    EnablePanel(panelDetail);
                     Sc_Item.SearchEnable = true;
                     F9Visible = true;
                     F11Display.Enabled = F11Enable = true;
@@ -219,14 +220,41 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 //    }
                 //}
 
-                var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                //if(sizetb_Ctrl == true)
+                //var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
+                //if (sizetb_Ctrl. == true)
                 //{
 
                 //}
 
+                //foreach (var control in this.Controls.Find("txtnewsize", true))
+                //{
+                //    var textBox = control as TextBox;
+                //    if (textBox != null)
+                //    {
+                //        //if(textBox.find)
+                //    }
+                //}
+                var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
+                foreach (Control control in this.Controls)
+                {
+                    if (control is TextBox)
+                    {
+                        if ((control as TextBox).Name.Contains(sizetb_Ctrl.ToString()))
+                        {
+                            //string a = "aye";
+                        }
+                    }
+                        
+                }
 
-
+                //foreach (Control control in this.Controls)
+                //{
+                //    if (control is TextBox)
+                //        // You can check any other property here and do what you want
+                //        // for example:
+                //        if ((control as TextBox).Text == string.Empty)
+                //            ;//Action
+                //}
 
 
             }
@@ -236,26 +264,60 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 
         private void F11Display_Click(object sender, EventArgs e)
         {
+            if(OperationMode == EOperationMode.INSERT)
+            {
+                type = 1;
+            }
+            else if(OperationMode == EOperationMode.UPDATE)
+            {
+                type = 2;
+            }
             F11();
         }
 
         private void F11()
         {
-            if(type == 1)
+           
+            if (ErrorCheck(11))
             {
-                if (ErrorCheck(11))
-                {
 
-                }
             }
-            else if(type == 2)
-            {
-                if(ErrorCheck(11))
-                {
-
-                }
-            }
-            
+          
         }
+
+        private void F12()
+        {
+            if(ErrorCheck(12))
+            {
+
+            }
+        }
+
+        private void Sc_Item_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+
+            }
+        }
+
+        private void txtDate1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                type = 1;
+                F11();
+            }
+        }
+
+        private void txtRevDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                type = 2;
+                F11();
+            }
+        }
+
     }
 }
