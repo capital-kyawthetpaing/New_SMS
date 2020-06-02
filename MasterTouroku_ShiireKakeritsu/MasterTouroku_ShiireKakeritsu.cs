@@ -650,7 +650,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         drow.Cells["colChk"].Value = false;
                     }
                 }
-
             }
             dgv_ShiireKakeritsu.RefreshEdit();
         }
@@ -750,6 +749,7 @@ namespace MasterTouroku_ShiireKakeritsu
             toDelete.ForEach(row => row.Delete());
 
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dtMain = view.ToTable();
         }
         #endregion
@@ -968,7 +968,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                     //else if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
                     //{
-                    //    if (mskbl.SimpleSelect1("64", '202',row["競　技CD"]))
+                    //    if (mskbl.SimpleSelect1("64", '202', row["競　技CD"]))
                     //    {
                     //        mskbl.ShowMessage("E138");
                     //        return false;
