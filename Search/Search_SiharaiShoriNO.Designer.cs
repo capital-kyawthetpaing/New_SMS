@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtPaymentDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.txtPaymentInputDateFrom = new CKM_Controls.CKM_TextBox();
@@ -79,6 +80,7 @@
             this.txtPaymentDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateFrom.DecimalPlace = 0;
@@ -86,6 +88,7 @@
             this.txtPaymentDateFrom.IntegerPart = 0;
             this.txtPaymentDateFrom.IsCorrectDate = true;
             this.txtPaymentDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDateFrom.isMaxLengthErr = false;
             this.txtPaymentDateFrom.IsNumber = true;
             this.txtPaymentDateFrom.IsShop = false;
             this.txtPaymentDateFrom.Length = 10;
@@ -121,6 +124,7 @@
             this.txtPaymentInputDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPaymentInputDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentInputDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateFrom.DecimalPlace = 0;
@@ -128,6 +132,7 @@
             this.txtPaymentInputDateFrom.IntegerPart = 0;
             this.txtPaymentInputDateFrom.IsCorrectDate = true;
             this.txtPaymentInputDateFrom.isEnterKeyDown = false;
+            this.txtPaymentInputDateFrom.isMaxLengthErr = false;
             this.txtPaymentInputDateFrom.IsNumber = true;
             this.txtPaymentInputDateFrom.IsShop = false;
             this.txtPaymentInputDateFrom.Length = 10;
@@ -163,6 +168,7 @@
             this.txtPaymentDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentDateTo.BackColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentDateTo.DecimalPlace = 0;
@@ -170,6 +176,7 @@
             this.txtPaymentDateTo.IntegerPart = 0;
             this.txtPaymentDateTo.IsCorrectDate = true;
             this.txtPaymentDateTo.isEnterKeyDown = false;
+            this.txtPaymentDateTo.isMaxLengthErr = false;
             this.txtPaymentDateTo.IsNumber = true;
             this.txtPaymentDateTo.IsShop = false;
             this.txtPaymentDateTo.Length = 10;
@@ -189,6 +196,7 @@
             this.txtPaymentInputDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPaymentInputDateTo.BackColor = System.Drawing.Color.White;
             this.txtPaymentInputDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPaymentInputDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPaymentInputDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPaymentInputDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPaymentInputDateTo.DecimalPlace = 0;
@@ -196,6 +204,7 @@
             this.txtPaymentInputDateTo.IntegerPart = 0;
             this.txtPaymentInputDateTo.IsCorrectDate = true;
             this.txtPaymentInputDateTo.isEnterKeyDown = false;
+            this.txtPaymentInputDateTo.isMaxLengthErr = false;
             this.txtPaymentInputDateTo.IsNumber = true;
             this.txtPaymentInputDateTo.IsShop = false;
             this.txtPaymentInputDateTo.Length = 10;
@@ -273,6 +282,7 @@
             // 
             // dgvSiharaiShoriNO
             // 
+            this.dgvSiharaiShoriNO.AllowUserToAddRows = false;
             this.dgvSiharaiShoriNO.AllowUserToDeleteRows = false;
             this.dgvSiharaiShoriNO.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -280,7 +290,7 @@
             this.dgvSiharaiShoriNO.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -293,10 +303,19 @@
             this.colDateOfPayment,
             this.colPaymentInputDate,
             this.colPersonInCharge});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSiharaiShoriNO.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSiharaiShoriNO.EnableHeadersVisualStyles = false;
             this.dgvSiharaiShoriNO.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvSiharaiShoriNO.Location = new System.Drawing.Point(54, 31);
             this.dgvSiharaiShoriNO.Name = "dgvSiharaiShoriNO";
+            this.dgvSiharaiShoriNO.RowHeight_ = 20;
             this.dgvSiharaiShoriNO.Size = new System.Drawing.Size(671, 400);
             this.dgvSiharaiShoriNO.TabIndex = 0;
             this.dgvSiharaiShoriNO.UseRowNo = true;

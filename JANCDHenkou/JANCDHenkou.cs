@@ -419,7 +419,7 @@ namespace JANCDHenkou
                                 }
                             }
 
-                            if (isExist && dup)
+                            if (isExist || dup)
                             {
                                 DialogResult dr = jhbl.ShowMessage("Q316");
                                 if (dr == DialogResult.No)
