@@ -98,6 +98,7 @@ namespace TempoRegiFurikomiYoushi
             StartProgram();
             this.Text = "店舗レジ 振込用紙印刷";
             SetRequireField();
+            btnProcess.Text = "印刷";
 
             txtprintprogress.Focus();
             this.KeyUp += this.TempoRegiFurikomiYoushi_KeyUp;
