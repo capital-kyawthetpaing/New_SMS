@@ -988,7 +988,7 @@
             this.ckmShop_Label7.Location = new System.Drawing.Point(214, 131);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(125, 35);
-            this.ckmShop_Label7.TabIndex = 82;
+            this.ckmShop_Label7.TabIndex = 80;
             this.ckmShop_Label7.Text = "性　別";
             this.ckmShop_Label7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
