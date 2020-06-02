@@ -136,6 +136,19 @@ namespace CKM_Controls
                 boxlocaty = (Size.Height / 2) - (boxsize / 2);
             base.OnSizeChanged(e);
         }
-    
+
+        protected override void OnGotFocus(EventArgs e)
+        {
+            base.OnGotFocus(e);
+        }
+        protected override void OnLostFocus(EventArgs e)
+        {
+            base.OnLostFocus(e);
+        }
+        protected override bool ShowFocusCues
+        {
+            get { return true; }
+        }
+
     }
 }

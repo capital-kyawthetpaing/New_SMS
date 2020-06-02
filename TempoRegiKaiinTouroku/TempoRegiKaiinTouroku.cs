@@ -19,10 +19,11 @@ namespace TempoRegiKaiinTouroku
 {
     public partial class TempoRegiKaiinTouroku : ShopBaseForm
     {
-        //M_Customer_Entity cust　= new M_Customer_Entity();
-      TempoRegiKaiinTouroku_BL tprg_Kaiin_Bl = new TempoRegiKaiinTouroku_BL();        
+        M_Customer_Entity cust ;
+        TempoRegiKaiinTouroku_BL tprg_Kaiin_Bl = new TempoRegiKaiinTouroku_BL();        
         public TempoRegiKaiinTouroku()
         {
+            cust = new M_Customer_Entity();
             InitializeComponent();
         }
         private void TempoRegiKaiinTouroku_Load(object sender, EventArgs e)
@@ -43,14 +44,6 @@ namespace TempoRegiKaiinTouroku
             {
                 return false;
             }
-
-            if (!CheckWidth(1))
-                return false;
-
-            if (!CheckWidth(2))
-                return false;
-
-
             return true;
         }
         public override void FunctionProcess(int index)
@@ -66,16 +59,28 @@ namespace TempoRegiKaiinTouroku
         {
             if(ErrorCheck())
             {
-                if(tprg_Kaiin_Bl.IsExists(txtCustomerNo.Text))
+                cust = new M_Customer_Entity();
+                cust.CustomerCD = txtCustomerNo.Text;
+                cust= tprg_Kaiin_Bl.M_Customer_Select(cust);
+                if (cust !=null)
                 {
-                    Frm_TempoRegiKaiinTouroku_CustomerDetail tprg_CustDetail = new Frm_TempoRegiKaiinTouroku_CustomerDetail(1, txtCustomerNo.Text);  
-                    tprg_CustDetail.ShowDialog();
+                    string storeKBN = cust.StoreKBN;
+                    string deleteFlg = cust.DeleteFlg;
+                    if(storeKBN == "1" || deleteFlg == "1")
+                    {
+                        bbl.ShowMessage("E119");
+                        txtCustomerNo.Focus();
+                    }
+                    else
+                    {
+                        Frm_TempoRegiKaiinTouroku_CustomerDetail tprg_CustDetail = new Frm_TempoRegiKaiinTouroku_CustomerDetail(1, txtCustomerNo.Text);
+                        tprg_CustDetail.ShowDialog();
+                    }
                 }
                 else
                 {
                     Frm_TempoRegiKaiinTouroku_CustomerDetail tprg_CustDetail = new Frm_TempoRegiKaiinTouroku_CustomerDetail(0, txtCustomerNo.Text);
-                    //TempoRegiKaiinTouroku_ShopForm.Frm_TempoRegiKaiinTouroku_ShopForm tprg_Kaiin = new TempoRegiKaiinTouroku_ShopForm.Frm_TempoRegiKaiinTouroku_ShopForm(1,txtCustomerNo.Text);
-                    //txtCustomerNo.Focus();
+                   
                     tprg_CustDetail.ShowDialog();
                 }
 
@@ -90,36 +95,6 @@ namespace TempoRegiKaiinTouroku
                 Save();
             }
         }
-        private  bool CheckWidth(int type)
-        {
-            switch(type)
-            {
-                case 1:
-                    string str = Encoding.GetEncoding(932).GetByteCount(txtCustomerNo.Text).ToString();
-                    if (Convert.ToInt32(str) > 13)
-                    {
-                        MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Focus();
-                        return false;
-                    }
-                    break;
-
-                case 2:
-                    //int byteCount = Encoding.UTF8.GetByteCount(txtCustomerNo.Text);//FullWidth_Case
-                    int byteCount = Encoding.GetEncoding("Shift_JIS").GetByteCount(txtCustomerNo.Text);
-                    int onebyteCount= System.Text.ASCIIEncoding.ASCII.GetByteCount(txtCustomerNo.Text);//HalfWidth_Case
-                    if (onebyteCount!=byteCount)
-                    {
-                        MessageBox.Show("Bytes Count is Over!!", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.Focus();
-                        return false;
-                    }                  
-                  
-                    break;
-            }           
-            return true;
-        }
-
         private void btnCustomerSearch_Click(object sender, EventArgs e)
         {
             TempoRegiKaiinKensaku tgkkk = new TempoRegiKaiinKensaku();
