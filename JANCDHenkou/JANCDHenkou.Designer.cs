@@ -30,13 +30,10 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.BtnF11Show = new CKM_Controls.CKM_Button();
             this.dgvJANCDHenkou = new CKM_Controls.CKM_GridView();
-            this.ckM_Label4 = new CKM_Controls.CKM_Label();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.colGenJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colBtnJAN = new System.Windows.Forms.DataGridViewButtonColumn();
             this.colBrandCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +46,10 @@
             this.colnewJanCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdminCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckM_Label4 = new CKM_Controls.CKM_Label();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvJANCDHenkou)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +57,14 @@
             // PanelHeader
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 14);
+            // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // panelDetail
             // 
@@ -82,7 +91,7 @@
             this.BtnF11Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF11Show.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF11Show.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF11Show.Location = new System.Drawing.Point(1573, 113);
+            this.BtnF11Show.Location = new System.Drawing.Point(1573, 86);
             this.BtnF11Show.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF11Show.Name = "BtnF11Show";
             this.BtnF11Show.Size = new System.Drawing.Size(118, 28);
@@ -100,7 +109,7 @@
             this.dgvJANCDHenkou.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -120,11 +129,20 @@
             this.colnewJanCD,
             this.colSKUCD,
             this.colAdminCD});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvJANCDHenkou.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvJANCDHenkou.EnableHeadersVisualStyles = false;
             this.dgvJANCDHenkou.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgvJANCDHenkou.Location = new System.Drawing.Point(21, 145);
+            this.dgvJANCDHenkou.Location = new System.Drawing.Point(21, 119);
             this.dgvJANCDHenkou.Name = "dgvJANCDHenkou";
-            this.dgvJANCDHenkou.Size = new System.Drawing.Size(1670, 600);
+            this.dgvJANCDHenkou.RowHeight_ = 20;
+            this.dgvJANCDHenkou.Size = new System.Drawing.Size(1670, 730);
             this.dgvJANCDHenkou.TabIndex = 4;
             this.dgvJANCDHenkou.UseRowNo = true;
             this.dgvJANCDHenkou.UseSetting = true;
@@ -132,74 +150,6 @@
             this.dgvJANCDHenkou.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvJANCDHenkou_CellEndEdit);
             this.dgvJANCDHenkou.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvJANCDHenkou_CellPainting);
             this.dgvJANCDHenkou.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvJANCDHenkou_Paint);
-            // 
-            // ckM_Label4
-            // 
-            this.ckM_Label4.AutoSize = true;
-            this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label4.DefaultlabelSize = true;
-            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(40, 89);
-            this.ckM_Label4.Name = "ckM_Label4";
-            this.ckM_Label4.Size = new System.Drawing.Size(443, 12);
-            this.ckM_Label4.TabIndex = 3;
-            this.ckM_Label4.Text = "定型フォーマットで用意されたExcelファイルを読み込むことができます。";
-            this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label3
-            // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(40, 68);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(859, 12);
-            this.ckM_Label3.TabIndex = 2;
-            this.ckM_Label3.Text = "この処理はやり直しはできません。（JANCDをＡ⇒Ｂと変更するのを間違えてＡ⇒Ｃと変更した場合は、あらためてＣ⇒Ｂと変更してください。）";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label2
-            // 
-            this.ckM_Label2.AutoSize = true;
-            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label2.DefaultlabelSize = true;
-            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(40, 47);
-            this.ckM_Label2.Name = "ckM_Label2";
-            this.ckM_Label2.Size = new System.Drawing.Size(495, 12);
-            this.ckM_Label2.TabIndex = 1;
-            this.ckM_Label2.Text = "すべての情報を新しいJANCDで洗替するため、処理に時間がかかる場合があります。";
-            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label1
-            // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(40, 25);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(833, 12);
-            this.ckM_Label1.TabIndex = 0;
-            this.ckM_Label1.Text = "仮JANCDを含め今、SKUごとに設定されているJANCDのマスター値、実績データ値などシステム内のすべての情報を新しいJANCDで洗替します。";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // colGenJanCD
             // 
@@ -291,6 +241,74 @@
             this.colAdminCD.Name = "colAdminCD";
             this.colAdminCD.ReadOnly = true;
             this.colAdminCD.Visible = false;
+            // 
+            // ckM_Label4
+            // 
+            this.ckM_Label4.AutoSize = true;
+            this.ckM_Label4.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label4.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label4.DefaultlabelSize = true;
+            this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label4.Location = new System.Drawing.Point(40, 89);
+            this.ckM_Label4.Name = "ckM_Label4";
+            this.ckM_Label4.Size = new System.Drawing.Size(443, 12);
+            this.ckM_Label4.TabIndex = 3;
+            this.ckM_Label4.Text = "定型フォーマットで用意されたExcelファイルを読み込むことができます。";
+            this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label3
+            // 
+            this.ckM_Label3.AutoSize = true;
+            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label3.DefaultlabelSize = true;
+            this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label3.Location = new System.Drawing.Point(40, 68);
+            this.ckM_Label3.Name = "ckM_Label3";
+            this.ckM_Label3.Size = new System.Drawing.Size(859, 12);
+            this.ckM_Label3.TabIndex = 2;
+            this.ckM_Label3.Text = "この処理はやり直しはできません。（JANCDをＡ⇒Ｂと変更するのを間違えてＡ⇒Ｃと変更した場合は、あらためてＣ⇒Ｂと変更してください。）";
+            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label2
+            // 
+            this.ckM_Label2.AutoSize = true;
+            this.ckM_Label2.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label2.DefaultlabelSize = true;
+            this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label2.Location = new System.Drawing.Point(40, 47);
+            this.ckM_Label2.Name = "ckM_Label2";
+            this.ckM_Label2.Size = new System.Drawing.Size(495, 12);
+            this.ckM_Label2.TabIndex = 1;
+            this.ckM_Label2.Text = "すべての情報を新しいJANCDで洗替するため、処理に時間がかかる場合があります。";
+            this.ckM_Label2.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label1
+            // 
+            this.ckM_Label1.AutoSize = true;
+            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label1.DefaultlabelSize = true;
+            this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label1.Location = new System.Drawing.Point(40, 25);
+            this.ckM_Label1.Name = "ckM_Label1";
+            this.ckM_Label1.Size = new System.Drawing.Size(833, 12);
+            this.ckM_Label1.TabIndex = 0;
+            this.ckM_Label1.Text = "仮JANCDを含め今、SKUごとに設定されているJANCDのマスター値、実績データ値などシステム内のすべての情報を新しいJANCDで洗替します。";
+            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // JANCDHenkou
             // 

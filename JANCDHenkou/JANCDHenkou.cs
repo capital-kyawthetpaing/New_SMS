@@ -339,7 +339,8 @@ namespace JANCDHenkou
                                 if(dtGenJanCD.Rows.Count > 0)
                                 //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
-                                    DataTable tmp1 = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                    //DataTable tmp1 = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                    DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD, dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value = tmp1.Rows[0]["GenJanCD"].ToString();
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandCD"].Value = tmp1.Rows[0]["BrandCD"].ToString();
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandName"].Value = tmp1.Rows[0]["BrandName"].ToString();
