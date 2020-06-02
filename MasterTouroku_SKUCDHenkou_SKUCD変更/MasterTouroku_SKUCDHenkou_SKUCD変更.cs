@@ -11,6 +11,7 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
+using CKM_Controls;
 
 namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 {
@@ -234,18 +235,42 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 //        //if(textBox.find)
                 //    }
                 //}
-                var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                foreach (Control control in this.Controls)
+
+                //var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
+                //foreach (Control control in this.Controls)
+                //{
+                //    if (control is TextBox)
+                //    {
+                //        if ((control as TextBox).Name.Contains(sizetb_Ctrl.ToString()))
+                //        {
+                //            //string a = "aye";
+                //        }
+                //    }
+
+                //}
+                for (int i = 0; i < 10; i++)
                 {
-                    if (control is TextBox)
+                    var sizeNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var sizeOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var sizeCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    /// doooooooooo 
+                    /// 
+                    if(!string.IsNullOrWhiteSpace(sizeOldtxtbox_.Text))
                     {
-                        if ((control as TextBox).Name.Contains(sizetb_Ctrl.ToString()))
+                        if (string.IsNullOrWhiteSpace(sizeNewtxtbox_.Text))
                         {
-                            //string a = "aye";
+                            mskubl.ShowMessage("E102");
+                            txtnewsize1.Focus();
+                            return false;
                         }
                     }
-                        
+
+                    //if(sizeNewtxtbox_.Text)
+
                 }
+
+
+
 
                 //foreach (Control control in this.Controls)
                 //{
