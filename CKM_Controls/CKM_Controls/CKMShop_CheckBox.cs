@@ -131,6 +131,14 @@ namespace CKM_Controls
             boxlocaty = (Size.Height / 2) - (boxsize / 2);
             base.OnSizeChanged(e);
         }
+        protected override bool ShowFocusCues
+        {
+            get { return true; }
+        }
+        //protected override bool ShowFocusCues
+        //{
+        //    get { return true; }
+        //}
 
         //public CKMShop_CheckBox()
         //{
