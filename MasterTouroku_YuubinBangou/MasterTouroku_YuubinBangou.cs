@@ -75,6 +75,7 @@ namespace MasterTouroku_YuubinBangou
             col.DataPropertyName = "Carrier";
             col.ValueMember = "CarrierCD";
             col.DisplayMember = "CarrierName";
+            col.FlatStyle = FlatStyle.Flat;
             ((DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"]).DataSource = dt;
         }
 
