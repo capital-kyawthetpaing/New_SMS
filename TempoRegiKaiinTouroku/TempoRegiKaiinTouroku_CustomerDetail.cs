@@ -297,7 +297,7 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
                 {
                     if (CheckZipCD(txt))
                         SetAddress();
-                        MoveNextControl(e);
+                        //MoveNextControl(e);
                 }
             }
         }
@@ -356,11 +356,14 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             {
                 CKM_TextBox txt = sender as CKM_TextBox;
 
-                
 
-                if(txtMailAddress.Text != txt.Text)
-                {                   
-                        tprg_Kaiin_BL.ShowMessage("E174");                             
+
+                if (txtMailAddress.Text != txt.Text)
+                {
+                    tprg_Kaiin_BL.ShowMessage("E174");
+                }
+                else {
+                   // chkSend.Focus();
                 }
             }
         }
@@ -444,6 +447,5 @@ namespace TempoRegiKaiinTouroku_CustomerDetail
             }
             return true;
         }
-        
     }
 }

@@ -212,21 +212,29 @@ namespace JANCDHenkou
                             dgvJANCDHenkou.BeginEdit(true);
                             return false;
                         }
-                        if (dtGenJanCD.Rows.Count > 0)
+                        if (dtGenJanCD.Rows.Count > 1)
                         {
-                            foreach (DataRow r in dtGenJanCD.Rows)
+                            DataRow[] dr = dtGenJanCD.Select("GenJanCD = '" + row.Cells["colGenJanCD"].Value + "'");
+                            if (dr.Length > 1)
                             {
-                                if (r.RowState == DataRowState.Added)
-                                {
-                                    if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
-                                    {
-                                        jhbl.ShowMessage("E226");
-                                        dgvJANCDHenkou.CurrentCell = row.Cells["colGenJanCD"];
-                                        dgvJANCDHenkou.BeginEdit(true);
-                                        return false;
-                                    }
-                                }
+                                jhbl.ShowMessage("E226");
+                                dgvJANCDHenkou.CurrentCell = row.Cells["colGenJanCD"];
+                                dgvJANCDHenkou.BeginEdit(true);
+                                return false;
                             }
+                            //foreach (DataRow r in dtGenJanCD.Rows)
+                            //{
+                            //    if (r.RowState == DataRowState.Added)
+                            //    {
+                            //        if (r["GenJanCD"].ToString() == dgvJANCDHenkou.CurrentRow.Cells["colGenJanCD"].Value.ToString())
+                            //        {
+                            //            jhbl.ShowMessage("E226");
+                            //            dgvJANCDHenkou.CurrentCell = row.Cells["colGenJanCD"];
+                            //            dgvJANCDHenkou.BeginEdit(true);
+                            //            return false;
+                            //        }
+                            //    }
+                            //}
                         }
                     }
 
@@ -249,8 +257,7 @@ namespace JANCDHenkou
                             return false;
                         }
                         else if (jhbl.SimpleSelect1("60", System.DateTime.Now.ToString("yyyy-MM-dd"), row.Cells["colNewJanCD"].Value.ToString()).Rows.Count > 0)    //error if exists in M_SKU tb
-                        {
-
+                        {  ///duplicate check is required 
                             DialogResult dr = jhbl.ShowMessage("Q316");
                             if (dr == DialogResult.No)
                             {
@@ -339,7 +346,8 @@ namespace JANCDHenkou
                                 if(dtGenJanCD.Rows.Count > 0)
                                 //if (!dtJanCDExist.Rows[0]["JanCD"].ToString().Equals(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString()))
                                 {
-                                    DataTable tmp1 = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                    //DataTable tmp1 = jhbl.SimpleSelect1("59", System.DateTime.Now.ToString("yyyy-MM-dd"), dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                                    DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD, dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value = tmp1.Rows[0]["GenJanCD"].ToString();
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandCD"].Value = tmp1.Rows[0]["BrandCD"].ToString();
                                     dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandName"].Value = tmp1.Rows[0]["BrandName"].ToString();
@@ -385,7 +393,7 @@ namespace JANCDHenkou
                 // 新JANCD
                 else if (dgvJANCDHenkou.CurrentCell == dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"])
                 {
-                   if (dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value == null)
+                   if (string.IsNullOrWhiteSpace(dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"].Value.ToString()))
                    {
                         jhbl.ShowMessage("E102");
                         dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colNewJanCD"];
@@ -418,7 +426,7 @@ namespace JANCDHenkou
                                 }
                             }
 
-                            if (isExist && dup)
+                            if (isExist || dup)
                             {
                                 DialogResult dr = jhbl.ShowMessage("Q316");
                                 if (dr == DialogResult.No)
