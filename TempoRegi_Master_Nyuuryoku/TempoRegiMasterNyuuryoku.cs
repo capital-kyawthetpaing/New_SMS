@@ -43,7 +43,7 @@ namespace TempoRegi_Master_Nyuuryoku
             InProgramID = "TempoRegiMasterNyuuryoku";
             StartProgram();
             this.Text = "マスター入力";
-            SetRequireField();
+           // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
         }
@@ -204,17 +204,17 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void SetRequireField()
         {
-            txtButtomNameUp.Require(true);
+            //txtButtomNameUp.Require(true);
             txtCD.Require(true);
-            txtBtnNameDown.Require(true);
+            //txtBtnNameDown.Require(true);
 
         }
 
         private bool ErrorCheck()
         {
 
-            if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
-                return false;
+            //if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
+            //    return false;
 
             if(RdoJanCD.Checked)
             {
@@ -239,8 +239,8 @@ namespace TempoRegi_Master_Nyuuryoku
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { txtBtnNameDown }))
-                return false;
+            //if (!RequireCheck(new Control[] { txtBtnNameDown }))
+            //    return false;
 
 
             return true;
