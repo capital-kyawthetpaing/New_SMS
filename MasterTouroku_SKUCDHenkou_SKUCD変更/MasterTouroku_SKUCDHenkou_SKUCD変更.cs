@@ -12,6 +12,7 @@ using BL;
 using Entity;
 using Search;
 using CKM_Controls;
+using System.Collections;
 
 namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 {
@@ -178,76 +179,11 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             else if(index == 12)
             {
-                //if(!string.IsNullOrWhiteSpace(txtoldsize1.Text))
-                //{
-                //    if(string.IsNullOrWhiteSpace(txtnewsize1.Text))
-
-                //    {
-                //        mskubl.ShowMessage("E102");
-                //        txtnewsize1.Focus();
-                //        return false;
-                //    }
-                //}
-
-                //foreach (Control c in this.Controls)
-                //{
-
-                //    if (c.GetType().ToString() == "System.Windows.Form.Textbox")
-                //    {
-
-                //        //your code goes here
-                //        //if (sizetb_Ctrl)
-                //        //{
-
-                //        //}
-
-                //    }
-
-                //}
-
-                //foreach (Control control in this.Controls)
-                //{
-                //    if (control is TextBox)
-                //    // You can check any other property here and do what you want
-                //    // for example:
-                //    {
-                //        //if (this.Controls.Find("txtnewsize", true))
-                //        //{
-
-                //        //}
 
 
-
-                //    }
-                //}
-
-                //var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                //if (sizetb_Ctrl. == true)
-                //{
-
-                //}
-
-                //foreach (var control in this.Controls.Find("txtnewsize", true))
-                //{
-                //    var textBox = control as TextBox;
-                //    if (textBox != null)
-                //    {
-                //        //if(textBox.find)
-                //    }
-                //}
-
-                //var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                //foreach (Control control in this.Controls)
-                //{
-                //    if (control is TextBox)
-                //    {
-                //        if ((control as TextBox).Name.Contains(sizetb_Ctrl.ToString()))
-                //        {
-                //            //string a = "aye";
-                //        }
-                //    }
-
-                //}
+                //string[] b = new string[] { };
+                //ArrayList myArryList = new ArrayList();
+                string[] myArryList = new string[10];
                 for (int i = 0; i < 10; i++)
                 {
                     var sizeNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
@@ -260,32 +196,62 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         if (string.IsNullOrWhiteSpace(sizeNewtxtbox_.Text))
                         {
                             mskubl.ShowMessage("E102");
-                            txtnewsize1.Focus();
+                            sizeNewtxtbox_.Focus();
                             return false;
                         }
                     }
-
-                    //if(sizeNewtxtbox_.Text)
-
+                    myArryList[i] = sizeNewtxtbox_.Text;
+                    //myArryList.Add(sizeNewtxtbox_);
+                   
+                    //if (sizeNewtxtbox_.)
+                    //if (string.Compare(textBox1.Text, textBox2.Text, true) == 0)
                 }
-
-
-
-
-                //foreach (Control control in this.Controls)
+                if (HasDuplicates(myArryList))
+                {
+                    mskubl.ShowMessage("E105");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+                //if(getMissingNo(myArryList,10))
                 //{
-                //    if (control is TextBox)
-                //        // You can check any other property here and do what you want
-                //        // for example:
-                //        if ((control as TextBox).Text == string.Empty)
-                //            ;//Action
+
                 //}
 
-
+               
             }
 
             return true;
-       }
+        }
+
+        private bool HasDuplicates(string [] arrayList)
+        {
+            List<string> vals = new List<string>();
+            bool returnValue = false;
+            foreach (string s in arrayList)
+            {               
+                if (!string.IsNullOrWhiteSpace(s))
+                {
+                    if (vals.Contains(s))
+                    {
+                        returnValue = true;
+                        break;
+                    }
+                    vals.Add(s);
+                }
+            }
+            return returnValue;
+        }
+
+        //private bool getMissingNo(int[] a, int n)
+        //{
+        //    int total = (n + 1) * (n + 2) / 2;
+
+        //    for (int i = 0; i < n; i++)
+        //        total -= a[i];
+
+        //    return true;
+        //}
+
 
         private void F11Display_Click(object sender, EventArgs e)
         {
