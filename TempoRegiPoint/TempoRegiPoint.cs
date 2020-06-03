@@ -140,7 +140,6 @@ namespace TempoRegiPoint
             BtnSearchCustomer.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
             //btnSearchCustomer.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
 
-            //TxtCustomerCD.Size = new Size(142, 34);
             TxtCustomerCD.Require(true);
             TxtCustomerCD.Clear();
             TxtCustomerCD.Focus();
@@ -148,10 +147,10 @@ namespace TempoRegiPoint
             LblCustomerName.Text = string.Empty;
 
             TxtLastPoint.Require(true);
-            TxtLastPoint.Text = "0";
+            TxtLastPoint.Text = "";
 
             TxtIssuePoint.Require(true);
-            TxtIssuePoint.Text = "0";
+            TxtIssuePoint.Text = "";
         }
 
         private void DisplayData()
@@ -397,9 +396,7 @@ namespace TempoRegiPoint
             var lastPointDt = bl.D_LastPointSelect(TxtCustomerCD.Text);
             if (lastPointDt.Rows.Count > 0)
             {
-                //TxtLastPoint.Text = Convert.ToInt32(lastPointDt.Rows[0]["LastPoint"]).ToString();
-                Decimal dd = Convert.ToDecimal(lastPointDt.Rows[0]["LastPoint"]);
-                TxtLastPoint.Text = string.Format("{0:0,0}", dd);  
+                TxtLastPoint.Text = Convert.ToInt32(lastPointDt.Rows[0]["LastPoint"]).ToString();
             }
         }
 
@@ -434,7 +431,7 @@ namespace TempoRegiPoint
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void TxtCustomerCD_KeyDown(object sender, KeyEventArgs e)
-       {
+        {
             if (e.KeyCode == Keys.Enter)
             {
                 if (SearchCustomer())
@@ -492,7 +489,5 @@ namespace TempoRegiPoint
 
             return result;
         }
-
-       
     }
 }

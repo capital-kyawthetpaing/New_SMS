@@ -1833,9 +1833,11 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                     case SearchType.商品分類:
-                        dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        dtResult = bbl.SimpleSelect1("64", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-
+                    case SearchType.SKU_ITEM_CD:
+                        dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
@@ -1929,6 +1931,10 @@ namespace Search
 
                 case SearchType.仕入先PayeeFlg:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
+                    break;
+
+                case SearchType.SKU_ITEM_CD:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
                     break;
 
             }

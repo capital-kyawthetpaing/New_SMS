@@ -72,7 +72,7 @@ namespace Entity
         public string LastInstructionsDate { get; set; }
         public string WebAddress { get; set; }
         public string ApprovalDate { get; set; }
-        
+        public string AddDate { get; set; }
         //Master用Entity
         public string ColorNO { get; set; }
         public string SizeNO { get; set; }

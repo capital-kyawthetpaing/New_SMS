@@ -25,6 +25,8 @@ namespace MasterTouroku_ShiireTanka
         {
             InitializeComponent();
             bl = new MasterTouroku_ShiireTanka_BL();
+          m_IOE=new M_ItemOrderPrice_Entity();
+             m_IE=new M_ITEM_Entity();
         }
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
@@ -287,7 +289,6 @@ namespace MasterTouroku_ShiireTanka
                     makershohinC.SetFocus(1);
                 }
             }
-
         }
         private void itemcd_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -304,6 +305,11 @@ namespace MasterTouroku_ShiireTanka
                     itemcd.SetFocus(1);
                 }
             }
+        }
+        private void itemcd_Enter(object sender, EventArgs e)
+        {
+            itemcd.Value1 = "1";
+            itemcd.ChangeDate = bbl.GetDate();
         }
         #endregion
         private bool ErrorCheck()
@@ -374,7 +380,6 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
-           
             if (!String.IsNullOrEmpty(makershohin.TxtCode.Text))
             {
                 if (!makershohin.IsExists(2))
@@ -392,12 +397,17 @@ namespace MasterTouroku_ShiireTanka
                     itemcd.SetFocus(1);
                     return false;
                 }
+                if(!itemcd.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    itemcd.Focus();
+                    return false;
+                }
                 if (string.IsNullOrEmpty(TB_date_add.Text))
                 {
                     bbl.ShowMessage("E102");
                     TB_date_add.Focus();
                     return false;
-
                 }
                 if (string.IsNullOrEmpty(TB_rate.Text))
                 {
@@ -405,14 +415,13 @@ namespace MasterTouroku_ShiireTanka
                     TB_rate.Focus();
                     return false;
                 }
-                if (string.IsNullOrEmpty(TB_orderprice.Text))
+                if (string.IsNullOrEmpty(TB_pricewithouttax.Text))
                 {
                     bbl.ShowMessage("E102");
-                    TB_orderprice.Focus();
+                    TB_pricewithouttax.Focus();
                     return false;
                 }
             }
-            
             if (!String.IsNullOrEmpty(makershohinC.TxtCode.Text))
             {
                 if (!makershohinC.IsExists(2))
@@ -430,6 +439,13 @@ namespace MasterTouroku_ShiireTanka
             {
                 m_IOE = GetItemorder();
                 m_IE = GetItem();
+                brand.Clear();
+                sport.Clear();
+                segment.Clear();
+                CB_year.Text = string.Empty;
+                CB_season.Text = string.Empty;
+                TB_date_condition.Text = string.Empty;
+                makershohin.Clear();
                 DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
                 if(dt.Rows.Count > 0)
                 {
@@ -437,13 +453,7 @@ namespace MasterTouroku_ShiireTanka
                     GV_item.DataSource = dt;
                     GV_sku.Refresh();
                     GV_sku.DataSource = dt;
-                    brand.Clear();
-                    sport.Clear();
-                    segment.Clear();
-                    CB_year.Text = string.Empty;
-                    CB_season.Text = string.Empty;
-                    TB_date_condition.Text = string.Empty;
-                    makershohin.Clear();
+                   
                 }
                 else
                 {
@@ -462,7 +472,10 @@ namespace MasterTouroku_ShiireTanka
                 Rate = TB_rate.Text,
                 ChangeDate = TB_date_condition.Text,
                 Headerdate=TB_headerdate.Text,
-                Display = RB_current.Checked ? "0" : "1"
+                PriceWithoutTax=TB_pricewithouttax.Text,
+                Display = RB_current.Checked ? "0" : "1",
+                InsertOperator =  InOperatorCD
+
             };
             return m_IOE;
         }
@@ -475,8 +488,10 @@ namespace MasterTouroku_ShiireTanka
                 BrandCD=brand.TxtCode.Text,
                 LastYearTerm=CB_year.Text,
                 LastSeason=CB_season.Text,
-                ChangeDate=TB_date_add.Text,
-                ITemCD= itemcd.TxtCode.Text
+                AddDate=TB_date_add.Text,
+                ITemCD= itemcd.TxtCode.Text,
+                PriceOutTax=LB_priceouttax1.Text
+                
             };
             return m_IE;
         }
@@ -488,12 +503,28 @@ namespace MasterTouroku_ShiireTanka
                 {
                     TB_date_add.Text = TB_headerdate.Text;
                 }
-                m_IE = GetItem();
-                DataTable dt = bl.M_ITem_ItemNandPriceoutTax_Select(m_IE);
-                if (dt.Rows.Count > 0)
+                if (string.IsNullOrEmpty(itemcd.TxtCode.Text))
                 {
-                    itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
-                    LB_listprice.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                    bbl.ShowMessage("E102");
+                    itemcd.SetFocus(1);
+                }
+                else
+                {
+                    if (!itemcd.IsExists(2))
+                    {
+                        bbl.ShowMessage("E101");
+                        itemcd.Focus();
+                    }
+                    else
+                    {
+                        m_IE = GetItem();
+                        DataTable dt = bl.M_ITem_ItemNandPriceoutTax_Select(m_IE);
+                        if (dt.Rows.Count > 0)
+                        {
+                            itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
+                            LB_priceouttax1.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                        }
+                    }
                 }
             }
         }
@@ -512,9 +543,9 @@ namespace MasterTouroku_ShiireTanka
             makershohin.Clear();
             itemcd.Clear();
             TB_date_add.Text = string.Empty;
-            LB_listprice.Text = string.Empty;
+            LB_priceouttax1.Text = string.Empty;
             TB_rate.Text = string.Empty;
-            TB_orderprice.Text = string.Empty;
+            TB_pricewithouttax.Text = string.Empty;
             brandC.Clear();
             sportC.Clear();
             segment.Clear();
@@ -583,22 +614,23 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (!String.IsNullOrEmpty(LB_listprice.Text))
+                if (!String.IsNullOrEmpty(LB_priceouttax.Text))
                 {
                     decimal rate = Convert.ToDecimal(TB_rate.Text);
                     decimal con = (decimal)0.01;
-                    decimal listprice = Convert.ToDecimal(LB_listprice.Text);
+                    decimal listprice = Convert.ToDecimal(LB_priceouttax.Text);
                     //TB_orderprice.Text = Convert.ToString(listprice * (rate * con));
                     //TB_orderprice.Text= string.Format("{0:#,##0}", Convert.ToInt64((listprice * (rate * con))));
              
-                    TB_orderprice.Text = Math.Round(listprice * (rate * con)).ToString();
+                    TB_pricewithouttax.Text = Math.Round(listprice * (rate * con)).ToString();
                 }
             }
         }
-
-        private void itemcd_Enter(object sender, EventArgs e)
+        private void btn_add_Click(object sender, EventArgs e)
         {
-            itemcd.Value1 = "1";
+            m_IOE = GetItemorder();
+            m_IE = GetItem();
+            DataTable dt=bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
         }
     }
 }
