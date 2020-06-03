@@ -112,7 +112,7 @@
             this.TxtCustomerCD.Name = "TxtCustomerCD";
             this.TxtCustomerCD.Size = new System.Drawing.Size(255, 42);
             this.TxtCustomerCD.TabIndex = 20;
-            this.TxtCustomerCD.Text = "XXXXXXXX10XXX";
+            this.TxtCustomerCD.Text = "XXXXXXXX10";
             this.TxtCustomerCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.TxtCustomerCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtCustomerCD_KeyDown);
             // 
