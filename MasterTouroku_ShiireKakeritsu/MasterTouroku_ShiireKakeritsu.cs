@@ -909,6 +909,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             if (dtExcel.Rows.Count > 0)
                             {
                                 dgv_ShiireKakeritsu.DataSource = dtMain;
+                                CancelData();
                             }
                         }
                         else
@@ -948,7 +949,6 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (dtMain != null)
             {
-                dgv_ShiireKakeritsu.DataSource = dtMain;
                 foreach (DataRow row in dtMain.Rows)
                 {
                     if (row["仕入先CD"].ToString() != scSupplierCD.TxtCode.Text)
@@ -961,7 +961,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         mskbl.ShowMessage("E138");
                         return false;
                     }
-                    else if (row["ブランドCD"].ToString() == scBrandCD1.TxtCode.Text)
+                    else if (row["ブランドCD"].ToString() == scBrandCD.TxtCode.Text)
                     {
                         mskbl.ShowMessage("E138");
                         return false;

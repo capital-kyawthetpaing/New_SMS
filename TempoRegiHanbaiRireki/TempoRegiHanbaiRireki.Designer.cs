@@ -2226,7 +2226,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "出荷・売上へ";
-            this.ClientSize = new System.Drawing.Size(1913, 1061);
+            this.ClientSize = new System.Drawing.Size(1913, 1011);
             this.Controls.Add(this.btnCustomerSearch);
             this.Controls.Add(this.lblCusName);
             this.Controls.Add(this.ckmShop_Label5);

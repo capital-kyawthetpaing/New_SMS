@@ -179,11 +179,11 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             else if(index == 12)
             {
-
-
                 //string[] b = new string[] { };
                 //ArrayList myArryList = new ArrayList();
-                string[] myArryList = new string[10];
+                #region Size
+                string[] sizeArray = new string[10];
+                int[] sizemissing = new int[10];
                 for (int i = 0; i < 10; i++)
                 {
                     var sizeNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
@@ -200,49 +200,101 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                             return false;
                         }
                     }
-                    myArryList[i] = sizeNewtxtbox_.ToString();
-                    //myArryList.Add(sizeNewtxtbox_);
-                   
-                    //if (sizeNewtxtbox_.)
-                    //if (string.Compare(textBox1.Text, textBox2.Text, true) == 0)
+                    sizeArray[i] = sizeNewtxtbox_.Text;
+                    if(!string.IsNullOrWhiteSpace(sizeNewtxtbox_.Text))
+                    {
+                        sizemissing[i] = Convert.ToInt32(sizeNewtxtbox_.Text);
+                    }
                 }
-                if (HasDuplicates(myArryList))
+                if (HasDuplicates(sizeArray))
                 {
                     mskubl.ShowMessage("E105");
                     txtnewsize10.Focus();
                     return false;
                 }
 
+                int misssize = getMissingNo(sizemissing, 10);
+                if ((misssize > 0 && misssize < 11) || (misssize < 0))
+                {
+                    mskubl.ShowMessage("E228");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+                #endregion
 
+                #region Color
+                string[] colorArray = new string[20];
+                int[] colormissing = new int[20];
+                for (int i = 0; i < 20; i++)
+                {
+                    var colorNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    
+                    if (!string.IsNullOrWhiteSpace(colorOldtxtbox_.Text))
+                    {
+                        if (string.IsNullOrWhiteSpace(colorNewtxtbox_.Text))
+                        {
+                            mskubl.ShowMessage("E102");
+                            colorNewtxtbox_.Focus();
+                            return false;
+                        }
+                    }
+                    colorArray[i] = colorNewtxtbox_.Text;
+                    if (!string.IsNullOrWhiteSpace(colorNewtxtbox_.Text))
+                    {
+                        sizemissing[i] = Convert.ToInt32(colorNewtxtbox_.Text);
+                    }
+                }
+                if (HasDuplicates(colorArray))
+                {
+                    mskubl.ShowMessage("E105");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+
+                int misscolor = getMissingNo(sizemissing, 20);
+                if ((misscolor > 0 && misscolor < 11) || (misscolor < 0))
+                {
+                    mskubl.ShowMessage("E228");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+                #endregion
             }
 
             return true;
         }
 
-        private bool HasDuplicates(string[] arrayList)
+        private bool HasDuplicates(string [] arrayList)
         {
             List<string> vals = new List<string>();
             bool returnValue = false;
             foreach (string s in arrayList)
-            {
-                if (vals.Contains(s))
+            {               
+                if (!string.IsNullOrWhiteSpace(s))
                 {
-                    returnValue = true;
-                    break;
+                    if (vals.Contains(s))
+                    {
+                        returnValue = true;
+                        break;
+                    }
+                    vals.Add(s);
                 }
-                vals.Add(s);
-                //if(s.Contains("CKM_Controls.CKM_TextBox, Text:"))
-                //{
-
-                //}
-                //else
-                //{
-
-                //}
             }
-
-
             return returnValue;
+        }
+
+        private int getMissingNo(int[] a, int n)
+        {
+            int i, total = 1;
+
+            for (i = 2; i <= (n + 1); i++)
+            {
+                total += i;
+                total -= a[i - 2];
+            }
+            return total;
         }
 
 
