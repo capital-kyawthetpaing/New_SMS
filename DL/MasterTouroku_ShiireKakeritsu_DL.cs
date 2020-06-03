@@ -26,13 +26,13 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public bool M_Shiirekakeritsu(M_OrderRate_Entity moe,string Xml)
+        public bool M_Shiirekakeritsu(M_OrderRate_Entity moe,string xml)
         {
             string sp = "M_OrderRate_Update";
 
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@Xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = Xml } },
+                { "@xml", new ValuePair { value1 = SqlDbType.VarChar, value2 = xml } },
                 { "@VendorCD", new ValuePair { value1 = System.Data.SqlDbType.VarChar, value2 =moe.VendorCD  } },              
                 { "@ChangeDate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.ChangeDate} },
                 { "@Rate",new ValuePair{value1=System.Data.SqlDbType.VarChar,value2=moe.Rate} },
