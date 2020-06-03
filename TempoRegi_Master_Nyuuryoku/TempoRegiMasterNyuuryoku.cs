@@ -475,7 +475,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void btn_Confrim2_Click(object sender, EventArgs e)
         {
-            if (!RequireCheck(new Control[] { txtCD})) return;
+           // if (!RequireCheck(new Control[] { txtCD})) return;
 
             if (ErrorCheck())
             {
@@ -534,10 +534,10 @@ namespace TempoRegi_Master_Nyuuryoku
         }
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
-           if(!RequireCheck(new Control[] { txtButtomNameUp }))
-            {
-                return;
-            }
+           //if(!RequireCheck(new Control[] { txtButtomNameUp }))
+           // {
+           //     return;
+           // }
             btnProcess.Enabled = true;//Save_Button
             //return;            
                       

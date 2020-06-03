@@ -9768,7 +9768,7 @@
             this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(36, 853);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(36, 854);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
             this.ckmShop_Label8.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label8.TabIndex = 19;
@@ -9874,13 +9874,12 @@
             this.lblSearchName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblSearchName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblSearchName.ForeColor = System.Drawing.Color.Black;
-            this.lblSearchName.Location = new System.Drawing.Point(617, 804);
+            this.lblSearchName.Location = new System.Drawing.Point(617, 801);
             this.lblSearchName.Name = "lblSearchName";
             this.lblSearchName.Size = new System.Drawing.Size(1000, 100);
             this.lblSearchName.TabIndex = 22;
             this.lblSearchName.Text = "ＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblSearchName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSearchName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSearchName.Visible = false;
             // 
             // TempoRegiMasterNyuuryoku
