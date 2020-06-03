@@ -12,51 +12,6 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE PROCEDURE Fnc_Present
-(   
-    -- Add the parameters for the function here
-    @AdminNO     int,    
-    @ChangeDate  varchar(10),
-    @StoreCD  varchar(4)
-)AS
-BEGIN
-    -- SET NOCOUNT ON added to prevent extra result sets from
-    -- interfering with SELECT statements.
-    SET NOCOUNT ON;
-    
-    DECLARE @Error  tinyint;
-    DECLARE @outPresentCD1 varchar(5);
-    DECLARE @outPresentCD2 varchar(5);
-    DECLARE @outPresentCD3 varchar(5);
-    DECLARE @outPresentCD4 varchar(5);
-    DECLARE @outPresentCD5 varchar(5);
-
-    IF ISNULL(@ChangeDate,'') = ''
-        SET @ChangeDate = CONVERT(varchar, GETDATE(),111);
-    
-    EXEC Fnc_Present_SP
-        @AdminNO     ,    
-        @ChangeDate ,
-        @StoreCD,
-        @outPresentCD1   OUTPUT,
-        @outPresentCD2   OUTPUT,
-        @outPresentCD3   OUTPUT,
-        @outPresentCD4   OUTPUT,
-        @outPresentCD5   OUTPUT,
-        @Error  OUTPUT
-        ;
-    
-    -- Insert statements for procedure here
-    SELECT @outPresentCD1 AS PresentCD1,
-	       @outPresentCD2 AS PresentCD2,
-	       @outPresentCD3 AS PresentCD3,
-	       @outPresentCD4 AS PresentCD4,
-	       @outPresentCD5 AS PresentCD5,
-	       @Error  AS Error
-	       ;   
-END
-
-GO
 
 -- =============================================
 -- Author:      <Author,,Name>
@@ -239,4 +194,49 @@ BEGIN
 END
 GO
 
+CREATE PROCEDURE Fnc_Present
+(   
+    -- Add the parameters for the function here
+    @AdminNO     int,    
+    @ChangeDate  varchar(10),
+    @StoreCD  varchar(4)
+)AS
+BEGIN
+    -- SET NOCOUNT ON added to prevent extra result sets from
+    -- interfering with SELECT statements.
+    SET NOCOUNT ON;
+    
+    DECLARE @Error  tinyint;
+    DECLARE @outPresentCD1 varchar(5);
+    DECLARE @outPresentCD2 varchar(5);
+    DECLARE @outPresentCD3 varchar(5);
+    DECLARE @outPresentCD4 varchar(5);
+    DECLARE @outPresentCD5 varchar(5);
+
+    IF ISNULL(@ChangeDate,'') = ''
+        SET @ChangeDate = CONVERT(varchar, GETDATE(),111);
+    
+    EXEC Fnc_Present_SP
+        @AdminNO     ,    
+        @ChangeDate ,
+        @StoreCD,
+        @outPresentCD1   OUTPUT,
+        @outPresentCD2   OUTPUT,
+        @outPresentCD3   OUTPUT,
+        @outPresentCD4   OUTPUT,
+        @outPresentCD5   OUTPUT,
+        @Error  OUTPUT
+        ;
+    
+    -- Insert statements for procedure here
+    SELECT @outPresentCD1 AS PresentCD1,
+	       @outPresentCD2 AS PresentCD2,
+	       @outPresentCD3 AS PresentCD3,
+	       @outPresentCD4 AS PresentCD4,
+	       @outPresentCD5 AS PresentCD5,
+	       @Error  AS Error
+	       ;   
+END
+
+GO
 
