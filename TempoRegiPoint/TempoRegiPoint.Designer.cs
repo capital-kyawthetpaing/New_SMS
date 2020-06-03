@@ -106,7 +106,7 @@
             this.TxtCustomerCD.IsNumber = true;
             this.TxtCustomerCD.IsShop = false;
             this.TxtCustomerCD.Length = 13;
-            this.TxtCustomerCD.Location = new System.Drawing.Point(263, 95);
+            this.TxtCustomerCD.Location = new System.Drawing.Point(264, 96);
             this.TxtCustomerCD.MaxLength = 13;
             this.TxtCustomerCD.MoveNext = true;
             this.TxtCustomerCD.Name = "TxtCustomerCD";
@@ -177,11 +177,13 @@
             // 
             this.LblCustomerName.AutoSize = true;
             this.LblCustomerName.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
+            this.LblCustomerName.BackColor = System.Drawing.Color.Transparent;
+            this.LblCustomerName.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.LblCustomerName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.LblCustomerName.Location = new System.Drawing.Point(522, 97);
+            this.LblCustomerName.ForeColor = System.Drawing.Color.Black;
+            this.LblCustomerName.Location = new System.Drawing.Point(522, 96);
             this.LblCustomerName.Name = "LblCustomerName";
-            this.LblCustomerName.Size = new System.Drawing.Size(357, 22);
+            this.LblCustomerName.Size = new System.Drawing.Size(572, 35);
             this.LblCustomerName.TabIndex = 24;
             this.LblCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸ15";
             this.LblCustomerName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
