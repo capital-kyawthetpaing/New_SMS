@@ -328,12 +328,12 @@
             this.btnUp.DefaultBtnSize = false;
             this.btnUp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUp.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnUp.Location = new System.Drawing.Point(1348, 448);
+            this.btnUp.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
+            this.btnUp.Location = new System.Drawing.Point(1345, 445);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(243, 48);
+            this.btnUp.Size = new System.Drawing.Size(243, 45);
             this.btnUp.TabIndex = 12;
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = false;
@@ -347,12 +347,12 @@
             this.btnDown.DefaultBtnSize = false;
             this.btnDown.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDown.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnDown.Location = new System.Drawing.Point(1591, 448);
+            this.btnDown.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
+            this.btnDown.Location = new System.Drawing.Point(1588, 445);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(245, 48);
+            this.btnDown.Size = new System.Drawing.Size(245, 45);
             this.btnDown.TabIndex = 13;
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = false;
@@ -388,7 +388,7 @@
             this.pnlDetails.Controls.Add(this.lblGyoSelect3);
             this.pnlDetails.Location = new System.Drawing.Point(1345, 219);
             this.pnlDetails.Name = "pnlDetails";
-            this.pnlDetails.Size = new System.Drawing.Size(488, 194);
+            this.pnlDetails.Size = new System.Drawing.Size(600, 194);
             this.pnlDetails.TabIndex = 46;
             // 
             // lblDtKin3
