@@ -200,7 +200,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                             return false;
                         }
                     }
-                    myArryList[i] = sizeNewtxtbox_.ToString();
+                    myArryList[i] = sizeNewtxtbox_.Text;
                     //myArryList.Add(sizeNewtxtbox_);
                    
                     //if (sizeNewtxtbox_.)
@@ -212,38 +212,45 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     txtnewsize10.Focus();
                     return false;
                 }
+                //if(getMissingNo(myArryList,10))
+                //{
 
+                //}
 
+               
             }
 
             return true;
         }
 
-        private bool HasDuplicates(string[] arrayList)
+        private bool HasDuplicates(string [] arrayList)
         {
             List<string> vals = new List<string>();
             bool returnValue = false;
             foreach (string s in arrayList)
-            {
-                if (vals.Contains(s))
+            {               
+                if (!string.IsNullOrWhiteSpace(s))
                 {
-                    returnValue = true;
-                    break;
+                    if (vals.Contains(s))
+                    {
+                        returnValue = true;
+                        break;
+                    }
+                    vals.Add(s);
                 }
-                vals.Add(s);
-                //if(s.Contains("CKM_Controls.CKM_TextBox, Text:"))
-                //{
-
-                //}
-                //else
-                //{
-
-                //}
             }
-
-
             return returnValue;
         }
+
+        //private bool getMissingNo(int[] a, int n)
+        //{
+        //    int total = (n + 1) * (n + 2) / 2;
+
+        //    for (int i = 0; i < n; i++)
+        //        total -= a[i];
+
+        //    return true;
+        //}
 
 
         private void F11Display_Click(object sender, EventArgs e)
