@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -59,6 +61,7 @@
             this.掛率s = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.発注単価s = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.LB_priceouttax = new CKM_Controls.CKM_TextBox();
             this.itemcd = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.LB_priceouttax1 = new CKM_Controls.CKM_Label();
@@ -137,7 +140,6 @@
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.Btn_display = new CKM_Controls.CKM_Button();
-            this.LB_priceouttax = new CKM_Controls.CKM_TextBox();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -437,17 +439,17 @@
             // 
             this.GV_sku.AllowUserToDeleteRows = false;
             this.GV_sku.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_sku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_sku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.GV_sku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_sku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_sku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.GV_sku.ColumnHeadersHeight = 25;
             this.GV_sku.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewCheckBoxColumn1,
@@ -461,6 +463,14 @@
             this.定価s,
             this.掛率s,
             this.発注単価s});
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_sku.DefaultCellStyle = dataGridViewCellStyle9;
             this.GV_sku.EnableHeadersVisualStyles = false;
             this.GV_sku.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_sku.Location = new System.Drawing.Point(89, 346);
@@ -566,6 +576,33 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1780, 80);
             this.panel4.TabIndex = 68;
+            // 
+            // LB_priceouttax
+            // 
+            this.LB_priceouttax.AllowMinus = false;
+            this.LB_priceouttax.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.LB_priceouttax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.LB_priceouttax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LB_priceouttax.ClientColor = System.Drawing.SystemColors.Window;
+            this.LB_priceouttax.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.LB_priceouttax.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.LB_priceouttax.DecimalPlace = 0;
+            this.LB_priceouttax.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.LB_priceouttax.IntegerPart = 8;
+            this.LB_priceouttax.IsCorrectDate = true;
+            this.LB_priceouttax.isEnterKeyDown = false;
+            this.LB_priceouttax.isMaxLengthErr = false;
+            this.LB_priceouttax.IsNumber = true;
+            this.LB_priceouttax.IsShop = false;
+            this.LB_priceouttax.Length = 20;
+            this.LB_priceouttax.Location = new System.Drawing.Point(284, 49);
+            this.LB_priceouttax.MaxLength = 20;
+            this.LB_priceouttax.MoveNext = true;
+            this.LB_priceouttax.Name = "LB_priceouttax";
+            this.LB_priceouttax.Size = new System.Drawing.Size(100, 19);
+            this.LB_priceouttax.TabIndex = 39;
+            this.LB_priceouttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.LB_priceouttax.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // itemcd
             // 
@@ -839,17 +876,17 @@
             // 
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -865,6 +902,14 @@
             this.定価,
             this.掛率,
             this.発注単価});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_item.DefaultCellStyle = dataGridViewCellStyle12;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(89, 346);
@@ -1964,33 +2009,6 @@
             this.Btn_display.Text = "表示(F11)";
             this.Btn_display.UseVisualStyleBackColor = false;
             this.Btn_display.Click += new System.EventHandler(this.Btn_display_Click);
-            // 
-            // LB_priceouttax
-            // 
-            this.LB_priceouttax.AllowMinus = false;
-            this.LB_priceouttax.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.LB_priceouttax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.LB_priceouttax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LB_priceouttax.ClientColor = System.Drawing.SystemColors.Window;
-            this.LB_priceouttax.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.LB_priceouttax.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.LB_priceouttax.DecimalPlace = 0;
-            this.LB_priceouttax.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.LB_priceouttax.IntegerPart = 8;
-            this.LB_priceouttax.IsCorrectDate = true;
-            this.LB_priceouttax.isEnterKeyDown = false;
-            this.LB_priceouttax.isMaxLengthErr = false;
-            this.LB_priceouttax.IsNumber = true;
-            this.LB_priceouttax.IsShop = false;
-            this.LB_priceouttax.Length = 20;
-            this.LB_priceouttax.Location = new System.Drawing.Point(284, 49);
-            this.LB_priceouttax.MaxLength = 20;
-            this.LB_priceouttax.MoveNext = true;
-            this.LB_priceouttax.Name = "LB_priceouttax";
-            this.LB_priceouttax.Size = new System.Drawing.Size(100, 19);
-            this.LB_priceouttax.TabIndex = 39;
-            this.LB_priceouttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.LB_priceouttax.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // FrmMasterTouroku_ShiireTanka
             // 

@@ -409,6 +409,12 @@ namespace MasterTouroku_ShiireTanka
                     TB_date_add.Focus();
                     return false;
                 }
+                if(String.IsNullOrEmpty(LB_priceouttax.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    LB_priceouttax.Focus();
+                    return false;
+                }
                 if (string.IsNullOrEmpty(TB_rate.Text))
                 {
                     bbl.ShowMessage("E102");
@@ -522,7 +528,16 @@ namespace MasterTouroku_ShiireTanka
                         if (dt.Rows.Count > 0)
                         {
                             itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
-                            LB_priceouttax1.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                            //LB_priceouttax.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                            Decimal dd = Convert.ToDecimal(dt.Rows[0]["PriceOutTax"]);
+                            if (dd != 0)
+                            {
+                                LB_priceouttax.Text = string.Format("{0:0,0}", dd);
+                            }
+                            else
+                            {
+                                LB_priceouttax.Text = Convert.ToInt32(dt.Rows[0]["PriceOutTax"]).ToString();
+                            }
                         }
                     }
                 }
@@ -616,21 +631,27 @@ namespace MasterTouroku_ShiireTanka
             {
                 if (!String.IsNullOrEmpty(LB_priceouttax.Text))
                 {
-                    decimal rate = Convert.ToDecimal(TB_rate.Text);
-                    decimal con = (decimal)0.01;
-                    decimal listprice = Convert.ToDecimal(LB_priceouttax.Text);
+                   
                     //TB_orderprice.Text = Convert.ToString(listprice * (rate * con));
                     //TB_orderprice.Text= string.Format("{0:#,##0}", Convert.ToInt64((listprice * (rate * con))));
-             
-                    TB_pricewithouttax.Text = Math.Round(listprice * (rate * con)).ToString();
+                   if(!String.IsNullOrEmpty(TB_rate.Text))
+                   {
+                        decimal rate = Convert.ToDecimal(TB_rate.Text);
+                        decimal con = (decimal)0.01;
+                        decimal listprice = Convert.ToDecimal(LB_priceouttax.Text);
+                        TB_pricewithouttax.Text = Math.Round(listprice * (rate * con)).ToString();
+                   }
                 }
             }
         }
         private void btn_add_Click(object sender, EventArgs e)
         {
-            m_IOE = GetItemorder();
-            m_IE = GetItem();
-            DataTable dt=bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            if (ErrorCheck())
+            {
+                m_IOE = GetItemorder();
+                m_IE = GetItem();
+                DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            }
         }
     }
 }
