@@ -1166,6 +1166,7 @@ namespace Search
                         {
                             txtCode.Text = frmShiire.PurchaseNO;
                             txtChangeDate.Text = frmShiire.ChangeDate;
+                            CheckBasedFormPanel();
                         }
                     }
                     break;
