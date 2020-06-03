@@ -11,6 +11,8 @@ using Base.Client;
 using BL;
 using Entity;
 using Search;
+using CKM_Controls;
+using System.Collections;
 
 namespace MasterTouroku_SKUCDHenkou_SKUCD変更
 {
@@ -177,90 +179,124 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             else if(index == 12)
             {
-                //if(!string.IsNullOrWhiteSpace(txtoldsize1.Text))
-                //{
-                //    if(string.IsNullOrWhiteSpace(txtnewsize1.Text))
-
-                //    {
-                //        mskubl.ShowMessage("E102");
-                //        txtnewsize1.Focus();
-                //        return false;
-                //    }
-                //}
-
-                //foreach (Control c in this.Controls)
-                //{
-
-                //    if (c.GetType().ToString() == "System.Windows.Form.Textbox")
-                //    {
-
-                //        //your code goes here
-                //        //if (sizetb_Ctrl)
-                //        //{
-
-                //        //}
-
-                //    }
-
-                //}
-
-                //foreach (Control control in this.Controls)
-                //{
-                //    if (control is TextBox)
-                //    // You can check any other property here and do what you want
-                //    // for example:
-                //    {
-                //        //if (this.Controls.Find("txtnewsize", true))
-                //        //{
-
-                //        //}
-
-
-
-                //    }
-                //}
-
-                //var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                //if (sizetb_Ctrl. == true)
-                //{
-
-                //}
-
-                //foreach (var control in this.Controls.Find("txtnewsize", true))
-                //{
-                //    var textBox = control as TextBox;
-                //    if (textBox != null)
-                //    {
-                //        //if(textBox.find)
-                //    }
-                //}
-                var sizetb_Ctrl = this.Controls.Find("txtnewsize", true);
-                foreach (Control control in this.Controls)
+                //string[] b = new string[] { };
+                //ArrayList myArryList = new ArrayList();
+                #region Size
+                string[] sizeArray = new string[10];
+                int[] sizemissing = new int[10];
+                for (int i = 0; i < 10; i++)
                 {
-                    if (control is TextBox)
+                    var sizeNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var sizeOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var sizeCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    /// doooooooooo 
+                    /// 
+                    if(!string.IsNullOrWhiteSpace(sizeOldtxtbox_.Text))
                     {
-                        if ((control as TextBox).Name.Contains(sizetb_Ctrl.ToString()))
+                        if (string.IsNullOrWhiteSpace(sizeNewtxtbox_.Text))
                         {
-                            //string a = "aye";
+                            mskubl.ShowMessage("E102");
+                            sizeNewtxtbox_.Focus();
+                            return false;
                         }
                     }
-                        
+                    sizeArray[i] = sizeNewtxtbox_.Text;
+                    if(!string.IsNullOrWhiteSpace(sizeNewtxtbox_.Text))
+                    {
+                        sizemissing[i] = Convert.ToInt32(sizeNewtxtbox_.Text);
+                    }
+                }
+                if (HasDuplicates(sizeArray))
+                {
+                    mskubl.ShowMessage("E105");
+                    txtnewsize10.Focus();
+                    return false;
                 }
 
-                //foreach (Control control in this.Controls)
-                //{
-                //    if (control is TextBox)
-                //        // You can check any other property here and do what you want
-                //        // for example:
-                //        if ((control as TextBox).Text == string.Empty)
-                //            ;//Action
-                //}
+                int misssize = getMissingNo(sizemissing, 10);
+                if ((misssize > 0 && misssize < 11) || (misssize < 0))
+                {
+                    mskubl.ShowMessage("E228");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+                #endregion
 
+                #region Color
+                string[] colorArray = new string[20];
+                int[] colormissing = new int[20];
+                for (int i = 0; i < 20; i++)
+                {
+                    var colorNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    
+                    if (!string.IsNullOrWhiteSpace(colorOldtxtbox_.Text))
+                    {
+                        if (string.IsNullOrWhiteSpace(colorNewtxtbox_.Text))
+                        {
+                            mskubl.ShowMessage("E102");
+                            colorNewtxtbox_.Focus();
+                            return false;
+                        }
+                    }
+                    colorArray[i] = colorNewtxtbox_.Text;
+                    if (!string.IsNullOrWhiteSpace(colorNewtxtbox_.Text))
+                    {
+                        sizemissing[i] = Convert.ToInt32(colorNewtxtbox_.Text);
+                    }
+                }
+                if (HasDuplicates(colorArray))
+                {
+                    mskubl.ShowMessage("E105");
+                    txtnewsize10.Focus();
+                    return false;
+                }
 
+                int misscolor = getMissingNo(sizemissing, 20);
+                if ((misscolor > 0 && misscolor < 11) || (misscolor < 0))
+                {
+                    mskubl.ShowMessage("E228");
+                    txtnewsize10.Focus();
+                    return false;
+                }
+                #endregion
             }
 
             return true;
-       }
+        }
+
+        private bool HasDuplicates(string [] arrayList)
+        {
+            List<string> vals = new List<string>();
+            bool returnValue = false;
+            foreach (string s in arrayList)
+            {               
+                if (!string.IsNullOrWhiteSpace(s))
+                {
+                    if (vals.Contains(s))
+                    {
+                        returnValue = true;
+                        break;
+                    }
+                    vals.Add(s);
+                }
+            }
+            return returnValue;
+        }
+
+        private int getMissingNo(int[] a, int n)
+        {
+            int i, total = 1;
+
+            for (i = 2; i <= (n + 1); i++)
+            {
+                total += i;
+                total -= a[i - 2];
+            }
+            return total;
+        }
+
 
         private void F11Display_Click(object sender, EventArgs e)
         {
