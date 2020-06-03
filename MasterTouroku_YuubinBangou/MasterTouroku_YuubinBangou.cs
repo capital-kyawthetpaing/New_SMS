@@ -79,7 +79,6 @@ namespace MasterTouroku_YuubinBangou
             ((DataGridViewComboBoxColumn)dgvYuubinBangou.Columns["colCarrier"]).DataSource = dt;
         }
 
-
         public void  CreateDataTable()
         {
             dtDisplay = new DataTable();
