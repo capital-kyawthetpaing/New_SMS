@@ -172,12 +172,12 @@
             this.ckmShop_Label12.AutoSize = true;
             this.ckmShop_Label12.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label12.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label12.Location = new System.Drawing.Point(1326, 83);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
-            this.ckmShop_Label12.Size = new System.Drawing.Size(168, 29);
+            this.ckmShop_Label12.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label12.TabIndex = 37;
             this.ckmShop_Label12.Text = "残ポイント";
             this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -2210,8 +2210,8 @@
             this.btnCustomerSearch.DefaultBtnSize = false;
             this.btnCustomerSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
+            this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
+            this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
             this.btnCustomerSearch.Location = new System.Drawing.Point(4, 79);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
