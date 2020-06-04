@@ -768,7 +768,7 @@
             this.lblGyoSelect2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblGyoSelect2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblGyoSelect2.ForeColor = System.Drawing.Color.Black;
-            this.lblGyoSelect2.Location = new System.Drawing.Point(1, 66);
+            this.lblGyoSelect2.Location = new System.Drawing.Point(1, 67);
             this.lblGyoSelect2.Name = "lblGyoSelect2";
             this.lblGyoSelect2.Size = new System.Drawing.Size(612, 63);
             this.lblGyoSelect2.TabIndex = 70;
