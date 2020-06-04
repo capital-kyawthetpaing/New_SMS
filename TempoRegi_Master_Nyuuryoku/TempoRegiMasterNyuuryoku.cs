@@ -46,6 +46,7 @@ namespace TempoRegi_Master_Nyuuryoku
            // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
+            lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 
         private void TempoRegiMasterNyuuryoku_KeyUp(object sender, KeyEventArgs e)
