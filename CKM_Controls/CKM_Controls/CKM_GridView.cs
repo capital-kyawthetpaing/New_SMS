@@ -51,9 +51,9 @@ namespace CKM_Controls
             get { return RowHeight; }
             set { RowHeight = value;
                 RowTemplate.Height = RowHeight;
-                AllowUserToAddRows = false;
-                AllowUserToAddRows = true;
-                this.Refresh();
+                //AllowUserToAddRows = false;
+                //AllowUserToAddRows = true;
+                //this.Refresh();
              //   this.RefreshEdit();
                 Invalidate();
             }

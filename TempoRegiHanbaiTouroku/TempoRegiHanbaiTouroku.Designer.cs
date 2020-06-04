@@ -1466,10 +1466,10 @@
             this.btnGroupDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupDown.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnGroupDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnGroupDown.Location = new System.Drawing.Point(1769, 856);
+            this.btnGroupDown.Location = new System.Drawing.Point(1834, 851);
             this.btnGroupDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupDown.Name = "btnGroupDown";
-            this.btnGroupDown.Size = new System.Drawing.Size(40, 55);
+            this.btnGroupDown.Size = new System.Drawing.Size(45, 100);
             this.btnGroupDown.TabIndex = 79;
             this.btnGroupDown.Text = "▶";
             this.btnGroupDown.UseVisualStyleBackColor = false;
@@ -1485,10 +1485,10 @@
             this.btnGroupUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupUp.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnGroupUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnGroupUp.Location = new System.Drawing.Point(19, 864);
+            this.btnGroupUp.Location = new System.Drawing.Point(19, 851);
             this.btnGroupUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupUp.Name = "btnGroupUp";
-            this.btnGroupUp.Size = new System.Drawing.Size(40, 55);
+            this.btnGroupUp.Size = new System.Drawing.Size(45, 100);
             this.btnGroupUp.TabIndex = 78;
             this.btnGroupUp.Text = "◀";
             this.btnGroupUp.UseVisualStyleBackColor = false;
@@ -1498,10 +1498,11 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tableLayoutPanel2);
-            this.panel2.Location = new System.Drawing.Point(59, 851);
+            this.panel2.Location = new System.Drawing.Point(65, 851);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1700, 97);
+            this.panel2.Size = new System.Drawing.Size(1770, 101);
             this.panel2.TabIndex = 77;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tableLayoutPanel2
             // 
@@ -1539,7 +1540,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1250, 54);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1769, 100);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btnGrp14
@@ -1550,10 +1551,10 @@
             this.btnGrp14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp14.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp14.Location = new System.Drawing.Point(1160, 3);
+            this.btnGrp14.Location = new System.Drawing.Point(1641, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(87, 48);
+            this.btnGrp14.Size = new System.Drawing.Size(125, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1569,7 +1570,7 @@
             this.btnGrp1.Location = new System.Drawing.Point(3, 3);
             this.btnGrp1.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp1.Name = "btnGrp1";
-            this.btnGrp1.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp1.Size = new System.Drawing.Size(122, 94);
             this.btnGrp1.TabIndex = 0;
             this.btnGrp1.Text = " ";
             this.btnGrp1.UseVisualStyleBackColor = false;
@@ -1582,10 +1583,10 @@
             this.btnGrp2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp2.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp2.Location = new System.Drawing.Point(92, 3);
+            this.btnGrp2.Location = new System.Drawing.Point(129, 3);
             this.btnGrp2.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp2.Name = "btnGrp2";
-            this.btnGrp2.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp2.Size = new System.Drawing.Size(122, 94);
             this.btnGrp2.TabIndex = 1;
             this.btnGrp2.Text = " ";
             this.btnGrp2.UseVisualStyleBackColor = false;
@@ -1598,10 +1599,10 @@
             this.btnGrp3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp3.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp3.Location = new System.Drawing.Point(181, 3);
+            this.btnGrp3.Location = new System.Drawing.Point(255, 3);
             this.btnGrp3.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp3.Name = "btnGrp3";
-            this.btnGrp3.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp3.Size = new System.Drawing.Size(122, 94);
             this.btnGrp3.TabIndex = 2;
             this.btnGrp3.Text = " ";
             this.btnGrp3.UseVisualStyleBackColor = false;
@@ -1614,10 +1615,10 @@
             this.btnGrp4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp4.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp4.Location = new System.Drawing.Point(270, 3);
+            this.btnGrp4.Location = new System.Drawing.Point(381, 3);
             this.btnGrp4.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp4.Name = "btnGrp4";
-            this.btnGrp4.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp4.Size = new System.Drawing.Size(122, 94);
             this.btnGrp4.TabIndex = 3;
             this.btnGrp4.Text = " ";
             this.btnGrp4.UseVisualStyleBackColor = false;
@@ -1630,10 +1631,10 @@
             this.btnGrp5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp5.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp5.Location = new System.Drawing.Point(359, 3);
+            this.btnGrp5.Location = new System.Drawing.Point(507, 3);
             this.btnGrp5.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp5.Name = "btnGrp5";
-            this.btnGrp5.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp5.Size = new System.Drawing.Size(122, 94);
             this.btnGrp5.TabIndex = 4;
             this.btnGrp5.Text = " ";
             this.btnGrp5.UseVisualStyleBackColor = false;
@@ -1646,10 +1647,10 @@
             this.btnGrp6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp6.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp6.Location = new System.Drawing.Point(448, 3);
+            this.btnGrp6.Location = new System.Drawing.Point(633, 3);
             this.btnGrp6.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp6.Name = "btnGrp6";
-            this.btnGrp6.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp6.Size = new System.Drawing.Size(122, 94);
             this.btnGrp6.TabIndex = 5;
             this.btnGrp6.Text = " ";
             this.btnGrp6.UseVisualStyleBackColor = false;
@@ -1662,10 +1663,10 @@
             this.btnGrp7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp7.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp7.Location = new System.Drawing.Point(537, 3);
+            this.btnGrp7.Location = new System.Drawing.Point(759, 3);
             this.btnGrp7.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp7.Name = "btnGrp7";
-            this.btnGrp7.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp7.Size = new System.Drawing.Size(122, 94);
             this.btnGrp7.TabIndex = 6;
             this.btnGrp7.Text = " ";
             this.btnGrp7.UseVisualStyleBackColor = false;
@@ -1678,10 +1679,10 @@
             this.btnGrp8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp8.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp8.Location = new System.Drawing.Point(626, 3);
+            this.btnGrp8.Location = new System.Drawing.Point(885, 3);
             this.btnGrp8.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp8.Name = "btnGrp8";
-            this.btnGrp8.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp8.Size = new System.Drawing.Size(122, 94);
             this.btnGrp8.TabIndex = 7;
             this.btnGrp8.Text = " ";
             this.btnGrp8.UseVisualStyleBackColor = false;
@@ -1694,10 +1695,10 @@
             this.btnGrp9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp9.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp9.Location = new System.Drawing.Point(715, 3);
+            this.btnGrp9.Location = new System.Drawing.Point(1011, 3);
             this.btnGrp9.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp9.Name = "btnGrp9";
-            this.btnGrp9.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp9.Size = new System.Drawing.Size(122, 94);
             this.btnGrp9.TabIndex = 8;
             this.btnGrp9.Text = " ";
             this.btnGrp9.UseVisualStyleBackColor = false;
@@ -1710,10 +1711,10 @@
             this.btnGrp10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp10.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp10.Location = new System.Drawing.Point(804, 3);
+            this.btnGrp10.Location = new System.Drawing.Point(1137, 3);
             this.btnGrp10.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp10.Name = "btnGrp10";
-            this.btnGrp10.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp10.Size = new System.Drawing.Size(122, 94);
             this.btnGrp10.TabIndex = 9;
             this.btnGrp10.Text = " ";
             this.btnGrp10.UseVisualStyleBackColor = false;
@@ -1726,10 +1727,10 @@
             this.btnGrp11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp11.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp11.Location = new System.Drawing.Point(893, 3);
+            this.btnGrp11.Location = new System.Drawing.Point(1263, 3);
             this.btnGrp11.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp11.Name = "btnGrp11";
-            this.btnGrp11.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp11.Size = new System.Drawing.Size(122, 94);
             this.btnGrp11.TabIndex = 10;
             this.btnGrp11.Text = " ";
             this.btnGrp11.UseVisualStyleBackColor = false;
@@ -1742,10 +1743,10 @@
             this.btnGrp12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp12.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp12.Location = new System.Drawing.Point(982, 3);
+            this.btnGrp12.Location = new System.Drawing.Point(1389, 3);
             this.btnGrp12.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp12.Name = "btnGrp12";
-            this.btnGrp12.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp12.Size = new System.Drawing.Size(122, 94);
             this.btnGrp12.TabIndex = 11;
             this.btnGrp12.Text = " ";
             this.btnGrp12.UseVisualStyleBackColor = false;
@@ -1758,10 +1759,10 @@
             this.btnGrp13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp13.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp13.Location = new System.Drawing.Point(1071, 3);
+            this.btnGrp13.Location = new System.Drawing.Point(1515, 3);
             this.btnGrp13.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp13.Name = "btnGrp13";
-            this.btnGrp13.Size = new System.Drawing.Size(85, 48);
+            this.btnGrp13.Size = new System.Drawing.Size(122, 94);
             this.btnGrp13.TabIndex = 12;
             this.btnGrp13.Text = " ";
             this.btnGrp13.UseVisualStyleBackColor = false;
