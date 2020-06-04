@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtRefDate = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -147,6 +146,7 @@
             this.txtRefDate.IntegerPart = 0;
             this.txtRefDate.IsCorrectDate = true;
             this.txtRefDate.isEnterKeyDown = false;
+            this.txtRefDate.isMaxLengthErr = false;
             this.txtRefDate.IsNumber = true;
             this.txtRefDate.IsShop = false;
             this.txtRefDate.Length = 10;
@@ -191,6 +191,7 @@
             this.txtCustomerName.IntegerPart = 0;
             this.txtCustomerName.IsCorrectDate = true;
             this.txtCustomerName.isEnterKeyDown = false;
+            this.txtCustomerName.isMaxLengthErr = false;
             this.txtCustomerName.IsNumber = true;
             this.txtCustomerName.IsShop = false;
             this.txtCustomerName.Length = 80;
@@ -226,7 +227,7 @@
             this.txtKanaName.BackColor = System.Drawing.Color.White;
             this.txtKanaName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKanaName.ClientColor = System.Drawing.Color.White;
-            this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtKanaName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtKanaName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtKanaName.DecimalPlace = 0;
             this.txtKanaName.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -234,6 +235,7 @@
             this.txtKanaName.IntegerPart = 0;
             this.txtKanaName.IsCorrectDate = true;
             this.txtKanaName.isEnterKeyDown = false;
+            this.txtKanaName.isMaxLengthErr = false;
             this.txtKanaName.IsNumber = true;
             this.txtKanaName.IsShop = false;
             this.txtKanaName.Length = 30;
@@ -242,7 +244,7 @@
             this.txtKanaName.MoveNext = true;
             this.txtKanaName.Name = "txtKanaName";
             this.txtKanaName.Size = new System.Drawing.Size(201, 19);
-            this.txtKanaName.TabIndex = 7;
+            this.txtKanaName.TabIndex = 6;
             this.txtKanaName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label4
@@ -276,6 +278,7 @@
             this.txtPhno.IntegerPart = 0;
             this.txtPhno.IsCorrectDate = true;
             this.txtPhno.isEnterKeyDown = false;
+            this.txtPhno.isMaxLengthErr = false;
             this.txtPhno.IsNumber = true;
             this.txtPhno.IsShop = false;
             this.txtPhno.Length = 13;
@@ -284,7 +287,7 @@
             this.txtPhno.MoveNext = true;
             this.txtPhno.Name = "txtPhno";
             this.txtPhno.Size = new System.Drawing.Size(100, 19);
-            this.txtPhno.TabIndex = 9;
+            this.txtPhno.TabIndex = 7;
             this.txtPhno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label5
@@ -318,6 +321,7 @@
             this.txtBirthDate.IntegerPart = 0;
             this.txtBirthDate.IsCorrectDate = true;
             this.txtBirthDate.isEnterKeyDown = false;
+            this.txtBirthDate.isMaxLengthErr = false;
             this.txtBirthDate.IsNumber = true;
             this.txtBirthDate.IsShop = false;
             this.txtBirthDate.Length = 10;
@@ -326,7 +330,7 @@
             this.txtBirthDate.MoveNext = true;
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.Size = new System.Drawing.Size(100, 19);
-            this.txtBirthDate.TabIndex = 11;
+            this.txtBirthDate.TabIndex = 8;
             this.txtBirthDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBirthDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -417,6 +421,7 @@
             this.txtKeyword.IntegerPart = 0;
             this.txtKeyword.IsCorrectDate = true;
             this.txtKeyword.isEnterKeyDown = false;
+            this.txtKeyword.isMaxLengthErr = false;
             this.txtKeyword.IsNumber = true;
             this.txtKeyword.IsShop = false;
             this.txtKeyword.Length = 80;
@@ -460,6 +465,7 @@
             this.txtCustCDFrom.IntegerPart = 0;
             this.txtCustCDFrom.IsCorrectDate = true;
             this.txtCustCDFrom.isEnterKeyDown = false;
+            this.txtCustCDFrom.isMaxLengthErr = false;
             this.txtCustCDFrom.IsNumber = true;
             this.txtCustCDFrom.IsShop = false;
             this.txtCustCDFrom.Length = 13;
@@ -502,6 +508,7 @@
             this.txtCustCDTo.IntegerPart = 0;
             this.txtCustCDTo.IsCorrectDate = true;
             this.txtCustCDTo.isEnterKeyDown = false;
+            this.txtCustCDTo.isMaxLengthErr = false;
             this.txtCustCDTo.IsNumber = true;
             this.txtCustCDTo.IsShop = false;
             this.txtCustCDTo.Length = 13;
@@ -538,17 +545,17 @@
             this.gv_CustomerSearch.AllowUserToAddRows = false;
             this.gv_CustomerSearch.AllowUserToDeleteRows = false;
             this.gv_CustomerSearch.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.gv_CustomerSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.gv_CustomerSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.gv_CustomerSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gv_CustomerSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gv_CustomerSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.gv_CustomerSearch.ColumnHeadersHeight = 25;
             this.gv_CustomerSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CustomerNo,
@@ -560,18 +567,11 @@
             this.Address,
             this.Remark,
             this.colRefDate});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gv_CustomerSearch.DefaultCellStyle = dataGridViewCellStyle4;
             this.gv_CustomerSearch.EnableHeadersVisualStyles = false;
             this.gv_CustomerSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.gv_CustomerSearch.Location = new System.Drawing.Point(12, 216);
             this.gv_CustomerSearch.Name = "gv_CustomerSearch";
+            this.gv_CustomerSearch.RowHeight_ = 20;
             this.gv_CustomerSearch.Size = new System.Drawing.Size(1260, 500);
             this.gv_CustomerSearch.TabIndex = 5;
             this.gv_CustomerSearch.UseRowNo = true;
@@ -608,8 +608,8 @@
             // BirthDate
             // 
             this.BirthDate.DataPropertyName = "Birthdate";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.BirthDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.BirthDate.DefaultCellStyle = dataGridViewCellStyle27;
             this.BirthDate.HeaderText = "生年月日";
             this.BirthDate.Name = "BirthDate";
             // 
