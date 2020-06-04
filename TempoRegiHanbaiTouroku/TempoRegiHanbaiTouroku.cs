@@ -79,7 +79,6 @@ namespace TempoRegiHanbaiTouroku
                 StartProgram();
 
                 btnProcess.Text = "入金へ";
-
                 SetRequireField();
                 AddHandler();
 
