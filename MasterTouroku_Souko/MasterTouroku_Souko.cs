@@ -177,8 +177,9 @@ namespace MasterTouroku_Souko
                     Clear(PanelHeader);
                     Clear(PanelDetail);
                     EnablePanel(PanelHeader);
-                    //GvTana.Enabled = false;
                     DisablePanel(PanelDetail);
+                    GvTana.ClearSelection();
+                    GvTana.Enabled = false;
                     ScSoukoCD.SearchEnable = false;
                     ScCopySoukoCD.SearchEnable = true;
                     ScCopySoukoCD.Enabled = true;
@@ -191,16 +192,17 @@ namespace MasterTouroku_Souko
                 case EOperationMode.SHOW:
                     Clear(PanelHeader);
                     Clear(PanelDetail);
-                    //GvTana.Enabled = false;
                     EnablePanel(PanelHeader);
                     DisablePanel(PanelDetail);
+                    GvTana.Enabled = false;
+                    GvTana.ClearSelection();
                     ScSoukoCD.SearchEnable = true;
                     ScCopySoukoCD.Enabled = false;
                     F12Enable = false;
                     btnDisplay.Enabled = F11Enable = true;
                     break;
             }
-            ScSoukoCD.SetFocus(1);
+            ScSoukoCD.Focus();
         }
         protected override void EndSec()
         {
@@ -260,6 +262,8 @@ namespace MasterTouroku_Souko
                         {
                             DisablePanel(PanelHeader);
                             DisablePanel(PanelDetail);
+                            GvTana.Enabled = false;
+                            GvTana.ClearSelection();
                             F11Enable = false;
                             btnDisplay.Enabled = false;
                             SelectNextControl(PanelDetail, true, true, true, true);
@@ -271,6 +275,7 @@ namespace MasterTouroku_Souko
                         {
                             DisablePanel(PanelHeader);
                             DisablePanel(PanelDetail);
+                            GvTana.Enabled = false;
                             F11Enable = false;
                             btnDisplay.Enabled = false;
                             F12Enable = false;
