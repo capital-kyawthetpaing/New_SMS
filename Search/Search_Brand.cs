@@ -43,7 +43,7 @@ namespace Search
             InitialControlArray();
             F9Visible = false;
 
-            dgvDetail.AllowUserToAddRows = false;
+           // dgvDetail.AllowUserToAddRows = false;
             dgvDetail.ColumnHeadersDefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
 
             HeaderTitleText = "ブランド";
