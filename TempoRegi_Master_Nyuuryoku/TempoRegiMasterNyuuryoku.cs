@@ -338,7 +338,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblNameNO.Text= horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                lblBtnName.Text = string.Empty;
+                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtBtnNameDown.Focus();
