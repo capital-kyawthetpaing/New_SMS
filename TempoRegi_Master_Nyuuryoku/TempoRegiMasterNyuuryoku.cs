@@ -46,6 +46,7 @@ namespace TempoRegi_Master_Nyuuryoku
            // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
+            txtButtomNameUp.Focus();
             lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 

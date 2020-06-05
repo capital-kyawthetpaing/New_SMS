@@ -47,6 +47,28 @@ namespace BL
             return dscdl.D_StoreCalculation_Select(dsce);
         }
 
+        public DataTable D_Store_Calculation_SelectForSeiSan(D_StoreCalculation_Entity dsce)
+        {
+            return dscdl.D_Store_Calculation_SelectForSeiSan(dsce);
+        }
+
+        public DataTable D_DepositHistory_SelectForSeisan(D_DepositHistory_Entity dde)
+        {
+            return ddhdl.D_DepositHistory_SelectForSeisan(dde);
+        }
+
+        public DataTable D_Sale_SelectForSeisan(D_Sales_Entity dse)
+        {
+            return dsdl.D_Sale_SelectForSeisan(dse);
+        }
+
+        public DataTable D_Juchuu_SelectForSeisan(D_Juchuu_Entity dje)
+        {
+            return djdl.D_Juchuu_SelectForSeisan(dje);
+        }
+
+
+
 
     }
 }

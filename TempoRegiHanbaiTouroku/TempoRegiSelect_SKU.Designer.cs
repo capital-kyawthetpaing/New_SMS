@@ -60,12 +60,12 @@
             this.ckmShop_Label6.AutoSize = true;
             this.ckmShop_Label6.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label6.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(378, 120);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(378, 137);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
-            this.ckmShop_Label6.Size = new System.Drawing.Size(79, 22);
+            this.ckmShop_Label6.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label6.TabIndex = 124;
             this.ckmShop_Label6.Text = "商品名";
             this.ckmShop_Label6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -76,12 +76,12 @@
             this.ckmShop_Label8.AutoSize = true;
             this.ckmShop_Label8.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label8.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(60, 62);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(60, 83);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
-            this.ckmShop_Label8.Size = new System.Drawing.Size(70, 22);
+            this.ckmShop_Label8.Size = new System.Drawing.Size(110, 35);
             this.ckmShop_Label8.TabIndex = 126;
             this.ckmShop_Label8.Text = "JANCD";
             this.ckmShop_Label8.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -92,12 +92,12 @@
             this.ckmShop_Label10.AutoSize = true;
             this.ckmShop_Label10.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label10.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label10.Location = new System.Drawing.Point(60, 120);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(60, 137);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
-            this.ckmShop_Label10.Size = new System.Drawing.Size(70, 22);
+            this.ckmShop_Label10.Size = new System.Drawing.Size(110, 35);
             this.ckmShop_Label10.TabIndex = 128;
             this.ckmShop_Label10.Text = "SKUCD";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -108,12 +108,12 @@
             this.ckmShop_Label12.AutoSize = true;
             this.ckmShop_Label12.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label12.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(60, 26);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(60, 28);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
-            this.ckmShop_Label12.Size = new System.Drawing.Size(783, 22);
+            this.ckmShop_Label12.Size = new System.Drawing.Size(1257, 35);
             this.ckmShop_Label12.TabIndex = 130;
             this.ckmShop_Label12.Text = "同じJANCDの商品が複数登録されています。どの商品か選択してください。";
             this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -132,7 +132,7 @@
             this.dgvDetail.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -148,7 +148,7 @@
             this.colAdminNO});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F);
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 26F);
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -156,20 +156,20 @@
             this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvDetail.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.dgvDetail.EnableHeadersVisualStyles = false;
-            this.dgvDetail.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F);
+            this.dgvDetail.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvDetail.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.dgvDetail.HeaderHeight_ = 22;
             this.dgvDetail.HeaderVisible = false;
             this.dgvDetail.Height_ = 380;
-            this.dgvDetail.Location = new System.Drawing.Point(14, 143);
+            this.dgvDetail.Location = new System.Drawing.Point(14, 176);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowHeight_ = 20;
             this.dgvDetail.RowTemplate.Height = 20;
             this.dgvDetail.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvDetail.Size = new System.Drawing.Size(1207, 280);
+            this.dgvDetail.Size = new System.Drawing.Size(1207, 303);
             this.dgvDetail.TabIndex = 6;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
@@ -239,16 +239,16 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 0);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1234, 481);
+            this.panelDetail.Size = new System.Drawing.Size(1334, 561);
             this.panelDetail.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 432);
+            this.panel4.Location = new System.Drawing.Point(0, 508);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1234, 49);
+            this.panel4.Size = new System.Drawing.Size(1334, 53);
             this.panel4.TabIndex = 132;
             // 
             // tableLayoutPanel1
@@ -262,7 +262,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1234, 49);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1334, 53);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnProcess
@@ -274,12 +274,12 @@
             this.btnProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("ＭＳ ゴシック", 24F, System.Drawing.FontStyle.Bold);
+            this.btnProcess.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnProcess.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnProcess.Location = new System.Drawing.Point(1, 1);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(1);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(1232, 47);
+            this.btnProcess.Size = new System.Drawing.Size(1332, 51);
             this.btnProcess.TabIndex = 1;
             this.btnProcess.Tag = "1";
             this.btnProcess.Text = "決　定";
@@ -291,12 +291,12 @@
             this.lblJANCD.AutoSize = true;
             this.lblJANCD.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblJANCD.BackColor = System.Drawing.Color.Transparent;
-            this.lblJANCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F, System.Drawing.FontStyle.Bold);
+            this.lblJANCD.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblJANCD.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblJANCD.ForeColor = System.Drawing.Color.Black;
-            this.lblJANCD.Location = new System.Drawing.Point(136, 62);
+            this.lblJANCD.Location = new System.Drawing.Point(165, 83);
             this.lblJANCD.Name = "lblJANCD";
-            this.lblJANCD.Size = new System.Drawing.Size(264, 22);
+            this.lblJANCD.Size = new System.Drawing.Size(423, 35);
             this.lblJANCD.TabIndex = 131;
             this.lblJANCD.Text = "ＸＸＸＸＸＸ10ＸＸＸＸ";
             this.lblJANCD.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -304,9 +304,9 @@
             // 
             // TempoRegiSelect_SKU
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 481);
+            this.ClientSize = new System.Drawing.Size(1334, 561);
             this.Controls.Add(this.panelDetail);
             this.Name = "TempoRegiSelect_SKU";
             this.Text = "TempoRegiKaiinKensaku";

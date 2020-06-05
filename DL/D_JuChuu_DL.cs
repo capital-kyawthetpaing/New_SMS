@@ -376,5 +376,19 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable D_Juchuu_SelectForSeisan(D_Juchuu_Entity dje)
+        {
+            string sp = "D_Juchuu_SelectForSeisan";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.StoreCD } },
+                { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = dje.ChangeDate } }
+
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
