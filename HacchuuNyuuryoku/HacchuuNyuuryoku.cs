@@ -1681,7 +1681,24 @@ namespace HacchuuNyuuryoku
                             else
                                 SetBtnSubF11Enabled(false);
 
-                            SetlblDisp(row["ApprovalStage"].ToString());
+                            switch(mApprovalStageFLG)
+                            {
+                                case 0:
+                                    SetlblDisp("却下");
+                                    break;
+
+                                case 1:
+                                    SetlblDisp("申請中");
+                                    break;
+
+                                case 9:
+                                    SetlblDisp("承認済");
+                                    break;
+
+                                default:
+                                    SetlblDisp("承認中");
+                                    break;
+                            }
                         }
                         else
                         {
@@ -2883,6 +2900,7 @@ namespace HacchuuNyuuryoku
             switch (text)
             {
                 case "申請":
+                case "申請中":
                 case "承認":
                 case "承認中":
                     lblDisp.BackColor = Color.LemonChiffon;
@@ -2893,7 +2911,9 @@ namespace HacchuuNyuuryoku
                 case "承認済":
                     lblDisp.BackColor = Color.PowderBlue;
                     break;
-
+                default:
+                    lblDisp.Text = "";
+                    break;
             }
         }
         /// <summary>
@@ -3679,6 +3699,8 @@ namespace HacchuuNyuuryoku
                         {
                             mSyoninsya = true;
                         }
+
+                        SetBtnSubF11Enabled(mSyoninsya);
                     }
                 }
             }
