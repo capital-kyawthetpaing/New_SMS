@@ -662,6 +662,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
                     if (drow.Cells["col1"].Value.ToString() == "1")
+                   
                     {
                         drow.Cells["colChk"].Value = true;
                     }
@@ -771,6 +772,7 @@ namespace MasterTouroku_ShiireKakeritsu
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dtMain = view.ToTable();
+            dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
 
