@@ -1140,6 +1140,8 @@ namespace ShiireNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+            int colJan = (int)ClsGridShiire.ColNO.JanCD;
+
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
             {
@@ -1171,6 +1173,8 @@ namespace ShiireNyuuryoku
                 mGrid.g_DArray[w_Row].SyukkaSijizumiFlg = dpen.SyukkaSijizumiFlg;
                 mGrid.g_DArray[w_Row].PickingzumiFlg = dpen.PickingzumiFlg;
                 mGrid.g_DArray[w_Row].HikiatezumiFlg = dpen.HikiatezumiFlg;
+
+                Grid_NotFocus(colJan, i);
             }
 
             //状態もコピー
@@ -1178,10 +1182,7 @@ namespace ShiireNyuuryoku
             for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
-            }
-            
-            int col = (int)ClsGridShiire.ColNO.JanCD;
-            Grid_NotFocus(col, w_Row);
+            }           
 
             CalcKin();
             CalcZei();
@@ -1190,7 +1191,7 @@ namespace ShiireNyuuryoku
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-            mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, colJan, ActiveControl, Vsb_Mei_0, w_Row, colJan);
         }
         private void ADD_SUB()
         {
