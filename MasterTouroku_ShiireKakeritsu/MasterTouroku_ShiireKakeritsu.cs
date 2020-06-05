@@ -455,9 +455,11 @@ namespace MasterTouroku_ShiireKakeritsu
                 searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text;
-            dvMain.RowFilter = searchCondition;
-            dgv_ShiireKakeritsu.DataSource = dvMain;
-
+            if(dgv_ShiireKakeritsu.DataSource !=null)
+            {
+                dvMain.RowFilter = searchCondition;
+                dgv_ShiireKakeritsu.DataSource = dvMain;
+            }
         }
         private void SearchData()
         {
@@ -495,11 +497,10 @@ namespace MasterTouroku_ShiireKakeritsu
             //if (!string.IsNullOrWhiteSpace(searchCondition))
             //{
             //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
-            //moe = GetSearchInfo();
-            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            //dvMain = new DataView(dtMain);
-            DataView dvMain = new DataView();
-            dvMain.RowFilter = searchCondition;
+            moe = GetSearchInfo();
+            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            dvMain = new DataView(dtMain);
+           
             dgv_ShiireKakeritsu.DataSource = dvMain;
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
@@ -515,7 +516,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //    dtGrid = dtMain;
             //}
 
-            dgv_ShiireKakeritsu.DataSource = dvMain;
             
         }
         private void btnCopy_Click(object sender, EventArgs e)
