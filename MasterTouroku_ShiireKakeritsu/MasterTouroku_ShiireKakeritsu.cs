@@ -479,9 +479,12 @@ namespace MasterTouroku_ShiireKakeritsu
             //if (!string.IsNullOrWhiteSpace(searchCondition))
             //{
             //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
-            moe = GetSearchInfo();
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            dvMain = new DataView(dtMain);
+            //moe = GetSearchInfo();
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dvMain = new DataView(dtMain);
+            DataView dvMain = new DataView();
+            dvMain.RowFilter = searchCondition;
+            dgv_ShiireKakeritsu.DataSource = dvMain;
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
             //    if (dr.Count() > 0)
