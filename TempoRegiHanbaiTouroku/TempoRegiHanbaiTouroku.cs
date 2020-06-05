@@ -79,7 +79,6 @@ namespace TempoRegiHanbaiTouroku
                 StartProgram();
 
                 btnProcess.Text = "入金へ";
-
                 SetRequireField();
                 AddHandler();
 
@@ -1896,6 +1895,11 @@ namespace TempoRegiHanbaiTouroku
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

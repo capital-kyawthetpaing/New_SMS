@@ -348,7 +348,7 @@
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label10.Location = new System.Drawing.Point(215, 373);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
-            this.ckmShop_Label10.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label10.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label10.TabIndex = 108;
             this.ckmShop_Label10.Text = "確　認";
             this.ckmShop_Label10.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
@@ -987,7 +987,7 @@
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label7.Location = new System.Drawing.Point(214, 131);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
-            this.ckmShop_Label7.Size = new System.Drawing.Size(126, 35);
+            this.ckmShop_Label7.Size = new System.Drawing.Size(125, 35);
             this.ckmShop_Label7.TabIndex = 82;
             this.ckmShop_Label7.Text = "性　別";
             this.ckmShop_Label7.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;

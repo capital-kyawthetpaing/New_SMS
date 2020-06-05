@@ -46,6 +46,7 @@ namespace TempoRegi_Master_Nyuuryoku
            // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
+            lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 
         private void TempoRegiMasterNyuuryoku_KeyUp(object sender, KeyEventArgs e)
@@ -338,7 +339,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblNameNO.Text= horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                lblBtnName.Text = string.Empty;
+                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtBtnNameDown.Focus();
@@ -475,7 +476,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void btn_Confrim2_Click(object sender, EventArgs e)
         {
-            if (!RequireCheck(new Control[] { txtCD})) return;
+           // if (!RequireCheck(new Control[] { txtCD})) return;
 
             if (ErrorCheck())
             {
@@ -534,10 +535,10 @@ namespace TempoRegi_Master_Nyuuryoku
         }
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
-           if(!RequireCheck(new Control[] { txtButtomNameUp }))
-            {
-                return;
-            }
+           //if(!RequireCheck(new Control[] { txtButtomNameUp }))
+           // {
+           //     return;
+           // }
             btnProcess.Enabled = true;//Save_Button
             //return;            
                       

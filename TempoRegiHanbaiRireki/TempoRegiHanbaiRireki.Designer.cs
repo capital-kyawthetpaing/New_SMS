@@ -175,7 +175,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(1326, 83);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(1325, 81);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label12.TabIndex = 37;
@@ -2098,7 +2098,7 @@
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(200, 37);
+            this.txtCustomerNo.Size = new System.Drawing.Size(210, 37);
             this.txtCustomerNo.TabIndex = 0;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.FMedium;
@@ -2112,9 +2112,9 @@
             this.lblLastPoint.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblLastPoint.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblLastPoint.ForeColor = System.Drawing.Color.Black;
-            this.lblLastPoint.Location = new System.Drawing.Point(1497, 77);
+            this.lblLastPoint.Location = new System.Drawing.Point(1494, 79);
             this.lblLastPoint.Name = "lblLastPoint";
-            this.lblLastPoint.Size = new System.Drawing.Size(200, 41);
+            this.lblLastPoint.Size = new System.Drawing.Size(210, 37);
             this.lblLastPoint.TabIndex = 66;
             this.lblLastPoint.Text = "XXXXXXXXXXX13";
             this.lblLastPoint.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Black;
