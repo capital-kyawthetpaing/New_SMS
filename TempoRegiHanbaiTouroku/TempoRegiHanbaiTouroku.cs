@@ -1072,7 +1072,7 @@ namespace TempoRegiHanbaiTouroku
             ClearBackColor(pnlDetails);
             txtCustomerNo.Focus();
 
-            btnClose.Text = "終了";
+            btnClose.Text = "終　了";
             btnClose.Tag = "0";
             btnHenpin.Visible = true;
             OperationMode = FrmMainForm.EOperationMode.INSERT;
