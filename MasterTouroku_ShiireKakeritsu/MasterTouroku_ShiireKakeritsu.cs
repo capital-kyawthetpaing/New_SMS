@@ -38,6 +38,7 @@ namespace MasterTouroku_ShiireKakeritsu
             InitializeComponent();
             mskbl = new MasterTouroku_ShiireKakeritsu_BL();
             moe = new M_OrderRate_Entity();
+            dvMain = new DataView();
         }
 
         private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
@@ -441,7 +442,22 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //SearchData();
-            BindGrid();
+            string searchCondition = string.Empty;
+            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+                searchCondition = "ChangeDate= '" + txtDate.Text;
+            dvMain.RowFilter = searchCondition;
+            dgv_ShiireKakeritsu.DataSource = dvMain;
+
         }
         private void SearchData()
         {
@@ -497,6 +513,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //}
 
             dgv_ShiireKakeritsu.DataSource = dvMain;
+            
         }
         private void btnCopy_Click(object sender, EventArgs e)
         {
