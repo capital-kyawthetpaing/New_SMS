@@ -113,6 +113,7 @@ namespace SiharaiYoteiHyou
             if (chkExpense.Checked == false && chkPurchase.Checked == false)
             {
                 shyhbl.ShowMessage("E111");
+                chkPurchase.Focus();
                 return false;
             }
 
