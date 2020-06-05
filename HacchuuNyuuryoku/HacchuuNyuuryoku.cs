@@ -1704,7 +1704,7 @@ namespace HacchuuNyuuryoku
                         {
                             //複写時
                             SetBtnSubF11Enabled(true);
-                            SetlblDisp("承認中");
+                            SetlblDisp("申請中");
                         }
 
                         if (row["AliasKBN"].ToString() == "1")

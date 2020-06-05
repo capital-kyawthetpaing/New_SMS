@@ -92,5 +92,15 @@ namespace DL
             return SelectData(dic,"D_DepositＨistory_Gaku_Select");
         }
 
+        public DataTable D_DepositHistory_SelectForSeisan(D_DepositHistory_Entity mre)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mre.StoreCD} },
+                { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = mre.ChangeDate} },
+            };
+            return SelectData(dic, "D_DepositHistory_SelectForSeisan");
+        }
+
     }
 }
