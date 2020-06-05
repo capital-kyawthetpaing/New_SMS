@@ -113,7 +113,7 @@
             this.ckmShop_RadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_RadioButton1.Location = new System.Drawing.Point(104, 60);
             this.ckmShop_RadioButton1.Name = "ckmShop_RadioButton1";
-            this.ckmShop_RadioButton1.Size = new System.Drawing.Size(117, 34);
+            this.ckmShop_RadioButton1.Size = new System.Drawing.Size(125, 34);
             this.ckmShop_RadioButton1.TabIndex = 0;
             this.ckmShop_RadioButton1.TabStop = true;
             this.ckmShop_RadioButton1.Text = "小学生";
@@ -126,7 +126,7 @@
             this.ckmShop_RadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_RadioButton2.Location = new System.Drawing.Point(104, 114);
             this.ckmShop_RadioButton2.Name = "ckmShop_RadioButton2";
-            this.ckmShop_RadioButton2.Size = new System.Drawing.Size(117, 34);
+            this.ckmShop_RadioButton2.Size = new System.Drawing.Size(125, 34);
             this.ckmShop_RadioButton2.TabIndex = 1;
             this.ckmShop_RadioButton2.TabStop = true;
             this.ckmShop_RadioButton2.Text = "中学生";
@@ -139,7 +139,7 @@
             this.ckmShop_RadioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_RadioButton3.Location = new System.Drawing.Point(104, 168);
             this.ckmShop_RadioButton3.Name = "ckmShop_RadioButton3";
-            this.ckmShop_RadioButton3.Size = new System.Drawing.Size(117, 34);
+            this.ckmShop_RadioButton3.Size = new System.Drawing.Size(125, 34);
             this.ckmShop_RadioButton3.TabIndex = 2;
             this.ckmShop_RadioButton3.TabStop = true;
             this.ckmShop_RadioButton3.Text = "高校生";
@@ -152,7 +152,7 @@
             this.ckmShop_RadioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_RadioButton4.Location = new System.Drawing.Point(104, 222);
             this.ckmShop_RadioButton4.Name = "ckmShop_RadioButton4";
-            this.ckmShop_RadioButton4.Size = new System.Drawing.Size(175, 34);
+            this.ckmShop_RadioButton4.Size = new System.Drawing.Size(125, 34);
             this.ckmShop_RadioButton4.TabIndex = 3;
             this.ckmShop_RadioButton4.TabStop = true;
             this.ckmShop_RadioButton4.Text = "大学・一般";
@@ -165,7 +165,7 @@
             this.ckmShop_RadioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_RadioButton5.Location = new System.Drawing.Point(104, 276);
             this.ckmShop_RadioButton5.Name = "ckmShop_RadioButton5";
-            this.ckmShop_RadioButton5.Size = new System.Drawing.Size(117, 34);
+            this.ckmShop_RadioButton5.Size = new System.Drawing.Size(125, 34);
             this.ckmShop_RadioButton5.TabIndex = 4;
             this.ckmShop_RadioButton5.TabStop = true;
             this.ckmShop_RadioButton5.Text = "その他";

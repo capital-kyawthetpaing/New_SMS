@@ -46,6 +46,7 @@ namespace TempoRegi_Master_Nyuuryoku
            // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
+            lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 
         private void TempoRegiMasterNyuuryoku_KeyUp(object sender, KeyEventArgs e)
@@ -338,7 +339,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblNameNO.Text= horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                lblBtnName.Text = string.Empty;
+                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtBtnNameDown.Focus();
