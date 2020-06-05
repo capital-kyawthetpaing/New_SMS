@@ -705,7 +705,6 @@ namespace MasterTouroku_ShiireTanka
             {
                 query += " and LastSeason = '" + CB_season.Text + "'";
             }
-           
             if (String.IsNullOrEmpty(sport.TxtCode.Text))
             {
                 query += " and SportsCD is Null";
@@ -721,6 +720,14 @@ namespace MasterTouroku_ShiireTanka
             else
             {
                 query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
+            }
+            if ((RB_current.Checked== true) && String.IsNullOrEmpty(TB_date_condition.Text))
+            {
+                query += " and ChangeDate <= '" + TB_headerdate.Text + "'";
+            }
+            else
+            {
+                query += " and ChangeDate = '" + TB_date_condition.Text + "'";
             }
 
             //query += " and SegmentCD = '" + segment.TxtCode.Text + "'";

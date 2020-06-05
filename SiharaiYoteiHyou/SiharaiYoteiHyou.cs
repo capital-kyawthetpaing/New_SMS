@@ -172,6 +172,7 @@ namespace SiharaiYoteiHyou
             chkPurchase.Checked = true;
             chkExpense.Checked = true;
             txtPaymentDueDateFrom.Focus();
+            comboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// アプリケーションを終了処理
