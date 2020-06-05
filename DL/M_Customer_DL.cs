@@ -118,7 +118,8 @@ namespace DL
                 { "@BirthDate", new ValuePair { value1 = SqlDbType.Date, value2 = customer.Birthdate } },
                 { "@CustomerCD",new ValuePair { value1=SqlDbType.VarChar,value2= customer.CustomerCD } },
                 { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = customer.KanaName } },
-                { "@CustomerName",new ValuePair { value1=SqlDbType.VarChar,value2= customer.CustomerName } }
+                { "@CustomerName",new ValuePair { value1=SqlDbType.VarChar,value2= customer.CustomerName } },
+                { "@MainStoreCD",new ValuePair { value1=SqlDbType.VarChar,value2= customer.MainStoreCD } }
             };
             return SelectData(dic, sp);
         }
