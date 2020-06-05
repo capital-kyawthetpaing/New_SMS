@@ -460,6 +460,7 @@ namespace MasterTouroku_ShiireTanka
              dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
              dv = new DataView(dt);
             GV_item.DataSource = dv;
+            GV_sku.DataSource = dv;
                 //if(dt.Rows.Count > 0)
                 //{
                 //  GV_item.Refresh();
@@ -727,16 +728,12 @@ namespace MasterTouroku_ShiireTanka
             //query += " and LastSeason = '" + CB_season.Text + "'";
             //query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
             //query += " and ChangeDate = '" + TB_date_condition.Text + "'";
-
-
-
             if (GV_item.DataSource != null)
             {
                 dv.RowFilter = query;
                 GV_item.DataSource = dv;
+                GV_sku.DataSource = dv;
             }
-
-            
         }
     }
 }
