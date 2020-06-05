@@ -42,10 +42,10 @@
             this.lblSalseNo.AutoSize = true;
             this.lblSalseNo.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSalseNo.BackColor = System.Drawing.SystemColors.Window;
-            this.lblSalseNo.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblSalseNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.lblSalseNo.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblSalseNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblSalseNo.Location = new System.Drawing.Point(118, 154);
+            this.lblSalseNo.Location = new System.Drawing.Point(118, 142);
             this.lblSalseNo.Name = "lblSalseNo";
             this.lblSalseNo.Size = new System.Drawing.Size(126, 35);
             this.lblSalseNo.TabIndex = 19;
@@ -63,7 +63,7 @@
             this.txtPrintDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrintDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPrintDateFrom.DecimalPlace = 0;
-            this.txtPrintDateFrom.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtPrintDateFrom.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
             this.txtPrintDateFrom.IntegerPart = 8;
             this.txtPrintDateFrom.IsCorrectDate = true;
             this.txtPrintDateFrom.isEnterKeyDown = false;
@@ -71,7 +71,7 @@
             this.txtPrintDateFrom.IsNumber = true;
             this.txtPrintDateFrom.IsShop = false;
             this.txtPrintDateFrom.Length = 10;
-            this.txtPrintDateFrom.Location = new System.Drawing.Point(247, 151);
+            this.txtPrintDateFrom.Location = new System.Drawing.Point(247, 139);
             this.txtPrintDateFrom.MaxLength = 10;
             this.txtPrintDateFrom.MoveNext = true;
             this.txtPrintDateFrom.Name = "txtPrintDateFrom";
@@ -87,10 +87,10 @@
             this.ckmShop_Label1.AutoSize = true;
             this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label1.BackColor = System.Drawing.SystemColors.Window;
-            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(460, 154);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(460, 142);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(52, 35);
             this.ckmShop_Label1.TabIndex = 21;
@@ -108,7 +108,7 @@
             this.txtPrintDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrintDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPrintDateTo.DecimalPlace = 0;
-            this.txtPrintDateTo.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtPrintDateTo.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
             this.txtPrintDateTo.IntegerPart = 8;
             this.txtPrintDateTo.IsCorrectDate = true;
             this.txtPrintDateTo.isEnterKeyDown = false;
@@ -116,7 +116,7 @@
             this.txtPrintDateTo.IsNumber = true;
             this.txtPrintDateTo.IsShop = false;
             this.txtPrintDateTo.Length = 10;
-            this.txtPrintDateTo.Location = new System.Drawing.Point(518, 151);
+            this.txtPrintDateTo.Location = new System.Drawing.Point(518, 139);
             this.txtPrintDateTo.MaxLength = 10;
             this.txtPrintDateTo.MoveNext = true;
             this.txtPrintDateTo.Name = "txtPrintDateTo";
@@ -132,10 +132,10 @@
             this.ckmShop_Label3.AutoSize = true;
             this.ckmShop_Label3.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label3.BackColor = System.Drawing.SystemColors.Window;
-            this.ckmShop_Label3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label3.Location = new System.Drawing.Point(81, 208);
+            this.ckmShop_Label3.Location = new System.Drawing.Point(81, 192);
             this.ckmShop_Label3.Name = "ckmShop_Label3";
             this.ckmShop_Label3.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label3.TabIndex = 24;
@@ -145,25 +145,26 @@
             // 
             // PrintCheckBox
             // 
-            this.PrintCheckBox.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.PrintCheckBox.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.PrintCheckBox.ForeColor = System.Drawing.Color.Black;
-            this.PrintCheckBox.IsattachedCaption = true;
-            this.PrintCheckBox.Location = new System.Drawing.Point(247, 209);
+            this.PrintCheckBox.IsattachedCaption = false;
+            this.PrintCheckBox.Location = new System.Drawing.Point(247, 193);
             this.PrintCheckBox.Name = "PrintCheckBox";
             this.PrintCheckBox.Size = new System.Drawing.Size(35, 35);
             this.PrintCheckBox.TabIndex = 25;
             this.PrintCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.PrintCheckBox.UseVisualStyleBackColor = true;
+            this.PrintCheckBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PrintCheckBox_KeyDown);
             // 
             // ckmShop_Label4
             // 
             this.ckmShop_Label4.AutoSize = true;
             this.ckmShop_Label4.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label4.BackColor = System.Drawing.SystemColors.Window;
-            this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(288, 208);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(288, 192);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label4.TabIndex = 26;
@@ -173,9 +174,9 @@
             // 
             // TempoRegiJournal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 920);
+            this.ClientSize = new System.Drawing.Size(1713, 849);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.PrintCheckBox);
             this.Controls.Add(this.ckmShop_Label3);

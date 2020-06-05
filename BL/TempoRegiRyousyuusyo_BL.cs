@@ -17,10 +17,11 @@ namespace BL
         public bool D_CheckSalseNO(string salesNo = "")
         {
             var dl = new TempoRegiRyousyuusyo_DL();
-            //if(dl.D_CheckSalseNO(salesNo).Rows.Count > 0)
-            //{
-            //    return Convert.ToInt32(dl.D_CheckSalseNO(salesNo).Rows[0][0]) > 0 ? true : false;
-            //}
+            var dt = dl.D_CheckSalseNO(salesNo);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0][0]) > 0 ? true : false;
+            }
 
             return false;
         }
