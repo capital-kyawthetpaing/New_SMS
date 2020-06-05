@@ -327,6 +327,7 @@
             this.colZipCD1.HeaderText = "郵便番号";
             this.colZipCD1.MaxInputLength = 3;
             this.colZipCD1.Name = "colZipCD1";
+            this.colZipCD1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colZipCD1.Width = 40;
             // 
             // colZipCD2
@@ -343,6 +344,7 @@
             this.colAdd1.HeaderText = "住所1";
             this.colAdd1.MaxInputLength = 80;
             this.colAdd1.Name = "colAdd1";
+            this.colAdd1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colAdd1.Width = 700;
             // 
             // colAdd2
@@ -351,6 +353,7 @@
             this.colAdd2.HeaderText = "住所2";
             this.colAdd2.MaxInputLength = 80;
             this.colAdd2.Name = "colAdd2";
+            this.colAdd2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colAdd2.Width = 700;
             // 
             // colCarrier
@@ -358,6 +361,7 @@
             this.colCarrier.DataPropertyName = "(none)";
             this.colCarrier.HeaderText = "奨励運送会社";
             this.colCarrier.Name = "colCarrier";
+            this.colCarrier.ReadOnly = true;
             this.colCarrier.Width = 150;
             // 
             // colCarrierLeadDay
