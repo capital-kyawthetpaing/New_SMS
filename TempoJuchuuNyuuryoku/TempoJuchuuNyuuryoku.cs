@@ -2595,30 +2595,28 @@ namespace TempoJuchuuNyuuryoku
                                 detailControls[index + 6].Text = mce.Tel12;
                                 detailControls[index + 7].Text = mce.Tel13;
 
+                                detailControls[index + 1].Text = mce.CustomerName;
+                                textBox1.Text = mce.RemarksInStore;
+                                textBox2.Text = mce.RemarksOutStore;
+                                CboPaymentMethodCD.SelectedValue = mce.PaymentMethodCD;
 
                                 if (mce.VariousFLG == "1")
                                 {
-                                    detailControls[index + 1].Text = mce.CustomerName;
                                     if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
                                     {
                                         detailControls[index + 1].Enabled = true;
                                         detailControls[index + 3].Enabled = true;
                                     }
                                     detailControls[index + 3].Text = "";
-                                    textBox1.Text = mce.RemarksInStore;
-                                    textBox2.Text = mce.RemarksOutStore;
                                     lblLastSalesDate.Text = "";
                                     lblStoreName.Text = "";
                                     lblPoint.Text = "";
                                 }
                                 else
                                 {
-                                    detailControls[index + 1].Text = mce.CustomerName;
                                     detailControls[index + 1].Enabled = false;
                                     detailControls[index + 3].Text = "";
                                     detailControls[index + 3].Enabled = false;
-                                    textBox1.Text = mce.RemarksInStore;
-                                    textBox2.Text = mce.RemarksOutStore;
                                     lblLastSalesDate.Text = mce.LastSalesDate;
                                     lblPoint.Text = bbl.Z_SetStr(mce.LastPoint);
 

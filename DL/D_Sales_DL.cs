@@ -255,5 +255,17 @@ namespace DL
             return InsertUpdateDeleteData(dic, sp);
         }
 
+        public DataTable D_Sale_SelectForSeisan(D_Sales_Entity dse)
+        {
+            string sp = "D_Sale_SelectForSeisan";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dse.StoreCD} },
+                { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = dse.ChangeDate} },
+            };
+            UseTransaction = true;
+            return SelectData(dic, sp);
+        }
+
     }
 }

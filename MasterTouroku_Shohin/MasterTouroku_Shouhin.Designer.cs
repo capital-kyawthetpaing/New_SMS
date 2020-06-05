@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
@@ -203,6 +202,10 @@
             // 
             this.PanelSearch.Controls.Add(this.btnSubF11);
             this.PanelSearch.TabIndex = 2;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label6
             // 
@@ -529,6 +532,7 @@
             this.ckM_MultiLineTextBox4.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox4.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox4.F_focus = false;
             this.ckM_MultiLineTextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox4.Length = 200;
@@ -566,6 +570,7 @@
             this.ckM_MultiLineTextBox3.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox3.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox3.F_focus = false;
             this.ckM_MultiLineTextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox3.Length = 80;
@@ -867,6 +872,7 @@
             this.ckM_MultiLineTextBox2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox2.F_focus = false;
             this.ckM_MultiLineTextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox2.Length = 80;
@@ -906,6 +912,7 @@
             this.ckM_MultiLineTextBox1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox1.F_focus = false;
             this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox1.Length = 500;
@@ -949,7 +956,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -963,14 +970,6 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -979,6 +978,7 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
+            this.dgvDetail.RowHeight_ = 20;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvDetail.Size = new System.Drawing.Size(658, 167);
             this.dgvDetail.TabIndex = 42;
@@ -1493,6 +1493,7 @@
             this.TxtRemark.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark.BackColor = System.Drawing.Color.White;
             this.TxtRemark.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark.F_focus = false;
             this.TxtRemark.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark.Length = 1000;
@@ -1976,7 +1977,7 @@
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
             this.ckM_TextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
+            this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
@@ -2704,8 +2705,8 @@
             this.ScVendor.ChangeDate = "";
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
-            this.ScVendor.CodeWidth = 130;
-            this.ScVendor.CodeWidth1 = 130;
+            this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2715,7 +2716,7 @@
             this.ScVendor.Location = new System.Drawing.Point(136, 275);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
-            this.ScVendor.NameWidth = 280;
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
             this.ScVendor.Size = new System.Drawing.Size(444, 27);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
