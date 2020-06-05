@@ -448,6 +448,19 @@ namespace TempoRegiPoint
         }
 
         /// <summary>
+        /// 発行ポイント入力イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtIssuePoint_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnClose.Focus();
+            }
+        }
+
+        /// <summary>
         /// 会員を検索
         /// </summary>
         /// <returns>処理結果(true=有効な会員、false=無効な会員)</returns>

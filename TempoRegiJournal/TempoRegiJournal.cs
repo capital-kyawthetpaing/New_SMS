@@ -878,7 +878,18 @@ namespace TempoRegiJournal
         {
             if (e.KeyCode == Keys.Enter)
             {
-                ErrorCheck();
+                if(ErrorCheck())
+                {
+                    PrintCheckBox.Focus();
+                }
+            }
+        }
+
+        private void PrintCheckBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnClose.Focus();
             }
         }
     }
