@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MasterTouroku_ShiireTanka
@@ -9,14 +7,14 @@ namespace MasterTouroku_ShiireTanka
     static class Program
     {
         /// <summary>
-        /// The main entry point for the application.
+        /// アプリケーションのメイン エントリ ポイントです。
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMasterTouroku_ShiireTanka());
+            Application.Run(new MasterTouroku_ShiireTanka());
         }
     }
 }

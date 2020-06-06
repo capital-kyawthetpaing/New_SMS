@@ -2,35 +2,32 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// General Information about an assembly is controlled through the following
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("MasterTouroku_ShiireTanka")]
+// アセンブリに関する一般情報は以下の属性セットをとおして制御されます。 
+// アセンブリに関連付けられている情報を変更するには、
+// これらの属性値を変更してください。
+[assembly: AssemblyTitle("VBMM004_CSharp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MasterTouroku_ShiireTanka")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyProduct("VBMM004_CSharp")]
+[assembly: AssemblyCopyright("Copyright (C)  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Setting ComVisible to false makes the types in this assembly not visible
-// to COM components.  If you need to access a type in this assembly from
-// COM, set the ComVisible attribute to true on that type.
+// ComVisible を false に設定すると、このアセンブリ内の型は COM コンポーネントには 
+// 参照不可能になります。COM からこのアセンブリ内の型にアクセスする場合は、 
+// その型の ComVisible 属性を true に設定してください。
 [assembly: ComVisible(false)]
 
-// The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("0e17928e-c9e2-4d8e-b9a8-cf332100ee3f")]
+// 次の GUID は、このプロジェクトが COM に公開される場合の、typelib の ID です
+[assembly: Guid("25ec1579-00fe-4f12-9691-b430a59ca487")]
 
-// Version information for an assembly consists of the following four values:
+// アセンブリのバージョン情報は、以下の 4 つの値で構成されています:
 //
 //      Major Version
-//      Minor Version
+//      Minor Version 
 //      Build Number
 //      Revision
 //
-// You can specify all the values or you can default the Build and Revision Numbers
-// by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
