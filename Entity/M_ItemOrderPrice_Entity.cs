@@ -14,5 +14,15 @@ namespace Entity
         public string Rate { get; set; }
         public string PriceWithoutTax { get; set; }
         public string Remarks { get; set; }
+
+        //仕入先別発注単価マスタ抽出条件用
+        public string DispKbn { get; set; }         //1:現状　2：履歴
+        public string BrandCD { get; set; }
+        public string SportsCD { get; set; }
+        public string SegmentCD { get; set; }
+        public string LastYearTerm { get; set; }
+        public string LastSeason { get; set; }
+        public string BaseDate { get; set; }
+
     }
 }
