@@ -114,10 +114,10 @@ namespace TempoRegiShiharaiNyuuryoku
             string programID = "TempoRegiTorihikiReceipt";
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-            string Mode = "5";
+            string Mode = "3";
             dtDepositNO = bbl.SimpleSelect1("52", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;
+            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode + " " + DepositeNO;//parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");

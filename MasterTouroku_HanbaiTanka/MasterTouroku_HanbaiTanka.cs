@@ -1089,7 +1089,7 @@ namespace MasterTouroku_HanbaiTanka
                         mGrid.g_DArray[i].ITemName = row["SKUName"].ToString();   // 
                     }
 
-                    if (i == 0)     
+                    if (i == 0 && !string.IsNullOrWhiteSpace(row["UpdateOperator"].ToString()))     
                     {
                         detailControls[(int)EIndex.GeneralRate].Text = bbl.Z_SetStr(row["GeneralRate"]);
                         detailControls[(int)EIndex.MemberRate].Text = bbl.Z_SetStr(row["MemberRate"]);
@@ -1098,7 +1098,7 @@ namespace MasterTouroku_HanbaiTanka
                         detailControls[(int)EIndex.WebRate].Text = bbl.Z_SetStr(row["WebRate"]);
                     }
 
-                    if (OperationMode == EOperationMode.INSERT  && radioButton1.Checked)
+                    if (OperationMode == EOperationMode.INSERT)
                     {
                         CheckDetail((int)EIndex.TankaCD);
                     }
@@ -2454,51 +2454,49 @@ namespace MasterTouroku_HanbaiTanka
                     int taxRateFlg = mGrid.g_DArray[RW].TaxRateFLG;
                     decimal tax = 0;
 
-                    for (int CL = 0; CL <= mGrid.g_MK_Ctl_Col - 1; CL++)
-                    {
-                        decimal result = GetResultWithHasuKbn(mTankaCDRoundKBN,  teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.GeneralRate].Text));                        
-                        decimal zeikomi = bbl.GetZeikomiKingaku(result, mGrid.g_DArray[RW].TaxRateFLG, out tax);
-                        // 消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
-                      
+                    decimal result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.GeneralRate].Text) / 100);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(result, mGrid.g_DArray[RW].TaxRateFLG, out tax);
+                    // 消費税計算with単価設定CDの端数処理区分(mTankaCDRoundKBN)
 
-                        if (allKbn==1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceWithTax)==0)
-                            mGrid.g_DArray[RW].GeneralPriceWithTax = (result + tax).ToString("#,##0");
 
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceOutTax) == 0)
-                            mGrid.g_DArray[RW].GeneralPriceOutTax = result.ToString("#,##0");   // 
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceWithTax) == 0)
+                        mGrid.g_DArray[RW].GeneralPriceWithTax = (result + tax).ToString("#,##0");
 
-                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.MemberRate].Text));
-                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg ,out tax);
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].GeneralPriceOutTax) == 0)
+                        mGrid.g_DArray[RW].GeneralPriceOutTax = result.ToString("#,##0");   // 
 
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceWithTax) == 0)
-                            mGrid.g_DArray[RW].MemberPriceWithTax = (result + tax).ToString("#,##0");
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceOutTax) == 0)
-                            mGrid.g_DArray[RW].MemberPriceOutTax = result.ToString("#,##0");
+                    result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.MemberRate].Text) / 100);
+                    zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
-                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.ClientRate].Text));
-                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceWithTax) == 0)
+                        mGrid.g_DArray[RW].MemberPriceWithTax = (result + tax).ToString("#,##0");
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].MemberPriceOutTax) == 0)
+                        mGrid.g_DArray[RW].MemberPriceOutTax = result.ToString("#,##0");
 
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceWithTax) == 0)
-                            mGrid.g_DArray[RW].ClientPriceWithTax = (result + tax).ToString("#,##0");
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceOutTax) == 0)
-                            mGrid.g_DArray[RW].ClientPriceOutTax = result.ToString("#,##0");
+                    result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.ClientRate].Text) / 100);
+                    zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
-                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text));
-                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceWithTax) == 0)
+                        mGrid.g_DArray[RW].ClientPriceWithTax = (result + tax).ToString("#,##0");
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].ClientPriceOutTax) == 0)
+                        mGrid.g_DArray[RW].ClientPriceOutTax = result.ToString("#,##0");
 
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceWithTax) == 0)
-                            mGrid.g_DArray[RW].SalePriceWithTax = (result + tax).ToString("#,##0");
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax) == 0)
-                            mGrid.g_DArray[RW].SalePriceOutTax = result.ToString("#,##0");
+                    result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.SaleRate].Text) / 100);
+                    zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
 
-                        result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text));
-                        zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceWithTax) == 0)
+                        mGrid.g_DArray[RW].SalePriceWithTax = (result + tax).ToString("#,##0");
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].SalePriceOutTax) == 0)
+                        mGrid.g_DArray[RW].SalePriceOutTax = result.ToString("#,##0");
 
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceWithTax) == 0)
-                            mGrid.g_DArray[RW].WebPriceWithTax = (result + tax).ToString("#,##0");
-                        if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceOutTax) == 0)
-                            mGrid.g_DArray[RW].WebPriceOutTax = result.ToString("#,##0");
-                    }
+                    result = GetResultWithHasuKbn(mTankaCDRoundKBN, teikaWithoutTax * Convert.ToDecimal(detailControls[(int)EIndex.WebRate].Text) / 100);
+                    zeikomi = bbl.GetZeikomiKingaku(result, taxRateFlg, out tax);
+
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceWithTax) == 0)
+                        mGrid.g_DArray[RW].WebPriceWithTax = (result + tax).ToString("#,##0");
+                    if (allKbn == 1 || bbl.Z_Set(mGrid.g_DArray[RW].WebPriceOutTax) == 0)
+                        mGrid.g_DArray[RW].WebPriceOutTax = result.ToString("#,##0");
+
                 }
             }
 

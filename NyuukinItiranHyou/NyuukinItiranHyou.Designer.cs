@@ -88,7 +88,8 @@
             this.search_customer.ChangeDate = "";
             this.search_customer.ChangeDateWidth = 100;
             this.search_customer.Code = "";
-            this.search_customer.CodeWidth = 100;
+            this.search_customer.CodeWidth = 130;
+            this.search_customer.CodeWidth1 = 130;
             this.search_customer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.search_customer.DataCheck = true;
             this.search_customer.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -98,8 +99,9 @@
             this.search_customer.Location = new System.Drawing.Point(126, 124);
             this.search_customer.Margin = new System.Windows.Forms.Padding(0);
             this.search_customer.Name = "search_customer";
+            this.search_customer.NameWidth = 280;
             this.search_customer.SearchEnable = true;
-            this.search_customer.Size = new System.Drawing.Size(415, 48);
+            this.search_customer.Size = new System.Drawing.Size(444, 48);
             this.search_customer.Stype = Search.CKM_SearchControl.SearchType.Supplier;
             this.search_customer.TabIndex = 6;
             this.search_customer.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -170,8 +172,9 @@
             // 
             this.cbo_torikomi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbo_torikomi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbo_torikomi.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
+            this.cbo_torikomi.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.取込種別;
             this.cbo_torikomi.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_torikomi.Flag = 0;
             this.cbo_torikomi.FormattingEnabled = true;
             this.cbo_torikomi.Length = 30;
             this.cbo_torikomi.Location = new System.Drawing.Point(126, 95);
@@ -289,6 +292,7 @@
             this.cbo_store.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbo_store.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cbo_store.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cbo_store.Flag = 0;
             this.cbo_store.FormattingEnabled = true;
             this.cbo_store.Length = 10;
             this.cbo_store.Location = new System.Drawing.Point(1709, 30);
@@ -304,13 +308,15 @@
             this.paymentinputend.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.paymentinputend.BackColor = System.Drawing.Color.White;
             this.paymentinputend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paymentinputend.ClientColor = System.Drawing.Color.White;
             this.paymentinputend.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.paymentinputend.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.paymentinputend.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.paymentinputend.DecimalPlace = 0;
             this.paymentinputend.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.paymentinputend.IntegerPart = 0;
             this.paymentinputend.IsCorrectDate = true;
             this.paymentinputend.isEnterKeyDown = false;
+            this.paymentinputend.isMaxLengthErr = false;
             this.paymentinputend.IsNumber = true;
             this.paymentinputend.IsShop = false;
             this.paymentinputend.Length = 10;
@@ -320,6 +326,7 @@
             this.paymentinputend.Name = "paymentinputend";
             this.paymentinputend.Size = new System.Drawing.Size(100, 19);
             this.paymentinputend.TabIndex = 3;
+            this.paymentinputend.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.paymentinputend.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // paymentend
@@ -328,13 +335,15 @@
             this.paymentend.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.paymentend.BackColor = System.Drawing.Color.White;
             this.paymentend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paymentend.ClientColor = System.Drawing.Color.White;
             this.paymentend.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.paymentend.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.paymentend.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.paymentend.DecimalPlace = 0;
             this.paymentend.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.paymentend.IntegerPart = 0;
             this.paymentend.IsCorrectDate = true;
             this.paymentend.isEnterKeyDown = false;
+            this.paymentend.isMaxLengthErr = false;
             this.paymentend.IsNumber = true;
             this.paymentend.IsShop = false;
             this.paymentend.Length = 10;
@@ -344,6 +353,7 @@
             this.paymentend.Name = "paymentend";
             this.paymentend.Size = new System.Drawing.Size(100, 19);
             this.paymentend.TabIndex = 1;
+            this.paymentend.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.paymentend.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // paymentinputstart
@@ -352,13 +362,15 @@
             this.paymentinputstart.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.paymentinputstart.BackColor = System.Drawing.Color.White;
             this.paymentinputstart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paymentinputstart.ClientColor = System.Drawing.Color.White;
             this.paymentinputstart.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.paymentinputstart.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.paymentinputstart.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.paymentinputstart.DecimalPlace = 0;
             this.paymentinputstart.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.paymentinputstart.IntegerPart = 0;
             this.paymentinputstart.IsCorrectDate = true;
             this.paymentinputstart.isEnterKeyDown = false;
+            this.paymentinputstart.isMaxLengthErr = false;
             this.paymentinputstart.IsNumber = true;
             this.paymentinputstart.IsShop = false;
             this.paymentinputstart.Length = 10;
@@ -368,6 +380,7 @@
             this.paymentinputstart.Name = "paymentinputstart";
             this.paymentinputstart.Size = new System.Drawing.Size(100, 19);
             this.paymentinputstart.TabIndex = 2;
+            this.paymentinputstart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.paymentinputstart.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // paymentstart
@@ -376,13 +389,15 @@
             this.paymentstart.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.paymentstart.BackColor = System.Drawing.Color.White;
             this.paymentstart.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.paymentstart.ClientColor = System.Drawing.Color.White;
             this.paymentstart.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.paymentstart.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.paymentstart.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.paymentstart.DecimalPlace = 0;
             this.paymentstart.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.paymentstart.IntegerPart = 0;
             this.paymentstart.IsCorrectDate = true;
             this.paymentstart.isEnterKeyDown = false;
+            this.paymentstart.isMaxLengthErr = false;
             this.paymentstart.IsNumber = true;
             this.paymentstart.IsShop = false;
             this.paymentstart.Length = 10;
@@ -392,6 +407,7 @@
             this.paymentstart.Name = "paymentstart";
             this.paymentstart.Size = new System.Drawing.Size(100, 19);
             this.paymentstart.TabIndex = 0;
+            this.paymentstart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.paymentstart.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // NyuukinItiranHyou

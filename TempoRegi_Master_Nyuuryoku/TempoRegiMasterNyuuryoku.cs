@@ -18,7 +18,7 @@ using System.Data.SqlClient;
 
 namespace TempoRegi_Master_Nyuuryoku
 {
-    public partial class TempoRegiMasterNyuryokuForm : ShopBaseForm
+    public partial class TempoRegiMasterNyuuryoku : ShopBaseForm
     {
         M_StoreBottunDetails_Entity sbgd_e;
         TempoRegiMasterNyuuryoku_BL mnrk_bl;
@@ -30,7 +30,7 @@ namespace TempoRegi_Master_Nyuuryoku
         string radiovalue = "";
         string BtnName = string.Empty;
         Button btn1 = null, btn2=null;
-        public TempoRegiMasterNyuryokuForm()
+        public TempoRegiMasterNyuuryoku()
         {
             mnrk_bl = new TempoRegiMasterNyuuryoku_BL();
             sbgd_e = new M_StoreBottunDetails_Entity();
@@ -38,17 +38,19 @@ namespace TempoRegi_Master_Nyuuryoku
             InitializeComponent();
         }
 
-        private void TempoRegiMasterNyuryokuForm_Load(object sender, EventArgs e)
+        private void TempoRegiMasterNyuuryoku_Load(object sender, EventArgs e)
         {
-            InProgramID = "TempoRegi_Master_Nyuuryoku";
+            InProgramID = "TempoRegiMasterNyuuryoku";
             StartProgram();
             this.Text = "マスター入力";
-            SetRequireField();
+           // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
+            txtButtomNameUp.Focus();
+            lblSearchName.TextAlign = ContentAlignment.TopLeft;
         }
 
-        private void TempoRegiMasterNyuryokuForm_KeyUp(object sender, KeyEventArgs e)
+        private void TempoRegiMasterNyuuryoku_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
@@ -204,17 +206,17 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void SetRequireField()
         {
-            txtButtomNameUp.Require(true);
+            //txtButtomNameUp.Require(true);
             txtCD.Require(true);
-            txtBtnNameDown.Require(true);
+            //txtBtnNameDown.Require(true);
 
         }
 
         private bool ErrorCheck()
         {
 
-            if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
-                return false;
+            //if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
+            //    return false;
 
             if(RdoJanCD.Checked)
             {
@@ -239,8 +241,8 @@ namespace TempoRegi_Master_Nyuuryoku
                     return false;
                 }
             }
-            if (!RequireCheck(new Control[] { txtBtnNameDown }))
-                return false;
+            //if (!RequireCheck(new Control[] { txtBtnNameDown }))
+            //    return false;
 
 
             return true;
@@ -338,7 +340,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblNameNO.Text= horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                lblBtnName.Text = string.Empty;
+                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtBtnNameDown.Focus();
@@ -396,6 +398,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
             }
         }
+
         private void txtCD_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
@@ -474,7 +477,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void btn_Confrim2_Click(object sender, EventArgs e)
         {
-            if (!RequireCheck(new Control[] { txtCD})) return;
+           // if (!RequireCheck(new Control[] { txtCD})) return;
 
             if (ErrorCheck())
             {
@@ -533,10 +536,10 @@ namespace TempoRegi_Master_Nyuuryoku
         }
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
-           if(!RequireCheck(new Control[] { txtButtomNameUp }))
-            {
-                return;
-            }
+           //if(!RequireCheck(new Control[] { txtButtomNameUp }))
+           // {
+           //     return;
+           // }
             btnProcess.Enabled = true;//Save_Button
             //return;            
                       

@@ -1,16 +1,20 @@
- BEGIN TRY 
- Drop Procedure dbo.[D_SelectLastPoint_ForTempoRegiPoint]
-END try
-BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
+
 --  ======================================================================
 --       Program Call    店舗レジ ポイント引換券印刷
 --       Program ID      TempoRegiPoint
 --       Create date:    2019.12.17
 --    ======================================================================
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'D_SelectLastPoint_ForTempoRegiPoint')
+  DROP PROCEDURE [dbo].[D_SelectLastPoint_ForTempoRegiPoint]
+GO
+
+
 CREATE PROCEDURE [dbo].[D_SelectLastPoint_ForTempoRegiPoint]
 (
      @CustomerCD varchar(13)
@@ -36,4 +40,7 @@ BEGIN
      WHERE customer.RANK = 1
          ;
 END
+
+GO
+
 

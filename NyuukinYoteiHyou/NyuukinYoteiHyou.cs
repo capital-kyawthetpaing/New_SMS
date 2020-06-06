@@ -385,6 +385,7 @@ namespace NyuukinYoteiHyou
                 case (int)EIndex.StoreCD:
                     if (CboStoreCD.SelectedValue.Equals("-1"))
                     {
+                        CboStoreCD.MoveNext = false;
                         bbl.ShowMessage("E102");
                         CboStoreCD.Focus();
                         return false;
@@ -393,6 +394,7 @@ namespace NyuukinYoteiHyou
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;

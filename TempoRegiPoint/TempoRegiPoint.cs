@@ -1,4 +1,4 @@
-﻿#define DEBUG_CUSTOMER
+﻿//#define DEBUG_CUSTOMER
 //#define USE_TEST_PRINTER
 
 using Base.Client;
@@ -142,14 +142,15 @@ namespace TempoRegiPoint
 
             TxtCustomerCD.Require(true);
             TxtCustomerCD.Clear();
+            TxtCustomerCD.Focus();
 
             LblCustomerName.Text = string.Empty;
 
             TxtLastPoint.Require(true);
-            TxtLastPoint.Text = "0";
+            TxtLastPoint.Text = "";
 
             TxtIssuePoint.Require(true);
-            TxtIssuePoint.Text = "0";
+            TxtIssuePoint.Text = "";
         }
 
         private void DisplayData()
@@ -170,6 +171,13 @@ namespace TempoRegiPoint
                 bl.ShowMessage("E102");
                 TxtCustomerCD.Focus();
                 return false;
+            }
+            else
+            {
+                if(!SearchCustomer())
+                {
+                    return false;
+                }
             }
 
             if (IssuePoint == 0 || LastPoint < IssuePoint)
@@ -399,7 +407,7 @@ namespace TempoRegiPoint
         /// <param name="e"></param>
         private void BtnSearchCustomer_Click(object sender, EventArgs e)
         {
-            var search = new Search.FrmSearch_Customer(ChangeDate, "1", StoreCD);
+            var search = new Search.TempoRegiKaiinKensaku();
             var result = search.ShowDialog();
 #if DEBUG_CUSTOMER
             TxtCustomerCD.Text = CUSTOMER_CD;
@@ -407,10 +415,10 @@ namespace TempoRegiPoint
 
             GetLastPoint();
 #else
-            if (result == DialogResult.OK)
+            if (!string.IsNullOrEmpty(search.CustomerCD))
             {
-                txtCustomerCD.Text = search.parCustomerCD;
-                lblCustomerName.Text = search.parCustomerName;
+                TxtCustomerCD.Text = search.CustomerCD;
+                LblCustomerName.Text = search.CustomerName;
 
                 GetLastPoint();
             }
@@ -424,9 +432,12 @@ namespace TempoRegiPoint
         /// <param name="e"></param>
         private void TxtCustomerCD_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyValue == 13)
+            if (e.KeyCode == Keys.Enter)
             {
-                SearchCustomer();
+                if (SearchCustomer())
+                {
+                    TxtIssuePoint.Focus();
+                }
             }
             else
             {
@@ -437,11 +448,27 @@ namespace TempoRegiPoint
         }
 
         /// <summary>
+        /// 発行ポイント入力イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtIssuePoint_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnClose.Focus();
+            }
+        }
+
+        /// <summary>
         /// 会員を検索
         /// </summary>
-        private void  SearchCustomer()
+        /// <returns>処理結果(true=有効な会員、false=無効な会員)</returns>
+        private bool SearchCustomer()
         {
-            var customerDt = bl.D_GetCustomer(TxtCustomerCD.Text, DateTime.Now.ToShortDateString().Replace('/', '-'));
+            bool result;
+
+            var customerDt = bl.D_GetCustomer(TxtCustomerCD.Text);
             if (customerDt.Rows.Count > 0)
             {
                 if (customerDt.Rows[0]["DeleteFlg"].ToString() == "0")
@@ -451,6 +478,7 @@ namespace TempoRegiPoint
                     LblCustomerName.Text = customerDt.Rows[0]["CustomerName"].ToString();
 
                     GetLastPoint();
+                    result = true;
                 }
                 else
                 {
@@ -459,6 +487,7 @@ namespace TempoRegiPoint
                     TxtCustomerCD.Focus();
                     LblCustomerName.Text = string.Empty;
                     TxtLastPoint.Text = string.Empty;
+                    result = false;
                 }
             }
             else
@@ -468,11 +497,10 @@ namespace TempoRegiPoint
                 TxtCustomerCD.Focus();
                 LblCustomerName.Text = string.Empty;
                 TxtLastPoint.Text = string.Empty;
+                result = false;
             }
+
+            return result;
         }
-
-       
-
-        
     }
 }

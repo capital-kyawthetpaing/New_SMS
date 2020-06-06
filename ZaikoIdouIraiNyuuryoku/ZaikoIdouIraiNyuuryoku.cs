@@ -713,6 +713,7 @@ namespace ZaikoIdouIraiNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -835,6 +836,8 @@ namespace ZaikoIdouIraiNyuuryoku
                 // 明細部初期化
                 this.S_SetInit_Grid();
 
+                Scr_Clr(0);
+
                 //起動時共通処理
                 base.StartProgram();
 
@@ -948,12 +951,14 @@ namespace ZaikoIdouIraiNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1069,7 +1074,7 @@ namespace ZaikoIdouIraiNyuuryoku
                 if (index == (int)EIndex.RequestNO)
                 {
                     //★特例処理★変更モード、削除モードで、移動依頼番号に対し回答済の場合
-                    if (!string.IsNullOrWhiteSpace(dt.Rows[0]["AnswerDateTime"].ToString()))
+                    if (!string.IsNullOrWhiteSpace(dt.Rows[0]["AnswerDateTime"].ToString()) && OperationMode != EOperationMode.SHOW)
                     {
                         OperationMode = EOperationMode.SHOW;
                         if (set == false)
@@ -1079,7 +1084,7 @@ namespace ZaikoIdouIraiNyuuryoku
                         }
                         else
                         {
-                            bbl.ShowMessage("E191", "移動依頼番号");
+                            bbl.ShowMessage("E191");//「回答済データのため、照会モードで表示します。」
                         }
                     }
                 }
@@ -1329,12 +1334,16 @@ namespace ZaikoIdouIraiNyuuryoku
                         //入力必須(Entry required)
                         if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                         {
+                            ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             //Ｅ１０２
                             bbl.ShowMessage("E102");
                             return false;
                         }
                         if (!CheckDependsOnDate(index))
+                        {
+                            ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             return false;
+                        }
                     }
                     break;
 

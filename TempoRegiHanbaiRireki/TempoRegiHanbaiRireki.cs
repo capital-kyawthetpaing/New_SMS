@@ -43,6 +43,8 @@ namespace TempoRegiHanbaiRireki
                 lblLastPoint.Text = "";
                 Clear(pnlDetails);
 
+                lblCusName.TextAlign = ContentAlignment.TopLeft;
+
                 txtCustomerNo.Focus();
             }
             catch (Exception ex)
@@ -638,21 +640,10 @@ namespace TempoRegiHanbaiRireki
             }
         }
 
-        private void btnCustomerNo_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                TempoRegiKaiinKensaku form = new TempoRegiKaiinKensaku();
-                form.ShowDialog();
-                txtCustomerNo.Text = form.CustomerCD;
+        //private void btnCustomerNo_Click(object sender, EventArgs e)
+        //{
 
-            }
-            catch (Exception ex)
-            {
-                //エラー時共通処理
-                MessageBox.Show(ex.Message);
-            }
-        }
+        //}
 
         private void lblGyoSelect1_Click(object sender, EventArgs e)
         {
@@ -772,6 +763,17 @@ namespace TempoRegiHanbaiRireki
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnCustomerSearch_Click(object sender, EventArgs e)
+        {
+            TempoRegiKaiinKensaku tgkkk = new TempoRegiKaiinKensaku();
+            tgkkk.ShowDialog();
+
+            if (!string.IsNullOrEmpty(tgkkk.CustomerCD))
+            {
+                txtCustomerNo.Text = tgkkk.CustomerCD;
             }
         }
     }

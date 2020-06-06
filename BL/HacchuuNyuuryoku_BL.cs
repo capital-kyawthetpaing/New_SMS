@@ -57,8 +57,7 @@ namespace BL
         public bool CheckHacchuData(string hacchuNo, out string errno)
         {
             DataTable dt = mdl.CheckHacchuData(hacchuNo);
-
-            bool ret = false;
+            
             errno = "";
 
             if (dt.Rows.Count>0)
@@ -66,9 +65,21 @@ namespace BL
                 errno = dt.Rows[0]["errno"].ToString();
             }
             
-            return ret;
+            return true;
         }
+        public bool CheckSyonin(string hacchuNo, string InOperatorCD, out string errno)
+        {
+            DataTable dt = mdl.CheckSyonin(hacchuNo, InOperatorCD);
+            
+            errno = "";
 
+            if (dt.Rows.Count > 0)
+            {
+                errno = dt.Rows[0]["errno"].ToString();
+            }
+
+            return true;
+        }
         public int GetApprovalStageFLG(string operatorNm)
         {
             int approvalStageFLG = 0;

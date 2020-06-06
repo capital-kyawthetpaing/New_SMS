@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cboSouko = new CKM_Controls.CKM_ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.ScSKUCD = new Search.CKM_SearchControl();
-            this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
+            this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.cboSouko = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.chkLocationNashi = new CKM_Controls.CKM_CheckBox();
             this.chkLocationAri = new CKM_Controls.CKM_CheckBox();
@@ -45,18 +46,25 @@
             this.txtEndDate = new CKM_Controls.CKM_TextBox();
             this.txtStartDate = new CKM_Controls.CKM_TextBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.cboSouko);
-            this.panel1.Controls.Add(this.ScSKUCD);
-            this.panel1.Controls.Add(this.ckM_Label7);
-            this.panel1.Controls.Add(this.ckM_Label6);
             this.panel1.Controls.Add(this.ckM_Label5);
             this.panel1.Controls.Add(this.chkLocationNashi);
             this.panel1.Controls.Add(this.chkLocationAri);
@@ -73,6 +81,79 @@
             this.panel1.Size = new System.Drawing.Size(1713, 888);
             this.panel1.TabIndex = 0;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.ScSKUCD);
+            this.panel2.Controls.Add(this.ckM_Label6);
+            this.panel2.Controls.Add(this.ckM_Label7);
+            this.panel2.Location = new System.Drawing.Point(92, 163);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(700, 60);
+            this.panel2.TabIndex = 7;
+            // 
+            // ScSKUCD
+            // 
+            this.ScSKUCD.AutoSize = true;
+            this.ScSKUCD.ChangeDate = "";
+            this.ScSKUCD.ChangeDateWidth = 100;
+            this.ScSKUCD.Code = "";
+            this.ScSKUCD.CodeWidth = 190;
+            this.ScSKUCD.CodeWidth1 = 190;
+            this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScSKUCD.DataCheck = false;
+            this.ScSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScSKUCD.IsCopy = false;
+            this.ScSKUCD.LabelText = "";
+            this.ScSKUCD.LabelVisible = true;
+            this.ScSKUCD.Location = new System.Drawing.Point(68, 19);
+            this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 350;
+            this.ScSKUCD.SearchEnable = true;
+            this.ScSKUCD.Size = new System.Drawing.Size(574, 32);
+            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.ScSKUCD.TabIndex = 0;
+            this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScSKUCD.UseChangeDate = false;
+            this.ScSKUCD.Value1 = null;
+            this.ScSKUCD.Value2 = null;
+            this.ScSKUCD.Value3 = null;
+            this.ScSKUCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSKUCD_CodeKeyDownEvent);
+            // 
+            // ckM_Label6
+            // 
+            this.ckM_Label6.AutoSize = true;
+            this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label6.DefaultlabelSize = true;
+            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label6.Location = new System.Drawing.Point(8, 9);
+            this.ckM_Label6.Name = "ckM_Label6";
+            this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
+            this.ckM_Label6.TabIndex = 12;
+            this.ckM_Label6.Text = "既存棚番";
+            this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ckM_Label7
+            // 
+            this.ckM_Label7.AutoSize = true;
+            this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label7.DefaultlabelSize = true;
+            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label7.Location = new System.Drawing.Point(21, 28);
+            this.ckM_Label7.Name = "ckM_Label7";
+            this.ckM_Label7.Size = new System.Drawing.Size(40, 12);
+            this.ckM_Label7.TabIndex = 13;
+            this.ckM_Label7.Text = "SKUCD";
+            this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // cboSouko
             // 
             this.cboSouko.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
@@ -88,67 +169,6 @@
             this.cboSouko.Name = "cboSouko";
             this.cboSouko.Size = new System.Drawing.Size(161, 20);
             this.cboSouko.TabIndex = 2;
-            // 
-            // ScSKUCD
-            // 
-            this.ScSKUCD.AutoSize = true;
-            this.ScSKUCD.ChangeDate = "";
-            this.ScSKUCD.ChangeDateWidth = 100;
-            this.ScSKUCD.Code = "";
-            this.ScSKUCD.CodeWidth = 190;
-            this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScSKUCD.DataCheck = false;
-            this.ScSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.ScSKUCD.IsCopy = false;
-            this.ScSKUCD.LabelText = "";
-            this.ScSKUCD.LabelVisible = true;
-            this.ScSKUCD.Location = new System.Drawing.Point(164, 200);
-            this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
-            this.ScSKUCD.Name = "ScSKUCD";
-            this.ScSKUCD.SearchEnable = true;
-            this.ScSKUCD.Size = new System.Drawing.Size(574, 32);
-            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.ScSKUCD.TabIndex = 7;
-            this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.ScSKUCD.UseChangeDate = false;
-            this.ScSKUCD.Value1 = null;
-            this.ScSKUCD.Value2 = null;
-            this.ScSKUCD.Value3 = null;
-            this.ScSKUCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.ScSKUCD_CodeKeyDownEvent);
-            // 
-            // ckM_Label7
-            // 
-            this.ckM_Label7.AutoSize = true;
-            this.ckM_Label7.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label7.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label7.DefaultlabelSize = true;
-            this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(117, 209);
-            this.ckM_Label7.Name = "ckM_Label7";
-            this.ckM_Label7.Size = new System.Drawing.Size(40, 12);
-            this.ckM_Label7.TabIndex = 13;
-            this.ckM_Label7.Text = "SKUCD";
-            this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label6
-            // 
-            this.ckM_Label6.AutoSize = true;
-            this.ckM_Label6.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label6.DefaultlabelSize = true;
-            this.ckM_Label6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(104, 190);
-            this.ckM_Label6.Name = "ckM_Label6";
-            this.ckM_Label6.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label6.TabIndex = 12;
-            this.ckM_Label6.Text = "既存棚番";
-            this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_Label5
             // 
@@ -177,6 +197,7 @@
             this.chkLocationNashi.Name = "chkLocationNashi";
             this.chkLocationNashi.Size = new System.Drawing.Size(50, 16);
             this.chkLocationNashi.TabIndex = 6;
+            this.chkLocationNashi.TabStop = false;
             this.chkLocationNashi.Text = "なし";
             this.chkLocationNashi.UseVisualStyleBackColor = true;
             // 
@@ -218,6 +239,7 @@
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(63, 16);
             this.chkRegistered.TabIndex = 4;
+            this.chkRegistered.TabStop = false;
             this.chkRegistered.Text = "登録済";
             this.chkRegistered.UseVisualStyleBackColor = true;
             // 
@@ -311,6 +333,7 @@
             this.txtEndDate.TabIndex = 1;
             this.txtEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEndDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEndDate_KeyDown);
             // 
             // txtStartDate
             // 
@@ -359,10 +382,11 @@
             this.PanelHeaderHeight = 40;
             this.Text = "TanaireList";
             this.Load += new System.EventHandler(this.FrmTanaireList_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTanaireList_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,6 +410,7 @@
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_ComboBox cboSouko;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

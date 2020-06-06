@@ -5,6 +5,7 @@ using BL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 
 namespace TempoRegiRyousyuusyo
 {
@@ -63,6 +64,9 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         TempoRegiRyousyuusyo_BL bl = new TempoRegiRyousyuusyo_BL();
 
+        //private DataTable checkRyousyuushoResult = null;
+        //private DataTable checkReceiptResult = null;
+
         /// <summary>
         /// 店舗レジ領収収書印刷 コンストラクタ
         /// </summary>
@@ -84,7 +88,7 @@ namespace TempoRegiRyousyuusyo
             StartProgram();
 
             Text = "店舗領収書印刷";
-            btnProcess.Text = "印 刷";
+            btnProcess.Text = "印　刷";
 
             SetRequireField();
             txtSalesNO.Focus();
@@ -123,7 +127,8 @@ namespace TempoRegiRyousyuusyo
             chkReceipt.Checked = false;
 
             txtPrintDate.Require(true);
-            txtPrintDate.Clear();
+            //txtPrintDate.Clear();
+            txtPrintDate.Text = DateTime.Today.ToShortDateString();
 
             chkReissue.Checked = false;
         }
@@ -144,6 +149,12 @@ namespace TempoRegiRyousyuusyo
         public bool ErrorCheck()
         {
             if (string.IsNullOrWhiteSpace(txtSalesNO.Text))
+            {
+                bl.ShowMessage("E102");
+                txtSalesNO.Focus();
+                return false;
+            }
+            else if(!bl.D_CheckSalseNO(txtSalesNO.Text))
             {
                 bl.ShowMessage("E102");
                 txtSalesNO.Focus();
@@ -182,7 +193,7 @@ namespace TempoRegiRyousyuusyo
             {
                 //var isPreview = bl.ShowMessage("Q202") == DialogResult.Yes;
 
-                if(chkRyousyuusho.Checked)
+                if (chkRyousyuusho.Checked)
                 {
                     // 領収書チェックボックスにチェックあり
                     var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
@@ -196,13 +207,13 @@ namespace TempoRegiRyousyuusyo
                     }
                 }
 
-                if(chkReceipt.Checked)
+                if (chkReceipt.Checked)
                 {
                     // レシートチェックボックスにチェックあり
 
                     // 店舗取引履歴
                     var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
-                    if(receiptData.Rows.Count > 0)
+                    if (receiptData.Rows.Count > 0)
                     {
                         OutputReceipt(receiptData);
                     }
@@ -253,7 +264,7 @@ namespace TempoRegiRyousyuusyo
             ryousyuusyoRow.Address2 = Convert.ToString(row["Address2"]);
 
             // 電話番号
-            ryousyuusyoRow.TelphoneNO = Convert.ToString(row["TelphoneNO"]);
+            ryousyuusyoRow.TelphoneNO = Convert.ToString(row["TelephoneNO"]);
 
             // 担当-店舗レシート表記
             ryousyuusyoRow.ReceiptPrint = Convert.ToString(row["ReceiptPrint"]);
@@ -311,7 +322,7 @@ namespace TempoRegiRyousyuusyo
             receiptRow.StoreName = Convert.ToString(row["StoreName"]);
             receiptRow.Address1 = Convert.ToString(row["Address1"]);
             receiptRow.Address2 = Convert.ToString(row["Address2"]);
-            receiptRow.TelphoneNO = "電話 " + Convert.ToString(row["TelphoneNO"]);
+            receiptRow.TelphoneNO = "電話 " + Convert.ToString(row["TelephoneNO"]);
 
             // メッセージ
             receiptRow.Char3 = Convert.ToString(row["Char3"]);
@@ -491,7 +502,7 @@ namespace TempoRegiRyousyuusyo
         private string ConvertDateTime(object value)
         {
             var dateTime = Convert.ToString(value);
-            return dateTime.Substring(0, dateTime.LastIndexOf(':'));
+            return string.IsNullOrWhiteSpace(dateTime) ? "" : dateTime.Substring(0, dateTime.LastIndexOf(':'));
         }
 
         /// <summary>
@@ -548,6 +559,49 @@ namespace TempoRegiRyousyuusyo
             }
 
             return result.ToArray();
+        }
+
+        private void txtSalesNO_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(ErrorCheck())
+                {
+                    chkRyousyuusho.Focus();
+                }
+            }
+        }
+
+        private void chkRyousyuusho_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                chkReceipt.Focus();
+            }
+        }
+
+        private void chkReceipt_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPrintDate.Focus();
+            }
+        }
+
+        private void txtPrintDate_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                chkReissue.Focus();
+            }
+        }
+
+        private void chkReissue_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnClose.Focus();
+            }
         }
     }
 }

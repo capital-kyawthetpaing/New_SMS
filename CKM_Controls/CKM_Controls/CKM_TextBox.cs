@@ -50,31 +50,22 @@ namespace CKM_Controls
       //  [DisplayName("MaximumLength(Byte Count)")]
         public int Length
         {
-            get { return length_; }
+            get { return MaxLength; }
             set {
               //  length_ = value;
              ///   MaxLength = value;
             }
-            //get { return MaxLength; }
-            //set { MaxLength = value; }
-         //   get { return length; }
-         //   set
-         //   {
-         //      length = value;
-         //       MaxLength = Length;
-         ////       CalculateWidth();
-         //   }
-        }
-        public override int MaxLength
-        {
-            get { return length_; }
-            set
-            {
-                length_ = value;
-               // Length = length_;
-            }
 
         }
+        //public override int MaxLength    // PTK Added 
+        //{
+        //    get { return length_; }
+        //    set
+        //    {
+        //        length_ = value;
+        //    }
+
+        //}
 
         private Bytes CtrlByte { get; set; }
         public enum Bytes
@@ -177,6 +168,8 @@ namespace CKM_Controls
         {
             Normal,
             Small,
+            SmallLarge,
+            FMedium,
             Medium,
             Large,
             XLarge
@@ -199,6 +192,12 @@ namespace CKM_Controls
                         break;
                     case FontSize.Small:
                         this.Font = new System.Drawing.Font("MS Gothic", 10F, System.Drawing.FontStyle.Regular);
+                        break;
+                    case FontSize.SmallLarge:
+                        this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Regular);
+                        break;
+                    case FontSize.FMedium:
+                        this.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Regular);
                         break;
                     case FontSize.Medium:
                         this.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Regular);
@@ -271,8 +270,17 @@ namespace CKM_Controls
         }
         protected override void OnKeyPress(KeyPressEventArgs e)
 
+        
         {
+            //if (char.IsDigit(e.KeyChar) || char.IsNumber(e.KeyChar) || e.KeyChar == (char)Keys.Space || char.IsLetter(e.KeyChar)) // PTK Added
 
+            //{
+            //    if (Text.Length >= MaxLength)
+            //    {
+            //        e.Handled = true;
+            //        return;
+            //    }
+            //}
             //Key Price Check   by PTK mdf date 08/05/2019
             if (Ctrl_Type == Type.Price)
             {
@@ -319,6 +327,7 @@ namespace CKM_Controls
         }
         protected override void OnKeyDown(KeyEventArgs e)
         {
+         
             if (e.KeyCode == Keys.Enter)
             {
                 isEnterKeyDown = true;
@@ -667,8 +676,8 @@ namespace CKM_Controls
 
             //int l1 = this.Ctrl_Byte == Bytes.半角 ? 10 : 13;
             //this.Width = (l1 * Length) / divider;
-            this.Length = length_;
-            this.MaxLength = length_;
+            //this.Length = length_;
+            //this.MaxLength = length_;
         }
 
         /// <summary>

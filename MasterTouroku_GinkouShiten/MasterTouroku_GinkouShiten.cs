@@ -13,9 +13,9 @@ namespace MasterTouroku_GinkouShiten
     {
        
         MasterTouroku_GinkouShiten_BL mtbstbl;
-        M_Bank_Entity mbe;
+        M_Bank_Entity mb;
         M_BankShiten_Entity mbste;
-
+        string date;
         int type = 0;//1 = normal, 2 = copy (for f11)
           
         public MasterTouroku_GinkouShiten()
@@ -27,8 +27,6 @@ namespace MasterTouroku_GinkouShiten
             PanelCopy.Enter += PanelCopy_Enter;
             ScBranchCD.Leave += ScNormal_Leave;
             KeyUp += Form_KeyUp;
-            //*** bl = new bl();
-
         }
         private void Form_KeyUp(object sender, KeyEventArgs e)
         {
@@ -76,7 +74,6 @@ namespace MasterTouroku_GinkouShiten
             TxtKanaName.Require(true);
         }
         public override void FunctionProcess(int index)
-
         {
             CKM_SearchControl sc = new CKM_SearchControl();
             mtbstbl = new MasterTouroku_GinkouShiten_BL();
@@ -164,7 +161,6 @@ namespace MasterTouroku_GinkouShiten
                     case EOperationMode.SHOW:
                         if (DisplayData(ScBranchCD))
                         {
-
                             //DisablePanel(PanelCopy);
                             DisablePanel(PanelHeader);
                             F11Enable = false;
@@ -228,14 +224,13 @@ namespace MasterTouroku_GinkouShiten
 
             return mbste;
         }
-
+      
         private bool DisplayData(CKM_SearchControl sc)
         {
             mbste = new M_BankShiten_Entity();
 
             if (type==1)
-            {
-                
+            {   
                 mbste.BankCD = ScBankCD.Code;
                 mbste.BranchCD = sc.Code;
                 mbste.ChangeDate = sc.ChangeDate;
@@ -326,12 +321,22 @@ namespace MasterTouroku_GinkouShiten
                     {
                         if (!RequireCheck(new Control[] { ScBankCD.TxtCode, ScBranchCD.TxtCode, ScBranchCD.TxtChangeDate }))//E102
                             return false;
+                       
+                            if((Convert.ToDateTime(ScBranchCD.ChangeDate)) < (Convert.ToDateTime(date)))
+                            {
+                                bbl.ShowMessage("E133");
+                                ScBankCD.SetFocus(1);
+                                return false;
+                            }
+
+
                         if (!ScBankCD.IsExists(2))
                         {
                             mtbstbl.ShowMessage("E133");
                             ScBankCD.SetFocus(1);
                             return false;
                         }
+
                         if (ScBranchCD.IsExists(1))
                         {
                             //***show Message mtsbl.ShowMessage("E132"); 
@@ -355,6 +360,12 @@ namespace MasterTouroku_GinkouShiten
 
                         if (!RequireCheck(new Control[] { ScCopyBranchCD.TxtChangeDate }, ScCopyBranchCD.TxtCode))
                             return false;
+                        if ((Convert.ToDateTime(ScBranchCD.ChangeDate)) < (Convert.ToDateTime(date)))
+                        {
+                            bbl.ShowMessage("E133");
+                            ScBankCD.SetFocus(1);
+                            return false;
+                        }
 
                         if (!ScBankCD.IsExists(2))
                         {
@@ -407,6 +418,20 @@ namespace MasterTouroku_GinkouShiten
 
                 if (OperationMode == EOperationMode.INSERT)
                 {
+                    if ((Convert.ToDateTime(ScBranchCD.ChangeDate)) < (Convert.ToDateTime(date)))
+                    {
+                        bbl.ShowMessage("E133");
+                        ScBankCD.SetFocus(1);
+                        return false;
+                    }
+
+                    //DataTable dtResult = bbl.SimpleSelect1("4", ScBranchCD.ChangeDate, ScBankCD.TxtCode.Text);
+                    //if (dtResult.Rows.Count < 1)
+                    //{
+                    //    bbl.ShowMessage("E133");
+                    //    ScBankCD.SetFocus(1);
+                    //    return false;
+                    //}
                     if (!ScBankCD.IsExists(2))
                     {
                         mtbstbl.ShowMessage("E133");
@@ -433,9 +458,7 @@ namespace MasterTouroku_GinkouShiten
                         ScBranchCD.SetFocus(1);    
                         return false;
                     }
-
                 }
-
                 //*** Insert Other Error Check
             }
             return true;
@@ -489,25 +512,23 @@ namespace MasterTouroku_GinkouShiten
 
         private void ScBranchCD_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter || e.KeyCode==Keys.F11)
+            if (e.KeyCode==Keys.Enter || e.KeyCode==Keys.F11)
             {
+                ScBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScBranchCD.ChangeDate) ? bbl.GetDate() : ScBranchCD.ChangeDate; ;
                 type = 1;
                 F11();
-
             }
-
         }
-
+     
         private void ScCopyBranchCD_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
         {
+            ScCopyBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScCopyBranchCD.ChangeDate) ? bbl.GetDate() : ScCopyBranchCD.ChangeDate; ;
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
             {
                 type = 2;
                 F11();
-
             }
         }
-
         private void ScBankCD_Leave(object sender, EventArgs e)
         {
             ScBranchCD.Value1 = ScBankCD.Code;
@@ -530,23 +551,27 @@ namespace MasterTouroku_GinkouShiten
         private void CopyChangeDate_Leave(object sender, EventArgs e)
 
         {
-            ScCopyBankCD.ChangeDate = ScCopyBranchCD.TxtChangeDate.Text;
+            ScCopyBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScCopyBranchCD.ChangeDate) ? bbl.GetDate() : ScBranchCD.ChangeDate; ;
+           // ScCopyBankCD.ChangeDate = ScCopyBranchCD.TxtChangeDate.Text;
         }
 
         private void ScBankCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                
                 if (!string.IsNullOrWhiteSpace(ScBankCD.TxtCode.Text))
                 {
-                    ScBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScBranchCD.ChangeDate) ? bbl.GetDate() : ScBranchCD.ChangeDate;
-
                     if (ScBankCD.SelectData())
                     {
                         ScBranchCD.Value1 = ScBankCD.TxtCode.Text;
                         ScBranchCD.Value2 = ScBankCD.LabelText;
-                        
+                         mb = GetDate();
+                        mb = mtbstbl.M_Bank_ChangeDate_Select(mb);
+                        if (mb != null)
+                        {
+                            date = mb.ChangeDate;
+                        }
+
                     }
                     else
                     {
@@ -558,12 +583,20 @@ namespace MasterTouroku_GinkouShiten
             }
 
         }
-
+        private M_Bank_Entity GetDate()
+        {
+            mb = new M_Bank_Entity
+            {
+                BankCD = ScBankCD.TxtCode.Text,
+                ChangeDate = string.IsNullOrWhiteSpace(ScBranchCD.ChangeDate) ? bbl.GetDate() : ScBranchCD.ChangeDate
+            };
+            return mb;
+        }
         private void ScCopyBankCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-
+                ScCopyBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScCopyBranchCD.ChangeDate) ? bbl.GetDate() : ScCopyBranchCD.ChangeDate; ;
                 if (!string.IsNullOrWhiteSpace(ScCopyBankCD.TxtCode.Text))
                 {
                     ScCopyBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScCopyBranchCD.ChangeDate) ? bbl.GetDate() : ScCopyBranchCD.ChangeDate;
@@ -591,7 +624,12 @@ namespace MasterTouroku_GinkouShiten
 
         private void ScBankCD_Enter(object sender, EventArgs e)
         {
-            ScBankCD.ChangeDate = ScBranchCD.TxtChangeDate.Text;
+             ScBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScBranchCD.ChangeDate) ? bbl.GetDate() : ScBranchCD.ChangeDate; ;
+        }
+
+        private void ScCopyBankCD_Enter(object sender, EventArgs e)
+        {
+            ScCopyBankCD.ChangeDate = string.IsNullOrWhiteSpace(ScCopyBranchCD.ChangeDate) ? bbl.GetDate() : ScCopyBranchCD.ChangeDate; ;
         }
     }
 }

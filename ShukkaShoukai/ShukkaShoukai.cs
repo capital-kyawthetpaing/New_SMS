@@ -43,18 +43,24 @@ namespace ShukkaShoukai
             F5Visible = false;
             F7Visible = false;
             F8Visible = false;
-            Btn_F10.Text = "Excel出力(F10)";
+            Btn_F10.Text = "出力(F10)";
             F12Visible = false;
             BindCombo();
             cboWarehouse.Focus();
             SetRequiredField();
+
+            Sc_Item.CodeWidth = 600;
+            Sc_SKUCD.CodeWidth = 600;
+
+            SC_Order.Value1 = InOperatorCD;
+            SC_Order.Value2 = StoreCD;
            
         }
 
         public void BindCombo()
         {
             cboWarehouse.Bind(string.Empty,"");
-            cboWarehouse.SelectedValue = SoukoCD;
+            //cboWarehouse.SelectedValue = SoukoCD;
             cboShipping.Bind(string.Empty,"");
             cboDestinationWarehouse.Bind(string.Empty,"");
         }
@@ -93,9 +99,9 @@ namespace ShukkaShoukai
                     break;
                 case 10:
                     F10();
-                    Clear();
-                    dgvShukkaShoukai.DataSource = string.Empty;
-                    cboWarehouse.Focus();
+                    //Clear();
+                    //dgvShukkaShoukai.DataSource = string.Empty;
+                    //cboWarehouse.Focus();
                     break;
                 case 11:
                     F11();
@@ -144,7 +150,14 @@ namespace ShukkaShoukai
         public void Clear()
         {
             Clear(PanelHeader);
-            Clear(panelDetail);
+            BindCombo();
+            cboWarehouse.Focus();
+            dgvShukkaShoukai.DataSource = string.Empty;
+            chkAlready.Checked = true;
+            chkNot.Checked = true;
+            chkShipmentOfSale.Checked = true;
+            chkShipmentOfTransfer.Checked = true;
+            //Clear(panelDetail);
         }
 
         #region Display Data
@@ -172,7 +185,7 @@ namespace ShukkaShoukai
             if (!string.IsNullOrWhiteSpace(txtShippingEndDate.Text))
             {
                 int result = txtShippingStartDate.Text.CompareTo(txtShippingEndDate.Text);
-                if (result >= 0)
+                if (result > 0)
                 {
                     skskbl.ShowMessage("E104");
                     txtShippingEndDate.Focus();
@@ -275,7 +288,7 @@ namespace ShukkaShoukai
             return true;
         }
         public void F11()
-        {
+         {
             if (ErrorCheck())
             {
                 mshe = new D_Shipping_Entity
@@ -347,6 +360,9 @@ namespace ShukkaShoukai
                                 skskbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);  //Export Successful
                             }
                         }
+                        Clear();
+                        dgvShukkaShoukai.DataSource = string.Empty;
+                        cboWarehouse.Focus();
                     }
                 }
             }
@@ -397,7 +413,7 @@ namespace ShukkaShoukai
                 if (!string.IsNullOrWhiteSpace(txtShippingEndDate.Text))
                 {
                     int result = txtShippingStartDate.Text.CompareTo(txtShippingEndDate.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         skskbl.ShowMessage("E104");
                         txtShippingEndDate.Focus();

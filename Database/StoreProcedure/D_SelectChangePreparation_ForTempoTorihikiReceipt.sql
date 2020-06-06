@@ -1,17 +1,21 @@
- BEGIN TRY 
- Drop Procedure dbo.[D_Coupon_Select]
-END try
-BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 --  ======================================================================
 --       Program Call    店舗取引レシート印刷　レシート印刷出力
 --       Program ID      TempoTorihikiReceipt
 --       Create date:    2020.02.24
+--       Update date:    2020.05.21  TelphoneNO → TelephoneNO
 --    ======================================================================
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'D_SelectChangePreparation_ForTempoTorihikiReceipt')
+  DROP PROCEDURE [dbo].[D_SelectChangePreparation_ForTempoTorihikiReceipt]
+GO
+
+
 CREATE PROCEDURE [dbo].[D_SelectChangePreparation_ForTempoTorihikiReceipt]
 (
     @DepositNO        int
@@ -154,4 +158,3 @@ BEGIN
         ;
 END
 
-GO

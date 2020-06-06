@@ -319,8 +319,8 @@ CREATE PROCEDURE PRC_HacchuuNyuuryoku
     @OrderTax10 money ,
     @OrderGaku money ,
 
-    @CommentOutStore varchar(80) ,
-    @CommentInStore varchar(80) ,
+    @CommentOutStore varchar(500) ,
+    @CommentInStore varchar(500) ,
     @ApprovalEnabled tinyint,	--承認ボタンが利用できない場合=0
     @ApprovalStageFLG int,
 
@@ -495,13 +495,13 @@ BEGIN
               ,[CommentInStore]  = @CommentInStore
               ,[StaffCD]         = @StaffCD
 
-              ,[ApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN @SYSDATE ELSE [ApprovalDate] END)
+              ,[ApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN @SYSDATE ELSE NULL END)
                                         ELSE @SYSDATE END) --ApprovalDate
-              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @SYSDATE WHEN -1 THEN NULL ELSE [ApprovalDate] END) ELSE [ApprovalDate] END)
+              ,[LastApprovalDate] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @SYSDATE WHEN -1 THEN NULL ELSE [ApprovalDate] END) ELSE NULL END)
                                             ELSE @SYSDATE END) --LastApprovalDate
-              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @Operator WHEN -1 THEN NULL ELSE [LastApprovalStaffCD] END) ELSE [LastApprovalStaffCD] END)
+              ,[LastApprovalStaffCD] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN 9 THEN @Operator WHEN -1 THEN NULL ELSE [LastApprovalStaffCD] END) ELSE '1' END)
                                             ELSE @Operator END) --LastApprovalStaffCD
-              ,[ApprovalStageFLG] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN -1 THEN 0 ELSE @ApprovalStageFLG END) ELSE [ApprovalStageFLG] END)
+              ,[ApprovalStageFLG] = (CASE WHEN @OrderHontaiGaku > @Num1 THEN (CASE WHEN @ApprovalEnabled = 1 THEN (CASE @ApprovalStageFLG WHEN -1 THEN 0 ELSE @ApprovalStageFLG END) ELSE 1 END)
                                         ELSE 10 END) --ApprovalStageFLG
       
               ,[UpdateOperator]     =  @Operator  

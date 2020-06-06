@@ -19,12 +19,13 @@ namespace BL
             tprg_Kaiin_DL = new M_Customer_DL();
             mzdl = new M_ZipCode_DL();
         }
-
         public M_Customer_Entity M_Customer_Select(M_Customer_Entity m_cust)
         {
             DataTable dtCustomer = tprg_Kaiin_DL.M_Customer_SelectAll(m_cust);
             if(dtCustomer.Rows.Count>0)
             {
+                m_cust.DeleteFlg = dtCustomer.Rows[0]["DeleteFlg"].ToString();
+                m_cust.StoreKBN = dtCustomer.Rows[0]["StoreKBN"].ToString();
                 m_cust.CustomerCD = dtCustomer.Rows[0]["CustomerCD"].ToString();
                 m_cust.FirstName = dtCustomer.Rows[0]["FirstName"].ToString();
                 m_cust.LastName = dtCustomer.Rows[0]["LastName"].ToString();
@@ -65,18 +66,6 @@ namespace BL
         public DataTable M_ZipCode_AddressSelect(M_ZipCode_Entity mze)
         {
             return mzdl.M_ZipCode_Select(mze);
-        }
-
-        public bool IsExists(string text)
-        {
-            DataTable dtResult = new DataTable();
-            dtResult = bbl.SimpleSelect1("9",string.Empty,text);
-            //string FieldsName = "1";
-            //string TableName = "M_Customer";
-            //string Condition = "CustomerCD = '" + text + "'";
-            //dtResult = bbl.SimpleSelect(FieldsName, TableName, Condition);
-
-            return dtResult.Rows.Count > 0 ? true : false;
         }
     }
 }

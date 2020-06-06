@@ -1010,6 +1010,7 @@ namespace MasterTouroku_Tokuisaki
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                         return false;
                     }
                     break;
@@ -1021,6 +1022,7 @@ namespace MasterTouroku_Tokuisaki
                         //入力必須(Entry required)
                         if (!RequireCheck(new Control[] { detailControls[index] }))
                         {
+                            ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                             return false;
                         }
                     }
@@ -1088,7 +1090,7 @@ namespace MasterTouroku_Tokuisaki
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditInsurance].Text)
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditDeposit].Text)
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditETC].Text));
-break;
+                    break;
 
             }
 

@@ -20,6 +20,7 @@ namespace TempoRegiNyuukinTouroku
         TempoRegiNyuukinNyuuryoku_BL trntBL = new TempoRegiNyuukinNyuuryoku_BL();
         D_DepositHistory_Entity ddpe = new D_DepositHistory_Entity();
         D_Collect_Entity dce = new D_Collect_Entity();
+
         public TempoRegiNyuukinNyuuryoku()
         {
             InitializeComponent();
@@ -103,6 +104,7 @@ namespace TempoRegiNyuukinTouroku
                             trntBL.TempoNyuukinTouroku_D_Collect_Insert(dce);
                         }
                         trntBL.ShowMessage("I101");
+                        RunConsole();
                         txtPayment.Clear();
                         txtPayment.Focus();
                         cboDenominationName.SelectedValue = "-1";
@@ -113,7 +115,11 @@ namespace TempoRegiNyuukinTouroku
                         chkAdvanceFlg.Enabled = chkAdvanceFlg.Checked = false;
                     }
                 }
-                RunConsole();
+                else
+                {
+                    PreviousCtrl.Focus();
+                }
+
             }
         }
 
@@ -236,12 +242,25 @@ namespace TempoRegiNyuukinTouroku
 
         private void RunConsole()
         {
-            string programID = "TempoTorihikiReceipt";
+            string programID = "TempoRegiTorihikiReceipt";
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "2";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode ;//parameter
-            System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            string depositNo = bbl.SimpleSelect1("52", "", Application.ProductName, "", "").Rows[0]["DepositNO"].ToString();
+            string cmdLine = InCompanyCD  + " " + InOperatorCD + " " + Login_BL.GetHostName()   + " " + Mode + " " + depositNo ; //parameter
+            try
+            {
+                System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void panelDetail_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

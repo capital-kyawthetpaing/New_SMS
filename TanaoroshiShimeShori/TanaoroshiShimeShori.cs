@@ -306,6 +306,7 @@ namespace TanaoroshiShimeShori
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        cboSyori.MoveNext = false;
                         return false;
                     }
                     break;
@@ -314,6 +315,7 @@ namespace TanaoroshiShimeShori
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSoukoName.MoveNext = false;
                         return false;
                     }
                     //ExecDisp();
@@ -491,6 +493,8 @@ namespace TanaoroshiShimeShori
             {
                 if(CboSoukoName.SelectedIndex>0)
                 ExecDisp();
+
+                CboSoukoName.Focus();
             }
             catch (Exception ex)
             {

@@ -311,30 +311,33 @@ namespace MainMenu
         {
             this.Close();
         }
+        public void ForceToClose()
+        {
+            foreach (DataRow dr in menu.Rows)
+            {
+                var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                if (localByName.Count() > 0)
+                {
 
+                    foreach (var process in localByName)
+                    {
+                        try
+                        {
+                            process.Kill();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
+        }
         private void Haspo_MainMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
             {
-                foreach (DataRow dr in menu.Rows)
-                {
-                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
-                    if (localByName.Count() > 0)
-                    {
-
-                        foreach (var process in localByName)
-                        {
-                            try
-                            {
-                                process.Kill();
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
+                ForceToClose();
                 e.Cancel = false;
             }
             else
@@ -375,7 +378,8 @@ namespace MainMenu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            HaspoLogin hln = new HaspoLogin();
+            ForceToClose();
+               HaspoLogin hln = new HaspoLogin();
             this.Hide();
             hln.ShowDialog();
             this.Close();
@@ -389,7 +393,8 @@ namespace MainMenu
             }
             else if (e.KeyData == Keys.F12)
             {
-                HaspoLogin hln = new HaspoLogin();
+                ForceToClose();
+                   HaspoLogin hln = new HaspoLogin();
                 this.Hide();
                 hln.ShowDialog();
                 this.Close();

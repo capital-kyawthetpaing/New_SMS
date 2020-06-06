@@ -66,6 +66,7 @@ namespace DL
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = ZipCode.ProcessMode }},
                 { "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = ZipCode.Key }}
             };
+            UseTransaction = true;
 
             return InsertUpdateDeleteData(dic, sp);
         }

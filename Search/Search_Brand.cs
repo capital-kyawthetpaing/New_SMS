@@ -43,6 +43,9 @@ namespace Search
             InitialControlArray();
             F9Visible = false;
 
+           // dgvDetail.AllowUserToAddRows = false;
+            dgvDetail.ColumnHeadersDefaultCellStyle.Font = new Font(this.Font, FontStyle.Bold);
+
             HeaderTitleText = "ブランド";
             this.Text = ProNm;
 
@@ -60,6 +63,7 @@ namespace Search
             //btnStoreCD.Click += new System.EventHandler(BtnSearch_Click);
             radioButton1.Enter += new System.EventHandler(RadioButton_Enter);
             radioButton2.Enter += new System.EventHandler(RadioButton_Enter);
+
         }
         /// <summary>
         /// 画面クリア
@@ -184,7 +188,7 @@ namespace Search
 
             if (ret)
             {
-                dgvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                dgvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 dgvDetail.CurrentRow.Selected = true;
                 dgvDetail.Enabled = true;
                 dgvDetail.Focus();
@@ -328,29 +332,29 @@ namespace Search
             }
         }
 
-        private void DgvDetail_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
-        {
-            //列ヘッダーかどうか調べる
-            if (e.ColumnIndex < 0 && e.RowIndex >= 0)
-            {
-                //セルを描画する
-                e.Paint(e.ClipBounds, DataGridViewPaintParts.All);
+        //private void DgvDetail_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        //{
+        //    //列ヘッダーかどうか調べる
+        //    if (e.ColumnIndex < 0 && e.RowIndex >= 0)
+        //    {
+        //        //セルを描画する
+        //        e.Paint(e.ClipBounds, DataGridViewPaintParts.All);
 
-                //行番号を描画する範囲を決定する
-                //e.AdvancedBorderStyleやe.CellStyle.Paddingは無視しています
-                Rectangle indexRect = e.CellBounds;
-                indexRect.Inflate(-2, -2);
-                //行番号を描画する
-                TextRenderer.DrawText(e.Graphics,
-                    (e.RowIndex + 1).ToString(),
-                    e.CellStyle.Font,
-                    indexRect,
-                    e.CellStyle.ForeColor,
-                    TextFormatFlags.Right | TextFormatFlags.VerticalCenter);
-                //描画が完了したことを知らせる
-                e.Handled = true;
-            }
-        }
+        //        //行番号を描画する範囲を決定する
+        //        //e.AdvancedBorderStyleやe.CellStyle.Paddingは無視しています
+        //        Rectangle indexRect = e.CellBounds;
+        //        indexRect.Inflate(-2, -2);
+        //        //行番号を描画する
+        //        TextRenderer.DrawText(e.Graphics,
+        //            (e.RowIndex + 1).ToString(),
+        //            e.CellStyle.Font,
+        //            indexRect,
+        //            e.CellStyle.ForeColor,
+        //            TextFormatFlags.Right | TextFormatFlags.VerticalCenter);
+        //        //描画が完了したことを知らせる
+        //        e.Handled = true;
+        //    }
+        //}
     
     /// <summary>
     /// handle f1 to f12 click event
@@ -376,5 +380,31 @@ namespace Search
             }
         }
 
+        private void dgvDetail_Paint(object sender, PaintEventArgs e)
+        {
+            string[] monthes = { "","メーカー (仕入先)",""};
+            for (int j = 2; j < 3;)
+            {
+                Rectangle r1 =this.dgvDetail.GetCellDisplayRectangle(j, -1, true);
+                int w1 = this.dgvDetail.GetCellDisplayRectangle(j + 1, -1, true).Width;
+                r1.X += 1;
+                r1.Y += 1;
+                r1.Width = r1.Width + w1 - 2;
+                r1.Height = r1.Height - 2;
+
+                e.Graphics.FillRectangle(new SolidBrush(this.dgvDetail.ColumnHeadersDefaultCellStyle.BackColor), r1);
+                StringFormat format = new StringFormat();
+                format.LineAlignment = StringAlignment.Center;
+                e.Graphics.DrawString(monthes[j / 2],
+                this.dgvDetail.ColumnHeadersDefaultCellStyle.Font,
+                new SolidBrush(this.dgvDetail.ColumnHeadersDefaultCellStyle.ForeColor),
+                r1,
+                format);
+                j += 2;
+
+            }
+        }
+
+     
     }
 }

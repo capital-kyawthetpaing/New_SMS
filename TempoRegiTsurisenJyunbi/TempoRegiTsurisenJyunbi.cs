@@ -19,6 +19,7 @@ namespace TempoRegiTsurisenJyunbi
         D_DepositHistory_Entity mre;
         string storeCD;
         DataTable dtDepositNO;
+        int DayNow;
         public frmTempoRegiTsurisenJyunbi()
         {
             InitializeComponent();
@@ -59,9 +60,26 @@ namespace TempoRegiTsurisenJyunbi
             this.Text = "釣銭準備入力";
             SetRequireField();
             storeCD = StoreCD;
+            DateTime tomorrow = DateTime.Now.AddDays(1);
+            txtDate.Text = tomorrow.Date.ToString("yyyy/MM/dd");
+        }
+        public bool CheckDate()
+        {
+            string ymd = bbl.GetDate();
+            //txtDate.Text = ymd;
+            DateTime target = DateTime.Parse(txtDate.Text);
+            //DateTime today = DateTime.Today;
+            DateTime yesterday = DateTime.Now.AddDays(-1);
+            if(target<=yesterday)
+            {
+                trtjb.ShowMessage("E103");
+                return false;
+            }
+            return true;
         }
         private void SetRequireField()
         {
+            txtDate.Require(true);
             DepositGaku.Require(true);
         }
         public override void FunctionProcess(int index)
@@ -72,7 +90,6 @@ namespace TempoRegiTsurisenJyunbi
                 case 2:
                     Save();
                     break;
-
             }
         }
         private D_DepositHistory_Entity DepositHistoryEnity()
@@ -85,7 +102,8 @@ namespace TempoRegiTsurisenJyunbi
                 RecoredKBN = "0",
                 Rows = "0",
                 AdminNO = "",
-                AccountingDate = System.DateTime.Now.ToShortDateString(),
+                //AccountingDate = System.DateTime.Now.ToShortDateString(),
+                AccountingDate=txtDate.Text,
                 SalesTaxRate = "0",
                 DepositGaku = DepositGaku.Text,
                 DenominationCD = "",
@@ -126,9 +144,10 @@ namespace TempoRegiTsurisenJyunbi
                     {
                         trtjb.ShowMessage("I101");
                         RunConsole();
+                        txtDate.Clear();
                         DepositGaku.Clear();
                         Remark.Clear();
-                        DepositGaku.Focus();
+                        txtDate.Focus();
                     }
                     else
                     {
@@ -147,10 +166,23 @@ namespace TempoRegiTsurisenJyunbi
         }
         private bool ErrorCheck()
         {
-            if (!RequireCheck(new Control[] { DepositGaku }))   // go that focus
+            if (!RequireCheck(new Control[] { txtDate,DepositGaku}))   // go that focus
                 return false;
-
             return true;
+        }
+        private void txtDate_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (string.IsNullOrEmpty(txtDate.Text))
+                {
+                    trtjb.ShowMessage("E102");
+                }
+                else
+                {
+                    CheckDate();
+                }
+            }
         }
         private void RunConsole()
         {
@@ -161,7 +193,7 @@ namespace TempoRegiTsurisenJyunbi
             dtDepositNO = bbl.SimpleSelect1("51", "", Application.ProductName, "", "");
             string DepositeNO = dtDepositNO.Rows[0]["DepositNO"].ToString();//テーブル転送仕様Ａで覚えた入出金番号
 
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
+            string cmdLine =InCompanyCD+ " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + Mode+" "+DepositeNO;//parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");

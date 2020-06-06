@@ -868,6 +868,7 @@ namespace ShiireNyuuryoku
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -1139,6 +1140,8 @@ namespace ShiireNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+            int colJan = (int)ClsGridShiire.ColNO.JanCD;
+
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
             {
@@ -1170,6 +1173,8 @@ namespace ShiireNyuuryoku
                 mGrid.g_DArray[w_Row].SyukkaSijizumiFlg = dpen.SyukkaSijizumiFlg;
                 mGrid.g_DArray[w_Row].PickingzumiFlg = dpen.PickingzumiFlg;
                 mGrid.g_DArray[w_Row].HikiatezumiFlg = dpen.HikiatezumiFlg;
+
+                Grid_NotFocus(colJan, i);
             }
 
             //状態もコピー
@@ -1177,10 +1182,7 @@ namespace ShiireNyuuryoku
             for (w_Col = mGrid.g_MK_State.GetLowerBound(0); w_Col <= mGrid.g_MK_State.GetUpperBound(0); w_Col++)
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
-            }
-            
-            int col = (int)ClsGridShiire.ColNO.JanCD;
-            Grid_NotFocus(col, w_Row);
+            }           
 
             CalcKin();
             CalcZei();
@@ -1189,7 +1191,7 @@ namespace ShiireNyuuryoku
             //配列の内容を画面へセット
             mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
 
-            mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, col, ActiveControl, Vsb_Mei_0, w_Row, col);
+            mGrid.F_MoveFocus((int)ClsGridShiire.Gen_MK_FocusMove.MvSet, (int)ClsGridShiire.Gen_MK_FocusMove.MvSet, IMT_DMY_0, w_Row, colJan, ActiveControl, Vsb_Mei_0, w_Row, colJan);
         }
         private void ADD_SUB()
         {
@@ -1390,12 +1392,14 @@ namespace ShiireNyuuryoku
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1655,6 +1659,8 @@ namespace ShiireNyuuryoku
                     mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]) * sign);   // 
                     mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_PurchaseGaku"]) * sign);   // 
                     mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_CalculationGaku"]) * sign);   // 
+
+                    CheckGrid((int)ClsGridShiire.ColNO.AdjustmentGaku,i, true);
 
                     mGrid.g_DArray[i].CommentInStore = row["D_CommentInStore"].ToString();   // 
                     mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   //    
@@ -2218,12 +2224,12 @@ namespace ShiireNyuuryoku
                     //入力された場合、以下を再計算
                     //計算仕入額←	form.仕入数	×	form.仕入単価
                     mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaseUnitPrice));
-                    //計算仕入額＋調整額＝仕入額
+                    //仕入額←	計算仕入額＋調整額
                     mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
                      //消費税額(Hidden)←Function_消費税計算.out金額１	
                      decimal zei;
                     decimal zeiritsu;
-                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG, out zei,out zeiritsu, ymd);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku), mGrid.g_DArray[row].TaxRateFLG, out zei,out zeiritsu, ymd);
                     mGrid.g_DArray[row].PurchaseTax = zei;
                     mGrid.g_DArray[row].PurchaseGaku10 = 0;
                     mGrid.g_DArray[row].PurchaseGaku8 = 0;
@@ -2232,18 +2238,20 @@ namespace ShiireNyuuryoku
                     //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
                     if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.TSUJYO))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku10 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
                     //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
                     else if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.KEIGEN))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
 
                     //各金額項目の再計算必要
                     if (chkAll == false)
+                    {
                         CalcKin();
-
+                        CalcZei();
+                    }
                         break;
 
             }

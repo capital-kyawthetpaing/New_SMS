@@ -48,6 +48,12 @@
             this.ckmShop_Label11 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
             this.dgvKaniiKensaku = new CKM_Controls.CKMShop_GridView();
+            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtZipCD = new CKM_Controls.CKM_TextBox();
             this.txtKanaName = new CKM_Controls.CKM_TextBox();
             this.txtCustomerCD = new CKM_Controls.CKM_TextBox();
@@ -55,12 +61,8 @@
             this.txtDBO = new CKM_Controls.CKM_TextBox();
             this.btnShow = new CKM_Controls.CKM_Button();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.colNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colZipCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaleDate_StoreCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
+            this.chkAnotherStore = new CKM_Controls.CKMShop_CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKaniiKensaku)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
@@ -201,7 +203,7 @@
             this.ckmShop_Label11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label11.Location = new System.Drawing.Point(538, 16);
+            this.ckmShop_Label11.Location = new System.Drawing.Point(499, 16);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
             this.ckmShop_Label11.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label11.TabIndex = 129;
@@ -277,12 +279,84 @@
             this.dgvKaniiKensaku.RowTemplate.Height = 20;
             this.dgvKaniiKensaku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvKaniiKensaku.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1900, 630);
+            this.dgvKaniiKensaku.Size = new System.Drawing.Size(1875, 630);
             this.dgvKaniiKensaku.TabIndex = 6;
             this.dgvKaniiKensaku.UseRowNo = true;
             this.dgvKaniiKensaku.UseSetting = true;
             this.dgvKaniiKensaku.Width_ = 1875;
             this.dgvKaniiKensaku.DoubleClick += new System.EventHandler(this.dgvKaniiKensaku_DoubleClick);
+            // 
+            // colNo
+            // 
+            this.colNo.DataPropertyName = "No";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colNo.HeaderText = "No";
+            this.colNo.Name = "colNo";
+            this.colNo.ReadOnly = true;
+            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colNo.Width = 65;
+            // 
+            // colCustomerCD
+            // 
+            this.colCustomerCD.DataPropertyName = "CustomerCD";
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colCustomerCD.HeaderText = "会員番号";
+            this.colCustomerCD.Name = "colCustomerCD";
+            this.colCustomerCD.ReadOnly = true;
+            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerCD.Width = 250;
+            // 
+            // colCustomerName
+            // 
+            this.colCustomerName.DataPropertyName = "CustomerName";
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colCustomerName.HeaderText = "会員名";
+            this.colCustomerName.Name = "colCustomerName";
+            this.colCustomerName.ReadOnly = true;
+            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colCustomerName.Width = 400;
+            // 
+            // colZipCD
+            // 
+            this.colZipCD.DataPropertyName = "ZipCD";
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colZipCD.HeaderText = "〒/TEL";
+            this.colZipCD.Name = "colZipCD";
+            this.colZipCD.ReadOnly = true;
+            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colZipCD.Width = 280;
+            // 
+            // colAddress
+            // 
+            this.colAddress.DataPropertyName = "Address";
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colAddress.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colAddress.HeaderText = "住所";
+            this.colAddress.Name = "colAddress";
+            this.colAddress.ReadOnly = true;
+            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAddress.Width = 600;
+            // 
+            // colSaleDate_StoreCD
+            // 
+            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
+            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
+            this.colSaleDate_StoreCD.ReadOnly = true;
+            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSaleDate_StoreCD.Width = 260;
             // 
             // txtZipCD
             // 
@@ -427,10 +501,10 @@
             this.btnShow.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShow.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnShow.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnShow.Location = new System.Drawing.Point(1677, 106);
+            this.btnShow.Location = new System.Drawing.Point(1677, 107);
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(200, 42);
+            this.btnShow.Size = new System.Drawing.Size(200, 45);
             this.btnShow.TabIndex = 5;
             this.btnShow.Text = "照会";
             this.btnShow.UseVisualStyleBackColor = false;
@@ -438,6 +512,8 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.chkAnotherStore);
+            this.panelDetail.Controls.Add(this.ckmShop_Label2);
             this.panelDetail.Controls.Add(this.txtZipCD);
             this.panelDetail.Controls.Add(this.dgvKaniiKensaku);
             this.panelDetail.Controls.Add(this.btnShow);
@@ -458,90 +534,46 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1924, 833);
+            this.panelDetail.Size = new System.Drawing.Size(1884, 833);
             this.panelDetail.TabIndex = 0;
             // 
-            // colNo
+            // ckmShop_Label2
             // 
-            this.colNo.DataPropertyName = "No";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.colNo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colNo.HeaderText = "No";
-            this.colNo.Name = "colNo";
-            this.colNo.ReadOnly = true;
-            this.colNo.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colNo.Width = 65;
+            this.ckmShop_Label2.AutoSize = true;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.Location = new System.Drawing.Point(910, 120);
+            this.ckmShop_Label2.Name = "ckmShop_Label2";
+            this.ckmShop_Label2.Size = new System.Drawing.Size(163, 35);
+            this.ckmShop_Label2.TabIndex = 131;
+            this.ckmShop_Label2.Text = "他店会員";
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // colCustomerCD
+            // chkAnotherStore
             // 
-            this.colCustomerCD.DataPropertyName = "CustomerCD";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerCD.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colCustomerCD.HeaderText = "会員番号";
-            this.colCustomerCD.Name = "colCustomerCD";
-            this.colCustomerCD.ReadOnly = true;
-            this.colCustomerCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerCD.Width = 250;
-            // 
-            // colCustomerName
-            // 
-            this.colCustomerName.DataPropertyName = "CustomerName";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCustomerName.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colCustomerName.HeaderText = "会員名";
-            this.colCustomerName.Name = "colCustomerName";
-            this.colCustomerName.ReadOnly = true;
-            this.colCustomerName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colCustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colCustomerName.Width = 400;
-            // 
-            // colZipCD
-            // 
-            this.colZipCD.DataPropertyName = "ZipCD";
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colZipCD.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colZipCD.HeaderText = "〒/TEL";
-            this.colZipCD.Name = "colZipCD";
-            this.colZipCD.ReadOnly = true;
-            this.colZipCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colZipCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colZipCD.Width = 280;
-            // 
-            // colAddress
-            // 
-            this.colAddress.DataPropertyName = "Address";
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colAddress.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colAddress.HeaderText = "住所";
-            this.colAddress.Name = "colAddress";
-            this.colAddress.ReadOnly = true;
-            this.colAddress.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colAddress.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAddress.Width = 600;
-            // 
-            // colSaleDate_StoreCD
-            // 
-            this.colSaleDate_StoreCD.DataPropertyName = "SaleDate_StoreCD";
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSaleDate_StoreCD.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colSaleDate_StoreCD.HeaderText = "最新来店日/店舗";
-            this.colSaleDate_StoreCD.Name = "colSaleDate_StoreCD";
-            this.colSaleDate_StoreCD.ReadOnly = true;
-            this.colSaleDate_StoreCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSaleDate_StoreCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSaleDate_StoreCD.Width = 260;
+            this.chkAnotherStore.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAnotherStore.ForeColor = System.Drawing.Color.Black;
+            this.chkAnotherStore.IsattachedCaption = false;
+            this.chkAnotherStore.Location = new System.Drawing.Point(1075, 121);
+            this.chkAnotherStore.Name = "chkAnotherStore";
+            this.chkAnotherStore.Size = new System.Drawing.Size(35, 35);
+            this.chkAnotherStore.TabIndex = 132;
+            this.chkAnotherStore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAnotherStore.UseVisualStyleBackColor = true;
             // 
             // TempoRegiKaiinKensaku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BtnP_text = "決定";
-            this.ClientSize = new System.Drawing.Size(1924, 961);
+            this.BtnP_text = "決  定";
+            this.ClientSize = new System.Drawing.Size(1884, 961);
             this.Controls.Add(this.panelDetail);
             this.Name = "TempoRegiKaiinKensaku";
-            this.Text = "TempoRegiKaiinKensaku";
+            this.Text = "会員検索";
             this.Load += new System.EventHandler(this.TempoRegiKaiinKensaku_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TempoRegiKaiinKensaku_KeyUp);
             this.Controls.SetChildIndex(this.panelDetail, 0);
@@ -578,5 +610,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDate_StoreCD;
+        private CKM_Controls.CKMShop_CheckBox chkAnotherStore;
+        private CKM_Controls.CKMShop_Label ckmShop_Label2;
     }
 }

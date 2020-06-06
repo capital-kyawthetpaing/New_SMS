@@ -303,7 +303,6 @@
             // PanelSearch
             // 
             this.PanelSearch.Controls.Add(this.btnSubF11);
-            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.TabIndex = 7;
             // 
             // panel1
@@ -579,13 +578,14 @@
             // IMT_REMAK_2
             // 
             this.IMT_REMAK_2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_2.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_2.Length = 500;
             this.IMT_REMAK_2.Location = new System.Drawing.Point(1047, 76);
-            this.IMT_REMAK_2.MaxLength = 250;
+            this.IMT_REMAK_2.MaxLength = 500;
             this.IMT_REMAK_2.Mdea = false;
             this.IMT_REMAK_2.Mfocus = false;
             this.IMT_REMAK_2.MoveNext = false;
@@ -601,13 +601,14 @@
             // IMT_REMAK_1
             // 
             this.IMT_REMAK_1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_1.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_1.Length = 500;
             this.IMT_REMAK_1.Location = new System.Drawing.Point(1047, 38);
-            this.IMT_REMAK_1.MaxLength = 250;
+            this.IMT_REMAK_1.MaxLength = 500;
             this.IMT_REMAK_1.Mdea = false;
             this.IMT_REMAK_1.Mfocus = false;
             this.IMT_REMAK_1.MoveNext = true;
@@ -622,13 +623,14 @@
             // IMT_REMAK_0
             // 
             this.IMT_REMAK_0.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_0.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_0.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_0.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_0.Length = 500;
             this.IMT_REMAK_0.Location = new System.Drawing.Point(1047, 0);
-            this.IMT_REMAK_0.MaxLength = 250;
+            this.IMT_REMAK_0.MaxLength = 500;
             this.IMT_REMAK_0.Mdea = false;
             this.IMT_REMAK_0.Mfocus = false;
             this.IMT_REMAK_0.MoveNext = false;
@@ -1035,13 +1037,14 @@
             // IMT_REMAK_9
             // 
             this.IMT_REMAK_9.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_9.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_9.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_9.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_9.Length = 500;
             this.IMT_REMAK_9.Location = new System.Drawing.Point(1047, 342);
-            this.IMT_REMAK_9.MaxLength = 250;
+            this.IMT_REMAK_9.MaxLength = 500;
             this.IMT_REMAK_9.Mdea = false;
             this.IMT_REMAK_9.Mfocus = false;
             this.IMT_REMAK_9.MoveNext = false;
@@ -1974,13 +1977,14 @@
             // IMT_REMAK_8
             // 
             this.IMT_REMAK_8.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_8.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_8.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_8.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_8.Length = 500;
             this.IMT_REMAK_8.Location = new System.Drawing.Point(1047, 304);
-            this.IMT_REMAK_8.MaxLength = 250;
+            this.IMT_REMAK_8.MaxLength = 500;
             this.IMT_REMAK_8.Mdea = false;
             this.IMT_REMAK_8.Mfocus = false;
             this.IMT_REMAK_8.MoveNext = false;
@@ -2144,13 +2148,14 @@
             // IMT_REMAK_7
             // 
             this.IMT_REMAK_7.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_7.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_7.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_7.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_7.Length = 500;
             this.IMT_REMAK_7.Location = new System.Drawing.Point(1047, 266);
-            this.IMT_REMAK_7.MaxLength = 250;
+            this.IMT_REMAK_7.MaxLength = 500;
             this.IMT_REMAK_7.Mdea = false;
             this.IMT_REMAK_7.Mfocus = false;
             this.IMT_REMAK_7.MoveNext = false;
@@ -4002,13 +4007,14 @@
             // IMT_REMAK_4
             // 
             this.IMT_REMAK_4.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_4.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_4.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_4.Length = 500;
             this.IMT_REMAK_4.Location = new System.Drawing.Point(1047, 152);
-            this.IMT_REMAK_4.MaxLength = 250;
+            this.IMT_REMAK_4.MaxLength = 500;
             this.IMT_REMAK_4.Mdea = false;
             this.IMT_REMAK_4.Mfocus = false;
             this.IMT_REMAK_4.MoveNext = false;
@@ -4024,13 +4030,14 @@
             // IMT_REMAK_5
             // 
             this.IMT_REMAK_5.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_5.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_5.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_5.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_5.Length = 500;
             this.IMT_REMAK_5.Location = new System.Drawing.Point(1047, 190);
-            this.IMT_REMAK_5.MaxLength = 250;
+            this.IMT_REMAK_5.MaxLength = 500;
             this.IMT_REMAK_5.Mdea = false;
             this.IMT_REMAK_5.Mfocus = false;
             this.IMT_REMAK_5.MoveNext = true;
@@ -4045,13 +4052,14 @@
             // IMT_REMAK_6
             // 
             this.IMT_REMAK_6.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_6.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_6.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_6.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_6.Length = 500;
             this.IMT_REMAK_6.Location = new System.Drawing.Point(1047, 228);
-            this.IMT_REMAK_6.MaxLength = 250;
+            this.IMT_REMAK_6.MaxLength = 500;
             this.IMT_REMAK_6.Mdea = false;
             this.IMT_REMAK_6.Mfocus = false;
             this.IMT_REMAK_6.MoveNext = false;
@@ -4309,13 +4317,14 @@
             // IMT_REMAK_3
             // 
             this.IMT_REMAK_3.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
+            this.IMT_REMAK_3.BackColor = System.Drawing.Color.White;
             this.IMT_REMAK_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.IMT_REMAK_3.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
             this.IMT_REMAK_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMT_REMAK_3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.IMT_REMAK_3.Length = 500;
             this.IMT_REMAK_3.Location = new System.Drawing.Point(1047, 114);
-            this.IMT_REMAK_3.MaxLength = 250;
+            this.IMT_REMAK_3.MaxLength = 500;
             this.IMT_REMAK_3.Mdea = false;
             this.IMT_REMAK_3.Mfocus = false;
             this.IMT_REMAK_3.MoveNext = false;
@@ -6339,6 +6348,7 @@
             this.ScStore.CodeWidth = 40;
             this.ScStore.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStore.DataCheck = true;
+            this.ScStore.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStore.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStore.IsCopy = false;
             this.ScStore.LabelText = "";
@@ -6666,6 +6676,7 @@
             this.ScBrand.CodeWidth = 100;
             this.ScBrand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBrand.DataCheck = true;
+            this.ScBrand.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScBrand.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScBrand.IsCopy = false;
             this.ScBrand.LabelText = "";
@@ -6692,6 +6703,7 @@
             this.ScSkuFrom.CodeWidth = 190;
             this.ScSkuFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSkuFrom.DataCheck = false;
+            this.ScSkuFrom.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScSkuFrom.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScSkuFrom.IsCopy = false;
             this.ScSkuFrom.LabelText = "";
@@ -6718,6 +6730,7 @@
             this.ScSkuTo.CodeWidth = 190;
             this.ScSkuTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSkuTo.DataCheck = false;
+            this.ScSkuTo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScSkuTo.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScSkuTo.IsCopy = false;
             this.ScSkuTo.LabelText = "";
@@ -6744,6 +6757,7 @@
             this.ScTanka.CodeWidth = 100;
             this.ScTanka.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScTanka.DataCheck = true;
+            this.ScTanka.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScTanka.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScTanka.IsCopy = false;
             this.ScTanka.LabelText = "";

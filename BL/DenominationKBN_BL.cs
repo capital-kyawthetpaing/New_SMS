@@ -67,7 +67,7 @@ namespace BL
             DataTable dt = mdl.M_DenominationKBN_Select(mde);
             if (dt.Rows.Count > 0)
             {
-                mde.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
+                //mde.ChangeDate = dt.Rows[0]["ChangeDate"].ToString();
                 mde.DenominationName = dt.Rows[0]["DenominationName"].ToString();
                 mde.SystemKBN = dt.Rows[0]["SystemKBN"].ToString();
                 mde.CardCompany = dt.Rows[0]["CardCompany"].ToString();

@@ -287,8 +287,9 @@ namespace NyuusyukkinYoteiList
                     {
                         if(!string.IsNullOrWhiteSpace(CboStoreCD.SelectedText))
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
-                        {
-                            bbl.ShowMessage("E141");
+                            {
+                                CboStoreCD.MoveNext = false;
+                                bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
                         }

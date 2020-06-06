@@ -58,6 +58,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 34);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -89,6 +97,7 @@
             this.txtPaymentDueDateFrom.IntegerPart = 0;
             this.txtPaymentDueDateFrom.IsCorrectDate = true;
             this.txtPaymentDueDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDueDateFrom.isMaxLengthErr = false;
             this.txtPaymentDueDateFrom.IsNumber = true;
             this.txtPaymentDueDateFrom.IsShop = false;
             this.txtPaymentDueDateFrom.Length = 10;
@@ -132,6 +141,7 @@
             this.txtPaymentDueDateTo.IntegerPart = 0;
             this.txtPaymentDueDateTo.IsCorrectDate = true;
             this.txtPaymentDueDateTo.isEnterKeyDown = false;
+            this.txtPaymentDueDateTo.isMaxLengthErr = false;
             this.txtPaymentDueDateTo.IsNumber = true;
             this.txtPaymentDueDateTo.IsShop = false;
             this.txtPaymentDueDateTo.Length = 10;
@@ -174,8 +184,9 @@
             this.comboStore.MaxLength = 10;
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
-            this.comboStore.Size = new System.Drawing.Size(170, 20);
+            this.comboStore.Size = new System.Drawing.Size(190, 20);
             this.comboStore.TabIndex = 13;
+            this.comboStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboStore_KeyDown);
             // 
             // ckM_Label4
             // 
@@ -251,7 +262,7 @@
             this.ckM_Label7.Location = new System.Drawing.Point(55, 122);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(57, 12);
-            this.ckM_Label7.TabIndex = 8;
+            this.ckM_Label7.TabIndex = 9;
             this.ckM_Label7.Text = "支払状況";
             this.ckM_Label7.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -290,7 +301,7 @@
             this.ckM_Label8.Location = new System.Drawing.Point(81, 154);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label8.TabIndex = 9;
+            this.ckM_Label8.TabIndex = 11;
             this.ckM_Label8.Text = "種別";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -302,7 +313,7 @@
             this.chkPurchase.Location = new System.Drawing.Point(118, 154);
             this.chkPurchase.Name = "chkPurchase";
             this.chkPurchase.Size = new System.Drawing.Size(50, 16);
-            this.chkPurchase.TabIndex = 10;
+            this.chkPurchase.TabIndex = 12;
             this.chkPurchase.Text = "仕入";
             this.chkPurchase.UseVisualStyleBackColor = true;
             // 
@@ -313,7 +324,7 @@
             this.chkExpense.Location = new System.Drawing.Point(250, 153);
             this.chkExpense.Name = "chkExpense";
             this.chkExpense.Size = new System.Drawing.Size(50, 16);
-            this.chkExpense.TabIndex = 11;
+            this.chkExpense.TabIndex = 13;
             this.chkExpense.Text = "経費";
             this.chkExpense.UseVisualStyleBackColor = true;
             // 
@@ -347,7 +358,7 @@
             this.panel2.Location = new System.Drawing.Point(115, 115);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 25);
-            this.panel2.TabIndex = 19;
+            this.panel2.TabIndex = 10;
             // 
             // panel1
             // 
@@ -356,7 +367,7 @@
             this.panel1.Location = new System.Drawing.Point(115, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 25);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 8;
             // 
             // radioClosedStatusAll
             // 
@@ -376,6 +387,7 @@
             this.scPaymentDestinaion.ChangeDateWidth = 100;
             this.scPaymentDestinaion.Code = "";
             this.scPaymentDestinaion.CodeWidth = 130;
+            this.scPaymentDestinaion.CodeWidth1 = 130;
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
             this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -385,6 +397,7 @@
             this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
             this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
             this.scPaymentDestinaion.Name = "scPaymentDestinaion";
+            this.scPaymentDestinaion.NameWidth = 280;
             this.scPaymentDestinaion.SearchEnable = true;
             this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;

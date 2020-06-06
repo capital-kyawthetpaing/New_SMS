@@ -301,28 +301,34 @@ namespace MainMenu
             BL.Base_BL bbl = new Base_BL();
             if (bbl.ShowMessage("Q003") == DialogResult.Yes)
             {
-                foreach (DataRow dr in menu.Rows)
-                {
-                    var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
-                    if (localByName.Count() > 0)
-                    {
 
-                        foreach (var process in localByName)
-                        {
-                            try
-                            {
-                                process.Kill();
-                            }
-                            catch
-                            {
-                            }
-                        }
-                    }
-                }
+                ForceToClose();
                 e.Cancel = false;
             }
             else
                 e.Cancel = true;
+        }
+        public void ForceToClose()
+        {
+
+            foreach (DataRow dr in menu.Rows)
+            {
+                var localByName = Process.GetProcessesByName(dr["ProgramID_ID"].ToString());
+                if (localByName.Count() > 0)
+                {
+
+                    foreach (var process in localByName)
+                    {
+                        try
+                        {
+                            process.Kill();
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
         }
         private void Main_Menu_KeyDown(object sender, KeyEventArgs e)
         {
@@ -332,7 +338,8 @@ namespace MainMenu
             }
             else if (e.KeyData == Keys.F12)
             {
-               MainmenuLogin hln = new MainmenuLogin();
+                ForceToClose();
+                  MainmenuLogin hln = new MainmenuLogin();
                 this.Hide();
                 hln.ShowDialog();
                 this.Close();
@@ -342,7 +349,8 @@ namespace MainMenu
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MainmenuLogin hln = new MainmenuLogin();
+            ForceToClose();
+               MainmenuLogin hln = new MainmenuLogin();
             this.Hide();
             hln.ShowDialog();
             this.Close();

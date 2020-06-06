@@ -55,6 +55,7 @@ namespace Search
         {
             Normal,
             Small,
+            SmallLarge,
             Medium,
             Large,
             XLarge
@@ -78,6 +79,9 @@ namespace Search
                         break;
                     case FontSize.Small:
                         Adjust_Size(10F, FontStyle.Regular, CKM_TextBox.FontSize.Small);
+                        break;
+                    case FontSize.SmallLarge:
+                        Adjust_Size(14F, FontStyle.Regular, CKM_TextBox.FontSize.SmallLarge);
                         break;
                     case FontSize.Medium:
                         Adjust_Size(16F, FontStyle.Regular, CKM_TextBox.FontSize.Medium);
@@ -135,6 +139,39 @@ namespace Search
             //    CalculateWidth();
             //}
         }
+
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Code Width1")]
+        [DisplayName("Code Width1")]
+
+        public int CodeWidth1
+        {
+            get => txtCode.Width;
+            set
+            {
+                txtCode.Width = value;
+                CalculateWidth();
+            }
+            //get => CodeWidth_S;
+            //set
+            //{
+            //    CodeWidth_S = value;
+            //    CalculateWidth();
+            //}
+        }
+
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Name Width")]
+        [DisplayName("Name Width")]
+        public int NameWidth
+        {
+            get => lblName.Width;
+            set => lblName.Width = value;
+
+        }
+
 
 
         [Browsable(true)]
@@ -368,8 +405,13 @@ namespace Search
                     break;
                 case SearchType.仕入先:
                     txtCode.MaxLength = 13;
-                    txtCode.Width = 130;
-                    lblName.Width = 280;
+                    txtCode.Width = 100;
+                    lblName.Width = 310;
+                    break;
+                case SearchType.Supplier:
+                    TxtCode.MaxLength = 13;
+                    TxtCode.Width = 130;
+                    lblName.Width = 320;
                     break;
                  case SearchType.仕入先PayeeFlg:
                     txtCode.MaxLength = 13;
@@ -403,8 +445,8 @@ namespace Search
                     break;
                 case SearchType.スタッフ:
                     txtCode.MaxLength = 10;
-                    txtCode.Width = 100;
-                    lblName.Width = 210;
+                    txtCode.Width = 70;
+                    lblName.Width = 250;
                     break;
                 case SearchType.銀行:
                     TxtCode.MaxLength = 4;
@@ -511,8 +553,8 @@ namespace Search
                     break;
                 case SearchType.競技:
                     TxtCode.MaxLength = 6;
-                    TxtCode.Width = 100;
-                    lblName.Width = 280;
+                    TxtCode.Width = 50;
+                    lblName.Width = 250;
                     break;
                 case SearchType.分類:
                     TxtCode.MaxLength = 6;
@@ -655,6 +697,7 @@ namespace Search
         /// </summary>
         private void CalculateWidth()
         {
+            txtCode.Width = CodeWidth;
             btnSearch.Location = new Point(txtCode.Width - 1, btnSearch.Location.Y);
             lblName.Location = new Point(txtCode.Width + btnSearch.Width - 2, lblName.Location.Y);
 
@@ -1038,6 +1081,7 @@ namespace Search
                             txtCode.Text = frmJuchuu.JuchuuNO;
                             txtChangeDate.Text = frmJuchuu.ChangeDate;
                             CheckBasedFormPanel(); //Added by PTK
+
                         }
                     }
                     break;
@@ -1122,6 +1166,7 @@ namespace Search
                         {
                             txtCode.Text = frmShiire.PurchaseNO;
                             txtChangeDate.Text = frmShiire.ChangeDate;
+                            CheckBasedFormPanel();
                         }
                     }
                     break;
@@ -1480,7 +1525,7 @@ namespace Search
                 case SearchType.JANMulti:
                     using (Search_Product frmJanCD = new Search_Product(changedate))
                     {
-                        frmJanCD.Mode = "4";
+                        frmJanCD.Mode = "5";
                         frmJanCD.JANCD = txtCode.Text;
                         frmJanCD.ShowDialog();
 
@@ -1496,8 +1541,10 @@ namespace Search
                 case SearchType.ItemMulti:
                     using (Search_Product frmMakerItem = new Search_Product(changedate))
                     {
-                        frmMakerItem.Mode = "3";
+                        frmMakerItem.Mode = "1";
                         frmMakerItem.MakerItem = txtCode.Text;
+
+
                         frmMakerItem.ShowDialog();
                         if (!frmMakerItem.flgCancel)
                         {
@@ -1786,9 +1833,11 @@ namespace Search
                         dtResult = bbl.SimpleSelect1("57", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
                     case SearchType.商品分類:
-                        dtResult = bbl.SimpleSelect1("58", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        dtResult = bbl.SimpleSelect1("64", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-
+                    case SearchType.SKU_ITEM_CD:
+                        dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
@@ -1849,9 +1898,7 @@ namespace Search
                 case SearchType.仕入先:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 4, TxtCode.Text);
                     break;
-                case SearchType.仕入先PayeeFlg:
-                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
-                    break;
+                
                 case SearchType.スタッフ:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 5, TxtCode.Text);
                     break;
@@ -1881,6 +1928,15 @@ namespace Search
                 case SearchType.商品分類:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 13, txtCode.Text, Value1);
                     break;
+
+                case SearchType.仕入先PayeeFlg:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 14, TxtCode.Text);
+                    break;
+
+                case SearchType.SKU_ITEM_CD:
+                    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
+                    break;
+
             }
             if (dtResult.Rows.Count > 0)
             {

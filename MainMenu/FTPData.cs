@@ -76,7 +76,8 @@ namespace MainMenu
         public void UpdateSyncData(string Path)
         {
             var GetList = FTPData.GetFileList(Path, "Administrator", "c@p!+A1062O", @"C:\SMS\AppData\");   /// Add Network Credentials
-            if (GetList.Count() > 0 && GetList != null)
+            // if (GetList.Count() > 0 && GetList != null)
+            if (GetList != null)
             {
                // Cursor = Cursors.WaitCursor;
 

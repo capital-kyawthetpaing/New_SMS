@@ -79,11 +79,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1884, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.txtprintprogress);
             this.Name = "TempoRegiFurikomiYoushi";
-            this.Text = "TempoRegiFurikomiYoushi";
+            this.Text = "店舗レジ 振込用紙印刷";
             this.Load += new System.EventHandler(this.TempoRegiFurikomiYoushi_Load);
             this.Controls.SetChildIndex(this.txtprintprogress, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);

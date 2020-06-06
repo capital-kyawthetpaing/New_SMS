@@ -14,17 +14,17 @@ using CKM_Controls;
 
 namespace TempoRejiPointSettei
 {
-    public partial class FrmTempoRejiPointSettei : ShopBaseForm 
+    public partial class FrmTempoRegiPointSettei : ShopBaseForm 
     {
         TempoRejiPointSettei_BL pointSettei_bl;
         M_StorePoint_Entity mspe;
 
         string type="1";
-        public FrmTempoRejiPointSettei()
+        public FrmTempoRegiPointSettei()
         {
             InitializeComponent();
         }
-        private void FrmTempoRejiPointSettei_Load(object sender, EventArgs e)
+        private void FrmTempoRegiPointSettei_Load(object sender, EventArgs e)
         {
             InProgramID = "TempoRejiPointSettei";            
             StartProgram();
@@ -79,7 +79,7 @@ namespace TempoRejiPointSettei
                 pointSettei_bl = new TempoRejiPointSettei_BL();
                 if (pointSettei_bl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    mspe = GetKouzaEntity();
+                    mspe = GetStorePointEntity();
                     if (pointSettei_bl.M_StorePoint_Insert_Update(mspe))
                     {
                         pointSettei_bl.ShowMessage("I101");
@@ -93,7 +93,7 @@ namespace TempoRejiPointSettei
                 }
             }
         }
-        public M_StorePoint_Entity GetKouzaEntity()
+        public M_StorePoint_Entity GetStorePointEntity()
         {
             mspe = new M_StorePoint_Entity
             {
@@ -278,11 +278,29 @@ namespace TempoRejiPointSettei
             this.Close();
         }
 
-        private void FrmTempoRejiPointSettei_KeyUp(object sender, KeyEventArgs e)
+        private void FrmTempoRegiPointSettei_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
         }
 
+        //private void txtPointRate_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if(e.KeyCode==Keys.Enter)
+        //    {
+        //        if (txtPointRate.Text == "99.9")
+        //            txtPointRate.Text = "100.0";
+               
+        //    }
+        //}
 
+        //private void txtServiceDayRate_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        if (txtServiceDayRate.Text == "9.9")
+        //            txtServiceDayRate.Text = "10.0";
+
+        //    }
+        //}
     }
 }

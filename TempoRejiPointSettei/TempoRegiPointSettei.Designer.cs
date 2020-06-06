@@ -1,6 +1,6 @@
 ﻿namespace TempoRejiPointSettei
 {
-    partial class FrmTempoRejiPointSettei
+    partial class FrmTempoRegiPointSettei
     {
         /// <summary>
         /// Required designer variable.
@@ -245,7 +245,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 75);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1704, 833);
+            this.panel1.Size = new System.Drawing.Size(1913, 833);
             this.panel1.TabIndex = 0;
             // 
             // panel11
@@ -253,7 +253,7 @@
             this.panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.chk12);
-            this.panel11.Location = new System.Drawing.Point(1592, 763);
+            this.panel11.Location = new System.Drawing.Point(1777, 763);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(95, 42);
             this.panel11.TabIndex = 41;
@@ -261,9 +261,12 @@
             // chk12
             // 
             this.chk12.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk12.Location = new System.Drawing.Point(29, 6);
+            this.chk12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk12.ForeColor = System.Drawing.Color.Black;
+            this.chk12.IsattachedCaption = false;
+            this.chk12.Location = new System.Drawing.Point(29, 4);
             this.chk12.Name = "chk12";
-            this.chk12.Size = new System.Drawing.Size(30, 30);
+            this.chk12.Size = new System.Drawing.Size(35, 35);
             this.chk12.TabIndex = 0;
             this.chk12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk12.UseVisualStyleBackColor = true;
@@ -273,7 +276,7 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.chk11);
-            this.panel10.Location = new System.Drawing.Point(1592, 721);
+            this.panel10.Location = new System.Drawing.Point(1777, 721);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(95, 42);
             this.panel10.TabIndex = 38;
@@ -281,9 +284,12 @@
             // chk11
             // 
             this.chk11.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk11.Location = new System.Drawing.Point(29, 6);
+            this.chk11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk11.ForeColor = System.Drawing.Color.Black;
+            this.chk11.IsattachedCaption = false;
+            this.chk11.Location = new System.Drawing.Point(29, 4);
             this.chk11.Name = "chk11";
-            this.chk11.Size = new System.Drawing.Size(30, 30);
+            this.chk11.Size = new System.Drawing.Size(35, 35);
             this.chk11.TabIndex = 0;
             this.chk11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk11.UseVisualStyleBackColor = true;
@@ -293,7 +299,7 @@
             this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel24.Controls.Add(this.chk9);
-            this.panel24.Location = new System.Drawing.Point(1592, 637);
+            this.panel24.Location = new System.Drawing.Point(1777, 637);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(95, 42);
             this.panel24.TabIndex = 32;
@@ -301,9 +307,12 @@
             // chk9
             // 
             this.chk9.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk9.Location = new System.Drawing.Point(29, 6);
+            this.chk9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk9.ForeColor = System.Drawing.Color.Black;
+            this.chk9.IsattachedCaption = false;
+            this.chk9.Location = new System.Drawing.Point(29, 4);
             this.chk9.Name = "chk9";
-            this.chk9.Size = new System.Drawing.Size(30, 30);
+            this.chk9.Size = new System.Drawing.Size(35, 35);
             this.chk9.TabIndex = 0;
             this.chk9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk9.UseVisualStyleBackColor = true;
@@ -313,7 +322,7 @@
             this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel23.Controls.Add(this.chk10);
-            this.panel23.Location = new System.Drawing.Point(1592, 679);
+            this.panel23.Location = new System.Drawing.Point(1777, 679);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(95, 42);
             this.panel23.TabIndex = 35;
@@ -321,9 +330,12 @@
             // chk10
             // 
             this.chk10.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk10.Location = new System.Drawing.Point(29, 6);
+            this.chk10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk10.ForeColor = System.Drawing.Color.Black;
+            this.chk10.IsattachedCaption = false;
+            this.chk10.Location = new System.Drawing.Point(29, 4);
             this.chk10.Name = "chk10";
-            this.chk10.Size = new System.Drawing.Size(30, 30);
+            this.chk10.Size = new System.Drawing.Size(35, 35);
             this.chk10.TabIndex = 0;
             this.chk10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk10.UseVisualStyleBackColor = true;
@@ -333,7 +345,7 @@
             this.panel22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel22.Controls.Add(this.chk7);
-            this.panel22.Location = new System.Drawing.Point(1592, 553);
+            this.panel22.Location = new System.Drawing.Point(1777, 553);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(95, 42);
             this.panel22.TabIndex = 26;
@@ -341,9 +353,12 @@
             // chk7
             // 
             this.chk7.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk7.Location = new System.Drawing.Point(29, 6);
+            this.chk7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk7.ForeColor = System.Drawing.Color.Black;
+            this.chk7.IsattachedCaption = false;
+            this.chk7.Location = new System.Drawing.Point(29, 4);
             this.chk7.Name = "chk7";
-            this.chk7.Size = new System.Drawing.Size(30, 30);
+            this.chk7.Size = new System.Drawing.Size(35, 35);
             this.chk7.TabIndex = 0;
             this.chk7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk7.UseVisualStyleBackColor = true;
@@ -353,7 +368,7 @@
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.chk8);
-            this.panel9.Location = new System.Drawing.Point(1592, 595);
+            this.panel9.Location = new System.Drawing.Point(1777, 595);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(95, 42);
             this.panel9.TabIndex = 29;
@@ -361,9 +376,12 @@
             // chk8
             // 
             this.chk8.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk8.Location = new System.Drawing.Point(29, 6);
+            this.chk8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk8.ForeColor = System.Drawing.Color.Black;
+            this.chk8.IsattachedCaption = false;
+            this.chk8.Location = new System.Drawing.Point(29, 4);
             this.chk8.Name = "chk8";
-            this.chk8.Size = new System.Drawing.Size(30, 30);
+            this.chk8.Size = new System.Drawing.Size(35, 35);
             this.chk8.TabIndex = 0;
             this.chk8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk8.UseVisualStyleBackColor = true;
@@ -373,7 +391,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.chk6);
-            this.panel2.Location = new System.Drawing.Point(1592, 511);
+            this.panel2.Location = new System.Drawing.Point(1777, 511);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(95, 42);
             this.panel2.TabIndex = 23;
@@ -381,9 +399,12 @@
             // chk6
             // 
             this.chk6.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk6.Location = new System.Drawing.Point(29, 8);
+            this.chk6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk6.ForeColor = System.Drawing.Color.Black;
+            this.chk6.IsattachedCaption = false;
+            this.chk6.Location = new System.Drawing.Point(29, 6);
             this.chk6.Name = "chk6";
-            this.chk6.Size = new System.Drawing.Size(30, 30);
+            this.chk6.Size = new System.Drawing.Size(35, 35);
             this.chk6.TabIndex = 0;
             this.chk6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk6.UseVisualStyleBackColor = true;
@@ -393,7 +414,7 @@
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel20.Controls.Add(this.chk5);
-            this.panel20.Location = new System.Drawing.Point(1592, 469);
+            this.panel20.Location = new System.Drawing.Point(1777, 469);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(95, 42);
             this.panel20.TabIndex = 20;
@@ -401,9 +422,12 @@
             // chk5
             // 
             this.chk5.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk5.Location = new System.Drawing.Point(29, 6);
+            this.chk5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk5.ForeColor = System.Drawing.Color.Black;
+            this.chk5.IsattachedCaption = false;
+            this.chk5.Location = new System.Drawing.Point(29, 4);
             this.chk5.Name = "chk5";
-            this.chk5.Size = new System.Drawing.Size(30, 30);
+            this.chk5.Size = new System.Drawing.Size(35, 35);
             this.chk5.TabIndex = 0;
             this.chk5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk5.UseVisualStyleBackColor = true;
@@ -413,7 +437,7 @@
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.chk4);
-            this.panel3.Location = new System.Drawing.Point(1592, 427);
+            this.panel3.Location = new System.Drawing.Point(1777, 427);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(95, 42);
             this.panel3.TabIndex = 17;
@@ -421,9 +445,12 @@
             // chk4
             // 
             this.chk4.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk4.Location = new System.Drawing.Point(29, 6);
+            this.chk4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk4.ForeColor = System.Drawing.Color.Black;
+            this.chk4.IsattachedCaption = false;
+            this.chk4.Location = new System.Drawing.Point(29, 4);
             this.chk4.Name = "chk4";
-            this.chk4.Size = new System.Drawing.Size(30, 30);
+            this.chk4.Size = new System.Drawing.Size(35, 35);
             this.chk4.TabIndex = 0;
             this.chk4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk4.UseVisualStyleBackColor = true;
@@ -433,7 +460,7 @@
             this.panel17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel17.Controls.Add(this.chk3);
-            this.panel17.Location = new System.Drawing.Point(1592, 385);
+            this.panel17.Location = new System.Drawing.Point(1777, 385);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(95, 42);
             this.panel17.TabIndex = 14;
@@ -441,9 +468,12 @@
             // chk3
             // 
             this.chk3.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk3.Location = new System.Drawing.Point(29, 6);
+            this.chk3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk3.ForeColor = System.Drawing.Color.Black;
+            this.chk3.IsattachedCaption = false;
+            this.chk3.Location = new System.Drawing.Point(29, 4);
             this.chk3.Name = "chk3";
-            this.chk3.Size = new System.Drawing.Size(30, 30);
+            this.chk3.Size = new System.Drawing.Size(35, 35);
             this.chk3.TabIndex = 0;
             this.chk3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk3.UseVisualStyleBackColor = true;
@@ -453,7 +483,7 @@
             this.panel19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel19.Controls.Add(this.chk2);
-            this.panel19.Location = new System.Drawing.Point(1592, 343);
+            this.panel19.Location = new System.Drawing.Point(1777, 343);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(95, 42);
             this.panel19.TabIndex = 11;
@@ -461,9 +491,12 @@
             // chk2
             // 
             this.chk2.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk2.Location = new System.Drawing.Point(30, 6);
+            this.chk2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk2.ForeColor = System.Drawing.Color.Black;
+            this.chk2.IsattachedCaption = false;
+            this.chk2.Location = new System.Drawing.Point(30, 4);
             this.chk2.Name = "chk2";
-            this.chk2.Size = new System.Drawing.Size(30, 30);
+            this.chk2.Size = new System.Drawing.Size(35, 35);
             this.chk2.TabIndex = 0;
             this.chk2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk2.UseVisualStyleBackColor = true;
@@ -476,13 +509,13 @@
             this.ckmShop_Label28.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label28.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label28.Location = new System.Drawing.Point(15, 765);
+            this.ckmShop_Label28.Location = new System.Drawing.Point(13, 767);
             this.ckmShop_Label28.Name = "ckmShop_Label28";
             this.ckmShop_Label28.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label28.TabIndex = 161;
             this.ckmShop_Label28.Text = "12";
             this.ckmShop_Label28.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label27
             // 
@@ -492,13 +525,13 @@
             this.ckmShop_Label27.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label27.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label27.Location = new System.Drawing.Point(15, 721);
+            this.ckmShop_Label27.Location = new System.Drawing.Point(13, 725);
             this.ckmShop_Label27.Name = "ckmShop_Label27";
             this.ckmShop_Label27.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label27.TabIndex = 160;
             this.ckmShop_Label27.Text = "11";
             this.ckmShop_Label27.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label26
             // 
@@ -508,13 +541,13 @@
             this.ckmShop_Label26.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label26.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label26.Location = new System.Drawing.Point(15, 681);
+            this.ckmShop_Label26.Location = new System.Drawing.Point(13, 683);
             this.ckmShop_Label26.Name = "ckmShop_Label26";
             this.ckmShop_Label26.Size = new System.Drawing.Size(53, 35);
             this.ckmShop_Label26.TabIndex = 159;
             this.ckmShop_Label26.Text = "10";
             this.ckmShop_Label26.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label25
             // 
@@ -524,13 +557,13 @@
             this.ckmShop_Label25.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label25.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label25.Location = new System.Drawing.Point(34, 644);
+            this.ckmShop_Label25.Location = new System.Drawing.Point(16, 641);
             this.ckmShop_Label25.Name = "ckmShop_Label25";
             this.ckmShop_Label25.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label25.TabIndex = 158;
             this.ckmShop_Label25.Text = "9";
             this.ckmShop_Label25.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label24
             // 
@@ -540,13 +573,13 @@
             this.ckmShop_Label24.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label24.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label24.Location = new System.Drawing.Point(34, 597);
+            this.ckmShop_Label24.Location = new System.Drawing.Point(16, 599);
             this.ckmShop_Label24.Name = "ckmShop_Label24";
             this.ckmShop_Label24.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label24.TabIndex = 157;
             this.ckmShop_Label24.Text = "8";
             this.ckmShop_Label24.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label23
             // 
@@ -556,13 +589,13 @@
             this.ckmShop_Label23.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label23.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label23.Location = new System.Drawing.Point(33, 555);
+            this.ckmShop_Label23.Location = new System.Drawing.Point(15, 557);
             this.ckmShop_Label23.Name = "ckmShop_Label23";
             this.ckmShop_Label23.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label23.TabIndex = 156;
             this.ckmShop_Label23.Text = "7";
             this.ckmShop_Label23.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label23.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label23.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label22
             // 
@@ -572,13 +605,13 @@
             this.ckmShop_Label22.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label22.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label22.Location = new System.Drawing.Point(33, 515);
+            this.ckmShop_Label22.Location = new System.Drawing.Point(15, 515);
             this.ckmShop_Label22.Name = "ckmShop_Label22";
             this.ckmShop_Label22.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label22.TabIndex = 155;
             this.ckmShop_Label22.Text = "6";
             this.ckmShop_Label22.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label21
             // 
@@ -588,13 +621,13 @@
             this.ckmShop_Label21.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label21.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label21.Location = new System.Drawing.Point(33, 472);
+            this.ckmShop_Label21.Location = new System.Drawing.Point(15, 473);
             this.ckmShop_Label21.Name = "ckmShop_Label21";
             this.ckmShop_Label21.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label21.TabIndex = 154;
             this.ckmShop_Label21.Text = "5";
             this.ckmShop_Label21.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label20
             // 
@@ -604,13 +637,13 @@
             this.ckmShop_Label20.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label20.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label20.Location = new System.Drawing.Point(33, 430);
+            this.ckmShop_Label20.Location = new System.Drawing.Point(15, 431);
             this.ckmShop_Label20.Name = "ckmShop_Label20";
             this.ckmShop_Label20.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label20.TabIndex = 153;
             this.ckmShop_Label20.Text = "4";
             this.ckmShop_Label20.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label19
             // 
@@ -620,13 +653,13 @@
             this.ckmShop_Label19.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label19.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label19.Location = new System.Drawing.Point(33, 392);
+            this.ckmShop_Label19.Location = new System.Drawing.Point(15, 389);
             this.ckmShop_Label19.Name = "ckmShop_Label19";
             this.ckmShop_Label19.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label19.TabIndex = 152;
             this.ckmShop_Label19.Text = "3";
             this.ckmShop_Label19.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label18
             // 
@@ -636,13 +669,13 @@
             this.ckmShop_Label18.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label18.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label18.Location = new System.Drawing.Point(33, 345);
+            this.ckmShop_Label18.Location = new System.Drawing.Point(15, 347);
             this.ckmShop_Label18.Name = "ckmShop_Label18";
             this.ckmShop_Label18.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label18.TabIndex = 151;
             this.ckmShop_Label18.Text = "2";
             this.ckmShop_Label18.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label17
             // 
@@ -652,13 +685,13 @@
             this.ckmShop_Label17.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(33, 303);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(15, 306);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(34, 35);
             this.ckmShop_Label17.TabIndex = 31;
             this.ckmShop_Label17.Text = "1";
             this.ckmShop_Label17.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
-            this.ckmShop_Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckmShop_Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ckmShop_Label14
             // 
@@ -667,7 +700,7 @@
             this.ckmShop_Label14.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label14.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label14.ForeColor = System.Drawing.Color.White;
-            this.ckmShop_Label14.Location = new System.Drawing.Point(1108, 19);
+            this.ckmShop_Label14.Location = new System.Drawing.Point(1315, 23);
             this.ckmShop_Label14.Name = "ckmShop_Label14";
             this.ckmShop_Label14.Size = new System.Drawing.Size(350, 42);
             this.ckmShop_Label14.TabIndex = 149;
@@ -682,9 +715,9 @@
             this.ckmShop_Label13.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label13.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.ckmShop_Label13.ForeColor = System.Drawing.Color.White;
-            this.ckmShop_Label13.Location = new System.Drawing.Point(550, 20);
+            this.ckmShop_Label13.Location = new System.Drawing.Point(609, 23);
             this.ckmShop_Label13.Name = "ckmShop_Label13";
-            this.ckmShop_Label13.Size = new System.Drawing.Size(350, 42);
+            this.ckmShop_Label13.Size = new System.Drawing.Size(400, 42);
             this.ckmShop_Label13.TabIndex = 148;
             this.ckmShop_Label13.Text = "ポイント設定";
             this.ckmShop_Label13.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
@@ -710,7 +743,7 @@
             this.panel18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
             this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel18.Controls.Add(this.chk1);
-            this.panel18.Location = new System.Drawing.Point(1592, 301);
+            this.panel18.Location = new System.Drawing.Point(1777, 301);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(95, 42);
             this.panel18.TabIndex = 8;
@@ -718,9 +751,12 @@
             // chk1
             // 
             this.chk1.CheckAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.chk1.Location = new System.Drawing.Point(29, 7);
+            this.chk1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chk1.ForeColor = System.Drawing.Color.Black;
+            this.chk1.IsattachedCaption = false;
+            this.chk1.Location = new System.Drawing.Point(29, 3);
             this.chk1.Name = "chk1";
-            this.chk1.Size = new System.Drawing.Size(30, 30);
+            this.chk1.Size = new System.Drawing.Size(35, 35);
             this.chk1.TabIndex = 0;
             this.chk1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk1.UseVisualStyleBackColor = true;
@@ -743,7 +779,7 @@
             this.txtSize3.IsNumber = true;
             this.txtSize3.IsShop = false;
             this.txtSize3.Length = 2;
-            this.txtSize3.Location = new System.Drawing.Point(1480, 385);
+            this.txtSize3.Location = new System.Drawing.Point(1665, 385);
             this.txtSize3.MaxLength = 2;
             this.txtSize3.MoveNext = true;
             this.txtSize3.Name = "txtSize3";
@@ -760,7 +796,7 @@
             this.ckmShop_Label16.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label16.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label16.Location = new System.Drawing.Point(904, 191);
+            this.ckmShop_Label16.Location = new System.Drawing.Point(1012, 194);
             this.ckmShop_Label16.Name = "ckmShop_Label16";
             this.ckmShop_Label16.Size = new System.Drawing.Size(219, 35);
             this.ckmShop_Label16.TabIndex = 132;
@@ -776,7 +812,7 @@
             this.ckmShop_Label15.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label15.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label15.Location = new System.Drawing.Point(1463, 66);
+            this.ckmShop_Label15.Location = new System.Drawing.Point(1670, 70);
             this.ckmShop_Label15.Name = "ckmShop_Label15";
             this.ckmShop_Label15.Size = new System.Drawing.Size(219, 35);
             this.ckmShop_Label15.TabIndex = 131;
@@ -792,7 +828,7 @@
             this.lblMaxPoint.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblMaxPoint.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblMaxPoint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblMaxPoint.Location = new System.Drawing.Point(579, 191);
+            this.lblMaxPoint.Location = new System.Drawing.Point(652, 194);
             this.lblMaxPoint.Name = "lblMaxPoint";
             this.lblMaxPoint.Size = new System.Drawing.Size(237, 35);
             this.lblMaxPoint.TabIndex = 129;
@@ -808,7 +844,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(653, 148);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(726, 151);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label12.TabIndex = 128;
@@ -824,7 +860,7 @@
             this.ckmShop_Label11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label11.Location = new System.Drawing.Point(505, 106);
+            this.ckmShop_Label11.Location = new System.Drawing.Point(578, 109);
             this.ckmShop_Label11.Name = "ckmShop_Label11";
             this.ckmShop_Label11.Size = new System.Drawing.Size(311, 35);
             this.ckmShop_Label11.TabIndex = 127;
@@ -840,7 +876,7 @@
             this.ckmShop_Label10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label10.Location = new System.Drawing.Point(690, 66);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(763, 69);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
             this.ckmShop_Label10.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label10.TabIndex = 126;
@@ -856,7 +892,7 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(904, 152);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(1012, 155);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(219, 35);
             this.ckmShop_Label9.TabIndex = 125;
@@ -871,7 +907,7 @@
             this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label8.Location = new System.Drawing.Point(1462, 263);
+            this.ckmShop_Label8.Location = new System.Drawing.Point(1647, 263);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
             this.ckmShop_Label8.Size = new System.Drawing.Size(135, 35);
             this.ckmShop_Label8.TabIndex = 124;
@@ -887,7 +923,7 @@
             this.ckmShop_Label7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(1591, 262);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(1776, 262);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label7.TabIndex = 123;
@@ -903,7 +939,7 @@
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label5.Location = new System.Drawing.Point(1139, 66);
+            this.ckmShop_Label5.Location = new System.Drawing.Point(1309, 69);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
             this.ckmShop_Label5.Size = new System.Drawing.Size(237, 35);
             this.ckmShop_Label5.TabIndex = 121;
@@ -945,7 +981,7 @@
             this.txtSize12.IsNumber = true;
             this.txtSize12.IsShop = false;
             this.txtSize12.Length = 2;
-            this.txtSize12.Location = new System.Drawing.Point(1480, 763);
+            this.txtSize12.Location = new System.Drawing.Point(1665, 763);
             this.txtSize12.MaxLength = 2;
             this.txtSize12.MoveNext = true;
             this.txtSize12.Name = "txtSize12";
@@ -972,7 +1008,7 @@
             this.txtSize11.IsNumber = true;
             this.txtSize11.IsShop = false;
             this.txtSize11.Length = 2;
-            this.txtSize11.Location = new System.Drawing.Point(1480, 721);
+            this.txtSize11.Location = new System.Drawing.Point(1665, 721);
             this.txtSize11.MaxLength = 2;
             this.txtSize11.MoveNext = true;
             this.txtSize11.Name = "txtSize11";
@@ -999,7 +1035,7 @@
             this.txtSize10.IsNumber = true;
             this.txtSize10.IsShop = false;
             this.txtSize10.Length = 2;
-            this.txtSize10.Location = new System.Drawing.Point(1480, 679);
+            this.txtSize10.Location = new System.Drawing.Point(1665, 679);
             this.txtSize10.MaxLength = 2;
             this.txtSize10.MoveNext = true;
             this.txtSize10.Name = "txtSize10";
@@ -1026,7 +1062,7 @@
             this.txtSize9.IsNumber = true;
             this.txtSize9.IsShop = false;
             this.txtSize9.Length = 2;
-            this.txtSize9.Location = new System.Drawing.Point(1480, 637);
+            this.txtSize9.Location = new System.Drawing.Point(1665, 637);
             this.txtSize9.MaxLength = 2;
             this.txtSize9.MoveNext = true;
             this.txtSize9.Name = "txtSize9";
@@ -1053,7 +1089,7 @@
             this.txtSize8.IsNumber = true;
             this.txtSize8.IsShop = false;
             this.txtSize8.Length = 2;
-            this.txtSize8.Location = new System.Drawing.Point(1480, 595);
+            this.txtSize8.Location = new System.Drawing.Point(1665, 595);
             this.txtSize8.MaxLength = 2;
             this.txtSize8.MoveNext = true;
             this.txtSize8.Name = "txtSize8";
@@ -1080,7 +1116,7 @@
             this.txtSize7.IsNumber = true;
             this.txtSize7.IsShop = false;
             this.txtSize7.Length = 2;
-            this.txtSize7.Location = new System.Drawing.Point(1480, 553);
+            this.txtSize7.Location = new System.Drawing.Point(1665, 553);
             this.txtSize7.MaxLength = 2;
             this.txtSize7.MoveNext = true;
             this.txtSize7.Name = "txtSize7";
@@ -1107,7 +1143,7 @@
             this.txtSize5.IsNumber = true;
             this.txtSize5.IsShop = false;
             this.txtSize5.Length = 2;
-            this.txtSize5.Location = new System.Drawing.Point(1480, 469);
+            this.txtSize5.Location = new System.Drawing.Point(1665, 469);
             this.txtSize5.MaxLength = 2;
             this.txtSize5.MoveNext = true;
             this.txtSize5.Name = "txtSize5";
@@ -1134,7 +1170,7 @@
             this.txtSize6.IsNumber = true;
             this.txtSize6.IsShop = false;
             this.txtSize6.Length = 2;
-            this.txtSize6.Location = new System.Drawing.Point(1480, 511);
+            this.txtSize6.Location = new System.Drawing.Point(1665, 511);
             this.txtSize6.MaxLength = 2;
             this.txtSize6.MoveNext = true;
             this.txtSize6.Name = "txtSize6";
@@ -1161,7 +1197,7 @@
             this.txtSize4.IsNumber = true;
             this.txtSize4.IsShop = false;
             this.txtSize4.Length = 2;
-            this.txtSize4.Location = new System.Drawing.Point(1480, 427);
+            this.txtSize4.Location = new System.Drawing.Point(1665, 427);
             this.txtSize4.MaxLength = 2;
             this.txtSize4.MoveNext = true;
             this.txtSize4.Name = "txtSize4";
@@ -1188,7 +1224,7 @@
             this.txtSize2.IsNumber = true;
             this.txtSize2.IsShop = false;
             this.txtSize2.Length = 2;
-            this.txtSize2.Location = new System.Drawing.Point(1480, 343);
+            this.txtSize2.Location = new System.Drawing.Point(1665, 343);
             this.txtSize2.MaxLength = 2;
             this.txtSize2.MoveNext = true;
             this.txtSize2.Name = "txtSize2";
@@ -1215,7 +1251,7 @@
             this.txtSize1.IsNumber = true;
             this.txtSize1.IsShop = false;
             this.txtSize1.Length = 2;
-            this.txtSize1.Location = new System.Drawing.Point(1480, 301);
+            this.txtSize1.Location = new System.Drawing.Point(1665, 301);
             this.txtSize1.MaxLength = 2;
             this.txtSize1.MoveNext = true;
             this.txtSize1.Name = "txtSize1";
@@ -1247,7 +1283,7 @@
             this.txtPrint12.MaxLength = 100;
             this.txtPrint12.MoveNext = true;
             this.txtPrint12.Name = "txtPrint12";
-            this.txtPrint12.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint12.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint12.TabIndex = 39;
             this.txtPrint12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1275,7 +1311,7 @@
             this.txtPrint11.MaxLength = 100;
             this.txtPrint11.MoveNext = true;
             this.txtPrint11.Name = "txtPrint11";
-            this.txtPrint11.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint11.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint11.TabIndex = 36;
             this.txtPrint11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1303,7 +1339,7 @@
             this.txtPrint10.MaxLength = 100;
             this.txtPrint10.MoveNext = true;
             this.txtPrint10.Name = "txtPrint10";
-            this.txtPrint10.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint10.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint10.TabIndex = 33;
             this.txtPrint10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1331,7 +1367,7 @@
             this.txtPrint9.MaxLength = 100;
             this.txtPrint9.MoveNext = true;
             this.txtPrint9.Name = "txtPrint9";
-            this.txtPrint9.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint9.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint9.TabIndex = 30;
             this.txtPrint9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1359,7 +1395,7 @@
             this.txtPrint8.MaxLength = 100;
             this.txtPrint8.MoveNext = true;
             this.txtPrint8.Name = "txtPrint8";
-            this.txtPrint8.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint8.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint8.TabIndex = 27;
             this.txtPrint8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1387,7 +1423,7 @@
             this.txtPrint7.MaxLength = 100;
             this.txtPrint7.MoveNext = true;
             this.txtPrint7.Name = "txtPrint7";
-            this.txtPrint7.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint7.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint7.TabIndex = 24;
             this.txtPrint7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1415,7 +1451,7 @@
             this.txtPrint6.MaxLength = 100;
             this.txtPrint6.MoveNext = true;
             this.txtPrint6.Name = "txtPrint6";
-            this.txtPrint6.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint6.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint6.TabIndex = 21;
             this.txtPrint6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1443,7 +1479,7 @@
             this.txtPrint5.MaxLength = 100;
             this.txtPrint5.MoveNext = true;
             this.txtPrint5.Name = "txtPrint5";
-            this.txtPrint5.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint5.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint5.TabIndex = 18;
             this.txtPrint5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1471,7 +1507,7 @@
             this.txtPrint4.MaxLength = 100;
             this.txtPrint4.MoveNext = true;
             this.txtPrint4.Name = "txtPrint4";
-            this.txtPrint4.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint4.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint4.TabIndex = 15;
             this.txtPrint4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1499,7 +1535,7 @@
             this.txtPrint3.MaxLength = 100;
             this.txtPrint3.MoveNext = true;
             this.txtPrint3.Name = "txtPrint3";
-            this.txtPrint3.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint3.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint3.TabIndex = 12;
             this.txtPrint3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1527,7 +1563,7 @@
             this.txtPrint2.MaxLength = 100;
             this.txtPrint2.MoveNext = true;
             this.txtPrint2.Name = "txtPrint2";
-            this.txtPrint2.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint2.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint2.TabIndex = 9;
             this.txtPrint2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1555,7 +1591,7 @@
             this.txtPrint1.MaxLength = 100;
             this.txtPrint1.MoveNext = true;
             this.txtPrint1.Name = "txtPrint1";
-            this.txtPrint1.Size = new System.Drawing.Size(1411, 42);
+            this.txtPrint1.Size = new System.Drawing.Size(1596, 42);
             this.txtPrint1.TabIndex = 6;
             this.txtPrint1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPrint1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1578,11 +1614,11 @@
             this.txtTicketUnit.IsNumber = true;
             this.txtTicketUnit.IsShop = false;
             this.txtTicketUnit.Length = 3;
-            this.txtTicketUnit.Location = new System.Drawing.Point(1378, 61);
+            this.txtTicketUnit.Location = new System.Drawing.Point(1549, 65);
             this.txtTicketUnit.MaxLength = 3;
             this.txtTicketUnit.MoveNext = true;
             this.txtTicketUnit.Name = "txtTicketUnit";
-            this.txtTicketUnit.Size = new System.Drawing.Size(80, 42);
+            this.txtTicketUnit.Size = new System.Drawing.Size(116, 42);
             this.txtTicketUnit.TabIndex = 5;
             this.txtTicketUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtTicketUnit.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1605,11 +1641,11 @@
             this.txtMaxPoint.IsNumber = true;
             this.txtMaxPoint.IsShop = false;
             this.txtMaxPoint.Length = 6;
-            this.txtMaxPoint.Location = new System.Drawing.Point(820, 188);
+            this.txtMaxPoint.Location = new System.Drawing.Point(892, 191);
             this.txtMaxPoint.MaxLength = 6;
             this.txtMaxPoint.MoveNext = true;
             this.txtMaxPoint.Name = "txtMaxPoint";
-            this.txtMaxPoint.Size = new System.Drawing.Size(80, 42);
+            this.txtMaxPoint.Size = new System.Drawing.Size(116, 42);
             this.txtMaxPoint.TabIndex = 4;
             this.txtMaxPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMaxPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1632,11 +1668,11 @@
             this.txtExperationDate.IsNumber = true;
             this.txtExperationDate.IsShop = false;
             this.txtExperationDate.Length = 2;
-            this.txtExperationDate.Location = new System.Drawing.Point(820, 146);
+            this.txtExperationDate.Location = new System.Drawing.Point(892, 149);
             this.txtExperationDate.MaxLength = 2;
             this.txtExperationDate.MoveNext = true;
             this.txtExperationDate.Name = "txtExperationDate";
-            this.txtExperationDate.Size = new System.Drawing.Size(80, 42);
+            this.txtExperationDate.Size = new System.Drawing.Size(116, 42);
             this.txtExperationDate.TabIndex = 3;
             this.txtExperationDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtExperationDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1658,12 +1694,12 @@
             this.txtPointRate.isMaxLengthErr = false;
             this.txtPointRate.IsNumber = true;
             this.txtPointRate.IsShop = false;
-            this.txtPointRate.Length = 5;
-            this.txtPointRate.Location = new System.Drawing.Point(820, 62);
+            this.txtPointRate.Length = 20;
+            this.txtPointRate.Location = new System.Drawing.Point(892, 65);
             this.txtPointRate.MaxLength = 20;
             this.txtPointRate.MoveNext = true;
             this.txtPointRate.Name = "txtPointRate";
-            this.txtPointRate.Size = new System.Drawing.Size(80, 42);
+            this.txtPointRate.Size = new System.Drawing.Size(116, 42);
             this.txtPointRate.TabIndex = 1;
             this.txtPointRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtPointRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1685,12 +1721,12 @@
             this.txtServiceDayRate.isMaxLengthErr = false;
             this.txtServiceDayRate.IsNumber = true;
             this.txtServiceDayRate.IsShop = false;
-            this.txtServiceDayRate.Length = 4;
-            this.txtServiceDayRate.Location = new System.Drawing.Point(820, 104);
+            this.txtServiceDayRate.Length = 20;
+            this.txtServiceDayRate.Location = new System.Drawing.Point(892, 107);
             this.txtServiceDayRate.MaxLength = 20;
             this.txtServiceDayRate.MoveNext = true;
             this.txtServiceDayRate.Name = "txtServiceDayRate";
-            this.txtServiceDayRate.Size = new System.Drawing.Size(80, 42);
+            this.txtServiceDayRate.Size = new System.Drawing.Size(116, 42);
             this.txtServiceDayRate.TabIndex = 2;
             this.txtServiceDayRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtServiceDayRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1722,16 +1758,16 @@
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
-            // FrmTempoRejiPointSettei
+            // FrmTempoRegiPointSettei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1704, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.panel1);
-            this.Name = "FrmTempoRejiPointSettei";
+            this.Name = "FrmTempoRegiPointSettei";
             this.Text = "ポイント設定";
-            this.Load += new System.EventHandler(this.FrmTempoRejiPointSettei_Load);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTempoRejiPointSettei_KeyUp);
+            this.Load += new System.EventHandler(this.FrmTempoRegiPointSettei_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmTempoRegiPointSettei_KeyUp);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

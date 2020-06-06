@@ -34,30 +34,36 @@ namespace ShiireShoukaiDetails
             InProgramID = Application.ProductName;
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
+            Btn_F10.Text = "出力(F10)";
+            Btn_F10.Enabled = false;
             BindCombo();
             RequiredField();           
-            this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
+           // this.cboStore.SelectedIndexChanged += CboStore_SelectedIndexChanged;
+            cboStore.SelectedValue = StoreCD;
+            scItem.CodeWidth = 600;
+            scSkuCD.CodeWidth = 600;
         }
 
         /// <summary>
         /// Combo の中であるデータに選択すること
         /// </summary>       
-        private void CboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(!cboStore.SelectedValue.Equals("-1"))
-            {
-                //if (!CboStore_ErrorCheck())
-                //{
-                //    ssdbl.ShowMessage("E141");
-                //    cboStore.Focus();
-                //}
-                if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-                {
-                    ssdbl.ShowMessage("E141");
-                    cboStore.Focus();
-                }
-            }
-        }
+        //private void CboStore_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if(!cboStore.SelectedValue.Equals("-1"))
+        //    {
+        //        //if (!CboStore_ErrorCheck())
+        //        //{
+        //        //    ssdbl.ShowMessage("E141");
+        //        //    cboStore.Focus();
+        //        //}
+        //        if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+        //        {
+        //            ssdbl.ShowMessage("E141");
+        //            cboStore.Focus();
+        //        }
+        //    }
+        //}
+
         private void RequiredField()
         {
             cboStore.Require(true);
@@ -75,7 +81,7 @@ namespace ShiireShoukaiDetails
         /// </summary>
         private void BindCombo()
         {
-            cboStore.Bind(string.Empty, "2");
+            cboStore.Bind(string.Empty,"2");
         }
         /// <summary>
         /// 仕入先の履歴を表示されること
@@ -181,7 +187,6 @@ namespace ShiireShoukaiDetails
                     Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
                     //Btn_Display.Enabled = F11Enable = true;
-                    
                     chkOk.Checked = true;
                     chkNotOK.Checked = true;
                     dgv_PurchaseDetails.DataSource = null;
@@ -202,7 +207,7 @@ namespace ShiireShoukaiDetails
                 MakerItemCD = txtMakerItemCD.Text,
                 //MakerName = txtMakerItemCD.Text,
                 Purchase_SDate = txtPurchaseDate1.Text,
-                Purchasee_EDate = txtPurchaseDate2.Text,
+                Purchase_EDate = txtPurchaseDate2.Text,
                 Plan_SDate = txtPlanDate1.Text,
                 Plan_EDate = txtPlanDate2.Text,
                 Order_SDate = txtOrderDate1.Text,
@@ -247,13 +252,14 @@ namespace ShiireShoukaiDetails
                 dpd_entity.ProgramID = "1";
                
 
-                    dpd_entity = GetDPurchaseDetails();
+                dpd_entity = GetDPurchaseDetails();
 
                 DataTable dtResult = new DataTable();
                 dtResult = ssdbl.ShiireShoukaiDetails_Select(dpd_entity);
                 if(dtResult.Rows.Count>0)
                 {
                     dgv_PurchaseDetails.DataSource = dtResult;
+                    Btn_F10.Enabled = true;
                     //dgv_SizeColor.DataSource = dtResult;
                     //dgv_Store.DataSource = dtResult;
                 }
@@ -262,7 +268,6 @@ namespace ShiireShoukaiDetails
                     ssdbl.ShowMessage("E128");
                     dgv_PurchaseDetails.DataSource = null;
                 }
-               
             }
             
         }
@@ -338,7 +343,7 @@ namespace ShiireShoukaiDetails
 
             if (!string.IsNullOrEmpty(txtPurchaseDate1.Text)&& !string.IsNullOrEmpty(txtPurchaseDate2.Text))
             {
-                if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1 || txtPurchaseDate1.Text == txtPurchaseDate2.Text)
+                if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1)
                 {
                     ssdbl.ShowMessage("E104");
                     txtPurchaseDate2.Focus();
@@ -348,7 +353,7 @@ namespace ShiireShoukaiDetails
 
             if (!string.IsNullOrEmpty(txtPlanDate1.Text) && !string.IsNullOrEmpty(txtPlanDate2.Text))
             {
-                if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1 || txtPlanDate1.Text == txtPlanDate2.Text)
+                if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1)
                 {
                     ssdbl.ShowMessage("E104");
                     txtPlanDate2.Focus();
@@ -358,15 +363,13 @@ namespace ShiireShoukaiDetails
 
             if(!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
             {
-                if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
-                {
-                    if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
-                    {
-                        ssdbl.ShowMessage("E104");
-                        txtOrderDate2.Focus();
-                        return false;
-                    }
-                }
+               if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1)
+               {
+                  ssdbl.ShowMessage("E104");
+                  txtOrderDate2.Focus();
+                  return false;
+               }
+                
             }
 
             if (!string.IsNullOrEmpty(scMakerCD.TxtCode.Text))
@@ -397,11 +400,10 @@ namespace ShiireShoukaiDetails
 
             if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
             {
-                ssdbl.ShowMessage("E141");
+                bbl.ShowMessage("E141");
                 cboStore.Focus();
                 return false;
             }
-
             return true;
         }
 
@@ -411,14 +413,13 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtPurchaseDate1.Text) && !string.IsNullOrEmpty(txtPurchaseDate2.Text))
                 {
-                    if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text) == 1 || txtPurchaseDate1.Text==txtPurchaseDate2.Text)
+                    if (string.Compare(txtPurchaseDate1.Text, txtPurchaseDate2.Text)==1)
                     {
                         ssdbl.ShowMessage("E104");
                         txtPurchaseDate2.Focus();
                     }
                 }
             }
-           
         }
 
         private void txtPlanDate2_KeyDown(object sender, KeyEventArgs e)
@@ -427,7 +428,7 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtPlanDate1.Text) && !string.IsNullOrEmpty(txtPlanDate2.Text))
                 {
-                    if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1 || txtPlanDate1.Text == txtPlanDate2.Text)
+                    if (string.Compare(txtPlanDate1.Text, txtPlanDate2.Text) == 1)
                     {
                         ssdbl.ShowMessage("E104");
                         txtPlanDate2.Focus();
@@ -442,14 +443,12 @@ namespace ShiireShoukaiDetails
             {
                 if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
                 {
-                    if (!string.IsNullOrEmpty(txtOrderDate1.Text) && !string.IsNullOrEmpty(txtOrderDate2.Text))
-                    {
-                        if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1 || txtOrderDate1.Text == txtOrderDate2.Text)
-                        {
-                            ssdbl.ShowMessage("E104");
-                            txtOrderDate2.Focus();
-                        }
-                    }
+                   if (string.Compare(txtOrderDate1.Text, txtOrderDate2.Text) == 1)
+                   {
+                        ssdbl.ShowMessage("E104");
+                        txtOrderDate2.Focus();
+                   }
+                 
                 }
             }
           
@@ -459,6 +458,18 @@ namespace ShiireShoukaiDetails
         {
             scMakerCD.Value1 = "1";//仕入先区分：1
             scMakerCD.ChangeDate = txtPurchaseDate2.Text;
+        }
+
+        private void cboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+                {
+                    bbl.ShowMessage("E141");
+                    cboStore.Focus();
+                }
+            }
         }
     }
 }

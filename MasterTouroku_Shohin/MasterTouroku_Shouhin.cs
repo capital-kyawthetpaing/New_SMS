@@ -2,6 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Text;
 using Base.Client;
 using BL;
 using Entity;
@@ -750,7 +751,7 @@ namespace MasterTouroku_Shouhin
 
                 using (MasterTouroku_SKU frmSku = new MasterTouroku_SKU(mie, dtSKU, dtSite, OperationMode))
                 {
-                    frmSku.parSKUCD = mie.MakerItem;
+                    frmSku.parSKUCD = mie.ITemCD;
                     frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.parColorNo = dgvDetail.Rows[RowIndex].Cells[0].Value.ToString();
                     frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString().Trim();
@@ -777,7 +778,14 @@ namespace MasterTouroku_Shouhin
 
         private void InitGrid()
         {
-            if(dgvDetail.Columns.Count.Equals(0))
+            for (int i = (int)EIndex.ColorNO; i <= (int)EIndex.SizeNO; i++)
+                if (CheckDetail(i) == false)
+                {
+                    detailControls[i].Focus();
+                    return;
+                }
+
+            if (dgvDetail.Columns.Count.Equals(0))
             {
                 //ColorNo
                 dgvDetail.Columns.Add("ColorNo" , " ");
@@ -1024,7 +1032,7 @@ namespace MasterTouroku_Shouhin
                     break;
 
                 case (int)EIndex.SaleStartDate:
-                    case(int)EIndex.WebStartDate:
+                case(int)EIndex.WebStartDate:
                 case (int)EIndex.LastInstructionsDate:
                 case (int)EIndex.ApprovalDate:
                     //入力無くても良い(It is not necessary to input)
@@ -1078,7 +1086,6 @@ namespace MasterTouroku_Shouhin
                             }
                         }
                     }
-                    InitGrid();
 
                     break;
 
@@ -1152,6 +1159,7 @@ namespace MasterTouroku_Shouhin
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        ((CKM_Controls.CKM_ComboBox)detailControls[index]).MoveNext = false;
                         return false;
                     }
                     break;
@@ -1684,7 +1692,7 @@ namespace MasterTouroku_Shouhin
                                         + " AND ColorNo = " + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString());
                             foreach(DataRow dr in rows)
                             {
-                                dr["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                dr["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                             }
 
                             if(rows.Length.Equals(0))
@@ -1699,7 +1707,7 @@ namespace MasterTouroku_Shouhin
                                     //SKU画面のChkAll参照
                                     //データをDataTableに
                                     newrow["ITemCD"] = mie.ITemCD;
-                                    newrow["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                                     newrow["ChangeDate"] = mie.ChangeDate;
                                     newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                                     newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;
@@ -2121,12 +2129,13 @@ namespace MasterTouroku_Shouhin
 
                     break;
                 case 9://F10:展開
-                    if (dgvDetail.CurrentCell == null)
-                        return;
+                    InitGrid();
+                    //if (dgvDetail.CurrentCell == null)
+                    //    return;
 
-                    int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
-                    int RowIndex = dgvDetail.CurrentCell.RowIndex;
-                    Expand(ColumnIndex, RowIndex);
+                    //int ColumnIndex = dgvDetail.CurrentCell.ColumnIndex;
+                    //int RowIndex = dgvDetail.CurrentCell.RowIndex;
+                    //Expand(ColumnIndex, RowIndex);
                     break;
 
                 case 11:    //F12:登録
@@ -2275,7 +2284,16 @@ namespace MasterTouroku_Shouhin
                     bool ret = CheckDetail(index);
                     if (ret)
                     {
-                        if (detailControls.Length - 1 > index)
+                        if(index.Equals((int)EIndex.SizeNO))
+                        {
+                            InitGrid();
+                        }
+
+                        if((index>=(int)EIndex.LastInstructionsNO && index <= (int)EIndex.WebAddress) || index.Equals((int)EIndex.LastCatalogText))
+                        {
+                            //MultiLineのフォーカス移動はMovenextプロパティにて処理する
+                        }
+                        else if (detailControls.Length - 1 > index)
                         {
                             if (detailControls[index + 1].CanFocus)
                                 detailControls[index + 1].Focus();
@@ -2453,6 +2471,14 @@ namespace MasterTouroku_Shouhin
                         e.Cancel = true;
                         return;
                     }
+                    //20Bまで
+                    string str = Encoding.GetEncoding(932).GetByteCount(e.FormattedValue.ToString()).ToString();
+                    if (Convert.ToInt32(str) > 20)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true;
+                        return;
+                    }
 
                     //同じ値のセルが複数あればエラー Ｅ１０５
                     for (int i = 2; i<dgvDetail.Columns.Count; i++)
@@ -2474,6 +2500,14 @@ namespace MasterTouroku_Shouhin
                         dgvDetail.Rows[e.RowIndex].ErrorText =
                             "Color Name must not be empty";
                         bbl.ShowMessage("E102");
+                        e.Cancel = true;
+                        return;
+                    }
+                    //20Bまで
+                    string str = Encoding.GetEncoding(932).GetByteCount(e.FormattedValue.ToString()).ToString();
+                    if (Convert.ToInt32(str) > 20)
+                    {
+                        MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true;
                         return;
                     }

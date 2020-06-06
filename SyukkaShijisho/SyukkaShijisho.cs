@@ -461,6 +461,7 @@ namespace SyukkaShijisho
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
+                        CboSouko.MoveNext = false;
                         return false;
                     }
                     break;                    
@@ -576,7 +577,8 @@ namespace SyukkaShijisho
                     StoreCD = mse.StoreCD,
                     SoukoType = "3",
                     ChangeDate = ymd,
-                    DeleteFlg = "0"
+                    DeleteFlg = "0",
+                    searchType = "2"
                 };
 
                 DataTable mdt = ssbl.M_Souko_Search(me);

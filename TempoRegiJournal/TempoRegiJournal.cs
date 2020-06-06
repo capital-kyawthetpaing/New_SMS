@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace TempoRegiJournal
 {
@@ -46,10 +47,10 @@ namespace TempoRegiJournal
         private void SetRequireField()
         {
             txtPrintDateFrom.Require(true);
-            txtPrintDateFrom.Clear();
-
             txtPrintDateTo.Require(true);
-            txtPrintDateTo.Clear();
+
+            txtPrintDateFrom.Text = txtPrintDateTo.Text = DateTime.Today.ToShortDateString();
+            txtPrintDateFrom.Focus();
         }
 
         private void DisplayData()
@@ -166,9 +167,9 @@ namespace TempoRegiJournal
             {
                 var row = data.Rows[index];
 
-                // 対象業の発行日時が未入力の場合、対象にしない
-                if (string.IsNullOrWhiteSpace(row["IssueDate"].ToString()))
+                if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"])))
                 {
+                    // 発行日時がないデータは出力対象外
                     continue;
                 }
 
@@ -185,7 +186,7 @@ namespace TempoRegiJournal
                     store.StoreName = Convert.ToString(row["StoreName"]);                       // 店舗名
                     store.Address1 = Convert.ToString(row["Address1"]);                         // 住所1
                     store.Address2 = Convert.ToString(row["Address2"]);                         // 住所2
-                    store.TelphoneNO = Convert.ToString(row["TelphoneNO"]);                     // 電話番号
+                    store.TelphoneNO = Convert.ToString(row["TelephoneNO"]);                    // 電話番号
                     store.StoreReceiptPrint = Convert.ToString(row["StoreReceiptPrint"]);       // 店舗レシート表記
                                                                                                 //
                     storeDataSet.StoreTable.Rows.Add(store);
@@ -206,15 +207,17 @@ namespace TempoRegiJournal
                 sales.SalesTaxRate = ConvertDecimal(row["SalesTaxRate"]) == "8" ? "*" : "";     // 税率
                 sales.TotalGaku = ConvertDecimal(row["TotalGaku"]);                             // 販売合計額
                                                                                                 // 商品名
-                var skuShortNames = CountSplit(Convert.ToString(row["SKUShortName"]), 16);
-                sales.SKUShortName1 = skuShortNames[0];
-                if (skuShortNames.Length > 1)
+                var skuShortName = Convert.ToString(row["SKUShortName"]);
+                if(skuShortName.Length < 16)
                 {
-                    sales.SKUShortName2 = skuShortNames[1];
+                    sales.SKUShortName1 = skuShortName;
+                    sales.SKUShortName2 = "";
                 }
                 else
                 {
-                    sales.SKUShortName2 = "";
+                    var skuShortNames = CountSplit(skuShortName, 16);
+                    sales.SKUShortName1 = skuShortNames[0];
+                    sales.SKUShortName2 = skuShortNames.Length > 1 ? skuShortNames[1] : "";
                 }
                 //
                 storeDataSet.SalesTable.Rows.Add(sales);
@@ -842,6 +845,52 @@ namespace TempoRegiJournal
             }
 
             return result.ToArray();
+        }
+
+        /// <summary>
+        /// 日付(From)キーダウンイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <remarks>
+        /// エンターキー押下でエラーなしの場合、日付(To)へ
+        /// 日付(To)が空白時、日付(From)の値を日付(To)へセット
+        /// </remarks>
+        private void txtPrintDateFrom_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(string.IsNullOrWhiteSpace(txtPrintDateTo.Text))
+                {
+                    txtPrintDateTo.Text = txtPrintDateFrom.Text;
+                }
+
+                txtPrintDateTo.Focus();
+            }
+        }
+
+        /// <summary>
+        /// 日付(To)キーダウンイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void txtPrintDateTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if(ErrorCheck())
+                {
+                    PrintCheckBox.Focus();
+                }
+            }
+        }
+
+        private void PrintCheckBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.btnClose.Focus();
+            }
         }
     }
 }

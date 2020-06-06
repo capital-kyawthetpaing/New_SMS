@@ -162,29 +162,19 @@ namespace CKM_Controls
 
         protected override void OnEnter(EventArgs e)
         {
-            Cursorin = Text;
+           
             this.BackColor = Color.FromArgb(255, 242, 204);
-            this.Select(length,length) ;
+            this.Select(length, length);
             base.OnEnter(e);
-            
+            Cursorin = Text;
+
         }
         bool Isselected = false;
 
 
         protected override void OnValidating(CancelEventArgs e)
         {
-            if (Over_CheckBytes())
-            {
-                e.Cancel = true;
-                MoveNext = false;
-                SelectAll();
-                DialogResult ok = MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Mdea = true;
-            }
-            else
-            {
-                Mdea = false;
-            }
+            base.OnValidating(e);
         }
         protected override void OnValidated(EventArgs e)
         {
@@ -314,11 +304,23 @@ namespace CKM_Controls
             }
             else if (e.KeyCode == Keys.Enter)
             {
-                Cursorin = Text;
-                MoveNext = true;
-                return;
+                if (Over_CheckBytes())
+                {
+                    //  e.Cancel = true;
+                    MoveNext = false;
+                   // SelectAll();
+                    DialogResult ok = MessageBox.Show("入力された文字が長すぎます", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Mdea = true;
+                }
+                else
+                {
+                    Mdea = false;
+                    Cursorin = Text;
+                    MoveNext = true;
+                   // return;
+                }
             }
-            var f = this.Text;
+          //  var f = this.Text;
         }
         protected override void OnKeyUp(KeyEventArgs e)
         {
@@ -336,14 +338,21 @@ namespace CKM_Controls
 
         public string Cursorin = "";
         public string Cursorout = "";
-
+        protected override void OnGotFocus(EventArgs e)
+        {
+            F_focus = true;
+            base.OnGotFocus(e);
+        }
         protected override void OnTextChanged(EventArgs e)
         {
-            MoveNext = false;
+            F_focus = false;
+            // MoveNext = false;
             Cursorout = Text;
             Form d = this.FindForm();
-            RaiseKeyEvent(null, ke);            
+            RaiseKeyEvent(null, ke);   
+            
         }
+        public bool F_focus { get; set; } = false;
         public event EventHandler ThresholdReached;
 
         protected virtual void OnThresholdReached(EventArgs e)

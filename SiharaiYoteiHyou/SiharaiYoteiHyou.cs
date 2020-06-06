@@ -29,6 +29,7 @@ namespace SiharaiYoteiHyou
         //string expense = "";
         //string purchase = "";
         //string ymd;
+        bool combo_focus;
         Base_BL bbl = new Base_BL();
         SiharaiYoteiHyou_BL shyhbl;
         D_PayPlan_Entity dppe;
@@ -52,19 +53,6 @@ namespace SiharaiYoteiHyou
             base.InProgramNM = ProNm;
             BindCombo();
             RequiredField();
-            this.comboStore.SelectedIndexChanged += ComboStore_SelectedIndexChanged;
-        }
-
-        private void ComboStore_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (!comboStore.SelectedValue.Equals("-1"))
-            {
-                if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
-                {
-                    shyhbl.ShowMessage("E139");
-                    comboStore.Focus();
-                }
-            }
         }
 
         private void RequiredField()
@@ -83,6 +71,7 @@ namespace SiharaiYoteiHyou
         public void BindCombo()
         {
             comboStore.Bind(string.Empty, "2");
+            comboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// エラーチェック処理
@@ -95,7 +84,7 @@ namespace SiharaiYoteiHyou
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     shyhbl.ShowMessage("E104");
                     txtPaymentDueDateFrom.Focus();
@@ -124,6 +113,7 @@ namespace SiharaiYoteiHyou
             if (chkExpense.Checked == false && chkPurchase.Checked == false)
             {
                 shyhbl.ShowMessage("E111");
+                chkPurchase.Focus();
                 return false;
             }
 
@@ -135,6 +125,7 @@ namespace SiharaiYoteiHyou
             {
                 shyhbl.ShowMessage("E139");
                 comboStore.Focus();
+                combo_focus = true;
                 return false;
             }
             return true;
@@ -181,6 +172,7 @@ namespace SiharaiYoteiHyou
             chkPurchase.Checked = true;
             chkExpense.Checked = true;
             txtPaymentDueDateFrom.Focus();
+            comboStore.SelectedValue = StoreCD;
         }
         /// <summary>
         /// アプリケーションを終了処理
@@ -457,7 +449,12 @@ namespace SiharaiYoteiHyou
         }
         private void SiharaiYoteiHyou_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+            if(combo_focus == true)
+            {
+                comboStore.Focus();
+                combo_focus = false;
+            }
+            else { MoveNextControl(e); }
         }
 
         /// <summary>
@@ -468,6 +465,20 @@ namespace SiharaiYoteiHyou
             scPaymentDestinaion.Value1 = "2";
             scPaymentDestinaion.ChangeDate = bbl.GetDate();
         }
+
+        private void comboStore_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode ==Keys.Enter)
+            {
+                if (!base.CheckAvailableStores(comboStore.SelectedValue.ToString()))
+                {
+                    shyhbl.ShowMessage("E139");
+                    comboStore.Focus();
+                    combo_focus = true;
+                }
+            }
+        }
+
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -478,12 +489,11 @@ namespace SiharaiYoteiHyou
                     DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                     DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
 
-                    if (dt1 >= dt2)
+                    if (dt1 > dt2)
                     {
                         shyhbl.ShowMessage("E104");
                         txtPaymentDueDateFrom.Focus();
                     }
-
                 }
             }
         }

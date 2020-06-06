@@ -220,7 +220,7 @@ namespace MasterTouroku_Program
                     switch (OperationMode)
                     {
                         case EOperationMode.INSERT:
-                            InsertUpdate(1);
+                            InsertUpdate(1);    
                             break;
                         case EOperationMode.UPDATE:
                             InsertUpdate(2);

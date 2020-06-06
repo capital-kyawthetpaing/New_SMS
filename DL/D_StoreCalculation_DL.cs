@@ -46,6 +46,17 @@ namespace DL
             UseTransaction = true;
             return SelectData(dic, "D_Store_CalculationSelect");
         }
-        
+
+        public DataTable D_Store_Calculation_SelectForSeiSan(D_StoreCalculation_Entity dsce)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dsce.StoreCD } },
+                { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = dsce.CalculationDate } },
+            };
+            UseTransaction = true;
+            return SelectData(dic, "D_Store_Calculation_SelectForSeiSan");
+        }
+
     }
 }

@@ -73,7 +73,7 @@ namespace Search
                     {
                       vbl.ShowMessage("E106");
                       return false;
-                     }
+                }
             }
             return true;
          }
@@ -156,6 +156,11 @@ namespace Search
         private void Search_Vendor_KeyUp(object sender, KeyEventArgs e)
         {
             MoveNextControl(e);
+        }
+
+        private void Search_Vendor_Load(object sender, EventArgs e)
+        {
+            txtChangeDate.Focus();
         }
     }
 }

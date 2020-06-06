@@ -131,7 +131,7 @@
             this.lblOperatorName.Size = new System.Drawing.Size(190, 24);
             this.lblOperatorName.TabIndex = 61;
             this.lblOperatorName.Text = "0001";
-            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblOperatorName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ckM_Label1
             // 
@@ -906,6 +906,7 @@
             this.txt_Mesaage.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txt_Mesaage.BackColor = System.Drawing.Color.White;
             this.txt_Mesaage.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txt_Mesaage.F_focus = false;
             this.txt_Mesaage.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txt_Mesaage.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txt_Mesaage.Length = 2000;

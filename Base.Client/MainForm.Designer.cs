@@ -60,6 +60,8 @@
             this.lblStoreCD = new CKM_Controls.CKM_Label();
             this.lblStoreAuthorizationChangeDate = new CKM_Controls.CKM_Label();
             this.lblProgramID = new CKM_Controls.CKM_Label();
+            this.lblIkkatuHacchuuMode = new System.Windows.Forms.Label();
+            this.btnChangeIkkatuHacchuuMode = new CKM_Controls.CKM_Button();
             this.panelTop.SuspendLayout();
             this.PanelHeader.SuspendLayout();
             this.PanelSubFooter.SuspendLayout();
@@ -78,7 +80,7 @@
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1713, 147);
+            this.panelTop.Size = new System.Drawing.Size(1370, 147);
             this.panelTop.TabIndex = 0;
             // 
             // PanelHeader
@@ -88,7 +90,7 @@
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelHeader.Location = new System.Drawing.Point(0, 54);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Size = new System.Drawing.Size(1711, 91);
+            this.PanelHeader.Size = new System.Drawing.Size(1368, 91);
             this.PanelHeader.TabIndex = 3;
             // 
             // PanelSubFooter
@@ -97,13 +99,13 @@
             this.PanelSubFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.PanelSubFooter.Location = new System.Drawing.Point(0, 56);
             this.PanelSubFooter.Name = "PanelSubFooter";
-            this.PanelSubFooter.Size = new System.Drawing.Size(1711, 33);
-            this.PanelSubFooter.TabIndex = 1;
+            this.PanelSubFooter.Size = new System.Drawing.Size(1368, 33);
+            this.PanelSubFooter.TabIndex = 98;
             // 
             // PanelSearch
             // 
             this.PanelSearch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            this.PanelSearch.Location = new System.Drawing.Point(834, 0);
             this.PanelSearch.Name = "PanelSearch";
             this.PanelSearch.Size = new System.Drawing.Size(534, 33);
             this.PanelSearch.TabIndex = 4;
@@ -114,7 +116,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label1.Location = new System.Drawing.Point(0, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1711, 2);
+            this.label1.Size = new System.Drawing.Size(1368, 2);
             this.label1.TabIndex = 0;
             // 
             // PanelTitle
@@ -122,10 +124,12 @@
             this.PanelTitle.Controls.Add(this.PanelLeft);
             this.PanelTitle.Controls.Add(this.PanelRight);
             this.PanelTitle.Controls.Add(this.lblDisp);
+            this.PanelTitle.Controls.Add(this.btnChangeIkkatuHacchuuMode);
+            this.PanelTitle.Controls.Add(this.lblIkkatuHacchuuMode);
             this.PanelTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTitle.Location = new System.Drawing.Point(0, 0);
             this.PanelTitle.Name = "PanelTitle";
-            this.PanelTitle.Size = new System.Drawing.Size(1711, 54);
+            this.PanelTitle.Size = new System.Drawing.Size(1368, 54);
             this.PanelTitle.TabIndex = 2;
             // 
             // PanelLeft
@@ -137,6 +141,37 @@
             this.PanelLeft.Name = "PanelLeft";
             this.PanelLeft.Size = new System.Drawing.Size(573, 54);
             this.PanelLeft.TabIndex = 0;
+            // 
+            // lblIkkatuHacchuuMode
+            // 
+            this.lblIkkatuHacchuuMode.BackColor = System.Drawing.Color.LightGreen;
+            this.lblIkkatuHacchuuMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblIkkatuHacchuuMode.Font = new System.Drawing.Font("ＭＳ ゴシック", 11F, System.Drawing.FontStyle.Bold);
+            this.lblIkkatuHacchuuMode.Location = new System.Drawing.Point(601, 10);
+            this.lblIkkatuHacchuuMode.Name = "lblIkkatuHacchuuMode";
+            this.lblIkkatuHacchuuMode.Size = new System.Drawing.Size(94, 21);
+            this.lblIkkatuHacchuuMode.TabIndex = 62;
+            this.lblIkkatuHacchuuMode.Text = "Net発注";
+            this.lblIkkatuHacchuuMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblIkkatuHacchuuMode.Visible = false;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnChangeIkkatuHacchuuMode.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnChangeIkkatuHacchuuMode.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeIkkatuHacchuuMode.DefaultBtnSize = false;
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnChangeIkkatuHacchuuMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeIkkatuHacchuuMode.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.btnChangeIkkatuHacchuuMode.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnChangeIkkatuHacchuuMode.Location = new System.Drawing.Point(700, 5);
+            this.btnChangeIkkatuHacchuuMode.Margin = new System.Windows.Forms.Padding(1);
+            this.btnChangeIkkatuHacchuuMode.Name = "btnChangeIkkatuHacchuuMode";
+            this.btnChangeIkkatuHacchuuMode.Size = new System.Drawing.Size(140, 29);
+            this.btnChangeIkkatuHacchuuMode.TabIndex = 704;
+            this.btnChangeIkkatuHacchuuMode.Text = "FAX発注(F11)";
+            this.btnChangeIkkatuHacchuuMode.Visible = false;
             // 
             // lblMode
             // 
@@ -167,7 +202,7 @@
             this.PanelRight.Controls.Add(this.lblOperatorName);
             this.PanelRight.Controls.Add(this.lblOperator);
             this.PanelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelRight.Location = new System.Drawing.Point(1177, 0);
+            this.PanelRight.Location = new System.Drawing.Point(834, 0);
             this.PanelRight.Name = "PanelRight";
             this.PanelRight.Size = new System.Drawing.Size(534, 54);
             this.PanelRight.TabIndex = 1;
@@ -225,9 +260,9 @@
             this.PanelFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.PanelFooter.Controls.Add(this.tableLayoutPanel1);
             this.PanelFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelFooter.Location = new System.Drawing.Point(0, 929);
+            this.PanelFooter.Location = new System.Drawing.Point(0, 717);
             this.PanelFooter.Name = "PanelFooter";
-            this.PanelFooter.Size = new System.Drawing.Size(1713, 32);
+            this.PanelFooter.Size = new System.Drawing.Size(1370, 32);
             this.PanelFooter.TabIndex = 99;
             // 
             // tableLayoutPanel1
@@ -264,7 +299,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1713, 32);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 32);
             this.tableLayoutPanel1.TabIndex = 99;
             // 
             // BtnF3
@@ -278,10 +313,10 @@
             this.BtnF3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF3.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF3.Location = new System.Drawing.Point(286, 2);
+            this.BtnF3.Location = new System.Drawing.Point(230, 2);
             this.BtnF3.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF3.Name = "BtnF3";
-            this.BtnF3.Size = new System.Drawing.Size(139, 28);
+            this.BtnF3.Size = new System.Drawing.Size(111, 28);
             this.BtnF3.TabIndex = 102;
             this.BtnF3.Tag = "2";
             this.BtnF3.Text = "変更(F3)";
@@ -300,10 +335,10 @@
             this.BtnF4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF4.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF4.Location = new System.Drawing.Point(428, 2);
+            this.BtnF4.Location = new System.Drawing.Point(344, 2);
             this.BtnF4.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF4.Name = "BtnF4";
-            this.BtnF4.Size = new System.Drawing.Size(139, 28);
+            this.BtnF4.Size = new System.Drawing.Size(111, 28);
             this.BtnF4.TabIndex = 103;
             this.BtnF4.Tag = "3";
             this.BtnF4.Text = "削除(F4)";
@@ -322,10 +357,10 @@
             this.BtnF5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF5.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF5.Location = new System.Drawing.Point(570, 2);
+            this.BtnF5.Location = new System.Drawing.Point(458, 2);
             this.BtnF5.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF5.Name = "BtnF5";
-            this.BtnF5.Size = new System.Drawing.Size(139, 28);
+            this.BtnF5.Size = new System.Drawing.Size(111, 28);
             this.BtnF5.TabIndex = 104;
             this.BtnF5.Tag = "4";
             this.BtnF5.Text = "照会(F5)";
@@ -344,10 +379,10 @@
             this.BtnF6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF6.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF6.Location = new System.Drawing.Point(712, 2);
+            this.BtnF6.Location = new System.Drawing.Point(572, 2);
             this.BtnF6.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF6.Name = "BtnF6";
-            this.BtnF6.Size = new System.Drawing.Size(139, 28);
+            this.BtnF6.Size = new System.Drawing.Size(111, 28);
             this.BtnF6.TabIndex = 105;
             this.BtnF6.Tag = "5";
             this.BtnF6.Text = "ｷｬﾝｾﾙ(F6)";
@@ -366,10 +401,10 @@
             this.BtnF7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF7.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF7.Location = new System.Drawing.Point(854, 2);
+            this.BtnF7.Location = new System.Drawing.Point(686, 2);
             this.BtnF7.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF7.Name = "BtnF7";
-            this.BtnF7.Size = new System.Drawing.Size(139, 28);
+            this.BtnF7.Size = new System.Drawing.Size(111, 28);
             this.BtnF7.TabIndex = 106;
             this.BtnF7.Tag = "6";
             this.BtnF7.Text = "プレビュー(F7)";
@@ -388,10 +423,10 @@
             this.BtnF8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF8.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF8.Location = new System.Drawing.Point(996, 2);
+            this.BtnF8.Location = new System.Drawing.Point(800, 2);
             this.BtnF8.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF8.Name = "BtnF8";
-            this.BtnF8.Size = new System.Drawing.Size(139, 28);
+            this.BtnF8.Size = new System.Drawing.Size(111, 28);
             this.BtnF8.TabIndex = 107;
             this.BtnF8.Tag = "7";
             this.BtnF8.Text = "CSV(F8)";
@@ -410,10 +445,10 @@
             this.BtnF9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF9.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF9.Location = new System.Drawing.Point(1138, 2);
+            this.BtnF9.Location = new System.Drawing.Point(914, 2);
             this.BtnF9.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF9.Name = "BtnF9";
-            this.BtnF9.Size = new System.Drawing.Size(139, 28);
+            this.BtnF9.Size = new System.Drawing.Size(111, 28);
             this.BtnF9.TabIndex = 108;
             this.BtnF9.Tag = "8";
             this.BtnF9.Text = "検索(F9)";
@@ -432,10 +467,10 @@
             this.BtnF10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF10.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF10.Location = new System.Drawing.Point(1280, 2);
+            this.BtnF10.Location = new System.Drawing.Point(1028, 2);
             this.BtnF10.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF10.Name = "BtnF10";
-            this.BtnF10.Size = new System.Drawing.Size(139, 28);
+            this.BtnF10.Size = new System.Drawing.Size(111, 28);
             this.BtnF10.TabIndex = 109;
             this.BtnF10.Tag = "9";
             this.BtnF10.Text = "在庫変更(F10)";
@@ -454,10 +489,10 @@
             this.BtnF11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF11.Location = new System.Drawing.Point(1422, 2);
+            this.BtnF11.Location = new System.Drawing.Point(1142, 2);
             this.BtnF11.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF11.Name = "BtnF11";
-            this.BtnF11.Size = new System.Drawing.Size(139, 28);
+            this.BtnF11.Size = new System.Drawing.Size(111, 28);
             this.BtnF11.TabIndex = 110;
             this.BtnF11.Tag = "10";
             this.BtnF11.Text = "表示(F11)";
@@ -479,7 +514,7 @@
             this.BtnF1.Location = new System.Drawing.Point(2, 2);
             this.BtnF1.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF1.Name = "BtnF1";
-            this.BtnF1.Size = new System.Drawing.Size(139, 28);
+            this.BtnF1.Size = new System.Drawing.Size(111, 28);
             this.BtnF1.TabIndex = 100;
             this.BtnF1.Tag = "0";
             this.BtnF1.Text = "終了(F1)";
@@ -498,10 +533,10 @@
             this.BtnF2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF2.Location = new System.Drawing.Point(144, 2);
+            this.BtnF2.Location = new System.Drawing.Point(116, 2);
             this.BtnF2.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF2.Name = "BtnF2";
-            this.BtnF2.Size = new System.Drawing.Size(139, 28);
+            this.BtnF2.Size = new System.Drawing.Size(111, 28);
             this.BtnF2.TabIndex = 101;
             this.BtnF2.Tag = "1";
             this.BtnF2.Text = "新規(F2)";
@@ -520,10 +555,10 @@
             this.BtnF12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnF12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.BtnF12.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.BtnF12.Location = new System.Drawing.Point(1564, 2);
+            this.BtnF12.Location = new System.Drawing.Point(1256, 2);
             this.BtnF12.Margin = new System.Windows.Forms.Padding(1);
             this.BtnF12.Name = "BtnF12";
-            this.BtnF12.Size = new System.Drawing.Size(147, 28);
+            this.BtnF12.Size = new System.Drawing.Size(112, 28);
             this.BtnF12.TabIndex = 111;
             this.BtnF12.Tag = "11";
             this.BtnF12.Text = "登録(F12)";
@@ -604,7 +639,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.ClientSize = new System.Drawing.Size(1713, 961);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.lblProgramID);
             this.Controls.Add(this.lblStoreAuthorizationChangeDate);
             this.Controls.Add(this.lblStoreCD);
@@ -620,6 +655,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMainForm_FormClosed);
             this.Load += new System.EventHandler(this.FrmMainForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmMainForm_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.FrmMainForm_KeyUp);
             this.panelTop.ResumeLayout(false);
             this.PanelHeader.ResumeLayout(false);
             this.PanelSubFooter.ResumeLayout(false);
@@ -667,5 +703,7 @@
         private CKM_Controls.CKM_Label lblStoreCD;
         private CKM_Controls.CKM_Label lblStoreAuthorizationChangeDate;
         private CKM_Controls.CKM_Label lblProgramID;
+        protected System.Windows.Forms.Label lblIkkatuHacchuuMode;
+        protected CKM_Controls.CKM_Button btnChangeIkkatuHacchuuMode;
     }
 }

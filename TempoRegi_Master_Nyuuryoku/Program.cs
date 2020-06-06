@@ -16,7 +16,7 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TempoRegiMasterNyuryokuForm());
+            Application.Run(new TempoRegiMasterNyuuryoku());
         }
     }
 }

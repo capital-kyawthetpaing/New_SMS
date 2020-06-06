@@ -38,6 +38,8 @@
             this.ckmShop_Label26 = new CKM_Controls.CKMShop_Label();
             this.PanelDelete = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chkSend = new CKM_Controls.CKMShop_CheckBox();
+            this.txtTelNo1 = new CKM_Controls.CKM_TextBox();
             this.txtMailAddress2 = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label10 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label9 = new CKM_Controls.CKMShop_Label();
@@ -48,7 +50,6 @@
             this.ckmShop_Label30 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label29 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label28 = new CKM_Controls.CKMShop_Label();
-            this.chkSend = new CKM_Controls.CKMShop_CheckBox();
             this.rdoFemale = new CKM_Controls.CKMShop_RadioButton();
             this.rdoMale = new CKM_Controls.CKMShop_RadioButton();
             this.btnAddress = new CKM_Controls.CKM_Button();
@@ -71,7 +72,6 @@
             this.ckmShop_Label13 = new CKM_Controls.CKMShop_Label();
             this.txtTelNo2 = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
-            this.txtTelNo1 = new CKM_Controls.CKM_TextBox();
             this.ckmShop_Label11 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label8 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label7 = new CKM_Controls.CKMShop_Label();
@@ -105,9 +105,12 @@
             // 
             // chkDelete
             // 
-            this.chkDelete.Location = new System.Drawing.Point(84, 47);
+            this.chkDelete.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkDelete.ForeColor = System.Drawing.Color.Black;
+            this.chkDelete.IsattachedCaption = false;
+            this.chkDelete.Location = new System.Drawing.Point(84, 45);
             this.chkDelete.Name = "chkDelete";
-            this.chkDelete.Size = new System.Drawing.Size(30, 30);
+            this.chkDelete.Size = new System.Drawing.Size(35, 35);
             this.chkDelete.TabIndex = 0;
             this.chkDelete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkDelete.UseVisualStyleBackColor = true;
@@ -120,7 +123,7 @@
             this.ckmShop_Label21.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label21.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label21.Location = new System.Drawing.Point(-6, 43);
+            this.ckmShop_Label21.Location = new System.Drawing.Point(-6, 44);
             this.ckmShop_Label21.Name = "ckmShop_Label21";
             this.ckmShop_Label21.Size = new System.Drawing.Size(89, 35);
             this.ckmShop_Label21.TabIndex = 48;
@@ -215,11 +218,13 @@
             this.PanelDelete.Controls.Add(this.ckmShop_Label21);
             this.PanelDelete.Location = new System.Drawing.Point(845, 82);
             this.PanelDelete.Name = "PanelDelete";
-            this.PanelDelete.Size = new System.Drawing.Size(120, 100);
+            this.PanelDelete.Size = new System.Drawing.Size(130, 100);
             this.PanelDelete.TabIndex = 67;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.chkSend);
+            this.panel5.Controls.Add(this.txtTelNo1);
             this.panel5.Controls.Add(this.txtMailAddress2);
             this.panel5.Controls.Add(this.ckmShop_Label10);
             this.panel5.Controls.Add(this.ckmShop_Label9);
@@ -230,7 +235,6 @@
             this.panel5.Controls.Add(this.ckmShop_Label30);
             this.panel5.Controls.Add(this.ckmShop_Label29);
             this.panel5.Controls.Add(this.ckmShop_Label28);
-            this.panel5.Controls.Add(this.chkSend);
             this.panel5.Controls.Add(this.rdoFemale);
             this.panel5.Controls.Add(this.rdoMale);
             this.panel5.Controls.Add(this.btnAddress);
@@ -253,7 +257,6 @@
             this.panel5.Controls.Add(this.ckmShop_Label13);
             this.panel5.Controls.Add(this.txtTelNo2);
             this.panel5.Controls.Add(this.ckmShop_Label12);
-            this.panel5.Controls.Add(this.txtTelNo1);
             this.panel5.Controls.Add(this.ckmShop_Label11);
             this.panel5.Controls.Add(this.ckmShop_Label8);
             this.panel5.Controls.Add(this.ckmShop_Label7);
@@ -264,10 +267,49 @@
             this.panel5.Controls.Add(this.txtFirstName);
             this.panel5.Controls.Add(this.txtLastName);
             this.panel5.Controls.Add(this.ckmShop_Label4);
-            this.panel5.Location = new System.Drawing.Point(17, 280);
+            this.panel5.Location = new System.Drawing.Point(-1, 280);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1940, 600);
+            this.panel5.Size = new System.Drawing.Size(1920, 600);
             this.panel5.TabIndex = 1;
+            // 
+            // chkSend
+            // 
+            this.chkSend.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkSend.ForeColor = System.Drawing.Color.Black;
+            this.chkSend.IsattachedCaption = false;
+            this.chkSend.Location = new System.Drawing.Point(1078, 371);
+            this.chkSend.Name = "chkSend";
+            this.chkSend.Size = new System.Drawing.Size(35, 35);
+            this.chkSend.TabIndex = 15;
+            this.chkSend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkSend.UseVisualStyleBackColor = true;
+            // 
+            // txtTelNo1
+            // 
+            this.txtTelNo1.AllowMinus = false;
+            this.txtTelNo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
+            this.txtTelNo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtTelNo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTelNo1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
+            this.txtTelNo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtTelNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtTelNo1.DecimalPlace = 0;
+            this.txtTelNo1.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtTelNo1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.txtTelNo1.IntegerPart = 0;
+            this.txtTelNo1.IsCorrectDate = true;
+            this.txtTelNo1.isEnterKeyDown = false;
+            this.txtTelNo1.isMaxLengthErr = true;
+            this.txtTelNo1.IsNumber = true;
+            this.txtTelNo1.IsShop = false;
+            this.txtTelNo1.Length = 5;
+            this.txtTelNo1.Location = new System.Drawing.Point(343, 221);
+            this.txtTelNo1.MaxLength = 5;
+            this.txtTelNo1.MoveNext = true;
+            this.txtTelNo1.Name = "txtTelNo1";
+            this.txtTelNo1.Size = new System.Drawing.Size(96, 42);
+            this.txtTelNo1.TabIndex = 7;
+            this.txtTelNo1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
             // txtMailAddress2
             // 
@@ -320,10 +362,10 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(1124, 371);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(1141, 371);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(423, 35);
-            this.ckmShop_Label9.TabIndex = 107;
+            this.ckmShop_Label9.TabIndex = 15;
             this.ckmShop_Label9.Text = "DM等の案内を送って良い";
             this.ckmShop_Label9.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -451,15 +493,6 @@
             this.ckmShop_Label28.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Red;
             this.ckmShop_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // chkSend
-            // 
-            this.chkSend.Location = new System.Drawing.Point(1095, 372);
-            this.chkSend.Name = "chkSend";
-            this.chkSend.Size = new System.Drawing.Size(30, 30);
-            this.chkSend.TabIndex = 15;
-            this.chkSend.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkSend.UseVisualStyleBackColor = true;
-            // 
             // rdoFemale
             // 
             this.rdoFemale.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,10 +528,10 @@
             this.btnAddress.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnAddress.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
             this.btnAddress.ForeColor = System.Drawing.Color.Black;
-            this.btnAddress.Location = new System.Drawing.Point(525, 418);
+            this.btnAddress.Location = new System.Drawing.Point(526, 417);
             this.btnAddress.Margin = new System.Windows.Forms.Padding(1);
             this.btnAddress.Name = "btnAddress";
-            this.btnAddress.Size = new System.Drawing.Size(110, 42);
+            this.btnAddress.Size = new System.Drawing.Size(200, 45);
             this.btnAddress.TabIndex = 18;
             this.btnAddress.Text = "住所変換";
             this.btnAddress.UseVisualStyleBackColor = false;
@@ -608,7 +641,7 @@
             this.txtZipCode2.IsNumber = true;
             this.txtZipCode2.IsShop = false;
             this.txtZipCode2.Length = 4;
-            this.txtZipCode2.Location = new System.Drawing.Point(445, 418);
+            this.txtZipCode2.Location = new System.Drawing.Point(446, 418);
             this.txtZipCode2.MaxLength = 4;
             this.txtZipCode2.MoveNext = true;
             this.txtZipCode2.Name = "txtZipCode2";
@@ -807,7 +840,7 @@
             this.txthomeTelNo1.MaxLength = 5;
             this.txthomeTelNo1.MoveNext = true;
             this.txthomeTelNo1.Name = "txthomeTelNo1";
-            this.txthomeTelNo1.Size = new System.Drawing.Size(98, 42);
+            this.txthomeTelNo1.Size = new System.Drawing.Size(96, 42);
             this.txthomeTelNo1.TabIndex = 10;
             this.txthomeTelNo1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
@@ -911,33 +944,6 @@
             this.ckmShop_Label12.Text = "-";
             this.ckmShop_Label12.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtTelNo1
-            // 
-            this.txtTelNo1.AllowMinus = false;
-            this.txtTelNo1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.Green;
-            this.txtTelNo1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.txtTelNo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTelNo1.ClientColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(239)))), ((int)(((byte)(218)))));
-            this.txtTelNo1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtTelNo1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.txtTelNo1.DecimalPlace = 0;
-            this.txtTelNo1.Font = new System.Drawing.Font("MS Gothic", 26F);
-            this.txtTelNo1.IntegerPart = 0;
-            this.txtTelNo1.IsCorrectDate = true;
-            this.txtTelNo1.isEnterKeyDown = false;
-            this.txtTelNo1.isMaxLengthErr = false;
-            this.txtTelNo1.IsNumber = true;
-            this.txtTelNo1.IsShop = false;
-            this.txtTelNo1.Length = 5;
-            this.txtTelNo1.Location = new System.Drawing.Point(343, 221);
-            this.txtTelNo1.MaxLength = 5;
-            this.txtTelNo1.MoveNext = true;
-            this.txtTelNo1.Name = "txtTelNo1";
-            this.txtTelNo1.Size = new System.Drawing.Size(98, 42);
-            this.txtTelNo1.TabIndex = 7;
-            this.txtTelNo1.Tag = "";
-            this.txtTelNo1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
             // ckmShop_Label11
             // 
@@ -1162,7 +1168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 961);
+            this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.lblCustomerNo);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.PanelDelete);
@@ -1213,7 +1219,6 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label30;
         private CKM_Controls.CKMShop_Label ckmShop_Label29;
         private CKM_Controls.CKMShop_Label ckmShop_Label28;
-        private CKM_Controls.CKMShop_CheckBox chkSend;
         private CKM_Controls.CKMShop_RadioButton rdoFemale;
         private CKM_Controls.CKMShop_RadioButton rdoMale;
         private CKM_Controls.CKM_Button btnAddress;
@@ -1236,7 +1241,6 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label13;
         private CKM_Controls.CKM_TextBox txtTelNo2;
         private CKM_Controls.CKMShop_Label ckmShop_Label12;
-        private CKM_Controls.CKM_TextBox txtTelNo1;
         private CKM_Controls.CKMShop_Label ckmShop_Label11;
         private CKM_Controls.CKMShop_Label ckmShop_Label8;
         private CKM_Controls.CKMShop_Label ckmShop_Label7;
@@ -1251,6 +1255,8 @@
         private CKM_Controls.CKM_TextBox txtMailAddress2;
         private CKM_Controls.CKMShop_Label ckmShop_Label10;
         private CKM_Controls.CKMShop_Label lblCustomerNo;
+        private CKM_Controls.CKM_TextBox txtTelNo1;
+        private CKM_Controls.CKMShop_CheckBox chkSend;
     }
 }
 

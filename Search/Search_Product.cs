@@ -389,8 +389,21 @@ namespace Search
                 }
                 GvDetail.DataSource = dt;
                 GvDetail.ScrollBars = ScrollBars.Both;
-                GvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                GvDetail.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
                 GvDetail.CurrentRow.Selected = true;
+
+                if (Mode == "5")
+                {
+                    GvDetail.ReadOnly = false;
+                    for (int i = 0; i < GvDetail.ColumnCount; i++)
+                    {
+                        if (i.Equals(0))
+                            GvDetail.Columns[i].ReadOnly = false;
+                        else
+                            GvDetail.Columns[i].ReadOnly = true;
+                    }
+                }
+
                 GvDetail.Enabled = true;
                 GvDetail.Focus();
             }
@@ -696,13 +709,17 @@ namespace Search
                 AdminNO = GvDetail.CurrentRow.Cells["colAdminNO"].Value.ToString();
                 ChangeDate = GvDetail.CurrentRow.Cells["colChangeDate"].Value.ToString();
 
-                if (Mode == "5")   //Todo:コーディング
+                if (Mode == "5")
                 {
-                    for (int i = 0; i < GvDetail.RowCount - 1; i++)
-                    {
-                        if (GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
+                    JANCD = "";
+                    //Modified by KTP ( modify last row doesn't work)
+                    //for (int i = 0; i < GvDetail.RowCount - 1; i++)
+                    for (int i = 0; i < GvDetail.RowCount; i++)
+                        {
+                        if (GvDetail.Rows[i].Cells["colCheck"].Value != null && GvDetail.Rows[i].Cells["colCheck"].Value.Equals(true))
                         {
                             list.Add(GvDetail.Rows[i].Cells["colJANCD"].Value.ToString());
+                            JANCD += (JANCD != "" ? "," : "") + GvDetail.Rows[i].Cells["colJANCD"].Value.ToString();
                         }
                     }
                 }

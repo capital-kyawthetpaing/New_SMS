@@ -45,14 +45,11 @@ namespace ShiireNyuuryokuFromNyuuka
             AdjustmentGaku,
             PurchaseTax
         }
-
-        /// <summary>
-        /// 検索の種類
-        /// </summary>
-        private enum EsearchKbn : short
+        private enum ETaxRateFLG : short
         {
-            Null,
-            Product
+            HIKAZEI = 0,
+            TSUJYO = 1,
+            KEIGEN = 2
         }
 
         private Control[] keyControls;
@@ -199,7 +196,7 @@ namespace ShiireNyuuryokuFromNyuuka
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
                         case (int)ClsGridShiire.ColNO.OrderUnitPrice:
-                        case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
+                        case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
                         case (int)ClsGridShiire.ColNO.AdjustmentGaku:
                         case (int)ClsGridShiire.ColNO.PurchaseGaku:
                         case (int)ClsGridShiire.ColNO.CalculationGaku:
@@ -235,7 +232,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 0].CellCtl = IMN_TEIKA_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 0].CellCtl = IMN_TEIKA2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 0].CellCtl = IMN_GENER_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 0].CellCtl = IMN_GENER2_0;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 0].CellCtl = IMN_GENER2_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 0].CellCtl = IMN_MEMBR_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 0].CellCtl = IMN_CLINT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 0].CellCtl = IMN_SALEP2_0;
@@ -262,7 +259,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 1].CellCtl = IMN_TEIKA_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 1].CellCtl = IMN_TEIKA2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 1].CellCtl = IMN_GENER_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 1].CellCtl = IMN_GENER2_1;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 1].CellCtl = IMN_GENER2_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 1].CellCtl = IMN_MEMBR_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 1].CellCtl = IMN_CLINT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 1].CellCtl = IMN_SALEP2_1;
@@ -290,7 +287,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 2].CellCtl = IMN_TEIKA_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 2].CellCtl = IMN_TEIKA2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 2].CellCtl = IMN_GENER_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 2].CellCtl = IMN_GENER2_2;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 2].CellCtl = IMN_GENER2_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 2].CellCtl = IMN_MEMBR_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 2].CellCtl = IMN_CLINT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 2].CellCtl = IMN_SALEP2_2;
@@ -317,7 +314,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 3].CellCtl = IMN_TEIKA_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 3].CellCtl = IMN_TEIKA2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 3].CellCtl = IMN_GENER_3;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 3].CellCtl = IMN_GENER2_3;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 3].CellCtl = IMN_GENER2_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 3].CellCtl = IMN_MEMBR_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 3].CellCtl = IMN_CLINT_3;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 3].CellCtl = IMN_SALEP2_3;
@@ -344,7 +341,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 4].CellCtl = IMN_TEIKA_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 4].CellCtl = IMN_TEIKA2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 4].CellCtl = IMN_GENER_4;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 4].CellCtl = IMN_GENER2_4;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 4].CellCtl = IMN_GENER2_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 4].CellCtl = IMN_MEMBR_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 4].CellCtl = IMN_CLINT_4;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 4].CellCtl = IMN_SALEP2_4;
@@ -371,7 +368,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 5].CellCtl = IMN_TEIKA_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 5].CellCtl = IMN_TEIKA2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 5].CellCtl = IMN_GENER_5;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 5].CellCtl = IMN_GENER2_5;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 5].CellCtl = IMN_GENER2_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 5].CellCtl = IMN_MEMBR_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 5].CellCtl = IMN_CLINT_5;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 5].CellCtl = IMN_SALEP2_5;
@@ -398,7 +395,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 6].CellCtl = IMN_TEIKA_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 6].CellCtl = IMN_TEIKA2_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 6].CellCtl = IMN_GENER_6;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 6].CellCtl = IMN_GENER2_6;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 6].CellCtl = IMN_GENER2_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 6].CellCtl = IMN_MEMBR_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 6].CellCtl = IMN_CLINT_6;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 6].CellCtl = IMN_SALEP2_6;
@@ -425,7 +422,7 @@ namespace ShiireNyuuryokuFromNyuuka
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.OrderUnitPrice, 7].CellCtl = IMN_TEIKA_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ArrivalSu, 7].CellCtl = IMN_TEIKA2_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseSu, 7].CellCtl = IMN_GENER_7;
-            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaserUnitPrice, 7].CellCtl = IMN_GENER2_7;
+            mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.PurchaseUnitPrice, 7].CellCtl = IMN_GENER2_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.TaniCD, 7].CellCtl = IMN_MEMBR_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.ColorName, 7].CellCtl = IMN_CLINT_7;
             mGrid.g_MK_Ctrl[(int)ClsGridShiire.ColNO.AdjustmentGaku, 7].CellCtl = IMN_SALEP2_7;
@@ -803,7 +800,7 @@ namespace ShiireNyuuryokuFromNyuuka
                                             break;
 
                                         case (int)ClsGridShiire.ColNO.PurchaseSu:    // 
-                                        case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:    // 
+                                        case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:    // 
                                         case (int)ClsGridShiire.ColNO.AdjustmentGaku:    // 
                                             {
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
@@ -846,6 +843,7 @@ namespace ShiireNyuuryokuFromNyuuka
                             }
                             else
                             {
+                                CboStoreCD.Enabled = false;
                                 SetFuncKeyAll(this, "111111000000");
                             }
 
@@ -927,14 +925,14 @@ namespace ShiireNyuuryokuFromNyuuka
                                 switch (w_Col)
                                 {
                                     case (int)ClsGridShiire.ColNO.PurchaseSu:
-                                    case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
+                                    case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
                                     case (int)ClsGridShiire.ColNO.AdjustmentGaku:
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                         break;
                                     case (int)ClsGridShiire.ColNO.DifferenceFlg:
                                         //Form.発注単価 ≠	Form.単価 の時、Form.差異CheckBoxを入力可能にする
                                         //Form.発注単価 ＝	Form.単価 の時、Form.差異CheckBoxを入力不可にする Form.差異CheckBoxをOffにする
-                                        if (mGrid.g_DArray[pRow].PurchaserUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
+                                        if (mGrid.g_DArray[pRow].PurchaseUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
                                         {
                                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                         }
@@ -959,14 +957,14 @@ namespace ShiireNyuuryokuFromNyuuka
                             switch (w_Col)
                             {
                                 case (int)ClsGridShiire.ColNO.PurchaseSu:
-                                case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
+                                case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
                                 case (int)ClsGridShiire.ColNO.AdjustmentGaku:
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     break;
                                 case (int)ClsGridShiire.ColNO.DifferenceFlg:
                                     //Form.発注単価 ≠	Form.単価 の時、Form.差異CheckBoxを入力可能にする
                                     //Form.発注単価 ＝	Form.単価 の時、Form.差異CheckBoxを入力不可にする Form.差異CheckBoxをOffにする
-                                    if (mGrid.g_DArray[pRow].PurchaserUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
+                                    if (mGrid.g_DArray[pRow].PurchaseUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
                                     {
                                         mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                     }
@@ -985,9 +983,9 @@ namespace ShiireNyuuryokuFromNyuuka
 
             //Form.発注単価 ≠	Form.単価 の時、Form.差異CheckBoxを入力可能にする
             //Form.発注単価 ＝	Form.単価 の時、Form.差異CheckBoxを入力不可にする Form.差異CheckBoxをOffにする
-            if (pCol == (int)ClsGridShiire.ColNO.PurchaserUnitPrice)
+            if (pCol == (int)ClsGridShiire.ColNO.PurchaseUnitPrice)
             {
-                if (mGrid.g_DArray[pRow].PurchaserUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
+                if (mGrid.g_DArray[pRow].PurchaseUnitPrice != mGrid.g_DArray[pRow].OrderUnitPrice)
                 {
                     mGrid.g_MK_State[(int)ClsGridShiire.ColNO.DifferenceFlg, pRow].Cell_Enabled = true;
                 }
@@ -1023,6 +1021,8 @@ namespace ShiireNyuuryokuFromNyuuka
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+
+                Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();
@@ -1129,12 +1129,14 @@ namespace ShiireNyuuryokuFromNyuuka
                     //選択必須(Entry required)
                     if (!RequireCheck(new Control[] { keyControls[index] }))
                     {
+                        CboStoreCD.MoveNext = false;
                         return false;
                     }
                     else
                     {
                         if (!base.CheckAvailableStores(CboStoreCD.SelectedValue.ToString()))
                         {
+                            CboStoreCD.MoveNext = false;
                             bbl.ShowMessage("E141");
                             CboStoreCD.Focus();
                             return false;
@@ -1335,10 +1337,12 @@ namespace ShiireNyuuryokuFromNyuuka
 
                     mGrid.g_DArray[i].ArrivalSu = bbl.Z_SetStr(row["ArrivalSu"]);   // 
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["DO_OrderUnitPrice"]);   // 
-                    mGrid.g_DArray[i].PurchaserUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
+                    mGrid.g_DArray[i].PurchaseUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
                     mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]));   // 
                     mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
                     mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(row["D_CalculationGaku"]);   // 
+
+                    CheckGrid((int)ClsGridShiire.ColNO.AdjustmentGaku, i, true);
 
                     mGrid.g_DArray[i].CommentInStore = row["D_CommentInStore"].ToString();   // 
                     mGrid.g_DArray[i].CommentOutStore = row["D_CommentOutStore"].ToString();   // 
@@ -1375,14 +1379,6 @@ namespace ShiireNyuuryokuFromNyuuka
                 //配列の内容を画面にセット
                 mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
             }
-            //else if(OperationMode == EOperationMode.INSERT)
-            //{
-            //    //複写コピー後
-            //    S_BodySeigyo(0, 1);
-            //    //配列の内容を画面にセット
-            //    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
-            //    detailControls[(int)EIndex.PurchaseDate].Focus();
-            //}
             else
             {
                 S_BodySeigyo(2, 0);
@@ -1472,7 +1468,7 @@ namespace ShiireNyuuryokuFromNyuuka
 
                         mGrid.g_DArray[i].ArrivalSu = bbl.Z_SetStr(row["ArrivalSu"]);   // 
                         mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["DO_OrderUnitPrice"]);   // 
-                        mGrid.g_DArray[i].PurchaserUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
+                        mGrid.g_DArray[i].PurchaseUnitPrice = bbl.Z_SetStr(row["PurchaserUnitPrice"]);
                         mGrid.g_DArray[i].AdjustmentGaku = bbl.Z_SetStr(bbl.Z_Set(row["D_AdjustmentGaku"]));   // 
                         mGrid.g_DArray[i].PurchaseGaku = bbl.Z_SetStr(row["D_PurchaseGaku"]);   // 
                         mGrid.g_DArray[i].CalculationGaku = bbl.Z_SetStr(row["D_CalculationGaku"]);   // 
@@ -1940,7 +1936,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     }
                     else
                     {
-                        mGrid.g_DArray[row].TaxRateName = "非税";
+                        mGrid.g_DArray[row].TaxRateName = "非課税";
                     }
 
                     break;
@@ -1955,11 +1951,11 @@ namespace ShiireNyuuryokuFromNyuuka
                     }
                     break;
 
-                case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
+                case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
                     //入力無くても良い(It is not necessary to input)
-                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].PurchaserUnitPrice))
+                    if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].PurchaseUnitPrice))
                     {
-                        mGrid.g_DArray[row].PurchaserUnitPrice = "0";
+                        mGrid.g_DArray[row].PurchaseUnitPrice = "0";
                     }
                     Grid_NotFocus(col, row);
                     break;
@@ -1977,38 +1973,40 @@ namespace ShiireNyuuryokuFromNyuuka
             switch (col)
             {
                 case (int)ClsGridShiire.ColNO.PurchaseSu:
-                case (int)ClsGridShiire.ColNO.PurchaserUnitPrice: //単価 
+                case (int)ClsGridShiire.ColNO.PurchaseUnitPrice: //単価 
                 case (int)ClsGridShiire.ColNO.AdjustmentGaku: //調整額
                     //入力された場合、以下を再計算
                     //計算仕入額←	form.仕入数	×	form.仕入単価
-                    mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaserUnitPrice));
-                    //計算仕入額＋調整額＝仕入額
+                    mGrid.g_DArray[row].CalculationGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].PurchaseSu) * bbl.Z_Set(mGrid.g_DArray[row].PurchaseUnitPrice));
+                    //仕入額←	計算仕入額＋調整額
                     mGrid.g_DArray[row].PurchaseGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku) + bbl.Z_Set(mGrid.g_DArray[row].AdjustmentGaku)); 
                      //消費税額(Hidden)←Function_消費税計算.out金額１	
                      decimal zei;
                     decimal zeiritsu;
-                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku), mGrid.g_DArray[row].TaxRateFLG,out zei,out zeiritsu, ymd);
+                    decimal zeikomi = bbl.GetZeikomiKingaku(bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku), mGrid.g_DArray[row].TaxRateFLG,out zei,out zeiritsu, ymd);
                     mGrid.g_DArray[row].PurchaseTax = zei;
                     mGrid.g_DArray[row].PurchaseGaku10 = 0;
                     mGrid.g_DArray[row].PurchaseGaku8 = 0;
                     mGrid.g_DArray[row].TaxRate = zeiritsu;
 
                     //通常税率仕入額(Hidden)M_SKU.TaxRateFLG＝1	の時の仕入額
-                    if (mGrid.g_DArray[row].TaxRateFLG.Equals(1))
+                    if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.TSUJYO))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku10 =bbl.Z_Set( mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku10 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
                     //軽減税率仕入額(Hidden)M_SKU.TaxRateFLG＝2	の時の仕入額
-                    else if (mGrid.g_DArray[row].TaxRateFLG.Equals(2))
+                    else if (mGrid.g_DArray[row].TaxRateFLG.Equals((int)ETaxRateFLG.KEIGEN))
                     {
-                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].CalculationGaku);
+                        mGrid.g_DArray[row].PurchaseGaku8 = bbl.Z_Set(mGrid.g_DArray[row].PurchaseGaku);
                     }
 
                     //各金額項目の再計算必要
                     if (chkAll == false)
+                    {
                         CalcKin();
-
-                        break;
+                        CalcZei();
+                    }
+                    break;
 
             }
 
@@ -2050,7 +2048,64 @@ namespace ShiireNyuuryokuFromNyuuka
             //mZei8 = zei8;
 
         }
+        private void CalcAdjust()
+        {
+            //Form.Detail.調整額のTotal	(調整額が変わった時のみ再計算、表示）	
+            decimal sumKin = 0;
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                {
+                    sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
+                }
+            }
+            detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(sumKin);
+        }
+        private void CalcZei()
+        {
+            //Form.Hedder.税計算が「明細単位」・「締単位」の場合
+            if (mTaxTiming == "1" || mTaxTiming == "3")
+            {
+                //Form.Detail.消費税額(Hidden)(仕入額が変わった時のみ再計算、表示）
+                decimal sumZei = 0;
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                {
+                    if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                    {
+                        sumZei += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax);
+                    }
+                }
+                detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(sumZei);
+            }
+            else
+            {
+                decimal sumKin10 = 0;
+                decimal sumKin8 = 0;
+                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                {
+                    if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
+                    {
+                        sumKin10 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku10);
+                        sumKin8 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku8);
+                    }
+                }
 
+                //Form.Hedder.税計算が「伝票単位」の場合(仕入額が変わった時のみ再計算、表示）
+                //下記(A)＋(B)
+                //(A)Function_消費税計算.out金額１	
+                //in計算モード                  ←	1
+                //in基準日                      ←	Form.仕入日
+                //in軽減税率FLG                 ←	1
+                //in金額                        ←	通常税率仕入額(Hidden)のTotal
+                decimal zei;
+                decimal kin = bbl.GetZeikomiKingaku(sumKin10, (int)ETaxRateFLG.TSUJYO, out zei, detailControls[(int)EIndex.PurchaseDate].Text);
+
+                //(B)Function_消費税計算.out金額１
+                decimal zei2;
+                decimal kin2 = bbl.GetZeikomiKingaku(sumKin8, (int)ETaxRateFLG.KEIGEN, out zei2, detailControls[(int)EIndex.PurchaseDate].Text);
+                detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei + zei2);
+            }
+        }
         /// <summary>
         /// 画面情報をセット
         /// </summary>
@@ -2171,7 +2226,7 @@ namespace ShiireNyuuryokuFromNyuuka
                         , bbl.Z_Set(mGrid.g_DArray[RW].OldPurchaseSu)
                         , mGrid.g_DArray[RW].TaniCD == "" ? null : mGrid.g_DArray[RW].TaniCD
                         , mGrid.g_DArray[RW].TaniName == "" ? null : mGrid.g_DArray[RW].TaniName
-                        , bbl.Z_Set(mGrid.g_DArray[RW].PurchaserUnitPrice)
+                        , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseUnitPrice)
                         , bbl.Z_Set(mGrid.g_DArray[RW].CalculationGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku)
                         , bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku)
@@ -2533,22 +2588,6 @@ namespace ShiireNyuuryokuFromNyuuka
                     }
 
                 case 8: //F9:検索
-                    //EsearchKbn kbn = EsearchKbn.Null;
-                    //if (mGrid.F_Search_Ctrl_MK(ActiveControl, out int w_Col, out int w_CtlRow) == false)
-                    //{
-                    //    return;
-                    //}
-
-                    //switch (w_Col)
-                    //{
-                    //    case (int)ClsGridShiire.ColNO.JanCD:
-                    //        //商品検索
-                    //        kbn = EsearchKbn.Product;
-                    //        break;
-                    //}
-                    //if (kbn != EsearchKbn.Null)
-                    //    SearchData(kbn, previousCtrl);
-
                     break;
                 case 9://納品データ(F10)
                     ExecDispNohin(1);
@@ -2660,7 +2699,7 @@ namespace ShiireNyuuryokuFromNyuuka
                     {
                         if (index == (int)EIndex.StoreCD)
                         {
-                            detailControls[(int)EIndex.PurchaseDate].Focus();
+                            detailControls[(int)EIndex.CalledVendorCD].Focus();
                         }
                         else if(index == (int)EIndex.PurchaseNO)
                             if(OperationMode == EOperationMode.UPDATE)
@@ -2907,8 +2946,8 @@ namespace ShiireNyuuryokuFromNyuuka
                             }
                             break;
 
-                        case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
-                            if (!mGrid.g_DArray[w_Row].PurchaserUnitPrice.Equals(w_ActCtl.Text))
+                        case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
+                            if (!mGrid.g_DArray[w_Row].PurchaseUnitPrice.Equals(w_ActCtl.Text))
                             {
                                 changeFlg = true;
                             }
@@ -2940,63 +2979,12 @@ namespace ShiireNyuuryokuFromNyuuka
                         switch (CL)
                         {
                             case (int)ClsGridShiire.ColNO.PurchaseSu:
-                            case (int)ClsGridShiire.ColNO.PurchaserUnitPrice:
-                                //Form.Hedder.税計算が「明細単位」・「締単位」の場合
-                                if (mTaxTiming == "1" || mTaxTiming == "3")
-                                {
-                                    //Form.Detail.消費税額(Hidden)(仕入額が変わった時のみ再計算、表示）
-                                    decimal sumZei = 0;
-                                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                                    {
-                                        if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
-                                        {
-                                            sumZei += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseTax);
-                                        }
-                                    }
-                                    detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(sumZei);
-                                }
-                                else
-                                {
-                                    decimal sumKin10 = 0;
-                                    decimal sumKin8 = 0;
-                                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                                    {
-                                        if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
-                                        {
-                                            sumKin10 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku10);
-                                            sumKin8 += bbl.Z_Set(mGrid.g_DArray[RW].PurchaseGaku8);
-                                        }
-                                    }
-
-                                    //Form.Hedder.税計算が「伝票単位」の場合(仕入額が変わった時のみ再計算、表示）
-                                    //下記(A)＋(B)
-                                    //(A)Function_消費税計算.out金額１	
-                                    //in計算モード                  ←	1
-                                    //in基準日                      ←	Form.仕入日
-                                    //in軽減税率FLG                 ←	1
-                                    //in金額                        ←	通常税率仕入額(Hidden)のTotal
-                                    decimal zei;
-                                    decimal kin = bbl.GetZeikomiKingaku(sumKin10, mGrid.g_DArray[w_Row].TaxRateFLG, out zei, detailControls[(int)EIndex.PurchaseDate].Text);
-
-                                    //(B)Function_消費税計算.out金額１
-                                    decimal zei2;
-                                    decimal kin2 = bbl.GetZeikomiKingaku(sumKin8, mGrid.g_DArray[w_Row].TaxRateFLG, out zei2, detailControls[(int)EIndex.PurchaseDate].Text);
-                                    detailControls[(int)EIndex.PurchaseTax].Text = bbl.Z_SetStr(zei+zei2);
-                                }
+                            case (int)ClsGridShiire.ColNO.PurchaseUnitPrice:
+                                CalcZei();
                                 break;
 
                             case (int)ClsGridShiire.ColNO.AdjustmentGaku:
-                                //Form.Detail.調整額のTotal	(調整額が変わった時のみ再計算、表示）	
-                                decimal sumKin = 0;
-                                for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
-                                {
-                                    if (mGrid.g_DArray[RW].Chk || OperationMode != EOperationMode.INSERT)
-                                    {
-                                        sumKin += bbl.Z_Set(mGrid.g_DArray[RW].AdjustmentGaku);
-                                    }
-                                }
-
-                                detailControls[(int)EIndex.AdjustmentGaku].Text = bbl.Z_SetStr(sumKin);
+                                CalcAdjust();
                                 break;
                         }
                     }

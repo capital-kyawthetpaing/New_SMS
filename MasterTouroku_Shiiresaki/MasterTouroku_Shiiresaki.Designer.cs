@@ -194,6 +194,7 @@
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
             this.ScVendor.CodeWidth = 130;
+            this.ScVendor.CodeWidth1 = 130;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -203,6 +204,7 @@
             this.ScVendor.Location = new System.Drawing.Point(96, -2);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
+            this.ScVendor.NameWidth = 280;
             this.ScVendor.SearchEnable = true;
             this.ScVendor.Size = new System.Drawing.Size(163, 50);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -265,6 +267,7 @@
             this.ScCopyVendor.ChangeDateWidth = 100;
             this.ScCopyVendor.Code = "";
             this.ScCopyVendor.CodeWidth = 130;
+            this.ScCopyVendor.CodeWidth1 = 130;
             this.ScCopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyVendor.DataCheck = false;
             this.ScCopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -274,6 +277,7 @@
             this.ScCopyVendor.Location = new System.Drawing.Point(94, -3);
             this.ScCopyVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyVendor.Name = "ScCopyVendor";
+            this.ScCopyVendor.NameWidth = 280;
             this.ScCopyVendor.SearchEnable = true;
             this.ScCopyVendor.Size = new System.Drawing.Size(163, 50);
             this.ScCopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -424,9 +428,9 @@
             this.txtRegisterNum.isMaxLengthErr = false;
             this.txtRegisterNum.IsNumber = true;
             this.txtRegisterNum.IsShop = false;
-            this.txtRegisterNum.Length = 15;
+            this.txtRegisterNum.Length = 13;
             this.txtRegisterNum.Location = new System.Drawing.Point(106, 649);
-            this.txtRegisterNum.MaxLength = 15;
+            this.txtRegisterNum.MaxLength = 13;
             this.txtRegisterNum.MoveNext = true;
             this.txtRegisterNum.Name = "txtRegisterNum";
             this.txtRegisterNum.Size = new System.Drawing.Size(110, 19);
@@ -489,7 +493,7 @@
             this.cboAmountFractionKBN.Flag = 0;
             this.cboAmountFractionKBN.FormattingEnabled = true;
             this.cboAmountFractionKBN.Length = 10;
-            this.cboAmountFractionKBN.Location = new System.Drawing.Point(425, 422);
+            this.cboAmountFractionKBN.Location = new System.Drawing.Point(467, 422);
             this.cboAmountFractionKBN.MaxLength = 10;
             this.cboAmountFractionKBN.MoveNext = true;
             this.cboAmountFractionKBN.Name = "cboAmountFractionKBN";
@@ -505,7 +509,7 @@
             this.cboTaxFractionKBN.Flag = 0;
             this.cboTaxFractionKBN.FormattingEnabled = true;
             this.cboTaxFractionKBN.Length = 10;
-            this.cboTaxFractionKBN.Location = new System.Drawing.Point(425, 403);
+            this.cboTaxFractionKBN.Location = new System.Drawing.Point(467, 403);
             this.cboTaxFractionKBN.MaxLength = 10;
             this.cboTaxFractionKBN.MoveNext = true;
             this.cboTaxFractionKBN.Name = "cboTaxFractionKBN";
@@ -521,7 +525,7 @@
             this.cboTaxTiming.Flag = 0;
             this.cboTaxTiming.FormattingEnabled = true;
             this.cboTaxTiming.Length = 10;
-            this.cboTaxTiming.Location = new System.Drawing.Point(425, 385);
+            this.cboTaxTiming.Location = new System.Drawing.Point(467, 385);
             this.cboTaxTiming.MaxLength = 10;
             this.cboTaxTiming.MoveNext = true;
             this.cboTaxTiming.Name = "cboTaxTiming";
@@ -537,7 +541,7 @@
             this.ckM_Label39.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label39.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label39.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label39.Location = new System.Drawing.Point(314, 427);
+            this.ckM_Label39.Location = new System.Drawing.Point(356, 427);
             this.ckM_Label39.Name = "ckM_Label39";
             this.ckM_Label39.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label39.TabIndex = 74;
@@ -554,7 +558,7 @@
             this.ckM_Label38.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label38.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label38.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label38.Location = new System.Drawing.Point(327, 407);
+            this.ckM_Label38.Location = new System.Drawing.Point(369, 407);
             this.ckM_Label38.Name = "ckM_Label38";
             this.ckM_Label38.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label38.TabIndex = 73;
@@ -571,7 +575,7 @@
             this.ckM_Label37.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label37.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label37.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label37.Location = new System.Drawing.Point(353, 389);
+            this.ckM_Label37.Location = new System.Drawing.Point(395, 389);
             this.ckM_Label37.Name = "ckM_Label37";
             this.ckM_Label37.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label37.TabIndex = 72;
@@ -597,12 +601,12 @@
             this.txtVendorShortName.isMaxLengthErr = false;
             this.txtVendorShortName.IsNumber = true;
             this.txtVendorShortName.IsShop = false;
-            this.txtVendorShortName.Length = 10;
+            this.txtVendorShortName.Length = 20;
             this.txtVendorShortName.Location = new System.Drawing.Point(107, 47);
-            this.txtVendorShortName.MaxLength = 10;
+            this.txtVendorShortName.MaxLength = 20;
             this.txtVendorShortName.MoveNext = true;
             this.txtVendorShortName.Name = "txtVendorShortName";
-            this.txtVendorShortName.Size = new System.Drawing.Size(110, 19);
+            this.txtVendorShortName.Size = new System.Drawing.Size(130, 19);
             this.txtVendorShortName.TabIndex = 2;
             this.txtVendorShortName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtVendorShortName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtVendorShortName_KeyDown);
@@ -641,18 +645,19 @@
             this.txtNotDisplay.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtNotDisplay.BackColor = System.Drawing.Color.White;
             this.txtNotDisplay.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtNotDisplay.F_focus = false;
             this.txtNotDisplay.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtNotDisplay.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtNotDisplay.Length = 50;
+            this.txtNotDisplay.Length = 500;
             this.txtNotDisplay.Location = new System.Drawing.Point(765, 682);
-            this.txtNotDisplay.MaxLength = 50;
+            this.txtNotDisplay.MaxLength = 500;
             this.txtNotDisplay.Mdea = false;
             this.txtNotDisplay.Mfocus = false;
             this.txtNotDisplay.MoveNext = true;
             this.txtNotDisplay.Multiline = true;
             this.txtNotDisplay.Name = "txtNotDisplay";
             this.txtNotDisplay.RowCount = 5;
-            this.txtNotDisplay.Size = new System.Drawing.Size(500, 95);
+            this.txtNotDisplay.Size = new System.Drawing.Size(800, 95);
             this.txtNotDisplay.TabIndex = 43;
             this.txtNotDisplay.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
@@ -661,18 +666,19 @@
             this.txtDisplayNote.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txtDisplayNote.BackColor = System.Drawing.Color.White;
             this.txtDisplayNote.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txtDisplayNote.F_focus = false;
             this.txtDisplayNote.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.txtDisplayNote.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.txtDisplayNote.Length = 50;
+            this.txtDisplayNote.Length = 500;
             this.txtDisplayNote.Location = new System.Drawing.Point(765, 579);
-            this.txtDisplayNote.MaxLength = 50;
+            this.txtDisplayNote.MaxLength = 500;
             this.txtDisplayNote.Mdea = false;
             this.txtDisplayNote.Mfocus = false;
             this.txtDisplayNote.MoveNext = true;
             this.txtDisplayNote.Multiline = true;
             this.txtDisplayNote.Name = "txtDisplayNote";
             this.txtDisplayNote.RowCount = 5;
-            this.txtDisplayNote.Size = new System.Drawing.Size(500, 95);
+            this.txtDisplayNote.Size = new System.Drawing.Size(800, 95);
             this.txtDisplayNote.TabIndex = 42;
             this.txtDisplayNote.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
@@ -890,7 +896,8 @@
             this.ScStaffCD.ChangeDate = "";
             this.ScStaffCD.ChangeDateWidth = 100;
             this.ScStaffCD.Code = "";
-            this.ScStaffCD.CodeWidth = 100;
+            this.ScStaffCD.CodeWidth = 70;
+            this.ScStaffCD.CodeWidth1 = 70;
             this.ScStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaffCD.DataCheck = false;
             this.ScStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -900,8 +907,9 @@
             this.ScStaffCD.Location = new System.Drawing.Point(107, 669);
             this.ScStaffCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaffCD.Name = "ScStaffCD";
+            this.ScStaffCD.NameWidth = 250;
             this.ScStaffCD.SearchEnable = true;
-            this.ScStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.ScStaffCD.Size = new System.Drawing.Size(354, 27);
             this.ScStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaffCD.TabIndex = 37;
             this.ScStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -929,6 +937,7 @@
             this.ScKouzaCD.ChangeDateWidth = 100;
             this.ScKouzaCD.Code = "";
             this.ScKouzaCD.CodeWidth = 30;
+            this.ScKouzaCD.CodeWidth1 = 30;
             this.ScKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScKouzaCD.DataCheck = false;
             this.ScKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -938,6 +947,7 @@
             this.ScKouzaCD.Location = new System.Drawing.Point(107, 582);
             this.ScKouzaCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScKouzaCD.Name = "ScKouzaCD";
+            this.ScKouzaCD.NameWidth = 350;
             this.ScKouzaCD.SearchEnable = true;
             this.ScKouzaCD.Size = new System.Drawing.Size(414, 27);
             this.ScKouzaCD.Stype = Search.CKM_SearchControl.SearchType.銀行口座;
@@ -1124,6 +1134,7 @@
             this.ScBranchCD.ChangeDateWidth = 100;
             this.ScBranchCD.Code = "";
             this.ScBranchCD.CodeWidth = 40;
+            this.ScBranchCD.CodeWidth1 = 40;
             this.ScBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBranchCD.DataCheck = false;
             this.ScBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1133,6 +1144,7 @@
             this.ScBranchCD.Location = new System.Drawing.Point(107, 489);
             this.ScBranchCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBranchCD.Name = "ScBranchCD";
+            this.ScBranchCD.NameWidth = 350;
             this.ScBranchCD.SearchEnable = true;
             this.ScBranchCD.Size = new System.Drawing.Size(424, 27);
             this.ScBranchCD.Stype = Search.CKM_SearchControl.SearchType.銀行支店;
@@ -1151,6 +1163,7 @@
             this.ScBankCD.ChangeDateWidth = 100;
             this.ScBankCD.Code = "";
             this.ScBankCD.CodeWidth = 40;
+            this.ScBankCD.CodeWidth1 = 40;
             this.ScBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBankCD.DataCheck = false;
             this.ScBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1160,6 +1173,7 @@
             this.ScBankCD.Location = new System.Drawing.Point(107, 464);
             this.ScBankCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScBankCD.Name = "ScBankCD";
+            this.ScBankCD.NameWidth = 350;
             this.ScBankCD.SearchEnable = true;
             this.ScBankCD.Size = new System.Drawing.Size(424, 28);
             this.ScBankCD.Stype = Search.CKM_SearchControl.SearchType.銀行;
@@ -1213,7 +1227,8 @@
             this.ScMoneyPayeeCD.ChangeDate = "";
             this.ScMoneyPayeeCD.ChangeDateWidth = 100;
             this.ScMoneyPayeeCD.Code = "";
-            this.ScMoneyPayeeCD.CodeWidth = 100;
+            this.ScMoneyPayeeCD.CodeWidth = 130;
+            this.ScMoneyPayeeCD.CodeWidth1 = 130;
             this.ScMoneyPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMoneyPayeeCD.DataCheck = false;
             this.ScMoneyPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1223,8 +1238,9 @@
             this.ScMoneyPayeeCD.Location = new System.Drawing.Point(107, 350);
             this.ScMoneyPayeeCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScMoneyPayeeCD.Name = "ScMoneyPayeeCD";
+            this.ScMoneyPayeeCD.NameWidth = 320;
             this.ScMoneyPayeeCD.SearchEnable = true;
-            this.ScMoneyPayeeCD.Size = new System.Drawing.Size(415, 27);
+            this.ScMoneyPayeeCD.Size = new System.Drawing.Size(484, 27);
             this.ScMoneyPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
             this.ScMoneyPayeeCD.TabIndex = 17;
             this.ScMoneyPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1240,7 +1256,8 @@
             this.ScPayeeCD.ChangeDate = "";
             this.ScPayeeCD.ChangeDateWidth = 100;
             this.ScPayeeCD.Code = "";
-            this.ScPayeeCD.CodeWidth = 100;
+            this.ScPayeeCD.CodeWidth = 130;
+            this.ScPayeeCD.CodeWidth1 = 130;
             this.ScPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPayeeCD.DataCheck = false;
             this.ScPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -1250,8 +1267,9 @@
             this.ScPayeeCD.Location = new System.Drawing.Point(107, 324);
             this.ScPayeeCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScPayeeCD.Name = "ScPayeeCD";
+            this.ScPayeeCD.NameWidth = 320;
             this.ScPayeeCD.SearchEnable = true;
-            this.ScPayeeCD.Size = new System.Drawing.Size(415, 28);
+            this.ScPayeeCD.Size = new System.Drawing.Size(484, 28);
             this.ScPayeeCD.Stype = Search.CKM_SearchControl.SearchType.Supplier;
             this.ScPayeeCD.TabIndex = 16;
             this.ScPayeeCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1278,9 +1296,9 @@
             this.txtPaymentPlanDay.isMaxLengthErr = false;
             this.txtPaymentPlanDay.IsNumber = true;
             this.txtPaymentPlanDay.IsShop = false;
-            this.txtPaymentPlanDay.Length = 2;
+            this.txtPaymentPlanDay.Length = 1;
             this.txtPaymentPlanDay.Location = new System.Drawing.Point(107, 423);
-            this.txtPaymentPlanDay.MaxLength = 2;
+            this.txtPaymentPlanDay.MaxLength = 1;
             this.txtPaymentPlanDay.MoveNext = true;
             this.txtPaymentPlanDay.Name = "txtPaymentPlanDay";
             this.txtPaymentPlanDay.Size = new System.Drawing.Size(20, 19);
@@ -1322,9 +1340,9 @@
             this.txtPaymentCloseDay.isMaxLengthErr = false;
             this.txtPaymentCloseDay.IsNumber = true;
             this.txtPaymentCloseDay.IsShop = false;
-            this.txtPaymentCloseDay.Length = 2;
+            this.txtPaymentCloseDay.Length = 1;
             this.txtPaymentCloseDay.Location = new System.Drawing.Point(107, 385);
-            this.txtPaymentCloseDay.MaxLength = 2;
+            this.txtPaymentCloseDay.MaxLength = 1;
             this.txtPaymentCloseDay.MoveNext = true;
             this.txtPaymentCloseDay.Name = "txtPaymentCloseDay";
             this.txtPaymentCloseDay.Size = new System.Drawing.Size(20, 19);
@@ -1350,12 +1368,12 @@
             this.txtFaxno.isMaxLengthErr = false;
             this.txtFaxno.IsNumber = true;
             this.txtFaxno.IsShop = false;
-            this.txtFaxno.Length = 11;
+            this.txtFaxno.Length = 15;
             this.txtFaxno.Location = new System.Drawing.Point(107, 303);
-            this.txtFaxno.MaxLength = 11;
+            this.txtFaxno.MaxLength = 15;
             this.txtFaxno.MoveNext = true;
             this.txtFaxno.Name = "txtFaxno";
-            this.txtFaxno.Size = new System.Drawing.Size(100, 19);
+            this.txtFaxno.Size = new System.Drawing.Size(150, 19);
             this.txtFaxno.TabIndex = 15;
             this.txtFaxno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1376,12 +1394,12 @@
             this.txtTelno.isMaxLengthErr = false;
             this.txtTelno.IsNumber = true;
             this.txtTelno.IsShop = false;
-            this.txtTelno.Length = 11;
+            this.txtTelno.Length = 15;
             this.txtTelno.Location = new System.Drawing.Point(107, 284);
-            this.txtTelno.MaxLength = 11;
+            this.txtTelno.MaxLength = 15;
             this.txtTelno.MoveNext = true;
             this.txtTelno.Name = "txtTelno";
-            this.txtTelno.Size = new System.Drawing.Size(100, 19);
+            this.txtTelno.Size = new System.Drawing.Size(150, 19);
             this.txtTelno.TabIndex = 14;
             this.txtTelno.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1402,12 +1420,12 @@
             this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
-            this.txtMailAddress.Length = 20;
+            this.txtMailAddress.Length = 100;
             this.txtMailAddress.Location = new System.Drawing.Point(107, 265);
-            this.txtMailAddress.MaxLength = 20;
+            this.txtMailAddress.MaxLength = 100;
             this.txtMailAddress.MoveNext = true;
             this.txtMailAddress.Name = "txtMailAddress";
-            this.txtMailAddress.Size = new System.Drawing.Size(200, 19);
+            this.txtMailAddress.Size = new System.Drawing.Size(350, 19);
             this.txtMailAddress.TabIndex = 13;
             this.txtMailAddress.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1429,12 +1447,12 @@
             this.txtAddress2.isMaxLengthErr = false;
             this.txtAddress2.IsNumber = true;
             this.txtAddress2.IsShop = false;
-            this.txtAddress2.Length = 40;
+            this.txtAddress2.Length = 80;
             this.txtAddress2.Location = new System.Drawing.Point(107, 240);
-            this.txtAddress2.MaxLength = 40;
+            this.txtAddress2.MaxLength = 80;
             this.txtAddress2.MoveNext = true;
             this.txtAddress2.Name = "txtAddress2";
-            this.txtAddress2.Size = new System.Drawing.Size(400, 19);
+            this.txtAddress2.Size = new System.Drawing.Size(550, 19);
             this.txtAddress2.TabIndex = 12;
             this.txtAddress2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1456,12 +1474,12 @@
             this.txtAddress1.isMaxLengthErr = false;
             this.txtAddress1.IsNumber = true;
             this.txtAddress1.IsShop = false;
-            this.txtAddress1.Length = 40;
+            this.txtAddress1.Length = 80;
             this.txtAddress1.Location = new System.Drawing.Point(107, 221);
-            this.txtAddress1.MaxLength = 40;
+            this.txtAddress1.MaxLength = 80;
             this.txtAddress1.MoveNext = true;
             this.txtAddress1.Name = "txtAddress1";
-            this.txtAddress1.Size = new System.Drawing.Size(400, 19);
+            this.txtAddress1.Size = new System.Drawing.Size(550, 19);
             this.txtAddress1.TabIndex = 11;
             this.txtAddress1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1504,6 +1522,7 @@
             this.txtZipCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtZipCD1.DecimalPlace = 0;
             this.txtZipCD1.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.txtZipCD1.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
             this.txtZipCD1.isEnterKeyDown = false;
@@ -1538,12 +1557,12 @@
             this.txtVendorStaffName.isMaxLengthErr = false;
             this.txtVendorStaffName.IsNumber = true;
             this.txtVendorStaffName.IsShop = false;
-            this.txtVendorStaffName.Length = 25;
+            this.txtVendorStaffName.Length = 40;
             this.txtVendorStaffName.Location = new System.Drawing.Point(107, 177);
-            this.txtVendorStaffName.MaxLength = 25;
+            this.txtVendorStaffName.MaxLength = 40;
             this.txtVendorStaffName.MoveNext = true;
             this.txtVendorStaffName.Name = "txtVendorStaffName";
-            this.txtVendorStaffName.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorStaffName.Size = new System.Drawing.Size(320, 19);
             this.txtVendorStaffName.TabIndex = 8;
             this.txtVendorStaffName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1565,12 +1584,12 @@
             this.txtPositionName.isMaxLengthErr = false;
             this.txtPositionName.IsNumber = true;
             this.txtPositionName.IsShop = false;
-            this.txtPositionName.Length = 25;
+            this.txtPositionName.Length = 40;
             this.txtPositionName.Location = new System.Drawing.Point(107, 158);
-            this.txtPositionName.MaxLength = 25;
+            this.txtPositionName.MaxLength = 40;
             this.txtPositionName.MoveNext = true;
             this.txtPositionName.Name = "txtPositionName";
-            this.txtPositionName.Size = new System.Drawing.Size(250, 19);
+            this.txtPositionName.Size = new System.Drawing.Size(320, 19);
             this.txtPositionName.TabIndex = 7;
             this.txtPositionName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1592,12 +1611,12 @@
             this.txtPostName.isMaxLengthErr = false;
             this.txtPostName.IsNumber = true;
             this.txtPostName.IsShop = false;
-            this.txtPostName.Length = 25;
+            this.txtPostName.Length = 40;
             this.txtPostName.Location = new System.Drawing.Point(107, 139);
-            this.txtPostName.MaxLength = 25;
+            this.txtPostName.MaxLength = 40;
             this.txtPostName.MoveNext = true;
             this.txtPostName.Name = "txtPostName";
-            this.txtPostName.Size = new System.Drawing.Size(250, 19);
+            this.txtPostName.Size = new System.Drawing.Size(320, 19);
             this.txtPostName.TabIndex = 6;
             this.txtPostName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1619,12 +1638,12 @@
             this.txtLongName2.isMaxLengthErr = false;
             this.txtLongName2.IsNumber = true;
             this.txtLongName2.IsShop = false;
-            this.txtLongName2.Length = 40;
+            this.txtLongName2.Length = 80;
             this.txtLongName2.Location = new System.Drawing.Point(107, 115);
-            this.txtLongName2.MaxLength = 40;
+            this.txtLongName2.MaxLength = 80;
             this.txtLongName2.MoveNext = true;
             this.txtLongName2.Name = "txtLongName2";
-            this.txtLongName2.Size = new System.Drawing.Size(400, 19);
+            this.txtLongName2.Size = new System.Drawing.Size(550, 19);
             this.txtLongName2.TabIndex = 5;
             this.txtLongName2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1646,12 +1665,12 @@
             this.txtLongName1.isMaxLengthErr = false;
             this.txtLongName1.IsNumber = true;
             this.txtLongName1.IsShop = false;
-            this.txtLongName1.Length = 40;
+            this.txtLongName1.Length = 80;
             this.txtLongName1.Location = new System.Drawing.Point(107, 96);
-            this.txtLongName1.MaxLength = 40;
+            this.txtLongName1.MaxLength = 80;
             this.txtLongName1.MoveNext = true;
             this.txtLongName1.Name = "txtLongName1";
-            this.txtLongName1.Size = new System.Drawing.Size(400, 19);
+            this.txtLongName1.Size = new System.Drawing.Size(550, 19);
             this.txtLongName1.TabIndex = 4;
             this.txtLongName1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1673,12 +1692,12 @@
             this.txtVendorKana.isMaxLengthErr = false;
             this.txtVendorKana.IsNumber = true;
             this.txtVendorKana.IsShop = false;
-            this.txtVendorKana.Length = 25;
+            this.txtVendorKana.Length = 20;
             this.txtVendorKana.Location = new System.Drawing.Point(107, 71);
-            this.txtVendorKana.MaxLength = 25;
+            this.txtVendorKana.MaxLength = 20;
             this.txtVendorKana.MoveNext = true;
             this.txtVendorKana.Name = "txtVendorKana";
-            this.txtVendorKana.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorKana.Size = new System.Drawing.Size(320, 19);
             this.txtVendorKana.TabIndex = 3;
             this.txtVendorKana.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1705,7 +1724,7 @@
             this.txtVendorName.MaxLength = 50;
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.Size = new System.Drawing.Size(250, 19);
+            this.txtVendorName.Size = new System.Drawing.Size(320, 19);
             this.txtVendorName.TabIndex = 1;
             this.txtVendorName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 

@@ -1529,6 +1529,9 @@ namespace Base.Client
                 {
                     (ConTxt as CKM_TextBox).isMaxLengthErr = false;
 
+                    if (!ConTxt.Enabled)    //2020/5/18 add
+                        continue;
+
                     if ((((ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Normal) || (ConTxt as CKM_TextBox).Ctrl_Type == CKM_TextBox.Type.Number) && (ConTxt as CKM_TextBox).Ctrl_Byte == CKM_TextBox.Bytes.半全角)
                     {
                         string str = Encoding.GetEncoding(932).GetByteCount((ConTxt as CKM_TextBox).Text).ToString();
@@ -1858,15 +1861,6 @@ namespace Base.Client
         {
 
             IsmaxTabIndex(e, ActiveControl);
-            //IsmaxTab(e);
-            //if (ActiveControl is CKM_TextBox)
-            //{
-            //    var f = (ActiveControl as CKM_TextBox);
-            //    var gt = f.TabIndex;
-            //}
-
-
-
             if (e.KeyCode == Keys.F12)
             {
                 if (ActiveControl is UserControl)
@@ -1889,11 +1883,11 @@ namespace Base.Client
                         return;
                 }
             }
-            if (e.KeyCode == Keys.Menu)
+            if (e.KeyCode == Keys.Menu || e.KeyCode == Keys.ProcessKey)
             {
                 return;
             }
-            if (e.KeyCode == Keys.Enter  )
+            if (e.KeyCode == Keys.Enter)
             {
                 if (ActiveControl is CKM_TextBox)
                 {
@@ -1954,19 +1948,30 @@ namespace Base.Client
                         else    /// Just a While  Wait not Confirm by PTK  For (Alt+Enter)  Link to Multiline_Textbox
                         {
                             (ActiveControl as CKM_MultiLineTextBox).Focus();
-                           // (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
+                            // (ActiveControl as CKM_MultiLineTextBox).MoveNext = false;
                         }
                     }
                     else if (f == g)
                     {
-                        if (!con.Mdea)
+                        // var d = PreviousCtrl;
+                        if (!con.Mdea && !con.F_focus)
                         {
                             this.SelectNextControl(ActiveControl, true, true, true, true);
+
                         }
                         else
+                        {
                             con.Mdea = false;
+                        }
                     }
+                    else
+                    {
+
+                    }
+
+
                 }
+            
                 else if ((ActiveControl is TextBox))
                 {
                     if ((ActiveControl as TextBox).Multiline)
@@ -1985,7 +1990,8 @@ namespace Base.Client
                 }
                 else
                 {
-
+                    //CheckBoxやRadioButtonのフォーカス移動を自動にされると制御できないため　2020/5/25
+                    //f comment on these place, we can't move another control from radio button or checkbox on Enter Key Press. 2020/06/01
                     this.SelectNextControl(ActiveControl, true, true, true, true);
                 }
             }
@@ -2088,6 +2094,11 @@ namespace Base.Client
                     objExcel = null/* TODO Change to default(_) if this is not a reference type */;
                 }
             }
+        }
+
+        private void FrmMainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            //MoveNextControl(e);
         }
     }
 }
