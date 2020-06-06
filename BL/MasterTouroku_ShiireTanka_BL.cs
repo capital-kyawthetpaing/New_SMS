@@ -34,6 +34,15 @@ namespace BL
             return msdl.M_ItemOrderPrice_SelectFromSKU(mie);
         }
 
+        public DataTable M_ItemOrderPrice_Insert(M_ItemOrderPrice_Entity mie, M_ITEM_Entity mi)
+        {
+            return msdl.M_ItemOrderPrice_Insert(mie, mi);
+        }
+        public DataTable M_ITem_ItemNandPriceoutTax_Select(M_ITEM_Entity mi)
+        {
+            return msdl.M_ITem_ItemNandPriceoutTax_Select(mi);
+        }
+
         public bool M_ITEM_SelectForShiireTanka(M_ITEM_Entity me)
         {
             DataTable dt = msdl.M_ITEM_SelectForShiireTanka(me);
