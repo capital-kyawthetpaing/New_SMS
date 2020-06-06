@@ -78,9 +78,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMasterTouroku_ShiireTanka.resx">
-      <DependentUpon>FrmMasterTouroku_ShiireTanka.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -125,6 +122,10 @@
     <ProjectReference Include="..\Base.Client\Base.Client.csproj">
       <Project>{79AF5F26-A50B-433C-9F87-C9173B9EFE04}</Project>
       <Name>Base.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
+      <Name>BL</Name>
     </ProjectReference>
     <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
       <Project>{472A8D76-1CE3-430E-89FE-373D2F6B1031}</Project>
@@ -175,6 +176,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
