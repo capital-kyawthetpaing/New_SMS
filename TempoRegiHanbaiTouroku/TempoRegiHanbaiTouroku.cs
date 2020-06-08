@@ -93,6 +93,11 @@ namespace TempoRegiHanbaiTouroku
                     //        mParSaleRate = cmds[(int)ECmdLine.PcID + 2];
                     //    }
                 }
+                else
+                {
+                    //M_StaffよりStoreCDを取得
+                    mParStoreCD = StoreCD;
+                }
 
                 //ハスポモードか否か（0 or 1)
                 M_Control_Entity mce = new M_Control_Entity();
@@ -532,6 +537,7 @@ namespace TempoRegiHanbaiTouroku
             ErrorCheck((int)meCol.JANCD,false);
             
             mDiscountKBN = row["DiscountKBN"].ToString();
+            mSaleExcludedFlg = Convert.ToInt16(row["SaleExcludedFlg"]);
 
             txtJanCD.Tag = index;   //選択行の行番号を退避
             lblSKUName.Text = row["SKUName"].ToString();
@@ -696,6 +702,8 @@ namespace TempoRegiHanbaiTouroku
             row["SalesTax10"] = mSalesTax10;
             row["SalesTax8"] = mSalesTax8;
 
+            row["DiscountKBN"] = mDiscountKBN;
+            row["SaleExcludedFlg"] = mSaleExcludedFlg;
 
             if (string.IsNullOrWhiteSpace(txtJanCD.Tag.ToString()))
             {
@@ -905,6 +913,7 @@ namespace TempoRegiHanbaiTouroku
                     mSKUCD = selectRow["SKUCD"].ToString();
                     lblSKUName.Text = selectRow["SKUName"].ToString();
                     lblColorSize.Text = selectRow["ColorName"].ToString() + " " + selectRow["SizeName"].ToString();
+                    mSaleExcludedFlg = Convert.ToInt16(selectRow["SaleExcludedFlg"]);
 
                     decimal wSuu = bbl.Z_Set(txtSu.Text);
                     if (wSuu.Equals(0))
@@ -950,7 +959,6 @@ namespace TempoRegiHanbaiTouroku
                             //↑Haspoの初売りの時、全店一律割引セール mParSaleRate
                             fue.ZeikomiTanka = bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set(fue.ZeikomiTanka) * (100 - mParSaleRate) / 100));
                         }
-                        mSaleExcludedFlg = Convert.ToInt16(selectRow["SaleExcludedFlg"]);
 
                         if (mDiscountKBN.Equals("1"))
                         {
@@ -1824,6 +1832,7 @@ namespace TempoRegiHanbaiTouroku
                 }
                 frm.HaspoMode = mHaspoMode;
                 frm.SaleExcludedFlg = mSaleExcludedFlg;
+                frm.SaleMode = mSaleMode;
 
                 frm.ShowDialog();
 

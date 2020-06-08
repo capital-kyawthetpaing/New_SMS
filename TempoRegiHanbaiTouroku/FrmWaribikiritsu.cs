@@ -25,6 +25,7 @@ namespace TempoRegiHanbaiTouroku
         public string Teika = "";
         public short HaspoMode;
         public int SaleExcludedFlg;
+        public short SaleMode;
 
         TempoRegiHanbaiTouroku_BL tprg_Hanbai_Bl = new TempoRegiHanbaiTouroku_BL();
         DataTable dtJuchu;
@@ -152,17 +153,21 @@ namespace TempoRegiHanbaiTouroku
             if(SaleExcludedFlg.Equals(0))
             {
                 int SaleRate = 0;
-                //特別割引率選択
-                FrmSpecialWaribiki frm = new FrmSpecialWaribiki();
-                frm.ShowDialog();
-                switch (frm.btnSelect)
+                //Saleモード＝１の場合							
+                if (SaleMode.Equals(1))
                 {
-                    case 1:
-                        SaleRate = 20;
-                        break;
-                    case 2:
-                        SaleRate = 10;
-                        break;
+                    //特別割引率選択
+                    FrmSpecialWaribiki frm = new FrmSpecialWaribiki();
+                    frm.ShowDialog();
+                    switch (frm.btnSelect)
+                    {
+                        case 1:
+                            SaleRate = 20;
+                            break;
+                        case 2:
+                            SaleRate = 10;
+                            break;
+                    }
                 }
                 lblTanka.Text =bbl.Z_SetStr(GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set(lblTanka.Text) * (100 - SaleRate) / 100)); //	←１円未満は四捨五入
 
