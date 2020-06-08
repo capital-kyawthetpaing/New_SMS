@@ -386,7 +386,14 @@ namespace Search
                 }
             }
         }
-        private void searchPayment_CodeKeyDownEvent(object sender, KeyEventArgs e)
+      
+        private void PaymentCD_Enter(object sender, EventArgs e)
+        {
+            PaymentCD.Value1 = "2";
+            PaymentCD.ChangeDate = bbl.GetDate();
+        }
+
+        private void PaymentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -395,6 +402,7 @@ namespace Search
                 {
                     if (PaymentCD.SelectData())
                     {
+
                         PaymentCD.Value1 = PaymentCD.TxtCode.Text;
                         PaymentCD.Value2 = PaymentCD.LabelText;
                     }
@@ -404,13 +412,8 @@ namespace Search
                         PaymentCD.SetFocus(1);
                     }
                 }
-
             }
         }
-        private void PaymentCD_Enter(object sender, EventArgs e)
-        {
-            PaymentCD.Value1 = "2";
-            PaymentCD.ChangeDate = bbl.GetDate();
+
         }
-    }
 }

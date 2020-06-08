@@ -61,16 +61,12 @@ namespace MasterTouroku_ShiireTanka
                 panel5.Enabled = false;
                 GV_item.Hide();
                 this.GV_item.Location = new System.Drawing.Point(89, 346);
-               
-               
             }
             else
             {
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 GV_item.Show();
-               
-               
             }
             CB_year.Bind(ymd);
             CB_season.Bind(ymd);
@@ -617,19 +613,32 @@ namespace MasterTouroku_ShiireTanka
             {
                 panel4.Enabled = false;
                 panel5.Enabled = false;
-                GV_item.Hide();
-               
-                this.GV_item.Location = new System.Drawing.Point(89, 346);
-                //this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+                this.ブランド.Visible = false;
+                this.シーズン.Visible = false;
+                this.年度.Visible = false;
+                this.商品分類.Visible =false;
+                this.競技.Visible =false;
 
+                //this.GV_item.Location = new System.Drawing.Point(89, 346);かーら
+
+                //this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+                this.サイズ.Visible = true;
+                this.カラー.Visible = true;
+                this.SKUCD.Visible = true;
             }
             else
             {
                 panel4.Enabled = true;
                 panel5.Enabled = true;
-                GV_item.Show();
-                //GV_sku.Hide();
-                //this.GV_sku.Size = new System.Drawing.Size(0, 0);
+                this.ブランド.Visible = true;
+                this.シーズン.Visible = true;
+                this.年度.Visible = true;
+                this.商品分類.Visible = true;
+                this.競技.Visible = true;
+                this.サイズ.Visible = false;
+                this.カラー.Visible = false;
+                this.SKUCD.Visible = false;
+                
             }
         }
         private void TB_rate_KeyDown(object sender, KeyEventArgs e)
@@ -653,12 +662,61 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (ErrorCheck())
-            {
-                m_IOE = GetItemorder();
-                m_IE = GetItem();
-                DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            //if (ErrorCheck())
+            //{
+            //m_IOE = GetItemorder();
+            //m_IE = GetItem();
+            //DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            DataTable dataTable = new DataTable();
+                string selectq="";
+                selectq = "  ItemCD = '" + itemcd.TxtCode.Text + "'";
+                selectq += " and ChangeDate = '" + TB_date_add.Text + "'";
+                selectq += " and Rate = '" + TB_rate.Text + "'";
+                selectq += " and PriceOutTax = '" + LB_priceouttax.Text + "'";
+                selectq += " and PriceWithoutTax = '" + TB_pricewithouttax.Text + "'";
+                if (GV_item.DataSource !=null)
+                {
+                dv.RowFilter = selectq;
+                if(dv.Count >0)
+                {
+                    bbl.ShowMessage("E224");
+                }
+                else
+                {
+                    DataRow row1;
+                    if (GV_item.DataSource != null)
+                    {
+                        row1 = dt.NewRow();
+                        row1["Tempkey"] = "1";
+                        row1["CheckBox"] = "0";
+                        row1["BrandCD"] = brand.TxtCode.Text;
+                        row1["SportsCD"] = sport.TxtCode.Text;
+                        row1["SegmentCD"] = segment.TxtCode.Text;
+                        row1["LastYearTerm"] = CB_year.Text;
+                        row1["LastSeason"] = CB_season.Text;
+                        row1["MakerItem"] = makershohin.TxtCode.Text;
+                        row1["ItemCD"] = itemcd.TxtCode.Text;
+                        row1["ChangeDate"] = "2020-06-08";
+                        row1["Rate"] = TB_rate.Text;
+                        row1["PriceOutTax"] = LB_priceouttax.Text;
+                        row1["PriceWithoutTax"] = TB_pricewithouttax.Text;
+                        row1["Tempkey"] = "1";
+                        dt.Rows.Add(row1);
+                        dt.AcceptChanges();
+                        GV_item.Refresh();
+                        GV_item.DataSource = dt;
+                       // dv.RowStateFilter = DataViewRowState.ModifiedCurrent;
+                        dv.RowStateFilter = DataViewRowState.Unchanged;
+                       // dv.RowStateFilter=DataViewRowState.
+                    }
+                    else
+                    {
+                        GV_item.Rows.Add(false, brand.TxtCode.Text, "", "", "", "", "", "", "", "", "", "", "");
+                    }
+                }
             }
+               
+            //}
         }
 
         private void btn_displaymain_Click(object sender, EventArgs e)
@@ -736,8 +794,9 @@ namespace MasterTouroku_ShiireTanka
             if (GV_item.DataSource != null)
             {
                 dv.RowFilter = query;
+               
                 GV_item.DataSource = dv;
-                //GV_sku.DataSource = dv;
+                dv.RowStateFilter = DataViewRowState.Unchanged;
             }
         }
     }
