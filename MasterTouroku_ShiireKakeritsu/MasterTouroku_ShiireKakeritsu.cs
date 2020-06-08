@@ -662,7 +662,6 @@ namespace MasterTouroku_ShiireKakeritsu
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
                     if (drow.Cells["col1"].Value.ToString() == "1")
-                   
                     {
                         drow.Cells["colChk"].Value = true;
                     }
