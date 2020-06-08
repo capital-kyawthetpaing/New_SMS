@@ -152,7 +152,7 @@ namespace Search
                 }
                 else
                 {
-                    //skhnobl.ShowMessage("E128"); //更新 ssa
+                    skhnobl.ShowMessage("E128"); //更新 ssa
                     dgvCostSearch.DataSource = null; 
                 }
             }
@@ -196,7 +196,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtRecordDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtRecordDateTo.Text);
              
-                if (dt1>=dt2)
+                if (dt1>dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtRecordDateFrom.Focus();
@@ -209,7 +209,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtEntryDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtEntryDateTo.Text);
                 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtEntryDateFrom.Focus();
@@ -222,7 +222,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDateTo.Text);
                
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtPaymentDateFrom.Focus();
@@ -235,7 +235,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
                 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtPaymentDueDateFrom.Focus();
@@ -260,7 +260,7 @@ namespace Search
                 chkPaid.Focus();
                 return false;
             }
-            if (!String.IsNullOrEmpty(PaymentCD.TxtCode.Text))
+            if (!String.IsNullOrEmpty(scStaffCD.TxtCode.Text))
             {
                 if (!scStaffCD.IsExists(2))
                 {
@@ -386,7 +386,14 @@ namespace Search
                 }
             }
         }
-        private void searchPayment_CodeKeyDownEvent(object sender, KeyEventArgs e)
+      
+        private void PaymentCD_Enter(object sender, EventArgs e)
+        {
+            PaymentCD.Value1 = "2";
+            PaymentCD.ChangeDate = bbl.GetDate();
+        }
+
+        private void PaymentCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -395,6 +402,7 @@ namespace Search
                 {
                     if (PaymentCD.SelectData())
                     {
+
                         PaymentCD.Value1 = PaymentCD.TxtCode.Text;
                         PaymentCD.Value2 = PaymentCD.LabelText;
                     }
@@ -404,13 +412,8 @@ namespace Search
                         PaymentCD.SetFocus(1);
                     }
                 }
-
             }
         }
-        private void PaymentCD_Enter(object sender, EventArgs e)
-        {
-            PaymentCD.Value1 = "2";
-            PaymentCD.ChangeDate = bbl.GetDate();
+
         }
-    }
 }

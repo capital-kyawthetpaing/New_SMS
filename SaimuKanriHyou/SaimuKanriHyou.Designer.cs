@@ -46,6 +46,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panelDetail
             // 
             this.panelDetail.Controls.Add(this.lblSAChangeDate);
@@ -73,7 +81,7 @@
             this.lblSAChangeDate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblSAChangeDate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblSAChangeDate.ForeColor = System.Drawing.Color.Black;
-            this.lblSAChangeDate.Location = new System.Drawing.Point(1595, 43);
+            this.lblSAChangeDate.Location = new System.Drawing.Point(1572, 174);
             this.lblSAChangeDate.Name = "lblSAChangeDate";
             this.lblSAChangeDate.Size = new System.Drawing.Size(0, 12);
             this.lblSAChangeDate.TabIndex = 17;
@@ -90,7 +98,7 @@
             this.lblSAutho.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblSAutho.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblSAutho.ForeColor = System.Drawing.Color.Black;
-            this.lblSAutho.Location = new System.Drawing.Point(1595, 24);
+            this.lblSAutho.Location = new System.Drawing.Point(1572, 155);
             this.lblSAutho.Name = "lblSAutho";
             this.lblSAutho.Size = new System.Drawing.Size(0, 12);
             this.lblSAutho.TabIndex = 16;
@@ -104,14 +112,15 @@
             this.cboStoreAuthorizations.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStoreAuthorizations.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStoreAuthorizations.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStoreAuthorizations.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cboStoreAuthorizations.Flag = 0;
             this.cboStoreAuthorizations.FormattingEnabled = true;
             this.cboStoreAuthorizations.Length = 10;
-            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1469, 20);
+            this.cboStoreAuthorizations.Location = new System.Drawing.Point(1423, 23);
             this.cboStoreAuthorizations.MaxLength = 10;
-            this.cboStoreAuthorizations.MoveNext = true;
+            this.cboStoreAuthorizations.MoveNext = false;
             this.cboStoreAuthorizations.Name = "cboStoreAuthorizations";
-            this.cboStoreAuthorizations.Size = new System.Drawing.Size(121, 20);
+            this.cboStoreAuthorizations.Size = new System.Drawing.Size(280, 20);
             this.cboStoreAuthorizations.TabIndex = 1;
             // 
             // ckM_Label4
@@ -123,7 +132,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(1434, 25);
+            this.ckM_Label4.Location = new System.Drawing.Point(1388, 27);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label4.TabIndex = 14;
@@ -148,7 +157,8 @@
             this.scVendor.ChangeDate = "";
             this.scVendor.ChangeDateWidth = 100;
             this.scVendor.Code = "";
-            this.scVendor.CodeWidth = 130;
+            this.scVendor.CodeWidth = 100;
+            this.scVendor.CodeWidth1 = 100;
             this.scVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scVendor.DataCheck = false;
             this.scVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -158,6 +168,7 @@
             this.scVendor.Location = new System.Drawing.Point(147, 43);
             this.scVendor.Margin = new System.Windows.Forms.Padding(0);
             this.scVendor.Name = "scVendor";
+            this.scVendor.NameWidth = 310;
             this.scVendor.SearchEnable = true;
             this.scVendor.Size = new System.Drawing.Size(444, 28);
             this.scVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -184,6 +195,7 @@
             this.txtTargetYear.IntegerPart = 0;
             this.txtTargetYear.IsCorrectDate = true;
             this.txtTargetYear.isEnterKeyDown = false;
+            this.txtTargetYear.isMaxLengthErr = false;
             this.txtTargetYear.IsNumber = true;
             this.txtTargetYear.IsShop = false;
             this.txtTargetYear.Length = 7;
