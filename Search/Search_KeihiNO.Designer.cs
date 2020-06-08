@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -167,6 +168,7 @@
             this.txtRecordDateFrom.IntegerPart = 8;
             this.txtRecordDateFrom.IsCorrectDate = true;
             this.txtRecordDateFrom.isEnterKeyDown = false;
+            this.txtRecordDateFrom.isMaxLengthErr = false;
             this.txtRecordDateFrom.IsNumber = true;
             this.txtRecordDateFrom.IsShop = false;
             this.txtRecordDateFrom.Length = 10;
@@ -210,6 +212,7 @@
             this.txtRecordDateTo.IntegerPart = 8;
             this.txtRecordDateTo.IsCorrectDate = true;
             this.txtRecordDateTo.isEnterKeyDown = false;
+            this.txtRecordDateTo.isMaxLengthErr = false;
             this.txtRecordDateTo.IsNumber = true;
             this.txtRecordDateTo.IsShop = false;
             this.txtRecordDateTo.Length = 10;
@@ -253,6 +256,7 @@
             this.txtEntryDateFrom.IntegerPart = 8;
             this.txtEntryDateFrom.IsCorrectDate = true;
             this.txtEntryDateFrom.isEnterKeyDown = false;
+            this.txtEntryDateFrom.isMaxLengthErr = false;
             this.txtEntryDateFrom.IsNumber = true;
             this.txtEntryDateFrom.IsShop = false;
             this.txtEntryDateFrom.Length = 10;
@@ -296,6 +300,7 @@
             this.txtEntryDateTo.IntegerPart = 8;
             this.txtEntryDateTo.IsCorrectDate = true;
             this.txtEntryDateTo.isEnterKeyDown = false;
+            this.txtEntryDateTo.isMaxLengthErr = false;
             this.txtEntryDateTo.IsNumber = true;
             this.txtEntryDateTo.IsShop = false;
             this.txtEntryDateTo.Length = 10;
@@ -429,6 +434,7 @@
             this.txtPaymentDateTo.IntegerPart = 8;
             this.txtPaymentDateTo.IsCorrectDate = true;
             this.txtPaymentDateTo.isEnterKeyDown = false;
+            this.txtPaymentDateTo.isMaxLengthErr = false;
             this.txtPaymentDateTo.IsNumber = true;
             this.txtPaymentDateTo.IsShop = false;
             this.txtPaymentDateTo.Length = 10;
@@ -472,6 +478,7 @@
             this.txtPaymentDateFrom.IntegerPart = 8;
             this.txtPaymentDateFrom.IsCorrectDate = true;
             this.txtPaymentDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDateFrom.isMaxLengthErr = false;
             this.txtPaymentDateFrom.IsNumber = true;
             this.txtPaymentDateFrom.IsShop = false;
             this.txtPaymentDateFrom.Length = 10;
@@ -530,7 +537,7 @@
             this.dgvCostSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -549,6 +556,14 @@
             this.PaymentDueDate,
             this.PaymentDate,
             this.TaxIncludePayment});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCostSearch.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCostSearch.Enabled = false;
             this.dgvCostSearch.EnableHeadersVisualStyles = false;
             this.dgvCostSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -556,6 +571,8 @@
             this.dgvCostSearch.MultiSelect = false;
             this.dgvCostSearch.Name = "dgvCostSearch";
             this.dgvCostSearch.ReadOnly = true;
+            this.dgvCostSearch.RowHeight_ = 20;
+            this.dgvCostSearch.RowTemplate.Height = 20;
             this.dgvCostSearch.Size = new System.Drawing.Size(1218, 490);
             this.dgvCostSearch.TabIndex = 1;
             this.dgvCostSearch.UseRowNo = true;
@@ -672,6 +689,7 @@
             this.txtPaymentDueDateFrom.IntegerPart = 8;
             this.txtPaymentDueDateFrom.IsCorrectDate = true;
             this.txtPaymentDueDateFrom.isEnterKeyDown = false;
+            this.txtPaymentDueDateFrom.isMaxLengthErr = false;
             this.txtPaymentDueDateFrom.IsNumber = true;
             this.txtPaymentDueDateFrom.IsShop = false;
             this.txtPaymentDueDateFrom.Length = 10;
@@ -698,6 +716,7 @@
             this.txtPaymentDueDateTo.IntegerPart = 8;
             this.txtPaymentDueDateTo.IsCorrectDate = true;
             this.txtPaymentDueDateTo.isEnterKeyDown = false;
+            this.txtPaymentDueDateTo.isMaxLengthErr = false;
             this.txtPaymentDueDateTo.IsNumber = true;
             this.txtPaymentDueDateTo.IsShop = false;
             this.txtPaymentDueDateTo.Length = 10;
@@ -744,6 +763,7 @@
             this.PaymentCD.ChangeDateWidth = 100;
             this.PaymentCD.Code = "";
             this.PaymentCD.CodeWidth = 130;
+            this.PaymentCD.CodeWidth1 = 130;
             this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.PaymentCD.DataCheck = false;
             this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -753,6 +773,7 @@
             this.PaymentCD.Location = new System.Drawing.Point(98, 106);
             this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
             this.PaymentCD.Name = "PaymentCD";
+            this.PaymentCD.NameWidth = 280;
             this.PaymentCD.SearchEnable = true;
             this.PaymentCD.Size = new System.Drawing.Size(444, 27);
             this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;
@@ -762,7 +783,7 @@
             this.PaymentCD.Value1 = null;
             this.PaymentCD.Value2 = null;
             this.PaymentCD.Value3 = null;
-            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.searchPayment_CodeKeyDownEvent);
+            this.PaymentCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.PaymentCD_CodeKeyDownEvent);
             this.PaymentCD.Enter += new System.EventHandler(this.PaymentCD_Enter);
             // 
             // scStaffCD
@@ -771,7 +792,8 @@
             this.scStaffCD.ChangeDate = "";
             this.scStaffCD.ChangeDateWidth = 100;
             this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 100;
+            this.scStaffCD.CodeWidth = 70;
+            this.scStaffCD.CodeWidth1 = 70;
             this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scStaffCD.DataCheck = false;
             this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -782,8 +804,9 @@
             this.scStaffCD.Location = new System.Drawing.Point(510, 7);
             this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
             this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.NameWidth = 250;
             this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(344, 27);
+            this.scStaffCD.Size = new System.Drawing.Size(354, 27);
             this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.scStaffCD.TabIndex = 6;
             this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;

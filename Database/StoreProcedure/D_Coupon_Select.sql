@@ -1,22 +1,26 @@
- BEGIN TRY 
- Drop Procedure dbo.[D_Coupon_Select]
-END try
-BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
+
 SET QUOTED_IDENTIFIER ON
 GO
+
 --  ======================================================================
 --       Program Call    店舗レジ ポイント引換券印刷
 --       Program ID      TempoRegiPoint
 --       Create date:    2019.12.22
+--       Update date:    2020.06.06  ChangeDateが最新のデータを取得するように修正
 --  ======================================================================
+IF EXISTS (SELECT * FROM sys.objects WHERE type = 'P' AND name = 'D_Coupon_Select')
+  DROP PROCEDURE [dbo].[D_Coupon_Select]
+GO
+
+
 CREATE PROCEDURE [dbo].[D_Coupon_Select]
 (
     @StoreCD varchar(4)
 )AS
     
---********************************************-- 
+--********************************************--
 --                                            --
 --                 処理開始                   --
 --                                            --
@@ -102,8 +106,8 @@ BEGIN
                   ,Size12
               FROM M_StorePoint
              WHERE StoreCD = @StoreCD
+               AND ChangeDate <= CONVERT (date, SYSDATETIME())
                AND DeleteFlg = 0) storePoint
+     WHERE storePoint.RANK = 1
          ;
 END
-GO
-
