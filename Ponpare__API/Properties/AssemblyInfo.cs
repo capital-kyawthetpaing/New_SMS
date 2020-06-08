@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MasterTouroku_ShiireTanka")]
+[assembly: AssemblyTitle("Ponpare__API")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MasterTouroku_ShiireTanka")]
+[assembly: AssemblyProduct("Ponpare__API")]
 [assembly: AssemblyCopyright("Copyright ©  2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("69710acd-13c4-4bd7-9f9a-20954702351e")]
+[assembly: Guid("2ce89b08-50ff-4fd3-b512-ca8f25c4d53c")]
 
 // Version information for an assembly consists of the following four values:
 //
