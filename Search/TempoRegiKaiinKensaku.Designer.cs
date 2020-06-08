@@ -61,8 +61,8 @@
             this.txtDBO = new CKM_Controls.CKM_TextBox();
             this.btnShow = new CKM_Controls.CKM_Button();
             this.panelDetail = new System.Windows.Forms.Panel();
-            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.chkAnotherStore = new CKM_Controls.CKMShop_CheckBox();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKaniiKensaku)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
@@ -280,7 +280,7 @@
             this.dgvKaniiKensaku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvKaniiKensaku.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
             this.dgvKaniiKensaku.Size = new System.Drawing.Size(1875, 630);
-            this.dgvKaniiKensaku.TabIndex = 6;
+            this.dgvKaniiKensaku.TabIndex = 7;
             this.dgvKaniiKensaku.UseRowNo = true;
             this.dgvKaniiKensaku.UseSetting = true;
             this.dgvKaniiKensaku.Width_ = 1875;
@@ -505,7 +505,7 @@
             this.btnShow.Margin = new System.Windows.Forms.Padding(1);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(200, 45);
-            this.btnShow.TabIndex = 5;
+            this.btnShow.TabIndex = 6;
             this.btnShow.Text = "照会";
             this.btnShow.UseVisualStyleBackColor = false;
             this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
@@ -537,6 +537,18 @@
             this.panelDetail.Size = new System.Drawing.Size(1884, 833);
             this.panelDetail.TabIndex = 0;
             // 
+            // chkAnotherStore
+            // 
+            this.chkAnotherStore.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAnotherStore.ForeColor = System.Drawing.Color.Black;
+            this.chkAnotherStore.IsattachedCaption = false;
+            this.chkAnotherStore.Location = new System.Drawing.Point(1075, 121);
+            this.chkAnotherStore.Name = "chkAnotherStore";
+            this.chkAnotherStore.Size = new System.Drawing.Size(35, 35);
+            this.chkAnotherStore.TabIndex = 5;
+            this.chkAnotherStore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAnotherStore.UseVisualStyleBackColor = true;
+            // 
             // ckmShop_Label2
             // 
             this.ckmShop_Label2.AutoSize = true;
@@ -552,18 +564,6 @@
             this.ckmShop_Label2.Text = "他店会員";
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // chkAnotherStore
-            // 
-            this.chkAnotherStore.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.chkAnotherStore.ForeColor = System.Drawing.Color.Black;
-            this.chkAnotherStore.IsattachedCaption = false;
-            this.chkAnotherStore.Location = new System.Drawing.Point(1075, 121);
-            this.chkAnotherStore.Name = "chkAnotherStore";
-            this.chkAnotherStore.Size = new System.Drawing.Size(35, 35);
-            this.chkAnotherStore.TabIndex = 132;
-            this.chkAnotherStore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chkAnotherStore.UseVisualStyleBackColor = true;
             // 
             // TempoRegiKaiinKensaku
             // 
