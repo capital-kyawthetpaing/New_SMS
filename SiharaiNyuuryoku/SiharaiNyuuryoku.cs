@@ -598,18 +598,29 @@ namespace SiharaiNyuuryoku
                 {
                     if (!RequireCheck(new Control[] { txtDueDate2 }))
                         return false;
+                    else
+                    {
+                        int result = txtDueDate1.Text.CompareTo(txtDueDate2.Text);
+                        if (result > 0)
+                        {
+                            sibl.ShowMessage("E104");
+                            txtDueDate2.Focus();
+                        }
+                    }
+                    
 
                     if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
                         return false;
                     else
                     {
-                        mve.PayeeCD = ScPayee.TxtCode.Text;
-                        mve.ChangeDate = DateTime.Now.ToShortDateString();
+                        mve.VendorCD = ScPayee.TxtCode.Text;
+                        mve.ChangeDate = DateTime.Now.ToString("yyyy/MM/dd");
+                        mve.MoneyPayeeFlg = "1";
                         DataTable dtvendor = new DataTable();
                         dtvendor = sibl.M_Vendor_Select(mve);
                         if (dtvendor.Rows.Count == 0)
                         {
-                            sibl.ShowMessage("115");
+                            sibl.ShowMessage("E101");
                             ScPayee.SetFocus(1);
                             return false;
                         }
@@ -955,6 +966,20 @@ namespace SiharaiNyuuryoku
             lblTransferGaku.Text = string.Empty;
         }
 
-       
+        private void txtDueDate2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtDueDate2.Text))
+                {
+                    int result = txtDueDate1.Text.CompareTo(txtDueDate2.Text);
+                    if (result > 0)
+                    {
+                        sibl.ShowMessage("E104");
+                        txtDueDate2.Focus();
+                    }
+                }
+            }
+        }
     }
 }

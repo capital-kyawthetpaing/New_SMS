@@ -78,7 +78,7 @@ namespace BL
 
         public DataTable M_Vendor_Select(M_Vendor_Entity mve)
         {
-            return mvdl.Payee_Select(mve);
+            return mvdl.M_Vendor_SelectForSiharaiNyuuroku(mve);
         }
 
         public DataTable M_Payee_Select(D_Pay_Entity dpe)
