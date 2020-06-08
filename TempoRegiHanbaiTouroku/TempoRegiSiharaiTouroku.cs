@@ -295,6 +295,15 @@ namespace TempoRegiHanbaiTouroku
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.MAEUKE)
             {
+                //大小チェック
+                if (bbl.Z_Set(mMaeuke) < bbl.Z_Set(txtMaeuke.Text))
+                {
+                    //Ｅ２３９
+                    bbl.ShowMessage("E239");
+                    txtMaeuke.Focus();
+                    return false;
+                }
+
                 //前受け金
                 lblMaeZan.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
             }
@@ -394,6 +403,24 @@ namespace TempoRegiHanbaiTouroku
                 }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.AZUKARI)
             {
+                //大小チェック 
+                //現金≠０の場合 現金＞預りならエラー
+                if (bbl.Z_Set(txtCash.Text) != 0 && bbl.Z_Set(txtAzukari.Text) < bbl.Z_Set(txtCash.Text))
+                {
+                    //Ｅ２３７
+                    bbl.ShowMessage("E237");
+                    txtAzukari.Focus();
+                    return false;
+                }
+                //現金＝０の場合 預り≠０ならエラー
+                else if (bbl.Z_Set(txtCash.Text) == 0 && bbl.Z_Set(txtAzukari.Text) != 0)
+                {
+                    //Ｅ２３８
+                    bbl.ShowMessage("E238");
+                    txtAzukari.Focus();
+                    return false;
+                }
+
                 //お釣＝預り					－	現金
                 lblRefund.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
             }
