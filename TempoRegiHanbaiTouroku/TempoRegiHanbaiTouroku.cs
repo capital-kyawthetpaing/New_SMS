@@ -1828,7 +1828,8 @@ namespace TempoRegiHanbaiTouroku
                 else
                 {
                     //Function_消費税計算.out税込単価
-                    frm.Teika = bbl.Z_SetStr(bbl.GetZeinukiKingaku(bbl.Z_Set(txtJuchuuUnitPrice.Text), mTaxRateFLG, bbl.GetDate()) * bbl.Z_Set(txtSu.Text));
+                    //frm.Teika = bbl.Z_SetStr(bbl.GetZeinukiKingaku(bbl.Z_Set(txtJuchuuUnitPrice.Text), mTaxRateFLG, bbl.GetDate()) * bbl.Z_Set(txtSu.Text));
+                    frm.Teika = bbl.Z_SetStr(bbl.GetZeikomiKingaku(bbl.Z_Set(txtJuchuuUnitPrice.Text), mTaxRateFLG, out decimal zei, bbl.GetDate()));
                 }
                 frm.HaspoMode = mHaspoMode;
                 frm.SaleExcludedFlg = mSaleExcludedFlg;
