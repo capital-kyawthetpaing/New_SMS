@@ -465,7 +465,7 @@
             this.ClientSize = new System.Drawing.Size(1913, 961);
             this.Controls.Add(this.panelDetail);
             this.Name = "TempoRegiShouhinKensaku";
-            this.Text = "TempoRegiKaiinKensaku";
+            this.Text = "TempoRegiShouhinKensaku";
             this.Load += new System.EventHandler(this.Form_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TempoRegiKaiinKensaku_KeyUp);
             this.Controls.SetChildIndex(this.panelDetail, 0);

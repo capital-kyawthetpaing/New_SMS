@@ -70,23 +70,33 @@ namespace TempoRegiFurikomiYoushi
         }
         public void Save()
         {
-            if (ErrorCheck())
+            if (!String.IsNullOrWhiteSpace(txtprintprogress.Text))
             {
-                if (InputErrorCheck())
+                if (ErrorCheck())
                 {
-                    if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                    if (InputErrorCheck())
                     {
-                        var keys = string.Join("-", Array.ConvertAll<object, string>(dtreporttemp.Rows[0].ItemArray, Convert.ToString));
-                        CR_regi.Youshi youshi = new CR_regi.Youshi(dtreporttemp, new string[] { InOperatorCD, InProgramID,  InPcID, "PRINT", txtprintprogress.Text });
-                        youshi.ShowDialog();
+                        if (bbl.ShowMessage("Q201") == DialogResult.Yes)
+                        {
+                            var keys = string.Join("-", Array.ConvertAll<object, string>(dtreporttemp.Rows[0].ItemArray, Convert.ToString));
+                            CR_regi.Youshi youshi = new CR_regi.Youshi(dtreporttemp, new string[] { InOperatorCD, InProgramID, InPcID, "PRINT", txtprintprogress.Text });
+                            youshi.ShowDialog();
+                        }
                     }
                 }
+                else
+                {
+                    bbl.ShowMessage("E138");
+                }
+                txtprintprogress.Focus();
             }
             else
             {
-                bbl.ShowMessage("E138");
+
+                bbl.ShowMessage("E102");
+                txtprintprogress.Focus();
+
             }
-            txtprintprogress.Focus();
         }
 
         private void TempoRegiFurikomiYoushi_Load(object sender, EventArgs e)
@@ -116,8 +126,16 @@ namespace TempoRegiFurikomiYoushi
 
             if (e.KeyCode == Keys.Enter)
             {
-                InputErrorCheck();
-            
+                if (!String.IsNullOrWhiteSpace(txtprintprogress.Text))
+                    InputErrorCheck();
+                else
+                {
+                    bbl.ShowMessage("E102");
+                    txtprintprogress.Focus();
+                    return ;
+                }
+
+
             }
 
         }
