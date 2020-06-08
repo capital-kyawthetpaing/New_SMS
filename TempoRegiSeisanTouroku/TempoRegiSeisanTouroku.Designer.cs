@@ -1664,7 +1664,7 @@
             this.ckmShop_Label28.Name = "ckmShop_Label28";
             this.ckmShop_Label28.Size = new System.Drawing.Size(450, 42);
             this.ckmShop_Label28.TabIndex = 77;
-            this.ckmShop_Label28.Text = "現金在高";
+            this.ckmShop_Label28.Text = "現金残高";
             this.ckmShop_Label28.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
             this.ckmShop_Label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

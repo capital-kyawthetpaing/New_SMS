@@ -21,10 +21,17 @@ namespace MasterTouroku_ShiireTanka
         M_ItemOrderPrice_Entity m_IOE;
         M_ITEM_Entity m_IE;
         MasterTouroku_ShiireTanka_BL bl;
+        DataView dv;
+        DataTable dt;
         public FrmMasterTouroku_ShiireTanka()
         {
+
             InitializeComponent();
             bl = new MasterTouroku_ShiireTanka_BL();
+            m_IOE=new M_ItemOrderPrice_Entity();
+            m_IE=new M_ITEM_Entity();
+            dv = new DataView();
+            
         }
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
@@ -53,9 +60,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = false;
                 panel5.Enabled = false;
                 GV_item.Hide();
-                GV_sku.Show();
                 this.GV_item.Location = new System.Drawing.Point(89, 346);
-                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+               
                
             }
             else
@@ -63,8 +69,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 GV_item.Show();
-                GV_sku.Hide();
-                this.GV_sku.Size = new System.Drawing.Size(0, 0);
+               
+               
             }
             CB_year.Bind(ymd);
             CB_season.Bind(ymd);
@@ -197,19 +203,19 @@ namespace MasterTouroku_ShiireTanka
         }
         private void makershohin_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
-            {
-                if(makershohin.SelectData())
-                {
-                    makershohin.Value1 = makershohin.TxtCode.Text;
-                    makershohin.Value2 = makershohin.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    makershohin.SetFocus(1);
-                }
-            }
+            //if(e.KeyCode==Keys.Enter)
+            //{
+            //    if(makershohin.SelectData())
+            //    {
+            //        makershohin.Value1 = makershohin.TxtCode.Text;
+            //        makershohin.Value2 = makershohin.LabelText;
+            //    }
+            //    else
+            //    {
+            //        bbl.ShowMessage("E101");
+            //        makershohin.SetFocus(1);
+            //    }
+            //}
         }
         private void brandC_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -287,7 +293,6 @@ namespace MasterTouroku_ShiireTanka
                     makershohinC.SetFocus(1);
                 }
             }
-
         }
         private void itemcd_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -379,7 +384,6 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
-           
             if (!String.IsNullOrEmpty(makershohin.TxtCode.Text))
             {
                 if (!makershohin.IsExists(2))
@@ -397,12 +401,23 @@ namespace MasterTouroku_ShiireTanka
                     itemcd.SetFocus(1);
                     return false;
                 }
+                if(!itemcd.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    itemcd.Focus();
+                    return false;
+                }
                 if (string.IsNullOrEmpty(TB_date_add.Text))
                 {
                     bbl.ShowMessage("E102");
                     TB_date_add.Focus();
                     return false;
-
+                }
+                if(String.IsNullOrEmpty(LB_priceouttax.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    LB_priceouttax.Focus();
+                    return false;
                 }
                 if (string.IsNullOrEmpty(TB_rate.Text))
                 {
@@ -417,7 +432,6 @@ namespace MasterTouroku_ShiireTanka
                     return false;
                 }
             }
-            
             if (!String.IsNullOrEmpty(makershohinC.TxtCode.Text))
             {
                 if (!makershohinC.IsExists(2))
@@ -431,8 +445,8 @@ namespace MasterTouroku_ShiireTanka
         }
         private void F11()
         {
-            if(ErrorCheck())
-            {
+            //if(ErrorCheck())
+            //{
                 m_IOE = GetItemorder();
                 m_IE = GetItem();
                 brand.Clear();
@@ -442,21 +456,24 @@ namespace MasterTouroku_ShiireTanka
                 CB_season.Text = string.Empty;
                 TB_date_condition.Text = string.Empty;
                 makershohin.Clear();
-                DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
-                if(dt.Rows.Count > 0)
-                {
-                    GV_item.Refresh();
-                    GV_item.DataSource = dt;
-                    GV_sku.Refresh();
-                    GV_sku.DataSource = dt;
+             dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+             dv = new DataView(dt);
+            GV_item.DataSource = dv;
+            
+                //if(dt.Rows.Count > 0)
+                //{
+                //  GV_item.Refresh();
+                //  GV_item.DataSource = dt;
+                //  GV_sku.Refresh();
+                //  GV_sku.DataSource = dt;
                    
-                }
-                else
-                {
-                    GV_item.DataSource = null;
-                    GV_sku.DataSource = null;
-                }
-            }
+                //}
+                //else
+                //{
+                //    GV_item.DataSource = null;
+                //    GV_sku.DataSource = null;
+                //}
+            //}
         }
         private M_ItemOrderPrice_Entity GetItemorder()
         {
@@ -469,7 +486,7 @@ namespace MasterTouroku_ShiireTanka
                 ChangeDate = TB_date_condition.Text,
                 Headerdate=TB_headerdate.Text,
                 PriceWithoutTax=TB_pricewithouttax.Text,
-                Display = RB_current.Checked ? "0" : "1",
+                Display = RB_item.Checked ? "0" : "1",
                 InsertOperator =  InOperatorCD
 
             };
@@ -484,9 +501,9 @@ namespace MasterTouroku_ShiireTanka
                 BrandCD=brand.TxtCode.Text,
                 LastYearTerm=CB_year.Text,
                 LastSeason=CB_season.Text,
-                ChangeDate=TB_date_add.Text,
+                AddDate=TB_date_add.Text,
                 ITemCD= itemcd.TxtCode.Text,
-                PriceOutTax=LB_priceouttax.Text
+                PriceOutTax=LB_priceouttax1.Text
                 
             };
             return m_IE;
@@ -499,12 +516,37 @@ namespace MasterTouroku_ShiireTanka
                 {
                     TB_date_add.Text = TB_headerdate.Text;
                 }
-                m_IE = GetItem();
-                DataTable dt = bl.M_ITem_ItemNandPriceoutTax_Select(m_IE);
-                if (dt.Rows.Count > 0)
+                if (string.IsNullOrEmpty(itemcd.TxtCode.Text))
                 {
-                    itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
-                    LB_priceouttax.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                    bbl.ShowMessage("E102");
+                    itemcd.SetFocus(1);
+                }
+                else
+                {
+                    if (!itemcd.IsExists(2))
+                    {
+                        bbl.ShowMessage("E101");
+                        itemcd.Focus();
+                    }
+                    else
+                    {
+                        m_IE = GetItem();
+                        DataTable dt = bl.M_ITem_ItemNandPriceoutTax_Select(m_IE);
+                        if (dt.Rows.Count > 0)
+                        {
+                            itemcd.LabelText = dt.Rows[0]["ItemName"].ToString();
+                            //LB_priceouttax.Text = dt.Rows[0]["PriceOutTax"].ToString();
+                            Decimal dd = Convert.ToDecimal(dt.Rows[0]["PriceOutTax"]);
+                            if (dd != 0)
+                            {
+                                LB_priceouttax.Text = string.Format("{0:0,0}", dd);
+                            }
+                            else
+                            {
+                                LB_priceouttax.Text = Convert.ToInt32(dt.Rows[0]["PriceOutTax"]).ToString();
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -523,7 +565,7 @@ namespace MasterTouroku_ShiireTanka
             makershohin.Clear();
             itemcd.Clear();
             TB_date_add.Text = string.Empty;
-            LB_priceouttax.Text = string.Empty;
+            LB_priceouttax1.Text = string.Empty;
             TB_rate.Text = string.Empty;
             TB_pricewithouttax.Text = string.Empty;
             brandC.Clear();
@@ -536,7 +578,7 @@ namespace MasterTouroku_ShiireTanka
             TB_dateE.Text = string.Empty;
             TB_rate_E.Text = string.Empty;
             GV_item.Refresh();
-            GV_sku.Refresh();
+           
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
@@ -576,9 +618,9 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = false;
                 panel5.Enabled = false;
                 GV_item.Hide();
-                GV_sku.Show();
+               
                 this.GV_item.Location = new System.Drawing.Point(89, 346);
-                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+                //this.GV_sku.Size = new System.Drawing.Size(1560, 280);
 
             }
             else
@@ -586,8 +628,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 GV_item.Show();
-                GV_sku.Hide();
-                this.GV_sku.Size = new System.Drawing.Size(0, 0);
+                //GV_sku.Hide();
+                //this.GV_sku.Size = new System.Drawing.Size(0, 0);
             }
         }
         private void TB_rate_KeyDown(object sender, KeyEventArgs e)
@@ -596,24 +638,107 @@ namespace MasterTouroku_ShiireTanka
             {
                 if (!String.IsNullOrEmpty(LB_priceouttax.Text))
                 {
-                    decimal rate = Convert.ToDecimal(TB_rate.Text);
-                    decimal con = (decimal)0.01;
-                    decimal listprice = Convert.ToDecimal(LB_priceouttax.Text);
+                   
                     //TB_orderprice.Text = Convert.ToString(listprice * (rate * con));
                     //TB_orderprice.Text= string.Format("{0:#,##0}", Convert.ToInt64((listprice * (rate * con))));
-             
-                    TB_pricewithouttax.Text = Math.Round(listprice * (rate * con)).ToString();
+                   if(!String.IsNullOrEmpty(TB_rate.Text))
+                   {
+                        decimal rate = Convert.ToDecimal(TB_rate.Text);
+                        decimal con = (decimal)0.01;
+                        decimal listprice = Convert.ToDecimal(LB_priceouttax.Text);
+                        TB_pricewithouttax.Text = Math.Round(listprice * (rate * con)).ToString();
+                   }
                 }
             }
         }
-
         private void btn_add_Click(object sender, EventArgs e)
         {
+            if (ErrorCheck())
+            {
+                m_IOE = GetItemorder();
+                m_IE = GetItem();
+                DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
+            }
+        }
 
-            m_IOE = GetItemorder();
-            m_IE = GetItem();
-             DataTable dt=bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
-            
+        private void btn_displaymain_Click(object sender, EventArgs e)
+        {
+            //and(@brandcd is Null or    ti.BrandCD = @brandcd)
+            //                and(@sportcd is Null or    ti.SportsCD = @sportcd)
+            //                and(@segmentcd is Null or  ti.SegmentCD = @segmentcd)
+            //                and(@lastyearterm is Null or   ti.LastYearTerm = @lastyearterm)
+            //                and(@lastseason is Null or ti.LastSeason = @lastseason)
+            //                and(@makeritem is Null or  ti.MakerItem = @makeritem)
+            //                and(@changedate is null  Or ti.ChangeDate = @changedate)
+            string query;
+
+            if (String.IsNullOrEmpty(brand.TxtCode.Text))
+            {
+                query = "BrandCD is Null";
+            }
+            else
+            {
+                query = "BrandCD = '" + brand.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(segment.TxtCode.Text))
+            {
+                query += " and SegmentCD is Null";
+            }
+            else
+            {
+                query += " and SegmentCD = '" + segment.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(CB_year.Text))
+            {
+                query += " and LastYearTerm is Null";
+            }
+            else
+            {
+                query += " and LastYearTerm = '" + CB_year.Text + "'";
+            }
+            if (String.IsNullOrEmpty(CB_season.Text))
+            {
+                query += " and LastSeason is Null";
+            }
+            else
+            {
+                query += " and LastSeason = '" + CB_season.Text + "'";
+            }
+            if (String.IsNullOrEmpty(sport.TxtCode.Text))
+            {
+                query += " and SportsCD is Null";
+            }
+            else
+            {
+                query += " and SportsCD = '" + sport.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(makershohin.TxtCode.Text))
+            {
+                query += " and MakerItem is Null";
+            }
+            else
+            {
+                query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
+            }
+            if ((RB_current.Checked== true) && String.IsNullOrEmpty(TB_date_condition.Text))
+            {
+                query += " and ChangeDate <= '" + TB_headerdate.Text + "'";
+            }
+            else
+            {
+                query += " and ChangeDate = '" + TB_date_condition.Text + "'";
+            }
+            //query += " and SegmentCD = '" + segment.TxtCode.Text + "'";
+            //query += " and LastYearTerm = '" + CB_year.Text + "'";
+            //query += " and LastSeason = '" + CB_season.Text + "'";
+            //query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
+            //query += " and ChangeDate = '" + TB_date_condition.Text + "'";
+            if (GV_item.DataSource != null)
+            {
+                dv.RowFilter = query;
+                GV_item.DataSource = dv;
+                //GV_sku.DataSource = dv;
+            }
         }
     }
 }
