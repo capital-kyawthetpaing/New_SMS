@@ -330,7 +330,7 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnUp.Location = new System.Drawing.Point(1184, 578);
+            this.btnUp.Location = new System.Drawing.Point(1184, 582);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(355, 45);
@@ -349,7 +349,7 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnDown.Location = new System.Drawing.Point(1539, 578);
+            this.btnDown.Location = new System.Drawing.Point(1539, 582);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(355, 45);
@@ -386,7 +386,7 @@
             this.pnlDetails.Controls.Add(this.lblGyoSelect1);
             this.pnlDetails.Controls.Add(this.lblGyoSelect2);
             this.pnlDetails.Controls.Add(this.lblGyoSelect3);
-            this.pnlDetails.Location = new System.Drawing.Point(1184, 174);
+            this.pnlDetails.Location = new System.Drawing.Point(1184, 178);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(710, 405);
             this.pnlDetails.TabIndex = 46;
@@ -880,7 +880,7 @@
             this.lblSumSalesGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
-            this.lblSumSalesGaku.ForeColor = System.Drawing.Color.Black;
+            this.lblSumSalesGaku.ForeColor = System.Drawing.Color.White;
             this.lblSumSalesGaku.Location = new System.Drawing.Point(1692, 629);
             this.lblSumSalesGaku.Name = "lblSumSalesGaku";
             this.lblSumSalesGaku.Size = new System.Drawing.Size(200, 40);
