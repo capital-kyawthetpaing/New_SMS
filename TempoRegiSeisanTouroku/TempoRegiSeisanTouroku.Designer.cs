@@ -1277,7 +1277,7 @@
             this.lblCashBalance.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCashBalance.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCashBalance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblCashBalance.Location = new System.Drawing.Point(276, 558);
+            this.lblCashBalance.Location = new System.Drawing.Point(275, 563);
             this.lblCashBalance.Name = "lblCashBalance";
             this.lblCashBalance.Size = new System.Drawing.Size(240, 39);
             this.lblCashBalance.TabIndex = 64;
@@ -1292,7 +1292,7 @@
             this.lblCashStorage.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblCashStorage.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblCashStorage.ForeColor = System.Drawing.Color.Red;
-            this.lblCashStorage.Location = new System.Drawing.Point(276, 600);
+            this.lblCashStorage.Location = new System.Drawing.Point(275, 605);
             this.lblCashStorage.Name = "lblCashStorage";
             this.lblCashStorage.Size = new System.Drawing.Size(240, 39);
             this.lblCashStorage.TabIndex = 65;
@@ -1956,7 +1956,7 @@
             this.ckmShop_Label18.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label18.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label18.Location = new System.Drawing.Point(66, 603);
+            this.ckmShop_Label18.Location = new System.Drawing.Point(66, 608);
             this.ckmShop_Label18.Name = "ckmShop_Label18";
             this.ckmShop_Label18.Size = new System.Drawing.Size(200, 35);
             this.ckmShop_Label18.TabIndex = 73;
@@ -1972,11 +1972,11 @@
             this.ckmShop_Label17.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(104, 560);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(104, 564);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(163, 35);
             this.ckmShop_Label17.TabIndex = 71;
-            this.ckmShop_Label17.Text = "現金在高";
+            this.ckmShop_Label17.Text = "現金残高";
             this.ckmShop_Label17.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
