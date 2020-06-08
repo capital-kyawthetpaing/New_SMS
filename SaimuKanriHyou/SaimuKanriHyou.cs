@@ -44,7 +44,7 @@ namespace SaimuKanriHyou
             Btn_F11.Text = "Excel(F11)";
             Btn_F10.Text = "";
             cboStoreAuthorizations.Bind(string.Empty, "2");
-            cboStoreAuthorizations.SelectedIndexChanged += cboStoreAuthorizations_SelectedIndexChanged;
+            cboStoreAuthorizations.KeyDown += cboStoreAuthorizations_KeyDown;
             txtTargetYear.Focus();
         }
 
@@ -92,7 +92,7 @@ namespace SaimuKanriHyou
         {
             if (!RequireCheck(new Control[] { cboStoreAuthorizations, txtTargetYear }))
                 return false;
-
+         
             if (!base.CheckAvailableStores(cboStoreAuthorizations.SelectedValue.ToString())) // Check for 店舗 (ComboBox)
             {
                 saimukanriBL.ShowMessage("E141");
@@ -158,12 +158,16 @@ namespace SaimuKanriHyou
             }
         }
         
-        private void cboStoreAuthorizations_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboStoreAuthorizations_KeyDown(object sender, KeyEventArgs e)
         {
-            if (!base.CheckAvailableStores(cboStoreAuthorizations.SelectedValue.ToString()))
+            if (e.KeyCode == Keys.Enter)
             {
-                saimukanriBL.ShowMessage("E141");
-                cboStoreAuthorizations.Focus();
+                if (!base.CheckAvailableStores(cboStoreAuthorizations.SelectedValue.ToString()))
+                {
+                    saimukanriBL.ShowMessage("E141");
+                    cboStoreAuthorizations.MoveNext = false;
+                    cboStoreAuthorizations.Focus();
+                }
             }
         }
 

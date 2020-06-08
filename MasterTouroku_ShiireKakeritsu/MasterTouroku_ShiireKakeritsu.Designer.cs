@@ -138,6 +138,7 @@
             // btnChangeIkkatuHacchuuMode
             // 
             this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnChangeIkkatuHacchuuMode.Location = new System.Drawing.Point(714, 5);
             // 
             // ckM_Label1
             // 
@@ -322,7 +323,7 @@
             this.cbo_Season1.MoveNext = true;
             this.cbo_Season1.Name = "cbo_Season1";
             this.cbo_Season1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Season1.TabIndex = 50;
+            this.cbo_Season1.TabIndex = 24;
             // 
             // cbo_Year1
             // 
@@ -338,7 +339,7 @@
             this.cbo_Year1.MoveNext = true;
             this.cbo_Year1.Name = "cbo_Year1";
             this.cbo_Year1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Year1.TabIndex = 49;
+            this.cbo_Year1.TabIndex = 23;
             // 
             // ckM_Label26
             // 
@@ -1086,7 +1087,7 @@
             this.scSegmentCD1.SearchEnable = true;
             this.scSegmentCD1.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD1.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD1.TabIndex = 8;
+            this.scSegmentCD1.TabIndex = 22;
             this.scSegmentCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD1.UseChangeDate = false;
             this.scSegmentCD1.Value1 = null;
@@ -1133,7 +1134,7 @@
             this.scSportsCD1.SearchEnable = true;
             this.scSportsCD1.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD1.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD1.TabIndex = 6;
+            this.scSportsCD1.TabIndex = 21;
             this.scSportsCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD1.UseChangeDate = false;
             this.scSportsCD1.Value1 = null;
@@ -1180,7 +1181,7 @@
             this.scBrandCD1.SearchEnable = true;
             this.scBrandCD1.Size = new System.Drawing.Size(414, 30);
             this.scBrandCD1.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.scBrandCD1.TabIndex = 4;
+            this.scBrandCD1.TabIndex = 20;
             this.scBrandCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scBrandCD1.UseChangeDate = false;
             this.scBrandCD1.Value1 = null;

@@ -70,7 +70,7 @@ namespace TempoRegiSeisanTouroku
                 storage = balance - Convert.ToDecimal(txtTotal.Text);
                 cash = storage.ToString();
                 cash = string.IsNullOrWhiteSpace(cash) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(cash));
-                lblCashStorage.Text = "¥" + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
+                lblCashStorage.Text = "¥ " + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
                 //lblCashStorage.Text = (string.IsNullOrWhiteSpace(cash) ? "0" : first);
             }
         }
@@ -164,17 +164,43 @@ namespace TempoRegiSeisanTouroku
                 txtGift.Text = dtdeposit.Rows[0]["Gift"].ToString();
                 txtDeposit.Text = dtdeposit.Rows[0]["CashDeposit"].ToString();
                 txtPayment.Text = dtdeposit.Rows[0]["CashPayment"].ToString();
-                txtTotal.Text = dtdeposit.Rows[0]["CashTotal"].ToString();
-                //txtTotal.Text = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
-                //+ Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
+                //txtTotal.Text = dtdeposit.Rows[0]["CashTotal"].ToString();
+                string total = string.Empty;
+                total = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
+                + Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
+                if(total == "0")
+                {
+                    txtTotal.Text = "0";
+                }
+                else
+                {
+                    total = string.IsNullOrWhiteSpace(total) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(total));
+                    txtTotal.Text = (string.IsNullOrWhiteSpace(total) ? "0" : total);
+                }
+               
+
+
                 txtTransfer.Text = dtdeposit.Rows[0]["DepositTransfer"].ToString();
                 txtDepositCash.Text = dtdeposit.Rows[0]["DepositCash"].ToString();
                 txtDepositCheck.Text = dtdeposit.Rows[0]["DepositCheck"].ToString();
                 txtDepositBill.Text = dtdeposit.Rows[0]["DepositBill"].ToString();
                 txtDepositOffset.Text = dtdeposit.Rows[0]["DepositOffset"].ToString();
                 txtdepositAdjustment.Text = dtdeposit.Rows[0]["DepositAdjustment"].ToString();
-                txtDepositTotal.Text = dtdeposit.Rows[0]["DepositTotal"].ToString();
-
+                //txtDepositTotal.Text = dtdeposit.Rows[0]["DepositTotal"].ToString();
+                string deposittatal = string.Empty;
+                deposittatal = (Convert.ToDecimal(txtTransfer.Text) + Convert.ToDecimal(txtDepositCash.Text) +
+                                       Convert.ToDecimal(txtDepositCheck.Text) + Convert.ToDecimal(txtDepositBill.Text) +
+                                        Convert.ToDecimal(txtDepositOffset.Text) + Convert.ToDecimal(txtdepositAdjustment.Text)).ToString();
+                if(deposittatal == "0")
+                {
+                    txtDepositTotal.Text = "0";
+                }
+                else
+                {
+                    deposittatal = string.IsNullOrWhiteSpace(deposittatal) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(deposittatal));
+                    txtDepositTotal.Text = (string.IsNullOrWhiteSpace(deposittatal) ? "0" : deposittatal);
+                }
+               
                 txtReturn.Text = dtdeposit.Rows[0]["DepositReturns"].ToString();
                 txtDiscount.Text = dtdeposit.Rows[0]["DepositDiscount"].ToString();
 
@@ -188,7 +214,7 @@ namespace TempoRegiSeisanTouroku
                 txtPaymentadjustment.Text = dtdeposit.Rows[0]["PaymentAdjustment"].ToString();
                 txtPaymentTotal.Text = dtdeposit.Rows[0]["TotalPayment"].ToString();
 
-                lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+                //lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
                 //        lblCashStorage.Text = "¥" + dtcash.Rows[0]["CashStorage"].ToString();
             }
             else
@@ -221,6 +247,15 @@ namespace TempoRegiSeisanTouroku
 
                 lblCashStorage.Text = "￥ 0";
             }
+
+            string cash = string.Empty;
+            if(string.IsNullOrWhiteSpace(lblCashBalance.Text))
+            {
+                lblCashBalance.Text = "0";
+            }
+            cash = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+            cash = string.IsNullOrWhiteSpace(cash) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(cash));
+            lblCashStorage.Text = "¥ " + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
 
             dse.StoreCD = data;
             dse.ChangeDate = date;
