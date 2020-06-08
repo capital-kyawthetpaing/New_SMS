@@ -77,7 +77,7 @@ namespace TempoRegiPoint
         {
             get
             {
-                return Convert.ToInt32(TxtLastPoint.Text);
+                return int.Parse(TxtLastPoint.Text.Replace(",", ""));
             }
         }
 
@@ -88,7 +88,7 @@ namespace TempoRegiPoint
         {
             get
             {
-                return Convert.ToInt32(TxtIssuePoint.Text);
+                return int.Parse(TxtIssuePoint.Text.Replace(",", ""));
             }
         }
 
@@ -148,6 +148,7 @@ namespace TempoRegiPoint
 
             TxtLastPoint.Require(true);
             TxtLastPoint.Text = "";
+            SetLastPointColor();
 
             TxtIssuePoint.Require(true);
             TxtIssuePoint.Text = "";
@@ -190,7 +191,7 @@ namespace TempoRegiPoint
             var ticketUnit = bl.D_TicketUnitSelect(StoreCD);
             if(ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
             {
-                bl.ShowMessage("E198", "1", TxtLastPoint.Text);
+                bl.ShowMessage("E198", "該当店舗の引換券発行単位の倍数以外", TxtLastPoint.Text);
                 TxtIssuePoint.Focus();
                 return false;
             }
@@ -448,6 +449,39 @@ namespace TempoRegiPoint
         }
 
         /// <summary>
+        /// 保持ポイント入力変更イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtLastPoint_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(TxtLastPoint.Text, out int value))
+            {
+                TxtLastPoint.Text = string.Format("{0:#,##0}", value);
+            }
+        }
+
+        /// <summary>
+        /// 保持ポイント入力アクティブ時イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtLastPoint_Enter(object sender, EventArgs e)
+        {
+            SetLastPointColor();
+        }
+
+        /// <summary>
+        /// 保持ポイント入力フォーカス移動時イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtLastPoint_Leave(object sender, EventArgs e)
+        {
+            SetLastPointColor();
+        }
+
+        /// <summary>
         /// 発行ポイント入力イベント
         /// </summary>
         /// <param name="sender"></param>
@@ -457,6 +491,32 @@ namespace TempoRegiPoint
             if (e.KeyCode == Keys.Enter)
             {
                 this.btnClose.Focus();
+            }
+        }
+
+        /// <summary>
+        /// 発行ポイント入力フォーカス移動時イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtIssuePoint_Leave(object sender, EventArgs e)
+        {
+            if (int.TryParse(TxtIssuePoint.Text, out int value))
+            {
+                TxtIssuePoint.Text = string.Format("{0:#,##0}", value);
+            }
+        }
+
+        /// <summary>
+        /// 発行ポイントアクティブ時イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TxtIssuePoint_Enter(object sender, EventArgs e)
+        {
+            if (TxtIssuePoint.Text.Contains(","))
+            {
+                TxtIssuePoint.Text = TxtIssuePoint.Text.Replace(",", "");
             }
         }
 
@@ -501,6 +561,15 @@ namespace TempoRegiPoint
             }
 
             return result;
+        }
+
+        /// <summary>
+        /// 保持ポイント入力ボックスの色を設定
+        /// </summary>
+        private void SetLastPointColor()
+        {
+            TxtLastPoint.BackColor = Color.White;
+            TxtLastPoint.ForeColor = Color.Black;
         }
     }
 }
