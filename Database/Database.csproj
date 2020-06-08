@@ -89,6 +89,7 @@
     <Content Include="StoreProcedure\D_Collect_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Collect_SelectData.sql" />
     <Content Include="StoreProcedure\D_Collect_SelectForSearch.sql" />
+    <Content Include="StoreProcedure\D_Collect_SelectMaeukeKin.sql" />
     <Content Include="StoreProcedure\D_CostDetails_Delete.sql" />
     <Content Include="StoreProcedure\D_CostDetails_Insert_Update.sql" />
     <Content Include="StoreProcedure\D_Cost_Delete.sql" />
