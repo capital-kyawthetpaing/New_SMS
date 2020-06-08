@@ -130,10 +130,12 @@
             this.lblSalesGaku = new CKM_Controls.CKM_TextBox();
             this.lblSalesTax = new CKM_Controls.CKM_TextBox();
             this.lblJuchuuTaxRitsu = new CKM_Controls.CKM_TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDetails.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtJanCD
@@ -1066,7 +1068,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1099,7 +1101,7 @@
             this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(123, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(125, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1331,7 +1333,7 @@
             this.txtJuchuuUnitPrice.IsNumber = true;
             this.txtJuchuuUnitPrice.IsShop = false;
             this.txtJuchuuUnitPrice.Length = 11;
-            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(217, 368);
+            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(1, 7);
             this.txtJuchuuUnitPrice.MaxLength = 11;
             this.txtJuchuuUnitPrice.MoveNext = true;
             this.txtJuchuuUnitPrice.Name = "txtJuchuuUnitPrice";
@@ -1483,7 +1485,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
@@ -1635,7 +1637,7 @@
             this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
             this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(124, 95);
+            this.btnSyo102.Size = new System.Drawing.Size(126, 95);
             this.btnSyo102.TabIndex = 19;
             this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
@@ -1827,7 +1829,7 @@
             this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
             this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(124, 95);
+            this.btnSyo101.Size = new System.Drawing.Size(126, 95);
             this.btnSyo101.TabIndex = 18;
             this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
@@ -1962,12 +1964,22 @@
             this.lblJuchuuTaxRitsu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lblJuchuuTaxRitsu.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtJuchuuUnitPrice);
+            this.panel3.Enabled = false;
+            this.panel3.Location = new System.Drawing.Point(216, 360);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(250, 50);
+            this.panel3.TabIndex = 94;
+            // 
             // TempoRegiHanbaiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
             this.ClientSize = new System.Drawing.Size(1913, 1011);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblJuchuuTaxRitsu);
             this.Controls.Add(this.lblSalesTax);
             this.Controls.Add(this.lblSalesGaku);
@@ -1980,7 +1992,6 @@
             this.Controls.Add(this.btnGenkin);
             this.Controls.Add(this.lblHenpin);
             this.Controls.Add(this.btnHenpin);
-            this.Controls.Add(this.txtJuchuuUnitPrice);
             this.Controls.Add(this.btnGroupDown);
             this.Controls.Add(this.btnGroupUp);
             this.Controls.Add(this.panel2);
@@ -2042,7 +2053,6 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.btnGroupUp, 0);
             this.Controls.SetChildIndex(this.btnGroupDown, 0);
-            this.Controls.SetChildIndex(this.txtJuchuuUnitPrice, 0);
             this.Controls.SetChildIndex(this.btnHenpin, 0);
             this.Controls.SetChildIndex(this.lblHenpin, 0);
             this.Controls.SetChildIndex(this.btnGenkin, 0);
@@ -2055,10 +2065,13 @@
             this.Controls.SetChildIndex(this.lblSalesGaku, 0);
             this.Controls.SetChildIndex(this.lblSalesTax, 0);
             this.Controls.SetChildIndex(this.lblJuchuuTaxRitsu, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
             this.pnlDetails.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2167,6 +2180,7 @@
         private CKM_Controls.CKM_TextBox lblSalesGaku;
         private CKM_Controls.CKM_TextBox lblSalesTax;
         private CKM_Controls.CKM_TextBox lblJuchuuTaxRitsu;
+        private System.Windows.Forms.Panel panel3;
     }
 }
 
