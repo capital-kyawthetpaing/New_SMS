@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -45,11 +46,22 @@
             this.RB_zenten = new CKM_Controls.CKM_RadioButton();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.GV_sku = new CKM_Controls.CKM_GridView();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.メーカー品番S = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEMs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品名s = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.サイズ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.カラー = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.改定日s = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.定価s = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.掛率s = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.発注単価s = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.LB_priceouttax = new CKM_Controls.CKM_TextBox();
             this.itemcd = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.LB_priceouttax1 = new CKM_Controls.CKM_Label();
+            this.LB_priceouttax = new CKM_Controls.CKM_Label();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
@@ -61,6 +73,19 @@
             this.TB_pricewithouttax = new CKM_Controls.CKM_TextBox();
             this.btn_add = new CKM_Controls.CKM_Button();
             this.GV_item = new CKM_Controls.CKM_GridView();
+            this.ck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ブランド = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.競技 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品分類 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.年度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.シーズン = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.メーカー品番 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.改定日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.定価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.掛率 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.発注単価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_choice = new CKM_Controls.CKM_Button();
             this.btn_selectall = new CKM_Controls.CKM_Button();
             this.btn_releaseall = new CKM_Controls.CKM_Button();
@@ -112,27 +137,12 @@
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.Btn_display = new CKM_Controls.CKM_Button();
-            this.ck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ブランド = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.競技 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品分類 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.年度 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.シーズン = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.メーカー品番 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.商品名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.サイズ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.カラー = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.改定日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.定価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.掛率 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.発注単価 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_sku)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_item)).BeginInit();
             this.panel5.SuspendLayout();
@@ -373,6 +383,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.GV_sku);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.GV_item);
             this.panel3.Controls.Add(this.btn_choice);
@@ -421,12 +432,124 @@
             this.panel3.Size = new System.Drawing.Size(1790, 670);
             this.panel3.TabIndex = 101;
             // 
+            // GV_sku
+            // 
+            this.GV_sku.AllowUserToDeleteRows = false;
+            this.GV_sku.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_sku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GV_sku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_sku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GV_sku.ColumnHeadersHeight = 25;
+            this.GV_sku.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewCheckBoxColumn1,
+            this.メーカー品番S,
+            this.ITEMs,
+            this.商品名s,
+            this.サイズ,
+            this.カラー,
+            this.SKUCD,
+            this.改定日s,
+            this.定価s,
+            this.掛率s,
+            this.発注単価s});
+            this.GV_sku.EnableHeadersVisualStyles = false;
+            this.GV_sku.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
+            this.GV_sku.Location = new System.Drawing.Point(89, 346);
+            this.GV_sku.Name = "GV_sku";
+            this.GV_sku.RowHeight_ = 20;
+            this.GV_sku.RowTemplate.Height = 20;
+            this.GV_sku.Size = new System.Drawing.Size(50, 280);
+            this.GV_sku.TabIndex = 70;
+            this.GV_sku.UseRowNo = true;
+            this.GV_sku.UseSetting = false;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Width = 20;
+            // 
+            // メーカー品番S
+            // 
+            this.メーカー品番S.DataPropertyName = "MakerItem";
+            this.メーカー品番S.HeaderText = "メーカー品番";
+            this.メーカー品番S.Name = "メーカー品番S";
+            this.メーカー品番S.Width = 200;
+            // 
+            // ITEMs
+            // 
+            this.ITEMs.DataPropertyName = "ItemCD";
+            this.ITEMs.HeaderText = "ITEM";
+            this.ITEMs.Name = "ITEMs";
+            this.ITEMs.Width = 200;
+            // 
+            // 商品名s
+            // 
+            this.商品名s.DataPropertyName = "ItemName";
+            this.商品名s.HeaderText = "商品名";
+            this.商品名s.Name = "商品名s";
+            this.商品名s.Width = 310;
+            // 
+            // サイズ
+            // 
+            this.サイズ.DataPropertyName = "SizeName";
+            this.サイズ.HeaderText = "サイズ";
+            this.サイズ.Name = "サイズ";
+            this.サイズ.Width = 120;
+            // 
+            // カラー
+            // 
+            this.カラー.DataPropertyName = "ColorName";
+            this.カラー.HeaderText = "カラー";
+            this.カラー.Name = "カラー";
+            this.カラー.Width = 120;
+            // 
+            // SKUCD
+            // 
+            this.SKUCD.DataPropertyName = "SKUCD";
+            this.SKUCD.HeaderText = "SKUCD";
+            this.SKUCD.Name = "SKUCD";
+            this.SKUCD.Width = 180;
+            // 
+            // 改定日s
+            // 
+            this.改定日s.HeaderText = "改定日";
+            this.改定日s.Name = "改定日s";
+            this.改定日s.Width = 80;
+            // 
+            // 定価s
+            // 
+            this.定価s.DataPropertyName = "PriceOutTax";
+            this.定価s.HeaderText = "定価(税抜)";
+            this.定価s.Name = "定価s";
+            this.定価s.Width = 90;
+            // 
+            // 掛率s
+            // 
+            this.掛率s.DataPropertyName = "Rate";
+            this.掛率s.HeaderText = "掛率";
+            this.掛率s.Name = "掛率s";
+            this.掛率s.Width = 80;
+            // 
+            // 発注単価s
+            // 
+            this.発注単価s.DataPropertyName = "PriceWithoutTax";
+            this.発注単価s.HeaderText = "発注単価";
+            this.発注単価s.Name = "発注単価s";
+            // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.LB_priceouttax);
             this.panel4.Controls.Add(this.itemcd);
             this.panel4.Controls.Add(this.ckM_Label6);
-            this.panel4.Controls.Add(this.LB_priceouttax1);
+            this.panel4.Controls.Add(this.LB_priceouttax);
             this.panel4.Controls.Add(this.ckM_Label5);
             this.panel4.Controls.Add(this.ckM_Label3);
             this.panel4.Controls.Add(this.ckM_Label7);
@@ -441,33 +564,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1780, 80);
             this.panel4.TabIndex = 68;
-            // 
-            // LB_priceouttax
-            // 
-            this.LB_priceouttax.AllowMinus = false;
-            this.LB_priceouttax.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.LB_priceouttax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.LB_priceouttax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LB_priceouttax.ClientColor = System.Drawing.SystemColors.Window;
-            this.LB_priceouttax.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.LB_priceouttax.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.LB_priceouttax.DecimalPlace = 0;
-            this.LB_priceouttax.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.LB_priceouttax.IntegerPart = 8;
-            this.LB_priceouttax.IsCorrectDate = true;
-            this.LB_priceouttax.isEnterKeyDown = false;
-            this.LB_priceouttax.isMaxLengthErr = false;
-            this.LB_priceouttax.IsNumber = true;
-            this.LB_priceouttax.IsShop = false;
-            this.LB_priceouttax.Length = 20;
-            this.LB_priceouttax.Location = new System.Drawing.Point(284, 49);
-            this.LB_priceouttax.MaxLength = 20;
-            this.LB_priceouttax.MoveNext = true;
-            this.LB_priceouttax.Name = "LB_priceouttax";
-            this.LB_priceouttax.Size = new System.Drawing.Size(100, 19);
-            this.LB_priceouttax.TabIndex = 39;
-            this.LB_priceouttax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.LB_priceouttax.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // itemcd
             // 
@@ -516,22 +612,22 @@
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // LB_priceouttax1
+            // LB_priceouttax
             // 
-            this.LB_priceouttax1.AutoSize = true;
-            this.LB_priceouttax1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
-            this.LB_priceouttax1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.LB_priceouttax1.DefaultlabelSize = true;
-            this.LB_priceouttax1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.LB_priceouttax1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.LB_priceouttax1.ForeColor = System.Drawing.Color.Black;
-            this.LB_priceouttax1.Location = new System.Drawing.Point(284, 53);
-            this.LB_priceouttax1.Name = "LB_priceouttax1";
-            this.LB_priceouttax1.Size = new System.Drawing.Size(82, 12);
-            this.LB_priceouttax1.TabIndex = 35;
-            this.LB_priceouttax1.Text = "999,999,999";
-            this.LB_priceouttax1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.LB_priceouttax1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LB_priceouttax.AutoSize = true;
+            this.LB_priceouttax.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
+            this.LB_priceouttax.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.LB_priceouttax.DefaultlabelSize = true;
+            this.LB_priceouttax.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.LB_priceouttax.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.LB_priceouttax.ForeColor = System.Drawing.Color.Black;
+            this.LB_priceouttax.Location = new System.Drawing.Point(284, 53);
+            this.LB_priceouttax.Name = "LB_priceouttax";
+            this.LB_priceouttax.Size = new System.Drawing.Size(82, 12);
+            this.LB_priceouttax.TabIndex = 35;
+            this.LB_priceouttax.Text = "999,999,999";
+            this.LB_priceouttax.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.LB_priceouttax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ckM_Label5
             // 
@@ -621,7 +717,7 @@
             this.LB_price.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.LB_price.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.LB_price.ForeColor = System.Drawing.Color.Black;
-            this.LB_price.Location = new System.Drawing.Point(210, 53);
+            this.LB_price.Location = new System.Drawing.Point(207, 53);
             this.LB_price.Name = "LB_price";
             this.LB_price.Size = new System.Drawing.Size(71, 12);
             this.LB_price.TabIndex = 30;
@@ -739,20 +835,19 @@
             // 
             // GV_item
             // 
-            this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -764,21 +859,10 @@
             this.メーカー品番,
             this.ITEM,
             this.商品名,
-            this.サイズ,
-            this.カラー,
-            this.SKUCD,
             this.改定日,
             this.定価,
             this.掛率,
             this.発注単価});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_item.DefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(89, 346);
@@ -789,6 +873,91 @@
             this.GV_item.TabIndex = 67;
             this.GV_item.UseRowNo = true;
             this.GV_item.UseSetting = false;
+            // 
+            // ck
+            // 
+            this.ck.HeaderText = "";
+            this.ck.Name = "ck";
+            this.ck.Width = 20;
+            // 
+            // ブランド
+            // 
+            this.ブランド.DataPropertyName = "BrandName";
+            this.ブランド.HeaderText = "ブランド";
+            this.ブランド.Name = "ブランド";
+            // 
+            // 競技
+            // 
+            this.競技.DataPropertyName = "Char1";
+            this.競技.HeaderText = "競　技";
+            this.競技.Name = "競技";
+            // 
+            // 商品分類
+            // 
+            this.商品分類.DataPropertyName = "SegmentCDName";
+            this.商品分類.HeaderText = "商品分類";
+            this.商品分類.Name = "商品分類";
+            // 
+            // 年度
+            // 
+            this.年度.DataPropertyName = "LastYearTerm";
+            this.年度.HeaderText = "年度";
+            this.年度.Name = "年度";
+            this.年度.Width = 70;
+            // 
+            // シーズン
+            // 
+            this.シーズン.DataPropertyName = "LastSeason";
+            this.シーズン.HeaderText = "シーズン";
+            this.シーズン.Name = "シーズン";
+            this.シーズン.Width = 70;
+            // 
+            // メーカー品番
+            // 
+            this.メーカー品番.DataPropertyName = "MakerItem";
+            this.メーカー品番.HeaderText = "メーカー品番";
+            this.メーカー品番.Name = "メーカー品番";
+            this.メーカー品番.Width = 200;
+            // 
+            // ITEM
+            // 
+            this.ITEM.DataPropertyName = "ItemCD";
+            this.ITEM.HeaderText = "ITEM";
+            this.ITEM.Name = "ITEM";
+            this.ITEM.Width = 200;
+            // 
+            // 商品名
+            // 
+            this.商品名.DataPropertyName = "ItemName";
+            this.商品名.HeaderText = "商品名";
+            this.商品名.Name = "商品名";
+            this.商品名.Width = 300;
+            // 
+            // 改定日
+            // 
+            this.改定日.HeaderText = "改定日";
+            this.改定日.Name = "改定日";
+            this.改定日.Width = 80;
+            // 
+            // 定価
+            // 
+            this.定価.DataPropertyName = "PriceOutTax";
+            this.定価.HeaderText = "定価(税抜)";
+            this.定価.Name = "定価";
+            this.定価.Width = 90;
+            // 
+            // 掛率
+            // 
+            this.掛率.DataPropertyName = "Rate";
+            this.掛率.HeaderText = "掛率";
+            this.掛率.Name = "掛率";
+            this.掛率.Width = 80;
+            // 
+            // 発注単価
+            // 
+            this.発注単価.DataPropertyName = "PriceWithoutTax";
+            this.発注単価.HeaderText = "発注単価";
+            this.発注単価.Name = "発注単価";
             // 
             // btn_choice
             // 
@@ -1191,7 +1360,6 @@
             this.btn_displaymain.TabIndex = 32;
             this.btn_displaymain.Text = "表示";
             this.btn_displaymain.UseVisualStyleBackColor = false;
-            this.btn_displaymain.Click += new System.EventHandler(this.btn_displaymain_Click);
             // 
             // ckM_Button1
             // 
@@ -1794,107 +1962,6 @@
             this.Btn_display.UseVisualStyleBackColor = false;
             this.Btn_display.Click += new System.EventHandler(this.Btn_display_Click);
             // 
-            // ck
-            // 
-            this.ck.HeaderText = "";
-            this.ck.Name = "ck";
-            this.ck.Width = 20;
-            // 
-            // ブランド
-            // 
-            this.ブランド.DataPropertyName = "BrandName";
-            this.ブランド.HeaderText = "ブランド";
-            this.ブランド.Name = "ブランド";
-            // 
-            // 競技
-            // 
-            this.競技.DataPropertyName = "Char1";
-            this.競技.HeaderText = "競　技";
-            this.競技.Name = "競技";
-            // 
-            // 商品分類
-            // 
-            this.商品分類.DataPropertyName = "SegmentCDName";
-            this.商品分類.HeaderText = "商品分類";
-            this.商品分類.Name = "商品分類";
-            // 
-            // 年度
-            // 
-            this.年度.DataPropertyName = "LastYearTerm";
-            this.年度.HeaderText = "年度";
-            this.年度.Name = "年度";
-            this.年度.Width = 70;
-            // 
-            // シーズン
-            // 
-            this.シーズン.DataPropertyName = "LastSeason";
-            this.シーズン.HeaderText = "シーズン";
-            this.シーズン.Name = "シーズン";
-            this.シーズン.Width = 70;
-            // 
-            // メーカー品番
-            // 
-            this.メーカー品番.DataPropertyName = "MakerItem";
-            this.メーカー品番.HeaderText = "メーカー品番";
-            this.メーカー品番.Name = "メーカー品番";
-            this.メーカー品番.Width = 200;
-            // 
-            // ITEM
-            // 
-            this.ITEM.DataPropertyName = "ItemCD";
-            this.ITEM.HeaderText = "ITEM";
-            this.ITEM.Name = "ITEM";
-            this.ITEM.Width = 200;
-            // 
-            // 商品名
-            // 
-            this.商品名.DataPropertyName = "ItemName";
-            this.商品名.HeaderText = "商品名";
-            this.商品名.Name = "商品名";
-            this.商品名.Width = 300;
-            // 
-            // サイズ
-            // 
-            this.サイズ.HeaderText = "サイズ";
-            this.サイズ.Name = "サイズ";
-            // 
-            // カラー
-            // 
-            this.カラー.HeaderText = "カラー";
-            this.カラー.Name = "カラー";
-            // 
-            // SKUCD
-            // 
-            this.SKUCD.HeaderText = "SKUCD";
-            this.SKUCD.Name = "SKUCD";
-            // 
-            // 改定日
-            // 
-            this.改定日.DataPropertyName = "ChangeDate";
-            this.改定日.HeaderText = "改定日";
-            this.改定日.Name = "改定日";
-            this.改定日.Width = 80;
-            // 
-            // 定価
-            // 
-            this.定価.DataPropertyName = "PriceOutTax";
-            this.定価.HeaderText = "定価(税抜)";
-            this.定価.Name = "定価";
-            this.定価.Width = 90;
-            // 
-            // 掛率
-            // 
-            this.掛率.DataPropertyName = "Rate";
-            this.掛率.HeaderText = "掛率";
-            this.掛率.Name = "掛率";
-            this.掛率.Width = 80;
-            // 
-            // 発注単価
-            // 
-            this.発注単価.DataPropertyName = "PriceWithoutTax";
-            this.発注単価.HeaderText = "発注単価";
-            this.発注単価.Name = "発注単価";
-            // 
             // FrmMasterTouroku_ShiireTanka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1925,6 +1992,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GV_sku)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_item)).EndInit();
@@ -2013,11 +2081,8 @@
         private CKM_Controls.CKM_Button btn_choiceD;
         private CKM_Controls.CKM_Button btn_selectallD;
         private CKM_Controls.CKM_Button btn_releaseallD;
-        private CKM_Controls.CKM_Label LB_priceouttax1;
+        private CKM_Controls.CKM_Label LB_priceouttax;
         private CKM_Controls.CKM_GridView GV_item;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private CKM_Controls.CKM_TextBox LB_priceouttax;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ck;
         private System.Windows.Forms.DataGridViewTextBoxColumn ブランド;
         private System.Windows.Forms.DataGridViewTextBoxColumn 競技;
@@ -2027,12 +2092,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn メーカー品番;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEM;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
-        private System.Windows.Forms.DataGridViewTextBoxColumn サイズ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn カラー;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SKUCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn 改定日;
         private System.Windows.Forms.DataGridViewTextBoxColumn 定価;
         private System.Windows.Forms.DataGridViewTextBoxColumn 掛率;
         private System.Windows.Forms.DataGridViewTextBoxColumn 発注単価;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private CKM_Controls.CKM_GridView GV_sku;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn メーカー品番S;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 商品名s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn サイズ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn カラー;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SKUCD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 改定日s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 定価s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 掛率s;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 発注単価s;
     }
 }

@@ -297,6 +297,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempoRegiRyousyuusyo", "Tem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterTouroku_ShiireTanka", "MasterTouroku_ShiireTanka\MasterTouroku_ShiireTanka.csproj", "{69710ACD-13C4-4BD7-9F9A-20954702351E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ponpare_API", "Ponpare_API\Ponpare_API.csproj", "{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2057,6 +2059,18 @@ Global
 		{69710ACD-13C4-4BD7-9F9A-20954702351E}.Release|x64.Build.0 = Release|Any CPU
 		{69710ACD-13C4-4BD7-9F9A-20954702351E}.Release|x86.ActiveCfg = Release|Any CPU
 		{69710ACD-13C4-4BD7-9F9A-20954702351E}.Release|x86.Build.0 = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|x64.Build.0 = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Debug|x86.Build.0 = Debug|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|x64.ActiveCfg = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|x64.Build.0 = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5D3B96D-D2A0-4F12-9E9B-ED12267274D5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

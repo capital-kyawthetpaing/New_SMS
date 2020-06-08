@@ -206,6 +206,7 @@
     <Compile Include="ZaikoShoukai_BL.cs" />
     <Compile Include="ZaikoYoteiHyou_BL.cs" />
     <Compile Include="ZipCode_BL.cs" />
+    <Compile Include="_Ponpare_BL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DL\DL.csproj">
