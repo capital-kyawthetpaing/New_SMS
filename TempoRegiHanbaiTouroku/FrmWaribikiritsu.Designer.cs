@@ -87,7 +87,7 @@
             this.txtRitsu.Name = "txtRitsu";
             this.txtRitsu.Size = new System.Drawing.Size(160, 42);
             this.txtRitsu.TabIndex = 0;
-            this.txtRitsu.Text = "99.9";
+            this.txtRitsu.Text = "";
             this.txtRitsu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtRitsu.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtRitsu.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShippingSu_KeyDown);
