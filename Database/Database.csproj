@@ -549,6 +549,10 @@
     <Content Include="StoreProcedure\WowmaOrder_InsertSelect.sql" />
     <Content Include="StoreProcedure\ZaikoMotochoulnsatsu_Report.sql" />
     <Content Include="StoreProcedure\ZaikoShoukai_Search.sql" />
+    <Content Include="StoreProcedure\_Ponpare_Allow_Check.sql" />
+    <Content Include="StoreProcedure\_Ponpare_InsertAllDetails.sql" />
+    <Content Include="StoreProcedure\_Ponpare_InsertRirekiDetail.sql" />
+    <Content Include="StoreProcedure\_Ponpare_MAPI_DRequest.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
