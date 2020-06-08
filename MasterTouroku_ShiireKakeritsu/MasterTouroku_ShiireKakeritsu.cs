@@ -55,6 +55,7 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
 
         public void BindCombo()
@@ -83,23 +84,23 @@ namespace MasterTouroku_ShiireKakeritsu
 
         public void CancelData()
         {
-            //scSupplierCD.Clear();
-            //txtDate1.Text = string.Empty;
-            //scBrandCD1.Clear();
-            //scSportsCD1.Clear();
-            //scSegmentCD1.Clear();
-            //cbo_Year1.Text = string.Empty;
-            //cbo_Season1.Text = string.Empty;
-            //txtDate.Text = string.Empty;
-            //txtCopy.Text = string.Empty;
-            //scBrandCD.Clear();
-            //scSportsCD.Clear();
-            //scSegmentCD.Clear();
-            //cbo_Year.Text = string.Empty;
-            //cbo_Season.Text = string.Empty;
-            //txtChangeDate.Text = string.Empty;
-            //txtRate.Text = string.Empty;
-            Clear(panelDetail);
+            scSupplierCD.Clear();
+            txtDate1.Text = string.Empty;
+            scBrandCD1.Clear();
+            scSportsCD1.Clear();
+            scSegmentCD1.Clear();
+            cbo_Year1.Text = string.Empty;
+            cbo_Season1.Text = string.Empty;
+            txtDate.Text = string.Empty;
+            txtCopy.Text = string.Empty;
+            scBrandCD.Clear();
+            scSportsCD.Clear();
+            scSegmentCD.Clear();
+            cbo_Year.Text = string.Empty;
+            cbo_Season.Text = string.Empty;
+            txtChangeDate.Text = string.Empty;
+            txtRate.Text = string.Empty;
+            //Clear(panelDetail);
             scSupplierCD.SetFocus(1);
         }
 
@@ -729,8 +730,8 @@ namespace MasterTouroku_ShiireKakeritsu
                     row["ChangeDate"] = txtChangeDate.Text;
                     row["Rate"] = Convert.ToDecimal(txtRate.Text);
                     dtMain.Rows.Add(row);
-                    CancelData();
                     dgv_ShiireKakeritsu.DataSource = dtMain;
+                    CancelData();
                 }
             }
 
@@ -770,7 +771,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            dtMain = view.ToTable();
+            dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
