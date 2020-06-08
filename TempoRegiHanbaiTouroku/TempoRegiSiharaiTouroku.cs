@@ -128,6 +128,9 @@ namespace TempoRegiHanbaiTouroku
                     lblRefund.Text = "0";
                     txtCard.Text = "0";
                     txtKake.Text = "0";
+                    txtMaeuke.Text = "0";
+                    txtOther1.Text = "0";
+                    txtOther2.Text = "0";
                     lblShiharaiKei.Text = "0";
                     lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
