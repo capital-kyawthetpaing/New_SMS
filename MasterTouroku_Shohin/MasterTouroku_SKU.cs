@@ -1368,6 +1368,7 @@ namespace MasterTouroku_Shouhin
             if (!CheckAll())
                 return;
 
+           if( TxtCode_FullWidth())
             this.Close();
         }
 

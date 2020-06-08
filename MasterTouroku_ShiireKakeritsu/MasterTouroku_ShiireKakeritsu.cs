@@ -38,6 +38,7 @@ namespace MasterTouroku_ShiireKakeritsu
             InitializeComponent();
             mskbl = new MasterTouroku_ShiireKakeritsu_BL();
             moe = new M_OrderRate_Entity();
+            dvMain = new DataView();
         }
 
         private void frmMasterTouroku_ShiireKakeritsu_Load(object sender, EventArgs e)
@@ -441,7 +442,24 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //SearchData();
-            BindGrid();
+            string searchCondition = string.Empty;
+            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+            if (!string.IsNullOrWhiteSpace(txtDate.Text))
+                searchCondition = "ChangeDate= '" + txtDate.Text;
+            if(dgv_ShiireKakeritsu.DataSource !=null)
+            {
+                dvMain.RowFilter = searchCondition;
+                dgv_ShiireKakeritsu.DataSource = dvMain;
+            }
         }
         private void SearchData()
         {
@@ -482,6 +500,8 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dvMain = new DataView(dtMain);
+           
+            dgv_ShiireKakeritsu.DataSource = dvMain;
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
             //    if (dr.Count() > 0)
@@ -496,7 +516,7 @@ namespace MasterTouroku_ShiireKakeritsu
             //    dtGrid = dtMain;
             //}
 
-            dgv_ShiireKakeritsu.DataSource = dvMain;
+            
         }
         private void btnCopy_Click(object sender, EventArgs e)
         {
@@ -642,6 +662,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
                     if (drow.Cells["col1"].Value.ToString() == "1")
+                   
                     {
                         drow.Cells["colChk"].Value = true;
                     }
@@ -751,6 +772,7 @@ namespace MasterTouroku_ShiireKakeritsu
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dtMain = view.ToTable();
+            dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
 
@@ -909,6 +931,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             if (dtExcel.Rows.Count > 0)
                             {
                                 dgv_ShiireKakeritsu.DataSource = dtMain;
+                                CancelData();
                             }
                         }
                         else
@@ -948,7 +971,6 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             if (dtMain != null)
             {
-                dgv_ShiireKakeritsu.DataSource = dtMain;
                 foreach (DataRow row in dtMain.Rows)
                 {
                     if (row["仕入先CD"].ToString() != scSupplierCD.TxtCode.Text)
@@ -961,34 +983,57 @@ namespace MasterTouroku_ShiireKakeritsu
                         mskbl.ShowMessage("E138");
                         return false;
                     }
-                    else if (row["ブランドCD"].ToString() == scBrandCD1.TxtCode.Text)
+                    else if (row["ブランドCD"].ToString() == scBrandCD.TxtCode.Text)
                     {
                         mskbl.ShowMessage("E138");
                         return false;
                     }
-                    //else if (row["ブランドCD"] ==DBNull.Value && row["競　技CD"] !=DBNull.Value)
-                    //{
-                    //        if (mskbl.SimpleSelect1("64", string.Empty, "202", string.IsNullOrWhiteSpace(row["競　技CD"]), string.Empty))
-                    //        {
-                    //            mskbl.ShowMessage("E138");
-                    //            return false;
-                    //        }
-                    //}
+                    else if (row["ブランドCD"] == DBNull.Value && row["競　技CD"] != DBNull.Value)
+                    {
+                        if (mskbl.SimpleSelect1("64", string.Empty, "202", row["競　技CD"].ToString()).Rows.Count < 0)
+                        {
+                            mskbl.ShowMessage("E138");
+                            return false;
+                        }
+                    }
                     else if (row["競　技CD"] == DBNull.Value && row["商品分類CD"] != DBNull.Value)
                     {
                         mskbl.ShowMessage("E229");
                         return false;
                     }
-
+                    else if (row["商品分類CD"] == DBNull.Value)
+                    {
+                        if (mskbl.SimpleSelect1("64", string.Empty, "203", row["商品分類CD"].ToString()).Rows.Count < 0)
+                        {
+                            mskbl.ShowMessage("E138");
+                            return false;
+                        }
+                    }
                     else if (row["商品分類CD"] == DBNull.Value && row["年度"] != DBNull.Value)
                     {
                         mskbl.ShowMessage("E229");
                         return false;
                     }
+                    else if (row["年度"] == DBNull.Value)
+                    {
+                        if (mskbl.SimpleSelect1("64", string.Empty, "307", row["年度"].ToString()).Rows.Count < 0)
+                        {
+                            mskbl.ShowMessage("E138");
+                            return false;
+                        }
+                    }
                     else if (row["年度"] == DBNull.Value && row["シーズン"] != DBNull.Value)
                     {
                         mskbl.ShowMessage("E229");
                         return false;
+                    }
+                    else if (row["シーズン"] == DBNull.Value)
+                    {
+                        if (mskbl.SimpleSelect1("64", string.Empty, "308", row["シーズン"].ToString()).Rows.Count < 0)
+                        {
+                            mskbl.ShowMessage("E138");
+                            return false;
+                        }
                     }
                     else if (row["改定日"] == DBNull.Value)
                     {
@@ -1034,6 +1079,15 @@ namespace MasterTouroku_ShiireKakeritsu
                     }
                 }
                 F10();
+            }
+        }
+
+        private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!base.CheckAvailableStores(cbo_Store.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E141");
+                cbo_Store.Focus();
             }
         }
     }

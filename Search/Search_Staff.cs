@@ -93,6 +93,7 @@ namespace Search
                 Scr_Clr();
 
                 radioButton1.Focus();
+                dgvDetail.AllowUserToAddRows = false;
             }
             catch (Exception ex)
             {

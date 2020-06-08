@@ -79,7 +79,6 @@ namespace TempoRegiHanbaiTouroku
                 StartProgram();
 
                 btnProcess.Text = "入金へ";
-
                 SetRequireField();
                 AddHandler();
 
@@ -1073,7 +1072,7 @@ namespace TempoRegiHanbaiTouroku
             ClearBackColor(pnlDetails);
             txtCustomerNo.Focus();
 
-            btnClose.Text = "終了";
+            btnClose.Text = "終　了";
             btnClose.Tag = "0";
             btnHenpin.Visible = true;
             OperationMode = FrmMainForm.EOperationMode.INSERT;
@@ -1896,6 +1895,11 @@ namespace TempoRegiHanbaiTouroku
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

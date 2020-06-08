@@ -120,81 +120,25 @@ namespace TempoRegiSeisanTouroku
             string date = DateTime.Now.ToString("yyyy/MM/dd");
             dsce.StoreCD = data;
             dsce.CalculationDate = date;
-            DataTable dtcash = new DataTable();
-            dtcash = seisanbl.D_StoreCalculation_Select(dsce);
-            if(dtcash.Rows.Count > 0)
+            DataTable dtStore = new DataTable();
+            dtStore = seisanbl.D_Store_Calculation_SelectForSeiSan(dsce);
+            if(dtStore.Rows.Count > 0 )
             {
-                #region Tab1
-                txt10000.Text = dtcash.Rows[0]["Yen10000"].ToString();
-                txt5000.Text = dtcash.Rows[0]["Yen5000"].ToString();
-                txt2000.Text = dtcash.Rows[0]["Yen2000"].ToString();
-                txt1000.Text = dtcash.Rows[0]["Yen1000"].ToString();
-                txt500.Text = dtcash.Rows[0]["Yen500"].ToString();
-                txt100.Text = dtcash.Rows[0]["Yen100"].ToString();
-                txt50.Text = dtcash.Rows[0]["Yen50"].ToString();
-                txt10.Text = dtcash.Rows[0]["Yen10"].ToString();
-                txt5.Text = dtcash.Rows[0]["Yen5"].ToString();
-                txt1.Text = dtcash.Rows[0]["Yen1"].ToString();
-                txtotheramount.Text = dtcash.Rows[0]["OtherYen"].ToString();
-                lblCashBalance.Text = dtcash.Rows[0]["TotalCash"].ToString();
-                
-                txtChange.Text = dtcash.Rows[0]["Change"].ToString();
-                txtCashSale.Text = dtcash.Rows[0]["CashSale"].ToString();
-                txtGift.Text = dtcash.Rows[0]["Gift"].ToString();
-                txtDeposit.Text = dtcash.Rows[0]["CashDeposit"].ToString();
-                txtPayment.Text = dtcash.Rows[0]["CashPayment"].ToString();
-                txtTotal.Text = dtcash.Rows[0]["CashTotal"].ToString();
-                //txtTotal.Text = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
-                //+ Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
-
-                txtSlipsNum.Text = dtcash.Rows[0]["SlipNum"].ToString();
-                txtCustomerNum.Text = dtcash.Rows[0]["NumOfCustomer"].ToString();
-                txtTotalSales.Text = dtcash.Rows[0]["TotalSales"].ToString();
-
-                //lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
-                lblCashStorage.Text = "¥" + dtcash.Rows[0]["CashStorage"].ToString();
-              
-                #endregion
-
-                #region Tab2
-
-                txtamount8.Text = dtcash.Rows[0]["Amount8"].ToString();
-                txtamount10.Text = dtcash.Rows[0]["Amount10"].ToString();
-                txtTaxamount.Text = dtcash.Rows[0]["TaxAmount"].ToString();
-                txtsaletax.Text = dtcash.Rows[0]["SalesExcludingTax"].ToString();
-                txtforeigntax8.Text = dtcash.Rows[0]["Foreigntax8"].ToString();
-                txtforeigntax10.Text = dtcash.Rows[0]["Foreigntax10"].ToString();
-                txtconsumptiontax.Text = dtcash.Rows[0]["Consumpitontax"].ToString();
-                txttaxincludesale.Text = dtcash.Rows[0]["TaxIncludeSales"].ToString();
-                txtSaleCash.Text = dtcash.Rows[0]["Cash"].ToString();
-                txtHanging.Text = dtcash.Rows[0]["Hanging"].ToString();
-                txtVISA.Text = dtcash.Rows[0]["VISA"].ToString();
-                txtJCB.Text = dtcash.Rows[0]["JCB"].ToString();
-
-                txtTransfer.Text = dtcash.Rows[0]["DepositTransfer"].ToString();
-                txtDepositCash.Text = dtcash.Rows[0]["DepositCash"].ToString();
-                txtDepositCheck.Text = dtcash.Rows[0]["DepositCheck"].ToString();
-                txtDepositBill.Text = dtcash.Rows[0]["DepositBill"].ToString();
-                txtDepositOffset.Text = dtcash.Rows[0]["DepositOffset"].ToString();
-                txtdepositAdjustment.Text = dtcash.Rows[0]["DepositAdjustment"].ToString();
-                txtDepositTotal.Text = dtcash.Rows[0]["DepositTotal"].ToString();
-                txtReturn.Text = dtcash.Rows[0]["DepositReturns"].ToString();
-                txtDiscount.Text = dtcash.Rows[0]["DepositDiscount"].ToString();
-                txtCancel.Text = dtcash.Rows[0]["DepositCancel"].ToString();
-
-                txtPaymentTransfer.Text = dtcash.Rows[0]["PaymentTransfer"].ToString();
-                txtPaymentCash.Text = dtcash.Rows[0]["PaymentCash"].ToString();
-                txtPaymentCheck.Text = dtcash.Rows[0]["PaymentCheck"].ToString();
-                txtPaymentBill.Text = dtcash.Rows[0]["PaymentBill"].ToString();
-                txtPaymentOffset.Text = dtcash.Rows[0]["PaymentOffset"].ToString();
-                txtPaymentadjustment.Text = dtcash.Rows[0]["PaymentAdjustment"].ToString();
-                txtPaymentTotal.Text = dtcash.Rows[0]["TotalPayment"].ToString();
-
-                #endregion   
-            } 
+                txt10000.Text = dtStore.Rows[0]["Yen10000"].ToString();
+                txt5000.Text = dtStore.Rows[0]["Yen5000"].ToString();
+                txt2000.Text = dtStore.Rows[0]["Yen2000"].ToString();
+                txt1000.Text = dtStore.Rows[0]["Yen1000"].ToString();
+                txt500.Text = dtStore.Rows[0]["Yen500"].ToString();
+                txt100.Text = dtStore.Rows[0]["Yen100"].ToString();
+                txt50.Text = dtStore.Rows[0]["Yen50"].ToString();
+                txt10.Text = dtStore.Rows[0]["Yen10"].ToString();
+                txt5.Text = dtStore.Rows[0]["Yen5"].ToString();
+                txt1.Text = dtStore.Rows[0]["Yen1"].ToString();
+                txtotheramount.Text = dtStore.Rows[0]["OtherYen"].ToString();
+                lblCashBalance.Text = dtStore.Rows[0]["TotalCash"].ToString();
+            }
             else
             {
-                #region Tab1
                 txt10000.Text = "0";
                 txt5000.Text = "0";
                 txt2000.Text = "0";
@@ -207,36 +151,54 @@ namespace TempoRegiSeisanTouroku
                 txt1.Text = "0";
                 txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
+            }
 
+            dphe.StoreCD = data;
+            dphe.ChangeDate = date;
+            DataTable dtdeposit = new DataTable();
+            dtdeposit = seisanbl.D_DepositHistory_SelectForSeisan(dphe);
+            if (dtdeposit.Rows.Count > 0)
+            {
+                txtChange.Text = dtdeposit.Rows[0]["Change"].ToString();
+                txtCashSale.Text = dtdeposit.Rows[0]["CashSale"].ToString();
+                txtGift.Text = dtdeposit.Rows[0]["Gift"].ToString();
+                txtDeposit.Text = dtdeposit.Rows[0]["CashDeposit"].ToString();
+                txtPayment.Text = dtdeposit.Rows[0]["CashPayment"].ToString();
+                txtTotal.Text = dtdeposit.Rows[0]["CashTotal"].ToString();
+                //txtTotal.Text = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
+                //+ Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
+                txtTransfer.Text = dtdeposit.Rows[0]["DepositTransfer"].ToString();
+                txtDepositCash.Text = dtdeposit.Rows[0]["DepositCash"].ToString();
+                txtDepositCheck.Text = dtdeposit.Rows[0]["DepositCheck"].ToString();
+                txtDepositBill.Text = dtdeposit.Rows[0]["DepositBill"].ToString();
+                txtDepositOffset.Text = dtdeposit.Rows[0]["DepositOffset"].ToString();
+                txtdepositAdjustment.Text = dtdeposit.Rows[0]["DepositAdjustment"].ToString();
+                txtDepositTotal.Text = dtdeposit.Rows[0]["DepositTotal"].ToString();
+
+                txtReturn.Text = dtdeposit.Rows[0]["DepositReturns"].ToString();
+                txtDiscount.Text = dtdeposit.Rows[0]["DepositDiscount"].ToString();
+
+                txtCancel.Text = dtdeposit.Rows[0]["DepositCancel"].ToString();
+
+                txtPaymentTransfer.Text = dtdeposit.Rows[0]["PaymentTransfer"].ToString();
+                txtPaymentCash.Text = dtdeposit.Rows[0]["PaymentCash"].ToString();
+                txtPaymentCheck.Text = dtdeposit.Rows[0]["PaymentCheck"].ToString();
+                txtPaymentBill.Text = dtdeposit.Rows[0]["PaymentBill"].ToString();
+                txtPaymentOffset.Text = dtdeposit.Rows[0]["PaymentOffset"].ToString();
+                txtPaymentadjustment.Text = dtdeposit.Rows[0]["PaymentAdjustment"].ToString();
+                txtPaymentTotal.Text = dtdeposit.Rows[0]["TotalPayment"].ToString();
+
+                lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+                //        lblCashStorage.Text = "¥" + dtcash.Rows[0]["CashStorage"].ToString();
+            }
+            else
+            {
                 txtChange.Text = "0";
                 txtCashSale.Text = "0";
                 txtGift.Text = "0";
                 txtDeposit.Text = "0";
                 txtPayment.Text = "0";
                 txtTotal.Text = "0";
-
-                txtSlipsNum.Text = "0";
-                txtCustomerNum.Text = "0";
-                txtTotalSales.Text = "0";
-
-                lblCashStorage.Text = "￥ 0";
-
-                #endregion
-
-                #region Tab2
-
-                txtamount8.Text = "0";
-                txtamount10.Text = "0";
-                txtTaxamount.Text = "0";
-                txtsaletax.Text = "0";
-                txtforeigntax8.Text = "0";
-                txtforeigntax10.Text = "0";
-                txtconsumptiontax.Text = "0";
-                txttaxincludesale.Text = "0";
-                txtSaleCash.Text = "0";
-                txtHanging.Text = "0";
-                txtVISA.Text = "0";
-                txtJCB.Text = "0";
 
                 txtTransfer.Text = "0";
                 txtDepositCash.Text = "0";
@@ -256,10 +218,217 @@ namespace TempoRegiSeisanTouroku
                 txtPaymentOffset.Text = "0";
                 txtPaymentadjustment.Text = "0";
                 txtPaymentTotal.Text = "0";
-                #endregion   
+
+                lblCashStorage.Text = "￥ 0";
             }
 
+            dse.StoreCD = data;
+            dse.ChangeDate = date;
+            DataTable dtsale = new DataTable();
+            dtsale = seisanbl.D_Sale_SelectForSeisan(dse);
+            if(dtsale .Rows.Count > 0)
+            {
+                txtSlipsNum.Text = dtsale.Rows[0]["SlipNum"].ToString();
+                //txtCustomerNum.Text = dtcash.Rows[0]["NumOfCustomer"].ToString();
+                txtTotalSales.Text = dtsale.Rows[0]["TotalSales"].ToString();
+                txtamount8.Text = dtsale.Rows[0]["Amount8"].ToString();
+                txtamount10.Text = dtsale.Rows[0]["Amount10"].ToString();
+                txtTaxamount.Text = dtsale.Rows[0]["TaxAmount"].ToString();
+                txtsaletax.Text = dtsale.Rows[0]["SalesExcludingTax"].ToString();
+                txtforeigntax8.Text = dtsale.Rows[0]["Foreigntax8"].ToString();
+                txtforeigntax10.Text = dtsale.Rows[0]["Foreigntax10"].ToString();
+                txtconsumptiontax.Text = dtsale.Rows[0]["Consumpitontax"].ToString();
+                txttaxincludesale.Text = dtsale.Rows[0]["TaxIncludeSales"].ToString();
+                txtSaleCash.Text = dtsale.Rows[0]["Cash"].ToString();
+                txtHanging.Text = dtsale.Rows[0]["Hanging"].ToString();
+                txtVISA.Text = dtsale.Rows[0]["VISA"].ToString();
+                txtJCB.Text = dtsale.Rows[0]["JCB"].ToString();
+            }
+            else
+            {
+                txtSlipsNum.Text = "0";
+                //txtCustomerNum.Text = "0";
+                txtTotalSales.Text = "0";
+                txtamount8.Text = "0";
+                txtamount10.Text = "0";
+                txtTaxamount.Text = "0";
+                txtsaletax.Text = "0";
+                txtforeigntax8.Text = "0";
+                txtforeigntax10.Text = "0";
+                txtconsumptiontax.Text = "0";
+                txttaxincludesale.Text = "0";
+                txtSaleCash.Text = "0";
+                txtHanging.Text = "0";
+                txtVISA.Text = "0";
+                txtJCB.Text = "0";
+            }
+
+            dje.StoreCD = data;
+            dje.ChangeDate = date;
+            DataTable dtjuchuu = new DataTable();
+            dtjuchuu = seisanbl.D_Juchuu_SelectForSeisan(dje);
+            if(dtjuchuu.Rows.Count > 0)
+            {
+                txtCustomerNum.Text = dtjuchuu.Rows[0]["NumOfCustomer"].ToString();
+            }
+            else
+            {
+                txtCustomerNum.Text = "0";
+            }
+
+
+
+
         }
+
+        //public void DisplayData()
+        //{
+        //    string data = InOperatorCD;
+        //    string date = DateTime.Now.ToString("yyyy/MM/dd");
+        //    dsce.StoreCD = data;
+        //    dsce.CalculationDate = date;
+        //    DataTable dtcash = new DataTable();
+        //    dtcash = seisanbl.D_StoreCalculation_Select(dsce);
+        //    if(dtcash.Rows.Count > 0)
+        //    {
+        //        #region Tab1
+        //        txt10000.Text = dtcash.Rows[0]["Yen10000"].ToString();
+        //        txt5000.Text = dtcash.Rows[0]["Yen5000"].ToString();
+        //        txt2000.Text = dtcash.Rows[0]["Yen2000"].ToString();
+        //        txt1000.Text = dtcash.Rows[0]["Yen1000"].ToString();
+        //        txt500.Text = dtcash.Rows[0]["Yen500"].ToString();
+        //        txt100.Text = dtcash.Rows[0]["Yen100"].ToString();
+        //        txt50.Text = dtcash.Rows[0]["Yen50"].ToString();
+        //        txt10.Text = dtcash.Rows[0]["Yen10"].ToString();
+        //        txt5.Text = dtcash.Rows[0]["Yen5"].ToString();
+        //        txt1.Text = dtcash.Rows[0]["Yen1"].ToString();
+        //        txtotheramount.Text = dtcash.Rows[0]["OtherYen"].ToString();
+        //        lblCashBalance.Text = dtcash.Rows[0]["TotalCash"].ToString();
+
+        //        txtChange.Text = dtcash.Rows[0]["Change"].ToString();
+        //        txtCashSale.Text = dtcash.Rows[0]["CashSale"].ToString();
+        //        txtGift.Text = dtcash.Rows[0]["Gift"].ToString();
+        //        txtDeposit.Text = dtcash.Rows[0]["CashDeposit"].ToString();
+        //        txtPayment.Text = dtcash.Rows[0]["CashPayment"].ToString();
+        //        txtTotal.Text = dtcash.Rows[0]["CashTotal"].ToString();
+        //        //txtTotal.Text = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
+        //        //+ Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
+
+        //        txtSlipsNum.Text = dtcash.Rows[0]["SlipNum"].ToString();
+        //        txtCustomerNum.Text = dtcash.Rows[0]["NumOfCustomer"].ToString();
+        //        txtTotalSales.Text = dtcash.Rows[0]["TotalSales"].ToString();
+
+        //        //lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
+        //        lblCashStorage.Text = "¥" + dtcash.Rows[0]["CashStorage"].ToString();
+
+        //        #endregion
+
+        //        #region Tab2
+
+        //        txtamount8.Text = dtcash.Rows[0]["Amount8"].ToString();
+        //        txtamount10.Text = dtcash.Rows[0]["Amount10"].ToString();
+        //        txtTaxamount.Text = dtcash.Rows[0]["TaxAmount"].ToString();
+        //        txtsaletax.Text = dtcash.Rows[0]["SalesExcludingTax"].ToString();
+        //        txtforeigntax8.Text = dtcash.Rows[0]["Foreigntax8"].ToString();
+        //        txtforeigntax10.Text = dtcash.Rows[0]["Foreigntax10"].ToString();
+        //        txtconsumptiontax.Text = dtcash.Rows[0]["Consumpitontax"].ToString();
+        //        txttaxincludesale.Text = dtcash.Rows[0]["TaxIncludeSales"].ToString();
+        //        txtSaleCash.Text = dtcash.Rows[0]["Cash"].ToString();
+        //        txtHanging.Text = dtcash.Rows[0]["Hanging"].ToString();
+        //        txtVISA.Text = dtcash.Rows[0]["VISA"].ToString();
+        //        txtJCB.Text = dtcash.Rows[0]["JCB"].ToString();
+
+        //        txtTransfer.Text = dtcash.Rows[0]["DepositTransfer"].ToString();
+        //        txtDepositCash.Text = dtcash.Rows[0]["DepositCash"].ToString();
+        //        txtDepositCheck.Text = dtcash.Rows[0]["DepositCheck"].ToString();
+        //        txtDepositBill.Text = dtcash.Rows[0]["DepositBill"].ToString();
+        //        txtDepositOffset.Text = dtcash.Rows[0]["DepositOffset"].ToString();
+        //        txtdepositAdjustment.Text = dtcash.Rows[0]["DepositAdjustment"].ToString();
+        //        txtDepositTotal.Text = dtcash.Rows[0]["DepositTotal"].ToString();
+        //        txtReturn.Text = dtcash.Rows[0]["DepositReturns"].ToString();
+        //        txtDiscount.Text = dtcash.Rows[0]["DepositDiscount"].ToString();
+        //        txtCancel.Text = dtcash.Rows[0]["DepositCancel"].ToString();
+
+        //        txtPaymentTransfer.Text = dtcash.Rows[0]["PaymentTransfer"].ToString();
+        //        txtPaymentCash.Text = dtcash.Rows[0]["PaymentCash"].ToString();
+        //        txtPaymentCheck.Text = dtcash.Rows[0]["PaymentCheck"].ToString();
+        //        txtPaymentBill.Text = dtcash.Rows[0]["PaymentBill"].ToString();
+        //        txtPaymentOffset.Text = dtcash.Rows[0]["PaymentOffset"].ToString();
+        //        txtPaymentadjustment.Text = dtcash.Rows[0]["PaymentAdjustment"].ToString();
+        //        txtPaymentTotal.Text = dtcash.Rows[0]["TotalPayment"].ToString();
+
+        //        #endregion   
+        //    } 
+        //    else
+        //    {
+        //        #region Tab1
+        //        txt10000.Text = "0";
+        //        txt5000.Text = "0";
+        //        txt2000.Text = "0";
+        //        txt1000.Text = "0";
+        //        txt500.Text = "0";
+        //        txt100.Text = "0";
+        //        txt50.Text = "0";
+        //        txt10.Text = "0";
+        //        txt5.Text = "0";
+        //        txt1.Text = "0";
+        //        txtotheramount.Text = "0";
+        //        lblCashBalance.Text = "0";
+
+        //        txtChange.Text = "0";
+        //        txtCashSale.Text = "0";
+        //        txtGift.Text = "0";
+        //        txtDeposit.Text = "0";
+        //        txtPayment.Text = "0";
+        //        txtTotal.Text = "0";
+
+        //        txtSlipsNum.Text = "0";
+        //        txtCustomerNum.Text = "0";
+        //        txtTotalSales.Text = "0";
+
+        //        lblCashStorage.Text = "￥ 0";
+
+        //        #endregion
+
+        //        #region Tab2
+
+        //        txtamount8.Text = "0";
+        //        txtamount10.Text = "0";
+        //        txtTaxamount.Text = "0";
+        //        txtsaletax.Text = "0";
+        //        txtforeigntax8.Text = "0";
+        //        txtforeigntax10.Text = "0";
+        //        txtconsumptiontax.Text = "0";
+        //        txttaxincludesale.Text = "0";
+        //        txtSaleCash.Text = "0";
+        //        txtHanging.Text = "0";
+        //        txtVISA.Text = "0";
+        //        txtJCB.Text = "0";
+
+        //        txtTransfer.Text = "0";
+        //        txtDepositCash.Text = "0";
+        //        txtDepositCheck.Text = "0";
+        //        txtDepositBill.Text = "0";
+        //        txtDepositOffset.Text = "0";
+        //        txtdepositAdjustment.Text = "0";
+        //        txtDepositTotal.Text = "0";
+        //        txtReturn.Text = "0";
+        //        txtDiscount.Text = "0";
+        //        txtCancel.Text = "0";
+
+        //        txtPaymentTransfer.Text = "0";
+        //        txtPaymentCash.Text = "0";
+        //        txtPaymentCheck.Text = "0";
+        //        txtPaymentBill.Text = "0";
+        //        txtPaymentOffset.Text = "0";
+        //        txtPaymentadjustment.Text = "0";
+        //        txtPaymentTotal.Text = "0";
+        //        #endregion   
+        //    }
+
+        //}
+
+
 
         private void SelectData()
         {

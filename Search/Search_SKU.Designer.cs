@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl = new CKM_Controls.CKMShop_Label();
             this.lblJanCD = new CKM_Controls.CKMShop_Label();
             this.GvMultiSKU = new CKM_Controls.CKMShop_GridView();
@@ -48,12 +48,12 @@
             this.lbl.AutoSize = true;
             this.lbl.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lbl.BackColor = System.Drawing.Color.Transparent;
-            this.lbl.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lbl.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lbl.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lbl.Location = new System.Drawing.Point(31, 64);
             this.lbl.Name = "lbl";
-            this.lbl.Size = new System.Drawing.Size(75, 24);
+            this.lbl.Size = new System.Drawing.Size(110, 35);
             this.lbl.TabIndex = 3;
             this.lbl.Text = "JanCD";
             this.lbl.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -64,12 +64,12 @@
             this.lblJanCD.AutoSize = true;
             this.lblJanCD.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
             this.lblJanCD.BackColor = System.Drawing.Color.White;
-            this.lblJanCD.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.lblJanCD.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblJanCD.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblJanCD.ForeColor = System.Drawing.Color.Black;
-            this.lblJanCD.Location = new System.Drawing.Point(110, 64);
+            this.lblJanCD.Location = new System.Drawing.Point(140, 64);
             this.lblJanCD.Name = "lblJanCD";
-            this.lblJanCD.Size = new System.Drawing.Size(192, 24);
+            this.lblJanCD.Size = new System.Drawing.Size(281, 35);
             this.lblJanCD.TabIndex = 4;
             this.lblJanCD.Text = "XXXXXXXXXXXX13";
             this.lblJanCD.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -81,18 +81,18 @@
             this.GvMultiSKU.AllowUserToDeleteRows = false;
             this.GvMultiSKU.AllowUserToResizeRows = false;
             this.GvMultiSKU.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.White;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.GvMultiSKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.GvMultiSKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.GvMultiSKU.BackgroundColor = System.Drawing.Color.White;
             this.GvMultiSKU.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 18F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.GvMultiSKU.ColumnHeadersHeight = 30;
             this.GvMultiSKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GvMultiSKU.ColumnHeadersVisible = false;
@@ -101,23 +101,23 @@
             this.colSKUName,
             this.colSizeName,
             this.colColorName});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 18F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvMultiSKU.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvMultiSKU.DefaultCellStyle = dataGridViewCellStyle6;
             this.GvMultiSKU.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.GvMultiSKU.EnableHeadersVisualStyles = false;
-            this.GvMultiSKU.Font = new System.Drawing.Font("MS Gothic", 18F);
+            this.GvMultiSKU.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.GvMultiSKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvMultiSKU.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.GvMultiSKU.HeaderHeight_ = 30;
             this.GvMultiSKU.HeaderVisible = false;
             this.GvMultiSKU.Height_ = 200;
-            this.GvMultiSKU.Location = new System.Drawing.Point(26, 142);
+            this.GvMultiSKU.Location = new System.Drawing.Point(26, 165);
             this.GvMultiSKU.Name = "GvMultiSKU";
             this.GvMultiSKU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GvMultiSKU.RowHeight_ = 30;
@@ -175,12 +175,12 @@
             this.ckmShop_Label1.AutoSize = true;
             this.ckmShop_Label1.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(73, 114);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(73, 125);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
-            this.ckmShop_Label1.Size = new System.Drawing.Size(75, 24);
+            this.ckmShop_Label1.Size = new System.Drawing.Size(110, 35);
             this.ckmShop_Label1.TabIndex = 7;
             this.ckmShop_Label1.Text = "SKUCD";
             this.ckmShop_Label1.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -191,12 +191,12 @@
             this.ckmShop_Label2.AutoSize = true;
             this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label2.Location = new System.Drawing.Point(374, 114);
+            this.ckmShop_Label2.Location = new System.Drawing.Point(374, 125);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
-            this.ckmShop_Label2.Size = new System.Drawing.Size(85, 24);
+            this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label2.TabIndex = 8;
             this.ckmShop_Label2.Text = "商品名";
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
@@ -206,7 +206,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 561);
+            this.ClientSize = new System.Drawing.Size(891, 611);
             this.Controls.Add(this.ckmShop_Label2);
             this.Controls.Add(this.ckmShop_Label1);
             this.Controls.Add(this.GvMultiSKU);

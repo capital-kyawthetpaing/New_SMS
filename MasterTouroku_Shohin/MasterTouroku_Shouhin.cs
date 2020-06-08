@@ -751,7 +751,7 @@ namespace MasterTouroku_Shouhin
 
                 using (MasterTouroku_SKU frmSku = new MasterTouroku_SKU(mie, dtSKU, dtSite, OperationMode))
                 {
-                    frmSku.parSKUCD = mie.MakerItem;
+                    frmSku.parSKUCD = mie.ITemCD;
                     frmSku.parJancd = dgvDetail.Rows[RowIndex].Cells[ColumnIndex].Value.ToString().Trim();
                     frmSku.parColorNo = dgvDetail.Rows[RowIndex].Cells[0].Value.ToString();
                     frmSku.parColorName = dgvDetail.Rows[RowIndex].Cells[1].Value.ToString().Trim();
@@ -1692,7 +1692,7 @@ namespace MasterTouroku_Shouhin
                                         + " AND ColorNo = " + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString());
                             foreach(DataRow dr in rows)
                             {
-                                dr["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                dr["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                             }
 
                             if(rows.Length.Equals(0))
@@ -1707,7 +1707,7 @@ namespace MasterTouroku_Shouhin
                                     //SKU画面のChkAll参照
                                     //データをDataTableに
                                     newrow["ITemCD"] = mie.ITemCD;
-                                    newrow["SKUCD"] = detailControls[(int)EIndex.MakerItem].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
+                                    newrow["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + dgvDetail.Columns[columnIndex].HeaderText + dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                                     newrow["ChangeDate"] = mie.ChangeDate;
                                     newrow["ColorNO"] = dgvDetail.Rows[rowIndex].Cells[0].Value.ToString();
                                     newrow["SizeNO"] = dgvDetail.Columns[columnIndex].HeaderText;

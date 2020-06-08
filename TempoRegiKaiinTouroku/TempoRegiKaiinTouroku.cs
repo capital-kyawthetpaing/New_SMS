@@ -44,7 +44,13 @@ namespace TempoRegiKaiinTouroku
             {
                 return false;
             }
-            return true;
+            if(txtCustomerNo.Text.Length < 13)
+            {
+                bbl.ShowMessage("E238");
+                txtCustomerNo.Focus();
+                return false;
+            }
+           return true;
         }
         public override void FunctionProcess(int index)
         {
@@ -66,9 +72,14 @@ namespace TempoRegiKaiinTouroku
                 {
                     string storeKBN = cust.StoreKBN;
                     string deleteFlg = cust.DeleteFlg;
-                    if(storeKBN == "1" || deleteFlg == "1")
+                    if(deleteFlg == "1")
                     {
                         bbl.ShowMessage("E119");
+                        txtCustomerNo.Focus();
+                    }
+                    else if(storeKBN == "1")
+                    {
+                        bbl.ShowMessage("E235");
                         txtCustomerNo.Focus();
                     }
                     else

@@ -11,6 +11,23 @@ namespace DL
     public class TempoRegiRyousyuusyo_DL : Base_DL
     {
         /// <summary>
+        /// お買上番号チェック
+        /// </summary>
+        /// <param name="salesNO">お買上番号</param>
+        /// <returns>売上データ件数</returns>
+        public DataTable D_CheckSalseNO(string salesNO = "")
+        {
+            string sp = "D_CheckSalseNO_ForTempoRegiRyousyuusyo";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SalesNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = salesNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
+
+        /// <summary>
         /// 店舗レジ領収書印刷データ取得処理
         /// TempoRegiRyousyuusyoよりデータ抽出時に使用
         /// </summary>

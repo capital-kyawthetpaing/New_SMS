@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
@@ -242,6 +241,10 @@
             // 
             this.PanelSearch.TabIndex = 2;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -317,6 +320,7 @@
             this.ScSKUCD.ChangeDateWidth = 100;
             this.ScSKUCD.Code = "";
             this.ScSKUCD.CodeWidth = 190;
+            this.ScSKUCD.CodeWidth1 = 190;
             this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSKUCD.DataCheck = false;
             this.ScSKUCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -325,7 +329,9 @@
             this.ScSKUCD.LabelText = "";
             this.ScSKUCD.LabelVisible = true;
             this.ScSKUCD.Location = new System.Drawing.Point(567, 20);
+            this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
+            this.ScSKUCD.NameWidth = 350;
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(574, 27);
             this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
@@ -450,6 +456,7 @@
             this.CmbLastYearTerm.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
             this.CmbLastYearTerm.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CmbLastYearTerm.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbLastYearTerm.Flag = 0;
             this.CmbLastYearTerm.FormattingEnabled = true;
             this.CmbLastYearTerm.Length = 20;
             this.CmbLastYearTerm.Location = new System.Drawing.Point(667, 284);
@@ -466,6 +473,7 @@
             this.CmbLastSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
             this.CmbLastSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CmbLastSeason.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CmbLastSeason.Flag = 0;
             this.CmbLastSeason.FormattingEnabled = true;
             this.CmbLastSeason.Length = 20;
             this.CmbLastSeason.Location = new System.Drawing.Point(667, 304);
@@ -582,6 +590,7 @@
             this.ckM_TextBox5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox5.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox5.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox5.DecimalPlace = 2;
@@ -609,6 +618,7 @@
             this.ckM_TextBox7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox7.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox7.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox7.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox7.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox7.DecimalPlace = 0;
@@ -829,6 +839,7 @@
             this.ckM_MultiLineTextBox4.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox4.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox4.F_focus = false;
             this.ckM_MultiLineTextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox4.Length = 200;
@@ -866,6 +877,7 @@
             this.ckM_MultiLineTextBox3.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox3.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox3.F_focus = false;
             this.ckM_MultiLineTextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox3.Length = 80;
@@ -905,6 +917,7 @@
             this.cmbOrderAttentionCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.発注;
             this.cmbOrderAttentionCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.cmbOrderAttentionCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbOrderAttentionCD.Flag = 0;
             this.cmbOrderAttentionCD.FormattingEnabled = true;
             this.cmbOrderAttentionCD.Length = 20;
             this.cmbOrderAttentionCD.Location = new System.Drawing.Point(136, 555);
@@ -938,6 +951,7 @@
             this.ckM_ComboBox17.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox17.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox17.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox17.Flag = 0;
             this.ckM_ComboBox17.FormattingEnabled = true;
             this.ckM_ComboBox17.Length = 20;
             this.ckM_ComboBox17.Location = new System.Drawing.Point(384, 488);
@@ -954,6 +968,7 @@
             this.ckM_ComboBox16.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox16.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox16.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox16.Flag = 0;
             this.ckM_ComboBox16.FormattingEnabled = true;
             this.ckM_ComboBox16.Length = 20;
             this.ckM_ComboBox16.Location = new System.Drawing.Point(384, 468);
@@ -970,6 +985,7 @@
             this.ckM_ComboBox15.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox15.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox15.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox15.Flag = 0;
             this.ckM_ComboBox15.FormattingEnabled = true;
             this.ckM_ComboBox15.Length = 20;
             this.ckM_ComboBox15.Location = new System.Drawing.Point(384, 448);
@@ -986,6 +1002,7 @@
             this.ckM_ComboBox14.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox14.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox14.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox14.Flag = 0;
             this.ckM_ComboBox14.FormattingEnabled = true;
             this.ckM_ComboBox14.Length = 20;
             this.ckM_ComboBox14.Location = new System.Drawing.Point(384, 428);
@@ -1002,6 +1019,7 @@
             this.ckM_ComboBox13.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox13.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox13.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox13.Flag = 0;
             this.ckM_ComboBox13.FormattingEnabled = true;
             this.ckM_ComboBox13.Length = 20;
             this.ckM_ComboBox13.Location = new System.Drawing.Point(384, 408);
@@ -1018,6 +1036,7 @@
             this.ckM_ComboBox12.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox12.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox12.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox12.Flag = 0;
             this.ckM_ComboBox12.FormattingEnabled = true;
             this.ckM_ComboBox12.Length = 20;
             this.ckM_ComboBox12.Location = new System.Drawing.Point(384, 388);
@@ -1034,6 +1053,7 @@
             this.ckM_ComboBox11.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox11.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox11.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox11.Flag = 0;
             this.ckM_ComboBox11.FormattingEnabled = true;
             this.ckM_ComboBox11.Length = 20;
             this.ckM_ComboBox11.Location = new System.Drawing.Point(384, 368);
@@ -1050,6 +1070,7 @@
             this.ckM_ComboBox10.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox10.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox10.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox10.Flag = 0;
             this.ckM_ComboBox10.FormattingEnabled = true;
             this.ckM_ComboBox10.Length = 20;
             this.ckM_ComboBox10.Location = new System.Drawing.Point(384, 348);
@@ -1066,6 +1087,7 @@
             this.ckM_ComboBox9.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox9.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox9.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox9.Flag = 0;
             this.ckM_ComboBox9.FormattingEnabled = true;
             this.ckM_ComboBox9.Length = 20;
             this.ckM_ComboBox9.Location = new System.Drawing.Point(384, 328);
@@ -1099,6 +1121,7 @@
             this.ckM_ComboBox8.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.ckM_ComboBox8.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.ckM_ComboBox8.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.ckM_ComboBox8.Flag = 0;
             this.ckM_ComboBox8.FormattingEnabled = true;
             this.ckM_ComboBox8.Length = 20;
             this.ckM_ComboBox8.Location = new System.Drawing.Point(384, 308);
@@ -1113,6 +1136,7 @@
             this.ckM_MultiLineTextBox2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox2.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox2.F_focus = false;
             this.ckM_MultiLineTextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox2.Length = 80;
@@ -1152,6 +1176,7 @@
             this.ckM_MultiLineTextBox1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.ckM_MultiLineTextBox1.BackColor = System.Drawing.Color.White;
             this.ckM_MultiLineTextBox1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.ckM_MultiLineTextBox1.F_focus = false;
             this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox1.Length = 500;
@@ -1195,7 +1220,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1209,14 +1234,6 @@
             this.colAPIKey,
             this.colStoreCD,
             this.colSiteURL});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -1225,6 +1242,7 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
+            this.dgvDetail.RowHeight_ = 20;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvDetail.Size = new System.Drawing.Size(498, 167);
             this.dgvDetail.TabIndex = 43;
@@ -1340,6 +1358,7 @@
             this.ckM_TextBox3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox3.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox3.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox3.DecimalPlace = 0;
@@ -1452,6 +1471,7 @@
             this.ckM_TextBox25.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox25.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox25.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox25.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox25.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox25.DecimalPlace = 0;
@@ -1496,6 +1516,7 @@
             this.ckM_TextBox24.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox24.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox24.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox24.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox24.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox24.DecimalPlace = 0;
@@ -1540,6 +1561,7 @@
             this.ckM_TextBox20.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox20.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox20.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox20.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox20.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox20.DecimalPlace = 0;
@@ -1617,6 +1639,7 @@
             this.TxtRemark.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark.BackColor = System.Drawing.Color.White;
             this.TxtRemark.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark.F_focus = false;
             this.TxtRemark.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark.Length = 1000;
@@ -1665,6 +1688,7 @@
             this.ckM_TextBox23.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox23.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox23.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox23.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox23.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox23.DecimalPlace = 0;
@@ -1691,6 +1715,7 @@
             this.ckM_TextBox22.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox22.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox22.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox22.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox22.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox22.DecimalPlace = 0;
@@ -1750,6 +1775,7 @@
             this.ckM_TextBox17.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox17.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox17.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox17.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox17.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox17.DecimalPlace = 0;
@@ -1777,6 +1803,7 @@
             this.ckM_TextBox18.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox18.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox18.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox18.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox18.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox18.DecimalPlace = 0;
@@ -1923,6 +1950,7 @@
             this.ckM_TextBox13.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox13.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox13.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox13.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox13.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox13.DecimalPlace = 0;
@@ -1950,6 +1978,7 @@
             this.ckM_TextBox10.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox10.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox10.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox10.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox10.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox10.DecimalPlace = 0;
@@ -1977,6 +2006,7 @@
             this.ckM_TextBox11.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox11.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox11.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox11.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox11.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox11.DecimalPlace = 0;
@@ -2004,6 +2034,7 @@
             this.ckM_TextBox9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox9.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox9.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox9.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox9.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox9.DecimalPlace = 0;
@@ -2031,6 +2062,7 @@
             this.ckM_TextBox8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox8.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox8.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox8.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox8.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.ckM_TextBox8.DecimalPlace = 0;
@@ -2058,6 +2090,7 @@
             this.ckM_TextBox6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox6.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox6.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox6.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.ckM_TextBox6.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox6.DecimalPlace = 0;
@@ -2567,7 +2600,8 @@
             this.ScVendor.ChangeDate = "";
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
-            this.ScVendor.CodeWidth = 130;
+            this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2575,7 +2609,9 @@
             this.ScVendor.LabelText = "";
             this.ScVendor.LabelVisible = true;
             this.ScVendor.Location = new System.Drawing.Point(136, 275);
+            this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
             this.ScVendor.Size = new System.Drawing.Size(444, 27);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -2610,6 +2646,7 @@
             this.ScRackNo.ChangeDateWidth = 100;
             this.ScRackNo.Code = "";
             this.ScRackNo.CodeWidth = 100;
+            this.ScRackNo.CodeWidth1 = 100;
             this.ScRackNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScRackNo.DataCheck = true;
             this.ScRackNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2618,7 +2655,9 @@
             this.ScRackNo.LabelText = "";
             this.ScRackNo.LabelVisible = false;
             this.ScRackNo.Location = new System.Drawing.Point(136, 297);
+            this.ScRackNo.Margin = new System.Windows.Forms.Padding(0);
             this.ScRackNo.Name = "ScRackNo";
+            this.ScRackNo.NameWidth = 600;
             this.ScRackNo.SearchEnable = true;
             this.ScRackNo.Size = new System.Drawing.Size(133, 28);
             this.ScRackNo.Stype = Search.CKM_SearchControl.SearchType.棚番号;
@@ -2646,7 +2685,7 @@
             this.lblSKUCD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSKUCD.Location = new System.Drawing.Point(81, 1);
             this.lblSKUCD.Name = "lblSKUCD";
-            this.lblSKUCD.Size = new System.Drawing.Size(207, 20);
+            this.lblSKUCD.Size = new System.Drawing.Size(251, 20);
             this.lblSKUCD.TabIndex = 333;
             this.lblSKUCD.Text = "XXXXXXXXX1XXXXXXXXX2XXXXXXXXX3";
             this.lblSKUCD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -2708,6 +2747,7 @@
             this.ckM_TextBox15.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox15.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox15.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox15.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox15.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.ckM_TextBox15.DecimalPlace = 0;
@@ -2814,6 +2854,7 @@
             this.ckM_TextBox16.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox16.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ckM_TextBox16.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox16.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox16.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.ckM_TextBox16.DecimalPlace = 0;
@@ -2842,6 +2883,7 @@
             this.SC_ITEM.ChangeDateWidth = 100;
             this.SC_ITEM.Code = "";
             this.SC_ITEM.CodeWidth = 110;
+            this.SC_ITEM.CodeWidth1 = 110;
             this.SC_ITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.SC_ITEM.DataCheck = false;
             this.SC_ITEM.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -2850,7 +2892,9 @@
             this.SC_ITEM.LabelText = "";
             this.SC_ITEM.LabelVisible = false;
             this.SC_ITEM.Location = new System.Drawing.Point(567, -3);
+            this.SC_ITEM.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM.Name = "SC_ITEM";
+            this.SC_ITEM.NameWidth = 190;
             this.SC_ITEM.SearchEnable = true;
             this.SC_ITEM.Size = new System.Drawing.Size(143, 28);
             this.SC_ITEM.Stype = Search.CKM_SearchControl.SearchType.JANCD;

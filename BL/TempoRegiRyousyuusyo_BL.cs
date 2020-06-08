@@ -1,4 +1,5 @@
 ﻿using DL;
+using System;
 using System.Data;
 
 namespace BL
@@ -8,6 +9,23 @@ namespace BL
     /// </summary>
     public class TempoRegiRyousyuusyo_BL : Base_BL
     {
+        /// <summary>
+        /// 領収書データ取得
+        /// </summary>
+        /// <param name="salesNo">お買上番号</param>
+        /// <returns>チェック結果(true=売上データあり、false=売上データなし)</returns>
+        public bool D_CheckSalseNO(string salesNo = "")
+        {
+            var dl = new TempoRegiRyousyuusyo_DL();
+            var dt = dl.D_CheckSalseNO(salesNo);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt32(dt.Rows[0][0]) > 0 ? true : false;
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// 領収書データ取得
         /// </summary>

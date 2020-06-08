@@ -176,6 +176,7 @@ namespace Shiharai_IchiranHyou
             {                
                 dtResult = CheckData();
 
+
                 if (dtResult == null) return;
                 //dpe = GetDataInfo();
                 //dtResult= Ichiran_BL.ItiranHyou_SelectForPrint(dpe);
