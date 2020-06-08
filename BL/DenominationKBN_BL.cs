@@ -33,7 +33,7 @@ namespace BL
             if (kbn == 1)
             {
                 //DataRow[] rows = dt.Select("SystemKBN NOT IN (1,2,3,5,8,9)");     2019/12/20 "1:現金,2:カード,3:ポイント,4:商品券,5:振込,6:小切手,7:相殺,8:値引,9:掛,10:Paypay
-                 DataRow[] rows = dt.Select("SystemKBN NOT IN (1,2,3,8,9)");
+                 DataRow[] rows = dt.Select("SystemKBN IN (1,2,3,8,9)");
 
                 for (int i = 0; i < rows.Length; i++)
                 {
