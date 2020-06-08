@@ -1,0 +1,1165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax21="http://client.exception.common.wsvc.ponparemall.com/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ax25="http://bean.common.wsvc.ponparemall.com/xsd" xmlns:ax23="http://bean.p_order.wsvc.ponparemall.com/xsd" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns="http://wsvc.p_order.wsvc.ponparemall.com" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ns1="http://org.apache.axis2/xsd" targetNamespace="http://wsvc.p_order.wsvc.ponparemall.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema xmlns:ax26="http://bean.common.wsvc.ponparemall.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bean.p_order.wsvc.ponparemall.com/xsd">
+      <xs:import namespace="http://bean.common.wsvc.ponparemall.com/xsd" />
+      <xs:complexType name="UpdateOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="updateOrderReq" nillable="true" type="ax23:UpdateOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="updateOrderList" nillable="true" type="ax23:OrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardUpdatedIconFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="cardUpdatingIconFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="depositDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrCautionFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="dlvDesiredDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvDesiredTimeZoneFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvDesiredTimeZoneKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvDesiredTimeZoneTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvFee" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="dlvKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="enclosableFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="encloseChildOrderList" nillable="true" type="ax23:OrderBean" />
+          <xs:element minOccurs="0" name="encloseDlvFee" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseItemAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="encloseOrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="encloseOrderPriceTaxSumList" nillable="true" type="ax23:OrderPriceTaxSumBean" />
+          <xs:element minOccurs="0" name="enclosePymntFee" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseTaxAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseTotalAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseTotalPymntAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseUseCouponAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="encloseUsePointAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="fraudOrderAlert" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="giftApplyFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="itemAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="mailcarrierCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="memberKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="messageToCustomer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="noshi" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nxDayDlvFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="orderCustomer" nillable="true" type="ax23:OrderCustomerBean" />
+          <xs:element minOccurs="0" name="orderDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderDlv" nillable="true" type="ax23:OrderDlvBean" />
+          <xs:element minOccurs="0" name="orderDlvAddr" nillable="true" type="ax23:OrderDlvAddrBean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderItemList" nillable="true" type="ax23:OrderItemBean" />
+          <xs:element minOccurs="0" name="orderMemo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNote" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderPriceTaxSumList" nillable="true" type="ax23:OrderPriceTaxSumBean" />
+          <xs:element minOccurs="0" name="orderPymnt" nillable="true" type="ax23:OrderPymntBean" />
+          <xs:element minOccurs="0" name="orderSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pymntFee" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="pymntSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sendDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shopUserNameInCharge" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="taxAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="taxRate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="totalAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="totalPymntAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="totalPymntAmountInit" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="useCouponList" nillable="true" type="ax23:CouponBean" />
+          <xs:element minOccurs="0" name="useCouponOtherAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="useCouponOtherCnt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="useCouponShopAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="useCouponShopCnt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="useCouponTotalAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="useCouponTotalCnt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="usePointAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="useTerminal" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="wrapping1" nillable="true" type="ax23:OrderWrappingBean" />
+          <xs:element minOccurs="0" name="wrapping2" nillable="true" type="ax23:OrderWrappingBean" />
+          <xs:element minOccurs="0" name="yellowUserFlg" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderPriceTaxSumBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="itemCouponDscntSbttl" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="itemTaxRate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="priceSbttl" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="taxSbttl" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderCustomerBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerFirstNameKana" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerLastNameKana" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerPref" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerTel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerZip1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerZip2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderDlvBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dlvMethodId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvMethodName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderDlvAddrBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dlvAddrAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrFirstNameKana" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrLastNameKana" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrPref" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrTel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrZip1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrZip2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="slipNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderItemBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HSkuItemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VSkuItemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="getPoint" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="getPointRate" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="incCodFeeFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="incShippingFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="invKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemCnt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="itemDelFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="itemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemManageId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemTaxRate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemTaxRateKbn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderItemSubNo" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="purchaseOption" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="salePrice" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="taxKind" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderPymntBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creditCard" nillable="true" type="ax23:CreditCardBean" />
+          <xs:element minOccurs="0" name="pymntMethodId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pymntMethodName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreditCardBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardBrand" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardExpire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardPymntMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardSignature" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CouponBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="couponAmount" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="couponCapitalKind" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="couponCnt" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="couponCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="couponName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="discountType" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="expiryDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemManageId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderItemSubNo" nillable="true" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderWrappingBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="wrappingDelFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="wrappingKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="wrappingName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="wrappingPrice" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="wrappingTaxKind" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="UpdateOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AsyncOrderReserveBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="elemNum" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" name="orderTranKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="requestId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="requestRcvDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="reserveErrList" nillable="true" type="ax23:ReserveErrBean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="reserveOrderNoList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tranSts" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ReserveErrBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderNoWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getOrderNoReq" nillable="true" type="ax23:GetOrderNoReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderNoReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderSearchCond" nillable="true" type="ax23:OrderSearchCondBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="OrderSearchCondBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="couponUse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="creditCardSearchCond" nillable="true" type="ax23:CreditCardSearchCondBean" />
+          <xs:element minOccurs="0" name="customerEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerEmailKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dateRangeFrom" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dateRangeSearchColumn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dateRangeTo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvMethodId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="encloseKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="itemName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nameSearchColumn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="nxDayDlvFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" name="orderMemo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pointUse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pymntMethodId" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="salesRoute" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="telSearchColumn" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updatedCardIconFlg" nillable="true" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CreditCardSearchCondBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cardBrandList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cardPymntMethodList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="cardSignature" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="pymntStsList" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderNoWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderNoList" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderInfoWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getOrderInfoReq" nillable="true" type="ax23:GetOrderInfoReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderInfoReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderNoList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderSearchCond" nillable="true" type="ax23:OrderSearchCondBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetOrderInfoWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderErrBeanList" nillable="true" type="ax23:RequestErrResultBean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="orderList" nillable="true" type="ax23:OrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="RequestErrResultBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEnclosableOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getEnclosableOrderReq" nillable="true" type="ax23:GetEnclosableOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEnclosableOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="targetOrderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetEnclosableOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="enclosableOrderList" nillable="true" type="ax23:EnclosableOrderBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="targetOrder" nillable="true" type="ax23:EnclosableOrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnclosableOrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dlvDesiredDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="enclosableFlg" nillable="true" type="xs:boolean" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="encloseChildOrderList" nillable="true" type="ax23:EnclosableOrderBean" />
+          <xs:element minOccurs="0" name="encloseKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="encloseParentOrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderCustomer" nillable="true" type="ax23:EnclosableOrderCustomerBean" />
+          <xs:element minOccurs="0" name="orderDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderDlvAddr" nillable="true" type="ax23:EnclosableOrderDlvAddrBean" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderPymnt" nillable="true" type="ax23:EnclosableOrderPymntBean" />
+          <xs:element minOccurs="0" name="orderSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="pymntSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="sendDate" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnclosableOrderCustomerBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="customerEmail" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="customerLastName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnclosableOrderDlvAddrBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="dlvAddrAddress" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrFirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrLastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrPref" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrTel" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrZip1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="dlvAddrZip2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnclosableOrderPymntBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="creditCard" nillable="true" type="ax23:EnclosableOrderCreditCardBean" />
+          <xs:element minOccurs="0" name="pymntMethodName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EnclosableOrderCreditCardBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cardNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAsyncOrderResultWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="getAsyncOrderResultReq" nillable="true" type="ax23:GetAsyncOrderResultReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAsyncOrderResultReqBean">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="requestIdList" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="GetAsyncOrderResultWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="asyncOrderResultList" nillable="true" type="ax23:AsyncOrderResultBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="errRequestInfoList" nillable="true" type="ax23:ErrRequestInfoBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="AsyncOrderResultBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="completeOrderNoList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="elemNum" nillable="true" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="errOrderInfoList" nillable="true" type="ax23:ErrOrderInfoBean" />
+          <xs:element minOccurs="0" name="orderTranKind" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="requestId" nillable="true" type="xs:long" />
+          <xs:element minOccurs="0" name="requestRcvDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="startDateTime" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="tranSts" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="updateDateTime" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrOrderInfoBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ErrRequestInfoBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="requestId" nillable="true" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EncloseOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="encloseOrderReq" nillable="true" type="ax23:EncloseOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EncloseOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="encloseOrderList" nillable="true" type="ax23:EncloseOrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EncloseOrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="childOrderList" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parentOrderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="EncloseOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeParentOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="changeParentOrderReq" nillable="true" type="ax23:ChangeParentOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeParentOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="changeParentOrderList" nillable="true" type="ax23:ChangeParentOrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeParentOrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="afterParentOrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="currentParentOrderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeParentOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeOrderStatusWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="changeOrderStatusReq" nillable="true" type="ax23:ChangeOrderStatusReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeOrderStatusReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="changeOrderStatusList" nillable="true" type="ax23:ChangeOrderStatusBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeOrderStatusBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderStatus" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ChangeOrderStatusWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelOrderReq" nillable="true" type="ax23:CancelOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="cancelOrderList" nillable="true" type="ax23:CancelOrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="cancelReason" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="orderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="CancelOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApartOrderWsvcReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apartOrderReq" nillable="true" type="ax23:ApartOrderReqBean" />
+          <xs:element minOccurs="0" name="userAuthBean" nillable="true" type="ax26:UserAuthBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApartOrderReqBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="apartOrderList" nillable="true" type="ax23:ApartOrderBean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApartOrderBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="childOrderNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parentOrderNo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ApartOrderWsvcRspBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="asyncOrderReserve" nillable="true" type="ax23:AsyncOrderReserveBean" />
+          <xs:element minOccurs="0" name="errCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="errMessage" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema xmlns:ax22="http://client.exception.common.wsvc.ponparemall.com/xsd" xmlns:ax24="http://bean.p_order.wsvc.ponparemall.com/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://wsvc.p_order.wsvc.ponparemall.com">
+      <xs:import namespace="http://client.exception.common.wsvc.ponparemall.com/xsd" />
+      <xs:import namespace="http://bean.p_order.wsvc.ponparemall.com/xsd" />
+      <xs:element name="orderWsvcMaintenance">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="Maintenance" nillable="true" type="ax22:Maintenance" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:UpdateOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="updateOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:UpdateOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrderNo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:GetOrderNoWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrderNoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:GetOrderNoWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrderInfo">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:GetOrderInfoWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getOrderInfoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:GetOrderInfoWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getEnclosableOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:GetEnclosableOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getEnclosableOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:GetEnclosableOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAsyncOrderResult">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:GetAsyncOrderResultWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAsyncOrderResultResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:GetAsyncOrderResultWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="encloseOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:EncloseOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="encloseOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:EncloseOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changeParentOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:ChangeParentOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changeParentOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:ChangeParentOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changeOrderStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:ChangeOrderStatusWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="changeOrderStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:ChangeOrderStatusWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:CancelOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="cancelOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:CancelOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="apartOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="req" nillable="true" type="ax24:ApartOrderWsvcReqBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="apartOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax24:ApartOrderWsvcRspBean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://client.exception.common.wsvc.ponparemall.com/xsd">
+      <xs:complexType name="Maintenance">
+        <xs:sequence />
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://bean.common.wsvc.ponparemall.com/xsd">
+      <xs:complexType name="UserAuthBean">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="shopUrl" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="userId" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="changeParentOrderRequest">
+    <wsdl:part name="parameters" element="ns:changeParentOrder" />
+  </wsdl:message>
+  <wsdl:message name="changeParentOrderResponse">
+    <wsdl:part name="parameters" element="ns:changeParentOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="orderWsvcMaintenance">
+    <wsdl:part name="parameters" element="ns:orderWsvcMaintenance" />
+  </wsdl:message>
+  <wsdl:message name="getOrderInfoRequest">
+    <wsdl:part name="parameters" element="ns:getOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="getOrderInfoResponse">
+    <wsdl:part name="parameters" element="ns:getOrderInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="changeOrderStatusRequest">
+    <wsdl:part name="parameters" element="ns:changeOrderStatus" />
+  </wsdl:message>
+  <wsdl:message name="changeOrderStatusResponse">
+    <wsdl:part name="parameters" element="ns:changeOrderStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAsyncOrderResultRequest">
+    <wsdl:part name="parameters" element="ns:getAsyncOrderResult" />
+  </wsdl:message>
+  <wsdl:message name="getAsyncOrderResultResponse">
+    <wsdl:part name="parameters" element="ns:getAsyncOrderResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="apartOrderRequest">
+    <wsdl:part name="parameters" element="ns:apartOrder" />
+  </wsdl:message>
+  <wsdl:message name="apartOrderResponse">
+    <wsdl:part name="parameters" element="ns:apartOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="encloseOrderRequest">
+    <wsdl:part name="parameters" element="ns:encloseOrder" />
+  </wsdl:message>
+  <wsdl:message name="encloseOrderResponse">
+    <wsdl:part name="parameters" element="ns:encloseOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOrderNoRequest">
+    <wsdl:part name="parameters" element="ns:getOrderNo" />
+  </wsdl:message>
+  <wsdl:message name="getOrderNoResponse">
+    <wsdl:part name="parameters" element="ns:getOrderNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cancelOrderRequest">
+    <wsdl:part name="parameters" element="ns:cancelOrder" />
+  </wsdl:message>
+  <wsdl:message name="cancelOrderResponse">
+    <wsdl:part name="parameters" element="ns:cancelOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateOrderRequest">
+    <wsdl:part name="parameters" element="ns:updateOrder" />
+  </wsdl:message>
+  <wsdl:message name="updateOrderResponse">
+    <wsdl:part name="parameters" element="ns:updateOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEnclosableOrderRequest">
+    <wsdl:part name="parameters" element="ns:getEnclosableOrder" />
+  </wsdl:message>
+  <wsdl:message name="getEnclosableOrderResponse">
+    <wsdl:part name="parameters" element="ns:getEnclosableOrderResponse" />
+  </wsdl:message>
+  <wsdl:portType name="orderWsvcPortType">
+    <wsdl:operation name="changeParentOrder">
+      <wsdl:input wsaw:Action="urn:changeParentOrder" message="ns:changeParentOrderRequest" />
+      <wsdl:output wsaw:Action="urn:changeParentOrderResponse" message="ns:changeParentOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:changeParentOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderInfo">
+      <wsdl:input wsaw:Action="urn:getOrderInfo" message="ns:getOrderInfoRequest" />
+      <wsdl:output wsaw:Action="urn:getOrderInfoResponse" message="ns:getOrderInfoResponse" />
+      <wsdl:fault wsaw:Action="urn:getOrderInfoorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="changeOrderStatus">
+      <wsdl:input wsaw:Action="urn:changeOrderStatus" message="ns:changeOrderStatusRequest" />
+      <wsdl:output wsaw:Action="urn:changeOrderStatusResponse" message="ns:changeOrderStatusResponse" />
+      <wsdl:fault wsaw:Action="urn:changeOrderStatusorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getAsyncOrderResult">
+      <wsdl:input wsaw:Action="urn:getAsyncOrderResult" message="ns:getAsyncOrderResultRequest" />
+      <wsdl:output wsaw:Action="urn:getAsyncOrderResultResponse" message="ns:getAsyncOrderResultResponse" />
+      <wsdl:fault wsaw:Action="urn:getAsyncOrderResultorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="apartOrder">
+      <wsdl:input wsaw:Action="urn:apartOrder" message="ns:apartOrderRequest" />
+      <wsdl:output wsaw:Action="urn:apartOrderResponse" message="ns:apartOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:apartOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="encloseOrder">
+      <wsdl:input wsaw:Action="urn:encloseOrder" message="ns:encloseOrderRequest" />
+      <wsdl:output wsaw:Action="urn:encloseOrderResponse" message="ns:encloseOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:encloseOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderNo">
+      <wsdl:input wsaw:Action="urn:getOrderNo" message="ns:getOrderNoRequest" />
+      <wsdl:output wsaw:Action="urn:getOrderNoResponse" message="ns:getOrderNoResponse" />
+      <wsdl:fault wsaw:Action="urn:getOrderNoorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <wsdl:input wsaw:Action="urn:cancelOrder" message="ns:cancelOrderRequest" />
+      <wsdl:output wsaw:Action="urn:cancelOrderResponse" message="ns:cancelOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:cancelOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <wsdl:input wsaw:Action="urn:updateOrder" message="ns:updateOrderRequest" />
+      <wsdl:output wsaw:Action="urn:updateOrderResponse" message="ns:updateOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:updateOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getEnclosableOrder">
+      <wsdl:input wsaw:Action="urn:getEnclosableOrder" message="ns:getEnclosableOrderRequest" />
+      <wsdl:output wsaw:Action="urn:getEnclosableOrderResponse" message="ns:getEnclosableOrderResponse" />
+      <wsdl:fault wsaw:Action="urn:getEnclosableOrderorderWsvcMaintenance" name="orderWsvcMaintenance" message="ns:orderWsvcMaintenance" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="orderWsvcSoap11Binding" type="ns:orderWsvcPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getOrderInfo">
+      <soap:operation soapAction="urn:getOrderInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeParentOrder">
+      <soap:operation soapAction="urn:changeParentOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeOrderStatus">
+      <soap:operation soapAction="urn:changeOrderStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAsyncOrderResult">
+      <soap:operation soapAction="urn:getAsyncOrderResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="apartOrder">
+      <soap:operation soapAction="urn:apartOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encloseOrder">
+      <soap:operation soapAction="urn:encloseOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderNo">
+      <soap:operation soapAction="urn:getOrderNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <soap:operation soapAction="urn:cancelOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap:operation soapAction="urn:updateOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEnclosableOrder">
+      <soap:operation soapAction="urn:getEnclosableOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="orderWsvcSoap12Binding" type="ns:orderWsvcPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getOrderInfo">
+      <soap12:operation soapAction="urn:getOrderInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeParentOrder">
+      <soap12:operation soapAction="urn:changeParentOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="changeOrderStatus">
+      <soap12:operation soapAction="urn:changeOrderStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAsyncOrderResult">
+      <soap12:operation soapAction="urn:getAsyncOrderResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="apartOrder">
+      <soap12:operation soapAction="urn:apartOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="encloseOrder">
+      <soap12:operation soapAction="urn:encloseOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getOrderNo">
+      <soap12:operation soapAction="urn:getOrderNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <soap12:operation soapAction="urn:cancelOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <soap12:operation soapAction="urn:updateOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEnclosableOrder">
+      <soap12:operation soapAction="urn:getEnclosableOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance">
+        <soap12:fault use="literal" name="orderWsvcMaintenance" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="orderWsvcHttpBinding" type="ns:orderWsvcPortType">
+    <http:binding verb="POST" />
+    <wsdl:operation name="getOrderInfo">
+      <http:operation location="getOrderInfo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="changeParentOrder">
+      <http:operation location="changeParentOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="changeOrderStatus">
+      <http:operation location="changeOrderStatus" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getAsyncOrderResult">
+      <http:operation location="getAsyncOrderResult" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="apartOrder">
+      <http:operation location="apartOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="encloseOrder">
+      <http:operation location="encloseOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getOrderNo">
+      <http:operation location="getOrderNo" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="cancelOrder">
+      <http:operation location="cancelOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="updateOrder">
+      <http:operation location="updateOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+    <wsdl:operation name="getEnclosableOrder">
+      <http:operation location="getEnclosableOrder" />
+      <wsdl:input>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="parameters" type="application/xml" />
+      </wsdl:output>
+      <wsdl:fault name="orderWsvcMaintenance" />
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="orderWsvc">
+    <wsdl:port name="orderWsvcHttpsSoap11Endpoint" binding="ns:orderWsvcSoap11Binding">
+      <soap:address location="https://p-order.ws.ponparemall.com/1_4_0/services/orderWsvc.orderWsvcHttpsSoap11Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="orderWsvcHttpsSoap12Endpoint" binding="ns:orderWsvcSoap12Binding">
+      <soap12:address location="https://p-order.ws.ponparemall.com/1_4_0/services/orderWsvc.orderWsvcHttpsSoap12Endpoint/" />
+    </wsdl:port>
+    <wsdl:port name="orderWsvcHttpsEndpoint" binding="ns:orderWsvcHttpBinding">
+      <http:address location="https://p-order.ws.ponparemall.com/1_4_0/services/orderWsvc.orderWsvcHttpsEndpoint/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
