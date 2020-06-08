@@ -661,14 +661,13 @@ namespace MasterTouroku_ShiireKakeritsu
                 dgv_ShiireKakeritsu.DataSource = dtMain;
                 foreach (DataGridViewRow drow in dgv_ShiireKakeritsu.Rows)
                 {
-                    if (drow.Cells["col1"].Value.ToString() == "1")
-                   
+                    if (drow.Cells["col1"].Value.ToString() == "0")
                     {
-                        drow.Cells["colChk"].Value = true;
+                        drow.Cells["colChk"].Value = false;
                     }
                     else
                     {
-                        drow.Cells["colChk"].Value = false;
+                        drow.Cells["colChk"].Value = true;
                     }
                 }
             }

@@ -835,9 +835,9 @@
             this.lblSumSalesTax.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSumSalesTax.ForeColor = System.Drawing.Color.Black;
-            this.lblSumSalesTax.Location = new System.Drawing.Point(1696, 671);
+            this.lblSumSalesTax.Location = new System.Drawing.Point(1694, 674);
             this.lblSumSalesTax.Name = "lblSumSalesTax";
-            this.lblSumSalesTax.Size = new System.Drawing.Size(200, 40);
+            this.lblSumSalesTax.Size = new System.Drawing.Size(200, 43);
             this.lblSumSalesTax.TabIndex = 63;
             this.lblSumSalesTax.Text = "999,999,999";
             this.lblSumSalesTax.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
@@ -851,9 +851,9 @@
             this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSumSalesGaku.ForeColor = System.Drawing.Color.White;
-            this.lblSumSalesGaku.Location = new System.Drawing.Point(1696, 631);
+            this.lblSumSalesGaku.Location = new System.Drawing.Point(1694, 631);
             this.lblSumSalesGaku.Name = "lblSumSalesGaku";
-            this.lblSumSalesGaku.Size = new System.Drawing.Size(200, 40);
+            this.lblSumSalesGaku.Size = new System.Drawing.Size(200, 43);
             this.lblSumSalesGaku.TabIndex = 62;
             this.lblSumSalesGaku.Text = "999,999,999";
             this.lblSumSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.White;
@@ -867,7 +867,7 @@
             this.ckmShop_Label17.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(1525, 636);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(1523, 636);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label17.TabIndex = 60;
@@ -996,7 +996,7 @@
             this.label4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1493, 671);
+            this.label4.Location = new System.Drawing.Point(1491, 674);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 40);
             this.label4.TabIndex = 73;
@@ -1068,7 +1068,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1101,7 +1101,7 @@
             this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(125, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(127, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1333,7 +1333,7 @@
             this.txtJuchuuUnitPrice.IsNumber = true;
             this.txtJuchuuUnitPrice.IsShop = false;
             this.txtJuchuuUnitPrice.Length = 11;
-            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(1, 7);
+            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(217, 368);
             this.txtJuchuuUnitPrice.MaxLength = 11;
             this.txtJuchuuUnitPrice.MoveNext = true;
             this.txtJuchuuUnitPrice.Name = "txtJuchuuUnitPrice";
@@ -1485,7 +1485,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
@@ -1637,7 +1637,7 @@
             this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
             this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(126, 95);
+            this.btnSyo102.Size = new System.Drawing.Size(128, 95);
             this.btnSyo102.TabIndex = 19;
             this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
@@ -1829,7 +1829,7 @@
             this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
             this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(126, 95);
+            this.btnSyo101.Size = new System.Drawing.Size(128, 95);
             this.btnSyo101.TabIndex = 18;
             this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
@@ -1896,11 +1896,10 @@
             this.lblSalesGaku.IsNumber = true;
             this.lblSalesGaku.IsShop = false;
             this.lblSalesGaku.Length = 20;
-            this.lblSalesGaku.Location = new System.Drawing.Point(217, 410);
+            this.lblSalesGaku.Location = new System.Drawing.Point(2, 1);
             this.lblSalesGaku.MaxLength = 20;
             this.lblSalesGaku.MoveNext = true;
             this.lblSalesGaku.Name = "lblSalesGaku";
-            this.lblSalesGaku.ReadOnly = true;
             this.lblSalesGaku.Size = new System.Drawing.Size(240, 42);
             this.lblSalesGaku.TabIndex = 91;
             this.lblSalesGaku.Text = "999999999";
@@ -1925,7 +1924,7 @@
             this.lblSalesTax.IsNumber = true;
             this.lblSalesTax.IsShop = false;
             this.lblSalesTax.Length = 20;
-            this.lblSalesTax.Location = new System.Drawing.Point(217, 452);
+            this.lblSalesTax.Location = new System.Drawing.Point(217, 455);
             this.lblSalesTax.MaxLength = 20;
             this.lblSalesTax.MoveNext = true;
             this.lblSalesTax.Name = "lblSalesTax";
@@ -1966,11 +1965,11 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtJuchuuUnitPrice);
+            this.panel3.Controls.Add(this.lblSalesGaku);
             this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(216, 360);
+            this.panel3.Location = new System.Drawing.Point(215, 409);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(250, 50);
+            this.panel3.Size = new System.Drawing.Size(243, 43);
             this.panel3.TabIndex = 94;
             // 
             // TempoRegiHanbaiTouroku
@@ -1979,10 +1978,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
             this.ClientSize = new System.Drawing.Size(1913, 1011);
+            this.Controls.Add(this.txtJuchuuUnitPrice);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblJuchuuTaxRitsu);
             this.Controls.Add(this.lblSalesTax);
-            this.Controls.Add(this.lblSalesGaku);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.btnSyoDown);
             this.Controls.Add(this.btnSyoUp);
@@ -2062,10 +2061,10 @@
             this.Controls.SetChildIndex(this.btnSyoUp, 0);
             this.Controls.SetChildIndex(this.btnSyoDown, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
-            this.Controls.SetChildIndex(this.lblSalesGaku, 0);
             this.Controls.SetChildIndex(this.lblSalesTax, 0);
             this.Controls.SetChildIndex(this.lblJuchuuTaxRitsu, 0);
             this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.txtJuchuuUnitPrice, 0);
             this.pnlDetails.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
