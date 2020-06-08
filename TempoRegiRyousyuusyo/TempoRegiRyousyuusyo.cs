@@ -64,8 +64,8 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         TempoRegiRyousyuusyo_BL bl = new TempoRegiRyousyuusyo_BL();
 
-        //private DataTable checkRyousyuushoResult = null;
-        //private DataTable checkReceiptResult = null;
+        private DataTable checkRyousyuushoResult = null;
+        private DataTable checkReceiptResult = null;
 
         /// <summary>
         /// 店舗レジ領収収書印刷 コンストラクタ
@@ -600,7 +600,7 @@ namespace TempoRegiRyousyuusyo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnClose.Focus();
+                txtSalesNO.Focus();
             }
         }
     }
