@@ -38,6 +38,7 @@
             this.txt_message.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.txt_message.BackColor = System.Drawing.Color.White;
             this.txt_message.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.txt_message.F_focus = false;
             this.txt_message.Font = new System.Drawing.Font("MS Gothic", 20F);
             this.txt_message.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.txt_message.Length = 500;
@@ -53,6 +54,8 @@
             this.txt_message.Size = new System.Drawing.Size(1163, 543);
             this.txt_message.TabIndex = 0;
             this.txt_message.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Large;
+            this.txt_message.TextChanged += new System.EventHandler(this.txt_message_TextChanged);
+            this.txt_message.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txt_message_MouseMove);
             // 
             // btn_Proj4
             // 
@@ -62,12 +65,12 @@
             this.btn_Proj4.DefaultBtnSize = false;
             this.btn_Proj4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_Proj4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Proj4.Font = new System.Drawing.Font("MS Gothic", 20F, System.Drawing.FontStyle.Bold);
+            this.btn_Proj4.Font = new System.Drawing.Font("MS Gothic", 28F, System.Drawing.FontStyle.Bold);
             this.btn_Proj4.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Large;
-            this.btn_Proj4.Location = new System.Drawing.Point(12, 598);
+            this.btn_Proj4.Location = new System.Drawing.Point(12, 586);
             this.btn_Proj4.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Proj4.Name = "btn_Proj4";
-            this.btn_Proj4.Size = new System.Drawing.Size(304, 69);
+            this.btn_Proj4.Size = new System.Drawing.Size(381, 82);
             this.btn_Proj4.TabIndex = 13;
             this.btn_Proj4.Text = "終 了";
             this.btn_Proj4.UseVisualStyleBackColor = false;
@@ -86,6 +89,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Store_Message";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Store_Message";
             this.Load += new System.EventHandler(this.Store_Message_Load);
             this.ResumeLayout(false);
