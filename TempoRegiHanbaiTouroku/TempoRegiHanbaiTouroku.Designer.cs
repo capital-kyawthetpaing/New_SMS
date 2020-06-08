@@ -80,30 +80,6 @@
             this.lblColorSize = new CKM_Controls.CKMShop_Label();
             this.label3 = new CKM_Controls.CKMShop_Label();
             this.label4 = new CKM_Controls.CKMShop_Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnSyo12 = new System.Windows.Forms.Button();
-            this.btnSyo42 = new System.Windows.Forms.Button();
-            this.btnSyo52 = new System.Windows.Forms.Button();
-            this.btnSyo22 = new System.Windows.Forms.Button();
-            this.btnSyo32 = new System.Windows.Forms.Button();
-            this.btnSyo62 = new System.Windows.Forms.Button();
-            this.btnSyo92 = new System.Windows.Forms.Button();
-            this.btnSyo102 = new System.Windows.Forms.Button();
-            this.btnSyo72 = new System.Windows.Forms.Button();
-            this.btnSyo82 = new System.Windows.Forms.Button();
-            this.btnSyo11 = new System.Windows.Forms.Button();
-            this.btnSyo21 = new System.Windows.Forms.Button();
-            this.btnSyo31 = new System.Windows.Forms.Button();
-            this.btnSyo41 = new System.Windows.Forms.Button();
-            this.btnSyo51 = new System.Windows.Forms.Button();
-            this.btnSyo61 = new System.Windows.Forms.Button();
-            this.btnSyo71 = new System.Windows.Forms.Button();
-            this.btnSyo81 = new System.Windows.Forms.Button();
-            this.btnSyo91 = new System.Windows.Forms.Button();
-            this.btnSyo101 = new System.Windows.Forms.Button();
-            this.btnSyoUp = new CKM_Controls.CKM_Button();
-            this.btnSyoDown = new CKM_Controls.CKM_Button();
             this.btnGroupDown = new CKM_Controls.CKM_Button();
             this.btnGroupUp = new CKM_Controls.CKM_Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -130,10 +106,34 @@
             this.btnCustomerNo = new CKM_Controls.CKM_Button();
             this.btnSyohin = new CKM_Controls.CKM_Button();
             this.lblKeijobi = new CKM_Controls.CKMShop_Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSyo12 = new System.Windows.Forms.Button();
+            this.btnSyo42 = new System.Windows.Forms.Button();
+            this.btnSyo52 = new System.Windows.Forms.Button();
+            this.btnSyo22 = new System.Windows.Forms.Button();
+            this.btnSyo32 = new System.Windows.Forms.Button();
+            this.btnSyo62 = new System.Windows.Forms.Button();
+            this.btnSyo92 = new System.Windows.Forms.Button();
+            this.btnSyo102 = new System.Windows.Forms.Button();
+            this.btnSyo72 = new System.Windows.Forms.Button();
+            this.btnSyo82 = new System.Windows.Forms.Button();
+            this.btnSyo11 = new System.Windows.Forms.Button();
+            this.btnSyo21 = new System.Windows.Forms.Button();
+            this.btnSyo31 = new System.Windows.Forms.Button();
+            this.btnSyo41 = new System.Windows.Forms.Button();
+            this.btnSyo51 = new System.Windows.Forms.Button();
+            this.btnSyo61 = new System.Windows.Forms.Button();
+            this.btnSyo71 = new System.Windows.Forms.Button();
+            this.btnSyo81 = new System.Windows.Forms.Button();
+            this.btnSyo91 = new System.Windows.Forms.Button();
+            this.btnSyo101 = new System.Windows.Forms.Button();
+            this.btnSyoDown = new CKM_Controls.CKM_Button();
+            this.btnSyoUp = new CKM_Controls.CKM_Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlDetails.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtJanCD
@@ -155,7 +155,7 @@
             this.txtJanCD.IsNumber = false;
             this.txtJanCD.IsShop = false;
             this.txtJanCD.Length = 13;
-            this.txtJanCD.Location = new System.Drawing.Point(217, 179);
+            this.txtJanCD.Location = new System.Drawing.Point(213, 179);
             this.txtJanCD.MaxLength = 13;
             this.txtJanCD.MoveNext = true;
             this.txtJanCD.Name = "txtJanCD";
@@ -173,7 +173,7 @@
             this.ckmShop_Label7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(692, 378);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(688, 378);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(106, 30);
             this.ckmShop_Label7.TabIndex = 28;
@@ -200,7 +200,7 @@
             this.txtSu.IsNumber = true;
             this.txtSu.IsShop = false;
             this.txtSu.Length = 20;
-            this.txtSu.Location = new System.Drawing.Point(802, 375);
+            this.txtSu.Location = new System.Drawing.Point(798, 375);
             this.txtSu.MaxLength = 20;
             this.txtSu.MoveNext = true;
             this.txtSu.Name = "txtSu";
@@ -219,7 +219,7 @@
             this.ckmShop_Label9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label9.Location = new System.Drawing.Point(81, 413);
+            this.ckmShop_Label9.Location = new System.Drawing.Point(77, 413);
             this.ckmShop_Label9.Name = "ckmShop_Label9";
             this.ckmShop_Label9.Size = new System.Drawing.Size(137, 30);
             this.ckmShop_Label9.TabIndex = 32;
@@ -235,7 +235,7 @@
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label12.Location = new System.Drawing.Point(1504, 82);
+            this.ckmShop_Label12.Location = new System.Drawing.Point(1515, 78);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
             this.ckmShop_Label12.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label12.TabIndex = 37;
@@ -262,7 +262,7 @@
             this.txtSalesNO.IsNumber = false;
             this.txtSalesNO.IsShop = false;
             this.txtSalesNO.Length = 13;
-            this.txtSalesNO.Location = new System.Drawing.Point(1672, 78);
+            this.txtSalesNO.Location = new System.Drawing.Point(1683, 74);
             this.txtSalesNO.MaxLength = 13;
             this.txtSalesNO.MoveNext = true;
             this.txtSalesNO.Name = "txtSalesNO";
@@ -291,7 +291,7 @@
             this.txtCustomerNo.IsNumber = false;
             this.txtCustomerNo.IsShop = false;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(217, 81);
+            this.txtCustomerNo.Location = new System.Drawing.Point(213, 81);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
@@ -311,7 +311,7 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnOk.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnOk.Location = new System.Drawing.Point(18, 582);
+            this.btnOk.Location = new System.Drawing.Point(14, 582);
             this.btnOk.Margin = new System.Windows.Forms.Padding(1);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(1130, 45);
@@ -330,7 +330,7 @@
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnUp.Location = new System.Drawing.Point(1173, 582);
+            this.btnUp.Location = new System.Drawing.Point(1184, 578);
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(355, 45);
@@ -349,7 +349,7 @@
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnDown.Location = new System.Drawing.Point(1528, 582);
+            this.btnDown.Location = new System.Drawing.Point(1539, 578);
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(355, 45);
@@ -386,7 +386,7 @@
             this.pnlDetails.Controls.Add(this.lblGyoSelect1);
             this.pnlDetails.Controls.Add(this.lblGyoSelect2);
             this.pnlDetails.Controls.Add(this.lblGyoSelect3);
-            this.pnlDetails.Location = new System.Drawing.Point(1173, 178);
+            this.pnlDetails.Location = new System.Drawing.Point(1184, 174);
             this.pnlDetails.Name = "pnlDetails";
             this.pnlDetails.Size = new System.Drawing.Size(710, 405);
             this.pnlDetails.TabIndex = 46;
@@ -801,7 +801,7 @@
             this.lblSyohinChuijiko.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSyohinChuijiko.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSyohinChuijiko.ForeColor = System.Drawing.Color.Black;
-            this.lblSyohinChuijiko.Location = new System.Drawing.Point(18, 500);
+            this.lblSyohinChuijiko.Location = new System.Drawing.Point(14, 500);
             this.lblSyohinChuijiko.Name = "lblSyohinChuijiko";
             this.lblSyohinChuijiko.Size = new System.Drawing.Size(1000, 70);
             this.lblSyohinChuijiko.TabIndex = 51;
@@ -817,7 +817,7 @@
             this.lblPoint.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblPoint.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblPoint.ForeColor = System.Drawing.Color.Black;
-            this.lblPoint.Location = new System.Drawing.Point(297, 117);
+            this.lblPoint.Location = new System.Drawing.Point(293, 117);
             this.lblPoint.Name = "lblPoint";
             this.lblPoint.Size = new System.Drawing.Size(130, 41);
             this.lblPoint.TabIndex = 54;
@@ -833,7 +833,7 @@
             this.lblSalesGaku.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSalesGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesGaku.Location = new System.Drawing.Point(221, 408);
+            this.lblSalesGaku.Location = new System.Drawing.Point(217, 408);
             this.lblSalesGaku.Name = "lblSalesGaku";
             this.lblSalesGaku.Size = new System.Drawing.Size(210, 41);
             this.lblSalesGaku.TabIndex = 58;
@@ -849,7 +849,7 @@
             this.lblJuchuuTaxRitsu.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuTaxRitsu.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblJuchuuTaxRitsu.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(431, 449);
+            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(427, 449);
             this.lblJuchuuTaxRitsu.Name = "lblJuchuuTaxRitsu";
             this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(73, 41);
             this.lblJuchuuTaxRitsu.TabIndex = 59;
@@ -865,7 +865,7 @@
             this.lblSumSalesTax.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSumSalesTax.ForeColor = System.Drawing.Color.Black;
-            this.lblSumSalesTax.Location = new System.Drawing.Point(1683, 674);
+            this.lblSumSalesTax.Location = new System.Drawing.Point(1692, 669);
             this.lblSumSalesTax.Name = "lblSumSalesTax";
             this.lblSumSalesTax.Size = new System.Drawing.Size(200, 40);
             this.lblSumSalesTax.TabIndex = 63;
@@ -881,7 +881,7 @@
             this.lblSumSalesGaku.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSumSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSumSalesGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSumSalesGaku.Location = new System.Drawing.Point(1683, 634);
+            this.lblSumSalesGaku.Location = new System.Drawing.Point(1692, 629);
             this.lblSumSalesGaku.Name = "lblSumSalesGaku";
             this.lblSumSalesGaku.Size = new System.Drawing.Size(200, 40);
             this.lblSumSalesGaku.TabIndex = 62;
@@ -897,7 +897,7 @@
             this.ckmShop_Label17.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(1511, 639);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(1520, 634);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label17.TabIndex = 60;
@@ -913,7 +913,7 @@
             this.lblSalesTax.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSalesTax.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSalesTax.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesTax.Location = new System.Drawing.Point(221, 449);
+            this.lblSalesTax.Location = new System.Drawing.Point(217, 449);
             this.lblSalesTax.Name = "lblSalesTax";
             this.lblSalesTax.Size = new System.Drawing.Size(210, 41);
             this.lblSalesTax.TabIndex = 64;
@@ -929,7 +929,7 @@
             this.lblStoreTankaKBN.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreTankaKBN.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblStoreTankaKBN.ForeColor = System.Drawing.Color.Black;
-            this.lblStoreTankaKBN.Location = new System.Drawing.Point(217, 117);
+            this.lblStoreTankaKBN.Location = new System.Drawing.Point(213, 117);
             this.lblStoreTankaKBN.Name = "lblStoreTankaKBN";
             this.lblStoreTankaKBN.Size = new System.Drawing.Size(80, 41);
             this.lblStoreTankaKBN.TabIndex = 65;
@@ -947,7 +947,7 @@
             this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnInfo.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnInfo.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnInfo.Location = new System.Drawing.Point(427, 177);
+            this.btnInfo.Location = new System.Drawing.Point(423, 177);
             this.btnInfo.Margin = new System.Windows.Forms.Padding(1);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(200, 41);
@@ -966,7 +966,7 @@
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStock.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnStock.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnStock.Location = new System.Drawing.Point(627, 177);
+            this.btnStock.Location = new System.Drawing.Point(623, 177);
             this.btnStock.Margin = new System.Windows.Forms.Padding(1);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(200, 41);
@@ -982,7 +982,7 @@
             this.lblCusName.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblCusName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblCusName.ForeColor = System.Drawing.Color.Black;
-            this.lblCusName.Location = new System.Drawing.Point(433, 81);
+            this.lblCusName.Location = new System.Drawing.Point(429, 81);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(850, 85);
             this.lblCusName.TabIndex = 69;
@@ -997,7 +997,7 @@
             this.lblSKUName.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblSKUName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblSKUName.ForeColor = System.Drawing.Color.Black;
-            this.lblSKUName.Location = new System.Drawing.Point(219, 227);
+            this.lblSKUName.Location = new System.Drawing.Point(215, 227);
             this.lblSKUName.Name = "lblSKUName";
             this.lblSKUName.Size = new System.Drawing.Size(770, 60);
             this.lblSKUName.TabIndex = 70;
@@ -1012,7 +1012,7 @@
             this.lblColorSize.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblColorSize.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblColorSize.ForeColor = System.Drawing.Color.Black;
-            this.lblColorSize.Location = new System.Drawing.Point(219, 295);
+            this.lblColorSize.Location = new System.Drawing.Point(215, 295);
             this.lblColorSize.Name = "lblColorSize";
             this.lblColorSize.Size = new System.Drawing.Size(770, 60);
             this.lblColorSize.TabIndex = 71;
@@ -1027,7 +1027,7 @@
             this.label3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.label3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(69, 453);
+            this.label3.Location = new System.Drawing.Point(65, 453);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 35);
             this.label3.TabIndex = 72;
@@ -1042,422 +1042,13 @@
             this.label4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1481, 674);
+            this.label4.Location = new System.Drawing.Point(1490, 669);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 40);
             this.label4.TabIndex = 73;
             this.label4.Text = "うち税額";
             this.label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(59, 638);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(889, 106);
-            this.panel1.TabIndex = 74;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
-            this.tableLayoutPanel3.ColumnCount = 10;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo22, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo32, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo62, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo92, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo102, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo72, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo82, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo11, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo21, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo31, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo41, 3, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo51, 4, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo61, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo71, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo81, 7, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo91, 8, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnSyo101, 9, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(64, 638);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 22F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1300, 200);
-            this.tableLayoutPanel3.TabIndex = 5;
-            // 
-            // btnSyo12
-            // 
-            this.btnSyo12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo12.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo12.Location = new System.Drawing.Point(3, 102);
-            this.btnSyo12.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo12.Name = "btnSyo12";
-            this.btnSyo12.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo12.TabIndex = 1;
-            this.btnSyo12.Text = " ";
-            this.btnSyo12.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo42
-            // 
-            this.btnSyo42.BackColor = System.Drawing.Color.White;
-            this.btnSyo42.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo42.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo42.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo42.Location = new System.Drawing.Point(390, 102);
-            this.btnSyo42.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo42.Name = "btnSyo42";
-            this.btnSyo42.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo42.TabIndex = 7;
-            this.btnSyo42.Text = " ";
-            this.btnSyo42.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo52
-            // 
-            this.btnSyo52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo52.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo52.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo52.Location = new System.Drawing.Point(519, 102);
-            this.btnSyo52.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo52.Name = "btnSyo52";
-            this.btnSyo52.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo52.TabIndex = 9;
-            this.btnSyo52.Text = " ";
-            this.btnSyo52.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo22
-            // 
-            this.btnSyo22.BackColor = System.Drawing.Color.White;
-            this.btnSyo22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo22.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo22.Location = new System.Drawing.Point(132, 102);
-            this.btnSyo22.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo22.Name = "btnSyo22";
-            this.btnSyo22.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo22.TabIndex = 3;
-            this.btnSyo22.Text = " ";
-            this.btnSyo22.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo32
-            // 
-            this.btnSyo32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo32.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo32.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo32.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo32.Location = new System.Drawing.Point(261, 102);
-            this.btnSyo32.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo32.Name = "btnSyo32";
-            this.btnSyo32.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo32.TabIndex = 5;
-            this.btnSyo32.Text = " ";
-            this.btnSyo32.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo62
-            // 
-            this.btnSyo62.BackColor = System.Drawing.Color.White;
-            this.btnSyo62.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo62.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo62.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo62.Location = new System.Drawing.Point(648, 102);
-            this.btnSyo62.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo62.Name = "btnSyo62";
-            this.btnSyo62.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo62.TabIndex = 11;
-            this.btnSyo62.Text = " ";
-            this.btnSyo62.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo92
-            // 
-            this.btnSyo92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo92.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo92.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo92.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo92.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo92.Location = new System.Drawing.Point(1035, 102);
-            this.btnSyo92.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo92.Name = "btnSyo92";
-            this.btnSyo92.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo92.TabIndex = 17;
-            this.btnSyo92.Text = " ";
-            this.btnSyo92.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo102
-            // 
-            this.btnSyo102.BackColor = System.Drawing.Color.White;
-            this.btnSyo102.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo102.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo102.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo102.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo102.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo102.Location = new System.Drawing.Point(1164, 102);
-            this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(133, 95);
-            this.btnSyo102.TabIndex = 19;
-            this.btnSyo102.Text = " ";
-            this.btnSyo102.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo72
-            // 
-            this.btnSyo72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo72.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo72.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo72.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo72.Location = new System.Drawing.Point(777, 102);
-            this.btnSyo72.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo72.Name = "btnSyo72";
-            this.btnSyo72.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo72.TabIndex = 13;
-            this.btnSyo72.Text = " ";
-            this.btnSyo72.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo82
-            // 
-            this.btnSyo82.BackColor = System.Drawing.Color.White;
-            this.btnSyo82.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo82.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo82.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo82.Location = new System.Drawing.Point(906, 102);
-            this.btnSyo82.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo82.Name = "btnSyo82";
-            this.btnSyo82.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo82.TabIndex = 15;
-            this.btnSyo82.Text = " ";
-            this.btnSyo82.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo11
-            // 
-            this.btnSyo11.BackColor = System.Drawing.Color.White;
-            this.btnSyo11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo11.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo11.Location = new System.Drawing.Point(3, 3);
-            this.btnSyo11.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo11.Name = "btnSyo11";
-            this.btnSyo11.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo11.TabIndex = 0;
-            this.btnSyo11.Text = " ";
-            this.btnSyo11.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo21
-            // 
-            this.btnSyo21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo21.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo21.Location = new System.Drawing.Point(132, 3);
-            this.btnSyo21.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo21.Name = "btnSyo21";
-            this.btnSyo21.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo21.TabIndex = 2;
-            this.btnSyo21.Text = " ";
-            this.btnSyo21.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo31
-            // 
-            this.btnSyo31.BackColor = System.Drawing.Color.White;
-            this.btnSyo31.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo31.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo31.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo31.Location = new System.Drawing.Point(261, 3);
-            this.btnSyo31.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo31.Name = "btnSyo31";
-            this.btnSyo31.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo31.TabIndex = 4;
-            this.btnSyo31.Text = " ";
-            this.btnSyo31.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo41
-            // 
-            this.btnSyo41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo41.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo41.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo41.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo41.Location = new System.Drawing.Point(390, 3);
-            this.btnSyo41.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo41.Name = "btnSyo41";
-            this.btnSyo41.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo41.TabIndex = 6;
-            this.btnSyo41.Text = " ";
-            this.btnSyo41.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo51
-            // 
-            this.btnSyo51.BackColor = System.Drawing.Color.White;
-            this.btnSyo51.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo51.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo51.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo51.Location = new System.Drawing.Point(519, 3);
-            this.btnSyo51.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo51.Name = "btnSyo51";
-            this.btnSyo51.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo51.TabIndex = 8;
-            this.btnSyo51.Text = " ";
-            this.btnSyo51.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo61
-            // 
-            this.btnSyo61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo61.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo61.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo61.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo61.Location = new System.Drawing.Point(648, 3);
-            this.btnSyo61.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo61.Name = "btnSyo61";
-            this.btnSyo61.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo61.TabIndex = 10;
-            this.btnSyo61.Text = " ";
-            this.btnSyo61.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo71
-            // 
-            this.btnSyo71.BackColor = System.Drawing.Color.White;
-            this.btnSyo71.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo71.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo71.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo71.Location = new System.Drawing.Point(777, 3);
-            this.btnSyo71.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo71.Name = "btnSyo71";
-            this.btnSyo71.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo71.TabIndex = 12;
-            this.btnSyo71.Text = " ";
-            this.btnSyo71.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo81
-            // 
-            this.btnSyo81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo81.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo81.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo81.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo81.Location = new System.Drawing.Point(906, 3);
-            this.btnSyo81.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo81.Name = "btnSyo81";
-            this.btnSyo81.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo81.TabIndex = 14;
-            this.btnSyo81.Text = " ";
-            this.btnSyo81.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo91
-            // 
-            this.btnSyo91.BackColor = System.Drawing.Color.White;
-            this.btnSyo91.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo91.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo91.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo91.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo91.Location = new System.Drawing.Point(1035, 3);
-            this.btnSyo91.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo91.Name = "btnSyo91";
-            this.btnSyo91.Size = new System.Drawing.Size(125, 95);
-            this.btnSyo91.TabIndex = 16;
-            this.btnSyo91.Text = " ";
-            this.btnSyo91.UseVisualStyleBackColor = false;
-            // 
-            // btnSyo101
-            // 
-            this.btnSyo101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.btnSyo101.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyo101.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSyo101.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyo101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyo101.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnSyo101.Location = new System.Drawing.Point(1164, 3);
-            this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(133, 95);
-            this.btnSyo101.TabIndex = 18;
-            this.btnSyo101.Text = " ";
-            this.btnSyo101.UseVisualStyleBackColor = false;
-            // 
-            // btnSyoUp
-            // 
-            this.btnSyoUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
-            this.btnSyoUp.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
-            this.btnSyoUp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyoUp.DefaultBtnSize = false;
-            this.btnSyoUp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyoUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyoUp.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
-            this.btnSyoUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnSyoUp.Location = new System.Drawing.Point(19, 638);
-            this.btnSyoUp.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyoUp.Name = "btnSyoUp";
-            this.btnSyoUp.Size = new System.Drawing.Size(45, 200);
-            this.btnSyoUp.TabIndex = 75;
-            this.btnSyoUp.Text = "◀";
-            this.btnSyoUp.UseVisualStyleBackColor = false;
-            this.btnSyoUp.Click += new System.EventHandler(this.btnSyoUp_Click);
-            // 
-            // btnSyoDown
-            // 
-            this.btnSyoDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
-            this.btnSyoDown.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
-            this.btnSyoDown.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSyoDown.DefaultBtnSize = false;
-            this.btnSyoDown.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnSyoDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSyoDown.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
-            this.btnSyoDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnSyoDown.Location = new System.Drawing.Point(1364, 638);
-            this.btnSyoDown.Margin = new System.Windows.Forms.Padding(1);
-            this.btnSyoDown.Name = "btnSyoDown";
-            this.btnSyoDown.Size = new System.Drawing.Size(45, 200);
-            this.btnSyoDown.TabIndex = 76;
-            this.btnSyoDown.Text = "▶";
-            this.btnSyoDown.UseVisualStyleBackColor = false;
-            this.btnSyoDown.Click += new System.EventHandler(this.btnSyoDown_Click);
             // 
             // btnGroupDown
             // 
@@ -1469,7 +1060,7 @@
             this.btnGroupDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupDown.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnGroupDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnGroupDown.Location = new System.Drawing.Point(1834, 851);
+            this.btnGroupDown.Location = new System.Drawing.Point(1839, 851);
             this.btnGroupDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupDown.Name = "btnGroupDown";
             this.btnGroupDown.Size = new System.Drawing.Size(45, 100);
@@ -1488,7 +1079,7 @@
             this.btnGroupUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupUp.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnGroupUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnGroupUp.Location = new System.Drawing.Point(19, 851);
+            this.btnGroupUp.Location = new System.Drawing.Point(15, 851);
             this.btnGroupUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupUp.Name = "btnGroupUp";
             this.btnGroupUp.Size = new System.Drawing.Size(45, 100);
@@ -1501,30 +1092,29 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.tableLayoutPanel2);
-            this.panel2.Location = new System.Drawing.Point(65, 851);
+            this.panel2.Location = new System.Drawing.Point(60, 851);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1770, 101);
+            this.panel2.Size = new System.Drawing.Size(1780, 101);
             this.panel2.TabIndex = 77;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel2.ColumnCount = 14;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1543,7 +1133,7 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1769, 100);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1779, 100);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // btnGrp14
@@ -1554,10 +1144,10 @@
             this.btnGrp14.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp14.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp14.Location = new System.Drawing.Point(1641, 3);
+            this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(125, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(123, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1573,7 +1163,7 @@
             this.btnGrp1.Location = new System.Drawing.Point(3, 3);
             this.btnGrp1.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp1.Name = "btnGrp1";
-            this.btnGrp1.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp1.Size = new System.Drawing.Size(123, 94);
             this.btnGrp1.TabIndex = 0;
             this.btnGrp1.Text = " ";
             this.btnGrp1.UseVisualStyleBackColor = false;
@@ -1586,10 +1176,10 @@
             this.btnGrp2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp2.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp2.Location = new System.Drawing.Point(129, 3);
+            this.btnGrp2.Location = new System.Drawing.Point(130, 3);
             this.btnGrp2.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp2.Name = "btnGrp2";
-            this.btnGrp2.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp2.Size = new System.Drawing.Size(123, 94);
             this.btnGrp2.TabIndex = 1;
             this.btnGrp2.Text = " ";
             this.btnGrp2.UseVisualStyleBackColor = false;
@@ -1602,10 +1192,10 @@
             this.btnGrp3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp3.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp3.Location = new System.Drawing.Point(255, 3);
+            this.btnGrp3.Location = new System.Drawing.Point(257, 3);
             this.btnGrp3.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp3.Name = "btnGrp3";
-            this.btnGrp3.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp3.Size = new System.Drawing.Size(123, 94);
             this.btnGrp3.TabIndex = 2;
             this.btnGrp3.Text = " ";
             this.btnGrp3.UseVisualStyleBackColor = false;
@@ -1618,10 +1208,10 @@
             this.btnGrp4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp4.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp4.Location = new System.Drawing.Point(381, 3);
+            this.btnGrp4.Location = new System.Drawing.Point(384, 3);
             this.btnGrp4.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp4.Name = "btnGrp4";
-            this.btnGrp4.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp4.Size = new System.Drawing.Size(123, 94);
             this.btnGrp4.TabIndex = 3;
             this.btnGrp4.Text = " ";
             this.btnGrp4.UseVisualStyleBackColor = false;
@@ -1634,10 +1224,10 @@
             this.btnGrp5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp5.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp5.Location = new System.Drawing.Point(507, 3);
+            this.btnGrp5.Location = new System.Drawing.Point(511, 3);
             this.btnGrp5.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp5.Name = "btnGrp5";
-            this.btnGrp5.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp5.Size = new System.Drawing.Size(123, 94);
             this.btnGrp5.TabIndex = 4;
             this.btnGrp5.Text = " ";
             this.btnGrp5.UseVisualStyleBackColor = false;
@@ -1650,10 +1240,10 @@
             this.btnGrp6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp6.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp6.Location = new System.Drawing.Point(633, 3);
+            this.btnGrp6.Location = new System.Drawing.Point(638, 3);
             this.btnGrp6.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp6.Name = "btnGrp6";
-            this.btnGrp6.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp6.Size = new System.Drawing.Size(123, 94);
             this.btnGrp6.TabIndex = 5;
             this.btnGrp6.Text = " ";
             this.btnGrp6.UseVisualStyleBackColor = false;
@@ -1666,10 +1256,10 @@
             this.btnGrp7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp7.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp7.Location = new System.Drawing.Point(759, 3);
+            this.btnGrp7.Location = new System.Drawing.Point(765, 3);
             this.btnGrp7.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp7.Name = "btnGrp7";
-            this.btnGrp7.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp7.Size = new System.Drawing.Size(123, 94);
             this.btnGrp7.TabIndex = 6;
             this.btnGrp7.Text = " ";
             this.btnGrp7.UseVisualStyleBackColor = false;
@@ -1682,10 +1272,10 @@
             this.btnGrp8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp8.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp8.Location = new System.Drawing.Point(885, 3);
+            this.btnGrp8.Location = new System.Drawing.Point(892, 3);
             this.btnGrp8.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp8.Name = "btnGrp8";
-            this.btnGrp8.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp8.Size = new System.Drawing.Size(123, 94);
             this.btnGrp8.TabIndex = 7;
             this.btnGrp8.Text = " ";
             this.btnGrp8.UseVisualStyleBackColor = false;
@@ -1698,10 +1288,10 @@
             this.btnGrp9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp9.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp9.Location = new System.Drawing.Point(1011, 3);
+            this.btnGrp9.Location = new System.Drawing.Point(1019, 3);
             this.btnGrp9.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp9.Name = "btnGrp9";
-            this.btnGrp9.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp9.Size = new System.Drawing.Size(123, 94);
             this.btnGrp9.TabIndex = 8;
             this.btnGrp9.Text = " ";
             this.btnGrp9.UseVisualStyleBackColor = false;
@@ -1714,10 +1304,10 @@
             this.btnGrp10.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp10.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp10.Location = new System.Drawing.Point(1137, 3);
+            this.btnGrp10.Location = new System.Drawing.Point(1146, 3);
             this.btnGrp10.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp10.Name = "btnGrp10";
-            this.btnGrp10.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp10.Size = new System.Drawing.Size(123, 94);
             this.btnGrp10.TabIndex = 9;
             this.btnGrp10.Text = " ";
             this.btnGrp10.UseVisualStyleBackColor = false;
@@ -1730,10 +1320,10 @@
             this.btnGrp11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp11.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp11.Location = new System.Drawing.Point(1263, 3);
+            this.btnGrp11.Location = new System.Drawing.Point(1273, 3);
             this.btnGrp11.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp11.Name = "btnGrp11";
-            this.btnGrp11.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp11.Size = new System.Drawing.Size(123, 94);
             this.btnGrp11.TabIndex = 10;
             this.btnGrp11.Text = " ";
             this.btnGrp11.UseVisualStyleBackColor = false;
@@ -1746,10 +1336,10 @@
             this.btnGrp12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp12.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp12.Location = new System.Drawing.Point(1389, 3);
+            this.btnGrp12.Location = new System.Drawing.Point(1400, 3);
             this.btnGrp12.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp12.Name = "btnGrp12";
-            this.btnGrp12.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp12.Size = new System.Drawing.Size(123, 94);
             this.btnGrp12.TabIndex = 11;
             this.btnGrp12.Text = " ";
             this.btnGrp12.UseVisualStyleBackColor = false;
@@ -1762,10 +1352,10 @@
             this.btnGrp13.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGrp13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrp13.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.btnGrp13.Location = new System.Drawing.Point(1515, 3);
+            this.btnGrp13.Location = new System.Drawing.Point(1527, 3);
             this.btnGrp13.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp13.Name = "btnGrp13";
-            this.btnGrp13.Size = new System.Drawing.Size(122, 94);
+            this.btnGrp13.Size = new System.Drawing.Size(123, 94);
             this.btnGrp13.TabIndex = 12;
             this.btnGrp13.Text = " ";
             this.btnGrp13.UseVisualStyleBackColor = false;
@@ -1789,7 +1379,7 @@
             this.txtJuchuuUnitPrice.IsNumber = true;
             this.txtJuchuuUnitPrice.IsShop = false;
             this.txtJuchuuUnitPrice.Length = 11;
-            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(221, 371);
+            this.txtJuchuuUnitPrice.Location = new System.Drawing.Point(217, 371);
             this.txtJuchuuUnitPrice.MaxLength = 11;
             this.txtJuchuuUnitPrice.MoveNext = true;
             this.txtJuchuuUnitPrice.Name = "txtJuchuuUnitPrice";
@@ -1810,7 +1400,7 @@
             this.btnHenpin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHenpin.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnHenpin.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnHenpin.Location = new System.Drawing.Point(1557, 123);
+            this.btnHenpin.Location = new System.Drawing.Point(1568, 119);
             this.btnHenpin.Margin = new System.Windows.Forms.Padding(1);
             this.btnHenpin.Name = "btnHenpin";
             this.btnHenpin.Size = new System.Drawing.Size(112, 41);
@@ -1827,7 +1417,7 @@
             this.lblHenpin.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblHenpin.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblHenpin.ForeColor = System.Drawing.Color.Black;
-            this.lblHenpin.Location = new System.Drawing.Point(1673, 123);
+            this.lblHenpin.Location = new System.Drawing.Point(1684, 119);
             this.lblHenpin.Name = "lblHenpin";
             this.lblHenpin.Size = new System.Drawing.Size(210, 41);
             this.lblHenpin.TabIndex = 85;
@@ -1845,7 +1435,7 @@
             this.btnGenkin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenkin.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnGenkin.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnGenkin.Location = new System.Drawing.Point(18, 117);
+            this.btnGenkin.Location = new System.Drawing.Point(14, 117);
             this.btnGenkin.Margin = new System.Windows.Forms.Padding(1);
             this.btnGenkin.Name = "btnGenkin";
             this.btnGenkin.Size = new System.Drawing.Size(200, 41);
@@ -1864,7 +1454,7 @@
             this.btnTanka.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTanka.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnTanka.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnTanka.Location = new System.Drawing.Point(21, 368);
+            this.btnTanka.Location = new System.Drawing.Point(17, 368);
             this.btnTanka.Margin = new System.Windows.Forms.Padding(1);
             this.btnTanka.Name = "btnTanka";
             this.btnTanka.Size = new System.Drawing.Size(200, 41);
@@ -1883,7 +1473,7 @@
             this.btnCustomerNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerNo.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnCustomerNo.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnCustomerNo.Location = new System.Drawing.Point(18, 79);
+            this.btnCustomerNo.Location = new System.Drawing.Point(14, 79);
             this.btnCustomerNo.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerNo.Name = "btnCustomerNo";
             this.btnCustomerNo.Size = new System.Drawing.Size(200, 41);
@@ -1902,7 +1492,7 @@
             this.btnSyohin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSyohin.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnSyohin.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnSyohin.Location = new System.Drawing.Point(18, 177);
+            this.btnSyohin.Location = new System.Drawing.Point(14, 177);
             this.btnSyohin.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyohin.Name = "btnSyohin";
             this.btnSyohin.Size = new System.Drawing.Size(200, 41);
@@ -1919,7 +1509,7 @@
             this.lblKeijobi.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblKeijobi.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.lblKeijobi.ForeColor = System.Drawing.Color.Black;
-            this.lblKeijobi.Location = new System.Drawing.Point(1446, 123);
+            this.lblKeijobi.Location = new System.Drawing.Point(1457, 119);
             this.lblKeijobi.Name = "lblKeijobi";
             this.lblKeijobi.Size = new System.Drawing.Size(50, 41);
             this.lblKeijobi.TabIndex = 86;
@@ -1928,25 +1518,431 @@
             this.lblKeijobi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblKeijobi.Visible = false;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
+            this.tableLayoutPanel3.ColumnCount = 10;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo22, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo32, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo62, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo92, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo102, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo72, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo82, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo11, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo21, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo31, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo41, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo51, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo61, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo71, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo81, 7, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo91, 8, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnSyo101, 9, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(60, 633);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1273, 200);
+            this.tableLayoutPanel3.TabIndex = 87;
+            // 
+            // btnSyo12
+            // 
+            this.btnSyo12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo12.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo12.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo12.Location = new System.Drawing.Point(3, 102);
+            this.btnSyo12.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo12.Name = "btnSyo12";
+            this.btnSyo12.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo12.TabIndex = 1;
+            this.btnSyo12.Text = " ";
+            this.btnSyo12.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo42
+            // 
+            this.btnSyo42.BackColor = System.Drawing.Color.White;
+            this.btnSyo42.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo42.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo42.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo42.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo42.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo42.Location = new System.Drawing.Point(384, 102);
+            this.btnSyo42.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo42.Name = "btnSyo42";
+            this.btnSyo42.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo42.TabIndex = 7;
+            this.btnSyo42.Text = " ";
+            this.btnSyo42.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo52
+            // 
+            this.btnSyo52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo52.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo52.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo52.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo52.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo52.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo52.Location = new System.Drawing.Point(511, 102);
+            this.btnSyo52.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo52.Name = "btnSyo52";
+            this.btnSyo52.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo52.TabIndex = 9;
+            this.btnSyo52.Text = " ";
+            this.btnSyo52.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo22
+            // 
+            this.btnSyo22.BackColor = System.Drawing.Color.White;
+            this.btnSyo22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo22.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo22.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo22.Location = new System.Drawing.Point(130, 102);
+            this.btnSyo22.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo22.Name = "btnSyo22";
+            this.btnSyo22.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo22.TabIndex = 3;
+            this.btnSyo22.Text = " ";
+            this.btnSyo22.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo32
+            // 
+            this.btnSyo32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo32.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo32.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo32.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo32.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo32.Location = new System.Drawing.Point(257, 102);
+            this.btnSyo32.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo32.Name = "btnSyo32";
+            this.btnSyo32.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo32.TabIndex = 5;
+            this.btnSyo32.Text = " ";
+            this.btnSyo32.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo62
+            // 
+            this.btnSyo62.BackColor = System.Drawing.Color.White;
+            this.btnSyo62.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo62.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo62.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo62.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo62.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo62.Location = new System.Drawing.Point(638, 102);
+            this.btnSyo62.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo62.Name = "btnSyo62";
+            this.btnSyo62.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo62.TabIndex = 11;
+            this.btnSyo62.Text = " ";
+            this.btnSyo62.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo92
+            // 
+            this.btnSyo92.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo92.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo92.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo92.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo92.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo92.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo92.Location = new System.Drawing.Point(1019, 102);
+            this.btnSyo92.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo92.Name = "btnSyo92";
+            this.btnSyo92.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo92.TabIndex = 17;
+            this.btnSyo92.Text = " ";
+            this.btnSyo92.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo102
+            // 
+            this.btnSyo102.BackColor = System.Drawing.Color.White;
+            this.btnSyo102.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo102.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo102.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo102.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo102.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
+            this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo102.Name = "btnSyo102";
+            this.btnSyo102.Size = new System.Drawing.Size(124, 95);
+            this.btnSyo102.TabIndex = 19;
+            this.btnSyo102.Text = " ";
+            this.btnSyo102.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo72
+            // 
+            this.btnSyo72.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo72.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo72.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo72.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo72.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo72.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo72.Location = new System.Drawing.Point(765, 102);
+            this.btnSyo72.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo72.Name = "btnSyo72";
+            this.btnSyo72.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo72.TabIndex = 13;
+            this.btnSyo72.Text = " ";
+            this.btnSyo72.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo82
+            // 
+            this.btnSyo82.BackColor = System.Drawing.Color.White;
+            this.btnSyo82.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo82.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo82.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo82.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo82.Location = new System.Drawing.Point(892, 102);
+            this.btnSyo82.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo82.Name = "btnSyo82";
+            this.btnSyo82.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo82.TabIndex = 15;
+            this.btnSyo82.Text = " ";
+            this.btnSyo82.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo11
+            // 
+            this.btnSyo11.BackColor = System.Drawing.Color.White;
+            this.btnSyo11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo11.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo11.Location = new System.Drawing.Point(3, 3);
+            this.btnSyo11.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo11.Name = "btnSyo11";
+            this.btnSyo11.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo11.TabIndex = 0;
+            this.btnSyo11.Text = " ";
+            this.btnSyo11.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo21
+            // 
+            this.btnSyo21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo21.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo21.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo21.Location = new System.Drawing.Point(130, 3);
+            this.btnSyo21.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo21.Name = "btnSyo21";
+            this.btnSyo21.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo21.TabIndex = 2;
+            this.btnSyo21.Text = " ";
+            this.btnSyo21.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo31
+            // 
+            this.btnSyo31.BackColor = System.Drawing.Color.White;
+            this.btnSyo31.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo31.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo31.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo31.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo31.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo31.Location = new System.Drawing.Point(257, 3);
+            this.btnSyo31.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo31.Name = "btnSyo31";
+            this.btnSyo31.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo31.TabIndex = 4;
+            this.btnSyo31.Text = " ";
+            this.btnSyo31.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo41
+            // 
+            this.btnSyo41.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo41.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo41.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo41.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo41.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo41.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo41.Location = new System.Drawing.Point(384, 3);
+            this.btnSyo41.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo41.Name = "btnSyo41";
+            this.btnSyo41.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo41.TabIndex = 6;
+            this.btnSyo41.Text = " ";
+            this.btnSyo41.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo51
+            // 
+            this.btnSyo51.BackColor = System.Drawing.Color.White;
+            this.btnSyo51.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo51.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo51.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo51.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo51.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo51.Location = new System.Drawing.Point(511, 3);
+            this.btnSyo51.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo51.Name = "btnSyo51";
+            this.btnSyo51.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo51.TabIndex = 8;
+            this.btnSyo51.Text = " ";
+            this.btnSyo51.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo61
+            // 
+            this.btnSyo61.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo61.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo61.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo61.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo61.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo61.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo61.Location = new System.Drawing.Point(638, 3);
+            this.btnSyo61.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo61.Name = "btnSyo61";
+            this.btnSyo61.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo61.TabIndex = 10;
+            this.btnSyo61.Text = " ";
+            this.btnSyo61.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo71
+            // 
+            this.btnSyo71.BackColor = System.Drawing.Color.White;
+            this.btnSyo71.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo71.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo71.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo71.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo71.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo71.Location = new System.Drawing.Point(765, 3);
+            this.btnSyo71.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo71.Name = "btnSyo71";
+            this.btnSyo71.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo71.TabIndex = 12;
+            this.btnSyo71.Text = " ";
+            this.btnSyo71.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo81
+            // 
+            this.btnSyo81.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo81.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo81.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo81.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo81.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo81.Location = new System.Drawing.Point(892, 3);
+            this.btnSyo81.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo81.Name = "btnSyo81";
+            this.btnSyo81.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo81.TabIndex = 14;
+            this.btnSyo81.Text = " ";
+            this.btnSyo81.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo91
+            // 
+            this.btnSyo91.BackColor = System.Drawing.Color.White;
+            this.btnSyo91.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo91.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo91.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo91.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo91.Location = new System.Drawing.Point(1019, 3);
+            this.btnSyo91.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo91.Name = "btnSyo91";
+            this.btnSyo91.Size = new System.Drawing.Size(123, 95);
+            this.btnSyo91.TabIndex = 16;
+            this.btnSyo91.Text = " ";
+            this.btnSyo91.UseVisualStyleBackColor = false;
+            // 
+            // btnSyo101
+            // 
+            this.btnSyo101.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.btnSyo101.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyo101.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSyo101.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyo101.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyo101.Font = new System.Drawing.Font("MS Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
+            this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyo101.Name = "btnSyo101";
+            this.btnSyo101.Size = new System.Drawing.Size(124, 95);
+            this.btnSyo101.TabIndex = 18;
+            this.btnSyo101.Text = " ";
+            this.btnSyo101.UseVisualStyleBackColor = false;
+            // 
+            // btnSyoDown
+            // 
+            this.btnSyoDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
+            this.btnSyoDown.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
+            this.btnSyoDown.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyoDown.DefaultBtnSize = false;
+            this.btnSyoDown.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyoDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyoDown.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSyoDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
+            this.btnSyoDown.Location = new System.Drawing.Point(1334, 632);
+            this.btnSyoDown.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyoDown.Name = "btnSyoDown";
+            this.btnSyoDown.Size = new System.Drawing.Size(45, 200);
+            this.btnSyoDown.TabIndex = 90;
+            this.btnSyoDown.Text = "▶";
+            this.btnSyoDown.UseVisualStyleBackColor = false;
+            // 
+            // btnSyoUp
+            // 
+            this.btnSyoUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
+            this.btnSyoUp.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Yellow;
+            this.btnSyoUp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSyoUp.DefaultBtnSize = false;
+            this.btnSyoUp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSyoUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSyoUp.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.btnSyoUp.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
+            this.btnSyoUp.Location = new System.Drawing.Point(14, 632);
+            this.btnSyoUp.Margin = new System.Windows.Forms.Padding(1);
+            this.btnSyoUp.Name = "btnSyoUp";
+            this.btnSyoUp.Size = new System.Drawing.Size(45, 200);
+            this.btnSyoUp.TabIndex = 89;
+            this.btnSyoUp.Text = "◀";
+            this.btnSyoUp.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(59, 632);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1280, 200);
+            this.panel1.TabIndex = 88;
+            // 
             // TempoRegiHanbaiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
             this.ClientSize = new System.Drawing.Size(1913, 1011);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.btnSyoDown);
+            this.Controls.Add(this.btnSyoUp);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblKeijobi);
             this.Controls.Add(this.btnTanka);
             this.Controls.Add(this.btnGenkin);
             this.Controls.Add(this.lblHenpin);
             this.Controls.Add(this.btnHenpin);
             this.Controls.Add(this.txtJuchuuUnitPrice);
-            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.btnGroupDown);
             this.Controls.Add(this.btnGroupUp);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnSyoDown);
-            this.Controls.Add(this.btnSyoUp);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblSKUName);
@@ -2008,23 +2004,23 @@
             this.Controls.SetChildIndex(this.lblSKUName, 0);
             this.Controls.SetChildIndex(this.label3, 0);
             this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.panel1, 0);
-            this.Controls.SetChildIndex(this.btnSyoUp, 0);
-            this.Controls.SetChildIndex(this.btnSyoDown, 0);
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.btnGroupUp, 0);
             this.Controls.SetChildIndex(this.btnGroupDown, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
             this.Controls.SetChildIndex(this.txtJuchuuUnitPrice, 0);
             this.Controls.SetChildIndex(this.btnHenpin, 0);
             this.Controls.SetChildIndex(this.lblHenpin, 0);
             this.Controls.SetChildIndex(this.btnGenkin, 0);
             this.Controls.SetChildIndex(this.btnTanka, 0);
             this.Controls.SetChildIndex(this.lblKeijobi, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.btnSyoUp, 0);
+            this.Controls.SetChildIndex(this.btnSyoDown, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
             this.pnlDetails.ResumeLayout(false);
-            this.tableLayoutPanel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2080,33 +2076,9 @@
         private CKM_Controls.CKMShop_Label lblColorSize;
         private CKM_Controls.CKMShop_Label label3;
         private CKM_Controls.CKMShop_Label label4;
-        private System.Windows.Forms.Panel panel1;
-        private CKM_Controls.CKM_Button btnSyoUp;
-        private CKM_Controls.CKM_Button btnSyoDown;
         private CKM_Controls.CKM_Button btnGroupDown;
         private CKM_Controls.CKM_Button btnGroupUp;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button btnSyo12;
-        private System.Windows.Forms.Button btnSyo42;
-        private System.Windows.Forms.Button btnSyo52;
-        private System.Windows.Forms.Button btnSyo22;
-        private System.Windows.Forms.Button btnSyo32;
-        private System.Windows.Forms.Button btnSyo62;
-        private System.Windows.Forms.Button btnSyo92;
-        private System.Windows.Forms.Button btnSyo102;
-        private System.Windows.Forms.Button btnSyo72;
-        private System.Windows.Forms.Button btnSyo82;
-        private System.Windows.Forms.Button btnSyo11;
-        private System.Windows.Forms.Button btnSyo21;
-        private System.Windows.Forms.Button btnSyo31;
-        private System.Windows.Forms.Button btnSyo41;
-        private System.Windows.Forms.Button btnSyo51;
-        private System.Windows.Forms.Button btnSyo61;
-        private System.Windows.Forms.Button btnSyo71;
-        private System.Windows.Forms.Button btnSyo81;
-        private System.Windows.Forms.Button btnSyo91;
-        private System.Windows.Forms.Button btnSyo101;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button btnGrp14;
         private System.Windows.Forms.Button btnGrp1;
@@ -2133,6 +2105,30 @@
         private CKM_Controls.CKM_Button btnCustomerNo;
         private CKM_Controls.CKM_Button btnSyohin;
         private CKM_Controls.CKMShop_Label lblKeijobi;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button btnSyo12;
+        private System.Windows.Forms.Button btnSyo42;
+        private System.Windows.Forms.Button btnSyo52;
+        private System.Windows.Forms.Button btnSyo22;
+        private System.Windows.Forms.Button btnSyo32;
+        private System.Windows.Forms.Button btnSyo62;
+        private System.Windows.Forms.Button btnSyo92;
+        private System.Windows.Forms.Button btnSyo102;
+        private System.Windows.Forms.Button btnSyo72;
+        private System.Windows.Forms.Button btnSyo82;
+        private System.Windows.Forms.Button btnSyo11;
+        private System.Windows.Forms.Button btnSyo21;
+        private System.Windows.Forms.Button btnSyo31;
+        private System.Windows.Forms.Button btnSyo41;
+        private System.Windows.Forms.Button btnSyo51;
+        private System.Windows.Forms.Button btnSyo61;
+        private System.Windows.Forms.Button btnSyo71;
+        private System.Windows.Forms.Button btnSyo81;
+        private System.Windows.Forms.Button btnSyo91;
+        private System.Windows.Forms.Button btnSyo101;
+        private CKM_Controls.CKM_Button btnSyoDown;
+        private CKM_Controls.CKM_Button btnSyoUp;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

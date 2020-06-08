@@ -62,6 +62,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -180,7 +184,7 @@
             this.comboStore.MaxLength = 10;
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
-            this.comboStore.Size = new System.Drawing.Size(170, 20);
+            this.comboStore.Size = new System.Drawing.Size(190, 20);
             this.comboStore.TabIndex = 13;
             this.comboStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboStore_KeyDown);
             // 

@@ -61,6 +61,8 @@
             this.txtDBO = new CKM_Controls.CKM_TextBox();
             this.btnShow = new CKM_Controls.CKM_Button();
             this.panelDetail = new System.Windows.Forms.Panel();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
+            this.chkAnotherStore = new CKM_Controls.CKMShop_CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKaniiKensaku)).BeginInit();
             this.panelDetail.SuspendLayout();
             this.SuspendLayout();
@@ -510,6 +512,8 @@
             // 
             // panelDetail
             // 
+            this.panelDetail.Controls.Add(this.chkAnotherStore);
+            this.panelDetail.Controls.Add(this.ckmShop_Label2);
             this.panelDetail.Controls.Add(this.txtZipCD);
             this.panelDetail.Controls.Add(this.dgvKaniiKensaku);
             this.panelDetail.Controls.Add(this.btnShow);
@@ -532,6 +536,34 @@
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1884, 833);
             this.panelDetail.TabIndex = 0;
+            // 
+            // ckmShop_Label2
+            // 
+            this.ckmShop_Label2.AutoSize = true;
+            this.ckmShop_Label2.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
+            this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
+            this.ckmShop_Label2.Location = new System.Drawing.Point(910, 120);
+            this.ckmShop_Label2.Name = "ckmShop_Label2";
+            this.ckmShop_Label2.Size = new System.Drawing.Size(163, 35);
+            this.ckmShop_Label2.TabIndex = 131;
+            this.ckmShop_Label2.Text = "他店会員";
+            this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
+            this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkAnotherStore
+            // 
+            this.chkAnotherStore.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.chkAnotherStore.ForeColor = System.Drawing.Color.Black;
+            this.chkAnotherStore.IsattachedCaption = false;
+            this.chkAnotherStore.Location = new System.Drawing.Point(1075, 121);
+            this.chkAnotherStore.Name = "chkAnotherStore";
+            this.chkAnotherStore.Size = new System.Drawing.Size(35, 35);
+            this.chkAnotherStore.TabIndex = 132;
+            this.chkAnotherStore.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkAnotherStore.UseVisualStyleBackColor = true;
             // 
             // TempoRegiKaiinKensaku
             // 
@@ -578,5 +610,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colZipCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSaleDate_StoreCD;
+        private CKM_Controls.CKMShop_CheckBox chkAnotherStore;
+        private CKM_Controls.CKMShop_Label ckmShop_Label2;
     }
 }
