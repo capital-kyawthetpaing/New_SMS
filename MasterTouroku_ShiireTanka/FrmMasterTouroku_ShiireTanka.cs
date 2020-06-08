@@ -60,9 +60,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = false;
                 panel5.Enabled = false;
                 GV_item.Hide();
-                GV_sku.Show();
                 this.GV_item.Location = new System.Drawing.Point(89, 346);
-                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+               
                
             }
             else
@@ -70,8 +69,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 GV_item.Show();
-                GV_sku.Hide();
-                this.GV_sku.Size = new System.Drawing.Size(0, 0);
+               
+               
             }
             CB_year.Bind(ymd);
             CB_season.Bind(ymd);
@@ -460,7 +459,7 @@ namespace MasterTouroku_ShiireTanka
              dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
              dv = new DataView(dt);
             GV_item.DataSource = dv;
-            GV_sku.DataSource = dv;
+            
                 //if(dt.Rows.Count > 0)
                 //{
                 //  GV_item.Refresh();
@@ -487,7 +486,7 @@ namespace MasterTouroku_ShiireTanka
                 ChangeDate = TB_date_condition.Text,
                 Headerdate=TB_headerdate.Text,
                 PriceWithoutTax=TB_pricewithouttax.Text,
-                Display = RB_current.Checked ? "0" : "1",
+                Display = RB_item.Checked ? "0" : "1",
                 InsertOperator =  InOperatorCD
 
             };
@@ -579,7 +578,7 @@ namespace MasterTouroku_ShiireTanka
             TB_dateE.Text = string.Empty;
             TB_rate_E.Text = string.Empty;
             GV_item.Refresh();
-            GV_sku.Refresh();
+           
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
@@ -619,9 +618,9 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = false;
                 panel5.Enabled = false;
                 GV_item.Hide();
-                GV_sku.Show();
+               
                 this.GV_item.Location = new System.Drawing.Point(89, 346);
-                this.GV_sku.Size = new System.Drawing.Size(1560, 280);
+                //this.GV_sku.Size = new System.Drawing.Size(1560, 280);
 
             }
             else
@@ -629,8 +628,8 @@ namespace MasterTouroku_ShiireTanka
                 panel4.Enabled = true;
                 panel5.Enabled = true;
                 GV_item.Show();
-                GV_sku.Hide();
-                this.GV_sku.Size = new System.Drawing.Size(0, 0);
+                //GV_sku.Hide();
+                //this.GV_sku.Size = new System.Drawing.Size(0, 0);
             }
         }
         private void TB_rate_KeyDown(object sender, KeyEventArgs e)
@@ -729,7 +728,6 @@ namespace MasterTouroku_ShiireTanka
             {
                 query += " and ChangeDate = '" + TB_date_condition.Text + "'";
             }
-
             //query += " and SegmentCD = '" + segment.TxtCode.Text + "'";
             //query += " and LastYearTerm = '" + CB_year.Text + "'";
             //query += " and LastSeason = '" + CB_season.Text + "'";
@@ -739,7 +737,7 @@ namespace MasterTouroku_ShiireTanka
             {
                 dv.RowFilter = query;
                 GV_item.DataSource = dv;
-                GV_sku.DataSource = dv;
+                //GV_sku.DataSource = dv;
             }
         }
     }

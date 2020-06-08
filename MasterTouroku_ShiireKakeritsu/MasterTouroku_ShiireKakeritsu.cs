@@ -377,7 +377,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         scBrandCD1.SetFocus(1);
                     }
                 }
-
             }
         }
 
@@ -819,7 +818,7 @@ namespace MasterTouroku_ShiireKakeritsu
         }
         private void F12()
         {
-            if (ErrorCheck(2))
+            if (ErrorCheck(3))
             {
                 if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
