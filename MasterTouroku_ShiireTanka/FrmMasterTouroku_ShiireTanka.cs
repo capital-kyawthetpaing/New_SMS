@@ -487,7 +487,7 @@ namespace MasterTouroku_ShiireTanka
                 ChangeDate = TB_date_condition.Text,
                 Headerdate=TB_headerdate.Text,
                 PriceWithoutTax=TB_pricewithouttax.Text,
-                Display = RB_current.Checked ? "0" : "1",
+                Display = RB_item.Checked ? "0" : "1",
                 InsertOperator =  InOperatorCD
 
             };
@@ -729,7 +729,6 @@ namespace MasterTouroku_ShiireTanka
             {
                 query += " and ChangeDate = '" + TB_date_condition.Text + "'";
             }
-
             //query += " and SegmentCD = '" + segment.TxtCode.Text + "'";
             //query += " and LastYearTerm = '" + CB_year.Text + "'";
             //query += " and LastSeason = '" + CB_season.Text + "'";
