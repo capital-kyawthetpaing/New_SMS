@@ -377,7 +377,6 @@ namespace MasterTouroku_ShiireKakeritsu
                         scBrandCD1.SetFocus(1);
                     }
                 }
-
             }
         }
 

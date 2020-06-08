@@ -126,7 +126,6 @@
             this.TxtLastPoint.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtLastPoint.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TxtLastPoint.DecimalPlace = 0;
-            this.TxtLastPoint.Enabled = false;
             this.TxtLastPoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
             this.TxtLastPoint.IntegerPart = 8;
             this.TxtLastPoint.IsCorrectDate = true;
@@ -139,11 +138,15 @@
             this.TxtLastPoint.MaxLength = 20;
             this.TxtLastPoint.MoveNext = true;
             this.TxtLastPoint.Name = "TxtLastPoint";
+            this.TxtLastPoint.ReadOnly = true;
             this.TxtLastPoint.Size = new System.Drawing.Size(150, 42);
             this.TxtLastPoint.TabIndex = 21;
             this.TxtLastPoint.Text = "99,999";
             this.TxtLastPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtLastPoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.TxtLastPoint.TextChanged += new System.EventHandler(this.TxtLastPoint_TextChanged);
+            this.TxtLastPoint.Enter += new System.EventHandler(this.TxtLastPoint_Enter);
+            this.TxtLastPoint.Leave += new System.EventHandler(this.TxtLastPoint_Leave);
             // 
             // TxtIssuePoint
             // 
@@ -172,7 +175,9 @@
             this.TxtIssuePoint.Text = "99,999";
             this.TxtIssuePoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.TxtIssuePoint.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.TxtIssuePoint.Enter += new System.EventHandler(this.TxtIssuePoint_Enter);
             this.TxtIssuePoint.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtIssuePoint_KeyDown);
+            this.TxtIssuePoint.Leave += new System.EventHandler(this.TxtIssuePoint_Leave);
             // 
             // LblCustomerName
             // 
