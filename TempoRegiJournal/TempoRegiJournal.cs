@@ -167,11 +167,11 @@ namespace TempoRegiJournal
             {
                 var row = data.Rows[index];
 
-                if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"])))
-                {
-                    // 発行日時がないデータは出力対象外
-                    continue;
-                }
+                //if (string.IsNullOrWhiteSpace(ConvertDateTime(row["IssueDate"])))
+                //{
+                //    // 発行日時がないデータは出力対象外
+                //    continue;
+                //}
 
                 // 共通データ
                 var salesNO = Convert.ToString(row["SalesNO"]);                             // 売上番号
