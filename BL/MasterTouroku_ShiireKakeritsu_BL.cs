@@ -47,9 +47,9 @@ namespace BL
         {
             return mbdl.M_BrandSelect(mbe);
         }
-        public bool M_OrderRate_Update(M_OrderRate_Entity moe, string Xml)
+        public bool M_OrderRate_Update(M_OrderRate_Entity moe, string Xml, L_Log_Entity log_data)
         {
-            return mskdl.M_Shiirekakeritsu(moe,Xml);
+            return mskdl.M_Shiirekakeritsu(moe,Xml, log_data);
         }
     }
     

@@ -28,6 +28,7 @@ namespace MasterTouroku_ShiireKakeritsu
         M_Vendor_Entity mve = new M_Vendor_Entity();
         M_Brand_Entity mbe = new M_Brand_Entity();
         DataView dvMain;
+        L_Log_Entity log_data;
         int type = 0;
         string Xml;
         public bool IsNumber { get; set; } = true;
@@ -276,7 +277,12 @@ namespace MasterTouroku_ShiireKakeritsu
                 LastYearTerm = cbo_Year1.SelectedText,
                 LastSeason = cbo_Season1.SelectedText,
                 ChangeDate = txtDate.Text,
-                Rate = txtRate.Text
+                Rate = txtRate.Text,
+                ProcessMode = ModeText,
+                ProgramID = InProgramID,
+                InsertOperator = InOperatorCD,
+                Key = scSupplierCD.Code,
+                PC = InPcID
             };
             return moe;
         }
@@ -826,22 +832,24 @@ namespace MasterTouroku_ShiireKakeritsu
             {
                 if (mskbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
-                    UpdateInsert();
+                   UpdateInsert();
                 }
             }
         }
         private void UpdateInsert()
         {
             Xml = mskbl.DataTableToXml(dtMain);
+            log_data = Get_Log_Data();
             moe.VendorCD = scSupplierCD.TxtCode.Text;
             moe.ChangeDate = txtRevisionDate.Text;
             moe.Rate = txtRate1.Text;
-            if (mskbl.M_OrderRate_Update(moe, Xml))
+            if (mskbl.M_OrderRate_Update(moe, Xml, log_data))
             {
                 Clear(PanelHeader);
                 Clear(panelDetail);
                 dgv_ShiireKakeritsu.DataSource = string.Empty;
                 mskbl.ShowMessage("I101");
+                scSupplierCD.SetFocus(1);
             }
             else
             {
@@ -1091,6 +1099,18 @@ namespace MasterTouroku_ShiireKakeritsu
                 bbl.ShowMessage("E141");
                 cbo_Store.Focus();
             }
+        }
+        private L_Log_Entity Get_Log_Data()
+        {
+            log_data = new L_Log_Entity()
+            {
+                Program = "MasterTouroku_ShiireKakeritsu",
+                PC = InPcID,
+                OperateMode = string.Empty,
+                Operator = InOperatorCD,
+                KeyItem = string.Empty
+            };
+            return log_data;
         }
     }
 }
