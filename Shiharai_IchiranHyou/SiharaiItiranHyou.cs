@@ -88,7 +88,7 @@ namespace Shiharai_IchiranHyou
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
                                 if (DResult == DialogResult.Cancel)
-                                {
+                                { 
                                     return;
                                 }
                                 // 印字データをセット
