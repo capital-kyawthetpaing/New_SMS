@@ -102,16 +102,15 @@
             // 
             // lblTotalGaku
             // 
-            this.lblTotalGaku.AutoSize = true;
             this.lblTotalGaku.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
             this.lblTotalGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblTotalGaku.DefaultlabelSize = true;
             this.lblTotalGaku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblTotalGaku.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblTotalGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalGaku.Location = new System.Drawing.Point(1212, 766);
+            this.lblTotalGaku.Location = new System.Drawing.Point(1209, 765);
             this.lblTotalGaku.Name = "lblTotalGaku";
-            this.lblTotalGaku.Size = new System.Drawing.Size(0, 12);
+            this.lblTotalGaku.Size = new System.Drawing.Size(149, 12);
             this.lblTotalGaku.TabIndex = 15;
             this.lblTotalGaku.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblTotalGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,7 +124,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(1161, 766);
+            this.ckM_Label8.Location = new System.Drawing.Point(1162, 765);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 14;
