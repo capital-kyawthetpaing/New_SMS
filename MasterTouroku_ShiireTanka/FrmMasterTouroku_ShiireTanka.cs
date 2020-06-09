@@ -23,6 +23,7 @@ namespace MasterTouroku_ShiireTanka
         MasterTouroku_ShiireTanka_BL bl;
         DataView dv;
         DataTable dt;
+        DataTable dtc;
         public FrmMasterTouroku_ShiireTanka()
         {
 
@@ -443,6 +444,7 @@ namespace MasterTouroku_ShiireTanka
         {
             //if(ErrorCheck())
             //{
+               
                 m_IOE = GetItemorder();
                 m_IE = GetItem();
                 brand.Clear();
@@ -455,21 +457,7 @@ namespace MasterTouroku_ShiireTanka
              dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
              dv = new DataView(dt);
             GV_item.DataSource = dv;
-            
-                //if(dt.Rows.Count > 0)
-                //{
-                //  GV_item.Refresh();
-                //  GV_item.DataSource = dt;
-                //  GV_sku.Refresh();
-                //  GV_sku.DataSource = dt;
-                   
-                //}
-                //else
-                //{
-                //    GV_item.DataSource = null;
-                //    GV_sku.DataSource = null;
-                //}
-            //}
+            dtc = dt;
         }
         private M_ItemOrderPrice_Entity GetItemorder()
         {
@@ -707,7 +695,6 @@ namespace MasterTouroku_ShiireTanka
                         GV_item.DataSource = dt;
                        // dv.RowStateFilter = DataViewRowState.ModifiedCurrent;
                         dv.RowStateFilter = DataViewRowState.Unchanged;
-                       // dv.RowStateFilter=DataViewRowState.
                     }
                     else
                     {
@@ -721,13 +708,7 @@ namespace MasterTouroku_ShiireTanka
 
         private void btn_displaymain_Click(object sender, EventArgs e)
         {
-            //and(@brandcd is Null or    ti.BrandCD = @brandcd)
-            //                and(@sportcd is Null or    ti.SportsCD = @sportcd)
-            //                and(@segmentcd is Null or  ti.SegmentCD = @segmentcd)
-            //                and(@lastyearterm is Null or   ti.LastYearTerm = @lastyearterm)
-            //                and(@lastseason is Null or ti.LastSeason = @lastseason)
-            //                and(@makeritem is Null or  ti.MakerItem = @makeritem)
-            //                and(@changedate is null  Or ti.ChangeDate = @changedate)
+            
             string query;
 
             if (String.IsNullOrEmpty(brand.TxtCode.Text))
@@ -778,7 +759,7 @@ namespace MasterTouroku_ShiireTanka
             {
                 query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
             }
-            if ((RB_current.Checked== true) && String.IsNullOrEmpty(TB_date_condition.Text))
+            if ((RB_current.Checked == true) && String.IsNullOrEmpty(TB_date_condition.Text))
             {
                 query += " and ChangeDate <= '" + TB_headerdate.Text + "'";
             }
@@ -791,12 +772,155 @@ namespace MasterTouroku_ShiireTanka
             //query += " and LastSeason = '" + CB_season.Text + "'";
             //query += " and MakerItem = '" + makershohin.TxtCode.Text + "'";
             //query += " and ChangeDate = '" + TB_date_condition.Text + "'";
+           
+            
             if (GV_item.DataSource != null)
             {
                 dv.RowFilter = query;
-               
+                dtc = dv.ToTable();
                 GV_item.DataSource = dv;
-                dv.RowStateFilter = DataViewRowState.Unchanged;
+            }
+        }
+        private void btn_choice_Click(object sender, EventArgs e)
+        {
+            string choiceq = "";
+            if (String.IsNullOrEmpty(brandC.TxtCode.Text))
+            {
+                choiceq = "BrandCD is Null";
+            }
+            else
+            {
+                choiceq = "BrandCD = '" + brandC.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(segmentC.TxtCode.Text))
+            {
+                choiceq += " and SegmentCD is Null";
+            }
+            else
+            {
+                choiceq += " and SegmentCD = '" + segmentC.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(CB_yearC.Text))
+            {
+                choiceq += " and LastYearTerm is Null";
+            }
+            else
+            {
+                choiceq += " and LastYearTerm = '" + CB_yearC.Text + "'";
+            }
+            if (String.IsNullOrEmpty(cb_seasonC.Text))
+            {
+                choiceq += " and LastSeason is Null";
+            }
+            else
+            {
+                choiceq += " and LastSeason = '" + cb_seasonC.Text + "'";
+            }
+            if (String.IsNullOrEmpty(sportC.TxtCode.Text))
+            {
+                choiceq += " and SportsCD is Null";
+            }
+            else
+            {
+                choiceq += " and SportsCD = '" + sportC.TxtCode.Text + "'";
+            }
+            if (String.IsNullOrEmpty(makershohinC.TxtCode.Text))
+            {
+                choiceq += " and MakerItem is Null";
+            }
+            else
+            {
+                choiceq += " and MakerItem = '" + makershohinC.TxtCode.Text + "'";
+            }
+            if(String.IsNullOrEmpty(TB_dateC.Text))
+            {
+                choiceq += " and ChangeDate is Null";
+            }
+            else
+            {
+                choiceq += " and ChangeDate = '" + TB_dateC.Text + "'";
+            }
+               
+            
+            // if(!string.IsNullOrEmpty(brandC.TxtCode.Text))
+            //{
+            //    choiceq= "BrandCD = '"+ brandC.TxtCode.Text +"'";
+            //}
+            //if (!string.IsNullOrEmpty(sportC.TxtCode.Text))
+            //{
+            //    choiceq += " and SportsCD = '" + sportC.TxtCode.Text + "'";
+            //}
+            //if (!string.IsNullOrEmpty(segmentC.TxtCode.Text))
+            //{
+            //    choiceq += " and SegmentCD = '" + segmentC.TxtCode.Text + "'";
+            //}
+            //if (!string.IsNullOrEmpty(CB_yearC.Text))
+            //{
+            //    choiceq += " and LastYearTerm = '" + CB_yearC.Text + "'";
+            //}
+            //if (!string.IsNullOrEmpty(cb_seasonC.Text))
+            //{
+            //    choiceq += " and LastSeason = '" + cb_seasonC.Text + "'";
+            //}
+            //if (!string.IsNullOrEmpty(TB_dateC.Text))
+            //{
+            //    choiceq += " and ChangeDate = '" + TB_dateC.Text + "'";
+            //    choiceq += "Isnull(ChangeDate,TB_dateC.Text ) = 'Null Column'"
+            //}
+
+            //if (!string.IsNullOrEmpty(makershohinC.TxtCode.Text))
+            //{
+            //    choiceq += " and MakerItem = '" + makershohinC.TxtCode.Text + "'";
+            //}
+
+           
+            
+            if (GV_item.Rows.Count >0)
+            {
+
+                DataRow[] dr = dtc.Select(choiceq);
+               
+                if (dr.Length > 0)
+                {
+                    int i;
+                    for (i = 0; i < dr.Length; i++)
+                    {
+                        dr[i]["CheckBox"] = "1";
+                    }
+                    GV_item.Refresh();
+                    // dv.RowStateFilter = DataViewRowState.Deleted;
+                    brandC.Clear();
+                    sportC.Clear();
+                    segmentC.Clear();
+                    CB_yearC.Text = string.Empty;
+                    cb_seasonC.Text = string.Empty;
+                    TB_dateC.Text = string.Empty;
+                    makershohinC.Clear();
+                }
+            }
+        }
+
+        private void btn_selectall_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in GV_item.Rows)
+            {
+                row.Cells["ck"].Value = "1";
+            }
+        }
+
+        private void btn_releaseall_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in GV_item.Rows)
+            {
+                row.Cells["ck"].Value = "0";
+            }
+        }
+
+        private void btn_choiceCopy_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(TB_dateE.Text))
+            {
+
             }
         }
     }
