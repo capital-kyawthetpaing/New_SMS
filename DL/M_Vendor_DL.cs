@@ -237,6 +237,19 @@ namespace DL
             return SelectData(dic, "M_Vendor_SelectForSiharaiNo");
         }
 
-        
+        public DataTable M_Vendor_SelectForSiharaiNyuuroku (M_Vendor_Entity mve)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@VendorCD", new ValuePair { value1 = SqlDbType.VarChar, value2 =mve.VendorCD  } },
+                { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mve.ChangeDate } },
+                { "@MoneyPayeeFlg",new ValuePair { value1 = SqlDbType.TinyInt, value2 = mve.MoneyPayeeFlg} }
+            };
+            UseTransaction = true;
+            return SelectData(dic, "M_Vendor_SelectForSiharaiNyuuroku");
+        }
+
+
+
     }
 }

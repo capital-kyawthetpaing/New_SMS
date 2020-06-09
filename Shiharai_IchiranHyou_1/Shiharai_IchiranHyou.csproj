@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{95133249-EDA5-45D3-8FD9-6952DD6BA934}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Shiharai_IchiranHyou</RootNamespace>
+    <RootNamespace>SiharaiItiranHyou</RootNamespace>
     <AssemblyName>SiharaiItiranHyou</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -70,16 +70,13 @@
       <DependentUpon>ShiharaiItiranHyou_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ShiraraiItiranHyou_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShiraraiItiranHyou_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="SiharaiItiranHyou.cs">
+    <Compile Include="Siharai_ItiranHyou.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SiharaiItiranHyou.Designer.cs">
-      <DependentUpon>SiharaiItiranHyou.cs</DependentUpon>
+    <Compile Include="Siharai_ItiranHyou.Designer.cs">
+      <DependentUpon>Siharai_ItiranHyou.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,12 +90,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShiraraiItiranHyou_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ShiraraiItiranHyou_Report.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SiharaiItiranHyou.resx">
-      <DependentUpon>SiharaiItiranHyou.cs</DependentUpon>
+    <EmbeddedResource Include="Siharai_ItiranHyou.resx">
+      <DependentUpon>Siharai_ItiranHyou.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

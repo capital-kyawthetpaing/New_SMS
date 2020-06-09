@@ -242,13 +242,13 @@ namespace MainMenu
         protected Base_BL bbl = new Base_BL();
         private void btnClose_Click(object sender, EventArgs e)
         {
-            if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+           // if (bbl.ShowMessage("Q003") == DialogResult.Yes)
                 this.Close();
-            else
-            {
-                    btnClose.Focus();
-            }
-                return;
+            //else
+            //{
+            //        btnClose.Focus();
+            //}
+            //    return;
         }
         private void panelLeft_Click(object sender, EventArgs e)
         {
@@ -299,7 +299,8 @@ namespace MainMenu
                     }
 
                 }
-                MessageBox.Show("Menu item is over 14 and the extra menus can not be shown!");
+                //MessageBox.Show("Menu item is over 14 and the extra menus can not be shown!");
+                bbl.ShowMessage("I319");
             }
             if (getData.Rows.Count < 15)
             {
@@ -418,6 +419,11 @@ namespace MainMenu
                     }
                 }
             }
+        }
+
+        private void Capitalsports_MainMenu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
