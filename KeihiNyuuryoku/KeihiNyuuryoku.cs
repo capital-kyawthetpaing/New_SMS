@@ -58,6 +58,7 @@ namespace KeihiNyuuryoku
             Btn_F11.Text = "印刷(F11)";
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
             CreateDataTable();
+            ScVendor.SetFocus(1);
         }
 
         private void CreateDataTable()
@@ -532,7 +533,7 @@ namespace KeihiNyuuryoku
                     ScCost.SetFocus(1);
                     break;
             }
-            
+            ScVendor.SetFocus(1);
         }
         
         protected override void EndSec()

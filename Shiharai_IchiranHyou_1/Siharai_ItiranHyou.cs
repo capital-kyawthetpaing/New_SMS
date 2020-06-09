@@ -17,7 +17,7 @@ using CrystalDecisions.Shared;
 
 namespace Shiharai_IchiranHyou
 {
-    public partial class Siharai_ItiranHyou : FrmMainForm
+    public partial class SiharaiItiranHyou : FrmMainForm
     {
         Base_BL bbl;
         Shiharai_ItiranHyou_BL Ichiran_BL ;
@@ -25,7 +25,7 @@ namespace Shiharai_IchiranHyou
         DataTable dt, dtResult;
         Viewer previewForm;
         CrystalDecisions.Windows.Forms.CrystalReportViewer vr;
-        public Siharai_ItiranHyou()
+        public SiharaiItiranHyou()
         {
             InitializeComponent();
             bbl = new Base_BL();
@@ -35,7 +35,7 @@ namespace Shiharai_IchiranHyou
             dtResult = new DataTable();
             previewForm = new Viewer();
         }
-        private void Siharai_ItiranHyou_Load(object sender, EventArgs e)
+        private void SiharaiItiranHyou_Load(object sender, EventArgs e)
         {
             InProgramID = "SiharaiItiranHyou";
             SetFunctionLabel(EProMode.PRINT);
@@ -79,7 +79,8 @@ namespace Shiharai_IchiranHyou
                 dt = CheckData();
                 if (dt == null) return;
                 try
-                {                  
+                {     
+                    
                     ShiraraiItiranHyou_Report Report = new ShiraraiItiranHyou_Report();
                     DialogResult DResult;
                     switch (PrintMode)

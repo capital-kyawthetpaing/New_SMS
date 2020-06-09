@@ -122,6 +122,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 InitScr();
+                lblSalesGaku.Enabled = false;
             }
             catch (Exception ex)
             {
@@ -1910,6 +1911,12 @@ namespace TempoRegiHanbaiTouroku
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void lblSalesGaku_EnabledChanged(object sender, EventArgs e)
+        {
+            lblSalesGaku.BackColor = Color.White;
+            lblSalesGaku.ForeColor = Color.Red;
         }
     }
 }

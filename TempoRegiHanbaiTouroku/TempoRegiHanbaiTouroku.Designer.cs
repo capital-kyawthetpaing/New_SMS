@@ -130,12 +130,10 @@
             this.lblSalesGaku = new CKM_Controls.CKM_TextBox();
             this.lblSalesTax = new CKM_Controls.CKM_TextBox();
             this.lblJuchuuTaxRitsu = new CKM_Controls.CKM_TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pnlDetails.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtJanCD
@@ -867,7 +865,7 @@
             this.ckmShop_Label17.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label17.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label17.Location = new System.Drawing.Point(1523, 636);
+            this.ckmShop_Label17.Location = new System.Drawing.Point(1523, 637);
             this.ckmShop_Label17.Name = "ckmShop_Label17";
             this.ckmShop_Label17.Size = new System.Drawing.Size(168, 30);
             this.ckmShop_Label17.TabIndex = 60;
@@ -996,7 +994,7 @@
             this.label4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1491, 674);
+            this.label4.Location = new System.Drawing.Point(1491, 673);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(200, 40);
             this.label4.TabIndex = 73;
@@ -1896,15 +1894,17 @@
             this.lblSalesGaku.IsNumber = true;
             this.lblSalesGaku.IsShop = false;
             this.lblSalesGaku.Length = 20;
-            this.lblSalesGaku.Location = new System.Drawing.Point(2, 1);
+            this.lblSalesGaku.Location = new System.Drawing.Point(217, 410);
             this.lblSalesGaku.MaxLength = 20;
             this.lblSalesGaku.MoveNext = true;
             this.lblSalesGaku.Name = "lblSalesGaku";
+            this.lblSalesGaku.ReadOnly = true;
             this.lblSalesGaku.Size = new System.Drawing.Size(240, 42);
             this.lblSalesGaku.TabIndex = 91;
             this.lblSalesGaku.Text = "999999999";
             this.lblSalesGaku.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lblSalesGaku.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
+            this.lblSalesGaku.EnabledChanged += new System.EventHandler(this.lblSalesGaku_EnabledChanged);
             // 
             // lblSalesTax
             // 
@@ -1924,7 +1924,7 @@
             this.lblSalesTax.IsNumber = true;
             this.lblSalesTax.IsShop = false;
             this.lblSalesTax.Length = 20;
-            this.lblSalesTax.Location = new System.Drawing.Point(217, 455);
+            this.lblSalesTax.Location = new System.Drawing.Point(217, 452);
             this.lblSalesTax.MaxLength = 20;
             this.lblSalesTax.MoveNext = true;
             this.lblSalesTax.Name = "lblSalesTax";
@@ -1963,25 +1963,15 @@
             this.lblJuchuuTaxRitsu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.lblJuchuuTaxRitsu.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.lblSalesGaku);
-            this.panel3.Enabled = false;
-            this.panel3.Location = new System.Drawing.Point(215, 409);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(243, 43);
-            this.panel3.TabIndex = 94;
-            // 
             // TempoRegiHanbaiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "入金へ";
             this.ClientSize = new System.Drawing.Size(1913, 1011);
-            this.Controls.Add(this.txtJuchuuUnitPrice);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblJuchuuTaxRitsu);
             this.Controls.Add(this.lblSalesTax);
+            this.Controls.Add(this.lblSalesGaku);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.btnSyoDown);
             this.Controls.Add(this.btnSyoUp);
@@ -1991,6 +1981,7 @@
             this.Controls.Add(this.btnGenkin);
             this.Controls.Add(this.lblHenpin);
             this.Controls.Add(this.btnHenpin);
+            this.Controls.Add(this.txtJuchuuUnitPrice);
             this.Controls.Add(this.btnGroupDown);
             this.Controls.Add(this.btnGroupUp);
             this.Controls.Add(this.panel2);
@@ -2052,6 +2043,7 @@
             this.Controls.SetChildIndex(this.panel2, 0);
             this.Controls.SetChildIndex(this.btnGroupUp, 0);
             this.Controls.SetChildIndex(this.btnGroupDown, 0);
+            this.Controls.SetChildIndex(this.txtJuchuuUnitPrice, 0);
             this.Controls.SetChildIndex(this.btnHenpin, 0);
             this.Controls.SetChildIndex(this.lblHenpin, 0);
             this.Controls.SetChildIndex(this.btnGenkin, 0);
@@ -2061,16 +2053,13 @@
             this.Controls.SetChildIndex(this.btnSyoUp, 0);
             this.Controls.SetChildIndex(this.btnSyoDown, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
+            this.Controls.SetChildIndex(this.lblSalesGaku, 0);
             this.Controls.SetChildIndex(this.lblSalesTax, 0);
             this.Controls.SetChildIndex(this.lblJuchuuTaxRitsu, 0);
-            this.Controls.SetChildIndex(this.panel3, 0);
-            this.Controls.SetChildIndex(this.txtJuchuuUnitPrice, 0);
             this.pnlDetails.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2179,7 +2168,6 @@
         private CKM_Controls.CKM_TextBox lblSalesGaku;
         private CKM_Controls.CKM_TextBox lblSalesTax;
         private CKM_Controls.CKM_TextBox lblJuchuuTaxRitsu;
-        private System.Windows.Forms.Panel panel3;
     }
 }
 

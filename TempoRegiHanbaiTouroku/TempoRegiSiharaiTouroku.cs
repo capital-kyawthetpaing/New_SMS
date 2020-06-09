@@ -295,12 +295,30 @@ namespace TempoRegiHanbaiTouroku
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.MAEUKE)
             {
+                //大小チェック
+                if (bbl.Z_Set(mMaeuke) < bbl.Z_Set(txtMaeuke.Text))
+                {
+                    //Ｅ２３９
+                    bbl.ShowMessage("E239");
+                    txtMaeuke.Focus();
+                    return false;
+                }
+
                 //前受け金
                 lblMaeZan.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.POINT)
             {
                 //ポイント
+                //大小チェック
+                if (bbl.Z_Set(dse.LastPoint) < bbl.Z_Set(txtPoint.Text))
+                {
+                    //Ｅ２４０				
+                    bbl.ShowMessage("E240");
+                    txtPoint.Focus();
+                    return false;
+                }
+
                 //入力されたらポイント残＝ポイント残－ポイント
                 lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
             }
@@ -313,20 +331,6 @@ namespace TempoRegiHanbaiTouroku
                     {
                         return false;
                     }
-                    //if (cboDenominationName1.SelectedIndex.Equals(-1))
-                    //{
-                    //    //Ｅ１８４				
-                    //    bbl.ShowMessage("E184");
-                    //    cboDenominationName1.Focus();
-                    //    return false;
-                    //}
-                    //if (cboDenominationName1.SelectedValue.Equals("-1"))
-                    //{
-                    //    //Ｅ１８４				
-                    //    bbl.ShowMessage("E184");
-                    //    cboDenominationName1.Focus();
-                    //    return false;
-                    //}
 
                     //その他①の入金方法とその他②が同じであればエラー
                     if (!cboDenominationName1.SelectedIndex.Equals(-1))
@@ -399,6 +403,24 @@ namespace TempoRegiHanbaiTouroku
                 }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.AZUKARI)
             {
+                //大小チェック 
+                //現金≠０の場合 現金＞預りならエラー
+                if (bbl.Z_Set(txtCash.Text) != 0 && bbl.Z_Set(txtAzukari.Text) < bbl.Z_Set(txtCash.Text))
+                {
+                    //Ｅ２３７
+                    bbl.ShowMessage("E237");
+                    txtAzukari.Focus();
+                    return false;
+                }
+                //現金＝０の場合 預り≠０ならエラー
+                else if (bbl.Z_Set(txtCash.Text) == 0 && bbl.Z_Set(txtAzukari.Text) != 0)
+                {
+                    //Ｅ２３８
+                    bbl.ShowMessage("E238");
+                    txtAzukari.Focus();
+                    return false;
+                }
+
                 //お釣＝預り					－	現金
                 lblRefund.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
             }
@@ -690,9 +712,15 @@ namespace TempoRegiHanbaiTouroku
                 //ご請求額－その他①－	その他②－	カード	－	現金－	掛－ポイントを上限に、前受金残額を自動セット							
                 decimal wMaeuke = bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
                               - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text) - bbl.Z_Set(txtPoint.Text);
-                if (wMaeuke > 0)
+                if (wMaeuke > 0)               
+                {
+                    //前受金を自動セットするときに前受金残額を上限にする
+                    if (wMaeuke > bbl.Z_Set(mMaeuke))
+                    {
+                        wMaeuke = bbl.Z_Set(mMaeuke);
+                    }
                     txtMaeuke.Text = bbl.Z_SetStr(wMaeuke);
-
+                }
 
                 lblMaeZan.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
 
@@ -713,7 +741,14 @@ namespace TempoRegiHanbaiTouroku
                 decimal wPoint = bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
                                 - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text) - bbl.Z_Set(txtMaeuke.Text);
                 if (wPoint > 0)
+                {
+                    //ポイントを自動セットするときにポイント残額を上限にする
+                    if (wPoint > bbl.Z_Set(dse.LastPoint))
+                    {
+                        wPoint = bbl.Z_Set(dse.LastPoint);
+                    }
                     txtPoint.Text = bbl.Z_SetStr(wPoint);
+                }
 
                 //ポイント残 ＝	ポイント残－ポイント
                 lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
@@ -851,6 +886,7 @@ namespace TempoRegiHanbaiTouroku
                 txtCash.Text = "0";
                 txtCard.Text = "0";
                 txtKake.Text = "0";
+                txtMaeuke.Text = "0";
                 lblShiharaiKei.Text = "0";
 
                 //カード、その他①②の選択をクリア
