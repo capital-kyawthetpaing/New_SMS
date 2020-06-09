@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Shiharai_IchiranHyou.Properties {
+namespace SiharaiItiranHyou.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

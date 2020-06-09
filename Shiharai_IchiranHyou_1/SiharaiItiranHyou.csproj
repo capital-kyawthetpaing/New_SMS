@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{95133249-EDA5-45D3-8FD9-6952DD6BA934}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Shiharai_IchiranHyou</RootNamespace>
+    <RootNamespace>SiharaiItiranHyou</RootNamespace>
     <AssemblyName>SiharaiItiranHyou</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -70,9 +70,6 @@
       <DependentUpon>ShiharaiItiranHyou_DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ShiraraiItiranHyou_Report.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShiraraiItiranHyou_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SiharaiItiranHyou.cs">
@@ -93,10 +90,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ShiraraiItiranHyou_Report.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ShiraraiItiranHyou_Report.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="SiharaiItiranHyou.resx">
       <DependentUpon>SiharaiItiranHyou.cs</DependentUpon>
     </EmbeddedResource>
