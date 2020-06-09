@@ -941,10 +941,9 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
                 }
         }
-        protected Boolean CheckColumn(String[] colName,DataTable dtMain) //Check Columns if require columns are exist in import excel
+        protected Boolean CheckColumn(String[] colName,DataTable dtMain) //Check Columns exist in import excel
         {
             DataColumnCollection col = dtMain.Columns;
-            //for (int i = 0; i < colName.Length; i++)
             {
                 if (!dtMain.Columns[1].ColumnName.ToString().Equals("仕入先CD"))
                 {
