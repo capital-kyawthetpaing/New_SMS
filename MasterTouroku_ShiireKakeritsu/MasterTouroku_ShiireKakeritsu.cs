@@ -442,6 +442,7 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //SearchData();
+            BindGrid();
             string searchCondition = string.Empty;
             if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
                 searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
@@ -500,7 +501,6 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dvMain = new DataView(dtMain);
-           
             dgv_ShiireKakeritsu.DataSource = dvMain;
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
@@ -772,6 +772,10 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
+
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dvMain = new DataView(dtMain);
+            //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
 
@@ -941,10 +945,9 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
                 }
         }
-        protected Boolean CheckColumn(String[] colName,DataTable dtMain) //Check Columns if require columns are exist in import excel
+        protected Boolean CheckColumn(String[] colName,DataTable dtMain) //Check Columns exist in import excel
         {
             DataColumnCollection col = dtMain.Columns;
-            //for (int i = 0; i < colName.Length; i++)
             {
                 if (!dtMain.Columns[1].ColumnName.ToString().Equals("仕入先CD"))
                 {
