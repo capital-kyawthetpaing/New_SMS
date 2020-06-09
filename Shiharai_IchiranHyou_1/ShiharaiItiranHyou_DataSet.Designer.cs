@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Shiharai_IchiranHyou {
+namespace SiharaiItiranHyou {
     
     
     /// <summary>
