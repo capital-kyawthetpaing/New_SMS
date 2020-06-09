@@ -100,6 +100,7 @@
     <Content Include="StoreProcedure\D_Delivery_SelectAll.sql" />
     <Content Include="StoreProcedure\D_DepositHistory_Insert.sql" />
     <Content Include="StoreProcedure\D_DepositHistory_InsertUpdate.sql" />
+    <Content Include="StoreProcedure\D_DepositHistory_SelectForSeisan.sql" />
     <Content Include="StoreProcedure\D_DepositHistory_UpdateIssued.sql" />
     <Content Include="StoreProcedure\D_DepositＨistory_Gaku_Select.sql" />
     <Content Include="StoreProcedure\D_EDIOrderDetails_SelectAll.sql" />
@@ -131,6 +132,7 @@
     <Content Include="StoreProcedure\D_Juchuu_SelectData_ForShukka.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectData_ForTempoRegiHanbaiRireki.sql" />
     <Content Include="StoreProcedure\D_Juchuu_SelectData_ForTempoShukkaNyuuryoku.sql" />
+    <Content Include="StoreProcedure\D_Juchuu_SelectForSeisan.sql" />
     <Content Include="StoreProcedure\D_Juchu_SelectAllForShoukai.sql" />
     <Content Include="StoreProcedure\D_KeihiPrint.sql" />
     <Content Include="StoreProcedure\D_keihiPrint_Log.sql" />
@@ -202,6 +204,7 @@
     <Content Include="StoreProcedure\D_Sales_SelectForPrint.sql" />
     <Content Include="StoreProcedure\D_Sales_SelectForRegi.sql" />
     <Content Include="StoreProcedure\D_Sales_Update.sql" />
+    <Content Include="StoreProcedure\D_Sale_SelectForSeisan.sql" />
     <Content Include="StoreProcedure\D_SelectChangePreparation_ForTempoTorihikiReceipt.sql" />
     <Content Include="StoreProcedure\D_SelectData_ForTempoRegiJournal.sql" />
     <Content Include="StoreProcedure\D_SelectData_ForTempoRegiRyousyuusyo.sql" />
@@ -226,6 +229,7 @@
     <Content Include="StoreProcedure\D_Stock_Update.sql" />
     <Content Include="StoreProcedure\D_StoreCalculation_Insert_Update.sql" />
     <Content Include="StoreProcedure\D_Store_CalculationSelect.sql" />
+    <Content Include="StoreProcedure\D_Store_Calculation_SelectForSeiSan.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuuDetails_Insert.sql" />
     <Content Include="StoreProcedure\D_WowmaJuchuu_Insert.sql" />
     <Content Include="StoreProcedure\Fnc_GetNumber.sql" />
@@ -460,6 +464,7 @@
     <Content Include="StoreProcedure\M_Vendor_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForPayeeCD.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNo.sql" />
+    <Content Include="StoreProcedure\M_Vendor_SelectForSiharaiNyuuroku.sql" />
     <Content Include="StoreProcedure\M_Vendor_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_Vendor_Staff_Select.sql" />
     <Content Include="StoreProcedure\M_Vendor_ZipCodeSelect.sql" />
