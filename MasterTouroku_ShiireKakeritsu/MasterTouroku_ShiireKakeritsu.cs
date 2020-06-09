@@ -500,7 +500,6 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dvMain = new DataView(dtMain);
-           
             dgv_ShiireKakeritsu.DataSource = dvMain;
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
@@ -772,6 +771,10 @@ namespace MasterTouroku_ShiireKakeritsu
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
+
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dvMain = new DataView(dtMain);
+            //dgv_ShiireKakeritsu.DataSource = dvMain;
         }
         #endregion
 
