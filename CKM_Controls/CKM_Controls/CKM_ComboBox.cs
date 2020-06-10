@@ -503,6 +503,7 @@ namespace CKM_Controls
                     DataTable dtSSoukoT = tabl.M_Souko_BindForTanaoroshi(msoe4);
                     BindCombo("SoukoCD", "SoukoName", dtSSoukoT);
                     break;
+
                 case CboType.在庫照会倉庫:
                     ZaikoShoukai_BL zaikobl = new ZaikoShoukai_BL();
                     M_Souko_Entity ms = new M_Souko_Entity();
@@ -511,6 +512,7 @@ namespace CKM_Controls
                     DataTable dtzaiko = zaikobl.M_Souko_BindForZaikoshoukai(ms);
                     BindCombo("SoukoCD", "SoukoName", dtzaiko);
                     break;
+
                 case CboType.移動区分:
                     ZaikoIdouNyuuryoku_BL zibl2 = new ZaikoIdouNyuuryoku_BL();
                     M_MovePurpose_Entity mmpe = new M_MovePurpose_Entity();
