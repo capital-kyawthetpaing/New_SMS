@@ -97,9 +97,10 @@ BEGIN
     from M_SKU MS
     INNER JOIN(SELECT M.AdminNO, MAX(M.ChangeDate) AS ChangeDate
         FROM M_SKU M
-        WHERE M.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE M.JanCD END)
-        AND M.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE M.SKUName END) + '%'
-        AND M.ChangeDate <= CONVERT(DATE, @ChangeDate)
+        WHERE --M.JanCD = (CASE WHEN @JanCD <> '' THEN @JanCD ELSE M.JanCD END)
+        --AND M.SKUName LIKE '%' + (CASE WHEN @SKUName <> '' THEN @SKUName ELSE M.SKUName END) + '%'
+        --AND 
+        	M.ChangeDate <= CONVERT(DATE, @ChangeDate)
         AND M.DeleteFlg = 0
         GROUP BY M.AdminNO)M
         ON M.AdminNO = MS.AdminNO AND M.ChangeDate = MS.ChangeDate
