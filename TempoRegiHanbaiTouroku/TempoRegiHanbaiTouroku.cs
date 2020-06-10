@@ -1784,7 +1784,7 @@ namespace TempoRegiHanbaiTouroku
             }
             catch (Exception ex)
             {
-                //エラー時共通処理
+                //エラー時共通処理 
                 MessageBox.Show(ex.Message);
             }
         }
