@@ -778,9 +778,10 @@ namespace MasterTouroku_ShiireKakeritsu
             toDelete.ForEach(row => row.Delete());
 
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            dtMain = view.Table;
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
+
 
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dvMain = new DataView(dtMain);
