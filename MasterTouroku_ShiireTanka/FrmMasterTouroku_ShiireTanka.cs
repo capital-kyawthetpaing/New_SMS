@@ -24,6 +24,7 @@ namespace MasterTouroku_ShiireTanka
         DataView dv;
         DataTable dt;
         DataTable dtc;
+        string choiceq = "";
         public FrmMasterTouroku_ShiireTanka()
         {
 
@@ -698,19 +699,16 @@ namespace MasterTouroku_ShiireTanka
                     }
                     else
                     {
-                        GV_item.Rows.Add(false, brand.TxtCode.Text, "", "", "", "", "", "", "", "", "", "", "");
+                        GV_item.Rows.Add(false, brand.TxtCode.Text, sport.TxtCode.Text,"", "", "", "", "", "", "", "", "", "");
                     }
                 }
             }
-               
             //}
         }
 
         private void btn_displaymain_Click(object sender, EventArgs e)
         {
-            
             string query;
-
             if (String.IsNullOrEmpty(brand.TxtCode.Text))
             {
                 query = "BrandCD is Null";
@@ -783,7 +781,7 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_choice_Click(object sender, EventArgs e)
         {
-            string choiceq = "";
+            string dateq = "";
             if (String.IsNullOrEmpty(brandC.TxtCode.Text))
             {
                 choiceq = "BrandCD is Null";
@@ -834,52 +832,15 @@ namespace MasterTouroku_ShiireTanka
             }
             if(String.IsNullOrEmpty(TB_dateC.Text))
             {
-                choiceq += " and ChangeDate is Null";
+                dateq = " and ChangeDate is Null";
             }
             else
             {
-                choiceq += " and ChangeDate = '" + TB_dateC.Text + "'";
+                dateq += " and ChangeDate = '" + TB_dateC.Text + "'";
             }
-               
-            
-            // if(!string.IsNullOrEmpty(brandC.TxtCode.Text))
-            //{
-            //    choiceq= "BrandCD = '"+ brandC.TxtCode.Text +"'";
-            //}
-            //if (!string.IsNullOrEmpty(sportC.TxtCode.Text))
-            //{
-            //    choiceq += " and SportsCD = '" + sportC.TxtCode.Text + "'";
-            //}
-            //if (!string.IsNullOrEmpty(segmentC.TxtCode.Text))
-            //{
-            //    choiceq += " and SegmentCD = '" + segmentC.TxtCode.Text + "'";
-            //}
-            //if (!string.IsNullOrEmpty(CB_yearC.Text))
-            //{
-            //    choiceq += " and LastYearTerm = '" + CB_yearC.Text + "'";
-            //}
-            //if (!string.IsNullOrEmpty(cb_seasonC.Text))
-            //{
-            //    choiceq += " and LastSeason = '" + cb_seasonC.Text + "'";
-            //}
-            //if (!string.IsNullOrEmpty(TB_dateC.Text))
-            //{
-            //    choiceq += " and ChangeDate = '" + TB_dateC.Text + "'";
-            //    choiceq += "Isnull(ChangeDate,TB_dateC.Text ) = 'Null Column'"
-            //}
-
-            //if (!string.IsNullOrEmpty(makershohinC.TxtCode.Text))
-            //{
-            //    choiceq += " and MakerItem = '" + makershohinC.TxtCode.Text + "'";
-            //}
-
-           
-            
             if (GV_item.Rows.Count >0)
             {
-
-                DataRow[] dr = dtc.Select(choiceq);
-               
+                DataRow[] dr = dtc.Select(choiceq + dateq);
                 if (dr.Length > 0)
                 {
                     int i;
@@ -888,7 +849,6 @@ namespace MasterTouroku_ShiireTanka
                         dr[i]["CheckBox"] = "1";
                     }
                     GV_item.Refresh();
-                    // dv.RowStateFilter = DataViewRowState.Deleted;
                     brandC.Clear();
                     sportC.Clear();
                     segmentC.Clear();
@@ -918,8 +878,23 @@ namespace MasterTouroku_ShiireTanka
 
         private void btn_choiceCopy_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(TB_dateE.Text))
+            if(!String.IsNullOrEmpty(TB_dateE.Text))
             {
+                string date = "";
+                date = " and ChangeDate = '" + TB_dateE.Text + "'";
+                date += " and CheckBox =1";
+                string copyq = choiceq +date;
+                DataRow[] dr = dt.Select(copyq);
+                if(dr.Length <0)
+                {
+                    for(int i=0;i< dr.Length;i++)
+                    {
+                        //GV_item.Rows.Add(false, brandC.TxtCode.Text, sportC.TxtCode.Text,segmentC.TxtCode.Text
+                        //    ,CB_yearC.Text ,cb_seasonC.Text
+                        //    ,makershohinC.TxtCode.Text,, "", "", "", "", "");
+                    }
+                  
+                }
 
             }
         }

@@ -27,7 +27,7 @@ namespace ZaikoShoukai
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
         string adminno = "", SoukoCD = "";
-        string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate;
+        string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate,soukoname;
         int type = 0;
         public  ZaikoShoukai()
         {
@@ -96,6 +96,7 @@ namespace ZaikoShoukai
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
+                    SoukoCD = CB_Soko.SelectedValue.ToString();
                 }
                 else
                 {
@@ -144,8 +145,8 @@ namespace ZaikoShoukai
                 MakerVendorCD = Maker.TxtCode.Text,
                 BrandCD = SearchBrand.TxtCode.Text,
                 SKUName = TB_Shohinmei.Text,
-                JanCD=TB_Jancd.Text,
-                SKUCD=TB_Skucd.Text,
+                JanCD=jan.TxtCode.Text,
+                SKUCD=sku.TxtCode.Text,
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore= TB_Bikokeyword.Text,
@@ -258,8 +259,8 @@ namespace ZaikoShoukai
             TB_RackNoT.Text = string.Empty;
             TＢ_SaiShuhenkobiF.Text = string.Empty;
             TB_SaiShuhenkobiT.Text = String.Empty;
-            TB_Jancd.Text = string.Empty;
-            TB_Skucd.Text = string.Empty;
+            jan.Clear();
+            sku.Clear();
             Shiiresaki.Clear();
             SearchBrand.Clear();
             Maker.Clear();
@@ -403,6 +404,41 @@ namespace ZaikoShoukai
                 }
             }
         }
+
+        private void jan_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(!String.IsNullOrEmpty(jan.TxtCode.Text))
+            {
+                jan.ChangeDate = bbl.GetDate();
+                if (jan.SelectData())
+                {
+                    jan.Value1 = jan.TxtCode.Text;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    jan.SetFocus(1);
+                }
+            }
+        }
+
+        private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(!String.IsNullOrEmpty(sku.TxtCode.Text))
+            {
+                sku.ChangeDate = bbl.GetDate();
+                if(sku.SelectData())
+                {
+                    sku.Value1 = sku.TxtCode.Text;
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    sku.SetFocus(1);
+                }
+            }
+        }
+
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)
@@ -482,7 +518,9 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                SoukoCD = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
+                soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                //SoukoCD = GV_Zaiko.Rows[e.RowIndex].Cells[6].Value.ToString();
                 skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -492,7 +530,7 @@ namespace ZaikoShoukai
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 changedate = LB_ChangeDate.Text;
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD,StoreCD);
+                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD,soukoname,StoreCD);
                 frmVendor.ShowDialog();
             }
         }
@@ -522,6 +560,25 @@ namespace ZaikoShoukai
                 {
                     bbl.ShowMessage("E101");
                     SearchBrand.SetFocus(1);
+                    return false;
+                }
+            }
+            if (!String.IsNullOrEmpty(jan.TxtCode.Text))
+            {
+                if(!jan.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    jan.SetFocus(1);
+                    return false;
+
+                }
+            }
+            if(!String.IsNullOrEmpty(sku.TxtCode.Text))
+            {
+                if(!sku.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    sku.SetFocus(1);
                     return false;
                 }
             }

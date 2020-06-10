@@ -349,10 +349,10 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
-                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate , ScStaff.TxtCode  }))
+                        if (!RequireCheck(new Control[] { ScStaff.TxtCode, ScVendor.TxtCode, txtKeijouDate }))
                             return false;
-
-                        if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
+                        else
+                        //if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
                             if (dtcost.Rows.Count < 1)
