@@ -100,6 +100,7 @@ namespace ZaikoShoukai
                 else
                 {
                     GV_Zaiko.DataSource = null;
+                    bbl.ShowMessage("E128");
                     dtData.Clear();
                 }
             }
@@ -210,10 +211,16 @@ namespace ZaikoShoukai
                     }
                     break;
                 case 10:
-                    if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                    if (GV_Zaiko.DataSource != null)
                     {
-                        
-                        Excel();
+                        if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                        {
+                            Excel();
+                        }
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E128");
                     }
                     break;
                 case 11:
@@ -271,28 +278,30 @@ namespace ZaikoShoukai
         }
         private void Excel()
         {
-            if (!ErrorCheck())
+            if (GV_Zaiko.DataSource != null)
             {
-                return;
-            }
+                if (!ErrorCheck())
+                {
+                    return;
+                }
 
-            if (dtData.Columns.Contains("AdminNO"))
-            {
-                dtData.Columns.Remove("AdminNO");
-            }
-            string folderPath = "C:\\Excel\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            SaveFileDialog savedialog = new SaveFileDialog();
-            savedialog.Filter = "Excel Files|*.xlsx;";
-            savedialog.Title = "Save";
-            savedialog.FileName = "ZaikoShoukai";
-            savedialog.InitialDirectory = folderPath;
+                if (dtData.Columns.Contains("AdminNO"))
+                {
+                    dtData.Columns.Remove("AdminNO");
+                }
+                string folderPath = "C:\\Excel\\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Filter = "Excel Files|*.xlsx;";
+                savedialog.Title = "Save";
+                savedialog.FileName = "ZaikoShoukai";
+                savedialog.InitialDirectory = folderPath;
 
-            savedialog.RestoreDirectory = true;
-                
+                savedialog.RestoreDirectory = true;
+
                 if (savedialog.ShowDialog() == DialogResult.OK)
                 {
                     if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
@@ -303,17 +312,18 @@ namespace ZaikoShoukai
 
                         worksheet = workbook.ActiveSheet;
                         worksheet.Name = "worksheet";
-                   
+
                         using (XLWorkbook wb = new XLWorkbook())
                         {
-                        wb.Worksheets.Add(dtData, "worksheet");
-                        wb.SaveAs(savedialog.FileName);
-                        bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            wb.Worksheets.Add(dtData, "worksheet");
+                            wb.SaveAs(savedialog.FileName);
+                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                         }
-                    
+
                         Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
+            }
         }
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
@@ -327,7 +337,7 @@ namespace ZaikoShoukai
                 {
                     if (String.Compare(TB_RackNoF.Text, TB_RackNoT.Text) == 1)
                     {
-                        bbl.ShowMessage("106");
+                        bbl.ShowMessage("E106");
                     }
                 }
             }
@@ -536,7 +546,7 @@ namespace ZaikoShoukai
             {
                 if (String.Compare(TB_RackNoF.Text, TB_RackNoT.Text) == 1)
                 {
-                    bbl.ShowMessage("106");
+                    bbl.ShowMessage("E106");
                     return false;
                 }
             }
