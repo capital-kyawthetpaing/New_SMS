@@ -101,16 +101,15 @@
             // 
             // lblTotalGaku
             // 
-            this.lblTotalGaku.AutoSize = true;
             this.lblTotalGaku.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Green;
             this.lblTotalGaku.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblTotalGaku.DefaultlabelSize = true;
             this.lblTotalGaku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblTotalGaku.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblTotalGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalGaku.Location = new System.Drawing.Point(1272, 766);
+            this.lblTotalGaku.Location = new System.Drawing.Point(1268, 764);
             this.lblTotalGaku.Name = "lblTotalGaku";
-            this.lblTotalGaku.Size = new System.Drawing.Size(89, 12);
+            this.lblTotalGaku.Size = new System.Drawing.Size(85, 16);
             this.lblTotalGaku.TabIndex = 15;
             this.lblTotalGaku.Text = "-999,999,999";
             this.lblTotalGaku.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
