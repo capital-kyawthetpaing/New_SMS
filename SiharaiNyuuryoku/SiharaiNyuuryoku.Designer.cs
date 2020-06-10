@@ -89,7 +89,7 @@
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.btnF10Show = new CKM_Controls.CKM_Button();
+            this.btnF11Show = new CKM_Controls.CKM_Button();
             this.ScPaymentNum = new Search.CKM_SearchControl();
             this.ScPaymentProcessNum = new Search.CKM_SearchControl();
             this.ScPayee = new Search.CKM_SearchControl();
@@ -100,7 +100,7 @@
             // 
             // PanelHeader
             // 
-            this.PanelHeader.Controls.Add(this.btnF10Show);
+            this.PanelHeader.Controls.Add(this.btnF11Show);
             this.PanelHeader.Controls.Add(this.ScPaymentNum);
             this.PanelHeader.Controls.Add(this.ckM_Label2);
             this.PanelHeader.Controls.Add(this.ScPaymentProcessNum);
@@ -128,7 +128,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.ScPaymentProcessNum, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label2, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScPaymentNum, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.btnF10Show, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.btnF11Show, 0);
             // 
             // PanelSearch
             // 
@@ -915,24 +915,24 @@
             this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnF10Show
+            // btnF11Show
             // 
-            this.btnF10Show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btnF10Show.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btnF10Show.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnF10Show.DefaultBtnSize = false;
-            this.btnF10Show.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnF10Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnF10Show.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btnF10Show.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnF10Show.Location = new System.Drawing.Point(1603, 109);
-            this.btnF10Show.Margin = new System.Windows.Forms.Padding(1);
-            this.btnF10Show.Name = "btnF10Show";
-            this.btnF10Show.Size = new System.Drawing.Size(88, 22);
-            this.btnF10Show.TabIndex = 6;
-            this.btnF10Show.Text = "表示(F11)";
-            this.btnF10Show.UseVisualStyleBackColor = false;
-            this.btnF10Show.Click += new System.EventHandler(this.btnF11Show_Click);
+            this.btnF11Show.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btnF11Show.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btnF11Show.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnF11Show.DefaultBtnSize = false;
+            this.btnF11Show.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnF11Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnF11Show.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btnF11Show.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btnF11Show.Location = new System.Drawing.Point(1603, 109);
+            this.btnF11Show.Margin = new System.Windows.Forms.Padding(1);
+            this.btnF11Show.Name = "btnF11Show";
+            this.btnF11Show.Size = new System.Drawing.Size(88, 22);
+            this.btnF11Show.TabIndex = 6;
+            this.btnF11Show.Text = "表示(F11)";
+            this.btnF11Show.UseVisualStyleBackColor = false;
+            this.btnF11Show.Click += new System.EventHandler(this.btnF11Show_Click);
             // 
             // ScPaymentNum
             // 
@@ -1075,7 +1075,7 @@
         private CKM_Controls.CKM_Label ckM_Label11;
         private CKM_Controls.CKM_Label ckM_Label12;
         private CKM_Controls.CKM_GridView dgvPayment;
-        private CKM_Controls.CKM_Button btnF10Show;
+        private CKM_Controls.CKM_Button btnF11Show;
         private System.Windows.Forms.Label lblPayPlan;
         private System.Windows.Forms.Label lblGakuTotal;
         private System.Windows.Forms.Label lblTransferFeeGaku;

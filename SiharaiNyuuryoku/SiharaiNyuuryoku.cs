@@ -43,7 +43,6 @@ namespace SiharaiNyuuryoku
         }
         
         private void FrmSiharaiNyuuryoku_Load(object sender, EventArgs e)
-
         {
             InProgramID = "SiharaiNyuuryoku";
 
@@ -57,9 +56,10 @@ namespace SiharaiNyuuryoku
 
             Btn_F7.Enabled = false;
             Btn_F7.Text = "編集(F7)";
-            Btn_F10.Text = "";
+            //Btn_F10.Text = "";
+            Btn_F11.Enabled = true;
 
-            btnF10Show.Enabled = true;
+            btnF11Show.Enabled = true;
             txtPaymentDate.Enabled = false;
 
             ScStaff.Code = InOperatorCD;
@@ -158,8 +158,9 @@ namespace SiharaiNyuuryoku
                     txtDueDate1.Focus();
                     F9Visible = false;
                     F12Enable = true;
-                    btnF10Show.Enabled = true;
-                    F11Visible = false;
+                    F11Enable = true;
+                    btnF11Show.Enabled = true;
+                    //F11Visible = false;
                     Clear();
                     break;
                 case EOperationMode.UPDATE:
@@ -179,8 +180,9 @@ namespace SiharaiNyuuryoku
                     ScPayee.Enabled = false;
                     ScPayee.SearchEnable = false;
                     F12Enable = true;
-                    btnF10Show.Enabled = F11Enable = false;
-                    F11Visible = false;
+                    F11Enable = false;
+                    btnF11Show.Enabled = F11Enable = false;
+                    //F11Visible = false;
                     Clear();
                     break;
             }
@@ -822,7 +824,7 @@ namespace SiharaiNyuuryoku
             txtDueDate1.Enabled = false;
             txtDueDate2.Enabled = false;
             ScPayee.Enabled = false;
-            btnF10Show.Enabled = false;
+            btnF11Show.Enabled = false;
 
             cboPaymentType.Enabled = false;
             cboPaymentSourceAcc.Enabled = false;
