@@ -66,6 +66,23 @@ namespace CKM_Controls
 
         [Browsable(true)]
         [Category("CKM Properties")]
+        [Description("Bold")]
+        [DisplayName("FontBold")]
+        public bool FontBold
+        {
+            get {return this.Font.Bold; }
+            set
+            {
+                if (value == true) 
+                    this.Font = new System.Drawing.Font(this.Font.Name, this.Font.Size, System.Drawing.FontStyle.Bold);
+                else
+                    this.Font = new System.Drawing.Font(this.Font.Name, this.Font.Size, System.Drawing.FontStyle.Regular);
+            }
+        }
+
+
+        [Browsable(true)]
+        [Category("CKM Properties")]
         [Description("Select BackGround Color")]
         [DisplayName("BackGround Color")]
         public CKM_Color Back_Color
@@ -100,7 +117,8 @@ namespace CKM_Controls
             Small,
             Medium,
             Large,
-            XLarge
+            XLarge,
+            Medium0
         }
 
         [Browsable(true)]
@@ -132,6 +150,9 @@ namespace CKM_Controls
                         break;
                     case CKM_FontSize.XLarge:
                         this.Font = new System.Drawing.Font("MS Gothic", 32F, System.Drawing.FontStyle.Bold);
+                        break;
+                    case CKM_FontSize.Medium0:
+                        this.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
                         break;
                 }
             }
