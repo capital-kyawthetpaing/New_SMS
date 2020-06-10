@@ -54,6 +54,8 @@ namespace Search
             TB_Jancd.Text = jancd;
             TB_makerCD.Text = makercd;
             BtnF12Text = "表示(F11)";
+            F11Visible = false;
+            F9Visible = false;
         }
         public override void FunctionProcess(int index)
         {
