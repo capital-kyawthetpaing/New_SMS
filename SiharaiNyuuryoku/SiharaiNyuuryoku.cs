@@ -270,7 +270,7 @@ namespace SiharaiNyuuryoku
                     txtPaymentDate.Text = year +"/"+ month +"/"+day;
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
-                    cboPaymentType.SelectedValue = "1";
+                    cboPaymentType.SelectedValue = 1;
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
                     dgvPayment.DataSource = dtpayplan;
