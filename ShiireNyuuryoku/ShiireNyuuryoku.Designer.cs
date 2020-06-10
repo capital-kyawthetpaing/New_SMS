@@ -257,7 +257,7 @@
             this.ckM_SearchControl1 = new Search.CKM_SearchControl();
             this.ckM_Label18 = new CKM_Controls.CKM_Label();
             this.ckM_Label19 = new CKM_Controls.CKM_Label();
-            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
+            this.ChkTorikeshi = new CKM_Controls.CKM_CheckBox();
             this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.lblZei = new System.Windows.Forms.Label();
             this.ScVendorCD = new Search.CKM_SearchControl();
@@ -283,7 +283,7 @@
             this.PanelHeader.Controls.Add(this.ckM_Label9);
             this.PanelHeader.Controls.Add(this.ckM_Label1);
             this.PanelHeader.Controls.Add(this.CboStoreCD);
-            this.PanelHeader.Controls.Add(this.ckM_CheckBox3);
+            this.PanelHeader.Controls.Add(this.ChkTorikeshi);
             this.PanelHeader.Controls.Add(this.ScCopyNO);
             this.PanelHeader.Controls.Add(this.ScOrderNO);
             this.PanelHeader.Controls.Add(this.label4);
@@ -292,7 +292,7 @@
             this.PanelHeader.Controls.SetChildIndex(this.label4, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScOrderNO, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ScCopyNO, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_CheckBox3, 0);
+            this.PanelHeader.Controls.SetChildIndex(this.ChkTorikeshi, 0);
             this.PanelHeader.Controls.SetChildIndex(this.CboStoreCD, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.PanelHeader.Controls.SetChildIndex(this.ckM_Label9, 0);
@@ -300,6 +300,10 @@
             // PanelSearch
             // 
             this.PanelSearch.TabIndex = 7;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -6414,18 +6418,18 @@
             this.ckM_Label19.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_CheckBox3
+            // ChkTorikeshi
             // 
-            this.ckM_CheckBox3.AutoSize = true;
-            this.ckM_CheckBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox3.Location = new System.Drawing.Point(508, 11);
-            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
-            this.ckM_CheckBox3.Size = new System.Drawing.Size(50, 16);
-            this.ckM_CheckBox3.TabIndex = 1;
-            this.ckM_CheckBox3.Text = "取消";
-            this.ckM_CheckBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
-            this.ckM_CheckBox3.CheckedChanged += new System.EventHandler(this.CkM_CheckBox3_CheckedChanged);
+            this.ChkTorikeshi.AutoSize = true;
+            this.ChkTorikeshi.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ChkTorikeshi.Location = new System.Drawing.Point(508, 11);
+            this.ChkTorikeshi.Name = "ChkTorikeshi";
+            this.ChkTorikeshi.Size = new System.Drawing.Size(50, 16);
+            this.ChkTorikeshi.TabIndex = 1;
+            this.ChkTorikeshi.Text = "取消";
+            this.ChkTorikeshi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ChkTorikeshi.UseVisualStyleBackColor = true;
+            this.ChkTorikeshi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ChkTorikeshi_KeyDown);
             // 
             // ckM_Label12
             // 
@@ -6462,8 +6466,8 @@
             this.ScVendorCD.ChangeDate = "";
             this.ScVendorCD.ChangeDateWidth = 100;
             this.ScVendorCD.Code = "";
-            this.ScVendorCD.CodeWidth = 130;
-            this.ScVendorCD.CodeWidth1 = 130;
+            this.ScVendorCD.CodeWidth = 100;
+            this.ScVendorCD.CodeWidth1 = 100;
             this.ScVendorCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendorCD.DataCheck = true;
             this.ScVendorCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6474,7 +6478,7 @@
             this.ScVendorCD.Location = new System.Drawing.Point(219, 96);
             this.ScVendorCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendorCD.Name = "ScVendorCD";
-            this.ScVendorCD.NameWidth = 280;
+            this.ScVendorCD.NameWidth = 310;
             this.ScVendorCD.SearchEnable = true;
             this.ScVendorCD.Size = new System.Drawing.Size(444, 28);
             this.ScVendorCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -6821,7 +6825,7 @@
         private CKM_Controls.CKM_TextBox IMT_JUONO_2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label7;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
+        private CKM_Controls.CKM_CheckBox ChkTorikeshi;
         private CKM_Controls.CKM_Label ckM_Label12;
         private System.Windows.Forms.Label label3;
         private GridControl.clsGridCheckBox CHK_DELCK_0;

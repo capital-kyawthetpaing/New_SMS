@@ -56,11 +56,13 @@ namespace KeihiNyuuryoku
             Btn_F9.Text = "検索(F9)";
             Btn_F10.Text = "複写(F10)";
             Btn_F11.Text = "印刷(F11)";
+
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
             lblTotalGaku.AutoSize = false;
             lblTotalGaku.Width = 90;
             lblTotalGaku.Height = 16;
             lblTotalGaku.TextAlign = ContentAlignment.MiddleRight;
+
             CreateDataTable();
             txtKeijouDate.Focus();
         }
@@ -133,7 +135,7 @@ namespace KeihiNyuuryoku
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(OperationMode);
-                        ScCost.SetFocus(1);
+                        ScVendor.SetFocus(1);
                     }
                     break;
                 case 7:
