@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.TB_Shohinmei = new CKM_Controls.CKM_TextBox();
             this.LBLSoko = new CKM_Controls.CKM_Label();
@@ -172,7 +172,7 @@
             // 
             this.CB_Soko.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Soko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
+            this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.在庫照会倉庫;
             this.CB_Soko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_Soko.Flag = 0;
             this.CB_Soko.FormattingEnabled = true;
@@ -501,17 +501,17 @@
             this.GV_PlanArrival.AllowUserToAddRows = false;
             this.GV_PlanArrival.AllowUserToDeleteRows = false;
             this.GV_PlanArrival.AllowUserToResizeRows = false;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_PlanArrival.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_PlanArrival.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_PlanArrival.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_PlanArrival.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_PlanArrival.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_PlanArrival.ColumnHeadersHeight = 25;
             this.GV_PlanArrival.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.入荷予定,
@@ -523,6 +523,8 @@
             this.GV_PlanArrival.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_PlanArrival.Location = new System.Drawing.Point(113, 206);
             this.GV_PlanArrival.Name = "GV_PlanArrival";
+            this.GV_PlanArrival.RowHeight_ = 20;
+            this.GV_PlanArrival.RowTemplate.Height = 20;
             this.GV_PlanArrival.Size = new System.Drawing.Size(542, 211);
             this.GV_PlanArrival.TabIndex = 742;
             this.GV_PlanArrival.UseRowNo = true;
@@ -531,40 +533,40 @@
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "ArrivalPlanDate";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle3;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
             // 
             // 倉庫
             // 
             this.倉庫.DataPropertyName = "SoukoName";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.倉庫.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.倉庫.DefaultCellStyle = dataGridViewCellStyle4;
             this.倉庫.HeaderText = "倉庫";
             this.倉庫.Name = "倉庫";
             // 
             // 入荷数量
             // 
             this.入荷数量.DataPropertyName = "ArrivalPlanSu";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.入荷数量.DefaultCellStyle = dataGridViewCellStyle5;
             this.入荷数量.HeaderText = "入荷数量";
             this.入荷数量.Name = "入荷数量";
             // 
             // 発注番号
             // 
             this.発注番号.DataPropertyName = "Number";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.発注番号.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.発注番号.DefaultCellStyle = dataGridViewCellStyle6;
             this.発注番号.HeaderText = "発注番号";
             this.発注番号.Name = "発注番号";
             // 
             // 引当数量
             // 
             this.引当数量.DataPropertyName = "AllowableSU";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.引当数量.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.引当数量.DefaultCellStyle = dataGridViewCellStyle7;
             this.引当数量.HeaderText = "引当数量";
             this.引当数量.Name = "引当数量";
             // 
