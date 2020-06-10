@@ -244,7 +244,7 @@ namespace SiharaiNyuuryoku
         private void F11()
         {
             type = 3;
-            if (ErrorCheck(10))
+            if (ErrorCheck(11))
             {
                 dppe.PayPlanDateFrom = txtDueDate1.Text;
                 dppe.PayPlanDateTo = txtDueDate2.Text;
@@ -663,7 +663,7 @@ namespace SiharaiNyuuryoku
                     }
                 }
 
-                if (type == 3)
+                else if (type == 3)
                 {
                     if (!RequireCheck(new Control[] { txtDueDate2 }))
                         return false;
