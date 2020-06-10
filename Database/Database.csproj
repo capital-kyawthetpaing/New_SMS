@@ -402,6 +402,7 @@
     <Content Include="StoreProcedure\M_Souko_BindForNyuuka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForTanaoroshi.sql" />
+    <Content Include="StoreProcedure\M_Souko_BindForZaikoshoukai.sql" />
     <Content Include="StoreProcedure\M_Souko_Delete.sql" />
     <Content Include="StoreProcedure\M_Souko_InitSelect.sql" />
     <Content Include="StoreProcedure\M_Souko_Insert_Update.sql" />

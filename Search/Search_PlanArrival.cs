@@ -21,8 +21,9 @@ namespace Search
         Base_BL bbl = new Base_BL();
         Search_PlanArrival_BL pa_bl;
         ZaikoShoukai_BL zaibl;
-        string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd,soukocd,changedate;
-        public Search_PlanArrival(String No, string sku, string shohin, string col, string si, string it, string br, string jan, string maker, string date,string souko)
+        string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd,soukocd,changedate,storecd;
+        public Search_PlanArrival(String No, string sku, string shohin, string col, string si
+            , string it, string br, string jan, string maker, string date,string souko,string store)
         {
             InitializeComponent();
             HeaderTitleText = "商品在庫照会（入荷予定）";
@@ -40,10 +41,12 @@ namespace Search
             makercd = maker;
             changedate = date;
             soukocd = souko;
+            storecd = store;
         }
         private void Search_PlanArrival_Load(object sender, EventArgs e)
         {
-            CB_Soko.Bind(String.Empty, "");
+            string ymd = bbl.GetDate();
+            CB_Soko.Bind(ymd, storecd);
             CB_Soko.SelectedText =soukocd;
             TB_Shohinmei.Text= shohinmei;
             TB_ColorName.Text = color;
@@ -81,6 +84,7 @@ namespace Search
             else
             {
                 GV_PlanArrival.DataSource = null;
+                bbl.ShowMessage("E128");
             }
         }
         private M_SKU_Entity GetDataEntity()
