@@ -66,10 +66,12 @@ namespace BL
             DataTable dtShihraiYotei = new DataTable();
             string Yoteibi = string.Empty;
             dtShihraiYotei = calendarDL.GetYoteibi(KaisyuShiharaiKbn, CustomerCD, ChangeDate, TyohaKbn);
-            if (dtShihraiYotei.Rows[0]["Yoteibi"].ToString() != "0")
-            {
+            if (dtShihraiYotei.Rows.Count > 0)
                 Yoteibi = dtShihraiYotei.Rows[0]["Yoteibi"].ToString();
-            }
+            //if (dtShihraiYotei.Rows[0]["Yoteibi"].ToString() != "0")
+            //{
+            //    Yoteibi = dtShihraiYotei.Rows[0]["Yoteibi"].ToString();
+            //}
             return Yoteibi;
         }
     }
