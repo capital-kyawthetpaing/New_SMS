@@ -107,6 +107,7 @@ namespace CKM_Controls
             /// </summary>	
             出荷指示倉庫,
             棚卸倉庫,
+            在庫照会倉庫,
             移動区分,
             移動依頼区分,
             運送会社,
@@ -501,6 +502,14 @@ namespace CKM_Controls
                     msoe4.DeleteFlg = "0";
                     DataTable dtSSoukoT = tabl.M_Souko_BindForTanaoroshi(msoe4);
                     BindCombo("SoukoCD", "SoukoName", dtSSoukoT);
+                    break;
+                case CboType.在庫照会倉庫:
+                    ZaikoShoukai_BL zaikobl = new ZaikoShoukai_BL();
+                    M_Souko_Entity ms = new M_Souko_Entity();
+                    ms.StoreCD = mse.StoreCD;
+
+                    DataTable dtzaiko = zaikobl.M_Souko_BindForZaikoshoukai(ms);
+                    BindCombo("SoukoCD", "SoukoName", dtzaiko);
                     break;
                 case CboType.移動区分:
                     ZaikoIdouNyuuryoku_BL zibl2 = new ZaikoIdouNyuuryoku_BL();
