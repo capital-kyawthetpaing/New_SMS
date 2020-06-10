@@ -448,26 +448,26 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //SearchData();
-            BindGrid();
-            string searchCondition = string.Empty;
-            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
-                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
-                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                searchCondition = "ChangeDate= '" + txtDate.Text;
-            if (dgv_ShiireKakeritsu.DataSource != null)
-            {
-                dvMain.RowFilter = searchCondition;
-                dgv_ShiireKakeritsu.DataSource = dvMain;
-
-            }
+                //BindGrid();
+                string searchCondition = string.Empty;
+                if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
+                    searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
+                if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
+                    searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
+                if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
+                    searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
+                    searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
+                    searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+                if (!string.IsNullOrWhiteSpace(txtDate.Text))
+                    searchCondition = "ChangeDate= '" + txtDate.Text;
+                if (dgv_ShiireKakeritsu.DataSource != null)
+                {
+                    DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
+                    dvMain.RowFilter = searchCondition;
+                    dgv_ShiireKakeritsu.DataSource = dvMain;
+                }
         }
         private void SearchData()
         {
@@ -496,16 +496,15 @@ namespace MasterTouroku_ShiireKakeritsu
             if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
                 searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
             if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-            searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
+                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
             if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-            searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
             if (!string.IsNullOrWhiteSpace(txtDate.Text))
                 searchCondition = "ChangeDate= '" + txtDate.Text;
 
             //if (!string.IsNullOrWhiteSpace(searchCondition))
             //{
             //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
-
 
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
@@ -524,8 +523,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //{
             //    dtGrid = dtMain;
             //}
-
-
         }
         private void btnCopy_Click(object sender, EventArgs e)
         {
@@ -778,9 +775,10 @@ namespace MasterTouroku_ShiireKakeritsu
             toDelete.ForEach(row => row.Delete());
 
             DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            dtMain = view.Table;
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
+
 
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dvMain = new DataView(dtMain);

@@ -58,7 +58,7 @@ namespace KeihiNyuuryoku
             Btn_F11.Text = "印刷(F11)";
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
             CreateDataTable();
-            ScVendor.SetFocus(1);
+            txtKeijouDate.Focus();
         }
 
         private void CreateDataTable()
@@ -104,6 +104,7 @@ namespace KeihiNyuuryoku
         {
             ScCost.TxtCode.Require(true);
             ScVendor.TxtCode.Require(true);
+            txtKeijouDate.Require(true);
             ScStaff.TxtCode.Require(true);
         }
          
@@ -342,6 +343,9 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
+                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate , ScStaff.TxtCode  }))
+                            return false;
+
                         if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
@@ -533,7 +537,7 @@ namespace KeihiNyuuryoku
                     ScCost.SetFocus(1);
                     break;
             }
-            ScVendor.SetFocus(1);
+           // ScVendor.SetFocus(1);
         }
         
         protected override void EndSec()
