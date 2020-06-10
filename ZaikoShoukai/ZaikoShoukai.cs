@@ -54,7 +54,7 @@ namespace ZaikoShoukai
         private void BindCombo()
         {
             string ymd = bbl.GetDate();
-            CB_Soko.Bind(ymd);
+            CB_Soko.Bind(ymd,StoreCD);
             CB_Soko.SelectedIndex = 1;
             CB_year.Bind(ymd);
             CB_Season.Bind(ymd);
@@ -492,7 +492,7 @@ namespace ZaikoShoukai
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 changedate = LB_ChangeDate.Text;
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD);
+                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD,StoreCD);
                 frmVendor.ShowDialog();
             }
         }

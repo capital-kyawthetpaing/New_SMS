@@ -746,7 +746,10 @@ namespace TempoRegiSeisanTouroku
              if (!RequireCheck(new Control[] { txt2000 }))
                  return false;
 
-             if (!RequireCheck(new Control[] { txt500 }))
+            if (!RequireCheck(new Control[] { txt1000 }))
+                return false;
+
+            if (!RequireCheck(new Control[] { txt500 }))
                  return false;   
 
              if (!RequireCheck(new Control[] { txt100 }))
@@ -756,12 +759,12 @@ namespace TempoRegiSeisanTouroku
                  return false;
   
              if (!RequireCheck(new Control[] { txt10 }))
-                 return false;               
+                 return false;
 
-             if (!RequireCheck(new Control[] { txt10000 }))
-                 return false;             
+            if (!RequireCheck(new Control[] { txt5 }))
+                return false;
 
-             if (!RequireCheck(new Control[] { txt1 }))
+            if (!RequireCheck(new Control[] { txt1 }))
                  return false;           
 
              if (!RequireCheck(new Control[] { txtotheramount }))

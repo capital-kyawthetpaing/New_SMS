@@ -3074,7 +3074,7 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
+                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka))
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
@@ -3232,8 +3232,8 @@ namespace TempoJuchuuNyuuryoku
                     if (fre.Result == "1")
                     {
                         mGrid.g_DArray[row].Hikiate = "引当OK";
-                        mGrid.g_DArray[row].VendorCD = "";
-                        mGrid.g_DArray[row].VendorName = "";
+                            //mGrid.g_DArray[row].VendorCD = "";
+                            //mGrid.g_DArray[row].VendorName = "";
 
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ArrivePlanDate))
                         {

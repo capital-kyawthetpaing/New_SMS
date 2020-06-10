@@ -114,8 +114,6 @@ namespace DL
             }
             return dt;
         }
-
-       
         /// <summary>
         /// ktp 2019-05-29 to select easily 
         /// </summary>
