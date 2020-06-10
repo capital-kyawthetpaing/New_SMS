@@ -257,5 +257,13 @@ namespace DL
             return SelectData(dic, "M_Souko_BindForTanaoroshi");
         }
 
+        public DataTable M_Souko_BindForZaikoshoukai(M_Souko_Entity mse)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.StoreCD } },
+            };
+            return SelectData(dic, "M_Souko_BindForZaikoshoukai");
+        }
     }
 }
