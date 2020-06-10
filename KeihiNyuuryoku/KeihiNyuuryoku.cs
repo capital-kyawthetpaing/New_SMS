@@ -57,6 +57,10 @@ namespace KeihiNyuuryoku
             Btn_F10.Text = "複写(F10)";
             Btn_F11.Text = "印刷(F11)";
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+            lblTotalGaku.AutoSize = false;
+            lblTotalGaku.Width = 90;
+            lblTotalGaku.Height = 16;
+            lblTotalGaku.TextAlign = ContentAlignment.MiddleRight;
             CreateDataTable();
             txtKeijouDate.Focus();
         }
@@ -699,7 +703,7 @@ namespace KeihiNyuuryoku
                 if (TotalGaku.ToString().Equals("0"))
                     lblTotalGaku.Text = string.Empty;
                 else
-                    lblTotalGaku.Text = TotalGaku.ToString();
+                    lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
             
         }
