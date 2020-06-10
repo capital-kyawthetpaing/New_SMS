@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.lblTotalGaku = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -107,7 +107,7 @@
             this.lblTotalGaku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.lblTotalGaku.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.lblTotalGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalGaku.Location = new System.Drawing.Point(1268, 764);
+            this.lblTotalGaku.Location = new System.Drawing.Point(1268, 746);
             this.lblTotalGaku.Name = "lblTotalGaku";
             this.lblTotalGaku.Size = new System.Drawing.Size(85, 16);
             this.lblTotalGaku.TabIndex = 15;
@@ -124,7 +124,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(1224, 766);
+            this.ckM_Label8.Location = new System.Drawing.Point(1224, 747);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label8.TabIndex = 14;
@@ -151,17 +151,17 @@
             this.dgvKehiNyuuryoku.AllowUserToAddRows = false;
             this.dgvKehiNyuuryoku.AllowUserToDeleteRows = false;
             this.dgvKehiNyuuryoku.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvKehiNyuuryoku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvKehiNyuuryoku.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvKehiNyuuryoku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvKehiNyuuryoku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvKehiNyuuryoku.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvKehiNyuuryoku.ColumnHeadersHeight = 25;
             this.dgvKehiNyuuryoku.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCostCD,
@@ -174,7 +174,7 @@
             this.dgvKehiNyuuryoku.Name = "dgvKehiNyuuryoku";
             this.dgvKehiNyuuryoku.RowHeight_ = 20;
             this.dgvKehiNyuuryoku.RowTemplate.Height = 20;
-            this.dgvKehiNyuuryoku.Size = new System.Drawing.Size(1300, 685);
+            this.dgvKehiNyuuryoku.Size = new System.Drawing.Size(1300, 667);
             this.dgvKehiNyuuryoku.TabIndex = 12;
             this.dgvKehiNyuuryoku.UseRowNo = true;
             this.dgvKehiNyuuryoku.UseSetting = true;
@@ -520,10 +520,10 @@
             // 
             this.colCostGaku.DataPropertyName = "CostGaku";
             this.colCostGaku.DecimalPlace = ((byte)(0));
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colCostGaku.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = null;
+            this.colCostGaku.DefaultCellStyle = dataGridViewCellStyle12;
             this.colCostGaku.HeaderText = "税込支払額";
             this.colCostGaku.MaxInputLength = 12;
             this.colCostGaku.Name = "colCostGaku";
