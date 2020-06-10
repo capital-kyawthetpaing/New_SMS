@@ -130,8 +130,8 @@ namespace SiharaiNyuuryoku
                 case 7:
                     F7();
                     break;
-                case 10:
-                    F10();
+                case 11:
+                    F11();
                     break;
                 case 12:
                     F12();
@@ -241,7 +241,7 @@ namespace SiharaiNyuuryoku
             }       
         }
         
-        private void F10()
+        private void F11()
         {
             type = 3;
             if (ErrorCheck(10))
@@ -427,10 +427,7 @@ namespace SiharaiNyuuryoku
             Checkstate(false);
         }
 
-        private void btnF10Show_Click(object sender, EventArgs e)
-        {
-            F10();
-        }
+       
         #endregion
 
         #region KeyEvent
@@ -468,7 +465,7 @@ namespace SiharaiNyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
-                F10();
+                F11();
             }
         }
 
@@ -495,6 +492,10 @@ namespace SiharaiNyuuryoku
             }
         }
 
+        private void btnF11Show_Click(object sender, EventArgs e)
+        {
+            F11();
+        }
 
         #endregion
 
@@ -591,50 +592,8 @@ namespace SiharaiNyuuryoku
         /// <param name="index"></param>
         /// <returns></returns>
         private bool ErrorCheck(int index)
-        {
-            if (index == 10)
-            {
-                if (type == 3)
-                {
-                    if (!RequireCheck(new Control[] { txtDueDate2 }))
-                        return false;
-                    else
-                    {
-                        int result = txtDueDate1.Text.CompareTo(txtDueDate2.Text);
-                        if (result > 0)
-                        {
-                            sibl.ShowMessage("E104");
-                            txtDueDate2.Focus();
-                        }
-                    }
-                    
-
-                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
-                        return false;
-                    else
-                    {
-                        mve.VendorCD = ScPayee.TxtCode.Text;
-                        mve.ChangeDate = DateTime.Now.ToString("yyyy/MM/dd");
-                        mve.MoneyPayeeFlg = "1";
-                        DataTable dtvendor = new DataTable();
-                        dtvendor = sibl.M_Vendor_Select(mve);
-                        if (dtvendor.Rows.Count == 0)
-                        {
-                            sibl.ShowMessage("E101");
-                            ScPayee.SetFocus(1);
-                            return false;
-                        }
-                        else
-                        {
-                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
-                        }
-                    }
-
-
-                }
-
-            }
-            else if(index == 11)
+        {            
+            if(index == 11)
             {
                 if (type == 1)
                 {
@@ -702,6 +661,45 @@ namespace SiharaiNyuuryoku
                         //    DataDisplay();
                         //}
                     }
+                }
+
+                if (type == 3)
+                {
+                    if (!RequireCheck(new Control[] { txtDueDate2 }))
+                        return false;
+                    else
+                    {
+                        int result = txtDueDate1.Text.CompareTo(txtDueDate2.Text);
+                        if (result > 0)
+                        {
+                            sibl.ShowMessage("E104");
+                            txtDueDate2.Focus();
+                        }
+                    }
+
+
+                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
+                        return false;
+                    else
+                    {
+                        mve.VendorCD = ScPayee.TxtCode.Text;
+                        mve.ChangeDate = DateTime.Now.ToString("yyyy/MM/dd");
+                        mve.MoneyPayeeFlg = "1";
+                        DataTable dtvendor = new DataTable();
+                        dtvendor = sibl.M_Vendor_Select(mve);
+                        if (dtvendor.Rows.Count == 0)
+                        {
+                            sibl.ShowMessage("E101");
+                            ScPayee.SetFocus(1);
+                            return false;
+                        }
+                        else
+                        {
+                            ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
+                        }
+                    }
+
+
                 }
             }
             else if (index == 12)
@@ -981,5 +979,7 @@ namespace SiharaiNyuuryoku
                 }
             }
         }
+
+       
     }
 }
