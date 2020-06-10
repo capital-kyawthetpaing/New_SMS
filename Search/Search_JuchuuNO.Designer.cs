@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -363,6 +362,7 @@
             this.ckM_SearchControl2.ChangeDateWidth = 100;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -391,6 +391,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 100;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -619,6 +620,7 @@
             this.ScCustomer.ChangeDateWidth = 100;
             this.ScCustomer.Code = "";
             this.ScCustomer.CodeWidth = 100;
+            this.ScCustomer.CodeWidth1 = 100;
             this.ScCustomer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCustomer.DataCheck = true;
             this.ScCustomer.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -802,11 +804,10 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -843,20 +844,13 @@
             this.colSaleDate,
             this.colSikyuYmd,
             this.colNyukinYmd});
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle13;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(8, 296);
             this.GvDetail.MultiSelect = false;
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
+            this.GvDetail.RowHeight_ = 20;
             this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(1350, 310);
             this.GvDetail.TabIndex = 50;
@@ -1676,7 +1670,8 @@
             this.ScVendor.ChangeDate = "";
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
-            this.ScVendor.CodeWidth = 130;
+            this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = true;
             this.ScVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1687,9 +1682,9 @@
             this.ScVendor.Location = new System.Drawing.Point(448, 81);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
-            this.ScVendor.NameWidth = 280;
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
-            this.ScVendor.Size = new System.Drawing.Size(163, 28);
+            this.ScVendor.Size = new System.Drawing.Size(133, 28);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScVendor.TabIndex = 24;
             this.ScVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1716,7 +1711,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 100;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -1727,9 +1723,9 @@
             this.ScStaff.Location = new System.Drawing.Point(448, 108);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
-            this.ScStaff.NameWidth = 210;
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(344, 28);
+            this.ScStaff.Size = new System.Drawing.Size(354, 28);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 26;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1832,7 +1828,7 @@
             this.txtCustomerName.MaxLength = 80;
             this.txtCustomerName.MoveNext = true;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(356, 19);
+            this.txtCustomerName.Size = new System.Drawing.Size(407, 19);
             this.txtCustomerName.TabIndex = 19;
             this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -1855,9 +1851,9 @@
             this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;
-            this.txtVendorName.Length = 80;
-            this.txtVendorName.Location = new System.Drawing.Point(609, 86);
-            this.txtVendorName.MaxLength = 80;
+            this.txtVendorName.Length = 50;
+            this.txtVendorName.Location = new System.Drawing.Point(579, 86);
+            this.txtVendorName.MaxLength = 50;
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(356, 19);
