@@ -21,7 +21,7 @@ namespace KeihiNyuuryoku
         M_Staff_Entity staff;
         KeihiNyuuryoku_BL khnyk_BL;
         int type = 0;//1 = normal, 2 = copy (for f11)
-        string keijoudate = string.Empty;
+        string keijoudate, staffName = string.Empty;
         decimal TotalGaku;
         DataTable dtcost, dtcontrol, dtpayplan, dtVendor, dtStaff, dt;
 
@@ -56,15 +56,18 @@ namespace KeihiNyuuryoku
             Btn_F9.Text = "検索(F9)";
             Btn_F10.Text = "複写(F10)";
             Btn_F11.Text = "印刷(F11)";
-
-            txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+            Btn_F11.Text = string.Empty;
+           
             lblTotalGaku.AutoSize = false;
             lblTotalGaku.Width = 90;
             lblTotalGaku.Height = 16;
             lblTotalGaku.TextAlign = ContentAlignment.MiddleRight;
 
             CreateDataTable();
-            txtKeijouDate.Focus();
+            ScStaff.TxtCode.Text = InOperatorCD;
+            ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
+            txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+            ScVendor.SetFocus(1);
         }
 
         private void CreateDataTable()
@@ -349,10 +352,10 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
-                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate , ScStaff.TxtCode  }))
+                        if (!RequireCheck(new Control[] { ScStaff.TxtCode, ScVendor.TxtCode, txtKeijouDate }))
                             return false;
-
-                        if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
+                        else
+                        //if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
                             if (dtcost.Rows.Count < 1)
@@ -406,61 +409,62 @@ namespace KeihiNyuuryoku
             //DetailCheck on F12
             else if (index == 12)
             {
-                //if (OperationMode == EOperationMode.INSERT)
-                //{
-                    if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
-                        return false;
+                 if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
+                     return false;
 
-                    if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
-                        keijoudate = System.DateTime.Now.ToString("yyyy-MM-dd");
+                 if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
+                     keijoudate = System.DateTime.Now.ToString("yyyy-MM-dd");
 
-                    else
-                        keijoudate = txtKeijouDate.Text;
-                    dtVendor = khnyk_BL.Select_SearchName(keijoudate,4,ScVendor.Code);
+                 else
+                     keijoudate = txtKeijouDate.Text;
+                 dtVendor = khnyk_BL.Select_SearchName(keijoudate,4,ScVendor.Code);
 
-                    if (dtVendor.Rows.Count < 1)
-                    {
-                        khnyk_BL.ShowMessage("E101");
-                        ScVendor.SetFocus(1);
-                        return false;
-                    }
-                    dtcontrol = khnyk_BL.M_Control_RecordCheck(txtKeijouDate.Text.ToString());
-                    if (dtcontrol.Rows.Count < 1)
-                    {
-                        khnyk_BL.ShowMessage("E115");
-                        txtKeijouDate.Focus();
-                        return false;
-                    }
-                  
-                    staff = new M_Staff_Entity();
-                    staff.StaffCD = ScStaff.Code;
-                    staff.ChangeDate = keijoudate;
-                    dtStaff = khnyk_BL.Select_SearchName(keijoudate,5,ScStaff.Code);
-                    if (dtStaff.Rows.Count < 1)
-                    {
-                        khnyk_BL.ShowMessage("E101");
-                        ScStaff.SetFocus(1);
-                        return false;
-                    }
+                 if (dtVendor.Rows.Count < 1)
+                 {
+                     khnyk_BL.ShowMessage("E101");
+                     ScVendor.SetFocus(1);
+                     return false;
+                 }
+                 dtcontrol = khnyk_BL.M_Control_RecordCheck(txtKeijouDate.Text.ToString());
+                 if (dtcontrol.Rows.Count < 1)
+                 {
+                     khnyk_BL.ShowMessage("E115");
+                     txtKeijouDate.Focus();
+                     return false;
+                 }
+                 
+                 staff = new M_Staff_Entity();
+                 staff.StaffCD = ScStaff.Code;
+                 staff.ChangeDate = keijoudate;
+                 dtStaff = khnyk_BL.Select_SearchName(keijoudate,5,ScStaff.Code);
+                 if (dtStaff.Rows.Count < 1)
+                 {
+                     khnyk_BL.ShowMessage("E101");
+                     ScStaff.SetFocus(1);
+                     return false;
+                 }
                     
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        if (!string.IsNullOrWhiteSpace(row["CostCD"].ToString()) || !string.IsNullOrWhiteSpace(row["Summary"].ToString()) || !string.IsNullOrWhiteSpace(row["DepartmentCD"].ToString()) || !string.IsNullOrWhiteSpace(row["CostGaku"].ToString()))
-                        {
-                            if (string.IsNullOrWhiteSpace(row["CostCD"].ToString()))
-                            {
-                                khnyk_BL.ShowMessage("E101");
-                               
-                                return false;
-                            }
-                           
-                            if (string.IsNullOrWhiteSpace(row["DepartmentCD"].ToString())) // Check ComboBox is selected or not
-                            {
-                                khnyk_BL.ShowMessage("E101");
-                                return false;
-                            }
-                        }
-                    }
+                  foreach (DataGridViewRow row in dgvKehiNyuuryoku.Rows)
+                  {
+                      if (!string.IsNullOrWhiteSpace(row.Cells["colCostCD"].Value.ToString()) || !string.IsNullOrWhiteSpace(row.Cells["colSummary"].Value.ToString())
+                          || !string.IsNullOrWhiteSpace(row.Cells["colDepartment"].Value.ToString()) || !string.IsNullOrWhiteSpace(row.Cells["colCostGaku"].Value.ToString()))
+                      {
+                          if (string.IsNullOrWhiteSpace(row.Cells["colCostCD"].Value.ToString()))
+                          {
+                              khnyk_BL.ShowMessage("E101");
+                              dgvKehiNyuuryoku.CurrentCell = row.Cells["colCostCD"];
+                              return false;
+                          }
+                          else if (string.IsNullOrWhiteSpace(row.Cells["colDepartment"].Value.ToString())) // Check ComboBox is selected or not
+                          {
+                              khnyk_BL.ShowMessage("E101");
+                              dgvKehiNyuuryoku.CurrentCell = row.Cells["colDepartment"];
+                              return false;
+                          }
+
+                      }
+                  }
+                
             }
             return true;
         }
@@ -523,7 +527,10 @@ namespace KeihiNyuuryoku
                     F9Visible = false;
                     F12Enable = true;
                     F11Enable = true;
-                    txtKeijouDate.Focus();
+                    ScStaff.TxtCode.Text = InOperatorCD;
+                    ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
+                    txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+                    ScVendor.SetFocus(1);
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
@@ -645,19 +652,14 @@ namespace KeihiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(ScStaff.Code))
                 {
-                    dtStaff = new DataTable();
-                    if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
-                        keijoudate = System.DateTime.Now.ToString();
-                    else keijoudate = txtKeijouDate.Text;
-
-                    dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, ScStaff.Code);
-                    if (dtStaff.Rows.Count < 1)
+                    staffName = Bind_StaffName(ScStaff.Code);
+                    if (!string.IsNullOrWhiteSpace(staffName))
                     {
                         khnyk_BL.ShowMessage("E101");
                         ScStaff.SetFocus(1);
                     }
                     else
-                        ScStaff.LabelText = dtStaff.Rows[0]["Name"].ToString();
+                        ScStaff.LabelText = staffName;
                 }
             }
         }
@@ -707,7 +709,22 @@ namespace KeihiNyuuryoku
                 else
                     lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
-            
+        }
+
+       private string Bind_StaffName(string stCode)
+        {
+            dtStaff = new DataTable();
+            string name = string.Empty;
+            if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
+                keijoudate = System.DateTime.Now.ToString();
+            else keijoudate = txtKeijouDate.Text;
+
+            dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, stCode);
+            if(dtStaff.Rows.Count > 0)
+            {
+                name = dtStaff.Rows[0]["Name"].ToString();
+            }
+            return name;
         }
     }
 }

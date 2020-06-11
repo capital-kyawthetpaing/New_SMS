@@ -213,7 +213,7 @@ namespace Shiharai_IchiranHyou
             if (!DateCheck())
             {
                 bbl.ShowMessage("E104");
-                txtPurchaseDateFrom.Focus();
+                txtPurChaseDateTo.Focus();
                 return false;
             }
            
@@ -273,7 +273,7 @@ namespace Shiharai_IchiranHyou
                 if (!DateCheck())
                 {
                     bbl.ShowMessage("E104");
-                    txtPurchaseDateFrom.Focus();
+                    txtPurChaseDateTo.Focus();
                 }
             }
         }
@@ -324,7 +324,7 @@ namespace Shiharai_IchiranHyou
                 DateTime dt1 = Convert.ToDateTime(txtPurchaseDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPurChaseDateTo.Text);
 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {                   
                     return false;
                 }

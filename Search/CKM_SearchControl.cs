@@ -1570,18 +1570,18 @@ namespace Search
                         }
                     }
                     break;
-                //case SearchType.支払番号検索:
-                //    using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
-                //    {
-                //        frmsiharaino.ShowDialog();
-                //        if (!frmsiharaino.flgCancel)
-                //        {
-                //            txtCode.Text = frmsiharaino.ID;
-                //            txtChangeDate.Text = frmsiharaino.date;
-                //            lblName.Text = frmsiharaino.parName;
-                //        }
-                //    }
-                //    break;
+                case SearchType.支払処理:
+                    using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
+                    {
+                        frmsiharaino.ShowDialog();
+                        if (!frmsiharaino.flgCancel)
+                        {
+                            txtCode.Text = frmsiharaino.ID;
+                            txtChangeDate.Text = frmsiharaino.date;
+                            lblName.Text = frmsiharaino.parName;
+                        }
+                    }
+                    break;
                 //case SearchType.Location: // 2019.12.09
                 //    using (Search_Location frmLocation = new Search_Location(changedate, Value1))
                 //    {
@@ -1593,7 +1593,7 @@ namespace Search
                 //        }
                 //    }
                 //    break;
-                case SearchType.支払処理: // 2019.12.19
+                case SearchType.支払番号検索: // 2019.12.19
                     using (Search_SiharaiShoriNO frmShoriNo = new Search_SiharaiShoriNO())
                     {
                         frmShoriNo.ShowDialog();

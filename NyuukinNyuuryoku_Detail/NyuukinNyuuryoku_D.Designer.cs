@@ -330,6 +330,10 @@
             this.PanelSearch.Controls.Add(this.btnSubF11);
             this.PanelSearch.TabIndex = 22;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1326,7 +1330,7 @@
             // 
             // IMN_TEIKA_9
             // 
-            this.IMN_TEIKA_9.AllowMinus = false;
+            this.IMN_TEIKA_9.AllowMinus = true;
             this.IMN_TEIKA_9.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_9.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1765,7 +1769,7 @@
             // 
             // IMN_TEIKA_8
             // 
-            this.IMN_TEIKA_8.AllowMinus = false;
+            this.IMN_TEIKA_8.AllowMinus = true;
             this.IMN_TEIKA_8.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_8.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3170,7 +3174,7 @@
             // 
             // IMN_TEIKA_7
             // 
-            this.IMN_TEIKA_7.AllowMinus = false;
+            this.IMN_TEIKA_7.AllowMinus = true;
             this.IMN_TEIKA_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_7.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3404,7 +3408,7 @@
             // 
             // IMN_TEIKA_6
             // 
-            this.IMN_TEIKA_6.AllowMinus = false;
+            this.IMN_TEIKA_6.AllowMinus = true;
             this.IMN_TEIKA_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_6.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3638,7 +3642,7 @@
             // 
             // IMN_TEIKA_5
             // 
-            this.IMN_TEIKA_5.AllowMinus = false;
+            this.IMN_TEIKA_5.AllowMinus = true;
             this.IMN_TEIKA_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_5.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3872,7 +3876,7 @@
             // 
             // IMN_TEIKA_4
             // 
-            this.IMN_TEIKA_4.AllowMinus = false;
+            this.IMN_TEIKA_4.AllowMinus = true;
             this.IMN_TEIKA_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_4.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4106,7 +4110,7 @@
             // 
             // IMN_TEIKA_3
             // 
-            this.IMN_TEIKA_3.AllowMinus = false;
+            this.IMN_TEIKA_3.AllowMinus = true;
             this.IMN_TEIKA_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_3.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4514,7 +4518,7 @@
             // 
             // IMN_TEIKA_2
             // 
-            this.IMN_TEIKA_2.AllowMinus = false;
+            this.IMN_TEIKA_2.AllowMinus = true;
             this.IMN_TEIKA_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_2.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4544,7 +4548,7 @@
             // 
             // IMN_TEIKA_1
             // 
-            this.IMN_TEIKA_1.AllowMinus = false;
+            this.IMN_TEIKA_1.AllowMinus = true;
             this.IMN_TEIKA_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_1.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4574,7 +4578,7 @@
             // 
             // IMN_TEIKA_0
             // 
-            this.IMN_TEIKA_0.AllowMinus = false;
+            this.IMN_TEIKA_0.AllowMinus = true;
             this.IMN_TEIKA_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_TEIKA_0.BackColor = System.Drawing.Color.White;
             this.IMN_TEIKA_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -5962,7 +5966,7 @@
             // 
             // ckM_TextBox4
             // 
-            this.ckM_TextBox4.AllowMinus = false;
+            this.ckM_TextBox4.AllowMinus = true;
             this.ckM_TextBox4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.ckM_TextBox4.BackColor = System.Drawing.Color.White;
             this.ckM_TextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

@@ -245,7 +245,10 @@ namespace TempoRegiHanbaiTouroku
         }
       
         private void Calkkin()
-        {
+        {            
+            //お釣＝預り					－	現金
+            lblRefund.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
+
             //お支払計＝ポイント＋その他①＋	その他②＋	カード＋現金 ＋	掛＋前受金から
             lblShiharaiKei.Text = bbl.Z_SetStr(bbl.Z_Set(txtPoint.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text) + bbl.Z_Set(txtCard.Text)
                                 + bbl.Z_Set(txtCash.Text) + bbl.Z_Set(txtKake.Text) + bbl.Z_Set(txtMaeuke.Text));
@@ -333,9 +336,9 @@ namespace TempoRegiHanbaiTouroku
                     }
 
                     //その他①の入金方法とその他②が同じであればエラー
-                    if (!cboDenominationName1.SelectedIndex.Equals(-1))
+                    if (cboDenominationName1.SelectedIndex > 0)
                     {
-                        if (!cboDenominationName2.SelectedIndex.Equals(-1))
+                        if (cboDenominationName2.SelectedIndex > 0)
                         {
                             if (cboDenominationName1.SelectedValue.ToString() == cboDenominationName2.SelectedValue.ToString())
                             {
@@ -358,9 +361,9 @@ namespace TempoRegiHanbaiTouroku
                         return false;
                     }
                     //その他①の入金方法とその他②が同じであればエラー
-                    if (!cboDenominationName1.SelectedIndex.Equals(-1))
+                    if (cboDenominationName1.SelectedIndex > 0)
                     {
-                        if (!cboDenominationName2.SelectedIndex.Equals(-1))
+                        if (cboDenominationName2.SelectedIndex > 0)
                         {
                             if (cboDenominationName1.SelectedValue.ToString() == cboDenominationName2.SelectedValue.ToString())
                             {
@@ -389,18 +392,7 @@ namespace TempoRegiHanbaiTouroku
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.CATSH)
             {
 
-                //その他②がnot Null で、入金方法が未選択ならエラー
-                if (bbl.Z_Set(txtCash.Text) != 0)
-                {
-                    if (cboCardDenominationCD.SelectedIndex.Equals(-1))
-                    {
-                        //Ｅ１８４				
-                        bbl.ShowMessage("E184");
-                        cboCardDenominationCD.Focus();
-                        return false;
-                    }
-                }
-                }
+            }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.AZUKARI)
             {
                 //大小チェック 
@@ -592,10 +584,10 @@ namespace TempoRegiHanbaiTouroku
             //Parameter受取  OperatorCD←	Parameter受取 OperatorCD 
             //  ProcessingPC ←	ProcessingPC
             //  StoreCD	←StoreCD
-            //  SalesNO	←OperatorCD
+            //  SalesNO	←売上 売上番号
             //  領収書FLG←	Form.領収書必要ONの場合、1。以外は0．															
             //	レシートFLG ←1
-            //  領収書印字日付←売上 売上番号												
+            //  領収書印字日付←												
             //↑	Table転送仕様Ａ で採番							
             //↑お客さんを待たせたくないので、																																						
             //　レシート発行を先にする		
@@ -610,7 +602,7 @@ namespace TempoRegiHanbaiTouroku
 
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
                                     + " " + no + " " + receipte + " 1 " + bbl.GetDate();
-                System.Diagnostics.Process.Start(filePath, cmdLine);
+                //System.Diagnostics.Process.Start(filePath, cmdLine); 
             }
             else
             {

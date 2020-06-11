@@ -47,7 +47,7 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            ckM_Button1.Text = "取込(F10)";
+            //ckM_Button1.Text = "取込(F10)";
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
@@ -116,6 +116,9 @@ namespace MasterTouroku_ShiireKakeritsu
                             return;
                         CancelData();
                     }
+                    break;
+                case 11:
+                    F11();
                     break;
                 case 12:
                     F12();
@@ -739,9 +742,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     CancelData();
                 }
             }
-
-
-
         }
        
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -825,6 +825,21 @@ namespace MasterTouroku_ShiireKakeritsu
             else
             {
                 return false;
+            }
+        }
+        private void F11()
+        {
+            //moe = GetSearchInfo();
+            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            if (dtMain.Rows.Count > 0)
+            {
+                dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
+            else
+            {
+                mskbl.ShowMessage("E128");
+                dgv_ShiireKakeritsu.DataSource = null;
+                scSupplierCD.SetFocus(1);
             }
         }
         private void F12()
@@ -1086,7 +1101,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             wb.Worksheets.Add(dtMain, "Result");
                             wb.SaveAs(savedialog.FileName);
                         }
-                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        //Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
                 F10();
