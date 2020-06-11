@@ -67,7 +67,7 @@ namespace KeihiNyuuryoku
             ScStaff.TxtCode.Text = InOperatorCD;
             ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
-            txtKeijouDate.Focus();
+            ScVendor.SetFocus(1);
         }
 
         private void CreateDataTable()
@@ -530,7 +530,7 @@ namespace KeihiNyuuryoku
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
                     txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
-                    txtKeijouDate.Focus();
+                    ScVendor.SetFocus(1);
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
