@@ -237,6 +237,7 @@ namespace NyuukinNyuuryoku
                         case (int)ClsGridNyuukin_S.ColNO.ConfirmAmount:
                         case (int)ClsGridNyuukin_S.ColNO.Minyukin:
                             mGrid.SetProp_TANKA( ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
                     }
 
@@ -909,6 +910,8 @@ namespace NyuukinNyuuryoku
 
                 // 明細部初期化
                 this.S_SetInit_Grid();
+
+                Scr_Clr(0);
 
                 //起動時共通処理
                 base.StartProgram();

@@ -511,8 +511,9 @@ namespace SiharaiNyuuryoku
         {
             if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {   
-               
-                if (cboPaymentType.SelectedValue.ToString() == "1")
+                if(!string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
+                {
+                    if (cboPaymentType.SelectedValue.ToString() == "1")
                     {
                         //foreach (DataGridViewRow row in dgvPayment.Rows)
                         //{
@@ -551,13 +552,17 @@ namespace SiharaiNyuuryoku
                         {
                             for (int i = 0; i < dt4.Rows.Count; i++)
                             {
-                                dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                                double a = Convert.ToDouble(dt4.Rows[i]["PayPlanGaku"].ToString());
+                                double b = Convert.ToDouble(dt4.Rows[i]["PayConfirmGaku"].ToString());
+                                double result = a - b;
+
+                                dt4.Rows[i]["UnpaidAmount1"] = result.ToString();
                                 dt4.Rows[i]["UnpaidAmount2"] = "0";
                             }
                         }
 
                     }
-                else
+                    else
                     {
                         //foreach (DataGridViewRow row in dgvPayment.Rows)
                         //{
@@ -583,7 +588,10 @@ namespace SiharaiNyuuryoku
                         dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                     }
 
-                LabelDataBind();
+                    LabelDataBind();
+                }
+               
+                
                
             }
         }
