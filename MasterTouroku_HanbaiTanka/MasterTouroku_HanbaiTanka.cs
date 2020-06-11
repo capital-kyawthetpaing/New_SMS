@@ -2337,6 +2337,9 @@ namespace MasterTouroku_HanbaiTanka
                 detailControls[(int)EIndex.TankaCD].Text = "";
                 ScTanka.LabelText = "";
                 ScTanka.BtnSearch.Enabled = false;
+
+                ScSkuFrom.Value1 = "1";
+                ScSkuTo.Value1 = "1";
             }
             else
             {
@@ -2352,6 +2355,9 @@ namespace MasterTouroku_HanbaiTanka
                 detailControls[(int)EIndex.TankaCD].Text = "0000000000000";
                 CheckDetail((int)EIndex.TankaCD);
                 ScTanka.BtnSearch.Enabled = true;
+
+                ScSkuFrom.Value1 = "2";
+                ScSkuTo.Value1 = "2";
             }
         }
 

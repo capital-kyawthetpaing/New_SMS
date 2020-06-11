@@ -1025,12 +1025,16 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
-                        frmItemCD.Mode = "1";
+                        frmItemCD.Mode = Value1 == null ? "1" : Value1;
                         frmItemCD.SKUCD = txtCode.Text;
                         frmItemCD.ShowDialog();
                         if (!frmItemCD.flgCancel)
                         {
-                            txtCode.Text = frmItemCD.ITEM;
+                            if (frmItemCD.Mode.Equals("1"))
+                                txtCode.Text = frmItemCD.ITEM;
+                            else if (frmItemCD.Mode.Equals("2"))
+                                txtCode.Text = frmItemCD.SKUCD;
+
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmItemCD.ChangeDate;
 
