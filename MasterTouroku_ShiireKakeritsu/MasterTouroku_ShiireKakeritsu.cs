@@ -117,6 +117,9 @@ namespace MasterTouroku_ShiireKakeritsu
                         CancelData();
                     }
                     break;
+                case 11:
+                    F11();
+                    break;
                 case 12:
                     F12();
                     break;
@@ -739,9 +742,6 @@ namespace MasterTouroku_ShiireKakeritsu
                     CancelData();
                 }
             }
-
-
-
         }
        
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -825,6 +825,21 @@ namespace MasterTouroku_ShiireKakeritsu
             else
             {
                 return false;
+            }
+        }
+        private void F11()
+        {
+            //moe = GetSearchInfo();
+            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            if (dtMain.Rows.Count > 0)
+            {
+                dgv_ShiireKakeritsu.DataSource = dtMain;
+            }
+            else
+            {
+                mskbl.ShowMessage("E128");
+                dgv_ShiireKakeritsu.DataSource = null;
+                scSupplierCD.SetFocus(1);
             }
         }
         private void F12()
