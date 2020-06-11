@@ -63,6 +63,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(821, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -86,6 +90,7 @@
             this.txtPurchaseDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurchaseDateFrom.BackColor = System.Drawing.Color.White;
             this.txtPurchaseDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurchaseDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtPurchaseDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurchaseDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurchaseDateFrom.DecimalPlace = 0;
@@ -93,6 +98,7 @@
             this.txtPurchaseDateFrom.IntegerPart = 0;
             this.txtPurchaseDateFrom.IsCorrectDate = true;
             this.txtPurchaseDateFrom.isEnterKeyDown = false;
+            this.txtPurchaseDateFrom.isMaxLengthErr = false;
             this.txtPurchaseDateFrom.IsNumber = true;
             this.txtPurchaseDateFrom.IsShop = false;
             this.txtPurchaseDateFrom.Length = 10;
@@ -128,6 +134,7 @@
             this.txtPurChaseDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPurChaseDateTo.BackColor = System.Drawing.Color.White;
             this.txtPurChaseDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPurChaseDateTo.ClientColor = System.Drawing.Color.White;
             this.txtPurChaseDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPurChaseDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPurChaseDateTo.DecimalPlace = 0;
@@ -135,6 +142,7 @@
             this.txtPurChaseDateTo.IntegerPart = 0;
             this.txtPurChaseDateTo.IsCorrectDate = true;
             this.txtPurChaseDateTo.isEnterKeyDown = false;
+            this.txtPurChaseDateTo.isMaxLengthErr = false;
             this.txtPurChaseDateTo.IsNumber = true;
             this.txtPurChaseDateTo.IsShop = false;
             this.txtPurChaseDateTo.Length = 10;
@@ -171,7 +179,8 @@
             this.SC_Payment.ChangeDate = "";
             this.SC_Payment.ChangeDateWidth = 100;
             this.SC_Payment.Code = "";
-            this.SC_Payment.CodeWidth = 130;
+            this.SC_Payment.CodeWidth = 100;
+            this.SC_Payment.CodeWidth1 = 100;
             this.SC_Payment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Payment.DataCheck = false;
             this.SC_Payment.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -182,6 +191,7 @@
             this.SC_Payment.Location = new System.Drawing.Point(91, 25);
             this.SC_Payment.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Payment.Name = "SC_Payment";
+            this.SC_Payment.NameWidth = 310;
             this.SC_Payment.SearchEnable = true;
             this.SC_Payment.Size = new System.Drawing.Size(444, 27);
             this.SC_Payment.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -201,6 +211,7 @@
             this.SC_Staff.ChangeDateWidth = 100;
             this.SC_Staff.Code = "";
             this.SC_Staff.CodeWidth = 100;
+            this.SC_Staff.CodeWidth1 = 100;
             this.SC_Staff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Staff.DataCheck = false;
             this.SC_Staff.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -211,6 +222,7 @@
             this.SC_Staff.Location = new System.Drawing.Point(91, 54);
             this.SC_Staff.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Staff.Name = "SC_Staff";
+            this.SC_Staff.NameWidth = 600;
             this.SC_Staff.SearchEnable = true;
             this.SC_Staff.Size = new System.Drawing.Size(734, 27);
             this.SC_Staff.Stype = Search.CKM_SearchControl.SearchType.売上番号;
@@ -231,7 +243,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(5, 68);
+            this.ckM_Label4.Location = new System.Drawing.Point(5, 62);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label4.TabIndex = 9;
@@ -239,14 +251,14 @@
             this.ckM_Label4.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Siharai_ItiranHyou
+            // SiharaiItiranHyou
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1357, 845);
             this.Location = new System.Drawing.Point(0, 0);
             this.ModeVisible = true;
-            this.Name = "Siharai_ItiranHyou";
+            this.Name = "SiharaiItiranHyou";
             this.PanelHeaderHeight = 180;
             this.Text = "SiharaiItiranHyou";
             this.Load += new System.EventHandler(this.Siharai_ItiranHyou_Load);
