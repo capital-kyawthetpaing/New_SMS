@@ -217,14 +217,19 @@ namespace MitsumoriNyuuryoku
                     {
                         case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
                             mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
-                        case (int)ClsGridMitsumori.ColNO.MitsumoriHontaiGaku:
                         case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice:
-                        case (int)ClsGridMitsumori.ColNO.MitsumoriGaku:
                         case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
+                            mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                            break;
+
+                        case (int)ClsGridMitsumori.ColNO.MitsumoriHontaiGaku:
+                        case (int)ClsGridMitsumori.ColNO.MitsumoriGaku:
                         case (int)ClsGridMitsumori.ColNO.CostGaku:
                         case (int)ClsGridMitsumori.ColNO.ProfitGaku:
                             mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
                     }
 
