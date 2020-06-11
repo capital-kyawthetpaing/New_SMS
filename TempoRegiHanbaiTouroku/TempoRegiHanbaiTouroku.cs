@@ -335,6 +335,13 @@ namespace TempoRegiHanbaiTouroku
 
         private void DispFromDataTable(int gyoNo = 1)
         {
+            if (dtSales.Rows.Count == gyoNo - 1)
+            {
+                if (gyoNo - 3 > 0)
+                    DispFromDataTable(gyoNo - 3);
+
+                return;
+            }
 
             Clear(pnlDetails);
 
