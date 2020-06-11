@@ -1086,7 +1086,7 @@ namespace MasterTouroku_ShiireKakeritsu
                             wb.Worksheets.Add(dtMain, "Result");
                             wb.SaveAs(savedialog.FileName);
                         }
-                        Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                        //Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
                 F10();
