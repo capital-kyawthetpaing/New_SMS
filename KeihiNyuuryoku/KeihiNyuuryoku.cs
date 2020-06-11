@@ -56,7 +56,13 @@ namespace KeihiNyuuryoku
             Btn_F9.Text = "検索(F9)";
             Btn_F10.Text = "複写(F10)";
             Btn_F11.Text = "印刷(F11)";
+
             txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+            lblTotalGaku.AutoSize = false;
+            lblTotalGaku.Width = 90;
+            lblTotalGaku.Height = 16;
+            lblTotalGaku.TextAlign = ContentAlignment.MiddleRight;
+
             CreateDataTable();
             txtKeijouDate.Focus();
         }
@@ -129,7 +135,7 @@ namespace KeihiNyuuryoku
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(OperationMode);
-                        ScCost.SetFocus(1);
+                        ScVendor.SetFocus(1);
                     }
                     break;
                 case 7:
@@ -343,10 +349,10 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
-                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate , ScStaff.TxtCode  }))
+                        if (!RequireCheck(new Control[] { ScStaff.TxtCode, ScVendor.TxtCode, txtKeijouDate }))
                             return false;
-
-                        if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
+                        else
+                        //if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
                             if (dtcost.Rows.Count < 1)
@@ -699,7 +705,7 @@ namespace KeihiNyuuryoku
                 if (TotalGaku.ToString().Equals("0"))
                     lblTotalGaku.Text = string.Empty;
                 else
-                    lblTotalGaku.Text = TotalGaku.ToString();
+                    lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
             
         }

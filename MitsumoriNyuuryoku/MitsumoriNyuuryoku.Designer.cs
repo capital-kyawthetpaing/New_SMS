@@ -272,6 +272,10 @@
             // 
             this.PanelSearch.TabIndex = 7;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -1170,9 +1174,9 @@
             this.IMN_WEBPR2_4.isMaxLengthErr = false;
             this.IMN_WEBPR2_4.IsNumber = true;
             this.IMN_WEBPR2_4.IsShop = false;
-            this.IMN_WEBPR2_4.Length = 40;
+            this.IMN_WEBPR2_4.Length = 80;
             this.IMN_WEBPR2_4.Location = new System.Drawing.Point(816, 266);
-            this.IMN_WEBPR2_4.MaxLength = 40;
+            this.IMN_WEBPR2_4.MaxLength = 80;
             this.IMN_WEBPR2_4.MoveNext = true;
             this.IMN_WEBPR2_4.Name = "IMN_WEBPR2_4";
             this.IMN_WEBPR2_4.ReadOnly = true;
@@ -1752,9 +1756,9 @@
             this.IMN_WEBPR2_3.isMaxLengthErr = false;
             this.IMN_WEBPR2_3.IsNumber = true;
             this.IMN_WEBPR2_3.IsShop = false;
-            this.IMN_WEBPR2_3.Length = 40;
+            this.IMN_WEBPR2_3.Length = 80;
             this.IMN_WEBPR2_3.Location = new System.Drawing.Point(816, 209);
-            this.IMN_WEBPR2_3.MaxLength = 40;
+            this.IMN_WEBPR2_3.MaxLength = 80;
             this.IMN_WEBPR2_3.MoveNext = true;
             this.IMN_WEBPR2_3.Name = "IMN_WEBPR2_3";
             this.IMN_WEBPR2_3.Size = new System.Drawing.Size(420, 19);
@@ -1781,9 +1785,9 @@
             this.IMN_WEBPR2_2.isMaxLengthErr = false;
             this.IMN_WEBPR2_2.IsNumber = true;
             this.IMN_WEBPR2_2.IsShop = false;
-            this.IMN_WEBPR2_2.Length = 40;
+            this.IMN_WEBPR2_2.Length = 80;
             this.IMN_WEBPR2_2.Location = new System.Drawing.Point(816, 152);
-            this.IMN_WEBPR2_2.MaxLength = 40;
+            this.IMN_WEBPR2_2.MaxLength = 80;
             this.IMN_WEBPR2_2.MoveNext = true;
             this.IMN_WEBPR2_2.Name = "IMN_WEBPR2_2";
             this.IMN_WEBPR2_2.Size = new System.Drawing.Size(420, 19);
@@ -1839,9 +1843,9 @@
             this.IMN_WEBPR2_0.isMaxLengthErr = false;
             this.IMN_WEBPR2_0.IsNumber = true;
             this.IMN_WEBPR2_0.IsShop = false;
-            this.IMN_WEBPR2_0.Length = 40;
+            this.IMN_WEBPR2_0.Length = 80;
             this.IMN_WEBPR2_0.Location = new System.Drawing.Point(816, 38);
-            this.IMN_WEBPR2_0.MaxLength = 40;
+            this.IMN_WEBPR2_0.MaxLength = 80;
             this.IMN_WEBPR2_0.MoveNext = true;
             this.IMN_WEBPR2_0.Name = "IMN_WEBPR2_0";
             this.IMN_WEBPR2_0.Size = new System.Drawing.Size(420, 19);
@@ -4757,6 +4761,7 @@
             this.TxtRemark1.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark1.BackColor = System.Drawing.Color.White;
             this.TxtRemark1.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark1.F_focus = false;
             this.TxtRemark1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 500;
@@ -5229,6 +5234,7 @@
             this.TxtRemark2.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark2.BackColor = System.Drawing.Color.White;
             this.TxtRemark2.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark2.F_focus = false;
             this.TxtRemark2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark2.Length = 500;

@@ -240,6 +240,7 @@ namespace TempoJuchuuNyuuryoku
                     {
                         case (int)ClsGridJuchuu.ColNO.JuchuuSuu:
                             mGrid.SetProp_SU(5, ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
                         case (int)ClsGridJuchuu.ColNO.JuchuuHontaiGaku:
                         case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice:
@@ -248,6 +249,7 @@ namespace TempoJuchuuNyuuryoku
                         case (int)ClsGridJuchuu.ColNO.CostGaku:
                         case (int)ClsGridJuchuu.ColNO.ProfitGaku:
                             mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
+                            ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
                     }
 
@@ -1188,6 +1190,8 @@ namespace TempoJuchuuNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+            int col = (int)ClsGridJuchuu.ColNO.JanCD;
+
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
             {
@@ -1209,6 +1213,7 @@ namespace TempoJuchuuNyuuryoku
                 {
                     mGrid.g_DArray[i].juchuGyoNO = w_MOTNO;      //修正元行№
                 }
+                Grid_NotFocus(col, i);
             }
 
             //状態もコピー
@@ -1217,7 +1222,6 @@ namespace TempoJuchuuNyuuryoku
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
-            int col = (int)ClsGridJuchuu.ColNO.JanCD;
 
             string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
 
@@ -3074,7 +3078,7 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka) && mGrid.g_DArray[row].Hikiate != "引当OK")
+                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka))
                             {
                                 //Ｅ１０２
                                 bbl.ShowMessage("E102");
@@ -3232,8 +3236,8 @@ namespace TempoJuchuuNyuuryoku
                     if (fre.Result == "1")
                     {
                         mGrid.g_DArray[row].Hikiate = "引当OK";
-                        mGrid.g_DArray[row].VendorCD = "";
-                        mGrid.g_DArray[row].VendorName = "";
+                            //mGrid.g_DArray[row].VendorCD = "";
+                            //mGrid.g_DArray[row].VendorName = "";
 
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ArrivePlanDate))
                         {
