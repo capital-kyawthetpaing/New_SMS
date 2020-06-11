@@ -527,7 +527,7 @@ namespace KeihiNyuuryoku
                     F12Enable = true;
                     F11Enable = true;
                     ScStaff.TxtCode.Text = InOperatorCD;
-                    ScStaff.SelectData();
+                    ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
                     txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
                     txtKeijouDate.Focus();
                     break;
