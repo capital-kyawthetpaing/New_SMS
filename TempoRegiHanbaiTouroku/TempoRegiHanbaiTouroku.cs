@@ -340,6 +340,9 @@ namespace TempoRegiHanbaiTouroku
                 if (gyoNo - 3 > 0)
                     DispFromDataTable(gyoNo - 3);
 
+                if (dtSales.Rows.Count == 0)
+                    Clear(pnlDetails);
+
                 return;
             }
 
@@ -368,7 +371,7 @@ namespace TempoRegiHanbaiTouroku
                     case 1:
                         lblDtGyo2.Text = (index + 1).ToString();
                         lblDtSKUName2.Text = row["SKUName"].ToString();
-                        lblDtColorSize2.Text = row["ColorName"].ToString() + row["SizeName"].ToString();
+                        lblDtColorSize2.Text = row["ColorSizeName"].ToString();
                         lblDtKSu2.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu2.Text = bbl.Z_SetStr(row["SalesSU"]);
                         lblDtKin2.Text = bbl.Z_SetStr(row["SalesGaku"]);
@@ -377,7 +380,7 @@ namespace TempoRegiHanbaiTouroku
                     case 2:
                         lblDtGyo3.Text = (index + 1).ToString();
                         lblDtSKUName3.Text = row["SKUName"].ToString();
-                        lblDtColorSize3.Text = row["ColorName"].ToString() + row["SizeName"].ToString();
+                        lblDtColorSize3.Text = row["ColorSizeName"].ToString();
                         lblDtKSu3.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu3.Text = bbl.Z_SetStr(row["SalesSU"]);
                         lblDtKin3.Text =  bbl.Z_SetStr(row["SalesGaku"]);
