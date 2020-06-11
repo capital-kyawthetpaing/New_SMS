@@ -651,11 +651,6 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_add_Click(object sender, EventArgs e)
         {
-            //if (ErrorCheck())
-            //{
-            //m_IOE = GetItemorder();
-            //m_IE = GetItem();
-            //DataTable dt = bl.M_ItemOrderPrice_Insert(m_IOE, m_IE);
             DataTable dataTable = new DataTable();
                 string selectq="";
                 selectq = "  ItemCD = '" + itemcd.TxtCode.Text + "'";
@@ -694,7 +689,6 @@ namespace MasterTouroku_ShiireTanka
                         dt.AcceptChanges();
                         GV_item.Refresh();
                         GV_item.DataSource = dt;
-                       // dv.RowStateFilter = DataViewRowState.ModifiedCurrent;
                         dv.RowStateFilter = DataViewRowState.Unchanged;
                     }
                     else
@@ -703,7 +697,6 @@ namespace MasterTouroku_ShiireTanka
                     }
                 }
             }
-            //}
         }
 
         private void btn_displaymain_Click(object sender, EventArgs e)
@@ -885,18 +878,38 @@ namespace MasterTouroku_ShiireTanka
                 date += " and CheckBox =1";
                 string copyq = choiceq +date;
                 DataRow[] dr = dt.Select(copyq);
-                if(dr.Length <0)
+                if(dr.Length ==0)
                 {
-                    for(int i=0;i< dr.Length;i++)
+                    string q = "CheckBox =1";
+                    DataTable dt1 = dt.Select(q).CopyToDataTable();
+                    for(int i =0;i<dt1.Rows.Count;i++)
                     {
-                        //GV_item.Rows.Add(false, brandC.TxtCode.Text, sportC.TxtCode.Text,segmentC.TxtCode.Text
-                        //    ,CB_yearC.Text ,cb_seasonC.Text
-                        //    ,makershohinC.TxtCode.Text,, "", "", "", "", "");
+                        dt1.Rows[i]["ChangeDate"] = TB_dateE.Text;
+                        dt1.Rows[i]["Rate"] = TB_rate_E.Text;
+                        decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                        decimal con = (decimal)0.01;
+                        decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]); 
+                        dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                     }
-                  
+                    dt.Merge(dt1);
                 }
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(TB_rate_E.Text))
+            {
 
             }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            DataRow[] rows  = dt.Select(" CheckBox =1");
+            foreach (DataRow row in rows)
+                dt.Rows.Remove(row);
+
         }
     }
 }

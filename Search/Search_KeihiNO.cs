@@ -156,16 +156,19 @@ namespace Search
                     dgvCostSearch.DataSource = null; 
                 }
             }
+
         }
         public override void FunctionProcess(int index)
         {
-            if (index + 1 == 11)
+            switch (index + 1)
             {
-                F11();
-            }
-            if (index + 1 == 12)
-             {
-                GetData();
+                              
+                case 11:
+                    F11();
+                    break;
+                case 12:
+                    GetData();
+                    break;
             }
         }
         /// <summary>
@@ -306,8 +309,8 @@ namespace Search
         //}
         private void frmSearch_KeihiNO_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F11)
-                F11();
+        //    if (e.KeyCode == Keys.F11)
+        //        F11();
         }
 
         private void dgvCostSearch_DoubleClick(object sender, EventArgs e)

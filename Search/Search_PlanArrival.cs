@@ -48,7 +48,6 @@ namespace Search
         {
             string ymd = bbl.GetDate();
             CB_Soko.Bind(ymd, storecd);
-            //CB_Soko.SelectedText =soukoname;
             CB_Soko.SelectedValue = soukocd;
             TB_Shohinmei.Text= shohinmei;
             TB_ColorName.Text = color;
@@ -76,7 +75,6 @@ namespace Search
         {
             msku_Entity = GetDataEntity();
             dap_Entity = GetData();
-           
             DataTable dt = pa_bl.Search_PlanArrival(dap_Entity, msku_Entity, adminNO);
             if (dt.Rows.Count > 0)
             {
@@ -106,6 +104,5 @@ namespace Search
             };
             return dap_Entity;
         }
-       
     }
 }
