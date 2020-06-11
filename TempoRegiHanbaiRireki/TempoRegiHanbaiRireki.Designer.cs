@@ -174,6 +174,7 @@
             this.ckmShop_Label12.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label12.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label12.FontBold = true;
             this.ckmShop_Label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label12.Location = new System.Drawing.Point(1325, 81);
             this.ckmShop_Label12.Name = "ckmShop_Label12";
@@ -260,6 +261,7 @@
             this.label75.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label75.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label75.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label75.FontBold = true;
             this.label75.ForeColor = System.Drawing.Color.Black;
             this.label75.Location = new System.Drawing.Point(1696, -5);
             this.label75.Name = "label75";
@@ -276,6 +278,7 @@
             this.label73.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label73.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label73.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label73.FontBold = true;
             this.label73.ForeColor = System.Drawing.Color.Black;
             this.label73.Location = new System.Drawing.Point(-1, 666);
             this.label73.Name = "label73";
@@ -292,6 +295,7 @@
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label63.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label63.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label63.FontBold = true;
             this.label63.ForeColor = System.Drawing.Color.Black;
             this.label63.Location = new System.Drawing.Point(-1, 592);
             this.label63.Name = "label63";
@@ -308,6 +312,7 @@
             this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label53.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label53.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label53.FontBold = true;
             this.label53.ForeColor = System.Drawing.Color.Black;
             this.label53.Location = new System.Drawing.Point(-1, 518);
             this.label53.Name = "label53";
@@ -324,6 +329,7 @@
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label43.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label43.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label43.FontBold = true;
             this.label43.ForeColor = System.Drawing.Color.Black;
             this.label43.Location = new System.Drawing.Point(-1, 444);
             this.label43.Name = "label43";
@@ -340,6 +346,7 @@
             this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label33.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label33.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label33.FontBold = true;
             this.label33.ForeColor = System.Drawing.Color.Black;
             this.label33.Location = new System.Drawing.Point(-1, 370);
             this.label33.Name = "label33";
@@ -356,6 +363,7 @@
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label23.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label23.FontBold = true;
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(-1, 296);
             this.label23.Name = "label23";
@@ -372,6 +380,7 @@
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label10.FontBold = true;
             this.label10.ForeColor = System.Drawing.Color.Black;
             this.label10.Location = new System.Drawing.Point(-1, 222);
             this.label10.Name = "label10";
@@ -388,6 +397,7 @@
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label12.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label12.FontBold = true;
             this.label12.ForeColor = System.Drawing.Color.Black;
             this.label12.Location = new System.Drawing.Point(585, -2);
             this.label12.Name = "label12";
@@ -404,6 +414,7 @@
             this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label11.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label11.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label11.FontBold = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
             this.label11.Location = new System.Drawing.Point(60, -1);
             this.label11.Name = "label11";
@@ -419,6 +430,7 @@
             this.lblDtGyo1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo1.FontBold = true;
             this.lblDtGyo1.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo1.Location = new System.Drawing.Point(4, 5);
             this.lblDtGyo1.Name = "lblDtGyo1";
@@ -434,6 +446,7 @@
             this.lblJuchuuDate1.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate1.FontBold = true;
             this.lblJuchuuDate1.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate1.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate1.Name = "lblJuchuuDate1";
@@ -451,6 +464,7 @@
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label2.FontBold = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(0, 148);
             this.label2.Name = "label2";
@@ -467,6 +481,7 @@
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.label1.FontBold = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 74);
             this.label1.Name = "label1";
@@ -497,6 +512,7 @@
             this.lblDtKin1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin1.FontBold = true;
             this.lblDtKin1.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin1.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin1.Name = "lblDtKin1";
@@ -513,6 +529,7 @@
             this.lblDtSSu1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu1.FontBold = true;
             this.lblDtSSu1.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu1.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu1.Name = "lblDtSSu1";
@@ -529,6 +546,7 @@
             this.lblDtColorSize1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize1.FontBold = true;
             this.lblDtColorSize1.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize1.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize1.Name = "lblDtColorSize1";
@@ -545,6 +563,7 @@
             this.lblDtSKUName1.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName1.FontBold = true;
             this.lblDtSKUName1.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName1.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName1.Name = "lblDtSKUName1";
@@ -561,6 +580,7 @@
             this.lblJuchuuNO1.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO1.FontBold = true;
             this.lblJuchuuNO1.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO1.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO1.Name = "lblJuchuuNO1";
@@ -577,6 +597,7 @@
             this.lblJANCD1.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD1.FontBold = true;
             this.lblJANCD1.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD1.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD1.Name = "lblJANCD1";
@@ -593,6 +614,7 @@
             this.lblStoreName1.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName1.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName1.FontBold = true;
             this.lblStoreName1.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName1.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName1.Name = "lblStoreName1";
@@ -626,6 +648,7 @@
             this.lblDtKin3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin3.FontBold = true;
             this.lblDtKin3.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin3.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin3.Name = "lblDtKin3";
@@ -642,6 +665,7 @@
             this.lblDtSSu3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu3.FontBold = true;
             this.lblDtSSu3.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu3.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu3.Name = "lblDtSSu3";
@@ -658,6 +682,7 @@
             this.lblDtColorSize3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize3.FontBold = true;
             this.lblDtColorSize3.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize3.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize3.Name = "lblDtColorSize3";
@@ -674,6 +699,7 @@
             this.lblDtSKUName3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName3.FontBold = true;
             this.lblDtSKUName3.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName3.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName3.Name = "lblDtSKUName3";
@@ -690,6 +716,7 @@
             this.lblJuchuuNO3.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO3.FontBold = true;
             this.lblJuchuuNO3.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO3.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO3.Name = "lblJuchuuNO3";
@@ -706,6 +733,7 @@
             this.lblJANCD3.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD3.FontBold = true;
             this.lblJANCD3.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD3.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD3.Name = "lblJANCD3";
@@ -722,6 +750,7 @@
             this.lblStoreName3.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName3.FontBold = true;
             this.lblStoreName3.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName3.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName3.Name = "lblStoreName3";
@@ -738,6 +767,7 @@
             this.lblJuchuuDate3.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate3.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate3.FontBold = true;
             this.lblJuchuuDate3.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate3.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate3.Name = "lblJuchuuDate3";
@@ -754,6 +784,7 @@
             this.lblDtGyo3.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo3.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo3.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo3.FontBold = true;
             this.lblDtGyo3.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo3.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo3.Name = "lblDtGyo3";
@@ -786,6 +817,7 @@
             this.lblDtGyo2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo2.FontBold = true;
             this.lblDtGyo2.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo2.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo2.Name = "lblDtGyo2";
@@ -801,6 +833,7 @@
             this.lblDtKin2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin2.FontBold = true;
             this.lblDtKin2.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin2.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin2.Name = "lblDtKin2";
@@ -817,6 +850,7 @@
             this.lblDtSSu2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu2.FontBold = true;
             this.lblDtSSu2.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu2.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu2.Name = "lblDtSSu2";
@@ -833,6 +867,7 @@
             this.lblDtColorSize2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize2.FontBold = true;
             this.lblDtColorSize2.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize2.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize2.Name = "lblDtColorSize2";
@@ -849,6 +884,7 @@
             this.lblDtSKUName2.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName2.FontBold = true;
             this.lblDtSKUName2.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName2.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName2.Name = "lblDtSKUName2";
@@ -865,6 +901,7 @@
             this.lblJuchuuNO2.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO2.FontBold = true;
             this.lblJuchuuNO2.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO2.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO2.Name = "lblJuchuuNO2";
@@ -881,6 +918,7 @@
             this.lblJANCD2.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD2.FontBold = true;
             this.lblJANCD2.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD2.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD2.Name = "lblJANCD2";
@@ -897,6 +935,7 @@
             this.lblStoreName2.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName2.FontBold = true;
             this.lblStoreName2.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName2.Location = new System.Drawing.Point(65, 40);
             this.lblStoreName2.Name = "lblStoreName2";
@@ -913,6 +952,7 @@
             this.lblJuchuuDate2.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate2.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate2.FontBold = true;
             this.lblJuchuuDate2.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate2.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate2.Name = "lblJuchuuDate2";
@@ -946,6 +986,7 @@
             this.lblJuchuuDate10.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate10.FontBold = true;
             this.lblJuchuuDate10.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate10.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate10.Name = "lblJuchuuDate10";
@@ -962,6 +1003,7 @@
             this.lblDtSSu10.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu10.FontBold = true;
             this.lblDtSSu10.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu10.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu10.Name = "lblDtSSu10";
@@ -978,6 +1020,7 @@
             this.lblDtGyo10.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo10.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo10.FontBold = true;
             this.lblDtGyo10.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo10.Location = new System.Drawing.Point(3, 2);
             this.lblDtGyo10.Name = "lblDtGyo10";
@@ -993,6 +1036,7 @@
             this.lblDtKin10.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin10.FontBold = true;
             this.lblDtKin10.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin10.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin10.Name = "lblDtKin10";
@@ -1009,6 +1053,7 @@
             this.lblDtColorSize10.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize10.FontBold = true;
             this.lblDtColorSize10.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize10.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize10.Name = "lblDtColorSize10";
@@ -1025,6 +1070,7 @@
             this.lblStoreName10.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName10.FontBold = true;
             this.lblStoreName10.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName10.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName10.Name = "lblStoreName10";
@@ -1041,6 +1087,7 @@
             this.lblJuchuuNO10.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO10.FontBold = true;
             this.lblJuchuuNO10.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO10.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO10.Name = "lblJuchuuNO10";
@@ -1057,6 +1104,7 @@
             this.lblJANCD10.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD10.FontBold = true;
             this.lblJANCD10.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD10.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD10.Name = "lblJANCD10";
@@ -1073,6 +1121,7 @@
             this.lblDtSKUName10.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName10.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName10.FontBold = true;
             this.lblDtSKUName10.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName10.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName10.Name = "lblDtSKUName10";
@@ -1106,6 +1155,7 @@
             this.lblDtGyo9.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo9.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo9.FontBold = true;
             this.lblDtGyo9.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo9.Location = new System.Drawing.Point(3, 2);
             this.lblDtGyo9.Name = "lblDtGyo9";
@@ -1121,6 +1171,7 @@
             this.lblStoreName9.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName9.FontBold = true;
             this.lblStoreName9.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName9.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName9.Name = "lblStoreName9";
@@ -1137,6 +1188,7 @@
             this.lblDtKin9.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin9.FontBold = true;
             this.lblDtKin9.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin9.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin9.Name = "lblDtKin9";
@@ -1153,6 +1205,7 @@
             this.lblDtColorSize9.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize9.FontBold = true;
             this.lblDtColorSize9.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize9.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize9.Name = "lblDtColorSize9";
@@ -1169,6 +1222,7 @@
             this.lblDtSSu9.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu9.FontBold = true;
             this.lblDtSSu9.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu9.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu9.Name = "lblDtSSu9";
@@ -1185,6 +1239,7 @@
             this.lblJuchuuDate9.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate9.FontBold = true;
             this.lblJuchuuDate9.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate9.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate9.Name = "lblJuchuuDate9";
@@ -1201,6 +1256,7 @@
             this.lblJuchuuNO9.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO9.FontBold = true;
             this.lblJuchuuNO9.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO9.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO9.Name = "lblJuchuuNO9";
@@ -1217,6 +1273,7 @@
             this.lblJANCD9.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD9.FontBold = true;
             this.lblJANCD9.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD9.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD9.Name = "lblJANCD9";
@@ -1233,6 +1290,7 @@
             this.lblDtSKUName9.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName9.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName9.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName9.FontBold = true;
             this.lblDtSKUName9.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName9.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName9.Name = "lblDtSKUName9";
@@ -1266,6 +1324,7 @@
             this.lblDtGyo8.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo8.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo8.FontBold = true;
             this.lblDtGyo8.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo8.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo8.Name = "lblDtGyo8";
@@ -1281,6 +1340,7 @@
             this.lblStoreName8.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName8.FontBold = true;
             this.lblStoreName8.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName8.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName8.Name = "lblStoreName8";
@@ -1297,6 +1357,7 @@
             this.lblJuchuuDate8.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate8.FontBold = true;
             this.lblJuchuuDate8.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate8.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate8.Name = "lblJuchuuDate8";
@@ -1313,6 +1374,7 @@
             this.lblDtSSu8.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu8.FontBold = true;
             this.lblDtSSu8.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu8.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu8.Name = "lblDtSSu8";
@@ -1329,6 +1391,7 @@
             this.lblDtKin8.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin8.FontBold = true;
             this.lblDtKin8.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin8.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin8.Name = "lblDtKin8";
@@ -1345,6 +1408,7 @@
             this.lblDtColorSize8.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize8.FontBold = true;
             this.lblDtColorSize8.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize8.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize8.Name = "lblDtColorSize8";
@@ -1361,6 +1425,7 @@
             this.lblJANCD8.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD8.FontBold = true;
             this.lblJANCD8.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD8.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD8.Name = "lblJANCD8";
@@ -1377,6 +1442,7 @@
             this.lblJuchuuNO8.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO8.FontBold = true;
             this.lblJuchuuNO8.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO8.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO8.Name = "lblJuchuuNO8";
@@ -1393,6 +1459,7 @@
             this.lblDtSKUName8.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName8.FontBold = true;
             this.lblDtSKUName8.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName8.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName8.Name = "lblDtSKUName8";
@@ -1426,6 +1493,7 @@
             this.lblDtGyo7.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo7.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo7.FontBold = true;
             this.lblDtGyo7.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo7.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo7.Name = "lblDtGyo7";
@@ -1441,6 +1509,7 @@
             this.lblStoreName7.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName7.FontBold = true;
             this.lblStoreName7.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName7.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName7.Name = "lblStoreName7";
@@ -1457,6 +1526,7 @@
             this.lblJuchuuDate7.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate7.FontBold = true;
             this.lblJuchuuDate7.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate7.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate7.Name = "lblJuchuuDate7";
@@ -1473,6 +1543,7 @@
             this.lblJuchuuNO7.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO7.FontBold = true;
             this.lblJuchuuNO7.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO7.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO7.Name = "lblJuchuuNO7";
@@ -1489,6 +1560,7 @@
             this.lblDtSSu7.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu7.FontBold = true;
             this.lblDtSSu7.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu7.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu7.Name = "lblDtSSu7";
@@ -1505,6 +1577,7 @@
             this.lblDtKin7.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin7.FontBold = true;
             this.lblDtKin7.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin7.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin7.Name = "lblDtKin7";
@@ -1521,6 +1594,7 @@
             this.lblDtColorSize7.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize7.FontBold = true;
             this.lblDtColorSize7.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize7.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize7.Name = "lblDtColorSize7";
@@ -1537,6 +1611,7 @@
             this.lblJANCD7.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD7.FontBold = true;
             this.lblJANCD7.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD7.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD7.Name = "lblJANCD7";
@@ -1553,6 +1628,7 @@
             this.lblDtSKUName7.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName7.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName7.FontBold = true;
             this.lblDtSKUName7.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName7.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName7.Name = "lblDtSKUName7";
@@ -1586,6 +1662,7 @@
             this.lblDtGyo6.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo6.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo6.FontBold = true;
             this.lblDtGyo6.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo6.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo6.Name = "lblDtGyo6";
@@ -1601,6 +1678,7 @@
             this.lblStoreName6.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName6.FontBold = true;
             this.lblStoreName6.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName6.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName6.Name = "lblStoreName6";
@@ -1617,6 +1695,7 @@
             this.lblJuchuuDate6.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate6.FontBold = true;
             this.lblJuchuuDate6.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate6.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate6.Name = "lblJuchuuDate6";
@@ -1633,6 +1712,7 @@
             this.lblJuchuuNO6.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO6.FontBold = true;
             this.lblJuchuuNO6.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO6.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO6.Name = "lblJuchuuNO6";
@@ -1649,6 +1729,7 @@
             this.lblJANCD6.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD6.FontBold = true;
             this.lblJANCD6.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD6.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD6.Name = "lblJANCD6";
@@ -1665,6 +1746,7 @@
             this.lblDtSSu6.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu6.FontBold = true;
             this.lblDtSSu6.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu6.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu6.Name = "lblDtSSu6";
@@ -1681,6 +1763,7 @@
             this.lblDtKin6.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin6.FontBold = true;
             this.lblDtKin6.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin6.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin6.Name = "lblDtKin6";
@@ -1697,6 +1780,7 @@
             this.lblDtColorSize6.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize6.FontBold = true;
             this.lblDtColorSize6.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize6.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize6.Name = "lblDtColorSize6";
@@ -1713,6 +1797,7 @@
             this.lblDtSKUName6.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName6.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName6.FontBold = true;
             this.lblDtSKUName6.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName6.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName6.Name = "lblDtSKUName6";
@@ -1746,6 +1831,7 @@
             this.lblDtGyo5.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo5.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo5.FontBold = true;
             this.lblDtGyo5.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo5.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo5.Name = "lblDtGyo5";
@@ -1761,6 +1847,7 @@
             this.lblStoreName5.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName5.FontBold = true;
             this.lblStoreName5.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName5.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName5.Name = "lblStoreName5";
@@ -1777,6 +1864,7 @@
             this.lblJuchuuDate5.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate5.FontBold = true;
             this.lblJuchuuDate5.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate5.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate5.Name = "lblJuchuuDate5";
@@ -1793,6 +1881,7 @@
             this.lblJuchuuNO5.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO5.FontBold = true;
             this.lblJuchuuNO5.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO5.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO5.Name = "lblJuchuuNO5";
@@ -1809,6 +1898,7 @@
             this.lblJANCD5.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD5.FontBold = true;
             this.lblJANCD5.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD5.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD5.Name = "lblJANCD5";
@@ -1825,6 +1915,7 @@
             this.lblDtColorSize5.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize5.FontBold = true;
             this.lblDtColorSize5.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize5.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize5.Name = "lblDtColorSize5";
@@ -1841,6 +1932,7 @@
             this.lblDtSSu5.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu5.FontBold = true;
             this.lblDtSSu5.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu5.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu5.Name = "lblDtSSu5";
@@ -1857,6 +1949,7 @@
             this.lblDtKin5.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin5.FontBold = true;
             this.lblDtKin5.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin5.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin5.Name = "lblDtKin5";
@@ -1873,6 +1966,7 @@
             this.lblDtSKUName5.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName5.FontBold = true;
             this.lblDtSKUName5.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName5.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName5.Name = "lblDtSKUName5";
@@ -1906,6 +2000,7 @@
             this.lblDtKin4.BackColor = System.Drawing.Color.Transparent;
             this.lblDtKin4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtKin4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtKin4.FontBold = true;
             this.lblDtKin4.ForeColor = System.Drawing.Color.Black;
             this.lblDtKin4.Location = new System.Drawing.Point(1704, 42);
             this.lblDtKin4.Name = "lblDtKin4";
@@ -1922,6 +2017,7 @@
             this.lblDtSSu4.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSSu4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSSu4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSSu4.FontBold = true;
             this.lblDtSSu4.ForeColor = System.Drawing.Color.Black;
             this.lblDtSSu4.Location = new System.Drawing.Point(1794, 5);
             this.lblDtSSu4.Name = "lblDtSSu4";
@@ -1938,6 +2034,7 @@
             this.lblDtColorSize4.BackColor = System.Drawing.Color.Transparent;
             this.lblDtColorSize4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtColorSize4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtColorSize4.FontBold = true;
             this.lblDtColorSize4.ForeColor = System.Drawing.Color.Black;
             this.lblDtColorSize4.Location = new System.Drawing.Point(1389, 6);
             this.lblDtColorSize4.Name = "lblDtColorSize4";
@@ -1954,6 +2051,7 @@
             this.lblDtSKUName4.BackColor = System.Drawing.Color.Transparent;
             this.lblDtSKUName4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblDtSKUName4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblDtSKUName4.FontBold = true;
             this.lblDtSKUName4.ForeColor = System.Drawing.Color.Black;
             this.lblDtSKUName4.Location = new System.Drawing.Point(823, 5);
             this.lblDtSKUName4.Name = "lblDtSKUName4";
@@ -1970,6 +2068,7 @@
             this.lblJuchuuNO4.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuNO4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuNO4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuNO4.FontBold = true;
             this.lblJuchuuNO4.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuNO4.Location = new System.Drawing.Point(591, 41);
             this.lblJuchuuNO4.Name = "lblJuchuuNO4";
@@ -1986,6 +2085,7 @@
             this.lblJANCD4.BackColor = System.Drawing.Color.Transparent;
             this.lblJANCD4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJANCD4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJANCD4.FontBold = true;
             this.lblJANCD4.ForeColor = System.Drawing.Color.Black;
             this.lblJANCD4.Location = new System.Drawing.Point(591, 5);
             this.lblJANCD4.Name = "lblJANCD4";
@@ -2002,6 +2102,7 @@
             this.lblStoreName4.BackColor = System.Drawing.Color.Transparent;
             this.lblStoreName4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblStoreName4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblStoreName4.FontBold = true;
             this.lblStoreName4.ForeColor = System.Drawing.Color.Black;
             this.lblStoreName4.Location = new System.Drawing.Point(64, 40);
             this.lblStoreName4.Name = "lblStoreName4";
@@ -2018,6 +2119,7 @@
             this.lblJuchuuDate4.BackColor = System.Drawing.Color.Transparent;
             this.lblJuchuuDate4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblJuchuuDate4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblJuchuuDate4.FontBold = true;
             this.lblJuchuuDate4.ForeColor = System.Drawing.Color.Black;
             this.lblJuchuuDate4.Location = new System.Drawing.Point(67, 5);
             this.lblJuchuuDate4.Name = "lblJuchuuDate4";
@@ -2034,6 +2136,7 @@
             this.lblDtGyo4.BackColor = System.Drawing.Color.Transparent;
             this.lblDtGyo4.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblDtGyo4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblDtGyo4.FontBold = true;
             this.lblDtGyo4.ForeColor = System.Drawing.Color.Black;
             this.lblDtGyo4.Location = new System.Drawing.Point(4, 3);
             this.lblDtGyo4.Name = "lblDtGyo4";
@@ -2050,6 +2153,7 @@
             this.ckmShop_Label15.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label15.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label15.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label15.FontBold = true;
             this.ckmShop_Label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label15.Location = new System.Drawing.Point(592, 135);
             this.ckmShop_Label15.Name = "ckmShop_Label15";
@@ -2066,6 +2170,7 @@
             this.ckmShop_Label16.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label16.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label16.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label16.FontBold = true;
             this.ckmShop_Label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label16.Location = new System.Drawing.Point(1743, 135);
             this.ckmShop_Label16.Name = "ckmShop_Label16";
@@ -2094,7 +2199,7 @@
             this.txtCustomerNo.IsNumber = false;
             this.txtCustomerNo.IsShop = true;
             this.txtCustomerNo.Length = 13;
-            this.txtCustomerNo.Location = new System.Drawing.Point(204, 81);
+            this.txtCustomerNo.Location = new System.Drawing.Point(204, 79);
             this.txtCustomerNo.MaxLength = 13;
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
@@ -2111,6 +2216,7 @@
             this.lblLastPoint.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLastPoint.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblLastPoint.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblLastPoint.FontBold = true;
             this.lblLastPoint.ForeColor = System.Drawing.Color.Black;
             this.lblLastPoint.Location = new System.Drawing.Point(1494, 79);
             this.lblLastPoint.Name = "lblLastPoint";
@@ -2146,6 +2252,7 @@
             this.ckmShop_Label8.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label8.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label8.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label8.FontBold = true;
             this.ckmShop_Label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label8.Location = new System.Drawing.Point(67, 135);
             this.ckmShop_Label8.Name = "ckmShop_Label8";
@@ -2162,6 +2269,7 @@
             this.ckmShop_Label4.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label4.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label4.FontBold = true;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label4.Location = new System.Drawing.Point(66, 915);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
@@ -2178,6 +2286,7 @@
             this.ckmShop_Label5.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label5.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label5.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.ckmShop_Label5.FontBold = true;
             this.ckmShop_Label5.ForeColor = System.Drawing.Color.Blue;
             this.ckmShop_Label5.Location = new System.Drawing.Point(610, 916);
             this.ckmShop_Label5.Name = "ckmShop_Label5";
@@ -2193,6 +2302,7 @@
             this.lblCusName.BackColor = System.Drawing.Color.Transparent;
             this.lblCusName.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.lblCusName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
+            this.lblCusName.FontBold = true;
             this.lblCusName.ForeColor = System.Drawing.Color.Black;
             this.lblCusName.Location = new System.Drawing.Point(425, 79);
             this.lblCusName.Name = "lblCusName";
@@ -2212,7 +2322,7 @@
             this.btnCustomerSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCustomerSearch.Font = new System.Drawing.Font("MS Gothic", 22F, System.Drawing.FontStyle.Bold);
             this.btnCustomerSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Small;
-            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 79);
+            this.btnCustomerSearch.Location = new System.Drawing.Point(4, 78);
             this.btnCustomerSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerSearch.Name = "btnCustomerSearch";
             this.btnCustomerSearch.Size = new System.Drawing.Size(200, 41);
