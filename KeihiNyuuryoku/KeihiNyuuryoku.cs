@@ -21,7 +21,7 @@ namespace KeihiNyuuryoku
         M_Staff_Entity staff;
         KeihiNyuuryoku_BL khnyk_BL;
         int type = 0;//1 = normal, 2 = copy (for f11)
-        string keijoudate = string.Empty;
+        string keijoudate, staffName = string.Empty;
         decimal TotalGaku;
         DataTable dtcost, dtcontrol, dtpayplan, dtVendor, dtStaff, dt;
 
@@ -57,13 +57,16 @@ namespace KeihiNyuuryoku
             Btn_F10.Text = "複写(F10)";
             Btn_F11.Text = "印刷(F11)";
 
-            txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
+           
             lblTotalGaku.AutoSize = false;
             lblTotalGaku.Width = 90;
             lblTotalGaku.Height = 16;
             lblTotalGaku.TextAlign = ContentAlignment.MiddleRight;
 
             CreateDataTable();
+            ScStaff.TxtCode.Text = InOperatorCD;
+            ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
+            txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
             txtKeijouDate.Focus();
         }
 
@@ -523,6 +526,9 @@ namespace KeihiNyuuryoku
                     F9Visible = false;
                     F12Enable = true;
                     F11Enable = true;
+                    ScStaff.TxtCode.Text = InOperatorCD;
+                    ScStaff.LabelText = Bind_StaffName(ScStaff.Code);
+                    txtKeijouDate.Text = System.DateTime.Now.ToString("yyyy/MM/dd");
                     txtKeijouDate.Focus();
                     break;
                 case EOperationMode.UPDATE:
@@ -645,19 +651,14 @@ namespace KeihiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(ScStaff.Code))
                 {
-                    dtStaff = new DataTable();
-                    if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
-                        keijoudate = System.DateTime.Now.ToString();
-                    else keijoudate = txtKeijouDate.Text;
-
-                    dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, ScStaff.Code);
-                    if (dtStaff.Rows.Count < 1)
+                    staffName = Bind_StaffName(ScStaff.Code);
+                    if (!string.IsNullOrWhiteSpace(staffName))
                     {
                         khnyk_BL.ShowMessage("E101");
                         ScStaff.SetFocus(1);
                     }
                     else
-                        ScStaff.LabelText = dtStaff.Rows[0]["Name"].ToString();
+                        ScStaff.LabelText = staffName;
                 }
             }
         }
@@ -707,7 +708,22 @@ namespace KeihiNyuuryoku
                 else
                     lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
-            
+        }
+
+       private string Bind_StaffName(string stCode)
+        {
+            dtStaff = new DataTable();
+            string name = string.Empty;
+            if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
+                keijoudate = System.DateTime.Now.ToString();
+            else keijoudate = txtKeijouDate.Text;
+
+            dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, stCode);
+            if(dtStaff.Rows.Count > 0)
+            {
+                name = dtStaff.Rows[0]["Name"].ToString();
+            }
+            return name;
         }
     }
 }

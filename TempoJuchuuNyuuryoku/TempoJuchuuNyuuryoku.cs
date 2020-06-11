@@ -3078,6 +3078,11 @@ namespace TempoJuchuuNyuuryoku
                         //必須入力(Entry required)、入力なければエラー(If there is no input, an error)Ｅ１０２
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].VendorCD))
                         {
+                            if (mGrid.g_DArray[row].ZaikoKBN == 1 && mGrid.g_DArray[row].Hikiate == "引当OK")
+                            {
+                                return true;
+                            }
+
                             if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].Nyuka))
                             {
                                 //Ｅ１０２
@@ -3236,8 +3241,12 @@ namespace TempoJuchuuNyuuryoku
                     if (fre.Result == "1")
                     {
                         mGrid.g_DArray[row].Hikiate = "引当OK";
-                            //mGrid.g_DArray[row].VendorCD = "";
-                            //mGrid.g_DArray[row].VendorName = "";
+
+                        if (mGrid.g_DArray[row].ZaikoKBN == 1)
+                        {
+                            mGrid.g_DArray[row].VendorCD = "";
+                            mGrid.g_DArray[row].VendorName = "";
+                        }
 
                         if (string.IsNullOrWhiteSpace(mGrid.g_DArray[row].ArrivePlanDate))
                         {
@@ -4711,19 +4720,18 @@ namespace TempoJuchuuNyuuryoku
             try
             {
                 //選択された出荷倉庫(倉庫CD)が変わった場合、明細の出荷倉庫CDも同じ倉庫CDに変更する。
-                if (CboStoreCD.SelectedValue != null)
-                    if (!CboStoreCD.SelectedValue.Equals("-1"))
+                if (CboSoukoName.SelectedIndex > 0)
+                {
+                    for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
                     {
-                        for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+                        if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
                         {
-                            if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
-                            {
-                                mGrid.g_DArray[RW].SoukoName = CboSoukoName.SelectedValue.ToString();
-                            }
+                            mGrid.g_DArray[RW].SoukoName = CboSoukoName.SelectedValue.ToString();
                         }
-                        //配列の内容を画面にセット
-                        mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
                     }
+                    //配列の内容を画面にセット
+                    mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                }  
             }
             catch (Exception ex)
             {
