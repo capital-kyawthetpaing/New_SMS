@@ -584,10 +584,10 @@ namespace TempoRegiHanbaiTouroku
             //Parameter受取  OperatorCD←	Parameter受取 OperatorCD 
             //  ProcessingPC ←	ProcessingPC
             //  StoreCD	←StoreCD
-            //  SalesNO	←OperatorCD
+            //  SalesNO	←売上 売上番号
             //  領収書FLG←	Form.領収書必要ONの場合、1。以外は0．															
             //	レシートFLG ←1
-            //  領収書印字日付←売上 売上番号												
+            //  領収書印字日付←												
             //↑	Table転送仕様Ａ で採番							
             //↑お客さんを待たせたくないので、																																						
             //　レシート発行を先にする		
@@ -602,7 +602,7 @@ namespace TempoRegiHanbaiTouroku
 
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
                                     + " " + no + " " + receipte + " 1 " + bbl.GetDate();
-                System.Diagnostics.Process.Start(filePath, cmdLine);
+                //System.Diagnostics.Process.Start(filePath, cmdLine); 
             }
             else
             {
