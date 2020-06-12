@@ -2947,7 +2947,8 @@ namespace ShiireNyuuryoku
                                 detailControls[(int)EIndex.PurchaseDate].Focus();
                             else
                                 keyControls[index + 1].Focus();
-
+                        else if (index == (int)EIndex.CopyPurchaseNO)
+                            keyControls[index + 1].Focus();
                     }
                     else
                     {
