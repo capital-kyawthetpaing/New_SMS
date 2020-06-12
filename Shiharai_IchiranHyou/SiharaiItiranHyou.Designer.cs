@@ -76,7 +76,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(45, 7);
+            this.ckM_Label1.Location = new System.Drawing.Point(44, 8);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 2;
@@ -165,7 +165,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(44, 34);
+            this.ckM_Label3.Location = new System.Drawing.Point(44, 36);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label3.TabIndex = 6;
@@ -188,7 +188,7 @@
             this.SC_Payment.IsCopy = false;
             this.SC_Payment.LabelText = "";
             this.SC_Payment.LabelVisible = true;
-            this.SC_Payment.Location = new System.Drawing.Point(91, 25);
+            this.SC_Payment.Location = new System.Drawing.Point(91, 27);
             this.SC_Payment.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Payment.Name = "SC_Payment";
             this.SC_Payment.NameWidth = 310;
@@ -210,8 +210,8 @@
             this.SC_Staff.ChangeDate = "";
             this.SC_Staff.ChangeDateWidth = 100;
             this.SC_Staff.Code = "";
-            this.SC_Staff.CodeWidth = 100;
-            this.SC_Staff.CodeWidth1 = 100;
+            this.SC_Staff.CodeWidth = 70;
+            this.SC_Staff.CodeWidth1 = 70;
             this.SC_Staff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.SC_Staff.DataCheck = false;
             this.SC_Staff.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -222,10 +222,10 @@
             this.SC_Staff.Location = new System.Drawing.Point(91, 54);
             this.SC_Staff.Margin = new System.Windows.Forms.Padding(0);
             this.SC_Staff.Name = "SC_Staff";
-            this.SC_Staff.NameWidth = 600;
+            this.SC_Staff.NameWidth = 250;
             this.SC_Staff.SearchEnable = true;
-            this.SC_Staff.Size = new System.Drawing.Size(734, 27);
-            this.SC_Staff.Stype = Search.CKM_SearchControl.SearchType.売上番号;
+            this.SC_Staff.Size = new System.Drawing.Size(354, 27);
+            this.SC_Staff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.SC_Staff.TabIndex = 8;
             this.SC_Staff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Staff.UseChangeDate = false;
@@ -243,7 +243,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(5, 62);
+            this.ckM_Label4.Location = new System.Drawing.Point(5, 63);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label4.TabIndex = 9;
