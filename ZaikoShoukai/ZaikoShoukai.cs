@@ -472,6 +472,7 @@ namespace ZaikoShoukai
             Sports.Value1 = "202";
         }
         private void TB_ShinkitorokuT_KeyDown(object sender, KeyEventArgs e)
+
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -480,6 +481,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TB_ShinkitorokuF.Text) > Convert.ToDateTime(TB_ShinkitorokuT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TB_ShinkitorokuF.Focus();
                     }
                 }
             }
@@ -493,6 +495,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TＢ_SaiShuhenkobiF.Text) > Convert.ToDateTime(TB_SaiShuhenkobiT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TＢ_SaiShuhenkobiF.Focus();
                     }
                 }
             }
@@ -506,6 +509,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TB_ShoninbiF.Text) > Convert.ToDateTime(TB_ShoninbiT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TB_ShoninbiF.Focus();
                     }
                 }
             }
@@ -594,6 +598,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TB_ShinkitorokuF.Text) > Convert.ToDateTime(TB_ShinkitorokuT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TB_ShinkitorokuF.Focus();
                     return false;
                 }
             }
@@ -602,6 +607,7 @@ namespace ZaikoShoukai
                 if (String.Compare(TB_RackNoF.Text, TB_RackNoT.Text) == 1)
                 {
                     bbl.ShowMessage("E106");
+                    TB_RackNoF.Focus();
                     return false;
                 }
             }
@@ -610,6 +616,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TＢ_SaiShuhenkobiF.Text) > Convert.ToDateTime(TB_SaiShuhenkobiT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TＢ_SaiShuhenkobiF.Focus();
                     return false;
                 }
             }
@@ -618,6 +625,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TB_ShoninbiF.Text) > Convert.ToDateTime(TB_ShoninbiT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TB_ShoninbiF.Focus();
                     return false;
                 }
             }
