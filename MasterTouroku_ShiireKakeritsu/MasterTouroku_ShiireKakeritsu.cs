@@ -56,9 +56,22 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
-
+        private void RadioCheck()
+        {
+            if(rdoAllStores.Checked==true)
+            {
+                cbo_Store.SelectedValue = "0000";
+                cbo_Store.Enabled = false;
+            }
+            else
+            {
+                cbo_Store.SelectedValue = StoreCD;
+                cbo_Store.Enabled = true;
+            }
+        }
         public void BindCombo()
         {
             cbo_Store.Bind(string.Empty, "2");
@@ -1127,6 +1140,11 @@ namespace MasterTouroku_ShiireKakeritsu
                 KeyItem = string.Empty
             };
             return log_data;
+        }
+
+        private void rdoAllStores_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioCheck();
         }
     }
 }
