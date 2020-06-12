@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -64,6 +65,10 @@
             this.PanelSearch.Controls.Add(this.btnDisplay);
             this.PanelSearch.Location = new System.Drawing.Point(898, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // dgvPaymentClose
             // 
             this.dgvPaymentClose.AllowUserToAddRows = false;
@@ -74,7 +79,7 @@
             this.dgvPaymentClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -87,10 +92,19 @@
             this.PaymentCD,
             this.PaymentName,
             this.colProcess});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPaymentClose.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPaymentClose.EnableHeadersVisualStyles = false;
             this.dgvPaymentClose.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPaymentClose.Location = new System.Drawing.Point(87, 221);
             this.dgvPaymentClose.Name = "dgvPaymentClose";
+            this.dgvPaymentClose.RowHeight_ = 20;
             this.dgvPaymentClose.Size = new System.Drawing.Size(1150, 600);
             this.dgvPaymentClose.TabIndex = 9;
             this.dgvPaymentClose.UseRowNo = true;
@@ -174,7 +188,8 @@
             this.ScPaymentCD.ChangeDate = "";
             this.ScPaymentCD.ChangeDateWidth = 100;
             this.ScPaymentCD.Code = "";
-            this.ScPaymentCD.CodeWidth = 130;
+            this.ScPaymentCD.CodeWidth = 100;
+            this.ScPaymentCD.CodeWidth1 = 100;
             this.ScPaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPaymentCD.DataCheck = false;
             this.ScPaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -184,6 +199,7 @@
             this.ScPaymentCD.Location = new System.Drawing.Point(72, 58);
             this.ScPaymentCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScPaymentCD.Name = "ScPaymentCD";
+            this.ScPaymentCD.NameWidth = 310;
             this.ScPaymentCD.SearchEnable = true;
             this.ScPaymentCD.Size = new System.Drawing.Size(444, 27);
             this.ScPaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -202,6 +218,7 @@
             this.txtPayCloseDate.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtPayCloseDate.BackColor = System.Drawing.Color.White;
             this.txtPayCloseDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPayCloseDate.ClientColor = System.Drawing.Color.White;
             this.txtPayCloseDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtPayCloseDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPayCloseDate.DecimalPlace = 0;
@@ -209,6 +226,7 @@
             this.txtPayCloseDate.IntegerPart = 0;
             this.txtPayCloseDate.IsCorrectDate = true;
             this.txtPayCloseDate.isEnterKeyDown = false;
+            this.txtPayCloseDate.isMaxLengthErr = false;
             this.txtPayCloseDate.IsNumber = true;
             this.txtPayCloseDate.IsShop = false;
             this.txtPayCloseDate.Length = 10;
@@ -245,6 +263,7 @@
             this.cboProcessType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboProcessType.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.Default;
             this.cboProcessType.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboProcessType.Flag = 0;
             this.cboProcessType.FormattingEnabled = true;
             this.cboProcessType.Length = 10;
             this.cboProcessType.Location = new System.Drawing.Point(71, 12);
@@ -277,6 +296,7 @@
             this.btnDisplay.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
             this.btnDisplay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDisplay.DefaultBtnSize = false;
+            this.btnDisplay.Enabled = false;
             this.btnDisplay.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnDisplay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDisplay.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
@@ -288,6 +308,7 @@
             this.btnDisplay.TabIndex = 1;
             this.btnDisplay.Text = "表示(F11)";
             this.btnDisplay.UseVisualStyleBackColor = false;
+            this.btnDisplay.Visible = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
             // 
             // Shiharai_ShimeShori

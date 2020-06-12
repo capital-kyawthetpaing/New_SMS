@@ -100,6 +100,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1045, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // ckM_Label1
             // 
             this.ckM_Label1.AutoSize = true;
@@ -131,6 +135,7 @@
             this.txtTargetDays.IntegerPart = 0;
             this.txtTargetDays.IsCorrectDate = true;
             this.txtTargetDays.isEnterKeyDown = false;
+            this.txtTargetDays.isMaxLengthErr = false;
             this.txtTargetDays.IsNumber = true;
             this.txtTargetDays.IsShop = false;
             this.txtTargetDays.Length = 10;
@@ -267,6 +272,7 @@
             this.cboWarehouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWarehouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboWarehouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWarehouse.Flag = 0;
             this.cboWarehouse.FormattingEnabled = true;
             this.cboWarehouse.Length = 10;
             this.cboWarehouse.Location = new System.Drawing.Point(124, 41);
@@ -282,7 +288,8 @@
             this.Sc_Maker.ChangeDate = "";
             this.Sc_Maker.ChangeDateWidth = 100;
             this.Sc_Maker.Code = "";
-            this.Sc_Maker.CodeWidth = 130;
+            this.Sc_Maker.CodeWidth = 100;
+            this.Sc_Maker.CodeWidth1 = 100;
             this.Sc_Maker.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Maker.DataCheck = false;
             this.Sc_Maker.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -292,6 +299,7 @@
             this.Sc_Maker.Location = new System.Drawing.Point(124, 61);
             this.Sc_Maker.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Maker.Name = "Sc_Maker";
+            this.Sc_Maker.NameWidth = 310;
             this.Sc_Maker.SearchEnable = true;
             this.Sc_Maker.Size = new System.Drawing.Size(444, 32);
             this.Sc_Maker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -311,6 +319,7 @@
             this.Sc_Brand.ChangeDateWidth = 100;
             this.Sc_Brand.Code = "";
             this.Sc_Brand.CodeWidth = 100;
+            this.Sc_Brand.CodeWidth1 = 100;
             this.Sc_Brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Brand.DataCheck = false;
             this.Sc_Brand.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -320,6 +329,7 @@
             this.Sc_Brand.Location = new System.Drawing.Point(123, 88);
             this.Sc_Brand.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Brand.Name = "Sc_Brand";
+            this.Sc_Brand.NameWidth = 280;
             this.Sc_Brand.SearchEnable = true;
             this.Sc_Brand.Size = new System.Drawing.Size(414, 32);
             this.Sc_Brand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
@@ -344,6 +354,7 @@
             this.txtProductName.IntegerPart = 0;
             this.txtProductName.IsCorrectDate = true;
             this.txtProductName.isEnterKeyDown = false;
+            this.txtProductName.isMaxLengthErr = false;
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
             this.txtProductName.Length = 10;
@@ -386,6 +397,7 @@
             this.txtJANCD.IntegerPart = 0;
             this.txtJANCD.IsCorrectDate = true;
             this.txtJANCD.isEnterKeyDown = false;
+            this.txtJANCD.isMaxLengthErr = false;
             this.txtJANCD.IsNumber = true;
             this.txtJANCD.IsShop = false;
             this.txtJANCD.Length = 10;
@@ -428,6 +440,7 @@
             this.txtSKUCD.IntegerPart = 0;
             this.txtSKUCD.IsCorrectDate = true;
             this.txtSKUCD.isEnterKeyDown = false;
+            this.txtSKUCD.isMaxLengthErr = false;
             this.txtSKUCD.IsNumber = true;
             this.txtSKUCD.IsShop = false;
             this.txtSKUCD.Length = 10;
@@ -470,6 +483,7 @@
             this.txtRemarks.IntegerPart = 0;
             this.txtRemarks.IsCorrectDate = true;
             this.txtRemarks.isEnterKeyDown = false;
+            this.txtRemarks.isMaxLengthErr = false;
             this.txtRemarks.IsNumber = true;
             this.txtRemarks.IsShop = false;
             this.txtRemarks.Length = 10;
@@ -495,6 +509,7 @@
             this.txtStorageFrom.IntegerPart = 0;
             this.txtStorageFrom.IsCorrectDate = true;
             this.txtStorageFrom.isEnterKeyDown = false;
+            this.txtStorageFrom.isMaxLengthErr = false;
             this.txtStorageFrom.IsNumber = true;
             this.txtStorageFrom.IsShop = false;
             this.txtStorageFrom.Length = 10;
@@ -520,6 +535,7 @@
             this.txtStorageTo.IntegerPart = 0;
             this.txtStorageTo.IsCorrectDate = true;
             this.txtStorageTo.isEnterKeyDown = false;
+            this.txtStorageTo.isMaxLengthErr = false;
             this.txtStorageTo.IsNumber = true;
             this.txtStorageTo.IsShop = false;
             this.txtStorageTo.Length = 10;
@@ -639,6 +655,7 @@
             this.CboYear.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CboYear.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.年度;
             this.CboYear.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.CboYear.Flag = 0;
             this.CboYear.FormattingEnabled = true;
             this.CboYear.Length = 10;
             this.CboYear.Location = new System.Drawing.Point(722, 81);
@@ -654,6 +671,7 @@
             this.cboReservation.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboReservation.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.予約フラグ;
             this.cboReservation.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboReservation.Flag = 0;
             this.cboReservation.FormattingEnabled = true;
             this.cboReservation.Length = 10;
             this.cboReservation.Location = new System.Drawing.Point(722, 118);
@@ -669,6 +687,7 @@
             this.cboNotices.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboNotices.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.特記フラグ;
             this.cboNotices.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboNotices.Flag = 0;
             this.cboNotices.FormattingEnabled = true;
             this.cboNotices.Length = 10;
             this.cboNotices.Location = new System.Drawing.Point(722, 137);
@@ -684,6 +703,7 @@
             this.cboPostage.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboPostage.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.送料条件;
             this.cboPostage.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboPostage.Flag = 0;
             this.cboPostage.FormattingEnabled = true;
             this.cboPostage.Length = 10;
             this.cboPostage.Location = new System.Drawing.Point(722, 156);
@@ -699,6 +719,7 @@
             this.cboOrder.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboOrder.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.発注;
             this.cboOrder.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboOrder.Flag = 0;
             this.cboOrder.FormattingEnabled = true;
             this.cboOrder.Length = 10;
             this.cboOrder.Location = new System.Drawing.Point(1006, 137);
@@ -722,6 +743,7 @@
             this.txtCatalog.IntegerPart = 0;
             this.txtCatalog.IsCorrectDate = true;
             this.txtCatalog.isEnterKeyDown = false;
+            this.txtCatalog.isMaxLengthErr = false;
             this.txtCatalog.IsNumber = true;
             this.txtCatalog.IsShop = false;
             this.txtCatalog.Length = 10;
@@ -756,6 +778,7 @@
             this.cboSeason.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSeason.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.シーズン;
             this.cboSeason.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSeason.Flag = 0;
             this.cboSeason.FormattingEnabled = true;
             this.cboSeason.Length = 10;
             this.cboSeason.Location = new System.Drawing.Point(1006, 81);
@@ -788,7 +811,8 @@
             this.Sc_Competition.ChangeDate = "";
             this.Sc_Competition.ChangeDateWidth = 100;
             this.Sc_Competition.Code = "";
-            this.Sc_Competition.CodeWidth = 100;
+            this.Sc_Competition.CodeWidth = 50;
+            this.Sc_Competition.CodeWidth1 = 50;
             this.Sc_Competition.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.Sc_Competition.DataCheck = false;
             this.Sc_Competition.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -798,8 +822,9 @@
             this.Sc_Competition.Location = new System.Drawing.Point(722, 176);
             this.Sc_Competition.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_Competition.Name = "Sc_Competition";
+            this.Sc_Competition.NameWidth = 250;
             this.Sc_Competition.SearchEnable = true;
-            this.Sc_Competition.Size = new System.Drawing.Size(414, 32);
+            this.Sc_Competition.Size = new System.Drawing.Size(334, 32);
             this.Sc_Competition.Stype = Search.CKM_SearchControl.SearchType.競技;
             this.Sc_Competition.TabIndex = 24;
             this.Sc_Competition.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -917,6 +942,7 @@
             this.cboTag1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTag1.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.cboTag1.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTag1.Flag = 0;
             this.cboTag1.FormattingEnabled = true;
             this.cboTag1.Length = 10;
             this.cboTag1.Location = new System.Drawing.Point(1305, 83);
@@ -932,6 +958,7 @@
             this.cboTag2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTag2.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.cboTag2.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTag2.Flag = 0;
             this.cboTag2.FormattingEnabled = true;
             this.cboTag2.Length = 10;
             this.cboTag2.Location = new System.Drawing.Point(1305, 101);
@@ -947,6 +974,7 @@
             this.cboTag3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTag3.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.cboTag3.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTag3.Flag = 0;
             this.cboTag3.FormattingEnabled = true;
             this.cboTag3.Length = 10;
             this.cboTag3.Location = new System.Drawing.Point(1305, 118);
@@ -962,6 +990,7 @@
             this.cboTag4.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTag4.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.cboTag4.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTag4.Flag = 0;
             this.cboTag4.FormattingEnabled = true;
             this.cboTag4.Length = 10;
             this.cboTag4.Location = new System.Drawing.Point(1305, 136);
@@ -977,6 +1006,7 @@
             this.cboTag5.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboTag5.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.タグ;
             this.cboTag5.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboTag5.Flag = 0;
             this.cboTag5.FormattingEnabled = true;
             this.cboTag5.Length = 10;
             this.cboTag5.Location = new System.Drawing.Point(1305, 154);
@@ -1000,6 +1030,7 @@
             this.txtInstructionNo.IntegerPart = 0;
             this.txtInstructionNo.IsCorrectDate = true;
             this.txtInstructionNo.isEnterKeyDown = false;
+            this.txtInstructionNo.isMaxLengthErr = false;
             this.txtInstructionNo.IsNumber = true;
             this.txtInstructionNo.IsShop = false;
             this.txtInstructionNo.Length = 10;
@@ -1083,6 +1114,7 @@
             this.txtManufactureCD.IntegerPart = 0;
             this.txtManufactureCD.IsCorrectDate = true;
             this.txtManufactureCD.isEnterKeyDown = false;
+            this.txtManufactureCD.isMaxLengthErr = false;
             this.txtManufactureCD.IsNumber = true;
             this.txtManufactureCD.IsShop = false;
             this.txtManufactureCD.Length = 10;
@@ -1108,6 +1140,7 @@
             this.txtItem.IntegerPart = 0;
             this.txtItem.IsCorrectDate = true;
             this.txtItem.isEnterKeyDown = false;
+            this.txtItem.isMaxLengthErr = false;
             this.txtItem.IsNumber = true;
             this.txtItem.IsShop = false;
             this.txtItem.Length = 10;

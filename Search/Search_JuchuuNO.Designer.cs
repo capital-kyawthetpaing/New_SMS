@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -293,7 +294,7 @@
             this.label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(1127, 18);
+            this.label4.Location = new System.Drawing.Point(1127, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 12);
             this.label4.TabIndex = 255;
@@ -347,7 +348,7 @@
             this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
-            this.CboStoreCD.Location = new System.Drawing.Point(1190, 15);
+            this.CboStoreCD.Location = new System.Drawing.Point(1190, 7);
             this.CboStoreCD.MaxLength = 20;
             this.CboStoreCD.MoveNext = true;
             this.CboStoreCD.Name = "CboStoreCD";
@@ -680,7 +681,7 @@
             this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(1161, 44);
+            this.ckM_Label8.Location = new System.Drawing.Point(1161, 39);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label8.TabIndex = 709;
@@ -707,7 +708,7 @@
             this.ckM_TextBox2.IsNumber = true;
             this.ckM_TextBox2.IsShop = false;
             this.ckM_TextBox2.Length = 10;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(1190, 43);
+            this.ckM_TextBox2.Location = new System.Drawing.Point(1190, 38);
             this.ckM_TextBox2.MaxLength = 10;
             this.ckM_TextBox2.MoveNext = true;
             this.ckM_TextBox2.Name = "ckM_TextBox2";
@@ -744,7 +745,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(997, 46);
+            this.ckM_Label1.Location = new System.Drawing.Point(997, 41);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 698;
@@ -761,7 +762,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(984, 135);
+            this.ckM_Label3.Location = new System.Drawing.Point(984, 130);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label3.TabIndex = 708;
@@ -788,7 +789,7 @@
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
             this.ckM_TextBox1.Length = 10;
-            this.ckM_TextBox1.Location = new System.Drawing.Point(1046, 43);
+            this.ckM_TextBox1.Location = new System.Drawing.Point(1046, 38);
             this.ckM_TextBox1.MaxLength = 10;
             this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
@@ -804,10 +805,11 @@
             this.GvDetail.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
             this.GvDetail.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.GvDetail.AutoGenerateColumns = false;
             this.GvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -844,6 +846,14 @@
             this.colSaleDate,
             this.colSikyuYmd,
             this.colNyukinYmd});
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvDetail.DefaultCellStyle = dataGridViewCellStyle13;
             this.GvDetail.EnableHeadersVisualStyles = false;
             this.GvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvDetail.Location = new System.Drawing.Point(8, 296);
@@ -851,6 +861,7 @@
             this.GvDetail.Name = "GvDetail";
             this.GvDetail.ReadOnly = true;
             this.GvDetail.RowHeight_ = 20;
+            this.GvDetail.RowTemplate.Height = 20;
             this.GvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GvDetail.Size = new System.Drawing.Size(1350, 310);
             this.GvDetail.TabIndex = 50;
@@ -1116,7 +1127,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(1161, 68);
+            this.ckM_Label6.Location = new System.Drawing.Point(1161, 63);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label6.TabIndex = 723;
@@ -1143,7 +1154,7 @@
             this.ckM_TextBox9.IsNumber = true;
             this.ckM_TextBox9.IsShop = false;
             this.ckM_TextBox9.Length = 10;
-            this.ckM_TextBox9.Location = new System.Drawing.Point(1190, 65);
+            this.ckM_TextBox9.Location = new System.Drawing.Point(1190, 60);
             this.ckM_TextBox9.MaxLength = 10;
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
@@ -1161,7 +1172,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(997, 68);
+            this.ckM_Label7.Location = new System.Drawing.Point(997, 63);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label7.TabIndex = 722;
@@ -1188,7 +1199,7 @@
             this.ckM_TextBox10.IsNumber = true;
             this.ckM_TextBox10.IsShop = false;
             this.ckM_TextBox10.Length = 10;
-            this.ckM_TextBox10.Location = new System.Drawing.Point(1046, 65);
+            this.ckM_TextBox10.Location = new System.Drawing.Point(1046, 60);
             this.ckM_TextBox10.MaxLength = 10;
             this.ckM_TextBox10.MoveNext = true;
             this.ckM_TextBox10.Name = "ckM_TextBox10";
@@ -1206,7 +1217,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(1161, 112);
+            this.ckM_Label9.Location = new System.Drawing.Point(1161, 107);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label9.TabIndex = 731;
@@ -1233,7 +1244,7 @@
             this.ckM_TextBox11.IsNumber = true;
             this.ckM_TextBox11.IsShop = false;
             this.ckM_TextBox11.Length = 10;
-            this.ckM_TextBox11.Location = new System.Drawing.Point(1190, 109);
+            this.ckM_TextBox11.Location = new System.Drawing.Point(1190, 104);
             this.ckM_TextBox11.MaxLength = 10;
             this.ckM_TextBox11.MoveNext = true;
             this.ckM_TextBox11.Name = "ckM_TextBox11";
@@ -1251,7 +1262,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(997, 112);
+            this.ckM_Label10.Location = new System.Drawing.Point(997, 107);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 730;
@@ -1278,7 +1289,7 @@
             this.ckM_TextBox12.IsNumber = true;
             this.ckM_TextBox12.IsShop = false;
             this.ckM_TextBox12.Length = 10;
-            this.ckM_TextBox12.Location = new System.Drawing.Point(1046, 109);
+            this.ckM_TextBox12.Location = new System.Drawing.Point(1046, 104);
             this.ckM_TextBox12.MaxLength = 10;
             this.ckM_TextBox12.MoveNext = true;
             this.ckM_TextBox12.Name = "ckM_TextBox12";
@@ -1296,7 +1307,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(1161, 90);
+            this.ckM_Label11.Location = new System.Drawing.Point(1161, 85);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label11.TabIndex = 727;
@@ -1323,7 +1334,7 @@
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
             this.ckM_TextBox13.Length = 10;
-            this.ckM_TextBox13.Location = new System.Drawing.Point(1190, 87);
+            this.ckM_TextBox13.Location = new System.Drawing.Point(1190, 82);
             this.ckM_TextBox13.MaxLength = 10;
             this.ckM_TextBox13.MoveNext = true;
             this.ckM_TextBox13.Name = "ckM_TextBox13";
@@ -1341,7 +1352,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(997, 90);
+            this.ckM_Label12.Location = new System.Drawing.Point(997, 85);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label12.TabIndex = 726;
@@ -1368,7 +1379,7 @@
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
             this.ckM_TextBox14.Length = 10;
-            this.ckM_TextBox14.Location = new System.Drawing.Point(1046, 87);
+            this.ckM_TextBox14.Location = new System.Drawing.Point(1046, 82);
             this.ckM_TextBox14.MaxLength = 10;
             this.ckM_TextBox14.MoveNext = true;
             this.ckM_TextBox14.Name = "ckM_TextBox14";
@@ -1591,7 +1602,7 @@
             this.ckM_Label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label18.Location = new System.Drawing.Point(1161, 135);
+            this.ckM_Label18.Location = new System.Drawing.Point(1161, 130);
             this.ckM_Label18.Name = "ckM_Label18";
             this.ckM_Label18.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label18.TabIndex = 751;
@@ -1828,9 +1839,9 @@
             this.txtCustomerName.MaxLength = 80;
             this.txtCustomerName.MoveNext = true;
             this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.Size = new System.Drawing.Size(407, 19);
+            this.txtCustomerName.Size = new System.Drawing.Size(490, 19);
             this.txtCustomerName.TabIndex = 19;
-            this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.txtCustomerName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
             this.txtCustomerName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtVendorName
@@ -1856,9 +1867,9 @@
             this.txtVendorName.MaxLength = 50;
             this.txtVendorName.MoveNext = true;
             this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.Size = new System.Drawing.Size(356, 19);
+            this.txtVendorName.Size = new System.Drawing.Size(322, 19);
             this.txtVendorName.TabIndex = 25;
-            this.txtVendorName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
+            this.txtVendorName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸ";
             this.txtVendorName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label13
@@ -1952,7 +1963,7 @@
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
             this.ckM_TextBox16.Length = 11;
-            this.ckM_TextBox16.Location = new System.Drawing.Point(1190, 130);
+            this.ckM_TextBox16.Location = new System.Drawing.Point(1190, 125);
             this.ckM_TextBox16.MaxLength = 11;
             this.ckM_TextBox16.MoveNext = true;
             this.ckM_TextBox16.Name = "ckM_TextBox16";
@@ -1979,7 +1990,7 @@
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
             this.ckM_TextBox17.Length = 11;
-            this.ckM_TextBox17.Location = new System.Drawing.Point(1046, 130);
+            this.ckM_TextBox17.Location = new System.Drawing.Point(1046, 125);
             this.ckM_TextBox17.MaxLength = 11;
             this.ckM_TextBox17.MoveNext = true;
             this.ckM_TextBox17.Name = "ckM_TextBox17";

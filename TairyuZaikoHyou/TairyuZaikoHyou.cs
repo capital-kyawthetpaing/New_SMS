@@ -168,8 +168,8 @@ namespace TairyuZaikoHyou
         }
         public void F12()
         {
-            if (PrintMode != EPrintMode.DIRECT)
-                return;
+            //if (PrintMode != EPrintMode.DIRECT)
+            //    return;
 
             if (ErrorCheck())
             {

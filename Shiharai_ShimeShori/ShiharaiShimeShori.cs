@@ -46,7 +46,7 @@ namespace Shiharai_ShimeShori
         private void RequireFields()
         {
             txtPayCloseDate.Require(true);
-            ScPaymentCD.TxtCode.Require(true);           
+            //ScPaymentCD.TxtCode.Require(true);           
         }
         private void BindCombo()
         {
@@ -68,9 +68,7 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                     }
                     break;
-                case 11:
-                    F11();
-                    break;
+               
                 case 12:
                     F12();
                     break;
@@ -112,26 +110,7 @@ namespace Shiharai_ShimeShori
                     break;
             }
         }
-        private void F11()
-        {
-            dpch_entity = GetDataEntity();
-            string ItemType = cboProcessType.Text;
-            switch (ItemType)
-            {
-                case "支払締":
-                    if (ErrorCheck(1))
-                    {
-                        BindGrid();
-                    }
-                    break;
-                case "支払締キャンセル":
-                    if (ErrorCheck(2))
-                    {
-                        BindGrid();
-                    }
-                    break;
-            }
-        }
+        
         private void BindGrid()
         {
             dgvPaymentClose.ClearSelection();
@@ -167,7 +146,7 @@ namespace Shiharai_ShimeShori
             switch (Type)
             {
                 case 1:
-                    if (!RequireCheck(new Control[] { txtPayCloseDate, ScPaymentCD.TxtCode })) //Step1
+                    if (!RequireCheck(new Control[] { txtPayCloseDate })) //Step1
                         return false;
 
                     if (!sss_bl.Select_PaymentClose(dpch_entity, 1))//Step2
@@ -186,7 +165,7 @@ namespace Shiharai_ShimeShori
                     break;
 
                 case 2:
-                    if (!RequireCheck(new Control[] { txtPayCloseDate, ScPaymentCD.TxtCode })) //Step1
+                    if (!RequireCheck(new Control[] { txtPayCloseDate })) //Step1
                         return false;
 
                     if (!sss_bl.Select_PaymentClose(dpch_entity, 3))//Step2
@@ -278,7 +257,7 @@ namespace Shiharai_ShimeShori
                     {
                         ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
                         ScPaymentCD.Value2 = ScPaymentCD.LabelText;
-                        F11();
+                        //F11();
                     }
                     else
                     {
@@ -342,7 +321,7 @@ namespace Shiharai_ShimeShori
         }
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            F11();
+            //F11();
         }
     }
 }
