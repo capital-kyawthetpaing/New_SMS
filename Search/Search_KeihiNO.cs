@@ -40,6 +40,7 @@ namespace Search
             //chkPaid.Checked = true;
             //chkUnpaid.Checked = true;
             //chkTeiki.Checked = true;
+            chkUnpaid.Checked = true;
             F11Visible = false;
         }
         //ZCO
