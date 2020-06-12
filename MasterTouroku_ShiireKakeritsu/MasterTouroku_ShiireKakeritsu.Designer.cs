@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -379,17 +378,17 @@
             // 
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -401,22 +400,14 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(187, 365);
+            this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(187, 343);
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
             this.dgv_ShiireKakeritsu.RowHeight_ = 20;
             this.dgv_ShiireKakeritsu.RowTemplate.Height = 20;
             this.dgv_ShiireKakeritsu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1300, 400);
+            this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1300, 450);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
@@ -505,7 +496,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnDelete.Location = new System.Drawing.Point(1533, 316);
+            this.btnDelete.Location = new System.Drawing.Point(1533, 308);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 25);
@@ -524,7 +515,7 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnUpdate.Location = new System.Drawing.Point(1433, 316);
+            this.btnUpdate.Location = new System.Drawing.Point(1433, 308);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 25);
@@ -543,7 +534,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1333, 316);
+            this.btnAdd.Location = new System.Drawing.Point(1333, 308);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(100, 25);
@@ -627,7 +618,7 @@
             this.txtRate.IsNumber = true;
             this.txtRate.IsShop = false;
             this.txtRate.Length = 20;
-            this.txtRate.Location = new System.Drawing.Point(898, 316);
+            this.txtRate.Location = new System.Drawing.Point(898, 308);
             this.txtRate.MaxLength = 20;
             this.txtRate.MoveNext = true;
             this.txtRate.Name = "txtRate";
@@ -646,7 +637,7 @@
             this.ckM_Label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label24.Location = new System.Drawing.Point(851, 320);
+            this.ckM_Label24.Location = new System.Drawing.Point(851, 312);
             this.ckM_Label24.Name = "ckM_Label24";
             this.ckM_Label24.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label24.TabIndex = 43;
@@ -899,7 +890,7 @@
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnCopy.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnCopy.Location = new System.Drawing.Point(444, 314);
+            this.btnCopy.Location = new System.Drawing.Point(444, 309);
             this.btnCopy.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(100, 25);
@@ -926,7 +917,7 @@
             this.txtCopy.IsNumber = true;
             this.txtCopy.IsShop = false;
             this.txtCopy.Length = 8;
-            this.txtCopy.Location = new System.Drawing.Point(149, 314);
+            this.txtCopy.Location = new System.Drawing.Point(149, 309);
             this.txtCopy.MaxLength = 8;
             this.txtCopy.MoveNext = true;
             this.txtCopy.Name = "txtCopy";
@@ -944,7 +935,7 @@
             this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label16.Location = new System.Drawing.Point(63, 318);
+            this.ckM_Label16.Location = new System.Drawing.Point(63, 313);
             this.ckM_Label16.Name = "ckM_Label16";
             this.ckM_Label16.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label16.TabIndex = 34;
@@ -961,7 +952,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(147, 291);
+            this.ckM_Label15.Location = new System.Drawing.Point(147, 286);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(226, 12);
             this.ckM_Label15.TabIndex = 35;
@@ -978,7 +969,7 @@
             this.ckM_Label14.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label14.Location = new System.Drawing.Point(57, 294);
+            this.ckM_Label14.Location = new System.Drawing.Point(57, 289);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label14.TabIndex = 33;
