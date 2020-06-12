@@ -511,7 +511,7 @@ namespace Search
                     break;
                 case SearchType.出荷指示番号:
                     txtCode.MaxLength = 11;
-                    txtCode.Width = 100;
+                    txtCode.Width = 140;
                     lblName.Width = 600;
                     break;
                 case SearchType.出荷番号:
