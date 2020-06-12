@@ -1842,9 +1842,9 @@ namespace Search
                     case SearchType.SKU_ITEM_CD:
                         dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
-                    //case SearchType.JANCD:
-                    //    dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
-                    //    break;
+                    case SearchType.JANCD:
+                        dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
@@ -1943,10 +1943,7 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
                     break;
-                //case SearchType.JANCD:
-                //    dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
-                //    break;
-
+              
             }
             if (dtResult.Rows.Count > 0)
             {

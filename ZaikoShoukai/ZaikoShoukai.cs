@@ -407,35 +407,29 @@ namespace ZaikoShoukai
 
         private void jan_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if(!String.IsNullOrEmpty(jan.TxtCode.Text))
-            {
-                jan.ChangeDate = bbl.GetDate();
-                if (jan.SelectData())
-                {
-                    jan.Value1 = jan.TxtCode.Text;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    jan.SetFocus(1);
-                }
-            }
+            //if (!String.IsNullOrEmpty(jan.TxtCode.Text))
+            //{
+            //    if (!jan.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //    }
+            //}
         }
 
         private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if(!String.IsNullOrEmpty(sku.TxtCode.Text))
             {
-                sku.ChangeDate = bbl.GetDate();
-                if(sku.SelectData())
-                {
-                    sku.Value1 = sku.TxtCode.Text;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    sku.SetFocus(1);
-                }
+                //sku.ChangeDate = bbl.GetDate();
+                //if(sku.SelectData())
+                //{
+                //    sku.Value1 = sku.TxtCode.Text;
+                //}
+                //else
+                //{
+                //    bbl.ShowMessage("E101");
+                //    sku.SetFocus(1);
+                //}
             }
         }
 
@@ -572,7 +566,6 @@ namespace ZaikoShoukai
                     bbl.ShowMessage("E101");
                     jan.SetFocus(1);
                     return false;
-
                 }
             }
             if(!String.IsNullOrEmpty(sku.TxtCode.Text))
