@@ -831,29 +831,10 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            string searchCondition = string.Empty;
-            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
-                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
-                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                searchCondition = "ChangeDate= '" + txtDate.Text;
-            if (dgv_ShiireKakeritsu.DataSource != null)
+            if (dtMain.Rows.Count > 0)
             {
-                DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-                dvMain.RowFilter = searchCondition;
-                dgv_ShiireKakeritsu.DataSource = dvMain;
+                dgv_ShiireKakeritsu.DataSource = dtMain;
             }
-            //if (dtMain.Rows.Count > 0)
-            //{
-            //    dgv_ShiireKakeritsu.DataSource = dtMain;
-            //}
             else
             {
                 mskbl.ShowMessage("E128");
