@@ -343,7 +343,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
-                txtBtnNameDown.Focus();
+                txtCD.Focus();
             }
         }
 
@@ -470,8 +470,7 @@ namespace TempoRegi_Master_Nyuuryoku
             else
             {
                 lblSearchName.Text = "";
-                mnrk_bl.ShowMessage("E102");
-                txtCD.Focus();
+                txtBtnNameDown.Focus();
             }
         }
 
@@ -486,7 +485,8 @@ namespace TempoRegi_Master_Nyuuryoku
                 //ButtonNO_Check
                 if (lblNameNO.Text.Equals(""))
                 {
-                    MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    bbl.ShowMessage("E236");
                     txtCD.Focus();
                     return;
                 }
@@ -551,7 +551,7 @@ namespace TempoRegi_Master_Nyuuryoku
             //ButtonNO_Check
             if (lblGroupNO.Text.Equals("Btn1_No"))
             {
-                MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bbl.ShowMessage("E236");
                 txtButtomNameUp.Focus();
                 return;
             }
