@@ -26,7 +26,7 @@ namespace ZaikoShoukai
         D_Stock_Entity ds_Entity;
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
-        string adminno = "", SoukoCD = "";
+        string adminno = "", soukocd = "";
         string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate,soukoname;
         int type = 0;
         public  ZaikoShoukai()
@@ -55,7 +55,7 @@ namespace ZaikoShoukai
         {
             string ymd = bbl.GetDate();
             CB_Soko.Bind(ymd,StoreCD);
-            CB_Soko.SelectedIndex = 1;
+            CB_Soko.SelectedValue = SoukoCD;
             CB_year.Bind(ymd);
             CB_Season.Bind(ymd);
             CB_ReserveCD.Bind(ymd);
@@ -96,7 +96,7 @@ namespace ZaikoShoukai
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
-                    SoukoCD = dtData.Rows[0]["倉庫CD"].ToString();
+                    soukocd = dtData.Rows[0]["倉庫CD"].ToString();
                 }
                 else
                 {
@@ -519,7 +519,6 @@ namespace ZaikoShoukai
             if (e.RowIndex != -1)
             {
                 soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
-                //SoukoCD = GV_Zaiko.Rows[e.RowIndex].Cells[6].Value.ToString();
                 skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -529,7 +528,7 @@ namespace ZaikoShoukai
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 changedate = LB_ChangeDate.Text;
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD,soukoname,StoreCD);
+                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd,soukoname,StoreCD);
                 frmVendor.ShowDialog();
             }
         }
