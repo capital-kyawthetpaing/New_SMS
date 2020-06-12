@@ -352,7 +352,7 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
-                        if (!RequireCheck(new Control[] { ScStaff.TxtCode, ScVendor.TxtCode, txtKeijouDate }))
+                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
                             return false;
                         else
                         //if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
@@ -653,7 +653,7 @@ namespace KeihiNyuuryoku
                 if (!string.IsNullOrWhiteSpace(ScStaff.Code))
                 {
                     staffName = Bind_StaffName(ScStaff.Code);
-                    if (!string.IsNullOrWhiteSpace(staffName))
+                    if (string.IsNullOrWhiteSpace(staffName))
                     {
                         khnyk_BL.ShowMessage("E101");
                         ScStaff.SetFocus(1);
@@ -725,6 +725,13 @@ namespace KeihiNyuuryoku
                 name = dtStaff.Rows[0]["Name"].ToString();
             }
             return name;
+        }
+
+        private void ScVendor_Enter(object sender, EventArgs e)
+        {
+            keijoudate = string.IsNullOrWhiteSpace(txtKeijouDate.Text) ? txtKeijouDate.Text : System.DateTime.Now.ToString("yyyy/MM/dd");
+            ScVendor.ChangeDate = keijoudate;
+            ScVendor.Value1 = "2";
         }
     }
 }

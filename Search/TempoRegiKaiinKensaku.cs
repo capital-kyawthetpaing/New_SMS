@@ -83,7 +83,7 @@ namespace Search
                 KanaName = txtKanaName.Text,
                 CustomerName = txtCustomerName.Text
             };
-            Customer.MainStoreCD = chkAnotherStore.Checked == true ? StoreCD : string.Empty;
+            Customer.MainStoreCD = chkAnotherStore.Checked == true ? string.Empty : StoreCD;
 
             return Customer;
         }
