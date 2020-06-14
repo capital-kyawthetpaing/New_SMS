@@ -111,8 +111,9 @@ namespace CKM_Controls
             移動区分,
             移動依頼区分,
             運送会社,
-            配送会社
-
+            配送会社,
+            マークダウン倉庫,   
+            在庫情報
 
         }
 
@@ -551,6 +552,18 @@ namespace CKM_Controls
                     mce.ChangeDate = changeDate;
                     DataTable dtCar = cbl.M_Carrier_Bind(mce);
                     BindCombo("CarrierCD", "CarrierName", dtCar);
+                    break;
+
+                case CboType.マークダウン倉庫:
+                    MarkDownNyuuryoku_BL mdbl = new MarkDownNyuuryoku_BL();
+                    DataTable dtmd = mdbl.M_Souko_BindForMarkDown(type);
+                    BindCombo("SoukoCD", "SoukoName", dtmd);
+                    break;
+
+                case CboType.在庫情報:
+                    mdbl = new MarkDownNyuuryoku_BL();
+                    DataTable dtzi = mdbl.D_StockReplica_Bind();
+                    BindCombo("ReplicaNO", "DateTime", dtzi);
                     break;
             }
         }

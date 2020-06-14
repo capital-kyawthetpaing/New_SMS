@@ -75,6 +75,7 @@
     <Compile Include="D_JuChuu_DL.cs" />
     <Compile Include="D_MailAdress_DL.cs" />
     <Compile Include="D_Mail_DL.cs" />
+    <Compile Include="D_MarkDown_DL.cs" />
     <Compile Include="D_Mitsumori_DL.cs" />
     <Compile Include="D_MonthlyClaims_DL.cs" />
     <Compile Include="D_MonthlyDebt_DL.cs" />
@@ -96,6 +97,7 @@
     <Compile Include="D_Sales_DL.cs" />
     <Compile Include="D_Shipping_DL.cs" />
     <Compile Include="D_SKENDelivery_DL.cs" />
+    <Compile Include="D_StockReplica_DL.cs" />
     <Compile Include="D_Stock_DL.cs" />
     <Compile Include="D_StoreCalculation_DL.cs" />
     <Compile Include="D_StorePayment_DL.cs" />
