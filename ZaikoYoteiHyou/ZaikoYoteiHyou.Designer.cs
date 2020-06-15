@@ -44,6 +44,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 4);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panelDetail
             // 
             this.panelDetail.Controls.Add(this.txtTargetDateFrom);
@@ -66,6 +74,7 @@
             this.txtTargetDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDateFrom.BackColor = System.Drawing.Color.White;
             this.txtTargetDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtTargetDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDateFrom.DecimalPlace = 0;
@@ -73,6 +82,7 @@
             this.txtTargetDateFrom.IntegerPart = 0;
             this.txtTargetDateFrom.IsCorrectDate = true;
             this.txtTargetDateFrom.isEnterKeyDown = false;
+            this.txtTargetDateFrom.isMaxLengthErr = false;
             this.txtTargetDateFrom.IsNumber = true;
             this.txtTargetDateFrom.IsShop = false;
             this.txtTargetDateFrom.Length = 6;
@@ -83,6 +93,7 @@
             this.txtTargetDateFrom.ReadOnly = true;
             this.txtTargetDateFrom.Size = new System.Drawing.Size(100, 19);
             this.txtTargetDateFrom.TabIndex = 0;
+            this.txtTargetDateFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateFrom.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // cboWareHouse
@@ -91,6 +102,7 @@
             this.cboWareHouse.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboWareHouse.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
             this.cboWareHouse.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboWareHouse.Flag = 0;
             this.cboWareHouse.FormattingEnabled = true;
             this.cboWareHouse.Length = 10;
             this.cboWareHouse.Location = new System.Drawing.Point(110, 96);
@@ -106,6 +118,7 @@
             this.cboStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStore.Flag = 0;
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Length = 10;
             this.cboStore.Location = new System.Drawing.Point(110, 58);
@@ -172,6 +185,7 @@
             this.txtTargetDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetDateTo.BackColor = System.Drawing.Color.White;
             this.txtTargetDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetDateTo.ClientColor = System.Drawing.Color.White;
             this.txtTargetDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetDateTo.DecimalPlace = 0;
@@ -179,6 +193,7 @@
             this.txtTargetDateTo.IntegerPart = 0;
             this.txtTargetDateTo.IsCorrectDate = true;
             this.txtTargetDateTo.isEnterKeyDown = false;
+            this.txtTargetDateTo.isMaxLengthErr = false;
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
             this.txtTargetDateTo.Length = 6;
@@ -188,6 +203,7 @@
             this.txtTargetDateTo.Name = "txtTargetDateTo";
             this.txtTargetDateTo.Size = new System.Drawing.Size(100, 19);
             this.txtTargetDateTo.TabIndex = 1;
+            this.txtTargetDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtTargetDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetDateTo_KeyDown);
             // 

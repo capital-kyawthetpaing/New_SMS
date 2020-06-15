@@ -54,6 +54,7 @@ namespace ZaikoYoteiHyou
             string y = DateTime.Now.Year.ToString();
             //txtTargetDateFrom.Text = a.ToString().Substring(0, 7);
             txtTargetDateFrom.Text = y + "/" + m;
+            txtTargetDateFrom.ReadOnly = true;
         }
 
         //public void ComboDispay()
