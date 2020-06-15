@@ -158,6 +158,7 @@
     <Compile Include="ShukkaShoukai_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
+    <Compile Include="SiharaiTouroku_BL.cs" />
     <Compile Include="SiharaiYoteiHyou_BL.cs" />
     <Compile Include="SiiresakiZaikoYoteiHyou_BL.cs" />
     <Compile Include="Site_BL.cs" />

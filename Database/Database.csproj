@@ -81,6 +81,7 @@
     <Content Include="StoreProcedure\D_Billing_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Billing_SelectForPrint.sql" />
     <Content Include="StoreProcedure\D_Billing_Update.sql" />
+    <Content Include="StoreProcedure\D_CheckDeleteSalseNO_ForTempoRegiRyousyuusyo.sql" />
     <Content Include="StoreProcedure\D_CollectPlan_Check.sql" />
     <Content Include="StoreProcedure\D_CollectPlan_SelectAllForSyokai.sql" />
     <Content Include="StoreProcedure\D_CollectPlan_SelectAllForSyosai.sql" />
@@ -92,7 +93,9 @@
     <Content Include="StoreProcedure\D_Collect_SelectMaeukeKin.sql" />
     <Content Include="StoreProcedure\D_CostDetails_Delete.sql" />
     <Content Include="StoreProcedure\D_CostDetails_Insert_Update.sql" />
+    <Content Include="StoreProcedure\D_Cost_Copy_Display.sql" />
     <Content Include="StoreProcedure\D_Cost_Delete.sql" />
+    <Content Include="StoreProcedure\D_Cost_Display.sql" />
     <Content Include="StoreProcedure\D_Cost_Insert_Update.sql" />
     <Content Include="StoreProcedure\D_Cost_Search.sql" />
     <Content Include="StoreProcedure\D_Coupon_Select.sql" />
@@ -115,6 +118,7 @@
     <Content Include="StoreProcedure\D_Exclusive_SelectAll.sql" />
     <Content Include="StoreProcedure\D_FTP_Insert.sql" />
     <Content Include="StoreProcedure\D_FTP_SelectAll.sql" />
+    <Content Include="StoreProcedure\D_GetCustomer_ForTempoRegiPoint.sql" />
     <Content Include="StoreProcedure\D_Instruction_Select.sql" />
     <Content Include="StoreProcedure\D_Instruction_SelectAll.sql" />
     <Content Include="StoreProcedure\D_Instruction_SelectData.sql" />
@@ -171,6 +175,8 @@
     <Content Include="StoreProcedure\D_Pay_LargePayNoSelect.sql" />
     <Content Include="StoreProcedure\D_Pay_PayNoSelect.sql" />
     <Content Include="StoreProcedure\D_Pay_Search.sql" />
+    <Content Include="StoreProcedure\D_Pay_Select01.sql" />
+    <Content Include="StoreProcedure\D_Pay_Select02.sql" />
     <Content Include="StoreProcedure\D_Pay_Select1.sql" />
     <Content Include="StoreProcedure\D_Pay_Select2.sql" />
     <Content Include="StoreProcedure\D_Pay_Select3.sql" />
