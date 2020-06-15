@@ -372,7 +372,7 @@
             this.cboPaymentType.MaxLength = 5;
             this.cboPaymentType.MoveNext = true;
             this.cboPaymentType.Name = "cboPaymentType";
-            this.cboPaymentType.Size = new System.Drawing.Size(150, 20);
+            this.cboPaymentType.Size = new System.Drawing.Size(114, 20);
             this.cboPaymentType.TabIndex = 2;
             this.cboPaymentType.SelectedIndexChanged += new System.EventHandler(this.cboPaymentType_SelectedIndexChanged);
             // 
@@ -421,7 +421,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(329, 50);
+            this.ckM_Label9.Location = new System.Drawing.Point(284, 50);
             this.ckM_Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(70, 12);
@@ -439,7 +439,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(672, 50);
+            this.ckM_Label10.Location = new System.Drawing.Point(518, 50);
             this.ckM_Label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(70, 12);
@@ -457,12 +457,12 @@
             this.cboPaymentSourceAcc.Flag = 0;
             this.cboPaymentSourceAcc.FormattingEnabled = true;
             this.cboPaymentSourceAcc.Length = 10;
-            this.cboPaymentSourceAcc.Location = new System.Drawing.Point(400, 47);
+            this.cboPaymentSourceAcc.Location = new System.Drawing.Point(355, 47);
             this.cboPaymentSourceAcc.Margin = new System.Windows.Forms.Padding(2);
             this.cboPaymentSourceAcc.MaxLength = 5;
             this.cboPaymentSourceAcc.MoveNext = true;
             this.cboPaymentSourceAcc.Name = "cboPaymentSourceAcc";
-            this.cboPaymentSourceAcc.Size = new System.Drawing.Size(200, 20);
+            this.cboPaymentSourceAcc.Size = new System.Drawing.Size(114, 20);
             this.cboPaymentSourceAcc.TabIndex = 3;
             // 
             // btnReleaseAll
@@ -502,7 +502,7 @@
             this.txtBillSettleDate.IsNumber = true;
             this.txtBillSettleDate.IsShop = false;
             this.txtBillSettleDate.Length = 10;
-            this.txtBillSettleDate.Location = new System.Drawing.Point(742, 48);
+            this.txtBillSettleDate.Location = new System.Drawing.Point(588, 48);
             this.txtBillSettleDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBillSettleDate.MaxLength = 10;
             this.txtBillSettleDate.MoveNext = true;
@@ -830,7 +830,9 @@
             // 
             // colChk
             // 
+            this.colChk.DataPropertyName = "colCheck";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "True";
             this.colChk.DefaultCellStyle = dataGridViewCellStyle3;
             this.colChk.FalseValue = "False";
             this.colChk.HeaderText = "";
@@ -851,7 +853,7 @@
             this.colVendorName.HeaderText = "支払先名\t\t\t";
             this.colVendorName.MaxInputLength = 40;
             this.colVendorName.Name = "colVendorName";
-            this.colVendorName.Width = 330;
+            this.colVendorName.Width = 250;
             // 
             // colPaymentdueDate
             // 

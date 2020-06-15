@@ -277,6 +277,7 @@ namespace SiharaiNyuuryoku
                     }
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
+                    dtpayplan.Columns.Add("colCheck", typeof(bool)); foreach (DataRow dr in dtpayplan.Rows) dr["colCheck"] = true;  ///PTK Addded
                     dgvPayment.DataSource = dtpayplan;
                     dgvPayment.Rows[0].Selected = true;
                     Checkstate(true);
@@ -518,6 +519,7 @@ namespace SiharaiNyuuryoku
 
         private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvPayment.CurrentCell.RowIndex > 0)    // PTK  added  (Error Occurred if click on header)
             if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {   
                 if(!string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
