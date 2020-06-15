@@ -15,12 +15,14 @@ namespace SiharaiTouroku
 {
     public partial class SiharaiTouroku_2 : FrmMainForm
     {
+        private const string ProID = "SiharaiTouroku";
+
         Search_Payment_BL spbl = new Search_Payment_BL();
         SiharaiTouroku_BL shnbl = new SiharaiTouroku_BL();
         D_Pay_Entity dpe = new D_Pay_Entity();
-        D_PayPlan_Entity dppe = new D_PayPlan_Entity();
+        //D_PayPlan_Entity dppe = new D_PayPlan_Entity();
         M_Kouza_Entity mkze = new M_Kouza_Entity();
-        DataTable dtSiharai1 = new DataTable();
+        //DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
 
         public DataTable dtGdv = new DataTable();
@@ -28,208 +30,117 @@ namespace SiharaiTouroku
 
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
-        string type = string.Empty;string kouzaCD = string.Empty;string payeeCD = string.Empty;string payPlanDate = string.Empty;
-        public SiharaiTouroku_2(String KouzaCD,String PayeeCD,String PayPlanDate, DataTable dt,DataTable dt1)
+        string type = string.Empty;
+        string kouzaCD = string.Empty;
+        string payeeCD = string.Empty;
+        string payPlanDate = string.Empty;
+        public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt,DataTable dtDetail)
         {
             InitializeComponent();
-            kouzaCD = KouzaCD;
-            payeeCD = PayeeCD;
-            payPlanDate = PayPlanDate;
-            if(dt!=null)
-            {
-                dtGdv = dt; 
-                DataRow[] tblROWS = dt.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
-                if (tblROWS.Length > 0)
-                    dtSiharai1 = tblROWS.CopyToDataTable();
-            }
-            
-            if (dt1!=null)
-            {
-                dtDetails = dt1;
-                DataRow[] tblROWS1 = dt1.Select("PayeeCD = '" + PayeeCD + "'" + "and PayPlanDate = '" + PayPlanDate + "'");
-                if (tblROWS1.Length > 0)
-                    dtSiharai2 = tblROWS1.CopyToDataTable();
-            }
+            dpe = dpe1;
+
+            kouzaCD = dpe.MotoKouzaCD;
+            payeeCD = dpe.PayeeCD;
+            payPlanDate = dpe.PayPlanDate;
+
+            dtGdv = dt;
+
+            dtDetails = dtDetail;
+            DataRow[] tblROWS1 = dtDetail.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+            if (tblROWS1.Length > 0)
+                dtSiharai2 = tblROWS1.CopyToDataTable();
         }
 
         private void SiharaiTouroku_2_Load(object sender, EventArgs e)
         {
-            #region close
-            //F9Visible = false;
-            //if (type == "1")
-            //{
-            //    DataTable dt2 = new DataTable();
-            //    dt2 = shnbl.D_Pay_Select2(dpe);
-            //    if (dt2.Rows.Count > 0)
-            //    {
-            //        txtPaymentDueDate.Text = dt2.Rows[0]["PayDate"].ToString();
-            //        txtPaymentDestination.Text = dt2.Rows[0]["PayeeCD"].ToString();
-            //        lblPaymentDestination.Text = dt2.Rows[0]["VendorName"].ToString();
-            //        txtTransferAmount.Text = dt2.Rows[0]["TransferGaku"].ToString();
-            //        SC_BankCD.TxtCode.Text = dt2.Rows[0]["BankCD"].ToString();
-            //        SC_BankCD.LabelText = dt2.Rows[0]["BankName"].ToString();
-            //        SC_BranchCD.TxtCode.Text = dt2.Rows[0]["BranchCD"].ToString();
-            //        SC_BranchCD.LabelText = dt2.Rows[0]["BranchName"].ToString();
-            //        txtKouzaKBN.Text = dt2.Rows[0]["KouzaKBN"].ToString();
-            //        txtAccNo.Text = dt2.Rows[0]["KouzaNO"].ToString();
-            //        txtMeigi.Text = dt2.Rows[0]["KouzaMeigi"].ToString();
-            //        txtFeeKBN.Text = dt2.Rows[0]["FeeKBN"].ToString();
-            //        txtAmount.Text = dt2.Rows[0]["TransferFeeGaku"].ToString();
-            //        txtCash.Text = dt2.Rows[0]["CashGaku"].ToString();
-            //        txtOffsetGaku.Text = dt2.Rows[0]["OffsetGaku"].ToString();
-            //        txtBill.Text = dt2.Rows[0]["BillGaku"].ToString();
-            //        txtBillNo.Text = dt2.Rows[0]["BillNO"].ToString();
-            //        txtBillDate.Text = dt2.Rows[0]["BillDate"].ToString();
-            //        txtElectronicBone.Text = dt2.Rows[0]["ERMCGaku"].ToString();
-            //        txtElectronicRecordNo.Text = dt2.Rows[0]["ERMCNO"].ToString();
-            //        txtSettlementDate2.Text = dt2.Rows[0]["ERMCDate"].ToString();
-            //        txtOther1.Text = dt2.Rows[0]["OtherGaku1"].ToString();
-            //        SC_HanyouKeyStart1.TxtCode.Text = dt2.Rows[0]["Account1"].ToString();
-            //        SC_HanyouKeyEnd1.TxtCode.Text = dt2.Rows[0]["SubAccount1"].ToString();
-            //        txtOther2.Text = dt2.Rows[0]["OtherGaku2"].ToString();
-            //        SC_HanyouKeyStart2.TxtCode.Text = dt2.Rows[0]["Account2"].ToString();
-            //        SC_HanyouKeyEnd2.TxtCode.Text = dt2.Rows[0]["SubAccount2"].ToString();
-            //    }
-            //    DataTable dt3 = new DataTable();
-            //    dt3 = shnbl.D_Pay_Select3(dpe);
-            //    dgvSearchPayment.DataSource = dt3;
-            //}
-            //else if (type == "2")
-            //{
-            //    DataTable dt4 = new DataTable();
+            try
+            {
+                base.InProgramID = ProID;
 
-            //    dt4 = shnbl.D_Pay_SelectForPayPlanDate2(dppe);
-            //    if (dt4.Rows.Count > 0)
-            //    {
-            //        txtPaymentDueDate.Text = dt4.Rows[0]["PayPlanDate"].ToString();
-            //        txtPaymentDestination.Text = dt4.Rows[0]["PayeeCD"].ToString();
-            //        lblPaymentDestination.Text = dt4.Rows[0]["VendorName"].ToString();
-            //        //txtTransferAmount.Text = dt4.Rows[0]["Number"].ToString();
-            //        SC_BankCD.TxtCode.Text = dt4.Rows[0]["BankCD"].ToString();
-            //        SC_BankCD.LabelText = dt4.Rows[0]["BankName"].ToString();
-            //        SC_BranchCD.TxtCode.Text = dt4.Rows[0]["BranchCD"].ToString();
-            //        SC_BranchCD.LabelText = dt4.Rows[0]["BranchName"].ToString();
-            //        txtKouzaKBN.Text = dt4.Rows[0]["KouzaKBN"].ToString();
-            //        txtAccNo.Text = dt4.Rows[0]["KouzaNO"].ToString();
-            //        txtMeigi.Text = dt4.Rows[0]["KouzaMeigi"].ToString();
-            //        txtFeeKBN.Text = dt4.Rows[0]["FeeKBN"].ToString();
-            //        txtAmount.Text = dt4.Rows[0]["Fee"].ToString();
-            //        txtCash.Text = dt4.Rows[0]["CashGaku"].ToString();
-            //        txtOffsetGaku.Text = dt4.Rows[0]["OffsetGaku"].ToString();
-            //        txtBill.Text = dt4.Rows[0]["BillGaku"].ToString();
-            //        txtBillNo.Text = dt4.Rows[0]["BillNO"].ToString();
-            //        txtBillDate.Text = dt4.Rows[0]["BillDate"].ToString();
-            //        txtElectronicBone.Text = dt4.Rows[0]["ERMCGaku"].ToString();
-            //        txtElectronicRecordNo.Text = dt4.Rows[0]["ERMCNO"].ToString();
-            //        txtSettlementDate2.Text = dt4.Rows[0]["ERMCDate"].ToString();
-            //        txtOther1.Text = dt4.Rows[0]["OtherGaku1"].ToString();
-            //        SC_HanyouKeyStart1.TxtCode.Text = dt4.Rows[0]["Account1"].ToString();
-            //        SC_HanyouKeyEnd1.TxtCode.Text = dt4.Rows[0]["SubAccount1"].ToString();
-            //        txtOther2.Text = dt4.Rows[0]["OtherGaku2"].ToString();
-            //        SC_HanyouKeyStart2.TxtCode.Text = dt4.Rows[0]["Account2"].ToString();
-            //        SC_HanyouKeyEnd2.TxtCode.Text = dt4.Rows[0]["SubAccount2"].ToString();
-            //    }
-            //}
-            #endregion
+                Btn_F1.Text = "戻る(F1)";
+                Btn_F2.Text = "";
+                Btn_F3.Text = "";
+                Btn_F4.Text = "";
+                Btn_F5.Text = "";
+                Btn_F7.Text = "";
+                Btn_F8.Text = "";
+                Btn_F9.Text = "";
+                Btn_F10.Text = "";
+                Btn_F11.Text = "";
+                Btn_F12.Text = "登録(F12)";
 
-            //SetFunctionLabel(EProMode.MENTE);
+                //起動時共通処理
+                base.StartProgram();
 
-            InProgramID = "SiharaiTouroku_2";
-            Btn_F5.Text = "ｷｬﾝｾﾙ(F5)";
-            StartProgram();
+                BindData();
 
-            BindData();
+                LabelDataBind();
 
-            LabelDataBind();
+                SelectKeyData();
 
-            SelectKeyData();
+                txtTransferAmount.Focus();
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                EndSec();
 
-            txtMeigi.Focus();
-
-            //SetRequireField();
+            }
         }
 
         private void BindData()
         {
-            txtPayPlanDate.Text = dtSiharai1.Rows[0]["PayPlanDate"].ToString();
-            txtPayeeCD.Text = dtSiharai1.Rows[0]["PayeeCD"].ToString();
-            lblVendorName.Text = dtSiharai2.Rows[0]["VendorName"].ToString();
-            if(dtSiharai1.Rows.Count>=0 || dtSiharai1!=null)
-                dgvSearchPayment.DataSource = dtSiharai1;
-            //if ()
-            //{
-            //    //SC_BankCD.TxtCode.Text = dtSiharai1.Rows[0]["BankCD"].ToString();
-            //    //SC_BankCD.LabelText = dtSiharai1.Rows[0]["BankName"].ToString();
-            //    //SC_BranchCD.TxtCode.Text = dtSiharai1.Rows[0]["BranchCD"].ToString();
-            //    //SC_BranchCD.LabelText = dtSiharai1.Rows[0]["BranchName"].ToString();
-            //    //txtKouzaKBN.Text = dtSiharai1.Rows[0]["KouzaKBN"].ToString();
-            //    //txtAccNo.Text = dtSiharai1.Rows[0]["KouzaNO"].ToString();
-            //    //txtMeigi.Text = dtSiharai1.Rows[0]["KouzaMeigi"].ToString();
-            //    //txtFeeKBN.Text = dtSiharai1.Rows[0]["FeeKBN"].ToString();
-            //    //txtAmount.Text = dtSiharai1.Rows[0]["Fee"].ToString();
-            //    //txtCash.Text = dtSiharai1.Rows[0]["CashGaku"].ToString();
-            //    //txtOffsetGaku.Text = dtSiharai1.Rows[0]["OffsetGaku"].ToString();
-            //    //txtBill.Text = dtSiharai1.Rows[0]["BillGaku"].ToString();
-            //    //txtBillNo.Text = dtSiharai1.Rows[0]["BillNO"].ToString();
-            //    //txtBillDate.Text = dtSiharai1.Rows[0]["BillDate"].ToString();
-            //    //txtElectronicBone.Text = dtSiharai1.Rows[0]["ERMCGaku"].ToString();
-            //    //txtElectronicRecordNo.Text = dtSiharai1.Rows[0]["ERMCNO"].ToString();
-            //    //txtSettlementDate2.Text = dtSiharai1.Rows[0]["ERMCDate"].ToString();
-            //    //txtOther1.Text = dtSiharai1.Rows[0]["OtherGaku1"].ToString();
-            //    //SC_HanyouKeyStart1.TxtCode.Text = dtSiharai1.Rows[0]["Account1"].ToString();
-            //    //SC_HanyouKeyEnd1.TxtCode.Text = dtSiharai1.Rows[0]["SubAccount1"].ToString();
-            //    //txtOther2.Text = dtSiharai1.Rows[0]["OtherGaku2"].ToString();
-            //    //SC_HanyouKeyStart2.TxtCode.Text = dtSiharai1.Rows[0]["Account2"].ToString();
-            //    //SC_HanyouKeyEnd2.TxtCode.Text = dtSiharai1.Rows[0]["SubAccount2"].ToString();
+            txtPayPlanDate.Text = dpe.PayPlanDate;
+            txtPayeeCD.Text = dpe.PayeeCD;
+            lblVendorName.Text = dpe.PayeeName;
+            dgvSearchPayment.DataSource = dtSiharai2;
 
-            //dgvSearchPayment.DataSource = dtSiharai1;
-            // }
-
-            if (dtSiharai2.Rows.Count >= 0 || dtSiharai2 != null)
+            DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+            if (tblROWS.Length > 0)
+            //dtSiharai1 = tblROWS.CopyToDataTable();
             {
-                dgvSearchPayment.DataSource = dtSiharai1;
-                txtTransferAmount.Text = dtSiharai2.Rows[0]["TransferGaku"].ToString();
-                SC_BankCD.TxtCode.Text = dtSiharai2.Rows[0]["BankCD"].ToString();
-                SC_BankCD.LabelText = dtSiharai2.Rows[0]["BankName"].ToString();
-                SC_BranchCD.TxtCode.Text = dtSiharai2.Rows[0]["BranchCD"].ToString();
-                SC_BranchCD.LabelText = dtSiharai2.Rows[0]["BranchName"].ToString();
-                txtKouzaKBN.Text = dtSiharai2.Rows[0]["KouzaKBN"].ToString();
-                txtAccNo.Text = dtSiharai2.Rows[0]["KouzaNO"].ToString();
-                txtMeigi.Text = dtSiharai2.Rows[0]["KouzaMeigi"].ToString();
-                txtFeeKBN.Text = dtSiharai2.Rows[0]["FeeKBN"].ToString();
-                txtAmount.Text = dtSiharai2.Rows[0]["Fee"].ToString();
-                txtCash.Text = dtSiharai2.Rows[0]["CashGaku"].ToString();
-                txtOffsetGaku.Text = dtSiharai2.Rows[0]["OffsetGaku"].ToString();
-                txtBill.Text = dtSiharai2.Rows[0]["BillGaku"].ToString();
-                txtBillNo.Text = dtSiharai2.Rows[0]["BillNO"].ToString();
-                txtBillDate.Text = dtSiharai2.Rows[0]["BillDate"].ToString();
-                txtElectronicBone.Text = dtSiharai2.Rows[0]["ERMCGaku"].ToString();
-                txtElectronicRecordNo.Text = dtSiharai2.Rows[0]["ERMCNO"].ToString();
-                txtSettlementDate2.Text = dtSiharai2.Rows[0]["ERMCDate"].ToString();
-                txtOther1.Text = dtSiharai2.Rows[0]["OtherGaku1"].ToString();
-                SC_HanyouKeyStart1.TxtCode.Text = dtSiharai2.Rows[0]["Account1"].ToString();
-                SC_HanyouKeyStart1.LabelText = dtSiharai2.Rows[0]["start1"].ToString();
-                SC_HanyouKeyEnd1.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount1"].ToString();
-                SC_HanyouKeyEnd1.LabelText = dtSiharai2.Rows[0]["end1label"].ToString();
-                txtOther2.Text = dtSiharai2.Rows[0]["OtherGaku2"].ToString();
-                SC_HanyouKeyStart2.TxtCode.Text = dtSiharai2.Rows[0]["Account2"].ToString();
-                SC_HanyouKeyStart2.LabelText = dtSiharai2.Rows[0]["start2"].ToString();
-                SC_HanyouKeyEnd2.TxtCode.Text = dtSiharai2.Rows[0]["SubAccount2"].ToString();
-                SC_HanyouKeyEnd2.LabelText = dtSiharai2.Rows[0]["end2label"].ToString();
-
+                txtTransferAmount.Text = tblROWS[0]["TransferGaku"].ToString();
+                SC_BankCD.TxtCode.Text = tblROWS[0]["BankCD"].ToString();
+                SC_BankCD.LabelText = tblROWS[0]["BankName"].ToString();
+                SC_BranchCD.TxtCode.Text = tblROWS[0]["BranchCD"].ToString();
+                SC_BranchCD.LabelText = tblROWS[0]["BranchName"].ToString();
+                txtKouzaKBN.Text = tblROWS[0]["KouzaKBN"].ToString();
+                txtAccNo.Text = tblROWS[0]["KouzaNO"].ToString();
+                txtMeigi.Text = tblROWS[0]["KouzaMeigi"].ToString();
+                txtFeeKBN.Text = tblROWS[0]["FeeKBN"].ToString();
+                //txtAmount.Text = tblROWS[0]["Fee"].ToString();
+                txtAmount.Text = tblROWS[0]["TransferFeeGaku"].ToString();
+                txtCash.Text = tblROWS[0]["CashGaku"].ToString();
+                txtOffsetGaku.Text = tblROWS[0]["OffsetGaku"].ToString();
+                txtBill.Text = tblROWS[0]["BillGaku"].ToString();
+                txtBillNo.Text = tblROWS[0]["BillNO"].ToString();
+                txtBillDate.Text = tblROWS[0]["BillDate"].ToString();
+                txtElectronicBone.Text = tblROWS[0]["ERMCGaku"].ToString();
+                txtElectronicRecordNo.Text = tblROWS[0]["ERMCNO"].ToString();
+                txtSettlementDate2.Text = tblROWS[0]["ERMCDate"].ToString();
+                txtOther1.Text = tblROWS[0]["OtherGaku1"].ToString();
+                SC_HanyouKeyStart1.TxtCode.Text = tblROWS[0]["Account1"].ToString();
+                SC_HanyouKeyStart1.LabelText = tblROWS[0]["start1"].ToString();
+                SC_HanyouKeyEnd1.TxtCode.Text = tblROWS[0]["SubAccount1"].ToString();
+                SC_HanyouKeyEnd1.LabelText = tblROWS[0]["end1label"].ToString();
+                txtOther2.Text = tblROWS[0]["OtherGaku2"].ToString();
+                SC_HanyouKeyStart2.TxtCode.Text = tblROWS[0]["Account2"].ToString();
+                SC_HanyouKeyStart2.LabelText = tblROWS[0]["start2"].ToString();
+                SC_HanyouKeyEnd2.TxtCode.Text = tblROWS[0]["SubAccount2"].ToString();
+                SC_HanyouKeyEnd2.LabelText = tblROWS[0]["end2label"].ToString();
             }
-            F9Visible = false;
         }
 
         private void SelectKeyData()
         {
-            dtIDName1=shnbl.M_Multipurpose_SelectIDName("217");
+            dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
             dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
         }
 
         private void SetRequireField()
         {
-            if (Convert.ToInt32(txtTransferAmount.Text)>0)
+            if (bbl.Z_Set(txtTransferAmount.Text) > 0)
             {
                 SC_BankCD.TxtCode.Require(true);
                 SC_BranchCD.TxtCode.Require(true);
@@ -238,26 +149,25 @@ namespace SiharaiTouroku
                 txtMeigi.Require(true);
                 txtFeeKBN.Require(true);
                 txtAmount.Require(true);
-
             }
 
-            if(Convert.ToInt32(txtBill.Text)>0)
+            if(bbl.Z_Set(txtBill.Text)>0)
             {
                 txtBillNo.Require(true);
                 txtBillDate.Require(true);
 
             }
-            if(Convert.ToInt32(txtElectronicBone.Text)>0)
+            if(bbl.Z_Set(txtElectronicBone.Text)>0)
             {
                 txtElectronicRecordNo.Require(true);
                 txtSettlementDate2.Require(true);
             }
-            if(Convert.ToInt32(txtOther1.Text)>0)
+            if(bbl.Z_Set(txtOther1.Text)>0)
             {
                 SC_HanyouKeyStart1.TxtCode.Require(true);
                 SC_HanyouKeyEnd1.TxtCode.Require(true);
             }
-            if (Convert.ToInt32(txtOther2.Text) > 0)
+            if (bbl.Z_Set(txtOther2.Text) > 0)
             {
                 SC_HanyouKeyStart2.TxtCode.Require(true);
                 SC_HanyouKeyEnd2.TxtCode.Require(true);
@@ -296,7 +206,6 @@ namespace SiharaiTouroku
                     SendData();
             }
                 
-
         }
 
 
@@ -306,12 +215,12 @@ namespace SiharaiTouroku
             if(dtGdv.Rows.Count>0)
             {
                 DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
-                foreach(DataRow row in tblROWS)
-                {
-                    dtGdv.Rows.Remove(row);
-                    dtGdv.AcceptChanges();
-                }
-                dtGdv.Merge(dtSiharai1);
+                //foreach(DataRow row in tblROWS)
+                //{
+                //    dtGdv.Rows.Remove(row);
+                //    dtGdv.AcceptChanges();
+                //}
+                //dtGdv.Merge(dtSiharai1);
                     
             }
             if (dtDetails.Rows.Count > 0)
@@ -407,7 +316,7 @@ namespace SiharaiTouroku
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
                     return false;
 
-                SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
+                SC_BankCD.ChangeDate = dpe.PayDate;
                 if (!SC_BankCD.IsExists(2))
                 {
                     bbl.ShowMessage("E101");

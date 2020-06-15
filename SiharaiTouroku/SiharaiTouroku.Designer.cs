@@ -299,6 +299,7 @@
             this.dgvPayment.Name = "dgvPayment";
             this.dgvPayment.ReadOnly = true;
             this.dgvPayment.RowTemplate.Height = 20;
+            this.dgvPayment.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPayment.Size = new System.Drawing.Size(1304, 350);
             this.dgvPayment.TabIndex = 7;
             this.dgvPayment.UseRowNo = true;
@@ -730,6 +731,7 @@
             this.txtBillSettleDate.TabIndex = 4;
             this.txtBillSettleDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBillSettleDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtBillSettleDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBillSettleDate_KeyDown);
             // 
             // btnSelectAll
             // 
