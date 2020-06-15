@@ -646,7 +646,8 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnChoice_Click(object sender, EventArgs e)
         {
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            dgv_ShiireKakeritsu.DataSource = dtMain;
             if (dgv_ShiireKakeritsu.Rows.Count > 0)
             {
                 string searchCondition = string.Empty;
