@@ -265,5 +265,14 @@ namespace DL
             };
             return SelectData(dic, "M_Souko_BindForZaikoshoukai");
         }
+
+        public DataTable M_Souko_BindForMarkDown(string StoreAuthorizationsCD)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@StoreAuthorizationsCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = StoreAuthorizationsCD } },
+            };
+            return SelectData(dic, "M_Souko_BindForMarkDown");
+        }
     }
 }

@@ -86,11 +86,14 @@
     <Compile Include="Kouza_BL.cs" />
     <Compile Include="Login_BL.cs" />
     <Compile Include="MakerBrand_BL.cs" />
+    <Compile Include="MarkDownIchiran_BL.cs" />
+    <Compile Include="MarkDownNyuuryoku_BL.cs" />
     <Compile Include="MasterToroku_Ginkou_BL.cs" />
     <Compile Include="MasterTouroku_Brand_BL.cs" />
     <Compile Include="MasterTouroku_Calendar_BL.cs" />
     <Compile Include="MasterTouroku_GinkouKouza_BL.cs" />
     <Compile Include="MasterTouroku_GinkouShiten_BL.cs" />
+    <Compile Include="MasterTouroku_HacchuuPrice_BL.cs" />
     <Compile Include="MasterTouroku_Hanyou_BL.cs" />
     <Compile Include="MasterTouroku_Renban_BL.cs" />
     <Compile Include="MasterTouroku_Settouchi_BL.cs" />
@@ -155,6 +158,7 @@
     <Compile Include="ShukkaShoukai_BL.cs" />
     <Compile Include="ShukkaUriageUpdate_BL.cs" />
     <Compile Include="SiharaiNyuuryoku_BL.cs" />
+    <Compile Include="SiharaiTouroku_BL.cs" />
     <Compile Include="SiharaiYoteiHyou_BL.cs" />
     <Compile Include="SiiresakiZaikoYoteiHyou_BL.cs" />
     <Compile Include="Site_BL.cs" />

@@ -32,7 +32,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://202.223.48.145/SMS/SMS-GLOBE/</UpdateUrl>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>35</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -150,6 +150,12 @@
     <Compile Include="Store_Message.Designer.cs">
       <DependentUpon>Store_Message.cs</DependentUpon>
     </Compile>
+    <Compile Include="task Enlarge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="task Enlarge.Designer.cs">
+      <DependentUpon>task Enlarge.cs</DependentUpon>
+    </Compile>
     <Compile Include="TennicLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </Compile>
     <EmbeddedResource Include="Store_Message.resx">
       <DependentUpon>Store_Message.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="task Enlarge.resx">
+      <DependentUpon>task Enlarge.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TennicLogin.resx">
       <DependentUpon>TennicLogin.cs</DependentUpon>

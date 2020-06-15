@@ -309,6 +309,10 @@
             // 
             this.PanelSearch.TabIndex = 7;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -936,11 +940,11 @@
             this.IMN_GENER2_7.IsNumber = true;
             this.IMN_GENER2_7.IsShop = false;
             this.IMN_GENER2_7.Length = 9;
-            this.IMN_GENER2_7.Location = new System.Drawing.Point(1201, 285);
+            this.IMN_GENER2_7.Location = new System.Drawing.Point(1202, 285);
             this.IMN_GENER2_7.MaxLength = 9;
             this.IMN_GENER2_7.MoveNext = true;
             this.IMN_GENER2_7.Name = "IMN_GENER2_7";
-            this.IMN_GENER2_7.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_7.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_7.TabIndex = 621;
             this.IMN_GENER2_7.Tag = "7";
             this.IMN_GENER2_7.Text = "99,999,999";
@@ -1214,7 +1218,7 @@
             // 
             // IMN_GENER_7
             // 
-            this.IMN_GENER_7.AllowMinus = false;
+            this.IMN_GENER_7.AllowMinus = true;
             this.IMN_GENER_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_7.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1265,7 +1269,7 @@
             this.IMN_MEMBR_7.MaxLength = 5;
             this.IMN_MEMBR_7.MoveNext = true;
             this.IMN_MEMBR_7.Name = "IMN_MEMBR_7";
-            this.IMN_MEMBR_7.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_7.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_7.TabIndex = 622;
             this.IMN_MEMBR_7.Tag = "7";
             this.IMN_MEMBR_7.Text = "XXXX";
@@ -1332,7 +1336,7 @@
             // 
             // IMN_SALEP2_7
             // 
-            this.IMN_SALEP2_7.AllowMinus = false;
+            this.IMN_SALEP2_7.AllowMinus = true;
             this.IMN_SALEP2_7.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_7.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1349,11 +1353,11 @@
             this.IMN_SALEP2_7.IsNumber = true;
             this.IMN_SALEP2_7.IsShop = false;
             this.IMN_SALEP2_7.Length = 11;
-            this.IMN_SALEP2_7.Location = new System.Drawing.Point(1232, 285);
+            this.IMN_SALEP2_7.Location = new System.Drawing.Point(1269, 285);
             this.IMN_SALEP2_7.MaxLength = 11;
             this.IMN_SALEP2_7.MoveNext = true;
             this.IMN_SALEP2_7.Name = "IMN_SALEP2_7";
-            this.IMN_SALEP2_7.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_7.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_7.TabIndex = 624;
             this.IMN_SALEP2_7.Tag = "7";
             this.IMN_SALEP2_7.Text = "999,999,999";
@@ -1425,11 +1429,11 @@
             this.IMN_GENER2_6.IsNumber = true;
             this.IMN_GENER2_6.IsShop = false;
             this.IMN_GENER2_6.Length = 9;
-            this.IMN_GENER2_6.Location = new System.Drawing.Point(1201, 247);
+            this.IMN_GENER2_6.Location = new System.Drawing.Point(1202, 247);
             this.IMN_GENER2_6.MaxLength = 9;
             this.IMN_GENER2_6.MoveNext = true;
             this.IMN_GENER2_6.Name = "IMN_GENER2_6";
-            this.IMN_GENER2_6.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_6.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_6.TabIndex = 602;
             this.IMN_GENER2_6.Tag = "6";
             this.IMN_GENER2_6.Text = "99,999,999";
@@ -1703,7 +1707,7 @@
             // 
             // IMN_GENER_6
             // 
-            this.IMN_GENER_6.AllowMinus = false;
+            this.IMN_GENER_6.AllowMinus = true;
             this.IMN_GENER_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_6.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1754,7 +1758,7 @@
             this.IMN_MEMBR_6.MaxLength = 5;
             this.IMN_MEMBR_6.MoveNext = true;
             this.IMN_MEMBR_6.Name = "IMN_MEMBR_6";
-            this.IMN_MEMBR_6.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_6.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_6.TabIndex = 603;
             this.IMN_MEMBR_6.Tag = "6";
             this.IMN_MEMBR_6.Text = "XXXX";
@@ -1821,7 +1825,7 @@
             // 
             // IMN_SALEP2_6
             // 
-            this.IMN_SALEP2_6.AllowMinus = false;
+            this.IMN_SALEP2_6.AllowMinus = true;
             this.IMN_SALEP2_6.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_6.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -1838,11 +1842,11 @@
             this.IMN_SALEP2_6.IsNumber = true;
             this.IMN_SALEP2_6.IsShop = false;
             this.IMN_SALEP2_6.Length = 11;
-            this.IMN_SALEP2_6.Location = new System.Drawing.Point(1232, 247);
+            this.IMN_SALEP2_6.Location = new System.Drawing.Point(1269, 247);
             this.IMN_SALEP2_6.MaxLength = 11;
             this.IMN_SALEP2_6.MoveNext = true;
             this.IMN_SALEP2_6.Name = "IMN_SALEP2_6";
-            this.IMN_SALEP2_6.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_6.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_6.TabIndex = 605;
             this.IMN_SALEP2_6.Tag = "6";
             this.IMN_SALEP2_6.Text = "999,999,999";
@@ -1914,11 +1918,11 @@
             this.IMN_GENER2_5.IsNumber = true;
             this.IMN_GENER2_5.IsShop = false;
             this.IMN_GENER2_5.Length = 9;
-            this.IMN_GENER2_5.Location = new System.Drawing.Point(1201, 209);
+            this.IMN_GENER2_5.Location = new System.Drawing.Point(1202, 209);
             this.IMN_GENER2_5.MaxLength = 9;
             this.IMN_GENER2_5.MoveNext = true;
             this.IMN_GENER2_5.Name = "IMN_GENER2_5";
-            this.IMN_GENER2_5.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_5.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_5.TabIndex = 583;
             this.IMN_GENER2_5.Tag = "5";
             this.IMN_GENER2_5.Text = "99,999,999";
@@ -2192,7 +2196,7 @@
             // 
             // IMN_GENER_5
             // 
-            this.IMN_GENER_5.AllowMinus = false;
+            this.IMN_GENER_5.AllowMinus = true;
             this.IMN_GENER_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_5.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2243,7 +2247,7 @@
             this.IMN_MEMBR_5.MaxLength = 5;
             this.IMN_MEMBR_5.MoveNext = true;
             this.IMN_MEMBR_5.Name = "IMN_MEMBR_5";
-            this.IMN_MEMBR_5.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_5.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_5.TabIndex = 584;
             this.IMN_MEMBR_5.Tag = "5";
             this.IMN_MEMBR_5.Text = "XXXX";
@@ -2310,7 +2314,7 @@
             // 
             // IMN_SALEP2_5
             // 
-            this.IMN_SALEP2_5.AllowMinus = false;
+            this.IMN_SALEP2_5.AllowMinus = true;
             this.IMN_SALEP2_5.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_5.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2327,11 +2331,11 @@
             this.IMN_SALEP2_5.IsNumber = true;
             this.IMN_SALEP2_5.IsShop = false;
             this.IMN_SALEP2_5.Length = 11;
-            this.IMN_SALEP2_5.Location = new System.Drawing.Point(1232, 209);
+            this.IMN_SALEP2_5.Location = new System.Drawing.Point(1269, 209);
             this.IMN_SALEP2_5.MaxLength = 11;
             this.IMN_SALEP2_5.MoveNext = true;
             this.IMN_SALEP2_5.Name = "IMN_SALEP2_5";
-            this.IMN_SALEP2_5.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_5.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_5.TabIndex = 586;
             this.IMN_SALEP2_5.Tag = "5";
             this.IMN_SALEP2_5.Text = "999,999,999";
@@ -2403,11 +2407,11 @@
             this.IMN_GENER2_4.IsNumber = true;
             this.IMN_GENER2_4.IsShop = false;
             this.IMN_GENER2_4.Length = 9;
-            this.IMN_GENER2_4.Location = new System.Drawing.Point(1201, 171);
+            this.IMN_GENER2_4.Location = new System.Drawing.Point(1202, 171);
             this.IMN_GENER2_4.MaxLength = 9;
             this.IMN_GENER2_4.MoveNext = true;
             this.IMN_GENER2_4.Name = "IMN_GENER2_4";
-            this.IMN_GENER2_4.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_4.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_4.TabIndex = 564;
             this.IMN_GENER2_4.Tag = "4";
             this.IMN_GENER2_4.Text = "99,999,999";
@@ -2681,7 +2685,7 @@
             // 
             // IMN_GENER_4
             // 
-            this.IMN_GENER_4.AllowMinus = false;
+            this.IMN_GENER_4.AllowMinus = true;
             this.IMN_GENER_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_4.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2732,7 +2736,7 @@
             this.IMN_MEMBR_4.MaxLength = 5;
             this.IMN_MEMBR_4.MoveNext = true;
             this.IMN_MEMBR_4.Name = "IMN_MEMBR_4";
-            this.IMN_MEMBR_4.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_4.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_4.TabIndex = 565;
             this.IMN_MEMBR_4.Tag = "4";
             this.IMN_MEMBR_4.Text = "XXXX";
@@ -2799,7 +2803,7 @@
             // 
             // IMN_SALEP2_4
             // 
-            this.IMN_SALEP2_4.AllowMinus = false;
+            this.IMN_SALEP2_4.AllowMinus = true;
             this.IMN_SALEP2_4.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_4.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -2816,11 +2820,11 @@
             this.IMN_SALEP2_4.IsNumber = true;
             this.IMN_SALEP2_4.IsShop = false;
             this.IMN_SALEP2_4.Length = 11;
-            this.IMN_SALEP2_4.Location = new System.Drawing.Point(1232, 171);
+            this.IMN_SALEP2_4.Location = new System.Drawing.Point(1269, 171);
             this.IMN_SALEP2_4.MaxLength = 11;
             this.IMN_SALEP2_4.MoveNext = true;
             this.IMN_SALEP2_4.Name = "IMN_SALEP2_4";
-            this.IMN_SALEP2_4.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_4.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_4.TabIndex = 567;
             this.IMN_SALEP2_4.Tag = "4";
             this.IMN_SALEP2_4.Text = "999,999,999";
@@ -2892,11 +2896,11 @@
             this.IMN_GENER2_3.IsNumber = true;
             this.IMN_GENER2_3.IsShop = false;
             this.IMN_GENER2_3.Length = 9;
-            this.IMN_GENER2_3.Location = new System.Drawing.Point(1201, 133);
+            this.IMN_GENER2_3.Location = new System.Drawing.Point(1202, 133);
             this.IMN_GENER2_3.MaxLength = 9;
             this.IMN_GENER2_3.MoveNext = true;
             this.IMN_GENER2_3.Name = "IMN_GENER2_3";
-            this.IMN_GENER2_3.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_3.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_3.TabIndex = 544;
             this.IMN_GENER2_3.Tag = "3";
             this.IMN_GENER2_3.Text = "99,999,999";
@@ -3170,7 +3174,7 @@
             // 
             // IMN_GENER_3
             // 
-            this.IMN_GENER_3.AllowMinus = false;
+            this.IMN_GENER_3.AllowMinus = true;
             this.IMN_GENER_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_3.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3221,7 +3225,7 @@
             this.IMN_MEMBR_3.MaxLength = 5;
             this.IMN_MEMBR_3.MoveNext = true;
             this.IMN_MEMBR_3.Name = "IMN_MEMBR_3";
-            this.IMN_MEMBR_3.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_3.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_3.TabIndex = 545;
             this.IMN_MEMBR_3.Tag = "3";
             this.IMN_MEMBR_3.Text = "XXXX";
@@ -3288,7 +3292,7 @@
             // 
             // IMN_SALEP2_3
             // 
-            this.IMN_SALEP2_3.AllowMinus = false;
+            this.IMN_SALEP2_3.AllowMinus = true;
             this.IMN_SALEP2_3.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_3.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -3305,11 +3309,11 @@
             this.IMN_SALEP2_3.IsNumber = true;
             this.IMN_SALEP2_3.IsShop = false;
             this.IMN_SALEP2_3.Length = 11;
-            this.IMN_SALEP2_3.Location = new System.Drawing.Point(1232, 133);
+            this.IMN_SALEP2_3.Location = new System.Drawing.Point(1269, 133);
             this.IMN_SALEP2_3.MaxLength = 11;
             this.IMN_SALEP2_3.MoveNext = true;
             this.IMN_SALEP2_3.Name = "IMN_SALEP2_3";
-            this.IMN_SALEP2_3.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_3.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_3.TabIndex = 547;
             this.IMN_SALEP2_3.Tag = "3";
             this.IMN_SALEP2_3.Text = "999,999,999";
@@ -3411,11 +3415,11 @@
             this.IMN_GENER2_2.IsNumber = true;
             this.IMN_GENER2_2.IsShop = false;
             this.IMN_GENER2_2.Length = 9;
-            this.IMN_GENER2_2.Location = new System.Drawing.Point(1201, 95);
+            this.IMN_GENER2_2.Location = new System.Drawing.Point(1202, 95);
             this.IMN_GENER2_2.MaxLength = 9;
             this.IMN_GENER2_2.MoveNext = true;
             this.IMN_GENER2_2.Name = "IMN_GENER2_2";
-            this.IMN_GENER2_2.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_2.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_2.TabIndex = 31;
             this.IMN_GENER2_2.Tag = "2";
             this.IMN_GENER2_2.Text = "99,999,999";
@@ -3441,11 +3445,11 @@
             this.IMN_GENER2_1.IsNumber = true;
             this.IMN_GENER2_1.IsShop = false;
             this.IMN_GENER2_1.Length = 9;
-            this.IMN_GENER2_1.Location = new System.Drawing.Point(1201, 57);
+            this.IMN_GENER2_1.Location = new System.Drawing.Point(1202, 57);
             this.IMN_GENER2_1.MaxLength = 9;
             this.IMN_GENER2_1.MoveNext = true;
             this.IMN_GENER2_1.Name = "IMN_GENER2_1";
-            this.IMN_GENER2_1.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_1.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_1.TabIndex = 18;
             this.IMN_GENER2_1.Tag = "1";
             this.IMN_GENER2_1.Text = "99,999,999";
@@ -3471,11 +3475,11 @@
             this.IMN_GENER2_0.IsNumber = true;
             this.IMN_GENER2_0.IsShop = false;
             this.IMN_GENER2_0.Length = 9;
-            this.IMN_GENER2_0.Location = new System.Drawing.Point(1201, 19);
+            this.IMN_GENER2_0.Location = new System.Drawing.Point(1202, 19);
             this.IMN_GENER2_0.MaxLength = 9;
             this.IMN_GENER2_0.MoveNext = true;
             this.IMN_GENER2_0.Name = "IMN_GENER2_0";
-            this.IMN_GENER2_0.Size = new System.Drawing.Size(68, 19);
+            this.IMN_GENER2_0.Size = new System.Drawing.Size(67, 19);
             this.IMN_GENER2_0.TabIndex = 4;
             this.IMN_GENER2_0.Tag = "0";
             this.IMN_GENER2_0.Text = "99,999,999";
@@ -4134,7 +4138,7 @@
             // 
             // IMN_GENER_2
             // 
-            this.IMN_GENER_2.AllowMinus = false;
+            this.IMN_GENER_2.AllowMinus = true;
             this.IMN_GENER_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_2.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4185,7 +4189,7 @@
             this.IMN_MEMBR_2.MaxLength = 5;
             this.IMN_MEMBR_2.MoveNext = true;
             this.IMN_MEMBR_2.Name = "IMN_MEMBR_2";
-            this.IMN_MEMBR_2.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_2.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_2.TabIndex = 32;
             this.IMN_MEMBR_2.Tag = "2";
             this.IMN_MEMBR_2.Text = "XXXX";
@@ -4193,7 +4197,7 @@
             // 
             // IMN_GENER_1
             // 
-            this.IMN_GENER_1.AllowMinus = false;
+            this.IMN_GENER_1.AllowMinus = true;
             this.IMN_GENER_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_1.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4244,7 +4248,7 @@
             this.IMN_MEMBR_1.MaxLength = 5;
             this.IMN_MEMBR_1.MoveNext = true;
             this.IMN_MEMBR_1.Name = "IMN_MEMBR_1";
-            this.IMN_MEMBR_1.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_1.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_1.TabIndex = 19;
             this.IMN_MEMBR_1.Tag = "1";
             this.IMN_MEMBR_1.Text = "XXXX";
@@ -4252,7 +4256,7 @@
             // 
             // IMN_GENER_0
             // 
-            this.IMN_GENER_0.AllowMinus = false;
+            this.IMN_GENER_0.AllowMinus = true;
             this.IMN_GENER_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_GENER_0.BackColor = System.Drawing.Color.White;
             this.IMN_GENER_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4303,7 +4307,7 @@
             this.IMN_MEMBR_0.MaxLength = 5;
             this.IMN_MEMBR_0.MoveNext = true;
             this.IMN_MEMBR_0.Name = "IMN_MEMBR_0";
-            this.IMN_MEMBR_0.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_0.Size = new System.Drawing.Size(35, 19);
             this.IMN_MEMBR_0.TabIndex = 5;
             this.IMN_MEMBR_0.Tag = "0";
             this.IMN_MEMBR_0.Text = "XXXX";
@@ -4458,7 +4462,7 @@
             // 
             // IMN_SALEP2_2
             // 
-            this.IMN_SALEP2_2.AllowMinus = false;
+            this.IMN_SALEP2_2.AllowMinus = true;
             this.IMN_SALEP2_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_2.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4475,11 +4479,11 @@
             this.IMN_SALEP2_2.IsNumber = true;
             this.IMN_SALEP2_2.IsShop = false;
             this.IMN_SALEP2_2.Length = 11;
-            this.IMN_SALEP2_2.Location = new System.Drawing.Point(1232, 95);
+            this.IMN_SALEP2_2.Location = new System.Drawing.Point(1269, 95);
             this.IMN_SALEP2_2.MaxLength = 11;
             this.IMN_SALEP2_2.MoveNext = true;
             this.IMN_SALEP2_2.Name = "IMN_SALEP2_2";
-            this.IMN_SALEP2_2.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_2.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_2.TabIndex = 37;
             this.IMN_SALEP2_2.Tag = "2";
             this.IMN_SALEP2_2.Text = "999,999,999";
@@ -4488,7 +4492,7 @@
             // 
             // IMN_SALEP2_1
             // 
-            this.IMN_SALEP2_1.AllowMinus = false;
+            this.IMN_SALEP2_1.AllowMinus = true;
             this.IMN_SALEP2_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_1.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4505,11 +4509,11 @@
             this.IMN_SALEP2_1.IsNumber = true;
             this.IMN_SALEP2_1.IsShop = false;
             this.IMN_SALEP2_1.Length = 11;
-            this.IMN_SALEP2_1.Location = new System.Drawing.Point(1232, 57);
+            this.IMN_SALEP2_1.Location = new System.Drawing.Point(1269, 57);
             this.IMN_SALEP2_1.MaxLength = 11;
             this.IMN_SALEP2_1.MoveNext = true;
             this.IMN_SALEP2_1.Name = "IMN_SALEP2_1";
-            this.IMN_SALEP2_1.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_1.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_1.TabIndex = 24;
             this.IMN_SALEP2_1.Tag = "1";
             this.IMN_SALEP2_1.Text = "999,999,999";
@@ -4518,7 +4522,7 @@
             // 
             // IMN_SALEP2_0
             // 
-            this.IMN_SALEP2_0.AllowMinus = false;
+            this.IMN_SALEP2_0.AllowMinus = true;
             this.IMN_SALEP2_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.IMN_SALEP2_0.BackColor = System.Drawing.Color.White;
             this.IMN_SALEP2_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4535,11 +4539,11 @@
             this.IMN_SALEP2_0.IsNumber = true;
             this.IMN_SALEP2_0.IsShop = false;
             this.IMN_SALEP2_0.Length = 11;
-            this.IMN_SALEP2_0.Location = new System.Drawing.Point(1232, 19);
+            this.IMN_SALEP2_0.Location = new System.Drawing.Point(1269, 19);
             this.IMN_SALEP2_0.MaxLength = 11;
             this.IMN_SALEP2_0.MoveNext = true;
             this.IMN_SALEP2_0.Name = "IMN_SALEP2_0";
-            this.IMN_SALEP2_0.Size = new System.Drawing.Size(110, 19);
+            this.IMN_SALEP2_0.Size = new System.Drawing.Size(73, 19);
             this.IMN_SALEP2_0.TabIndex = 10;
             this.IMN_SALEP2_0.Tag = "0";
             this.IMN_SALEP2_0.Text = "999,999,999";
@@ -5056,8 +5060,8 @@
             this.ScOrder.ChangeDate = "";
             this.ScOrder.ChangeDateWidth = 100;
             this.ScOrder.Code = "";
-            this.ScOrder.CodeWidth = 130;
-            this.ScOrder.CodeWidth1 = 130;
+            this.ScOrder.CodeWidth = 100;
+            this.ScOrder.CodeWidth1 = 100;
             this.ScOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScOrder.DataCheck = true;
             this.ScOrder.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5068,7 +5072,7 @@
             this.ScOrder.Location = new System.Drawing.Point(87, 122);
             this.ScOrder.Margin = new System.Windows.Forms.Padding(0);
             this.ScOrder.Name = "ScOrder";
-            this.ScOrder.NameWidth = 280;
+            this.ScOrder.NameWidth = 310;
             this.ScOrder.SearchEnable = true;
             this.ScOrder.Size = new System.Drawing.Size(444, 28);
             this.ScOrder.Stype = Search.CKM_SearchControl.SearchType.仕入先;

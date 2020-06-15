@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Entity;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace DL
 {
@@ -155,6 +152,60 @@ namespace DL
             };
 
             return InsertUpdateDeleteData(dic, "D_Pay_Delete");
+        }
+        public bool D_Siharai_Exec(D_Pay_Entity dpe, DataTable dt, short operationMode)
+        {
+            string sp = "PRC_SiharaiToroku";
+
+            command = new SqlCommand(sp, GetConnection());
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandTimeout = 0;
+
+            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+            AddParam(command, "@PayNo", SqlDbType.VarChar, dpe.PayNo);
+            //AddParam(command, "@StoreCD", SqlDbType.VarChar, dpe.StoreCD);
+
+            AddParam(command, "@StaffCD", SqlDbType.VarChar, dpe.StaffCD);
+            AddParam(command, "@PayDate", SqlDbType.VarChar, dpe.PayDate);
+            AddParam(command, "@Program", SqlDbType.VarChar, dpe.ProgramID);
+            AddParam(command, "@TotalPayGaku", SqlDbType.Money, dpe.PayGakuTotol);
+
+            AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParam(command, "@Operator", SqlDbType.VarChar, dpe.Operator);
+            AddParam(command, "@PC", SqlDbType.VarChar, dpe.PC);
+
+            //OUTパラメータの追加
+            string outPutParam = "@OutPayNo";
+            command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
+            command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
+            UseTransaction = true;
+
+            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+            if (ret)
+                dpe.PayNo = outPutParam;
+
+            return ret;
+        }
+        public DataTable D_Pay_Select01(D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
+                {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} }
+            };
+            return SelectData(dic, "D_Pay_Select01");
+        }
+        public DataTable D_Pay_Select02(D_Pay_Entity dpe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
+            {
+                {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
+                {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} },
+                {"@VendorCD", new ValuePair {value1 = SqlDbType.VarChar, value2= dpe.PayeeCD } },
+                {"@PayeeDate", new ValuePair {value1 = SqlDbType.Date, value2= dpe.PayPlanDate} }
+            };
+            return SelectData(dic, "D_Pay_Select02");
         }
     }
 }

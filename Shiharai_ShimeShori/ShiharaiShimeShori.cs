@@ -68,7 +68,9 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                     }
                     break;
-               
+                case 11:
+                    F11();
+                    break;
                 case 12:
                     F12();
                     break;
@@ -110,7 +112,26 @@ namespace Shiharai_ShimeShori
                     break;
             }
         }
-        
+        private void F11()
+        {
+            dpch_entity = GetDataEntity();
+            string ItemType = cboProcessType.Text;
+            switch (ItemType)
+            {
+                case "支払締":
+                    if (ErrorCheck(1))
+                    {
+                        BindGrid();
+                    }
+                    break;
+                case "支払締キャンセル":
+                    if (ErrorCheck(2))
+                    {
+                        BindGrid();
+                    }
+                    break;
+            }
+        }
         private void BindGrid()
         {
             dgvPaymentClose.ClearSelection();
@@ -129,6 +150,7 @@ namespace Shiharai_ShimeShori
             else
             {
                 dgvPaymentClose.DataSource = null;
+                bbl.ShowMessage("E128");
             }
         }
         private bool ErrorCheck(int Type)
@@ -257,7 +279,7 @@ namespace Shiharai_ShimeShori
                     {
                         ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
                         ScPaymentCD.Value2 = ScPaymentCD.LabelText;
-                        //F11();
+                        F11();
                     }
                     else
                     {
