@@ -67,12 +67,12 @@ namespace ZaikoKanriHyou
             base.FunctionProcess(Index);
             switch(Index+1)
             {
-                case 6: 
-                    {				
-                    if (zkhbl.ShowMessage("Q004") != DialogResult.Yes)
-                        return;
+                case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        Clear();
+                    }
                     break;
-                }
             }
         }
         private bool ErrorCheck()
