@@ -329,7 +329,7 @@
     <Content Include="StoreProcedure\M_ItemOrderPrice_Select.sql" />
     <Content Include="StoreProcedure\M_ItemPrice_Select.sql" />
     <Content Include="StoreProcedure\M_ItemPrice_SelectData.sql" />
-    <Content Include="StoreProcedure\M_ItemOrderPrice_Insert.sql" />
+    <Content Include="StoreProcedure\MastertorokuShiiretanka_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_SelectTop1.sql" />
     <Content Include="StoreProcedure\M_JANOrderPrice_Select.sql" />
