@@ -56,9 +56,22 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+            RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
-
+        private void RadioCheck()
+        {
+            if(rdoAllStores.Checked==true)
+            {
+                cbo_Store.SelectedValue = "0000";
+                cbo_Store.Enabled = false;
+            }
+            else
+            {
+                cbo_Store.SelectedValue = StoreCD;
+                cbo_Store.Enabled = true;
+            }
+        }
         public void BindCombo()
         {
             cbo_Store.Bind(string.Empty, "2");
@@ -633,7 +646,8 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void btnChoice_Click(object sender, EventArgs e)
         {
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            dgv_ShiireKakeritsu.DataSource = dtMain;
             if (dgv_ShiireKakeritsu.Rows.Count > 0)
             {
                 string searchCondition = string.Empty;
@@ -831,29 +845,10 @@ namespace MasterTouroku_ShiireKakeritsu
         {
             moe = GetSearchInfo();
             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            string searchCondition = string.Empty;
-            if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
-                searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSportsCD1.TxtCode.Text))
-                searchCondition = "SportsCD='" + scSportsCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(scSegmentCD1.TxtCode.Text))
-                searchCondition = "SegmentCD= '" + scSegmentCD1.TxtCode.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-                searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-                searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
-            if (!string.IsNullOrWhiteSpace(txtDate.Text))
-                searchCondition = "ChangeDate= '" + txtDate.Text;
-            if (dgv_ShiireKakeritsu.DataSource != null)
+            if (dtMain.Rows.Count > 0)
             {
-                DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-                dvMain.RowFilter = searchCondition;
-                dgv_ShiireKakeritsu.DataSource = dvMain;
+                dgv_ShiireKakeritsu.DataSource = dtMain;
             }
-            //if (dtMain.Rows.Count > 0)
-            //{
-            //    dgv_ShiireKakeritsu.DataSource = dtMain;
-            //}
             else
             {
                 mskbl.ShowMessage("E128");
@@ -1146,6 +1141,11 @@ namespace MasterTouroku_ShiireKakeritsu
                 KeyItem = string.Empty
             };
             return log_data;
+        }
+
+        private void rdoAllStores_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioCheck();
         }
     }
 }

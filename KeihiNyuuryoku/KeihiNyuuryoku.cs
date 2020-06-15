@@ -443,27 +443,45 @@ namespace KeihiNyuuryoku
                      ScStaff.SetFocus(1);
                      return false;
                  }
-                    
-                  foreach (DataGridViewRow row in dgvKehiNyuuryoku.Rows)
-                  {
-                      if (!string.IsNullOrWhiteSpace(row.Cells["colCostCD"].Value.ToString()) || !string.IsNullOrWhiteSpace(row.Cells["colSummary"].Value.ToString())
-                          || !string.IsNullOrWhiteSpace(row.Cells["colDepartment"].Value.ToString()) || !string.IsNullOrWhiteSpace(row.Cells["colCostGaku"].Value.ToString()))
-                      {
-                          if (string.IsNullOrWhiteSpace(row.Cells["colCostCD"].Value.ToString()))
-                          {
-                              khnyk_BL.ShowMessage("E101");
-                              dgvKehiNyuuryoku.CurrentCell = row.Cells["colCostCD"];
-                              return false;
-                          }
-                          else if (string.IsNullOrWhiteSpace(row.Cells["colDepartment"].Value.ToString())) // Check ComboBox is selected or not
-                          {
-                              khnyk_BL.ShowMessage("E101");
-                              dgvKehiNyuuryoku.CurrentCell = row.Cells["colDepartment"];
-                              return false;
-                          }
 
-                      }
-                  }
+                DataTable dta = new DataTable();
+                dta = dt.Copy();
+                DataRow[] drs = dta.Select("(CostCD = '' OR CostCD IS  NULL) " +
+                                             "AND (Summary = '' OR Summary IS  NULL) " +
+                                             "AND (DepartmentCD = '' OR DepartmentCD IS  NULL) " +
+                                             "AND (CostGaku = ''  OR CostGaku IS  NULL)");
+                if(drs.Count() != 300 )
+                {
+                    foreach(DataRow r in drs)
+                    {
+                        dta.Rows.Remove(r);
+                    }
+                    foreach (DataRow dr in dta.Rows)
+                    {
+                        
+                        if (string.IsNullOrWhiteSpace(dr["CostCD"].ToString()))
+                        {
+                            khnyk_BL.ShowMessage("E101");
+                            dgvKehiNyuuryoku.Select();
+                            //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
+                            return false;
+                        }
+                        else if (string.IsNullOrWhiteSpace(dr["DepartmentCD"].ToString())) // Check ComboBox is selected or not
+                        {
+                            khnyk_BL.ShowMessage("E101");
+                            dgvKehiNyuuryoku.Select();
+                            //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colDepartment"].Index, Convert.ToInt16(drs[0]["colDepartment"].ToString()) - 1];
+                            return false;
+                        }
+                    }
+                }
+                else
+                {
+                    khnyk_BL.ShowMessage("E101");
+                    dgvKehiNyuuryoku.Select();
+                    //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(drs[0]["colCostCD"].ToString()) - 1];
+                    return false;
+                }
                 
             }
             return true;
@@ -560,6 +578,10 @@ namespace KeihiNyuuryoku
 
         private void dgvKehiNyuuryoku_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            //if(e.ColumnIndex == dgvKehiNyuuryoku.Columns[].Index)
+            //{
+
+            //}
             if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
             {
                 BindTotalGaku(dt);

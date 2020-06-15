@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_LBLSoko = new CKM_Controls.CKM_Label();
             this.CB_Soko = new CKM_Controls.CKM_ComboBox();
             this.ckM_LB_Tanaban = new CKM_Controls.CKM_Label();
@@ -137,12 +138,12 @@
             this.TB_ShoninbiF = new CKM_Controls.CKM_TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PL_head = new System.Windows.Forms.Panel();
+            this.sku = new Search.CKM_SearchControl();
+            this.jan = new Search.CKM_SearchControl();
             this.LB_kensaku = new CKM_Controls.CKM_Label();
             this.LB_kenrenkensaku = new CKM_Controls.CKM_Label();
             this.TB_Shijishobengo = new CKM_Controls.CKM_TextBox();
             this.TB_Catalog = new CKM_Controls.CKM_TextBox();
-            this.sku = new Search.CKM_SearchControl();
-            this.jan = new Search.CKM_SearchControl();
             this.SearchBrand = new Search.CKM_SearchControl();
             this.Sports = new Search.CKM_SearchControl();
             this.Maker = new Search.CKM_SearchControl();
@@ -497,7 +498,7 @@
             this.CB_year.MoveNext = true;
             this.CB_year.Name = "CB_year";
             this.CB_year.Size = new System.Drawing.Size(180, 20);
-            this.CB_year.TabIndex = 13;
+            this.CB_year.TabIndex = 12;
             // 
             // ckM_LB_nen_do
             // 
@@ -531,7 +532,7 @@
             this.CB_Season.MoveNext = true;
             this.CB_Season.Name = "CB_Season";
             this.CB_Season.Size = new System.Drawing.Size(180, 20);
-            this.CB_Season.TabIndex = 14;
+            this.CB_Season.TabIndex = 13;
             // 
             // ckM_LB_Season
             // 
@@ -1463,17 +1464,17 @@
             this.GV_Zaiko.AllowUserToAddRows = false;
             this.GV_Zaiko.AllowUserToDeleteRows = false;
             this.GV_Zaiko.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.GV_Zaiko.ColumnHeadersHeight = 25;
             this.GV_Zaiko.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SKUCD,
@@ -1496,6 +1497,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle44;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 459);
@@ -1566,10 +1575,10 @@
             // 現在庫
             // 
             this.現在庫.DataPropertyName = "在庫数";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle36.Format = "N0";
+            dataGridViewCellStyle36.NullValue = null;
+            this.現在庫.DefaultCellStyle = dataGridViewCellStyle36;
             this.現在庫.HeaderText = "現在庫";
             this.現在庫.Name = "現在庫";
             this.現在庫.ReadOnly = true;
@@ -1577,10 +1586,10 @@
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "入荷予定数";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle37.Format = "N0";
+            dataGridViewCellStyle37.NullValue = null;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle37;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
             this.入荷予定.ReadOnly = true;
@@ -1597,10 +1606,10 @@
             // 引当可能
             // 
             this.引当可能.DataPropertyName = "引当可能数";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.引当可能.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle38.Format = "N0";
+            dataGridViewCellStyle38.NullValue = null;
+            this.引当可能.DefaultCellStyle = dataGridViewCellStyle38;
             this.引当可能.HeaderText = "引当可能";
             this.引当可能.Name = "引当可能";
             this.引当可能.ReadOnly = true;
@@ -1608,8 +1617,8 @@
             // メーカー
             // 
             this.メーカー.DataPropertyName = "メーカー在庫数";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.メーカー.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.メーカー.DefaultCellStyle = dataGridViewCellStyle39;
             this.メーカー.HeaderText = "メーカー";
             this.メーカー.Name = "メーカー";
             this.メーカー.ReadOnly = true;
@@ -1648,10 +1657,10 @@
             // 最速入荷日
             // 
             this.最速入荷日.DataPropertyName = "最速入荷日";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.Format = "d";
+            dataGridViewCellStyle40.NullValue = null;
+            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle40;
             this.最速入荷日.HeaderText = "最速入荷日";
             this.最速入荷日.Name = "最速入荷日";
             this.最速入荷日.ReadOnly = true;
@@ -1659,10 +1668,10 @@
             // 基準在庫
             // 
             this.基準在庫.DataPropertyName = "基準在庫";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle41.Format = "N0";
+            dataGridViewCellStyle41.NullValue = null;
+            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle41;
             this.基準在庫.HeaderText = "基準在庫";
             this.基準在庫.Name = "基準在庫";
             this.基準在庫.ReadOnly = true;
@@ -1670,10 +1679,10 @@
             // 販売定価
             // 
             this.販売定価.DataPropertyName = "販売定価";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.販売定価.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Format = "N0";
+            dataGridViewCellStyle42.NullValue = null;
+            this.販売定価.DefaultCellStyle = dataGridViewCellStyle42;
             this.販売定価.HeaderText = "販売定価";
             this.販売定価.Name = "販売定価";
             this.販売定価.ReadOnly = true;
@@ -1681,10 +1690,10 @@
             // 標準原価
             // 
             this.標準原価.DataPropertyName = "標準原価";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.標準原価.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle43.Format = "N0";
+            dataGridViewCellStyle43.NullValue = null;
+            this.標準原価.DefaultCellStyle = dataGridViewCellStyle43;
             this.標準原価.HeaderText = "標準原価";
             this.標準原価.MaxInputLength = 6;
             this.標準原価.Name = "標準原価";
@@ -1856,6 +1865,64 @@
             this.PL_head.Size = new System.Drawing.Size(1682, 344);
             this.PL_head.TabIndex = 0;
             // 
+            // sku
+            // 
+            this.sku.AutoSize = true;
+            this.sku.ChangeDate = "";
+            this.sku.ChangeDateWidth = 100;
+            this.sku.Code = "";
+            this.sku.CodeWidth = 190;
+            this.sku.CodeWidth1 = 190;
+            this.sku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.sku.DataCheck = false;
+            this.sku.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku.IsCopy = false;
+            this.sku.LabelText = "";
+            this.sku.LabelVisible = false;
+            this.sku.Location = new System.Drawing.Point(324, 147);
+            this.sku.Margin = new System.Windows.Forms.Padding(0);
+            this.sku.Name = "sku";
+            this.sku.NameWidth = 350;
+            this.sku.SearchEnable = true;
+            this.sku.Size = new System.Drawing.Size(223, 27);
+            this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.sku.TabIndex = 9;
+            this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.sku.UseChangeDate = false;
+            this.sku.Value1 = null;
+            this.sku.Value2 = null;
+            this.sku.Value3 = null;
+            this.sku.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sku_CodeKeyDownEvent);
+            // 
+            // jan
+            // 
+            this.jan.AutoSize = true;
+            this.jan.ChangeDate = "";
+            this.jan.ChangeDateWidth = 0;
+            this.jan.Code = "";
+            this.jan.CodeWidth = 110;
+            this.jan.CodeWidth1 = 110;
+            this.jan.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.jan.DataCheck = false;
+            this.jan.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.jan.IsCopy = false;
+            this.jan.LabelText = "";
+            this.jan.LabelVisible = false;
+            this.jan.Location = new System.Drawing.Point(132, 147);
+            this.jan.Margin = new System.Windows.Forms.Padding(0);
+            this.jan.Name = "jan";
+            this.jan.NameWidth = 190;
+            this.jan.SearchEnable = true;
+            this.jan.Size = new System.Drawing.Size(143, 27);
+            this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.jan.TabIndex = 8;
+            this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.jan.UseChangeDate = false;
+            this.jan.Value1 = null;
+            this.jan.Value2 = null;
+            this.jan.Value3 = null;
+            this.jan.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.jan_CodeKeyDownEvent);
+            // 
             // LB_kensaku
             // 
             this.LB_kensaku.AutoSize = true;
@@ -1940,66 +2007,8 @@
             this.TB_Catalog.MoveNext = true;
             this.TB_Catalog.Name = "TB_Catalog";
             this.TB_Catalog.Size = new System.Drawing.Size(400, 19);
-            this.TB_Catalog.TabIndex = 15;
+            this.TB_Catalog.TabIndex = 14;
             this.TB_Catalog.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // sku
-            // 
-            this.sku.AutoSize = true;
-            this.sku.ChangeDate = "";
-            this.sku.ChangeDateWidth = 100;
-            this.sku.Code = "";
-            this.sku.CodeWidth = 190;
-            this.sku.CodeWidth1 = 190;
-            this.sku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.sku.DataCheck = false;
-            this.sku.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.sku.IsCopy = false;
-            this.sku.LabelText = "";
-            this.sku.LabelVisible = false;
-            this.sku.Location = new System.Drawing.Point(324, 147);
-            this.sku.Margin = new System.Windows.Forms.Padding(0);
-            this.sku.Name = "sku";
-            this.sku.NameWidth = 350;
-            this.sku.SearchEnable = true;
-            this.sku.Size = new System.Drawing.Size(223, 27);
-            this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.sku.TabIndex = 95;
-            this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.sku.UseChangeDate = false;
-            this.sku.Value1 = null;
-            this.sku.Value2 = null;
-            this.sku.Value3 = null;
-            this.sku.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sku_CodeKeyDownEvent);
-            // 
-            // jan
-            // 
-            this.jan.AutoSize = true;
-            this.jan.ChangeDate = "";
-            this.jan.ChangeDateWidth = 0;
-            this.jan.Code = "";
-            this.jan.CodeWidth = 110;
-            this.jan.CodeWidth1 = 110;
-            this.jan.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.jan.DataCheck = false;
-            this.jan.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.jan.IsCopy = false;
-            this.jan.LabelText = "";
-            this.jan.LabelVisible = false;
-            this.jan.Location = new System.Drawing.Point(132, 147);
-            this.jan.Margin = new System.Windows.Forms.Padding(0);
-            this.jan.Name = "jan";
-            this.jan.NameWidth = 190;
-            this.jan.SearchEnable = true;
-            this.jan.Size = new System.Drawing.Size(143, 27);
-            this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
-            this.jan.TabIndex = 94;
-            this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.jan.UseChangeDate = false;
-            this.jan.Value1 = null;
-            this.jan.Value2 = null;
-            this.jan.Value3 = null;
-            this.jan.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.jan_CodeKeyDownEvent);
             // 
             // SearchBrand
             // 
