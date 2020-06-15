@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -103,6 +102,10 @@
             // PanelSearch
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1248, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // cboWarehouse
             // 
@@ -481,6 +484,7 @@
             this.ScItem.ChangeDateWidth = 100;
             this.ScItem.Code = "";
             this.ScItem.CodeWidth = 600;
+            this.ScItem.CodeWidth1 = 600;
             this.ScItem.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScItem.DataCheck = false;
             this.ScItem.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -508,6 +512,7 @@
             this.ScSKUCD.ChangeDateWidth = 100;
             this.ScSKUCD.Code = "";
             this.ScSKUCD.CodeWidth = 600;
+            this.ScSKUCD.CodeWidth1 = 600;
             this.ScSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSKUCD.DataCheck = false;
             this.ScSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -535,6 +540,7 @@
             this.ScJanCD.ChangeDateWidth = 100;
             this.ScJanCD.Code = "";
             this.ScJanCD.CodeWidth = 600;
+            this.ScJanCD.CodeWidth1 = 600;
             this.ScJanCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScJanCD.DataCheck = false;
             this.ScJanCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -588,7 +594,8 @@
             this.ScSupplier.ChangeDate = "";
             this.ScSupplier.ChangeDateWidth = 100;
             this.ScSupplier.Code = "";
-            this.ScSupplier.CodeWidth = 130;
+            this.ScSupplier.CodeWidth = 100;
+            this.ScSupplier.CodeWidth1 = 100;
             this.ScSupplier.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSupplier.DataCheck = false;
             this.ScSupplier.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -598,7 +605,7 @@
             this.ScSupplier.Location = new System.Drawing.Point(1323, 12);
             this.ScSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.ScSupplier.Name = "ScSupplier";
-            this.ScSupplier.NameWidth = 280;
+            this.ScSupplier.NameWidth = 310;
             this.ScSupplier.SearchEnable = true;
             this.ScSupplier.Size = new System.Drawing.Size(444, 27);
             this.ScSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -628,6 +635,7 @@
             // 
             // dgvNyuukaShoukai
             // 
+            this.dgvNyuukaShoukai.AllowUserToAddRows = false;
             this.dgvNyuukaShoukai.AllowUserToDeleteRows = false;
             this.dgvNyuukaShoukai.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -635,7 +643,7 @@
             this.dgvNyuukaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -662,18 +670,11 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
             this.dgvNyuukaShoukai.Name = "dgvNyuukaShoukai";
+            this.dgvNyuukaShoukai.RowHeight_ = 20;
             this.dgvNyuukaShoukai.Size = new System.Drawing.Size(1760, 500);
             this.dgvNyuukaShoukai.TabIndex = 35;
             this.dgvNyuukaShoukai.UseRowNo = true;
