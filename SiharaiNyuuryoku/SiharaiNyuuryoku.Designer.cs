@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelDetail = new System.Windows.Forms.Panel();
             this.lblPayPlan = new System.Windows.Forms.Label();
             this.lblGakuTotal = new System.Windows.Forms.Label();
@@ -257,17 +256,17 @@
             this.dgvPayment.AllowUserToAddRows = false;
             this.dgvPayment.AllowUserToDeleteRows = false;
             this.dgvPayment.AllowUserToResizeRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPayment.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPayment.ColumnHeadersHeight = 25;
             this.dgvPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -288,14 +287,6 @@
             this.colHontaiGaku10,
             this.colTaxGaku8,
             this.colTaxGaku10});
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPayment.DefaultCellStyle = dataGridViewCellStyle26;
             this.dgvPayment.EnableHeadersVisualStyles = false;
             this.dgvPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPayment.Location = new System.Drawing.Point(35, 87);
@@ -381,7 +372,7 @@
             this.cboPaymentType.MaxLength = 5;
             this.cboPaymentType.MoveNext = true;
             this.cboPaymentType.Name = "cboPaymentType";
-            this.cboPaymentType.Size = new System.Drawing.Size(114, 20);
+            this.cboPaymentType.Size = new System.Drawing.Size(150, 20);
             this.cboPaymentType.TabIndex = 2;
             this.cboPaymentType.SelectedIndexChanged += new System.EventHandler(this.cboPaymentType_SelectedIndexChanged);
             // 
@@ -430,7 +421,7 @@
             this.ckM_Label9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(284, 50);
+            this.ckM_Label9.Location = new System.Drawing.Point(329, 50);
             this.ckM_Label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(70, 12);
@@ -448,7 +439,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(518, 50);
+            this.ckM_Label10.Location = new System.Drawing.Point(672, 50);
             this.ckM_Label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(70, 12);
@@ -466,12 +457,12 @@
             this.cboPaymentSourceAcc.Flag = 0;
             this.cboPaymentSourceAcc.FormattingEnabled = true;
             this.cboPaymentSourceAcc.Length = 10;
-            this.cboPaymentSourceAcc.Location = new System.Drawing.Point(355, 47);
+            this.cboPaymentSourceAcc.Location = new System.Drawing.Point(400, 47);
             this.cboPaymentSourceAcc.Margin = new System.Windows.Forms.Padding(2);
             this.cboPaymentSourceAcc.MaxLength = 5;
             this.cboPaymentSourceAcc.MoveNext = true;
             this.cboPaymentSourceAcc.Name = "cboPaymentSourceAcc";
-            this.cboPaymentSourceAcc.Size = new System.Drawing.Size(114, 20);
+            this.cboPaymentSourceAcc.Size = new System.Drawing.Size(200, 20);
             this.cboPaymentSourceAcc.TabIndex = 3;
             // 
             // btnReleaseAll
@@ -511,7 +502,7 @@
             this.txtBillSettleDate.IsNumber = true;
             this.txtBillSettleDate.IsShop = false;
             this.txtBillSettleDate.Length = 10;
-            this.txtBillSettleDate.Location = new System.Drawing.Point(588, 48);
+            this.txtBillSettleDate.Location = new System.Drawing.Point(742, 48);
             this.txtBillSettleDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBillSettleDate.MaxLength = 10;
             this.txtBillSettleDate.MoveNext = true;
@@ -839,8 +830,8 @@
             // 
             // colChk
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colChk.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colChk.DefaultCellStyle = dataGridViewCellStyle3;
             this.colChk.FalseValue = "False";
             this.colChk.HeaderText = "";
             this.colChk.Name = "colChk";
@@ -860,13 +851,13 @@
             this.colVendorName.HeaderText = "支払先名\t\t\t";
             this.colVendorName.MaxInputLength = 40;
             this.colVendorName.Name = "colVendorName";
-            this.colVendorName.Width = 250;
+            this.colVendorName.Width = 330;
             // 
             // colPaymentdueDate
             // 
             this.colPaymentdueDate.DataPropertyName = "PayPlanDate";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colPaymentdueDate.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colPaymentdueDate.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPaymentdueDate.HeaderText = "支払予定日";
             this.colPaymentdueDate.MaxInputLength = 10;
             this.colPaymentdueDate.Name = "colPaymentdueDate";
@@ -876,10 +867,10 @@
             // colScheduledPayment
             // 
             this.colScheduledPayment.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "N0";
-            dataGridViewCellStyle18.NullValue = "false";
-            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = "false";
+            this.colScheduledPayment.DefaultCellStyle = dataGridViewCellStyle5;
             this.colScheduledPayment.HeaderText = "支払予定額";
             this.colScheduledPayment.MaxInputLength = 32767;
             this.colScheduledPayment.Name = "colScheduledPayment";
@@ -892,10 +883,10 @@
             // 
             this.colAmountPaid.DataPropertyName = "PayConfirmGaku";
             this.colAmountPaid.DecimalPlace = ((byte)(3));
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "N0";
-            dataGridViewCellStyle19.NullValue = null;
-            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colAmountPaid.DefaultCellStyle = dataGridViewCellStyle6;
             this.colAmountPaid.HeaderText = "支払済額";
             this.colAmountPaid.MaxInputLength = 32767;
             this.colAmountPaid.Name = "colAmountPaid";
@@ -907,10 +898,10 @@
             // colPaymenttime
             // 
             this.colPaymenttime.DataPropertyName = "PayGaku";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.Format = "N0";
-            dataGridViewCellStyle20.NullValue = "false";
-            this.colPaymenttime.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = "false";
+            this.colPaymenttime.DefaultCellStyle = dataGridViewCellStyle7;
             this.colPaymenttime.HeaderText = "今回支払額";
             this.colPaymenttime.MaxInputLength = 32767;
             this.colPaymenttime.Name = "colPaymenttime";
@@ -922,10 +913,10 @@
             // colTransferAmount
             // 
             this.colTransferAmount.DataPropertyName = "TransferGaku";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Format = "N0";
-            dataGridViewCellStyle21.NullValue = "false";
-            this.colTransferAmount.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = "false";
+            this.colTransferAmount.DefaultCellStyle = dataGridViewCellStyle8;
             this.colTransferAmount.HeaderText = "振込額";
             this.colTransferAmount.MaxInputLength = 32767;
             this.colTransferAmount.Name = "colTransferAmount";
@@ -937,10 +928,10 @@
             // colTransferFee
             // 
             this.colTransferFee.DataPropertyName = "TransferFeeGaku";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle22.Format = "N0";
-            dataGridViewCellStyle22.NullValue = "false";
-            this.colTransferFee.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = "false";
+            this.colTransferFee.DefaultCellStyle = dataGridViewCellStyle9;
             this.colTransferFee.HeaderText = "振込手数料";
             this.colTransferFee.MaxInputLength = 32767;
             this.colTransferFee.Name = "colTransferFee";
@@ -952,8 +943,8 @@
             // colFeeBurden
             // 
             this.colFeeBurden.DataPropertyName = "FeeKBN";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.colFeeBurden.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.colFeeBurden.DefaultCellStyle = dataGridViewCellStyle10;
             this.colFeeBurden.HeaderText = "手数料負担";
             this.colFeeBurden.MaxInputLength = 4;
             this.colFeeBurden.Name = "colFeeBurden";
@@ -961,10 +952,10 @@
             // colOtherThanTransfer
             // 
             this.colOtherThanTransfer.DataPropertyName = "Gaku";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle24.Format = "N0";
-            dataGridViewCellStyle24.NullValue = "false";
-            this.colOtherThanTransfer.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = "false";
+            this.colOtherThanTransfer.DefaultCellStyle = dataGridViewCellStyle11;
             this.colOtherThanTransfer.HeaderText = "振込以外";
             this.colOtherThanTransfer.MaxInputLength = 32767;
             this.colOtherThanTransfer.Name = "colOtherThanTransfer";
@@ -976,10 +967,10 @@
             // colUnpaidAmount
             // 
             this.colUnpaidAmount.DataPropertyName = "PayPlan";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle25.Format = "N0";
-            dataGridViewCellStyle25.NullValue = "false";
-            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N0";
+            dataGridViewCellStyle12.NullValue = "false";
+            this.colUnpaidAmount.DefaultCellStyle = dataGridViewCellStyle12;
             this.colUnpaidAmount.HeaderText = "未支払額";
             this.colUnpaidAmount.MaxInputLength = 32767;
             this.colUnpaidAmount.Name = "colUnpaidAmount";

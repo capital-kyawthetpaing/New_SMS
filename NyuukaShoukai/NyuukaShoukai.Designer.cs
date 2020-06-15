@@ -635,6 +635,7 @@
             // 
             // dgvNyuukaShoukai
             // 
+            this.dgvNyuukaShoukai.AllowUserToAddRows = false;
             this.dgvNyuukaShoukai.AllowUserToDeleteRows = false;
             this.dgvNyuukaShoukai.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
