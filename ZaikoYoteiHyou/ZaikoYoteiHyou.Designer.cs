@@ -109,7 +109,7 @@
             this.cboWareHouse.MaxLength = 10;
             this.cboWareHouse.MoveNext = true;
             this.cboWareHouse.Name = "cboWareHouse";
-            this.cboWareHouse.Size = new System.Drawing.Size(150, 20);
+            this.cboWareHouse.Size = new System.Drawing.Size(265, 20);
             this.cboWareHouse.TabIndex = 3;
             // 
             // cboStore
@@ -125,7 +125,7 @@
             this.cboStore.MaxLength = 10;
             this.cboStore.MoveNext = true;
             this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(150, 20);
+            this.cboStore.Size = new System.Drawing.Size(265, 20);
             this.cboStore.TabIndex = 2;
             // 
             // ckM_Label5
