@@ -12,9 +12,9 @@ namespace DL
 {
     public class MasterTouroku_ShiireTanka_DL : Base_DL
     {
-        public DataTable M_ItemOrderPrice_Insert(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi)
+        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi)
         {
-            string sp = "M_ItemOrderPrice_Insert";
+            string sp = "MastertorokuShiiretanka_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.VendorCD } },
