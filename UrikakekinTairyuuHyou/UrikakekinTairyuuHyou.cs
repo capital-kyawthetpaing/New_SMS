@@ -43,7 +43,7 @@ namespace UrikakekinTairyuuHyou
             Btn_F9.Text = string.Empty;
             Btn_F10.Text = string.Empty;
 
-            Btn_F11.Text = "Excel(F11)";
+            Btn_F11.Text = "出力(F10)";
 
             BindData();
             
@@ -389,8 +389,14 @@ namespace UrikakekinTairyuuHyou
 
         public void Clear()
         {
-            txtDate.Text = string.Empty;
+            txtDate.Text = todayDate.Substring(0, todayDate.Length - 3); 
             cboStore.SelectedValue = StoreCD;
+            txtDate.Focus();
+        }
+
+        private void UrikakekinTairyuuHyou_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
         }
     }
 }
