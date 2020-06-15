@@ -767,7 +767,7 @@ namespace ShiireNyuuryoku
                                 keyControls[(int)EIndex.CopyPurchaseNO].Enabled = false;
                                 ScCopyNO.BtnSearch.Enabled = false;
 
-                                ckM_CheckBox3.Enabled = false;
+                                ChkTorikeshi.Enabled = false;
                                 ckM_CheckBox1.Enabled = false;
 
                                 Scr_Lock(1, mc_L_END, 1);   // フレームのロック
@@ -1335,7 +1335,7 @@ namespace ShiireNyuuryoku
 
         private void InitialControlArray()
         {
-            keyControls = new Control[] {  ScOrderNO.TxtCode, ckM_CheckBox3, ScCopyNO.TxtCode,  CboStoreCD };
+            keyControls = new Control[] {  ScOrderNO.TxtCode, ChkTorikeshi, ScCopyNO.TxtCode,  CboStoreCD };
             keyLabels = new Control[] {  };
             detailControls = new Control[] { ckM_TextBox1, ScVendorCD.TxtCode, ckM_TextBox2, ScStaff.TxtCode                       
                          ,ckM_CheckBox1,TxtRemark1, ckM_TextBox5 };
@@ -1383,6 +1383,14 @@ namespace ShiireNyuuryoku
                     return CheckData(set);
 
                 case (int)EIndex.CopyPurchaseNO:
+                    //入力必須(Entry required)
+                    if (ChkTorikeshi.Checked && string.IsNullOrWhiteSpace(keyControls[index].Text))
+                    {
+                        //Ｅ１０２
+                        bbl.ShowMessage("E102");
+                        return false;
+                    }
+
                     if (!string.IsNullOrWhiteSpace(keyControls[index].Text))
                         return CheckData(set, index);
 
@@ -1606,7 +1614,7 @@ namespace ShiireNyuuryoku
                         }
                         else
                         {
-                            if (ckM_CheckBox3.Checked)
+                            if (ChkTorikeshi.Checked)
                                 sign = -1;
 
                             detailControls[(int)EIndex.PurchaseDate].Text = bbl.GetDate();
@@ -2496,10 +2504,12 @@ namespace ShiireNyuuryoku
 
             if (OperationMode == EOperationMode.INSERT)
             {
-                if (CheckKey((int)EIndex.StoreCD, false) == false)
-                {
-                    return;
-                }
+                for (int i = (int)EIndex.CopyPurchaseNO; i < keyControls.Length; i++)
+                    if (CheckKey(i, false) == false)
+                    {
+                        keyControls[i].Focus();
+                        return;
+                    }
             }
             else
             {
@@ -2937,7 +2947,8 @@ namespace ShiireNyuuryoku
                                 detailControls[(int)EIndex.PurchaseDate].Focus();
                             else
                                 keyControls[index + 1].Focus();
-
+                        else if (index == (int)EIndex.CopyPurchaseNO)
+                            keyControls[index + 1].Focus();
                     }
                     else
                     {
@@ -3212,52 +3223,28 @@ namespace ShiireNyuuryoku
             }
         }
 
-        /// <summary>
-        /// 自社倉庫CheckBox　CheckedChangedイベント
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void CkM_CheckBox3_CheckedChanged(object sender, EventArgs e)
+        private void ChkTorikeshi_KeyDown(object sender, KeyEventArgs e)
         {
             try
             {
-                //SetEnabled(EIndex.CheckBox3, ckM_CheckBox3.Checked);
-            } 
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    ScCopyNO.Focus();
+                }
+            }
             catch (Exception ex)
             {
                 //エラー時共通処理
                 MessageBox.Show(ex.Message);
                 //EndSec();
             }
-
         }
-       
+
         #endregion
- 
-        private void SetEnabled(EIndex index, bool enabled)
-        {
-
-            if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
-            {
-                switch (index)
-                {
-                    case EIndex.CheckBox3:
-                        //if (enabled)
-                        //{
-                        //    detailControls[(int)EIndex.SoukoName].Enabled = enabled;
-
-                        //    ckM_CheckBox4.Checked = !enabled;
-                        //}
-                        //else
-                        //{
-                        //    ((CKM_Controls.CKM_ComboBox)detailControls[(int)EIndex.SoukoName]).SelectedIndex = -1;
-                        //    detailControls[(int)EIndex.SoukoName].Enabled = enabled;
-                        //}
-                        break;                 
-                }
-            }
-        }
-
     }
 }
 

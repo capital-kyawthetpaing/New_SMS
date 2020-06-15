@@ -46,7 +46,7 @@ namespace Shiharai_ShimeShori
         private void RequireFields()
         {
             txtPayCloseDate.Require(true);
-            ScPaymentCD.TxtCode.Require(true);           
+            //ScPaymentCD.TxtCode.Require(true);           
         }
         private void BindCombo()
         {
@@ -167,7 +167,7 @@ namespace Shiharai_ShimeShori
             switch (Type)
             {
                 case 1:
-                    if (!RequireCheck(new Control[] { txtPayCloseDate, ScPaymentCD.TxtCode })) //Step1
+                    if (!RequireCheck(new Control[] { txtPayCloseDate })) //Step1
                         return false;
 
                     if (!sss_bl.Select_PaymentClose(dpch_entity, 1))//Step2
@@ -186,7 +186,7 @@ namespace Shiharai_ShimeShori
                     break;
 
                 case 2:
-                    if (!RequireCheck(new Control[] { txtPayCloseDate, ScPaymentCD.TxtCode })) //Step1
+                    if (!RequireCheck(new Control[] { txtPayCloseDate })) //Step1
                         return false;
 
                     if (!sss_bl.Select_PaymentClose(dpch_entity, 3))//Step2
@@ -342,7 +342,7 @@ namespace Shiharai_ShimeShori
         }
         private void btnDisplay_Click(object sender, EventArgs e)
         {
-            F11();
+            //F11();
         }
     }
 }

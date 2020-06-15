@@ -335,6 +335,16 @@ namespace TempoRegiHanbaiTouroku
 
         private void DispFromDataTable(int gyoNo = 1)
         {
+            if (dtSales.Rows.Count == gyoNo - 1)
+            {
+                if (gyoNo - 3 > 0)
+                    DispFromDataTable(gyoNo - 3);
+
+                if (dtSales.Rows.Count == 0)
+                    Clear(pnlDetails);
+
+                return;
+            }
 
             Clear(pnlDetails);
 
@@ -361,7 +371,7 @@ namespace TempoRegiHanbaiTouroku
                     case 1:
                         lblDtGyo2.Text = (index + 1).ToString();
                         lblDtSKUName2.Text = row["SKUName"].ToString();
-                        lblDtColorSize2.Text = row["ColorName"].ToString() + row["SizeName"].ToString();
+                        lblDtColorSize2.Text = row["ColorSizeName"].ToString();
                         lblDtKSu2.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu2.Text = bbl.Z_SetStr(row["SalesSU"]);
                         lblDtKin2.Text = bbl.Z_SetStr(row["SalesGaku"]);
@@ -370,7 +380,7 @@ namespace TempoRegiHanbaiTouroku
                     case 2:
                         lblDtGyo3.Text = (index + 1).ToString();
                         lblDtSKUName3.Text = row["SKUName"].ToString();
-                        lblDtColorSize3.Text = row["ColorName"].ToString() + row["SizeName"].ToString();
+                        lblDtColorSize3.Text = row["ColorSizeName"].ToString();
                         lblDtKSu3.Text = "\\" + bbl.Z_SetStr(row["SalesUnitPrice"]);
                         lblDtSSu3.Text = bbl.Z_SetStr(row["SalesSU"]);
                         lblDtKin3.Text =  bbl.Z_SetStr(row["SalesGaku"]);
@@ -567,7 +577,8 @@ namespace TempoRegiHanbaiTouroku
 
         private void DispFromButtonDetailsTable(int stHorizontal = 1)
         {
-            DataRow[] rows = dtBottunDetails.Select(" Vertical >=" + stHorizontal + " AND Vertical <" + stHorizontal + 10);
+            int maxVertical = stHorizontal + 10;
+            DataRow[] rows = dtBottunDetails.Select(" Horizontal >=" + stHorizontal + " AND Horizontal <" + maxVertical);
 
             if (rows.Length == 0)
                 return;
@@ -607,9 +618,13 @@ namespace TempoRegiHanbaiTouroku
         }
         private void DispFromButtonGroupTable(int stHorizontal = 1)
         {
-            Clear(tableLayoutPanel2);
+            int maxGroupNO = stHorizontal + 14;
+            DataRow[] rows = dtBottunGroup.Select(" GroupNO >=" + stHorizontal + " AND GroupNO <" + maxGroupNO);
 
-            DataRow[] rows = dtBottunGroup.Select(" GroupNO >=" + stHorizontal + " AND GroupNO <" + stHorizontal + 14);
+            if (rows.Length == 0)
+                return;
+
+            Clear(tableLayoutPanel2);
 
             btnGrp1.Tag = stHorizontal;
 
@@ -1454,7 +1469,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 int Horizontal = Convert.ToInt16(btnGrp1.Tag);
-                if (dtBottunGroup.Rows.Count >= Horizontal + 14)
+                //if (dtBottunGroup.Rows.Count >= Horizontal + 14)
                     DispFromButtonGroupTable(Horizontal + 14);
             }
             catch (Exception ex)
@@ -1784,7 +1799,7 @@ namespace TempoRegiHanbaiTouroku
             }
             catch (Exception ex)
             {
-                //エラー時共通処理
+                //エラー時共通処理 
                 MessageBox.Show(ex.Message);
             }
         }

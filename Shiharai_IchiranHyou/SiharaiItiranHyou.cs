@@ -17,7 +17,7 @@ using CrystalDecisions.Shared;
 
 namespace Shiharai_IchiranHyou
 {
-    public partial class Siharai_ItiranHyou : FrmMainForm
+    public partial class SiharaiItiranHyou : FrmMainForm
     {
         Base_BL bbl;
         Shiharai_ItiranHyou_BL Ichiran_BL ;
@@ -25,7 +25,7 @@ namespace Shiharai_IchiranHyou
         DataTable dt, dtResult;
         Viewer previewForm;
         CrystalDecisions.Windows.Forms.CrystalReportViewer vr;
-        public Siharai_ItiranHyou()
+        public SiharaiItiranHyou()
         {
             InitializeComponent();
             bbl = new Base_BL();
@@ -79,7 +79,8 @@ namespace Shiharai_IchiranHyou
                 dt = CheckData();
                 if (dt == null) return;
                 try
-                {                  
+                {     
+                    
                     ShiraraiItiranHyou_Report Report = new ShiraraiItiranHyou_Report();
                     DialogResult DResult;
                     switch (PrintMode)
@@ -87,7 +88,7 @@ namespace Shiharai_IchiranHyou
                             case EPrintMode.DIRECT:
                                 DResult = bbl.ShowMessage("Q201");
                                 if (DResult == DialogResult.Cancel)
-                                {
+                                { 
                                     return;
                                 }
                                 // 印字データをセット
@@ -212,7 +213,7 @@ namespace Shiharai_IchiranHyou
             if (!DateCheck())
             {
                 bbl.ShowMessage("E104");
-                txtPurchaseDateFrom.Focus();
+                txtPurChaseDateTo.Focus();
                 return false;
             }
            
@@ -272,7 +273,7 @@ namespace Shiharai_IchiranHyou
                 if (!DateCheck())
                 {
                     bbl.ShowMessage("E104");
-                    txtPurchaseDateFrom.Focus();
+                    txtPurChaseDateTo.Focus();
                 }
             }
         }
@@ -323,7 +324,7 @@ namespace Shiharai_IchiranHyou
                 DateTime dt1 = Convert.ToDateTime(txtPurchaseDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPurChaseDateTo.Text);
 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {                   
                     return false;
                 }

@@ -511,7 +511,7 @@ namespace Search
                     break;
                 case SearchType.出荷指示番号:
                     txtCode.MaxLength = 11;
-                    txtCode.Width = 100;
+                    txtCode.Width = 140;
                     lblName.Width = 600;
                     break;
                 case SearchType.出荷番号:
@@ -1025,12 +1025,16 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     using (Search_Product frmItemCD = new Search_Product(changedate))
                     {
-                        frmItemCD.Mode = "1";
+                        frmItemCD.Mode = Value1 == null ? "1" : Value1;
                         frmItemCD.SKUCD = txtCode.Text;
                         frmItemCD.ShowDialog();
                         if (!frmItemCD.flgCancel)
                         {
-                            txtCode.Text = frmItemCD.ITEM;
+                            if (frmItemCD.Mode.Equals("1"))
+                                txtCode.Text = frmItemCD.ITEM;
+                            else if (frmItemCD.Mode.Equals("2"))
+                                txtCode.Text = frmItemCD.SKUCD;
+
                             if (UseChangeDate == true)
                                 txtChangeDate.Text = frmItemCD.ChangeDate;
 
@@ -1570,18 +1574,18 @@ namespace Search
                         }
                     }
                     break;
-                //case SearchType.支払番号検索:
-                //    using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
-                //    {
-                //        frmsiharaino.ShowDialog();
-                //        if (!frmsiharaino.flgCancel)
-                //        {
-                //            txtCode.Text = frmsiharaino.ID;
-                //            txtChangeDate.Text = frmsiharaino.date;
-                //            lblName.Text = frmsiharaino.parName;
-                //        }
-                //    }
-                //    break;
+                case SearchType.支払処理:
+                    using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
+                    {
+                        frmsiharaino.ShowDialog();
+                        if (!frmsiharaino.flgCancel)
+                        {
+                            txtCode.Text = frmsiharaino.ID;
+                            txtChangeDate.Text = frmsiharaino.date;
+                            lblName.Text = frmsiharaino.parName;
+                        }
+                    }
+                    break;
                 //case SearchType.Location: // 2019.12.09
                 //    using (Search_Location frmLocation = new Search_Location(changedate, Value1))
                 //    {
@@ -1593,7 +1597,7 @@ namespace Search
                 //        }
                 //    }
                 //    break;
-                case SearchType.支払処理: // 2019.12.19
+                case SearchType.支払番号検索: // 2019.12.19
                     using (Search_SiharaiShoriNO frmShoriNo = new Search_SiharaiShoriNO())
                     {
                         frmShoriNo.ShowDialog();
@@ -1838,6 +1842,9 @@ namespace Search
                     case SearchType.SKU_ITEM_CD:
                         dtResult = bbl.SimpleSelect1("65", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
                         break;
+                    case SearchType.JANCD:
+                        dtResult = bbl.SimpleSelect1("66", DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), TxtCode.Text);
+                        break;
                 }
 
             }
@@ -1936,7 +1943,7 @@ namespace Search
                 case SearchType.SKU_ITEM_CD:
                     dtResult = bbl.Select_SearchName(txtChangeDate.Text.Replace("/", "-"), 15, txtCode.Text, Value1);
                     break;
-
+              
             }
             if (dtResult.Rows.Count > 0)
             {

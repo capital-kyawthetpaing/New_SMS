@@ -95,6 +95,7 @@ namespace NyuukinNyuuryoku
             int w_Row;
             int w_CtlRow;
             int w_CtlCol;
+            BL.Base_BL bbl = new BL.Base_BL();
 
             if (pStartRow != pScrool.Value)
             {
@@ -199,6 +200,16 @@ namespace NyuukinNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御    
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+              
+                //マイナスPrice対応
+                if (bbl.Z_Set(g_DArray[w_Row].ConfirmAmount) < 0)
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
+                }
 
                 // 販売単価
                 w_CtlCol = (int)ColNO.JuchuuNO;

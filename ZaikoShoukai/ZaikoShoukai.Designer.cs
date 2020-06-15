@@ -28,16 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_LBLSoko = new CKM_Controls.CKM_Label();
             this.CB_Soko = new CKM_Controls.CKM_ComboBox();
             this.ckM_LB_Tanaban = new CKM_Controls.CKM_Label();
@@ -137,10 +138,10 @@
             this.TB_ShoninbiF = new CKM_Controls.CKM_TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PL_head = new System.Windows.Forms.Panel();
+            this.sku = new Search.CKM_SearchControl();
+            this.jan = new Search.CKM_SearchControl();
             this.LB_kensaku = new CKM_Controls.CKM_Label();
             this.LB_kenrenkensaku = new CKM_Controls.CKM_Label();
-            this.TB_Skucd = new CKM_Controls.CKM_TextBox();
-            this.TB_Jancd = new CKM_Controls.CKM_TextBox();
             this.TB_Shijishobengo = new CKM_Controls.CKM_TextBox();
             this.TB_Catalog = new CKM_Controls.CKM_TextBox();
             this.SearchBrand = new Search.CKM_SearchControl();
@@ -191,7 +192,7 @@
             // 
             this.CB_Soko.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CB_Soko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫;
+            this.CB_Soko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.在庫照会倉庫;
             this.CB_Soko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_Soko.Flag = 0;
             this.CB_Soko.FormattingEnabled = true;
@@ -201,7 +202,8 @@
             this.CB_Soko.MoveNext = true;
             this.CB_Soko.Name = "CB_Soko";
             this.CB_Soko.Size = new System.Drawing.Size(170, 20);
-            this.CB_Soko.TabIndex = 0;
+            this.CB_Soko.TabIndex = 1;
+            this.CB_Soko.Tag = "";
             // 
             // ckM_LB_Tanaban
             // 
@@ -244,7 +246,7 @@
             this.TB_RackNoF.MoveNext = true;
             this.TB_RackNoF.Name = "TB_RackNoF";
             this.TB_RackNoF.Size = new System.Drawing.Size(80, 19);
-            this.TB_RackNoF.TabIndex = 1;
+            this.TB_RackNoF.TabIndex = 2;
             this.TB_RackNoF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label3
@@ -288,7 +290,7 @@
             this.TB_RackNoT.MoveNext = true;
             this.TB_RackNoT.Name = "TB_RackNoT";
             this.TB_RackNoT.Size = new System.Drawing.Size(80, 19);
-            this.TB_RackNoT.TabIndex = 2;
+            this.TB_RackNoT.TabIndex = 3;
             this.TB_RackNoT.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.TB_RackNoT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TB_RackNoT_KeyDown);
             // 
@@ -378,12 +380,12 @@
             this.TB_Shohinmei.IsNumber = true;
             this.TB_Shohinmei.IsShop = false;
             this.TB_Shohinmei.Length = 80;
-            this.TB_Shohinmei.Location = new System.Drawing.Point(132, 129);
+            this.TB_Shohinmei.Location = new System.Drawing.Point(132, 128);
             this.TB_Shohinmei.MaxLength = 80;
             this.TB_Shohinmei.MoveNext = true;
             this.TB_Shohinmei.Name = "TB_Shohinmei";
             this.TB_Shohinmei.Size = new System.Drawing.Size(450, 19);
-            this.TB_Shohinmei.TabIndex = 6;
+            this.TB_Shohinmei.TabIndex = 7;
             this.TB_Shohinmei.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_LB_Jancd
@@ -395,7 +397,7 @@
             this.ckM_LB_Jancd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Jancd.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Jancd.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Jancd.Location = new System.Drawing.Point(88, 152);
+            this.ckM_LB_Jancd.Location = new System.Drawing.Point(89, 156);
             this.ckM_LB_Jancd.Name = "ckM_LB_Jancd";
             this.ckM_LB_Jancd.Size = new System.Drawing.Size(40, 12);
             this.ckM_LB_Jancd.TabIndex = 16;
@@ -422,12 +424,12 @@
             this.TB_Bikokeyword.IsNumber = true;
             this.TB_Bikokeyword.IsShop = false;
             this.TB_Bikokeyword.Length = 100;
-            this.TB_Bikokeyword.Location = new System.Drawing.Point(132, 167);
+            this.TB_Bikokeyword.Location = new System.Drawing.Point(132, 174);
             this.TB_Bikokeyword.MaxLength = 100;
             this.TB_Bikokeyword.MoveNext = true;
             this.TB_Bikokeyword.Name = "TB_Bikokeyword";
             this.TB_Bikokeyword.Size = new System.Drawing.Size(450, 19);
-            this.TB_Bikokeyword.TabIndex = 9;
+            this.TB_Bikokeyword.TabIndex = 10;
             this.TB_Bikokeyword.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_LB_Bikokeyword
@@ -439,7 +441,7 @@
             this.ckM_LB_Bikokeyword.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Bikokeyword.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Bikokeyword.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Bikokeyword.Location = new System.Drawing.Point(19, 171);
+            this.ckM_LB_Bikokeyword.Location = new System.Drawing.Point(19, 178);
             this.ckM_LB_Bikokeyword.Name = "ckM_LB_Bikokeyword";
             this.ckM_LB_Bikokeyword.Size = new System.Drawing.Size(109, 12);
             this.ckM_LB_Bikokeyword.TabIndex = 20;
@@ -456,7 +458,7 @@
             this.ckM_LB_Skucd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Skucd.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Skucd.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Skucd.Location = new System.Drawing.Point(247, 152);
+            this.ckM_LB_Skucd.Location = new System.Drawing.Point(282, 155);
             this.ckM_LB_Skucd.Name = "ckM_LB_Skucd";
             this.ckM_LB_Skucd.Size = new System.Drawing.Size(40, 12);
             this.ckM_LB_Skucd.TabIndex = 18;
@@ -473,7 +475,7 @@
             this.ckM_LB_katarogu.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_katarogu.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_katarogu.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_katarogu.Location = new System.Drawing.Point(635, 112);
+            this.ckM_LB_katarogu.Location = new System.Drawing.Point(635, 117);
             this.ckM_LB_katarogu.Name = "ckM_LB_katarogu";
             this.ckM_LB_katarogu.Size = new System.Drawing.Size(57, 12);
             this.ckM_LB_katarogu.TabIndex = 24;
@@ -491,7 +493,7 @@
             this.CB_year.FormattingEnabled = true;
             this.CB_year.ItemHeight = 12;
             this.CB_year.Length = 20;
-            this.CB_year.Location = new System.Drawing.Point(695, 90);
+            this.CB_year.Location = new System.Drawing.Point(695, 95);
             this.CB_year.MaxLength = 20;
             this.CB_year.MoveNext = true;
             this.CB_year.Name = "CB_year";
@@ -507,7 +509,7 @@
             this.ckM_LB_nen_do.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_nen_do.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_nen_do.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_nen_do.Location = new System.Drawing.Point(648, 94);
+            this.ckM_LB_nen_do.Location = new System.Drawing.Point(648, 99);
             this.ckM_LB_nen_do.Name = "ckM_LB_nen_do";
             this.ckM_LB_nen_do.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_nen_do.TabIndex = 22;
@@ -525,12 +527,12 @@
             this.CB_Season.FormattingEnabled = true;
             this.CB_Season.ItemHeight = 12;
             this.CB_Season.Length = 20;
-            this.CB_Season.Location = new System.Drawing.Point(938, 90);
+            this.CB_Season.Location = new System.Drawing.Point(938, 95);
             this.CB_Season.MaxLength = 20;
             this.CB_Season.MoveNext = true;
             this.CB_Season.Name = "CB_Season";
             this.CB_Season.Size = new System.Drawing.Size(180, 20);
-            this.CB_Season.TabIndex = 14;
+            this.CB_Season.TabIndex = 13;
             // 
             // ckM_LB_Season
             // 
@@ -541,7 +543,7 @@
             this.ckM_LB_Season.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Season.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Season.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Season.Location = new System.Drawing.Point(879, 94);
+            this.ckM_LB_Season.Location = new System.Drawing.Point(879, 99);
             this.ckM_LB_Season.Name = "ckM_LB_Season";
             this.ckM_LB_Season.Size = new System.Drawing.Size(57, 12);
             this.ckM_LB_Season.TabIndex = 26;
@@ -557,14 +559,13 @@
             this.CB_ReserveCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_ReserveCD.Flag = 0;
             this.CB_ReserveCD.FormattingEnabled = true;
-            this.CB_ReserveCD.ItemHeight = 12;
             this.CB_ReserveCD.Length = 20;
-            this.CB_ReserveCD.Location = new System.Drawing.Point(695, 127);
+            this.CB_ReserveCD.Location = new System.Drawing.Point(695, 132);
             this.CB_ReserveCD.MaxLength = 20;
             this.CB_ReserveCD.MoveNext = true;
             this.CB_ReserveCD.Name = "CB_ReserveCD";
             this.CB_ReserveCD.Size = new System.Drawing.Size(180, 20);
-            this.CB_ReserveCD.TabIndex = 14;
+            this.CB_ReserveCD.TabIndex = 16;
             // 
             // ckM_LB_ko_yaku
             // 
@@ -575,7 +576,7 @@
             this.ckM_LB_ko_yaku.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_ko_yaku.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_ko_yaku.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_ko_yaku.Location = new System.Drawing.Point(648, 131);
+            this.ckM_LB_ko_yaku.Location = new System.Drawing.Point(648, 136);
             this.ckM_LB_ko_yaku.Name = "ckM_LB_ko_yaku";
             this.ckM_LB_ko_yaku.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_ko_yaku.TabIndex = 28;
@@ -592,7 +593,7 @@
             this.CB_NoticesCD.Flag = 0;
             this.CB_NoticesCD.FormattingEnabled = true;
             this.CB_NoticesCD.Length = 20;
-            this.CB_NoticesCD.Location = new System.Drawing.Point(695, 146);
+            this.CB_NoticesCD.Location = new System.Drawing.Point(695, 151);
             this.CB_NoticesCD.MaxLength = 20;
             this.CB_NoticesCD.MoveNext = true;
             this.CB_NoticesCD.Name = "CB_NoticesCD";
@@ -608,7 +609,7 @@
             this.ckM_LB_Toku_ki.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Toku_ki.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Toku_ki.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Toku_ki.Location = new System.Drawing.Point(648, 149);
+            this.ckM_LB_Toku_ki.Location = new System.Drawing.Point(648, 154);
             this.ckM_LB_Toku_ki.Name = "ckM_LB_Toku_ki";
             this.ckM_LB_Toku_ki.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Toku_ki.TabIndex = 30;
@@ -625,7 +626,7 @@
             this.CB_PostageCD.Flag = 0;
             this.CB_PostageCD.FormattingEnabled = true;
             this.CB_PostageCD.Length = 20;
-            this.CB_PostageCD.Location = new System.Drawing.Point(695, 165);
+            this.CB_PostageCD.Location = new System.Drawing.Point(695, 170);
             this.CB_PostageCD.MaxLength = 20;
             this.CB_PostageCD.MoveNext = true;
             this.CB_PostageCD.Name = "CB_PostageCD";
@@ -641,7 +642,7 @@
             this.ckM_LB_Oku_ryo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Oku_ryo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Oku_ryo.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Oku_ryo.Location = new System.Drawing.Point(648, 169);
+            this.ckM_LB_Oku_ryo.Location = new System.Drawing.Point(648, 174);
             this.ckM_LB_Oku_ryo.Name = "ckM_LB_Oku_ryo";
             this.ckM_LB_Oku_ryo.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Oku_ryo.TabIndex = 32;
@@ -658,7 +659,7 @@
             this.CB_Tagu1.Flag = 0;
             this.CB_Tagu1.FormattingEnabled = true;
             this.CB_Tagu1.Length = 40;
-            this.CB_Tagu1.Location = new System.Drawing.Point(1216, 93);
+            this.CB_Tagu1.Location = new System.Drawing.Point(1216, 96);
             this.CB_Tagu1.MaxLength = 20;
             this.CB_Tagu1.MoveNext = true;
             this.CB_Tagu1.Name = "CB_Tagu1";
@@ -674,7 +675,7 @@
             this.ckM_LB_Tagu1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Tagu1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Tagu1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Tagu1.Location = new System.Drawing.Point(1169, 97);
+            this.ckM_LB_Tagu1.Location = new System.Drawing.Point(1169, 100);
             this.ckM_LB_Tagu1.Name = "ckM_LB_Tagu1";
             this.ckM_LB_Tagu1.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Tagu1.TabIndex = 34;
@@ -691,7 +692,7 @@
             this.CB_Tagu2.Flag = 0;
             this.CB_Tagu2.FormattingEnabled = true;
             this.CB_Tagu2.Length = 40;
-            this.CB_Tagu2.Location = new System.Drawing.Point(1216, 112);
+            this.CB_Tagu2.Location = new System.Drawing.Point(1216, 115);
             this.CB_Tagu2.MaxLength = 20;
             this.CB_Tagu2.MoveNext = true;
             this.CB_Tagu2.Name = "CB_Tagu2";
@@ -707,7 +708,7 @@
             this.ckM_LB_2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_2.Location = new System.Drawing.Point(1169, 116);
+            this.ckM_LB_2.Location = new System.Drawing.Point(1169, 119);
             this.ckM_LB_2.Name = "ckM_LB_2";
             this.ckM_LB_2.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_2.TabIndex = 36;
@@ -724,7 +725,7 @@
             this.CB_Tagu5.Flag = 0;
             this.CB_Tagu5.FormattingEnabled = true;
             this.CB_Tagu5.Length = 40;
-            this.CB_Tagu5.Location = new System.Drawing.Point(1216, 169);
+            this.CB_Tagu5.Location = new System.Drawing.Point(1216, 172);
             this.CB_Tagu5.MaxLength = 20;
             this.CB_Tagu5.MoveNext = true;
             this.CB_Tagu5.Name = "CB_Tagu5";
@@ -740,7 +741,7 @@
             this.ckM_LB_5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_5.Location = new System.Drawing.Point(1169, 173);
+            this.ckM_LB_5.Location = new System.Drawing.Point(1169, 176);
             this.ckM_LB_5.Name = "ckM_LB_5";
             this.ckM_LB_5.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_5.TabIndex = 42;
@@ -757,7 +758,7 @@
             this.CB_Tagu4.Flag = 0;
             this.CB_Tagu4.FormattingEnabled = true;
             this.CB_Tagu4.Length = 40;
-            this.CB_Tagu4.Location = new System.Drawing.Point(1216, 150);
+            this.CB_Tagu4.Location = new System.Drawing.Point(1216, 153);
             this.CB_Tagu4.MaxLength = 20;
             this.CB_Tagu4.MoveNext = true;
             this.CB_Tagu4.Name = "CB_Tagu4";
@@ -773,7 +774,7 @@
             this.ckM_LB_4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_4.Location = new System.Drawing.Point(1169, 154);
+            this.ckM_LB_4.Location = new System.Drawing.Point(1169, 157);
             this.ckM_LB_4.Name = "ckM_LB_4";
             this.ckM_LB_4.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_4.TabIndex = 40;
@@ -791,7 +792,7 @@
             this.CB_Tagu3.FormattingEnabled = true;
             this.CB_Tagu3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.CB_Tagu3.Length = 40;
-            this.CB_Tagu3.Location = new System.Drawing.Point(1216, 131);
+            this.CB_Tagu3.Location = new System.Drawing.Point(1216, 134);
             this.CB_Tagu3.MaxLength = 20;
             this.CB_Tagu3.MoveNext = true;
             this.CB_Tagu3.Name = "CB_Tagu3";
@@ -807,7 +808,7 @@
             this.ckM_LB_3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_3.Location = new System.Drawing.Point(1169, 135);
+            this.ckM_LB_3.Location = new System.Drawing.Point(1169, 138);
             this.ckM_LB_3.Name = "ckM_LB_3";
             this.ckM_LB_3.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_3.TabIndex = 38;
@@ -824,7 +825,7 @@
             this.ckM_LB_Kei_waza.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Kei_waza.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Kei_waza.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Kei_waza.Location = new System.Drawing.Point(649, 192);
+            this.ckM_LB_Kei_waza.Location = new System.Drawing.Point(649, 197);
             this.ckM_LB_Kei_waza.Name = "ckM_LB_Kei_waza";
             this.ckM_LB_Kei_waza.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Kei_waza.TabIndex = 45;
@@ -841,7 +842,7 @@
             this.djofo.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.djofo.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.djofo.ForeColor = System.Drawing.Color.Black;
-            this.djofo.Location = new System.Drawing.Point(1143, 192);
+            this.djofo.Location = new System.Drawing.Point(1143, 195);
             this.djofo.Name = "djofo";
             this.djofo.Size = new System.Drawing.Size(70, 12);
             this.djofo.TabIndex = 46;
@@ -939,10 +940,10 @@
             // 
             this.ckM_RB_or.AutoSize = true;
             this.ckM_RB_or.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_RB_or.Location = new System.Drawing.Point(5, 2);
+            this.ckM_RB_or.Location = new System.Drawing.Point(5, 4);
             this.ckM_RB_or.Name = "ckM_RB_or";
             this.ckM_RB_or.Size = new System.Drawing.Size(37, 16);
-            this.ckM_RB_or.TabIndex = 10;
+            this.ckM_RB_or.TabIndex = 11;
             this.ckM_RB_or.TabStop = true;
             this.ckM_RB_or.Text = "or";
             this.ckM_RB_or.UseVisualStyleBackColor = true;
@@ -955,6 +956,7 @@
             this.ckM_RB_and.Name = "ckM_RB_and";
             this.ckM_RB_and.Size = new System.Drawing.Size(44, 16);
             this.ckM_RB_and.TabIndex = 11;
+            this.ckM_RB_and.TabStop = true;
             this.ckM_RB_and.Text = "and";
             this.ckM_RB_and.UseVisualStyleBackColor = true;
             // 
@@ -1217,7 +1219,7 @@
             this.ckM_LB_Multiseparate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Multiseparate.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Multiseparate.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Multiseparate.Location = new System.Drawing.Point(156, 4);
+            this.ckM_LB_Multiseparate.Location = new System.Drawing.Point(156, 5);
             this.ckM_LB_Multiseparate.Name = "ckM_LB_Multiseparate";
             this.ckM_LB_Multiseparate.Size = new System.Drawing.Size(273, 12);
             this.ckM_LB_Multiseparate.TabIndex = 79;
@@ -1268,7 +1270,7 @@
             this.CB_OrderAttentionCD.Flag = 0;
             this.CB_OrderAttentionCD.FormattingEnabled = true;
             this.CB_OrderAttentionCD.Length = 20;
-            this.CB_OrderAttentionCD.Location = new System.Drawing.Point(937, 149);
+            this.CB_OrderAttentionCD.Location = new System.Drawing.Point(937, 154);
             this.CB_OrderAttentionCD.MaxLength = 20;
             this.CB_OrderAttentionCD.MoveNext = true;
             this.CB_OrderAttentionCD.Name = "CB_OrderAttentionCD";
@@ -1284,7 +1286,7 @@
             this.ckM_LB_Hatsu_chu.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_LB_Hatsu_chu.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_LB_Hatsu_chu.ForeColor = System.Drawing.Color.Black;
-            this.ckM_LB_Hatsu_chu.Location = new System.Drawing.Point(890, 153);
+            this.ckM_LB_Hatsu_chu.Location = new System.Drawing.Point(890, 158);
             this.ckM_LB_Hatsu_chu.Name = "ckM_LB_Hatsu_chu";
             this.ckM_LB_Hatsu_chu.Size = new System.Drawing.Size(44, 12);
             this.ckM_LB_Hatsu_chu.TabIndex = 82;
@@ -1462,17 +1464,17 @@
             this.GV_Zaiko.AllowUserToAddRows = false;
             this.GV_Zaiko.AllowUserToDeleteRows = false;
             this.GV_Zaiko.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_Zaiko.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle34;
             this.GV_Zaiko.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_Zaiko.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle35;
             this.GV_Zaiko.ColumnHeadersHeight = 25;
             this.GV_Zaiko.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SKUCD,
@@ -1495,6 +1497,14 @@
             this.基準在庫,
             this.販売定価,
             this.標準原価});
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_Zaiko.DefaultCellStyle = dataGridViewCellStyle44;
             this.GV_Zaiko.EnableHeadersVisualStyles = false;
             this.GV_Zaiko.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_Zaiko.Location = new System.Drawing.Point(71, 459);
@@ -1565,10 +1575,10 @@
             // 現在庫
             // 
             this.現在庫.DataPropertyName = "在庫数";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.現在庫.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle36.Format = "N0";
+            dataGridViewCellStyle36.NullValue = null;
+            this.現在庫.DefaultCellStyle = dataGridViewCellStyle36;
             this.現在庫.HeaderText = "現在庫";
             this.現在庫.Name = "現在庫";
             this.現在庫.ReadOnly = true;
@@ -1576,10 +1586,10 @@
             // 入荷予定
             // 
             this.入荷予定.DataPropertyName = "入荷予定数";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle37.Format = "N0";
+            dataGridViewCellStyle37.NullValue = null;
+            this.入荷予定.DefaultCellStyle = dataGridViewCellStyle37;
             this.入荷予定.HeaderText = "入荷予定";
             this.入荷予定.Name = "入荷予定";
             this.入荷予定.ReadOnly = true;
@@ -1596,10 +1606,10 @@
             // 引当可能
             // 
             this.引当可能.DataPropertyName = "引当可能数";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            dataGridViewCellStyle5.NullValue = null;
-            this.引当可能.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle38.Format = "N0";
+            dataGridViewCellStyle38.NullValue = null;
+            this.引当可能.DefaultCellStyle = dataGridViewCellStyle38;
             this.引当可能.HeaderText = "引当可能";
             this.引当可能.Name = "引当可能";
             this.引当可能.ReadOnly = true;
@@ -1607,8 +1617,8 @@
             // メーカー
             // 
             this.メーカー.DataPropertyName = "メーカー在庫数";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.メーカー.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.メーカー.DefaultCellStyle = dataGridViewCellStyle39;
             this.メーカー.HeaderText = "メーカー";
             this.メーカー.Name = "メーカー";
             this.メーカー.ReadOnly = true;
@@ -1647,10 +1657,10 @@
             // 最速入荷日
             // 
             this.最速入荷日.DataPropertyName = "最速入荷日";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.Format = "d";
+            dataGridViewCellStyle40.NullValue = null;
+            this.最速入荷日.DefaultCellStyle = dataGridViewCellStyle40;
             this.最速入荷日.HeaderText = "最速入荷日";
             this.最速入荷日.Name = "最速入荷日";
             this.最速入荷日.ReadOnly = true;
@@ -1658,10 +1668,10 @@
             // 基準在庫
             // 
             this.基準在庫.DataPropertyName = "基準在庫";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            dataGridViewCellStyle8.NullValue = null;
-            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle41.Format = "N0";
+            dataGridViewCellStyle41.NullValue = null;
+            this.基準在庫.DefaultCellStyle = dataGridViewCellStyle41;
             this.基準在庫.HeaderText = "基準在庫";
             this.基準在庫.Name = "基準在庫";
             this.基準在庫.ReadOnly = true;
@@ -1669,10 +1679,10 @@
             // 販売定価
             // 
             this.販売定価.DataPropertyName = "販売定価";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.販売定価.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Format = "N0";
+            dataGridViewCellStyle42.NullValue = null;
+            this.販売定価.DefaultCellStyle = dataGridViewCellStyle42;
             this.販売定価.HeaderText = "販売定価";
             this.販売定価.Name = "販売定価";
             this.販売定価.ReadOnly = true;
@@ -1680,10 +1690,10 @@
             // 標準原価
             // 
             this.標準原価.DataPropertyName = "標準原価";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.標準原価.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle43.Format = "N0";
+            dataGridViewCellStyle43.NullValue = null;
+            this.標準原価.DefaultCellStyle = dataGridViewCellStyle43;
             this.標準原価.HeaderText = "標準原価";
             this.標準原価.MaxInputLength = 6;
             this.標準原価.Name = "標準原価";
@@ -1766,17 +1776,17 @@
             this.panel1.Controls.Add(this.ckM_LB_Multiseparate);
             this.panel1.Controls.Add(this.ckM_RB_or);
             this.panel1.Controls.Add(this.ckM_RB_and);
-            this.panel1.Location = new System.Drawing.Point(134, 188);
+            this.panel1.Location = new System.Drawing.Point(134, 196);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(500, 22);
             this.panel1.TabIndex = 11;
             // 
             // PL_head
             // 
+            this.PL_head.Controls.Add(this.sku);
+            this.PL_head.Controls.Add(this.jan);
             this.PL_head.Controls.Add(this.LB_kensaku);
             this.PL_head.Controls.Add(this.LB_kenrenkensaku);
-            this.PL_head.Controls.Add(this.TB_Skucd);
-            this.PL_head.Controls.Add(this.TB_Jancd);
             this.PL_head.Controls.Add(this.TB_Shijishobengo);
             this.PL_head.Controls.Add(this.TB_Catalog);
             this.PL_head.Controls.Add(this.SearchBrand);
@@ -1855,6 +1865,64 @@
             this.PL_head.Size = new System.Drawing.Size(1682, 344);
             this.PL_head.TabIndex = 0;
             // 
+            // sku
+            // 
+            this.sku.AutoSize = true;
+            this.sku.ChangeDate = "";
+            this.sku.ChangeDateWidth = 100;
+            this.sku.Code = "";
+            this.sku.CodeWidth = 190;
+            this.sku.CodeWidth1 = 190;
+            this.sku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.sku.DataCheck = false;
+            this.sku.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sku.IsCopy = false;
+            this.sku.LabelText = "";
+            this.sku.LabelVisible = false;
+            this.sku.Location = new System.Drawing.Point(324, 147);
+            this.sku.Margin = new System.Windows.Forms.Padding(0);
+            this.sku.Name = "sku";
+            this.sku.NameWidth = 350;
+            this.sku.SearchEnable = true;
+            this.sku.Size = new System.Drawing.Size(223, 27);
+            this.sku.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
+            this.sku.TabIndex = 9;
+            this.sku.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.sku.UseChangeDate = false;
+            this.sku.Value1 = null;
+            this.sku.Value2 = null;
+            this.sku.Value3 = null;
+            this.sku.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sku_CodeKeyDownEvent);
+            // 
+            // jan
+            // 
+            this.jan.AutoSize = true;
+            this.jan.ChangeDate = "";
+            this.jan.ChangeDateWidth = 0;
+            this.jan.Code = "";
+            this.jan.CodeWidth = 110;
+            this.jan.CodeWidth1 = 110;
+            this.jan.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
+            this.jan.DataCheck = false;
+            this.jan.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.jan.IsCopy = false;
+            this.jan.LabelText = "";
+            this.jan.LabelVisible = false;
+            this.jan.Location = new System.Drawing.Point(132, 147);
+            this.jan.Margin = new System.Windows.Forms.Padding(0);
+            this.jan.Name = "jan";
+            this.jan.NameWidth = 190;
+            this.jan.SearchEnable = true;
+            this.jan.Size = new System.Drawing.Size(143, 27);
+            this.jan.Stype = Search.CKM_SearchControl.SearchType.JANCD;
+            this.jan.TabIndex = 8;
+            this.jan.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.jan.UseChangeDate = false;
+            this.jan.Value1 = null;
+            this.jan.Value2 = null;
+            this.jan.Value3 = null;
+            this.jan.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.jan_CodeKeyDownEvent);
+            // 
             // LB_kensaku
             // 
             this.LB_kensaku.AutoSize = true;
@@ -1889,58 +1957,6 @@
             this.LB_kenrenkensaku.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.LB_kenrenkensaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // TB_Skucd
-            // 
-            this.TB_Skucd.AllowMinus = false;
-            this.TB_Skucd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_Skucd.BackColor = System.Drawing.Color.White;
-            this.TB_Skucd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Skucd.ClientColor = System.Drawing.Color.White;
-            this.TB_Skucd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_Skucd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.TB_Skucd.DecimalPlace = 0;
-            this.TB_Skucd.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_Skucd.IntegerPart = 0;
-            this.TB_Skucd.IsCorrectDate = true;
-            this.TB_Skucd.isEnterKeyDown = false;
-            this.TB_Skucd.isMaxLengthErr = false;
-            this.TB_Skucd.IsNumber = true;
-            this.TB_Skucd.IsShop = false;
-            this.TB_Skucd.Length = 23;
-            this.TB_Skucd.Location = new System.Drawing.Point(298, 148);
-            this.TB_Skucd.MaxLength = 23;
-            this.TB_Skucd.MoveNext = true;
-            this.TB_Skucd.Name = "TB_Skucd";
-            this.TB_Skucd.Size = new System.Drawing.Size(200, 19);
-            this.TB_Skucd.TabIndex = 8;
-            this.TB_Skucd.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // TB_Jancd
-            // 
-            this.TB_Jancd.AllowMinus = false;
-            this.TB_Jancd.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.TB_Jancd.BackColor = System.Drawing.Color.White;
-            this.TB_Jancd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TB_Jancd.ClientColor = System.Drawing.Color.White;
-            this.TB_Jancd.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
-            this.TB_Jancd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
-            this.TB_Jancd.DecimalPlace = 0;
-            this.TB_Jancd.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.TB_Jancd.IntegerPart = 0;
-            this.TB_Jancd.IsCorrectDate = true;
-            this.TB_Jancd.isEnterKeyDown = false;
-            this.TB_Jancd.isMaxLengthErr = false;
-            this.TB_Jancd.IsNumber = true;
-            this.TB_Jancd.IsShop = false;
-            this.TB_Jancd.Length = 13;
-            this.TB_Jancd.Location = new System.Drawing.Point(132, 148);
-            this.TB_Jancd.MaxLength = 13;
-            this.TB_Jancd.MoveNext = true;
-            this.TB_Jancd.Name = "TB_Jancd";
-            this.TB_Jancd.Size = new System.Drawing.Size(100, 19);
-            this.TB_Jancd.TabIndex = 7;
-            this.TB_Jancd.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // TB_Shijishobengo
             // 
             this.TB_Shijishobengo.AllowMinus = false;
@@ -1959,7 +1975,7 @@
             this.TB_Shijishobengo.IsNumber = true;
             this.TB_Shijishobengo.IsShop = false;
             this.TB_Shijishobengo.Length = 50;
-            this.TB_Shijishobengo.Location = new System.Drawing.Point(1216, 189);
+            this.TB_Shijishobengo.Location = new System.Drawing.Point(1216, 192);
             this.TB_Shijishobengo.MaxLength = 50;
             this.TB_Shijishobengo.MoveNext = true;
             this.TB_Shijishobengo.Name = "TB_Shijishobengo";
@@ -1986,12 +2002,12 @@
             this.TB_Catalog.IsNumber = true;
             this.TB_Catalog.IsShop = false;
             this.TB_Catalog.Length = 50;
-            this.TB_Catalog.Location = new System.Drawing.Point(695, 109);
+            this.TB_Catalog.Location = new System.Drawing.Point(695, 114);
             this.TB_Catalog.MaxLength = 50;
             this.TB_Catalog.MoveNext = true;
             this.TB_Catalog.Name = "TB_Catalog";
             this.TB_Catalog.Size = new System.Drawing.Size(400, 19);
-            this.TB_Catalog.TabIndex = 13;
+            this.TB_Catalog.TabIndex = 14;
             this.TB_Catalog.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // SearchBrand
@@ -2015,7 +2031,7 @@
             this.SearchBrand.SearchEnable = true;
             this.SearchBrand.Size = new System.Drawing.Size(414, 27);
             this.SearchBrand.Stype = Search.CKM_SearchControl.SearchType.ブランド;
-            this.SearchBrand.TabIndex = 5;
+            this.SearchBrand.TabIndex = 6;
             this.SearchBrand.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SearchBrand.UseChangeDate = false;
             this.SearchBrand.Value1 = null;
@@ -2037,7 +2053,7 @@
             this.Sports.IsCopy = false;
             this.Sports.LabelText = "";
             this.Sports.LabelVisible = true;
-            this.Sports.Location = new System.Drawing.Point(696, 184);
+            this.Sports.Location = new System.Drawing.Point(696, 189);
             this.Sports.Margin = new System.Windows.Forms.Padding(0);
             this.Sports.Name = "Sports";
             this.Sports.NameWidth = 250;
@@ -2074,7 +2090,7 @@
             this.Maker.SearchEnable = true;
             this.Maker.Size = new System.Drawing.Size(444, 27);
             this.Maker.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.Maker.TabIndex = 4;
+            this.Maker.TabIndex = 5;
             this.Maker.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Maker.UseChangeDate = false;
             this.Maker.Value1 = null;
@@ -2103,7 +2119,7 @@
             this.Shiiresaki.SearchEnable = true;
             this.Shiiresaki.Size = new System.Drawing.Size(444, 27);
             this.Shiiresaki.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.Shiiresaki.TabIndex = 3;
+            this.Shiiresaki.TabIndex = 4;
             this.Shiiresaki.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Shiiresaki.UseChangeDate = false;
             this.Shiiresaki.Value1 = null;
@@ -2228,8 +2244,6 @@
         private CKM_Controls.CKM_TextBox TB_ShoninbiF;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel PL_head;
-        private CKM_Controls.CKM_TextBox TB_Skucd;
-        private CKM_Controls.CKM_TextBox TB_Jancd;
         private System.Windows.Forms.DataGridViewTextBoxColumn SKUCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn 商品名;
         private System.Windows.Forms.DataGridViewTextBoxColumn カラー;
@@ -2258,5 +2272,7 @@
         private CKM_Controls.CKM_TextBox TB_Shijishobengo;
         private CKM_Controls.CKM_Label LB_kensaku;
         private CKM_Controls.CKM_Label LB_kenrenkensaku;
+        private Search.CKM_SearchControl jan;
+        private Search.CKM_SearchControl sku;
     }
 }

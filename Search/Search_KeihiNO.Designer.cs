@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -537,7 +536,7 @@
             this.dgvCostSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -556,14 +555,6 @@
             this.PaymentDueDate,
             this.PaymentDate,
             this.TaxIncludePayment});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCostSearch.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCostSearch.Enabled = false;
             this.dgvCostSearch.EnableHeadersVisualStyles = false;
             this.dgvCostSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -753,7 +744,7 @@
             this.chkTeiki.Location = new System.Drawing.Point(510, 47);
             this.chkTeiki.Name = "chkTeiki";
             this.chkTeiki.Size = new System.Drawing.Size(15, 14);
-            this.chkTeiki.TabIndex = 12;
+            this.chkTeiki.TabIndex = 11;
             this.chkTeiki.UseVisualStyleBackColor = true;
             // 
             // PaymentCD
@@ -762,8 +753,8 @@
             this.PaymentCD.ChangeDate = "";
             this.PaymentCD.ChangeDateWidth = 100;
             this.PaymentCD.Code = "";
-            this.PaymentCD.CodeWidth = 130;
-            this.PaymentCD.CodeWidth1 = 130;
+            this.PaymentCD.CodeWidth = 100;
+            this.PaymentCD.CodeWidth1 = 100;
             this.PaymentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.PaymentCD.DataCheck = false;
             this.PaymentCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -773,7 +764,7 @@
             this.PaymentCD.Location = new System.Drawing.Point(98, 106);
             this.PaymentCD.Margin = new System.Windows.Forms.Padding(0);
             this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.NameWidth = 280;
+            this.PaymentCD.NameWidth = 310;
             this.PaymentCD.SearchEnable = true;
             this.PaymentCD.Size = new System.Drawing.Size(444, 27);
             this.PaymentCD.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;

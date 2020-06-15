@@ -7,7 +7,7 @@
     <ProjectGuid>{95133249-EDA5-45D3-8FD9-6952DD6BA934}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Shiharai_IchiranHyou</RootNamespace>
-    <AssemblyName>Shiharai_IchiranHyou</AssemblyName>
+    <AssemblyName>SiharaiItiranHyou</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -75,11 +75,11 @@
       <DependentUpon>ShiraraiItiranHyou_Report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Siharai_ItiranHyou.cs">
+    <Compile Include="SiharaiItiranHyou.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Siharai_ItiranHyou.Designer.cs">
-      <DependentUpon>Siharai_ItiranHyou.cs</DependentUpon>
+    <Compile Include="SiharaiItiranHyou.Designer.cs">
+      <DependentUpon>SiharaiItiranHyou.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +97,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ShiraraiItiranHyou_Report.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Siharai_ItiranHyou.resx">
-      <DependentUpon>Siharai_ItiranHyou.cs</DependentUpon>
+    <EmbeddedResource Include="SiharaiItiranHyou.resx">
+      <DependentUpon>SiharaiItiranHyou.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -40,6 +40,7 @@ namespace Search
             //chkPaid.Checked = true;
             //chkUnpaid.Checked = true;
             //chkTeiki.Checked = true;
+            chkUnpaid.Checked = true;
             F11Visible = false;
         }
         //ZCO
@@ -152,20 +153,23 @@ namespace Search
                 }
                 else
                 {
-                    //skhnobl.ShowMessage("E128"); //更新 ssa
+                    skhnobl.ShowMessage("E128"); //更新 ssa
                     dgvCostSearch.DataSource = null; 
                 }
             }
+
         }
         public override void FunctionProcess(int index)
         {
-            if (index + 1 == 11)
+            switch (index + 1)
             {
-                F11();
-            }
-            if (index + 1 == 12)
-             {
-                GetData();
+                              
+                case 11:
+                    F11();
+                    break;
+                case 12:
+                    GetData();
+                    break;
             }
         }
         /// <summary>
@@ -196,7 +200,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtRecordDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtRecordDateTo.Text);
              
-                if (dt1>=dt2)
+                if (dt1>dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtRecordDateFrom.Focus();
@@ -209,7 +213,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtEntryDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtEntryDateTo.Text);
                 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtEntryDateFrom.Focus();
@@ -222,7 +226,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDateTo.Text);
                
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtPaymentDateFrom.Focus();
@@ -235,7 +239,7 @@ namespace Search
                 DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
                 DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
                 
-                if (dt1 >= dt2)
+                if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
                     txtPaymentDueDateFrom.Focus();
@@ -260,7 +264,7 @@ namespace Search
                 chkPaid.Focus();
                 return false;
             }
-            if (!String.IsNullOrEmpty(PaymentCD.TxtCode.Text))
+            if (!String.IsNullOrEmpty(scStaffCD.TxtCode.Text))
             {
                 if (!scStaffCD.IsExists(2))
                 {
@@ -306,8 +310,8 @@ namespace Search
         //}
         private void frmSearch_KeihiNO_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F11)
-                F11();
+        //    if (e.KeyCode == Keys.F11)
+        //        F11();
         }
 
         private void dgvCostSearch_DoubleClick(object sender, EventArgs e)

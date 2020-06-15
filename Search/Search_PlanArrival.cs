@@ -21,8 +21,9 @@ namespace Search
         Base_BL bbl = new Base_BL();
         Search_PlanArrival_BL pa_bl;
         ZaikoShoukai_BL zaibl;
-        string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd,soukocd,changedate;
-        public Search_PlanArrival(String No, string sku, string shohin, string col, string si, string it, string br, string jan, string maker, string date,string souko)
+        string adminNO,skucd,shohinmei,color,size,item,brand,jancd,makercd,soukocd,changedate,soukoname,storecd;
+        public Search_PlanArrival(String No, string sku, string shohin, string col, string si
+            , string it, string br, string jan, string maker, string date,string soucd,string souname,string store)
         {
             InitializeComponent();
             HeaderTitleText = "商品在庫照会（入荷予定）";
@@ -39,12 +40,15 @@ namespace Search
             jancd = jan;
             makercd = maker;
             changedate = date;
-            soukocd = souko;
+            soukocd = soucd;
+            soukoname = souname;
+            storecd = store;
         }
         private void Search_PlanArrival_Load(object sender, EventArgs e)
         {
-            CB_Soko.Bind(String.Empty, "");
-            CB_Soko.SelectedText =soukocd;
+            string ymd = bbl.GetDate();
+            CB_Soko.Bind(ymd, storecd);
+            CB_Soko.SelectedValue = soukocd;
             TB_Shohinmei.Text= shohinmei;
             TB_ColorName.Text = color;
             TB_SizeName.Text = size;
@@ -54,6 +58,8 @@ namespace Search
             TB_Jancd.Text = jancd;
             TB_makerCD.Text = makercd;
             BtnF12Text = "表示(F11)";
+            F11Visible = false;
+            F9Visible = false;
         }
         public override void FunctionProcess(int index)
         {
@@ -69,7 +75,6 @@ namespace Search
         {
             msku_Entity = GetDataEntity();
             dap_Entity = GetData();
-           
             DataTable dt = pa_bl.Search_PlanArrival(dap_Entity, msku_Entity, adminNO);
             if (dt.Rows.Count > 0)
             {
@@ -79,6 +84,7 @@ namespace Search
             else
             {
                 GV_PlanArrival.DataSource = null;
+                bbl.ShowMessage("E128");
             }
         }
         private M_SKU_Entity GetDataEntity()
@@ -98,6 +104,5 @@ namespace Search
             };
             return dap_Entity;
         }
-       
     }
 }

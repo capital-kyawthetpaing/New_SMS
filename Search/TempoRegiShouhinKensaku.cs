@@ -61,12 +61,12 @@ namespace Search
             {
                 dt = new DataTable();
                 dt = skuBL.M_SKU_SelectAllForTempoRegiShohin(mse);
+                dgvDetail.DataSource = dt;
                 if (dt.Rows.Count > 0)
                 {
-                    dgvDetail.DataSource = dt;
-                    dgvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
+                    //dgvDetail.SelectionMode = DataGridViewSelectionMode.RowHeaderSelect;
                     dgvDetail.CurrentRow.Selected = true;
-                    //dgvDetail.Focus();
+                    dgvDetail.Focus();
                 }
             }
         }

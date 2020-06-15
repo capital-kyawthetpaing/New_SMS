@@ -26,8 +26,8 @@ namespace ZaikoShoukai
         D_Stock_Entity ds_Entity;
         ZaikoShoukai_BL zaibl;
         DataTable dtData;
-        string adminno = "", SoukoCD = "";
-        string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate;
+        string adminno = "", soukocd = "";
+        string shohinmei, color, size, item, skucd, brand, jancd, makercd,changedate,soukoname;
         int type = 0;
         public  ZaikoShoukai()
         {
@@ -54,8 +54,8 @@ namespace ZaikoShoukai
         private void BindCombo()
         {
             string ymd = bbl.GetDate();
-            CB_Soko.Bind(ymd);
-            CB_Soko.SelectedIndex = 1;
+            CB_Soko.Bind(ymd,StoreCD);
+            CB_Soko.SelectedValue = SoukoCD;
             CB_year.Bind(ymd);
             CB_Season.Bind(ymd);
             CB_ReserveCD.Bind(ymd);
@@ -96,10 +96,12 @@ namespace ZaikoShoukai
                     GV_Zaiko.Refresh();
                     GV_Zaiko.DataSource = dtData;
                     adminno = dtData.Rows[0]["AdminNo"].ToString();
+                    soukocd = dtData.Rows[0]["倉庫CD"].ToString();
                 }
                 else
                 {
                     GV_Zaiko.DataSource = null;
+                    bbl.ShowMessage("E128");
                     dtData.Clear();
                 }
             }
@@ -143,8 +145,8 @@ namespace ZaikoShoukai
                 MakerVendorCD = Maker.TxtCode.Text,
                 BrandCD = SearchBrand.TxtCode.Text,
                 SKUName = TB_Shohinmei.Text,
-                JanCD=TB_Jancd.Text,
-                SKUCD=TB_Skucd.Text,
+                JanCD=jan.TxtCode.Text,
+                SKUCD=sku.TxtCode.Text,
                 MakerItem= TB_mekashohinCD.Text,
                 ITemCD=TB_item.Text,
                 CommentInStore= TB_Bikokeyword.Text,
@@ -210,10 +212,16 @@ namespace ZaikoShoukai
                     }
                     break;
                 case 10:
-                    if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                    if (GV_Zaiko.DataSource != null)
                     {
-                        
-                        Excel();
+                        if (bbl.ShowMessage("Q203") == DialogResult.Yes)
+                        {
+                            Excel();
+                        }
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E128");
                     }
                     break;
                 case 11:
@@ -251,8 +259,8 @@ namespace ZaikoShoukai
             TB_RackNoT.Text = string.Empty;
             TＢ_SaiShuhenkobiF.Text = string.Empty;
             TB_SaiShuhenkobiT.Text = String.Empty;
-            TB_Jancd.Text = string.Empty;
-            TB_Skucd.Text = string.Empty;
+            jan.Clear();
+            sku.Clear();
             Shiiresaki.Clear();
             SearchBrand.Clear();
             Maker.Clear();
@@ -271,28 +279,30 @@ namespace ZaikoShoukai
         }
         private void Excel()
         {
-            if (!ErrorCheck())
+            if (GV_Zaiko.DataSource != null)
             {
-                return;
-            }
+                if (!ErrorCheck())
+                {
+                    return;
+                }
 
-            if (dtData.Columns.Contains("AdminNO"))
-            {
-                dtData.Columns.Remove("AdminNO");
-            }
-            string folderPath = "C:\\Excel\\";
-            if (!Directory.Exists(folderPath))
-            {
-                Directory.CreateDirectory(folderPath);
-            }
-            SaveFileDialog savedialog = new SaveFileDialog();
-            savedialog.Filter = "Excel Files|*.xlsx;";
-            savedialog.Title = "Save";
-            savedialog.FileName = "ZaikoShoukai";
-            savedialog.InitialDirectory = folderPath;
+                if (dtData.Columns.Contains("AdminNO"))
+                {
+                    dtData.Columns.Remove("AdminNO");
+                }
+                string folderPath = "C:\\Excel\\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Filter = "Excel Files|*.xlsx;";
+                savedialog.Title = "Save";
+                savedialog.FileName = "ZaikoShoukai";
+                savedialog.InitialDirectory = folderPath;
 
-            savedialog.RestoreDirectory = true;
-                
+                savedialog.RestoreDirectory = true;
+
                 if (savedialog.ShowDialog() == DialogResult.OK)
                 {
                     if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
@@ -303,17 +313,18 @@ namespace ZaikoShoukai
 
                         worksheet = workbook.ActiveSheet;
                         worksheet.Name = "worksheet";
-                   
+
                         using (XLWorkbook wb = new XLWorkbook())
                         {
-                        wb.Worksheets.Add(dtData, "worksheet");
-                        wb.SaveAs(savedialog.FileName);
-                        bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                            wb.Worksheets.Add(dtData, "worksheet");
+                            wb.SaveAs(savedialog.FileName);
+                            bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
                         }
-                    
+
                         Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
+            }
         }
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
@@ -327,7 +338,7 @@ namespace ZaikoShoukai
                 {
                     if (String.Compare(TB_RackNoF.Text, TB_RackNoT.Text) == 1)
                     {
-                        bbl.ShowMessage("106");
+                        bbl.ShowMessage("E106");
                     }
                 }
             }
@@ -393,6 +404,35 @@ namespace ZaikoShoukai
                 }
             }
         }
+
+        private void jan_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            //if (!String.IsNullOrEmpty(jan.TxtCode.Text))
+            //{
+            //    if (!jan.IsExists(2))
+            //    {
+            //        bbl.ShowMessage("E101");
+            //    }
+            //}
+        }
+
+        private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if(!String.IsNullOrEmpty(sku.TxtCode.Text))
+            {
+                //sku.ChangeDate = bbl.GetDate();
+                //if(sku.SelectData())
+                //{
+                //    sku.Value1 = sku.TxtCode.Text;
+                //}
+                //else
+                //{
+                //    bbl.ShowMessage("E101");
+                //    sku.SetFocus(1);
+                //}
+            }
+        }
+
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)
@@ -426,6 +466,7 @@ namespace ZaikoShoukai
             Sports.Value1 = "202";
         }
         private void TB_ShinkitorokuT_KeyDown(object sender, KeyEventArgs e)
+
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -434,6 +475,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TB_ShinkitorokuF.Text) > Convert.ToDateTime(TB_ShinkitorokuT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TB_ShinkitorokuF.Focus();
                     }
                 }
             }
@@ -447,6 +489,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TＢ_SaiShuhenkobiF.Text) > Convert.ToDateTime(TB_SaiShuhenkobiT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TＢ_SaiShuhenkobiF.Focus();
                     }
                 }
             }
@@ -460,6 +503,7 @@ namespace ZaikoShoukai
                     if (Convert.ToDateTime(TB_ShoninbiF.Text) > Convert.ToDateTime(TB_ShoninbiT.Text))
                     {
                         bbl.ShowMessage("E104");
+                        TB_ShoninbiF.Focus();
                     }
                 }
             }
@@ -472,7 +516,7 @@ namespace ZaikoShoukai
         {
             if (e.RowIndex != -1)
             {
-                SoukoCD = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
+                soukoname = GV_Zaiko.Rows[e.RowIndex].Cells[5].Value.ToString();
                 skucd = GV_Zaiko.Rows[e.RowIndex].Cells[0].Value.ToString();
                 shohinmei = GV_Zaiko.Rows[e.RowIndex].Cells[1].Value.ToString();
                 color = GV_Zaiko.Rows[e.RowIndex].Cells[2].Value.ToString();
@@ -482,7 +526,7 @@ namespace ZaikoShoukai
                 item = GV_Zaiko.Rows[e.RowIndex].Cells[12].Value.ToString();
                 makercd = GV_Zaiko.Rows[e.RowIndex].Cells[15].Value.ToString();
                 changedate = LB_ChangeDate.Text;
-                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, SoukoCD);
+                Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd,soukoname,StoreCD);
                 frmVendor.ShowDialog();
             }
         }
@@ -515,6 +559,24 @@ namespace ZaikoShoukai
                     return false;
                 }
             }
+            if (!String.IsNullOrEmpty(jan.TxtCode.Text))
+            {
+                if(!jan.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    jan.SetFocus(1);
+                    return false;
+                }
+            }
+            if(!String.IsNullOrEmpty(sku.TxtCode.Text))
+            {
+                if(!sku.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    sku.SetFocus(1);
+                    return false;
+                }
+            }
             if (!String.IsNullOrEmpty(Sports.TxtCode.Text))
             {
                 if (!Sports.IsExists(2))
@@ -529,6 +591,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TB_ShinkitorokuF.Text) > Convert.ToDateTime(TB_ShinkitorokuT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TB_ShinkitorokuF.Focus();
                     return false;
                 }
             }
@@ -536,7 +599,8 @@ namespace ZaikoShoukai
             {
                 if (String.Compare(TB_RackNoF.Text, TB_RackNoT.Text) == 1)
                 {
-                    bbl.ShowMessage("106");
+                    bbl.ShowMessage("E106");
+                    TB_RackNoF.Focus();
                     return false;
                 }
             }
@@ -545,6 +609,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TＢ_SaiShuhenkobiF.Text) > Convert.ToDateTime(TB_SaiShuhenkobiT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TＢ_SaiShuhenkobiF.Focus();
                     return false;
                 }
             }
@@ -553,6 +618,7 @@ namespace ZaikoShoukai
                 if (Convert.ToDateTime(TB_ShoninbiF.Text) > Convert.ToDateTime(TB_ShoninbiT.Text))
                 {
                     bbl.ShowMessage("E104");
+                    TB_ShoninbiF.Focus();
                     return false;
                 }
             }

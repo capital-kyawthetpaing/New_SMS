@@ -107,11 +107,13 @@ namespace CKM_Controls
             /// </summary>	
             出荷指示倉庫,
             棚卸倉庫,
+            在庫照会倉庫,
             移動区分,
             移動依頼区分,
             運送会社,
-            配送会社
-
+            配送会社,
+            マークダウン倉庫,   
+            在庫情報
 
         }
 
@@ -502,6 +504,16 @@ namespace CKM_Controls
                     DataTable dtSSoukoT = tabl.M_Souko_BindForTanaoroshi(msoe4);
                     BindCombo("SoukoCD", "SoukoName", dtSSoukoT);
                     break;
+
+                case CboType.在庫照会倉庫:
+                    ZaikoShoukai_BL zaikobl = new ZaikoShoukai_BL();
+                    M_Souko_Entity ms = new M_Souko_Entity();
+                    ms.StoreCD = mse.StoreCD;
+
+                    DataTable dtzaiko = zaikobl.M_Souko_BindForZaikoshoukai(ms);
+                    BindCombo("SoukoCD", "SoukoName", dtzaiko);
+                    break;
+
                 case CboType.移動区分:
                     ZaikoIdouNyuuryoku_BL zibl2 = new ZaikoIdouNyuuryoku_BL();
                     M_MovePurpose_Entity mmpe = new M_MovePurpose_Entity();
@@ -540,6 +552,18 @@ namespace CKM_Controls
                     mce.ChangeDate = changeDate;
                     DataTable dtCar = cbl.M_Carrier_Bind(mce);
                     BindCombo("CarrierCD", "CarrierName", dtCar);
+                    break;
+
+                case CboType.マークダウン倉庫:
+                    MarkDownNyuuryoku_BL mdbl = new MarkDownNyuuryoku_BL();
+                    DataTable dtmd = mdbl.M_Souko_BindForMarkDown(type);
+                    BindCombo("SoukoCD", "SoukoName", dtmd);
+                    break;
+
+                case CboType.在庫情報:
+                    mdbl = new MarkDownNyuuryoku_BL();
+                    DataTable dtzi = mdbl.D_StockReplica_Bind();
+                    BindCombo("ReplicaNO", "DateTime", dtzi);
                     break;
             }
         }

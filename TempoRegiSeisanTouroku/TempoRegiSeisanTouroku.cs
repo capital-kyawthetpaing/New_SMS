@@ -118,6 +118,8 @@ namespace TempoRegiSeisanTouroku
         {
             string data = InOperatorCD;
             string date = DateTime.Now.ToString("yyyy/MM/dd");
+
+            #region D_StoreCalculation
             dsce.StoreCD = data;
             dsce.CalculationDate = date;
             DataTable dtStore = new DataTable();
@@ -152,7 +154,9 @@ namespace TempoRegiSeisanTouroku
                 txtotheramount.Text = "0";
                 lblCashBalance.Text = "0";
             }
+            #endregion
 
+            #region D_DepositHistory
             dphe.StoreCD = data;
             dphe.ChangeDate = date;
             DataTable dtdeposit = new DataTable();
@@ -178,7 +182,6 @@ namespace TempoRegiSeisanTouroku
                     txtTotal.Text = (string.IsNullOrWhiteSpace(total) ? "0" : total);
                 }
                
-
 
                 txtTransfer.Text = dtdeposit.Rows[0]["DepositTransfer"].ToString();
                 txtDepositCash.Text = dtdeposit.Rows[0]["DepositCash"].ToString();
@@ -247,7 +250,7 @@ namespace TempoRegiSeisanTouroku
 
                 lblCashStorage.Text = "￥ 0";
             }
-
+           
             string cash = string.Empty;
             if(string.IsNullOrWhiteSpace(lblCashBalance.Text))
             {
@@ -256,7 +259,11 @@ namespace TempoRegiSeisanTouroku
             cash = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
             cash = string.IsNullOrWhiteSpace(cash) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(cash));
             lblCashStorage.Text = "¥ " + (string.IsNullOrWhiteSpace(cash) ? "0" : cash);
+            #endregion
 
+
+
+            #region D_Sale
             dse.StoreCD = data;
             dse.ChangeDate = date;
             DataTable dtsale = new DataTable();
@@ -297,7 +304,9 @@ namespace TempoRegiSeisanTouroku
                 txtVISA.Text = "0";
                 txtJCB.Text = "0";
             }
+            #endregion
 
+            #region D_Juchuu
             dje.StoreCD = data;
             dje.ChangeDate = date;
             DataTable dtjuchuu = new DataTable();
@@ -310,10 +319,8 @@ namespace TempoRegiSeisanTouroku
             {
                 txtCustomerNum.Text = "0";
             }
-
-
-
-
+            #endregion
+            
         }
 
         //public void DisplayData()
@@ -462,8 +469,6 @@ namespace TempoRegiSeisanTouroku
         //    }
 
         //}
-
-
 
         private void SelectData()
         {
@@ -693,20 +698,7 @@ namespace TempoRegiSeisanTouroku
             dsce = GetStoreCalculation();       
             if (seisanbl.D_StoreCalculation_Insert_Update(dsce))
             {
-                seisanbl.ShowMessage("I101");
-                //txt10000.Clear();
-                //txt5000.Clear();
-                //txt2000.Clear();
-                //txt1000.Clear();
-                //txt500.Clear();
-                //txt100.Clear();
-                //txt50.Clear();
-                //txt10.Clear();
-                //txt5.Clear();
-                //txt1.Clear();
-                //txtotheramount.Clear();
-                //lblCashBalance.Text = string.Empty;
-                //lblCashStorage.Text = string.Empty;
+                seisanbl.ShowMessage("I101");              
             }           
         }
 
@@ -746,7 +738,10 @@ namespace TempoRegiSeisanTouroku
              if (!RequireCheck(new Control[] { txt2000 }))
                  return false;
 
-             if (!RequireCheck(new Control[] { txt500 }))
+            if (!RequireCheck(new Control[] { txt1000 }))
+                return false;
+
+            if (!RequireCheck(new Control[] { txt500 }))
                  return false;   
 
              if (!RequireCheck(new Control[] { txt100 }))
@@ -756,12 +751,12 @@ namespace TempoRegiSeisanTouroku
                  return false;
   
              if (!RequireCheck(new Control[] { txt10 }))
-                 return false;               
+                 return false;
 
-             if (!RequireCheck(new Control[] { txt10000 }))
-                 return false;             
+            if (!RequireCheck(new Control[] { txt5 }))
+                return false;
 
-             if (!RequireCheck(new Control[] { txt1 }))
+            if (!RequireCheck(new Control[] { txt1 }))
                  return false;           
 
              if (!RequireCheck(new Control[] { txtotheramount }))
