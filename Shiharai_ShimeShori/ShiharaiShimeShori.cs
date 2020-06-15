@@ -150,6 +150,7 @@ namespace Shiharai_ShimeShori
             else
             {
                 dgvPaymentClose.DataSource = null;
+                bbl.ShowMessage("E128");
             }
         }
         private bool ErrorCheck(int Type)

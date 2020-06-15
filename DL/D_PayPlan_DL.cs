@@ -77,6 +77,32 @@ namespace DL
             return SelectData(dic, "D_Pay_SelectForPayPlanDate2");
         }
 
-     
+        /// <summary>
+        /// SiharaiTourokuデータ抽出時
+        /// </summary>
+        /// <param name="dppe"></param>
+        /// <returns></returns>
+        public DataTable D_PayPlan_Select(D_PayPlan_Entity dppe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@PayeePlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
+                {"@PayeePlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.Operator } },
+                {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
+            };
+            return SelectData(dic, "D_PayPlan_Select");
+        }
+        public DataTable D_PayPlan_SelectDetail(D_PayPlan_Entity dppe)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                {"@PayeePlanDateFrom",new ValuePair {value1 = SqlDbType.Date,value2 = dppe.PayPlanDateFrom} },
+                {"@PayeePlanDateTo",new ValuePair {value1 = SqlDbType.Date, value2= dppe.PayPlanDateTo} },
+                {"@Operator",new ValuePair{value1 = SqlDbType.VarChar,value2 = dppe.Operator } },
+                {"@PayeeCD",new ValuePair {value1 =SqlDbType.VarChar ,value2 =dppe.PayeeCD} }
+            };
+            return SelectData(dic, "D_PayPlan_SelectDetail");
+        }
     }
 }

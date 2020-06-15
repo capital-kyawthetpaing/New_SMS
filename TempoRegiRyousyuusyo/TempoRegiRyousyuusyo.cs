@@ -64,8 +64,8 @@ namespace TempoRegiRyousyuusyo
         /// </summary>
         TempoRegiRyousyuusyo_BL bl = new TempoRegiRyousyuusyo_BL();
 
-        private DataTable checkRyousyuushoResult = null;
-        private DataTable checkReceiptResult = null;
+        //private DataTable checkRyousyuushoResult = null;
+        //private DataTable checkReceiptResult = null;
 
         /// <summary>
         /// 店舗レジ領収収書印刷 コンストラクタ
@@ -104,10 +104,10 @@ namespace TempoRegiRyousyuusyo
                 ShowInTaskbar = false;
 
                 txtSalesNO.Text = cmds[(int)CommandLine.SalesNO];
-                chkRyousyuusho.Checked = Convert.ToBoolean(cmds[(int)CommandLine.RyousyuushoCheck]);
-                chkReceipt.Checked = Convert.ToBoolean(cmds[(int)CommandLine.ReceiptCheck]);
+                chkRyousyuusho.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.RyousyuushoCheck]));
+                chkReceipt.Checked = Convert.ToBoolean(Convert.ToInt32(cmds[(int)CommandLine.ReceiptCheck]));
                 txtPrintDate.Text = cmds[(int)CommandLine.PrintDate];
-                chkReissue.Checked = Convert.ToBoolean(cmds[(int)CommandLine.ReissueCheck]);
+                //chkReissue.Checked = Convert.ToBoolean(cmds[(int)CommandLine.ReissueCheck]);
 
                 // 印刷後そくクローズ
                 Print();
@@ -154,11 +154,24 @@ namespace TempoRegiRyousyuusyo
                 txtSalesNO.Focus();
                 return false;
             }
-            else if(!bl.D_CheckSalseNO(txtSalesNO.Text))
+
+            if (!bl.D_CheckSalseNO(txtSalesNO.Text))
             {
-                bl.ShowMessage("E102");
+                // 売上データなし
+                bl.ShowMessage("E138");
                 txtSalesNO.Focus();
                 return false;
+            }
+            else
+            {
+                // 売上データあり
+                if (bl.D_CheckDeleteSalseNO(txtSalesNO.Text))
+                {
+                    // 削除済み売上データあり
+                    bl.ShowMessage("E140");
+                    txtSalesNO.Focus();
+                    return false;
+                }
             }
 
             return true;
@@ -193,33 +206,45 @@ namespace TempoRegiRyousyuusyo
             {
                 //var isPreview = bl.ShowMessage("Q202") == DialogResult.Yes;
 
-                if (chkRyousyuusho.Checked)
+                if (!chkRyousyuusho.Checked && !chkReceipt.Checked)
                 {
-                    // 領収書チェックボックスにチェックあり
-                    var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
-                    if (ryousyuusyo.Rows.Count > 0)
-                    {
-                        OutputRyouusyusyo(ryousyuusyo);
-                    }
-                    else
-                    {
-                        bl.ShowMessage("E128");
-                    }
+                    // 領収書、レシートともにチェックなしの場合
+                    bl.ShowMessage("E111");
+                    chkRyousyuusho.Focus();
                 }
-
-                if (chkReceipt.Checked)
+                else
                 {
-                    // レシートチェックボックスにチェックあり
-
-                    // 店舗取引履歴
-                    var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
-                    if (receiptData.Rows.Count > 0)
+                    // 領収書、レシートいずれかにチェックありの場合
+                    if (chkRyousyuusho.Checked)
                     {
-                        OutputReceipt(receiptData);
+                        // 領収書チェックボックスにチェックあり
+                        var ryousyuusyo = bl.D_RyousyuusyoSelect(txtSalesNO.Text, txtPrintDate.Text);
+                        if (ryousyuusyo.Rows.Count > 0)
+                        {
+                            OutputRyouusyusyo(ryousyuusyo);
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E128");
+                            txtSalesNO.Focus();
+                        }
                     }
-                    else
+
+                    if (chkReceipt.Checked)
                     {
-                        bl.ShowMessage("E128");
+                        // レシートチェックボックスにチェックあり
+
+                        // 店舗取引履歴
+                        var receiptData = bl.D_ReceiptSelect(txtSalesNO.Text, chkReissue.Checked);
+                        if (receiptData.Rows.Count > 0)
+                        {
+                            OutputReceipt(receiptData);
+                        }
+                        else
+                        {
+                            bl.ShowMessage("E128");
+                            txtSalesNO.Focus();
+                        }
                     }
                 }
             }
@@ -600,7 +625,7 @@ namespace TempoRegiRyousyuusyo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtSalesNO.Focus();
+                btnClose.Focus();
             }
         }
     }

@@ -490,7 +490,10 @@ namespace TempoRegiPoint
         {
             if (e.KeyCode == Keys.Enter)
             {
-                this.btnClose.Focus();
+                if(ErrorCheck())
+                {
+                    this.btnClose.Focus();
+                }
             }
         }
 
