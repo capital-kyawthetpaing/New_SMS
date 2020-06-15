@@ -85,7 +85,7 @@ namespace SiharaiNyuuryoku
         private void SetRequireField()
         {
             ScPaymentNum.TxtCode.Require(true);
-            ScPayee.TxtCode.Require(true);
+            //ScPayee.TxtCode.Require(true);
             txtPaymentDate.Require(true);
             ScStaff.TxtCode.Require(true);
             txtDueDate2.Require(true);
@@ -271,8 +271,13 @@ namespace SiharaiNyuuryoku
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtpayplan.Rows[0]["StaffName"].ToString();
                     cboPaymentType.SelectedValue = 1;
+                    if(cboPaymentType.SelectedValue == null)
+                    {
+                        cboPaymentType.SelectedValue = -1;
+                    }
                     cboPaymentSourceAcc.SelectedValue = dtpayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
+                    dtpayplan.Columns.Add("colCheck", typeof(bool)); foreach (DataRow dr in dtpayplan.Rows) dr["colCheck"] = true;  ///PTK Addded
                     dgvPayment.DataSource = dtpayplan;
                     dgvPayment.Rows[0].Selected = true;
                     Checkstate(true);
@@ -335,6 +340,11 @@ namespace SiharaiNyuuryoku
                     //}                   
                 }
 
+                else
+                {
+                    sibl.ShowMessage("128");
+                    ScPayee.SetFocus(1);
+                }
                 txtPaymentDate.ReadOnly = true;
                 ScStaff.TxtCode.ReadOnly = true;
                 ScStaff.SearchEnable = false;
@@ -509,6 +519,7 @@ namespace SiharaiNyuuryoku
 
         private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (dgvPayment.CurrentCell.RowIndex > 0)    // PTK  added  (Error Occurred if click on header)
             if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
             {   
                 if(!string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
@@ -689,11 +700,11 @@ namespace SiharaiNyuuryoku
                         }
                     }
 
-
-                    if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
-                        return false;
-                    else
-                    {
+                    //if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
+                    //    return false;
+                    //else
+                    //if(!string.IsNullOrWhiteSpace(ScPayee.TxtCode.Text))
+                    //{
                         mve.VendorCD = ScPayee.TxtCode.Text;
                         mve.ChangeDate = DateTime.Now.ToString("yyyy/MM/dd");
                         mve.MoneyPayeeFlg = "1";
@@ -709,7 +720,7 @@ namespace SiharaiNyuuryoku
                         {
                             ScPayee.LabelText = dtvendor.Rows[0]["VendorName"].ToString();
                         }
-                    }
+                    //}
 
 
                 }

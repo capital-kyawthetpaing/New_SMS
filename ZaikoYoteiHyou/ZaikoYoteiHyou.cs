@@ -54,6 +54,7 @@ namespace ZaikoYoteiHyou
             string y = DateTime.Now.Year.ToString();
             //txtTargetDateFrom.Text = a.ToString().Substring(0, 7);
             txtTargetDateFrom.Text = y + "/" + m;
+            txtTargetDateFrom.Enabled = false;
         }
 
         //public void ComboDispay()
@@ -156,7 +157,7 @@ namespace ZaikoYoteiHyou
             if(!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
             {
                 int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
-                if(result >= 0)
+                if(result > 0)
                 {
                     zkybl.ShowMessage("E104");
                     txtTargetDateTo.Focus();                   
@@ -329,7 +330,7 @@ namespace ZaikoYoteiHyou
                 if (!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
                 {
                     int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         zkybl.ShowMessage("E104");
                         txtTargetDateTo.Focus();

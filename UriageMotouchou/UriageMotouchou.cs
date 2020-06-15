@@ -230,13 +230,9 @@ namespace UriageMotouchou
                             }
                         }
                         break;
-
                 }
-
                 //プログラム実行履歴
                 InsertLog(Get_L_Log_Entity());
-               
-
             }
             finally
             {

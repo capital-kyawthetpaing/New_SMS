@@ -270,7 +270,6 @@ namespace ShiireShoukaiDetails
                     dgv_PurchaseDetails.DataSource = null;
                 }
             }
-            
         }
 
         

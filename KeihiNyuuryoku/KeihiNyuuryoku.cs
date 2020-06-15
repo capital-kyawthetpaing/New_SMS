@@ -352,10 +352,10 @@ namespace KeihiNyuuryoku
                 {
                     if (type == 2)
                     {
-                        if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
-                            return false;
-                        else
-                        //if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
+                        //if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
+                           // return false;
+                        
+                        if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
                             if (dtcost.Rows.Count < 1)
@@ -463,7 +463,7 @@ namespace KeihiNyuuryoku
                         {
                             khnyk_BL.ShowMessage("E101");
                             dgvKehiNyuuryoku.Select();
-                            //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
+                           // dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr.ToString())];
                             return false;
                         }
                         else if (string.IsNullOrWhiteSpace(dr["DepartmentCD"].ToString())) // Check ComboBox is selected or not
@@ -477,7 +477,7 @@ namespace KeihiNyuuryoku
                 }
                 else
                 {
-                    khnyk_BL.ShowMessage("E101");
+                    khnyk_BL.ShowMessage("E189");
                     dgvKehiNyuuryoku.Select();
                     //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(drs[0]["colCostCD"].ToString()) - 1];
                     return false;
@@ -653,7 +653,7 @@ namespace KeihiNyuuryoku
                 {
                     dtVendor = new DataTable();
                     if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
-                        keijoudate = System.DateTime.Now.ToString();
+                        keijoudate = System.DateTime.Now.ToString("yyyy/MM/dd");
                     else keijoudate = txtKeijouDate.Text;
 
                     dtVendor = khnyk_BL.Select_SearchName(keijoudate, 4, ScVendor.Code);
@@ -738,7 +738,7 @@ namespace KeihiNyuuryoku
             dtStaff = new DataTable();
             string name = string.Empty;
             if (string.IsNullOrWhiteSpace(txtKeijouDate.Text))
-                keijoudate = System.DateTime.Now.ToString();
+                keijoudate = System.DateTime.Now.ToString("yyyy/MM/dd");
             else keijoudate = txtKeijouDate.Text;
 
             dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, stCode);
