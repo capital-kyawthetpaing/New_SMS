@@ -42,6 +42,7 @@ namespace ShiireShoukaiDetails
             cboStore.SelectedValue = StoreCD;
             scItem.CodeWidth = 600;
             scSkuCD.CodeWidth = 600;
+            dgv_PurchaseDetails.AllowUserToAddRows = false;
         }
 
         /// <summary>
