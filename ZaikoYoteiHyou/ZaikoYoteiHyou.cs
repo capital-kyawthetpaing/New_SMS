@@ -157,7 +157,7 @@ namespace ZaikoYoteiHyou
             if(!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
             {
                 int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
-                if(result >= 0)
+                if(result > 0)
                 {
                     zkybl.ShowMessage("E104");
                     txtTargetDateTo.Focus();                   
@@ -330,7 +330,7 @@ namespace ZaikoYoteiHyou
                 if (!string.IsNullOrWhiteSpace(txtTargetDateTo.Text))
                 {
                     int result = txtTargetDateFrom.Text.CompareTo(txtTargetDateTo.Text);
-                    if (result >= 0)
+                    if (result > 0)
                     {
                         zkybl.ShowMessage("E104");
                         txtTargetDateTo.Focus();
