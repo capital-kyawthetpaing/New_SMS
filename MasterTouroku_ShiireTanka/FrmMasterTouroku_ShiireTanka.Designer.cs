@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -123,7 +122,7 @@
             this.TB_rate_E = new CKM_Controls.CKM_TextBox();
             this.ckM_Label19 = new CKM_Controls.CKM_Label();
             this.ckM_Label20 = new CKM_Controls.CKM_Label();
-            this.btn_choiceD = new CKM_Controls.CKM_Button();
+            this.btn_copy = new CKM_Controls.CKM_Button();
             this.btn_delete = new CKM_Controls.CKM_Button();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
@@ -742,17 +741,17 @@
             this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -771,14 +770,6 @@
             this.定価,
             this.掛率,
             this.発注単価});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_item.DefaultCellStyle = dataGridViewCellStyle9;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(89, 346);
@@ -1704,7 +1695,7 @@
             this.panel5.Controls.Add(this.TB_rate_E);
             this.panel5.Controls.Add(this.ckM_Label19);
             this.panel5.Controls.Add(this.ckM_Label20);
-            this.panel5.Controls.Add(this.btn_choiceD);
+            this.panel5.Controls.Add(this.btn_copy);
             this.panel5.Controls.Add(this.btn_delete);
             this.panel5.Controls.Add(this.ckM_Label8);
             this.panel5.Controls.Add(this.ckM_Label9);
@@ -1819,24 +1810,24 @@
             this.ckM_Label20.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btn_choiceD
+            // btn_copy
             // 
-            this.btn_choiceD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btn_choiceD.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.btn_choiceD.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_choiceD.DefaultBtnSize = false;
-            this.btn_choiceD.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btn_choiceD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_choiceD.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.btn_choiceD.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btn_choiceD.Location = new System.Drawing.Point(1526, 23);
-            this.btn_choiceD.Margin = new System.Windows.Forms.Padding(1);
-            this.btn_choiceD.Name = "btn_choiceD";
-            this.btn_choiceD.Size = new System.Drawing.Size(80, 23);
-            this.btn_choiceD.TabIndex = 59;
-            this.btn_choiceD.Text = "選択";
-            this.btn_choiceD.UseVisualStyleBackColor = false;
-            this.btn_choiceD.Click += new System.EventHandler(this.btn_choiceCopy_Click);
+            this.btn_copy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_copy.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.btn_copy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_copy.DefaultBtnSize = false;
+            this.btn_copy.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn_copy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_copy.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.btn_copy.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.btn_copy.Location = new System.Drawing.Point(1526, 23);
+            this.btn_copy.Margin = new System.Windows.Forms.Padding(1);
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.Size = new System.Drawing.Size(80, 23);
+            this.btn_copy.TabIndex = 59;
+            this.btn_copy.Text = "複写";
+            this.btn_copy.UseVisualStyleBackColor = false;
+            this.btn_copy.Click += new System.EventHandler(this.btn_Copy_Click);
             // 
             // btn_delete
             // 
@@ -2025,7 +2016,7 @@
         private CKM_Controls.CKM_Label ckM_Label19;
         private CKM_Controls.CKM_TextBox TB_rate_E;
         private CKM_Controls.CKM_Label ckM_Label20;
-        private CKM_Controls.CKM_Button btn_choiceD;
+        private CKM_Controls.CKM_Button btn_copy;
         private CKM_Controls.CKM_Button btn_update;
         private CKM_Controls.CKM_Button btn_delete;
         private CKM_Controls.CKM_Label LB_priceouttax1;
