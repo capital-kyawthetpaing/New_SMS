@@ -558,9 +558,11 @@ namespace TempoRegiHanbaiTouroku
 
                     lblJuchuuTaxRitsu.Text = dse.SalesNO;
 
+                    string reissue = OperationMode ==  FrmMainForm.EOperationMode.INSERT ? "0":"1";
+
                     //レシート印字
                     //TempoRegiRyousyuusyo‗店舗領収書印刷
-                    ExecPrint(dse.SalesNO);
+                    ExecPrint(dse.SalesNO, reissue);
 
                     //データ更新（レシート印刷やお釣りのやり取りする間にややこしい更新を行う）
                     //TempoRegiDataUpdate‗店舗レジデータ更新
@@ -579,7 +581,7 @@ namespace TempoRegiHanbaiTouroku
             }
             return false;
         }
-        private bool ExecPrint(string no)
+        private bool ExecPrint(string no, string reissue)
         {
             //Parameter受取  OperatorCD←	Parameter受取 OperatorCD 
             //  ProcessingPC ←	ProcessingPC
@@ -601,7 +603,7 @@ namespace TempoRegiHanbaiTouroku
                 //領収書必要ONの場合、1。以外は0．													
 
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
-                                    + " " + no + " " + receipte + " 1 " + bbl.GetDate();
+                                    + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
                 //System.Diagnostics.Process.Start(filePath, cmdLine); 
             }
             else

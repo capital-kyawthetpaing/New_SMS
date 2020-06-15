@@ -54,7 +54,39 @@ namespace MainMenu
 
         private void Main_Menu_Load(object sender, EventArgs e)
         {
+            this.ResizeRedraw = false;
             BindButtonName();
+            ChangeFont();
+           
+          //  TextRenderer.MeasureText("12345", btnProj1.Font);
+            /// btnProj1.Font = new Font(Font, FontStyle.Bold);
+
+            // Font dd;
+
+           // this.Font = new System.Drawing.Font("MS Gothic", 16F, System.Drawing.FontStyle.Bold);
+            //  this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+
+
+        }
+        protected void ChangeFont()
+        {
+          //  var c = GetAllControls(this);
+            var c = GetAllControls(this);
+            for (int i = 0; i < c.Count(); i++)
+            {
+                Control ctrl = c.ElementAt(i) as Control;
+
+                if (ctrl is CKM_Button ctrb)
+                {
+                    ctrb.Font_Size = CKM_Button.CKM_FontSize.XSmall;
+                }
+                else if (ctrl is CKM_Label ctl )
+                {
+                 ///   ctl.Font_Size = CKM_Label.CKM_FontSize.Small;
+                }
+            }
+
+
         }
         protected void BindButtonName()
         {

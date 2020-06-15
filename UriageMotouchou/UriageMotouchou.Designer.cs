@@ -50,6 +50,14 @@
             this.PanelHeader.Size = new System.Drawing.Size(1711, 194);
             this.PanelHeader.Controls.SetChildIndex(this.Panel_Details, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // Panel_Details
             // 
             this.Panel_Details.Controls.Add(this.chkNo);
@@ -113,6 +121,7 @@
             this.cboStore.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboStore.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.cboStore.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboStore.Flag = 0;
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Length = 10;
             this.cboStore.Location = new System.Drawing.Point(107, 61);
@@ -163,6 +172,7 @@
             this.sc_Customer.ChangeDateWidth = 100;
             this.sc_Customer.Code = "";
             this.sc_Customer.CodeWidth = 100;
+            this.sc_Customer.CodeWidth1 = 100;
             this.sc_Customer.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sc_Customer.DataCheck = false;
             this.sc_Customer.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -172,6 +182,7 @@
             this.sc_Customer.Location = new System.Drawing.Point(107, 27);
             this.sc_Customer.Margin = new System.Windows.Forms.Padding(0);
             this.sc_Customer.Name = "sc_Customer";
+            this.sc_Customer.NameWidth = 500;
             this.sc_Customer.SearchEnable = true;
             this.sc_Customer.Size = new System.Drawing.Size(634, 27);
             this.sc_Customer.Stype = Search.CKM_SearchControl.SearchType.得意先;
@@ -190,6 +201,7 @@
             this.txtTargetTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetTo.BackColor = System.Drawing.Color.White;
             this.txtTargetTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetTo.ClientColor = System.Drawing.Color.White;
             this.txtTargetTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetTo.DecimalPlace = 0;
@@ -197,11 +209,12 @@
             this.txtTargetTo.IntegerPart = 0;
             this.txtTargetTo.IsCorrectDate = true;
             this.txtTargetTo.isEnterKeyDown = false;
+            this.txtTargetTo.isMaxLengthErr = false;
             this.txtTargetTo.IsNumber = true;
             this.txtTargetTo.IsShop = false;
-            this.txtTargetTo.Length = 10;
+            this.txtTargetTo.Length = 6;
             this.txtTargetTo.Location = new System.Drawing.Point(244, 5);
-            this.txtTargetTo.MaxLength = 8;
+            this.txtTargetTo.MaxLength = 6;
             this.txtTargetTo.MoveNext = true;
             this.txtTargetTo.Name = "txtTargetTo";
             this.txtTargetTo.Size = new System.Drawing.Size(100, 19);
@@ -232,6 +245,7 @@
             this.txtTagetFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTagetFrom.BackColor = System.Drawing.Color.White;
             this.txtTagetFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTagetFrom.ClientColor = System.Drawing.Color.White;
             this.txtTagetFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTagetFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTagetFrom.DecimalPlace = 0;
@@ -239,11 +253,12 @@
             this.txtTagetFrom.IntegerPart = 0;
             this.txtTagetFrom.IsCorrectDate = true;
             this.txtTagetFrom.isEnterKeyDown = false;
+            this.txtTagetFrom.isMaxLengthErr = false;
             this.txtTagetFrom.IsNumber = true;
             this.txtTagetFrom.IsShop = false;
-            this.txtTagetFrom.Length = 10;
+            this.txtTagetFrom.Length = 6;
             this.txtTagetFrom.Location = new System.Drawing.Point(107, 6);
-            this.txtTagetFrom.MaxLength = 8;
+            this.txtTagetFrom.MaxLength = 6;
             this.txtTagetFrom.MoveNext = true;
             this.txtTagetFrom.Name = "txtTagetFrom";
             this.txtTagetFrom.Size = new System.Drawing.Size(100, 19);
