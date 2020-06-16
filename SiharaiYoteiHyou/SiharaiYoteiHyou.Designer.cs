@@ -153,6 +153,7 @@
             this.txtPaymentDueDateTo.TabIndex = 3;
             this.txtPaymentDueDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDueDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDueDateTo_KeyDown);
             // 
             // ckM_Label3
             // 
@@ -386,8 +387,8 @@
             this.scPaymentDestinaion.ChangeDate = "";
             this.scPaymentDestinaion.ChangeDateWidth = 100;
             this.scPaymentDestinaion.Code = "";
-            this.scPaymentDestinaion.CodeWidth = 130;
-            this.scPaymentDestinaion.CodeWidth1 = 130;
+            this.scPaymentDestinaion.CodeWidth = 100;
+            this.scPaymentDestinaion.CodeWidth1 = 100;
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
             this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -397,7 +398,7 @@
             this.scPaymentDestinaion.Location = new System.Drawing.Point(114, 31);
             this.scPaymentDestinaion.Margin = new System.Windows.Forms.Padding(0);
             this.scPaymentDestinaion.Name = "scPaymentDestinaion";
-            this.scPaymentDestinaion.NameWidth = 280;
+            this.scPaymentDestinaion.NameWidth = 310;
             this.scPaymentDestinaion.SearchEnable = true;
             this.scPaymentDestinaion.Size = new System.Drawing.Size(444, 27);
             this.scPaymentDestinaion.Stype = Search.CKM_SearchControl.SearchType.仕入先PayeeFlg;
