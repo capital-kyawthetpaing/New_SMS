@@ -38,6 +38,18 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_Itemorderprice_Insert(string datatb,string vendorcd,string storecd)
+        {
+            string sp = "M_Itemorderprice_Insert";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@datatb", new ValuePair { value1 =SqlDbType.VarChar,value2 = datatb } },
+                { "@vendorcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = vendorcd } },
+                { "@storecd", new ValuePair { value1 =SqlDbType.VarChar,value2 = storecd } },
+            };
+            return SelectData(dic, sp);
+        }
         public DataTable M_ITem_ItemNandPriceoutTax_Select(M_ITEM_Entity mi)
         {
             string sp = "M_ITem_ItemNandPriceoutTax_Select";

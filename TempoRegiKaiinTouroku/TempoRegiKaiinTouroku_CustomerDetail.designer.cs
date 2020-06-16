@@ -522,7 +522,7 @@
             // 
             // rdoMale
             // 
-            this.rdoMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdoMale.Font = new System.Drawing.Font("MS Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoMale.ForeColor = System.Drawing.Color.Black;
             this.rdoMale.Location = new System.Drawing.Point(346, 129);
             this.rdoMale.Name = "rdoMale";

@@ -87,5 +87,9 @@ namespace BL
             return msdl.PRC_MasterTouroku_ShiireTanka(mpe, dtOldITEM, dtOldSKU, dtITEM, dtSKU);
         }
 
+        public DataTable M_Itemorderprice_Insert(string tb,string vendorcd,string storecd)
+        {
+            return msdl.M_Itemorderprice_Insert(tb,vendorcd,storecd);
+        }
     }
 }
