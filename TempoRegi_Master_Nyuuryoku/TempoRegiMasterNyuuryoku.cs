@@ -470,7 +470,7 @@ namespace TempoRegi_Master_Nyuuryoku
             else
             {
                 lblSearchName.Text = "";
-                txtBtnNameDown.Focus();
+                //txtBtnNameDown.Focus();
             }
         }
 
