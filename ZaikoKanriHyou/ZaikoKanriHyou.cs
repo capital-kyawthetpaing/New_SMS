@@ -47,7 +47,7 @@ namespace ZaikoKanriHyou
             cboSouko.SelectedValue = SoukoCD;
             F11Visible = false;
             scITEM.CodeWidth = 600;
-            scSkuCD.CodeWidth = 600;
+            scSKUCD.CodeWidth = 600;
         }
 
         private void SetRequiredField()
