@@ -175,7 +175,7 @@ namespace ZaikoKanriHyou
                 
                 if (dt.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                   // CheckBeforeExport();
                     try
                     {
                         ZaikoKanriHyou_Report zkh_Report = new ZaikoKanriHyou_Report();
