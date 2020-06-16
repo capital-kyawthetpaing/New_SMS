@@ -732,12 +732,15 @@ namespace KeihiNyuuryoku
             {
                 if (!string.IsNullOrWhiteSpace(row["CostGaku"].ToString()))
                    TotalGaku += Convert.ToDecimal(row["CostGaku"]);
-               
+
                 if (TotalGaku.ToString().Equals("0"))
                     lblTotalGaku.Text = string.Empty;
                 else
-                    lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
+                    lblTotalGaku.Text = TotalGaku.ToString("#,##0");
             }
+
+            if (!string.IsNullOrWhiteSpace(lblTotalGaku.Text) & lblTotalGaku.Text.ToString().Contains("-"))
+                lblTotalGaku.ForeColor = Color.Red;
         }
 
        private string Bind_StaffName(string stCode)
