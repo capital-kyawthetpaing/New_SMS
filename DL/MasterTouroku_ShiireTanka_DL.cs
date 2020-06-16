@@ -12,9 +12,9 @@ namespace DL
 {
     public class MasterTouroku_ShiireTanka_DL : Base_DL
     {
-        public DataTable M_ItemOrderPrice_Insert(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi)
+        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi)
         {
-            string sp = "M_ItemOrderPrice_Insert";
+            string sp = "MastertorokuShiiretanka_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.VendorCD } },
@@ -35,6 +35,18 @@ namespace DL
                 { "@priceoutwithouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mio.PriceWithoutTax } },
                 { "@insertoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.InsertOperator } },
 
+            };
+            return SelectData(dic, sp);
+        }
+
+        public DataTable M_Itemorderprice_Insert(string datatb,string vendorcd,string storecd)
+        {
+            string sp = "M_Itemorderprice_Insert";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@datatb", new ValuePair { value1 =SqlDbType.VarChar,value2 = datatb } },
+                { "@vendorcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = vendorcd } },
+                { "@storecd", new ValuePair { value1 =SqlDbType.VarChar,value2 = storecd } },
             };
             return SelectData(dic, sp);
         }

@@ -108,6 +108,7 @@
     <Compile Include="Function_DL.cs" />
     <Compile Include="Hacchuusho_DL.cs" />
     <Compile Include="HikiateHenkouNyuuryoku_DL.cs" />
+    <Compile Include="IkkatuHacchuuNyuuryoku_DL.cs" />
     <Compile Include="IniFile.cs" />
     <Compile Include="IniFile_DL.cs" />
     <Compile Include="L_Log_DL.cs" />

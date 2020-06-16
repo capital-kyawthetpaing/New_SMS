@@ -303,8 +303,12 @@ namespace SiharaiTouroku
                         //{
                         SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
                         f2.ShowDialog();
-                        dtPay1 = f2.dtGdv;
-                        dtPay1Detail = f2.dtDetails;
+                        if (!f2.flgCancel)
+                        {
+                            dtPayplan = f2.dtGdv;
+                            dtPay1Detail = f2.dtDetails;
+                        }
+                  
                         //}
                     }
                     else
@@ -524,7 +528,6 @@ namespace SiharaiTouroku
             if ((e.KeyCode == Keys.Return) &&
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
             {
-
                 if (!CheckStaff())
                 {
                     ScStaff.SetFocus(1);

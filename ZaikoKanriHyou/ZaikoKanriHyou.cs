@@ -46,6 +46,8 @@ namespace ZaikoKanriHyou
             cboSouko.Bind(string.Empty);
             cboSouko.SelectedValue = SoukoCD;
             F11Visible = false;
+            scITEM.CodeWidth = 600;
+            scSkuCD.CodeWidth = 600;
         }
 
         private void SetRequiredField()
@@ -67,12 +69,12 @@ namespace ZaikoKanriHyou
             base.FunctionProcess(Index);
             switch(Index+1)
             {
-                case 6: 
-                    {				
-                    if (zkhbl.ShowMessage("Q004") != DialogResult.Yes)
-                        return;
+                case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
+                    {
+                        Clear();
+                    }
                     break;
-                }
             }
         }
         private bool ErrorCheck()

@@ -464,7 +464,7 @@ namespace MasterTouroku_ShiireKakeritsu
         private void btnSearch_Click(object sender, EventArgs e)
         {
             //SearchData();
-            BindGrid();
+            //BindGrid();
                 string searchCondition = string.Empty;
                 if (!string.IsNullOrWhiteSpace(scBrandCD1.TxtCode.Text))
                     searchCondition = "BrandCD = '" + scBrandCD1.TxtCode.Text + "'";
