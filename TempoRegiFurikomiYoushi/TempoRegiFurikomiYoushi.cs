@@ -79,8 +79,16 @@ namespace TempoRegiFurikomiYoushi
                         if (bbl.ShowMessage("Q201") == DialogResult.Yes)
                         {
                             var keys = string.Join("-", Array.ConvertAll<object, string>(dtreporttemp.Rows[0].ItemArray, Convert.ToString));
-                            CR_regi.Youshi youshi = new CR_regi.Youshi(dtreporttemp, new string[] { InOperatorCD, InProgramID, InPcID, "PRINT", txtprintprogress.Text });
-                            youshi.ShowDialog();
+                            try
+                            {
+                                CR_regi.Youshi youshi = new CR_regi.Youshi(dtreporttemp, new string[] { InOperatorCD, InProgramID, InPcID, "PRINT", txtprintprogress.Text });
+                                youshi.ShowDialog();
+                            }
+                            catch(Exception ex)
+                            {
+                                MessageBox.Show(ex.InnerException.Source + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.Message);
+                            }
+                          
                         }
                     }
                 }
