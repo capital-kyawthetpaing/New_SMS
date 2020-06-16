@@ -578,12 +578,13 @@ namespace KeihiNyuuryoku
 
         private void dgvKehiNyuuryoku_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //if(e.ColumnIndex == dgvKehiNyuuryoku.Columns[].Index)
-            //{
-
-            //}
+            
             if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
             {
+                if(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
+                {
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                }
                 BindTotalGaku(dt);
             }
         }
@@ -724,8 +725,8 @@ namespace KeihiNyuuryoku
             foreach (DataRow row in dt.Rows)
             {
                 if (!string.IsNullOrWhiteSpace(row["CostGaku"].ToString()))
-                    TotalGaku += Convert.ToDecimal(row["CostGaku"]);
-                
+                   TotalGaku += Convert.ToDecimal(row["CostGaku"]);
+               
                 if (TotalGaku.ToString().Equals("0"))
                     lblTotalGaku.Text = string.Empty;
                 else
