@@ -167,7 +167,7 @@ namespace TempoRegiKaiinTouroku_ShopForm
                 txtKanaName.Text = cust.KanaName;
                 rdoMale.Checked = cust.Sex.Equals("1") ? true : false;
                 rdoFemale.Checked = cust.Sex.Equals("2") ? true : false;
-                txtBirthDate.Text = cust.BirthDate;
+                txtBirthDate.Text = cust.Birthdate;
                 txtTelNo1.Text = cust.TelephoneNo1;
                 txtTelNo2.Text = cust.TelephoneNo2;
                 txtTelNo3.Text = cust.TelephoneNo3;
@@ -208,7 +208,7 @@ namespace TempoRegiKaiinTouroku_ShopForm
                 CollectFLG = "1",
                 BillingCD=lblCustomerNo.Text,
                 CollectCD=lblCustomerNo.Text,
-                BirthDate = txtBirthDate.Text,
+                Birthdate = txtBirthDate.Text,
                 Sex = rdoMale.Checked ? "1" : "2",
                 TelephoneNo1=txtTelNo1.Text,
                 TelephoneNo2=txtTelNo2.Text,
