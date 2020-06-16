@@ -392,11 +392,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scBrandCD1.Value1 = scBrandCD1.TxtCode.Text;
                         scBrandCD1.Value2 = scBrandCD1.LabelText;
-                        BindGrid();
+                        SearchData();
                     }
                     else
                     {
-                        BindGrid();
                         scBrandCD1.SetFocus(1);
                     }
                 }
@@ -414,11 +413,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSportsCD1.Value1 = scSportsCD1.TxtCode.Text;
                         scSportsCD1.Value2 = scSportsCD1.LabelText;
-                        BindGrid();
+                        SearchData();
                     }
                     else
                     {
-                        BindGrid();
                         scSportsCD1.SetFocus(1);
                     }
                 }
@@ -437,11 +435,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     {
                         scSegmentCD1.Value1 = scSegmentCD1.TxtCode.Text;
                         scSegmentCD1.Value2 = scSegmentCD1.LabelText;
-                        BindGrid();
+                        SearchData();
                     }
                     else
                     {
-                        BindGrid();
                         scSegmentCD1.SetFocus(1);
                     }
                 }
@@ -522,10 +519,10 @@ namespace MasterTouroku_ShiireKakeritsu
             //{
             //dvMain = new DataView(dtMain, searchCondition, "", DataViewRowState.CurrentRows);
 
-            moe = GetSearchInfo();
-            dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
+            moe = GetSearchInfo(); 
+             dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             dvMain = new DataView(dtMain);
-            dgv_ShiireKakeritsu.DataSource = dvMain;
+            dgv_ShiireKakeritsu.DataSource = dvMain; 
 
             //    DataRow[] dr = dtMain.Select(searchCondition);
             //    if (dr.Count() > 0)
