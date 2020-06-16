@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reports\TempoRegiTorihikiReceipt_Journal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TempoRegiTorihikiReceipt_Journal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\TempoRegiTorihikiReceipt_Deposit.cs">
       <DependentUpon>TempoRegiTorihikiReceipt_Deposit.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -132,6 +138,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reports\TempoRegiTorihikiReceipt_Journal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TempoRegiTorihikiReceipt_Journal.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\TempoRegiTorihikiReceipt_Deposit.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TempoRegiTorihikiReceipt_Deposit.cs</LastGenOutput>

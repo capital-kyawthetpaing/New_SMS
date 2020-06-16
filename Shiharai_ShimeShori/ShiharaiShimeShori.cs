@@ -129,6 +129,7 @@ namespace Shiharai_ShimeShori
                     {
                         BindGrid();
                     }
+
                     break;
             }
         }
@@ -196,7 +197,6 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                         return false;
                     }
-
                     if (sss_bl.Select_PaymentClose(dpch_entity, 4))//Step3
                     {
                         sss_bl.ShowMessage("S015");
