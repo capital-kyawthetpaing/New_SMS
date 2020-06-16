@@ -73,10 +73,10 @@ namespace KeihiNyuuryoku
         private void CreateDataTable()
         {
             dt = new DataTable();
-            dt.Columns.Add("CostCD");
-            dt.Columns.Add("Summary");
-            dt.Columns.Add("DepartmentCD");
-            dt.Columns.Add("CostGaku");
+            dt.Columns.Add("CostCD", typeof(string));
+            dt.Columns.Add("Summary", typeof(string));
+            dt.Columns.Add("DepartmentCD", typeof(string));
+            dt.Columns.Add("CostGaku", typeof(string));
 
             DataTable dtDepartment = new DataTable();
             dtDepartment = khnyk_BL.SimpleSelect1("38", null, "209");
@@ -686,7 +686,13 @@ namespace KeihiNyuuryoku
                 }
             }
         }
-        
+        private void ScVendor_Enter(object sender, EventArgs e)
+        {
+            keijoudate = string.IsNullOrWhiteSpace(txtKeijouDate.Text) ? txtKeijouDate.Text : System.DateTime.Now.ToString("yyyy/MM/dd");
+            ScVendor.ChangeDate = keijoudate;
+            ScVendor.Value1 = "2";
+        }
+
         private void F7() // Delete current row and recalculate the TotalGaku
         {
             int row = dgvKehiNyuuryoku.CurrentCell.RowIndex;
@@ -750,11 +756,38 @@ namespace KeihiNyuuryoku
             return name;
         }
 
-        private void ScVendor_Enter(object sender, EventArgs e)
+        private void dgvKehiNyuuryoku_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            keijoudate = string.IsNullOrWhiteSpace(txtKeijouDate.Text) ? txtKeijouDate.Text : System.DateTime.Now.ToString("yyyy/MM/dd");
-            ScVendor.ChangeDate = keijoudate;
-            ScVendor.Value1 = "2";
+            foreach (DataGridViewRow r in dgvKehiNyuuryoku.Rows)
+            {
+                if (r.Cells["colCostGaku"].Value.ToString().Contains("-"))
+                {
+                    r.Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                }
+            }
+        }
+
+        private void dgvKehiNyuuryoku_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    dgvKehiNyuuryoku.CurrentCell.Value = 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter valid number. . . ");
+                dgvKehiNyuuryoku.CurrentCell.Value = 0;
+            }
+            dgvKehiNyuuryoku.RefreshEdit();
         }
     }
 }
