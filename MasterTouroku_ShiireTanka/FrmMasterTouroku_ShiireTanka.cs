@@ -28,13 +28,11 @@ namespace MasterTouroku_ShiireTanka
         string choiceq = "";
         public FrmMasterTouroku_ShiireTanka()
         {
-
             InitializeComponent();
             bl = new MasterTouroku_ShiireTanka_BL();
             m_IOE=new M_ItemOrderPrice_Entity();
             m_IE=new M_ITEM_Entity();
             dv = new DataView();
-            
         }
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
@@ -132,6 +130,18 @@ namespace MasterTouroku_ShiireTanka
                     {
                         shiiresaki.Value1 = shiiresaki.TxtCode.Text;
                         shiiresaki.Value2 = shiiresaki.LabelText;
+                        //DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 4,shiiresaki.TxtCode.Text);
+                        //string deflg = "";
+                        //if (dtdeflg.Rows.Count >0)
+                        //{
+                        //     deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
+                        //}
+                        //if(deflg == "1")
+                        //{
+                        //    bbl.ShowMessage("E119");
+                        //    shiiresaki.Focus();
+                        //}
+                        //string delflg=
                     }
                     else
                     {
@@ -886,6 +896,11 @@ namespace MasterTouroku_ShiireTanka
                         dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                     }
                     dt.Merge(dt1);
+                }
+                else
+                {
+                    bbl.ShowMessage("E224");
+                    TB_dateE.Focus();
                 }
             }
         }
