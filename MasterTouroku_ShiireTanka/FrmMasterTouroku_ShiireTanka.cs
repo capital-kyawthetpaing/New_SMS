@@ -455,10 +455,10 @@ namespace MasterTouroku_ShiireTanka
                 CB_season.Text = string.Empty;
                 TB_date_condition.Text = string.Empty;
                 makershohin.Clear();
-             dt = bl.MastertorokuShiiretanka_Select(m_IOE, m_IE);
-             dv = new DataView(dt);
-            GV_item.DataSource = dv;
-            dtc = dt;
+                dt = bl.MastertorokuShiiretanka_Select(m_IOE, m_IE);
+                dv = new DataView(dt);
+                GV_item.DataSource = dv;
+                dtc = dt;
         }
         private M_ItemOrderPrice_Entity GetItemorder()
         {
