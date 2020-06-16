@@ -171,7 +171,7 @@
             this.ckM_Label3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(215, 24);
+            this.ckM_Label3.Location = new System.Drawing.Point(233, 24);
             this.ckM_Label3.Name = "ckM_Label3";
             this.ckM_Label3.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label3.TabIndex = 6;
@@ -197,7 +197,7 @@
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
             this.txtTargetDateTo.Length = 6;
-            this.txtTargetDateTo.Location = new System.Drawing.Point(239, 21);
+            this.txtTargetDateTo.Location = new System.Drawing.Point(274, 21);
             this.txtTargetDateTo.MaxLength = 6;
             this.txtTargetDateTo.MoveNext = true;
             this.txtTargetDateTo.Name = "txtTargetDateTo";
