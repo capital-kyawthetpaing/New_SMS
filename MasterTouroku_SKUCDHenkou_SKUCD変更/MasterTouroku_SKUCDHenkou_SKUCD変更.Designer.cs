@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
             this.txtRevDate = new CKM_Controls.CKM_TextBox();
             this.F11Display = new CKM_Controls.CKM_Button();
@@ -59,16 +60,16 @@
             this.ckM_CheckBox13 = new CKM_Controls.CKM_CheckBox();
             this.ckM_CheckBox12 = new CKM_Controls.CKM_CheckBox();
             this.ckM_CheckBox11 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox10 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox9 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox8 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox7 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox6 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox5 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox4 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox3 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox2 = new CKM_Controls.CKM_CheckBox();
-            this.ckM_CheckBox1 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk9 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk10 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk8 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk7 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk6 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk5 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk4 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk3 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk2 = new CKM_Controls.CKM_CheckBox();
+            this.SizeDelChk1 = new CKM_Controls.CKM_CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -433,16 +434,16 @@
             this.panelDetail.Controls.Add(this.ckM_CheckBox13);
             this.panelDetail.Controls.Add(this.ckM_CheckBox12);
             this.panelDetail.Controls.Add(this.ckM_CheckBox11);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox10);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox9);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox8);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox7);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox6);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox5);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox4);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox3);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox2);
-            this.panelDetail.Controls.Add(this.ckM_CheckBox1);
+            this.panelDetail.Controls.Add(this.SizeDelChk9);
+            this.panelDetail.Controls.Add(this.SizeDelChk10);
+            this.panelDetail.Controls.Add(this.SizeDelChk8);
+            this.panelDetail.Controls.Add(this.SizeDelChk7);
+            this.panelDetail.Controls.Add(this.SizeDelChk6);
+            this.panelDetail.Controls.Add(this.SizeDelChk5);
+            this.panelDetail.Controls.Add(this.SizeDelChk4);
+            this.panelDetail.Controls.Add(this.SizeDelChk3);
+            this.panelDetail.Controls.Add(this.SizeDelChk2);
+            this.panelDetail.Controls.Add(this.SizeDelChk1);
             this.panelDetail.Controls.Add(this.label10);
             this.panelDetail.Controls.Add(this.label9);
             this.panelDetail.Controls.Add(this.label8);
@@ -791,106 +792,106 @@
             this.ckM_CheckBox11.TabIndex = 172;
             this.ckM_CheckBox11.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox10
+            // SizeDelChk9
             // 
-            this.ckM_CheckBox10.AutoSize = true;
-            this.ckM_CheckBox10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox10.Location = new System.Drawing.Point(1432, 124);
-            this.ckM_CheckBox10.Name = "ckM_CheckBox10";
-            this.ckM_CheckBox10.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox10.TabIndex = 171;
-            this.ckM_CheckBox10.UseVisualStyleBackColor = true;
+            this.SizeDelChk9.AutoSize = true;
+            this.SizeDelChk9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk9.Location = new System.Drawing.Point(1432, 124);
+            this.SizeDelChk9.Name = "SizeDelChk9";
+            this.SizeDelChk9.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk9.TabIndex = 171;
+            this.SizeDelChk9.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox9
+            // SizeDelChk10
             // 
-            this.ckM_CheckBox9.AutoSize = true;
-            this.ckM_CheckBox9.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox9.Location = new System.Drawing.Point(1561, 124);
-            this.ckM_CheckBox9.Name = "ckM_CheckBox9";
-            this.ckM_CheckBox9.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox9.TabIndex = 170;
-            this.ckM_CheckBox9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ckM_CheckBox9.UseVisualStyleBackColor = true;
+            this.SizeDelChk10.AutoSize = true;
+            this.SizeDelChk10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk10.Location = new System.Drawing.Point(1561, 124);
+            this.SizeDelChk10.Name = "SizeDelChk10";
+            this.SizeDelChk10.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk10.TabIndex = 170;
+            this.SizeDelChk10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SizeDelChk10.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox8
+            // SizeDelChk8
             // 
-            this.ckM_CheckBox8.AutoSize = true;
-            this.ckM_CheckBox8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox8.Location = new System.Drawing.Point(1305, 124);
-            this.ckM_CheckBox8.Name = "ckM_CheckBox8";
-            this.ckM_CheckBox8.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox8.TabIndex = 169;
-            this.ckM_CheckBox8.UseVisualStyleBackColor = true;
+            this.SizeDelChk8.AutoSize = true;
+            this.SizeDelChk8.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk8.Location = new System.Drawing.Point(1305, 124);
+            this.SizeDelChk8.Name = "SizeDelChk8";
+            this.SizeDelChk8.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk8.TabIndex = 169;
+            this.SizeDelChk8.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox7
+            // SizeDelChk7
             // 
-            this.ckM_CheckBox7.AutoSize = true;
-            this.ckM_CheckBox7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox7.Location = new System.Drawing.Point(1177, 124);
-            this.ckM_CheckBox7.Name = "ckM_CheckBox7";
-            this.ckM_CheckBox7.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox7.TabIndex = 168;
-            this.ckM_CheckBox7.UseVisualStyleBackColor = true;
+            this.SizeDelChk7.AutoSize = true;
+            this.SizeDelChk7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk7.Location = new System.Drawing.Point(1177, 124);
+            this.SizeDelChk7.Name = "SizeDelChk7";
+            this.SizeDelChk7.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk7.TabIndex = 168;
+            this.SizeDelChk7.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox6
+            // SizeDelChk6
             // 
-            this.ckM_CheckBox6.AutoSize = true;
-            this.ckM_CheckBox6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox6.Location = new System.Drawing.Point(1048, 124);
-            this.ckM_CheckBox6.Name = "ckM_CheckBox6";
-            this.ckM_CheckBox6.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox6.TabIndex = 167;
-            this.ckM_CheckBox6.UseVisualStyleBackColor = true;
+            this.SizeDelChk6.AutoSize = true;
+            this.SizeDelChk6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk6.Location = new System.Drawing.Point(1048, 124);
+            this.SizeDelChk6.Name = "SizeDelChk6";
+            this.SizeDelChk6.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk6.TabIndex = 167;
+            this.SizeDelChk6.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox5
+            // SizeDelChk5
             // 
-            this.ckM_CheckBox5.AutoSize = true;
-            this.ckM_CheckBox5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox5.Location = new System.Drawing.Point(918, 124);
-            this.ckM_CheckBox5.Name = "ckM_CheckBox5";
-            this.ckM_CheckBox5.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox5.TabIndex = 166;
-            this.ckM_CheckBox5.UseVisualStyleBackColor = true;
+            this.SizeDelChk5.AutoSize = true;
+            this.SizeDelChk5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk5.Location = new System.Drawing.Point(918, 124);
+            this.SizeDelChk5.Name = "SizeDelChk5";
+            this.SizeDelChk5.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk5.TabIndex = 166;
+            this.SizeDelChk5.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox4
+            // SizeDelChk4
             // 
-            this.ckM_CheckBox4.AutoSize = true;
-            this.ckM_CheckBox4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox4.Location = new System.Drawing.Point(790, 124);
-            this.ckM_CheckBox4.Name = "ckM_CheckBox4";
-            this.ckM_CheckBox4.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox4.TabIndex = 165;
-            this.ckM_CheckBox4.UseVisualStyleBackColor = true;
+            this.SizeDelChk4.AutoSize = true;
+            this.SizeDelChk4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk4.Location = new System.Drawing.Point(790, 124);
+            this.SizeDelChk4.Name = "SizeDelChk4";
+            this.SizeDelChk4.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk4.TabIndex = 165;
+            this.SizeDelChk4.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox3
+            // SizeDelChk3
             // 
-            this.ckM_CheckBox3.AutoSize = true;
-            this.ckM_CheckBox3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox3.Location = new System.Drawing.Point(658, 124);
-            this.ckM_CheckBox3.Name = "ckM_CheckBox3";
-            this.ckM_CheckBox3.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox3.TabIndex = 164;
-            this.ckM_CheckBox3.UseVisualStyleBackColor = true;
+            this.SizeDelChk3.AutoSize = true;
+            this.SizeDelChk3.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk3.Location = new System.Drawing.Point(658, 124);
+            this.SizeDelChk3.Name = "SizeDelChk3";
+            this.SizeDelChk3.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk3.TabIndex = 164;
+            this.SizeDelChk3.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox2
+            // SizeDelChk2
             // 
-            this.ckM_CheckBox2.AutoSize = true;
-            this.ckM_CheckBox2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox2.Location = new System.Drawing.Point(532, 124);
-            this.ckM_CheckBox2.Name = "ckM_CheckBox2";
-            this.ckM_CheckBox2.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox2.TabIndex = 163;
-            this.ckM_CheckBox2.UseVisualStyleBackColor = true;
+            this.SizeDelChk2.AutoSize = true;
+            this.SizeDelChk2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk2.Location = new System.Drawing.Point(532, 124);
+            this.SizeDelChk2.Name = "SizeDelChk2";
+            this.SizeDelChk2.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk2.TabIndex = 163;
+            this.SizeDelChk2.UseVisualStyleBackColor = true;
             // 
-            // ckM_CheckBox1
+            // SizeDelChk1
             // 
-            this.ckM_CheckBox1.AutoSize = true;
-            this.ckM_CheckBox1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_CheckBox1.Location = new System.Drawing.Point(400, 124);
-            this.ckM_CheckBox1.Name = "ckM_CheckBox1";
-            this.ckM_CheckBox1.Size = new System.Drawing.Size(15, 14);
-            this.ckM_CheckBox1.TabIndex = 162;
-            this.ckM_CheckBox1.UseVisualStyleBackColor = true;
+            this.SizeDelChk1.AutoSize = true;
+            this.SizeDelChk1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.SizeDelChk1.Location = new System.Drawing.Point(400, 124);
+            this.SizeDelChk1.Name = "SizeDelChk1";
+            this.SizeDelChk1.Size = new System.Drawing.Size(15, 14);
+            this.SizeDelChk1.TabIndex = 162;
+            this.SizeDelChk1.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -1151,7 +1152,7 @@
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -1170,6 +1171,14 @@
             this.Column8,
             this.Column9,
             this.Column10});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle3;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
@@ -1180,7 +1189,6 @@
             this.ckM_GridView1.TabIndex = 143;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
-            //this.ckM_GridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ckM_GridView1_CellContentClick);
             // 
             // Column1
             // 
@@ -4484,16 +4492,16 @@
         private CKM_Controls.CKM_CheckBox ckM_CheckBox13;
         private CKM_Controls.CKM_CheckBox ckM_CheckBox12;
         private CKM_Controls.CKM_CheckBox ckM_CheckBox11;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox10;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox9;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox8;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox7;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox6;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox5;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox4;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox3;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox2;
-        private CKM_Controls.CKM_CheckBox ckM_CheckBox1;
+        private CKM_Controls.CKM_CheckBox SizeDelChk9;
+        private CKM_Controls.CKM_CheckBox SizeDelChk10;
+        private CKM_Controls.CKM_CheckBox SizeDelChk8;
+        private CKM_Controls.CKM_CheckBox SizeDelChk7;
+        private CKM_Controls.CKM_CheckBox SizeDelChk6;
+        private CKM_Controls.CKM_CheckBox SizeDelChk5;
+        private CKM_Controls.CKM_CheckBox SizeDelChk4;
+        private CKM_Controls.CKM_CheckBox SizeDelChk3;
+        private CKM_Controls.CKM_CheckBox SizeDelChk2;
+        private CKM_Controls.CKM_CheckBox SizeDelChk1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
