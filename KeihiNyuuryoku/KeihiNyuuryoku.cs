@@ -582,9 +582,10 @@ namespace KeihiNyuuryoku
             if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
             {
                 if(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
-                {
                     dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
-                }
+                else
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Black;
+
                 BindTotalGaku(dt);
             }
         }
@@ -697,8 +698,9 @@ namespace KeihiNyuuryoku
         {
             int row = dgvKehiNyuuryoku.CurrentCell.RowIndex;
             dgvKehiNyuuryoku.Rows.RemoveAt(row);
+
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
-            
+            tb.AcceptChanges();
             BindTotalGaku(tb);
         }
 
@@ -708,6 +710,7 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             var row = tb.NewRow();
             tb.Rows.InsertAt(row, r);
+            tb.AcceptChanges();
         }
 
         private void F10() // Insert new row, copy/paste data from upper row and Recalculate TotalGaku
@@ -716,6 +719,7 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             var row = tb.NewRow();
             tb.Rows.InsertAt(row, r);
+            tb.AcceptChanges();
 
             for(int i = 0; i < dgvKehiNyuuryoku.Rows[r-1].Cells.Count; i++)
             {
@@ -741,6 +745,8 @@ namespace KeihiNyuuryoku
 
             if (!string.IsNullOrWhiteSpace(lblTotalGaku.Text) & lblTotalGaku.Text.ToString().Contains("-"))
                 lblTotalGaku.ForeColor = Color.Red;
+            else
+                lblTotalGaku.ForeColor = Color.Black;
         }
 
        private string Bind_StaffName(string stCode)
@@ -764,9 +770,9 @@ namespace KeihiNyuuryoku
             foreach (DataGridViewRow r in dgvKehiNyuuryoku.Rows)
             {
                 if (r.Cells["colCostGaku"].Value.ToString().Contains("-"))
-                {
                     r.Cells["colCostGaku"].Style.ForeColor = Color.Red;
-                }
+                else
+                    r.Cells["colCostGaku"].Style.ForeColor = Color.Black;
             }
         }
 
