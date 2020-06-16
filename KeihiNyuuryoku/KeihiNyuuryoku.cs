@@ -462,7 +462,9 @@ namespace KeihiNyuuryoku
                         if (string.IsNullOrWhiteSpace(dr["CostCD"].ToString()))
                         {
                             khnyk_BL.ShowMessage("E101");
-                            dgvKehiNyuuryoku.Select();
+                            dgvKehiNyuuryoku.ClearSelection();
+                            dgvKehiNyuuryoku.Refresh();
+                            dgvKehiNyuuryoku.Rows[1].Selected=true;
                             //dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
                             return false;
                         }

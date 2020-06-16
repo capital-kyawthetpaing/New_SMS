@@ -63,8 +63,14 @@ using Entity;
 
         private void Youshi_Load(object sender, EventArgs e)
         {
-            Load_Report();
-           
+            try
+            {
+                Load_Report();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.Source + Environment.NewLine + ex.StackTrace + Environment.NewLine + ex.Message);
+            }
 
         }
         public void HideAllLine()
