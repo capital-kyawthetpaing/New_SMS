@@ -17,11 +17,13 @@ namespace SiharaiTouroku
     {
         private const string ProID = "SiharaiTouroku";
 
+        public bool flgCancel = false;
+
         Search_Payment_BL spbl = new Search_Payment_BL();
         SiharaiTouroku_BL shnbl = new SiharaiTouroku_BL();
         D_Pay_Entity dpe = new D_Pay_Entity();
         //D_PayPlan_Entity dppe = new D_PayPlan_Entity();
-        M_Kouza_Entity mkze = new M_Kouza_Entity();
+        //M_Kouza_Entity mkze = new M_Kouza_Entity();
         //DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
 
@@ -34,7 +36,7 @@ namespace SiharaiTouroku
         string kouzaCD = string.Empty;
         string payeeCD = string.Empty;
         string payPlanDate = string.Empty;
-        public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt,DataTable dtDetail)
+        public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt, DataTable dtDetail)
         {
             InitializeComponent();
             dpe = dpe1;
@@ -100,7 +102,7 @@ namespace SiharaiTouroku
             if (tblROWS.Length > 0)
             //dtSiharai1 = tblROWS.CopyToDataTable();
             {
-                txtTransferAmount.Text = tblROWS[0]["TransferGaku"].ToString();
+                txtTransferAmount.Text = bbl.Z_SetStr(tblROWS[0]["TransferGaku"]);
                 SC_BankCD.TxtCode.Text = tblROWS[0]["BankCD"].ToString();
                 SC_BankCD.LabelText = tblROWS[0]["BankName"].ToString();
                 SC_BranchCD.TxtCode.Text = tblROWS[0]["BranchCD"].ToString();
@@ -108,12 +110,12 @@ namespace SiharaiTouroku
                 txtKouzaKBN.Text = tblROWS[0]["KouzaKBN"].ToString();
                 txtAccNo.Text = tblROWS[0]["KouzaNO"].ToString();
                 txtMeigi.Text = tblROWS[0]["KouzaMeigi"].ToString();
-                txtFeeKBN.Text = tblROWS[0]["FeeKBN"].ToString();
+                txtFeeKBN.Text = tblROWS[0]["FeeKBNVal"].ToString();
                 //txtAmount.Text = tblROWS[0]["Fee"].ToString();
-                txtAmount.Text = tblROWS[0]["TransferFeeGaku"].ToString();
-                txtCash.Text = tblROWS[0]["CashGaku"].ToString();
-                txtOffsetGaku.Text = tblROWS[0]["OffsetGaku"].ToString();
-                txtBill.Text = tblROWS[0]["BillGaku"].ToString();
+                txtAmount.Text = bbl.Z_SetStr(tblROWS[0]["TransferFeeGaku"]);
+                txtCash.Text = bbl.Z_SetStr(tblROWS[0]["CashGaku"]);
+                txtOffsetGaku.Text = bbl.Z_SetStr(tblROWS[0]["OffsetGaku"]);
+                txtBill.Text = bbl.Z_SetStr(tblROWS[0]["BillGaku"]);
                 txtBillNo.Text = tblROWS[0]["BillNO"].ToString();
                 txtBillDate.Text = tblROWS[0]["BillDate"].ToString();
                 txtElectronicBone.Text = tblROWS[0]["ERMCGaku"].ToString();
@@ -134,61 +136,176 @@ namespace SiharaiTouroku
 
         private void SelectKeyData()
         {
-            dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
-            dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
+            //dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
+            //dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
+
+            //SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            //SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+
+            //SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            //SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+
+            ////SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            //SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+
+            //SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            //SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
         }
 
-        private void SetRequireField()
+        private bool CheckRequireField()
         {
             if (bbl.Z_Set(txtTransferAmount.Text) > 0)
             {
-                SC_BankCD.TxtCode.Require(true);
-                SC_BranchCD.TxtCode.Require(true);
-                txtKouzaKBN.Require(true);
-                txtAccNo.Require(true);
-                txtMeigi.Require(true);
-                txtFeeKBN.Require(true);
-                txtAmount.Require(true);
+                if (!RequireCheck(new Control[] { SC_BankCD.TxtCode, SC_BranchCD.TxtCode, txtKouzaKBN, txtAccNo, txtMeigi , txtFeeKBN , txtAmount }))
+                    return false;
             }
 
-            if(bbl.Z_Set(txtBill.Text)>0)
+            if(bbl.Z_Set(txtBill.Text) > 0)
             {
-                txtBillNo.Require(true);
-                txtBillDate.Require(true);
-
+                if (!RequireCheck(new Control[] { txtBillNo, txtBillDate }))
+                    return false;
             }
-            if(bbl.Z_Set(txtElectronicBone.Text)>0)
+
+            if(bbl.Z_Set(txtElectronicBone.Text) > 0)
             {
-                txtElectronicRecordNo.Require(true);
-                txtSettlementDate2.Require(true);
+                if (!RequireCheck(new Control[] { txtElectronicRecordNo, txtSettlementDate2 }))
+                    return false;
             }
             if(bbl.Z_Set(txtOther1.Text)>0)
             {
-                SC_HanyouKeyStart1.TxtCode.Require(true);
-                SC_HanyouKeyEnd1.TxtCode.Require(true);
+                if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode, SC_HanyouKeyEnd1.TxtCode }))
+                    return false;
             }
             if (bbl.Z_Set(txtOther2.Text) > 0)
             {
-                SC_HanyouKeyStart2.TxtCode.Require(true);
-                SC_HanyouKeyEnd2.TxtCode.Require(true);
+                if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode, SC_HanyouKeyEnd2.TxtCode }))
+                    return false;
             }
+            return true;
         }
+        private bool CheckBankCD(bool F12 = false)
+        {
+            SC_BankCD.LabelText = "";
 
+            if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
+            {
+                SC_BankCD.ChangeDate = dpe.PayDate;
+                if (SC_BankCD.SelectData())
+                {
+                    SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
+                    SC_BranchCD.Value2 = SC_BankCD.LabelText;
+
+                    if (!F12)
+                        Select_KouzaFee();
+
+                }
+                else
+                {
+                    bbl.ShowMessage("E101");
+                    SC_BankCD.SetFocus(1);
+                }
+            }
+
+            return true;
+        }
+        private bool CheckBranchCD(bool F12 = false)
+        {
+            SC_BranchCD.LabelText = "";
+
+            if (!string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text))
+            {
+                SC_BranchCD.ChangeDate = dpe.PayDate;
+                SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
+                if (!SC_BranchCD.SelectData())
+                {
+                    bbl.ShowMessage("E101");
+                    SC_BranchCD.SetFocus(1);
+                }
+                else
+                {
+                    if (!F12)
+                        Select_KouzaFee();
+                }
+            }
+
+
+            return true;
+        }
+        private bool CheckKBN(short kbn, bool F12 = false)
+        {
+            switch (kbn)
+            {
+                case 1://KouzaKBN
+                    if (!string.IsNullOrWhiteSpace(txtKouzaKBN.Text))
+                    {
+
+                        if (txtKouzaKBN.Text != "1")
+                        {
+                            if (txtKouzaKBN.Text != "2")
+                            {
+                                bbl.ShowMessage("E101");
+                                txtKouzaKBN.Focus();
+                                return false;
+                            }
+                        }
+                    }
+                    break;
+
+                case 2: //FeeKBN
+                    if (!string.IsNullOrWhiteSpace(txtFeeKBN.Text))
+                    {
+                        if (!txtFeeKBN.Text.Equals("1"))
+                        {
+                            if (!txtFeeKBN.Text.Equals("2"))
+                            {
+                                bbl.ShowMessage("E101");
+                                txtFeeKBN.Focus();
+                                return false;
+                            }
+                        }
+                        if (!F12)
+                            Select_KouzaFee();
+                    }
+                    break;
+
+            }
+            return true;
+        }
+        private bool CheckHanyo(Search.CKM_SearchControl sc)
+        {
+            sc.LabelText = "";
+
+            if (!string.IsNullOrWhiteSpace(sc.TxtCode.Text))
+            {
+                if (!sc.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    sc.SetFocus(1);
+                    return false;
+                }
+            }
+
+            return true;
+        }
         public void LabelDataBind()
         {
-            int sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0;
+            decimal sum1 = 0;
+            decimal sum2 = 0;
+            decimal sum3 = 0;
+            decimal sum4 = 0;
+
             for (int i = 0; i < dgvSearchPayment.Rows.Count; ++i)
             {
-                sum1 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[3].Value);
-                sum2 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[4].Value);
-                sum3 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[5].Value);
-                sum4 += Convert.ToInt32(dgvSearchPayment.Rows[i].Cells[6].Value);
+                sum1 += bbl.Z_Set(dgvSearchPayment.Rows[i].Cells[3].Value);
+                sum2 += bbl.Z_Set(dgvSearchPayment.Rows[i].Cells[4].Value);
+                sum3 += bbl.Z_Set(dgvSearchPayment.Rows[i].Cells[5].Value);
+                sum4 += bbl.Z_Set(dgvSearchPayment.Rows[i].Cells[6].Value);
             }
             lblPayPlanGaku.Text = sum1.ToString("#,##0");
             lblPayComfirmGaku.Text = sum2.ToString("#,##0");
             lblPayGaku.Text =lblPayGaku1.Text= sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
-            txtTransferAmount.Text = sum3.ToString();
+            txtTransferAmount.Text = bbl.Z_SetStr(sum3);
         }
 
 
@@ -197,7 +314,7 @@ namespace SiharaiTouroku
         /// </summary>
         /// <param name="index"> button index+1, eg.if index is 0,it means F1 click </param>
         public override void FunctionProcess(int Index)
-        {
+        {    
             if (Index + 1 == 5)
                 Clear();
             if (Index + 1 == 12)
@@ -214,26 +331,19 @@ namespace SiharaiTouroku
 
             if(dtGdv.Rows.Count>0)
             {
-                DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
-                //foreach(DataRow row in tblROWS)
-                //{
-                //    dtGdv.Rows.Remove(row);
-                //    dtGdv.AcceptChanges();
-                //}
-                //dtGdv.Merge(dtSiharai1);
-                    
+                SetData();
+
             }
             if (dtDetails.Rows.Count > 0)
             {
                 /*dtSiharai2=*/
-                SetData();
                 DataRow[] tblROWS = dtDetails.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
                 foreach (DataRow row in tblROWS)
                 {
                     dtDetails.Rows.Remove(row);
                     dtDetails.AcceptChanges();
                 }
-                dtDetails.Merge(dtSiharai2);               
+                dtDetails.Merge(dtSiharai2);
             }
             this.Close();
         }
@@ -241,39 +351,49 @@ namespace SiharaiTouroku
 
         private void SetData()
         {
-            dtSiharai2.Rows[0]["TransferGaku"] = txtTransferAmount.Text.ToString() ;
-            dtSiharai2.Rows[0]["BankCD"] = SC_BankCD.TxtCode.Text.ToString();
-            dtSiharai2.Rows[0]["BankName"] = SC_BankCD.LabelText.ToString();
-            dtSiharai2.Rows[0]["BranchCD"] = SC_BranchCD.TxtCode.Text.ToString();
-            dtSiharai2.Rows[0]["BranchName"] = SC_BranchCD.LabelText.ToString();
-            dtSiharai2.Rows[0]["KouzaKBN"] = txtKouzaKBN.Text.ToString();
-            dtSiharai2.Rows[0]["KouzaNO"] = txtAccNo.Text.ToString();
-            dtSiharai2.Rows[0]["KouzaMeigi"] = txtMeigi.Text.ToString();
-            dtSiharai2.Rows[0]["FeeKBN"] = txtFeeKBN.Text.ToString();
-            dtSiharai2.Rows[0]["Fee"] = txtAmount.Text.ToString();
-            dtSiharai2.Rows[0]["CashGaku"] = txtCash.Text.ToString();
-            dtSiharai2.Rows[0]["OffsetGaku"] = txtOffsetGaku.Text.ToString();
-            dtSiharai2.Rows[0]["BillGaku"] = txtBill.Text.ToString();
-            dtSiharai2.Rows[0]["BillNO"] = txtBillNo.Text.ToString();
-            dtSiharai2.Rows[0]["BillDate"] = txtBillDate.Text.Replace('/','-').ToString();
+            DataRow[] tblROWS = dtGdv.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+            //foreach(DataRow row in tblROWS)
+            //{
+            //    dtGdv.Rows.Remove(row);
+            //    dtGdv.AcceptChanges();
+            //}
+            //dtGdv.Merge(dtSiharai1);
 
-            dtSiharai2.Rows[0]["ERMCGaku"] = txtElectronicBone.Text.ToString();
-            dtSiharai2.Rows[0]["ERMCNO"] = txtElectronicRecordNo.Text.ToString();
-            dtSiharai2.Rows[0]["ERMCDate"] = txtSettlementDate2.Text.ToString();
+            tblROWS[0]["TransferGaku"] = bbl.Z_Set(txtTransferAmount.Text) ;
+            tblROWS[0]["BankCD"] = SC_BankCD.TxtCode.Text;
+            tblROWS[0]["BankName"] = SC_BankCD.LabelText;
+            tblROWS[0]["BranchCD"] = SC_BranchCD.TxtCode.Text;
+            tblROWS[0]["BranchName"] = SC_BranchCD.LabelText;
+            tblROWS[0]["KouzaKBN"] = txtKouzaKBN.Text;
+            tblROWS[0]["KouzaNO"] = txtAccNo.Text;
+            tblROWS[0]["KouzaMeigi"] = txtMeigi.Text;
+            tblROWS[0]["FeeKBNVal"] = txtFeeKBN.Text;
+            //tblROWS[0]["Fee"] = txtAmount.Text;
+            tblROWS[0]["TransferFeeGaku"] = bbl.Z_Set(txtAmount.Text);
 
-            dtSiharai2.Rows[0]["OtherGaku1"] = txtOther1.Text.ToString();
-            dtSiharai2.Rows[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text.ToString();
-            //dtSiharai2.Rows[0]["start1"] = SC_HanyouKeyStart1.LabelText;
-            dtSiharai2.Rows[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text.ToString();
-            //dtSiharai2.Rows[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
+            tblROWS[0]["CashGaku"] = bbl.Z_Set(txtCash.Text);
+            tblROWS[0]["OffsetGaku"] = bbl.Z_Set(txtOffsetGaku.Text);
+            tblROWS[0]["BillGaku"] = bbl.Z_Set(txtBill.Text);
+            tblROWS[0]["BillNO"] = txtBillNo.Text;
+            tblROWS[0]["BillDate"] = txtBillDate.Text;
 
-            dtSiharai2.Rows[0]["OtherGaku2"] = txtOther2.Text.ToString();
-            dtSiharai2.Rows[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text.ToString();
-            //dtSiharai2.Rows[0]["start2"] = SC_HanyouKeyStart2.LabelText;
-            dtSiharai2.Rows[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text.ToString();
-            //dtSiharai2.Rows[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
-            dtSiharai2.AcceptChanges();
-            //return dtSiharai2;
+            tblROWS[0]["ERMCGaku"] = bbl.Z_Set(txtElectronicBone.Text);
+            tblROWS[0]["ERMCNO"] = txtElectronicRecordNo.Text;
+            tblROWS[0]["ERMCDate"] = txtSettlementDate2.Text;
+
+            tblROWS[0]["OtherGaku1"] = bbl.Z_Set(txtOther1.Text);
+            tblROWS[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text;
+            //tblROWS[0]["start1"] = SC_HanyouKeyStart1.LabelText;
+            tblROWS[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text;
+            //tblROWS[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
+
+            tblROWS[0]["OtherGaku2"] = bbl.Z_Set(txtOther2.Text);
+            tblROWS[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text;
+            //tblROWS[0]["start2"] = SC_HanyouKeyStart2.LabelText;
+            tblROWS[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text;
+            //tblROWS[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
+            //dtGdv.AcceptChanges();
+            //return dtGdv;
         }
         public void Clear()
         {
@@ -311,164 +431,45 @@ namespace SiharaiTouroku
         /// <returns></returns>
         public bool ErrorCheck()
         {
-            if (Convert.ToInt32(txtTransferAmount.Text) > 0)
+            if (!CheckRequireField())
             {
-                if (!RequireCheck(new Control[] { SC_BankCD.TxtCode}))
-                    return false;
-
-                SC_BankCD.ChangeDate = dpe.PayDate;
-                if (!SC_BankCD.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_BankCD.SetFocus(1);
-                    return false;
-                }
-
-                if (!RequireCheck(new Control[] { SC_BranchCD.TxtCode }))
-                    return false;
-
-                SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
-                SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
-                if (!SC_BranchCD.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_BranchCD.SetFocus(1);
-                    return false;
-                }
-
-                if(!RequireCheck(new Control[] { txtKouzaKBN }))
-                    return false;
-                //if (!txtKouzaKBN.Text.Equals("1") || !txtKouzaKBN.Text.Equals("2"))
-                //{
-                //    bbl.ShowMessage("E101");
-                //    txtKouzaKBN.Focus();
-                //    return false;
-                //}
-                if(txtKouzaKBN.Text != "1" )
-                {
-                    if(txtKouzaKBN.Text != "2")
-                    {
-                        bbl.ShowMessage("E101");
-                        txtKouzaKBN.Focus();
-                        return false;
-                    }
-                    
-                }
-
-                if (!RequireCheck(new Control[] {txtAccNo,txtMeigi, txtFeeKBN })) 
-                    return false;
-                //if (!txtFeeKBN.Text.Equals("1") || !txtFeeKBN.Text.Equals("2"))
-                //{
-                //    bbl.ShowMessage("E101");
-                //    txtFeeKBN.Focus();
-                //    return false;
-                //}
-
-                if(!txtFeeKBN.Text.Equals("1"))
-                {
-                    if(!txtFeeKBN.Text.Equals("2"))
-                    {
-                        bbl.ShowMessage("E101");
-                        txtFeeKBN.Focus();
-                        return false;
-                    }
-                }
-
-                if (!RequireCheck(new Control[] {txtAmount }))
-                    return false;
-
+                return false;
             }
-
-            if (Convert.ToInt32(txtBill.Text) > 0)
+            if (!CheckBankCD(true))
             {
-                if (!RequireCheck(new Control[] { txtBillNo,txtBillDate}))
-                    return false;
-
+                return false;
             }
-
-            if (Convert.ToInt32(txtElectronicBone.Text) > 0)
+            if (!CheckBranchCD(true))
             {
-                if (!RequireCheck(new Control[] { txtElectronicRecordNo,txtSettlementDate2}))
-                    return false;
-
+                return false;
             }
-
-            if (Convert.ToInt32(txtOther1.Text) > 0)
+            if (!CheckKBN(1))
             {
-                if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode }))
-                    return false;
-
-                if (!SC_HanyouKeyStart1.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_HanyouKeyStart1.SetFocus(1);
-                    return false;
-                }
-
-                if (!RequireCheck(new Control[] { SC_HanyouKeyEnd1.TxtCode }))
-                    return false;
-
-                if (!SC_HanyouKeyEnd1.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_HanyouKeyEnd1.SetFocus(1);
-                    return false;
-                }
+                return false;
             }
-
-            if(Convert.ToInt32(txtOther2.Text)>0)
+            if (!CheckKBN(2, true))
             {
-                if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode }))
-                    return false;
-                if (!SC_HanyouKeyStart2.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_HanyouKeyStart2.SetFocus(1);
-                    return false;
-                }
-
-                if (!RequireCheck(new Control[] { SC_HanyouKeyEnd2.TxtCode }))
-                    return false;
-                if (!SC_HanyouKeyEnd2.IsExists(2))
-                {
-                    bbl.ShowMessage("E101");
-                    SC_HanyouKeyEnd2.SetFocus(1);
-                    return false;
-                }
+                return false;
+            }
+            if (!CheckHanyo(SC_HanyouKeyStart1))
+            {
+                return false;
+            }
+            if (!CheckHanyo(SC_HanyouKeyEnd1))
+            {
+                return false;
+            }
+            if (!CheckHanyo(SC_HanyouKeyStart2))
+            {
+                return false;
+            }
+            if (!CheckHanyo(SC_HanyouKeyEnd2))
+            {
+                return false;
             }
 
            return true;
-        }
-
-       
-        #region Enter event of Search Control
-        private void SC_HanyouKeyStart1_Enter(object sender, EventArgs e)
-        {
-            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
-        }
-
-        private void SC_HanyouKeyEnd1_Enter(object sender, EventArgs e)
-        {
-            SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
-            SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
-        }
-
-        private void SC_HanyouKeyStart2_Enter(object sender, EventArgs e)
-        {
-            SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
-        }
-
-        private void SC_HanyouKeyEnd2_Enter(object sender, EventArgs e)
-        {
-            SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
-            SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
-        }
-        #endregion
-
+        }       
 
         /// <summary>
         /// Leave event of Bank Search Control
@@ -480,8 +481,14 @@ namespace SiharaiTouroku
             SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
             SC_BranchCD.Value2 = SC_BankCD.LabelText;
         }
-
-
+        private void SC_HanyouKeyStart1_Leave(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
+        }
+        private void SC_HanyouKeyStart2_Leave(object sender, EventArgs e)
+        {
+            SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
+        }
         #region  KeyDown event
 
         /// <summary>
@@ -491,156 +498,218 @@ namespace SiharaiTouroku
         /// <param name="e"></param>
         private void SC_KeyDown(object sender, KeyEventArgs e)
         {
-            Select_KouzaFee();
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                        ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    Select_KouzaFee();
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
         }
 
         private void SC_BankCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                if (Convert.ToInt32(txtTransferAmount.Text)>0 && !string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text))
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    SC_BankCD.ChangeDate = DateTime.Today.ToShortDateString();
-                    if (SC_BankCD.SelectData())
+                    if (!CheckBankCD())
                     {
-                        SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
-                        SC_BranchCD.Value2 = SC_BankCD.LabelText;
-
-                        Select_KouzaFee();
-
+                        return;
                     }
-                    else
-                    {
-                        bbl.ShowMessage("E101");
-                        SC_BankCD.SetFocus(1);
-                    }
-
                 }
-                //else
-                //{
-                //    bbl.ShowMessage("E101");
-                //    SC_BankCD.SetFocus(1);
-                //}
-
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
         private void SC_BranchCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-               
-                if (!string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text))
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    SC_BranchCD.ChangeDate = DateTime.Today.ToShortDateString();
-                    SC_BranchCD.Value1 = SC_BankCD.TxtCode.Text;
-                    if (!SC_BranchCD.SelectData())
+                    if (!CheckBranchCD())
                     {
-                        bbl.ShowMessage("E101");
-                        SC_BranchCD.SetFocus(1);
+                        return;
                     }
-                    else
-                    {
-                        Select_KouzaFee();
-                    }
-
                 }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    SC_BranchCD.SetFocus(1);
-                }
-
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
+
+        private void txtFeeKBN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (!CheckKBN(2))
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        private void txtKouzaKBN_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (!CheckKBN(1))
+                    {
+                        return;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
 
         private void SC_HanyouKeyStart1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyStart1.TxtCode.Text))
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    if (!SC_HanyouKeyStart1.SelectData())
+                    if (!CheckHanyo(SC_HanyouKeyStart1))
                     {
-                        bbl.ShowMessage("E101");
-                        SC_HanyouKeyStart1.SetFocus(1);
+                        return;
                     }
-                    else
-                    {
-                        SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-                        SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
-                    }
-
+                    SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
                 }
             }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
         }
-
-
         private void SC_HanyouKeyStart2_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyStart2.TxtCode.Text))
-                {
-                    if (!SC_HanyouKeyStart2.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        SC_HanyouKeyStart2.SetFocus(1);
-                    }
-                    else
-                    {
-                        SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-                        SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
-                    }
 
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (!CheckHanyo(SC_HanyouKeyStart2))
+                    {
+                        return;
+                    }
+                    SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
 
         }
 
         private void SC_HanyouKeyEnd1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd1.TxtCode.Text))
-                {
-                    SC_HanyouKeyEnd1.Value2 = SC_HanyouKeyStart1.TxtCode.Text;
-                    if (!SC_HanyouKeyEnd1.SelectData())
-                    {
-                        bbl.ShowMessage("E101");
-                        SC_HanyouKeyEnd1.SetFocus(1);
-                    }
-                    else
-                    {
-                        SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-                        SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
-                        SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
-                    }
 
+            try
+            {
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
+                {
+                    if (!CheckHanyo(SC_HanyouKeyEnd1))
+                    {
+                        return;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
         private void SC_HanyouKeyEnd2_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            try
             {
-                if (!string.IsNullOrWhiteSpace(SC_HanyouKeyEnd2.TxtCode.Text))
+                //Enterキー押下時処理
+                //Returnキーが押されているか調べる
+                //AltかCtrlキーが押されている時は、本来の動作をさせる
+                if ((e.KeyCode == Keys.Return) &&
+                    ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
-                    SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.TxtCode.Text;
-                    if (!SC_HanyouKeyEnd2.SelectData())
+                    if (!CheckHanyo(SC_HanyouKeyEnd2))
                     {
-                        bbl.ShowMessage("E101");
-                        SC_HanyouKeyEnd2.SetFocus(1);
+                        return;
                     }
-                    else
-                    {
-                        SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-                        SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
-                        SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
-                    }
-
                 }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
@@ -651,7 +720,7 @@ namespace SiharaiTouroku
             if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
                              && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && txtAmount.Text.Equals("0"))
             {
-                mkze = new M_Kouza_Entity
+                M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
                     KouzaCD = kouzaCD,
                     BankCD = SC_BankCD.TxtCode.Text,
@@ -660,19 +729,14 @@ namespace SiharaiTouroku
 
                 };
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
-                txtTransferAmount.Text = dt.Rows[0]["Fee"].ToString();
-            }
-            else
-            {
-                bbl.ShowMessage("E102");
-                txtTransferAmount.Focus();
+                txtTransferAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
             }
 
         }
 
-
         protected override void EndSec()
         {
+            flgCancel = true;
             this.Close();
         }
 
@@ -688,21 +752,21 @@ namespace SiharaiTouroku
 
         protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
        {
-            if (e.ColumnIndex > 0 && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
             {
                 if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
                 {
                     if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
                     {
                         DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
                         dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = "0";
                     }
                     else
                     {
                         DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
                         dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
                     }
 
                     LabelDataBind();
@@ -731,7 +795,7 @@ namespace SiharaiTouroku
 
         private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvSearchPayment.CurrentRow.Index > -1)
+            if (dgvSearchPayment.CurrentRow.Index >= 0)
             {
                 if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
                 {
@@ -742,7 +806,7 @@ namespace SiharaiTouroku
                         bbl.ShowMessage("E102");
                         dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
                     }
-                    else if (Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) > Convert.ToInt32(row.Cells["colUnpaidAmount2"].Value.ToString()) || Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
+                    else if (bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) > bbl.Z_Set(row.Cells["colUnpaidAmount2"].Value.ToString()) || bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
                     //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
                     {
                         bbl.ShowMessage("E143");
@@ -750,7 +814,7 @@ namespace SiharaiTouroku
                     }
                     else
                     {
-                        row.Cells["colUnpaidAmount2"].Value = Convert.ToInt32(row.Cells["colPayPlanGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colPayConfirmGaku"].Value.ToString()) - Convert.ToInt32(row.Cells["colUnpaidAmount1"].Value.ToString());
+                        row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString());
                     }
                         LabelDataBind();
                 }

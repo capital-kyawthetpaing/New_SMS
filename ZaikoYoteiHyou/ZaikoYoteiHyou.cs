@@ -141,8 +141,15 @@ namespace ZaikoYoteiHyou
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear(panelDetail);
-                        txtTargetDateFrom.Text = DateTime.Today.ToShortDateString().Substring(0, 7);
+                        string m = DateTime.Now.Month.ToString();
+                        if (m.Length == 1)
+                        {
+                            m = 0 + DateTime.Now.Month.ToString();
+                        }
+                        string y = DateTime.Now.Year.ToString();
+                        txtTargetDateFrom.Text = y + "/" + m;
                         txtTargetDateTo.Focus();
+                        BindCombo();
                     }
                     break;              
             }
