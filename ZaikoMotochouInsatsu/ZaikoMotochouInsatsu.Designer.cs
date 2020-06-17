@@ -88,7 +88,7 @@
             this.panelDetail.Location = new System.Drawing.Point(0, 40);
             this.panelDetail.Name = "panelDetail";
             this.panelDetail.Size = new System.Drawing.Size(1713, 889);
-            this.panelDetail.TabIndex = 13;
+            this.panelDetail.TabIndex = 1;
             // 
             // scJANCD
             // 
@@ -111,7 +111,7 @@
             this.scJANCD.SearchEnable = true;
             this.scJANCD.Size = new System.Drawing.Size(633, 27);
             this.scJANCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
-            this.scJANCD.TabIndex = 18;
+            this.scJANCD.TabIndex = 5;
             this.scJANCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scJANCD.UseChangeDate = false;
             this.scJANCD.Value1 = null;
@@ -139,7 +139,7 @@
             this.scSKUCD.SearchEnable = true;
             this.scSKUCD.Size = new System.Drawing.Size(633, 27);
             this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
-            this.scSKUCD.TabIndex = 17;
+            this.scSKUCD.TabIndex = 4;
             this.scSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSKUCD.UseChangeDate = false;
             this.scSKUCD.Value1 = null;
@@ -167,7 +167,7 @@
             this.scITEM.SearchEnable = true;
             this.scITEM.Size = new System.Drawing.Size(633, 27);
             this.scITEM.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
-            this.scITEM.TabIndex = 16;
+            this.scITEM.TabIndex = 3;
             this.scITEM.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scITEM.UseChangeDate = false;
             this.scITEM.Value1 = null;
@@ -195,7 +195,7 @@
             this.scMakerShohinCD.SearchEnable = true;
             this.scMakerShohinCD.Size = new System.Drawing.Size(633, 28);
             this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
-            this.scMakerShohinCD.TabIndex = 15;
+            this.scMakerShohinCD.TabIndex = 2;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;
             this.scMakerShohinCD.Value1 = null;
@@ -209,7 +209,7 @@
             this.rdoMakerShohinCD.Location = new System.Drawing.Point(349, 238);
             this.rdoMakerShohinCD.Name = "rdoMakerShohinCD";
             this.rdoMakerShohinCD.Size = new System.Drawing.Size(115, 16);
-            this.rdoMakerShohinCD.TabIndex = 14;
+            this.rdoMakerShohinCD.TabIndex = 9;
             this.rdoMakerShohinCD.TabStop = true;
             this.rdoMakerShohinCD.Text = "メーカー商品CD";
             this.rdoMakerShohinCD.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.rdoITEM.Location = new System.Drawing.Point(276, 237);
             this.rdoITEM.Name = "rdoITEM";
             this.rdoITEM.Size = new System.Drawing.Size(58, 16);
-            this.rdoITEM.TabIndex = 13;
+            this.rdoITEM.TabIndex = 8;
             this.rdoITEM.TabStop = true;
             this.rdoITEM.Text = " ITEM";
             this.rdoITEM.UseVisualStyleBackColor = true;
@@ -233,7 +233,7 @@
             this.chkPrintRelated.Location = new System.Drawing.Point(153, 238);
             this.chkPrintRelated.Name = "chkPrintRelated";
             this.chkPrintRelated.Size = new System.Drawing.Size(109, 16);
-            this.chkPrintRelated.TabIndex = 12;
+            this.chkPrintRelated.TabIndex = 7;
             this.chkPrintRelated.Text = " 関連印字する";
             this.chkPrintRelated.UseVisualStyleBackColor = true;
             // 
@@ -260,7 +260,7 @@
             this.txtSKUName.MoveNext = true;
             this.txtSKUName.Name = "txtSKUName";
             this.txtSKUName.Size = new System.Drawing.Size(500, 19);
-            this.txtSKUName.TabIndex = 11;
+            this.txtSKUName.TabIndex = 6;
             this.txtSKUName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // cboSouko
@@ -277,7 +277,7 @@
             this.cboSouko.MoveNext = true;
             this.cboSouko.Name = "cboSouko";
             this.cboSouko.Size = new System.Drawing.Size(200, 20);
-            this.cboSouko.TabIndex = 10;
+            this.cboSouko.TabIndex = 1;
             this.cboSouko.SelectedIndexChanged += new System.EventHandler(this.cboSouko_SelectedIndexChanged);
             // 
             // txtTargetPeriodT
@@ -330,7 +330,7 @@
             this.txtTargetPeriodF.MoveNext = true;
             this.txtTargetPeriodF.Name = "txtTargetPeriodF";
             this.txtTargetPeriodF.Size = new System.Drawing.Size(100, 19);
-            this.txtTargetPeriodF.TabIndex = 8;
+            this.txtTargetPeriodF.TabIndex = 0;
             this.txtTargetPeriodF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetPeriodF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtTargetPeriodF.Leave += new System.EventHandler(this.txtTargetPeriodF_Leave);
