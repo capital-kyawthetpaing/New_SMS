@@ -66,6 +66,7 @@ namespace ZaikoMotochouInsatsu
         public void Clear()
         {
             Clear(panelDetail);
+            cboSouko.SelectedValue = SoukoCD;
             txtTargetPeriodF.Focus();
         }
 
