@@ -1109,6 +1109,7 @@ namespace IkkatuHacchuuNyuuryoku
         {
             keyControls = new Control[] { CboStoreCD };
             keyLabels = new Control[] { };
+
             detailControls = new Control[] { txtHacchuuDate, ScSiiresakiCD.TxtCode,ScJuchuuStaff.TxtCode, ScHacchuuNO.TxtCode, ScHacchuuShoriNO.TxtCode, ScStaff.TxtCode };
             detailLabels = new Control[] { ScSiiresakiCD,ScJuchuuStaff, ScStaff };
             searchButtons = new Control[] { ScSiiresakiCD.BtnSearch, ScHacchuuNO.BtnSearch, ScHacchuuShoriNO.BtnSearch };
@@ -1262,6 +1263,10 @@ namespace IkkatuHacchuuNyuuryoku
 
                     if (!CheckDependsOnHacchuuDate(index))
                         return false;
+
+                    CheckData(true);
+                    CheckGrid(0, 0);
+                    this.CalcKin();
 
                     break;
 
@@ -1559,15 +1564,6 @@ namespace IkkatuHacchuuNyuuryoku
 
             return true;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ScJuchuuStaff_Validated(object sender, EventArgs e)
-        {
-            this.ExecDisp();
-        }
 
         #endregion
 
@@ -1753,7 +1749,7 @@ namespace IkkatuHacchuuNyuuryoku
                 {
                     ctl.Text = bbl.GetDate().ToString();
                 }
-                else if (ctl == detailControls[(int)EIndex.StaffCD] || ctl == detailControls[(int)EIndex.StaffName])
+                else if (ctl == detailControls[(int)EIndex.StaffCD])
                 {
                 }
                 else if (ctl.GetType().Equals(typeof(CKM_Controls.CKM_CheckBox)))
@@ -1780,8 +1776,8 @@ namespace IkkatuHacchuuNyuuryoku
 
             foreach (Control ctl in detailLabels)
             {
-                if (ctl == detailControls[(int)EIndex.StaffCD]) continue;
-                //((CKM_SearchControl)ctl).LabelText = string.Empty;
+                if (ctl == detailLabels[(int)EIndex.StaffName]) continue;
+                ((CKM_SearchControl)ctl).LabelText = string.Empty;
             }
 
             mOldIkkatuHacchuuDate = string.Empty;
