@@ -8523,7 +8523,6 @@
             this.ScJuchuuStaff.Value1 = null;
             this.ScJuchuuStaff.Value2 = null;
             this.ScJuchuuStaff.Value3 = null;
-            this.ScJuchuuStaff.Validated += new System.EventHandler(this.ScJuchuuStaff_Validated);
             // 
             // ckM_Label1
             // 
