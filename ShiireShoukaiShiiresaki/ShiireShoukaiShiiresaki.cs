@@ -265,16 +265,14 @@ namespace ShiireShoukaiShiiresaki
                 scSupplier.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
                 {
-                    if (scSupplier.SelectData())
+                    if (!scSupplier.SelectData())
                     {
-                        scSupplier.Value1 = scSupplier.TxtCode.Text;
-                        scSupplier.Value2 = scSupplier.LabelText;
-                    }
-                    else
-                    {
+                        //scSupplier.Value1 = scSupplier.TxtCode.Text;
+                        //scSupplier.Value2 = scSupplier.LabelText;
                         bbl.ShowMessage("E101");
                         scSupplier.SetFocus(1);
                     }
+                  
                 }
 
             }
@@ -287,16 +285,18 @@ namespace ShiireShoukaiShiiresaki
                 scStaff.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
                 {
-                    if (scStaff.SelectData())
+                    if (!scStaff.SelectData())
                     {
-                        scStaff.Value1 = scStaff.TxtCode.Text;
-                        scStaff.Value2 = scStaff.LabelText;
-                    }
-                    else
-                    {
+                        //scStaff.Value1 = scStaff.TxtCode.Text;
+                        //scStaff.Value2 = scStaff.LabelText;
                         bbl.ShowMessage("E101");
                         scStaff.SetFocus(1);
                     }
+                    //else
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    scStaff.SetFocus(1);
+                    //}
                 }
             }
         }
