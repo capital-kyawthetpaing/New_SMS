@@ -759,7 +759,7 @@ namespace KeihiNyuuryoku
                     TotalGaku += Convert.ToDecimal(row["CostGaku"]);
                 
                 if (TotalGaku.ToString().Equals("0"))
-                    lblTotalGaku.Text = string.Empty;
+                    lblTotalGaku.Text = "0";
                 else
                     lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
