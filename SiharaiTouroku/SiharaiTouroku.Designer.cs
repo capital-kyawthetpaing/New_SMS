@@ -306,6 +306,8 @@
             this.dgvPayment.UseSetting = true;
             this.dgvPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellContentClick);
             this.dgvPayment.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellDoubleClick);
+            this.dgvPayment.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPayment_CellValueChanged);
+            this.dgvPayment.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvPayment_CurrentCellDirtyStateChanged);
             // 
             // colChk
             // 

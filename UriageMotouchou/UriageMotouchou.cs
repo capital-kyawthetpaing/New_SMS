@@ -40,8 +40,6 @@ namespace UriageMotouchou
             InProgramID = Application.ProductName;
             SetFunctionLabel(EProMode.PRINT);
             base.Btn_F9.Text = "";
-
-
             base.Btn_F10.Text = "";
             base.Btn_F11.Text = "";
             StartProgram();
