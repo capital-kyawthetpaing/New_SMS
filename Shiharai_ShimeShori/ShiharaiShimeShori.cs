@@ -68,9 +68,9 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                     }
                     break;
-                case 11:
-                    F11();
-                    break;
+                //case 11:
+                //    F11();
+                //    break;
                 case 12:
                     F12();
                     break;
@@ -114,24 +114,25 @@ namespace Shiharai_ShimeShori
         }
         private void F11()
         {
+           
             dpch_entity = GetDataEntity();
-            string ItemType = cboProcessType.Text;
-            switch (ItemType)
-            {
-                case "支払締":
-                    if (ErrorCheck(1))
-                    {
-                        BindGrid();
-                    }
-                    break;
-                case "支払締キャンセル":
-                    if (ErrorCheck(2))
-                    {
-                        BindGrid();
-                    }
-
-                    break;
-            }
+            BindGrid();
+            //string ItemType = cboProcessType.Text;
+            //switch (ItemType)
+            //{
+            //    case "支払締":
+            //        if (ErrorCheck(1))
+            //        {
+            //            BindGrid();
+            //        }
+            //        break;
+            //    case "支払締キャンセル":
+            //        if (ErrorCheck(2))
+            //        {
+            //            BindGrid();
+            //        }
+            //        break;
+            //}
         }
         private void BindGrid()
         {
@@ -286,10 +287,6 @@ namespace Shiharai_ShimeShori
                         sss_bl.ShowMessage("E101");
                         ScPaymentCD.SetFocus(1);
                     }
-                }
-                else
-                {
-
                 }
             }
         }

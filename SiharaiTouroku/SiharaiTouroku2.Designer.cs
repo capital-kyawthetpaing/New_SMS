@@ -41,13 +41,6 @@
             this.txtPayeeCD = new CKM_Controls.CKM_TextBox();
             this.panelDetail = new System.Windows.Forms.Panel();
             this.dgvSearchPayment = new CKM_Controls.CKM_GridView();
-            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPayPlanGaku = new SMS.CustomControls.dgvInventoryColumn();
-            this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
-            this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
-            this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
             this.SC_HanyouKeyEnd2 = new Search.CKM_SearchControl();
             this.SC_HanyouKeyEnd1 = new Search.CKM_SearchControl();
             this.SC_HanyouKeyStart2 = new Search.CKM_SearchControl();
@@ -97,6 +90,13 @@
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.lblVendorName = new System.Windows.Forms.Label();
+            this.colChk = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colPurchaseNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPurchaseDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayPlanGaku = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
+            this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
+            this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -318,82 +318,6 @@
             this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
             this.dgvSearchPayment.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellEndEdit);
             this.dgvSearchPayment.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellLeave);
-            // 
-            // colChk
-            // 
-            this.colChk.HeaderText = "";
-            this.colChk.Name = "colChk";
-            this.colChk.ReadOnly = true;
-            this.colChk.Width = 30;
-            // 
-            // colPurchaseNum
-            // 
-            this.colPurchaseNum.DataPropertyName = "Number";
-            this.colPurchaseNum.HeaderText = "仕入番号";
-            this.colPurchaseNum.Name = "colPurchaseNum";
-            this.colPurchaseNum.ReadOnly = true;
-            this.colPurchaseNum.Width = 150;
-            // 
-            // colPurchaseDate
-            // 
-            this.colPurchaseDate.DataPropertyName = "RecordedDate";
-            this.colPurchaseDate.HeaderText = "仕入日";
-            this.colPurchaseDate.Name = "colPurchaseDate";
-            this.colPurchaseDate.ReadOnly = true;
-            // 
-            // colPayPlanGaku
-            // 
-            this.colPayPlanGaku.DataPropertyName = "PayPlanGaku";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPayPlanGaku.HeaderText = "支払予定額";
-            this.colPayPlanGaku.MaxInputLength = 32767;
-            this.colPayPlanGaku.Name = "colPayPlanGaku";
-            this.colPayPlanGaku.ReadOnly = true;
-            this.colPayPlanGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colPayPlanGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colPayPlanGaku.UseThousandSeparator = true;
-            // 
-            // colPayConfirmGaku
-            // 
-            this.colPayConfirmGaku.DataPropertyName = "PayConfirmGaku";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle4.Format = "N0";
-            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colPayConfirmGaku.HeaderText = "支払済額";
-            this.colPayConfirmGaku.MaxInputLength = 32767;
-            this.colPayConfirmGaku.Name = "colPayConfirmGaku";
-            this.colPayConfirmGaku.ReadOnly = true;
-            this.colPayConfirmGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colPayConfirmGaku.UseThousandSeparator = true;
-            // 
-            // colUnpaidAmount1
-            // 
-            this.colUnpaidAmount1.DataPropertyName = "UnpaidAmount1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle5.Format = "N0";
-            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.colUnpaidAmount1.HeaderText = "今回支払額";
-            this.colUnpaidAmount1.MaxInputLength = 32767;
-            this.colUnpaidAmount1.Name = "colUnpaidAmount1";
-            this.colUnpaidAmount1.ReadOnly = true;
-            this.colUnpaidAmount1.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colUnpaidAmount1.UseThousandSeparator = true;
-            // 
-            // colUnpaidAmount2
-            // 
-            this.colUnpaidAmount2.DataPropertyName = "UnpaidAmount2";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
-            dataGridViewCellStyle6.Format = "N0";
-            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.colUnpaidAmount2.HeaderText = "未支払額";
-            this.colUnpaidAmount2.MaxInputLength = 32767;
-            this.colUnpaidAmount2.Name = "colUnpaidAmount2";
-            this.colUnpaidAmount2.ReadOnly = true;
-            this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
-            this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
             // SC_HanyouKeyEnd2
             // 
@@ -1413,6 +1337,83 @@
             this.lblVendorName.TabIndex = 114;
             this.lblVendorName.Text = "ＸＸＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20";
             this.lblVendorName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // colChk
+            // 
+            this.colChk.DataPropertyName = "Chk";
+            this.colChk.HeaderText = "";
+            this.colChk.Name = "colChk";
+            this.colChk.ReadOnly = true;
+            this.colChk.Width = 30;
+            // 
+            // colPurchaseNum
+            // 
+            this.colPurchaseNum.DataPropertyName = "Number";
+            this.colPurchaseNum.HeaderText = "仕入番号";
+            this.colPurchaseNum.Name = "colPurchaseNum";
+            this.colPurchaseNum.ReadOnly = true;
+            this.colPurchaseNum.Width = 150;
+            // 
+            // colPurchaseDate
+            // 
+            this.colPurchaseDate.DataPropertyName = "RecordedDate";
+            this.colPurchaseDate.HeaderText = "仕入日";
+            this.colPurchaseDate.Name = "colPurchaseDate";
+            this.colPurchaseDate.ReadOnly = true;
+            // 
+            // colPayPlanGaku
+            // 
+            this.colPayPlanGaku.DataPropertyName = "PayPlanGaku";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colPayPlanGaku.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPayPlanGaku.HeaderText = "支払予定額";
+            this.colPayPlanGaku.MaxInputLength = 32767;
+            this.colPayPlanGaku.Name = "colPayPlanGaku";
+            this.colPayPlanGaku.ReadOnly = true;
+            this.colPayPlanGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colPayPlanGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colPayPlanGaku.UseThousandSeparator = true;
+            // 
+            // colPayConfirmGaku
+            // 
+            this.colPayConfirmGaku.DataPropertyName = "PayConfirmGaku";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle4.Format = "N0";
+            this.colPayConfirmGaku.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colPayConfirmGaku.HeaderText = "支払済額";
+            this.colPayConfirmGaku.MaxInputLength = 32767;
+            this.colPayConfirmGaku.Name = "colPayConfirmGaku";
+            this.colPayConfirmGaku.ReadOnly = true;
+            this.colPayConfirmGaku.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colPayConfirmGaku.UseThousandSeparator = true;
+            // 
+            // colUnpaidAmount1
+            // 
+            this.colUnpaidAmount1.DataPropertyName = "UnpaidAmount1";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle5.Format = "N0";
+            this.colUnpaidAmount1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colUnpaidAmount1.HeaderText = "今回支払額";
+            this.colUnpaidAmount1.MaxInputLength = 32767;
+            this.colUnpaidAmount1.Name = "colUnpaidAmount1";
+            this.colUnpaidAmount1.ReadOnly = true;
+            this.colUnpaidAmount1.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colUnpaidAmount1.UseThousandSeparator = true;
+            // 
+            // colUnpaidAmount2
+            // 
+            this.colUnpaidAmount2.DataPropertyName = "UnpaidAmount2";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopRight;
+            dataGridViewCellStyle6.Format = "N0";
+            this.colUnpaidAmount2.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colUnpaidAmount2.HeaderText = "未支払額";
+            this.colUnpaidAmount2.MaxInputLength = 32767;
+            this.colUnpaidAmount2.Name = "colUnpaidAmount2";
+            this.colUnpaidAmount2.ReadOnly = true;
+            this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
+            this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
             // SiharaiTouroku_2
             // 
