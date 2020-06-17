@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -146,7 +145,7 @@
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -179,14 +178,6 @@
             this.PaymentPlanDate,
             this.PayConfirmFinishedDate,
             this.DeliveryNo});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
@@ -587,11 +578,11 @@
             this.cboStore.Flag = 0;
             this.cboStore.FormattingEnabled = true;
             this.cboStore.Length = 10;
-            this.cboStore.Location = new System.Drawing.Point(1343, 9);
+            this.cboStore.Location = new System.Drawing.Point(1305, 9);
             this.cboStore.MaxLength = 10;
             this.cboStore.MoveNext = true;
             this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(230, 20);
+            this.cboStore.Size = new System.Drawing.Size(265, 20);
             this.cboStore.TabIndex = 27;
             this.cboStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboStore_KeyDown);
             // 
@@ -604,7 +595,7 @@
             this.ckM_Label7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label7.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label7.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label7.Location = new System.Drawing.Point(1309, 13);
+            this.ckM_Label7.Location = new System.Drawing.Point(1271, 13);
             this.ckM_Label7.Name = "ckM_Label7";
             this.ckM_Label7.Size = new System.Drawing.Size(31, 12);
             this.ckM_Label7.TabIndex = 26;
