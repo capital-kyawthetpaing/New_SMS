@@ -46,6 +46,8 @@ namespace ZaikoKanriHyou
             cboSouko.Bind(string.Empty);
             cboSouko.SelectedValue = SoukoCD;
             F11Visible = false;
+            scITEM.CodeWidth = 600;
+            scSKUCD.CodeWidth = 600;
         }
 
         private void SetRequiredField()
@@ -173,7 +175,7 @@ namespace ZaikoKanriHyou
                 
                 if (dt.Rows.Count > 0)
                 {
-                    //CheckBeforeExport();
+                   // CheckBeforeExport();
                     try
                     {
                         ZaikoKanriHyou_Report zkh_Report = new ZaikoKanriHyou_Report();

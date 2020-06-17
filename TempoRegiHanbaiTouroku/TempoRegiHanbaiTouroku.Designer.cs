@@ -166,7 +166,7 @@
             this.txtJanCD.MoveNext = true;
             this.txtJanCD.Name = "txtJanCD";
             this.txtJanCD.Size = new System.Drawing.Size(240, 42);
-            this.txtJanCD.TabIndex = 1;
+            this.txtJanCD.TabIndex = 4;
             this.txtJanCD.Text = "49XXXXXXXXX13";
             this.txtJanCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtJanCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtJanCD_KeyDown);
@@ -212,7 +212,7 @@
             this.txtSu.MoveNext = true;
             this.txtSu.Name = "txtSu";
             this.txtSu.Size = new System.Drawing.Size(240, 42);
-            this.txtSu.TabIndex = 3;
+            this.txtSu.TabIndex = 9;
             this.txtSu.Text = "1000";
             this.txtSu.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSu.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -276,7 +276,7 @@
             this.txtSalesNO.MoveNext = true;
             this.txtSalesNO.Name = "txtSalesNO";
             this.txtSalesNO.Size = new System.Drawing.Size(210, 42);
-            this.txtSalesNO.TabIndex = 3;
+            this.txtSalesNO.TabIndex = 11;
             this.txtSalesNO.Text = "XXXXXXXXX11";
             this.txtSalesNO.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtSalesNO.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSalesNo_KeyDown);
@@ -305,7 +305,7 @@
             this.txtCustomerNo.MoveNext = true;
             this.txtCustomerNo.Name = "txtCustomerNo";
             this.txtCustomerNo.Size = new System.Drawing.Size(240, 42);
-            this.txtCustomerNo.TabIndex = 0;
+            this.txtCustomerNo.TabIndex = 1;
             this.txtCustomerNo.Text = "XXXXXXXXXXX13";
             this.txtCustomerNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCustomerNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNo_KeyDown);
@@ -324,7 +324,7 @@
             this.btnOk.Margin = new System.Windows.Forms.Padding(1);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(1130, 45);
-            this.btnOk.TabIndex = 4;
+            this.btnOk.TabIndex = 10;
             this.btnOk.Text = "ＯＫ";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -343,7 +343,7 @@
             this.btnUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(355, 45);
-            this.btnUp.TabIndex = 12;
+            this.btnUp.TabIndex = 13;
             this.btnUp.Text = "▲";
             this.btnUp.UseVisualStyleBackColor = false;
             this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
@@ -362,7 +362,7 @@
             this.btnDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(355, 45);
-            this.btnDown.TabIndex = 13;
+            this.btnDown.TabIndex = 14;
             this.btnDown.Text = "▼";
             this.btnDown.UseVisualStyleBackColor = false;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
@@ -943,7 +943,7 @@
             this.btnInfo.Margin = new System.Windows.Forms.Padding(1);
             this.btnInfo.Name = "btnInfo";
             this.btnInfo.Size = new System.Drawing.Size(200, 43);
-            this.btnInfo.TabIndex = 8;
+            this.btnInfo.TabIndex = 5;
             this.btnInfo.Text = "商品情報";
             this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
@@ -962,7 +962,7 @@
             this.btnStock.Margin = new System.Windows.Forms.Padding(1);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(200, 43);
-            this.btnStock.TabIndex = 9;
+            this.btnStock.TabIndex = 6;
             this.btnStock.Text = "在　庫";
             this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.BTN_Zaiko_Click);
@@ -1057,11 +1057,11 @@
             this.btnGroupDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupDown.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.btnGroupDown.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.btnGroupDown.Location = new System.Drawing.Point(1839, 851);
+            this.btnGroupDown.Location = new System.Drawing.Point(1841, 851);
             this.btnGroupDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupDown.Name = "btnGroupDown";
             this.btnGroupDown.Size = new System.Drawing.Size(45, 100);
-            this.btnGroupDown.TabIndex = 79;
+            this.btnGroupDown.TabIndex = 19;
             this.btnGroupDown.Text = "▶";
             this.btnGroupDown.UseVisualStyleBackColor = false;
             this.btnGroupDown.Click += new System.EventHandler(this.btnGroupDown_Click);
@@ -1080,7 +1080,7 @@
             this.btnGroupUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnGroupUp.Name = "btnGroupUp";
             this.btnGroupUp.Size = new System.Drawing.Size(45, 100);
-            this.btnGroupUp.TabIndex = 78;
+            this.btnGroupUp.TabIndex = 18;
             this.btnGroupUp.Text = "◀";
             this.btnGroupUp.UseVisualStyleBackColor = false;
             this.btnGroupUp.Click += new System.EventHandler(this.btnGroupUp_Click);
@@ -1111,7 +1111,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 145F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanel2.Controls.Add(this.btnGrp14, 13, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnGrp2, 1, 0);
@@ -1144,7 +1144,7 @@
             this.btnGrp14.Location = new System.Drawing.Point(1654, 3);
             this.btnGrp14.Margin = new System.Windows.Forms.Padding(1);
             this.btnGrp14.Name = "btnGrp14";
-            this.btnGrp14.Size = new System.Drawing.Size(143, 94);
+            this.btnGrp14.Size = new System.Drawing.Size(125, 94);
             this.btnGrp14.TabIndex = 13;
             this.btnGrp14.Text = " ";
             this.btnGrp14.UseVisualStyleBackColor = false;
@@ -1381,7 +1381,7 @@
             this.txtJuchuuUnitPrice.MoveNext = true;
             this.txtJuchuuUnitPrice.Name = "txtJuchuuUnitPrice";
             this.txtJuchuuUnitPrice.Size = new System.Drawing.Size(240, 42);
-            this.txtJuchuuUnitPrice.TabIndex = 2;
+            this.txtJuchuuUnitPrice.TabIndex = 8;
             this.txtJuchuuUnitPrice.Text = "10000";
             this.txtJuchuuUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtJuchuuUnitPrice.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
@@ -1401,7 +1401,7 @@
             this.btnHenpin.Margin = new System.Windows.Forms.Padding(1);
             this.btnHenpin.Name = "btnHenpin";
             this.btnHenpin.Size = new System.Drawing.Size(112, 41);
-            this.btnHenpin.TabIndex = 11;
+            this.btnHenpin.TabIndex = 12;
             this.btnHenpin.Text = "返品";
             this.btnHenpin.UseVisualStyleBackColor = false;
             this.btnHenpin.Click += new System.EventHandler(this.btnHenpin_Click);
@@ -1418,10 +1418,11 @@
             this.lblHenpin.Location = new System.Drawing.Point(1684, 123);
             this.lblHenpin.Name = "lblHenpin";
             this.lblHenpin.Size = new System.Drawing.Size(210, 41);
-            this.lblHenpin.TabIndex = 85;
+            this.lblHenpin.TabIndex = 0;
             this.lblHenpin.Text = "返品";
             this.lblHenpin.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblHenpin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblHenpin.Visible = false;
             // 
             // btnGenkin
             // 
@@ -1437,7 +1438,7 @@
             this.btnGenkin.Margin = new System.Windows.Forms.Padding(1);
             this.btnGenkin.Name = "btnGenkin";
             this.btnGenkin.Size = new System.Drawing.Size(200, 42);
-            this.btnGenkin.TabIndex = 6;
+            this.btnGenkin.TabIndex = 2;
             this.btnGenkin.Text = "現金会員";
             this.btnGenkin.UseVisualStyleBackColor = false;
             this.btnGenkin.Click += new System.EventHandler(this.btnGenkin_Click);
@@ -1456,7 +1457,7 @@
             this.btnTanka.Margin = new System.Windows.Forms.Padding(1);
             this.btnTanka.Name = "btnTanka";
             this.btnTanka.Size = new System.Drawing.Size(200, 43);
-            this.btnTanka.TabIndex = 10;
+            this.btnTanka.TabIndex = 7;
             this.btnTanka.Text = "単　価";
             this.btnTanka.UseVisualStyleBackColor = false;
             this.btnTanka.Click += new System.EventHandler(this.btnTanka_Click);
@@ -1475,7 +1476,7 @@
             this.btnCustomerNo.Margin = new System.Windows.Forms.Padding(1);
             this.btnCustomerNo.Name = "btnCustomerNo";
             this.btnCustomerNo.Size = new System.Drawing.Size(200, 42);
-            this.btnCustomerNo.TabIndex = 5;
+            this.btnCustomerNo.TabIndex = 0;
             this.btnCustomerNo.Text = "会員番号";
             this.btnCustomerNo.UseVisualStyleBackColor = false;
             this.btnCustomerNo.Click += new System.EventHandler(this.btnCustomerNo_Click);
@@ -1494,7 +1495,7 @@
             this.btnSyohin.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyohin.Name = "btnSyohin";
             this.btnSyohin.Size = new System.Drawing.Size(200, 43);
-            this.btnSyohin.TabIndex = 7;
+            this.btnSyohin.TabIndex = 3;
             this.btnSyohin.Text = "商　品";
             this.btnSyohin.UseVisualStyleBackColor = false;
             this.btnSyohin.Click += new System.EventHandler(this.btnSyohin_Click);
@@ -1530,7 +1531,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanel3.Controls.Add(this.btnSyo12, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo42, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.btnSyo52, 0, 1);
@@ -1557,7 +1558,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1273, 200);
-            this.tableLayoutPanel3.TabIndex = 87;
+            this.tableLayoutPanel3.TabIndex = 16;
             // 
             // btnSyo12
             // 
@@ -1682,7 +1683,7 @@
             this.btnSyo102.Location = new System.Drawing.Point(1146, 102);
             this.btnSyo102.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo102.Name = "btnSyo102";
-            this.btnSyo102.Size = new System.Drawing.Size(144, 95);
+            this.btnSyo102.Size = new System.Drawing.Size(126, 95);
             this.btnSyo102.TabIndex = 19;
             this.btnSyo102.Text = " ";
             this.btnSyo102.UseVisualStyleBackColor = false;
@@ -1874,7 +1875,7 @@
             this.btnSyo101.Location = new System.Drawing.Point(1146, 3);
             this.btnSyo101.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyo101.Name = "btnSyo101";
-            this.btnSyo101.Size = new System.Drawing.Size(144, 95);
+            this.btnSyo101.Size = new System.Drawing.Size(126, 95);
             this.btnSyo101.TabIndex = 18;
             this.btnSyo101.Text = " ";
             this.btnSyo101.UseVisualStyleBackColor = false;
@@ -1893,7 +1894,7 @@
             this.btnSyoDown.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyoDown.Name = "btnSyoDown";
             this.btnSyoDown.Size = new System.Drawing.Size(45, 200);
-            this.btnSyoDown.TabIndex = 90;
+            this.btnSyoDown.TabIndex = 17;
             this.btnSyoDown.Text = "▶";
             this.btnSyoDown.UseVisualStyleBackColor = false;
             // 
@@ -1911,7 +1912,7 @@
             this.btnSyoUp.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyoUp.Name = "btnSyoUp";
             this.btnSyoUp.Size = new System.Drawing.Size(45, 200);
-            this.btnSyoUp.TabIndex = 89;
+            this.btnSyoUp.TabIndex = 15;
             this.btnSyoUp.Text = "◀";
             this.btnSyoUp.UseVisualStyleBackColor = false;
             // 

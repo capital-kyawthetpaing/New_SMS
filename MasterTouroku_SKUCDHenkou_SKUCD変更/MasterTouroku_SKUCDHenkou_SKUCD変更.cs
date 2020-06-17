@@ -188,7 +188,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 {
                     var sizeNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
                     var sizeOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
-                    var sizeCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var sizeCheckbox_ = Controls.Find("SizeDelChk" + (i + 1).ToString(), true)[0] as CKM_CheckBox;
                     /// doooooooooo 
                     /// 
                     if(!string.IsNullOrWhiteSpace(sizeOldtxtbox_.Text))
@@ -205,6 +205,11 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     {
                         sizemissing[i] = Convert.ToInt32(sizeNewtxtbox_.Text);
                     }
+                    if (sizeCheckbox_.Checked)
+                    {
+
+                    }
+
                 }
                 if (HasDuplicates(sizeArray))
                 {

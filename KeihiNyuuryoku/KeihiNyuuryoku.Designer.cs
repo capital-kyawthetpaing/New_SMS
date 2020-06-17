@@ -40,7 +40,7 @@
             this.colCostCD = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colSummary = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDepartment = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colCostGaku = new SMS.CustomControls.DataGridViewDecimalColumn();
+            this.colCostGaku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ScStaff = new Search.CKM_SearchControl();
@@ -158,7 +158,7 @@
             this.dgvKehiNyuuryoku.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -184,12 +184,13 @@
             this.dgvKehiNyuuryoku.Name = "dgvKehiNyuuryoku";
             this.dgvKehiNyuuryoku.RowHeight_ = 20;
             this.dgvKehiNyuuryoku.RowTemplate.Height = 20;
-            this.dgvKehiNyuuryoku.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dgvKehiNyuuryoku.Size = new System.Drawing.Size(1300, 667);
             this.dgvKehiNyuuryoku.TabIndex = 12;
             this.dgvKehiNyuuryoku.UseRowNo = true;
             this.dgvKehiNyuuryoku.UseSetting = true;
             this.dgvKehiNyuuryoku.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKehiNyuuryoku_CellEndEdit);
+            this.dgvKehiNyuuryoku.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvKehiNyuuryoku_DataBindingComplete);
+            this.dgvKehiNyuuryoku.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgvKehiNyuuryoku_DataError);
             // 
             // colCostCD
             // 
@@ -219,7 +220,6 @@
             // colCostGaku
             // 
             this.colCostGaku.DataPropertyName = "CostGaku";
-            this.colCostGaku.DecimalPlace = ((byte)(0));
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = "0";
@@ -228,8 +228,7 @@
             this.colCostGaku.MaxInputLength = 12;
             this.colCostGaku.Name = "colCostGaku";
             this.colCostGaku.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCostGaku.UseMinus = true;
-            this.colCostGaku.UseThousandSeparator = true;
+            this.colCostGaku.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colCostGaku.Width = 90;
             // 
             // ckM_Label7
@@ -595,7 +594,7 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn colCostCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSummary;
         private System.Windows.Forms.DataGridViewComboBoxColumn colDepartment;
-        private SMS.CustomControls.DataGridViewDecimalColumn colCostGaku;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCostGaku;
     }
 }
 

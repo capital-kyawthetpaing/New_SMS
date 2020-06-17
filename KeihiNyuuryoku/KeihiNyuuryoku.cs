@@ -73,11 +73,11 @@ namespace KeihiNyuuryoku
         private void CreateDataTable()
         {
             dt = new DataTable();
-            dt.Columns.Add("CostCD");
-            dt.Columns.Add("Summary");
-            dt.Columns.Add("DepartmentCD");
-            dt.Columns.Add("CostGaku");
-
+            dt.Columns.Add("CostCD", typeof(string));
+            dt.Columns.Add("Summary", typeof(string));
+            dt.Columns.Add("DepartmentCD", typeof(string));
+            dt.Columns.Add("CostGaku", typeof(string));
+            //dt.Columns.Add("index", typeof(string)); //2020-06-16 ptk
             DataTable dtDepartment = new DataTable();
             dtDepartment = khnyk_BL.SimpleSelect1("38", null, "209");
             if (dtDepartment.Rows.Count > 0)
@@ -91,7 +91,7 @@ namespace KeihiNyuuryoku
 
             DataTable dtCostCD = new DataTable();
             dtCostCD = khnyk_BL.SimpleSelect1("37", null, "208");
-            if(dtCostCD.Rows.Count > 0 )
+            if (dtCostCD.Rows.Count > 0)
             {
                 DataGridViewComboBoxColumn cbocolV = (DataGridViewComboBoxColumn)dgvKehiNyuuryoku.Columns["colCostCD"];
                 cbocolV.DataPropertyName = "CostCD";
@@ -100,12 +100,12 @@ namespace KeihiNyuuryoku
                 cbocolV.DataSource = dtCostCD;
             }
 
-            for (int i = 0; i< 300; i++)
+            for (int i = 0; i < 300; i++)
             {
                 dt.Rows.Add();
             }
-
-            dgvKehiNyuuryoku.DataSource = dt;
+            //int g = 0; foreach (DataRow dr in dt.Rows) { g++; dr["index"] = g.ToString(); } //2020-06-16 ptk
+            dgvKehiNyuuryoku.DataSource = dt; 
             BindTotalGaku(dt);
         }
 
@@ -353,8 +353,8 @@ namespace KeihiNyuuryoku
                     if (type == 2)
                     {
                         //if (!RequireCheck(new Control[] { ScVendor.TxtCode, txtKeijouDate, ScStaff.TxtCode }))
-                           // return false;
-                        
+                        // return false;
+
                         if (!string.IsNullOrWhiteSpace(ScCost_Copy.Code))
                         {
                             dtcost = khnyk_BL.SimpleSelect1("10", null, ScCost_Copy.Code);
@@ -462,8 +462,11 @@ namespace KeihiNyuuryoku
                         if (string.IsNullOrWhiteSpace(dr["CostCD"].ToString()))
                         {
                             khnyk_BL.ShowMessage("E101");
-                            dgvKehiNyuuryoku.Select();
-                           // dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr.ToString())];
+                            //dgvKehiNyuuryoku.ClearSelection(); //2020-06-16 ptk
+                            //dgvKehiNyuuryoku.Refresh(); //2020-06-16 ptk
+                            //dgvKehiNyuuryoku.Rows[ Convert.ToInt32 (dr["index"].ToString())-1].Selected =true; //2020-06-16 ptk
+                            // dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                            // dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku[dgvKehiNyuuryoku.Columns["colCostCD"].Index, Convert.ToInt16(dr)];
                             return false;
                         }
                         else if (string.IsNullOrWhiteSpace(dr["DepartmentCD"].ToString())) // Check ComboBox is selected or not
@@ -568,9 +571,9 @@ namespace KeihiNyuuryoku
                     ScCost.SetFocus(1);
                     break;
             }
-           // ScVendor.SetFocus(1);
+            // ScVendor.SetFocus(1);
         }
-        
+
         protected override void EndSec()
         {
             this.Close();
@@ -578,13 +581,32 @@ namespace KeihiNyuuryoku
 
         private void dgvKehiNyuuryoku_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            
-            if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
+            if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostCD"].Index)
             {
-                if(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
+                if(string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"].Value.ToString()))
                 {
-                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                    khnyk_BL.ShowMessage("E101");
+                    //dgvKehiNyuuryoku.CurrentCell.Selected = true;
+                    //dgvKehiNyuuryoku.NotifyCurrentCellDirty(true);
+                    //dgvKehiNyuuryoku.BeginEdit(true);
+                    dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostCD"];
                 }
+            }
+            else if(e.ColumnIndex == dgvKehiNyuuryoku.Columns["colDepartment"].Index)
+            {
+                if (string.IsNullOrWhiteSpace(dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"].Value.ToString()))
+                {
+                    khnyk_BL.ShowMessage("E101");
+                    dgvKehiNyuuryoku.CurrentCell = dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colDepartment"];
+                }
+            }
+            else if (e.ColumnIndex == dgvKehiNyuuryoku.Columns["colCostGaku"].Index)
+            {
+                if (dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Value.ToString().Contains("-"))
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                else
+                    dgvKehiNyuuryoku.Rows[e.RowIndex].Cells["colCostGaku"].Style.ForeColor = Color.Black;
+
                 BindTotalGaku(dt);
             }
         }
@@ -686,13 +708,20 @@ namespace KeihiNyuuryoku
                 }
             }
         }
-        
+        private void ScVendor_Enter(object sender, EventArgs e)
+        {
+            keijoudate = string.IsNullOrWhiteSpace(txtKeijouDate.Text) ? txtKeijouDate.Text : System.DateTime.Now.ToString("yyyy/MM/dd");
+            ScVendor.ChangeDate = keijoudate;
+            ScVendor.Value1 = "2";
+        }
+
         private void F7() // Delete current row and recalculate the TotalGaku
         {
             int row = dgvKehiNyuuryoku.CurrentCell.RowIndex;
             dgvKehiNyuuryoku.Rows.RemoveAt(row);
+
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
-            
+            tb.AcceptChanges();
             BindTotalGaku(tb);
         }
 
@@ -702,6 +731,7 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             var row = tb.NewRow();
             tb.Rows.InsertAt(row, r);
+            tb.AcceptChanges();
         }
 
         private void F10() // Insert new row, copy/paste data from upper row and Recalculate TotalGaku
@@ -710,12 +740,13 @@ namespace KeihiNyuuryoku
             var tb = (DataTable)dgvKehiNyuuryoku.DataSource;
             var row = tb.NewRow();
             tb.Rows.InsertAt(row, r);
+            tb.AcceptChanges();
 
-            for(int i = 0; i < dgvKehiNyuuryoku.Rows[r-1].Cells.Count; i++)
+            for (int i = 0; i < dgvKehiNyuuryoku.Rows[r - 1].Cells.Count; i++)
             {
                 dgvKehiNyuuryoku.Rows[r].Cells[i].Value = dgvKehiNyuuryoku.Rows[r - 1].Cells[i].Value;
             }
-            
+
             BindTotalGaku(tb);
         }
 
@@ -725,13 +756,18 @@ namespace KeihiNyuuryoku
             foreach (DataRow row in dt.Rows)
             {
                 if (!string.IsNullOrWhiteSpace(row["CostGaku"].ToString()))
-                   TotalGaku += Convert.ToDecimal(row["CostGaku"]);
-               
+                    TotalGaku += Convert.ToDecimal(row["CostGaku"]);
+                
                 if (TotalGaku.ToString().Equals("0"))
-                    lblTotalGaku.Text = string.Empty;
+                    lblTotalGaku.Text = "0";
                 else
                     lblTotalGaku.Text =  TotalGaku.ToString("#,##0");
             }
+
+            if (!string.IsNullOrWhiteSpace(lblTotalGaku.Text) & lblTotalGaku.Text.ToString().Contains("-"))
+                lblTotalGaku.ForeColor = Color.Red;
+            else
+                lblTotalGaku.ForeColor = Color.Black;
         }
 
        private string Bind_StaffName(string stCode)
@@ -743,18 +779,50 @@ namespace KeihiNyuuryoku
             else keijoudate = txtKeijouDate.Text;
 
             dtStaff = khnyk_BL.Select_SearchName(keijoudate, 5, stCode);
-            if(dtStaff.Rows.Count > 0)
+            if (dtStaff.Rows.Count > 0)
             {
                 name = dtStaff.Rows[0]["Name"].ToString();
             }
             return name;
         }
 
-        private void ScVendor_Enter(object sender, EventArgs e)
+        private void dgvKehiNyuuryoku_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-            keijoudate = string.IsNullOrWhiteSpace(txtKeijouDate.Text) ? txtKeijouDate.Text : System.DateTime.Now.ToString("yyyy/MM/dd");
-            ScVendor.ChangeDate = keijoudate;
-            ScVendor.Value1 = "2";
+            foreach (DataGridViewRow r in dgvKehiNyuuryoku.Rows)
+            {
+                if (r.Cells["colCostGaku"].Value.ToString().Contains("-"))
+                    r.Cells["colCostGaku"].Style.ForeColor = Color.Red;
+                else
+                    r.Cells["colCostGaku"].Style.ForeColor = Color.Black;
+
+
+            }
+            //if (dgvKehiNyuuryoku.Rows.Count >1)  //2020-06-16 ptk
+            //    dgvKehiNyuuryoku.CurrentRow.Selected = true; //2020-06-16 ptk
+            ////dgvKehiNyuuryoku.CurrentRow.Selected = true;  //2020-06-16 ptk
+        }
+
+        private void dgvKehiNyuuryoku_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
+                {
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Enter valid number. . . ");
+                    dgvKehiNyuuryoku.CurrentCell.Value = 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter valid number. . . ");
+                dgvKehiNyuuryoku.CurrentCell.Value = 0;
+            }
+            dgvKehiNyuuryoku.RefreshEdit();
         }
     }
 }

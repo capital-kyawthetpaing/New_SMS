@@ -750,7 +750,7 @@
             this.panel1.Location = new System.Drawing.Point(38, 84);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1825, 160);
-            this.panel1.TabIndex = 4;
+            this.panel1.TabIndex = 0;
             // 
             // ckmShop_Label79
             // 
@@ -4276,7 +4276,7 @@
             this.txtButtomNameUp.MoveNext = true;
             this.txtButtomNameUp.Name = "txtButtomNameUp";
             this.txtButtomNameUp.Size = new System.Drawing.Size(250, 42);
-            this.txtButtomNameUp.TabIndex = 8;
+            this.txtButtomNameUp.TabIndex = 1;
             this.txtButtomNameUp.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtButtomNameUp.TextChanged += new System.EventHandler(this.txtButtomNameUp_TextChanged);
             // 
@@ -4294,7 +4294,7 @@
             this.btnConfirm1.Margin = new System.Windows.Forms.Padding(1);
             this.btnConfirm1.Name = "btnConfirm1";
             this.btnConfirm1.Size = new System.Drawing.Size(200, 45);
-            this.btnConfirm1.TabIndex = 12;
+            this.btnConfirm1.TabIndex = 4;
             this.btnConfirm1.Text = "確定";
             this.btnConfirm1.UseVisualStyleBackColor = false;
             this.btnConfirm1.Click += new System.EventHandler(this.btnConfirm1_Click);
@@ -4313,7 +4313,7 @@
             this.btn_Confrim2.Margin = new System.Windows.Forms.Padding(1);
             this.btn_Confrim2.Name = "btn_Confrim2";
             this.btn_Confrim2.Size = new System.Drawing.Size(200, 45);
-            this.btn_Confrim2.TabIndex = 13;
+            this.btn_Confrim2.TabIndex = 9;
             this.btn_Confrim2.Text = "確定";
             this.btn_Confrim2.UseVisualStyleBackColor = false;
             this.btn_Confrim2.Click += new System.EventHandler(this.btn_Confrim2_Click);
@@ -4343,7 +4343,7 @@
             this.RdoJanCD.Location = new System.Drawing.Point(214, 348);
             this.RdoJanCD.Name = "RdoJanCD";
             this.RdoJanCD.Size = new System.Drawing.Size(120, 43);
-            this.RdoJanCD.TabIndex = 10;
+            this.RdoJanCD.TabIndex = 2;
             this.RdoJanCD.TabStop = true;
             this.RdoJanCD.Text = "商品";
             this.RdoJanCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4356,7 +4356,7 @@
             this.RdoCustomerCD.Location = new System.Drawing.Point(340, 348);
             this.RdoCustomerCD.Name = "RdoCustomerCD";
             this.RdoCustomerCD.Size = new System.Drawing.Size(120, 43);
-            this.RdoCustomerCD.TabIndex = 11;
+            this.RdoCustomerCD.TabIndex = 3;
             this.RdoCustomerCD.Text = "顧客";
             this.RdoCustomerCD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.RdoCustomerCD.UseVisualStyleBackColor = true;
@@ -4664,7 +4664,7 @@
             this.panel2.Location = new System.Drawing.Point(39, 394);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1408, 350);
-            this.panel2.TabIndex = 14;
+            this.panel2.TabIndex = 5;
             // 
             // btnName922
             // 
@@ -9989,7 +9989,7 @@
             this.txtBtnNameDown.MoveNext = true;
             this.txtBtnNameDown.Name = "txtBtnNameDown";
             this.txtBtnNameDown.Size = new System.Drawing.Size(410, 42);
-            this.txtBtnNameDown.TabIndex = 21;
+            this.txtBtnNameDown.TabIndex = 8;
             this.txtBtnNameDown.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtBtnNameDown.TextChanged += new System.EventHandler(this.txtBtnNameDown_TextChanged);
             // 
@@ -10007,7 +10007,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(170, 45);
-            this.btnSearch.TabIndex = 18;
+            this.btnSearch.TabIndex = 7;
             this.btnSearch.Text = "検索";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.SearchName_Click);
@@ -10035,7 +10035,7 @@
             this.txtCD.MoveNext = true;
             this.txtCD.Name = "txtCD";
             this.txtCD.Size = new System.Drawing.Size(240, 42);
-            this.txtCD.TabIndex = 20;
+            this.txtCD.TabIndex = 6;
             this.txtCD.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             this.txtCD.TextChanged += new System.EventHandler(this.txtCD_TextChanged);
             this.txtCD.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCD_KeyDown);

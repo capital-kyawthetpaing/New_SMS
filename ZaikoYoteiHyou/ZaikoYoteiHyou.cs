@@ -141,8 +141,15 @@ namespace ZaikoYoteiHyou
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         Clear(panelDetail);
-                        txtTargetDateFrom.Text = DateTime.Today.ToShortDateString().Substring(0, 7);
+                        string m = DateTime.Now.Month.ToString();
+                        if (m.Length == 1)
+                        {
+                            m = 0 + DateTime.Now.Month.ToString();
+                        }
+                        string y = DateTime.Now.Year.ToString();
+                        txtTargetDateFrom.Text = y + "/" + m;
                         txtTargetDateTo.Focus();
+                        BindCombo();
                     }
                     break;              
             }
@@ -215,20 +222,34 @@ namespace ZaikoYoteiHyou
                 firstday.AddDays(-1).ToString("dd/MM/yyyy");
 
                 string Text = txtTargetDateTo.Text;
-
-                string[] p = Text.Split('/');
-                string y = p[0].ToString();
-                string m = p[1].ToString();
-                int yy = Convert.ToInt32(y);
-                int mm = Convert.ToInt32(m);
-                DateTime lastday = new DateTime(yy, mm,
-                                        DateTime.DaysInMonth(yy, mm));
-
-                dpe = new D_Purchase_Entity
+                if(!string.IsNullOrWhiteSpace(Text))
                 {
-                    PurchaseDateFrom = firstday.ToShortDateString(),
-                    PurchaseDateTo = lastday.ToShortDateString() ,
-                };
+                    string[] p = Text.Split('/');
+                    string y = p[0].ToString();
+                    string m = p[1].ToString();
+                    int yy = Convert.ToInt32(y);
+                    int mm = Convert.ToInt32(m);
+                    DateTime lastday = new DateTime(yy, mm,
+                                            DateTime.DaysInMonth(yy, mm));
+
+                    dpe = new D_Purchase_Entity
+                    {
+                        PurchaseDateFrom = firstday.ToShortDateString(),
+                        PurchaseDateTo = lastday.ToShortDateString(),
+                    };
+
+
+                }
+                else
+                {
+                    dpe = new D_Purchase_Entity
+                    {
+                        PurchaseDateFrom = firstday.ToShortDateString(),
+                        PurchaseDateTo = null,
+                    };
+                }
+
+                
                 DataTable dt = zkybl.D_Order_Select(doe, dpe);
 
                 dt.Columns.Add("Total");

@@ -478,7 +478,6 @@ namespace SiharaiYoteiHyou
                 }
             }
         }
-
         private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

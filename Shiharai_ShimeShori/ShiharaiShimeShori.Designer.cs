@@ -30,16 +30,12 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPaymentClose = new CKM_Controls.CKM_GridView();
-            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PaymentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProcess = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelNormal = new System.Windows.Forms.Panel();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.ScPaymentCD = new Search.CKM_SearchControl();
@@ -48,6 +44,11 @@
             this.cboProcessType = new CKM_Controls.CKM_ComboBox();
             this.lblProcessing = new CKM_Controls.CKM_Label();
             this.btnDisplay = new CKM_Controls.CKM_Button();
+            this.colDateTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProcess = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaymentClose)).BeginInit();
@@ -79,7 +80,7 @@
             this.dgvPaymentClose.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -92,65 +93,25 @@
             this.PaymentCD,
             this.PaymentName,
             this.colProcess});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPaymentClose.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPaymentClose.EnableHeadersVisualStyles = false;
             this.dgvPaymentClose.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPaymentClose.Location = new System.Drawing.Point(87, 221);
             this.dgvPaymentClose.Name = "dgvPaymentClose";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaymentClose.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPaymentClose.RowHeight_ = 20;
+            this.dgvPaymentClose.RowTemplate.Height = 20;
             this.dgvPaymentClose.Size = new System.Drawing.Size(1150, 600);
             this.dgvPaymentClose.TabIndex = 9;
             this.dgvPaymentClose.UseRowNo = true;
             this.dgvPaymentClose.UseSetting = true;
             this.dgvPaymentClose.Paint += new System.Windows.Forms.PaintEventHandler(this.dgvPaymentClose_Paint);
-            // 
-            // colDateTime
-            // 
-            this.colDateTime.DataPropertyName = "PayCloseProcessingDateTime";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDateTime.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colDateTime.HeaderText = "処理日時";
-            this.colDateTime.Name = "colDateTime";
-            this.colDateTime.Width = 200;
-            // 
-            // colDate
-            // 
-            this.colDate.DataPropertyName = "PayCloseDate";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colDate.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colDate.HeaderText = "  締年月日";
-            this.colDate.Name = "colDate";
-            this.colDate.Width = 200;
-            // 
-            // PaymentCD
-            // 
-            this.PaymentCD.DataPropertyName = "PayeeCD";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.PaymentCD.DefaultCellStyle = dataGridViewCellStyle5;
-            this.PaymentCD.HeaderText = "支払先";
-            this.PaymentCD.Name = "PaymentCD";
-            this.PaymentCD.Width = 200;
-            // 
-            // PaymentName
-            // 
-            this.PaymentName.DataPropertyName = "VendorName";
-            this.PaymentName.HeaderText = "";
-            this.PaymentName.Name = "PaymentName";
-            this.PaymentName.Width = 250;
-            // 
-            // colProcess
-            // 
-            this.colProcess.DataPropertyName = "ProcessingKBN";
-            this.colProcess.HeaderText = "処理";
-            this.colProcess.Name = "colProcess";
-            this.colProcess.Width = 250;
             // 
             // panelNormal
             // 
@@ -270,7 +231,7 @@
             this.cboProcessType.MaxLength = 10;
             this.cboProcessType.MoveNext = true;
             this.cboProcessType.Name = "cboProcessType";
-            this.cboProcessType.Size = new System.Drawing.Size(90, 20);
+            this.cboProcessType.Size = new System.Drawing.Size(130, 20);
             this.cboProcessType.TabIndex = 9;
             // 
             // lblProcessing
@@ -310,6 +271,51 @@
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Visible = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
+            // 
+            // colDateTime
+            // 
+            this.colDateTime.DataPropertyName = "PayCloseProcessingDateTime";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colDateTime.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colDateTime.HeaderText = "処理日時";
+            this.colDateTime.Name = "colDateTime";
+            this.colDateTime.Width = 200;
+            // 
+            // colDate
+            // 
+            this.colDate.DataPropertyName = "PayCloseDate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.colDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colDate.HeaderText = "  締年月日";
+            this.colDate.Name = "colDate";
+            this.colDate.Width = 200;
+            // 
+            // PaymentCD
+            // 
+            this.PaymentCD.DataPropertyName = "PayeeCD";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.PaymentCD.DefaultCellStyle = dataGridViewCellStyle5;
+            this.PaymentCD.HeaderText = "支払先";
+            this.PaymentCD.Name = "PaymentCD";
+            this.PaymentCD.Width = 200;
+            // 
+            // PaymentName
+            // 
+            this.PaymentName.DataPropertyName = "VendorName";
+            this.PaymentName.HeaderText = "";
+            this.PaymentName.Name = "PaymentName";
+            this.PaymentName.Width = 250;
+            // 
+            // colProcess
+            // 
+            this.colProcess.DataPropertyName = "ProcessingKBN";
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.colProcess.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colProcess.HeaderText = "処理";
+            this.colProcess.Name = "colProcess";
+            this.colProcess.Width = 250;
             // 
             // Shiharai_ShimeShori
             // 
