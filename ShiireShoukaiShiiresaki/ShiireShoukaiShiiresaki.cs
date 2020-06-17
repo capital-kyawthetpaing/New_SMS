@@ -36,6 +36,7 @@ namespace ShiireShoukaiShiiresaki
         {
             InProgramID = "ShiireShoukaiShiiresaki";
             SetFunctionLabel(EProMode.MENTE);
+            this.ModeVisible = false;
             StartProgram();
             SetRequireField();
             BindCombo();
@@ -44,6 +45,7 @@ namespace ShiireShoukaiShiiresaki
             base.InProgramNM = ProNm;
             Btn_F10.Enabled = false;
             txtPurchaseDateFrom.Focus();
+            //Btn_F2.Visible = false;
         }
         private void SetRequireField()
         {
@@ -164,6 +166,9 @@ namespace ShiireShoukaiShiiresaki
                     Clear(PanelHeader);
                     txtPurchaseDateFrom.Focus();
                     Btn_F10.Enabled = false;
+                    chkPaid.Checked = true;
+                    chkUnpaid.Checked = true;
+                    ComboStore.SelectedValue = StoreCD;
                     dgvPurchaseSearch.DataSource = null;
                 }
             }

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.txtPurchaseDateFrom = new CKM_Controls.CKM_TextBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -94,6 +93,10 @@
             this.PanelSearch.Controls.Add(this.btnSubF11);
             this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             this.PanelSearch.TabIndex = 0;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // ckM_Label1
             // 
@@ -207,8 +210,8 @@
             this.scSupplier.ChangeDate = "";
             this.scSupplier.ChangeDateWidth = 100;
             this.scSupplier.Code = "";
-            this.scSupplier.CodeWidth = 130;
-            this.scSupplier.CodeWidth1 = 130;
+            this.scSupplier.CodeWidth = 100;
+            this.scSupplier.CodeWidth1 = 100;
             this.scSupplier.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSupplier.DataCheck = false;
             this.scSupplier.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -218,7 +221,7 @@
             this.scSupplier.Location = new System.Drawing.Point(479, 12);
             this.scSupplier.Margin = new System.Windows.Forms.Padding(0);
             this.scSupplier.Name = "scSupplier";
-            this.scSupplier.NameWidth = 280;
+            this.scSupplier.NameWidth = 310;
             this.scSupplier.SearchEnable = true;
             this.scSupplier.Size = new System.Drawing.Size(444, 27);
             this.scSupplier.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -449,8 +452,8 @@
             this.scStaff.ChangeDate = "";
             this.scStaff.ChangeDateWidth = 100;
             this.scStaff.Code = "";
-            this.scStaff.CodeWidth = 100;
-            this.scStaff.CodeWidth1 = 100;
+            this.scStaff.CodeWidth = 70;
+            this.scStaff.CodeWidth1 = 70;
             this.scStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scStaff.DataCheck = false;
             this.scStaff.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -460,9 +463,9 @@
             this.scStaff.Location = new System.Drawing.Point(480, 37);
             this.scStaff.Margin = new System.Windows.Forms.Padding(0);
             this.scStaff.Name = "scStaff";
-            this.scStaff.NameWidth = 210;
+            this.scStaff.NameWidth = 250;
             this.scStaff.SearchEnable = true;
-            this.scStaff.Size = new System.Drawing.Size(344, 27);
+            this.scStaff.Size = new System.Drawing.Size(354, 27);
             this.scStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.scStaff.TabIndex = 15;
             this.scStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -506,12 +509,12 @@
             this.txtDeliveryNoteNo.isMaxLengthErr = false;
             this.txtDeliveryNoteNo.IsNumber = true;
             this.txtDeliveryNoteNo.IsShop = false;
-            this.txtDeliveryNoteNo.Length = 10;
+            this.txtDeliveryNoteNo.Length = 15;
             this.txtDeliveryNoteNo.Location = new System.Drawing.Point(480, 73);
-            this.txtDeliveryNoteNo.MaxLength = 10;
+            this.txtDeliveryNoteNo.MaxLength = 15;
             this.txtDeliveryNoteNo.MoveNext = true;
             this.txtDeliveryNoteNo.Name = "txtDeliveryNoteNo";
-            this.txtDeliveryNoteNo.Size = new System.Drawing.Size(100, 19);
+            this.txtDeliveryNoteNo.Size = new System.Drawing.Size(108, 19);
             this.txtDeliveryNoteNo.TabIndex = 17;
             this.txtDeliveryNoteNo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -627,17 +630,17 @@
             this.dgvPurchaseSearch.AllowUserToOrderColumns = true;
             this.dgvPurchaseSearch.AllowUserToResizeColumns = false;
             this.dgvPurchaseSearch.AllowUserToResizeRows = false;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvPurchaseSearch.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPurchaseSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPurchaseSearch.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvPurchaseSearch.ColumnHeadersHeight = 25;
             this.dgvPurchaseSearch.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -653,18 +656,11 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchaseSearch.DefaultCellStyle = dataGridViewCellStyle24;
             this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
             this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPurchaseSearch.Location = new System.Drawing.Point(20, 272);
             this.dgvPurchaseSearch.Name = "dgvPurchaseSearch";
+            this.dgvPurchaseSearch.RowHeight_ = 20;
             this.dgvPurchaseSearch.Size = new System.Drawing.Size(1670, 600);
             this.dgvPurchaseSearch.TabIndex = 0;
             this.dgvPurchaseSearch.UseRowNo = true;
@@ -699,8 +695,8 @@
             // Column5
             // 
             this.Column5.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column5.HeaderText = "本体額";
             this.Column5.Name = "Column5";
             this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -708,16 +704,16 @@
             // Column6
             // 
             this.Column6.DataPropertyName = "PurchaseTax";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column6.HeaderText = "税額";
             this.Column6.Name = "Column6";
             // 
             // Column7
             // 
             this.Column7.DataPropertyName = "TotalPurchaseGaku";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column7.HeaderText = "仕入額";
             this.Column7.Name = "Column7";
             // 
