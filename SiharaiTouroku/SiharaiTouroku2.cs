@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
@@ -18,12 +12,10 @@ namespace SiharaiTouroku
         private const string ProID = "SiharaiTouroku";
 
         public bool flgCancel = false;
-
-        Search_Payment_BL spbl = new Search_Payment_BL();
+        
         SiharaiTouroku_BL shnbl = new SiharaiTouroku_BL();
         D_Pay_Entity dpe = new D_Pay_Entity();
-        //D_PayPlan_Entity dppe = new D_PayPlan_Entity();
-        //M_Kouza_Entity mkze = new M_Kouza_Entity();
+
         //DataTable dtSiharai1 = new DataTable();
         DataTable dtSiharai2 = new DataTable();
 
@@ -32,10 +24,10 @@ namespace SiharaiTouroku
 
         DataTable dtIDName1 = new DataTable();
         DataTable dtIDName2 = new DataTable();
-        string type = string.Empty;
-        string kouzaCD = string.Empty;
-        string payeeCD = string.Empty;
-        string payPlanDate = string.Empty;
+        private string type = string.Empty;
+        private string kouzaCD = string.Empty;
+        private string payeeCD = string.Empty;
+        private string payPlanDate = string.Empty;
         public SiharaiTouroku_2(D_Pay_Entity dpe1, DataTable dt, DataTable dtDetail)
         {
             InitializeComponent();
@@ -73,6 +65,11 @@ namespace SiharaiTouroku
 
                 //起動時共通処理
                 base.StartProgram();
+
+                dgvSearchPayment.ReadOnly = false;
+                for (int i = 1; i < dgvSearchPayment.Columns.Count; i++)
+                    if(i != 5)  //今回支払額
+                    dgvSearchPayment.Columns[i].ReadOnly = true;
 
                 BindData();
 
@@ -612,7 +609,6 @@ namespace SiharaiTouroku
             }
         }
 
-
         private void SC_HanyouKeyStart1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             try
@@ -747,34 +743,51 @@ namespace SiharaiTouroku
 
         private void dgvSearchPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Maintained_CheckClick(sender, e);
-        }
-
-        protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
-       {
-            if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+            try
             {
-                if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
-                {
-                    if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
-                    {
-                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = "0";
-                    }
-                    else
-                    {
-                        DataGridViewCheckBoxCell chk1 = dgvSearchPayment.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
-                        dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
-                    }
-
-                    LabelDataBind();
-                }
-
+                Maintained_CheckClick(sender, e);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
             }
         }
 
+        protected void Maintained_CheckClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+                {
+                    if ((sender as DataGridView).CurrentCell is DataGridViewCheckBoxCell)
+                    {
+                        if ((Convert.ToBoolean(dgvSearchPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
+                        {
+                            //ONにした明細に対して、今回支払額＝支払予定額―支払済額、未支払額＝0とする。
+                            dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                            dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount2"].Value = "0";
+                        }
+                        else
+                        {
+                            //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額―支払済額とする。
+                            dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
+                            dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount2"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                        }
+
+                        LabelDataBind();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
 
         private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -795,31 +808,40 @@ namespace SiharaiTouroku
 
         private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvSearchPayment.CurrentRow.Index >= 0)
+            try
             {
-                if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
+                if (dgvSearchPayment.CurrentRow.Index >= 0)
                 {
-                    DataGridViewRow row = dgvSearchPayment.CurrentRow;
+                    if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
+                    {
+                        DataGridViewRow row = dgvSearchPayment.CurrentRow;
 
-                    if (string.IsNullOrWhiteSpace(row.Cells["colUnpaidAmount1"].Value.ToString()))
-                    {
-                        bbl.ShowMessage("E102");
-                        dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
-                    }
-                    else if (bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) > bbl.Z_Set(row.Cells["colUnpaidAmount2"].Value.ToString()) || bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
-                    //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
-                    {
-                        bbl.ShowMessage("E143");
-                        dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
-                    }
-                    else
-                    {
-                        row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString());
-                    }
+                        if (string.IsNullOrWhiteSpace(row.Cells["colUnpaidAmount1"].Value.ToString()))
+                        {
+                            bbl.ShowMessage("E102");
+                            dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                        }
+                        else if (bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) > bbl.Z_Set(row.Cells["colUnpaidAmount2"].Value.ToString()) || bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
+                        //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
+                        {
+                            bbl.ShowMessage("E143");
+                            dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                        }
+                        else
+                        {
+                            row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString());
+                        }
                         LabelDataBind();
+                    }
                 }
             }
-        }
 
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
     }
 }
