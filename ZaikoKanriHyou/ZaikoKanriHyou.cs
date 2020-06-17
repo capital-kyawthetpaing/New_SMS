@@ -278,5 +278,10 @@ namespace ZaikoKanriHyou
         {
             MoveNextControl(e);
         }
+
+        private void scJANCD_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveNextControl(e);
+        }
     }
 }
