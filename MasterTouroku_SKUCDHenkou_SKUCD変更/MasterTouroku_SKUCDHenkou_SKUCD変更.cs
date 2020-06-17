@@ -22,6 +22,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         M_ITEM_Entity mie;
         int type = 0;
 
+        private int min=0;
+        private int max = 0;
+
         public MasterTouroku_SKUCDHenkou_SKUCD変更()
         {
             InitializeComponent();
@@ -205,11 +208,27 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     {
                         sizemissing[i] = Convert.ToInt32(sizeNewtxtbox_.Text);
                     }
+
+                    //var number = int.Parse(sizeNewtxtbox_.Text);
+                    //if(number != 0)
+                    //{
+                    //    if (number < min)
+                    //        min = number;
+                    //    else if (number > max)
+                    //        max = number;
+                    //}
+
                     if (sizeCheckbox_.Checked)
                     {
-
+                        max = int.Parse(sizeNewtxtbox_.Text);
                     }
-
+                    
+                }
+                if (SelectCheck(sizemissing))
+                {
+                    mskubl.ShowMessage("E229");
+                    txtnewsize10.Focus();
+                    return false;
                 }
                 if (HasDuplicates(sizeArray))
                 {
@@ -269,6 +288,18 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
 
             return true;
+        }
+
+        private bool SelectCheck(int[] arrayList)
+        {
+            foreach (int s in arrayList)
+            {
+                if(max < s)
+                {
+                    return false;
+                }
+            }
+                return true;
         }
 
         private bool HasDuplicates(string [] arrayList)
