@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -33,30 +33,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Base.Client">
-      <HintPath>..\bin\Debug\Base.Client.dll</HintPath>
-    </Reference>
-    <Reference Include="BL">
-      <HintPath>..\bin\Debug\BL.dll</HintPath>
-    </Reference>
-    <Reference Include="CKM_Controls">
-      <HintPath>..\bin\Debug\CKM_Controls.dll</HintPath>
-    </Reference>
-    <Reference Include="DL">
-      <HintPath>..\bin\Debug\DL.dll</HintPath>
-    </Reference>
-    <Reference Include="Entity">
-      <HintPath>..\bin\Debug\Entity.dll</HintPath>
-    </Reference>
-    <Reference Include="GridBase">
-      <HintPath>..\bin\Debug\GridBase.dll</HintPath>
-    </Reference>
-    <Reference Include="GridControl">
-      <HintPath>..\bin\Debug\GridControl.dll</HintPath>
-    </Reference>
-    <Reference Include="Search">
-      <HintPath>..\bin\Debug\Search.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\Base.Client\Base.Client.csproj">
+      <Project>{79af5f26-a50b-433c-9f87-c9173b9efe04}</Project>
+      <Name>Base.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CKM_Controls\CKM_Controls\CKM_Controls.csproj">
+      <Project>{472a8d76-1ce3-430e-89fe-373d2f6b1031}</Project>
+      <Name>CKM_Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\clsGridBase\GridBase.csproj">
+      <Project>{86979b8d-b1ed-4342-a1d3-986c244e796a}</Project>
+      <Name>GridBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DL\DL.csproj">
+      <Project>{9a22d9a9-e851-4765-8842-93fd4cb77300}</Project>
+      <Name>DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entity\Entity.csproj">
+      <Project>{9dd6c82a-1899-478f-bc18-524ad0b0dcc8}</Project>
+      <Name>Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Search\Search.csproj">
+      <Project>{83d6364b-73ea-4288-bce7-55a1119ee5a2}</Project>
+      <Name>Search</Name>
+    </ProjectReference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data.DataSetExtensions" />

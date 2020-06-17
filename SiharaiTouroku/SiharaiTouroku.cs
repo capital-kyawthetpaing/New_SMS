@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
-using CKM_Controls;
 
 namespace SiharaiTouroku
 {
@@ -22,7 +15,7 @@ namespace SiharaiTouroku
         D_Pay_Entity dpe = new D_Pay_Entity();
         M_Staff_Entity mse = new M_Staff_Entity();
         M_MultiPorpose_Entity mmpe = new M_MultiPorpose_Entity();
-    
+
         M_Vendor_Entity mve = new M_Vendor_Entity();
         D_PayPlan_Entity dppe = new D_PayPlan_Entity();
 
@@ -76,6 +69,10 @@ namespace SiharaiTouroku
 
             btnReleaseAll.Enabled = false;
             btnSelectAll.Enabled = false;
+
+            dgvPayment.ReadOnly = false;
+            for (int i = 1; i < dgvPayment.Columns.Count; i++)
+                dgvPayment.Columns[i].ReadOnly = true;
 
             txtDueDate1.Focus();
 
@@ -308,7 +305,7 @@ namespace SiharaiTouroku
                             dtPayplan = f2.dtGdv;
                             dtPay1Detail = f2.dtDetails;
                         }
-                  
+
                         //}
                     }
                     else
@@ -342,6 +339,8 @@ namespace SiharaiTouroku
                 dtPayplan = sibl.D_PayPlan_Select(dppe);
                 if (dtPayplan.Rows.Count > 0)
                 {
+                    dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
+
                     txtPaymentDate.Text = sibl.GetDate();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtPayplan.Rows[0]["StaffName"].ToString();
@@ -357,7 +356,6 @@ namespace SiharaiTouroku
                     //DataGridViewRow row = this.dgvPayment.SelectedRows[0];
                     //dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
                     //dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
-                    dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
                     //if (dtPay1Detail.Rows.Count > 0)
                     //{
                     //    dt4Detail = dtPay1Detail.Copy();
@@ -424,8 +422,9 @@ namespace SiharaiTouroku
                 {
 
                     DataTable dt = GetGridEntity();
+                    DataTable dtD = GetDetailGridEntity();
 
-                    if (sibl.D_Siharai_Exec(dpe, dt, (short)OperationMode))
+                    if (sibl.D_Siharai_Exec(dpe, dt,dtD, (short)OperationMode))
                     {
                         sibl.ShowMessage("I101");
 
@@ -443,7 +442,8 @@ namespace SiharaiTouroku
         #region btnClick
         private void btnSelectAll_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 Checkstate(true);
             }
             catch (Exception ex)
@@ -537,7 +537,8 @@ namespace SiharaiTouroku
 
         private void btnF11Show_Click(object sender, EventArgs e)
         {
-            try {
+            try
+            {
                 F11();
             }
             catch (Exception ex)
@@ -565,14 +566,78 @@ namespace SiharaiTouroku
             }
         }
 
+        private void dgvPayment_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void dgvPayment_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+
+        }
         private void dgvPayment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
+            try
             {
-                if (!string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
+                if (dgvPayment.Rows.Count == 0 || e.ColumnIndex > 0)
+                    return;
+
+                if (e.ColumnIndex == 0)
                 {
+                    //ONにした明細に対して、シート「金種別セット内容」に従って、項目をセット
+                    if ((Convert.ToBoolean(dgvPayment.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue) == true))
+                    {
+                        CheckClick(true, e.RowIndex);
+                    }
+                    else
+                    {
+                        CheckClick(false, e.RowIndex);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+        protected void CheckClick(bool check, int rowIndex)
+        {
+            //ONにした明細に対して、シート「金種別セット内容」に従って、項目をセット
+            if (check)
+            {
+                if (cboPaymentType.SelectedIndex > 0)
+                {
+                    //振込の場合　手数料を算出
                     if (cboPaymentType.SelectedValue.ToString() == "1")
                     {
+                        dppe.PayPlanDate = dgvPayment.Rows[rowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                        dppe.PayeeCD = dgvPayment.Rows[rowIndex].Cells["colPayeeCD"].Value.ToString();
+
+                        if (dtPayplan != null)
+                        {
+                            DataRow[] tblROWS1 = dtPayplan.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                            if (tblROWS1.Length > 0)
+                                dtSiharai2 = tblROWS1.CopyToDataTable();
+
+                            M_Kouza_Entity mke = new M_Kouza_Entity
+                            {
+                                KouzaCD = dtSiharai2.Rows[0]["KouzaCD"].ToString(), // cboPaymentSourceAcc.SelectedValue.ToString(),
+                                BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
+                                BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
+                                Amount = lblPayGaku.Text.Replace(",", ""),
+                            };
+                            DataTable dt = sibl.M_Kouza_FeeSelect(mke);
+                            if (dt.Rows.Count > 0)
+                                dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
+                        }
+
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+
+                        dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
+                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = "0";
+
                         //foreach (DataGridViewRow row in dgvPayment.Rows)
                         //{
                         //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
@@ -580,48 +645,16 @@ namespace SiharaiTouroku
                         //    row.Cells["colUnpaidAmount"].Value = "0";
                         //    row.Cells["colOtherThanTransfer"].Value = "0";
                         //}
-                        dppe.PayPlanDate = dgvPayment.Rows[e.RowIndex].Cells["colPaymentdueDate"].Value.ToString();
-                        dppe.PayeeCD = dgvPayment.Rows[e.RowIndex].Cells["colPayeeCD"].Value.ToString();
-
-                        if (dt4Detail != null)
-                        {
-                            DataRow[] tblROWS1 = dt4Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
-                            if (tblROWS1.Length > 0)
-                                dtSiharai2 = tblROWS1.CopyToDataTable();
-
-                            M_Kouza_Entity mke = new M_Kouza_Entity
-                            {
-                                KouzaCD = cboPaymentSourceAcc.SelectedValue.ToString(),
-                                BankCD = dtSiharai2.Rows[0]["BankCD"].ToString(),
-                                BranchCD = dtSiharai2.Rows[0]["BranchCD"].ToString(),
-                                Amount = lblPayGaku.Text.Replace(",", ""),
-                            };
-                            DataTable dt = sibl.M_Kouza_FeeSelect(mke);
-                            dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = dt.Rows[0]["Fee"].ToString();
-                        }
-
-                        dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
-                        dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
-
-                        dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
-                        dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = "0";
-
-                        if (dt4 != null)
-                        {
-                            for (int i = 0; i < dt4.Rows.Count; i++)
-                            {
-                                double a = Convert.ToDouble(dt4.Rows[i]["PayPlanGaku"].ToString());
-                                double b = Convert.ToDouble(dt4.Rows[i]["PayConfirmGaku"].ToString());
-                                double result = a - b;
-
-                                dt4.Rows[i]["UnpaidAmount1"] = result.ToString();
-                                dt4.Rows[i]["UnpaidAmount2"] = "0";
-                            }
-                        }
 
                     }
                     else
                     {
+                        dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+                        dgvPayment.Rows[rowIndex].Cells["colTransferAmount"].Value = "0";
+                        dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = "0";
+                        dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
+                        dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
+
                         //foreach (DataGridViewRow row in dgvPayment.Rows)
                         //{
                         //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
@@ -630,30 +663,38 @@ namespace SiharaiTouroku
                         //    row.Cells["colUnpaidAmount"].Value = "0";
                         //    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
                         //}
-                        if (dt4 != null)
-                        {
-                            for (int i = 0; i < dt4.Rows.Count; i++)
-                            {
-                                dt4.Rows[i]["UnpaidAmount1"] = Convert.ToInt32(dt4.Rows[i]["PayPlanGaku"].ToString()) - Convert.ToInt32(dt4.Rows[i]["PayConfirmGaku"].ToString());
-                                dt4.Rows[i]["UnpaidAmount2"] = "0";
-                            }
-                        }
-
-                        dgvPayment.Rows[e.RowIndex].Cells["colPaymenttime"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
-                        dgvPayment.Rows[e.RowIndex].Cells["colTransferAmount"].Value = "0";
-                        dgvPayment.Rows[e.RowIndex].Cells["colTransferFee"].Value = "0";
-                        dgvPayment.Rows[e.RowIndex].Cells["colUnpaidAmount"].Value = "0";
-                        dgvPayment.Rows[e.RowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[e.RowIndex].Cells["colAmountPaid"].Value);
                     }
 
-                    LabelDataBind();
+                    if (dtPay1Detail != null && dtPay1Detail.Rows.Count > 0)
+                    {
+                        DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                        foreach (DataRow row in tblROWS1)
+                        {
+                            row["UnpaidAmount1"] = bbl.Z_SetStr(bbl.Z_Set(row["PayPlanGaku"]) - bbl.Z_Set(row["PayConfirmGaku"]));
+                            row["UnpaidAmount2"] = "0";
+                        }
+                    }
                 }
-
-
-
             }
-        }
+            else
+            {
+                //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額-支払済額とし、第二画面の全入力項目をクリア
+                dgvPayment.Rows[rowIndex].Cells["colPaymenttime"].Value = "0";
+                dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
 
+                if (dtPay1Detail != null)
+                {
+                    DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                    foreach (DataRow row in tblROWS1)
+                    {
+                        row["UnpaidAmount1"] = "0";
+                        row["UnpaidAmount2"] = "0";
+                    }
+                }
+            }
+
+            LabelDataBind();
+        }
         #endregion
 
         /// <summary>
@@ -757,7 +798,7 @@ namespace SiharaiTouroku
                 if (!CheckStaff())
                     return false;
 
-                if (!RequireCheck(new Control[] {cboPaymentType}))                
+                if (!RequireCheck(new Control[] { cboPaymentType }))
                     return false;
 
                 if (!CheckBillSettleDate())
@@ -994,6 +1035,7 @@ namespace SiharaiTouroku
             foreach (DataGridViewRow row1 in dgvPayment.Rows)
             {
                 row1.Cells["colChk"].Value = flag;
+                CheckClick(flag, row1.Index);
             }
         }
 
@@ -1006,7 +1048,6 @@ namespace SiharaiTouroku
             dpe = new D_Pay_Entity()
             {
                 StaffCD = ScStaff.TxtCode.Text,
-                StoreCD = InOperatorCD,
                 PayDate = txtPaymentDate.Text,
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
@@ -1014,12 +1055,6 @@ namespace SiharaiTouroku
                 PC = InPcID,
                 PayNo = ScPaymentNum.TxtCode.Text,
                 LargePayNO = ScPaymentProcessNum.TxtCode.Text,
-                //dtTemp1 = dtPayplan,
-                //dtTemp2 = dt4Detail,
-                //dtTemp3 = dt4,
-                //dtTemp4 = dtPay1,
-                //dtTemp5 = dt2,
-                //dtTemp6 = dt3
             };
             return dpe;
         }
@@ -1043,31 +1078,39 @@ namespace SiharaiTouroku
         // -----------------------------------------------------------
         private void Para_Add(DataTable dt)
         {
-            dt.Columns.Add("PurchaseRows", typeof(int));
-            dt.Columns.Add("DisplayRows", typeof(int));
-            dt.Columns.Add("SKUCD", typeof(string));
-            dt.Columns.Add("AdminNO", typeof(int));
-            dt.Columns.Add("JanCD", typeof(string));
-            dt.Columns.Add("MakerItem", typeof(string));
-            dt.Columns.Add("ItemName", typeof(string));
-            dt.Columns.Add("ColorName", typeof(string));
-            dt.Columns.Add("SizeName", typeof(string));
-            dt.Columns.Add("PurchaseSu", typeof(int));
-            dt.Columns.Add("OldPurchaseSu", typeof(int));
-            dt.Columns.Add("TaniCD", typeof(string));
-            dt.Columns.Add("TaniName", typeof(string));
-
-            dt.Columns.Add("PurchaserUnitPrice", typeof(decimal));
-            dt.Columns.Add("CalculationGaku", typeof(decimal));
-            dt.Columns.Add("AdjustmentGaku", typeof(decimal));
-            dt.Columns.Add("PurchaseGaku", typeof(decimal));
-            dt.Columns.Add("PurchaseTax", typeof(decimal));
-            dt.Columns.Add("TaxRitsu", typeof(int));
-            dt.Columns.Add("CommentOutStore", typeof(string));
-            dt.Columns.Add("CommentInStore", typeof(string));
-            dt.Columns.Add("WarehousingNO", typeof(string));
-            dt.Columns.Add("StockNO", typeof(string));
-            dt.Columns.Add("ReserveNO", typeof(string));
+            dt.Columns.Add("Rows", typeof(int));
+            dt.Columns.Add("PayeeCD", typeof(string));
+            dt.Columns.Add("PayPlanDate", typeof(DateTime));
+            dt.Columns.Add("HontaiGaku8", typeof(decimal));
+            dt.Columns.Add("HontaiGaku10", typeof(decimal));
+            dt.Columns.Add("TaxGaku8", typeof(decimal));
+            dt.Columns.Add("TaxGaku10", typeof(decimal));
+            dt.Columns.Add("PayGaku", typeof(decimal));
+            dt.Columns.Add("NotPaidGaku", typeof(decimal));
+            dt.Columns.Add("TransferGaku", typeof(decimal));
+            dt.Columns.Add("TransferFeeGaku", typeof(decimal));
+            dt.Columns.Add("FeeKBN", typeof(int));
+            dt.Columns.Add("MotoKouzaCD", typeof(string));
+            dt.Columns.Add("BankCD", typeof(string));
+            dt.Columns.Add("BranchCD", typeof(string));
+            dt.Columns.Add("KouzaKBN", typeof(int));
+            dt.Columns.Add("KouzaNO", typeof(string));
+            dt.Columns.Add("KouzaMeigi", typeof(string));
+            dt.Columns.Add("CashGaku", typeof(decimal));
+            dt.Columns.Add("BillGaku", typeof(decimal));
+            dt.Columns.Add("BillDate", typeof(DateTime));
+            dt.Columns.Add("BillNO", typeof(string));
+            dt.Columns.Add("ERMCGaku", typeof(decimal));
+            dt.Columns.Add("ERMCDate", typeof(DateTime));
+            dt.Columns.Add("ERMCNO", typeof(string));
+            dt.Columns.Add("CardGaku", typeof(decimal));
+            dt.Columns.Add("OffsetGaku", typeof(decimal));
+            dt.Columns.Add("OtherGaku1", typeof(decimal));
+            dt.Columns.Add("Account1", typeof(string));
+            dt.Columns.Add("SubAccount1", typeof(string));
+            dt.Columns.Add("OtherGaku2", typeof(decimal));
+            dt.Columns.Add("Account2", typeof(string));
+            dt.Columns.Add("SubAccount2", typeof(string));
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
         private DataTable GetGridEntity()
@@ -1075,18 +1118,96 @@ namespace SiharaiTouroku
             DataTable dt = new DataTable();
             Para_Add(dt);
 
+            int rows = 0;
             foreach (DataRow row in dtPay1.Rows)
             {
-                if (bbl.Z_Set(row["ShippingSu"]) > 0)
-                    dt.Rows.Add(row["JuchuuRows"]
-                        , bbl.Z_Set(row["ShippingSu"])
-                        , 0     //bbl.Z_Set(row["SalesSU"]) 未使用
-                        , bbl.Z_Set(row["SalesGaku"])
-                        , bbl.Z_Set(row["SalesTax"])
-                        , bbl.Z_Set(row["ZaikoKBN"])
+                rows++;
+
+                if (bbl.Z_Set(row["PayGaku"]) > 0)
+                    dt.Rows.Add(rows
+                        , row["PayeeCD"]
+                        , row["PayPlanDate"]
+                        , bbl.Z_Set(row["HontaiGaku8"])
+                        , bbl.Z_Set(row["HontaiGaku10"])
+                        , bbl.Z_Set(row["TaxGaku8"])
+                        , bbl.Z_Set(row["TaxGaku10"])
+                        , bbl.Z_Set(row["PayGaku"])
+                        , bbl.Z_Set(row["NotPaidGaku"])
+                        , bbl.Z_Set(row["TransferGaku"])
+                        , bbl.Z_Set(row["TransferFeeGaku"])
+                        , bbl.Z_Set(row["FeeKBN"])
+                        , row["MotoKouzaCD"]
+                        , row["BankCD"]
+                        , row["BranchCD"]
+                        , bbl.Z_Set(row["KouzaKBN"])
+                        , row["KouzaNO"]
+                        , row["KouzaMeigi"]
+                        , bbl.Z_Set(row["CashGaku"])
+                        , bbl.Z_Set(row["BillGaku"])
+                        , row["BillDate"]
+                        , row["BillNO"]
+                        , bbl.Z_Set(row["ERMCGaku"])
+                        , row["ERMCDate"]
+                        , row["ERMCNO"]
+                        , bbl.Z_Set(row["CardGaku"])
+                        , bbl.Z_Set(row["OffsetGaku"])
+                        , bbl.Z_Set(row["OtherGaku1"])
+                        , row["Account1"]
+                        , row["SubAccount1"]
+                        , bbl.Z_Set(row["OtherGaku2"])
+                        , row["Account2"]
+                        , row["SubAccount2"]
                         , 0
                         );
 
+            }
+
+            return dt;
+        }
+        private void Para_AddD(DataTable dt)
+        {
+            dt.Columns.Add("PayeeCD", typeof(string));
+            dt.Columns.Add("PayPlanDate", typeof(DateTime));
+            dt.Columns.Add("PayNORows", typeof(int));
+            dt.Columns.Add("PayPlanNO", typeof(int));
+            dt.Columns.Add("PayGaku", typeof(decimal));
+            dt.Columns.Add("PayConfirmFinishedKBN", typeof(int));
+            dt.Columns.Add("ProcessingKBN", typeof(int));
+            dt.Columns.Add("UpdateFlg", typeof(int));
+        }
+        private DataTable GetDetailGridEntity()
+        {
+            DataTable dt = new DataTable();
+            Para_AddD(dt);
+
+            int rows = 0;
+            int PayConfirmFinishedKBN = 0;  //未支払額＝0の場合、1：完了
+            int ProcessingKBN = 0;//支払済額＜＞0の場合、3：確定, 上記以外の場合1：支払締(締中)
+
+            foreach (DataRow row in dtPay1Detail.Rows)
+            {
+                rows++;
+                PayConfirmFinishedKBN = 0;
+                ProcessingKBN = 1;
+
+                if (bbl.Z_Set(row["Chk"]) > 0)
+                {
+                    if (bbl.Z_Set(row["UnpaidAmount2"]) == 0)
+                        PayConfirmFinishedKBN = 1;
+
+                    if (bbl.Z_Set(row["PayConfirmGaku"]) != 0)
+                        PayConfirmFinishedKBN = 3;
+
+                    dt.Rows.Add(row["PayeeCD"]
+                        , row["PayPlanDate"]
+                        , bbl.Z_Set(row["PayNORows"])
+                        , bbl.Z_Set(row["PayPlanNO"])
+                        , bbl.Z_Set(row["PayGaku"])
+                        , PayConfirmFinishedKBN
+                        , ProcessingKBN
+                        , 0
+                        );
+                }
             }
 
             return dt;
@@ -1162,5 +1283,6 @@ namespace SiharaiTouroku
                 //EndSec();
             }
         }
+
     }
 }
