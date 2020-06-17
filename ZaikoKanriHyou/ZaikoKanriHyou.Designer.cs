@@ -187,7 +187,7 @@
             this.scJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scJANCD.DataCheck = false;
             this.scJANCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scJANCD.IsCopy = false;
+            this.scJANCD.IsCopy = true;
             this.scJANCD.LabelText = "";
             this.scJANCD.LabelVisible = false;
             this.scJANCD.Location = new System.Drawing.Point(146, 176);
@@ -203,6 +203,7 @@
             this.scJANCD.Value1 = null;
             this.scJANCD.Value2 = null;
             this.scJANCD.Value3 = null;
+            this.scJANCD.KeyUp += new System.Windows.Forms.KeyEventHandler(this.scJANCD_KeyUp);
             // 
             // scSKUCD
             // 

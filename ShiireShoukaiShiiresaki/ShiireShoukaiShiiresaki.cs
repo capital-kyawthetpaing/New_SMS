@@ -36,6 +36,7 @@ namespace ShiireShoukaiShiiresaki
         {
             InProgramID = "ShiireShoukaiShiiresaki";
             SetFunctionLabel(EProMode.MENTE);
+            this.ModeVisible = false;
             StartProgram();
             SetRequireField();
             BindCombo();
@@ -44,6 +45,7 @@ namespace ShiireShoukaiShiiresaki
             base.InProgramNM = ProNm;
             Btn_F10.Enabled = false;
             txtPurchaseDateFrom.Focus();
+            //Btn_F2.Visible = false;
         }
         private void SetRequireField()
         {
@@ -164,6 +166,9 @@ namespace ShiireShoukaiShiiresaki
                     Clear(PanelHeader);
                     txtPurchaseDateFrom.Focus();
                     Btn_F10.Enabled = false;
+                    chkPaid.Checked = true;
+                    chkUnpaid.Checked = true;
+                    ComboStore.SelectedValue = StoreCD;
                     dgvPurchaseSearch.DataSource = null;
                 }
             }
@@ -260,16 +265,14 @@ namespace ShiireShoukaiShiiresaki
                 scSupplier.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scSupplier.TxtCode.Text))
                 {
-                    if (scSupplier.SelectData())
+                    if (!scSupplier.SelectData())
                     {
-                        scSupplier.Value1 = scSupplier.TxtCode.Text;
-                        scSupplier.Value2 = scSupplier.LabelText;
-                    }
-                    else
-                    {
+                        //scSupplier.Value1 = scSupplier.TxtCode.Text;
+                        //scSupplier.Value2 = scSupplier.LabelText;
                         bbl.ShowMessage("E101");
                         scSupplier.SetFocus(1);
                     }
+                  
                 }
 
             }
@@ -282,16 +285,18 @@ namespace ShiireShoukaiShiiresaki
                 scStaff.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(scStaff.TxtCode.Text))
                 {
-                    if (scStaff.SelectData())
+                    if (!scStaff.SelectData())
                     {
-                        scStaff.Value1 = scStaff.TxtCode.Text;
-                        scStaff.Value2 = scStaff.LabelText;
-                    }
-                    else
-                    {
+                        //scStaff.Value1 = scStaff.TxtCode.Text;
+                        //scStaff.Value2 = scStaff.LabelText;
                         bbl.ShowMessage("E101");
                         scStaff.SetFocus(1);
                     }
+                    //else
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    scStaff.SetFocus(1);
+                    //}
                 }
             }
         }

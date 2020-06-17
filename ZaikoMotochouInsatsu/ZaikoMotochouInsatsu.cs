@@ -40,7 +40,7 @@ namespace ZaikoMotochouInsatsu
             SetRequireField();
             cboSouko.Bind(string.Empty);
             cboSouko.SelectedValue = SoukoCD;
-
+            txtTargetPeriodF.Text = System.DateTime.Now.ToString("yyyy/MM");
             Btn_F11.Text = string.Empty;
             Btn_F10.Text = string.Empty;
         }
@@ -66,6 +66,8 @@ namespace ZaikoMotochouInsatsu
         public void Clear()
         {
             Clear(panelDetail);
+            cboSouko.SelectedValue = SoukoCD;
+            txtTargetPeriodF.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetPeriodF.Focus();
         }
 

@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -126,7 +127,7 @@
             this.btn_delete = new CKM_Controls.CKM_Button();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
             this.ckM_Label9 = new CKM_Controls.CKM_Label();
-            this.Btn_display = new CKM_Controls.CKM_Button();
+            this.Btn_F11 = new CKM_Controls.CKM_Button();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -145,7 +146,7 @@
             // 
             // PanelSearch
             // 
-            this.PanelSearch.Controls.Add(this.Btn_display);
+            this.PanelSearch.Controls.Add(this.Btn_F11);
             this.PanelSearch.Location = new System.Drawing.Point(1248, 0);
             // 
             // btnChangeIkkatuHacchuuMode
@@ -741,17 +742,17 @@
             this.GV_item.AllowUserToAddRows = false;
             this.GV_item.AllowUserToDeleteRows = false;
             this.GV_item.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GV_item.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GV_item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GV_item.ColumnHeadersHeight = 25;
             this.GV_item.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ck,
@@ -770,6 +771,14 @@
             this.定価,
             this.掛率,
             this.発注単価});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_item.DefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(89, 346);
@@ -780,6 +789,7 @@
             this.GV_item.TabIndex = 67;
             this.GV_item.UseRowNo = true;
             this.GV_item.UseSetting = false;
+            this.GV_item.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_item_CellContentClick);
             // 
             // ck
             // 
@@ -1882,24 +1892,24 @@
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // Btn_display
+            // Btn_F11
             // 
-            this.Btn_display.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.Btn_display.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
-            this.Btn_display.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btn_display.DefaultBtnSize = false;
-            this.Btn_display.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btn_display.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_display.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.Btn_display.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.Btn_display.Location = new System.Drawing.Point(301, 4);
-            this.Btn_display.Margin = new System.Windows.Forms.Padding(1);
-            this.Btn_display.Name = "Btn_display";
-            this.Btn_display.Size = new System.Drawing.Size(80, 23);
-            this.Btn_display.TabIndex = 11;
-            this.Btn_display.Text = "表示(F11)";
-            this.Btn_display.UseVisualStyleBackColor = false;
-            this.Btn_display.Click += new System.EventHandler(this.Btn_display_Click);
+            this.Btn_F11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.Btn_F11.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.Btn_F11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_F11.DefaultBtnSize = false;
+            this.Btn_F11.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_F11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_F11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_F11.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.Btn_F11.Location = new System.Drawing.Point(301, 4);
+            this.Btn_F11.Margin = new System.Windows.Forms.Padding(1);
+            this.Btn_F11.Name = "Btn_F11";
+            this.Btn_F11.Size = new System.Drawing.Size(80, 23);
+            this.Btn_F11.TabIndex = 11;
+            this.Btn_F11.Text = "表示(F11)";
+            this.Btn_F11.UseVisualStyleBackColor = false;
+            this.Btn_F11.Click += new System.EventHandler(this.Btn_F11_Click);
             // 
             // FrmMasterTouroku_ShiireTanka
             // 
@@ -1974,7 +1984,7 @@
         private CKM_Controls.CKM_Label LB_year;
         private CKM_Controls.CKM_TextBox TB_date_condition;
         private CKM_Controls.CKM_Label lB_date;
-        private CKM_Controls.CKM_Button Btn_display;
+        private CKM_Controls.CKM_Button Btn_F11;
         private Search.CKM_SearchControl makershohin;
         private CKM_Controls.CKM_Label ckM_Label2;
         private CKM_Controls.CKM_Button ckM_Button1;

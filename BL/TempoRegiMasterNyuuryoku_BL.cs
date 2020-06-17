@@ -35,9 +35,9 @@ namespace BL
         {
             return msbtngroup_dl.TempoRegiMasterNyuuryoku_Grid_Select(mode);
         }
-        public DataTable TempoRegiMasterNyuuryoku_Grid_SelectAll()
+        public DataTable TempoRegiMasterNyuuryoku_Grid_SelectAll(string StoreCD)
         {
-            return msbtngroup_dl.M_StoreBottunGroup_Select();
+            return msbtngroup_dl.M_StoreBottunGroup_Select(StoreCD);
         }
         public bool Button_Details_Insert_Update(M_StoreBottunDetails_Entity mre)
         {                

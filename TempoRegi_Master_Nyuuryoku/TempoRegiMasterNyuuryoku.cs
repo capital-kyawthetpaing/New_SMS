@@ -252,7 +252,7 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             List<Button> buttongroup = new List<Button>();
             Button btn = null;
-            dtSelect=dtResult = mnrk_bl.TempoRegiMasterNyuuryoku_Grid_SelectAll();//M_StoreBottunGroup_Select
+            dtSelect=dtResult = mnrk_bl.TempoRegiMasterNyuuryoku_Grid_SelectAll(StoreCD);//M_StoreBottunGroup_Select
             dtCpy = new DataTable();
             dtCpy = dtSelect.DefaultView.ToTable(true, "ButtomName", "GroupNO","MasterKBN");
             dtTemp1 = dtSelect.DefaultView.ToTable(true, "GroupNO", "ButtomName", "MasterKBN");
