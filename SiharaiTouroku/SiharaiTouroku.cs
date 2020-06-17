@@ -653,6 +653,12 @@ namespace SiharaiTouroku
             {
                 if (type == 1)
                 {
+                    //入力無くても良い(It is not necessary to input)
+                    if (string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    {
+                        return true;
+                    }
+
                     DataTable dtpay = new DataTable();
                     dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
                     dtpay = sibl.D_Pay_LargePayNoSelect(dpe);
@@ -676,6 +682,10 @@ namespace SiharaiTouroku
                 else if (type == 2)
                 {
                     //支払処理番号未入力時、入力必須(Entry required)
+                    if (!string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    {
+                        return true;
+                    }
 
                     if (!RequireCheck(new Control[] { ScPaymentNum.TxtCode }))
                         return false;
