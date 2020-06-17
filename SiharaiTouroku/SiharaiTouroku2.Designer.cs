@@ -97,6 +97,9 @@
             this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPayPlanNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayeeCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -296,7 +299,10 @@
             this.colPayPlanGaku,
             this.colPayConfirmGaku,
             this.colUnpaidAmount1,
-            this.colUnpaidAmount2});
+            this.colUnpaidAmount2,
+            this.colPayPlanNO,
+            this.colPayPlanDate,
+            this.colPayeeCD});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -318,6 +324,7 @@
             this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
             this.dgvSearchPayment.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellEndEdit);
             this.dgvSearchPayment.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellLeave);
+            this.dgvSearchPayment.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSearchPayment_CellValidating);
             // 
             // SC_HanyouKeyEnd2
             // 
@@ -1415,6 +1422,30 @@
             this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
+            // colPayPlanNO
+            // 
+            this.colPayPlanNO.DataPropertyName = "PayPlanNO";
+            this.colPayPlanNO.HeaderText = "PayPlanNO";
+            this.colPayPlanNO.Name = "colPayPlanNO";
+            this.colPayPlanNO.ReadOnly = true;
+            this.colPayPlanNO.Visible = false;
+            // 
+            // colPayPlanDate
+            // 
+            this.colPayPlanDate.DataPropertyName = "PayPlanDate";
+            this.colPayPlanDate.HeaderText = "PayPlanDate";
+            this.colPayPlanDate.Name = "colPayPlanDate";
+            this.colPayPlanDate.ReadOnly = true;
+            this.colPayPlanDate.Visible = false;
+            // 
+            // colPayeeCD
+            // 
+            this.colPayeeCD.DataPropertyName = "PayeeCD";
+            this.colPayeeCD.HeaderText = "PayeeCD";
+            this.colPayeeCD.Name = "colPayeeCD";
+            this.colPayeeCD.ReadOnly = true;
+            this.colPayeeCD.Visible = false;
+            // 
             // SiharaiTouroku_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1518,5 +1549,8 @@
         private SMS.CustomControls.dgvInventoryColumn colPayConfirmGaku;
         private SMS.CustomControls.dgvInventoryColumn colUnpaidAmount1;
         private SMS.CustomControls.dgvInventoryColumn colUnpaidAmount2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayPlanNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayPlanDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayeeCD;
     }
 }
