@@ -53,7 +53,9 @@ namespace SaikenKanriHyou
             txtTargetdate.Require(true);
             rdo_BillAddress.Checked = true;
             BindStore();
-            this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
+            // this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
+            cbo_Store.KeyDown += cbo_Store_KeyDown;
+            txtTargetdate.Focus();
         }
         public override void FunctionProcess(int index)
         {
@@ -170,23 +172,36 @@ namespace SaikenKanriHyou
         /// <Remark>Comboで選択する場合、許可するかどうかエラー　チェックする事</Remark>
         /// <Remark>許可ない場合　エラー「E141」になる</Remark>
         /// </summary>
-        private void Cbo_Store_SelectedIndexChanged(object sender, EventArgs e)
+        //private void Cbo_Store_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    //店舗権限のチェック、引数で処理可能店舗の配列をセットしたい
+        //    if (!cbo_Store.SelectedValue.Equals("-1"))
+        //    {
+        //        if (!base.CheckAvailableStores(cbo_Store.SelectedValue.ToString()))
+        //        {
+        //            skh_bl.ShowMessage("E141");
+        //            cbo_Store.Focus();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        skh_bl.ShowMessage("E102");
+        //        cbo_Store.Focus();
+        //    }
+
+        //}
+
+        private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
         {
-            //店舗権限のチェック、引数で処理可能店舗の配列をセットしたい
-            if (!cbo_Store.SelectedValue.Equals("-1"))
+            if (e.KeyCode == Keys.Enter)
             {
                 if (!base.CheckAvailableStores(cbo_Store.SelectedValue.ToString()))
                 {
                     skh_bl.ShowMessage("E141");
+                    cbo_Store.MoveNext = false;
                     cbo_Store.Focus();
                 }
             }
-            else
-            {
-                skh_bl.ShowMessage("E102");
-                cbo_Store.Focus();
-            }
-
         }
         #region DataErrorCheck
         private bool ErrorCheck()
@@ -419,7 +434,7 @@ namespace SaikenKanriHyou
         }
         private void Clear()
         {
-            Clear(panelHealder);
+            Clear(panelDetail);
             txtTargetdate.Focus();
 
         }
