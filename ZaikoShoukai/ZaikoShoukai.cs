@@ -40,7 +40,7 @@ namespace ZaikoShoukai
             InProgramID = "ZaikoShoukai";
             StartProgram();
             BindCombo();
-            LB_ChangeDate.Text = Convert.ToDateTime(DateTime.Today).ToShortDateString();
+            LB_ChangeDate.Text =bbl.GetDate();
             ckM_RB_or.Checked = true;
             ModeVisible = false;
             base.Btn_F10.Text = "CSV(F10)";
@@ -350,17 +350,18 @@ namespace ZaikoShoukai
                 Shiiresaki.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
                 {
-                    if (Shiiresaki.SelectData())
-                    {
-
-                        Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
-                        Shiiresaki.Value2 = Shiiresaki.LabelText;
-                    }
-                    else
+                    if (!Shiiresaki.SelectData())
                     {
                         bbl.ShowMessage("E101");
                         Shiiresaki.SetFocus(1);
+                        //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
+                        //Shiiresaki.Value2 = Shiiresaki.LabelText;
                     }
+                    //else
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    Shiiresaki.SetFocus(1);
+                    //}
                 }
             }
         }
@@ -371,16 +372,12 @@ namespace ZaikoShoukai
                 Maker.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(Maker.TxtCode.Text))
                 {
-                    if (Maker.SelectData())
-                    {
-                        Maker.Value1 = Maker.TxtCode.Text;
-                        Maker.Value2 = Maker.LabelText;
-                    }
-                    else
+                    if (!Maker.SelectData())
                     {
                         bbl.ShowMessage("E101");
                         Maker.SetFocus(1);
                     }
+                   
                 }
             }
         }
@@ -391,16 +388,18 @@ namespace ZaikoShoukai
                 SearchBrand.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(SearchBrand.TxtCode.Text))
                 {
-                    if (SearchBrand.SelectData())
+                    if (!SearchBrand.SelectData())
                     {
-                        SearchBrand.Value1 = SearchBrand.TxtCode.Text;
-                        SearchBrand.Value2 = SearchBrand.LabelText;
-                    }
-                    else
-                    {
+                        //SearchBrand.Value1 = SearchBrand.TxtCode.Text;
+                        //SearchBrand.Value2 = SearchBrand.LabelText;
                         bbl.ShowMessage("E101");
                         SearchBrand.SetFocus(1);
                     }
+                    //else
+                    //{
+                    //    bbl.ShowMessage("E101");
+                    //    SearchBrand.SetFocus(1);
+                    //}
                 }
             }
         }
@@ -414,6 +413,18 @@ namespace ZaikoShoukai
             //        bbl.ShowMessage("E101");
             //    }
             //}
+        }
+
+        private void Shiiresaki_Enter(object sender, EventArgs e)
+        {
+            Shiiresaki.ChangeDate = bbl.GetDate();
+            Shiiresaki.Value1 = "1";
+        }
+
+        private void Maker_Enter(object sender, EventArgs e)
+        {
+            Maker.ChangeDate = bbl.GetDate();
+            Maker.Value1 = "1";
         }
 
         private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
@@ -448,12 +459,7 @@ namespace ZaikoShoukai
                 Sports.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(Sports.TxtCode.Text))
                 {
-                    if (Sports.SelectData())
-                    {
-                        Sports.Value1 = Sports.TxtCode.Text;
-                        Sports.Value2 = Sports.LabelText;
-                    }
-                    else
+                    if (!Sports.SelectData())
                     {
                         bbl.ShowMessage("E101");
                         Sports.SetFocus(1);
@@ -463,6 +469,7 @@ namespace ZaikoShoukai
         }
         private void Sports_Enter(object sender, EventArgs e)
         {
+            Sports.ChangeDate = bbl.GetDate();
             Sports.Value1 = "202";
         }
         private void TB_ShinkitorokuT_KeyDown(object sender, KeyEventArgs e)

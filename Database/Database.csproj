@@ -361,6 +361,7 @@
     <Content Include="StoreProcedure\M_MultiPorpose_SaleModeSelect.sql" />
     <Content Include="StoreProcedure\M_MultiPorpose_Select.sql" />
     <Content Include="StoreProcedure\M_MultiPorpose_SelectAll.sql" />
+    <Content Include="StoreProcedure\M_MultiPorpose_SelectByChar1.sql" />
     <Content Include="StoreProcedure\M_MultiPorpose_SupplierSelect.sql" />
     <Content Include="StoreProcedure\M_MultiPorpose_Update.sql" />
     <Content Include="StoreProcedure\M_MultiPurpose_Delete.sql" />
@@ -405,6 +406,7 @@
     <Content Include="StoreProcedure\M_Souko_Bind.sql" />
     <Content Include="StoreProcedure\M_Souko_BindAll.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForHenpin.sql" />
+    <Content Include="StoreProcedure\M_Souko_BindForMarkDown.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForNyuuka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForShukka.sql" />
     <Content Include="StoreProcedure\M_Souko_BindForTanaoroshi.sql" />
