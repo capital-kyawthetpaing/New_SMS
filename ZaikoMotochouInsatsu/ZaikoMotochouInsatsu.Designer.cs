@@ -55,6 +55,14 @@
             // 
             this.PanelHeader.Size = new System.Drawing.Size(1711, 0);
             // 
+            // PanelSearch
+            // 
+            this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panelDetail
             // 
             this.panelDetail.Controls.Add(this.scJANCD);
@@ -89,6 +97,7 @@
             this.scJANCD.ChangeDateWidth = 100;
             this.scJANCD.Code = "";
             this.scJANCD.CodeWidth = 600;
+            this.scJANCD.CodeWidth1 = 600;
             this.scJANCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scJANCD.DataCheck = false;
             this.scJANCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -98,6 +107,7 @@
             this.scJANCD.Location = new System.Drawing.Point(150, 167);
             this.scJANCD.Margin = new System.Windows.Forms.Padding(0);
             this.scJANCD.Name = "scJANCD";
+            this.scJANCD.NameWidth = 280;
             this.scJANCD.SearchEnable = true;
             this.scJANCD.Size = new System.Drawing.Size(633, 27);
             this.scJANCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
@@ -115,6 +125,7 @@
             this.scSKUCD.ChangeDateWidth = 100;
             this.scSKUCD.Code = "";
             this.scSKUCD.CodeWidth = 600;
+            this.scSKUCD.CodeWidth1 = 600;
             this.scSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSKUCD.DataCheck = false;
             this.scSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -124,6 +135,7 @@
             this.scSKUCD.Location = new System.Drawing.Point(150, 143);
             this.scSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSKUCD.Name = "scSKUCD";
+            this.scSKUCD.NameWidth = 280;
             this.scSKUCD.SearchEnable = true;
             this.scSKUCD.Size = new System.Drawing.Size(633, 27);
             this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
@@ -141,6 +153,7 @@
             this.scITEM.ChangeDateWidth = 100;
             this.scITEM.Code = "";
             this.scITEM.CodeWidth = 600;
+            this.scITEM.CodeWidth1 = 600;
             this.scITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scITEM.DataCheck = false;
             this.scITEM.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -150,6 +163,7 @@
             this.scITEM.Location = new System.Drawing.Point(150, 119);
             this.scITEM.Margin = new System.Windows.Forms.Padding(0);
             this.scITEM.Name = "scITEM";
+            this.scITEM.NameWidth = 280;
             this.scITEM.SearchEnable = true;
             this.scITEM.Size = new System.Drawing.Size(633, 27);
             this.scITEM.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
@@ -167,6 +181,7 @@
             this.scMakerShohinCD.ChangeDateWidth = 100;
             this.scMakerShohinCD.Code = "";
             this.scMakerShohinCD.CodeWidth = 600;
+            this.scMakerShohinCD.CodeWidth1 = 600;
             this.scMakerShohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scMakerShohinCD.DataCheck = false;
             this.scMakerShohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -176,6 +191,7 @@
             this.scMakerShohinCD.Location = new System.Drawing.Point(150, 95);
             this.scMakerShohinCD.Margin = new System.Windows.Forms.Padding(0);
             this.scMakerShohinCD.Name = "scMakerShohinCD";
+            this.scMakerShohinCD.NameWidth = 280;
             this.scMakerShohinCD.SearchEnable = true;
             this.scMakerShohinCD.Size = new System.Drawing.Size(633, 28);
             this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
@@ -227,6 +243,7 @@
             this.txtSKUName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtSKUName.BackColor = System.Drawing.Color.White;
             this.txtSKUName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSKUName.ClientColor = System.Drawing.Color.White;
             this.txtSKUName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSKUName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSKUName.DecimalPlace = 0;
@@ -234,6 +251,7 @@
             this.txtSKUName.IntegerPart = 0;
             this.txtSKUName.IsCorrectDate = true;
             this.txtSKUName.isEnterKeyDown = false;
+            this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = true;
             this.txtSKUName.IsShop = false;
             this.txtSKUName.Length = 40;
@@ -251,6 +269,7 @@
             this.cboSouko.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSouko.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.SoukoAll;
             this.cboSouko.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
+            this.cboSouko.Flag = 0;
             this.cboSouko.FormattingEnabled = true;
             this.cboSouko.Length = 10;
             this.cboSouko.Location = new System.Drawing.Point(150, 65);
@@ -267,6 +286,7 @@
             this.txtTargetPeriodT.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetPeriodT.BackColor = System.Drawing.Color.White;
             this.txtTargetPeriodT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetPeriodT.ClientColor = System.Drawing.Color.White;
             this.txtTargetPeriodT.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetPeriodT.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetPeriodT.DecimalPlace = 0;
@@ -274,6 +294,7 @@
             this.txtTargetPeriodT.IntegerPart = 0;
             this.txtTargetPeriodT.IsCorrectDate = true;
             this.txtTargetPeriodT.isEnterKeyDown = false;
+            this.txtTargetPeriodT.isMaxLengthErr = false;
             this.txtTargetPeriodT.IsNumber = true;
             this.txtTargetPeriodT.IsShop = false;
             this.txtTargetPeriodT.Length = 7;
@@ -292,6 +313,7 @@
             this.txtTargetPeriodF.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtTargetPeriodF.BackColor = System.Drawing.Color.White;
             this.txtTargetPeriodF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTargetPeriodF.ClientColor = System.Drawing.Color.White;
             this.txtTargetPeriodF.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtTargetPeriodF.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.YearMonth;
             this.txtTargetPeriodF.DecimalPlace = 0;
@@ -299,6 +321,7 @@
             this.txtTargetPeriodF.IntegerPart = 0;
             this.txtTargetPeriodF.IsCorrectDate = true;
             this.txtTargetPeriodF.isEnterKeyDown = false;
+            this.txtTargetPeriodF.isMaxLengthErr = false;
             this.txtTargetPeriodF.IsNumber = true;
             this.txtTargetPeriodF.IsShop = false;
             this.txtTargetPeriodF.Length = 7;
@@ -308,6 +331,7 @@
             this.txtTargetPeriodF.Name = "txtTargetPeriodF";
             this.txtTargetPeriodF.Size = new System.Drawing.Size(100, 19);
             this.txtTargetPeriodF.TabIndex = 8;
+            this.txtTargetPeriodF.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetPeriodF.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtTargetPeriodF.Leave += new System.EventHandler(this.txtTargetPeriodF_Leave);
             // 
