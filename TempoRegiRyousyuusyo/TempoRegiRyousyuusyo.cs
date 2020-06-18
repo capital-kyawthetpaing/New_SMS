@@ -541,7 +541,7 @@ namespace TempoRegiRyousyuusyo
             var result = 0;
 
             var pos = value.ToString().LastIndexOf('.');
-            if(pos < 0)
+            if (pos < 0)
             {
                 result = string.IsNullOrWhiteSpace(value.ToString()) ? 0 : Convert.ToInt32(value.ToString());
             }
@@ -564,16 +564,16 @@ namespace TempoRegiRyousyuusyo
             var result = new List<string>();
             var length = (int)Math.Ceiling((double)value.Length / count);
 
-            for(var index = 0; index < length; index++)
+            for (var index = 0; index < length; index++)
             {
                 var start = count * index;
 
-                if(value.Length <= start)
+                if (value.Length <= start)
                 {
                     break;
                 }
 
-                if(value.Length < start + count)
+                if (value.Length < start + count)
                 {
                     result.Add(value.Substring(start));
                 }
@@ -590,7 +590,7 @@ namespace TempoRegiRyousyuusyo
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(ErrorCheck())
+                if (ErrorCheck())
                 {
                     chkRyousyuusho.Focus();
                 }
