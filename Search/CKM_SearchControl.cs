@@ -264,8 +264,8 @@ namespace Search
             棚番号,
             ピッキング番号,
             //<----------- 2019.12.05
-            ItemMulti,
-            SKUMulti,
+            /*ItemMulti,*/
+            //SKUMulti,
             JANMulti,
             //........>
             Location,//---2019.12.09
@@ -640,16 +640,16 @@ namespace Search
                     txtCode.Width = 100;
                     lblName.Width = 600;
                     break;
-                case SearchType.ItemMulti: //2019.12.05
-                    txtCode.MaxLength = 309;
-                    txtCode.Width = 600;
-                    lblName.Width = 280;
-                    break;
-                case SearchType.SKUMulti: //2019.12.05
-                    txtCode.MaxLength = 309;
-                    txtCode.Width = 600;
-                    lblName.Width = 280;
-                    break;
+                //case SearchType.ItemMulti: //2019.12.05
+                //    txtCode.MaxLength = 309;
+                //    txtCode.Width = 600;
+                //    lblName.Width = 280;
+                //    break;
+                //case SearchType.SKUMulti: //2019.12.05
+                //    txtCode.MaxLength = 309;
+                //    txtCode.Width = 600;
+                //    lblName.Width = 280;
+                //    break;
                 case SearchType.JANMulti: //2019.12.05
                     txtCode.MaxLength = 139;
                     txtCode.Width = 600;
@@ -773,9 +773,9 @@ namespace Search
         {
             switch (Stype)
             {
-                case SearchType.ItemMulti:
+                //case SearchType.ItemMulti:
                 case SearchType.JANMulti:
-                case SearchType.SKUMulti:
+                //case SearchType.SKUMulti:
                     if (TxtCode.Text.Contains(","))
                     {
                         string a = TxtCode.Text;
@@ -1545,38 +1545,38 @@ namespace Search
                     }
                     break;
 
-                case SearchType.ItemMulti:
-                    using (Search_Product frmMakerItem = new Search_Product(changedate))
-                    {
-                        frmMakerItem.Mode = "1";
-                        frmMakerItem.MakerItem = txtCode.Text;
+                //case SearchType.ItemMulti:
+                //    using (Search_Product frmMakerItem = new Search_Product(changedate))
+                //    {
+                //        frmMakerItem.Mode = "1";
+                //        frmMakerItem.MakerItem = txtCode.Text;
 
 
-                        frmMakerItem.ShowDialog();
-                        if (!frmMakerItem.flgCancel)
-                        {
-                            txtCode.Text = frmMakerItem.MakerItem;
-                            txtChangeDate.Text = frmMakerItem.ChangeDate;
-                            CheckBasedFormPanel();//PTK added
-                        }
-                    }
-                    break;
+                //        frmMakerItem.ShowDialog();
+                //        if (!frmMakerItem.flgCancel)
+                //        {
+                //            txtCode.Text = frmMakerItem.MakerItem;
+                //            txtChangeDate.Text = frmMakerItem.ChangeDate;
+                //            CheckBasedFormPanel();//PTK added
+                //        }
+                //    }
+                //    break;
                     
-                case SearchType.SKUMulti:
-                    using (Search_Product frmSKUCD = new Search_Product(changedate))
-                    {
-                        frmSKUCD.Mode = "2";
-                        frmSKUCD.SKUCD = txtCode.Text;
-                        frmSKUCD.ShowDialog();
+                //case SearchType.SKUMulti:
+                //    using (Search_Product frmSKUCD = new Search_Product(changedate))
+                //    {
+                //        frmSKUCD.Mode = "2";
+                //        frmSKUCD.SKUCD = txtCode.Text;
+                //        frmSKUCD.ShowDialog();
 
-                        if (!frmSKUCD.flgCancel)
-                        {
-                            txtCode.Text = frmSKUCD.SKUCD;
-                            txtChangeDate.Text = frmSKUCD.ChangeDate;
-                            CheckBasedFormPanel();//PTK added
-                        }
-                    }
-                    break;
+                //        if (!frmSKUCD.flgCancel)
+                //        {
+                //            txtCode.Text = frmSKUCD.SKUCD;
+                //            txtChangeDate.Text = frmSKUCD.ChangeDate;
+                //            CheckBasedFormPanel();//PTK added
+                //        }
+                //    }
+                //    break;
                 case SearchType.支払処理:
                     using (FrmSearch_SiharaiNO frmsiharaino = new FrmSearch_SiharaiNO())
                     {
