@@ -97,6 +97,9 @@
             this.colPayConfirmGaku = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount1 = new SMS.CustomControls.dgvInventoryColumn();
             this.colUnpaidAmount2 = new SMS.CustomControls.dgvInventoryColumn();
+            this.colPayPlanNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPayeeCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelHeader.SuspendLayout();
             this.panelDetail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSearchPayment)).BeginInit();
@@ -296,7 +299,10 @@
             this.colPayPlanGaku,
             this.colPayConfirmGaku,
             this.colUnpaidAmount1,
-            this.colUnpaidAmount2});
+            this.colUnpaidAmount2,
+            this.colPayPlanNO,
+            this.colPayPlanDate,
+            this.colPayeeCD});
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -318,6 +324,7 @@
             this.dgvSearchPayment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellContentClick);
             this.dgvSearchPayment.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellEndEdit);
             this.dgvSearchPayment.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSearchPayment_CellLeave);
+            this.dgvSearchPayment.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dgvSearchPayment_CellValidating);
             // 
             // SC_HanyouKeyEnd2
             // 
@@ -760,6 +767,7 @@
             this.txtOther2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOther2.DecimalPlace = 0;
             this.txtOther2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtOther2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtOther2.IntegerPart = 8;
             this.txtOther2.IsCorrectDate = true;
             this.txtOther2.isEnterKeyDown = false;
@@ -787,6 +795,7 @@
             this.txtOther1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOther1.DecimalPlace = 0;
             this.txtOther1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtOther1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtOther1.IntegerPart = 8;
             this.txtOther1.IsCorrectDate = true;
             this.txtOther1.isEnterKeyDown = false;
@@ -814,6 +823,7 @@
             this.txtElectronicBone.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtElectronicBone.DecimalPlace = 0;
             this.txtElectronicBone.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtElectronicBone.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtElectronicBone.IntegerPart = 8;
             this.txtElectronicBone.IsCorrectDate = true;
             this.txtElectronicBone.isEnterKeyDown = false;
@@ -841,6 +851,7 @@
             this.txtBill.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtBill.DecimalPlace = 0;
             this.txtBill.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtBill.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtBill.IntegerPart = 8;
             this.txtBill.IsCorrectDate = true;
             this.txtBill.isEnterKeyDown = false;
@@ -868,6 +879,7 @@
             this.txtOffsetGaku.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtOffsetGaku.DecimalPlace = 0;
             this.txtOffsetGaku.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtOffsetGaku.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtOffsetGaku.IntegerPart = 8;
             this.txtOffsetGaku.IsCorrectDate = true;
             this.txtOffsetGaku.isEnterKeyDown = false;
@@ -895,6 +907,7 @@
             this.txtCash.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtCash.DecimalPlace = 0;
             this.txtCash.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtCash.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtCash.IntegerPart = 8;
             this.txtCash.IsCorrectDate = true;
             this.txtCash.isEnterKeyDown = false;
@@ -1024,6 +1037,7 @@
             this.txtAmount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtAmount.DecimalPlace = 0;
             this.txtAmount.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtAmount.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtAmount.IntegerPart = 8;
             this.txtAmount.IsCorrectDate = true;
             this.txtAmount.isEnterKeyDown = false;
@@ -1048,10 +1062,10 @@
             this.txtFeeKBN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFeeKBN.ClientColor = System.Drawing.Color.White;
             this.txtFeeKBN.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtFeeKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.txtFeeKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtFeeKBN.DecimalPlace = 0;
             this.txtFeeKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.txtFeeKBN.IntegerPart = 0;
+            this.txtFeeKBN.IntegerPart = 1;
             this.txtFeeKBN.IsCorrectDate = true;
             this.txtFeeKBN.isEnterKeyDown = false;
             this.txtFeeKBN.isMaxLengthErr = false;
@@ -1078,6 +1092,7 @@
             this.txtMeigi.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtMeigi.DecimalPlace = 0;
             this.txtMeigi.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtMeigi.ImeMode = System.Windows.Forms.ImeMode.KatakanaHalf;
             this.txtMeigi.IntegerPart = 0;
             this.txtMeigi.IsCorrectDate = true;
             this.txtMeigi.isEnterKeyDown = false;
@@ -1232,7 +1247,7 @@
             this.txtKouzaKBN.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.txtKouzaKBN.DecimalPlace = 0;
             this.txtKouzaKBN.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.txtKouzaKBN.IntegerPart = 0;
+            this.txtKouzaKBN.IntegerPart = 1;
             this.txtKouzaKBN.IsCorrectDate = true;
             this.txtKouzaKBN.isEnterKeyDown = false;
             this.txtKouzaKBN.isMaxLengthErr = false;
@@ -1277,6 +1292,7 @@
             this.txtTransferAmount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
             this.txtTransferAmount.DecimalPlace = 0;
             this.txtTransferAmount.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtTransferAmount.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtTransferAmount.IntegerPart = 10;
             this.txtTransferAmount.IsCorrectDate = true;
             this.txtTransferAmount.isEnterKeyDown = false;
@@ -1415,6 +1431,30 @@
             this.colUnpaidAmount2.TxtType = SMS.CustomControls.dgvInventoryColumn.Type.Normal;
             this.colUnpaidAmount2.UseThousandSeparator = true;
             // 
+            // colPayPlanNO
+            // 
+            this.colPayPlanNO.DataPropertyName = "PayPlanNO";
+            this.colPayPlanNO.HeaderText = "PayPlanNO";
+            this.colPayPlanNO.Name = "colPayPlanNO";
+            this.colPayPlanNO.ReadOnly = true;
+            this.colPayPlanNO.Visible = false;
+            // 
+            // colPayPlanDate
+            // 
+            this.colPayPlanDate.DataPropertyName = "PayPlanDate";
+            this.colPayPlanDate.HeaderText = "PayPlanDate";
+            this.colPayPlanDate.Name = "colPayPlanDate";
+            this.colPayPlanDate.ReadOnly = true;
+            this.colPayPlanDate.Visible = false;
+            // 
+            // colPayeeCD
+            // 
+            this.colPayeeCD.DataPropertyName = "PayeeCD";
+            this.colPayeeCD.HeaderText = "PayeeCD";
+            this.colPayeeCD.Name = "colPayeeCD";
+            this.colPayeeCD.ReadOnly = true;
+            this.colPayeeCD.Visible = false;
+            // 
             // SiharaiTouroku_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1518,5 +1558,8 @@
         private SMS.CustomControls.dgvInventoryColumn colPayConfirmGaku;
         private SMS.CustomControls.dgvInventoryColumn colUnpaidAmount1;
         private SMS.CustomControls.dgvInventoryColumn colUnpaidAmount2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayPlanNO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayPlanDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPayeeCD;
     }
 }

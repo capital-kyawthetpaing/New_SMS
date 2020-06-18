@@ -22,11 +22,11 @@ namespace DL
             return SelectData(dic, "TempoRegiMasterNyuuryoku_Select");
         }
 
-        public DataTable M_StoreBottunGroup_Select()
+        public DataTable M_StoreBottunGroup_Select(string StoreCD)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
-                 
+                 { "@StoreCD",new ValuePair {value1=SqlDbType.Int,value2=StoreCD} }
 
             };
 
