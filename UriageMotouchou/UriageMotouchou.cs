@@ -103,22 +103,22 @@ namespace UriageMotouchou
         #region 印刷するボタンPrintSec
         protected override void PrintSec()
         {
-            if(ErrorCheck())
+            if (ErrorCheck())
             {
                 if (PrintMode != EPrintMode.DIRECT)
                     return;
 
                 ume = GetDataInfo();
                 dtReport = umbl.UriageMotochou_PrintSelect(ume);
-                if(dtReport.Rows.Count>0)
+                if (dtReport.Rows.Count > 0)
                 {
                     string StoreCD = cboStore.SelectedValue.ToString();
                     string YYYYMM = txtTargetTo.Text.Replace("/", "");
                     if (umbl.CheckData(1, StoreCD, YYYYMM))
                     {
                         //月次処理（債権集計処理）を起動 Exe Console Run
-                        string ProgramID = "GetsujiSaikenKeisanSyori";
-                        OpenForm(ProgramID, txtTagetFrom.Text);
+                        //string ProgramID = "GetsujiSaikenKeisanSyori";
+                        //OpenForm(ProgramID, txtTagetFrom.Text);
 
                         //印刷処理
                         PrintDataSelect();
@@ -134,9 +134,9 @@ namespace UriageMotouchou
                     umbl.ShowMessage("E128");
                     txtTagetFrom.Focus();
                 }
-               
+
             }
-           
+
         }
 
         private void OpenForm(string programID, string YYYYMM)
@@ -151,9 +151,8 @@ namespace UriageMotouchou
             }
             catch
             {
-                //skh_bl.ShowMessage("E138");
+                umbl.ShowMessage("E138");
             }
-
         }
 
         private void PrintDataSelect()

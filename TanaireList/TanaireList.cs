@@ -292,7 +292,7 @@ namespace TanaireList
                 if (dt1 > dt2)
                 {
                     tnlbl.ShowMessage("E104");
-                    txtStartDate.Focus();
+                    txtEndDate.Focus();
                     return false;
                 }
 
@@ -399,7 +399,7 @@ namespace TanaireList
                     if (dt1 > dt2)
                     {
                         tnlbl.ShowMessage("E104");
-                        txtStartDate.Focus();
+                        txtEndDate.Focus();
                     }
                     else
                         cboSouko.Focus();
