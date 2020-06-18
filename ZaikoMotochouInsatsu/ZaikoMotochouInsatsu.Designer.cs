@@ -273,7 +273,7 @@
             this.cboSouko.MaxLength = 10;
             this.cboSouko.MoveNext = true;
             this.cboSouko.Name = "cboSouko";
-            this.cboSouko.Size = new System.Drawing.Size(200, 20);
+            this.cboSouko.Size = new System.Drawing.Size(280, 20);
             this.cboSouko.TabIndex = 1;
             this.cboSouko.SelectedIndexChanged += new System.EventHandler(this.cboSouko_SelectedIndexChanged);
             // 

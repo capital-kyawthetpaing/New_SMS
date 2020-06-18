@@ -145,7 +145,7 @@ namespace TanaireList
 
                     try
                     {
-                        if (dtPrint == null)
+                        if (dtPrint == null || dtPrint.Rows.Count <= 0)
                         {
                             return;
                         }
@@ -160,7 +160,7 @@ namespace TanaireList
                             case EPrintMode.DIRECT:
 
                                 ret = bbl.ShowMessage("Q202");
-                                if (ret == DialogResult.Cancel)
+                                if (ret == DialogResult.No)
                                 {
                                     return;
                                 }
@@ -292,7 +292,7 @@ namespace TanaireList
                 if (dt1 > dt2)
                 {
                     tnlbl.ShowMessage("E104");
-                    txtStartDate.Focus();
+                    txtEndDate.Focus();
                     return false;
                 }
 
@@ -399,7 +399,7 @@ namespace TanaireList
                     if (dt1 > dt2)
                     {
                         tnlbl.ShowMessage("E104");
-                        txtStartDate.Focus();
+                        txtEndDate.Focus();
                     }
                     else
                         cboSouko.Focus();
