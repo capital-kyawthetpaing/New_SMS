@@ -48,6 +48,7 @@ namespace ZaikoKanriHyou
             F11Visible = false;
             scITEM.CodeWidth = 600;
             scSKUCD.CodeWidth = 600;
+            scMakerShohinCD.CodeWidth = 600;
         }
 
         private void SetRequiredField()
@@ -63,6 +64,7 @@ namespace ZaikoKanriHyou
         {
             Clear(panelDetail);
             txtTargetDate.Focus();
+            cboSouko.SelectedValue = SoukoCD;
         }
         public override void FunctionProcess(int Index)
         {
