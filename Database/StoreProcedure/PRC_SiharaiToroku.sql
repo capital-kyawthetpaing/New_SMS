@@ -197,7 +197,7 @@ BEGIN
 
             --伝票番号採番
             EXEC Fnc_GetNumber
-                18,             --in伝票種別 21
+                18,             --in伝票種別 18
                 @PayDate,      --in基準日
                 @StoreCD,      --in店舗CD
                 @Operator,
@@ -233,7 +233,7 @@ BEGIN
                     
                     --伝票番号採番
                     EXEC Fnc_GetNumber
-                        9,             --in伝票種別 21
+                        9,             --in伝票種別 9
                         @PayDate,      --in基準日
                         @StoreCD,      --in店舗CD
                         @Operator,
@@ -403,6 +403,17 @@ BEGIN
             
             SET @PayNORows = @PayNORows + 1;
             
+            --処理履歴データへ更新
+            SET @KeyItem = @PayNO;
+                
+            EXEC L_Log_Insert_SP
+                @SYSDATETIME,
+                @Operator,
+                @Program,
+                @PC,
+                @OperateModeNm,
+                @KeyItem;
+	            
             --次の行のデータを取得して変数へ値をセット
             FETCH NEXT FROM CUR_TABLE
             INTO @tblPayeeCD, @tblPayPlanDate, @tblRows, @tblUpdateFlg;
@@ -555,36 +566,54 @@ BEGIN
         exec dbo.L_PayHistory_Insert @PayNO,@LargePayNO
 
     ----SheetE②
-        Update D_PayPlan
-	        set UpdateOperator = @Operator,
-	        UpdateDateTime = @SYSDATETIME
-        from D_PayPlan as dpp 
-        inner join D_PayDetails dpd
-        on dpd.PayPlanNO =  dpp.PayPlanNO
-        Where dpd.PayNO = @PayNO
-            
+        IF ISNULL(@LargePayNO,'') = ''
+        BEGIN
+            Update D_PayPlan
+                set UpdateOperator = @Operator,
+                UpdateDateTime = @SYSDATETIME
+            from D_PayPlan as dpp 
+            inner join D_PayDetails dpd
+            on dpd.PayPlanNO =  dpp.PayPlanNO
+            Where dpd.PayNO = @PayNO
+            ;
+        END
+        ELSE
+        BEGIN
+            Update D_PayPlan
+                set UpdateOperator = @Operator,
+                UpdateDateTime = @SYSDATETIME
+            from D_PayPlan as dpp 
+            inner join D_PayDetails dpd
+            on dpd.PayPlanNO =  dpp.PayPlanNO
+            where EXISTS(SELECT 1 FROM D_Pay AS D
+                    WHERE D.LargePayNO = @LargePayNO
+                    AND D.PayNO = dpd.PayNO)
+            ;
+        END
+        
     ----SheetF②
         Update D_PayCloseHistory
-        Set ProcessingKBN = 1,
-        UpdateOperator = @Operator,
-        UpdateDateTime = @SYSDATETIME
+            Set ProcessingKBN = 1,
+            UpdateOperator = @Operator,
+            UpdateDateTime = @SYSDATETIME
         From D_PayCloseHistory dpch 
         inner join D_Pay dp 
         on dp.PayCloseNO = dpch.PayCloseNO
-        Where dp.PayNO = @PayNO
-    
+        Where dp.PayNO = (CASE WHEN @PayNO <> '' THEN @PayNO ELSE dp.PayNO END)
+        AND dp.LargePayNO = (CASE WHEN @LargePayNO <> '' THEN @LargePayNO ELSE LargePayNO END)
+        ;
+
+        --処理履歴データへ更新
+        SET @KeyItem = ISNULL(@LargePayNO,@PayNO);
+            
+        EXEC L_Log_Insert_SP
+            @SYSDATETIME,
+            @Operator,
+            @Program,
+            @PC,
+            @OperateModeNm,
+            @KeyItem;
     END
-	
-    --処理履歴データへ更新
-    SET @KeyItem = @PayNO;
-        
-    EXEC L_Log_Insert_SP
-        @SYSDATETIME,
-        @Operator,
-        @Program,
-        @PC,
-        @OperateModeNm,
-        @KeyItem;
 
     SET @OutPayNO = @PayNO;
     

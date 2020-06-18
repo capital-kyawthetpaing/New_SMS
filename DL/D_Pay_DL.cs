@@ -153,7 +153,8 @@ namespace DL
 
             return InsertUpdateDeleteData(dic, "D_Pay_Delete");
         }
-        public bool D_Siharai_Exec(D_Pay_Entity dpe, DataTable dt, short operationMode)
+
+        public bool D_Siharai_Exec(D_Pay_Entity dpe, DataTable dt, DataTable dtD, short operationMode)
         {
             string sp = "PRC_SiharaiToroku";
 
@@ -163,14 +164,14 @@ namespace DL
 
             AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
             AddParam(command, "@PayNo", SqlDbType.VarChar, dpe.PayNo);
+            AddParam(command, "@LargePayNO", SqlDbType.VarChar, dpe.LargePayNO);
             //AddParam(command, "@StoreCD", SqlDbType.VarChar, dpe.StoreCD);
 
-            AddParam(command, "@StaffCD", SqlDbType.VarChar, dpe.StaffCD);
             AddParam(command, "@PayDate", SqlDbType.VarChar, dpe.PayDate);
-            AddParam(command, "@Program", SqlDbType.VarChar, dpe.ProgramID);
-            AddParam(command, "@TotalPayGaku", SqlDbType.Money, dpe.PayGakuTotol);
+            AddParam(command, "@StaffCD", SqlDbType.VarChar, dpe.StaffCD);      
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
+            AddParamForDataTable(command, "@TableD", SqlDbType.Structured, dtD);
             AddParam(command, "@Operator", SqlDbType.VarChar, dpe.Operator);
             AddParam(command, "@PC", SqlDbType.VarChar, dpe.PC);
 
