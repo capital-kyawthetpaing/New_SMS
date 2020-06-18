@@ -120,12 +120,11 @@
             // 
             // scSKUCD
             // 
-            this.scSKUCD.AutoSize = true;
             this.scSKUCD.ChangeDate = "";
             this.scSKUCD.ChangeDateWidth = 100;
             this.scSKUCD.Code = "";
-            this.scSKUCD.CodeWidth = 190;
-            this.scSKUCD.CodeWidth1 = 190;
+            this.scSKUCD.CodeWidth = 600;
+            this.scSKUCD.CodeWidth1 = 600;
             this.scSKUCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSKUCD.DataCheck = false;
             this.scSKUCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -135,9 +134,9 @@
             this.scSKUCD.Location = new System.Drawing.Point(150, 143);
             this.scSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.scSKUCD.Name = "scSKUCD";
-            this.scSKUCD.NameWidth = 350;
+            this.scSKUCD.NameWidth = 280;
             this.scSKUCD.SearchEnable = true;
-            this.scSKUCD.Size = new System.Drawing.Size(223, 27);
+            this.scSKUCD.Size = new System.Drawing.Size(633, 27);
             this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.scSKUCD.TabIndex = 4;
             this.scSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -148,12 +147,11 @@
             // 
             // scITEM
             // 
-            this.scITEM.AutoSize = true;
             this.scITEM.ChangeDate = "";
             this.scITEM.ChangeDateWidth = 100;
             this.scITEM.Code = "";
-            this.scITEM.CodeWidth = 190;
-            this.scITEM.CodeWidth1 = 190;
+            this.scITEM.CodeWidth = 600;
+            this.scITEM.CodeWidth1 = 600;
             this.scITEM.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scITEM.DataCheck = false;
             this.scITEM.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -163,9 +161,9 @@
             this.scITEM.Location = new System.Drawing.Point(150, 119);
             this.scITEM.Margin = new System.Windows.Forms.Padding(0);
             this.scITEM.Name = "scITEM";
-            this.scITEM.NameWidth = 350;
+            this.scITEM.NameWidth = 280;
             this.scITEM.SearchEnable = true;
-            this.scITEM.Size = new System.Drawing.Size(223, 27);
+            this.scITEM.Size = new System.Drawing.Size(633, 27);
             this.scITEM.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.scITEM.TabIndex = 3;
             this.scITEM.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -176,7 +174,6 @@
             // 
             // scMakerShohinCD
             // 
-            this.scMakerShohinCD.AutoSize = true;
             this.scMakerShohinCD.ChangeDate = "";
             this.scMakerShohinCD.ChangeDateWidth = 100;
             this.scMakerShohinCD.Code = "";
@@ -194,7 +191,7 @@
             this.scMakerShohinCD.NameWidth = 280;
             this.scMakerShohinCD.SearchEnable = true;
             this.scMakerShohinCD.Size = new System.Drawing.Size(633, 28);
-            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.MakerItem;
             this.scMakerShohinCD.TabIndex = 2;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;
