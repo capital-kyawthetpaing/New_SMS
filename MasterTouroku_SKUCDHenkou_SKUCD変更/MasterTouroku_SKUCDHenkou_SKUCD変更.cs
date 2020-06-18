@@ -209,20 +209,10 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         sizemissing[i] = Convert.ToInt32(sizeNewtxtbox_.Text);
                     }
 
-                    //var number = int.Parse(sizeNewtxtbox_.Text);
-                    //if(number != 0)
-                    //{
-                    //    if (number < min)
-                    //        min = number;
-                    //    else if (number > max)
-                    //        max = number;
-                    //}
-
                     if (sizeCheckbox_.Checked)
                     {
                         max = int.Parse(sizeNewtxtbox_.Text);
-                    }
-                    
+                    }                   
                 }
                 if (SelectCheck(sizemissing))
                 {
@@ -230,6 +220,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     txtnewsize10.Focus();
                     return false;
                 }
+
                 if (HasDuplicates(sizeArray))
                 {
                     mskubl.ShowMessage("E105");
@@ -251,9 +242,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                 int[] colormissing = new int[20];
                 for (int i = 0; i < 20; i++)
                 {
-                    var colorNewtxtbox_ = Controls.Find("txtnewsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
-                    var colorOldtxtbox_ = Controls.Find("txtoldsize" + (i + 1).ToString(), true)[0] as CKM_TextBox;
-                    var colorCheckbox_ = Controls.Find("ckM_CheckBox" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorNewtxtbox_ = Controls.Find("txtnewcolor" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorOldtxtbox_ = Controls.Find("txtoldcolor" + (i + 1).ToString(), true)[0] as CKM_TextBox;
+                    var colorCheckbox_ = Controls.Find("ColorDelChk" + (i + 1).ToString(), true)[0] as CKM_CheckBox;
                     
                     if (!string.IsNullOrWhiteSpace(colorOldtxtbox_.Text))
                     {
@@ -269,7 +260,20 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                     {
                         sizemissing[i] = Convert.ToInt32(colorNewtxtbox_.Text);
                     }
+
+                    if (colorCheckbox_.Checked)
+                    {
+                        max = int.Parse(colorCheckbox_.Text);
+                    }
                 }
+
+                if (SelectCheck(sizemissing))
+                {
+                    mskubl.ShowMessage("E229");
+                    txtnewcolor10.Focus();
+                    return false;
+                }
+
                 if (HasDuplicates(colorArray))
                 {
                     mskubl.ShowMessage("E105");
@@ -332,7 +336,6 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
             }
             return total;
         }
-
 
         private void F11Display_Click(object sender, EventArgs e)
         {
