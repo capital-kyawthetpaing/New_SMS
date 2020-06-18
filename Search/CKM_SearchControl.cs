@@ -1583,6 +1583,7 @@ namespace Search
                             txtCode.Text = frmsiharaino.ID;
                             txtChangeDate.Text = frmsiharaino.date;
                             lblName.Text = frmsiharaino.parName;
+                            CheckBasedFormPanel();
                         }
                     }
                     break;

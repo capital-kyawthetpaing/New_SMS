@@ -98,9 +98,9 @@ namespace BL
             return mkzdl.M_Kouza_FeeSelect(mkze);
         }
 
-        public bool D_Siharai_Exec(D_Pay_Entity dpe, DataTable dt, short operationMode)
+        public bool D_Siharai_Exec(D_Pay_Entity dpe, DataTable dt, DataTable dtD, short operationMode)
         {
-            return dpdl.D_Siharai_Exec(dpe, dt, operationMode);
+            return dpdl.D_Siharai_Exec(dpe, dt, dtD, operationMode);
         }
     }
 }
