@@ -526,7 +526,7 @@ namespace PickingList
                 if (result > 0)
                 {
                     bbl.ShowMessage("E104");
-                    txtDateFrom1.Focus();
+                    txtDateTo1.Focus();
                     return false;
                 }
             }
@@ -553,7 +553,7 @@ namespace PickingList
                 if (result > 0)
                 {
                     bbl.ShowMessage("E104");
-                    txtDateFrom2.Focus();
+                    txtDateTo2.Focus();
                     return false;
                 }
             }
@@ -598,7 +598,7 @@ namespace PickingList
                     if (result > 0)
                     {
                         bbl.ShowMessage("E104");
-                        txtDateFrom1.Focus();
+                        txtDateTo1.Focus();
                     }
                 }
             }
@@ -615,7 +615,7 @@ namespace PickingList
                     if (result > 0)
                     {
                         bbl.ShowMessage("E104");
-                        txtDateFrom2.Focus();
+                        txtDateTo2.Focus();
                     }
                 }
             }
