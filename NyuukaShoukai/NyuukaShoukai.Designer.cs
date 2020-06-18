@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.statusChk1 = new CKM_Controls.CKM_CheckBox();
             this.statusChk2 = new CKM_Controls.CKM_CheckBox();
@@ -495,10 +494,10 @@
             this.ScItem.Location = new System.Drawing.Point(934, 99);
             this.ScItem.Margin = new System.Windows.Forms.Padding(0);
             this.ScItem.Name = "ScItem";
-            this.ScItem.NameWidth = 280;
+            this.ScItem.NameWidth = 350;
             this.ScItem.SearchEnable = true;
             this.ScItem.Size = new System.Drawing.Size(633, 27);
-            this.ScItem.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.ScItem.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.ScItem.TabIndex = 14;
             this.ScItem.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScItem.UseChangeDate = false;
@@ -523,10 +522,10 @@
             this.ScSKUCD.Location = new System.Drawing.Point(934, 134);
             this.ScSKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSKUCD.Name = "ScSKUCD";
-            this.ScSKUCD.NameWidth = 280;
+            this.ScSKUCD.NameWidth = 350;
             this.ScSKUCD.SearchEnable = true;
             this.ScSKUCD.Size = new System.Drawing.Size(633, 27);
-            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
+            this.ScSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.ScSKUCD.TabIndex = 15;
             this.ScSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScSKUCD.UseChangeDate = false;
@@ -639,17 +638,17 @@
             this.dgvNyuukaShoukai.AllowUserToAddRows = false;
             this.dgvNyuukaShoukai.AllowUserToDeleteRows = false;
             this.dgvNyuukaShoukai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvNyuukaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvNyuukaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvNyuukaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvNyuukaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvNyuukaShoukai.ColumnHeadersHeight = 25;
             this.dgvNyuukaShoukai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colDate,
@@ -671,14 +670,6 @@
             this.colArrivalNO,
             this.colPurchaseNO,
             this.colVendor});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvNyuukaShoukai.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvNyuukaShoukai.EnableHeadersVisualStyles = false;
             this.dgvNyuukaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvNyuukaShoukai.Location = new System.Drawing.Point(10, 267);
