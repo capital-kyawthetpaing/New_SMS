@@ -87,7 +87,7 @@ namespace SiharaiYoteiHyou
                 if (dt1 > dt2)
                 {
                     shyhbl.ShowMessage("E104");
-                    txtPaymentDueDateFrom.Focus();
+                    txtPaymentDueDateTo.Focus();
                     return false;
                 }
 
@@ -491,7 +491,7 @@ namespace SiharaiYoteiHyou
                     if (dt1 > dt2)
                     {
                         shyhbl.ShowMessage("E104");
-                        txtPaymentDueDateFrom.Focus();
+                        txtPaymentDueDateTo.Focus();
                     }
                 }
             }
