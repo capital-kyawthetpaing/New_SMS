@@ -18,7 +18,7 @@ namespace TempoRegiPoint
         private const string CUSTOMER_CD = "cusT3";
         private const string CUSTOMER_NAME = "タノハタ・サン";
 #endif
-        
+
 #if USE_TEST_PRINTER
         /// <summary>
         /// デバッグ用プリンタ名
@@ -175,7 +175,7 @@ namespace TempoRegiPoint
             }
             else
             {
-                if(!SearchCustomer())
+                if (!SearchCustomer())
                 {
                     return false;
                 }
@@ -189,7 +189,7 @@ namespace TempoRegiPoint
             }
 
             var ticketUnit = bl.D_TicketUnitSelect(StoreCD);
-            if(ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
+            if (ticketUnit.Rows.Count == 0 || (IssuePoint % Convert.ToInt32(ticketUnit.Rows[0]["TicketUnit"])) != 0)
             {
                 bl.ShowMessage("E198", "該当店舗の引換券発行単位の倍数以外", TxtLastPoint.Text);
                 TxtIssuePoint.Focus();
@@ -282,7 +282,7 @@ namespace TempoRegiPoint
 #endif
 
             // 発行枚数分印刷
-            for(var count = 0; count < IssuedNumber; count++)
+            for (var count = 0; count < IssuedNumber; count++)
             {
                 report.PrintToPrinter(0, false, 0, 0);
             }
@@ -381,7 +381,7 @@ namespace TempoRegiPoint
         /// <remarks>フォントサイズが0の場合は設定しない</remarks>
         private void ApplyFont(TempoRegiPoint_Coupon report, string name, float size, int bold)
         {
-            if(size > 0)
+            if (size > 0)
             {
                 ((TextObject)report.Section3.ReportObjects[name]).ApplyFont(
                     new Font(FONT_TYPE, size, bold == 1 ? FontStyle.Bold : FontStyle.Regular)
@@ -490,7 +490,7 @@ namespace TempoRegiPoint
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if(ErrorCheck())
+                if (ErrorCheck())
                 {
                     this.btnClose.Focus();
                 }
