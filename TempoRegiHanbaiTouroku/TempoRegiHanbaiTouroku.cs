@@ -1535,9 +1535,7 @@ namespace TempoRegiHanbaiTouroku
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
                     if (Save((int)meCol.CUSTOMER))
-                        //あたかもTabキーが押されたかのようにする
-                        //Shiftが押されている時は前のコントロールのフォーカスを移動
-                        ProcessTabKey(!e.Shift);
+                        txtJanCD.Focus();
                 }
             }
             catch (Exception ex)
