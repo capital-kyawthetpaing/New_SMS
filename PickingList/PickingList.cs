@@ -682,6 +682,7 @@ namespace PickingList
             {
                 txtDateFrom1.Enabled = false;
                 txtDateTo1.Enabled = false;
+                txtDateFrom1.Text = string.Empty;
                 txtDateTo1.Text = string.Empty;
             }
         }
@@ -696,6 +697,7 @@ namespace PickingList
             }
             else
             {
+                ScPickingNo1.TxtCode.Text = string.Empty;
                 DisablePanel(panel1);
             }
         }
@@ -713,6 +715,7 @@ namespace PickingList
             {
                 txtDateFrom2.Enabled = false;
                 txtDateTo2.Enabled = false;
+                txtDateFrom2.Text = string.Empty;
                 txtDateTo2.Text = string.Empty;
             }
         }
@@ -725,6 +728,7 @@ namespace PickingList
             }
             else
             {
+                ScPickingNo2.TxtCode.Text = string.Empty;
                 DisablePanel(panel2);
             }
         }

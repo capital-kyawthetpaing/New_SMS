@@ -484,7 +484,7 @@
             this.cboSouko.MaxLength = 10;
             this.cboSouko.MoveNext = true;
             this.cboSouko.Name = "cboSouko";
-            this.cboSouko.Size = new System.Drawing.Size(161, 20);
+            this.cboSouko.Size = new System.Drawing.Size(265, 20);
             this.cboSouko.TabIndex = 3;
             // 
             // ckM_Label10

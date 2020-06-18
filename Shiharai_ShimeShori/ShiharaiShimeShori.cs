@@ -333,6 +333,7 @@ namespace Shiharai_ShimeShori
                         //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
                         //Shiiresaki.Value2 = Shiiresaki.LabelText;
                         F11();
+                        
                     }
                     else
                     {
@@ -340,6 +341,8 @@ namespace Shiharai_ShimeShori
                         Shiiresaki.SetFocus(1);
                     }
                 }
+                else { F11(); }
+               
             }
         }
 
