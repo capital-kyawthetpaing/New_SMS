@@ -43,6 +43,7 @@ namespace ShiireShoukaiDetails
             scItem.CodeWidth = 600;
             scSkuCD.CodeWidth = 600;
             dgv_PurchaseDetails.AllowUserToAddRows = false;
+            ModeVisible = false;
         }
 
         /// <summary>
@@ -139,7 +140,11 @@ namespace ShiireShoukaiDetails
                 }
             }
         }
-
+        public void Clear()
+        {
+            Clear(panel1);
+            txtPurchaseDate1.Focus();
+        }
         public override void FunctionProcess(int index)
         {
             CKM_SearchControl sc = new CKM_SearchControl();
@@ -153,7 +158,7 @@ namespace ShiireShoukaiDetails
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(OperationMode);
-                        txtPurchaseDate1.Focus();
+                        Clear();
                     }
                     break;
                 case 10:
@@ -398,12 +403,12 @@ namespace ShiireShoukaiDetails
                 return false;
             }
 
-            if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-            {
-                bbl.ShowMessage("E141");
-                cboStore.Focus();
-                return false;
-            }
+            //if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+            //{
+            //    bbl.ShowMessage("E141");
+            //    cboStore.Focus();
+            //    return false;
+            //}
             return true;
         }
 

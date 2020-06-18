@@ -1537,7 +1537,10 @@ namespace Search
                         {
                             txtCode.Text = frmJanCD.JANCD;
                             txtChangeDate.Text = frmJanCD.ChangeDate;
-                            CheckBasedFormPanel();//PTK added
+                            //KTP 2020/06/18
+                            //Prevent to Move next control with no record select
+                            if(!string.IsNullOrWhiteSpace(TxtCode.Text))
+                                CheckBasedFormPanel();//PTK added
                         }
                     }
                     break;
@@ -1583,6 +1586,7 @@ namespace Search
                             txtCode.Text = frmsiharaino.ID;
                             txtChangeDate.Text = frmsiharaino.date;
                             lblName.Text = frmsiharaino.parName;
+                            CheckBasedFormPanel();
                         }
                     }
                     break;

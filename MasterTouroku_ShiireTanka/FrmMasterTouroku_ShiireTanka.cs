@@ -28,13 +28,11 @@ namespace MasterTouroku_ShiireTanka
         string choiceq = "";
         public FrmMasterTouroku_ShiireTanka()
         {
-
             InitializeComponent();
             bl = new MasterTouroku_ShiireTanka_BL();
             m_IOE=new M_ItemOrderPrice_Entity();
             m_IE=new M_ITEM_Entity();
             dv = new DataView();
-            
         }
         private void FrmMasterTouroku_ShiireTanka_Load(object sender, EventArgs e)
         {
@@ -132,6 +130,18 @@ namespace MasterTouroku_ShiireTanka
                     {
                         shiiresaki.Value1 = shiiresaki.TxtCode.Text;
                         shiiresaki.Value2 = shiiresaki.LabelText;
+                        //DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 4,shiiresaki.TxtCode.Text);
+                        //string deflg = "";
+                        //if (dtdeflg.Rows.Count >0)
+                        //{
+                        //     deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
+                        //}
+                        //if(deflg == "1")
+                        //{
+                        //    bbl.ShowMessage("E119");
+                        //    shiiresaki.Focus();
+                        //}
+                        //string delflg=
                     }
                     else
                     {
@@ -589,7 +599,7 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-        private void Btn_display_Click(object sender, EventArgs e)
+        private void Btn_F11_Click(object sender, EventArgs e)
         {
             F11();
         }
@@ -650,11 +660,14 @@ namespace MasterTouroku_ShiireTanka
         {
             DataTable dataTable = new DataTable();
                 string selectq="";
-                selectq = "  ItemCD = '" + itemcd.TxtCode.Text + "'";
+                selectq = " VendorCD ='" + shiiresaki.TxtCode.Text + "'";
+                selectq += " and StoreCD ='" + CB_store.SelectedValue.ToString() + "'";
+                selectq += " and ItemCD = '" + itemcd.TxtCode.Text + "'";
                 selectq += " and ChangeDate = '" + TB_date_add.Text + "'";
-                selectq += " and Rate = '" + TB_rate.Text + "'";
-                selectq += " and PriceOutTax = '" + LB_priceouttax.Text + "'";
-                selectq += " and PriceWithoutTax = '" + TB_pricewithouttax.Text + "'";
+                
+                //selectq += " and Rate = '" + TB_rate.Text + "'";
+                //selectq += " and PriceOutTax = '" + LB_priceouttax.Text + "'";
+                //selectq += " and PriceWithoutTax = '" + TB_pricewithouttax.Text + "'";
                 if (GV_item.DataSource !=null)
                 {
                 //dv.RowFilter = selectq;
@@ -870,6 +883,7 @@ namespace MasterTouroku_ShiireTanka
                 string date = "";
                 date = " and ChangeDate = '" + TB_dateE.Text + "'";
                 date += " and CheckBox =1";
+                //if()
                 string copyq = choiceq +date;
                 DataRow[] dr = dt.Select(copyq);
                 if(dr.Length ==0)
@@ -886,6 +900,11 @@ namespace MasterTouroku_ShiireTanka
                         dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                     }
                     dt.Merge(dt1);
+                }
+                else
+                {
+                    bbl.ShowMessage("E224");
+                    TB_dateE.Focus();
                 }
             }
         }
@@ -910,6 +929,23 @@ namespace MasterTouroku_ShiireTanka
                 String   datat = bl.DataTableToXml(dt);
                 //string storecd=CB_store.SelectedValue.ToString()
                 DataTable dtr = bl.M_Itemorderprice_Insert(datat, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
+            }
+        }
+
+        private void GV_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                string ck = GV_item.Rows[e.RowIndex].Cells["ck"].State.ToString();
+                
+                if(ck =="Selected")
+                {
+                    GV_item.Rows[e.RowIndex].Cells["ck"].Value = "1";
+                }
+                else
+                {
+                    GV_item.Rows[e.RowIndex].Cells["ck"].Value = "0";
+                }
             }
         }
     }

@@ -157,7 +157,7 @@ namespace Search
         {
             if (dgvSiharaiNO.CurrentRow != null && dgvSiharaiNO.CurrentRow.Index >= 0)
             {
-                ID = dgvSiharaiNO.CurrentRow.Cells["colPayeeCD"].Value.ToString();
+                ID = dgvSiharaiNO.CurrentRow.Cells["colSiharaiNO"].Value.ToString();
                 date = dgvSiharaiNO.CurrentRow.Cells["colPaymentDate"].Value.ToString();
                 parName = dgvSiharaiNO.CurrentRow.Cells["colPayeeName"].Value.ToString();
                 this.Close();

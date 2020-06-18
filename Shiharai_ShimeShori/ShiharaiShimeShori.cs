@@ -42,6 +42,7 @@ namespace Shiharai_ShimeShori
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
+            Btn_F12.Enabled = false;
         }
         private void RequireFields()
         {
@@ -68,9 +69,9 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                     }
                     break;
-                case 11:
-                    F11();
-                    break;
+                //case 11:
+                //    F11();
+                //    break;
                 case 12:
                     F12();
                     break;
@@ -80,57 +81,61 @@ namespace Shiharai_ShimeShori
         {
             dpch_entity = GetDataEntity();
             string ItemType = cboProcessType.Text;
-
-            switch (ItemType)
-            {
-                case "支払締":
-                    if (ErrorCheck(1))
-                    {
-                        if (bbl.ShowMessage("Q101") == DialogResult.Yes)
+            //if (dgvPaymentClose.DataSource != null)
+            //{
+                switch (ItemType)
+                {
+                    case "支払締":
+                        if (ErrorCheck(1))
                         {
-                            if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1) )
+                            if (bbl.ShowMessage("Q101") == DialogResult.Yes)
                             {
-                                sss_bl.ShowMessage("I101");
-                                ChangeMode(EOperationMode.INSERT);
+                                if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 1))
+                                {
+                                    sss_bl.ShowMessage("I101");
+                                    ChangeMode(EOperationMode.INSERT);
+                                }
                             }
                         }
-                    }
-                    break;
+                        break;
 
-                case "支払締キャンセル":
-                    if (ErrorCheck(2))
-                    {
-                        if (bbl.ShowMessage("Q102") == DialogResult.Yes)
+                    case "支払締キャンセル":
+                        if (ErrorCheck(2))
                         {
-                            if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 2))
+                            if (bbl.ShowMessage("Q102") == DialogResult.Yes)
                             {
-                                sss_bl.ShowMessage("I101");
-                                ChangeMode(EOperationMode.INSERT);
+                                if (sss_bl.Insert_ShiHaRaiShime_PaymentClose(dpch_entity, 2))
+                                {
+                                    sss_bl.ShowMessage("I101");
+                                    ChangeMode(EOperationMode.INSERT);
+                                }
                             }
                         }
-                    }
-                    break;
-            }
+                        break;
+                }
+            //}
         }
         private void F11()
         {
+           
             dpch_entity = GetDataEntity();
-            string ItemType = cboProcessType.Text;
-            switch (ItemType)
-            {
-                case "支払締":
-                    if (ErrorCheck(1))
-                    {
-                        BindGrid();
-                    }
-                    break;
-                case "支払締キャンセル":
-                    if (ErrorCheck(2))
-                    {
-                        BindGrid();
-                    }
-                    break;
-            }
+            BindGrid();
+            //string ItemType = cboProcessType.Text;
+            //switch (ItemType)
+            //{
+            //    case "支払締":
+            //        if (ErrorCheck(1))
+            //        {
+            //            BindGrid();
+            //        }
+            //        break;
+            //    case "支払締キャンセル":
+            //        if (ErrorCheck(2))
+            //        {
+            //            BindGrid();
+            //        }
+            //        break;
+            //}
         }
         private void BindGrid()
         {
@@ -146,21 +151,23 @@ namespace Shiharai_ShimeShori
                 dgvPaymentClose.CurrentRow.Selected = true;
                 dgvPaymentClose.Enabled = true;
                 dgvPaymentClose.Focus();
+                Btn_F12.Enabled = true;
             }
             else
             {
                 dgvPaymentClose.DataSource = null;
                 bbl.ShowMessage("E128");
+                Btn_F12.Enabled = false;
             }
         }
         private bool ErrorCheck(int Type)
         {
-            if (!string.IsNullOrEmpty(ScPaymentCD.TxtCode.Text))
+            if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
             {
-                if (!ScPaymentCD.IsExists(2))
+                if (!Shiiresaki.IsExists(2))
                 {
                     sss_bl.ShowMessage("E101");
-                    ScPaymentCD.SetFocus(1);
+                    Shiiresaki.SetFocus(1);
                     return false;
                 }
             }
@@ -196,7 +203,6 @@ namespace Shiharai_ShimeShori
                         cboProcessType.Focus();
                         return false;
                     }
-
                     if (sss_bl.Select_PaymentClose(dpch_entity, 4))//Step3
                     {
                         sss_bl.ShowMessage("S015");
@@ -216,11 +222,11 @@ namespace Shiharai_ShimeShori
             dpch_entity = new D_PayCloseHistory_Entity()
             {
                 PaymentDate = txtPayCloseDate.Text,
-                PaymentCD = ScPaymentCD.TxtCode.Text,
+                PaymentCD = Shiiresaki.TxtCode.Text,
                 ProcessMode = ModeText,
                 InsertOperator = InOperatorCD,
                 ProgramID = InProgramID,
-                Key = ScPaymentCD.TxtCode.Text + " " + txtPayCloseDate.Text,
+                Key = Shiiresaki.TxtCode.Text + " " + txtPayCloseDate.Text,
                 PC = InPcID
             };
 
@@ -235,8 +241,8 @@ namespace Shiharai_ShimeShori
                     cboProcessType.Text = string.Empty;
                     cboProcessType.SelectedText = "支払締";
                     txtPayCloseDate.Text = string.Empty;
-                    ScPaymentCD.TxtCode.Text = string.Empty;
-                    ScPaymentCD.LabelText = string.Empty;
+                    Shiiresaki.TxtCode.Text = string.Empty;
+                    Shiiresaki.LabelText = string.Empty;
                     F2Visible = false;
                     F3Visible = false;
                     F4Visible = false;
@@ -268,37 +274,7 @@ namespace Shiharai_ShimeShori
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Supplier_CodeKeyDown(object sender, KeyEventArgs e)
-        {
-            if (Keys.Enter == e.KeyCode)
-            {
-                if (!string.IsNullOrEmpty(ScPaymentCD.TxtCode.Text))
-                {
-                    ScPaymentCD.ChangeDate = bbl.GetDate();
-                    if (ScPaymentCD.SelectData())
-                    {
-                        ScPaymentCD.Value1 = ScPaymentCD.TxtCode.Text;
-                        ScPaymentCD.Value2 = ScPaymentCD.LabelText;
-                        F11();
-                    }
-                    else
-                    {
-                        sss_bl.ShowMessage("E101");
-                        ScPaymentCD.SetFocus(1);
-                    }
-                }
-                else
-                {
-
-                }
-            }
-        }
-        private void Supplier_Enter(object sender, EventArgs e)
-        {
-            //ScPaymentCD.ChangeDate = sss_bl.GetDate();
-            ScPaymentCD.Value1 = "3";//仕入先区分：3
-            ScPaymentCD.ChangeDate = txtPayCloseDate.Text;
-        }
+     
         private void txtPayCloseDate_KeyDown(object sender, KeyEventArgs e)
         {
             if(e.KeyCode==Keys.Enter)
@@ -344,6 +320,33 @@ namespace Shiharai_ShimeShori
         private void btnDisplay_Click(object sender, EventArgs e)
         {
             //F11();
+        }
+        private void Shiiresaki_CodeKeyDownEvent(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Shiiresaki.ChangeDate = bbl.GetDate();
+                if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
+                {
+                    if (Shiiresaki.SelectData())
+                    {
+                        //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
+                        //Shiiresaki.Value2 = Shiiresaki.LabelText;
+                        F11();
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        Shiiresaki.SetFocus(1);
+                    }
+                }
+            }
+        }
+
+        private void Shiiresaki_Enter(object sender, EventArgs e)
+        {
+            Shiiresaki.ChangeDate = String.IsNullOrEmpty(txtPayCloseDate.Text) ? bbl.GetDate() : txtPayCloseDate.Text;
+            Shiiresaki.Value1 = "3";
         }
     }
 }

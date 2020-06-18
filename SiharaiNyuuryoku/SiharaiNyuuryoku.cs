@@ -342,7 +342,7 @@ namespace SiharaiNyuuryoku
 
                 else
                 {
-                    sibl.ShowMessage("128");
+                    sibl.ShowMessage("E128");
                     ScPayee.SetFocus(1);
                 }
                 txtPaymentDate.ReadOnly = true;
@@ -493,7 +493,7 @@ namespace SiharaiNyuuryoku
                     dtstaff = sibl.M_Staff_Select(mse);
                     if (dtstaff.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("101");
+                        sibl.ShowMessage("E101");
                         ScStaff.SetFocus(1);
                     }
                     else
@@ -625,7 +625,7 @@ namespace SiharaiNyuuryoku
                     dtpay = sibl.D_Pay_LargePayNoSelect(dpe);
                     if (dtpay.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("138");
+                        sibl.ShowMessage("E138");
                         ScPaymentProcessNum.SetFocus(1);
                         return false;
                     }
@@ -633,7 +633,7 @@ namespace SiharaiNyuuryoku
                     {
                         if (!string.IsNullOrWhiteSpace(dtpay.Rows[0]["DeleteDateTime"].ToString()))
                         {
-                            sibl.ShowMessage("140");
+                            sibl.ShowMessage("E140");
                             ScPaymentProcessNum.SetFocus(1);
                             return false;
                         }
@@ -650,7 +650,7 @@ namespace SiharaiNyuuryoku
                     dtpayno = sibl.D_Pay_PayNoSelect(dpe);
                     if (dtpayno.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("138");
+                        sibl.ShowMessage("E138");
                         ScPaymentNum.SetFocus(1);
                         return false;
                     }
@@ -658,13 +658,13 @@ namespace SiharaiNyuuryoku
                     {
                         if (!string.IsNullOrWhiteSpace(dtpayno.Rows[0]["DeleteDateTime"].ToString()))
                         {
-                            sibl.ShowMessage("140");
+                            sibl.ShowMessage("E140");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
                         if (!string.IsNullOrWhiteSpace(dtpayno.Rows[0]["FBCreateDate"].ToString()))
                         {
-                            sibl.ShowMessage("144");
+                            sibl.ShowMessage("E144");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
@@ -675,7 +675,7 @@ namespace SiharaiNyuuryoku
                         dtcontrol = sibl.M_Control_PaymentSelect(mfye);
                         if (dtcontrol.Rows.Count == 0)
                         {
-                            sibl.ShowMessage("115");
+                            sibl.ShowMessage("E115");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
@@ -736,7 +736,7 @@ namespace SiharaiNyuuryoku
                 dtcontrol = sibl.M_Control_PaymentSelect(mfye);
                 if (dtcontrol.Rows.Count == 0)
                 {
-                    sibl.ShowMessage("115");
+                    sibl.ShowMessage("E115");
                     ScPaymentNum.SetFocus(1);
                     return false;
                 }
@@ -772,7 +772,7 @@ namespace SiharaiNyuuryoku
                     //if (!ScStaff.SelectData())
                     if (dtstaff.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("101");
+                        sibl.ShowMessage("E101");
                         ScStaff.SetFocus(1);
                         return false;
                     }
@@ -785,7 +785,7 @@ namespace SiharaiNyuuryoku
                 //if (!RequireCheck(new Control[] {cboPaymentType}))
                 if (string.IsNullOrWhiteSpace(cboPaymentType.SelectedValue.ToString()))
                 {
-                    sibl.ShowMessage("102");
+                    sibl.ShowMessage("E102");
                     cboPaymentType.Focus();
                     return false;
                 }
@@ -796,7 +796,7 @@ namespace SiharaiNyuuryoku
                     dtmulti = sibl.M_MultiPorpose_Select(mmpe);
                     if (dtmulti.Rows.Count == 0)
                     {
-                        sibl.ShowMessage("128");
+                        sibl.ShowMessage("E128");
                         cboPaymentType.Focus();
                         return false;
                     }
@@ -808,7 +808,7 @@ namespace SiharaiNyuuryoku
                
                 if (string.IsNullOrWhiteSpace(cboPaymentSourceAcc.SelectedValue.ToString()))
                 {
-                    sibl.ShowMessage("102");
+                    sibl.ShowMessage("E102");
                     cboPaymentSourceAcc.Focus();
                     return false;
                 }
@@ -817,7 +817,7 @@ namespace SiharaiNyuuryoku
                 dtkouza = sibl.M_Kouza_SelectByDate(mke);
                 if (dtkouza.Rows.Count == 0)
                 {
-                    sibl.ShowMessage("128");
+                    sibl.ShowMessage("E128");
                     cboPaymentSourceAcc.Focus();
                     return false;
                 }

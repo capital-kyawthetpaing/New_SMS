@@ -237,6 +237,8 @@ namespace ZaikoYoteiHyou
                         PurchaseDateFrom = firstday.ToShortDateString(),
                         PurchaseDateTo = lastday.ToShortDateString(),
                     };
+
+
                 }
                 else
                 {
