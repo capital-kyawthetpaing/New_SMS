@@ -43,6 +43,7 @@ namespace ShiireShoukaiDetails
             scItem.CodeWidth = 600;
             scSkuCD.CodeWidth = 600;
             dgv_PurchaseDetails.AllowUserToAddRows = false;
+            ModeVisible = false;
         }
 
         /// <summary>
@@ -402,12 +403,12 @@ namespace ShiireShoukaiDetails
                 return false;
             }
 
-            if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-            {
-                bbl.ShowMessage("E141");
-                cboStore.Focus();
-                return false;
-            }
+            //if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+            //{
+            //    bbl.ShowMessage("E141");
+            //    cboStore.Focus();
+            //    return false;
+            //}
             return true;
         }
 

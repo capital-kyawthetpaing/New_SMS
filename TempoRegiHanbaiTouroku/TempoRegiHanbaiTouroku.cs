@@ -1535,9 +1535,7 @@ namespace TempoRegiHanbaiTouroku
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
                 {
                     if (Save((int)meCol.CUSTOMER))
-                        //あたかもTabキーが押されたかのようにする
-                        //Shiftが押されている時は前のコントロールのフォーカスを移動
-                        ProcessTabKey(!e.Shift);
+                        txtJanCD.Focus();
                 }
             }
             catch (Exception ex)
@@ -1752,6 +1750,8 @@ namespace TempoRegiHanbaiTouroku
                 else
                 {
                     txtCustomerNo.Text = dt.Rows[0]["Char2"].ToString();
+                    if (Save((int)meCol.CUSTOMER))
+                        txtJanCD.Focus();
                 }
                 //その他入力
                 FrmOther frmOther = new FrmOther();

@@ -120,7 +120,6 @@
             // 
             // scSKUCD
             // 
-            this.scSKUCD.AutoSize = true;
             this.scSKUCD.ChangeDate = "";
             this.scSKUCD.ChangeDateWidth = 100;
             this.scSKUCD.Code = "";
@@ -138,7 +137,7 @@
             this.scSKUCD.NameWidth = 280;
             this.scSKUCD.SearchEnable = true;
             this.scSKUCD.Size = new System.Drawing.Size(633, 27);
-            this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUMulti;
+            this.scSKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
             this.scSKUCD.TabIndex = 4;
             this.scSKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSKUCD.UseChangeDate = false;
@@ -148,7 +147,6 @@
             // 
             // scITEM
             // 
-            this.scITEM.AutoSize = true;
             this.scITEM.ChangeDate = "";
             this.scITEM.ChangeDateWidth = 100;
             this.scITEM.Code = "";
@@ -166,7 +164,7 @@
             this.scITEM.NameWidth = 280;
             this.scITEM.SearchEnable = true;
             this.scITEM.Size = new System.Drawing.Size(633, 27);
-            this.scITEM.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.scITEM.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
             this.scITEM.TabIndex = 3;
             this.scITEM.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scITEM.UseChangeDate = false;
@@ -176,7 +174,6 @@
             // 
             // scMakerShohinCD
             // 
-            this.scMakerShohinCD.AutoSize = true;
             this.scMakerShohinCD.ChangeDate = "";
             this.scMakerShohinCD.ChangeDateWidth = 100;
             this.scMakerShohinCD.Code = "";
@@ -194,7 +191,7 @@
             this.scMakerShohinCD.NameWidth = 280;
             this.scMakerShohinCD.SearchEnable = true;
             this.scMakerShohinCD.Size = new System.Drawing.Size(633, 28);
-            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.MakerItem;
             this.scMakerShohinCD.TabIndex = 2;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;
@@ -276,7 +273,7 @@
             this.cboSouko.MaxLength = 10;
             this.cboSouko.MoveNext = true;
             this.cboSouko.Name = "cboSouko";
-            this.cboSouko.Size = new System.Drawing.Size(200, 20);
+            this.cboSouko.Size = new System.Drawing.Size(280, 20);
             this.cboSouko.TabIndex = 1;
             this.cboSouko.SelectedIndexChanged += new System.EventHandler(this.cboSouko_SelectedIndexChanged);
             // 

@@ -55,6 +55,10 @@ namespace TempoRegiHanbaiTouroku
                 lblSKUName.Text = SKUName;
                 lblTeika.Text = bbl.Z_SetStr(Teika);
                 lblTanka.Text = bbl.Z_SetStr(FrmMainForm.GetResultWithHasuKbn((int)HASU_KBN.SISYAGONYU, bbl.Z_Set(lblTeika.Text) * (100 - bbl.Z_Set(txtRitsu.Text)) / 100));
+
+                if (HaspoMode.Equals(1))
+                    SLblTeika.Text = "価　格";
+
                 txtRitsu.Focus();
             }
             catch (Exception ex)
@@ -82,6 +86,7 @@ namespace TempoRegiHanbaiTouroku
                 {
                     //Ｅ１０２
                     bbl.ShowMessage("E102");
+                    txtRitsu.Focus();
                     return false;
                 }
                 txtRitsu.Text = bbl.Z_SetStr(txtRitsu.Text);
@@ -90,6 +95,7 @@ namespace TempoRegiHanbaiTouroku
                 if (bbl.Z_Set(txtRitsu.Text) > 100)
                 {
                     bbl.ShowMessage("E102");
+                    txtRitsu.Focus();
                     return false;
                 }
 
@@ -146,7 +152,9 @@ namespace TempoRegiHanbaiTouroku
 
         private void btnProcess_Click(object sender, EventArgs e)
         {
-            Save();
+            if (!Save())
+                return;
+
             btnSelect = 2;
 
             //M_SKU.SaleExcludedFlg	＝0なら	

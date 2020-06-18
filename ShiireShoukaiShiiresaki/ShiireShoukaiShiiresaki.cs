@@ -458,5 +458,16 @@ namespace ShiireShoukaiShiiresaki
                 }
             }
         }
+
+        private void dgvPurchaseSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+              string  purchaseNO = dgvPurchaseSearch.Rows[e.RowIndex].Cells[1].Value.ToString();
+               
+                //Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd, soukoname, StoreCD);
+                //frmVendor.ShowDialog();
+            }
+        }
     }
 }

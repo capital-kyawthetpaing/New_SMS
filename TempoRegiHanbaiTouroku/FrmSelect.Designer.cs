@@ -43,7 +43,7 @@
             this.ckM_Button1.DefaultBtnSize = false;
             this.ckM_Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ckM_Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button1.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button1.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.ckM_Button1.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.ckM_Button1.Location = new System.Drawing.Point(185, 113);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
@@ -62,7 +62,7 @@
             this.ckM_Button2.DefaultBtnSize = false;
             this.ckM_Button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.ckM_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ckM_Button2.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.ckM_Button2.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.ckM_Button2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.ckM_Button2.Location = new System.Drawing.Point(532, 113);
             this.ckM_Button2.Margin = new System.Windows.Forms.Padding(1);
@@ -81,7 +81,7 @@
             this.btnClose.DefaultBtnSize = false;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnClose.Location = new System.Drawing.Point(2, 213);
             this.btnClose.Margin = new System.Windows.Forms.Padding(1);
@@ -90,6 +90,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "戻　る";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Visible = false;
             // 
             // txtSalesDate
             // 
@@ -101,7 +102,7 @@
             this.txtSalesDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtSalesDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtSalesDate.DecimalPlace = 0;
-            this.txtSalesDate.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.txtSalesDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
             this.txtSalesDate.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.txtSalesDate.IntegerPart = 0;
             this.txtSalesDate.IsCorrectDate = true;
@@ -126,8 +127,9 @@
             this.ckmShop_Label13.AutoSize = true;
             this.ckmShop_Label13.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.ckmShop_Label13.BackColor = System.Drawing.Color.Transparent;
-            this.ckmShop_Label13.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.ckmShop_Label13.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label13.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label13.FontBold = true;
             this.ckmShop_Label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.ckmShop_Label13.Location = new System.Drawing.Point(16, 46);
             this.ckmShop_Label13.Name = "ckmShop_Label13";
@@ -148,7 +150,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.ckM_Button2);
             this.Controls.Add(this.ckM_Button1);
-            this.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "FrmSelect";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "販売登録";
