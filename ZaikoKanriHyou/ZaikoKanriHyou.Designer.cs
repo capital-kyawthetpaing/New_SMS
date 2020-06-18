@@ -92,8 +92,8 @@
             this.scMakerShohinCD.ChangeDate = "";
             this.scMakerShohinCD.ChangeDateWidth = 100;
             this.scMakerShohinCD.Code = "";
-            this.scMakerShohinCD.CodeWidth = 600;
-            this.scMakerShohinCD.CodeWidth1 = 600;
+            this.scMakerShohinCD.CodeWidth = 190;
+            this.scMakerShohinCD.CodeWidth1 = 190;
             this.scMakerShohinCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scMakerShohinCD.DataCheck = false;
             this.scMakerShohinCD.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -103,10 +103,10 @@
             this.scMakerShohinCD.Location = new System.Drawing.Point(146, 103);
             this.scMakerShohinCD.Margin = new System.Windows.Forms.Padding(0);
             this.scMakerShohinCD.Name = "scMakerShohinCD";
-            this.scMakerShohinCD.NameWidth = 280;
+            this.scMakerShohinCD.NameWidth = 350;
             this.scMakerShohinCD.SearchEnable = true;
-            this.scMakerShohinCD.Size = new System.Drawing.Size(633, 27);
-            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.ItemMulti;
+            this.scMakerShohinCD.Size = new System.Drawing.Size(223, 27);
+            this.scMakerShohinCD.Stype = Search.CKM_SearchControl.SearchType.MakerItem;
             this.scMakerShohinCD.TabIndex = 4;
             this.scMakerShohinCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scMakerShohinCD.UseChangeDate = false;

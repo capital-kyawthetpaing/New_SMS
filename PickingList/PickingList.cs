@@ -167,7 +167,8 @@ namespace PickingList
                 try
                 {
 
-                    if (dtPrintData1 == null && dtPrintData2 == null && dtPrintData3 == null && dtPrintData4 == null)
+                    if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) && (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
+                        && (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) && (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
                     {
                         return;
                     }
@@ -526,7 +527,7 @@ namespace PickingList
                 if (result > 0)
                 {
                     bbl.ShowMessage("E104");
-                    txtDateFrom1.Focus();
+                    txtDateTo1.Focus();
                     return false;
                 }
             }
@@ -553,7 +554,7 @@ namespace PickingList
                 if (result > 0)
                 {
                     bbl.ShowMessage("E104");
-                    txtDateFrom2.Focus();
+                    txtDateTo2.Focus();
                     return false;
                 }
             }
@@ -598,7 +599,7 @@ namespace PickingList
                     if (result > 0)
                     {
                         bbl.ShowMessage("E104");
-                        txtDateFrom1.Focus();
+                        txtDateTo1.Focus();
                     }
                 }
             }
@@ -615,7 +616,7 @@ namespace PickingList
                     if (result > 0)
                     {
                         bbl.ShowMessage("E104");
-                        txtDateFrom2.Focus();
+                        txtDateTo2.Focus();
                     }
                 }
             }
@@ -682,6 +683,7 @@ namespace PickingList
             {
                 txtDateFrom1.Enabled = false;
                 txtDateTo1.Enabled = false;
+                txtDateFrom1.Text = string.Empty;
                 txtDateTo1.Text = string.Empty;
             }
         }
@@ -696,6 +698,7 @@ namespace PickingList
             }
             else
             {
+                ScPickingNo1.TxtCode.Text = string.Empty;
                 DisablePanel(panel1);
             }
         }
@@ -713,6 +716,7 @@ namespace PickingList
             {
                 txtDateFrom2.Enabled = false;
                 txtDateTo2.Enabled = false;
+                txtDateFrom2.Text = string.Empty;
                 txtDateTo2.Text = string.Empty;
             }
         }
@@ -725,6 +729,7 @@ namespace PickingList
             }
             else
             {
+                ScPickingNo2.TxtCode.Text = string.Empty;
                 DisablePanel(panel2);
             }
         }
