@@ -873,7 +873,8 @@ namespace TempoRegiHanbaiTouroku
                 //ポイント残					を元に戻す		
                 lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
-                //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。																										
+                //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。
+                txtDiscount.Text = "0";
                 txtPoint.Text = "0";
                 txtOther1.Text = "0";
                 txtOther2.Text = "0";
