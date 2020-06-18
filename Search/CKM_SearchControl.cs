@@ -1538,7 +1538,7 @@ namespace Search
                             txtCode.Text = frmJanCD.JANCD;
                             txtChangeDate.Text = frmJanCD.ChangeDate;
                             //KTP 2020/06/18
-                            //Prevent Move next control with no record select
+                            //Prevent to Move next control with no record select
                             if(!string.IsNullOrWhiteSpace(TxtCode.Text))
                                 CheckBasedFormPanel();//PTK added
                         }
