@@ -139,7 +139,11 @@ namespace ShiireShoukaiDetails
                 }
             }
         }
-
+        public void Clear()
+        {
+            Clear(panel1);
+            txtPurchaseDate1.Focus();
+        }
         public override void FunctionProcess(int index)
         {
             CKM_SearchControl sc = new CKM_SearchControl();
@@ -153,7 +157,7 @@ namespace ShiireShoukaiDetails
                     if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
                         ChangeMode(OperationMode);
-                        txtPurchaseDate1.Focus();
+                        Clear();
                     }
                     break;
                 case 10:

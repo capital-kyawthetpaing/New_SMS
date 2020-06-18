@@ -2090,6 +2090,7 @@
             this.Maker.Value2 = null;
             this.Maker.Value3 = null;
             this.Maker.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Maker_CodeKeyDownEvent);
+            this.Maker.Enter += new System.EventHandler(this.Maker_Enter);
             // 
             // Shiiresaki
             // 
@@ -2119,6 +2120,7 @@
             this.Shiiresaki.Value2 = null;
             this.Shiiresaki.Value3 = null;
             this.Shiiresaki.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.Shiiresaki_CodeKeyDownEvent);
+            this.Shiiresaki.Enter += new System.EventHandler(this.Shiiresaki_Enter);
             // 
             // ZaikoShoukai
             // 

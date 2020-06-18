@@ -200,6 +200,7 @@ namespace SiharaiTouroku
                 {
                     bbl.ShowMessage("E101");
                     SC_BankCD.SetFocus(1);
+                    return false;
                 }
             }
 
@@ -217,6 +218,7 @@ namespace SiharaiTouroku
                 {
                     bbl.ShowMessage("E101");
                     SC_BranchCD.SetFocus(1);
+                    return false;
                 }
                 else
                 {
@@ -302,7 +304,7 @@ namespace SiharaiTouroku
             lblPayComfirmGaku.Text = sum2.ToString("#,##0");
             lblPayGaku.Text =lblPayGaku1.Text= sum3.ToString("#,##0");
             lblUnpaidAmount.Text = sum4.ToString("#,##0");
-            txtTransferAmount.Text = bbl.Z_SetStr(sum3);
+            //txtTransferAmount.Text = bbl.Z_SetStr(sum3);
         }
 
 
@@ -391,6 +393,9 @@ namespace SiharaiTouroku
             //tblROWS[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
             //dtGdv.AcceptChanges();
             //return dtGdv;
+            tblROWS[0]["PayGaku"] = bbl.Z_Set(lblPayGaku.Text);
+            tblROWS[0]["PayPlan"] = bbl.Z_Set(lblUnpaidAmount.Text);   //未支払額＝支払予定-支払済
+
         }
         public void Clear()
         {
@@ -714,7 +719,7 @@ namespace SiharaiTouroku
         public void Select_KouzaFee()
         {
             if (!string.IsNullOrWhiteSpace(SC_BankCD.TxtCode.Text) && !string.IsNullOrWhiteSpace(SC_BranchCD.TxtCode.Text)
-                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && txtAmount.Text.Equals("0"))
+                             && !string.IsNullOrWhiteSpace(txtFeeKBN.Text) && bbl.Z_Set(txtAmount.Text).Equals(0))
             {
                 M_Kouza_Entity mkze = new M_Kouza_Entity
                 {
@@ -725,7 +730,7 @@ namespace SiharaiTouroku
 
                 };
                 DataTable dt=shnbl.M_Kouza_FeeSelect(mkze);
-                txtTransferAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
+                txtAmount.Text =bbl.Z_SetStr(dt.Rows[0]["Fee"]);
             }
 
         }
@@ -768,12 +773,16 @@ namespace SiharaiTouroku
                             //ONにした明細に対して、今回支払額＝支払予定額―支払済額、未支払額＝0とする。
                             dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
                             dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount2"].Value = "0";
+                            DataRow[] rows = dtSiharai2.Select("PayPlanNO=" + dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanNO"].Value.ToString());
+                            rows[0]["Chk"] = 1;
                         }
                         else
                         {
                             //OFFにした明細に対して、今回支払額＝0、未支払額＝支払予定額―支払済額とする。
                             dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount1"].Value = "0";
                             dgvSearchPayment.Rows[e.RowIndex].Cells["colUnpaidAmount2"].Value = bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(dgvSearchPayment.Rows[e.RowIndex].Cells["colPayConfirmGaku"].Value.ToString());
+                            DataRow[] rows = dtSiharai2.Select("PayPlanNO=" + dgvSearchPayment.Rows[e.RowIndex].Cells["colPayPlanNO"].Value.ToString());
+                            rows[0]["Chk"] = 0;
                         }
 
                         LabelDataBind();
@@ -791,22 +800,15 @@ namespace SiharaiTouroku
 
         private void dgvSearchPayment_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            //if(dgvSearchPayment.CurrentRow.Index>-1)
-            //{
-            //    if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
-            //    {
-            //        DataGridViewRow row = dgvSearchPayment.CurrentRow;
-            //        string unpaidAmount1 = row.Cells["colUnpaidAmount1"].Value.ToString();
-            //        if (string.IsNullOrWhiteSpace(unpaidAmount1))
-            //        {
-            //            bbl.ShowMessage("E102");
-            //        }
-            //    }
-           // }
-            
+           
         }
 
         private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void dgvSearchPayment_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             try
             {
@@ -815,21 +817,31 @@ namespace SiharaiTouroku
                     if (dgvSearchPayment.CurrentCell == dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"])
                     {
                         DataGridViewRow row = dgvSearchPayment.CurrentRow;
+                        string inputText = e.FormattedValue.ToString();
 
-                        if (string.IsNullOrWhiteSpace(row.Cells["colUnpaidAmount1"].Value.ToString()))
+                        if (string.IsNullOrWhiteSpace(inputText))
                         {
                             bbl.ShowMessage("E102");
-                            dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                            e.Cancel = true;
+                            return;
                         }
-                        else if (bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) > bbl.Z_Set(row.Cells["colUnpaidAmount2"].Value.ToString()) || bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString()) < 0)
-                        //else if(row.Cells["colUnpaidAmount1"].Value > row.Cells["col"])
+                        else if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
                         {
-                            bbl.ShowMessage("E143");
-                            dgvSearchPayment.CurrentCell = dgvSearchPayment.CurrentRow.Cells["colPayConfirmGaku"];
+                            //未支払額＝支払予定額―支払済額―今回支払額をセット。("未支払額" = "支払予定額"-"支払済額"-"今回支払額" Set the current payment amount.)
+                            bbl.ShowMessage("E143", "未支払額", "大きい");
+                            e.Cancel = true;
+                            return;
+                        }
+                        else if (bbl.Z_Set(inputText) < 0)
+                        {
+                            bbl.ShowMessage("E143", "0", "小さい");
+                            e.Cancel = true;
+                            return;
                         }
                         else
                         {
-                            row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value.ToString()) - bbl.Z_Set(row.Cells["colUnpaidAmount1"].Value.ToString());
+                            row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value) - bbl.Z_Set(inputText);
+                            row.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(inputText);
                         }
                         LabelDataBind();
                     }

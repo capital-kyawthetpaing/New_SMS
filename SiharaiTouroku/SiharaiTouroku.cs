@@ -322,6 +322,7 @@ namespace SiharaiTouroku
                             dt2 = f2.dtDetails;
                         }
                     }
+                    LabelDataBind();
                 }
             }
         }
@@ -359,47 +360,7 @@ namespace SiharaiTouroku
                     //if (dtPay1Detail.Rows.Count > 0)
                     //{
                     //    dt4Detail = dtPay1Detail.Copy();
-                    //    dt4Detail.Columns.Remove("Number");
-                    //    dt4Detail.Columns.Remove("RecordedDate");
-                    //    dt4Detail.Columns.Remove("PayPlanGaku");
-                    //    dt4Detail.Columns.Remove("PayConfirmGaku");
-                    //    dt4Detail.Columns.Remove("UnpaidAmount1");
-                    //    dt4Detail.Columns.Remove("UnpaidAmount2");
-                    //    dt4Detail.Columns.Remove("PayPlanNO");
-
-
-                    //    dt4.Columns.Remove("TransferGaku");
-                    //    //dt4.Columns.Remove("TransferFeeGaku");
-                    //    dt4.Columns.Remove("VendorName");
-                    //    dt4.Columns.Remove("BankCD");
-                    //    dt4.Columns.Remove("BankName");
-                    //    dt4.Columns.Remove("BranchCD");
-                    //    dt4.Columns.Remove("BranchName");
-                    //    dt4.Columns.Remove("KouzaKBN");
-                    //    dt4.Columns.Remove("KouzaNO");
-                    //    dt4.Columns.Remove("KouzaMeigi");
-                    //    dt4.Columns.Remove("FeeKBN");
-                    //    dt4.Columns.Remove("Fee");
-                    //    dt4.Columns.Remove("CashGaku");
-                    //    dt4.Columns.Remove("OffsetGaku");
-                    //    dt4.Columns.Remove("BillGaku");
-                    //    dt4.Columns.Remove("BillDate");
-                    //    dt4.Columns.Remove("BillNO");
-                    //    dt4.Columns.Remove("ERMCGaku");
-                    //    dt4.Columns.Remove("ERMCNO");
-                    //    dt4.Columns.Remove("ERMCDate");
-                    //    dt4.Columns.Remove("OtherGaku1");
-                    //    dt4.Columns.Remove("Account1");
-                    //    dt4.Columns.Remove("start1");
-                    //    dt4.Columns.Remove("SubAccount1");
-                    //    dt4.Columns.Remove("end1label");
-                    //    dt4.Columns.Remove("OtherGaku2");
-                    //    dt4.Columns.Remove("Account2");
-                    //    dt4.Columns.Remove("start2");
-                    //    dt4.Columns.Remove("SubAccount2");
-                    //    dt4.Columns.Remove("end2label");
-
-                    //}                  
+                    //    dt4Detail.Columns.Remove("Number");            
                 }
 
                 //txtPaymentDate.ReadOnly = true;
@@ -420,7 +381,6 @@ namespace SiharaiTouroku
                 dpe = GetPayData();
                 if (bbl.ShowMessage(OperationMode == EOperationMode.DELETE ? "Q102" : "Q101") == DialogResult.Yes)
                 {
-
                     DataTable dt = GetGridEntity();
                     DataTable dtD = GetDetailGridEntity();
 
@@ -638,14 +598,6 @@ namespace SiharaiTouroku
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = "0";
 
-                        //foreach (DataGridViewRow row in dgvPayment.Rows)
-                        //{
-                        //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        //    row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        //    row.Cells["colUnpaidAmount"].Value = "0";
-                        //    row.Cells["colOtherThanTransfer"].Value = "0";
-                        //}
-
                     }
                     else
                     {
@@ -654,15 +606,6 @@ namespace SiharaiTouroku
                         dgvPayment.Rows[rowIndex].Cells["colTransferFee"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colUnpaidAmount"].Value = "0";
                         dgvPayment.Rows[rowIndex].Cells["colOtherThanTransfer"].Value = Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colScheduledPayment"].Value) - Convert.ToInt32(dgvPayment.Rows[rowIndex].Cells["colAmountPaid"].Value);
-
-                        //foreach (DataGridViewRow row in dgvPayment.Rows)
-                        //{
-                        //    row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        //    row.Cells["colTransferAmount"].Value = "0";
-                        //    row.Cells["colTransferFee"].Value = "0";
-                        //    row.Cells["colUnpaidAmount"].Value = "0";
-                        //    row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-                        //}
                     }
 
                     if (dtPay1Detail != null && dtPay1Detail.Rows.Count > 0)
@@ -670,6 +613,7 @@ namespace SiharaiTouroku
                         DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
                         foreach (DataRow row in tblROWS1)
                         {
+                            row["Chk"] = 1;
                             row["UnpaidAmount1"] = bbl.Z_SetStr(bbl.Z_Set(row["PayPlanGaku"]) - bbl.Z_Set(row["PayConfirmGaku"]));
                             row["UnpaidAmount2"] = "0";
                         }
@@ -687,6 +631,7 @@ namespace SiharaiTouroku
                     DataRow[] tblROWS1 = dtPay1Detail.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
                     foreach (DataRow row in tblROWS1)
                     {
+                        row["Chk"] = 0;
                         row["UnpaidAmount1"] = "0";
                         row["UnpaidAmount2"] = "0";
                     }
@@ -708,6 +653,12 @@ namespace SiharaiTouroku
             {
                 if (type == 1)
                 {
+                    //入力無くても良い(It is not necessary to input)
+                    if (string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    {
+                        return true;
+                    }
+
                     DataTable dtpay = new DataTable();
                     dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
                     dtpay = sibl.D_Pay_LargePayNoSelect(dpe);
@@ -731,6 +682,10 @@ namespace SiharaiTouroku
                 else if (type == 2)
                 {
                     //支払処理番号未入力時、入力必須(Entry required)
+                    if (!string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    {
+                        return true;
+                    }
 
                     if (!RequireCheck(new Control[] { ScPaymentNum.TxtCode }))
                         return false;
@@ -1119,7 +1074,7 @@ namespace SiharaiTouroku
             Para_Add(dt);
 
             int rows = 0;
-            foreach (DataRow row in dtPay1.Rows)
+            foreach (DataRow row in dtPayplan.Rows)
             {
                 rows++;
 
@@ -1132,11 +1087,11 @@ namespace SiharaiTouroku
                         , bbl.Z_Set(row["TaxGaku8"])
                         , bbl.Z_Set(row["TaxGaku10"])
                         , bbl.Z_Set(row["PayGaku"])
-                        , bbl.Z_Set(row["NotPaidGaku"])
+                        , bbl.Z_Set(row["PayPlan"])     //NotPaidGaku
                         , bbl.Z_Set(row["TransferGaku"])
                         , bbl.Z_Set(row["TransferFeeGaku"])
                         , bbl.Z_Set(row["FeeKBN"])
-                        , row["MotoKouzaCD"]
+                        , cboPaymentSourceAcc.SelectedValue
                         , row["BankCD"]
                         , row["BranchCD"]
                         , bbl.Z_Set(row["KouzaKBN"])
@@ -1144,19 +1099,19 @@ namespace SiharaiTouroku
                         , row["KouzaMeigi"]
                         , bbl.Z_Set(row["CashGaku"])
                         , bbl.Z_Set(row["BillGaku"])
-                        , row["BillDate"]
-                        , row["BillNO"]
+                        , string.IsNullOrWhiteSpace(row["BillDate"].ToString()) ? null : row["BillDate"]
+                        , string.IsNullOrWhiteSpace(row["BillNO"].ToString()) ? null : row["BillNO"]
                         , bbl.Z_Set(row["ERMCGaku"])
-                        , row["ERMCDate"]
-                        , row["ERMCNO"]
-                        , bbl.Z_Set(row["CardGaku"])
+                        , string.IsNullOrWhiteSpace(row["ERMCDate"].ToString()) ? null : row["ERMCDate"]
+                        , string.IsNullOrWhiteSpace(row["ERMCNO"].ToString()) ? null : row["ERMCNO"]
+                        , 0    //CardGaku
                         , bbl.Z_Set(row["OffsetGaku"])
                         , bbl.Z_Set(row["OtherGaku1"])
-                        , row["Account1"]
-                        , row["SubAccount1"]
+                        , string.IsNullOrWhiteSpace(row["Account1"].ToString()) ? null : row["Account1"]
+                        , string.IsNullOrWhiteSpace(row["SubAccount1"].ToString()) ? null : row["SubAccount1"]
                         , bbl.Z_Set(row["OtherGaku2"])
-                        , row["Account2"]
-                        , row["SubAccount2"]
+                        , string.IsNullOrWhiteSpace(row["Account2"].ToString()) ? null : row["Account2"]
+                        , string.IsNullOrWhiteSpace(row["SubAccount2"].ToString()) ? null : row["SubAccount2"]
                         , 0
                         );
 
@@ -1183,9 +1138,35 @@ namespace SiharaiTouroku
             int rows = 0;
             int PayConfirmFinishedKBN = 0;  //未支払額＝0の場合、1：完了
             int ProcessingKBN = 0;//支払済額＜＞0の場合、3：確定, 上記以外の場合1：支払締(締中)
+            string payeeCD = "";
+            string payPlanDate = "";
+            bool read = true;
 
             foreach (DataRow row in dtPay1Detail.Rows)
             {
+                if (payeeCD != row["PayeeCD"].ToString() || payPlanDate != row["PayPlanDate"].ToString())
+                {
+                    rows = 0;
+                    payeeCD = row["PayeeCD"].ToString();
+                    payPlanDate = row["PayPlanDate"].ToString();
+                    
+                    DataRow[] head = dtPayplan.Select("PayeeCD = '" + payeeCD + "'" + "and PayPlanDate = '" + payPlanDate + "'");
+                    if (bbl.Z_Set(head[0]["PayGaku"]) == 0)
+                    {
+                        read = false;
+                        continue;
+                    }
+                    else
+                    {
+                        read = true;
+                    }
+                }
+                else
+                {
+                    if (!read)
+                        continue;
+                }
+
                 rows++;
                 PayConfirmFinishedKBN = 0;
                 ProcessingKBN = 1;
@@ -1200,9 +1181,9 @@ namespace SiharaiTouroku
 
                     dt.Rows.Add(row["PayeeCD"]
                         , row["PayPlanDate"]
-                        , bbl.Z_Set(row["PayNORows"])
+                        , rows  //bbl.Z_Set(row["PayNORows"])
                         , bbl.Z_Set(row["PayPlanNO"])
-                        , bbl.Z_Set(row["PayGaku"])
+                        , bbl.Z_Set(row["UnpaidAmount1"])   //PayGaku
                         , PayConfirmFinishedKBN
                         , ProcessingKBN
                         , 0
