@@ -167,7 +167,7 @@
             this.cboSouko.MaxLength = 10;
             this.cboSouko.MoveNext = true;
             this.cboSouko.Name = "cboSouko";
-            this.cboSouko.Size = new System.Drawing.Size(161, 20);
+            this.cboSouko.Size = new System.Drawing.Size(265, 20);
             this.cboSouko.TabIndex = 2;
             // 
             // ckM_Label5
@@ -299,7 +299,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(283, 25);
+            this.ckM_Label1.Location = new System.Drawing.Point(290, 25);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label1.TabIndex = 2;
@@ -325,7 +325,7 @@
             this.txtEndDate.IsNumber = true;
             this.txtEndDate.IsShop = false;
             this.txtEndDate.Length = 10;
-            this.txtEndDate.Location = new System.Drawing.Point(316, 21);
+            this.txtEndDate.Location = new System.Drawing.Point(329, 21);
             this.txtEndDate.MaxLength = 10;
             this.txtEndDate.MoveNext = true;
             this.txtEndDate.Name = "txtEndDate";
