@@ -328,21 +328,21 @@ namespace Shiharai_ShimeShori
                 Shiiresaki.ChangeDate = bbl.GetDate();
                 if (!string.IsNullOrEmpty(Shiiresaki.TxtCode.Text))
                 {
-                    if (!Shiiresaki.SelectData())
+                    if (Shiiresaki.SelectData())
                     {
                         //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
                         //Shiiresaki.Value2 = Shiiresaki.LabelText;
-                        bbl.ShowMessage("E101");
-                        Shiiresaki.SetFocus(1);
+                        F11();
                         
                     }
-                    //else
-                    //{
-                    //    bbl.ShowMessage("E101");
-                    //    Shiiresaki.SetFocus(1);
-                    //}
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        Shiiresaki.SetFocus(1);
+                    }
                 }
-                F11();
+                else { F11(); }
+               
             }
         }
 
