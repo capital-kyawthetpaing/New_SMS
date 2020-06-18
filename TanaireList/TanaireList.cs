@@ -160,7 +160,7 @@ namespace TanaireList
                             case EPrintMode.DIRECT:
 
                                 ret = bbl.ShowMessage("Q202");
-                                if (ret == DialogResult.Cancel)
+                                if (ret == DialogResult.No)
                                 {
                                     return;
                                 }
