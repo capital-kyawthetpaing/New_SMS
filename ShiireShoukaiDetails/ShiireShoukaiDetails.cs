@@ -194,6 +194,7 @@ namespace ShiireShoukaiDetails
                     F10Visible = true;
                     //Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
+                    Btn_F10.Enabled = false;
                     //Btn_Display.Enabled = F11Enable = true;
                     chkOk.Checked = true;
                     chkNotOK.Checked = true;
