@@ -55,6 +55,7 @@ namespace SaikenKanriHyou
             BindStore();
             // this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
             cbo_Store.KeyDown += cbo_Store_KeyDown;
+            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetdate.Focus();
         }
         public override void FunctionProcess(int index)
@@ -165,6 +166,7 @@ namespace SaikenKanriHyou
         private void BindStore()
         {
             cbo_Store.Bind(string.Empty, "2");
+            cbo_Store.SelectedValue = StoreCD;
         }
         #endregion
 
@@ -435,6 +437,8 @@ namespace SaikenKanriHyou
         private void Clear()
         {
             Clear(panelDetail);
+            cbo_Store.SelectedValue = StoreCD;
+            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetdate.Focus();
 
         }
