@@ -24,6 +24,7 @@ namespace SaikenKanriHyou
         D_MonthlyClaims_Entity dmc_e = new D_MonthlyClaims_Entity();
         SaikenKanriHyou_BL skh_bl;
         DataTable dtResult, dtCSV, dtlog, dtS_check;
+        string targetDate = string.Empty;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crvr;
         Viewer vr;
         public SaikenKanriHyou()
@@ -247,7 +248,7 @@ namespace SaikenKanriHyou
                 dtResult = CheckData();
                 //dmc_e = GetDataInfo();
                 //dtResult = skh_bl.D_MonthlyClaims_Select(dmc_e);
-                M_StoreCheck();
+                
                 //if (dtResult == null)
                 //{
                 //    return;
@@ -255,7 +256,7 @@ namespace SaikenKanriHyou
                 if (dtResult.Rows.Count > 0)
                 {
                     //exeRun
-                    
+                    M_StoreCheck();
                     try
                     {
                         SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
@@ -401,18 +402,34 @@ namespace SaikenKanriHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                sc_Customer.ChangeDate = bbl.GetDate();
+                targetDate = !string.IsNullOrWhiteSpace(txtTargetdate.Text) ? skh_bl.GetDate(txtTargetdate.Text) : bbl.GetDate();
+                sc_Customer.ChangeDate = targetDate;
                 if (!string.IsNullOrEmpty(sc_Customer.TxtCode.Text))
                 {
-                    if (sc_Customer.SelectData())
-                    {
-                        sc_Customer.Value1 = sc_Customer.TxtCode.Text;
-                        sc_Customer.Value2 = sc_Customer.LabelText;
-                    }
-                    else
+                    DataTable dt = new DataTable();
+                    dt = skh_bl.SimpleSelect1("67", targetDate, sc_Customer.Code);
+                    if (dt.Rows.Count < 1)
                     {
                         bbl.ShowMessage("E101");
                         sc_Customer.SetFocus(1);
+                    }
+                    else
+                    {
+                        if (rdo_BillAddress.Checked == true && dt.Rows[0]["CollectFLG"].ToString().Equals("0"))
+                        {
+                            skh_bl.ShowMessage("");
+                            sc_Customer.SetFocus(1);
+                        }
+                        else if (rdo_Sale.Checked == true && dt.Rows[0]["BillingFLG"].ToString().Equals("0"))
+                        {
+                            skh_bl.ShowMessage("");
+                            sc_Customer.SetFocus(1);
+                        }
+                        else
+                        {
+                            sc_Customer.Value1 = sc_Customer.TxtCode.Text;
+                            sc_Customer.Value2 = sc_Customer.LabelText;
+                        }
                     }
                 }
             }
