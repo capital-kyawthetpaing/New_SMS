@@ -797,16 +797,16 @@ namespace MitsumoriNyuuryoku
                                                 break;
                                             }
                                         case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
-                                            if (mGrid.g_DArray[w_Row].DiscountKbn == 1)
-                                            {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = true;
-                                            }
-                                            else
-                                            {
+                                            //if (mGrid.g_DArray[w_Row].DiscountKbn == 1)
+                                            //{
+                                            //    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
+                                            //    mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = true;
+                                            //}
+                                            //else
+                                            //{
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
                                                 mGrid.g_MK_State[w_Col, w_Row].Cell_ReadOnly = false;
-                                            }
+                                            //}
                                             break;
                                         case (int)ClsGridMitsumori.ColNO.SKUName:
                                         case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
@@ -931,18 +931,18 @@ namespace MitsumoriNyuuryoku
                 switch (w_Col)
                 {
                     case (int)ClsGridMitsumori.ColNO.MitsumoriSuu:
-                        if (mGrid.g_DArray[pRow].DiscountKbn == 1)
-                        {
-                            mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
-                            mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
-                            mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
-                        }
-                        else
-                        {
+                        //if (mGrid.g_DArray[pRow].DiscountKbn == 1)
+                        //{
+                        //    mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = false;
+                        //    mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = true;
+                        //    mGrid.g_MK_State[w_Col, pRow].Cell_Bold = true;
+                        //}
+                        //else
+                        //{
                             mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                             mGrid.g_MK_State[w_Col, pRow].Cell_ReadOnly = false;
                             mGrid.g_MK_State[w_Col, pRow].Cell_Bold = false;
-                        }
+                        //}
                         break;
                     case (int)ClsGridMitsumori.ColNO.SKUName:
                     case (int)ClsGridMitsumori.ColNO.CostUnitPrice:
@@ -1938,8 +1938,8 @@ namespace MitsumoriNyuuryoku
                         mGrid.g_DArray[row].ColorName = selectRow["ColorName"].ToString();
                         mGrid.g_DArray[row].SizeName = selectRow["SizeName"].ToString();
                         mGrid.g_DArray[row].DiscountKbn = Convert.ToInt16(selectRow["DiscountKbn"].ToString());
-                        if (mGrid.g_DArray[row].DiscountKbn == 1)
-                            mGrid.g_DArray[row].MitsumoriSuu = "-1";    //GridNotFocusで入力不可にすること
+                        //if (mGrid.g_DArray[row].DiscountKbn == 1)
+                        //    mGrid.g_DArray[row].MitsumoriSuu = "-1";    //GridNotFocusで入力不可にすること
                         mGrid.g_DArray[row].TaniCD = selectRow["TaniCD"].ToString();
                         mGrid.g_DArray[row].TaniName = selectRow["TaniName"].ToString();
                         mGrid.g_DArray[row].TaxRateFLG = Convert.ToInt16(selectRow["TaxRateFLG"].ToString());
@@ -2071,6 +2071,17 @@ namespace MitsumoriNyuuryoku
                         {
                             //Ｅ２１７				
                             bbl.ShowMessage("E217");
+                            return false;
+                        }
+                    }
+
+                    if (mGrid.g_DArray[row].DiscountKbn.Equals(1))
+                    {
+                        //見積数≧０の場合、Error				
+                        if (bbl.Z_Set(mGrid.g_DArray[row].MitsumoriSuu) >= 0)
+                        {
+                            //Ｅ２４１				
+                            bbl.ShowMessage("E241");
                             return false;
                         }
                     }
