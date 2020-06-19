@@ -125,8 +125,8 @@ namespace UriageMotouchou
                     if (umbl.CheckData(1, StoreCD, YYYYMM))
                     {
                         //月次処理（債権集計処理）を起動 Exe Console Run
-                        //string ProgramID = "GetsujiSaikenKeisanSyori";
-                        //OpenForm(ProgramID, txtTagetFrom.Text);
+                        string ProgramID = "GetsujiSaikenKeisanSyori";
+                        OpenForm(ProgramID, txtTagetFrom.Text);
 
                         //印刷処理
                         PrintDataSelect();
@@ -142,9 +142,7 @@ namespace UriageMotouchou
                     umbl.ShowMessage("E128");
                     txtTagetFrom.Focus();
                 }
-
             }
-
         }
 
         private void OpenForm(string programID, string YYYYMM)
