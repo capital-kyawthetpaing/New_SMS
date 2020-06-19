@@ -169,7 +169,7 @@ namespace ZaikoKanriHyou
                         chk = 2;
                     }
                 }
-                  else
+                else
                 {
                     chk = 3;
                 }
