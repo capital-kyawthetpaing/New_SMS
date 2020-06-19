@@ -67,9 +67,6 @@ namespace SiharaiTouroku
             cboPaymentType.Enabled = false;
             txtBillSettleDate.Enabled = false;
 
-            btnReleaseAll.Enabled = false;
-            btnSelectAll.Enabled = false;
-
             dgvPayment.ReadOnly = false;
             for (int i = 1; i < dgvPayment.Columns.Count; i++)
                 dgvPayment.Columns[i].ReadOnly = true;
@@ -86,7 +83,7 @@ namespace SiharaiTouroku
         private void SetRequireField()
         {
             ScPaymentNum.TxtCode.Require(true);
-            ScPayee.TxtCode.Require(true);
+            //ScPayee.TxtCode.Require(true);
             txtPaymentDate.Require(true);
             ScStaff.TxtCode.Require(true);
             txtDueDate2.Require(true);
@@ -147,18 +144,35 @@ namespace SiharaiTouroku
         /// </summary>
         private void DeleteExclusive()
         {
-            if (mOldPayNo == "")
+            if (mOldPayNo == "" && dtPayplan == null)
                 return;
 
             Exclusive_BL ebl = new Exclusive_BL();
-            D_Exclusive_Entity dee = new D_Exclusive_Entity
+            if (mOldPayNo != "")
             {
-                DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
-                Number = mOldPayNo,
-            };
+                D_Exclusive_Entity dee = new D_Exclusive_Entity
+                {
+                    DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
+                    Number = mOldPayNo,
+                };
 
-            bool ret = ebl.D_Exclusive_Delete(dee);
+                bool ret = ebl.D_Exclusive_Delete(dee);
+            }
+            if (dtPayplan != null)
+            {
+                foreach (DataRow row in dtPayplan.Rows)
+                {
+                    mOldPayNo = row["PayNO"].ToString();
 
+                    D_Exclusive_Entity dee = new D_Exclusive_Entity
+                    {
+                        DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
+                        Number = mOldPayNo,
+                    };
+
+                    bool ret = ebl.D_Exclusive_Delete(dee);
+                }
+            }
             mOldPayNo = "";
         }
         private bool SelectAndInsertExclusive()
@@ -166,9 +180,7 @@ namespace SiharaiTouroku
             if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
                 return true;
 
-            DeleteExclusive();
-
-            if (string.IsNullOrWhiteSpace(ScPaymentNum.Text))
+            if (string.IsNullOrWhiteSpace(ScPaymentNum.TxtCode.Text))
                 return true;
 
             //排他Tableに該当番号が存在するとError
@@ -177,7 +189,7 @@ namespace SiharaiTouroku
             D_Exclusive_Entity dee = new D_Exclusive_Entity
             {
                 DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
-                Number = ScPaymentNum.Text,
+                Number = ScPaymentNum.TxtCode.Text,
                 Program = this.InProgramID,
                 Operator = this.InOperatorCD,
                 PC = this.InPcID
@@ -194,9 +206,52 @@ namespace SiharaiTouroku
             else
             {
                 bool ret = ebl.D_Exclusive_Insert(dee);
-                mOldPayNo = ScPaymentNum.Text;
+                mOldPayNo = ScPaymentNum.TxtCode.Text;
                 return ret;
             }
+        }
+        private bool SelectAndInsertExclusive(DataTable dtUpdate)
+        {
+            if (OperationMode == EOperationMode.SHOW || OperationMode == EOperationMode.INSERT)
+                return true;
+
+
+            if (string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                return true;
+
+            if (dtPayplan != null)
+            {
+                //排他Tableに該当番号が存在するとError
+                //[D_Exclusive]
+                Exclusive_BL ebl = new Exclusive_BL();
+
+                foreach (DataRow row in dtPayplan.Rows)
+                {
+                    string PayNo = row["PayNO"].ToString();
+
+                    D_Exclusive_Entity dee = new D_Exclusive_Entity
+                    {
+                        DataKBN = (int)Exclusive_BL.DataKbn.Shiharai,
+                        Number = PayNo,
+                        Program = this.InProgramID,
+                        Operator = this.InOperatorCD,
+                        PC = this.InPcID
+                    };
+                    DataTable dt = ebl.D_Exclusive_Select(dee);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
+                        ScPaymentProcessNum.Focus();
+                        return false;
+                    }
+                    else
+                    {
+                        bool ret = ebl.D_Exclusive_Insert(dee);
+                    }
+                }
+            }
+            return true;
         }
         private void ChangeMode(EOperationMode OperationMode)
         {
@@ -209,28 +264,24 @@ namespace SiharaiTouroku
             {
                 case EOperationMode.INSERT:
                     Clear(PanelHeader);
-                    Clear(PanelDetail);
                     EnablePanel(PanelHeader);
-                    DisablePanel(PanelDetail);
+                    ClearDetail();
                     ScPaymentProcessNum.Enabled = false;
                     ScPaymentNum.Enabled = false;
                     ScPayee.Enabled = true;
                     ScPayee.SearchEnable = true;
                     txtDueDate1.Focus();
                     F9Visible = false;
-                    F12Enable = true;
+                    F12Enable = false;
                     F11Enable = true;
                     btnF11Show.Enabled = true;
-                    //F11Visible = false;
-                    Clear();
                     break;
                 case EOperationMode.UPDATE:
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
                     Clear(PanelHeader);
-                    Clear(PanelDetail);
                     EnablePanel(PanelHeader);
-                    DisablePanel(PanelDetail);
+                    ClearDetail();
                     ScPaymentProcessNum.Enabled = true;
                     ScPaymentProcessNum.SearchEnable = true;
                     ScPaymentNum.Enabled = true;
@@ -240,16 +291,21 @@ namespace SiharaiTouroku
                     txtDueDate2.Enabled = false;
                     ScPayee.Enabled = false;
                     ScPayee.SearchEnable = false;
-                    F12Enable = true;
+                    F12Enable = false;
                     F11Enable = false;
                     btnF11Show.Enabled = F11Enable = false;
-                    //F11Visible = false;
-                    Clear();
                     break;
             }
             ScPaymentProcessNum.SetFocus(1);
         }
-
+        private void ClearDetail()
+        {
+            Clear(PanelDetail);
+            DisablePanel(PanelDetail);
+            Clear();
+            btnReleaseAll.Enabled = false;
+            btnSelectAll.Enabled = false;
+        }
         #region Function Click
 
         protected override void EndSec()
@@ -292,36 +348,20 @@ namespace SiharaiTouroku
                     dpe.PayNo = ScPaymentNum.TxtCode.Text;
                     dpe.MotoKouzaCD = cboPaymentSourceAcc.SelectedValue.ToString();
 
-                    if (OperationMode == EOperationMode.INSERT)
-                    {
-                        //mode = "1";
-                        //dt4 = sibl.D_Pay_SelectForPayPlanDate2(dppe);
-                        //if (dt4.Rows.Count > 0)
-                        //{
+                    //if (OperationMode == EOperationMode.INSERT)
+                    //{
                         SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dtPayplan, dtPay1Detail);
+                        f2.ProID = InProgramID;
+                        f2.ProName = made.ProgramName;
+                        f2.Operator = InOperatorCD;
+
                         f2.ShowDialog();
                         if (!f2.flgCancel)
                         {
                             dtPayplan = f2.dtGdv;
                             dtPay1Detail = f2.dtDetails;
                         }
-
-                        //}
-                    }
-                    else
-                    {
-                        //mode = "2";
-                        dt2 = sibl.D_Pay_Select02(dpe);
-                        dt3 = sibl.D_Pay_Select3(dpe);
-
-                        if (dt3.Rows.Count > 0)
-                        {
-                            SiharaiTouroku_2 f2 = new SiharaiTouroku_2(dpe, dt3, dt2);
-                            f2.ShowDialog();
-                            dt3 = f2.dtGdv;
-                            dt2 = f2.dtDetails;
-                        }
-                    }
+                    //}
                     LabelDataBind();
                 }
             }
@@ -338,39 +378,37 @@ namespace SiharaiTouroku
                 dppe.Operator = InOperatorCD;
 
                 dtPayplan = sibl.D_PayPlan_Select(dppe);
-                if (dtPayplan.Rows.Count > 0)
+                if (dtPayplan.Rows.Count == 0)
                 {
+                    bbl.ShowMessage("E128");
+                    ClearDetail();
+                    return;
+                }
+                else
+                { 
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
 
+                    dgvPayment.DataSource = dtPayplan;
                     txtPaymentDate.Text = sibl.GetDate();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtPayplan.Rows[0]["StaffName"].ToString();
                     cboPaymentType.SelectedValue = 1;   //振込
                     cboPaymentSourceAcc.SelectedValue = dtPayplan.Rows[0]["KouzaCD"].ToString();
                     txtBillSettleDate.Text = string.Empty;
-                    dgvPayment.DataSource = dtPayplan;
-                    dgvPayment.Rows[0].Selected = true;
+
                     Checkstate(true);
+                    dgvPayment.Rows[0].Selected = true;
                     LabelDataBind();
-                    Btn_F7.Enabled = true;
 
-                    //DataGridViewRow row = this.dgvPayment.SelectedRows[0];
-                    //dppe.PayPlanDate = row.Cells["colPaymentdueDate"].Value.ToString();
-                    //dppe.PayeeCD = row.Cells["colPayeeCD"].Value.ToString();
-                    //if (dtPay1Detail.Rows.Count > 0)
-                    //{
-                    //    dt4Detail = dtPay1Detail.Copy();
-                    //    dt4Detail.Columns.Remove("Number");            
+                    Btn_F7.Enabled = true;         
+
+                    EnablePanel(PanelDetail);
+                    btnSelectAll.Enabled = true;
+                    btnReleaseAll.Enabled = true;
+                    F12Enable = true;
+
+                    txtPaymentDate.Focus();
                 }
-
-                //txtPaymentDate.ReadOnly = true;
-                //ScStaff.TxtCode.ReadOnly = true;
-                //ScStaff.SearchEnable = false;
-                EnablePanel(PanelDetail);
-                btnSelectAll.Enabled = true;
-                btnReleaseAll.Enabled = true;
-
-                txtPaymentDate.Focus();
             }
         }
 
@@ -449,9 +487,12 @@ namespace SiharaiTouroku
                 {
                     if (DataDisplay())
                     {
-
+                        txtPaymentDate.Focus();
+                        return;
                     }
                 }
+
+                ClearDetail();
             }
         }
 
@@ -464,7 +505,19 @@ namespace SiharaiTouroku
                     ((e.KeyCode & (Keys.Alt | Keys.Control)) == Keys.None))
             {
                 type = 1;
-                ErrorCheck(11);
+                if (ErrorCheck(11))
+                {
+                    if (DataDisplay())
+                    {
+                        txtPaymentDate.Focus();
+                        return;
+                    }
+                }
+                else
+                {
+                    ScPaymentProcessNum.SetFocus(1);
+                }
+               
             }
         }
 
@@ -651,50 +704,36 @@ namespace SiharaiTouroku
         {
             if (index == 11)
             {
-                if (type == 1)
+                if (type == 1 || type == 2)
                 {
-                    //入力無くても良い(It is not necessary to input)
-                    if (string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    if (type == 1)
                     {
-                        return true;
-                    }
-
-                    DataTable dtpay = new DataTable();
-                    dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
-                    dtpay = sibl.D_Pay_LargePayNoSelect(dpe);
-                    if (dtpay.Rows.Count == 0)
-                    {
-                        sibl.ShowMessage("138");
-                        ScPaymentProcessNum.SetFocus(1);
-                        return false;
-                    }
-                    else
-                    {
-                        if (!string.IsNullOrWhiteSpace(dtpay.Rows[0]["DeleteDateTime"].ToString()))
+                        //入力無くても良い(It is not necessary to input)
+                        if (string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
                         {
-                            sibl.ShowMessage("140");
-                            ScPaymentProcessNum.SetFocus(1);
-                            return false;
+                            return true;
                         }
                     }
-                }
 
-                else if (type == 2)
-                {
-                    //支払処理番号未入力時、入力必須(Entry required)
-                    if (!string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                    else if (type == 2)
                     {
-                        return true;
+                        //支払処理番号未入力時、入力必須(Entry required)
+                        if (!string.IsNullOrWhiteSpace(ScPaymentProcessNum.TxtCode.Text))
+                        {
+                            return true;
+                        }
+
+                        if (!RequireCheck(new Control[] { ScPaymentNum.TxtCode }))
+                            return false;
                     }
 
-                    if (!RequireCheck(new Control[] { ScPaymentNum.TxtCode }))
-                        return false;
+                    DeleteExclusive();
 
                     dpe.PayNo = ScPaymentNum.TxtCode.Text;
                     dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
                     //dtpayno = sibl.D_Pay_PayNoSelect(dpe);
-                    dtPay1 = sibl.D_Pay_Select01(dpe);
-                    if (dtPay1.Rows.Count == 0)
+                    dtPayplan = sibl.D_Pay_Select01(dpe);
+                    if (dtPayplan.Rows.Count == 0)//dtPay1
                     {
                         bbl.ShowMessage("E138", "支払番号");
                         ScPaymentNum.SetFocus(1);
@@ -702,21 +741,20 @@ namespace SiharaiTouroku
                     }
                     else
                     {
-                        if (!string.IsNullOrWhiteSpace(dtPay1.Rows[0]["DeleteDateTime"].ToString()))
+                        if (!string.IsNullOrWhiteSpace(dtPayplan.Rows[0]["DeleteDateTime"].ToString()))
                         {
                             sibl.ShowMessage("E140");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
-                        if (!string.IsNullOrWhiteSpace(dtPay1.Rows[0]["FBCreateDate"].ToString()))
+                        if (!string.IsNullOrWhiteSpace(dtPayplan.Rows[0]["FBCreateDate"].ToString()))
                         {
                             sibl.ShowMessage("E144");
                             ScPaymentNum.SetFocus(1);
                             return false;
                         }
-                        txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
                         //入力できる範囲内の日付であること
-                        if (!bbl.CheckInputPossibleDate(txtPaymentDate.Text))
+                        if (!bbl.CheckInputPossibleDate(dtPayplan.Rows[0]["PayDate"].ToString()))
                         {
                             //Ｅ１１５
                             bbl.ShowMessage("E115");
@@ -726,14 +764,24 @@ namespace SiharaiTouroku
                         //排他処理
                         bool ret = SelectAndInsertExclusive();
                         if (!ret)
+
                             return false;
 
+                        ret = SelectAndInsertExclusive(dtPayplan);
+                        if (!ret)
+                        {
+                            dtPayplan = null;
+                            return false;
+                        }
                         dtPay1Detail = sibl.D_Pay_Select02(dpe);
                     }
-                }
 
+                }
                 else if (type == 3)
                 {
+                    if(!string.IsNullOrWhiteSpace(txtDueDate1.Text))
+                        txtDueDate1.Text = bbl.FormatDate(txtDueDate1.Text);
+
                     if (!CheckDate2())
                     {
                         return false;
@@ -753,15 +801,17 @@ namespace SiharaiTouroku
                 if (!CheckStaff())
                     return false;
 
-                if (!RequireCheck(new Control[] { cboPaymentType }))
-                    return false;
+                if (OperationMode == EOperationMode.INSERT)
+                {
+                    if (!RequireCheck(new Control[] { cboPaymentType }))
+                        return false;
 
-                if (!CheckBillSettleDate())
-                    return false;
+                    if (!CheckBillSettleDate())
+                        return false;
 
-                if (!RequireCheck(new Control[] { cboPaymentSourceAcc }))
-                    return false;
-
+                    if (!RequireCheck(new Control[] { cboPaymentSourceAcc }))
+                        return false;
+                }
             }
 
             return true;
@@ -796,8 +846,8 @@ namespace SiharaiTouroku
         {
             ScPayee.LabelText = "";
 
-            if (!RequireCheck(new Control[] { ScPayee.TxtCode }))
-                return false;
+            if (string.IsNullOrWhiteSpace(ScPayee.TxtCode.Text))
+                return true;
             else
             {
                 mve.VendorCD = ScPayee.TxtCode.Text;
@@ -824,6 +874,8 @@ namespace SiharaiTouroku
                 return false;
             else
             {
+                txtDueDate2.Text = bbl.FormatDate(txtDueDate2.Text);
+
                 int result = txtDueDate1.Text.CompareTo(txtDueDate2.Text);
                 if (result > 0)
                 {
@@ -897,35 +949,33 @@ namespace SiharaiTouroku
         /// </summary>
         private bool DataDisplay()
         {
-            txtDueDate1.Enabled = false;
-            txtDueDate2.Enabled = false;
-            ScPayee.Enabled = false;
-            btnF11Show.Enabled = false;
 
-            cboPaymentType.Enabled = false;
-            cboPaymentSourceAcc.Enabled = false;
-            txtBillSettleDate.Enabled = false;
-
-            btnSelectAll.Enabled = true;
-            btnReleaseAll.Enabled = true;
             //dpe.PayNo = ScPaymentNum.TxtCode.Text;
             //dpe.LargePayNO = ScPaymentProcessNum.TxtCode.Text;
 
             //dtPay1 = sibl.D_Pay_Select01(dpe);
-            if (dtPay1.Rows.Count > 0)
+            if (dtPayplan.Rows.Count > 0)//dtPay1
             {
-                dgvPayment.DataSource = dtPay1;
-                txtPaymentDate.Text = dtPay1.Rows[0]["PayDate"].ToString();
-                ScStaff.TxtCode.Text = dtPay1.Rows[0]["StaffCD"].ToString();
-                ScStaff.LabelText = dtPay1.Rows[0]["StaffName"].ToString();
+                dgvPayment.DataSource = dtPayplan;// dtPay1;
+                txtPaymentDate.Text = dtPayplan.Rows[0]["PayDate"].ToString();
+                ScStaff.TxtCode.Text = dtPayplan.Rows[0]["StaffCD"].ToString();
+                ScStaff.LabelText = dtPayplan.Rows[0]["StaffName"].ToString();
+
                 Checkstate(true);
                 dgvPayment.Rows[0].Selected = true;
                 LabelDataBind();
 
                 Btn_F7.Enabled = true;
 
-                //vendorCD = dtPay1.Rows[0]["PayeeCD"].ToString();
                 EnablePanel(PanelDetail);
+                btnSelectAll.Enabled = false;
+                btnReleaseAll.Enabled = false;
+                cboPaymentType.Enabled = false;
+                cboPaymentSourceAcc.Enabled = false;
+                txtBillSettleDate.Enabled = false;
+
+                F12Enable = true;
+                DisablePanel(PanelHeader);
             }
             return true;
         }
@@ -958,27 +1008,118 @@ namespace SiharaiTouroku
 
         private void cboPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (cboPaymentType.SelectedValue.ToString() == "1")
-            //{
-            //    foreach (DataGridViewRow row in dgvPayment.Rows)
-            //    {
-            //        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-            //        row.Cells["colTransferAmount"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-            //        row.Cells["colUnpaidAmount"].Value = "0";
-            //        row.Cells["colOtherThanTransfer"].Value = "0";
-            //    }
-            //}
-            //else
-            //{
-            //    foreach (DataGridViewRow row in dgvPayment.Rows)
-            //    {
-            //        row.Cells["colPaymenttime"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-            //        row.Cells["colTransferAmount"].Value = "0";
-            //        row.Cells["colTransferFee"].Value = "0";
-            //        row.Cells["colUnpaidAmount"].Value = "0";
-            //        row.Cells["colOtherThanTransfer"].Value = Convert.ToInt32(row.Cells["colScheduledPayment"].Value) - Convert.ToInt32(row.Cells["colAmountPaid"].Value);
-            //    }
-            //}
+            try
+            {
+                if(cboPaymentType.SelectedIndex > 0)
+                {
+                    
+                    string type = cboPaymentType.SelectedValue.ToString();
+
+                    if (dgvPayment.Rows.Count > 0)
+                    {
+                        for (int rowIndex = 0; rowIndex < dgvPayment.Rows.Count; rowIndex++)
+                        {
+                            dppe.PayPlanDate = dgvPayment.Rows[rowIndex].Cells["colPaymentdueDate"].Value.ToString();
+                            dppe.PayeeCD = dgvPayment.Rows[rowIndex].Cells["colPayeeCD"].Value.ToString();
+
+                            if (dtPayplan != null && dtPayplan.Rows.Count > 0)
+                            {
+                                DataRow[] tblROWS1 = dtPayplan.Select("PayeeCD = '" + dppe.PayeeCD + "'" + "and PayPlanDate = '" + dppe.PayPlanDate + "'");
+                                foreach (DataRow row in tblROWS1)
+                                {
+                                    //row["Chk"] = 1;
+
+                                    row["CashGaku"] = 0;
+                                    row["OffsetGaku"] = 0;
+                                    row["BillGaku"] = 0;
+                                    row["BillDate"] = "";
+                                    row["BillNO"] = "";
+                                    row["ERMCGaku"] = 0;
+                                    row["ERMCNO"] = "";
+                                    row["ERMCDate"] = "";
+                                    row["OtherGaku1"] = 0;
+                                    row["Account1"] = "";
+                                    row["start1"] = "";
+                                    row["SubAccount1"] = "";
+                                    row["end1label"] = "";
+                                    row["OtherGaku2"] = 0;
+                                    row["Account2"] = "";
+                                    row["start2"] = "";
+                                    row["SubAccount2"] = "";
+                                    row["end2label"] = "";
+
+                                    switch (type)
+                                    {
+                                        case "1"://振込の場合
+                                            //振込額
+                                            row["TransferGaku"] = bbl.Z_Set(row["PayPlanGaku"]) - bbl.Z_Set(row["PayConfirmGaku"]); //支払予定額-支払済額									
+                                            break;
+
+                                        case "2":
+
+                                        case "3":
+
+                                        case "4":
+
+                                        case "5":
+                                            row["TransferGaku"] = 0;
+                                            row["BankCD"] = "";
+                                            row["BankName"] = "";
+                                            row["BranchCD"] = "";
+                                            row["BranchName"] = "";
+                                            row["KouzaKBN"] = DBNull.Value;
+                                            row["KouzaNO"] = "";
+                                            row["KouzaMeigi"] = "";
+                                            row["FeeKBNVal"] = DBNull.Value;
+                                            row["TransferFeeGaku"] =0;
+
+                                            //現金
+                                            if (type.Equals("2"))
+                                            {
+                                                row["Cash"] = row["PayGaku"];
+                                            }
+                                            //手形
+                                            else if (type.Equals("3"))
+                                            {
+                                                row["BillGaku"] = row["PayGaku"];
+                                                row["BillDate"] = txtBillSettleDate.Text;
+                                            }
+                                            //相殺
+                                            else if (type.Equals("4"))
+                                            {
+                                                row["OffsetGaku"] = row["PayGaku"];
+                                            }
+                                            //電債
+                                            else if (type.Equals("5"))
+                                            {
+                                                row["ERMCGaku"] = row["PayGaku"];
+                                                row["ERMCDate"] = txtBillSettleDate.Text;
+                                            }
+                                            //その他１
+                                            else if (type.Equals("6"))
+                                            {
+                                                row["OtherGaku1"] = row["PayGaku"];
+                                            }
+                                            //その他１
+                                            else if (type.Equals("7"))
+                                            {
+                                                row["OtherGaku2"] = row["PayGaku"];
+                                            }
+                                            break;
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }         
         }
 
         /// <summary>
@@ -1092,11 +1233,11 @@ namespace SiharaiTouroku
                         , bbl.Z_Set(row["TransferFeeGaku"])
                         , bbl.Z_Set(row["FeeKBN"])
                         , cboPaymentSourceAcc.SelectedValue
-                        , row["BankCD"]
-                        , row["BranchCD"]
+                        , string.IsNullOrWhiteSpace(row["BankCD"].ToString()) ? null : row["BankCD"]
+                        , string.IsNullOrWhiteSpace(row["BranchCD"].ToString()) ? null : row["BranchCD"]
                         , bbl.Z_Set(row["KouzaKBN"])
-                        , row["KouzaNO"]
-                        , row["KouzaMeigi"]
+                        , string.IsNullOrWhiteSpace(row["KouzaNO"].ToString()) ? null : row["KouzaNO"]
+                        , string.IsNullOrWhiteSpace(row["KouzaMeigi"].ToString()) ? null : row["KouzaMeigi"]
                         , bbl.Z_Set(row["CashGaku"])
                         , bbl.Z_Set(row["BillGaku"])
                         , string.IsNullOrWhiteSpace(row["BillDate"].ToString()) ? null : row["BillDate"]
@@ -1167,12 +1308,13 @@ namespace SiharaiTouroku
                         continue;
                 }
 
-                rows++;
                 PayConfirmFinishedKBN = 0;
                 ProcessingKBN = 1;
 
                 if (bbl.Z_Set(row["Chk"]) > 0)
                 {
+                    rows++;
+
                     if (bbl.Z_Set(row["UnpaidAmount2"]) == 0)
                         PayConfirmFinishedKBN = 1;
 
