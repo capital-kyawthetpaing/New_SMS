@@ -419,5 +419,77 @@ namespace Search
             }
         }
 
+        private void txtRecordDateTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtRecordDateFrom.Text) && !string.IsNullOrWhiteSpace(txtRecordDateTo.Text))
+                {
+                    DateTime dt1 = Convert.ToDateTime(txtRecordDateFrom.Text);
+                    DateTime dt2 = Convert.ToDateTime(txtRecordDateTo.Text);
+
+                    if (dt1 > dt2)
+                    {
+                        skhnobl.ShowMessage("E104");
+                        txtRecordDateFrom.Focus();
+                    }
+                }
+            }
         }
+
+        private void txtEntryDateTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtEntryDateFrom.Text) && !string.IsNullOrWhiteSpace(txtEntryDateTo.Text))
+                {
+                    DateTime dt1 = Convert.ToDateTime(txtEntryDateFrom.Text);
+                    DateTime dt2 = Convert.ToDateTime(txtEntryDateTo.Text);
+
+                    if (dt1 > dt2)
+                    {
+                        skhnobl.ShowMessage("E104");
+                        txtEntryDateFrom.Focus();
+
+                    }
+                }
+            }
+        }
+
+        private void txtPaymentDueDateTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtPaymentDueDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDueDateTo.Text))
+                {
+                    DateTime dt1 = Convert.ToDateTime(txtPaymentDueDateFrom.Text);
+                    DateTime dt2 = Convert.ToDateTime(txtPaymentDueDateTo.Text);
+
+                    if (dt1 > dt2)
+                    {
+                        skhnobl.ShowMessage("E104");
+                        txtPaymentDueDateFrom.Focus();
+                    }
+                }
+            }
+        }
+
+        private void txtPaymentDateTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrWhiteSpace(txtPaymentDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPaymentDateTo.Text))
+                {
+                    DateTime dt1 = Convert.ToDateTime(txtPaymentDateFrom.Text);
+                    DateTime dt2 = Convert.ToDateTime(txtPaymentDateTo.Text);
+
+                    if (dt1 > dt2)
+                    {
+                        skhnobl.ShowMessage("E104");
+                        txtPaymentDateFrom.Focus();
+                    }
+                }
+            }
+        }
+    }
 }
