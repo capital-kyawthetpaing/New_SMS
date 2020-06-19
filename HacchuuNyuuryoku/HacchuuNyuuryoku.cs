@@ -86,6 +86,7 @@ namespace HacchuuNyuuryoku
         private int W_ApprovalStageFLG;
         private int mAmountFractionKBN;
         private int mTaxFractionKBN;
+        private int mTaxTiming;
         private bool mSyouninKidou = false;
 
         // -- 明細部をグリッドのように扱うための宣言 ↓--------------------
@@ -1759,7 +1760,7 @@ namespace HacchuuNyuuryoku
                     {
                         mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["OrderHontaiGaku"]);   // 
                     }
-                    CheckGrid((int)ClsGridHacchuu.ColNO.OrderGaku, i);
+                    CheckGrid((int)ClsGridHacchuu.ColNO.OrderGaku, i, true);
                     //mGrid.g_DArray[i].MitsumoriTax = bbl.Z_Set(row["CostGaku"]);  CheckGridでセット
                     //mGrid.g_DArray[i].KeigenTax = bbl.Z_Setrow["CostGaku"]);    CheckGridでセット
 
@@ -2120,6 +2121,7 @@ namespace HacchuuNyuuryoku
                         ScOrder.LabelText = mve.VendorName;
                         mAmountFractionKBN = Convert.ToInt16(mve.AmountFractionKBN);
                         mTaxFractionKBN = Convert.ToInt16(mve.TaxFractionKBN);
+                        mTaxTiming = Convert.ToInt16(mve.TaxTiming);
 
                         if (mOldOrderCD != detailControls[index].Text)
                         {
@@ -2292,7 +2294,7 @@ namespace HacchuuNyuuryoku
                             //①JAN発注単価マスタ（店舗指定なし）
                             mje.AdminNO = mGrid.g_DArray[row].AdminNO;
                             mje.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
-                            mje.StoreCD = "0000";
+                            mje.StoreCD = CboStoreCD.SelectedValue.ToString(); 
                             mje.ChangeDate = ymd;
 
                             JANOrderPrice_BL jbl = new JANOrderPrice_BL();
@@ -2304,7 +2306,7 @@ namespace HacchuuNyuuryoku
                             else
                             {
                                 //②	JAN発注単価マスタ（店舗指定あり）
-                                mje.StoreCD = CboStoreCD.SelectedValue.ToString();
+                                mje.StoreCD = "0000";
 
                                 ret = jbl.M_JANOrderPrice_Select(mje);
                                 if (ret)
@@ -2320,7 +2322,7 @@ namespace HacchuuNyuuryoku
                                     mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
                                     mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
                                     mje2.ChangeDate = ymd;
-                                    mje2.StoreCD = "0000";
+                                    mje2.StoreCD = CboStoreCD.SelectedValue.ToString();
 
                                     ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
                                     ret = ibl.M_ItemOrderPrice_Select(mje2);
@@ -2331,7 +2333,7 @@ namespace HacchuuNyuuryoku
                                     else
                                     {
                                         //④	ITEM発注単価マスター（店舗指定なし）
-                                        mje2.StoreCD = CboStoreCD.SelectedValue.ToString();
+                                        mje2.StoreCD = "0000";
                                         ret = ibl.M_ItemOrderPrice_Select(mje2);
                                         if (ret)
                                         {
@@ -2510,7 +2512,7 @@ namespace HacchuuNyuuryoku
 
             switch (col)
             {
-                case (int)ClsGridHacchuu.ColNO.JanCD:
+                //case (int)ClsGridHacchuu.ColNO.JanCD:
                 case (int)ClsGridHacchuu.ColNO.OrderSu:
                 case (int)ClsGridHacchuu.ColNO.Rate:
                 case (int)ClsGridHacchuu.ColNO.OrderUnitPrice: //販売単価 
@@ -2572,6 +2574,14 @@ namespace HacchuuNyuuryoku
             decimal zei10 = 0;
             decimal zei8 = 0;
 
+            //M_Vendor.TaxTiming＝2:伝票ごと
+            decimal kin10 = 0;
+            decimal kin8 = 0;
+            int zeiritsu10 = 0;
+            int zeiritsu8 = 0;
+            int maxKinRowNo = 0;
+            decimal maxKin = 0;
+
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
@@ -2579,17 +2589,68 @@ namespace HacchuuNyuuryoku
                     kin1 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
                     zei10 += bbl.Z_Set(mGrid.g_DArray[RW].HacchuTax);
                     zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
+
+                    //M_Vendor.TaxTiming＝2:伝票ごと
+                    if (mTaxTiming.Equals(2))
+                    {
+                        if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
+                        {
+                            kin10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
+                        }
+                        else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
+                        {
+                            kin8 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                            zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate);
+                        }
+
+                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku))
+                            maxKinRowNo = RW;
+                    }
                 }
             }
 
             //Footer部
             lblKin1.Text = string.Format("{0:#,##0}", kin1);
-            lblKin2.Text = string.Format("{0:#,##0}", zei10 + zei8);
-            lblKin3.Text = string.Format("{0:#,##0}", kin1 + zei10 + zei8);
 
-            mZei10 = zei10;
-            mZei8 = zei8;
+            //M_Vendor.TaxTiming＝1:明細ごと または 3:締ごと	
+            if (mTaxTiming.Equals(1) || mTaxTiming.Equals(3))
+            {
+                lblKin2.Text = string.Format("{0:#,##0}", zei10 + zei8);
+                lblKin3.Text = string.Format("{0:#,##0}", kin1 + zei10 + zei8);
+                mZei10 = zei10;
+                mZei8 = zei8;
+            }
+            //M_Vendor.TaxTiming＝2:伝票ごと
+            else
+            {
+                //通常税額(Hidden)=Form.Detail.発注額のTotal×Form.Detail.税率	※端数処理はM_Customerの設定に準ずる		
+                //←M_SKU.TaxRateFLG＝1:通常課税の明細が対象
+                kin10 = GetResultWithHasuKbn(mTaxFractionKBN, kin10 * zeiritsu10 / 100);
+                kin8 = GetResultWithHasuKbn(mTaxFractionKBN, kin8 * zeiritsu8 / 100);
 
+                decimal sagaku = (kin10 + kin8) - (zei10 + zei8);
+                //通常税額(Hidden) ＋ 軽減税額(Hidden)　≠　SUM（Form.Detail.通常税額＋Form.Detail.軽減税額）の場合、
+                //以下の計算結果「消費税差額」を明細金額が一番大きい金額（全明細が同じ金額の場合は１行目）の明細発注額、明細消費税額に足し込む。
+                if (sagaku != 0)
+                {
+                    //※消費税差額＝通常税額(Hidden) ＋ 軽減税額(Hidden)）－ SUM（Form.Detail.通常税額 ＋ Form.Detail.軽減税額）	
+                    if (mGrid.g_DArray[maxKinRowNo].TaxRateFLG.Equals(1))
+                    {
+                        mGrid.g_DArray[maxKinRowNo].HacchuTax = mGrid.g_DArray[maxKinRowNo].HacchuTax + sagaku;
+                    }
+                    else if (mGrid.g_DArray[maxKinRowNo].TaxRateFLG.Equals(2))
+                    {
+                        mGrid.g_DArray[maxKinRowNo].KeigenTax = mGrid.g_DArray[maxKinRowNo].KeigenTax + sagaku;
+                    }
+                }
+                lblKin2.Text = string.Format("{0:#,##0}", kin10 + kin8);
+                lblKin3.Text = string.Format("{0:#,##0}", kin1 + kin10 + kin8);
+
+                mZei10 = kin10;
+                mZei8 = kin8;
+
+            }
         }
 
         /// <summary>
@@ -3001,6 +3062,7 @@ namespace HacchuuNyuuryoku
             lblEDI.Text = "";
             mAmountFractionKBN = 0;
             mTaxFractionKBN = 0;
+            mTaxTiming = 0;
         }
 
         private void Scr_Lock(short no1, short no2, short Kbn)
@@ -3519,6 +3581,10 @@ namespace HacchuuNyuuryoku
                         w_ActCtl.Focus();
                         return;
                     }
+
+                    //データ呼び出し時に何度もCalcKinをReadしないようにするため移動
+                    if (CL == (int)ClsGridHacchuu.ColNO.JanCD)
+                        CalcKin();
 
                     if (lastCell)
                     {

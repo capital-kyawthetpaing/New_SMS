@@ -49,6 +49,7 @@ namespace ZaikoKanriHyou
             scITEM.CodeWidth = 600;
             scSKUCD.CodeWidth = 600;
             scMakerShohinCD.CodeWidth = 600;
+            txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
         }
 
         private void SetRequiredField()
@@ -168,7 +169,7 @@ namespace ZaikoKanriHyou
                         chk = 2;
                     }
                 }
-                  else
+                else
                 {
                     chk = 3;
                 }

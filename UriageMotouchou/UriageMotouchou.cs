@@ -95,7 +95,15 @@ namespace UriageMotouchou
                     return false;
                 }
             }
-
+            if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
+            {
+                if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
+                {
+                    umbl.ShowMessage("E104");
+                    txtTargetTo.Focus();
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -314,6 +322,22 @@ namespace UriageMotouchou
            // sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
             sc_Customer.ChangeDate = umbl.GetDate(txtTagetFrom.Text);
         }
+
+        private void txtTargetTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
+                {
+                    if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
+                    {
+                        umbl.ShowMessage("E104");
+                        txtTargetTo.Focus();
+                    }
+                }
+            }
+        }
+
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

@@ -1054,9 +1054,9 @@
             this.IMN_WEBPR_9.isMaxLengthErr = false;
             this.IMN_WEBPR_9.IsNumber = true;
             this.IMN_WEBPR_9.IsShop = false;
-            this.IMN_WEBPR_9.Length = 40;
+            this.IMN_WEBPR_9.Length = 80;
             this.IMN_WEBPR_9.Location = new System.Drawing.Point(808, 361);
-            this.IMN_WEBPR_9.MaxLength = 40;
+            this.IMN_WEBPR_9.MaxLength = 80;
             this.IMN_WEBPR_9.MoveNext = true;
             this.IMN_WEBPR_9.Name = "IMN_WEBPR_9";
             this.IMN_WEBPR_9.Size = new System.Drawing.Size(487, 19);
@@ -6280,7 +6280,7 @@
             this.TxtRemark1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark1.Length = 360;
             this.TxtRemark1.Location = new System.Drawing.Point(99, 645);
-            this.TxtRemark1.MaxLength = 360;
+            this.TxtRemark1.MaxLength = 180;
             this.TxtRemark1.Mdea = false;
             this.TxtRemark1.Mfocus = false;
             this.TxtRemark1.MoveNext = false;
