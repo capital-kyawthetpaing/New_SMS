@@ -242,7 +242,7 @@ namespace SiharaiTouroku
                     if (dt.Rows.Count > 0)
                     {
                         bbl.ShowMessage("S004", dt.Rows[0]["Program"].ToString(), dt.Rows[0]["Operator"].ToString());
-                        ScPaymentProcessNum.Focus();
+                        ScPaymentProcessNum.SetFocus(1);
                         return false;
                     }
                     else
@@ -764,7 +764,6 @@ namespace SiharaiTouroku
                         //排他処理
                         bool ret = SelectAndInsertExclusive();
                         if (!ret)
-
                             return false;
 
                         ret = SelectAndInsertExclusive(dtPayplan);
@@ -1319,7 +1318,7 @@ namespace SiharaiTouroku
                         PayConfirmFinishedKBN = 1;
 
                     if (bbl.Z_Set(row["PayConfirmGaku"]) != 0)
-                        PayConfirmFinishedKBN = 3;
+                        ProcessingKBN = 3;
 
                     dt.Rows.Add(row["PayeeCD"]
                         , row["PayPlanDate"]
