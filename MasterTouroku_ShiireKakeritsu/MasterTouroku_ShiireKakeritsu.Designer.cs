@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -323,7 +322,7 @@
             this.cbo_Season1.MoveNext = true;
             this.cbo_Season1.Name = "cbo_Season1";
             this.cbo_Season1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Season1.TabIndex = 24;
+            this.cbo_Season1.TabIndex = 8;
             // 
             // cbo_Year1
             // 
@@ -339,7 +338,7 @@
             this.cbo_Year1.MoveNext = true;
             this.cbo_Year1.Name = "cbo_Year1";
             this.cbo_Year1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Year1.TabIndex = 23;
+            this.cbo_Year1.TabIndex = 7;
             // 
             // ckM_Label26
             // 
@@ -379,17 +378,17 @@
             // 
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -401,14 +400,6 @@
             this.colDate,
             this.colRate1,
             this.col1});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ShiireKakeritsu.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ShiireKakeritsu.EnableHeadersVisualStyles = false;
             this.dgv_ShiireKakeritsu.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_ShiireKakeritsu.Location = new System.Drawing.Point(187, 343);
@@ -633,7 +624,7 @@
             this.txtRate.Name = "txtRate";
             this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
-            this.txtRate.TabIndex = 24;
+            this.txtRate.TabIndex = 21;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
@@ -677,7 +668,7 @@
             this.txtChangeDate.MoveNext = true;
             this.txtChangeDate.Name = "txtChangeDate";
             this.txtChangeDate.Size = new System.Drawing.Size(100, 19);
-            this.txtChangeDate.TabIndex = 23;
+            this.txtChangeDate.TabIndex = 20;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -736,7 +727,7 @@
             this.scSegmentCD.SearchEnable = true;
             this.scSegmentCD.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD.TabIndex = 19;
+            this.scSegmentCD.TabIndex = 17;
             this.scSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD.UseChangeDate = false;
             this.scSegmentCD.Value1 = null;
@@ -783,7 +774,7 @@
             this.scSportsCD.SearchEnable = true;
             this.scSportsCD.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD.TabIndex = 17;
+            this.scSportsCD.TabIndex = 16;
             this.scSportsCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD.UseChangeDate = false;
             this.scSportsCD.Value1 = null;
@@ -903,7 +894,7 @@
             this.btnCopy.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(100, 25);
-            this.btnCopy.TabIndex = 9;
+            this.btnCopy.TabIndex = 12;
             this.btnCopy.Text = "複写";
             this.btnCopy.UseVisualStyleBackColor = false;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
@@ -931,7 +922,7 @@
             this.txtCopy.MoveNext = true;
             this.txtCopy.Name = "txtCopy";
             this.txtCopy.Size = new System.Drawing.Size(100, 19);
-            this.txtCopy.TabIndex = 14;
+            this.txtCopy.TabIndex = 11;
             this.txtCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1000,7 +991,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 25);
-            this.btnSearch.TabIndex = 5;
+            this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "表示";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -1028,7 +1019,7 @@
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(100, 19);
-            this.txtDate.TabIndex = 12;
+            this.txtDate.TabIndex = 9;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1087,7 +1078,7 @@
             this.scSegmentCD1.SearchEnable = true;
             this.scSegmentCD1.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD1.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD1.TabIndex = 8;
+            this.scSegmentCD1.TabIndex = 6;
             this.scSegmentCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD1.UseChangeDate = false;
             this.scSegmentCD1.Value1 = null;
@@ -1134,7 +1125,7 @@
             this.scSportsCD1.SearchEnable = true;
             this.scSportsCD1.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD1.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD1.TabIndex = 6;
+            this.scSportsCD1.TabIndex = 5;
             this.scSportsCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD1.UseChangeDate = false;
             this.scSportsCD1.Value1 = null;
