@@ -427,6 +427,8 @@ namespace ZaikoShoukai
             Maker.Value1 = "1";
         }
 
+       
+
         private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if(!String.IsNullOrEmpty(sku.TxtCode.Text))
