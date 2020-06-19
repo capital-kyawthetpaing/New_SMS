@@ -45,9 +45,9 @@
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 392);
+            this.panel4.Location = new System.Drawing.Point(0, 362);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(970, 53);
+            this.panel4.Size = new System.Drawing.Size(970, 49);
             this.panel4.TabIndex = 82;
             // 
             // tableLayoutPanel1
@@ -62,7 +62,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 53);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 49);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // btnClose
@@ -74,12 +74,12 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnClose.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.btnClose.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.btnClose.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnClose.Location = new System.Drawing.Point(1, 1);
             this.btnClose.Margin = new System.Windows.Forms.Padding(1);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(289, 51);
+            this.btnClose.Size = new System.Drawing.Size(289, 47);
             this.btnClose.TabIndex = 2;
             this.btnClose.Tag = "0";
             this.btnClose.Text = "戻　る";
@@ -95,12 +95,12 @@
             this.btnProcess.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnProcess.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnProcess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcess.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
+            this.btnProcess.Font = new System.Drawing.Font("ＭＳ ゴシック", 30F, System.Drawing.FontStyle.Bold);
             this.btnProcess.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
             this.btnProcess.Location = new System.Drawing.Point(292, 1);
             this.btnProcess.Margin = new System.Windows.Forms.Padding(1);
             this.btnProcess.Name = "btnProcess";
-            this.btnProcess.Size = new System.Drawing.Size(677, 51);
+            this.btnProcess.Size = new System.Drawing.Size(677, 47);
             this.btnProcess.TabIndex = 1;
             this.btnProcess.Tag = "1";
             this.btnProcess.Text = "決　定";
@@ -109,11 +109,11 @@
             // 
             // ckmShop_RadioButton1
             // 
-            this.ckmShop_RadioButton1.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckmShop_RadioButton1.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckmShop_RadioButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_RadioButton1.Location = new System.Drawing.Point(104, 60);
+            this.ckmShop_RadioButton1.Location = new System.Drawing.Point(104, 55);
             this.ckmShop_RadioButton1.Name = "ckmShop_RadioButton1";
-            this.ckmShop_RadioButton1.Size = new System.Drawing.Size(125, 34);
+            this.ckmShop_RadioButton1.Size = new System.Drawing.Size(125, 31);
             this.ckmShop_RadioButton1.TabIndex = 0;
             this.ckmShop_RadioButton1.TabStop = true;
             this.ckmShop_RadioButton1.Text = "小学生";
@@ -122,11 +122,11 @@
             // 
             // ckmShop_RadioButton2
             // 
-            this.ckmShop_RadioButton2.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckmShop_RadioButton2.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckmShop_RadioButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_RadioButton2.Location = new System.Drawing.Point(104, 114);
+            this.ckmShop_RadioButton2.Location = new System.Drawing.Point(104, 105);
             this.ckmShop_RadioButton2.Name = "ckmShop_RadioButton2";
-            this.ckmShop_RadioButton2.Size = new System.Drawing.Size(125, 34);
+            this.ckmShop_RadioButton2.Size = new System.Drawing.Size(125, 31);
             this.ckmShop_RadioButton2.TabIndex = 1;
             this.ckmShop_RadioButton2.TabStop = true;
             this.ckmShop_RadioButton2.Text = "中学生";
@@ -135,11 +135,11 @@
             // 
             // ckmShop_RadioButton3
             // 
-            this.ckmShop_RadioButton3.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckmShop_RadioButton3.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckmShop_RadioButton3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_RadioButton3.Location = new System.Drawing.Point(104, 168);
+            this.ckmShop_RadioButton3.Location = new System.Drawing.Point(104, 155);
             this.ckmShop_RadioButton3.Name = "ckmShop_RadioButton3";
-            this.ckmShop_RadioButton3.Size = new System.Drawing.Size(125, 34);
+            this.ckmShop_RadioButton3.Size = new System.Drawing.Size(125, 31);
             this.ckmShop_RadioButton3.TabIndex = 2;
             this.ckmShop_RadioButton3.TabStop = true;
             this.ckmShop_RadioButton3.Text = "高校生";
@@ -148,11 +148,11 @@
             // 
             // ckmShop_RadioButton4
             // 
-            this.ckmShop_RadioButton4.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckmShop_RadioButton4.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckmShop_RadioButton4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_RadioButton4.Location = new System.Drawing.Point(104, 222);
+            this.ckmShop_RadioButton4.Location = new System.Drawing.Point(104, 205);
             this.ckmShop_RadioButton4.Name = "ckmShop_RadioButton4";
-            this.ckmShop_RadioButton4.Size = new System.Drawing.Size(125, 34);
+            this.ckmShop_RadioButton4.Size = new System.Drawing.Size(183, 31);
             this.ckmShop_RadioButton4.TabIndex = 3;
             this.ckmShop_RadioButton4.TabStop = true;
             this.ckmShop_RadioButton4.Text = "大学・一般";
@@ -161,11 +161,11 @@
             // 
             // ckmShop_RadioButton5
             // 
-            this.ckmShop_RadioButton5.Font = new System.Drawing.Font("MS Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.ckmShop_RadioButton5.Font = new System.Drawing.Font("ＭＳ ゴシック", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.ckmShop_RadioButton5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_RadioButton5.Location = new System.Drawing.Point(104, 276);
+            this.ckmShop_RadioButton5.Location = new System.Drawing.Point(104, 255);
             this.ckmShop_RadioButton5.Name = "ckmShop_RadioButton5";
-            this.ckmShop_RadioButton5.Size = new System.Drawing.Size(125, 34);
+            this.ckmShop_RadioButton5.Size = new System.Drawing.Size(125, 31);
             this.ckmShop_RadioButton5.TabIndex = 4;
             this.ckmShop_RadioButton5.TabStop = true;
             this.ckmShop_RadioButton5.Text = "その他";
@@ -174,10 +174,10 @@
             // 
             // FrmOther
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(970, 445);
+            this.ClientSize = new System.Drawing.Size(970, 411);
             this.Controls.Add(this.ckmShop_RadioButton5);
             this.Controls.Add(this.ckmShop_RadioButton4);
             this.Controls.Add(this.ckmShop_RadioButton3);

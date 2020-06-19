@@ -44,7 +44,9 @@ namespace SaimuKanriHyou
             Btn_F11.Text = "Excel(F11)";
             Btn_F10.Text = "";
             cboStoreAuthorizations.Bind(string.Empty, "2");
+            cboStoreAuthorizations.SelectedValue = StoreCD;
             cboStoreAuthorizations.KeyDown += cboStoreAuthorizations_KeyDown;
+            txtTargetYear.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetYear.Focus();
         }
 
@@ -81,6 +83,8 @@ namespace SaimuKanriHyou
         public void Clear()
         {
             Clear(panelDetail);
+            cboStoreAuthorizations.SelectedValue = StoreCD;
+            txtTargetYear.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetYear.Focus();
         }
 
