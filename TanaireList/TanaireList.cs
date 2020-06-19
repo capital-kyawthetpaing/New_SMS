@@ -145,102 +145,108 @@ namespace TanaireList
 
                     try
                     {
-                        if (dtPrint == null || dtPrint.Rows.Count <= 0)
+                        if (dtPrint != null || dtPrint.Rows.Count > 0)
                         {
-                            return;
+
+
+                            //xsdファイルを保存します。
+
+                            //①保存した.xsdはプロジェクトに追加しておきます。
+                            DialogResult ret;
+                            TanaireList_Report Report = new TanaireList_Report();
+
+                            switch (PrintMode)
+                            {
+                                case EPrintMode.DIRECT:
+
+                                    ret = bbl.ShowMessage("Q202");
+                                    if (ret == DialogResult.No)
+                                    {
+                                        return;
+                                    }
+                                    //}
+
+                                    // 印字データをセット
+
+                                    Report.SetDataSource(dtPrint);
+                                    Report.Refresh();
+                                    Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Report.SetParameterValue("txtHeader", header);
+
+                                    if (ret == DialogResult.Yes)
+                                    {
+                                        var previewForm = new Viewer();
+                                        previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                        previewForm.CrystalReportViewer1.ReportSource = Report;
+                                        previewForm.ShowDialog();
+                                    }
+                                    else     /// //Still Not Working because of Applymargin and Printer not Setting up  (PTK Will Solve)
+                                    {
+                                        //int marginLeft = 360;
+                                        CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                                        margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                        margin.topMargin = DefaultMargin.Top;
+                                        margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                        margin.rightMargin = DefaultMargin.Right;
+                                        Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                        // プリンタに印刷
+                                        System.Drawing.Printing.PageSettings ps;
+                                        try
+                                        {
+                                            System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                            CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                            System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+                                            Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                            System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                            Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                            Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                            Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+
+                                        }
+                                        catch (Exception ex)
+                                        {
+
+                                        }
+                                    }
+                                    break;
+
+                                case EPrintMode.PDF:
+                                    if (bbl.ShowMessage("Q204") != DialogResult.Yes)
+                                    {
+                                        return;
+                                    }
+                                    string filePath = "";
+                                    if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                    {
+                                        return;
+                                    }
+
+                                    // 印字データをセット
+                                    Report.SetDataSource(dtPrint);
+                                    Report.Refresh();
+                                    Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Report.SetParameterValue("txtHeader", header);
+
+                                    bool result = OutputPDF(filePath, Report);
+
+                                    //PDF出力が完了しました。
+                                    bbl.ShowMessage("I202");
+
+                                    break;
+                            }
+                            InsertLog(Get_L_Log_Entity(dtPrint));
                         }
-                        //xsdファイルを保存します。
-
-                        //①保存した.xsdはプロジェクトに追加しておきます。
-                        DialogResult ret;
-                        TanaireList_Report Report = new TanaireList_Report();
-
-                        switch (PrintMode)
+                        else
                         {
-                            case EPrintMode.DIRECT:
-
-                                ret = bbl.ShowMessage("Q202");
-                                if (ret == DialogResult.No)
-                                {
-                                    return;
-                                }
-                                //}
-
-                                // 印字データをセット
-
-                                Report.SetDataSource(dtPrint);
-                                Report.Refresh();
-                                Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Report.SetParameterValue("txtHeader", header);
-
-                                if (ret == DialogResult.Yes)
-                                {
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Report;
-                                    previewForm.ShowDialog();
-                                }
-                                else     /// //Still Not Working because of Applymargin and Printer not Setting up  (PTK Will Solve)
-                                {
-                                    //int marginLeft = 360;
-                                    CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
-                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
-                                    margin.topMargin = DefaultMargin.Top;
-                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
-                                    margin.rightMargin = DefaultMargin.Right;
-                                    Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
-                                    // プリンタに印刷
-                                    System.Drawing.Printing.PageSettings ps;
-                                    try
-                                    {
-                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
-
-                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
-
-                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
-                                        Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
-                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
-
-                                        Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
-
-                                        Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
-
-                                        Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
-
-                                    }
-                                    catch (Exception ex)
-                                    {
-
-                                    }
-                                }
-                                break;
-
-                            case EPrintMode.PDF:
-                                if (bbl.ShowMessage("Q204") != DialogResult.Yes)
-                                {
-                                    return;
-                                }
-                                string filePath = "";
-                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                                {
-                                    return;
-                                }
-
-                               // 印字データをセット
-                                Report.SetDataSource(dtPrint);
-                                Report.Refresh();
-                                Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Report.SetParameterValue("txtHeader", header);
-
-                            bool result = OutputPDF(filePath, Report);
-
-                                //PDF出力が完了しました。
-                                bbl.ShowMessage("I202");
-
-                                break;
-                       }
-                        InsertLog(Get_L_Log_Entity(dtPrint));
+                            bbl.ShowMessage("E128");
+                            txtStartDate.Focus();
+                          }
 
                     }
                     finally
