@@ -222,6 +222,7 @@
             this.txtTargetTo.TabIndex = 25;
             this.txtTargetTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetTo_KeyDown);
             // 
             // ckM_Label2
             // 
