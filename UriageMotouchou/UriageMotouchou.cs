@@ -142,9 +142,7 @@ namespace UriageMotouchou
                     umbl.ShowMessage("E128");
                     txtTagetFrom.Focus();
                 }
-
             }
-
         }
 
         private void OpenForm(string programID, string YYYYMM)

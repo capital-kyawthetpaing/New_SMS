@@ -160,6 +160,7 @@ namespace ShiireShoukaiDetails
                     {
                         ChangeMode(OperationMode);
                         Clear();
+                        Btn_F10.Text = "出力(F10)";
                     }
                     break;
                 case 10:
@@ -191,7 +192,7 @@ namespace ShiireShoukaiDetails
                     F5Visible = false;
                     F9Visible = false;                   
                     F10Visible = true;
-                    Btn_F10.Text = "Excel出力(F10)";
+                    //Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
                     //Btn_Display.Enabled = F11Enable = true;
                     chkOk.Checked = true;
