@@ -41,9 +41,10 @@ namespace UrikakekinTairyuuHyou
             ModeVisible = false;
             Btn_F2.Text = string.Empty;
             Btn_F9.Text = string.Empty;
-            Btn_F10.Text = string.Empty;
+            //Btn_F10.Text = string.Empty;
+            Btn_F11.Text = string.Empty;
 
-            Btn_F11.Text = "出力(F10)";
+            Btn_F10.Text = "出力(F10)";
 
             BindData();
             
@@ -103,7 +104,7 @@ namespace UrikakekinTairyuuHyou
                         break;
                     }
 
-                case 10: //F11
+                case 9: //F11
                     ExcelExport(); break;
               
             }
@@ -239,6 +240,11 @@ namespace UrikakekinTairyuuHyou
                                 }
                             }
                         }
+                        else
+                        {
+                            bbl.ShowMessage("E128");
+                            txtDate.Focus();
+                        }
                     }
                 }
             }
@@ -271,7 +277,7 @@ namespace UrikakekinTairyuuHyou
                
                 try
                 {
-                    if (dtPrint == null)
+                    if (dtPrint == null || dtPrint.Rows.Count<=0)
                     {
                         return;
                     }
@@ -286,7 +292,7 @@ namespace UrikakekinTairyuuHyou
                         case EPrintMode.DIRECT:
 
                             ret = bbl.ShowMessage("Q202");
-                            if (ret == DialogResult.Cancel)
+                            if (ret == DialogResult.No)
                             {
                                 return;
                             }

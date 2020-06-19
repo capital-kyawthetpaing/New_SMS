@@ -144,6 +144,7 @@ namespace ShiireShoukaiDetails
         {
             Clear(panel1);
             txtPurchaseDate1.Focus();
+            cboStore.SelectedValue = StoreCD;
         }
         public override void FunctionProcess(int index)
         {

@@ -167,7 +167,8 @@ namespace PickingList
                 try
                 {
 
-                    if (dtPrintData1 == null && dtPrintData2 == null && dtPrintData3 == null && dtPrintData4 == null)
+                    if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) && (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
+                        && (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) && (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
                     {
                         return;
                     }
