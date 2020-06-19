@@ -345,7 +345,6 @@ namespace Shiharai_ShimeShori
                
             }
         }
-
         private void Shiiresaki_Enter(object sender, EventArgs e)
         {
             Shiiresaki.ChangeDate = String.IsNullOrEmpty(txtPayCloseDate.Text) ? bbl.GetDate() : txtPayCloseDate.Text;

@@ -1988,7 +1988,7 @@ namespace Base.Client
                         this.SelectNextControl(ActiveControl, true, true, true, true);
                     }
                 }
-                else if ((ActiveControl is CKM_RadioButton))
+                else if ((ActiveControl is CKM_RadioButton) || (ActiveControl is CKM_CheckBox))
                 {
                     this.SelectNextControl(ActiveControl, true, true, true, true);
                     //CheckBoxやRadioButtonのフォーカス移動を自動にされると制御できないため　2020/5/25
