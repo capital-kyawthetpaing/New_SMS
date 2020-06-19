@@ -90,6 +90,7 @@
             // chkYes
             // 
             this.chkYes.AutoSize = true;
+            this.chkYes.Cursor = System.Windows.Forms.Cursors.Default;
             this.chkYes.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.chkYes.Location = new System.Drawing.Point(113, 94);
             this.chkYes.Name = "chkYes";
