@@ -185,7 +185,7 @@
             this.comboStore.MaxLength = 10;
             this.comboStore.MoveNext = true;
             this.comboStore.Name = "comboStore";
-            this.comboStore.Size = new System.Drawing.Size(190, 20);
+            this.comboStore.Size = new System.Drawing.Size(260, 20);
             this.comboStore.TabIndex = 13;
             this.comboStore.KeyDown += new System.Windows.Forms.KeyEventHandler(this.comboStore_KeyDown);
             // 

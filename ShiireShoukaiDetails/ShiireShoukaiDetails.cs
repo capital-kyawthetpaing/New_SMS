@@ -194,6 +194,7 @@ namespace ShiireShoukaiDetails
                     F10Visible = true;
                     //Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
+                    Btn_F10.Enabled = false;
                     //Btn_Display.Enabled = F11Enable = true;
                     chkOk.Checked = true;
                     chkNotOK.Checked = true;
@@ -301,9 +302,7 @@ namespace ShiireShoukaiDetails
                 string folderPath = "C:\\CSV\\";
                 FileInfo logFileInfo = new FileInfo(folderPath);
                 DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
-
                 if (!logDirInfo.Exists) logDirInfo.Create();
-
                 //Add the Header row for CSV file.
                 foreach (DataGridViewColumn column in dgv_PurchaseDetails.Columns)
                 {
@@ -312,7 +311,6 @@ namespace ShiireShoukaiDetails
                 }
                 //Add new line.
                 csv += "\r\n";
-
                 //Adding the Rows
                 foreach (DataGridViewRow row in dgv_PurchaseDetails.Rows)
                 {

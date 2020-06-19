@@ -64,8 +64,9 @@ namespace ZaikoKanriHyou
         public void Clear()
         {
             Clear(panelDetail);
-            txtTargetDate.Focus();
+            txtTargetDate.Text = DateTime.Now.ToString("yyyy/MM");
             cboSouko.SelectedValue = SoukoCD;
+            txtTargetDate.Focus();
         }
         public override void FunctionProcess(int Index)
         {

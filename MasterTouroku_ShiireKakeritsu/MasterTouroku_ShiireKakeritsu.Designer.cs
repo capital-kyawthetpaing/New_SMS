@@ -322,7 +322,7 @@
             this.cbo_Season1.MoveNext = true;
             this.cbo_Season1.Name = "cbo_Season1";
             this.cbo_Season1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Season1.TabIndex = 24;
+            this.cbo_Season1.TabIndex = 8;
             // 
             // cbo_Year1
             // 
@@ -338,7 +338,7 @@
             this.cbo_Year1.MoveNext = true;
             this.cbo_Year1.Name = "cbo_Year1";
             this.cbo_Year1.Size = new System.Drawing.Size(140, 20);
-            this.cbo_Year1.TabIndex = 23;
+            this.cbo_Year1.TabIndex = 7;
             // 
             // ckM_Label26
             // 
@@ -624,7 +624,7 @@
             this.txtRate.Name = "txtRate";
             this.txtRate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtRate.Size = new System.Drawing.Size(100, 19);
-            this.txtRate.TabIndex = 24;
+            this.txtRate.TabIndex = 21;
             this.txtRate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtRate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRate_KeyDown);
             // 
@@ -668,7 +668,7 @@
             this.txtChangeDate.MoveNext = true;
             this.txtChangeDate.Name = "txtChangeDate";
             this.txtChangeDate.Size = new System.Drawing.Size(100, 19);
-            this.txtChangeDate.TabIndex = 23;
+            this.txtChangeDate.TabIndex = 20;
             this.txtChangeDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtChangeDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -894,7 +894,7 @@
             this.btnCopy.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Size = new System.Drawing.Size(100, 25);
-            this.btnCopy.TabIndex = 9;
+            this.btnCopy.TabIndex = 12;
             this.btnCopy.Text = "複写";
             this.btnCopy.UseVisualStyleBackColor = false;
             this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
@@ -922,7 +922,7 @@
             this.txtCopy.MoveNext = true;
             this.txtCopy.Name = "txtCopy";
             this.txtCopy.Size = new System.Drawing.Size(100, 19);
-            this.txtCopy.TabIndex = 14;
+            this.txtCopy.TabIndex = 11;
             this.txtCopy.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCopy.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -991,7 +991,7 @@
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 25);
-            this.btnSearch.TabIndex = 5;
+            this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "表示";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -1019,7 +1019,7 @@
             this.txtDate.MoveNext = true;
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(100, 19);
-            this.txtDate.TabIndex = 12;
+            this.txtDate.TabIndex = 9;
             this.txtDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -1078,7 +1078,7 @@
             this.scSegmentCD1.SearchEnable = true;
             this.scSegmentCD1.Size = new System.Drawing.Size(434, 30);
             this.scSegmentCD1.Stype = Search.CKM_SearchControl.SearchType.商品分類;
-            this.scSegmentCD1.TabIndex = 8;
+            this.scSegmentCD1.TabIndex = 6;
             this.scSegmentCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSegmentCD1.UseChangeDate = false;
             this.scSegmentCD1.Value1 = null;
@@ -1125,7 +1125,7 @@
             this.scSportsCD1.SearchEnable = true;
             this.scSportsCD1.Size = new System.Drawing.Size(334, 30);
             this.scSportsCD1.Stype = Search.CKM_SearchControl.SearchType.競技;
-            this.scSportsCD1.TabIndex = 6;
+            this.scSportsCD1.TabIndex = 5;
             this.scSportsCD1.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.scSportsCD1.UseChangeDate = false;
             this.scSportsCD1.Value1 = null;
@@ -1404,7 +1404,7 @@
             this.ckM_Label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label27.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label27.Location = new System.Drawing.Point(73, 45);
+            this.ckM_Label27.Location = new System.Drawing.Point(73, 49);
             this.ckM_Label27.Name = "ckM_Label27";
             this.ckM_Label27.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label27.TabIndex = 5;
@@ -1417,10 +1417,11 @@
             this.rdoAllStores.AutoSize = true;
             this.rdoAllStores.Checked = true;
             this.rdoAllStores.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoAllStores.Location = new System.Drawing.Point(139, 43);
+            this.rdoAllStores.Location = new System.Drawing.Point(139, 47);
             this.rdoAllStores.Name = "rdoAllStores";
             this.rdoAllStores.Size = new System.Drawing.Size(49, 16);
             this.rdoAllStores.TabIndex = 6;
+            this.rdoAllStores.TabStop = true;
             this.rdoAllStores.Text = "全店";
             this.rdoAllStores.UseVisualStyleBackColor = true;
             this.rdoAllStores.CheckedChanged += new System.EventHandler(this.rdoAllStores_CheckedChanged);
@@ -1429,7 +1430,7 @@
             // 
             this.rdoIndividualStores.AutoSize = true;
             this.rdoIndividualStores.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.rdoIndividualStores.Location = new System.Drawing.Point(214, 43);
+            this.rdoIndividualStores.Location = new System.Drawing.Point(214, 47);
             this.rdoIndividualStores.Name = "rdoIndividualStores";
             this.rdoIndividualStores.Size = new System.Drawing.Size(49, 16);
             this.rdoIndividualStores.TabIndex = 7;
@@ -1445,7 +1446,7 @@
             this.cbo_Store.Flag = 0;
             this.cbo_Store.FormattingEnabled = true;
             this.cbo_Store.Length = 20;
-            this.cbo_Store.Location = new System.Drawing.Point(275, 39);
+            this.cbo_Store.Location = new System.Drawing.Point(275, 43);
             this.cbo_Store.MaxLength = 10;
             this.cbo_Store.MoveNext = true;
             this.cbo_Store.Name = "cbo_Store";
