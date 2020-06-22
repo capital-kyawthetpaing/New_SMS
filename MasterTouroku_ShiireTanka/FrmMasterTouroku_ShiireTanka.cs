@@ -130,18 +130,22 @@ namespace MasterTouroku_ShiireTanka
                     {
                         shiiresaki.Value1 = shiiresaki.TxtCode.Text;
                         shiiresaki.Value2 = shiiresaki.LabelText;
-                        //DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 4,shiiresaki.TxtCode.Text);
-                        //string deflg = "";
-                        //if (dtdeflg.Rows.Count >0)
-                        //{
-                        //     deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
-                        //}
-                        //if(deflg == "1")
-                        //{
-                        //    bbl.ShowMessage("E119");
-                        //    shiiresaki.Focus();
-                        //}
-                        //string delflg=
+                        DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 4, shiiresaki.TxtCode.Text);
+                        string deflg = "";
+                        if (dtdeflg.Rows.Count > 0)
+                        {
+                            deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
+                        }
+                        if (deflg == "1")
+                        {
+                            bbl.ShowMessage("E119");
+                            shiiresaki.Focus();
+                        }
+                        else
+                        {
+                            F11();
+                        }
+                      
                     }
                     else
                     {
@@ -307,6 +311,21 @@ namespace MasterTouroku_ShiireTanka
                 {
                     itemcd.Value1 = itemcd.TxtCode.Text;
                     itemcd.Value2 = itemcd.LabelText;
+                    DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 15, itemcd.TxtCode.Text);
+                    string deflg = "";
+                    if (dtdeflg.Rows.Count > 0)
+                    {
+                        deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
+                    }
+                    if (deflg == "1")
+                    {
+                        bbl.ShowMessage("E119");
+                        itemcd.Focus();
+                    }
+                    else
+                    {
+                        F11();
+                    }
                 }
                 else
                 {
@@ -780,6 +799,7 @@ namespace MasterTouroku_ShiireTanka
                 dv.RowFilter = query;
                 dtc = dv.ToTable();
                 GV_item.DataSource = dv;
+                dv.RowStateFilter = DataViewRowState.CurrentRows;
             }
         }
         private void btn_choice_Click(object sender, EventArgs e)
@@ -881,25 +901,60 @@ namespace MasterTouroku_ShiireTanka
             if(!String.IsNullOrEmpty(TB_dateE.Text))
             {
                 string date = "";
-                date = " and ChangeDate = '" + TB_dateE.Text + "'";
-                date += " and CheckBox =1";
+                date = "  ChangeDate = '" + TB_dateE.Text + "'";
+                date += " and CheckBox = 1";
                 //if()
-                string copyq = choiceq +date;
+                string copyq = "";
+                if (!string.IsNullOrEmpty(choiceq))
+                {
+                    copyq = choiceq + " and " +date;
+                }
+                else
+                {
+                    copyq = date;
+                }
                 DataRow[] dr = dt.Select(copyq);
-                if(dr.Length ==0)
+                if( dr.Length ==0 )
                 {
                     string q = "CheckBox =1";
-                    DataTable dt1 = dt.Select(q).CopyToDataTable();
-                    for(int i =0;i<dt1.Rows.Count;i++)
+                    DataRow[] dr1;
+                        dr1=dt.Select(q);
+                    
+                    //if(dr1.Length >0)
+                    ////{
+                    ////    for (int i = 0; i < dr1.Length; i++)
+                    ////    {
+                           
+                    ////        dr1[i]["ChangeDate"]=TB_dateE.Text;
+                    ////        dr1[i]["Rate"] = TB_rate_E.Text;
+                    ////        decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                    ////        decimal con = (decimal)0.01;
+                    ////        decimal listprice = Convert.ToDecimal(dr1[i]["PriceOutTax"]);
+                    ////        dr1[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                            
+                    ////    }
+                    ////    DataTable dt1 = dr1.CopyToDataTable();
+                    ////    dt.Merge(dt1);
+                    ////}
+                    ///
+                    if(dr1.Length > 0)
+                    { 
+
+                    DataTable dt1 = dr1.CopyToDataTable();
+                    if (dt1.Rows.Count > 0)
                     {
-                        dt1.Rows[i]["ChangeDate"] = TB_dateE.Text;
-                        dt1.Rows[i]["Rate"] = TB_rate_E.Text;
-                        decimal rate = Convert.ToDecimal(TB_rate_E.Text);
-                        decimal con = (decimal)0.01;
-                        decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]); 
-                        dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                        for (int i = 0; i < dt1.Rows.Count; i++)
+                        {
+                            dt1.Rows[i]["ChangeDate"] = TB_dateE.Text;
+                            dt1.Rows[i]["Rate"] = TB_rate_E.Text;
+                            decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                            decimal con = (decimal)0.01;
+                            decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]);
+                            dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                        }
+                        dt.Merge(dt1);
                     }
-                    dt.Merge(dt1);
+                    }
                 }
                 else
                 {
@@ -912,6 +967,14 @@ namespace MasterTouroku_ShiireTanka
         {
             if(!String.IsNullOrEmpty(TB_rate_E.Text))
             {
+                string updateq = "CheckBox = 1";
+                //DataRow[] drupdate = dt.Select(updateq);
+                DataTable dtupate = dt.Select(updateq).CopyToDataTable();
+                if (dtupate.Rows.Count >0)
+                {
+                    //drupdate["Rate"] = TB_rate.Text;
+                    //drupdate["PriceOutTax"] = LB_priceouttax.Text;
+                }
 
             }
         }
