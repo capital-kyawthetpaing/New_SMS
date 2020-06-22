@@ -143,6 +143,10 @@
             this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
             this.PanelSearch.TabIndex = 0;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // PanelNormal
             // 
             this.PanelNormal.Controls.Add(this.ckM_Label1);
@@ -193,8 +197,8 @@
             this.ScVendor.ChangeDate = "";
             this.ScVendor.ChangeDateWidth = 100;
             this.ScVendor.Code = "";
-            this.ScVendor.CodeWidth = 130;
-            this.ScVendor.CodeWidth1 = 130;
+            this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -204,9 +208,9 @@
             this.ScVendor.Location = new System.Drawing.Point(96, -2);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScVendor.Name = "ScVendor";
-            this.ScVendor.NameWidth = 280;
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
-            this.ScVendor.Size = new System.Drawing.Size(163, 50);
+            this.ScVendor.Size = new System.Drawing.Size(133, 50);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScVendor.TabIndex = 0;
             this.ScVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -266,8 +270,8 @@
             this.ScCopyVendor.ChangeDate = "";
             this.ScCopyVendor.ChangeDateWidth = 100;
             this.ScCopyVendor.Code = "";
-            this.ScCopyVendor.CodeWidth = 130;
-            this.ScCopyVendor.CodeWidth1 = 130;
+            this.ScCopyVendor.CodeWidth = 100;
+            this.ScCopyVendor.CodeWidth1 = 100;
             this.ScCopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyVendor.DataCheck = false;
             this.ScCopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
@@ -277,9 +281,9 @@
             this.ScCopyVendor.Location = new System.Drawing.Point(94, -3);
             this.ScCopyVendor.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyVendor.Name = "ScCopyVendor";
-            this.ScCopyVendor.NameWidth = 280;
+            this.ScCopyVendor.NameWidth = 310;
             this.ScCopyVendor.SearchEnable = true;
-            this.ScCopyVendor.Size = new System.Drawing.Size(163, 50);
+            this.ScCopyVendor.Size = new System.Drawing.Size(133, 50);
             this.ScCopyVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScCopyVendor.TabIndex = 0;
             this.ScCopyVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -1340,9 +1344,9 @@
             this.txtPaymentCloseDay.isMaxLengthErr = false;
             this.txtPaymentCloseDay.IsNumber = true;
             this.txtPaymentCloseDay.IsShop = false;
-            this.txtPaymentCloseDay.Length = 1;
+            this.txtPaymentCloseDay.Length = 2;
             this.txtPaymentCloseDay.Location = new System.Drawing.Point(107, 385);
-            this.txtPaymentCloseDay.MaxLength = 1;
+            this.txtPaymentCloseDay.MaxLength = 2;
             this.txtPaymentCloseDay.MoveNext = true;
             this.txtPaymentCloseDay.Name = "txtPaymentCloseDay";
             this.txtPaymentCloseDay.Size = new System.Drawing.Size(20, 19);
