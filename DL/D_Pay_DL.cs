@@ -203,8 +203,8 @@ namespace DL
             {
                 {"@LargePayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.LargePayNO} },
                 {"@PayNo", new ValuePair {value1 = SqlDbType.VarChar,value2 = dpe.PayNo} },
-                {"@VendorCD", new ValuePair {value1 = SqlDbType.VarChar, value2= dpe.PayeeCD } },
-                {"@PayeeDate", new ValuePair {value1 = SqlDbType.Date, value2= dpe.PayPlanDate} }
+                //{"@VendorCD", new ValuePair {value1 = SqlDbType.VarChar, value2= dpe.PayeeCD } },
+                //{"@PayeeDate", new ValuePair {value1 = SqlDbType.Date, value2= dpe.PayPlanDate} }
             };
             return SelectData(dic, "D_Pay_Select02");
         }

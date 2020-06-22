@@ -197,7 +197,7 @@ BEGIN
 
             --“`•[”Ô†Ì”Ô
             EXEC Fnc_GetNumber
-                18,             --in“`•[í•Ê 18
+                29,             --in“`•[í•Ê 29
                 @PayDate,      --inŠî€“ú
                 @StoreCD,      --in“X•ÜCD
                 @Operator,
