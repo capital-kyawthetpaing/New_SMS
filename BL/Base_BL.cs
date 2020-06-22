@@ -397,7 +397,21 @@ namespace BL
             else
                 return false;
         }
+        public int GetTennic()
+        {
+            //[M_Control]
+            M_Control_DL cdl = new M_Control_DL();
+            M_Control_Entity me = new M_Control_Entity();
 
+            me.MainKey = "1";
+
+            DataTable dt = cdl.M_Control_Select(me);
+            if (dt.Rows.Count > 0)
+            {
+                return Convert.ToInt16(dt.Rows[0]["Tennic"]);
+            }
+            return 0;
+        }
         /// <summary>	
         /// 店舗の締日チェック	
         /// 店舗締マスターで判断	
@@ -543,7 +557,7 @@ namespace BL
         /// 税抜金額より税込金額を取得する
         /// 計算モード：１
         /// </summary>
-        /// <param name="kingaku"></param>
+        /// <param name="kingaku">税抜金額</param>
         /// <param name="ymd">YYYY/MM/DD形式,未入力時システム日付</param>
         /// <param name="taxRateFLG">0:非課税、1:通常課税、2:軽減課税</param>
         /// <returns></returns>

@@ -9,7 +9,9 @@ namespace SiharaiTouroku
 {
     public partial class SiharaiTouroku_2 : FrmMainForm
     {
-        private const string ProID = "SiharaiTouroku";
+         public string ProID = "SiharaiTouroku";
+         public string ProName = "支払登録";
+        public string Operator = "支払登録";
 
         public bool flgCancel = false;
         
@@ -65,6 +67,10 @@ namespace SiharaiTouroku
 
                 //起動時共通処理
                 base.StartProgram();
+                //this.Text = ProID;
+                //HeaderTitleText = ProName;
+                //base.InProgramID = ProID;
+                //base.InProgramNM= ProName;
 
                 dgvSearchPayment.ReadOnly = false;
                 for (int i = 1; i < dgvSearchPayment.Columns.Count; i++)
@@ -115,15 +121,15 @@ namespace SiharaiTouroku
                 txtBill.Text = bbl.Z_SetStr(tblROWS[0]["BillGaku"]);
                 txtBillNo.Text = tblROWS[0]["BillNO"].ToString();
                 txtBillDate.Text = tblROWS[0]["BillDate"].ToString();
-                txtElectronicBone.Text = tblROWS[0]["ERMCGaku"].ToString();
+                txtElectronicBone.Text = bbl.Z_SetStr(tblROWS[0]["ERMCGaku"]);
                 txtElectronicRecordNo.Text = tblROWS[0]["ERMCNO"].ToString();
                 txtSettlementDate2.Text = tblROWS[0]["ERMCDate"].ToString();
-                txtOther1.Text = tblROWS[0]["OtherGaku1"].ToString();
+                txtOther1.Text = bbl.Z_SetStr(tblROWS[0]["OtherGaku1"]);
                 SC_HanyouKeyStart1.TxtCode.Text = tblROWS[0]["Account1"].ToString();
                 SC_HanyouKeyStart1.LabelText = tblROWS[0]["start1"].ToString();
                 SC_HanyouKeyEnd1.TxtCode.Text = tblROWS[0]["SubAccount1"].ToString();
                 SC_HanyouKeyEnd1.LabelText = tblROWS[0]["end1label"].ToString();
-                txtOther2.Text = tblROWS[0]["OtherGaku2"].ToString();
+                txtOther2.Text = bbl.Z_SetStr(tblROWS[0]["OtherGaku2"]);
                 SC_HanyouKeyStart2.TxtCode.Text = tblROWS[0]["Account2"].ToString();
                 SC_HanyouKeyStart2.LabelText = tblROWS[0]["start2"].ToString();
                 SC_HanyouKeyEnd2.TxtCode.Text = tblROWS[0]["SubAccount2"].ToString();
@@ -133,20 +139,20 @@ namespace SiharaiTouroku
 
         private void SelectKeyData()
         {
-            //dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
-            //dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
+            dtIDName1 = shnbl.M_Multipurpose_SelectIDName("217");
+            dtIDName2 = shnbl.M_Multipurpose_SelectIDName("218");
 
-            //SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            //SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyStart1.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart1.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
 
-            //SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
-            //SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyStart2.Value1 = dtIDName1.Rows[0]["ID"].ToString();
+            SC_HanyouKeyStart2.Value2 = dtIDName1.Rows[0]["IDName"].ToString();
 
-            ////SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            //SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd1.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd1.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
 
-            //SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
-            //SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
+            SC_HanyouKeyEnd2.Value1 = dtIDName2.Rows[0]["ID"].ToString();
+            SC_HanyouKeyEnd2.Value2 = dtIDName2.Rows[0]["IDName"].ToString();
         }
 
         private bool CheckRequireField()
@@ -363,10 +369,16 @@ namespace SiharaiTouroku
             tblROWS[0]["BankName"] = SC_BankCD.LabelText;
             tblROWS[0]["BranchCD"] = SC_BranchCD.TxtCode.Text;
             tblROWS[0]["BranchName"] = SC_BranchCD.LabelText;
-            tblROWS[0]["KouzaKBN"] = txtKouzaKBN.Text;
+            if (string.IsNullOrWhiteSpace(txtKouzaKBN.Text))
+                tblROWS[0]["KouzaKBN"] = DBNull.Value;
+            else
+                tblROWS[0]["KouzaKBN"] = txtKouzaKBN.Text;
             tblROWS[0]["KouzaNO"] = txtAccNo.Text;
             tblROWS[0]["KouzaMeigi"] = txtMeigi.Text;
-            tblROWS[0]["FeeKBNVal"] = txtFeeKBN.Text;
+            if (string.IsNullOrWhiteSpace(txtFeeKBN.Text))
+                tblROWS[0]["FeeKBNVal"] = DBNull.Value;
+            else
+                tblROWS[0]["FeeKBNVal"] = txtFeeKBN.Text;
             //tblROWS[0]["Fee"] = txtAmount.Text;
             tblROWS[0]["TransferFeeGaku"] = bbl.Z_Set(txtAmount.Text);
 
