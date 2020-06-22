@@ -129,7 +129,15 @@ namespace Search
                 dpe = GetData();
                 DataTable dt = new DataTable();
                 dt = sssbl.D_Pay_Search(dpe);
-                dgvSiharaiShoriNO.DataSource = dt;
+                if(dt.Rows.Count > 0)
+                {
+                    dgvSiharaiShoriNO.DataSource = dt;
+                }
+                else
+                {
+                    sssbl.ShowMessage("E128");
+                    txtPaymentDateFrom.Focus();
+                }              
             }
                
         }
