@@ -640,7 +640,7 @@
             this.chkDelFlg.Name = "chkDelFlg";
             this.chkDelFlg.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chkDelFlg.Size = new System.Drawing.Size(50, 16);
-            this.chkDelFlg.TabIndex = 37;
+            this.chkDelFlg.TabIndex = 44;
             this.chkDelFlg.Text = "削除";
             this.chkDelFlg.UseVisualStyleBackColor = true;
             // 
