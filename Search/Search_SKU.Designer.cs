@@ -28,15 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl = new CKM_Controls.CKMShop_Label();
             this.lblJanCD = new CKM_Controls.CKMShop_Label();
             this.GvMultiSKU = new CKM_Controls.CKMShop_GridView();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
@@ -50,6 +51,7 @@
             this.lbl.BackColor = System.Drawing.Color.Transparent;
             this.lbl.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lbl.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lbl.FontBold = true;
             this.lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.lbl.Location = new System.Drawing.Point(31, 64);
             this.lbl.Name = "lbl";
@@ -66,8 +68,9 @@
             this.lblJanCD.BackColor = System.Drawing.Color.White;
             this.lblJanCD.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblJanCD.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblJanCD.FontBold = true;
             this.lblJanCD.ForeColor = System.Drawing.Color.Black;
-            this.lblJanCD.Location = new System.Drawing.Point(140, 64);
+            this.lblJanCD.Location = new System.Drawing.Point(146, 64);
             this.lblJanCD.Name = "lblJanCD";
             this.lblJanCD.Size = new System.Drawing.Size(281, 35);
             this.lblJanCD.TabIndex = 4;
@@ -81,18 +84,18 @@
             this.GvMultiSKU.AllowUserToDeleteRows = false;
             this.GvMultiSKU.AllowUserToResizeRows = false;
             this.GvMultiSKU.AlterBackColor = CKM_Controls.CKMShop_GridView.AltBackcolor.White;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.GvMultiSKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.GvMultiSKU.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvMultiSKU.BackgroundColor = System.Drawing.Color.White;
             this.GvMultiSKU.BackgroungColor = CKM_Controls.CKMShop_GridView.DBackcolor.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvMultiSKU.ColumnHeadersHeight = 30;
             this.GvMultiSKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.GvMultiSKU.ColumnHeadersVisible = false;
@@ -100,15 +103,16 @@
             this.colSKUCD,
             this.colSKUName,
             this.colSizeName,
+            this.colAdminNO,
             this.colColorName});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 26F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvMultiSKU.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 26F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GvMultiSKU.DefaultCellStyle = dataGridViewCellStyle3;
             this.GvMultiSKU.DGVback = CKM_Controls.CKMShop_GridView.DGVBackcolor.White;
             this.GvMultiSKU.EnableHeadersVisualStyles = false;
             this.GvMultiSKU.Font = new System.Drawing.Font("MS Gothic", 26F);
@@ -120,10 +124,10 @@
             this.GvMultiSKU.Location = new System.Drawing.Point(26, 165);
             this.GvMultiSKU.Name = "GvMultiSKU";
             this.GvMultiSKU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.GvMultiSKU.RowHeight_ = 30;
-            this.GvMultiSKU.RowTemplate.Height = 30;
+            this.GvMultiSKU.RowHeight_ = 42;
+            this.GvMultiSKU.RowTemplate.Height = 42;
             this.GvMultiSKU.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.GvMultiSKU.Size = new System.Drawing.Size(850, 342);
+            this.GvMultiSKU.Size = new System.Drawing.Size(1400, 500);
             this.GvMultiSKU.TabIndex = 6;
             this.GvMultiSKU.UseRowNo = true;
             this.GvMultiSKU.UseSetting = true;
@@ -138,7 +142,7 @@
             this.colSKUCD.ReadOnly = true;
             this.colSKUCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSKUCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUCD.Width = 300;
+            this.colSKUCD.Width = 350;
             // 
             // colSKUName
             // 
@@ -148,7 +152,7 @@
             this.colSKUName.ReadOnly = true;
             this.colSKUName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSKUName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUName.Width = 500;
+            this.colSKUName.Width = 1000;
             // 
             // colSizeName
             // 
@@ -159,6 +163,15 @@
             this.colSizeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSizeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.colSizeName.Visible = false;
+            // 
+            // colAdminNO
+            // 
+            this.colAdminNO.DataPropertyName = "AdminNO";
+            this.colAdminNO.HeaderText = "AdminNO";
+            this.colAdminNO.Name = "colAdminNO";
+            this.colAdminNO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colAdminNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAdminNO.Visible = false;
             // 
             // colColorName
             // 
@@ -177,8 +190,9 @@
             this.ckmShop_Label1.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label1.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label1.FontBold = true;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(73, 125);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(71, 125);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(110, 35);
             this.ckmShop_Label1.TabIndex = 7;
@@ -193,8 +207,9 @@
             this.ckmShop_Label2.BackColor = System.Drawing.Color.Transparent;
             this.ckmShop_Label2.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.ckmShop_Label2.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.ckmShop_Label2.FontBold = true;
             this.ckmShop_Label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label2.Location = new System.Drawing.Point(374, 125);
+            this.ckmShop_Label2.Location = new System.Drawing.Point(418, 125);
             this.ckmShop_Label2.Name = "ckmShop_Label2";
             this.ckmShop_Label2.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label2.TabIndex = 8;
@@ -206,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 611);
+            this.ClientSize = new System.Drawing.Size(1464, 761);
             this.Controls.Add(this.ckmShop_Label2);
             this.Controls.Add(this.ckmShop_Label1);
             this.Controls.Add(this.GvMultiSKU);
@@ -235,6 +250,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSKUName;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSizeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAdminNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn colColorName;
     }
 }

@@ -31,6 +31,7 @@ namespace KeihiNyuuryoku
             Load += new System.EventHandler(FormLoadEvent);
             PanelNormal.Enter += PanelNormal_Enter;
             PanelCopy.Enter += PanelCopy_Enter;
+            dgvKehiNyuuryoku.DataError += dgvKehiNyuuryoku_DataError;
             khnyk_BL = new KeihiNyuuryoku_BL();
         }
 
@@ -54,7 +55,7 @@ namespace KeihiNyuuryoku
             Btn_F7.Text = "行削除(F7)";
             Btn_F8.Text = "行追加(F8)";
             Btn_F9.Text = "検索(F9)";
-            Btn_F10.Text = "複写(F10)";
+            Btn_F10.Text = "行複写(F10)";
             Btn_F11.Text = "印刷(F11)";
             Btn_F11.Text = string.Empty;
            

@@ -20,6 +20,7 @@ namespace Search
         DataTable dt;
         public string AdminNO = "";
         public string JANCD = "";
+        public string SKUName = "";
 
         public TempoRegiShouhinKensaku(string Operator)
         {
