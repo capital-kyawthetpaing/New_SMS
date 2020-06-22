@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -746,7 +747,7 @@
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -770,6 +771,14 @@
             this.定価,
             this.掛率,
             this.発注単価});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GV_item.DefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GV_item.Location = new System.Drawing.Point(89, 346);
@@ -1049,7 +1058,7 @@
             this.cb_seasonC.FormattingEnabled = true;
             this.cb_seasonC.Length = 10;
             this.cb_seasonC.Location = new System.Drawing.Point(1562, 219);
-            this.cb_seasonC.MaxLength = 10;
+            this.cb_seasonC.MaxLength = 20;
             this.cb_seasonC.MoveNext = true;
             this.cb_seasonC.Name = "cb_seasonC";
             this.cb_seasonC.Size = new System.Drawing.Size(78, 20);
@@ -1082,7 +1091,7 @@
             this.CB_yearC.FormattingEnabled = true;
             this.CB_yearC.Length = 10;
             this.CB_yearC.Location = new System.Drawing.Point(1420, 219);
-            this.CB_yearC.MaxLength = 10;
+            this.CB_yearC.MaxLength = 20;
             this.CB_yearC.MoveNext = true;
             this.CB_yearC.Name = "CB_yearC";
             this.CB_yearC.Size = new System.Drawing.Size(78, 20);
@@ -1416,7 +1425,7 @@
             this.CB_season.FormattingEnabled = true;
             this.CB_season.Length = 10;
             this.CB_season.Location = new System.Drawing.Point(1558, 59);
-            this.CB_season.MaxLength = 10;
+            this.CB_season.MaxLength = 20;
             this.CB_season.MoveNext = true;
             this.CB_season.Name = "CB_season";
             this.CB_season.Size = new System.Drawing.Size(78, 20);
@@ -1447,9 +1456,9 @@
             this.CB_year.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半角;
             this.CB_year.Flag = 0;
             this.CB_year.FormattingEnabled = true;
-            this.CB_year.Length = 10;
+            this.CB_year.Length = 20;
             this.CB_year.Location = new System.Drawing.Point(1419, 60);
-            this.CB_year.MaxLength = 10;
+            this.CB_year.MaxLength = 20;
             this.CB_year.MoveNext = true;
             this.CB_year.Name = "CB_year";
             this.CB_year.Size = new System.Drawing.Size(78, 20);
