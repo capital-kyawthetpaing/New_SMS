@@ -199,9 +199,8 @@ namespace MasterTouroku_Shiiresaki
                                 EnablePanel(PanelDetail);
                                 btnDisplay.Enabled = F11Enable = false;
                                 SelectNextControl(PanelDetail, true, true, true, true);
-                                chkShouguchiFlg.Focus();
-                            }
 
+                            }                          
                         }
                         break;
                     case EOperationMode.UPDATE:
@@ -214,7 +213,6 @@ namespace MasterTouroku_Shiiresaki
                             F11Enable = false;
                             F12Enable = true;
                             SelectNextControl(PanelDetail, true, true, true, true);
-                            chkShouguchiFlg.Focus();
                         }
                         break;
                     case EOperationMode.DELETE:
@@ -227,7 +225,6 @@ namespace MasterTouroku_Shiiresaki
                             btnDisplay.Enabled = false;
                             F12Enable = true;
                             SelectNextControl(PanelDetail, true, true, true, true);
-                            chkShouguchiFlg.Focus();
                         }
                         break;
                     case EOperationMode.SHOW:
@@ -239,7 +236,6 @@ namespace MasterTouroku_Shiiresaki
                             F11Enable = false;
                             btnDisplay.Enabled = false;
                             F12Enable = false;
-                            chkShouguchiFlg.Focus();
                         }
                         break;
                 }
@@ -1028,7 +1024,6 @@ namespace MasterTouroku_Shiiresaki
         }
         
         private void ScVendor_ChangeDateKeyDownEvent(object sender, KeyEventArgs e)
-
         {
             if(e.KeyCode == Keys.Enter)
             {
@@ -1056,6 +1051,7 @@ namespace MasterTouroku_Shiiresaki
             {               
                 type = 2;
                 F11();
+                //chkShouguchiFlg.Focus();
             }
         }
 

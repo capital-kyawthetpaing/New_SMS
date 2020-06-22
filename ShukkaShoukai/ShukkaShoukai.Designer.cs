@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.cboWarehouse = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
@@ -178,7 +177,7 @@
             this.cboWarehouse.MoveNext = true;
             this.cboWarehouse.Name = "cboWarehouse";
             this.cboWarehouse.Size = new System.Drawing.Size(265, 20);
-            this.cboWarehouse.TabIndex = 50;
+            this.cboWarehouse.TabIndex = 1;
             // 
             // ckM_Label2
             // 
@@ -237,7 +236,7 @@
             this.txtShippingStartDate.MoveNext = true;
             this.txtShippingStartDate.Name = "txtShippingStartDate";
             this.txtShippingStartDate.Size = new System.Drawing.Size(100, 19);
-            this.txtShippingStartDate.TabIndex = 51;
+            this.txtShippingStartDate.TabIndex = 2;
             this.txtShippingStartDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtShippingStartDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
@@ -264,7 +263,7 @@
             this.txtShippingEndDate.MoveNext = true;
             this.txtShippingEndDate.Name = "txtShippingEndDate";
             this.txtShippingEndDate.Size = new System.Drawing.Size(100, 19);
-            this.txtShippingEndDate.TabIndex = 52;
+            this.txtShippingEndDate.TabIndex = 3;
             this.txtShippingEndDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtShippingEndDate.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtShippingEndDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShippingEndDate_KeyDown);
@@ -312,7 +311,7 @@
             this.chkShipmentOfSale.Location = new System.Drawing.Point(103, 67);
             this.chkShipmentOfSale.Name = "chkShipmentOfSale";
             this.chkShipmentOfSale.Size = new System.Drawing.Size(102, 16);
-            this.chkShipmentOfSale.TabIndex = 53;
+            this.chkShipmentOfSale.TabIndex = 4;
             this.chkShipmentOfSale.Text = "販売分の出荷";
             this.chkShipmentOfSale.UseVisualStyleBackColor = true;
             // 
@@ -325,7 +324,7 @@
             this.chkShipmentOfTransfer.Location = new System.Drawing.Point(103, 89);
             this.chkShipmentOfTransfer.Name = "chkShipmentOfTransfer";
             this.chkShipmentOfTransfer.Size = new System.Drawing.Size(102, 16);
-            this.chkShipmentOfTransfer.TabIndex = 55;
+            this.chkShipmentOfTransfer.TabIndex = 5;
             this.chkShipmentOfTransfer.Text = "移動分の出荷";
             this.chkShipmentOfTransfer.UseVisualStyleBackColor = true;
             this.chkShipmentOfTransfer.CheckedChanged += new System.EventHandler(this.chkShipmentOfTransfer_CheckedChanged);
@@ -356,7 +355,7 @@
             this.chkAlready.Location = new System.Drawing.Point(103, 119);
             this.chkAlready.Name = "chkAlready";
             this.chkAlready.Size = new System.Drawing.Size(37, 16);
-            this.chkAlready.TabIndex = 57;
+            this.chkAlready.TabIndex = 8;
             this.chkAlready.Text = "済";
             this.chkAlready.UseVisualStyleBackColor = true;
             // 
@@ -369,7 +368,7 @@
             this.chkNot.Location = new System.Drawing.Point(145, 119);
             this.chkNot.Name = "chkNot";
             this.chkNot.Size = new System.Drawing.Size(37, 16);
-            this.chkNot.TabIndex = 58;
+            this.chkNot.TabIndex = 9;
             this.chkNot.Text = "未";
             this.chkNot.UseVisualStyleBackColor = true;
             // 
@@ -411,7 +410,7 @@
             this.SC_Order.SearchEnable = true;
             this.SC_Order.Size = new System.Drawing.Size(133, 28);
             this.SC_Order.Stype = Search.CKM_SearchControl.SearchType.受注番号;
-            this.SC_Order.TabIndex = 54;
+            this.SC_Order.TabIndex = 6;
             this.SC_Order.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_Order.UseChangeDate = false;
             this.SC_Order.Value1 = null;
@@ -438,12 +437,12 @@
             this.txtProductName.IsNumber = true;
             this.txtProductName.IsShop = false;
             this.txtProductName.Length = 80;
-            this.txtProductName.Location = new System.Drawing.Point(1056, 117);
+            this.txtProductName.Location = new System.Drawing.Point(1056, 121);
             this.txtProductName.MaxLength = 80;
             this.txtProductName.MoveNext = true;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(500, 19);
-            this.txtProductName.TabIndex = 63;
+            this.txtProductName.TabIndex = 14;
             this.txtProductName.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label12
@@ -455,7 +454,7 @@
             this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(1009, 121);
+            this.ckM_Label12.Location = new System.Drawing.Point(1009, 125);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label12.TabIndex = 22;
@@ -477,14 +476,14 @@
             this.SC_JanCD.IsCopy = false;
             this.SC_JanCD.LabelText = "";
             this.SC_JanCD.LabelVisible = false;
-            this.SC_JanCD.Location = new System.Drawing.Point(1056, 79);
+            this.SC_JanCD.Location = new System.Drawing.Point(1056, 88);
             this.SC_JanCD.Margin = new System.Windows.Forms.Padding(0);
             this.SC_JanCD.Name = "SC_JanCD";
             this.SC_JanCD.NameWidth = 280;
             this.SC_JanCD.SearchEnable = true;
             this.SC_JanCD.Size = new System.Drawing.Size(633, 27);
             this.SC_JanCD.Stype = Search.CKM_SearchControl.SearchType.JANMulti;
-            this.SC_JanCD.TabIndex = 62;
+            this.SC_JanCD.TabIndex = 13;
             this.SC_JanCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.SC_JanCD.UseChangeDate = false;
             this.SC_JanCD.Value1 = null;
@@ -500,7 +499,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(1013, 88);
+            this.ckM_Label11.Location = new System.Drawing.Point(1013, 97);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label11.TabIndex = 21;
@@ -522,14 +521,14 @@
             this.Sc_SKUCD.IsCopy = false;
             this.Sc_SKUCD.LabelText = "";
             this.Sc_SKUCD.LabelVisible = false;
-            this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 56);
+            this.Sc_SKUCD.Location = new System.Drawing.Point(1056, 59);
             this.Sc_SKUCD.Margin = new System.Windows.Forms.Padding(0);
             this.Sc_SKUCD.Name = "Sc_SKUCD";
             this.Sc_SKUCD.NameWidth = 350;
             this.Sc_SKUCD.SearchEnable = true;
             this.Sc_SKUCD.Size = new System.Drawing.Size(223, 27);
             this.Sc_SKUCD.Stype = Search.CKM_SearchControl.SearchType.SKUCD;
-            this.Sc_SKUCD.TabIndex = 61;
+            this.Sc_SKUCD.TabIndex = 12;
             this.Sc_SKUCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_SKUCD.UseChangeDate = false;
             this.Sc_SKUCD.Value1 = null;
@@ -545,7 +544,7 @@
             this.ckM_Label10.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(1013, 64);
+            this.ckM_Label10.Location = new System.Drawing.Point(1013, 67);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(40, 12);
             this.ckM_Label10.TabIndex = 20;
@@ -574,7 +573,7 @@
             this.Sc_Item.SearchEnable = true;
             this.Sc_Item.Size = new System.Drawing.Size(223, 27);
             this.Sc_Item.Stype = Search.CKM_SearchControl.SearchType.SKU_ITEM_CD;
-            this.Sc_Item.TabIndex = 60;
+            this.Sc_Item.TabIndex = 11;
             this.Sc_Item.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.Sc_Item.UseChangeDate = false;
             this.Sc_Item.Value1 = null;
@@ -612,7 +611,7 @@
             this.cboDestinationWarehouse.MoveNext = true;
             this.cboDestinationWarehouse.Name = "cboDestinationWarehouse";
             this.cboDestinationWarehouse.Size = new System.Drawing.Size(265, 20);
-            this.cboDestinationWarehouse.TabIndex = 56;
+            this.cboDestinationWarehouse.TabIndex = 7;
             // 
             // ckM_Label8
             // 
@@ -645,7 +644,7 @@
             this.btnDisplay.Margin = new System.Windows.Forms.Padding(1);
             this.btnDisplay.Name = "btnDisplay";
             this.btnDisplay.Size = new System.Drawing.Size(118, 28);
-            this.btnDisplay.TabIndex = 64;
+            this.btnDisplay.TabIndex = 15;
             this.btnDisplay.Text = "表示(F11)";
             this.btnDisplay.UseVisualStyleBackColor = false;
             this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
@@ -655,17 +654,17 @@
             this.dgvShukkaShoukai.AllowUserToAddRows = false;
             this.dgvShukkaShoukai.AllowUserToDeleteRows = false;
             this.dgvShukkaShoukai.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgvShukkaShoukai.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvShukkaShoukai.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvShukkaShoukai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvShukkaShoukai.ColumnHeadersHeight = 25;
             this.dgvShukkaShoukai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colShippingN0,
@@ -682,19 +681,12 @@
             this.colCarrierName,
             this.colSalesDate,
             this.colStaffName});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvShukkaShoukai.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvShukkaShoukai.EnableHeadersVisualStyles = false;
             this.dgvShukkaShoukai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvShukkaShoukai.Location = new System.Drawing.Point(29, 23);
             this.dgvShukkaShoukai.Name = "dgvShukkaShoukai";
             this.dgvShukkaShoukai.RowHeight_ = 20;
+            this.dgvShukkaShoukai.RowTemplate.Height = 20;
             this.dgvShukkaShoukai.Size = new System.Drawing.Size(1600, 500);
             this.dgvShukkaShoukai.TabIndex = 13;
             this.dgvShukkaShoukai.UseRowNo = true;
@@ -834,7 +826,7 @@
             this.cboShipping.MoveNext = true;
             this.cboShipping.Name = "cboShipping";
             this.cboShipping.Size = new System.Drawing.Size(121, 20);
-            this.cboShipping.TabIndex = 59;
+            this.cboShipping.TabIndex = 10;
             // 
             // FrmShukkaShoukai
             // 
