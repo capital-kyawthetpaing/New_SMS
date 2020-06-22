@@ -68,6 +68,7 @@ namespace MasterTouroku_Shiiresaki
 
             SelectNextControl(PanelDetail, true, true, true, true);
             ScVendor.SetFocus(1);
+           
         }
 
         private void PanelNormal_Enter(object sender, EventArgs e)
@@ -198,8 +199,9 @@ namespace MasterTouroku_Shiiresaki
                                 EnablePanel(PanelDetail);
                                 btnDisplay.Enabled = F11Enable = false;
                                 SelectNextControl(PanelDetail, true, true, true, true);
+                                chkShouguchiFlg.Focus();
                             }
-                            
+
                         }
                         break;
                     case EOperationMode.UPDATE:
@@ -212,6 +214,7 @@ namespace MasterTouroku_Shiiresaki
                             F11Enable = false;
                             F12Enable = true;
                             SelectNextControl(PanelDetail, true, true, true, true);
+                            chkShouguchiFlg.Focus();
                         }
                         break;
                     case EOperationMode.DELETE:
@@ -224,6 +227,7 @@ namespace MasterTouroku_Shiiresaki
                             btnDisplay.Enabled = false;
                             F12Enable = true;
                             SelectNextControl(PanelDetail, true, true, true, true);
+                            chkShouguchiFlg.Focus();
                         }
                         break;
                     case EOperationMode.SHOW:
@@ -235,6 +239,7 @@ namespace MasterTouroku_Shiiresaki
                             F11Enable = false;
                             btnDisplay.Enabled = false;
                             F12Enable = false;
+                            chkShouguchiFlg.Focus();
                         }
                         break;
                 }
@@ -430,9 +435,10 @@ namespace MasterTouroku_Shiiresaki
                 txtDisplayOrder.Text = mve.DisplayOrder;
                 txtDisplayNote.Text = mve.DisplayNote;
                 txtNotDisplay.Text = mve.NotDisplyNote;
-                chkDelFlg.Checked = mve.DeleteFlg.Equals("1") ? true : false;   
-                txtVendorName.Focus();
-                
+                chkDelFlg.Checked = mve.DeleteFlg.Equals("1") ? true : false;
+                //txtVendorName.Focus();
+                //chkShouguchiFlg.Focus();
+
                 return true;
             }
             else
