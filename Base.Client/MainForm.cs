@@ -622,6 +622,8 @@ namespace Base.Client
                     ((CKM_GridView)ctrl).DisabledColumn("*");
                 else if (ctrl is CKM_RadioButton)
                     ((CKM_RadioButton)ctrl).Enabled = false;
+                else if (ctrl is  CKM_CheckBox)
+                    ((CKM_CheckBox)ctrl).Enabled = false;
                 else if (ctrl is Panel)
                     DisablePanel(ctrl as Panel);
              
@@ -655,8 +657,10 @@ namespace Base.Client
                 }
                 else if (ctrl is CKM_GridView)
                     ((CKM_GridView)ctrl).EnabledColumn("*");
-                else if (ctrl is CKM_RadioButton)
+                else if (ctrl is CKM_RadioButton )
                     ((CKM_RadioButton)ctrl).Enabled = true;
+                else if (ctrl is CKM_CheckBox )
+                    ((CKM_CheckBox)ctrl).Enabled = true;
                 else if (ctrl is Panel)
                     EnablePanel(ctrl as Panel);
 
@@ -1857,7 +1861,8 @@ namespace Base.Client
 
         }
         public void MoveNextControl(KeyEventArgs e)  //PTK  Addedd// if Something Changed, Discuss with PTK
-        
+
+
         {
 
             IsmaxTabIndex(e, ActiveControl);
