@@ -114,6 +114,7 @@ namespace MasterTouroku_ShiireKakeritsu
             cbo_Season.Text = string.Empty;
             txtChangeDate.Text = string.Empty;
             txtRate.Text = string.Empty;
+            //dgv_ShiireKakeritsu.DataSource = null;
             //Clear(panelDetail);
             scSupplierCD.SetFocus(1);
         }
@@ -756,14 +757,14 @@ namespace MasterTouroku_ShiireKakeritsu
         }
        
         private void btnUpdate_Click(object sender, EventArgs e)
-        {         
+        {
             foreach (DataGridViewRow row in dgv_ShiireKakeritsu.Rows)
             {
-                DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
-                if (check.Value == check.TrueValue)
-                {
-                    row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
-                }
+               DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
+               if (check.Value == check.TrueValue)
+               {
+                 row.Cells["colRate1"].Value = Convert.ToDecimal(txtRate.Text);
+               }
             }
            
         }

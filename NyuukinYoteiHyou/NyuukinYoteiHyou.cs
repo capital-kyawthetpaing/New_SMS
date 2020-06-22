@@ -88,7 +88,7 @@ namespace NyuukinYoteiHyou
             detailControls = new Control[] { ckM_TextBox1, ckM_TextBox2, CboStoreCD, ScCustomer.TxtCode, ScStaff.TxtCode, ckM_CheckBox1, ckM_CheckBox2};
             detailLabels = new Control[] { ScCustomer,ScStaff };
             searchButtons = new Control[] { ScCustomer.BtnSearch};
-
+            searchButtons = new Control[] { ScStaff.BtnSearch };
             foreach (Control ctl in detailControls)
             {
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
@@ -121,7 +121,7 @@ namespace NyuukinYoteiHyou
 
             M_Customer_Entity mce = new M_Customer_Entity
             {
-                StaffCD = ScStaff.TxtCode.Text
+               StaffCD = ScStaff.TxtCode.Text
             };
 
             DataTable dt = mibl.D_CollectPlan_SelectForPrint(dse, mce);
@@ -349,7 +349,7 @@ namespace NyuukinYoteiHyou
                             }
                             else
                             {
-                                detailControls[index + 1].Text = mce.CustomerName;
+                               // detailControls[index + 1].Text = mce.CustomerCD;
                                 
                                 //[M_Store_Select]
                                 M_Store_Entity me = new M_Store_Entity
