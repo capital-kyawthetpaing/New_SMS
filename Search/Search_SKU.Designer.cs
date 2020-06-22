@@ -34,13 +34,13 @@
             this.lbl = new CKM_Controls.CKMShop_Label();
             this.lblJanCD = new CKM_Controls.CKMShop_Label();
             this.GvMultiSKU = new CKM_Controls.CKMShop_GridView();
+            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
+            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             this.colSKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSKUName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSizeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAdminNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColorName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
-            this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
             ((System.ComponentModel.ISupportInitialize)(this.GvMultiSKU)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +98,6 @@
             this.GvMultiSKU.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvMultiSKU.ColumnHeadersHeight = 30;
             this.GvMultiSKU.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.GvMultiSKU.ColumnHeadersVisible = false;
             this.GvMultiSKU.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKUCD,
             this.colSKUName,
@@ -119,69 +118,20 @@
             this.GvMultiSKU.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvMultiSKU.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.GvMultiSKU.HeaderHeight_ = 30;
-            this.GvMultiSKU.HeaderVisible = false;
+            this.GvMultiSKU.HeaderVisible = true;
             this.GvMultiSKU.Height_ = 200;
-            this.GvMultiSKU.Location = new System.Drawing.Point(26, 165);
+            this.GvMultiSKU.Location = new System.Drawing.Point(37, 163);
             this.GvMultiSKU.Name = "GvMultiSKU";
             this.GvMultiSKU.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.GvMultiSKU.RowHeight_ = 42;
             this.GvMultiSKU.RowTemplate.Height = 42;
             this.GvMultiSKU.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.GvMultiSKU.Size = new System.Drawing.Size(1400, 500);
+            this.GvMultiSKU.Size = new System.Drawing.Size(1500, 520);
             this.GvMultiSKU.TabIndex = 6;
             this.GvMultiSKU.UseRowNo = true;
             this.GvMultiSKU.UseSetting = true;
-            this.GvMultiSKU.Width_ = 850;
+            this.GvMultiSKU.Width_ = 1500;
             this.GvMultiSKU.DoubleClick += new System.EventHandler(this.GvMultiSKU_DoubleClick);
-            // 
-            // colSKUCD
-            // 
-            this.colSKUCD.DataPropertyName = "SKUCD";
-            this.colSKUCD.HeaderText = "SKUCD";
-            this.colSKUCD.Name = "colSKUCD";
-            this.colSKUCD.ReadOnly = true;
-            this.colSKUCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSKUCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUCD.Width = 350;
-            // 
-            // colSKUName
-            // 
-            this.colSKUName.DataPropertyName = "SKUName";
-            this.colSKUName.HeaderText = "商品名";
-            this.colSKUName.Name = "colSKUName";
-            this.colSKUName.ReadOnly = true;
-            this.colSKUName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSKUName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUName.Width = 1000;
-            // 
-            // colSizeName
-            // 
-            this.colSizeName.DataPropertyName = "SizeName";
-            this.colSizeName.HeaderText = "SizeName";
-            this.colSizeName.Name = "colSizeName";
-            this.colSizeName.ReadOnly = true;
-            this.colSizeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colSizeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSizeName.Visible = false;
-            // 
-            // colAdminNO
-            // 
-            this.colAdminNO.DataPropertyName = "AdminNO";
-            this.colAdminNO.HeaderText = "AdminNO";
-            this.colAdminNO.Name = "colAdminNO";
-            this.colAdminNO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colAdminNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colAdminNO.Visible = false;
-            // 
-            // colColorName
-            // 
-            this.colColorName.DataPropertyName = "ColorName";
-            this.colColorName.HeaderText = "ColorName";
-            this.colColorName.Name = "colColorName";
-            this.colColorName.ReadOnly = true;
-            this.colColorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.colColorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colColorName.Visible = false;
             // 
             // ckmShop_Label1
             // 
@@ -217,11 +167,60 @@
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.DarkGreen;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // colSKUCD
+            // 
+            this.colSKUCD.DataPropertyName = "SKUCD";
+            this.colSKUCD.HeaderText = "SKUCD";
+            this.colSKUCD.Name = "colSKUCD";
+            this.colSKUCD.ReadOnly = true;
+            this.colSKUCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSKUCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSKUCD.Width = 350;
+            // 
+            // colSKUName
+            // 
+            this.colSKUName.DataPropertyName = "SKUName";
+            this.colSKUName.HeaderText = "商品名";
+            this.colSKUName.Name = "colSKUName";
+            this.colSKUName.ReadOnly = true;
+            this.colSKUName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSKUName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSKUName.Width = 1100;
+            // 
+            // colSizeName
+            // 
+            this.colSizeName.DataPropertyName = "SizeName";
+            this.colSizeName.HeaderText = "SizeName";
+            this.colSizeName.Name = "colSizeName";
+            this.colSizeName.ReadOnly = true;
+            this.colSizeName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colSizeName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colSizeName.Visible = false;
+            // 
+            // colAdminNO
+            // 
+            this.colAdminNO.DataPropertyName = "AdminNO";
+            this.colAdminNO.HeaderText = "AdminNO";
+            this.colAdminNO.Name = "colAdminNO";
+            this.colAdminNO.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colAdminNO.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colAdminNO.Visible = false;
+            // 
+            // colColorName
+            // 
+            this.colColorName.DataPropertyName = "ColorName";
+            this.colColorName.HeaderText = "ColorName";
+            this.colColorName.Name = "colColorName";
+            this.colColorName.ReadOnly = true;
+            this.colColorName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.colColorName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.colColorName.Visible = false;
+            // 
             // frmSearch_SKU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1464, 761);
+            this.ClientSize = new System.Drawing.Size(1584, 761);
             this.Controls.Add(this.ckmShop_Label2);
             this.Controls.Add(this.ckmShop_Label1);
             this.Controls.Add(this.GvMultiSKU);
