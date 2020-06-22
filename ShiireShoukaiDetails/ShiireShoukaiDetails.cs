@@ -403,12 +403,12 @@ namespace ShiireShoukaiDetails
                 return false;
             }
 
-            //if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-            //{
-            //    bbl.ShowMessage("E141");
-            //    cboStore.Focus();
-            //    return false;
-            //}
+            if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E141");
+                cboStore.Focus();
+                return false;
+            }
             return true;
         }
 

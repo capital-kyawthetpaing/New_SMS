@@ -20,6 +20,7 @@ namespace Search
         private const string ProNm = "SKU選択";
         public string SKUCD = string.Empty;
         public string SKUName = string.Empty;
+        public string AdminNO = string.Empty;
         public string SizeColorName = string.Empty;
 
         
@@ -44,6 +45,7 @@ namespace Search
             {
                 SKUCD = GvMultiSKU.CurrentRow.Cells["colSKUCD"].Value.ToString();
                 SKUName = GvMultiSKU.CurrentRow.Cells["colSKUName"].Value.ToString();
+                AdminNO = GvMultiSKU.CurrentRow.Cells["colAdminNO"].Value.ToString();
                 SizeColorName = GvMultiSKU.CurrentRow.Cells["colColorName"].Value.ToString()+" . " + GvMultiSKU.CurrentRow.Cells["colSizeName"].Value.ToString();
                 this.Close();
             }

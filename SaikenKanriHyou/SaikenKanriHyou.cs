@@ -55,8 +55,8 @@ namespace SaikenKanriHyou
             rdo_BillAddress.Checked = true;
             BindStore();
             // this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
-            cbo_Store.KeyDown += cbo_Store_KeyDown;
-            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
+            cbo_Store.KeyDown += cbo_Store_KeyDown; // 2020-06-19
+            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");  // 2020-06-19
             txtTargetdate.Focus();
         }
         public override void FunctionProcess(int index)
@@ -151,7 +151,7 @@ namespace SaikenKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
@@ -175,7 +175,7 @@ namespace SaikenKanriHyou
         /// <Remark>Comboで選択する場合、許可するかどうかエラー　チェックする事</Remark>
         /// <Remark>許可ない場合　エラー「E141」になる</Remark>
         /// </summary>
-        //private void Cbo_Store_SelectedIndexChanged(object sender, EventArgs e)
+        //private void Cbo_Store_SelectedIndexChanged(object sender, EventArgs e) //2020-06-19 saw
         //{
         //    //店舗権限のチェック、引数で処理可能店舗の配列をセットしたい
         //    if (!cbo_Store.SelectedValue.Equals("-1"))
@@ -194,7 +194,7 @@ namespace SaikenKanriHyou
 
         //}
 
-        private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
+        private void cbo_Store_KeyDown(object sender, KeyEventArgs e) // 2020-06-19 saw
         {
             if (e.KeyCode == Keys.Enter)
             {
@@ -224,11 +224,37 @@ namespace SaikenKanriHyou
 
             if (!string.IsNullOrEmpty(sc_Customer.TxtCode.Text))
             {
-                if (!sc_Customer.IsExists(2))
+                DataTable dt = new DataTable(); //2020-06-22 saw
+                dt = skh_bl.SimpleSelect1("67", sc_Customer.ChangeDate, sc_Customer.Code); //2020-06-22 saw
+                // if (!sc_Customer.IsExists(1))
+                if (dt.Rows.Count < 1)
                 {
                     skh_bl.ShowMessage("E101");
+                    sc_Customer.LabelText = string.Empty;
                     sc_Customer.SetFocus(1);
                     return false;
+                }
+                else //2020-06-22 saw
+                {
+                    if (rdo_BillAddress.Checked == true && dt.Rows[0]["CollectFLG"].ToString().Equals("0"))
+                    {
+                        skh_bl.ShowMessage("E242");
+                        sc_Customer.LabelText = string.Empty;
+                        sc_Customer.SetFocus(1);
+                        return false;
+                    }
+                    else if (rdo_Sale.Checked == true && dt.Rows[0]["BillingFLG"].ToString().Equals("0"))
+                    {
+                        skh_bl.ShowMessage("E243");
+                        sc_Customer.LabelText = string.Empty;
+                        sc_Customer.SetFocus(1);
+                        return false;
+                    }
+                    //else
+                    //{
+                    //    sc_Customer.Value1 = sc_Customer.TxtCode.Text;
+                    //    sc_Customer.Value2 = sc_Customer.LabelText;
+                    //}
                 }
             }
 
@@ -246,17 +272,18 @@ namespace SaikenKanriHyou
             {
                 // レコード定義を行う
                 dtResult = CheckData();
+                M_StoreCheck();
                 //dmc_e = GetDataInfo();
                 //dtResult = skh_bl.D_MonthlyClaims_Select(dmc_e);
-                
+
                 //if (dtResult == null)
                 //{
                 //    return;
                 //}
-                if (dtResult.Rows.Count > 0)
+                if (dtResult.Rows.Count > 0) // 2020-06-19 saw
                 {
                     //exeRun
-                    M_StoreCheck();
+                    
                     try
                     {
                         SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
@@ -410,25 +437,30 @@ namespace SaikenKanriHyou
                     dt = skh_bl.SimpleSelect1("67", targetDate, sc_Customer.Code);
                     if (dt.Rows.Count < 1)
                     {
-                        bbl.ShowMessage("E101");
+                        skh_bl.ShowMessage("E101");
+                        sc_Customer.LabelText = string.Empty;
                         sc_Customer.SetFocus(1);
                     }
                     else
                     {
                         if (rdo_BillAddress.Checked == true && dt.Rows[0]["CollectFLG"].ToString().Equals("0"))
                         {
-                            skh_bl.ShowMessage("");
+                            skh_bl.ShowMessage("E242");
+                            sc_Customer.LabelText = string.Empty;
                             sc_Customer.SetFocus(1);
                         }
                         else if (rdo_Sale.Checked == true && dt.Rows[0]["BillingFLG"].ToString().Equals("0"))
                         {
-                            skh_bl.ShowMessage("");
+                            skh_bl.ShowMessage("E243");
+                            sc_Customer.LabelText = string.Empty;
                             sc_Customer.SetFocus(1);
                         }
                         else
                         {
-                            sc_Customer.Value1 = sc_Customer.TxtCode.Text;
-                            sc_Customer.Value2 = sc_Customer.LabelText;
+                            //sc_Customer.Value1 = sc_Customer.TxtCode.Text;
+                            //sc_Customer.Value2 = sc_Customer.LabelText;
+                            sc_Customer.Code = dt.Rows[0]["CustomerCD"].ToString();
+                            sc_Customer.LabelText = dt.Rows[0]["CustomerName"].ToString();
                         }
                     }
                 }
@@ -441,7 +473,8 @@ namespace SaikenKanriHyou
             else if (rdo_Sale.Checked)
                 sc_Customer.Value1 = "1";
 
-            sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
+            //sc_Customer.ChangeDate = skh_bl.GetDate(txtTargetdate.Text);
+            sc_Customer.ChangeDate = !string.IsNullOrWhiteSpace(txtTargetdate.Text) ? skh_bl.GetDate(txtTargetdate.Text) : bbl.GetDate(); //2020-06-22 saw
             sc_Customer.Value2 = cbo_Store.SelectedValue.Equals("-1") ? "" : cbo_Store.SelectedValue.ToString();
         }
 
