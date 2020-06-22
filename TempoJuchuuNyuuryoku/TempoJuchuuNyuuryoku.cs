@@ -2960,15 +2960,15 @@ namespace TempoJuchuuNyuuryoku
                             //粗利額=⑦Form.税抜販売額－⑩Form.原価額				
                             mGrid.g_DArray[row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[row].CostGaku));
 
-                            //税率=Function_単価取得.out税率
-                            if (bbl.Z_Set(fue.Zeiritsu) == 0)
-                            {
-                                mGrid.g_DArray[row].TaxRate = "";
-                            }
-                            else
-                            {
-                                mGrid.g_DArray[row].TaxRate = string.Format("{0:#,##0}", bbl.Z_Set(fue.Zeiritsu)) + "%";
-                            }
+                            ////税率=Function_単価取得.out税率
+                            //if (bbl.Z_Set(fue.Zeiritsu) == 0)
+                            //{
+                            //    mGrid.g_DArray[row].TaxRate = "";
+                            //}
+                            //else
+                            //{
+                            //    mGrid.g_DArray[row].TaxRate = string.Format("{0:#,##0}", bbl.Z_Set(fue.Zeiritsu)) + "%";
+                            //}
 
                             CalcZei(row);
                         }
@@ -3331,6 +3331,18 @@ namespace TempoJuchuuNyuuryoku
                 Suryo = wSuu.ToString()
             };
 
+            bool ret = bbl.Fnc_UnitPrice(fue);
+
+            //税率=Function_単価取得.out税率
+            if (bbl.Z_Set(fue.Zeiritsu) == 0)
+            {
+                mGrid.g_DArray[w_Row].TaxRate = "";
+            }
+            else
+            {
+                mGrid.g_DArray[w_Row].TaxRate = string.Format("{0:#,##0}", bbl.Z_Set(fue.Zeiritsu)) + "%";
+            }
+
             //粗利額←⑦Form.Detail.税抜販売額－⑩Form.Detail.原価額
             mGrid.g_DArray[w_Row].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].CostGaku));
 
@@ -3404,25 +3416,27 @@ namespace TempoJuchuuNyuuryoku
                     else
                         kin5 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
 
-                    //Form.Detail.値引区分＝１ の Form.Detail.税抜販売額  ←Form.Detail.税率＝10%の明細が対象
-                    //－Form.Detail.値引区分＝０ の Form.Detail.税抜販売額  										
-                    if (mGrid.g_DArray[RW].DiscountKbn == 1 && mGrid.g_DArray[RW].TaxRateFLG == 1)
-                        kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                    else if (mGrid.g_DArray[RW].DiscountKbn == 0 && mGrid.g_DArray[RW].TaxRateFLG == 1)
-                        kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                    //＋（Form.Detail.値引区分＝１ の Form.Detail.税抜販売額 ←Form.Detail.税率＝８%の明細が対象
-                    //－	Form.Detail.値引区分＝０ の Form.Detail.税抜販売額  
-                    else if (mGrid.g_DArray[RW].DiscountKbn == 1 && mGrid.g_DArray[RW].TaxRateFLG == 2)
-                        kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                    else if (mGrid.g_DArray[RW].DiscountKbn == 0 && mGrid.g_DArray[RW].TaxRateFLG == 2)
-                        kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                    //＋（Form.Detail.値引区分＝１ の Form.Detail.税抜販売額 ←Form.Detail.税率＝それ以外の明細が対象
-                    //－	Form.Detail.値引区分＝０ の Form.Detail.税抜販売額
-                    else if (mGrid.g_DArray[RW].DiscountKbn == 1)
-                        kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
-                    else if (mGrid.g_DArray[RW].DiscountKbn == 0)
-                        kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    ////Form.Detail.値引区分＝１ の Form.Detail.税抜販売額  ←Form.Detail.税率＝10%の明細が対象
+                    ////－Form.Detail.値引区分＝０ の Form.Detail.税抜販売額  										
+                    //if (mGrid.g_DArray[RW].DiscountKbn == 1 && mGrid.g_DArray[RW].TaxRateFLG == 1)
+                    //    kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    //else if (mGrid.g_DArray[RW].DiscountKbn == 0 && mGrid.g_DArray[RW].TaxRateFLG == 1)
+                    //    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    ////＋（Form.Detail.値引区分＝１ の Form.Detail.税抜販売額 ←Form.Detail.税率＝８%の明細が対象
+                    ////－	Form.Detail.値引区分＝０ の Form.Detail.税抜販売額  
+                    //else if (mGrid.g_DArray[RW].DiscountKbn == 1 && mGrid.g_DArray[RW].TaxRateFLG == 2)
+                    //    kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    //else if (mGrid.g_DArray[RW].DiscountKbn == 0 && mGrid.g_DArray[RW].TaxRateFLG == 2)
+                    //    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    ////＋（Form.Detail.値引区分＝１ の Form.Detail.税抜販売額 ←Form.Detail.税率＝それ以外の明細が対象
+                    ////－	Form.Detail.値引区分＝０ の Form.Detail.税抜販売額
+                    //else if (mGrid.g_DArray[RW].DiscountKbn == 1)
+                    //    kin2 -= bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
+                    //else if (mGrid.g_DArray[RW].DiscountKbn == 0)
+                    //    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
 
+                    //税抜売上額=Form.Detail.税抜販売額のTotal
+                    kin2 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
                     zei10 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriTax);
                     zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
                     kin3 += bbl.Z_Set(mGrid.g_DArray[RW].CostGaku);
@@ -3442,7 +3456,7 @@ namespace TempoJuchuuNyuuryoku
                             zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
 
-                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku))
+                        if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
                             maxKinRowNo = RW;
                     }
                 }
@@ -3454,7 +3468,7 @@ namespace TempoJuchuuNyuuryoku
             //値引き額
             lblKin5.Text = string.Format("{0:#,##0}", kin5);
             //税込売上額＝税込受注額－値引額
-            lblKin6.Text = string.Format("{0:#,##0}", kin1-kin5);
+            lblKin6.Text = string.Format("{0:#,##0}", kin1+kin5);
             //税抜売上額・Form.Detail.税抜販売額のTotal
             lblKin2.Text = string.Format("{0:#,##0}", kin2);
             //原価額・Form.Detail.原価額のTotal
@@ -3463,7 +3477,7 @@ namespace TempoJuchuuNyuuryoku
             lblKin4.Text = string.Format("{0:#,##0}", kin2- kin3);
 
             //請求額＝税込売上額－ポイント利用
-            lblKin7.Text = string.Format("{0:#,##0}", kin1 - kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text));
+            lblKin7.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text));
 
             //M_Control.Tennic＝0 の場合、
             //M_Control.Tennic＝1 の場合、M_Vendor.TaxTiming＝1:明細ごと または 3:締ごと	
@@ -3506,6 +3520,10 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[maxKinRowNo].KeigenTax = mGrid.g_DArray[maxKinRowNo].KeigenTax + sagaku;
                     }
                 }
+                //税込受注額・Form.Detail.税込販売額のTotal
+                lblKin1.Text = string.Format("{0:#,##0}", kin1 + sagaku);
+                //税込売上額＝税込受注額－値引額
+                lblKin6.Text = string.Format("{0:#,##0}", kin1 + sagaku + kin5);
                 //消費税額
                 lblKin10.Text = string.Format("{0:#,##0}", kin10 + kin8);
                 //通常税額(Hidden)・Form.Detail.通常税額のTotal
@@ -3517,7 +3535,7 @@ namespace TempoJuchuuNyuuryoku
             }
 
             //未入金額＝請求額－入金額
-            lblKin9.Text = string.Format("{0:#,##0}", kin1 - kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text)- bbl.Z_Set(lblKin8.Text));
+            lblKin9.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text)- bbl.Z_Set(lblKin8.Text));
 
 
         }
