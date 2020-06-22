@@ -279,8 +279,7 @@ namespace ZaikoShoukai
         }
         private void Excel()
         {
-            if (GV_Zaiko.DataSource != null)
-            {
+            
                 if (!ErrorCheck())
                 {
                     return;
@@ -324,7 +323,6 @@ namespace ZaikoShoukai
                         Process.Start(Path.GetDirectoryName(savedialog.FileName));
                     }
                 }
-            }
         }
         private void ZaikoShoukai_KeyUp(object sender, KeyEventArgs e)
         {
@@ -403,49 +401,39 @@ namespace ZaikoShoukai
                 }
             }
         }
-
         private void jan_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
-            //if (!String.IsNullOrEmpty(jan.TxtCode.Text))
-            //{
-            //    if (!jan.IsExists(2))
-            //    {
-            //        bbl.ShowMessage("E101");
-            //    }
-            //}
+            if (!String.IsNullOrEmpty(jan.TxtCode.Text))
+            {
+                if (!jan.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    jan.Focus();
+                }
+            }
         }
-
         private void Shiiresaki_Enter(object sender, EventArgs e)
         {
             Shiiresaki.ChangeDate = bbl.GetDate();
             Shiiresaki.Value1 = "1";
         }
-
         private void Maker_Enter(object sender, EventArgs e)
         {
             Maker.ChangeDate = bbl.GetDate();
             Maker.Value1 = "1";
         }
-
-       
-
         private void sku_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if(!String.IsNullOrEmpty(sku.TxtCode.Text))
             {
-                //sku.ChangeDate = bbl.GetDate();
-                //if(sku.SelectData())
-                //{
-                //    sku.Value1 = sku.TxtCode.Text;
-                //}
-                //else
-                //{
-                //    bbl.ShowMessage("E101");
-                //    sku.SetFocus(1);
-                //}
+                
+                if(!sku.IsExists(2))
+                {
+                    bbl.ShowMessage("E101");
+                    sku.Focus();
+                }
             }
         }
-
         private void CKB_searchsuru_CheckedChanged(object sender, EventArgs e)
         {
             if(CKB_searchsuru.Checked == false)

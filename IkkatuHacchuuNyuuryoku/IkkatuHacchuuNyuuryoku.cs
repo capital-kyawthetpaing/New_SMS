@@ -26,7 +26,7 @@ namespace IkkatuHacchuuNyuuryoku
         /// <summary>
         /// 
         /// </summary>
-        private const string ProID = "IkkatsuHacchuuNyuuryoku";
+        private const string ProID = "IkkatuHacchuuNyuuryoku";
         /// <summary>
         /// 
         /// </summary>

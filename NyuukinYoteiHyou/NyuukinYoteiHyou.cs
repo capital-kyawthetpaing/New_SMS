@@ -121,7 +121,8 @@ namespace NyuukinYoteiHyou
 
             M_Customer_Entity mce = new M_Customer_Entity
             {
-               StaffCD = ScStaff.TxtCode.Text
+               //StaffCD = ScStaff.TxtCode.Text
+               CustomerCD=ScCustomer.TxtCode.Text
             };
 
             DataTable dt = mibl.D_CollectPlan_SelectForPrint(dse, mce);

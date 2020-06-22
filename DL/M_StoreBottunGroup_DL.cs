@@ -26,7 +26,7 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>()
             {
-                 { "@StoreCD",new ValuePair {value1=SqlDbType.Int,value2=StoreCD} }
+                 { "@StoreCD",new ValuePair {value1=SqlDbType.VarChar,value2=StoreCD} }
 
             };
 

@@ -542,6 +542,7 @@
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
             this.lblSearchName = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label2 = new CKM_Controls.CKMShop_Label();
+            this.lblAdminNO = new CKM_Controls.CKMShop_Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -10091,11 +10092,28 @@
             this.ckmShop_Label2.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblAdminNO
+            // 
+            this.lblAdminNO.AutoSize = true;
+            this.lblAdminNO.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblAdminNO.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
+            this.lblAdminNO.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblAdminNO.FontBold = true;
+            this.lblAdminNO.Location = new System.Drawing.Point(1646, 762);
+            this.lblAdminNO.Name = "lblAdminNO";
+            this.lblAdminNO.Size = new System.Drawing.Size(148, 35);
+            this.lblAdminNO.TabIndex = 24;
+            this.lblAdminNO.Text = "AdminNO";
+            this.lblAdminNO.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblAdminNO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAdminNO.Visible = false;
+            // 
             // TempoRegiMasterNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1913, 961);
+            this.Controls.Add(this.lblAdminNO);
             this.Controls.Add(this.ckmShop_Label2);
             this.Controls.Add(this.lblSearchName);
             this.Controls.Add(this.ckmShop_Label8);
@@ -10138,6 +10156,7 @@
             this.Controls.SetChildIndex(this.ckmShop_Label8, 0);
             this.Controls.SetChildIndex(this.lblSearchName, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label2, 0);
+            this.Controls.SetChildIndex(this.lblAdminNO, 0);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -10663,6 +10682,7 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label4;
         private CKM_Controls.CKMShop_Label lblSearchName;
         private CKM_Controls.CKMShop_Label ckmShop_Label2;
+        private CKM_Controls.CKMShop_Label lblAdminNO;
     }
 }
 
