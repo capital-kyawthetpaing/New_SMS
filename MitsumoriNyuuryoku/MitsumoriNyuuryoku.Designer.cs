@@ -272,10 +272,6 @@
             // 
             this.PanelSearch.TabIndex = 7;
             // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -2193,7 +2189,6 @@
             this.SC_ITEM_0.LabelText = "";
             this.SC_ITEM_0.LabelVisible = false;
             this.SC_ITEM_0.Location = new System.Drawing.Point(27, -5);
-            this.SC_ITEM_0.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_0.Name = "SC_ITEM_0";
             this.SC_ITEM_0.NameWidth = 190;
             this.SC_ITEM_0.SearchEnable = true;
@@ -2250,7 +2245,7 @@
             this.IMN_GENER2_4.DecimalPlace = 0;
             this.IMN_GENER2_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER2_4.IntegerPart = 0;
+            this.IMN_GENER2_4.IntegerPart = 8;
             this.IMN_GENER2_4.IsCorrectDate = true;
             this.IMN_GENER2_4.isEnterKeyDown = false;
             this.IMN_GENER2_4.isMaxLengthErr = false;
@@ -2353,7 +2348,7 @@
             this.IMN_GENER_4.DecimalPlace = 0;
             this.IMN_GENER_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER_4.IntegerPart = 0;
+            this.IMN_GENER_4.IntegerPart = 5;
             this.IMN_GENER_4.IsCorrectDate = true;
             this.IMN_GENER_4.isEnterKeyDown = false;
             this.IMN_GENER_4.isMaxLengthErr = false;
@@ -2660,7 +2655,7 @@
             this.IMN_GENER2_3.DecimalPlace = 0;
             this.IMN_GENER2_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER2_3.IntegerPart = 0;
+            this.IMN_GENER2_3.IntegerPart = 8;
             this.IMN_GENER2_3.IsCorrectDate = true;
             this.IMN_GENER2_3.isEnterKeyDown = false;
             this.IMN_GENER2_3.isMaxLengthErr = false;
@@ -2720,7 +2715,7 @@
             this.IMN_GENER_3.DecimalPlace = 0;
             this.IMN_GENER_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER_3.IntegerPart = 0;
+            this.IMN_GENER_3.IntegerPart = 5;
             this.IMN_GENER_3.IsCorrectDate = true;
             this.IMN_GENER_3.isEnterKeyDown = false;
             this.IMN_GENER_3.isMaxLengthErr = false;
@@ -2868,7 +2863,7 @@
             this.IMN_GENER2_2.DecimalPlace = 0;
             this.IMN_GENER2_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER2_2.IntegerPart = 0;
+            this.IMN_GENER2_2.IntegerPart = 8;
             this.IMN_GENER2_2.IsCorrectDate = true;
             this.IMN_GENER2_2.isEnterKeyDown = false;
             this.IMN_GENER2_2.isMaxLengthErr = false;
@@ -2928,7 +2923,7 @@
             this.IMN_GENER_2.DecimalPlace = 0;
             this.IMN_GENER_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER_2.IntegerPart = 0;
+            this.IMN_GENER_2.IntegerPart = 5;
             this.IMN_GENER_2.IsCorrectDate = true;
             this.IMN_GENER_2.isEnterKeyDown = false;
             this.IMN_GENER_2.isMaxLengthErr = false;
@@ -3076,7 +3071,7 @@
             this.IMN_GENER2_1.DecimalPlace = 0;
             this.IMN_GENER2_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER2_1.IntegerPart = 0;
+            this.IMN_GENER2_1.IntegerPart = 8;
             this.IMN_GENER2_1.IsCorrectDate = true;
             this.IMN_GENER2_1.isEnterKeyDown = false;
             this.IMN_GENER2_1.isMaxLengthErr = false;
@@ -3136,7 +3131,7 @@
             this.IMN_GENER_1.DecimalPlace = 0;
             this.IMN_GENER_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER_1.IntegerPart = 0;
+            this.IMN_GENER_1.IntegerPart = 5;
             this.IMN_GENER_1.IsCorrectDate = true;
             this.IMN_GENER_1.isEnterKeyDown = false;
             this.IMN_GENER_1.isMaxLengthErr = false;
@@ -3284,7 +3279,7 @@
             this.IMN_GENER2_0.DecimalPlace = 0;
             this.IMN_GENER2_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER2_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER2_0.IntegerPart = 0;
+            this.IMN_GENER2_0.IntegerPart = 8;
             this.IMN_GENER2_0.IsCorrectDate = true;
             this.IMN_GENER2_0.isEnterKeyDown = false;
             this.IMN_GENER2_0.isMaxLengthErr = false;
@@ -3389,7 +3384,7 @@
             this.IMN_GENER_0.DecimalPlace = 0;
             this.IMN_GENER_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.IMN_GENER_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_GENER_0.IntegerPart = 0;
+            this.IMN_GENER_0.IntegerPart = 5;
             this.IMN_GENER_0.IsCorrectDate = true;
             this.IMN_GENER_0.isEnterKeyDown = false;
             this.IMN_GENER_0.isMaxLengthErr = false;
@@ -3569,7 +3564,6 @@
             this.SC_ITEM_1.LabelText = "";
             this.SC_ITEM_1.LabelVisible = false;
             this.SC_ITEM_1.Location = new System.Drawing.Point(27, 52);
-            this.SC_ITEM_1.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_1.Name = "SC_ITEM_1";
             this.SC_ITEM_1.NameWidth = 190;
             this.SC_ITEM_1.SearchEnable = true;
@@ -3628,7 +3622,6 @@
             this.SC_ITEM_2.LabelText = "";
             this.SC_ITEM_2.LabelVisible = false;
             this.SC_ITEM_2.Location = new System.Drawing.Point(27, 109);
-            this.SC_ITEM_2.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_2.Name = "SC_ITEM_2";
             this.SC_ITEM_2.NameWidth = 190;
             this.SC_ITEM_2.SearchEnable = true;
@@ -3687,7 +3680,6 @@
             this.SC_ITEM_3.LabelText = "";
             this.SC_ITEM_3.LabelVisible = false;
             this.SC_ITEM_3.Location = new System.Drawing.Point(27, 166);
-            this.SC_ITEM_3.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_3.Name = "SC_ITEM_3";
             this.SC_ITEM_3.NameWidth = 190;
             this.SC_ITEM_3.SearchEnable = true;
@@ -3745,7 +3737,6 @@
             this.SC_ITEM_4.LabelText = "";
             this.SC_ITEM_4.LabelVisible = false;
             this.SC_ITEM_4.Location = new System.Drawing.Point(27, 223);
-            this.SC_ITEM_4.Margin = new System.Windows.Forms.Padding(0);
             this.SC_ITEM_4.Name = "SC_ITEM_4";
             this.SC_ITEM_4.NameWidth = 190;
             this.SC_ITEM_4.SearchEnable = true;
@@ -4145,7 +4136,6 @@
             this.ScCustomer.LabelText = "";
             this.ScCustomer.LabelVisible = false;
             this.ScCustomer.Location = new System.Drawing.Point(87, 121);
-            this.ScCustomer.Margin = new System.Windows.Forms.Padding(0);
             this.ScCustomer.Name = "ScCustomer";
             this.ScCustomer.NameWidth = 500;
             this.ScCustomer.SearchEnable = true;
@@ -4511,7 +4501,6 @@
             this.ScCopyMitsumoriNO.LabelText = "";
             this.ScCopyMitsumoriNO.LabelVisible = false;
             this.ScCopyMitsumoriNO.Location = new System.Drawing.Point(343, 3);
-            this.ScCopyMitsumoriNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopyMitsumoriNO.Name = "ScCopyMitsumoriNO";
             this.ScCopyMitsumoriNO.NameWidth = 600;
             this.ScCopyMitsumoriNO.SearchEnable = true;
@@ -4540,7 +4529,6 @@
             this.ScMitsumoriNO.LabelText = "";
             this.ScMitsumoriNO.LabelVisible = false;
             this.ScMitsumoriNO.Location = new System.Drawing.Point(86, 3);
-            this.ScMitsumoriNO.Margin = new System.Windows.Forms.Padding(0);
             this.ScMitsumoriNO.Name = "ScMitsumoriNO";
             this.ScMitsumoriNO.NameWidth = 600;
             this.ScMitsumoriNO.SearchEnable = true;
@@ -4569,7 +4557,6 @@
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
             this.ScStaff.Location = new System.Drawing.Point(956, 96);
-            this.ScStaff.Margin = new System.Windows.Forms.Padding(0);
             this.ScStaff.Name = "ScStaff";
             this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
@@ -4650,7 +4637,6 @@
             this.ckM_SearchControl2.LabelText = "";
             this.ckM_SearchControl2.LabelVisible = false;
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
-            this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
             this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
@@ -4714,7 +4700,6 @@
             this.ckM_SearchControl3.LabelText = "";
             this.ckM_SearchControl3.LabelVisible = false;
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
-            this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(0);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
             this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
@@ -4736,7 +4721,7 @@
             this.ckM_TextBox1.ClientColor = System.Drawing.Color.White;
             this.ckM_TextBox1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.ckM_TextBox1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
-            this.ckM_TextBox1.DecimalPlace = 0;
+            this.ckM_TextBox1.DecimalPlace = 2;
             this.ckM_TextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_TextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ckM_TextBox1.IntegerPart = 0;
@@ -4748,7 +4733,7 @@
             this.ckM_TextBox1.Length = 10;
             this.ckM_TextBox1.Location = new System.Drawing.Point(87, 96);
             this.ckM_TextBox1.MaxLength = 10;
-            this.ckM_TextBox1.MoveNext = false;
+            this.ckM_TextBox1.MoveNext = true;
             this.ckM_TextBox1.Name = "ckM_TextBox1";
             this.ckM_TextBox1.Size = new System.Drawing.Size(88, 19);
             this.ckM_TextBox1.TabIndex = 3;
@@ -5207,7 +5192,7 @@
             this.CboJuchuuChanceKBN.Length = 20;
             this.CboJuchuuChanceKBN.Location = new System.Drawing.Point(344, 98);
             this.CboJuchuuChanceKBN.MaxLength = 10;
-            this.CboJuchuuChanceKBN.MoveNext = false;
+            this.CboJuchuuChanceKBN.MoveNext = true;
             this.CboJuchuuChanceKBN.Name = "CboJuchuuChanceKBN";
             this.CboJuchuuChanceKBN.Size = new System.Drawing.Size(140, 20);
             this.CboJuchuuChanceKBN.TabIndex = 4;

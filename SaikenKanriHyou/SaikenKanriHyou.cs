@@ -24,6 +24,7 @@ namespace SaikenKanriHyou
         D_MonthlyClaims_Entity dmc_e = new D_MonthlyClaims_Entity();
         SaikenKanriHyou_BL skh_bl;
         DataTable dtResult, dtCSV, dtlog, dtS_check;
+        string targetDate = string.Empty;
         CrystalDecisions.Windows.Forms.CrystalReportViewer crvr;
         Viewer vr;
         public SaikenKanriHyou()
@@ -55,6 +56,7 @@ namespace SaikenKanriHyou
             BindStore();
             // this.cbo_Store.SelectedIndexChanged += Cbo_Store_SelectedIndexChanged;
             cbo_Store.KeyDown += cbo_Store_KeyDown;
+            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetdate.Focus();
         }
         public override void FunctionProcess(int index)
@@ -165,6 +167,7 @@ namespace SaikenKanriHyou
         private void BindStore()
         {
             cbo_Store.Bind(string.Empty, "2");
+            cbo_Store.SelectedValue = StoreCD;
         }
         #endregion
 
@@ -241,98 +244,100 @@ namespace SaikenKanriHyou
 
             if (ErrorCheck())
             {
-                //exeRun
-                M_StoreCheck();
-
                 // レコード定義を行う
                 dtResult = CheckData();
                 //dmc_e = GetDataInfo();
                 //dtResult = skh_bl.D_MonthlyClaims_Select(dmc_e);
-
-                if (dtResult == null)
+                
+                //if (dtResult == null)
+                //{
+                //    return;
+                //}
+                if (dtResult.Rows.Count > 0)
                 {
-                    return;
-                }
-                try
-                {
-                    SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
-                    DialogResult DResult;
-                    switch (PrintMode)
+                    //exeRun
+                    M_StoreCheck();
+                    try
                     {
-                        case EPrintMode.DIRECT:
-                            DResult = bbl.ShowMessage("Q201");
-                            if (DResult == DialogResult.Cancel)
-                            {
-                                return;
-                            }
-                            // 印字データをセット
-                            skh_Report.SetDataSource(dtResult);
-                            skh_Report.Refresh();
-                            skh_Report.SetParameterValue("YYYYMM", txtTargetdate.Text);
-                            skh_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
-
-
-                            crvr = vr.CrystalReportViewer1;
-                            //out log before print
-                            if (DResult == DialogResult.Yes)
-                            {
-                                //印刷処理プレビュー
-                                vr.CrystalReportViewer1.ShowPrintButton = true;
-                                vr.CrystalReportViewer1.ReportSource = skh_Report;
-                                vr.ShowDialog();
-
-                            }
-                            else
-                            {
-                                //int marginLeft = 360;
-                                CrystalDecisions.Shared.PageMargins margin = skh_Report.PrintOptions.PageMargins;
-                                margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
-                                margin.topMargin = DefaultMargin.Top;
-                                margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
-                                margin.rightMargin = DefaultMargin.Right;
-                                skh_Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
-                                // プリンタに印刷
-                                System.Drawing.Printing.PageSettings ps;
-                                try
+                        SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
+                        DialogResult DResult;
+                        switch (PrintMode)
+                        {
+                            case EPrintMode.DIRECT:
+                                DResult = bbl.ShowMessage("Q201");
+                                if (DResult == DialogResult.Cancel)
                                 {
-                                    System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
-
-                                    CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
-
-                                    System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
-
-
-                                    skh_Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
-                                    System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
-
-                                    skh_Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
-
-                                    skh_Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
-
-                                    skh_Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
-                                    // Print the report. Set the startPageN and endPageN 
-                                    // parameters to 0 to print all pages. 
-                                    //Report.PrintToPrinter(1, false, 0, 0);
+                                    return;
                                 }
-                                catch (Exception ex)
+                                // 印字データをセット
+                                skh_Report.SetDataSource(dtResult);
+                                skh_Report.Refresh();
+                                skh_Report.SetParameterValue("YYYYMM", txtTargetdate.Text);
+                                skh_Report.SetParameterValue("PrintDateTime", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+
+
+                                crvr = vr.CrystalReportViewer1;
+                                //out log before print
+                                if (DResult == DialogResult.Yes)
                                 {
+                                    //印刷処理プレビュー
+                                    vr.CrystalReportViewer1.ShowPrintButton = true;
+                                    vr.CrystalReportViewer1.ReportSource = skh_Report;
+                                    vr.ShowDialog();
 
                                 }
-                            }
-                            break;
+                                else
+                                {
+                                    //int marginLeft = 360;
+                                    CrystalDecisions.Shared.PageMargins margin = skh_Report.PrintOptions.PageMargins;
+                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                    margin.topMargin = DefaultMargin.Top;
+                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                    margin.rightMargin = DefaultMargin.Right;
+                                    skh_Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                    // プリンタに印刷
+                                    System.Drawing.Printing.PageSettings ps;
+                                    try
+                                    {
+                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                        skh_Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                        skh_Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                        skh_Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                        skh_Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                        // Print the report. Set the startPageN and endPageN 
+                                        // parameters to 0 to print all pages. 
+                                        //Report.PrintToPrinter(1, false, 0, 0);
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
+                                }
+                                break;
+
+                        }
+
+                        //プログラム実行履歴
+                        InsertLog(Get_L_Log_Entity());
+
 
                     }
-
-                    //プログラム実行履歴
-                    InsertLog(Get_L_Log_Entity());
-
-
-                }
-                finally
-                {
-                    //画面はそのまま
-                    txtTargetdate.Focus();
+                    finally
+                    {
+                        //画面はそのまま
+                        txtTargetdate.Focus();
+                    }
                 }
             }
         }
@@ -364,7 +369,7 @@ namespace SaikenKanriHyou
                 if (dt.Rows.Count == 0)
                 {
                     bbl.ShowMessage("E128");
-                    return null;
+                    //return null;
                 }
             }
 
@@ -397,18 +402,34 @@ namespace SaikenKanriHyou
         {
             if (e.KeyCode == Keys.Enter)
             {
-                sc_Customer.ChangeDate = bbl.GetDate();
+                targetDate = !string.IsNullOrWhiteSpace(txtTargetdate.Text) ? skh_bl.GetDate(txtTargetdate.Text) : bbl.GetDate();
+                sc_Customer.ChangeDate = targetDate;
                 if (!string.IsNullOrEmpty(sc_Customer.TxtCode.Text))
                 {
-                    if (sc_Customer.SelectData())
-                    {
-                        sc_Customer.Value1 = sc_Customer.TxtCode.Text;
-                        sc_Customer.Value2 = sc_Customer.LabelText;
-                    }
-                    else
+                    DataTable dt = new DataTable();
+                    dt = skh_bl.SimpleSelect1("67", targetDate, sc_Customer.Code);
+                    if (dt.Rows.Count < 1)
                     {
                         bbl.ShowMessage("E101");
                         sc_Customer.SetFocus(1);
+                    }
+                    else
+                    {
+                        if (rdo_BillAddress.Checked == true && dt.Rows[0]["CollectFLG"].ToString().Equals("0"))
+                        {
+                            skh_bl.ShowMessage("");
+                            sc_Customer.SetFocus(1);
+                        }
+                        else if (rdo_Sale.Checked == true && dt.Rows[0]["BillingFLG"].ToString().Equals("0"))
+                        {
+                            skh_bl.ShowMessage("");
+                            sc_Customer.SetFocus(1);
+                        }
+                        else
+                        {
+                            sc_Customer.Value1 = sc_Customer.TxtCode.Text;
+                            sc_Customer.Value2 = sc_Customer.LabelText;
+                        }
                     }
                 }
             }
@@ -435,6 +456,8 @@ namespace SaikenKanriHyou
         private void Clear()
         {
             Clear(panelDetail);
+            cbo_Store.SelectedValue = StoreCD;
+            txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetdate.Focus();
 
         }

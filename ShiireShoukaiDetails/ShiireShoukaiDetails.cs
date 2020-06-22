@@ -144,6 +144,7 @@ namespace ShiireShoukaiDetails
         {
             Clear(panel1);
             txtPurchaseDate1.Focus();
+            cboStore.SelectedValue = StoreCD;
         }
         public override void FunctionProcess(int index)
         {
@@ -159,6 +160,7 @@ namespace ShiireShoukaiDetails
                     {
                         ChangeMode(OperationMode);
                         Clear();
+                        Btn_F10.Text = "出力(F10)";
                     }
                     break;
                 case 10:
@@ -190,8 +192,9 @@ namespace ShiireShoukaiDetails
                     F5Visible = false;
                     F9Visible = false;                   
                     F10Visible = true;
-                    Btn_F10.Text = "Excel出力(F10)";
+                    //Btn_F10.Text = "Excel出力(F10)";
                     F12Visible = false;
+                    Btn_F10.Enabled = false;
                     //Btn_Display.Enabled = F11Enable = true;
                     chkOk.Checked = true;
                     chkNotOK.Checked = true;
@@ -299,9 +302,7 @@ namespace ShiireShoukaiDetails
                 string folderPath = "C:\\CSV\\";
                 FileInfo logFileInfo = new FileInfo(folderPath);
                 DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
-
                 if (!logDirInfo.Exists) logDirInfo.Create();
-
                 //Add the Header row for CSV file.
                 foreach (DataGridViewColumn column in dgv_PurchaseDetails.Columns)
                 {
@@ -310,7 +311,6 @@ namespace ShiireShoukaiDetails
                 }
                 //Add new line.
                 csv += "\r\n";
-
                 //Adding the Rows
                 foreach (DataGridViewRow row in dgv_PurchaseDetails.Rows)
                 {

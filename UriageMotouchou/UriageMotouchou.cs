@@ -95,7 +95,15 @@ namespace UriageMotouchou
                     return false;
                 }
             }
-
+            if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
+            {
+                if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
+                {
+                    umbl.ShowMessage("E104");
+                    txtTargetTo.Focus();
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -117,8 +125,8 @@ namespace UriageMotouchou
                     if (umbl.CheckData(1, StoreCD, YYYYMM))
                     {
                         //月次処理（債権集計処理）を起動 Exe Console Run
-                        //string ProgramID = "GetsujiSaikenKeisanSyori";
-                        //OpenForm(ProgramID, txtTagetFrom.Text);
+                        string ProgramID = "GetsujiSaikenKeisanSyori";
+                        OpenForm(ProgramID, txtTagetFrom.Text);
 
                         //印刷処理
                         PrintDataSelect();
@@ -134,9 +142,7 @@ namespace UriageMotouchou
                     umbl.ShowMessage("E128");
                     txtTagetFrom.Focus();
                 }
-
             }
-
         }
 
         private void OpenForm(string programID, string YYYYMM)
@@ -314,6 +320,22 @@ namespace UriageMotouchou
            // sc_Customer.ChangeDate = txtTagetFrom.Text;//月初
             sc_Customer.ChangeDate = umbl.GetDate(txtTagetFrom.Text);
         }
+
+        private void txtTargetTo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (!string.IsNullOrEmpty(txtTagetFrom.Text) && !string.IsNullOrEmpty(txtTargetTo.Text))
+                {
+                    if (string.Compare(txtTagetFrom.Text, txtTargetTo.Text) == 1)
+                    {
+                        umbl.ShowMessage("E104");
+                        txtTargetTo.Focus();
+                    }
+                }
+            }
+        }
+
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

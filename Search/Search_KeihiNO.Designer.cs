@@ -223,6 +223,7 @@
             this.txtRecordDateTo.TabIndex = 4;
             this.txtRecordDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtRecordDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtRecordDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtRecordDateTo_KeyDown);
             // 
             // ckM_Label3
             // 
@@ -311,6 +312,7 @@
             this.txtEntryDateTo.TabIndex = 10;
             this.txtEntryDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtEntryDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtEntryDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEntryDateTo_KeyDown);
             // 
             // ckM_Label5
             // 
@@ -445,6 +447,7 @@
             this.txtPaymentDateTo.TabIndex = 25;
             this.txtPaymentDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDateTo_KeyDown);
             // 
             // ckM_Label10
             // 
@@ -719,6 +722,7 @@
             this.txtPaymentDueDateTo.TabIndex = 16;
             this.txtPaymentDueDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtPaymentDueDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDueDateTo_KeyDown);
             // 
             // ckM_Label12
             // 

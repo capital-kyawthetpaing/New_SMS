@@ -90,6 +90,7 @@
             // chkYes
             // 
             this.chkYes.AutoSize = true;
+            this.chkYes.Cursor = System.Windows.Forms.Cursors.Default;
             this.chkYes.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.chkYes.Location = new System.Drawing.Point(113, 94);
             this.chkYes.Name = "chkYes";
@@ -222,6 +223,7 @@
             this.txtTargetTo.TabIndex = 25;
             this.txtTargetTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTargetTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            this.txtTargetTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTargetTo_KeyDown);
             // 
             // ckM_Label2
             // 

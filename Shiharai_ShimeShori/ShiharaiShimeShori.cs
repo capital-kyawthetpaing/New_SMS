@@ -333,19 +333,17 @@ namespace Shiharai_ShimeShori
                         //Shiiresaki.Value1 = Shiiresaki.TxtCode.Text;
                         //Shiiresaki.Value2 = Shiiresaki.LabelText;
                         F11();
-                        
                     }
                     else
                     {
                         bbl.ShowMessage("E101");
                         Shiiresaki.SetFocus(1);
+                        dgvPaymentClose.DataSource = null;
                     }
                 }
                 else { F11(); }
-               
             }
         }
-
         private void Shiiresaki_Enter(object sender, EventArgs e)
         {
             Shiiresaki.ChangeDate = String.IsNullOrEmpty(txtPayCloseDate.Text) ? bbl.GetDate() : txtPayCloseDate.Text;
