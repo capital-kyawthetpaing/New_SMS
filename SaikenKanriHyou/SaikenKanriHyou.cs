@@ -490,6 +490,7 @@ namespace SaikenKanriHyou
         {
             Clear(panelDetail);
             cbo_Store.SelectedValue = StoreCD;
+            rdo_BillAddress.Checked = true;
             txtTargetdate.Text = System.DateTime.Now.ToString("yyyy/MM");
             txtTargetdate.Focus();
 

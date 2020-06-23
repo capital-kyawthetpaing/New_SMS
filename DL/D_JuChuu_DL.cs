@@ -366,8 +366,8 @@ namespace DL
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
-                { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
-                { "@JuchuuDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateTo } },
+                { "@DateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
+                { "@DateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateTo } },
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
                 { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerName} },
                 { "@KanaName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.KanaName} },
@@ -386,6 +386,28 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = dje.StoreCD } },
                 { "@Date", new ValuePair { value1 = SqlDbType.Date, value2 = dje.ChangeDate } }
 
+            };
+
+            return SelectData(dic, sp);
+        }
+        public bool DeleteTemporaryReserve(D_Juchuu_Entity de)
+        {
+            string sp = "DeleteTemporaryReserve";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNO } },
+            };
+
+            return InsertUpdateDeleteData(dic, sp);
+        }
+        public DataTable GetTemporaryReserveNO(string Denno)
+        {
+            string sp = "GetTemporaryReserveNO";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = Denno } },
             };
 
             return SelectData(dic, sp);
