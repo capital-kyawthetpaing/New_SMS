@@ -2289,13 +2289,15 @@ namespace HacchuuNyuuryoku
                             //①②③④の順番でターゲットが大きくなる（①に近いほど、商品が特定されていく）
 
                             //[M_JANOrderPrice]
-                            M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity();
+                            M_JANOrderPrice_Entity mje = new M_JANOrderPrice_Entity
+                            {
 
-                            //①JAN発注単価マスタ（店舗指定なし）
-                            mje.AdminNO = mGrid.g_DArray[row].AdminNO;
-                            mje.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
-                            mje.StoreCD = CboStoreCD.SelectedValue.ToString(); 
-                            mje.ChangeDate = ymd;
+                                //①JAN発注単価マスタ（店舗指定なし）
+                                AdminNO = mGrid.g_DArray[row].AdminNO,
+                                VendorCD = detailControls[(int)EIndex.OrderCD].Text,
+                                StoreCD = CboStoreCD.SelectedValue.ToString(),
+                                ChangeDate = ymd
+                            };
 
                             JANOrderPrice_BL jbl = new JANOrderPrice_BL();
                             ret = jbl.M_JANOrderPrice_Select(mje);
@@ -2316,13 +2318,15 @@ namespace HacchuuNyuuryoku
                                 else
                                 {
                                     //[M_ItemOrderPrice]
-                                    M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity();
+                                    M_ItemOrderPrice_Entity mje2 = new M_ItemOrderPrice_Entity
+                                    {
 
-                                    //③	ITEM発注単価マスター（店舗指定あり）	
-                                    mje2.MakerItem = mGrid.g_DArray[row].MakerItem;
-                                    mje2.VendorCD = detailControls[(int)EIndex.OrderCD].Text;
-                                    mje2.ChangeDate = ymd;
-                                    mje2.StoreCD = CboStoreCD.SelectedValue.ToString();
+                                        //③	ITEM発注単価マスター（店舗指定あり）	
+                                        MakerItem = mGrid.g_DArray[row].MakerItem,
+                                        VendorCD = detailControls[(int)EIndex.OrderCD].Text,
+                                        ChangeDate = ymd,
+                                        StoreCD = CboStoreCD.SelectedValue.ToString()
+                                    };
 
                                     ItemOrderPrice_BL ibl = new ItemOrderPrice_BL();
                                     ret = ibl.M_ItemOrderPrice_Select(mje2);
@@ -2605,7 +2609,10 @@ namespace HacchuuNyuuryoku
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku))
+                        {
+                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
                             maxKinRowNo = RW;
+                        }
                     }
                 }
             }
@@ -2618,6 +2625,7 @@ namespace HacchuuNyuuryoku
             {
                 lblKin2.Text = string.Format("{0:#,##0}", zei10 + zei8);
                 lblKin3.Text = string.Format("{0:#,##0}", kin1 + zei10 + zei8);
+
                 mZei10 = zei10;
                 mZei8 = zei8;
             }
@@ -2637,20 +2645,21 @@ namespace HacchuuNyuuryoku
                     //※消費税差額＝通常税額(Hidden) ＋ 軽減税額(Hidden)）－ SUM（Form.Detail.通常税額 ＋ Form.Detail.軽減税額）	
                     if (mGrid.g_DArray[maxKinRowNo].TaxRateFLG.Equals(1))
                     {
-                        mGrid.g_DArray[maxKinRowNo].HacchuTax = mGrid.g_DArray[maxKinRowNo].HacchuTax + sagaku;
+                        mGrid.g_DArray[maxKinRowNo].HacchuTax = mGrid.g_DArray[maxKinRowNo].HacchuTax + sagaku;                        
                     }
                     else if (mGrid.g_DArray[maxKinRowNo].TaxRateFLG.Equals(2))
                     {
                         mGrid.g_DArray[maxKinRowNo].KeigenTax = mGrid.g_DArray[maxKinRowNo].KeigenTax + sagaku;
                     }
                 }
-                lblKin2.Text = string.Format("{0:#,##0}", kin10 + kin8);
+                lblKin2.Text = string.Format("{0:#,##0}", kin10 + kin8 );
                 lblKin3.Text = string.Format("{0:#,##0}", kin1 + kin10 + kin8);
 
                 mZei10 = kin10;
                 mZei8 = kin8;
 
             }
+
         }
 
         /// <summary>
@@ -2750,7 +2759,7 @@ namespace HacchuuNyuuryoku
             dt.Columns.Add("SoukoCD", typeof(string));
             dt.Columns.Add("DirectFLG", typeof(int));
             dt.Columns.Add("EDIFLG", typeof(int));
-            dt.Columns.Add("DesiredDeliveryDate", typeof(string));
+            dt.Columns.Add("DesiredDeliveryDate", typeof(DateTime));
             dt.Columns.Add("CommentOutStore", typeof(string));
             dt.Columns.Add("CommentInStore", typeof(string));
             dt.Columns.Add("UpdateFlg", typeof(int));
@@ -2769,7 +2778,7 @@ namespace HacchuuNyuuryoku
             }
 
             string soukoCD = "";
-            if (CboSoukoName.SelectedValue != null)
+            if (CboSoukoName.SelectedIndex > 0)
             {
                 soukoCD = CboSoukoName.SelectedValue.ToString();
             }
@@ -3699,15 +3708,15 @@ namespace HacchuuNyuuryoku
         }
         private void CkM_CheckBox2_CheckedChanged(object sender, EventArgs e)
         {
-            bool enabled;
+            //bool enabled;
             if (ckM_CheckBox2.Checked)
             {
-                enabled = true;
+                //enabled = true;
                 ckM_CheckBox1.Checked = false;
             }
             else
             {
-                enabled = false;
+                //enabled = false;
             }
         }
 

@@ -604,7 +604,7 @@ namespace TempoRegiHanbaiTouroku
 
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
                                     + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-                //System.Diagnostics.Process.Start(filePath, cmdLine); 
+                System.Diagnostics.Process.Start(filePath, cmdLine); 
             }
             else
             {

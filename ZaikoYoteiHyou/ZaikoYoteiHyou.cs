@@ -251,89 +251,98 @@ namespace ZaikoYoteiHyou
 
                 
                 DataTable dt = zkybl.D_Order_Select(doe, dpe);
-
-                dt.Columns.Add("Total");
-                dt.Rows[0]["Total"] = dt.Rows[0]["Gaku"].ToString();
-                decimal t = Convert.ToDecimal(dt.Rows[1]["Gaku"]) + Convert.ToDecimal(dt.Rows[0]["Total"]);
-                dt.Rows[1]["Total"] = t.ToString();
-                
-                for (int i = 2; i< dt.Rows.Count; i ++)
+                //if (dt == null)
+                if(dt.Rows.Count == 0)
                 {                   
-                    dt.Rows[i]["Total"] = Convert.ToDecimal(dt.Rows[i]["Gaku"]) + Convert.ToDecimal(dt.Rows[i - 1]["Total"]);
-                }
-
-                if (dt == null) return;
-                try
-                {
-                    ZaikoYoteiHyouReport Report = new ZaikoYoteiHyouReport();
-                    DialogResult ret;
-                    switch (PrintMode)
-                    {
-                        case EPrintMode.DIRECT:
-                            ret = bbl.ShowMessage("Q202");
-                            if (ret == DialogResult.Cancel)
-                            {
-                                return;
-                            }
-                            // 印字データをセット
-                            Report.SetDataSource(dt);
-                            Report.Refresh();
-                            Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
-                            Report.SetParameterValue("TargetDate", txtTargetDateFrom.Text + " ～ " + txtTargetDateTo.Text);
-                            Report.SetParameterValue("txtSouko" , cboWareHouse.SelectedValue.ToString() + "  " + cboWareHouse.Text);
-
-                            if (ret == DialogResult.Yes)
-                            {
-                                var previewForm = new Viewer();
-                                previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                previewForm.CrystalReportViewer1.ReportSource = Report;
-                                previewForm.ShowDialog();
-                            }
-                            else
-                            {
-                                //int marginLeft = 360;
-                                CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
-                                margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
-                                margin.topMargin = DefaultMargin.Top;
-                                margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
-                                margin.rightMargin = DefaultMargin.Right;
-                                Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
-                                // プリンタに印刷
-                                System.Drawing.Printing.PageSettings ps;
-                                try
-                                {
-                                    System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
-
-                                    CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
-
-                                    System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
-
-
-                                    Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
-                                    System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
-
-                                    Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
-
-                                    Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
-
-                                    Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
-                                    // Print the report. Set the startPageN and endPageN 
-                                    // parameters to 0 to print all pages. 
-                                    //Report.PrintToPrinter(1, false, 0, 0);
-                                }
-                                catch (Exception ex)
-                                {
-
-                                }
-                            }
-                            break;
-                    }
-                }
-                finally
-                {
+                    //if (dt == null) return;                  
+                    zkybl.ShowMessage("E128");
                     txtTargetDateTo.Focus();
                 }
+                else
+                {
+                    dt.Columns.Add("Total");
+                    dt.Rows[0]["Total"] = dt.Rows[0]["Gaku"].ToString();
+                    decimal t = Convert.ToDecimal(dt.Rows[1]["Gaku"]) + Convert.ToDecimal(dt.Rows[0]["Total"]);
+                    dt.Rows[1]["Total"] = t.ToString();
+
+                    for (int i = 2; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["Total"] = Convert.ToDecimal(dt.Rows[i]["Gaku"]) + Convert.ToDecimal(dt.Rows[i - 1]["Total"]);
+                    }
+
+                    try
+                    {
+                        ZaikoYoteiHyouReport Report = new ZaikoYoteiHyouReport();
+                        DialogResult ret;
+                        switch (PrintMode)
+                        {
+                            case EPrintMode.DIRECT:
+                                ret = bbl.ShowMessage("Q202");
+                                if (ret == DialogResult.Cancel)
+                                {
+                                    return;
+                                }
+                                // 印字データをセット
+                                Report.SetDataSource(dt);
+                                Report.Refresh();
+                                Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                                Report.SetParameterValue("TargetDate", txtTargetDateFrom.Text + " ～ " + txtTargetDateTo.Text);
+                                Report.SetParameterValue("txtSouko", cboWareHouse.SelectedValue.ToString() + "  " + cboWareHouse.Text);
+
+                                if (ret == DialogResult.Yes)
+                                {
+                                    var previewForm = new Viewer();
+                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                    previewForm.CrystalReportViewer1.ReportSource = Report;
+                                    previewForm.ShowDialog();
+                                }
+                                else
+                                {
+                                    //int marginLeft = 360;
+                                    CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                    margin.topMargin = DefaultMargin.Top;
+                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                    margin.rightMargin = DefaultMargin.Right;
+                                    Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                    // プリンタに印刷
+                                    System.Drawing.Printing.PageSettings ps;
+                                    try
+                                    {
+                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                        Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                        Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                        Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                        Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                        // Print the report. Set the startPageN and endPageN 
+                                        // parameters to 0 to print all pages. 
+                                        //Report.PrintToPrinter(1, false, 0, 0);
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    finally
+                    {
+                        txtTargetDateTo.Focus();
+                    }
+                }
+              
             }
         }
         #endregion
