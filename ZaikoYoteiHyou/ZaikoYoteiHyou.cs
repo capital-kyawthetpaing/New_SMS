@@ -262,78 +262,87 @@ namespace ZaikoYoteiHyou
                     dt.Rows[i]["Total"] = Convert.ToDecimal(dt.Rows[i]["Gaku"]) + Convert.ToDecimal(dt.Rows[i - 1]["Total"]);
                 }
 
-                if (dt == null) return;
-                try
+                //if (dt == null) return;
+                if(dt == null)
                 {
-                    ZaikoYoteiHyouReport Report = new ZaikoYoteiHyouReport();
-                    DialogResult ret;
-                    switch (PrintMode)
+                    zkybl.ShowMessage("E128");
+                    txtTargetDateFrom.Focus();
+                }
+                else
+                {
+                    try
                     {
-                        case EPrintMode.DIRECT:
-                            ret = bbl.ShowMessage("Q202");
-                            if (ret == DialogResult.Cancel)
-                            {
-                                return;
-                            }
-                            // 印字データをセット
-                            Report.SetDataSource(dt);
-                            Report.Refresh();
-                            Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
-                            Report.SetParameterValue("TargetDate", txtTargetDateFrom.Text + " ～ " + txtTargetDateTo.Text);
-                            Report.SetParameterValue("txtSouko" , cboWareHouse.SelectedValue.ToString() + "  " + cboWareHouse.Text);
-
-                            if (ret == DialogResult.Yes)
-                            {
-                                var previewForm = new Viewer();
-                                previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                previewForm.CrystalReportViewer1.ReportSource = Report;
-                                previewForm.ShowDialog();
-                            }
-                            else
-                            {
-                                //int marginLeft = 360;
-                                CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
-                                margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
-                                margin.topMargin = DefaultMargin.Top;
-                                margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
-                                margin.rightMargin = DefaultMargin.Right;
-                                Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
-                                // プリンタに印刷
-                                System.Drawing.Printing.PageSettings ps;
-                                try
+                        ZaikoYoteiHyouReport Report = new ZaikoYoteiHyouReport();
+                        DialogResult ret;
+                        switch (PrintMode)
+                        {
+                            case EPrintMode.DIRECT:
+                                ret = bbl.ShowMessage("Q202");
+                                if (ret == DialogResult.Cancel)
                                 {
-                                    System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
-
-                                    CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
-
-                                    System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
-
-
-                                    Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
-                                    System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
-
-                                    Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
-
-                                    Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
-
-                                    Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
-                                    // Print the report. Set the startPageN and endPageN 
-                                    // parameters to 0 to print all pages. 
-                                    //Report.PrintToPrinter(1, false, 0, 0);
+                                    return;
                                 }
-                                catch (Exception ex)
+                                // 印字データをセット
+                                Report.SetDataSource(dt);
+                                Report.Refresh();
+                                Report.SetParameterValue("PrintDate", System.DateTime.Now.ToString("yyyy/MM/dd") + " " + System.DateTime.Now.ToString("hh:mm"));
+                                Report.SetParameterValue("TargetDate", txtTargetDateFrom.Text + " ～ " + txtTargetDateTo.Text);
+                                Report.SetParameterValue("txtSouko", cboWareHouse.SelectedValue.ToString() + "  " + cboWareHouse.Text);
+
+                                if (ret == DialogResult.Yes)
                                 {
-
+                                    var previewForm = new Viewer();
+                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                    previewForm.CrystalReportViewer1.ReportSource = Report;
+                                    previewForm.ShowDialog();
                                 }
-                            }
-                            break;
+                                else
+                                {
+                                    //int marginLeft = 360;
+                                    CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                    margin.topMargin = DefaultMargin.Top;
+                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                    margin.rightMargin = DefaultMargin.Right;
+                                    Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                    // プリンタに印刷
+                                    System.Drawing.Printing.PageSettings ps;
+                                    try
+                                    {
+                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
+
+                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
+
+                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
+
+
+
+                                        Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
+
+                                        Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
+
+                                        Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                        Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+                                        // Print the report. Set the startPageN and endPageN 
+                                        // parameters to 0 to print all pages. 
+                                        //Report.PrintToPrinter(1, false, 0, 0);
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                    finally
+                    {
+                        txtTargetDateTo.Focus();
                     }
                 }
-                finally
-                {
-                    txtTargetDateTo.Focus();
-                }
+              
             }
         }
         #endregion
