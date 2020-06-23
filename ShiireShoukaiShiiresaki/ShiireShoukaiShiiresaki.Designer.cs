@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -639,7 +638,7 @@
             this.dgvPurchaseSearch.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -660,14 +659,6 @@
             this.Column11,
             this.Column12,
             this.Column13});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPurchaseSearch.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvPurchaseSearch.EnableHeadersVisualStyles = false;
             this.dgvPurchaseSearch.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvPurchaseSearch.Location = new System.Drawing.Point(20, 272);
@@ -679,7 +670,6 @@
             this.dgvPurchaseSearch.UseRowNo = true;
             this.dgvPurchaseSearch.UseSetting = true;
             this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
-          
             // 
             // panel2
             // 
@@ -716,15 +706,16 @@
             this.Column3.DataPropertyName = "PurchaseDate";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "  仕入日";
+            this.Column3.HeaderText = "仕入日";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "VendorName";
             this.Column4.HeaderText = "仕入先";
             this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
+            this.Column4.Width = 420;
             // 
             // Column5
             // 
@@ -756,7 +747,7 @@
             this.Column8.DataPropertyName = "CommentInStore";
             this.Column8.HeaderText = "備考";
             this.Column8.Name = "Column8";
-            this.Column8.Width = 287;
+            this.Column8.Width = 750;
             // 
             // Column9
             // 
@@ -765,6 +756,7 @@
             this.Column9.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column9.HeaderText = "支払予定日";
             this.Column9.Name = "Column9";
+            this.Column9.Width = 80;
             // 
             // Column10
             // 
@@ -773,6 +765,7 @@
             this.Column10.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column10.HeaderText = "支払日";
             this.Column10.Name = "Column10";
+            this.Column10.Width = 80;
             // 
             // Column11
             // 
@@ -786,7 +779,7 @@
             this.Column12.DataPropertyName = "StoreName";
             this.Column12.HeaderText = "店舗";
             this.Column12.Name = "Column12";
-            this.Column12.Width = 130;
+            this.Column12.Width = 250;
             // 
             // Column13
             // 
