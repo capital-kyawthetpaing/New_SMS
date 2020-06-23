@@ -155,42 +155,45 @@ namespace MasterTouroku_ShiireTanka
                 }
             }
         }
-
         private void sport_Enter(object sender, EventArgs e)
         {
             sport.Value1 = "202";
         }
-
         private void sport_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (sport.SelectData())
+                if (!string.IsNullOrEmpty(sport.TxtCode.Text))
                 {
-                    sport.Value1 = sport.TxtCode.Text;
-                    sport.Value2 = sport.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    sport.SetFocus(1);
+                    if (sport.SelectData())
+                    {
+                        sport.Value1 = sport.TxtCode.Text;
+                        sport.Value2 = sport.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        sport.SetFocus(1);
+                    }
                 }
             }
         }
-
         private void segment_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (segment.SelectData())
-                {
-                    segment.Value1 = segment.TxtCode.Text;
-                    segment.Value2 = segment.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    segment.SetFocus(1);
+                if(!string.IsNullOrEmpty(segment.TxtCode.Text))
+                 {
+                    if (segment.SelectData())
+                    {
+                        segment.Value1 = segment.TxtCode.Text;
+                        segment.Value2 = segment.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        segment.SetFocus(1);
+                    }
                 }
             }
         }
@@ -202,15 +205,18 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (brand.SelectData())
+                if (!string.IsNullOrEmpty(brand.TxtCode.Text))
                 {
-                    brand.Value1 = brand.TxtCode.Text;
-                    brand.Value2 = brand.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    brand.SetFocus(1);
+                    if (brand.SelectData())
+                    {
+                        brand.Value1 = brand.TxtCode.Text;
+                        brand.Value2 = brand.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        brand.SetFocus(1);
+                    }
                 }
             }
         }
@@ -234,15 +240,18 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (brandC.SelectData())
+                if (!string.IsNullOrEmpty(brandC.TxtCode.Text))
                 {
-                    brandC.Value1 = brandC.TxtCode.Text;
-                    brandC.Value2 = brandC.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    brandC.SetFocus(1);
+                    if (brandC.SelectData())
+                    {
+                        brandC.Value1 = brandC.TxtCode.Text;
+                        brandC.Value2 = brandC.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        brandC.SetFocus(1);
+                    }
                 }
             }
         }
@@ -250,15 +259,18 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (sportC.SelectData())
+                if (!string.IsNullOrEmpty(sportC.TxtCode.Text))
                 {
-                    sportC.Value1 = sportC.TxtCode.Text;
-                    sportC.Value2 = sportC.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    sportC.SetFocus(1);
+                    if (sportC.SelectData())
+                    {
+                        sportC.Value1 = sportC.TxtCode.Text;
+                        sportC.Value2 = sportC.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        sportC.SetFocus(1);
+                    }
                 }
             }
         }
@@ -270,15 +282,18 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (segmentC.SelectData())
+                if (!string.IsNullOrEmpty(segmentC.TxtCode.Text))
                 {
-                    segmentC.Value1 = segmentC.TxtCode.Text;
-                    segmentC.Value2 = segmentC.LabelText;
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    segmentC.SetFocus(1);
+                    if (segmentC.SelectData())
+                    {
+                        segmentC.Value1 = segmentC.TxtCode.Text;
+                        segmentC.Value2 = segmentC.LabelText;
+                    }
+                    else
+                    {
+                        bbl.ShowMessage("E101");
+                        segmentC.SetFocus(1);
+                    }
                 }
             }
             
@@ -307,30 +322,29 @@ namespace MasterTouroku_ShiireTanka
         {
             if (e.KeyCode == Keys.Enter)
             {
-                if (itemcd.SelectData())
+                if (!String.IsNullOrEmpty(itemcd.TxtCode.Text))
                 {
-                    itemcd.Value1 = itemcd.TxtCode.Text;
-                    itemcd.Value2 = itemcd.LabelText;
-                    DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 15, itemcd.TxtCode.Text);
-                    string deflg = "";
-                    if (dtdeflg.Rows.Count > 0)
+                    if (itemcd.SelectData())
                     {
-                        deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
-                    }
-                    if (deflg == "1")
-                    {
-                        bbl.ShowMessage("E119");
-                        itemcd.Focus();
+                        itemcd.Value1 = itemcd.TxtCode.Text;
+                        itemcd.Value2 = itemcd.LabelText;
+                        DataTable dtdeflg = bbl.Select_SearchName(TB_headerdate.Text, 15, itemcd.TxtCode.Text);
+                        string deflg = "";
+                        if (dtdeflg.Rows.Count > 0)
+                        {
+                            deflg = dtdeflg.Rows[0]["DeleteFlg"].ToString();
+                        }
+                        if (deflg == "1")
+                        {
+                            bbl.ShowMessage("E119");
+                            itemcd.Focus();
+                        }
                     }
                     else
                     {
-                        F11();
+                        bbl.ShowMessage("E101");
+                        itemcd.SetFocus(1);
                     }
-                }
-                else
-                {
-                    bbl.ShowMessage("E101");
-                    itemcd.SetFocus(1);
                 }
             }
         }
@@ -342,6 +356,9 @@ namespace MasterTouroku_ShiireTanka
         #endregion
         private bool ErrorCheck()
         {
+            if (!RequireCheck(new Control[] { shiiresaki })) //Step1
+                return false;
+
             if (String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
             {
                 bbl.ShowMessage("E102");
@@ -469,8 +486,6 @@ namespace MasterTouroku_ShiireTanka
         }
         private void F11()
         {
-            //if(ErrorCheck())
-            //{
                
                 m_IOE = GetItemorder();
                 m_IE = GetItem();
@@ -562,32 +577,15 @@ namespace MasterTouroku_ShiireTanka
         }
         private void Clear()
         {
-            shiiresaki.Clear();
+            Clear(panel1);
+            Clear(panel2);
+            Clear(panel5);
+            Clear(panel3);
             RB_zenten.Checked = true;
             RB_item.Checked = true;
+            RB_current.Checked = true;
             TB_headerdate.Text = bbl.GetDate();
-            brand.Clear();
-            sport.Clear();
-            segment.Clear();
-            CB_year.Text = String.Empty;
-            CB_season.Text = string.Empty;
-            TB_date_condition.Text = string.Empty;
-            makershohin.Clear();
-            itemcd.Clear();
-            TB_date_add.Text = string.Empty;
-            LB_priceouttax1.Text = string.Empty;
-            TB_rate.Text = string.Empty;
-            TB_pricewithouttax.Text = string.Empty;
-            brandC.Clear();
-            sportC.Clear();
-            segment.Clear();
-            CB_year.Text = string.Empty;
-            CB_yearC.Text = string.Empty;
-            cb_seasonC.Text = string.Empty;
-            TB_dateC.Text = string.Empty;
-            makershohinC.Clear();
-            TB_dateE.Text = string.Empty;
-            TB_rate_E.Text = string.Empty;
+            CB_store.SelectedValue = "0000";
             GV_item.Refresh();
             GV_item.DataSource = null;
         }
@@ -620,6 +618,7 @@ namespace MasterTouroku_ShiireTanka
         }
         private void Btn_F11_Click(object sender, EventArgs e)
         {
+           
             F11();
         }
         private void RB_item_CheckedChanged(object sender, EventArgs e)
@@ -645,6 +644,7 @@ namespace MasterTouroku_ShiireTanka
             {
                 panel4.Enabled = true;
                 panel5.Enabled = true;
+                this.SKUCD.Width = 150;
                 this.ブランド.Visible = true;
                 this.シーズン.Visible = true;
                 this.年度.Visible = true;
@@ -719,7 +719,7 @@ namespace MasterTouroku_ShiireTanka
                         dt.AcceptChanges();
                         GV_item.Refresh();
                         GV_item.DataSource = dt;
-                        dv.RowStateFilter = DataViewRowState.Unchanged;
+                        dv.RowStateFilter = DataViewRowState.CurrentRows;
                     }
                     else
                     {
@@ -799,7 +799,7 @@ namespace MasterTouroku_ShiireTanka
                 dv.RowFilter = query;
                 dtc = dv.ToTable();
                 GV_item.DataSource = dv;
-                dv.RowStateFilter = DataViewRowState.CurrentRows;
+                //dv.RowStateFilter = DataViewRowState.CurrentRows;
             }
         }
         private void btn_choice_Click(object sender, EventArgs e)
@@ -946,11 +946,11 @@ namespace MasterTouroku_ShiireTanka
                         for (int i = 0; i < dt1.Rows.Count; i++)
                         {
                             dt1.Rows[i]["ChangeDate"] = TB_dateE.Text;
-                            dt1.Rows[i]["Rate"] = TB_rate_E.Text;
-                            decimal rate = Convert.ToDecimal(TB_rate_E.Text);
-                            decimal con = (decimal)0.01;
-                            decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]);
-                            dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                            //dt1.Rows[i]["Rate"] = TB_rate_E.Text;
+                            //decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                            //decimal con = (decimal)0.01;
+                            //decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]);
+                            //dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                         }
                         dt.Merge(dt1);
                     }
@@ -965,17 +965,28 @@ namespace MasterTouroku_ShiireTanka
         }
         private void btn_update_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(TB_rate_E.Text))
+            if (!String.IsNullOrEmpty(TB_rate_E.Text))
             {
                 string updateq = "CheckBox = 1";
-                //DataRow[] drupdate = dt.Select(updateq);
-                DataTable dtupate = dt.Select(updateq).CopyToDataTable();
-                if (dtupate.Rows.Count >0)
+                DataRow[] drupdate = dt.Select(updateq);
+                //DataTable dtupdate = dt.Select(updateq).CopyToDataTable();
+                //if (dtupdate.Rows.Count > 0)
+                //{
+                //    dtupdate["Rate"] = TB_rate.Text;
+                //    //drupdate["PriceOutTax"] = LB_priceouttax.Text;
+                //}
+                if (drupdate.Length > 0)
                 {
-                    //drupdate["Rate"] = TB_rate.Text;
-                    //drupdate["PriceOutTax"] = LB_priceouttax.Text;
+                    for (int i = 0; i < drupdate.Length; i++)
+                    {
+                       
+                        drupdate[i]["Rate"] = TB_rate_E.Text;
+                        decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                        decimal con = (decimal)0.01;
+                        decimal listprice = Convert.ToDecimal(drupdate[i]["PriceOutTax"]);
+                        drupdate[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                    }
                 }
-
             }
         }
         private void btn_delete_Click(object sender, EventArgs e)
@@ -994,7 +1005,6 @@ namespace MasterTouroku_ShiireTanka
                 DataTable dtr = bl.M_Itemorderprice_Insert(datat, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
             }
         }
-
         private void GV_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)

@@ -79,7 +79,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 42);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1713, 888);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
@@ -197,7 +197,6 @@
             this.chkLocationNashi.Name = "chkLocationNashi";
             this.chkLocationNashi.Size = new System.Drawing.Size(50, 16);
             this.chkLocationNashi.TabIndex = 6;
-            this.chkLocationNashi.TabStop = false;
             this.chkLocationNashi.Text = "なし";
             this.chkLocationNashi.UseVisualStyleBackColor = true;
             // 
@@ -239,7 +238,6 @@
             this.chkRegistered.Name = "chkRegistered";
             this.chkRegistered.Size = new System.Drawing.Size(63, 16);
             this.chkRegistered.TabIndex = 4;
-            this.chkRegistered.TabStop = false;
             this.chkRegistered.Text = "登録済";
             this.chkRegistered.UseVisualStyleBackColor = true;
             // 
