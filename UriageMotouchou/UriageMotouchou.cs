@@ -262,23 +262,23 @@ namespace UriageMotouchou
 
         private UriageMotochou_Entity GetDataInfo()
         {
-            //string Todate = string.Empty;
-            //    if (!string.IsNullOrWhiteSpace(txtTargetTo.Text))
-            //    {
-            //        int year = Convert.ToInt32(txtTargetTo.Text.Substring(0, 4));
-            //        int month = Convert.ToInt32(txtTargetTo.Text.Substring(5, 2));
-            //        string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
-            //        Todate = txtTargetTo.Text + lastday;
-            //    }
-           
-                ume = new UriageMotochou_Entity()
+            string Todate = string.Empty;
+            if (!string.IsNullOrWhiteSpace(txtTargetTo.Text))
+            {
+                int year = Convert.ToInt32(txtTargetTo.Text.Substring(0, 4));
+                int month = Convert.ToInt32(txtTargetTo.Text.Substring(5, 2));
+                string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
+                Todate = txtTargetTo.Text + lastday;
+            }
+
+            ume = new UriageMotochou_Entity()
             {
                 YYYYMMFrom = txtTagetFrom.Text.Replace("/", ""),
                 YYYYMMTo = txtTargetTo.Text.Replace("/", ""),
                 CustomerCD = sc_Customer.TxtCode.Text,
                 StoreCD = cboStore.SelectedValue.ToString(),
                 TargetDateFrom = txtTagetFrom.Text + "/01",
-                TargetDateTo = txtTargetTo.Text+"/01",
+                TargetDateTo = Todate,
                 ChkValue =CheckValue()
             };
             return ume;
@@ -334,7 +334,6 @@ namespace UriageMotouchou
                 }
             }
         }
-
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
