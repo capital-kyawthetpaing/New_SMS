@@ -253,24 +253,23 @@ namespace ZaikoYoteiHyou
                 DataTable dt = zkybl.D_Order_Select(doe, dpe);
                 //if (dt == null)
                 if(dt.Rows.Count == 0)
-                {
-                dt.Columns.Add("Total");
-                dt.Rows[0]["Total"] = dt.Rows[0]["Gaku"].ToString();
-                decimal t = Convert.ToDecimal(dt.Rows[1]["Gaku"]) + Convert.ToDecimal(dt.Rows[0]["Total"]);
-                dt.Rows[1]["Total"] = t.ToString();
-                
-                for (int i = 2; i< dt.Rows.Count; i ++)
                 {                   
-                    dt.Rows[i]["Total"] = Convert.ToDecimal(dt.Rows[i]["Gaku"]) + Convert.ToDecimal(dt.Rows[i - 1]["Total"]);
-                }
-
-                //if (dt == null) return;
-                
+                    //if (dt == null) return;                  
                     zkybl.ShowMessage("E128");
                     txtTargetDateFrom.Focus();
                 }
                 else
                 {
+                    dt.Columns.Add("Total");
+                    dt.Rows[0]["Total"] = dt.Rows[0]["Gaku"].ToString();
+                    decimal t = Convert.ToDecimal(dt.Rows[1]["Gaku"]) + Convert.ToDecimal(dt.Rows[0]["Total"]);
+                    dt.Rows[1]["Total"] = t.ToString();
+
+                    for (int i = 2; i < dt.Rows.Count; i++)
+                    {
+                        dt.Rows[i]["Total"] = Convert.ToDecimal(dt.Rows[i]["Gaku"]) + Convert.ToDecimal(dt.Rows[i - 1]["Total"]);
+                    }
+
                     try
                     {
                         ZaikoYoteiHyouReport Report = new ZaikoYoteiHyouReport();
