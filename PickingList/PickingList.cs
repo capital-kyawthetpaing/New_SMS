@@ -167,319 +167,321 @@ namespace PickingList
                 try
                 {
 
-                    if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) && (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
-                        && (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) && (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
+                    if ((dtPrintData1 == null || dtPrintData1.Rows.Count<=0) || (dtPrintData2 == null || dtPrintData2.Rows.Count<=0)
+                        || (dtPrintData3 == null || dtPrintData3.Rows.Count<=0) || (dtPrintData4 == null || dtPrintData4.Rows.Count<=0))
                     {
-                        return;
+                        bbl.ShowMessage("E128");
+                        
                     }
-
-                    if (chkUnissued1.Checked == true && dtPrintData1.Rows.Count > 0)
+                    else
                     {
-
-                        DialogResult ret;
-                        PickingList_Report Report = new PickingList_Report();
-
-                        switch (PrintMode)
+                        if (chkUnissued1.Checked == true && dtPrintData1.Rows.Count > 0)
                         {
-                            case EPrintMode.DIRECT:
 
+                            DialogResult ret;
+                            PickingList_Report Report = new PickingList_Report();
 
+                            switch (PrintMode)
+                            {
+                                case EPrintMode.DIRECT:
 
-                                //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                                ret = plbl.ShowMessage("Q208");
-                                if (ret == DialogResult.Cancel)
-                                {
-                                    return;
-                                }
-                                Report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
-                                Report.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
+                                    //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                                    ret = plbl.ShowMessage("Q208");
+                                    if (ret == DialogResult.Cancel)
+                                    {
+                                        return;
+                                    }
+                                    Report.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                                    Report.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
 
-                                // 印字データをセット
-                                Report.SetDataSource(dtPrintData1);
-                                Report.Refresh();
-                                Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Report.SetParameterValue("pickingNO", dtPrintData1.Rows[0]["PickingNO"].ToString());
+                                    // 印字データをセット
+                                    Report.SetDataSource(dtPrintData1);
+                                    Report.Refresh();
+                                    Report.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Report.SetParameterValue("pickingNO", dtPrintData1.Rows[0]["PickingNO"].ToString());
 
-                                if (ret == DialogResult.Yes)
-                                {
-                                    //プレビュー
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Report;
+                                    if (ret == DialogResult.Yes)
+                                    {
+                                        //プレビュー
+                                        var previewForm = new Viewer();
+                                        previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                        previewForm.CrystalReportViewer1.ReportSource = Report;
 
-                                    previewForm.ShowDialog();
-                                }
-                                else
-                                {
-                                    int marginLeft = 360;
-                                    CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
-                                    margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
-                                    margin.topMargin = marginLeft;
-                                    margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
-                                    margin.rightMargin = marginLeft;
-                                    Report.PrintOptions.ApplyPageMargins(margin);
-                                    // プリンタに印刷
-                                    Report.PrintToPrinter(0, false, 0, 0);
-                                }
-                                break;
+                                        previewForm.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        int marginLeft = 360;
+                                        CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                                        margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
+                                        margin.topMargin = marginLeft;
+                                        margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
+                                        margin.rightMargin = marginLeft;
+                                        Report.PrintOptions.ApplyPageMargins(margin);
+                                        // プリンタに印刷
+                                        Report.PrintToPrinter(0, false, 0, 0);
+                                    }
+                                    break;
 
-                            case EPrintMode.PDF:
-                                if (plbl.ShowMessage("Q204") != DialogResult.Yes)
-                                {
-                                    return;
-                                }
-                                string filePath = "";
-                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                                {
-                                    return;
-                                }
+                                case EPrintMode.PDF:
+                                    if (plbl.ShowMessage("Q204") != DialogResult.Yes)
+                                    {
+                                        return;
+                                    }
+                                    string filePath = "";
+                                    if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                    {
+                                        return;
+                                    }
 
-                                // 印字データをセット
-                                Report.SetDataSource(dtPrintData1);
-                                Report.Refresh();
+                                    // 印字データをセット
+                                    Report.SetDataSource(dtPrintData1);
+                                    Report.Refresh();
 
-                                bool result = OutputPDF(filePath, Report);
+                                    bool result = OutputPDF(filePath, Report);
 
-                                //PDF出力が完了しました。
-                                plbl.ShowMessage("I202");
+                                    //PDF出力が完了しました。
+                                    plbl.ShowMessage("I202");
 
-                                break;
+                                    break;
+                            }
+
+                            plbl.D_Picking_Update(dtPrintData1.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+
                         }
 
-                        plbl.D_Picking_Update(dtPrintData1.Rows[0]["PickingNO"].ToString(), InOperatorCD);
-
-                    }
-
-                    if (chkUnissued2.Checked == true && dtPrintData2.Rows.Count > 0)
-                    {
-
-                        DialogResult ret;
-                        PickingList_Report Report2 = new PickingList_Report();
-
-                        switch (PrintMode)
+                        if (chkUnissued2.Checked == true && dtPrintData2.Rows.Count > 0)
                         {
-                            case EPrintMode.DIRECT:
+
+                            DialogResult ret;
+                            PickingList_Report Report2 = new PickingList_Report();
+
+                            switch (PrintMode)
+                            {
+                                case EPrintMode.DIRECT:
 
 
 
-                                //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                                ret = plbl.ShowMessage("Q208");
-                                if (ret == DialogResult.Cancel)
-                                {
-                                    return;
-                                }
-                                Report2.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
-                                Report2.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
+                                    //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                                    ret = plbl.ShowMessage("Q208");
+                                    if (ret == DialogResult.Cancel)
+                                    {
+                                        return;
+                                    }
+                                    Report2.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                                    Report2.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
 
-                                // 印字データをセット
-                                Report2.SetDataSource(dtPrintData2);
-                                Report2.Refresh();
-                                Report2.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Report2.SetParameterValue("pickingNO", dtPrintData2.Rows[0]["PickingNO"].ToString());
+                                    // 印字データをセット
+                                    Report2.SetDataSource(dtPrintData2);
+                                    Report2.Refresh();
+                                    Report2.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Report2.SetParameterValue("pickingNO", dtPrintData2.Rows[0]["PickingNO"].ToString());
 
-                                if (ret == DialogResult.Yes)
-                                {
-                                    //プレビュー
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Report2;
-                                    //previewForm.CrystalReportViewer1.Zoom(1);
+                                    if (ret == DialogResult.Yes)
+                                    {
+                                        //プレビュー
+                                        var previewForm = new Viewer();
+                                        previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                        previewForm.CrystalReportViewer1.ReportSource = Report2;
+                                        //previewForm.CrystalReportViewer1.Zoom(1);
 
-                                    previewForm.ShowDialog();
-                                }
-                                else
-                                {
-                                    int marginLeft = 360;
-                                    CrystalDecisions.Shared.PageMargins margin = Report2.PrintOptions.PageMargins;
-                                    margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
-                                    margin.topMargin = marginLeft;
-                                    margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
-                                    margin.rightMargin = marginLeft;
-                                    Report2.PrintOptions.ApplyPageMargins(margin);
-                                    // プリンタに印刷
-                                    Report2.PrintToPrinter(0, false, 0, 0);
-                                }
-                                break;
+                                        previewForm.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        int marginLeft = 360;
+                                        CrystalDecisions.Shared.PageMargins margin = Report2.PrintOptions.PageMargins;
+                                        margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
+                                        margin.topMargin = marginLeft;
+                                        margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
+                                        margin.rightMargin = marginLeft;
+                                        Report2.PrintOptions.ApplyPageMargins(margin);
+                                        // プリンタに印刷
+                                        Report2.PrintToPrinter(0, false, 0, 0);
+                                    }
+                                    break;
 
-                            case EPrintMode.PDF:
-                                if (plbl.ShowMessage("Q204") != DialogResult.Yes)
-                                {
-                                    return;
-                                }
-                                string filePath = "";
-                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                                {
-                                    return;
-                                }
+                                case EPrintMode.PDF:
+                                    if (plbl.ShowMessage("Q204") != DialogResult.Yes)
+                                    {
+                                        return;
+                                    }
+                                    string filePath = "";
+                                    if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                    {
+                                        return;
+                                    }
 
-                                // 印字データをセット
-                                Report2.SetDataSource(dtPrintData2);
-                                Report2.Refresh();
+                                    // 印字データをセット
+                                    Report2.SetDataSource(dtPrintData2);
+                                    Report2.Refresh();
 
-                                bool result = OutputPDF(filePath, Report2);
+                                    bool result = OutputPDF(filePath, Report2);
 
-                                //PDF出力が完了しました。
-                                plbl.ShowMessage("I202");
+                                    //PDF出力が完了しました。
+                                    plbl.ShowMessage("I202");
 
-                                break;
+                                    break;
+                            }
+
+                            plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), InOperatorCD);
                         }
 
-                        plbl.D_Picking_Update(dtPrintData2.Rows[0]["PickingNO"].ToString(), InOperatorCD);
-                    }
-
-                    if (chkReissued1.Checked == true && dtPrintData3.Rows.Count > 0)
-                    {
-
-                        DialogResult ret;
-                        PickingList_Motori_Report Reportm = new PickingList_Motori_Report();
-
-                        switch (PrintMode)
+                        if (chkReissued1.Checked == true && dtPrintData3.Rows.Count > 0)
                         {
-                            case EPrintMode.DIRECT:
+
+                            DialogResult ret;
+                            PickingList_Motori_Report Reportm = new PickingList_Motori_Report();
+
+                            switch (PrintMode)
+                            {
+                                case EPrintMode.DIRECT:
 
 
 
-                                //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                                ret = plbl.ShowMessage("Q208");
-                                if (ret == DialogResult.Cancel)
-                                {
-                                    return;
-                                }
-                                Reportm.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
-                                Reportm.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
+                                    //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                                    ret = plbl.ShowMessage("Q208");
+                                    if (ret == DialogResult.Cancel)
+                                    {
+                                        return;
+                                    }
+                                    Reportm.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                                    Reportm.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
 
-                                // 印字データをセット
-                                Reportm.SetDataSource(dtPrintData3);
-                                Reportm.Refresh();
-                                Reportm.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Reportm.SetParameterValue("pickingNO", dtPrintData3.Rows[0]["PickingNO"].ToString());
+                                    // 印字データをセット
+                                    Reportm.SetDataSource(dtPrintData3);
+                                    Reportm.Refresh();
+                                    Reportm.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Reportm.SetParameterValue("pickingNO", dtPrintData3.Rows[0]["PickingNO"].ToString());
 
-                                if (ret == DialogResult.Yes)
-                                {
-                                    //プレビュー
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Reportm;
+                                    if (ret == DialogResult.Yes)
+                                    {
+                                        //プレビュー
+                                        var previewForm = new Viewer();
+                                        previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                        previewForm.CrystalReportViewer1.ReportSource = Reportm;
 
-                                    previewForm.ShowDialog();
-                                }
-                                else
-                                {
-                                    int marginLeft = 360;
-                                    CrystalDecisions.Shared.PageMargins margin = Reportm.PrintOptions.PageMargins;
-                                    margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
-                                    margin.topMargin = marginLeft;
-                                    margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
-                                    margin.rightMargin = marginLeft;
-                                    Reportm.PrintOptions.ApplyPageMargins(margin);
-                                    // プリンタに印刷
-                                    Reportm.PrintToPrinter(0, false, 0, 0);
-                                }
-                                break;
+                                        previewForm.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        int marginLeft = 360;
+                                        CrystalDecisions.Shared.PageMargins margin = Reportm.PrintOptions.PageMargins;
+                                        margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
+                                        margin.topMargin = marginLeft;
+                                        margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
+                                        margin.rightMargin = marginLeft;
+                                        Reportm.PrintOptions.ApplyPageMargins(margin);
+                                        // プリンタに印刷
+                                        Reportm.PrintToPrinter(0, false, 0, 0);
+                                    }
+                                    break;
 
-                            case EPrintMode.PDF:
-                                if (plbl.ShowMessage("Q204") != DialogResult.Yes)
-                                {
-                                    return;
-                                }
-                                string filePath = "";
-                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                                {
-                                    return;
-                                }
+                                case EPrintMode.PDF:
+                                    if (plbl.ShowMessage("Q204") != DialogResult.Yes)
+                                    {
+                                        return;
+                                    }
+                                    string filePath = "";
+                                    if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                    {
+                                        return;
+                                    }
 
-                                // 印字データをセット
-                                Reportm.SetDataSource(dtPrintData3);
-                                Reportm.Refresh();
+                                    // 印字データをセット
+                                    Reportm.SetDataSource(dtPrintData3);
+                                    Reportm.Refresh();
 
-                                bool result = OutputPDF(filePath, Reportm);
+                                    bool result = OutputPDF(filePath, Reportm);
 
-                                //PDF出力が完了しました。
-                                plbl.ShowMessage("I202");
+                                    //PDF出力が完了しました。
+                                    plbl.ShowMessage("I202");
 
-                                break;
+                                    break;
+                            }
+
+
+                            plbl.D_Picking_Update(dtPrintData3.Rows[0]["PickingNO"].ToString(), InOperatorCD);
                         }
 
-
-                        plbl.D_Picking_Update(dtPrintData3.Rows[0]["PickingNO"].ToString(), InOperatorCD);
-                    }
-
-                    if (chkReissued2.Checked == true && dtPrintData4.Rows.Count > 0)
-                    {
-
-                        DialogResult ret;
-                        PickingList_Motori_Report Reportm2 = new PickingList_Motori_Report();
-
-                        switch (PrintMode)
+                        if (chkReissued2.Checked == true && dtPrintData4.Rows.Count > 0)
                         {
-                            case EPrintMode.DIRECT:
+
+                            DialogResult ret;
+                            PickingList_Motori_Report Reportm2 = new PickingList_Motori_Report();
+
+                            switch (PrintMode)
+                            {
+                                case EPrintMode.DIRECT:
 
 
 
-                                //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
-                                ret = plbl.ShowMessage("Q208");
-                                if (ret == DialogResult.Cancel)
-                                {
-                                    return;
-                                }
-                                Reportm2.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
-                                Reportm2.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
+                                    //Q208 印刷します。”はい”でプレビュー、”いいえ”で直接プリンターから印刷します。
+                                    ret = plbl.ShowMessage("Q208");
+                                    if (ret == DialogResult.Cancel)
+                                    {
+                                        return;
+                                    }
+                                    Reportm2.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperA4;
+                                    Reportm2.PrintOptions.PaperOrientation = CrystalDecisions.Shared.PaperOrientation.Landscape;
 
-                                // 印字データをセット
-                                Reportm2.SetDataSource(dtPrintData4);
-                                Reportm2.Refresh();
-                                Reportm2.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
-                                Reportm2.SetParameterValue("pickingNO", dtPrintData4.Rows[0]["PickingNO"].ToString());
+                                    // 印字データをセット
+                                    Reportm2.SetDataSource(dtPrintData4);
+                                    Reportm2.Refresh();
+                                    Reportm2.SetParameterValue("txtSouko", cboSouko.SelectedValue.ToString() + "  " + cboSouko.Text);
+                                    Reportm2.SetParameterValue("pickingNO", dtPrintData4.Rows[0]["PickingNO"].ToString());
 
-                                if (ret == DialogResult.Yes)
-                                {
-                                    //プレビュー
-                                    var previewForm = new Viewer();
-                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                    previewForm.CrystalReportViewer1.ReportSource = Reportm2;
+                                    if (ret == DialogResult.Yes)
+                                    {
+                                        //プレビュー
+                                        var previewForm = new Viewer();
+                                        previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                        previewForm.CrystalReportViewer1.ReportSource = Reportm2;
 
-                                    previewForm.ShowDialog();
-                                }
-                                else
-                                {
-                                    int marginLeft = 360;
-                                    CrystalDecisions.Shared.PageMargins margin = Reportm2.PrintOptions.PageMargins;
-                                    margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
-                                    margin.topMargin = marginLeft;
-                                    margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
-                                    margin.rightMargin = marginLeft;
-                                    Reportm2.PrintOptions.ApplyPageMargins(margin);
-                                    // プリンタに印刷
-                                    Reportm2.PrintToPrinter(0, false, 0, 0);
-                                }
-                                break;
+                                        previewForm.ShowDialog();
+                                    }
+                                    else
+                                    {
+                                        int marginLeft = 360;
+                                        CrystalDecisions.Shared.PageMargins margin = Reportm2.PrintOptions.PageMargins;
+                                        margin.leftMargin = marginLeft; // mmの指定をtwip単位に変換する
+                                        margin.topMargin = marginLeft;
+                                        margin.bottomMargin = marginLeft;//mmToTwip(marginLeft);
+                                        margin.rightMargin = marginLeft;
+                                        Reportm2.PrintOptions.ApplyPageMargins(margin);
+                                        // プリンタに印刷
+                                        Reportm2.PrintToPrinter(0, false, 0, 0);
+                                    }
+                                    break;
 
-                            case EPrintMode.PDF:
-                                if (plbl.ShowMessage("Q204") != DialogResult.Yes)
-                                {
-                                    return;
-                                }
-                                string filePath = "";
-                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                                {
-                                    return;
-                                }
+                                case EPrintMode.PDF:
+                                    if (plbl.ShowMessage("Q204") != DialogResult.Yes)
+                                    {
+                                        return;
+                                    }
+                                    string filePath = "";
+                                    if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                    {
+                                        return;
+                                    }
 
-                                // 印字データをセット
-                                Reportm2.SetDataSource(dtPrintData4);
-                                Reportm2.Refresh();
+                                    // 印字データをセット
+                                    Reportm2.SetDataSource(dtPrintData4);
+                                    Reportm2.Refresh();
 
-                                bool result = OutputPDF(filePath, Reportm2);
+                                    bool result = OutputPDF(filePath, Reportm2);
 
-                                //PDF出力が完了しました。
-                                plbl.ShowMessage("I202");
+                                    //PDF出力が完了しました。
+                                    plbl.ShowMessage("I202");
 
-                                break;
+                                    break;
+                            }
+
+                            plbl.D_Picking_Update(dtPrintData4.Rows[0]["PickingNO"].ToString(), InOperatorCD);
+
                         }
-
-                        plbl.D_Picking_Update(dtPrintData4.Rows[0]["PickingNO"].ToString(), InOperatorCD);
-
                     }
+                    
                 }
                 finally
                 {
