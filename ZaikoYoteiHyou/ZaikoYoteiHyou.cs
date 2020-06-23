@@ -251,7 +251,9 @@ namespace ZaikoYoteiHyou
 
                 
                 DataTable dt = zkybl.D_Order_Select(doe, dpe);
-
+                //if (dt == null)
+                if(dt.Rows.Count == 0)
+                {
                 dt.Columns.Add("Total");
                 dt.Rows[0]["Total"] = dt.Rows[0]["Gaku"].ToString();
                 decimal t = Convert.ToDecimal(dt.Rows[1]["Gaku"]) + Convert.ToDecimal(dt.Rows[0]["Total"]);
@@ -263,8 +265,7 @@ namespace ZaikoYoteiHyou
                 }
 
                 //if (dt == null) return;
-                if(dt == null)
-                {
+                
                     zkybl.ShowMessage("E128");
                     txtTargetDateFrom.Focus();
                 }
