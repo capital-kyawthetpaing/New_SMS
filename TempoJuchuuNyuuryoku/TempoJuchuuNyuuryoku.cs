@@ -87,6 +87,7 @@ namespace TempoJuchuuNyuuryoku
         private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
 
         private string InOperatorName = "";
+        private string mTemporaryReserveNO = "";
         private string mOldJyuchuNo = "";    //排他処理のため使用
         private string mOldJyuchuDate = "";
         private string mOldCustomerCD = "";
@@ -1657,6 +1658,9 @@ namespace TempoJuchuuNyuuryoku
                     }
                 }
 
+                //D_TemporaryReserveをDelete
+                mibl.DeleteTemporaryReserve(dje);
+
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
                 {
@@ -3188,7 +3192,7 @@ namespace TempoJuchuuNyuuryoku
             //在庫区分=1→画面明細.直送checkbox＝offの場合
             //if (mGrid.g_DArray[row].ZaikoKBN == 1)
             if (mGrid.g_DArray[row].ChkTyokuso == false)
-            {
+            {              
                 //Function_商品引当.
                 Fnc_Reserve_Entity fre = new Fnc_Reserve_Entity
                 {
@@ -3202,6 +3206,15 @@ namespace TempoJuchuuNyuuryoku
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
                     KariHikiateNo = mGrid.g_DArray[row].KariHikiateNO
                 };
+
+                //Form.受注番号＝Nullの場合
+                if(mTemporaryReserveNO=="")
+                    mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
+
+                fre.DenNo = mTemporaryReserveNO;
+
+                if (fre.DenGyoNo == "0")
+                    fre.DenGyoNo = (row + 1).ToString();
 
                 ret = bbl.Fnc_Reserve(fre);
                 if(ret)
@@ -3866,6 +3879,7 @@ namespace TempoJuchuuNyuuryoku
                 }
 
                 lblDisp.Text = "未売上";
+                mTemporaryReserveNO = "";
             }
 
             foreach (Control ctl in detailControls)

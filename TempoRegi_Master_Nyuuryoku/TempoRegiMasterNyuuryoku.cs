@@ -88,13 +88,14 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             if (lblGroupNO.Text.Equals("Btn1_No"))
             {
-                MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bbl.ShowMessage("E236");
                 txtButtomNameUp.Focus();
                 return false; ;
             }
             else if (lblNameNO.Text.Equals(""))
             {
-                MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bbl.ShowMessage("E236");
                 txtCD.Focus();
                 return false;
             }
@@ -118,6 +119,7 @@ namespace TempoRegi_Master_Nyuuryoku
             lblGroupNO.Text = "";
             lblNameNO.Text = "";
             lblSearchName.Text = "";
+            lblAdminNO.Text = "";
             panel2.Refresh();
             for (int k = 1; k < 99; k++)
             {
@@ -259,7 +261,7 @@ namespace TempoRegi_Master_Nyuuryoku
             dtCpy = new DataTable();
             dtCpy = dtSelect.DefaultView.ToTable(true, "ButtomName", "GroupNO", "MasterKBN");
             dtTemp1 = dtSelect.DefaultView.ToTable(true, "GroupNO", "ButtomName", "MasterKBN");
-            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button");
+            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button","AdminNO","JANCD","CustomerCD");
             RemoveNullColumnFromDataTable(dtTemp2);
             for (int k = 0; k < 100; k++)
             {
@@ -343,7 +345,6 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblNameNO.Text = horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtCD.Focus();
@@ -408,21 +409,7 @@ namespace TempoRegi_Master_Nyuuryoku
             if (e.KeyCode == Keys.Enter)
             {
                 SearchData();
-                //if (!string.IsNullOrWhiteSpace(txtCD.Text))
-                //{
-                //    if (RdoJanCD.Checked)
-                //    {
-
-                //    }
-                //    else
-                //    {
-
-                //    }
-                //}
-                //else
-                //{
-                //    lblSearchName.Text = string.Empty;
-                //}
+                
             }
         }
 
@@ -524,7 +511,7 @@ namespace TempoRegi_Master_Nyuuryoku
             {
                 lblSearchName.Text =string.Empty;
                 lblAdminNO.Text = string.Empty;
-                //txtBtnNameDown.Focus();
+                txtBtnNameDown.Focus();
             }
         }
 
@@ -539,7 +526,6 @@ namespace TempoRegi_Master_Nyuuryoku
                 //ButtonNO_Check
                 if (lblNameNO.Text.Equals(""))
                 {
-                    //MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bbl.ShowMessage("E236");
                     txtCD.Focus();
                     return;
@@ -583,6 +569,9 @@ namespace TempoRegi_Master_Nyuuryoku
                         dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
                         dn["btndetailBottunName"] = txtBtnNameDown.Text;
                         dn["Button"] = txtCD.Text;
+                        dn["AdminNO"] = lblAdminNO.Text;
+                        dn["JANCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
+                        dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
                         dtTemp2.Rows.Add(dn);
                     }
                 }
@@ -611,7 +600,7 @@ namespace TempoRegi_Master_Nyuuryoku
             }
 
 
-            if (!string.IsNullOrEmpty(txtButtomNameUp.Text))
+            if (!string.IsNullOrWhiteSpace(txtButtomNameUp.Text))
             {
                 // int i = dtTemp1.Rows.Count;             
 

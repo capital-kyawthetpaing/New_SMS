@@ -16,7 +16,6 @@ namespace BL
         {
             mdl = new D_Juchuu_DL();
         }
-        
         public DataTable M_Souko_IsExists(M_Souko_Entity mse)
         {
             M_Souko_DL msdl = new M_Souko_DL();
@@ -119,6 +118,19 @@ namespace BL
         public bool D_Juchu_Update(D_Mitsumori_Entity dme, DataTable dt, string operatorNm, string pc)
         {
             return mdl.D_Juchu_Update(dme, dt, operatorNm, pc);
+        }
+
+        public bool DeleteTemporaryReserve(D_Juchuu_Entity de)
+        {
+            return mdl.DeleteTemporaryReserve(de);
+        }
+        public string GetTemporaryReserveNO(string Denno)
+        {
+            DataTable dt = mdl.GetTemporaryReserveNO(Denno);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0]["OutNO"].ToString();
+
+            return "";
         }
     }
 }

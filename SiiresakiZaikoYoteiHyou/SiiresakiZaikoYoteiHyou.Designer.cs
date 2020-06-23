@@ -46,6 +46,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1177, 0);
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // panalDetail
             // 
             this.panalDetail.Controls.Add(this.cboStore);
@@ -73,7 +77,7 @@
             this.cboStore.MaxLength = 10;
             this.cboStore.MoveNext = true;
             this.cboStore.Name = "cboStore";
-            this.cboStore.Size = new System.Drawing.Size(121, 20);
+            this.cboStore.Size = new System.Drawing.Size(265, 20);
             this.cboStore.TabIndex = 5;
             // 
             // lblStore
@@ -111,7 +115,7 @@
             this.txtTargetDateTo.IsNumber = true;
             this.txtTargetDateTo.IsShop = false;
             this.txtTargetDateTo.Length = 10;
-            this.txtTargetDateTo.Location = new System.Drawing.Point(290, 19);
+            this.txtTargetDateTo.Location = new System.Drawing.Point(277, 19);
             this.txtTargetDateTo.MaxLength = 10;
             this.txtTargetDateTo.MoveNext = true;
             this.txtTargetDateTo.Name = "txtTargetDateTo";
@@ -130,7 +134,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(244, 25);
+            this.ckM_Label2.Location = new System.Drawing.Point(235, 25);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(18, 12);
             this.ckM_Label2.TabIndex = 2;
