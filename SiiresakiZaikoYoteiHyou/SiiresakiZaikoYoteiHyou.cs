@@ -64,7 +64,10 @@ namespace SiiresakiZaikoYoteiHyou
         public void Clear()
         {
             Clear(panalDetail);
+            txtTargetDateFrom.Text = DateTime.Now.ToString("yyyy/MM");
+            txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
+            cboStore.SelectedValue = StoreCD;
         }
         
         public override void FunctionProcess(int Index)
@@ -73,11 +76,11 @@ namespace SiiresakiZaikoYoteiHyou
             switch (Index + 1)
             {
                 case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
-                        if (szybl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-                        break;
+                        Clear();
                     }
+                    break;
                 case 11:
                     F11();
                     break;
