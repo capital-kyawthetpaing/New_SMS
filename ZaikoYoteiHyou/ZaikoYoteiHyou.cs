@@ -256,7 +256,7 @@ namespace ZaikoYoteiHyou
                 {                   
                     //if (dt == null) return;                  
                     zkybl.ShowMessage("E128");
-                    txtTargetDateFrom.Focus();
+                    txtTargetDateTo.Focus();
                 }
                 else
                 {
