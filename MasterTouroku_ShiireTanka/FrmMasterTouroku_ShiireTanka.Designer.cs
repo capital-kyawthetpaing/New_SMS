@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TB_headerdate = new CKM_Controls.CKM_TextBox();
             this.LB_headerdate = new CKM_Controls.CKM_Label();
@@ -310,6 +312,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1250, 35);
             this.panel2.TabIndex = 100;
+            this.panel2.TabStop = true;
             // 
             // CB_store
             // 
@@ -335,7 +338,7 @@
             this.RB_koten.Location = new System.Drawing.Point(148, 10);
             this.RB_koten.Name = "RB_koten";
             this.RB_koten.Size = new System.Drawing.Size(49, 16);
-            this.RB_koten.TabIndex = 9;
+            this.RB_koten.TabIndex = 8;
             this.RB_koten.TabStop = true;
             this.RB_koten.Text = "個店";
             this.RB_koten.UseVisualStyleBackColor = true;
@@ -747,7 +750,7 @@
             this.GV_item.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -771,17 +774,9 @@
             this.定価,
             this.掛率,
             this.発注単価});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GV_item.DefaultCellStyle = dataGridViewCellStyle3;
             this.GV_item.EnableHeadersVisualStyles = false;
             this.GV_item.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.GV_item.Location = new System.Drawing.Point(89, 346);
+            this.GV_item.Location = new System.Drawing.Point(84, 340);
             this.GV_item.Name = "GV_item";
             this.GV_item.RowHeight_ = 20;
             this.GV_item.RowTemplate.Height = 20;
@@ -884,6 +879,8 @@
             // 定価
             // 
             this.定価.DataPropertyName = "PriceOutTax";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.定価.DefaultCellStyle = dataGridViewCellStyle3;
             this.定価.HeaderText = "定価(税抜)";
             this.定価.Name = "定価";
             this.定価.Width = 90;
@@ -891,6 +888,8 @@
             // 掛率
             // 
             this.掛率.DataPropertyName = "Rate";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.掛率.DefaultCellStyle = dataGridViewCellStyle4;
             this.掛率.HeaderText = "掛率";
             this.掛率.Name = "掛率";
             this.掛率.Width = 80;
@@ -898,6 +897,8 @@
             // 発注単価
             // 
             this.発注単価.DataPropertyName = "PriceWithoutTax";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.発注単価.DefaultCellStyle = dataGridViewCellStyle5;
             this.発注単価.HeaderText = "発注単価";
             this.発注単価.Name = "発注単価";
             // 
@@ -1058,7 +1059,7 @@
             this.cb_seasonC.FormattingEnabled = true;
             this.cb_seasonC.Length = 10;
             this.cb_seasonC.Location = new System.Drawing.Point(1562, 219);
-            this.cb_seasonC.MaxLength = 20;
+            this.cb_seasonC.MaxLength = 10;
             this.cb_seasonC.MoveNext = true;
             this.cb_seasonC.Name = "cb_seasonC";
             this.cb_seasonC.Size = new System.Drawing.Size(78, 20);

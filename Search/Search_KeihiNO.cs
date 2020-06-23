@@ -203,7 +203,7 @@ namespace Search
                 if (dt1>dt2)
                 {
                     skhnobl.ShowMessage("E104");
-                    txtRecordDateFrom.Focus();
+                    txtRecordDateTo.Focus();
                     return false;
                 }
 
@@ -216,7 +216,7 @@ namespace Search
                 if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
-                    txtEntryDateFrom.Focus();
+                    txtEntryDateTo.Focus();
                     return false;
                 }
 
@@ -229,7 +229,7 @@ namespace Search
                 if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
-                    txtPaymentDateFrom.Focus();
+                    txtPaymentDateTo.Focus();
                     return false;
                 }
 
@@ -242,7 +242,7 @@ namespace Search
                 if (dt1 > dt2)
                 {
                     skhnobl.ShowMessage("E104");
-                    txtPaymentDueDateFrom.Focus();
+                    txtPaymentDueDateTo.Focus();
                     return false;
                 }
 
@@ -431,7 +431,7 @@ namespace Search
                     if (dt1 > dt2)
                     {
                         skhnobl.ShowMessage("E104");
-                        txtRecordDateFrom.Focus();
+                        txtRecordDateTo.Focus();
                     }
                 }
             }
@@ -449,7 +449,7 @@ namespace Search
                     if (dt1 > dt2)
                     {
                         skhnobl.ShowMessage("E104");
-                        txtEntryDateFrom.Focus();
+                        txtEntryDateTo.Focus();
 
                     }
                 }
@@ -468,7 +468,7 @@ namespace Search
                     if (dt1 > dt2)
                     {
                         skhnobl.ShowMessage("E104");
-                        txtPaymentDueDateFrom.Focus();
+                        txtPaymentDueDateTo.Focus();
                     }
                 }
             }
@@ -486,7 +486,7 @@ namespace Search
                     if (dt1 > dt2)
                     {
                         skhnobl.ShowMessage("E104");
-                        txtPaymentDateFrom.Focus();
+                        txtPaymentDateTo.Focus();
                     }
                 }
             }
