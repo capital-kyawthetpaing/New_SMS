@@ -2123,7 +2123,7 @@ namespace MitsumoriNyuuryoku
                     break;
             }
         }
-        private void CalcZei(int w_Row)
+        private void CalcZei(int w_Row, bool changeTanka = false)
         {
             string ymd = detailControls[(int)EIndex.MitsumoriDate].Text;
             decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriSuu);
@@ -2140,11 +2140,13 @@ namespace MitsumoriNyuuryoku
                 Suryo = wSuu.ToString()
             };
 
+            bool ret = bbl.Fnc_UnitPrice(fue);
+
             if (mGrid.g_DArray[w_Row].TaxRateFLG == 1)
             {
                 mGrid.g_DArray[w_Row].TaxRateDisp = "税込";
 
-                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //通常税額=税込販売額－税抜販売額
                     mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriHontaiGaku);
@@ -2161,7 +2163,7 @@ namespace MitsumoriNyuuryoku
                 mGrid.g_DArray[w_Row].TaxRateDisp = "税込";
                 mGrid.g_DArray[w_Row].MitsumoriTax = 0;
 
-                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //軽減税額=TaxRateFLG＝2の時の税込販売額－税抜販売額
                     mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriHontaiGaku);
@@ -2217,7 +2219,7 @@ namespace MitsumoriNyuuryoku
                         if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriHontaiGaku);
-                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%",""));
+                            zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
@@ -2226,7 +2228,10 @@ namespace MitsumoriNyuuryoku
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriGaku))
+                        {
+                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].MitsumoriGaku);
                             maxKinRowNo = RW;
+                        }
                     }
                 }
             }
@@ -2317,8 +2322,8 @@ namespace MitsumoriNyuuryoku
             dme.Tel13 = addInfo.ade.Tel13;
         
             if (radioButton1.Checked)
-            dme.AliasKBN="1";
-                    else
+                dme.AliasKBN="1";
+            else
                 dme.AliasKBN = "2";
 
             dme.MitsumoriName = detailControls[(int)EIndex.MitsumoriName].Text;
@@ -3303,9 +3308,13 @@ namespace MitsumoriNyuuryoku
                             
                             case (int)ClsGridMitsumori.ColNO.MitsumoriUnitPrice: //販売単価 
                                 {
-                                    SetMitsumoriGaku(w_Row, wSuu, ymd, mGrid.g_DArray[w_Row].MitsumoriUnitPrice);
+                                    string tanka = mGrid.g_DArray[w_Row].MitsumoriUnitPrice;
+                                    if (mTennic.Equals(0))
+                                        tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].MitsumoriUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
 
-                                    CalcZei(w_Row);
+                                    SetMitsumoriGaku(w_Row, wSuu, ymd, tanka);
+
+                                    CalcZei(w_Row, true);
                                 }
                                 break;
 

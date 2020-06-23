@@ -63,7 +63,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1464, 52);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1684, 52);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // ckM_Button2
@@ -77,10 +77,10 @@
             this.ckM_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ckM_Button2.Font = new System.Drawing.Font("MS Gothic", 30F, System.Drawing.FontStyle.Bold);
             this.ckM_Button2.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.XLarge;
-            this.ckM_Button2.Location = new System.Drawing.Point(662, 1);
+            this.ckM_Button2.Location = new System.Drawing.Point(761, 1);
             this.ckM_Button2.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button2.Name = "ckM_Button2";
-            this.ckM_Button2.Size = new System.Drawing.Size(801, 50);
+            this.ckM_Button2.Size = new System.Drawing.Size(922, 50);
             this.ckM_Button2.TabIndex = 2;
             this.ckM_Button2.Tag = "1";
             this.ckM_Button2.Text = "決定";
@@ -101,7 +101,7 @@
             this.ckM_Button1.Location = new System.Drawing.Point(1, 1);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(659, 50);
+            this.ckM_Button1.Size = new System.Drawing.Size(758, 50);
             this.ckM_Button1.TabIndex = 0;
             this.ckM_Button1.Tag = "0";
             this.ckM_Button1.Text = "戻る";
@@ -113,7 +113,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1464, 761);
+            this.ClientSize = new System.Drawing.Size(1684, 761);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblSearch_Name);
             this.Name = "Search_Base";

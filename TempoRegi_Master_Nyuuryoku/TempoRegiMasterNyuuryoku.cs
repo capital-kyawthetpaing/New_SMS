@@ -187,6 +187,7 @@ namespace TempoRegi_Master_Nyuuryoku
             {
                 txtButtomNameUp.Focus();
                 RdoJanCD.Checked = true;
+                RdoCustomerCD.Enabled = true;
             }
         }
         private M_StoreBottunDetails_Entity GetGroupDetailsData()
@@ -406,22 +407,22 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //SearchData();
-                if (!string.IsNullOrWhiteSpace(txtCD.Text))
-                {
-                    if (RdoJanCD.Checked)
-                    {
+                SearchData();
+                //if (!string.IsNullOrWhiteSpace(txtCD.Text))
+                //{
+                //    if (RdoJanCD.Checked)
+                //    {
 
-                    }
-                    else
-                    {
+                //    }
+                //    else
+                //    {
 
-                    }
-                }
-                else
-                {
-                    lblSearchName.Text = string.Empty;
-                }
+                //    }
+                //}
+                //else
+                //{
+                //    lblSearchName.Text = string.Empty;
+                //}
             }
         }
 
@@ -478,7 +479,8 @@ namespace TempoRegi_Master_Nyuuryoku
                             frmsku.ShowDialog();
                             if (!frmsku.flgCancel)
                             {
-                                lblSearchName.Text = frmsku.SKUName;
+                                lblAdminNO.Text = frmsku.AdminNO;
+                                lblSearchName.Text = "名称" + " " + frmsku.SKUName;
                             }
 
                         }
@@ -502,15 +504,16 @@ namespace TempoRegi_Master_Nyuuryoku
                         {
                             txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
                             lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
-                            // lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["ColorName"].ToString();
                         }
                         lblSearchName.Visible = true;
+                        lblAdminNO.Text = string.Empty;
                         txtBtnNameDown.Focus();
 
                     }
                     else
                     {
                         lblSearchName.Text = "";
+                        lblAdminNO.Text = string.Empty;
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
@@ -519,7 +522,8 @@ namespace TempoRegi_Master_Nyuuryoku
             }
             else
             {
-                lblSearchName.Text = "";
+                lblSearchName.Text =string.Empty;
+                lblAdminNO.Text = string.Empty;
                 //txtBtnNameDown.Focus();
             }
         }
