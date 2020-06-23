@@ -31,7 +31,7 @@ namespace KeihiNyuuryoku
             Load += new System.EventHandler(FormLoadEvent);
             PanelNormal.Enter += PanelNormal_Enter;
             PanelCopy.Enter += PanelCopy_Enter;
-            dgvKehiNyuuryoku.DataError += dgvKehiNyuuryoku_DataError;
+           // dgvKehiNyuuryoku.DataError += dgvKehiNyuuryoku_DataError;
             khnyk_BL = new KeihiNyuuryoku_BL();
         }
 
@@ -77,7 +77,7 @@ namespace KeihiNyuuryoku
             dt.Columns.Add("CostCD", typeof(string));
             dt.Columns.Add("Summary", typeof(string));
             dt.Columns.Add("DepartmentCD", typeof(string));
-            dt.Columns.Add("CostGaku", typeof(string));
+            dt.Columns.Add("CostGaku", typeof(int));
             //dt.Columns.Add("index", typeof(string)); //2020-06-16 ptk
             DataTable dtDepartment = new DataTable();
             dtDepartment = khnyk_BL.SimpleSelect1("38", null, "209");
@@ -807,7 +807,7 @@ namespace KeihiNyuuryoku
         {
             try
             {
-                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
+                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
                 {
                     return;
                 }
