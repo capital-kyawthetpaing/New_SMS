@@ -149,6 +149,7 @@ namespace ShiireShoukaiShiiresaki
             }
         }
         public override void FunctionProcess(int index)
+
         {
             if (index + 1 == 11)
             {
@@ -469,5 +470,10 @@ namespace ShiireShoukaiShiiresaki
                 //frmVendor.ShowDialog();
             }
         }
+
+        //private void dgvPurchaseSearch_Paint(object sender, PaintEventArgs e)
+        //{
+        //    dgvPurchaseSearch.Columns[2].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+        //}
     }
 }
