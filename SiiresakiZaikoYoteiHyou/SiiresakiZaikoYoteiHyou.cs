@@ -149,7 +149,7 @@ namespace SiiresakiZaikoYoteiHyou
             return dtAdd;
         }
         private void F11()
-           {
+        {
             if (ErrorCheck())
             {
                 dmpe = new D_MonthlyPurchase_Entity();
@@ -187,6 +187,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
+
                                 wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
                                 wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
                                 wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
@@ -201,7 +202,7 @@ namespace SiiresakiZaikoYoteiHyou
                     }
                 }
             }
-            }
+        }
 
         private L_Log_Entity Get_L_Log_Entity()
         {
@@ -228,7 +229,6 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
-
                 if (dt.Rows.Count > 0)
                 {
                     // CheckBeforeExport();
@@ -302,6 +302,11 @@ namespace SiiresakiZaikoYoteiHyou
                     {
                         txtTargetDateTo.Focus();
                     }
+                }
+                else
+                {
+                    szybl.ShowMessage("E128");
+                    txtTargetDateTo.Focus();
                 }
             }
         }
