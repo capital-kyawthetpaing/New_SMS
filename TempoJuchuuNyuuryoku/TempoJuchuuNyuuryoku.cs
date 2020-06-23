@@ -3310,7 +3310,7 @@ namespace TempoJuchuuNyuuryoku
             }
         }
 
-        private void CalcZei(int w_Row)
+        private void CalcZei(int w_Row, bool changeTanka = false)
         {
             string ymd = detailControls[(int)EIndex.JuchuuDate].Text;
             decimal wSuu = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuSuu);
@@ -3350,7 +3350,7 @@ namespace TempoJuchuuNyuuryoku
             {
                 mGrid.g_DArray[w_Row].TaxRateDisp = "税込";
 
-                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //通常税額=税込販売額－税抜販売額
                     mGrid.g_DArray[w_Row].MitsumoriTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
@@ -3368,7 +3368,7 @@ namespace TempoJuchuuNyuuryoku
                 mGrid.g_DArray[w_Row].TaxRateDisp = "税込";
                 mGrid.g_DArray[w_Row].MitsumoriTax = 0;
       
-                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1))
+                if (mGrid.g_DArray[w_Row].VariousFLG.Equals(1) || changeTanka)
                 {
                     //軽減税額=TaxRateFLG＝2の時の税込販売額－税抜販売額
                     mGrid.g_DArray[w_Row].KeigenTax = bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuHontaiGaku);
@@ -3457,7 +3457,10 @@ namespace TempoJuchuuNyuuryoku
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
+                        {
+                            maxKin = bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
                             maxKinRowNo = RW;
+                        }
                     }
                 }
             }
@@ -4624,9 +4627,13 @@ namespace TempoJuchuuNyuuryoku
 
                             case (int)ClsGridJuchuu.ColNO.JuchuuUnitPrice: //販売単価 
                                 {
-                                    SetJuchuuGaku(w_Row, wSuu, ymd, mGrid.g_DArray[w_Row].JuchuuUnitPrice);
+                                    string tanka = mGrid.g_DArray[w_Row].JuchuuUnitPrice;
+                                    if(mTennic.Equals(0))
+                                        tanka = bbl.GetZeinukiKingaku(bbl.Z_Set(mGrid.g_DArray[w_Row].JuchuuUnitPrice), mGrid.g_DArray[w_Row].TaxRateFLG, ymd).ToString();
 
-                                    CalcZei(w_Row);
+                                    SetJuchuuGaku(w_Row, wSuu, ymd, tanka);
+
+                                    CalcZei(w_Row, true);
                                 }
                                 break;
 
