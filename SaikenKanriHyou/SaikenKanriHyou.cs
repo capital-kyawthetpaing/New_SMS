@@ -151,7 +151,7 @@ namespace SaikenKanriHyou
             System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
             string Mode = "1";
-            string cmdLine = " " + InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + " " + Mode + " " + YYYYMM;//parameter
+            string cmdLine =  InOperatorCD + " " + Login_BL.GetHostName() + " " + StoreCD + " " + Mode + " " + YYYYMM;//parameter
             try
             {
                 System.Diagnostics.Process.Start(filePath + @"\" + programID + ".exe", cmdLine + "");
@@ -272,9 +272,10 @@ namespace SaikenKanriHyou
             {
                 // レコード定義を行う
                 dtResult = CheckData();
+                M_StoreCheck();
                 //dmc_e = GetDataInfo();
                 //dtResult = skh_bl.D_MonthlyClaims_Select(dmc_e);
-                
+
                 //if (dtResult == null)
                 //{
                 //    return;
@@ -282,7 +283,7 @@ namespace SaikenKanriHyou
                 if (dtResult.Rows.Count > 0) // 2020-06-19 saw
                 {
                     //exeRun
-                    M_StoreCheck();
+                    
                     try
                     {
                         SaikenKanriHyou_Report skh_Report = new SaikenKanriHyou_Report();
