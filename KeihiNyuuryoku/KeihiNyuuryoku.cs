@@ -451,7 +451,7 @@ namespace KeihiNyuuryoku
                                              "AND (Summary = '' OR Summary IS  NULL) " +
                                              "AND (DepartmentCD = '' OR DepartmentCD IS  NULL) " +
                                              "AND (CostGaku = ''  OR CostGaku IS  NULL)");
-                if(drs.Count() != 300 )
+                if(drs.Count() != dgvKehiNyuuryoku.Rows.Count )
                 {
                     foreach(DataRow r in drs)
                     {
