@@ -339,7 +339,8 @@ namespace Search
                 Scr_Clr();
                 detailControls[(int)EIndex.DayStart].Text = pnbl.GetDate();
                 detailControls[(int)EIndex.DayEnd].Text = pnbl.GetDate();
-                CboSoukoCD.SelectedValue = SoukoCD; 
+                CboSoukoCD.SelectedValue = SoukoCD;
+                F9Visible = false;
             }
             catch (Exception ex)
             {
