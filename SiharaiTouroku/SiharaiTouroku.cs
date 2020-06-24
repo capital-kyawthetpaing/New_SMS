@@ -389,6 +389,9 @@ namespace SiharaiTouroku
                     dtPay1Detail = sibl.D_PayPlan_SelectDetail(dppe);
 
                     dgvPayment.DataSource = dtPayplan;
+                    for (int i = 1; i < dgvPayment.Columns.Count; i++)
+                        dgvPayment.Columns[i].ReadOnly = true;
+
                     txtPaymentDate.Text = sibl.GetDate();
                     ScStaff.TxtCode.Text = InOperatorCD;
                     ScStaff.LabelText = dtPayplan.Rows[0]["StaffName"].ToString();
@@ -438,7 +441,7 @@ namespace SiharaiTouroku
         #endregion
 
         #region btnClick
-        private void btnSelectAll_Click(object sender, EventArgs e)
+        private void BtnSelectAll_Click(object sender, EventArgs e)
         {
             try
             {
@@ -452,7 +455,7 @@ namespace SiharaiTouroku
             }
         }
 
-        private void btnReleaseAll_Click(object sender, EventArgs e)
+        private void BtnReleaseAll_Click(object sender, EventArgs e)
         {
             try
             {
@@ -548,7 +551,7 @@ namespace SiharaiTouroku
             }
         }
 
-        private void btnF11Show_Click(object sender, EventArgs e)
+        private void BtnF11Show_Click(object sender, EventArgs e)
         {
             try
             {
@@ -1005,7 +1008,7 @@ namespace SiharaiTouroku
             lblPayPlan.Text = sum7.ToString("#,##0");
         }
 
-        private void cboPaymentType_SelectedIndexChanged(object sender, EventArgs e)
+        private void CboPaymentType_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
@@ -1055,12 +1058,11 @@ namespace SiharaiTouroku
                                             break;
 
                                         case "2":
-
                                         case "3":
-
                                         case "4":
-
                                         case "5":
+                                        case "6":
+                                        case "7":
                                             row["TransferGaku"] = 0;
                                             row["BankCD"] = "";
                                             row["BankName"] = "";
@@ -1075,7 +1077,7 @@ namespace SiharaiTouroku
                                             //現金
                                             if (type.Equals("2"))
                                             {
-                                                row["Cash"] = row["PayGaku"];
+                                                row["CashGaku"] = row["PayGaku"];
                                             }
                                             //手形
                                             else if (type.Equals("3"))
@@ -1230,11 +1232,11 @@ namespace SiharaiTouroku
                         , bbl.Z_Set(row["PayPlan"])     //NotPaidGaku
                         , bbl.Z_Set(row["TransferGaku"])
                         , bbl.Z_Set(row["TransferFeeGaku"])
-                        , bbl.Z_Set(row["FeeKBN"])
+                        , string.IsNullOrWhiteSpace(row["FeeKBNVal"].ToString()) ? null : row["FeeKBNVal"]
                         , cboPaymentSourceAcc.SelectedValue
                         , string.IsNullOrWhiteSpace(row["BankCD"].ToString()) ? null : row["BankCD"]
                         , string.IsNullOrWhiteSpace(row["BranchCD"].ToString()) ? null : row["BranchCD"]
-                        , bbl.Z_Set(row["KouzaKBN"])
+                        , string.IsNullOrWhiteSpace(row["KouzaKBN"].ToString()) ? null : row["KouzaKBN"]
                         , string.IsNullOrWhiteSpace(row["KouzaNO"].ToString()) ? null : row["KouzaNO"]
                         , string.IsNullOrWhiteSpace(row["KouzaMeigi"].ToString()) ? null : row["KouzaMeigi"]
                         , bbl.Z_Set(row["CashGaku"])
