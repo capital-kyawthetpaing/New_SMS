@@ -463,8 +463,8 @@ namespace ShukkaShoukai
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //if(!string.IsNullOrWhiteSpace(SC_Order.TxtCode.Text))
-                //{
+                if (!string.IsNullOrWhiteSpace(SC_Order.TxtCode.Text))
+                {
                     dje.JuchuuNO = SC_Order.TxtCode.Text;
                     DataTable dtJuChuu = new DataTable();
                     dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
@@ -495,8 +495,8 @@ namespace ShukkaShoukai
                             }
                         }
                     }
-                //}
-                //cboDestinationWarehouse.Focus();
+                }
+                cboDestinationWarehouse.Focus();
             }
         }
         #endregion
