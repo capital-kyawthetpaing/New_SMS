@@ -42,7 +42,6 @@ namespace Shiharai_ShimeShori
             F7Visible = false;
             F8Visible = false;
             F10Visible = false;
-            Btn_F12.Enabled = false;
         }
         private void RequireFields()
         {
@@ -151,13 +150,11 @@ namespace Shiharai_ShimeShori
                 dgvPaymentClose.CurrentRow.Selected = true;
                 dgvPaymentClose.Enabled = true;
                 dgvPaymentClose.Focus();
-                Btn_F12.Enabled = true;
             }
             else
             {
                 dgvPaymentClose.DataSource = null;
-                bbl.ShowMessage("E128");
-                Btn_F12.Enabled = false;
+                //bbl.ShowMessage("E128");
             }
         }
         private bool ErrorCheck(int Type)

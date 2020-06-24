@@ -1445,13 +1445,14 @@ namespace Search
                     }
                     break;
                 case SearchType.HanyouKeyEnd:
-                    using (Search_Key frmKey = new Search_Key(Value1, Value2, Value3))
+                    using (Search_Key frmKey = new Search_Key(Value1, Value2))
                     {
                         frmKey.ShowDialog();
                         if (!frmKey.flgCancel)
                         {
-                            TxtCode.Text = frmKey.KeyCode;
-                            lblName.Text = frmKey.Char3;
+                            TxtCode.Text = frmKey.Char2;    //補助科目CD
+                            lblName.Text = frmKey.Char3;    //補助科目名
+                            Value3 = frmKey.Char1;  //勘定科目CD
                             CheckBasedFormPanel();//PTK added
                         }
                     }
@@ -1927,7 +1928,7 @@ namespace Search
                     dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 9, txtCode.Text,Value1);
                     break;
                 case SearchType.HanyouKeyEnd:
-                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1,Value2);
+                    dtResult = bbl.Select_SearchName(DateTime.Now.ToString("yyyy/MM/dd").Replace("/", "-"), 10, txtCode.Text, Value1,Value3);
                     break;
                 //20200317
                 case SearchType.ブランド:
