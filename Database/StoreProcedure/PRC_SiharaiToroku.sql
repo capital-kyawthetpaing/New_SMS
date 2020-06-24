@@ -17,6 +17,7 @@ GO
 CREATE TYPE T_Pay AS TABLE
     (
     [Rows] [int],
+    [PayNO]  varchar(11),
     [PayeeCD]  varchar(13),
     [PayPlanDate]  date,
     [HontaiGaku8]  money,
@@ -100,12 +101,13 @@ BEGIN
 
     --カーソル定義
     DECLARE CUR_TABLE CURSOR FOR
-        SELECT tbl.PayeeCD,tbl.PayPlanDate
+        SELECT tbl.PayNO,tbl.PayeeCD,tbl.PayPlanDate
             ,tbl.Rows, tbl.UpdateFlg
         FROM @Table AS tbl
         ORDER BY tbl.PayeeCD,tbl.PayPlanDate
         ;
         
+    DECLARE @tblPayNO varchar(11);
     DECLARE @tblPayeeCD varchar(13);
     DECLARE @tblPayPlanDate date;
     DECLARE @BreakKey   varchar(35);
@@ -124,7 +126,35 @@ BEGIN
     
     SET @BreakKey = '';
     
-        --変更--
+
+    --変更・削除　修正前金額を更新（赤データ）--
+    IF @OperateMode >= 2
+    BEGIN
+        --D_MonthlyDebt       Insert/Update   Table転送仕様Ｇ ②
+        --Update 該当年月、店舗、支払先
+        UPDATE [D_MonthlyDebt]
+            SET
+             [PayGaku] = [D_MonthlyDebt].PayGaku - tbl.PayGaku
+            ,[OffsetGaku] = [D_MonthlyDebt].OffsetGaku - tbl.OffsetGaku
+            ,[BalanceGaku] = [D_MonthlyDebt].LastBalanceGaku + [D_MonthlyDebt].DebtGaku - [D_MonthlyDebt].PayGaku + tbl.PayGaku
+            ,[UpdateOperator]     =  @Operator  
+            ,[UpdateDateTime]     =  @SYSDATETIME
+        FROM (SELECT A.PayeeCD, SUBSTRING(CONVERT(varchar, A.PayDate, 112),1,6) As YYYYMM
+                ,SUM(A.PayGaku) AS PayGaku 
+                ,SUM(A.OffsetGaku) AS OffsetGaku
+                
+                FROM D_Pay AS A
+                WHERE A.PayNO = (CASE WHEN @PayNO <> '' THEN @PayNO ELSE A.PayNO END)
+                AND A.LargePayNO = (CASE WHEN @LargePayNO <> '' THEN @LargePayNO ELSE A.LargePayNO END)
+                GROUP BY A.PayeeCD, A.PayDate) AS tbl
+        WHERE [D_MonthlyDebt].[YYYYMM] = tbl.YYYYMM --CONVERT(int, SUBSTRING(@PayDate,1,4) + SUBSTRING(@PayDate,6,2))
+        AND [D_MonthlyDebt].[StoreCD] = @StoreCD
+        AND [D_MonthlyDebt].[PayeeCD] = tbl.PayeeCD
+        AND [D_MonthlyDebt].[DeleteDateTime] IS NULL     
+        ;
+	END    
+    
+    --変更--
     IF @OperateMode = 2
     BEGIN
         SET @OperateModeNm = '変更';
@@ -218,7 +248,7 @@ BEGIN
 
         --最初の1行目を取得して変数へ値をセット
         FETCH NEXT FROM CUR_TABLE
-        INTO @tblPayeeCD, @tblPayPlanDate, @tblRows, @tblUpdateFlg;
+        INTO @tblPayNO, @tblPayeeCD, @tblPayPlanDate, @tblRows, @tblUpdateFlg;
         
         --データの行数分ループ処理を実行する
         WHILE @@FETCH_STATUS = 0
@@ -378,7 +408,7 @@ BEGIN
                ,[DeleteOperator]
                ,[DeleteDateTime])
              SELECT
-                @PayNO
+                ISNULL(@PayNO, @tblPayNO)
                ,tblD.PayNORows
                ,tblD.PayPlanNO
                ,tblD.PayGaku
@@ -395,16 +425,24 @@ BEGIN
             
             IF @PayNORows = 1
             BEGIN
+            	IF ISNULL(@PayNO,'') = ''
+            	BEGIN
                 --L_PayHistory        Insert          Table転送仕様Ｃ         
                 --L_PayDetailsHistory Insert          Table転送仕様Ｄ
-                exec dbo.L_PayHistory_Insert @PayNO,@LargePayNO
+                	exec dbo.L_PayHistory_Insert @tblPayNO,@LargePayNO;
+                END
+                ELSE
+                BEGIN
+                	exec dbo.L_PayHistory_Insert @PayNO,@LargePayNO;
+                END
+                
                 SET @BreakKey = @tblPayeeCD + ' ' + CONVERT(varchar,@tblPayPlanDate,111);
             END
             
             SET @PayNORows = @PayNORows + 1;
             
             --処理履歴データへ更新
-            SET @KeyItem = @PayNO;
+            SET @KeyItem = ISNULL(@PayNO, @tblPayNO);
                 
             EXEC L_Log_Insert_SP
                 @SYSDATETIME,
@@ -416,7 +454,7 @@ BEGIN
 	            
             --次の行のデータを取得して変数へ値をセット
             FETCH NEXT FROM CUR_TABLE
-            INTO @tblPayeeCD, @tblPayPlanDate, @tblRows, @tblUpdateFlg;
+            INTO @tblPayNO, @tblPayeeCD, @tblPayPlanDate, @tblRows, @tblUpdateFlg;
         END            --LOOPの終わり
         
         --カーソルを閉じる
@@ -569,7 +607,10 @@ BEGIN
         IF ISNULL(@LargePayNO,'') = ''
         BEGIN
             Update D_PayPlan
-                set UpdateOperator = @Operator,
+                set 
+                PayConfirmGaku = (-1) * dpd.PayGaku,
+                PayConfirmFinishedKBN = 0,
+                UpdateOperator = @Operator,
                 UpdateDateTime = @SYSDATETIME
             from D_PayPlan as dpp 
             inner join D_PayDetails dpd
@@ -580,7 +621,10 @@ BEGIN
         ELSE
         BEGIN
             Update D_PayPlan
-                set UpdateOperator = @Operator,
+                set 
+                PayConfirmGaku = (-1) * dpd.PayGaku,
+                PayConfirmFinishedKBN = 0,
+                UpdateOperator = @Operator,
                 UpdateDateTime = @SYSDATETIME
             from D_PayPlan as dpp 
             inner join D_PayDetails dpd
