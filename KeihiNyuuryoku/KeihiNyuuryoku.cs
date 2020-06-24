@@ -79,8 +79,13 @@ namespace KeihiNyuuryoku
             dt.Columns.Add("DepartmentCD", typeof(string));
             dt.Columns.Add("CostGaku", typeof(int));
             //dt.Columns.Add("index", typeof(string)); //2020-06-16 ptk
+
             DataTable dtDepartment = new DataTable();
             dtDepartment = khnyk_BL.SimpleSelect1("38", null, "209");
+            DataRow dr = dtDepartment.NewRow();
+            dr["Key"] = "0";
+            dr["Char1"] = string.Empty;
+            dtDepartment.Rows.InsertAt(dr, 0);
             if (dtDepartment.Rows.Count > 0)
             {
                 DataGridViewComboBoxColumn cbocolD = (DataGridViewComboBoxColumn)dgvKehiNyuuryoku.Columns["colDepartment"];
@@ -92,6 +97,10 @@ namespace KeihiNyuuryoku
 
             DataTable dtCostCD = new DataTable();
             dtCostCD = khnyk_BL.SimpleSelect1("37", null, "208");
+            DataRow row = dtCostCD.NewRow();
+            row["Key"] = "0";
+            row["Char1"] = string.Empty;
+            dtCostCD.Rows.InsertAt(row, 0);
             if (dtCostCD.Rows.Count > 0)
             {
                 DataGridViewComboBoxColumn cbocolV = (DataGridViewComboBoxColumn)dgvKehiNyuuryoku.Columns["colCostCD"];
