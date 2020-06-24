@@ -191,7 +191,6 @@ namespace NyuukinYoteiHyou
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
                             //previewForm.CrystalReportViewer1.Zoom(1);
-                           
                             previewForm.ShowDialog();
                         }
                         else

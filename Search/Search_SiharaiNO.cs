@@ -148,7 +148,16 @@ namespace Search
                 dpe.PayeeCD = Sc_PaymentDestination.TxtCode.Text;
                 DataTable dt = new DataTable();
                 dt = ssnbl.D_Pay_SelectForSiharaiNo(dpe);
-                dgvSiharaiNO.DataSource = dt;
+                if(dt.Rows.Count == 0)
+                {
+                    ssnbl.ShowMessage("E128");
+                    txtPaymentDateFrom.Focus();
+                }
+                else
+                {
+                    dgvSiharaiNO.DataSource = dt;
+                }
+              
 
             }
         }
