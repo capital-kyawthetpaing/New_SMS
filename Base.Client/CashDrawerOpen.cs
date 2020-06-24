@@ -9,25 +9,34 @@ namespace Base.Client
 {
     public class CashDrawerOpen
     {
-        CashDrawer m_Drawer = null;
-        string strLogicalName = "CashDrawer";
-               
-        //PosExplorerを生成します。
-        PosExplorer posExplorer = new PosExplorer();
-
-        DeviceInfo deviceInfo = null;
+         static CashDrawer m_Drawer = null;
+        
         public CashDrawerOpen()
         {
-            deviceInfo = posExplorer.GetDevice(DeviceType.CashDrawer, strLogicalName);
-            m_Drawer = (CashDrawer)posExplorer.CreateInstance(deviceInfo);
+            try
+            {
+                string strLogicalName = "CashDrawer";
 
-            m_Drawer.Open();
+                //PosExplorerを生成します。
+                PosExplorer posExplorer = new PosExplorer();
 
-            m_Drawer.Claim(1000);
+                DeviceInfo deviceInfo = null;
 
-            //デバイスを使用可能（動作できる状態）にします。
+                deviceInfo = posExplorer.GetDevice(DeviceType.CashDrawer, strLogicalName);
+                m_Drawer = (CashDrawer)posExplorer.CreateInstance(deviceInfo);
 
-            m_Drawer.DeviceEnabled = true;
+                m_Drawer.Open();
+
+                m_Drawer.Claim(1000);
+
+                //デバイスを使用可能（動作できる状態）にします。
+
+                m_Drawer.DeviceEnabled = true;
+            }
+            catch(PosControlException)
+            {
+                
+            }
         }
 
         public void OpenCashDrawer()

@@ -1155,6 +1155,8 @@ namespace HacchuuNyuuryoku
             //画面より配列セット 
             mGrid.S_DispToArray(Vsb_Mei_0.Value);
 
+            int col = (int)ClsGridHacchuu.ColNO.JanCD;
+
             //コピー行より下の明細を1行ずつずらす（内容コピー）
             for (int i = mGrid.g_MK_Max_Row - 1; i >= w_Row; i--)
             {
@@ -1167,6 +1169,8 @@ namespace HacchuuNyuuryoku
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
                 mGrid.g_DArray[w_Row].hacchuGyoNO = w_MOTNO;      //修正元行№
+
+                Grid_NotFocus(col, i);
             }
 
             //状態もコピー
@@ -1175,7 +1179,6 @@ namespace HacchuuNyuuryoku
             {
                 mGrid.g_MK_State[w_Col, w_Row] = mGrid.g_MK_State[w_Col, w_Row - 1];
             }
-            int col = (int)ClsGridHacchuu.ColNO.JanCD;
             Grid_NotFocus(col, w_Row);
             CalcKin();
 
@@ -1728,7 +1731,7 @@ namespace HacchuuNyuuryoku
                     }
 
                     mGrid.g_DArray[i].JanCD = row["JanCD"].ToString();
-                    mGrid.g_DArray[i].OldJanCD = mGrid.g_DArray[i].JanCD;
+                    //mGrid.g_DArray[i].OldJanCD = mGrid.g_DArray[i].JanCD; del
                     mGrid.g_DArray[i].AdminNO = row["AdminNO"].ToString();
                     mGrid.g_DArray[i].SKUCD = row["SKUCD"].ToString();
 
@@ -1741,7 +1744,7 @@ namespace HacchuuNyuuryoku
                         mGrid.g_DArray[i].OrderSu = bbl.Z_SetStr(row["OrderSu"]);   //単価算出のため先にセットしておく    
                     }
 
-                    CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, i);
+                    CheckGrid((int)ClsGridHacchuu.ColNO.JanCD, i, true);
 
                     mGrid.g_DArray[i].SKUName = row["ItemName"].ToString();   // 
                     mGrid.g_DArray[i].ColorName = row["ColorName"].ToString();   // 
@@ -2181,7 +2184,7 @@ namespace HacchuuNyuuryoku
                 case (int)ClsGridHacchuu.ColNO.JanCD:
                     if (!changeYmd)
                     {
-                        if (chkAll && mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD)
+                        if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD)   //chkAll &&  change
                             return true;
                     }
 
@@ -2200,7 +2203,7 @@ namespace HacchuuNyuuryoku
                         ChangeDate = ymd
                     };
 
-                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD)
+                    if (mGrid.g_DArray[row].JanCD == mGrid.g_DArray[row].OldJanCD || string.IsNullOrWhiteSpace(mGrid.g_DArray[row].OldJanCD))
                     {
                         mse.SKUCD = mGrid.g_DArray[row].SKUCD;
                         mse.AdminNO = mGrid.g_DArray[row].AdminNO;
