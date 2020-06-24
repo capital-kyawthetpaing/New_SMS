@@ -316,16 +316,31 @@ namespace ShiireShoukaiShiiresaki
         private bool ErrorCheck()
         {
             /// <remarks>仕入日(from)は仕入日(To)より大きいの場合エラーになる</remarks>
-            if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
+            //if (!string.IsNullOrWhiteSpace(txtPurchaseDateFrom.Text) && !string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
+            //{
+            //    if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1)
+            //    {
+            //        dpurchase_bl.ShowMessage("E104");
+            //        txtPurchaseDateTo.Focus();
+            //        return false;
+            //    }
+            //}
+            //if (Convert.ToInt32((txtPurchaseDateTo.Text.ToString().Replace("/", ""))) > Convert.ToInt32(txtPurchaseDateTo.Text.ToString().Replace("/", ""))) //対象期間(From)の方が大きい場合Error
+            //{
+            //    dpurchase_bl.ShowMessage("E103");
+            //    txtPurchaseDateTo.Focus();
+            //    return false;
+            //}
+            if (!string.IsNullOrWhiteSpace(txtPurchaseDateTo.Text))
             {
-                if (string.Compare(txtPurchaseDateFrom.Text, txtPurchaseDateTo.Text) == 1)
+                int result = txtPurchaseDateFrom.Text.CompareTo(txtPurchaseDateTo.Text);
+                if (result > 0)
                 {
                     dpurchase_bl.ShowMessage("E104");
-                    txtPurchaseDateTo.Focus();
-                    return false;
+                          txtPurchaseDateTo.Focus();
+                      return false;
                 }
             }
-
             /// <remarks>入荷日(from)は入荷日(To)より大きいの場合エラーになる</remarks>
             if (!string.IsNullOrWhiteSpace(txtArrivalDateFrom.Text) && !string.IsNullOrWhiteSpace(txtArrivalDateTo.Text))
             {
@@ -471,6 +486,93 @@ namespace ShiireShoukaiShiiresaki
             }
         }
 
+        private void txtPurchaseDateTo_Leave(object sender, EventArgs e)
+        {
+            //DateCheck();
+        }
+        //private bool DateCheck()
+        //{
+        //    bbl = new Base_BL();
+        //    if (!string.IsNullOrWhiteSpace(this.Text))
+        //    {
+        //        if (bbl.IsInteger(this.Text.Replace("/", "").Replace("-", "")))
+        //        {
+        //            string day = string.Empty, month = string.Empty, year = string.Empty;
+        //            if (this.Text.Contains("/"))
+        //            {
+        //                string[] date = this.Text.Split('/');
+        //                day = date[date.Length - 1].PadLeft(2, '0');
+        //                month = date[date.Length - 2].PadLeft(2, '0');
+
+        //                if (date.Length > 2)
+        //                    year = date[date.Length - 3];
+
+        //                this.Text = year + month + day;//  this.Text.Replace("/", "");
+        //            }
+        //            else if (this.Text.Contains("-"))
+        //            {
+        //                string[] date = this.Text.Split('-');
+        //                day = date[date.Length - 1].PadLeft(2, '0');
+        //                month = date[date.Length - 2].PadLeft(2, '0');
+
+        //                if (date.Length > 2)
+        //                    year = date[date.Length - 3];
+
+        //                this.Text = year + month + day;//  this.Text.Replace("-", "");
+        //            }
+
+        //            string text = this.Text;
+        //            text = text.PadLeft(8, '0');
+        //            day = text.Substring(text.Length - 2);
+        //            month = text.Substring(text.Length - 4).Substring(0, 2);
+        //            year = Convert.ToInt32(text.Substring(0, text.Length - 4)).ToString();
+
+        //            if (month == "00")
+        //            {
+        //                month = string.Empty;
+        //            }
+        //            if (year == "0")
+        //            {
+        //                year = string.Empty;
+        //            }
+
+        //            if (string.IsNullOrWhiteSpace(month))
+        //                month = DateTime.Now.Month.ToString().PadLeft(2, '0');//if user doesn't input for month,set current month
+
+        //            if (string.IsNullOrWhiteSpace(year))
+        //            {
+        //                year = DateTime.Now.Year.ToString();//if user doesn't input for year,set current year
+        //            }
+        //            else
+        //            {
+        //                if (year.Length == 1)
+        //                    year = "200" + year;
+        //                else if (year.Length == 2)
+        //                    year = "20" + year;
+        //            }
+
+        //            //string strdate = year + "-" + month + "-" + day;  2019.6.11 chg
+        //            string strdate = year + "/" + month + "/" + day;
+        //            if (bbl.CheckDate(strdate))
+        //            {
+        //                IsCorrectDate = true;
+        //                this.Text = strdate;
+        //            }
+        //            else
+        //            {
+        //                bbl.ShowErrorMessage("E103");
+        //                return false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            bbl.ShowErrorMessage("E103");
+        //            return false;
+        //        }
+        //    }
+
+        //    return true;
+        //}
         //private void dgvPurchaseSearch_Paint(object sender, PaintEventArgs e)
         //{
         //    dgvPurchaseSearch.Columns[2].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

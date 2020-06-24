@@ -423,7 +423,12 @@ namespace MainMenu
 
         private void Capitalsports_MainMenu_Load(object sender, EventArgs e)
         {
+            SetDisplay();
+        }
+        protected void SetDisplay()
+        {
 
         }
+
     }
 }

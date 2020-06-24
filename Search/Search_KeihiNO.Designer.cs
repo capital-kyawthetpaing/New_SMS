@@ -71,7 +71,6 @@
             this.TaxIncludePayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPaymentDueDateFrom = new CKM_Controls.CKM_TextBox();
             this.txtPaymentDueDateTo = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label12 = new CKM_Controls.CKM_Label();
             this.chkTeiki = new CKM_Controls.CKM_CheckBox();
             this.PaymentCD = new Search.CKM_SearchControl();
             this.scStaffCD = new Search.CKM_SearchControl();
@@ -82,7 +81,6 @@
             // PanelHeader
             // 
             this.PanelHeader.Controls.Add(this.chkTeiki);
-            this.PanelHeader.Controls.Add(this.ckM_Label12);
             this.PanelHeader.Controls.Add(this.txtPaymentDueDateTo);
             this.PanelHeader.Controls.Add(this.txtPaymentDueDateFrom);
             this.PanelHeader.Controls.Add(this.btnSubF11);
@@ -133,7 +131,6 @@
             this.PanelHeader.Controls.SetChildIndex(this.btnSubF11, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtPaymentDueDateFrom, 0);
             this.PanelHeader.Controls.SetChildIndex(this.txtPaymentDueDateTo, 0);
-            this.PanelHeader.Controls.SetChildIndex(this.ckM_Label12, 0);
             this.PanelHeader.Controls.SetChildIndex(this.chkTeiki, 0);
             // 
             // ckM_Label1
@@ -724,31 +721,16 @@
             this.txtPaymentDueDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             this.txtPaymentDueDateTo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPaymentDueDateTo_KeyDown);
             // 
-            // ckM_Label12
-            // 
-            this.ckM_Label12.AutoSize = true;
-            this.ckM_Label12.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label12.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label12.DefaultlabelSize = true;
-            this.ckM_Label12.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label12.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label12.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label12.Location = new System.Drawing.Point(476, 49);
-            this.ckM_Label12.Name = "ckM_Label12";
-            this.ckM_Label12.Size = new System.Drawing.Size(31, 12);
-            this.ckM_Label12.TabIndex = 11;
-            this.ckM_Label12.Text = "定期";
-            this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // chkTeiki
             // 
             this.chkTeiki.AutoSize = true;
+            this.chkTeiki.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkTeiki.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.chkTeiki.Location = new System.Drawing.Point(510, 47);
+            this.chkTeiki.Location = new System.Drawing.Point(476, 47);
             this.chkTeiki.Name = "chkTeiki";
-            this.chkTeiki.Size = new System.Drawing.Size(15, 14);
+            this.chkTeiki.Size = new System.Drawing.Size(50, 16);
             this.chkTeiki.TabIndex = 11;
+            this.chkTeiki.Text = "定期";
             this.chkTeiki.UseVisualStyleBackColor = true;
             // 
             // PaymentCD
@@ -862,7 +844,6 @@
         private CKM_Controls.CKM_TextBox txtPaymentDueDateTo;
         private CKM_Controls.CKM_TextBox txtPaymentDueDateFrom;
         private CKM_Controls.CKM_CheckBox chkTeiki;
-        private CKM_Controls.CKM_Label ckM_Label12;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpenseNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn RecordDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn ExpenseEntryDate;
