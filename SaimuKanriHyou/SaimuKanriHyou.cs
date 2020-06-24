@@ -349,6 +349,10 @@ namespace SaimuKanriHyou
                         txtTargetYear.Focus();
                     }
                 }
+                else
+                {
+                    saimukanriBL.ShowMessage("E128");
+                }
             }
         }
 
