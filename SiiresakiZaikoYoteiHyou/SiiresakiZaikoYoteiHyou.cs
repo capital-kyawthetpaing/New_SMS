@@ -64,7 +64,10 @@ namespace SiiresakiZaikoYoteiHyou
         public void Clear()
         {
             Clear(panalDetail);
+            txtTargetDateFrom.Text = DateTime.Now.ToString("yyyy/MM");
+            txtTargetDateTo.Text = DateTime.Now.ToString("yyyy/MM");
             txtTargetDateTo.Focus();
+            cboStore.SelectedValue = StoreCD;
         }
         
         public override void FunctionProcess(int Index)
@@ -73,11 +76,11 @@ namespace SiiresakiZaikoYoteiHyou
             switch (Index + 1)
             {
                 case 6:
+                    if (bbl.ShowMessage("Q004") == DialogResult.Yes)
                     {
-                        if (szybl.ShowMessage("Q004") != DialogResult.Yes)
-                            return;
-                        break;
+                        Clear();
                     }
+                    break;
                 case 11:
                     F11();
                     break;
@@ -146,7 +149,7 @@ namespace SiiresakiZaikoYoteiHyou
             return dtAdd;
         }
         private void F11()
-           {
+        {
             if (ErrorCheck())
             {
                 dmpe = new D_MonthlyPurchase_Entity();
@@ -184,6 +187,7 @@ namespace SiiresakiZaikoYoteiHyou
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Row(1).InsertRowsAbove(1);
                                 wb.Worksheet("worksheet").Cell(1,1).Value = "年月：";
+
                                 wb.Worksheet("worksheet").Cell(2, 1).Value = "店舗:";
                                 wb.Worksheet("worksheet").Cell(1, 2).Value = txtTargetDateFrom.Text;
                                 wb.Worksheet("worksheet").Cell(1, 3).Value = "～";
@@ -198,7 +202,7 @@ namespace SiiresakiZaikoYoteiHyou
                     }
                 }
             }
-            }
+        }
 
         private L_Log_Entity Get_L_Log_Entity()
         {
@@ -225,7 +229,6 @@ namespace SiiresakiZaikoYoteiHyou
                 dmpe = new D_MonthlyPurchase_Entity();
                 dmpe = GetData();
                 DataTable dt = szybl.RPC_SiiresakiZaikoYoteiHyou(dmpe);
-
                 if (dt.Rows.Count > 0)
                 {
                     // CheckBeforeExport();
@@ -299,6 +302,11 @@ namespace SiiresakiZaikoYoteiHyou
                     {
                         txtTargetDateTo.Focus();
                     }
+                }
+                else
+                {
+                    szybl.ShowMessage("E128");
+                    txtTargetDateTo.Focus();
                 }
             }
         }

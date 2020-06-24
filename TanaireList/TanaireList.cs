@@ -127,7 +127,7 @@ namespace TanaireList
             // DataTable table = new DataTable();
             tnlbl = new TanaireList_BL();
             string header = string.Empty;
-            DataTable dtPrint;
+            DataTable dtPrint=new DataTable();
             if (ErrorCheck())
             {
                     dse = GetDStockEntity();
@@ -145,10 +145,15 @@ namespace TanaireList
 
                     try
                     {
-                        if (dtPrint != null || dtPrint.Rows.Count > 0)
+                        if (dtPrint.Rows.Count <= 0 || dtPrint == null)
                         {
-
-
+                            bbl.ShowMessage("E128");
+                            txtStartDate.Focus();
+                        }
+                        else
+                        {
+                            
+                        
                             //xsdファイルを保存します。
 
                             //①保存した.xsdはプロジェクトに追加しておきます。
@@ -242,11 +247,11 @@ namespace TanaireList
                             }
                             InsertLog(Get_L_Log_Entity(dtPrint));
                         }
-                        else
-                        {
-                            bbl.ShowMessage("E128");
-                            txtStartDate.Focus();
-                          }
+                        //else
+                        //{
+                        //    bbl.ShowMessage("E128");
+                        //    txtStartDate.Focus();
+                        //  }
 
                     }
                     finally

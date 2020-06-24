@@ -265,11 +265,10 @@ namespace UriageMotouchou
             string Todate = string.Empty;
             if (!string.IsNullOrWhiteSpace(txtTargetTo.Text))
             {
-
                 int year = Convert.ToInt32(txtTargetTo.Text.Substring(0, 4));
                 int month = Convert.ToInt32(txtTargetTo.Text.Substring(5, 2));
                 string lastday = "/" + DateTime.DaysInMonth(year, month).ToString();
-                 Todate = txtTargetTo.Text + lastday;
+                Todate = txtTargetTo.Text + lastday;
             }
 
             ume = new UriageMotochou_Entity()
@@ -280,7 +279,7 @@ namespace UriageMotouchou
                 StoreCD = cboStore.SelectedValue.ToString(),
                 TargetDateFrom = txtTagetFrom.Text + "/01",
                 TargetDateTo = Todate,
-                ChkValue=CheckValue()
+                ChkValue =CheckValue()
             };
             return ume;
         }
@@ -335,7 +334,6 @@ namespace UriageMotouchou
                 }
             }
         }
-
         private void sc_Customer_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

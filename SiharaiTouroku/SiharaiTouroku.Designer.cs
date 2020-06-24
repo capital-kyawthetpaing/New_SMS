@@ -596,7 +596,7 @@
             this.cboPaymentType.Name = "cboPaymentType";
             this.cboPaymentType.Size = new System.Drawing.Size(114, 20);
             this.cboPaymentType.TabIndex = 2;
-            this.cboPaymentType.SelectedIndexChanged += new System.EventHandler(this.cboPaymentType_SelectedIndexChanged);
+            this.cboPaymentType.SelectedIndexChanged += new System.EventHandler(this.CboPaymentType_SelectedIndexChanged);
             // 
             // ckM_Label7
             // 
@@ -704,7 +704,7 @@
             this.btnReleaseAll.TabIndex = 6;
             this.btnReleaseAll.Text = "全解除";
             this.btnReleaseAll.UseVisualStyleBackColor = false;
-            this.btnReleaseAll.Click += new System.EventHandler(this.btnReleaseAll_Click);
+            this.btnReleaseAll.Click += new System.EventHandler(this.BtnReleaseAll_Click);
             // 
             // txtBillSettleDate
             // 
@@ -752,7 +752,7 @@
             this.btnSelectAll.TabIndex = 5;
             this.btnSelectAll.Text = "全選択";
             this.btnSelectAll.UseVisualStyleBackColor = false;
-            this.btnSelectAll.Click += new System.EventHandler(this.btnSelectAll_Click);
+            this.btnSelectAll.Click += new System.EventHandler(this.BtnSelectAll_Click);
             // 
             // ckM_Label11
             // 
@@ -961,7 +961,7 @@
             this.btnF11Show.TabIndex = 6;
             this.btnF11Show.Text = "表示(F11)";
             this.btnF11Show.UseVisualStyleBackColor = false;
-            this.btnF11Show.Click += new System.EventHandler(this.btnF11Show_Click);
+            this.btnF11Show.Click += new System.EventHandler(this.BtnF11Show_Click);
             // 
             // ScPaymentNum
             // 
