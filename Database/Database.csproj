@@ -328,6 +328,7 @@
     <Content Include="StoreProcedure\M_Customer_Select.sql" />
     <Content Include="StoreProcedure\M_Customer_SelectAll.sql" />
     <Content Include="StoreProcedure\M_Customer_UpdateLastPoint.sql" />
+    <Content Include="StoreProcedure\M_DenominationKBN_cboSelect.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_Select.sql" />
     <Content Include="StoreProcedure\M_DenominationKBN_SelectAll.sql" />
     <Content Include="StoreProcedure\M_Ginkou_Delete.sql" />

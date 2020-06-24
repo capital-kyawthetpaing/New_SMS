@@ -63,8 +63,6 @@
             this.chkUnpaid = new CKM_Controls.CKM_CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvPurchaseSearch = new CKM_Controls.CKM_GridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +76,8 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -680,23 +680,6 @@
             this.dgvPurchaseSearch.UseSetting = true;
             this.dgvPurchaseSearch.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPurchaseSearch_CellContentClick);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 220);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1713, 38);
-            this.panel2.TabIndex = 101;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1179, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(534, 38);
-            this.panel3.TabIndex = 0;
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "";
@@ -797,6 +780,23 @@
             this.Column13.HeaderText = "担当スタッフ";
             this.Column13.Name = "Column13";
             this.Column13.Width = 150;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 220);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1713, 38);
+            this.panel2.TabIndex = 101;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(1179, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(534, 38);
+            this.panel3.TabIndex = 0;
             // 
             // ShiireShoukaiShiiresaki
             // 

@@ -191,7 +191,6 @@ namespace NyuukinYoteiHyou
                             previewForm.CrystalReportViewer1.ShowPrintButton = true;
                             previewForm.CrystalReportViewer1.ReportSource = Report;
                             //previewForm.CrystalReportViewer1.Zoom(1);
-                           
                             previewForm.ShowDialog();
                         }
                         else
@@ -338,27 +337,26 @@ namespace NyuukinYoteiHyou
                      ret = sbl.M_Customer_Select(mce);
                     if (ret)
                     {
-                        if (mOldCustomerCD != detailControls[index].Text)
-                        {
-
-                            if (mce.VariousFLG == "1")
-                            {
-                                detailControls[index + 1].Text = mce.CustomerName;
-                                    detailControls[index + 1].Enabled = true;
-
-                            }
-                            else
-                            {
-                               // detailControls[index + 1].Text = mce.CustomerCD;
-                                
-                                //[M_Store_Select]
-                                M_Store_Entity me = new M_Store_Entity
-                                {
-                                    StoreCD = mce.LastSalesStoreCD,
-                                    ChangeDate = mce.LastSalesDate
-                                };
-                            }
-                        }
+                        ScCustomer.LabelText = mce.CustomerName;
+                        //if (mOldCustomerCD != detailControls[index].Text)
+                        //{
+                        //    if (mce.VariousFLG == "1")
+                        //{
+                        //    detailControls[index + 1].Text = mce.CustomerName;
+                        //    detailControls[index + 1].Enabled = true;
+                        //}
+                        //    ScCustomer.LabelText = mce.CustomerName;
+                        //    else
+                        //    {
+                        //       detailControls[index + 1].Text = mce.CustomerCD;
+                        //       [M_Store_Select]
+                        //        M_Store_Entity me = new M_Store_Entity
+                        //        {
+                        //            StoreCD = mce.LastSalesStoreCD,
+                        //            ChangeDate = mce.LastSalesDate
+                        //        };
+                        //    }
+                        //}
                     }
                     else
                     {
@@ -484,7 +482,6 @@ namespace NyuukinYoteiHyou
 
             //初期値セット
             string ymd = mibl.GetDate();
-
             //スタッフマスター(M_Staff)に存在すること
             //[M_Staff]
             M_Staff_Entity mse = new M_Staff_Entity
