@@ -94,7 +94,6 @@ namespace NyuukinYoteiHyou
                 ctl.KeyDown += new System.Windows.Forms.KeyEventHandler(DetailControl_KeyDown);
                 ctl.Enter += new System.EventHandler(DetailControl_Enter);
             }
-
             ckM_RadioButton1.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             ckM_RadioButton2.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
             //ckM_CheckBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(RadioButton_KeyDown);
