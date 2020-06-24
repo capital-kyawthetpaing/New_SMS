@@ -33,6 +33,16 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-        
+
+        public DataTable M_Denomination_cboSelect(M_DenominationKBN_Entity me)
+        {
+            string sp = "M_Denomination_cboSelect";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@SystemKBN", new ValuePair { value1 = SqlDbType.TinyInt, value2 = me.SystemKBN} }
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
