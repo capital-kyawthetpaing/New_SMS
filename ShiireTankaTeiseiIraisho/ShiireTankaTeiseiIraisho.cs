@@ -175,8 +175,10 @@ namespace ShiireTankaTeiseiIraisho
             //以下の条件でデータが存在しなければエラー (Error if record does not exist)Ｅ１３３
             if (dt.Rows.Count == 0)
             {
-                bbl.ShowMessage("E133");
-                previousCtrl.Focus();
+                //bbl.ShowMessage("E133");
+                //previousCtrl.Focus();
+                stbl.ShowMessage("E128");
+                ckM_TextBox1.Focus();
                 return null;
             }
             else
@@ -273,7 +275,7 @@ namespace ShiireTankaTeiseiIraisho
 
                 //Ｑ２０５				
                 if (bbl.ShowMessage("Q205") != DialogResult.Yes)
-                    return;
+                return;
 
                 //EXCEL出力
                 string filePath = "";
