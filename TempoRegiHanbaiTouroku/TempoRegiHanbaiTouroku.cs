@@ -257,6 +257,7 @@ namespace TempoRegiHanbaiTouroku
                         //訂正ボタンの場合
                         //訂正モードとする
                         lblHenpin.Text = "訂正";
+                        lblHenpin.Visible = true;
                         btnHenpin.Visible = false;
                         OperationMode = FrmMainForm.EOperationMode.UPDATE;
                         //各項目の入力は可能
@@ -268,6 +269,7 @@ namespace TempoRegiHanbaiTouroku
                         //取消ボタンの場合
                         //取消モードとする
                         lblHenpin.Text = "取消";
+                        lblHenpin.Visible = true;
                         btnHenpin.Visible = false;
                         OperationMode = FrmMainForm.EOperationMode.DELETE;
                         //各項目の入力は不可
