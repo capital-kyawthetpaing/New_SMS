@@ -1445,13 +1445,14 @@ namespace Search
                     }
                     break;
                 case SearchType.HanyouKeyEnd:
-                    using (Search_Key frmKey = new Search_Key(Value1, Value2, Value3))
+                    using (Search_Key frmKey = new Search_Key(Value1, Value2))
                     {
                         frmKey.ShowDialog();
                         if (!frmKey.flgCancel)
                         {
-                            TxtCode.Text = frmKey.KeyCode;
-                            lblName.Text = frmKey.Char3;
+                            TxtCode.Text = frmKey.Char2;    //補助科目CD
+                            lblName.Text = frmKey.Char3;    //補助科目名
+                            Value3 = frmKey.Char1;  //勘定科目CD
                             CheckBasedFormPanel();//PTK added
                         }
                     }
