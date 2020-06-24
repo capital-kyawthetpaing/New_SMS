@@ -31,6 +31,7 @@ namespace KeihiNyuuryoku
             Load += new System.EventHandler(FormLoadEvent);
             PanelNormal.Enter += PanelNormal_Enter;
             PanelCopy.Enter += PanelCopy_Enter;
+           // dgvKehiNyuuryoku.DataError += dgvKehiNyuuryoku_DataError;
             khnyk_BL = new KeihiNyuuryoku_BL();
         }
 
@@ -54,7 +55,7 @@ namespace KeihiNyuuryoku
             Btn_F7.Text = "行削除(F7)";
             Btn_F8.Text = "行追加(F8)";
             Btn_F9.Text = "検索(F9)";
-            Btn_F10.Text = "複写(F10)";
+            Btn_F10.Text = "行複写(F10)";
             Btn_F11.Text = "印刷(F11)";
             Btn_F11.Text = string.Empty;
            
@@ -76,7 +77,7 @@ namespace KeihiNyuuryoku
             dt.Columns.Add("CostCD", typeof(string));
             dt.Columns.Add("Summary", typeof(string));
             dt.Columns.Add("DepartmentCD", typeof(string));
-            dt.Columns.Add("CostGaku", typeof(string));
+            dt.Columns.Add("CostGaku", typeof(int));
             //dt.Columns.Add("index", typeof(string)); //2020-06-16 ptk
             DataTable dtDepartment = new DataTable();
             dtDepartment = khnyk_BL.SimpleSelect1("38", null, "209");
@@ -450,7 +451,7 @@ namespace KeihiNyuuryoku
                                              "AND (Summary = '' OR Summary IS  NULL) " +
                                              "AND (DepartmentCD = '' OR DepartmentCD IS  NULL) " +
                                              "AND (CostGaku = ''  OR CostGaku IS  NULL)");
-                if(drs.Count() != 300 )
+                if(drs.Count() != dgvKehiNyuuryoku.Rows.Count )
                 {
                     foreach(DataRow r in drs)
                     {
@@ -806,7 +807,7 @@ namespace KeihiNyuuryoku
         {
             try
             {
-                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) < 256 && Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
+                if (Convert.ToInt32(dgvKehiNyuuryoku.CurrentCell.EditedFormattedValue) > 0)
                 {
                     return;
                 }

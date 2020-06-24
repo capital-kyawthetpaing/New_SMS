@@ -257,7 +257,8 @@ namespace TempoRegiHanbaiTouroku
 
         protected override void EndSec()
         {
-            if (btnProcess.Enabled)
+            //if (btnProcess.Enabled)
+            if (btnProcess.Text != "次の販売へ")
                 flgCancel = true;
 
             this.Close();
@@ -430,7 +431,11 @@ namespace TempoRegiHanbaiTouroku
             switch (index + 1)
             {
                 case 2:
-                    Save();
+                    if (btnProcess.Text == "次の販売へ")
+                        //「次の販売へ」を押すと第一画面へ移ります（入力エリアはクリアします）。
+                        this.Close();
+                    else
+                        Save();
                     break;
             }
         }
@@ -573,7 +578,9 @@ namespace TempoRegiHanbaiTouroku
                     btnRyosyusyo.Tag = dse.SalesNO;
 
                     //決定ボタンを押せないようにする
-                    btnProcess.Enabled = false;
+                    //btnProcess.Enabled = false;
+                    btnProcess.Text = "次の販売へ";
+                    btnClose.Enabled = false;
 
                 }
 
@@ -604,7 +611,7 @@ namespace TempoRegiHanbaiTouroku
 
                 string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + dse.StoreCD 
                                     + " " + no + " " + receipte + " 1 " + bbl.GetDate() + " " + reissue;
-                //System.Diagnostics.Process.Start(filePath, cmdLine); 
+                System.Diagnostics.Process.Start(filePath, cmdLine); 
             }
             else
             {
@@ -883,6 +890,8 @@ namespace TempoRegiHanbaiTouroku
                 txtKake.Text = "0";
                 txtMaeuke.Text = "0";
                 lblShiharaiKei.Text = "0";
+                txtAzukari.Text = "0";
+                lblRefund.Text = "0";
 
                 //カード、その他①②の選択をクリア
                 cboDenominationName2.SelectedIndex = -1;

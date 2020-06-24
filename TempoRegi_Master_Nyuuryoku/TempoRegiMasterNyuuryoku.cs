@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,14 +22,14 @@ namespace TempoRegi_Master_Nyuuryoku
     {
         M_StoreBottunDetails_Entity sbgd_e;
         TempoRegiMasterNyuuryoku_BL mnrk_bl;
-        DataTable dtResult,dtSelect,dtCpy,dtTemp1,dtTemp2;
+        DataTable dtResult, dtSelect, dtCpy, dtTemp1, dtTemp2;
         String[] buttonarr = new String[100];
-        string groupno="";
+        string groupno = "";
         string horizontal;
         string vertical;
         string radiovalue = "";
         string BtnName = string.Empty;
-        Button btn1 = null, btn2=null;
+        Button btn1 = null, btn2 = null;
         public TempoRegiMasterNyuuryoku()
         {
             mnrk_bl = new TempoRegiMasterNyuuryoku_BL();
@@ -43,7 +43,7 @@ namespace TempoRegi_Master_Nyuuryoku
             InProgramID = "TempoRegiMasterNyuuryoku";
             StartProgram();
             this.Text = "マスター入力";
-           // SetRequireField();
+            // SetRequireField();
             GridViewDataBind();
             btnProcess.Enabled = false;
             txtButtomNameUp.Focus();
@@ -66,7 +66,7 @@ namespace TempoRegi_Master_Nyuuryoku
 
             }
         }
-        
+
         private void Save()
         {
             if (ErrorCheck() && ButtonNO_Check())
@@ -82,19 +82,20 @@ namespace TempoRegi_Master_Nyuuryoku
                     }
                 }
             }
-        }        
+        }
 
         private bool ButtonNO_Check()
         {
             if (lblGroupNO.Text.Equals("Btn1_No"))
             {
-                MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bbl.ShowMessage("E236");
                 txtButtomNameUp.Focus();
                 return false; ;
             }
             else if (lblNameNO.Text.Equals(""))
             {
-                MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                bbl.ShowMessage("E236");
                 txtCD.Focus();
                 return false;
             }
@@ -118,6 +119,7 @@ namespace TempoRegi_Master_Nyuuryoku
             lblGroupNO.Text = "";
             lblNameNO.Text = "";
             lblSearchName.Text = "";
+            lblAdminNO.Text = "";
             panel2.Refresh();
             for (int k = 1; k < 99; k++)
             {
@@ -140,30 +142,32 @@ namespace TempoRegi_Master_Nyuuryoku
             ClearData();
             Button btn = (Button)sender;
             /// btn.TabIndex.
-            string ctrlName = ((Control)sender).Name;            
+            string ctrlName = ((Control)sender).Name;
             groupno = ctrlName.Substring(10);
             lblGroupNO.Visible = true;
             lblGroupNO.Text = groupno + "番目";
 
-            if(!string.IsNullOrEmpty(btn.Text))
+            if (!string.IsNullOrEmpty(btn.Text))
             {
-                    txtButtomNameUp.Text = btn.Text;
-                    DataRow[] dr = dtTemp1.Select("GroupNO=" + "" + groupno + "");
-                    DataRow[] dr2 = dtTemp2.Select("GroupNO=" + "" + groupno + "");
+                txtButtomNameUp.Text = btn.Text;
+                DataRow[] dr = dtTemp1.Select("GroupNO=" + "" + groupno + "");
+                DataRow[] dr2 = dtTemp2.Select("GroupNO=" + "" + groupno + "");
 
-                    if (dr.Count() > 0)
+                if (dr.Count() > 0)
+                {
+                    radiovalue = dr[0]["MasterKBN"].ToString();
+
+                    if (radiovalue == "1")
                     {
-                        radiovalue = dr[0]["MasterKBN"].ToString();
-
-                        if (radiovalue == "1")
-                        {
-                            RdoJanCD.Checked = true;
-                        }
-                        else
-                        {
-                            RdoCustomerCD.Checked = true;
-                        }
+                        RdoJanCD.Checked = true;
+                        RdoCustomerCD.Enabled = false;
                     }
+                    else
+                    {
+                        RdoCustomerCD.Checked = true;
+                        RdoJanCD.Enabled = true;
+                    }
+                }
 
                 //  DataRow[] dr2 = dtTemp2.Select("Horizontal = " + "'" + horizontal + "'" + " AND Vertical = " + "'" + vertical + "'" + " AND GroupNO = " + "'" + groupno + "'");
 
@@ -176,8 +180,8 @@ namespace TempoRegi_Master_Nyuuryoku
                     vertical = row["Vertical"].ToString();
                     //if (horizontal != "" && vertical != "")
                     //{
-                        btn2 = this.Controls.Find("btnName" + horizontal + vertical, true)[0] as Button;
-                        btn2.Text = row["btndetailBottunName"].ToString();
+                    btn2 = this.Controls.Find("btnName" + horizontal + vertical, true)[0] as Button;
+                    btn2.Text = row["btndetailBottunName"].ToString();
                     //}
                 }
             }
@@ -185,6 +189,7 @@ namespace TempoRegi_Master_Nyuuryoku
             {
                 txtButtomNameUp.Focus();
                 RdoJanCD.Checked = true;
+                RdoCustomerCD.Enabled = true;
             }
         }
         private M_StoreBottunDetails_Entity GetGroupDetailsData()
@@ -192,14 +197,13 @@ namespace TempoRegi_Master_Nyuuryoku
             sbgd_e = new M_StoreBottunDetails_Entity()
             {
                 StoreCD = StoreCD,
-                MasterKBN = RdoJanCD.Checked ? "1" : "2",
+               // MasterKBN = RdoJanCD.Checked ? "1" : "2",
                 dtGroup = dtTemp1,
                 dtGpDetails = dtTemp2,
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
                 PC = InPcID,
-                Key = txtButtomNameUp.Text
-               
+               // Key = txtButtomNameUp.Text
             };
             return sbgd_e;
         }
@@ -218,11 +222,11 @@ namespace TempoRegi_Master_Nyuuryoku
             //if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
             //    return false;
 
-            if(RdoJanCD.Checked)
+            if (RdoJanCD.Checked)
             {
                 DataTable dtJanCD = new DataTable();
-                dtJanCD= SelectSKUData(txtCD.Text);
-                if(dtJanCD.Rows.Count==0)
+                dtJanCD = SelectSKUData(txtCD.Text);
+                if (dtJanCD.Rows.Count == 0)
                 {
                     mnrk_bl.ShowMessage("E101");
                     txtCD.Focus();
@@ -230,7 +234,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 }
             }
 
-            if(RdoCustomerCD.Checked)
+            if (RdoCustomerCD.Checked)
             {
                 DataTable dtCustCD = new DataTable();
                 dtCustCD = SelectCustomerData(txtCD.Text);
@@ -252,11 +256,11 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             List<Button> buttongroup = new List<Button>();
             Button btn = null;
-            dtSelect=dtResult = mnrk_bl.TempoRegiMasterNyuuryoku_Grid_SelectAll(StoreCD);//M_StoreBottunGroup_Select
+            dtSelect = dtResult = mnrk_bl.TempoRegiMasterNyuuryoku_Grid_SelectAll(StoreCD);//M_StoreBottunGroup_Select
             dtCpy = new DataTable();
-            dtCpy = dtSelect.DefaultView.ToTable(true, "ButtomName", "GroupNO","MasterKBN");
+            dtCpy = dtSelect.DefaultView.ToTable(true, "ButtomName", "GroupNO", "MasterKBN");
             dtTemp1 = dtSelect.DefaultView.ToTable(true, "GroupNO", "ButtomName", "MasterKBN");
-            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button");
+            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button","AdminNO","JANCD","CustomerCD");
             RemoveNullColumnFromDataTable(dtTemp2);
             for (int k = 0; k < 100; k++)
             {
@@ -268,29 +272,29 @@ namespace TempoRegi_Master_Nyuuryoku
                 for (int i = 0; i < dtCpy.Rows.Count; i++)
                 {
                     for (int j = 0; j < buttonarr.Length; j++)
-                    {                       
+                    {
                         if (dtCpy.Rows[i]["GroupNO"].ToString() == buttonarr[j])
                         {
                             btn = this.Controls.Find("buttonName" + (j + 1), true)[0] as Button;//buttonName(1,2,3...)coding
                             btn.Text = dtCpy.Rows[i]["ButtomName"].ToString();//firstGridview_Btn Input 
-                        }                    
+                        }
                     }
                 }
             }
 
         }
         public static void RemoveNullColumnFromDataTable(DataTable dt)
-        {           
+        {
             for (int i = dt.Rows.Count - 1; i >= 0; i--)
             {
-                if (dt.Rows[i]["Vertical"] == DBNull.Value &&  (dt.Rows[i]["Horizontal"] == DBNull.Value))
+                if (dt.Rows[i]["Vertical"] == DBNull.Value && (dt.Rows[i]["Horizontal"] == DBNull.Value))
                     dt.Rows[i].Delete();
             }
             dt.AcceptChanges();
         }
         private void btnDetails_Click(object sender, EventArgs e)
-        {     
-          
+        {
+
             Button btn = (Button)sender;
             string ctrlName1 = ((Control)sender).Name;
             horizontal = ctrlName1.Substring(7, ctrlName1.Length - 8);
@@ -298,7 +302,7 @@ namespace TempoRegi_Master_Nyuuryoku
             lblNameNO.Visible = true;
             lblNameNO.Text = string.Empty;
             if (lblGroupNO.Text.Equals("Btn1_No")) return;
-            groupno = lblGroupNO.Text.Replace("番目","");
+            groupno = lblGroupNO.Text.Replace("番目", "");
 
             DataRow[] results = dtTemp2.Select("Horizontal = " + "'" + horizontal + "'" + " AND Vertical = " + "'" + vertical + "'" + " AND GroupNO = " + "'" + groupno + "'");
 
@@ -330,17 +334,16 @@ namespace TempoRegi_Master_Nyuuryoku
                 }
 
                 DisplayName();
-               
+
             }
             else
             {
-                if(vertical.Equals("1"))
-                    lblNameNO.Text=horizontal + "番目の上";
+                if (vertical.Equals("1"))
+                    lblNameNO.Text = horizontal + "番目の上";
                 else
-                    lblNameNO.Text= horizontal + "番目の下";
+                    lblNameNO.Text = horizontal + "番目の下";
 
                 txtCD.Text = string.Empty;
-                //lblBtnName.Text = string.Empty;
                 txtBtnNameDown.Text = string.Empty;
                 lblSearchName.Text = string.Empty;
                 txtCD.Focus();
@@ -349,7 +352,8 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void SearchName_Click(object sender, EventArgs e)
         {
-            SearchData();
+            //SearchData();
+            SearchDate_ByOption();
         }
 
         public DataTable SelectSKUData(string janCD)
@@ -401,10 +405,42 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void txtCD_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode==Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 SearchData();
+                
             }
+        }
+
+        private void SearchDate_ByOption()
+        {
+            string ymd = bbl.GetDate();
+            if (RdoJanCD.Checked)
+            {
+                TempoRegiShouhinKensaku tpoShouhin = new TempoRegiShouhinKensaku(InOperatorCD);
+                tpoShouhin.ShowDialog();
+                if(!string.IsNullOrWhiteSpace(tpoShouhin.JANCD))
+                {
+                    txtCD.Text = tpoShouhin.JANCD;
+                    lblAdminNO.Text = tpoShouhin.AdminNO;
+                    lblSearchName.Text = "名称" + " " + tpoShouhin.SKUName;
+                }
+
+            }
+            else
+            {
+                TempoRegiKaiinKensaku tgkkk = new TempoRegiKaiinKensaku();
+                tgkkk.ShowDialog();
+
+                if (!string.IsNullOrEmpty(tgkkk.CustomerCD))
+                {
+                    txtCD.Text = tgkkk.CustomerCD;
+                    lblSearchName.Text = "名称" + " " + tgkkk.CustomerName;
+                }
+
+            }
+            lblSearchName.Visible = true;
+            txtBtnNameDown.Focus();
         }
 
         private void SearchData()
@@ -419,16 +455,18 @@ namespace TempoRegi_Master_Nyuuryoku
                         if (dtSKU.Rows.Count == 1)
                         {
                             txtCD.Text = dtSKU.Rows[0]["JanCD"].ToString();
-                            lblSearchName.Text = "名称" + " " + dtSKU.Rows[0]["SKUName"].ToString();                           
-                            
+                            lblAdminNO.Text = dtSKU.Rows[0]["AdminNO"].ToString();
+                            lblSearchName.Text = "名称" + " " + dtSKU.Rows[0]["SKUName"].ToString();
+
                         }
                         else
                         {
                             frmSearch_SKU frmsku = new frmSearch_SKU(txtCD.Text, dtSKU);
                             frmsku.ShowDialog();
-                           if(!frmsku.flgCancel)
-                            {                                
-                                lblSearchName.Text = frmsku.SKUName;                                
+                            if (!frmsku.flgCancel)
+                            {
+                                lblAdminNO.Text = frmsku.AdminNO;
+                                lblSearchName.Text = "名称" + " " + frmsku.SKUName;
                             }
 
                         }
@@ -443,40 +481,54 @@ namespace TempoRegi_Master_Nyuuryoku
 
 
                 }
-               else if (RdoCustomerCD.Checked)
+                else if (RdoCustomerCD.Checked)
                 {
                     DataTable dtCusto = SelectCustomerData(txtCD.Text);
                     if (dtCusto.Rows.Count > 0)
                     {
-                        if (dtCusto.Rows.Count == 1)
+                        DataRow[] dr = dtCusto.Select("DeleteFlg=1");
+                        if(dr.Count()==0)
                         {
-                            txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
-                            lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
-                            // lblColorSize.Text = dtSKU.Rows[0]["ColorName"].ToString() + " . " + dtSKU.Rows[0]["ColorName"].ToString();
+                            if (dtCusto.Rows.Count == 1)
+                            {
+                                txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
+                                lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
+                            }
+                            lblSearchName.Visible = true;
+                            lblAdminNO.Text = string.Empty;
+                            txtBtnNameDown.Focus();
                         }
-                        lblSearchName.Visible = true;
-                        txtBtnNameDown.Focus();
+                        else
+                        {
+                            lblSearchName.Text = "";
+                            lblAdminNO.Text = string.Empty;
+                            mnrk_bl.ShowMessage("E119");
+                            txtCD.Focus();
+                        }
+                        
 
                     }
                     else
                     {
                         lblSearchName.Text = "";
+                        lblAdminNO.Text = string.Empty;
                         mnrk_bl.ShowMessage("E101");
                         txtCD.Focus();
                     }
                 }
-                
+
             }
             else
             {
-                lblSearchName.Text = "";
-                //txtBtnNameDown.Focus();
+                lblSearchName.Text =string.Empty;
+                lblAdminNO.Text = string.Empty;
+                txtBtnNameDown.Focus();
             }
         }
 
         private void btn_Confrim2_Click(object sender, EventArgs e)
         {
-           // if (!RequireCheck(new Control[] { txtCD})) return;
+            // if (!RequireCheck(new Control[] { txtCD})) return;
 
             if (ErrorCheck())
             {
@@ -485,7 +537,6 @@ namespace TempoRegi_Master_Nyuuryoku
                 //ButtonNO_Check
                 if (lblNameNO.Text.Equals(""))
                 {
-                    //MessageBox.Show("ボタンをお選択してください！", "確認", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     bbl.ShowMessage("E236");
                     txtCD.Focus();
                     return;
@@ -529,6 +580,9 @@ namespace TempoRegi_Master_Nyuuryoku
                         dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
                         dn["btndetailBottunName"] = txtBtnNameDown.Text;
                         dn["Button"] = txtCD.Text;
+                        dn["AdminNO"] = lblAdminNO.Text;
+                        dn["JANCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
+                        dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
                         dtTemp2.Rows.Add(dn);
                     }
                 }
@@ -536,13 +590,13 @@ namespace TempoRegi_Master_Nyuuryoku
         }
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
-           //if(!RequireCheck(new Control[] { txtButtomNameUp }))
-           // {
-           //     return;
-           // }
+            //if(!RequireCheck(new Control[] { txtButtomNameUp }))
+            // {
+            //     return;
+            // }
             btnProcess.Enabled = true;//Save_Button
-            //return;            
-                      
+                                      //return;            
+
             string NO = string.Empty;
             BtnName = txtButtomNameUp.Text;
             NO = lblGroupNO.Text;
@@ -555,9 +609,9 @@ namespace TempoRegi_Master_Nyuuryoku
                 txtButtomNameUp.Focus();
                 return;
             }
-                
-           
-            if (!string.IsNullOrEmpty(txtButtomNameUp.Text))
+
+
+            if (!string.IsNullOrWhiteSpace(txtButtomNameUp.Text))
             {
                 // int i = dtTemp1.Rows.Count;             
 
@@ -573,7 +627,7 @@ namespace TempoRegi_Master_Nyuuryoku
                         }
                     }
 
-                    btn1 = this.Controls.Find("buttonName" +Convert.ToInt32(groupno), true)[0] as Button;//buttonName(1,2,3...)coding
+                    btn1 = this.Controls.Find("buttonName" + Convert.ToInt32(groupno), true)[0] as Button;//buttonName(1,2,3...)coding
                     btn1.Text = txtButtomNameUp.Text;//firstGridview_Btn Input 
                     var dn = dtTemp1.NewRow();
                     dn["GroupNO"] = groupno;
@@ -587,7 +641,7 @@ namespace TempoRegi_Master_Nyuuryoku
         private void DisplayName()
         {
             DataTable dt = new DataTable();
-            if(RdoJanCD.Checked)
+            if (RdoJanCD.Checked)
             {
                 dt = SelectSKUData(txtCD.Text);
                 if (dt.Rows.Count == 1)
@@ -601,7 +655,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     lblSearchName.Text = string.Empty;
                 }
             }
-            else if(RdoCustomerCD.Checked)
+            else if (RdoCustomerCD.Checked)
             {
                 dt = SelectCustomerData(txtCD.Text);
                 if (dt.Rows.Count == 1)

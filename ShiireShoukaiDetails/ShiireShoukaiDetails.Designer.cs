@@ -36,9 +36,46 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Btn_Display = new CKM_Controls.CKM_Button();
             this.dgv_PurchaseDetails = new CKM_Controls.CKM_GridView();
-            this.txtDisable = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ckM_Label1 = new CKM_Controls.CKM_Label();
+            this.chkNotOK = new CKM_Controls.CKM_CheckBox();
+            this.chkOk = new CKM_Controls.CKM_CheckBox();
+            this.txtItemName = new CKM_Controls.CKM_TextBox();
+            this.lblItemName = new CKM_Controls.CKM_Label();
+            this.ckM_Label11 = new CKM_Controls.CKM_Label();
+            this.ckM_Label10 = new CKM_Controls.CKM_Label();
+            this.ckM_Label9 = new CKM_Controls.CKM_Label();
+            this.txtMakerItemCD = new CKM_Controls.CKM_TextBox();
+            this.lblMakerCD = new CKM_Controls.CKM_Label();
+            this.cboStore = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label7 = new CKM_Controls.CKM_Label();
+            this.ckM_Label6 = new CKM_Controls.CKM_Label();
+            this.scStaffCD = new Search.CKM_SearchControl();
+            this.scMakerCD = new Search.CKM_SearchControl();
+            this.sc_Supplier = new CKM_Controls.CKM_Label();
+            this.lblPayStatus = new CKM_Controls.CKM_Label();
+            this.txtOrderDate2 = new CKM_Controls.CKM_TextBox();
+            this.txtPlanDate2 = new CKM_Controls.CKM_TextBox();
+            this.txtPurchaseDate2 = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label3 = new CKM_Controls.CKM_Label();
+            this.ckM_Label2 = new CKM_Controls.CKM_Label();
+            this.txtOrderDate1 = new CKM_Controls.CKM_TextBox();
+            this.lblOrderDate = new CKM_Controls.CKM_Label();
+            this.txtPlanDate1 = new CKM_Controls.CKM_TextBox();
+            this.lblplanDate = new CKM_Controls.CKM_Label();
+            this.txtPurchaseDate1 = new CKM_Controls.CKM_TextBox();
+            this.lblSupplierDate = new CKM_Controls.CKM_Label();
+            this.scItem = new Search.CKM_SearchControl();
+            this.scSkuCD = new Search.CKM_SearchControl();
+            this.scJanCD = new Search.CKM_SearchControl();
+            this.txtDisable = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SupplierNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,38 +100,6 @@
             this.PaymentPlanDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PayConfirmFinishedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeliveryNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.chkNotOK = new CKM_Controls.CKM_CheckBox();
-            this.chkOk = new CKM_Controls.CKM_CheckBox();
-            this.txtItemName = new CKM_Controls.CKM_TextBox();
-            this.lblItemName = new CKM_Controls.CKM_Label();
-            this.ckM_Label11 = new CKM_Controls.CKM_Label();
-            this.ckM_Label10 = new CKM_Controls.CKM_Label();
-            this.ckM_Label9 = new CKM_Controls.CKM_Label();
-            this.txtMakerItemCD = new CKM_Controls.CKM_TextBox();
-            this.lblMakerCD = new CKM_Controls.CKM_Label();
-            this.cboStore = new CKM_Controls.CKM_ComboBox();
-            this.ckM_Label7 = new CKM_Controls.CKM_Label();
-            this.ckM_Label6 = new CKM_Controls.CKM_Label();
-            this.sc_Supplier = new CKM_Controls.CKM_Label();
-            this.lblPayStatus = new CKM_Controls.CKM_Label();
-            this.txtOrderDate2 = new CKM_Controls.CKM_TextBox();
-            this.txtPlanDate2 = new CKM_Controls.CKM_TextBox();
-            this.txtPurchaseDate2 = new CKM_Controls.CKM_TextBox();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
-            this.ckM_Label2 = new CKM_Controls.CKM_Label();
-            this.txtOrderDate1 = new CKM_Controls.CKM_TextBox();
-            this.lblOrderDate = new CKM_Controls.CKM_Label();
-            this.txtPlanDate1 = new CKM_Controls.CKM_TextBox();
-            this.lblplanDate = new CKM_Controls.CKM_Label();
-            this.txtPurchaseDate1 = new CKM_Controls.CKM_TextBox();
-            this.lblSupplierDate = new CKM_Controls.CKM_Label();
-            this.scStaffCD = new Search.CKM_SearchControl();
-            this.scMakerCD = new Search.CKM_SearchControl();
-            this.scItem = new Search.CKM_SearchControl();
-            this.scSkuCD = new Search.CKM_SearchControl();
-            this.scJanCD = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
             this.PanelSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PurchaseDetails)).BeginInit();
@@ -181,7 +186,7 @@
             this.DeliveryNo});
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(6, 306);
+            this.dgv_PurchaseDetails.Location = new System.Drawing.Point(2, 305);
             this.dgv_PurchaseDetails.Name = "dgv_PurchaseDetails";
             this.dgv_PurchaseDetails.RowHeight_ = 20;
             this.dgv_PurchaseDetails.RowTemplate.Height = 20;
@@ -189,171 +194,6 @@
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;
             this.dgv_PurchaseDetails.UseSetting = true;
-            // 
-            // txtDisable
-            // 
-            this.txtDisable.HeaderText = "";
-            this.txtDisable.Name = "txtDisable";
-            this.txtDisable.ReadOnly = true;
-            // 
-            // SupplierNo
-            // 
-            this.SupplierNo.DataPropertyName = "PurchaseNO";
-            this.SupplierNo.HeaderText = "仕入番号";
-            this.SupplierNo.Name = "SupplierNo";
-            // 
-            // SupplierDate
-            // 
-            this.SupplierDate.DataPropertyName = "PurchaseDate";
-            this.SupplierDate.HeaderText = "仕入日";
-            this.SupplierDate.Name = "SupplierDate";
-            // 
-            // Supplier
-            // 
-            this.Supplier.DataPropertyName = "PurchaseCDName";
-            this.Supplier.HeaderText = "仕入先";
-            this.Supplier.Name = "Supplier";
-            this.Supplier.Width = 250;
-            // 
-            // SKUCD
-            // 
-            this.SKUCD.DataPropertyName = "SKUCD";
-            this.SKUCD.HeaderText = "SKUCD";
-            this.SKUCD.Name = "SKUCD";
-            // 
-            // JANCD
-            // 
-            this.JANCD.DataPropertyName = "JanCD";
-            this.JANCD.HeaderText = "JANCD";
-            this.JANCD.Name = "JANCD";
-            // 
-            // makerCD
-            // 
-            this.makerCD.DataPropertyName = "ItemName";
-            this.makerCD.HeaderText = "メーカー商品CD";
-            this.makerCD.Name = "makerCD";
-            this.makerCD.Width = 150;
-            // 
-            // ItemName
-            // 
-            this.ItemName.DataPropertyName = "ItemName";
-            this.ItemName.HeaderText = "商品名";
-            this.ItemName.Name = "ItemName";
-            this.ItemName.Width = 250;
-            // 
-            // ColorSize
-            // 
-            this.ColorSize.DataPropertyName = "ColorSize";
-            this.ColorSize.HeaderText = "カラー・サイズ";
-            this.ColorSize.Name = "ColorSize";
-            // 
-            // Remark1
-            // 
-            this.Remark1.DataPropertyName = "Remark";
-            this.Remark1.HeaderText = "備考";
-            this.Remark1.Name = "Remark1";
-            // 
-            // ParchaseCount
-            // 
-            this.ParchaseCount.DataPropertyName = "PurchaseSu";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ParchaseCount.HeaderText = "仕入数";
-            this.ParchaseCount.Name = "ParchaseCount";
-            // 
-            // PurchaseUnitPrice
-            // 
-            this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle4;
-            this.PurchaseUnitPrice.HeaderText = "仕入単価";
-            this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
-            // 
-            // ParchaseAmount
-            // 
-            this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ParchaseAmount.HeaderText = "仕入額";
-            this.ParchaseAmount.Name = "ParchaseAmount";
-            // 
-            // OrderCount1
-            // 
-            this.OrderCount1.DataPropertyName = "OrderSu";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle6;
-            this.OrderCount1.HeaderText = "発注数";
-            this.OrderCount1.Name = "OrderCount1";
-            // 
-            // OrderUnitPrice1
-            // 
-            this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle7;
-            this.OrderUnitPrice1.HeaderText = "発注単価";
-            this.OrderUnitPrice1.Name = "OrderUnitPrice1";
-            // 
-            // OrderAmount1
-            // 
-            this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.OrderAmount1.HeaderText = "発注額";
-            this.OrderAmount1.Name = "OrderAmount1";
-            // 
-            // OrderDate1
-            // 
-            this.OrderDate1.DataPropertyName = "OrderDate";
-            this.OrderDate1.HeaderText = "発注日";
-            this.OrderDate1.Name = "OrderDate1";
-            // 
-            // OrderNumber
-            // 
-            this.OrderNumber.DataPropertyName = "OrderNO";
-            this.OrderNumber.HeaderText = "発注番号";
-            this.OrderNumber.Name = "OrderNumber";
-            // 
-            // ArrivalPlanDate
-            // 
-            this.ArrivalPlanDate.DataPropertyName = "ArrivePlanDate";
-            this.ArrivalPlanDate.HeaderText = "入荷日";
-            this.ArrivalPlanDate.Name = "ArrivalPlanDate";
-            // 
-            // DestinationName
-            // 
-            this.DestinationName.DataPropertyName = "DestinationName";
-            this.DestinationName.HeaderText = "納入先";
-            this.DestinationName.Name = "DestinationName";
-            // 
-            // Stroe
-            // 
-            this.Stroe.DataPropertyName = "StoreName";
-            this.Stroe.HeaderText = "店舗";
-            this.Stroe.Name = "Stroe";
-            // 
-            // StaffOperator
-            // 
-            this.StaffOperator.DataPropertyName = "StaffName";
-            this.StaffOperator.HeaderText = "担当スタッフ";
-            this.StaffOperator.Name = "StaffOperator";
-            // 
-            // PaymentPlanDate
-            // 
-            this.PaymentPlanDate.DataPropertyName = "PaymentPlanDate";
-            this.PaymentPlanDate.HeaderText = "支払予定日";
-            this.PaymentPlanDate.Name = "PaymentPlanDate";
-            // 
-            // PayConfirmFinishedDate
-            // 
-            this.PayConfirmFinishedDate.DataPropertyName = "PayConfirmFinishedDate";
-            this.PayConfirmFinishedDate.HeaderText = "支払日";
-            this.PayConfirmFinishedDate.Name = "PayConfirmFinishedDate";
-            // 
-            // DeliveryNo
-            // 
-            this.DeliveryNo.DataPropertyName = "DeliveryNo";
-            this.DeliveryNo.HeaderText = "納品書番号";
-            this.DeliveryNo.Name = "DeliveryNo";
             // 
             // panel1
             // 
@@ -620,6 +460,65 @@
             this.ckM_Label6.Text = "担当スタッフ";
             this.ckM_Label6.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // scStaffCD
+            // 
+            this.scStaffCD.AutoSize = true;
+            this.scStaffCD.ChangeDate = "";
+            this.scStaffCD.ChangeDateWidth = 100;
+            this.scStaffCD.Code = "";
+            this.scStaffCD.CodeWidth = 70;
+            this.scStaffCD.CodeWidth1 = 70;
+            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scStaffCD.DataCheck = false;
+            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scStaffCD.IsCopy = false;
+            this.scStaffCD.LabelText = "";
+            this.scStaffCD.LabelVisible = true;
+            this.scStaffCD.Location = new System.Drawing.Point(484, 32);
+            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scStaffCD.Name = "scStaffCD";
+            this.scStaffCD.NameWidth = 250;
+            this.scStaffCD.SearchEnable = true;
+            this.scStaffCD.Size = new System.Drawing.Size(354, 27);
+            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
+            this.scStaffCD.TabIndex = 15;
+            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scStaffCD.UseChangeDate = false;
+            this.scStaffCD.Value1 = null;
+            this.scStaffCD.Value2 = null;
+            this.scStaffCD.Value3 = null;
+            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
+            // 
+            // scMakerCD
+            // 
+            this.scMakerCD.AutoSize = true;
+            this.scMakerCD.ChangeDate = "";
+            this.scMakerCD.ChangeDateWidth = 100;
+            this.scMakerCD.Code = "";
+            this.scMakerCD.CodeWidth = 100;
+            this.scMakerCD.CodeWidth1 = 100;
+            this.scMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.scMakerCD.DataCheck = false;
+            this.scMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scMakerCD.IsCopy = false;
+            this.scMakerCD.LabelText = "";
+            this.scMakerCD.LabelVisible = true;
+            this.scMakerCD.Location = new System.Drawing.Point(484, 7);
+            this.scMakerCD.Margin = new System.Windows.Forms.Padding(0);
+            this.scMakerCD.Name = "scMakerCD";
+            this.scMakerCD.NameWidth = 310;
+            this.scMakerCD.SearchEnable = true;
+            this.scMakerCD.Size = new System.Drawing.Size(444, 27);
+            this.scMakerCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
+            this.scMakerCD.TabIndex = 13;
+            this.scMakerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.scMakerCD.UseChangeDate = false;
+            this.scMakerCD.Value1 = null;
+            this.scMakerCD.Value2 = null;
+            this.scMakerCD.Value3 = null;
+            this.scMakerCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sc_SupplierName_CodeKeyDownEvent);
+            this.scMakerCD.Enter += new System.EventHandler(this.scMakerCD_Enter);
             // 
             // sc_Supplier
             // 
@@ -905,65 +804,6 @@
             this.lblSupplierDate.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.lblSupplierDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // scStaffCD
-            // 
-            this.scStaffCD.AutoSize = true;
-            this.scStaffCD.ChangeDate = "";
-            this.scStaffCD.ChangeDateWidth = 100;
-            this.scStaffCD.Code = "";
-            this.scStaffCD.CodeWidth = 70;
-            this.scStaffCD.CodeWidth1 = 70;
-            this.scStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scStaffCD.DataCheck = false;
-            this.scStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scStaffCD.IsCopy = false;
-            this.scStaffCD.LabelText = "";
-            this.scStaffCD.LabelVisible = true;
-            this.scStaffCD.Location = new System.Drawing.Point(484, 32);
-            this.scStaffCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scStaffCD.Name = "scStaffCD";
-            this.scStaffCD.NameWidth = 250;
-            this.scStaffCD.SearchEnable = true;
-            this.scStaffCD.Size = new System.Drawing.Size(354, 27);
-            this.scStaffCD.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
-            this.scStaffCD.TabIndex = 15;
-            this.scStaffCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scStaffCD.UseChangeDate = false;
-            this.scStaffCD.Value1 = null;
-            this.scStaffCD.Value2 = null;
-            this.scStaffCD.Value3 = null;
-            this.scStaffCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.scStaffCD_CodeKeyDownEvent);
-            // 
-            // scMakerCD
-            // 
-            this.scMakerCD.AutoSize = true;
-            this.scMakerCD.ChangeDate = "";
-            this.scMakerCD.ChangeDateWidth = 100;
-            this.scMakerCD.Code = "";
-            this.scMakerCD.CodeWidth = 100;
-            this.scMakerCD.CodeWidth1 = 100;
-            this.scMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.scMakerCD.DataCheck = false;
-            this.scMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.scMakerCD.IsCopy = false;
-            this.scMakerCD.LabelText = "";
-            this.scMakerCD.LabelVisible = true;
-            this.scMakerCD.Location = new System.Drawing.Point(484, 7);
-            this.scMakerCD.Margin = new System.Windows.Forms.Padding(0);
-            this.scMakerCD.Name = "scMakerCD";
-            this.scMakerCD.NameWidth = 310;
-            this.scMakerCD.SearchEnable = true;
-            this.scMakerCD.Size = new System.Drawing.Size(444, 27);
-            this.scMakerCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
-            this.scMakerCD.TabIndex = 13;
-            this.scMakerCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
-            this.scMakerCD.UseChangeDate = false;
-            this.scMakerCD.Value1 = null;
-            this.scMakerCD.Value2 = null;
-            this.scMakerCD.Value3 = null;
-            this.scMakerCD.CodeKeyDownEvent += new Search.CKM_SearchControl.KeyEventHandler(this.sc_SupplierName_CodeKeyDownEvent);
-            this.scMakerCD.Enter += new System.EventHandler(this.scMakerCD_Enter);
-            // 
             // scItem
             // 
             this.scItem.AutoSize = true;
@@ -1048,6 +888,183 @@
             this.scJanCD.Value2 = null;
             this.scJanCD.Value3 = null;
             // 
+            // txtDisable
+            // 
+            this.txtDisable.HeaderText = "";
+            this.txtDisable.Name = "txtDisable";
+            this.txtDisable.ReadOnly = true;
+            this.txtDisable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.txtDisable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // SupplierNo
+            // 
+            this.SupplierNo.DataPropertyName = "PurchaseNO";
+            this.SupplierNo.HeaderText = "仕入番号";
+            this.SupplierNo.Name = "SupplierNo";
+            // 
+            // SupplierDate
+            // 
+            this.SupplierDate.DataPropertyName = "PurchaseDate";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.SupplierDate.DefaultCellStyle = dataGridViewCellStyle3;
+            this.SupplierDate.HeaderText = "    仕入日";
+            this.SupplierDate.Name = "SupplierDate";
+            // 
+            // Supplier
+            // 
+            this.Supplier.DataPropertyName = "PurchaseCDName";
+            this.Supplier.HeaderText = "仕入先";
+            this.Supplier.Name = "Supplier";
+            this.Supplier.Width = 250;
+            // 
+            // SKUCD
+            // 
+            this.SKUCD.DataPropertyName = "SKUCD";
+            this.SKUCD.HeaderText = "SKUCD";
+            this.SKUCD.Name = "SKUCD";
+            // 
+            // JANCD
+            // 
+            this.JANCD.DataPropertyName = "JanCD";
+            this.JANCD.HeaderText = "JANCD";
+            this.JANCD.Name = "JANCD";
+            // 
+            // makerCD
+            // 
+            this.makerCD.DataPropertyName = "ItemName";
+            this.makerCD.HeaderText = "メーカー商品CD";
+            this.makerCD.Name = "makerCD";
+            this.makerCD.Width = 150;
+            // 
+            // ItemName
+            // 
+            this.ItemName.DataPropertyName = "ItemName";
+            this.ItemName.HeaderText = "商品名";
+            this.ItemName.Name = "ItemName";
+            this.ItemName.Width = 250;
+            // 
+            // ColorSize
+            // 
+            this.ColorSize.DataPropertyName = "ColorSize";
+            this.ColorSize.HeaderText = "カラー・サイズ";
+            this.ColorSize.Name = "ColorSize";
+            // 
+            // Remark1
+            // 
+            this.Remark1.DataPropertyName = "Remark";
+            this.Remark1.HeaderText = "備考";
+            this.Remark1.Name = "Remark1";
+            // 
+            // ParchaseCount
+            // 
+            this.ParchaseCount.DataPropertyName = "PurchaseSu";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseCount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ParchaseCount.HeaderText = "仕入数";
+            this.ParchaseCount.Name = "ParchaseCount";
+            // 
+            // PurchaseUnitPrice
+            // 
+            this.PurchaseUnitPrice.DataPropertyName = "PurchaserUnitPrice";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.PurchaseUnitPrice.DefaultCellStyle = dataGridViewCellStyle5;
+            this.PurchaseUnitPrice.HeaderText = "仕入単価";
+            this.PurchaseUnitPrice.Name = "PurchaseUnitPrice";
+            // 
+            // ParchaseAmount
+            // 
+            this.ParchaseAmount.DataPropertyName = "PurchaseGaku";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ParchaseAmount.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ParchaseAmount.HeaderText = "仕入額";
+            this.ParchaseAmount.Name = "ParchaseAmount";
+            // 
+            // OrderCount1
+            // 
+            this.OrderCount1.DataPropertyName = "OrderSu";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderCount1.DefaultCellStyle = dataGridViewCellStyle7;
+            this.OrderCount1.HeaderText = "発注数";
+            this.OrderCount1.Name = "OrderCount1";
+            // 
+            // OrderUnitPrice1
+            // 
+            this.OrderUnitPrice1.DataPropertyName = "OrderUnitPrice";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderUnitPrice1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.OrderUnitPrice1.HeaderText = "発注単価";
+            this.OrderUnitPrice1.Name = "OrderUnitPrice1";
+            // 
+            // OrderAmount1
+            // 
+            this.OrderAmount1.DataPropertyName = "OrderHontaiGaku";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrderAmount1.DefaultCellStyle = dataGridViewCellStyle9;
+            this.OrderAmount1.HeaderText = "発注額";
+            this.OrderAmount1.Name = "OrderAmount1";
+            // 
+            // OrderDate1
+            // 
+            this.OrderDate1.DataPropertyName = "OrderDate";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.OrderDate1.DefaultCellStyle = dataGridViewCellStyle10;
+            this.OrderDate1.HeaderText = "    発注日";
+            this.OrderDate1.Name = "OrderDate1";
+            // 
+            // OrderNumber
+            // 
+            this.OrderNumber.DataPropertyName = "OrderNO";
+            this.OrderNumber.HeaderText = "発注番号";
+            this.OrderNumber.Name = "OrderNumber";
+            // 
+            // ArrivalPlanDate
+            // 
+            this.ArrivalPlanDate.DataPropertyName = "ArrivePlanDate";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ArrivalPlanDate.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ArrivalPlanDate.HeaderText = "   入荷日";
+            this.ArrivalPlanDate.Name = "ArrivalPlanDate";
+            // 
+            // DestinationName
+            // 
+            this.DestinationName.DataPropertyName = "DestinationName";
+            this.DestinationName.HeaderText = "納入先";
+            this.DestinationName.Name = "DestinationName";
+            // 
+            // Stroe
+            // 
+            this.Stroe.DataPropertyName = "StoreName";
+            this.Stroe.HeaderText = "店舗";
+            this.Stroe.Name = "Stroe";
+            // 
+            // StaffOperator
+            // 
+            this.StaffOperator.DataPropertyName = "StaffName";
+            this.StaffOperator.HeaderText = "担当スタッフ";
+            this.StaffOperator.Name = "StaffOperator";
+            // 
+            // PaymentPlanDate
+            // 
+            this.PaymentPlanDate.DataPropertyName = "PaymentPlanDate";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PaymentPlanDate.DefaultCellStyle = dataGridViewCellStyle12;
+            this.PaymentPlanDate.HeaderText = "   支払予定日";
+            this.PaymentPlanDate.Name = "PaymentPlanDate";
+            // 
+            // PayConfirmFinishedDate
+            // 
+            this.PayConfirmFinishedDate.DataPropertyName = "PayConfirmFinishedDate";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.PayConfirmFinishedDate.DefaultCellStyle = dataGridViewCellStyle13;
+            this.PayConfirmFinishedDate.HeaderText = "   支払日";
+            this.PayConfirmFinishedDate.Name = "PayConfirmFinishedDate";
+            // 
+            // DeliveryNo
+            // 
+            this.DeliveryNo.DataPropertyName = "DeliveryNo";
+            this.DeliveryNo.HeaderText = "納品書番号";
+            this.DeliveryNo.Name = "DeliveryNo";
+            // 
             // ShiireShoukaiDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1108,7 +1125,7 @@
         private CKM_Controls.CKM_Label lblplanDate;
         private CKM_Controls.CKM_TextBox txtPurchaseDate1;
         private CKM_Controls.CKM_Label lblSupplierDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn txtDisable;
+        private System.Windows.Forms.DataGridViewButtonColumn txtDisable;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;

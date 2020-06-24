@@ -255,6 +255,11 @@ namespace ZaikoKanriHyou
                         txtTargetDate.Focus();
                     }
                 }
+                else
+                {
+                    zkhbl.ShowMessage("E128");
+                    txtTargetDate.Focus();
+                }
             }
         }
 

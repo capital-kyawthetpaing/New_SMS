@@ -760,6 +760,8 @@ namespace CKM_Controls
                             return false;
                     case Type.Time:
                         return TimeCheck();
+                    case Type.YearMonth:
+                        return YearMonthCheck();
 
                 }
             }

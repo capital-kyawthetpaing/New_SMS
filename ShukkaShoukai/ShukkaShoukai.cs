@@ -200,39 +200,43 @@ namespace ShukkaShoukai
                 return false;
             }
 
-            dje.JuchuuNO = SC_Order.TxtCode.Text;
-            DataTable dtJuChuu = new DataTable();
-            dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
-            if (dtJuChuu.Rows.Count == 0)
+            if(!string.IsNullOrWhiteSpace(SC_Order.TxtCode.Text))
             {
-                skskbl.ShowMessage("E138");
-                SC_Order.Focus();
-                return false;
-            }
-            else
-            {
-                if (!string.IsNullOrWhiteSpace(dtJuChuu.Rows[0]["DeleteDateTime"].ToString()))
+                dje.JuchuuNO = SC_Order.TxtCode.Text;
+                DataTable dtJuChuu = new DataTable();
+                dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
+                if (dtJuChuu.Rows.Count == 0)
                 {
-                    skskbl.ShowMessage("E140");
+                    skskbl.ShowMessage("E138");
                     SC_Order.Focus();
                     return false;
                 }
                 else
                 {
-                    msae.StoreCD = dtJuChuu.Rows[0]["StoreCD"].ToString();
-                    msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
-                    msae.ChangeDate = StoreAuthorizationsChangeDate;
-                    //msae.ProgramID = "0";
-                    DataTable dtAuthorization = new DataTable();
-                    dtAuthorization = skskbl.M_StoreAuthorizations_Select(msae);
-                    if (dtAuthorization.Rows.Count == 0)
+                    if (!string.IsNullOrWhiteSpace(dtJuChuu.Rows[0]["DeleteDateTime"].ToString()))
                     {
-                        skskbl.ShowMessage("E139");
+                        skskbl.ShowMessage("E140");
                         SC_Order.Focus();
                         return false;
                     }
+                    else
+                    {
+                        msae.StoreCD = dtJuChuu.Rows[0]["StoreCD"].ToString();
+                        msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+                        msae.ChangeDate = StoreAuthorizationsChangeDate;
+                        //msae.ProgramID = "0";
+                        DataTable dtAuthorization = new DataTable();
+                        dtAuthorization = skskbl.M_StoreAuthorizations_Select(msae);
+                        if (dtAuthorization.Rows.Count == 0)
+                        {
+                            skskbl.ShowMessage("E139");
+                            SC_Order.Focus();
+                            return false;
+                        }
+                    }
                 }
             }
+            
 
             if (!chkAlready.Checked && !chkNot.Checked)
             {
@@ -315,7 +319,16 @@ namespace ShukkaShoukai
                 };
 
                 dtSearch = skskbl.D_Shipping_Select(mshe, dsde, die);
-                dgvShukkaShoukai.DataSource = dtSearch;
+                if(dtSearch.Rows.Count == 0)
+                {
+                    skskbl.ShowMessage("E128");
+                    cboWarehouse.Focus();
+                }
+                else
+                {
+                    dgvShukkaShoukai.DataSource = dtSearch;
+                }
+               
             }
         }
         private void btnDisplay_Click(object sender, EventArgs e)
@@ -331,6 +344,30 @@ namespace ShukkaShoukai
         {
             if (ErrorCheck())
             {
+                mshe = new D_Shipping_Entity
+                {
+                    SoukoCD = cboWarehouse.SelectedValue.ToString(),
+                    ShippingDateFrom = txtShippingStartDate.Text,
+                    ShippingDateTo = txtShippingEndDate.Text,
+                    CarrierCD = cboShipping.SelectedValue.ToString(),
+                    ShippingKBN = CheckValue1(),
+                    InvoiceNO = CheckValue2(),
+                };
+
+                dsde = new D_ShippingDetails_Entity
+                {
+                    Number = SC_Order.TxtCode.Text,
+                    SKUCD = Sc_SKUCD.TxtCode.Text,
+                    JanCD = SC_JanCD.TxtCode.Text,
+                    ItemCD = Sc_Item.TxtCode.Text,
+                };
+
+                die = new D_Instruction_Entity
+                {
+                    DeliverySoukoCD = cboDestinationWarehouse.SelectedValue.ToString(),
+                };
+
+                dtSearch = skskbl.D_Shipping_Select(mshe, dsde, die);
                 if (dtSearch.Rows.Count > 0)
                 {
                     DataTable dtExport = dtSearch;
@@ -426,36 +463,40 @@ namespace ShukkaShoukai
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dje.JuchuuNO = SC_Order.TxtCode.Text;
-                DataTable dtJuChuu = new DataTable();
-                dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
-                if (dtJuChuu.Rows.Count == 0)
-                {
-                    skskbl.ShowMessage("E138");
-                    SC_Order.Focus();
-                }
-                else
-                {
-                    if (!string.IsNullOrWhiteSpace(dtJuChuu.Rows[0]["DeleteDateTime"].ToString()))
+                //if(!string.IsNullOrWhiteSpace(SC_Order.TxtCode.Text))
+                //{
+                    dje.JuchuuNO = SC_Order.TxtCode.Text;
+                    DataTable dtJuChuu = new DataTable();
+                    dtJuChuu = skskbl.D_Juchuu_DataSelect_ForShukkaShoukai(dje);
+                    if (dtJuChuu.Rows.Count == 0)
                     {
-                        skskbl.ShowMessage("E140");
+                        skskbl.ShowMessage("E138");
                         SC_Order.Focus();
                     }
                     else
                     {
-                        msae.StoreCD = dtJuChuu.Rows[0]["StoreCD"].ToString();
-                        msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
-                        msae.ChangeDate = StoreAuthorizationsChangeDate;
-                        //msae.ProgramID = "0";
-                        DataTable dtAuthorization = new DataTable();
-                        dtAuthorization = skskbl.M_StoreAuthorizations_Select(msae);
-                        if (dtAuthorization.Rows.Count == 0)
+                        if (!string.IsNullOrWhiteSpace(dtJuChuu.Rows[0]["DeleteDateTime"].ToString()))
                         {
-                            skskbl.ShowMessage("E139");
+                            skskbl.ShowMessage("E140");
                             SC_Order.Focus();
                         }
+                        else
+                        {
+                            msae.StoreCD = dtJuChuu.Rows[0]["StoreCD"].ToString();
+                            msae.StoreAuthorizationsCD = StoreAuthorizationsCD;
+                            msae.ChangeDate = StoreAuthorizationsChangeDate;
+                            //msae.ProgramID = "0";
+                            DataTable dtAuthorization = new DataTable();
+                            dtAuthorization = skskbl.M_StoreAuthorizations_Select(msae);
+                            if (dtAuthorization.Rows.Count == 0)
+                            {
+                                skskbl.ShowMessage("E139");
+                                SC_Order.Focus();
+                            }
+                        }
                     }
-                }
+                //}
+                //cboDestinationWarehouse.Focus();
             }
         }
         #endregion

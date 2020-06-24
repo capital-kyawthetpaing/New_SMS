@@ -134,6 +134,9 @@ namespace SiharaiTouroku
                 SC_HanyouKeyStart2.LabelText = tblROWS[0]["start2"].ToString();
                 SC_HanyouKeyEnd2.TxtCode.Text = tblROWS[0]["SubAccount2"].ToString();
                 SC_HanyouKeyEnd2.LabelText = tblROWS[0]["end2label"].ToString();
+
+                SC_HanyouKeyEnd1.Value3 = SC_HanyouKeyStart1.TxtCode.Text;
+                SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
             }
         }
 
@@ -157,29 +160,28 @@ namespace SiharaiTouroku
 
         private bool CheckRequireField()
         {
-            if (bbl.Z_Set(txtTransferAmount.Text) > 0)
+            //振込額＜＞0の場合、入力必須(Entry required)
+            if (bbl.Z_Set(txtTransferAmount.Text) != 0)
             {
                 if (!RequireCheck(new Control[] { SC_BankCD.TxtCode, SC_BranchCD.TxtCode, txtKouzaKBN, txtAccNo, txtMeigi , txtFeeKBN , txtAmount }))
                     return false;
             }
-
-            if(bbl.Z_Set(txtBill.Text) > 0)
+            if(bbl.Z_Set(txtBill.Text) != 0)
             {
                 if (!RequireCheck(new Control[] { txtBillNo, txtBillDate }))
                     return false;
             }
-
-            if(bbl.Z_Set(txtElectronicBone.Text) > 0)
+            if(bbl.Z_Set(txtElectronicBone.Text) != 0)
             {
                 if (!RequireCheck(new Control[] { txtElectronicRecordNo, txtSettlementDate2 }))
                     return false;
             }
-            if(bbl.Z_Set(txtOther1.Text)>0)
+            if(bbl.Z_Set(txtOther1.Text) != 0)
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart1.TxtCode, SC_HanyouKeyEnd1.TxtCode }))
                     return false;
             }
-            if (bbl.Z_Set(txtOther2.Text) > 0)
+            if (bbl.Z_Set(txtOther2.Text) != 0)
             {
                 if (!RequireCheck(new Control[] { SC_HanyouKeyStart2.TxtCode, SC_HanyouKeyEnd2.TxtCode }))
                     return false;
@@ -282,12 +284,19 @@ namespace SiharaiTouroku
 
             if (!string.IsNullOrWhiteSpace(sc.TxtCode.Text))
             {
-                if (!sc.IsExists(2))
+                if(!sc.SelectData())
                 {
                     bbl.ShowMessage("E101");
                     sc.SetFocus(1);
                     return false;
                 }
+
+                //if (!sc.IsExists(2))
+                //{
+                //    bbl.ShowMessage("E101");
+                //    sc.SetFocus(1);
+                //    return false;
+                //}
             }
 
             return true;
@@ -394,18 +403,20 @@ namespace SiharaiTouroku
 
             tblROWS[0]["OtherGaku1"] = bbl.Z_Set(txtOther1.Text);
             tblROWS[0]["Account1"] = SC_HanyouKeyStart1.TxtCode.Text;
-            //tblROWS[0]["start1"] = SC_HanyouKeyStart1.LabelText;
+            tblROWS[0]["start1"] = SC_HanyouKeyStart1.LabelText;
             tblROWS[0]["SubAccount1"] = SC_HanyouKeyEnd1.TxtCode.Text;
-            //tblROWS[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
+            tblROWS[0]["end1label"] = SC_HanyouKeyEnd1.LabelText;
 
             tblROWS[0]["OtherGaku2"] = bbl.Z_Set(txtOther2.Text);
             tblROWS[0]["Account2"] = SC_HanyouKeyStart2.TxtCode.Text;
-            //tblROWS[0]["start2"] = SC_HanyouKeyStart2.LabelText;
+            tblROWS[0]["start2"] = SC_HanyouKeyStart2.LabelText;
             tblROWS[0]["SubAccount2"] = SC_HanyouKeyEnd2.TxtCode.Text;
-            //tblROWS[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
+            tblROWS[0]["end2label"] = SC_HanyouKeyEnd2.LabelText;
             //dtGdv.AcceptChanges();
             //return dtGdv;
             tblROWS[0]["PayGaku"] = bbl.Z_Set(lblPayGaku.Text);
+
+            tblROWS[0]["Gaku"] = bbl.Z_Set(txtCash.Text) + bbl.Z_Set(txtBill.Text) + bbl.Z_Set(txtElectronicBone.Text) + bbl.Z_Set(txtOffsetGaku.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text);
             tblROWS[0]["PayPlan"] = bbl.Z_Set(lblUnpaidAmount.Text);   //未支払額＝支払予定-支払済
 
         }
@@ -501,7 +512,7 @@ namespace SiharaiTouroku
         }
         private void SC_HanyouKeyStart2_Leave(object sender, EventArgs e)
         {
-            SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
+            SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.TxtCode.Text;
         }
         #region  KeyDown event
 
@@ -817,7 +828,8 @@ namespace SiharaiTouroku
 
         private void dgvSearchPayment_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-          
+
+            LabelDataBind();
         }
 
         private void dgvSearchPayment_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
@@ -837,25 +849,41 @@ namespace SiharaiTouroku
                             e.Cancel = true;
                             return;
                         }
-                        else if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                        else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) > 0)
                         {
-                            //未支払額＝支払予定額―支払済額―今回支払額をセット。("未支払額" = "支払予定額"-"支払済額"-"今回支払額" Set the current payment amount.)
-                            bbl.ShowMessage("E143", "未支払額", "大きい");
-                            e.Cancel = true;
-                            return;
+                            if (bbl.Z_Set(inputText) > bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                            {
+                                bbl.ShowMessage("E143", "未支払額", "大きい");
+                                e.Cancel = true;
+                                return;
+                            }
+                            else if (bbl.Z_Set(inputText) < 0)
+                            {
+                                bbl.ShowMessage("E143", "0", "小さい");
+                                e.Cancel = true;
+                                return;
+                            }
                         }
-                        else if (bbl.Z_Set(inputText) < 0)
+                        else if (bbl.Z_Set(row.Cells["colPayPlanGaku"].Value)< 0)
                         {
-                            bbl.ShowMessage("E143", "0", "小さい");
-                            e.Cancel = true;
-                            return;
+                            //今回支払額＜未支払額（支払予定額－支払済額）の場合、Error																					
+                            if (bbl.Z_Set(inputText) < bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value))
+                            {
+                                bbl.ShowMessage("E143", "未支払額", "小さい");
+                                e.Cancel = true;
+                                return;
+                            }
+                            else if (bbl.Z_Set(inputText) > 0)
+                            {
+                                bbl.ShowMessage("E241");
+                                e.Cancel = true;
+                                return;
+                            }
                         }
-                        else
-                        {
-                            row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value) - bbl.Z_Set(inputText);
-                            row.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(inputText);
-                        }
-                        LabelDataBind();
+                       //未支払額＝支払予定額―支払済額―今回支払額をセット。("未支払額" = "支払予定額"-"支払済額"-"今回支払額" Set the current payment amount.)
+                        row.Cells["colUnpaidAmount2"].Value = bbl.Z_Set(row.Cells["colPayPlanGaku"].Value) - bbl.Z_Set(row.Cells["colPayConfirmGaku"].Value) - bbl.Z_Set(inputText);
+                        row.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(inputText);
+                       
                     }
                 }
             }

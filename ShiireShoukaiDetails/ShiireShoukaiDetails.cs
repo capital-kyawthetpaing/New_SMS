@@ -168,7 +168,6 @@ namespace ShiireShoukaiDetails
                     {
                         ExportCSV();
                     }
-                       
                     break;
                 case 11:                    
                     F11();
@@ -403,12 +402,12 @@ namespace ShiireShoukaiDetails
                 return false;
             }
 
-            //if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
-            //{
-            //    bbl.ShowMessage("E141");
-            //    cboStore.Focus();
-            //    return false;
-            //}
+            if (!base.CheckAvailableStores(cboStore.SelectedValue.ToString()))
+            {
+                bbl.ShowMessage("E141");
+                cboStore.Focus();
+                return false;
+            }
             return true;
         }
 
