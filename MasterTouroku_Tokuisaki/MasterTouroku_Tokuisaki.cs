@@ -178,7 +178,7 @@ namespace MasterTouroku_Tokuisaki
             DenominationKBN_BL dbl = new DenominationKBN_BL();
             M_DenominationKBN_Entity me = new M_DenominationKBN_Entity();
 
-            DataTable dt = dbl.BindKbn(me, kbn);
+            DataTable dt = dbl.M_Denomination_cboSelect(me, kbn);
             BindCombo(combo, "DenominationCD", "DenominationName", dt);         
         }
 
