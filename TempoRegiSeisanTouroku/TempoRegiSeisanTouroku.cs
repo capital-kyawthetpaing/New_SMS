@@ -270,21 +270,47 @@ namespace TempoRegiSeisanTouroku
             dtsale = seisanbl.D_Sale_SelectForSeisan(dse);
             if(dtsale .Rows.Count > 0)
             {
-                txtSlipsNum.Text = dtsale.Rows[0]["SlipNum"].ToString();
+                
+                var stringArr = dtsale.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+                for(int i = 0; i<stringArr.Length; i++)
+                {
+                    stringArr[i] = string.Format("{0:#,##0}", int.Parse(stringArr[i]));
+                }
+
+                //txtSlipsNum.Text = dtsale.Rows[0]["SlipNum"].ToString();
+                ////txtCustomerNum.Text = dtcash.Rows[0]["NumOfCustomer"].ToString();
+                //txtTotalSales.Text = dtsale.Rows[0]["TotalSales"].ToString();
+                //txtamount8.Text = dtsale.Rows[0]["Amount8"].ToString();
+                //txtamount10.Text = dtsale.Rows[0]["Amount10"].ToString();
+                //txtTaxamount.Text = dtsale.Rows[0]["TaxAmount"].ToString();
+                //txtsaletax.Text = dtsale.Rows[0]["SalesExcludingTax"].ToString();
+                //txtforeigntax8.Text = dtsale.Rows[0]["Foreigntax8"].ToString();
+                //txtforeigntax10.Text = dtsale.Rows[0]["Foreigntax10"].ToString();
+                //txtconsumptiontax.Text = dtsale.Rows[0]["Consumpitontax"].ToString();
+                //txttaxincludesale.Text = dtsale.Rows[0]["TaxIncludeSales"].ToString();
+                //txtSaleCash.Text = dtsale.Rows[0]["Cash"].ToString();
+                //txtHanging.Text = dtsale.Rows[0]["Hanging"].ToString();
+                //txtVISA.Text = dtsale.Rows[0]["VISA"].ToString();
+                //txtJCB.Text = dtsale.Rows[0]["JCB"].ToString();
+
+
+                txtSlipsNum.Text = stringArr[0];
                 //txtCustomerNum.Text = dtcash.Rows[0]["NumOfCustomer"].ToString();
-                txtTotalSales.Text = dtsale.Rows[0]["TotalSales"].ToString();
-                txtamount8.Text = dtsale.Rows[0]["Amount8"].ToString();
-                txtamount10.Text = dtsale.Rows[0]["Amount10"].ToString();
-                txtTaxamount.Text = dtsale.Rows[0]["TaxAmount"].ToString();
-                txtsaletax.Text = dtsale.Rows[0]["SalesExcludingTax"].ToString();
-                txtforeigntax8.Text = dtsale.Rows[0]["Foreigntax8"].ToString();
-                txtforeigntax10.Text = dtsale.Rows[0]["Foreigntax10"].ToString();
-                txtconsumptiontax.Text = dtsale.Rows[0]["Consumpitontax"].ToString();
-                txttaxincludesale.Text = dtsale.Rows[0]["TaxIncludeSales"].ToString();
-                txtSaleCash.Text = dtsale.Rows[0]["Cash"].ToString();
-                txtHanging.Text = dtsale.Rows[0]["Hanging"].ToString();
-                txtVISA.Text = dtsale.Rows[0]["VISA"].ToString();
-                txtJCB.Text = dtsale.Rows[0]["JCB"].ToString();
+                txtTotalSales.Text = stringArr[1];
+                txtamount8.Text = stringArr[2];
+                txtamount10.Text = stringArr[3];
+                txtTaxamount.Text = stringArr[4];
+                txtsaletax.Text = stringArr[5];
+                txtforeigntax8.Text = stringArr[6];
+                txtforeigntax10.Text = stringArr[7];
+                txtconsumptiontax.Text = stringArr[8];
+                txttaxincludesale.Text = stringArr[9];
+                txtSaleCash.Text = stringArr[10];
+                txtHanging.Text = stringArr[11];
+                txtVISA.Text = stringArr[12];
+                txtJCB.Text = stringArr[13];
+
+
             }
             else
             {
