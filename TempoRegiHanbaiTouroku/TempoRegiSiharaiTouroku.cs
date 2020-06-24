@@ -890,6 +890,8 @@ namespace TempoRegiHanbaiTouroku
                 txtKake.Text = "0";
                 txtMaeuke.Text = "0";
                 lblShiharaiKei.Text = "0";
+                txtAzukari.Text = "0";
+                lblRefund.Text = "0";
 
                 //カード、その他①②の選択をクリア
                 cboDenominationName2.SelectedIndex = -1;
