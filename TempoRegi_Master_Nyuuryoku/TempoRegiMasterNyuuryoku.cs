@@ -197,14 +197,13 @@ namespace TempoRegi_Master_Nyuuryoku
             sbgd_e = new M_StoreBottunDetails_Entity()
             {
                 StoreCD = StoreCD,
-                MasterKBN = RdoJanCD.Checked ? "1" : "2",
+               // MasterKBN = RdoJanCD.Checked ? "1" : "2",
                 dtGroup = dtTemp1,
                 dtGpDetails = dtTemp2,
                 Operator = InOperatorCD,
                 ProgramID = InProgramID,
                 PC = InPcID,
-                Key = txtButtomNameUp.Text
-
+               // Key = txtButtomNameUp.Text
             };
             return sbgd_e;
         }
@@ -487,14 +486,26 @@ namespace TempoRegi_Master_Nyuuryoku
                     DataTable dtCusto = SelectCustomerData(txtCD.Text);
                     if (dtCusto.Rows.Count > 0)
                     {
-                        if (dtCusto.Rows.Count == 1)
+                        DataRow[] dr = dtCusto.Select("DeleteFlg=1");
+                        if(dr.Count()==0)
                         {
-                            txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
-                            lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
+                            if (dtCusto.Rows.Count == 1)
+                            {
+                                txtCD.Text = dtCusto.Rows[0]["CustomerCD"].ToString();
+                                lblSearchName.Text = "名称" + " " + dtCusto.Rows[0]["CustomerName"].ToString();
+                            }
+                            lblSearchName.Visible = true;
+                            lblAdminNO.Text = string.Empty;
+                            txtBtnNameDown.Focus();
                         }
-                        lblSearchName.Visible = true;
-                        lblAdminNO.Text = string.Empty;
-                        txtBtnNameDown.Focus();
+                        else
+                        {
+                            lblSearchName.Text = "";
+                            lblAdminNO.Text = string.Empty;
+                            mnrk_bl.ShowMessage("E119");
+                            txtCD.Focus();
+                        }
+                        
 
                     }
                     else
