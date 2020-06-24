@@ -29,14 +29,9 @@ namespace DL
                  { "@GroupXML",new ValuePair {value1=SqlDbType.VarChar,value2=msbd.GroupXML} },
                  { "@GroupDetailXML",new ValuePair {value1=SqlDbType.VarChar,value2=msbd.GroupDetailXML} },
                  {"@StoreCD" ,new ValuePair {value1=SqlDbType.VarChar,value2=msbd.StoreCD}},
-                 {"@MasterKBN",new ValuePair{value1=SqlDbType.TinyInt,value2=msbd.MasterKBN} },
-                 //{"@mode" ,new ValuePair{value1=SqlDbType.TinyInt,value2=mode.ToString()}},
                  { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = msbd.Operator } },
                  { "@Program", new ValuePair { value1 = SqlDbType.VarChar, value2 = msbd.ProgramID } },
                  { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = msbd.PC } }
-                 //{ "@OperateMode", new ValuePair { value1 = SqlDbType.VarChar, value2 = processmode.ToString() } },
-                 //{ "@KeyItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = msbd.Key } }
-
             };
             UseTransaction = true;
             return InsertUpdateDeleteData(dic, "Button_Details_Insert_Update");
