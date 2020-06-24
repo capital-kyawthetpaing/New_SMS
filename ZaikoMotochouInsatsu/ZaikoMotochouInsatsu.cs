@@ -246,7 +246,10 @@ namespace ZaikoMotochouInsatsu
                         txtTargetPeriodF.Focus();
                     }
                 }
-            
+                else
+                {
+                    bbl.ShowMessage("E128");
+                }
             }
         }
 
