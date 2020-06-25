@@ -239,11 +239,11 @@ namespace BL
             //暗号化されたパスワードを複合化
             try
             {
-                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "DM-D30Used").Equals("0") ? false : true;
+                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString()=="1" ? true : false;
             }
             catch
-            { 
-                
+            {
+                Base_DL.iniEntity.IsDM_D30Used =  false;
             }
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
 
