@@ -163,12 +163,25 @@ namespace TempoRegiSeisanTouroku
             dtdeposit = seisanbl.D_DepositHistory_SelectForSeisan(dphe);
             if (dtdeposit.Rows.Count > 0)
             {
-                txtChange.Text = dtdeposit.Rows[0]["Change"].ToString();
-                txtCashSale.Text = dtdeposit.Rows[0]["CashSale"].ToString();
-                txtGift.Text = dtdeposit.Rows[0]["Gift"].ToString();
-                txtDeposit.Text = dtdeposit.Rows[0]["CashDeposit"].ToString();
-                txtPayment.Text = dtdeposit.Rows[0]["CashPayment"].ToString();
+                var depostiArr = dtdeposit.Rows[0].ItemArray.Select(x => x.ToString()).ToArray();
+                for (int i = 0; i < depostiArr.Length; i++)
+                {
+                    depostiArr[i] = string.Format("{0:#,##0}", int.Parse(depostiArr[i]));
+                }
+
+                //txtChange.Text = dtdeposit.Rows[0]["Change"].ToString();
+                //txtCashSale.Text = dtdeposit.Rows[0]["CashSale"].ToString();
+                //txtGift.Text = dtdeposit.Rows[0]["Gift"].ToString();
+                //txtDeposit.Text = dtdeposit.Rows[0]["CashDeposit"].ToString();
+                //txtPayment.Text = dtdeposit.Rows[0]["CashPayment"].ToString();
                 //txtTotal.Text = dtdeposit.Rows[0]["CashTotal"].ToString();
+
+                txtChange.Text = depostiArr[0];
+                txtCashSale.Text = depostiArr[1];
+                txtGift.Text = depostiArr[2];
+                txtDeposit.Text = depostiArr[3];
+                txtPayment.Text = depostiArr[4];
+             
                 string total = string.Empty;
                 total = (Convert.ToDecimal(txtChange.Text) + Convert.ToDecimal(txtCashSale.Text) - Convert.ToDecimal(txtGift.Text)
                 + Convert.ToDecimal(txtDeposit.Text) - Convert.ToDecimal(txtPayment.Text)).ToString();
@@ -181,15 +194,23 @@ namespace TempoRegiSeisanTouroku
                     total = string.IsNullOrWhiteSpace(total) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(total));
                     txtTotal.Text = (string.IsNullOrWhiteSpace(total) ? "0" : total);
                 }
-               
 
-                txtTransfer.Text = dtdeposit.Rows[0]["DepositTransfer"].ToString();
-                txtDepositCash.Text = dtdeposit.Rows[0]["DepositCash"].ToString();
-                txtDepositCheck.Text = dtdeposit.Rows[0]["DepositCheck"].ToString();
-                txtDepositBill.Text = dtdeposit.Rows[0]["DepositBill"].ToString();
-                txtDepositOffset.Text = dtdeposit.Rows[0]["DepositOffset"].ToString();
-                txtdepositAdjustment.Text = dtdeposit.Rows[0]["DepositAdjustment"].ToString();
+
+                //txtTransfer.Text = dtdeposit.Rows[0]["DepositTransfer"].ToString();
+                //txtDepositCash.Text = dtdeposit.Rows[0]["DepositCash"].ToString();
+                //txtDepositCheck.Text = dtdeposit.Rows[0]["DepositCheck"].ToString();
+                //txtDepositBill.Text = dtdeposit.Rows[0]["DepositBill"].ToString();
+                //txtDepositOffset.Text = dtdeposit.Rows[0]["DepositOffset"].ToString();
+                //txtdepositAdjustment.Text = dtdeposit.Rows[0]["DepositAdjustment"].ToString();
                 //txtDepositTotal.Text = dtdeposit.Rows[0]["DepositTotal"].ToString();
+
+                txtTransfer.Text = depostiArr[5];
+                txtDepositCash.Text = depostiArr[6];
+                txtDepositCheck.Text = depostiArr[7];
+                txtDepositBill.Text = depostiArr[8];
+                txtDepositOffset.Text = depostiArr[9];
+                txtdepositAdjustment.Text = depostiArr[10];
+
                 string deposittatal = string.Empty;
                 deposittatal = (Convert.ToDecimal(txtTransfer.Text) + Convert.ToDecimal(txtDepositCash.Text) +
                                        Convert.ToDecimal(txtDepositCheck.Text) + Convert.ToDecimal(txtDepositBill.Text) +
@@ -203,19 +224,30 @@ namespace TempoRegiSeisanTouroku
                     deposittatal = string.IsNullOrWhiteSpace(deposittatal) ? "0" : string.Format("{0:#,#}", Convert.ToInt64(deposittatal));
                     txtDepositTotal.Text = (string.IsNullOrWhiteSpace(deposittatal) ? "0" : deposittatal);
                 }
-               
-                txtReturn.Text = dtdeposit.Rows[0]["DepositReturns"].ToString();
-                txtDiscount.Text = dtdeposit.Rows[0]["DepositDiscount"].ToString();
 
-                txtCancel.Text = dtdeposit.Rows[0]["DepositCancel"].ToString();
+                //txtReturn.Text = dtdeposit.Rows[0]["DepositReturns"].ToString();
+                //txtDiscount.Text = dtdeposit.Rows[0]["DepositDiscount"].ToString();
 
-                txtPaymentTransfer.Text = dtdeposit.Rows[0]["PaymentTransfer"].ToString();
-                txtPaymentCash.Text = dtdeposit.Rows[0]["PaymentCash"].ToString();
-                txtPaymentCheck.Text = dtdeposit.Rows[0]["PaymentCheck"].ToString();
-                txtPaymentBill.Text = dtdeposit.Rows[0]["PaymentBill"].ToString();
-                txtPaymentOffset.Text = dtdeposit.Rows[0]["PaymentOffset"].ToString();
-                txtPaymentadjustment.Text = dtdeposit.Rows[0]["PaymentAdjustment"].ToString();
-                txtPaymentTotal.Text = dtdeposit.Rows[0]["TotalPayment"].ToString();
+                //txtCancel.Text = dtdeposit.Rows[0]["DepositCancel"].ToString();
+
+                //txtPaymentTransfer.Text = dtdeposit.Rows[0]["PaymentTransfer"].ToString();
+                //txtPaymentCash.Text = dtdeposit.Rows[0]["PaymentCash"].ToString();
+                //txtPaymentCheck.Text = dtdeposit.Rows[0]["PaymentCheck"].ToString();
+                //txtPaymentBill.Text = dtdeposit.Rows[0]["PaymentBill"].ToString();
+                //txtPaymentOffset.Text = dtdeposit.Rows[0]["PaymentOffset"].ToString();
+                //txtPaymentadjustment.Text = dtdeposit.Rows[0]["PaymentAdjustment"].ToString();
+                //txtPaymentTotal.Text = dtdeposit.Rows[0]["TotalPayment"].ToString();
+
+                txtReturn.Text = depostiArr[12];
+                txtDiscount.Text = depostiArr[12];
+                txtCancel.Text = depostiArr[14];
+                txtPaymentTransfer.Text = depostiArr[15];
+                txtPaymentCash.Text = depostiArr[16];
+                txtPaymentCheck.Text = depostiArr[17];
+                txtPaymentBill.Text = depostiArr[18];
+                txtPaymentOffset.Text = depostiArr[19];
+                txtPaymentadjustment.Text = depostiArr[20];
+                txtPaymentTotal.Text = depostiArr[21];
 
                 //lblCashStorage.Text = (Convert.ToDecimal(lblCashBalance.Text) - Convert.ToDecimal(txtTotal.Text)).ToString();
                 //        lblCashStorage.Text = "¥" + dtcash.Rows[0]["CashStorage"].ToString();
