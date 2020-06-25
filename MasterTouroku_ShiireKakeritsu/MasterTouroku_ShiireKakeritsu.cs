@@ -72,6 +72,10 @@ namespace MasterTouroku_ShiireKakeritsu
                 cbo_Store.Enabled = true;
             }
         }
+        private void rdoAllStores_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioCheck();
+        }
         public void BindCombo()
         {
             cbo_Store.Bind(string.Empty, "2");
@@ -269,14 +273,14 @@ namespace MasterTouroku_ShiireKakeritsu
                 if (string.IsNullOrWhiteSpace(txtRevisionDate.Text))
                 {
                     mskbl.ShowMessage("E102");
-                    txtRate.Focus();
+                    txtRevisionDate.Focus();
                     return false;
                 }
 
                 if (string.IsNullOrWhiteSpace(txtRate1.Text))
                 {
                     mskbl.ShowMessage("E102");
-                    txtRate.Focus();
+                    txtRate1.Focus();
                     return false;
                 }
             }
@@ -404,6 +408,21 @@ namespace MasterTouroku_ShiireKakeritsu
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
             scSegmentCD1.Value1 = "203";
+        }
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                string ck = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].State.ToString();
+                if (ck == "Selected")
+                {
+                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "true";
+                }
+                else
+                {
+                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "false";
+                }
+            }
         }
 
         #endregion
@@ -1122,26 +1141,6 @@ namespace MasterTouroku_ShiireKakeritsu
             };
             return log_data;
         }
-
-        private void rdoAllStores_CheckedChanged(object sender, EventArgs e)
-        {
-            RadioCheck();
-        }
-
-        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
-            {
-                string ck = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].State.ToString();
-                if (ck == "Selected")
-                {
-                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "true";
-                }
-                else
-                {
-                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "false";
-                }
-            }
-        }
+        
     }
 }
