@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DL;
 
 namespace TempoRegiTsurisenJyunbi
 {
@@ -137,28 +138,33 @@ namespace TempoRegiTsurisenJyunbi
         {
             if (ErrorCheck())
             {
-                if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen(); //ses
-                    op.OpenCashDrawer();
-                    mre = DepositHistoryEnity();
-                    if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
+                    if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                     {
-                        trtjb.ShowMessage("I101");
-                        RunConsole();
-                        txtDate.Clear();
-                        DepositGaku.Clear();
-                        Remark.Clear();
-                        txtDate.Focus();
+                        if (Base_DL.iniEntity.IsDM_D30Used)
+                        {
+                            CashDrawerOpen op = new CashDrawerOpen(); //ses
+                            op.OpenCashDrawer();
+                        }
+                        mre = DepositHistoryEnity();
+                        if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
+                        {
+                            trtjb.ShowMessage("I101");
+                            RunConsole();
+                            txtDate.Clear();
+                            DepositGaku.Clear();
+                            Remark.Clear();
+                            txtDate.Focus();
+                        }
+                        else
+                        {
+                            trtjb.ShowMessage("S001");
+                        }
                     }
                     else
                     {
-                        trtjb.ShowMessage("S001");
+                        DepositGaku.Focus();
                     }
-                }
-                else
-                {
-                    DepositGaku.Focus();
                 }
             }
         }

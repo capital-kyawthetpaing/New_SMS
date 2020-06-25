@@ -310,23 +310,6 @@ namespace MasterTouroku_ShiireKakeritsu
             MoveNextControl(e);
         }
         
-        //private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-        //    {
-        //        foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-        //        {
-        //            DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-        //            chk1.Value = chk1.FalseValue;
-        //        }
-        //        dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-        //    }
-        //    else
-        //    {
-        //        dgv_ShiireKakeritsu.ClearSelection();
-        //    }
-        //}
-
         private void scSupplierCD_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
@@ -347,40 +330,7 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-
-        private void dgv_ShiireKakeritsu_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-            if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            {
-                DataGridViewCheckBoxCell chk1 = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"] as DataGridViewCheckBoxCell;
-                foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-                {
-                    DataGridViewCheckBoxCell colChk = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-                    chk1.Value = chk1.TrueValue;
-                }
-                dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            }
-            else
-            {
-                dgv_ShiireKakeritsu.ClearSelection();
-            }
-    
-            //if ((Convert.ToBoolean(dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].EditedFormattedValue) == true))
-            //{
-            //    foreach (DataGridViewRow row1 in dgv_ShiireKakeritsu.Rows)
-            //    {
-            //        DataGridViewCheckBoxCell chk1 = row1.Cells[e.ColumnIndex] as DataGridViewCheckBoxCell;
-            //        chk1.Value = chk1.FalseValue;
-            //    }
-            //    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = true;
-            //}
-            //else
-            //{
-            //    dgv_ShiireKakeritsu.ClearSelection();
-            //}
-
-        }
-
+       
         #region KeyDown Event For 【抽出条件】
         private void scBrandCD1_CodeKeyDownEvent(object sender, KeyEventArgs e)
         {
@@ -1143,6 +1093,22 @@ namespace MasterTouroku_ShiireKakeritsu
         private void rdoAllStores_CheckedChanged(object sender, EventArgs e)
         {
             RadioCheck();
+        }
+
+        private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                string ck = dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].State.ToString();
+                if (ck == "Selected")
+                {
+                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "true";
+                }
+                else
+                {
+                    dgv_ShiireKakeritsu.Rows[e.RowIndex].Cells["colChk"].Value = "false";
+                }
+            }
         }
     }
 }
