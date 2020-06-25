@@ -27,13 +27,12 @@ namespace Entity
         public string DatabaseLoginID { get; set; }
         public string DatabasePassword { get; set; }
         public string TimeoutValues { get; set; }
-
         public string StoreType { get; set; }
         /// <summary>
         /// データベースの日付　YYYY/MM/DD形式
         /// </summary>
         public string DatabaseDate { get; set; }
-
         public string Login_Type { get; set; }
+        public bool IsDM_D30Used { get; set; } = false;
     }
 }
