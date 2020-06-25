@@ -512,7 +512,7 @@ namespace SiharaiTouroku
         }
         private void SC_HanyouKeyStart2_Leave(object sender, EventArgs e)
         {
-            SC_HanyouKeyEnd2.Value2 = SC_HanyouKeyStart2.TxtCode.Text;
+            SC_HanyouKeyEnd2.Value3 = SC_HanyouKeyStart2.TxtCode.Text;
         }
         #region  KeyDown event
 
