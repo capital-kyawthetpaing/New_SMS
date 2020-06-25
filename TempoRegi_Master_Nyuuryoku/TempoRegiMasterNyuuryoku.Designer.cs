@@ -10094,16 +10094,17 @@
             // 
             // lblAdminNO
             // 
-            this.lblAdminNO.AutoSize = true;
             this.lblAdminNO.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblAdminNO.BackColor = System.Drawing.Color.Transparent;
+            this.lblAdminNO.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblAdminNO.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblAdminNO.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblAdminNO.FontBold = true;
+            this.lblAdminNO.ForeColor = System.Drawing.Color.Black;
             this.lblAdminNO.Location = new System.Drawing.Point(1646, 762);
             this.lblAdminNO.Name = "lblAdminNO";
-            this.lblAdminNO.Size = new System.Drawing.Size(148, 35);
+            this.lblAdminNO.Size = new System.Drawing.Size(50, 37);
             this.lblAdminNO.TabIndex = 24;
-            this.lblAdminNO.Text = "AdminNO";
             this.lblAdminNO.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblAdminNO.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblAdminNO.Visible = false;

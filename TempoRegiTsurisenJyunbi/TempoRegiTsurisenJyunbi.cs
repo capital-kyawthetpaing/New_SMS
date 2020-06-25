@@ -139,6 +139,8 @@ namespace TempoRegiTsurisenJyunbi
             {
                 if (trtjb.ShowMessage("Q101") == DialogResult.Yes)
                 {
+                    CashDrawerOpen op = new CashDrawerOpen(); //ses
+                    op.OpenCashDrawer();
                     mre = DepositHistoryEnity();
                     if (trtjb.TempoRegiTsurisenJyunbi_Insert_Update(mre))
                     {

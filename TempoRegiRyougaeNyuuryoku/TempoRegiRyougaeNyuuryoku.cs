@@ -136,6 +136,8 @@ namespace TempoRegiRyougaeNyuuryoku
                 {
                     if (trrnbl.ShowMessage("Q101") == DialogResult.Yes)
                     {
+                        CashDrawerOpen op = new CashDrawerOpen(); //ses
+                        op.OpenCashDrawer();
                         valid = false;
                         mre = DepositHistoryEnity();
                         if (trrnbl.TempoRegiRyougaeNyuuryoku_Insert_Update(mre))

@@ -1176,6 +1176,7 @@ namespace SiharaiTouroku
         private void Para_Add(DataTable dt)
         {
             dt.Columns.Add("Rows", typeof(int));
+            dt.Columns.Add("PayNO", typeof(string));
             dt.Columns.Add("PayeeCD", typeof(string));
             dt.Columns.Add("PayPlanDate", typeof(DateTime));
             dt.Columns.Add("HontaiGaku8", typeof(decimal));
@@ -1222,6 +1223,7 @@ namespace SiharaiTouroku
 
                 if (bbl.Z_Set(row["PayGaku"]) > 0)
                     dt.Rows.Add(rows
+                        , row["PayNO"]
                         , row["PayeeCD"]
                         , row["PayPlanDate"]
                         , bbl.Z_Set(row["HontaiGaku8"])
