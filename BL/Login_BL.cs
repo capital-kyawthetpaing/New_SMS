@@ -209,6 +209,7 @@ namespace BL
                 Base_DL.iniEntity.DatabasePassword = idl.IniReadValue("Database", "CapitalStoreMenuLogin").Split(',')[3];
                 Base_DL.iniEntity.Login_Type = "CapitalStoreMenuLogin";
                 Base_DL.iniEntity.StoreType = "1";
+                
             }
             else if (idl.IniReadValue("Database", "Login_Type") == "HaspoStoreMenuLogin")
             {
@@ -236,7 +237,14 @@ namespace BL
             //暗号化されたパスワードを取得
 
             //暗号化されたパスワードを複合化
-
+            try
+            {
+                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim()== "EpsonTM-m30" ? true : false;
+            }
+            catch
+            {
+                Base_DL.iniEntity.IsDM_D30Used =  false;
+            }
             Base_DL.iniEntity.TimeoutValues = idl.IniReadValue("Database", "Timeout");
 
 
