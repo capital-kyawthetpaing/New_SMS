@@ -207,7 +207,7 @@ namespace TempoRegiTsurisenJyunbi
         }
         private void frmTempoRegiTsurisenJyunbi_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveNextControl(e);
+           MoveNextControl(e);
         }
     }
 }
