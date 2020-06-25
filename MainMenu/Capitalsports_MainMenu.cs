@@ -62,6 +62,7 @@ namespace MainMenu
             BindButtonName();
             try
             {
+                if (Base_DL.iniEntity.IsDM_D30Used)
                 SetDisplay();///Start New Window for display by PTK
             }
             catch (Exception ex)

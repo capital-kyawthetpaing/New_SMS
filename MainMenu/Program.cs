@@ -78,6 +78,9 @@ namespace MainMenu
                 }
                 else if (Base_DL.iniEntity.Login_Type == "CapitalStoreMenuLogin")
                 {
+                 //   var f = Base_DL.iniEntity.IsDM_D30Used;
+                    
+                         
                     pgname = new CapitalsportsLogin();
                 }
                 else if (Base_DL.iniEntity.Login_Type == "HaspoStoreMenuLogin")
