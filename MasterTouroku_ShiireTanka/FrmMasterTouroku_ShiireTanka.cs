@@ -588,6 +588,7 @@ namespace MasterTouroku_ShiireTanka
             CB_store.SelectedValue = "0000";
             GV_item.Refresh();
             GV_item.DataSource = null;
+            //string aa;
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
         {
