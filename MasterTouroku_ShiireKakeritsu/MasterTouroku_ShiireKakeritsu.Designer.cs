@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ckM_Label1 = new CKM_Controls.CKM_Label();
             this.ckM_Label2 = new CKM_Controls.CKM_Label();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -378,17 +378,17 @@
             // 
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.dgv_ShiireKakeritsu.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_ShiireKakeritsu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ShiireKakeritsu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ShiireKakeritsu.ColumnHeadersHeight = 25;
             this.dgv_ShiireKakeritsu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colChk,
@@ -406,12 +406,11 @@
             this.dgv_ShiireKakeritsu.Name = "dgv_ShiireKakeritsu";
             this.dgv_ShiireKakeritsu.RowHeight_ = 20;
             this.dgv_ShiireKakeritsu.RowTemplate.Height = 20;
-            this.dgv_ShiireKakeritsu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ShiireKakeritsu.Size = new System.Drawing.Size(1300, 450);
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
-            this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick_1);
+            this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
             // 
             // colChk
             // 

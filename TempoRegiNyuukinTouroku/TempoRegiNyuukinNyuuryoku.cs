@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BL;
+using DL;
 using Entity;
 using Base.Client;
 using CKM_Controls;
@@ -95,9 +96,11 @@ namespace TempoRegiNyuukinTouroku
             {
                 if (trntBL.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
-                    op.OpenCashDrawer(); //2020_06_24 
-
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        CashDrawerOpen op = new CashDrawerOpen();  //2020_06_24 
+                        op.OpenCashDrawer(); //2020_06_24 
+                    }
                     ddpe = GetDepositEntity();
                     if (trntBL.TempoNyuukinTouroku_D_DepositHistory_InsertUpdate(ddpe))
                     {

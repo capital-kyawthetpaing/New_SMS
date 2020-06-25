@@ -94,6 +94,8 @@ namespace TempoRegiShiharaiNyuuryoku
             {
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
+                    CashDrawerOpen op = new CashDrawerOpen();
+                    op.OpenCashDrawer();
                     ddpe = GetDepositEntity();
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {

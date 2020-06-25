@@ -114,8 +114,9 @@ namespace TempoRegi_Master_Nyuuryoku
             txtBtnNameDown.Text = string.Empty;
             txtCD.Text = string.Empty;
             RdoJanCD.Checked = true;
+            RdoJanCD.Enabled = true;
             RdoCustomerCD.Checked = false;
-            //lblBtnName.Text = "";
+            RdoCustomerCD.Enabled = true;
             lblGroupNO.Text = "";
             lblNameNO.Text = "";
             lblSearchName.Text = "";
@@ -160,12 +161,14 @@ namespace TempoRegi_Master_Nyuuryoku
                     if (radiovalue == "1")
                     {
                         RdoJanCD.Checked = true;
+                        RdoJanCD.Enabled = true;
                         RdoCustomerCD.Enabled = false;
                     }
                     else
                     {
                         RdoCustomerCD.Checked = true;
-                        RdoJanCD.Enabled = true;
+                        RdoCustomerCD.Enabled = true;
+                        RdoJanCD.Enabled = false;
                     }
                 }
 
@@ -260,7 +263,7 @@ namespace TempoRegi_Master_Nyuuryoku
             dtCpy = new DataTable();
             dtCpy = dtSelect.DefaultView.ToTable(true, "ButtomName", "GroupNO", "MasterKBN");
             dtTemp1 = dtSelect.DefaultView.ToTable(true, "GroupNO", "ButtomName", "MasterKBN");
-            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button","AdminNO","JANCD","CustomerCD");
+            dtTemp2 = dtSelect.DefaultView.ToTable(true, "GroupNO", "MasterKBN", "Vertical", "Horizontal", "btndetailBottunName", "Button","AdminNO","JanCD","CustomerCD");
             RemoveNullColumnFromDataTable(dtTemp2);
             for (int k = 0; k < 100; k++)
             {
@@ -436,6 +439,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 {
                     txtCD.Text = tgkkk.CustomerCD;
                     lblSearchName.Text = "名称" + " " + tgkkk.CustomerName;
+                    lblAdminNO.Text = string.Empty;
                 }
 
             }
@@ -543,7 +547,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 }
 
                 //Button btn2;
-                BtnName = txtBtnNameDown.Text;
+                BtnName = txtBtnNameDown.Text.Trim();
                 groupno = lblGroupNO.Text.Replace("番目", "");
                 horizontal = lblNameNO.Text.Replace("番目の上", "").Replace("番目の下", "");
                 DataRow[] results = dtTemp2.Select("GroupNo = " + "'" + groupno + "'");
@@ -578,10 +582,10 @@ namespace TempoRegi_Master_Nyuuryoku
                         dn["Horizontal"] = horizontal;
                         dn["Vertical"] = vertical;
                         dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
-                        dn["btndetailBottunName"] = txtBtnNameDown.Text;
-                        dn["Button"] = txtCD.Text;
-                        dn["AdminNO"] = lblAdminNO.Text;
-                        dn["JANCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
+                        dn["btndetailBottunName"] = txtBtnNameDown.Text.Trim();
+                        dn["Button"] = txtCD.Text.Trim();
+                        dn["AdminNO"] = string.IsNullOrWhiteSpace(lblAdminNO.Text) ? 0: Convert.ToInt32(lblAdminNO.Text) ;
+                        dn["JanCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
                         dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
                         dtTemp2.Rows.Add(dn);
                     }
@@ -631,7 +635,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     btn1.Text = txtButtomNameUp.Text;//firstGridview_Btn Input 
                     var dn = dtTemp1.NewRow();
                     dn["GroupNO"] = groupno;
-                    dn["ButtomName"] = txtButtomNameUp.Text;
+                    dn["ButtomName"] = txtButtomNameUp.Text.Trim();
                     dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
                     dtTemp1.Rows.Add(dn);
                 }
