@@ -13,6 +13,8 @@ using CKM_Controls;
 using System.Diagnostics;
 using DL;
 using System.Runtime.InteropServices;
+using Microsoft.PointOfService;
+using System.Data.SqlClient;
 
 namespace MainMenu
 {
@@ -21,7 +23,7 @@ namespace MainMenu
         DataTable menu;
         CKM_Button btnleftcurrent;
         CKM_Button btnrightcurrent;
-
+        Base_DL bdl = new Base_DL();
         M_Staff_Entity mse;
         Menu_BL mbl;
         string Staff_CD = "";
@@ -36,6 +38,7 @@ namespace MainMenu
         public static extern bool SetForegroundWindow(IntPtr hwnd);
         public Capitalsports_MainMenu(String SCD, M_Staff_Entity mse)
         {
+            
             mbl = new Menu_BL();
             Staff_CD = SCD;
             this.mse = mse;
@@ -57,6 +60,15 @@ namespace MainMenu
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();
+            try
+            {
+                SetDisplay();///Start New Window for display by PTK
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Current Error is " +ex.Message + " Skipped if Epson TM-M30 have not been installed.");
+            }
+
         }
         protected void Clear_Text(Panel pnl)
         {
@@ -419,16 +431,94 @@ namespace MainMenu
                     }
                 }
             }
+            try
+            {
+                m_Display.MarqueeType = DisplayMarqueeType.None;  // marquee close
+                m_Display.DestroyWindow();                        // instance close we have created
+
+
+                m_Display.ClearText();
+                m_Display.DeviceEnabled = false;
+                m_Display.Release();
+                m_Display.Close();
+            }
+            catch(Exception ex)
+            {
+               // MessageBox.Show(ex.Message);
+            }
         }
 
-        private void Capitalsports_MainMenu_Load(object sender, EventArgs e)
-        {
-            SetDisplay();
-        }
+       
         protected void SetDisplay()
         {
-
+            string strLogicalName = "LineDisplay";
+            PosExplorer posExplorer = null;
+            try
+            {
+                posExplorer = new PosExplorer();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + " Cant call POSEXPLORE() function!  " + Environment.NewLine + " Skipped if Epson TM - M30 have not been installed.");
+                goto End;
+            }
+            deviceInfo = posExplorer.GetDevice(DeviceType.LineDisplay, strLogicalName);
+            m_Display = (LineDisplay)posExplorer.CreateInstance(deviceInfo);
+            m_Display.Open();
+            m_Display.Claim(1000);
+            m_Display.DeviceEnabled = true;
+            
+            try
+            {
+                var val = GetMessages();
+                m_Display.CharacterSet = 932;
+                m_Display.CreateWindow(1, 0, 1, 20, 1, ASCIIEncoding.ASCII.GetByteCount(val));
+                m_Display.MarqueeFormat = DisplayMarqueeFormat.Walk;
+                m_Display.MarqueeType = DisplayMarqueeType.Init;
+                m_Display.MarqueeRepeatWait = 1000;
+                m_Display.MarqueeUnitWait = 100;
+                m_Display.DisplayText(val, DisplayTextMode.Normal);
+                m_Display.MarqueeType = DisplayMarqueeType.Left;
+            }
+            catch (PosControlException pe)
+            {
+                MessageBox.Show(pe.Message);
+            }
+        End:
+            {
+                //
+            }
         }
-
+        protected string GetMessages()
+        {
+            var get = getd();
+            var str = "";
+            str += get.Rows[0]["Char1"] == null ? "" : get.Rows[0]["Char1"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char2"] == null ? "" : get.Rows[0]["Char2"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
+            str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
+            int txt = ASCIIEncoding.ASCII.GetByteCount(str);
+            if (txt > 200)
+            {
+                str = str.Substring(0, 200);
+            }
+            return str;
+        }
+        protected DataTable getd()
+        {
+            var dt = new DataTable();
+            var con= bdl.GetConnection();
+            // SqlConnection conn = new SqlConnection("Data Source=202.223.48.145;Initial Catalog=CapitalSMS;Persist Security Info=True;User ID=sa;Password=admin123456!");
+            SqlConnection conn = con;
+            conn.Open();
+            SqlCommand command = new SqlCommand("Select Char1, Char2, Char3, Char4,Char5 from [M_Multiporpose] where [Key]='1' and Id='326'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            adapter.Fill(dt);
+            conn.Close();
+            return dt;
+        }
+        LineDisplay m_Display = null;
+        DeviceInfo deviceInfo = null;
     }
 }
