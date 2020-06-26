@@ -21,6 +21,8 @@ namespace ShiireShoukaiDetails
         D_Purchase_Details_Entity dpd_entity;
         ShiireShoukaiDetails_BL ssdbl ;
         Base_BL bbl ;
+        private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
+        private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
         public ShiireShoukaiDetails()
         {
             InitializeComponent();
@@ -483,24 +485,29 @@ namespace ShiireShoukaiDetails
                 if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
                    e.RowIndex >= 0)
                 {
-
-                    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                    string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-                    if (System.IO.File.Exists(filePath))
+                    DataTable dt = new DataTable();
+                    dt = ssdbl.ShiireShoukaiDetails_Select(dpd_entity);
+                    string ProcessKBN = dgv_PurchaseDetails.Rows[e.RowIndex].Cells["button"].State.ToString();
+                    if (ProcessKBN == "1")
                     {
-                        string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " ";
-                        System.Diagnostics.Process.Start(filePath, cmdLine);
+                        System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                        string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
+                        if (System.IO.File.Exists(filePath))
+                        {
+                            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                            System.Diagnostics.Process.Start(filePath, cmdLine);
+                        }
                     }
-                    //if(ProcessKBN==1)
-                    //{
-                    //    ShiireNyuuryokuFromNyuuka snf = new ShiireNyuuryokuFromNyuuka();
-                    //    snf.Show();
-                    //}
-                    //else(ProcessKBN!=1)
-                    //{
-                    //    ShiireNyuuryoku SN = new ShiireNyuuryoku();
-                    //    SN.Show();
-                    //}
+                    else
+                    {
+                        System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                        string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                        if (System.IO.File.Exists(filePath))
+                        {
+                            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                            System.Diagnostics.Process.Start(filePath, cmdLine);
+                        }
+                    }
                 }
             }
         }
