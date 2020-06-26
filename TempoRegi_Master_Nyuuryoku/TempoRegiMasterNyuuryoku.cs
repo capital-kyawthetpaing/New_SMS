@@ -70,19 +70,24 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void Save()
         {
-        //    if (ErrorCheck() && ButtonNO_Check())
-        //    {
-                if (mnrk_bl.ShowMessage("Q101") == DialogResult.Yes)
-                {
 
-                    sbgd_e = GetGroupDetailsData();
-                    if (mnrk_bl.Button_Details_Insert_Update(sbgd_e))//更新
-                    {
-                        GridViewDataBind();
-                        SaveClear();
-                    }
+            if (mnrk_bl.ShowMessage("Q101") == DialogResult.Yes)
+            {
+
+                sbgd_e = GetGroupDetailsData();
+                if (mnrk_bl.Button_Details_Insert_Update(sbgd_e))//更新
+                {
+                    GridViewDataBind();
+                    SaveClear();
+                    bbl.ShowMessage("I101");
                 }
-            //}
+                else
+                {
+                    bbl.ShowMessage("S001");
+                }
+            }
+            
+
         }
 
         private bool ButtonNO_Check()
