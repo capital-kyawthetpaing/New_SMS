@@ -56,7 +56,7 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
-            RadioCheck();
+            //RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
         private void RadioCheck()
@@ -771,28 +771,6 @@ namespace MasterTouroku_ShiireKakeritsu
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dtMain = view.Table;
             dgv_ShiireKakeritsu.DataSource = dvMain;
-
-            //List<DataRow> toDelete = new List<DataRow>();
-            //for (int i = 0; i < dgv_ShiireKakeritsu.Rows.Count; i++)
-            //{
-            //    {
-            //        DataGridViewRow row = dgv_ShiireKakeritsu.Rows[i];
-            //        DataGridViewCheckBoxCell check = row.Cells[0] as DataGridViewCheckBoxCell;
-            //        if (check.Value == check.TrueValue)
-            //        {
-            //            DataRow dataRow = (row.DataBoundItem as DataRowView).Row;
-            //            toDelete.Add(dataRow);
-            //        }
-            //    }
-            //}
-            //toDelete.ForEach(row => row.Delete());
-
-            //DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
-            ////dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
-            ////dtMain = view.Table;
-            //dgv_ShiireKakeritsu.DataSource = dvMain;
-
-
             //dtMain = mskbl.M_ShiireKakeritsu_Select(moe);
             //dvMain = new DataView(dtMain);
             //dgv_ShiireKakeritsu.DataSource = dvMain;
@@ -967,7 +945,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (CheckColumn(colname, dtExcel))
                         {
                             Xml = mskbl.DataTableToXml(dtExcel);
-                            //dtExcel = mskbl.M_ShiireKakeritsu_Select(moe);
+                            //dtExcel = mskbl.M_OrderRate_Update(moe, Xml, log_data);
                             if (dtExcel.Rows.Count > 0)
                             {
                                 dgv_ShiireKakeritsu.DataSource = dtMain;
