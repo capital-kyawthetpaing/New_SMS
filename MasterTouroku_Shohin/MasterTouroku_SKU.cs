@@ -167,7 +167,7 @@ namespace MasterTouroku_Shouhin
 
         public DataTable dtSKU;
         public DataTable dtSite;
-        //private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
+
         public bool ExecFlg = false;
         public MasterTouroku_SKU(M_ITEM_Entity me, DataTable dt, DataTable dtS, EOperationMode mode)
         {
@@ -328,10 +328,6 @@ namespace MasterTouroku_Shouhin
         private bool CheckKey(int index)
         {
             return this.CheckKey(index, 0, true);
-        }
-        private bool CheckKey(int index, short kbn)
-        {
-            return this.CheckKey(index, kbn, true);
         }
 
         /// <summary>
@@ -1367,8 +1363,7 @@ namespace MasterTouroku_Shouhin
         {                        //チェック
             if (!CheckAll())
                 return;
-
-           if( TxtCode_FullWidth())
+            
             this.Close();
         }
 
