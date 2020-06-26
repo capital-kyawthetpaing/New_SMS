@@ -475,5 +475,34 @@ namespace ShiireShoukaiDetails
                 }
             }
         }
+
+        private void dgv_PurchaseDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            {
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                   e.RowIndex >= 0)
+                {
+
+                    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                    string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                    if (System.IO.File.Exists(filePath))
+                    {
+                        string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " ";
+                        System.Diagnostics.Process.Start(filePath, cmdLine);
+                    }
+                    //if(ProcessKBN==1)
+                    //{
+                    //    ShiireNyuuryokuFromNyuuka snf = new ShiireNyuuryokuFromNyuuka();
+                    //    snf.Show();
+                    //}
+                    //else(ProcessKBN!=1)
+                    //{
+                    //    ShiireNyuuryoku SN = new ShiireNyuuryoku();
+                    //    SN.Show();
+                    //}
+                }
+            }
+        }
     }
 }
