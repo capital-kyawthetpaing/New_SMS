@@ -28,6 +28,7 @@ namespace TempoRegi_Master_Nyuuryoku
         string horizontal;
         string vertical;
         string radiovalue = "";
+        string btnNameDetails =string.Empty;
         string BtnName = string.Empty;
         Button btn1 = null, btn2 = null;
         public TempoRegiMasterNyuuryoku()
@@ -69,19 +70,24 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void Save()
         {
-            if (ErrorCheck() && ButtonNO_Check())
-            {
-                if (mnrk_bl.ShowMessage("Q101") == DialogResult.Yes)
-                {
 
-                    sbgd_e = GetGroupDetailsData();
-                    if (mnrk_bl.Button_Details_Insert_Update(sbgd_e))//更新
-                    {
-                        GridViewDataBind();
-                        SaveClear();
-                    }
+            if (mnrk_bl.ShowMessage("Q101") == DialogResult.Yes)
+            {
+
+                sbgd_e = GetGroupDetailsData();
+                if (mnrk_bl.Button_Details_Insert_Update(sbgd_e))//更新
+                {
+                    GridViewDataBind();
+                    SaveClear();
+                    bbl.ShowMessage("I101");
+                }
+                else
+                {
+                    bbl.ShowMessage("S001");
                 }
             }
+            
+
         }
 
         private bool ButtonNO_Check()
@@ -122,7 +128,7 @@ namespace TempoRegi_Master_Nyuuryoku
             lblSearchName.Text = "";
             lblAdminNO.Text = "";
             panel2.Refresh();
-            for (int k = 1; k < 99; k++)
+            for (int k = 1; k <= 99; k++)
             {
                 for (int j = 1; j < 3; j++)
                 {
@@ -150,48 +156,64 @@ namespace TempoRegi_Master_Nyuuryoku
 
             if (!string.IsNullOrEmpty(btn.Text))
             {
+                string str = btn.Text.ToString();
                 txtButtomNameUp.Text = btn.Text;
+                DataRow[] drBtnName = dtSelect.Select("(btndetailBottunName='' OR btndetailBottunName is null) AND ButtomName=" + "'" + str + "'" + "");
                 DataRow[] dr = dtTemp1.Select("GroupNO=" + "" + groupno + "");
                 DataRow[] dr2 = dtTemp2.Select("GroupNO=" + "" + groupno + "");
-
-                if (dr.Count() > 0)
+                
+                if(drBtnName.Count()>0)
                 {
-                    radiovalue = dr[0]["MasterKBN"].ToString();
+                    RdoJanCD.Checked = true;
+                    RdoJanCD.Enabled = true;
+                    RdoCustomerCD.Enabled = true;
+                }
+                else
+                {
+                    if (dr.Count() > 0)
+                    {
+                        radiovalue = dr[0]["MasterKBN"].ToString();
 
-                    if (radiovalue == "1")
-                    {
-                        RdoJanCD.Checked = true;
-                        RdoJanCD.Enabled = true;
-                        RdoCustomerCD.Enabled = false;
-                    }
-                    else
-                    {
-                        RdoCustomerCD.Checked = true;
-                        RdoCustomerCD.Enabled = true;
-                        RdoJanCD.Enabled = false;
+                        if (radiovalue == "1")
+                        {
+                            RdoJanCD.Checked = true;
+                            RdoJanCD.Enabled = true;
+                            RdoCustomerCD.Enabled = false;
+                        }
+                        else
+                        {
+                            RdoCustomerCD.Checked = true;
+                            RdoCustomerCD.Enabled = true;
+                            RdoJanCD.Enabled = false;
+                        }
                     }
                 }
 
-                //  DataRow[] dr2 = dtTemp2.Select("Horizontal = " + "'" + horizontal + "'" + " AND Vertical = " + "'" + vertical + "'" + " AND GroupNO = " + "'" + groupno + "'");
+                for (int k = 1; k <= 99; k++)
+                {
+                    for (int j = 1; j < 3; j++)
+                    {
+                        Button btn2 = this.Controls.Find("btnName" + k.ToString() + j.ToString(), true)[0] as Button;
 
+                        btn2.Text = string.Empty;
+                    }
 
-                //if (dr2.Count() > 0)
-                //{}
+                }
                 foreach (DataRow row in dr2)
                 {
                     horizontal = row["Horizontal"].ToString();
                     vertical = row["Vertical"].ToString();
-                    //if (horizontal != "" && vertical != "")
-                    //{
+
                     btn2 = this.Controls.Find("btnName" + horizontal + vertical, true)[0] as Button;
                     btn2.Text = row["btndetailBottunName"].ToString();
-                    //}
+
                 }
             }
             else
             {
                 txtButtomNameUp.Focus();
                 RdoJanCD.Checked = true;
+                RdoJanCD.Enabled = true;
                 RdoCustomerCD.Enabled = true;
             }
         }
@@ -225,33 +247,33 @@ namespace TempoRegi_Master_Nyuuryoku
             //if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
             //    return false;
 
-            if (RdoJanCD.Checked)
-            {
-                DataTable dtJanCD = new DataTable();
-                dtJanCD = SelectSKUData(txtCD.Text);
-                if (dtJanCD.Rows.Count == 0)
-                {
-                    mnrk_bl.ShowMessage("E101");
-                    txtCD.Focus();
-                    return false;
-                }
-            }
+            //if (RdoJanCD.Checked)
+            //{
+            //    DataTable dtJanCD = new DataTable();
+            //    dtJanCD = SelectSKUData(txtCD.Text);
+            //    if (dtJanCD.Rows.Count == 0)
+            //    {
+            //        mnrk_bl.ShowMessage("E101");
+            //        txtCD.Focus();
+            //        return false;
+            //    }
+            //}
 
-            if (RdoCustomerCD.Checked)
-            {
-                DataTable dtCustCD = new DataTable();
-                dtCustCD = SelectCustomerData(txtCD.Text);
-                if (dtCustCD.Rows.Count == 0)
-                {
-                    mnrk_bl.ShowMessage("E101");
-                    txtCD.Focus();
-                    return false;
-                }
-            }
+            //if (RdoCustomerCD.Checked)
+            //{
+            //    DataTable dtCustCD = new DataTable();
+            //    dtCustCD = SelectCustomerData(txtCD.Text);
+            //    if (dtCustCD.Rows.Count == 0)
+            //    {
+            //        mnrk_bl.ShowMessage("E101");
+            //        txtCD.Focus();
+            //        return false;
+            //    }
+            //}
             //if (!RequireCheck(new Control[] { txtBtnNameDown }))
             //    return false;
 
-
+            //ButtonNO_Check
             return true;
         }
 
@@ -534,17 +556,15 @@ namespace TempoRegi_Master_Nyuuryoku
         {
             // if (!RequireCheck(new Control[] { txtCD})) return;
 
+            if (lblNameNO.Text.Equals(""))
+            {
+                bbl.ShowMessage("E236");
+                txtCD.Focus();
+                return ;
+            }
             if (ErrorCheck())
             {
                 btnProcess.Enabled = true;//Save_Button
-
-                //ButtonNO_Check
-                if (lblNameNO.Text.Equals(""))
-                {
-                    bbl.ShowMessage("E236");
-                    txtCD.Focus();
-                    return;
-                }
 
                 //Button btn2;
                 BtnName = txtBtnNameDown.Text.Trim();
@@ -559,8 +579,8 @@ namespace TempoRegi_Master_Nyuuryoku
                 {
                     vertical = "2";
                 }
-                if (!string.IsNullOrEmpty(txtBtnNameDown.Text))
-                {
+                //if (!string.IsNullOrWhiteSpace(txtBtnNameDown.Text))
+                //{
                     if (dtTemp2 != null)
                     {
                         for (int i = 0; i < dtTemp2.Rows.Count; i++)
@@ -569,7 +589,6 @@ namespace TempoRegi_Master_Nyuuryoku
                             if (dr["GroupNO"].ToString() == groupno && dr["Horizontal"].ToString() == horizontal && dr["Vertical"].ToString() == vertical)
                             {
                                 dr.Delete();
-                                //dtTemp2.AcceptChanges();
                             }
                         }
                         //delete If data exists            
@@ -588,7 +607,7 @@ namespace TempoRegi_Master_Nyuuryoku
                         dn["JanCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
                         dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
                         dtTemp2.Rows.Add(dn);
-                    }
+                    //}
                 }
             }
         }
@@ -615,8 +634,8 @@ namespace TempoRegi_Master_Nyuuryoku
             }
 
 
-            if (!string.IsNullOrWhiteSpace(txtButtomNameUp.Text))
-            {
+            //if (!string.IsNullOrWhiteSpace(txtButtomNameUp.Text))
+            //{
                 // int i = dtTemp1.Rows.Count;             
 
                 if (dtTemp1 != null)
@@ -639,7 +658,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
                     dtTemp1.Rows.Add(dn);
                 }
-            }
+           // }
         }
 
         private void DisplayName()

@@ -1062,6 +1062,17 @@ namespace ShiireNyuuryokuFromNyuuka
                     ScStaff.LabelText = mse.StaffName;
                 }
 
+                //他のプログラムから起動された場合、照会モードで起動
+                //コマンドライン引数を配列で取得する
+                string[] cmds = System.Environment.GetCommandLineArgs();
+                if (cmds.Length - 1 > (int)ECmdLine.PcID)
+                {
+                    string shiireNO = cmds[(int)ECmdLine.PcID + 1];   //
+                    ChangeOperationMode(EOperationMode.UPDATE);
+                    keyControls[(int)EIndex.PurchaseNO].Text = shiireNO;
+                    CheckKey((int)EIndex.PurchaseNO, true);
+                }
+
             }
             catch (Exception ex)
             {
