@@ -967,7 +967,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (CheckColumn(colname, dtExcel))
                         {
                             Xml = mskbl.DataTableToXml(dtExcel);
-                            //dtExcel = mskbl.M_ShiireKakeritsu_Select(moe);
+                            //dtExcel = mskbl.M_OrderRate_Update(moe, Xml, log_data);
                             if (dtExcel.Rows.Count > 0)
                             {
                                 dgv_ShiireKakeritsu.DataSource = dtMain;
