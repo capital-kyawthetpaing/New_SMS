@@ -502,7 +502,7 @@ namespace ShiireShoukaiShiiresaki
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
                             if (System.IO.File.Exists(filePath))
                             {
-                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " +PurchaseNO;
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
@@ -512,7 +512,7 @@ namespace ShiireShoukaiShiiresaki
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
-                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
