@@ -56,7 +56,7 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
-            //RadioCheck();
+            RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
         private void RadioCheck()
@@ -292,6 +292,7 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = new M_OrderRate_Entity()
             {
                 VendorCD = scSupplierCD.TxtCode.Text,
+                //StoreCD=cbo_Store.SelectedText,
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
