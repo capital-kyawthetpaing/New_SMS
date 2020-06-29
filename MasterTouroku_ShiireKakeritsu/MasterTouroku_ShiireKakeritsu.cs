@@ -629,14 +629,14 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
                     searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                //if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
-                //    searchCondition = "LastYearTerm='" + cbo_Year.Text + "'";
-                //if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
-                //    searchCondition = "LastSeason= '" + cbo_Season.Text + "'";
-                //if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
-                //    searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
-                //if (!string.IsNullOrWhiteSpace(txtRate.Text))
-                //    searchCondition = "Rate= '" + txtRate.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
+                    searchCondition = "LastYearTerm='" + cbo_Year.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
+                    searchCondition = "LastSeason= '" + cbo_Season.Text + "'";
+                if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
+                    searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
+                if (!string.IsNullOrWhiteSpace(txtRate.Text))
+                    searchCondition = "Rate= '" + txtRate.Text + "'";
                 if (!string.IsNullOrWhiteSpace(searchCondition))
                 {
                     DataRow[] dr = dtMain.Select(searchCondition);
