@@ -149,10 +149,7 @@ namespace MasterTouroku_Shouhin
         private int mFractionKBN;
         private decimal mOldPriceOutTax;
         private decimal mOldRate;
-        private decimal mOldOrderPriceWithoutTax;
-        private int i;
-
-        //private System.Windows.Forms.Control previousCtrl; // ｶｰｿﾙの元の位置を待避
+        private decimal mOldOrderPriceWithoutTax;  
 
         public MasterTouroku_Shouhin()
         {
@@ -533,6 +530,7 @@ namespace MasterTouroku_Shouhin
                                 row["AdminNO"] = 0;
                                 row["ItemCD"] = keyControls[(int)EIndex.ItemCD].Text;
                                 row["ChangeDate"] = keyControls[(int)EIndex.ChangeDate].Text;
+                                row["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + colNo.ToString("0000")+ rowNo.ToString("0000");
                             }
                         }
                         if (dtSKU.Rows.Count>0)
@@ -765,7 +763,16 @@ namespace MasterTouroku_Shouhin
                     dtSite = frmSku.dtSite;
 
                     if (frmSku.ExecFlg)
-                        InitScr();
+                    {
+                        string item = mie.ITemCD;
+                        string date = mie.ChangeDate;
+                        ChangeOperationMode(EOperationMode.UPDATE);
+                        ScITEM.TxtCode.Text = item;
+                        ScITEM.TxtChangeDate.Text = date;
+                        CheckKey((int)EIndex.ChangeDate);
+                        dgvDetail.CurrentCell = dgvDetail[ColumnIndex, RowIndex];
+                        dgvDetail.Focus();
+                    }
                 }
             }
             catch (Exception ex)
@@ -2568,6 +2575,7 @@ namespace MasterTouroku_Shouhin
                     {
                         if (bbl.ShowMessage("Q316") != DialogResult.Yes)
                         {
+                            e.Cancel = true;
                             dgvDetail.CurrentCell = dgvDetail[columnIndex, rowIndex];
                             dgvDetail.Focus();
                             return;
