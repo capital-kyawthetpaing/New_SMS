@@ -486,7 +486,7 @@ namespace ShiireShoukaiDetails
                    e.RowIndex >= 0)
                 {
                     DataTable dt = new DataTable();
-                    dt = ssdbl.SimpleSelect1("68", null, dgv_PurchaseDetails.Rows[e.RowIndex].Cells["SupplierNo"].Value.ToString());
+                    dt = ssdbl.SimpleSelect1("68", null, dgv_PurchaseDetails.Rows[e.RowIndex].Cells["PurchaseNO"].Value.ToString());
                     if (dt.Rows.Count > 0)
                     {
                         string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();
@@ -496,7 +496,7 @@ namespace ShiireShoukaiDetails
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
                             if (System.IO.File.Exists(filePath))
                             {
-                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
@@ -506,7 +506,7 @@ namespace ShiireShoukaiDetails
                             string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
                             if (System.IO.File.Exists(filePath))
                             {
-                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
                                 System.Diagnostics.Process.Start(filePath, cmdLine);
                             }
                         }
