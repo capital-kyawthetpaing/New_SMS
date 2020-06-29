@@ -158,9 +158,9 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
                         mie.ChangeDate = txtRevDate.Text;
                         DataTable dtitem = new DataTable();
                         dtitem = mskubl.M_ITEM_NormalSelect(mie);
-                        if (dtitem.Rows.Count > 0)
+                        if (dtitem.Rows.Count == 0)
                         {
-                            mskubl.ShowMessage("E132");
+                            mskubl.ShowMessage("E133");
                             Sc_Item.SetFocus(1);
                             return false;
                         }
@@ -372,7 +372,7 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
         {
             if(e.KeyCode == Keys.Enter)
             {
-
+                F11();
             }
         }
 
