@@ -56,7 +56,7 @@ namespace MasterTouroku_ShiireKakeritsu
             SetRequiredField();
             scSupplierCD.SetFocus(1);
             txtDate1.Text = DateTime.Now.ToString("yyyy/MM/dd");
-            //RadioCheck();
+            RadioCheck();
             dgv_ShiireKakeritsu.AllowUserToAddRows = false;
         }
         private void RadioCheck()
