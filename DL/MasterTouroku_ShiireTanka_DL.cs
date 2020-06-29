@@ -12,32 +12,59 @@ namespace DL
 {
     public class MasterTouroku_ShiireTanka_DL : Base_DL
     {
-        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi)
+        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mio)
         {
             string sp = "MastertorokuShiiretanka_Select";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.VendorCD } },
                 { "@storecd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.StoreCD } },
-                { "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.ChangeDate } },
-                { "@makerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.MakerItem } },
+                //{ "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.ChangeDate } },
+                //{ "@makerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.MakerItem } },
                 { "@display", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Display } },
-                { "@brandcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.BrandCD } },
-                { "@sportcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SportsCD} },
-                { "@segmentcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SegmentCD } },
-                { "@lastyearterm", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastYearTerm } },
-                { "@lastseason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
-                { "@heardate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
-                { "@itemcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.ITemCD } },
-                { "@dateadd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.AddDate } },
-                { "@rate", new ValuePair { value1 = SqlDbType.Decimal, value2 = mio.Rate} },
-                { "@priceouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mi.PriceOutTax } },
-                { "@priceoutwithouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mio.PriceWithoutTax } },
-                { "@insertoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.InsertOperator } },
+                //{ "@brandcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.BrandCD } },
+                //{ "@sportcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SportsCD} },
+                //{ "@segmentcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SegmentCD } },
+                //{ "@lastyearterm", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastYearTerm } },
+                //{ "@lastseason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
+                //{ "@heardate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
+                //{ "@itemcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.ITemCD } },
+                //{ "@dateadd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.AddDate } },
+                //{ "@rate", new ValuePair { value1 = SqlDbType.Decimal, value2 = mio.Rate} },
+                //{ "@priceouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mi.PriceOutTax } },
+                //{ "@priceoutwithouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mio.PriceWithoutTax } },
+                //{ "@insertoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.InsertOperator } },
 
             };
             return SelectData(dic, sp);
         }
+
+        //public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mio, M_ITEM_Entity mi, string itemorsku)
+        //{
+        //    string sp = "MastertorokuShiiretanka_Select";
+        //    Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+        //    {
+        //        { "@vendorcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.VendorCD } },
+        //        { "@storecd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.StoreCD } },
+        //        { "@changedate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.ChangeDate } },
+        //        { "@makerItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.MakerItem } },
+        //        { "@display", new ValuePair { value1 = SqlDbType.VarChar, value2 = itemorsku } },
+        //        { "@brandcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.BrandCD } },
+        //        { "@sportcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SportsCD} },
+        //        { "@segmentcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.SegmentCD } },
+        //        { "@lastyearterm", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastYearTerm } },
+        //        { "@lastseason", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.LastSeason } },
+        //        { "@heardate", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.Headerdate } },
+        //        { "@itemcd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.ITemCD } },
+        //        { "@dateadd", new ValuePair { value1 = SqlDbType.VarChar, value2 = mi.AddDate } },
+        //        { "@rate", new ValuePair { value1 = SqlDbType.Decimal, value2 = mio.Rate} },
+        //        { "@priceouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mi.PriceOutTax } },
+        //        { "@priceoutwithouttax", new ValuePair { value1 = SqlDbType.Money, value2 = mio.PriceWithoutTax } },
+        //        { "@insertoperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = mio.InsertOperator } },
+
+        //    };
+        //    return SelectData(dic, sp);
+        //}
 
         public DataTable M_Itemorderprice_Insert(string datatb,string vendorcd,string storecd)
         {
@@ -47,6 +74,15 @@ namespace DL
                 { "@datatb", new ValuePair { value1 =SqlDbType.VarChar,value2 = datatb } },
                 { "@vendorcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = vendorcd } },
                 { "@storecd", new ValuePair { value1 =SqlDbType.VarChar,value2 = storecd } },
+            };
+            return SelectData(dic, sp);
+        }
+        public DataTable M_SKU_SelectFor_SKU_Update(string datatb)
+        {
+            string sp = "M_SKU_SelectFor_SKU_Update";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@datatb", new ValuePair { value1 =SqlDbType.VarChar,value2 = datatb } },
             };
             return SelectData(dic, sp);
         }
