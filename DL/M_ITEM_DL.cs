@@ -155,6 +155,28 @@ namespace DL
             return SelectData(dic, "M_ITEM_NormalSelect");
         }
 
+        public DataTable M_Item_SelectForSKSMasterUpdate()
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+             
+            };
+            return SelectData(dic, "M_Item_SelectForSKSMasterUpdate");
+        }
+
+
+        public bool M_ITem_SKSUpdateFlg(string xmlMasterItem, string xmlMasterSKU)
+        {
+            string sp = "M_ITem_SKSUpdateFlg";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@xmlMasterItem", new ValuePair { value1 = SqlDbType.VarChar, value2 = xmlMasterItem} },
+                { "@xmlMasterSKU", new ValuePair { value1 = SqlDbType.VarChar, value2 = xmlMasterSKU} },
+            };
+
+            return InsertUpdateDeleteData(dic, sp);
+        }
     }
 
 }

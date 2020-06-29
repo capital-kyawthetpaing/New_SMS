@@ -31,13 +31,15 @@ BEGIN
     END
     ELSE
     BEGIN
-        EXEC Fnc_GetNumber
-            13  --@SeqKBN      tinyint,
-            ,NULL --@ChangeDate  varchar(10),
-            ,NULL   --@StoreCD     varchar(4),
-            ,NULL   --@Operator  varchar(10),
-            ,@OutNO  OUTPUT 
-            ;
+        SET @OutNO = (SELECT RIGHT('0000000000' + CONVERT(varchar, M.ProcessingCounter + 1), 11)
+                    FROM M_TemporaryReserve AS M
+                    WHERE M.TemporaryReserveKey = 1
+                    );
+        
+        UPDATE M_TemporaryReserve
+        SET ProcessingCounter = ProcessingCounter + 1
+        WHERE TemporaryReserveKey = 1
+        ;
     END
     
     SELECT @OutNO AS OutNO;

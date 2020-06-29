@@ -102,7 +102,7 @@ namespace MasterTouroku_ShiireKakeritsu
 
         public void CancelData()
         {
-            scSupplierCD.Clear();
+            //scSupplierCD.Clear();
             txtDate1.Text = string.Empty;
             scBrandCD1.Clear();
             scSportsCD1.Clear();
@@ -292,6 +292,7 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = new M_OrderRate_Entity()
             {
                 VendorCD = scSupplierCD.TxtCode.Text,
+                StoreCD=cbo_Store.SelectedValue.ToString(),
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
@@ -628,10 +629,10 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "SportsCD='" + scSportsCD.TxtCode.Text + "'";
                 if (!string.IsNullOrWhiteSpace(scSegmentCD.TxtCode.Text))
                     searchCondition = "SegmentCD= '" + scSegmentCD.TxtCode.Text + "'";
-                if (!string.IsNullOrWhiteSpace(cbo_Year1.Text))
-                    searchCondition = "LastYearTerm='" + cbo_Year1.Text + "'";
-                if (!string.IsNullOrWhiteSpace(cbo_Season1.Text))
-                    searchCondition = "LastSeason= '" + cbo_Season1.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Year.Text))
+                    searchCondition = "LastYearTerm='" + cbo_Year.Text + "'";
+                if (!string.IsNullOrWhiteSpace(cbo_Season.Text))
+                    searchCondition = "LastSeason= '" + cbo_Season.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtChangeDate.Text))
                     searchCondition = "ChangeDate= '" + txtChangeDate.Text + "'";
                 if (!string.IsNullOrWhiteSpace(txtRate.Text))
@@ -710,6 +711,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtRow["Rate"] = Convert.ToDecimal(txtRate.Text);
                     dt.Rows.Add(dtRow);
                     CancelData();
+                    scBrandCD.SetFocus(1);
                     dgv_ShiireKakeritsu.DataSource = dt;
                 }
                 else
@@ -725,6 +727,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     dtMain.Rows.Add(row);
                     dgv_ShiireKakeritsu.DataSource = dtMain;
                     CancelData();
+                    scBrandCD.SetFocus(1);
                 }
             }
         }
@@ -995,11 +998,11 @@ namespace MasterTouroku_ShiireKakeritsu
                         mskbl.ShowMessage("E230");
                         return false;
                     }
-                    else if (row["店舗CD"] != DBNull.Value && row["店舗CD"].ToString() != "0000")
-                    {
-                        mskbl.ShowMessage("E138");
-                        return false;
-                    }
+                    //else if (row["店舗CD"] != DBNull.Value && row["店舗CD"].ToString() != "0000")
+                    //{
+                    //    mskbl.ShowMessage("E138");
+                    //    return false;
+                    //}
                     else if (row["ブランドCD"].ToString() == scBrandCD.TxtCode.Text)
                     {
                         mskbl.ShowMessage("E138");
