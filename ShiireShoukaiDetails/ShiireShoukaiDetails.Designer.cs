@@ -75,7 +75,7 @@
             this.scItem = new Search.CKM_SearchControl();
             this.scSkuCD = new Search.CKM_SearchControl();
             this.scJanCD = new Search.CKM_SearchControl();
-            this.txtDisable = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.button = new System.Windows.Forms.DataGridViewButtonColumn();
             this.SupplierNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,7 +159,7 @@
             this.dgv_PurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_PurchaseDetails.ColumnHeadersHeight = 25;
             this.dgv_PurchaseDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtDisable,
+            this.button,
             this.SupplierNo,
             this.SupplierDate,
             this.Supplier,
@@ -194,6 +194,7 @@
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;
             this.dgv_PurchaseDetails.UseSetting = true;
+            this.dgv_PurchaseDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PurchaseDetails_CellContentClick);
             // 
             // panel1
             // 
@@ -888,13 +889,14 @@
             this.scJanCD.Value2 = null;
             this.scJanCD.Value3 = null;
             // 
-            // txtDisable
+            // button
             // 
-            this.txtDisable.HeaderText = "";
-            this.txtDisable.Name = "txtDisable";
-            this.txtDisable.ReadOnly = true;
-            this.txtDisable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtDisable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.button.DataPropertyName = "button";
+            this.button.HeaderText = "";
+            this.button.Name = "button";
+            this.button.ReadOnly = true;
+            this.button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // SupplierNo
             // 
@@ -1125,7 +1127,7 @@
         private CKM_Controls.CKM_Label lblplanDate;
         private CKM_Controls.CKM_TextBox txtPurchaseDate1;
         private CKM_Controls.CKM_Label lblSupplierDate;
-        private System.Windows.Forms.DataGridViewButtonColumn txtDisable;
+        private System.Windows.Forms.DataGridViewButtonColumn button;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
