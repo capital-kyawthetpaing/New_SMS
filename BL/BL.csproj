@@ -163,6 +163,7 @@
     <Compile Include="SiharaiYoteiHyou_BL.cs" />
     <Compile Include="SiiresakiZaikoYoteiHyou_BL.cs" />
     <Compile Include="Site_BL.cs" />
+    <Compile Include="SKSMasterUpdate_BL.cs" />
     <Compile Include="SKUPrice_BL.cs" />
     <Compile Include="SKU_BL.cs" />
     <Compile Include="Staff_BL.cs" />
