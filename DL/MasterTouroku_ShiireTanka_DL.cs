@@ -66,12 +66,13 @@ namespace DL
         //    return SelectData(dic, sp);
         //}
 
-        public DataTable M_Itemorderprice_Insert(string datatb,string vendorcd,string storecd)
+        public DataTable M_Itemorderprice_Insert(string tbitem,string tbsku,string vendorcd,string storecd)
         {
             string sp = "M_Itemorderprice_Insert";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
-                { "@datatb", new ValuePair { value1 =SqlDbType.VarChar,value2 = datatb } },
+                { "@tbitem", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbitem } },
+                 { "@tbsku", new ValuePair { value1 =SqlDbType.VarChar,value2 = tbsku } },
                 { "@vendorcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = vendorcd } },
                 { "@storecd", new ValuePair { value1 =SqlDbType.VarChar,value2 = storecd } },
             };

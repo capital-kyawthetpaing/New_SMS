@@ -27,6 +27,8 @@ namespace ShiireShoukaiShiiresaki
         D_Purchase_Entity dpde;
         ShiireShoukaiShiiresaki_BL dpurchase_bl;
         Base_BL bbl = new Base_BL();
+        private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
+        private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
         public ShiireShoukaiShiiresaki()
         {
             InitializeComponent();
@@ -477,12 +479,45 @@ namespace ShiireShoukaiShiiresaki
 
         private void dgvPurchaseSearch_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            //if (e.RowIndex != -1)
+            //{
+            //  string  purchaseNO = dgvPurchaseSearch.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+            //    //Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd, soukoname, StoreCD);
+            //    //frmVendor.ShowDialog();
+            //}
+            var senderGrid = (DataGridView)sender;
             {
-              string  purchaseNO = dgvPurchaseSearch.Rows[e.RowIndex].Cells[1].Value.ToString();
-               
-                //Search_PlanArrival frmVendor = new Search_PlanArrival(adminno, skucd, shohinmei, color, size, jancd, brand, item, makercd, changedate, soukocd, soukoname, StoreCD);
-                //frmVendor.ShowDialog();
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                   e.RowIndex >= 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = dpurchase_bl.SimpleSelect1("68", null, dgvPurchaseSearch.Rows[e.RowIndex].Cells["PurchaseNO"].Value.ToString());
+                    if (dt.Rows.Count > 0)
+                    {
+                        string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();
+                        if (dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " +PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                    }
+                }
             }
         }
 

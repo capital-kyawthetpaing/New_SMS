@@ -1763,6 +1763,7 @@ namespace Base.Client
                 return createParam;
             }
         }
+
         protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
         {
             this.txt = txt;
@@ -1774,17 +1775,31 @@ namespace Base.Client
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            bbl.ShowMessage("E102");
-                            c.Focus();
+                            //  if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //{
+                                bbl.ShowMessage("E102");
+                                c.Focus();
+                            ((CKM_TextBox)c).IsFirstTime = false;
+                            //}
                             return false;
+                            //bbl.ShowMessage("E102");
+                            //c.Focus();
+                            //return false;
                         }
                     }
                     else if (!string.IsNullOrWhiteSpace(txt.Text))
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            bbl.ShowMessage("E102");
-                            c.Focus();
+                            ////  if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //  {
+                            
+                                bbl.ShowMessage("E102");
+                                c.Focus();
+                            ((CKM_TextBox)c).IsFirstTime = false;
+                            //}
                             return false;
                         }
 
@@ -1808,6 +1823,7 @@ namespace Base.Client
             }
             return true;
         }
+
         protected bool ReverseRequireCheck(Control[] ctrl, TextBox txt = null)
         {
             txt1 = txt;
@@ -1819,8 +1835,13 @@ namespace Base.Client
                     {
                         if (!string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
+                            //   if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //{
+                            ((CKM_TextBox)c).IsFirstTime = false;
                             bbl.ShowMessage("E102");
-                            txt1.Focus();
+                                txt1.Focus();
+                            //}
                             return false;
                         }
                     }
@@ -1829,6 +1850,115 @@ namespace Base.Client
             }
             return true;
         }
+        //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
+        //{
+        //    this.txt = txt;
+        //    foreach (Control c in ctrl)
+        //    {
+        //        if (c is CKM_TextBox)
+        //        {
+        //            if (txt == null)
+        //            {
+        //                if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //                {
+        //                    bbl.ShowMessage("E102");
+        //                    c.Focus();
+        //                    return false;
+        //                }
+        //            }
+
+        //            else if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //            {
+        //                bbl.ShowMessage("E102");
+        //                c.Focus();
+        //                return false;
+        //            }
+        //            //else if (!string.IsNullOrWhiteSpace(txt.Text))
+        //            //{
+        //            //    //if (((CKM_TextBox)c).Name == "txtChangeDate")
+        //            //    //{
+        //            //    //    if (!DateCheck(((CKM_TextBox)c).Text))
+        //            //    //    {
+        //            //    //        if (Datetemp == "")
+        //            //    //        {
+        //            //    //            return false;
+        //            //    //        }
+
+
+        //            //    //    }
+        //            //    //    else
+        //            //    //    {
+        //            //    //        SetTxtInMain(Datetemp, ((CKM_TextBox)c).Parent.Name);
+
+        //            //    //    }
+
+        //            //    //}
+        //            //    if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //            //    {
+        //            //        bbl.ShowMessage("E102");
+        //            //        c.Focus();
+        //            //        return false;
+        //            //    }
+
+        //            //}
+        //        }
+        //        else if (c is CKM_ComboBox)
+        //        {
+        //            if (((CKM_ComboBox)c).SelectedIndex.Equals(-1))
+        //            {
+        //                bbl.ShowMessage("E102");
+        //                c.Focus();
+        //                return false;
+        //            }
+        //            if (((CKM_ComboBox)c).SelectedValue.Equals("-1"))
+        //            {
+        //                bbl.ShowMessage("E102");
+        //                c.Focus();
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return true;
+        //}
+        //protected bool ReverseRequireCheck(Control[] ctrl, TextBox txt = null)
+        //{
+        //    txt1 = txt;
+        //    foreach (Control c in ctrl)
+        //    {
+        //        if (c is CKM_TextBox)
+        //        {
+        //            if (string.IsNullOrWhiteSpace(txt1.Text))
+        //            {
+        //                //if (((CKM_TextBox)c).Name == "txtChangeDate")
+        //                //{
+        //                //    if (!DateCheck(((CKM_TextBox)c).Text))
+        //                //    {
+
+        //                //        if (Datetemp == "")
+        //                //        {
+        //                //            return false;
+        //                //        }
+        //                //    }else
+        //                //        SetTxtInMain(Datetemp, ((CKM_TextBox)c).Parent.Name);
+
+
+        //                //}
+        //                if (!string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //                {
+        //                  //  Datetemp = "";
+        //                    bbl.ShowMessage("E102");
+        //                    txt1.Focus();
+        //                    return false;
+        //                }
+
+
+        //            }
+
+        //        }
+        //    }
+        //    return true;
+        //}
+        string Datetemp = "";
         private void BtnF1_MouseEnter(object sender, EventArgs e)
         {
             PreviousCtrl = this.ActiveControl;
@@ -2105,6 +2235,131 @@ namespace Base.Client
         private void FrmMainForm_KeyUp(object sender, KeyEventArgs e)
         {
             //MoveNextControl(e);
+        }
+
+        
+        private bool DateCheck(string Text1 = null)
+        {
+            bbl = new Base_BL();
+            if (!string.IsNullOrWhiteSpace(Text1))
+            {
+                if (bbl.IsInteger(Text1.Replace("/", "").Replace("-", "")))
+                {
+                    string day = string.Empty, month = string.Empty, year = string.Empty;
+                    if (Text1.Contains("/"))
+                    {
+                        string[] date = Text1.Split('/');
+                        day = date[date.Length - 1].PadLeft(2, '0');
+                        month = date[date.Length - 2].PadLeft(2, '0');
+
+                        if (date.Length > 2)
+                            year = date[date.Length - 3];
+
+                        Text1 = year + month + day;//  this.Text.Replace("/", "");
+                    }
+                    else if (Text1.Contains("-"))
+                    {
+                        string[] date = Text1.Split('-');
+                        day = date[date.Length - 1].PadLeft(2, '0');
+                        month = date[date.Length - 2].PadLeft(2, '0');
+
+                        if (date.Length > 2)
+                            year = date[date.Length - 3];
+
+                        Text1 = year + month + day;//  this.Text.Replace("-", "");
+                    }
+
+                    string text = Text1;
+                    text = text.PadLeft(8, '0');
+                    day = text.Substring(text.Length - 2);
+                    month = text.Substring(text.Length - 4).Substring(0, 2);
+                    year = Convert.ToInt32(text.Substring(0, text.Length - 4)).ToString();
+
+                    if (month == "00")
+                    {
+                        month = string.Empty;
+                    }
+                    if (year == "0")
+                    {
+                        year = string.Empty;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(month))
+                        month = DateTime.Now.Month.ToString().PadLeft(2, '0');//if user doesn't input for month,set current month
+
+                    if (string.IsNullOrWhiteSpace(year))
+                    {
+                        year = DateTime.Now.Year.ToString();//if user doesn't input for year,set current year
+                    }
+                    else
+                    {
+                        if (year.Length == 1)
+                            year = "200" + year;
+                        else if (year.Length == 2)
+                            year = "20" + year;
+                    }
+
+                    //string strdate = year + "-" + month + "-" + day;  2019.6.11 chg
+                    string strdate = year + "/" + month + "/" + day;
+                    if (bbl.CheckDate(strdate))
+                    {
+                        //   IsCorrectDate = true;
+                        Text1 = strdate;
+                        Datetemp = strdate;
+                    }
+                    else
+                    {
+                        Datetemp = "";
+                      //  ShowErrorMessage("E103");
+                        return false;
+                    }
+                }
+                else
+                {
+                    Datetemp = "";
+                  //  ShowErrorMessage("E103");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        protected void SetTxtInMain(string Date, string CtrName)
+        {
+            var c = GetAllControls(this);
+            for (int i = 0; i < c.Count(); i++)
+            {
+                var Con = c.ElementAt(i) as UserControl;
+                if (Con is CKM_SearchControl  && Con.Name == CtrName)
+                {
+                    try
+                    {
+                        Control ctrl = Con.Controls.Find("txtChangeDate", true)[0];
+                        //if (IsConsistFullWidth((ctrl as CKM_TextBox).Text))
+                        //{
+                        //    bbl.ShowMessage("E221");
+                        //    //(ctrl as CKM_TextBox).Focus();
+                        //    //(ctrl as CKM_TextBox).MoveNext = false;
+                        //  return ;
+                        //}
+                        ctrl.Text = Date;
+                        return;
+                    }
+                    catch
+                    {
+                        return ;
+                    }
+                }
+            }
+            }
+
+        private void ShowErrorMessage(string messageID)
+        {
+            bbl.ShowMessage(messageID);
+            //MoveNext = false;
+            //this.SelectionStart = 0;
+            //this.SelectionLength = this.Text.Length;
         }
     }
 }

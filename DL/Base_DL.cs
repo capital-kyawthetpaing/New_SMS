@@ -110,7 +110,7 @@ namespace DL
             }
             catch(Exception ex) {
                 var msg = ex.Message;
-                throw ex;
+              //  throw ex;
             }
             return dt;
         }

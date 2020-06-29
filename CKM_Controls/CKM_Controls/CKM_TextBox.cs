@@ -113,7 +113,7 @@ namespace CKM_Controls
         private bool IsRequire { get; set; } = false;
         private bool IsReversecheck { get; set; } = false;
         public bool IsCorrectDate { get; set; } = true;
-
+        public bool IsFirstTime { get; set; } = true;
         public bool IsShop { get; set; } = false;
         public bool IsNumber { get; set; } = true;
 
