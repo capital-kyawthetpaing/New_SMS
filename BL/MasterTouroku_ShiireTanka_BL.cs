@@ -34,9 +34,9 @@ namespace BL
             return msdl.M_ItemOrderPrice_SelectFromSKU(mie);
         }
 
-        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mie, M_ITEM_Entity mi)
+        public DataTable MastertorokuShiiretanka_Select(M_ItemOrderPrice_Entity mie)
         {
-            return msdl.MastertorokuShiiretanka_Select(mie, mi);
+            return msdl.MastertorokuShiiretanka_Select(mie);
         }
         public DataTable M_ITem_ItemNandPriceoutTax_Select(M_ITEM_Entity mi)
         {
@@ -90,6 +90,10 @@ namespace BL
         public DataTable M_Itemorderprice_Insert(string tb,string vendorcd,string storecd)
         {
             return msdl.M_Itemorderprice_Insert(tb,vendorcd,storecd);
+        }
+        public DataTable M_SKU_SelectFor_SKU_Update(string tb)
+        {
+            return msdl.M_SKU_SelectFor_SKU_Update(tb);
         }
     }
 }

@@ -1610,12 +1610,14 @@ namespace MasterTouroku_Shouhin
         protected override void ExecSec()
         {
             for (int i = 0; i <= (int)EIndex.ChangeDate; i++)
-                if (CheckKey(i, 0, false) == false)
+                if (keyControls[i].Enabled)
                 {
-                    keyControls[i].Focus();
-                    return;
+                    if (CheckKey(i, 0, false) == false)
+                    {
+                        keyControls[i].Focus();
+                        return;
+                    }
                 }
-
             if (OperationMode != EOperationMode.DELETE)
             {
                 for (int i = 0; i < detailControls.Length; i++)

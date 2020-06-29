@@ -46,7 +46,7 @@ namespace TempoRegiKaiinTouroku
             }
             if(txtCustomerNo.Text.Length < 13)
             {
-                bbl.ShowMessage("E238");
+                bbl.ShowMessage("E245");
                 txtCustomerNo.Focus();
                 return false;
             }
@@ -98,7 +98,6 @@ namespace TempoRegiKaiinTouroku
             }
 
         }       
-
         private void Customer_KeyDown(object sender, KeyEventArgs e)
         {           
             if(Keys.Enter==e.KeyCode)
