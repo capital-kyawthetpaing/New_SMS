@@ -1775,17 +1775,31 @@ namespace Base.Client
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            bbl.ShowMessage("E102");
-                            c.Focus();
+                            //  if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //{
+                                bbl.ShowMessage("E102");
+                                c.Focus();
+                            ((CKM_TextBox)c).IsFirstTime = false;
+                            //}
                             return false;
+                            //bbl.ShowMessage("E102");
+                            //c.Focus();
+                            //return false;
                         }
                     }
                     else if (!string.IsNullOrWhiteSpace(txt.Text))
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            bbl.ShowMessage("E102");
-                            c.Focus();
+                            ////  if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //  {
+                            
+                                bbl.ShowMessage("E102");
+                                c.Focus();
+                            ((CKM_TextBox)c).IsFirstTime = false;
+                            //}
                             return false;
                         }
 
@@ -1821,8 +1835,13 @@ namespace Base.Client
                     {
                         if (!string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
+                            //   if (((CKM_TextBox)c).Name != "txtChangeDate")
+                            //if (txt.Name != "txtChangeDate")
+                            //{
+                            ((CKM_TextBox)c).IsFirstTime = false;
                             bbl.ShowMessage("E102");
-                            txt1.Focus();
+                                txt1.Focus();
+                            //}
                             return false;
                         }
                     }
