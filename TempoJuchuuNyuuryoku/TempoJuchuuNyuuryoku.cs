@@ -1212,6 +1212,7 @@ namespace TempoJuchuuNyuuryoku
                     //前の行をコピーしてできた新しい行
                     mGrid.g_DArray[i].juchuGyoNO = 0;
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
+                    mGrid.g_DArray[i].KariHikiateNO = "";
                 }
                 else
                 {
@@ -1832,6 +1833,8 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[i].copyJuchuGyoNO = Convert.ToInt16(row["JuchuuRows"].ToString());
                     }
 
+                    mGrid.g_DArray[i].SoukoName = row["M_SoukoCD"].ToString();  //引当処理のため
+
                     CheckGrid((int)ClsGridJuchuu.ColNO.JanCD, i, true);
 
                     mGrid.g_DArray[i].SKUName = row["SKUName"].ToString();   // 
@@ -1875,7 +1878,6 @@ namespace TempoJuchuuNyuuryoku
                             mGrid.g_DArray[i].Syukka = status2;
                         }
                     }
-                    mGrid.g_DArray[i].SoukoName= row["M_SoukoCD"].ToString();
                     mGrid.g_DArray[i].JuchuuOrderNO = row["JuchuuOrderNO"].ToString();
                     mGrid.g_DArray[i].VendorCD = row["VendorCD"].ToString();
                     CheckGrid((int)ClsGridJuchuu.ColNO.VendorCD, i);
@@ -2197,10 +2199,10 @@ namespace TempoJuchuuNyuuryoku
 
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
-
+        
             dje = new D_Juchuu_Entity();
             dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
-
+        
             //D_TemporaryReserveをDelete
             mibl.DeleteTemporaryReserve(dje);
 
@@ -3006,7 +3008,7 @@ namespace TempoJuchuuNyuuryoku
                         //明細の出荷倉庫CDに、Header部の出荷倉庫CD、倉庫名をセットする。
                         mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString() : "";
 
-                            CheckHikiate(row, ymd);
+                        CheckHikiate(row, ymd);
 
                         Grid_NotFocus(col, row);
 
@@ -3054,8 +3056,7 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                         }
 
-                    if (!chkAll)
-                        ret = CheckHikiate(row, ymd);
+                    ret = CheckHikiate(row, ymd);
 
                     break;
 
@@ -3216,12 +3217,16 @@ namespace TempoJuchuuNyuuryoku
 
                 //Form.受注番号＝Nullの場合
                 if(mTemporaryReserveNO=="")
+                {
                     mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
+                }
 
                 fre.DenNo = mTemporaryReserveNO;
 
                 if (fre.DenGyoNo == "0")
+                {
                     fre.DenGyoNo = (row + 1).ToString();
+                }
 
                 ret = bbl.Fnc_Reserve(fre);
                 if(ret)
