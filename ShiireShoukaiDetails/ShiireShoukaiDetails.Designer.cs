@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -75,8 +76,8 @@
             this.scItem = new Search.CKM_SearchControl();
             this.scSkuCD = new Search.CKM_SearchControl();
             this.scJanCD = new Search.CKM_SearchControl();
-            this.txtDisable = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.SupplierNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.PurchaseNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SupplierDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SKUCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,7 +152,7 @@
             this.dgv_PurchaseDetails.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -159,8 +160,8 @@
             this.dgv_PurchaseDetails.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_PurchaseDetails.ColumnHeadersHeight = 25;
             this.dgv_PurchaseDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.txtDisable,
-            this.SupplierNo,
+            this.button,
+            this.PurchaseNO,
             this.SupplierDate,
             this.Supplier,
             this.SKUCD,
@@ -184,6 +185,14 @@
             this.PaymentPlanDate,
             this.PayConfirmFinishedDate,
             this.DeliveryNo});
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("MS Gothic", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_PurchaseDetails.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_PurchaseDetails.EnableHeadersVisualStyles = false;
             this.dgv_PurchaseDetails.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgv_PurchaseDetails.Location = new System.Drawing.Point(2, 305);
@@ -194,6 +203,7 @@
             this.dgv_PurchaseDetails.TabIndex = 9;
             this.dgv_PurchaseDetails.UseRowNo = true;
             this.dgv_PurchaseDetails.UseSetting = true;
+            this.dgv_PurchaseDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_PurchaseDetails_CellContentClick);
             // 
             // panel1
             // 
@@ -888,19 +898,20 @@
             this.scJanCD.Value2 = null;
             this.scJanCD.Value3 = null;
             // 
-            // txtDisable
+            // button
             // 
-            this.txtDisable.HeaderText = "";
-            this.txtDisable.Name = "txtDisable";
-            this.txtDisable.ReadOnly = true;
-            this.txtDisable.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.txtDisable.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.button.DataPropertyName = "button";
+            this.button.HeaderText = "";
+            this.button.Name = "button";
+            this.button.ReadOnly = true;
+            this.button.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.button.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // SupplierNo
+            // PurchaseNO
             // 
-            this.SupplierNo.DataPropertyName = "PurchaseNO";
-            this.SupplierNo.HeaderText = "仕入番号";
-            this.SupplierNo.Name = "SupplierNo";
+            this.PurchaseNO.DataPropertyName = "PurchaseNO";
+            this.PurchaseNO.HeaderText = "仕入番号";
+            this.PurchaseNO.Name = "PurchaseNO";
             // 
             // SupplierDate
             // 
@@ -1125,8 +1136,8 @@
         private CKM_Controls.CKM_Label lblplanDate;
         private CKM_Controls.CKM_TextBox txtPurchaseDate1;
         private CKM_Controls.CKM_Label lblSupplierDate;
-        private System.Windows.Forms.DataGridViewButtonColumn txtDisable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SupplierNo;
+        private System.Windows.Forms.DataGridViewButtonColumn button;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PurchaseNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn SupplierDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Supplier;
         private System.Windows.Forms.DataGridViewTextBoxColumn SKUCD;

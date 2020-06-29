@@ -2198,6 +2198,12 @@ namespace TempoJuchuuNyuuryoku
             if (string.IsNullOrWhiteSpace(ymd))
                 ymd = bbl.GetDate();
 
+            dje = new D_Juchuu_Entity();
+            dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
+
+            //D_TemporaryReserveをDelete
+            mibl.DeleteTemporaryReserve(dje);
+
             //明細部チェック
             for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
             {
@@ -3000,7 +3006,7 @@ namespace TempoJuchuuNyuuryoku
                         //明細の出荷倉庫CDに、Header部の出荷倉庫CD、倉庫名をセットする。
                         mGrid.g_DArray[row].SoukoName = CboSoukoName.SelectedIndex > 0 ? CboSoukoName.SelectedValue.ToString() : "";
 
-                        CheckHikiate(row, ymd);
+                            CheckHikiate(row, ymd);
 
                         Grid_NotFocus(col, row);
 
@@ -3048,7 +3054,8 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                         }
 
-                    ret = CheckHikiate(row, ymd);
+                    if (!chkAll)
+                        ret = CheckHikiate(row, ymd);
 
                     break;
 
@@ -3775,6 +3782,12 @@ namespace TempoJuchuuNyuuryoku
                         detailControls[i].Focus();
                         return;
                     }
+
+                dje = new D_Juchuu_Entity();
+                dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text == "" ? mTemporaryReserveNO : keyControls[(int)EIndex.JuchuuNO].Text;
+
+                //D_TemporaryReserveをDelete
+                mibl.DeleteTemporaryReserve(dje);
 
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);

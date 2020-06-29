@@ -65,6 +65,7 @@
     <Content Include="StoreProcedure\CheckShippingData.sql" />
     <Content Include="StoreProcedure\CheckSyonin.sql" />
     <Content Include="StoreProcedure\Check_RegisteredMenu.sql" />
+    <Content Include="StoreProcedure\DeleteTemporaryReserve.sql" />
     <Content Include="StoreProcedure\D_APIControl_Insert_Update.sql" />
     <Content Include="StoreProcedure\D_APIDetail_YahooList.sql" />
     <Content Include="StoreProcedure\D_APIRireki_Grid_Select.sql" />
@@ -261,6 +262,7 @@
     <Content Include="StoreProcedure\Fnc_UnitPrice.sql" />
     <Content Include="StoreProcedure\Fnc_UnitPrice_SP.sql" />
     <Content Include="StoreProcedure\Function_GetName_ReturnValue.sql" />
+    <Content Include="StoreProcedure\GetTemporaryReserveNO.sql" />
     <Content Include="StoreProcedure\Get_ShihraiYoteibi.sql" />
     <Content Include="StoreProcedure\Get_StoreName.sql" />
     <Content Include="StoreProcedure\HMENU.sql" />
@@ -340,7 +342,9 @@
     <Content Include="StoreProcedure\M_ItemPrice_SelectData.sql" />
     <Content Include="StoreProcedure\MastertorokuShiiretanka_Select.sql" />
     <Content Include="StoreProcedure\M_ITEM_Select.sql" />
+    <Content Include="StoreProcedure\M_Item_SelectForSKSMasterUpdate.sql" />
     <Content Include="StoreProcedure\M_ITEM_SelectTop1.sql" />
+    <Content Include="StoreProcedure\M_ITem_SKSUpdateFlg.sql" />
     <Content Include="StoreProcedure\M_JANOrderPrice_Select.sql" />
     <Content Include="StoreProcedure\M_Kouza_Bind.sql" />
     <Content Include="StoreProcedure\M_Kouza_Delete.sql" />
@@ -409,6 +413,7 @@
     <Content Include="StoreProcedure\M_SKU_SelectByMaker.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectBySKUCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectForSearchProduct.sql" />
+    <Content Include="StoreProcedure\M_SKU_SelectForSKSMasterUpdate.sql" />
     <Content Include="StoreProcedure\M_SKU_Select_ByJanCD.sql" />
     <Content Include="StoreProcedure\M_SoukoName_Select.sql" />
     <Content Include="StoreProcedure\M_SoukoWarehouse_Select.sql" />

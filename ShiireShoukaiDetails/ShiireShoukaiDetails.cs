@@ -21,6 +21,8 @@ namespace ShiireShoukaiDetails
         D_Purchase_Details_Entity dpd_entity;
         ShiireShoukaiDetails_BL ssdbl ;
         Base_BL bbl ;
+        private const string ShiireNyuuryokuFromNyuuka = "ShiireNyuuryokuFromNyuuka.exe";
+        private const string ShiireNyuuryoku = "ShiireNyuuryoku.exe";
         public ShiireShoukaiDetails()
         {
             InitializeComponent();
@@ -472,6 +474,43 @@ namespace ShiireShoukaiDetails
                 {
                     bbl.ShowMessage("E141");
                     cboStore.Focus();
+                }
+            }
+        }
+
+        private void dgv_PurchaseDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var senderGrid = (DataGridView)sender;
+            {
+                if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
+                   e.RowIndex >= 0)
+                {
+                    DataTable dt = new DataTable();
+                    dt = ssdbl.SimpleSelect1("68", null, dgv_PurchaseDetails.Rows[e.RowIndex].Cells["PurchaseNO"].Value.ToString());
+                    if (dt.Rows.Count > 0)
+                    {
+                        string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();
+                        if (dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                        else
+                        {
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + PurchaseNO;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
+                        }
+                    }
                 }
             }
         }

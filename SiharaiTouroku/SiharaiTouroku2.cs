@@ -895,5 +895,28 @@ namespace SiharaiTouroku
                 //EndSec();
             }
         }
+
+        private void dgvSearchPayment_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            try
+            {
+                if (e.Exception != null)
+                {
+                    if(e.ColumnIndex == dgvSearchPayment.Columns["colUnpaidAmount1"].Index)
+                    {
+                        var ctl = dgvSearchPayment.EditingControl as DataGridViewTextBoxEditingControl;
+
+                        dgvSearchPayment.CurrentRow.Cells["colUnpaidAmount1"].Value = bbl.Z_Set(ctl.Text);
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
     }
 }

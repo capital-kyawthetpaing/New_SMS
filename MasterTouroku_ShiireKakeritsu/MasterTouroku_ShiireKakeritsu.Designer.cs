@@ -271,7 +271,7 @@
             this.ckM_Button1.Location = new System.Drawing.Point(1533, 13);
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
-            this.ckM_Button1.Size = new System.Drawing.Size(100, 25);
+            this.ckM_Button1.Size = new System.Drawing.Size(110, 25);
             this.ckM_Button1.TabIndex = 53;
             this.ckM_Button1.Text = "取込(F10)";
             this.ckM_Button1.UseVisualStyleBackColor = false;
@@ -377,6 +377,7 @@
             // 
             // dgv_ShiireKakeritsu
             // 
+            this.dgv_ShiireKakeritsu.AllowUserToAddRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToDeleteRows = false;
             this.dgv_ShiireKakeritsu.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
@@ -419,7 +420,7 @@
             this.dgv_ShiireKakeritsu.TabIndex = 44;
             this.dgv_ShiireKakeritsu.UseRowNo = true;
             this.dgv_ShiireKakeritsu.UseSetting = false;
-            this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick_1);
+            this.dgv_ShiireKakeritsu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ShiireKakeritsu_CellContentClick);
             // 
             // colChk
             // 
@@ -507,7 +508,7 @@
             this.btnDelete.Location = new System.Drawing.Point(1533, 308);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(1);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(100, 25);
+            this.btnDelete.Size = new System.Drawing.Size(110, 25);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "削除";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -523,10 +524,10 @@
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnUpdate.Location = new System.Drawing.Point(1433, 308);
+            this.btnUpdate.Location = new System.Drawing.Point(1424, 308);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(1);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(100, 25);
+            this.btnUpdate.Size = new System.Drawing.Size(110, 25);
             this.btnUpdate.TabIndex = 29;
             this.btnUpdate.Text = "変更";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -542,10 +543,10 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnAdd.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnAdd.Location = new System.Drawing.Point(1333, 308);
+            this.btnAdd.Location = new System.Drawing.Point(1316, 308);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 25);
+            this.btnAdd.Size = new System.Drawing.Size(110, 25);
             this.btnAdd.TabIndex = 28;
             this.btnAdd.Text = "追加";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -564,7 +565,7 @@
             this.btnReleaseAll.Location = new System.Drawing.Point(1533, 251);
             this.btnReleaseAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnReleaseAll.Name = "btnReleaseAll";
-            this.btnReleaseAll.Size = new System.Drawing.Size(100, 25);
+            this.btnReleaseAll.Size = new System.Drawing.Size(110, 25);
             this.btnReleaseAll.TabIndex = 27;
             this.btnReleaseAll.Text = "全解除";
             this.btnReleaseAll.UseVisualStyleBackColor = false;
@@ -580,10 +581,10 @@
             this.btnSelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelectAll.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSelectAll.Location = new System.Drawing.Point(1433, 251);
+            this.btnSelectAll.Location = new System.Drawing.Point(1424, 251);
             this.btnSelectAll.Margin = new System.Windows.Forms.Padding(1);
             this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(100, 25);
+            this.btnSelectAll.Size = new System.Drawing.Size(110, 25);
             this.btnSelectAll.TabIndex = 26;
             this.btnSelectAll.Text = "全選択";
             this.btnSelectAll.UseVisualStyleBackColor = false;
@@ -599,10 +600,10 @@
             this.btnChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChoice.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnChoice.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnChoice.Location = new System.Drawing.Point(1333, 251);
+            this.btnChoice.Location = new System.Drawing.Point(1315, 251);
             this.btnChoice.Margin = new System.Windows.Forms.Padding(1);
             this.btnChoice.Name = "btnChoice";
-            this.btnChoice.Size = new System.Drawing.Size(100, 25);
+            this.btnChoice.Size = new System.Drawing.Size(110, 25);
             this.btnChoice.TabIndex = 25;
             this.btnChoice.Text = "選択";
             this.btnChoice.UseVisualStyleBackColor = false;
@@ -898,10 +899,10 @@
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCopy.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnCopy.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnCopy.Location = new System.Drawing.Point(444, 309);
+            this.btnCopy.Location = new System.Drawing.Point(553, 309);
             this.btnCopy.Margin = new System.Windows.Forms.Padding(1);
             this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(100, 25);
+            this.btnCopy.Size = new System.Drawing.Size(110, 25);
             this.btnCopy.TabIndex = 12;
             this.btnCopy.Text = "複写";
             this.btnCopy.UseVisualStyleBackColor = false;
@@ -943,7 +944,7 @@
             this.ckM_Label16.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label16.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label16.Location = new System.Drawing.Point(63, 313);
+            this.ckM_Label16.Location = new System.Drawing.Point(63, 312);
             this.ckM_Label16.Name = "ckM_Label16";
             this.ckM_Label16.Size = new System.Drawing.Size(83, 12);
             this.ckM_Label16.TabIndex = 34;
@@ -995,10 +996,10 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
-            this.btnSearch.Location = new System.Drawing.Point(444, 249);
+            this.btnSearch.Location = new System.Drawing.Point(553, 249);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 25);
+            this.btnSearch.Size = new System.Drawing.Size(110, 25);
             this.btnSearch.TabIndex = 10;
             this.btnSearch.Text = "表示";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -1320,7 +1321,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(101, 39);
+            this.ckM_Label5.Location = new System.Drawing.Point(101, 38);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label5.TabIndex = 24;
@@ -1458,7 +1459,7 @@
             this.cbo_Store.MaxLength = 10;
             this.cbo_Store.MoveNext = true;
             this.cbo_Store.Name = "cbo_Store";
-            this.cbo_Store.Size = new System.Drawing.Size(140, 20);
+            this.cbo_Store.Size = new System.Drawing.Size(265, 20);
             this.cbo_Store.TabIndex = 8;
             this.cbo_Store.TabStop = false;
             this.cbo_Store.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbo_Store_KeyDown);

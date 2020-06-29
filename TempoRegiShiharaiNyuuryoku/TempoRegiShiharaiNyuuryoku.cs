@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Base.Client;
 using BL;
 using Entity;
+using DL;
 
 namespace TempoRegiShiharaiNyuuryoku
 {
@@ -94,8 +95,11 @@ namespace TempoRegiShiharaiNyuuryoku
             {
                 if (trgshbl.ShowMessage("Q101") == DialogResult.Yes)
                 {
-                    CashDrawerOpen op = new CashDrawerOpen();
-                    op.OpenCashDrawer();
+                    if (Base_DL.iniEntity.IsDM_D30Used)
+                    {
+                        CashDrawerOpen op = new CashDrawerOpen(); 
+                        op.OpenCashDrawer();
+                    }
                     ddpe = GetDepositEntity();
                     if (trgshbl.TempoRegiShiNyuuryoku_InsertUpdate(ddpe))
                     {
