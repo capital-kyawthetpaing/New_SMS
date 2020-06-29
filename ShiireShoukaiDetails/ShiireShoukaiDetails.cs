@@ -486,26 +486,29 @@ namespace ShiireShoukaiDetails
                    e.RowIndex >= 0)
                 {
                     DataTable dt = new DataTable();
-                    dt = ssdbl.ShiireShoukaiDetails_Select(dpd_entity);
-                    string ProcessKBN = dgv_PurchaseDetails.Rows[e.RowIndex].Cells["button"].State.ToString();
-                    if (ProcessKBN == "1")
+                    dt = ssdbl.SimpleSelect1("68", null, dgv_PurchaseDetails.Rows[e.RowIndex].Cells["SupplierNo"].Value.ToString());
+                    if (dt.Rows.Count > 0)
                     {
-                        System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                        string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
-                        if (System.IO.File.Exists(filePath))
+                        string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();
+                        if (dt.Rows[0]["ProcessKBN"].ToString().Equals("1"))
                         {
-                            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
-                            System.Diagnostics.Process.Start(filePath, cmdLine);
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryokuFromNyuuka;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
                         }
-                    }
-                    else
-                    {
-                        System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                        string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
-                        if (System.IO.File.Exists(filePath))
+                        else
                         {
-                            string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
-                            System.Diagnostics.Process.Start(filePath, cmdLine);
+                            System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                            string filePath = System.IO.Path.GetDirectoryName(u.LocalPath) + @"\" + ShiireNyuuryoku;
+                            if (System.IO.File.Exists(filePath))
+                            {
+                                string cmdLine = InCompanyCD + " " + InOperatorCD + " " + InPcID + " " + ProcessKBN;
+                                System.Diagnostics.Process.Start(filePath, cmdLine);
+                            }
                         }
                     }
                 }
