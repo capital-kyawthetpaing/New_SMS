@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtDate1 = new CKM_Controls.CKM_TextBox();
@@ -610,7 +609,7 @@
             this.ColorDelChk20.Location = new System.Drawing.Point(189, 502);
             this.ColorDelChk20.Name = "ColorDelChk20";
             this.ColorDelChk20.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk20.TabIndex = 132;
+            this.ColorDelChk20.TabIndex = 260;
             this.ColorDelChk20.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk19
@@ -620,7 +619,7 @@
             this.ColorDelChk19.Location = new System.Drawing.Point(189, 484);
             this.ColorDelChk19.Name = "ColorDelChk19";
             this.ColorDelChk19.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk19.TabIndex = 123;
+            this.ColorDelChk19.TabIndex = 259;
             this.ColorDelChk19.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk18
@@ -630,7 +629,7 @@
             this.ColorDelChk18.Location = new System.Drawing.Point(189, 466);
             this.ColorDelChk18.Name = "ColorDelChk18";
             this.ColorDelChk18.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk18.TabIndex = 122;
+            this.ColorDelChk18.TabIndex = 258;
             this.ColorDelChk18.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk17
@@ -640,7 +639,7 @@
             this.ColorDelChk17.Location = new System.Drawing.Point(189, 448);
             this.ColorDelChk17.Name = "ColorDelChk17";
             this.ColorDelChk17.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk17.TabIndex = 121;
+            this.ColorDelChk17.TabIndex = 257;
             this.ColorDelChk17.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk16
@@ -650,7 +649,7 @@
             this.ColorDelChk16.Location = new System.Drawing.Point(189, 430);
             this.ColorDelChk16.Name = "ColorDelChk16";
             this.ColorDelChk16.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk16.TabIndex = 120;
+            this.ColorDelChk16.TabIndex = 256;
             this.ColorDelChk16.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk15
@@ -660,7 +659,7 @@
             this.ColorDelChk15.Location = new System.Drawing.Point(189, 412);
             this.ColorDelChk15.Name = "ColorDelChk15";
             this.ColorDelChk15.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk15.TabIndex = 119;
+            this.ColorDelChk15.TabIndex = 254;
             this.ColorDelChk15.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk14
@@ -670,7 +669,7 @@
             this.ColorDelChk14.Location = new System.Drawing.Point(189, 394);
             this.ColorDelChk14.Name = "ColorDelChk14";
             this.ColorDelChk14.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk14.TabIndex = 118;
+            this.ColorDelChk14.TabIndex = 253;
             this.ColorDelChk14.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk13
@@ -680,7 +679,7 @@
             this.ColorDelChk13.Location = new System.Drawing.Point(189, 376);
             this.ColorDelChk13.Name = "ColorDelChk13";
             this.ColorDelChk13.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk13.TabIndex = 117;
+            this.ColorDelChk13.TabIndex = 252;
             this.ColorDelChk13.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk12
@@ -690,7 +689,7 @@
             this.ColorDelChk12.Location = new System.Drawing.Point(189, 358);
             this.ColorDelChk12.Name = "ColorDelChk12";
             this.ColorDelChk12.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk12.TabIndex = 116;
+            this.ColorDelChk12.TabIndex = 251;
             this.ColorDelChk12.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk11
@@ -700,7 +699,7 @@
             this.ColorDelChk11.Location = new System.Drawing.Point(189, 340);
             this.ColorDelChk11.Name = "ColorDelChk11";
             this.ColorDelChk11.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk11.TabIndex = 115;
+            this.ColorDelChk11.TabIndex = 250;
             this.ColorDelChk11.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk10
@@ -710,7 +709,7 @@
             this.ColorDelChk10.Location = new System.Drawing.Point(189, 322);
             this.ColorDelChk10.Name = "ColorDelChk10";
             this.ColorDelChk10.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk10.TabIndex = 114;
+            this.ColorDelChk10.TabIndex = 249;
             this.ColorDelChk10.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk9
@@ -720,7 +719,7 @@
             this.ColorDelChk9.Location = new System.Drawing.Point(189, 304);
             this.ColorDelChk9.Name = "ColorDelChk9";
             this.ColorDelChk9.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk9.TabIndex = 113;
+            this.ColorDelChk9.TabIndex = 248;
             this.ColorDelChk9.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk8
@@ -730,7 +729,7 @@
             this.ColorDelChk8.Location = new System.Drawing.Point(189, 286);
             this.ColorDelChk8.Name = "ColorDelChk8";
             this.ColorDelChk8.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk8.TabIndex = 112;
+            this.ColorDelChk8.TabIndex = 247;
             this.ColorDelChk8.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk7
@@ -740,7 +739,7 @@
             this.ColorDelChk7.Location = new System.Drawing.Point(189, 268);
             this.ColorDelChk7.Name = "ColorDelChk7";
             this.ColorDelChk7.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk7.TabIndex = 111;
+            this.ColorDelChk7.TabIndex = 246;
             this.ColorDelChk7.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk6
@@ -750,7 +749,7 @@
             this.ColorDelChk6.Location = new System.Drawing.Point(189, 250);
             this.ColorDelChk6.Name = "ColorDelChk6";
             this.ColorDelChk6.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk6.TabIndex = 110;
+            this.ColorDelChk6.TabIndex = 245;
             this.ColorDelChk6.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk5
@@ -760,7 +759,7 @@
             this.ColorDelChk5.Location = new System.Drawing.Point(189, 232);
             this.ColorDelChk5.Name = "ColorDelChk5";
             this.ColorDelChk5.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk5.TabIndex = 109;
+            this.ColorDelChk5.TabIndex = 244;
             this.ColorDelChk5.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk4
@@ -770,7 +769,7 @@
             this.ColorDelChk4.Location = new System.Drawing.Point(189, 214);
             this.ColorDelChk4.Name = "ColorDelChk4";
             this.ColorDelChk4.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk4.TabIndex = 108;
+            this.ColorDelChk4.TabIndex = 243;
             this.ColorDelChk4.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk3
@@ -780,7 +779,7 @@
             this.ColorDelChk3.Location = new System.Drawing.Point(189, 196);
             this.ColorDelChk3.Name = "ColorDelChk3";
             this.ColorDelChk3.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk3.TabIndex = 107;
+            this.ColorDelChk3.TabIndex = 242;
             this.ColorDelChk3.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk2
@@ -790,7 +789,7 @@
             this.ColorDelChk2.Location = new System.Drawing.Point(189, 178);
             this.ColorDelChk2.Name = "ColorDelChk2";
             this.ColorDelChk2.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk2.TabIndex = 106;
+            this.ColorDelChk2.TabIndex = 241;
             this.ColorDelChk2.UseVisualStyleBackColor = true;
             // 
             // ColorDelChk1
@@ -800,7 +799,7 @@
             this.ColorDelChk1.Location = new System.Drawing.Point(189, 160);
             this.ColorDelChk1.Name = "ColorDelChk1";
             this.ColorDelChk1.Size = new System.Drawing.Size(15, 14);
-            this.ColorDelChk1.TabIndex = 105;
+            this.ColorDelChk1.TabIndex = 240;
             this.ColorDelChk1.UseVisualStyleBackColor = true;
             // 
             // SizeDelChk9
@@ -1006,7 +1005,7 @@
             this.ckM_Button1.Margin = new System.Windows.Forms.Padding(1);
             this.ckM_Button1.Name = "ckM_Button1";
             this.ckM_Button1.Size = new System.Drawing.Size(118, 28);
-            this.ckM_Button1.TabIndex = 123;
+            this.ckM_Button1.TabIndex = 205;
             this.ckM_Button1.Text = "架空商品";
             this.ckM_Button1.UseVisualStyleBackColor = false;
             // 
@@ -1022,7 +1021,7 @@
             this.ckM_Label12.Location = new System.Drawing.Point(473, 604);
             this.ckM_Label12.Name = "ckM_Label12";
             this.ckM_Label12.Size = new System.Drawing.Size(105, 12);
-            this.ckM_Label12.TabIndex = 151;
+            this.ckM_Label12.TabIndex = 260;
             this.ckM_Label12.Text = "をSKUCDとします\t";
             this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1039,7 +1038,7 @@
             this.ckM_Label9.Location = new System.Drawing.Point(198, 585);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(33, 12);
-            this.ckM_Label9.TabIndex = 150;
+            this.ckM_Label9.TabIndex = 250;
             this.ckM_Label9.Text = "ITEM";
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1056,7 +1055,7 @@
             this.ckM_Label11.Location = new System.Drawing.Point(414, 585);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label11.TabIndex = 149;
+            this.ckM_Label11.TabIndex = 255;
             this.ckM_Label11.Text = "カラー\t\t";
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1073,7 +1072,7 @@
             this.ckM_Label10.Location = new System.Drawing.Point(346, 585);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
-            this.ckM_Label10.TabIndex = 148;
+            this.ckM_Label10.TabIndex = 254;
             this.ckM_Label10.Text = "サイズ";
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1100,7 +1099,7 @@
             this.ckM_TextBox125.MoveNext = true;
             this.ckM_TextBox125.Name = "ckM_TextBox125";
             this.ckM_TextBox125.Size = new System.Drawing.Size(70, 19);
-            this.ckM_TextBox125.TabIndex = 122;
+            this.ckM_TextBox125.TabIndex = 203;
             this.ckM_TextBox125.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox124
@@ -1125,7 +1124,7 @@
             this.ckM_TextBox124.MoveNext = true;
             this.ckM_TextBox124.Name = "ckM_TextBox124";
             this.ckM_TextBox124.Size = new System.Drawing.Size(70, 19);
-            this.ckM_TextBox124.TabIndex = 121;
+            this.ckM_TextBox124.TabIndex = 202;
             this.ckM_TextBox124.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox123
@@ -1150,25 +1149,25 @@
             this.ckM_TextBox123.MoveNext = true;
             this.ckM_TextBox123.Name = "ckM_TextBox123";
             this.ckM_TextBox123.Size = new System.Drawing.Size(250, 19);
-            this.ckM_TextBox123.TabIndex = 120;
+            this.ckM_TextBox123.TabIndex = 201;
             this.ckM_TextBox123.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_GridView1
             // 
             this.ckM_GridView1.AllowUserToDeleteRows = false;
             this.ckM_GridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.ckM_GridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.ckM_GridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ckM_GridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.ckM_GridView1.ColumnHeadersHeight = 25;
             this.ckM_GridView1.ColumnHeadersVisible = false;
             this.ckM_GridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1182,14 +1181,6 @@
             this.Column8,
             this.Column9,
             this.Column10});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.ckM_GridView1.DefaultCellStyle = dataGridViewCellStyle6;
             this.ckM_GridView1.EnableHeadersVisualStyles = false;
             this.ckM_GridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.ckM_GridView1.Location = new System.Drawing.Point(344, 157);
@@ -1197,7 +1188,7 @@
             this.ckM_GridView1.RowHeight_ = 19;
             this.ckM_GridView1.RowTemplate.Height = 19;
             this.ckM_GridView1.Size = new System.Drawing.Size(1308, 380);
-            this.ckM_GridView1.TabIndex = 143;
+            this.ckM_GridView1.TabIndex = 204;
             this.ckM_GridView1.UseRowNo = true;
             this.ckM_GridView1.UseSetting = false;
             // 
@@ -1283,7 +1274,7 @@
             this.ckM_TextBox103.MoveNext = true;
             this.ckM_TextBox103.Name = "ckM_TextBox103";
             this.ckM_TextBox103.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox103.TabIndex = 119;
+            this.ckM_TextBox103.TabIndex = 200;
             this.ckM_TextBox103.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox104
@@ -1308,7 +1299,7 @@
             this.ckM_TextBox104.MoveNext = true;
             this.ckM_TextBox104.Name = "ckM_TextBox104";
             this.ckM_TextBox104.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox104.TabIndex = 118;
+            this.ckM_TextBox104.TabIndex = 199;
             this.ckM_TextBox104.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor20
@@ -1333,7 +1324,7 @@
             this.txtoldcolor20.MoveNext = true;
             this.txtoldcolor20.Name = "txtoldcolor20";
             this.txtoldcolor20.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor20.TabIndex = 117;
+            this.txtoldcolor20.TabIndex = 198;
             this.txtoldcolor20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor20
@@ -1358,7 +1349,7 @@
             this.txtnewcolor20.MoveNext = true;
             this.txtnewcolor20.Name = "txtnewcolor20";
             this.txtnewcolor20.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor20.TabIndex = 116;
+            this.txtnewcolor20.TabIndex = 197;
             this.txtnewcolor20.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox107
@@ -1383,7 +1374,7 @@
             this.ckM_TextBox107.MoveNext = true;
             this.ckM_TextBox107.Name = "ckM_TextBox107";
             this.ckM_TextBox107.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox107.TabIndex = 115;
+            this.ckM_TextBox107.TabIndex = 196;
             this.ckM_TextBox107.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox108
@@ -1408,7 +1399,7 @@
             this.ckM_TextBox108.MoveNext = true;
             this.ckM_TextBox108.Name = "ckM_TextBox108";
             this.ckM_TextBox108.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox108.TabIndex = 114;
+            this.ckM_TextBox108.TabIndex = 195;
             this.ckM_TextBox108.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor19
@@ -1433,7 +1424,7 @@
             this.txtoldcolor19.MoveNext = true;
             this.txtoldcolor19.Name = "txtoldcolor19";
             this.txtoldcolor19.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor19.TabIndex = 113;
+            this.txtoldcolor19.TabIndex = 194;
             this.txtoldcolor19.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor19
@@ -1458,7 +1449,7 @@
             this.txtnewcolor19.MoveNext = true;
             this.txtnewcolor19.Name = "txtnewcolor19";
             this.txtnewcolor19.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor19.TabIndex = 112;
+            this.txtnewcolor19.TabIndex = 193;
             this.txtnewcolor19.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox111
@@ -1483,7 +1474,7 @@
             this.ckM_TextBox111.MoveNext = true;
             this.ckM_TextBox111.Name = "ckM_TextBox111";
             this.ckM_TextBox111.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox111.TabIndex = 111;
+            this.ckM_TextBox111.TabIndex = 192;
             this.ckM_TextBox111.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox112
@@ -1508,7 +1499,7 @@
             this.ckM_TextBox112.MoveNext = true;
             this.ckM_TextBox112.Name = "ckM_TextBox112";
             this.ckM_TextBox112.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox112.TabIndex = 107;
+            this.ckM_TextBox112.TabIndex = 188;
             this.ckM_TextBox112.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox113
@@ -1533,7 +1524,7 @@
             this.ckM_TextBox113.MoveNext = true;
             this.ckM_TextBox113.Name = "ckM_TextBox113";
             this.ckM_TextBox113.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox113.TabIndex = 103;
+            this.ckM_TextBox113.TabIndex = 184;
             this.ckM_TextBox113.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox114
@@ -1558,7 +1549,7 @@
             this.ckM_TextBox114.MoveNext = true;
             this.ckM_TextBox114.Name = "ckM_TextBox114";
             this.ckM_TextBox114.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox114.TabIndex = 110;
+            this.ckM_TextBox114.TabIndex = 191;
             this.ckM_TextBox114.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox115
@@ -1583,7 +1574,7 @@
             this.ckM_TextBox115.MoveNext = true;
             this.ckM_TextBox115.Name = "ckM_TextBox115";
             this.ckM_TextBox115.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox115.TabIndex = 106;
+            this.ckM_TextBox115.TabIndex = 187;
             this.ckM_TextBox115.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox116
@@ -1608,7 +1599,7 @@
             this.ckM_TextBox116.MoveNext = true;
             this.ckM_TextBox116.Name = "ckM_TextBox116";
             this.ckM_TextBox116.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox116.TabIndex = 102;
+            this.ckM_TextBox116.TabIndex = 183;
             this.ckM_TextBox116.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor18
@@ -1633,7 +1624,7 @@
             this.txtoldcolor18.MoveNext = true;
             this.txtoldcolor18.Name = "txtoldcolor18";
             this.txtoldcolor18.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor18.TabIndex = 109;
+            this.txtoldcolor18.TabIndex = 190;
             this.txtoldcolor18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor17
@@ -1658,7 +1649,7 @@
             this.txtoldcolor17.MoveNext = true;
             this.txtoldcolor17.Name = "txtoldcolor17";
             this.txtoldcolor17.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor17.TabIndex = 105;
+            this.txtoldcolor17.TabIndex = 186;
             this.txtoldcolor17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor16
@@ -1683,7 +1674,7 @@
             this.txtoldcolor16.MoveNext = true;
             this.txtoldcolor16.Name = "txtoldcolor16";
             this.txtoldcolor16.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor16.TabIndex = 101;
+            this.txtoldcolor16.TabIndex = 182;
             this.txtoldcolor16.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor18
@@ -1708,7 +1699,7 @@
             this.txtnewcolor18.MoveNext = true;
             this.txtnewcolor18.Name = "txtnewcolor18";
             this.txtnewcolor18.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor18.TabIndex = 108;
+            this.txtnewcolor18.TabIndex = 189;
             this.txtnewcolor18.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor17
@@ -1733,7 +1724,7 @@
             this.txtnewcolor17.MoveNext = true;
             this.txtnewcolor17.Name = "txtnewcolor17";
             this.txtnewcolor17.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor17.TabIndex = 104;
+            this.txtnewcolor17.TabIndex = 185;
             this.txtnewcolor17.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor16
@@ -1758,7 +1749,7 @@
             this.txtnewcolor16.MoveNext = true;
             this.txtnewcolor16.Name = "txtnewcolor16";
             this.txtnewcolor16.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor16.TabIndex = 100;
+            this.txtnewcolor16.TabIndex = 181;
             this.txtnewcolor16.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox83
@@ -1783,7 +1774,7 @@
             this.ckM_TextBox83.MoveNext = true;
             this.ckM_TextBox83.Name = "ckM_TextBox83";
             this.ckM_TextBox83.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox83.TabIndex = 99;
+            this.ckM_TextBox83.TabIndex = 180;
             this.ckM_TextBox83.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox84
@@ -1808,7 +1799,7 @@
             this.ckM_TextBox84.MoveNext = true;
             this.ckM_TextBox84.Name = "ckM_TextBox84";
             this.ckM_TextBox84.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox84.TabIndex = 98;
+            this.ckM_TextBox84.TabIndex = 179;
             this.ckM_TextBox84.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor15
@@ -1833,7 +1824,7 @@
             this.txtoldcolor15.MoveNext = true;
             this.txtoldcolor15.Name = "txtoldcolor15";
             this.txtoldcolor15.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor15.TabIndex = 97;
+            this.txtoldcolor15.TabIndex = 178;
             this.txtoldcolor15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor15
@@ -1858,7 +1849,7 @@
             this.txtnewcolor15.MoveNext = true;
             this.txtnewcolor15.Name = "txtnewcolor15";
             this.txtnewcolor15.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor15.TabIndex = 96;
+            this.txtnewcolor15.TabIndex = 177;
             this.txtnewcolor15.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox87
@@ -1883,7 +1874,7 @@
             this.ckM_TextBox87.MoveNext = true;
             this.ckM_TextBox87.Name = "ckM_TextBox87";
             this.ckM_TextBox87.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox87.TabIndex = 95;
+            this.ckM_TextBox87.TabIndex = 176;
             this.ckM_TextBox87.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox88
@@ -1908,7 +1899,7 @@
             this.ckM_TextBox88.MoveNext = true;
             this.ckM_TextBox88.Name = "ckM_TextBox88";
             this.ckM_TextBox88.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox88.TabIndex = 94;
+            this.ckM_TextBox88.TabIndex = 175;
             this.ckM_TextBox88.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor14
@@ -1933,7 +1924,7 @@
             this.txtoldcolor14.MoveNext = true;
             this.txtoldcolor14.Name = "txtoldcolor14";
             this.txtoldcolor14.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor14.TabIndex = 93;
+            this.txtoldcolor14.TabIndex = 174;
             this.txtoldcolor14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor14
@@ -1958,7 +1949,7 @@
             this.txtnewcolor14.MoveNext = true;
             this.txtnewcolor14.Name = "txtnewcolor14";
             this.txtnewcolor14.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor14.TabIndex = 92;
+            this.txtnewcolor14.TabIndex = 173;
             this.txtnewcolor14.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox91
@@ -1983,7 +1974,7 @@
             this.ckM_TextBox91.MoveNext = true;
             this.ckM_TextBox91.Name = "ckM_TextBox91";
             this.ckM_TextBox91.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox91.TabIndex = 91;
+            this.ckM_TextBox91.TabIndex = 172;
             this.ckM_TextBox91.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox92
@@ -2008,7 +1999,7 @@
             this.ckM_TextBox92.MoveNext = true;
             this.ckM_TextBox92.Name = "ckM_TextBox92";
             this.ckM_TextBox92.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox92.TabIndex = 87;
+            this.ckM_TextBox92.TabIndex = 168;
             this.ckM_TextBox92.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox93
@@ -2033,7 +2024,7 @@
             this.ckM_TextBox93.MoveNext = true;
             this.ckM_TextBox93.Name = "ckM_TextBox93";
             this.ckM_TextBox93.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox93.TabIndex = 83;
+            this.ckM_TextBox93.TabIndex = 164;
             this.ckM_TextBox93.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox94
@@ -2058,7 +2049,7 @@
             this.ckM_TextBox94.MoveNext = true;
             this.ckM_TextBox94.Name = "ckM_TextBox94";
             this.ckM_TextBox94.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox94.TabIndex = 90;
+            this.ckM_TextBox94.TabIndex = 171;
             this.ckM_TextBox94.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox95
@@ -2083,7 +2074,7 @@
             this.ckM_TextBox95.MoveNext = true;
             this.ckM_TextBox95.Name = "ckM_TextBox95";
             this.ckM_TextBox95.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox95.TabIndex = 86;
+            this.ckM_TextBox95.TabIndex = 167;
             this.ckM_TextBox95.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox96
@@ -2108,7 +2099,7 @@
             this.ckM_TextBox96.MoveNext = true;
             this.ckM_TextBox96.Name = "ckM_TextBox96";
             this.ckM_TextBox96.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox96.TabIndex = 82;
+            this.ckM_TextBox96.TabIndex = 163;
             this.ckM_TextBox96.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor13
@@ -2133,7 +2124,7 @@
             this.txtoldcolor13.MoveNext = true;
             this.txtoldcolor13.Name = "txtoldcolor13";
             this.txtoldcolor13.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor13.TabIndex = 89;
+            this.txtoldcolor13.TabIndex = 170;
             this.txtoldcolor13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor12
@@ -2158,7 +2149,7 @@
             this.txtoldcolor12.MoveNext = true;
             this.txtoldcolor12.Name = "txtoldcolor12";
             this.txtoldcolor12.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor12.TabIndex = 85;
+            this.txtoldcolor12.TabIndex = 166;
             this.txtoldcolor12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor11
@@ -2183,7 +2174,7 @@
             this.txtoldcolor11.MoveNext = true;
             this.txtoldcolor11.Name = "txtoldcolor11";
             this.txtoldcolor11.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor11.TabIndex = 81;
+            this.txtoldcolor11.TabIndex = 162;
             this.txtoldcolor11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor13
@@ -2208,7 +2199,7 @@
             this.txtnewcolor13.MoveNext = true;
             this.txtnewcolor13.Name = "txtnewcolor13";
             this.txtnewcolor13.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor13.TabIndex = 88;
+            this.txtnewcolor13.TabIndex = 169;
             this.txtnewcolor13.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor12
@@ -2233,7 +2224,7 @@
             this.txtnewcolor12.MoveNext = true;
             this.txtnewcolor12.Name = "txtnewcolor12";
             this.txtnewcolor12.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor12.TabIndex = 84;
+            this.txtnewcolor12.TabIndex = 165;
             this.txtnewcolor12.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor11
@@ -2258,7 +2249,7 @@
             this.txtnewcolor11.MoveNext = true;
             this.txtnewcolor11.Name = "txtnewcolor11";
             this.txtnewcolor11.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor11.TabIndex = 80;
+            this.txtnewcolor11.TabIndex = 161;
             this.txtnewcolor11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox63
@@ -2283,7 +2274,7 @@
             this.ckM_TextBox63.MoveNext = true;
             this.ckM_TextBox63.Name = "ckM_TextBox63";
             this.ckM_TextBox63.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox63.TabIndex = 79;
+            this.ckM_TextBox63.TabIndex = 160;
             this.ckM_TextBox63.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox64
@@ -2308,7 +2299,7 @@
             this.ckM_TextBox64.MoveNext = true;
             this.ckM_TextBox64.Name = "ckM_TextBox64";
             this.ckM_TextBox64.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox64.TabIndex = 78;
+            this.ckM_TextBox64.TabIndex = 159;
             this.ckM_TextBox64.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor10
@@ -2333,7 +2324,7 @@
             this.txtoldcolor10.MoveNext = true;
             this.txtoldcolor10.Name = "txtoldcolor10";
             this.txtoldcolor10.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor10.TabIndex = 77;
+            this.txtoldcolor10.TabIndex = 158;
             this.txtoldcolor10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor10
@@ -2358,7 +2349,7 @@
             this.txtnewcolor10.MoveNext = true;
             this.txtnewcolor10.Name = "txtnewcolor10";
             this.txtnewcolor10.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor10.TabIndex = 76;
+            this.txtnewcolor10.TabIndex = 157;
             this.txtnewcolor10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox67
@@ -2383,7 +2374,7 @@
             this.ckM_TextBox67.MoveNext = true;
             this.ckM_TextBox67.Name = "ckM_TextBox67";
             this.ckM_TextBox67.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox67.TabIndex = 75;
+            this.ckM_TextBox67.TabIndex = 156;
             this.ckM_TextBox67.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox68
@@ -2408,7 +2399,7 @@
             this.ckM_TextBox68.MoveNext = true;
             this.ckM_TextBox68.Name = "ckM_TextBox68";
             this.ckM_TextBox68.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox68.TabIndex = 74;
+            this.ckM_TextBox68.TabIndex = 155;
             this.ckM_TextBox68.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor9
@@ -2433,7 +2424,7 @@
             this.txtoldcolor9.MoveNext = true;
             this.txtoldcolor9.Name = "txtoldcolor9";
             this.txtoldcolor9.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor9.TabIndex = 73;
+            this.txtoldcolor9.TabIndex = 154;
             this.txtoldcolor9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor9
@@ -2458,7 +2449,7 @@
             this.txtnewcolor9.MoveNext = true;
             this.txtnewcolor9.Name = "txtnewcolor9";
             this.txtnewcolor9.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor9.TabIndex = 72;
+            this.txtnewcolor9.TabIndex = 153;
             this.txtnewcolor9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox71
@@ -2483,7 +2474,7 @@
             this.ckM_TextBox71.MoveNext = true;
             this.ckM_TextBox71.Name = "ckM_TextBox71";
             this.ckM_TextBox71.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox71.TabIndex = 71;
+            this.ckM_TextBox71.TabIndex = 152;
             this.ckM_TextBox71.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox72
@@ -2508,7 +2499,7 @@
             this.ckM_TextBox72.MoveNext = true;
             this.ckM_TextBox72.Name = "ckM_TextBox72";
             this.ckM_TextBox72.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox72.TabIndex = 67;
+            this.ckM_TextBox72.TabIndex = 148;
             this.ckM_TextBox72.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox73
@@ -2533,7 +2524,7 @@
             this.ckM_TextBox73.MoveNext = true;
             this.ckM_TextBox73.Name = "ckM_TextBox73";
             this.ckM_TextBox73.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox73.TabIndex = 63;
+            this.ckM_TextBox73.TabIndex = 144;
             this.ckM_TextBox73.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox74
@@ -2558,7 +2549,7 @@
             this.ckM_TextBox74.MoveNext = true;
             this.ckM_TextBox74.Name = "ckM_TextBox74";
             this.ckM_TextBox74.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox74.TabIndex = 70;
+            this.ckM_TextBox74.TabIndex = 151;
             this.ckM_TextBox74.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox75
@@ -2583,7 +2574,7 @@
             this.ckM_TextBox75.MoveNext = true;
             this.ckM_TextBox75.Name = "ckM_TextBox75";
             this.ckM_TextBox75.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox75.TabIndex = 66;
+            this.ckM_TextBox75.TabIndex = 147;
             this.ckM_TextBox75.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox76
@@ -2608,7 +2599,7 @@
             this.ckM_TextBox76.MoveNext = true;
             this.ckM_TextBox76.Name = "ckM_TextBox76";
             this.ckM_TextBox76.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox76.TabIndex = 62;
+            this.ckM_TextBox76.TabIndex = 143;
             this.ckM_TextBox76.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor8
@@ -2633,7 +2624,7 @@
             this.txtoldcolor8.MoveNext = true;
             this.txtoldcolor8.Name = "txtoldcolor8";
             this.txtoldcolor8.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor8.TabIndex = 69;
+            this.txtoldcolor8.TabIndex = 150;
             this.txtoldcolor8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor7
@@ -2658,7 +2649,7 @@
             this.txtoldcolor7.MoveNext = true;
             this.txtoldcolor7.Name = "txtoldcolor7";
             this.txtoldcolor7.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor7.TabIndex = 65;
+            this.txtoldcolor7.TabIndex = 146;
             this.txtoldcolor7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor6
@@ -2683,7 +2674,7 @@
             this.txtoldcolor6.MoveNext = true;
             this.txtoldcolor6.Name = "txtoldcolor6";
             this.txtoldcolor6.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor6.TabIndex = 61;
+            this.txtoldcolor6.TabIndex = 142;
             this.txtoldcolor6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor8
@@ -2708,7 +2699,7 @@
             this.txtnewcolor8.MoveNext = true;
             this.txtnewcolor8.Name = "txtnewcolor8";
             this.txtnewcolor8.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor8.TabIndex = 68;
+            this.txtnewcolor8.TabIndex = 149;
             this.txtnewcolor8.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor7
@@ -2733,7 +2724,7 @@
             this.txtnewcolor7.MoveNext = true;
             this.txtnewcolor7.Name = "txtnewcolor7";
             this.txtnewcolor7.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor7.TabIndex = 64;
+            this.txtnewcolor7.TabIndex = 145;
             this.txtnewcolor7.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor6
@@ -2758,7 +2749,7 @@
             this.txtnewcolor6.MoveNext = true;
             this.txtnewcolor6.Name = "txtnewcolor6";
             this.txtnewcolor6.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor6.TabIndex = 60;
+            this.txtnewcolor6.TabIndex = 141;
             this.txtnewcolor6.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox59
@@ -2783,7 +2774,7 @@
             this.ckM_TextBox59.MoveNext = true;
             this.ckM_TextBox59.Name = "ckM_TextBox59";
             this.ckM_TextBox59.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox59.TabIndex = 59;
+            this.ckM_TextBox59.TabIndex = 140;
             this.ckM_TextBox59.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox60
@@ -2808,7 +2799,7 @@
             this.ckM_TextBox60.MoveNext = true;
             this.ckM_TextBox60.Name = "ckM_TextBox60";
             this.ckM_TextBox60.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox60.TabIndex = 58;
+            this.ckM_TextBox60.TabIndex = 139;
             this.ckM_TextBox60.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor5
@@ -2833,7 +2824,7 @@
             this.txtoldcolor5.MoveNext = true;
             this.txtoldcolor5.Name = "txtoldcolor5";
             this.txtoldcolor5.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor5.TabIndex = 57;
+            this.txtoldcolor5.TabIndex = 138;
             this.txtoldcolor5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor5
@@ -2858,7 +2849,7 @@
             this.txtnewcolor5.MoveNext = true;
             this.txtnewcolor5.Name = "txtnewcolor5";
             this.txtnewcolor5.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor5.TabIndex = 56;
+            this.txtnewcolor5.TabIndex = 137;
             this.txtnewcolor5.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox43
@@ -2883,7 +2874,7 @@
             this.ckM_TextBox43.MoveNext = true;
             this.ckM_TextBox43.Name = "ckM_TextBox43";
             this.ckM_TextBox43.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox43.TabIndex = 55;
+            this.ckM_TextBox43.TabIndex = 136;
             this.ckM_TextBox43.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox44
@@ -2908,7 +2899,7 @@
             this.ckM_TextBox44.MoveNext = true;
             this.ckM_TextBox44.Name = "ckM_TextBox44";
             this.ckM_TextBox44.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox44.TabIndex = 54;
+            this.ckM_TextBox44.TabIndex = 135;
             this.ckM_TextBox44.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor4
@@ -2933,7 +2924,7 @@
             this.txtoldcolor4.MoveNext = true;
             this.txtoldcolor4.Name = "txtoldcolor4";
             this.txtoldcolor4.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor4.TabIndex = 53;
+            this.txtoldcolor4.TabIndex = 134;
             this.txtoldcolor4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor4
@@ -2958,7 +2949,7 @@
             this.txtnewcolor4.MoveNext = true;
             this.txtnewcolor4.Name = "txtnewcolor4";
             this.txtnewcolor4.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor4.TabIndex = 52;
+            this.txtnewcolor4.TabIndex = 133;
             this.txtnewcolor4.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox47
@@ -2983,7 +2974,7 @@
             this.ckM_TextBox47.MoveNext = true;
             this.ckM_TextBox47.Name = "ckM_TextBox47";
             this.ckM_TextBox47.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox47.TabIndex = 51;
+            this.ckM_TextBox47.TabIndex = 132;
             this.ckM_TextBox47.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox48
@@ -3008,7 +2999,7 @@
             this.ckM_TextBox48.MoveNext = true;
             this.ckM_TextBox48.Name = "ckM_TextBox48";
             this.ckM_TextBox48.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox48.TabIndex = 47;
+            this.ckM_TextBox48.TabIndex = 128;
             this.ckM_TextBox48.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox49
@@ -3033,7 +3024,7 @@
             this.ckM_TextBox49.MoveNext = true;
             this.ckM_TextBox49.Name = "ckM_TextBox49";
             this.ckM_TextBox49.Size = new System.Drawing.Size(130, 19);
-            this.ckM_TextBox49.TabIndex = 43;
+            this.ckM_TextBox49.TabIndex = 124;
             this.ckM_TextBox49.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox50
@@ -3058,7 +3049,7 @@
             this.ckM_TextBox50.MoveNext = true;
             this.ckM_TextBox50.Name = "ckM_TextBox50";
             this.ckM_TextBox50.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox50.TabIndex = 50;
+            this.ckM_TextBox50.TabIndex = 131;
             this.ckM_TextBox50.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox51
@@ -3083,7 +3074,7 @@
             this.ckM_TextBox51.MoveNext = true;
             this.ckM_TextBox51.Name = "ckM_TextBox51";
             this.ckM_TextBox51.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox51.TabIndex = 46;
+            this.ckM_TextBox51.TabIndex = 127;
             this.ckM_TextBox51.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox52
@@ -3108,7 +3099,7 @@
             this.ckM_TextBox52.MoveNext = true;
             this.ckM_TextBox52.Name = "ckM_TextBox52";
             this.ckM_TextBox52.Size = new System.Drawing.Size(40, 19);
-            this.ckM_TextBox52.TabIndex = 42;
+            this.ckM_TextBox52.TabIndex = 123;
             this.ckM_TextBox52.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor3
@@ -3133,7 +3124,7 @@
             this.txtoldcolor3.MoveNext = true;
             this.txtoldcolor3.Name = "txtoldcolor3";
             this.txtoldcolor3.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor3.TabIndex = 49;
+            this.txtoldcolor3.TabIndex = 130;
             this.txtoldcolor3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor2
@@ -3158,7 +3149,7 @@
             this.txtoldcolor2.MoveNext = true;
             this.txtoldcolor2.Name = "txtoldcolor2";
             this.txtoldcolor2.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor2.TabIndex = 45;
+            this.txtoldcolor2.TabIndex = 126;
             this.txtoldcolor2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtoldcolor1
@@ -3183,7 +3174,7 @@
             this.txtoldcolor1.MoveNext = true;
             this.txtoldcolor1.Name = "txtoldcolor1";
             this.txtoldcolor1.Size = new System.Drawing.Size(50, 19);
-            this.txtoldcolor1.TabIndex = 41;
+            this.txtoldcolor1.TabIndex = 121;
             this.txtoldcolor1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor3
@@ -3208,7 +3199,7 @@
             this.txtnewcolor3.MoveNext = true;
             this.txtnewcolor3.Name = "txtnewcolor3";
             this.txtnewcolor3.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor3.TabIndex = 48;
+            this.txtnewcolor3.TabIndex = 129;
             this.txtnewcolor3.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor2
@@ -3233,7 +3224,7 @@
             this.txtnewcolor2.MoveNext = true;
             this.txtnewcolor2.Name = "txtnewcolor2";
             this.txtnewcolor2.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor2.TabIndex = 44;
+            this.txtnewcolor2.TabIndex = 125;
             this.txtnewcolor2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtnewcolor1
@@ -3258,7 +3249,7 @@
             this.txtnewcolor1.MoveNext = true;
             this.txtnewcolor1.Name = "txtnewcolor1";
             this.txtnewcolor1.Size = new System.Drawing.Size(50, 19);
-            this.txtnewcolor1.TabIndex = 40;
+            this.txtnewcolor1.TabIndex = 120;
             this.txtnewcolor1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox33
