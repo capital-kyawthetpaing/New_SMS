@@ -487,7 +487,6 @@ namespace ShiireShoukaiDetails
                 {
                     DataTable dt = new DataTable();
                     dt = ssdbl.SimpleSelect1("68", null, dgv_PurchaseDetails.Rows[e.RowIndex].Cells["SupplierNo"].Value.ToString());
-                    //dt = ssdbl.ShiireShoukaiDetails_Select(dpd_entity);
                     if (dt.Rows.Count > 0)
                     {
                         string ProcessKBN = dt.Rows[0]["ProcessKBN"].ToString();

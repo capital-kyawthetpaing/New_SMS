@@ -292,7 +292,6 @@ namespace MasterTouroku_ShiireKakeritsu
             moe = new M_OrderRate_Entity()
             {
                 VendorCD = scSupplierCD.TxtCode.Text,
-                //StoreCD=cbo_Store.SelectedText,
                 BrandCD = scBrandCD1.TxtCode.Text,
                 SportsCD = scSportsCD1.TxtCode.Text,
                 SegmentCD = scSegmentCD1.TxtCode.Text,
