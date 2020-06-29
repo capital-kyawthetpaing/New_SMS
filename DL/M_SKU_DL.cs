@@ -287,6 +287,15 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
+
+        public DataTable M_SKU_SelectForSKSMasterUpdate()
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+
+            };
+            return SelectData(dic, "M_SKU_SelectForSKSMasterUpdate");
+        }
     }
 
 }
