@@ -414,6 +414,7 @@
     <Content Include="StoreProcedure\M_SKU_SelectBySKUCD.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectForSearchProduct.sql" />
     <Content Include="StoreProcedure\M_SKU_SelectForSKSMasterUpdate.sql" />
+    <Content Include="StoreProcedure\M_SKU_SelectFor_SKU_Update.sql" />
     <Content Include="StoreProcedure\M_SKU_Select_ByJanCD.sql" />
     <Content Include="StoreProcedure\M_SoukoName_Select.sql" />
     <Content Include="StoreProcedure\M_SoukoWarehouse_Select.sql" />
