@@ -22,8 +22,6 @@ namespace SKSMasterUpdate
 
             string jsResult = string.Empty;
 
-
-
             if (loginbl.ReadConfig() == true)
             {
                 jsResult = "{";
