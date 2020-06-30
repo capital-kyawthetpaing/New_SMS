@@ -155,6 +155,16 @@ namespace DL
             return SelectData(dic, "M_ITEM_NormalSelect");
         }
 
+        public DataTable M_ITem_SelectForSKUCDHenkou01(M_ITEM_Entity mie)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                 { "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mie.ITemCD } },
+                 { "@ChangeDate", new ValuePair { value1 = SqlDbType.Date, value2 = mie.ChangeDate } },
+            };
+            return SelectData(dic, "M_ITem_SelectForSKUCDHenkou01");
+        }
+
         public DataTable M_Item_SelectForSKSMasterUpdate()
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
