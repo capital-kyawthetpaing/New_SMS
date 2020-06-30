@@ -1466,6 +1466,7 @@ namespace Base.Client
                         case Keys.F12:
                             Button btn = PanelFooter.Controls.Find("btn" + e.KeyCode.ToString(), true)[0] as Button;
                             if (btn.Enabled)
+
                             {
                                 
                                 if (e.KeyCode == Keys.F12)
@@ -1763,7 +1764,6 @@ namespace Base.Client
                 return createParam;
             }
         }
-
         protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
         {
             this.txt = txt;
@@ -1775,31 +1775,17 @@ namespace Base.Client
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            //  if (((CKM_TextBox)c).Name != "txtChangeDate")
-                            //if (txt.Name != "txtChangeDate")
-                            //{
-                                bbl.ShowMessage("E102");
-                                c.Focus();
-                            ((CKM_TextBox)c).IsFirstTime = false;
-                            //}
+                            bbl.ShowMessage("E102");
+                            c.Focus();
                             return false;
-                            //bbl.ShowMessage("E102");
-                            //c.Focus();
-                            //return false;
                         }
                     }
                     else if (!string.IsNullOrWhiteSpace(txt.Text))
                     {
                         if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            ////  if (((CKM_TextBox)c).Name != "txtChangeDate")
-                            //if (txt.Name != "txtChangeDate")
-                            //  {
-                            
-                                bbl.ShowMessage("E102");
-                                c.Focus();
-                            ((CKM_TextBox)c).IsFirstTime = false;
-                            //}
+                            bbl.ShowMessage("E102");
+                            c.Focus();
                             return false;
                         }
 
@@ -1823,7 +1809,6 @@ namespace Base.Client
             }
             return true;
         }
-
         protected bool ReverseRequireCheck(Control[] ctrl, TextBox txt = null)
         {
             txt1 = txt;
@@ -1835,13 +1820,8 @@ namespace Base.Client
                     {
                         if (!string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
                         {
-                            //   if (((CKM_TextBox)c).Name != "txtChangeDate")
-                            //if (txt.Name != "txtChangeDate")
-                            //{
-                            ((CKM_TextBox)c).IsFirstTime = false;
                             bbl.ShowMessage("E102");
-                                txt1.Focus();
-                            //}
+                            txt1.Focus();
                             return false;
                         }
                     }
@@ -1850,6 +1830,92 @@ namespace Base.Client
             }
             return true;
         }
+        //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
+        //{
+        //    this.txt = txt;
+        //    foreach (Control c in ctrl)
+        //    {
+        //        if (c is CKM_TextBox)
+        //        {
+        //            if (txt == null)
+        //            {
+        //                if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //                {
+        //                    //  if (((CKM_TextBox)c).Name != "txtChangeDate")
+        //                    //if (txt.Name != "txtChangeDate")
+        //                    //{
+        //                        bbl.ShowMessage("E102");
+        //                        c.Focus();
+        //                    ((CKM_TextBox)c).IsFirstTime = false;
+        //                    //}
+        //                    return false;
+        //                    //bbl.ShowMessage("E102");
+        //                    //c.Focus();
+        //                    //return false;
+        //                }
+        //            }
+        //            else if (!string.IsNullOrWhiteSpace(txt.Text))
+        //            {
+        //                if (string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //                {
+        //                    ////  if (((CKM_TextBox)c).Name != "txtChangeDate")
+        //                    //if (txt.Name != "txtChangeDate")
+        //                    //  {
+
+        //                        bbl.ShowMessage("E102");
+        //                        c.Focus();
+        //                    ((CKM_TextBox)c).IsFirstTime = false;
+        //                    //}
+        //                    return false;
+        //                }
+
+        //            }
+        //        }
+        //        else if (c is CKM_ComboBox)
+        //        {
+        //            if (((CKM_ComboBox)c).SelectedIndex.Equals(-1))
+        //            {
+        //                bbl.ShowMessage("E102");
+        //                c.Focus();
+        //                return false;
+        //            }
+        //            if (((CKM_ComboBox)c).SelectedValue.Equals("-1"))
+        //            {
+        //                bbl.ShowMessage("E102");
+        //                c.Focus();
+        //                return false;
+        //            }
+        //        }
+        //    }
+        //    return true;
+        //}
+
+        //protected bool ReverseRequireCheck(Control[] ctrl, TextBox txt = null)
+        //{
+        //    txt1 = txt;
+        //    foreach (Control c in ctrl)
+        //    {
+        //        if (c is CKM_TextBox)
+        //        {
+        //            if (string.IsNullOrWhiteSpace(txt1.Text))
+        //            {
+        //                if (!string.IsNullOrWhiteSpace(((CKM_TextBox)c).Text))
+        //                {
+        //                    //   if (((CKM_TextBox)c).Name != "txtChangeDate")
+        //                    //if (txt.Name != "txtChangeDate")
+        //                    //{
+        //                    ((CKM_TextBox)c).IsFirstTime = false;
+        //                    bbl.ShowMessage("E102");
+        //                        txt1.Focus();
+        //                    //}
+        //                    return false;
+        //                }
+        //            }
+
+        //        }
+        //    }
+        //    return true;
+        //}
         //protected bool RequireCheck(Control[] ctrl, TextBox txt = null)
         //{
         //    this.txt = txt;

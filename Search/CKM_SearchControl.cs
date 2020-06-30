@@ -739,7 +739,8 @@ namespace Search
         /// <param name="e"></param>
         private void TxtCode_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
+
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
             {
                 if (IsConsistFullWidth(txtCode.Text))
@@ -814,10 +815,15 @@ namespace Search
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
             {
+                
                 if (!string.IsNullOrEmpty(txtChangeDate.Text) && !txtChangeDate.IsFirstTime)
                 {
                     if (txtChangeDate.IsCorrectDate && DateCheck(txtChangeDate.Text))
                         ChangeDateKeyDownEvent?.Invoke(this, e);
+                }
+                else if (txtChangeDate.IsCorrectDate)
+                {
+                    ChangeDateKeyDownEvent?.Invoke(this, e);
                 }
             }
         }
