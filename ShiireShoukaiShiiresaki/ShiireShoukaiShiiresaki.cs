@@ -75,8 +75,8 @@ namespace ShiireShoukaiShiiresaki
 
                 VendorCD = scSupplier.TxtCode.Text,
                 StaffCD = scStaff.TxtCode.Text,
-                ArrivalDateFrom = txtPurchaseDateFrom.Text,
-                ArrivalDateTo = txtPurchaseDateTo.Text,
+                ArrivalDateFrom = txtArrivalDateFrom.Text,
+                ArrivalDateTo = txtArrivalDateTo.Text,
                 PurchaseDateFrom = txtPurchaseDateFrom.Text,
                 PurchaseDateTo = txtPurchaseDateTo.Text,
                 PaymentDueDateFrom = txtPaymentDueDateFrom.Text,
