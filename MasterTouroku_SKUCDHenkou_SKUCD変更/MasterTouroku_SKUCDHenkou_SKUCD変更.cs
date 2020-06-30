@@ -355,7 +355,23 @@ namespace MasterTouroku_SKUCDHenkou_SKUCD変更
            
             if (ErrorCheck(11))
             {
+                mie.ITemCD = Sc_Item.TxtCode.Text;
+                mie.ChangeDate = txtDate1.Text;
+                DataTable dtitem = new DataTable();
+                dtitem = mskubl.M_ITem_SelectForSKUCDHenkou01(mie);
+                //foreach(DataRow row in dtitem.Rows)
+                //{
+                //    string[] OldSize = new string[10];
+                //    string[] NewSize = new string[10];
+                //    for (int i = 0; i < 10; i++)
+                //    {
+                //        OldSize[i] = row["OldSize"].ToString();
+                //        NewSize[i] = row["NewSize"].ToString();
+                //    }
+                        
+                    
 
+                //}
             }
           
         }

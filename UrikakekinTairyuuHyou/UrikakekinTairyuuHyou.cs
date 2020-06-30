@@ -279,111 +279,117 @@ namespace UrikakekinTairyuuHyou
                 {
                     if (dtPrint == null || dtPrint.Rows.Count<=0)
                     {
-                        return;
+                        bbl.ShowMessage("E128");
+                        txtDate.Focus();
                     }
-                    //xsdファイルを保存します。
-
-                    //①保存した.xsdはプロジェクトに追加しておきます。
-                    DialogResult ret;
-                    UrikakekinTairyuuHyou_Report Report = new UrikakekinTairyuuHyou_Report();
-
-                    switch (PrintMode)
+                    else
                     {
-                        case EPrintMode.DIRECT:
+                        //xsdファイルを保存します。
 
-                            ret = bbl.ShowMessage("Q202");
-                            if (ret == DialogResult.No)
-                            {
-                                return;
-                            }
-                            //}
+                        //①保存した.xsdはプロジェクトに追加しておきます。
+                        DialogResult ret;
+                        UrikakekinTairyuuHyou_Report Report = new UrikakekinTairyuuHyou_Report();
 
-                            // 印字データをセット
+                        switch (PrintMode)
+                        {
+                            case EPrintMode.DIRECT:
 
-                            Report.SetDataSource(dtPrint);
-                            Report.Refresh();
-                            Report.SetParameterValue("txtStore", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);
-                            Report.SetParameterValue("txtMonth11",strmonth[11].ToString());
-                            Report.SetParameterValue("txtMonth10", strmonth[10].ToString());
-                            Report.SetParameterValue("txtMonth9", strmonth[9].ToString());
-                            Report.SetParameterValue("txtMonth8", strmonth[8].ToString());
-                            Report.SetParameterValue("txtMonth7", strmonth[7].ToString());
-                            Report.SetParameterValue("txtMonth6", strmonth[6].ToString());
-                            Report.SetParameterValue("txtMonth5", strmonth[5].ToString());
-                            Report.SetParameterValue("txtMonth4", strmonth[4].ToString());
-                            Report.SetParameterValue("txtMonth3", strmonth[3].ToString());
-                            Report.SetParameterValue("txtMonth2", strmonth[2].ToString());
-                            Report.SetParameterValue("txtMonth1", strmonth[1].ToString());
-                            Report.SetParameterValue("txtMonth0", strmonth[0].ToString());
-
-                            if (ret == DialogResult.Yes)
-                            {
-                                var previewForm = new Viewer();
-                                previewForm.CrystalReportViewer1.ShowPrintButton = true;
-                                previewForm.CrystalReportViewer1.ReportSource = Report;
-                                previewForm.ShowDialog();
-                            }
-                            else     /// //Still Not Working because of Applymargin and Printer not Setting up  (PTK Will Solve)
-                            {
-                                //int marginLeft = 360;
-                                CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
-                                margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
-                                margin.topMargin = DefaultMargin.Top;
-                                margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
-                                margin.rightMargin = DefaultMargin.Right;
-                                Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
-                                // プリンタに印刷
-                                System.Drawing.Printing.PageSettings ps;
-                                try
+                                ret = bbl.ShowMessage("Q202");
+                                if (ret == DialogResult.No)
                                 {
-                                    System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
-
-                                    CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
-
-                                    System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
-
-                                    Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
-                                    System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
-
-                                    Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
-
-                                    Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
-
-                                    Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
-
+                                    return;
                                 }
-                                catch (Exception ex)
+                                //}
+
+                                // 印字データをセット
+
+                                Report.SetDataSource(dtPrint);
+                                Report.Refresh();
+                                Report.SetParameterValue("txtStore", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);
+                                Report.SetParameterValue("txtMonth11", strmonth[11].ToString());
+                                Report.SetParameterValue("txtMonth10", strmonth[10].ToString());
+                                Report.SetParameterValue("txtMonth9", strmonth[9].ToString());
+                                Report.SetParameterValue("txtMonth8", strmonth[8].ToString());
+                                Report.SetParameterValue("txtMonth7", strmonth[7].ToString());
+                                Report.SetParameterValue("txtMonth6", strmonth[6].ToString());
+                                Report.SetParameterValue("txtMonth5", strmonth[5].ToString());
+                                Report.SetParameterValue("txtMonth4", strmonth[4].ToString());
+                                Report.SetParameterValue("txtMonth3", strmonth[3].ToString());
+                                Report.SetParameterValue("txtMonth2", strmonth[2].ToString());
+                                Report.SetParameterValue("txtMonth1", strmonth[1].ToString());
+                                Report.SetParameterValue("txtMonth0", strmonth[0].ToString());
+
+                                if (ret == DialogResult.Yes)
                                 {
-
+                                    var previewForm = new Viewer();
+                                    previewForm.CrystalReportViewer1.ShowPrintButton = true;
+                                    previewForm.CrystalReportViewer1.ReportSource = Report;
+                                    previewForm.ShowDialog();
                                 }
-                            }
-                            break;
+                                else     /// //Still Not Working because of Applymargin and Printer not Setting up  (PTK Will Solve)
+                                {
+                                    //int marginLeft = 360;
+                                    CrystalDecisions.Shared.PageMargins margin = Report.PrintOptions.PageMargins;
+                                    margin.leftMargin = DefaultMargin.Left; // mmの指定をtwip単位に変換する
+                                    margin.topMargin = DefaultMargin.Top;
+                                    margin.bottomMargin = DefaultMargin.Bottom;//mmToTwip(marginLeft);
+                                    margin.rightMargin = DefaultMargin.Right;
+                                    Report.PrintOptions.ApplyPageMargins(margin);     /// Error Now
+                                    // プリンタに印刷
+                                    System.Drawing.Printing.PageSettings ps;
+                                    try
+                                    {
+                                        System.Drawing.Printing.PrintDocument pDoc = new System.Drawing.Printing.PrintDocument();
 
-                        case EPrintMode.PDF:
-                            if (bbl.ShowMessage("Q204") != DialogResult.Yes)
-                            {
-                                return;
-                            }
-                            string filePath = "";
-                            if (!ShowSaveFileDialog(InProgramNM, out filePath))
-                            {
-                                return;
-                            }
+                                        CrystalDecisions.Shared.PrintLayoutSettings PrintLayout = new CrystalDecisions.Shared.PrintLayoutSettings();
 
-                            // 印字データをセット
-                            Report.SetDataSource(dtPrint);
-                            Report.Refresh();
-                            Report.SetParameterValue("txtSouko", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);
-                            Report.SetParameterValue("txtHeader", header);
+                                        System.Drawing.Printing.PrinterSettings printerSettings = new System.Drawing.Printing.PrinterSettings();
 
-                            bool result = OutputPDF(filePath, Report);
+                                        Report.PrintOptions.PrinterName = "\\\\dataserver\\Canon LBP2900";
+                                        System.Drawing.Printing.PageSettings pSettings = new System.Drawing.Printing.PageSettings(printerSettings);
 
-                            //PDF出力が完了しました。
-                            bbl.ShowMessage("I202");
+                                        Report.PrintOptions.DissociatePageSizeAndPrinterPaperSize = true;
 
-                            break;
+                                        Report.PrintOptions.PrinterDuplex = PrinterDuplex.Simplex;
+
+                                        Report.PrintToPrinter(printerSettings, pSettings, false, PrintLayout);
+
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
+                                }
+                                break;
+
+                            case EPrintMode.PDF:
+                                if (bbl.ShowMessage("Q204") != DialogResult.Yes)
+                                {
+                                    return;
+                                }
+                                string filePath = "";
+                                if (!ShowSaveFileDialog(InProgramNM, out filePath))
+                                {
+                                    return;
+                                }
+
+                                // 印字データをセット
+                                Report.SetDataSource(dtPrint);
+                                Report.Refresh();
+                                Report.SetParameterValue("txtSouko", cboStore.SelectedValue.ToString() + "  " + cboStore.Text);
+                                Report.SetParameterValue("txtHeader", header);
+
+                                bool result = OutputPDF(filePath, Report);
+
+                                //PDF出力が完了しました。
+                                bbl.ShowMessage("I202");
+
+                                break;
+                        }
+                        //InsertLog(Get_L_Log_Entity(dtPrint));
+
                     }
-                    //InsertLog(Get_L_Log_Entity(dtPrint));
+
 
                 }
                 finally

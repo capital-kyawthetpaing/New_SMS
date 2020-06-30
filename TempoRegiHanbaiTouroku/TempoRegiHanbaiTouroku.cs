@@ -872,8 +872,10 @@ namespace TempoRegiHanbaiTouroku
 
                 //JANCDが変更された場合はAdminNOをクリア
                 if (!mJANCD.Equals(txtJanCD.Text))
+                {
                     mAdminNO = "";
-
+                    btnTanka.Enabled = true;
+                }
                 //入力がある場合、SKUマスターに存在すること
                 //[M_SKU]
                 M_SKU_Entity mse = new M_SKU_Entity
@@ -1283,6 +1285,8 @@ namespace TempoRegiHanbaiTouroku
             mJANCD = "";
             mAdminNO = "";
             mSKUCD = "";
+
+            btnTanka.Enabled = true;
         }
         /// <summary>
         /// 明細部在庫ボタンクリック時処理
@@ -1294,6 +1298,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 TempoRegiZaikoKakunin_Search form = new TempoRegiZaikoKakunin_Search();
+                form.parJancd = txtJanCD.Text;
                 form.ShowDialog();
 
             }
@@ -1573,6 +1578,8 @@ namespace TempoRegiHanbaiTouroku
                 {
                     return;
                 }
+
+                btnTanka.Enabled = true;
 
                 switch (((Button)sender).Tag.ToString().Substring(0, 1))
                 {
@@ -1866,6 +1873,8 @@ namespace TempoRegiHanbaiTouroku
                         //決定		：	単価を元の画面に反映する	
                         txtJuchuuUnitPrice.Text = bbl.Z_SetStr(frm.Tanka);
                         Calkkin();
+                        txtSu.Focus();
+                        btnTanka.Enabled = false;
                         break;
                 }
             }
