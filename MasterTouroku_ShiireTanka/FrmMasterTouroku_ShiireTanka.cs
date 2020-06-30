@@ -604,6 +604,7 @@ namespace MasterTouroku_ShiireTanka
             CB_store.SelectedValue = "0000";
             GV_item.Refresh();
             GV_item.DataSource = null;
+
             //string aa;
         }
         private void RB_koten_CheckedChanged(object sender, EventArgs e)
@@ -656,7 +657,10 @@ namespace MasterTouroku_ShiireTanka
                 this.カラー.Visible = true;
                 this.SKUCD.Visible = true;
                 GV_item.Refresh();
-                GV_item.DataSource = dtsku;
+                if(!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                {
+                    GV_item.DataSource = dtsku;
+                }
                
             }
             else
@@ -673,7 +677,12 @@ namespace MasterTouroku_ShiireTanka
                 this.カラー.Visible = false;
                 this.SKUCD.Visible = false;
                 GV_item.Refresh();
-                GV_item.DataSource = dt;
+                
+                if (!String.IsNullOrEmpty(shiiresaki.TxtCode.Text))
+                {
+                    GV_item.DataSource = dt;
+                }
+
             }
         }
         private void TB_rate_KeyDown(object sender, KeyEventArgs e)
@@ -1002,36 +1011,14 @@ namespace MasterTouroku_ShiireTanka
                 {
                     copyq = date;
                 }
-
-
-
                 DataRow[] dr = dt.Select(copyq);
                 if( dr.Length ==0 )
                 {
                     string q = "CheckBox =1";
                     DataRow[] dr1;
-                        dr1=dt.Select(q);
-                    
-                    //if(dr1.Length >0)
-                    ////{
-                    ////    for (int i = 0; i < dr1.Length; i++)
-                    ////    {
-                           
-                    ////        dr1[i]["ChangeDate"]=TB_dateE.Text;
-                    ////        dr1[i]["Rate"] = TB_rate_E.Text;
-                    ////        decimal rate = Convert.ToDecimal(TB_rate_E.Text);
-                    ////        decimal con = (decimal)0.01;
-                    ////        decimal listprice = Convert.ToDecimal(dr1[i]["PriceOutTax"]);
-                    ////        dr1[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
-                            
-                    ////    }
-                    ////    DataTable dt1 = dr1.CopyToDataTable();
-                    ////    dt.Merge(dt1);
-                    ////}
-                    ///
-                    if(dr1.Length > 0)
+                    dr1 = dt.Select(q);
+                    if (dr1.Length > 0)
                     { 
-
                     DataTable dt1 = dr1.CopyToDataTable();
                     if (dt1.Rows.Count > 0)
                     {
@@ -1044,17 +1031,15 @@ namespace MasterTouroku_ShiireTanka
                             //decimal listprice = Convert.ToDecimal(dt1.Rows[i]["PriceOutTax"]);
                             //dt1.Rows[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                         }
-                        
                          DataRow[] drskuscopy;
                             drskuscopy = dtsku.Select("  ChangeDate = '" + TB_dateE.Text + "'");
-                            if(drskuscopy.Length >0)
+                            String datat = bl.DataTableToXml(dt);
+                            //string storecd=CB_store.SelectedValue.ToString()
+                            DataTable dtr = bl.M_SKU_SelectFor_SKU_Update(datat);
+                            if (drskuscopy.Length >0)
                             {
-                                String datat = bl.DataTableToXml(dt);
-                                //string storecd=CB_store.SelectedValue.ToString()
-                                DataTable dtr = bl.M_SKU_SelectFor_SKU_Update(datat);
                                 if(dtr.Rows.Count >0)
                                 {
-
                                     for (int i = 0; i < drskuscopy.Length; i++)
                                     {
                                         dtr.Rows[i]["ItemCD"] = dtr.Rows[i]["ItemCD"];
@@ -1078,9 +1063,37 @@ namespace MasterTouroku_ShiireTanka
                             }
                             else
                             {
-                                String datat = bl.DataTableToXml(dtsku);
-                                //string storecd=CB_store.SelectedValue.ToString()
-                                DataTable dtr = bl.M_SKU_SelectFor_SKU_Update(datat);
+                                if (dtr.Rows.Count > 0)
+                                {
+                                    DataRow rowsku;
+                                    rowsku = dtsku.NewRow();
+                                    rowsku["Tempkey"] = "1";
+                                    rowsku["CheckBox"] = "0";
+                                    //rowsku["AdminNO"] = dtr.Rows[0]["AdminNO"];
+                                    //rowsku["SKUCD"] = dtr.Rows[0]["SKUCD"];
+                                    //rowsku["SizeName"] = dtr.Rows[0]["SizeName"];
+                                    //rowsku["ColorName"] = dtr.Rows[0]["ColorName"];
+                                    //rowsku["LastYearTerm"] = dtr.Rows[0]["LastYearTerm"];
+                                    //rowsku["LastSeason"] = dtr.Rows[0]["LastSeason"];
+                                    //rowsku["MakerItem"] = dtr.Rows[0]["MakerItem"];
+                                    rowsku["ItemCD"] = dtr.Rows[0]["ItemCD"];
+                                    rowsku["ChangeDate"] = TB_dateE.Text;
+                                    rowsku["Rate"] = TB_rate_E.Text;
+                                    //decimal rate = Convert.ToDecimal(TB_rate_E.Text);
+                                    //decimal con = (decimal)0.01;
+                                    ////string priceouttax = drskuscopy[i]["PriceOutTax"].ToString();
+                                    //decimal listprice = Convert.ToDecimal(dtr.Rows[0]["PriceOutTax"]);
+                                    //rowsku["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                                    rowsku["InsertOperator"] = operatorCd;
+                                    rowsku["InsertDateTime"] = bbl.GetDate();
+                                    rowsku["UpdateOperator"] = operatorCd;
+                                    rowsku["UpdateDateTime"] = bbl.GetDate();
+                                    dtsku.Rows.Add(rowsku);
+                                    dtsku.AcceptChanges();
+                                    //GV_item.Refresh();
+                                    //GV_item.DataSource = dt;
+                                    //dv.RowStateFilter = DataViewRowState.CurrentRows;
+                                }
                             }
                             dt.Merge(dt1);
                         }
@@ -1092,7 +1105,6 @@ namespace MasterTouroku_ShiireTanka
                     TB_dateE.Focus();
                 }
             }
-
         }
         private void btn_update_Click(object sender, EventArgs e)
         {
@@ -1110,13 +1122,44 @@ namespace MasterTouroku_ShiireTanka
                 {
                     for (int i = 0; i < drupdate.Length; i++)
                     {
-                       
                         drupdate[i]["Rate"] = TB_rate_E.Text;
                         decimal rate = Convert.ToDecimal(TB_rate_E.Text);
                         decimal con = (decimal)0.01;
                         decimal listprice = Convert.ToDecimal(drupdate[i]["PriceOutTax"]);
                         drupdate[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                     }
+                    var JoinResult = (from t in dt.AsEnumerable()
+                                      join s in dtsku.AsEnumerable()
+                                      on t.Field<String>("ItemCD") equals s.Field<String>("ItemCD")
+                                      //where s.Field<DateTime>("ChangeDate")  <= '020'
+                                      select new
+                                      {
+                                          t
+                                          //ItemCD = t.Field<string>("ItemCD"),
+                                          //AdminNO = s.Field<int>("AdminNO"),
+                                          //SKUCD = s.Field<string>("SKUCD"),
+                                          //SizeName = s.Field<string>("SizeName"),
+                                          //ColorName = s.Field<string>("ColorName"),
+                                          //MakerItem = s.Field<string>("MakerItem"),
+                                          //BrandCD = s.Field<string>("BrandCD"),
+                                          //SportsCD = s.Field<string>("SportsCD"),
+                                          //SegmentCD = s.Field<string>("SegmentCD"),
+                                          //LastYearTerm = s.Field<string>("LastYearTerm"),
+                                          //LastSeason = s.Field<string>("LastSeason"),
+                                          //ChangeDate = s.Field<DateTime>("ChangeDate")
+
+                                      }
+                ).ToList();
+                    //foreach (var item in JoinResult)
+                    //{
+                    //    DataRow dr = dt.NewRow();
+                    //    dr["ItemcD"] =item.itemCD;
+                    //    dr["Name"] = item.Name;
+                    //    dr["MobileNumber"] = item.MobileNumber;
+                    //    dr["Address"] = item.Address;
+                    //    dr["FatherName"] = item.FatherName;
+                    //    dt.Rows.Add(dr);
+                    //}
                 }
             }
         }
@@ -1131,9 +1174,10 @@ namespace MasterTouroku_ShiireTanka
             if(dt.Rows.Count >0)
             {
                 //string insertq="Insert into M_ItemOrderPrice valuse("
-                String   datat = bl.DataTableToXml(dt);
+                String   itemdata = bl.DataTableToXml(dt);
+                String skudata = bl.DataTableToXml(dt);
                 //string storecd=CB_store.SelectedValue.ToString()
-                DataTable dtr = bl.M_Itemorderprice_Insert(datat, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
+                DataTable dtr = bl.M_Itemorderprice_Insert(itemdata, skudata, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
             }
         }
         private void GV_item_CellContentClick(object sender, DataGridViewCellEventArgs e)

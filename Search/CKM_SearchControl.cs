@@ -803,21 +803,110 @@ namespace Search
             else
                 txtChangeDate.Focus();
         }
-
+      
         /// <summary>
         /// Change Date KeyDown
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void txtChangeDate_KeyDown(object sender, KeyEventArgs e)
+        
         {
             if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.F11)
             {
-                if (txtChangeDate.IsCorrectDate)
-                    ChangeDateKeyDownEvent?.Invoke(this, e);
+                if (!string.IsNullOrEmpty(txtChangeDate.Text) && !txtChangeDate.IsFirstTime)
+                {
+                    if (txtChangeDate.IsCorrectDate && DateCheck(txtChangeDate.Text))
+                        ChangeDateKeyDownEvent?.Invoke(this, e);
+                }
             }
         }
+        private bool DateCheck(string Text1 = null)
+        {
+            bbl = new Base_BL();
+            if (!string.IsNullOrWhiteSpace(Text1))
+            {
+                if (bbl.IsInteger(Text1.Replace("/", "").Replace("-", "")))
+                {
+                    string day = string.Empty, month = string.Empty, year = string.Empty;
+                    if (Text1.Contains("/"))
+                    {
+                        string[] date = Text1.Split('/');
+                        day = date[date.Length - 1].PadLeft(2, '0');
+                        month = date[date.Length - 2].PadLeft(2, '0');
 
+                        if (date.Length > 2)
+                            year = date[date.Length - 3];
+
+                        Text1 = year + month + day;//  this.Text.Replace("/", "");
+                    }
+                    else if (Text1.Contains("-"))
+                    {
+                        string[] date = Text1.Split('-');
+                        day = date[date.Length - 1].PadLeft(2, '0');
+                        month = date[date.Length - 2].PadLeft(2, '0');
+
+                        if (date.Length > 2)
+                            year = date[date.Length - 3];
+
+                        Text1 = year + month + day;//  this.Text.Replace("-", "");
+                    }
+
+                    string text = Text1;
+                    text = text.PadLeft(8, '0');
+                    day = text.Substring(text.Length - 2);
+                    month = text.Substring(text.Length - 4).Substring(0, 2);
+                    year = Convert.ToInt32(text.Substring(0, text.Length - 4)).ToString();
+
+                    if (month == "00")
+                    {
+                        month = string.Empty;
+                    }
+                    if (year == "0")
+                    {
+                        year = string.Empty;
+                    }
+
+                    if (string.IsNullOrWhiteSpace(month))
+                        month = DateTime.Now.Month.ToString().PadLeft(2, '0');//if user doesn't input for month,set current month
+
+                    if (string.IsNullOrWhiteSpace(year))
+                    {
+                        year = DateTime.Now.Year.ToString();//if user doesn't input for year,set current year
+                    }
+                    else
+                    {
+                        if (year.Length == 1)
+                            year = "200" + year;
+                        else if (year.Length == 2)
+                            year = "20" + year;
+                    }
+
+                    //string strdate = year + "-" + month + "-" + day;  2019.6.11 chg
+                    string strdate = year + "/" + month + "/" + day;
+                    if (bbl.CheckDate(strdate))
+                    {
+                        //   IsCorrectDate = true;
+                        Text1 = strdate;
+                      //  Datetemp = strdate;
+                    }
+                    else
+                    {
+                       /// Datetemp = "";
+                        //  ShowErrorMessage("E103");
+                        return false;
+                    }
+                }
+                else
+                {
+                  ///  Datetemp = "";
+                    //  ShowErrorMessage("E103");
+                    return false;
+                }
+            }
+
+            return true;
+        }
         public void Clear()
         {
             Code = LabelText = ChangeDate = string.Empty;
