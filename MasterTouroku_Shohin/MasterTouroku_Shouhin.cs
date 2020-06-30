@@ -530,7 +530,7 @@ namespace MasterTouroku_Shouhin
                                 row["AdminNO"] = 0;
                                 row["ItemCD"] = keyControls[(int)EIndex.ItemCD].Text;
                                 row["ChangeDate"] = keyControls[(int)EIndex.ChangeDate].Text;
-                                row["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + colNo.ToString("0000")+ rowNo.ToString("0000");
+                                row["SKUCD"] = keyControls[(int)EIndex.ItemCD].Text + colNo.ToString("0000") + rowNo.ToString("0000");
                             }
                         }
                         if (dtSKU.Rows.Count>0)
@@ -2658,6 +2658,15 @@ namespace MasterTouroku_Shouhin
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dgvDetail_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                e.CellStyle.BackColor = Color.Silver;
+            }
+        }
+
         #endregion
 
         /// -----------------------------------------------------------------------------
