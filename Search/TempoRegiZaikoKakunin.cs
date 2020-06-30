@@ -19,6 +19,7 @@ namespace Search
         TempoRegiZaikoKakunin_Entity kne = new TempoRegiZaikoKakunin_Entity();
 
         public string data = string.Empty;
+        public string parJancd = "";
 
         public TempoRegiZaikoKakunin_Search()
         {
@@ -30,6 +31,11 @@ namespace Search
             InProgramID = "TempoRegiZaikoKakunin";
             string data = InOperatorCD;
             StartProgram();
+
+            if(!string.IsNullOrWhiteSpace(parJancd))
+            {
+                txtJanCD.Text = parJancd;
+            }
 
             txtJanCD.Focus();
             chkColorSize.Checked = false;
