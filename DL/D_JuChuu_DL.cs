@@ -11,15 +11,15 @@ using System.Data.SqlClient;
 namespace DL
 {
     public class D_Juchuu_DL : Base_DL
-    {
-        /// <summary>	
-        /// 受注番号検索にて使用	
-        /// </summary>	
-        /// <param name="de"></param>	
-        /// <returns></returns>	
+    {        /// <summary>
+             /// 受注番号検索にて使用
+             /// </summary>
+             /// <param name="de"></param>
+             /// <returns></returns>
         public DataTable D_Juchu_SelectAll(D_Juchuu_Entity de, M_SKU_Entity mse)
         {
             string sp = "D_Juchuu_SelectAll";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
@@ -30,21 +30,25 @@ namespace DL
                 { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateTo } },
                 { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateFrom } },
                 { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateTo } },
+
                 { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihikiate.ToString() } },
                 { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiuriage.ToString() } },
                 { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiseikyu.ToString() } },
                 { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyukin.ToString() } },
                 { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkAll.ToString() } },
+
                 { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkTujo.ToString() } },
                 { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHenpin.ToString() } },
                 { "@ChkGaisho", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValGaisho.ToString() } },
                 { "@ChkTento", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValTento.ToString() } },
                 { "@ChkWeb", new ValuePair { value1 = SqlDbType.Int, value2 = de.ValWeb.ToString() } },
+
                 { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihachu.ToString() } },
                 { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkNokiKaito.ToString() } },
                 { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyuka.ToString() } },
                 { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMisiire.ToString() } },
                 { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHachuAll.ToString() } },
+
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
                 { "@CustomerName", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerName } },
                 { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.VendorCD } },
@@ -55,27 +59,31 @@ namespace DL
                 { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel12 } },
                 { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel13 } },
                 { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
-                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },	
-                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },	
+                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
+                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+
                 { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOFrom } },
                 { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOTo } },
-                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator} },	
-                //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },	
+                { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Operator} },
+                //{ "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
+
             };
+
             return SelectData(dic, sp);
         }
 
-        /// <summary>	
-        /// 店舗受注照会にて使用	
-        /// </summary>	
-        /// <param name="de"></param>	
-        /// <param name="mse"></param>	
-        /// <returns></returns>	
+        /// <summary>
+        /// 店舗受注照会にて使用
+        /// </summary>
+        /// <param name="de"></param>
+        /// <param name="mse"></param>
+        /// <returns></returns>
         public DataTable D_Juchu_SelectAllForShoukai(D_Juchuu_Entity de, M_SKU_Entity mse, string operatorNm, string pc)
         {
             string sp = "D_Juchu_SelectAllForShoukai";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@JuchuuDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuDateFrom } },
@@ -86,18 +94,22 @@ namespace DL
                 { "@BillingCloseDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.BillingCloseDateTo } },
                 { "@CollectClearDateFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateFrom } },
                 { "@CollectClearDateTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CollectClearDateTo } },
+
                 { "@ChkMihikiate", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihikiate.ToString() } },
                 { "@ChkMiuriage", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiuriage.ToString() } },
                 { "@ChkMiseikyu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMiseikyu.ToString() } },
                 { "@ChkMinyukin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyukin.ToString() } },
                 { "@ChkAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkAll.ToString() } },
+
                 { "@ChkTujo", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkTujo.ToString() } },
                 { "@ChkHenpin", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHenpin.ToString() } },
+
                 { "@ChkMihachu", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMihachu.ToString() } },
                 { "@ChkNokiKaito", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkNokiKaito.ToString() } },
                 { "@ChkMinyuka", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMinyuka.ToString() } },
                 { "@ChkMisiire", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkMisiire.ToString() } },
                 { "@ChkHachuAll", new ValuePair { value1 = SqlDbType.TinyInt, value2 = de.ChkHachuAll.ToString() } },
+
                 { "@CustomerCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.CustomerCD } },
                 { "@OrderCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.VendorCD } },
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
@@ -106,55 +118,60 @@ namespace DL
                 { "@Tel2", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel12 } },
                 { "@Tel3", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.Tel13 } },
                 { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
-                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },	
-                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },	
+                { "@SKUName", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUName } },
+                //{ "@ITemCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.ITemCD } },
                 { "@SKUCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.SKUCD } },
                 { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = mse.JanCD } },
+
                 { "@JuchuuNOFrom", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOFrom } },
                 { "@JuchuuNOTo", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNOTo } },
                 { "@Operator", new ValuePair { value1 = SqlDbType.VarChar, value2 = operatorNm} },
                 { "@PC", new ValuePair { value1 = SqlDbType.VarChar, value2 = pc} },
+
             };
+
             return SelectData(dic, sp);
         }
 
-
-        /// <summary>	
-        /// 受注入力更新処理	
-        /// TempoJuchuuNyuuryokuより更新時に使用	
-        /// </summary>	
-        /// <param name="dme"></param>	
-        /// <param name="operationMode"></param>	
-        /// <param name="operatorNm"></param>	
-        /// <param name="pc"></param>	
-        /// <returns></returns>	
-        public bool D_Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode, string operatorNm, string pc)
+        /// <summary>
+        /// 受注入力更新処理
+        /// TempoJuchuuNyuuryokuより更新時に使用
+        /// </summary>
+        /// <param name="dme"></param>
+        /// <param name="operationMode"></param>
+        /// <param name="operatorNm"></param>
+        /// <param name="pc"></param>
+        /// <returns></returns>
+        public bool D_Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode, string operatorNm, string pc )
         {
             string sp = "PRC_TempoJuchuuNyuuryoku";
+
             command = new SqlCommand(sp, GetConnection());
             command.CommandType = CommandType.StoredProcedure;
             command.CommandTimeout = 0;
-            AddParam(command, "@OperateMode", SqlDbType.Int, operationMode.ToString());
+
+            AddParam(command, "@OperateMode", SqlDbType.Int,operationMode.ToString());
             AddParam(command, "@JuchuuNO", SqlDbType.VarChar, dme.JuchuuNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dme.StoreCD);
             AddParam(command, "@JuchuuDate", SqlDbType.VarChar, dme.JuchuuDate);
             AddParam(command, "@ReturnFLG", SqlDbType.TinyInt, dme.ReturnFLG);
             AddParam(command, "@SoukoCD", SqlDbType.VarChar, dme.SoukoCD);
-            AddParam(command, "@StaffCD", SqlDbType.VarChar, dme.StaffCD);
-            AddParam(command, "@CustomerCD", SqlDbType.VarChar, dme.CustomerCD);
-            AddParam(command, "@CustomerName", SqlDbType.VarChar, dme.CustomerName);
-            AddParam(command, "@CustomerName2", SqlDbType.VarChar, dme.CustomerName2);
-            AddParam(command, "@AliasKBN", SqlDbType.TinyInt, dme.AliasKBN);
-            AddParam(command, "@ZipCD1", SqlDbType.VarChar, dme.ZipCD1);
-            AddParam(command, "@ZipCD2", SqlDbType.VarChar, dme.ZipCD2);
-            AddParam(command, "@Address1", SqlDbType.VarChar, dme.Address1);
-            AddParam(command, "@Address2", SqlDbType.VarChar, dme.Address2);
-            AddParam(command, "@Tel11", SqlDbType.VarChar, dme.Tel11);
-            AddParam(command, "@Tel12", SqlDbType.VarChar, dme.Tel12);
-            AddParam(command, "@Tel13", SqlDbType.VarChar, dme.Tel13);
-            AddParam(command, "@Tel21", SqlDbType.VarChar, dme.Tel21);
-            AddParam(command, "@Tel22", SqlDbType.VarChar, dme.Tel22);
-            AddParam(command, "@Tel23", SqlDbType.VarChar, dme.Tel23);
+            AddParam(command,"@StaffCD", SqlDbType.VarChar, dme.StaffCD);
+            AddParam(command,"@CustomerCD", SqlDbType.VarChar, dme.CustomerCD);
+            AddParam(command,"@CustomerName", SqlDbType.VarChar, dme.CustomerName);
+            AddParam(command,"@CustomerName2", SqlDbType.VarChar, dme.CustomerName2 );
+            AddParam(command,"@AliasKBN", SqlDbType.TinyInt, dme.AliasKBN);
+            AddParam(command,"@ZipCD1", SqlDbType.VarChar, dme.ZipCD1 );
+            AddParam(command,"@ZipCD2", SqlDbType.VarChar, dme.ZipCD2 );
+            AddParam(command,"@Address1", SqlDbType.VarChar, dme.Address1);
+            AddParam(command,"@Address2", SqlDbType.VarChar, dme.Address2);
+            AddParam(command,"@Tel11", SqlDbType.VarChar, dme.Tel11);
+            AddParam(command,"@Tel12", SqlDbType.VarChar, dme.Tel12);
+            AddParam(command,"@Tel13", SqlDbType.VarChar, dme.Tel13);
+            AddParam(command,"@Tel21", SqlDbType.VarChar, dme.Tel21);
+            AddParam(command,"@Tel22", SqlDbType.VarChar, dme.Tel22);
+            AddParam(command,"@Tel23", SqlDbType.VarChar, dme.Tel23);
+
             AddParam(command, "@DeliveryCD", SqlDbType.VarChar, dme.DeliveryCD);
             AddParam(command, "@DeliveryName", SqlDbType.VarChar, dme.DeliveryName);
             AddParam(command, "@DeliveryName2", SqlDbType.VarChar, dme.DeliveryName2);
@@ -166,6 +183,7 @@ namespace DL
             AddParam(command, "@DeliveryTel11", SqlDbType.VarChar, dme.DeliveryTel11);
             AddParam(command, "@DeliveryTel12", SqlDbType.VarChar, dme.DeliveryTel12);
             AddParam(command, "@DeliveryTel13", SqlDbType.VarChar, dme.DeliveryTel13);
+
             AddParam(command, "@JuchuuGaku", SqlDbType.Money, dme.JuchuuGaku);
             AddParam(command, "@Discount", SqlDbType.Money, dme.Discount);
             AddParam(command, "@HanbaiHontaiGaku", SqlDbType.Money, dme.HanbaiHontaiGaku);
@@ -176,6 +194,10 @@ namespace DL
             AddParam(command, "@ProfitGaku", SqlDbType.Money, dme.ProfitGaku);
             AddParam(command, "@Point", SqlDbType.Money, dme.Point);
             AddParam(command, "@InvoiceGaku", SqlDbType.Money, dme.InvoiceGaku);
+            AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, dme.OrderHontaiGaku);
+            AddParam(command, "@OrderTax8", SqlDbType.Money, dme.OrderTax8);
+            AddParam(command, "@OrderTax10", SqlDbType.Money, dme.OrderTax10);
+            AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
             AddParam(command, "@PaymentMethodCD", SqlDbType.VarChar, dme.PaymentMethodCD);
             AddParam(command, "@PaymentPlanNO", SqlDbType.TinyInt, dme.PaymentPlanNO);
             AddParam(command, "@SalesPlanDate", SqlDbType.Date, dme.SalesPlanDate);
@@ -185,17 +207,22 @@ namespace DL
             AddParam(command, "@CommentInStore", SqlDbType.VarChar, dme.CommentInStore);
             AddParam(command, "@MitsumoriNO", SqlDbType.VarChar, dme.MitsumoriNO);
             AddParam(command, "@NouhinsyoComment", SqlDbType.VarChar, dme.NouhinsyoComment);
+
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
-            AddParam(command, "@Operator", SqlDbType.VarChar, operatorNm);
-            AddParam(command, "@PC", SqlDbType.VarChar, pc);
-            //OUTパラメータの追加	
+            AddParam(command,"@Operator", SqlDbType.VarChar, operatorNm);
+            AddParam(command,"@PC", SqlDbType.VarChar, pc);
+
+            //OUTパラメータの追加
             string outPutParam = "@OutJuchuuNo";
             command.Parameters.Add(outPutParam, SqlDbType.VarChar, 11);
             command.Parameters[outPutParam].Direction = ParameterDirection.Output;
+
             UseTransaction = true;
-            bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
+
+            bool ret= InsertUpdateDeleteData(sp, ref outPutParam);
             if (ret)
                 dme.JuchuuNO = outPutParam;
+
             return ret;
         }
 
@@ -225,7 +252,7 @@ namespace DL
         public DataTable CheckJuchuData(string juchuNo)
         {
             string sp = "CheckJuchuData";
-
+            
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = juchuNo } },
@@ -266,6 +293,7 @@ namespace DL
             UseTransaction = true;
 
             string outPutParam = "";    //未使用
+
             bool ret = InsertUpdateDeleteData(sp, ref outPutParam);
 
             return ret;
@@ -286,7 +314,7 @@ namespace DL
         public DataTable D_Juchuu_SelectData_ForTempoShukkaNyuuryoku(D_Juchuu_Entity de, short operationMode, string salesNO = "")
         {
             string sp = "D_Juchuu_SelectData_ForTempoShukkaNyuuryoku";
-
+            
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
@@ -314,7 +342,6 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-
         /// <summary>
         /// 入荷入力（受注照会画面）
         /// </summary>
@@ -331,8 +358,8 @@ namespace DL
 
             return SelectData(dic, sp);
         }
-
-        public DataTable D_Juchuu_DataSelect_ForShukkaShoukai(D_Juchuu_Entity dje)
+	
+	public DataTable D_Juchuu_DataSelect_ForShukkaShoukai(D_Juchuu_Entity dje)
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
@@ -341,8 +368,7 @@ namespace DL
 
             return SelectData(dic, "D_Juchuu_DataSelect_ForShukkaShoukai");
         }
-
-      
+        
         /// <summary>
         /// 出荷入力（JANCDチェック）
         /// </summary>
@@ -363,6 +389,7 @@ namespace DL
         public DataTable D_Juchu_SelectDataForTempoUriage(D_Juchuu_Entity de, short operationMode)
         {
             string sp = "D_Juchu_SelectDataForTempoUriage";
+
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
@@ -374,9 +401,9 @@ namespace DL
                 { "@StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StoreCD } },
                 { "@StaffCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.StaffCD } },
             };
+
             return SelectData(dic, sp);
         }
-
         public DataTable D_Juchuu_SelectForSeisan(D_Juchuu_Entity dje)
         {
             string sp = "D_Juchuu_SelectForSeisan";
