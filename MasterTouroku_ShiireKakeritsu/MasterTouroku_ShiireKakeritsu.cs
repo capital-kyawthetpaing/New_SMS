@@ -451,6 +451,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
                     dvMain.RowFilter = searchCondition;
                     dgv_ShiireKakeritsu.DataSource = dvMain;
+
                 }
         }
         private void SearchData()

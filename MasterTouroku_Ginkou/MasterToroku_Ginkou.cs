@@ -169,7 +169,7 @@ namespace MasterTouroku_Ginkou
         {
             if (ginko_useflg.Text == "1")
             {
-                mgbl.ShowMessage("E154");
+              //  mgbl.ShowMessage("E154");
             }
             else
             {
@@ -285,8 +285,8 @@ namespace MasterTouroku_Ginkou
                 {
 
                     mge = GetGinkouEntity();
-                    //Use-Flag == 1 Condition >> do nothing
-                    if (mgbl.IsuseFlag(mge.cp_ginkoCD,mge.ChangeDate))
+                   // Use - Flag == 1 Condition >> do nothing
+                    if (mgbl.IsuseFlag(mge.ginko_CD, mge.ginko_Changedate))
                     {
                         mgbl.ShowMessage("E154");
                         ginKou_CD.SetFocus(1);

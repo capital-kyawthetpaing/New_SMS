@@ -17,7 +17,7 @@ namespace BL
         public bool IsuseFlag(string code, string changedate)
         {
             DataTable dtGinkou = SimpleSelect1("3", changedate, code );
-            return dtGinkou.Rows.Count > 0 ? true : false;
+            return dtGinkou.Rows.Count > 0  && dtGinkou.Rows[0]["UsedFlg"].ToString() == "1" ? true : false;
         }
         public bool M_Ginkou_Exist(string code,string changedate)
         {
