@@ -154,6 +154,17 @@ namespace TempoRegi_Master_Nyuuryoku
             lblGroupNO.Visible = true;
             lblGroupNO.Text = groupno + "番目";
 
+            for (int k = 1; k <= 99; k++)
+            {
+                for (int j = 1; j < 3; j++)
+                {
+                    Button btn2 = this.Controls.Find("btnName" + k.ToString() + j.ToString(), true)[0] as Button;
+
+                    btn2.Text = string.Empty;
+                }
+
+            }
+
             if (!string.IsNullOrEmpty(btn.Text))
             {
                 string str = btn.Text.ToString();
@@ -189,16 +200,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     }
                 }
 
-                for (int k = 1; k <= 99; k++)
-                {
-                    for (int j = 1; j < 3; j++)
-                    {
-                        Button btn2 = this.Controls.Find("btnName" + k.ToString() + j.ToString(), true)[0] as Button;
-
-                        btn2.Text = string.Empty;
-                    }
-
-                }
+                
                 foreach (DataRow row in dr2)
                 {
                     horizontal = row["Horizontal"].ToString();
@@ -241,9 +243,9 @@ namespace TempoRegi_Master_Nyuuryoku
 
         }
 
-        private bool ErrorCheck()
+        private bool ErrorCheck(int type)
         {
-
+            #region NO use
             //if (!RequireCheck(new Control[] { txtButtomNameUp, txtCD }))   // go that focus
             //    return false;
 
@@ -274,6 +276,56 @@ namespace TempoRegi_Master_Nyuuryoku
             //    return false;
 
             //ButtonNO_Check
+            #endregion
+
+            if(type==1)
+            {
+                //ButtonNO_Check
+                if (lblGroupNO.Text.Equals("Btn1_No"))
+                {
+                    bbl.ShowMessage("E236");
+                    txtButtomNameUp.Focus();
+                    return false;
+                }
+
+            }
+            if(type==2)
+            {
+                if (lblNameNO.Text.Equals("Btn2_No") || lblNameNO.Text.Equals(""))
+                {
+                    bbl.ShowMessage("E236");
+                    txtCD.Focus();
+                    return false;
+                }
+
+                if(!string.IsNullOrWhiteSpace(txtCD.Text))
+                {
+                    DataTable dtSKU = SelectSKUData(txtCD.Text);
+                    if (dtSKU.Rows.Count <= 0)
+                    {
+                        bbl.ShowMessage("E101");
+                        txtCD.Focus();
+                        return false;
+                    }
+                }
+                
+
+                if (!string.IsNullOrWhiteSpace(txtCD.Text) && string.IsNullOrWhiteSpace(txtBtnNameDown.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    txtBtnNameDown.Focus();
+                    return false;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtCD.Text) && !string.IsNullOrWhiteSpace(txtBtnNameDown.Text))
+                {
+                    bbl.ShowMessage("E102");
+                    txtCD.Focus();
+                    return false;
+                }
+            }
+
+
             return true;
         }
 
@@ -554,15 +606,8 @@ namespace TempoRegi_Master_Nyuuryoku
 
         private void btn_Confrim2_Click(object sender, EventArgs e)
         {
-            // if (!RequireCheck(new Control[] { txtCD})) return;
-
-            if (lblNameNO.Text.Equals(""))
-            {
-                bbl.ShowMessage("E236");
-                txtCD.Focus();
-                return ;
-            }
-            if (ErrorCheck())
+            
+            if (ErrorCheck(2))
             {
                 btnProcess.Enabled = true;//Save_Button
 
@@ -575,68 +620,56 @@ namespace TempoRegi_Master_Nyuuryoku
                 {
                     vertical = "1";
                 }
+
                 else if (lblNameNO.Text.Contains("下"))
                 {
                     vertical = "2";
                 }
-                //if (!string.IsNullOrWhiteSpace(txtBtnNameDown.Text))
-                //{
-                    if (dtTemp2 != null)
-                    {
-                        for (int i = 0; i < dtTemp2.Rows.Count; i++)
-                        {
-                            DataRow dr = dtTemp2.Rows[i];
-                            if (dr["GroupNO"].ToString() == groupno && dr["Horizontal"].ToString() == horizontal && dr["Vertical"].ToString() == vertical)
-                            {
-                                dr.Delete();
-                            }
-                        }
-                        //delete If data exists            
-                        dtTemp2.AcceptChanges();
 
-                        btn2 = this.Controls.Find("btnName" + horizontal + vertical, true)[0] as Button;
-                        btn2.Text = txtBtnNameDown.Text;
-                        var dn = dtTemp2.NewRow();
-                        dn["GroupNO"] = groupno;
-                        dn["Horizontal"] = horizontal;
-                        dn["Vertical"] = vertical;
-                        dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
-                        dn["btndetailBottunName"] = txtBtnNameDown.Text.Trim();
-                        dn["Button"] = txtCD.Text.Trim();
-                        dn["AdminNO"] = string.IsNullOrWhiteSpace(lblAdminNO.Text) ? 0: Convert.ToInt32(lblAdminNO.Text) ;
-                        dn["JanCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
-                        dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
-                        dtTemp2.Rows.Add(dn);
-                    //}
+                if (dtTemp2 != null)
+                {
+                    for (int i = 0; i < dtTemp2.Rows.Count; i++)
+                    {
+                        DataRow dr = dtTemp2.Rows[i];
+                        if (dr["GroupNO"].ToString() == groupno && dr["Horizontal"].ToString() == horizontal && dr["Vertical"].ToString() == vertical)
+                        {
+                            dr.Delete();
+                        }
+                    }
+                    //delete If data exists            
+                    dtTemp2.AcceptChanges();
+
+                    btn2 = this.Controls.Find("btnName" + horizontal + vertical, true)[0] as Button;
+                    btn2.Text = txtBtnNameDown.Text;
+                    var dn = dtTemp2.NewRow();
+                    dn["GroupNO"] = groupno;
+                    dn["Horizontal"] = horizontal;
+                    dn["Vertical"] = vertical;
+                    dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
+                    dn["btndetailBottunName"] = txtBtnNameDown.Text.Trim();
+                    dn["Button"] = txtCD.Text.Trim();
+                    dn["AdminNO"] = string.IsNullOrWhiteSpace(lblAdminNO.Text) ? 0: Convert.ToInt32(lblAdminNO.Text) ;
+                    dn["JanCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
+                    dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;
+                    dtTemp2.Rows.Add(dn);
+
                 }
             }
         }
         private void btnConfirm1_Click(object sender, EventArgs e)
         {
-            //if(!RequireCheck(new Control[] { txtButtomNameUp }))
-            // {
-            //     return;
-            // }
-            btnProcess.Enabled = true;//Save_Button
-                                      //return;            
-
-            string NO = string.Empty;
-            BtnName = txtButtomNameUp.Text;
-            NO = lblGroupNO.Text;
-            groupno = NO.Replace("番目", "");
-
-            //ButtonNO_Check
-            if (lblGroupNO.Text.Equals("Btn1_No"))
+            if(ErrorCheck(1))
             {
-                bbl.ShowMessage("E236");
-                txtButtomNameUp.Focus();
-                return;
-            }
+                btnProcess.Enabled = true;//Save_Button
+                                          //return;            
 
+                string NO = string.Empty;
+                BtnName = txtButtomNameUp.Text;
+                NO = lblGroupNO.Text;
+                groupno = NO.Replace("番目", "");
 
-            //if (!string.IsNullOrWhiteSpace(txtButtomNameUp.Text))
-            //{
-                // int i = dtTemp1.Rows.Count;             
+                
+
 
                 if (dtTemp1 != null)
                 {
@@ -658,7 +691,8 @@ namespace TempoRegi_Master_Nyuuryoku
                     dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
                     dtTemp1.Rows.Add(dn);
                 }
-           // }
+            }
+
         }
 
         private void DisplayName()
