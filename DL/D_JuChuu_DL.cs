@@ -142,7 +142,7 @@ namespace DL
         /// <param name="operatorNm"></param>
         /// <param name="pc"></param>
         /// <returns></returns>
-        public bool D_Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode, string operatorNm, string pc )
+        public bool D_Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode)
         {
             string sp = "PRC_TempoJuchuuNyuuryoku";
 
@@ -152,6 +152,7 @@ namespace DL
 
             AddParam(command, "@OperateMode", SqlDbType.Int,operationMode.ToString());
             AddParam(command, "@JuchuuNO", SqlDbType.VarChar, dme.JuchuuNO);
+            AddParam(command, "@JuchuuProcessNO", SqlDbType.VarChar, dme.JuchuuProcessNO);
             AddParam(command, "@StoreCD", SqlDbType.VarChar, dme.StoreCD);
             AddParam(command, "@JuchuuDate", SqlDbType.VarChar, dme.JuchuuDate);
             AddParam(command, "@ReturnFLG", SqlDbType.TinyInt, dme.ReturnFLG);
@@ -209,8 +210,8 @@ namespace DL
             AddParam(command, "@NouhinsyoComment", SqlDbType.VarChar, dme.NouhinsyoComment);
 
             AddParamForDataTable(command, "@Table", SqlDbType.Structured, dt);
-            AddParam(command,"@Operator", SqlDbType.VarChar, operatorNm);
-            AddParam(command,"@PC", SqlDbType.VarChar, pc);
+            AddParam(command,"@Operator", SqlDbType.VarChar, dme.InsertOperator);
+            AddParam(command,"@PC", SqlDbType.VarChar, dme.PC);
 
             //OUTパラメータの追加
             string outPutParam = "@OutJuchuuNo";
@@ -230,7 +231,7 @@ namespace DL
         /// 受注入力データ取得処理
         /// TempoJuchuuNyuuryokuよりデータ抽出時に使用
         /// </summary>
-        public DataTable D_Juchu_SelectData(D_Juchuu_Entity de, short operationMode)
+        public DataTable D_Juchu_SelectData(D_Juchuu_Entity de, short operationMode, short tennic=0)
         {
             string sp = "D_Juchuu_SelectData";
 
@@ -239,6 +240,7 @@ namespace DL
             {
                 { "@OperateMode", new ValuePair { value1 = SqlDbType.TinyInt, value2 = operationMode.ToString() } },
                 { "@JuchuuNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = de.JuchuuNO } },
+                { "@Tennic", new ValuePair { value1 = SqlDbType.TinyInt, value2 = tennic.ToString() } },
             };
 
             return SelectData(dic, sp);

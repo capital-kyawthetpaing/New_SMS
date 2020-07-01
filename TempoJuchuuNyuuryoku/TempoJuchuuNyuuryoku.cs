@@ -1375,6 +1375,14 @@ namespace TempoJuchuuNyuuryoku
                 //起動時共通処理
                 base.StartProgram();
 
+                mTennic = bbl.GetTennic();
+
+                //受注処理番号
+                if(mTennic.Equals(1))
+                {
+
+                }
+
                 string ymd = bbl.GetDate();
                 mibl = new TempoJuchuuNyuuryoku_BL();
                 CboStoreCD.Bind(ymd);
@@ -1393,7 +1401,6 @@ namespace TempoJuchuuNyuuryoku
                 ScCustomer.Value1 = "1";
                 ScDeliveryCD.Value1 = "1";
 
-                mTennic = bbl.GetTennic();
 
                 //スタッフマスター(M_Staff)に存在すること
                 //[M_Staff]
@@ -1619,7 +1626,7 @@ namespace TempoJuchuuNyuuryoku
             else
                 dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text;
 
-            DataTable dt = mibl.D_Juchu_SelectData(dje, (short)OperationMode);
+            DataTable dt = mibl.D_Juchu_SelectData(dje, (short)OperationMode, (short)mTennic);
 
             //受注(D_Juchuu)に存在しない場合、Error 「登録されていない受注番号」
             if (dt.Rows.Count == 0)
@@ -2185,6 +2192,7 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].ProfitGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku) - bbl.Z_Set(mGrid.g_DArray[i].CostGaku)); // 
                     //税額
                     mGrid.g_DArray[i].Tax = bbl.Z_Set(mGrid.g_DArray[i].JuchuuGaku) - bbl.Z_Set(mGrid.g_DArray[i].JuchuuHontaiGaku);
+                    mGrid.g_DArray[i].OrderUnitPrice = "0";   //発注単価
 
                     i++;
                 }
@@ -3786,6 +3794,10 @@ namespace TempoJuchuuNyuuryoku
         {
             dje = new D_Juchuu_Entity();
             dje.JuchuuNO = keyControls[(int)EIndex.JuchuuNO].Text;
+
+            if (mTennic.Equals(1))
+                dje.JuchuuProcessNO = keyControls[(int)EIndex.JuchuuNO].Text;
+
             dje.StoreCD = CboStoreCD.SelectedValue.ToString();
 
             dje.JuchuuDate = detailControls[(int)EIndex.JuchuuDate].Text;
@@ -3851,6 +3863,8 @@ namespace TempoJuchuuNyuuryoku
             dje.MitsumoriNO = keyControls[(int)EIndex.MitsumoriNO].Text;
             dje.NouhinsyoComment = detailControls[(int)EIndex.NouhinsyoComment].Text;
 
+            dje.InsertOperator = InOperatorCD;
+            dje.PC = InPcID;
             //dje.OrderHontaiGaku = (bbl.Z_Set(lblKin13.Text) - (mOrderTax8 + mOrderTax10)).ToString();
             //dje.OrderTax8 = mOrderTax8.ToString();
             //dje.OrderTax10 = mOrderTax10.ToString();
@@ -3900,6 +3914,7 @@ namespace TempoJuchuuNyuuryoku
             dt.Columns.Add("ExpressFLG", typeof(int));
             dt.Columns.Add("ShippingPlanDate", typeof(DateTime));
             dt.Columns.Add("OrderUnitPrice", typeof(decimal));
+            dt.Columns.Add("JuchuuNO", typeof(string));
             //dt.Columns.Add("OrderTax", typeof(decimal));
             //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
             //dt.Columns.Add("OrderGaku", typeof(decimal));
@@ -3974,6 +3989,7 @@ namespace TempoJuchuuNyuuryoku
                         , mGrid.g_DArray[RW].ChkExpress ? 1 : 0
                         , mGrid.g_DArray[RW].ShippingPlanDate == "" ? null : mGrid.g_DArray[RW].ShippingPlanDate
                         , bbl.Z_Set(mGrid.g_DArray[RW].OrderUnitPrice)
+                        , mGrid.g_DArray[RW].JuchuuNO == "" ? null : mGrid.g_DArray[RW].JuchuuNO
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTax)
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTaxRitsu)
                         //, bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku)
@@ -4051,7 +4067,7 @@ namespace TempoJuchuuNyuuryoku
 
             //更新処理
             dje = GetEntity();
-            mibl.Juchu_Exec(dje,dt, (short)OperationMode, InOperatorCD, InPcID);
+            mibl.Juchu_Exec(dje,dt, (short)OperationMode);
 
             if (OperationMode == EOperationMode.DELETE)
                 bbl.ShowMessage("I102");
