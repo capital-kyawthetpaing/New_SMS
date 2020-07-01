@@ -489,6 +489,8 @@ BEGIN
            ,[SiteJuchuuRows]
            ,[NotPrintFLG]
            ,[AddJuchuuRows]
+           ,[NotOrderFLG]
+           ,[ExpressFLG]
            ,[AdminNO]
            ,[SKUCD]
            ,[JanCD]
@@ -506,6 +508,7 @@ BEGIN
            ,[JuchuuTaxRitsu]
            ,[CostUnitPrice]
            ,[CostGaku]
+           ,[OrderUnitPrice]
            ,[ProfitGaku]
            ,[SoukoCD]
            ,[HikiateSu]
@@ -529,6 +532,7 @@ BEGIN
            ,[CommentOutStore]
            ,[CommentInStore]
            ,[IndividualClientName]
+           ,[ShippingPlanDate]
            ,[SalesDate]
            ,[SalesNO]
            ,[DepositeDetailNO]
@@ -547,6 +551,8 @@ BEGIN
                ,SiteJuchuuRows
                ,NotPrintFLG
                ,AddJuchuuRows
+               ,NotOrderFLG
+               ,ExpressFLG
                ,AdminNO
                ,SKUCD
                ,JanCD
@@ -564,6 +570,7 @@ BEGIN
                ,JuchuuTaxRitsu
                ,CostUnitPrice
                ,CostGaku
+               ,OrderUnitPrice
                ,ProfitGaku
                ,SoukoCD
                ,HikiateSu
@@ -587,6 +594,7 @@ BEGIN
                ,CommentOutStore
                ,CommentInStore
                ,IndividualClientName
+               ,ShippingPlanDate
                ,SalesDate
                ,SalesNO
                ,DepositeDetailNO
@@ -621,6 +629,8 @@ BEGIN
            ,[SiteJuchuuRows]
            ,[NotPrintFLG]
            ,[AddJuchuuRows]
+           ,[NotOrderFLG]
+           ,[ExpressFLG]
            ,[AdminNO]
            ,[SKUCD]
            ,[JanCD]
@@ -638,6 +648,7 @@ BEGIN
            ,[JuchuuTaxRitsu]
            ,[CostUnitPrice]
            ,[CostGaku]
+           ,[OrderUnitPrice]
            ,[ProfitGaku]
            ,[SoukoCD]
            ,[HikiateSu]
@@ -661,6 +672,7 @@ BEGIN
            ,[CommentOutStore]
            ,[CommentInStore]
            ,[IndividualClientName]
+           ,[ShippingPlanDate]
            ,[SalesDate]
            ,[SalesNO]
            ,[DepositeDetailNO]
@@ -679,6 +691,8 @@ BEGIN
                ,SiteJuchuuRows
 	           ,NotPrintFLG
 	           ,AddJuchuuRows
+               ,NotOrderFLG
+               ,ExpressFLG
                ,AdminNO
                ,SKUCD
                ,JanCD
@@ -696,6 +710,7 @@ BEGIN
                ,JuchuuTaxRitsu
                ,CostUnitPrice
                ,CostGaku
+               ,OrderUnitPrice
                ,ProfitGaku
                ,SoukoCD
                ,HikiateSu
@@ -719,6 +734,7 @@ BEGIN
                ,CommentOutStore
                ,CommentInStore
                ,IndividualClientName
+               ,ShippingPlanDate
                ,SalesDate
                ,SalesNO
                ,DepositeDetailNO
