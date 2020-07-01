@@ -154,6 +154,17 @@ namespace TempoRegi_Master_Nyuuryoku
             lblGroupNO.Visible = true;
             lblGroupNO.Text = groupno + "番目";
 
+            for (int k = 1; k <= 99; k++)
+            {
+                for (int j = 1; j < 3; j++)
+                {
+                    Button btn2 = this.Controls.Find("btnName" + k.ToString() + j.ToString(), true)[0] as Button;
+
+                    btn2.Text = string.Empty;
+                }
+
+            }
+
             if (!string.IsNullOrEmpty(btn.Text))
             {
                 string str = btn.Text.ToString();
@@ -189,16 +200,7 @@ namespace TempoRegi_Master_Nyuuryoku
                     }
                 }
 
-                for (int k = 1; k <= 99; k++)
-                {
-                    for (int j = 1; j < 3; j++)
-                    {
-                        Button btn2 = this.Controls.Find("btnName" + k.ToString() + j.ToString(), true)[0] as Button;
-
-                        btn2.Text = string.Empty;
-                    }
-
-                }
+                
                 foreach (DataRow row in dr2)
                 {
                     horizontal = row["Horizontal"].ToString();

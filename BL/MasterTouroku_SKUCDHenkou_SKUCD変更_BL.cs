@@ -21,7 +21,13 @@ namespace BL
         {
             return  midl.M_ITEM_NormalSelect(mie);
         }
-          
+
+        public DataTable M_ITem_SelectForSKUCDHenkou01(M_ITEM_Entity mie)
+        {
+            return midl.M_ITem_SelectForSKUCDHenkou01(mie);
+        }
+
+
 
     }
 }

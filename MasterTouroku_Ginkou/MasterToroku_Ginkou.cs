@@ -169,7 +169,7 @@ namespace MasterTouroku_Ginkou
         {
             if (ginko_useflg.Text == "1")
             {
-                mgbl.ShowMessage("E154");
+              //  mgbl.ShowMessage("E154");
             }
             else
             {
@@ -268,10 +268,11 @@ namespace MasterTouroku_Ginkou
             }
             else if (index == 12)
             {
-
-                if (!RequireCheck(new Control[] {  ginKou_CD.TxtCode,  ginKou_CD.TxtChangeDate, ginko_name, ginko_kananame }))
-                    return false;
-
+                if (OperationMode != EOperationMode.DELETE)
+                {
+                    if (!RequireCheck(new Control[] { ginKou_CD.TxtCode, ginKou_CD.TxtChangeDate, ginko_name, ginko_kananame }))
+                        return false;
+                }
                 if (OperationMode == EOperationMode.INSERT)
                 {
                     if (ginKou_CD.IsExists(1))
@@ -285,8 +286,8 @@ namespace MasterTouroku_Ginkou
                 {
 
                     mge = GetGinkouEntity();
-                    //Use-Flag == 1 Condition >> do nothing
-                    if (mgbl.IsuseFlag(mge.cp_ginkoCD,mge.ChangeDate))
+                   // Use - Flag == 1 Condition >> do nothing
+                    if (mgbl.IsuseFlag(mge.ginko_CD, mge.ginko_Changedate) || mgbl.IsGinkoExistInShiten(mge.ginko_CD, mge.ginko_Changedate))
                     {
                         mgbl.ShowMessage("E154");
                         ginKou_CD.SetFocus(1);
