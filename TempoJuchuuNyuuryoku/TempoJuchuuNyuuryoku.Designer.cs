@@ -45,9 +45,6 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_ITMCD_1 = new CKM_Controls.CKM_TextBox();
             this.IMT_ITMCD_2 = new CKM_Controls.CKM_TextBox();
             this.Pnl_Body = new System.Windows.Forms.Panel();
-            this.IMN_ORGAK_2 = new CKM_Controls.CKM_TextBox();
-            this.IMN_ORGAK_1 = new CKM_Controls.CKM_TextBox();
-            this.IMN_ORGAK_0 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_2 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_1 = new CKM_Controls.CKM_TextBox();
             this.IMN_ORTAN_0 = new CKM_Controls.CKM_TextBox();
@@ -175,7 +172,6 @@ namespace TempoJuchuuNyuuryoku
             this.label27 = new CKM_Controls.CKM_Label();
             this.ScCustomer = new Search.CKM_SearchControl();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -234,6 +230,8 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ckM_Label32 = new CKM_Controls.CKM_Label();
+            this.lblKin13 = new System.Windows.Forms.Label();
             this.BtnSubF11 = new CKM_Controls.CKM_Button();
             this.CboPaymentMethodCD = new CKM_Controls.CKM_ComboBox();
             this.ckM_Label30 = new CKM_Controls.CKM_Label();
@@ -303,8 +301,8 @@ namespace TempoJuchuuNyuuryoku
             this.panel2 = new System.Windows.Forms.Panel();
             this.radioOnchuD = new System.Windows.Forms.RadioButton();
             this.radioSamaD = new System.Windows.Forms.RadioButton();
-            this.ckM_Label32 = new CKM_Controls.CKM_Label();
-            this.lblKin13 = new System.Windows.Forms.Label();
+            this.Btn_SelectAll = new CKM_Controls.CKM_Button();
+            this.Btn_NoSelect = new CKM_Controls.CKM_Button();
             this.PanelHeader.SuspendLayout();
             this.Pnl_Body.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -689,9 +687,6 @@ namespace TempoJuchuuNyuuryoku
             // 
             this.Pnl_Body.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.Pnl_Body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.Pnl_Body.Controls.Add(this.IMN_ORGAK_2);
-            this.Pnl_Body.Controls.Add(this.IMN_ORGAK_1);
-            this.Pnl_Body.Controls.Add(this.IMN_ORGAK_0);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_2);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_1);
             this.Pnl_Body.Controls.Add(this.IMN_ORTAN_0);
@@ -824,96 +819,6 @@ namespace TempoJuchuuNyuuryoku
             this.Pnl_Body.Size = new System.Drawing.Size(1363, 232);
             this.Pnl_Body.TabIndex = 0;
             // 
-            // IMN_ORGAK_2
-            // 
-            this.IMN_ORGAK_2.AllowMinus = false;
-            this.IMN_ORGAK_2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_ORGAK_2.BackColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_ORGAK_2.ClientColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_ORGAK_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_ORGAK_2.DecimalPlace = 0;
-            this.IMN_ORGAK_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMN_ORGAK_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_ORGAK_2.IntegerPart = 0;
-            this.IMN_ORGAK_2.IsCorrectDate = true;
-            this.IMN_ORGAK_2.isEnterKeyDown = false;
-            this.IMN_ORGAK_2.isMaxLengthErr = false;
-            this.IMN_ORGAK_2.IsNumber = true;
-            this.IMN_ORGAK_2.IsShop = false;
-            this.IMN_ORGAK_2.Length = 9;
-            this.IMN_ORGAK_2.Location = new System.Drawing.Point(1088, 190);
-            this.IMN_ORGAK_2.MaxLength = 9;
-            this.IMN_ORGAK_2.MoveNext = true;
-            this.IMN_ORGAK_2.Name = "IMN_ORGAK_2";
-            this.IMN_ORGAK_2.Size = new System.Drawing.Size(75, 19);
-            this.IMN_ORGAK_2.TabIndex = 659;
-            this.IMN_ORGAK_2.Tag = "2";
-            this.IMN_ORGAK_2.Text = "99,999,999";
-            this.IMN_ORGAK_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_ORGAK_2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_ORGAK_1
-            // 
-            this.IMN_ORGAK_1.AllowMinus = false;
-            this.IMN_ORGAK_1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_ORGAK_1.BackColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_ORGAK_1.ClientColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_ORGAK_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_ORGAK_1.DecimalPlace = 0;
-            this.IMN_ORGAK_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMN_ORGAK_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_ORGAK_1.IntegerPart = 0;
-            this.IMN_ORGAK_1.IsCorrectDate = true;
-            this.IMN_ORGAK_1.isEnterKeyDown = false;
-            this.IMN_ORGAK_1.isMaxLengthErr = false;
-            this.IMN_ORGAK_1.IsNumber = true;
-            this.IMN_ORGAK_1.IsShop = false;
-            this.IMN_ORGAK_1.Length = 9;
-            this.IMN_ORGAK_1.Location = new System.Drawing.Point(1088, 114);
-            this.IMN_ORGAK_1.MaxLength = 9;
-            this.IMN_ORGAK_1.MoveNext = true;
-            this.IMN_ORGAK_1.Name = "IMN_ORGAK_1";
-            this.IMN_ORGAK_1.Size = new System.Drawing.Size(75, 19);
-            this.IMN_ORGAK_1.TabIndex = 658;
-            this.IMN_ORGAK_1.Tag = "1";
-            this.IMN_ORGAK_1.Text = "99,999,999";
-            this.IMN_ORGAK_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_ORGAK_1.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // IMN_ORGAK_0
-            // 
-            this.IMN_ORGAK_0.AllowMinus = false;
-            this.IMN_ORGAK_0.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.IMN_ORGAK_0.BackColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.IMN_ORGAK_0.ClientColor = System.Drawing.Color.White;
-            this.IMN_ORGAK_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.IMN_ORGAK_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.IMN_ORGAK_0.DecimalPlace = 0;
-            this.IMN_ORGAK_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.IMN_ORGAK_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.IMN_ORGAK_0.IntegerPart = 0;
-            this.IMN_ORGAK_0.IsCorrectDate = true;
-            this.IMN_ORGAK_0.isEnterKeyDown = false;
-            this.IMN_ORGAK_0.isMaxLengthErr = false;
-            this.IMN_ORGAK_0.IsNumber = true;
-            this.IMN_ORGAK_0.IsShop = false;
-            this.IMN_ORGAK_0.Length = 9;
-            this.IMN_ORGAK_0.Location = new System.Drawing.Point(1088, 38);
-            this.IMN_ORGAK_0.MaxLength = 9;
-            this.IMN_ORGAK_0.MoveNext = true;
-            this.IMN_ORGAK_0.Name = "IMN_ORGAK_0";
-            this.IMN_ORGAK_0.Size = new System.Drawing.Size(75, 19);
-            this.IMN_ORGAK_0.TabIndex = 657;
-            this.IMN_ORGAK_0.Tag = "0";
-            this.IMN_ORGAK_0.Text = "99,999,999";
-            this.IMN_ORGAK_0.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.IMN_ORGAK_0.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // IMN_ORTAN_2
             // 
             this.IMN_ORTAN_2.AllowMinus = false;
@@ -933,11 +838,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_2.IsNumber = true;
             this.IMN_ORTAN_2.IsShop = false;
             this.IMN_ORTAN_2.Length = 9;
-            this.IMN_ORTAN_2.Location = new System.Drawing.Point(996, 190);
+            this.IMN_ORTAN_2.Location = new System.Drawing.Point(1088, 190);
             this.IMN_ORTAN_2.MaxLength = 9;
             this.IMN_ORTAN_2.MoveNext = true;
             this.IMN_ORTAN_2.Name = "IMN_ORTAN_2";
-            this.IMN_ORTAN_2.Size = new System.Drawing.Size(92, 19);
+            this.IMN_ORTAN_2.Size = new System.Drawing.Size(75, 19);
             this.IMN_ORTAN_2.TabIndex = 656;
             this.IMN_ORTAN_2.Tag = "2";
             this.IMN_ORTAN_2.Text = "99,999,999";
@@ -963,11 +868,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_1.IsNumber = true;
             this.IMN_ORTAN_1.IsShop = false;
             this.IMN_ORTAN_1.Length = 9;
-            this.IMN_ORTAN_1.Location = new System.Drawing.Point(996, 114);
+            this.IMN_ORTAN_1.Location = new System.Drawing.Point(1088, 114);
             this.IMN_ORTAN_1.MaxLength = 9;
             this.IMN_ORTAN_1.MoveNext = true;
             this.IMN_ORTAN_1.Name = "IMN_ORTAN_1";
-            this.IMN_ORTAN_1.Size = new System.Drawing.Size(92, 19);
+            this.IMN_ORTAN_1.Size = new System.Drawing.Size(75, 19);
             this.IMN_ORTAN_1.TabIndex = 655;
             this.IMN_ORTAN_1.Tag = "1";
             this.IMN_ORTAN_1.Text = "99,999,999";
@@ -993,11 +898,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_ORTAN_0.IsNumber = true;
             this.IMN_ORTAN_0.IsShop = false;
             this.IMN_ORTAN_0.Length = 9;
-            this.IMN_ORTAN_0.Location = new System.Drawing.Point(996, 38);
+            this.IMN_ORTAN_0.Location = new System.Drawing.Point(1088, 38);
             this.IMN_ORTAN_0.MaxLength = 9;
             this.IMN_ORTAN_0.MoveNext = true;
             this.IMN_ORTAN_0.Name = "IMN_ORTAN_0";
-            this.IMN_ORTAN_0.Size = new System.Drawing.Size(92, 19);
+            this.IMN_ORTAN_0.Size = new System.Drawing.Size(75, 19);
             this.IMN_ORTAN_0.TabIndex = 654;
             this.IMN_ORTAN_0.Tag = "0";
             this.IMN_ORTAN_0.Text = "99,999,999";
@@ -1593,11 +1498,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_2.IsNumber = true;
             this.IMN_GENER_2.IsShop = false;
             this.IMN_GENER_2.Length = 9;
-            this.IMN_GENER_2.Location = new System.Drawing.Point(996, 171);
+            this.IMN_GENER_2.Location = new System.Drawing.Point(976, 171);
             this.IMN_GENER_2.MaxLength = 9;
             this.IMN_GENER_2.MoveNext = true;
             this.IMN_GENER_2.Name = "IMN_GENER_2";
-            this.IMN_GENER_2.Size = new System.Drawing.Size(53, 19);
+            this.IMN_GENER_2.Size = new System.Drawing.Size(55, 19);
             this.IMN_GENER_2.TabIndex = 30;
             this.IMN_GENER_2.Tag = "2";
             this.IMN_GENER_2.Text = "99,999";
@@ -1623,11 +1528,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_2.IsNumber = true;
             this.IMN_MEMBR_2.IsShop = false;
             this.IMN_MEMBR_2.Length = 10;
-            this.IMN_MEMBR_2.Location = new System.Drawing.Point(1049, 171);
+            this.IMN_MEMBR_2.Location = new System.Drawing.Point(1031, 171);
             this.IMN_MEMBR_2.MaxLength = 10;
             this.IMN_MEMBR_2.MoveNext = true;
             this.IMN_MEMBR_2.Name = "IMN_MEMBR_2";
-            this.IMN_MEMBR_2.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_2.Size = new System.Drawing.Size(57, 19);
             this.IMN_MEMBR_2.TabIndex = 32;
             this.IMN_MEMBR_2.Tag = "2";
             this.IMN_MEMBR_2.Text = "XXXX";
@@ -1712,11 +1617,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_1.IsNumber = true;
             this.IMN_GENER_1.IsShop = false;
             this.IMN_GENER_1.Length = 9;
-            this.IMN_GENER_1.Location = new System.Drawing.Point(996, 95);
+            this.IMN_GENER_1.Location = new System.Drawing.Point(976, 95);
             this.IMN_GENER_1.MaxLength = 9;
             this.IMN_GENER_1.MoveNext = true;
             this.IMN_GENER_1.Name = "IMN_GENER_1";
-            this.IMN_GENER_1.Size = new System.Drawing.Size(53, 19);
+            this.IMN_GENER_1.Size = new System.Drawing.Size(55, 19);
             this.IMN_GENER_1.TabIndex = 17;
             this.IMN_GENER_1.Tag = "1";
             this.IMN_GENER_1.Text = "99,999";
@@ -1742,11 +1647,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_1.IsNumber = true;
             this.IMN_MEMBR_1.IsShop = false;
             this.IMN_MEMBR_1.Length = 10;
-            this.IMN_MEMBR_1.Location = new System.Drawing.Point(1049, 95);
+            this.IMN_MEMBR_1.Location = new System.Drawing.Point(1031, 95);
             this.IMN_MEMBR_1.MaxLength = 10;
             this.IMN_MEMBR_1.MoveNext = true;
             this.IMN_MEMBR_1.Name = "IMN_MEMBR_1";
-            this.IMN_MEMBR_1.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_1.Size = new System.Drawing.Size(57, 19);
             this.IMN_MEMBR_1.TabIndex = 19;
             this.IMN_MEMBR_1.Tag = "1";
             this.IMN_MEMBR_1.Text = "XXXX";
@@ -1801,11 +1706,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_GENER_0.IsNumber = true;
             this.IMN_GENER_0.IsShop = false;
             this.IMN_GENER_0.Length = 9;
-            this.IMN_GENER_0.Location = new System.Drawing.Point(996, 19);
+            this.IMN_GENER_0.Location = new System.Drawing.Point(976, 19);
             this.IMN_GENER_0.MaxLength = 9;
             this.IMN_GENER_0.MoveNext = true;
             this.IMN_GENER_0.Name = "IMN_GENER_0";
-            this.IMN_GENER_0.Size = new System.Drawing.Size(53, 19);
+            this.IMN_GENER_0.Size = new System.Drawing.Size(55, 19);
             this.IMN_GENER_0.TabIndex = 3;
             this.IMN_GENER_0.Tag = "0";
             this.IMN_GENER_0.Text = "99,999";
@@ -1831,11 +1736,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMN_MEMBR_0.IsNumber = true;
             this.IMN_MEMBR_0.IsShop = false;
             this.IMN_MEMBR_0.Length = 10;
-            this.IMN_MEMBR_0.Location = new System.Drawing.Point(1049, 19);
+            this.IMN_MEMBR_0.Location = new System.Drawing.Point(1031, 19);
             this.IMN_MEMBR_0.MaxLength = 10;
             this.IMN_MEMBR_0.MoveNext = true;
             this.IMN_MEMBR_0.Name = "IMN_MEMBR_0";
-            this.IMN_MEMBR_0.Size = new System.Drawing.Size(39, 19);
+            this.IMN_MEMBR_0.Size = new System.Drawing.Size(57, 19);
             this.IMN_MEMBR_0.TabIndex = 5;
             this.IMN_MEMBR_0.Tag = "0";
             this.IMN_MEMBR_0.Text = "XXXX";
@@ -1894,7 +1799,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_2.MaxLength = 20;
             this.IMT_NYUKA_2.MoveNext = true;
             this.IMT_NYUKA_2.Name = "IMT_NYUKA_2";
-            this.IMT_NYUKA_2.Size = new System.Drawing.Size(66, 19);
+            this.IMT_NYUKA_2.Size = new System.Drawing.Size(112, 19);
             this.IMT_NYUKA_2.TabIndex = 523;
             this.IMT_NYUKA_2.Tag = "2";
             this.IMT_NYUKA_2.Text = "XXXX";
@@ -1919,11 +1824,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_2.IsNumber = true;
             this.IMT_SYUKA_2.IsShop = false;
             this.IMT_SYUKA_2.Length = 20;
-            this.IMT_SYUKA_2.Location = new System.Drawing.Point(930, 190);
+            this.IMT_SYUKA_2.Location = new System.Drawing.Point(976, 190);
             this.IMT_SYUKA_2.MaxLength = 20;
             this.IMT_SYUKA_2.MoveNext = true;
             this.IMT_SYUKA_2.Name = "IMT_SYUKA_2";
-            this.IMT_SYUKA_2.Size = new System.Drawing.Size(66, 19);
+            this.IMT_SYUKA_2.Size = new System.Drawing.Size(112, 19);
             this.IMT_SYUKA_2.TabIndex = 524;
             this.IMT_SYUKA_2.Tag = "2";
             this.IMT_SYUKA_2.Text = "XXXX";
@@ -1952,7 +1857,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_1.MaxLength = 20;
             this.IMT_NYUKA_1.MoveNext = true;
             this.IMT_NYUKA_1.Name = "IMT_NYUKA_1";
-            this.IMT_NYUKA_1.Size = new System.Drawing.Size(66, 19);
+            this.IMT_NYUKA_1.Size = new System.Drawing.Size(112, 19);
             this.IMT_NYUKA_1.TabIndex = 521;
             this.IMT_NYUKA_1.Tag = "1";
             this.IMT_NYUKA_1.Text = "XXXX";
@@ -1977,11 +1882,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_1.IsNumber = true;
             this.IMT_SYUKA_1.IsShop = false;
             this.IMT_SYUKA_1.Length = 20;
-            this.IMT_SYUKA_1.Location = new System.Drawing.Point(930, 114);
+            this.IMT_SYUKA_1.Location = new System.Drawing.Point(976, 114);
             this.IMT_SYUKA_1.MaxLength = 20;
             this.IMT_SYUKA_1.MoveNext = true;
             this.IMT_SYUKA_1.Name = "IMT_SYUKA_1";
-            this.IMT_SYUKA_1.Size = new System.Drawing.Size(66, 19);
+            this.IMT_SYUKA_1.Size = new System.Drawing.Size(112, 19);
             this.IMT_SYUKA_1.TabIndex = 522;
             this.IMT_SYUKA_1.Tag = "1";
             this.IMT_SYUKA_1.Text = "XXXX";
@@ -2010,7 +1915,7 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_NYUKA_0.MaxLength = 20;
             this.IMT_NYUKA_0.MoveNext = true;
             this.IMT_NYUKA_0.Name = "IMT_NYUKA_0";
-            this.IMT_NYUKA_0.Size = new System.Drawing.Size(66, 19);
+            this.IMT_NYUKA_0.Size = new System.Drawing.Size(112, 19);
             this.IMT_NYUKA_0.TabIndex = 519;
             this.IMT_NYUKA_0.Tag = "0";
             this.IMT_NYUKA_0.Text = "ＸＸＸＸＸ";
@@ -2035,11 +1940,11 @@ namespace TempoJuchuuNyuuryoku
             this.IMT_SYUKA_0.IsNumber = true;
             this.IMT_SYUKA_0.IsShop = false;
             this.IMT_SYUKA_0.Length = 20;
-            this.IMT_SYUKA_0.Location = new System.Drawing.Point(930, 38);
+            this.IMT_SYUKA_0.Location = new System.Drawing.Point(976, 38);
             this.IMT_SYUKA_0.MaxLength = 20;
             this.IMT_SYUKA_0.MoveNext = true;
             this.IMT_SYUKA_0.Name = "IMT_SYUKA_0";
-            this.IMT_SYUKA_0.Size = new System.Drawing.Size(66, 19);
+            this.IMT_SYUKA_0.Size = new System.Drawing.Size(112, 19);
             this.IMT_SYUKA_0.TabIndex = 520;
             this.IMT_SYUKA_0.Tag = "0";
             this.IMT_SYUKA_0.Text = "ＸＸＸＸＸ";
@@ -3094,7 +2999,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox9.MoveNext = true;
             this.ckM_TextBox9.Name = "ckM_TextBox9";
             this.ckM_TextBox9.ReadOnly = true;
-            this.ckM_TextBox9.Size = new System.Drawing.Size(740, 19);
+            this.ckM_TextBox9.Size = new System.Drawing.Size(720, 19);
             this.ckM_TextBox9.TabIndex = 477;
             this.ckM_TextBox9.Tag = "0";
             this.ckM_TextBox9.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3123,7 +3028,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox10.MoveNext = true;
             this.ckM_TextBox10.Name = "ckM_TextBox10";
             this.ckM_TextBox10.ReadOnly = true;
-            this.ckM_TextBox10.Size = new System.Drawing.Size(740, 19);
+            this.ckM_TextBox10.Size = new System.Drawing.Size(720, 19);
             this.ckM_TextBox10.TabIndex = 478;
             this.ckM_TextBox10.Tag = "1";
             this.ckM_TextBox10.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -3152,7 +3057,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_TextBox11.MoveNext = true;
             this.ckM_TextBox11.Name = "ckM_TextBox11";
             this.ckM_TextBox11.ReadOnly = true;
-            this.ckM_TextBox11.Size = new System.Drawing.Size(740, 19);
+            this.ckM_TextBox11.Size = new System.Drawing.Size(720, 19);
             this.ckM_TextBox11.TabIndex = 479;
             this.ckM_TextBox11.Tag = "2";
             this.ckM_TextBox11.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
@@ -4249,7 +4154,6 @@ namespace TempoJuchuuNyuuryoku
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.label35);
             this.panel4.Controls.Add(this.label29);
             this.panel4.Controls.Add(this.label30);
@@ -4293,19 +4197,6 @@ namespace TempoJuchuuNyuuryoku
             this.panel4.Size = new System.Drawing.Size(1350, 67);
             this.panel4.TabIndex = 342;
             // 
-            // label34
-            // 
-            this.label34.BackColor = System.Drawing.Color.DarkGray;
-            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label34.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.label34.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label34.Location = new System.Drawing.Point(996, 34);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(93, 16);
-            this.label34.TabIndex = 306;
-            this.label34.Text = "発注単価";
-            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label35
             // 
             this.label35.BackColor = System.Drawing.Color.DarkGray;
@@ -4316,7 +4207,7 @@ namespace TempoJuchuuNyuuryoku
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(75, 16);
             this.label35.TabIndex = 305;
-            this.label35.Text = "発注額";
+            this.label35.Text = "発注単価";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label29
@@ -4403,9 +4294,9 @@ namespace TempoJuchuuNyuuryoku
             this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label15.Location = new System.Drawing.Point(1050, 18);
+            this.label15.Location = new System.Drawing.Point(1032, 18);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(39, 16);
+            this.label15.Size = new System.Drawing.Size(57, 16);
             this.label15.TabIndex = 268;
             this.label15.Text = "単位";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -4416,9 +4307,9 @@ namespace TempoJuchuuNyuuryoku
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label16.Location = new System.Drawing.Point(996, 18);
+            this.label16.Location = new System.Drawing.Point(976, 18);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 16);
+            this.label16.Size = new System.Drawing.Size(56, 16);
             this.label16.TabIndex = 267;
             this.label16.Text = "受注数";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -4444,7 +4335,7 @@ namespace TempoJuchuuNyuuryoku
             this.label48.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label48.Location = new System.Drawing.Point(865, 34);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(66, 16);
+            this.label48.Size = new System.Drawing.Size(111, 16);
             this.label48.TabIndex = 299;
             this.label48.Text = "入荷進捗";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4455,9 +4346,9 @@ namespace TempoJuchuuNyuuryoku
             this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label49.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.label49.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.label49.Location = new System.Drawing.Point(931, 34);
+            this.label49.Location = new System.Drawing.Point(976, 34);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(65, 16);
+            this.label49.Size = new System.Drawing.Size(113, 16);
             this.label49.TabIndex = 298;
             this.label49.Text = "出荷進捗";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -4691,7 +4582,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblSyoName.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSyoName.Location = new System.Drawing.Point(257, 18);
             this.lblSyoName.Name = "lblSyoName";
-            this.lblSyoName.Size = new System.Drawing.Size(739, 16);
+            this.lblSyoName.Size = new System.Drawing.Size(719, 16);
             this.lblSyoName.TabIndex = 261;
             this.lblSyoName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -5206,6 +5097,37 @@ namespace TempoJuchuuNyuuryoku
             this.tabPage1.Size = new System.Drawing.Size(1369, 402);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "受注明細";
+            // 
+            // ckM_Label32
+            // 
+            this.ckM_Label32.AutoSize = true;
+            this.ckM_Label32.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label32.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label32.DefaultlabelSize = true;
+            this.ckM_Label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label32.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label32.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label32.Location = new System.Drawing.Point(1052, 372);
+            this.ckM_Label32.Name = "ckM_Label32";
+            this.ckM_Label32.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label32.TabIndex = 713;
+            this.ckM_Label32.Text = "税込発注額";
+            this.ckM_Label32.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_Label32.Visible = false;
+            // 
+            // lblKin13
+            // 
+            this.lblKin13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
+            this.lblKin13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblKin13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKin13.Location = new System.Drawing.Point(1126, 369);
+            this.lblKin13.Name = "lblKin13";
+            this.lblKin13.Size = new System.Drawing.Size(78, 18);
+            this.lblKin13.TabIndex = 712;
+            this.lblKin13.Text = "999,999,999";
+            this.lblKin13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblKin13.Visible = false;
             // 
             // BtnSubF11
             // 
@@ -6425,39 +6347,50 @@ namespace TempoJuchuuNyuuryoku
             this.radioSamaD.Text = "様";
             this.radioSamaD.UseVisualStyleBackColor = false;
             // 
-            // ckM_Label32
+            // Btn_SelectAll
             // 
-            this.ckM_Label32.AutoSize = true;
-            this.ckM_Label32.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label32.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label32.DefaultlabelSize = true;
-            this.ckM_Label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label32.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label32.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label32.Location = new System.Drawing.Point(1052, 372);
-            this.ckM_Label32.Name = "ckM_Label32";
-            this.ckM_Label32.Size = new System.Drawing.Size(70, 12);
-            this.ckM_Label32.TabIndex = 713;
-            this.ckM_Label32.Text = "税込発注額";
-            this.ckM_Label32.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_SelectAll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.Btn_SelectAll.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.Btn_SelectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_SelectAll.DefaultBtnSize = false;
+            this.Btn_SelectAll.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_SelectAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_SelectAll.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_SelectAll.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.Btn_SelectAll.Location = new System.Drawing.Point(1082, 217);
+            this.Btn_SelectAll.Margin = new System.Windows.Forms.Padding(1);
+            this.Btn_SelectAll.Name = "Btn_SelectAll";
+            this.Btn_SelectAll.Size = new System.Drawing.Size(141, 22);
+            this.Btn_SelectAll.TabIndex = 716;
+            this.Btn_SelectAll.Text = "全選択（発注不要）";
+            this.Btn_SelectAll.UseVisualStyleBackColor = false;
+            this.Btn_SelectAll.Click += new System.EventHandler(this.Btn_SelectAll_Click);
             // 
-            // lblKin13
+            // Btn_NoSelect
             // 
-            this.lblKin13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
-            this.lblKin13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblKin13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin13.Location = new System.Drawing.Point(1126, 369);
-            this.lblKin13.Name = "lblKin13";
-            this.lblKin13.Size = new System.Drawing.Size(78, 18);
-            this.lblKin13.TabIndex = 712;
-            this.lblKin13.Text = "999,999,999";
-            this.lblKin13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Btn_NoSelect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.Btn_NoSelect.BackgroundColor = CKM_Controls.CKM_Button.CKM_Color.Default;
+            this.Btn_NoSelect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Btn_NoSelect.DefaultBtnSize = false;
+            this.Btn_NoSelect.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Btn_NoSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_NoSelect.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.Btn_NoSelect.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Normal;
+            this.Btn_NoSelect.Location = new System.Drawing.Point(1223, 217);
+            this.Btn_NoSelect.Margin = new System.Windows.Forms.Padding(1);
+            this.Btn_NoSelect.Name = "Btn_NoSelect";
+            this.Btn_NoSelect.Size = new System.Drawing.Size(141, 22);
+            this.Btn_NoSelect.TabIndex = 717;
+            this.Btn_NoSelect.Text = "全解除（発注不要）";
+            this.Btn_NoSelect.UseVisualStyleBackColor = false;
+            this.Btn_NoSelect.Click += new System.EventHandler(this.Btn_NoSelect_Click);
             // 
             // TempoJuchuuNyuuryoku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.Btn_NoSelect);
+            this.Controls.Add(this.Btn_SelectAll);
             this.Controls.Add(this.ckM_TextBox14);
             this.Controls.Add(this.ckM_TextBox19);
             this.Controls.Add(this.ckM_TextBox20);
@@ -6558,6 +6491,8 @@ namespace TempoJuchuuNyuuryoku
             this.Controls.SetChildIndex(this.ckM_TextBox20, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox19, 0);
             this.Controls.SetChildIndex(this.ckM_TextBox14, 0);
+            this.Controls.SetChildIndex(this.Btn_SelectAll, 0);
+            this.Controls.SetChildIndex(this.Btn_NoSelect, 0);
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.Pnl_Body.ResumeLayout(false);
@@ -6840,16 +6775,14 @@ namespace TempoJuchuuNyuuryoku
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label32;
-        private CKM_Controls.CKM_TextBox IMN_ORGAK_2;
-        private CKM_Controls.CKM_TextBox IMN_ORGAK_1;
-        private CKM_Controls.CKM_TextBox IMN_ORGAK_0;
         private CKM_Controls.CKM_TextBox IMN_ORTAN_2;
         private CKM_Controls.CKM_TextBox IMN_ORTAN_1;
         private CKM_Controls.CKM_TextBox IMN_ORTAN_0;
-        private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private CKM_Controls.CKM_Label ckM_Label32;
         private System.Windows.Forms.Label lblKin13;
+        private CKM_Controls.CKM_Button Btn_SelectAll;
+        private CKM_Controls.CKM_Button Btn_NoSelect;
     }
 }
 

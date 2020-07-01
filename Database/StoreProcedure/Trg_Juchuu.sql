@@ -111,10 +111,6 @@ BEGIN
            ,[CardNumber]
            ,[PaymentProgressKBN]
            ,[PresentFLG]
-           ,[OrderHontaiGaku]
-           ,[OrderTax8]
-           ,[OrderTax10]
-           ,[OrderGaku]
            ,[SalesPlanDate]
            ,[FirstPaypentPlanDate]
            ,[LastPaymentPlanDate]
@@ -219,10 +215,6 @@ BEGIN
            ,CardNumber
            ,PaymentProgressKBN
            ,PresentFLG
-           ,OrderHontaiGaku
-           ,OrderTax8
-           ,OrderTax10
-           ,OrderGaku
            ,SalesPlanDate
            ,FirstPaypentPlanDate
            ,LastPaymentPlanDate
@@ -337,10 +329,6 @@ BEGIN
            ,[CardNumber]
            ,[PaymentProgressKBN]
            ,[PresentFLG]
-           ,[OrderHontaiGaku]
-           ,[OrderTax8]
-           ,[OrderTax10]
-           ,[OrderGaku]
            ,[SalesPlanDate]
            ,[FirstPaypentPlanDate]
            ,[LastPaymentPlanDate]
@@ -445,10 +433,6 @@ BEGIN
            ,CardNumber
            ,PaymentProgressKBN
            ,PresentFLG
-           ,OrderHontaiGaku
-           ,OrderTax8
-           ,OrderTax10
-           ,OrderGaku
            ,SalesPlanDate
            ,FirstPaypentPlanDate
            ,LastPaymentPlanDate
@@ -525,9 +509,6 @@ BEGIN
            ,[CostUnitPrice]
            ,[CostGaku]
            ,[OrderUnitPrice]
-           ,[OrderTax]
-           ,[OrderTaxRitsu]
-           ,[OrderGaku]
            ,[ProfitGaku]
            ,[SoukoCD]
            ,[HikiateSu]
@@ -590,9 +571,6 @@ BEGIN
                ,CostUnitPrice
                ,CostGaku
                ,OrderUnitPrice
-               ,OrderTax
-               ,OrderTaxRitsu
-               ,OrderGaku
                ,ProfitGaku
                ,SoukoCD
                ,HikiateSu
@@ -671,9 +649,6 @@ BEGIN
            ,[CostUnitPrice]
            ,[CostGaku]
            ,[OrderUnitPrice]
-           ,[OrderTax]
-           ,[OrderTaxRitsu]
-           ,[OrderGaku]
            ,[ProfitGaku]
            ,[SoukoCD]
            ,[HikiateSu]
@@ -736,9 +711,6 @@ BEGIN
                ,CostUnitPrice
                ,CostGaku
                ,OrderUnitPrice
-               ,OrderTax
-               ,OrderTaxRitsu
-               ,OrderGaku
                ,ProfitGaku
                ,SoukoCD
                ,HikiateSu

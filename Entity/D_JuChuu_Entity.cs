@@ -81,10 +81,6 @@ namespace Entity
         public string CardNumber { get; set; }
         public string PaymentProgressKBN { get; set; }
         public string PresentFLG { get; set; }
-        public string OrderHontaiGaku { get; set; }
-        public string OrderTax8 { get; set; }
-        public string OrderTax10 { get; set; }
-        public string OrderGaku { get; set; }
         public string SalesPlanDate { get; set; }
         public string FirstPaypentPlanDate { get; set; }
         public string LastPaymentPlanDate { get; set; }

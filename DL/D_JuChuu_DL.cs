@@ -194,10 +194,10 @@ namespace DL
             AddParam(command, "@ProfitGaku", SqlDbType.Money, dme.ProfitGaku);
             AddParam(command, "@Point", SqlDbType.Money, dme.Point);
             AddParam(command, "@InvoiceGaku", SqlDbType.Money, dme.InvoiceGaku);
-            AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, dme.OrderHontaiGaku);
-            AddParam(command, "@OrderTax8", SqlDbType.Money, dme.OrderTax8);
-            AddParam(command, "@OrderTax10", SqlDbType.Money, dme.OrderTax10);
-            AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
+            //AddParam(command, "@OrderHontaiGaku", SqlDbType.Money, dme.OrderHontaiGaku);
+            //AddParam(command, "@OrderTax8", SqlDbType.Money, dme.OrderTax8);
+            //AddParam(command, "@OrderTax10", SqlDbType.Money, dme.OrderTax10);
+            //AddParam(command, "@OrderGaku", SqlDbType.Money, dme.OrderGaku);
             AddParam(command, "@PaymentMethodCD", SqlDbType.VarChar, dme.PaymentMethodCD);
             AddParam(command, "@PaymentPlanNO", SqlDbType.TinyInt, dme.PaymentPlanNO);
             AddParam(command, "@SalesPlanDate", SqlDbType.Date, dme.SalesPlanDate);

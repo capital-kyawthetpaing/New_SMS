@@ -96,6 +96,7 @@ namespace TempoJuchuuNyuuryoku
         private decimal mZei8;//軽減税額(Hidden)
         private string mPaymentMethodCD;    //M_Customer.PaymentMethodCD
         private int mTaxTiming;
+        private int mOrderTaxTiming;
         private decimal mOrderTax10;//通常税額(Hidden)
         private decimal mOrderTax8;//軽減税額(Hidden)
 
@@ -255,7 +256,7 @@ namespace TempoJuchuuNyuuryoku
                         case (int)ClsGridJuchuu.ColNO.CostGaku:
                         case (int)ClsGridJuchuu.ColNO.ProfitGaku:
                         case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:
-                        case (int)ClsGridJuchuu.ColNO.OrderGaku:
+                        //case (int)ClsGridJuchuu.ColNO.OrderGaku:
                             mGrid.SetProp_TANKA(ref mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl);      // 単価 
                             ((CKM_Controls.CKM_TextBox)mGrid.g_MK_Ctrl[W_CtlCol, W_CtlRow].CellCtl).AllowMinus = true;
                             break;
@@ -321,7 +322,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 0].CellCtl = CHK_Express_0;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 0].CellCtl = IMT_SPDAT_0;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 0].CellCtl = IMN_ORTAN_0;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 0].CellCtl = IMN_ORGAK_0;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 0].CellCtl = IMN_ORGAK_0;
 
             // 2行目
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 1].CellCtl = IMT_GYONO_1;
@@ -367,7 +368,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 1].CellCtl = CHK_Express_1;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 1].CellCtl = IMT_SPDAT_1;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 1].CellCtl = IMN_ORTAN_1;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 1].CellCtl = IMN_ORGAK_1;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 1].CellCtl = IMN_ORGAK_1;
 
             // 3行目
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.GYONO, 2].CellCtl = IMT_GYONO_2;
@@ -413,7 +414,7 @@ namespace TempoJuchuuNyuuryoku
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ChkExpress, 2].CellCtl = CHK_Express_2;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.ShippingPlanDate, 2].CellCtl = IMT_SPDAT_2;
             mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderUnitPrice, 2].CellCtl = IMN_ORTAN_2;
-            mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 2].CellCtl = IMN_ORGAK_2;
+            //mGrid.g_MK_Ctrl[(int)ClsGridJuchuu.ColNO.OrderGaku, 2].CellCtl = IMN_ORGAK_2;
         }
 
         // 明細部 Tab の処理
@@ -583,6 +584,9 @@ namespace TempoJuchuuNyuuryoku
 
             // 画面クリア
             mGrid.S_DispFromArray(0, ref this.Vsb_Mei_0);
+
+            Btn_SelectAll.Enabled = false;
+            Btn_NoSelect.Enabled = false;
         }
 
         // -------------------------------------------------------------
@@ -852,7 +856,7 @@ namespace TempoJuchuuNyuuryoku
                                         case (int)ClsGridJuchuu.ColNO.ChkExpress:    // 
                                         case (int)ClsGridJuchuu.ColNO.ShippingPlanDate:    //
                                         case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:    //  
-                                        case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
+                                        //case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
                                                                                          //case (int)ClsGridJuchuu.ColNO.SoukoName:          //出荷倉庫
                                                                                          //case (int)ClsGridJuchuu.ColNO.VendorCD:           //発注先
                                                                                          //case (int)ClsGridJuchuu.ColNO.ArrivePlanDate:    //入荷予定日
@@ -1052,7 +1056,7 @@ namespace TempoJuchuuNyuuryoku
                             case (int)ClsGridJuchuu.ColNO.ChkExpress:    // 
                             case (int)ClsGridJuchuu.ColNO.ShippingPlanDate:    //
                             case (int)ClsGridJuchuu.ColNO.OrderUnitPrice:    //  
-                            case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
+                            //case (int)ClsGridJuchuu.ColNO.OrderGaku:    //  
                                 {
                                     mGrid.g_MK_State[w_Col, pRow].Cell_Enabled = true;
                                                                     }
@@ -1814,7 +1818,7 @@ namespace TempoJuchuuNyuuryoku
                         lblKin9.Text = lblKin7.Text;    
                         lblKin11.Text = bbl.Z_SetStr(row["HanbaiTax10"]);
                         lblKin12.Text = bbl.Z_SetStr(row["HanbaiTax8"]);
-                        lblKin13.Text = bbl.Z_SetStr(row["OrderGaku"]);
+                        //lblKin13.Text = bbl.Z_SetStr(row["OrderGaku"]);
 
                         if (index == (int)EIndex.JuchuuNO)
                         {
@@ -1881,7 +1885,7 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].CostUnitPrice = bbl.Z_SetStr(row["CostUnitPrice"]);   // 
                     mGrid.g_DArray[i].CostGaku = bbl.Z_SetStr(row["CostGaku"]);   //  
                     mGrid.g_DArray[i].OrderUnitPrice = bbl.Z_SetStr(row["OrderUnitPrice"]);   // 
-                    mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_OrderGaku"]);   // 
+                    //mGrid.g_DArray[i].OrderGaku = bbl.Z_SetStr(row["D_OrderGaku"]);   // 
 
                     CalcZei(i);
 
@@ -3043,7 +3047,7 @@ namespace TempoJuchuuNyuuryoku
                         //仕入先、店舗との組み合わせでITEM発注単価マスターかJAN発注単価マスタに存在すること SelectできなければError
                         //以下①②③④の順番でターゲットが大きくなる（①に近いほど、商品が特定されていく）
                         mGrid.g_DArray[row].OrderUnitPrice = GetTanka(row, ymd);
-                        mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
+                        //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
 
                         Grid_NotFocus(col, row);
 
@@ -3130,6 +3134,7 @@ namespace TempoJuchuuNyuuryoku
                         if (ret)
                         {
                             mGrid.g_DArray[row].VendorName = me.VendorName;
+                            mOrderTaxTiming = Convert.ToInt16(me.TaxTiming);
                         }
                         else
                         {
@@ -3215,14 +3220,15 @@ namespace TempoJuchuuNyuuryoku
                         if (bbl.ShowMessage("Q306") != DialogResult.OK)
                             return false;
                     }
-                    mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
+                    //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                     break;
 
-                case (int)ClsGridJuchuu.ColNO.OrderGaku://発注単価
-                    //入力無くても良い(It is not necessary to input)
-                    //入力無い場合、0とする（When there is no input, it is set to 0）０を許す。
-                    mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(mGrid.g_DArray[row].OrderGaku);
-                    break;
+                //case (int)ClsGridJuchuu.ColNO.OrderGaku://発注単価
+                //    //入力無くても良い(It is not necessary to input)
+                //    //入力無い場合、0とする（When there is no input, it is set to 0）０を許す。
+                //    mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(mGrid.g_DArray[row].OrderGaku);
+
+                //    break;
 
             }
 
@@ -3628,9 +3634,9 @@ namespace TempoJuchuuNyuuryoku
                     zei8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenTax);
                     kin3 += bbl.Z_Set(mGrid.g_DArray[RW].CostGaku);
                     kin4 += bbl.Z_Set(mGrid.g_DArray[RW].ProfitGaku);
-                    sumOrKin += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
-                    zeiOrder10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderTax);
-                    zeiOrder8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenOrderTax);
+                    //sumOrKin += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                    //zeiOrder10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderTax);
+                    //zeiOrder8 += bbl.Z_Set(mGrid.g_DArray[RW].KeigenOrderTax);
 
                     //M_Vendor.TaxTiming＝2:伝票ごと
                     if (mTaxTiming.Equals(2))
@@ -3639,15 +3645,11 @@ namespace TempoJuchuuNyuuryoku
                         {
                             kin10 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
                             zeiritsu10 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
-
-                            kinOrder10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
                         }
                         else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
                         {
                             kin8 += bbl.Z_Set(mGrid.g_DArray[RW].JuchuuHontaiGaku);
                             zeiritsu8 = Convert.ToInt16(mGrid.g_DArray[RW].TaxRate.Replace("%", ""));
-
-                            kinOrder8 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
                         }
 
                         if (maxKin < bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku) && mGrid.g_DArray[RW].DiscountKbn == 0)
@@ -3655,12 +3657,23 @@ namespace TempoJuchuuNyuuryoku
                             maxKin = bbl.Z_Set(mGrid.g_DArray[RW].JuchuuGaku);
                             maxKinRowNo = RW;
                         }
-                        if (maxOrderKin < bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku))
-                        {
-                            maxOrderKin = bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
-                            maxOrderKinRowNo = RW;
-                        }
                     }
+                    //if(mOrderTaxTiming.Equals(2))
+                    //{
+                    //    if (mGrid.g_DArray[RW].TaxRateFLG.Equals(1))
+                    //    {
+                    //        kinOrder10 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                    //    }
+                    //    else if (mGrid.g_DArray[RW].TaxRateFLG.Equals(2))
+                    //    {
+                    //        kinOrder8 += bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                    //    }
+                    //    if (maxOrderKin < bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku))
+                    //    {
+                    //        maxOrderKin = bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku);
+                    //        maxOrderKinRowNo = RW;
+                    //    }
+                    //}
                 }
             }
 
@@ -3740,23 +3753,23 @@ namespace TempoJuchuuNyuuryoku
                 lblKin12.Text = string.Format("{0:#,##0}", kin8);
                 mZei8 = kin8;
 
-                sagaku = (kinOrder10 + kinOrder8) - (zeiOrder10 + zeiOrder8);
-                if (sagaku != 0)
-                {
-                    //以下の計算結果「発注消費税差額」を明細金額が一番大きい金額（全明細が同じ金額の場合は１行目）の明細発注額、明細発注消費税額に足し込む。
-                    mGrid.g_DArray[maxOrderKinRowNo].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[maxOrderKinRowNo].OrderGaku) + sagaku);
+                //sagaku = (kinOrder10 + kinOrder8) - (zeiOrder10 + zeiOrder8);
+                //if (sagaku != 0)
+                //{
+                //    //以下の計算結果「発注消費税差額」を明細金額が一番大きい金額（全明細が同じ金額の場合は１行目）の明細発注額、明細発注消費税額に足し込む。
+                //    mGrid.g_DArray[maxOrderKinRowNo].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[maxOrderKinRowNo].OrderGaku) + sagaku);
                     
-                    //明細消費税額に足し込む。
-                    if (mGrid.g_DArray[maxOrderKinRowNo].TaxRateFLG.Equals(1))
-                    {
-                        mGrid.g_DArray[maxOrderKinRowNo].OrderTax = mGrid.g_DArray[maxOrderKinRowNo].OrderTax + sagaku;
-                    }
-                    else if (mGrid.g_DArray[maxOrderKinRowNo].TaxRateFLG.Equals(2))
-                    {
-                        mGrid.g_DArray[maxOrderKinRowNo].KeigenOrderTax = mGrid.g_DArray[maxOrderKinRowNo].KeigenOrderTax + sagaku;
-                    }
-                }
-                lblKin13.Text = string.Format("{0:#,##0}", sumOrKin + sagaku);
+                //    //明細消費税額に足し込む。
+                //    if (mGrid.g_DArray[maxOrderKinRowNo].TaxRateFLG.Equals(1))
+                //    {
+                //        mGrid.g_DArray[maxOrderKinRowNo].OrderTax = mGrid.g_DArray[maxOrderKinRowNo].OrderTax + sagaku;
+                //    }
+                //    else if (mGrid.g_DArray[maxOrderKinRowNo].TaxRateFLG.Equals(2))
+                //    {
+                //        mGrid.g_DArray[maxOrderKinRowNo].KeigenOrderTax = mGrid.g_DArray[maxOrderKinRowNo].KeigenOrderTax + sagaku;
+                //    }
+                //}
+                //lblKin13.Text = string.Format("{0:#,##0}", sumOrKin + sagaku);
             }
 
             //未入金額＝請求額－入金額
@@ -3838,10 +3851,10 @@ namespace TempoJuchuuNyuuryoku
             dje.MitsumoriNO = keyControls[(int)EIndex.MitsumoriNO].Text;
             dje.NouhinsyoComment = detailControls[(int)EIndex.NouhinsyoComment].Text;
 
-            dje.OrderHontaiGaku = (bbl.Z_Set(lblKin13.Text) - (mOrderTax8 + mOrderTax10)).ToString();
-            dje.OrderTax8 = mOrderTax8.ToString();
-            dje.OrderTax10 = mOrderTax10.ToString();
-            dje.OrderGaku = bbl.Z_SetStr(lblKin13.Text);
+            //dje.OrderHontaiGaku = (bbl.Z_Set(lblKin13.Text) - (mOrderTax8 + mOrderTax10)).ToString();
+            //dje.OrderTax8 = mOrderTax8.ToString();
+            //dje.OrderTax10 = mOrderTax10.ToString();
+            //dje.OrderGaku = bbl.Z_SetStr(lblKin13.Text);
 
             return dje;
         }
@@ -3887,9 +3900,9 @@ namespace TempoJuchuuNyuuryoku
             dt.Columns.Add("ExpressFLG", typeof(int));
             dt.Columns.Add("ShippingPlanDate", typeof(DateTime));
             dt.Columns.Add("OrderUnitPrice", typeof(decimal));
-            dt.Columns.Add("OrderTax", typeof(decimal));
-            dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
-            dt.Columns.Add("OrderGaku", typeof(decimal));
+            //dt.Columns.Add("OrderTax", typeof(decimal));
+            //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
+            //dt.Columns.Add("OrderGaku", typeof(decimal));
 
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
@@ -3961,9 +3974,9 @@ namespace TempoJuchuuNyuuryoku
                         , mGrid.g_DArray[RW].ChkExpress ? 1 : 0
                         , mGrid.g_DArray[RW].ShippingPlanDate == "" ? null : mGrid.g_DArray[RW].ShippingPlanDate
                         , bbl.Z_Set(mGrid.g_DArray[RW].OrderUnitPrice)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].OrderTax)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].OrderTaxRitsu)
-                        , bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku)
+                        //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTax)
+                        //, bbl.Z_Set(mGrid.g_DArray[RW].OrderTaxRitsu)
+                        //, bbl.Z_Set(mGrid.g_DArray[RW].OrderGaku)
                         , mGrid.g_DArray[RW].juchuGyoNO > 0 ? 1:0
                         );
 
@@ -4166,6 +4179,8 @@ namespace TempoJuchuuNyuuryoku
             lblDay1.Text = "";
             lblDay2.Text = "";
             lblDay3.Text = "";
+
+            mOrderTaxTiming = 0;
         }
 
         /// <summary>
@@ -4262,6 +4277,8 @@ namespace TempoJuchuuNyuuryoku
                             btnAddress.Enabled = Kbn == 0 ? true : false;
                             BtnSubF11.Enabled = Kbn == 0 ? true : false;
                             Pnl_Body.Enabled = Kbn == 0 ? true : false;
+                            Btn_SelectAll.Enabled = Kbn == 0 ? true : false;
+                            Btn_NoSelect.Enabled = Kbn == 0 ? true : false;
                             break;
                         }
                 }
@@ -4747,9 +4764,9 @@ namespace TempoJuchuuNyuuryoku
                         case "IMN_ORTAN":
                             CL = (int)ClsGridJuchuu.ColNO.OrderUnitPrice;
                             break;
-                        case "IMN_ORGAK":
-                            CL = (int)ClsGridJuchuu.ColNO.OrderGaku;
-                            break;
+                        //case "IMN_ORGAK":
+                        //    CL = (int)ClsGridJuchuu.ColNO.OrderGaku;
+                        //    break;
                         case "IMN_CLINT":
                             CL = (int)ClsGridJuchuu.ColNO.ColorName;
                             break;
@@ -4880,6 +4897,7 @@ namespace TempoJuchuuNyuuryoku
 
                                     //原価額←Function_単価取得.out原価単価×Form.Detail.見積数
                                     mGrid.g_DArray[w_Row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(fue.GenkaTanka) * wSuu);
+                                    //mGrid.g_DArray[w_Row].OrderGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[w_Row].OrderUnitPrice) * wSuu);
 
                                     CalcZei(w_Row);
                                 }
@@ -5145,6 +5163,34 @@ namespace TempoJuchuuNyuuryoku
                 //EndSec();
             }
         }
+
+        private void Btn_SelectAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChangeCheck(true);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
+
+        private void Btn_NoSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChangeCheck(false);
+            }
+            catch (Exception ex)
+            {
+                //エラー時共通処理
+                MessageBox.Show(ex.Message);
+                //EndSec();
+            }
+        }
         /// <summary>
         /// 明細部サイトボタンクリック時処理
         /// </summary>
@@ -5256,6 +5302,23 @@ namespace TempoJuchuuNyuuryoku
             }
         }
 
+        private void ChangeCheck(bool check)
+        {
+            // 明細部  画面の範囲の内容を配列にセット
+            mGrid.S_DispToArray(Vsb_Mei_0.Value);
+
+            //明細部チェック
+            for (int RW = 0; RW <= mGrid.g_MK_Max_Row - 1; RW++)
+            {
+                if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].JanCD) == false)
+                {
+                    mGrid.g_DArray[RW].ChkFuyo = check;
+                }
+            }
+
+            //配列の内容を画面へセット
+            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+        }
     }
 }
 
