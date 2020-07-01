@@ -323,6 +323,7 @@ namespace Search
         {
             InitializeComponent();
             this.AutoSize = true;
+            this.ImeMode = ImeMode.Disable;
             bbl = new Base_BL();
             sbl = new Search_BL();
         }
