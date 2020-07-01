@@ -946,7 +946,7 @@
             this.btnInfo.Location = new System.Drawing.Point(453, 177);
             this.btnInfo.Margin = new System.Windows.Forms.Padding(1);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(200, 42);
+            this.btnInfo.Size = new System.Drawing.Size(200, 43);
             this.btnInfo.TabIndex = 5;
             this.btnInfo.Text = "商品情報";
             this.btnInfo.UseVisualStyleBackColor = false;
@@ -965,7 +965,7 @@
             this.btnStock.Location = new System.Drawing.Point(653, 177);
             this.btnStock.Margin = new System.Windows.Forms.Padding(1);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(200, 42);
+            this.btnStock.Size = new System.Drawing.Size(200, 43);
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "在　庫";
             this.btnStock.UseVisualStyleBackColor = false;
@@ -1461,7 +1461,7 @@
             this.btnTanka.Location = new System.Drawing.Point(17, 368);
             this.btnTanka.Margin = new System.Windows.Forms.Padding(1);
             this.btnTanka.Name = "btnTanka";
-            this.btnTanka.Size = new System.Drawing.Size(200, 42);
+            this.btnTanka.Size = new System.Drawing.Size(200, 41);
             this.btnTanka.TabIndex = 7;
             this.btnTanka.Text = "単　価";
             this.btnTanka.UseVisualStyleBackColor = false;
@@ -1499,7 +1499,7 @@
             this.btnSyohin.Location = new System.Drawing.Point(14, 177);
             this.btnSyohin.Margin = new System.Windows.Forms.Padding(1);
             this.btnSyohin.Name = "btnSyohin";
-            this.btnSyohin.Size = new System.Drawing.Size(200, 42);
+            this.btnSyohin.Size = new System.Drawing.Size(200, 43);
             this.btnSyohin.TabIndex = 3;
             this.btnSyohin.Text = "商　品";
             this.btnSyohin.UseVisualStyleBackColor = false;
