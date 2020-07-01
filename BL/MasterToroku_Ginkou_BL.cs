@@ -17,11 +17,16 @@ namespace BL
         public bool IsuseFlag(string code, string changedate)
         {
             DataTable dtGinkou = SimpleSelect1("3", changedate, code );
-            return dtGinkou.Rows.Count > 0 ? true : false;
+            return dtGinkou.Rows.Count > 0  && dtGinkou.Rows[0]["UsedFlg"].ToString() == "1" ? true : false;
         }
         public bool M_Ginkou_Exist(string code,string changedate)
         {
             DataTable dtGinkou = SimpleSelect1("3",changedate, code);
+            return dtGinkou.Rows.Count > 0 ? true : false;
+        }
+        public bool IsGinkoExistInShiten(string code, string changedate)
+        {
+            DataTable dtGinkou = SimpleSelect1("6", changedate, code);
             return dtGinkou.Rows.Count > 0 ? true : false;
         }
         public M_Ginkou_Entity M_Ginkou_Entity_select(M_Ginkou_Entity mge)

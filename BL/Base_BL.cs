@@ -730,6 +730,21 @@ namespace BL
 
             return bdl.SelectData(dic, sp);
         }
+        public DataTable SimpleSelect2(string checkType = null, string changeDate = null, string param1 = null, string param2 = null, string param3 = null)
+        {
+            Base_DL bdl = new Base_DL();
+            string sp = "Simple_Select";
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+                {
+                    { "@ChangeDate", new ValuePair {value1 = SqlDbType.VarChar, value2 = changeDate==null? DBNull.Value.ToString(): changeDate  } },
+                    { "@CD1", new ValuePair { value1 = SqlDbType.VarChar, value2 = param1==null? DBNull.Value.ToString(): param1 } },
+                    { "@CD2", new ValuePair { value1 = SqlDbType.VarChar, value2 = param2==null? DBNull.Value.ToString(): param2 } },
+                    { "@CD3", new ValuePair { value1 = SqlDbType.VarChar, value2 =  param3==null? DBNull.Value.ToString(): param3 } },
+                    { "@CheckType", new ValuePair { value1 = SqlDbType.VarChar, value2 =  checkType==null? DBNull.Value.ToString(): checkType } },
+                };
+
+            return bdl.SelectData(dic, sp);
+        }
     }
 }
 
