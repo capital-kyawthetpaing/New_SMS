@@ -4268,6 +4268,7 @@
             this.txtButtomNameUp.IntegerPart = 0;
             this.txtButtomNameUp.IsCorrectDate = true;
             this.txtButtomNameUp.isEnterKeyDown = false;
+            this.txtButtomNameUp.IsFirstTime = true;
             this.txtButtomNameUp.isMaxLengthErr = false;
             this.txtButtomNameUp.IsNumber = true;
             this.txtButtomNameUp.IsShop = false;
@@ -9981,6 +9982,7 @@
             this.txtBtnNameDown.IntegerPart = 0;
             this.txtBtnNameDown.IsCorrectDate = true;
             this.txtBtnNameDown.isEnterKeyDown = false;
+            this.txtBtnNameDown.IsFirstTime = true;
             this.txtBtnNameDown.isMaxLengthErr = false;
             this.txtBtnNameDown.IsNumber = true;
             this.txtBtnNameDown.IsShop = false;
@@ -10004,7 +10006,7 @@
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.btnSearch.Font_Size = CKM_Controls.CKM_Button.CKM_FontSize.Medium;
-            this.btnSearch.Location = new System.Drawing.Point(454, 806);
+            this.btnSearch.Location = new System.Drawing.Point(454, 807);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(1);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(170, 45);
@@ -10027,6 +10029,7 @@
             this.txtCD.IntegerPart = 0;
             this.txtCD.IsCorrectDate = true;
             this.txtCD.isEnterKeyDown = false;
+            this.txtCD.IsFirstTime = true;
             this.txtCD.isMaxLengthErr = false;
             this.txtCD.IsNumber = true;
             this.txtCD.IsShop = false;
@@ -10066,13 +10069,12 @@
             this.lblSearchName.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.lblSearchName.FontBold = true;
             this.lblSearchName.ForeColor = System.Drawing.Color.Black;
-            this.lblSearchName.Location = new System.Drawing.Point(640, 803);
+            this.lblSearchName.Location = new System.Drawing.Point(630, 810);
             this.lblSearchName.Name = "lblSearchName";
-            this.lblSearchName.Size = new System.Drawing.Size(1000, 100);
+            this.lblSearchName.Size = new System.Drawing.Size(1000, 90);
             this.lblSearchName.TabIndex = 22;
             this.lblSearchName.Text = "ＸＸＸＸＸＸＸ10ＸＸＸＸＸＸＸＸＸ20ＸＸＸＸＸＸＸＸＸ30ＸＸＸＸＸＸＸＸＸ40ＸＸＸＸＸＸＸＸＸ50";
             this.lblSearchName.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSearchName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblSearchName.Visible = false;
             // 
             // ckmShop_Label2

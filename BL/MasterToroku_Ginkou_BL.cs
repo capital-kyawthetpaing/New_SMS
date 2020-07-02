@@ -24,6 +24,11 @@ namespace BL
             DataTable dtGinkou = SimpleSelect1("3",changedate, code);
             return dtGinkou.Rows.Count > 0 ? true : false;
         }
+        public bool IsGinkoExistInShiten(string code, string changedate)
+        {
+            DataTable dtGinkou = SimpleSelect1("6", changedate, code);
+            return dtGinkou.Rows.Count > 0 ? true : false;
+        }
         public M_Ginkou_Entity M_Ginkou_Entity_select(M_Ginkou_Entity mge)
         {
             DataTable dtginKou = mgdl.M_Ginkou_Select(mge);

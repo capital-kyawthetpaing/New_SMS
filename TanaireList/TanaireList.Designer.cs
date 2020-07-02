@@ -319,6 +319,7 @@
             this.txtEndDate.IntegerPart = 0;
             this.txtEndDate.IsCorrectDate = true;
             this.txtEndDate.isEnterKeyDown = false;
+            this.txtEndDate.IsFirstTime = true;
             this.txtEndDate.isMaxLengthErr = false;
             this.txtEndDate.IsNumber = true;
             this.txtEndDate.IsShop = false;
@@ -347,6 +348,7 @@
             this.txtStartDate.IntegerPart = 0;
             this.txtStartDate.IsCorrectDate = true;
             this.txtStartDate.isEnterKeyDown = false;
+            this.txtStartDate.IsFirstTime = true;
             this.txtStartDate.isMaxLengthErr = false;
             this.txtStartDate.IsNumber = true;
             this.txtStartDate.IsShop = false;

@@ -207,6 +207,7 @@
             this.txtJanCD.IntegerPart = 0;
             this.txtJanCD.IsCorrectDate = false;
             this.txtJanCD.isEnterKeyDown = false;
+            this.txtJanCD.IsFirstTime = true;
             this.txtJanCD.isMaxLengthErr = false;
             this.txtJanCD.IsNumber = false;
             this.txtJanCD.IsShop = false;
@@ -234,6 +235,7 @@
             this.txtSKUName.IntegerPart = 0;
             this.txtSKUName.IsCorrectDate = true;
             this.txtSKUName.isEnterKeyDown = false;
+            this.txtSKUName.IsFirstTime = true;
             this.txtSKUName.isMaxLengthErr = false;
             this.txtSKUName.IsNumber = false;
             this.txtSKUName.IsShop = false;
@@ -262,6 +264,7 @@
             this.txtBrandCD.IntegerPart = 0;
             this.txtBrandCD.IsCorrectDate = false;
             this.txtBrandCD.isEnterKeyDown = false;
+            this.txtBrandCD.IsFirstTime = true;
             this.txtBrandCD.isMaxLengthErr = false;
             this.txtBrandCD.IsNumber = false;
             this.txtBrandCD.IsShop = false;
@@ -357,7 +360,7 @@
             this.dgvDetail.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.dgvDetail.HeaderHeight_ = 22;
             this.dgvDetail.HeaderVisible = false;
-            this.dgvDetail.Height_ = 550;
+            this.dgvDetail.Height_ = 570;
             this.dgvDetail.Location = new System.Drawing.Point(19, 241);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.RowHeadersWidth = 65;
@@ -365,7 +368,7 @@
             this.dgvDetail.RowHeight_ = 42;
             this.dgvDetail.RowTemplate.Height = 42;
             this.dgvDetail.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvDetail.Size = new System.Drawing.Size(1810, 550);
+            this.dgvDetail.Size = new System.Drawing.Size(1830, 570);
             this.dgvDetail.TabIndex = 130;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;

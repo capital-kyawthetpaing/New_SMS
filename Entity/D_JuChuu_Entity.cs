@@ -9,6 +9,7 @@ namespace Entity
     public class D_Juchuu_Entity : Base_Entity
     {
         public string JuchuuNO { get; set; }
+        public string JuchuuProcessNO { get; set; }
         public string StoreCD { get; set; }
         public string JuchuuDate { get; set; }
         public string JuchuuTime { get; set; }
@@ -112,11 +113,11 @@ namespace Entity
         //検索用Entity
         public string JuchuDateFrom { get; set; }
         public string JuchuDateTo { get; set; }
+
         public int ValGaisho { get; set; }
         public int ValTento { get; set; }
         public int ValWeb { get; set; }
         public string VendorName { get; set; }
-
         //帳票用Entity
         public string PrintFLG { get; set; }
 
@@ -125,12 +126,12 @@ namespace Entity
         public string VendorCD { get; set; }
         public string JuchuuNOFrom { get; set; }
         public string JuchuuNOTo { get; set; }
-        public string SalesDateFrom { get; set; }
-        public string SalesDateTo { get; set; }
-        public string BillingCloseDateFrom { get; set; }
-        public string BillingCloseDateTo { get; set; }
-        public string CollectClearDateFrom { get; set; }
-        public string CollectClearDateTo { get; set; }
+        public string SalesDateFrom  { get; set; }
+        public string SalesDateTo  { get; set; }
+        public string BillingCloseDateFrom  { get; set; }
+        public string BillingCloseDateTo  { get; set; }
+        public string CollectClearDateFrom  { get; set; }
+        public string CollectClearDateTo  { get; set; }
 
         public int ChkMihikiate { get; set; }
         public int ChkMiuriage { get; set; }
