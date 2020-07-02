@@ -946,7 +946,7 @@
             this.btnInfo.Location = new System.Drawing.Point(453, 177);
             this.btnInfo.Margin = new System.Windows.Forms.Padding(1);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(200, 43);
+            this.btnInfo.Size = new System.Drawing.Size(200, 45);
             this.btnInfo.TabIndex = 5;
             this.btnInfo.Text = "商品情報";
             this.btnInfo.UseVisualStyleBackColor = false;
@@ -965,7 +965,7 @@
             this.btnStock.Location = new System.Drawing.Point(653, 177);
             this.btnStock.Margin = new System.Windows.Forms.Padding(1);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(200, 43);
+            this.btnStock.Size = new System.Drawing.Size(200, 45);
             this.btnStock.TabIndex = 6;
             this.btnStock.Text = "在　庫";
             this.btnStock.UseVisualStyleBackColor = false;
