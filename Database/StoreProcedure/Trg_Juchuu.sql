@@ -39,6 +39,7 @@ BEGIN
 
         INSERT INTO [L_JuchuuHistory]
            ([JuchuuNO]
+           ,[JuchuuProcessNO]
            ,[StoreCD]
            ,[JuchuuDate]
            ,[JuchuuTime]
@@ -143,6 +144,7 @@ BEGIN
            ,[DeleteDateTime])
      SELECT
             JuchuuNO
+           ,JuchuuProcessNO
            ,StoreCD
            ,JuchuuDate
            ,JuchuuTime
@@ -257,6 +259,7 @@ BEGIN
     
         INSERT INTO [L_JuchuuHistory]
            ([JuchuuNO]
+           ,[JuchuuProcessNO]
            ,[StoreCD]
            ,[JuchuuDate]
            ,[JuchuuTime]
@@ -361,6 +364,7 @@ BEGIN
            ,[DeleteDateTime])
      SELECT
             JuchuuNO
+           ,JuchuuProcessNO
            ,StoreCD
            ,JuchuuDate
            ,JuchuuTime
