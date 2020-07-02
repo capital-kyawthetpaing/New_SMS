@@ -1692,10 +1692,10 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                         }
                     }
-                }
 
-                //D_TemporaryReserveをDelete
-                mibl.DeleteTemporaryReserve(dje);
+                    //D_TemporaryReserveをDelete
+                    mibl.DeleteTemporaryReserve(dje);
+                }
 
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
@@ -1860,6 +1860,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     if (index == (int)EIndex.JuchuuNO)
                     {
+                        mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].juchuGyoNO = Convert.ToInt16(row["JuchuuRows"].ToString());
                         if (m_MaxJyuchuGyoNo < mGrid.g_DArray[i].juchuGyoNO)
                             m_MaxJyuchuGyoNo = mGrid.g_DArray[i].juchuGyoNO;
