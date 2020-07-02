@@ -15,7 +15,7 @@ using DL;
 using System.Runtime.InteropServices;
 using Microsoft.PointOfService;
 using System.Data.SqlClient;
-
+using Base.Client;
 namespace MainMenu
 {
     public partial class Capitalsports_MainMenu : Form
@@ -57,6 +57,8 @@ namespace MainMenu
         }
         private void Capital_MainMenu_Load(object sender, EventArgs e)
         {
+          //var f=  GetMessages();
+          //  var ds = ASCIIEncoding.ASCII.GetByteCount(f);
             Clear_Text(panel_left);
             Clear_Text(panel_right);
             BindButtonName();
@@ -160,9 +162,18 @@ namespace MainMenu
                         {
                             if (((CKM_Button)ctrl).Name == "btn_Proj" + Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString()))
                             {
-                                ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
-                                ((CKM_Button)ctrl).Enabled = true;
-                                ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
+                                if (!Base_DL.iniEntity.IsDM_D30Used && k.Rows[j]["ProgramID_ID"].ToString() == "CDO")
+                                {
+                                    ((CKM_Button)ctrl).Text = "";
+                                    ((CKM_Button)ctrl).Enabled = false;
+                                    ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
+                                }
+                                else
+                                {
+                                    ((CKM_Button)ctrl).Text = k.Rows[j]["ProgramID"].ToString();
+                                    ((CKM_Button)ctrl).Enabled = true;
+                                    ((CKM_Button)ctrl).TabIndex = Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString());
+                                }
                                 //  ((CKM_Button)ctrl).Name = mope_data.PROID.ToString();
                                 // ToolTip1.SetToolTip(((CKM_Button)ctrl),"");
                                 //ToolTip1.SetToolTip(((CKM_Button)ctrl), ((CKM_Button)ctrl).Text);
@@ -343,6 +354,12 @@ namespace MainMenu
             {
                 var programID = (sender as CKM_Button).Text;
                 var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
+
+                if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CDO")
+                {
+                    CashDrawerOpen op = new CashDrawerOpen();
+                    op.OpenCashDrawer();
+                }
                 //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
                 //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
                 string filePath = "";
@@ -473,7 +490,7 @@ namespace MainMenu
             {
                 var val = GetMessages();
                 m_Display.CharacterSet = 932;
-                m_Display.CreateWindow(1, 0, 1, 20, 1, ASCIIEncoding.ASCII.GetByteCount(val));
+                m_Display.CreateWindow(1, 0, 1, 20, 1, Encoding.GetEncoding(932).GetByteCount(val));
                 m_Display.MarqueeFormat = DisplayMarqueeFormat.Walk;
                 m_Display.MarqueeType = DisplayMarqueeType.Init;
                 m_Display.MarqueeRepeatWait = 1000;
@@ -499,7 +516,7 @@ namespace MainMenu
             str += get.Rows[0]["Char3"] == null ? "" : get.Rows[0]["Char3"].ToString().Trim() + "     ";
             str += get.Rows[0]["Char4"] == null ? "" : get.Rows[0]["Char4"].ToString().Trim() + "     ";
             str += get.Rows[0]["Char5"] == null ? "" : get.Rows[0]["Char5"].ToString().Trim();
-            int txt = ASCIIEncoding.ASCII.GetByteCount(str);
+            int txt = Encoding.GetEncoding(932).GetByteCount(str);
             if (txt > 200)
             {
                 str = str.Substring(0, 200);

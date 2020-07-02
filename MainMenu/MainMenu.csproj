@@ -32,7 +32,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://202.223.48.145/SMS/SMS-GLOBE/</UpdateUrl>
-    <ApplicationRevision>38</ApplicationRevision>
+    <ApplicationRevision>42</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -243,6 +243,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Base.Client\Base.Client.csproj">
+      <Project>{79af5f26-a50b-433c-9f87-c9173b9efe04}</Project>
+      <Name>Base.Client</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{fb2217ab-ee9b-4996-a8f1-321320cbc791}</Project>
       <Name>BL</Name>
