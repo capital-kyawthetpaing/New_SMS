@@ -87,10 +87,11 @@ namespace MasterTouroku_Tokuisaki
             , TotalPoint
             , RemarksOutStore
             , RemarksInStore
-
+            
             , StoreCD
             , StaffCD
             , DeleteFlg
+            , txtCreditCheckKBN
             , COUNT
 
           //Label
@@ -386,7 +387,7 @@ namespace MasterTouroku_Tokuisaki
                             ,cmbPaymentMethodCD,ScKouzaCD.TxtCode,cmbPaymentUnit,cmbStoreTankaKBN,ScTankaCD.TxtCode,ChkAttentionFLG,ChkConfirmFLG,txtConfirmComment
                             ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditWarningAmount,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
                             ,ChkPointFLG,txtLastPoint,txtWaitingPoint,txtTotalPoint,txtRemarksOutStore,txtRemarksInStore,
-                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg };
+                            CboStoreCD,ScStaff.TxtCode, checkDeleteFlg, txtCreditCheckKBN };
             detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD,ScTankaCD, ScStaff, lblStoreName,lblLastSalesDate,lblPoint,lblMinyukin,lblKensu, lblCreditAmount};
             searchButtons = new Control[] { ScKouzaCD.BtnSearch, ScBillingCD.BtnSearch,ScCollectCD.BtnSearch,ScStaff.BtnSearch,
                                             ScTankaCD.BtnSearch,ScCopyCustomer.BtnSearch,ScCustomer.BtnSearch };
@@ -1091,7 +1092,20 @@ namespace MasterTouroku_Tokuisaki
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditDeposit].Text)
                                                     + bbl.Z_Set(detailControls[(int)EIndex.CreditETC].Text));
                     break;
-
+                case (int)EIndex.txtCreditCheckKBN:
+                    if (!RequireCheck(new Control[] { detailControls[index] }))
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        if(!(Convert.ToInt32(detailControls[index].Text) >= 0 && Convert.ToInt32(detailControls[index].Text) <= 2))
+                        {
+                            bbl.ShowMessage("E117");
+                            return false;
+                        }
+                    }
+                    break;
             }
 
             return true;
