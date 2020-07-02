@@ -35,11 +35,6 @@
             this.ckmShop_Label12 = new CKM_Controls.CKMShop_Label();
             this.txtKake = new CKM_Controls.CKM_TextBox();
             this.btnRyosyusyo = new CKM_Controls.CKM_Button();
-            this.lblZan = new CKM_Controls.CKMShop_Label();
-            this.lblSalesGaku = new CKM_Controls.CKMShop_Label();
-            this.lblJuchuuTaxRitsu = new CKM_Controls.CKMShop_Label();
-            this.lblRefund = new CKM_Controls.CKMShop_Label();
-            this.lblShiharaiKei = new CKM_Controls.CKMShop_Label();
             this.btnOther1 = new CKM_Controls.CKM_Button();
             this.btnOther2 = new CKM_Controls.CKM_Button();
             this.label4 = new CKM_Controls.CKMShop_Label();
@@ -53,8 +48,6 @@
             this.ckmShop_Label1 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label3 = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label4 = new CKM_Controls.CKMShop_Label();
-            this.lblSeikyuGaku = new CKM_Controls.CKMShop_Label();
-            this.lblZei = new CKM_Controls.CKMShop_Label();
             this.txtOther1 = new CKM_Controls.CKM_TextBox();
             this.txtOther2 = new CKM_Controls.CKM_TextBox();
             this.txtCard = new CKM_Controls.CKM_TextBox();
@@ -66,8 +59,31 @@
             this.btnClear = new CKM_Controls.CKM_Button();
             this.btnMaeuke = new CKM_Controls.CKM_Button();
             this.txtMaeuke = new CKM_Controls.CKM_TextBox();
-            this.lblMaeZan = new CKM_Controls.CKMShop_Label();
             this.ckmShop_Label6 = new CKM_Controls.CKMShop_Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lblSalesGaku = new CKM_Controls.CKMShop_Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblSeikyuGaku = new CKM_Controls.CKMShop_Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblZei = new CKM_Controls.CKMShop_Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.lblShiharaiKei = new CKM_Controls.CKMShop_Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.lblMaeZan = new CKM_Controls.CKMShop_Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.lblZan = new CKM_Controls.CKMShop_Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.lblJuchuuTaxRitsu = new CKM_Controls.CKMShop_Label();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.lblRefund = new CKM_Controls.CKMShop_Label();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel13.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtDiscount
@@ -85,6 +101,7 @@
             this.txtDiscount.IntegerPart = 9;
             this.txtDiscount.IsCorrectDate = false;
             this.txtDiscount.isEnterKeyDown = false;
+            this.txtDiscount.IsFirstTime = true;
             this.txtDiscount.isMaxLengthErr = false;
             this.txtDiscount.IsNumber = false;
             this.txtDiscount.IsShop = false;
@@ -107,7 +124,7 @@
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label7.FontBold = true;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(630, 370);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(630, 371);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(44, 30);
             this.ckmShop_Label7.TabIndex = 28;
@@ -130,6 +147,7 @@
             this.txtPoint.IntegerPart = 9;
             this.txtPoint.IsCorrectDate = true;
             this.txtPoint.isEnterKeyDown = false;
+            this.txtPoint.IsFirstTime = true;
             this.txtPoint.isMaxLengthErr = false;
             this.txtPoint.IsNumber = true;
             this.txtPoint.IsShop = false;
@@ -193,6 +211,7 @@
             this.txtKake.IntegerPart = 9;
             this.txtKake.IsCorrectDate = true;
             this.txtKake.isEnterKeyDown = false;
+            this.txtKake.IsFirstTime = true;
             this.txtKake.isMaxLengthErr = false;
             this.txtKake.IsNumber = false;
             this.txtKake.IsShop = false;
@@ -226,91 +245,6 @@
             this.btnRyosyusyo.UseVisualStyleBackColor = false;
             this.btnRyosyusyo.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // lblZan
-            // 
-            this.lblZan.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZan.BackColor = System.Drawing.Color.Transparent;
-            this.lblZan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblZan.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblZan.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblZan.FontBold = true;
-            this.lblZan.ForeColor = System.Drawing.Color.Black;
-            this.lblZan.Location = new System.Drawing.Point(690, 366);
-            this.lblZan.Name = "lblZan";
-            this.lblZan.Size = new System.Drawing.Size(230, 43);
-            this.lblZan.TabIndex = 54;
-            this.lblZan.Text = "999,999";
-            this.lblZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblSalesGaku
-            // 
-            this.lblSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSalesGaku.BackColor = System.Drawing.Color.Transparent;
-            this.lblSalesGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSalesGaku.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblSalesGaku.FontBold = true;
-            this.lblSalesGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSalesGaku.Location = new System.Drawing.Point(256, 150);
-            this.lblSalesGaku.Name = "lblSalesGaku";
-            this.lblSalesGaku.Size = new System.Drawing.Size(230, 43);
-            this.lblSalesGaku.TabIndex = 58;
-            this.lblSalesGaku.Text = "9,999";
-            this.lblSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSalesGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblJuchuuTaxRitsu
-            // 
-            this.lblJuchuuTaxRitsu.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuTaxRitsu.BackColor = System.Drawing.Color.Transparent;
-            this.lblJuchuuTaxRitsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblJuchuuTaxRitsu.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblJuchuuTaxRitsu.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblJuchuuTaxRitsu.FontBold = true;
-            this.lblJuchuuTaxRitsu.ForeColor = System.Drawing.Color.Black;
-            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(1152, 84);
-            this.lblJuchuuTaxRitsu.Name = "lblJuchuuTaxRitsu";
-            this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(230, 43);
-            this.lblJuchuuTaxRitsu.TabIndex = 59;
-            this.lblJuchuuTaxRitsu.Text = "XXXXXXXXX11";
-            this.lblJuchuuTaxRitsu.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblJuchuuTaxRitsu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblRefund
-            // 
-            this.lblRefund.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblRefund.BackColor = System.Drawing.Color.Transparent;
-            this.lblRefund.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblRefund.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblRefund.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblRefund.FontBold = true;
-            this.lblRefund.ForeColor = System.Drawing.Color.Black;
-            this.lblRefund.Location = new System.Drawing.Point(1152, 575);
-            this.lblRefund.Name = "lblRefund";
-            this.lblRefund.Size = new System.Drawing.Size(230, 43);
-            this.lblRefund.TabIndex = 63;
-            this.lblRefund.Text = "999,999,999";
-            this.lblRefund.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblRefund.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblShiharaiKei
-            // 
-            this.lblShiharaiKei.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblShiharaiKei.BackColor = System.Drawing.Color.Transparent;
-            this.lblShiharaiKei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblShiharaiKei.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblShiharaiKei.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblShiharaiKei.FontBold = true;
-            this.lblShiharaiKei.ForeColor = System.Drawing.Color.Black;
-            this.lblShiharaiKei.Location = new System.Drawing.Point(256, 682);
-            this.lblShiharaiKei.Name = "lblShiharaiKei";
-            this.lblShiharaiKei.Size = new System.Drawing.Size(230, 42);
-            this.lblShiharaiKei.TabIndex = 64;
-            this.lblShiharaiKei.Text = "9,999";
-            this.lblShiharaiKei.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblShiharaiKei.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // btnOther1
             // 
             this.btnOther1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(242)))), ((int)(((byte)(204)))));
@@ -324,7 +258,7 @@
             this.btnOther1.Location = new System.Drawing.Point(56, 419);
             this.btnOther1.Margin = new System.Windows.Forms.Padding(1);
             this.btnOther1.Name = "btnOther1";
-            this.btnOther1.Size = new System.Drawing.Size(200, 42);
+            this.btnOther1.Size = new System.Drawing.Size(200, 45);
             this.btnOther1.TabIndex = 14;
             this.btnOther1.Text = "その他①";
             this.btnOther1.UseVisualStyleBackColor = false;
@@ -343,7 +277,7 @@
             this.btnOther2.Location = new System.Drawing.Point(56, 472);
             this.btnOther2.Margin = new System.Windows.Forms.Padding(1);
             this.btnOther2.Name = "btnOther2";
-            this.btnOther2.Size = new System.Drawing.Size(200, 42);
+            this.btnOther2.Size = new System.Drawing.Size(200, 45);
             this.btnOther2.TabIndex = 15;
             this.btnOther2.Text = "その他②";
             this.btnOther2.UseVisualStyleBackColor = false;
@@ -380,6 +314,7 @@
             this.txtCash.IntegerPart = 9;
             this.txtCash.IsCorrectDate = true;
             this.txtCash.isEnterKeyDown = false;
+            this.txtCash.IsFirstTime = true;
             this.txtCash.isMaxLengthErr = false;
             this.txtCash.IsNumber = true;
             this.txtCash.IsShop = false;
@@ -424,7 +359,7 @@
             this.btnPoint.Location = new System.Drawing.Point(56, 366);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(1);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(200, 42);
+            this.btnPoint.Size = new System.Drawing.Size(200, 45);
             this.btnPoint.TabIndex = 13;
             this.btnPoint.Text = "ポイント";
             this.btnPoint.UseVisualStyleBackColor = false;
@@ -443,7 +378,7 @@
             this.btnCard.Location = new System.Drawing.Point(56, 524);
             this.btnCard.Margin = new System.Windows.Forms.Padding(1);
             this.btnCard.Name = "btnCard";
-            this.btnCard.Size = new System.Drawing.Size(200, 42);
+            this.btnCard.Size = new System.Drawing.Size(200, 45);
             this.btnCard.TabIndex = 16;
             this.btnCard.Text = "カード";
             this.btnCard.UseVisualStyleBackColor = false;
@@ -462,7 +397,7 @@
             this.btnAzukari.Location = new System.Drawing.Point(486, 577);
             this.btnAzukari.Margin = new System.Windows.Forms.Padding(1);
             this.btnAzukari.Name = "btnAzukari";
-            this.btnAzukari.Size = new System.Drawing.Size(150, 42);
+            this.btnAzukari.Size = new System.Drawing.Size(150, 45);
             this.btnAzukari.TabIndex = 18;
             this.btnAzukari.Text = "預　り";
             this.btnAzukari.UseVisualStyleBackColor = false;
@@ -481,7 +416,7 @@
             this.btnKake.Location = new System.Drawing.Point(56, 631);
             this.btnKake.Margin = new System.Windows.Forms.Padding(1);
             this.btnKake.Name = "btnKake";
-            this.btnKake.Size = new System.Drawing.Size(200, 42);
+            this.btnKake.Size = new System.Drawing.Size(200, 45);
             this.btnKake.TabIndex = 19;
             this.btnKake.Text = "掛";
             this.btnKake.UseVisualStyleBackColor = false;
@@ -500,7 +435,7 @@
             this.btnCash.Location = new System.Drawing.Point(56, 577);
             this.btnCash.Margin = new System.Windows.Forms.Padding(1);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(200, 42);
+            this.btnCash.Size = new System.Drawing.Size(200, 45);
             this.btnCash.TabIndex = 17;
             this.btnCash.Text = "現　金";
             this.btnCash.UseVisualStyleBackColor = false;
@@ -557,40 +492,6 @@
             this.ckmShop_Label4.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblSeikyuGaku
-            // 
-            this.lblSeikyuGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSeikyuGaku.BackColor = System.Drawing.Color.Transparent;
-            this.lblSeikyuGaku.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSeikyuGaku.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblSeikyuGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblSeikyuGaku.FontBold = true;
-            this.lblSeikyuGaku.ForeColor = System.Drawing.Color.Black;
-            this.lblSeikyuGaku.Location = new System.Drawing.Point(256, 254);
-            this.lblSeikyuGaku.Name = "lblSeikyuGaku";
-            this.lblSeikyuGaku.Size = new System.Drawing.Size(230, 43);
-            this.lblSeikyuGaku.TabIndex = 94;
-            this.lblSeikyuGaku.Text = "9,999";
-            this.lblSeikyuGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblSeikyuGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblZei
-            // 
-            this.lblZei.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZei.BackColor = System.Drawing.Color.Transparent;
-            this.lblZei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblZei.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblZei.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblZei.FontBold = true;
-            this.lblZei.ForeColor = System.Drawing.Color.Black;
-            this.lblZei.Location = new System.Drawing.Point(690, 149);
-            this.lblZei.Name = "lblZei";
-            this.lblZei.Size = new System.Drawing.Size(230, 43);
-            this.lblZei.TabIndex = 95;
-            this.lblZei.Text = "9,999";
-            this.lblZei.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblZei.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtOther1
             // 
             this.txtOther1.AllowMinus = false;
@@ -606,6 +507,7 @@
             this.txtOther1.IntegerPart = 9;
             this.txtOther1.IsCorrectDate = true;
             this.txtOther1.isEnterKeyDown = false;
+            this.txtOther1.IsFirstTime = true;
             this.txtOther1.isMaxLengthErr = false;
             this.txtOther1.IsNumber = true;
             this.txtOther1.IsShop = false;
@@ -635,6 +537,7 @@
             this.txtOther2.IntegerPart = 9;
             this.txtOther2.IsCorrectDate = true;
             this.txtOther2.isEnterKeyDown = false;
+            this.txtOther2.IsFirstTime = true;
             this.txtOther2.isMaxLengthErr = false;
             this.txtOther2.IsNumber = true;
             this.txtOther2.IsShop = false;
@@ -664,6 +567,7 @@
             this.txtCard.IntegerPart = 9;
             this.txtCard.IsCorrectDate = true;
             this.txtCard.isEnterKeyDown = false;
+            this.txtCard.IsFirstTime = true;
             this.txtCard.isMaxLengthErr = false;
             this.txtCard.IsNumber = true;
             this.txtCard.IsShop = false;
@@ -693,6 +597,7 @@
             this.txtAzukari.IntegerPart = 9;
             this.txtAzukari.IsCorrectDate = true;
             this.txtAzukari.isEnterKeyDown = false;
+            this.txtAzukari.IsFirstTime = true;
             this.txtAzukari.isMaxLengthErr = false;
             this.txtAzukari.IsNumber = true;
             this.txtAzukari.IsShop = false;
@@ -834,7 +739,7 @@
             this.btnMaeuke.Location = new System.Drawing.Point(56, 313);
             this.btnMaeuke.Margin = new System.Windows.Forms.Padding(1);
             this.btnMaeuke.Name = "btnMaeuke";
-            this.btnMaeuke.Size = new System.Drawing.Size(200, 42);
+            this.btnMaeuke.Size = new System.Drawing.Size(200, 45);
             this.btnMaeuke.TabIndex = 102;
             this.btnMaeuke.Text = "前受金から";
             this.btnMaeuke.UseVisualStyleBackColor = false;
@@ -855,6 +760,7 @@
             this.txtMaeuke.IntegerPart = 9;
             this.txtMaeuke.IsCorrectDate = true;
             this.txtMaeuke.isEnterKeyDown = false;
+            this.txtMaeuke.IsFirstTime = true;
             this.txtMaeuke.isMaxLengthErr = false;
             this.txtMaeuke.IsNumber = true;
             this.txtMaeuke.IsShop = false;
@@ -869,23 +775,6 @@
             this.txtMaeuke.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtMaeuke.TextSize = CKM_Controls.CKM_TextBox.FontSize.Medium;
             // 
-            // lblMaeZan
-            // 
-            this.lblMaeZan.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblMaeZan.BackColor = System.Drawing.Color.Transparent;
-            this.lblMaeZan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblMaeZan.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
-            this.lblMaeZan.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
-            this.lblMaeZan.FontBold = true;
-            this.lblMaeZan.ForeColor = System.Drawing.Color.Black;
-            this.lblMaeZan.Location = new System.Drawing.Point(690, 313);
-            this.lblMaeZan.Name = "lblMaeZan";
-            this.lblMaeZan.Size = new System.Drawing.Size(230, 43);
-            this.lblMaeZan.TabIndex = 104;
-            this.lblMaeZan.Text = "999,999";
-            this.lblMaeZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
-            this.lblMaeZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ckmShop_Label6
             // 
             this.ckmShop_Label6.AutoSize = true;
@@ -895,7 +784,7 @@
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label6.FontBold = true;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(630, 317);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(630, 320);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(44, 30);
             this.ckmShop_Label6.TabIndex = 103;
@@ -903,13 +792,220 @@
             this.ckmShop_Label6.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Green;
             this.ckmShop_Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.lblSalesGaku);
+            this.panel3.Location = new System.Drawing.Point(256, 152);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 42);
+            this.panel3.TabIndex = 105;
+            // 
+            // lblSalesGaku
+            // 
+            this.lblSalesGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSalesGaku.BackColor = System.Drawing.Color.Transparent;
+            this.lblSalesGaku.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblSalesGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblSalesGaku.FontBold = false;
+            this.lblSalesGaku.ForeColor = System.Drawing.Color.Black;
+            this.lblSalesGaku.Location = new System.Drawing.Point(36, 2);
+            this.lblSalesGaku.Name = "lblSalesGaku";
+            this.lblSalesGaku.Size = new System.Drawing.Size(200, 35);
+            this.lblSalesGaku.TabIndex = 94;
+            this.lblSalesGaku.Text = "9,999";
+            this.lblSalesGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSalesGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblSeikyuGaku);
+            this.panel1.Location = new System.Drawing.Point(256, 255);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(230, 42);
+            this.panel1.TabIndex = 106;
+            // 
+            // lblSeikyuGaku
+            // 
+            this.lblSeikyuGaku.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSeikyuGaku.BackColor = System.Drawing.Color.Transparent;
+            this.lblSeikyuGaku.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblSeikyuGaku.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblSeikyuGaku.FontBold = false;
+            this.lblSeikyuGaku.ForeColor = System.Drawing.Color.Black;
+            this.lblSeikyuGaku.Location = new System.Drawing.Point(36, 2);
+            this.lblSeikyuGaku.Name = "lblSeikyuGaku";
+            this.lblSeikyuGaku.Size = new System.Drawing.Size(200, 35);
+            this.lblSeikyuGaku.TabIndex = 94;
+            this.lblSeikyuGaku.Text = "9,999";
+            this.lblSeikyuGaku.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblSeikyuGaku.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblZei);
+            this.panel2.Location = new System.Drawing.Point(679, 152);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(230, 42);
+            this.panel2.TabIndex = 107;
+            // 
+            // lblZei
+            // 
+            this.lblZei.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZei.BackColor = System.Drawing.Color.Transparent;
+            this.lblZei.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblZei.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblZei.FontBold = false;
+            this.lblZei.ForeColor = System.Drawing.Color.Black;
+            this.lblZei.Location = new System.Drawing.Point(36, 2);
+            this.lblZei.Name = "lblZei";
+            this.lblZei.Size = new System.Drawing.Size(200, 35);
+            this.lblZei.TabIndex = 94;
+            this.lblZei.Text = "9,999";
+            this.lblZei.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZei.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel9
+            // 
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.lblShiharaiKei);
+            this.panel9.Location = new System.Drawing.Point(256, 682);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(230, 42);
+            this.panel9.TabIndex = 108;
+            // 
+            // lblShiharaiKei
+            // 
+            this.lblShiharaiKei.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblShiharaiKei.BackColor = System.Drawing.Color.Transparent;
+            this.lblShiharaiKei.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblShiharaiKei.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblShiharaiKei.FontBold = false;
+            this.lblShiharaiKei.ForeColor = System.Drawing.Color.Black;
+            this.lblShiharaiKei.Location = new System.Drawing.Point(36, 2);
+            this.lblShiharaiKei.Name = "lblShiharaiKei";
+            this.lblShiharaiKei.Size = new System.Drawing.Size(200, 35);
+            this.lblShiharaiKei.TabIndex = 94;
+            this.lblShiharaiKei.Text = "9,999";
+            this.lblShiharaiKei.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblShiharaiKei.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel10
+            // 
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.lblMaeZan);
+            this.panel10.Location = new System.Drawing.Point(690, 314);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(230, 42);
+            this.panel10.TabIndex = 109;
+            // 
+            // lblMaeZan
+            // 
+            this.lblMaeZan.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblMaeZan.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaeZan.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblMaeZan.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblMaeZan.FontBold = false;
+            this.lblMaeZan.ForeColor = System.Drawing.Color.Black;
+            this.lblMaeZan.Location = new System.Drawing.Point(36, 2);
+            this.lblMaeZan.Name = "lblMaeZan";
+            this.lblMaeZan.Size = new System.Drawing.Size(200, 35);
+            this.lblMaeZan.TabIndex = 94;
+            this.lblMaeZan.Text = "999,999";
+            this.lblMaeZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblMaeZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel11
+            // 
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel11.Controls.Add(this.lblZan);
+            this.panel11.Location = new System.Drawing.Point(690, 364);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(230, 42);
+            this.panel11.TabIndex = 110;
+            // 
+            // lblZan
+            // 
+            this.lblZan.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZan.BackColor = System.Drawing.Color.Transparent;
+            this.lblZan.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblZan.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblZan.FontBold = false;
+            this.lblZan.ForeColor = System.Drawing.Color.Black;
+            this.lblZan.Location = new System.Drawing.Point(36, 2);
+            this.lblZan.Name = "lblZan";
+            this.lblZan.Size = new System.Drawing.Size(200, 35);
+            this.lblZan.TabIndex = 94;
+            this.lblZan.Text = "999,999";
+            this.lblZan.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblZan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // panel12
+            // 
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel12.Controls.Add(this.lblJuchuuTaxRitsu);
+            this.panel12.Location = new System.Drawing.Point(1152, 84);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(230, 42);
+            this.panel12.TabIndex = 111;
+            // 
+            // lblJuchuuTaxRitsu
+            // 
+            this.lblJuchuuTaxRitsu.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuTaxRitsu.BackColor = System.Drawing.Color.Transparent;
+            this.lblJuchuuTaxRitsu.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblJuchuuTaxRitsu.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblJuchuuTaxRitsu.FontBold = false;
+            this.lblJuchuuTaxRitsu.ForeColor = System.Drawing.Color.Black;
+            this.lblJuchuuTaxRitsu.Location = new System.Drawing.Point(-2, 2);
+            this.lblJuchuuTaxRitsu.Name = "lblJuchuuTaxRitsu";
+            this.lblJuchuuTaxRitsu.Size = new System.Drawing.Size(200, 35);
+            this.lblJuchuuTaxRitsu.TabIndex = 94;
+            this.lblJuchuuTaxRitsu.Text = "XXXXXXXXX11";
+            this.lblJuchuuTaxRitsu.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblJuchuuTaxRitsu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel13
+            // 
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel13.Controls.Add(this.lblRefund);
+            this.panel13.Location = new System.Drawing.Point(1152, 577);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(230, 42);
+            this.panel13.TabIndex = 112;
+            // 
+            // lblRefund
+            // 
+            this.lblRefund.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblRefund.BackColor = System.Drawing.Color.Transparent;
+            this.lblRefund.Font = new System.Drawing.Font("MS Gothic", 26F);
+            this.lblRefund.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Medium0;
+            this.lblRefund.FontBold = false;
+            this.lblRefund.ForeColor = System.Drawing.Color.Black;
+            this.lblRefund.Location = new System.Drawing.Point(36, 2);
+            this.lblRefund.Name = "lblRefund";
+            this.lblRefund.Size = new System.Drawing.Size(200, 35);
+            this.lblRefund.TabIndex = 94;
+            this.lblRefund.Text = "999,999,999";
+            this.lblRefund.Text_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
+            this.lblRefund.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // TempoRegiSiharaiTouroku
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BtnP_text = "決定";
             this.ClientSize = new System.Drawing.Size(1484, 811);
-            this.Controls.Add(this.lblMaeZan);
+            this.Controls.Add(this.panel13);
+            this.Controls.Add(this.panel12);
+            this.Controls.Add(this.panel11);
+            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel9);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.ckmShop_Label6);
             this.Controls.Add(this.btnMaeuke);
             this.Controls.Add(this.txtMaeuke);
@@ -922,8 +1018,6 @@
             this.Controls.Add(this.txtCard);
             this.Controls.Add(this.txtOther2);
             this.Controls.Add(this.txtOther1);
-            this.Controls.Add(this.lblZei);
-            this.Controls.Add(this.lblSeikyuGaku);
             this.Controls.Add(this.ckmShop_Label4);
             this.Controls.Add(this.ckmShop_Label3);
             this.Controls.Add(this.ckmShop_Label1);
@@ -937,11 +1031,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnOther2);
             this.Controls.Add(this.btnOther1);
-            this.Controls.Add(this.lblShiharaiKei);
-            this.Controls.Add(this.lblRefund);
-            this.Controls.Add(this.lblJuchuuTaxRitsu);
-            this.Controls.Add(this.lblSalesGaku);
-            this.Controls.Add(this.lblZan);
             this.Controls.Add(this.btnRyosyusyo);
             this.Controls.Add(this.txtKake);
             this.Controls.Add(this.ckmShop_Label12);
@@ -959,11 +1048,6 @@
             this.Controls.SetChildIndex(this.ckmShop_Label12, 0);
             this.Controls.SetChildIndex(this.txtKake, 0);
             this.Controls.SetChildIndex(this.btnRyosyusyo, 0);
-            this.Controls.SetChildIndex(this.lblZan, 0);
-            this.Controls.SetChildIndex(this.lblSalesGaku, 0);
-            this.Controls.SetChildIndex(this.lblJuchuuTaxRitsu, 0);
-            this.Controls.SetChildIndex(this.lblRefund, 0);
-            this.Controls.SetChildIndex(this.lblShiharaiKei, 0);
             this.Controls.SetChildIndex(this.btnOther1, 0);
             this.Controls.SetChildIndex(this.btnOther2, 0);
             this.Controls.SetChildIndex(this.label4, 0);
@@ -977,8 +1061,6 @@
             this.Controls.SetChildIndex(this.ckmShop_Label1, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label3, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label4, 0);
-            this.Controls.SetChildIndex(this.lblSeikyuGaku, 0);
-            this.Controls.SetChildIndex(this.lblZei, 0);
             this.Controls.SetChildIndex(this.txtOther1, 0);
             this.Controls.SetChildIndex(this.txtOther2, 0);
             this.Controls.SetChildIndex(this.txtCard, 0);
@@ -991,7 +1073,22 @@
             this.Controls.SetChildIndex(this.txtMaeuke, 0);
             this.Controls.SetChildIndex(this.btnMaeuke, 0);
             this.Controls.SetChildIndex(this.ckmShop_Label6, 0);
-            this.Controls.SetChildIndex(this.lblMaeZan, 0);
+            this.Controls.SetChildIndex(this.panel3, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.panel2, 0);
+            this.Controls.SetChildIndex(this.panel9, 0);
+            this.Controls.SetChildIndex(this.panel10, 0);
+            this.Controls.SetChildIndex(this.panel11, 0);
+            this.Controls.SetChildIndex(this.panel12, 0);
+            this.Controls.SetChildIndex(this.panel13, 0);
+            this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1005,11 +1102,6 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label12;
         private CKM_Controls.CKM_TextBox txtKake;
         private CKM_Controls.CKM_Button btnRyosyusyo;
-        private CKM_Controls.CKMShop_Label lblZan;
-        private CKM_Controls.CKMShop_Label lblSalesGaku;
-        private CKM_Controls.CKMShop_Label lblJuchuuTaxRitsu;
-        private CKM_Controls.CKMShop_Label lblRefund;
-        private CKM_Controls.CKMShop_Label lblShiharaiKei;
         private CKM_Controls.CKM_Button btnOther1;
         private CKM_Controls.CKM_Button btnOther2;
         private CKM_Controls.CKMShop_Label label4;
@@ -1023,8 +1115,6 @@
         private CKM_Controls.CKMShop_Label ckmShop_Label1;
         private CKM_Controls.CKMShop_Label ckmShop_Label3;
         private CKM_Controls.CKMShop_Label ckmShop_Label4;
-        private CKM_Controls.CKMShop_Label lblSeikyuGaku;
-        private CKM_Controls.CKMShop_Label lblZei;
         private CKM_Controls.CKM_TextBox txtOther1;
         private CKM_Controls.CKM_TextBox txtOther2;
         private CKM_Controls.CKM_TextBox txtCard;
@@ -1036,8 +1126,23 @@
         private CKM_Controls.CKM_Button btnClear;
         private CKM_Controls.CKM_Button btnMaeuke;
         private CKM_Controls.CKM_TextBox txtMaeuke;
-        private CKM_Controls.CKMShop_Label lblMaeZan;
         private CKM_Controls.CKMShop_Label ckmShop_Label6;
+        private System.Windows.Forms.Panel panel3;
+        private CKM_Controls.CKMShop_Label lblSalesGaku;
+        private System.Windows.Forms.Panel panel1;
+        private CKM_Controls.CKMShop_Label lblSeikyuGaku;
+        private System.Windows.Forms.Panel panel2;
+        private CKM_Controls.CKMShop_Label lblZei;
+        private System.Windows.Forms.Panel panel9;
+        private CKM_Controls.CKMShop_Label lblShiharaiKei;
+        private System.Windows.Forms.Panel panel10;
+        private CKM_Controls.CKMShop_Label lblMaeZan;
+        private System.Windows.Forms.Panel panel11;
+        private CKM_Controls.CKMShop_Label lblZan;
+        private System.Windows.Forms.Panel panel12;
+        private CKM_Controls.CKMShop_Label lblJuchuuTaxRitsu;
+        private System.Windows.Forms.Panel panel13;
+        private CKM_Controls.CKMShop_Label lblRefund;
     }
 }
 

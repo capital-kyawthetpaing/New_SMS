@@ -23,7 +23,7 @@ namespace JANCDHenkou
         public bool dup, isExist = false;
         DataTable dtJanCDExist;
         DataTable dtGenJanCD;
-        string SKUCD, xml;
+        string SKUCD, xml, JANCD;
         L_Log_Entity log_data;
 
         public JANCDHenkou()
@@ -123,6 +123,32 @@ namespace JANCDHenkou
                     Search_Product frmsp = new Search_Product(System.DateTime.Now.ToString("yyyy-MM-dd"));
                     //frmsp.JANCD = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString();
                     frmsp.ShowDialog();
+                    if (!frmsp.flgCancel)
+                    {
+                        JANCD = frmsp.JANCD;
+                        
+                        //if (dtGenJanCD.Rows.Count > 0)
+                        //{
+                        // DataTable tmp1 = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD, dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value.ToString());
+                        dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"].Value = JANCD;
+                        dgvJANCDHenkou.CurrentCell = dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD"];
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandCD"].Value = tmp1.Rows[0]["BrandCD"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colBrandName"].Value = tmp1.Rows[0]["BrandName"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colITEM"].Value = tmp1.Rows[0]["ITemCD"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUName"].Value = tmp1.Rows[0]["SKUName"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSize"].Value = tmp1.Rows[0]["SizeName"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colColor"].Value = tmp1.Rows[0]["ColorName"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colGenJanCD2"].Value = tmp1.Rows[0]["GenJanCD2"].ToString();
+                            //dgvJANCDHenkou.Rows[e.RowIndex].Cells["colSKUCD"].Value = tmp1.Rows[0]["SKUCD"].ToString();
+                            //dtGenJanCD.AcceptChanges();
+                            //dgvJANCDHenkou.DataSource = dtGenJanCD;
+                            //}
+                            //else
+                            //{
+                            //    dtGenJanCD = jhbl.SimpleSelect1("61", System.DateTime.Now.ToString("yyyy-MM-dd"), SKUCD);
+                            //    dgvJANCDHenkou.DataSource = dtGenJanCD;
+                            //}
+                    }
                 }
             }
         }

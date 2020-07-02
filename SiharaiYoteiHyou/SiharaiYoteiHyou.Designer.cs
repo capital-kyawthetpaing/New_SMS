@@ -392,6 +392,7 @@
             this.scPaymentDestinaion.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scPaymentDestinaion.DataCheck = false;
             this.scPaymentDestinaion.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.scPaymentDestinaion.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.scPaymentDestinaion.IsCopy = false;
             this.scPaymentDestinaion.LabelText = "";
             this.scPaymentDestinaion.LabelVisible = true;

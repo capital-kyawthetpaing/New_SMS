@@ -1794,5 +1794,9 @@ namespace MasterTouroku_Tokuisaki
         }
         #endregion
 
+        private void PanelDetail_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

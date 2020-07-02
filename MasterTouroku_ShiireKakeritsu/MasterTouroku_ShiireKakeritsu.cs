@@ -133,6 +133,7 @@ namespace MasterTouroku_ShiireKakeritsu
                         if (mskbl.ShowMessage("Q005") != DialogResult.Yes)
                             return;
                         CancelData();
+                        dgv_ShiireKakeritsu.DataSource = null;
                     }
                     break;
                 case 11:
@@ -451,6 +452,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
                     dvMain.RowFilter = searchCondition;
                     dgv_ShiireKakeritsu.DataSource = dvMain;
+
                 }
         }
         private void SearchData()

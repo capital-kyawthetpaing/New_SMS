@@ -341,6 +341,7 @@ namespace TempoRegiSeisanTouroku
                 txtHanging.Text = stringArr[11];
                 txtVISA.Text = stringArr[12];
                 txtJCB.Text = stringArr[13];
+                txtOther.Text = stringArr[14];
 
 
             }
@@ -361,6 +362,7 @@ namespace TempoRegiSeisanTouroku
                 txtHanging.Text = "0";
                 txtVISA.Text = "0";
                 txtJCB.Text = "0";
+                txtOther.Text = "0";
             }
             #endregion
 

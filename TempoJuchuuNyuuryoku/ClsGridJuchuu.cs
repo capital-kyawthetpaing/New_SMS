@@ -47,6 +47,10 @@ namespace TempoJuchuuNyuuryoku
             internal bool NotPrintFLG;
             internal bool ChkTyokuso;
             internal bool ChkFuyo;
+            internal bool ChkExpress;
+            internal string ShippingPlanDate;
+            internal string OrderUnitPrice;
+            //internal string OrderGaku;
 
             //隠し項目
             internal int DiscountKbn;   //SKUマスタ値引き区分
@@ -55,7 +59,7 @@ namespace TempoJuchuuNyuuryoku
             internal int VariousFLG;    //1:Various(諸口)
             internal string TaniCD;
             internal string Site;
-            internal decimal MitsumoriTax;  //通常税額(Hidden)
+            internal decimal JuchuTax;  //通常税額(Hidden)
             internal decimal KeigenTax;      //軽減税額(Hidden)
             internal decimal Tax;       //税額(Hidden)
             internal int juchuGyoNO;    //受注行番号(Hidden)
@@ -64,6 +68,11 @@ namespace TempoJuchuuNyuuryoku
             internal string KariHikiateNO;  //仮引当番号
             internal bool NotReCalc;//単価再計算しない場合はTrue
             internal int copyJuchuGyoNO;    //複写元受注行番号(Hidden)単価再計算をするかどうかの判断するためだけの情報
+            //internal decimal OrderTax;          //通常税額(Hidden)
+            //internal decimal KeigenOrderTax;    //軽減税額(Hidden)
+            //internal decimal OrderTaxRitsu;
+            internal string MakerItem;
+            internal string JuchuuNO;
         }
 
         //列番号定数
@@ -82,6 +91,10 @@ namespace TempoJuchuuNyuuryoku
             Space2,
 
             ChkFuyo,
+            ChkExpress,
+            ShippingPlanDate,
+            ChkTyokuso,
+
             Space1,
             JuchuuSuu,           // 受注数
             TaniCD,                 // 単位 
@@ -95,12 +108,13 @@ namespace TempoJuchuuNyuuryoku
             JuchuuOrderNO,      //発注番号
             VendorCD,           //発注先
             VendorName,         //発注先名
-            ChkTyokuso,
             ArrivePlanDate,     //入荷予定日
             PaymentPlanDate,    //支払予定日
             CollectClearDate,   //入金日
             Nyuka,          //入荷進捗
             Syukka,         //出荷進捗
+            OrderUnitPrice,
+            //OrderGaku,
 
             CostUnitPrice,      // 原価単価
             CostGaku,           //原価額
@@ -138,6 +152,7 @@ namespace TempoJuchuuNyuuryoku
             int w_Row;
             int w_CtlRow;
             int w_CtlCol;
+
             BL.Base_BL bbl = new BL.Base_BL();
 
             if (pStartRow != pScrool.Value)
@@ -177,6 +192,13 @@ namespace TempoJuchuuNyuuryoku
                 w_CtlCol = (int)ColNO.ChkFuyo;
 
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkFuyo);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
+
+                w_CtlCol = (int)ColNO.ChkExpress;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ChkExpress);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           //TABSTOP制御
@@ -547,6 +569,56 @@ namespace TempoJuchuuNyuuryoku
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                w_CtlCol = (int)ColNO.ShippingPlanDate;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].ShippingPlanDate);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                w_CtlCol = (int)ColNO.OrderUnitPrice;
+
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].OrderUnitPrice);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                //マイナスPrice対応
+                if (bbl.Z_Set(g_DArray[w_Row].OrderUnitPrice) < 0)
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.Color.Red;
+                }
+                else
+                {
+                    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
+                }
+
+                //w_CtlCol = (int)ColNO.OrderGaku;
+
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SVal(g_DArray[w_Row].OrderGaku);
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SEnabled(g_MK_State[w_CtlCol, w_Row].Cell_Enabled);
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SReadOnly(g_MK_State[w_CtlCol, w_Row].Cell_ReadOnly);
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SDisabledBackColor(F_GetBackColor_MK(w_CtlCol, w_Row));
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.TabStop = F_GetTabStop(w_CtlCol, w_Row);           // TABSTOP制御
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].SBold(g_MK_State[w_CtlCol, w_Row].Cell_Bold);
+
+                ////マイナスPrice対応
+                //if (bbl.Z_Set(g_DArray[w_Row].OrderGaku) < 0)
+                //{
+                //    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.Color.Red;
+                //}
+                //else
+                //{
+                //    g_MK_Ctrl[w_CtlCol, w_CtlRow].CellCtl.ForeColor = System.Drawing.SystemColors.WindowText;
+                //}
             }
         }
 
@@ -567,6 +639,10 @@ namespace TempoJuchuuNyuuryoku
                 //
                 w_CtlCol = (int)ColNO.ChkFuyo;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkFuyo);
+
+                //
+                w_CtlCol = (int)ColNO.ChkExpress;
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkExpress);
 
                 w_CtlCol = (int)ColNO.ChkTyokuso;
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ChkTyokuso);
@@ -684,6 +760,15 @@ namespace TempoJuchuuNyuuryoku
 
                 w_CtlCol = (int)ColNO.Syukka;   //出荷進捗
                 g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].Syukka);
+
+                w_CtlCol = (int)ColNO.ShippingPlanDate;   //出荷予定日
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].ShippingPlanDate);
+
+                w_CtlCol = (int)ColNO.OrderUnitPrice;   //発注単価
+                g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderUnitPrice);
+
+                //w_CtlCol = (int)ColNO.OrderGaku;   //発注額
+                //g_MK_Ctrl[w_CtlCol, w_CtlRow].GVal(out g_DArray[w_Row].OrderGaku);
             }
         }
 
