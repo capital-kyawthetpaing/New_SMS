@@ -85,6 +85,7 @@
             this.txtDiscount.IntegerPart = 9;
             this.txtDiscount.IsCorrectDate = false;
             this.txtDiscount.isEnterKeyDown = false;
+            this.txtDiscount.IsFirstTime = true;
             this.txtDiscount.isMaxLengthErr = false;
             this.txtDiscount.IsNumber = false;
             this.txtDiscount.IsShop = false;
@@ -130,6 +131,7 @@
             this.txtPoint.IntegerPart = 9;
             this.txtPoint.IsCorrectDate = true;
             this.txtPoint.isEnterKeyDown = false;
+            this.txtPoint.IsFirstTime = true;
             this.txtPoint.isMaxLengthErr = false;
             this.txtPoint.IsNumber = true;
             this.txtPoint.IsShop = false;
@@ -193,6 +195,7 @@
             this.txtKake.IntegerPart = 9;
             this.txtKake.IsCorrectDate = true;
             this.txtKake.isEnterKeyDown = false;
+            this.txtKake.IsFirstTime = true;
             this.txtKake.isMaxLengthErr = false;
             this.txtKake.IsNumber = false;
             this.txtKake.IsShop = false;
@@ -324,7 +327,7 @@
             this.btnOther1.Location = new System.Drawing.Point(56, 419);
             this.btnOther1.Margin = new System.Windows.Forms.Padding(1);
             this.btnOther1.Name = "btnOther1";
-            this.btnOther1.Size = new System.Drawing.Size(200, 42);
+            this.btnOther1.Size = new System.Drawing.Size(200, 45);
             this.btnOther1.TabIndex = 14;
             this.btnOther1.Text = "その他①";
             this.btnOther1.UseVisualStyleBackColor = false;
@@ -343,7 +346,7 @@
             this.btnOther2.Location = new System.Drawing.Point(56, 472);
             this.btnOther2.Margin = new System.Windows.Forms.Padding(1);
             this.btnOther2.Name = "btnOther2";
-            this.btnOther2.Size = new System.Drawing.Size(200, 42);
+            this.btnOther2.Size = new System.Drawing.Size(200, 45);
             this.btnOther2.TabIndex = 15;
             this.btnOther2.Text = "その他②";
             this.btnOther2.UseVisualStyleBackColor = false;
@@ -380,6 +383,7 @@
             this.txtCash.IntegerPart = 9;
             this.txtCash.IsCorrectDate = true;
             this.txtCash.isEnterKeyDown = false;
+            this.txtCash.IsFirstTime = true;
             this.txtCash.isMaxLengthErr = false;
             this.txtCash.IsNumber = true;
             this.txtCash.IsShop = false;
@@ -424,7 +428,7 @@
             this.btnPoint.Location = new System.Drawing.Point(56, 366);
             this.btnPoint.Margin = new System.Windows.Forms.Padding(1);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(200, 42);
+            this.btnPoint.Size = new System.Drawing.Size(200, 45);
             this.btnPoint.TabIndex = 13;
             this.btnPoint.Text = "ポイント";
             this.btnPoint.UseVisualStyleBackColor = false;
@@ -443,7 +447,7 @@
             this.btnCard.Location = new System.Drawing.Point(56, 524);
             this.btnCard.Margin = new System.Windows.Forms.Padding(1);
             this.btnCard.Name = "btnCard";
-            this.btnCard.Size = new System.Drawing.Size(200, 42);
+            this.btnCard.Size = new System.Drawing.Size(200, 45);
             this.btnCard.TabIndex = 16;
             this.btnCard.Text = "カード";
             this.btnCard.UseVisualStyleBackColor = false;
@@ -462,7 +466,7 @@
             this.btnAzukari.Location = new System.Drawing.Point(486, 577);
             this.btnAzukari.Margin = new System.Windows.Forms.Padding(1);
             this.btnAzukari.Name = "btnAzukari";
-            this.btnAzukari.Size = new System.Drawing.Size(150, 42);
+            this.btnAzukari.Size = new System.Drawing.Size(150, 45);
             this.btnAzukari.TabIndex = 18;
             this.btnAzukari.Text = "預　り";
             this.btnAzukari.UseVisualStyleBackColor = false;
@@ -481,7 +485,7 @@
             this.btnKake.Location = new System.Drawing.Point(56, 631);
             this.btnKake.Margin = new System.Windows.Forms.Padding(1);
             this.btnKake.Name = "btnKake";
-            this.btnKake.Size = new System.Drawing.Size(200, 42);
+            this.btnKake.Size = new System.Drawing.Size(200, 45);
             this.btnKake.TabIndex = 19;
             this.btnKake.Text = "掛";
             this.btnKake.UseVisualStyleBackColor = false;
@@ -500,7 +504,7 @@
             this.btnCash.Location = new System.Drawing.Point(56, 577);
             this.btnCash.Margin = new System.Windows.Forms.Padding(1);
             this.btnCash.Name = "btnCash";
-            this.btnCash.Size = new System.Drawing.Size(200, 42);
+            this.btnCash.Size = new System.Drawing.Size(200, 45);
             this.btnCash.TabIndex = 17;
             this.btnCash.Text = "現　金";
             this.btnCash.UseVisualStyleBackColor = false;
@@ -606,6 +610,7 @@
             this.txtOther1.IntegerPart = 9;
             this.txtOther1.IsCorrectDate = true;
             this.txtOther1.isEnterKeyDown = false;
+            this.txtOther1.IsFirstTime = true;
             this.txtOther1.isMaxLengthErr = false;
             this.txtOther1.IsNumber = true;
             this.txtOther1.IsShop = false;
@@ -635,6 +640,7 @@
             this.txtOther2.IntegerPart = 9;
             this.txtOther2.IsCorrectDate = true;
             this.txtOther2.isEnterKeyDown = false;
+            this.txtOther2.IsFirstTime = true;
             this.txtOther2.isMaxLengthErr = false;
             this.txtOther2.IsNumber = true;
             this.txtOther2.IsShop = false;
@@ -664,6 +670,7 @@
             this.txtCard.IntegerPart = 9;
             this.txtCard.IsCorrectDate = true;
             this.txtCard.isEnterKeyDown = false;
+            this.txtCard.IsFirstTime = true;
             this.txtCard.isMaxLengthErr = false;
             this.txtCard.IsNumber = true;
             this.txtCard.IsShop = false;
@@ -693,6 +700,7 @@
             this.txtAzukari.IntegerPart = 9;
             this.txtAzukari.IsCorrectDate = true;
             this.txtAzukari.isEnterKeyDown = false;
+            this.txtAzukari.IsFirstTime = true;
             this.txtAzukari.isMaxLengthErr = false;
             this.txtAzukari.IsNumber = true;
             this.txtAzukari.IsShop = false;
@@ -834,7 +842,7 @@
             this.btnMaeuke.Location = new System.Drawing.Point(56, 313);
             this.btnMaeuke.Margin = new System.Windows.Forms.Padding(1);
             this.btnMaeuke.Name = "btnMaeuke";
-            this.btnMaeuke.Size = new System.Drawing.Size(200, 42);
+            this.btnMaeuke.Size = new System.Drawing.Size(200, 45);
             this.btnMaeuke.TabIndex = 102;
             this.btnMaeuke.Text = "前受金から";
             this.btnMaeuke.UseVisualStyleBackColor = false;
@@ -855,6 +863,7 @@
             this.txtMaeuke.IntegerPart = 9;
             this.txtMaeuke.IsCorrectDate = true;
             this.txtMaeuke.isEnterKeyDown = false;
+            this.txtMaeuke.IsFirstTime = true;
             this.txtMaeuke.isMaxLengthErr = false;
             this.txtMaeuke.IsNumber = true;
             this.txtMaeuke.IsShop = false;
