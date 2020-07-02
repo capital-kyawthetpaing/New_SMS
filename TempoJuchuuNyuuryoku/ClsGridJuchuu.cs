@@ -68,10 +68,11 @@ namespace TempoJuchuuNyuuryoku
             internal string KariHikiateNO;  //仮引当番号
             internal bool NotReCalc;//単価再計算しない場合はTrue
             internal int copyJuchuGyoNO;    //複写元受注行番号(Hidden)単価再計算をするかどうかの判断するためだけの情報
-            internal decimal OrderTax;          //通常税額(Hidden)
-            internal decimal KeigenOrderTax;    //軽減税額(Hidden)
+            //internal decimal OrderTax;          //通常税額(Hidden)
+            //internal decimal KeigenOrderTax;    //軽減税額(Hidden)
             //internal decimal OrderTaxRitsu;
             internal string MakerItem;
+            internal string JuchuuNO;
         }
 
         //列番号定数
