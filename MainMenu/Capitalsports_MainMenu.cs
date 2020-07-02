@@ -162,7 +162,7 @@ namespace MainMenu
                         {
                             if (((CKM_Button)ctrl).Name == "btn_Proj" + Convert.ToInt32(k.Rows[j]["ProgramSEQ"].ToString()))
                             {
-                                if (!Base_DL.iniEntity.IsDM_D30Used && k.Rows[j]["ProgramID_ID"].ToString() == "CDO")
+                                if (!Base_DL.iniEntity.IsDM_D30Used && k.Rows[j]["ProgramID_ID"].ToString() == "CashDrawerOpen")
                                 {
                                     ((CKM_Button)ctrl).Text = "";
                                     ((CKM_Button)ctrl).Enabled = false;
@@ -355,46 +355,50 @@ namespace MainMenu
                 var programID = (sender as CKM_Button).Text;
                 var exe_name = menu.Select("ProgramID = '" + programID + "'").CopyToDataTable().Rows[0]["ProgramID_ID"].ToString();
 
-                if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CDO")
+                if (Base_DL.iniEntity.IsDM_D30Used && exe_name == "CashDrawerOpen")
                 {
                     CashDrawerOpen op = new CashDrawerOpen();
                     op.OpenCashDrawer();
                 }
-                //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-                string filePath = "";
-                //System.Diagnostics.Debug 
-                if (Debugger.IsAttached || Login_BL.Islocalized)
-                {
-                    System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
-                    filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
-                }
                 else
+
                 {
-                    filePath = @"C:\\SMS\\AppData";
-                }
-                string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
-                //Process[] localByName = Process.GetProcessesByName(exe_name);
-                //if (localByName.Count() > 0)
-                //{
-                //    IntPtr handle = localByName[0].MainWindowHandle;
-                //    ShowWindow(handle, SW_SHOWMAXIMIZED);
-                //    return;
-                //}
+                    //System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                    //string filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                    string filePath = "";
+                    //System.Diagnostics.Debug 
+                    if (Debugger.IsAttached || Login_BL.Islocalized)
+                    {
+                        System.Uri u = new System.Uri(System.Reflection.Assembly.GetExecutingAssembly().CodeBase);
+                        filePath = System.IO.Path.GetDirectoryName(u.LocalPath);
+                    }
+                    else
+                    {
+                        filePath = @"C:\\SMS\\AppData";
+                    }
+                    string cmdLine = " " + "01" + " " + mse.StaffCD + " " + Login_BL.GetHostName();
+                    //Process[] localByName = Process.GetProcessesByName(exe_name);
+                    //if (localByName.Count() > 0)
+                    //{
+                    //    IntPtr handle = localByName[0].MainWindowHandle;
+                    //    ShowWindow(handle, SW_SHOWMAXIMIZED);
+                    //    return;
+                    //}
 
-                Process[] localByName = Process.GetProcessesByName(exe_name);
-                if (localByName.Count() > 0)
-                {
+                    Process[] localByName = Process.GetProcessesByName(exe_name);
+                    if (localByName.Count() > 0)
+                    {
 
 
-                    IntPtr handle = localByName[0].MainWindowHandle;
-                    ShowWindow(handle, SW_SHOWMAXIMIZED);
-                    SetForegroundWindow(handle);
+                        IntPtr handle = localByName[0].MainWindowHandle;
+                        ShowWindow(handle, SW_SHOWMAXIMIZED);
+                        SetForegroundWindow(handle);
 
 
-                    return;
-                }
+                        return;
+                    }
                 (sender as CKM_Button).Tag = System.Diagnostics.Process.Start(filePath + @"\" + exe_name + ".exe", cmdLine + "");
+                }
             }
             catch (Exception ex)
             {
