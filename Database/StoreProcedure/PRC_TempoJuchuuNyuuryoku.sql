@@ -748,16 +748,19 @@ BEGIN
             UPDATE [D_Stock]
                SET [AllowableSu] = [D_Stock].[AllowableSu] + A.ReserveSu
                   ,[AnotherStoreAllowableSu] = [D_Stock].[AnotherStoreAllowableSu] + A.ReserveSu
-                  ,[ReserveSu] = [D_Stock].[ShippingSu] - A.ReserveSu
+                  ,[ReserveSu] = [D_Stock].[ReserveSu] - A.ReserveSu
                   ,[UpdateOperator] = @Operator
                   ,[UpdateDateTime] = @SYSDATETIME
-             FROM D_Reserve AS A 
+             FROM (SELECT R.StockNO, SUM(R.ReserveSu) AS ReserveSu 
+                    FROM D_Reserve AS R
+                    WHERE R.ReserveKBN = 1
+                    AND R.DeleteDateTime IS NULL
+                     AND ((@Tennic = 0 AND R.[Number] = @JuchuuNO)
+                        OR (@Tennic = 1 AND R.[Number] IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
+                                                WHERE H.JuchuuProcessNO = @JuchuuProcessNO
+                                                AND H.DeleteDateTime IS NULL)))
+                	GROUP BY R.StockNO)AS A 
              WHERE A.StockNO = [D_Stock].StockNO
-             AND A.DeleteDateTime IS NULL
-             AND A.ReserveKBN = 1
-             AND ((@Tennic = 0 AND A.[Number] = @JuchuuNO)
-                OR (@Tennic = 1 AND A.[Number] IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO)))
              ;
              
             --ログのSEQ獲得のために更新
@@ -766,7 +769,8 @@ BEGIN
                ,[UpdateDateTime]     =  @SYSDATETIME
             WHERE ((@Tennic = 0 AND JuchuuNO = @JuchuuNO)
                 OR (@Tennic = 1 AND JuchuuNO IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO)))
+                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
+                                        AND H.DeleteDateTime IS NULL)))
             ;
             
              --20200225　テーブル転送仕様Ｊ②
@@ -782,7 +786,8 @@ BEGIN
             AND A.NumberRows = D_JuchuuDetails.JuchuuRows
             AND ((@Tennic = 0 AND D_JuchuuDetails.JuchuuNO = @JuchuuNO)
             	OR (@Tennic = 1 AND  D_JuchuuDetails.JuchuuNO IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO)))
+                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
+                                        AND H.DeleteDateTime IS NULL)))
 			AND D_JuchuuDetails.DeleteDateTime IS NULL
             ;
              
