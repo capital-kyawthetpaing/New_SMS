@@ -9,6 +9,7 @@ namespace Entity
     public class D_Juchuu_Entity : Base_Entity
     {
         public string JuchuuNO { get; set; }
+        public string JuchuuProcessNO { get; set; }
         public string StoreCD { get; set; }
         public string JuchuuDate { get; set; }
         public string JuchuuTime { get; set; }

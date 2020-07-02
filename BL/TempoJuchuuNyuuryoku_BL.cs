@@ -47,18 +47,18 @@ namespace BL
         /// 受注入力更新処理
         /// TempoJuchuuNyuuryokuより更新時に使用
         /// </summary>
-        public bool Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode, string operatorNm, string pc)
+        public bool Juchu_Exec(D_Juchuu_Entity dme, DataTable dt, short operationMode)
         {
-            return mdl.D_Juchu_Exec(dme, dt, operationMode, operatorNm, pc);
+            return mdl.D_Juchu_Exec(dme, dt, operationMode);
         }
 
         /// <summary>
         /// 受注入力取得処理
         /// TempoJuchuuNyuuryokuよりデータ抽出時に使用
         /// </summary>
-        public DataTable D_Juchu_SelectData(D_Juchuu_Entity de, short operationMode)
+        public DataTable D_Juchu_SelectData(D_Juchuu_Entity de, short operationMode, short tennic = 0)
         {
-            DataTable dt = mdl.D_Juchu_SelectData(de, operationMode);
+            DataTable dt = mdl.D_Juchu_SelectData(de, operationMode, tennic);
 
             return dt;
         }

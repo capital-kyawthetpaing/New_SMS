@@ -289,6 +289,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 }
 
             }
+
             if(type==2)
             {
                 if (lblNameNO.Text.Equals("Btn2_No") || lblNameNO.Text.Equals(""))
@@ -300,16 +301,40 @@ namespace TempoRegi_Master_Nyuuryoku
 
                 if(!string.IsNullOrWhiteSpace(txtCD.Text))
                 {
-                    DataTable dtSKU = SelectSKUData(txtCD.Text);
-                    if (dtSKU.Rows.Count <= 0)
+                    if(RdoJanCD.Checked)
                     {
-                        bbl.ShowMessage("E101");
-                        txtCD.Focus();
-                        return false;
+                        DataTable dtSKU = SelectSKUData(txtCD.Text);
+                        if (dtSKU.Rows.Count <= 0)
+                        {
+                            bbl.ShowMessage("E101");
+                            txtCD.Focus();
+                            return false;
+                        }
+                    }
+
+                    if (RdoCustomerCD.Checked)
+                    {
+                        DataTable dtCusto = SelectCustomerData(txtCD.Text);
+                        if (dtCusto.Rows.Count <= 0)
+                        {
+                            bbl.ShowMessage("E101");
+                            txtCD.Focus();
+                            return false;
+                        }
+
+                        else
+                        {
+                            DataRow[] dr = dtCusto.Select("DeleteFlg=1");
+                            if (dr.Count() > 0)
+                            {
+                                bbl.ShowMessage("E119");
+                                txtCD.Focus();
+                                return false;
+                            }
+                        }
                     }
                 }
                 
-
                 if (!string.IsNullOrWhiteSpace(txtCD.Text) && string.IsNullOrWhiteSpace(txtBtnNameDown.Text))
                 {
                     bbl.ShowMessage("E102");
