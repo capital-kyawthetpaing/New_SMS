@@ -288,7 +288,7 @@ namespace TempoShukkaNyuuryoku
             txtShippingSu.Text = bbl.Z_SetStr(row["ShippingSu"]);
 
             lblJuchuuUnitPrice.Text = "\\" + bbl.Z_SetStr(row["JuchuuUnitPrice"]);
-            lblSalesGaku.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
+            lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(row["SalesGaku"]);
             lblSalesTax.Text = "\\" + bbl.Z_SetStr(row["SalesTax"]);
             lblJuchuuTaxRitsu.Text = bbl.Z_SetStr(row["JuchuuTaxRitsu"]) + "%";
 
@@ -453,14 +453,14 @@ namespace TempoShukkaNyuuryoku
 
                 //お買上額等の計算を行う
                 //お買上額←form.単価×	出荷数
-                lblSalesGaku.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
+                lblJuchuuSuu.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuUnitPrice.Text.Replace("\\", "")) * bbl.Z_Set(txtShippingSu.Text));
 
                 //うち税額 Function_消費税計算.out金額１
                 int taxRateFLG = Convert.ToInt16(dtJuchu.Rows[(int)txtJanCD.Tag]["TaxRateFLG"]);
                 string ymd = dtJuchu.Rows[(int)txtJanCD.Tag]["JuchuuDate"].ToString();
 
-                decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")), taxRateFLG, ymd);
-                lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text.Replace("\\", "")) - zeinukiKin);
+                decimal zeinukiKin = bbl.GetZeinukiKingaku(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")), taxRateFLG, ymd);
+                lblSalesTax.Text = "\\" + bbl.Z_SetStr(bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", "")) - zeinukiKin);
             }
             if (kbn == 0 || kbn == 3)
             {
@@ -941,7 +941,7 @@ namespace TempoShukkaNyuuryoku
                 DataRow row = dtJuchu.Rows[index];
 
                 row["ShippingSu"] = bbl.Z_Set(txtShippingSu.Text);
-                row["SalesGaku"] = bbl.Z_Set(lblSalesGaku.Text.Replace("\\", ""));
+                row["SalesGaku"] = bbl.Z_Set(lblJuchuuSuu.Text.Replace("\\", ""));
                 row["SalesTax"] = bbl.Z_Set(lblSalesTax.Text.Replace("\\", ""));
 
                 DispFromDataTable(Convert.ToInt16(lblDtGyo1.Text));
