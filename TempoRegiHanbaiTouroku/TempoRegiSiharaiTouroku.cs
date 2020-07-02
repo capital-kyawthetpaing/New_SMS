@@ -104,7 +104,7 @@ namespace TempoRegiHanbaiTouroku
                 dce.AdvanceFLG = "1";
 
                  mMaeuke= tprg_Hanbai_Bl.GetMaeukeKin(dce);
-                lblMaeZan1.Text=mMaeuke;
+                lblMaeZan.Text=mMaeuke;
 
                 if (OperationMode!= FrmMainForm.EOperationMode.DELETE)
                 {
@@ -117,38 +117,38 @@ namespace TempoRegiHanbaiTouroku
                     }
                  
                     //第二画面（支払画面）表示	画面転送表02	
-                    lblJuchuuTaxRitsu1.Text = dse.SalesNO;
-                    lblSalesGaku1.Text = bbl.Z_SetStr(dse.SalesGaku);
-                    lblZei1.Text = bbl.Z_SetStr(dse.SalesTax);
+                    lblJuchuuTaxRitsu.Text = dse.SalesNO;
+                    lblSalesGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    lblZei.Text = bbl.Z_SetStr(dse.SalesTax);
                     txtDiscount.Text = "0";
-                    lblSeikyuGaku1.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    lblSeikyuGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
                     txtPoint.Text = "0";
                     txtCash.Text = "0";
                     txtAzukari.Text = "0";
-                    lblRefund1.Text = "0";
+                    lblRefund.Text = "0";
                     txtCard.Text = "0";
                     txtKake.Text = "0";
                     txtMaeuke.Text = "0";
                     txtOther1.Text = "0";
                     txtOther2.Text = "0";
-                    lblShiharaiKei1.Text = "0";
-                    lblZan1.Text = bbl.Z_SetStr(dse.LastPoint);
+                    lblShiharaiKei.Text = "0";
+                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     txtDiscount.Focus();
                 }
                 else
                 {
-                    lblJuchuuTaxRitsu1.Text = dse.SalesNO;
-                    lblSalesGaku1.Text = bbl.Z_SetStr(dse.SalesGaku);
-                    lblZei1.Text = bbl.Z_SetStr(dse.SalesTax);
+                    lblJuchuuTaxRitsu.Text = dse.SalesNO;
+                    lblSalesGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    lblZei.Text = bbl.Z_SetStr(dse.SalesTax);
                     txtDiscount.Text = bbl.Z_SetStr(dspe.DiscountAmount) ;
-                    lblSeikyuGaku1.Text = bbl.Z_SetStr(dse.SalesGaku);
+                    lblSeikyuGaku.Text = bbl.Z_SetStr(dse.SalesGaku);
 
                     txtMaeuke.Text = bbl.Z_SetStr(dspe.AdvanceAmount);
                     txtPoint.Text = bbl.Z_SetStr(dspe.PointAmount);
                     txtCash.Text = bbl.Z_SetStr(dspe.CashAmount);
                     txtAzukari.Text = bbl.Z_SetStr(dspe.DepositAmount);
-                    lblRefund1.Text = bbl.Z_SetStr(dspe.RefundAmount);
+                    lblRefund.Text = bbl.Z_SetStr(dspe.RefundAmount);
                     txtCard.Text = bbl.Z_SetStr(dspe.CardAmount);
                     if(!string.IsNullOrWhiteSpace(dspe.CardDenominationCD))
                         cboCardDenominationCD.SelectedValue = dspe.CardDenominationCD;
@@ -161,8 +161,8 @@ namespace TempoRegiHanbaiTouroku
                     if (!string.IsNullOrWhiteSpace(dspe.Denomination2CD))
                         cboDenominationName2.SelectedValue = dspe.Denomination2CD;
                     txtKake.Text = bbl.Z_SetStr(dspe.CreditAmount);
-                    lblShiharaiKei1.Text = "0";
-                    lblZan1.Text = bbl.Z_SetStr(dse.LastPoint);
+                    lblShiharaiKei.Text = "0";
+                    lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                     btnProcess.Focus();
                 }
@@ -247,10 +247,10 @@ namespace TempoRegiHanbaiTouroku
         private void Calkkin()
         {            
             //お釣＝預り					－	現金
-            lblRefund1.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
+            lblRefund.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
 
             //お支払計＝ポイント＋その他①＋	その他②＋	カード＋現金 ＋	掛＋前受金から
-            lblShiharaiKei1.Text = bbl.Z_SetStr(bbl.Z_Set(txtPoint.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text) + bbl.Z_Set(txtCard.Text)
+            lblShiharaiKei.Text = bbl.Z_SetStr(bbl.Z_Set(txtPoint.Text) + bbl.Z_Set(txtOther1.Text) + bbl.Z_Set(txtOther2.Text) + bbl.Z_Set(txtCard.Text)
                                 + bbl.Z_Set(txtCash.Text) + bbl.Z_Set(txtKake.Text) + bbl.Z_Set(txtMaeuke.Text));
 
         }
@@ -295,7 +295,7 @@ namespace TempoRegiHanbaiTouroku
             {
                 //値引き 
                 //ご請求額＝お買上額計－値引		
-                lblSeikyuGaku1.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku1.Text) - bbl.Z_Set(txtDiscount.Text));
+                lblSeikyuGaku.Text = bbl.Z_SetStr(bbl.Z_Set(lblSalesGaku.Text) - bbl.Z_Set(txtDiscount.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.MAEUKE)
             {
@@ -309,7 +309,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //前受け金
-                lblMaeZan1.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
+                lblMaeZan.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.POINT)
             {
@@ -324,7 +324,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //入力されたらポイント残＝ポイント残－ポイント
-                lblZan1.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
+                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint)-bbl.Z_Set(txtPoint.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.OTHER1)
             {
@@ -415,7 +415,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //お釣＝預り					－	現金
-                lblRefund1.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
+                lblRefund.Text = bbl.Z_SetStr(bbl.Z_Set(txtAzukari.Text) - bbl.Z_Set(txtCash.Text));
             }
             if (kbn == (int)meCol.ALL || kbn == (int)meCol.KAKE)
             {
@@ -446,11 +446,11 @@ namespace TempoRegiHanbaiTouroku
         private void GetEntity()
         {
             //dspe  = new  D_StorePayment_Entity();
-            dspe.BillingAmount = bbl.Z_SetStr(lblSeikyuGaku1.Text);
+            dspe.BillingAmount = bbl.Z_SetStr(lblSeikyuGaku.Text);
             dspe.PointAmount = bbl.Z_SetStr(txtPoint.Text);
             dspe.CashAmount = bbl.Z_SetStr(txtCash.Text);
             dspe.DepositAmount = bbl.Z_SetStr(txtAzukari.Text);
-            dspe.RefundAmount = bbl.Z_SetStr(lblRefund1.Text);
+            dspe.RefundAmount = bbl.Z_SetStr(lblRefund.Text);
 
             if (cboCardDenominationCD.SelectedIndex != -1)
                 if(!cboCardDenominationCD.SelectedValue.Equals("-1"))
@@ -472,7 +472,7 @@ namespace TempoRegiHanbaiTouroku
 
             dspe.Denomination2Amount = bbl.Z_SetStr(txtOther2.Text);
             dspe.AdvanceAmount = bbl.Z_SetStr(txtMaeuke.Text);
-            dspe.TotalAmount = bbl.Z_SetStr(lblShiharaiKei1.Text);
+            dspe.TotalAmount = bbl.Z_SetStr(lblShiharaiKei.Text);
             dspe.SalesRate = bbl.Z_SetStr(ParSaleRate);
 
         }
@@ -541,7 +541,7 @@ namespace TempoRegiHanbaiTouroku
                 if (kbn == 0)
                 {
                     //ご請求額＝お支払計でない場合、エラーカーソルは現金欄へ					
-                    if (bbl.Z_Set(lblSeikyuGaku1.Text) != bbl.Z_Set(lblShiharaiKei1.Text))
+                    if (bbl.Z_Set(lblSeikyuGaku.Text) != bbl.Z_Set(lblShiharaiKei.Text))
                     {
                         //Ｅ１８３				
                         bbl.ShowMessage("E183");
@@ -561,7 +561,7 @@ namespace TempoRegiHanbaiTouroku
                     dtUpdate = GetGridEntity();
                     bool ret = tprg_Hanbai_Bl.PRC_TempoRegiHanbaiTouroku(dse, dspe, dtUpdate, (short)OperationMode);
 
-                    lblJuchuuTaxRitsu1.Text = dse.SalesNO;
+                    lblJuchuuTaxRitsu.Text = dse.SalesNO;
 
                     string reissue = OperationMode ==  FrmMainForm.EOperationMode.INSERT ? "0":"1";
 
@@ -711,7 +711,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ご請求額－その他①－	その他②－	カード	－	現金－	掛－ポイントを上限に、前受金残額を自動セット							
-                decimal wMaeuke = bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
+                decimal wMaeuke = bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
                               - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text) - bbl.Z_Set(txtPoint.Text);
                 if (wMaeuke > 0)               
                 {
@@ -723,7 +723,7 @@ namespace TempoRegiHanbaiTouroku
                     txtMaeuke.Text = bbl.Z_SetStr(wMaeuke);
                 }
 
-                lblMaeZan1.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
+                lblMaeZan.Text = bbl.Z_SetStr(bbl.Z_Set(mMaeuke) - bbl.Z_Set(txtMaeuke.Text));
 
                 //お支払計＝ポイント＋その他①＋その他②＋カード＋現金＋掛
                 Calkkin();
@@ -739,7 +739,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ご請求額－その他①－その他②－カード－現金－掛を上限に、ポイント残額を自動セット
-                decimal wPoint = bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
+                decimal wPoint = bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text)
                                 - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text) - bbl.Z_Set(txtMaeuke.Text);
                 if (wPoint > 0)
                 {
@@ -752,7 +752,7 @@ namespace TempoRegiHanbaiTouroku
                 }
 
                 //ポイント残 ＝	ポイント残－ポイント
-                lblZan1.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
+                lblZan.Text = bbl.Z_SetStr(bbl.Z_Set(dse.LastPoint) - bbl.Z_Set(txtPoint.Text));
 
                 //お支払計＝ポイント＋その他①＋その他②＋カード＋現金＋掛
                 Calkkin();
@@ -769,7 +769,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //その他①＝ご請求額－その他②－カード－現金－	掛		－前受金から
-                txtOther1.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
+                txtOther1.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
                                                 - bbl.Z_Set(txtPoint.Text) - bbl.Z_Set(txtMaeuke.Text));
 
                 Calkkin();		
@@ -787,7 +787,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //その他➁＝ご請求額－その他①－カード－現金－	掛－前受金から
-                txtOther2.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
+                txtOther2.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
                                      - bbl.Z_Set(txtPoint.Text) - bbl.Z_Set(txtMaeuke.Text));
 
                 Calkkin();
@@ -805,7 +805,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //カード＝	ご請求額－	その他①－	現金－	その他②－	掛	－前受金から	
-                txtCard.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
+                txtCard.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCash.Text) - bbl.Z_Set(txtKake.Text)
                                  - bbl.Z_Set(txtPoint.Text) - bbl.Z_Set(txtMaeuke.Text));
 
                 Calkkin();
@@ -823,7 +823,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //現金＝	ご請求額－	その他①－	カード－	その他②－	掛－前受金から
-                txtCash.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku1.Text)-bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtKake.Text)
+                txtCash.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku.Text)-bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtKake.Text)
                                          - bbl.Z_Set(txtPoint.Text) - bbl.Z_Set(txtMaeuke.Text));
 
                 Calkkin();
@@ -847,7 +847,7 @@ namespace TempoRegiHanbaiTouroku
                 //預り	＝	現金
                 txtAzukari.Text = bbl.Z_SetStr(txtCash.Text);
                 //お釣              ＝	0
-                lblRefund1.Text = "0";
+                lblRefund.Text = "0";
             }
             catch (Exception ex)
             {
@@ -861,7 +861,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //掛＝	ご請求額－	その他①－	その他②－	カード－現金		－前受金から
-                txtKake.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku1.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text)
+                txtKake.Text = bbl.Z_SetStr(bbl.Z_Set(lblSeikyuGaku.Text) - bbl.Z_Set(txtOther1.Text) - bbl.Z_Set(txtOther2.Text) - bbl.Z_Set(txtCard.Text) - bbl.Z_Set(txtCash.Text)
                                          - bbl.Z_Set(txtPoint.Text) - bbl.Z_Set(txtMaeuke.Text));
 
                 Calkkin();
@@ -878,7 +878,7 @@ namespace TempoRegiHanbaiTouroku
             try
             {
                 //ポイント残					を元に戻す		
-                lblZan1.Text = bbl.Z_SetStr(dse.LastPoint);
+                lblZan.Text = bbl.Z_SetStr(dse.LastPoint);
 
                 //ポイント、その他①②、現金、預り、カード、掛、お支払計を０に。
                 txtDiscount.Text = "0";
@@ -889,9 +889,9 @@ namespace TempoRegiHanbaiTouroku
                 txtCard.Text = "0";
                 txtKake.Text = "0";
                 txtMaeuke.Text = "0";
-                lblShiharaiKei1.Text = "0";
+                lblShiharaiKei.Text = "0";
                 txtAzukari.Text = "0";
-                lblRefund1.Text = "0";
+                lblRefund.Text = "0";
 
                 //カード、その他①②の選択をクリア
                 cboDenominationName2.SelectedIndex = -1;
