@@ -385,7 +385,7 @@ namespace MasterTouroku_Tokuisaki
                             ,pnlHolidayKBN,txtRegisteredNumber
                             ,ChkNoInvoiceFlg,pnlTaxPrintKBN,cmbTaxTiming,cmbTaxFractionKBN,cmbAmountFractionKBN
                             ,cmbPaymentMethodCD,ScKouzaCD.TxtCode,cmbPaymentUnit,cmbStoreTankaKBN,ScTankaCD.TxtCode,ChkAttentionFLG,ChkConfirmFLG,txtConfirmComment
-                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditWarningAmount,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
+                            ,cmbCreditLevel,txtCreditCard,txtCreditInsurance,txtCreditDeposit,txtCreditETC,txtCreditAdditionAmount,txtDisplayOrder,txtAnalyzeCD1,txtAnalyzeCD2,txtAnalyzeCD3
                             ,ChkPointFLG,txtLastPoint,txtWaitingPoint,txtTotalPoint,txtRemarksOutStore,txtRemarksInStore,
                             CboStoreCD,ScStaff.TxtCode, checkDeleteFlg, txtCreditCheckKBN };
             detailLabels = new Control[] { ScKouzaCD, ScBillingCD, ScCollectCD,ScTankaCD, ScStaff, lblStoreName,lblLastSalesDate,lblPoint,lblMinyukin,lblKensu, lblCreditAmount};
@@ -713,8 +713,12 @@ namespace MasterTouroku_Tokuisaki
                         txtCreditDeposit.Text = bbl.Z_SetStr(mce.CreditDeposit);
                         txtCreditETC.Text = bbl.Z_SetStr(mce.CreditETC);
                         lblCreditAmount.Text = bbl.Z_SetStr(mce.CreditAmount);
-                        txtCreditWarningAmount.Text = bbl.Z_SetStr(mce.CreditWarningAmount);
+                        //txtCreditWarningAmount.Text = bbl.Z_SetStr(mce.CreditWarningAmount);
                         txtCreditAdditionAmount.Text = bbl.Z_SetStr(mce.CreditAdditionAmount);
+                        txtCreditCheckKBN.Text = mce.CreditCheckKBN;
+                        txtCreditMessage.Text = mce.CreditMessage;
+                        txtFareLevel.Text = mce.FareLevel;
+                        txtFare.Text = mce.Fare;
                         txtAnalyzeCD1.Text = mce.AnalyzeCD1;
                         txtAnalyzeCD2.Text = mce.AnalyzeCD2;
                         txtAnalyzeCD3.Text = mce.AnalyzeCD3;
@@ -1235,8 +1239,12 @@ namespace MasterTouroku_Tokuisaki
             mce.CreditDeposit= txtCreditDeposit.Text;
             mce.CreditETC = txtCreditETC.Text;
             mce.CreditAmount = lblCreditAmount.Text;
-            mce.CreditWarningAmount = txtCreditWarningAmount.Text;
+            //mce.CreditWarningAmount = txtCreditWarningAmount.Text;
             mce.CreditAdditionAmount = txtCreditAdditionAmount.Text;
+            mce.CreditCheckKBN = txtCreditCheckKBN.Text;
+            mce.CreditMessage = txtCreditMessage.Text;
+            mce.FareLevel = txtFareLevel.Text.Replace(",", "");
+            mce.Fare = txtFare.Text.Replace(",", "");
             mce.AnalyzeCD1 = txtAnalyzeCD1.Text;
             mce.AnalyzeCD2 = txtAnalyzeCD2.Text;
             mce.AnalyzeCD3 = txtAnalyzeCD3.Text;

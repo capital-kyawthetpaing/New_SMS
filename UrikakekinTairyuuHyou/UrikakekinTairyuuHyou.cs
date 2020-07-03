@@ -180,7 +180,7 @@ namespace UrikakekinTairyuuHyou
                         {
                             DataTable dtExport = dt;
                            // dtExport = ChangeDataColumnName(dtExport);
-                            string folderPath = "C:\\SES\\";
+                            string folderPath = "C:\\SMS\\";
                             if (!Directory.Exists(folderPath))
                             {
                                 Directory.CreateDirectory(folderPath);
