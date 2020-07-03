@@ -3094,7 +3094,7 @@
             this.ckmShop_Label4.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label4.FontBold = true;
             this.ckmShop_Label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label4.Location = new System.Drawing.Point(1775, 125);
+            this.ckmShop_Label4.Location = new System.Drawing.Point(1776, 125);
             this.ckmShop_Label4.Name = "ckmShop_Label4";
             this.ckmShop_Label4.Size = new System.Drawing.Size(137, 30);
             this.ckmShop_Label4.TabIndex = 76;
@@ -3179,7 +3179,7 @@
             this.ckmShop_Label10.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label10.FontBold = true;
             this.ckmShop_Label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label10.Location = new System.Drawing.Point(1691, 916);
+            this.ckmShop_Label10.Location = new System.Drawing.Point(1704, 916);
             this.ckmShop_Label10.Name = "ckmShop_Label10";
             this.ckmShop_Label10.Size = new System.Drawing.Size(199, 30);
             this.ckmShop_Label10.TabIndex = 81;
