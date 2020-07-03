@@ -150,12 +150,9 @@
             this.label34 = new CKM_Controls.CKM_Label();
             this.label29 = new CKM_Controls.CKM_Label();
             this.label26 = new CKM_Controls.CKM_Label();
-            this.label27 = new CKM_Controls.CKM_Label();
             this.label28 = new CKM_Controls.CKM_Label();
             this.label3 = new CKM_Controls.CKM_Label();
-            this.label24 = new CKM_Controls.CKM_Label();
             this.txtCreditAdditionAmount = new CKM_Controls.CKM_TextBox();
-            this.txtCreditWarningAmount = new CKM_Controls.CKM_TextBox();
             this.txtCreditCard = new CKM_Controls.CKM_TextBox();
             this.txtAnalyzeCD3 = new CKM_Controls.CKM_TextBox();
             this.txtAnalyzeCD2 = new CKM_Controls.CKM_TextBox();
@@ -483,12 +480,9 @@
             this.PanelDetail.Controls.Add(this.label34);
             this.PanelDetail.Controls.Add(this.label29);
             this.PanelDetail.Controls.Add(this.label26);
-            this.PanelDetail.Controls.Add(this.label27);
             this.PanelDetail.Controls.Add(this.label28);
             this.PanelDetail.Controls.Add(this.label3);
-            this.PanelDetail.Controls.Add(this.label24);
             this.PanelDetail.Controls.Add(this.txtCreditAdditionAmount);
-            this.PanelDetail.Controls.Add(this.txtCreditWarningAmount);
             this.PanelDetail.Controls.Add(this.txtCreditCard);
             this.PanelDetail.Controls.Add(this.txtAnalyzeCD3);
             this.PanelDetail.Controls.Add(this.txtAnalyzeCD2);
@@ -588,6 +582,7 @@
             this.txtFare.Name = "txtFare";
             this.txtFare.Size = new System.Drawing.Size(100, 19);
             this.txtFare.TabIndex = 760;
+            this.txtFare.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFare.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtFareLevel
@@ -615,6 +610,7 @@
             this.txtFareLevel.Name = "txtFareLevel";
             this.txtFareLevel.Size = new System.Drawing.Size(100, 19);
             this.txtFareLevel.TabIndex = 759;
+            this.txtFareLevel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtFareLevel.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label29
@@ -677,7 +673,7 @@
             this.ckM_Label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label26.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label26.Location = new System.Drawing.Point(159, 768);
+            this.ckM_Label26.Location = new System.Drawing.Point(159, 737);
             this.ckM_Label26.Name = "ckM_Label26";
             this.ckM_Label26.Size = new System.Drawing.Size(164, 12);
             this.ckM_Label26.TabIndex = 755;
@@ -704,12 +700,13 @@
             this.txtCreditCheckKBN.IsNumber = true;
             this.txtCreditCheckKBN.IsShop = false;
             this.txtCreditCheckKBN.Length = 1;
-            this.txtCreditCheckKBN.Location = new System.Drawing.Point(136, 764);
+            this.txtCreditCheckKBN.Location = new System.Drawing.Point(136, 733);
             this.txtCreditCheckKBN.MaxLength = 1;
             this.txtCreditCheckKBN.MoveNext = true;
             this.txtCreditCheckKBN.Name = "txtCreditCheckKBN";
-            this.txtCreditCheckKBN.Size = new System.Drawing.Size(20, 19);
+            this.txtCreditCheckKBN.Size = new System.Drawing.Size(17, 19);
             this.txtCreditCheckKBN.TabIndex = 65;
+            this.txtCreditCheckKBN.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtCreditCheckKBN.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_Label25
@@ -721,7 +718,7 @@
             this.ckM_Label25.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label25.Location = new System.Drawing.Point(24, 767);
+            this.ckM_Label25.Location = new System.Drawing.Point(24, 737);
             this.ckM_Label25.Name = "ckM_Label25";
             this.ckM_Label25.Size = new System.Drawing.Size(109, 12);
             this.ckM_Label25.TabIndex = 753;
@@ -2693,30 +2690,13 @@
             this.label26.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
             this.label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(39, 747);
+            this.label26.Location = new System.Drawing.Point(39, 717);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(96, 12);
             this.label26.TabIndex = 660;
             this.label26.Text = "与信限度加算額";
             this.label26.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label27.BackColor = System.Drawing.Color.Transparent;
-            this.label27.DefaultlabelSize = true;
-            this.label27.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.label27.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(39, 728);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(96, 12);
-            this.label27.TabIndex = 659;
-            this.label27.Text = "与信限度警告額";
-            this.label27.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label27.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label28
             // 
@@ -2752,23 +2732,6 @@
             this.label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.DefaultlabelSize = true;
-            this.label24.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Bold);
-            this.label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(220, 729);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(83, 12);
-            this.label24.TabIndex = 656;
-            this.label24.Text = "不要の場合０";
-            this.label24.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // txtCreditAdditionAmount
             // 
             this.txtCreditAdditionAmount.AllowMinus = false;
@@ -2789,7 +2752,7 @@
             this.txtCreditAdditionAmount.IsNumber = true;
             this.txtCreditAdditionAmount.IsShop = false;
             this.txtCreditAdditionAmount.Length = 20;
-            this.txtCreditAdditionAmount.Location = new System.Drawing.Point(136, 745);
+            this.txtCreditAdditionAmount.Location = new System.Drawing.Point(136, 714);
             this.txtCreditAdditionAmount.MaxLength = 20;
             this.txtCreditAdditionAmount.MoveNext = true;
             this.txtCreditAdditionAmount.Name = "txtCreditAdditionAmount";
@@ -2798,36 +2761,6 @@
             this.txtCreditAdditionAmount.Text = "999,999,999";
             this.txtCreditAdditionAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditAdditionAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // txtCreditWarningAmount
-            // 
-            this.txtCreditWarningAmount.AllowMinus = false;
-            this.txtCreditWarningAmount.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.txtCreditWarningAmount.BackColor = System.Drawing.Color.White;
-            this.txtCreditWarningAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCreditWarningAmount.ClientColor = System.Drawing.Color.White;
-            this.txtCreditWarningAmount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.txtCreditWarningAmount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.txtCreditWarningAmount.DecimalPlace = 0;
-            this.txtCreditWarningAmount.Font = new System.Drawing.Font("MS Gothic", 9F);
-            this.txtCreditWarningAmount.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.txtCreditWarningAmount.IntegerPart = 9;
-            this.txtCreditWarningAmount.IsCorrectDate = true;
-            this.txtCreditWarningAmount.isEnterKeyDown = false;
-            this.txtCreditWarningAmount.IsFirstTime = true;
-            this.txtCreditWarningAmount.isMaxLengthErr = false;
-            this.txtCreditWarningAmount.IsNumber = true;
-            this.txtCreditWarningAmount.IsShop = false;
-            this.txtCreditWarningAmount.Length = 20;
-            this.txtCreditWarningAmount.Location = new System.Drawing.Point(136, 726);
-            this.txtCreditWarningAmount.MaxLength = 20;
-            this.txtCreditWarningAmount.MoveNext = true;
-            this.txtCreditWarningAmount.Name = "txtCreditWarningAmount";
-            this.txtCreditWarningAmount.Size = new System.Drawing.Size(80, 19);
-            this.txtCreditWarningAmount.TabIndex = 51;
-            this.txtCreditWarningAmount.Text = "999,999,999";
-            this.txtCreditWarningAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCreditWarningAmount.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // txtCreditCard
             // 
@@ -3632,13 +3565,10 @@
         private CKM_Controls.CKM_Label label30;
         private CKM_Controls.CKM_Label label29;
         private CKM_Controls.CKM_Label label26;
-        private CKM_Controls.CKM_Label label27;
         private CKM_Controls.CKM_Label label28;
         private CKM_Controls.CKM_Label label3;
-        private CKM_Controls.CKM_Label label24;
         private CKM_Controls.CKM_Label label25;
         private CKM_Controls.CKM_TextBox txtCreditAdditionAmount;
-        private CKM_Controls.CKM_TextBox txtCreditWarningAmount;
         private CKM_Controls.CKM_TextBox txtCreditCard;
         private CKM_Controls.CKM_TextBox txtAnalyzeCD3;
         private CKM_Controls.CKM_TextBox txtAnalyzeCD2;
