@@ -1784,17 +1784,15 @@ BEGIN
                                     WHEN D_JuchuuDetails.HikiateSu + A.ReserveSu = 0 THEN 3
                                     ELSE 0 END )
                     FROM D_TemporaryReserve A
-                    /*INNER JOIN @Table tbl 
+                    INNER JOIN @Table tbl 
                     ON ((@Tennic = 0 AND tbl.JuchuuRows = @GNO)        
                      OR (@Tennic = 1 AND tbl.DisplayRows = @GNO)) --ÅöTennicÇÃèÍçáÇ≈Ç‡âÊñ ÇÃçsî‘çÜÇ™äiî[Ç≥ÇÍÇƒÇ¢ÇÈ
-                     */
+                    
                     WHERE A.TemporaryNO = @HNO
                     AND A.KeySEQ = @KeySEQ  
-                    AND D_JuchuuDetails.JuchuuNO = A.Number
-                    AND D_JuchuuDetails.JuchuuRows = A.NumberRows
-                    --AND D_JuchuuDetails.JuchuuNO = @tblJuchuuNo
-                    --AND ((@Tennic = 0 AND D_JuchuuDetails.JuchuuRows = tbl.JuchuuRows) 
-                    --  OR (@Tennic = 1 AND tbl.JuchuuRows = A.NumberRows))
+                    AND D_JuchuuDetails.JuchuuNO = @tblJuchuuNo
+                    AND ((@Tennic = 0 AND D_JuchuuDetails.JuchuuRows = tbl.JuchuuRows) 
+                      OR (@Tennic = 1 AND D_JuchuuDetails.JuchuuRows = 1))
                     ;
 
                     -- ========= ÉãÅ[Évì‡ÇÃé¿ç€ÇÃèàóù Ç±Ç±Ç‹Ç≈===

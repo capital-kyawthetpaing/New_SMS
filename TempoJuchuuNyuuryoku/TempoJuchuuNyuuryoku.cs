@@ -1658,7 +1658,7 @@ namespace TempoJuchuuNyuuryoku
                 if (index == (int)EIndex.JuchuuNO)
                 {
                     //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
-                    bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno);
+                    bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno, (short)mTennic);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
@@ -3919,7 +3919,6 @@ namespace TempoJuchuuNyuuryoku
             //dt.Columns.Add("OrderTax", typeof(decimal));
             //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
             //dt.Columns.Add("OrderGaku", typeof(decimal));
-
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 

@@ -441,5 +441,16 @@ namespace DL
 
             return SelectData(dic, sp);
         }
+        public DataTable GetJuchuuNO(string Processno)
+        {
+            string sp = "GetJuchuuNO";
+
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@JuchuuProcessNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = Processno } },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }
