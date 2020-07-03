@@ -173,7 +173,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 DataRow[] dr = dtTemp1.Select("GroupNO=" + "" + groupno + "");
                 DataRow[] dr2 = dtTemp2.Select("GroupNO=" + "" + groupno + "");
                 
-                if(drBtnName.Count()>0)
+                if(drBtnName.Count()==dtSelect.Rows.Count)
                 {
                     RdoJanCD.Checked = true;
                     RdoJanCD.Enabled = true;
