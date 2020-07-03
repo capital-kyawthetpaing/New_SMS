@@ -1662,7 +1662,8 @@ namespace KaitouNoukiTouroku
                 OrderCD = detailControls[(int)EIndex.OrderCD].Text,
 
                 OrderNoFrom = detailControls[(int)EIndex.OrderNOFrom].Text,
-                OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text
+                OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text,
+                ArrivalPlanCD = CboArrivalPlanCD.SelectedIndex > 0 ? CboArrivalPlanCD.SelectedValue.ToString() : ""
             };
 
             if (ChkMikakutei.Checked)

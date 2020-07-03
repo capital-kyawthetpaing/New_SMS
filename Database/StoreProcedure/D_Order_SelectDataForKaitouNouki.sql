@@ -217,8 +217,7 @@ BEGIN
     WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
     ;
 
-    IF (ISNULL(@OrderDateFrom,'') <> '' OR ISNULL(@OrderDateTo,'') <> '')
-    	AND (@ChkMikakutei = 1 OR @ChkFuyo = 1 OR @ChkKanbai = 1)
+    IF ((ISNULL(@OrderDateFrom,'') <> '' OR ISNULL(@OrderDateTo,'') <> '') AND (@ChkMikakutei = 1 OR @ChkFuyo = 1 OR @ChkKanbai = 1))
     BEGIN
         UPDATE #TableForKaitouNouki
         SET DelFlg = 1
@@ -263,7 +262,8 @@ BEGIN
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 IN (1,2,4,6)
                 --入荷予定区分
-                AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN @ArrivalPlan ELSE M.Num2 END)
+                AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN (SELECT A.Num2 FROM M_MultiPorpose AS A WHERE A.ID = 206 AND A.[Key] = @ArrivalPlan) 
+                            ELSE M.Num2 END)
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
@@ -314,13 +314,13 @@ BEGIN
     
     --画面で範囲指定された入荷予定日に合致するかを判断←①
     --合致した場合、合致しない日も含めて、その発注番号の入荷予定情報は全て（最大３）抽出、表示する←・
-    IF @ArrivalPlanDateFrom <> '' OR @ArrivalPlanDateTo <> '' OR @ArrivalPlanMonthFrom > 0 OR @ArrivalPlanMonthTo > 0
+    IF ISNULL(@ArrivalPlanDateFrom,'') <> '' OR ISNULL(@ArrivalPlanDateTo,'') <> '' OR @ArrivalPlanMonthFrom > 0 OR @ArrivalPlanMonthTo > 0
     BEGIN
         UPDATE #TableForKaitouNouki
         SET DelFlg = 1
         ;
         
-        IF @ArrivalPlanDateFrom <> '' OR @ArrivalPlanDateTo <> '' 
+        IF ISNULL(@ArrivalPlanDateFrom,'') <> '' OR ISNULL(@ArrivalPlanDateTo,'') <> '' 
         BEGIN
             UPDATE #TableForKaitouNouki
             SET DelFlg = 0
