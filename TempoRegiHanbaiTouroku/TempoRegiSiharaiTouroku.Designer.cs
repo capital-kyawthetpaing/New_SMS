@@ -397,7 +397,7 @@
             this.btnAzukari.Location = new System.Drawing.Point(486, 577);
             this.btnAzukari.Margin = new System.Windows.Forms.Padding(1);
             this.btnAzukari.Name = "btnAzukari";
-            this.btnAzukari.Size = new System.Drawing.Size(150, 45);
+            this.btnAzukari.Size = new System.Drawing.Size(200, 45);
             this.btnAzukari.TabIndex = 18;
             this.btnAzukari.Text = "預　り";
             this.btnAzukari.UseVisualStyleBackColor = false;
@@ -602,7 +602,7 @@
             this.txtAzukari.IsNumber = true;
             this.txtAzukari.IsShop = false;
             this.txtAzukari.Length = 11;
-            this.txtAzukari.Location = new System.Drawing.Point(636, 577);
+            this.txtAzukari.Location = new System.Drawing.Point(686, 577);
             this.txtAzukari.MaxLength = 11;
             this.txtAzukari.MoveNext = true;
             this.txtAzukari.Name = "txtAzukari";
