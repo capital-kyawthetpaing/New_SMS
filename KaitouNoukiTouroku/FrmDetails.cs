@@ -24,7 +24,6 @@ namespace KaitouNoukiTouroku
             public string MakerItem { get; set; }
             public string SKUName { get; set; }
             public string Suryo { get; set; }
-
             public DataTable DtDetail { get; set; }
             //public DataRow[] DataRows { get; set; }
         }
@@ -47,6 +46,7 @@ namespace KaitouNoukiTouroku
 
         #region"公開プロパティ"
         public Detail_Entity de = new Detail_Entity();
+        public int GyoCount { get; set; }
         #endregion
 
         private KaitouNoukiTouroku_BL knbl;
@@ -266,6 +266,8 @@ namespace KaitouNoukiTouroku
                     row["UpdateFlg"] = "2";
                 }
             }
+
+            GyoCount = count;
 
             EndSec();
         }

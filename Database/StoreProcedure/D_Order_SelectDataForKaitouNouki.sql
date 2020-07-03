@@ -350,9 +350,9 @@ BEGIN
                         AND CONVERT(VARCHAR, ISNULL(DA.ArrivalPlanDate,''), 112) / 100 <= (CASE WHEN @ArrivalPlanMonthTo <> 0 THEN @ArrivalPlanMonthTo ELSE CONVERT(VARCHAR, ISNULL(DA.ArrivalPlanDate,''), 112) / 100 END))
                     )
             AND DA.DeleteDateTime IS NULL
-        	);
-		END
-		
+            );
+        END
+        
         DELETE FROM #TableForKaitouNouki
         WHERE DelFlg = 1
         ;
@@ -360,6 +360,7 @@ BEGIN
     
     
     SELECT *
+        ,COUNT(DH.OrderNO) OVER(PARTITION BY DH.OrderNO, DH.OrderRows) AS CNT
     FROM #TableForKaitouNouki AS DH
     WHERE DH.ROWNUM <= 3	--iÅ‘å‚Rj
     ORDER BY DH.OrderDate, DH.OrderNO, DH.OrderRows
