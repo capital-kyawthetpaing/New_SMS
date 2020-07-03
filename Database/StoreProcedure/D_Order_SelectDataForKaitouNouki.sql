@@ -103,12 +103,7 @@ BEGIN
              AND M.AdminNO = DM.AdminNO
               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS JANCD
-            ,(SELECT top 1 M.MakerItem 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS MakerItem
+            ,DM.MakerItem
             ,(SELECT top 1 M.OrderAttentionNote 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.OrderDate

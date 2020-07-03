@@ -1053,10 +1053,10 @@ namespace KaitouNoukiTouroku
 
             dtOrder = knbl.D_Order_SelectDataForKaitouNouki(doe);
 
-            //発注(D_Order)に存在しない場合、Error 「登録されていない発注番号」
+            //発注(D_Order)に存在しない場合、Error 
             if (dtOrder.Rows.Count == 0)
             {
-                bbl.ShowMessage("E138", "発注番号");
+                bbl.ShowMessage("S013");
                 Scr_Clr(1);
                 PreviousCtrl.Focus();
                 return false;
@@ -2439,6 +2439,9 @@ namespace KaitouNoukiTouroku
         {
             try
             {
+                if (!F12Enable)
+                    return;
+
                 //明細左端のチェックボックスONの明細に対し入荷予定日をセットする。
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);

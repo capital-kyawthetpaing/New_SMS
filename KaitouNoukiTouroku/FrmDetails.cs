@@ -89,7 +89,7 @@ namespace KaitouNoukiTouroku
                     detailControls[(int)EIndex.ArrivalPlanDate1 + 4 * count].Text =Convert.ToDateTime( row["ArrivalPlanDate"]).ToShortDateString();
 
                 if(knbl.Z_Set(row["ArrivalPlanMonth"])>0)
-                    detailControls[(int)EIndex.ArrivalPlanMonth1 + 4 * count].Text = row["ArrivalPlanMonth"].ToString();
+                    detailControls[(int)EIndex.ArrivalPlanMonth1 + 4 * count].Text = bbl.FormatDate(row["ArrivalPlanMonth"].ToString() + "01").Substring(0, 7);
 
                 if (!string.IsNullOrWhiteSpace(row["ArrivalPlanCD"].ToString()))
                 {
