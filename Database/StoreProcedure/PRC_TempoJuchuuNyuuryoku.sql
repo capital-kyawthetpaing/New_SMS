@@ -853,12 +853,13 @@ BEGIN
         --カーソル定義
         DECLARE CUR_AAA CURSOR FOR
             SELECT tbl.SKUNO,tbl.SoukoCD,tbl.JuchuuSuu
-                ,(CASE @Tennic WHEN 1 THEN 1 ELSE tbl.JuchuuRows END) AS JuchuuRows
+                ,(CASE @Tennic WHEN 1 THEN (CASE ISNULL(tbl.JuchuuNo,'') WHEN '' THEN tbl.DisplayRows ELSE 1 END) 
+                	ELSE tbl.JuchuuRows END) AS JuchuuRows
                 ,tbl.DisplayRows 
                 --,tbl.ZaikoKBN
                 ,tbl.DirectFlg
                 ,tbl.TemporaryNO
-                ,ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo
+                ,(CASE @Tennic WHEN 1 THEN tbl.JuchuuNo ELSE @JuchuuNo END) AS JuchuuNo
             FROM @Table tbl
             ORDER BY JuchuuNo, JuchuuRows 
             

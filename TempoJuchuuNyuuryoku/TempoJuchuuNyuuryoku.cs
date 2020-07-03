@@ -1229,16 +1229,11 @@ namespace TempoJuchuuNyuuryoku
             {
                 w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
 
-                //前行をコピー (修正元行№以外)
-                int w_MOTNO = mGrid.g_DArray[i].juchuGyoNO;      //修正元行№ 退避
-                string w_JUCHUNO = mGrid.g_DArray[i].JuchuuNO;
-                int w_CGYO = mGrid.g_DArray[i].juchuGyoNO;
-                string w_KariNO = mGrid.g_DArray[i].KariHikiateNO;
-
                 mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
 
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+
                 if (i.Equals(w_Row))
                 {
                     //前の行をコピーしてできた新しい行
@@ -1247,13 +1242,7 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
                     mGrid.g_DArray[i].KariHikiateNO = "";
                 }
-                else
-                {
-                    mGrid.g_DArray[i].JuchuuNO = w_JUCHUNO;
-                    mGrid.g_DArray[i].juchuGyoNO = w_MOTNO;      //修正元行№
-                    mGrid.g_DArray[i].juchuGyoNO = w_CGYO;
-                    mGrid.g_DArray[i].KariHikiateNO = w_KariNO;
-                }
+
                 Grid_NotFocus(col, i);
             }
 
@@ -3326,13 +3315,21 @@ namespace TempoJuchuuNyuuryoku
                 if(mTemporaryReserveNO=="")
                 {
                     mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
+
+                    if (mTennic.Equals(1) && !string.IsNullOrWhiteSpace(fre.DenNo))
+                        mTemporaryReserveNO = "";
                 }
 
-                fre.DenNo = mTemporaryReserveNO;
-
+                if (string.IsNullOrWhiteSpace(fre.DenNo))
+                {
+                    fre.DenNo = mTemporaryReserveNO;
+                }
                 if (fre.DenGyoNo == "0")
                 {
-                    fre.DenGyoNo = (row + 1).ToString();
+                    //if (mTennic.Equals(1))
+                    //    fre.DenGyoNo = "1";
+                    //else
+                        fre.DenGyoNo = (row + 1).ToString();
                 }
 
                 ret = bbl.Fnc_Reserve(fre);
