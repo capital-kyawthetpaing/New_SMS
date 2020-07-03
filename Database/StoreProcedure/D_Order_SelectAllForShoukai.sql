@@ -108,14 +108,14 @@ BEGIN
                                             ELSE '' END) AS DeliveryName
            
            ,DH.OrderWayKBN AS OrderWay                             
-           ,(CASE DH.OrderWayKBN WHEN 1 THEN 'Net発注' WHEN 2 THEN 'FAX発注' WHEN 3 THEN 'EDI発注' ELSE '' END) OrderWayKBN
+           ,(CASE DH.OrderWayKBN WHEN 1 THEN N'Net発注' WHEN 2 THEN N'FAX発注' WHEN 3 THEN N'EDI発注' ELSE '' END) OrderWayKBN
     		
     	   ,DH.ApprovalStageFLG AS ApprovalStage
-           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN '承認済'
-                                      WHEN 1 THEN '申請'
-                                      WHEN 0 THEN '却下'
-                                      WHEN 10 THEN '承認不要'
-                                      ELSE '承認中' END) AS ApprovalStageFLG
+           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN N'承認済'
+                                      WHEN 1 THEN N'申請'
+                                      WHEN 0 THEN N'却下'
+                                      WHEN 10 THEN N'承認不要'
+                                      ELSE N'承認中' END) AS ApprovalStageFLG
            
           ,(SELECT top 1 A.StoreName 
               FROM M_Store A 
