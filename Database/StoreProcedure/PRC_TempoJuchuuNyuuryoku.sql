@@ -763,33 +763,66 @@ BEGIN
              WHERE A.StockNO = [D_Stock].StockNO
              ;
              
-            --ƒƒO‚ÌSEQŠl“¾‚Ì‚½‚ß‚ÉXV
-            UPDATE D_Juchuu SET
-                [UpdateOperator]     =  @Operator  
-               ,[UpdateDateTime]     =  @SYSDATETIME
-            WHERE ((@Tennic = 0 AND JuchuuNO = @JuchuuNO)
-                OR (@Tennic = 1 AND JuchuuNO IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
-                                        AND H.DeleteDateTime IS NULL)))
-            ;
+            --ƒJ[ƒ\ƒ‹’è‹`
+            DECLARE CUR_UPD CURSOR FOR
+                SELECT JuchuuNo
+                FROM D_Juchuu
+                WHERE ((@Tennic = 0 AND JuchuuNO = @JuchuuNO)
+                    OR (@Tennic = 1 AND JuchuuNO IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
+                                            WHERE H.JuchuuProcessNO = @JuchuuProcessNO
+                                            AND H.DeleteDateTime IS NULL)))
+                ORDER BY JuchuuNo;
             
-             --20200225@ƒe[ƒuƒ‹“]‘—Žd—l‚i‡A
-            UPDATE D_JuchuuDetails SET
-                HikiateSu = D_JuchuuDetails.HikiateSu - A.ReserveSu
-                ,HikiateFlg = (CASE WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu >= D_JuchuuDetails.JuchuuSuu THEN 1
-                            WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu < D_JuchuuDetails.JuchuuSuu THEN 2
-                            WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu = 0 THEN 3
-                            ELSE 0 END )
-            FROM D_Reserve A
-            WHERE A.ReserveKBN = 1
-            AND A.[Number] = D_JuchuuDetails.JuchuuNO
-            AND A.NumberRows = D_JuchuuDetails.JuchuuRows
-            AND ((@Tennic = 0 AND D_JuchuuDetails.JuchuuNO = @JuchuuNO)
-            	OR (@Tennic = 1 AND  D_JuchuuDetails.JuchuuNO IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
-                                        AND H.DeleteDateTime IS NULL)))
-			AND D_JuchuuDetails.DeleteDateTime IS NULL
-            ;
+            DECLARE @updJuchuuNo varchar(11);
+            
+            --ƒJ[ƒ\ƒ‹ƒI[ƒvƒ“
+            OPEN CUR_UPD;
+
+            --Å‰‚Ì1s–Ú‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
+            FETCH NEXT FROM CUR_UPD
+            INTO @updJuchuuNo;
+            
+            --ƒf[ƒ^‚Ìs”•ªƒ‹[ƒvˆ—‚ðŽÀs‚·‚é
+            WHILE @@FETCH_STATUS = 0
+            BEGIN
+            -- ========= ƒ‹[ƒv“à‚ÌŽÀÛ‚Ìˆ— ‚±‚±‚©‚ç===
+            
+                --ƒƒO‚ÌSEQŠl“¾‚Ì‚½‚ß‚ÉXV
+                UPDATE D_Juchuu SET
+                    [UpdateOperator]     =  @Operator  
+                   ,[UpdateDateTime]     =  @SYSDATETIME
+                WHERE JuchuuNO = @updJuchuuNo
+                ;
+                
+                --20200225@ƒe[ƒuƒ‹“]‘—Žd—l‚i‡A
+                UPDATE D_JuchuuDetails SET
+                    HikiateSu = D_JuchuuDetails.HikiateSu - A.ReserveSu
+                    ,HikiateFlg = (CASE WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu >= D_JuchuuDetails.JuchuuSuu THEN 1
+                                WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu < D_JuchuuDetails.JuchuuSuu THEN 2
+                                WHEN D_JuchuuDetails.HikiateSu - A.ReserveSu = 0 THEN 3
+                                ELSE 0 END )
+                FROM (SELECT R.StockNO, R.[Number], R.NumberRows, SUM(R.ReserveSu) AS ReserveSu 
+                    FROM D_Reserve AS R
+                    WHERE R.ReserveKBN = 1
+                    AND R.DeleteDateTime IS NULL
+                    AND R.[Number] = @updJuchuuNo
+                	GROUP BY R.StockNO, R.[Number], R.NumberRows)AS A  
+                WHERE A.[Number] = D_JuchuuDetails.JuchuuNO
+                AND A.NumberRows = D_JuchuuDetails.JuchuuRows
+                AND D_JuchuuDetails.JuchuuNO = @updJuchuuNo
+                AND D_JuchuuDetails.DeleteDateTime IS NULL
+                ;
+	            
+                -- ========= ƒ‹[ƒv“à‚ÌŽÀÛ‚Ìˆ— ‚±‚±‚Ü‚Å===
+                --ŽŸ‚Ìs‚Ìƒf[ƒ^‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
+                FETCH NEXT FROM CUR_UPD
+                INTO @updJuchuuNo;
+
+            END
+            
+            --ƒJ[ƒ\ƒ‹‚ð•Â‚¶‚é
+            CLOSE CUR_UPD;
+            DEALLOCATE CUR_UPD;
              
              
              --ƒe[ƒuƒ‹“]‘—Žd—l‚g'iíœˆ—j
@@ -812,19 +845,22 @@ BEGIN
                 @DSoukoCD varchar(6),
                 @Suryo int,
                 @JuchuuRows int,
+                @DisplayRows int,
                 @DirectFlg tinyint,
                 @KariHikiateNo varchar(11),
                 @tblJuchuuNo varchar(11);
         
         --ƒJ[ƒ\ƒ‹’è‹`
         DECLARE CUR_AAA CURSOR FOR
-            SELECT tbl.SKUNO,tbl.SoukoCD,tbl.JuchuuSuu,tbl.JuchuuRows
-            	--,tbl.ZaikoKBN
-            	,tbl.DirectFlg
-            	,tbl.TemporaryNO
-            	,ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo
+            SELECT tbl.SKUNO,tbl.SoukoCD,tbl.JuchuuSuu
+                ,(CASE @Tennic WHEN 1 THEN 1 ELSE tbl.JuchuuRows END) AS JuchuuRows
+                ,tbl.DisplayRows 
+                --,tbl.ZaikoKBN
+                ,tbl.DirectFlg
+                ,tbl.TemporaryNO
+                ,ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo
             FROM @Table tbl
-            ORDER BY ISNULL(tbl.JuchuuNo,@JuchuuNo), tbl.JuchuuRows 
+            ORDER BY JuchuuNo, JuchuuRows 
             
         DECLARE @TAB TABLE(
              JNO varchar(11),
@@ -837,7 +873,7 @@ BEGIN
 
         --Å‰‚Ì1s–Ú‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
         FETCH NEXT FROM CUR_AAA
-        INTO  @AdminNO,@DSoukoCD,@Suryo,@JuchuuRows,@DirectFlg,@KariHikiateNo,@tblJuchuuNo;
+        INTO  @AdminNO,@DSoukoCD,@Suryo,@JuchuuRows,@DisplayRows,@DirectFlg,@KariHikiateNo,@tblJuchuuNo;
         
         --ƒf[ƒ^‚Ìs”•ªƒ‹[ƒvˆ—‚ðŽÀs‚·‚é
         WHILE @@FETCH_STATUS = 0
@@ -864,16 +900,22 @@ BEGIN
             END
             ELSE
             BEGIN
-	        	SET @OutKariHikiateNo = null;
+                SET @OutKariHikiateNo = null;
             END
             
-            INSERT INTO @TAB VALUES(@tblJuchuuNo,@JuchuuRows, @OutKariHikiateNo);
-            
+            IF @Tennic = 0
+            BEGIN
+                INSERT INTO @TAB VALUES(@tblJuchuuNo,@JuchuuRows, @OutKariHikiateNo);
+            END
+            ELSE
+            BEGIN
+                INSERT INTO @TAB VALUES(@tblJuchuuNo,@DisplayRows, @OutKariHikiateNo);
+            END
             -- ========= ƒ‹[ƒv“à‚ÌŽÀÛ‚Ìˆ— ‚±‚±‚Ü‚Å===
 
             --ŽŸ‚Ìs‚Ìƒf[ƒ^‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
             FETCH NEXT FROM CUR_AAA
-            INTO @AdminNO,@DSoukoCD,@Suryo,@JuchuuRows,@DirectFlg,@KariHikiateNo,@tblJuchuuNo;
+            INTO @AdminNO,@DSoukoCD,@Suryo,@JuchuuRows,@DisplayRows,@DirectFlg,@KariHikiateNo,@tblJuchuuNo;
 
         END
         
@@ -1034,10 +1076,10 @@ BEGIN
     BEGIN
         --ƒJ[ƒ\ƒ‹’è‹`
         DECLARE CUR_DETAIL CURSOR FOR
-            SELECT ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo,tbl.JuchuuRows
+            SELECT ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo,tbl.JuchuuRows,tbl.DisplayRows
             	,tbl.UpdateFlg
             FROM @Table tbl
-            ORDER BY ISNULL(tbl.JuchuuNo,@JuchuuNo), tbl.JuchuuRows; 
+            ORDER BY ISNULL(tbl.JuchuuNo,@JuchuuNo), tbl.JuchuuRows,tbl.DisplayRows; 
         
         DECLARE @FIRST_FLG tinyint;
         SET @FIRST_FLG = 1;
@@ -1047,7 +1089,7 @@ BEGIN
         
         --Å‰‚Ì1s–Ú‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
         FETCH NEXT FROM CUR_DETAIL
-        INTO  @tblJuchuuNo,@JuchuuRows,@tblUpdateFlg;
+        INTO  @tblJuchuuNo,@JuchuuRows,@DisplayRows,@tblUpdateFlg;
         
         --ƒf[ƒ^‚Ìs”•ªƒ‹[ƒvˆ—‚ðŽÀs‚·‚é
         WHILE @@FETCH_STATUS = 0
@@ -1381,7 +1423,7 @@ BEGIN
                 END
             END		--ƒwƒbƒ_‚ðINSERT‚·‚é‚©‚Ç‚¤‚©‚ÌðŒ
             
-            IF @Tennic = 1 OR (@Tennic = 0 AND @FIRST_FLG = 1)
+            IF (@Tennic = 1 OR (@Tennic = 0 AND @FIRST_FLG = 1))
             BEGIN
                 --yD_JuchuuDetailsz
                 --Table“]‘—Žd—l‚a
@@ -1503,7 +1545,7 @@ BEGIN
 
                       FROM @Table tbl
                       WHERE tbl.UpdateFlg = 0
-                      AND (@Tennic = 0  OR (@Tennic = 1 AND tbl.JuchuuRows = @JuchuuRows))  --š
+                      AND (@Tennic = 0  OR (@Tennic = 1 AND tbl.DisplayRows = @DisplayRows))  --š
                       ;
             END
 
@@ -1598,7 +1640,7 @@ BEGIN
                 ;
             END
             
-            IF(@Tennic = 0 AND @FIRST_FLG = 1) OR @Tennic = 1
+            IF ((@Tennic = 0 AND @FIRST_FLG = 1) OR @Tennic = 1)
             BEGIN 
                 --yD_ReservezINSERTˆ—@Žó’s”•ª‚ÌƒŒƒR[ƒh‚ðì¬(ˆø“–ÝŒÉƒŒƒR[ƒh‚ÌŒ”•ª)
                 --ƒJ[ƒ\ƒ‹’è‹`
@@ -1607,7 +1649,7 @@ BEGIN
                     FROM @TAB AS T
                     INNER JOIN D_TemporaryReserve AS A
                     ON A.TemporaryNO = T.HNO
-                    WHERE (@Tennic = 0 OR (@Tennic = 1 AND T.JNO = @tblJuchuuNo))
+                    WHERE (@Tennic = 0 OR (@Tennic = 1 AND T.GNO = @DisplayRows))
                     ORDER BY T.GNO, A.KeySEQ
                     ;
                 
@@ -1705,7 +1747,9 @@ BEGIN
                            ,NULL    --[DeleteDateTime]
                     
                     FROM D_TemporaryReserve A
-                    INNER JOIN  @Table tbl ON tbl.JuchuuRows = @GNO         --šTennic‚Ìê‡‚Å‚à‰æ–Ê‚Ìs”Ô†‚ªŠi”[‚³‚ê‚Ä‚¢‚é
+                    INNER JOIN  @Table tbl 
+                    ON ((@Tennic = 0 AND tbl.JuchuuRows = @GNO)        
+                    	OR (@Tennic = 1 AND tbl.DisplayRows = @GNO)) --šTennic‚Ìê‡‚Å‚à‰æ–Ê‚Ìs”Ô†‚ªŠi”[‚³‚ê‚Ä‚¢‚é
                     LEFT OUTER JOIN D_Stock B ON B.StockNO = A.StockNO
                     WHERE  A.TemporaryNO = @HNO
                     AND A.KeySEQ = @KeySEQ
@@ -1740,9 +1784,12 @@ BEGIN
                                     WHEN D_JuchuuDetails.HikiateSu + A.ReserveSu = 0 THEN 3
                                     ELSE 0 END )
                     FROM D_TemporaryReserve A
-                    INNER JOIN @Table tbl ON tbl.JuchuuRows = @GNO      --š
+                    INNER JOIN @Table tbl 
+                    ON ((@Tennic = 0 AND tbl.JuchuuRows = @GNO)        
+                     OR (@Tennic = 1 AND tbl.DisplayRows = @GNO)) --šTennic‚Ìê‡‚Å‚à‰æ–Ê‚Ìs”Ô†‚ªŠi”[‚³‚ê‚Ä‚¢‚é
+                    
                     WHERE A.TemporaryNO = @HNO
-                    AND A.KeySEQ = @KeySEQ                    
+                    AND A.KeySEQ = @KeySEQ  
                     AND D_JuchuuDetails.JuchuuNO = @tblJuchuuNo
                     AND ((@Tennic = 0 AND D_JuchuuDetails.JuchuuRows = tbl.JuchuuRows) 
                       OR (@Tennic = 1 AND D_JuchuuDetails.JuchuuRows = 1))
@@ -1837,7 +1884,7 @@ BEGIN
             
             --ŽŸ‚Ìs‚Ìƒf[ƒ^‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
             FETCH NEXT FROM CUR_DETAIL
-            INTO @tblJuchuuNo,@JuchuuRows,@tblUpdateFlg;
+            INTO @tblJuchuuNo,@JuchuuRows,@DisplayRows,@tblUpdateFlg;
             
 	        SET @FIRST_FLG = 0;
         END
@@ -1879,15 +1926,16 @@ BEGIN
               ,[ReserveSu] = [D_Stock].[ReserveSu] - A.ReserveSu
               ,[UpdateOperator] = @Operator
               ,[UpdateDateTime] = @SYSDATETIME
-         FROM D_Reserve AS A 
-            
+         FROM (SELECT R.StockNO, SUM(R.ReserveSu) AS ReserveSu 
+                    FROM D_Reserve AS R
+                    WHERE R.ReserveKBN = 1
+                     AND R.DeleteDateTime IS NULL
+                     AND ((@Tennic = 0 AND R.Number = @JuchuuNO)
+                        OR (@Tennic = 1 AND R.Number IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
+                                                    WHERE H.JuchuuProcessNO = @JuchuuProcessNO
+                                                    AND H.DeleteDateTime IS NULL)))
+                	GROUP BY R.StockNO)AS A 
          WHERE A.StockNO = [D_Stock].StockNO
-         AND ((@Tennic = 0 AND A.Number = @JuchuuNO)
-         	OR (@Tennic = 1 AND A.Number IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
-                                        AND H.DeleteDateTime IS NULL)))
-         AND A.ReserveKBN = 1
-         AND A.DeleteDateTime IS NULL
          AND [D_Stock].DeleteDateTime IS NULL
          ;
 
@@ -1917,29 +1965,60 @@ BEGIN
                                         WHERE H.JuchuuProcessNO = @JuchuuProcessNO)))
         ;
 
+ 		--ƒJ[ƒ\ƒ‹’è‹`
+        DECLARE CUR_AAA CURSOR FOR
+            SELECT ISNULL(tbl.JuchuuNo,@JuchuuNo) AS JuchuuNo
+            FROM @Table tbl
+            ORDER BY JuchuuNo
         
-        UPDATE [D_Juchuu]
-            SET [UpdateOperator]     =  @Operator  
-               ,[UpdateDateTime]     =  @SYSDATETIME
-               ,[DeleteOperator]     =  @Operator  
-               ,[DeleteDateTime]     =  @SYSDATETIME
-         WHERE (@Tennic = 0 AND JuchuuNO = @JuchuuNO)
-         	OR (@Tennic = 1 AND JuchuuProcessNO = @JuchuuProcessNO AND DeleteDateTime IS NULL)
-           ;
-        
-    	--íœ Table“]‘—Žd—l‚i‡A
-        UPDATE [D_JuchuuDetails]
-            SET [UpdateOperator]     =  @Operator  
-               ,[UpdateDateTime]     =  @SYSDATETIME
-               ,[DeleteOperator]     =  @Operator  
-               ,[DeleteDateTime]     =  @SYSDATETIME
-         WHERE ((@Tennic = 0 AND [JuchuuNO] = @JuchuuNO)
-         	OR (@Tennic = 1 AND [JuchuuNO] IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
-                                        WHERE H.JuchuuProcessNO = @JuchuuProcessNO
-                                        AND H.DeleteDateTime = @SYSDATETIME)))
-         ;
+        --ƒJ[ƒ\ƒ‹ƒI[ƒvƒ“
+        OPEN CUR_AAA;
 
+        --Å‰‚Ì1s–Ú‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
+        FETCH NEXT FROM CUR_AAA
+        INTO @tblJuchuuNo;
+        
+        --ƒf[ƒ^‚Ìs”•ªƒ‹[ƒvˆ—‚ðŽÀs‚·‚é
+        WHILE @@FETCH_STATUS = 0
+        BEGIN
+        -- ========= ƒ‹[ƒv“à‚ÌŽÀÛ‚Ìˆ— ‚±‚±‚©‚ç===
+
+            UPDATE [D_Juchuu]
+                SET [UpdateOperator]     =  @Operator  
+                   ,[UpdateDateTime]     =  @SYSDATETIME
+                   ,[DeleteOperator]     =  @Operator  
+                   ,[DeleteDateTime]     =  @SYSDATETIME
+             WHERE JuchuuNO = @tblJuchuuNo
+               AND DeleteDateTime IS NULL
+               ;
+            
+            --íœ Table“]‘—Žd—l‚i‡A
+            UPDATE [D_JuchuuDetails]
+                SET [UpdateOperator]     =  @Operator  
+                   ,[UpdateDateTime]     =  @SYSDATETIME
+                   ,[DeleteOperator]     =  @Operator  
+                   ,[DeleteDateTime]     =  @SYSDATETIME
+             WHERE JuchuuNO = @tblJuchuuNo
+               AND DeleteDateTime IS NULL
+             ;
+
+            IF @Tennic = 0
+            BEGIN
+                BREAK;
+            END;
+
+            -- ========= ƒ‹[ƒv“à‚ÌŽÀÛ‚Ìˆ— ‚±‚±‚Ü‚Å===
+            
+            --ŽŸ‚Ìs‚Ìƒf[ƒ^‚ðŽæ“¾‚µ‚Ä•Ï”‚Ö’l‚ðƒZƒbƒg
+            FETCH NEXT FROM CUR_AAA
+            INTO @tblJuchuuNo;	         
+		END
+		
+        --ƒJ[ƒ\ƒ‹‚ð•Â‚¶‚é
+        CLOSE CUR_AAA;
+        DEALLOCATE CUR_AAA;
     END
+    
     
     --ˆ——š—ðƒf[ƒ^‚ÖXV
     SET @KeyItem = @JuchuuNO;

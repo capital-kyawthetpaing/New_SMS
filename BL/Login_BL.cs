@@ -239,7 +239,7 @@ namespace BL
             //暗号化されたパスワードを複合化
             try
             {
-                Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim()== "EpsonTM-m30" ? true : false;
+               Base_DL.iniEntity.IsDM_D30Used = idl.IniReadValue("Database", "Logical_Printer").ToString().Trim()== "EpsonTM-m30" && idl.IniReadValue("Database", "Login_Type") == "CapitalStoreMenuLogin" ? true : false;
             }
             catch
             {
