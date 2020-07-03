@@ -1231,6 +1231,10 @@ namespace TempoJuchuuNyuuryoku
 
                 //前行をコピー (修正元行№以外)
                 int w_MOTNO = mGrid.g_DArray[i].juchuGyoNO;      //修正元行№ 退避
+                string w_JUCHUNO = mGrid.g_DArray[i].JuchuuNO;
+                int w_CGYO = mGrid.g_DArray[i].juchuGyoNO;
+                string w_KariNO = mGrid.g_DArray[i].KariHikiateNO;
+
                 mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
 
                 //退避内容を戻す
@@ -1238,13 +1242,17 @@ namespace TempoJuchuuNyuuryoku
                 if (i.Equals(w_Row))
                 {
                     //前の行をコピーしてできた新しい行
+                    mGrid.g_DArray[i].JuchuuNO = "";
                     mGrid.g_DArray[i].juchuGyoNO = 0;
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
                     mGrid.g_DArray[i].KariHikiateNO = "";
                 }
                 else
                 {
+                    mGrid.g_DArray[i].JuchuuNO = w_JUCHUNO;
                     mGrid.g_DArray[i].juchuGyoNO = w_MOTNO;      //修正元行№
+                    mGrid.g_DArray[i].juchuGyoNO = w_CGYO;
+                    mGrid.g_DArray[i].KariHikiateNO = w_KariNO;
                 }
                 Grid_NotFocus(col, i);
             }
@@ -3309,7 +3317,7 @@ namespace TempoJuchuuNyuuryoku
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
                     Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
                     DenType = "1",  //1(受注)
-                    DenNo = keyControls[(int)EIndex.JuchuuNO].Text,
+                    DenNo = mGrid.g_DArray[row].JuchuuNO,  // keyControls[(int)EIndex.JuchuuNO].Text,
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
                     KariHikiateNo = mGrid.g_DArray[row].KariHikiateNO
                 };

@@ -1530,7 +1530,7 @@ BEGIN
                            ,NULL    --ArriveDateTime
                            ,NULL    --ArriveNO
                            ,0   --ArribveNORows
-                           ,(CASE @OperateMode WHEN 1 THEN @DeliveryPlanNO ELSE (SELECT DD.DeliveryPlanNO FROM D_DeliveryPlan AS DD WHERE @JuchuuNO = DD.[Number])  END)
+                           ,@DeliveryPlanNO		--(CASE @OperateMode WHEN 1 THEN @DeliveryPlanNO ELSE (SELECT DD.DeliveryPlanNO FROM D_DeliveryPlan AS DD WHERE @JuchuuNO = DD.[Number])  END)
                            ,tbl.CommentOutStore
                            ,tbl.CommentInStore
                            ,tbl.IndividualClientName
@@ -1829,7 +1829,7 @@ BEGIN
                    ,[UpdateOperator]
                    ,[UpdateDateTime])
                  SELECT  
-                    (CASE @OperateMode WHEN 1 THEN @DeliveryPlanNO ELSE (SELECT DD.DeliveryPlanNO FROM D_DeliveryPlan AS DD WHERE @JuchuuNO = DD.[Number])  END)
+                    @DeliveryPlanNO		--(CASE @OperateMode WHEN 1 THEN @DeliveryPlanNO ELSE (SELECT DD.DeliveryPlanNO FROM D_DeliveryPlan AS DD WHERE @JuchuuNO = DD.[Number])  END)
                    ,tbl.JuchuuRows AS DeliveryPlanRows
                    ,@tblJuchuuNO AS Number
                    ,tbl.JuchuuRows  As NumberRows
@@ -1847,9 +1847,9 @@ BEGIN
                   FROM @Table tbl
                   INNER JOIN D_JuchuuDetails AS DM
                   ON DM.JuchuuRows = 1	--tbl.JuchuuRows	Åö
-                  AND DM.JuchuuNO = tbl.JuchuuNO		--Åö
                   AND DM.JuchuuNO = @tblJuchuuNO
                   WHERE tbl.UpdateFlg = 0
+                  AND tbl.DisplayRows = @DisplayRows		--Åö
                   ;
                   
                  
