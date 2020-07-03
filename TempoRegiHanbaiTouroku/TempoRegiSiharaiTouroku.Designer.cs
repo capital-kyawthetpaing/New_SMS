@@ -124,7 +124,7 @@
             this.ckmShop_Label7.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label7.FontBold = true;
             this.ckmShop_Label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label7.Location = new System.Drawing.Point(630, 371);
+            this.ckmShop_Label7.Location = new System.Drawing.Point(626, 370);
             this.ckmShop_Label7.Name = "ckmShop_Label7";
             this.ckmShop_Label7.Size = new System.Drawing.Size(44, 30);
             this.ckmShop_Label7.TabIndex = 28;
@@ -397,7 +397,7 @@
             this.btnAzukari.Location = new System.Drawing.Point(486, 577);
             this.btnAzukari.Margin = new System.Windows.Forms.Padding(1);
             this.btnAzukari.Name = "btnAzukari";
-            this.btnAzukari.Size = new System.Drawing.Size(150, 45);
+            this.btnAzukari.Size = new System.Drawing.Size(200, 45);
             this.btnAzukari.TabIndex = 18;
             this.btnAzukari.Text = "預　り";
             this.btnAzukari.UseVisualStyleBackColor = false;
@@ -450,7 +450,7 @@
             this.ckmShop_Label1.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label1.FontBold = true;
             this.ckmShop_Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label1.Location = new System.Drawing.Point(523, 152);
+            this.ckmShop_Label1.Location = new System.Drawing.Point(533, 159);
             this.ckmShop_Label1.Name = "ckmShop_Label1";
             this.ckmShop_Label1.Size = new System.Drawing.Size(137, 30);
             this.ckmShop_Label1.TabIndex = 91;
@@ -602,7 +602,7 @@
             this.txtAzukari.IsNumber = true;
             this.txtAzukari.IsShop = false;
             this.txtAzukari.Length = 11;
-            this.txtAzukari.Location = new System.Drawing.Point(636, 577);
+            this.txtAzukari.Location = new System.Drawing.Point(686, 577);
             this.txtAzukari.MaxLength = 11;
             this.txtAzukari.MoveNext = true;
             this.txtAzukari.Name = "txtAzukari";
@@ -652,7 +652,7 @@
             this.cboDenominationName1.MaxLength = 25;
             this.cboDenominationName1.MoveNext = true;
             this.cboDenominationName1.Name = "cboDenominationName1";
-            this.cboDenominationName1.Size = new System.Drawing.Size(434, 44);
+            this.cboDenominationName1.Size = new System.Drawing.Size(430, 44);
             this.cboDenominationName1.TabIndex = 4;
             // 
             // cboDenominationName2
@@ -678,7 +678,7 @@
             this.cboDenominationName2.MaxLength = 25;
             this.cboDenominationName2.MoveNext = true;
             this.cboDenominationName2.Name = "cboDenominationName2";
-            this.cboDenominationName2.Size = new System.Drawing.Size(434, 44);
+            this.cboDenominationName2.Size = new System.Drawing.Size(430, 44);
             this.cboDenominationName2.TabIndex = 6;
             // 
             // cboCardDenominationCD
@@ -704,7 +704,7 @@
             this.cboCardDenominationCD.MaxLength = 25;
             this.cboCardDenominationCD.MoveNext = true;
             this.cboCardDenominationCD.Name = "cboCardDenominationCD";
-            this.cboCardDenominationCD.Size = new System.Drawing.Size(434, 44);
+            this.cboCardDenominationCD.Size = new System.Drawing.Size(430, 44);
             this.cboCardDenominationCD.TabIndex = 8;
             // 
             // btnClear
@@ -784,7 +784,7 @@
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.XSmall;
             this.ckmShop_Label6.FontBold = true;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(630, 320);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(628, 319);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(44, 30);
             this.ckmShop_Label6.TabIndex = 103;
@@ -846,7 +846,7 @@
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblZei);
-            this.panel2.Location = new System.Drawing.Point(679, 152);
+            this.panel2.Location = new System.Drawing.Point(686, 152);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 42);
             this.panel2.TabIndex = 107;
@@ -896,7 +896,7 @@
             // 
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.lblMaeZan);
-            this.panel10.Location = new System.Drawing.Point(690, 314);
+            this.panel10.Location = new System.Drawing.Point(688, 313);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(230, 42);
             this.panel10.TabIndex = 109;
@@ -921,7 +921,7 @@
             // 
             this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel11.Controls.Add(this.lblZan);
-            this.panel11.Location = new System.Drawing.Point(690, 364);
+            this.panel11.Location = new System.Drawing.Point(688, 361);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(230, 42);
             this.panel11.TabIndex = 110;
