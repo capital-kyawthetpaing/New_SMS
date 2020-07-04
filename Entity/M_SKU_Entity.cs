@@ -9,7 +9,7 @@ namespace Entity
     public class M_SKU_Entity : Base_Entity
     {
         public string AdminNO { get; set; }
-        public string SKUCD { get; set; }
+        public string SKUCD {get;set;}
         public string VariousFLG { get; set; }
         public string SKUName { get; set; }
         public string KanaName { get; set; }
@@ -34,7 +34,6 @@ namespace Entity
         public string TaniCD { get; set; }
         public string SportsCD { get; set; }
         public string SegmentCD { get; set; }
-
         public string ZaikoKBN { get; set; }
         public string Rack { get; set; }
         public string VirtualFlg { get; set; }
@@ -57,20 +56,22 @@ namespace Entity
         public string AutoOrderFlg { get; set; }
         public string TaxRateFLG { get; set; }
         public string CostingKBN { get; set; }
-
         public string SaleExcludedFlg { get; set; }
         public string PriceWithTax { get; set; }
         public string PriceOutTax { get; set; }
         public string OrderPriceWithTax { get; set; }
         public string OrderPriceWithoutTax { get; set; }
         public string Rate { get; set; }
-   
         public string SaleStartDate { get; set; }
         public string WebStartDate { get; set; }
         public string OrderAttentionCD        { get; set; }
         public string OrderAttentionNote { get; set; }
         public string CommentInStore { get; set; }
         public string CommentOutStore { get; set; }
+        public string ExhibitionSegmentCD { get; set; }
+        public string OrderLot { get; set; }
+        public string ExhibitionCommonCD { get; set; }
+
         public string LastYearTerm { get; set; }
         public string LastSeason { get; set; }
         public string LastCatalogNO { get; set; }
@@ -108,7 +109,7 @@ namespace Entity
         public string ApprovalDateFrom { get; set; }
         public string ApprovalDateTo { get; set; }
 
-        //Master用Entity	
+        //Master用Entity
         public string BrandName { get; set; }
         public string TaniName { get; set; }
         public string SegmentName { get; set; }
