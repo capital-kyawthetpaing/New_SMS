@@ -3517,7 +3517,7 @@ namespace NyuukaNyuuryoku
                 Control w_ActCtl;
 
                 w_ActCtl = (Control)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_1.Value;
 
                 //新規モードの場合、ONにした明細に紐づく会員名または発注先を取得し、画面項目の会員名または発注先にセット
                 if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
@@ -3546,6 +3546,10 @@ namespace NyuukaNyuuryoku
                         {
                             //Ｅ１９９				
                             bbl.ShowMessage("E199");
+                            mGrid2.g_DArray[w_Row].Check = false;
+
+                            //配列の内容を画面にセット
+                            mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
                             return;
                         }
                         lblVendor.Text = mGrid2.g_DArray[w_Row].Customer;
@@ -3610,6 +3614,11 @@ namespace NyuukaNyuuryoku
                         {
                             //Ｅ１９９				
                             bbl.ShowMessage("E199");
+                            mGrid.g_DArray[w_Row].Check = false;
+
+                            //配列の内容を画面にセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                            CalcKin();
                             return;
                         }
                         lblVendor.Text = mGrid.g_DArray[w_Row].VendorName;
