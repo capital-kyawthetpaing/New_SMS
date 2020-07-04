@@ -409,6 +409,11 @@ namespace NyuukaNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridHikiate.ColNO.GYONO:
+                            case (int)ClsGridHikiate.ColNO.Btn:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridHikiate.ColNO.JYUNO:
                             case (int)ClsGridHikiate.ColNO.JYGNO:
                             case (int)ClsGridHikiate.ColNO.Customer:
@@ -417,7 +422,7 @@ namespace NyuukaNyuuryoku
                             case (int)ClsGridHikiate.ColNO.DirectFlg:
                             case (int)ClsGridHikiate.ColNO.DeliveryPlanDate:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -1084,6 +1089,10 @@ namespace NyuukaNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridZaiko.ColNO.GYONO:
+                                {
+                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridZaiko.ColNO.Number:
                             case (int)ClsGridZaiko.ColNO.RowNo:
                             case (int)ClsGridZaiko.ColNO.Customer:
@@ -1092,7 +1101,7 @@ namespace NyuukaNyuuryoku
                             case (int)ClsGridZaiko.ColNO.DirectFlg:
                             case (int)ClsGridZaiko.ColNO.DeliveryPlanDate:
                                 {
-                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
