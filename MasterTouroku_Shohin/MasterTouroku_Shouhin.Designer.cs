@@ -30,13 +30,16 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label6 = new CKM_Controls.CKM_Label();
             this.label7 = new CKM_Controls.CKM_Label();
             this.label5 = new CKM_Controls.CKM_Label();
             this.label4 = new CKM_Controls.CKM_Label();
             this.btnSubF11 = new CKM_Controls.CKM_Button();
             this.PanelDetail = new System.Windows.Forms.Panel();
+            this.ckM_Label25 = new CKM_Controls.CKM_Label();
+            this.txtOrderLot = new CKM_Controls.CKM_TextBox();
+            this.ckM_Label24 = new CKM_Controls.CKM_Label();
+            this.ScExhibitionSegmentCD = new Search.CKM_SearchControl();
             this.ckM_Label23 = new CKM_Controls.CKM_Label();
             this.ckM_Label22 = new CKM_Controls.CKM_Label();
             this.ckM_Label27 = new CKM_Controls.CKM_Label();
@@ -164,7 +167,6 @@
             this.label14 = new CKM_Controls.CKM_Label();
             this.label21 = new CKM_Controls.CKM_Label();
             this.label39 = new CKM_Controls.CKM_Label();
-            this.ckM_Label21 = new CKM_Controls.CKM_Label();
             this.ScSegmentCD = new Search.CKM_SearchControl();
             this.ScSports = new Search.CKM_SearchControl();
             this.ScVendor = new Search.CKM_SearchControl();
@@ -172,6 +174,7 @@
             this.ScTani = new Search.CKM_SearchControl();
             this.CmbLastYearTerm = new CKM_Controls.CKM_ComboBox();
             this.CmbLastSeason = new CKM_Controls.CKM_ComboBox();
+            this.ckM_Label21 = new CKM_Controls.CKM_Label();
             this.ScCopyITEM = new Search.CKM_SearchControl();
             this.ScITEM = new Search.CKM_SearchControl();
             this.PanelHeader.SuspendLayout();
@@ -203,10 +206,6 @@
             // 
             this.PanelSearch.Controls.Add(this.btnSubF11);
             this.PanelSearch.TabIndex = 2;
-            // 
-            // btnChangeIkkatuHacchuuMode
-            // 
-            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label6
             // 
@@ -297,6 +296,10 @@
             // 
             // PanelDetail
             // 
+            this.PanelDetail.Controls.Add(this.ckM_Label25);
+            this.PanelDetail.Controls.Add(this.txtOrderLot);
+            this.PanelDetail.Controls.Add(this.ckM_Label24);
+            this.PanelDetail.Controls.Add(this.ScExhibitionSegmentCD);
             this.PanelDetail.Controls.Add(this.ckM_Label23);
             this.PanelDetail.Controls.Add(this.ckM_Label22);
             this.PanelDetail.Controls.Add(this.ckM_Label27);
@@ -390,7 +393,6 @@
             this.PanelDetail.Controls.Add(this.label14);
             this.PanelDetail.Controls.Add(this.label21);
             this.PanelDetail.Controls.Add(this.label39);
-            this.PanelDetail.Controls.Add(this.ckM_Label21);
             this.PanelDetail.Controls.Add(this.ScSegmentCD);
             this.PanelDetail.Controls.Add(this.ScSports);
             this.PanelDetail.Controls.Add(this.ScVendor);
@@ -398,11 +400,102 @@
             this.PanelDetail.Controls.Add(this.ScTani);
             this.PanelDetail.Controls.Add(this.CmbLastYearTerm);
             this.PanelDetail.Controls.Add(this.CmbLastSeason);
+            this.PanelDetail.Controls.Add(this.ckM_Label21);
             this.PanelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelDetail.Location = new System.Drawing.Point(0, 120);
             this.PanelDetail.Name = "PanelDetail";
             this.PanelDetail.Size = new System.Drawing.Size(1370, 597);
             this.PanelDetail.TabIndex = 4;
+            // 
+            // ckM_Label25
+            // 
+            this.ckM_Label25.AutoSize = true;
+            this.ckM_Label25.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label25.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label25.DefaultlabelSize = true;
+            this.ckM_Label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label25.Location = new System.Drawing.Point(705, 285);
+            this.ckM_Label25.Name = "ckM_Label25";
+            this.ckM_Label25.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label25.TabIndex = 758;
+            this.ckM_Label25.Text = "発注ロット";
+            this.ckM_Label25.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtOrderLot
+            // 
+            this.txtOrderLot.AllowMinus = false;
+            this.txtOrderLot.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
+            this.txtOrderLot.BackColor = System.Drawing.Color.White;
+            this.txtOrderLot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOrderLot.ClientColor = System.Drawing.Color.White;
+            this.txtOrderLot.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
+            this.txtOrderLot.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
+            this.txtOrderLot.DecimalPlace = 0;
+            this.txtOrderLot.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.txtOrderLot.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.txtOrderLot.IntegerPart = 5;
+            this.txtOrderLot.IsCorrectDate = true;
+            this.txtOrderLot.isEnterKeyDown = false;
+            this.txtOrderLot.isMaxLengthErr = false;
+            this.txtOrderLot.IsNumber = true;
+            this.txtOrderLot.IsShop = false;
+            this.txtOrderLot.Length = 6;
+            this.txtOrderLot.Location = new System.Drawing.Point(779, 281);
+            this.txtOrderLot.MaxLength = 6;
+            this.txtOrderLot.MoveNext = true;
+            this.txtOrderLot.Name = "txtOrderLot";
+            this.txtOrderLot.Size = new System.Drawing.Size(82, 19);
+            this.txtOrderLot.TabIndex = 44;
+            this.txtOrderLot.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOrderLot.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
+            // 
+            // ckM_Label24
+            // 
+            this.ckM_Label24.AutoSize = true;
+            this.ckM_Label24.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label24.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label24.DefaultlabelSize = true;
+            this.ckM_Label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label24.Location = new System.Drawing.Point(705, 264);
+            this.ckM_Label24.Name = "ckM_Label24";
+            this.ckM_Label24.Size = new System.Drawing.Size(70, 12);
+            this.ckM_Label24.TabIndex = 756;
+            this.ckM_Label24.Text = "セグメント";
+            this.ckM_Label24.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // ScExhibitionSegmentCD
+            // 
+            this.ScExhibitionSegmentCD.AutoSize = true;
+            this.ScExhibitionSegmentCD.ChangeDate = "";
+            this.ScExhibitionSegmentCD.ChangeDateWidth = 100;
+            this.ScExhibitionSegmentCD.Code = "";
+            this.ScExhibitionSegmentCD.CodeWidth = 30;
+            this.ScExhibitionSegmentCD.CodeWidth1 = 30;
+            this.ScExhibitionSegmentCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScExhibitionSegmentCD.DataCheck = false;
+            this.ScExhibitionSegmentCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScExhibitionSegmentCD.IsCopy = false;
+            this.ScExhibitionSegmentCD.LabelText = "";
+            this.ScExhibitionSegmentCD.LabelVisible = true;
+            this.ScExhibitionSegmentCD.Location = new System.Drawing.Point(779, 256);
+            this.ScExhibitionSegmentCD.Margin = new System.Windows.Forms.Padding(0);
+            this.ScExhibitionSegmentCD.Name = "ScExhibitionSegmentCD";
+            this.ScExhibitionSegmentCD.NameWidth = 140;
+            this.ScExhibitionSegmentCD.SearchEnable = true;
+            this.ScExhibitionSegmentCD.Size = new System.Drawing.Size(204, 27);
+            this.ScExhibitionSegmentCD.Stype = Search.CKM_SearchControl.SearchType.単位;
+            this.ScExhibitionSegmentCD.TabIndex = 43;
+            this.ScExhibitionSegmentCD.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScExhibitionSegmentCD.UseChangeDate = false;
+            this.ScExhibitionSegmentCD.Value1 = null;
+            this.ScExhibitionSegmentCD.Value2 = null;
+            this.ScExhibitionSegmentCD.Value3 = null;
             // 
             // ckM_Label23
             // 
@@ -430,7 +523,7 @@
             this.ckM_Label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label22.Location = new System.Drawing.Point(571, 378);
+            this.ckM_Label22.Location = new System.Drawing.Point(571, 394);
             this.ckM_Label22.Name = "ckM_Label22";
             this.ckM_Label22.Size = new System.Drawing.Size(96, 12);
             this.ckM_Label22.TabIndex = 752;
@@ -537,7 +630,7 @@
             this.ckM_MultiLineTextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox4.Length = 200;
-            this.ckM_MultiLineTextBox4.Location = new System.Drawing.Point(665, 543);
+            this.ckM_MultiLineTextBox4.Location = new System.Drawing.Point(667, 548);
             this.ckM_MultiLineTextBox4.MaxLength = 200;
             this.ckM_MultiLineTextBox4.Mdea = false;
             this.ckM_MultiLineTextBox4.Mfocus = false;
@@ -558,7 +651,7 @@
             this.ckM_Label19.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label19.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label19.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label19.Location = new System.Drawing.Point(610, 546);
+            this.ckM_Label19.Location = new System.Drawing.Point(610, 551);
             this.ckM_Label19.Name = "ckM_Label19";
             this.ckM_Label19.Size = new System.Drawing.Size(52, 12);
             this.ckM_Label19.TabIndex = 728;
@@ -575,7 +668,7 @@
             this.ckM_MultiLineTextBox3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox3.Length = 80;
-            this.ckM_MultiLineTextBox3.Location = new System.Drawing.Point(666, 498);
+            this.ckM_MultiLineTextBox3.Location = new System.Drawing.Point(667, 507);
             this.ckM_MultiLineTextBox3.MaxLength = 80;
             this.ckM_MultiLineTextBox3.Mdea = false;
             this.ckM_MultiLineTextBox3.Mfocus = false;
@@ -596,7 +689,7 @@
             this.ckM_Label18.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label18.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label18.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label18.Location = new System.Drawing.Point(605, 501);
+            this.ckM_Label18.Location = new System.Drawing.Point(605, 510);
             this.ckM_Label18.Name = "ckM_Label18";
             this.ckM_Label18.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label18.TabIndex = 726;
@@ -645,7 +738,7 @@
             this.label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label11.Location = new System.Drawing.Point(678, 109);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(22, 166);
+            this.label11.Size = new System.Drawing.Size(22, 144);
             this.label11.TabIndex = 722;
             this.label11.Text = "カラ❘";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -877,7 +970,7 @@
             this.ckM_MultiLineTextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox2.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox2.Length = 80;
-            this.ckM_MultiLineTextBox2.Location = new System.Drawing.Point(667, 455);
+            this.ckM_MultiLineTextBox2.Location = new System.Drawing.Point(667, 466);
             this.ckM_MultiLineTextBox2.MaxLength = 80;
             this.ckM_MultiLineTextBox2.Mdea = false;
             this.ckM_MultiLineTextBox2.Mfocus = false;
@@ -900,7 +993,7 @@
             this.ckM_Label15.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label15.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label15.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label15.Location = new System.Drawing.Point(605, 458);
+            this.ckM_Label15.Location = new System.Drawing.Point(605, 469);
             this.ckM_Label15.Name = "ckM_Label15";
             this.ckM_Label15.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label15.TabIndex = 708;
@@ -917,7 +1010,7 @@
             this.ckM_MultiLineTextBox1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_MultiLineTextBox1.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_MultiLineTextBox1.Length = 500;
-            this.ckM_MultiLineTextBox1.Location = new System.Drawing.Point(827, 387);
+            this.ckM_MultiLineTextBox1.Location = new System.Drawing.Point(827, 403);
             this.ckM_MultiLineTextBox1.MaxLength = 500;
             this.ckM_MultiLineTextBox1.Mdea = false;
             this.ckM_MultiLineTextBox1.Mfocus = false;
@@ -939,7 +1032,7 @@
             this.ckM_Label14.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label14.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label14.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label14.Location = new System.Drawing.Point(824, 372);
+            this.ckM_Label14.Location = new System.Drawing.Point(824, 388);
             this.ckM_Label14.Name = "ckM_Label14";
             this.ckM_Label14.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label14.TabIndex = 706;
@@ -957,7 +1050,7 @@
             this.dgvDetail.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 9F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -971,14 +1064,6 @@
             this.MakerCD,
             this.MakerName,
             this.ColChangeDate});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDetail.Enabled = false;
             this.dgvDetail.EnableHeadersVisualStyles = false;
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
@@ -987,10 +1072,8 @@
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidth = 35;
-            this.dgvDetail.RowHeight_ = 20;
-            this.dgvDetail.RowTemplate.Height = 20;
             this.dgvDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvDetail.Size = new System.Drawing.Size(658, 167);
+            this.dgvDetail.Size = new System.Drawing.Size(658, 145);
             this.dgvDetail.TabIndex = 42;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
@@ -1124,7 +1207,7 @@
             this.ckM_Label11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label11.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label11.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label11.Location = new System.Drawing.Point(618, 397);
+            this.ckM_Label11.Location = new System.Drawing.Point(618, 413);
             this.ckM_Label11.Name = "ckM_Label11";
             this.ckM_Label11.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label11.TabIndex = 699;
@@ -1151,7 +1234,7 @@
             this.ckM_TextBox3.IsNumber = true;
             this.ckM_TextBox3.IsShop = false;
             this.ckM_TextBox3.Length = 10;
-            this.ckM_TextBox3.Location = new System.Drawing.Point(667, 393);
+            this.ckM_TextBox3.Location = new System.Drawing.Point(667, 409);
             this.ckM_TextBox3.MaxLength = 10;
             this.ckM_TextBox3.MoveNext = false;
             this.ckM_TextBox3.Name = "ckM_TextBox3";
@@ -1474,7 +1557,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(605, 306);
+            this.ckM_Label2.Location = new System.Drawing.Point(605, 327);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label2.TabIndex = 679;
@@ -1491,7 +1574,7 @@
             this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(618, 288);
+            this.ckM_Label1.Location = new System.Drawing.Point(618, 309);
             this.ckM_Label1.Name = "ckM_Label1";
             this.ckM_Label1.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label1.TabIndex = 678;
@@ -1508,7 +1591,7 @@
             this.TxtRemark.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.TxtRemark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark.Length = 1000;
-            this.TxtRemark.Location = new System.Drawing.Point(828, 301);
+            this.TxtRemark.Location = new System.Drawing.Point(828, 322);
             this.TxtRemark.MaxLength = 1000;
             this.TxtRemark.Mdea = false;
             this.TxtRemark.Mfocus = false;
@@ -1518,7 +1601,7 @@
             this.TxtRemark.RowCount = 5;
             this.TxtRemark.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtRemark.Size = new System.Drawing.Size(514, 61);
-            this.TxtRemark.TabIndex = 48;
+            this.TxtRemark.TabIndex = 49;
             this.TxtRemark.TextSize = CKM_Controls.CKM_MultiLineTextBox.FontSize.Normal;
             // 
             // ScBrand
@@ -1594,12 +1677,12 @@
             this.ckM_TextBox23.IsNumber = true;
             this.ckM_TextBox23.IsShop = false;
             this.ckM_TextBox23.Length = 20;
-            this.ckM_TextBox23.Location = new System.Drawing.Point(667, 343);
+            this.ckM_TextBox23.Location = new System.Drawing.Point(667, 364);
             this.ckM_TextBox23.MaxLength = 20;
             this.ckM_TextBox23.MoveNext = false;
             this.ckM_TextBox23.Name = "ckM_TextBox23";
             this.ckM_TextBox23.Size = new System.Drawing.Size(153, 19);
-            this.ckM_TextBox23.TabIndex = 47;
+            this.ckM_TextBox23.TabIndex = 48;
             this.ckM_TextBox23.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // ckM_TextBox22
@@ -1620,12 +1703,12 @@
             this.ckM_TextBox22.IsNumber = true;
             this.ckM_TextBox22.IsShop = false;
             this.ckM_TextBox22.Length = 20;
-            this.ckM_TextBox22.Location = new System.Drawing.Point(667, 324);
+            this.ckM_TextBox22.Location = new System.Drawing.Point(667, 345);
             this.ckM_TextBox22.MaxLength = 20;
             this.ckM_TextBox22.MoveNext = false;
             this.ckM_TextBox22.Name = "ckM_TextBox22";
             this.ckM_TextBox22.Size = new System.Drawing.Size(153, 19);
-            this.ckM_TextBox22.TabIndex = 46;
+            this.ckM_TextBox22.TabIndex = 47;
             this.ckM_TextBox22.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
             // 
             // label33
@@ -1744,7 +1827,7 @@
             this.label29.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label29.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label29.ForeColor = System.Drawing.Color.Black;
-            this.label29.Location = new System.Drawing.Point(825, 286);
+            this.label29.Location = new System.Drawing.Point(825, 307);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(83, 12);
             this.label29.TabIndex = 661;
@@ -1988,7 +2071,7 @@
             this.ckM_TextBox4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_TextBox4.DecimalPlace = 0;
             this.ckM_TextBox4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ckM_TextBox4.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.ckM_TextBox4.IntegerPart = 0;
             this.ckM_TextBox4.IsCorrectDate = true;
             this.ckM_TextBox4.isEnterKeyDown = false;
@@ -2115,7 +2198,7 @@
             this.label16.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label16.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(566, 345);
+            this.label16.Location = new System.Drawing.Point(566, 366);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(96, 12);
             this.label16.TabIndex = 648;
@@ -2132,7 +2215,7 @@
             this.label17.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label17.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(579, 326);
+            this.label17.Location = new System.Drawing.Point(579, 347);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(83, 12);
             this.label17.TabIndex = 647;
@@ -2637,23 +2720,6 @@
             this.label39.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_Label21
-            // 
-            this.ckM_Label21.AutoSize = true;
-            this.ckM_Label21.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label21.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label21.DefaultlabelSize = true;
-            this.ckM_Label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label21.Location = new System.Drawing.Point(571, 263);
-            this.ckM_Label21.Name = "ckM_Label21";
-            this.ckM_Label21.Size = new System.Drawing.Size(109, 12);
-            this.ckM_Label21.TabIndex = 751;
-            this.ckM_Label21.Text = "【カタログ情報】";
-            this.ckM_Label21.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // ScSegmentCD
             // 
             this.ScSegmentCD.AutoSize = true;
@@ -2805,12 +2871,12 @@
             this.CmbLastYearTerm.Flag = 0;
             this.CmbLastYearTerm.FormattingEnabled = true;
             this.CmbLastYearTerm.Length = 20;
-            this.CmbLastYearTerm.Location = new System.Drawing.Point(667, 284);
+            this.CmbLastYearTerm.Location = new System.Drawing.Point(667, 305);
             this.CmbLastYearTerm.MaxLength = 20;
             this.CmbLastYearTerm.MoveNext = false;
             this.CmbLastYearTerm.Name = "CmbLastYearTerm";
             this.CmbLastYearTerm.Size = new System.Drawing.Size(152, 20);
-            this.CmbLastYearTerm.TabIndex = 44;
+            this.CmbLastYearTerm.TabIndex = 45;
             // 
             // CmbLastSeason
             // 
@@ -2822,12 +2888,29 @@
             this.CmbLastSeason.Flag = 0;
             this.CmbLastSeason.FormattingEnabled = true;
             this.CmbLastSeason.Length = 20;
-            this.CmbLastSeason.Location = new System.Drawing.Point(667, 304);
+            this.CmbLastSeason.Location = new System.Drawing.Point(667, 325);
             this.CmbLastSeason.MaxLength = 10;
             this.CmbLastSeason.MoveNext = false;
             this.CmbLastSeason.Name = "CmbLastSeason";
             this.CmbLastSeason.Size = new System.Drawing.Size(152, 20);
-            this.CmbLastSeason.TabIndex = 45;
+            this.CmbLastSeason.TabIndex = 46;
+            // 
+            // ckM_Label21
+            // 
+            this.ckM_Label21.AutoSize = true;
+            this.ckM_Label21.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label21.BackColor = System.Drawing.Color.Transparent;
+            this.ckM_Label21.DefaultlabelSize = true;
+            this.ckM_Label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
+            this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
+            this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
+            this.ckM_Label21.Location = new System.Drawing.Point(571, 287);
+            this.ckM_Label21.Name = "ckM_Label21";
+            this.ckM_Label21.Size = new System.Drawing.Size(109, 12);
+            this.ckM_Label21.TabIndex = 751;
+            this.ckM_Label21.Text = "【カタログ情報】";
+            this.ckM_Label21.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
+            this.ckM_Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ScCopyITEM
             // 
@@ -3058,5 +3141,9 @@
         private Search.CKM_SearchControl ScTani;
         private CKM_Controls.CKM_ComboBox CmbLastYearTerm;
         private CKM_Controls.CKM_ComboBox CmbLastSeason;
+        private CKM_Controls.CKM_Label ckM_Label25;
+        private CKM_Controls.CKM_TextBox txtOrderLot;
+        private CKM_Controls.CKM_Label ckM_Label24;
+        private Search.CKM_SearchControl ScExhibitionSegmentCD;
     }
 }
