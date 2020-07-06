@@ -87,9 +87,8 @@ namespace MasterTouroku_Tokuisaki
             , TotalPoint
             , RemarksOutStore
             , RemarksInStore
-
-            ,cboStoreCD
-            //, StoreCD
+                
+            , StoreCD
             , StaffCD
             , DeleteFlg
             , txtCreditCheckKBN
@@ -1012,7 +1011,7 @@ namespace MasterTouroku_Tokuisaki
                 case (int)EIndex.cmbPaymentMethodCD:
                 case (int)EIndex.cmbPaymentUnit:
                 case (int)EIndex.cmbCreditLevel:
-                case (int)EIndex.cboStoreCD:
+                case (int)EIndex.StoreCD:
                     //case (int)EIndex.StoreCD:
                     //入力必須(Entry required)
                     if (!RequireCheck(new Control[] { detailControls[index] }))
