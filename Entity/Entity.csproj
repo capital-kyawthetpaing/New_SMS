@@ -93,6 +93,7 @@
     <Compile Include="D_Shipping_Entity.cs" />
     <Compile Include="D_SKENDeliveryDetails_Entity.cs" />
     <Compile Include="D_SKENDelivery_Entity.cs" />
+    <Compile Include="D_StockReplica_Entity.cs" />
     <Compile Include="D_Stock_Entity.cs" />
     <Compile Include="D_StoreCalculation_Entity.cs" />
     <Compile Include="D_StorePayment_Entity.cs" />

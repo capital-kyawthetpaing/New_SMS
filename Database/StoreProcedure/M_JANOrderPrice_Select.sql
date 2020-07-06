@@ -36,7 +36,7 @@ BEGIN
 
     from M_JANOrderPrice MS
     
-    WHERE MS.AdminNO = (CASE WHEN @AdminNO <> null THEN @AdminNO ELSE MS.AdminNO END)
+    WHERE MS.AdminNO = (CASE WHEN @AdminNO is not null THEN @AdminNO ELSE MS.AdminNO END)
     AND MS.VendorCD = (CASE WHEN @VendorCD <> '' THEN @VendorCD ELSE MS.VendorCD END)
     AND MS.StoreCD = (CASE WHEN @StoreCD <> '' THEN @StoreCD ELSE MS.StoreCD END)
     AND MS.ChangeDate <= CONVERT(DATE, @ChangeDate)     

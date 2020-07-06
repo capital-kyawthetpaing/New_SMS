@@ -104,6 +104,9 @@ namespace MasterTouroku_Shouhin
             , CmbTag8
             , CmbTag9
             , CmbTag10
+          
+                , ExhibitionSegmentCD
+                , OrderLot
 
           , CmbLastYearTerm
           , CmbLastSeason
@@ -176,6 +179,7 @@ namespace MasterTouroku_Shouhin
                 ScTani.Value1 = MultiPorpose_BL.ID_TANI;
                 ScSegmentCD.Value1 = MultiPorpose_BL.ID_SegmentCD;
                 ScSports.Value1 = MultiPorpose_BL.ID_SPORTS;
+                ScExhibitionSegmentCD.Value1 = MultiPorpose_BL.ID_ExhibitionSegmentCD;
 
                 string ymd = bbl.GetDate();
                 M_SalesTax_Entity mste = new M_SalesTax_Entity
@@ -326,14 +330,14 @@ namespace MasterTouroku_Shouhin
                 ,cmbOrderAttentionCD, ckM_TextBox13
                 ,ckM_ComboBox8,ckM_ComboBox9,ckM_ComboBox10,ckM_ComboBox11,ckM_ComboBox12,ckM_ComboBox13
                 ,ckM_ComboBox14,ckM_ComboBox15,ckM_ComboBox16,ckM_ComboBox17
-                
+                ,ScExhibitionSegmentCD.TxtCode, txtOrderLot
                 , CmbLastYearTerm, CmbLastSeason, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3, ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
                 , ckM_TextBox2, ckM_TextBox1
                 ,ckM_TextBox16, checkDeleteFlg
             };
-            detailLabels = new CKM_SearchControl[] { ScBrand, ScTani, ScSegmentCD, ScSports, ScVendor};
-            searchButtons = new Control[] { ScBrand.BtnSearch,ScTani.BtnSearch,ScSegmentCD.BtnSearch, ScSports.BtnSearch,ScVendor.BtnSearch
+            detailLabels = new CKM_SearchControl[] { ScBrand, ScTani, ScSegmentCD, ScExhibitionSegmentCD, ScSports, ScVendor};
+            searchButtons = new Control[] { ScBrand.BtnSearch,ScTani.BtnSearch,ScSegmentCD.BtnSearch, ScExhibitionSegmentCD.BtnSearch, ScSports.BtnSearch,ScVendor.BtnSearch
                 ,ScCopyITEM.BtnSearch,ScITEM.BtnSearch };
 
             //イベント付与
@@ -630,6 +634,9 @@ namespace MasterTouroku_Shouhin
                         detailControls[(int)EIndex.OrderAttentionNote].Text = mie.OrderAttentionNote;
                         detailControls[(int)EIndex.CommentInStore].Text = mie.CommentInStore;
                         detailControls[(int)EIndex.CommentOutStore].Text = mie.CommentOutStore;
+                        detailControls[(int)EIndex.ExhibitionSegmentCD].Text = mie.ExhibitionSegmentCD;
+                        detailControls[(int)EIndex.OrderLot].Text = mie.OrderLot;
+
                         ((ComboBox)detailControls[(int)EIndex.CmbLastYearTerm]).SelectedValue = mie.LastYearTerm;
                         ((ComboBox)detailControls[(int)EIndex.CmbLastSeason]).SelectedValue = mie.LastSeason;
                         detailControls[(int)EIndex.LastCatalogNO].Text = mie.LastCatalogNO;
@@ -950,6 +957,7 @@ namespace MasterTouroku_Shouhin
                 case (int)EIndex.TaniCD:
                 case (int)EIndex.SportsCD:
                 case (int)EIndex.SegmentCD:
+                case (int)EIndex.ExhibitionSegmentCD:
                     // 入力無くても良い(It is not necessary to input)
                     ((Search.CKM_SearchControl)detailControls[index].Parent).LabelText = "";
 
@@ -964,8 +972,10 @@ namespace MasterTouroku_Shouhin
                             id = MultiPorpose_BL.ID_TANI;
                     else if (index.Equals((int)EIndex.SportsCD))
                         id = MultiPorpose_BL.ID_SPORTS;
-                        else
+                    else if(index.Equals((int)EIndex.SegmentCD))
                         id = MultiPorpose_BL.ID_SegmentCD;
+                    else if (index.Equals((int)EIndex.ExhibitionSegmentCD))
+                        id = MultiPorpose_BL.ID_ExhibitionSegmentCD;
 
                     //[M_MultiPorpose]
                     M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
@@ -986,6 +996,14 @@ namespace MasterTouroku_Shouhin
                             return false;
                         }
               
+                    break;
+
+                case (int)EIndex.OrderLot:
+                    //未入力時、1をセット
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        detailControls[index].Text = "1";
+                    }
                     break;
 
                 case (int)EIndex.MainVendorCD:
@@ -1320,6 +1338,8 @@ namespace MasterTouroku_Shouhin
                     case (int)EIndex.LastInstructionsDate: name = "LastInstructionsDate"; oldVal = "'" + mie.LastInstructionsDate + "'"; break;
                     case (int)EIndex.CommentInStore: name = "CommentInStore"; oldVal = "'" + mie.CommentInStore + "'"; break;
                     case (int)EIndex.CommentOutStore: name = "CommentOutStore"; oldVal = "'" + mie.CommentOutStore + "'"; break;
+                    case (int)EIndex.ExhibitionSegmentCD: name = "ExhibitionSegmentCD"; oldVal = "'" + mie.ExhibitionSegmentCD + "'"; break;
+                    case (int)EIndex.OrderLot: name = "OrderLot"; oldVal = mie.OrderLot == null ? "0" : mie.OrderLot; break;
                     case (int)EIndex.WebAddress: name = "WebAddress"; oldVal = "'" + mie.WebAddress + "'"; break;
                     case (int)EIndex.DeleteFlg: name = "DeleteFlg"; oldVal = mie.DeleteFlg == null ? "0" : mie.DeleteFlg; break;
                     case (int)EIndex.MakerItem:
@@ -1510,7 +1530,7 @@ namespace MasterTouroku_Shouhin
             mie.BrandName = ScBrand.LabelText;
             mie.MakerItem = detailControls[(int)EIndex.MakerItem].Text;
             mie.TaniCD = detailControls[(int)EIndex.TaniCD].Text;
-            mie.TaniName= ScSegmentCD.LabelText;
+            mie.TaniName= ScTani.LabelText;
             mie.SportsCD = detailControls[(int)EIndex.SportsCD].Text;
             mie.SportsName = ScSports.LabelText;
             mie.SegmentCD= detailControls[(int)EIndex.SegmentCD].Text;
@@ -1576,6 +1596,8 @@ namespace MasterTouroku_Shouhin
             mie.OrderAttentionNote = detailControls[(int)EIndex.OrderAttentionNote].Text;
             mie.CommentInStore = detailControls[(int)EIndex.CommentInStore].Text;
             mie.CommentOutStore = detailControls[(int)EIndex.CommentOutStore].Text;
+            mie.ExhibitionSegmentCD = detailControls[(int)EIndex.ExhibitionSegmentCD].Text;
+            mie.OrderLot = bbl.Z_SetStr(detailControls[(int)EIndex.OrderLot].Text);
             mie.LastYearTerm = CmbLastYearTerm.SelectedIndex > 0 ? CmbLastYearTerm.SelectedValue.ToString() : ""; 
             mie.LastSeason = CmbLastSeason.SelectedIndex > 0 ? CmbLastSeason.SelectedValue.ToString() : ""; 
             mie.LastCatalogNO = detailControls[(int)EIndex.LastCatalogNO].Text;
@@ -1776,6 +1798,8 @@ namespace MasterTouroku_Shouhin
                                     newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
                                     newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
                                     newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
+                                    newrow["ExhibitionSegmentCD"] = detailControls[(int)EIndex.ExhibitionSegmentCD].Text;
+                                    newrow["OrderLot"] = detailControls[(int)EIndex.OrderLot].Text;
                                     newrow["LastYearTerm"] = detailControls[(int)EIndex.CmbLastYearTerm].Text;
                                     newrow["LastSeason"] = detailControls[(int)EIndex.CmbLastSeason].Text;
                                     newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;
@@ -2445,6 +2469,7 @@ namespace MasterTouroku_Shouhin
         {
             ScBrand.ChangeDate = ScITEM.ChangeDate;
             ScSegmentCD.ChangeDate = ScITEM.ChangeDate;
+            ScExhibitionSegmentCD.ChangeDate = ScITEM.ChangeDate;
             ScSports.ChangeDate = ScITEM.ChangeDate;
             ScVendor.ChangeDate = ScITEM.ChangeDate;
             ScRackNo.ChangeDate = ScITEM.ChangeDate;

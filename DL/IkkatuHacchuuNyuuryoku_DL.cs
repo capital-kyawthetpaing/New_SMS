@@ -101,5 +101,17 @@ namespace DL
             }
             return ret;
         }
+        public DataTable D_Order_SelectData_SeachHacchuuShoriNO(string storeCD, string dateFrom, string dateTo, string staffCD)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+               {"@p_StoreCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = storeCD } },
+               {"@p_DateFrom", new ValuePair { value1 = SqlDbType.Date, value2 = dateFrom } },
+               {"@p_DateTo", new ValuePair { value1 = SqlDbType.Date, value2 = dateTo } },
+               {"@p_InsertOperator", new ValuePair { value1 = SqlDbType.VarChar, value2 = staffCD } },
+            };
+            UseTransaction = true;
+            return SelectData(dic, "D_Order_SelectData_SeachHacchuuShoriNO");
+        }
     }
 }

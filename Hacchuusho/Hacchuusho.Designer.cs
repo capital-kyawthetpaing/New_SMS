@@ -42,12 +42,9 @@
             this.txtHacchuuDateFrom = new CKM_Controls.CKM_TextBox();
             this.ScVendor = new Search.CKM_SearchControl();
             this.chkInsatuTaishou_Mihakkou = new CKM_Controls.CKM_CheckBox();
-            this.ckM_Label1 = new CKM_Controls.CKM_Label();
-            this.ckM_Label3 = new CKM_Controls.CKM_Label();
             this.chkInsatuTaishou_Saihakkou = new CKM_Controls.CKM_CheckBox();
             this.ckM_Label5 = new CKM_Controls.CKM_Label();
             this.txtHacchuuDateTo = new CKM_Controls.CKM_TextBox();
-            this.ScHacchuuNO = new Search.CKM_SearchControl();
             this.ckM_Label6 = new CKM_Controls.CKM_Label();
             this.ckM_Label7 = new CKM_Controls.CKM_Label();
             this.ckM_Label8 = new CKM_Controls.CKM_Label();
@@ -62,6 +59,7 @@
             this.chkInsatuShurui_NetHacchuu = new CKM_Controls.CKM_CheckBox();
             this.ckM_Label13 = new CKM_Controls.CKM_Label();
             this.chkInsatuShurui_Hacchhusho = new CKM_Controls.CKM_CheckBox();
+            this.ScHacchuuNO = new Search.CKM_SearchControl();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -74,6 +72,10 @@
             // 
             this.PanelSearch.Location = new System.Drawing.Point(1294, 0);
             this.PanelSearch.TabIndex = 7;
+            // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             // 
             // label4
             // 
@@ -136,9 +138,10 @@
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
             this.CboStoreCD.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
-            this.CboStoreCD.Location = new System.Drawing.Point(135, 130);
+            this.CboStoreCD.Location = new System.Drawing.Point(135, 132);
             this.CboStoreCD.Margin = new System.Windows.Forms.Padding(4);
             this.CboStoreCD.MaxLength = 20;
             this.CboStoreCD.MoveNext = true;
@@ -153,8 +156,10 @@
             this.ckM_SearchControl2.ChangeDateWidth = 133;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
+            this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl2.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl2.IsCopy = false;
             this.ckM_SearchControl2.LabelText = "";
@@ -162,10 +167,12 @@
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
             this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
+            this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
             this.ckM_SearchControl2.Size = new System.Drawing.Size(144, 28);
             this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl2.TabIndex = 275;
+            this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl2.UseChangeDate = false;
             this.ckM_SearchControl2.Value1 = null;
             this.ckM_SearchControl2.Value2 = null;
@@ -178,8 +185,10 @@
             this.ckM_SearchControl3.ChangeDateWidth = 133;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
+            this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ckM_SearchControl3.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ckM_SearchControl3.IsCopy = false;
             this.ckM_SearchControl3.LabelText = "";
@@ -187,10 +196,12 @@
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
             this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(144, 28);
             this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
             this.ckM_SearchControl3.TabIndex = 344;
+            this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
             this.ckM_SearchControl3.Value1 = null;
             this.ckM_SearchControl3.Value2 = null;
@@ -202,20 +213,24 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 133;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = true;
+            this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScStaff.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScStaff.IsCopy = false;
             this.ScStaff.LabelText = "";
             this.ScStaff.LabelVisible = true;
-            this.ScStaff.Location = new System.Drawing.Point(135, 275);
+            this.ScStaff.Location = new System.Drawing.Point(135, 277);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(356, 35);
+            this.ScStaff.Size = new System.Drawing.Size(366, 35);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 6;
+            this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScStaff.UseChangeDate = false;
             this.ScStaff.Value1 = null;
             this.ScStaff.Value2 = null;
@@ -230,7 +245,7 @@
             this.label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(18, 285);
+            this.label9.Location = new System.Drawing.Point(18, 287);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(109, 15);
@@ -244,7 +259,7 @@
             this.lblSkuCD.AutoSize = true;
             this.lblSkuCD.BackColor = System.Drawing.Color.Transparent;
             this.lblSkuCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblSkuCD.Location = new System.Drawing.Point(69, 242);
+            this.lblSkuCD.Location = new System.Drawing.Point(69, 249);
             this.lblSkuCD.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSkuCD.Name = "lblSkuCD";
             this.lblSkuCD.Size = new System.Drawing.Size(58, 15);
@@ -261,7 +276,7 @@
             this.ckM_Label2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label2.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label2.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label2.Location = new System.Drawing.Point(69, 202);
+            this.ckM_Label2.Location = new System.Drawing.Point(69, 211);
             this.ckM_Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label2.Name = "ckM_Label2";
             this.ckM_Label2.Size = new System.Drawing.Size(58, 15);
@@ -279,7 +294,7 @@
             this.ckM_Label4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label4.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label4.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label4.Location = new System.Drawing.Point(54, 171);
+            this.ckM_Label4.Location = new System.Drawing.Point(54, 173);
             this.ckM_Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label4.Name = "ckM_Label4";
             this.ckM_Label4.Size = new System.Drawing.Size(75, 15);
@@ -294,6 +309,7 @@
             this.txtHacchuuDateFrom.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuDateFrom.BackColor = System.Drawing.Color.White;
             this.txtHacchuuDateFrom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHacchuuDateFrom.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuDateFrom.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtHacchuuDateFrom.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtHacchuuDateFrom.DecimalPlace = 0;
@@ -303,10 +319,12 @@
             this.txtHacchuuDateFrom.IntegerPart = 0;
             this.txtHacchuuDateFrom.IsCorrectDate = true;
             this.txtHacchuuDateFrom.isEnterKeyDown = false;
+            this.txtHacchuuDateFrom.IsFirstTime = true;
+            this.txtHacchuuDateFrom.isMaxLengthErr = false;
             this.txtHacchuuDateFrom.IsNumber = true;
             this.txtHacchuuDateFrom.IsShop = false;
             this.txtHacchuuDateFrom.Length = 10;
-            this.txtHacchuuDateFrom.Location = new System.Drawing.Point(136, 202);
+            this.txtHacchuuDateFrom.Location = new System.Drawing.Point(136, 207);
             this.txtHacchuuDateFrom.Margin = new System.Windows.Forms.Padding(4);
             this.txtHacchuuDateFrom.MaxLength = 10;
             this.txtHacchuuDateFrom.MoveNext = true;
@@ -323,19 +341,23 @@
             this.ScVendor.ChangeDateWidth = 133;
             this.ScVendor.Code = "";
             this.ScVendor.CodeWidth = 100;
+            this.ScVendor.CodeWidth1 = 100;
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = true;
+            this.ScVendor.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
             this.ScVendor.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.ScVendor.IsCopy = false;
             this.ScVendor.LabelText = "";
             this.ScVendor.LabelVisible = true;
-            this.ScVendor.Location = new System.Drawing.Point(135, 232);
+            this.ScVendor.Location = new System.Drawing.Point(135, 239);
             this.ScVendor.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ScVendor.Name = "ScVendor";
+            this.ScVendor.NameWidth = 310;
             this.ScVendor.SearchEnable = true;
-            this.ScVendor.Size = new System.Drawing.Size(646, 35);
+            this.ScVendor.Size = new System.Drawing.Size(456, 35);
             this.ScVendor.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.ScVendor.TabIndex = 5;
+            this.ScVendor.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScVendor.UseChangeDate = false;
             this.ScVendor.Value1 = null;
             this.ScVendor.Value2 = null;
@@ -343,63 +365,28 @@
             // 
             // chkInsatuTaishou_Mihakkou
             // 
-            this.chkInsatuTaishou_Mihakkou.BackColor = System.Drawing.Color.White;
             this.chkInsatuTaishou_Mihakkou.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.chkInsatuTaishou_Mihakkou.Location = new System.Drawing.Point(135, 170);
+            this.chkInsatuTaishou_Mihakkou.Location = new System.Drawing.Point(135, 171);
             this.chkInsatuTaishou_Mihakkou.Margin = new System.Windows.Forms.Padding(4);
             this.chkInsatuTaishou_Mihakkou.Name = "chkInsatuTaishou_Mihakkou";
-            this.chkInsatuTaishou_Mihakkou.Size = new System.Drawing.Size(17, 16);
+            this.chkInsatuTaishou_Mihakkou.Size = new System.Drawing.Size(112, 19);
             this.chkInsatuTaishou_Mihakkou.TabIndex = 1;
             this.chkInsatuTaishou_Mihakkou.Tag = "0";
-            this.chkInsatuTaishou_Mihakkou.UseVisualStyleBackColor = false;
-            // 
-            // ckM_Label1
-            // 
-            this.ckM_Label1.AutoSize = true;
-            this.ckM_Label1.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label1.DefaultlabelSize = true;
-            this.ckM_Label1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label1.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label1.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label1.Location = new System.Drawing.Point(157, 171);
-            this.ckM_Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ckM_Label1.Name = "ckM_Label1";
-            this.ckM_Label1.Size = new System.Drawing.Size(75, 15);
-            this.ckM_Label1.TabIndex = 706;
-            this.ckM_Label1.Text = "未発行分";
-            this.ckM_Label1.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_Label3
-            // 
-            this.ckM_Label3.AutoSize = true;
-            this.ckM_Label3.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label3.DefaultlabelSize = true;
-            this.ckM_Label3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label3.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label3.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label3.Location = new System.Drawing.Point(291, 171);
-            this.ckM_Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.ckM_Label3.Name = "ckM_Label3";
-            this.ckM_Label3.Size = new System.Drawing.Size(75, 15);
-            this.ckM_Label3.TabIndex = 707;
-            this.ckM_Label3.Text = "再発行分";
-            this.ckM_Label3.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkInsatuTaishou_Mihakkou.Text = "未発行分";
+            this.chkInsatuTaishou_Mihakkou.UseVisualStyleBackColor = true;
             // 
             // chkInsatuTaishou_Saihakkou
             // 
-            this.chkInsatuTaishou_Saihakkou.BackColor = System.Drawing.Color.White;
+            this.chkInsatuTaishou_Saihakkou.AutoSize = true;
             this.chkInsatuTaishou_Saihakkou.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.chkInsatuTaishou_Saihakkou.Location = new System.Drawing.Point(265, 170);
-            this.chkInsatuTaishou_Saihakkou.Margin = new System.Windows.Forms.Padding(4);
+            this.chkInsatuTaishou_Saihakkou.Location = new System.Drawing.Point(259, 171);
             this.chkInsatuTaishou_Saihakkou.Name = "chkInsatuTaishou_Saihakkou";
-            this.chkInsatuTaishou_Saihakkou.Size = new System.Drawing.Size(17, 16);
-            this.chkInsatuTaishou_Saihakkou.TabIndex = 2;
-            this.chkInsatuTaishou_Saihakkou.Tag = "0";
-            this.chkInsatuTaishou_Saihakkou.UseVisualStyleBackColor = false;
+            this.chkInsatuTaishou_Saihakkou.Size = new System.Drawing.Size(97, 19);
+            this.chkInsatuTaishou_Saihakkou.TabIndex = 706;
+            this.chkInsatuTaishou_Saihakkou.Text = "再発行分";
+            this.chkInsatuTaishou_Saihakkou.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkInsatuTaishou_Saihakkou.UseVisualStyleBackColor = true;
+            this.chkInsatuTaishou_Saihakkou.CheckedChanged += new System.EventHandler(this.chkInsatuTaishou_Saihakkou_CheckedChanged);
             // 
             // ckM_Label5
             // 
@@ -410,7 +397,7 @@
             this.ckM_Label5.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label5.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label5.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label5.Location = new System.Drawing.Point(308, 204);
+            this.ckM_Label5.Location = new System.Drawing.Point(308, 211);
             this.ckM_Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label5.Name = "ckM_Label5";
             this.ckM_Label5.Size = new System.Drawing.Size(24, 15);
@@ -425,6 +412,7 @@
             this.txtHacchuuDateTo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtHacchuuDateTo.BackColor = System.Drawing.Color.White;
             this.txtHacchuuDateTo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHacchuuDateTo.ClientColor = System.Drawing.Color.White;
             this.txtHacchuuDateTo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtHacchuuDateTo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtHacchuuDateTo.DecimalPlace = 0;
@@ -434,10 +422,12 @@
             this.txtHacchuuDateTo.IntegerPart = 0;
             this.txtHacchuuDateTo.IsCorrectDate = true;
             this.txtHacchuuDateTo.isEnterKeyDown = false;
+            this.txtHacchuuDateTo.IsFirstTime = true;
+            this.txtHacchuuDateTo.isMaxLengthErr = false;
             this.txtHacchuuDateTo.IsNumber = true;
             this.txtHacchuuDateTo.IsShop = false;
             this.txtHacchuuDateTo.Length = 10;
-            this.txtHacchuuDateTo.Location = new System.Drawing.Point(386, 202);
+            this.txtHacchuuDateTo.Location = new System.Drawing.Point(386, 207);
             this.txtHacchuuDateTo.Margin = new System.Windows.Forms.Padding(4);
             this.txtHacchuuDateTo.MaxLength = 10;
             this.txtHacchuuDateTo.MoveNext = true;
@@ -446,31 +436,6 @@
             this.txtHacchuuDateTo.TabIndex = 4;
             this.txtHacchuuDateTo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtHacchuuDateTo.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
-            // ScHacchuuNO
-            // 
-            this.ScHacchuuNO.AutoSize = true;
-            this.ScHacchuuNO.ChangeDate = "";
-            this.ScHacchuuNO.ChangeDateWidth = 133;
-            this.ScHacchuuNO.Code = "";
-            this.ScHacchuuNO.CodeWidth = 100;
-            this.ScHacchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
-            this.ScHacchuuNO.DataCheck = true;
-            this.ScHacchuuNO.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.ScHacchuuNO.IsCopy = false;
-            this.ScHacchuuNO.LabelText = "";
-            this.ScHacchuuNO.LabelVisible = true;
-            this.ScHacchuuNO.Location = new System.Drawing.Point(135, 317);
-            this.ScHacchuuNO.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ScHacchuuNO.Name = "ScHacchuuNO";
-            this.ScHacchuuNO.SearchEnable = true;
-            this.ScHacchuuNO.Size = new System.Drawing.Size(356, 35);
-            this.ScHacchuuNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
-            this.ScHacchuuNO.TabIndex = 7;
-            this.ScHacchuuNO.UseChangeDate = false;
-            this.ScHacchuuNO.Value1 = null;
-            this.ScHacchuuNO.Value2 = null;
-            this.ScHacchuuNO.Value3 = null;
             // 
             // ckM_Label6
             // 
@@ -481,7 +446,7 @@
             this.ckM_Label6.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label6.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label6.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label6.Location = new System.Drawing.Point(52, 327);
+            this.ckM_Label6.Location = new System.Drawing.Point(52, 325);
             this.ckM_Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label6.Name = "ckM_Label6";
             this.ckM_Label6.Size = new System.Drawing.Size(75, 15);
@@ -520,23 +485,23 @@
             this.ckM_Label8.Location = new System.Drawing.Point(157, 403);
             this.ckM_Label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label8.Name = "ckM_Label8";
-            this.ckM_Label8.Size = new System.Drawing.Size(170, 15);
+            this.ckM_Label8.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label8.TabIndex = 715;
-            this.ckM_Label8.Text = "EDI発注分も印刷する";
             this.ckM_Label8.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkIsPrintEDIHacchuu
             // 
-            this.chkIsPrintEDIHacchuu.BackColor = System.Drawing.Color.White;
             this.chkIsPrintEDIHacchuu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkIsPrintEDIHacchuu.Location = new System.Drawing.Point(135, 402);
             this.chkIsPrintEDIHacchuu.Margin = new System.Windows.Forms.Padding(4);
             this.chkIsPrintEDIHacchuu.Name = "chkIsPrintEDIHacchuu";
-            this.chkIsPrintEDIHacchuu.Size = new System.Drawing.Size(17, 16);
+            this.chkIsPrintEDIHacchuu.Size = new System.Drawing.Size(300, 19);
             this.chkIsPrintEDIHacchuu.TabIndex = 9;
             this.chkIsPrintEDIHacchuu.Tag = "0";
-            this.chkIsPrintEDIHacchuu.UseVisualStyleBackColor = false;
+            this.chkIsPrintEDIHacchuu.Text = "EDI発注分も印刷する";
+            this.chkIsPrintEDIHacchuu.UseVisualStyleBackColor = true;
+            this.chkIsPrintEDIHacchuu.CheckedChanged += new System.EventHandler(this.chkIsPrintEDIHacchuu_CheckedChanged);
             // 
             // ckM_Label9
             // 
@@ -550,23 +515,23 @@
             this.ckM_Label9.Location = new System.Drawing.Point(157, 371);
             this.ckM_Label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label9.Name = "ckM_Label9";
-            this.ckM_Label9.Size = new System.Drawing.Size(160, 15);
+            this.ckM_Label9.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label9.TabIndex = 717;
-            this.ckM_Label9.Text = "未承認分も印刷する";
             this.ckM_Label9.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkIsPrintMisshounin
             // 
-            this.chkIsPrintMisshounin.BackColor = System.Drawing.Color.White;
             this.chkIsPrintMisshounin.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkIsPrintMisshounin.Location = new System.Drawing.Point(135, 370);
             this.chkIsPrintMisshounin.Margin = new System.Windows.Forms.Padding(4);
             this.chkIsPrintMisshounin.Name = "chkIsPrintMisshounin";
-            this.chkIsPrintMisshounin.Size = new System.Drawing.Size(17, 16);
+            this.chkIsPrintMisshounin.Size = new System.Drawing.Size(300, 19);
             this.chkIsPrintMisshounin.TabIndex = 8;
             this.chkIsPrintMisshounin.Tag = "0";
+            this.chkIsPrintMisshounin.Text = "未承認分も印刷する";
             this.chkIsPrintMisshounin.UseVisualStyleBackColor = false;
+            this.chkIsPrintMisshounin.CheckedChanged += new System.EventHandler(this.chkIsPrintMisshounin_CheckedChanged);
             // 
             // ckM_Label10
             // 
@@ -580,23 +545,23 @@
             this.ckM_Label10.Location = new System.Drawing.Point(157, 521);
             this.ckM_Label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label10.Name = "ckM_Label10";
-            this.ckM_Label10.Size = new System.Drawing.Size(177, 15);
+            this.ckM_Label10.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label10.TabIndex = 719;
-            this.ckM_Label10.Text = "発注書（キャンセル）";
             this.ckM_Label10.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkInsatuShurui_Cancel
             // 
-            this.chkInsatuShurui_Cancel.BackColor = System.Drawing.Color.White;
             this.chkInsatuShurui_Cancel.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkInsatuShurui_Cancel.Location = new System.Drawing.Point(135, 520);
             this.chkInsatuShurui_Cancel.Margin = new System.Windows.Forms.Padding(4);
             this.chkInsatuShurui_Cancel.Name = "chkInsatuShurui_Cancel";
-            this.chkInsatuShurui_Cancel.Size = new System.Drawing.Size(17, 16);
+            this.chkInsatuShurui_Cancel.Size = new System.Drawing.Size(300, 19);
             this.chkInsatuShurui_Cancel.TabIndex = 13;
             this.chkInsatuShurui_Cancel.Tag = "0";
-            this.chkInsatuShurui_Cancel.UseVisualStyleBackColor = false;
+            this.chkInsatuShurui_Cancel.Text = "発注書（キャンセル）";
+            this.chkInsatuShurui_Cancel.UseVisualStyleBackColor = true;
+            this.chkInsatuShurui_Cancel.CheckedChanged += new System.EventHandler(this.chkInsatuShurui_Cancel_CheckedChanged);
             // 
             // ckM_Label11
             // 
@@ -610,23 +575,23 @@
             this.ckM_Label11.Location = new System.Drawing.Point(157, 494);
             this.ckM_Label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label11.Name = "ckM_Label11";
-            this.ckM_Label11.Size = new System.Drawing.Size(126, 15);
+            this.ckM_Label11.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label11.TabIndex = 721;
-            this.ckM_Label11.Text = "発注書（直送）";
             this.ckM_Label11.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkInsatuShurui_Chokusou
             // 
-            this.chkInsatuShurui_Chokusou.BackColor = System.Drawing.Color.White;
             this.chkInsatuShurui_Chokusou.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkInsatuShurui_Chokusou.Location = new System.Drawing.Point(135, 493);
             this.chkInsatuShurui_Chokusou.Margin = new System.Windows.Forms.Padding(4);
             this.chkInsatuShurui_Chokusou.Name = "chkInsatuShurui_Chokusou";
-            this.chkInsatuShurui_Chokusou.Size = new System.Drawing.Size(17, 16);
+            this.chkInsatuShurui_Chokusou.Size = new System.Drawing.Size(300, 19);
             this.chkInsatuShurui_Chokusou.TabIndex = 12;
             this.chkInsatuShurui_Chokusou.Tag = "0";
-            this.chkInsatuShurui_Chokusou.UseVisualStyleBackColor = false;
+            this.chkInsatuShurui_Chokusou.Text = "発注書（直送）";
+            this.chkInsatuShurui_Chokusou.UseVisualStyleBackColor = true;
+            this.chkInsatuShurui_Chokusou.CheckedChanged += new System.EventHandler(this.chkInsatuShurui_Chokusou_CheckedChanged);
             // 
             // ckM_Label12
             // 
@@ -640,23 +605,23 @@
             this.ckM_Label12.Location = new System.Drawing.Point(157, 466);
             this.ckM_Label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label12.Name = "ckM_Label12";
-            this.ckM_Label12.Size = new System.Drawing.Size(170, 15);
+            this.ckM_Label12.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label12.TabIndex = 723;
-            this.ckM_Label12.Text = "発注書（Net発注用）";
             this.ckM_Label12.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkInsatuShurui_NetHacchuu
             // 
-            this.chkInsatuShurui_NetHacchuu.BackColor = System.Drawing.Color.White;
             this.chkInsatuShurui_NetHacchuu.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkInsatuShurui_NetHacchuu.Location = new System.Drawing.Point(135, 465);
             this.chkInsatuShurui_NetHacchuu.Margin = new System.Windows.Forms.Padding(4);
             this.chkInsatuShurui_NetHacchuu.Name = "chkInsatuShurui_NetHacchuu";
-            this.chkInsatuShurui_NetHacchuu.Size = new System.Drawing.Size(17, 16);
+            this.chkInsatuShurui_NetHacchuu.Size = new System.Drawing.Size(300, 19);
             this.chkInsatuShurui_NetHacchuu.TabIndex = 11;
             this.chkInsatuShurui_NetHacchuu.Tag = "0";
-            this.chkInsatuShurui_NetHacchuu.UseVisualStyleBackColor = false;
+            this.chkInsatuShurui_NetHacchuu.Text = "発注書（Net発注用）";
+            this.chkInsatuShurui_NetHacchuu.UseVisualStyleBackColor = true;
+            this.chkInsatuShurui_NetHacchuu.CheckedChanged += new System.EventHandler(this.chkInsatuShurui_NetHacchuu_CheckedChanged);
             // 
             // ckM_Label13
             // 
@@ -670,28 +635,58 @@
             this.ckM_Label13.Location = new System.Drawing.Point(157, 440);
             this.ckM_Label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.ckM_Label13.Name = "ckM_Label13";
-            this.ckM_Label13.Size = new System.Drawing.Size(58, 15);
+            this.ckM_Label13.Size = new System.Drawing.Size(0, 15);
             this.ckM_Label13.TabIndex = 725;
-            this.ckM_Label13.Text = "発注書";
             this.ckM_Label13.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkInsatuShurui_Hacchhusho
             // 
-            this.chkInsatuShurui_Hacchhusho.BackColor = System.Drawing.Color.White;
             this.chkInsatuShurui_Hacchhusho.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkInsatuShurui_Hacchhusho.Location = new System.Drawing.Point(135, 439);
             this.chkInsatuShurui_Hacchhusho.Margin = new System.Windows.Forms.Padding(4);
             this.chkInsatuShurui_Hacchhusho.Name = "chkInsatuShurui_Hacchhusho";
-            this.chkInsatuShurui_Hacchhusho.Size = new System.Drawing.Size(17, 16);
+            this.chkInsatuShurui_Hacchhusho.Size = new System.Drawing.Size(300, 19);
             this.chkInsatuShurui_Hacchhusho.TabIndex = 10;
             this.chkInsatuShurui_Hacchhusho.Tag = "0";
-            this.chkInsatuShurui_Hacchhusho.UseVisualStyleBackColor = false;
+            this.chkInsatuShurui_Hacchhusho.Text = "発注書";
+            this.chkInsatuShurui_Hacchhusho.UseVisualStyleBackColor = true;
+            this.chkInsatuShurui_Hacchhusho.CheckedChanged += new System.EventHandler(this.chkInsatuShurui_Hacchhusho_CheckedChanged);
+            // 
+            // ScHacchuuNO
+            // 
+            this.ScHacchuuNO.AutoSize = true;
+            this.ScHacchuuNO.ChangeDate = "";
+            this.ScHacchuuNO.ChangeDateWidth = 100;
+            this.ScHacchuuNO.Code = "";
+            this.ScHacchuuNO.CodeWidth = 100;
+            this.ScHacchuuNO.CodeWidth1 = 100;
+            this.ScHacchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
+            this.ScHacchuuNO.DataCheck = false;
+            this.ScHacchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
+            this.ScHacchuuNO.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.ScHacchuuNO.IsCopy = false;
+            this.ScHacchuuNO.LabelText = "";
+            this.ScHacchuuNO.LabelVisible = false;
+            this.ScHacchuuNO.Location = new System.Drawing.Point(135, 315);
+            this.ScHacchuuNO.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.ScHacchuuNO.Name = "ScHacchuuNO";
+            this.ScHacchuuNO.NameWidth = 600;
+            this.ScHacchuuNO.SearchEnable = true;
+            this.ScHacchuuNO.Size = new System.Drawing.Size(144, 34);
+            this.ScHacchuuNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
+            this.ScHacchuuNO.TabIndex = 726;
+            this.ScHacchuuNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
+            this.ScHacchuuNO.UseChangeDate = false;
+            this.ScHacchuuNO.Value1 = null;
+            this.ScHacchuuNO.Value2 = null;
+            this.ScHacchuuNO.Value3 = null;
             // 
             // Hacchuusho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.ClientSize = new System.Drawing.Size(1830, 844);
+            this.Controls.Add(this.ScHacchuuNO);
             this.Controls.Add(this.ckM_Label13);
             this.Controls.Add(this.chkInsatuShurui_Hacchhusho);
             this.Controls.Add(this.ckM_Label12);
@@ -705,14 +700,11 @@
             this.Controls.Add(this.ckM_Label8);
             this.Controls.Add(this.chkIsPrintEDIHacchuu);
             this.Controls.Add(this.ckM_Label7);
-            this.Controls.Add(this.ScHacchuuNO);
             this.Controls.Add(this.ckM_Label6);
             this.Controls.Add(this.txtHacchuuDateTo);
             this.Controls.Add(this.ckM_Label5);
             this.Controls.Add(this.chkInsatuTaishou_Saihakkou);
-            this.Controls.Add(this.ckM_Label3);
             this.Controls.Add(this.ckM_Label4);
-            this.Controls.Add(this.ckM_Label1);
             this.Controls.Add(this.chkInsatuTaishou_Mihakkou);
             this.Controls.Add(this.CboStoreCD);
             this.Controls.Add(this.label4);
@@ -737,14 +729,11 @@
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.CboStoreCD, 0);
             this.Controls.SetChildIndex(this.chkInsatuTaishou_Mihakkou, 0);
-            this.Controls.SetChildIndex(this.ckM_Label1, 0);
             this.Controls.SetChildIndex(this.ckM_Label4, 0);
-            this.Controls.SetChildIndex(this.ckM_Label3, 0);
             this.Controls.SetChildIndex(this.chkInsatuTaishou_Saihakkou, 0);
             this.Controls.SetChildIndex(this.ckM_Label5, 0);
             this.Controls.SetChildIndex(this.txtHacchuuDateTo, 0);
             this.Controls.SetChildIndex(this.ckM_Label6, 0);
-            this.Controls.SetChildIndex(this.ScHacchuuNO, 0);
             this.Controls.SetChildIndex(this.ckM_Label7, 0);
             this.Controls.SetChildIndex(this.chkIsPrintEDIHacchuu, 0);
             this.Controls.SetChildIndex(this.ckM_Label8, 0);
@@ -758,6 +747,7 @@
             this.Controls.SetChildIndex(this.ckM_Label12, 0);
             this.Controls.SetChildIndex(this.chkInsatuShurui_Hacchhusho, 0);
             this.Controls.SetChildIndex(this.ckM_Label13, 0);
+            this.Controls.SetChildIndex(this.ScHacchuuNO, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -778,12 +768,9 @@
         private CKM_Controls.CKM_TextBox txtHacchuuDateFrom;
         private Search.CKM_SearchControl ScVendor;
         private CKM_Controls.CKM_CheckBox chkInsatuTaishou_Mihakkou;
-        private CKM_Controls.CKM_Label ckM_Label1;
-        private CKM_Controls.CKM_Label ckM_Label3;
         private CKM_Controls.CKM_CheckBox chkInsatuTaishou_Saihakkou;
         private CKM_Controls.CKM_Label ckM_Label5;
         private CKM_Controls.CKM_TextBox txtHacchuuDateTo;
-        private Search.CKM_SearchControl ScHacchuuNO;
         private CKM_Controls.CKM_Label ckM_Label6;
         private CKM_Controls.CKM_Label ckM_Label7;
         private CKM_Controls.CKM_Label ckM_Label8;
@@ -798,6 +785,7 @@
         private CKM_Controls.CKM_CheckBox chkInsatuShurui_NetHacchuu;
         private CKM_Controls.CKM_Label ckM_Label13;
         private CKM_Controls.CKM_CheckBox chkInsatuShurui_Hacchhusho;
+        private Search.CKM_SearchControl ScHacchuuNO;
     }
 }
 

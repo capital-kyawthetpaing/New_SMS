@@ -107,6 +107,7 @@
             this.txtDate.IntegerPart = 0;
             this.txtDate.IsCorrectDate = true;
             this.txtDate.isEnterKeyDown = false;
+            this.txtDate.IsFirstTime = true;
             this.txtDate.isMaxLengthErr = false;
             this.txtDate.IsNumber = true;
             this.txtDate.IsShop = false;

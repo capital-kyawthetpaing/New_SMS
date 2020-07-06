@@ -104,7 +104,15 @@ namespace Base.Client
             get => BtnF11.Visible;
             set => BtnF11.Visible = value;
         }
-
+        [Browsable(true)]
+        [Category("CKM Properties")]
+        [Description("Set F12 Button Visible")]
+        [DisplayName("F12 Visible")]
+        public bool F12Visible
+        {
+            get => BtnF12.Visible;
+            set => BtnF12.Visible = value;
+        }
         public string AllAvailableStores
         {
             get
