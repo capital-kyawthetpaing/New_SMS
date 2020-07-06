@@ -12,6 +12,9 @@ using Base.Client;
 using BL;
 using Entity;
 using System.Web.UI.WebControls;
+using System.IO;
+using System.Diagnostics;
+using ClosedXML.Excel;
 
 namespace MasterTouroku_ShiireTanka
 {
@@ -42,6 +45,7 @@ namespace MasterTouroku_ShiireTanka
             StartProgram();
             ModeText = "ITEM";
             BindCombo();
+           
             operatorCd = InOperatorCD;
             TB_headerdate.Text = bbl.GetDate();
         }
@@ -148,7 +152,6 @@ namespace MasterTouroku_ShiireTanka
                         {
                             F11();
                         }
-                      
                     }
                     else
                     {
@@ -487,6 +490,134 @@ namespace MasterTouroku_ShiireTanka
             }
             return true;
         }
+
+        private void Excel()
+        {
+
+            //if (!ErrorCheck())
+            //{
+            //    return;
+            //}
+
+            
+            string folderPath = "C:\\Excel\\";
+            if (!Directory.Exists(folderPath))
+            {
+                Directory.CreateDirectory(folderPath);
+            }
+            SaveFileDialog savedialog = new SaveFileDialog();
+            savedialog.Filter = "Excel Files|*.xlsx;";
+            savedialog.Title = "Save";
+            
+            savedialog.FileName = "発注単価マスタ" + System.DateTime.Today.ToString("yyyyMMdd");
+            savedialog.InitialDirectory = folderPath;
+
+            savedialog.RestoreDirectory = true;
+
+            if (savedialog.ShowDialog() == DialogResult.OK)
+            {
+                if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+                {
+                    Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+                    Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+                    Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+                    worksheet = workbook.ActiveSheet;
+                    worksheet.Name = "worksheet";
+
+                    using (XLWorkbook wb = new XLWorkbook())
+                    {
+                        wb.Worksheets.Add(dt, "worksheet");
+                        wb.SaveAs(savedialog.FileName);
+                        bbl.ShowMessage("I203", string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+                    }
+
+                    Process.Start(Path.GetDirectoryName(savedialog.FileName));
+                }
+            }
+        }
+
+        private void ExportCSV()
+        {
+            //if (!ErrorCheck())
+            //{
+            //    return;
+            //}
+            if (bbl.ShowMessage("Q203") == DialogResult.No)
+            {
+                return;
+            }
+
+            //if (!ShowSaveFileDialog("発注単価マスタ", out filePath,1))
+            //{
+            //    return;
+            //}
+            if (GV_item.DataSource != null)
+
+            {
+                string csv = string.Empty;
+                //string filePath = "";
+                string folderPath = "C:\\Excel\\";
+                if (!Directory.Exists(folderPath))
+                {
+                    Directory.CreateDirectory(folderPath);
+                }
+                SaveFileDialog savedialog = new SaveFileDialog();
+                savedialog.Filter = "Excel Files|*.xlsx;";
+                savedialog.Title = "Save";
+
+                savedialog.FileName = "発注単価マスタ" + System.DateTime.Today.ToString("yyyyMMdd");
+                savedialog.InitialDirectory = folderPath;
+
+                savedialog.RestoreDirectory = true;
+                if (savedialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Build the CSV file data as a Comma separated string.
+                    
+                    //LoacalDirectory
+                    //string folderPath = "C:\\Excel\\";
+                    FileInfo logFileInfo = new FileInfo(folderPath);
+                    DirectoryInfo logDirInfo = new DirectoryInfo(logFileInfo.DirectoryName);
+
+                    if (!logDirInfo.Exists) logDirInfo.Create();
+
+                    //Add the Header row for CSV file.
+                    foreach (DataGridViewColumn column in GV_item.Columns)
+                    {
+                        //if(column.HeaderText!="")
+                        csv += column.HeaderText + ',';
+                    }
+                    //Add new line.
+                    csv += "\r\n";
+
+                    //Adding the Rows
+                    foreach (DataGridViewRow row in GV_item.Rows)
+                    {
+                        foreach (DataGridViewCell cell in row.Cells)
+                        {
+                            //Add the Data rows.
+                            if (cell.Value == null)
+                                cell.Value = "";
+                            //csv += cell.Value.ToString().Replace(",", ";")+ ',';
+                            csv += cell.Value.ToString().Replace(",", "") + ',';
+                        }
+
+                        //Add new line.
+                        csv += "\r\n";
+                    }
+
+                    //Exporting to CSV.            
+                    File.WriteAllText(savedialog.FileName, csv, Encoding.GetEncoding(932));
+                    bl.ShowMessage("I203");
+                    //MessageBox.Show("CSV 出力が完了します。", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    bl.ShowMessage("E138");
+                    // MessageBox.Show("There is no data for CSV Export", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
         private void F11()
         {
 
@@ -604,6 +735,8 @@ namespace MasterTouroku_ShiireTanka
             CB_store.SelectedValue = "0000";
             GV_item.Refresh();
             GV_item.DataSource = null;
+            dt.Rows.Clear();
+            dtsku.Rows.Clear();
 
             //string aa;
         }
@@ -661,7 +794,6 @@ namespace MasterTouroku_ShiireTanka
                 {
                     GV_item.DataSource = dtsku;
                 }
-               
             }
             else
             {
@@ -682,7 +814,6 @@ namespace MasterTouroku_ShiireTanka
                 {
                     GV_item.DataSource = dt;
                 }
-
             }
         }
         private void TB_rate_KeyDown(object sender, KeyEventArgs e)
@@ -719,7 +850,6 @@ namespace MasterTouroku_ShiireTanka
             //selectq += " and PriceWithoutTax = '" + TB_pricewithouttax.Text + "'";
             if (GV_item.DataSource != null)
             {
-
                 DataRow[] dradd;
                 dradd = dt.Select(selectq + " and " + dateq);
                 if (dradd.Length > 0)//if (dv.Count >0)
@@ -762,7 +892,7 @@ namespace MasterTouroku_ShiireTanka
                         m_IOE = Getdata();
                         m_IOE.Display = "1";
                         DataRow[] drskuadd;
-                        drskuadd = dtsku.Select(selectq + " and " + dateq);
+                        drskuadd = dtsku.Select(selectq + " and  ChangeDate = '" + TB_date_add.Text + "'");
                         if (drskuadd.Length > 0)//if (dv.Count >0)
                         {
                             for (int i = 0; i < drskuadd.Length; i++)
@@ -1035,7 +1165,7 @@ namespace MasterTouroku_ShiireTanka
                             drskuscopy = dtsku.Select("  ChangeDate = '" + TB_dateE.Text + "'");
                             String datat = bl.DataTableToXml(dt);
                             //string storecd=CB_store.SelectedValue.ToString()
-                            DataTable dtr = bl.M_SKU_SelectFor_SKU_Update(datat);
+                            DataTable dtr = bl.M_SKU_SelectFor_SKU_Update(datat,"","","1");
                             if (drskuscopy.Length >0)
                             {
                                 if(dtr.Rows.Count >0)
@@ -1128,46 +1258,93 @@ namespace MasterTouroku_ShiireTanka
                         decimal listprice = Convert.ToDecimal(drupdate[i]["PriceOutTax"]);
                         drupdate[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
                     }
-                    var JoinResult = (from t in dt.AsEnumerable()
-                                      join s in dtsku.AsEnumerable()
-                                      on t.Field<String>("ItemCD") equals s.Field<String>("ItemCD")
-                                      //where s.Field<DateTime>("ChangeDate")  <= '020'
-                                      select new
-                                      {
-                                          t
-                                          //ItemCD = t.Field<string>("ItemCD"),
-                                          //AdminNO = s.Field<int>("AdminNO"),
-                                          //SKUCD = s.Field<string>("SKUCD"),
-                                          //SizeName = s.Field<string>("SizeName"),
-                                          //ColorName = s.Field<string>("ColorName"),
-                                          //MakerItem = s.Field<string>("MakerItem"),
-                                          //BrandCD = s.Field<string>("BrandCD"),
-                                          //SportsCD = s.Field<string>("SportsCD"),
-                                          //SegmentCD = s.Field<string>("SegmentCD"),
-                                          //LastYearTerm = s.Field<string>("LastYearTerm"),
-                                          //LastSeason = s.Field<string>("LastSeason"),
-                                          //ChangeDate = s.Field<DateTime>("ChangeDate")
 
-                                      }
-                ).ToList();
-                    //foreach (var item in JoinResult)
-                    //{
-                    //    DataRow dr = dt.NewRow();
-                    //    dr["ItemcD"] =item.itemCD;
-                    //    dr["Name"] = item.Name;
-                    //    dr["MobileNumber"] = item.MobileNumber;
-                    //    dr["Address"] = item.Address;
-                    //    dr["FatherName"] = item.FatherName;
-                    //    dt.Rows.Add(dr);
-                    //}
+                    //    var JoinResult = (from t in dt.AsEnumerable()
+                    //                      join s in dtsku.AsEnumerable()
+                    //                      on t.Field<String>("ItemCD") equals s.Field<String>("ItemCD")
+                    //                      select new
+                    //                      {
+                    //                          t
+                    //                          //ItemCD = t.Field<string>("ItemCD"),
+                    //                          //AdminNO = s.Field<int>("AdminNO"),
+                    //                          //SKUCD = s.Field<string>("SKUCD"),
+                    //                          //SizeName = s.Field<string>("SizeName"),
+                    //                          //ColorName = s.Field<string>("ColorName"),
+                    //                          //MakerItem = s.Field<string>("MakerItem"),
+                    //                          //BrandCD = s.Field<string>("BrandCD"),
+                    //                          //SportsCD = s.Field<string>("SportsCD"),
+                    //                          //SegmentCD = s.Field<string>("SegmentCD"),
+                    //                          //LastYearTerm = s.Field<string>("LastYearTerm"),
+                    //                          //LastSeason = s.Field<string>("LastSeason"),
+                    //                          //ChangeDate = s.Field<DateTime>("ChangeDate")
+                    //                      }
+                    //).ToArray();
+                    //    //foreach (var item in JoinResult)
+                    //    //{
+                    //    //    DataRow dr = dt.NewRow();
+                    //    //    dr["ItemcD"] =item.itemCD;
+                    //    //    dr["Name"] = item.Name;
+                    //    //    dr["MobileNumber"] = item.MobileNumber;
+                    //    //    dr["Address"] = item.Address;
+                    //    //    dr["FatherName"] = item.FatherName;
+                    //    //    dt.Rows.Add(dr);
+                    //    //}
+                    //    DataTable dtresult = new DataTable();
+                    //  dtresult.Rows.Add(JoinResult);
+
+                    String itemdata = bl.DataTableToXml(dt);
+                    String skudata = bl.DataTableToXml(dtsku);
+                    DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, TB_headerdate.Text,"2");
+                    if(dtdata.Rows.Count >0)
+                    {
+                        string itemcd = dtdata.Rows[0]["ItemCD"].ToString();
+                        string qskuupdate=" ItemCD = '"+ itemcd +"'";
+                        qskuupdate+= " and ChangeDate <= '" + TB_headerdate.Text + "'";
+                        DataRow[] drte = dtsku.Select(qskuupdate);
+                        if(drte.Length >0)
+                        {
+                            for(int i=0;i< drte.Length;i ++)
+                            {
+                                drte[i]["Rate"] = dtdata.Rows[0]["Rate"];
+                                decimal rate = Convert.ToDecimal(dtdata.Rows[0]["Rate"]);
+                                decimal con = (decimal)0.01;
+                                //string priceouttax = drskuscopy[i]["PriceOutTax"].ToString();
+                                decimal listprice = Convert.ToDecimal(dtdata.Rows[0]["PriceOutTax"]);
+                                drte[i]["PriceWithoutTax"] = Math.Round(listprice * (rate * con)).ToString();
+                            }
+                        }
+                    }
+
+
                 }
             }
         }
         private void btn_delete_Click(object sender, EventArgs e)
         {
             DataRow[] rows  = dt.Select(" CheckBox =1");
+
             foreach (DataRow row in rows)
+            {
+               
+                String itemdata = bl.DataTableToXml(dt);
+                String skudata = bl.DataTableToXml(dtsku);
+                DataTable dtskudel = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, TB_headerdate.Text, "2");
+                if (dtskudel.Rows.Count > 0)
+                {
+                    string itemcd = dtskudel.Rows[0]["ItemCD"].ToString();
+                    string qskuupdate = " ItemCD = '" + itemcd + "'";
+                    qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
+                    DataRow[] drte = dtsku.Select(qskuupdate);
+                    if (drte.Length > 0)
+                    {
+                        foreach(DataRow rowd in drte)
+                        dtsku.Rows.Remove(rowd);
+                    }
+                }
                 dt.Rows.Remove(row);
+            }
+                
+                
         }
         private void F12()
         {
@@ -1175,26 +1352,65 @@ namespace MasterTouroku_ShiireTanka
             {
                 //string insertq="Insert into M_ItemOrderPrice valuse("
                 String   itemdata = bl.DataTableToXml(dt);
-                String skudata = bl.DataTableToXml(dt);
+                String skudata = bl.DataTableToXml(dtsku);
                 //string storecd=CB_store.SelectedValue.ToString()
-                DataTable dtr = bl.M_Itemorderprice_Insert(itemdata, skudata, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
+                DataTable dtr = bl.Mastertoroku_Shiretanka_Insert(itemdata, skudata, shiiresaki.TxtCode.Text,CB_store.SelectedValue.ToString());
             }
         }
+
         private void GV_item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
                 string ck = GV_item.Rows[e.RowIndex].Cells["ck"].State.ToString();
+
+                String itemdata = bl.DataTableToXml(dt);
+                String skudata = bl.DataTableToXml(dtsku);
                 
-                if(ck =="Selected")
+                if (ck =="Selected")
                 {
+                    DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, TB_headerdate.Text, "2");
                     GV_item.Rows[e.RowIndex].Cells["ck"].Value = "1";
+                    string itemcd = dtdata.Rows[0]["ItemCD"].ToString();
+                    string qskuupdate = " ItemCD = '" + itemcd + "'";
+                    qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
+                    DataRow[] drte = dtsku.Select(qskuupdate);
+
+                    if (dtdata.Rows.Count > 0)
+                    {
+                       
+                        if (drte.Length > 0)
+                        {
+                            for (int i = 0; i < drte.Length; i++)
+                            {
+                                GV_item.Rows[e.RowIndex].Cells["ck"].Value = "1";
+                            }
+                        }
+                    }
                 }
                 else
                 {
                     GV_item.Rows[e.RowIndex].Cells["ck"].Value = "0";
+
+                    //if (dtdata.Rows.Count > 0)
+                    //{
+
+                    //    if (drte.Length > 0)
+                    //    {
+                    //        for (int i = 0; i < drte.Length; i++)
+                    //        {
+                    //            GV_item.Rows[e.RowIndex].Cells["ck"].Value = "0";
+                    //        }
+                    //    }
+                    //}
                 }
             }
+        }
+
+        private void BT_Capture_Click(object sender, EventArgs e)
+        {
+            Excel();
+            //ExportCSV();
         }
     }
 }

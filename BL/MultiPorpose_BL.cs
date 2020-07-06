@@ -23,6 +23,7 @@ namespace BL
         public static string ID_TagName = "219";
         public static string ID_Identification = "220";
         public static string ID_HaspoSaleDate = "224";
+        public static string ID_ExhibitionSegmentCD = "226";      //セグメント
         public string ID_Store = "302";                 //受注API起動
         public static string ID_YearTerm = "307";       //年度(20)
         public static string ID_Season = "308";         //シーズン(10)

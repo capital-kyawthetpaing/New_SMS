@@ -402,7 +402,21 @@ namespace Base.Client
                 if(!ShowCloseMessage)
                     EndSec();
                 else if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+
+                    var ctrl = GetAllControls(this);
+
+
+                    foreach (var ctrlTxt in ctrl)
+                    {
+                        if (ctrlTxt is CKM_TextBox)
+                        {
+                            ((CKM_TextBox)ctrlTxt).isClosing = true;
+                        }
+                        //ctrlTxt.isClosing = true;
+                    }
                     EndSec();
+                }
                 else
                 {
                     if (PreviousCtrl != null)
@@ -422,6 +436,24 @@ namespace Base.Client
             //    }
             //}
             FunctionProcess(Index);
+        }
+
+
+        /// <summary>
+        /// Get All control 
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public IEnumerable<Control> GetAllControls(Control root)
+        {
+            foreach (Control control in root.Controls)
+            {
+                foreach (Control child in GetAllControls(control))
+                {
+                    yield return child;
+                }
+            }
+            yield return root;
         }
 
         public virtual void FunctionProcess(int Index)
@@ -502,6 +534,17 @@ namespace Base.Client
 
         private void btnClose_MouseEnter(object sender, EventArgs e)
         {
+            var ctrl = GetAllControls(this);
+
+
+            foreach (var ctrlTxt in ctrl)
+            {
+                if (ctrlTxt is CKM_TextBox)
+                {
+                    ((CKM_TextBox)ctrlTxt).isClosing = true;
+                }
+                //ctrlTxt.isClosing = true;
+            }
             PreviousCtrl = this.ActiveControl;
         }
 
@@ -622,6 +665,20 @@ namespace Base.Client
                 createParam.ClassStyle = createParam.ClassStyle | CS_NOCLOSE;
 
                 return createParam;
+            }
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            var ctrl = GetAllControls(this);
+
+            foreach (var ctrlTxt in ctrl)
+            {
+                if (ctrlTxt is CKM_TextBox)
+                {
+                    ((CKM_TextBox)ctrlTxt).isClosing = false;
+                }
+                //ctrlTxt.isClosing = true;
             }
         }
     }

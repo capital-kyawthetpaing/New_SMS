@@ -22,7 +22,7 @@ namespace BL
         /// </summary>
         /// <param name="me"></param>
         /// <remarks>指定した適用日のデータを取得</remarks>
-        /// <returns></returns> 
+        /// <returns></returns>
         public bool M_ITEM_Select(M_ITEM_Entity me)
         {
             DataTable dt = mdl.M_ITEM_Select(me);
@@ -87,6 +87,8 @@ namespace BL
                 me.OrderAttentionNote = dt.Rows[0]["OrderAttentionNote"].ToString();
                 me.CommentInStore = dt.Rows[0]["CommentInStore"].ToString();
                 me.CommentOutStore = dt.Rows[0]["CommentOutStore"].ToString();
+                me.ExhibitionSegmentCD = dt.Rows[0]["ExhibitionSegmentCD"].ToString();
+                me.OrderLot = dt.Rows[0]["OrderLot"].ToString();
                 me.LastYearTerm = dt.Rows[0]["LastYearTerm"].ToString();
                 me.LastSeason = dt.Rows[0]["LastSeason"].ToString();
                 me.LastCatalogNO = dt.Rows[0]["LastCatalogNO"].ToString();
@@ -109,7 +111,6 @@ namespace BL
             
                 return false;
         }
-
         /// <summary>
         /// 商品マスタメンテよりデータ取得
         /// </summary>
@@ -202,7 +203,6 @@ namespace BL
 
             return false;
         }
-        
         /// <summary>
         /// M_SKUデータ抽出
         /// </summary>
@@ -290,6 +290,9 @@ namespace BL
             dt.Columns.Add("OrderAttentionNote", typeof(string));
             dt.Columns.Add("CommentInStore", typeof(string));
             dt.Columns.Add("CommentOutStore", typeof(string));
+            dt.Columns.Add("ExhibitionSegmentCD", typeof(string));
+            dt.Columns.Add("OrderLot", typeof(int));
+            dt.Columns.Add("ExhibitionCommonCD", typeof(string));
             dt.Columns.Add("LastYearTerm", typeof(string));
             dt.Columns.Add("LastSeason", typeof(string));
             dt.Columns.Add("LastCatalogNO", typeof(string));
@@ -392,6 +395,9 @@ namespace BL
                  , row["OrderAttentionNote"].ToString() == "" ? null : row["OrderAttentionNote"]
                  , row["CommentInStore"].ToString() == "" ? null : row["CommentInStore"]
                  , row["CommentOutStore"].ToString() == "" ? null : row["CommentOutStore"]
+                 , row["ExhibitionSegmentCD"].ToString() == "" ? null : row["ExhibitionSegmentCD"]
+                 , Z_Set(row["OrderLot"])
+                 , row["ExhibitionCommonCD"].ToString() == "" ? null : row["ExhibitionCommonCD"]
                  , row["LastYearTerm"]
                  , row["LastSeason"]
                  , row["LastCatalogNO"]

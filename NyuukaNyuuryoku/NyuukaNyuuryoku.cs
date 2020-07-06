@@ -409,6 +409,11 @@ namespace NyuukaNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridHikiate.ColNO.GYONO:
+                            case (int)ClsGridHikiate.ColNO.Btn:
+                                {
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridHikiate.ColNO.JYUNO:
                             case (int)ClsGridHikiate.ColNO.JYGNO:
                             case (int)ClsGridHikiate.ColNO.Customer:
@@ -417,7 +422,7 @@ namespace NyuukaNyuuryoku
                             case (int)ClsGridHikiate.ColNO.DirectFlg:
                             case (int)ClsGridHikiate.ColNO.DeliveryPlanDate:
                                 {
-                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -1084,6 +1089,10 @@ namespace NyuukaNyuuryoku
                         switch (w_Col)
                         {
                             case (int)ClsGridZaiko.ColNO.GYONO:
+                                {
+                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    break;
+                                }
                             case (int)ClsGridZaiko.ColNO.Number:
                             case (int)ClsGridZaiko.ColNO.RowNo:
                             case (int)ClsGridZaiko.ColNO.Customer:
@@ -1092,7 +1101,7 @@ namespace NyuukaNyuuryoku
                             case (int)ClsGridZaiko.ColNO.DirectFlg:
                             case (int)ClsGridZaiko.ColNO.DeliveryPlanDate:
                                 {
-                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                    mGrid2.g_MK_State[w_Col, w_Row].Cell_Bold = true;
                                     break;
                                 }
                         }
@@ -3508,7 +3517,7 @@ namespace NyuukaNyuuryoku
                 Control w_ActCtl;
 
                 w_ActCtl = (Control)sender;
-                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_0.Value;
+                w_Row = System.Convert.ToInt32(w_ActCtl.Tag) + Vsb_Mei_1.Value;
 
                 //新規モードの場合、ONにした明細に紐づく会員名または発注先を取得し、画面項目の会員名または発注先にセット
                 if (OperationMode == EOperationMode.INSERT || OperationMode == EOperationMode.UPDATE)
@@ -3537,6 +3546,10 @@ namespace NyuukaNyuuryoku
                         {
                             //Ｅ１９９				
                             bbl.ShowMessage("E199");
+                            mGrid2.g_DArray[w_Row].Check = false;
+
+                            //配列の内容を画面にセット
+                            mGrid2.S_DispFromArray(Vsb_Mei_1.Value, ref Vsb_Mei_1);
                             return;
                         }
                         lblVendor.Text = mGrid2.g_DArray[w_Row].Customer;
@@ -3601,6 +3614,11 @@ namespace NyuukaNyuuryoku
                         {
                             //Ｅ１９９				
                             bbl.ShowMessage("E199");
+                            mGrid.g_DArray[w_Row].Check = false;
+
+                            //配列の内容を画面にセット
+                            mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
+                            CalcKin();
                             return;
                         }
                         lblVendor.Text = mGrid.g_DArray[w_Row].VendorName;

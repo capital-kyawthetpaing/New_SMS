@@ -9,9 +9,15 @@ namespace Base.Client
 {
     public class CashDrawerOpen
     {
-         static CashDrawer m_Drawer = null;
+        public CashDrawer m_Drawer { get; set; }= null;
         
         public CashDrawerOpen()
+        {
+          
+          
+        }
+
+        public void OpenCashDrawer()
         {
             try
             {
@@ -24,7 +30,11 @@ namespace Base.Client
 
                 deviceInfo = posExplorer.GetDevice(DeviceType.CashDrawer, strLogicalName);
                 m_Drawer = (CashDrawer)posExplorer.CreateInstance(deviceInfo);
-
+                try
+                {
+                    // m_Drawer.DeviceEnabled = true;
+                }
+                catch { }
                 m_Drawer.Open();
 
                 m_Drawer.Claim(1000);
@@ -33,14 +43,10 @@ namespace Base.Client
 
                 m_Drawer.DeviceEnabled = true;
             }
-            catch(PosControlException)
+            catch (PosControlException)
             {
-                
-            }
-        }
 
-        public void OpenCashDrawer()
-        {
+            }
             m_Drawer.OpenDrawer();
 
             // ドロワーが開いている間、待ちます。
@@ -55,6 +61,20 @@ namespace Base.Client
             //このメソッドを実行すると、ドロワーが閉じられるまで処理が戻ってこないので注意してください。
 
             m_Drawer.WaitForDrawerClose(10000, 2000, 100, 1000);
+
+            try
+            {
+
+                CloseCashDrawer();
+            }
+            catch
+            {
+                try
+                {
+                    m_Drawer = null;
+                }
+                catch { }
+            }
         }
 
         public void CloseCashDrawer()
@@ -66,7 +86,7 @@ namespace Base.Client
                 {
                     //デバイスを停止します。
 
-                    m_Drawer.DeviceEnabled = false;
+                  //  m_Drawer.DeviceEnabled = false;
 
                     //デバイスの使用権を解除します。
 
@@ -75,6 +95,7 @@ namespace Base.Client
                 }
                 catch (PosControlException)
                 {
+                    
                 }
                 finally
                 {

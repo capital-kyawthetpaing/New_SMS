@@ -8,7 +8,7 @@ GO
 --       Create date:    2019.6.19
 --    ======================================================================
 CREATE PROCEDURE DeleteTemporaryReserve
-    (@JuchuuNO   varchar(11)
+    (@JuchuuNO   varchar(11)	--TennicÇÃèÍçáÇÕJuchuuProcessNOÇ™äiî[Ç≥ÇÍÇƒÇ¢ÇÈ
 )AS
 
 --********************************************--
@@ -19,12 +19,24 @@ CREATE PROCEDURE DeleteTemporaryReserve
 
 BEGIN
 
+    DECLARE @Tennic tinyint;
+	
+    SET @Tennic = (SeLECT M.Tennic FROM M_Control AS M WHERE M.MainKey = 1);
+    
     --ÅyTemporaryReserveÅz
-    DELETE FROM D_TemporaryReserve
-    WHERE [Number] = @JuchuuNO
-    ;
-
-
+    IF @Tennic = 1
+    BEGIN
+        DELETE FROM D_TemporaryReserve
+        WHERE [Number] IN (SELECT H.JuchuuNO FROM D_Juchuu AS H 
+                                            WHERE H.JuchuuProcessNO = @JuchuuNO)
+        ;
+    END
+    ELSE
+    BEGIN
+        DELETE FROM D_TemporaryReserve
+        WHERE [Number] = @JuchuuNO
+        ;
+    END
 END
 
 GO

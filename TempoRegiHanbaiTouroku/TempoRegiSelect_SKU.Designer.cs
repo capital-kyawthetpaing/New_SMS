@@ -62,7 +62,7 @@
             this.ckmShop_Label6.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
             this.ckmShop_Label6.FontBold = true;
             this.ckmShop_Label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.ckmShop_Label6.Location = new System.Drawing.Point(378, 137);
+            this.ckmShop_Label6.Location = new System.Drawing.Point(361, 137);
             this.ckmShop_Label6.Name = "ckmShop_Label6";
             this.ckmShop_Label6.Size = new System.Drawing.Size(126, 35);
             this.ckmShop_Label6.TabIndex = 124;
@@ -142,6 +142,7 @@
             this.dgvDetail.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetail.ColumnHeadersHeight = 22;
             this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvDetail.ColumnHeadersVisible = false;
             this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSKUCD,
             this.colSKUName,
@@ -160,20 +161,20 @@
             this.dgvDetail.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.dgvDetail.GVFontstyle = CKM_Controls.CKMShop_GridView.FontStyle_.Regular;
             this.dgvDetail.HeaderHeight_ = 22;
-            this.dgvDetail.HeaderVisible = true;
-            this.dgvDetail.Height_ = 380;
-            this.dgvDetail.Location = new System.Drawing.Point(21, 176);
+            this.dgvDetail.HeaderVisible = false;
+            this.dgvDetail.Height_ = 400;
+            this.dgvDetail.Location = new System.Drawing.Point(17, 175);
             this.dgvDetail.Name = "dgvDetail";
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvDetail.RowHeight_ = 42;
             this.dgvDetail.RowTemplate.Height = 42;
             this.dgvDetail.ShopFontSize = CKM_Controls.CKMShop_GridView.Font_.Medium;
-            this.dgvDetail.Size = new System.Drawing.Size(1270, 303);
+            this.dgvDetail.Size = new System.Drawing.Size(1300, 400);
             this.dgvDetail.TabIndex = 6;
             this.dgvDetail.UseRowNo = true;
             this.dgvDetail.UseSetting = true;
-            this.dgvDetail.Width_ = 1270;
+            this.dgvDetail.Width_ = 1300;
             this.dgvDetail.DoubleClick += new System.EventHandler(this.dgvKaniiKensaku_DoubleClick);
             this.dgvDetail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDetail_KeyDown);
             // 
@@ -190,14 +191,14 @@
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDetail.Location = new System.Drawing.Point(0, 0);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1334, 561);
+            this.panelDetail.Size = new System.Drawing.Size(1334, 661);
             this.panelDetail.TabIndex = 0;
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.tableLayoutPanel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 508);
+            this.panel4.Location = new System.Drawing.Point(0, 608);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1334, 53);
             this.panel4.TabIndex = 132;
@@ -264,7 +265,7 @@
             this.colSKUCD.ReadOnly = true;
             this.colSKUCD.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSKUCD.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUCD.Width = 200;
+            this.colSKUCD.Width = 300;
             // 
             // colSKUName
             // 
@@ -276,7 +277,7 @@
             this.colSKUName.ReadOnly = true;
             this.colSKUName.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.colSKUName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.colSKUName.Width = 960;
+            this.colSKUName.Width = 950;
             // 
             // colAdminNO
             // 
@@ -295,7 +296,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1334, 561);
+            this.ClientSize = new System.Drawing.Size(1334, 661);
             this.Controls.Add(this.panelDetail);
             this.Name = "TempoRegiSelect_SKU";
             this.Text = "TempoRegiKaiinKensaku";

@@ -101,6 +101,11 @@ namespace Hacchuusho
                 //起動時共通処理
                 base.StartProgram();
 
+                //検索用のパラメータ設定
+                string stores = GetAllAvailableStores();
+                ScHacchuuNO.Value1 = InOperatorCD;
+                ScHacchuuNO.Value2 = stores;
+
                 hsbl = new Hacchuusho_BL();
                 string ymd = bbl.GetDate();
                 CboStoreCD.Bind(ymd,"2");
@@ -629,6 +634,11 @@ namespace Hacchuusho
                 case (int)EIndex.HacchuuDateFrom:
                     detailControls[index].Text = hsbl.FormatDate(detailControls[index].Text);
 
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        return true;
+                    }
+
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
                     if (!hsbl.CheckDate(detailControls[index].Text))
                     {
@@ -639,6 +649,11 @@ namespace Hacchuusho
                     break;
                 case (int)EIndex.HacchuuDateTo:
                     detailControls[index].Text = hsbl.FormatDate(detailControls[index].Text);
+
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        return true;
+                    }
 
                     //日付として正しいこと(Be on the correct date)Ｅ１０３
                     if (!hsbl.CheckDate(detailControls[index].Text))
@@ -712,7 +727,7 @@ namespace Hacchuusho
                     }
 
                     Vendor_BL sbl = new Vendor_BL();
-                    ret = sbl.M_Vendor_Select(mce);
+                    ret = sbl.M_Vendor_SelectTop1(mce);
                     if (ret)
                     {
                         if (mOldVendorCD != detailControls[index].Text)
@@ -734,8 +749,7 @@ namespace Hacchuusho
                     //入力必須(Entry required)
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
                     {
-                        bbl.ShowMessage("E102");
-                        return false;
+                        return true;
                     }
 
                     Hacchuusho_BL hbl = new Hacchuusho_BL();
@@ -883,5 +897,45 @@ namespace Hacchuusho
         }
 
         #endregion
+
+        private void chkInsatuTaishou_Saihakkou_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ckM_Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkIsPrintEDIHacchuu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkInsatuShurui_Hacchhusho_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkInsatuShurui_NetHacchuu_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkInsatuShurui_Chokusou_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkInsatuShurui_Cancel_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkIsPrintMisshounin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

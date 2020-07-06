@@ -154,10 +154,8 @@ namespace IkkatuHacchuuNyuuryoku
                 //CboJuchuuChanceKBN.Bind(string.Empty);
 
                 string stores = GetAllAvailableStores();
-                //ScIkkatuHacchuuNO.Value1 = InOperatorCD;
-                //ScIkkatuHacchuuNO.Value2 = stores;
-                //ScCopyIkkatuHacchuuNO.Value1 = InOperatorCD;
-                //ScCopyIkkatuHacchuuNO.Value2 = stores;
+                ScHacchuuNO.Value1 = InOperatorCD;
+                ScHacchuuNO.Value2 = stores;
 
                 ScStaff.TxtCode.Text = InOperatorCD;
 
@@ -196,6 +194,7 @@ namespace IkkatuHacchuuNyuuryoku
                     bbl.ShowMessage("E133");
                     EndSec();
                 }
+
                 this.txtHacchuuDate.Text = bbl.GetDate().ToString();
                 this.lblIkkatuHacchuuMode.Visible = true;
                 this.btnChangeIkkatuHacchuuMode.Visible = true;
@@ -666,21 +665,21 @@ namespace IkkatuHacchuuNyuuryoku
                                 M_JANOrderPrice_DL mjdl_StoreSiteiNasi = new M_JANOrderPrice_DL();
                                 var dt_MJOP_StoreSiteiNasi = mjdl.M_JANOrderPrice_Select(mjop_StoreSiteiNasi);
 
-                                if (dt_MJOP_StoreSiteiAri.Rows.Count != 0)
-                                {
-                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
-                                }
-                                else if (dt_MJOP_StoreSiteiNasi.Rows.Count != 0)
+                                if (dt_MJOP_StoreSiteiNasi.Rows.Count != 0)
                                 {
                                     mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
-                                else if (dt_MIOP_StoreSiteiAri.Rows.Count != 0)
+                                else if (dt_MJOP_StoreSiteiAri.Rows.Count != 0)
                                 {
-                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
+                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MJOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
                                 else if (dt_MIOP_StoreSiteiNasi.Rows.Count != 0)
                                 {
                                     mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiNasi.Rows[0].Field<decimal>("PriceWithoutTax"));
+                                }
+                                else if (dt_MIOP_StoreSiteiAri.Rows.Count != 0)
+                                {
+                                    mGrid.g_DArray[w_Row].HacchuuTanka = string.Format("{0:#,##0}", dt_MIOP_StoreSiteiAri.Rows[0].Field<decimal>("PriceWithoutTax"));
                                 }
                                 mGrid.g_DArray[w_Row].Hacchuugaku = string.Format("{0:#,##0}", decimal.Parse(mGrid.g_DArray[w_Row].HacchuuTanka) * wSuu);
                                 this.CalcKin();

@@ -97,6 +97,10 @@ namespace BL
                 mce.CreditAmount = dt.Rows[0]["CreditAmount"].ToString();
                 mce.CreditWarningAmount = dt.Rows[0]["CreditWarningAmount"].ToString();
                 mce.CreditAdditionAmount = dt.Rows[0]["CreditAdditionAmount"].ToString();
+                mce.CreditCheckKBN = dt.Rows[0]["CreditCheckKBN"].ToString();
+                mce.CreditMessage = dt.Rows[0]["CreditMessage"].ToString();
+                mce.FareLevel = dt.Rows[0]["FareLevel"].ToString();
+                mce.Fare = dt.Rows[0]["Fare"].ToString();
                 mce.PaymentMethodCD = dt.Rows[0]["PaymentMethodCD"].ToString();
                 mce.KouzaCD = dt.Rows[0]["KouzaCD"].ToString();
                 mce.DisplayOrder = dt.Rows[0]["DisplayOrder"].ToString();

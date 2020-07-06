@@ -1229,23 +1229,20 @@ namespace TempoJuchuuNyuuryoku
             {
                 w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
 
-                //前行をコピー (修正元行№以外)
-                int w_MOTNO = mGrid.g_DArray[i].juchuGyoNO;      //修正元行№ 退避
                 mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
 
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+
                 if (i.Equals(w_Row))
                 {
                     //前の行をコピーしてできた新しい行
+                    mGrid.g_DArray[i].JuchuuNO = "";
                     mGrid.g_DArray[i].juchuGyoNO = 0;
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
                     mGrid.g_DArray[i].KariHikiateNO = "";
                 }
-                else
-                {
-                    mGrid.g_DArray[i].juchuGyoNO = w_MOTNO;      //修正元行№
-                }
+
                 Grid_NotFocus(col, i);
             }
 
@@ -1658,7 +1655,7 @@ namespace TempoJuchuuNyuuryoku
                 if (index == (int)EIndex.JuchuuNO)
                 {
                     //進捗チェック　既に売上済み,出荷済み,出荷指示済み,ピッキングリスト完了済み,仕入済み,入荷済み,発注済み警告
-                    bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno);
+                    bool ret = mibl.CheckJuchuData(dje.JuchuuNO, out string errno, (short)mTennic);
                     if (ret)
                     {
                         if (!string.IsNullOrWhiteSpace(errno))
@@ -1692,10 +1689,10 @@ namespace TempoJuchuuNyuuryoku
                             return false;
                         }
                     }
-                }
 
-                //D_TemporaryReserveをDelete
-                mibl.DeleteTemporaryReserve(dje);
+                    //D_TemporaryReserveをDelete
+                    mibl.DeleteTemporaryReserve(dje);
+                }
 
                 //画面セットなしの場合、処理正常終了
                 if (set == false)
@@ -1860,6 +1857,7 @@ namespace TempoJuchuuNyuuryoku
                     }
                     if (index == (int)EIndex.JuchuuNO)
                     {
+                        mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].juchuGyoNO = Convert.ToInt16(row["JuchuuRows"].ToString());
                         if (m_MaxJyuchuGyoNo < mGrid.g_DArray[i].juchuGyoNO)
                             m_MaxJyuchuGyoNo = mGrid.g_DArray[i].juchuGyoNO;
@@ -3308,7 +3306,7 @@ namespace TempoJuchuuNyuuryoku
                     SoukoCD = mGrid.g_DArray[row].SoukoName,  
                     Suryo = bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu).ToString(),
                     DenType = "1",  //1(受注)
-                    DenNo = keyControls[(int)EIndex.JuchuuNO].Text,
+                    DenNo = mGrid.g_DArray[row].JuchuuNO,  // keyControls[(int)EIndex.JuchuuNO].Text,
                     DenGyoNo = mGrid.g_DArray[row].juchuGyoNO.ToString(),
                     KariHikiateNo = mGrid.g_DArray[row].KariHikiateNO
                 };
@@ -3317,13 +3315,21 @@ namespace TempoJuchuuNyuuryoku
                 if(mTemporaryReserveNO=="")
                 {
                     mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
+
+                    if (mTennic.Equals(1) && !string.IsNullOrWhiteSpace(fre.DenNo))
+                        mTemporaryReserveNO = "";
                 }
 
-                fre.DenNo = mTemporaryReserveNO;
-
+                if (string.IsNullOrWhiteSpace(fre.DenNo))
+                {
+                    fre.DenNo = mTemporaryReserveNO;
+                }
                 if (fre.DenGyoNo == "0")
                 {
-                    fre.DenGyoNo = (row + 1).ToString();
+                    //if (mTennic.Equals(1))
+                    //    fre.DenGyoNo = "1";
+                    //else
+                        fre.DenGyoNo = (row + 1).ToString();
                 }
 
                 ret = bbl.Fnc_Reserve(fre);
@@ -3918,7 +3924,6 @@ namespace TempoJuchuuNyuuryoku
             //dt.Columns.Add("OrderTax", typeof(decimal));
             //dt.Columns.Add("OrderTaxRitsu", typeof(decimal));
             //dt.Columns.Add("OrderGaku", typeof(decimal));
-
             dt.Columns.Add("UpdateFlg", typeof(int));
         }
 

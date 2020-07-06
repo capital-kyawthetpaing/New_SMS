@@ -775,13 +775,27 @@ namespace KaitouNoukiTouroku
                                 {
                                     switch (w_Col)
                                     { 
-                                        case (int)ClsGridKaitouNouki.ColNO.Chk:    // 
                                         case (int)ClsGridKaitouNouki.ColNO.Btn:    // 
+                                            mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+
+                                            if (mGrid.g_DArray[w_Row].GyoCount > 1)
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = System.Drawing.Color.Yellow;
+                                            }
+                                            else
+                                            {
+                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Color = GridBase.ClsGridBase.GrayColor;
+                                            }
+                                            break;
+                                        case (int)ClsGridKaitouNouki.ColNO.Chk:    // 
                                         case (int)ClsGridKaitouNouki.ColNO.ArrivalPlanMonth:    // 
                                         case (int)ClsGridKaitouNouki.ColNO.ArrivePlanDate:    //入荷予定日
                                         case (int)ClsGridKaitouNouki.ColNO.ArrivePlanCD:    // 
                                             {
-                                                mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                if (mGrid.g_DArray[w_Row].GyoCount.Equals(1))
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = true;
+                                                else
+                                                    mGrid.g_MK_State[w_Col, w_Row].Cell_Enabled = false;
                                                 break;
                                             }
                                         case (int)ClsGridKaitouNouki.ColNO.JanCD:
@@ -1053,10 +1067,10 @@ namespace KaitouNoukiTouroku
 
             dtOrder = knbl.D_Order_SelectDataForKaitouNouki(doe);
 
-            //発注(D_Order)に存在しない場合、Error 「登録されていない発注番号」
+            //発注(D_Order)に存在しない場合、Error 
             if (dtOrder.Rows.Count == 0)
             {
-                bbl.ShowMessage("E138", "発注番号");
+                bbl.ShowMessage("S013");
                 Scr_Clr(1);
                 PreviousCtrl.Focus();
                 return false;
@@ -1157,6 +1171,7 @@ namespace KaitouNoukiTouroku
 
                         //隠し項目
                         mGrid.g_DArray[i].DetailGyoNo =Convert.ToInt16( row["ROWNUM"]);
+                        mGrid.g_DArray[i].GyoCount = Convert.ToInt16(row["CNT"]);
                         mGrid.g_DArray[i].OrderRows = row["OrderRows"].ToString();
                         mGrid.g_DArray[i].JuchuuNO = row["JuchuuNO"].ToString();
                         mGrid.g_DArray[i].JuchuuRows = row["JuchuuRows"].ToString();
@@ -1662,7 +1677,8 @@ namespace KaitouNoukiTouroku
                 OrderCD = detailControls[(int)EIndex.OrderCD].Text,
 
                 OrderNoFrom = detailControls[(int)EIndex.OrderNOFrom].Text,
-                OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text
+                OrderNoTo = detailControls[(int)EIndex.OrderNOTo].Text,
+                ArrivalPlanCD = CboArrivalPlanCD.SelectedIndex > 0 ? CboArrivalPlanCD.SelectedValue.ToString() : ""
             };
 
             if (ChkMikakutei.Checked)
@@ -2439,6 +2455,9 @@ namespace KaitouNoukiTouroku
         {
             try
             {
+                if (!F12Enable)
+                    return;
+
                 //明細左端のチェックボックスONの明細に対し入荷予定日をセットする。
                 // 明細部  画面の範囲の内容を配列にセット
                 mGrid.S_DispToArray(Vsb_Mei_0.Value);
@@ -2514,9 +2533,11 @@ namespace KaitouNoukiTouroku
 
                 if (!frm.flgCancel)
                 {
+                    mGrid.g_DArray[w_Row].GyoCount = frm.GyoCount;
+
                     rows = dtOrder.Select("OrderNo ='" + mGrid.g_DArray[w_Row].OrderNo + "' AND OrderRows =" + mGrid.g_DArray[w_Row].OrderRows + " AND ROWNUM =1");
 
-                    if (rows[0]["UpdateFlg"].ToString() == "2")
+                    if (rows[0]["UpdateFlg"].ToString() == "2") //行削除データ
                     {
                         if (!string.IsNullOrWhiteSpace(rows[0]["ArrivalPlanDate"].ToString()))
                         {
@@ -2526,7 +2547,7 @@ namespace KaitouNoukiTouroku
                         {
                             mGrid.g_DArray[w_Row].FirstArrivalPlanDate = "";
                         }
-                       
+
                         mGrid.g_DArray[w_Row].ArrivalPlanDate = "";
                         mGrid.g_DArray[w_Row].ArrivalPlanMonth = "";
                         mGrid.g_DArray[w_Row].ArrivalPlanCD = "";
@@ -2554,6 +2575,8 @@ namespace KaitouNoukiTouroku
                         mGrid.g_DArray[w_Row].ArrivalPlanSu = knbl.Z_SetStr(rows[0]["ArrivalPlanSu"]);
                         mGrid.g_DArray[w_Row].Update = 1;
                     }
+
+                    S_BodySeigyo(1, 1);
 
                     //配列の内容を画面へセット
                     mGrid.S_DispFromArray(Vsb_Mei_0.Value, ref Vsb_Mei_0);
@@ -2627,7 +2650,8 @@ namespace KaitouNoukiTouroku
             {
                 if (string.IsNullOrWhiteSpace(mGrid.g_DArray[RW].OrderNo) == false)
                 {
-                    mGrid.g_DArray[RW].Chk = check;
+                    if(mGrid.g_MK_State[(int)ClsGridKaitouNouki.ColNO.Chk, RW].Cell_Enabled)
+                        mGrid.g_DArray[RW].Chk = check;
                 }
             }
             

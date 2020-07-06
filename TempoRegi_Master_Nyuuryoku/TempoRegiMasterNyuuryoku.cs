@@ -173,7 +173,7 @@ namespace TempoRegi_Master_Nyuuryoku
                 DataRow[] dr = dtTemp1.Select("GroupNO=" + "" + groupno + "");
                 DataRow[] dr2 = dtTemp2.Select("GroupNO=" + "" + groupno + "");
                 
-                if(drBtnName.Count()>0)
+                if(drBtnName.Count()==dtSelect.Rows.Count)
                 {
                     RdoJanCD.Checked = true;
                     RdoJanCD.Enabled = true;
@@ -671,8 +671,10 @@ namespace TempoRegi_Master_Nyuuryoku
                     dn["Horizontal"] = horizontal;
                     dn["Vertical"] = vertical;
                     dn["MasterKBN"] = RdoJanCD.Checked ? "1" : "2";
+                    //dn["btndetailBottunName"] =string.IsNullOrWhiteSpace(txtBtnNameDown.Text) ? DBNull.Value.ToString() : txtBtnNameDown.Text.Trim();
+                    //dn["Button"] =string.IsNullOrWhiteSpace(txtCD.Text) ? DBNull.Value.ToString(): txtCD.Text.Trim();
                     dn["btndetailBottunName"] = txtBtnNameDown.Text.Trim();
-                    dn["Button"] = txtCD.Text.Trim();
+                    dn["Button"] =txtCD.Text.Trim();
                     dn["AdminNO"] = string.IsNullOrWhiteSpace(lblAdminNO.Text) ? 0: Convert.ToInt32(lblAdminNO.Text) ;
                     dn["JanCD"] = RdoJanCD.Checked ? txtCD.Text : string.Empty;
                     dn["CustomerCD"] = RdoCustomerCD.Checked ? txtCD.Text : string.Empty;

@@ -55,18 +55,18 @@
             this.panelDetail.Controls.Add(this.lblPrintDate);
             this.panelDetail.Controls.Add(this.lblSalseNo);
             this.panelDetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDetail.Location = new System.Drawing.Point(0, 69);
+            this.panelDetail.Location = new System.Drawing.Point(0, 75);
             this.panelDetail.Name = "panelDetail";
-            this.panelDetail.Size = new System.Drawing.Size(1713, 731);
+            this.panelDetail.Size = new System.Drawing.Size(1713, 792);
             this.panelDetail.TabIndex = 14;
             // 
             // chkReissue
             // 
             this.chkReissue.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.chkReissue.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Bold);
+            this.chkReissue.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.chkReissue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.chkReissue.IsattachedCaption = false;
-            this.chkReissue.Location = new System.Drawing.Point(322, 323);
+            this.chkReissue.Location = new System.Drawing.Point(322, 350);
             this.chkReissue.Name = "chkReissue";
             this.chkReissue.Size = new System.Drawing.Size(35, 35);
             this.chkReissue.TabIndex = 5;
@@ -79,10 +79,11 @@
             this.lblReissue.AutoSize = true;
             this.lblReissue.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblReissue.BackColor = System.Drawing.Color.Transparent;
-            this.lblReissue.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
+            this.lblReissue.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblReissue.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblReissue.FontBold = true;
             this.lblReissue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblReissue.Location = new System.Drawing.Point(190, 323);
+            this.lblReissue.Location = new System.Drawing.Point(193, 350);
             this.lblReissue.Name = "lblReissue";
             this.lblReissue.Size = new System.Drawing.Size(126, 35);
             this.lblReissue.TabIndex = 25;
@@ -100,15 +101,16 @@
             this.txtPrintDate.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtPrintDate.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.txtPrintDate.DecimalPlace = 0;
-            this.txtPrintDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
+            this.txtPrintDate.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtPrintDate.IntegerPart = 8;
             this.txtPrintDate.IsCorrectDate = true;
             this.txtPrintDate.isEnterKeyDown = false;
+            this.txtPrintDate.IsFirstTime = true;
             this.txtPrintDate.isMaxLengthErr = false;
             this.txtPrintDate.IsNumber = true;
             this.txtPrintDate.IsShop = false;
             this.txtPrintDate.Length = 10;
-            this.txtPrintDate.Location = new System.Drawing.Point(322, 275);
+            this.txtPrintDate.Location = new System.Drawing.Point(322, 298);
             this.txtPrintDate.MaxLength = 10;
             this.txtPrintDate.MoveNext = true;
             this.txtPrintDate.Name = "txtPrintDate";
@@ -122,10 +124,10 @@
             // chkReceipt
             // 
             this.chkReceipt.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
-            this.chkReceipt.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Bold);
+            this.chkReceipt.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.chkReceipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.chkReceipt.IsattachedCaption = false;
-            this.chkReceipt.Location = new System.Drawing.Point(322, 234);
+            this.chkReceipt.Location = new System.Drawing.Point(322, 254);
             this.chkReceipt.Name = "chkReceipt";
             this.chkReceipt.Size = new System.Drawing.Size(35, 35);
             this.chkReceipt.TabIndex = 3;
@@ -138,10 +140,11 @@
             this.lblReceipt.AutoSize = true;
             this.lblReceipt.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblReceipt.BackColor = System.Drawing.Color.Transparent;
-            this.lblReceipt.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
+            this.lblReceipt.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblReceipt.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblReceipt.FontBold = true;
             this.lblReceipt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblReceipt.Location = new System.Drawing.Point(153, 234);
+            this.lblReceipt.Location = new System.Drawing.Point(156, 254);
             this.lblReceipt.Name = "lblReceipt";
             this.lblReceipt.Size = new System.Drawing.Size(163, 35);
             this.lblReceipt.TabIndex = 22;
@@ -154,10 +157,10 @@
             this.chkRyousyuusho.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.chkRyousyuusho.Checked = true;
             this.chkRyousyuusho.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkRyousyuusho.Font = new System.Drawing.Font("ＭＳ ゴシック", 18F, System.Drawing.FontStyle.Bold);
+            this.chkRyousyuusho.Font = new System.Drawing.Font("MS Gothic", 18F, System.Drawing.FontStyle.Bold);
             this.chkRyousyuusho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
             this.chkRyousyuusho.IsattachedCaption = false;
-            this.chkRyousyuusho.Location = new System.Drawing.Point(322, 193);
+            this.chkRyousyuusho.Location = new System.Drawing.Point(322, 209);
             this.chkRyousyuusho.Name = "chkRyousyuusho";
             this.chkRyousyuusho.Size = new System.Drawing.Size(35, 35);
             this.chkRyousyuusho.TabIndex = 2;
@@ -170,10 +173,11 @@
             this.lblRyousyuusho.AutoSize = true;
             this.lblRyousyuusho.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblRyousyuusho.BackColor = System.Drawing.Color.Transparent;
-            this.lblRyousyuusho.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
+            this.lblRyousyuusho.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblRyousyuusho.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblRyousyuusho.FontBold = true;
             this.lblRyousyuusho.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblRyousyuusho.Location = new System.Drawing.Point(190, 193);
+            this.lblRyousyuusho.Location = new System.Drawing.Point(193, 209);
             this.lblRyousyuusho.Name = "lblRyousyuusho";
             this.lblRyousyuusho.Size = new System.Drawing.Size(126, 35);
             this.lblRyousyuusho.TabIndex = 20;
@@ -191,15 +195,16 @@
             this.txtSalesNO.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.txtSalesNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtSalesNO.DecimalPlace = 0;
-            this.txtSalesNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F);
+            this.txtSalesNO.Font = new System.Drawing.Font("MS Gothic", 26F);
             this.txtSalesNO.IntegerPart = 8;
             this.txtSalesNO.IsCorrectDate = true;
             this.txtSalesNO.isEnterKeyDown = false;
+            this.txtSalesNO.IsFirstTime = true;
             this.txtSalesNO.isMaxLengthErr = false;
             this.txtSalesNO.IsNumber = true;
             this.txtSalesNO.IsShop = false;
             this.txtSalesNO.Length = 11;
-            this.txtSalesNO.Location = new System.Drawing.Point(322, 143);
+            this.txtSalesNO.Location = new System.Drawing.Point(322, 155);
             this.txtSalesNO.MaxLength = 11;
             this.txtSalesNO.MoveNext = true;
             this.txtSalesNO.Name = "txtSalesNO";
@@ -214,10 +219,11 @@
             this.lblPrintDate.AutoSize = true;
             this.lblPrintDate.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblPrintDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblPrintDate.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
+            this.lblPrintDate.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblPrintDate.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblPrintDate.FontBold = true;
             this.lblPrintDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblPrintDate.Location = new System.Drawing.Point(42, 277);
+            this.lblPrintDate.Location = new System.Drawing.Point(45, 301);
             this.lblPrintDate.Name = "lblPrintDate";
             this.lblPrintDate.Size = new System.Drawing.Size(274, 35);
             this.lblPrintDate.TabIndex = 18;
@@ -230,10 +236,11 @@
             this.lblSalseNo.AutoSize = true;
             this.lblSalseNo.Back_Color = CKM_Controls.CKMShop_Label.CKM_Color.Default;
             this.lblSalseNo.BackColor = System.Drawing.SystemColors.Window;
-            this.lblSalseNo.Font = new System.Drawing.Font("ＭＳ ゴシック", 26F, System.Drawing.FontStyle.Bold);
+            this.lblSalseNo.Font = new System.Drawing.Font("MS Gothic", 26F, System.Drawing.FontStyle.Bold);
             this.lblSalseNo.Font_Size = CKM_Controls.CKMShop_Label.CKM_FontSize.Normal;
+            this.lblSalseNo.FontBold = true;
             this.lblSalseNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(130)))), ((int)(((byte)(53)))));
-            this.lblSalseNo.Location = new System.Drawing.Point(116, 145);
+            this.lblSalseNo.Location = new System.Drawing.Point(119, 159);
             this.lblSalseNo.Name = "lblSalseNo";
             this.lblSalseNo.Size = new System.Drawing.Size(200, 35);
             this.lblSalseNo.TabIndex = 17;
@@ -243,9 +250,9 @@
             // 
             // TempoRegiRyousyuusyo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1713, 849);
+            this.ClientSize = new System.Drawing.Size(1713, 920);
             this.Controls.Add(this.panelDetail);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "TempoRegiRyousyuusyo";
