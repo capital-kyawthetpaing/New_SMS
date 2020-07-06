@@ -28,8 +28,10 @@ RETURN(
         ,main.ZipCD2  
         ,main.Address1  
         ,main.Address2  
-        ,main.MailAddress  
-        ,main.TelphoneNO  
+        ,main.MailAddress1  
+        ,main.MailAddress2
+        ,main.MailAddress3
+        ,main.TelephoneNO  
         ,main.FaxNO  
         ,main.KouzaCD  
         ,main.ApprovalStaffCD11  

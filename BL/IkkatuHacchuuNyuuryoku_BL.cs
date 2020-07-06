@@ -54,7 +54,22 @@ namespace BL
         /// <returns></returns>
         public bool PRC_IkkatuHacchuuNyuuryoku_Register(int operationMode, string operatorID, string pc, string storeCD, string staffCD, string hacchuuDate, string orderNO, string orderProcessNO, DataTable dtTIkkatuHacchuuNyuuryoku)
         {
-            return ikkatuHacchuuDL.PRC_IkkatuHacchuuNyuuryoku_Register(operationMode, operatorID, pc,storeCD,staffCD,hacchuuDate, orderNO, orderProcessNO, dtTIkkatuHacchuuNyuuryoku);
+            return ikkatuHacchuuDL.PRC_IkkatuHacchuuNyuuryoku_Register(operationMode, operatorID, pc, storeCD, staffCD, hacchuuDate, orderNO, orderProcessNO, dtTIkkatuHacchuuNyuuryoku);
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="operationMode"></param>
+        /// <param name="operatorID"></param>
+        /// <param name="pc"></param>
+        /// <param name="storeCD"></param>
+        /// <param name="staffCD"></param>
+        /// <param name="hacchuuDate"></param>
+        /// <param name="dtTIkkatuHacchuuNyuuryoku"></param>
+        /// <returns></returns>
+        public DataTable D_Order_SelectData_SeachHacchuuShoriNO(string storeCD, string dateFrom, string dateTo, string staffCD)
+        {
+            return ikkatuHacchuuDL.D_Order_SelectData_SeachHacchuuShoriNO(storeCD,dateFrom,dateTo,staffCD);
         }
     }
 }

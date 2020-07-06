@@ -32,8 +32,9 @@ BEGIN
     SELECT ShouninJoutai                    = MAIN.ShouninJoutai  
           ,OrderNO                          = MAIN.OrderNO        
           ,HakkouDate                       = MAIN.HakkouDate     
-          ,PageNO                           = MAIN.PageNO         
-          ,MaxPageNO                        = (MAX(MAIN.PageNO)OVER(PARTITION BY MAIN.OrderNO) / 5) + 1
+          ,PageNO                           = DENSE_RANK()OVER(ORDER BY MAIN.OrderNO,MAIN.InsatuShuruiKBN,MAIN.PageNO)
+          ,SubPageNO                        = CAST(MAIN.PageNO as varchar)
+          ,MaxPageNO                        = CAST((MAX(MAIN.PageNO)OVER(PARTITION BY MAIN.OrderNO)) as varchar)
           ,OrderCD                          = MAIN.OrderCD           
           ,VendorName                       = MAIN.VendorName        
           ,OrderPerson                      = MAIN.OrderPerson       
@@ -86,7 +87,7 @@ BEGIN
                 ,NouhinsakiChar1                  = MMPP_Nouhinsaki.Char1
                 ,NouhinsakiChar2                  = MMPP_Nouhinsaki.Char2
                 ,DetailGyouNO                     = ROW_NUMBER()OVER(PARTITION BY DODH.OrderNO ORDER BY DODD.DisplayRows)
-                ,MakerItem                        = MSKU.MakerItem
+                ,MakerItem                        = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.MakerItem ELSE DODD.MakerItem END
                 ,JANCD                            = MSKU.JanCD
                 ,SKUName                          = CASE WHEN MSKU.VariousFLG = 0 THEN MSKU.SKUName ELSE DODD.ItemName END
                 ,ColorSizeName                    = CASE WHEN MSKU.VariousFLG = 0 THEN ISNULL(MSKU.ColorName,'') + ISNULL(MSKU.SizeName,'')
@@ -171,7 +172,7 @@ BEGIN
                        OR (@p_InsatuTaishou_Saihakkou = 1 AND DODH.LastPrintDate IS NOT NULL))  
                   AND (@p_HacchuuDateFrom IS NULL OR DODH.OrderDate >= @p_HacchuuDateFrom)
                   AND (@p_HacchuuDateTo IS NULL OR DODH.OrderDate <= @p_HacchuuDateTo)
-                  AND DODH.StaffCD = @p_Staff
+                  AND (@p_Staff IS NULL OR DODH.StaffCD = @p_Staff)
                   AND (@p_Vendor IS NULL OR DODH.OrderCD = @p_Vendor)
                   AND ((@p_IsPrintMisshounin = 1 AND DODH.ApprovalStageFLG > 0)
                        OR 
@@ -186,6 +187,5 @@ BEGIN
           )MAIN
     ORDER BY MAIN.OrderNO
             ,MAIN.DetailGyouNO
-
 
 END
