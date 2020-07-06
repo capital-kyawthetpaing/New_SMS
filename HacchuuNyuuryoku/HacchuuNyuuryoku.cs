@@ -1566,7 +1566,7 @@ namespace HacchuuNyuuryoku
                     return false;
                 }
 
-                if (index == (int)EIndex.OrderNO)
+                if (index == (int)EIndex.OrderNO && OperationMode != EOperationMode.SHOW)
                 {
                     //上位承認者が承認行為を行った後に下位承認者が承認しようとした場合
                     //（以下のSelectができる場合）、Error「上位承認者によって既に承認済みです。」	
