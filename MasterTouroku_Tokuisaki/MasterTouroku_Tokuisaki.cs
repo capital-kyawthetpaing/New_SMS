@@ -1321,6 +1321,7 @@ namespace MasterTouroku_Tokuisaki
             switch (mode)
             {
                 case EOperationMode.INSERT:
+                    // Scr_Lock(0, mc_L_END, 0);
                     Scr_Lock(0, mc_L_END, 0);
                     SetFuncKeyAll(this, "111111000001");
                     btnSubF11.Enabled = false;
@@ -1330,10 +1331,10 @@ namespace MasterTouroku_Tokuisaki
                 case EOperationMode.DELETE:
                 case EOperationMode.SHOW:
 
-                    Scr_Lock(0, 0, 0);
+                    Scr_Lock(1, mc_L_END, 0);
                     SetFuncKeyAll(this, "111111001010");
                     btnSubF11.Enabled = true;
-                    Scr_Lock(1, mc_L_END, 1);
+                    //Scr_Lock(1, mc_L_END, 1);
                     break;
 
             }
@@ -1410,8 +1411,13 @@ namespace MasterTouroku_Tokuisaki
                             {
                                 ctl.Enabled = Kbn == 0 ? true : false;
                             }
+                            foreach (Control ctl in copyKeyControls)
+                            {
+                                ctl.Enabled = Kbn == 0 ? true : false;
+                            }
                             if (base.OperationMode != EOperationMode.INSERT)
-                                ScCustomer.SearchEnable = Kbn == 0 ? true : false;
+                                ScCustomer.SearchEnable = Kbn == 0 ? false : true;
+                            
                             else
                             {
                                 ScCustomer.SearchEnable = false;
@@ -1425,10 +1431,11 @@ namespace MasterTouroku_Tokuisaki
                     case 1:
                         {
                             // ｷｰ部(複写)
-                            foreach (Control ctl in copyKeyControls)
+                            foreach (Control ctl in keyControls)
                             {
                                 ctl.Enabled = Kbn == 0 ? true : false;
                             }
+                           
                             ScCopyCustomer.SearchEnable = Kbn == 0 ? true : false;
                             break;
                         }
@@ -1444,12 +1451,12 @@ namespace MasterTouroku_Tokuisaki
                             // 明細部
                             foreach (Control ctl in detailControls)
                             {
-                                ctl.Enabled = Kbn == 0 ? true : false;
+                                ctl.Enabled = Kbn == 0 ? false : true;
                             }
                             for (int index = 0; index < searchButtons.Length - 2; index++)
-                                searchButtons[index].Enabled = Kbn == 0 ? true : false;
+                                searchButtons[index].Enabled = Kbn == 0 ? false : true;
 
-                            checkDeleteFlg.Enabled = Kbn == 0 ? true : false;
+                            checkDeleteFlg.Enabled = Kbn == 0 ? false : true;
 
                             break;
                         }
@@ -1601,6 +1608,7 @@ namespace MasterTouroku_Tokuisaki
                             case (int)EIndex.ChangeDate:
                                 if (OperationMode == EOperationMode.INSERT)
                                 {
+                                    Scr_Lock(0, mc_L_END, 1);
                                     detailControls[0].Focus();
                                 }
                                 break;
