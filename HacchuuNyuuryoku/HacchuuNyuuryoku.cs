@@ -49,9 +49,8 @@ namespace HacchuuNyuuryoku
             Tel,
             Fax,
 
-            RemarksInStore,
-            RemarksOutStore
-
+            RemarksOutStore,
+            RemarksInStore
         }
 
         /// <summary>
