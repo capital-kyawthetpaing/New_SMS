@@ -1,3 +1,13 @@
+
+BEGIN TRY 
+ Drop PROCEDURE dbo.[M_Control_CheckDateWithFisicalMonth]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 /****** Object:  StoredProcedure [M_Control_CheckDateWithFisicalMonth]    */
 CREATE PROCEDURE M_Control_CheckDateWithFisicalMonth
 (

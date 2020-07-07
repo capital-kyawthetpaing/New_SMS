@@ -1,3 +1,12 @@
+
+BEGIN TRY 
+ Drop PROCEDURE dbo.[M_SKUPrice_SelectTanka]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /****** Object:  StoredProcedure [M_SKUPrice_SelectTanka]    */
 CREATE PROCEDURE M_SKUPrice_SelectTanka(
     -- Add the parameters for the stored procedure here
