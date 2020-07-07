@@ -1,3 +1,32 @@
+BEGIN TRY 
+ Drop PROCEDURE dbo.[D_MoveRequest_SelectDataForIdouIrai]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+BEGIN TRY 
+ Drop PROCEDURE dbo.[PRC_ZaikoIdouIraiNyuuryoku]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+BEGIN TRY 
+ Drop PROCEDURE dbo.[INSERT_UPDATE_D_MailAddress]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
 --  ======================================================================
 --       Program Call    ç›å…à⁄ìÆàÀóäì¸óÕ
 --       Program ID      ZaikoIdouIraiNyuuryoku
