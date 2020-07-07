@@ -7,6 +7,11 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+	BEGIN TRY
+	Drop Type dbo.[T_Edi]
+	END try
+	BEGIN CATCH END CATCH
+
 --  ======================================================================
 --       Program Call    EDI‰ñ“š”[Šú“o˜^
 --       Program ID      EDIKaitouNoukiTouroku
