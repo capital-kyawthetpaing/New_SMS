@@ -90,7 +90,7 @@ BEGIN
                   ,DH.CostGaku AS SUM_CostGaku
                   ,DH.ProfitGaku AS SUM_ProfitGaku
                   ,DH.Coupon
-                  ,DH.Point
+                  --,DH.Point
                   ,DH.PayCharge
                   ,DH.Adjustments
                   ,DH.Postage
@@ -1047,7 +1047,7 @@ BEGIN
               ,[HanbaiGaku] =       @HanbaiGaku
               ,[CostGaku] =         @CostGaku
               ,[ProfitGaku] =       @ProfitGaku                          
-              ,[Point] =             @Point       
+              --,[Point] =             @Point       
               ,[InvoiceGaku] =       @InvoiceGaku
               ,[PaymentMethodCD]  = @PaymentMethodCD
               ,[SalesPlanDate] =         @SalesPlanDate
@@ -1179,7 +1179,7 @@ BEGIN
                    ,[CostGaku]
                    ,[ProfitGaku]
                    ,[Coupon]
-                   ,[Point]
+                   --,[Point]
                    ,[PayCharge]
                    ,[Adjustments]
                    ,[Postage]
@@ -1284,7 +1284,7 @@ BEGIN
                    ,@CostGaku
                    ,@ProfitGaku
                    ,0   --Coupon
-                   ,@Point
+                   --,@Point
                    ,0   --PayCharge
                    ,0   --Adjustments
                    ,0   --Postage
