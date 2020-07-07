@@ -1125,13 +1125,16 @@ namespace MasterTouroku_ShiireTanka
             foreach (DataGridViewRow row in GV_item.Rows)
             {
                 row.Cells["ck"].Value = "1";
+
+            }
+
                 String itemdata = bl.DataTableToXml(dt);
                 String skudata = bl.DataTableToXml(dtsku);
-                DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata,"", TB_headerdate.Text, "2");
-
+                DataTable dtdata = bl.M_SKU_SelectFor_SKU_Update(itemdata, skudata, "", TB_headerdate.Text, "2");
 
                 if (dtdata.Rows.Count > 0)
                 {
+                //foreach (int i= 0;i)
                     string itemcd = dtdata.Rows[0]["ItemCD"].ToString();
                     string qskuupdate = " ItemCD = '" + itemcd + "'";
                     qskuupdate += " and ChangeDate <= '" + TB_headerdate.Text + "'";
@@ -1144,7 +1147,7 @@ namespace MasterTouroku_ShiireTanka
                         }
                     }
                 }
-            }
+
         }
         private void btn_releaseall_Click(object sender, EventArgs e)
         {
