@@ -268,6 +268,7 @@
             this.shiiresaki.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.shiiresaki.DataCheck = false;
             this.shiiresaki.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.shiiresaki.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.shiiresaki.IsCopy = false;
             this.shiiresaki.LabelText = "";
             this.shiiresaki.LabelVisible = true;
@@ -486,6 +487,7 @@
             this.itemcd.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.itemcd.DataCheck = false;
             this.itemcd.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.itemcd.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.itemcd.IsCopy = false;
             this.itemcd.LabelText = "";
             this.itemcd.LabelVisible = true;
@@ -984,6 +986,7 @@
             this.makershohinC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.makershohinC.DataCheck = false;
             this.makershohinC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.makershohinC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.makershohinC.IsCopy = false;
             this.makershohinC.LabelText = "";
             this.makershohinC.LabelVisible = false;
@@ -1141,6 +1144,7 @@
             this.segmentC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.segmentC.DataCheck = false;
             this.segmentC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segmentC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.segmentC.IsCopy = false;
             this.segmentC.LabelText = "";
             this.segmentC.LabelVisible = true;
@@ -1188,6 +1192,7 @@
             this.sportC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sportC.DataCheck = false;
             this.sportC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sportC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sportC.IsCopy = false;
             this.sportC.LabelText = "";
             this.sportC.LabelVisible = true;
@@ -1235,6 +1240,7 @@
             this.brandC.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.brandC.DataCheck = false;
             this.brandC.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brandC.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.brandC.IsCopy = false;
             this.brandC.LabelText = "";
             this.brandC.LabelVisible = true;
@@ -1353,6 +1359,7 @@
             this.makershohin.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.makershohin.DataCheck = false;
             this.makershohin.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.makershohin.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.makershohin.IsCopy = false;
             this.makershohin.LabelText = "";
             this.makershohin.LabelVisible = false;
@@ -1510,6 +1517,7 @@
             this.segment.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.segment.DataCheck = false;
             this.segment.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.segment.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.segment.IsCopy = false;
             this.segment.LabelText = "";
             this.segment.LabelVisible = true;
@@ -1557,6 +1565,7 @@
             this.sport.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.sport.DataCheck = false;
             this.sport.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.sport.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.sport.IsCopy = false;
             this.sport.LabelText = "";
             this.sport.LabelVisible = true;
@@ -1604,6 +1613,7 @@
             this.brand.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.brand.DataCheck = false;
             this.brand.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.brand.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.brand.IsCopy = false;
             this.brand.LabelText = "";
             this.brand.LabelVisible = true;
