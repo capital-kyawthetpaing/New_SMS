@@ -1,3 +1,11 @@
+BEGIN TRY 
+ Drop Procedure D_Arrival_SelectAll
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /****** Object:  StoredProcedure [D_Arrival_SelectAll]    */
 CREATE PROCEDURE D_Arrival_SelectAll(
     -- Add the parameters for the stored procedure here

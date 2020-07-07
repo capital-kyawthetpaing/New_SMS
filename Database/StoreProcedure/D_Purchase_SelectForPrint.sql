@@ -1,3 +1,11 @@
+BEGIN TRY 
+ Drop Procedure D_Purchase_SelectForPrint
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROCEDURE D_Purchase_SelectForPrint
 (
     @PurchaseDateFrom  varchar(10),

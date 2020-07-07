@@ -1,4 +1,11 @@
-
+BEGIN TRY 
+ Drop Procedure [dbo].[D_Order_SelectByOrderProcessNO]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /****** Object:  StoredProcedure [D_Order_SelectAll]    */
 CREATE PROCEDURE [dbo].[D_Order_SelectByOrderProcessNO](
     @p_OrderProcessNO varchar(11) 

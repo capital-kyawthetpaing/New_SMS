@@ -1,3 +1,12 @@
+BEGIN TRY 
+ Drop Procedure D_EDI_Insert
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 --  ======================================================================
 --       Program Call    EDI‰ñ“š”[Šú“o˜^
 --       Program ID      EDIKaitouNoukiTouroku

@@ -1,3 +1,11 @@
+BEGIN TRY 
+ Drop Procedure D_Stock_SelectRackNO
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 /****** Object:  StoredProcedure [D_Stock_SelectRackNO]    */
 CREATE PROCEDURE D_Stock_SelectRackNO(
     -- Add the parameters for the stored procedure here
