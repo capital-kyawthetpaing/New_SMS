@@ -1,10 +1,14 @@
-
-/****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForNyuuka]    Script Date: 2019/09/15 19:54:54 ******/
+BEGIN TRY 
+ Drop Procedure [D_Juchuu_SelectData_ForNyuuka]
+END try
+BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
+
+/****** Object:  StoredProcedure [dbo].[D_Juchuu_SelectData_ForNyuuka]    Script Date: 2019/09/15 19:54:54 ******/
+
 --  ======================================================================
 --       Program Call    ì¸â◊ì¸óÕ éÛíçè∆âÔâÊñ 
 --       Program ID      NyuukaNyuuryoku
