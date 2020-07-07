@@ -78,15 +78,16 @@ namespace DL
             };
             return SelectData(dic, sp);
         }
-        public DataTable M_SKU_SelectFor_SKU_Update(string itemtb,string skutb,string date,string type)
+        public DataTable M_SKU_SelectFor_SKU_Update(string itemtb,string skutb,string itemcd,string date,string type)
         {
             string sp = "M_SKU_SelectFor_SKU_Update";
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
             {
                 { "@itemtb", new ValuePair { value1 =SqlDbType.VarChar,value2 = itemtb } },
-                 { "@skutb", new ValuePair { value1 =SqlDbType.VarChar,value2 = skutb } },
-                   { "@date", new ValuePair { value1 =SqlDbType.VarChar,value2 = date } },
-                  { "@type", new ValuePair { value1 =SqlDbType.VarChar,value2 = type } },
+                { "@skutb", new ValuePair { value1 =SqlDbType.VarChar,value2 = skutb } },
+                { "@itemcd", new ValuePair { value1 =SqlDbType.VarChar,value2 = itemcd } },
+                { "@date", new ValuePair { value1 =SqlDbType.VarChar,value2 = date } },
+                { "@type", new ValuePair { value1 =SqlDbType.VarChar,value2 = type } },
             };
             return SelectData(dic, sp);
         }

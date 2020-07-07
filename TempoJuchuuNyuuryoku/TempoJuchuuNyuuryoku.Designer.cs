@@ -241,8 +241,6 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin6 = new System.Windows.Forms.Label();
             this.ckM_Label28 = new CKM_Controls.CKM_Label();
             this.lblKin5 = new System.Windows.Forms.Label();
-            this.ckM_Label26 = new CKM_Controls.CKM_Label();
-            this.ckM_TextBox2 = new CKM_Controls.CKM_TextBox();
             this.ckM_Label23 = new CKM_Controls.CKM_Label();
             this.lblKin9 = new System.Windows.Forms.Label();
             this.ckM_Label24 = new CKM_Controls.CKM_Label();
@@ -5063,8 +5061,6 @@ namespace TempoJuchuuNyuuryoku
             this.tabPage1.Controls.Add(this.lblKin6);
             this.tabPage1.Controls.Add(this.ckM_Label28);
             this.tabPage1.Controls.Add(this.lblKin5);
-            this.tabPage1.Controls.Add(this.ckM_Label26);
-            this.tabPage1.Controls.Add(this.ckM_TextBox2);
             this.tabPage1.Controls.Add(this.ckM_Label23);
             this.tabPage1.Controls.Add(this.lblKin9);
             this.tabPage1.Controls.Add(this.ckM_Label24);
@@ -5107,7 +5103,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label32.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label32.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label32.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label32.Location = new System.Drawing.Point(1052, 372);
+            this.ckM_Label32.Location = new System.Drawing.Point(944, 372);
             this.ckM_Label32.Name = "ckM_Label32";
             this.ckM_Label32.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label32.TabIndex = 713;
@@ -5121,7 +5117,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin13.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin13.Location = new System.Drawing.Point(1126, 369);
+            this.lblKin13.Location = new System.Drawing.Point(1018, 369);
             this.lblKin13.Name = "lblKin13";
             this.lblKin13.Size = new System.Drawing.Size(78, 18);
             this.lblKin13.TabIndex = 712;
@@ -5279,53 +5275,6 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin5.Text = "999,999,999";
             this.lblKin5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ckM_Label26
-            // 
-            this.ckM_Label26.AutoSize = true;
-            this.ckM_Label26.Back_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label26.BackColor = System.Drawing.Color.Transparent;
-            this.ckM_Label26.DefaultlabelSize = true;
-            this.ckM_Label26.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
-            this.ckM_Label26.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
-            this.ckM_Label26.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label26.Location = new System.Drawing.Point(730, 309);
-            this.ckM_Label26.Name = "ckM_Label26";
-            this.ckM_Label26.Size = new System.Drawing.Size(66, 12);
-            this.ckM_Label26.TabIndex = 703;
-            this.ckM_Label26.Text = "ﾎﾟｲﾝﾄ利用";
-            this.ckM_Label26.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
-            this.ckM_Label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // ckM_TextBox2
-            // 
-            this.ckM_TextBox2.AllowMinus = true;
-            this.ckM_TextBox2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
-            this.ckM_TextBox2.BackColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ckM_TextBox2.ClientColor = System.Drawing.Color.White;
-            this.ckM_TextBox2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
-            this.ckM_TextBox2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Price;
-            this.ckM_TextBox2.DecimalPlace = 0;
-            this.ckM_TextBox2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
-            this.ckM_TextBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.ckM_TextBox2.IntegerPart = 4;
-            this.ckM_TextBox2.IsCorrectDate = true;
-            this.ckM_TextBox2.isEnterKeyDown = false;
-            this.ckM_TextBox2.isMaxLengthErr = false;
-            this.ckM_TextBox2.IsNumber = true;
-            this.ckM_TextBox2.IsShop = false;
-            this.ckM_TextBox2.Length = 9;
-            this.ckM_TextBox2.Location = new System.Drawing.Point(799, 305);
-            this.ckM_TextBox2.MaxLength = 9;
-            this.ckM_TextBox2.MoveNext = true;
-            this.ckM_TextBox2.Name = "ckM_TextBox2";
-            this.ckM_TextBox2.Size = new System.Drawing.Size(78, 19);
-            this.ckM_TextBox2.TabIndex = 29;
-            this.ckM_TextBox2.Tag = "0";
-            this.ckM_TextBox2.Text = "99,999,999";
-            this.ckM_TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ckM_TextBox2.TextSize = CKM_Controls.CKM_TextBox.FontSize.Normal;
-            // 
             // ckM_Label23
             // 
             this.ckM_Label23.AutoSize = true;
@@ -5335,7 +5284,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label23.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label23.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label23.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label23.Location = new System.Drawing.Point(739, 372);
+            this.ckM_Label23.Location = new System.Drawing.Point(572, 372);
             this.ckM_Label23.Name = "ckM_Label23";
             this.ckM_Label23.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label23.TabIndex = 701;
@@ -5348,7 +5297,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin9.Location = new System.Drawing.Point(799, 369);
+            this.lblKin9.Location = new System.Drawing.Point(632, 369);
             this.lblKin9.Name = "lblKin9";
             this.lblKin9.Size = new System.Drawing.Size(78, 18);
             this.lblKin9.TabIndex = 700;
@@ -5364,7 +5313,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label24.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label24.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label24.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label24.Location = new System.Drawing.Point(752, 351);
+            this.ckM_Label24.Location = new System.Drawing.Point(585, 351);
             this.ckM_Label24.Name = "ckM_Label24";
             this.ckM_Label24.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label24.TabIndex = 699;
@@ -5377,7 +5326,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin8.Location = new System.Drawing.Point(799, 348);
+            this.lblKin8.Location = new System.Drawing.Point(632, 348);
             this.lblKin8.Name = "lblKin8";
             this.lblKin8.Size = new System.Drawing.Size(78, 18);
             this.lblKin8.TabIndex = 698;
@@ -5393,7 +5342,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label25.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label25.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label25.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label25.Location = new System.Drawing.Point(752, 330);
+            this.ckM_Label25.Location = new System.Drawing.Point(585, 330);
             this.ckM_Label25.Name = "ckM_Label25";
             this.ckM_Label25.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label25.TabIndex = 697;
@@ -5406,7 +5355,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin7.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin7.Location = new System.Drawing.Point(799, 327);
+            this.lblKin7.Location = new System.Drawing.Point(632, 327);
             this.lblKin7.Name = "lblKin7";
             this.lblKin7.Size = new System.Drawing.Size(78, 18);
             this.lblKin7.TabIndex = 696;
@@ -5422,7 +5371,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label22.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label22.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label22.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label22.Location = new System.Drawing.Point(909, 372);
+            this.ckM_Label22.Location = new System.Drawing.Point(762, 372);
             this.ckM_Label22.Name = "ckM_Label22";
             this.ckM_Label22.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label22.TabIndex = 695;
@@ -5435,7 +5384,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin12.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin12.Location = new System.Drawing.Point(970, 369);
+            this.lblKin12.Location = new System.Drawing.Point(823, 369);
             this.lblKin12.Name = "lblKin12";
             this.lblKin12.Size = new System.Drawing.Size(78, 18);
             this.lblKin12.TabIndex = 694;
@@ -5451,7 +5400,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label21.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label21.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label21.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label21.Location = new System.Drawing.Point(909, 351);
+            this.ckM_Label21.Location = new System.Drawing.Point(762, 351);
             this.ckM_Label21.Name = "ckM_Label21";
             this.ckM_Label21.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label21.TabIndex = 693;
@@ -5464,7 +5413,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin11.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin11.Location = new System.Drawing.Point(970, 348);
+            this.lblKin11.Location = new System.Drawing.Point(823, 348);
             this.lblKin11.Name = "lblKin11";
             this.lblKin11.Size = new System.Drawing.Size(78, 18);
             this.lblKin11.TabIndex = 692;
@@ -5480,7 +5429,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label20.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label20.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label20.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label20.Location = new System.Drawing.Point(909, 330);
+            this.ckM_Label20.Location = new System.Drawing.Point(762, 330);
             this.ckM_Label20.Name = "ckM_Label20";
             this.ckM_Label20.Size = new System.Drawing.Size(57, 12);
             this.ckM_Label20.TabIndex = 691;
@@ -5493,7 +5442,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin10.Location = new System.Drawing.Point(970, 327);
+            this.lblKin10.Location = new System.Drawing.Point(823, 327);
             this.lblKin10.Name = "lblKin10";
             this.lblKin10.Size = new System.Drawing.Size(78, 18);
             this.lblKin10.TabIndex = 690;
@@ -5509,7 +5458,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label10.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label10.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label10.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label10.Location = new System.Drawing.Point(1233, 310);
+            this.ckM_Label10.Location = new System.Drawing.Point(1211, 310);
             this.ckM_Label10.Name = "ckM_Label10";
             this.ckM_Label10.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label10.TabIndex = 689;
@@ -5522,7 +5471,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin4.Location = new System.Drawing.Point(1281, 307);
+            this.lblKin4.Location = new System.Drawing.Point(1259, 307);
             this.lblKin4.Name = "lblKin4";
             this.lblKin4.Size = new System.Drawing.Size(78, 18);
             this.lblKin4.TabIndex = 688;
@@ -5538,7 +5487,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label9.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label9.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label9.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label9.Location = new System.Drawing.Point(1078, 310);
+            this.ckM_Label9.Location = new System.Drawing.Point(970, 310);
             this.ckM_Label9.Name = "ckM_Label9";
             this.ckM_Label9.Size = new System.Drawing.Size(44, 12);
             this.ckM_Label9.TabIndex = 687;
@@ -5551,7 +5500,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin3.Location = new System.Drawing.Point(1126, 307);
+            this.lblKin3.Location = new System.Drawing.Point(1018, 307);
             this.lblKin3.Name = "lblKin3";
             this.lblKin3.Size = new System.Drawing.Size(78, 18);
             this.lblKin3.TabIndex = 3;
@@ -5567,7 +5516,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label8.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.ckM_Label8.Font_Size = CKM_Controls.CKM_Label.CKM_FontSize.Normal;
             this.ckM_Label8.ForeColor = System.Drawing.Color.Black;
-            this.ckM_Label8.Location = new System.Drawing.Point(896, 309);
+            this.ckM_Label8.Location = new System.Drawing.Point(749, 309);
             this.ckM_Label8.Name = "ckM_Label8";
             this.ckM_Label8.Size = new System.Drawing.Size(70, 12);
             this.ckM_Label8.TabIndex = 685;
@@ -5580,7 +5529,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblKin2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(208)))), ((int)(((byte)(142)))));
             this.lblKin2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblKin2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKin2.Location = new System.Drawing.Point(970, 306);
+            this.lblKin2.Location = new System.Drawing.Point(823, 306);
             this.lblKin2.Name = "lblKin2";
             this.lblKin2.Size = new System.Drawing.Size(78, 18);
             this.lblKin2.TabIndex = 684;
@@ -5980,6 +5929,7 @@ namespace TempoJuchuuNyuuryoku
             this.lblPoint.TabIndex = 699;
             this.lblPoint.Text = "-999,999,999";
             this.lblPoint.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblPoint.Visible = false;
             // 
             // ckM_Label16
             // 
@@ -5997,6 +5947,7 @@ namespace TempoJuchuuNyuuryoku
             this.ckM_Label16.Text = "残ポイント";
             this.ckM_Label16.Text_Color = CKM_Controls.CKM_Label.CKM_Color.Default;
             this.ckM_Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckM_Label16.Visible = false;
             // 
             // ckM_Label17
             // 
@@ -6677,8 +6628,6 @@ namespace TempoJuchuuNyuuryoku
         private System.Windows.Forms.Label lblKin6;
         private CKM_Controls.CKM_Label ckM_Label28;
         private System.Windows.Forms.Label lblKin5;
-        private CKM_Controls.CKM_Label ckM_Label26;
-        private CKM_Controls.CKM_TextBox ckM_TextBox2;
         private CKM_Controls.CKM_Label ckM_Label23;
         private System.Windows.Forms.Label lblKin9;
         private CKM_Controls.CKM_Label ckM_Label24;

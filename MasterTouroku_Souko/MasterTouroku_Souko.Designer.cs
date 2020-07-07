@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PanelCopy = new System.Windows.Forms.Panel();
             this.ckM_Label4 = new CKM_Controls.CKM_Label();
             this.ckM_Label3 = new CKM_Controls.CKM_Label();
@@ -97,6 +96,10 @@
             this.PanelSearch.Location = new System.Drawing.Point(1240, 0);
             this.PanelSearch.TabIndex = 0;
             // 
+            // btnChangeIkkatuHacchuuMode
+            // 
+            this.btnChangeIkkatuHacchuuMode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            // 
             // PanelCopy
             // 
             this.PanelCopy.Controls.Add(this.ckM_Label4);
@@ -148,15 +151,18 @@
             this.ScCopySoukoCD.ChangeDateWidth = 100;
             this.ScCopySoukoCD.Code = "";
             this.ScCopySoukoCD.CodeWidth = 60;
+            this.ScCopySoukoCD.CodeWidth1 = 60;
             this.ScCopySoukoCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopySoukoCD.DataCheck = false;
             this.ScCopySoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCopySoukoCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCopySoukoCD.IsCopy = false;
             this.ScCopySoukoCD.LabelText = "";
             this.ScCopySoukoCD.LabelVisible = false;
             this.ScCopySoukoCD.Location = new System.Drawing.Point(84, 0);
             this.ScCopySoukoCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScCopySoukoCD.Name = "ScCopySoukoCD";
+            this.ScCopySoukoCD.NameWidth = 280;
             this.ScCopySoukoCD.SearchEnable = true;
             this.ScCopySoukoCD.Size = new System.Drawing.Size(103, 50);
             this.ScCopySoukoCD.Stype = Search.CKM_SearchControl.SearchType.倉庫;
@@ -194,15 +200,18 @@
             this.ScSoukoCD.ChangeDateWidth = 100;
             this.ScSoukoCD.Code = "";
             this.ScSoukoCD.CodeWidth = 60;
+            this.ScSoukoCD.CodeWidth1 = 60;
             this.ScSoukoCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSoukoCD.DataCheck = false;
             this.ScSoukoCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScSoukoCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScSoukoCD.IsCopy = false;
             this.ScSoukoCD.LabelText = "";
             this.ScSoukoCD.LabelVisible = false;
             this.ScSoukoCD.Location = new System.Drawing.Point(64, -1);
             this.ScSoukoCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSoukoCD.Name = "ScSoukoCD";
+            this.ScSoukoCD.NameWidth = 280;
             this.ScSoukoCD.SearchEnable = true;
             this.ScSoukoCD.Size = new System.Drawing.Size(103, 50);
             this.ScSoukoCD.Stype = Search.CKM_SearchControl.SearchType.倉庫;
@@ -281,6 +290,7 @@
             this.TxtSoukoName.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtSoukoName.BackColor = System.Drawing.Color.White;
             this.TxtSoukoName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtSoukoName.ClientColor = System.Drawing.Color.White;
             this.TxtSoukoName.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtSoukoName.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtSoukoName.DecimalPlace = 0;
@@ -289,6 +299,8 @@
             this.TxtSoukoName.IntegerPart = 0;
             this.TxtSoukoName.IsCorrectDate = true;
             this.TxtSoukoName.isEnterKeyDown = false;
+            this.TxtSoukoName.IsFirstTime = true;
+            this.TxtSoukoName.isMaxLengthErr = false;
             this.TxtSoukoName.IsNumber = true;
             this.TxtSoukoName.IsShop = false;
             this.TxtSoukoName.Length = 40;
@@ -323,6 +335,7 @@
             this.CboStoreCD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CboStoreCD.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.店舗ストア;
             this.CboStoreCD.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CboStoreCD.Flag = 0;
             this.CboStoreCD.FormattingEnabled = true;
             this.CboStoreCD.Length = 40;
             this.CboStoreCD.Location = new System.Drawing.Point(114, 39);
@@ -355,6 +368,7 @@
             this.txtZipCD1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD1.BackColor = System.Drawing.Color.White;
             this.txtZipCD1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCD1.ClientColor = System.Drawing.Color.White;
             this.txtZipCD1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtZipCD1.DecimalPlace = 0;
@@ -362,6 +376,8 @@
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
             this.txtZipCD1.isEnterKeyDown = false;
+            this.txtZipCD1.IsFirstTime = true;
+            this.txtZipCD1.isMaxLengthErr = false;
             this.txtZipCD1.IsNumber = true;
             this.txtZipCD1.IsShop = false;
             this.txtZipCD1.Length = 3;
@@ -379,6 +395,7 @@
             this.txtZipCD2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.txtZipCD2.BackColor = System.Drawing.Color.White;
             this.txtZipCD2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtZipCD2.ClientColor = System.Drawing.Color.White;
             this.txtZipCD2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.txtZipCD2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.txtZipCD2.DecimalPlace = 0;
@@ -386,6 +403,8 @@
             this.txtZipCD2.IntegerPart = 0;
             this.txtZipCD2.IsCorrectDate = true;
             this.txtZipCD2.isEnterKeyDown = false;
+            this.txtZipCD2.IsFirstTime = true;
+            this.txtZipCD2.isMaxLengthErr = false;
             this.txtZipCD2.IsNumber = true;
             this.txtZipCD2.IsShop = false;
             this.txtZipCD2.Length = 4;
@@ -421,6 +440,7 @@
             this.TxtAddress1.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtAddress1.BackColor = System.Drawing.Color.White;
             this.TxtAddress1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtAddress1.ClientColor = System.Drawing.Color.White;
             this.TxtAddress1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtAddress1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtAddress1.DecimalPlace = 0;
@@ -429,6 +449,8 @@
             this.TxtAddress1.IntegerPart = 0;
             this.TxtAddress1.IsCorrectDate = true;
             this.TxtAddress1.isEnterKeyDown = false;
+            this.TxtAddress1.IsFirstTime = true;
+            this.TxtAddress1.isMaxLengthErr = false;
             this.TxtAddress1.IsNumber = true;
             this.TxtAddress1.IsShop = false;
             this.TxtAddress1.Length = 100;
@@ -446,6 +468,7 @@
             this.TxtAddress2.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtAddress2.BackColor = System.Drawing.Color.White;
             this.TxtAddress2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtAddress2.ClientColor = System.Drawing.Color.White;
             this.TxtAddress2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半全角;
             this.TxtAddress2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtAddress2.DecimalPlace = 0;
@@ -454,6 +477,8 @@
             this.TxtAddress2.IntegerPart = 0;
             this.TxtAddress2.IsCorrectDate = true;
             this.TxtAddress2.isEnterKeyDown = false;
+            this.TxtAddress2.IsFirstTime = true;
+            this.TxtAddress2.isMaxLengthErr = false;
             this.TxtAddress2.IsNumber = true;
             this.TxtAddress2.IsShop = false;
             this.TxtAddress2.Length = 100;
@@ -488,6 +513,7 @@
             this.TxtTelePhoneNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtTelePhoneNo.BackColor = System.Drawing.Color.White;
             this.TxtTelePhoneNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtTelePhoneNo.ClientColor = System.Drawing.Color.White;
             this.TxtTelePhoneNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtTelePhoneNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtTelePhoneNo.DecimalPlace = 0;
@@ -495,11 +521,13 @@
             this.TxtTelePhoneNo.IntegerPart = 0;
             this.TxtTelePhoneNo.IsCorrectDate = true;
             this.TxtTelePhoneNo.isEnterKeyDown = false;
+            this.TxtTelePhoneNo.IsFirstTime = true;
+            this.TxtTelePhoneNo.isMaxLengthErr = false;
             this.TxtTelePhoneNo.IsNumber = true;
             this.TxtTelePhoneNo.IsShop = false;
-            this.TxtTelePhoneNo.Length = 10;
+            this.TxtTelePhoneNo.Length = 15;
             this.TxtTelePhoneNo.Location = new System.Drawing.Point(114, 139);
-            this.TxtTelePhoneNo.MaxLength = 10;
+            this.TxtTelePhoneNo.MaxLength = 15;
             this.TxtTelePhoneNo.MoveNext = true;
             this.TxtTelePhoneNo.Name = "TxtTelePhoneNo";
             this.TxtTelePhoneNo.Size = new System.Drawing.Size(100, 19);
@@ -529,6 +557,7 @@
             this.TxtFaxNo.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtFaxNo.BackColor = System.Drawing.Color.White;
             this.TxtFaxNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtFaxNo.ClientColor = System.Drawing.Color.White;
             this.TxtFaxNo.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtFaxNo.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.TxtFaxNo.DecimalPlace = 0;
@@ -536,11 +565,13 @@
             this.TxtFaxNo.IntegerPart = 0;
             this.TxtFaxNo.IsCorrectDate = true;
             this.TxtFaxNo.isEnterKeyDown = false;
+            this.TxtFaxNo.IsFirstTime = true;
+            this.TxtFaxNo.isMaxLengthErr = false;
             this.TxtFaxNo.IsNumber = true;
             this.TxtFaxNo.IsShop = false;
-            this.TxtFaxNo.Length = 10;
+            this.TxtFaxNo.Length = 15;
             this.TxtFaxNo.Location = new System.Drawing.Point(299, 139);
-            this.TxtFaxNo.MaxLength = 10;
+            this.TxtFaxNo.MaxLength = 15;
             this.TxtFaxNo.MoveNext = true;
             this.TxtFaxNo.Name = "TxtFaxNo";
             this.TxtFaxNo.Size = new System.Drawing.Size(100, 19);
@@ -570,6 +601,7 @@
             this.CboSoukoType.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CboSoukoType.Cbo_Type = CKM_Controls.CKM_ComboBox.CboType.倉庫種別;
             this.CboSoukoType.Ctrl_Byte = CKM_Controls.CKM_ComboBox.Bytes.半全角;
+            this.CboSoukoType.Flag = 0;
             this.CboSoukoType.FormattingEnabled = true;
             this.CboSoukoType.Length = 20;
             this.CboSoukoType.Location = new System.Drawing.Point(114, 167);
@@ -603,6 +635,7 @@
             this.TxtHikiateOrder.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtHikiateOrder.BackColor = System.Drawing.Color.White;
             this.TxtHikiateOrder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtHikiateOrder.ClientColor = System.Drawing.Color.White;
             this.TxtHikiateOrder.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtHikiateOrder.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TxtHikiateOrder.DecimalPlace = 0;
@@ -610,6 +643,8 @@
             this.TxtHikiateOrder.IntegerPart = 0;
             this.TxtHikiateOrder.IsCorrectDate = true;
             this.TxtHikiateOrder.isEnterKeyDown = false;
+            this.TxtHikiateOrder.IsFirstTime = true;
+            this.TxtHikiateOrder.isMaxLengthErr = false;
             this.TxtHikiateOrder.IsNumber = true;
             this.TxtHikiateOrder.IsShop = false;
             this.TxtHikiateOrder.Length = 2;
@@ -725,16 +760,19 @@
             this.ScSoukoMakerCD.ChangeDate = "";
             this.ScSoukoMakerCD.ChangeDateWidth = 100;
             this.ScSoukoMakerCD.Code = "";
-            this.ScSoukoMakerCD.CodeWidth = 130;
+            this.ScSoukoMakerCD.CodeWidth = 100;
+            this.ScSoukoMakerCD.CodeWidth1 = 100;
             this.ScSoukoMakerCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSoukoMakerCD.DataCheck = false;
             this.ScSoukoMakerCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScSoukoMakerCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScSoukoMakerCD.IsCopy = false;
             this.ScSoukoMakerCD.LabelText = "";
             this.ScSoukoMakerCD.LabelVisible = true;
             this.ScSoukoMakerCD.Location = new System.Drawing.Point(51, 1);
             this.ScSoukoMakerCD.Margin = new System.Windows.Forms.Padding(0);
             this.ScSoukoMakerCD.Name = "ScSoukoMakerCD";
+            this.ScSoukoMakerCD.NameWidth = 310;
             this.ScSoukoMakerCD.SearchEnable = true;
             this.ScSoukoMakerCD.Size = new System.Drawing.Size(444, 27);
             this.ScSoukoMakerCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -751,33 +789,26 @@
             // 
             this.GvTana.AllowUserToDeleteRows = false;
             this.GvTana.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
-            this.GvTana.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(235)))), ((int)(((byte)(247)))));
+            this.GvTana.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GvTana.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.GvTana.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GvTana.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.GvTana.ColumnHeadersHeight = 25;
             this.GvTana.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colTanaCD});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS Gothic", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.GvTana.DefaultCellStyle = dataGridViewCellStyle6;
             this.GvTana.Enabled = false;
             this.GvTana.EnableHeadersVisualStyles = false;
             this.GvTana.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(224)))), ((int)(((byte)(180)))));
             this.GvTana.Location = new System.Drawing.Point(919, 14);
             this.GvTana.Name = "GvTana";
+            this.GvTana.RowHeight_ = 20;
             this.GvTana.Size = new System.Drawing.Size(160, 530);
             this.GvTana.TabIndex = 26;
             this.GvTana.UseRowNo = true;
@@ -823,6 +854,7 @@
             this.TxtRemark.Back_Color = CKM_Controls.CKM_MultiLineTextBox.CKM_Color.White;
             this.TxtRemark.BackColor = System.Drawing.Color.White;
             this.TxtRemark.Ctrl_Byte = CKM_Controls.CKM_MultiLineTextBox.Bytes.半全角;
+            this.TxtRemark.F_focus = false;
             this.TxtRemark.Font = new System.Drawing.Font("MS Gothic", 9F);
             this.TxtRemark.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
             this.TxtRemark.Length = 500;
@@ -861,6 +893,7 @@
             this.TxtIdouCount.Back_Color = CKM_Controls.CKM_TextBox.CKM_Color.White;
             this.TxtIdouCount.BackColor = System.Drawing.Color.White;
             this.TxtIdouCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtIdouCount.ClientColor = System.Drawing.Color.White;
             this.TxtIdouCount.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.TxtIdouCount.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Number;
             this.TxtIdouCount.DecimalPlace = 0;
@@ -868,6 +901,8 @@
             this.TxtIdouCount.IntegerPart = 0;
             this.TxtIdouCount.IsCorrectDate = true;
             this.TxtIdouCount.isEnterKeyDown = false;
+            this.TxtIdouCount.IsFirstTime = true;
+            this.TxtIdouCount.isMaxLengthErr = false;
             this.TxtIdouCount.IsNumber = true;
             this.TxtIdouCount.IsShop = false;
             this.TxtIdouCount.Length = 2;

@@ -52,7 +52,7 @@ namespace TempoJuchuuNyuuryoku
 
             PaymentMethodCD,
             //Discount,
-            Point,
+            //Point,
             SalesDate,
             FirstPaypentPlanDate,
             NouhinsyoComment,
@@ -1451,7 +1451,7 @@ namespace TempoJuchuuNyuuryoku
             detailControls = new Control[] { ckM_TextBox1,CboSoukoName, ScStaff.TxtCode
                          , ScCustomer.TxtCode,ckM_TextBox7,btnAddress, ckM_Text_4, panel1, ckM_TextBox18 , ckM_TextBox8 , ckM_TextBox13
                          , ScDeliveryCD.TxtCode,ckM_TextBox21,btnAddress2, ckM_TextBox22, panel2, ckM_TextBox20 , ckM_TextBox14 , ckM_TextBox19
-                         , CboPaymentMethodCD   , ckM_TextBox2  , ckM_TextBox5,ckM_TextBox6
+                         , CboPaymentMethodCD  , ckM_TextBox5,ckM_TextBox6
                          , ckM_MultiLineTextBox1,TxtRemark1,TxtRemark2 };
             detailLabels = new Control[] { ScCustomer,ScStaff, ScDeliveryCD };
             searchButtons = new Control[] { ScCustomer.BtnSearch, ScStaff.BtnSearch,ScDeliveryCD.BtnSearch};
@@ -1786,7 +1786,7 @@ namespace TempoJuchuuNyuuryoku
 
                         //【Data Area Footer】
                         CboPaymentMethodCD.SelectedValue = row["PaymentMethodCD"].ToString();// mPaymentMethodCD;
-                        detailControls[(int)EIndex.Point].Text = bbl.Z_SetStr(row["Point"]);
+                        //detailControls[(int)EIndex.Point].Text = bbl.Z_SetStr(row["Point"]);
                         detailControls[(int)EIndex.SalesDate].Text = row["SalesDate"].ToString();
                         detailControls[(int)EIndex.FirstPaypentPlanDate].Text = row["FirstPaypentPlanDate"].ToString();
                         detailControls[(int)EIndex.NouhinsyoComment].Text = row["NouhinsyoComment"].ToString();
@@ -2102,7 +2102,7 @@ namespace TempoJuchuuNyuuryoku
                         detailControls[(int)EIndex.RemarksOutStore].Text = row["RemarksOutStore"].ToString();
 
                         lblKin5.Text ="0";          //請求額
-                        ckM_TextBox2.Text = "0";    //ポイント
+                        //ckM_TextBox2.Text = "0";    //ポイント
                         ckM_TextBox5.Text = "" ;//売上日
                         lblKin8.Text = "0";//入金額
                         ckM_TextBox6.Text = ""; //入金予定日
@@ -2433,18 +2433,18 @@ namespace TempoJuchuuNyuuryoku
                     }
                     break;
 
-                case (int)EIndex.Point:
-                    //入力された場合 ポイント＞	Form.Header.残ポイントの場合、Error				
-                    if(bbl.Z_Set(detailControls[index].Text)>0)
-                        if(bbl.Z_Set(detailControls[index].Text) > bbl.Z_Set(lblPoint.Text))
-                        {
-                            //Ｅ１４６
-                            bbl.ShowMessage("E146");
-                            detailControls[index].Focus();
-                            return false;
-                        }
+                //case (int)EIndex.Point:
+                //    //入力された場合 ポイント＞	Form.Header.残ポイントの場合、Error				
+                //    if(bbl.Z_Set(detailControls[index].Text)>0)
+                //        if(bbl.Z_Set(detailControls[index].Text) > bbl.Z_Set(lblPoint.Text))
+                //        {
+                //            //Ｅ１４６
+                //            bbl.ShowMessage("E146");
+                //            detailControls[index].Focus();
+                //            return false;
+                //        }
 
-                    break;
+                //    break;
 
                 case (int)EIndex.SalesDate:
                     if (string.IsNullOrWhiteSpace(detailControls[index].Text))
@@ -3719,7 +3719,7 @@ namespace TempoJuchuuNyuuryoku
             lblKin4.Text = string.Format("{0:#,##0}", kin2- kin3);
 
             //請求額＝税込売上額－ポイント利用
-            lblKin7.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text));
+            lblKin7.Text = string.Format("{0:#,##0}", kin1 + kin5);// - bbl.Z_Set(detailControls[(int)EIndex.Point].Text));
 
             //M_Control.Tennic＝0 の場合、
             //M_Control.Tennic＝1 の場合、M_Vendor.TaxTiming＝1:明細ごと または 3:締ごと	
@@ -3800,7 +3800,7 @@ namespace TempoJuchuuNyuuryoku
             }
 
             //未入金額＝請求額－入金額
-            lblKin9.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(detailControls[(int)EIndex.Point].Text)- bbl.Z_Set(lblKin8.Text));
+            lblKin9.Text = string.Format("{0:#,##0}", kin1 + kin5 - bbl.Z_Set(lblKin8.Text));
 
 
         }
@@ -3868,7 +3868,7 @@ namespace TempoJuchuuNyuuryoku
             dje.HanbaiGaku = (bbl.Z_Set(lblKin1.Text) - bbl.Z_Set(lblKin5.Text)).ToString();
             dje.CostGaku = bbl.Z_SetStr(lblKin3.Text);
             dje.ProfitGaku = bbl.Z_SetStr(lblKin4.Text);
-            dje.Point = bbl.Z_SetStr(detailControls[(int)EIndex.Point].Text);
+            dje.Point = "0";  // bbl.Z_SetStr(detailControls[(int)EIndex.Point].Text);
             dje.InvoiceGaku = bbl.Z_SetStr(lblKin7.Text);
 
             dje.PaymentMethodCD = CboPaymentMethodCD.SelectedValue.ToString();

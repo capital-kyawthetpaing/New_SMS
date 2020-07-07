@@ -233,6 +233,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -244,6 +245,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.ArrivalPlanCD IS NULL
                 AND DA.ArrivalPlanDate IS NULL
@@ -261,16 +263,14 @@ BEGIN
                 ON M.ID = 206
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 IN (1,2,4,6)
-                --ì¸â◊ó\íËãÊï™
-                AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN (SELECT A.Num2 FROM M_MultiPorpose AS A WHERE A.ID = 206 AND A.[Key] = @ArrivalPlan) 
-                            ELSE M.Num2 END)
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
             
         END
-
+		                    
         --ïsóvï™ONÇÃèÍçá
         IF @ChkFuyo = 1
         BEGIN
@@ -284,6 +284,7 @@ BEGIN
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 = 5
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -302,6 +303,7 @@ BEGIN
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 = 3
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -311,7 +313,34 @@ BEGIN
         WHERE DelFlg = 1
         ;
     END  
-    
+
+    --ì¸â◊ó\íËãÊï™
+    IF  @ArrivalPlan <> 0
+    BEGIN
+        UPDATE #TableForKaitouNouki
+        SET DelFlg = 1
+        ;
+        
+        UPDATE #TableForKaitouNouki
+        SET DelFlg = 0
+        WHERE EXISTS(
+            SELECT DA.ArrivalPlanDate
+            FROM D_ArrivalPlan AS DA
+            INNER JOIN M_MultiPorpose AS M
+            ON M.ID = 206
+            AND M.[Key] = DA.ArrivalPlanCD
+            AND M.Num2 = (SELECT A.Num2 FROM M_MultiPorpose AS A WHERE A.ID = 206 AND A.[Key] = @ArrivalPlan) 
+            WHERE DA.Number = #TableForKaitouNouki.OrderNO
+            AND DA.NumberRows = #TableForKaitouNouki.OrderRows
+            AND DA.ArrivalPlanKBN = 1
+            AND DA.DeleteDateTime IS NULL
+        );
+
+        DELETE FROM #TableForKaitouNouki
+        WHERE DelFlg = 1
+        ;
+	END
+	
     --âÊñ Ç≈îÕàÕéwíËÇ≥ÇÍÇΩì¸â◊ó\íËì˙Ç…çáívÇ∑ÇÈÇ©ÇîªífÅ©á@
     --çáívÇµÇΩèÍçáÅAçáívÇµÇ»Ç¢ì˙Ç‡ä‹ÇﬂÇƒÅAÇªÇÃî≠íçî‘çÜÇÃì¸â◊ó\íËèÓïÒÇÕëSÇƒÅiç≈ëÂÇRÅjíäèoÅAï\é¶Ç∑ÇÈÅ©ÅE
     IF ISNULL(@ArrivalPlanDateFrom,'') <> '' OR ISNULL(@ArrivalPlanDateTo,'') <> '' OR @ArrivalPlanMonthFrom > 0 OR @ArrivalPlanMonthTo > 0
@@ -328,6 +357,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.ArrivalPlanDate >= (CASE WHEN @ArrivalPlanDateFrom <> '' THEN CONVERT(DATE, @ArrivalPlanDateFrom) ELSE DA.ArrivalPlanDate END)
                 AND DA.ArrivalPlanDate <= (CASE WHEN @ArrivalPlanDateTo <> '' THEN CONVERT(DATE, @ArrivalPlanDateTo) ELSE DA.ArrivalPlanDate END)
@@ -343,6 +373,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND ((DA.ArrivalPlanMonth >= (CASE WHEN @ArrivalPlanMonthFrom <> 0 THEN @ArrivalPlanMonthFrom ELSE DA.ArrivalPlanMonth END)
                         AND DA.ArrivalPlanMonth <= (CASE WHEN @ArrivalPlanMonthTo <> 0 THEN @ArrivalPlanMonthTo ELSE DA.ArrivalPlanMonth END))
