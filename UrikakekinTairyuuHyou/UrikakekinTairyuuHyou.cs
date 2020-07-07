@@ -178,6 +178,16 @@ namespace UrikakekinTairyuuHyou
 
                         if (dt.Rows.Count > 0)
                         {
+                            string customerCD = string.Empty;
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                if (customerCD != dt.Rows[i]["CustomerCD"].ToString())
+                                {
+                                    customerCD = dt.Rows[i]["CustomerCD"].ToString();
+                                    DataRow[] row = dt.Select("SaleA='売上' and CustomerCD='" + customerCD + "'");
+
+                                }
+                            }
                             DataTable dtExport = dt;
                            // dtExport = ChangeDataColumnName(dtExport);
                             string folderPath = "C:\\SMS\\";
