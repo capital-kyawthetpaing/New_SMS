@@ -1407,7 +1407,21 @@ namespace Base.Client
             if (Index + 1 == FuncEnd)
             {
                 if (bbl.ShowMessage("Q003") == DialogResult.Yes)
+                {
+
+                    var ctrl = GetAllControls(this);
+                    
+
+                    foreach (var ctrlTxt in ctrl)
+                    {
+                        if(ctrlTxt is CKM_TextBox)
+                        {
+                            ((CKM_TextBox)ctrlTxt).isClosing = true;
+                        }
+                        //ctrlTxt.isClosing = true;
+                    }
                     EndSec();
+                }
                 else
                 {
                     if (PreviousCtrl != null)
@@ -2027,8 +2041,22 @@ namespace Base.Client
         string Datetemp = "";
         private void BtnF1_MouseEnter(object sender, EventArgs e)
         {
+            var ctrl = GetAllControls(this);
+
+
+            foreach (var ctrlTxt in ctrl)
+            {
+                if (ctrlTxt is CKM_TextBox)
+                {
+                    ((CKM_TextBox)ctrlTxt).isClosing = true;
+                }
+                //ctrlTxt.isClosing = true;
+            }
             PreviousCtrl = this.ActiveControl;
         }
+
+
+
         private Form IsmaxTabIndex(KeyEventArgs e, Control cr) //PTK
         {
             Form fr = null;
@@ -2426,6 +2454,20 @@ namespace Base.Client
             //MoveNext = false;
             //this.SelectionStart = 0;
             //this.SelectionLength = this.Text.Length;
+        }
+
+        private void BtnF1_MouseLeave(object sender, EventArgs e)
+        {
+            var ctrl = GetAllControls(this);
+
+            foreach (var ctrlTxt in ctrl)
+            {
+                if (ctrlTxt is CKM_TextBox)
+                {
+                    ((CKM_TextBox)ctrlTxt).isClosing = false;
+                }
+                //ctrlTxt.isClosing = true;
+            }
         }
     }
 }

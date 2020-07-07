@@ -74,6 +74,10 @@ namespace Entity
         public string CreditAmount { get; set; }
         public string CreditWarningAmount { get; set; }
         public string CreditAdditionAmount { get; set; }
+        public string CreditCheckKBN { get; set; }
+        public string CreditMessage { get; set; }
+        public string FareLevel { get; set; }
+        public string Fare { get; set; }
         public string PaymentMethodCD { get; set; }
         public string KouzaCD { get; set; }
         public string DisplayOrder { get; set; }

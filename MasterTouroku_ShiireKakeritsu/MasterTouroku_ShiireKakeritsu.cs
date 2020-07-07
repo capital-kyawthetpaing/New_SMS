@@ -25,8 +25,8 @@ namespace MasterTouroku_ShiireKakeritsu
         DataTable dtMain;
         DataTable dtGrid;
         DataTable dt = new DataTable();
-        M_Vendor_Entity mve = new M_Vendor_Entity();
-        M_Brand_Entity mbe = new M_Brand_Entity();
+        M_Vendor_Entity mve;
+        M_Brand_Entity mbe;
         DataView dvMain;
         L_Log_Entity log_data;
         int type = 0;
@@ -39,6 +39,8 @@ namespace MasterTouroku_ShiireKakeritsu
             InitializeComponent();
             mskbl = new MasterTouroku_ShiireKakeritsu_BL();
             moe = new M_OrderRate_Entity();
+            mve = new M_Vendor_Entity();
+            mbe = new M_Brand_Entity();
             dvMain = new DataView();
         }
 
@@ -47,7 +49,6 @@ namespace MasterTouroku_ShiireKakeritsu
             InProgramID = "MasterTouroku_ShiireKakeritsu";
             SetFunctionLabel(EProMode.MENTE);
             StartProgram();
-            //ckM_Button1.Text = "取込(F10)";
             F2Visible = false;
             F3Visible = false;
             F4Visible = false;
@@ -449,6 +450,7 @@ namespace MasterTouroku_ShiireKakeritsu
                     searchCondition = "ChangeDate= '" + txtDate.Text;
                 if (dgv_ShiireKakeritsu.DataSource != null)
                 {
+                    dgv_ShiireKakeritsu.DataSource = dtMain;
                     DataView view = dgv_ShiireKakeritsu.DataSource as DataView;
                     dvMain.RowFilter = searchCondition;
                     dgv_ShiireKakeritsu.DataSource = dvMain;

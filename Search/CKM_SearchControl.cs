@@ -225,6 +225,7 @@ namespace Search
             見積番号,
             受注番号,
             発注番号,
+            発注処理番号, //2020.07.05 add
             売上番号,
             入金番号,
             入金消込番号,
@@ -481,6 +482,11 @@ namespace Search
                     lblName.Width = 600;
                     break;
                 case SearchType.発注番号:
+                    txtCode.MaxLength = 11;
+                    txtCode.Width = 100;
+                    lblName.Width = 600;
+                    break;
+                case SearchType.発注処理番号:
                     txtCode.MaxLength = 11;
                     txtCode.Width = 100;
                     lblName.Width = 600;
@@ -1195,6 +1201,21 @@ namespace Search
                         if (!frmHacchuu.flgCancel)
                         {
                             txtCode.Text = frmHacchuu.OrderNO;
+                            txtChangeDate.Text = frmHacchuu.ChangeDate;
+                            CheckBasedFormPanel();//PTK added
+                        }
+                    }
+                    break;
+                case SearchType.発注処理番号:
+                    using (Search_HacchuuShoriNO frmHacchuu = new Search_HacchuuShoriNO(changedate))
+                    {
+                        frmHacchuu.OperatorCD = Value1;
+                        frmHacchuu.AllAvailableStores = Value2;
+                        frmHacchuu.ShowDialog();
+
+                        if (!frmHacchuu.flgCancel)
+                        {
+                            txtCode.Text = frmHacchuu.HacchuuShoriNO;
                             txtChangeDate.Text = frmHacchuu.ChangeDate;
                             CheckBasedFormPanel();//PTK added
                         }

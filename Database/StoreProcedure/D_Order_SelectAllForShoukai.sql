@@ -1,4 +1,4 @@
- BEGIN TRY 
+﻿ BEGIN TRY 
  Drop Procedure dbo.[D_Order_SelectAllForShoukai] 
 END try
 BEGIN CATCH END CATCH 
@@ -39,9 +39,9 @@ CREATE PROCEDURE D_Order_SelectAllForShoukai(
     @StoreCD  varchar(4),
     @MakerItem varchar(30) ,
     @SKUName varchar(100),
-    @ITemCD varchar(300) ,      --�J���}��؂�
-    @SKUCD varchar(300),            --�J���}��؂�
-    @JanCD varchar(300),        --�J���}��؂�
+    @ITemCD varchar(300) ,      --カンマ区切り
+    @SKUCD varchar(300),            --カンマ区切り
+    @JanCD varchar(300),        --カンマ区切り
     
     @JuchuuNO  varchar(11),
     @DestinationSoukoCD varchar(11),
@@ -80,23 +80,23 @@ BEGIN
             WHERE D.DeleteDateTime IS NULL
             AND DM.OrderNO = D.Number AND DM.OrderRows = D.NumberRows
             ORDER BY D.ArrivalPlanMonth desc
-            ) AS ArrivalPlanMonth	--�\�茎
+            ) AS ArrivalPlanMonth	--予定月
 
           ,(SELECT top 1 D.ArrivalPlanCD
             FROM D_ArrivalPlan AS D 
             WHERE D.DeleteDateTime IS NULL
             AND DM.OrderNO = D.Number AND DM.OrderRows = D.NumberRows
-            ORDER BY D.ArrivalPlanMonth desc	--�\�茎���ő�̒l�̃��R�[�h�̗\��󋵂��̗p									
-            ) AS ArrivalPlanCD	--�\���
+            ORDER BY D.ArrivalPlanMonth desc	--予定月が最大の値のレコードの予定状況を採用									
+            ) AS ArrivalPlanCD	--予定状況
 
-          ,DL.ArrivalDate	--���ד�
+          ,DL.ArrivalDate	--入荷日
           ,ISNULL(DL2.ArrivalSu,0) AS ArrivalSu
-          ,DP.PurchaseDate	--�d����
+          ,DP.PurchaseDate	--仕入日
           
           ,CONVERT(varchar,DH.InsertDateTime,111) AS InsertDateTime
 
 			,DH.DestinationKBN AS Destination
-            ,(CASE DH.DestinationKBN WHEN 1 THEN '�Z' ElSE '' END) AS DestinationKBN
+            ,(CASE DH.DestinationKBN WHEN 1 THEN '〇' ElSE '' END) AS DestinationKBN
             ,(CASE DH.DestinationKBN WHEN 2 THEN (SELECT top 1 A.SoukoName
                                                 FROM M_Souko AS A 
                                                 WHERE A.SoukoCD = DH.DestinationSoukoCD AND A.DeleteFlg = 0 
@@ -108,14 +108,14 @@ BEGIN
                                             ELSE '' END) AS DeliveryName
            
            ,DH.OrderWayKBN AS OrderWay                             
-           ,(CASE DH.OrderWayKBN WHEN 1 THEN 'Net����' WHEN 2 THEN 'FAX����' WHEN 3 THEN 'EDI����' ELSE '' END) OrderWayKBN
+           ,(CASE DH.OrderWayKBN WHEN 1 THEN N'Net発注' WHEN 2 THEN N'FAX発注' WHEN 3 THEN N'EDI発注' ELSE '' END) OrderWayKBN
     		
     	   ,DH.ApprovalStageFLG AS ApprovalStage
-           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN '���F��'
-                                      WHEN 1 THEN '�\��'
-                                      WHEN 0 THEN '�p��'
-                                      WHEN 10 THEN '���F�s�v'
-                                      ELSE '���F��' END) AS ApprovalStageFLG
+           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN N'承認済'
+                                      WHEN 1 THEN N'申請'
+                                      WHEN 0 THEN N'却下'
+                                      WHEN 10 THEN N'承認不要'
+                                      ELSE N'承認中' END) AS ApprovalStageFLG
            
           ,(SELECT top 1 A.StoreName 
               FROM M_Store A 
@@ -187,9 +187,9 @@ BEGIN
                 AND DH.OrderNO = D.Number
                 ) AS Num2 
               
-          ,0 AS Check1  --ITemCD�p�`�F�b�N
-          ,0 AS Check2  --SKUCD�p�`�F�b�N
-          ,0 AS Check3  --JANCD�p�`�F�b�N
+          ,0 AS Check1  --ITemCD用チェック
+          ,0 AS Check2  --SKUCD用チェック
+          ,0 AS Check3  --JANCD用チェック
           ,1 AS DelFlg
     INTO #TableForHacchuuShoukai 
     
@@ -202,7 +202,7 @@ BEGIN
         AND DJ.JuchuuRows = DM.JuchuuRows 
         AND DJ.DeleteDateTime IS NULL
     
-    --���ח\���
+    --入荷予定日
     LEFT OUTER JOIN (SELECT  D.Number, D.NumberRows
     		, CONVERT(varchar, MAX(D.ArrivalPlanDate), 111) AS ArrivalPlanDate
             FROM D_ArrivalPlan AS D 
@@ -212,7 +212,7 @@ BEGIN
             GROUP BY D.Number, D.NumberRows
             ) AS DA ON DM.OrderNO = DA.Number AND DM.OrderRows = DA.NumberRows
 
-	--���ד�
+	--入荷日
     LEFT OUTER JOIN (SELECT B.Number, B.NumberRows
     		,CONVERT(varchar, MAX(D.ArrivalDate), 111) AS ArrivalDate
             FROM D_Arrival AS D
@@ -228,7 +228,7 @@ BEGIN
             GROUP BY B.Number, B.NumberRows
             ) AS DL ON DM.OrderNO = DL.Number AND DM.OrderRows = DL.NumberRows
     
-    --���א�
+    --入荷数
     LEFT OUTER JOIN (SELECT B.Number, B.NumberRows
     		,SUM(D.ArrivalSu) AS ArrivalSu
             FROM D_Arrival AS D
@@ -239,13 +239,13 @@ BEGIN
             AND B.DeleteDateTime IS NULL
             
             WHERE D.DeleteDateTime IS NULL
-    --�����ď������i�炸�ɓ��א��̍��v���v�Z
+    --あえて条件を絞らずに入荷数の合計を計算
     --        AND D.ArrivalDate >= (CASE WHEN @ArrivalDateFrom <> '' THEN CONVERT(DATE, @ArrivalDateFrom) ELSE D.ArrivalDate END)
     --        AND D.ArrivalDate <= (CASE WHEN @ArrivalDateTo <> '' THEN CONVERT(DATE, @ArrivalDateTo) ELSE D.ArrivalDate END)
             GROUP BY B.Number, B.NumberRows
             ) AS DL2 ON DM.OrderNO = DL2.Number AND DM.OrderRows = DL2.NumberRows
             
-    --�d����
+    --仕入日
     LEFT OUTER JOIN (SELECT D.OrderNO, D.OrderRows
     		,CONVERT(varchar, MAX(C.PurchaseDate), 111) AS PurchaseDate     
             FROM D_PurchaseDetails AS D
@@ -279,10 +279,10 @@ BEGIN
         SET DelFlg = 1
         ;
 
-        --���t���m�蕪ON�̏ꍇ
+        --日付未確定分ONの場合
         IF @ChkMikakutei = 1
         BEGIN
-            --���ח\��f�[�^�����݂��Ȃ�
+            --入荷予定データが存在しない
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE NOT EXISTS(
@@ -293,7 +293,7 @@ BEGIN
                 AND DA.DeleteDateTime IS NULL
             );
             
-            --�\����Ȃ��œ��ח\��f�[�^�����݂���
+            --予定日なしで入荷予定データが存在する
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -307,7 +307,7 @@ BEGIN
                 AND DA.DeleteDateTime IS NULL
             );
             
-            --�{�A�\��A����A�m�F���œ��ח\��f�[�^�����݂���
+            --旬、予約、未定、確認中で入荷予定データが存在する
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -317,7 +317,7 @@ BEGIN
                 ON M.ID = 206
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 IN (1,2,4,6)
-                --���ח\��敪
+                --入荷予定区分
                 AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN @ArrivalPlan ELSE M.Num2 END)
                 WHERE DA.Number = #TableForHacchuuShoukai.OrderNO
                 AND DA.ArrivalPlanKBN = 1
@@ -326,7 +326,7 @@ BEGIN
             
         END
 
-        --�s�v��ON�̏ꍇ
+        --不要分ONの場合
         IF @ChkFuyo = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -336,7 +336,7 @@ BEGIN
             ;
         END
         
-        --������ON�̏ꍇ
+        --完売分ONの場合
         IF @ChkKanbai = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -357,7 +357,7 @@ BEGIN
         SET DelFlg = 1
         ;
 
-        --���׍ς�ON�̏ꍇ
+        --入荷済みONの場合
         IF @ChkNyukaZumi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -368,7 +368,7 @@ BEGIN
             
         END
 
-        --������ON�̏ꍇ
+        --未入荷ONの場合
         IF @ChkMiNyuka = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -388,7 +388,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --�󒍂���
+        --受注あり
         IF @ChkJuchuAri = 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -397,7 +397,7 @@ BEGIN
             ;
         END
         
-        --�݌ɕ�[��
+        --在庫補充分
         IF @ChkZaiko = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -418,7 +418,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --�����F
+        --未承認
         IF @ChkMisyonin = 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -427,7 +427,7 @@ BEGIN
             ;
         END
         
-        --���F��
+        --承認済
         IF @ChkSyoninzumi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -447,7 +447,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --����
+        --直送
         IF @ChkChokuso = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -456,7 +456,7 @@ BEGIN
             ;
         END
         
-        --�q��
+        --倉庫
         IF @ChkSouko = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -476,7 +476,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --NET����
+        --NET発注
         IF @ChkNet= 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -485,7 +485,7 @@ BEGIN
             ;
         END
 
-        --FAX����
+        --FAX発注
         IF @ChkFax= 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -494,7 +494,7 @@ BEGIN
             ;
         END
 
-        --EDI����
+        --EDI発注
         IF @ChkEdi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -554,7 +554,7 @@ BEGIN
     DECLARE @INDEX int;
     DECLARE @NEXT_INDEX int;
     
-    --ITEM�������ɍ���Ȃ��f�[�^���e�[�u������폜
+    --ITEMより条件に合わないデータをテーブルから削除
     IF ISNULL(@ITemCD,'') <> ''
     BEGIN
                 
@@ -571,7 +571,7 @@ BEGIN
             BEGIN
                 IF LEN(@ITemCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForHacchuuShoukai
                     SET Check1 = 0
                     WHERE ITemCD = SUBSTRING(@ITemCD,@INDEX,LEN(@ITemCD)-@INDEX+1)
@@ -598,7 +598,7 @@ BEGIN
         ;
     END;
     
-    --SKUCD�������ɍ���Ȃ��f�[�^���e�[�u������폜
+    --SKUCDより条件に合わないデータをテーブルから削除
     IF ISNULL(@SKUCD,'') <> ''
     BEGIN
                 
@@ -615,7 +615,7 @@ BEGIN
             BEGIN
                 IF LEN(@SKUCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForHacchuuShoukai
                     SET Check2 = 0
                     WHERE SKUCD = SUBSTRING(@SKUCD,@INDEX,LEN(@SKUCD)-@INDEX+1)
@@ -642,7 +642,7 @@ BEGIN
         ;
     END;
     
-    --JANCD�������ɍ���Ȃ��f�[�^���e�[�u������폜
+    --JANCDより条件に合わないデータをテーブルから削除
     IF ISNULL(@JANCD,'') <> ''
     BEGIN
                 
@@ -659,7 +659,7 @@ BEGIN
             BEGIN
                 IF LEN(@JANCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --データが一つのみの場合
                     UPDATE #TableForHacchuuShoukai
                     SET Check3 = 0
                     WHERE JANCD = SUBSTRING(@JANCD,@INDEX,LEN(@JANCD)-@INDEX+1)
@@ -686,8 +686,8 @@ BEGIN
         ;
     END;
     
-    --�yL_Log�zINSERT
-    --���������f�[�^�֍X�V     
+    --【L_Log】INSERT
+    --処理履歴データへ更新     
     EXEC L_Log_Insert_SP
         @SYSDATETIME,
         @Operator,

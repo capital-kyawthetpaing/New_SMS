@@ -434,7 +434,5 @@ namespace TempoRegiJissekiSyoukai
                 MessageBox.Show(ex.Message);
             }
         }
-
-
     }
 }

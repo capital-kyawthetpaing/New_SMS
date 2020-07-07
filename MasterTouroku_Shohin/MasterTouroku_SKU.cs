@@ -118,6 +118,10 @@ namespace MasterTouroku_Shouhin
             , CmbTag9
             , CmbTag10
 
+                , ExhibitionSegmentCD
+                , OrderLot
+                , ExhibitionCommonCD
+
           , CmbLastYearTerm
           , CmbLastSeason
           , LastCatalogNO
@@ -211,6 +215,8 @@ namespace MasterTouroku_Shouhin
                 ScVendor.ChangeDate = detailLabels[(int)EIndex.ChangeDate].Text;
                 ScRackNo.ChangeDate = detailLabels[(int)EIndex.ChangeDate].Text;
                 ScRackNo.Value1 = setSoukoCD;
+                ScExhibitionSegmentCD.ChangeDate = detailLabels[(int)EIndex.ChangeDate].Text;
+                ScExhibitionSegmentCD.Value1 = MultiPorpose_BL.ID_ExhibitionSegmentCD;
 
                 string ymd = bbl.GetDate();
                 cmbOrderAttentionCD.Bind(ymd, "2");
@@ -302,7 +308,7 @@ namespace MasterTouroku_Shouhin
                 ,cmbOrderAttentionCD, ckM_TextBox13,ckM_TextBox7
                 ,ckM_ComboBox8,ckM_ComboBox9,ckM_ComboBox10,ckM_ComboBox11,ckM_ComboBox12,ckM_ComboBox13
                 ,ckM_ComboBox14,ckM_ComboBox15,ckM_ComboBox16,ckM_ComboBox17
-                
+                ,ScExhibitionSegmentCD.TxtCode, txtOrderLot, txtExhibitionCommonCD
                 , CmbLastYearTerm, CmbLastSeason, ckM_TextBox22, ckM_TextBox23,TxtRemark
                 , ckM_TextBox3,ckM_MultiLineTextBox1,ckM_MultiLineTextBox2,ckM_MultiLineTextBox3,ckM_MultiLineTextBox4
             };
@@ -457,6 +463,48 @@ namespace MasterTouroku_Shouhin
                     if (!RequireCheck(new Control[] { detailControls[index] }))
                     {
                         return false;
+                    }
+                    break;
+
+                case (int)EIndex.ExhibitionSegmentCD:
+                    // 入力無くても良い(It is not necessary to input)
+                    ((Search.CKM_SearchControl)detailControls[index].Parent).LabelText = "";
+
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        return true;
+                    }
+
+                    //以下の条件でM_MultiPorposeが存在しない場合、エラー
+                    string id = "";
+                    if (index.Equals((int)EIndex.ExhibitionSegmentCD))
+                        id = MultiPorpose_BL.ID_ExhibitionSegmentCD;
+
+                    //[M_MultiPorpose]
+                    M_MultiPorpose_Entity mme = new M_MultiPorpose_Entity
+                    {
+                        ID = id,
+                        Key = detailControls[index].Text
+                    };
+                    MultiPorpose_BL mbl = new MultiPorpose_BL();
+                    DataTable dt = mbl.M_MultiPorpose_Select(mme);
+                    if (dt.Rows.Count > 0)
+                    {
+                        ((Search.CKM_SearchControl)detailControls[index].Parent).LabelText = dt.Rows[0]["Char1"].ToString();
+                    }
+                    else
+                    {
+                        //Ｅ１０１
+                        bbl.ShowMessage("E101");
+                        return false;
+                    }
+                    break;
+
+                case (int)EIndex.OrderLot:
+                    //未入力時、1をセット
+                    if (string.IsNullOrWhiteSpace(detailControls[index].Text))
+                    {
+                        detailControls[index].Text = "1";
                     }
                     break;
 
@@ -762,6 +810,9 @@ namespace MasterTouroku_Shouhin
             detailControls[(int)EIndex.OrderAttentionNote].Text = mse.OrderAttentionNote;
             detailControls[(int)EIndex.CommentInStore].Text = mse.CommentInStore;
             detailControls[(int)EIndex.CommentOutStore].Text = mse.CommentOutStore;
+            detailControls[(int)EIndex.ExhibitionSegmentCD].Text = mse.ExhibitionSegmentCD;
+            detailControls[(int)EIndex.OrderLot].Text = bbl.Z_SetStr(mse.OrderLot); 
+            detailControls[(int)EIndex.ExhibitionCommonCD].Text = mse.ExhibitionCommonCD;
             detailControls[(int)EIndex.ShouhinCD].Text = mse.ShouhinCD;
             CmbLastYearTerm.SelectedValue = mse.LastYearTerm;
             CmbLastSeason.SelectedValue = mse.LastSeason;
@@ -787,6 +838,7 @@ namespace MasterTouroku_Shouhin
                 switch(i)
                 {
                     case (int)EIndex.MainVendorCD:
+                    case (int)EIndex.ExhibitionSegmentCD:
                         CheckDetail(i, false);
                         break;
                 }
@@ -907,6 +959,9 @@ namespace MasterTouroku_Shouhin
                 OrderAttentionNote = mie.OrderAttentionNote,
                 CommentInStore = mie.CommentInStore,
                 CommentOutStore = mie.CommentOutStore,
+                ExhibitionSegmentCD = mie.ExhibitionSegmentCD,
+                OrderLot = mie.OrderLot,
+                //ExhibitionCommonCD = mie.ExhibitionCommonCD,
 
                 LastYearTerm = mie.LastYearTerm,
                 LastSeason = mie.LastSeason,
@@ -987,6 +1042,9 @@ namespace MasterTouroku_Shouhin
             mse.OrderAttentionNote = row[0]["OrderAttentionNote"].ToString();
             mse.CommentInStore = row[0]["CommentInStore"].ToString();
             mse.CommentOutStore = row[0]["CommentOutStore"].ToString();
+            mse.ExhibitionSegmentCD = row[0]["ExhibitionSegmentCD"].ToString(); 
+            mse.OrderLot = row[0]["OrderLot"].ToString(); 
+            mse.ExhibitionCommonCD = row[0]["ExhibitionCommonCD"].ToString(); 
             mse.LastYearTerm = row[0]["LastYearTerm"].ToString();
             mse.LastSeason = row[0]["LastSeason"].ToString();
             mse.LastCatalogNO = row[0]["LastCatalogNO"].ToString();
@@ -1151,6 +1209,9 @@ namespace MasterTouroku_Shouhin
             newrow["OrderAttentionNote"] = detailControls[(int)EIndex.OrderAttentionNote].Text;
             newrow["CommentInStore"] = detailControls[(int)EIndex.CommentInStore].Text;
             newrow["CommentOutStore"] = detailControls[(int)EIndex.CommentOutStore].Text;
+            newrow["ExhibitionSegmentCD"] = detailControls[(int)EIndex.ExhibitionSegmentCD].Text;
+            newrow["OrderLot"] = bbl.Z_Set(detailControls[(int)EIndex.OrderLot].Text);
+            newrow["ExhibitionCommonCD"] = detailControls[(int)EIndex.ExhibitionCommonCD].Text;
             newrow["LastYearTerm"] = CmbLastYearTerm.SelectedIndex > 0 ? CmbLastYearTerm.SelectedValue : ""; 
             newrow["LastSeason"] = CmbLastSeason.SelectedIndex > 0 ? CmbLastSeason.SelectedValue : ""; 
             newrow["LastCatalogNO"] = detailControls[(int)EIndex.LastCatalogNO].Text;

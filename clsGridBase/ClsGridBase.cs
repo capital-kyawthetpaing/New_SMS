@@ -272,6 +272,37 @@ namespace GridBase
                     }
                 }
             }
+            public void SBoldForSmallLarge(bool pBold)
+            {
+                if (pBold)
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 16, FontStyle.Bold);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 16, FontStyle.Bold);
+
+                    }
+                }
+                else
+                {
+                    if (CellCtl.GetType().Equals(typeof(Search.CKM_SearchControl)))
+                    {
+                        Search.CKM_SearchControl w_Edit;
+                        w_Edit = (Search.CKM_SearchControl)CellCtl;
+                        w_Edit.TxtCode.Font = new Font("ＭＳ ゴシック", 16, FontStyle.Regular);
+                    }
+                    else
+                    {
+                        CellCtl.Font = new Font("ＭＳ ゴシック", 16, FontStyle.Regular);
+
+                    }
+                }
+            }
         }
 
         public struct ST_State_GridKihon

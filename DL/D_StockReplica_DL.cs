@@ -14,6 +14,17 @@ namespace DL
         {
             Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>();
             return SelectData(dic, "D_StockReplica_Bind");
-        }        
+        }
+
+        public DataTable D_StockReplica_SelectForMarkDown(D_StockReplica_Entity sre)
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@ReplicaNO", new ValuePair { value1 = SqlDbType.Int, value2 = sre.ReplicaNO } },
+                { "@JanCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = sre.JanCD } },
+                { "@SoukoCD", new ValuePair { value1 = SqlDbType.VarChar, value2 = sre.SoukoCD } },
+            };
+            return SelectData(dic, "D_StockReplica_SelectForMarkDown");
+        }
     }
 }
