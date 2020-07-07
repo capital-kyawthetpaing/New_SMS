@@ -91,9 +91,9 @@ namespace BL
         {
             return msdl.Mastertoroku_Shiretanka_Insert(tbitem,tbsku,vendorcd,storecd);
         }
-        public DataTable M_SKU_SelectFor_SKU_Update(string itb,string stb,string date,string type)
+        public DataTable M_SKU_SelectFor_SKU_Update(string itb,string stb,string itemcd,string date,string type)
         {
-            return msdl.M_SKU_SelectFor_SKU_Update(itb,stb,date,type);
+            return msdl.M_SKU_SelectFor_SKU_Update(itb,stb,itemcd,date,type);
         }
     }
 }
