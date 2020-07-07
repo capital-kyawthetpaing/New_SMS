@@ -1229,16 +1229,11 @@ namespace TempoJuchuuNyuuryoku
             {
                 w_Gyo = Convert.ToInt16(mGrid.g_DArray[i].GYONO);          //行番号 退避
 
-                //前行をコピー (修正元行№以外)
-                int w_MOTNO = mGrid.g_DArray[i].juchuGyoNO;      //修正元行№ 退避
-                string w_JUCHUNO = mGrid.g_DArray[i].JuchuuNO;
-                int w_CGYO = mGrid.g_DArray[i].juchuGyoNO;
-                string w_KariNO = mGrid.g_DArray[i].KariHikiateNO;
-
                 mGrid.g_DArray[i] = mGrid.g_DArray[i - 1];
 
                 //退避内容を戻す
                 mGrid.g_DArray[i].GYONO = w_Gyo.ToString();          //行番号
+
                 if (i.Equals(w_Row))
                 {
                     //前の行をコピーしてできた新しい行
@@ -1247,13 +1242,7 @@ namespace TempoJuchuuNyuuryoku
                     mGrid.g_DArray[i].copyJuchuGyoNO = 0;
                     mGrid.g_DArray[i].KariHikiateNO = "";
                 }
-                else
-                {
-                    mGrid.g_DArray[i].JuchuuNO = w_JUCHUNO;
-                    mGrid.g_DArray[i].juchuGyoNO = w_MOTNO;      //修正元行№
-                    mGrid.g_DArray[i].juchuGyoNO = w_CGYO;
-                    mGrid.g_DArray[i].KariHikiateNO = w_KariNO;
-                }
+
                 Grid_NotFocus(col, i);
             }
 
@@ -3066,6 +3055,13 @@ namespace TempoJuchuuNyuuryoku
                         mGrid.g_DArray[row].OrderUnitPrice = GetTanka(row, ymd);
                         //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
 
+                        //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                        if(bbl.Z_Set(mGrid.g_DArray[row].OrderUnitPrice) != 0)
+                        {
+                            mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
+                            mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", bbl.Z_Set(mGrid.g_DArray[row].CostUnitPrice) * wSuu);
+                        }
+
                         Grid_NotFocus(col, row);
 
                     }
@@ -3236,11 +3232,17 @@ namespace TempoJuchuuNyuuryoku
                     {
                         if (bbl.ShowMessage("Q306") != DialogResult.OK)
                             return false;
+                    }                       
+                    //０で無い場合、入力された発注単価を原価単価にセットし、原価金額、粗利金額を再計算。
+                    else if(!chkAll)
+                    {
+                        mGrid.g_DArray[row].CostUnitPrice = mGrid.g_DArray[row].OrderUnitPrice;
+                        mGrid.g_DArray[row].CostGaku = string.Format("{0:#,##0}", orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                     }
                     //mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(orderUnitPrice * bbl.Z_Set(mGrid.g_DArray[row].JuchuuSuu));
                     break;
 
-                //case (int)ClsGridJuchuu.ColNO.OrderGaku://発注単価
+                //case (int)ClsGridJuchuu.ColNO.OrderGaku://発注
                 //    //入力無くても良い(It is not necessary to input)
                 //    //入力無い場合、0とする（When there is no input, it is set to 0）０を許す。
                 //    mGrid.g_DArray[row].OrderGaku = bbl.Z_SetStr(mGrid.g_DArray[row].OrderGaku);
@@ -3326,13 +3328,21 @@ namespace TempoJuchuuNyuuryoku
                 if(mTemporaryReserveNO=="")
                 {
                     mTemporaryReserveNO = mibl.GetTemporaryReserveNO(fre.DenNo);
+
+                    if (mTennic.Equals(1) && !string.IsNullOrWhiteSpace(fre.DenNo))
+                        mTemporaryReserveNO = "";
                 }
 
-                fre.DenNo = mTemporaryReserveNO;
-
+                if (string.IsNullOrWhiteSpace(fre.DenNo))
+                {
+                    fre.DenNo = mTemporaryReserveNO;
+                }
                 if (fre.DenGyoNo == "0")
                 {
-                    fre.DenGyoNo = (row + 1).ToString();
+                    //if (mTennic.Equals(1))
+                    //    fre.DenGyoNo = "1";
+                    //else
+                        fre.DenGyoNo = (row + 1).ToString();
                 }
 
                 ret = bbl.Fnc_Reserve(fre);

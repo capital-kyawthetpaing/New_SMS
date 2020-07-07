@@ -33,6 +33,16 @@ namespace DL
             return SelectData(dic, sp);
         }
 
+        public DataTable D_MarkDown_SelectData(D_MarkDown_Entity dme)
+        {
+            string sp = "D_MarkDown_SelectData";
 
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>
+            {
+                { "@MarkDownNO", new ValuePair { value1 = SqlDbType.VarChar, value2 = dme.MarkDownNO } },
+            };
+
+            return SelectData(dic, sp);
+        }
     }
 }

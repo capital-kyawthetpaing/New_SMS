@@ -432,6 +432,7 @@
             this.txtShanaiBikou_0.IntegerPart = 0;
             this.txtShanaiBikou_0.IsCorrectDate = true;
             this.txtShanaiBikou_0.isEnterKeyDown = false;
+            this.txtShanaiBikou_0.IsFirstTime = true;
             this.txtShanaiBikou_0.isMaxLengthErr = false;
             this.txtShanaiBikou_0.IsNumber = true;
             this.txtShanaiBikou_0.IsShop = false;
@@ -707,6 +708,7 @@
             this.txtOrderRows_4.IntegerPart = 0;
             this.txtOrderRows_4.IsCorrectDate = true;
             this.txtOrderRows_4.isEnterKeyDown = false;
+            this.txtOrderRows_4.IsFirstTime = true;
             this.txtOrderRows_4.isMaxLengthErr = false;
             this.txtOrderRows_4.IsNumber = true;
             this.txtOrderRows_4.IsShop = false;
@@ -738,6 +740,7 @@
             this.txtOrderRows_3.IntegerPart = 0;
             this.txtOrderRows_3.IsCorrectDate = true;
             this.txtOrderRows_3.isEnterKeyDown = false;
+            this.txtOrderRows_3.IsFirstTime = true;
             this.txtOrderRows_3.isMaxLengthErr = false;
             this.txtOrderRows_3.IsNumber = true;
             this.txtOrderRows_3.IsShop = false;
@@ -769,6 +772,7 @@
             this.txtOrderRows_2.IntegerPart = 0;
             this.txtOrderRows_2.IsCorrectDate = true;
             this.txtOrderRows_2.isEnterKeyDown = false;
+            this.txtOrderRows_2.IsFirstTime = true;
             this.txtOrderRows_2.isMaxLengthErr = false;
             this.txtOrderRows_2.IsNumber = true;
             this.txtOrderRows_2.IsShop = false;
@@ -800,6 +804,7 @@
             this.txtOrderRows_1.IntegerPart = 0;
             this.txtOrderRows_1.IsCorrectDate = true;
             this.txtOrderRows_1.isEnterKeyDown = false;
+            this.txtOrderRows_1.IsFirstTime = true;
             this.txtOrderRows_1.isMaxLengthErr = false;
             this.txtOrderRows_1.IsNumber = true;
             this.txtOrderRows_1.IsShop = false;
@@ -831,6 +836,7 @@
             this.txtOrderRows_0.IntegerPart = 0;
             this.txtOrderRows_0.IsCorrectDate = true;
             this.txtOrderRows_0.isEnterKeyDown = false;
+            this.txtOrderRows_0.IsFirstTime = true;
             this.txtOrderRows_0.isMaxLengthErr = false;
             this.txtOrderRows_0.IsNumber = true;
             this.txtOrderRows_0.IsShop = false;
@@ -862,6 +868,7 @@
             this.txtTaniCD_4.IntegerPart = 0;
             this.txtTaniCD_4.IsCorrectDate = true;
             this.txtTaniCD_4.isEnterKeyDown = false;
+            this.txtTaniCD_4.IsFirstTime = true;
             this.txtTaniCD_4.isMaxLengthErr = false;
             this.txtTaniCD_4.IsNumber = true;
             this.txtTaniCD_4.IsShop = false;
@@ -893,6 +900,7 @@
             this.txtTaniCD_3.IntegerPart = 0;
             this.txtTaniCD_3.IsCorrectDate = true;
             this.txtTaniCD_3.isEnterKeyDown = false;
+            this.txtTaniCD_3.IsFirstTime = true;
             this.txtTaniCD_3.isMaxLengthErr = false;
             this.txtTaniCD_3.IsNumber = true;
             this.txtTaniCD_3.IsShop = false;
@@ -924,6 +932,7 @@
             this.txtTaniCD_2.IntegerPart = 0;
             this.txtTaniCD_2.IsCorrectDate = true;
             this.txtTaniCD_2.isEnterKeyDown = false;
+            this.txtTaniCD_2.IsFirstTime = true;
             this.txtTaniCD_2.isMaxLengthErr = false;
             this.txtTaniCD_2.IsNumber = true;
             this.txtTaniCD_2.IsShop = false;
@@ -955,6 +964,7 @@
             this.txtTaniCD_1.IntegerPart = 0;
             this.txtTaniCD_1.IsCorrectDate = true;
             this.txtTaniCD_1.isEnterKeyDown = false;
+            this.txtTaniCD_1.IsFirstTime = true;
             this.txtTaniCD_1.isMaxLengthErr = false;
             this.txtTaniCD_1.IsNumber = true;
             this.txtTaniCD_1.IsShop = false;
@@ -986,6 +996,7 @@
             this.txtTaniCD_0.IntegerPart = 0;
             this.txtTaniCD_0.IsCorrectDate = true;
             this.txtTaniCD_0.isEnterKeyDown = false;
+            this.txtTaniCD_0.IsFirstTime = true;
             this.txtTaniCD_0.isMaxLengthErr = false;
             this.txtTaniCD_0.IsNumber = true;
             this.txtTaniCD_0.IsShop = false;
@@ -1017,6 +1028,7 @@
             this.txtHacchuuShouhizeigaku_4.IntegerPart = 0;
             this.txtHacchuuShouhizeigaku_4.IsCorrectDate = true;
             this.txtHacchuuShouhizeigaku_4.isEnterKeyDown = false;
+            this.txtHacchuuShouhizeigaku_4.IsFirstTime = true;
             this.txtHacchuuShouhizeigaku_4.isMaxLengthErr = false;
             this.txtHacchuuShouhizeigaku_4.IsNumber = true;
             this.txtHacchuuShouhizeigaku_4.IsShop = false;
@@ -1048,6 +1060,7 @@
             this.txtHacchuuShouhizeigaku_3.IntegerPart = 0;
             this.txtHacchuuShouhizeigaku_3.IsCorrectDate = true;
             this.txtHacchuuShouhizeigaku_3.isEnterKeyDown = false;
+            this.txtHacchuuShouhizeigaku_3.IsFirstTime = true;
             this.txtHacchuuShouhizeigaku_3.isMaxLengthErr = false;
             this.txtHacchuuShouhizeigaku_3.IsNumber = true;
             this.txtHacchuuShouhizeigaku_3.IsShop = false;
@@ -1079,6 +1092,7 @@
             this.txtHacchuuShouhizeigaku_2.IntegerPart = 0;
             this.txtHacchuuShouhizeigaku_2.IsCorrectDate = true;
             this.txtHacchuuShouhizeigaku_2.isEnterKeyDown = false;
+            this.txtHacchuuShouhizeigaku_2.IsFirstTime = true;
             this.txtHacchuuShouhizeigaku_2.isMaxLengthErr = false;
             this.txtHacchuuShouhizeigaku_2.IsNumber = true;
             this.txtHacchuuShouhizeigaku_2.IsShop = false;
@@ -1110,6 +1124,7 @@
             this.txtHacchuuShouhizeigaku_1.IntegerPart = 0;
             this.txtHacchuuShouhizeigaku_1.IsCorrectDate = true;
             this.txtHacchuuShouhizeigaku_1.isEnterKeyDown = false;
+            this.txtHacchuuShouhizeigaku_1.IsFirstTime = true;
             this.txtHacchuuShouhizeigaku_1.isMaxLengthErr = false;
             this.txtHacchuuShouhizeigaku_1.IsNumber = true;
             this.txtHacchuuShouhizeigaku_1.IsShop = false;
@@ -1141,6 +1156,7 @@
             this.txtHacchuuShouhizeigaku_0.IntegerPart = 0;
             this.txtHacchuuShouhizeigaku_0.IsCorrectDate = true;
             this.txtHacchuuShouhizeigaku_0.isEnterKeyDown = false;
+            this.txtHacchuuShouhizeigaku_0.IsFirstTime = true;
             this.txtHacchuuShouhizeigaku_0.isMaxLengthErr = false;
             this.txtHacchuuShouhizeigaku_0.IsNumber = true;
             this.txtHacchuuShouhizeigaku_0.IsShop = false;
@@ -1172,6 +1188,7 @@
             this.txtKakeritu_4.IntegerPart = 0;
             this.txtKakeritu_4.IsCorrectDate = true;
             this.txtKakeritu_4.isEnterKeyDown = false;
+            this.txtKakeritu_4.IsFirstTime = true;
             this.txtKakeritu_4.isMaxLengthErr = false;
             this.txtKakeritu_4.IsNumber = true;
             this.txtKakeritu_4.IsShop = false;
@@ -1203,6 +1220,7 @@
             this.txtTeika_4.IntegerPart = 0;
             this.txtTeika_4.IsCorrectDate = true;
             this.txtTeika_4.isEnterKeyDown = false;
+            this.txtTeika_4.IsFirstTime = true;
             this.txtTeika_4.isMaxLengthErr = false;
             this.txtTeika_4.IsNumber = true;
             this.txtTeika_4.IsShop = false;
@@ -1234,6 +1252,7 @@
             this.txtSKUName_4.IntegerPart = 0;
             this.txtSKUName_4.IsCorrectDate = true;
             this.txtSKUName_4.isEnterKeyDown = false;
+            this.txtSKUName_4.IsFirstTime = true;
             this.txtSKUName_4.isMaxLengthErr = false;
             this.txtSKUName_4.IsNumber = true;
             this.txtSKUName_4.IsShop = false;
@@ -1265,6 +1284,7 @@
             this.txtAdminNO_4.IntegerPart = 0;
             this.txtAdminNO_4.IsCorrectDate = true;
             this.txtAdminNO_4.isEnterKeyDown = false;
+            this.txtAdminNO_4.IsFirstTime = true;
             this.txtAdminNO_4.isMaxLengthErr = false;
             this.txtAdminNO_4.IsNumber = true;
             this.txtAdminNO_4.IsShop = false;
@@ -1296,6 +1316,7 @@
             this.txtVariousFLG_4.IntegerPart = 0;
             this.txtVariousFLG_4.IsCorrectDate = true;
             this.txtVariousFLG_4.isEnterKeyDown = false;
+            this.txtVariousFLG_4.IsFirstTime = true;
             this.txtVariousFLG_4.isMaxLengthErr = false;
             this.txtVariousFLG_4.IsNumber = true;
             this.txtVariousFLG_4.IsShop = false;
@@ -1327,6 +1348,7 @@
             this.txtJuchuuRows_4.IntegerPart = 0;
             this.txtJuchuuRows_4.IsCorrectDate = true;
             this.txtJuchuuRows_4.isEnterKeyDown = false;
+            this.txtJuchuuRows_4.IsFirstTime = true;
             this.txtJuchuuRows_4.isMaxLengthErr = false;
             this.txtJuchuuRows_4.IsNumber = true;
             this.txtJuchuuRows_4.IsShop = false;
@@ -1358,6 +1380,7 @@
             this.txtKakeritu_3.IntegerPart = 0;
             this.txtKakeritu_3.IsCorrectDate = true;
             this.txtKakeritu_3.isEnterKeyDown = false;
+            this.txtKakeritu_3.IsFirstTime = true;
             this.txtKakeritu_3.isMaxLengthErr = false;
             this.txtKakeritu_3.IsNumber = true;
             this.txtKakeritu_3.IsShop = false;
@@ -1389,6 +1412,7 @@
             this.txtTeika_3.IntegerPart = 0;
             this.txtTeika_3.IsCorrectDate = true;
             this.txtTeika_3.isEnterKeyDown = false;
+            this.txtTeika_3.IsFirstTime = true;
             this.txtTeika_3.isMaxLengthErr = false;
             this.txtTeika_3.IsNumber = true;
             this.txtTeika_3.IsShop = false;
@@ -1420,6 +1444,7 @@
             this.txtSKUName_3.IntegerPart = 0;
             this.txtSKUName_3.IsCorrectDate = true;
             this.txtSKUName_3.isEnterKeyDown = false;
+            this.txtSKUName_3.IsFirstTime = true;
             this.txtSKUName_3.isMaxLengthErr = false;
             this.txtSKUName_3.IsNumber = true;
             this.txtSKUName_3.IsShop = false;
@@ -1451,6 +1476,7 @@
             this.txtAdminNO_3.IntegerPart = 0;
             this.txtAdminNO_3.IsCorrectDate = true;
             this.txtAdminNO_3.isEnterKeyDown = false;
+            this.txtAdminNO_3.IsFirstTime = true;
             this.txtAdminNO_3.isMaxLengthErr = false;
             this.txtAdminNO_3.IsNumber = true;
             this.txtAdminNO_3.IsShop = false;
@@ -1482,6 +1508,7 @@
             this.txtVariousFLG_3.IntegerPart = 0;
             this.txtVariousFLG_3.IsCorrectDate = true;
             this.txtVariousFLG_3.isEnterKeyDown = false;
+            this.txtVariousFLG_3.IsFirstTime = true;
             this.txtVariousFLG_3.isMaxLengthErr = false;
             this.txtVariousFLG_3.IsNumber = true;
             this.txtVariousFLG_3.IsShop = false;
@@ -1513,6 +1540,7 @@
             this.txtJuchuuRows_3.IntegerPart = 0;
             this.txtJuchuuRows_3.IsCorrectDate = true;
             this.txtJuchuuRows_3.isEnterKeyDown = false;
+            this.txtJuchuuRows_3.IsFirstTime = true;
             this.txtJuchuuRows_3.isMaxLengthErr = false;
             this.txtJuchuuRows_3.IsNumber = true;
             this.txtJuchuuRows_3.IsShop = false;
@@ -1544,6 +1572,7 @@
             this.txtKakeritu_2.IntegerPart = 0;
             this.txtKakeritu_2.IsCorrectDate = true;
             this.txtKakeritu_2.isEnterKeyDown = false;
+            this.txtKakeritu_2.IsFirstTime = true;
             this.txtKakeritu_2.isMaxLengthErr = false;
             this.txtKakeritu_2.IsNumber = true;
             this.txtKakeritu_2.IsShop = false;
@@ -1575,6 +1604,7 @@
             this.txtTeika_2.IntegerPart = 0;
             this.txtTeika_2.IsCorrectDate = true;
             this.txtTeika_2.isEnterKeyDown = false;
+            this.txtTeika_2.IsFirstTime = true;
             this.txtTeika_2.isMaxLengthErr = false;
             this.txtTeika_2.IsNumber = true;
             this.txtTeika_2.IsShop = false;
@@ -1606,6 +1636,7 @@
             this.txtSKUName_2.IntegerPart = 0;
             this.txtSKUName_2.IsCorrectDate = true;
             this.txtSKUName_2.isEnterKeyDown = false;
+            this.txtSKUName_2.IsFirstTime = true;
             this.txtSKUName_2.isMaxLengthErr = false;
             this.txtSKUName_2.IsNumber = true;
             this.txtSKUName_2.IsShop = false;
@@ -1637,6 +1668,7 @@
             this.txtAdminNO_2.IntegerPart = 0;
             this.txtAdminNO_2.IsCorrectDate = true;
             this.txtAdminNO_2.isEnterKeyDown = false;
+            this.txtAdminNO_2.IsFirstTime = true;
             this.txtAdminNO_2.isMaxLengthErr = false;
             this.txtAdminNO_2.IsNumber = true;
             this.txtAdminNO_2.IsShop = false;
@@ -1668,6 +1700,7 @@
             this.txtVariousFLG_2.IntegerPart = 0;
             this.txtVariousFLG_2.IsCorrectDate = true;
             this.txtVariousFLG_2.isEnterKeyDown = false;
+            this.txtVariousFLG_2.IsFirstTime = true;
             this.txtVariousFLG_2.isMaxLengthErr = false;
             this.txtVariousFLG_2.IsNumber = true;
             this.txtVariousFLG_2.IsShop = false;
@@ -1699,6 +1732,7 @@
             this.txtJuchuuRows_2.IntegerPart = 0;
             this.txtJuchuuRows_2.IsCorrectDate = true;
             this.txtJuchuuRows_2.isEnterKeyDown = false;
+            this.txtJuchuuRows_2.IsFirstTime = true;
             this.txtJuchuuRows_2.isMaxLengthErr = false;
             this.txtJuchuuRows_2.IsNumber = true;
             this.txtJuchuuRows_2.IsShop = false;
@@ -1730,6 +1764,7 @@
             this.txtKakeritu_1.IntegerPart = 0;
             this.txtKakeritu_1.IsCorrectDate = true;
             this.txtKakeritu_1.isEnterKeyDown = false;
+            this.txtKakeritu_1.IsFirstTime = true;
             this.txtKakeritu_1.isMaxLengthErr = false;
             this.txtKakeritu_1.IsNumber = true;
             this.txtKakeritu_1.IsShop = false;
@@ -1761,6 +1796,7 @@
             this.txtTeika_1.IntegerPart = 0;
             this.txtTeika_1.IsCorrectDate = true;
             this.txtTeika_1.isEnterKeyDown = false;
+            this.txtTeika_1.IsFirstTime = true;
             this.txtTeika_1.isMaxLengthErr = false;
             this.txtTeika_1.IsNumber = true;
             this.txtTeika_1.IsShop = false;
@@ -1792,6 +1828,7 @@
             this.txtSKUName_1.IntegerPart = 0;
             this.txtSKUName_1.IsCorrectDate = true;
             this.txtSKUName_1.isEnterKeyDown = false;
+            this.txtSKUName_1.IsFirstTime = true;
             this.txtSKUName_1.isMaxLengthErr = false;
             this.txtSKUName_1.IsNumber = true;
             this.txtSKUName_1.IsShop = false;
@@ -1823,6 +1860,7 @@
             this.txtAdminNO_1.IntegerPart = 0;
             this.txtAdminNO_1.IsCorrectDate = true;
             this.txtAdminNO_1.isEnterKeyDown = false;
+            this.txtAdminNO_1.IsFirstTime = true;
             this.txtAdminNO_1.isMaxLengthErr = false;
             this.txtAdminNO_1.IsNumber = true;
             this.txtAdminNO_1.IsShop = false;
@@ -1854,6 +1892,7 @@
             this.txtVariousFLG_1.IntegerPart = 0;
             this.txtVariousFLG_1.IsCorrectDate = true;
             this.txtVariousFLG_1.isEnterKeyDown = false;
+            this.txtVariousFLG_1.IsFirstTime = true;
             this.txtVariousFLG_1.isMaxLengthErr = false;
             this.txtVariousFLG_1.IsNumber = true;
             this.txtVariousFLG_1.IsShop = false;
@@ -1885,6 +1924,7 @@
             this.txtJuchuuRows_1.IntegerPart = 0;
             this.txtJuchuuRows_1.IsCorrectDate = true;
             this.txtJuchuuRows_1.isEnterKeyDown = false;
+            this.txtJuchuuRows_1.IsFirstTime = true;
             this.txtJuchuuRows_1.isMaxLengthErr = false;
             this.txtJuchuuRows_1.IsNumber = true;
             this.txtJuchuuRows_1.IsShop = false;
@@ -1916,6 +1956,7 @@
             this.txtKakeritu_0.IntegerPart = 0;
             this.txtKakeritu_0.IsCorrectDate = true;
             this.txtKakeritu_0.isEnterKeyDown = false;
+            this.txtKakeritu_0.IsFirstTime = true;
             this.txtKakeritu_0.isMaxLengthErr = false;
             this.txtKakeritu_0.IsNumber = true;
             this.txtKakeritu_0.IsShop = false;
@@ -1947,6 +1988,7 @@
             this.txtTeika_0.IntegerPart = 0;
             this.txtTeika_0.IsCorrectDate = true;
             this.txtTeika_0.isEnterKeyDown = false;
+            this.txtTeika_0.IsFirstTime = true;
             this.txtTeika_0.isMaxLengthErr = false;
             this.txtTeika_0.IsNumber = true;
             this.txtTeika_0.IsShop = false;
@@ -1978,6 +2020,7 @@
             this.txtSKUName_0.IntegerPart = 0;
             this.txtSKUName_0.IsCorrectDate = true;
             this.txtSKUName_0.isEnterKeyDown = false;
+            this.txtSKUName_0.IsFirstTime = true;
             this.txtSKUName_0.isMaxLengthErr = false;
             this.txtSKUName_0.IsNumber = true;
             this.txtSKUName_0.IsShop = false;
@@ -2009,6 +2052,7 @@
             this.txtAdminNO_0.IntegerPart = 0;
             this.txtAdminNO_0.IsCorrectDate = true;
             this.txtAdminNO_0.isEnterKeyDown = false;
+            this.txtAdminNO_0.IsFirstTime = true;
             this.txtAdminNO_0.isMaxLengthErr = false;
             this.txtAdminNO_0.IsNumber = true;
             this.txtAdminNO_0.IsShop = false;
@@ -2040,6 +2084,7 @@
             this.txtVariousFLG_0.IntegerPart = 0;
             this.txtVariousFLG_0.IsCorrectDate = true;
             this.txtVariousFLG_0.isEnterKeyDown = false;
+            this.txtVariousFLG_0.IsFirstTime = true;
             this.txtVariousFLG_0.isMaxLengthErr = false;
             this.txtVariousFLG_0.IsNumber = true;
             this.txtVariousFLG_0.IsShop = false;
@@ -2071,6 +2116,7 @@
             this.txtJuchuuRows_0.IntegerPart = 0;
             this.txtJuchuuRows_0.IsCorrectDate = true;
             this.txtJuchuuRows_0.isEnterKeyDown = false;
+            this.txtJuchuuRows_0.IsFirstTime = true;
             this.txtJuchuuRows_0.isMaxLengthErr = false;
             this.txtJuchuuRows_0.IsNumber = true;
             this.txtJuchuuRows_0.IsShop = false;
@@ -2102,6 +2148,7 @@
             this.txtNounyuusakiYuubinNO2_4.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO2_4.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO2_4.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO2_4.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO2_4.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO2_4.IsNumber = true;
             this.txtNounyuusakiYuubinNO2_4.IsShop = false;
@@ -2133,6 +2180,7 @@
             this.txtNounyuusakiYuubinNO1_4.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO1_4.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO1_4.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO1_4.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO1_4.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO1_4.IsNumber = true;
             this.txtNounyuusakiYuubinNO1_4.IsShop = false;
@@ -2164,6 +2212,7 @@
             this.txtTaxRate_4.IntegerPart = 0;
             this.txtTaxRate_4.IsCorrectDate = true;
             this.txtTaxRate_4.isEnterKeyDown = false;
+            this.txtTaxRate_4.IsFirstTime = true;
             this.txtTaxRate_4.isMaxLengthErr = false;
             this.txtTaxRate_4.IsNumber = true;
             this.txtTaxRate_4.IsShop = false;
@@ -2195,6 +2244,7 @@
             this.txtSoukoCD_4.IntegerPart = 0;
             this.txtSoukoCD_4.IsCorrectDate = true;
             this.txtSoukoCD_4.isEnterKeyDown = false;
+            this.txtSoukoCD_4.IsFirstTime = true;
             this.txtSoukoCD_4.isMaxLengthErr = false;
             this.txtSoukoCD_4.IsNumber = true;
             this.txtSoukoCD_4.IsShop = false;
@@ -2226,6 +2276,7 @@
             this.txtNounyuusakiFAXNO_4.IntegerPart = 0;
             this.txtNounyuusakiFAXNO_4.IsCorrectDate = true;
             this.txtNounyuusakiFAXNO_4.isEnterKeyDown = false;
+            this.txtNounyuusakiFAXNO_4.IsFirstTime = true;
             this.txtNounyuusakiFAXNO_4.isMaxLengthErr = false;
             this.txtNounyuusakiFAXNO_4.IsNumber = true;
             this.txtNounyuusakiFAXNO_4.IsShop = false;
@@ -2257,6 +2308,7 @@
             this.txtNounyuusakiTELNO_4.IntegerPart = 0;
             this.txtNounyuusakiTELNO_4.IsCorrectDate = true;
             this.txtNounyuusakiTELNO_4.isEnterKeyDown = false;
+            this.txtNounyuusakiTELNO_4.IsFirstTime = true;
             this.txtNounyuusakiTELNO_4.isMaxLengthErr = false;
             this.txtNounyuusakiTELNO_4.IsNumber = true;
             this.txtNounyuusakiTELNO_4.IsShop = false;
@@ -2288,6 +2340,7 @@
             this.txtNounyuusakiMailAddress_4.IntegerPart = 0;
             this.txtNounyuusakiMailAddress_4.IsCorrectDate = true;
             this.txtNounyuusakiMailAddress_4.isEnterKeyDown = false;
+            this.txtNounyuusakiMailAddress_4.IsFirstTime = true;
             this.txtNounyuusakiMailAddress_4.isMaxLengthErr = false;
             this.txtNounyuusakiMailAddress_4.IsNumber = true;
             this.txtNounyuusakiMailAddress_4.IsShop = false;
@@ -2319,6 +2372,7 @@
             this.txtNounyuusakiJuusho2_4.IntegerPart = 0;
             this.txtNounyuusakiJuusho2_4.IsCorrectDate = true;
             this.txtNounyuusakiJuusho2_4.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho2_4.IsFirstTime = true;
             this.txtNounyuusakiJuusho2_4.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho2_4.IsNumber = true;
             this.txtNounyuusakiJuusho2_4.IsShop = false;
@@ -2350,6 +2404,7 @@
             this.txtNounyuusakiJuusho1_4.IntegerPart = 0;
             this.txtNounyuusakiJuusho1_4.IsCorrectDate = true;
             this.txtNounyuusakiJuusho1_4.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho1_4.IsFirstTime = true;
             this.txtNounyuusakiJuusho1_4.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho1_4.IsNumber = true;
             this.txtNounyuusakiJuusho1_4.IsShop = false;
@@ -2381,6 +2436,7 @@
             this.txtNounyuusakiYuubinNO2_3.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO2_3.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO2_3.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO2_3.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO2_3.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO2_3.IsNumber = true;
             this.txtNounyuusakiYuubinNO2_3.IsShop = false;
@@ -2412,6 +2468,7 @@
             this.txtNounyuusakiYuubinNO1_3.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO1_3.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO1_3.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO1_3.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO1_3.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO1_3.IsNumber = true;
             this.txtNounyuusakiYuubinNO1_3.IsShop = false;
@@ -2443,6 +2500,7 @@
             this.txtTaxRate_3.IntegerPart = 0;
             this.txtTaxRate_3.IsCorrectDate = true;
             this.txtTaxRate_3.isEnterKeyDown = false;
+            this.txtTaxRate_3.IsFirstTime = true;
             this.txtTaxRate_3.isMaxLengthErr = false;
             this.txtTaxRate_3.IsNumber = true;
             this.txtTaxRate_3.IsShop = false;
@@ -2474,6 +2532,7 @@
             this.txtSoukoCD_3.IntegerPart = 0;
             this.txtSoukoCD_3.IsCorrectDate = true;
             this.txtSoukoCD_3.isEnterKeyDown = false;
+            this.txtSoukoCD_3.IsFirstTime = true;
             this.txtSoukoCD_3.isMaxLengthErr = false;
             this.txtSoukoCD_3.IsNumber = true;
             this.txtSoukoCD_3.IsShop = false;
@@ -2505,6 +2564,7 @@
             this.txtNounyuusakiFAXNO_3.IntegerPart = 0;
             this.txtNounyuusakiFAXNO_3.IsCorrectDate = true;
             this.txtNounyuusakiFAXNO_3.isEnterKeyDown = false;
+            this.txtNounyuusakiFAXNO_3.IsFirstTime = true;
             this.txtNounyuusakiFAXNO_3.isMaxLengthErr = false;
             this.txtNounyuusakiFAXNO_3.IsNumber = true;
             this.txtNounyuusakiFAXNO_3.IsShop = false;
@@ -2536,6 +2596,7 @@
             this.txtNounyuusakiTELNO_3.IntegerPart = 0;
             this.txtNounyuusakiTELNO_3.IsCorrectDate = true;
             this.txtNounyuusakiTELNO_3.isEnterKeyDown = false;
+            this.txtNounyuusakiTELNO_3.IsFirstTime = true;
             this.txtNounyuusakiTELNO_3.isMaxLengthErr = false;
             this.txtNounyuusakiTELNO_3.IsNumber = true;
             this.txtNounyuusakiTELNO_3.IsShop = false;
@@ -2567,6 +2628,7 @@
             this.txtNounyuusakiMailAddress_3.IntegerPart = 0;
             this.txtNounyuusakiMailAddress_3.IsCorrectDate = true;
             this.txtNounyuusakiMailAddress_3.isEnterKeyDown = false;
+            this.txtNounyuusakiMailAddress_3.IsFirstTime = true;
             this.txtNounyuusakiMailAddress_3.isMaxLengthErr = false;
             this.txtNounyuusakiMailAddress_3.IsNumber = true;
             this.txtNounyuusakiMailAddress_3.IsShop = false;
@@ -2598,6 +2660,7 @@
             this.txtNounyuusakiJuusho2_3.IntegerPart = 0;
             this.txtNounyuusakiJuusho2_3.IsCorrectDate = true;
             this.txtNounyuusakiJuusho2_3.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho2_3.IsFirstTime = true;
             this.txtNounyuusakiJuusho2_3.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho2_3.IsNumber = true;
             this.txtNounyuusakiJuusho2_3.IsShop = false;
@@ -2629,6 +2692,7 @@
             this.txtNounyuusakiJuusho1_3.IntegerPart = 0;
             this.txtNounyuusakiJuusho1_3.IsCorrectDate = true;
             this.txtNounyuusakiJuusho1_3.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho1_3.IsFirstTime = true;
             this.txtNounyuusakiJuusho1_3.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho1_3.IsNumber = true;
             this.txtNounyuusakiJuusho1_3.IsShop = false;
@@ -2660,6 +2724,7 @@
             this.txtNounyuusakiYuubinNO2_2.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO2_2.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO2_2.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO2_2.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO2_2.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO2_2.IsNumber = true;
             this.txtNounyuusakiYuubinNO2_2.IsShop = false;
@@ -2691,6 +2756,7 @@
             this.txtNounyuusakiYuubinNO1_2.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO1_2.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO1_2.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO1_2.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO1_2.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO1_2.IsNumber = true;
             this.txtNounyuusakiYuubinNO1_2.IsShop = false;
@@ -2722,6 +2788,7 @@
             this.txtTaxRate_2.IntegerPart = 0;
             this.txtTaxRate_2.IsCorrectDate = true;
             this.txtTaxRate_2.isEnterKeyDown = false;
+            this.txtTaxRate_2.IsFirstTime = true;
             this.txtTaxRate_2.isMaxLengthErr = false;
             this.txtTaxRate_2.IsNumber = true;
             this.txtTaxRate_2.IsShop = false;
@@ -2753,6 +2820,7 @@
             this.txtSoukoCD_2.IntegerPart = 0;
             this.txtSoukoCD_2.IsCorrectDate = true;
             this.txtSoukoCD_2.isEnterKeyDown = false;
+            this.txtSoukoCD_2.IsFirstTime = true;
             this.txtSoukoCD_2.isMaxLengthErr = false;
             this.txtSoukoCD_2.IsNumber = true;
             this.txtSoukoCD_2.IsShop = false;
@@ -2784,6 +2852,7 @@
             this.txtNounyuusakiFAXNO_2.IntegerPart = 0;
             this.txtNounyuusakiFAXNO_2.IsCorrectDate = true;
             this.txtNounyuusakiFAXNO_2.isEnterKeyDown = false;
+            this.txtNounyuusakiFAXNO_2.IsFirstTime = true;
             this.txtNounyuusakiFAXNO_2.isMaxLengthErr = false;
             this.txtNounyuusakiFAXNO_2.IsNumber = true;
             this.txtNounyuusakiFAXNO_2.IsShop = false;
@@ -2815,6 +2884,7 @@
             this.txtNounyuusakiTELNO_2.IntegerPart = 0;
             this.txtNounyuusakiTELNO_2.IsCorrectDate = true;
             this.txtNounyuusakiTELNO_2.isEnterKeyDown = false;
+            this.txtNounyuusakiTELNO_2.IsFirstTime = true;
             this.txtNounyuusakiTELNO_2.isMaxLengthErr = false;
             this.txtNounyuusakiTELNO_2.IsNumber = true;
             this.txtNounyuusakiTELNO_2.IsShop = false;
@@ -2846,6 +2916,7 @@
             this.txtNounyuusakiMailAddress_2.IntegerPart = 0;
             this.txtNounyuusakiMailAddress_2.IsCorrectDate = true;
             this.txtNounyuusakiMailAddress_2.isEnterKeyDown = false;
+            this.txtNounyuusakiMailAddress_2.IsFirstTime = true;
             this.txtNounyuusakiMailAddress_2.isMaxLengthErr = false;
             this.txtNounyuusakiMailAddress_2.IsNumber = true;
             this.txtNounyuusakiMailAddress_2.IsShop = false;
@@ -2877,6 +2948,7 @@
             this.txtNounyuusakiJuusho2_2.IntegerPart = 0;
             this.txtNounyuusakiJuusho2_2.IsCorrectDate = true;
             this.txtNounyuusakiJuusho2_2.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho2_2.IsFirstTime = true;
             this.txtNounyuusakiJuusho2_2.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho2_2.IsNumber = true;
             this.txtNounyuusakiJuusho2_2.IsShop = false;
@@ -2908,6 +2980,7 @@
             this.txtNounyuusakiJuusho1_2.IntegerPart = 0;
             this.txtNounyuusakiJuusho1_2.IsCorrectDate = true;
             this.txtNounyuusakiJuusho1_2.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho1_2.IsFirstTime = true;
             this.txtNounyuusakiJuusho1_2.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho1_2.IsNumber = true;
             this.txtNounyuusakiJuusho1_2.IsShop = false;
@@ -2939,6 +3012,7 @@
             this.txtNounyuusakiYuubinNO2_1.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO2_1.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO2_1.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO2_1.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO2_1.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO2_1.IsNumber = true;
             this.txtNounyuusakiYuubinNO2_1.IsShop = false;
@@ -2970,6 +3044,7 @@
             this.txtNounyuusakiYuubinNO1_1.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO1_1.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO1_1.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO1_1.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO1_1.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO1_1.IsNumber = true;
             this.txtNounyuusakiYuubinNO1_1.IsShop = false;
@@ -3001,6 +3076,7 @@
             this.txtTaxRate_1.IntegerPart = 0;
             this.txtTaxRate_1.IsCorrectDate = true;
             this.txtTaxRate_1.isEnterKeyDown = false;
+            this.txtTaxRate_1.IsFirstTime = true;
             this.txtTaxRate_1.isMaxLengthErr = false;
             this.txtTaxRate_1.IsNumber = true;
             this.txtTaxRate_1.IsShop = false;
@@ -3032,6 +3108,7 @@
             this.txtSoukoCD_1.IntegerPart = 0;
             this.txtSoukoCD_1.IsCorrectDate = true;
             this.txtSoukoCD_1.isEnterKeyDown = false;
+            this.txtSoukoCD_1.IsFirstTime = true;
             this.txtSoukoCD_1.isMaxLengthErr = false;
             this.txtSoukoCD_1.IsNumber = true;
             this.txtSoukoCD_1.IsShop = false;
@@ -3063,6 +3140,7 @@
             this.txtNounyuusakiFAXNO_1.IntegerPart = 0;
             this.txtNounyuusakiFAXNO_1.IsCorrectDate = true;
             this.txtNounyuusakiFAXNO_1.isEnterKeyDown = false;
+            this.txtNounyuusakiFAXNO_1.IsFirstTime = true;
             this.txtNounyuusakiFAXNO_1.isMaxLengthErr = false;
             this.txtNounyuusakiFAXNO_1.IsNumber = true;
             this.txtNounyuusakiFAXNO_1.IsShop = false;
@@ -3094,6 +3172,7 @@
             this.txtNounyuusakiTELNO_1.IntegerPart = 0;
             this.txtNounyuusakiTELNO_1.IsCorrectDate = true;
             this.txtNounyuusakiTELNO_1.isEnterKeyDown = false;
+            this.txtNounyuusakiTELNO_1.IsFirstTime = true;
             this.txtNounyuusakiTELNO_1.isMaxLengthErr = false;
             this.txtNounyuusakiTELNO_1.IsNumber = true;
             this.txtNounyuusakiTELNO_1.IsShop = false;
@@ -3125,6 +3204,7 @@
             this.txtNounyuusakiMailAddress_1.IntegerPart = 0;
             this.txtNounyuusakiMailAddress_1.IsCorrectDate = true;
             this.txtNounyuusakiMailAddress_1.isEnterKeyDown = false;
+            this.txtNounyuusakiMailAddress_1.IsFirstTime = true;
             this.txtNounyuusakiMailAddress_1.isMaxLengthErr = false;
             this.txtNounyuusakiMailAddress_1.IsNumber = true;
             this.txtNounyuusakiMailAddress_1.IsShop = false;
@@ -3156,6 +3236,7 @@
             this.txtNounyuusakiJuusho2_1.IntegerPart = 0;
             this.txtNounyuusakiJuusho2_1.IsCorrectDate = true;
             this.txtNounyuusakiJuusho2_1.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho2_1.IsFirstTime = true;
             this.txtNounyuusakiJuusho2_1.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho2_1.IsNumber = true;
             this.txtNounyuusakiJuusho2_1.IsShop = false;
@@ -3187,6 +3268,7 @@
             this.txtNounyuusakiJuusho1_1.IntegerPart = 0;
             this.txtNounyuusakiJuusho1_1.IsCorrectDate = true;
             this.txtNounyuusakiJuusho1_1.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho1_1.IsFirstTime = true;
             this.txtNounyuusakiJuusho1_1.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho1_1.IsNumber = true;
             this.txtNounyuusakiJuusho1_1.IsShop = false;
@@ -3218,6 +3300,7 @@
             this.txtNounyuusakiYuubinNO2_0.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO2_0.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO2_0.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO2_0.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO2_0.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO2_0.IsNumber = true;
             this.txtNounyuusakiYuubinNO2_0.IsShop = false;
@@ -3249,6 +3332,7 @@
             this.txtNounyuusakiYuubinNO1_0.IntegerPart = 0;
             this.txtNounyuusakiYuubinNO1_0.IsCorrectDate = true;
             this.txtNounyuusakiYuubinNO1_0.isEnterKeyDown = false;
+            this.txtNounyuusakiYuubinNO1_0.IsFirstTime = true;
             this.txtNounyuusakiYuubinNO1_0.isMaxLengthErr = false;
             this.txtNounyuusakiYuubinNO1_0.IsNumber = true;
             this.txtNounyuusakiYuubinNO1_0.IsShop = false;
@@ -3280,6 +3364,7 @@
             this.txtTaxRate_0.IntegerPart = 0;
             this.txtTaxRate_0.IsCorrectDate = true;
             this.txtTaxRate_0.isEnterKeyDown = false;
+            this.txtTaxRate_0.IsFirstTime = true;
             this.txtTaxRate_0.isMaxLengthErr = false;
             this.txtTaxRate_0.IsNumber = true;
             this.txtTaxRate_0.IsShop = false;
@@ -3311,6 +3396,7 @@
             this.txtSoukoCD_0.IntegerPart = 0;
             this.txtSoukoCD_0.IsCorrectDate = true;
             this.txtSoukoCD_0.isEnterKeyDown = false;
+            this.txtSoukoCD_0.IsFirstTime = true;
             this.txtSoukoCD_0.isMaxLengthErr = false;
             this.txtSoukoCD_0.IsNumber = true;
             this.txtSoukoCD_0.IsShop = false;
@@ -3342,6 +3428,7 @@
             this.txtNounyuusakiFAXNO_0.IntegerPart = 0;
             this.txtNounyuusakiFAXNO_0.IsCorrectDate = true;
             this.txtNounyuusakiFAXNO_0.isEnterKeyDown = false;
+            this.txtNounyuusakiFAXNO_0.IsFirstTime = true;
             this.txtNounyuusakiFAXNO_0.isMaxLengthErr = false;
             this.txtNounyuusakiFAXNO_0.IsNumber = true;
             this.txtNounyuusakiFAXNO_0.IsShop = false;
@@ -3373,6 +3460,7 @@
             this.txtNounyuusakiTELNO_0.IntegerPart = 0;
             this.txtNounyuusakiTELNO_0.IsCorrectDate = true;
             this.txtNounyuusakiTELNO_0.isEnterKeyDown = false;
+            this.txtNounyuusakiTELNO_0.IsFirstTime = true;
             this.txtNounyuusakiTELNO_0.isMaxLengthErr = false;
             this.txtNounyuusakiTELNO_0.IsNumber = true;
             this.txtNounyuusakiTELNO_0.IsShop = false;
@@ -3404,6 +3492,7 @@
             this.txtNounyuusakiMailAddress_0.IntegerPart = 0;
             this.txtNounyuusakiMailAddress_0.IsCorrectDate = true;
             this.txtNounyuusakiMailAddress_0.isEnterKeyDown = false;
+            this.txtNounyuusakiMailAddress_0.IsFirstTime = true;
             this.txtNounyuusakiMailAddress_0.isMaxLengthErr = false;
             this.txtNounyuusakiMailAddress_0.IsNumber = true;
             this.txtNounyuusakiMailAddress_0.IsShop = false;
@@ -3435,6 +3524,7 @@
             this.txtNounyuusakiJuusho2_0.IntegerPart = 0;
             this.txtNounyuusakiJuusho2_0.IsCorrectDate = true;
             this.txtNounyuusakiJuusho2_0.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho2_0.IsFirstTime = true;
             this.txtNounyuusakiJuusho2_0.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho2_0.IsNumber = true;
             this.txtNounyuusakiJuusho2_0.IsShop = false;
@@ -3466,6 +3556,7 @@
             this.txtNounyuusakiJuusho1_0.IntegerPart = 0;
             this.txtNounyuusakiJuusho1_0.IsCorrectDate = true;
             this.txtNounyuusakiJuusho1_0.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho1_0.IsFirstTime = true;
             this.txtNounyuusakiJuusho1_0.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho1_0.IsNumber = true;
             this.txtNounyuusakiJuusho1_0.IsShop = false;
@@ -3498,6 +3589,7 @@
             this.IMT_ZEIRT_4.IntegerPart = 0;
             this.IMT_ZEIRT_4.IsCorrectDate = true;
             this.IMT_ZEIRT_4.isEnterKeyDown = false;
+            this.IMT_ZEIRT_4.IsFirstTime = true;
             this.IMT_ZEIRT_4.isMaxLengthErr = false;
             this.IMT_ZEIRT_4.IsNumber = true;
             this.IMT_ZEIRT_4.IsShop = false;
@@ -3531,6 +3623,7 @@
             this.IMT_ZEIRT_3.IntegerPart = 0;
             this.IMT_ZEIRT_3.IsCorrectDate = true;
             this.IMT_ZEIRT_3.isEnterKeyDown = false;
+            this.IMT_ZEIRT_3.IsFirstTime = true;
             this.IMT_ZEIRT_3.isMaxLengthErr = false;
             this.IMT_ZEIRT_3.IsNumber = true;
             this.IMT_ZEIRT_3.IsShop = false;
@@ -3564,6 +3657,7 @@
             this.IMT_ZEIRT_2.IntegerPart = 0;
             this.IMT_ZEIRT_2.IsCorrectDate = true;
             this.IMT_ZEIRT_2.isEnterKeyDown = false;
+            this.IMT_ZEIRT_2.IsFirstTime = true;
             this.IMT_ZEIRT_2.isMaxLengthErr = false;
             this.IMT_ZEIRT_2.IsNumber = true;
             this.IMT_ZEIRT_2.IsShop = false;
@@ -3597,6 +3691,7 @@
             this.IMT_ZEIRT_1.IntegerPart = 0;
             this.IMT_ZEIRT_1.IsCorrectDate = true;
             this.IMT_ZEIRT_1.isEnterKeyDown = false;
+            this.IMT_ZEIRT_1.IsFirstTime = true;
             this.IMT_ZEIRT_1.isMaxLengthErr = false;
             this.IMT_ZEIRT_1.IsNumber = true;
             this.IMT_ZEIRT_1.IsShop = false;
@@ -3630,6 +3725,7 @@
             this.IMT_ZEIRT_0.IntegerPart = 0;
             this.IMT_ZEIRT_0.IsCorrectDate = true;
             this.IMT_ZEIRT_0.isEnterKeyDown = false;
+            this.IMT_ZEIRT_0.IsFirstTime = true;
             this.IMT_ZEIRT_0.isMaxLengthErr = false;
             this.IMT_ZEIRT_0.IsNumber = true;
             this.IMT_ZEIRT_0.IsShop = false;
@@ -3663,6 +3759,7 @@
             this.txtShanaiBikou_3.IntegerPart = 0;
             this.txtShanaiBikou_3.IsCorrectDate = true;
             this.txtShanaiBikou_3.isEnterKeyDown = false;
+            this.txtShanaiBikou_3.IsFirstTime = true;
             this.txtShanaiBikou_3.isMaxLengthErr = false;
             this.txtShanaiBikou_3.IsNumber = true;
             this.txtShanaiBikou_3.IsShop = false;
@@ -3693,6 +3790,7 @@
             this.txtShanaiBikou_2.IntegerPart = 0;
             this.txtShanaiBikou_2.IsCorrectDate = true;
             this.txtShanaiBikou_2.isEnterKeyDown = false;
+            this.txtShanaiBikou_2.IsFirstTime = true;
             this.txtShanaiBikou_2.isMaxLengthErr = false;
             this.txtShanaiBikou_2.IsNumber = true;
             this.txtShanaiBikou_2.IsShop = false;
@@ -3722,6 +3820,7 @@
             this.txtKibouNouki_0.IntegerPart = 0;
             this.txtKibouNouki_0.IsCorrectDate = true;
             this.txtKibouNouki_0.isEnterKeyDown = false;
+            this.txtKibouNouki_0.IsFirstTime = true;
             this.txtKibouNouki_0.isMaxLengthErr = false;
             this.txtKibouNouki_0.IsNumber = true;
             this.txtKibouNouki_0.IsShop = false;
@@ -3753,6 +3852,7 @@
             this.txtMakerShouhinCD_0.IntegerPart = 0;
             this.txtMakerShouhinCD_0.IsCorrectDate = true;
             this.txtMakerShouhinCD_0.isEnterKeyDown = false;
+            this.txtMakerShouhinCD_0.IsFirstTime = true;
             this.txtMakerShouhinCD_0.isMaxLengthErr = false;
             this.txtMakerShouhinCD_0.IsNumber = true;
             this.txtMakerShouhinCD_0.IsShop = false;
@@ -3783,6 +3883,7 @@
             this.txtKibouNouki_3.IntegerPart = 0;
             this.txtKibouNouki_3.IsCorrectDate = true;
             this.txtKibouNouki_3.isEnterKeyDown = false;
+            this.txtKibouNouki_3.IsFirstTime = true;
             this.txtKibouNouki_3.isMaxLengthErr = false;
             this.txtKibouNouki_3.IsNumber = true;
             this.txtKibouNouki_3.IsShop = false;
@@ -3814,6 +3915,7 @@
             this.txtMakerShouhinCD_3.IntegerPart = 0;
             this.txtMakerShouhinCD_3.IsCorrectDate = true;
             this.txtMakerShouhinCD_3.isEnterKeyDown = false;
+            this.txtMakerShouhinCD_3.IsFirstTime = true;
             this.txtMakerShouhinCD_3.isMaxLengthErr = false;
             this.txtMakerShouhinCD_3.IsNumber = true;
             this.txtMakerShouhinCD_3.IsShop = false;
@@ -3844,6 +3946,7 @@
             this.txtKibouNouki_2.IntegerPart = 0;
             this.txtKibouNouki_2.IsCorrectDate = true;
             this.txtKibouNouki_2.isEnterKeyDown = false;
+            this.txtKibouNouki_2.IsFirstTime = true;
             this.txtKibouNouki_2.isMaxLengthErr = false;
             this.txtKibouNouki_2.IsNumber = true;
             this.txtKibouNouki_2.IsShop = false;
@@ -3875,6 +3978,7 @@
             this.txtMakerShouhinCD_2.IntegerPart = 0;
             this.txtMakerShouhinCD_2.IsCorrectDate = true;
             this.txtMakerShouhinCD_2.isEnterKeyDown = false;
+            this.txtMakerShouhinCD_2.IsFirstTime = true;
             this.txtMakerShouhinCD_2.isMaxLengthErr = false;
             this.txtMakerShouhinCD_2.IsNumber = true;
             this.txtMakerShouhinCD_2.IsShop = false;
@@ -3906,6 +4010,7 @@
             this.txtShanaiBikou_1.IntegerPart = 0;
             this.txtShanaiBikou_1.IsCorrectDate = true;
             this.txtShanaiBikou_1.isEnterKeyDown = false;
+            this.txtShanaiBikou_1.IsFirstTime = true;
             this.txtShanaiBikou_1.isMaxLengthErr = false;
             this.txtShanaiBikou_1.IsNumber = true;
             this.txtShanaiBikou_1.IsShop = false;
@@ -3935,6 +4040,7 @@
             this.txtMakerShouhinCD_1.IntegerPart = 0;
             this.txtMakerShouhinCD_1.IsCorrectDate = true;
             this.txtMakerShouhinCD_1.isEnterKeyDown = false;
+            this.txtMakerShouhinCD_1.IsFirstTime = true;
             this.txtMakerShouhinCD_1.isMaxLengthErr = false;
             this.txtMakerShouhinCD_1.IsNumber = true;
             this.txtMakerShouhinCD_1.IsShop = false;
@@ -3965,6 +4071,7 @@
             this.txtKibouNouki_1.IntegerPart = 0;
             this.txtKibouNouki_1.IsCorrectDate = true;
             this.txtKibouNouki_1.isEnterKeyDown = false;
+            this.txtKibouNouki_1.IsFirstTime = true;
             this.txtKibouNouki_1.isMaxLengthErr = false;
             this.txtKibouNouki_1.IsNumber = true;
             this.txtKibouNouki_1.IsShop = false;
@@ -3996,6 +4103,7 @@
             this.txtKibouNouki_4.IntegerPart = 0;
             this.txtKibouNouki_4.IsCorrectDate = true;
             this.txtKibouNouki_4.isEnterKeyDown = false;
+            this.txtKibouNouki_4.IsFirstTime = true;
             this.txtKibouNouki_4.isMaxLengthErr = false;
             this.txtKibouNouki_4.IsNumber = true;
             this.txtKibouNouki_4.IsShop = false;
@@ -4027,6 +4135,7 @@
             this.txtHacchuuChuuiZikou_4.IntegerPart = 0;
             this.txtHacchuuChuuiZikou_4.IsCorrectDate = true;
             this.txtHacchuuChuuiZikou_4.isEnterKeyDown = false;
+            this.txtHacchuuChuuiZikou_4.IsFirstTime = true;
             this.txtHacchuuChuuiZikou_4.isMaxLengthErr = false;
             this.txtHacchuuChuuiZikou_4.IsNumber = true;
             this.txtHacchuuChuuiZikou_4.IsShop = false;
@@ -4058,6 +4167,7 @@
             this.txtShanaiBikou_4.IntegerPart = 0;
             this.txtShanaiBikou_4.IsCorrectDate = true;
             this.txtShanaiBikou_4.isEnterKeyDown = false;
+            this.txtShanaiBikou_4.IsFirstTime = true;
             this.txtShanaiBikou_4.isMaxLengthErr = false;
             this.txtShanaiBikou_4.IsNumber = true;
             this.txtShanaiBikou_4.IsShop = false;
@@ -4087,6 +4197,7 @@
             this.txtMakerShouhinCD_4.IntegerPart = 0;
             this.txtMakerShouhinCD_4.IsCorrectDate = true;
             this.txtMakerShouhinCD_4.isEnterKeyDown = false;
+            this.txtMakerShouhinCD_4.IsFirstTime = true;
             this.txtMakerShouhinCD_4.isMaxLengthErr = false;
             this.txtMakerShouhinCD_4.IsNumber = true;
             this.txtMakerShouhinCD_4.IsShop = false;
@@ -4117,6 +4228,7 @@
             this.txtTaniName_4.IntegerPart = 0;
             this.txtTaniName_4.IsCorrectDate = true;
             this.txtTaniName_4.isEnterKeyDown = false;
+            this.txtTaniName_4.IsFirstTime = true;
             this.txtTaniName_4.isMaxLengthErr = false;
             this.txtTaniName_4.IsNumber = true;
             this.txtTaniName_4.IsShop = false;
@@ -4148,6 +4260,7 @@
             this.txtHacchuugaku_4.IntegerPart = 10;
             this.txtHacchuugaku_4.IsCorrectDate = true;
             this.txtHacchuugaku_4.isEnterKeyDown = false;
+            this.txtHacchuugaku_4.IsFirstTime = true;
             this.txtHacchuugaku_4.isMaxLengthErr = false;
             this.txtHacchuugaku_4.IsNumber = true;
             this.txtHacchuugaku_4.IsShop = false;
@@ -4179,6 +4292,7 @@
             this.txtHacchuuTanka_4.IntegerPart = 0;
             this.txtHacchuuTanka_4.IsCorrectDate = true;
             this.txtHacchuuTanka_4.isEnterKeyDown = false;
+            this.txtHacchuuTanka_4.IsFirstTime = true;
             this.txtHacchuuTanka_4.isMaxLengthErr = false;
             this.txtHacchuuTanka_4.IsNumber = true;
             this.txtHacchuuTanka_4.IsShop = false;
@@ -4210,6 +4324,7 @@
             this.txtHacchuuSuu_4.IntegerPart = 0;
             this.txtHacchuuSuu_4.IsCorrectDate = true;
             this.txtHacchuuSuu_4.isEnterKeyDown = false;
+            this.txtHacchuuSuu_4.IsFirstTime = true;
             this.txtHacchuuSuu_4.isMaxLengthErr = false;
             this.txtHacchuuSuu_4.IsNumber = true;
             this.txtHacchuuSuu_4.IsShop = false;
@@ -4240,6 +4355,7 @@
             this.txtColorName_4.IntegerPart = 0;
             this.txtColorName_4.IsCorrectDate = true;
             this.txtColorName_4.isEnterKeyDown = false;
+            this.txtColorName_4.IsFirstTime = true;
             this.txtColorName_4.isMaxLengthErr = false;
             this.txtColorName_4.IsNumber = true;
             this.txtColorName_4.IsShop = false;
@@ -4270,6 +4386,7 @@
             this.txtSizeName_4.IntegerPart = 0;
             this.txtSizeName_4.IsCorrectDate = true;
             this.txtSizeName_4.isEnterKeyDown = false;
+            this.txtSizeName_4.IsFirstTime = true;
             this.txtSizeName_4.isMaxLengthErr = false;
             this.txtSizeName_4.IsNumber = true;
             this.txtSizeName_4.IsShop = false;
@@ -4300,6 +4417,7 @@
             this.txtBrandName_4.IntegerPart = 0;
             this.txtBrandName_4.IsCorrectDate = true;
             this.txtBrandName_4.isEnterKeyDown = false;
+            this.txtBrandName_4.IsFirstTime = true;
             this.txtBrandName_4.isMaxLengthErr = false;
             this.txtBrandName_4.IsNumber = true;
             this.txtBrandName_4.IsShop = false;
@@ -4330,6 +4448,7 @@
             this.txtShouhinName_4.IntegerPart = 0;
             this.txtShouhinName_4.IsCorrectDate = true;
             this.txtShouhinName_4.isEnterKeyDown = false;
+            this.txtShouhinName_4.IsFirstTime = true;
             this.txtShouhinName_4.isMaxLengthErr = false;
             this.txtShouhinName_4.IsNumber = true;
             this.txtShouhinName_4.IsShop = false;
@@ -4360,6 +4479,7 @@
             this.txtJANCD_4.IntegerPart = 0;
             this.txtJANCD_4.IsCorrectDate = true;
             this.txtJANCD_4.isEnterKeyDown = false;
+            this.txtJANCD_4.IsFirstTime = true;
             this.txtJANCD_4.isMaxLengthErr = false;
             this.txtJANCD_4.IsNumber = true;
             this.txtJANCD_4.IsShop = false;
@@ -4390,6 +4510,7 @@
             this.txtSKUCD_4.IntegerPart = 0;
             this.txtSKUCD_4.IsCorrectDate = true;
             this.txtSKUCD_4.isEnterKeyDown = false;
+            this.txtSKUCD_4.IsFirstTime = true;
             this.txtSKUCD_4.isMaxLengthErr = false;
             this.txtSKUCD_4.IsNumber = true;
             this.txtSKUCD_4.IsShop = false;
@@ -4421,6 +4542,7 @@
             this.txtJuchuuNO_4.IntegerPart = 0;
             this.txtJuchuuNO_4.IsCorrectDate = true;
             this.txtJuchuuNO_4.isEnterKeyDown = false;
+            this.txtJuchuuNO_4.IsFirstTime = true;
             this.txtJuchuuNO_4.isMaxLengthErr = false;
             this.txtJuchuuNO_4.IsNumber = true;
             this.txtJuchuuNO_4.IsShop = false;
@@ -4451,6 +4573,7 @@
             this.txtNounyuusakiJuusho_4.IntegerPart = 0;
             this.txtNounyuusakiJuusho_4.IsCorrectDate = true;
             this.txtNounyuusakiJuusho_4.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho_4.IsFirstTime = true;
             this.txtNounyuusakiJuusho_4.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho_4.IsNumber = true;
             this.txtNounyuusakiJuusho_4.IsShop = false;
@@ -4481,6 +4604,7 @@
             this.txtNounyuusakiName_4.IntegerPart = 0;
             this.txtNounyuusakiName_4.IsCorrectDate = true;
             this.txtNounyuusakiName_4.isEnterKeyDown = false;
+            this.txtNounyuusakiName_4.IsFirstTime = true;
             this.txtNounyuusakiName_4.isMaxLengthErr = false;
             this.txtNounyuusakiName_4.IsNumber = true;
             this.txtNounyuusakiName_4.IsShop = false;
@@ -4512,6 +4636,7 @@
             this.txtNetFLG_4.IntegerPart = 0;
             this.txtNetFLG_4.IsCorrectDate = true;
             this.txtNetFLG_4.isEnterKeyDown = false;
+            this.txtNetFLG_4.IsFirstTime = true;
             this.txtNetFLG_4.isMaxLengthErr = false;
             this.txtNetFLG_4.IsNumber = true;
             this.txtNetFLG_4.IsShop = false;
@@ -4543,6 +4668,7 @@
             this.txtChokusouFLG_4.IntegerPart = 0;
             this.txtChokusouFLG_4.IsCorrectDate = true;
             this.txtChokusouFLG_4.isEnterKeyDown = false;
+            this.txtChokusouFLG_4.IsFirstTime = true;
             this.txtChokusouFLG_4.isMaxLengthErr = false;
             this.txtChokusouFLG_4.IsNumber = true;
             this.txtChokusouFLG_4.IsShop = false;
@@ -4573,6 +4699,7 @@
             this.txtSiiresakiName_4.IntegerPart = 0;
             this.txtSiiresakiName_4.IsCorrectDate = true;
             this.txtSiiresakiName_4.isEnterKeyDown = false;
+            this.txtSiiresakiName_4.IsFirstTime = true;
             this.txtSiiresakiName_4.isMaxLengthErr = false;
             this.txtSiiresakiName_4.IsNumber = true;
             this.txtSiiresakiName_4.IsShop = false;
@@ -4604,6 +4731,7 @@
             this.txtHacchuuNO_4.IntegerPart = 0;
             this.txtHacchuuNO_4.IsCorrectDate = true;
             this.txtHacchuuNO_4.isEnterKeyDown = false;
+            this.txtHacchuuNO_4.IsFirstTime = true;
             this.txtHacchuuNO_4.isMaxLengthErr = false;
             this.txtHacchuuNO_4.IsNumber = true;
             this.txtHacchuuNO_4.IsShop = false;
@@ -4614,7 +4742,7 @@
             this.txtHacchuuNO_4.MoveNext = true;
             this.txtHacchuuNO_4.Name = "txtHacchuuNO_4";
             this.txtHacchuuNO_4.ReadOnly = true;
-            this.txtHacchuuNO_4.Size = new System.Drawing.Size(144, 22);
+            this.txtHacchuuNO_4.Size = new System.Drawing.Size(115, 22);
             this.txtHacchuuNO_4.TabIndex = 613;
             this.txtHacchuuNO_4.Tag = "0";
             this.txtHacchuuNO_4.Text = "XXXXXXXXX11";
@@ -4626,7 +4754,8 @@
             this.scSiiresakiCD_4.ChangeDate = "";
             this.scSiiresakiCD_4.ChangeDateWidth = 133;
             this.scSiiresakiCD_4.Code = "";
-            this.scSiiresakiCD_4.CodeWidth = 130;
+            this.scSiiresakiCD_4.CodeWidth = 100;
+            this.scSiiresakiCD_4.CodeWidth1 = 100;
             this.scSiiresakiCD_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSiiresakiCD_4.DataCheck = false;
             this.scSiiresakiCD_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -4634,11 +4763,12 @@
             this.scSiiresakiCD_4.IsCopy = false;
             this.scSiiresakiCD_4.LabelText = "";
             this.scSiiresakiCD_4.LabelVisible = false;
-            this.scSiiresakiCD_4.Location = new System.Drawing.Point(180, 277);
+            this.scSiiresakiCD_4.Location = new System.Drawing.Point(151, 277);
             this.scSiiresakiCD_4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scSiiresakiCD_4.Name = "scSiiresakiCD_4";
+            this.scSiiresakiCD_4.NameWidth = 310;
             this.scSiiresakiCD_4.SearchEnable = true;
-            this.scSiiresakiCD_4.Size = new System.Drawing.Size(174, 40);
+            this.scSiiresakiCD_4.Size = new System.Drawing.Size(143, 40);
             this.scSiiresakiCD_4.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_4.TabIndex = 609;
             this.scSiiresakiCD_4.Tag = "4";
@@ -4663,6 +4793,7 @@
             this.txtShagaiBikou_4.IntegerPart = 0;
             this.txtShagaiBikou_4.IsCorrectDate = true;
             this.txtShagaiBikou_4.isEnterKeyDown = false;
+            this.txtShagaiBikou_4.IsFirstTime = true;
             this.txtShagaiBikou_4.isMaxLengthErr = false;
             this.txtShagaiBikou_4.IsNumber = true;
             this.txtShagaiBikou_4.IsShop = false;
@@ -4681,6 +4812,7 @@
             // chkEDIFLG_4
             // 
             this.chkEDIFLG_4.BackColor = System.Drawing.Color.White;
+            this.chkEDIFLG_4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkEDIFLG_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkEDIFLG_4.Location = new System.Drawing.Point(1712, 307);
             this.chkEDIFLG_4.Margin = new System.Windows.Forms.Padding(4);
@@ -4704,6 +4836,7 @@
             this.txtHacchuuChuuiZikou_3.IntegerPart = 0;
             this.txtHacchuuChuuiZikou_3.IsCorrectDate = true;
             this.txtHacchuuChuuiZikou_3.isEnterKeyDown = false;
+            this.txtHacchuuChuuiZikou_3.IsFirstTime = true;
             this.txtHacchuuChuuiZikou_3.isMaxLengthErr = false;
             this.txtHacchuuChuuiZikou_3.IsNumber = true;
             this.txtHacchuuChuuiZikou_3.IsShop = false;
@@ -4734,6 +4867,7 @@
             this.txtTaniName_3.IntegerPart = 0;
             this.txtTaniName_3.IsCorrectDate = true;
             this.txtTaniName_3.isEnterKeyDown = false;
+            this.txtTaniName_3.IsFirstTime = true;
             this.txtTaniName_3.isMaxLengthErr = false;
             this.txtTaniName_3.IsNumber = true;
             this.txtTaniName_3.IsShop = false;
@@ -4765,6 +4899,7 @@
             this.txtHacchuugaku_3.IntegerPart = 10;
             this.txtHacchuugaku_3.IsCorrectDate = true;
             this.txtHacchuugaku_3.isEnterKeyDown = false;
+            this.txtHacchuugaku_3.IsFirstTime = true;
             this.txtHacchuugaku_3.isMaxLengthErr = false;
             this.txtHacchuugaku_3.IsNumber = true;
             this.txtHacchuugaku_3.IsShop = false;
@@ -4796,6 +4931,7 @@
             this.txtHacchuuTanka_3.IntegerPart = 0;
             this.txtHacchuuTanka_3.IsCorrectDate = true;
             this.txtHacchuuTanka_3.isEnterKeyDown = false;
+            this.txtHacchuuTanka_3.IsFirstTime = true;
             this.txtHacchuuTanka_3.isMaxLengthErr = false;
             this.txtHacchuuTanka_3.IsNumber = true;
             this.txtHacchuuTanka_3.IsShop = false;
@@ -4827,6 +4963,7 @@
             this.txtHacchuuSuu_3.IntegerPart = 0;
             this.txtHacchuuSuu_3.IsCorrectDate = true;
             this.txtHacchuuSuu_3.isEnterKeyDown = false;
+            this.txtHacchuuSuu_3.IsFirstTime = true;
             this.txtHacchuuSuu_3.isMaxLengthErr = false;
             this.txtHacchuuSuu_3.IsNumber = true;
             this.txtHacchuuSuu_3.IsShop = false;
@@ -4857,6 +4994,7 @@
             this.txtColorName_3.IntegerPart = 0;
             this.txtColorName_3.IsCorrectDate = true;
             this.txtColorName_3.isEnterKeyDown = false;
+            this.txtColorName_3.IsFirstTime = true;
             this.txtColorName_3.isMaxLengthErr = false;
             this.txtColorName_3.IsNumber = true;
             this.txtColorName_3.IsShop = false;
@@ -4887,6 +5025,7 @@
             this.txtSizeName_3.IntegerPart = 0;
             this.txtSizeName_3.IsCorrectDate = true;
             this.txtSizeName_3.isEnterKeyDown = false;
+            this.txtSizeName_3.IsFirstTime = true;
             this.txtSizeName_3.isMaxLengthErr = false;
             this.txtSizeName_3.IsNumber = true;
             this.txtSizeName_3.IsShop = false;
@@ -4917,6 +5056,7 @@
             this.txtBrandName_3.IntegerPart = 0;
             this.txtBrandName_3.IsCorrectDate = true;
             this.txtBrandName_3.isEnterKeyDown = false;
+            this.txtBrandName_3.IsFirstTime = true;
             this.txtBrandName_3.isMaxLengthErr = false;
             this.txtBrandName_3.IsNumber = true;
             this.txtBrandName_3.IsShop = false;
@@ -4947,6 +5087,7 @@
             this.txtShouhinName_3.IntegerPart = 0;
             this.txtShouhinName_3.IsCorrectDate = true;
             this.txtShouhinName_3.isEnterKeyDown = false;
+            this.txtShouhinName_3.IsFirstTime = true;
             this.txtShouhinName_3.isMaxLengthErr = false;
             this.txtShouhinName_3.IsNumber = true;
             this.txtShouhinName_3.IsShop = false;
@@ -4977,6 +5118,7 @@
             this.txtJANCD_3.IntegerPart = 0;
             this.txtJANCD_3.IsCorrectDate = true;
             this.txtJANCD_3.isEnterKeyDown = false;
+            this.txtJANCD_3.IsFirstTime = true;
             this.txtJANCD_3.isMaxLengthErr = false;
             this.txtJANCD_3.IsNumber = true;
             this.txtJANCD_3.IsShop = false;
@@ -5007,6 +5149,7 @@
             this.txtSKUCD_3.IntegerPart = 0;
             this.txtSKUCD_3.IsCorrectDate = true;
             this.txtSKUCD_3.isEnterKeyDown = false;
+            this.txtSKUCD_3.IsFirstTime = true;
             this.txtSKUCD_3.isMaxLengthErr = false;
             this.txtSKUCD_3.IsNumber = true;
             this.txtSKUCD_3.IsShop = false;
@@ -5038,6 +5181,7 @@
             this.txtJuchuuNO_3.IntegerPart = 0;
             this.txtJuchuuNO_3.IsCorrectDate = true;
             this.txtJuchuuNO_3.isEnterKeyDown = false;
+            this.txtJuchuuNO_3.IsFirstTime = true;
             this.txtJuchuuNO_3.isMaxLengthErr = false;
             this.txtJuchuuNO_3.IsNumber = true;
             this.txtJuchuuNO_3.IsShop = false;
@@ -5068,6 +5212,7 @@
             this.txtNounyuusakiJuusho_3.IntegerPart = 0;
             this.txtNounyuusakiJuusho_3.IsCorrectDate = true;
             this.txtNounyuusakiJuusho_3.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho_3.IsFirstTime = true;
             this.txtNounyuusakiJuusho_3.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho_3.IsNumber = true;
             this.txtNounyuusakiJuusho_3.IsShop = false;
@@ -5098,6 +5243,7 @@
             this.txtNounyuusakiName_3.IntegerPart = 0;
             this.txtNounyuusakiName_3.IsCorrectDate = true;
             this.txtNounyuusakiName_3.isEnterKeyDown = false;
+            this.txtNounyuusakiName_3.IsFirstTime = true;
             this.txtNounyuusakiName_3.isMaxLengthErr = false;
             this.txtNounyuusakiName_3.IsNumber = true;
             this.txtNounyuusakiName_3.IsShop = false;
@@ -5129,6 +5275,7 @@
             this.txtNetFLG_3.IntegerPart = 0;
             this.txtNetFLG_3.IsCorrectDate = true;
             this.txtNetFLG_3.isEnterKeyDown = false;
+            this.txtNetFLG_3.IsFirstTime = true;
             this.txtNetFLG_3.isMaxLengthErr = false;
             this.txtNetFLG_3.IsNumber = true;
             this.txtNetFLG_3.IsShop = false;
@@ -5160,6 +5307,7 @@
             this.txtChokusouFLG_3.IntegerPart = 0;
             this.txtChokusouFLG_3.IsCorrectDate = true;
             this.txtChokusouFLG_3.isEnterKeyDown = false;
+            this.txtChokusouFLG_3.IsFirstTime = true;
             this.txtChokusouFLG_3.isMaxLengthErr = false;
             this.txtChokusouFLG_3.IsNumber = true;
             this.txtChokusouFLG_3.IsShop = false;
@@ -5190,6 +5338,7 @@
             this.txtSiiresakiName_3.IntegerPart = 0;
             this.txtSiiresakiName_3.IsCorrectDate = true;
             this.txtSiiresakiName_3.isEnterKeyDown = false;
+            this.txtSiiresakiName_3.IsFirstTime = true;
             this.txtSiiresakiName_3.isMaxLengthErr = false;
             this.txtSiiresakiName_3.IsNumber = true;
             this.txtSiiresakiName_3.IsShop = false;
@@ -5221,6 +5370,7 @@
             this.txtHacchuuNO_3.IntegerPart = 0;
             this.txtHacchuuNO_3.IsCorrectDate = true;
             this.txtHacchuuNO_3.isEnterKeyDown = false;
+            this.txtHacchuuNO_3.IsFirstTime = true;
             this.txtHacchuuNO_3.isMaxLengthErr = false;
             this.txtHacchuuNO_3.IsNumber = true;
             this.txtHacchuuNO_3.IsShop = false;
@@ -5231,7 +5381,7 @@
             this.txtHacchuuNO_3.MoveNext = true;
             this.txtHacchuuNO_3.Name = "txtHacchuuNO_3";
             this.txtHacchuuNO_3.ReadOnly = true;
-            this.txtHacchuuNO_3.Size = new System.Drawing.Size(144, 22);
+            this.txtHacchuuNO_3.Size = new System.Drawing.Size(115, 22);
             this.txtHacchuuNO_3.TabIndex = 587;
             this.txtHacchuuNO_3.Tag = "0";
             this.txtHacchuuNO_3.Text = "XXXXXXXXX11";
@@ -5243,7 +5393,8 @@
             this.scSiiresakiCD_3.ChangeDate = "";
             this.scSiiresakiCD_3.ChangeDateWidth = 133;
             this.scSiiresakiCD_3.Code = "";
-            this.scSiiresakiCD_3.CodeWidth = 130;
+            this.scSiiresakiCD_3.CodeWidth = 100;
+            this.scSiiresakiCD_3.CodeWidth1 = 100;
             this.scSiiresakiCD_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSiiresakiCD_3.DataCheck = false;
             this.scSiiresakiCD_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5251,11 +5402,12 @@
             this.scSiiresakiCD_3.IsCopy = false;
             this.scSiiresakiCD_3.LabelText = "";
             this.scSiiresakiCD_3.LabelVisible = false;
-            this.scSiiresakiCD_3.Location = new System.Drawing.Point(179, 206);
+            this.scSiiresakiCD_3.Location = new System.Drawing.Point(151, 206);
             this.scSiiresakiCD_3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scSiiresakiCD_3.Name = "scSiiresakiCD_3";
+            this.scSiiresakiCD_3.NameWidth = 310;
             this.scSiiresakiCD_3.SearchEnable = true;
-            this.scSiiresakiCD_3.Size = new System.Drawing.Size(174, 40);
+            this.scSiiresakiCD_3.Size = new System.Drawing.Size(143, 40);
             this.scSiiresakiCD_3.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_3.TabIndex = 583;
             this.scSiiresakiCD_3.Tag = "3";
@@ -5280,6 +5432,7 @@
             this.txtShagaiBikou_3.IntegerPart = 0;
             this.txtShagaiBikou_3.IsCorrectDate = true;
             this.txtShagaiBikou_3.isEnterKeyDown = false;
+            this.txtShagaiBikou_3.IsFirstTime = true;
             this.txtShagaiBikou_3.isMaxLengthErr = false;
             this.txtShagaiBikou_3.IsNumber = true;
             this.txtShagaiBikou_3.IsShop = false;
@@ -5298,6 +5451,7 @@
             // chkEDIFLG_3
             // 
             this.chkEDIFLG_3.BackColor = System.Drawing.Color.White;
+            this.chkEDIFLG_3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkEDIFLG_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkEDIFLG_3.Location = new System.Drawing.Point(1712, 236);
             this.chkEDIFLG_3.Margin = new System.Windows.Forms.Padding(4);
@@ -5321,6 +5475,7 @@
             this.txtHacchuuChuuiZikou_2.IntegerPart = 0;
             this.txtHacchuuChuuiZikou_2.IsCorrectDate = true;
             this.txtHacchuuChuuiZikou_2.isEnterKeyDown = false;
+            this.txtHacchuuChuuiZikou_2.IsFirstTime = true;
             this.txtHacchuuChuuiZikou_2.isMaxLengthErr = false;
             this.txtHacchuuChuuiZikou_2.IsNumber = true;
             this.txtHacchuuChuuiZikou_2.IsShop = false;
@@ -5351,6 +5506,7 @@
             this.txtTaniName_2.IntegerPart = 0;
             this.txtTaniName_2.IsCorrectDate = true;
             this.txtTaniName_2.isEnterKeyDown = false;
+            this.txtTaniName_2.IsFirstTime = true;
             this.txtTaniName_2.isMaxLengthErr = false;
             this.txtTaniName_2.IsNumber = true;
             this.txtTaniName_2.IsShop = false;
@@ -5382,6 +5538,7 @@
             this.txtHacchuugaku_2.IntegerPart = 10;
             this.txtHacchuugaku_2.IsCorrectDate = true;
             this.txtHacchuugaku_2.isEnterKeyDown = false;
+            this.txtHacchuugaku_2.IsFirstTime = true;
             this.txtHacchuugaku_2.isMaxLengthErr = false;
             this.txtHacchuugaku_2.IsNumber = true;
             this.txtHacchuugaku_2.IsShop = false;
@@ -5413,6 +5570,7 @@
             this.txtHacchuuTanka_2.IntegerPart = 0;
             this.txtHacchuuTanka_2.IsCorrectDate = true;
             this.txtHacchuuTanka_2.isEnterKeyDown = false;
+            this.txtHacchuuTanka_2.IsFirstTime = true;
             this.txtHacchuuTanka_2.isMaxLengthErr = false;
             this.txtHacchuuTanka_2.IsNumber = true;
             this.txtHacchuuTanka_2.IsShop = false;
@@ -5444,6 +5602,7 @@
             this.txtHacchuuSuu_2.IntegerPart = 0;
             this.txtHacchuuSuu_2.IsCorrectDate = true;
             this.txtHacchuuSuu_2.isEnterKeyDown = false;
+            this.txtHacchuuSuu_2.IsFirstTime = true;
             this.txtHacchuuSuu_2.isMaxLengthErr = false;
             this.txtHacchuuSuu_2.IsNumber = true;
             this.txtHacchuuSuu_2.IsShop = false;
@@ -5474,6 +5633,7 @@
             this.txtColorName_2.IntegerPart = 0;
             this.txtColorName_2.IsCorrectDate = true;
             this.txtColorName_2.isEnterKeyDown = false;
+            this.txtColorName_2.IsFirstTime = true;
             this.txtColorName_2.isMaxLengthErr = false;
             this.txtColorName_2.IsNumber = true;
             this.txtColorName_2.IsShop = false;
@@ -5504,6 +5664,7 @@
             this.txtSizeName_2.IntegerPart = 0;
             this.txtSizeName_2.IsCorrectDate = true;
             this.txtSizeName_2.isEnterKeyDown = false;
+            this.txtSizeName_2.IsFirstTime = true;
             this.txtSizeName_2.isMaxLengthErr = false;
             this.txtSizeName_2.IsNumber = true;
             this.txtSizeName_2.IsShop = false;
@@ -5534,6 +5695,7 @@
             this.txtBrandName_2.IntegerPart = 0;
             this.txtBrandName_2.IsCorrectDate = true;
             this.txtBrandName_2.isEnterKeyDown = false;
+            this.txtBrandName_2.IsFirstTime = true;
             this.txtBrandName_2.isMaxLengthErr = false;
             this.txtBrandName_2.IsNumber = true;
             this.txtBrandName_2.IsShop = false;
@@ -5564,6 +5726,7 @@
             this.txtShouhinName_2.IntegerPart = 0;
             this.txtShouhinName_2.IsCorrectDate = true;
             this.txtShouhinName_2.isEnterKeyDown = false;
+            this.txtShouhinName_2.IsFirstTime = true;
             this.txtShouhinName_2.isMaxLengthErr = false;
             this.txtShouhinName_2.IsNumber = true;
             this.txtShouhinName_2.IsShop = false;
@@ -5594,6 +5757,7 @@
             this.txtJANCD_2.IntegerPart = 0;
             this.txtJANCD_2.IsCorrectDate = true;
             this.txtJANCD_2.isEnterKeyDown = false;
+            this.txtJANCD_2.IsFirstTime = true;
             this.txtJANCD_2.isMaxLengthErr = false;
             this.txtJANCD_2.IsNumber = true;
             this.txtJANCD_2.IsShop = false;
@@ -5624,6 +5788,7 @@
             this.txtSKUCD_2.IntegerPart = 0;
             this.txtSKUCD_2.IsCorrectDate = true;
             this.txtSKUCD_2.isEnterKeyDown = false;
+            this.txtSKUCD_2.IsFirstTime = true;
             this.txtSKUCD_2.isMaxLengthErr = false;
             this.txtSKUCD_2.IsNumber = true;
             this.txtSKUCD_2.IsShop = false;
@@ -5655,6 +5820,7 @@
             this.txtJuchuuNO_2.IntegerPart = 0;
             this.txtJuchuuNO_2.IsCorrectDate = true;
             this.txtJuchuuNO_2.isEnterKeyDown = false;
+            this.txtJuchuuNO_2.IsFirstTime = true;
             this.txtJuchuuNO_2.isMaxLengthErr = false;
             this.txtJuchuuNO_2.IsNumber = true;
             this.txtJuchuuNO_2.IsShop = false;
@@ -5685,6 +5851,7 @@
             this.txtNounyuusakiJuusho_2.IntegerPart = 0;
             this.txtNounyuusakiJuusho_2.IsCorrectDate = true;
             this.txtNounyuusakiJuusho_2.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho_2.IsFirstTime = true;
             this.txtNounyuusakiJuusho_2.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho_2.IsNumber = true;
             this.txtNounyuusakiJuusho_2.IsShop = false;
@@ -5715,6 +5882,7 @@
             this.txtNounyuusakiName_2.IntegerPart = 0;
             this.txtNounyuusakiName_2.IsCorrectDate = true;
             this.txtNounyuusakiName_2.isEnterKeyDown = false;
+            this.txtNounyuusakiName_2.IsFirstTime = true;
             this.txtNounyuusakiName_2.isMaxLengthErr = false;
             this.txtNounyuusakiName_2.IsNumber = true;
             this.txtNounyuusakiName_2.IsShop = false;
@@ -5746,6 +5914,7 @@
             this.txtNetFLG_2.IntegerPart = 0;
             this.txtNetFLG_2.IsCorrectDate = true;
             this.txtNetFLG_2.isEnterKeyDown = false;
+            this.txtNetFLG_2.IsFirstTime = true;
             this.txtNetFLG_2.isMaxLengthErr = false;
             this.txtNetFLG_2.IsNumber = true;
             this.txtNetFLG_2.IsShop = false;
@@ -5777,6 +5946,7 @@
             this.txtChokusouFLG_2.IntegerPart = 0;
             this.txtChokusouFLG_2.IsCorrectDate = true;
             this.txtChokusouFLG_2.isEnterKeyDown = false;
+            this.txtChokusouFLG_2.IsFirstTime = true;
             this.txtChokusouFLG_2.isMaxLengthErr = false;
             this.txtChokusouFLG_2.IsNumber = true;
             this.txtChokusouFLG_2.IsShop = false;
@@ -5807,6 +5977,7 @@
             this.txtSiiresakiName_2.IntegerPart = 0;
             this.txtSiiresakiName_2.IsCorrectDate = true;
             this.txtSiiresakiName_2.isEnterKeyDown = false;
+            this.txtSiiresakiName_2.IsFirstTime = true;
             this.txtSiiresakiName_2.isMaxLengthErr = false;
             this.txtSiiresakiName_2.IsNumber = true;
             this.txtSiiresakiName_2.IsShop = false;
@@ -5838,6 +6009,7 @@
             this.txtHacchuuNO_2.IntegerPart = 0;
             this.txtHacchuuNO_2.IsCorrectDate = true;
             this.txtHacchuuNO_2.isEnterKeyDown = false;
+            this.txtHacchuuNO_2.IsFirstTime = true;
             this.txtHacchuuNO_2.isMaxLengthErr = false;
             this.txtHacchuuNO_2.IsNumber = true;
             this.txtHacchuuNO_2.IsShop = false;
@@ -5848,7 +6020,7 @@
             this.txtHacchuuNO_2.MoveNext = true;
             this.txtHacchuuNO_2.Name = "txtHacchuuNO_2";
             this.txtHacchuuNO_2.ReadOnly = true;
-            this.txtHacchuuNO_2.Size = new System.Drawing.Size(144, 22);
+            this.txtHacchuuNO_2.Size = new System.Drawing.Size(115, 22);
             this.txtHacchuuNO_2.TabIndex = 561;
             this.txtHacchuuNO_2.Tag = "0";
             this.txtHacchuuNO_2.Text = "XXXXXXXXX11";
@@ -5860,7 +6032,8 @@
             this.scSiiresakiCD_2.ChangeDate = "";
             this.scSiiresakiCD_2.ChangeDateWidth = 133;
             this.scSiiresakiCD_2.Code = "";
-            this.scSiiresakiCD_2.CodeWidth = 130;
+            this.scSiiresakiCD_2.CodeWidth = 100;
+            this.scSiiresakiCD_2.CodeWidth1 = 100;
             this.scSiiresakiCD_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSiiresakiCD_2.DataCheck = false;
             this.scSiiresakiCD_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -5868,11 +6041,12 @@
             this.scSiiresakiCD_2.IsCopy = false;
             this.scSiiresakiCD_2.LabelText = "";
             this.scSiiresakiCD_2.LabelVisible = false;
-            this.scSiiresakiCD_2.Location = new System.Drawing.Point(180, 136);
+            this.scSiiresakiCD_2.Location = new System.Drawing.Point(151, 136);
             this.scSiiresakiCD_2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scSiiresakiCD_2.Name = "scSiiresakiCD_2";
+            this.scSiiresakiCD_2.NameWidth = 310;
             this.scSiiresakiCD_2.SearchEnable = true;
-            this.scSiiresakiCD_2.Size = new System.Drawing.Size(174, 40);
+            this.scSiiresakiCD_2.Size = new System.Drawing.Size(143, 40);
             this.scSiiresakiCD_2.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_2.TabIndex = 557;
             this.scSiiresakiCD_2.Tag = "2";
@@ -5897,6 +6071,7 @@
             this.txtShagaiBikou_2.IntegerPart = 0;
             this.txtShagaiBikou_2.IsCorrectDate = true;
             this.txtShagaiBikou_2.isEnterKeyDown = false;
+            this.txtShagaiBikou_2.IsFirstTime = true;
             this.txtShagaiBikou_2.isMaxLengthErr = false;
             this.txtShagaiBikou_2.IsNumber = true;
             this.txtShagaiBikou_2.IsShop = false;
@@ -5915,6 +6090,7 @@
             // chkEDIFLG_2
             // 
             this.chkEDIFLG_2.BackColor = System.Drawing.Color.White;
+            this.chkEDIFLG_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkEDIFLG_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkEDIFLG_2.Location = new System.Drawing.Point(1712, 166);
             this.chkEDIFLG_2.Margin = new System.Windows.Forms.Padding(4);
@@ -5938,6 +6114,7 @@
             this.txtHacchuuChuuiZikou_1.IntegerPart = 0;
             this.txtHacchuuChuuiZikou_1.IsCorrectDate = true;
             this.txtHacchuuChuuiZikou_1.isEnterKeyDown = false;
+            this.txtHacchuuChuuiZikou_1.IsFirstTime = true;
             this.txtHacchuuChuuiZikou_1.isMaxLengthErr = false;
             this.txtHacchuuChuuiZikou_1.IsNumber = true;
             this.txtHacchuuChuuiZikou_1.IsShop = false;
@@ -5968,6 +6145,7 @@
             this.txtTaniName_1.IntegerPart = 0;
             this.txtTaniName_1.IsCorrectDate = true;
             this.txtTaniName_1.isEnterKeyDown = false;
+            this.txtTaniName_1.IsFirstTime = true;
             this.txtTaniName_1.isMaxLengthErr = false;
             this.txtTaniName_1.IsNumber = true;
             this.txtTaniName_1.IsShop = false;
@@ -5999,6 +6177,7 @@
             this.txtHacchuugaku_1.IntegerPart = 10;
             this.txtHacchuugaku_1.IsCorrectDate = true;
             this.txtHacchuugaku_1.isEnterKeyDown = false;
+            this.txtHacchuugaku_1.IsFirstTime = true;
             this.txtHacchuugaku_1.isMaxLengthErr = false;
             this.txtHacchuugaku_1.IsNumber = true;
             this.txtHacchuugaku_1.IsShop = false;
@@ -6030,6 +6209,7 @@
             this.txtHacchuuTanka_1.IntegerPart = 0;
             this.txtHacchuuTanka_1.IsCorrectDate = true;
             this.txtHacchuuTanka_1.isEnterKeyDown = false;
+            this.txtHacchuuTanka_1.IsFirstTime = true;
             this.txtHacchuuTanka_1.isMaxLengthErr = false;
             this.txtHacchuuTanka_1.IsNumber = true;
             this.txtHacchuuTanka_1.IsShop = false;
@@ -6061,6 +6241,7 @@
             this.txtHacchuuSuu_1.IntegerPart = 0;
             this.txtHacchuuSuu_1.IsCorrectDate = true;
             this.txtHacchuuSuu_1.isEnterKeyDown = false;
+            this.txtHacchuuSuu_1.IsFirstTime = true;
             this.txtHacchuuSuu_1.isMaxLengthErr = false;
             this.txtHacchuuSuu_1.IsNumber = true;
             this.txtHacchuuSuu_1.IsShop = false;
@@ -6091,6 +6272,7 @@
             this.txtColorName_1.IntegerPart = 0;
             this.txtColorName_1.IsCorrectDate = true;
             this.txtColorName_1.isEnterKeyDown = false;
+            this.txtColorName_1.IsFirstTime = true;
             this.txtColorName_1.isMaxLengthErr = false;
             this.txtColorName_1.IsNumber = true;
             this.txtColorName_1.IsShop = false;
@@ -6121,6 +6303,7 @@
             this.txtSizeName_1.IntegerPart = 0;
             this.txtSizeName_1.IsCorrectDate = true;
             this.txtSizeName_1.isEnterKeyDown = false;
+            this.txtSizeName_1.IsFirstTime = true;
             this.txtSizeName_1.isMaxLengthErr = false;
             this.txtSizeName_1.IsNumber = true;
             this.txtSizeName_1.IsShop = false;
@@ -6151,6 +6334,7 @@
             this.txtBrandName_1.IntegerPart = 0;
             this.txtBrandName_1.IsCorrectDate = true;
             this.txtBrandName_1.isEnterKeyDown = false;
+            this.txtBrandName_1.IsFirstTime = true;
             this.txtBrandName_1.isMaxLengthErr = false;
             this.txtBrandName_1.IsNumber = true;
             this.txtBrandName_1.IsShop = false;
@@ -6181,6 +6365,7 @@
             this.txtShouhinName_1.IntegerPart = 0;
             this.txtShouhinName_1.IsCorrectDate = true;
             this.txtShouhinName_1.isEnterKeyDown = false;
+            this.txtShouhinName_1.IsFirstTime = true;
             this.txtShouhinName_1.isMaxLengthErr = false;
             this.txtShouhinName_1.IsNumber = true;
             this.txtShouhinName_1.IsShop = false;
@@ -6211,6 +6396,7 @@
             this.txtJANCD_1.IntegerPart = 0;
             this.txtJANCD_1.IsCorrectDate = true;
             this.txtJANCD_1.isEnterKeyDown = false;
+            this.txtJANCD_1.IsFirstTime = true;
             this.txtJANCD_1.isMaxLengthErr = false;
             this.txtJANCD_1.IsNumber = true;
             this.txtJANCD_1.IsShop = false;
@@ -6241,6 +6427,7 @@
             this.txtSKUCD_1.IntegerPart = 0;
             this.txtSKUCD_1.IsCorrectDate = true;
             this.txtSKUCD_1.isEnterKeyDown = false;
+            this.txtSKUCD_1.IsFirstTime = true;
             this.txtSKUCD_1.isMaxLengthErr = false;
             this.txtSKUCD_1.IsNumber = true;
             this.txtSKUCD_1.IsShop = false;
@@ -6272,6 +6459,7 @@
             this.txtJuchuuNO_1.IntegerPart = 0;
             this.txtJuchuuNO_1.IsCorrectDate = true;
             this.txtJuchuuNO_1.isEnterKeyDown = false;
+            this.txtJuchuuNO_1.IsFirstTime = true;
             this.txtJuchuuNO_1.isMaxLengthErr = false;
             this.txtJuchuuNO_1.IsNumber = true;
             this.txtJuchuuNO_1.IsShop = false;
@@ -6302,6 +6490,7 @@
             this.txtNounyuusakiJuusho_1.IntegerPart = 0;
             this.txtNounyuusakiJuusho_1.IsCorrectDate = true;
             this.txtNounyuusakiJuusho_1.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho_1.IsFirstTime = true;
             this.txtNounyuusakiJuusho_1.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho_1.IsNumber = true;
             this.txtNounyuusakiJuusho_1.IsShop = false;
@@ -6332,6 +6521,7 @@
             this.txtNounyuusakiName_1.IntegerPart = 0;
             this.txtNounyuusakiName_1.IsCorrectDate = true;
             this.txtNounyuusakiName_1.isEnterKeyDown = false;
+            this.txtNounyuusakiName_1.IsFirstTime = true;
             this.txtNounyuusakiName_1.isMaxLengthErr = false;
             this.txtNounyuusakiName_1.IsNumber = true;
             this.txtNounyuusakiName_1.IsShop = false;
@@ -6363,6 +6553,7 @@
             this.txtNetFLG_1.IntegerPart = 0;
             this.txtNetFLG_1.IsCorrectDate = true;
             this.txtNetFLG_1.isEnterKeyDown = false;
+            this.txtNetFLG_1.IsFirstTime = true;
             this.txtNetFLG_1.isMaxLengthErr = false;
             this.txtNetFLG_1.IsNumber = true;
             this.txtNetFLG_1.IsShop = false;
@@ -6394,6 +6585,7 @@
             this.txtChokusouFLG_1.IntegerPart = 0;
             this.txtChokusouFLG_1.IsCorrectDate = true;
             this.txtChokusouFLG_1.isEnterKeyDown = false;
+            this.txtChokusouFLG_1.IsFirstTime = true;
             this.txtChokusouFLG_1.isMaxLengthErr = false;
             this.txtChokusouFLG_1.IsNumber = true;
             this.txtChokusouFLG_1.IsShop = false;
@@ -6424,6 +6616,7 @@
             this.txtSiiresakiName_1.IntegerPart = 0;
             this.txtSiiresakiName_1.IsCorrectDate = true;
             this.txtSiiresakiName_1.isEnterKeyDown = false;
+            this.txtSiiresakiName_1.IsFirstTime = true;
             this.txtSiiresakiName_1.isMaxLengthErr = false;
             this.txtSiiresakiName_1.IsNumber = true;
             this.txtSiiresakiName_1.IsShop = false;
@@ -6455,6 +6648,7 @@
             this.txtHacchuuNO_1.IntegerPart = 0;
             this.txtHacchuuNO_1.IsCorrectDate = true;
             this.txtHacchuuNO_1.isEnterKeyDown = false;
+            this.txtHacchuuNO_1.IsFirstTime = true;
             this.txtHacchuuNO_1.isMaxLengthErr = false;
             this.txtHacchuuNO_1.IsNumber = true;
             this.txtHacchuuNO_1.IsShop = false;
@@ -6465,7 +6659,7 @@
             this.txtHacchuuNO_1.MoveNext = true;
             this.txtHacchuuNO_1.Name = "txtHacchuuNO_1";
             this.txtHacchuuNO_1.ReadOnly = true;
-            this.txtHacchuuNO_1.Size = new System.Drawing.Size(144, 22);
+            this.txtHacchuuNO_1.Size = new System.Drawing.Size(115, 22);
             this.txtHacchuuNO_1.TabIndex = 535;
             this.txtHacchuuNO_1.Tag = "0";
             this.txtHacchuuNO_1.Text = "XXXXXXXXX11";
@@ -6477,7 +6671,8 @@
             this.scSiiresakiCD_1.ChangeDate = "";
             this.scSiiresakiCD_1.ChangeDateWidth = 133;
             this.scSiiresakiCD_1.Code = "";
-            this.scSiiresakiCD_1.CodeWidth = 130;
+            this.scSiiresakiCD_1.CodeWidth = 100;
+            this.scSiiresakiCD_1.CodeWidth1 = 100;
             this.scSiiresakiCD_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSiiresakiCD_1.DataCheck = false;
             this.scSiiresakiCD_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -6485,11 +6680,12 @@
             this.scSiiresakiCD_1.IsCopy = false;
             this.scSiiresakiCD_1.LabelText = "";
             this.scSiiresakiCD_1.LabelVisible = false;
-            this.scSiiresakiCD_1.Location = new System.Drawing.Point(180, 65);
+            this.scSiiresakiCD_1.Location = new System.Drawing.Point(151, 65);
             this.scSiiresakiCD_1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scSiiresakiCD_1.Name = "scSiiresakiCD_1";
+            this.scSiiresakiCD_1.NameWidth = 310;
             this.scSiiresakiCD_1.SearchEnable = true;
-            this.scSiiresakiCD_1.Size = new System.Drawing.Size(174, 40);
+            this.scSiiresakiCD_1.Size = new System.Drawing.Size(143, 40);
             this.scSiiresakiCD_1.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_1.TabIndex = 531;
             this.scSiiresakiCD_1.Tag = "1";
@@ -6514,6 +6710,7 @@
             this.txtShagaiBikou_1.IntegerPart = 0;
             this.txtShagaiBikou_1.IsCorrectDate = true;
             this.txtShagaiBikou_1.isEnterKeyDown = false;
+            this.txtShagaiBikou_1.IsFirstTime = true;
             this.txtShagaiBikou_1.isMaxLengthErr = false;
             this.txtShagaiBikou_1.IsNumber = true;
             this.txtShagaiBikou_1.IsShop = false;
@@ -6532,6 +6729,7 @@
             // chkEDIFLG_1
             // 
             this.chkEDIFLG_1.BackColor = System.Drawing.Color.White;
+            this.chkEDIFLG_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkEDIFLG_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkEDIFLG_1.Location = new System.Drawing.Point(1712, 95);
             this.chkEDIFLG_1.Margin = new System.Windows.Forms.Padding(4);
@@ -6555,6 +6753,7 @@
             this.txtHacchuuChuuiZikou_0.IntegerPart = 0;
             this.txtHacchuuChuuiZikou_0.IsCorrectDate = true;
             this.txtHacchuuChuuiZikou_0.isEnterKeyDown = false;
+            this.txtHacchuuChuuiZikou_0.IsFirstTime = true;
             this.txtHacchuuChuuiZikou_0.isMaxLengthErr = false;
             this.txtHacchuuChuuiZikou_0.IsNumber = true;
             this.txtHacchuuChuuiZikou_0.IsShop = false;
@@ -6585,6 +6784,7 @@
             this.txtTaniName_0.IntegerPart = 0;
             this.txtTaniName_0.IsCorrectDate = true;
             this.txtTaniName_0.isEnterKeyDown = false;
+            this.txtTaniName_0.IsFirstTime = true;
             this.txtTaniName_0.isMaxLengthErr = false;
             this.txtTaniName_0.IsNumber = true;
             this.txtTaniName_0.IsShop = false;
@@ -6616,6 +6816,7 @@
             this.txtHacchuugaku_0.IntegerPart = 10;
             this.txtHacchuugaku_0.IsCorrectDate = true;
             this.txtHacchuugaku_0.isEnterKeyDown = false;
+            this.txtHacchuugaku_0.IsFirstTime = true;
             this.txtHacchuugaku_0.isMaxLengthErr = false;
             this.txtHacchuugaku_0.IsNumber = true;
             this.txtHacchuugaku_0.IsShop = false;
@@ -6647,6 +6848,7 @@
             this.txtHacchuuTanka_0.IntegerPart = 10;
             this.txtHacchuuTanka_0.IsCorrectDate = true;
             this.txtHacchuuTanka_0.isEnterKeyDown = false;
+            this.txtHacchuuTanka_0.IsFirstTime = true;
             this.txtHacchuuTanka_0.isMaxLengthErr = false;
             this.txtHacchuuTanka_0.IsNumber = true;
             this.txtHacchuuTanka_0.IsShop = false;
@@ -6678,6 +6880,7 @@
             this.txtHacchuuSuu_0.IntegerPart = 0;
             this.txtHacchuuSuu_0.IsCorrectDate = true;
             this.txtHacchuuSuu_0.isEnterKeyDown = false;
+            this.txtHacchuuSuu_0.IsFirstTime = true;
             this.txtHacchuuSuu_0.isMaxLengthErr = false;
             this.txtHacchuuSuu_0.IsNumber = true;
             this.txtHacchuuSuu_0.IsShop = false;
@@ -6708,6 +6911,7 @@
             this.txtColorName_0.IntegerPart = 0;
             this.txtColorName_0.IsCorrectDate = true;
             this.txtColorName_0.isEnterKeyDown = false;
+            this.txtColorName_0.IsFirstTime = true;
             this.txtColorName_0.isMaxLengthErr = false;
             this.txtColorName_0.IsNumber = true;
             this.txtColorName_0.IsShop = false;
@@ -6738,6 +6942,7 @@
             this.txtSizeName_0.IntegerPart = 0;
             this.txtSizeName_0.IsCorrectDate = true;
             this.txtSizeName_0.isEnterKeyDown = false;
+            this.txtSizeName_0.IsFirstTime = true;
             this.txtSizeName_0.isMaxLengthErr = false;
             this.txtSizeName_0.IsNumber = true;
             this.txtSizeName_0.IsShop = false;
@@ -6768,6 +6973,7 @@
             this.txtBrandName_0.IntegerPart = 0;
             this.txtBrandName_0.IsCorrectDate = true;
             this.txtBrandName_0.isEnterKeyDown = false;
+            this.txtBrandName_0.IsFirstTime = true;
             this.txtBrandName_0.isMaxLengthErr = false;
             this.txtBrandName_0.IsNumber = true;
             this.txtBrandName_0.IsShop = false;
@@ -6798,6 +7004,7 @@
             this.txtShouhinName_0.IntegerPart = 0;
             this.txtShouhinName_0.IsCorrectDate = true;
             this.txtShouhinName_0.isEnterKeyDown = false;
+            this.txtShouhinName_0.IsFirstTime = true;
             this.txtShouhinName_0.isMaxLengthErr = false;
             this.txtShouhinName_0.IsNumber = true;
             this.txtShouhinName_0.IsShop = false;
@@ -6828,6 +7035,7 @@
             this.txtJANCD_0.IntegerPart = 0;
             this.txtJANCD_0.IsCorrectDate = true;
             this.txtJANCD_0.isEnterKeyDown = false;
+            this.txtJANCD_0.IsFirstTime = true;
             this.txtJANCD_0.isMaxLengthErr = false;
             this.txtJANCD_0.IsNumber = true;
             this.txtJANCD_0.IsShop = false;
@@ -6858,6 +7066,7 @@
             this.txtSKUCD_0.IntegerPart = 0;
             this.txtSKUCD_0.IsCorrectDate = true;
             this.txtSKUCD_0.isEnterKeyDown = false;
+            this.txtSKUCD_0.IsFirstTime = true;
             this.txtSKUCD_0.isMaxLengthErr = false;
             this.txtSKUCD_0.IsNumber = true;
             this.txtSKUCD_0.IsShop = false;
@@ -6889,6 +7098,7 @@
             this.txtJuchuuNO_0.IntegerPart = 0;
             this.txtJuchuuNO_0.IsCorrectDate = true;
             this.txtJuchuuNO_0.isEnterKeyDown = false;
+            this.txtJuchuuNO_0.IsFirstTime = true;
             this.txtJuchuuNO_0.isMaxLengthErr = false;
             this.txtJuchuuNO_0.IsNumber = true;
             this.txtJuchuuNO_0.IsShop = false;
@@ -6919,6 +7129,7 @@
             this.txtNounyuusakiJuusho_0.IntegerPart = 0;
             this.txtNounyuusakiJuusho_0.IsCorrectDate = true;
             this.txtNounyuusakiJuusho_0.isEnterKeyDown = false;
+            this.txtNounyuusakiJuusho_0.IsFirstTime = true;
             this.txtNounyuusakiJuusho_0.isMaxLengthErr = false;
             this.txtNounyuusakiJuusho_0.IsNumber = true;
             this.txtNounyuusakiJuusho_0.IsShop = false;
@@ -6949,6 +7160,7 @@
             this.txtNounyuusakiName_0.IntegerPart = 0;
             this.txtNounyuusakiName_0.IsCorrectDate = true;
             this.txtNounyuusakiName_0.isEnterKeyDown = false;
+            this.txtNounyuusakiName_0.IsFirstTime = true;
             this.txtNounyuusakiName_0.isMaxLengthErr = false;
             this.txtNounyuusakiName_0.IsNumber = true;
             this.txtNounyuusakiName_0.IsShop = false;
@@ -6980,6 +7192,7 @@
             this.txtNetFLG_0.IntegerPart = 0;
             this.txtNetFLG_0.IsCorrectDate = true;
             this.txtNetFLG_0.isEnterKeyDown = false;
+            this.txtNetFLG_0.IsFirstTime = true;
             this.txtNetFLG_0.isMaxLengthErr = false;
             this.txtNetFLG_0.IsNumber = true;
             this.txtNetFLG_0.IsShop = false;
@@ -7011,6 +7224,7 @@
             this.txtChokusouFLG_0.IntegerPart = 0;
             this.txtChokusouFLG_0.IsCorrectDate = true;
             this.txtChokusouFLG_0.isEnterKeyDown = false;
+            this.txtChokusouFLG_0.IsFirstTime = true;
             this.txtChokusouFLG_0.isMaxLengthErr = false;
             this.txtChokusouFLG_0.IsNumber = true;
             this.txtChokusouFLG_0.IsShop = false;
@@ -7041,6 +7255,7 @@
             this.txtSiiresakiName_0.IntegerPart = 0;
             this.txtSiiresakiName_0.IsCorrectDate = true;
             this.txtSiiresakiName_0.isEnterKeyDown = false;
+            this.txtSiiresakiName_0.IsFirstTime = true;
             this.txtSiiresakiName_0.isMaxLengthErr = false;
             this.txtSiiresakiName_0.IsNumber = true;
             this.txtSiiresakiName_0.IsShop = false;
@@ -7072,6 +7287,7 @@
             this.ckM_TextBox13.IntegerPart = 0;
             this.ckM_TextBox13.IsCorrectDate = true;
             this.ckM_TextBox13.isEnterKeyDown = false;
+            this.ckM_TextBox13.IsFirstTime = true;
             this.ckM_TextBox13.isMaxLengthErr = false;
             this.ckM_TextBox13.IsNumber = true;
             this.ckM_TextBox13.IsShop = false;
@@ -7105,6 +7321,7 @@
             this.ckM_TextBox14.IntegerPart = 0;
             this.ckM_TextBox14.IsCorrectDate = true;
             this.ckM_TextBox14.isEnterKeyDown = false;
+            this.ckM_TextBox14.IsFirstTime = true;
             this.ckM_TextBox14.isMaxLengthErr = false;
             this.ckM_TextBox14.IsNumber = true;
             this.ckM_TextBox14.IsShop = false;
@@ -7138,6 +7355,7 @@
             this.ckM_TextBox15.IntegerPart = 0;
             this.ckM_TextBox15.IsCorrectDate = true;
             this.ckM_TextBox15.isEnterKeyDown = false;
+            this.ckM_TextBox15.IsFirstTime = true;
             this.ckM_TextBox15.isMaxLengthErr = false;
             this.ckM_TextBox15.IsNumber = true;
             this.ckM_TextBox15.IsShop = false;
@@ -7171,6 +7389,7 @@
             this.ckM_TextBox16.IntegerPart = 0;
             this.ckM_TextBox16.IsCorrectDate = true;
             this.ckM_TextBox16.isEnterKeyDown = false;
+            this.ckM_TextBox16.IsFirstTime = true;
             this.ckM_TextBox16.isMaxLengthErr = false;
             this.ckM_TextBox16.IsNumber = true;
             this.ckM_TextBox16.IsShop = false;
@@ -7204,6 +7423,7 @@
             this.ckM_TextBox17.IntegerPart = 0;
             this.ckM_TextBox17.IsCorrectDate = true;
             this.ckM_TextBox17.isEnterKeyDown = false;
+            this.ckM_TextBox17.IsFirstTime = true;
             this.ckM_TextBox17.isMaxLengthErr = false;
             this.ckM_TextBox17.IsNumber = true;
             this.ckM_TextBox17.IsShop = false;
@@ -7237,6 +7457,7 @@
             this.IMT_ZKDIS_4.IntegerPart = 0;
             this.IMT_ZKDIS_4.IsCorrectDate = true;
             this.IMT_ZKDIS_4.isEnterKeyDown = false;
+            this.IMT_ZKDIS_4.IsFirstTime = true;
             this.IMT_ZKDIS_4.isMaxLengthErr = false;
             this.IMT_ZKDIS_4.IsNumber = true;
             this.IMT_ZKDIS_4.IsShop = false;
@@ -7270,6 +7491,7 @@
             this.IMT_ZKDIS_3.IntegerPart = 0;
             this.IMT_ZKDIS_3.IsCorrectDate = true;
             this.IMT_ZKDIS_3.isEnterKeyDown = false;
+            this.IMT_ZKDIS_3.IsFirstTime = true;
             this.IMT_ZKDIS_3.isMaxLengthErr = false;
             this.IMT_ZKDIS_3.IsNumber = true;
             this.IMT_ZKDIS_3.IsShop = false;
@@ -7303,6 +7525,7 @@
             this.IMT_ZKDIS_2.IntegerPart = 0;
             this.IMT_ZKDIS_2.IsCorrectDate = true;
             this.IMT_ZKDIS_2.isEnterKeyDown = false;
+            this.IMT_ZKDIS_2.IsFirstTime = true;
             this.IMT_ZKDIS_2.isMaxLengthErr = false;
             this.IMT_ZKDIS_2.IsNumber = true;
             this.IMT_ZKDIS_2.IsShop = false;
@@ -7336,6 +7559,7 @@
             this.IMT_ZKDIS_1.IntegerPart = 0;
             this.IMT_ZKDIS_1.IsCorrectDate = true;
             this.IMT_ZKDIS_1.isEnterKeyDown = false;
+            this.IMT_ZKDIS_1.IsFirstTime = true;
             this.IMT_ZKDIS_1.isMaxLengthErr = false;
             this.IMT_ZKDIS_1.IsNumber = true;
             this.IMT_ZKDIS_1.IsShop = false;
@@ -7369,6 +7593,7 @@
             this.IMT_ZKDIS_0.IntegerPart = 0;
             this.IMT_ZKDIS_0.IsCorrectDate = true;
             this.IMT_ZKDIS_0.isEnterKeyDown = false;
+            this.IMT_ZKDIS_0.IsFirstTime = true;
             this.IMT_ZKDIS_0.isMaxLengthErr = false;
             this.IMT_ZKDIS_0.IsNumber = true;
             this.IMT_ZKDIS_0.IsShop = false;
@@ -7402,6 +7627,7 @@
             this.txtHacchuuNO_0.IntegerPart = 0;
             this.txtHacchuuNO_0.IsCorrectDate = true;
             this.txtHacchuuNO_0.isEnterKeyDown = false;
+            this.txtHacchuuNO_0.IsFirstTime = true;
             this.txtHacchuuNO_0.isMaxLengthErr = false;
             this.txtHacchuuNO_0.IsNumber = true;
             this.txtHacchuuNO_0.IsShop = false;
@@ -7412,7 +7638,7 @@
             this.txtHacchuuNO_0.MoveNext = true;
             this.txtHacchuuNO_0.Name = "txtHacchuuNO_0";
             this.txtHacchuuNO_0.ReadOnly = true;
-            this.txtHacchuuNO_0.Size = new System.Drawing.Size(144, 22);
+            this.txtHacchuuNO_0.Size = new System.Drawing.Size(115, 22);
             this.txtHacchuuNO_0.TabIndex = 477;
             this.txtHacchuuNO_0.Tag = "0";
             this.txtHacchuuNO_0.Text = "XXXXXXXXX11";
@@ -7424,7 +7650,8 @@
             this.scSiiresakiCD_0.ChangeDate = "";
             this.scSiiresakiCD_0.ChangeDateWidth = 133;
             this.scSiiresakiCD_0.Code = "";
-            this.scSiiresakiCD_0.CodeWidth = 130;
+            this.scSiiresakiCD_0.CodeWidth = 100;
+            this.scSiiresakiCD_0.CodeWidth1 = 100;
             this.scSiiresakiCD_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.scSiiresakiCD_0.DataCheck = false;
             this.scSiiresakiCD_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -7432,11 +7659,12 @@
             this.scSiiresakiCD_0.IsCopy = false;
             this.scSiiresakiCD_0.LabelText = "";
             this.scSiiresakiCD_0.LabelVisible = false;
-            this.scSiiresakiCD_0.Location = new System.Drawing.Point(179, -6);
+            this.scSiiresakiCD_0.Location = new System.Drawing.Point(151, -6);
             this.scSiiresakiCD_0.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.scSiiresakiCD_0.Name = "scSiiresakiCD_0";
+            this.scSiiresakiCD_0.NameWidth = 310;
             this.scSiiresakiCD_0.SearchEnable = true;
-            this.scSiiresakiCD_0.Size = new System.Drawing.Size(174, 40);
+            this.scSiiresakiCD_0.Size = new System.Drawing.Size(143, 40);
             this.scSiiresakiCD_0.Stype = Search.CKM_SearchControl.SearchType.仕入先;
             this.scSiiresakiCD_0.TabIndex = 1;
             this.scSiiresakiCD_0.Tag = "0";
@@ -7469,6 +7697,7 @@
             this.txtShagaiBikou_0.IntegerPart = 0;
             this.txtShagaiBikou_0.IsCorrectDate = true;
             this.txtShagaiBikou_0.isEnterKeyDown = false;
+            this.txtShagaiBikou_0.IsFirstTime = true;
             this.txtShagaiBikou_0.isMaxLengthErr = false;
             this.txtShagaiBikou_0.IsNumber = true;
             this.txtShagaiBikou_0.IsShop = false;
@@ -7487,6 +7716,7 @@
             // chkEDIFLG_0
             // 
             this.chkEDIFLG_0.BackColor = System.Drawing.Color.White;
+            this.chkEDIFLG_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkEDIFLG_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkEDIFLG_0.Location = new System.Drawing.Point(1712, 24);
             this.chkEDIFLG_0.Margin = new System.Windows.Forms.Padding(4);
@@ -7560,6 +7790,7 @@
             // chkTaishouFLG_1
             // 
             this.chkTaishouFLG_1.BackColor = System.Drawing.Color.White;
+            this.chkTaishouFLG_1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkTaishouFLG_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkTaishouFLG_1.Location = new System.Drawing.Point(0, 93);
             this.chkTaishouFLG_1.Margin = new System.Windows.Forms.Padding(4);
@@ -7572,6 +7803,7 @@
             // chkTaishouFLG_4
             // 
             this.chkTaishouFLG_4.BackColor = System.Drawing.Color.White;
+            this.chkTaishouFLG_4.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkTaishouFLG_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkTaishouFLG_4.Location = new System.Drawing.Point(0, 305);
             this.chkTaishouFLG_4.Margin = new System.Windows.Forms.Padding(4);
@@ -7584,6 +7816,7 @@
             // chkTaishouFLG_3
             // 
             this.chkTaishouFLG_3.BackColor = System.Drawing.Color.White;
+            this.chkTaishouFLG_3.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkTaishouFLG_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkTaishouFLG_3.Location = new System.Drawing.Point(0, 234);
             this.chkTaishouFLG_3.Margin = new System.Windows.Forms.Padding(4);
@@ -7596,6 +7829,7 @@
             // chkTaishouFLG_2
             // 
             this.chkTaishouFLG_2.BackColor = System.Drawing.Color.White;
+            this.chkTaishouFLG_2.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkTaishouFLG_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkTaishouFLG_2.Location = new System.Drawing.Point(0, 164);
             this.chkTaishouFLG_2.Margin = new System.Windows.Forms.Padding(4);
@@ -7608,6 +7842,7 @@
             // chkTaishouFLG_0
             // 
             this.chkTaishouFLG_0.BackColor = System.Drawing.Color.White;
+            this.chkTaishouFLG_0.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chkTaishouFLG_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Bold);
             this.chkTaishouFLG_0.Location = new System.Drawing.Point(0, 24);
             this.chkTaishouFLG_0.Margin = new System.Windows.Forms.Padding(4);
@@ -7659,7 +7894,8 @@
             this.ScSiiresakiCD.ChangeDate = "";
             this.ScSiiresakiCD.ChangeDateWidth = 133;
             this.ScSiiresakiCD.Code = "";
-            this.ScSiiresakiCD.CodeWidth = 130;
+            this.ScSiiresakiCD.CodeWidth = 100;
+            this.ScSiiresakiCD.CodeWidth1 = 100;
             this.ScSiiresakiCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScSiiresakiCD.DataCheck = true;
             this.ScSiiresakiCD.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -7670,6 +7906,7 @@
             this.ScSiiresakiCD.Location = new System.Drawing.Point(116, 151);
             this.ScSiiresakiCD.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ScSiiresakiCD.Name = "ScSiiresakiCD";
+            this.ScSiiresakiCD.NameWidth = 310;
             this.ScSiiresakiCD.SearchEnable = true;
             this.ScSiiresakiCD.Size = new System.Drawing.Size(456, 60);
             this.ScSiiresakiCD.Stype = Search.CKM_SearchControl.SearchType.仕入先;
@@ -8109,7 +8346,8 @@
             this.ScStaff.ChangeDate = "";
             this.ScStaff.ChangeDateWidth = 133;
             this.ScStaff.Code = "";
-            this.ScStaff.CodeWidth = 100;
+            this.ScStaff.CodeWidth = 70;
+            this.ScStaff.CodeWidth1 = 70;
             this.ScStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaff.DataCheck = false;
             this.ScStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8120,8 +8358,9 @@
             this.ScStaff.Location = new System.Drawing.Point(1275, 120);
             this.ScStaff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ScStaff.Name = "ScStaff";
+            this.ScStaff.NameWidth = 250;
             this.ScStaff.SearchEnable = true;
-            this.ScStaff.Size = new System.Drawing.Size(356, 35);
+            this.ScStaff.Size = new System.Drawing.Size(366, 35);
             this.ScStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScStaff.TabIndex = 5;
             this.ScStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;
@@ -8155,6 +8394,7 @@
             this.ckM_SearchControl2.ChangeDateWidth = 133;
             this.ckM_SearchControl2.Code = "";
             this.ckM_SearchControl2.CodeWidth = 100;
+            this.ckM_SearchControl2.CodeWidth1 = 100;
             this.ckM_SearchControl2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl2.DataCheck = false;
             this.ckM_SearchControl2.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8165,9 +8405,10 @@
             this.ckM_SearchControl2.Location = new System.Drawing.Point(343, 5);
             this.ckM_SearchControl2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ckM_SearchControl2.Name = "ckM_SearchControl2";
+            this.ckM_SearchControl2.NameWidth = 600;
             this.ckM_SearchControl2.SearchEnable = true;
             this.ckM_SearchControl2.Size = new System.Drawing.Size(144, 28);
-            this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.見積番号;
+            this.ckM_SearchControl2.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ckM_SearchControl2.TabIndex = 275;
             this.ckM_SearchControl2.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl2.UseChangeDate = false;
@@ -8182,6 +8423,7 @@
             this.ckM_SearchControl3.ChangeDateWidth = 133;
             this.ckM_SearchControl3.Code = "";
             this.ckM_SearchControl3.CodeWidth = 100;
+            this.ckM_SearchControl3.CodeWidth1 = 100;
             this.ckM_SearchControl3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ckM_SearchControl3.DataCheck = false;
             this.ckM_SearchControl3.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8192,9 +8434,10 @@
             this.ckM_SearchControl3.Location = new System.Drawing.Point(343, 4);
             this.ckM_SearchControl3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.ckM_SearchControl3.Name = "ckM_SearchControl3";
+            this.ckM_SearchControl3.NameWidth = 600;
             this.ckM_SearchControl3.SearchEnable = true;
             this.ckM_SearchControl3.Size = new System.Drawing.Size(144, 28);
-            this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.見積番号;
+            this.ckM_SearchControl3.Stype = Search.CKM_SearchControl.SearchType.発注番号;
             this.ckM_SearchControl3.TabIndex = 344;
             this.ckM_SearchControl3.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ckM_SearchControl3.UseChangeDate = false;
@@ -8217,6 +8460,7 @@
             this.ckM_TextBox1.IntegerPart = 0;
             this.ckM_TextBox1.IsCorrectDate = true;
             this.ckM_TextBox1.isEnterKeyDown = false;
+            this.ckM_TextBox1.IsFirstTime = true;
             this.ckM_TextBox1.isMaxLengthErr = false;
             this.ckM_TextBox1.IsNumber = true;
             this.ckM_TextBox1.IsShop = false;
@@ -8335,6 +8579,7 @@
             this.txtHacchuuDate.IntegerPart = 0;
             this.txtHacchuuDate.IsCorrectDate = true;
             this.txtHacchuuDate.isEnterKeyDown = false;
+            this.txtHacchuuDate.IsFirstTime = true;
             this.txtHacchuuDate.isMaxLengthErr = false;
             this.txtHacchuuDate.IsNumber = true;
             this.txtHacchuuDate.IsShop = false;
@@ -8375,6 +8620,7 @@
             this.ScHacchuuNO.ChangeDateWidth = 100;
             this.ScHacchuuNO.Code = "";
             this.ScHacchuuNO.CodeWidth = 100;
+            this.ScHacchuuNO.CodeWidth1 = 100;
             this.ScHacchuuNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScHacchuuNO.DataCheck = false;
             this.ScHacchuuNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8385,6 +8631,7 @@
             this.ScHacchuuNO.Location = new System.Drawing.Point(915, 154);
             this.ScHacchuuNO.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ScHacchuuNO.Name = "ScHacchuuNO";
+            this.ScHacchuuNO.NameWidth = 600;
             this.ScHacchuuNO.SearchEnable = true;
             this.ScHacchuuNO.Size = new System.Drawing.Size(144, 34);
             this.ScHacchuuNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
@@ -8420,6 +8667,7 @@
             this.ScHacchuuShoriNO.ChangeDateWidth = 100;
             this.ScHacchuuShoriNO.Code = "";
             this.ScHacchuuShoriNO.CodeWidth = 100;
+            this.ScHacchuuShoriNO.CodeWidth1 = 100;
             this.ScHacchuuShoriNO.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScHacchuuShoriNO.DataCheck = false;
             this.ScHacchuuShoriNO.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8430,9 +8678,10 @@
             this.ScHacchuuShoriNO.Location = new System.Drawing.Point(915, 182);
             this.ScHacchuuShoriNO.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.ScHacchuuShoriNO.Name = "ScHacchuuShoriNO";
+            this.ScHacchuuShoriNO.NameWidth = 600;
             this.ScHacchuuShoriNO.SearchEnable = true;
             this.ScHacchuuShoriNO.Size = new System.Drawing.Size(144, 34);
-            this.ScHacchuuShoriNO.Stype = Search.CKM_SearchControl.SearchType.発注番号;
+            this.ScHacchuuShoriNO.Stype = Search.CKM_SearchControl.SearchType.発注処理番号;
             this.ScHacchuuShoriNO.TabIndex = 699;
             this.ScHacchuuShoriNO.TextSize = Search.CKM_SearchControl.FontSize.Normal;
             this.ScHacchuuShoriNO.UseChangeDate = false;
@@ -8503,7 +8752,8 @@
             this.ScJuchuuStaff.ChangeDate = "";
             this.ScJuchuuStaff.ChangeDateWidth = 133;
             this.ScJuchuuStaff.Code = "";
-            this.ScJuchuuStaff.CodeWidth = 100;
+            this.ScJuchuuStaff.CodeWidth = 70;
+            this.ScJuchuuStaff.CodeWidth1 = 70;
             this.ScJuchuuStaff.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScJuchuuStaff.DataCheck = false;
             this.ScJuchuuStaff.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F);
@@ -8514,8 +8764,9 @@
             this.ScJuchuuStaff.Location = new System.Drawing.Point(116, 181);
             this.ScJuchuuStaff.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.ScJuchuuStaff.Name = "ScJuchuuStaff";
+            this.ScJuchuuStaff.NameWidth = 250;
             this.ScJuchuuStaff.SearchEnable = true;
-            this.ScJuchuuStaff.Size = new System.Drawing.Size(356, 35);
+            this.ScJuchuuStaff.Size = new System.Drawing.Size(366, 35);
             this.ScJuchuuStaff.Stype = Search.CKM_SearchControl.SearchType.スタッフ;
             this.ScJuchuuStaff.TabIndex = 704;
             this.ScJuchuuStaff.TextSize = Search.CKM_SearchControl.FontSize.Normal;

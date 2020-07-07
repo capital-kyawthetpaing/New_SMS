@@ -1,4 +1,4 @@
- BEGIN TRY 
+﻿ BEGIN TRY 
  Drop Procedure dbo.[D_Order_SelectAllForShoukai] 
 END try
 BEGIN CATCH END CATCH 
@@ -8,7 +8,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 /****** Object:  StoredProcedure [D_Order_SelectAllForShoukai]    */
-CREATE PROCEDURE D_Order_SelectAllForShoukai(
+CREATE PROCEDURE [dbo].[D_Order_SelectAllForShoukai](
     -- Add the parameters for the stored procedure here
     @OrderDateFrom  varchar(10),
     @OrderDateTo  varchar(10),
@@ -39,9 +39,9 @@ CREATE PROCEDURE D_Order_SelectAllForShoukai(
     @StoreCD  varchar(4),
     @MakerItem varchar(30) ,
     @SKUName varchar(100),
-    @ITemCD varchar(300) ,      --�J���}��؂�
-    @SKUCD varchar(300),            --�J���}��؂�
-    @JanCD varchar(300),        --�J���}��؂�
+    @ITemCD varchar(300) ,      --âJâôâ}ïµÉÏéÞ
+    @SKUCD varchar(300),            --âJâôâ}ïµÉÏéÞ
+    @JanCD varchar(300),        --âJâôâ}ïµÉÏéÞ
     
     @JuchuuNO  varchar(11),
     @DestinationSoukoCD varchar(11),
@@ -56,6 +56,12 @@ BEGIN
 	
     DECLARE @SYSDATETIME datetime;
     SET @SYSDATETIME = SYSDATETIME();
+
+	IF right(@JanCD,1)=','
+	begin 
+		set @JanCD=left(@JanCD, len(@JanCD)-1)
+	end
+	
     
     -- Insert statements for procedure here
     IF OBJECT_ID( N'[dbo]..[#TableForHacchuuShoukai]', N'U' ) IS NOT NULL
@@ -80,23 +86,23 @@ BEGIN
             WHERE D.DeleteDateTime IS NULL
             AND DM.OrderNO = D.Number AND DM.OrderRows = D.NumberRows
             ORDER BY D.ArrivalPlanMonth desc
-            ) AS ArrivalPlanMonth	--�\�茎
+            ) AS ArrivalPlanMonth	--ù\ÆÞîÄ
 
           ,(SELECT top 1 D.ArrivalPlanCD
             FROM D_ArrivalPlan AS D 
             WHERE D.DeleteDateTime IS NULL
             AND DM.OrderNO = D.Number AND DM.OrderRows = D.NumberRows
-            ORDER BY D.ArrivalPlanMonth desc	--�\�茎���ő�̒l�̃��R�[�h�̗\��󋵂��̗p									
-            ) AS ArrivalPlanCD	--�\���
+            ORDER BY D.ArrivalPlanMonth desc	--ù\ÆÞîÄé¬ì┼æÕé╠Ælé╠âîâRü[âhé╠ù\ÆÞÅ¾ïÁé­ì╠ùp									
+            ) AS ArrivalPlanCD	--ù\ÆÞÅ¾ïÁ
 
-          ,DL.ArrivalDate	--���ד�
+          ,DL.ArrivalDate	--ô³ëÎô·
           ,ISNULL(DL2.ArrivalSu,0) AS ArrivalSu
-          ,DP.PurchaseDate	--�d����
+          ,DP.PurchaseDate	--Ädô³ô·
           
           ,CONVERT(varchar,DH.InsertDateTime,111) AS InsertDateTime
 
 			,DH.DestinationKBN AS Destination
-            ,(CASE DH.DestinationKBN WHEN 1 THEN '�Z' ElSE '' END) AS DestinationKBN
+            ,(CASE DH.DestinationKBN WHEN 1 THEN 'üZ' ElSE '' END) AS DestinationKBN
             ,(CASE DH.DestinationKBN WHEN 2 THEN (SELECT top 1 A.SoukoName
                                                 FROM M_Souko AS A 
                                                 WHERE A.SoukoCD = DH.DestinationSoukoCD AND A.DeleteFlg = 0 
@@ -108,14 +114,14 @@ BEGIN
                                             ELSE '' END) AS DeliveryName
            
            ,DH.OrderWayKBN AS OrderWay                             
-           ,(CASE DH.OrderWayKBN WHEN 1 THEN N'Net����' WHEN 2 THEN N'FAX����' WHEN 3 THEN N'EDI����' ELSE '' END) OrderWayKBN
+           ,(CASE DH.OrderWayKBN WHEN 1 THEN N'Netö¡Æì' WHEN 2 THEN N'FAXö¡Æì' WHEN 3 THEN N'EDIö¡Æì' ELSE '' END) OrderWayKBN
     		
     	   ,DH.ApprovalStageFLG AS ApprovalStage
-           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN N'���F��'
-                                      WHEN 1 THEN N'�\��'
-                                      WHEN 0 THEN N'�p��'
-                                      WHEN 10 THEN N'���F�s�v'
-                                      ELSE N'���F��' END) AS ApprovalStageFLG
+           ,(CASE DH.ApprovalStageFLG WHEN 9 THEN N'Å│öFì¤'
+                                      WHEN 1 THEN N'É\É┐'
+                                      WHEN 0 THEN N'ïpë║'
+                                      WHEN 10 THEN N'Å│öFòsùv'
+                                      ELSE N'Å│öFÆå' END) AS ApprovalStageFLG
            
           ,(SELECT top 1 A.StoreName 
               FROM M_Store A 
@@ -187,9 +193,9 @@ BEGIN
                 AND DH.OrderNO = D.Number
                 ) AS Num2 
               
-          ,0 AS Check1  --ITemCD�p�`�F�b�N
-          ,0 AS Check2  --SKUCD�p�`�F�b�N
-          ,0 AS Check3  --JANCD�p�`�F�b�N
+          ,0 AS Check1  --ITemCDùpâ`âFâbâN
+          ,0 AS Check2  --SKUCDùpâ`âFâbâN
+          ,0 AS Check3  --JANCDùpâ`âFâbâN
           ,1 AS DelFlg
     INTO #TableForHacchuuShoukai 
     
@@ -202,7 +208,7 @@ BEGIN
         AND DJ.JuchuuRows = DM.JuchuuRows 
         AND DJ.DeleteDateTime IS NULL
     
-    --���ח\���
+    --ô³ëÎù\ÆÞô·
     LEFT OUTER JOIN (SELECT  D.Number, D.NumberRows
     		, CONVERT(varchar, MAX(D.ArrivalPlanDate), 111) AS ArrivalPlanDate
             FROM D_ArrivalPlan AS D 
@@ -212,7 +218,7 @@ BEGIN
             GROUP BY D.Number, D.NumberRows
             ) AS DA ON DM.OrderNO = DA.Number AND DM.OrderRows = DA.NumberRows
 
-	--���ד�
+	--ô³ëÎô·
     LEFT OUTER JOIN (SELECT B.Number, B.NumberRows
     		,CONVERT(varchar, MAX(D.ArrivalDate), 111) AS ArrivalDate
             FROM D_Arrival AS D
@@ -228,7 +234,7 @@ BEGIN
             GROUP BY B.Number, B.NumberRows
             ) AS DL ON DM.OrderNO = DL.Number AND DM.OrderRows = DL.NumberRows
     
-    --���א�
+    --ô³ëÎÉö
     LEFT OUTER JOIN (SELECT B.Number, B.NumberRows
     		,SUM(D.ArrivalSu) AS ArrivalSu
             FROM D_Arrival AS D
@@ -239,13 +245,13 @@ BEGIN
             AND B.DeleteDateTime IS NULL
             
             WHERE D.DeleteDateTime IS NULL
-    --�����ď������i�炸�ɓ��א��̍��v���v�Z
+    --éáéªé─Å­îÅé­ìiéþé©é╔ô³ëÎÉöé╠ìçîvé­îvÄZ
     --        AND D.ArrivalDate >= (CASE WHEN @ArrivalDateFrom <> '' THEN CONVERT(DATE, @ArrivalDateFrom) ELSE D.ArrivalDate END)
     --        AND D.ArrivalDate <= (CASE WHEN @ArrivalDateTo <> '' THEN CONVERT(DATE, @ArrivalDateTo) ELSE D.ArrivalDate END)
             GROUP BY B.Number, B.NumberRows
             ) AS DL2 ON DM.OrderNO = DL2.Number AND DM.OrderRows = DL2.NumberRows
             
-    --�d����
+    --Ädô³ô·
     LEFT OUTER JOIN (SELECT D.OrderNO, D.OrderRows
     		,CONVERT(varchar, MAX(C.PurchaseDate), 111) AS PurchaseDate     
             FROM D_PurchaseDetails AS D
@@ -279,10 +285,10 @@ BEGIN
         SET DelFlg = 1
         ;
 
-        --���t���m�蕪ON�̏ꍇ
+        --ô·òtûóèmÆÞò¬ONé╠ÅÛìç
         IF @ChkMikakutei = 1
         BEGIN
-            --���ח\��f�[�^�����݂��Ȃ�
+            --ô³ëÎù\ÆÞâfü[â^é¬æÂì¦éÁé╚éó
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE NOT EXISTS(
@@ -293,7 +299,7 @@ BEGIN
                 AND DA.DeleteDateTime IS NULL
             );
             
-            --�\����Ȃ��œ��ח\��f�[�^�����݂���
+            --ù\ÆÞô·é╚éÁé┼ô³ëÎù\ÆÞâfü[â^é¬æÂì¦éÀéÚ
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -307,7 +313,7 @@ BEGIN
                 AND DA.DeleteDateTime IS NULL
             );
             
-            --�{�A�\��A����A�m�F���œ��ח\��f�[�^�����݂���
+            --Å{üAù\û±üAûóÆÞüAèmöFÆåé┼ô³ëÎù\ÆÞâfü[â^é¬æÂì¦éÀéÚ
             UPDATE #TableForHacchuuShoukai
             SET DelFlg = 0
             WHERE EXISTS(
@@ -317,7 +323,7 @@ BEGIN
                 ON M.ID = 206
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 IN (1,2,4,6)
-                --���ח\��敪
+                --ô³ëÎù\ÆÞïµò¬
                 AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN @ArrivalPlan ELSE M.Num2 END)
                 WHERE DA.Number = #TableForHacchuuShoukai.OrderNO
                 AND DA.ArrivalPlanKBN = 1
@@ -326,7 +332,7 @@ BEGIN
             
         END
 
-        --�s�v��ON�̏ꍇ
+        --òsùvò¬ONé╠ÅÛìç
         IF @ChkFuyo = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -336,7 +342,7 @@ BEGIN
             ;
         END
         
-        --������ON�̏ꍇ
+        --è«öäò¬ONé╠ÅÛìç
         IF @ChkKanbai = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -357,7 +363,7 @@ BEGIN
         SET DelFlg = 1
         ;
 
-        --���׍ς�ON�̏ꍇ
+        --ô³ëÎì¤é¦ONé╠ÅÛìç
         IF @ChkNyukaZumi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -368,7 +374,7 @@ BEGIN
             
         END
 
-        --������ON�̏ꍇ
+        --ûóô³ëÎONé╠ÅÛìç
         IF @ChkMiNyuka = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -388,7 +394,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --�󒍂���
+        --Ä¾ÆìéáéÞ
         IF @ChkJuchuAri = 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -397,7 +403,7 @@ BEGIN
             ;
         END
         
-        --�݌ɕ�[��
+        --ì¦î╔òÔÅ[ò¬
         IF @ChkZaiko = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -418,7 +424,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --�����F
+        --ûóÅ│öF
         IF @ChkMisyonin = 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -427,7 +433,7 @@ BEGIN
             ;
         END
         
-        --���F��
+        --Å│öFì¤
         IF @ChkSyoninzumi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -447,7 +453,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --����
+        --Æ╝æù
         IF @ChkChokuso = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -456,7 +462,7 @@ BEGIN
             ;
         END
         
-        --�q��
+        --æqî╔
         IF @ChkSouko = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -476,7 +482,7 @@ BEGIN
         SET DelFlg = 1
         ;
         
-        --NET����
+        --NETö¡Æì
         IF @ChkNet= 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -485,7 +491,7 @@ BEGIN
             ;
         END
 
-        --FAX����
+        --FAXö¡Æì
         IF @ChkFax= 1 
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -494,7 +500,7 @@ BEGIN
             ;
         END
 
-        --EDI����
+        --EDIö¡Æì
         IF @ChkEdi = 1
         BEGIN
             UPDATE #TableForHacchuuShoukai
@@ -554,7 +560,7 @@ BEGIN
     DECLARE @INDEX int;
     DECLARE @NEXT_INDEX int;
     
-    --ITEM�������ɍ���Ȃ��f�[�^���e�[�u������폜
+    --ITEMéµéÞÅ­îÅé╔ìçéÝé╚éóâfü[â^é­âeü[âuâïé®éþìÝÅ£
     IF ISNULL(@ITemCD,'') <> ''
     BEGIN
                 
@@ -571,7 +577,7 @@ BEGIN
             BEGIN
                 IF LEN(@ITemCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --âfü[â^é¬êÛé┬é╠é¦é╠ÅÛìç
                     UPDATE #TableForHacchuuShoukai
                     SET Check1 = 0
                     WHERE ITemCD = SUBSTRING(@ITemCD,@INDEX,LEN(@ITemCD)-@INDEX+1)
@@ -598,7 +604,7 @@ BEGIN
         ;
     END;
     
-    --SKUCD�������ɍ���Ȃ��f�[�^���e�[�u������폜
+    --SKUCDéµéÞÅ­îÅé╔ìçéÝé╚éóâfü[â^é­âeü[âuâïé®éþìÝÅ£
     IF ISNULL(@SKUCD,'') <> ''
     BEGIN
                 
@@ -615,7 +621,7 @@ BEGIN
             BEGIN
                 IF LEN(@SKUCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --âfü[â^é¬êÛé┬é╠é¦é╠ÅÛìç
                     UPDATE #TableForHacchuuShoukai
                     SET Check2 = 0
                     WHERE SKUCD = SUBSTRING(@SKUCD,@INDEX,LEN(@SKUCD)-@INDEX+1)
@@ -642,8 +648,8 @@ BEGIN
         ;
     END;
     
-    --JANCD�������ɍ���Ȃ��f�[�^���e�[�u������폜
-    IF ISNULL(@JANCD,'') <> ''
+    --JANCDéµéÞÅ­îÅé╔ìçéÝé╚éóâfü[â^é­âeü[âuâïé®éþìÝÅ£
+    IF ISNULL(@JanCD,'') <> ''
     BEGIN
                 
         UPDATE #TableForHacchuuShoukai
@@ -655,14 +661,14 @@ BEGIN
         
         WHILE @VALID_DATA = 1
         BEGIN
-            IF CHARINDEX(',', @JANCD, @INDEX) = 0
+            IF CHARINDEX(',', @JanCD, @INDEX) = 0
             BEGIN
-                IF LEN(@JANCD)-@INDEX >= 0
+                IF LEN(@JanCD)-@INDEX >= 0
                 BEGIN
-                    --�f�[�^����݂̂̏ꍇ
+                    --âfü[â^é¬êÛé┬é╠é¦é╠ÅÛìç
                     UPDATE #TableForHacchuuShoukai
                     SET Check3 = 0
-                    WHERE JANCD = SUBSTRING(@JANCD,@INDEX,LEN(@JANCD)-@INDEX+1)
+                    WHERE JANCD = SUBSTRING(@JanCD,@INDEX,LEN(@JanCD)-@INDEX+1)
                     ;
                     
                     BREAK;
@@ -670,11 +676,11 @@ BEGIN
             END
             ELSE
             BEGIN
-                SET @NEXT_INDEX = CHARINDEX(',', @JANCD, @INDEX);
+                SET @NEXT_INDEX = CHARINDEX(',', @JanCD, @INDEX);
                 
                 UPDATE #TableForHacchuuShoukai
                 SET Check3 = 0
-                WHERE JANCD = SUBSTRING(@JANCD,@INDEX,@NEXT_INDEX-@INDEX)
+                WHERE JANCD = SUBSTRING(@JanCD,@INDEX,@NEXT_INDEX-@INDEX)
                 ;
                 
                 SET @INDEX = @NEXT_INDEX + 1;
@@ -686,8 +692,8 @@ BEGIN
         ;
     END;
     
-    --�yL_Log�zINSERT
-    --���������f�[�^�֍X�V     
+    --üyL_LogüzINSERT
+    --ÅêùØùÜù­âfü[â^éÍìXÉV     
     EXEC L_Log_Insert_SP
         @SYSDATETIME,
         @Operator,
@@ -701,5 +707,6 @@ BEGIN
     ORDER BY DH.OrderNO, DH.OrderRows
     ;
 END
+
 
 GO

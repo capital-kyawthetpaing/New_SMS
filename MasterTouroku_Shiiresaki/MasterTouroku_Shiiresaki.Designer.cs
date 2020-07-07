@@ -202,6 +202,7 @@
             this.ScVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScVendor.DataCheck = false;
             this.ScVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScVendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScVendor.IsCopy = false;
             this.ScVendor.LabelText = "";
             this.ScVendor.LabelVisible = false;
@@ -275,6 +276,7 @@
             this.ScCopyVendor.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScCopyVendor.DataCheck = false;
             this.ScCopyVendor.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScCopyVendor.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScCopyVendor.IsCopy = true;
             this.ScCopyVendor.LabelText = "";
             this.ScCopyVendor.LabelVisible = false;
@@ -429,6 +431,7 @@
             this.txtRegisterNum.IntegerPart = 0;
             this.txtRegisterNum.IsCorrectDate = true;
             this.txtRegisterNum.isEnterKeyDown = false;
+            this.txtRegisterNum.IsFirstTime = true;
             this.txtRegisterNum.isMaxLengthErr = false;
             this.txtRegisterNum.IsNumber = true;
             this.txtRegisterNum.IsShop = false;
@@ -602,6 +605,7 @@
             this.txtVendorShortName.IntegerPart = 0;
             this.txtVendorShortName.IsCorrectDate = true;
             this.txtVendorShortName.isEnterKeyDown = false;
+            this.txtVendorShortName.IsFirstTime = true;
             this.txtVendorShortName.isMaxLengthErr = false;
             this.txtVendorShortName.IsNumber = true;
             this.txtVendorShortName.IsShop = false;
@@ -700,6 +704,7 @@
             this.txtDisplayOrder.IntegerPart = 0;
             this.txtDisplayOrder.IsCorrectDate = true;
             this.txtDisplayOrder.isEnterKeyDown = false;
+            this.txtDisplayOrder.IsFirstTime = true;
             this.txtDisplayOrder.isMaxLengthErr = false;
             this.txtDisplayOrder.IsNumber = true;
             this.txtDisplayOrder.IsShop = false;
@@ -728,6 +733,7 @@
             this.txtAnalyzeCD3.IntegerPart = 0;
             this.txtAnalyzeCD3.IsCorrectDate = true;
             this.txtAnalyzeCD3.isEnterKeyDown = false;
+            this.txtAnalyzeCD3.IsFirstTime = true;
             this.txtAnalyzeCD3.isMaxLengthErr = false;
             this.txtAnalyzeCD3.IsNumber = true;
             this.txtAnalyzeCD3.IsShop = false;
@@ -754,6 +760,7 @@
             this.txtAnalyzeCD2.IntegerPart = 0;
             this.txtAnalyzeCD2.IsCorrectDate = true;
             this.txtAnalyzeCD2.isEnterKeyDown = false;
+            this.txtAnalyzeCD2.IsFirstTime = true;
             this.txtAnalyzeCD2.isMaxLengthErr = false;
             this.txtAnalyzeCD2.IsNumber = true;
             this.txtAnalyzeCD2.IsShop = false;
@@ -780,6 +787,7 @@
             this.txtAnalyzeCD1.IntegerPart = 0;
             this.txtAnalyzeCD1.IsCorrectDate = true;
             this.txtAnalyzeCD1.isEnterKeyDown = false;
+            this.txtAnalyzeCD1.IsFirstTime = true;
             this.txtAnalyzeCD1.isMaxLengthErr = false;
             this.txtAnalyzeCD1.IsNumber = true;
             this.txtAnalyzeCD1.IsShop = false;
@@ -905,6 +913,7 @@
             this.ScStaffCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScStaffCD.DataCheck = false;
             this.ScStaffCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScStaffCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScStaffCD.IsCopy = false;
             this.ScStaffCD.LabelText = "";
             this.ScStaffCD.LabelVisible = true;
@@ -945,6 +954,7 @@
             this.ScKouzaCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScKouzaCD.DataCheck = false;
             this.ScKouzaCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScKouzaCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScKouzaCD.IsCopy = false;
             this.ScKouzaCD.LabelText = "";
             this.ScKouzaCD.LabelVisible = true;
@@ -978,6 +988,7 @@
             this.txtKouzaMeigi.IntegerPart = 0;
             this.txtKouzaMeigi.IsCorrectDate = true;
             this.txtKouzaMeigi.isEnterKeyDown = false;
+            this.txtKouzaMeigi.IsFirstTime = true;
             this.txtKouzaMeigi.isMaxLengthErr = false;
             this.txtKouzaMeigi.IsNumber = true;
             this.txtKouzaMeigi.IsShop = false;
@@ -1090,6 +1101,7 @@
             this.txtKouzaNo.IntegerPart = 0;
             this.txtKouzaNo.IsCorrectDate = true;
             this.txtKouzaNo.isEnterKeyDown = false;
+            this.txtKouzaNo.IsFirstTime = true;
             this.txtKouzaNo.isMaxLengthErr = false;
             this.txtKouzaNo.IsNumber = true;
             this.txtKouzaNo.IsShop = false;
@@ -1117,6 +1129,7 @@
             this.txtKouzaKBN.IntegerPart = 0;
             this.txtKouzaKBN.IsCorrectDate = true;
             this.txtKouzaKBN.isEnterKeyDown = false;
+            this.txtKouzaKBN.IsFirstTime = true;
             this.txtKouzaKBN.isMaxLengthErr = false;
             this.txtKouzaKBN.IsNumber = true;
             this.txtKouzaKBN.IsShop = false;
@@ -1142,6 +1155,7 @@
             this.ScBranchCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBranchCD.DataCheck = false;
             this.ScBranchCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScBranchCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScBranchCD.IsCopy = false;
             this.ScBranchCD.LabelText = "";
             this.ScBranchCD.LabelVisible = true;
@@ -1171,6 +1185,7 @@
             this.ScBankCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScBankCD.DataCheck = false;
             this.ScBankCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScBankCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScBankCD.IsCopy = false;
             this.ScBankCD.LabelText = "";
             this.ScBankCD.LabelVisible = true;
@@ -1236,6 +1251,7 @@
             this.ScMoneyPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScMoneyPayeeCD.DataCheck = false;
             this.ScMoneyPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScMoneyPayeeCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScMoneyPayeeCD.IsCopy = false;
             this.ScMoneyPayeeCD.LabelText = "";
             this.ScMoneyPayeeCD.LabelVisible = true;
@@ -1265,6 +1281,7 @@
             this.ScPayeeCD.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Normal;
             this.ScPayeeCD.DataCheck = false;
             this.ScPayeeCD.Font = new System.Drawing.Font("MS Gothic", 9F);
+            this.ScPayeeCD.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.ScPayeeCD.IsCopy = false;
             this.ScPayeeCD.LabelText = "";
             this.ScPayeeCD.LabelVisible = true;
@@ -1297,12 +1314,13 @@
             this.txtPaymentPlanDay.IntegerPart = 0;
             this.txtPaymentPlanDay.IsCorrectDate = true;
             this.txtPaymentPlanDay.isEnterKeyDown = false;
+            this.txtPaymentPlanDay.IsFirstTime = true;
             this.txtPaymentPlanDay.isMaxLengthErr = false;
             this.txtPaymentPlanDay.IsNumber = true;
             this.txtPaymentPlanDay.IsShop = false;
-            this.txtPaymentPlanDay.Length = 1;
+            this.txtPaymentPlanDay.Length = 2;
             this.txtPaymentPlanDay.Location = new System.Drawing.Point(107, 423);
-            this.txtPaymentPlanDay.MaxLength = 1;
+            this.txtPaymentPlanDay.MaxLength = 2;
             this.txtPaymentPlanDay.MoveNext = true;
             this.txtPaymentPlanDay.Name = "txtPaymentPlanDay";
             this.txtPaymentPlanDay.Size = new System.Drawing.Size(20, 19);
@@ -1341,6 +1359,7 @@
             this.txtPaymentCloseDay.IntegerPart = 0;
             this.txtPaymentCloseDay.IsCorrectDate = true;
             this.txtPaymentCloseDay.isEnterKeyDown = false;
+            this.txtPaymentCloseDay.IsFirstTime = true;
             this.txtPaymentCloseDay.isMaxLengthErr = false;
             this.txtPaymentCloseDay.IsNumber = true;
             this.txtPaymentCloseDay.IsShop = false;
@@ -1369,6 +1388,7 @@
             this.txtFaxno.IntegerPart = 0;
             this.txtFaxno.IsCorrectDate = true;
             this.txtFaxno.isEnterKeyDown = false;
+            this.txtFaxno.IsFirstTime = true;
             this.txtFaxno.isMaxLengthErr = false;
             this.txtFaxno.IsNumber = true;
             this.txtFaxno.IsShop = false;
@@ -1395,6 +1415,7 @@
             this.txtTelno.IntegerPart = 0;
             this.txtTelno.IsCorrectDate = true;
             this.txtTelno.isEnterKeyDown = false;
+            this.txtTelno.IsFirstTime = true;
             this.txtTelno.isMaxLengthErr = false;
             this.txtTelno.IsNumber = true;
             this.txtTelno.IsShop = false;
@@ -1421,6 +1442,7 @@
             this.txtMailAddress.IntegerPart = 0;
             this.txtMailAddress.IsCorrectDate = true;
             this.txtMailAddress.isEnterKeyDown = false;
+            this.txtMailAddress.IsFirstTime = true;
             this.txtMailAddress.isMaxLengthErr = false;
             this.txtMailAddress.IsNumber = true;
             this.txtMailAddress.IsShop = false;
@@ -1448,6 +1470,7 @@
             this.txtAddress2.IntegerPart = 0;
             this.txtAddress2.IsCorrectDate = true;
             this.txtAddress2.isEnterKeyDown = false;
+            this.txtAddress2.IsFirstTime = true;
             this.txtAddress2.isMaxLengthErr = false;
             this.txtAddress2.IsNumber = true;
             this.txtAddress2.IsShop = false;
@@ -1475,6 +1498,7 @@
             this.txtAddress1.IntegerPart = 0;
             this.txtAddress1.IsCorrectDate = true;
             this.txtAddress1.isEnterKeyDown = false;
+            this.txtAddress1.IsFirstTime = true;
             this.txtAddress1.isMaxLengthErr = false;
             this.txtAddress1.IsNumber = true;
             this.txtAddress1.IsShop = false;
@@ -1501,6 +1525,7 @@
             this.txtZipCD2.IntegerPart = 0;
             this.txtZipCD2.IsCorrectDate = true;
             this.txtZipCD2.isEnterKeyDown = false;
+            this.txtZipCD2.IsFirstTime = true;
             this.txtZipCD2.isMaxLengthErr = false;
             this.txtZipCD2.IsNumber = true;
             this.txtZipCD2.IsShop = false;
@@ -1530,6 +1555,7 @@
             this.txtZipCD1.IntegerPart = 0;
             this.txtZipCD1.IsCorrectDate = true;
             this.txtZipCD1.isEnterKeyDown = false;
+            this.txtZipCD1.IsFirstTime = true;
             this.txtZipCD1.isMaxLengthErr = false;
             this.txtZipCD1.IsNumber = true;
             this.txtZipCD1.IsShop = false;
@@ -1558,6 +1584,7 @@
             this.txtVendorStaffName.IntegerPart = 0;
             this.txtVendorStaffName.IsCorrectDate = true;
             this.txtVendorStaffName.isEnterKeyDown = false;
+            this.txtVendorStaffName.IsFirstTime = true;
             this.txtVendorStaffName.isMaxLengthErr = false;
             this.txtVendorStaffName.IsNumber = true;
             this.txtVendorStaffName.IsShop = false;
@@ -1585,6 +1612,7 @@
             this.txtPositionName.IntegerPart = 0;
             this.txtPositionName.IsCorrectDate = true;
             this.txtPositionName.isEnterKeyDown = false;
+            this.txtPositionName.IsFirstTime = true;
             this.txtPositionName.isMaxLengthErr = false;
             this.txtPositionName.IsNumber = true;
             this.txtPositionName.IsShop = false;
@@ -1612,6 +1640,7 @@
             this.txtPostName.IntegerPart = 0;
             this.txtPostName.IsCorrectDate = true;
             this.txtPostName.isEnterKeyDown = false;
+            this.txtPostName.IsFirstTime = true;
             this.txtPostName.isMaxLengthErr = false;
             this.txtPostName.IsNumber = true;
             this.txtPostName.IsShop = false;
@@ -1639,6 +1668,7 @@
             this.txtLongName2.IntegerPart = 0;
             this.txtLongName2.IsCorrectDate = true;
             this.txtLongName2.isEnterKeyDown = false;
+            this.txtLongName2.IsFirstTime = true;
             this.txtLongName2.isMaxLengthErr = false;
             this.txtLongName2.IsNumber = true;
             this.txtLongName2.IsShop = false;
@@ -1666,6 +1696,7 @@
             this.txtLongName1.IntegerPart = 0;
             this.txtLongName1.IsCorrectDate = true;
             this.txtLongName1.isEnterKeyDown = false;
+            this.txtLongName1.IsFirstTime = true;
             this.txtLongName1.isMaxLengthErr = false;
             this.txtLongName1.IsNumber = true;
             this.txtLongName1.IsShop = false;
@@ -1693,6 +1724,7 @@
             this.txtVendorKana.IntegerPart = 0;
             this.txtVendorKana.IsCorrectDate = true;
             this.txtVendorKana.isEnterKeyDown = false;
+            this.txtVendorKana.IsFirstTime = true;
             this.txtVendorKana.isMaxLengthErr = false;
             this.txtVendorKana.IsNumber = true;
             this.txtVendorKana.IsShop = false;
@@ -1720,6 +1752,7 @@
             this.txtVendorName.IntegerPart = 0;
             this.txtVendorName.IsCorrectDate = true;
             this.txtVendorName.isEnterKeyDown = false;
+            this.txtVendorName.IsFirstTime = true;
             this.txtVendorName.isMaxLengthErr = false;
             this.txtVendorName.IsNumber = true;
             this.txtVendorName.IsShop = false;

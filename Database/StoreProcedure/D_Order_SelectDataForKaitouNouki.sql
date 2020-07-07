@@ -103,12 +103,7 @@ BEGIN
              AND M.AdminNO = DM.AdminNO
               AND M.DeleteFlg = 0
              ORDER BY M.ChangeDate desc) AS JANCD
-            ,(SELECT top 1 M.MakerItem 
-            FROM M_SKU AS M 
-            WHERE M.ChangeDate <= DH.OrderDate
-             AND M.AdminNO = DM.AdminNO
-              AND M.DeleteFlg = 0
-             ORDER BY M.ChangeDate desc) AS MakerItem
+            ,DM.MakerItem
             ,(SELECT top 1 M.OrderAttentionNote 
             FROM M_SKU AS M 
             WHERE M.ChangeDate <= DH.OrderDate
@@ -222,8 +217,7 @@ BEGIN
     WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
     ;
 
-    IF (ISNULL(@OrderDateFrom,'') <> '' OR ISNULL(@OrderDateTo,'') <> '')
-    	AND (@ChkMikakutei = 1 OR @ChkFuyo = 1 OR @ChkKanbai = 1)
+    IF ((ISNULL(@OrderDateFrom,'') <> '' OR ISNULL(@OrderDateTo,'') <> '') AND (@ChkMikakutei = 1 OR @ChkFuyo = 1 OR @ChkKanbai = 1))
     BEGIN
         UPDATE #TableForKaitouNouki
         SET DelFlg = 1
@@ -239,6 +233,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -250,6 +245,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.ArrivalPlanCD IS NULL
                 AND DA.ArrivalPlanDate IS NULL
@@ -267,15 +263,14 @@ BEGIN
                 ON M.ID = 206
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 IN (1,2,4,6)
-                --入荷予定区分
-                AND M.Num2 = (CASE WHEN @ArrivalPlan <> 0 THEN @ArrivalPlan ELSE M.Num2 END)
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
             
         END
-
+		                    
         --不要分ONの場合
         IF @ChkFuyo = 1
         BEGIN
@@ -289,6 +284,7 @@ BEGIN
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 = 5
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -307,6 +303,7 @@ BEGIN
                 AND M.[Key] = DA.ArrivalPlanCD
                 AND M.Num2 = 3
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.DeleteDateTime IS NULL
             );
@@ -316,16 +313,43 @@ BEGIN
         WHERE DelFlg = 1
         ;
     END  
-    
-    --画面で範囲指定された入荷予定日に合致するかを判断←①
-    --合致した場合、合致しない日も含めて、その発注番号の入荷予定情報は全て（最大３）抽出、表示する←・
-    IF @ArrivalPlanDateFrom <> '' OR @ArrivalPlanDateTo <> '' OR @ArrivalPlanMonthFrom > 0 OR @ArrivalPlanMonthTo > 0
+
+    --入荷予定区分
+    IF  @ArrivalPlan <> 0
     BEGIN
         UPDATE #TableForKaitouNouki
         SET DelFlg = 1
         ;
         
-        IF @ArrivalPlanDateFrom <> '' OR @ArrivalPlanDateTo <> '' 
+        UPDATE #TableForKaitouNouki
+        SET DelFlg = 0
+        WHERE EXISTS(
+            SELECT DA.ArrivalPlanDate
+            FROM D_ArrivalPlan AS DA
+            INNER JOIN M_MultiPorpose AS M
+            ON M.ID = 206
+            AND M.[Key] = DA.ArrivalPlanCD
+            AND M.Num2 = (SELECT A.Num2 FROM M_MultiPorpose AS A WHERE A.ID = 206 AND A.[Key] = @ArrivalPlan) 
+            WHERE DA.Number = #TableForKaitouNouki.OrderNO
+            AND DA.NumberRows = #TableForKaitouNouki.OrderRows
+            AND DA.ArrivalPlanKBN = 1
+            AND DA.DeleteDateTime IS NULL
+        );
+
+        DELETE FROM #TableForKaitouNouki
+        WHERE DelFlg = 1
+        ;
+	END
+	
+    --画面で範囲指定された入荷予定日に合致するかを判断←①
+    --合致した場合、合致しない日も含めて、その発注番号の入荷予定情報は全て（最大３）抽出、表示する←・
+    IF ISNULL(@ArrivalPlanDateFrom,'') <> '' OR ISNULL(@ArrivalPlanDateTo,'') <> '' OR @ArrivalPlanMonthFrom > 0 OR @ArrivalPlanMonthTo > 0
+    BEGIN
+        UPDATE #TableForKaitouNouki
+        SET DelFlg = 1
+        ;
+        
+        IF ISNULL(@ArrivalPlanDateFrom,'') <> '' OR ISNULL(@ArrivalPlanDateTo,'') <> '' 
         BEGIN
             UPDATE #TableForKaitouNouki
             SET DelFlg = 0
@@ -333,6 +357,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND DA.ArrivalPlanDate >= (CASE WHEN @ArrivalPlanDateFrom <> '' THEN CONVERT(DATE, @ArrivalPlanDateFrom) ELSE DA.ArrivalPlanDate END)
                 AND DA.ArrivalPlanDate <= (CASE WHEN @ArrivalPlanDateTo <> '' THEN CONVERT(DATE, @ArrivalPlanDateTo) ELSE DA.ArrivalPlanDate END)
@@ -348,6 +373,7 @@ BEGIN
                 SELECT DA.ArrivalPlanDate
                 FROM D_ArrivalPlan AS DA
                 WHERE DA.Number = #TableForKaitouNouki.OrderNO
+                AND DA.NumberRows = #TableForKaitouNouki.OrderRows
                 AND DA.ArrivalPlanKBN = 1
                 AND ((DA.ArrivalPlanMonth >= (CASE WHEN @ArrivalPlanMonthFrom <> 0 THEN @ArrivalPlanMonthFrom ELSE DA.ArrivalPlanMonth END)
                         AND DA.ArrivalPlanMonth <= (CASE WHEN @ArrivalPlanMonthTo <> 0 THEN @ArrivalPlanMonthTo ELSE DA.ArrivalPlanMonth END))
@@ -355,9 +381,9 @@ BEGIN
                         AND CONVERT(VARCHAR, ISNULL(DA.ArrivalPlanDate,''), 112) / 100 <= (CASE WHEN @ArrivalPlanMonthTo <> 0 THEN @ArrivalPlanMonthTo ELSE CONVERT(VARCHAR, ISNULL(DA.ArrivalPlanDate,''), 112) / 100 END))
                     )
             AND DA.DeleteDateTime IS NULL
-        	);
-		END
-		
+            );
+        END
+        
         DELETE FROM #TableForKaitouNouki
         WHERE DelFlg = 1
         ;
@@ -365,6 +391,7 @@ BEGIN
     
     
     SELECT *
+        ,COUNT(DH.OrderNO) OVER(PARTITION BY DH.OrderNO, DH.OrderRows) AS CNT
     FROM #TableForKaitouNouki AS DH
     WHERE DH.ROWNUM <= 3	--（最大３）
     ORDER BY DH.OrderDate, DH.OrderNO, DH.OrderRows

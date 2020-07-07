@@ -63,6 +63,8 @@ namespace Entity
         public string OrderAttentionNote { get; set; }
         public string CommentInStore { get; set; }
         public string CommentOutStore { get; set; }
+        public string ExhibitionSegmentCD { get; set; }
+        public string OrderLot { get; set; }
         public string LastYearTerm { get; set; }
         public string LastSeason { get; set; }
         public string LastCatalogNO { get; set; }
@@ -73,6 +75,7 @@ namespace Entity
         public string WebAddress { get; set; }
         public string ApprovalDate { get; set; }
         public string AddDate { get; set; }
+        
         //Master用Entity
         public string ColorNO { get; set; }
         public string SizeNO { get; set; }

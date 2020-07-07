@@ -96,6 +96,7 @@ namespace Search
             {
                 F9Visible = false;
                 F11Visible = false;
+                F12Visible = false;
                 lblJyuchuNo.Text = JuchuuNO;
                 lblCustomer.Text = CustomerName;
                 ExecDisp();
