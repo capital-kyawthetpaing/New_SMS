@@ -1729,6 +1729,7 @@ namespace TempoRegiHanbaiTouroku
                     lblHenpin.Text = "販売";
                     lblHenpin.Visible = false;
                     btnHenpin.Text = "返品";
+                    OperationMode = FrmMainForm.EOperationMode.INSERT;
                 }
             }
             catch (Exception ex)
