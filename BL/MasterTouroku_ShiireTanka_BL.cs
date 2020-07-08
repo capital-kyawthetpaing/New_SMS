@@ -75,6 +75,10 @@ namespace BL
         {
             return msdl.M_SKU_SelectForShiireTanka(me);            
         }
+        public DataTable M_ITEM_SelectBy_ItemCD(M_ITEM_Entity me)
+        {
+            return msdl.M_ITEM_SelectBy_ItemCD(me);
+        }
 
         /// <summary>
         /// 更新時に使用
