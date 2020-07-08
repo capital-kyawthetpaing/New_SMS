@@ -811,7 +811,7 @@
             // 
             this.ScOrderNO.AutoSize = true;
             this.ScOrderNO.ChangeDate = "";
-            this.ScOrderNO.ChangeDateWidth = 995580;
+            this.ScOrderNO.ChangeDateWidth = 1659299;
             this.ScOrderNO.Code = "XXXXXXXXX01";
             this.ScOrderNO.CodeWidth = 150;
             this.ScOrderNO.CodeWidth1 = 150;
@@ -1346,7 +1346,7 @@
             this.IMT_ARIDT_5.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_5.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_5.DecimalPlace = 0;
-            this.IMT_ARIDT_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_5.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_5.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_5.IntegerPart = 0;
             this.IMT_ARIDT_5.IsCorrectDate = true;
@@ -1360,7 +1360,7 @@
             this.IMT_ARIDT_5.MaxLength = 10;
             this.IMT_ARIDT_5.MoveNext = true;
             this.IMT_ARIDT_5.Name = "IMT_ARIDT_5";
-            this.IMT_ARIDT_5.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_5.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_5.TabIndex = 593;
             this.IMT_ARIDT_5.Tag = "5";
             this.IMT_ARIDT_5.Text = "2019/01/01";
@@ -1608,7 +1608,7 @@
             this.IMT_ARIDT_4.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_4.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_4.DecimalPlace = 0;
-            this.IMT_ARIDT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_4.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_4.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_4.IntegerPart = 0;
             this.IMT_ARIDT_4.IsCorrectDate = true;
@@ -1622,7 +1622,7 @@
             this.IMT_ARIDT_4.MaxLength = 10;
             this.IMT_ARIDT_4.MoveNext = true;
             this.IMT_ARIDT_4.Name = "IMT_ARIDT_4";
-            this.IMT_ARIDT_4.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_4.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_4.TabIndex = 574;
             this.IMT_ARIDT_4.Tag = "4";
             this.IMT_ARIDT_4.Text = "2019/01/01";
@@ -1870,7 +1870,7 @@
             this.IMT_ARIDT_3.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_3.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_3.DecimalPlace = 0;
-            this.IMT_ARIDT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_3.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_3.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_3.IntegerPart = 0;
             this.IMT_ARIDT_3.IsCorrectDate = true;
@@ -1884,7 +1884,7 @@
             this.IMT_ARIDT_3.MaxLength = 10;
             this.IMT_ARIDT_3.MoveNext = true;
             this.IMT_ARIDT_3.Name = "IMT_ARIDT_3";
-            this.IMT_ARIDT_3.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_3.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_3.TabIndex = 555;
             this.IMT_ARIDT_3.Tag = "3";
             this.IMT_ARIDT_3.Text = "2019/01/01";
@@ -1979,7 +1979,7 @@
             this.IMT_ARIDT_0.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_0.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_0.DecimalPlace = 0;
-            this.IMT_ARIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_0.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_0.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_0.IntegerPart = 0;
             this.IMT_ARIDT_0.IsCorrectDate = true;
@@ -1993,7 +1993,7 @@
             this.IMT_ARIDT_0.MaxLength = 10;
             this.IMT_ARIDT_0.MoveNext = true;
             this.IMT_ARIDT_0.Name = "IMT_ARIDT_0";
-            this.IMT_ARIDT_0.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_0.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_0.TabIndex = 510;
             this.IMT_ARIDT_0.Tag = "0";
             this.IMT_ARIDT_0.Text = "2019/01/01";
@@ -2469,7 +2469,7 @@
             this.IMT_ARIDT_2.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_2.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_2.DecimalPlace = 0;
-            this.IMT_ARIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_2.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_2.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_2.IntegerPart = 0;
             this.IMT_ARIDT_2.IsCorrectDate = true;
@@ -2483,7 +2483,7 @@
             this.IMT_ARIDT_2.MaxLength = 10;
             this.IMT_ARIDT_2.MoveNext = true;
             this.IMT_ARIDT_2.Name = "IMT_ARIDT_2";
-            this.IMT_ARIDT_2.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_2.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_2.TabIndex = 516;
             this.IMT_ARIDT_2.Tag = "2";
             this.IMT_ARIDT_2.Text = "2019/01/01";
@@ -2500,7 +2500,7 @@
             this.IMT_ARIDT_1.Ctrl_Byte = CKM_Controls.CKM_TextBox.Bytes.半角;
             this.IMT_ARIDT_1.Ctrl_Type = CKM_Controls.CKM_TextBox.Type.Date;
             this.IMT_ARIDT_1.DecimalPlace = 0;
-            this.IMT_ARIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.IMT_ARIDT_1.Font = new System.Drawing.Font("ＭＳ ゴシック", 16F);
             this.IMT_ARIDT_1.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.IMT_ARIDT_1.IntegerPart = 0;
             this.IMT_ARIDT_1.IsCorrectDate = true;
@@ -2514,7 +2514,7 @@
             this.IMT_ARIDT_1.MaxLength = 10;
             this.IMT_ARIDT_1.MoveNext = true;
             this.IMT_ARIDT_1.Name = "IMT_ARIDT_1";
-            this.IMT_ARIDT_1.Size = new System.Drawing.Size(128, 28);
+            this.IMT_ARIDT_1.Size = new System.Drawing.Size(128, 29);
             this.IMT_ARIDT_1.TabIndex = 513;
             this.IMT_ARIDT_1.Tag = "1";
             this.IMT_ARIDT_1.Text = "2019/01/01";
@@ -3968,7 +3968,7 @@
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(77, 27);
             this.label24.TabIndex = 275;
-            this.label24.Text = "発注数";
+            this.label24.Text = "予定数";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label25
