@@ -285,7 +285,7 @@ namespace Search
             {
                 //コンボボックス初期化
                 string ymd = zibl.GetDate();
-                CboFromSoukoCD.Bind(ymd);
+                CboFromSoukoCD.Bind(string.Empty,"");
 
                 Scr_Clr();
             }

@@ -1,3 +1,17 @@
+BEGIN TRY 
+ Drop Procedure D_EDI_Insert
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+	BEGIN TRY
+	Drop Type dbo.[T_Edi]
+	END try
+	BEGIN CATCH END CATCH
+
 --  ======================================================================
 --       Program Call    EDI‰ñ“š”[Šú“o˜^
 --       Program ID      EDIKaitouNoukiTouroku

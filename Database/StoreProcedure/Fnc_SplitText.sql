@@ -1,4 +1,13 @@
   
+BEGIN TRY 
+ Drop FUNCTION dbo.[Fnc_SplitText]
+END try
+BEGIN CATCH END CATCH 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
 CREATE FUNCTION [dbo].[Fnc_SplitText]  
     (  
         @Texts as nvarchar(max),  

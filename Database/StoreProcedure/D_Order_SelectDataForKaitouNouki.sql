@@ -58,7 +58,7 @@ BEGIN
           ,DM.ColorName
           ,DM.SizeName
           
-          ,(CASE DH.DestinationKBN WHEN 1 THEN 'ÅZ' ElSE '' END) AS DestinationKBN
+          ,(CASE DH.DestinationKBN WHEN 1 THEN N'ÅZ' ElSE '' END) AS DestinationKBN
           
           ,DH.OrderCD          
           ,(SELECT top 1 A.VendorName

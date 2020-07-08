@@ -1,5 +1,5 @@
-﻿ BEGIN TRY 
- Drop Procedure dbo.[D_Order_SelectAllForShoukai] 
+﻿BEGIN TRY 
+ Drop PROCEDURE dbo.[D_Order_SelectAllForShoukai]
 END try
 BEGIN CATCH END CATCH 
 SET ANSI_NULLS ON
