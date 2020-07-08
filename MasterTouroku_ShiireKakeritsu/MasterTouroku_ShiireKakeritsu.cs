@@ -405,12 +405,12 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSportsCD1_Enter(object sender, EventArgs e)
         {
-            scSportsCD1.Value1 = "202";
+            scSportsCD1.Value3 = "202";
         }
 
         private void scSegmentCD1_Enter(object sender, EventArgs e)
         {
-            scSegmentCD1.Value1 = "203";
+            scSegmentCD1.Value3 = "203";
         }
         private void dgv_ShiireKakeritsu_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -608,12 +608,12 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void scSportsCD_Enter(object sender, EventArgs e)
         {
-            scSportsCD.Value1 = "202";
+            scSportsCD.Value3 = "202";
         }
 
         private void scSegmentCD_Enter(object sender, EventArgs e)
         {
-            scSegmentCD.Value1 = "203";
+            scSegmentCD.Value3 = "203";
         }
 
         #endregion
@@ -884,19 +884,19 @@ namespace MasterTouroku_ShiireKakeritsu
                 }
             }
         }
-        protected DataTable ChangeDataColumnName(DataTable dtMain)
-        {
-            dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
-            dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
-            dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
-            dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
-            dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
-            dtMain.Columns["LastYearTerm"].ColumnName = "年度";
-            dtMain.Columns["LastSeason"].ColumnName = "シーズン";
-            dtMain.Columns["ChangeDate"].ColumnName = "改定日";
-            dtMain.Columns["Rate"].ColumnName = "掛率";
-            return dtMain;
-        }
+        //protected DataTable ChangeDataColumnName(DataTable dtMain)
+        //{
+        //    dtMain.Columns["VendorCD"].ColumnName = "仕入先CD";
+        //    dtMain.Columns["StoreCD"].ColumnName = "店舗CD";
+        //    dtMain.Columns["BrandCD"].ColumnName = "ブランドCD";
+        //    dtMain.Columns["SportsCD"].ColumnName = "競　技CD";
+        //    dtMain.Columns["SegmentCD"].ColumnName = "商品分類CD";
+        //    dtMain.Columns["LastYearTerm"].ColumnName = "年度";
+        //    dtMain.Columns["LastSeason"].ColumnName = "シーズン";
+        //    dtMain.Columns["ChangeDate"].ColumnName = "改定日";
+        //    dtMain.Columns["Rate"].ColumnName = "掛率";
+        //    return dtMain;
+        //}
         protected DataTable ExcelToDatatable(string filePath)
         {
             FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read);
@@ -1071,39 +1071,39 @@ namespace MasterTouroku_ShiireKakeritsu
 
         private void ckM_Button1_Click(object sender, EventArgs e)
         {
-            moe = new M_OrderRate_Entity();
-            moe = GetSearchInfo();
-            DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
-            if (dt.Rows.Count > 0)
-            {
-                DataTable dtExport = dt;
-                dtExport = ChangeDataColumnName(dtMain);
-                string folderPath = "C:\\SSS\\";
-                if (!Directory.Exists(folderPath))
-                {
-                    Directory.CreateDirectory(folderPath);
-                }
-                SaveFileDialog savedialog = new SaveFileDialog();
-                savedialog.Filter = "Excel Files|*.xlsx;";
-                savedialog.Title = "Save";
-                savedialog.FileName = "仕入先別発注掛率マスタ";
-                savedialog.InitialDirectory = folderPath;
+            //moe = new M_OrderRate_Entity();
+            //moe = GetSearchInfo();
+            //DataTable dt = mskbl.M_ShiireKakeritsu_Select(moe);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    DataTable dtExport = dt;
+            //    dtExport = ChangeDataColumnName(dtMain);
+            //    string folderPath = "C:\\SSS\\";
+            //    if (!Directory.Exists(folderPath))
+            //    {
+            //        Directory.CreateDirectory(folderPath);
+            //    }
+            //    SaveFileDialog savedialog = new SaveFileDialog();
+            //    savedialog.Filter = "Excel Files|*.xlsx;";
+            //    savedialog.Title = "Save";
+            //    savedialog.FileName = "仕入先別発注掛率マスタ";
+            //    savedialog.InitialDirectory = folderPath;
 
-                savedialog.RestoreDirectory = true;
-                if (savedialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
-                    {
-                        using (XLWorkbook wb = new XLWorkbook())
-                        {
-                            wb.Worksheets.Add(dtMain, "Result");
-                            wb.SaveAs(savedialog.FileName);
-                        }
-                        //Process.Start(Path.GetDirectoryName(savedialog.FileName));
-                    }
-                }
-                F10();
-            }
+            //    savedialog.RestoreDirectory = true;
+            //    if (savedialog.ShowDialog() == DialogResult.OK)
+            //    {
+            //        if (Path.GetExtension(savedialog.FileName).Contains(".xlsx"))
+            //        {
+            //            using (XLWorkbook wb = new XLWorkbook())
+            //            {
+            //                wb.Worksheets.Add(dtMain, "Result");
+            //                wb.SaveAs(savedialog.FileName);
+            //            }
+            //            //Process.Start(Path.GetDirectoryName(savedialog.FileName));
+            //        }
+            //    }
+               F10();
+            //}
         }
 
         private void cbo_Store_KeyDown(object sender, KeyEventArgs e)
