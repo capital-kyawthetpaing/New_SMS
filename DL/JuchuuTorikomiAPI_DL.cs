@@ -40,5 +40,11 @@ namespace DL
            
             return SelectData(dic, "D_APIRireki_Grid_Select");
         }
+        public DataTable D_APIControl_Select()
+        {
+            Dictionary<string, ValuePair> dic = new Dictionary<string, ValuePair>();
+
+            return SelectData(dic, "D_APIControl_Select");
+        }
     }
 }
