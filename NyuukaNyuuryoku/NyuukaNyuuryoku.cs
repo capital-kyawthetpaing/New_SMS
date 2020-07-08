@@ -1753,7 +1753,7 @@ namespace NyuukaNyuuryoku
 
                     ebl.D_Exclusive_Delete(de);
                 }
-                return;
+                dtForUpdate = new DataTable();
             }
 
             D_Exclusive_Entity dee = new D_Exclusive_Entity
